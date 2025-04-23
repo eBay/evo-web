@@ -1,7 +1,8 @@
 name: 🐞 Bug report
 description: File a bug/issue
 title: "<component name>: <issue title>"
-labels: ["type: bug", "needs triage"]
+type: "bug",
+labels: ["needs triage"]
 body:
 - type: checkboxes
   id: no-existing-verify
