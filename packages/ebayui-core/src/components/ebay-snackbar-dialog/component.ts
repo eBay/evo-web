@@ -5,6 +5,8 @@ import type { Input as BaseInput } from "../components/ebay-dialog-base/componen
 interface SnackbarDialogInput extends Omit<BaseInput, `on${string}`> {
     layout?: "row" | "column";
     action?: BaseInput["action"] & {
+        accesskey?: string;
+         /** @deprecated use `accesskey` instead */
         accessKey?: string;
     };
     "on-action"?: () => void;
@@ -35,12 +37,7 @@ class SnackbarDialog extends Marko.Component<Input, State> {
     }
 
     onInput(input: Input) {
-        this.state = {
-            open:
-                typeof input.open === "boolean"
-                    ? input.open
-                    : this.state.open || false,
-        };
+        this.state = { open: input.open ?? (this.state.open || false) };
     }
 
     onMount() {

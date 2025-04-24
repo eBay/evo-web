@@ -162,6 +162,7 @@ exports[`snackbar-dialog > renders with action version 1`] = `
         [33mclass[39m=[32m"snackbar-dialog__actions"[39m
       [36m>[39m
         [36m<button[39m
+          [33maccesskey[39m=[32m"U"[39m
           [33mclass[39m=[32m"fake-link"[39m
           [33mdata-ebayui[39m=[32m""[39m
           [33mtype[39m=[32m"button"[39m

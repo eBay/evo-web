@@ -23,11 +23,13 @@ $ const {
     <if(action)>
         <@action>
             <ebay-fake-link
+                ...action
+                accesskey=action.accesskey || action.accessKey
                 on-click("handleAction")
                 on-focus("handleFocus")
                 on-blur("handleBlur")>
                 <${action.renderBody}/>
-                <span class="clipped">- Access Key: ${action.accessKey}</span>
+                <span class="clipped">- Access Key: ${action.accesskey || action.accessKey}</span>
             </ebay-fake-link>
         </@action>
     </if>
