@@ -59,7 +59,10 @@ export default class extends MenuUtils<Input, MenuState> {
     handleMenuKeydown({ originalEvent }: FilterMenuEvent) {
         eventUtils.handleEscapeKeydown(
             originalEvent as KeyboardEvent,
-            () => (this._expander.expanded = false),
+            () => {
+                this._expander.expanded = false;
+                (this.getEl("button") as HTMLElement).focus();
+            },
         );
     }
 
@@ -96,7 +99,6 @@ export default class extends MenuUtils<Input, MenuState> {
 
     handleCollapse({ originalEvent }: FilterMenuEvent) {
         this.dropdownUtil.hide();
-        (this.getEl("button") as HTMLElement).focus();
         this._emitComponentEvent("collapse", originalEvent);
     }
 
