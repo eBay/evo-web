@@ -8,6 +8,7 @@ interface SectionNoticeInput
     > {
     dismissed?: boolean;
     "on-dismiss"?: () => void;
+    "on-cta-click"?: () => void;
 }
 
 export interface Input extends WithNormalizedProps<SectionNoticeInput> {}

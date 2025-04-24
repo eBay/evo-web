@@ -1,5 +1,161 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`section-notice > renders basic 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<section[39m
+    [33maria-labelledby[39m=[32m"s0-0-status"[39m
+    [33maria-roledescription[39m=[32m"Notice"[39m
+    [33mclass[39m=[32m"section-notice"[39m
+    [33mrole[39m=[32m"region"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"section-notice__header"[39m
+      [33mid[39m=[32m"s0-0-status"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-label[39m=[32m"attention"[39m
+        [33mclass[39m=[32m"icon--attention-filled icon icon--16 icon--attention-filled"[39m
+        [33mfocusable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"img"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-attention-filled-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm0 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm1-4a1 1 0 1 1-2 0V5a1 1 0 0 1 2 0v3Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-attention-filled-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"section-notice__main"[39m
+    [36m>[39m
+      [36m<p>[39m
+        [0mSection notice info. Things you need to know.[0m
+      [36m</p>[39m
+    [36m</span>[39m
+  [36m</section>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`section-notice > renders with custom CTA 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<section[39m
+    [33maria-labelledby[39m=[32m"s0-0-0-status"[39m
+    [33maria-roledescription[39m=[32m"Notice"[39m
+    [33mclass[39m=[32m"section-notice"[39m
+    [33mrole[39m=[32m"region"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"section-notice__header"[39m
+      [33mid[39m=[32m"s0-0-0-status"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-label[39m=[32m"information"[39m
+        [33mclass[39m=[32m"icon--information-filled icon icon--16 icon--information-filled"[39m
+        [33mfocusable[39m=[32m"false"[39m
+        [33mrole[39m=[32m"img"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-information-filled-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 11a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v3ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-information-filled-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"section-notice__main"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"section-notice__title"[39m
+      [36m>[39m
+        [36m<div>[39m
+          [0mNotice title[0m
+        [36m</div>[39m
+      [36m</h2>[39m
+      [36m<p>[39m
+        [36m<strong>[39m
+          [0mError:[0m
+        [36m</strong>[39m
+        [0m Please take another look at the following:[0m
+      [36m</p>[39m
+      [36m<p>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"#"[39m
+        [36m>[39m
+          [0mCard number[0m
+        [36m</a>[39m
+        [0m, [0m
+        [36m<a[39m
+          [33mhref[39m=[32m"#"[39m
+        [36m>[39m
+          [0mExpiration date[0m
+        [36m</a>[39m
+        [0m & [0m
+        [36m<a[39m
+          [33mhref[39m=[32m"#"[39m
+        [36m>[39m
+          [0mSecurity code[0m
+        [36m</a>[39m
+      [36m</p>[39m
+    [36m</span>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"section-notice__cta"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"fake-link"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mLink here[0m
+      [36m</button>[39m
+    [36m</p>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"section-notice__footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Dismiss Notice"[39m
+        [33mclass[39m=[32m"fake-link section-notice__dismiss"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--close-16 icon icon--16"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-close-16"[39m
+              [33mviewBox[39m=[32m"0 0 16 16"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2.293 2.293a1 1 0 0 1 1.414 0L8 6.586l4.293-4.293a1 1 0 1 1 1.414 1.414L9.414 8l4.293 4.293a1 1 0 0 1-1.414 1.414L8 9.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L6.586 8 2.293 3.707a1 1 0 0 1 0-1.414Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-close-16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</section>[39m
+[36m</DocumentFragment>[39m"
+`;
+
 exports[`section-notice > renders with light 1`] = `
 <section
   aria-labelledby="s0-0-status"

@@ -3,6 +3,11 @@ import { describe, it, expect } from "vitest";
 import { render } from "@marko/testing-library";
 import template from "../index.marko";
 import * as mock from "./mock";
+import { composeStories } from "@storybook/marko";
+import { snapshotHTML } from "../../../common/test-utils/snapshots";
+import * as stories from "../section-notice.stories"; // import all stories from the stories file
+const { Basic, WithCustomCTADismiss } = composeStories(stories);
+const htmlSnap = snapshotHTML(__dirname);
 
 describe("section-notice", () => {
     it("renders with status", async () => {
@@ -31,5 +36,12 @@ describe("section-notice", () => {
 
         const footer = getByText(input.footer.renderBody.text);
         expect(footer).toMatchSnapshot();
+    });
+
+    it("renders basic", async () => {
+        await htmlSnap(Basic);
+    });
+    it("renders with custom CTA", async () => {
+        await htmlSnap(WithCustomCTADismiss);
     });
 });

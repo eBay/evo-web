@@ -1,0 +1,18 @@
+class {}
+import fakeLink from "<ebay-fake-link>";
+
+<ebay-section-notice ...input on-dismiss('emit', 'dismiss') on-cta-click('emit', 'cta-click')>
+    <@title>
+        <div>Notice title</div>
+    </@title>
+    <@cta as=fakeLink>Link here</@cta>
+    <p>
+        <strong>Error:</strong> Please take another look at the following:
+    </p>
+    <p>
+        <a href="#">Card number</a>,
+        <a href="#">Expiration date</a>
+        &amp;
+        <a href="#">Security code</a>
+    </p>
+</ebay-section-notice>

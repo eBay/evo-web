@@ -93,7 +93,11 @@ $ const isEducation = prefixClass === 'education-notice';
         <${input.renderBody}/>
     </>
     <if(cta)>
-        <p class=`${prefixClass}__cta`><a ...cta><${cta}/></a></p>
+        <p class=`${prefixClass}__cta`>
+            <${cta.as || "a"} on-click("emit", "cta-click") ...processHtmlAttributes(cta, ["as"])>
+                <${cta}/>
+            </>
+        </p>
     </if>
 
     <if(footer && (isEducation || !a11yDismissText))>

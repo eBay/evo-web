@@ -4,6 +4,11 @@ import { render } from "@marko/testing-library";
 import { testPassThroughAttributes } from "../../../common/test-utils/server";
 import template from "../index.marko";
 import * as mock from "./mock";
+import { composeStories } from "@storybook/marko";
+import { snapshotHTML } from "../../../common/test-utils/snapshots";
+import * as stories from "../page-notice.stories"; // import all stories from the stories file
+const { Basic, WithCustomCTADismiss } = composeStories(stories);
+const htmlSnap = snapshotHTML(__dirname);
 
 describe("page-notice", () => {
     it("renders with defaults", async () => {
@@ -54,6 +59,13 @@ describe("page-notice", () => {
         expect(content).toMatchSnapshot();
         expect(content.parentElement).toMatchSnapshot();
         expect(footer).toMatchSnapshot();
+    });
+
+    it("renders basic", async () => {
+        await htmlSnap(Basic);
+    });
+    it("renders with custom CTA", async () => {
+        await htmlSnap(WithCustomCTADismiss);
     });
 
     testPassThroughAttributes(template, {

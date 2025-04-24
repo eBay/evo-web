@@ -5,6 +5,7 @@ interface PageNoticeInput
     extends Omit<NoticeBaseInput, "role" | "prefixClass" | `on${string}`> {
     dismissed?: boolean;
     "on-dismiss"?: () => void;
+    "on-cta-click"?: () => void;
 }
 
 export interface Input extends WithNormalizedProps<PageNoticeInput> {}

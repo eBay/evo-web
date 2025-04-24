@@ -6,6 +6,9 @@ import withAction from "./examples/with-action.marko";
 import withActionCode from "./examples/with-action.marko?raw";
 import withDismiss from "./examples/with-dismiss.marko";
 import withDismissCode from "./examples/with-dismiss.marko?raw";
+import withCustomCTADismiss from "./examples/with-custom-cta-dismiss.marko";
+import withCustomCTADismissCode from "./examples/with-custom-cta-dismiss.marko?raw";
+
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
@@ -91,6 +94,16 @@ export default {
                 },
             },
         },
+        "on-cta-click": {
+            action: "on-cta-click",
+            description: "Triggered when CTA is clicked",
+            table: {
+                category: "Events",
+                defaultValue: {
+                    summary: "",
+                },
+            },
+        },
     },
 };
 
@@ -160,6 +173,27 @@ WithDismiss.parameters = {
     docs: {
         source: {
             code: withDismissCode,
+        },
+    },
+};
+
+export const WithCustomCTADismiss: Story<Input> = (args) => ({
+    input: args,
+    component: withCustomCTADismiss,
+});
+
+WithCustomCTADismiss.args = {
+    a11yText: "information",
+    a11yIconText: "",
+    a11yDismissText: "Dismiss Notice",
+    status: "information",
+    icon: null,
+} as any;
+
+WithCustomCTADismiss.parameters = {
+    docs: {
+        source: {
+            code: withCustomCTADismissCode,
         },
     },
 };

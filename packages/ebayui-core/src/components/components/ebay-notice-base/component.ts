@@ -25,11 +25,13 @@ interface NoticeBaseInput
     cta?: Marko.AttrTag<
         Marko.HTML.A & {
             renderBody?: Marko.Renderable;
+            as?: Marko.Renderable;
         }
     >;
     "education-icon"?: Marko.AttrTag<Marko.Renderable> | Marko.Renderable;
     prominent?: boolean;
     "on-dismiss"?: () => void;
+    "on-cta-click"?: () => void;
 }
 
 export interface Input extends WithNormalizedProps<NoticeBaseInput> {}
