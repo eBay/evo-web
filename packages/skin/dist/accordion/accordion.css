@@ -7,7 +7,7 @@ ul.accordion ::marker {
     font-size: 0;
 }
 
-ul.accordion li:not(:last-child) {
+ul.accordion > li:not(:last-child) {
     border-bottom: 1px solid var(--color-stroke-subtle);
 }
 
