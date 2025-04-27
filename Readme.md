@@ -1,10 +1,10 @@
 # EVO-WEB
 
-Evo-web is a common component libray which consists of reuable CSS in the form of Skin, marko componnets in ebayui-core, and react components in ebayui-react-core.
+Evo-web is a common component library which consists of reusable CSS in the form of Skin, Marko components in `ebayui-core`, and React components in `ebayui-react-core`.
 
-See each package readme for more information
+See each package's README for more information.
 
 ## Packages
 
-- CSS Library [@ebay/skin](./packages/skin/README.md) 
+- CSS Library [@ebay/skin](./packages/skin/README.md)
 - Marko components [@ebay/ebayui-core](./packages/ebayui-core/README.md)
