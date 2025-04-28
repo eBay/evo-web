@@ -1,5 +1,25 @@
 # eBayUI-Core Changelog
 
+## 15.3.0
+
+### Minor Changes
+
+- [`d31ec7c`](https://github.com/eBay/evo-web/commit/d31ec7cb540c2d7f1b114b7ffa003ce96feb10d2) Thanks [@agliga](https://github.com/agliga)! - fix(listbox-button, menu-button): content collapse on button re focus
+
+- [`d31ec7c`](https://github.com/eBay/evo-web/commit/d31ec7cb540c2d7f1b114b7ffa003ce96feb10d2) Thanks [@agliga](https://github.com/agliga)! - feat: added item-tile, item-tile-group, and layout-grid
+
+- [#13](https://github.com/eBay/evo-web/pull/13) [`7db1dec`](https://github.com/eBay/evo-web/commit/7db1dec746200f65330b0fff8a73f75a9e5997dd) Thanks [@agliga](https://github.com/agliga)! - feat(notice): added support for custom CTA button
+
+- [`d31ec7c`](https://github.com/eBay/evo-web/commit/d31ec7cb540c2d7f1b114b7ffa003ce96feb10d2) Thanks [@agliga](https://github.com/agliga)! - fix(ccd): hide when min and max are not set
+
+### Patch Changes
+
+- [#11](https://github.com/eBay/evo-web/pull/11) [`304d3ad`](https://github.com/eBay/evo-web/commit/304d3adebb34d992c973873cf9882d737be73866) Thanks [@agliga](https://github.com/agliga)! - fix(filter-menu-button): removed focus from collapse and moved it to escape keydown
+
+- [#10](https://github.com/eBay/evo-web/pull/10) [`7f3d6cf`](https://github.com/eBay/evo-web/commit/7f3d6cf044e940ea9fa36adb8e2bb34044b585cd) Thanks [@agliga](https://github.com/agliga)! - fix(snackbar-dialog): added action spread into snackbar dialog
+
+- [#10](https://github.com/eBay/evo-web/pull/10) [`7f3d6cf`](https://github.com/eBay/evo-web/commit/7f3d6cf044e940ea9fa36adb8e2bb34044b585cd) Thanks [@agliga](https://github.com/agliga)! - fix: honor snackbar dialog input.open if type boolean
+
 ## 15.2.0
 
 ### Minor Changes

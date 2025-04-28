@@ -1,5 +1,15 @@
 # Skin Changelog
 
+## 19.3.0
+
+### Minor Changes
+
+- [`d31ec7c`](https://github.com/eBay/evo-web/commit/d31ec7cb540c2d7f1b114b7ffa003ce96feb10d2) Thanks [@agliga](https://github.com/agliga)! - feat(item-tile-group): add default layouts inside item-tile-group
+
+### Patch Changes
+
+- [#12](https://github.com/eBay/evo-web/pull/12) [`be8ff0b`](https://github.com/eBay/evo-web/commit/be8ff0b42e2bd3eb64f495bf7a2f0aa5ceba8e4f) Thanks [@agliga](https://github.com/agliga)! - fix(accordion): added direct child selector to li
+
 ## 19.2.0
 
 ### Minor Changes

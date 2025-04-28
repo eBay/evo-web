@@ -6,7 +6,7 @@ interface SnackbarDialogInput extends Omit<BaseInput, `on${string}`> {
     layout?: "row" | "column";
     action?: BaseInput["action"] & {
         accesskey?: string;
-         /** @deprecated use `accesskey` instead */
+        /** @deprecated use `accesskey` instead */
         accessKey?: string;
     };
     "on-action"?: () => void;

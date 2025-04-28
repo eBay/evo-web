@@ -109,7 +109,7 @@ export default {
                     summary: "",
                 },
             },
-        }
+        },
     },
 };
 
@@ -184,4 +184,3 @@ WithCustomCTADismiss.parameters = {
         },
     },
 };
-

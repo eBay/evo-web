@@ -57,13 +57,10 @@ export default class extends MenuUtils<Input, MenuState> {
     }
 
     handleMenuKeydown({ originalEvent }: FilterMenuEvent) {
-        eventUtils.handleEscapeKeydown(
-            originalEvent as KeyboardEvent,
-            () => {
-                this._expander.expanded = false;
-                (this.getEl("button") as HTMLElement).focus();
-            },
-        );
+        eventUtils.handleEscapeKeydown(originalEvent as KeyboardEvent, () => {
+            this._expander.expanded = false;
+            (this.getEl("button") as HTMLElement).focus();
+        });
     }
 
     handleMenuChange({
