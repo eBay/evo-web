@@ -81,7 +81,8 @@ span[role="region"].section-notice {
     margin-inline-end: var(--spacing-200);
 }
 
-.section-notice__header + .section-notice__main {
+.section-notice__header + .section-notice__main,
+.section-notice__header ~ .section-notice__cta {
     grid-column: 2;
 }
 
@@ -98,7 +99,7 @@ span[role="region"].section-notice {
 }
 
 p.section-notice__cta {
-    grid-column: 2;
+    grid-column: 1 / 3;
     grid-row: 2;
     justify-self: flex-start;
     margin-right: var(--spacing-200);
@@ -119,6 +120,9 @@ p.section-notice__cta {
         margin-bottom: 0;
         margin-top: 0;
         padding-right: var(--spacing-200);
+    }
+    .section-notice__header ~ .section-notice__cta {
+        grid-column: 4;
     }
     .section-notice__footer {
         padding-left: var(--spacing-200);
