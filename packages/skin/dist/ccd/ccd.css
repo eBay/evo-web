@@ -1,11 +1,20 @@
+@font-face {
+    font-family: Reddit Sans Condensed Bold;
+    src: url(https://ir.ebaystatic.com/cr/v/c01/Reddit_Sans_Condensed_Bold/RedditSansCondensed-Bold.ttf);
+}
 .ccd {
     display: inline-flex;
+    font-family:
+        Reddit Sans Condensed Bold,
+        Market Sans,
+        Arial,
+        sans-serif;
     gap: 8px;
 }
 
 .ccd__charger-icon {
-    height: 78px;
-    width: 58px;
+    height: 57px;
+    width: 42px;
 }
 
 .ccd__description-figure {
@@ -13,12 +22,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 55px;
+    width: 39px;
 }
 
 .ccd__top-icon {
-    height: 24px;
-    width: 35px;
+    height: 18px;
+    width: 27px;
 }
 
 .ccd__body {
@@ -29,10 +38,9 @@
     flex-direction: column;
     font-size: 0.4375rem;
     font-weight: var(--font-weight-bold);
-    gap: 2px;
-    height: 53px;
+    height: 37px;
     justify-content: center;
     overflow: hidden;
     text-align: center;
-    width: 53px;
+    width: 39px;
 }
