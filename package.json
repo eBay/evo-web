@@ -10,7 +10,7 @@
     "version": "npm run version --ws && changeset version && npm i --package-lock-only && git add -A packages",
     "change": "changeset add",
     "deploy": "npm run deploy --ws && BASE_URL=/evo-web/ marko-run build -o ./_site && npm run deploy:copy-site",
-    "deploy:copy-site": "ncp packages/skin/_site/public _site/public/skin && ncp packages/ebayui-core/_site _site/public/ebayui-core",
+    "deploy:copy-site": "ncp packages/skin/_site/public _site/public/skin && ncp packages/ebayui-core/_site _site/public/ebayui-core && ncp packages/ebayui-core-react/_site _site/public/ebayui-core-react",
     "copy:coreui-site": "npm run deploy --ws",
     "copy:skin-site": "npm run deploy --ws",
     "prepare": "husky"
