@@ -1,4 +1,4 @@
-require('del')([
+require('del').deleteAsync([
     'dist',
     'coverage',
     'lint',

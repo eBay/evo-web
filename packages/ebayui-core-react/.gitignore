@@ -25,4 +25,4 @@ junit.xml
 .xo-resources.json
 coverage
 /.vscode
-/storybook-static
+/_site

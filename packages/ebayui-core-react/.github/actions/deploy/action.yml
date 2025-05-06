@@ -12,12 +12,12 @@ runs:
     steps:
         - name: Build Storybook
           shell: sh
-          run: NODE_OPTIONS=--openssl-legacy-provider yarn build-storybook --output-dir storybook-static/${{ inputs.branch }}
+          run: NODE_OPTIONS=--openssl-legacy-provider npm run build:storybook -- --output-dir ./_site/${{ inputs.branch }}
 
         - name: Publish Storybook
           uses: JamesIves/github-pages-deploy-action@v4
           with:
-              folder: storybook-static
+              folder: _site
               clean: false
 
         - name: Output storybook link
