@@ -12,7 +12,7 @@ exports[`dialog > passes through additional html attributes 1`] = `
   type="number"
 >
   <div
-    class="alert-dialog__window alert-dialog__window alert-dialog__window--fade"
+    class="alert-dialog__window alert-dialog__window alert-dialog__window--animate"
   >
     <div
       class="alert-dialog__header"
@@ -59,7 +59,7 @@ exports[`dialog > passes through additional html attributes 2`] = `
   type="number"
 >
   <div
-    class="alert-dialog__window alert-dialog__window alert-dialog__window--fade"
+    class="alert-dialog__window alert-dialog__window alert-dialog__window--animate"
   >
     <div
       class="alert-dialog__header"
@@ -103,7 +103,7 @@ exports[`dialog > renders basic version 1`] = `
   role="alertdialog"
 >
   <div
-    class="alert-dialog__window alert-dialog__window alert-dialog__window--fade"
+    class="alert-dialog__window alert-dialog__window alert-dialog__window--animate"
   >
     <div
       class="alert-dialog__header"
@@ -183,7 +183,7 @@ exports[`dialog > renders in open state 1`] = `
   role="alertdialog"
 >
   <div
-    class="alert-dialog__window alert-dialog__window alert-dialog__window--fade"
+    class="alert-dialog__window alert-dialog__window alert-dialog__window--animate"
   >
     <div
       class="alert-dialog__header"

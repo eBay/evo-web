@@ -1,3 +1,4 @@
+import { useReducedMotion } from "../dom";
 const TRANSITION_END = "transitionend";
 /**
  * Applies a primer `-init` class before starting a transition
@@ -13,22 +14,26 @@ const TRANSITION_END = "transitionend";
  *
  * @param {HTMLElement} options.el The root element that contains the animation.
  * @param {string} options.className The base className to use for the transition.
- * @param {Element[]} options.waitFor Elements that will transition and should be waited for.
+ * @param {string[]} options.transitionList A list of transition properties to listen for.
  * @param {Function} cb A callback called after the transition as ended.
  */
 export default (
     {
         el,
         className,
-        waitFor,
-    }: { el: HTMLElement; className: string; waitFor: Element[] },
+        transitionList,
+    }: { el: HTMLElement; className: string; transitionList: string[] },
     cb: Function,
 ) => {
     let ended: boolean;
-    let ran = 0;
-    const pending = waitFor ? waitFor.length : 0;
+    const pending = transitionList ? transitionList.length : 0;
     const classList = el.classList;
     const initClass = `${className}-init`;
+    const transitions = new Set([...transitionList]);
+    // On reduce motion devices we don't want to check for transoform
+    if (useReducedMotion) {
+        transitions.delete("tranform")
+    }
 
     if (!("ontransitionend" in el)) {
         const id = setTimeout(cb, 0);
@@ -41,9 +46,7 @@ export default (
         classList.remove(initClass);
 
         if (pending) {
-            waitFor.forEach((child) =>
-                child.addEventListener(TRANSITION_END, listener),
-            );
+            el.addEventListener(TRANSITION_END, listener);
         } else {
             cancel();
 
@@ -66,11 +69,7 @@ export default (
         }
 
         ended = true;
-
-        for (let i = ran; i < pending; i++) {
-            const child = waitFor[i];
-            child.removeEventListener(TRANSITION_END, listener);
-        }
+        el.removeEventListener(TRANSITION_END, listener);
 
         if (cancelFrame) {
             cancelFrame();
@@ -85,11 +84,12 @@ export default (
      * Once all child transitions have ended the overall animation is completed.
      */
     function listener({
-        target,
-    }: Parameters<EventListener>[0]): ReturnType<EventListener> {
-        target?.removeEventListener(TRANSITION_END, listener);
+        propertyName
+    }: TransitionEvent): ReturnType<EventListener> {
+        transitions.delete(propertyName);
+        if (transitions.size === 0) {
+            el.removeEventListener(TRANSITION_END, listener);
 
-        if (++ran === pending) {
             ended = true;
             classList.remove(className);
 

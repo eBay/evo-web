@@ -26,11 +26,11 @@
         --dialog-window-background-color,
         var(--color-background-primary)
     );
-    border-radius: var(--lightbox-border-radius, var(--border-radius-150));
+    border-radius: var(--lightbox-border-radius, var(--border-radius-100));
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
-    margin: auto auto 16px;
+    margin: auto;
     margin-left: var(--spacing-200);
     margin-right: var(--spacing-200);
     max-height: 90%;
@@ -67,25 +67,48 @@ a.confirm-dialog__confirm,
 button.confirm-dialog__confirm {
     margin-left: var(--spacing-100);
 }
-
 .confirm-dialog--hide.confirm-dialog--mask-fade,
-.confirm-dialog--show.confirm-dialog--mask-fade {
-    transition: background-color 0.16s ease-out;
+.confirm-dialog--hide.confirm-dialog--mask-fade-slow {
+    transition: background-color var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
 }
-.confirm-dialog--hide.confirm-dialog--mask-fade-slow,
+.confirm-dialog--hide .confirm-dialog__window--fade {
+    transition: opacity var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.confirm-dialog--hide .confirm-dialog__window--animate {
+    transition:
+        transform var(--motion-duration-medium-3) var(--motion-easing-soft-exit),
+        opacity var(--motion-duration-short-3) var(--motion-easing-continuous);
+}
+.confirm-dialog--hide .confirm-dialog__window--animate > * {
+    transition: opacity var(--motion-duration-short-2)
+        var(--motion-easing-continuous);
+}
+.confirm-dialog--show.confirm-dialog--mask-fade,
 .confirm-dialog--show.confirm-dialog--mask-fade-slow {
-    transition: background-color 0.32s ease-out;
+    transition: background-color var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
 }
-.confirm-dialog--hide .confirm-dialog__window--fade,
 .confirm-dialog--show .confirm-dialog__window--fade {
-    transition: opacity 0.16s ease-out;
+    transition: opacity var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.confirm-dialog--show .confirm-dialog__window--animate {
+    transition:
+        transform var(--motion-duration-medium-3) var(--motion-easing-standard),
+        opacity var(--motion-duration-short-3) var(--motion-easing-continuous);
+}
+.confirm-dialog--show .confirm-dialog__window--animate > * {
+    transition: opacity var(--motion-duration-medium-2)
+        var(--motion-easing-continuous) var(--motion-duration-short-3);
 }
 
 .confirm-dialog--hide.confirm-dialog--hide,
 .confirm-dialog--hide.confirm-dialog--show-init,
 .confirm-dialog--show-init.confirm-dialog--hide,
 .confirm-dialog--show-init.confirm-dialog--show-init {
-    display: flex;
+    display: flex !important;
 }
 .confirm-dialog--hide.confirm-dialog--mask-fade,
 .confirm-dialog--hide.confirm-dialog--mask-fade-slow,
@@ -93,7 +116,11 @@ button.confirm-dialog__confirm {
 .confirm-dialog--show-init.confirm-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
+.confirm-dialog--hide .confirm-dialog__window--animate,
+.confirm-dialog--hide .confirm-dialog__window--animate > *,
 .confirm-dialog--hide .confirm-dialog__window--fade,
+.confirm-dialog--show-init .confirm-dialog__window--animate,
+.confirm-dialog--show-init .confirm-dialog__window--animate > *,
 .confirm-dialog--show-init .confirm-dialog__window--fade {
     opacity: 0;
 }
@@ -102,7 +129,7 @@ button.confirm-dialog__confirm {
 .confirm-dialog--hide-init.confirm-dialog--show,
 .confirm-dialog--show.confirm-dialog--hide-init,
 .confirm-dialog--show.confirm-dialog--show {
-    display: flex;
+    display: flex !important;
 }
 .confirm-dialog--hide-init.confirm-dialog--mask-fade,
 .confirm-dialog--hide-init.confirm-dialog--mask-fade-slow,
@@ -110,15 +137,65 @@ button.confirm-dialog__confirm {
 .confirm-dialog--show.confirm-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
+.confirm-dialog--hide-init .confirm-dialog__window--animate,
+.confirm-dialog--hide-init .confirm-dialog__window--animate > *,
 .confirm-dialog--hide-init .confirm-dialog__window--fade,
+.confirm-dialog--show .confirm-dialog__window--animate,
+.confirm-dialog--show .confirm-dialog__window--animate > *,
 .confirm-dialog--show .confirm-dialog__window--fade {
     opacity: 1;
 }
 
+@media (prefers-reduced-motion) {
+    .confirm-dialog--hide.confirm-dialog--mask-fade,
+    .confirm-dialog--hide.confirm-dialog--mask-fade-slow {
+        transition: background-color var(--motion-duration-short-3)
+            var(--motion-easing-soft-exit);
+    }
+    .confirm-dialog--hide .confirm-dialog__window--animate,
+    .confirm-dialog--hide .confirm-dialog__window--fade {
+        transition: opacity var(--motion-duration-short-3)
+            var(--motion-easing-soft-exit);
+    }
+    .confirm-dialog--hide .confirm-dialog__window--animate > * {
+        transition: opacity var(--motion-duration-short-2)
+            var(--motion-soft-exit);
+    }
+    .confirm-dialog--show.confirm-dialog--mask-fade,
+    .confirm-dialog--show.confirm-dialog--mask-fade-slow {
+        transition: background-color var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter);
+    }
+    .confirm-dialog--show .confirm-dialog__window--animate,
+    .confirm-dialog--show .confirm-dialog__window--fade {
+        transition: opacity var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter);
+    }
+    .confirm-dialog--show .confirm-dialog__window--animate > * {
+        transition: opacity var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter) var(--motion-duration-short-3);
+    }
+}
+.confirm-dialog--hide-init .confirm-dialog__window--animate,
+.confirm-dialog--show .confirm-dialog__window--animate {
+    transform: scale(1);
+}
+
+.confirm-dialog--hide .confirm-dialog__window--animate,
+.confirm-dialog--show-init .confirm-dialog__window--animate {
+    transform: scale(0.75);
+}
+
+@media (prefers-reduced-motion) {
+    .confirm-dialog--hide .confirm-dialog__window--animate,
+    .confirm-dialog--hide-init .confirm-dialog__window--animate,
+    .confirm-dialog--show .confirm-dialog__window--animate,
+    .confirm-dialog--show-init .confirm-dialog__window--animate {
+        transform: scale(1);
+    }
+}
 @media (min-width: 768px) {
     .confirm-dialog__window {
-        border-radius: var(--lightbox-border-radius, var(--border-radius-100));
-        margin: auto;
         max-width: calc(88% - var(--spacing-400));
     }
 }

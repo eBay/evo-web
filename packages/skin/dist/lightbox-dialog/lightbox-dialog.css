@@ -148,31 +148,48 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog__title--center {
     text-align: center;
 }
-
 .lightbox-dialog--hide.lightbox-dialog--mask-fade,
-.lightbox-dialog--show.lightbox-dialog--mask-fade {
-    transition: background-color 0.16s ease-out;
+.lightbox-dialog--hide.lightbox-dialog--mask-fade-slow {
+    transition: background-color var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
 }
-.lightbox-dialog--hide.lightbox-dialog--mask-fade-slow,
+.lightbox-dialog--hide .lightbox-dialog__window--fade {
+    transition: opacity var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.lightbox-dialog--hide .lightbox-dialog__window--animate {
+    transition:
+        transform var(--motion-duration-medium-3) var(--motion-easing-soft-exit),
+        opacity var(--motion-duration-short-3) var(--motion-easing-continuous);
+}
+.lightbox-dialog--hide .lightbox-dialog__window--animate > * {
+    transition: opacity var(--motion-duration-short-2)
+        var(--motion-easing-continuous);
+}
+.lightbox-dialog--show.lightbox-dialog--mask-fade,
 .lightbox-dialog--show.lightbox-dialog--mask-fade-slow {
-    transition: background-color 0.32s ease-out;
+    transition: background-color var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
 }
-.lightbox-dialog--hide .lightbox-dialog__window--fade,
 .lightbox-dialog--show .lightbox-dialog__window--fade {
-    transition: opacity 0.16s ease-out;
+    transition: opacity var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
 }
-.lightbox-dialog--hide .lightbox-dialog__window--animate,
 .lightbox-dialog--show .lightbox-dialog__window--animate {
     transition:
-        opacity 0.16s ease-out,
-        transform 0.32s ease-out;
+        transform var(--motion-duration-medium-3) var(--motion-easing-standard),
+        opacity var(--motion-duration-short-3) var(--motion-easing-continuous);
+}
+.lightbox-dialog--show .lightbox-dialog__window--animate > * {
+    transition: opacity var(--motion-duration-medium-2)
+        var(--motion-easing-continuous) var(--motion-duration-short-3);
 }
 
 .lightbox-dialog--hide.lightbox-dialog--hide,
 .lightbox-dialog--hide.lightbox-dialog--show-init,
 .lightbox-dialog--show-init.lightbox-dialog--hide,
 .lightbox-dialog--show-init.lightbox-dialog--show-init {
-    display: flex;
+    display: flex !important;
 }
 .lightbox-dialog--hide.lightbox-dialog--mask-fade,
 .lightbox-dialog--hide.lightbox-dialog--mask-fade-slow,
@@ -180,21 +197,20 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--show-init.lightbox-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
+.lightbox-dialog--hide .lightbox-dialog__window--animate,
+.lightbox-dialog--hide .lightbox-dialog__window--animate > *,
 .lightbox-dialog--hide .lightbox-dialog__window--fade,
+.lightbox-dialog--show-init .lightbox-dialog__window--animate,
+.lightbox-dialog--show-init .lightbox-dialog__window--animate > *,
 .lightbox-dialog--show-init .lightbox-dialog__window--fade {
     opacity: 0;
-}
-.lightbox-dialog--hide .lightbox-dialog__window--animate,
-.lightbox-dialog--show-init .lightbox-dialog__window--animate {
-    opacity: 0;
-    transform: translateY(100%);
 }
 
 .lightbox-dialog--hide-init.lightbox-dialog--hide-init,
 .lightbox-dialog--hide-init.lightbox-dialog--show,
 .lightbox-dialog--show.lightbox-dialog--hide-init,
 .lightbox-dialog--show.lightbox-dialog--show {
-    display: flex;
+    display: flex !important;
 }
 .lightbox-dialog--hide-init.lightbox-dialog--mask-fade,
 .lightbox-dialog--hide-init.lightbox-dialog--mask-fade-slow,
@@ -202,14 +218,53 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--show.lightbox-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
+.lightbox-dialog--hide-init .lightbox-dialog__window--animate,
+.lightbox-dialog--hide-init .lightbox-dialog__window--animate > *,
 .lightbox-dialog--hide-init .lightbox-dialog__window--fade,
+.lightbox-dialog--show .lightbox-dialog__window--animate,
+.lightbox-dialog--show .lightbox-dialog__window--animate > *,
 .lightbox-dialog--show .lightbox-dialog__window--fade {
     opacity: 1;
 }
+
+@media (prefers-reduced-motion) {
+    .lightbox-dialog--hide.lightbox-dialog--mask-fade,
+    .lightbox-dialog--hide.lightbox-dialog--mask-fade-slow {
+        transition: background-color var(--motion-duration-short-3)
+            var(--motion-easing-soft-exit);
+    }
+    .lightbox-dialog--hide .lightbox-dialog__window--animate,
+    .lightbox-dialog--hide .lightbox-dialog__window--fade {
+        transition: opacity var(--motion-duration-short-3)
+            var(--motion-easing-soft-exit);
+    }
+    .lightbox-dialog--hide .lightbox-dialog__window--animate > * {
+        transition: opacity var(--motion-duration-short-2)
+            var(--motion-soft-exit);
+    }
+    .lightbox-dialog--show.lightbox-dialog--mask-fade,
+    .lightbox-dialog--show.lightbox-dialog--mask-fade-slow {
+        transition: background-color var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter);
+    }
+    .lightbox-dialog--show .lightbox-dialog__window--animate,
+    .lightbox-dialog--show .lightbox-dialog__window--fade {
+        transition: opacity var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter);
+    }
+    .lightbox-dialog--show .lightbox-dialog__window--animate > * {
+        transition: opacity var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter) var(--motion-duration-short-3);
+    }
+}
 .lightbox-dialog--hide-init .lightbox-dialog__window--animate,
 .lightbox-dialog--show .lightbox-dialog__window--animate {
-    opacity: 1;
     transform: translateY(0);
+}
+
+.lightbox-dialog--hide .lightbox-dialog__window--animate,
+.lightbox-dialog--show-init .lightbox-dialog__window--animate {
+    transform: translateY(100%);
 }
 .lightbox-dialog__handle:after {
     background-color: var(--dialog-handle-color, var(--color-stroke-default));
@@ -264,11 +319,21 @@ button.icon-btn.lightbox-dialog__prev {
         margin-left: var(--spacing-100);
         margin-top: 0;
     }
+    .lightbox-dialog--hide-init .lightbox-dialog__window--animate,
+    .lightbox-dialog--show .lightbox-dialog__window--animate {
+        transform: scale(1);
+    }
+    .lightbox-dialog--hide .lightbox-dialog__window--animate,
+    .lightbox-dialog--show-init .lightbox-dialog__window--animate {
+        transform: scale(0.75);
+    }
+}
+@media (min-width: 512px) and (prefers-reduced-motion) {
     .lightbox-dialog--hide .lightbox-dialog__window--animate,
     .lightbox-dialog--hide-init .lightbox-dialog__window--animate,
     .lightbox-dialog--show .lightbox-dialog__window--animate,
     .lightbox-dialog--show-init .lightbox-dialog__window--animate {
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
 @media (min-width: 768px) {

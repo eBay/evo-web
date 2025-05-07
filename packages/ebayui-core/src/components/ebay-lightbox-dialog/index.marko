@@ -34,6 +34,7 @@ $ var isMini = variant === "_mini";
     on-open("emit", "open")
     on-close("emit", "close")
     on-prevButtonClick("emit", "prevButtonClick")
+    transition-list=["opacity", "transform", "background-color"]
     button-position=buttonPosition
     class=[inputClass, "lightbox-dialog--mask-fade", bannerImgSrc && "lightbox-dialog--expressive",
         size && validSizes.includes(size) && `lightbox-dialog--${size}`,

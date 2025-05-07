@@ -40,7 +40,7 @@ interface DialogBaseInput extends Omit<Marko.HTML.Div, `on${string}`> {
     }>;
     "close-focus"?: string;
     open?: boolean;
-    "transition-el"?: "root" | "window";
+    "transition-list"?: string[];
     focus?: string;
     "prev-button"?: Marko.AttrTag<
         Omit<Marko.HTML.Button, `on${string}`> &
@@ -70,7 +70,7 @@ class DialogBase extends Marko.Component<Input, State> {
     declare windowEl?: Element | null;
     declare rootEl?: Element | null;
     declare bodyEl?: Element | null;
-    declare transitionEls?: Element[];
+    declare transitionList: string[];
     declare isTrapped?: boolean;
     declare restoreTrap?: boolean;
     declare _prevFocusEl?: Element | null;
@@ -184,17 +184,8 @@ class DialogBase extends Marko.Component<Input, State> {
         this.windowEl = this.getEl("window") ?? null;
         this.closeEl = this.getEl("close") ?? null;
         this.bodyEl = this.getEl("body") ?? null;
-        if (this.input.transitionEl === "root") {
-            this.transitionEls = [this.rootEl as Element];
-        } else if (this.input.transitionEl === "window") {
-            this.transitionEls = [this.windowEl as Element];
-        } else {
-            this.transitionEls = [
-                this.windowEl as Element,
-                this.rootEl as Element,
-            ];
-        }
-        // Add an event listener to the dialog to fix an issue with Safari not recognizing it as a touch target.
+        this.transitionList = this.input.transitionList || ["background-color", "transform"];
+       // Add an event listener to the dialog to fix an issue with Safari not recognizing it as a touch target.
         this.subscribeTo(this.rootEl).on("click", () => {});
 
         this._trap({
@@ -329,7 +320,7 @@ class DialogBase extends Marko.Component<Input, State> {
                         {
                             el: this.rootEl as HTMLElement,
                             className: `${this.input.classPrefix}--show`,
-                            waitFor: this.transitionEls ?? [],
+                            transitionList: this.transitionList,
                         },
                         onFinishTransition,
                     );
@@ -345,7 +336,7 @@ class DialogBase extends Marko.Component<Input, State> {
                         {
                             el: this.rootEl as HTMLElement,
                             className: `${this.input.classPrefix}--hide`,
-                            waitFor: this.transitionEls ?? [],
+                            transitionList: this.transitionList,
                         },
                         onFinishTransition,
                     );

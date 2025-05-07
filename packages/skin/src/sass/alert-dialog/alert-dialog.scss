@@ -8,7 +8,7 @@
 }
 
 .alert-dialog__window {
-    @include lightbox-dialog-window();
+    @include lightbox-dialog-window-centered();
 
     margin-left: var(--spacing-200);
     margin-right: var(--spacing-200);
@@ -87,10 +87,11 @@
     }
 }
 
+@include dialog-animation(alert-dialog);
+@include dialog-animation-large(alert-dialog);
+
 @media (min-width: $_screen-size-MD) {
     .alert-dialog__window {
-        @include lightbox-dialog-window-large();
-
         max-width: calc(88% - var(--spacing-400));
     }
 }

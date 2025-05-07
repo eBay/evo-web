@@ -13,7 +13,7 @@ exports[`dialog > passes through additional html attributes 1`] = `
   type="number"
 >
   <div
-    class="confirm-dialog__window confirm-dialog__window--fade"
+    class="confirm-dialog__window confirm-dialog__window--animate"
   >
     <div
       class="confirm-dialog__header"
@@ -100,7 +100,7 @@ exports[`dialog > passes through additional html attributes 2`] = `
   type="number"
 >
   <div
-    class="confirm-dialog__window confirm-dialog__window--fade"
+    class="confirm-dialog__window confirm-dialog__window--animate"
   >
     <div
       class="confirm-dialog__header"
@@ -184,7 +184,7 @@ exports[`dialog > renders basic version 1`] = `
     [33mrole[39m=[32m"dialog"[39m
   [36m>[39m
     [36m<div[39m
-      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--fade"[39m
+      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--animate"[39m
     [36m>[39m
       [36m<div[39m
         [33mclass[39m=[32m"confirm-dialog__header"[39m
@@ -247,7 +247,7 @@ exports[`dialog > renders in open state 1`] = `
     [33mrole[39m=[32m"dialog"[39m
   [36m>[39m
     [36m<div[39m
-      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--fade"[39m
+      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--animate"[39m
     [36m>[39m
       [36m<div[39m
         [33mclass[39m=[32m"confirm-dialog__header"[39m
@@ -311,7 +311,7 @@ exports[`dialog > renders with custom close/open 1`] = `
     [33mrole[39m=[32m"dialog"[39m
   [36m>[39m
     [36m<div[39m
-      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--fade"[39m
+      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--animate"[39m
     [36m>[39m
       [36m<div[39m
         [33mclass[39m=[32m"confirm-dialog__header"[39m
@@ -375,7 +375,7 @@ exports[`dialog > renders with destructive CTA 1`] = `
     [33mrole[39m=[32m"dialog"[39m
   [36m>[39m
     [36m<div[39m
-      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--fade"[39m
+      [33mclass[39m=[32m"confirm-dialog__window confirm-dialog__window--animate"[39m
     [36m>[39m
       [36m<div[39m
         [33mclass[39m=[32m"confirm-dialog__header"[39m

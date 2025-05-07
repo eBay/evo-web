@@ -36,12 +36,13 @@ $ const { renderBody: confirmRenderBody, ...confirmRestOfInput } = confirm || {}
     classPrefix="alert-dialog"
     ignoreEscape=true
     mainId=mainId
+    transition-list=["opacity", "transform", "background-color"]
     on-open("emit", "open")
     on-close("emit", "close")
     buttonPosition="hidden"
     focus=confirmId
     class=[inputClass, "alert-dialog--mask-fade"]
-    windowClass=["alert-dialog__window alert-dialog__window--fade"]>
+    windowClass=["alert-dialog__window alert-dialog__window--animate"]>
     <@footer>
         <ebay-button
             priority="primary"

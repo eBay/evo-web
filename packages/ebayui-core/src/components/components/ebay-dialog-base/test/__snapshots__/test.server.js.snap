@@ -110,7 +110,7 @@ exports[`dialog-base > renders basic version 1`] = `
   role="dialog"
 >
   <div
-    class="lightbox-dialog__window lightbox-dialog__window--fade"
+    class="lightbox-dialog__window lightbox-dialog__window--animate"
   >
     <div
       class="lightbox-dialog__header"
@@ -199,7 +199,7 @@ exports[`dialog-base > renders in open state 1`] = `
   role="dialog"
 >
   <div
-    class="lightbox-dialog__window lightbox-dialog__window--fade"
+    class="lightbox-dialog__window lightbox-dialog__window--animate"
   >
     <div
       class="lightbox-dialog__header"
@@ -252,7 +252,7 @@ exports[`dialog-base > renders non modal 1`] = `
   role="dialog"
 >
   <div
-    class="lightbox-dialog__window lightbox-dialog__window--fade"
+    class="lightbox-dialog__window lightbox-dialog__window--animate"
   >
     <div
       class="lightbox-dialog__header"
@@ -305,7 +305,7 @@ exports[`dialog-base > renders with header and footer 1`] = `
   role="dialog"
 >
   <div
-    class="lightbox-dialog__window lightbox-dialog__window--fade"
+    class="lightbox-dialog__window lightbox-dialog__window--animate"
   >
     <div
       class="lightbox-dialog__header"

@@ -46,9 +46,10 @@ $ const { renderBody: rejectRenderBody, ...rejectRestOfInput } = reject || {} as
     on-escape("emit", "reject")
     main-id=mainId
     focus=confirmId
+    transition-list=["opacity", "transform", "background-color"]
     class-prefix="confirm-dialog"
     class=[inputClass, "confirm-dialog--mask-fade"]
-    window-class=["confirm-dialog__window--fade"]
+    window-class=["confirm-dialog__window--animate"]
     button-position="hidden">
     <@footer>
         <ebay-button
