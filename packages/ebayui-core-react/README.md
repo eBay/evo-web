@@ -41,6 +41,7 @@ eBayUI React components
 * [x] [ebay-fake-tabs](src/ebay-fake-tabs)
 * [x] [ebay-field](src/ebay-field)
 * [x] [ebay-file-preview-card](src/ebay-file-preview-card)
+* [x] [ebay-file-preview-card-group](src/ebay-file-preview-card-group)
 * [x] [ebay-filter](src/ebay-filter)
 * [x] [ebay-filter-menu](src/ebay-filter-menu)
 * [x] [ebay-filter-menu-button](src/ebay-filter-menu-button)
