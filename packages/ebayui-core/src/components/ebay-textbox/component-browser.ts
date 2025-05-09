@@ -11,7 +11,7 @@ export interface TextboxEvent {
     value: string;
 }
 
-interface TextboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
+export interface TextboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
     multiline?: boolean;
     type?: Marko.HTML.Input["type"];
     "input-size"?: "regular" | "large";

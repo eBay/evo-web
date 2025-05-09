@@ -32,6 +32,7 @@
         "lightbox-dialog": ["icon-button"],
         "listbox-button": ["button"],
         "menu-button": ["button"],
+        "number-input": ["textbox"],
         "page-notice": ["button"],
         "pagination": ["icon-button"],
         "panel-dialog": ["icon-button"],

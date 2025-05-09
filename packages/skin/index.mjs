@@ -47,6 +47,7 @@ import './dist/listbox-button/listbox-button.css';
 import './dist/marketsans/marketsans.css';
 import './dist/menu/menu.css';
 import './dist/menu-button/menu-button.css';
+import './dist/number-input/number-input.css';
 import './dist/page-grid/page-grid.css';
 import './dist/page-notice/page-notice.css';
 import './dist/pagination/pagination.css';

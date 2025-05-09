@@ -1,0 +1,18 @@
+class {
+}
+
+<ebay-number-input
+    on-keydown("emit", "keydown")
+    on-keyup("emit", "keyup")
+    on-focus("emit", "focus")
+    on-blur("emit", "blur")
+    on-keypress("emit", "keypress")
+    on-change("emit", "change")
+    on-input-change("emit", "input-change")
+    on-delete-click("emit", "delete-click")
+    on-increment("emit", "increment")
+    on-decrement("emit", "decrement")
+    min=0 max=100
+    ...input>
+    <@label>Enter a number</@label>
+    </ebay-number-input>
