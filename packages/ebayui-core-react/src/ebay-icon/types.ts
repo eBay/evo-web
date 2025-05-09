@@ -68,8 +68,12 @@ export type Icon =
     'atv16' |
     'atv24' |
     'audioHigh16' |
+    'audioHigh20' |
+    'audioHigh24' |
     'audioLow16' |
     'audioOff16' |
+    'audioOff20' |
+    'audioOff24' |
     'authenticityGuarantee16' |
     'authenticityGuarantee24' |
     'authenticityGuaranteeFilled16Colored' |
@@ -117,6 +121,7 @@ export type Icon =
     'car24' |
     'carBrake16' |
     'carBrake24' |
+    'cardStack64' |
     'carnet12Colored' |
     'carnet18Colored' |
     'carnet24Colored' |
@@ -180,6 +185,8 @@ export type Icon =
     'clock16' |
     'clock24' |
     'clock64' |
+    'clockFast16' |
+    'clockFast24' |
     'close12' |
     'close16' |
     'close20' |
@@ -202,6 +209,8 @@ export type Icon =
     'contrast24' |
     'copy16' |
     'copy24' |
+    'coupon16' |
+    'coupon24' |
     'creditCard16' |
     'creditCard24' |
     'creditCard64' |
@@ -232,12 +241,15 @@ export type Icon =
     'discord24' |
     'discount16' |
     'discount24' |
+    'discountAuto16' |
+    'discountAuto24' |
     'discover12Colored' |
     'discover18Colored' |
     'discover24Colored' |
     'discover32Colored' |
     'dollar16' |
     'dollar24' |
+    'dollarOff24' |
     'download16' |
     'download20' |
     'download24' |
@@ -255,6 +267,7 @@ export type Icon =
     'ebayInternationalShipping64' |
     'ebayLive16' |
     'ebayLive24' |
+    'ebayLogo16Colored' |
     'ebayMastercard12Colored' |
     'ebayMastercard18Colored' |
     'ebayMastercard24Colored' |
@@ -263,6 +276,7 @@ export type Icon =
     'ebayPlus16' |
     'ebayPlus24' |
     'ebayPlusLogo16Colored' |
+    'ebayPlusLogoDark16Colored' |
     'ebayPreloved16' |
     'ebayPreloved24' |
     'ebayRefurbished16' |
@@ -286,6 +300,7 @@ export type Icon =
     'europeanConformity48' |
     'exclude16' |
     'exclude24' |
+    'exclude64' |
     'expand16' |
     'explore16' |
     'explore24' |
@@ -305,6 +320,8 @@ export type Icon =
     'feedback16' |
     'feedback20' |
     'feedback24' |
+    'feedbackError16' |
+    'feedbackError24' |
     'feedbackReceived16' |
     'feedbackReceived24' |
     'file16' |
@@ -371,6 +388,7 @@ export type Icon =
     'gridView24' |
     'gridViewFilled16' |
     'gridViewFilled24' |
+    'handSwipe40' |
     'handbag16' |
     'handbag24' |
     'hanger16' |
@@ -475,6 +493,8 @@ export type Icon =
     'location16' |
     'location24' |
     'location64' |
+    'locationArrow16' |
+    'locationArrow24' |
     'lock16' |
     'lock24' |
     'lockFilled16' |
@@ -566,6 +586,7 @@ export type Icon =
     'package16' |
     'package24' |
     'package64' |
+    'packageError24' |
     'panel16' |
     'panel20' |
     'panel24' |
@@ -585,6 +606,7 @@ export type Icon =
     'passkey24' |
     'passkey64' |
     'pause16' |
+    'pause20' |
     'pause24' |
     'pauseFilled64Colored' |
     'payoneer12Colored' |
@@ -610,6 +632,7 @@ export type Icon =
     'pencil16' |
     'pencil20' |
     'pencil24' |
+    'pencilSigned24' |
     'peso16' |
     'peso24' |
     'phone16' |
@@ -618,6 +641,7 @@ export type Icon =
     'pinFilled24' |
     'pinterest24' |
     'play16' |
+    'play20' |
     'play24' |
     'playFilled16Colored' |
     'playFilled24Colored' |
@@ -640,8 +664,15 @@ export type Icon =
     'progressUpcoming24' |
     'promotion16' |
     'promotion24' |
+    'psa16' |
+    'psa16Colored' |
+    'psaLogo16' |
+    'psaLogoColor16Colored' |
     'psaVault16' |
     'psaVault16Colored' |
+    'psaVault24' |
+    'psaVaultLogo16' |
+    'psaVaultLogoColor16Colored' |
     'qrCode16' |
     'qrCode24' |
     'radioChecked18' |
@@ -652,6 +683,7 @@ export type Icon =
     'recoveryCode24' |
     'reddit24' |
     'refresh16' |
+    'refresh20' |
     'refresh24' |
     'relaxedGrid24' |
     'relaxedGridFilled24' |
@@ -799,12 +831,17 @@ export type Icon =
     'tiktok24' |
     'toggleModeBottom24' |
     'toggleModeTop24' |
+    'topRatedPlus16' |
+    'topRatedPlus24' |
     'topRatedSeller16' |
     'topRatedSeller24' |
     'topService16' |
     'topService24' |
+    'topServiceFilled16Colored' |
+    'topServiceFilled24Colored' |
     'tradingCard16' |
     'tradingCard24' |
+    'tradingCardEdition24' |
     'tradingCardGrade16' |
     'tradingCardGrade24' |
     'transaction24' |

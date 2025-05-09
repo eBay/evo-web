@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.4.0
+
+### Minor Changes
+
+- [`c80173e`](https://github.com/eBay/evo-web/commit/c80173e2b5413507081d0ec3784a348496ba6b26) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons
+
 ## 15.3.0
 
 ### Minor Changes

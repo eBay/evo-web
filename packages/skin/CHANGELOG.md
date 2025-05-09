@@ -1,5 +1,15 @@
 # Skin Changelog
 
+## 19.4.0
+
+### Minor Changes
+
+- [#119](https://github.com/eBay/evo-web/pull/119) [`55dafc6`](https://github.com/eBay/evo-web/commit/55dafc64d50aef10b493de489f7c0ec0adda485f) Thanks [@agliga](https://github.com/agliga)! - feat(ccd): updated to latest specs
+
+- [#119](https://github.com/eBay/evo-web/pull/119) [`1bedf6c`](https://github.com/eBay/evo-web/commit/1bedf6c86e7c538a566a9bd6544374d4dee2c30d) Thanks [@agliga](https://github.com/agliga)! - feat(icon): updated icons
+
+- [#119](https://github.com/eBay/evo-web/pull/119) [`2355fe5`](https://github.com/eBay/evo-web/commit/2355fe5bcc98055b714dc79845f2b4c428c66991) Thanks [@agliga](https://github.com/agliga)! - fix(notice): resolve CTA alignment issue for none icon case
+
 ## 19.3.0
 
 ### Minor Changes
