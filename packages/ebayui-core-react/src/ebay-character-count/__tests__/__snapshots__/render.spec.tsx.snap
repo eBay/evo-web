@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EbayCharacterCount /> rendering renders customText story correctly 1`] = `
+<div>
+  <span
+    class="field"
+  >
+    <label
+      class="field__label field__label--stacked"
+      for="my-input"
+    >
+      Field Label
+    </label>
+    <span
+      class="field__control"
+    >
+      <span
+        class="textbox"
+      >
+        <input
+          aria-describedby="my-input-description my-input-charcount"
+          aria-live="off"
+          class="textbox__control"
+          id="my-input"
+          type="text"
+          value="Custom"
+        />
+      </span>
+    </span>
+    <div
+      class="field__description field__description--group"
+    >
+      <span
+        id="my-input-description"
+      >
+        Brief description
+      </span>
+      <span
+        id="my-input-charcount"
+      >
+        6
+         of 
+        150
+         (
+        144
+         remaining)
+      </span>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`<EbayCharacterCount /> rendering renders default story correctly 1`] = `
+<div>
+  <span>
+    11
+    /
+    120
+    <span
+      class="clipped"
+    >
+      characters remaining
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<EbayCharacterCount /> rendering renders inField story correctly 1`] = `
+<div>
+  <span
+    class="field"
+  >
+    <label
+      class="field__label field__label--stacked"
+      for="my-input"
+    >
+      Field Label
+    </label>
+    <span
+      class="field__control"
+    >
+      <span
+        class="textbox"
+      >
+        <input
+          aria-describedby="my-input-description my-input-charcount"
+          aria-live="off"
+          class="textbox__control"
+          id="my-input"
+          type="text"
+          value=""
+        />
+      </span>
+    </span>
+    <div
+      class="field__description field__description--group"
+    >
+      <span
+        id="my-input-description"
+      >
+        Brief description
+      </span>
+      <span
+        id="my-input-charcount"
+      >
+        0
+        /
+        120
+        <span
+          class="clipped"
+        >
+          characters remaining
+        </span>
+      </span>
+    </div>
+  </span>
+</div>
+`;

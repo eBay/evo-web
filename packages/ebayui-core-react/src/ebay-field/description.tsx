@@ -23,7 +23,7 @@ const Description: FC<DescriptionProps> = ({
 
     return (
         <WrapperElement {...rest} className={wrapperClassName}>
-            <span>{children}</span>
+            {children}
         </WrapperElement>)
 }
 
