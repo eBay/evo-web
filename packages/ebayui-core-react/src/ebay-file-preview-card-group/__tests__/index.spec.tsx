@@ -2,7 +2,10 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import { EbayFilePreviewCardProps } from '../../ebay-file-preview-card'
+import {
+    EbayFilePreviewCardProps,
+    EbayFilePreviewCard
+} from '../../ebay-file-preview-card'
 import { EbayFilePreviewCardGroup } from '../'
 
 describe('<EbayFilePreviewCardGroup>', () => {
@@ -15,10 +18,11 @@ describe('<EbayFilePreviewCardGroup>', () => {
             }
         }))
         render(
-            <EbayFilePreviewCardGroup
-                a11yCancelUploadText="Cancel upload"
-                cards={cards}
-            />
+            <EbayFilePreviewCardGroup a11ySeeMoreText="see more tet">
+                {cards.map((cardFile, index) => (
+                    <EbayFilePreviewCard key={index} {...cardFile} />
+                ))}
+            </EbayFilePreviewCardGroup>
         )
 
         const imagesBeforeClick = screen.getAllByRole('img')
@@ -39,16 +43,21 @@ describe('<EbayFilePreviewCardGroup>', () => {
                     name: 'file-name.jpg',
                     type: 'image',
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
-                }
+                },
+                a11yCancelUploadText: 'Cancel upload'
             })
         )
         const onCancelClick = jest.fn()
         render(
-            <EbayFilePreviewCardGroup
-                a11yCancelUploadText="Cancel upload"
-                cards={cards}
-                onCancel={onCancelClick}
-            />
+            <EbayFilePreviewCardGroup>
+                {cards.map((cardFile, index) => (
+                    <EbayFilePreviewCard
+                        key={index}
+                        {...cardFile}
+                        onCancel={onCancelClick}
+                    />
+                ))}
+            </EbayFilePreviewCardGroup>
         )
         const buttonEl = screen.getAllByRole('button', {
             name: 'Cancel upload'
@@ -59,6 +68,8 @@ describe('<EbayFilePreviewCardGroup>', () => {
         expect(onCancelClick).toHaveBeenCalled()
     })
     it('click on menu action fire onMenuAction event', async () => {
+        const onDeleteClick = jest.fn()
+        const onMenuAction = jest.fn()
         const cards: EbayFilePreviewCardProps[] = Array.from(
             { length: 2 },
             () => ({
@@ -66,17 +77,10 @@ describe('<EbayFilePreviewCardGroup>', () => {
                     name: 'file-name.jpg',
                     type: 'image',
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
-                }
-            })
-        )
-        const onDeleteClick = jest.fn()
-        const onMenuAction = jest.fn()
-        render(
-            <EbayFilePreviewCardGroup
-                deleteText="Delete"
-                a11yCancelUploadText="Cancel upload"
-                cards={cards}
-                menuActions={[
+                },
+                deleteText: 'Delete',
+                a11yCancelUploadText: 'Cancel upload',
+                menuActions: [
                     {
                         event: 'edit',
                         label: 'Edit'
@@ -85,10 +89,18 @@ describe('<EbayFilePreviewCardGroup>', () => {
                         event: 'download',
                         label: 'Download'
                     }
-                ]}
-                onMenuAction={onMenuAction}
-                onDelete={onDeleteClick}
-            />
+                ],
+                onMenuAction: onMenuAction,
+                onDelete: onDeleteClick
+            })
+        )
+
+        render(
+            <EbayFilePreviewCardGroup>
+                {cards.map((cardFile, index) => (
+                    <EbayFilePreviewCard key={index} {...cardFile} />
+                ))}
+            </EbayFilePreviewCardGroup>
         )
         const buttonEl = screen.getAllByRole('button')[0]
 
@@ -99,7 +111,6 @@ describe('<EbayFilePreviewCardGroup>', () => {
         expect(onMenuAction).toHaveBeenCalledWith(
             expect.any(Object),
             expect.objectContaining({
-                cardIndex: 0,
                 checked: [0],
                 eventName: 'edit',
                 index: 0
@@ -108,6 +119,7 @@ describe('<EbayFilePreviewCardGroup>', () => {
         expect(onDeleteClick).not.toHaveBeenCalled()
     })
     it('click on delete fire onDelete event', async () => {
+        const onDeleteClick = jest.fn()
         const cards: EbayFilePreviewCardProps[] = Array.from(
             { length: 2 },
             () => ({
@@ -115,17 +127,20 @@ describe('<EbayFilePreviewCardGroup>', () => {
                     name: 'file-name.jpg',
                     type: 'image',
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
-                }
+                },
+                deleteText: 'Delete',
+                a11yCancelUploadText: 'Cancel upload',
+
+                onDelete: onDeleteClick
             })
         )
-        const onDeleteClick = jest.fn()
+
         render(
-            <EbayFilePreviewCardGroup
-                deleteText="Delete"
-                a11yCancelUploadText="Cancel upload"
-                cards={cards}
-                onDelete={onDeleteClick}
-            />
+            <EbayFilePreviewCardGroup>
+                {cards.map((cardFile, index) => (
+                    <EbayFilePreviewCard key={index} {...cardFile} />
+                ))}
+            </EbayFilePreviewCardGroup>
         )
         const buttonEl = screen.getAllByRole('button', {
             name: 'Delete'
