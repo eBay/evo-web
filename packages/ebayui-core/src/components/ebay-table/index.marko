@@ -11,6 +11,7 @@ $ const {
     a11ySelectAllText,
     a11ySelectRowText,
     mode = "none",
+    frozenHeader,
     bodyState = "none",
     ...divInput
 } = input;
@@ -23,6 +24,7 @@ $ const isLoading = bodyState === "loading";
         "table",
         mode === "selection" && "table--mode-selection",
         isLoading && "table--loading-state",
+        frozenHeader && "table--frozen-header",
         density &&
             validDensity.includes(density) &&
             `table--density-${density}`,

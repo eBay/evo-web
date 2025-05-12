@@ -13,6 +13,8 @@ import sortWithLinkTemplate from "./examples/sort-with-link.marko";
 import sortWithLinkCode from "./examples/sort-with-link.marko?raw";
 import sortClientSideTemplate from "./examples/sort-client-side.marko";
 import sortClientSideCode from "./examples/sort-client-side.marko?raw";
+import frozenHeaderTemplate from "./examples/frozen-header.marko";
+import frozenHeaderCode from "./examples/frozen-header.marko?raw";
 
 export default {
     title: "data-display/ebay-table",
@@ -39,6 +41,10 @@ export default {
             control: { type: "select" },
             description: "table state",
             options: ["loading", "none"],
+        },
+        frozenHeader: {
+            control: { type: "boolean" },
+            description: "If true, the header will be frozen",
         },
         allSelected: {
             control: { type: "select" },
@@ -191,4 +197,15 @@ export const ColumnSortingWithLink = buildExtensionTemplate(
 export const ColumnSortingClientSide = buildExtensionTemplate(
     sortClientSideTemplate,
     sortClientSideCode,
+);
+
+export const FrozenHeader = buildExtensionTemplate(
+    frozenHeaderTemplate,
+    frozenHeaderCode,
+    {
+        frozenHeader: true,
+        style: {
+            height: "300px",
+        }
+    }
 );
