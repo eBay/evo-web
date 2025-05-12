@@ -66,8 +66,6 @@ class NumberInput extends Marko.Component<Input, State> {
             newValue = this.state.max;
         } else if (newValue < this.state.min) {
             newValue = this.state.min;
-        } else if (newValue < 0) {
-            newValue = 0;
         }
         return newValue;
     }
@@ -75,6 +73,8 @@ class NumberInput extends Marko.Component<Input, State> {
     updateInputValue(event: TextboxEvent) {
         const value = this.checkBoundary(this.textbox.value, 0);
         this.state.value = value;
+        // Update the input field's value to reflect the bounded value
+        this.textbox.value = value.toString();
         this.emit("input-change", { originalEvent: event.originalEvent, value });
         this.emit("change", { originalEvent: event.originalEvent, value });
     }
@@ -82,12 +82,16 @@ class NumberInput extends Marko.Component<Input, State> {
     updateInputValueChange(event: TextboxEvent) {
         const value = this.checkBoundary(this.textbox.value, 0);
         this.state.value = value;
+        // Update the input field's value to reflect the bounded value
+        this.textbox.value = value.toString();
         this.emit("change", { originalEvent: event.originalEvent, value });
     }
 
     handleIncrement(event: { originalEvent: MouseEvent }) {
         const value = this.checkBoundary(this.textbox.value, 1);
         this.state.value = value;
+        // Update the input field's value to reflect the bounded value
+        this.textbox.value = value.toString();
         this.emit("increment", { originalEvent: event.originalEvent, value });
         this.emit("change", { originalEvent: event.originalEvent, value });
     }
@@ -95,6 +99,8 @@ class NumberInput extends Marko.Component<Input, State> {
     handleDecrement(event: { originalEvent: MouseEvent }) {
         const value = this.checkBoundary(this.textbox.value, -1);
         this.state.value = value;
+        // Update the input field's value to reflect the bounded value
+        this.textbox.value = value.toString();
         this.emit("decrement", { originalEvent: event.originalEvent, value });
         this.emit("change", { originalEvent: event.originalEvent, value });
     }

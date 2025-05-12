@@ -3,70 +3,75 @@ import { processHtmlAttributes } from "../../common/html-attributes"
 $ const {
     label,
     a11yDeleteText,
+    class: inputClass,
     value,
     min,
     max,
     ...htmlInput
 } = input;
 
-<ebay-textbox
-    ...processHtmlAttributes(htmlInput)
-    min=state.min
-    max=state.max
-    id:scoped="number-input"
-    on-input-change("updateInputValue")
-    on-change("updateInputValueChange")
-    on-keydown("emit", "keydown")
-    on-keyup("emit", "keyup")
-    on-focus("emit", "focus")
-    on-blur("emit", "blur")
-    on-keypress("emit", "keypress")
-    class=[
-        "number-input",
-        a11yDeleteText && state.value === 1 && "number-input--show-delete",
-    ]
-    type="number"
-    key="input"
-    value=state.value
-    >
->
-    <@prefix-icon>
-        <if(label)>
-            <label
-                for:scoped="number-input"
-            >
-                <${label}/>
-            </label>
-        </if>
-        <ebay-icon-button
-            class="number-input__decrement"
-            transparent
-            tabindex="-1"
-            on-click("handleDecrement")
+<span class=[
+    "number-input",
+    a11yDeleteText && state.value === 1 && "number-input--show-delete",
+    inputClass,
+]>
+    <ebay-textbox
+        ...processHtmlAttributes(htmlInput)
+        min=state.min
+        max=state.max
+        id:scoped="number-input"
+        on-input-change("updateInputValue")
+        on-change("updateInputValueChange")
+        on-keydown("emit", "keydown")
+        on-keyup("emit", "keyup")
+        on-focus("emit", "focus")
+        on-blur("emit", "blur")
+        on-keypress("emit", "keypress")
+        type="number"
+        key="input"
+        value=state.value
         >
-            <ebay-remove-24-icon/>
-        </ebay-icon-button>
-
-    </@prefix-icon>
-    <@postfix-icon>
-        <if(a11yDeleteText)>
+        <@prefix-icon>
+            <if(label)>
+                <label
+                    for:scoped="number-input"
+                >
+                    <${label}/>
+                </label>
+            </if>
             <ebay-icon-button
-                class="number-input__delete"
+                size="small"
+                class="number-input__decrement"
                 transparent
-                aria-label=a11yDeleteText
-                on-click("emit", "delete-click")
+                tabindex="-1"
+                on-click("handleDecrement")
             >
-                <ebay-delete-24-icon/>
+                <ebay-remove-24-icon/>
             </ebay-icon-button>
-        </if>
 
-        <ebay-icon-button
-            class="number-input__increment"
-            transparent
-            on-click("handleIncrement")
-            tabindex="-1"
-        >
-            <ebay-add-24-icon/>
-        </ebay-icon-button>
-    </@postfix-icon>
-</ebay-textbox>
+        </@prefix-icon>
+        <@postfix-icon>
+            <if(a11yDeleteText)>
+                <ebay-icon-button
+                    class="number-input__delete"
+                    size="small"
+                    transparent
+                    aria-label=a11yDeleteText
+                    on-click("emit", "delete-click")
+                >
+                    <ebay-delete-24-icon/>
+                </ebay-icon-button>
+            </if>
+
+            <ebay-icon-button
+                class="number-input__increment"
+                size="small"
+                transparent
+                on-click("handleIncrement")
+                tabindex="-1"
+            >
+                <ebay-add-24-icon/>
+            </ebay-icon-button>
+        </@postfix-icon>
+    </ebay-textbox>
+</span>

@@ -1,4 +1,4 @@
-.number-input.textbox {
+.number-input .textbox {
     background: transparent;
 }
 
@@ -34,21 +34,23 @@
     display: none;
 }
 
-.number-input.textbox input.textbox__control {
+.number-input .textbox input.textbox__control {
     font-weight: 700;
     text-align: center;
     width: 48px;
 }
-.number-input.textbox input.textbox__control::-webkit-inner-spin-button,
-.number-input.textbox input.textbox__control::-webkit-outer-spin-button {
+.number-input .textbox input.textbox__control::-webkit-inner-spin-button,
+.number-input .textbox input.textbox__control::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.number-input.textbox input.textbox__control[type="number"] {
+.number-input .textbox input.textbox__control[type="number"] {
     -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
 }
 
-.number-input.textbox .icon-btn svg {
+.number-input .textbox .icon-btn svg {
     color: var(--color-foreground-primary);
     fill: currentColor;
 }

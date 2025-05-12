@@ -1,4 +1,4 @@
-.number-input.textbox {
+.number-input .textbox {
     background: transparent;
 }
 
@@ -32,7 +32,7 @@
     display: none;
 }
 
-.number-input.textbox input.textbox__control {
+.number-input .textbox input.textbox__control {
     font-weight: bold;
     text-align: center;
     width: 48px;
@@ -46,10 +46,11 @@
     /* Firefox */
     &[type="number"] {
         -moz-appearance: textfield;
+        appearance: textfield;
     }
 }
 
-.number-input.textbox .icon-btn svg {
+.number-input .textbox .icon-btn svg {
     color: var(--color-foreground-primary);
     fill: currentColor;
 }
