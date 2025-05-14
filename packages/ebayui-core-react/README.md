@@ -21,8 +21,9 @@ eBayUI React components
 * [x] [ebay-breadcrumbs](src/ebay-breadcrumbs)
 * [x] [ebay-button](src/ebay-button)
 * [x] [ebay-calendar](src/ebay-calendar)
-* [ ] `ebay-character-count`
 * [x] [ebay-carousel](src/ebay-carousel)
+* [x] [ebay-ccd](src/ebay-ccd)
+* [ ] `ebay-character-count`
 * [ ] `ebay-chart-legend`
 * [x] [ebay-checkbox](src/ebay-checkbox)
 * [x] [ebay-chip](src/ebay-chip)

@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EbayCCD renders ccd with charger included 1`] = `
+<div>
+  <div
+    aria-label="Charger included."
+    class="ccd"
+    role="figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__charger-icon icon icon--ccd-charger-included"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-ccd-charger-included"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`EbayCCD renders ccd with charger included and usbpd 1`] = `
+<div>
+  <div
+    aria-label="Charger included."
+    class="ccd"
+    role="figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__charger-icon icon icon--ccd-charger-included"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-ccd-charger-included"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`EbayCCD renders ccd with charger not included 1`] = `
+<div>
+  <div
+    aria-label="Charger not included."
+    class="ccd"
+    role="figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__charger-icon icon icon--ccd-charger-not-included"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-ccd-charger-not-included"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`EbayCCD renders ccd with custom a11y 1`] = `
+<div>
+  <div
+    a11ytext="custom text"
+    aria-label="Charger included."
+    class="ccd"
+    role="figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__charger-icon icon icon--ccd-charger-included"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-ccd-charger-included"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`EbayCCD renders ccd with usbpd included 1`] = `
+<div>
+  <div
+    aria-label=""
+    class="ccd"
+    role="figure"
+  />
+</div>
+`;
+
+exports[`EbayCCD renders default ccd 1`] = `
+<div>
+  <div
+    aria-label=""
+    class="ccd"
+    role="figure"
+  />
+</div>
+`;
+
+exports[`EbayCCD renders with min and max 1`] = `
+<div>
+  <div
+    aria-label="1 - 10 watts."
+    class="ccd"
+    role="figure"
+  >
+    <div
+      class="ccd__description-figure"
+    >
+      <svg
+        aria-hidden="true"
+        class="ccd__top-icon icon icon--ccd-top"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-ccd-top"
+        />
+      </svg>
+      <div
+        class="ccd__body"
+      >
+        <div>
+          1
+           - 
+          10
+        </div>
+        <div>
+          W
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EbayCCD renders with min and max but with charger included 1`] = `
+<div>
+  <div
+    aria-label="Charger included. 1 - 10 watts."
+    class="ccd"
+    role="figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__charger-icon icon icon--ccd-charger-included"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-ccd-charger-included"
+      />
+    </svg>
+    <div
+      class="ccd__description-figure"
+    >
+      <svg
+        aria-hidden="true"
+        class="ccd__top-icon icon icon--ccd-top"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-ccd-top"
+        />
+      </svg>
+      <div
+        class="ccd__body"
+      >
+        <div>
+          1
+           - 
+          10
+        </div>
+        <div>
+          W
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EbayCCD renders with min and max but with no charger included 1`] = `
+<div>
+  <div
+    aria-label="Charger not included. 1 - 10 watts."
+    class="ccd"
+    role="figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__charger-icon icon icon--ccd-charger-not-included"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-ccd-charger-not-included"
+      />
+    </svg>
+    <div
+      class="ccd__description-figure"
+    >
+      <svg
+        aria-hidden="true"
+        class="ccd__top-icon icon icon--ccd-top"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-ccd-top"
+        />
+      </svg>
+      <div
+        class="ccd__body"
+      >
+        <div>
+          1
+           - 
+          10
+        </div>
+        <div>
+          W
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
