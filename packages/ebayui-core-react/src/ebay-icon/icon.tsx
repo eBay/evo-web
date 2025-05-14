@@ -13,6 +13,12 @@ export type EbayIconProps = SVGProps<SVGSVGElement> & {
     a11yText?: string;
     a11yVariant?: A11yVariant;
     forwardedRef?: Ref<SVGSVGElement>;
+    /**
+     * These properties are used by EbayImagePlaceholder and will be used for flags.
+     * NOTE: The flag "@deprecated" is only to not show this property in the autocomplete list on the top
+     * @deprecated
+    */
+    __type?: 'icon' | 'none';
 };
 
 const EbayIcon: FC<EbayIconProps> = ({
@@ -22,6 +28,7 @@ const EbayIcon: FC<EbayIconProps> = ({
     a11yText,
     a11yVariant,
     forwardedRef,
+    __type = 'icon',
     ...rest
 }) => {
     const [rId, setRandomId] = useState('')
@@ -47,6 +54,8 @@ const EbayIcon: FC<EbayIconProps> = ({
         { [skinClassName]: !noSkinClasses }
     )
 
+    const iconPrefix = __type === 'icon' ? 'icon-' : ''
+
     return (
         <svg
             {...rest}
@@ -57,7 +66,7 @@ const EbayIcon: FC<EbayIconProps> = ({
             {...a11yProps}
         >
             {a11yText && !withAriaLabel && <title id={a11yTextId}>{a11yText}</title>}
-            <use xlinkHref={`#icon-${kebabName}`} />
+            <use xlinkHref={`#${iconPrefix}${kebabName}`} />
         </svg>
     )
 }

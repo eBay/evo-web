@@ -17,15 +17,9 @@ function parseSVGSymbols(skinIconsFile) {
 
 function getIconKeys(icons = []) {
     const symbolIds = icons.map(symbol => symbol.attributes.id)
-    const skipped = symbolIds.filter(id => !id.startsWith('icon-'));
-
-    if (skipped.length) {
-        console.log(`Skipping ${skipped.length} icons: ${skipped.join(', ')}.`)
-    }
 
     return {
         iconKeys: symbolIds
-            .filter(symbolId => symbolId.startsWith('icon-'))
             .map(symbolId => camelCased(symbolId.replace(/^icon-/, '')))
             .sort()
     }

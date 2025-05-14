@@ -419,6 +419,7 @@ export type Icon =
     'image16' |
     'image24' |
     'image64' |
+    'imagePlaceholder' |
     'inbox16' |
     'inbox24' |
     'information16' |
@@ -792,6 +793,28 @@ export type Icon =
     'starHalf24Colored' |
     'starHalfDark16Colored' |
     'starHalfDark24Colored' |
+    'starRating0' |
+    'starRating05' |
+    'starRating1' |
+    'starRating15' |
+    'starRating2' |
+    'starRating25' |
+    'starRating3' |
+    'starRating35' |
+    'starRating4' |
+    'starRating45' |
+    'starRating5' |
+    'starRatingSmall0' |
+    'starRatingSmall05' |
+    'starRatingSmall1' |
+    'starRatingSmall15' |
+    'starRatingSmall2' |
+    'starRatingSmall25' |
+    'starRatingSmall3' |
+    'starRatingSmall35' |
+    'starRatingSmall4' |
+    'starRatingSmall45' |
+    'starRatingSmall5' |
     'stepperAttention24' |
     'stepperConfirmation24' |
     'stepperCurrent24' |

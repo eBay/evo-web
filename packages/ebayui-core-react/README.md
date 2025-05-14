@@ -47,7 +47,7 @@ eBayUI React components
 * [ ] `ebay-flag`
 * [x] [ebay-icon-button](src/ebay-icon-button)
 * [x] [ebay-icon](src/ebay-icon)
-* [ ] `ebay-image-placeholder`
+* [x] [ebay-image-placeholder](src/ebay-image-placeholder)
 * [x] [ebay-infotip](src/ebay-infotip)
 * [x] [ebay-inline-notice](src/ebay-inline-notice)
 * [x] [ebay-lightbox-dialog](src/ebay-lightbox-dialog)
