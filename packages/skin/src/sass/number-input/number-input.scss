@@ -11,10 +11,10 @@
     flex-grow: 0;
 }
 
-.number-input--show-delete .icon-btn.number-input__delete {
+.number-input--show-delete .number-input__delete {
     display: block;
 }
-.number-input--show-delete .icon-btn.number-input__decrement {
+.number-input--show-delete .number-input__decrement {
     display: none;
 }
 
@@ -32,7 +32,7 @@
     display: none;
 }
 
-.number-input .textbox input.textbox__control {
+.number-input .textbox .textbox__control {
     font-weight: bold;
     text-align: center;
     width: 48px;

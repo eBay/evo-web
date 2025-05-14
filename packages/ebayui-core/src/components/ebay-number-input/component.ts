@@ -29,7 +29,7 @@ interface NumberInputInput extends Omit<TextboxInput, `on${string}`> {
 export interface Input extends WithNormalizedProps<NumberInputInput> {}
 
 class NumberInput extends Marko.Component<Input, State> {
-    declare textbox: any;
+    declare textbox: HTMLInputElement;
 
     onCreate() {
         this.state = {
@@ -40,7 +40,7 @@ class NumberInput extends Marko.Component<Input, State> {
     }
 
     onMount() {
-        this.textbox = this.getComponent("input")?.getEl("input");
+        this.textbox = this.getComponent("input")?.getEl("input") as HTMLInputElement;
     }
 
     onInput(input: Input) {
