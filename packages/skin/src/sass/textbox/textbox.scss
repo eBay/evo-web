@@ -214,12 +214,12 @@ input.textbox__control {
     display: inline-flex;
     height: 1lh;
     pointer-events: none;
-    width: 14px;
     @include fill-token(textbox-icon-color, color-foreground-secondary);
 }
 
 .textbox > svg:first-child,
 .textbox > span:first-child {
+    flex-shrink: 0;
     margin-inline-start: var(--spacing-200);
 }
 

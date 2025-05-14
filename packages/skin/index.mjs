@@ -25,6 +25,7 @@ import './dist/file-input/file-input.css';
 import './dist/file-preview-card/file-preview-card.css';
 import './dist/file-preview-card-group/file-preview-card-group.css';
 import './dist/filter-button/filter-button.css';
+import './dist/filter-input/filter-input.css';
 import './dist/filter-menu/filter-menu.css';
 import './dist/filter-menu-button/filter-menu-button.css';
 import './dist/flag/flag.css';
