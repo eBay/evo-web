@@ -13,8 +13,8 @@ export type EbayFilePreviewActionProps = {
     status?: 'uploading'
     a11yCancelUploadText?: string
     onMenuAction?: FilePreviewCardMenuActionHandler
-    onCancel?: EbayEventHandler
-    onDelete?: EbayEventHandler
+    onCancel?: EbayEventHandler<HTMLElement>
+    onDelete?: EbayEventHandler<HTMLElement>
 }
 
 const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({

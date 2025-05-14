@@ -15,7 +15,37 @@ const meta: Meta<typeof EbayFilePreviewCardGroup> = {
             type: 'string',
             control: { type: 'text' },
             description: 'a11y text for see more button, applied to all cards'
-        }
+        },
+        onDelete: {
+            action: 'onDelete',
+            description: 'Triggered when the delete button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
+        },
+        onCancel: {
+            action: 'onCancel',
+            description: 'Triggered when the cancel button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
+        },
+        onMenuAction: {
+            action: 'onMenuAction',
+            description: 'Triggered when an action is selected from the menu. ',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: 'name, event /* from ebay-menu-button */'
+                }
+            }
+        },
     }
 }
 export default meta
@@ -28,7 +58,6 @@ export const Default: StoryFn<typeof EbayFilePreviewCardGroup> = (args) => {
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
         },
         deleteText: 'Delete text',
-        onDelete: action('onDelete')
     }))
     return (
         <EbayFilePreviewCardGroup {...args}>
@@ -36,7 +65,6 @@ export const Default: StoryFn<typeof EbayFilePreviewCardGroup> = (args) => {
                 <EbayFilePreviewCard
                     key={index}
                     {...cardFile}
-                    onMenuAction={(e, data) => console.log(e, data)}
                 />
             ))}
         </EbayFilePreviewCardGroup>

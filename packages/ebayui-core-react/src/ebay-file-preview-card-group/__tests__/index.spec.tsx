@@ -49,13 +49,9 @@ describe('<EbayFilePreviewCardGroup>', () => {
         )
         const onCancelClick = jest.fn()
         render(
-            <EbayFilePreviewCardGroup>
+            <EbayFilePreviewCardGroup onCancel={onCancelClick}>
                 {cards.map((cardFile, index) => (
-                    <EbayFilePreviewCard
-                        key={index}
-                        {...cardFile}
-                        onCancel={onCancelClick}
-                    />
+                    <EbayFilePreviewCard key={index} {...cardFile} />
                 ))}
             </EbayFilePreviewCardGroup>
         )
@@ -89,14 +85,15 @@ describe('<EbayFilePreviewCardGroup>', () => {
                         event: 'download',
                         label: 'Download'
                     }
-                ],
-                onMenuAction: onMenuAction,
-                onDelete: onDeleteClick
+                ]
             })
         )
 
         render(
-            <EbayFilePreviewCardGroup>
+            <EbayFilePreviewCardGroup
+                onMenuAction={onMenuAction}
+                onDelete={onDeleteClick}
+            >
                 {cards.map((cardFile, index) => (
                     <EbayFilePreviewCard key={index} {...cardFile} />
                 ))}
@@ -111,9 +108,12 @@ describe('<EbayFilePreviewCardGroup>', () => {
         expect(onMenuAction).toHaveBeenCalledWith(
             expect.any(Object),
             expect.objectContaining({
-                checked: [0],
-                eventName: 'edit',
-                index: 0
+                index: 0,
+                menuActionEvent: {
+                    checked: [0],
+                    eventName: 'edit',
+                    index: 0
+                }
             })
         )
         expect(onDeleteClick).not.toHaveBeenCalled()
@@ -129,14 +129,12 @@ describe('<EbayFilePreviewCardGroup>', () => {
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                 },
                 deleteText: 'Delete',
-                a11yCancelUploadText: 'Cancel upload',
-
-                onDelete: onDeleteClick
+                a11yCancelUploadText: 'Cancel upload'
             })
         )
 
         render(
-            <EbayFilePreviewCardGroup>
+            <EbayFilePreviewCardGroup onDelete={onDeleteClick}>
                 {cards.map((cardFile, index) => (
                     <EbayFilePreviewCard key={index} {...cardFile} />
                 ))}

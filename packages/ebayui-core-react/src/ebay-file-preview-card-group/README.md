@@ -52,6 +52,14 @@ const fileExample = {
 
 ## Attributes
 
-| Name              | Type                         | Required | Description                                                | Data                       |
-| ----------------- | ---------------------------- | -------- | ---------------------------------------------------------- | -------------------------- |
-| `a11ySeeMoreText` | `String`                     | No       | a11y text for see more button.                             |
+| Name              | Type     | Required | Description                    | Data |
+| ----------------- | -------- | -------- | ------------------------------ | ---- |
+| `a11ySeeMoreText` | `String` | No       | a11y text for see more button. |
+
+## Events
+
+| Name           | Type                           | Required | Description                                         | Data                                                                                               |
+| -------------- | ------------------------------ | -------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `onMenuAction` | `EbayMenuSelectEventHandler`   | No       | Triggered when an action is selected from the menu. | `event, {index: number, menuActionEvent: { index: number, checked: number[], eventName?: string}}` |
+| `onDelete`     | `FilePreviewCardActionHandler` | No       | Triggered when the delete button is clicked.        | `event, {index: number}`                                                                           |
+| `onCancel`     | `FilePreviewCardActionHandler` | No       | Triggered when the cancel button is clicked.        | `event, {index: number}`                                                                           |

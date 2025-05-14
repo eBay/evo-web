@@ -4,15 +4,22 @@ import {
     EbayFilePreviewCard,
     EbayFilePreviewCardProps
 } from '../ebay-file-preview-card'
+import { FilePreviewCardActionHandler, FilePreviewCardMenuActionHandler } from './types'
 
 export type EbayFilePreviewCardGroupProps = ComponentProps<'div'> & {
     a11ySeeMoreText?: EbayFilePreviewCardProps['a11ySeeMoreText']
+    onDelete?: FilePreviewCardActionHandler
+    onCancel?: FilePreviewCardActionHandler
+    onMenuAction?: FilePreviewCardMenuActionHandler
 }
 
 const SHOW_AMOUNT = 15 // default number of cards to show taken from marko's implementation
 
 const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     a11ySeeMoreText,
+    onDelete,
+    onCancel,
+    onMenuAction,
     children,
     ...rest
 }) => {
@@ -32,9 +39,16 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     return (
         <div className="file-preview-card-group" {...rest}>
             <ul>
-                {fileCardsToShow.map((previewCard) =>
+                {fileCardsToShow.map((previewCard, i) =>
                     React.cloneElement(previewCard, {
-                        as: previewCard.props.as || 'li' // default in preview card is 'div', here should be 'li'
+                        as: previewCard.props.as || 'li', // default in preview card is 'div', here should be 'li'
+                        onDelete: (e) => onDelete && onDelete(e, { index: i }),
+                        onCancel: (e) => onCancel && onCancel(e, { index: i }),
+                        onMenuAction: (e, data) =>
+                            onMenuAction && onMenuAction(e, {
+                                index: i,
+                                menuActionEvent: data
+                            })
                     })
                 )}
                 {notShowing > 0 &&
