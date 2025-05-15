@@ -9,6 +9,7 @@ exports[`ebay-number-input > renders default number input 1`] = `
       [33mclass[39m=[32m"textbox"[39m
     [36m>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mdisabled[39m=[32m""[39m
@@ -45,6 +46,7 @@ exports[`ebay-number-input > renders default number input 1`] = `
         [33mvalue[39m=[32m"0"[39m
       [36m/>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mtabindex[39m=[32m"-1"[39m
@@ -84,6 +86,7 @@ exports[`ebay-number-input > renders number input with delete 1`] = `
       [33mclass[39m=[32m"textbox"[39m
     [36m>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mdisabled[39m=[32m""[39m
@@ -151,6 +154,7 @@ exports[`ebay-number-input > renders number input with delete 1`] = `
         [36m</svg>[39m
       [36m</button>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mtabindex[39m=[32m"-1"[39m
@@ -190,6 +194,7 @@ exports[`ebay-number-input > renders number input with delete hidden 1`] = `
       [33mclass[39m=[32m"textbox"[39m
     [36m>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mtabindex[39m=[32m"-1"[39m
@@ -256,6 +261,7 @@ exports[`ebay-number-input > renders number input with delete hidden 1`] = `
         [36m</svg>[39m
       [36m</button>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mtabindex[39m=[32m"-1"[39m
@@ -300,6 +306,7 @@ exports[`ebay-number-input > renders number input with label 1`] = `
         [0mEnter a number[0m
       [36m</label>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mdisabled[39m=[32m""[39m
@@ -335,6 +342,7 @@ exports[`ebay-number-input > renders number input with label 1`] = `
         [33mvalue[39m=[32m"0"[39m
       [36m/>[39m
       [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
         [33mdata-ebayui[39m=[32m""[39m
         [33mtabindex[39m=[32m"-1"[39m
