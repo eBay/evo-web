@@ -189,7 +189,7 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--hide.lightbox-dialog--show-init,
 .lightbox-dialog--show-init.lightbox-dialog--hide,
 .lightbox-dialog--show-init.lightbox-dialog--show-init {
-    display: flex !important;
+    display: flex;
 }
 .lightbox-dialog--hide.lightbox-dialog--mask-fade,
 .lightbox-dialog--hide.lightbox-dialog--mask-fade-slow,
@@ -210,7 +210,7 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--hide-init.lightbox-dialog--show,
 .lightbox-dialog--show.lightbox-dialog--hide-init,
 .lightbox-dialog--show.lightbox-dialog--show {
-    display: flex !important;
+    display: flex;
 }
 .lightbox-dialog--hide-init.lightbox-dialog--mask-fade,
 .lightbox-dialog--hide-init.lightbox-dialog--mask-fade-slow,

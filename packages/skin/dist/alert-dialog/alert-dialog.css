@@ -75,17 +75,6 @@
 .alert-dialog--show .alert-dialog__window--fade {
     transition: opacity 0.16s ease-out;
 }
-
-.alert-dialog--hide-init.alert-dialog--hide-init,
-.alert-dialog--hide-init.alert-dialog--show,
-.alert-dialog--hide.alert-dialog--hide,
-.alert-dialog--hide.alert-dialog--show-init,
-.alert-dialog--show-init.alert-dialog--hide,
-.alert-dialog--show-init.alert-dialog--show-init,
-.alert-dialog--show.alert-dialog--hide-init,
-.alert-dialog--show.alert-dialog--show {
-    display: flex;
-}
 .alert-dialog--hide.alert-dialog--mask-fade,
 .alert-dialog--hide.alert-dialog--mask-fade-slow {
     transition: background-color var(--motion-duration-short-3)
@@ -127,7 +116,7 @@
 .alert-dialog--hide.alert-dialog--show-init,
 .alert-dialog--show-init.alert-dialog--hide,
 .alert-dialog--show-init.alert-dialog--show-init {
-    display: flex !important;
+    display: flex;
 }
 .alert-dialog--hide.alert-dialog--mask-fade,
 .alert-dialog--hide.alert-dialog--mask-fade-slow,
@@ -148,7 +137,7 @@
 .alert-dialog--hide-init.alert-dialog--show,
 .alert-dialog--show.alert-dialog--hide-init,
 .alert-dialog--show.alert-dialog--show {
-    display: flex !important;
+    display: flex;
 }
 .alert-dialog--hide-init.alert-dialog--mask-fade,
 .alert-dialog--hide-init.alert-dialog--mask-fade-slow,

@@ -213,7 +213,7 @@
     .#{$name}--show-init {
         &.#{$name}--hide,
         &.#{$name}--show-init {
-            display: flex !important;
+            display: flex;
         }
 
         &.#{$name}--mask-fade,
@@ -240,7 +240,7 @@
     .#{$name}--hide-init {
         &.#{$name}--show,
         &.#{$name}--hide-init {
-            display: flex !important;
+            display: flex;
         }
 
         &.#{$name}--mask-fade,
