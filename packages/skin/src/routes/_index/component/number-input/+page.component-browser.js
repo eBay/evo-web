@@ -17,6 +17,11 @@ export default class {
                     newValue = value + inc;
                 }
                 input.value = newValue;
+                if (newValue === 0) {
+                    decrement.setAttribute("disabled", "true");
+                } else {
+                    decrement.removeAttribute("disabled");
+                }
                 if (trash && newValue === 1) {
                     widgetEl.classList.add("number-input--show-delete");
                 } else {

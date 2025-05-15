@@ -50,7 +50,7 @@
     }
 }
 
-.number-input .textbox .icon-btn svg {
+.number-input .textbox .icon-btn:not(:disabled) svg {
     color: var(--color-foreground-primary);
     fill: currentColor;
 }

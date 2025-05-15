@@ -40,6 +40,7 @@ $ const {
                 </label>
             </if>
             <ebay-icon-button
+                disabled=(state.value <= state.min)
                 size="small"
                 class="number-input__decrement"
                 transparent
@@ -64,6 +65,7 @@ $ const {
             </if>
 
             <ebay-icon-button
+                disabled=(state.value >= state.max)
                 class="number-input__increment"
                 size="small"
                 transparent
