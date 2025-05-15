@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EbayFileInput /> rendering renders default story correctly 1`] = `
+<div>
+  <div
+    class="file-input"
+  >
+    <div
+      class="file-input__container"
+    >
+      <div
+        class="file-input__upload-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--24"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-upload-24"
+          />
+        </svg>
+      </div>
+      <div
+        class="file-input__content"
+      >
+        <span
+          class="file-input__content-header"
+        >
+          Upload your files
+        </span>
+        <span
+          class="file-input__content-subheader"
+        >
+          Supported formats: .jpg, .png
+        </span>
+        <label
+          for="5bee"
+        >
+          <span
+            class="file-input__content-cta"
+          >
+            <span>
+              Click or drag files here to upload
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <input
+      class="file-input__input"
+      id="5bee"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`<EbayFileInput /> rendering renders with mock uploads 1`] = `
+<div>
+  <div
+    class="file-input"
+  >
+    <div
+      class="file-input__container"
+    >
+      <div
+        class="file-input__upload-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--24"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-upload-24"
+          />
+        </svg>
+      </div>
+      <div
+        class="file-input__content"
+      >
+        <span
+          class="file-input__content-header"
+        >
+          <p>
+            Multiple files
+          </p>
+        </span>
+        <label
+          for="411b"
+        >
+          <span
+            class="file-input__content-cta"
+          >
+            <span>
+              Browse files
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <input
+      class="file-input__input"
+      id="411b"
+      multiple=""
+      type="file"
+    />
+  </div>
+  <div
+    class="file-preview-card-group"
+  >
+    <ul />
+  </div>
+</div>
+`;
+
+exports[`<EbayFileInput /> rendering renders with preview cards 1`] = `
+<div>
+  <div
+    class="file-input"
+  >
+    <div
+      class="file-input__container"
+    >
+      <div
+        class="file-input__upload-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--24"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-upload-24"
+          />
+        </svg>
+      </div>
+      <div
+        class="file-input__content"
+      >
+        <span
+          class="file-input__content-header"
+        >
+          Custom Header
+        </span>
+        <label
+          for="6f62"
+        >
+          <span
+            class="file-input__content-cta"
+          >
+            <span>
+              Click or drag files here to upload
+            </span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <input
+      class="file-input__input"
+      id="6f62"
+      type="file"
+    />
+  </div>
+  <div
+    class="file-preview-card-group"
+  >
+    <ul />
+  </div>
+</div>
+`;
