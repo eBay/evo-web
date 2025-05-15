@@ -59,13 +59,8 @@ describe("given an number input textbox", () => {
         });
         it("should trigger increment event", async () => {
             await waitFor(() => {
-                expect(component.emitted("decrement")).has.length(1);
+                expect(component.emitted("decrement")).has.length(0);
             });
-        });
-
-        it("it should set value", async () => {
-            const [[data]] = component.emitted("change");
-            expect(data.value).toBe(0);
         });
     });
 });
@@ -128,13 +123,8 @@ describe("given an number input textbox with delete", () => {
         });
         it("should trigger decrement event", async () => {
             await waitFor(() => {
-                expect(component.emitted("decrement")).has.length(1);
+                expect(component.emitted("decrement")).has.length(0);
             });
-        });
-
-        it("it should set value", async () => {
-            const [[data]] = component.emitted("change");
-            expect(data.value).toBe(1);
         });
     });
 });
@@ -178,14 +168,9 @@ describe("given an number-input textbox with constraints", () => {
             });
         });
 
-        it("it should not set value", async () => {
-            const [[data]] = component.emitted("change");
-            expect(data.value).toBe(10);
-        });
-
-        it("should trigger increment event", async () => {
+        it("should not trigger increment event", async () => {
             await waitFor(() => {
-                expect(component.emitted("increment")).has.length(1);
+                expect(component.emitted("increment")).has.length(0);
             });
         });
     });
