@@ -3,7 +3,7 @@ import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../table.stories"; // import all stories from the stories file
 
 const htmlSnap = snapshotHTML(__dirname);
-const { Default, ColumnSorting, ColumnSortingClientSide, FrozenHeader } =
+const { Default, ColumnSorting, ColumnSortingClientSide } =
     composeStories(stories);
 
 describe("ebay-table", () => {
@@ -26,6 +26,6 @@ describe("ebay-table", () => {
     });
 
     it("renders with frozen header", async () => {
-        await htmlSnap(FrozenHeader);
+        await htmlSnap(Default, { frozenHeader: true });
     });
 });
