@@ -789,12 +789,12 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
 
     <h3>Table with a Frozen Header</h3>
     <p>
-        A table with a frozen header allows the header row to persist in a sticky manner while scrolling vertically through the table. You can make headers frozen by adding the <span class="highlight">table--frozen-header</span> modifier class to module.
+        A table with a frozen header allows the header row to persist in a sticky manner while scrolling vertically through the table. You can make headers frozen by adding the <span class="highlight">table--frozen-header</span> modifier class to module. When added, the table wrapper will get a fixed max-height allowing the contents inside to scroll. The header will be fixed to the top of the table wrapper.
     </p>
 
     <div class="demo">
         <div class="demo__inner">
-            <div class="table table--frozen-header" role="group" aria-label="Video games for sale" tabindex="0" style="height: 300px;">
+            <div class="table table--frozen-header" role="group" aria-label="Video games for sale" tabindex="0" style="max-height: 300px;">
                 <table>
                     <thead>
                         <tr>
@@ -1181,7 +1181,7 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     </div>
 
     <highlight-code type="html">
-<div class="table table--frozen-header" role="group" aria-label="Video games for sale" tabindex="0" style="height: 300px;">
+<div class="table table--frozen-header" role="group" aria-label="Video games for sale" tabindex="0">
     <table>
         <thead>
             <tr>
