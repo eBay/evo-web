@@ -53,7 +53,7 @@ const EbayLightboxDialog: FC<Props> = ({
                     'lightbox-dialog--expressive': bannerImgSrc
                 }
             )}
-            windowClass={classNames('lightbox-dialog__window--fade', {
+            windowClass={classNames('lightbox-dialog__window--animate', {
                 'lightbox-dialog__window--mini': mode === 'mini'
             })}
             top={top}

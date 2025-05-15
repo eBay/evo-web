@@ -32,7 +32,7 @@ const EbayAlertDialog: FC<Props> = ({
             mainId={mainId}
             buttonPosition="hidden"
             className={classNames(rest.className, `${classPrefix}--mask-fade`)}
-            windowClass={`${classPrefix}__window ${classPrefix}__window--fade`}
+            windowClass={`${classPrefix}__window ${classPrefix}__window--animate`}
         >
             {rest.children}
             <EbayDialogFooter>

@@ -35,7 +35,7 @@ const EbayConfirmDialog: FC<Props> = ({
             mainId={mainId}
             classPrefix={classPrefix}
             className={classNames(rest.className, `${classPrefix}--mask-fade`)}
-            windowClass={`${classPrefix}__window ${classPrefix}__window--fade`}
+            windowClass={`${classPrefix}__window ${classPrefix}__window--animate`}
             buttonPosition="hidden"
             onCloseBtnClick={onReject}
         >
