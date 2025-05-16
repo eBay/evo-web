@@ -1,5 +1,23 @@
 # @ebay/ui-core-react
 
+## 8.5.0
+
+### Minor Changes
+
+- [#121](https://github.com/eBay/evo-web/pull/121) [`60358d1`](https://github.com/eBay/evo-web/commit/60358d1d856181d2f375682587dc8f7a473272ed) Thanks [@agliga](https://github.com/agliga)! - feat(dialog): added new motion spec
+
+- [#117](https://github.com/eBay/evo-web/pull/117) [`dcbf5c0`](https://github.com/eBay/evo-web/commit/dcbf5c0f272af0940faad643cbc12115dfa96acb) Thanks [@bruno2kd](https://github.com/bruno2kd)! - feat: add new EbayFilePreviewCardGroup component
+
+- [#118](https://github.com/eBay/evo-web/pull/118) [`ba27116`](https://github.com/eBay/evo-web/commit/ba27116b1f384b1c93a4a24ad9423671aaed0270) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react): Add new EbayCharacterCount component
+
+- [#124](https://github.com/eBay/evo-web/pull/124) [`62da8bb`](https://github.com/eBay/evo-web/commit/62da8bb24135e5f1686906405531893e776afa86) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react): add new EbayCCD component
+
+- [#122](https://github.com/eBay/evo-web/pull/122) [`4dc6dd7`](https://github.com/eBay/evo-web/commit/4dc6dd77b4df3ec2dbea9701fb10257a93991738) Thanks [@agliga](https://github.com/agliga)! - feat(table): added frozen-header option
+
+- [#125](https://github.com/eBay/evo-web/pull/125) [`7e370a2`](https://github.com/eBay/evo-web/commit/7e370a2c4e02cc5246a918d63c2fa34ca0c9f9f3) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react): add new EbayImagePlaceholder component
+
+- [#128](https://github.com/eBay/evo-web/pull/128) [`97e33ef`](https://github.com/eBay/evo-web/commit/97e33ef6c6bb79a08c0b14e9d43bdb94a82bcfff) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react): add new EbayFileInput component
+
 ## 8.4.0
 
 ### Minor Changes

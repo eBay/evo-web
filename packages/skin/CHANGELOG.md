@@ -1,5 +1,19 @@
 # Skin Changelog
 
+## 19.5.0
+
+### Minor Changes
+
+- [#121](https://github.com/eBay/evo-web/pull/121) [`60358d1`](https://github.com/eBay/evo-web/commit/60358d1d856181d2f375682587dc8f7a473272ed) Thanks [@agliga](https://github.com/agliga)! - feat(dialog): added new motion spec
+
+- [#92](https://github.com/eBay/evo-web/pull/92) [`3206443`](https://github.com/eBay/evo-web/commit/32064432df66173efc78d83b9ce66f6bc6409d86) Thanks [@agliga](https://github.com/agliga)! - feat(number-input): added new component
+
+- [#123](https://github.com/eBay/evo-web/pull/123) [`af8f038`](https://github.com/eBay/evo-web/commit/af8f03893f1ec7ed60f61dec766983121d6946f6) Thanks [@ArtBlue](https://github.com/ArtBlue)! - feat(filter-input): new component
+
+### Patch Changes
+
+- [#122](https://github.com/eBay/evo-web/pull/122) [`4dc6dd7`](https://github.com/eBay/evo-web/commit/4dc6dd77b4df3ec2dbea9701fb10257a93991738) Thanks [@agliga](https://github.com/agliga)! - feat(table): added frozen-header option
+
 ## 19.4.0
 
 ### Minor Changes
