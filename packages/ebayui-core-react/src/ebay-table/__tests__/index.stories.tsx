@@ -21,6 +21,10 @@ const meta: Meta<typeof EbayTable> = {
             description: "table mode",
             options: ["selection", "none"],
         },
+        frozenHeader: {
+            control: { type: "boolean" },
+            description: "If true, the header will be frozen",
+        },
         allSelected: {
             control: { type: "select" },
             description: "Select all tri-state checkbox state",
