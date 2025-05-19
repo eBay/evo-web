@@ -36,7 +36,6 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
     const detailsWithAccordionProps = details.map((detailComponent, detailsIndex) =>
         React.cloneElement(detailComponent as ReactElement<EbayDetailsProps>, {
             onToggle: (event, { open }) => {
-                console.log('YAYA', { open })
                 if (autoCollapse && open) {
                     const detailsElements = listRef.current?.querySelectorAll('details')
                     detailsElements?.forEach((detailElement, elementIndex) => {

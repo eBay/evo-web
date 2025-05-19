@@ -13,7 +13,9 @@ export default tseslint.config(
         "config",
         "scripts",
         ".storybook",
-        "jest.config.js"
+        "jest.config.js",
+        "node_modules",
+        "_site"
     ],
   },
   eslint.configs.recommended,
@@ -41,6 +43,7 @@ export default tseslint.config(
     },
 
     rules: {
+      "no-console": ["error", { allow: ['error', 'warn']}],
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
     },
