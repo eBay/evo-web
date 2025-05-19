@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.5.1
+
+### Patch Changes
+
+- [`e30eb4e`](https://github.com/eBay/evo-web/commit/e30eb4e55e4a2afda1fc35b3ffada9cd902bfbc2) Thanks [@agliga](https://github.com/agliga)! - fix(stylelint): swapped to modern rgb syntax
+
 ## 19.5.0
 
 ### Minor Changes
