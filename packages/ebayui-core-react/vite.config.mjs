@@ -19,6 +19,7 @@ let componentEntries = fs
 
 export default defineConfig({
     plugins: [
+        { enforce: 'pre', ...nodeExternals() },
         // This plugin will automatically unwrap the default export from CJS dependencies that are specified in the list.
         // https://github.com/eBay/ebayui-core-react/issues/420
         cjsInterop({
@@ -41,7 +42,8 @@ export default defineConfig({
             formats: ["cjs"],
         },
         rollupOptions: {
-            plugins: [nodeExternals(), typescript()],
+            plugins: [
+                typescript()],
         },
     },
 });
