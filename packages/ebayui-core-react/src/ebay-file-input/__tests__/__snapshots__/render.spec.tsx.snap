@@ -36,7 +36,7 @@ exports[`<EbayFileInput /> rendering renders default story correctly 1`] = `
           Supported formats: .jpg, .png
         </span>
         <label
-          for="5bee"
+          for="abc123"
         >
           <span
             class="file-input__content-cta"
@@ -50,7 +50,7 @@ exports[`<EbayFileInput /> rendering renders default story correctly 1`] = `
     </div>
     <input
       class="file-input__input"
-      id="5bee"
+      id="abc123"
       type="file"
     />
   </div>
@@ -90,7 +90,7 @@ exports[`<EbayFileInput /> rendering renders with mock uploads 1`] = `
           </p>
         </span>
         <label
-          for="411b"
+          for="abc123"
         >
           <span
             class="file-input__content-cta"
@@ -104,7 +104,7 @@ exports[`<EbayFileInput /> rendering renders with mock uploads 1`] = `
     </div>
     <input
       class="file-input__input"
-      id="411b"
+      id="abc123"
       multiple=""
       type="file"
     />
@@ -148,7 +148,7 @@ exports[`<EbayFileInput /> rendering renders with preview cards 1`] = `
           Custom Header
         </span>
         <label
-          for="6f62"
+          for="abc123"
         >
           <span
             class="file-input__content-cta"
@@ -162,7 +162,7 @@ exports[`<EbayFileInput /> rendering renders with preview cards 1`] = `
     </div>
     <input
       class="file-input__input"
-      id="6f62"
+      id="abc123"
       type="file"
     />
   </div>

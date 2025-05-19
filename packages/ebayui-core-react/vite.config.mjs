@@ -29,7 +29,9 @@ export default defineConfig({
                 'makeup-typeahead',
                 'makeup-floating-label'
             ]
-        })
+        }),
+        nodeExternals(),
+        typescript()
     ],
     build: {
         lib: {
@@ -39,9 +41,6 @@ export default defineConfig({
             // If we use ESM, the bundle might have both ESM and CJS, which will increase the bundle size,
             // and might cause reference issues.
             formats: ["cjs"],
-        },
-        rollupOptions: {
-            plugins: [nodeExternals(), typescript()],
         },
     },
 });

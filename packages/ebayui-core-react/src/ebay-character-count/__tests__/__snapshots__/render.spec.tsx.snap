@@ -33,7 +33,7 @@ exports[`<EbayCharacterCount /> rendering renders customText story correctly 1`]
       <span
         id="my-input-description"
       >
-        Brief description
+        Description
       </span>
       <span
         id="my-input-charcount"
