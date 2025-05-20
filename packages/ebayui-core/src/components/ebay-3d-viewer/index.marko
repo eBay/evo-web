@@ -1,5 +1,4 @@
-import { processHtmlAttributes } from '../../common/html-attributes';
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     class: inputClass,
     src,
@@ -10,34 +9,44 @@ $ const {
     ...htmlInput
 } = input;
 
-<div
-    class=['three-d-player', inputClass]>
-    <${'model-viewer'}
+<div class=["three-d-player", inputClass]>
+    <${`model-viewer`}
         camera-controls
         touch-action="pan-y"
-        key='3d-viewer'
+        key="3d-viewer"
         alt=a11yText
         src=src
         ...processHtmlAttributes(htmlInput)
-        on-error('handleError')
-        on-load('emit', 'load')
-        on-progress('emit', 'progress')
-        on-model-visibility('emit', 'model-visibility')
-        on-poster-dismissed('emit', 'poster-dismissed')
-        on-render-scale('emit', 'render-scale')
-        />
-    <div class=['three-d-player__overlay', !state.failed && 'three-d-player__overlay--hidden']>
+        on-error("handleError")
+        on-load("emit", "load")
+        on-progress("emit", "progress")
+        on-model-visibility("emit", "model-visibility")
+        on-poster-dismissed("emit", "poster-dismissed")
+        on-render-scale("emit", "render-scale")
+    />
+    <div class=[
+        "three-d-player__overlay",
+        !state.failed && "three-d-player__overlay--hidden",
+    ]>
         <ebay-attention-24-icon/>
-        <div.three-d-player__overlay-text>
-            <if(errorText)>${errorText}</if>
+        <div class="three-d-player__overlay-text">
+            <if(errorText)>
+                ${errorText}
+            </if>
             <else>An error has occurred</else>
         </div>
     </div>
-    <div class=['three-d-player__overlay', state.isLoaded && 'three-d-player__overlay--hidden']>
+    <div class=[
+        "three-d-player__overlay",
+        state.isLoaded && "three-d-player__overlay--hidden",
+    ]>
         <if(!state.showLoading)>
-            <ebay-play-filled-64-colored-icon a11y-text=a11yStartText || 'Click to start'/>
+            <ebay-play-filled-64-colored-icon a11y-text=a11yStartText ||
+            "Click to start"/>
         </if>
-        <else><ebay-progress-spinner a11yText=a11yLoadText || 'Loading'/></else>
+        <else>
+            <ebay-progress-spinner a11yText=a11yLoadText || "Loading"/>
+        </else>
     </div>
 </div>
 

@@ -10,7 +10,7 @@ class {
     onSort: TableInput["on-sort"] = (event) => {
         this.state.sorted = event.sorted;
         this.emit("sort", event);
-    }
+    };
 }
 
 <ebay-table on-sort("onSort") ...input>

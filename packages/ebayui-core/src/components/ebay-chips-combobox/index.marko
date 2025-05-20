@@ -46,7 +46,7 @@ $ const {
         ...comboboxInput
         autocomplete="list"
     >
-        <for|{text: option}| of=options>
+        <for|{ text: option }| of=options>
             <if(
                 !state.selected || !state.selected.some((val) => val === option)
             )>

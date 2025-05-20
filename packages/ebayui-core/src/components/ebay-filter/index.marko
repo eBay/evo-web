@@ -1,5 +1,4 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     a11ySelectedText,
     class: inputClass,
@@ -9,7 +8,6 @@ $ const {
     useAriaPressed,
     ...htmlInput
 } = input;
-
 $ var baseClass = href ? "filter-link" : "filter-button";
 
 <${href ? "a" : "button"}
@@ -17,12 +15,13 @@ $ var baseClass = href ? "filter-link" : "filter-button";
     class=[
         baseClass,
         `${baseClass}--${state.selected ? "selected" : "unselected"}`,
-        inputClass
+        inputClass,
     ]
-    type=(!href && "button")
+    type=!href && "button"
     href=href
-    aria-pressed=(useAriaPressed !== false && !href && state.selected && "true")
-    onClick("handleButtonClick")>
+    aria-pressed=useAriaPressed !== false && !href && state.selected && "true"
+    onClick("handleButtonClick")
+>
     <span class=`${baseClass}__cell`>
         <span>
             <${renderBody}/>

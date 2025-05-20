@@ -1,7 +1,5 @@
 import type { Input as PaginationInput } from "<ebay-pagination>";
-
 static const SIZE = 15;
-
 class {
     declare state: {
         current: number;
@@ -13,11 +11,11 @@ class {
     handlePrev: PaginationInput["on-previous"] = (e) => {
         this.state.current = Math.max(this.state.current - 1, 0);
         this.emit("previous", e);
-    }
+    };
     handleNext: PaginationInput["on-next"] = (e) => {
         this.state.current = Math.min(this.state.current + 1, SIZE);
         this.emit("next", e);
-    }
+    };
     handleSelect(e: { index: number }) {
         this.state.current = e.index;
         this.emit("select", e);
@@ -30,10 +28,12 @@ class {
     on-select("handleSelect")
     a11yCurrentText=`Results Pagination - Page ${state.current}`
     ...input
-    >
-    <@item type="previous" as any disabled=(state.current === 0)/>
+>
+    <@item type=("previous" as any) disabled=state.current === 0/>
     <for|i| from=0 to=SIZE>
-        <@item current=(i === state.current)>${i}</@item>
+        <@item current=i === state.current>
+            ${i}
+        </@item>
     </for>
-    <@item type="next" disabled=(state.current === SIZE)/>
+    <@item type="next" disabled=state.current === SIZE/>
 </ebay-pagination>

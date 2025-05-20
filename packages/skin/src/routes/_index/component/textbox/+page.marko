@@ -4,14 +4,15 @@
     <p>
         A textbox (also known as an
         <em>input</em>
-        ) allows the user to enter data.
+         ) allows the user to enter data.
     </p>
     <p>
         The purpose of a textbox is to collect form data. Therefore, textbox should always be used in conjunction with a form, label and submit button.
     </p>
 
     <p>
-        <strong>IMPORTANT:</strong>The examples below show the textbox in isolation, without any label. Remember: every textbox requires a label!
+        <strong>IMPORTANT:</strong>
+        The examples below show the textbox in isolation, without any label. Remember: every textbox requires a label!
     </p>
     <!-- <p><strong>IMPORTANT:</strong> The examples below show the textbox in isolation, without any label. Please see the <a href="component/field/">field</a> module for details on labelling controls. Remember: every textbox requires a label!</p> -->
 
@@ -30,12 +31,14 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+            >
+        </span>
     </highlight-code>
 
     <h3>Readonly Textbox</h3>
@@ -60,12 +63,15 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox textbox--readonly">
-    <input class="textbox__control" type="text" value="Readonly textbox" readonly />
-</span>
+    <highlight-code type="html">
+        <span class="textbox textbox--readonly">
+            <input
+                class="textbox__control"
+                type="text"
+                value="Readonly textbox"
+                readonly
+            >
+        </span>
     </highlight-code>
 
     <h3>Disabled Textbox</h3>
@@ -90,12 +96,15 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox textbox--disabled">
-    <input class="textbox__control" type="text" placeholder="placeholder text" disabled />
-</span>
+    <highlight-code type="html">
+        <span class="textbox textbox--disabled">
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+                disabled
+            >
+        </span>
     </highlight-code>
 
     <h3>Error-State Textbox</h3>
@@ -120,12 +129,15 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox textbox--invalid">
-    <input class="textbox__control" type="text" placeholder="placeholder text" aria-invalid="true" />
-</span>
+    <highlight-code type="html">
+        <span class="textbox textbox--invalid">
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+                aria-invalid="true"
+            >
+        </span>
     </highlight-code>
 
     <h3 id="textbox-multi-line">
@@ -147,12 +159,10 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <textarea class="textbox__control" placeholder="placeholder text"></textarea>
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <textarea class="textbox__control" placeholder="placeholder text"/>
+        </span>
     </highlight-code>
 
     <h3 id="textbox-fluid">
@@ -182,12 +192,14 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="textbox textbox--fluid">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
-</div>
+    <highlight-code type="html">
+        <div class="textbox textbox--fluid">
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+            >
+        </div>
     </highlight-code>
 
     <h3 id="textbox-icon">
@@ -198,7 +210,7 @@
         <a href="component/icon/">
             icon
         </a>
-        .
+         .
     </p>
 
     <div class="demo">
@@ -222,15 +234,22 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
-        <use href="#icon-mail-24"></use>
-    </svg>
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <svg
+                class="icon icon--24"
+                width="16"
+                height="16"
+                aria-hidden="true"
+            >
+                <use href="#icon-mail-24"/>
+            </svg>
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+            >
+        </span>
     </highlight-code>
 
     <p>
@@ -262,15 +281,22 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
-    <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
-        <use href="#icon-mail-24"></use>
-    </svg>
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+            >
+            <svg
+                class="icon icon--24"
+                width="16"
+                height="16"
+                aria-hidden="true"
+            >
+                <use href="#icon-mail-24"/>
+            </svg>
+        </span>
     </highlight-code>
     <p>
         <strong>NOTE:</strong>
@@ -278,7 +304,7 @@
         <span class="highlight">
             aria-hidden
         </span>
-        . Remember, the purpose of the field must be conveyed using a label.
+         . Remember, the purpose of the field must be conveyed using a label.
     </p>
 
     <h3 id="textbox-icon-button">
@@ -319,17 +345,28 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <input class="textbox__control" type="text" placeholder="placeholder text" />
-    <button class="icon-btn icon-btn--transparent" type="button" aria-label="Clear text">
-        <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
-            <use href="#icon-clear-24"></use>
-        </svg>
-    </button>
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <input
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+            >
+            <button
+                class="icon-btn icon-btn--transparent"
+                type="button"
+                aria-label="Clear text"
+            >
+                <svg
+                    aria-hidden="true"
+                    class="icon icon--24"
+                    width="16"
+                    height="16"
+                >
+                    <use href="#icon-clear-24"/>
+                </svg>
+            </button>
+        </span>
     </highlight-code>
 
     <p>
@@ -371,20 +408,37 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <svg class="icon icon--24" width="16" height="16" aria-hidden="true">
-        <use href="#icon-search-24"></use>
-    </svg>
-    <input aria-label="Textbox demo" class="textbox__control" type="text" placeholder="placeholder text" />
-    <button class="icon-btn icon-btn--transparent" type="button" aria-label="Clear text">
-        <svg aria-hidden="true" class="icon icon--24" width="16" height="16">
-            <use href="#icon-clear-24"></use>
-        </svg>
-    </button>
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <svg
+                class="icon icon--24"
+                width="16"
+                height="16"
+                aria-hidden="true"
+            >
+                <use href="#icon-search-24"/>
+            </svg>
+            <input
+                aria-label="Textbox demo"
+                class="textbox__control"
+                type="text"
+                placeholder="placeholder text"
+            >
+            <button
+                class="icon-btn icon-btn--transparent"
+                type="button"
+                aria-label="Clear text"
+            >
+                <svg
+                    aria-hidden="true"
+                    class="icon icon--24"
+                    width="16"
+                    height="16"
+                >
+                    <use href="#icon-clear-24"/>
+                </svg>
+            </button>
+        </span>
     </highlight-code>
 
     <h3 id="textbox-large">
@@ -409,12 +463,10 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <input class="textbox__control" type="text" />
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <input class="textbox__control" type="text">
+        </span>
     </highlight-code>
 
     <h3 id="textbox-prefix-suffix">
@@ -437,13 +489,11 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <span>$</span>
-    <input class="textbox__control" type="text" />
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <span>$</span>
+            <input class="textbox__control" type="text">
+        </span>
     </highlight-code>
 
     <h3 id="textbox-prefix-suffix">
@@ -466,13 +516,11 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <input class="textbox__control" type="text" />
-    <span>in.</span>
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <input class="textbox__control" type="text">
+            <span>in.</span>
+        </span>
     </highlight-code>
 
     <h3 id="textbox-prefix-suffix">
@@ -503,31 +551,42 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="textbox">
-    <span>$</span>
-    <input class="textbox__control" type="text" placeholder="0.00" />
-    <button class="icon-btn icon-btn--transparent icon-btn--small" type="button" aria-label="Clear text">
-        <svg aria-hidden="true" class="icon icon--clear-16" width="16" height="16">
-            <use href="#icon-clear-16"></use>
-        </svg>
-    </button>
-</span>
+    <highlight-code type="html">
+        <span class="textbox">
+            <span>$</span>
+            <input class="textbox__control" type="text" placeholder="0.00">
+            <button
+                class="icon-btn icon-btn--transparent icon-btn--small"
+                type="button"
+                aria-label="Clear text"
+            >
+                <svg
+                    aria-hidden="true"
+                    class="icon icon--clear-16"
+                    width="16"
+                    height="16"
+                >
+                    <use href="#icon-clear-16"/>
+                </svg>
+            </button>
+        </span>
     </highlight-code>
 </div>
 export const metadata = {
     component: "textbox",
-    "ds-component": [{
-        name: "text-area",
-        version: 2.2,
-    }, {
-        name: "text-field",
-        version: 2.2,
-    },{
-        name: "password",
-        version: 2.2,
-    },],
+    "ds-component": [
+        {
+            name: "text-area",
+            version: 2.2,
+        },
+        {
+            name: "text-field",
+            version: 2.2,
+        },
+        {
+            name: "password",
+            version: 2.2,
+        },
+    ],
     submodules: ["icon-button"],
 };

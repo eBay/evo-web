@@ -1,6 +1,4 @@
-$ const {
-    trend
-} = input;
+$ const { trend } = input;
 
 <svg
     version="1.1"
@@ -39,7 +37,10 @@ style {
     }
 
     .ebay-spark-line__path-neutral {
-        stroke: var(--spark-line-neutral, var(--color-data-viz-line-chart-primary));
+        stroke: var(
+            --spark-line-neutral,
+            var(--color-data-viz-line-chart-primary)
+        );
     }
 
     .ebay-spark-line__path-positive {
@@ -47,6 +48,9 @@ style {
     }
 
     .ebay-spark-line__path-negative {
-        stroke: var(--spark-line-negative, var(--color-data-viz-trend-negative));
+        stroke: var(
+            --spark-line-negative,
+            var(--color-data-viz-trend-negative)
+        );
     }
 }

@@ -4,49 +4,49 @@ This page contains instructions and guidelines for anybody contributing code to 
 
 ## Table of Contents
 
--   [Contributing](#contributing)
-    -   [Table of Contents](#table-of-contents)
-    -   [System Requirements](#system-requirements)
-    -   [Contribution Steps](#contribution-steps)
-    -   [Development Modes](#development-modes)
-        -   [New Module Creation](#new-module-creation)
-    -   [Versioning](#versioning)
-        -   [API Change](#api-change)
-        -   [New Functionality](#new-functionality)
-        -   [Bug Fix](#bug-fix)
-    -   [Branching](#branching)
-    -   [Package Dependencies](#package-dependencies)
-    -   [Commit Message Format](#commit-message-format)
-    -   [Pull Requests](#pull-requests)
-    -   [Naming Scheme](#naming-scheme)
-    -   [Style Guide](#style-guide)
-    -   [LESS API (deprecated)](#less-api-deprecated)
-    -   [Custom Property API](#custom-property-api)
-        -   [Core Tokens](#core-tokens)
-        -   [Semantic Tokens](#semantic-tokens)
-        -   [Component Tokens](#component-tokens)
-    -   [Dark Mode](#dark-mode)
-    -   [Storybook](#storybook)
-    -   [Visual Regression Testing](#visual-regression-testing)
-        -   [External Contributors](#external-contributors)
-        -   [Internal Contributors](#internal-contributors)
-            -   [Build Modes](#build-modes)
-            -   [Run All Snapshots](#run-all-snapshots)
-            -   [Run Specific Snapshot(s)](#run-specific-snapshots)
-            -   [Technical Notes](#technical-notes)
-    -   [Website](#website)
-    -   [Scripts](#scripts)
-    -   [Icon Creation](#icon-creation)
-    -   [Releases](#releases)
-        -   [Pre-Release](#pre-release)
-        -   [Final Release](#final-release)
-        -   [GitHub Release](#github-release)
-        -   [Hotfix Release](#hotfix-release)
-        -   [Website Archive](#website-archive)
+- [Contributing](#contributing)
+    - [Table of Contents](#table-of-contents)
+    - [System Requirements](#system-requirements)
+    - [Contribution Steps](#contribution-steps)
+    - [Development Modes](#development-modes)
+        - [New Module Creation](#new-module-creation)
+    - [Versioning](#versioning)
+        - [API Change](#api-change)
+        - [New Functionality](#new-functionality)
+        - [Bug Fix](#bug-fix)
+    - [Branching](#branching)
+    - [Package Dependencies](#package-dependencies)
+    - [Commit Message Format](#commit-message-format)
+    - [Pull Requests](#pull-requests)
+    - [Naming Scheme](#naming-scheme)
+    - [Style Guide](#style-guide)
+    - [LESS API (deprecated)](#less-api-deprecated)
+    - [Custom Property API](#custom-property-api)
+        - [Core Tokens](#core-tokens)
+        - [Semantic Tokens](#semantic-tokens)
+        - [Component Tokens](#component-tokens)
+    - [Dark Mode](#dark-mode)
+    - [Storybook](#storybook)
+    - [Visual Regression Testing](#visual-regression-testing)
+        - [External Contributors](#external-contributors)
+        - [Internal Contributors](#internal-contributors)
+            - [Build Modes](#build-modes)
+            - [Run All Snapshots](#run-all-snapshots)
+            - [Run Specific Snapshot(s)](#run-specific-snapshots)
+            - [Technical Notes](#technical-notes)
+    - [Website](#website)
+    - [Scripts](#scripts)
+    - [Icon Creation](#icon-creation)
+    - [Releases](#releases)
+        - [Pre-Release](#pre-release)
+        - [Final Release](#final-release)
+        - [GitHub Release](#github-release)
+        - [Hotfix Release](#hotfix-release)
+        - [Website Archive](#website-archive)
 
 ## System Requirements
 
--   [Node.js](https://nodejs.org/en/)
+- [Node.js](https://nodejs.org/en/)
 
 ## Contribution Steps
 
@@ -56,13 +56,13 @@ We **strongly** advise you to only begin working on issues that are assigned spe
 
 Here is a rough overview of steps required when contributing code to skin:
 
--   GitHub team members must create a new branch in the Skin repo. Non-team members should create their own fork.
--   Please ensure you branch off from the correct milestone branch! See branching strategy section below.
--   Skin adopts the [BEM](https://css-tricks.com/bem-101/) methodology (a popular naming convention for classes in HTML and CSS). Please familiarize yourself with our style guide in the section below.
--   After making changes to `.less` files, ensure that no new CSS lint warnings or errors are introduced
--   Add or update the corresponding website documentation. More information in the [documentation](#documentation) section below.
--   Push commit(s) to the upstream branch. Ensure new dist files (i.e. the compiled CSS files) are included!
--   Send pull request. See Pull Requests section below.
+- GitHub team members must create a new branch in the Skin repo. Non-team members should create their own fork.
+- Please ensure you branch off from the correct milestone branch! See branching strategy section below.
+- Skin adopts the [BEM](https://css-tricks.com/bem-101/) methodology (a popular naming convention for classes in HTML and CSS). Please familiarize yourself with our style guide in the section below.
+- After making changes to `.less` files, ensure that no new CSS lint warnings or errors are introduced
+- Add or update the corresponding website documentation. More information in the [documentation](#documentation) section below.
+- Push commit(s) to the upstream branch. Ensure new dist files (i.e. the compiled CSS files) are included!
+- Send pull request. See Pull Requests section below.
 
 ## Development Modes
 
@@ -128,14 +128,14 @@ To help guide your contribution into the right bucket, we provide more detailed 
 
 Here are some types of change that we consider as an incompatible API change:
 
--   Removal of a CSS class
--   Removal of a public variable or mixin
--   Removal of a `browser.json` file
--   Removal of a folder from `dist`
--   Removal of an SVG icon
--   Change to CDN path structure
--   Change to HTML structure or attributes of module
--   Change to CSS property that radically alters appearance and/or layout
+- Removal of a CSS class
+- Removal of a public variable or mixin
+- Removal of a `browser.json` file
+- Removal of a folder from `dist`
+- Removal of an SVG icon
+- Change to CDN path structure
+- Change to HTML structure or attributes of module
+- Change to CSS property that radically alters appearance and/or layout
 
 Typically, we will try and add a deprecation note for a period of time before introducing any breaking API change. The creation of aliases can often help ease the transition from one API to another.
 
@@ -143,13 +143,13 @@ Typically, we will try and add a deprecation note for a period of time before in
 
 Here are some of the changes we consider as new functionality:
 
--   Addition of a new module
--   Addition of a module subtype or variant
--   Addition of a new variable or mixin
--   Addition of an alias for a class or icon
--   Update of a module to its latest playbook version
--   Update of a colour value that remains within the same hue
--   Update of a CSS property that does not affect the modules layout in page
+- Addition of a new module
+- Addition of a module subtype or variant
+- Addition of a new variable or mixin
+- Addition of an alias for a class or icon
+- Update of a module to its latest playbook version
+- Update of a colour value that remains within the same hue
+- Update of a CSS property that does not affect the modules layout in page
 
 Minor version updates are a signal that there is something new (no matter how small) that an app might be interested in using!
 
@@ -227,14 +227,14 @@ test
 
 Guidance for pull requests:
 
--   Always double-check which branch you are attempting to merge into. The target branch should always be a milestone branch!
--   Only Skin admins are permitted to merge into `master`
--   Non-atomic commits should be squashed (i.e. "work in progress" type commits).
--   Do not add any commit that leaves the code in a broken state.
--   Pull request for a _feature_ must only contain changes related to the issue (NOTE: refactoring/cleanup type PRs are often exempt from this rule)
--   **Do not** be tempted to go fixing or refactoring unrelated issues. Doing so can make the code reviewer's job more difficult and/or time-consuming, as well as increasing risk of regression
--   If you spot some other unrelated bug or code smell, please create a GitHub issue for it.
--   After the pull request has been merged, your issue branch should be immediately deleted (by yourself or admin)
+- Always double-check which branch you are attempting to merge into. The target branch should always be a milestone branch!
+- Only Skin admins are permitted to merge into `master`
+- Non-atomic commits should be squashed (i.e. "work in progress" type commits).
+- Do not add any commit that leaves the code in a broken state.
+- Pull request for a _feature_ must only contain changes related to the issue (NOTE: refactoring/cleanup type PRs are often exempt from this rule)
+- **Do not** be tempted to go fixing or refactoring unrelated issues. Doing so can make the code reviewer's job more difficult and/or time-consuming, as well as increasing risk of regression
+- If you spot some other unrelated bug or code smell, please create a GitHub issue for it.
+- After the pull request has been merged, your issue branch should be immediately deleted (by yourself or admin)
 
 ## Naming Scheme
 
@@ -244,28 +244,28 @@ eBay Skin is an implementation of the [eBay MIND Patterns](https://ebay.gitbook.
 
 When contributing to Skin, please bear the following guidelines in mind:
 
--   Ensure all markup adheres to our [accessibility patterns](https://ebay.gitbooks.io/mindpatterns/content/)
--   Ensure all markup is valid HTML
--   Leverage ARIA roles, states and properties for styling hooks wherever possible. This safeguards against non-accessible markup (NOTE: this will increase specificity, but we accept this as a worthwhile trade off)
--   Use BEM syntax for modifiers (double-dash) and nested classes (double-underscore)
--   Use the `<svg>` tag for icons
--   Never use the `<i>` tag for icons
--   Harness CSS margin-collapse wherever possible.
--   Most block-level modules will require margin top and bottom as a sensible default
--   Do not use presentational class names, e.g. `.btn--green` should be `.btn--secondary` for example
--   Do not combine classes into a single class name, e.g. `btn-sec` should be `btn btn--sec`, this allows cascades without advanced attribute selectors or pre-processors
--   Do not chain BEM modifiers (e.g. `.btn--large.btn--primary`). This is a code smell.
--   Do not use ambiguous or global class names, e.g. `.large` should be `.btn--large`
--   Do not use class `.disabled` to disable buttons or form elements, use the HTML `disabled` property instead
--   Do not wrap inputs with labels, use explicit labels instead (e.g. use the `for` and `id` attributes)
--   Do not use `href="#"` or `href="javascript"` in examples, use `href="http://www.ebay.com"` or any other dummy URL
--   Every `<img>` tag must have an `alt` attribute, with **no** exceptions. The value can be an empty string for presentational images.
--   Avoid naming conflicts with other grid systems (e.g. Bootstap Grids)
--   Keep LESS pre-processor usage restricted to variables, mixins and basic nesting (see below). 9 times out of 10 advanced features of pre-processors can be avoided by using CSS properly.
--   Avoid too much nesting/indenting of LESS selectors as it can reduce human scan-ability of code and can also result in suboptimal compiled CSS. Try and restrict nesting to pseudo selectors only (e.g. `:focus`, `::after`).
--   Avoid over specificity (unless required for accessibility safeguarding). The fewer rules required to check for a given element, the faster style resolution will be. This is the key to dramatically increasing performance.
-    [https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS](https://web.archive.org/web/20161029110643/https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
--   Please do not commit commented out code to production.
+- Ensure all markup adheres to our [accessibility patterns](https://ebay.gitbooks.io/mindpatterns/content/)
+- Ensure all markup is valid HTML
+- Leverage ARIA roles, states and properties for styling hooks wherever possible. This safeguards against non-accessible markup (NOTE: this will increase specificity, but we accept this as a worthwhile trade off)
+- Use BEM syntax for modifiers (double-dash) and nested classes (double-underscore)
+- Use the `<svg>` tag for icons
+- Never use the `<i>` tag for icons
+- Harness CSS margin-collapse wherever possible.
+- Most block-level modules will require margin top and bottom as a sensible default
+- Do not use presentational class names, e.g. `.btn--green` should be `.btn--secondary` for example
+- Do not combine classes into a single class name, e.g. `btn-sec` should be `btn btn--sec`, this allows cascades without advanced attribute selectors or pre-processors
+- Do not chain BEM modifiers (e.g. `.btn--large.btn--primary`). This is a code smell.
+- Do not use ambiguous or global class names, e.g. `.large` should be `.btn--large`
+- Do not use class `.disabled` to disable buttons or form elements, use the HTML `disabled` property instead
+- Do not wrap inputs with labels, use explicit labels instead (e.g. use the `for` and `id` attributes)
+- Do not use `href="#"` or `href="javascript"` in examples, use `href="http://www.ebay.com"` or any other dummy URL
+- Every `<img>` tag must have an `alt` attribute, with **no** exceptions. The value can be an empty string for presentational images.
+- Avoid naming conflicts with other grid systems (e.g. Bootstap Grids)
+- Keep LESS pre-processor usage restricted to variables, mixins and basic nesting (see below). 9 times out of 10 advanced features of pre-processors can be avoided by using CSS properly.
+- Avoid too much nesting/indenting of LESS selectors as it can reduce human scan-ability of code and can also result in suboptimal compiled CSS. Try and restrict nesting to pseudo selectors only (e.g. `:focus`, `::after`).
+- Avoid over specificity (unless required for accessibility safeguarding). The fewer rules required to check for a given element, the faster style resolution will be. This is the key to dramatically increasing performance.
+  [https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS](https://web.archive.org/web/20161029110643/https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
+- Please do not commit commented out code to production.
 
 ## LESS API (deprecated)
 
@@ -275,9 +275,9 @@ In comparison to past versions, Skin now offers a very minimal public LESS API (
 
 Skin has a token based system that leverages CSS Custom Properties. The tokens are categorized into three levels:
 
--   core
--   semantic
--   component
+- core
+- semantic
+- component
 
 Skin provides a set of core and semantic defaults but, in order for modules to render correctly, they **must be explicitly included** by the end user.
 
@@ -285,18 +285,18 @@ Skin provides a set of core and semantic defaults but, in order for modules to r
 
 Core tokens are our primitives. They currently represent colour and border radius, but in time will go on to include spacing, type ramp, breakpoints and more. For example:
 
--   color-neutral-1
--   color-blue-4
--   border-radius-100
--   spacing-100 (not yet available)
+- color-neutral-1
+- color-blue-4
+- border-radius-100
+- spacing-100 (not yet available)
 
 ### Semantic Tokens
 
 Semantic tokens are aliases of core tokens. They represent an aspect of the interface that is common across the site. For example:
 
--   color-background-primary
--   color-background-confirmation
--   color-foreground-on-confirmation
+- color-background-primary
+- color-background-confirmation
+- color-foreground-on-confirmation
 
 **NOTE**: semantic token values may change dynamically at runtime depending on the "prefers-color-scheme" media query (i.e. [Dark Mode](#dark-mode)).
 
@@ -304,9 +304,9 @@ Semantic tokens are aliases of core tokens. They represent an aspect of the inte
 
 Component tokens are not used by Skin itself, but we expose them as a "brute-force" means for a page to override the system described above for one specific aspect of a component. For example:
 
--   badge-background-color
--   switch-checked-background-color
--   textbox-placeholder-color
+- badge-background-color
+- switch-checked-background-color
+- textbox-placeholder-color
 
 Obviously with great power, comes great responsibility.
 
@@ -322,9 +322,9 @@ Dark mode is powered by the [Custom Property API](#custom-property-api). When th
 
 Every module requires a page in storybook. In addition to the main use cases, try and cover as many variants, scenarios and edge cases as possible. The following tests are required for every module:
 
--   RTL (right to left languages)
--   Font-Size increase (up to 200%)
--   Color inheritance (to a certain degree)
+- RTL (right to left languages)
+- Font-Size increase (up to 200%)
+- Color inheritance (to a certain degree)
 
 Each story must be isolated to a single test. This allows us to easily run visual regression testing.
 
@@ -398,10 +398,10 @@ All CSS files are read directly from the source from `src/bundles/skin-full.scss
 
 The following scripts are available via npm:
 
--   `npm start` - Builds the server and launches it at post 3000 (This does not have live reloading)
--   `npm run dev` - Starts local BrowserSync server on port 3000 (This has live reloading)
--   `npm test` - Runs a build and lints CSS and LESS files
--   `npm run build` - Runs a build only (no server)
+- `npm start` - Builds the server and launches it at post 3000 (This does not have live reloading)
+- `npm run dev` - Starts local BrowserSync server on port 3000 (This has live reloading)
+- `npm test` - Runs a build and lints CSS and LESS files
+- `npm run build` - Runs a build only (no server)
 
 ## Icon Creation
 

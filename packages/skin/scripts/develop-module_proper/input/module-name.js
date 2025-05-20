@@ -43,7 +43,7 @@ function _validate(moduleName) {
 
     if (moduleName.trim().length < 2) {
         throw new IllegalInputError(
-            "Module name has to be atleast 2 character long!"
+            "Module name has to be atleast 2 character long!",
         );
     }
 }

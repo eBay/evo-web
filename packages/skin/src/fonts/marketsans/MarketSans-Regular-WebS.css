@@ -1,7 +1,8 @@
 @font-face {
     font-family: "Market Sans";
     src: url("MarketSans-Regular-WebS.eot"); /* IE9 Compat Modes */
-    src: url("MarketSans-Regular-WebS.eot?#iefix") format("embedded-opentype"),
+    src:
+        url("MarketSans-Regular-WebS.eot?#iefix") format("embedded-opentype"),
         /* IE6-IE8 */ url("MarketSans-Regular-WebS.woff2") format("woff2"),
         /* Super Modern Browsers */ url("MarketSans-Regular-WebS.woff")
             format("woff"),

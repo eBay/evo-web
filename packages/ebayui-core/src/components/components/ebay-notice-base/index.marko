@@ -1,6 +1,5 @@
-import { processHtmlAttributes } from '../../../common/html-attributes';
-import LightBulbIcon from '<ebay-lightbulb-24-icon>';
-
+import { processHtmlAttributes } from "../../../common/html-attributes";
+import LightBulbIcon from "<ebay-lightbulb-24-icon>";
 $ const {
     status,
     a11yText,
@@ -23,67 +22,77 @@ $ const {
     cta,
     ...htmlInput
 } = input;
-
-$ const isEducation = prefixClass === 'education-notice';
-<${root || 'section'}
-    aria-labelledby=!noA11yLabel && component.elId('status')
+$ const isEducation = prefixClass === "education-notice";
+<${root || "section"}
+    aria-labelledby=!noA11yLabel && component.elId("status")
     aria-roledescription=a11yRoleDescription
-    class=[prefixClass, inputClass, status === 'education' && prominent && `${prefixClass}--education`]
+    class=[
+        prefixClass,
+        inputClass,
+        status === "education" && prominent && `${prefixClass}--education`,
+    ]
     ...processHtmlAttributes(htmlInput)
 >
-    <if(icon !== 'none')>
-        <${headerRoot || 'div'} class=`${prefixClass}__header` id:scoped='status'>
-            <if(status === 'confirmation')>
+    <if(icon !== "none")>
+        <${headerRoot || "div"}
+            class=`${prefixClass}__header`
+            id:scoped="status"
+        >
+            <if(status === "confirmation")>
                 <ebay-confirmation-filled-16-icon
                     a11y-text=a11yIconText || a11yText
-                    a11y-variant='label'
+                    a11y-variant="label"
                     class=[iconClass, `icon--confirmation-filled`]
                 />
             </if>
-            <else-if(status === 'attention')>
+            <else-if(status === "attention")>
                 <ebay-attention-filled-16-icon
-                    a11y-variant='label'
+                    a11y-variant="label"
                     a11y-text=a11yIconText || a11yText
                     class=[iconClass, `icon--attention-filled`]
                 />
             </else-if>
-            <else-if(status === 'information')>
+            <else-if(status === "information")>
                 <ebay-information-filled-16-icon
-                    a11y-variant='label'
+                    a11y-variant="label"
                     a11y-text=a11yIconText || a11yText
                     class=[iconClass, `icon--information-filled`]
                 />
             </else-if>
             // deprecated status === education. We should probably remove this whole icon on the next major version
-            <else-if(isEducation || (status === 'education' && type === 'section'))>
+
+            <else-if(
+                isEducation || (status === "education" && type === "section")
+            )>
                 <${educationIcon || LightBulbIcon}
-                    a11y-variant='label'
+                    a11y-variant="label"
                     a11y-text=a11yIconText || a11yText
-                    class=iconClass/>
+                    class=iconClass
+                />
             </else-if>
             <if(isEducation && title)>
-                <${title.as || 'h2'}
+                <${title.as || "h2"}
                     ...title
                     class=[`${prefixClass}__title`, title.class]
                 >
                     <${title}/>
                 </>
                 <if(a11yDismissText)>
-                        <ebay-icon-button
-                            aria-label=`${a11yDismissText}`
-                            size="small"
-                            class=[`${prefixClass}__dismiss`]
-                            onClick('emit', 'dismiss')
-                        >
-                            <ebay-close-16-icon/>
-                        </ebay-icon-button>
+                    <ebay-icon-button
+                        aria-label=`${a11yDismissText}`
+                        size="small"
+                        class=[`${prefixClass}__dismiss`]
+                        onClick("emit", "dismiss")
+                    >
+                        <ebay-close-16-icon/>
+                    </ebay-icon-button>
                 </if>
             </if>
         </>
     </if>
-    <${mainRoot || 'div'} class=`${prefixClass}__main`>
+    <${mainRoot || "div"} class=`${prefixClass}__main`>
         <if(!isEducation && title)>
-            <${title.as || 'h2'}
+            <${title.as || "h2"}
                 ...title
                 class=[`${prefixClass}__title`, title.class]
             >
@@ -94,23 +103,28 @@ $ const isEducation = prefixClass === 'education-notice';
     </>
     <if(cta)>
         <p class=`${prefixClass}__cta`>
-            <${cta.as || "a"} on-click("emit", "cta-click") ...processHtmlAttributes(cta, ["as"])>
+            <${cta.as || "a"}
+                on-click("emit", "cta-click")
+                ...processHtmlAttributes(cta, ["as"])
+            >
                 <${cta}/>
             </>
         </p>
     </if>
 
     <if(footer && (isEducation || !a11yDismissText))>
-        <div class=`${prefixClass}__footer`><${footer}/></div>
+        <div class=`${prefixClass}__footer`>
+            <${footer}/>
+        </div>
     </if>
     <if(!isEducation && !footer && a11yDismissText)>
         <div class=`${prefixClass}__footer`>
             <button
                 aria-label=`${a11yDismissText}`
-                class=['fake-link', `${prefixClass}__dismiss`]
-                onClick('emit', 'dismiss')
+                class=["fake-link", `${prefixClass}__dismiss`]
+                onClick("emit", "dismiss")
             >
-                <ebay-close-16-icon.icon.icon--close-16/>
+                <ebay-close-16-icon class="icon icon--close-16"/>
             </button>
         </div>
     </if>

@@ -147,8 +147,8 @@ Passing new attributes to an ebayui component will always reset it's internal st
 class {
     onCreate() {
         this.state = {
-            dialogIsOpen: false
-        }
+            dialogIsOpen: false,
+        };
     }
 
     handleDialogClose() {
@@ -162,8 +162,9 @@ class {
 
 <ebay-lightbox-dialog
     open=state.dialogIsOpen
-    on-open('handleDialogOpen')
-    on-close('handleDialogClose')>
+    on-open("handleDialogOpen")
+    on-close("handleDialogClose")
+>
     ...
 </ebay-lightbox-dialog>
 ```
@@ -181,14 +182,14 @@ Example of static usage:
 For using pass-through attributes dynamically, they should be sent through the `html-attributes` attribute:
 
 ```marko
-$ const myAttributes = { id: 'my-button' };
+$ const myAttributes = { id: "my-button" };
 <ebay-button html-attributes=myAttributes/>
 ```
 
 Static and dynamic pass-through attributes can be used simultaneously (html-attributes takes precedence in conflicts):
 
 ```marko
-$ const myAttributes = { id: 'my-button' };
+$ const myAttributes = { id: "my-button" };
 <ebay-button html-attributes=myAttributes type="submit"/>
 ```
 

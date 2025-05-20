@@ -1,12 +1,11 @@
 export interface Input {
-    src: string,
-    alt: string,
-    fillPlacement: string
+    src: string;
+    alt: string;
+    fillPlacement: string;
 }
-
-$ const { src, alt, fillPlacement, ...buttonInput } = input
+$ const { src, alt, fillPlacement, ...buttonInput } = input;
 <ebay-toggle-button layoutType="list" ...buttonInput onToggle("emit", "toggle")>
-    Title
     <@subtitle>Subtitle</@subtitle>
-    <@img src=src alt=alt fillPlacement=fillPlacement />
+    <@img src=src alt=alt fillPlacement=fillPlacement/>
+    Title
 </ebay-toggle-button>

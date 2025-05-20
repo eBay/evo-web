@@ -41,7 +41,7 @@ describe("transition", () => {
         transition({
             el: transitionEl,
             className: "show",
-            waitFor: [transitionEl],
+            transitionList: ["opacity"],
         });
         transitionEl.removeAttribute("hidden");
         expect(transitionEl).toHaveClass("show-init");
@@ -66,7 +66,11 @@ describe("transition", () => {
     it("triggers a callback once complete", (done) => {
         const spy = vi.fn();
         transition(
-            { el: transitionEl, className: "show", waitFor: [transitionEl] },
+            {
+                el: transitionEl,
+                className: "show",
+                transitionList: ["opacity"],
+            },
             spy,
         );
         transitionEl.removeAttribute("hidden");

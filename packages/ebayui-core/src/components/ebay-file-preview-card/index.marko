@@ -20,8 +20,8 @@ $ const type = (
     rawFile?.type?.startsWith("image")
         ? "image"
         : rawFile?.type?.startsWith("video")
-            ? "video"
-            : undefined
+          ? "video"
+          : undefined
 );
 $ if (rawFile instanceof File) {
     file = {
@@ -99,8 +99,9 @@ $ file.type = type;
                     <ebay-icon-button
                         class="file-preview-card__action"
                         onClick("emit", "action")
-                        ...processHtmlAttributes(action)>
-                        <${action} />
+                        ...processHtmlAttributes(action)
+                    >
+                        <${action}/>
                     </ebay-icon-button>
                 </else-if>
                 <else-if(deleteText)>

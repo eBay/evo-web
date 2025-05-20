@@ -1,8 +1,5 @@
 {
-    "extends": [
-        "stylelint-config-standard",
-        "stylelint-prettier/recommended"
-    ],
+    "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
     "ignoreFiles": [
         "dist/**/*",
         "dist/variables/**/*",
@@ -17,7 +14,6 @@
         "no-descending-specificity": null,
         "no-duplicate-selectors": null,
         "rule-empty-line-before": null,
-        "color-function-notation": "legacy",
         "property-no-vendor-prefix": null,
         "selector-no-vendor-prefix": null,
         "value-no-vendor-prefix": null,
@@ -34,16 +30,12 @@
     },
     "overrides": [
         {
-            "files": [
-                "**/*.scss"
-            ],
+            "files": ["**/*.scss"],
             "extends": [
                 "stylelint-config-standard-scss",
                 "stylelint-config-prettier-scss"
             ],
-            "plugins": [
-                "stylelint-order"
-            ],
+            "plugins": ["stylelint-order"],
             "rules": {
                 "scss/at-mixin-argumentless-call-parentheses": null,
                 "at-rule-descriptor-value-no-unknown": null,

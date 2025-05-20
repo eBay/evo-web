@@ -1,7 +1,6 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-import IconButton from '<ebay-icon-button>'
-import Button, { type Input as ButtonInput } from '<ebay-button>'
-
+import { processHtmlAttributes } from "../../common/html-attributes";
+import IconButton from "<ebay-icon-button>";
+import Button, { type Input as ButtonInput } from "<ebay-button>";
 $ const {
     class: inputClass,
     style,
@@ -28,35 +27,32 @@ $ const {
     transparent,
     ...htmlInput
 } = input;
-
-$ {
-    var labelId = prefixId && component.getElId("label");
-    var isFormVariant = inputVariant === "form"
-    var variant: 'form' | undefined;
-    var isOverflowVariant = inputVariant === "overflow";
-    var isButtonVariant = false;
-    var priority: (typeof input)['priority'] | null = null;
-    if (borderless) {
-        // Force button variant for borderless
-        isOverflowVariant = false;
-        isFormVariant = false;
-    }
-
-    var isIconVariant = inputVariant === 'icon' || isOverflowVariant;
-
-    tagName = Button
-    var tagName;
-    if (isIconVariant) {
-        tagName = IconButton;
-    } else if (isFormVariant) {
-        variant = 'form';
-        isButtonVariant = true;
-    } else {
-        isButtonVariant = true;
-        priority = inputPriority
-    }
-    var separatorCount = 0;
+$ var labelId = prefixId && component.getElId("label");
+$ var isFormVariant = inputVariant === "form";
+$ var variant: "form" | undefined;
+$ var isOverflowVariant = inputVariant === "overflow";
+$ var isButtonVariant = false;
+$ var priority: (typeof input)["priority"] | null = null;
+$ if (borderless) {
+    // Force button variant for borderless
+    isOverflowVariant = false;
+    isFormVariant = false;
 }
+
+$ var isIconVariant = inputVariant === "icon" || isOverflowVariant;
+
+$ tagName = Button;
+$ var tagName;
+$ if (isIconVariant) {
+    tagName = IconButton;
+} else if (isFormVariant) {
+    variant = "form";
+    isButtonVariant = true;
+} else {
+    isButtonVariant = true;
+    priority = inputPriority;
+}
+$ var separatorCount = 0;
 
 <span
     ...processHtmlAttributes(htmlInput)
@@ -64,51 +60,55 @@ $ {
     style=style
     on-expander-expand("handleExpand")
     on-expander-collapse("handleCollapse")
-    onMousedown("handleMousedown")>
+    onMousedown("handleMousedown")
+>
     <${tagName}
-        class=[
-            `menu-button__button`,
-        ]
+        class=[`menu-button__button`]
         size=size
         priority=priority as ButtonInput["priority"]
         borderless=borderless
         variant=variant
         aria-expanded="false"
         aria-haspopup="true"
-        transparent=(isIconVariant && transparent)
+        transparent=isIconVariant && transparent
         aria-label=a11yText
-        aria-labelledby=(labelId && `${prefixId} ${labelId}`)
+        aria-labelledby=labelId && `${prefixId} ${labelId}`
         split=(isButtonVariant ? split : undefined)
         disabled=disabled
         partiallyDisabled=partiallyDisabled
         on-escape("handleButtonEscape")
-        key="button">
+        key="button"
+    >
         <if(isOverflowVariant)>
             <ebay-overflow-vertical-16-icon/>
         </if>
         <else>
-                <if(label)>
-                    <if(prefixLabel)>
-                        <span class="menu-button-prefix-label">${prefixLabel}</span>
-                        <${label.renderBody}/>
-                    </if>
-                    <else >
-                        <span id=labelId>
-                            <${label.renderBody}/>
-                        </span>
-                    </else>
+            <if(label)>
+                <if(prefixLabel)>
+                    <span class="menu-button-prefix-label">
+                        ${prefixLabel}
+                    </span>
+                    <${label.renderBody}/>
                 </if>
                 <else>
-                    <if(icon)>
-                        <${icon}/>
-                    </if>
-                    <if(text)>
-                        <span id=labelId>${text}</span>
-                    </if>
+                    <span id=labelId>
+                        <${label.renderBody}/>
+                    </span>
                 </else>
-                <if(isButtonVariant && !noToggleIcon)>
-                    <ebay-chevron-down-12-icon/>
+            </if>
+            <else>
+                <if(icon)>
+                    <${icon}/>
                 </if>
+                <if(text)>
+                    <span id=labelId>
+                        ${text}
+                    </span>
+                </if>
+            </else>
+            <if(isButtonVariant && !noToggleIcon)>
+                <ebay-chevron-down-12-icon/>
+            </if>
         </else>
     </>
     <ebay-menu
@@ -120,12 +120,13 @@ $ {
         on-keydown("handleMenuKeydown")
         on-change("handleMenuChange")
         on-select("handleMenuSelect")
-        key="content">
-        <for|item,index| of=(items || [])>
+        key="content"
+    >
+        <for|item, index| of=items || []>
             $ if (item.separator) {
                 separatorCount++;
             }
-            <@item  ...item checked=component.isChecked(index - separatorCount) />
+            <@item ...item checked=component.isChecked(index - separatorCount)/>
         </for>
     </ebay-menu>
 </span>

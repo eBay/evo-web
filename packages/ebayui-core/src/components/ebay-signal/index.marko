@@ -1,19 +1,20 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-import type { WithNormalizedProps } from '../../global';
-
-static interface SignalInput extends Omit<Marko.HTML.Span, `on${string}`> {
-    status?: "trustworthy" | "recent" | "time-sensitive" | "neutral";
+import type { WithNormalizedProps } from "../../global";
+static {
+    interface SignalInput extends Omit<Marko.HTML.Span, `on${string}`> {
+        status?: "trustworthy" | "recent" | "time-sensitive" | "neutral";
+    }
 }
-
 export interface Input extends WithNormalizedProps<SignalInput> {}
-
 $ const {
     class: inputClass,
     status = "neutral",
     ...htmlAttributes
 } = input;
 
-<span ...processHtmlAttributes(htmlAttributes)
-    class=[inputClass, "signal", `signal--${status}`]>
+<span
+    ...processHtmlAttributes(htmlAttributes)
+    class=[inputClass, "signal", `signal--${status}`]
+>
     <${input.renderBody}/>
 </span>

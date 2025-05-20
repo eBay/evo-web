@@ -1,7 +1,7 @@
 class {
     declare state: {
-        invalid: boolean
-    }
+        invalid: boolean;
+    };
     onCreate() {
         this.state = {
             invalid: false,
@@ -35,7 +35,9 @@ class {
             class="field__description field__description--attention"
             id:scoped="error-label"
         >
-            Use <strong>YYYY-MM-DD</strong> format
+            Use
+            <strong>YYYY-MM-DD</strong>
+             format
         </div>
     </if>
 </div>

@@ -1,10 +1,10 @@
 class {
     declare state: {
         open: boolean;
-    }
+    };
 
     onCreate() {
-        this.state = {open: false};
+        this.state = { open: false };
     }
 
     handleOpen() {
@@ -17,14 +17,19 @@ class {
 
     handleAction() {
         //do API call, other action here
-        alert("action")
+        alert("action");
     }
 }
 
-<ebay-button on-click('handleOpen')>
+<ebay-button on-click("handleOpen")>
     Open Stacked Snackbar
 </ebay-button>
-<ebay-snackbar-dialog open=state.open layout="column" on-close("handleClose") on-action("handleAction")>
+<ebay-snackbar-dialog
+    open=state.open
+    layout="column"
+    on-close("handleClose")
+    on-action("handleAction")
+>
     <@action accesskey="U">
         Undo
     </@action>

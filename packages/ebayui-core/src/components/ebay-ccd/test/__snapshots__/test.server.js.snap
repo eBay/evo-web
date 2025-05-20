@@ -206,10 +206,9 @@ exports[`ccd > renders ccd with charger included 1`] = `
 exports[`ccd > renders ccd with charger included and usbpd 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<div[39m
-    [33maria-label[39m=[32m"Charger included. 1000 - 2000 watts."[39m
+    [33maria-label[39m=[32m"Charger included. 1000 - 2000 watts. USB PD"[39m
     [33mclass[39m=[32m"ccd"[39m
     [33mrole[39m=[32m"figure"[39m
-    [33msecondary[39m=[32m"usbpd"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -278,6 +277,9 @@ exports[`ccd > renders ccd with charger included and usbpd 1`] = `
         [36m</div>[39m
         [36m<div>[39m
           [0mW[0m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mUSB PD[0m
         [36m</div>[39m
       [36m</div>[39m
     [36m</div>[39m
@@ -372,7 +374,6 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
     [33maria-label[39m=[32m"custom text"[39m
     [33mclass[39m=[32m"ccd"[39m
     [33mrole[39m=[32m"figure"[39m
-    [33msecondary[39m=[32m"usbpd"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -442,6 +443,9 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
         [36m<div>[39m
           [0mW[0m
         [36m</div>[39m
+        [36m<div>[39m
+          [0mUSB PD[0m
+        [36m</div>[39m
       [36m</div>[39m
     [36m</div>[39m
   [36m</div>[39m
@@ -451,10 +455,9 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
 exports[`ccd > renders ccd with usbpd included 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<div[39m
-    [33maria-label[39m=[32m"1000 - 2000 watts."[39m
+    [33maria-label[39m=[32m"1000 - 2000 watts. USB PD"[39m
     [33mclass[39m=[32m"ccd"[39m
     [33mrole[39m=[32m"figure"[39m
-    [33msecondary[39m=[32m"usbpd"[39m
   [36m>[39m
     [36m<div[39m
       [33mclass[39m=[32m"ccd__description-figure"[39m
@@ -499,6 +502,9 @@ exports[`ccd > renders ccd with usbpd included 1`] = `
         [36m</div>[39m
         [36m<div>[39m
           [0mW[0m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mUSB PD[0m
         [36m</div>[39m
       [36m</div>[39m
     [36m</div>[39m

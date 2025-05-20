@@ -1,24 +1,25 @@
 class {
     toggle() {
-        const infotip = this.getComponent<any>('infotip')
+        const infotip = this.getComponent<any>("infotip");
         if (infotip.isExpanded()) {
             infotip.collapse();
         } else {
-
             infotip.expand();
         }
-
     }
 }
 
 <ebay-infotip
     key="infotip"
     a11yCloseButtonText="Dismiss infotip"
-    ariaLabel="Important information">
+    ariaLabel="Important information"
+>
     <@heading>Important</@heading>
     <@content>
         <p>This is some important info</p>
     </@content>
 </ebay-infotip>
 
-<ebay-button on-click('toggle')>Toggle</>
+<ebay-button on-click("toggle")>
+    Toggle
+</ebay-button>

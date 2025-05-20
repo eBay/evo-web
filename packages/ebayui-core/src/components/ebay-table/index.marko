@@ -11,10 +11,10 @@ $ const {
     a11ySelectAllText,
     a11ySelectRowText,
     mode = "none",
+    frozenHeader,
     bodyState = "none",
     ...divInput
 } = input;
-
 $ const isLoading = bodyState === "loading";
 
 <div
@@ -23,6 +23,7 @@ $ const isLoading = bodyState === "loading";
         "table",
         mode === "selection" && "table--mode-selection",
         isLoading && "table--loading-state",
+        frozenHeader && "table--frozen-header",
         density &&
             validDensity.includes(density) &&
             `table--density-${density}`,
@@ -78,7 +79,7 @@ $ const isLoading = bodyState === "loading";
                         $ let sortEleAttr = {};
                         $ if (href) {
                             if (isLoading) {
-                                sortEleAttr = { };
+                                sortEleAttr = {};
                             } else {
                                 sortEleAttr = { href };
                             }
@@ -165,7 +166,8 @@ $ const isLoading = bodyState === "loading";
     </table>
     <div role="status">
         <if(isLoading)>
-            <ebay-progress-bar-expressive a11y-text=a11yLoadingText || "Loading..." />
+            <ebay-progress-bar-expressive a11y-text=a11yLoadingText ||
+            "Loading..."/>
         </if>
     </div>
 </div>

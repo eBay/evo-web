@@ -91,6 +91,7 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 | ------------------- | -------- | -------- | ------------------------------------------------------------- | ------------------------------------------- |
 | `density`           | String   | No       | Table density, `compact`, `relaxed`, `none`                   |                                             |
 | `mode`              | String   | No       | Table mode, `selection`, `none`                               |                                             |
+| `frozenHeader`      | Boolean  | No       | If true, the header will be frozen                            |                                             |
 | `allSelected`       | String   | No       | Select all tri-state checkbox state, `true`, `false`, `mixed` |                                             |
 | `a11ySelectAllText` | String   | No       | Accessibility text for select all checkbox                    |                                             |
 | `a11ySelectRowText` | String   | No       | Accessibility text for select row checkbox                    |                                             |

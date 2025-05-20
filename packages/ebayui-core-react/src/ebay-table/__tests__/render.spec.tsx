@@ -31,4 +31,9 @@ describe('<EbayTable /> rendering', () => {
         const { container } = render(<TableWithAction />)
         expect(container).toMatchSnapshot()
     })
+
+    it('renders with frozen header', () => {
+        const { container } = render(<Default frozenHeader />)
+        expect(container).toMatchSnapshot()
+    })
 })

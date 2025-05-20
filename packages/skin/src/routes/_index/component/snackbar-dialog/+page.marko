@@ -22,7 +22,7 @@
 
     <p>
         <strong>NOTE</strong>
-        : A toast is non-modal and therefore
+         : A toast is non-modal and therefore
         <strong>should not</strong>
          capture or trap keyboard focus when opened.
     </p>
@@ -57,16 +57,21 @@
             </aside>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <aside
+            aria-label="Notification"
+            aria-live="polite"
+            aria-modal="false"
+            class="snackbar-dialog snackbar-dialog--transition"
+            role="dialog"
+            hidden
         >
-<aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog snackbar-dialog--transition" role="dialog" hidden>
-    <div class="snackbar-dialog__window">
-        <div class="snackbar-dialog__main">
-            <p>1 item deleted from watch list.</p>
-        </div>
-    </div>
-</aside>
+            <div class="snackbar-dialog__window">
+                <div class="snackbar-dialog__main">
+                    <p>1 item deleted from watch list.</p>
+                </div>
+            </div>
+        </aside>
     </highlight-code>
 
     <h3 id="snackbar-dialog-action">
@@ -80,7 +85,7 @@
         <span class="highlight">
             document.activeElement
         </span>
-        ). This ensures a natual reading and keyboard order. In addition, an
+         ). This ensures a natual reading and keyboard order. In addition, an
         <span class="highlight">
             accesskey
         </span>
@@ -88,7 +93,7 @@
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">
             access keys
         </a>
-        .
+         .
     </p>
 
     <div class="demo">
@@ -119,7 +124,7 @@
                         >
                             Undo
                             <span class="clipped">
-                                 - Access Key: U
+                                - Access Key: U
                             </span>
                         </button>
                     </div>
@@ -127,19 +132,32 @@
             </aside>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <aside
+            aria-label="Notification"
+            aria-live="polite"
+            aria-modal="false"
+            class="snackbar-dialog snackbar-dialog--transition"
+            role="dialog"
+            hidden
         >
-<aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog snackbar-dialog--transition" role="dialog" hidden>
-    <div class="snackbar-dialog__window">
-        <div class="snackbar-dialog__main">
-            <p>1 item deleted from watch list.</p>
-        </div>
-        <div class="snackbar-dialog__actions">
-            <button accesskey="u" class="fake-link snackbar-dialog__cta">Undo<span class="clipped"> - Access Key: U</span></button>
-        </div>
-    </div>
-</aside>
+            <div class="snackbar-dialog__window">
+                <div class="snackbar-dialog__main">
+                    <p>1 item deleted from watch list.</p>
+                </div>
+                <div class="snackbar-dialog__actions">
+                    <button
+                        accesskey="u"
+                        class="fake-link snackbar-dialog__cta"
+                    >
+                        Undo
+                        <span class="clipped">
+                             - Access Key: U
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </aside>
     </highlight-code>
 
     <h3 id="snackbar-dialog-stacked">
@@ -183,7 +201,7 @@
                         >
                             Undo
                             <span class="clipped">
-                                 - Access Key: U
+                                - Access Key: U
                             </span>
                         </button>
                     </div>
@@ -191,19 +209,34 @@
             </aside>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <aside
+            aria-label="Notification"
+            aria-live="polite"
+            aria-modal="false"
+            class="snackbar-dialog snackbar-dialog--transition"
+            role="dialog"
+            hidden
         >
-<aside aria-label="Notification" aria-live="polite" aria-modal="false" class="snackbar-dialog snackbar-dialog--transition" role="dialog" hidden>
-    <div class="snackbar-dialog__window snackbar-dialog__window--column">
-        <div class="snackbar-dialog__main">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="snackbar-dialog__actions">
-            <button accesskey="u" class="fake-link snackbar-dialog__cta">Undo<span class="clipped"> - Access Key: U</span></button>
-        </div>
-    </div>
-</aside>
+            <div class="snackbar-dialog__window snackbar-dialog__window--column">
+                <div class="snackbar-dialog__main">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <div class="snackbar-dialog__actions">
+                    <button
+                        accesskey="u"
+                        class="fake-link snackbar-dialog__cta"
+                    >
+                        Undo
+                        <span class="clipped">
+                             - Access Key: U
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </aside>
     </highlight-code>
 </div>
 export const metadata = {

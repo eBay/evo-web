@@ -1,10 +1,10 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
+import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-
-static interface ProgressBarInput extends Omit<Marko.HTML.Progress, `on${string}`> {}
-
+static {
+    interface ProgressBarInput
+        extends Omit<Marko.HTML.Progress, `on${string}`> {}
+}
 export interface Input extends WithNormalizedProps<ProgressBarInput> {}
-
 $ const {
     class: inputClass,
     max = 100,
@@ -16,4 +16,5 @@ $ const {
     ...processHtmlAttributes(htmlInput)
     class=["progress-bar", inputClass]
     max=max
-    value=value/>
+    value=value
+/>

@@ -1,6 +1,6 @@
 :root {
-    --dialog-scrim-color-hide: rgb(17, 24, 32, 0);
-    --dialog-scrim-color-show: rgb(17, 24, 32, 0.7);
+    --dialog-scrim-color-hide: rgb(17 24 32 / 0);
+    --dialog-scrim-color-show: rgb(17 24 32 / 0.7);
     --dialog-lightbox-max-width: 616px;
 }
 .alert-dialog[role="alertdialog"] {
@@ -26,11 +26,11 @@
         --dialog-window-background-color,
         var(--color-background-primary)
     );
-    border-radius: var(--lightbox-border-radius, var(--border-radius-150));
+    border-radius: var(--lightbox-border-radius, var(--border-radius-100));
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
-    margin: auto auto 16px;
+    margin: auto;
     margin-left: var(--spacing-200);
     margin-right: var(--spacing-200);
     max-height: 90%;
@@ -75,6 +75,42 @@
 .alert-dialog--show .alert-dialog__window--fade {
     transition: opacity 0.16s ease-out;
 }
+.alert-dialog--hide.alert-dialog--mask-fade,
+.alert-dialog--hide.alert-dialog--mask-fade-slow {
+    transition: background-color var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.alert-dialog--hide .alert-dialog__window--fade {
+    transition: opacity var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.alert-dialog--hide .alert-dialog__window--animate {
+    transition:
+        transform var(--motion-duration-medium-3) var(--motion-easing-soft-exit),
+        opacity var(--motion-duration-short-3) var(--motion-easing-continuous);
+}
+.alert-dialog--hide .alert-dialog__window--animate > * {
+    transition: opacity var(--motion-duration-short-2)
+        var(--motion-easing-continuous);
+}
+.alert-dialog--show.alert-dialog--mask-fade,
+.alert-dialog--show.alert-dialog--mask-fade-slow {
+    transition: background-color var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.alert-dialog--show .alert-dialog__window--fade {
+    transition: opacity var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+.alert-dialog--show .alert-dialog__window--animate {
+    transition:
+        transform var(--motion-duration-medium-3) var(--motion-easing-standard),
+        opacity var(--motion-duration-short-3) var(--motion-easing-continuous);
+}
+.alert-dialog--show .alert-dialog__window--animate > * {
+    transition: opacity var(--motion-duration-medium-2)
+        var(--motion-easing-continuous) var(--motion-duration-short-3);
+}
 
 .alert-dialog--hide.alert-dialog--hide,
 .alert-dialog--hide.alert-dialog--show-init,
@@ -88,7 +124,11 @@
 .alert-dialog--show-init.alert-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-hide);
 }
+.alert-dialog--hide .alert-dialog__window--animate,
+.alert-dialog--hide .alert-dialog__window--animate > *,
 .alert-dialog--hide .alert-dialog__window--fade,
+.alert-dialog--show-init .alert-dialog__window--animate,
+.alert-dialog--show-init .alert-dialog__window--animate > *,
 .alert-dialog--show-init .alert-dialog__window--fade {
     opacity: 0;
 }
@@ -105,15 +145,65 @@
 .alert-dialog--show.alert-dialog--mask-fade-slow {
     background-color: var(--dialog-scrim-color-show);
 }
+.alert-dialog--hide-init .alert-dialog__window--animate,
+.alert-dialog--hide-init .alert-dialog__window--animate > *,
 .alert-dialog--hide-init .alert-dialog__window--fade,
+.alert-dialog--show .alert-dialog__window--animate,
+.alert-dialog--show .alert-dialog__window--animate > *,
 .alert-dialog--show .alert-dialog__window--fade {
     opacity: 1;
 }
 
+@media (prefers-reduced-motion) {
+    .alert-dialog--hide.alert-dialog--mask-fade,
+    .alert-dialog--hide.alert-dialog--mask-fade-slow {
+        transition: background-color var(--motion-duration-short-3)
+            var(--motion-easing-soft-exit);
+    }
+    .alert-dialog--hide .alert-dialog__window--animate,
+    .alert-dialog--hide .alert-dialog__window--fade {
+        transition: opacity var(--motion-duration-short-3)
+            var(--motion-easing-soft-exit);
+    }
+    .alert-dialog--hide .alert-dialog__window--animate > * {
+        transition: opacity var(--motion-duration-short-2)
+            var(--motion-soft-exit);
+    }
+    .alert-dialog--show.alert-dialog--mask-fade,
+    .alert-dialog--show.alert-dialog--mask-fade-slow {
+        transition: background-color var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter);
+    }
+    .alert-dialog--show .alert-dialog__window--animate,
+    .alert-dialog--show .alert-dialog__window--fade {
+        transition: opacity var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter);
+    }
+    .alert-dialog--show .alert-dialog__window--animate > * {
+        transition: opacity var(--motion-duration-medium-2)
+            var(--motion-easing-soft-enter) var(--motion-duration-short-3);
+    }
+}
+.alert-dialog--hide-init .alert-dialog__window--animate,
+.alert-dialog--show .alert-dialog__window--animate {
+    transform: scale(1);
+}
+
+.alert-dialog--hide .alert-dialog__window--animate,
+.alert-dialog--show-init .alert-dialog__window--animate {
+    transform: scale(0.75);
+}
+
+@media (prefers-reduced-motion) {
+    .alert-dialog--hide .alert-dialog__window--animate,
+    .alert-dialog--hide-init .alert-dialog__window--animate,
+    .alert-dialog--show .alert-dialog__window--animate,
+    .alert-dialog--show-init .alert-dialog__window--animate {
+        transform: scale(1);
+    }
+}
 @media (min-width: 768px) {
     .alert-dialog__window {
-        border-radius: var(--lightbox-border-radius, var(--border-radius-100));
-        margin: auto;
         max-width: calc(88% - var(--spacing-400));
     }
 }

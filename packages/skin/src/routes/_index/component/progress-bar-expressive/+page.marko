@@ -10,7 +10,7 @@
         <span class="highlight">
             role="status"
         </span>
-        , which announces new content to assistive technology. The live examples that follow use${" "}
+        ${" "}, which announces new content to assistive technology. The live examples that follow use${" "}
         <span class="highlight">
             aria-live="off"
         </span>
@@ -70,30 +70,32 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-    <div class="progress-bar-expressive">
-      <div role="progressbar" aria-label="Loading..." class="progress-bar-expressive__progress">
-        <div class="progress-bar-expressive__lines">
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
+    <highlight-code type="html">
+        <div class="progress-bar-expressive">
+            <div
+                role="progressbar"
+                aria-label="Loading..."
+                class="progress-bar-expressive__progress"
+            >
+                <div class="progress-bar-expressive__lines">
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </highlight-code>
+    </highlight-code>
 
     <h3 id="progress-bar-expressive-single-message">
         Expressive Progress Bar with Single Message
@@ -146,37 +148,42 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-  <div class="progress-bar-expressive">
-    <div class="progress-bar-expressive__messages">
-      <div role="status" id="progress-bar-expressive-message-3"
-        class="progress-bar-expressive__message progress-bar-expressive__message--in">
-        Hang tight.
-      </div>
-    </div>
-    <div role="progressbar" aria-label="Loading..." aria-describedby="progress-bar-expressive-message-3"
-      class="progress-bar-expressive__progress">
-      <div class="progress-bar-expressive__lines">
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
+    <highlight-code type="html">
+        <div class="progress-bar-expressive">
+            <div class="progress-bar-expressive__messages">
+                <div
+                    role="status"
+                    id="progress-bar-expressive-message-3"
+                    class="progress-bar-expressive__message progress-bar-expressive__message--in"
+                >
+                    Hang tight.
+                </div>
+            </div>
+            <div
+                role="progressbar"
+                aria-label="Loading..."
+                aria-describedby="progress-bar-expressive-message-3"
+                class="progress-bar-expressive__progress"
+            >
+                <div class="progress-bar-expressive__lines">
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-      </div>
-    </div>
-  </div>
-  </highlight-code>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                </div>
+            </div>
+        </div>
+    </highlight-code>
 
     <h3 id="progress-bar-expressive-multiple-messages">
         Expressive Progress Bar with Multiple Messages
@@ -201,7 +208,7 @@
                         <span class="highlight">
                             progress-bar-expressive__message
                         </span>
-                        . This element is used just for the visual message animation; it is not read to screen readers.
+                        ${" "}. This element is used just for the visual message animation; it is not read to screen readers.
                     </li>
                     <li>
                         Add the
@@ -220,7 +227,7 @@
                         <span class="highlight">
                             progress-bar-expressive__message
                         </span>
-                        . This will read the message aloud to screen reader users.
+                        ${" "}. This will read the message aloud to screen reader users.
                     </li>
                     <li>
                         Remove the
@@ -247,7 +254,7 @@
         <span class="highlight">
             @media (prefers-reduced-motion: reduce)
         </span>
-        , there is no transition state between messages, so the aria-hidden message is not needed. To fade in the first message, add the${" "}
+        ${" "}, there is no transition state between messages, so the aria-hidden message is not needed. To fade in the first message, add the${" "}
         <span class="highlight">
             progress-bar-expressive__message--initial
         </span>
@@ -304,38 +311,48 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-  <div class="progress-bar-expressive">
-    <div class="progress-bar-expressive__messages">
-      <div aria-hidden="true" class="progress-bar-expressive__message">
-        We're finishing your order.
-      </div>
-      <div role="status" id="progress-bar-expressive-message-2" class="progress-bar-expressive__message">
-        Hang tight.
-      </div>
-    </div>
-    <div role="progressbar" aria-label="Loading..." aria-describedby="progress-bar-expressive-message-2" class="progress-bar-expressive__progress">
-      <div class="progress-bar-expressive__lines">
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
+    <highlight-code type="html">
+        <div class="progress-bar-expressive">
+            <div class="progress-bar-expressive__messages">
+                <div
+                    aria-hidden="true"
+                    class="progress-bar-expressive__message"
+                >
+                    We're finishing your order.
+                </div>
+                <div
+                    role="status"
+                    id="progress-bar-expressive-message-2"
+                    class="progress-bar-expressive__message"
+                >
+                    Hang tight.
+                </div>
+            </div>
+            <div
+                role="progressbar"
+                aria-label="Loading..."
+                aria-describedby="progress-bar-expressive-message-2"
+                class="progress-bar-expressive__progress"
+            >
+                <div class="progress-bar-expressive__lines">
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-        <div class="progress-bar-expressive__line"></div>
-      </div>
-    </div>
-  </div>
-  </highlight-code>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                </div>
+            </div>
+        </div>
+    </highlight-code>
 
     <h3 id="progress-bar-expressive-medium">
         Medium text
@@ -394,38 +411,48 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-  <div class="progress-bar-expressive progress-bar-expressive-messages-example">
-    <div class="progress-bar-expressive__messages progress-bar-expressive__messages--medium">
-      <div aria-hidden="true" class="progress-bar-expressive__message ">
-        We're finishing your order.
-      </div>
-      <div role="status" id="progress-bar-expressive-message-5" class="progress-bar-expressive__message">
-        Hang tight.
-      </div>
-    </div>
-    <div role="progressbar" aria-label="Loading..." aria-describedby="progress-bar-expressive-message-5" class="progress-bar-expressive__progress">
-      <div class="progress-bar-expressive__lines">
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
+    <highlight-code type="html">
+        <div class="progress-bar-expressive progress-bar-expressive-messages-example">
+            <div class="progress-bar-expressive__messages progress-bar-expressive__messages--medium">
+                <div
+                    aria-hidden="true"
+                    class="progress-bar-expressive__message "
+                >
+                    We're finishing your order.
+                </div>
+                <div
+                    role="status"
+                    id="progress-bar-expressive-message-5"
+                    class="progress-bar-expressive__message"
+                >
+                    Hang tight.
+                </div>
+            </div>
+            <div
+                role="progressbar"
+                aria-label="Loading..."
+                aria-describedby="progress-bar-expressive-message-5"
+                class="progress-bar-expressive__progress"
+            >
+                <div class="progress-bar-expressive__lines">
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
 
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-          <div class="progress-bar-expressive__line"></div>
-      </div>
-    </div>
-  </div>
-  </highlight-code>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                    <div class="progress-bar-expressive__line"/>
+                </div>
+            </div>
+        </div>
+    </highlight-code>
 </div>
 export const metadata = {
     component: "progress-bar-expressive",

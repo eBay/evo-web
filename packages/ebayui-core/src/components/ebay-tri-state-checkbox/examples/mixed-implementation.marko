@@ -5,14 +5,14 @@ class {
         checked: boolean[];
         cachedChecked: boolean[];
         cacheCount: number;
-    }
+    };
 
     onCreate() {
         this.state = {
             count: 2,
             checked: [false, true, true, false],
             cachedChecked: [false, true, true, false],
-            cacheCount: 2
+            cacheCount: 2,
         };
     }
 
@@ -41,8 +41,8 @@ class {
         return this.state.count === 0
             ? "false"
             : this.state.count === this.state.checked.length
-            ? "true"
-            : "mixed";
+              ? "true"
+              : "mixed";
     }
     get skipMixed() {
         const cacheCount = this.state.cacheCount;
@@ -55,7 +55,8 @@ class {
         skipMixed=component.skipMixed
         checked=component.checked
         id:scoped="checkbox-all"
-        on-change("handleParentChange")/>
+        on-change("handleParentChange")
+    />
     <label class="field__label field__label--end" for:scoped="checkbox-all">
         Select all
     </label>
@@ -66,8 +67,12 @@ class {
             <ebay-checkbox
                 id:scoped=`checkbox-${index}`
                 checked=checked
-                on-change("handleChange", index)/>
-            <label class="field__label field__label--end" for:scoped=`checkbox-${index}`>
+                on-change("handleChange", index)
+            />
+            <label
+                class="field__label field__label--end"
+                for:scoped=`checkbox-${index}`
+            >
                 Option ${index}
             </label>
         </div>

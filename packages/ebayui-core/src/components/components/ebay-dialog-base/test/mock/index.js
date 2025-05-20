@@ -3,7 +3,7 @@ import { createRenderBody } from "../../../../../common/test-utils/shared";
 export const dialog = {
     classPrefix: "lightbox-dialog",
     class: "lightbox-dialog--mask-fade",
-    windowClass: "lightbox-dialog__window--fade",
+    windowClass: "lightbox-dialog__window--animate",
     a11yCloseText: "close",
     renderBody: createRenderBody("body content"),
 };
@@ -11,7 +11,7 @@ export const dialog = {
 export const headerFooterDialog = {
     classPrefix: "lightbox-dialog",
     class: "lightboxc-dialog--mask-fade",
-    windowClass: "lightbox-dialog__window--fade",
+    windowClass: "lightbox-dialog__window--animate",
     a11yCloseText: "close",
     footer: {
         renderBody: createRenderBody("footer content"),

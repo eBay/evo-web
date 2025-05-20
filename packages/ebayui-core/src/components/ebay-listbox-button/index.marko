@@ -1,5 +1,4 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-
 $ const {
     name,
     class: inputClass,
@@ -112,7 +111,10 @@ $ var isForm = variant === "form";
     </button>
     <ebay-listbox
         key="options"
-        class=["listbox-button__listbox", strategy === "fixed" && "listbox-button__listbox--fixed"]
+        class=[
+            "listbox-button__listbox",
+            strategy === "fixed" && "listbox-button__listbox--fixed",
+        ]
         name=name
         tabindex=-1
         listSelection=listSelection

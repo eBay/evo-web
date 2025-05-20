@@ -1,6 +1,5 @@
 import { processHtmlAttributes } from "../../../common/html-attributes";
 static const isBrowser = typeof window !== "undefined";
-
 $ const {
     open,
     classPrefix,
@@ -12,7 +11,7 @@ $ const {
     baseEl = "div",
     header,
     footer,
-    transitionEl,
+    transitionList,
     isModal,
     closeButton,
     closeButtonClass,
@@ -30,14 +29,26 @@ $ const {
     renderBody,
     ...htmlInput
 } = input;
-
-$ const { id: headerId, as: headerAs, class: headerClass, renderBody: headerRenderBody, ...headerHtmlInput } = header || {} as NonNullable<typeof header>;
-$ const { id: prevButtonId, class: prevButtonClass, a11yText: prevButtonA11yText, renderBody: prevButtonRenderBody, ...prevButtonHtmlInput } = prevButton || {} as NonNullable<typeof prevButton>;
+$ const {
+    id: headerId,
+    as: headerAs,
+    class: headerClass,
+    renderBody: headerRenderBody,
+    ...headerHtmlInput
+} = header || ({} as NonNullable<typeof header>);
+$ const {
+    id: prevButtonId,
+    class: prevButtonClass,
+    a11yText: prevButtonA11yText,
+    renderBody: prevButtonRenderBody,
+    ...prevButtonHtmlInput
+} = prevButton || ({} as NonNullable<typeof prevButton>);
 <macro name="header-content">
     <${headerAs || "h2"}
         class=[headerClass, `${classPrefix}__title`]
         ...processHtmlAttributes(headerHtmlInput)
-        id=(headerId || component.getElId("dialog-title"))>
+        id=headerId || component.getElId("dialog-title")
+    >
         <${headerRenderBody}/>
     </>
 </macro>
@@ -68,10 +79,8 @@ $ const { id: prevButtonId, class: prevButtonClass, a11yText: prevButtonA11yText
 </macro>
 <${baseEl}
     ...processHtmlAttributes(htmlInput)
-    aria-labelledby=(
-        ariaLabelledby ||
-        (header && component.getElId("dialog-title"))
-    )
+    aria-labelledby=ariaLabelledby ||
+    (header && component.getElId("dialog-title"))
     aria-modal="true"
     role=role || "dialog"
     class=[classPrefix, inputClass]
@@ -81,7 +90,7 @@ $ const { id: prevButtonId, class: prevButtonClass, a11yText: prevButtonA11yText
     onMousedown("handleStartClick")
 >
     <if(state.open && isBrowser && !ignoreEscape)>
-        <subscribe to=(document as any) on-keydown("handleKeydown")/>
+        <subscribe to=document as any on-keydown("handleKeydown")/>
     </if>
     <if(!state.open && isBrowser)>
         <subscribe to=window on-click("trackLastClick")/>
@@ -103,14 +112,8 @@ $ const { id: prevButtonId, class: prevButtonClass, a11yText: prevButtonA11yText
         <div class=`${classPrefix}__header`>
             <if(prevButton)>
                 <button
-                    ...processHtmlAttributes(
-                        prevButtonHtmlInput
-                    )
-                    class=[
-                        "icon-btn",
-                        "lightbox-dialog__prev",
-                        prevButtonClass,
-                    ]
+                    ...processHtmlAttributes(prevButtonHtmlInput)
+                    class=["icon-btn", "lightbox-dialog__prev", prevButtonClass]
                     type="button"
                     aria-label=prevButtonA11yText
                     on-click("emit", "prevButtonClick")

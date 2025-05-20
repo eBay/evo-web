@@ -10,16 +10,20 @@ $ var locations = [
     "left-bottom",
     "left-top",
     "right-bottom",
-    "right-top"
+    "right-top",
 ] as const;
 <div>
     default (none specified):
     <ebay-tooltip>
         <@host>
-            <a href="https://www.ebay.com">test link</a>
+            <a href="https://www.ebay.com">
+                test link
+            </a>
         </@host>
         <@content>
-            <p>This is the default tooltip. The pointer is located to the bottom.</p>
+            <p>
+                This is the default tooltip. The pointer is located to the bottom.
+            </p>
         </@content>
     </ebay-tooltip>
 </div>
@@ -28,10 +32,14 @@ $ var locations = [
         ${loc}:
         <ebay-tooltip pointer=loc>
             <@host>
-                <a href="https://www.ebay.com">test link</a>
+                <a href="https://www.ebay.com">
+                    test link
+                </a>
             </@host>
             <@content>
-                <p>This is the tool tip with ${loc} specified, following skin class names.</p>
+                <p>
+                    This is the tool tip with ${loc}${" "}specified, following skin class names.
+                </p>
             </@content>
         </ebay-tooltip>
     </div>

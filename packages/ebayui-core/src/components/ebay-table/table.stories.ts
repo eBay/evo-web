@@ -40,6 +40,10 @@ export default {
             description: "table state",
             options: ["loading", "none"],
         },
+        frozenHeader: {
+            control: { type: "boolean" },
+            description: "If true, the header will be frozen",
+        },
         allSelected: {
             control: { type: "select" },
             description: "Select all tri-state checkbox state",

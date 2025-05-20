@@ -1,12 +1,11 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
+import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-
-static interface CtaButtonInput extends Marko.HTML.A {
-    size?: "default" | "large";
+static {
+    interface CtaButtonInput extends Marko.HTML.A {
+        size?: "default" | "large";
+    }
 }
-
 export interface Input extends WithNormalizedProps<CtaButtonInput> {}
-
 $ const {
     size,
     class: inputClass,
@@ -16,7 +15,8 @@ $ const {
 
 <a
     ...processHtmlAttributes(htmlInput)
-    class=["cta-btn", `cta-btn--${size || "default"}`, inputClass]>
+    class=["cta-btn", `cta-btn--${size || "default"}`, inputClass]
+>
     <span class="cta-btn__cell">
         <span>
             <${renderBody}/>

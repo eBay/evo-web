@@ -1,7 +1,6 @@
 export interface Input {
     max?: number;
 }
-
 $ const { max = 120 } = input;
 
 <span class="field">
@@ -20,7 +19,11 @@ $ const { max = 120 } = input;
             on-change("onTextChange")
         />
     </span>
-    <div class=["field__description", "field__description--group", state.charCount > max && "field__description--attention"]>
+    <div class=[
+        "field__description",
+        "field__description--group",
+        state.charCount > max && "field__description--attention",
+    ]>
         <ebay-character-count
             id="my-input-charcount"
             value=state.inputValue
@@ -41,7 +44,7 @@ class {
         this.state = {
             inputValue: "",
             inputAriaLive: null,
-            charCount: 0
+            charCount: 0,
         };
     }
     onTextChange({ value }: { value: string }) {

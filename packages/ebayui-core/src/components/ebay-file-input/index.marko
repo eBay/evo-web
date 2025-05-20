@@ -8,7 +8,10 @@ $ const {
 } = input;
 
 <div class=["file-input", inputClass]>
-    <div class=["file-input__container", state.dragging && "file-input___container--dragged-over"]>
+    <div class=[
+        "file-input__container",
+        state.dragging && "file-input___container--dragged-over",
+    ]>
         <div class="file-input__upload-icon">
             <ebay-upload-24-icon/>
         </div>

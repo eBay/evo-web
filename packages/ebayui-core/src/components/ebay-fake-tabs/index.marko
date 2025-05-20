@@ -1,6 +1,5 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
+import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-
 $ const {
     selectedIndex = 0,
     class: inputClass,
@@ -9,46 +8,38 @@ $ const {
     renderBody,
     ...htmlInput
 } = input;
-
 export interface Tab extends Omit<Marko.HTML.LI, `on${string}`> {
     href: string;
 }
-
-static interface FakeTabsInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    "selected-index"?: number;
-    tab?: Marko.AttrTag<Tab>;
-    "tab-matches-current-url"?: boolean;
+static {
+    interface FakeTabsInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        "selected-index"?: number;
+        tab?: Marko.AttrTag<Tab>;
+        "tab-matches-current-url"?: boolean;
+    }
 }
-
 export interface Input extends WithNormalizedProps<FakeTabsInput> {}
+$ var tabAriaCurrent: Marko.HTML.LI["aria-current"] = (
+    tabMatchesCurrentUrl === false ? "true" : "page"
+);
 
-$ var tabAriaCurrent: Marko.HTML.LI['aria-current'] = tabMatchesCurrentUrl === false ? "true" : "page";
-
-<div
-    ...processHtmlAttributes(htmlInput)
-    class=["fake-tabs", inputClass]>
+<div ...processHtmlAttributes(htmlInput) class=["fake-tabs", inputClass]>
     <ul class="fake-tabs__items">
-        <for|tab, i| of=(tabs || [])>
-            $ const {
-                href,
-                ...htmlTab
-            } = tab;
+        <for|tab, i| of=tabs || []>
+            $ const { href, ...htmlTab } = tab;
             $ var isSelected = selectedIndex === i;
             <li
                 ...processHtmlAttributes(htmlTab)
-                class=[
-                    tab.class,
-                    "fake-tabs__item"
-                ]>
-                <a aria-current=(isSelected && tabAriaCurrent) href=href>
+                class=[tab.class, "fake-tabs__item"]
+            >
+                <a aria-current=isSelected && tabAriaCurrent href=href>
                     <${tab.renderBody}/>
                 </a>
             </li>
         </for>
     </ul>
     <div class="fake-tabs__content">
-        <div
-            class="fake-tabs__panel">
+        <div class="fake-tabs__panel">
             <div class="fake-tabs__cell">
                 <div>
                     <${renderBody}/>

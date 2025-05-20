@@ -8,9 +8,7 @@
 </h1>
 
 ```marko
-<ebay-snackbar-dialog>
-    Basic Snackbar
-</ebay-snackbar-dialog>
+<ebay-snackbar-dialog>Basic Snackbar</ebay-snackbar-dialog>
 ```
 
 A snackbar is a non-modal dialog that appears in response to a lightweight user action. It disappears automatically after a minimum of 6 seconds.

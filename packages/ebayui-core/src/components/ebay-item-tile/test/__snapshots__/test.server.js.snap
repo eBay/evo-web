@@ -90,19 +90,19 @@ exports[`ebay-item-tile > renders default 1`] = `
           [36m<span[39m
             [33mclass[39m=[32m"clipped"[39m
           [36m>[39m
-            [0m Was: [0m
+            [0mWas:[0m
           [36m</span>[39m
           [36m<s[39m
             [33mclass[39m=[32m"list-price"[39m
           [36m>[39m
-            [0m $68.99 [0m
+            [0m$68.99[0m
           [36m</s>[39m
         [36m</p>[39m
         [36m<p>[39m
           [36m<a[39m
             [33mhref[39m=[32m"https://ebay.com"[39m
           [36m>[39m
-            [0m Buy it now [0m
+            [0mBuy it now[0m
           [36m</a>[39m
         [36m</p>[39m
         [36m<p>[39m
@@ -207,19 +207,19 @@ exports[`ebay-item-tile > renders with layout=list 1`] = `
           [36m<span[39m
             [33mclass[39m=[32m"clipped"[39m
           [36m>[39m
-            [0m Was: [0m
+            [0mWas:[0m
           [36m</span>[39m
           [36m<s[39m
             [33mclass[39m=[32m"list-price"[39m
           [36m>[39m
-            [0m $68.99 [0m
+            [0m$68.99[0m
           [36m</s>[39m
         [36m</p>[39m
         [36m<p>[39m
           [36m<a[39m
             [33mhref[39m=[32m"https://ebay.com"[39m
           [36m>[39m
-            [0m Buy it now [0m
+            [0mBuy it now[0m
           [36m</a>[39m
         [36m</p>[39m
         [36m<p>[39m

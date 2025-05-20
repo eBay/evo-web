@@ -13,16 +13,12 @@ $ const [rangeStartPlaceholder, mainPlaceholder] = (
         ? inputPlaceholderText
         : [inputPlaceholderText, inputPlaceholderText]
 );
-
 $ const [rangeStartTextboxInput, mainTextboxInput] = (
-    Array.isArray(textbox)
-        ? textbox
-        : [textbox, textbox]
+    Array.isArray(textbox) ? textbox : [textbox, textbox]
 );
-
 $ const formatValue = (date: DayISO | null) => {
     return date ? format(date, input.locale) : "";
-}
+};
 
 <span
     on-expander-expand("openPopover")

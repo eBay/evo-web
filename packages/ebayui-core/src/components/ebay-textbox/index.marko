@@ -1,11 +1,9 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 static function toJSON(this: any) {
     return {
-        floatingLabel: this.floatingLabel
+        floatingLabel: this.floatingLabel,
     };
 }
-
 $ const {
     buttonAriaLabel,
     class: inputClass,
@@ -28,7 +26,6 @@ $ const {
     readonly,
     ...htmlInput
 } = input;
-
 $ (input as any).toJSON = toJSON;
 $ var isPostfix = !!postfixIcon;
 $ var hasIcon = prefixIcon || isPostfix;
@@ -38,51 +35,60 @@ $ var prefixId = prefixText && component.getElId("prefix");
 $ var postfixId = postfixText && component.getElId("postfix");
 $ var defaultTag = fluid ? "div" : "span";
 // Since prefix doesn't work with floating label, we need to disable it
+
 // In floating label static, where its always floated, we allow prefix
+
 $ var disablePrefix = !!floatingLabel && !floatingLabelStatic;
 
-<${floatingLabel && defaultTag} class=["floating-label", isLarge && "floating-label--large", opaqueLabel && "floating-label--opaque"]>
+<${floatingLabel && defaultTag} class=[
+    "floating-label",
+    isLarge && "floating-label--large",
+    opaqueLabel && "floating-label--opaque",
+]>
     <if(floatingLabel)>
         <label
             for=id
             class=[
                 "floating-label__label",
-                disabled && "floating-label__label--disabled"
-            ]>
+                disabled && "floating-label__label--disabled",
+            ]
+        >
             ${floatingLabel}
         </label>
     </if>
     <${defaultTag}
         style=style
         class=[
-            "textbox",
-            /** start remove after `:has` support */
+            "textbox" /** start remove after `:has` support */,
             disabled && "textbox--disabled",
             invalid && "textbox--invalid",
-            readonly && "textbox--readonly",
-            /** end remove after `:has` support */
+            readonly &&
+                "textbox--readonly" /** end remove after `:has` support */,
             isLarge && "textbox--large",
             fluid && "textbox--fluid",
             inputClass,
-        ]>
+        ]
+    >
         <if(displayIcon && prefixIcon && !disablePrefix)>
             <${prefixIcon}/>
         </if>
         <if(prefixText && !disablePrefix)>
             <span id=prefixId ...prefixText>
-                <${prefixText} />
+                <${prefixText}/>
             </span>
         </if>
         <${multiline ? "textarea" : "input"}
-            aria-describedby=[prefixId, postfixId].filter(Boolean).join(" ") || undefined
+            aria-describedby=(
+                [prefixId, postfixId].filter(Boolean).join(" ") || undefined
+            )
             ...processHtmlAttributes(htmlInput)
             id=id
             key="input"
             class="textbox__control"
-            type=(!multiline && (type || "text"))
-            value=(!multiline && value)
+            type=!multiline && (type || "text")
+            value=!multiline && value
             disabled=disabled
-            aria-invalid=(invalid && "true")
+            aria-invalid=invalid && "true"
             readonly=readonly
             onKeydown("forwardEvent", "keydown")
             onKeypress("forwardEvent", "keypress")
@@ -91,21 +97,25 @@ $ var disablePrefix = !!floatingLabel && !floatingLabelStatic;
             onInput("forwardEvent", "input-change")
             onFocus("onFocus")
             onBlur("onBlur")
-            onInvalid("forwardEvent", "invalid")>
-            <if(multiline && value)>${value}</if>
+            onInvalid("forwardEvent", "invalid")
+        >
+            <if(multiline && value)>
+                ${value}
+            </if>
         </>
         <if(postfixText)>
             <span id=postfixId ...postfixText>
-                <${postfixText} />
+                <${postfixText}/>
             </span>
         </if>
         <if(displayIcon && postfixIcon)>
             <${buttonAriaLabel && "button"}
                 class="icon-btn icon-btn--transparent"
                 aria-label=buttonAriaLabel
-                type=(buttonAriaLabel && "button")
+                type=buttonAriaLabel && "button"
                 disabled=disabled
-                on-click("forwardEvent", "button-click")>
+                on-click("forwardEvent", "button-click")
+            >
                 <${postfixIcon}/>
             </>
         </if>

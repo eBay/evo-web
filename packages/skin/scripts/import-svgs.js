@@ -14,7 +14,7 @@ const { html2xhtml } = require("./util");
 async function runImport(svg, name, file, argv) {
     const skinFile = await fs.promises.readFile(
         path.resolve(svgDir, `${file}.svg`),
-        "utf8"
+        "utf8",
     );
     const svgFile = await fs.promises.readFile(svg, "utf8");
 
@@ -49,7 +49,7 @@ async function runImport(svg, name, file, argv) {
 
     await fs.promises.writeFile(
         path.resolve(svgDir, `${file}.svg`),
-        newFileData
+        newFileData,
     );
 }
 

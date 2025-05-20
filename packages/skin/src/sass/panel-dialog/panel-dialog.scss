@@ -15,7 +15,7 @@
 .panel-dialog__window {
     @include dialog-window();
 
-    border-right: 1px solid rgb(153, 153, 153, 0.18);
+    border-right: 1px solid rgb(153 153 153 / 0.18);
     -webkit-overflow-scrolling: touch;
     overflow-y: auto;
     width: 100%;
@@ -23,7 +23,7 @@
 
 .panel-dialog__window--end {
     align-self: flex-end;
-    border-left: 1px solid rgb(153, 153, 153, 0.18);
+    border-left: 1px solid rgb(153 153 153 / 0.18);
 }
 
 .panel-dialog__header {

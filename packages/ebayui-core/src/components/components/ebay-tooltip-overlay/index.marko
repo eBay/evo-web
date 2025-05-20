@@ -1,28 +1,16 @@
 import { processHtmlAttributes } from "../../../common/html-attributes";
 import { typeRoles } from "./constants";
-
 static function noop() {}
-
 $ (input as any).toJSON = noop;
-
-$ const {
-    id,
-    type,
-    heading,
-    content,
-    footer,
-    a11yCloseText,
-} = input;
+$ const { id, type, heading, content, footer, a11yCloseText } = input;
 
 <span
     id=id
     class=`${type}__overlay`
     role=typeRoles[type]
-    aria-labelledby=(
-        type === "tourtip" &&
-        heading &&
-        component.elId("tourtip-label")
-    )
+    aria-labelledby=type === "tourtip" &&
+    heading &&
+    component.elId("tourtip-label")
 >
     <span class=`${type}__pointer`/>
     <span class=`${type}__mask`>
@@ -39,13 +27,15 @@ $ const {
                     <${headingAs || "span"}
                         ...processHtmlAttributes(headingInput)
                         class=[`${type}__heading`, headingClass]
-                        id:scoped="tourtip-label">
+                        id:scoped="tourtip-label"
+                    >
                         <${headingRenderBody}/>
                     </>
                 </if>
                 <if(content)>
-                    <${Object.keys(content).length > 1 && "span"}
-                        ...processHtmlAttributes(content)>
+                    <${
+                        Object.keys(content).length > 1 && "span"
+                    } ...processHtmlAttributes(content)>
                         <${content.renderBody}/>
                     </>
                 </if>
@@ -53,13 +43,18 @@ $ const {
             <if(type !== "tooltip")>
                 <button
                     aria-label=a11yCloseText
-                    class=['icon-btn', 'icon-btn--transparent', `${type}__close`]
+                    class=[
+                        "icon-btn",
+                        "icon-btn--transparent",
+                        `${type}__close`,
+                    ]
                     type="button"
-                    onClick("handleCloseButton")>
+                    onClick("handleCloseButton")
+                >
                     <ebay-close-16-icon/>
                 </button>
             </if>
-            <if (footer)>
+            <if(footer)>
                 <span class=[`${type}__footer`, footer.class]>
                     <${footer}/>
                 </span>

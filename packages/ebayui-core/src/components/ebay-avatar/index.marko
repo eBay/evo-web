@@ -1,6 +1,5 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import { getColorForText } from "./util";
-
 $ const {
     a11yText,
     class: inputClass,
@@ -10,7 +9,7 @@ $ const {
     username,
     renderBody,
     ...htmlInput
-} = input
+} = input;
 
 <div
     ...processHtmlAttributes(htmlInput)

@@ -1,21 +1,20 @@
 import { processHtmlAttributes } from "../../../../common/html-attributes";
 import type { AttrClass } from "marko/tags-html";
-import type { WithNormalizedProps } from '../../../../global';
-
-static interface SkeletonAvatarInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    as?: keyof Marko.NativeTags;
-    class?: AttrClass;
+import type { WithNormalizedProps } from "../../../../global";
+static {
+    interface SkeletonAvatarInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        as?: keyof Marko.NativeTags;
+        class?: AttrClass;
+    }
 }
-
 export interface Input extends WithNormalizedProps<SkeletonAvatarInput> {}
-
 $ const {
     as: inputAs,
     class: inputClass,
     ...htmlInput
 } = input;
 
-<${inputAs || 'div'}
+<${inputAs || "div"}
     class=["skeleton__avatar", inputClass]
     ...processHtmlAttributes(htmlInput)
 />

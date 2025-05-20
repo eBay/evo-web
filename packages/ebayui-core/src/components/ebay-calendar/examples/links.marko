@@ -1,9 +1,11 @@
 <ebay-calendar
     ...input
-    linkBuilder=(iso) => {
-        return `https://www.ebay.com/sch/i.html?_nkw=${iso}`;
-    }
+    linkBuilder=(
+        (iso) => {
+            return `https://www.ebay.com/sch/i.html?_nkw=${iso}`;
+        }
+    )
     on-select("emit", "select")
     on-month-change("emit", "month")
     on-focus("emit", "focus")
-    />
+/>

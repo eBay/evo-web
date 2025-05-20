@@ -1,14 +1,16 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-static interface CCDInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    max?: string;
-    min?: string;
-    "charger-icon"?: "included" | "not-included";
-    units?: string;
-    "secondary-type"?: string;
-    "secondary-text"?: string;
-    "a11y-units"?: string;
-    "a11y-text"?: string;
+static {
+    interface CCDInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        max?: string;
+        min?: string;
+        "charger-icon"?: "included" | "not-included";
+        units?: string;
+        "secondary-type"?: string;
+        "secondary-text"?: string;
+        "a11y-units"?: string;
+        "a11y-text"?: string;
+    }
 }
 export interface Input extends WithNormalizedProps<CCDInput> {}
 static function noop() {}
@@ -26,24 +28,25 @@ $ const {
     ...htmlInput
 } = input;
 $ (input as any).toJSON = noop;
-
-$ {
-     const hasFastCharging = secondaryType === "usbpd";
-     const a11yCharger = `${
-        chargerIcon
-            ? `Charger ${chargerIcon === "included" ? "" : "not "}included.`
-            : ""
-        } `.trim();
-    const a11yFigure = min || max ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}` : ''.trim();
-    const a11yCombined = `${a11yCharger} ${a11yFigure}`.trim();
-}
+$ const hasFastCharging = secondaryType === "usbpd";
+$ const a11yCharger = `${
+    chargerIcon
+        ? `Charger ${chargerIcon === "included" ? "" : "not "}included.`
+        : ""
+} `.trim();
+$ const a11yFigure = (
+    min || max
+        ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}`
+        : "".trim()
+);
+$ const a11yCombined = `${a11yCharger} ${a11yFigure}`.trim();
 
 <div
     ...processHtmlAttributes(htmlInput)
     role="figure"
     style=style
     aria-label=a11yText || a11yCombined
-        class=["ccd", inputClass]
+    class=["ccd", inputClass]
 >
     <if(chargerIcon === "included")>
         <ebay-ccd-charger-included-icon class="ccd__charger-icon"/>
@@ -51,7 +54,7 @@ $ {
     <else-if(chargerIcon === "not-included")>
         <ebay-ccd-charger-not-included-icon class="ccd__charger-icon"/>
     </else-if>
-    <if (min || max)>
+    <if(min || max)>
         <div class="ccd__description-figure">
             <ebay-ccd-top-icon class="ccd__top-icon"/>
             <div class="ccd__body">

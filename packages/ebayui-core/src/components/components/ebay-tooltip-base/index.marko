@@ -3,21 +3,17 @@ static function toJSON(this: any) {
     return {
         type: this.type,
         noHover: this.noHover,
-        overlayId: this.overlayId
-    }
+        overlayId: this.overlayId,
+    };
 }
-
 $ (input as any).toJSON = toJSON;
-
-$ const {
-    overlayStyle,
-    renderBody
-} = input;
+$ const { overlayStyle, renderBody } = input;
 
 <span
     key="container"
     on-expander-expand("handleExpand")
     on-expander-collapse("handleCollapse")
-    overlay-style=overlayStyle>
+    overlay-style=overlayStyle
+>
     <${renderBody}/>
 </span>

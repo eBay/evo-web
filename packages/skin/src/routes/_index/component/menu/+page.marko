@@ -8,15 +8,15 @@
         <a href="component/checkbox/">
             checkbox
         </a>
-        ,
+         ,
         <a href="component/combobox/">
             combobox
         </a>
-        ,
+         ,
         <a href="component/select/">
             select
         </a>
-        , or
+         , or
         <a href="component/radio/">
             radio
         </a>
@@ -29,15 +29,15 @@
         <a href="component/menu/#menu-fake">
             fake menu
         </a>
-        .
+         .
     </p>
     <p>
         <strong>NOTE: </strong>
-        Only limited JavaScript behaviour has been implemented in these examples. For detailed behaviour requirements, please visit our${" "}
+        ${" "}Only limited JavaScript behaviour has been implemented in these examples. For detailed behaviour requirements, please visit our${" "}
         <a href="https://opensource.ebay.com/mindpatterns/input/menu-button/index.html">
             menu pattern
         </a>
-        .
+         .
     </p>
 
     <h3 id="menu-default">
@@ -50,7 +50,7 @@
         <span class="highlight">
             menuitem
         </span>
-        .
+         .
     </p>
 
     <div class="demo">
@@ -78,25 +78,23 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="menu">
-    <div class="menu__items" role="menu">
-        <div class="menu__item" role="menuitem">
-            <span>Item 1</span>
+    <highlight-code type="html">
+        <div class="menu">
+            <div class="menu__items" role="menu">
+                <div class="menu__item" role="menuitem">
+                    <span>Item 1</span>
+                </div>
+                <div class="menu__item" role="menuitem">
+                    <span>Item 2</span>
+                </div>
+                <div class="menu__item" role="menuitem" aria-disabled="true">
+                    <span>Item 3</span>
+                </div>
+                <div class="menu__item" role="menuitem">
+                    <span>Item 4</span>
+                </div>
+            </div>
         </div>
-        <div class="menu__item" role="menuitem">
-            <span>Item 2</span>
-        </div>
-        <div class="menu__item" role="menuitem" aria-disabled="true">
-            <span>Item 3</span>
-        </div>
-        <div class="menu__item" role="menuitem">
-            <span>Item 4</span>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <h3 id="menu-badged">
@@ -152,22 +150,38 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="menu">
-    <div class="menu__items" role="menu">
-        <div aria-label="Item 1 (3 notifications)" class="menu__item menu__item--badged" role="menuitem">
-            <span aria-hidden="true">Item 1<span class="badge">3</span></span>
-        </div>
-        <div aria-label="Item 2 (77 notifications)" class="menu__item menu__item--badged" role="menuitem">
-            <span aria-hidden="true">Item 2<span class="badge">77</span></span>
-        </div>
-        <div class="menu__item menu__item--badged" role="menuitem">
-            <span>Item 3</span>
-        </div>
-    </div>
-</span>
+    <highlight-code type="html">
+        <span class="menu">
+            <div class="menu__items" role="menu">
+                <div
+                    aria-label="Item 1 (3 notifications)"
+                    class="menu__item menu__item--badged"
+                    role="menuitem"
+                >
+                    <span aria-hidden="true">
+                        Item 1
+                        <span class="badge">
+                            3
+                        </span>
+                    </span>
+                </div>
+                <div
+                    aria-label="Item 2 (77 notifications)"
+                    class="menu__item menu__item--badged"
+                    role="menuitem"
+                >
+                    <span aria-hidden="true">
+                        Item 2
+                        <span class="badge">
+                            77
+                        </span>
+                    </span>
+                </div>
+                <div class="menu__item menu__item--badged" role="menuitem">
+                    <span>Item 3</span>
+                </div>
+            </div>
+        </span>
     </highlight-code>
 
     <h3 id="menu-radio">
@@ -238,31 +252,56 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="menu">
-    <div class="menu__items" role="menu">
-        <div class="menu__item" role="menuitemradio" aria-checked="true">
-            <span>Item 1</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
+    <highlight-code type="html">
+        <div class="menu">
+            <div class="menu__items" role="menu">
+                <div
+                    class="menu__item"
+                    role="menuitemradio"
+                    aria-checked="true"
+                >
+                    <span>Item 1</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemradio"
+                    aria-checked="false"
+                >
+                    <span>Item 2</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemradio"
+                    aria-checked="false"
+                >
+                    <span>Item 3</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class="menu__item" role="menuitemradio" aria-checked="false">
-            <span>Item 2</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-        <div class="menu__item" role="menuitemradio" aria-checked="false">
-            <span>Item 3</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <h3 id="menu-checkbox">
@@ -333,31 +372,56 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="menu">
-    <div class="menu__items" role="menu">
-        <div class="menu__item" role="menuitemcheckbox" aria-checked="true">
-            <span>Item 1</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
+    <highlight-code type="html">
+        <div class="menu">
+            <div class="menu__items" role="menu">
+                <div
+                    class="menu__item"
+                    role="menuitemcheckbox"
+                    aria-checked="true"
+                >
+                    <span>Item 1</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemcheckbox"
+                    aria-checked="false"
+                >
+                    <span>Item 2</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemcheckbox"
+                    aria-checked="false"
+                >
+                    <span>Item 3</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class="menu__item" role="menuitemcheckbox" aria-checked="false">
-            <span>Item 2</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-        <div class="menu__item" role="menuitemcheckbox" aria-checked="false">
-            <span>Item 3</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <h3 id="menu-grouped">
@@ -465,52 +529,100 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="menu">
-    <div class="menu__items" role="menu">
-        <div class="menu__item" role="menuitem">
-            <span>Item 1</span>
-        </div>
+    <highlight-code type="html">
+        <div class="menu">
+            <div class="menu__items" role="menu">
+                <div class="menu__item" role="menuitem">
+                    <span>Item 1</span>
+                </div>
 
-        <hr class="menu__separator" role="separator" />
+                <hr class="menu__separator" role="separator">
 
-        <div class="menu__item" role="menuitemradio" aria-checked="true" data-makeup-group="sort">
-            <span>Item B1</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-        <div class="menu__item" role="menuitemradio" aria-checked="false" data-makeup-group="sort">
-            <span>Item B2</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-        <div class="menu__item" role="menuitemradio" aria-checked="false" data-makeup-group="sort">
-            <span>Item B3</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
+                <div
+                    class="menu__item"
+                    role="menuitemradio"
+                    aria-checked="true"
+                    data-makeup-group="sort"
+                >
+                    <span>Item B1</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    data-makeup-group="sort"
+                >
+                    <span>Item B2</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    data-makeup-group="sort"
+                >
+                    <span>Item B3</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
 
-        <hr class="menu__separator" role="separator" />
+                <hr class="menu__separator" role="separator">
 
-        <div class="menu__item" role="menuitemcheckbox" aria-checked="true" data-menuitemcheckbox-name="sort">
-            <span>Item 2</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
+                <div
+                    class="menu__item"
+                    role="menuitemcheckbox"
+                    aria-checked="true"
+                    data-menuitemcheckbox-name="sort"
+                >
+                    <span>Item 2</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="menu__item"
+                    role="menuitemcheckbox"
+                    aria-checked="true"
+                    data-menuitemcheckbox-name="sort"
+                >
+                    <span>Item 3</span>
+                    <svg
+                        class="icon icon--16"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-tick-16"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class="menu__item" role="menuitemcheckbox" aria-checked="true" data-menuitemcheckbox-name="sort">
-            <span>Item 3</span>
-            <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                <use href="#icon-tick-16"></use>
-            </svg>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <h3 id="menu-fake">
@@ -556,27 +668,38 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="fake-menu">
-    <ul class="fake-menu__items">
-        <li>
-            <a class="fake-menu__item" href="https://www.ebay.com" aria-current="page">
-                <span>Link 1</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.ebay.com" class="fake-menu__item">Link 2</a>
-        </li>
-        <li>
-            <a href="https://www.ebay.com" class="fake-menu__item">Link 3</a>
-        </li>
-    </ul>
-</div>
+    <highlight-code type="html">
+        <div class="fake-menu">
+            <ul class="fake-menu__items">
+                <li>
+                    <a
+                        class="fake-menu__item"
+                        href="https://www.ebay.com"
+                        aria-current="page"
+                    >
+                        <span>Link 1</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.ebay.com" class="fake-menu__item">
+                        Link 2
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.ebay.com" class="fake-menu__item">
+                        Link 3
+                    </a>
+                </li>
+            </ul>
+        </div>
     </highlight-code>
 </div>
 export const metadata = {

@@ -32,7 +32,7 @@
     position: relative;
 
     &::after {
-        background: rgb(0, 0, 0, 0.05);
+        background: rgb(0 0 0 / 0.05);
         bottom: 0;
         content: "";
         display: block;

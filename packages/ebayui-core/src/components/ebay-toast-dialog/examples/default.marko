@@ -1,18 +1,30 @@
-<ebay-toast-dialog a11yCloseText="Close Toast" open=state.open on-open('emit', 'open') on-close("closeToast") ...input>
+<ebay-toast-dialog
+    a11yCloseText="Close Toast"
+    open=state.open
+    on-open("emit", "open")
+    on-close("closeToast")
+    ...input
+>
     <@header>Heading</@header>
+    <@footer>
+        <ebay-button accesskey="i" on-click("closeToast")>
+            Close
+        </ebay-button>
+    </@footer>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
     <p>
-        <a href="http://www.ebay.com">www.ebay.com</a>
+        <a href="http://www.ebay.com">
+            www.ebay.com
+        </a>
     </p>
-    <@footer>
-        <ebay-button accesskey="i" on-click("closeToast")>Close</ebay-button>
-    </@footer>
 </ebay-toast-dialog>
-<ebay-button on-click("openToast")>Open Toast</ebay-button>
+<ebay-button on-click("openToast")>
+    Open Toast
+</ebay-button>
 class {
     declare state: {
         open: boolean;
-    }
+    };
 
     onCreate() {
         this.state = { open: false };
@@ -22,6 +34,6 @@ class {
     }
     closeToast() {
         this.state.open = false;
-        this.emit('close');
+        this.emit("close");
     }
 }

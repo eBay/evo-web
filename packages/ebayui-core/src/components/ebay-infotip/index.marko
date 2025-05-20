@@ -1,5 +1,4 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-
 $ const {
     a11yCloseButtonText,
     ariaLabel,
@@ -16,7 +15,6 @@ $ const {
     notInline,
     ...htmlInput
 } = input;
-
 $ var isModal = input.variant === "modal";
 $ var classPrefix = !isModal ? "infotip" : "dialog--mini";
 
@@ -33,7 +31,8 @@ $ var classPrefix = !isModal ? "infotip" : "dialog--mini";
         pointer=input.pointer
         placement=input.placement
         onBase-expand(isModal ? undefined : "handleExpand")
-        onBase-collapse(isModal ? undefined : "handleCollapse")>
+        onBase-collapse(isModal ? undefined : "handleCollapse")
+    >
         <span
             ...processHtmlAttributes(htmlInput)
             class:no-update=[

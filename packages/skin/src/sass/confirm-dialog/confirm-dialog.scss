@@ -8,7 +8,7 @@
 }
 
 .confirm-dialog__window {
-    @include lightbox-dialog-window();
+    @include lightbox-dialog-window-centered();
 
     margin-left: var(--spacing-200);
     margin-right: var(--spacing-200);
@@ -43,59 +43,11 @@ button.confirm-dialog__confirm {
     margin-left: var(--spacing-100);
 }
 
-.confirm-dialog--show,
-.confirm-dialog--hide {
-    &.confirm-dialog--mask-fade {
-        transition: background-color 0.16s ease-out;
-    }
-
-    &.confirm-dialog--mask-fade-slow {
-        transition: background-color 0.32s ease-out;
-    }
-
-    .confirm-dialog__window--fade {
-        transition: opacity 0.16s ease-out;
-    }
-}
-
-.confirm-dialog--hide,
-.confirm-dialog--show-init {
-    &.confirm-dialog--hide,
-    &.confirm-dialog--show-init {
-        display: flex;
-    }
-
-    &.confirm-dialog--mask-fade,
-    &.confirm-dialog--mask-fade-slow {
-        background-color: var(--dialog-scrim-color-hide);
-    }
-
-    .confirm-dialog__window--fade {
-        opacity: 0;
-    }
-}
-
-.confirm-dialog--show,
-.confirm-dialog--hide-init {
-    &.confirm-dialog--show,
-    &.confirm-dialog--hide-init {
-        display: flex;
-    }
-
-    &.confirm-dialog--mask-fade,
-    &.confirm-dialog--mask-fade-slow {
-        background-color: var(--dialog-scrim-color-show);
-    }
-
-    .confirm-dialog__window--fade {
-        opacity: 1;
-    }
-}
+@include dialog-animation(confirm-dialog);
+@include dialog-animation-large(confirm-dialog);
 
 @media (min-width: $_screen-size-MD) {
     .confirm-dialog__window {
-        @include lightbox-dialog-window-large();
-
         max-width: calc(88% - var(--spacing-400));
     }
 }

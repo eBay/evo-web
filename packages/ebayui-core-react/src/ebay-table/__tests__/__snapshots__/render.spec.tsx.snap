@@ -2548,3 +2548,372 @@ exports[`<EbayTable /> rendering renders table with action story correctly 1`] =
   </div>
 </div>
 `;
+
+exports[`<EbayTable /> rendering renders with frozen header 1`] = `
+<div>
+  <div
+    class="table table--frozen-header"
+    role="group"
+    tabindex="0"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th
+            class="table-cell"
+          >
+            Seller
+          </th>
+          <th
+            class="table-cell"
+          >
+            Item
+          </th>
+          <th
+            class="table-cell"
+          >
+            Status
+          </th>
+          <th
+            class="table-cell table-cell--numeric"
+          >
+            List Price
+          </th>
+          <th
+            class="table-cell table-cell--numeric"
+          >
+            Quantity Available
+          </th>
+          <th
+            class="table-cell"
+          >
+            Orders
+          </th>
+          <th
+            class="table-cell table-cell--numeric"
+          >
+            Watchers
+          </th>
+          <th
+            class="table-cell table-cell--numeric"
+          >
+            Protection
+          </th>
+          <th
+            class="table-cell"
+          >
+            Shipping
+          </th>
+          <th
+            class="table-cell"
+          >
+            Delivery
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th
+            class="table-cell"
+          >
+            Nintendo
+          </th>
+          <td
+            class="table-cell"
+          >
+            Nintendo Switch Brand New Gaming System with Four Controllers
+          </td>
+          <td
+            class="table-cell"
+          >
+            <span
+              class="signal signal--recent"
+            >
+              Ready to Ship
+            </span>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $287.96
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            300
+          </td>
+          <td
+            class="table-cell"
+          >
+            <a
+              href="https://ebay.com"
+            >
+              00-10542-89507
+            </a>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            95
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $17.99
+          </td>
+          <td
+            class="table-cell"
+          >
+            FREE
+          </td>
+          <td
+            class="table-cell"
+          >
+            4/1 - 4/5
+          </td>
+        </tr>
+        <tr>
+          <th
+            class="table-cell"
+          >
+            Nintendo
+          </th>
+          <td
+            class="table-cell"
+          >
+            Nintendo SNES Brand New Gaming System with Four Controllers
+          </td>
+          <td
+            class="table-cell"
+          >
+            <span
+              class="signal signal--recent"
+            >
+              Ready to Ship
+            </span>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $89.85
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            45
+          </td>
+          <td
+            class="table-cell"
+          >
+            <a
+              href="https://ebay.com"
+            >
+              00-10542-89507
+            </a>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            5
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $18.95
+          </td>
+          <td
+            class="table-cell"
+          >
+            FREE
+          </td>
+          <td
+            class="table-cell"
+          >
+            4/11 - 4/15
+          </td>
+        </tr>
+        <tr>
+          <th
+            class="table-cell"
+          >
+            Microsoft
+          </th>
+          <td
+            class="table-cell"
+          >
+            Microsoft XBOX 360 Brand New Gaming System with Four Controllers
+          </td>
+          <td
+            class="table-cell"
+          >
+            <span
+              class="signal signal--time-sensitive"
+            >
+              Backorder
+            </span>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $499.99
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            345
+          </td>
+          <td
+            class="table-cell"
+          >
+            <a
+              href="https://ebay.com"
+            >
+              00-10542-89507
+            </a>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            205
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $17.99
+          </td>
+          <td
+            class="table-cell"
+          >
+            FREE
+          </td>
+          <td
+            class="table-cell"
+          >
+            4/17 - 4/25
+          </td>
+        </tr>
+        <tr>
+          <th
+            class="table-cell"
+          >
+            Microsoft
+          </th>
+          <td
+            class="table-cell"
+          >
+            Microsoft XBOX One Brand New Gaming System with Four Controllers
+          </td>
+          <td
+            class="table-cell"
+          >
+            <span
+              class="signal signal--neutral"
+            >
+              Preparing
+            </span>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $499.99
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            399
+          </td>
+          <td
+            class="table-cell"
+          >
+            <a
+              href="https://ebay.com"
+            >
+              00-10542-89507
+            </a>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            305
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $27.99
+          </td>
+          <td
+            class="table-cell"
+          >
+            FREE
+          </td>
+          <td
+            class="table-cell"
+          >
+            4/9 - 4/11
+          </td>
+        </tr>
+        <tr>
+          <th
+            class="table-cell"
+          >
+            Sony
+          </th>
+          <td
+            class="table-cell"
+          >
+            Sony Playstation 5 Brand New Gaming System with Four Controllers
+          </td>
+          <td
+            class="table-cell"
+          >
+            <span
+              class="signal signal--trustworthy"
+            >
+              Restocking
+            </span>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $519.99
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            205
+          </td>
+          <td
+            class="table-cell"
+          >
+            <a
+              href="https://ebay.com"
+            >
+              00-10542-89507
+            </a>
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            199
+          </td>
+          <td
+            class="table-cell table-cell--numeric"
+          >
+            $29.99
+          </td>
+          <td
+            class="table-cell"
+          >
+            FREE
+          </td>
+          <td
+            class="table-cell"
+          >
+            4/11 - 4/15
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

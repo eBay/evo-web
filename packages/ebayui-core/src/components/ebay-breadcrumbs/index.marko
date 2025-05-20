@@ -1,6 +1,5 @@
-import { processHtmlAttributes } from '../../common/html-attributes';
-import DotsIcon from '<ebay-overflow-horizontal-16-icon>';
-
+import { processHtmlAttributes } from "../../common/html-attributes";
+import DotsIcon from "<ebay-overflow-horizontal-16-icon>";
 $ const {
     a11yHeadingText,
     a11yHeadingTag,
@@ -9,36 +8,38 @@ $ const {
     item: attrTagItems = [],
     ...htmlInput
 } = input;
-
 $ const items = [...attrTagItems];
-
 $ var anyHref = (items || []).some((element) => element.href != null);
 <nav
     ...processHtmlAttributes(htmlInput)
-    key='root'
-    aria-labelledby:scoped='breadcrumbs-heading'
-    class=['breadcrumbs', 'breadcrumb--overflow', inputClass]
-    role='navigation'
+    key="root"
+    aria-labelledby:scoped="breadcrumbs-heading"
+    class=["breadcrumbs", "breadcrumb--overflow", inputClass]
+    role="navigation"
 >
-    <${a11yHeadingTag || 'h2'}.clipped id:scoped='breadcrumbs-heading'>
+    <${a11yHeadingTag || "h2"} id:scoped="breadcrumbs-heading" class="clipped">
         ${a11yHeadingText}
     </>
-    <ul key='items'>
+    <ul key="items">
         <for|item, i| of=items>
             $ var isHidden = state.hiddenIndex.indexOf(i) > -1;
             <if(state.hiddenIndex.length > 0 && i === 1)>
                 <li>
                     <ebay-fake-menu-button
-                        variant='icon'
+                        variant="icon"
                         transparent
                         icon=DotsIcon
                         collapse-on-select
                         a11y-text=a11yMenuButtonText
-                        on-select('handleMenuBreadcrumb')
+                        on-select("handleMenuBreadcrumb")
                     >
                         <for|i| of=state.hiddenIndex>
                             <@item
-                                type=(anyHref ? 'a' : 'button') as (Marko.HTML.Button["type"])
+                                type=(
+                                    (anyHref
+                                        ? "a"
+                                        : "button") as Marko.HTML.Button["type"]
+                                )
                                 ...processHtmlAttributes(items[i])
                             >
                                 <${items[i].renderBody}/>
@@ -51,10 +52,10 @@ $ var anyHref = (items || []).some((element) => element.href != null);
             <li hidden=isHidden>
                 $ var isLast = i === items.length - 1;
                 $ var current = !item.href && isLast;
-                <${anyHref ? 'a' : 'button'}
+                <${anyHref ? "a" : "button"}
                     ...processHtmlAttributes(item)
-                    aria-current=current && 'location'
-                    on-click(!current && 'handleClick')
+                    aria-current=current && "location"
+                    on-click(!current && "handleClick")
                 >
                     <${item.renderBody}/>
                 </>

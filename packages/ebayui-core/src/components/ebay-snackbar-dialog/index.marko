@@ -19,7 +19,8 @@ $ const {
     class=[inputClass, "snackbar-dialog--transition"]
     windowClass=[layout === "column" && "snackbar-dialog__window--column"]
     buttonPosition="hidden"
-    transitionEl="root">
+    transition-list=["transform"]
+>
     <if(action)>
         <@action>
             <ebay-fake-link
@@ -27,9 +28,12 @@ $ const {
                 accesskey=action.accesskey || action.accessKey
                 on-click("handleAction")
                 on-focus("handleFocus")
-                on-blur("handleBlur")>
+                on-blur("handleBlur")
+            >
                 <${action.renderBody}/>
-                <span class="clipped">- Access Key: ${action.accesskey || action.accessKey}</span>
+                <span class="clipped">
+                    - Access Key: ${action.accesskey || action.accessKey}
+                </span>
             </ebay-fake-link>
         </@action>
     </if>

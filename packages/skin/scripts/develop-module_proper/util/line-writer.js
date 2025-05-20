@@ -57,7 +57,7 @@ function writeLine(options) {
                     newFileContents,
                     newLineContent,
                     prevLineSuffix,
-                    newLineSuffix
+                    newLineSuffix,
                 );
                 lineAppended = true;
             }
@@ -72,7 +72,7 @@ function _processUpdates(
     newFileContents,
     newLineContent,
     prevLineSuffix,
-    newLineSuffix
+    newLineSuffix,
 ) {
     if (prevLineSuffix) {
         newFileContents.push(newFileContents.pop() + prevLineSuffix);

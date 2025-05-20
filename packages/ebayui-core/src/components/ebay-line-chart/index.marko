@@ -1,5 +1,4 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     class: inputClass,
     series,
@@ -14,13 +13,8 @@ $ const {
     ...htmlInput
 } = input;
 
-<div
-    ...processHtmlAttributes(htmlInput)
-    class=[
-        inputClass,
-        'ebay-line-chart'
-    ]>
-    <div.ebay-line-chart__container id=component.getContainerId()/>
+<div ...processHtmlAttributes(htmlInput) class=[inputClass, "ebay-line-chart"]>
+    <div id=component.getContainerId() class="ebay-line-chart__container"/>
 </div>
 
 style {

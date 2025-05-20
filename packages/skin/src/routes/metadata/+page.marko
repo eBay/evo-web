@@ -1,13 +1,10 @@
 import path from "path";
-import {componentTemplate} from '../../components/components.marko';
-
-$ const metadata = {}
-
-$ for(let component in componentTemplate) {
+import { componentTemplate } from "../../components/components.marko";
+$ const metadata = {};
+$ for (let component in componentTemplate) {
     const componentName = path.basename(path.dirname(component));
     metadata[componentName] = componentTemplate[component].metadata;
 }
-
 <!doctype html>
 <html lang="en">
     <head>

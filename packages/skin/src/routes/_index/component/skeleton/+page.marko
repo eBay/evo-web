@@ -49,7 +49,7 @@
                 <strong>
                     a poor CLS score will occur whenever content shifts unexpectedly
                 </strong>
-                . Unexpected movement of page content usually happens because resources are loaded asynchronously or DOM elements get dynamically added to the page above existing content. Skeletons can help mask these problems${" "}
+                ${" "}. Unexpected movement of page content usually happens because resources are loaded asynchronously or DOM elements get dynamically added to the page above existing content. Skeletons can help mask these problems${" "}
                 <em>if</em>
                 ${" "}they reserve the correct amount of physical space, but can compound the problem when they do not.
             </p>
@@ -58,7 +58,9 @@
 
     <p>
         The
-        <a href="guide/skeleton">Skeleton Use Guide</a>
+        <a href="guide/skeleton">
+            Skeleton Use Guide
+        </a>
         ${" "}illustrates various techniques for implementing skeletons across some common loading scenarios.
     </p>
 
@@ -347,7 +349,7 @@
         <span class="highlight">
             skeleton--green
         </span>
-        . View the
+         . View the
         <a href="component/skeleton/#skeleton-composite">
             composite skeletons
         </a>
@@ -371,13 +373,11 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-  <div class="skeleton" role="img" aria-label="loading">
-    <div class="skeleton__avatar"></div>
-  </div>
-  </highlight-code>
+    <highlight-code type="html">
+        <div class="skeleton" role="img" aria-label="loading">
+            <div class="skeleton__avatar"/>
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-button">
         Button Skeleton
@@ -402,13 +402,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__button"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__button"/>
+        </div>
+    </highlight-code>
 
     <p>
         Use the
@@ -429,13 +432,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__button skeleton__button--small"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__button skeleton__button--small"/>
+        </div>
+    </highlight-code>
 
     <p>
         Use the
@@ -456,13 +462,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__button skeleton__button--large"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__button skeleton__button--large"/>
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-textbox">
         Textbox Skeleton
@@ -486,13 +495,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__textbox"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__textbox"/>
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-image">
         Image Skeleton
@@ -515,13 +527,11 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-  <div class="skeleton" role="img" aria-label="loading">
-    <div class="skeleton__image" style="height: 50px; width: 50px;"></div>
-  </div>
-  </highlight-code>
+    <highlight-code type="html">
+        <div class="skeleton" role="img" aria-label="loading">
+            <div class="skeleton__image" style="height: 50px; width: 50px;"/>
+        </div>
+    </highlight-code>
 
     <p>
         Notice that the height and width must be set on the
@@ -541,13 +551,11 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-  <div class="skeleton" role="img" aria-label="loading">
-    <div class="skeleton__image" style="height: 200px; width: 200px;"></div>
-  </div>
-  </highlight-code>
+    <highlight-code type="html">
+        <div class="skeleton" role="img" aria-label="loading">
+            <div class="skeleton__image" style="height: 200px; width: 200px;"/>
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-text">
         Text Block Skeleton
@@ -571,13 +579,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__text skeleton__text--small"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__text skeleton__text--small"/>
+        </div>
+    </highlight-code>
 
     <p>
         Use the
@@ -598,13 +609,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__text skeleton__text--large"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__text skeleton__text--large"/>
+        </div>
+    </highlight-code>
 
     <p>
         Use the
@@ -625,13 +639,16 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="width: 200px;"
         >
-  <div class="skeleton" role="img" aria-label="loading" style="width: 200px;">
-    <div class="skeleton__text skeleton__text--multiline"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__text skeleton__text--multiline"/>
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-composite">
         Composite Skeleton
@@ -656,14 +673,17 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="skeleton skeleton--purple"
+            role="img"
+            aria-label="loading"
+            style="width: 225px;"
         >
-  <div class="skeleton skeleton--purple" role="img" aria-label="loading" style="width: 225px;">
-    <div class="skeleton__image" style="width: 225px; height: 225px"></div>
-    <div class="skeleton__text skeleton__text--multiline"></div>
-  </div>
-  </highlight-code>
+            <div class="skeleton__image" style="width: 225px; height: 225px"/>
+            <div class="skeleton__text skeleton__text--multiline"/>
+        </div>
+    </highlight-code>
 
     <p>
         Here is a skeleton for a compact user profile. Notice that a
@@ -691,14 +711,15 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-  <div class="skeleton skeleton--blue" role="img" aria-label="loading">
-    <span class="skeleton__avatar"></span>
-    <span class="skeleton__text skeleton__text--multiline" style="width: 200px; vertical-align: top;"></span>
-  </div>
-  </highlight-code>
+    <highlight-code type="html">
+        <div class="skeleton skeleton--blue" role="img" aria-label="loading">
+            <span class="skeleton__avatar"/>
+            <span
+                class="skeleton__text skeleton__text--multiline"
+                style="width: 200px; vertical-align: top;"
+            />
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-variables">
         Skeleton Variables

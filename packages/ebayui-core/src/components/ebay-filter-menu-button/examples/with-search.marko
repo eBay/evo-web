@@ -25,7 +25,10 @@ class {
         currentChecked,
     }: Parameters<NonNullable<FilterMenuButtonInput["on-change"]>>[0]) {
         if (index === undefined) return;
-        const spreadItems = (this.input as FilterMenuButtonInput).type === "radio" ? {} : this.state.checkedCodes
+        const spreadItems =
+            (this.input as FilterMenuButtonInput).type === "radio"
+                ? {}
+                : this.state.checkedCodes;
         this.state.checkedCodes = {
             ...spreadItems,
             [this.state.visibleCountries[index].code]: !!currentChecked,
@@ -42,7 +45,7 @@ class {
     ...input
 >
     <for|{ name, code }| of=state.visibleCountries>
-        <@item value=code checked=state.checkedCodes[code]>
+        <@item value=code checked=(state.checkedCodes[code])>
             ${name}
         </@item>
     </for>

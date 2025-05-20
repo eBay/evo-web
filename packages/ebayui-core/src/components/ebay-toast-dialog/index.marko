@@ -1,13 +1,12 @@
 import type { Input as BaseInput } from "<ebay-dialog-base>";
-import type { WithNormalizedProps } from '../../global';
-
-static interface ToastDialogInput extends Omit<BaseInput, `on${string}`> {
-    "on-open"?: () => void;
-    "on-close"?: () => void;
+import type { WithNormalizedProps } from "../../global";
+static {
+    interface ToastDialogInput extends Omit<BaseInput, `on${string}`> {
+        "on-open"?: () => void;
+        "on-close"?: () => void;
+    }
 }
-
 export interface Input extends WithNormalizedProps<ToastDialogInput> {}
-
 $ const {
     header = {} as NonNullable<typeof input.header>,
     class: inputClass,
@@ -18,13 +17,14 @@ $ const {
 <ebay-dialog-base
     ...dialogBaseInput
     baseEl="aside"
-    transitionEl="root"
+    transition-list=["transform"]
     isModal=false
     classPrefix="toast-dialog"
     onOpen("emit", "open")
     onClose("emit", "close")
-    closeButtonClass = ["icon-btn--transparent"]
-    class=[inputClass, "toast-dialog--transition"]>
-    <@header ...header class=[header.class, "toast-dialog__title"] />
+    closeButtonClass=["icon-btn--transparent"]
+    class=[inputClass, "toast-dialog--transition"]
+>
+    <@header ...header class=[header.class, "toast-dialog__title"]/>
     <${renderBody}/>
 </ebay-dialog-base>

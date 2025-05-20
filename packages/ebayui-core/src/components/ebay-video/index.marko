@@ -1,7 +1,5 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 static const isBrowser = typeof window !== "undefined";
-
 $ const {
     source: sources = [],
     thumbnail,
@@ -23,58 +21,72 @@ $ const {
     volumeSlider,
     ...htmlInput
 } = input;
-
 $ const styleSize = {
     width: `${width}px`,
-    height: `${height}px`
+    height: `${height}px`,
 };
 
-<div key="root" class=["video-player", !state.played && thumbnail !== "" && "video-player--poster"] style=styleSize>
+<div
+    key="root"
+    class=[
+        "video-player",
+        !state.played && thumbnail !== "" && "video-player--poster",
+    ]
+    style=styleSize
+>
 
     <if(isBrowser && !width)>
-        <subscribe
-            to=window
-            on-resize("handleResize")/>
+        <subscribe to=window on-resize("handleResize")/>
     </if>
-    <div
-        class="video-player__container"
-        no-update
-        style=styleSize>
-        <video
-            no-controls
-            poster=thumbnail
-            ...processHtmlAttributes(htmlInput)>
-                <for|src| of=sources>
-                <source ...src/>
+    <div class="video-player__container" no-update style=styleSize>
+        <video no-controls poster=thumbnail ...processHtmlAttributes(htmlInput)>
+            <for|src| of=sources>
+                <source ...src>
             </for>
             <for|track| of=tracks>
-                <track ...track/>
+                <track ...track>
             </for>
         </video>
     </div>
     <div class=[
         "video-player__overlay",
-        !state.failed && "video-player__overlay--hidden"
+        !state.failed && "video-player__overlay--hidden",
     ]>
         <ebay-attention-24-icon/>
         <div class="video-player__overlay-text">
-            <if(errorText)>${errorText}</if>
+            <if(errorText)>
+                ${errorText}
+            </if>
             <else>An error has occurred</else>
         </div>
     </div>
-    <div
-        class=[
-            "video-player__overlay",
-            state.isLoaded && "video-player__overlay--hidden"
-        ]>
+    <div class=[
+        "video-player__overlay",
+        state.isLoaded && "video-player__overlay--hidden",
+    ]>
         <ebay-progress-spinner a11yText=a11yLoadText/>
     </div>
     <div style="display:none">
         <ebay-play-filled-64-colored-icon key="play-icon"/>
-        <ebay-flag-16-icon a11y-text=(a11yReportText || reportText || "Report") key="flag-icon"/>
-        <ebay-audio-off-16-icon key="audio-off-icon" a11y-text=(a11yUnmuteText || "Unmute")/>
-        <ebay-audio-high-16-icon key="audio-high-icon" a11y-text=(a11yMuteText ||"Mute")/>
-        <ebay-expand-16-icon key="expand-icon" a11y-text=(a11yFullscreenText || "Enter fullscreen")/>
-        <ebay-contract-16-icon key="contract-icon" a11y-text=(a11yExitFullscreenText || "Exit fullscreen")/>
+        <ebay-flag-16-icon
+            a11y-text=a11yReportText || reportText || "Report"
+            key="flag-icon"
+        />
+        <ebay-audio-off-16-icon
+            key="audio-off-icon"
+            a11y-text=a11yUnmuteText || "Unmute"
+        />
+        <ebay-audio-high-16-icon
+            key="audio-high-icon"
+            a11y-text=a11yMuteText || "Mute"
+        />
+        <ebay-expand-16-icon
+            key="expand-icon"
+            a11y-text=a11yFullscreenText || "Enter fullscreen"
+        />
+        <ebay-contract-16-icon
+            key="contract-icon"
+            a11y-text=a11yExitFullscreenText || "Exit fullscreen"
+        />
     </div>
 </div>

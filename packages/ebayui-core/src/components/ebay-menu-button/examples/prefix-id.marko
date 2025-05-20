@@ -2,10 +2,10 @@ import { MenuButtonEvent } from "../component";
 class {
     declare state: {
         buttonText: string;
-    }
+    };
 
     onCreate() {
-        this.state = { buttonText: 'Name' };
+        this.state = { buttonText: "Name" };
     }
 
     handleSelect(e: MenuButtonEvent) {
@@ -16,7 +16,11 @@ class {
 <div id="custom-label">
     Sort By:
 </div>
-<ebay-menu-button prefixId="custom-label" text=state.buttonText on-select('handleSelect')>
+<ebay-menu-button
+    prefixId="custom-label"
+    text=state.buttonText
+    on-select("handleSelect")
+>
     <@item>Name</@item>
     <@item>Year</@item>
     <@item>Group</@item>

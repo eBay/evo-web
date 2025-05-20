@@ -1,17 +1,16 @@
 import type { TextboxEvent } from "../component-browser";
-
 class {
     declare state: {
-        value: string
-    }
+        value: string;
+    };
     onCreate() {
         this.state = {
             value: "",
         };
     }
-    change({ value, originalEvent }: { value: string, originalEvent: Event }) {
+    change({ value, originalEvent }: { value: string; originalEvent: Event }) {
         this.state.value = value;
-        this.emit('change', originalEvent);
+        this.emit("change", originalEvent);
     }
     clear(e: TextboxEvent) {
         this.state.value = "";

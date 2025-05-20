@@ -1,5 +1,4 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     class: inputClass,
     style,
@@ -13,7 +12,6 @@ $ const {
     ariaLabelledby,
     ...htmlInput
 } = input;
-
 $ var isRadio = type === "radio";
 $ var isCheckbox = type === "checkbox";
 $ var isCheckable = type === "checkbox" || type === "radio";
@@ -22,23 +20,23 @@ $ var separatorMap = component.getSeparatorMap(input);
 <span
     ...processHtmlAttributes(htmlInput)
     class=[
-        classPrefix
-            ? `${baseClass}__menu`
-            : "menu",
+        classPrefix ? `${baseClass}__menu` : "menu",
         reverse && `${baseClass}__menu--reverse`,
         fixed && `${baseClass}__menu--fixed`,
         fixWidth && `${baseClass}__menu--fix-width`,
-        inputClass
+        inputClass,
     ]
-    style=style>
+    style=style
+>
     <div
         role="menu"
         class=`${baseClass}__items`
         key="menu"
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
-        id:scoped="menu">
-        <for|item, index| of=(component.items)>
+        id:scoped="menu"
+    >
+        <for|item, index| of=component.items>
             $ const {
                 class: itemClass,
                 style,
@@ -49,20 +47,24 @@ $ var separatorMap = component.getSeparatorMap(input);
                 renderBody,
                 ...htmlItem
             } = item;
-            $ {
-                var itemRole: Marko.HTML.Div["role"] = isRadio
-                                ? "menuitemradio"
-                                : isCheckbox
-                                ? "menuitemcheckbox"
-                                : "menuitem";
-                var checked = component.isChecked(index);
-            }
-            <if (separatorMap[index])>
-                <hr class=`${baseClass}__separator` role="separator" />
+            $ var itemRole: Marko.HTML.Div["role"] = (
+                isRadio
+                    ? "menuitemradio"
+                    : isCheckbox
+                      ? "menuitemcheckbox"
+                      : "menuitem"
+            );
+            $ var checked = component.isChecked(index);
+            <if(separatorMap[index])>
+                <hr class=`${baseClass}__separator` role="separator">
             </if>
             <div
                 ...processHtmlAttributes(htmlItem)
-                class=[`${baseClass}__item`, itemClass, badgeNumber !== undefined &&  `${baseClass}__item--badged`]
+                class=[
+                    `${baseClass}__item`,
+                    itemClass,
+                    badgeNumber !== undefined && `${baseClass}__item--badged`,
+                ]
                 style=style
                 aria-checked=isCheckable && (checked ? "true" : "false")
                 aria-disabled=disabled && "true"
@@ -70,14 +72,15 @@ $ var separatorMap = component.getSeparatorMap(input);
                 onClick(!disabled && "handleItemClick", index)
                 onKeydown(!disabled && "handleItemKeydown", index)
                 onKeypress(!disabled && "handleItemKeypress")
-                key="item[]">
+                key="item[]"
+            >
                 <span>
                     <${renderBody}/>
                     <if(badgeNumber)>
                         <ebay-badge type="menu" number=badgeNumber/>
                     </if>
                 </span>
-                <ebay-tick-16-icon />
+                <ebay-tick-16-icon/>
             </div>
         </for>
     </div>

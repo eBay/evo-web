@@ -13,10 +13,11 @@
         Use the
         <span class="highlight">
             aria-current
-        </span>attribute to denote the current step in the list. All items after the current will be shown in progress.
+        </span>
+        attribute to denote the current step in the list. All items after the current will be shown in progress.
     </p>
     <p>
-        The default state for each item will be the complete or active state until it reaches
+        The default state for each item will be the complete or active state until it reaches${" "}
         <span class="highlight">
             [aria-current]
         </span>
@@ -120,61 +121,89 @@
             </div>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<div class="progress-stepper" aria-labelledby="progress-stepper-header">
-    <h2 class="clipped" id="progress-stepper-header">Shipment Progress</h2>
-    <div class="progress-stepper__items" role="list">
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Started</h4>
-                <p>July 3rd</p>
-            </span>
+    <highlight-code type="html">
+        <div class="progress-stepper" aria-labelledby="progress-stepper-header">
+            <h2 class="clipped" id="progress-stepper-header">
+                Shipment Progress
+            </h2>
+            <div class="progress-stepper__items" role="list">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="complete"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Started</h4>
+                        <p>July 3rd</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="complete"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Shipped</h4>
+                        <p>July 4th</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div
+                    aria-current="step"
+                    class="progress-stepper__item"
+                    role="listitem"
+                >
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="current"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Transit</h4>
+                        <p>July 5th</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="upcoming"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-upcoming-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Delivered</h4>
+                        <p>July 6th</p>
+                    </span>
+                </div>
+            </div>
         </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Shipped</h4>
-                <p>July 4th</p>
-            </span>
-        </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div aria-current="step" class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="current" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Transit</h4>
-                <p>July 5th</p>
-            </span>
-        </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="upcoming" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-upcoming-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Delivered</h4>
-                <p>July 6th</p>
-            </span>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <p>The stepper can be sized and aligned using standard CSS:</p>
@@ -270,61 +299,93 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
+    <highlight-code type="html">
+        <div
+            class="progress-stepper"
+            aria-labelledby="progress-stepper-header"
+            style="margin: 16px auto; width: 390px;"
         >
-<div class="progress-stepper" aria-labelledby="progress-stepper-header" style="margin: 16px auto; width: 390px;">
-    <h2 class="clipped" id="progress-stepper-header">Shipment Progress</h2>
-    <div class="progress-stepper__items" role="list">
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Started</h4>
-                <p>July 3rd</p>
-            </span>
+            <h2 class="clipped" id="progress-stepper-header">
+                Shipment Progress
+            </h2>
+            <div class="progress-stepper__items" role="list">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="complete"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Started</h4>
+                        <p>July 3rd</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="complete"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Shipped</h4>
+                        <p>July 4th</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div
+                    aria-current="step"
+                    class="progress-stepper__item"
+                    role="listitem"
+                >
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="current"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Transit</h4>
+                        <p>July 5th</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="upcoming"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-upcoming-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Delivered</h4>
+                        <p>July 6th</p>
+                    </span>
+                </div>
+            </div>
         </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Shipped</h4>
-                <p>July 4th</p>
-            </span>
-        </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div aria-current="step" class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="current" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Transit</h4>
-                <p>July 5th</p>
-            </span>
-        </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="upcoming" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-upcoming-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Delivered</h4>
-                <p>July 6th</p>
-            </span>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <h3 id="progress-stepper-vertical">
@@ -404,50 +465,70 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="progress-stepper progress-stepper--vertical">
-    <div class="progress-stepper__items" role="list">
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h3>Order placed</h3>
-                <p>New Mens Addidas Ultra Boost</p>
-            </span>
+    <highlight-code type="html">
+        <div class="progress-stepper progress-stepper--vertical">
+            <div class="progress-stepper__items" role="list">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="complete"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h3>Order placed</h3>
+                        <p>New Mens Addidas Ultra Boost</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div
+                    aria-current="step"
+                    class="progress-stepper__item"
+                    role="listitem"
+                >
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="current"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h3>Preparing for shipment</h3>
+                        <p>We will notify you once it ships.</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <span class="progress-stepper__icon">
+                            <svg
+                                role="img"
+                                aria-label="upcoming"
+                                class="icon"
+                                height="24"
+                                width="24"
+                            >
+                                <use href="#icon-stepper-upcoming-24"/>
+                            </svg>
+                        </span>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h3>Delivered</h3>
+                        <p>Guaranteed Wednesday, October 09.</p>
+                    </span>
+                </div>
+            </div>
         </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div aria-current="step" class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="current" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h3>Preparing for shipment</h3>
-                <p>We will notify you once it ships.</p>
-            </span>
-        </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <span class="progress-stepper__icon">
-                    <svg role="img" aria-label="upcoming" class="icon" height="24" width="24">
-                        <use href="#icon-stepper-upcoming-24"></use>
-                    </svg>
-                </span>
-            </span>
-            <span class="progress-stepper__text">
-                <h3>Delivered</h3>
-                <p>Guaranteed Wednesday, October 09.</p>
-            </span>
-        </div>
-    </div>
-</div>
     </highlight-code>
 
     <div class="demo">
@@ -522,49 +603,71 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<div class="progress-stepper" aria-labelledby="progress-stepper-header">
-    <h2 class="clipped" id="progress-stepper-header">Shipment Progress</h2>
-    <div class="progress-stepper__items" role="list">
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="complete" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-confirmation-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Started</h4>
-                <p>July 3rd</p>
-            </span>
+    <highlight-code type="html">
+        <div class="progress-stepper" aria-labelledby="progress-stepper-header">
+            <h2 class="clipped" id="progress-stepper-header">
+                Shipment Progress
+            </h2>
+            <div class="progress-stepper__items" role="list">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="complete"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-confirmation-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Started</h4>
+                        <p>July 3rd</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div
+                    aria-current="step"
+                    class="progress-stepper__item progress-stepper__item--attention"
+                    role="listitem"
+                >
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="blocked"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-attention-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Blocked</h4>
+                        <p>July 5th</p>
+                    </span>
+                </div>
+                <hr class="progress-stepper__separator" role="presentation">
+                <div class="progress-stepper__item" role="listitem">
+                    <span class="progress-stepper__icon">
+                        <svg
+                            role="img"
+                            aria-label="upcoming"
+                            class="icon"
+                            height="24"
+                            width="24"
+                        >
+                            <use href="#icon-stepper-upcoming-24"/>
+                        </svg>
+                    </span>
+                    <span class="progress-stepper__text">
+                        <h4>Delivered</h4>
+                        <p>July 6th</p>
+                    </span>
+                </div>
+            </div>
         </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div aria-current="step" class="progress-stepper__item progress-stepper__item--attention" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="blocked" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-attention-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Blocked</h4>
-                <p>July 5th</p>
-            </span>
-        </div>
-        <hr class="progress-stepper__separator" role="presentation" />
-        <div class="progress-stepper__item" role="listitem">
-            <span class="progress-stepper__icon">
-                <svg role="img" aria-label="upcoming" class="icon" height="24" width="24">
-                    <use href="#icon-stepper-upcoming-24"></use>
-                </svg>
-            </span>
-            <span class="progress-stepper__text">
-                <h4>Delivered</h4>
-                <p>July 6th</p>
-            </span>
-        </div>
-    </div>
-</div>
     </highlight-code>
 </div>
 export const metadata = {

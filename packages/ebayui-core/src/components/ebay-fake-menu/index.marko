@@ -1,5 +1,4 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     class: inputClass,
     style,
@@ -11,28 +10,22 @@ $ const {
     item: items = [],
     ...htmlInput
 } = input;
-
 $ var baseClass = classPrefix || "fake-menu";
 $ var separatorMap = component.getSeparatorMap(input);
 
 <span
     ...processHtmlAttributes(htmlInput)
     class=[
-        classPrefix
-            ? `${baseClass}__menu`
-            : "fake-menu",
+        classPrefix ? `${baseClass}__menu` : "fake-menu",
         reverse && `${baseClass}__menu--reverse`,
         fixed && `${baseClass}__menu--fixed`,
         fixWidth && `${baseClass}__menu--fix-width`,
-        inputClass
+        inputClass,
     ]
-    style=style>
-    <ul
-        class=`fake-menu__items`
-        key="menu"
-        tabindex="-1"
-        id:scoped="menu">
-        <for|item, index| of=(component.items)>
+    style=style
+>
+    <ul class=`fake-menu__items` key="menu" tabindex="-1" id:scoped="menu">
+        <for|item, index| of=component.items>
             $ const {
                 class: itemClass,
                 style,
@@ -47,26 +40,29 @@ $ var separatorMap = component.getSeparatorMap(input);
                 disabled,
                 ...htmlItem
             } = item;
-            $ var defaultAriaCurrent = itemMatchesUrl === false ? 'true' : 'page';
-            <if (separatorMap[index])>
+            $ var defaultAriaCurrent = (
+                itemMatchesUrl === false ? "true" : "page"
+            );
+            <if(separatorMap[index])>
                 <li>
-                    <hr class=`${baseClass}__separator` role="separator" />
+                    <hr class=`${baseClass}__separator` role="separator">
                 </li>
             </if>
             <li>
-                $ var isButton = type === "button" || type ==="submit";
+                $ var isButton = type === "button" || type === "submit";
                 <${isButton ? "button" : "a"}
                     ...processHtmlAttributes(htmlItem)
                     class=[`${baseClass}__item`, itemClass]
                     style=style
-                    disabled=(isButton && disabled)
-                    aria-disabled=(!isButton && disabled && 'true')
+                    disabled=isButton && disabled
+                    aria-disabled=!isButton && disabled && "true"
                     aria-current=(current ? defaultAriaCurrent : false)
                     href=(disabled ? null : href)
-                    type=(isButton && type)
+                    type=isButton && type
                     onKeydown(!disabled && "handleItemKeydown", index)
                     onClick(!disabled && "handleItemClick", index)
-                    key="item[]">
+                    key="item[]"
+                >
                     <span>
                         <${renderBody}/>
                     </span>
@@ -74,7 +70,7 @@ $ var separatorMap = component.getSeparatorMap(input);
                         <ebay-badge type="menu" number=badgeNumber/>
                     </if>
 
-                    <ebay-tick-16-icon />
+                    <ebay-tick-16-icon/>
                 </>
             </li>
         </for>

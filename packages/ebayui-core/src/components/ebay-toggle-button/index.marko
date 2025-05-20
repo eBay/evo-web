@@ -1,5 +1,4 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-
 $ const {
     class: inputClass,
     icon,
@@ -17,11 +16,12 @@ $ const {
     class=[
         "toggle-button",
         layoutType && `toggle-button--${layoutType}-layout`,
-        inputClass
+        inputClass,
     ]
     aria-pressed=state.pressed && "true"
     ...processHtmlAttributes(htmlInput)
-    onClick("handleClick")>
+    onClick("handleClick")
+>
     <if(icon)>
         <span class="toggle-button__icon">
             <${icon}/>
@@ -39,11 +39,12 @@ $ const {
                         "background-position": img.fillPlacement || "center",
                         "background-size": "cover",
                         "background-repeat": "no-repeat",
-                    } />
+                    }
+                />
             </if>
             <else>
                 <span class="toggle-button__image">
-                    <img src=img.src alt=img.alt />
+                    <img src=img.src alt=img.alt>
                 </span>
             </else>
         </span>

@@ -8,6 +8,7 @@ Currently each package has their own contributing guide.
 
 - [Skin](./packages/skin/CONTRIBUTING.md)
 - [Ebayui-Core](./packages/ebayui-core/CONTRIBUTING.md)
+- [Ebayui-Core-React](./packages/ebayui-core-react/CONTRIBUTING.md)
 
 ## Releases
 

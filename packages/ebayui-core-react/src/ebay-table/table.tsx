@@ -19,6 +19,7 @@ export type EbayTableProps = Omit<ComponentProps<'div'>, 'onSelect'> & {
     mode?: TableMode;
     allSelected?: CheckboxState;
     density?: TableDensity;
+    frozenHeader?: boolean;
     a11ySelectAllText?: string;
     a11ySelectRowText?: string;
     onSelect?: TableSelectHandler;
@@ -30,6 +31,7 @@ const EbayTable: FC<EbayTableProps> = ({
     mode,
     allSelected,
     density,
+    frozenHeader,
     a11ySelectAllText,
     a11ySelectRowText,
     onSelect,
@@ -128,6 +130,7 @@ const EbayTable: FC<EbayTableProps> = ({
             {...rest}
             className={classNames('table', className, {
                 'table--mode-selection': mode === 'selection',
+                'table--frozen-header': frozenHeader,
                 [`table--density-${density}`]: density
             })}
             role="group"

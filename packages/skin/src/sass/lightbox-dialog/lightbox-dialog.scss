@@ -97,69 +97,16 @@ button.icon-btn.lightbox-dialog__prev {
     text-align: center;
 }
 
-.lightbox-dialog--show,
-.lightbox-dialog--hide {
-    &.lightbox-dialog--mask-fade {
-        transition: background-color 0.16s ease-out;
-    }
+@include dialog-animation(lightbox-dialog);
 
-    &.lightbox-dialog--mask-fade-slow {
-        transition: background-color 0.32s ease-out;
-    }
-
-    .lightbox-dialog__window--fade {
-        transition: opacity 0.16s ease-out;
-    }
-
-    .lightbox-dialog__window--animate {
-        transition:
-            opacity 0.16s ease-out,
-            transform 0.32s ease-out;
-    }
+.lightbox-dialog--show .lightbox-dialog__window--animate,
+.lightbox-dialog--hide-init .lightbox-dialog__window--animate {
+    transform: translateY(0);
 }
 
-.lightbox-dialog--hide,
-.lightbox-dialog--show-init {
-    &.lightbox-dialog--hide,
-    &.lightbox-dialog--show-init {
-        display: flex;
-    }
-
-    &.lightbox-dialog--mask-fade,
-    &.lightbox-dialog--mask-fade-slow {
-        background-color: var(--dialog-scrim-color-hide);
-    }
-
-    .lightbox-dialog__window--fade {
-        opacity: 0;
-    }
-
-    .lightbox-dialog__window--animate {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-}
-
-.lightbox-dialog--show,
-.lightbox-dialog--hide-init {
-    &.lightbox-dialog--show,
-    &.lightbox-dialog--hide-init {
-        display: flex;
-    }
-
-    &.lightbox-dialog--mask-fade,
-    &.lightbox-dialog--mask-fade-slow {
-        background-color: var(--dialog-scrim-color-show);
-    }
-
-    .lightbox-dialog__window--fade {
-        opacity: 1;
-    }
-
-    .lightbox-dialog__window--animate {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.lightbox-dialog--show-init .lightbox-dialog__window--animate,
+.lightbox-dialog--hide .lightbox-dialog__window--animate {
+    transform: translateY(100%);
 }
 
 /* Added :after class in order to increase parent hit box */
@@ -222,12 +169,8 @@ button.icon-btn.lightbox-dialog__prev {
     .lightbox-dialog__window .lightbox-dialog__footer {
         @include dialog-footer-content-large();
     }
-    .lightbox-dialog--show .lightbox-dialog__window--animate,
-    .lightbox-dialog--hide-init .lightbox-dialog__window--animate,
-    .lightbox-dialog--show-init .lightbox-dialog__window--animate,
-    .lightbox-dialog--hide .lightbox-dialog__window--animate {
-        transform: translateY(0);
-    }
+
+    @include dialog-animation-large(lightbox-dialog);
 }
 
 @media (min-width: $_screen-size-MD) {

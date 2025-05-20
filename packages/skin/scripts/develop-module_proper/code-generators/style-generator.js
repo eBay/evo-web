@@ -5,7 +5,7 @@ const BaseGenerator = require("./base-generator");
 const writeLine = require("../util/line-writer");
 
 const getBaseStyleContent = (
-    moduleId
+    moduleId,
 ) => `// This is boilerplate generated style. Please update this!
 .${moduleId} {
     display: block;
@@ -37,7 +37,7 @@ class StyleGenerator extends BaseGenerator {
             "..",
             "..",
             "src",
-            "less"
+            "less",
         );
     }
 
@@ -48,14 +48,14 @@ class StyleGenerator extends BaseGenerator {
 
         log.info(
             "Styles added! Make changes in %s folder.",
-            path.join(this.sourceModuleLocation)
+            path.join(this.sourceModuleLocation),
         );
     }
 
     _addSourceStyles() {
         const sourceModuleLocation = path.join(
             this.sourceStyleLocation,
-            this.moduleId
+            this.moduleId,
         );
 
         if (!fs.existsSync(sourceModuleLocation)) {
@@ -67,15 +67,15 @@ class StyleGenerator extends BaseGenerator {
 
         this._addSourceStylesProper(
             path.join(sourceModuleLocation, "base"),
-            baseStyleContent
+            baseStyleContent,
         );
         this._addSourceStylesProper(
             path.join(sourceModuleLocation, "ds4"),
-            dsContent
+            dsContent,
         );
         this._addSourceStylesProper(
             path.join(sourceModuleLocation, "ds6"),
-            dsContent
+            dsContent,
         );
 
         this.sourceModuleLocation = sourceModuleLocation;
@@ -105,7 +105,7 @@ class StyleGenerator extends BaseGenerator {
             "bundles",
             "skin",
             version,
-            "skin.less"
+            "skin.less",
         );
         const newLineContent = `@import "../../../${this.moduleId}/${version}/${this.moduleId}.less";`;
         writeLine({
@@ -129,7 +129,7 @@ class StyleGenerator extends BaseGenerator {
     _addPackagingIndexDependencies() {
         this._addDependencies(
             `        "require: ./${this.moduleId}"`,
-            "index.browser.json"
+            "index.browser.json",
         );
     }
 
@@ -147,7 +147,7 @@ class StyleGenerator extends BaseGenerator {
             "..",
             "..",
             "..",
-            "browser.json"
+            "browser.json",
         );
         const newMappings = [];
         const browserJson = require(browserJsonFile);
@@ -174,20 +174,20 @@ class StyleGenerator extends BaseGenerator {
         const projectRootPath = path.join(__dirname, "..", "..", "..");
         const moduleBrowserPath = path.join(
             projectRootPath,
-            `${this.moduleId}.browser.json`
+            `${this.moduleId}.browser.json`,
         );
 
         if (fs.existsSync(moduleBrowserPath)) {
             log.warn(
                 "[STYLES][%s] Module browser content already exists!",
-                moduleBrowserPath
+                moduleBrowserPath,
             );
             return;
         }
 
         fs.writeFileSync(
             moduleBrowserPath,
-            getModuleBrowserContent(this.moduleId)
+            getModuleBrowserContent(this.moduleId),
         );
     }
 
@@ -218,7 +218,7 @@ class StyleGenerator extends BaseGenerator {
         }
         fs.writeFileSync(
             filePathFromRoot,
-            `import './dist/${this.moduleId}/${version}/${this.moduleId}.css';\n`
+            `import './dist/${this.moduleId}/${version}/${this.moduleId}.css';\n`,
         );
     }
 

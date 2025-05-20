@@ -1,6 +1,5 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
+import { processHtmlAttributes } from "../../common/html-attributes";
 import type { Option } from "./component";
-
 $ const {
     class: inputClass,
     style,
@@ -13,20 +12,19 @@ $ const {
 } = input;
 $ const options = [...(inputOptions || [])];
 static var itemIgnoredAttributes = ["selected", "optgroup"];
-
 static interface OptGroup {
     optgroup: string;
     options: Option[];
-};
-
-static function isGroup(optionOrGroup: Option | OptGroup): optionOrGroup is OptGroup {
+}
+static function isGroup(
+    optionOrGroup: Option | OptGroup,
+): optionOrGroup is OptGroup {
     return !!optionOrGroup.optgroup;
 }
-
 $ var selectedOption = options[state.selectedIndex];
 $ var list: (Option | OptGroup)[] = [];
 $ var optgroups: Record<string, OptGroup> = {};
-$ var id = component.selectId
+$ var id = component.selectId;
 $ for (const option of options) {
     var optgroup = option.optgroup;
 
@@ -37,22 +35,26 @@ $ for (const option of options) {
             list.push(
                 (optgroups[optgroup] = {
                     optgroup: optgroup,
-                    options: [option]
-                })
+                    options: [option],
+                }),
             );
         }
     } else {
         list.push(option);
     }
-};
-<${floatingLabel && "span"} class=["floating-label", isLarge && "floating-label--large"]>
+}
+<${floatingLabel && "span"} class=[
+    "floating-label",
+    isLarge && "floating-label--large",
+]>
     <if(floatingLabel)>
         <label
             for=id
             class=[
                 "floating-label__label",
-                disabled && "floating-label__label--disabled"
-            ]>
+                disabled && "floating-label__label--disabled",
+            ]
+        >
             ${floatingLabel}
         </label>
     </if>
@@ -61,14 +63,16 @@ $ for (const option of options) {
             "select",
             isLarge && "select--large",
             borderless && "select--borderless",
-            inputClass
+            inputClass,
         ]
-        style=style>
+        style=style
+    >
         <select
             ...processHtmlAttributes(htmlInput)
             disabled=disabled
             id=id
-            onChange("handleChange")>
+            onChange("handleChange")
+        >
             <for|optionOrGroup| of=list>
                 <if(isGroup(optionOrGroup))>
                     <optgroup label=optionOrGroup.optgroup>
@@ -76,10 +80,11 @@ $ for (const option of options) {
                             <option
                                 ...processHtmlAttributes(
                                     option,
-                                    itemIgnoredAttributes
+                                    itemIgnoredAttributes,
                                 )
                                 key="option[]"
-                                selected=(option === selectedOption)>
+                                selected=option === selectedOption
+                            >
                                 ${option.text}
                             </option>
                         </for>
@@ -89,10 +94,11 @@ $ for (const option of options) {
                     <option
                         ...processHtmlAttributes(
                             optionOrGroup,
-                            itemIgnoredAttributes
+                            itemIgnoredAttributes,
                         )
                         key="option[]"
-                        selected=(optionOrGroup === selectedOption)>
+                        selected=optionOrGroup === selectedOption
+                    >
                         ${optionOrGroup.text}
                     </option>
                 </else>

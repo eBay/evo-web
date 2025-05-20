@@ -6,7 +6,7 @@
         <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">
             progressive disclosure
         </a>
-        , it keeps secondary commands hidden from view until needed.
+         , it keeps secondary commands hidden from view until needed.
     </p>
     <p>
         A menu is
@@ -15,15 +15,15 @@
         <a href="component/checkbox/">
             checkbox
         </a>
-        ,
+         ,
         <a href="component/combobox/">
             combobox
         </a>
-        ,
+         ,
         <a href="component/select/">
             select
         </a>
-        , or
+         , or
         <a href="component/radio/">
             radio
         </a>
@@ -36,7 +36,7 @@
         <a href="component/menu-button/#menu-button-fake">
             fake menu button
         </a>
-        .
+         .
     </p>
 
     <h3 id="menu-button-default">
@@ -49,7 +49,7 @@
         <span class="highlight">
             menuitem
         </span>
-        .
+         .
     </p>
 
     <div class="demo">
@@ -98,35 +98,49 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 1</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitem"
+                        aria-disabled="true"
+                    >
+                        <span>Menu Item 3</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 4</span>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 1</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 2</span>
-            </div>
-            <div class="menu-button__item" role="menuitem" aria-disabled="true">
-                <span>Menu Item 3</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 4</span>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 
     <p>
@@ -158,7 +172,7 @@
                 <div class="menu-button__menu">
                     <div class="menu-button__items" role="menu">
 
-                        <for|item,i| of=Array.from(Array(50))>
+                        <for|item, i| of=Array.from(Array(50))>
                             <div class="menu-button__item" role="menuitem">
                                 <span>Menu item ${i}</span>
                             </div>
@@ -259,41 +273,78 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn btn--secondary" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn btn--secondary"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="true"
+                    >
+                        <span>Menu Item 1</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="false"
+                    >
+                        <span>Menu Item 2</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="false"
+                    >
+                        <span>Menu Item 3</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitemradio" aria-checked="true">
-                <span>Menu Item 1</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemradio" aria-checked="false">
-                <span>Menu Item 2</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemradio" aria-checked="false">
-                <span>Menu Item 3</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 
     <h3 id="menu-button-checkbox">
@@ -383,41 +434,84 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn btn--secondary" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn btn--secondary"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                        height="10"
+                        width="14"
+                    >
+                        <span>Menu Item 1</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                        height="10"
+                        width="14"
+                    >
+                        <span>Menu Item 2</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="false"
+                        height="10"
+                        width="14"
+                    >
+                        <span>Menu Item 3</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitemcheckbox" aria-checked="true" height="10" width="14">
-                <span>Menu Item 1</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemcheckbox" aria-checked="true" height="10" width="14">
-                <span>Menu Item 2</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemcheckbox" aria-checked="false" height="10" width="14">
-                <span>Menu Item 3</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 
     <div class="highlight">
@@ -431,7 +525,7 @@
             <em>purpose</em>
              of the button. If the text only conveys a
             <em>transient value</em>
-            , then the criteria would not be satisfied.
+             , then the criteria would not be satisfied.
         </p>
 
         <h4 id="menu-button-label-fixed">
@@ -449,11 +543,11 @@
             <a href="component/menu-button/#menu-button-radio">
                 single select menu button
             </a>
-            . For example: "Sort: Price", "Color: Red". This technique is identical to the method used by${" "}
+            ${" "}. For example: "Sort: Price", "Color: Red". This technique is identical to the method used by${" "}
             <a href="component/listbox-button/">
                 Listbox Button
             </a>
-            .
+             .
         </p>
 
         <h4 id="menu-button-label-compound">
@@ -601,62 +695,117 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn btn-secondary" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn btn-secondary"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item A1</span>
+                    </div>
+
+                    <hr class="menu-button__separator" role="separator">
+
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="true"
+                    >
+                        <span>Menu Item B1</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="false"
+                    >
+                        <span>Menu Item B2</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="false"
+                    >
+                        <span>Menu Item B3</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+
+                    <hr class="menu-button__separator" role="separator">
+
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                    >
+                        <span>Menu Item C1</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                    >
+                        <span>Menu Item C2</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item A1</span>
-            </div>
-
-            <hr class="menu-button__separator" role="separator" />
-
-            <div class="menu-button__item" role="menuitemradio" aria-checked="true">
-                <span>Menu Item B1</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemradio" aria-checked="false">
-                <span>Menu Item B2</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemradio" aria-checked="false">
-                <span>Menu Item B3</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-
-            <hr class="menu-button__separator" role="separator" />
-
-            <div class="menu-button__item" role="menuitemcheckbox" aria-checked="true">
-                <span>Menu Item C1</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-            <div class="menu-button__item" role="menuitemcheckbox" aria-checked="true">
-                <span>Menu Item C2</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 
     <h3 id="menu-button-fake">
@@ -754,44 +903,66 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="fake-menu-button">
-    <button class="btn btn--secondary" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="fake-menu-button">
+            <button
+                class="btn btn--secondary"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <ul class="fake-menu-button__menu">
+                <li>
+                    <a
+                        class="fake-menu-button__item"
+                        href="https://www.ebay.com"
+                        aria-current="page"
+                    >
+                        <span>Link 1</span>
+                        <svg
+                            class="icon icon--16"
+                            height="10"
+                            width="14"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-tick-16"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://www.ebay.com"
+                        class="fake-menu-button__item"
+                    >
+                        <span>Link 2</span>
+                    </a>
+                </li>
+                <li>
+                    <button class="fake-menu-button__item" type="button">
+                        <span>Button 3</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="fake-menu-button__item" type="button">
+                        <span>Button 4</span>
+                    </button>
+                </li>
+            </ul>
         </span>
-    </button>
-    <ul class="fake-menu-button__menu">
-        <li>
-            <a class="fake-menu-button__item" href="https://www.ebay.com" aria-current="page">
-                <span>Link 1</span>
-                <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
-                    <use href="#icon-tick-16"></use>
-                </svg>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.ebay.com" class="fake-menu-button__item">
-                <span>Link 2</span>
-            </a>
-        </li>
-        <li>
-            <button class="fake-menu-button__item" type="button">
-                <span>Button 3</span>
-            </button>
-        </li>
-        <li>
-            <button class="fake-menu-button__item" type="button">
-                <span>Button 4</span>
-            </button>
-        </li>
-    </ul>
-</span>
     </highlight-code>
 
     <h3 id="menu-button-fixed-width">
@@ -857,32 +1028,42 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn btn--secondary" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn btn--secondary"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu menu-button__menu--fix-width">
+                <div class="menu-button__items" role="menu">
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 1 with a long string</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 3</span>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu menu-button__menu--fix-width">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 1 with a long string</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 2</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 3</span>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 
     <h3 id="menu-button-form">
@@ -897,13 +1078,13 @@
     </p>
     <p>
         <strong>NOTE</strong>
-        : a menu-button is a good candidate for a dropdown of actions that make
+        ${" "}: a menu-button is a good candidate for a dropdown of actions that make${" "}
         <em>changes</em>
          to a form, but it should
         <strong>not</strong>
          be used as a dropdown for selecting and storing form
         <em>data</em>
-        . Please use
+         . Please use
         <a href="component/button/">
             select
         </a>
@@ -953,32 +1134,42 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn btn--form" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn btn--form"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 1</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 3</span>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 1</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 2</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 3</span>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 
     <h3 id="menu-button-borderless">
@@ -1032,32 +1223,42 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="menu-button">
-    <button class="btn btn--borderless" aria-expanded="false" aria-haspopup="true" type="button">
-        <span class="btn__cell">
-            <span class="btn__text">Button</span>
-            <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
-                <use href="#icon-chevron-down-12"></use>
-            </svg>
+    <highlight-code type="html">
+        <span class="menu-button">
+            <button
+                class="btn btn--borderless"
+                aria-expanded="false"
+                aria-haspopup="true"
+                type="button"
+            >
+                <span class="btn__cell">
+                    <span class="btn__text">
+                        Button
+                    </span>
+                    <svg
+                        class="icon icon--12"
+                        height="10"
+                        width="14"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-chevron-down-12"/>
+                    </svg>
+                </span>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 1</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div class="menu-button__item" role="menuitem">
+                        <span>Menu Item 3</span>
+                    </div>
+                </div>
+            </div>
         </span>
-    </button>
-    <div class="menu-button__menu">
-        <div class="menu-button__items" role="menu">
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 1</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 2</span>
-            </div>
-            <div class="menu-button__item" role="menuitem">
-                <span>Menu Item 3</span>
-            </div>
-        </div>
-    </div>
-</span>
     </highlight-code>
 </div>
 export const metadata = {

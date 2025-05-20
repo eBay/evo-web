@@ -22,9 +22,9 @@ export type EbayFilePreviewCardProps = ComponentProps<'div'> & {
     footerTitle?: string
     footerSubtitle?: string
     onMenuAction?: FilePreviewCardMenuActionHandler
-    onSeeMore?: EbayEventHandler
-    onDelete?: EbayEventHandler
-    onCancel?: EbayEventHandler
+    onSeeMore?: EbayEventHandler<HTMLElement>
+    onDelete?: EbayEventHandler<HTMLElement>
+    onCancel?: EbayEventHandler<HTMLElement>
 }
 
 const EbayFileInput: FC<EbayFilePreviewCardProps> = ({

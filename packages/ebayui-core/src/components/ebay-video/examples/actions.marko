@@ -1,18 +1,17 @@
-import type { Input as VideoInput } from "<ebay-video>"
+import type { Input as VideoInput } from "<ebay-video>";
 import { VolumeEvent } from "../component";
-
 class {
     declare state: {
         action: VideoInput["action"];
         volume: number;
         muted: boolean;
-    }
+    };
 
     onCreate() {
         this.state = {
             action: undefined,
             volume: 0.5,
-            muted: true
+            muted: true,
         };
     }
     togglePlay() {
@@ -35,12 +34,24 @@ class {
 }
 
 <div>
-    <ebay-button on-click("togglePlay")>Play</ebay-button>
-    <ebay-button on-click("togglePause")>Pause</ebay-button>
-    <ebay-button on-click("toggleMute")>Toggle Mute</ebay-button>
-    <ebay-button on-click("setVolume", 0)>Set volume 0</ebay-button>
-    <ebay-button on-click("setVolume", 0.5)>Set volume 50%</ebay-button>
-    <ebay-button on-click("setVolume", 1)>Set volume 100%</ebay-button>
+    <ebay-button on-click("togglePlay")>
+        Play
+    </ebay-button>
+    <ebay-button on-click("togglePause")>
+        Pause
+    </ebay-button>
+    <ebay-button on-click("toggleMute")>
+        Toggle Mute
+    </ebay-button>
+    <ebay-button on-click("setVolume", 0)>
+        Set volume 0
+    </ebay-button>
+    <ebay-button on-click("setVolume", 0.5)>
+        Set volume 50%
+    </ebay-button>
+    <ebay-button on-click("setVolume", 1)>
+        Set volume 100%
+    </ebay-button>
 </div>
 <ebay-video
     width="600"
@@ -48,6 +59,7 @@ class {
     action=state.action
     volume=state.volume
     muted=state.muted
-    on-volume-change("handleVolumeChange")>
+    on-volume-change("handleVolumeChange")
+>
     <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
 </ebay-video>

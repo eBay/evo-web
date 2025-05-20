@@ -10,7 +10,7 @@ class {
     onCreate() {
         this.state = {
             autocompleteOption: "none",
-            value: ''
+            value: "",
         };
     }
     inputChange(e: {
@@ -24,15 +24,15 @@ class {
     }) {
         this.state.value = e.currentInputValue;
         this.state.autocompleteOption = "list";
-        this.emit('input-change', e)
-   }
-   handleExpand() {
+        this.emit("input-change", e);
+    }
+    handleExpand() {
         this.state.autocompleteOption = "none";
-        this.emit('expand')
-   }
+        this.emit("expand");
+    }
     selected: ComboboxInput["on-select"] = (e) => {
         this.state.value = e.currentInputValue;
-    }
+    };
 }
 
 <ebay-combobox
@@ -41,7 +41,8 @@ class {
     value=state.value
     on-expand("handleExpand")
     on-select("selected")
-    on-input-change("inputChange")>
+    on-input-change("inputChange")
+>
     <for|option| of=countryList>
         <@option data-id=option.code text=option.name/>
     </for>

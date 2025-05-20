@@ -1,4 +1,4 @@
-import pkg from '../../../../../package.json' ;
+import pkg from "../../../../../package.json";
 
 <div id="less">
     <section-header metadata=metadata/>
@@ -20,28 +20,20 @@ import pkg from '../../../../../package.json' ;
         <a href="https://lesshat.madebysource.com">
             LessHat
         </a>
-        .
+         .
     </p>
 
     <p>
         <strong>NOTE</strong>
-        : Lasso requires the additional
+         : Lasso requires the additional
         <a href="https://www.npmjs.com/package/lasso-less">
             lasso-less
         </a>
          plugin dependency in your app package.json.
     </p>
 
-    <highlight-code
-        type="json"
-        >
-{
-    "dependencies": {
-      "lasso": "^3",
-      "lasso-less": "^3",
-      "@ebay/skin": "^${pkg.version}"
-    }
-}
+    <highlight-code type="json">
+        { "dependencies": { "lasso": "^3", "lasso-less": "^3", "@ebay/skin": "^${pkg.version}" } }
     </highlight-code>
 
     <h3 id="less-tokens-spacing">

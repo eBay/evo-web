@@ -1,11 +1,8 @@
 import type { AttrString } from "marko/tags-html";
-import { processHtmlAttributes } from "../../common/html-attributes"
+import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-
 static const validSizes = ["large", "small"] as const;
-
 export interface Input extends WithNormalizedProps<ButtonInput> {}
-
 export interface ButtonEvent<T extends Event> {
     originalEvent: T;
 }
@@ -31,13 +28,11 @@ export interface ButtonInput extends Omit<Marko.HTML.Button, `on${string}` | "ty
     "on-focus"?: (event: ButtonEvent<FocusEvent>) => void;
     "on-blur"?: (event: ButtonEvent<FocusEvent>) => void;
 }
-
 static function toJSON(this: any) {
     return {
-        disabled: this.disabled
+        disabled: this.disabled,
     };
 }
-
 $ const {
     a11yText,
     ariaLabel,
@@ -58,40 +53,33 @@ $ const {
     variant = "standard",
     ...htmlInput
 } = input;
+static var validPriorities = ["primary", "secondary", "tertiary", "delete"];
+$ (input as any).toJSON = toJSON;
+$ var size = inputSize && validSizes.includes(inputSize) ? inputSize : null;
 
-static var validPriorities = [
-    'primary',
-    'secondary',
-    'tertiary',
-    'delete'
-];
-
-$ {
-    (input as any).toJSON = toJSON;
-    var size = inputSize && validSizes.includes(inputSize) ? inputSize : null;
-
-    var priority = inputPriority || "secondary";
-    if (borderless || variant === 'form') {
-        priority = 'none';
-    }
-    var baseClass = href ? "fake-btn" : "btn";
-    var sizeClass = size && baseClass + "--" + size;
-    var truncateClass =
-        truncate &&
-        (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated");
-    var transparentClass = transparent ? baseClass + "--transparent" : "";
-    var fixedHeightClass =
-        fixedHeight &&
-        (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height");
-    var variantClass = variant !== 'standard' && `${baseClass}--${variant}`;
-    var tag = href ? "a" : "button";
+$ var priority = inputPriority || "secondary";
+$ if (borderless || variant === "form") {
+    priority = "none";
 }
+$ var baseClass = href ? "fake-btn" : "btn";
+$ var sizeClass = size && baseClass + "--" + size;
+$ var truncateClass = (
+    truncate &&
+    (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
+);
+$ var transparentClass = transparent ? baseClass + "--transparent" : "";
+$ var fixedHeightClass = (
+    fixedHeight &&
+    (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
+);
+$ var variantClass = variant !== "standard" && `${baseClass}--${variant}`;
+$ var tag = href ? "a" : "button";
 <${tag}
     ...processHtmlAttributes(htmlInput)
     onClick("handleClick")
     onKeydown("handleKeydown")
-    onFocus('handleFocus')
-    onBlur('handleBlur')
+    onFocus("handleFocus")
+    onBlur("handleBlur")
     class=[
         inputClass,
         baseClass,
@@ -101,17 +89,16 @@ $ {
         transparentClass,
         variantClass,
         !truncateClass && !fixedHeightClass && sizeClass,
-        split !== 'none' && `${baseClass}--split-${split}`,
+        split !== "none" && `${baseClass}--split-${split}`,
         borderless && `${baseClass}--borderless`,
-        (validPriorities.includes(priority) &&
-        `${baseClass}--${priority}`)
+        validPriorities.includes(priority) && `${baseClass}--${priority}`,
     ]
     href=href
-    data-ebayui=true
-    type=(tag === "button" && (type || "button"))
-    aria-disabled=((partiallyDisabled) && "true")
-    aria-label=(bodyState === "loading" ? (a11yText || "Loading...") : ariaLabel)
-    >
+    data-ebayui
+    type=tag === "button" && (type || "button")
+    aria-disabled=partiallyDisabled && "true"
+    aria-label=(bodyState === "loading" ? a11yText || "Loading..." : ariaLabel)
+>
     <if(bodyState === "loading")>
         <span class="btn__cell">
             <ebay-progress-spinner/>

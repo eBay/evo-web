@@ -6,8 +6,11 @@ class {}
     a11yLoadText="This video is loading now"
     a11yPlayText="Click to start this video"
     errorText="Oh man, something bad happened. Sorry!"
-    on-load-error((err) => {
-        console.log("handle error", err);
-    })>
+    on-load-error(
+        (err) => {
+            console.log("handle error", err);
+        },
+    )
+>
     <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
 </ebay-video>

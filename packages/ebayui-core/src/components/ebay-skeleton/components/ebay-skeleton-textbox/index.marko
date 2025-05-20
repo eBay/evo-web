@@ -1,21 +1,20 @@
 import { processHtmlAttributes } from "../../../../common/html-attributes";
 import type { AttrClass } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../../../global";
-
-static interface SkeletonTextBoxInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    as?: keyof Marko.NativeTags;
-    class?: AttrClass;
+static {
+    interface SkeletonTextBoxInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        as?: keyof Marko.NativeTags;
+        class?: AttrClass;
+    }
 }
-
 export interface Input extends WithNormalizedProps<SkeletonTextBoxInput> {}
-
 $ const {
     as: inputAs,
     class: inputClass,
     ...htmlInput
 } = input;
 
-<${inputAs || 'div'}
+<${inputAs || "div"}
     class=["skeleton__textbox", inputClass]
     ...processHtmlAttributes(htmlInput)
 />

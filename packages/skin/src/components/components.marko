@@ -1,13 +1,12 @@
-import path from 'path';
-import flags from "./data/flags.json"
-import icons from "./data/icons.json"
-
-static const componentTemplate = import.meta.glob("../routes/_index/component/*/*.marko", {eager: true});
-
-
+import path from "path";
+import flags from "./data/flags.json";
+import icons from "./data/icons.json";
+static const componentTemplate = import.meta.glob(
+    "../routes/_index/component/*/*.marko",
+    { eager: true },
+);
 static const components = Object.keys(componentTemplate).map((filePath) => {
-    const parts = filePath.split('/');
-    return parts.slice(0, parts.length - 1).join('/');
+    const parts = filePath.split("/");
+    return parts.slice(0, parts.length - 1).join("/");
 });
-
 export { components, componentTemplate, flags, icons };

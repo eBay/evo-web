@@ -8,7 +8,7 @@
 </h1>
 
 ```marko
-<ebay-progress-bar value=50 max=100 />
+<ebay-progress-bar value=50 max=100/>
 ```
 
 The progress bar gives an immediate, real-time visualisation of the current task completion status.

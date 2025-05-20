@@ -24,4 +24,8 @@ describe("ebay-table", () => {
     it("renders with columns client side loading", async () => {
         await htmlSnap(ColumnSortingClientSide, { bodyState: "loading" });
     });
+
+    it("renders with frozen header", async () => {
+        await htmlSnap(Default, { frozenHeader: true });
+    });
 });

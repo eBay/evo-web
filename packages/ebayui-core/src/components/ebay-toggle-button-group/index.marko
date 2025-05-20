@@ -1,5 +1,4 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-
 $ const {
     class: inputClass,
     layoutType: baseLayoutType,
@@ -21,16 +20,21 @@ $ const {
     data-columns-sm=columnsSM
     data-columns-md=columnsMD
     data-columns-xl=columnsXL
-    ...processHtmlAttributes(htmlInput)>
-    <ul
-        aria-label=a11yText
-        aria-labelledby=a11yLabelId
-    >
-        <for|{ layoutType = baseLayoutType, pressed, ...toggleButtonInput }, i| of=buttons>
+    ...processHtmlAttributes(htmlInput)
+>
+    <ul aria-label=a11yText aria-labelledby=a11yLabelId>
+        <for|
+            {
+                layoutType = baseLayoutType,
+                pressed,
+                ...toggleButtonInput
+            },
+            i,
+        | of=buttons>
             <li>
                 <ebay-toggle-button
                     layoutType=layoutType
-                    pressed=state.pressed[i]
+                    pressed=(state.pressed[i])
                     ...toggleButtonInput
                     on-toggle("handleToggle", i)
                 />

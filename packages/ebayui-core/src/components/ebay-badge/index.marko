@@ -1,29 +1,28 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { AttrClass } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
-
-static interface BadgeInput extends Omit<Marko.HTML.Span, `on${string}`> {
-    type?: "menu" | "icon";
-    number?: number | string;
-    class?: AttrClass;
+static {
+    interface BadgeInput extends Omit<Marko.HTML.Span, `on${string}`> {
+        type?: "menu" | "icon";
+        number?: number | string;
+        class?: AttrClass;
+    }
 }
-
 export interface Input extends WithNormalizedProps<BadgeInput> {}
-
 $ const {
     class: inputClass,
     type,
     number,
     ...htmlInput
 } = input;
-
 $ const roundedNumber = Math.round(+(number === undefined ? NaN : number));
 
 <if(roundedNumber > 0)>
     <span
         ...processHtmlAttributes(htmlInput)
-        role=(type !== "menu" && type !== "icon" && "img")
-        class=["badge", inputClass]>
+        role=type !== "menu" && type !== "icon" && "img"
+        class=["badge", inputClass]
+    >
         ${roundedNumber > 99 ? "99+" : roundedNumber}
     </span>
 </if>

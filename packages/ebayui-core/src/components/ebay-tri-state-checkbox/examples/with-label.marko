@@ -1,6 +1,5 @@
 import type { Input as TriStateCheckboxInput } from "<ebay-tri-state-checkbox>";
 export type Input = TriStateCheckboxInput;
-
 class {}
 
 <span class="field">
@@ -10,7 +9,8 @@ class {}
         id="checkbox"
         on-change("emit", "change")
         on-focus("emit", "focus")
-        on-keydown("emit", "keydown") />
+        on-keydown("emit", "keydown")
+    />
     <label class="field__label field__label--end" for="checkbox">
         Option
     </label>

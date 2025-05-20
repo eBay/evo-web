@@ -1,16 +1,16 @@
 # Ebay Skin Scripts
 
--   [Ebay Skin Scripts](#ebay-skin-scripts)
-    -   [cdn-bundle.js](#cdn-bundlejs)
-    -   [scripts runner](#scripts-runner)
-    -   [bundle](#bundle)
-        -   [Examples](#examples)
-    -   [gen](#gen)
-    -   [clean](#clean)
-    -   [genSVG](#gensvg)
-        -   [Configuration](#configuration)
-    -   [importSVG](#importsvg)
-        -   [Usage](#usage)
+- [Ebay Skin Scripts](#ebay-skin-scripts)
+    - [cdn-bundle.js](#cdn-bundlejs)
+    - [scripts runner](#scripts-runner)
+    - [bundle](#bundle)
+        - [Examples](#examples)
+    - [gen](#gen)
+    - [clean](#clean)
+    - [genSVG](#gensvg)
+        - [Configuration](#configuration)
+    - [importSVG](#importsvg)
+        - [Usage](#usage)
 
 ## cdn-bundle.js
 

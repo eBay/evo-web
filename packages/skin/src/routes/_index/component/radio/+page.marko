@@ -54,20 +54,28 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="radio">
-    <input class="radio__control" type="radio" />
-    <span class="radio__icon" hidden>
-        <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-            <use href="#icon-radio-unchecked-18"></use>
-        </svg>
-        <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-            <use href="#icon-radio-checked-18"></use>
-        </svg>
-    </span>
-</span>
+    <highlight-code type="html">
+        <span class="radio">
+            <input class="radio__control" type="radio">
+            <span class="radio__icon" hidden>
+                <svg
+                    class="radio__unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                    class="radio__checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
+            </span>
+        </span>
     </highlight-code>
 
     <h3 id="radio-large">
@@ -119,20 +127,28 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="radio radio--large">
-    <input class="radio__control" type="radio" />
-    <span class="radio__icon" hidden>
-        <svg class="radio__unchecked" height="24" width="24" aria-hidden="true">
-            <use href="#icon-radio-unchecked-24"></use>
-        </svg>
-        <svg class="radio__checked" height="24" width="24" aria-hidden="true">
-            <use href="#icon-radio-checked-24"></use>
-        </svg>
-    </span>
-</span>
+    <highlight-code type="html">
+        <span class="radio radio--large">
+            <input class="radio__control" type="radio">
+            <span class="radio__icon" hidden>
+                <svg
+                    class="radio__unchecked"
+                    height="24"
+                    width="24"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-radio-unchecked-24"/>
+                </svg>
+                <svg
+                    class="radio__checked"
+                    height="24"
+                    width="24"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-radio-checked-24"/>
+                </svg>
+            </span>
+        </span>
     </highlight-code>
 
     <h3 id="radio-disabled">
@@ -178,20 +194,28 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="radio">
-    <input class="radio__control" type="radio" checked disabled />
-    <span class="radio__icon" hidden>
-        <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-            <use href="#icon-radio-unchecked-18"></use>
-        </svg>
-        <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-            <use href="#icon-radio-checked-18"></use>
-        </svg>
-    </span>
-</span>
+    <highlight-code type="html">
+        <span class="radio">
+            <input class="radio__control" type="radio" checked disabled>
+            <span class="radio__icon" hidden>
+                <svg
+                    class="radio__unchecked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                    class="radio__checked"
+                    height="18"
+                    width="18"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
+            </span>
+        </span>
     </highlight-code>
 
     <h3 id="radio-group">
@@ -337,59 +361,120 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<fieldset>
-    <legend>Choose an Option</legend>
-    <span class="field">
-        <span class="field__control radio">
-            <input class="radio__control" id="group-radio-1" type="radio" value="1" name="radio-group" />
-            <span class="radio__icon" hidden>
-                <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-unchecked-18"></use>
-                </svg>
-                <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-checked-18"></use>
-                </svg>
+    <highlight-code type="html">
+        <fieldset>
+            <legend>Choose an Option</legend>
+            <span class="field">
+                <span class="field__control radio">
+                    <input
+                        class="radio__control"
+                        id="group-radio-1"
+                        type="radio"
+                        value="1"
+                        name="radio-group"
+                    >
+                    <span class="radio__icon" hidden>
+                        <svg
+                            class="radio__unchecked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            class="radio__checked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                    </span>
+                </span>
+                <label
+                    class="field__label field__label--end"
+                    for="group-radio-1"
+                >
+                    Option 1
+                </label>
             </span>
-        </span>
-        <label class="field__label field__label--end" for="group-radio-1">Option 1</label>
-    </span>
-    <span class="field">
-        <span class="field__control radio">
-            <input class="radio__control" id="group-radio-2" type="radio" value="2" name="radio-group" />
-            <span class="radio__icon" hidden>
-                <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-unchecked-18"></use>
-                </svg>
-                <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-checked-18"></use>
-                </svg>
+            <span class="field">
+                <span class="field__control radio">
+                    <input
+                        class="radio__control"
+                        id="group-radio-2"
+                        type="radio"
+                        value="2"
+                        name="radio-group"
+                    >
+                    <span class="radio__icon" hidden>
+                        <svg
+                            class="radio__unchecked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            class="radio__checked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                    </span>
+                </span>
+                <label
+                    class="field__label field__label--end"
+                    for="group-radio-2"
+                >
+                    Option 2
+                </label>
             </span>
-        </span>
-        <label class="field__label field__label--end" for="group-radio-2">Option 2</label>
-    </span>
-    <span class="field">
-        <span class="field__control radio">
-            <input class="radio__control" id="group-radio-3" type="radio" value="3" name="radio-group" />
-            <span class="radio__icon" hidden>
-                <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-unchecked-18"></use>
-                </svg>
-                <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-checked-18"></use>
-                </svg>
+            <span class="field">
+                <span class="field__control radio">
+                    <input
+                        class="radio__control"
+                        id="group-radio-3"
+                        type="radio"
+                        value="3"
+                        name="radio-group"
+                    >
+                    <span class="radio__icon" hidden>
+                        <svg
+                            class="radio__unchecked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            class="radio__checked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                    </span>
+                </span>
+                <label
+                    class="field__label field__label--end"
+                    for="group-radio-3"
+                >
+                    Option 3
+                </label>
             </span>
-        </span>
-        <label class="field__label field__label--end" for="group-radio-3">Option 3</label>
-    </span>
-</fieldset>
+        </fieldset>
     </highlight-code>
 
     <p>
         <strong>TIP</strong>
-        : For large radios, wrap each label and control inside of a
+         : For large radios, wrap each label and control inside of a
         <span class="highlight">
             field__group
         </span>
@@ -520,54 +605,115 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<fieldset>
-    <legend>Choose an Option</legend>
-    <div class="field">
-        <span class="field__control radio">
-            <input class="radio__control" id="group-radio-4" type="radio" value="1" name="radio-group" />
-            <span class="radio__icon" hidden>
-                <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-unchecked-18"></use>
-                </svg>
-                <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-checked-18"></use>
-                </svg>
-            </span>
-        </span>
-        <label class="field__label field__label--end" for="group-radio-4">Option 1</label>
-    </div>
-    <div class="field">
-        <span class="field__control radio">
-            <input class="radio__control" id="group-radio-5" type="radio" value="2" name="radio-group" />
-            <span class="radio__icon" hidden>
-                <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-unchecked-18"></use>
-                </svg>
-                <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-checked-18"></use>
-                </svg>
-            </span>
-        </span>
-        <label class="field__label field__label--end" for="group-radio-5">Option 2</label>
-    </div>
-    <div class="field">
-        <span class="field__control radio">
-            <input class="radio__control" id="group-radio-6" type="radio" value="3" name="radio-group" />
-            <span class="radio__icon" hidden>
-                <svg class="radio__unchecked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-unchecked-18"></use>
-                </svg>
-                <svg class="radio__checked" height="18" width="18" aria-hidden="true">
-                    <use href="#icon-radio-checked-18"></use>
-                </svg>
-            </span>
-        </span>
-        <label class="field__label field__label--end" for="group-radio-6">Option 3</label>
-    </div>
-</fieldset>
+    <highlight-code type="html">
+        <fieldset>
+            <legend>Choose an Option</legend>
+            <div class="field">
+                <span class="field__control radio">
+                    <input
+                        class="radio__control"
+                        id="group-radio-4"
+                        type="radio"
+                        value="1"
+                        name="radio-group"
+                    >
+                    <span class="radio__icon" hidden>
+                        <svg
+                            class="radio__unchecked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            class="radio__checked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                    </span>
+                </span>
+                <label
+                    class="field__label field__label--end"
+                    for="group-radio-4"
+                >
+                    Option 1
+                </label>
+            </div>
+            <div class="field">
+                <span class="field__control radio">
+                    <input
+                        class="radio__control"
+                        id="group-radio-5"
+                        type="radio"
+                        value="2"
+                        name="radio-group"
+                    >
+                    <span class="radio__icon" hidden>
+                        <svg
+                            class="radio__unchecked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            class="radio__checked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                    </span>
+                </span>
+                <label
+                    class="field__label field__label--end"
+                    for="group-radio-5"
+                >
+                    Option 2
+                </label>
+            </div>
+            <div class="field">
+                <span class="field__control radio">
+                    <input
+                        class="radio__control"
+                        id="group-radio-6"
+                        type="radio"
+                        value="3"
+                        name="radio-group"
+                    >
+                    <span class="radio__icon" hidden>
+                        <svg
+                            class="radio__unchecked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            class="radio__checked"
+                            height="18"
+                            width="18"
+                            aria-hidden="true"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                    </span>
+                </span>
+                <label
+                    class="field__label field__label--end"
+                    for="group-radio-6"
+                >
+                    Option 3
+                </label>
+            </div>
+        </fieldset>
     </highlight-code>
 </div>
 export const metadata = {

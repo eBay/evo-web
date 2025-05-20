@@ -59,13 +59,16 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="switch">
-    <span class="switch__control" role="switch" tabindex="0" aria-checked="false"></span>
-    <span class="switch__button"></span>
-</span>
+    <highlight-code type="html">
+        <span class="switch">
+            <span
+                class="switch__control"
+                role="switch"
+                tabindex="0"
+                aria-checked="false"
+            />
+            <span class="switch__button"/>
+        </span>
     </highlight-code>
 
     <h3 id="switch-disabled">
@@ -101,13 +104,17 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="switch">
-    <span class="switch__control" role="switch"  tabindex="-1" aria-checked="false" aria-disabled="true"></span>
-    <span class="switch__button"></span>
-</span>
+    <highlight-code type="html">
+        <span class="switch">
+            <span
+                class="switch__control"
+                role="switch"
+                tabindex="-1"
+                aria-checked="false"
+                aria-disabled="true"
+            />
+            <span class="switch__button"/>
+        </span>
     </highlight-code>
 
     <h3 id="switch-checkbox">
@@ -131,13 +138,16 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="switch">
-    <input class="switch__control" role="switch" type="checkbox" aria-checked="false" />
-    <span class="switch__button"></span>
-</span>
+    <highlight-code type="html">
+        <span class="switch">
+            <input
+                class="switch__control"
+                role="switch"
+                type="checkbox"
+                aria-checked="false"
+            >
+            <span class="switch__button"/>
+        </span>
     </highlight-code>
 
     <h3 id="switch-checkbox-disabled">
@@ -166,13 +176,17 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<span class="switch">
-    <input class="switch__control" role="switch" type="checkbox" aria-checked="false" disabled />
-    <span class="switch__button"></span>
-</span>
+    <highlight-code type="html">
+        <span class="switch">
+            <input
+                class="switch__control"
+                role="switch"
+                type="checkbox"
+                aria-checked="false"
+                disabled
+            >
+            <span class="switch__button"/>
+        </span>
     </highlight-code>
 
     <h3 id="switch-variables">
@@ -224,30 +238,33 @@
             </span>
         </div>
     </div>
-    <highlight-code
-        type="html"
-        >
-<style>
-    .switch--theme-1 {
-        --switch-unchecked-background-color: orange;
-        --switch-checked-background-color: green;
-        --switch-unchecked-hover-background-color: coral;
-        --switch-checked-hover-background-color: limegreen;
-    }
+    <highlight-code type="html">
+        <style>
+            .switch--theme-1 {
+                --switch-unchecked-background-color: orange;
+                --switch-checked-background-color: green;
+                --switch-unchecked-hover-background-color: coral;
+                --switch-checked-hover-background-color: limegreen;
+            }
 
-    @media (prefers-color-scheme: dark) {
-        .switch--theme-1 {
-            --switch-unchecked-background-color: blue;
-            --switch-checked-background-color: red;
-            --switch-unchecked-hover-background-color: purple;
-            --switch-checked-hover-background-color: indianred;
-        }
-    }
-</style>
-<span class="switch switch--theme-1">
-    <span class="switch__control" role="switch" tabindex="0" aria-checked="false"></span>
-    <span class="switch__button"></span>
-</span>
+            @media (prefers-color-scheme: dark) {
+                .switch--theme-1 {
+                    --switch-unchecked-background-color: blue;
+                    --switch-checked-background-color: red;
+                    --switch-unchecked-hover-background-color: purple;
+                    --switch-checked-hover-background-color: indianred;
+                }
+            }
+        </style>
+        <span class="switch switch--theme-1">
+            <span
+                class="switch__control"
+                role="switch"
+                tabindex="0"
+                aria-checked="false"
+            />
+            <span class="switch__button"/>
+        </span>
     </highlight-code>
 </div>
 export const metadata = {

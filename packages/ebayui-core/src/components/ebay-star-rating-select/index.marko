@@ -1,5 +1,4 @@
-import { processHtmlAttributes } from '../../common/html-attributes';
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     class: inputClass,
     value,
@@ -10,29 +9,31 @@ $ const {
 } = input;
 
 <div
-    role=!!a11yText && 'radiogroup'
+    role=!!a11yText && "radiogroup"
     aria-label=a11yText
-    class=['star-rating-select', inputClass]
+    class=["star-rating-select", inputClass]
     ...processHtmlAttributes(htmlInput)
 >
     <for|i| from=1 to=5>
-        <span.star-rating-select__radio>
+        <span class="star-rating-select__radio">
             <input
                 aria-label=a11yStarText[i - 1]
                 class=[
-                    'star-rating-select__control',
-                    i <= state.value && 'star-rating-select__control--filled',
+                    "star-rating-select__control",
+                    i <= state.value && "star-rating-select__control--filled",
                 ]
-                type='radio'
-                name:scoped='star-rating'
+                type="radio"
+                name:scoped="star-rating"
                 value=i
                 disabled=disabled
                 checked=state.value === i
-                onClick('emitEvent', 'change', i)
-                onFocus('emitEvent', 'focus', i)
-                onKeydown('emitEvent', 'keydown', i)
+                onClick("emitEvent", "change", i)
+                onFocus("emitEvent", "focus", i)
+                onKeydown("emitEvent", "keydown", i)
             >
-            <span.star-rating-select__radio-icon><ebay-star-dynamic-icon/></span>
+            <span class="star-rating-select__radio-icon">
+                <ebay-star-dynamic-icon/>
+            </span>
         </span>
     </for>
 </div>

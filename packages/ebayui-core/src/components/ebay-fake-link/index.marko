@@ -1,11 +1,9 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
+import { processHtmlAttributes } from "../../common/html-attributes";
 static function toJSON(this: any) {
     return {
-        disabled: this.disabled
+        disabled: this.disabled,
     };
 }
-
 $ const {
     variant,
     type,
@@ -13,7 +11,6 @@ $ const {
     class: inputClass,
     ...htmlInput
 } = input;
-
 $ (input as any).toJSON = toJSON;
 
 <button
@@ -22,8 +19,13 @@ $ (input as any).toJSON = toJSON;
     onKeydown("handleKeydown")
     onFocus("handleFocus")
     onBlur("handleBlur")
-    class=[inputClass, "fake-link", variant === 'standalone' && 'standalone-link']
-    data-ebayui=true
-    type=(type || "button")>
+    class=[
+        inputClass,
+        "fake-link",
+        variant === "standalone" && "standalone-link",
+    ]
+    data-ebayui
+    type=type || "button"
+>
     <${renderBody}/>
 </button>

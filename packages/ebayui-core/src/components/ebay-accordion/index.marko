@@ -1,5 +1,4 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-
 $ const {
     class: inputClass,
     size,
@@ -19,11 +18,11 @@ $ const {
         <li>
             <ebay-details
                 ...item
-                open= item.open || (autoCollapse && index === state.index)
+                open=item.open || (autoCollapse && index === state.index)
                 on-toggle("handleToggle", index)
                 on-click("emit", "click")
             >
-                <${item.renderBody} />
+                <${item.renderBody}/>
             </ebay-details>
         </li>
     </for>

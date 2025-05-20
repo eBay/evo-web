@@ -1,16 +1,15 @@
 import { processHtmlAttributes } from "../../../../common/html-attributes";
 import type { AttrClass } from "marko/tags-html";
-import type { WithNormalizedProps } from '../../../../global';
-
-static interface SkeletonTextInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    as?: keyof Marko.NativeTags;
-    class?: AttrClass;
-    size?: "small" | "large";
-    multiline?: boolean;
+import type { WithNormalizedProps } from "../../../../global";
+static {
+    interface SkeletonTextInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        as?: keyof Marko.NativeTags;
+        class?: AttrClass;
+        size?: "small" | "large";
+        multiline?: boolean;
+    }
 }
-
 export interface Input extends WithNormalizedProps<SkeletonTextInput> {}
-
 $ const {
     size,
     multiline,

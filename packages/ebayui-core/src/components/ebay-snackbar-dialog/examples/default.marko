@@ -1,14 +1,13 @@
 export interface Input {
-    snacktext: string
+    snacktext: string;
 }
-
 class {
     declare state: {
-        open: boolean
+        open: boolean;
     };
 
     onCreate() {
-        this.state = {open: false};
+        this.state = { open: false };
     }
 
     handleOpen() {
@@ -17,12 +16,17 @@ class {
 
     handleClose() {
         this.state.open = false;
-        this.emit('close');
+        this.emit("close");
     }
 }
-<ebay-button on-click('handleOpen')>
+<ebay-button on-click("handleOpen")>
     Open Default Snackbar
 </ebay-button>
-<ebay-snackbar-dialog  open=state.open on-close('handleClose') on-open('emit', 'open') ...input >
+<ebay-snackbar-dialog
+    open=state.open
+    on-close("handleClose")
+    on-open("emit", "open")
+    ...input
+>
     This 'snackbar' text should be 1-2 lines.
 </ebay-snackbar-dialog>

@@ -1,6 +1,6 @@
 :root {
-    --dialog-scrim-color-hide: rgb(17, 24, 32, 0);
-    --dialog-scrim-color-show: rgb(17, 24, 32, 0.7);
+    --dialog-scrim-color-hide: rgb(17 24 32 / 0);
+    --dialog-scrim-color-show: rgb(17 24 32 / 0.7);
     --dialog-lightbox-max-width: 616px;
 }
 .snackbar-dialog {

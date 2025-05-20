@@ -1,0 +1,57 @@
+.filter-input {
+    display: inline-block;
+    width: 100%;
+}
+
+.filter-input__clear-btn {
+    display: none;
+}
+
+.filter-input .textbox {
+    border-radius: var(--border-radius-150);
+    max-width: 480px;
+    min-width: 200px;
+}
+
+.filter-input .textbox__control {
+    height: 40px;
+}
+
+// The clear button is shown only when the input doesn't have the
+// placeholder implying/assuming it's not empty
+.filter-input
+    .textbox__control:not(:placeholder-shown)
+    ~ .filter-input__clear-btn {
+    display: block;
+}
+
+.filter-input .textbox__control::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.filter-input .textbox button.icon-btn.icon-btn--transparent.icon-btn--small {
+    min-width: 32px;
+}
+
+.filter-input .textbox .icon-btn:last-child {
+    flex-shrink: 0;
+    margin-inline-end: var(--spacing-50);
+    margin-inline-start: 0;
+}
+
+.filter-input--small .textbox .icon-btn:last-child {
+    margin-inline-end: 0;
+}
+
+.filter-input--large .textbox .icon-btn:last-child {
+    margin-inline-end: var(--spacing-100);
+}
+
+.filter-input--small .textbox__control {
+    height: 32px;
+}
+
+.filter-input--large .textbox__control {
+    height: 48px;
+}

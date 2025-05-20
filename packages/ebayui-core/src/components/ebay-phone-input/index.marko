@@ -66,8 +66,6 @@ $ const [selectedCountry] = state.countryNames[state.index];
         onChange("forwardEvent", "change")
         onInput-change("forwardEvent", "change")
     >
-        <@prefix-text>
-            + ${countries[selectedCountry].callingCode}
-        </@prefix-text>
+        <@prefix-text>+ ${countries[selectedCountry].callingCode}</@prefix-text>
     </ebay-textbox>
 </span>

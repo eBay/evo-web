@@ -64,6 +64,10 @@
     padding: 16px;
 }
 
+.table--frozen-header {
+    max-height: 90vh;
+}
+
 .table--frozen-header thead {
     position: sticky;
     top: 0;

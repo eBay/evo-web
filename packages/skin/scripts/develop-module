@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-const developModule = require('./develop-module_proper');
+const developModule = require("./develop-module_proper");
 
 developModule();

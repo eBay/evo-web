@@ -10,11 +10,11 @@
     </p>
     <p>
         <strong>TIP</strong>
-        : A combobox can be further enhanced with
+         : A combobox can be further enhanced with
         <a href="https://opensource.ebay.com/mindpatterns/input/combobox/index.html">
             autocomplete behaviour
         </a>
-        .
+         .
     </p>
 
     <h3>Default Combobox</h3>
@@ -59,27 +59,31 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="combobox">
-    <span class="combobox__control">
-        <input placeholder="Combobox" role="combobox" type="text" aria-haspopup="listbox" aria-owns="listbox-1" />
-    </span>
-    <div class="combobox__listbox">
-        <div id="listbox-1" class="combobox__options" role="listbox">
-            <div class="combobox__option" role="option">
-                <span>Option 1</span>
+    <highlight-code type="html">
+        <span class="combobox">
+            <span class="combobox__control">
+                <input
+                    placeholder="Combobox"
+                    role="combobox"
+                    type="text"
+                    aria-haspopup="listbox"
+                    aria-owns="listbox-1"
+                >
+            </span>
+            <div class="combobox__listbox">
+                <div id="listbox-1" class="combobox__options" role="listbox">
+                    <div class="combobox__option" role="option">
+                        <span>Option 1</span>
+                    </div>
+                    <div class="combobox__option" role="option">
+                        <span>Option 2</span>
+                    </div>
+                    <div class="combobox__option" role="option">
+                        <span>Option 3</span>
+                    </div>
+                </div>
             </div>
-            <div class="combobox__option" role="option">
-                <span>Option 2</span>
-            </div>
-            <div class="combobox__option" role="option">
-                <span>Option 3</span>
-            </div>
-        </div>
-    </div>
-</span>
+        </span>
     </highlight-code>
 
     <h3 id="combobox-disabled">
@@ -131,27 +135,32 @@
         </div>
     </div>
 
-    <highlight-code
-        type="html"
-        >
-<span class="combobox">
-    <span class="combobox__control">
-        <input placeholder="Combobox" role="combobox" type="text" aria-haspopup="listbox" aria-owns="listbox-2" disabled />
-    </span>
-    <div class="combobox__listbox">
-        <div id="listbox-2" class="combobox__options" role="listbox">
-            <div class="combobox__option" role="option">
-                <span>Option 1</span>
+    <highlight-code type="html">
+        <span class="combobox">
+            <span class="combobox__control">
+                <input
+                    placeholder="Combobox"
+                    role="combobox"
+                    type="text"
+                    aria-haspopup="listbox"
+                    aria-owns="listbox-2"
+                    disabled
+                >
+            </span>
+            <div class="combobox__listbox">
+                <div id="listbox-2" class="combobox__options" role="listbox">
+                    <div class="combobox__option" role="option">
+                        <span>Option 1</span>
+                    </div>
+                    <div class="combobox__option" role="option">
+                        <span>Option 2</span>
+                    </div>
+                    <div class="combobox__option" role="option">
+                        <span>Option 3</span>
+                    </div>
+                </div>
             </div>
-            <div class="combobox__option" role="option">
-                <span>Option 2</span>
-            </div>
-            <div class="combobox__option" role="option">
-                <span>Option 3</span>
-            </div>
-        </div>
-    </div>
-</span>
+        </span>
     </highlight-code>
 </div>
 export const metadata = {

@@ -29,7 +29,7 @@ class TestGenerator extends BaseGenerator {
 
         log.info(
             "Tests added! Make changes in %s file.",
-            path.join(this.storybookTestFilePath)
+            path.join(this.storybookTestFilePath),
         );
     }
 
@@ -42,7 +42,7 @@ class TestGenerator extends BaseGenerator {
             "src",
             "less",
             this.moduleId,
-            `${this.moduleId}.stories.js`
+            `${this.moduleId}.stories.js`,
         );
         if (fs.existsSync(testFilePath)) {
             log.warn("[TESTS][%s] Test file already exists!", testFilePath);
@@ -50,7 +50,7 @@ class TestGenerator extends BaseGenerator {
         }
         fs.writeFileSync(
             testFilePath,
-            getStorybookTestContent(this.moduleName, this.moduleId)
+            getStorybookTestContent(this.moduleName, this.moduleId),
         );
         this.storybookTestFilePath = testFilePath;
     }

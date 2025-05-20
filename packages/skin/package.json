@@ -1,72 +1,7 @@
 {
     "name": "@ebay/skin",
+    "version": "19.5.1",
     "description": "Skin - CSS modules that represent the brand eBay",
-    "version": "19.4.0",
-    "license": "MIT",
-    "main": "./index.js",
-    "module": "./index.mjs",
-    "maintainers": [
-        "Ian McBurnie <ianmcburnie@hotmail.com>",
-        "Andrew Gliga <agliga4@gmail.com>",
-        "Arthur Khachatryan <arthurk55@gmail.com>"
-    ],
-    "homepage": "https://opensource.ebay.com/skin/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ebay/evo-core"
-    },
-    "files": [
-        "dist",
-        "tokens",
-        "./*\\.{js,css,scss,less,json,mjs}",
-        "!.prettierrc.json",
-        "!webpack.config.js",
-        "!postcss.config.js",
-        "!vite.config.js",
-        "!webpack.config.js"
-    ],
-    "devDependencies": {
-        "@marko/run-adapter-static": "^1.0.2"
-    },
-    "scripts": {
-        "preview": "marko-run preview",
-        "start": "marko-run",
-        "test": "npm run build",
-        "deploy": "BASE_URL=/evo-web/skin/ marko-run build -o ./_site && npm run build:storybook && rimraf _site/public/archive && ncp docs/archive _site/public/archive && touch _site/public/.nojekyll",
-        "deploy:only": "marko-run build -o ./_site && npm run build:storybook && rimraf _site/public/archive && ncp docs/archive _site/public/archive --dereference=true && touch _site/public/.nojekyll",
-        "prebuild": "npm run clean",
-        "prepublishOnly": "node scripts gen",
-        "postpublish": "node scripts clean",
-        "build": "npm run build:css && npm run lint:js && npm run copy && node scripts gen-build",
-        "build:css": "npm run lint:sass && rimraf dist && npm run bundle && npm run postcss && node scripts/add-y-comments.js && prettier dist --write && npm run lint:css",
-        "build:storybook": "npm run copy:assetsToStorybook && storybook build -o ./_site/public/storybook",
-        "clean": "rimraf _cdn _site .cache .tmp .jekyll npm-debug.log.* .DS_Store",
-        "bundle": "sass src/sass:dist --no-source-map",
-        "postcss": "postcss dist/**/*.css -r ",
-        "lint": "npm run lint:sass && npm run lint:css && npm run lint:js",
-        "lint:sass": "stylelint docs/src/sass src/sass --config .stylelintrc",
-        "lint:css": "stylelint dist --config .stylelintrc",
-        "lint:js": "eslint 'src/routes/main.js' > lint.log && eslint 'src/sass/**/stories/*.js' >> lint.log ",
-        "format": "npx prettier --write .",
-        "copy": "npm run copy:sassToDist && npm run copy:svgToDist && npm run copy:svgToDocs && npm run copy:tokensToDist && npm run copy:assetsToStorybook",
-        "copy:sassToDist": "mkdirp dist/variables && ncp src/sass/variables dist/variables && mkdirp dist/mixins && ncp src/sass/mixins/public dist/mixins && ncp src/sass/gh dist/gh",
-        "copy:assetsToStorybook": "node scripts storybook-copy",
-        "copy:svgToDist": "mkdirp dist/svg && ncp src/svg dist/svg",
-        "copy:svgToDocs": "ncp src/svg src/routes/static && ncp src/svg/icons.svg src/components/master-icons.marko",
-        "copy:tokensToDocs": "ncp src/tokens src/routes/static",
-        "copy:tokensToDist": "ncp src/tokens dist/tokens",
-        "verify": "node scripts verify",
-        "version": "npm run build",
-        "release": "npm run build",
-        "build:snapshots": "npm run copy:assetsToStorybook && storybook build -o ./.storybook-percy",
-        "snapshots": "npm run build:snapshots && npx gulp runSnapshots --stories $STORIES",
-        "snapshots:dry": "npm run build:snapshots && npx gulp runSnapshots --dry yes --stories $STORIES",
-        "snapshots:execute": "npm run build:snapshots && percy storybook ./.storybook-percy --include",
-        "snapshots:execute:dry": "percy storybook ./.storybook-percy --dry-run --include",
-        "snapshots:all": "npm run build:snapshots && percy storybook ./.storybook-percy --include '.*'",
-        "snapshots:all:dry": "npm run build:snapshots && percy storybook --dry-run ./.storybook-percy --include '.*'",
-        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook"
-    },
     "keywords": [
         "eBay",
         "CSS",
@@ -76,17 +11,81 @@
         "WAI-ARIA",
         "eBay MIND Patterns"
     ],
-    "publishConfig": {
-        "registry": "https://registry.npmjs.org"
+    "homepage": "https://opensource.ebay.com/skin/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ebay/evo-core"
     },
-    "browserslist": [
-        "extends @ebay/browserslist-config"
+    "license": "MIT",
+    "maintainers": [
+        "Ian McBurnie <ianmcburnie@hotmail.com>",
+        "Andrew Gliga <agliga4@gmail.com>",
+        "Arthur Khachatryan <arthurk55@gmail.com>"
     ],
+    "main": "./index.js",
+    "module": "./index.mjs",
+    "files": [
+        "dist",
+        "tokens",
+        "./*\\.{js,css,scss,less,json,mjs}",
+        "!.prettierrc.json",
+        "!webpack.config.js",
+        "!postcss.config.js",
+        "!vite.config.js"
+    ],
+    "scripts": {
+        "prebuild": "npm run clean",
+        "build": "npm run build:css && npm run lint:js && npm run copy && node scripts gen-build",
+        "build:css": "npm run lint:sass && rimraf dist && npm run bundle && npm run postcss && node scripts/add-y-comments.js && prettier dist --write && npm run lint:css",
+        "build:snapshots": "npm run copy:assetsToStorybook && storybook build -o ./.storybook-percy",
+        "build:storybook": "npm run copy:assetsToStorybook && storybook build -o ./_site/public/storybook",
+        "bundle": "sass src/sass:dist --no-source-map",
+        "clean": "rimraf _cdn _site .cache .tmp .jekyll npm-debug.log.* .DS_Store",
+        "copy": "npm run copy:sassToDist && npm run copy:svgToDist && npm run copy:svgToDocs && npm run copy:tokensToDist && npm run copy:assetsToStorybook",
+        "copy:assetsToStorybook": "node scripts storybook-copy",
+        "copy:sassToDist": "mkdirp dist/variables && ncp src/sass/variables dist/variables && mkdirp dist/mixins && ncp src/sass/mixins/public dist/mixins && ncp src/sass/gh dist/gh",
+        "copy:svgToDist": "mkdirp dist/svg && ncp src/svg dist/svg",
+        "copy:svgToDocs": "ncp src/svg src/routes/static && ncp src/svg/icons.svg src/components/master-icons.marko",
+        "copy:tokensToDist": "ncp src/tokens dist/tokens",
+        "copy:tokensToDocs": "ncp src/tokens src/routes/static",
+        "deploy": "BASE_URL=/evo-web/skin/ marko-run build -o ./_site && npm run build:storybook && rimraf _site/public/archive && ncp docs/archive _site/public/archive && touch _site/public/.nojekyll",
+        "deploy:only": "marko-run build -o ./_site && npm run build:storybook && rimraf _site/public/archive && ncp docs/archive _site/public/archive --dereference=true && touch _site/public/.nojekyll",
+        "format": "npx prettier --write .",
+        "lint": "npm run lint:sass && npm run lint:css && npm run lint:js",
+        "lint:css": "stylelint dist --config .stylelintrc",
+        "lint:js": "eslint 'src/routes/main.js' > lint.log && eslint 'src/sass/**/stories/*.js' >> lint.log ",
+        "lint:sass": "stylelint docs/src/sass src/sass --config .stylelintrc",
+        "postcss": "postcss dist/**/*.css -r ",
+        "prepublishOnly": "node scripts gen",
+        "preview": "marko-run preview",
+        "postpublish": "node scripts clean",
+        "release": "npm run build",
+        "snapshots": "npm run build:snapshots && npx gulp runSnapshots --stories $STORIES",
+        "snapshots:all": "npm run build:snapshots && percy storybook ./.storybook-percy --include '.*'",
+        "snapshots:all:dry": "npm run build:snapshots && percy storybook --dry-run ./.storybook-percy --include '.*'",
+        "snapshots:dry": "npm run build:snapshots && npx gulp runSnapshots --dry yes --stories $STORIES",
+        "snapshots:execute": "npm run build:snapshots && percy storybook ./.storybook-percy --include",
+        "snapshots:execute:dry": "percy storybook ./.storybook-percy --dry-run --include",
+        "start": "marko-run",
+        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook",
+        "test": "npm run build",
+        "verify": "node scripts verify",
+        "version": "npm run build"
+    },
     "commitlint": {
         "extends": "@commitlint/config-conventional"
     },
     "lint-staged": {
         "*.{js,css,md,scss,json}": "prettier --write",
         "*.{css,scss}": "stylelint --config .stylelintrc"
+    },
+    "browserslist": [
+        "extends @ebay/browserslist-config"
+    ],
+    "devDependencies": {
+        "@marko/run-adapter-static": "^1.0.2"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
     }
 }

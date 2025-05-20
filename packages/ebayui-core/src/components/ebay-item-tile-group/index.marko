@@ -1,17 +1,18 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-import type { WithNormalizedProps } from '../../global';
-import type { ItemTileInput, ItemTileLayout } from "../ebay-item-tile/index.marko"
-
+import type { WithNormalizedProps } from "../../global";
+import type {
+    ItemTileInput,
+    ItemTileLayout,
+} from "../ebay-item-tile/index.marko";
 class {}
-
-static interface ItemTileGroupInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    layout?: ItemTileLayout;
-    item?: Marko.AttrTag<ItemTileInput>;
-    "on-action"?: () => void;
+static {
+    interface ItemTileGroupInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        layout?: ItemTileLayout;
+        item?: Marko.AttrTag<ItemTileInput>;
+        "on-action"?: () => void;
+    }
 }
-
 export interface Input extends WithNormalizedProps<ItemTileGroupInput> {}
-
 $ const {
     class: inputClass,
     item: items = [],
@@ -19,14 +20,21 @@ $ const {
     ...htmlInput
 } = input;
 
-<ebay-layout-grid class=["item-tile-group",
-    layout === "list" && 'item-tile-group--list-view', inputClass]
+<ebay-layout-grid
+    class=[
+        "item-tile-group",
+        layout === "list" && "item-tile-group--list-view",
+        inputClass,
+    ]
     ...processHtmlAttributes(htmlInput)
 >
     <for|item, i| of=items>
         <@item>
-            <ebay-item-tile on-action("emit", "action", i) layout=layout ...item/>
+            <ebay-item-tile
+                on-action("emit", "action", i)
+                layout=layout
+                ...item
+            />
         </@item>
-
     </for>
 </ebay-layout-grid>

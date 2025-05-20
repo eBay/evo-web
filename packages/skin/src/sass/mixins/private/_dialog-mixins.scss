@@ -1,8 +1,8 @@
 @use "../public/utility-mixins" as *;
 
 :root {
-    --dialog-scrim-color-hide: rgb(17, 24, 32, 0);
-    --dialog-scrim-color-show: rgb(17, 24, 32, 0.7);
+    --dialog-scrim-color-hide: rgb(17 24 32 / 0);
+    --dialog-scrim-color-show: rgb(17 24 32 / 0.7);
     --dialog-lightbox-max-width: 616px;
 }
 
@@ -43,6 +43,7 @@
     will-change: opacity, transform;
 }
 
+// TODO deprecated, remove when we merge small and large
 @mixin lightbox-dialog-window() {
     @include dialog-window();
     @include border-radius-token(lightbox-border-radius, border-radius-150);
@@ -53,6 +54,18 @@
     min-width: 208px;
 }
 
+// This should become the new ligtbox-dialog-window mixin
+@mixin lightbox-dialog-window-centered() {
+    @include dialog-window();
+    @include border-radius-token(lightbox-border-radius, border-radius-100);
+
+    margin: auto;
+    max-height: 90%;
+    max-width: calc(100% - 32px);
+    min-width: 208px;
+}
+
+// TODO deprecated, remove when we merge small and large
 @mixin lightbox-dialog-window-large() {
     margin: auto;
     @include border-radius-token(lightbox-border-radius, border-radius-100);
@@ -126,5 +139,212 @@
     & > :not(:first-child) {
         margin-left: var(--spacing-100);
         margin-top: initial;
+    }
+}
+
+@mixin dialog-animation($name) {
+    .#{$name}--hide {
+        &.#{$name}--mask-fade {
+            transition: background-color var(--motion-duration-short-3)
+                var(--motion-easing-continuous);
+        }
+
+        // Deprecated
+        &.#{$name}--mask-fade-slow {
+            transition: background-color var(--motion-duration-short-3)
+                var(--motion-easing-continuous);
+        }
+
+        // Deprecated
+        .#{$name}__window--fade {
+            transition: opacity var(--motion-duration-short-3)
+                var(--motion-easing-continuous);
+        }
+
+        .#{$name}__window--animate {
+            transition:
+                transform var(--motion-duration-medium-3)
+                    var(--motion-easing-soft-exit),
+                opacity var(--motion-duration-short-3)
+                    var(--motion-easing-continuous);
+        }
+
+        /* Animation on content */
+        .#{$name}__window--animate > * {
+            transition: opacity var(--motion-duration-short-2)
+                var(--motion-easing-continuous);
+        }
+    }
+
+    .#{$name}--show {
+        &.#{$name}--mask-fade {
+            transition: background-color var(--motion-duration-short-3)
+                var(--motion-easing-continuous);
+        }
+
+        // Deprecated
+        &.#{$name}--mask-fade-slow {
+            transition: background-color var(--motion-duration-short-3)
+                var(--motion-easing-continuous);
+        }
+
+        // Deprecated
+        .#{$name}__window--fade {
+            transition: opacity var(--motion-duration-short-3)
+                var(--motion-easing-continuous);
+        }
+
+        .#{$name}__window--animate {
+            transition:
+                transform var(--motion-duration-medium-3)
+                    var(--motion-easing-standard),
+                opacity var(--motion-duration-short-3)
+                    var(--motion-easing-continuous);
+        }
+
+        /* Animation on content */
+        .#{$name}__window--animate > * {
+            transition: opacity var(--motion-duration-medium-2)
+                var(--motion-easing-continuous) var(--motion-duration-short-3);
+        }
+    }
+
+    .#{$name}--hide,
+    .#{$name}--show-init {
+        &.#{$name}--hide,
+        &.#{$name}--show-init {
+            display: flex;
+        }
+
+        &.#{$name}--mask-fade,
+        // Deprecated
+        &.#{$name}--mask-fade-slow {
+            background-color: var(--dialog-scrim-color-hide);
+        }
+
+        // Deprecated
+        .#{$name}__window--fade {
+            opacity: 0;
+        }
+
+        .#{$name}__window--animate {
+            opacity: 0;
+        }
+
+        .#{$name}__window--animate > * {
+            opacity: 0;
+        }
+    }
+
+    .#{$name}--show,
+    .#{$name}--hide-init {
+        &.#{$name}--show,
+        &.#{$name}--hide-init {
+            display: flex;
+        }
+
+        &.#{$name}--mask-fade,
+        // Deprecated
+        &.#{$name}--mask-fade-slow {
+            background-color: var(--dialog-scrim-color-show);
+        }
+
+        // Deprecated
+        .#{$name}__window--fade {
+            opacity: 1;
+        }
+
+        .#{$name}__window--animate {
+            opacity: 1;
+        }
+
+        .#{$name}__window--animate > * {
+            opacity: 1;
+        }
+    }
+
+    @media (prefers-reduced-motion) {
+        .#{$name}--hide {
+            &.#{$name}--mask-fade {
+                transition: background-color var(--motion-duration-short-3)
+                    var(--motion-easing-soft-exit);
+            }
+
+            // Deprecated
+            &.#{$name}--mask-fade-slow {
+                transition: background-color var(--motion-duration-short-3)
+                    var(--motion-easing-soft-exit);
+            }
+
+            // Deprecated
+            .#{$name}__window--fade {
+                transition: opacity var(--motion-duration-short-3)
+                    var(--motion-easing-soft-exit);
+            }
+
+            .#{$name}__window--animate {
+                transition: opacity var(--motion-duration-short-3)
+                    var(--motion-easing-soft-exit);
+            }
+
+            /* Animation on content */
+            .#{$name}__window--animate > * {
+                transition: opacity var(--motion-duration-short-2)
+                    var(--motion-soft-exit);
+            }
+        }
+
+        .#{$name}--show {
+            &.#{$name}--mask-fade {
+                transition: background-color var(--motion-duration-medium-2)
+                    var(--motion-easing-soft-enter);
+            }
+
+            // Deprecated
+            &.#{$name}--mask-fade-slow {
+                transition: background-color var(--motion-duration-medium-2)
+                    var(--motion-easing-soft-enter);
+            }
+
+            // Deprecated
+            .#{$name}__window--fade {
+                transition: opacity var(--motion-duration-medium-2)
+                    var(--motion-easing-soft-enter);
+            }
+
+            .#{$name}__window--animate {
+                transition: opacity var(--motion-duration-medium-2)
+                    var(--motion-easing-soft-enter);
+            }
+
+            /* Animation on content */
+            .#{$name}__window--animate > * {
+                transition: opacity var(--motion-duration-medium-2)
+                    var(--motion-easing-soft-enter)
+                    var(--motion-duration-short-3);
+            }
+        }
+    }
+}
+
+// When we merge large and small to always show centered, we can remove this mixin
+@mixin dialog-animation-large($name) {
+    .#{$name}--show .#{$name}__window--animate,
+    .#{$name}--hide-init .#{$name}__window--animate {
+        transform: scale(1);
+    }
+
+    .#{$name}--show-init .#{$name}__window--animate,
+    .#{$name}--hide .#{$name}__window--animate {
+        transform: scale(0.75);
+    }
+
+    @media (prefers-reduced-motion) {
+        .#{$name}--show .#{$name}__window--animate,
+        .#{$name}--hide-init .#{$name}__window--animate,
+        .#{$name}--show-init .#{$name}__window--animate,
+        .#{$name}--hide .#{$name}__window--animate {
+            transform: scale(1);
+        }
     }
 }

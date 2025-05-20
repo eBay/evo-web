@@ -1,49 +1,47 @@
 import type { Input as ConfirmDialogInput } from "<ebay-confirm-dialog>";
-
 export interface Input {
     open?: boolean;
     renderBody?: Marko.Body;
     header: {
         renderBody?: Marko.Body;
-    }
+    };
     reject: {
         renderBody?: Marko.Body;
-    }
+    };
     confirm: {
         renderBody?: Marko.Body;
-    }
-
+    };
 }
-
-$ const {
-    header,
-    confirm,
-    reject,
-    ...dialogBaseInput
-} = input;
+$ const { header, confirm, reject, ...dialogBaseInput } = input;
 
 <ebay-confirm-dialog
     open=state.open
     on-open("emit", "open")
     on-close("emit", "close")
-    on-reject('closeDialog')
-    on-confirm('success')
+    on-reject("closeDialog")
+    on-confirm("success")
     ...dialogBaseInput
 >
-    <@header ...header><${header.renderBody}/></@header>
-    <@confirm ...confirm><${confirm.renderBody}/></@confirm>
-    <@reject ...reject><${reject.renderBody}/></@reject>
+    <@header ...header>
+        <${header.renderBody}/>
+    </@header>
+    <@confirm ...confirm>
+        <${confirm.renderBody}/>
+    </@confirm>
+    <@reject ...reject>
+        <${reject.renderBody}/>
+    </@reject>
     <${input.renderBody}/>
-    <p>
-        This 'confirm' text should be 1-2 lines.
-    </p>
+    <p>This 'confirm' text should be 1-2 lines.</p>
 </ebay-confirm-dialog>
 
-<ebay-button on-click('openDialog')>Open Confirm Dialog</ebay-button>
+<ebay-button on-click("openDialog")>
+    Open Confirm Dialog
+</ebay-button>
 class {
     declare state: {
         open?: boolean;
-    }
+    };
     onInput(input: Input) {
         this.state = { open: input.open };
     }
@@ -52,10 +50,10 @@ class {
     }
     closeDialog: ConfirmDialogInput["on-reject"] = (e: Event) => {
         this.state.open = false;
-        this.emit('reject', e);
-    }
+        this.emit("reject", e);
+    };
     success: ConfirmDialogInput["on-confirm"] = (e) => {
         this.state.open = false;
-        this.emit('confirm', e);
-    }
+        this.emit("confirm", e);
+    };
 }

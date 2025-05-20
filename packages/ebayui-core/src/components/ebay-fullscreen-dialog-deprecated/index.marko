@@ -1,14 +1,13 @@
 import type { Input as BaseInput } from "<ebay-dialog-base>";
 import type { WithNormalizedProps } from "../../global";
-
-static interface FullscreenDialogInput extends Omit<BaseInput, `on${string}`> {
-    'slide-from'?: 'start' | 'end';
-    'on-open'?: () => void;
-    'on-close'?: () => void;
+static {
+    interface FullscreenDialogInput extends Omit<BaseInput, `on${string}`> {
+        "slide-from"?: "start" | "end";
+        "on-open"?: () => void;
+        "on-close"?: () => void;
+    }
 }
-
 export interface Input extends WithNormalizedProps<FullscreenDialogInput> {}
-
 $ const {
     class: inputClass,
     renderBody,
@@ -19,11 +18,16 @@ $ const {
 <ebay-dialog-base
     ...dialogInput
     classPrefix="fullscreen-dialog"
-    transitionEl="window"
+    transition-list=["transform"]
     onOpen("emit", "open")
     onClose("emit", "close")
     class=inputClass
-    useHiddenProperty=true
-    windowClass=(slideFrom === 'end' ? "fullscreen-dialog__window--slide-end" : "fullscreen-dialog__window--slide")>
+    useHiddenProperty
+    windowClass=(
+        slideFrom === "end"
+            ? "fullscreen-dialog__window--slide-end"
+            : "fullscreen-dialog__window--slide"
+    )
+>
     <${renderBody}/>
 </ebay-dialog-base>

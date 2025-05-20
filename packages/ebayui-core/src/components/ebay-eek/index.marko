@@ -1,9 +1,7 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-import eekUtil, { type Input as EekInput } from './eek-util'
+import { processHtmlAttributes } from "../../common/html-attributes";
+import eekUtil, { type Input as EekInput } from "./eek-util";
 export type Input = EekInput;
-
 static function noop() {}
-
 $ const {
     class: inputClass,
     style,
@@ -14,25 +12,34 @@ $ const {
     rating,
     ...htmlInput
 } = input;
-
 $ (input as any).toJSON = noop;
 $ const eekRating = eekUtil(input);
 <div
     ...processHtmlAttributes(htmlInput)
     role="figure"
     style=style
-    aria-label=(
-        a11yText ||
-        `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
-    )
-    class=["eek", eekRating ? `eek--rating-${eekRating}` : null, size === "large" && "eek--large", inputClass]>
+    aria-label=a11yText ||
+    `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
+    class=[
+        "eek",
+        eekRating ? `eek--rating-${eekRating}` : null,
+        size === "large" && "eek--large",
+        inputClass,
+    ]
+>
     <div class="eek__container" aria-hidden="true">
         <span class="eek__rating-range">
-            <span aria-hidden="true">${max}</span>
+            <span aria-hidden="true">
+                ${max}
+            </span>
             <ebay-eek-range-arrow-icon/>
-            <span aria-hidden="true">${min}</span>
+            <span aria-hidden="true">
+                ${min}
+            </span>
         </span>
-        <span class="eek__rating" aria-hidden="true">${rating}</span>
+        <span class="eek__rating" aria-hidden="true">
+            ${rating}
+        </span>
     </div>
     <ebay-eek-arrow-icon/>
 </div>

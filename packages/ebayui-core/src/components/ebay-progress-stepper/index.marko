@@ -1,26 +1,26 @@
-import { processHtmlAttributes } from '../../common/html-attributes';
-import type { WithNormalizedProps } from '../../global';
-import type { AttrString } from 'marko/tags-html';
-
+import { processHtmlAttributes } from "../../common/html-attributes";
+import type { WithNormalizedProps } from "../../global";
+import type { AttrString } from "marko/tags-html";
 export interface Step extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
     current?: boolean;
     a11yText?: string;
-    title?: Marko.AttrTag<Omit<Marko.HTML.H4, `on${string}`> & {
-        as?: keyof Marko.NativeTags;
-    }>
+    title?: Marko.AttrTag<
+        Omit<Marko.HTML.H4, `on${string}`> & {
+            as?: keyof Marko.NativeTags;
+        }
+    >;
 }
-
-static interface ProgressStepperInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    direction?: "row" | "column";
-    step?: Marko.AttrTag<Step>;
-    "default-state"?: "complete" | "upcoming" | "attention" | "current";
-    "a11y-heading-tag"?: keyof Marko.NativeTags;
-    "a11y-heading-text"?: AttrString;
-    "auto-paragraph"?: boolean;
+static {
+    interface ProgressStepperInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        direction?: "row" | "column";
+        step?: Marko.AttrTag<Step>;
+        "default-state"?: "complete" | "upcoming" | "attention" | "current";
+        "a11y-heading-tag"?: keyof Marko.NativeTags;
+        "a11y-heading-text"?: AttrString;
+        "auto-paragraph"?: boolean;
+    }
 }
-
 export interface Input extends WithNormalizedProps<ProgressStepperInput> {}
-
 $ const {
     step: steps = [],
     direction = "row",
@@ -31,35 +31,38 @@ $ const {
     autoParagraph,
     ...htmlInput
 } = input;
-
-static var ignoredStepTitleAttributes = ['as', 'a11yText', 'title'];
-$ {
-    var current: number;
-    switch (defaultState) {
-        case 'complete':
-        case 'upcoming':
-            current = -1;
-            break;
-        default:
-            var step = [...steps].findIndex((item) => item.current);
-            current = step === -1 ? 0 : step;
-    }
+static var ignoredStepTitleAttributes = ["as", "a11yText", "title"];
+$ var current: number;
+$ switch (defaultState) {
+    case "complete":
+    case "upcoming":
+        current = -1;
+        break;
+    default:
+        var step = [...steps].findIndex((item) => item.current);
+        current = step === -1 ? 0 : step;
 }
 
 <div
-    class=['progress-stepper', direction === 'column' && 'progress-stepper--vertical', inputClass]
-    aria-labelledby:scoped='stepper-heading'
+    class=[
+        "progress-stepper",
+        direction === "column" && "progress-stepper--vertical",
+        inputClass,
+    ]
+    aria-labelledby:scoped="stepper-heading"
     ...processHtmlAttributes(htmlInput)
 >
-    <${a11yHeadingTag || 'h2'}.clipped id:scoped='stepper-heading'>${a11yHeadingText}</>
+    <${a11yHeadingTag || "h2"} id:scoped="stepper-heading" class="clipped">
+        ${a11yHeadingText}
+    </>
 
     <div
         class=[
-            'progress-stepper__items',
-            defaultState === 'upcoming' && 'progress-stepper__items--upcoming',
-            defaultState === 'current' && 'progress-stepper__items--current',
+            "progress-stepper__items",
+            defaultState === "upcoming" && "progress-stepper__items--upcoming",
+            defaultState === "current" && "progress-stepper__items--current",
         ]
-        role='list'
+        role="list"
     >
         <for|step, index, list| of=steps>
             $ const {
@@ -71,65 +74,73 @@ $ {
                 ...htmlStep
             } = step;
             <if(index > 0)>
-                <hr.progress-stepper__separator role='presentation'>
+                <hr role="presentation" class="progress-stepper__separator">
             </if>
             <div
                 class=[
-                    'progress-stepper__item',
+                    "progress-stepper__item",
                     index === current &&
-                        defaultState === 'attention' &&
-                        'progress-stepper__item--attention',
+                        defaultState === "attention" &&
+                        "progress-stepper__item--attention",
                     stepClass,
                 ]
-                aria-current=current === index && 'step'
-                role='listitem'
+                aria-current=current === index && "step"
+                role="listitem"
                 ...processHtmlAttributes(htmlStep)
             >
-                <span.progress-stepper__icon>
-                    <if(index < current || defaultState === 'complete')>
+                <span class="progress-stepper__icon">
+                    <if(index < current || defaultState === "complete")>
                         <ebay-stepper-confirmation-24-icon
-                            width='24'
-                            height='24'
-                            a11y-text=a11yText || 'complete'
+                            width="24"
+                            height="24"
+                            a11y-text=a11yText || "complete"
                         />
                     </if>
                     <else-if(index === current)>
-                        <if(defaultState === 'attention')>
+                        <if(defaultState === "attention")>
                             <ebay-stepper-attention-24-icon
-                                width='24'
-                                height='24'
-                                a11y-text=a11yText || 'blocked'
+                                width="24"
+                                height="24"
+                                a11y-text=a11yText || "blocked"
                             />
                         </if>
                         <else>
                             <ebay-stepper-confirmation-24-icon
-                                width='24'
-                                height='24'
-                                a11y-text=a11yText || 'current'
+                                width="24"
+                                height="24"
+                                a11y-text=a11yText || "current"
                             />
                         </else>
                     </else-if>
                     <else>
                         <ebay-stepper-upcoming-24-icon
-                            width='24'
-                            height='24'
-                            a11y-text=a11yText || 'upcoming'
+                            width="24"
+                            height="24"
+                            a11y-text=a11yText || "upcoming"
                         />
                     </else>
                 </span>
-                <span.progress-stepper__text>
+                <span class="progress-stepper__text">
                     <if(title)>
-                        <${(title && title.as) || 'h4'} ...processHtmlAttributes(
+                        <${
+                            (title && title.as) || "h4"
+                        } ...processHtmlAttributes(
                             title,
-                            ignoredStepTitleAttributes
+                            ignoredStepTitleAttributes,
                         )>
                             <${title}/>
                         </>
                     </if>
                     <if(autoParagraph !== false)>
-                        <p><${renderBody}/></p>
+                        <p>
+                            <${renderBody}/>
+                        </p>
                     </if>
-                    <else><span><${renderBody}/></span></else>
+                    <else>
+                        <span>
+                            <${renderBody}/>
+                        </span>
+                    </else>
                 </span>
             </div>
         </for>

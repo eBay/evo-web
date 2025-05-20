@@ -2,14 +2,14 @@ import type { ComboboxEvent } from "../component";
 class {
     declare state: {
         value: string;
-    }
+    };
     onCreate() {
         this.state = {
-            value: "Basic Offer 22"
-        }
+            value: "Basic Offer 22",
+        };
     }
     handleClear() {
-        this.state.value=""
+        this.state.value = "";
     }
     handleSelect(e: ComboboxEvent) {
         this.state.value = e.selectedOption?.text || "";
@@ -22,7 +22,8 @@ class {
     value=state.value
     autocomplete="list"
     on-button-click("handleClear")
-    on-select("handleSelect")>
+    on-select("handleSelect")
+>
     <@button aria-label="Toggle autocomplete">
         <ebay-clear-16-icon/>
     </@button>

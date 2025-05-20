@@ -13,16 +13,19 @@ The viewbox given will be translated to the `width` and `height` that the icons 
 
 **Couple of Notes**
 
--   We should not apply fill on base icons. We use `fill: currentColor` to be able to change the color on icons
--   We should not apply base sizes. We will apply those using CSS
--   If there is a `<use>` tag, move necessary attributes to the `<path>` and remove this tag
-    -   Specific attributes to look for: `fill` (if it needs to be different), `fill-rule`, etc.
--   In all cases, remove the `id` from the `<path>`, as it is unnecessary
--   If `id` is needed for certain `clip-path` or such, make sure it is unique
+- We should not apply fill on base icons. We use `fill: currentColor` to be able to change the color on icons
+- We should not apply base sizes. We will apply those using CSS
+- If there is a `<use>` tag, move necessary attributes to the `<path>` and remove this tag
+    - Specific attributes to look for: `fill` (if it needs to be different), `fill-rule`, etc.
+- In all cases, remove the `id` from the `<path>`, as it is unnecessary
+- If `id` is needed for certain `clip-path` or such, make sure it is unique
 
 ## Step 2: Run scripts
 
 To properly setup the icon after it is placed in the `src/svg/icon` directory, run `node scripts genSVG` from the root of the skin project. This will properly setup the icon in docs, in the `icon.svg` bundle, and generate the CSS needed for the icon.
+
+If you get an error saying an executable doesn't exist, it probably means you'll need to install Playwright. To do so, run `npx playwright install` and try again.
+
 Afterward, you should run `npm run build` in order to also copy all those files to `dist` as well as to the docs.
 
 ## Appendix

@@ -2,19 +2,13 @@ export interface Input {
     open: boolean;
     header: {
         renderBody: Marko.Body;
-    }
+    };
 }
-
-$ const {
-    header,
-    open,
-    ...dialogBaseInput
-} = input;
-
+$ const { header, open, ...dialogBaseInput } = input;
 class {
     declare state: {
-        open: boolean
-    }
+        open: boolean;
+    };
     onInput(input: Input) {
         this.state = { open: input.open };
     }

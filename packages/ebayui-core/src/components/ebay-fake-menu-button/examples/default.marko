@@ -1,12 +1,18 @@
 <ebay-fake-menu-button
-    text='eBay Menu'
-    on-mousedown('emit', 'mousedown')
-    on-select('emit', 'select')
-    on-collapse('emit', 'collapse')
-    on-expand('emit', 'expand')
+    text="eBay Menu"
+    on-mousedown("emit", "mousedown")
+    on-select("emit", "select")
+    on-collapse("emit", "collapse")
+    on-expand("emit", "expand")
     ...input
 >
-    <@item href='#' current>item 1</@item>
-    <@item type='button'>item 2</@item>
-    <@item href='#'>item 3</@item>
+    <@item href="#" current>
+        item 1
+    </@item>
+    <@item type="button">
+        item 2
+    </@item>
+    <@item href="#">
+        item 3
+    </@item>
 </ebay-fake-menu-button>

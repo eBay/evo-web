@@ -3,10 +3,10 @@ class {
     declare state: {
         labelText?: string | null;
         index?: number;
-    }
+    };
 
     onCreate() {
-        this.state = { labelText: 'Color', index: 0 };
+        this.state = { labelText: "Color", index: 0 };
     }
 
     handleChange(e: MenuButtonEvent) {
@@ -15,11 +15,19 @@ class {
     }
 }
 
-<ebay-menu-button type="radio" prefix-label="Sort By:" on-change('handleChange')>
-    <@label>
-        ${state.labelText}
-    </@label>
-    <@item checked=state.index==0>Color</@item>
-    <@item checked=state.index==1>Year</@item>
-    <@item checked=state.index==2>Mileage</@item>
+<ebay-menu-button
+    type="radio"
+    prefix-label="Sort By:"
+    on-change("handleChange")
+>
+    <@label>${state.labelText}</@label>
+    <@item checked=state.index == 0>
+        Color
+    </@item>
+    <@item checked=state.index == 1>
+        Year
+    </@item>
+    <@item checked=state.index == 2>
+        Mileage
+    </@item>
 </ebay-menu-button>

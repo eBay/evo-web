@@ -1,7 +1,6 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-import IconButton from '<ebay-icon-button>'
-import Button from '<ebay-button>'
-
+import { processHtmlAttributes } from "../../common/html-attributes";
+import IconButton from "<ebay-icon-button>";
+import Button from "<ebay-button>";
 $ const {
     class: inputClass,
     style,
@@ -24,30 +23,27 @@ $ const {
     transparent,
     ...htmlInput
 } = input;
+$ var isOverflowVariant = inputVariant === "overflow";
+$ var isFormVariant = inputVariant === "form";
+$ var isButtonVariant = true;
+$ if (borderless) {
+    isOverflowVariant = false;
+}
+$ var priority: string | null = null;
+$ var prefix = "expand-btn";
+$ var variant: string | undefined;
+$ var isIconVariant = inputVariant === "icon" || isOverflowVariant;
 
-$ {
-    var isOverflowVariant = inputVariant === "overflow";
-    var isFormVariant = inputVariant === "form";
-    var isButtonVariant = true;
-    if (borderless) {
-        isOverflowVariant = false;
-    }
-    var priority: string | null = null;
-    var prefix = 'expand-btn'
-    var variant: string | undefined;
-    var isIconVariant = inputVariant === 'icon' || isOverflowVariant;
-
-    var tagName: Marko.Template = Button;
-    if (isFormVariant) {
-        prefix = 'btn';
-        variant = 'form';
-    } else if (isIconVariant) {
-        tagName = IconButton;
-        isButtonVariant = false;
-    } else {
-        priority = inputPriority || null;
-        prefix = 'btn';
-    }
+$ var tagName: Marko.Template = Button;
+$ if (isFormVariant) {
+    prefix = "btn";
+    variant = "form";
+} else if (isIconVariant) {
+    tagName = IconButton;
+    isButtonVariant = false;
+} else {
+    priority = inputPriority || null;
+    prefix = "btn";
 }
 <span
     ...processHtmlAttributes(htmlInput)
@@ -55,23 +51,23 @@ $ {
     style=style
     on-expander-expand("handleExpand")
     on-expander-collapse("handleCollapse")
-    onMousedown("handleMousedown")>
+    onMousedown("handleMousedown")
+>
     <${tagName}
-        class=[
-            `fake-menu-button__button`,
-        ]
+        class=[`fake-menu-button__button`]
         size=size
         borderless=borderless
         priority=priority
         variant=variant
-        transparent=(isIconVariant && transparent)
-        iconOnly=(!text && !icon && !isOverflowVariant)
+        transparent=isIconVariant && transparent
+        iconOnly=!text && !icon && !isOverflowVariant
         ariaExpanded="false"
         ariaLabel=a11yText
         disabled=disabled
         noToggle-icon=noToggleIcon
         on-escape("handleButtonEscape")
-        key="button">
+        key="button"
+    >
         <if(isOverflowVariant)>
             <ebay-overflow-vertical-16-icon/>
         </if>
@@ -79,7 +75,7 @@ $ {
             <span class=[
                 `${prefix}__cell`,
                 label && "menu-button__control--custom-label",
-                textAlign === "center" && "expand-btn__cell--center"
+                textAlign === "center" && "expand-btn__cell--center",
             ]>
                 <if(label)>
                     <${label.renderBody}/>
@@ -107,7 +103,8 @@ $ {
         tabindex=-1
         on-keydown("handleMenuKeydown")
         on-select("handleMenuSelect")
-        key="content">
+        key="content"
+    >
         <for|item| of=items>
             <@item ...item/>
         </for>

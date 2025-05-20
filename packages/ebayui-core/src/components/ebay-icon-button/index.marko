@@ -1,18 +1,11 @@
-import { processHtmlAttributes } from "../../common/html-attributes"
-
-static const VALID_SIZES = ['small', 'large']
-static var validPriorities = [
-    'primary',
-    'secondary',
-    'tertiary'
-];
-
+import { processHtmlAttributes } from "../../common/html-attributes";
+static const VALID_SIZES = ["small", "large"];
+static var validPriorities = ["primary", "secondary", "tertiary"];
 static function toJSON(this: any) {
     return {
-        disabled: this.disabled
+        disabled: this.disabled,
     };
 }
-
 $ const {
     ariaLabel,
     badgeAriaLabel,
@@ -27,11 +20,10 @@ $ const {
     class: inputClass,
     ...htmlInput
 } = input;
-
 $ (input as any).toJSON = toJSON;
 $ let tagType = "button";
 $ let baseClassName = "icon-btn";
-$ if(href) {
+$ if (href) {
     tagType = "a";
     baseClassName = "icon-link";
 }
@@ -40,8 +32,8 @@ $ if(href) {
     ...processHtmlAttributes(htmlInput)
     onClick("handleClick")
     onKeydown("handleKeydown")
-    onFocus('handleFocus')
-    onBlur('handleBlur')
+    onFocus("handleFocus")
+    onBlur("handleBlur")
     aria-label=ariaLabel
     href=href
     class=[
@@ -49,19 +41,20 @@ $ if(href) {
         baseClassName,
         badgeNumber && `${baseClassName}--badged`,
         transparent && `${baseClassName}--transparent`,
-        (validPriorities.includes(priority) &&
-        `${baseClassName}--${priority}`),
-        size && VALID_SIZES.includes(size) && `${baseClassName}--${size}`
+        validPriorities.includes(priority) && `${baseClassName}--${priority}`,
+        size && VALID_SIZES.includes(size) && `${baseClassName}--${size}`,
     ]
-    data-ebayui=true
-    type=(tagType === "button" && (type || "button"))
-    aria-disabled=(partiallyDisabled && "true")>
+    data-ebayui
+    type=tagType === "button" && (type || "button")
+    aria-disabled=partiallyDisabled && "true"
+>
     <${renderBody}/>
     <if(badgeNumber)>
         <ebay-badge
             number=badgeNumber
             type="icon"
-            aria-label=(ariaLabel && badgeAriaLabel)
-            aria-hidden=(!!ariaLabel && "true")/>
+            aria-label=ariaLabel && badgeAriaLabel
+            aria-hidden=!!ariaLabel && "true"
+        />
     </if>
 </>

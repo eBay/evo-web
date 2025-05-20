@@ -48,6 +48,7 @@ const fastAnimations = {
         this.fastAnimationStyle = document.createElement("style");
         this.fastAnimationStyle.innerHTML = `* {
                 transition-duration: 0.1s !important;
+                transition-delay: 0.1s !important;
                 scroll-behavior: auto !important;
             }`;
         document.head.appendChild(this.fastAnimationStyle);

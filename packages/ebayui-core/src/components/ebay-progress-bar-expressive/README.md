@@ -10,10 +10,11 @@
 ```marko
 <ebay-progress-bar-expressive ...input>
     <@message>Hang tight</@message>
-    <@message duration=2000>We're processing your order</@message>
+    <@message duration=2000>
+        We're processing your order
+    </@message>
     <@message>Just a moment longer</@message>
 </ebay-progress-bar-expressive>
-
 ```
 
 The expressive progress bar can replace our traditional spinner to feel faster during periods of longer loading.

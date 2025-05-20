@@ -5,16 +5,24 @@
 -->
 class {}
 
-<ebay-fake-menu-button text="Settings"
+<ebay-fake-menu-button
+    text="Settings"
     on-mousedown("emit", "mosuon-mousedown")
     on-select("emit", "select")
     on-collapse("emit", "collapse")
     on-expand("emit", "expand")
-    ...input>
+    ...input
+>
     <@icon>
         <ebay-settings-24-icon/>
     </@icon>
-    <@item type="button">item 1</@item>
-    <@item type="button">item 2</@item>
-    <@item type="button">item 3</@item>
+    <@item type="button">
+        item 1
+    </@item>
+    <@item type="button">
+        item 2
+    </@item>
+    <@item type="button">
+        item 3
+    </@item>
 </ebay-fake-menu-button>

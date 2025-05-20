@@ -28,6 +28,7 @@ export interface TableInput extends Omit<Marko.HTML.Div, `on${string}`> {
     "body-state"?: "loading" | "none";
     "all-selected"?: AttrTriState;
     row?: Marko.AttrTag<TableRow>;
+    "frozen-header"?: boolean;
     density?: "compact" | "relaxed" | "none";
     "a11y-loading-text"?: string;
     "a11y-select-all-text"?: string;

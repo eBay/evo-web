@@ -42,12 +42,12 @@ async function verifyBuild() {
     await runCmd(
         "git",
         ["update-index", "--refresh"],
-        "Failed to update index, unchecked files found"
+        "Failed to update index, unchecked files found",
     );
     await runCmd(
         "git",
         ["diff-index", "--quiet", "HEAD", "--"],
-        "Unchecked-in files found in codebase"
+        "Unchecked-in files found in codebase",
     );
 }
 

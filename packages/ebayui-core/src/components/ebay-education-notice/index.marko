@@ -11,13 +11,16 @@ $ const {
 
     <ebay-notice-base
         ...noticeBaseInput
-        role='region'
-        prefix-class='education-notice'
-        type='section'
-        main-root='div'
-        iconClass=[iconVariant === 'prominent' && 'icon--prominent']
+        role="region"
+        prefix-class="education-notice"
+        type="section"
+        main-root="div"
+        iconClass=[iconVariant === "prominent" && "icon--prominent"]
         a11yRoleDescription=a11yRoleDescription
-        class=[variant === 'prominent' && 'education-notice--prominent', inputClass]
-        on-dismiss('onDismiss')
+        class=[
+            variant === "prominent" && "education-notice--prominent",
+            inputClass,
+        ]
+        on-dismiss("onDismiss")
     />
 </if>

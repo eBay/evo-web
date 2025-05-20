@@ -6,14 +6,16 @@
 class {}
 
 <ebay-menu-button
-    text='Settings'
-    on-collapse('emit', 'collapse')
-    on-expand('emit', 'expand')
-    on-change('emit', 'change')
-    on-select('emit', 'select')
+    text="Settings"
+    on-collapse("emit", "collapse")
+    on-expand("emit", "expand")
+    on-change("emit", "change")
+    on-select("emit", "select")
     ...input
 >
-    <@icon><ebay-settings-16-icon/></@icon>
+    <@icon>
+        <ebay-settings-16-icon/>
+    </@icon>
     <@item>item 1</@item>
     <@item>item 2</@item>
     <@item>item 3</@item>

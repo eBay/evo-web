@@ -9,13 +9,16 @@ $ const {
     <ebay-notice-base
         ...noticeBaseInput
         status=status
-        role='region'
-        prefix-class='section-notice'
-        type='section'
-        main-root='span'
+        role="region"
+        prefix-class="section-notice"
+        type="section"
+        main-root="span"
         a11yRoleDescription=a11yRoleDescription
-        class=[status === 'education' && 'section-notice--large-icon', inputClass]
-        on-dismiss('onDismiss')
-        on-cta-click('emit', 'cta-click')
+        class=[
+            status === "education" && "section-notice--large-icon",
+            inputClass,
+        ]
+        on-dismiss("onDismiss")
+        on-cta-click("emit", "cta-click")
     />
 </if>

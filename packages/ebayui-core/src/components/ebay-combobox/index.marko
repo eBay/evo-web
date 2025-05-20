@@ -1,5 +1,4 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-
 $ const {
     class: inputClass,
     id: inputId,
@@ -17,13 +16,11 @@ $ const {
     fluid,
     ...htmlInput
 } = input;
-
 $ const {
     class: buttonClass,
     renderBody: buttonRenderBody,
     ...htmlButton
-} = button || {}
-
+} = button || {};
 $ var hasButton = !!button;
 $ var defaultTag = fluid ? "div" : "span";
 $ var id = inputId || component.getElId("input");
@@ -82,23 +79,29 @@ $ var id = inputId || component.getElId("input");
                 ...processHtmlAttributes(htmlButton)
                 onClick("handleButtonClick")
                 key="actionable"
-                class=[
-                    "icon-btn",
-                    "icon-btn--transparent",
-                    buttonClass,
-                ]
+                class=["icon-btn", "icon-btn--transparent", buttonClass]
             >
                 <${buttonRenderBody}/>
             </button>
         </if>
     </span>
     <if(component._hasVisibleOptions())>
-        <div key="listbox" role="listbox" class=["combobox__listbox", strategy === "fixed" && "combobox__listbox--fixed"]>
+        <div
+            key="listbox"
+            role="listbox"
+            class=[
+                "combobox__listbox",
+                strategy === "fixed" && "combobox__listbox--fixed",
+            ]
+        >
             <for|option| of=component._getVisibleOptions()>
-                $ const { text, value, class: optionClass, ...htmlOption } = option;
-                $ var isSelected = (
-                    (value || text) === state.currentValue
-                );
+                $ const {
+                    text,
+                    value,
+                    class: optionClass,
+                    ...htmlOption
+                } = option;
+                $ var isSelected = (value || text) === state.currentValue;
                 <div
                     ...processHtmlAttributes(htmlOption)
                     key="options[]"

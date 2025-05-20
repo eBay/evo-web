@@ -166,12 +166,12 @@ input.textbox__control {
     display: inline-flex;
     height: 1lh;
     pointer-events: none;
-    width: 14px;
     fill: var(--textbox-icon-color, var(--color-foreground-secondary));
 }
 
 .textbox > span:first-child,
 .textbox > svg:first-child {
+    flex-shrink: 0;
     margin-inline-start: var(--spacing-200);
 }
 

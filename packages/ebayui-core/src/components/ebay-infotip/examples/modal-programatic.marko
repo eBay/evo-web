@@ -2,7 +2,7 @@ class {
     declare open: boolean;
 
     toggle() {
-        const infotip = this.getComponent<any>('infotip')
+        const infotip = this.getComponent<any>("infotip");
         if (!this.open) {
             infotip.setOpen(true);
             this.open = true;
@@ -17,10 +17,16 @@ class {
     key="infotip"
     a11y-close-button-text="Dismiss infotip"
     aria-label="Important information"
-    variant="modal">
-    <@content>This is some important info
-<ebay-button on-click('toggle')>Toggle</>
+    variant="modal"
+>
+    <@content>
+        This is some important info
+        <ebay-button on-click("toggle")>
+            Toggle
+        </ebay-button>
     </@content>
 </ebay-infotip>
 
-<ebay-button on-click('toggle')>Toggle</>
+<ebay-button on-click("toggle")>
+    Toggle
+</ebay-button>

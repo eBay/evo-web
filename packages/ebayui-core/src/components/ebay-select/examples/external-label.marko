@@ -1,18 +1,17 @@
 export interface Input {
     option: Array<{
-        value: string,
-        text: string
+        value: string;
+        text: string;
     }>;
 }
-
 class {
     declare state: {
-        selected: number | null
-    }
+        selected: number | null;
+    };
     onCreate() {
         this.state = {
-            selected: null
-        }
+            selected: null,
+        };
     }
 
     handleChange({ index }: { index: number }) {
@@ -24,9 +23,18 @@ class {
     <label class="field__label field__label--start" for="select">
         Option
     </label>
-    <ebay-select ...input name="formFieldName" id="select" on-change("handleChange")>
+    <ebay-select
+        ...input
+        name="formFieldName"
+        id="select"
+        on-change("handleChange")
+    >
         <for|option, i| of=input.option>
-            <@option value=option.value text=option.text selected=i === state.selected/>
+            <@option
+                value=option.value
+                text=option.text
+                selected=i === state.selected
+            />
         </for>
     </ebay-select>
 </span>

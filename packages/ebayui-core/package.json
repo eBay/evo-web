@@ -1,6 +1,6 @@
 {
     "name": "@ebay/ebayui-core",
-    "version": "15.4.0",
+    "version": "15.5.0",
     "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
     "keywords": [
         "marko-components"
@@ -28,7 +28,7 @@
         "build:storybook": "storybook build -o ./_site",
         "coverage": "vitest run --browser.headless --coverage",
         "deploy": "storybook build -o ./_site",
-        "importSVG": "node --experimental-json-modules --experimental-import-meta-resolve scripts/import-svg && prettier . --write --log-level=warn",
+        "importSVG": "node --experimental-json-modules --experimental-import-meta-resolve scripts/import-svg && prettier \"{./src/components/ebay-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
         "installMarkoV4": "npm remove @marko/compiler && npm i marko@4 --force",
         "installMarkoV5": "npm i marko@5 @marko/compiler@5 --force",
         "lint": "npm run lint:less && npm run lint:js && npm run lint:whitespace",
@@ -52,10 +52,10 @@
         "tr": "npm run coverage && npm run report && open .coverage/index.html",
         "ts": "npm run test:server",
         "tt": "mtc",
-        "version": "npm run importSVG && prettier . --write --log-level=warn && npm run build:readme"
+        "version": "npm run importSVG && npm run build:readme"
     },
     "dependencies": {
-        "@floating-ui/dom": "^1.6.13",
+        "@floating-ui/dom": "^1.7.0",
         "@google/model-viewer": "^4.1.0",
         "@marko-tags/subscribe": "^0.5.2",
         "highcharts": "^11.4.8",
@@ -69,7 +69,7 @@
         "makeup-roving-tabindex": "~0.7.5",
         "makeup-screenreader-trap": "~0.5.4",
         "makeup-typeahead": "^0.3.3",
-        "shaka-player": "4.14.10"
+        "shaka-player": "4.14.12"
     },
     "peerDependencies": {
         "@ebay/skin": "^19.2.0",

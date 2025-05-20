@@ -1,7 +1,6 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-import type { WithNormalizedProps } from '../../global';
-
-export interface LayoutOptions  {
+import type { WithNormalizedProps } from "../../global";
+export interface LayoutOptions {
     min?: number;
     xs?: number;
     sm?: number;
@@ -12,14 +11,13 @@ export interface LayoutOptions  {
     xl3?: number;
     xl4?: number;
 }
-
-static interface LayoutGridInput extends Omit<Marko.HTML.Div, `on${string}`> {
-    item?: Marko.AttrTag<Marko.Renderable>
-    columns?: LayoutOptions
+static {
+    interface LayoutGridInput extends Omit<Marko.HTML.Div, `on${string}`> {
+        item?: Marko.AttrTag<Marko.Renderable>;
+        columns?: LayoutOptions;
+    }
 }
-
 export interface Input extends WithNormalizedProps<LayoutGridInput> {}
-
 $ const {
     item: items = [],
     class: inputClass,
@@ -27,7 +25,8 @@ $ const {
     ...htmlInput
 } = input;
 
-<div class=["layout-grid", inputClass]
+<div
+    class=["layout-grid", inputClass]
     data-columns-min=columns.min
     data-columns-xs=columns.xs
     data-columns-sm=columns.sm

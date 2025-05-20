@@ -1,12 +1,14 @@
-import {components} from '../../../components/components.marko';
-import path from 'path';
+import { components } from "../../../components/components.marko";
+import path from "path";
 
 <h1>All CSS Components</h1>
 
 <ul>
-<for|key, folder| in=components>
-    <li>
-        <a href=`component/${path.basename(folder)}/` class="module-link">${path.basename(folder)}</a>
-    </li>
-</for>
+    <for|key, folder| in=components>
+        <li>
+            <a href=`component/${path.basename(folder)}/` class="module-link">
+                ${path.basename(folder)}
+            </a>
+        </li>
+    </for>
 </ul>

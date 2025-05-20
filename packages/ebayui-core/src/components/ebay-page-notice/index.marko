@@ -1,16 +1,13 @@
-$ const {
-    status = "attention",
-    ...noticeBaseInput
-} = input;
+$ const { status = "attention", ...noticeBaseInput } = input;
 
-<if (!state.dismissed)>
+<if(!state.dismissed)>
     <ebay-notice-base
         ...noticeBaseInput
         class=[`page-notice--${status}`, input.class]
         status=status
         role="region"
         prefixClass="page-notice"
-        on-dismiss('onDismiss')
-        on-cta-click('emit', 'cta-click')
+        on-dismiss("onDismiss")
+        on-cta-click("emit", "cta-click")
     />
 </if>

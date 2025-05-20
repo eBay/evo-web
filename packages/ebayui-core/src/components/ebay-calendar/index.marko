@@ -1,8 +1,7 @@
 import { toISO } from "../../common/dates/date-utils";
-
 $ const {
     numMonths = 1,
-    getA11yShowMonthText = ((month) => `Show ${month}`),
+    getA11yShowMonthText = (month) => `Show ${month}`,
     a11ySelectedText = "selected",
     a11yRangeStartText = "start of range",
     a11yInRangeText = "in range",
@@ -15,19 +14,25 @@ $ const {
     interactive,
     linkBuilder,
 } = input;
+$ var monthDates = [...Array(numMonths)].map((_, i) =>
+    component.getMonthDate(state.offset + i),
+);
 
-$ var monthDates = [...Array(numMonths)].map((_, i) => component.getMonthDate(state.offset + i));
-
-<div.calendar>
+<div class="calendar">
     <if(navigable)>
-        <div.calendar__header>
-            <div.calendar__header--inner>
+        <div class="calendar__header">
+            <div class="calendar__header--inner">
                 <ebay-icon-button
                     transparent
                     size="small"
                     disabled=(state.disableBefore && component.getFirstVisibleISO() <= state.disableBefore)
-                    aria-label=getA11yShowMonthText(component.monthTitle(component.getMonthDate(state.offset - 1)))
-                    onClick('prevMonth', false)>
+                    aria-label=getA11yShowMonthText(
+                        component.monthTitle(
+                            component.getMonthDate(state.offset - 1),
+                        ),
+                    )
+                    onClick("prevMonth", false)
+                >
                     <ebay-chevron-left-24-icon/>
                 </ebay-icon-button>
                 <for|monthDate| of=monthDates>
@@ -37,17 +42,22 @@ $ var monthDates = [...Array(numMonths)].map((_, i) => component.getMonthDate(st
                     transparent
                     size="small"
                     disabled=(state.disableAfter && component.getLastVisibleISO() >= state.disableAfter)
-                    aria-label=getA11yShowMonthText(component.monthTitle(component.getMonthDate(state.offset + numMonths)))
-                    onClick('nextMonth', false)>
+                    aria-label=getA11yShowMonthText(
+                        component.monthTitle(
+                            component.getMonthDate(state.offset + numMonths),
+                        ),
+                    )
+                    onClick("nextMonth", false)
+                >
                     <ebay-chevron-right-24-icon/>
                 </ebay-icon-button>
             </div>
         </div>
     </if>
-    <div.calendar__body>
+    <div class="calendar__body">
         <for|monthDate| of=monthDates>
-            <div.calendar__month>
-                <table onKeydown('onKeyDown')>
+            <div class="calendar__month">
+                <table onKeydown("onKeyDown")>
                     <caption>${component.monthTitle(monthDate)}</caption>
                     <thead>
                         <tr>
@@ -57,11 +67,21 @@ $ var monthDates = [...Array(numMonths)].map((_, i) => component.getMonthDate(st
                         </tr>
                     </thead>
                     <tbody>
-                        $ var numBlankDays = (monthDate.getUTCDay() - state.firstDayOfWeek + 7) % 7;
+                        $ var numBlankDays = (
+                            (monthDate.getUTCDay() - state.firstDayOfWeek + 7) %
+                            7
+                        );
                         $ var year = monthDate.getUTCFullYear();
                         $ var month = monthDate.getUTCMonth();
-                        $ var daysInMonth = new Date(year, month + 1, 0).getDate();
-                        <for|row| from=0 to=Math.floor((numBlankDays + daysInMonth) / 7)>
+                        $ var daysInMonth = new Date(
+                            year,
+                            month + 1,
+                            0,
+                        ).getDate();
+                        <for|row|
+                            from=0
+                            to=Math.floor((numBlankDays + daysInMonth) / 7)
+                        >
                             <tr>
                                 $ var startDate = row * 7 - numBlankDays + 1;
                                 $ var endDate = startDate + 6;
@@ -73,55 +93,122 @@ $ var monthDates = [...Array(numMonths)].map((_, i) => component.getMonthDate(st
                                     $ endDate = daysInMonth;
                                 </else-if>
                                 <for|day| from=startDate to=endDate>
-                                    $ var dayISO = toISO(new Date(Date.UTC(year, month, day)));
+                                    $ var dayISO = toISO(
+                                        new Date(Date.UTC(year, month, day)),
+                                    );
                                     $ var isToday = dayISO === state.todayISO;
-                                    $ var isSelected = (Array.isArray(selected)
-                                            ? selected.some((iso) => iso === dayISO)
-                                            : selected && selected === dayISO);
-                                    $ var isRangeStart = dayISO === state.rangeStart;
-                                    $ var isInRange = component.isInRange(dayISO);
-                                    $ var isRangeEnd = dayISO === state.rangeEnd;
-                                    $ var isDisabled = component.isDisabled(dayISO);
+                                    $ var isSelected = (
+                                        Array.isArray(selected)
+                                            ? selected.some(
+                                                  (iso) => iso === dayISO,
+                                              )
+                                            : selected && selected === dayISO
+                                    );
+                                    $ var isRangeStart = (
+                                        dayISO === state.rangeStart
+                                    );
+                                    $ var isInRange = component.isInRange(
+                                        dayISO,
+                                    );
+                                    $ var isRangeEnd = (
+                                        dayISO === state.rangeEnd
+                                    );
+                                    $ var isDisabled = component.isDisabled(
+                                        dayISO,
+                                    );
                                     $ var a11yTexts = [""];
-                                    $ if (a11ySelectedText && isSelected) a11yTexts.push(a11ySelectedText);
-                                    $ if (a11yRangeStartText && isRangeStart) a11yTexts.push(a11yRangeStartText);
-                                    $ if (a11yInRangeText && !isRangeStart && !isRangeEnd && isInRange) a11yTexts.push(a11yInRangeText);
-                                    $ if (a11yRangeEndText && isRangeEnd) a11yTexts.push(a11yRangeEndText);
+                                    $ {
+                                        if (a11ySelectedText && isSelected)
+                                            a11yTexts.push(a11ySelectedText);
+                                    }
+                                    $ {
+                                        if (a11yRangeStartText && isRangeStart)
+                                            a11yTexts.push(a11yRangeStartText);
+                                    }
+                                    $ {
+                                        if (
+                                            a11yInRangeText &&
+                                            !isRangeStart &&
+                                            !isRangeEnd &&
+                                            isInRange
+                                        )
+                                            a11yTexts.push(a11yInRangeText);
+                                    }
+                                    $ {
+                                        if (a11yRangeEndText && isRangeEnd)
+                                            a11yTexts.push(a11yRangeEndText);
+                                    }
 
                                     <td class={
-                                            "calendar__cell--selected": isSelected,
-                                            "calendar__range--start": isRangeStart,
-                                            "calendar__range": isInRange,
-                                            "calendar__range--end": isRangeEnd,
-                                        }>
+                                        "calendar__cell--selected": isSelected,
+                                        "calendar__range--start": isRangeStart,
+                                        calendar__range: isInRange,
+                                        "calendar__range--end": isRangeEnd,
+                                    }>
                                         <if(interactive)>
                                             <button
                                                 type="button"
                                                 key=dayISO
                                                 disabled=isDisabled
-                                                aria-label=(a11yTexts.length > 1) && `${day}${a11yTexts.join(a11ySeparator)}`
-                                                tabindex=state.tabindexISO !== dayISO && -1
+                                                aria-label=(
+                                                    a11yTexts.length > 1 &&
+                                                    `${day}${a11yTexts.join(a11ySeparator)}`
+                                                )
+                                                tabindex=state.tabindexISO !==
+                                                    dayISO && -1
                                                 aria-current=isToday && "date"
-                                                aria-pressed=isSelected && "true"
-                                                onClick('onDaySelect', dayISO)
-                                                onFocus('onDayFocus', dayISO)
-                                                onMouseover('onDayFocus', dayISO)
-                                                onBlur('onDayBlur')
-                                                onMouseout('onDayBlur')>
+                                                aria-pressed=isSelected &&
+                                                "true"
+                                                onClick("onDaySelect", dayISO)
+                                                onFocus("onDayFocus", dayISO)
+                                                onMouseover(
+                                                    "onDayFocus",
+                                                    dayISO,
+                                                )
+                                                onBlur("onDayBlur")
+                                                onMouseout("onDayBlur")
+                                            >
                                                 ${day}
                                             </button>
                                         </if>
                                         <else>
-                                            $ if (a11yTodayText && isToday) a11yTexts.push(a11yTodayText);
-                                            $ if (a11yDisabledText && isDisabled) a11yTexts.push(a11yDisabledText);
-                                            $ var link = !isDisabled && linkBuilder && linkBuilder(dayISO);
+                                            $ {
+                                                if (a11yTodayText && isToday)
+                                                    a11yTexts.push(
+                                                        a11yTodayText,
+                                                    );
+                                            }
+                                            $ {
+                                                if (
+                                                    a11yDisabledText &&
+                                                    isDisabled
+                                                )
+                                                    a11yTexts.push(
+                                                        a11yDisabledText,
+                                                    );
+                                            }
+                                            $ var link = (
+                                                !isDisabled &&
+                                                linkBuilder &&
+                                                linkBuilder(dayISO)
+                                            );
                                             <${link ? "a" : "span"}
                                                 class={
-                                                    "calendar__cell--disabled": isDisabled,
-                                                    "calendar__cell--current": isToday,
+                                                    "calendar__cell--disabled":
+                                                        isDisabled,
+                                                    "calendar__cell--current":
+                                                        isToday,
                                                 }
-                                                href=link>
-                                                ${day}<if(a11yTexts.length > 1)><span.clipped>${a11yTexts.join(a11ySeparator)}</span></if>
+                                                href=link
+                                            >
+                                                ${day}
+                                                <if(a11yTexts.length > 1)>
+                                                    <span class="clipped">
+                                                        ${a11yTexts.join(
+                                                            a11ySeparator,
+                                                        )}
+                                                    </span>
+                                                </if>
                                             </>
                                         </else>
                                     </td>

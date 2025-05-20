@@ -6,50 +6,52 @@ $ var config = data.config;
     class=data.classes
     style=data.style
     aria-roledescription=data.ariaRoleDescription
-    role='group'
+    role="group"
 >
     <div
         class=[
-            'carousel__container',
-            data.bothControlsDisabled && 'carousel__container--controls-disabled',
+            "carousel__container",
+            data.bothControlsDisabled &&
+                "carousel__container--controls-disabled",
         ]
-        onFocusin(!!data.autoplayInterval && 'handleStartInteraction')
-        onTouchstart(!!data.autoplayInterval && 'handleStartInteraction')
-        onMouseover(!!data.autoplayInterval && 'handleStartInteraction')
-        onFocusout(!!data.autoplayInterval && 'handleEndInteraction')
-        onMouseout(!!data.autoplayInterval && 'handleEndInteraction')
-        onTouchend(!!data.autoplayInterval && 'handleEndInteraction')
-        key='container'
-        id:scoped='container'
+        onFocusin(!!data.autoplayInterval && "handleStartInteraction")
+        onTouchstart(!!data.autoplayInterval && "handleStartInteraction")
+        onMouseover(!!data.autoplayInterval && "handleStartInteraction")
+        onFocusout(!!data.autoplayInterval && "handleEndInteraction")
+        onMouseout(!!data.autoplayInterval && "handleEndInteraction")
+        onTouchend(!!data.autoplayInterval && "handleEndInteraction")
+        key="container"
+        id:scoped="container"
     >
         <button
-            class=['carousel__control', 'carousel__control--prev']
-            type='button'
-            on-click(!data.prevControlDisabled && 'handleMove', -1)
+            class=["carousel__control", "carousel__control--prev"]
+            type="button"
+            on-click(!data.prevControlDisabled && "handleMove", -1)
             aria-label=data.a11yPreviousText
-            aria-disabled=data.prevControlDisabled && 'true'
+            aria-disabled=data.prevControlDisabled && "true"
         >
             <ebay-chevron-left-16-icon/>
         </button>
         <div class=[
-            'carousel__viewport',
+            "carousel__viewport",
             !data.itemsPerSlide &&
                 !data.nextControlDisabled &&
                 !data.autoplayInterval &&
-                'carousel__viewport--mask',
+                "carousel__viewport--mask",
         ]>
             <ul
                 class=[
-                    'carousel__list',
-                    input.imageTreatment === 'matte' && 'carousel__list--image-treatment',
+                    "carousel__list",
+                    input.imageTreatment === "matte" &&
+                        "carousel__list--image-treatment",
                 ]
                 style=!config.nativeScrolling &&
                 !!data.offset && {
-                    transform: 'translate3d(' + data.offset * -1 + 'px,0,0)',
-                    transition: data.disableTransition ? 'none' : undefined,
+                    transform: "translate3d(" + data.offset * -1 + "px,0,0)",
+                    transition: data.disableTransition ? "none" : undefined,
                 }
-                key='list'
-                id:scoped='list'
+                key="list"
+                id:scoped="list"
             >
                 <for|item| of=data.items>
                     <li
@@ -57,7 +59,7 @@ $ var config = data.config;
                         key=item.key
                         class=item.class
                         style=item.style
-                        aria-hidden=!item.fullyVisible && 'true'
+                        aria-hidden=!item.fullyVisible && "true"
                         no-update-body-if(!!config.preserveItems)
                     >
                         <${item.renderBody}/>
@@ -66,26 +68,31 @@ $ var config = data.config;
             </ul>
         </div>
         <button
-            class=['carousel__control', 'carousel__control--next']
-            type='button'
-            on-click(!data.nextControlDisabled && 'handleMove', 1)
+            class=["carousel__control", "carousel__control--next"]
+            type="button"
+            on-click(!data.nextControlDisabled && "handleMove", 1)
             aria-label=data.a11yNextText
-            aria-disabled=data.nextControlDisabled && 'true'
-            key='next'
-            id:scoped='next'
+            aria-disabled=data.nextControlDisabled && "true"
+            key="next"
+            id:scoped="next"
         >
             <ebay-chevron-right-16-icon/>
         </button>
         <if(data.autoplayInterval && !data.bothControlsDisabled)>
-            <button.carousel__playback
-                type='button'
-                aria-label=(data.paused ? data.a11yPlayText : data.a11yPauseText)
-                onClick('togglePlay')
+            <button
+                type="button"
+                aria-label=(
+                    data.paused ? data.a11yPlayText : data.a11yPauseText
+                )
+                onClick("togglePlay")
+                class="carousel__playback"
             >
                 <if(data.paused)>
                     <ebay-play-24-icon/>
                 </if>
-                <else><ebay-pause-24-icon/></else>
+                <else>
+                    <ebay-pause-24-icon/>
+                </else>
             </button>
         </if>
     </div>

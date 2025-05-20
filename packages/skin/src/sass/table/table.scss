@@ -68,6 +68,10 @@ $density-relaxed-img-radius: 8px;
     padding: $density-relaxed-padding;
 }
 
+.table--frozen-header {
+    max-height: 90vh;
+}
+
 .table--frozen-header thead {
     position: sticky;
     top: 0;

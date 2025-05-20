@@ -11,7 +11,7 @@ export type FilePreviewType = {
     src?: string
 }
 
-type MenuActionEventData = {
+export type MenuActionEventData = {
     index: number
     checked: number[]
     eventName?: string

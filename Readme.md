@@ -8,3 +8,4 @@ See each package's README for more information.
 
 - CSS Library [@ebay/skin](./packages/skin/README.md)
 - Marko components [@ebay/ebayui-core](./packages/ebayui-core/README.md)
+- React components [@ebay/ebayui-core-react](./packages/ebayui-core-react/README.md)

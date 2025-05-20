@@ -8,7 +8,7 @@
 </h1>
 
 ```marko
-<ebay-progress-spinner size="large" aria-label="busy" />
+<ebay-progress-spinner size="large" aria-label="busy"/>
 ```
 
 ## Examples and Documentation

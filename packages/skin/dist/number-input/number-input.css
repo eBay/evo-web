@@ -1,0 +1,48 @@
+.number-input .textbox {
+    background: transparent;
+}
+
+.number-input label:first-child {
+    flex-grow: 1;
+    padding-left: var(--spacing-200);
+}
+
+.number-input label:first-child ~ input.textbox__control {
+    flex-grow: 0;
+}
+
+.icon-btn.number-input__delete {
+    display: none;
+    margin-inline-end: calc(var(--spacing-100) * -1);
+    order: -1;
+    padding-inline-start: var(--spacing-200);
+}
+
+.number-input--show-delete .number-input__delete {
+    display: block;
+}
+
+.number-input--show-delete .number-input__decrement {
+    display: none;
+}
+
+.number-input .textbox .textbox__control {
+    font-weight: 700;
+    text-align: center;
+    width: 48px;
+}
+.number-input .textbox .textbox__control::-webkit-inner-spin-button,
+.number-input .textbox .textbox__control::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.number-input .textbox .textbox__control[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+}
+
+.number-input .textbox .icon-btn:not(:disabled) svg {
+    color: var(--color-foreground-primary);
+    fill: currentColor;
+}
