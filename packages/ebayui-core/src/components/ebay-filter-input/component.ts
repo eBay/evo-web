@@ -5,7 +5,6 @@ import type {
 import type { WithNormalizedProps } from "../../global";
 import { validSizes } from "./constants";
 
-
 interface FilterInputInput extends Omit<TextboxInput, `on${string}`> {
     size?: (typeof validSizes)[number];
     "a11y-clear-button"?: string;
@@ -31,7 +30,7 @@ class FilterInput extends Marko.Component<Input> {
         ) as HTMLInputElement;
     }
 
-    handleClear(event: {originalEvent: MouseEvent}) {
+    handleClear(event: { originalEvent: MouseEvent }) {
         const originalEvent = event.originalEvent;
         this.textbox.value = "";
         this.emit("input-change", {
