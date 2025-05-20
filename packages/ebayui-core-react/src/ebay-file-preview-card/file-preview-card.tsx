@@ -1,5 +1,7 @@
 import React, { FC, useMemo, ComponentProps, ElementType } from 'react'
 import { EbayEventHandler } from '../common/event-utils/types'
+import { findComponent } from '../utils'
+import { EbayIconButton } from '../ebay-icon-button'
 import EbayFilePreviewAction from './file-preview-action'
 import EbayFilePreviewContent from './file-preview-content'
 import EbayFilePreviewLabel from './file-preview-label'
@@ -21,13 +23,15 @@ export type EbayFilePreviewCardProps = ComponentProps<'div'> & {
     a11ySeeMoreText?: string
     footerTitle?: string
     footerSubtitle?: string
+    href?: string
     onMenuAction?: FilePreviewCardMenuActionHandler
     onSeeMore?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
     onCancel?: EbayEventHandler<HTMLElement>
+    onAction?: EbayEventHandler<HTMLElement>
 }
 
-const EbayFileInput: FC<EbayFilePreviewCardProps> = ({
+const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     a11yCancelUploadText,
     status,
     as: CardEl = 'div',
@@ -39,12 +43,16 @@ const EbayFileInput: FC<EbayFilePreviewCardProps> = ({
     a11ySeeMoreText,
     menuActions,
     infoText,
+    href,
     onCancel,
     onDelete,
     onMenuAction,
     onSeeMore,
+    onAction,
+    children,
     ...rest
 }) => {
+    const action = findComponent(children, EbayIconButton)
     const previewFile = useMemo(() => {
         if (!rawFile) return undefined
         let file = rawFile as Exclude<typeof rawFile, File | undefined>
@@ -68,11 +76,21 @@ const EbayFileInput: FC<EbayFilePreviewCardProps> = ({
     return (
         <CardEl className="file-preview-card" {...rest}>
             <div className="file-preview-card__body">
-                <EbayFilePreviewContent
-                    file={previewFile}
-                    status={status}
-                    seeMore={seeMore}
-                />
+                {href ? (
+                    <a href={href}>
+                        <EbayFilePreviewContent
+                            file={previewFile}
+                            status={status}
+                            seeMore={seeMore}
+                        />
+                    </a>
+                ) : (
+                    <EbayFilePreviewContent
+                        file={previewFile}
+                        status={status}
+                        seeMore={seeMore}
+                    />
+                )}
                 {/*
                     in Marko implementation, when there is seeMore prop,
                     there is no menu action button or delete button
@@ -95,7 +113,10 @@ const EbayFileInput: FC<EbayFilePreviewCardProps> = ({
                         deleteText={deleteText}
                         onCancel={onCancel}
                         onDelete={onDelete}
-                    />
+                        onAction={onAction}
+                    >
+                        {action}
+                    </EbayFilePreviewAction>
                 )}
                 <EbayFilePreviewLabel file={previewFile} infoText={infoText} />
             </div>
@@ -109,4 +130,4 @@ const EbayFileInput: FC<EbayFilePreviewCardProps> = ({
     )
 }
 
-export default EbayFileInput
+export default EbayFilePreviewCard

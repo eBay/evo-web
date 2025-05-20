@@ -1,5 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
+import { EbayIconButton } from '../../ebay-icon-button'
 import { EbayFilePreviewCard } from '..'
 
 const meta: Meta<typeof EbayFilePreviewCard> = {
@@ -35,6 +36,11 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
             table: {
                 category: 'Menu Actions'
             }
+        },
+        href: {
+            type: 'string',
+            control: { type: 'text' },
+            description: 'href that will wrap the preview card image'
         },
         seeMore: {
             type: 'number',
@@ -92,6 +98,27 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
                     summary: ''
                 }
             }
+        },
+        onAction: {
+            action: 'onAction',
+            description: 'Triggered when the action button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
+        },
+        // @ts-expect-error EbayIconButton is not an argType
+        EbayIconButton: {
+            description:
+                'The icon button to be used for the action button in the header. An aria-label is also required for accessibility. If not provided, the action button will not be rendered.',
+            table: {
+                category: 'Components',
+                defaultValue: {
+                    summary: ''
+                }
+            }
         }
     }
 }
@@ -109,6 +136,32 @@ export const Image: StoryFn<typeof EbayFilePreviewCard> = (args) => (
     <EbayFilePreviewCard
         a11yCancelUploadText="Cancel upload"
         deleteText="Delete"
+        file={{
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        }}
+        {...args}
+    />
+)
+
+export const WithAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        a11yCancelUploadText="Cancel upload"
+        file={{
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        }}
+        {...args}
+    >
+        <EbayIconButton aria-label="action label" icon="heart16" />
+    </EbayFilePreviewCard>
+)
+
+export const NoAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        a11yCancelUploadText="Cancel upload"
         file={{
             name: 'file-name.jpg',
             type: 'image',

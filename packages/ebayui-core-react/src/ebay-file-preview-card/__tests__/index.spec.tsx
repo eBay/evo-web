@@ -2,6 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
+import { EbayIconButton } from '../../ebay-icon-button'
 import { EbayFilePreviewCard } from '../'
 
 describe('<EbayFilePreviewCard>', () => {
@@ -119,7 +120,7 @@ describe('<EbayFilePreviewCard>', () => {
     })
     it('should call see more', async () => {
         const onSeeMoreMock = jest.fn()
-        const { getByRole } = render(
+        render(
             <EbayFilePreviewCard
                 a11yCancelUploadText="Cancel upload"
                 deleteText="Delete"
@@ -134,10 +135,30 @@ describe('<EbayFilePreviewCard>', () => {
             />
         )
 
-        const buttonEl = getByRole('button', { name: 'See more' })
+        const buttonEl = screen.getByRole('button', { name: 'See more' })
         expect(buttonEl).toBeInTheDocument()
         await userEvent.click(buttonEl)
         expect(onSeeMoreMock).toHaveBeenCalled()
     })
-    
+    it('should call on action', async () => {
+        const onActionMock = jest.fn()
+        render(
+            <EbayFilePreviewCard
+                a11yCancelUploadText="Cancel upload"
+                file={{
+                    name: 'file-name.jpg',
+                    type: 'image',
+                    src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+                }}
+                onAction={onActionMock}
+            >
+                <EbayIconButton aria-label="action-label" icon="heart16" />
+            </EbayFilePreviewCard>
+        )
+
+        const buttonEl = screen.getByRole('button', { name: 'action-label' })
+        expect(buttonEl).toBeInTheDocument()
+        await userEvent.click(buttonEl)
+        expect(onActionMock).toHaveBeenCalled()
+    })
 })

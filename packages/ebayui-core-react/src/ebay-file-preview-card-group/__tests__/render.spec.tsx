@@ -16,7 +16,8 @@ describe('<EbayFilePreviewCardGroup> render', () => {
                     type: 'image',
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                 },
-                a11yCancelUploadText: 'Cancel upload'
+                a11yCancelUploadText: 'Cancel upload',
+                deleteText: 'delete text'
             })
         )
         const { asFragment } = render(
@@ -35,7 +36,8 @@ describe('<EbayFilePreviewCardGroup> render', () => {
                 type: 'image',
                 src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
             },
-            a11yCancelUploadText: 'Cancel upload'
+            a11yCancelUploadText: 'Cancel upload',
+            deleteText: 'delete text'
         }))
         const { asFragment } = render(
             <EbayFilePreviewCardGroup>
@@ -56,7 +58,8 @@ describe('<EbayFilePreviewCardGroup> render', () => {
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                 },
                 a11yCancelUploadText: 'Cancel upload',
-                as: 'div'
+                as: 'div',
+                deleteText: 'delete text'
             })
         )
         const { asFragment } = render(
