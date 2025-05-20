@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EbayItemTile> renders component with action 1`] = `
+<DocumentFragment>
+  <div
+    class="item-tile"
+  >
+    <div
+      class="item-tile__header"
+    >
+      <div
+        class="file-preview-card"
+      >
+        <div
+          class="file-preview-card__body"
+        >
+          <img
+            alt="file-name.jpg"
+            class="file-preview-card__asset"
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+          />
+          <button
+            aria-label="action-label"
+            class="file-preview-card__action icon-btn"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use
+                xlink:href="#icon-heart-16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="item-tile__body"
+    >
+      <div
+        class="item-tile__section-primary"
+      >
+        Time Sensitive
+      </div>
+      <div
+        class="item-tile__section-secondary"
+      >
+        <a
+          class="item-tile__title"
+          href="/collection"
+        >
+          Apple iPhone 11 Pro Max 
+        </a>
+        <div
+          class="item-tile__subtitle"
+        >
+          256GB Space Gray
+        </div>
+      </div>
+      <div
+        class="item-tile__section-tertiary"
+      >
+        <p
+          class="price"
+        >
+          $29.99
+        </p>
+        <div>
+          <a
+            href="https://ebay.com"
+          >
+            Buy it now
+          </a>
+        </div>
+        <p>
+          Free shipping
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayItemTile> renders component without action 1`] = `
+<DocumentFragment>
+  <div
+    class="item-tile"
+  >
+    <div
+      class="item-tile__header"
+    >
+      <div
+        class="file-preview-card"
+      >
+        <div
+          class="file-preview-card__body"
+        >
+          <img
+            alt="file-name.jpg"
+            class="file-preview-card__asset"
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="item-tile__body"
+    >
+      <div
+        class="item-tile__section-primary"
+      >
+        Time Sensitive
+      </div>
+      <div
+        class="item-tile__section-secondary"
+      >
+        <a
+          class="item-tile__title"
+          href="/collection"
+        >
+          Apple iPhone 11 Pro Max 
+        </a>
+        <div
+          class="item-tile__subtitle"
+        >
+          256GB Space Gray
+        </div>
+      </div>
+      <div
+        class="item-tile__section-tertiary"
+      >
+        <p
+          class="price"
+        >
+          $29.99
+        </p>
+        <div>
+          <a
+            href="https://ebay.com"
+          >
+            Buy it now
+          </a>
+        </div>
+        <p>
+          Free shipping
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayItemTile> renders component without description 1`] = `
+<DocumentFragment>
+  <div
+    class="item-tile"
+  >
+    <div
+      class="item-tile__header"
+    >
+      <div
+        class="file-preview-card"
+      >
+        <div
+          class="file-preview-card__body"
+        >
+          <img
+            alt="file-name.jpg"
+            class="file-preview-card__asset"
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="item-tile__body"
+    >
+      <div
+        class="item-tile__section-primary"
+      >
+        Time Sensitive
+      </div>
+      <div
+        class="item-tile__section-secondary"
+      >
+        <a
+          class="item-tile__title"
+          href="/collection"
+        >
+          Apple iPhone 11 Pro Max 
+        </a>
+        <div
+          class="item-tile__subtitle"
+        >
+          256GB Space Gray
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayItemTile> renders component without secondary section 1`] = `
+<DocumentFragment>
+  <div
+    class="item-tile"
+  >
+    <div
+      class="item-tile__header"
+    >
+      <div
+        class="file-preview-card"
+      >
+        <div
+          class="file-preview-card__body"
+        >
+          <img
+            alt="file-name.jpg"
+            class="file-preview-card__asset"
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="item-tile__body"
+    >
+      <div
+        class="item-tile__section-primary"
+      >
+        Time Sensitive
+      </div>
+      <div
+        class="item-tile__section-tertiary"
+      >
+        <p
+          class="price"
+        >
+          $29.99
+        </p>
+        <div>
+          <a
+            href="https://ebay.com"
+          >
+            Buy it now
+          </a>
+        </div>
+        <p>
+          Free shipping
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
