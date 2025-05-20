@@ -1,0 +1,36 @@
+class {
+    declare state: {
+        value: string;
+    };
+
+    onCreate() {
+        this.state = {
+            value: "",
+        };
+    }
+    handleInputChange(event: any) {
+        console.log(event);
+        this.state.value = event.value;
+        this.emit("input-change", event);
+    }
+}
+
+<div>
+    <ebay-filter-input
+        a11y-controls-id="filter-input-controls"
+        on-keyup("emit", "keyup")
+        on-keydown("emit", "keydown")
+        on-focus("emit", "focus")
+        on-blur("emit", "blur")
+        on-keypress("emit", "keypress")
+        on-change("emit", "change")
+        on-clear("emit", "clear")
+        on-input-change("handleInputChange")
+        aria-label="Filter input"
+        a11y-clear-button="Clear filter input"
+        ...input
+    />
+    <div id="filter-input-controls">
+        Current value: "${state.value}"
+    </div>
+</div>

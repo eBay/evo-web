@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../filter-input.stories";
 
-const { Default } = composeStories(stories);
+const { Default, Controls } = composeStories(stories);
 
 const htmlSnap = snapshotHTML(__dirname);
 
@@ -18,6 +18,10 @@ describe("ebay-filter-input", () => {
 
     it("renders large", async () => {
         await htmlSnap(Default, { size: "large" });
+    });
+
+    it("renders with aria-controls", async () => {
+        await htmlSnap(Controls);
     });
 
     it("renders without clear button and no placeholder", async () => {

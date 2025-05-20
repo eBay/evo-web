@@ -9,6 +9,7 @@ import { validSizes } from "./constants";
 interface FilterInputInput extends Omit<TextboxInput, `on${string}`> {
     size?: (typeof validSizes)[number];
     "a11y-clear-button"?: string;
+    "a11y-controls-id"?: string;
     "on-clear"?: (event: TextboxEvent) => void;
     "on-keydown"?: (event: TextboxEvent) => void;
     "on-keypress"?: (event: TextboxEvent) => void;

@@ -4,6 +4,7 @@ $ const {
     class: inputClass,
     placeholder: inputPlaceholder,
     a11yClearButton,
+    a11yControlsId,
     size: inputSize,
     ...htmlInput
 } = input;
@@ -17,14 +18,15 @@ $ const placeholder = inputPlaceholder ?? "Filter";
     inputClass]>
     <ebay-textbox
         fluid
-
+        type="search"
         key="input"
+        aria-controls=a11yControlsId
         placeholder=placeholder
         on-keydown("emit", "keydown")
         on-keypress("emit", "keypress")
         on-keyup("emit", "keyup")
         on-change("emit", "change")
-        on-input-change("emit", "input")
+        on-input-change("emit", "input-change")
         on-focus("emit", "focus")
         on-blur("emit", "blur")
         ...processHtmlAttributes(htmlInput)

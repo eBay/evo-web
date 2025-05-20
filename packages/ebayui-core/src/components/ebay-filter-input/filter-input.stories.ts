@@ -3,6 +3,10 @@ import Readme from "./README.md";
 import Component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
+import ControlsTemplate from "./examples/controls.marko";
+import ControlsTemplateCode from "./examples/controls.marko?raw";
+
+
 
 export default {
     title: "form input/ebay-filter-input",
@@ -38,6 +42,12 @@ export default {
             control: { type: "text" },
             description:
                 "Either this or <label> is required. Renders text for screen readers",
+        },
+        a11yControlsId: {
+            type: "string",
+            control: { type: "text" },
+            description:
+                "Requied. This is the id of the element that this input controls, such as the list of filtered items.",
         },
         placeholder: {
             type: "string",
@@ -152,5 +162,15 @@ export const Default = buildExtensionTemplate(
         a11yClearButton: "Clear filter input",
         "aria-label":"Filter input"
 
+    },
+);
+
+export const Controls = buildExtensionTemplate(
+    ControlsTemplate,
+    ControlsTemplateCode,
+    {
+        a11yClearButton: "Clear filter input",
+        "aria-label":"Filter input",
+        a11yControlsId: "filter-input-controls"
     },
 );
