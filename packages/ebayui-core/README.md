@@ -57,6 +57,7 @@ Each layer does its bit to enforce and enhance accessibility. We consider this l
 - [`ebay-fake-menu-button`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-fake-menu-button)
 - [`ebay-fake-tabs`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-fake-tabs)
 - [`ebay-filter`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-filter)
+- [`ebay-filter-input`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-filter-input)
 - [`ebay-filter-menu`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-filter-menu)
 - [`ebay-filter-menu-button`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-filter-menu-button)
 - [`ebay-fullscreen-dialog-deprecated`](https://github.com/eBay/evo-web/tree/master/packages/ebayui-core/src/components/ebay-fullscreen-dialog-deprecated)

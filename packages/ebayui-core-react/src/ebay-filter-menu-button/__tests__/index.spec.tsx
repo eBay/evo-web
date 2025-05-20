@@ -4,6 +4,40 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { EbayFilterMenuButton, EbayFilterMenuItem } from '../index';
 
+function setupMockEnv() {
+  // Mock these properties only in test environment
+  // but tests with display:none and hidden attribute will fail
+  // those tests need to shift to browser tests
+  if (
+    typeof window !== "undefined" &&
+    (window.navigator.userAgent.includes("Node.js") || window.navigator.userAgent.includes("jsdom"))
+  ) {
+    // Save original methods to restore later if needed
+    Object.getOwnPropertyDescriptor(HTMLElement.prototype, "offsetWidth");
+    Object.getOwnPropertyDescriptor(HTMLElement.prototype, "offsetHeight");
+
+    // Mock offsetWidth/Height
+    Object.defineProperties(HTMLElement.prototype, {
+      offsetWidth: {
+        get() {
+          return 1;
+        },
+      },
+      offsetHeight: {
+        get() {
+          return 1;
+        },
+      },
+    });
+
+    // Mock getClientRects
+    // @ts-expect-error here we are mocking the method, ignoring type methods
+    HTMLElement.prototype.getClientRects = function () {
+      return [{ width: 1, height: 1 }];
+    };
+  }
+}
+
 describe('EbayFilterMenuButton', () => {
   it('should call onExpand when the menu is expanded', async () => {
     const onExpand = jest.fn();
@@ -37,6 +71,7 @@ describe('EbayFilterMenuButton', () => {
   });
 
   it('should call onCollapse when Escape key is pressed', async () => {
+    setupMockEnv()
     const onCollapse = jest.fn();
     render(
         <EbayFilterMenuButton onCollapse={onCollapse} text="Menu">
@@ -47,7 +82,7 @@ describe('EbayFilterMenuButton', () => {
     const button = screen.getByText('Menu');
 
     await userEvent.click(button); // Expand
-    await userEvent.keyboard('{escape}'); // Press Escape
+    await userEvent.keyboard('{Escape}');
 
     expect(onCollapse).toHaveBeenCalled();
   });

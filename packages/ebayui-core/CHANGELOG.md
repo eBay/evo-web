@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 15.6.0
+
+### Minor Changes
+
+- [#131](https://github.com/eBay/evo-web/pull/131) [`4f38946`](https://github.com/eBay/evo-web/commit/4f389462006f11d88f5052be893adbdcb8e226d4) Thanks [@agliga](https://github.com/agliga)! - feat(filter-input): new component
+
+### Patch Changes
+
+- [`cb289e0`](https://github.com/eBay/evo-web/commit/cb289e0458ec3c8321a171d7eacd9708582dd39d) Thanks [@agliga](https://github.com/agliga)! - fix(item-tile-group): added proper imports for skin classes
+
 ## 15.5.0
 
 ### Minor Changes

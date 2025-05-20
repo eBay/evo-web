@@ -1,0 +1,51 @@
+import { processHtmlAttributes } from "../../common/html-attributes";
+import { validSizes } from "./constants";
+$ const {
+    class: inputClass,
+    placeholder: inputPlaceholder,
+    a11yClearButton,
+    a11yControlsId,
+    size: inputSize,
+    ...htmlInput
+} = input;
+
+$ var size = inputSize && validSizes.includes(inputSize) ? inputSize : null;
+
+$ const placeholder = inputPlaceholder ?? "Filter";
+
+<span class=["filter-input",
+    size && `filter-input--${size}`,
+    inputClass]>
+    <ebay-textbox
+        fluid
+        type="search"
+        key="input"
+        aria-controls=a11yControlsId
+        placeholder=placeholder
+        on-keydown("emit", "keydown")
+        on-keypress("emit", "keypress")
+        on-keyup("emit", "keyup")
+        on-change("emit", "change")
+        on-input-change("emit", "input-change")
+        on-focus("emit", "focus")
+        on-blur("emit", "blur")
+        ...processHtmlAttributes(htmlInput)
+    >
+        <@prefix-icon>
+            <ebay-search-16-icon/>
+        </@prefix-icon>
+        <@postfix-icon>
+            <if(a11yClearButton && placeholder)>
+                <ebay-icon-button
+                    aria-label=a11yClearButton
+                    class="filter-input__clear-btn"
+                    size="small"
+                    transparent
+                    on-click("handleClear")
+                >
+                    <ebay-clear-16-icon/>
+                </ebay-icon-button>
+            </if>
+        </@postfix-icon>
+    </ebay-textbox>
+</span>

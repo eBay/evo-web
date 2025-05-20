@@ -29,7 +29,8 @@ export default defineConfig({
                 'makeup-typeahead',
                 'makeup-floating-label'
             ]
-        })
+        }),
+        nodeExternals(),
     ],
     build: {
         lib: {
@@ -41,7 +42,9 @@ export default defineConfig({
             formats: ["cjs"],
         },
         rollupOptions: {
-            plugins: [nodeExternals(), typescript()],
-        },
+            plugins: [
+                typescript()
+            ]
+        }
     },
 });

@@ -1,1 +1,1 @@
-import "@ebay/skin/item-tile";
+import "@ebay/skin/item-tile-group";

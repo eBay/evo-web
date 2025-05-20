@@ -18,7 +18,8 @@ span.listbox-button {
 
 span.listbox-button--fluid,
 span.listbox-button--fluid .btn,
-span.listbox-button--fluid .expand-btn {
+span.listbox-button--fluid .expand-btn,
+span.listbox-button--fluid div.listbox-button__listbox {
     width: 100%;
 }
 

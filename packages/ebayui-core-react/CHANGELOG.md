@@ -1,5 +1,13 @@
 # @ebay/ui-core-react
 
+## 8.5.1
+
+### Patch Changes
+
+- [#133](https://github.com/eBay/evo-web/pull/133) [`f39c056`](https://github.com/eBay/evo-web/commit/f39c056e0538627b426fcb0e6df53d7e5e55bfe4) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - chore(react): remove console and add eslint rule
+
+- [#135](https://github.com/eBay/evo-web/pull/135) [`aea457b`](https://github.com/eBay/evo-web/commit/aea457bbf42c630e981afd355047fffa4b0aa1ee) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(react): don't bundle React inside ui-core-react package
+
 ## 8.5.0
 
 ### Minor Changes

@@ -1,0 +1,11 @@
+{
+    "name": "ui-core-react-smoke-test-react-16",
+    "private": true,
+    "scripts": {
+        "test": "rm -rf ./node_modules/@ebay/ui-core-react && mkdir -p ./node_modules/@ebay && cp -r ../../dist ./node_modules/@ebay/ui-core-react && node index.js"
+    },
+    "dependencies": {
+        "react": "^16",
+        "react-dom": "^16"
+    }
+}

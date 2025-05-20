@@ -13,11 +13,13 @@
                 },
                 "children": [],
                 "name": "path",
+                "parent": null,
                 "type": "element",
                 "value": ""
             }
         ],
         "name": "symbol",
+        "parent": null,
         "type": "element",
         "value": ""
     },
@@ -38,11 +40,13 @@
                         },
                         "children": [],
                         "name": "path",
+                        "parent": null,
                         "type": "element",
                         "value": ""
                     }
                 ],
                 "name": "g",
+                "parent": null,
                 "type": "element",
                 "value": ""
             },
@@ -61,21 +65,25 @@
                                 },
                                 "children": [],
                                 "name": "path",
+                                "parent": null,
                                 "type": "element",
                                 "value": ""
                             }
                         ],
                         "name": "clipPath",
+                        "parent": null,
                         "type": "element",
                         "value": ""
                     }
                 ],
                 "name": "defs",
+                "parent": null,
                 "type": "element",
                 "value": ""
             }
         ],
         "name": "symbol",
+        "parent": null,
         "type": "element",
         "value": ""
     },
@@ -93,11 +101,13 @@
                 },
                 "children": [],
                 "name": "path",
+                "parent": null,
                 "type": "element",
                 "value": ""
             }
         ],
         "name": "symbol",
+        "parent": null,
         "type": "element",
         "value": ""
     },
@@ -113,11 +123,13 @@
                 },
                 "children": [],
                 "name": "path",
+                "parent": null,
                 "type": "element",
                 "value": ""
             }
         ],
         "name": "symbol",
+        "parent": null,
         "type": "element",
         "value": ""
     }
