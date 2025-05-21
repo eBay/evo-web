@@ -36,6 +36,16 @@ const meta: Meta<typeof EbayFilePreviewCardGroup> = {
                 }
             }
         },
+        onAction: {
+            action: 'onAction',
+            description: 'Triggered when the actiion button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
+        },
         onMenuAction: {
             action: 'onMenuAction',
             description: 'Triggered when an action is selected from the menu. ',
@@ -45,7 +55,7 @@ const meta: Meta<typeof EbayFilePreviewCardGroup> = {
                     summary: 'name, event /* from ebay-menu-button */'
                 }
             }
-        },
+        }
     }
 }
 export default meta
@@ -57,15 +67,33 @@ export const Default: StoryFn<typeof EbayFilePreviewCardGroup> = (args) => {
             type: 'image',
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
         },
-        deleteText: 'Delete text',
+        deleteText: 'Delete text'
     }))
     return (
         <EbayFilePreviewCardGroup {...args}>
             {cards.map((cardFile, index) => (
-                <EbayFilePreviewCard
-                    key={index}
-                    {...cardFile}
-                />
+                <EbayFilePreviewCard key={index} {...cardFile} />
+            ))}
+        </EbayFilePreviewCardGroup>
+    )
+}
+
+export const WithCustomAction: StoryFn<typeof EbayFilePreviewCardGroup> = (
+    args
+) => {
+    const cards: EbayFilePreviewCardProps[] = Array.from({ length: 3 }, () => ({
+        file: {
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        },
+        icon: 'heart16',
+        iconAriaLabel: 'icon label'
+    }))
+    return (
+        <EbayFilePreviewCardGroup {...args}>
+            {cards.map((cardFile, index) => (
+                <EbayFilePreviewCard key={index} {...cardFile} />
             ))}
         </EbayFilePreviewCardGroup>
     )

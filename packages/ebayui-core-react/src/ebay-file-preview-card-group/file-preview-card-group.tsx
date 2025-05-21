@@ -10,6 +10,7 @@ export type EbayFilePreviewCardGroupProps = ComponentProps<'div'> & {
     a11ySeeMoreText?: EbayFilePreviewCardProps['a11ySeeMoreText']
     onDelete?: FilePreviewCardActionHandler
     onCancel?: FilePreviewCardActionHandler
+    onAction?: FilePreviewCardActionHandler
     onMenuAction?: FilePreviewCardMenuActionHandler
 }
 
@@ -19,6 +20,7 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     a11ySeeMoreText,
     onDelete,
     onCancel,
+    onAction,
     onMenuAction,
     children,
     ...rest
@@ -44,6 +46,7 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
                         as: previewCard.props.as || 'li', // default in preview card is 'div', here should be 'li'
                         onDelete: (e) => onDelete && onDelete(e, { index: i }),
                         onCancel: (e) => onCancel && onCancel(e, { index: i }),
+                        onAction: (e) => onAction && onAction(e, { index: i }),
                         onMenuAction: (e, data) =>
                             onMenuAction && onMenuAction(e, {
                                 index: i,

@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { EbayEventHandler } from '../common/event-utils/types'
+import { Icon } from '../ebay-icon'
 import { EbayIconButton } from '../ebay-icon-button'
 import { EbayMenuButton, EbayMenuButtonItem } from '../ebay-menu-button'
 import {
@@ -12,9 +13,12 @@ export type EbayFilePreviewActionProps = {
     deleteText?: string
     status?: 'uploading'
     a11yCancelUploadText?: string
+    icon?: Icon
+    iconAriaLabel?: string
     onMenuAction?: FilePreviewCardMenuActionHandler
     onCancel?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
+    onAction?: EbayEventHandler<HTMLElement>
 }
 
 const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
@@ -24,7 +28,10 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
     deleteText,
     onCancel,
     onDelete,
-    a11yCancelUploadText
+    onAction,
+    a11yCancelUploadText,
+    icon,
+    iconAriaLabel
 }) => {
     const handleMenuSelect: FilePreviewCardMenuActionHandler = (
         e,
@@ -81,14 +88,30 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
             </>
         )
     }
-    return (
-        <EbayIconButton
-            aria-label={deleteText}
-            className="file-preview-card__action"
-            icon="delete16"
-            onClick={onDelete}
-        />
-    )
+
+    if (icon && iconAriaLabel) {
+        return (
+            <EbayIconButton
+                aria-label={iconAriaLabel}
+                className="file-preview-card__action"
+                icon={icon}
+                onClick={onAction}
+            />
+        )
+    }
+
+    if (deleteText) {
+        return (
+            <EbayIconButton
+                aria-label={deleteText}
+                className="file-preview-card__action"
+                icon="delete16"
+                onClick={onDelete}
+            />
+        )
+    }
+
+    return <></>
 }
 
 export default EbayFilePreviewAction

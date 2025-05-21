@@ -36,6 +36,22 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
                 category: 'Menu Actions'
             }
         },
+        href: {
+            type: 'string',
+            control: { type: 'text' },
+            description: 'href that will wrap the preview card image'
+        },
+        icon: {
+            control: { type: 'text' },
+            description:
+                'icon that will be used for the preview card image action, it only will be rendered if the `iconAriaLabel` is passed. type: `Icon`'
+        },
+        iconAriaLabel: {
+            type: 'string',
+            control: { type: 'text' },
+            description:
+                'icon aria label that will be used for the preview card image action icon'
+        },
         seeMore: {
             type: 'number',
             control: { type: 'number' },
@@ -92,6 +108,16 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
                     summary: ''
                 }
             }
+        },
+        onAction: {
+            action: 'onAction',
+            description: 'Triggered when the action button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
         }
     }
 }
@@ -109,6 +135,32 @@ export const Image: StoryFn<typeof EbayFilePreviewCard> = (args) => (
     <EbayFilePreviewCard
         a11yCancelUploadText="Cancel upload"
         deleteText="Delete"
+        file={{
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        }}
+        {...args}
+    />
+)
+
+export const WithAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        {...args}
+        a11yCancelUploadText="Cancel upload"
+        file={{
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        }}
+        icon="heart16"
+        iconAriaLabel="like picture"
+    />
+)
+
+export const NoAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        a11yCancelUploadText="Cancel upload"
         file={{
             name: 'file-name.jpg',
             type: 'image',
