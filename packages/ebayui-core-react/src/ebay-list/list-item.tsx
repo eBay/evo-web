@@ -17,8 +17,6 @@ const EbayListItem: FC<EbayListItemProps> = ({
     className,
     as: Component = 'div',
     separator,
-    leading,
-    trailing,
     children,
     onClick,
     ...rest
@@ -44,10 +42,6 @@ const EbayListItem: FC<EbayListItemProps> = ({
         contentChildren.push(child)
     })
 
-
-    const renderLeading = leadingChild || (leading && <EbayListItemLeading>{leading}</EbayListItemLeading>);
-    const renderTrailing = trailingChild || (trailing && <EbayListItemTrailing>{trailing}</EbayListItemTrailing>);
-
     return (
         <li>
             <Component
@@ -55,11 +49,11 @@ const EbayListItem: FC<EbayListItemProps> = ({
                 onClick={onClick}
                 {...rest}
             >
-                {renderLeading}
+                {leadingChild}
                 <div className="list__body">
                     {contentChildren}
                 </div>
-                {renderTrailing}
+                {trailingChild}
             </Component>
         </li>
     )
