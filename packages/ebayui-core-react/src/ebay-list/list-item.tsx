@@ -1,5 +1,7 @@
-import React, {  ElementType, FC, ReactNode } from 'react'
+import React, { ElementType, FC, ReactNode, Children, isValidElement } from 'react'
 import classNames from 'classnames'
+import EbayListItemLeading from './list-item-leading'
+import EbayListItemTrailing from './list-item-trailing'
 
 export type EbayListItemProps = {
     as?: ElementType;
@@ -21,9 +23,30 @@ const EbayListItem: FC<EbayListItemProps> = ({
     onClick,
     ...rest
 }) => {
-    if (separator) {
-        return <hr />
-    }
+    if (separator) return <hr />
+
+    // Find custom leading component
+    let leadingChild: ReactNode = null
+    let trailingChild: ReactNode = null
+    const contentChildren: ReactNode[] = []
+
+    Children.forEach(children, child => {
+        if (isValidElement(child)) {
+            if (child.type === EbayListItemLeading) {
+                leadingChild = child
+                return
+            }
+            if (child.type === EbayListItemTrailing) {
+                trailingChild = child
+                return
+            }
+        }
+        contentChildren.push(child)
+    })
+
+
+    const renderLeading = leadingChild || (leading && <EbayListItemLeading>{leading}</EbayListItemLeading>);
+    const renderTrailing = trailingChild || (trailing && <EbayListItemTrailing>{trailing}</EbayListItemTrailing>);
 
     return (
         <li>
@@ -32,19 +55,11 @@ const EbayListItem: FC<EbayListItemProps> = ({
                 onClick={onClick}
                 {...rest}
             >
-                {leading && (
-                    <div className="list__leading">
-                        {leading}
-                    </div>
-                )}
+                {renderLeading}
                 <div className="list__body">
-                    {children}
+                    {contentChildren}
                 </div>
-                {trailing && (
-                    <div className="list__trailing">
-                        {trailing}
-                    </div>
-                )}
+                {renderTrailing}
             </Component>
         </li>
     )

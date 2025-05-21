@@ -3,15 +3,26 @@ import React from 'react'
 import { screen, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { EbayList, EbayListItem } from '../index'
+import EbayListItemLeading from '../list-item-leading'
+import EbayListItemTrailing from '../list-item-trailing'
 import { eventOfType } from '../../common/event-utils/__tests__/helpers'
 
 describe('<EbayList />', () => {
     it('should render static list', () => {
         render(
             <EbayList>
-                <EbayListItem leading={<span>Leading 1</span>}>Item 1</EbayListItem>
-                <EbayListItem leading={<span>Leading 2</span>}>Item 2</EbayListItem>
-                <EbayListItem leading={<span>Leading 3</span>}>Item 3</EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 1</EbayListItemLeading>
+                    Item 1
+                </EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 2</EbayListItemLeading>
+                    Item 2
+                </EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 3</EbayListItemLeading>
+                    Item 3
+                </EbayListItem>
             </EbayList>
         )
 
@@ -46,12 +57,24 @@ describe('<EbayList />', () => {
     it('should render with separator element', () => {
         render(
             <EbayList>
-                <EbayListItem leading={<span>Leading 1</span>}>Item 1</EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 1</EbayListItemLeading>
+                    Item 1
+                </EbayListItem>
                 <EbayListItem separator />
-                <EbayListItem leading={<span>Leading 2</span>}>Item 2</EbayListItem>
-                <EbayListItem leading={<span>Leading 3</span>}>Item 3</EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 2</EbayListItemLeading>
+                    Item 2
+                </EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 3</EbayListItemLeading>
+                    Item 3
+                </EbayListItem>
                 <EbayListItem separator />
-                <EbayListItem leading={<span>Leading 4</span>}>Item 4</EbayListItem>
+                <EbayListItem>
+                    <EbayListItemLeading>Leading 4</EbayListItemLeading>
+                    Item 4
+                </EbayListItem>
             </EbayList>
         )
 
@@ -65,8 +88,14 @@ describe('<EbayList />', () => {
     it('should render with trailing content', () => {
         render(
             <EbayList>
-                <EbayListItem trailing={<span>Trailing 1</span>}>Item 1</EbayListItem>
-                <EbayListItem trailing={<span>Trailing 2</span>}>Item 2</EbayListItem>
+                <EbayListItem>
+                    Item 1
+                    <EbayListItemTrailing>Trailing 1</EbayListItemTrailing>
+                </EbayListItem>
+                <EbayListItem>
+                    Item 2
+                    <EbayListItemTrailing>Trailing 2</EbayListItemTrailing>
+                </EbayListItem>
             </EbayList>
         )
 

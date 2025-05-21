@@ -1,6 +1,8 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 import { EbayList, EbayListItem } from '../index'
+import EbayListItemLeading from '../list-item-leading'
+import EbayListItemTrailing from '../list-item-trailing'
 import { EbayIcon } from '../../ebay-icon'
 import { EbaySwitch } from '../../ebay-switch'
 
@@ -25,13 +27,22 @@ export default meta
 
 export const Static: StoryFn<typeof EbayList> = (args) => (
     <EbayList {...args}>
-        <EbayListItem leading={<EbayIcon name="folder16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="folder16" />
+            </EbayListItemLeading>
             Item 1
         </EbayListItem>
-        <EbayListItem leading={<EbayIcon name="lamp16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="lamp16" />
+            </EbayListItemLeading>
             Item 2
         </EbayListItem>
-        <EbayListItem leading={<EbayIcon name="file16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="file16" />
+            </EbayListItemLeading>
             Item 3
         </EbayListItem>
     </EbayList>
@@ -42,32 +53,53 @@ export const Interactive: StoryFn<typeof EbayList> = (args) => (
         <EbayListItem as="button">
             Item 1
         </EbayListItem>
-        <EbayListItem as="a" href="https://www.ebay.com" trailing={<EbayIcon name="chevronRight16" />}>
+        <EbayListItem as="a" href="https://www.ebay.com">
             Item 2
+            <EbayListItemTrailing>
+                <EbayIcon name="chevronRight16" />
+            </EbayListItemTrailing>
         </EbayListItem>
-        <EbayListItem id="switch-item" trailing={<EbaySwitch aria-labelledby="switch-item" />}>
+        <EbayListItem id="switch-item">
             Item 3
+            <EbayListItemTrailing>
+                <EbaySwitch aria-labelledby="switch-item" />
+            </EbayListItemTrailing>
         </EbayListItem>
     </EbayList>
 )
 
 export const WithSeparator: StoryFn<typeof EbayList> = (args) => (
     <EbayList {...args}>
-        <EbayListItem leading={<EbayIcon name="folder16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="folder16" />
+            </EbayListItemLeading>
             Item 1
         </EbayListItem>
         <EbayListItem separator />
-        <EbayListItem leading={<EbayIcon name="lamp16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="lamp16" />
+            </EbayListItemLeading>
             Item 2
         </EbayListItem>
-        <EbayListItem leading={<EbayIcon name="file16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="file16" />
+            </EbayListItemLeading>
             Item 3
         </EbayListItem>
-        <EbayListItem leading={<EbayIcon name="file16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="file16" />
+            </EbayListItemLeading>
             Item 4
         </EbayListItem>
         <EbayListItem separator />
-        <EbayListItem leading={<EbayIcon name="lightbulb16" />}>
+        <EbayListItem>
+            <EbayListItemLeading>
+                <EbayIcon name="lightbulb16" />
+            </EbayListItemLeading>
             Item 5
         </EbayListItem>
     </EbayList>
