@@ -4,7 +4,8 @@ import { action } from '@storybook/addon-actions'
 import { EbayFilePreviewCardGroup } from '..'
 import {
     EbayFilePreviewCardProps,
-    EbayFilePreviewCard
+    EbayFilePreviewCard,
+    EbayFilePreviewCardAction
 } from '../../ebay-file-preview-card'
 
 const meta: Meta<typeof EbayFilePreviewCardGroup> = {
@@ -86,14 +87,17 @@ export const WithCustomAction: StoryFn<typeof EbayFilePreviewCardGroup> = (
             name: 'file-name.jpg',
             type: 'image',
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
-        },
-        icon: 'heart16',
-        iconAriaLabel: 'icon label'
+        }
     }))
     return (
         <EbayFilePreviewCardGroup {...args}>
             {cards.map((cardFile, index) => (
-                <EbayFilePreviewCard key={index} {...cardFile} />
+                <EbayFilePreviewCard key={index} {...cardFile}>
+                    <EbayFilePreviewCardAction
+                        icon="heart16"
+                        aria-label="icon label"
+                    />
+                </EbayFilePreviewCard>
             ))}
         </EbayFilePreviewCardGroup>
     )
