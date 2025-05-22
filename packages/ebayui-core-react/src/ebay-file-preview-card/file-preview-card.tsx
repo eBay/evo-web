@@ -1,9 +1,10 @@
 import React, { FC, useMemo, ComponentProps, ElementType } from 'react'
 import { EbayEventHandler } from '../common/event-utils/types'
 import { Icon } from '../ebay-icon'
-import EbayFilePreviewAction from './file-preview-action'
+import FilePreviewAction from './file-preview-action'
 import EbayFilePreviewContent from './file-preview-content'
 import EbayFilePreviewLabel from './file-preview-label'
+
 import {
     FilePreviewCardMenuAction,
     FilePreviewCardMenuActionHandler,
@@ -45,14 +46,12 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     menuActions,
     infoText,
     href,
-    icon,
-    iconAriaLabel,
     onCancel,
     onDelete,
     onMenuAction,
     onSeeMore,
     onAction,
-
+    children,
     ...rest
 }) => {
     const previewFile = useMemo(() => {
@@ -107,7 +106,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
                         <span>+{seeMore}</span>
                     </button>
                 ) : (
-                    <EbayFilePreviewAction
+                    <FilePreviewAction
                         a11yCancelUploadText={a11yCancelUploadText}
                         status={status}
                         menuActions={menuActions}
@@ -116,9 +115,9 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
                         onCancel={onCancel}
                         onDelete={onDelete}
                         onAction={onAction}
-                        icon={icon}
-                        iconAriaLabel={iconAriaLabel}
-                    />
+                    >
+                        {children}
+                    </FilePreviewAction>
                 )}
                 <EbayFilePreviewLabel file={previewFile} infoText={infoText} />
             </div>

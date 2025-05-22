@@ -1,27 +1,27 @@
 import React, { FC } from 'react'
+import cx from 'classnames'
 import { EbayEventHandler } from '../common/event-utils/types'
-import { Icon } from '../ebay-icon'
+import { findComponent } from '../common/component-utils'
 import { EbayIconButton } from '../ebay-icon-button'
 import { EbayMenuButton, EbayMenuButtonItem } from '../ebay-menu-button'
+import EbayFilePreviewCardAction from './ebay-file-preview-card-action'
 import {
     FilePreviewCardMenuAction,
     FilePreviewCardMenuActionHandler
 } from './types'
 
-export type EbayFilePreviewActionProps = {
+export type FilePreviewActionProps = React.ComponentProps<'button'> & {
     menuActions?: FilePreviewCardMenuAction[]
     deleteText?: string
     status?: 'uploading'
     a11yCancelUploadText?: string
-    icon?: Icon
-    iconAriaLabel?: string
     onMenuAction?: FilePreviewCardMenuActionHandler
     onCancel?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
     onAction?: EbayEventHandler<HTMLElement>
 }
 
-const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
+const FilePreviewAction: FC<FilePreviewActionProps> = ({
     status,
     menuActions,
     onMenuAction,
@@ -30,9 +30,10 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
     onDelete,
     onAction,
     a11yCancelUploadText,
-    icon,
-    iconAriaLabel
+    children
 }) => {
+    const action = findComponent(children, EbayFilePreviewCardAction)
+
     const handleMenuSelect: FilePreviewCardMenuActionHandler = (
         e,
         selectedProps
@@ -89,13 +90,15 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
         )
     }
 
-    if (icon && iconAriaLabel) {
+    if (action?.props && action.props.icon && action.props['aria-label']) {
         return (
             <EbayIconButton
-                aria-label={iconAriaLabel}
-                className="file-preview-card__action"
-                icon={icon}
                 onClick={onAction}
+                className={cx(
+                    'file-preview-card__action',
+                    action.props.className
+                )}
+                {...action.props}
             />
         )
     }
@@ -114,4 +117,4 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
     return <></>
 }
 
-export default EbayFilePreviewAction
+export default FilePreviewAction

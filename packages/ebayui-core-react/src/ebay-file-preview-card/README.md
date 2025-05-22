@@ -49,31 +49,29 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
         type: 'image',
         src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
     }}
-    icon="heart16"
-    iconAriaLabel="like item"
     onAction={onAction}
-/>
+>
+    <EbayFilePreviewCardAction icon="heart16" aria-label="like item" />
+</EbayFilePreviewCard>
 ```
 
 ## Attributes
 
-| Name                   | Type                                                         | Required | Description                                                                                                      | Data |
-| ---------------------- | ------------------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------- | ---- |
-| `a11yCancelUploadText` | `String`                                                     | No       | a11y text for cancel upload button.                                                                              |      |
-| `as`                   | `React.ElementType`                                          | No       | Element type for the preview card, default is `div`                                                              |      |
-| `deleteText`           | `String`                                                     | No       | Text for delete button.                                                                                          |      |
-| `status`               | `String`                                                     | No       | Status of the file, can be `"uploading"`                                                                         |      |
-| `labelText`            | `String`                                                     | No       | Text to display in the label.                                                                                    |      |
-| `footerTitle`          | `String`                                                     | No       | Title to display beneath the file, usually the filename.                                                         |      |
-| `footerSubtitle`       | `String`                                                     | No       | Subtitle to display beneath the file title.                                                                      |      |
-| `infoText`             | `String`                                                     | No       | Text to display info in file if not image.                                                                       |      |
-| `file`                 | `File` or `{name: string, type?: File[type], src?: string }` | No       | File object, can be raw platform `File` or an object containing `name`, `type`, and a `src` for the preview.     |      |
-| `menuActions`          | `{event: string, label: string }[]`                          | No       | Array of menu actions, containing event and label.                                                               |      |
-| `seeMore`              | `Number`                                                     | No       | Passing a number here will convert the card to a "see more" card.                                                |      |
-| `a11ySeeMoreText`      | `String`                                                     | No       | a11y text for see more button.                                                                                   |
-| `href`                 | `String`                                                     | No       | href that will wrapper the file preview card.                                                                    |
-| `icon`                 | `Icon`                                                       | No       | Icon which will be used for a custom action. iconAriaLabel also needs to be provided for the icon to be rendered |
-| `iconAriaLabel`        | `string`                                                     | No       | aria label for the icon button                                                                                   |
+| Name                   | Type                                                         | Required | Description                                                                                                  | Data |
+| ---------------------- | ------------------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------ | ---- |
+| `a11yCancelUploadText` | `String`                                                     | No       | a11y text for cancel upload button.                                                                          |      |
+| `as`                   | `React.ElementType`                                          | No       | Element type for the preview card, default is `div`                                                          |      |
+| `deleteText`           | `String`                                                     | No       | Text for delete button.                                                                                      |      |
+| `status`               | `String`                                                     | No       | Status of the file, can be `"uploading"`                                                                     |      |
+| `labelText`            | `String`                                                     | No       | Text to display in the label.                                                                                |      |
+| `footerTitle`          | `String`                                                     | No       | Title to display beneath the file, usually the filename.                                                     |      |
+| `footerSubtitle`       | `String`                                                     | No       | Subtitle to display beneath the file title.                                                                  |      |
+| `infoText`             | `String`                                                     | No       | Text to display info in file if not image.                                                                   |      |
+| `file`                 | `File` or `{name: string, type?: File[type], src?: string }` | No       | File object, can be raw platform `File` or an object containing `name`, `type`, and a `src` for the preview. |      |
+| `menuActions`          | `{event: string, label: string }[]`                          | No       | Array of menu actions, containing event and label.                                                           |      |
+| `seeMore`              | `Number`                                                     | No       | Passing a number here will convert the card to a "see more" card.                                            |      |
+| `a11ySeeMoreText`      | `String`                                                     | No       | a11y text for see more button.                                                                               |
+| `href`                 | `String`                                                     | No       | href that will wrapper the file preview card.                                                                |
 
 ## Events
 
@@ -84,3 +82,9 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 | `onDelete`     | `EbayEventHandler`           | No       | Triggered when the delete button is clicked.        | `event`                                                         |
 | `onCancel`     | `EbayEventHandler`           | No       | Triggered when the cancel button is clicked.        | `event`                                                         |
 | `onAction`     | `EbayEventHandler`           | No       | Triggered when the action button is clicked.        | `event`                                                         |
+
+## Components
+
+| Name                        | Type                  | Required | Description                                                                                                            | Data |
+| --------------------------- | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ---- |
+| `EbayFilePreviewCardAction` | `EbayIconButtonProps` | No       | Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render. |
