@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { EbayFilePreviewCard } from '..'
+import { EbayFilePreviewCard, EbayFilePreviewCardAction } from '..'
 
 const meta: Meta<typeof EbayFilePreviewCard> = {
     title: 'media/ebay-file-preview-card',
@@ -40,17 +40,6 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
             type: 'string',
             control: { type: 'text' },
             description: 'href that will wrap the preview card image'
-        },
-        icon: {
-            control: { type: 'text' },
-            description:
-                'icon that will be used for the preview card image action, it only will be rendered if the `iconAriaLabel` is passed. type: `Icon`'
-        },
-        iconAriaLabel: {
-            type: 'string',
-            control: { type: 'text' },
-            description:
-                'icon aria label that will be used for the preview card image action icon'
         },
         seeMore: {
             type: 'number',
@@ -153,9 +142,9 @@ export const WithAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
             type: 'image',
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
         }}
-        icon="heart16"
-        iconAriaLabel="like picture"
-    />
+    >
+        <EbayFilePreviewCardAction icon="heart16" aria-label="like picture" />
+    </EbayFilePreviewCard>
 )
 
 export const NoAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (

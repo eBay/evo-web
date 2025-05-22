@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import { EbayFilePreviewCard } from '../'
+import { EbayFilePreviewCard, EbayFilePreviewCardAction } from '../'
 
 describe('<EbayFilePreviewCard>', () => {
     it('should call onCancel', async () => {
@@ -150,9 +150,12 @@ describe('<EbayFilePreviewCard>', () => {
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                 }}
                 onAction={onActionMock}
-                icon="heart16"
-                iconAriaLabel="action-label"
-            />
+            >
+                <EbayFilePreviewCardAction
+                    icon="heart16"
+                    aria-label="action-label"
+                />
+            </EbayFilePreviewCard>
         )
 
         const buttonEl = screen.getByRole('button', { name: 'action-label' })
