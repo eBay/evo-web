@@ -1,0 +1,395 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`accordion > given the accordion in the default state > then it matches the snapshot 1`] = `
+"<div style="
+  transition-delay: 0.1s;
+  transition-duration: 0.1s
+">
+  <ul style="
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-left: 0px;
+    transition-delay: 0.1s;
+    transition-duration: 0.1s;
+    width: 100%
+  ">
+    <style scoped>
+      ::marker {font-size: 0px}
+    </style>
+    <li style="
+      border-bottom-color: ;
+      border-bottom-style: ;
+      border-bottom-width: ;
+      transition-delay: 0.1s;
+      transition-duration: 0.1s
+    ">
+      <details style="
+        transition-delay: 0.1s;
+        transition-duration: 0.1s
+      ">
+        <summary style="
+          align-items: center;
+          box-sizing: border-box;
+          color: var(
+                  --details-summary-foreground-color,
+                  var(--color-foreground-primary)
+              );
+          display: flex;
+          font-size: var(--font-size-medium);
+          font-weight: var(--font-weight-bold);
+          justify-content: space-between;
+          list-style-position: inside;
+          list-style-type: none;
+          min-height: 48px;
+          padding-bottom: 12px;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-top: 12px;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s
+        ">
+          <style scoped>
+            ::before {
+              
+            }
+          </style>
+          <span style="
+            transition-delay: 0.1s;
+            transition-duration: 0.1s
+          ">
+            Item 1
+          </span>
+          <span
+            hidden
+            style="
+              display: inline-flex;
+              margin-inline-start: 8px;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            "
+          >
+            <svg
+              focusable="false"
+              style="
+                display: inline-block;
+                fill: var(
+                        --details-secondary-foreground-color,
+                        var(--color-foreground-secondary)
+                    );
+                height: 16px;
+                pointer-events: none;
+                stroke-width: 0;
+                stroke: currentcolor;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s;
+                vertical-align: middle;
+                width: 16px
+              "
+            >
+              <use
+                href="#icon-chevron-down-16"
+                style="
+                  transition-delay: 0.1s;
+                  transition-duration: 0.1s
+                "
+              />
+            </svg>
+          </span>
+        </summary>
+        <div style="
+          margin-bottom: 6px;
+          margin-left: 16px;
+          margin-right: 16px;
+          opacity: 0;
+          transform-origin: center top;
+          transform: scaleY(0);
+          transition-behavior: ;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s;
+          transition-property: ;
+          transition-timing-function: 
+        ">
+          <p style="
+            transition-delay: 0.1s;
+            transition-duration: 0.1s
+          ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li style="
+      border-bottom-color: ;
+      border-bottom-style: ;
+      border-bottom-width: ;
+      transition-delay: 0.1s;
+      transition-duration: 0.1s
+    ">
+      <details style="
+        transition-delay: 0.1s;
+        transition-duration: 0.1s
+      ">
+        <summary style="
+          align-items: center;
+          box-sizing: border-box;
+          color: var(
+                  --details-summary-foreground-color,
+                  var(--color-foreground-primary)
+              );
+          display: flex;
+          font-size: var(--font-size-medium);
+          font-weight: var(--font-weight-bold);
+          justify-content: space-between;
+          list-style-position: inside;
+          list-style-type: none;
+          min-height: 48px;
+          padding-bottom: 12px;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-top: 12px;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s
+        ">
+          <style scoped>
+            ::before {
+              
+            }
+          </style>
+          <span style="
+            transition-delay: 0.1s;
+            transition-duration: 0.1s
+          ">
+            Item 2
+          </span>
+          <span
+            hidden
+            style="
+              display: inline-flex;
+              margin-inline-start: 8px;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            "
+          >
+            <svg
+              focusable="false"
+              style="
+                display: inline-block;
+                fill: var(
+                        --details-secondary-foreground-color,
+                        var(--color-foreground-secondary)
+                    );
+                height: 16px;
+                pointer-events: none;
+                stroke-width: 0;
+                stroke: currentcolor;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s;
+                vertical-align: middle;
+                width: 16px
+              "
+            >
+              <use
+                href="#icon-chevron-down-16"
+                style="
+                  transition-delay: 0.1s;
+                  transition-duration: 0.1s
+                "
+              />
+            </svg>
+          </span>
+        </summary>
+        <div style="
+          margin-bottom: 6px;
+          margin-left: 16px;
+          margin-right: 16px;
+          opacity: 0;
+          transform-origin: center top;
+          transform: scaleY(0);
+          transition-behavior: ;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s;
+          transition-property: ;
+          transition-timing-function: 
+        ">
+          <p style="
+            transition-delay: 0.1s;
+            transition-duration: 0.1s
+          ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li style="
+      transition-delay: 0.1s;
+      transition-duration: 0.1s
+    ">
+      <details style="
+        transition-delay: 0.1s;
+        transition-duration: 0.1s
+      ">
+        <summary style="
+          align-items: center;
+          box-sizing: border-box;
+          color: var(
+                  --details-summary-foreground-color,
+                  var(--color-foreground-primary)
+              );
+          display: flex;
+          font-size: var(--font-size-medium);
+          font-weight: var(--font-weight-bold);
+          justify-content: space-between;
+          list-style-position: inside;
+          list-style-type: none;
+          min-height: 48px;
+          padding-bottom: 12px;
+          padding-left: 16px;
+          padding-right: 16px;
+          padding-top: 12px;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s
+        ">
+          <style scoped>
+            ::before {
+              
+            }
+          </style>
+          <span style="
+            transition-delay: 0.1s;
+            transition-duration: 0.1s
+          ">
+            Item 3
+          </span>
+          <span
+            hidden
+            style="
+              display: inline-flex;
+              margin-inline-start: 8px;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            "
+          >
+            <svg
+              focusable="false"
+              style="
+                display: inline-block;
+                fill: var(
+                        --details-secondary-foreground-color,
+                        var(--color-foreground-secondary)
+                    );
+                height: 16px;
+                pointer-events: none;
+                stroke-width: 0;
+                stroke: currentcolor;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s;
+                vertical-align: middle;
+                width: 16px
+              "
+            >
+              <use
+                href="#icon-chevron-down-16"
+                style="
+                  transition-delay: 0.1s;
+                  transition-duration: 0.1s
+                "
+              />
+            </svg>
+          </span>
+        </summary>
+        <div style="
+          margin-bottom: 6px;
+          margin-left: 16px;
+          margin-right: 16px;
+          opacity: 0;
+          transform-origin: center top;
+          transform: scaleY(0);
+          transition-behavior: ;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s;
+          transition-property: ;
+          transition-timing-function: 
+        ">
+          <p style="
+            transition-delay: 0.1s;
+            transition-duration: 0.1s
+          ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+  </ul>
+</div>"
+`;
+
+exports[`accordion > given the accordion in the default state > when first section toggled > should close an open section when clicked again > Should have no changes from intial 1`] = `""`;
+
+exports[`accordion > given the accordion in the default state > when first section toggled > should open the clicked section 1`] = `
+"-       <details style="
+-         transition-delay: 0.1s;
+-         transition-duration: 0.1s
+-       ">
++       <details
++         open
++         style="
++           transition-delay: 0.1s;
++           transition-duration: 0.1s
++         "
++       >
++               transform: rotate(180deg);
+-           opacity: 0;
+-           transform: scaleY(0);
++           transform: scaleY(1);"
+`;
+
+exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > should open as normal 1`] = `
+"-       <details style="
+-         transition-delay: 0.1s;
+-         transition-duration: 0.1s
+-       ">
++       <details
++         open
++         style="
++           transition-delay: 0.1s;
++           transition-duration: 0.1s
++         "
++       >
++               transform: rotate(180deg);
+-           opacity: 0;
+-           transform: scaleY(0);
++           transform: scaleY(1);"
+`;
+
+exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
+"-       <details
+-         open
+-         style="
+-           transition-delay: 0.1s;
+-           transition-duration: 0.1s
+-         "
+-       >
++       <details style="
++         transition-delay: 0.1s;
++         transition-duration: 0.1s
++       ">
+-               transform: rotate(180deg);
++           opacity: 0;
+-           transform: scaleY(1);
++           transform: scaleY(0);
+-       <details style="
+-         transition-delay: 0.1s;
+-         transition-duration: 0.1s
+-       ">
++       <details
++         open
++         style="
++           transition-delay: 0.1s;
++           transition-duration: 0.1s
++         "
++       >
++               transform: rotate(180deg);
+-           opacity: 0;
+-           transform: scaleY(0);
++           transform: scaleY(1);"
+`;

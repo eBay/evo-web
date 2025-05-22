@@ -1,0 +1,79 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ccd > then it matches the snapshot 1`] = `
+"<div>
+  <div style="
+    column-gap: 8px;
+    display: inline-flex;
+    font-family: "Reddit Sans Condensed Bold", "Market Sans", Arial, sans-serif;
+    row-gap: 8px
+  ">
+    <div style="
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 39px
+    ">
+      <svg
+        focusable="false"
+        style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 18px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 27px
+        "
+      >
+        <use href="#icon-ccd-top"/>
+      </svg>
+      <div style="
+        align-items: center;
+        border-bottom-color: ;
+        border-bottom-left-radius: 1.5px;
+        border-bottom-right-radius: 1.5px;
+        border-bottom-style: ;
+        border-bottom-width: ;
+        border-image-outset: ;
+        border-image-repeat: ;
+        border-image-slice: ;
+        border-image-source: ;
+        border-image-width: ;
+        border-left-color: ;
+        border-left-style: ;
+        border-left-width: ;
+        border-right-color: ;
+        border-right-style: ;
+        border-right-width: ;
+        border-top-color: ;
+        border-top-left-radius: 1.5px;
+        border-top-right-radius: 1.5px;
+        border-top-style: ;
+        border-top-width: ;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.4375rem;
+        font-weight: var(--font-weight-bold);
+        height: 37px;
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        text-align: center;
+        width: 39px
+      ">
+        <div>
+          1000
+          -
+          2000
+        </div>
+        <div>
+          W
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
