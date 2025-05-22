@@ -4,7 +4,8 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import {
     EbayFilePreviewCardProps,
-    EbayFilePreviewCard
+    EbayFilePreviewCard,
+    EbayFilePreviewCardAction
 } from '../../ebay-file-preview-card'
 import { EbayFilePreviewCardGroup } from '../'
 
@@ -157,16 +158,19 @@ describe('<EbayFilePreviewCardGroup>', () => {
                     name: 'file-name.jpg',
                     type: 'image',
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
-                },
-                icon: 'heart16',
-                iconAriaLabel: 'action-aria-label',
+                }
             })
         )
 
         render(
             <EbayFilePreviewCardGroup onAction={onActionClick}>
                 {cards.map((cardFile, index) => (
-                    <EbayFilePreviewCard key={index} {...cardFile} />
+                    <EbayFilePreviewCard key={index} {...cardFile}>
+                        <EbayFilePreviewCardAction
+                            icon="heart16"
+                            aria-label="action-aria-label"
+                        />
+                    </EbayFilePreviewCard>
                 ))}
             </EbayFilePreviewCardGroup>
         )
