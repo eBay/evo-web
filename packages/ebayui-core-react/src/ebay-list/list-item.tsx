@@ -1,13 +1,12 @@
-import React, { ElementType, FC, ReactNode, Children, isValidElement } from 'react'
+import React, { ElementType, FC, ReactNode } from 'react'
 import classNames from 'classnames'
+import { findComponent, excludeComponent } from '../utils'
 import EbayListItemLeading from './list-item-leading'
 import EbayListItemTrailing from './list-item-trailing'
 
 export type EbayListItemProps = {
     as?: ElementType;
     separator?: boolean;
-    leading?: ReactNode;
-    trailing?: ReactNode;
     className?: string;
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     children?: ReactNode;
@@ -23,24 +22,15 @@ const EbayListItem: FC<EbayListItemProps> = ({
 }) => {
     if (separator) return <hr />
 
-    // Find custom leading component
-    let leadingChild: ReactNode = null
-    let trailingChild: ReactNode = null
-    const contentChildren: ReactNode[] = []
-
-    Children.forEach(children, child => {
-        if (isValidElement(child)) {
-            if (child.type === EbayListItemLeading) {
-                leadingChild = child
-                return
-            }
-            if (child.type === EbayListItemTrailing) {
-                trailingChild = child
-                return
-            }
-        }
-        contentChildren.push(child)
-    })
+    // Find leading and trailing components
+    const leadingChild = findComponent(children, EbayListItemLeading)
+    const trailingChild = findComponent(children, EbayListItemTrailing)
+    
+    // Get content children (excluding leading and trailing components)
+    const contentChildren = excludeComponent(
+        excludeComponent(children, EbayListItemLeading),
+        EbayListItemTrailing
+    )
 
     return (
         <li>
