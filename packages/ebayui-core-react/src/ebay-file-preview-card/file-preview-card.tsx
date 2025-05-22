@@ -1,6 +1,5 @@
 import React, { FC, useMemo, ComponentProps, ElementType } from 'react'
 import { EbayEventHandler } from '../common/event-utils/types'
-import { Icon } from '../ebay-icon'
 import FilePreviewAction from './file-preview-action'
 import EbayFilePreviewContent from './file-preview-content'
 import EbayFilePreviewLabel from './file-preview-label'
@@ -24,8 +23,6 @@ export type EbayFilePreviewCardProps = ComponentProps<'div'> & {
     footerTitle?: string
     footerSubtitle?: string
     href?: string
-    icon?: Icon
-    iconAriaLabel?: string
     onMenuAction?: FilePreviewCardMenuActionHandler
     onSeeMore?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
