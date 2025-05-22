@@ -59,7 +59,7 @@ const CarouselList: FC<CarouselListProps> = ({
 
         if (isNativeScroll) {
             setScrollTransitioning(true)
-            scrollTransition(list, offset, () => setScrollTransitioning(false))
+            return scrollTransition(list, offset, () => setScrollTransitioning(false))
         } else {
             setTranslateLeft(offset)
         }
