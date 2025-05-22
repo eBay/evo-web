@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.5.2
+
+### Patch Changes
+
+- [#142](https://github.com/eBay/evo-web/pull/142) [`f983a5e`](https://github.com/eBay/evo-web/commit/f983a5ebcb2dbeba743a9100f083c15ddd2623a5) Thanks [@cdaringe](https://github.com/cdaringe)! - cleanup react carousel animations on unmount
+
 ## 8.5.1
 
 ### Patch Changes
