@@ -4,7 +4,8 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import {
     EbayFilePreviewCardProps,
-    EbayFilePreviewCard
+    EbayFilePreviewCard,
+    EbayFilePreviewCardAction
 } from '../../ebay-file-preview-card'
 import { EbayFilePreviewCardGroup } from '../'
 
@@ -147,5 +148,38 @@ describe('<EbayFilePreviewCardGroup>', () => {
         expect(buttonEl).toBeInTheDocument()
         await userEvent.click(buttonEl)
         expect(onDeleteClick).toHaveBeenCalled()
+    })
+    it('click on action fire onAction event', async () => {
+        const onActionClick = jest.fn()
+        const cards: EbayFilePreviewCardProps[] = Array.from(
+            { length: 2 },
+            () => ({
+                file: {
+                    name: 'file-name.jpg',
+                    type: 'image',
+                    src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+                }
+            })
+        )
+
+        render(
+            <EbayFilePreviewCardGroup onAction={onActionClick}>
+                {cards.map((cardFile, index) => (
+                    <EbayFilePreviewCard key={index} {...cardFile}>
+                        <EbayFilePreviewCardAction
+                            icon="heart16"
+                            aria-label="action-aria-label"
+                        />
+                    </EbayFilePreviewCard>
+                ))}
+            </EbayFilePreviewCardGroup>
+        )
+        const buttonEl = screen.getAllByRole('button', {
+            name: 'action-aria-label'
+        })[0]
+
+        expect(buttonEl).toBeInTheDocument()
+        await userEvent.click(buttonEl)
+        expect(onActionClick).toHaveBeenCalled()
     })
 })

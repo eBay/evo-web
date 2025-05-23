@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { EbayFilePreviewCard } from '..'
+import { EbayFilePreviewCard, EbayFilePreviewCardAction } from '..'
 
 const meta: Meta<typeof EbayFilePreviewCard> = {
     title: 'media/ebay-file-preview-card',
@@ -35,6 +35,11 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
             table: {
                 category: 'Menu Actions'
             }
+        },
+        href: {
+            type: 'string',
+            control: { type: 'text' },
+            description: 'href that will wrap the preview card image'
         },
         seeMore: {
             type: 'number',
@@ -92,6 +97,16 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
                     summary: ''
                 }
             }
+        },
+        onAction: {
+            action: 'onAction',
+            description: 'Triggered when the action button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
         }
     }
 }
@@ -109,6 +124,32 @@ export const Image: StoryFn<typeof EbayFilePreviewCard> = (args) => (
     <EbayFilePreviewCard
         a11yCancelUploadText="Cancel upload"
         deleteText="Delete"
+        file={{
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        }}
+        {...args}
+    />
+)
+
+export const WithAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        {...args}
+        a11yCancelUploadText="Cancel upload"
+        file={{
+            name: 'file-name.jpg',
+            type: 'image',
+            src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+        }}
+    >
+        <EbayFilePreviewCardAction icon="heart16" aria-label="like picture" />
+    </EbayFilePreviewCard>
+)
+
+export const NoAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        a11yCancelUploadText="Cancel upload"
         file={{
             name: 'file-name.jpg',
             type: 'image',

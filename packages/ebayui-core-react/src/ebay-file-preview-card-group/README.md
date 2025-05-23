@@ -63,3 +63,4 @@ const fileExample = {
 | `onMenuAction` | `EbayMenuSelectEventHandler`   | No       | Triggered when an action is selected from the menu. | `event, {index: number, menuActionEvent: { index: number, checked: number[], eventName?: string}}` |
 | `onDelete`     | `FilePreviewCardActionHandler` | No       | Triggered when the delete button is clicked.        | `event, {index: number}`                                                                           |
 | `onCancel`     | `FilePreviewCardActionHandler` | No       | Triggered when the cancel button is clicked.        | `event, {index: number}`                                                                           |
+| `onAction`     | `FilePreviewCardActionHandler` | No       | Triggered when the custon action button is clicked. | `event, {index: number}`                                                                           |

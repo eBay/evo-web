@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { EbayFilePreviewCard } from '../'
+import { EbayFilePreviewCard, EbayFilePreviewCardAction } from '../'
 
 describe('<EbayFilePreviewCard>', () => {
     it('renders with status uploading', () => {
@@ -15,9 +15,59 @@ describe('<EbayFilePreviewCard>', () => {
     it('renders as span element', () => {
         const { asFragment } = render(
             <EbayFilePreviewCard
-                as='span'
+                as="span"
                 a11yCancelUploadText="Cancel upload"
                 deleteText="Delete"
+                file={{
+                    name: 'file-name.jpg',
+                    type: 'image',
+                    src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+                }}
+                footerTitle="file-name.csv"
+                footerSubtitle="English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic"
+            />
+        )
+        expect(asFragment()).toMatchSnapshot()
+    })
+    it('renders with a href', () => {
+        const { asFragment } = render(
+            <EbayFilePreviewCard
+                a11yCancelUploadText="Cancel upload"
+                deleteText="Delete"
+                href="/collection"
+                file={{
+                    name: 'file-name.jpg',
+                    type: 'image',
+                    src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+                }}
+                footerTitle="file-name.csv"
+                footerSubtitle="English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic"
+            />
+        )
+        expect(asFragment()).toMatchSnapshot()
+    })
+    it('renders with action button', () => {
+        const { asFragment } = render(
+            <EbayFilePreviewCard
+                a11yCancelUploadText="Cancel upload"
+                file={{
+                    name: 'file-name.jpg',
+                    type: 'image',
+                    src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+                }}
+            >
+                <EbayFilePreviewCardAction
+                    icon="heart16"
+                    aria-label="action label"
+                />
+            </EbayFilePreviewCard>
+        )
+        expect(asFragment()).toMatchSnapshot()
+    })
+    it('renders with no action button', () => {
+        const { asFragment } = render(
+            <EbayFilePreviewCard
+                a11yCancelUploadText="Cancel upload"
                 file={{
                     name: 'file-name.jpg',
                     type: 'image',

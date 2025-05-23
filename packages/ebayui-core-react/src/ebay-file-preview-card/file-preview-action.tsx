@@ -1,13 +1,16 @@
-import React, { FC } from 'react'
+import React, { FC, ReactElement } from 'react'
+import cx from 'classnames'
 import { EbayEventHandler } from '../common/event-utils/types'
 import { EbayIconButton } from '../ebay-icon-button'
 import { EbayMenuButton, EbayMenuButtonItem } from '../ebay-menu-button'
+import { EbayFilePreviewCardActionProps } from './ebay-file-preview-card-action'
+
 import {
     FilePreviewCardMenuAction,
     FilePreviewCardMenuActionHandler
 } from './types'
 
-export type EbayFilePreviewActionProps = {
+export type FilePreviewActionProps = {
     menuActions?: FilePreviewCardMenuAction[]
     deleteText?: string
     status?: 'uploading'
@@ -15,16 +18,20 @@ export type EbayFilePreviewActionProps = {
     onMenuAction?: FilePreviewCardMenuActionHandler
     onCancel?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
+    onAction?: EbayEventHandler<HTMLElement>
+    action: ReactElement<EbayFilePreviewCardActionProps>
 }
 
-const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
+const FilePreviewAction: FC<FilePreviewActionProps> = ({
     status,
     menuActions,
     onMenuAction,
     deleteText,
     onCancel,
     onDelete,
-    a11yCancelUploadText
+    onAction,
+    a11yCancelUploadText,
+    action
 }) => {
     const handleMenuSelect: FilePreviewCardMenuActionHandler = (
         e,
@@ -81,14 +88,32 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
             </>
         )
     }
-    return (
-        <EbayIconButton
-            aria-label={deleteText}
-            className="file-preview-card__action"
-            icon="delete16"
-            onClick={onDelete}
-        />
-    )
+
+    if (action?.props && action.props.icon && action.props['aria-label']) {
+        return (
+            <EbayIconButton
+                onClick={onAction}
+                className={cx(
+                    'file-preview-card__action',
+                    action.props.className
+                )}
+                {...action.props}
+            />
+        )
+    }
+
+    if (deleteText) {
+        return (
+            <EbayIconButton
+                aria-label={deleteText}
+                className="file-preview-card__action"
+                icon="delete16"
+                onClick={onDelete}
+            />
+        )
+    }
+
+    return <></>
 }
 
-export default EbayFilePreviewAction
+export default FilePreviewAction

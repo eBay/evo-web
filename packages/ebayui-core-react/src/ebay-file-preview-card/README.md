@@ -42,6 +42,19 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 />
 ```
 
+```jsx harmony
+<EbayFilePreviewCard
+    file={{
+        name: 'file-name.jpg',
+        type: 'image',
+        src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+    }}
+    onAction={onAction}
+>
+    <EbayFilePreviewCardAction icon="heart16" aria-label="like item" />
+</EbayFilePreviewCard>
+```
+
 ## Attributes
 
 | Name                   | Type                                                         | Required | Description                                                                                                  | Data |
@@ -58,6 +71,7 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 | `menuActions`          | `{event: string, label: string }[]`                          | No       | Array of menu actions, containing event and label.                                                           |      |
 | `seeMore`              | `Number`                                                     | No       | Passing a number here will convert the card to a "see more" card.                                            |      |
 | `a11ySeeMoreText`      | `String`                                                     | No       | a11y text for see more button.                                                                               |
+| `href`                 | `String`                                                     | No       | href that will wrapper the file preview card.                                                                |
 
 ## Events
 
@@ -67,3 +81,10 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 | `onSeeMore`    | `EbayEventHandler`           | No       | Triggered when the see more button is clicked.      | `event`                                                         |
 | `onDelete`     | `EbayEventHandler`           | No       | Triggered when the delete button is clicked.        | `event`                                                         |
 | `onCancel`     | `EbayEventHandler`           | No       | Triggered when the cancel button is clicked.        | `event`                                                         |
+| `onAction`     | `EbayEventHandler`           | No       | Triggered when the action button is clicked.        | `event`                                                         |
+
+## Components
+
+| Name                        | Type                  | Required | Description                                                                                                            | Data |
+| --------------------------- | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ---- |
+| `EbayFilePreviewCardAction` | `EbayIconButtonProps` | No       | Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render. |
