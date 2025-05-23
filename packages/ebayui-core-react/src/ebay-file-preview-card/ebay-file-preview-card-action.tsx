@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { EbayIconButtonProps } from '../ebay-icon-button'
 
-const EbayFilePreviewCardAction: FC<Omit<EbayIconButtonProps, 'ref'>> = () =>
-    null
+export type EbayFilePreviewCardActionProps = Omit<EbayIconButtonProps, 'ref'>
+
+const EbayFilePreviewCardAction: FC<EbayFilePreviewCardActionProps> = () => null
 
 export default EbayFilePreviewCardAction
