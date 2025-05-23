@@ -1,16 +1,16 @@
-import React, { FC } from 'react'
+import React, { FC, ReactElement } from 'react'
 import cx from 'classnames'
 import { EbayEventHandler } from '../common/event-utils/types'
-import { findComponent } from '../common/component-utils'
 import { EbayIconButton } from '../ebay-icon-button'
 import { EbayMenuButton, EbayMenuButtonItem } from '../ebay-menu-button'
-import EbayFilePreviewCardAction from './ebay-file-preview-card-action'
+import { EbayFilePreviewCardActionProps } from './ebay-file-preview-card-action'
+
 import {
     FilePreviewCardMenuAction,
     FilePreviewCardMenuActionHandler
 } from './types'
 
-export type FilePreviewActionProps = React.ComponentProps<'button'> & {
+export type FilePreviewActionProps = {
     menuActions?: FilePreviewCardMenuAction[]
     deleteText?: string
     status?: 'uploading'
@@ -19,6 +19,7 @@ export type FilePreviewActionProps = React.ComponentProps<'button'> & {
     onCancel?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
     onAction?: EbayEventHandler<HTMLElement>
+    action: ReactElement<EbayFilePreviewCardActionProps>
 }
 
 const FilePreviewAction: FC<FilePreviewActionProps> = ({
@@ -30,10 +31,8 @@ const FilePreviewAction: FC<FilePreviewActionProps> = ({
     onDelete,
     onAction,
     a11yCancelUploadText,
-    children
+    action
 }) => {
-    const action = findComponent(children, EbayFilePreviewCardAction)
-
     const handleMenuSelect: FilePreviewCardMenuActionHandler = (
         e,
         selectedProps
