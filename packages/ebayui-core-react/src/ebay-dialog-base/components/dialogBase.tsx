@@ -19,7 +19,6 @@ import { useDialogAnimation, TransitionElement } from './animation'
 import { DialogCloseEvent, DialogCloseEventHandler } from '../types'
 import { EbayDialogHeaderProps } from './dialog-header'
 
-
 export type WindowType = 'compact'
 type ClassPrefix = 'fullscreen-dialog' | 'lightbox-dialog' | 'panel-dialog'
     | 'drawer-dialog' | 'toast-dialog' | 'alert-dialog' | 'confirm-dialog'
@@ -95,27 +94,12 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
         setRandomId(randomId())
     }, [])
 
-    useEffect(() => {
-        let timeout: number
-        const handleBackgroundClick = (e: DocumentEventMap['click']) => {
-            if (drawerBaseEl.current && !drawerBaseEl.current.contains(e.target)) {
-                onBackgroundClick(e as unknown as DialogCloseEvent)
-            }
+    const handleBackgroundClick = (e) => {
+        props.onClick?.(e)
+        if (drawerBaseEl.current && !drawerBaseEl.current.contains(e.target)) {
+            onBackgroundClick(e as unknown as DialogCloseEvent)
         }
-        if (open && buttonPosition !== 'hidden') {
-            // On React 18 useEffect hooks runs synchronous instead of asynchronous as React 17 or prior
-            // causing the event listener to be attached to the document at the same time that the dialog
-            // opens. Adding a timeout so the event is attached after the click event that opened the modal
-            // is finished.
-            timeout = window.setTimeout(() => {
-                document.addEventListener('click', handleBackgroundClick, false)
-            })
-        }
-        return () => {
-            clearTimeout(timeout)
-            document.removeEventListener('click', handleBackgroundClick, false)
-        }
-    }, [onBackgroundClick, open])
+    }
 
     useEffect(() => {
         if (open && isModal) {
@@ -201,6 +185,7 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
             aria-live={!isModal ? 'polite' : undefined}
             ref={dialogRef}
             onKeyDown={onKeyDown as (event: KeyboardEvent<HTMLElement>) => void}
+            onClick={open && buttonPosition !== 'hidden' ? handleBackgroundClick : props.onClick}
         >
             <div className={classNames(windowClassName, windowClass)} ref={drawerBaseEl}>
                 {top}
