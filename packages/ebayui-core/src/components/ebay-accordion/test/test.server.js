@@ -2,7 +2,7 @@ import { describe, it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../accordion.stories"; // import all stories from the stories file
-const { Default } = composeStories(stories);
+const { Default, AutoCollapsed } = composeStories(stories);
 const htmlSnap = snapshotHTML(__dirname);
 
 describe("accordion", () => {
@@ -15,7 +15,7 @@ describe("accordion", () => {
     });
 
     it("renders accordion with auto-collapse true", async () => {
-        await htmlSnap(Default, { autoCollapse: true });
+        await htmlSnap(AutoCollapsed);
     });
 
     it("renders accordion with localized role description", async () => {
