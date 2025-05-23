@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.6.0
+
+### Minor Changes
+
+- [#139](https://github.com/eBay/evo-web/pull/139) [`1f113b7`](https://github.com/eBay/evo-web/commit/1f113b77bbf17328dd179ff8dd6e2e4db1b2a11d) Thanks [@gsirichandana](https://github.com/gsirichandana)! - Add Ebaylist component
+
 ## 8.5.2
 
 ### Patch Changes
