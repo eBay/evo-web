@@ -1,3 +1,29 @@
+@keyframes skeleton-fade-out {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes skeleton-fade-in {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+::view-transition-new(skeleton-transition-*) {
+    animation: skeleton-fade-in var(--motion-duration-medium-2)
+        var(--motion-easing-continuous);
+}
+
+::view-transition-old(skeleton-transition-*) {
+    animation: skeleton-fade-out var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+
 .skeleton {
     container-name: skeleton-container;
     container-type: inline-size;
@@ -119,14 +145,6 @@ div.skeleton__textbox:not(:last-child) {
     --skeleton-background: var(--color-loading-fill-on-secondary);
 }
 
-@media screen and (max-width: 512px) {
-    .skeleton {
-        --skeleton-background: var(--color-loading-shimmer);
-    }
-    .skeleton--on-secondary {
-        --skeleton-background: var(--color-loading-shimmer-on-secondary);
-    }
-}
 .skeleton--purple {
     --skeleton-background: var(--color-loading-ai-gradient-purple-subtle);
 }
@@ -140,23 +158,20 @@ div.skeleton__textbox:not(:last-child) {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    @keyframes loading-frames {
+    @keyframes on-primary {
         0% {
-            background-position: 0 0;
-        }
-        50% {
-            background-position: 45% 0;
+            background-color: var(--color-loading-first);
         }
         to {
-            background-position: 90% 0;
+            background-color: var(--color-loading-second);
         }
     }
-    @keyframes fade-in {
+    @keyframes on-secondary {
         0% {
-            opacity: 0;
+            background-color: var(--color-loading-on-secondary-first);
         }
         to {
-            opacity: 1;
+            background-color: var(--color-loading-on-secondary-second);
         }
     }
     .skeleton__avatar,
@@ -164,24 +179,22 @@ div.skeleton__textbox:not(:last-child) {
     .skeleton__image,
     .skeleton__text,
     .skeleton__textbox {
-        animation:
-            fade-in 0.5s forwards,
-            loading-frames 833ms linear 667ms 6;
-        animation-fill-mode: both;
-        background-size: 200%;
+        animation: var(--motion-duration-long-3) var(--motion-easing-continuous)
+            infinite alternate on-primary;
+    }
+    .skeleton--on-secondary .skeleton__avatar,
+    .skeleton--on-secondary .skeleton__button,
+    .skeleton--on-secondary .skeleton__image,
+    .skeleton--on-secondary .skeleton__text,
+    .skeleton--on-secondary .skeleton__textbox {
+        animation: var(--motion-duration-long-3) var(--motion-easing-continuous)
+            infinite alternate on-secondary;
     }
 }
 @container skeleton-container (width > 79px) {
     .skeleton__image {
         border-radius: var(--image-border-radius, var(--border-radius-100));
     }
-}
-[dir="rtl"] .skeleton__avatar,
-[dir="rtl"] .skeleton__button,
-[dir="rtl"] .skeleton__image,
-[dir="rtl"] .skeleton__text,
-[dir="rtl"] .skeleton__textbox {
-    animation-direction: normal, reverse;
 }
 [dir="rtl"] .skeleton__text--multiline:after {
     left: var(--spacing-700);

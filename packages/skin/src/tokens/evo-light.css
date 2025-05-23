@@ -156,7 +156,13 @@
     --shadow-strong:
         0px 5px 17px 0px rgba(0, 0, 0, 0.2), 0px 2px 7px 0px rgba(0, 0, 0, 0.15);
     --color-loading-overlay: var(--color-neutral-100-rgb), 0.7;
+    --color-loading-first: var(--color-neutral-200);
+    --color-loading-second: var(--color-neutral-300);
+    --color-loading-on-secondary-first: var(--color-neutral-300);
+    --color-loading-on-secondary-second: var(--color-neutral-400);
+    /* Deprecated */
     --color-loading-fill: #ededed;
+    /* Deprecated */
     --color-loading-shimmer: linear-gradient(
         270deg,
         var(--color-loading-fill) 0%,
@@ -165,7 +171,9 @@
         var(--color-loading-fill) 66%,
         var(--color-loading-fill) 100%
     );
+    /* Deprecated */
     --color-loading-fill-on-secondary: #e4e4e4;
+    /* Deprecated */
     --color-loading-shimmer-on-secondary: linear-gradient(
         270deg,
         var(--color-loading-fill-on-secondary) 0%,
