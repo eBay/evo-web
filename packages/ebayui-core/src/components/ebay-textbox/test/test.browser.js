@@ -1,5 +1,3 @@
-import "@ebay/skin/dist/tokens/evo-core.css";
-import "@ebay/skin/dist/tokens/evo-light.css";
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { render, fireEvent, cleanup } from "@marko/testing-library";

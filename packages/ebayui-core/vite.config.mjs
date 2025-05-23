@@ -17,7 +17,9 @@ const rawMarkdown = {
 };
 
 export default defineConfig({
+    onConsoleLog: () => true,
     test: {
+        onConsoleLog: () => true,
         pool: "forks",
         globals: true,
         coverage: {

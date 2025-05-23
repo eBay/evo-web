@@ -1,5 +1,6 @@
 import { composeStories } from "@storybook/marko";
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
+import { visualHTML } from "../../../common/test-utils/snapshots";
 import { render, fireEvent, cleanup } from "@marko/testing-library";
 import { pressKey } from "../../../common/test-utils/browser";
 import * as stories from "../button.stories"; // import all stories from the stories file
@@ -13,6 +14,11 @@ let component;
 describe("given button is enabled", () => {
     beforeEach(async () => {
         component = await render(Standard);
+    });
+
+    it("then it matches the snapshot", () => {
+        const html = visualHTML(component.container);
+        expect(html).toMatchSnapshot();
     });
 
     describe("when button is clicked", () => {

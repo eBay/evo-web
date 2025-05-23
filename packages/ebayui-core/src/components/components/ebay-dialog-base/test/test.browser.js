@@ -12,9 +12,6 @@ import { fastAnimations } from "../../../../common/test-utils/browser";
 import { pressKey } from "../../../../common/test-utils/browser";
 import template from "../index.marko";
 import * as mock from "./mock";
-import "@ebay/skin/dist/tokens/evo-core.css";
-import "@ebay/skin/dist/tokens/evo-light.css";
-import "@ebay/skin/lightbox-dialog";
 
 beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
