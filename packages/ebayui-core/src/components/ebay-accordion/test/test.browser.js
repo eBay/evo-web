@@ -44,11 +44,16 @@ describe("accordion", () => {
                 expect(initialHTML(component.container)).toMatchSnapshot();
             });
 
-            it("should close an open section when clicked again", async () => {
-                await fireEvent.click(component.getByText("Item 1"));
-                expect(initialHTML(component.container)).toMatchSnapshot(
-                    "Should have no changes from intial",
-                );
+            describe("when another section is opened", () => {
+                beforeEach(async () => {
+                    await fireEvent.click(component.getByText("Item 1"));
+                });
+
+                it("should close an open section when clicked again", async () => {
+                    expect(initialHTML(component.container)).toMatchSnapshot(
+                        "Should have no changes from intial",
+                    );
+                });
             });
         });
     });
