@@ -1,5 +1,6 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import React, { useCallback, useState } from 'react'
+import { render, fireEvent, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { EbayDialogFooter, EbayDialogHeader } from '../../ebay-dialog-base'
 import { EbayLightboxDialog } from '../index'
 
@@ -62,5 +63,41 @@ describe('<EbayLightboxDialog>', () => {
             bannerImgSrc:"http://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/mountain.jpeg",
         })
         expect(document.querySelector('.lightbox-dialog__image')).toBeInTheDocument()
+    })
+
+    it('should not close the dialog when clicking an element inside that dissapears on click', async() => {
+        // NOTE: This tests will be valid only when using Playwright where a real click event happens
+        // instead of an event triggered by JavaScript. The reason is the way the Event Loop works
+        // and how React (>18) schedules the DOM updates in the micro task. Since unit test uses JS API
+        // to trigger events, all the handlers are executed in the same task, before the microtask, but
+        // that is different in the browser, where each handler is a separate task, causing the React micro task
+        // to be executed before the next handler.
+        const onClose = jest.fn()
+        const TestCase = () => {
+            const [showButton, setShowButton] = useState(true)
+            const handleClose = useCallback(onClose, [])
+
+            return (
+                <EbayLightboxDialog
+                    open
+                    onClose={handleClose}
+                    a11yCloseText="Close"
+                >
+                    <EbayDialogHeader>Heading Text</EbayDialogHeader>
+                    Dialog Content
+                    <p>{showButton && <button onClick={() => {
+                        setShowButton(false)
+                    }}>Hide me</button>}</p>
+                </EbayLightboxDialog>
+            );
+        }
+
+        render(<TestCase />)
+
+        const button = screen.getByText('Hide me')
+
+        await userEvent.click(button)
+
+        expect(onClose).not.toHaveBeenCalled()
     })
 })

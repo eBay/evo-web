@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const React = require('react')
 const ReactDOMServer = require('react-dom/server')
 const { EbayButton } = require('@ebay/ui-core-react/ebay-button')
