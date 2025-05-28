@@ -2,4 +2,4 @@
 '@ebay/ui-core-react': minor
 ---
 
-feat: Add EbayItemTile component
+feat: Add EbayItemTile and EbayItemTileGroup component
