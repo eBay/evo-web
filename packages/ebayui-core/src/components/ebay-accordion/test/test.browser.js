@@ -7,8 +7,8 @@ import {
     it,
     expect,
 } from "vitest";
-import { render, cleanup } from "@marko/testing-library";
-import userEvent from "@testing-library/user-event";
+import { render, cleanup, waitFor } from "@marko/testing-library";
+import { userEvent } from "@vitest/browser/context";
 import { fastAnimations } from "../../../common/test-utils/browser";
 import { diffHTML, visualHTML } from "../../../common/test-utils/snapshots";
 import { composeStories } from "@storybook/marko";
@@ -19,11 +19,17 @@ beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
 let component;
+let user;
 
 afterEach(cleanup);
 
 describe("accordion", () => {
-    const user = userEvent.setup();
+    beforeEach(() => {
+        user = userEvent.setup();
+    });
+    afterEach(() => {
+        user.cleanup();
+    });
     describe("given the accordion in the default state", () => {
         beforeEach(async () => {
             component = await render(Default);
@@ -43,17 +49,22 @@ describe("accordion", () => {
             });
 
             it("should open the clicked section", async () => {
-                expect(initialHTML(component.container)).toMatchSnapshot();
+                await waitFor(() =>
+                    expect(initialHTML(component.container)).toMatchSnapshot(),
+                );
             });
 
             describe("when another section is opened", () => {
                 beforeEach(async () => {
                     await user.click(component.getByText("Item 1"));
+                    await user.hover(component.getByText("Item 1"));
                 });
 
                 it("should close an open section when clicked again", async () => {
-                    expect(initialHTML(component.container)).toMatchSnapshot(
-                        "Should have no changes from intial",
+                    await waitFor(() =>
+                        expect(
+                            initialHTML(component.container),
+                        ).toMatchSnapshot("Should have no changes from intial"),
                     );
                 });
             });
@@ -72,7 +83,9 @@ describe("accordion", () => {
             });
 
             it("should open as normal", async () => {
-                expect(initialHTML(component.container)).toMatchSnapshot();
+                await waitFor(() =>
+                    expect(initialHTML(component.container)).toMatchSnapshot(),
+                );
             });
 
             describe("when another section is opened", () => {
@@ -83,7 +96,11 @@ describe("accordion", () => {
                 });
                 it("should collapse previous section when new section is opened", async () => {
                     // Verify first section closed and second section opened
-                    expect(initialHTML(component.container)).toMatchSnapshot();
+                    await waitFor(() =>
+                        expect(
+                            initialHTML(component.container),
+                        ).toMatchSnapshot(),
+                    );
                 });
             });
         });

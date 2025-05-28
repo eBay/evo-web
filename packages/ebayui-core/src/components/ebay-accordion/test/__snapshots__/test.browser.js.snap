@@ -324,7 +324,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > should open the clicked section 1`] = `
-"@@ -20,10 +20,13 @@
+"@@ -20,12 +20,16 @@
        transition-delay: 0.1s;
        transition-duration: 0.1s
      ">
@@ -341,8 +341,11 @@ exports[`accordion > given the accordion in the default state > when first secti
 +       >
          <summary style="
            align-items: center;
++           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
-@@ -61,6 +64,7 @@
+           color: var(
+                   --details-summary-foreground-color,
+@@ -61,6 +65,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -350,7 +353,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -97,9 +101,8 @@
+@@ -97,9 +102,8 @@
            margin-bottom: 6px;
            margin-left: 16px;
            margin-right: 16px;
@@ -364,10 +367,20 @@ exports[`accordion > given the accordion in the default state > when first secti
 "
 `;
 
-exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from intial 1`] = `"(no difference)"`;
+exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from intial 1`] = `
+"@@ -26,6 +26,7 @@
+       ">
+         <summary style="
+           align-items: center;
++           background-color: var(--color-state-secondary-hover);
+           box-sizing: border-box;
+           color: var(
+                   --details-summary-foreground-color,
+"
+`;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > should open as normal 1`] = `
-"@@ -20,10 +20,13 @@
+"@@ -20,12 +20,16 @@
        transition-delay: 0.1s;
        transition-duration: 0.1s
      ">
@@ -384,8 +397,11 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       >
          <summary style="
            align-items: center;
++           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
-@@ -61,6 +64,7 @@
+           color: var(
+                   --details-summary-foreground-color,
+@@ -61,6 +65,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -393,7 +409,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -97,9 +101,8 @@
+@@ -97,9 +102,8 @@
            margin-bottom: 6px;
            margin-left: 16px;
            margin-right: 16px;
@@ -408,7 +424,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -20,13 +20,10 @@
+"@@ -20,16 +20,12 @@
        transition-delay: 0.1s;
        transition-duration: 0.1s
      ">
@@ -425,8 +441,11 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       ">
          <summary style="
            align-items: center;
+-           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
-@@ -64,7 +61,6 @@
+           color: var(
+                   --details-summary-foreground-color,
+@@ -65,7 +61,6 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -434,7 +453,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -101,8 +97,9 @@
+@@ -102,8 +97,9 @@
            margin-bottom: 6px;
            margin-left: 16px;
            margin-right: 16px;
@@ -445,7 +464,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
            transition-behavior: ;
            transition-delay: 0.1s;
            transition-duration: 0.1s;
-@@ -125,10 +122,13 @@
+@@ -126,12 +122,16 @@
        transition-delay: 0.1s;
        transition-duration: 0.1s
      ">
@@ -462,8 +481,11 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       >
          <summary style="
            align-items: center;
++           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
-@@ -166,6 +166,7 @@
+           color: var(
+                   --details-summary-foreground-color,
+@@ -167,6 +167,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -471,7 +493,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -202,9 +203,8 @@
+@@ -203,9 +204,8 @@
            margin-bottom: 6px;
            margin-left: 16px;
            margin-right: 16px;
