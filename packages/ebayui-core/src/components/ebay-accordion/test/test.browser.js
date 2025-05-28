@@ -7,7 +7,8 @@ import {
     it,
     expect,
 } from "vitest";
-import { render, fireEvent, cleanup } from "@marko/testing-library";
+import { render, cleanup } from "@marko/testing-library";
+import userEvent from "@testing-library/user-event";
 import { fastAnimations } from "../../../common/test-utils/browser";
 import { diffHTML, visualHTML } from "../../../common/test-utils/snapshots";
 import { composeStories } from "@storybook/marko";
@@ -22,6 +23,7 @@ let component;
 afterEach(cleanup);
 
 describe("accordion", () => {
+    const user = userEvent.setup();
     describe("given the accordion in the default state", () => {
         beforeEach(async () => {
             component = await render(Default);
@@ -37,7 +39,7 @@ describe("accordion", () => {
             let initialHTML;
             beforeEach(async () => {
                 initialHTML = diffHTML(component.container);
-                await fireEvent.click(component.getByText("Item 1"));
+                await user.click(component.getByText("Item 1"));
             });
 
             it("should open the clicked section", async () => {
@@ -46,7 +48,7 @@ describe("accordion", () => {
 
             describe("when another section is opened", () => {
                 beforeEach(async () => {
-                    await fireEvent.click(component.getByText("Item 1"));
+                    await user.click(component.getByText("Item 1"));
                 });
 
                 it("should close an open section when clicked again", async () => {
@@ -66,12 +68,7 @@ describe("accordion", () => {
         });
         describe("when first section toggled", () => {
             beforeEach(async () => {
-                await fireEvent.click(component.getByText("Item 1"));
-                // Click does not trigger toggle event, need to manually fire it
-                await fireEvent(
-                    component.getByText("Item 1"),
-                    new Event("toggle"),
-                );
+                await user.click(component.getByText("Item 1"));
             });
 
             it("should open as normal", async () => {
@@ -82,12 +79,7 @@ describe("accordion", () => {
                 beforeEach(async () => {
                     initialHTML = diffHTML(component.container);
                     // Open second section
-                    await fireEvent.click(component.getByText("Item 2"));
-                    // Click does not trigger toggle event, need to manually fire it
-                    await fireEvent(
-                        component.getByText("Item 2"),
-                        new Event("toggle"),
-                    );
+                    await user.click(component.getByText("Item 2"));
                 });
                 it("should collapse previous section when new section is opened", async () => {
                     // Verify first section closed and second section opened
