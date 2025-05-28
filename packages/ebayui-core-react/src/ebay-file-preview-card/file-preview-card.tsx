@@ -1,4 +1,5 @@
 import React, { FC, useMemo, ComponentProps, ElementType } from 'react'
+import cx from 'classnames'
 import { EbayEventHandler } from '../common/event-utils/types'
 import { findComponent } from '../common/component-utils'
 import FilePreviewAction from './file-preview-action'
@@ -50,6 +51,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     onMenuAction,
     onSeeMore,
     onAction,
+    className,
     children,
     ...rest
 }) => {
@@ -75,7 +77,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     }, [rawFile])
 
     return (
-        <CardEl className="file-preview-card" {...rest}>
+        <CardEl className={cx('file-preview-card', className)} {...rest}>
             <div className="file-preview-card__body">
                 {href ? (
                     <a href={href}>

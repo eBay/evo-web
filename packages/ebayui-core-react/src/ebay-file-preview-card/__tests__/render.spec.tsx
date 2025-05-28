@@ -8,6 +8,7 @@ describe('<EbayFilePreviewCard>', () => {
             <EbayFilePreviewCard
                 status="uploading"
                 a11yCancelUploadText="Cancel upload"
+                className="test-class"
             />
         )
         expect(asFragment()).toMatchSnapshot()

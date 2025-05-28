@@ -40,7 +40,7 @@ describe('<EbayFilePreviewCardGroup> render', () => {
             deleteText: 'Delete label',
         }))
         const { asFragment } = render(
-            <EbayFilePreviewCardGroup>
+            <EbayFilePreviewCardGroup className="test-class">
                 {cards.map((cardFile, index) => (
                     <EbayFilePreviewCard key={index} {...cardFile} />
                 ))}

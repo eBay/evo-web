@@ -101,7 +101,7 @@ exports[`<EbayFilePreviewCardGroup> render renders as div 1`] = `
 exports[`<EbayFilePreviewCardGroup> render renders with less than 15 cards 1`] = `
 <DocumentFragment>
   <div
-    class="file-preview-card-group"
+    class="file-preview-card-group test-class"
   >
     <ul>
       <li

@@ -308,7 +308,7 @@ exports[`<EbayFilePreviewCard> renders with see more button 1`] = `
 exports[`<EbayFilePreviewCard> renders with status uploading 1`] = `
 <DocumentFragment>
   <div
-    class="file-preview-card"
+    class="file-preview-card test-class"
   >
     <div
       class="file-preview-card__body"

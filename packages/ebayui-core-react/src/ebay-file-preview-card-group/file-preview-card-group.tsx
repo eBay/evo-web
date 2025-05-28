@@ -1,10 +1,14 @@
 import React, { useState, FC, ComponentProps } from 'react'
+import cx from 'classnames'
 import { filterByType } from '../common/component-utils'
 import {
     EbayFilePreviewCard,
     EbayFilePreviewCardProps
 } from '../ebay-file-preview-card'
-import { FilePreviewCardActionHandler, FilePreviewCardMenuActionHandler } from './types'
+import {
+    FilePreviewCardActionHandler,
+    FilePreviewCardMenuActionHandler
+} from './types'
 
 export type EbayFilePreviewCardGroupProps = ComponentProps<'div'> & {
     a11ySeeMoreText?: EbayFilePreviewCardProps['a11ySeeMoreText']
@@ -22,6 +26,7 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     onCancel,
     onAction,
     onMenuAction,
+    className,
     children,
     ...rest
 }) => {
@@ -39,7 +44,7 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     )
 
     return (
-        <div className="file-preview-card-group" {...rest}>
+        <div className={cx('file-preview-card-group', className)} {...rest}>
             <ul>
                 {fileCardsToShow.map((previewCard, i) =>
                     React.cloneElement(previewCard, {
@@ -48,7 +53,8 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
                         onCancel: (e) => onCancel && onCancel(e, { index: i }),
                         onAction: (e) => onAction && onAction(e, { index: i }),
                         onMenuAction: (e, data) =>
-                            onMenuAction && onMenuAction(e, {
+                            onMenuAction &&
+                            onMenuAction(e, {
                                 index: i,
                                 menuActionEvent: data
                             })
