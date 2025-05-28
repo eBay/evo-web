@@ -17,7 +17,7 @@ describe('<EbayFilePreviewCardGroup> render', () => {
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                 },
                 a11yCancelUploadText: 'Cancel upload',
-                deleteText: 'delete text'
+                deleteText: 'Delete label',
             })
         )
         const { asFragment } = render(
@@ -37,10 +37,10 @@ describe('<EbayFilePreviewCardGroup> render', () => {
                 src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
             },
             a11yCancelUploadText: 'Cancel upload',
-            deleteText: 'delete text'
+            deleteText: 'Delete label',
         }))
         const { asFragment } = render(
-            <EbayFilePreviewCardGroup>
+            <EbayFilePreviewCardGroup className="test-class">
                 {cards.map((cardFile, index) => (
                     <EbayFilePreviewCard key={index} {...cardFile} />
                 ))}
@@ -59,7 +59,7 @@ describe('<EbayFilePreviewCardGroup> render', () => {
                 },
                 a11yCancelUploadText: 'Cancel upload',
                 as: 'div',
-                deleteText: 'delete text'
+                deleteText: 'Delete label',
             })
         )
         const { asFragment } = render(

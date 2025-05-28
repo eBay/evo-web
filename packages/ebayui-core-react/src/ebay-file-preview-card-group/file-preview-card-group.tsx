@@ -1,15 +1,20 @@
 import React, { useState, FC, ComponentProps } from 'react'
+import cx from 'classnames'
 import { filterByType } from '../common/component-utils'
 import {
     EbayFilePreviewCard,
     EbayFilePreviewCardProps
 } from '../ebay-file-preview-card'
-import { FilePreviewCardActionHandler, FilePreviewCardMenuActionHandler } from './types'
+import {
+    FilePreviewCardActionHandler,
+    FilePreviewCardMenuActionHandler
+} from './types'
 
 export type EbayFilePreviewCardGroupProps = ComponentProps<'div'> & {
     a11ySeeMoreText?: EbayFilePreviewCardProps['a11ySeeMoreText']
     onDelete?: FilePreviewCardActionHandler
     onCancel?: FilePreviewCardActionHandler
+    onAction?: FilePreviewCardActionHandler
     onMenuAction?: FilePreviewCardMenuActionHandler
 }
 
@@ -19,7 +24,9 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     a11ySeeMoreText,
     onDelete,
     onCancel,
+    onAction,
     onMenuAction,
+    className,
     children,
     ...rest
 }) => {
@@ -37,15 +44,17 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     )
 
     return (
-        <div className="file-preview-card-group" {...rest}>
+        <div className={cx('file-preview-card-group', className)} {...rest}>
             <ul>
                 {fileCardsToShow.map((previewCard, i) =>
                     React.cloneElement(previewCard, {
                         as: previewCard.props.as || 'li', // default in preview card is 'div', here should be 'li'
                         onDelete: (e) => onDelete && onDelete(e, { index: i }),
                         onCancel: (e) => onCancel && onCancel(e, { index: i }),
+                        onAction: (e) => onAction && onAction(e, { index: i }),
                         onMenuAction: (e, data) =>
-                            onMenuAction && onMenuAction(e, {
+                            onMenuAction &&
+                            onMenuAction(e, {
                                 index: i,
                                 menuActionEvent: data
                             })

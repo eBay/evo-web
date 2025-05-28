@@ -107,7 +107,7 @@ exports[`<EbayFilePreviewCard> renders with action button 1`] = `
       />
       <button
         aria-label="action label"
-        class="file-preview-card__action icon-btn-class icon-btn"
+        class="file-preview-card__action icon-btn"
         type="button"
       >
         <svg
@@ -308,7 +308,7 @@ exports[`<EbayFilePreviewCard> renders with see more button 1`] = `
 exports[`<EbayFilePreviewCard> renders with status uploading 1`] = `
 <DocumentFragment>
   <div
-    class="file-preview-card"
+    class="file-preview-card test-class"
   >
     <div
       class="file-preview-card__body"

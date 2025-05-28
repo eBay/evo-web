@@ -1,7 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { EbayIconButton } from '../../ebay-icon-button'
-import { EbayFilePreviewCard } from '..'
+import { EbayFilePreviewCard, EbayFilePreviewCardAction } from '..'
 
 const meta: Meta<typeof EbayFilePreviewCard> = {
     title: 'media/ebay-file-preview-card',
@@ -108,17 +107,6 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
                     summary: ''
                 }
             }
-        },
-        // @ts-expect-error EbayIconButton is not an argType
-        EbayIconButton: {
-            description:
-                'The icon button to be used for the action button in the header. An aria-label is also required for accessibility. If not provided, the action button will not be rendered.',
-            table: {
-                category: 'Components',
-                defaultValue: {
-                    summary: ''
-                }
-            }
         }
     }
 }
@@ -147,15 +135,15 @@ export const Image: StoryFn<typeof EbayFilePreviewCard> = (args) => (
 
 export const WithAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
     <EbayFilePreviewCard
+        {...args}
         a11yCancelUploadText="Cancel upload"
         file={{
             name: 'file-name.jpg',
             type: 'image',
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
         }}
-        {...args}
     >
-        <EbayIconButton aria-label="action label" icon="heart16" />
+        <EbayFilePreviewCardAction icon="heart16" aria-label="like picture" />
     </EbayFilePreviewCard>
 )
 

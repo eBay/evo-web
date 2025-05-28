@@ -1,10 +1,12 @@
 import React, { FC, useMemo, ComponentProps, ElementType } from 'react'
+import cx from 'classnames'
 import { EbayEventHandler } from '../common/event-utils/types'
-import { findComponent } from '../utils'
-import { EbayIconButton } from '../ebay-icon-button'
-import EbayFilePreviewAction from './file-preview-action'
+import { findComponent } from '../common/component-utils'
+import FilePreviewAction from './file-preview-action'
 import EbayFilePreviewContent from './file-preview-content'
 import EbayFilePreviewLabel from './file-preview-label'
+import EbayFilePreviewCardAction from './ebay-file-preview-card-action'
+
 import {
     FilePreviewCardMenuAction,
     FilePreviewCardMenuActionHandler,
@@ -49,10 +51,11 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     onMenuAction,
     onSeeMore,
     onAction,
+    className,
     children,
     ...rest
 }) => {
-    const action = findComponent(children, EbayIconButton)
+    const action = findComponent(children, EbayFilePreviewCardAction)
     const previewFile = useMemo(() => {
         if (!rawFile) return undefined
         let file = rawFile as Exclude<typeof rawFile, File | undefined>
@@ -74,7 +77,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     }, [rawFile])
 
     return (
-        <CardEl className="file-preview-card" {...rest}>
+        <CardEl className={cx('file-preview-card', className)} {...rest}>
             <div className="file-preview-card__body">
                 {href ? (
                     <a href={href}>
@@ -105,7 +108,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
                         <span>+{seeMore}</span>
                     </button>
                 ) : (
-                    <EbayFilePreviewAction
+                    <FilePreviewAction
                         a11yCancelUploadText={a11yCancelUploadText}
                         status={status}
                         menuActions={menuActions}
@@ -114,9 +117,8 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
                         onCancel={onCancel}
                         onDelete={onDelete}
                         onAction={onAction}
-                    >
-                        {action}
-                    </EbayFilePreviewAction>
+                        action={action}
+                    />
                 )}
                 <EbayFilePreviewLabel file={previewFile} infoText={infoText} />
             </div>

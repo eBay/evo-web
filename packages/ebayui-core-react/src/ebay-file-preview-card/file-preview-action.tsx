@@ -1,20 +1,16 @@
-import React, {
-    FC,
-    ComponentProps,
-    isValidElement,
-    cloneElement,
-    ReactElement
-} from 'react'
+import React, { FC, ReactElement } from 'react'
 import cx from 'classnames'
 import { EbayEventHandler } from '../common/event-utils/types'
 import { EbayIconButton } from '../ebay-icon-button'
 import { EbayMenuButton, EbayMenuButtonItem } from '../ebay-menu-button'
+import { EbayFilePreviewCardActionProps } from './ebay-file-preview-card-action'
+
 import {
     FilePreviewCardMenuAction,
     FilePreviewCardMenuActionHandler
 } from './types'
 
-export type EbayFilePreviewActionProps = ComponentProps<'button'> & {
+export type FilePreviewActionProps = {
     menuActions?: FilePreviewCardMenuAction[]
     deleteText?: string
     status?: 'uploading'
@@ -23,9 +19,10 @@ export type EbayFilePreviewActionProps = ComponentProps<'button'> & {
     onCancel?: EbayEventHandler<HTMLElement>
     onDelete?: EbayEventHandler<HTMLElement>
     onAction?: EbayEventHandler<HTMLElement>
+    action: ReactElement<EbayFilePreviewCardActionProps>
 }
 
-const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
+const FilePreviewAction: FC<FilePreviewActionProps> = ({
     status,
     menuActions,
     onMenuAction,
@@ -34,7 +31,7 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
     onDelete,
     onAction,
     a11yCancelUploadText,
-    children
+    action
 }) => {
     const handleMenuSelect: FilePreviewCardMenuActionHandler = (
         e,
@@ -92,12 +89,17 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
         )
     }
 
-    if (isValidElement(children) && children?.props['aria-label']) {
-        const child = children as ReactElement<ComponentProps<'button'>>
-        return cloneElement(child, {
-            onClick: onAction,
-            className: cx('file-preview-card__action', child?.props?.className)
-        })
+    if (action?.props && action.props.icon && action.props['aria-label']) {
+        return (
+            <EbayIconButton
+                onClick={onAction}
+                className={cx(
+                    'file-preview-card__action',
+                    action.props.className
+                )}
+                {...action.props}
+            />
+        )
     }
 
     if (deleteText) {
@@ -114,4 +116,4 @@ const EbayFilePreviewAction: FC<EbayFilePreviewActionProps> = ({
     return <></>
 }
 
-export default EbayFilePreviewAction
+export default FilePreviewAction

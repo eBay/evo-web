@@ -49,9 +49,9 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
         type: 'image',
         src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
     }}
-    onActino={onAction}
+    onAction={onAction}
 >
-    <EbayIconButton aria-label="action label" icon="heart16" />
+    <EbayFilePreviewCardAction icon="heart16" aria-label="like item" />
 </EbayFilePreviewCard>
 ```
 
@@ -83,8 +83,8 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 | `onCancel`     | `EbayEventHandler`           | No       | Triggered when the cancel button is clicked.        | `event`                                                         |
 | `onAction`     | `EbayEventHandler`           | No       | Triggered when the action button is clicked.        | `event`                                                         |
 
-## Component
+## Components
 
-| Name             | Type             | Required | Description                                                                                                                                                                | Data |
-| ---------------- | ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| `EbayIconButton` | `EbayIconButton` | No       | The icon button to be used for the action button in the header. An aria-label is also required for accessibility. If not provided, the action button will not be rendered. |      |
+| Name                        | Type                  | Required | Description                                                                                                            | Data |
+| --------------------------- | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ---- |
+| `EbayFilePreviewCardAction` | `EbayIconButtonProps` | No       | Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render. |

@@ -2,8 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import { EbayIconButton } from '../../ebay-icon-button'
-import { EbayFilePreviewCard } from '../'
+import { EbayFilePreviewCard, EbayFilePreviewCardAction } from '../'
 
 describe('<EbayFilePreviewCard>', () => {
     it('should call onCancel', async () => {
@@ -152,7 +151,10 @@ describe('<EbayFilePreviewCard>', () => {
                 }}
                 onAction={onActionMock}
             >
-                <EbayIconButton aria-label="action-label" icon="heart16" />
+                <EbayFilePreviewCardAction
+                    icon="heart16"
+                    aria-label="action-label"
+                />
             </EbayFilePreviewCard>
         )
 
