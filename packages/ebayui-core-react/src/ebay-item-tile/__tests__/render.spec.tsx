@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { EbayIconButton } from '../../ebay-icon-button'
+import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
 import {
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
@@ -20,7 +20,10 @@ describe('<EbayItemTile>', () => {
                     src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                 }}
             >
-                <EbayIconButton aria-label="action-label" icon="heart16" />
+                <EbayFilePreviewCardAction
+                    aria-label="action-label"
+                    icon="heart16"
+                />
                 <EbayItemTileSectionSuperTitle>
                     Time Sensitive
                 </EbayItemTileSectionSuperTitle>

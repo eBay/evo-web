@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { EbayIconButton } from '../../ebay-icon-button'
+import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
 import {
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
@@ -44,53 +44,6 @@ const meta: Meta<typeof EbayItemTile> = {
                     summary: ''
                 }
             }
-        },
-        // @ts-expect-error EbayIconButton is not an argType
-        EbayIconButton: {
-            description:
-                'The icon button to be used for the action button in the header. An aria-label is also required for accessibility. If not provided, the action button will not be rendered.',
-            table: {
-                category: 'Components',
-                defaultValue: {
-                    summary: ''
-                }
-            }
-        },
-        EbayItemTileSectionSuperTitle: {
-            description: 'One component with super title',
-            table: {
-                category: 'Components',
-                defaultValue: {
-                    summary: ''
-                }
-            }
-        },
-        EbayItemTileSectionTitle: {
-            description: 'One component with card title',
-            table: {
-                category: 'Components',
-                defaultValue: {
-                    summary: ''
-                }
-            }
-        },
-        EbayItemTileSectionSubTitle: {
-            description: 'One component with card subtitle',
-            table: {
-                category: 'Components',
-                defaultValue: {
-                    summary: ''
-                }
-            }
-        },
-        EbayItemTileSectionDescription: {
-            description: 'Description components',
-            table: {
-                category: 'Components',
-                defaultValue: {
-                    summary: ''
-                }
-            }
         }
     }
 }
@@ -105,7 +58,7 @@ export const Default: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayIconButton aria-label="action label" icon="heart16" />
+        <EbayFilePreviewCardAction aria-label="action label" icon="heart16" />
         <EbayItemTileSectionSuperTitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSectionSuperTitle>

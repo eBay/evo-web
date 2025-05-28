@@ -80,6 +80,6 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 
 ## Component
 
-| Name             | Type             | Required | Description                                                                                                                                                                | Data |
-| ---------------- | ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| `EbayIconButton` | `EbayIconButton` | No       | The icon button to be used for the action button in the header. An aria-label is also required for accessibility. If not provided, the action button will not be rendered. |      |
+| Name                        | Type                  | Required | Description                                                                                                            | Data |
+| --------------------------- | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ---- |
+| `EbayFilePreviewCardAction` | `EbayIconButtonProps` | No       | Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render. |

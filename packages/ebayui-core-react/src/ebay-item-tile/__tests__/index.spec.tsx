@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import { EbayIconButton } from '../../ebay-icon-button'
+import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
 import {
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
@@ -12,7 +12,7 @@ import {
 } from '../'
 
 describe('<EbayItemTile>', () => {
-    it('should call onCancel', async () => {
+    it('should call onAction', async () => {
         const onActionClick = jest.fn()
         render(
             <EbayItemTile
@@ -23,7 +23,10 @@ describe('<EbayItemTile>', () => {
                 }}
                 onAction={onActionClick}
             >
-                <EbayIconButton aria-label="action-label" icon="heart16" />
+                <EbayFilePreviewCardAction
+                    aria-label="action-label"
+                    icon="heart16"
+                />
                 <EbayItemTileSectionSuperTitle>
                     Time Sensitive
                 </EbayItemTileSectionSuperTitle>
