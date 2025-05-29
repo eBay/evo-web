@@ -24,22 +24,12 @@ exports[`<EbayAccordion /> rendering renders autoCollapse story correctly 1`] = 
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -71,22 +61,12 @@ exports[`<EbayAccordion /> rendering renders autoCollapse story correctly 1`] = 
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -118,22 +98,12 @@ exports[`<EbayAccordion /> rendering renders autoCollapse story correctly 1`] = 
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -175,22 +145,12 @@ exports[`<EbayAccordion /> rendering renders default story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -222,22 +182,12 @@ exports[`<EbayAccordion /> rendering renders default story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -269,22 +219,12 @@ exports[`<EbayAccordion /> rendering renders default story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -326,22 +266,12 @@ exports[`<EbayAccordion /> rendering renders large size story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -373,22 +303,12 @@ exports[`<EbayAccordion /> rendering renders large size story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -420,22 +340,12 @@ exports[`<EbayAccordion /> rendering renders large size story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -478,22 +388,12 @@ exports[`<EbayAccordion /> rendering renders open story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -525,22 +425,12 @@ exports[`<EbayAccordion /> rendering renders open story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
@@ -572,22 +462,12 @@ exports[`<EbayAccordion /> rendering renders open story correctly 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="details__expand icon icon--16"
+              class="icon icon--16"
               focusable="false"
               xmlns="http://www.w3.org/2000/svg"
             >
               <use
-                xlink:href="#icon-add-16"
-              />
-            </svg>
-            <svg
-              aria-hidden="true"
-              class="details__collapse icon icon--16"
-              focusable="false"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <use
-                xlink:href="#icon-remove-16"
+                xlink:href="#icon-chevron-down-16"
               />
             </svg>
           </span>
