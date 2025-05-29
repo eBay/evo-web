@@ -12,7 +12,6 @@ export type EbayDetailsProps = Omit<ComponentProps<'details'>, 'onToggle'> & {
     className?: string
     size?: 'regular' | 'small'
     alignment?: 'regular' | 'center'
-    layout?: 'regular' | 'accordion'
     as?: ElementType
     onToggle?: EbayEventHandler<HTMLDetailsElement, ToggleProps>
 }
@@ -20,7 +19,6 @@ export type EbayDetailsProps = Omit<ComponentProps<'details'>, 'onToggle'> & {
 const EbayDetails: FC<EbayDetailsProps> = ({
     size,
     alignment,
-    layout,
     text,
     as: Component = 'div',
     className,
@@ -44,19 +42,10 @@ const EbayDetails: FC<EbayDetailsProps> = ({
             })}>
                 <span className="details__label">{text}</span>
                 <span className="details__icon" hidden>
-                    {layout === 'accordion' ? (
-                        <>
-                            <EbayIcon className="details__expand" name="add16" />
-                            <EbayIcon className="details__collapse" name="remove16" />
-                        </>
-                    ) : (
-                        <EbayIcon name="chevronDown16" />
-                    )}
+                    <EbayIcon name="chevronDown16" />
                 </span>
             </summary>
-            <Component className={classnames({
-                'details__content': layout === 'accordion'
-            })}>
+            <Component className="details__content">
                 {children}
             </Component>
         </details>

@@ -50,8 +50,7 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
                     open,
                     index: detailsIndex
                 })
-            },
-            layout: 'accordion'
+            }
         }))
 
     return (
