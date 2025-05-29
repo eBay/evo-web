@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.5.2
+
+### Patch Changes
+
+- [`5fce027`](https://github.com/eBay/evo-web/commit/5fce027aff01df5ccbcab47e938afb810158b469) Thanks [@agliga](https://github.com/agliga)! - fix(listbox-button): fluid on listbox container sets width to 100%
+
 ## 19.5.1
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ebay/ui-core-react
 
+## 8.6.0
+
+### Minor Changes
+
+- [#151](https://github.com/eBay/evo-web/pull/151) [`fdade5a`](https://github.com/eBay/evo-web/commit/fdade5a49e38e3cc975fb735e150388bdb58314d) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react:accordion): update with latest DS icons
+
+- [#140](https://github.com/eBay/evo-web/pull/140) [`5e68252`](https://github.com/eBay/evo-web/commit/5e68252f2f830100354891b2b7c04d3e73e95d21) Thanks [@bruno2kd](https://github.com/bruno2kd)! - feat: Add action to ebay-preview-card and ebay-preview-card-group
+
+### Patch Changes
+
+- [#147](https://github.com/eBay/evo-web/pull/147) [`67c5c1e`](https://github.com/eBay/evo-web/commit/67c5c1ed4a7ab54b36bf36bcc66abaa5142ff132) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(react:dialog): Fix close handler call when the clicked element is removed from the DOM
+
 ## 8.5.1
 
 ### Patch Changes
