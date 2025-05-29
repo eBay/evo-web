@@ -1,207 +1,186 @@
-import React from 'react'
-import { StoryObj } from '@storybook/react'
-import {
-    EbayEducationNotice,
-    EbayNoticeContent,
-    EbayEducationNoticeTitle,
-    EbayEducationNoticeFooter
-} from '../index'
+import React from "react";
+import { StoryObj } from "@storybook/react";
+import { EbayEducationNotice, EbayNoticeContent, EbayEducationNoticeTitle, EbayEducationNoticeFooter } from "../index";
 
 export default {
-    title: 'notices & tips/ebay-education-notice',
+    title: "notices & tips/ebay-education-notice",
     component: EbayEducationNotice,
     argTypes: {
         educationIcon: {
             control: {
-                type: 'text'
+                type: "text",
             },
             table: {
                 defaultValue: {
-                    summary: 'lightbulb24'
+                    summary: "lightbulb24",
                 },
-                type: { summary: 'Icon' }
+                type: { summary: "Icon" },
             },
-            description: 'EbayIcon that will show in the notice'
+            description: "EbayIcon that will show in the notice",
         },
         iconClass: {
             control: {
-                type: 'text'
+                type: "text",
             },
             table: {
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description: 'Add class name to icon'
+            description: "Add class name to icon",
         },
         a11yIconText: {
             control: {
-                type: 'text'
+                type: "text",
             },
             table: {
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description: 'Add description the notice icon for a11y users'
+            description: "Add description the notice icon for a11y users",
         },
         variant: {
-            options: ['none', 'prominent'],
+            options: ["none", "prominent"],
             control: {
-                type: 'select'
+                type: "select",
             },
             table: {
                 defaultValue: {
-                    summary: 'none'
+                    summary: "none",
                 },
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description:
-                'Either none or prominent. If prominent, the notice will be more prominent'
+            description: "Either none or prominent. If prominent, the notice will be more prominent",
         },
         iconVariant: {
-            options: ['none', 'prominent'],
+            options: ["none", "prominent"],
             control: {
-                type: 'select'
+                type: "select",
             },
             table: {
                 defaultValue: {
-                    summary: 'none'
+                    summary: "none",
                 },
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description:
-                'Either none or prominent. If prominent, the notice will be more prominent'
+            description: "Either none or prominent. If prominent, the notice will be more prominent",
         },
-        'aria-roledescription': {
+        "aria-roledescription": {
             control: {
-                type: 'text'
+                type: "text",
             },
             table: {
                 defaultValue: {
-                    summary: 'Notice'
+                    summary: "Notice",
                 },
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description:
-                'The roledescription to announce the component type for a11y users.'
+            description: "The roledescription to announce the component type for a11y users.",
         },
-        'aria-label': {
+        "aria-label": {
             control: {
-                type: 'text'
+                type: "text",
             },
             table: {
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description:
-                'The description of the notice itself for screen readers.'
+            description: "The description of the notice itself for screen readers.",
         },
         a11yDismissText: {
             control: {
-                type: 'text'
+                type: "text",
             },
             table: {
-                type: { summary: 'string' }
+                type: { summary: "string" },
             },
-            description:
-                'The a11y description for the dismiss button. It will also allow the notice to be dismissed.'
+            description: "The a11y description for the dismiss button. It will also allow the notice to be dismissed.",
         },
         dismissed: {
             control: {
-                type: 'boolean'
+                type: "boolean",
             },
-            type: 'boolean',
+            type: "boolean",
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: "boolean" },
                 defaultValue: {
-                    summary: 'false'
-                }
+                    summary: "false",
+                },
             },
-            description: 'Whether or not the notice is dismissed'
+            description: "Whether or not the notice is dismissed",
         },
         icon: {
-            name: 'EbayIcon',
-            description: 'The title content to be displayed.',
+            name: "EbayIcon",
+            description: "The title content to be displayed.",
             table: {
                 required: true,
-                category: '@attribute tags',
-                type: { summary: 'EbayIcon' },
+                category: "@attribute tags",
+                type: { summary: "EbayIcon" },
                 defaultValue: {
-                    summary: 'lightbulb24'
-                }
-            }
+                    summary: "lightbulb24",
+                },
+            },
         },
         title: {
-            name: 'EbayEducationNoticeTitle',
-            description: 'The title content to be displayed.',
+            name: "EbayEducationNoticeTitle",
+            description: "The title content to be displayed.",
             table: {
                 required: true,
-                category: '@attribute tags',
-                type: { summary: 'EbayEducationNoticeTitle' }
-            }
+                category: "@attribute tags",
+                type: { summary: "EbayEducationNoticeTitle" },
+            },
         },
         footer: {
-            name: 'EbayEducationNoticeFooter',
-            description:
-                'The footer content to be displayed. Contains a button or link.',
+            name: "EbayEducationNoticeFooter",
+            description: "The footer content to be displayed. Contains a button or link.",
             table: {
-                category: '@attribute tags',
-                type: { summary: 'EbayEducationNoticeFooter' }
-            }
-        }
+                category: "@attribute tags",
+                type: { summary: "EbayEducationNoticeFooter" },
+            },
+        },
     },
     decorators: [
         (Story) => (
-            <div style={{ padding: '3rem' }}>
+            <div style={{ padding: "3rem" }}>
                 <Story />
             </div>
-        )
-    ]
-}
+        ),
+    ],
+};
 
 export const Default: StoryObj<typeof EbayEducationNotice> = {
     render: (args) => {
         return (
             <EbayEducationNotice {...args}>
-                <EbayEducationNoticeTitle>
-                    Recommended title format
-                </EbayEducationNoticeTitle>
+                <EbayEducationNoticeTitle>Recommended title format</EbayEducationNoticeTitle>
                 <EbayNoticeContent>
                     <p>
-                        Follow the order below to optimize market valuation from
-                        Price Guide. Player + Set or Season + Manufacturer +
-                        Card number + Variant + Grader + Grade
+                        Follow the order below to optimize market valuation from Price Guide. Player + Set or Season +
+                        Manufacturer + Card number + Variant + Grader + Grade
                     </p>
                 </EbayNoticeContent>
-                <EbayEducationNoticeFooter>
-                    Education footer
-                </EbayEducationNoticeFooter>
+                <EbayEducationNoticeFooter>Education footer</EbayEducationNoticeFooter>
             </EbayEducationNotice>
-        )
-    }
-}
+        );
+    },
+};
 
 export const EducationNoticeOnlyTitle = {
     render: () => (
         <>
             <EbayEducationNotice educationIcon="car24">
-                <EbayEducationNoticeTitle>
-                    Only With Title
-                </EbayEducationNoticeTitle>
+                <EbayEducationNoticeTitle>Only With Title</EbayEducationNoticeTitle>
             </EbayEducationNotice>
         </>
     ),
 
-    name: 'Only Title'
-}
+    name: "Only Title",
+};
 
 export const DefaultEducationNotice = {
     render: () => (
         <>
             <EbayEducationNotice iconVariant="prominent">
-                <EbayEducationNoticeTitle>
-                    Education notice title
-                </EbayEducationNoticeTitle>
+                <EbayEducationNoticeTitle>Education notice title</EbayEducationNoticeTitle>
                 <EbayNoticeContent>
                     <p>
-                        Items you didn&apos;t win will now show in the{' '}
-                        <a href="http://www.ebay.com">Didn&apos;t win</a>{' '}
+                        Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
                         section of this page.
                     </p>
                 </EbayNoticeContent>
@@ -209,31 +188,25 @@ export const DefaultEducationNotice = {
         </>
     ),
 
-    name: 'No Footer'
-}
+    name: "No Footer",
+};
 
 export const DefaultEducationNoticeFooter = {
     render: () => {
         return (
             <>
-                <EbayEducationNotice
-                    educationIcon="creditCard24"
-                    a11yDismissText="dismiss text"
-                >
-                    <EbayEducationNoticeTitle>
-                        Education notice title
-                    </EbayEducationNoticeTitle>
+                <EbayEducationNotice educationIcon="creditCard24" a11yDismissText="dismiss text">
+                    <EbayEducationNoticeTitle>Education notice title</EbayEducationNoticeTitle>
                     <EbayNoticeContent>
                         <p>
-                            Items you didn&apos;t win will now show in the{' '}
-                            <a href="http://www.ebay.com">Didn&apos;t win</a>{' '}
-                            section of this page.
+                            Items you didn&apos;t win will now show in the{" "}
+                            <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
                         </p>
                     </EbayNoticeContent>
                 </EbayEducationNotice>
             </>
-        )
+        );
     },
 
-    name: 'With dismiss button'
-}
+    name: "With dismiss button",
+};

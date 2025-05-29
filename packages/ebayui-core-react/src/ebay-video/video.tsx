@@ -1,28 +1,28 @@
 // TODO enable media-has-caption back by introducing a EbayVideoTrack component
 /* eslint-disable @typescript-eslint/ban-ts-comment, jsx-a11y/media-has-caption */
-import React, { ComponentProps, FC, SyntheticEvent, MouseEvent, useEffect, useRef, useState } from 'react'
-import classNames from 'classnames'
+import React, { ComponentProps, FC, SyntheticEvent, MouseEvent, useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 // need that for broken definitions workaround
 // @ts-ignore
-import shaka from 'shaka-player/dist/shaka-player.ui'
+import shaka from "shaka-player/dist/shaka-player.ui";
 
-import { filterByType } from '../common/component-utils'
-import { EbayIcon } from '../ebay-icon'
-import { EbayProgressSpinner } from '../ebay-progress-spinner'
-import { Player, VideoAction, VideoPlayView } from './types'
-import EbayVideoSource from './source'
-import { defaultVideoConfig, ERROR_ANOTHER_LOAD, ERROR_NO_PLAYER } from './const'
-import { customControls } from './controls'
-import { EbayEventHandler } from '../common/event-utils/types'
+import { filterByType } from "../common/component-utils";
+import { EbayIcon } from "../ebay-icon";
+import { EbayProgressSpinner } from "../ebay-progress-spinner";
+import { Player, VideoAction, VideoPlayView } from "./types";
+import EbayVideoSource from "./source";
+import { defaultVideoConfig, ERROR_ANOTHER_LOAD, ERROR_NO_PLAYER } from "./const";
+import { customControls } from "./controls";
+import { EbayEventHandler } from "../common/event-utils/types";
 
 export type PlayEventProps = {
     player: Player;
-}
+};
 export type VolumeChangeProps = {
     volume: number;
     muted: boolean;
-}
-export type EbayVideoProps = Omit<ComponentProps<'video'>, 'onPlay' | 'onVolumeChange'> & {
+};
+export type EbayVideoProps = Omit<ComponentProps<"video">, "onPlay" | "onVolumeChange"> & {
     width?: number;
     height?: number;
     thumbnail?: string;
@@ -53,7 +53,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
     thumbnail,
     action,
     muted,
-    playView = 'inline',
+    playView = "inline",
     a11yLoadText,
     a11yPlayText,
     reportText,
@@ -61,178 +61,168 @@ const EbayVideo: FC<EbayVideoProps> = ({
     volume = 1,
     hideReportButton,
     errorText,
-    onVolumeChange = () => {
-    },
-    onLoadError = () => {
-    },
-    onPlay = () => {
-    },
-    onReport = () => {
-    },
+    onVolumeChange = () => {},
+    onLoadError = () => {},
+    onPlay = () => {},
+    onReport = () => {},
     children,
     ...rest
 }) => {
-    const [loaded, setLoaded] = useState<boolean>()
-    const [buffering, setBuffering] = useState<boolean>()
-    const [playing, setPlaying] = useState<boolean>()
-    const [failed, setFailed] = useState<boolean>()
+    const [loaded, setLoaded] = useState<boolean>();
+    const [buffering, setBuffering] = useState<boolean>();
+    const [playing, setPlaying] = useState<boolean>();
+    const [failed, setFailed] = useState<boolean>();
 
-    const containerRef = useRef<HTMLDivElement>(null)
-    const videoRef = useRef<HTMLVideoElement>(null)
-    const playerRef = useRef<Player>(null)
-    const uiRef = useRef(null)
+    const containerRef = useRef<HTMLDivElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const playerRef = useRef<Player>(null);
+    const uiRef = useRef(null);
 
-    const sources = filterByType(children, EbayVideoSource).map(({ props }) => props)
+    const sources = filterByType(children, EbayVideoSource).map(({ props }) => props);
 
     const handleError = (err: Error) => {
-        setLoaded(true)
-        setFailed(true)
-        onLoadError(err)
-    }
+        setLoaded(true);
+        setFailed(true);
+        onLoadError(err);
+    };
 
     const loadSource = (index = 0) => {
-        if (!sources.length || !playerRef.current) return
+        if (!sources.length || !playerRef.current) return;
 
-        setLoaded(false)
+        setLoaded(false);
         playerRef.current
             .load(sources[index]?.src)
             .then(() => {
-                setFailed(false)
+                setFailed(false);
             })
-            .catch(err => {
-                console.error(err)
+            .catch((err) => {
+                console.error(err);
                 switch (err.code) {
                     case ERROR_ANOTHER_LOAD:
-                        return
+                        return;
                     case ERROR_NO_PLAYER:
-                        setTimeout(() => loadSource(index), 0)
-                        break
+                        setTimeout(() => loadSource(index), 0);
+                        break;
                     default: {
-                        const nextIndex = sources.length > index + 1 && index + 1
+                        const nextIndex = sources.length > index + 1 && index + 1;
                         if (nextIndex) {
-                            setTimeout(() => loadSource(nextIndex), 0)
+                            setTimeout(() => loadSource(nextIndex), 0);
                         } else {
-                            handleError(err)
+                            handleError(err);
                         }
                     }
                 }
             })
             .finally(() => {
-                setLoaded(true)
-            })
-    }
+                setLoaded(true);
+            });
+    };
 
     useEffect(() => {
-        const video = videoRef.current
-        const container = containerRef.current
-        if (!video || !container) return
+        const video = videoRef.current;
+        const container = containerRef.current;
+        if (!video || !container) return;
 
-        video.volume = volume
+        video.volume = volume;
 
-        shaka.polyfill.installAll() // todo: check if we need that
+        shaka.polyfill.installAll(); // todo: check if we need that
 
-        playerRef.current = new shaka.Player(video)
-        if (!playerRef.current) return
+        playerRef.current = new shaka.Player(video);
+        if (!playerRef.current) return;
 
-        playerRef.current.addEventListener('error', () => handleError(new Error('Shake-Player error')))
-        playerRef.current.addEventListener('buffering', (e) => {
-            setBuffering((e as unknown as { buffering: boolean }).buffering)
-        })
+        playerRef.current.addEventListener("error", () => handleError(new Error("Shake-Player error")));
+        playerRef.current.addEventListener("buffering", (e) => {
+            setBuffering((e as unknown as { buffering: boolean }).buffering);
+        });
 
-        uiRef.current = new shaka.ui.Overlay(
-            playerRef.current,
-            container,
-            video,
-            reportText
-        )
+        uiRef.current = new shaka.ui.Overlay(playerRef.current, container, video, reportText);
         uiRef.current.configure({
             addBigPlayButton: true,
             controlPanelElements: [],
-            addSeekBar: false
-        })
+            addSeekBar: false,
+        });
 
         if (!hideReportButton) {
-            const { Report } = customControls(onReport)
-            shaka.ui.Controls.registerElement('report', new Report.Factory(reportText))
+            const { Report } = customControls(onReport);
+            shaka.ui.Controls.registerElement("report", new Report.Factory(reportText));
         }
 
-        loadSource()
-        hideSpinner(container)
+        loadSource();
+        hideSpinner(container);
 
         // return () => {
         //     playerRef.current.destroy()
         //     uiRef.current.destroy()
         // }
-    }, [])
+    }, []);
 
     useEffect(() => {
         switch (action) {
-            case 'play':
-                videoRef.current.play()
-                break
-            case 'pause':
-                videoRef.current.pause()
-                break
+            case "play":
+                videoRef.current.play();
+                break;
+            case "pause":
+                videoRef.current.pause();
+                break;
             default:
         }
-    }, [action])
+    }, [action]);
 
     const showControls = () => {
-        if (!uiRef.current) return
+        if (!uiRef.current) return;
 
-        const updatedControls = volumeSlider ? {
-            controlPanelElements: withVolumeControl(defaultVideoConfig.controlPanelElements)
-        } : {}
+        const updatedControls = volumeSlider
+            ? {
+                  controlPanelElements: withVolumeControl(defaultVideoConfig.controlPanelElements),
+              }
+            : {};
 
         uiRef.current.configure({
             ...defaultVideoConfig,
-            ...updatedControls
-        })
-        videoRef.current.controls = false
-    }
+            ...updatedControls,
+        });
+        videoRef.current.controls = false;
+    };
 
     const handlePlaying = (e: SyntheticEvent<HTMLVideoElement, Event>) => {
-        e.stopPropagation()
+        e.stopPropagation();
 
-        showControls()
+        showControls();
 
-        if (playView === 'fullscreen') {
-            videoRef.current.requestFullscreen()
+        if (playView === "fullscreen") {
+            videoRef.current.requestFullscreen();
         }
 
-        setPlaying(true)
-        onPlay(e, { player: playerRef.current })
-    }
+        setPlaying(true);
+        onPlay(e, { player: playerRef.current });
+    };
 
     const handleOnPlayClick = () => {
-        videoRef.current.play()
-    }
+        videoRef.current.play();
+    };
 
     const handleVolumeChange = (e: SyntheticEvent<HTMLVideoElement, Event>) => {
-        const eventTarget = e.currentTarget
+        const eventTarget = e.currentTarget;
         onVolumeChange(e, {
             volume: Math.round((eventTarget.volume + Number.EPSILON) * 100) / 100,
-            muted: eventTarget.muted
-        })
-    }
+            muted: eventTarget.muted,
+        });
+    };
 
     const handleOnPause = () => {
         // On IOS, the controls force showing up if the video exist fullscreen while playing.
         // This forces the controls to always hide
-        videoRef.current.controls = false
-    }
+        videoRef.current.controls = false;
+    };
 
     const style = {
         width: width ? `${width}px` : undefined,
-        height: height ? `${height}px` : undefined
-    }
+        height: height ? `${height}px` : undefined,
+    };
 
     return (
-        <div
-            style={style}
-            className={classNames('video-player', { 'video-player--poster': !playing })}
-        >
-            {!playing && loaded && !failed && !buffering &&
+        <div style={style} className={classNames("video-player", { "video-player--poster": !playing })}>
+            {!playing && loaded && !failed && !buffering && (
                 <div className="shaka-play-button-container">
                     <button
                         onClick={handleOnPlayClick}
@@ -243,11 +233,8 @@ const EbayVideo: FC<EbayVideoProps> = ({
                         <EbayIcon name="playFilled64Colored" />
                     </button>
                 </div>
-            }
-            <div
-                className="video-player__container"
-                ref={containerRef}
-            >
+            )}
+            <div className="video-player__container" ref={containerRef}>
                 <video
                     ref={videoRef}
                     style={style}
@@ -258,36 +245,38 @@ const EbayVideo: FC<EbayVideoProps> = ({
                     onVolumeChange={handleVolumeChange}
                     {...rest}
                 >
-                    {sources.map((source, i) => <source key={i} {...source} />)}
+                    {sources.map((source, i) => (
+                        <source key={i} {...source} />
+                    ))}
                 </video>
             </div>
-            <div className={classNames('video-player__overlay', { 'video-player__overlay--hidden': !failed })}>
+            <div className={classNames("video-player__overlay", { "video-player__overlay--hidden": !failed })}>
                 <EbayIcon name="attention64" />
-                <div className="video-player__overlay-text">
-                    {errorText}
-                </div>
+                <div className="video-player__overlay-text">{errorText}</div>
             </div>
-            <div className={classNames('video-player__overlay', {
-                'video-player__overlay--hidden': loaded && (failed || !buffering)
-            })}>
+            <div
+                className={classNames("video-player__overlay", {
+                    "video-player__overlay--hidden": loaded && (failed || !buffering),
+                })}
+            >
                 <EbayProgressSpinner size="large" aria-label={a11yLoadText} />
             </div>
         </div>
-    )
-}
+    );
+};
 
 function withVolumeControl(controls: string[]): string[] {
-    const insertAt = controls.length - 2 > 0 ? controls.length - 2 : controls.length
-    const controlsWithVolume = [...controls]
-    controlsWithVolume.splice(insertAt, 0, 'volume')
-    return controlsWithVolume
+    const insertAt = controls.length - 2 > 0 ? controls.length - 2 : controls.length;
+    const controlsWithVolume = [...controls];
+    controlsWithVolume.splice(insertAt, 0, "volume");
+    return controlsWithVolume;
 }
 
 function hideSpinner(container: HTMLDivElement) {
-    const shakaSpinner = container.querySelectorAll('.shaka-spinner')[0]
+    const shakaSpinner = container.querySelectorAll(".shaka-spinner")[0];
     if (shakaSpinner) {
-        shakaSpinner.setAttribute('hidden', '')
+        shakaSpinner.setAttribute("hidden", "");
     }
 }
 
-export default EbayVideo
+export default EbayVideo;

@@ -1,81 +1,82 @@
 {
-  "name": "@ebay/ui-core-react",
-  "version": "8.5.1",
-  "description": "Skin components build off React",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "directory": "dist"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./*/index.d.ts",
-      "default": "./*/index.js"
+    "name": "@ebay/ui-core-react",
+    "version": "8.5.1",
+    "description": "Skin components build off React",
+    "keywords": [
+        "React",
+        "Skin",
+        "EbayUI"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:eBay/evo-web"
+    },
+    "license": "ISC",
+    "author": "tmanyanov@ebay.com",
+    "exports": {
+        "./package.json": "./package.json",
+        "./*": {
+            "types": "./*/index.d.ts",
+            "default": "./*/index.js"
+        }
+    },
+    "scripts": {
+        "build": "npm run clean && npm run type:check && npm run test && vite build && npm run copy && npm run smoke-test",
+        "build:storybook": "storybook build",
+        "clean": "node scripts/clean",
+        "copy": "copyfiles package.json README.md dist; npm run copy:rest",
+        "copy:rest": "copyfiles -u 1 'src/**/*.md' dist",
+        "coverage": "npm run clean && npm run test -- --coverage --ci",
+        "deploy": "storybook build -o ./_site/$(git branch --show-current)",
+        "format": "eslint . --fix 'src/**/*.{ts,tsx}' && prettier . --write --log-level=warn",
+        "lint": "eslint . --ext .ts,.tsx && prettier . --check --log-level=warn",
+        "release": "npm run build",
+        "smoke-test": "npm run smoke-test:react-16 && npm run smoke-test:react-18 && npm run smoke-test:react-19",
+        "smoke-test:react-16": "cd ./smoke-tests/react-16 && npm install && npm run test",
+        "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm install && npm run test",
+        "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm install && npm run test",
+        "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
+        "test": "jest",
+        "type:check": "tsc --noEmit",
+        "update-icons": "node ./scripts/update-icons",
+        "version": "npm run update-icons && git add -A src"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.md": [
+            "prettier --write"
+        ]
+    },
+    "resolutions": {
+        "@storybook/addon-actions": "~7.5.3",
+        "string-width": "4.2.3"
+    },
+    "dependencies": {
+        "@floating-ui/react": "^0.27.8",
+        "classnames": "^2.5.1",
+        "makeup-active-descendant": "^0.7.8",
+        "makeup-expander": "^0.11.7",
+        "makeup-floating-label": "^0.4.7",
+        "makeup-keyboard-trap": "^0.5.5",
+        "makeup-prevent-scroll-keys": "^0.3.4",
+        "makeup-roving-tabindex": "^0.7.5",
+        "makeup-screenreader-trap": "^0.5.4",
+        "makeup-typeahead": "^0.3.3",
+        "react-remove-scroll": "^2.6.3"
+    },
+    "peerDependencies": {
+        "@ebay/skin": "^19.0.0",
+        "react": ">= 16.0.0",
+        "react-dom": ">= 16.0.0"
+    },
+    "optionalDependencies": {
+        "shaka-player": "^4.14.12"
+    },
+    "publishConfig": {
+        "directory": "dist",
+        "registry": "https://registry.npmjs.org"
     }
-  },
-  "scripts": {
-    "clean": "node scripts/clean",
-    "lint": "eslint . --ext ts,tsx",
-    "lint:ci": "eslint . --ext .ts,.tsx -f @microsoft/eslint-formatter-sarif -o eslint-results.sarif",
-    "coverage": "npm run clean && npm run test -- --coverage --ci",
-    "eslint-local": "eslint . --ext ts,tsx",
-    "eslint": "eslint . --ext .ts,.tsx -f checkstyle -o ./lint/checkstyle-result.xml",
-    "format": "eslint . --fix 'src/**/*.{ts,tsx}'",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
-    "deploy": "storybook build -o ./_site/$(git branch --show-current)",
-    "build:storybook": "storybook build",
-    "test": "jest",
-    "smoke-test": "npm run smoke-test:react-16 && npm run smoke-test:react-18 && npm run smoke-test:react-19",
-    "smoke-test:react-16": "cd ./smoke-tests/react-16 && npm install && npm run test",
-    "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm install && npm run test",
-    "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm install && npm run test",
-    "build": "npm run clean && npm run type:check && npm run test && vite build && npm run copy && npm run smoke-test",
-    "type:check": "tsc --noEmit",
-    "update-icons": "node ./scripts/update-icons",
-    "copy": "copyfiles package.json README.md dist; npm run copy:rest",
-    "copy:rest": "copyfiles -u 1 'src/**/*.md' dist",
-    "release": "npm run build",
-    "version": "npm run update-icons && git add -A src"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint --fix"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:eBay/evo-web"
-  },
-  "keywords": [
-    "React",
-    "Skin",
-    "EbayUI"
-  ],
-  "author": "tmanyanov@ebay.com",
-  "license": "ISC",
-  "peerDependencies": {
-    "@ebay/skin": "^19.0.0",
-    "react": ">= 16.0.0",
-    "react-dom": ">= 16.0.0"
-  },
-  "optionalDependencies": {
-    "shaka-player": "^4.14.12"
-  },
-  "dependencies": {
-    "@floating-ui/react": "^0.27.8",
-    "classnames": "^2.5.1",
-    "makeup-active-descendant": "^0.7.8",
-    "makeup-expander": "^0.11.7",
-    "makeup-floating-label": "^0.4.7",
-    "makeup-keyboard-trap": "^0.5.5",
-    "makeup-prevent-scroll-keys": "^0.3.4",
-    "makeup-roving-tabindex": "^0.7.5",
-    "makeup-screenreader-trap": "^0.5.4",
-    "makeup-typeahead": "^0.3.3",
-    "react-remove-scroll": "^2.6.3"
-  },
-  "resolutions": {
-    "@storybook/addon-actions": "~7.5.3",
-    "string-width": "4.2.3"
-  }
 }

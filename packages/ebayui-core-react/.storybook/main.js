@@ -1,10 +1,10 @@
-import { resolve } from 'path'
+import { resolve } from "path";
 
 export default {
-    stories: ['../src/**/__tests__/*.stories.tsx'],
+    stories: ["../src/**/__tests__/*.stories.tsx"],
     typescript: {
         check: false,
-        reactDocgen: 'react-docgen-typescript',
+        reactDocgen: "react-docgen-typescript",
         reactDocgenTypescriptOptions: {
             compilerOptions: {
                 allowSyntheticDefaultImports: false,
@@ -14,14 +14,14 @@ export default {
         },
     },
     addons: [
-        '@storybook/addon-essentials',
-        '@storybook/addon-a11y',
+        "@storybook/addon-essentials",
+        "@storybook/addon-a11y",
         {
-            name: '@storybook/addon-storysource',
+            name: "@storybook/addon-storysource",
             options: {
                 rule: {
                     test: [/\.stories\.tsx?$/],
-                    include: [resolve(__dirname, '../src')],
+                    include: [resolve(__dirname, "../src")],
                 },
                 loaderOptions: {
                     injectStoryParameters: false,
@@ -32,16 +32,16 @@ export default {
     ],
 
     framework: {
-        name: '@storybook/react-vite',
-        options: {}
+        name: "@storybook/react-vite",
+        options: {},
     },
 
     docs: {
-        autodocs: true
+        autodocs: true,
     },
 
     core: {
         disableTelemetry: true,
         disableWhatsNewNotifications: true,
-    }
-}
+    },
+};

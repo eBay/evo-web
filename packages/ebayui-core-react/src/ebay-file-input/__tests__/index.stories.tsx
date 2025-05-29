@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import { EbayFileInput, EbayFileInputHeader, EbayFileInputSubheader } from '../index';
-import { EbayFilePreviewCardGroup } from '../../ebay-file-preview-card-group'
-import { EbayFilePreviewCard } from '../../ebay-file-preview-card'
-import { FilePreviewCardActionHandler } from '../../ebay-file-preview-card-group/types';
-import { FileInputHandler } from '../types';
+import React, { useState } from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { EbayFileInput, EbayFileInputHeader, EbayFileInputSubheader } from "../index";
+import { EbayFilePreviewCardGroup } from "../../ebay-file-preview-card-group";
+import { EbayFilePreviewCard } from "../../ebay-file-preview-card";
+import { FilePreviewCardActionHandler } from "../../ebay-file-preview-card-group/types";
+import { FileInputHandler } from "../types";
 
 const meta: Meta<typeof EbayFileInput> = {
-    title: 'form input/ebay-file-input',
+    title: "form input/ebay-file-input",
     component: EbayFileInput,
     argTypes: {
         multiple: {
@@ -39,18 +39,15 @@ export const Default: StoryFn<typeof EbayFileInput> = (args) => (
 );
 
 export const WithPreviewCards: StoryFn<typeof EbayFileInput> = (args) => {
-    const [files, setFiles] = useState<File[]>([])
+    const [files, setFiles] = useState<File[]>([]);
 
     const handleInput = (_, data) => {
-        setFiles(files.concat(Array.from(data.files)))
-    }
+        setFiles(files.concat(Array.from(data.files)));
+    };
 
     const handleDelete: FilePreviewCardActionHandler = (_, data) => {
-        setFiles([
-            ...files.slice(0, data!.index),
-            ...files.slice(data!.index + 1)
-        ])
-    }
+        setFiles([...files.slice(0, data!.index), ...files.slice(data!.index + 1)]);
+    };
 
     return (
         <>
@@ -61,40 +58,33 @@ export const WithPreviewCards: StoryFn<typeof EbayFileInput> = (args) => {
 
             <EbayFilePreviewCardGroup onDelete={handleDelete} onCancel={handleDelete}>
                 {files.map((file, i) => (
-                    <EbayFilePreviewCard key={i} file={file} deleteText='Delete' a11yCancelUploadText='Cancel upload' />
+                    <EbayFilePreviewCard key={i} file={file} deleteText="Delete" a11yCancelUploadText="Cancel upload" />
                 ))}
             </EbayFilePreviewCardGroup>
         </>
-    )
+    );
 };
 
 export const WithMockUploads: StoryFn<typeof EbayFileInput> = (args) => {
-    const [files, setFiles] = useState<[File, string?][]>([])
+    const [files, setFiles] = useState<[File, string?][]>([]);
 
     const handleInput: FileInputHandler = (_, data) => {
-        const fileList = Array.from(data!.files)
-        setFiles(
-            files.concat(
-                fileList.map(file => [file, undefined])
-            )
-        )
+        const fileList = Array.from(data!.files);
+        setFiles(files.concat(fileList.map((file) => [file, undefined])));
 
-        fileList.forEach(async(file, index) => {
-            await new Promise((resolve) => setTimeout(resolve, Math.random() * 5000))
-            setFiles(prevFiles =>[
+        fileList.forEach(async (file, index) => {
+            await new Promise((resolve) => setTimeout(resolve, Math.random() * 5000));
+            setFiles((prevFiles) => [
                 ...prevFiles.slice(0, index),
                 [file, `https://fakeurl.com/${Math.random().toString(36).substring(7)}`],
-                ...prevFiles.slice(index + 1)
-            ])
-        })
-    }
+                ...prevFiles.slice(index + 1),
+            ]);
+        });
+    };
 
     const handleDelete: FilePreviewCardActionHandler = (_, data) => {
-        setFiles([
-            ...files.slice(0, data!.index),
-            ...files.slice(data!.index + 1)
-        ])
-    }
+        setFiles([...files.slice(0, data!.index), ...files.slice(data!.index + 1)]);
+    };
 
     return (
         <>
@@ -110,11 +100,12 @@ export const WithMockUploads: StoryFn<typeof EbayFileInput> = (args) => {
                     <EbayFilePreviewCard
                         key={i}
                         file={file}
-                        deleteText='Delete'
-                        status={!url ? 'uploading' : undefined}
-                        a11yCancelUploadText='Cancel upload' />
+                        deleteText="Delete"
+                        status={!url ? "uploading" : undefined}
+                        a11yCancelUploadText="Cancel upload"
+                    />
                 ))}
             </EbayFilePreviewCardGroup>
         </>
-    )
-}
+    );
+};

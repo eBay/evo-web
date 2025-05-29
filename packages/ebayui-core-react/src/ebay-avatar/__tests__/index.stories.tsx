@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { EbayAvatar, EbayAvatarImage } from "../index";
 
@@ -8,22 +8,13 @@ const meta: Meta<typeof EbayAvatar> = {
 
     argTypes: {
         color: {
-            options: [
-                "teal",
-                "light-teal",
-                "green",
-                "lime",
-                "yellow",
-                "orange",
-                "magenta",
-                "pink",
-            ],
+            options: ["teal", "light-teal", "green", "lime", "yellow", "orange", "magenta", "pink"],
             table: {
                 defaultValue: {
                     summary: "teal",
                 },
             },
-            control: { type: 'select'},
+            control: { type: "select" },
             description:
                 "The color to color the background. This can be only used in the non icon/image case. This is used simply as an override to the username hash",
         },
@@ -34,10 +25,9 @@ const meta: Meta<typeof EbayAvatar> = {
                     summary: "48",
                 },
             },
-            control: { type: 'select'},
+            control: { type: "select" },
 
-            description:
-                "The pixel size of the avatar. Can only be specific sizes",
+            description: "The pixel size of the avatar. Can only be specific sizes",
         },
         username: {
             description:
@@ -54,26 +44,34 @@ const meta: Meta<typeof EbayAvatar> = {
 export default meta;
 
 export const Default: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || 'Elizabeth'} />
-)
+    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"} />
+);
 
 export const WithImage: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || 'Elizabeth'}>
+    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"}>
         <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png" alt="my photo" />
     </EbayAvatar>
-)
+);
 
-export const SignedOut: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed out" />
-)
+export const SignedOut: StoryFn<typeof EbayAvatar> = (args) => <EbayAvatar {...args} aria-label="Signed out" />;
 
 export const WithCustomBody: StoryFn<typeof EbayAvatar> = (args) => (
-    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || 'Elizabeth'}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%', color: 'white', backgroundColor: 'black' }}>
+    <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"}>
+        <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "100%",
+                width: "100%",
+                color: "white",
+                backgroundColor: "black",
+            }}
+        >
             <span>EB</span>
         </div>
     </EbayAvatar>
-)
+);
 
 export const WithAutoPlacement: StoryFn<typeof EbayAvatar> = (args) => (
     <>
@@ -95,5 +93,4 @@ export const WithAutoPlacement: StoryFn<typeof EbayAvatar> = (args) => (
             </EbayAvatar>
         </div>
     </>
-)
-
+);

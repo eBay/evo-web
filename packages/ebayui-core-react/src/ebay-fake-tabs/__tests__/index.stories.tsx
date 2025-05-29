@@ -1,13 +1,13 @@
-import React from 'react'
-import { Meta } from '@storybook/react'
+import React from "react";
+import { Meta } from "@storybook/react";
 
-import { EbayFakeTabs, EbayFakeTab as Tab } from '../index'
+import { EbayFakeTabs, EbayFakeTab as Tab } from "../index";
 
 const meta: Meta<typeof EbayFakeTabs> = {
-    title: 'navigation & disclosure/ebay-fake-tabs'
-}
+    title: "navigation & disclosure/ebay-fake-tabs",
+};
 
-export default meta
+export default meta;
 
 export const DefaultTabs = () => (
     <>
@@ -19,7 +19,7 @@ export const DefaultTabs = () => (
             <p>Some US content...</p>
         </EbayFakeTabs>
     </>
-)
+);
 
 export const PreSelectedTab = {
     render: () => (
@@ -34,8 +34,8 @@ export const PreSelectedTab = {
         </>
     ),
 
-    name: 'Pre-selected Tab'
-}
+    name: "Pre-selected Tab",
+};
 
 export const TabMatchesCurrentUrlFalse = {
     render: () => (
@@ -50,5 +50,5 @@ export const TabMatchesCurrentUrlFalse = {
         </>
     ),
 
-    name: 'tabMatchesCurrentUrl: false'
-}
+    name: "tabMatchesCurrentUrl: false",
+};

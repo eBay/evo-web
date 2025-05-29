@@ -1,1 +1,1 @@
-export { default as EbayProgressSpinner } from './progress-spinner'
+export { default as EbayProgressSpinner } from "./progress-spinner";

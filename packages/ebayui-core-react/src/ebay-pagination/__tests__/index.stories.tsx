@@ -1,12 +1,12 @@
-import React, { ComponentProps, useState } from 'react'
-import { action } from '@storybook/addon-actions'
-import { EbayPagination, EbayPaginationItem as Item } from '../index'
-import { EbayButton } from '../../ebay-button'
-import { EbayLightboxDialog } from '../../ebay-lightbox-dialog'
+import React, { ComponentProps, useState } from "react";
+import { action } from "@storybook/addon-actions";
+import { EbayPagination, EbayPaginationItem as Item } from "../index";
+import { EbayButton } from "../../ebay-button";
+import { EbayLightboxDialog } from "../../ebay-lightbox-dialog";
 
 export default {
-    title: 'navigation & disclosure/ebay-pagination'
-}
+    title: "navigation & disclosure/ebay-pagination",
+};
 
 export const BasicLinks = {
     render: () => (
@@ -15,9 +15,9 @@ export const BasicLinks = {
                 a11yPreviousText="Previous page"
                 a11yNextText="Next page"
                 a11yCurrentText="Results Pagination - Page 1"
-                onPrevious={(e) => action('onPrevious')(e)}
-                onNext={(e) => action('onNext')(e)}
-                onSelect={(e, props) => action('onSelect')(e, props)}
+                onPrevious={(e) => action("onPrevious")(e)}
+                onNext={(e) => action("onNext")(e)}
+                onSelect={(e, props) => action("onSelect")(e, props)}
             >
                 <Item
                     type="previous"
@@ -35,16 +35,13 @@ export const BasicLinks = {
                 <Item href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone&_sacat=0&_pgn=7">7</Item>
                 <Item href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone&_sacat=0&_pgn=8">8</Item>
                 <Item href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone&_sacat=0&_pgn=9">9</Item>
-                <Item
-                    href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone&_sacat=0&_pgn=10"
-                    type="next"
-                />
+                <Item href="https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone&_sacat=0&_pgn=10" type="next" />
             </EbayPagination>
         </>
     ),
 
-    name: 'Basic links'
-}
+    name: "Basic links",
+};
 
 export const ArrowsDisabled = {
     render: () => (
@@ -59,15 +56,15 @@ export const ArrowsDisabled = {
         </>
     ),
 
-    name: 'Arrows disabled'
-}
+    name: "Arrows disabled",
+};
 
 export const Buttons = () => (
     <>
         <EbayPagination
-            onPrevious={(e) => action('onPrevious')(e)}
-            onNext={(e) => action('onNext')(e)}
-            onSelect={(e, props) => action('onSelect')(e, props)}
+            onPrevious={(e) => action("onPrevious")(e)}
+            onNext={(e) => action("onNext")(e)}
+            onSelect={(e, props) => action("onSelect")(e, props)}
         >
             <Item type="previous" />
             <Item>1</Item>
@@ -82,26 +79,26 @@ export const Buttons = () => (
             <Item type="next" />
         </EbayPagination>
     </>
-)
+);
 
 export const ButtonsInteractiveClickToChangeActivePage = {
     render: () => {
         const InteractivePaginationButtons = ({ numOfItems, firstPage = 1 }) => {
-            const [activeIndex, setActiveIndex] = useState(0)
+            const [activeIndex, setActiveIndex] = useState(0);
             const handlePrev = () => {
-                const newIndex = Math.max(activeIndex - 1, 0)
-                setActiveIndex(newIndex)
-                action('Select previous')(newIndex + firstPage)
-            }
+                const newIndex = Math.max(activeIndex - 1, 0);
+                setActiveIndex(newIndex);
+                action("Select previous")(newIndex + firstPage);
+            };
             const handleNext = () => {
-                const newIndex = Math.min(activeIndex + 1, numOfItems)
-                setActiveIndex(newIndex)
-                action('Select next')(newIndex + firstPage)
-            }
-            const handleSelect: ComponentProps<typeof EbayPagination>['onSelect'] = (_, options) => {
-                setActiveIndex(options?.index)
-                action('Select page')(options?.index + firstPage)
-            }
+                const newIndex = Math.min(activeIndex + 1, numOfItems);
+                setActiveIndex(newIndex);
+                action("Select next")(newIndex + firstPage);
+            };
+            const handleSelect: ComponentProps<typeof EbayPagination>["onSelect"] = (_, options) => {
+                setActiveIndex(options?.index);
+                action("Select page")(options?.index + firstPage);
+            };
 
             return (
                 <EbayPagination
@@ -118,8 +115,8 @@ export const ButtonsInteractiveClickToChangeActivePage = {
                     ))}
                     <Item type="next" disabled={activeIndex >= numOfItems - 1} />
                 </EbayPagination>
-            )
-        }
+            );
+        };
 
         return (
             <>
@@ -130,19 +127,20 @@ export const ButtonsInteractiveClickToChangeActivePage = {
                     <InteractivePaginationButtons numOfItems={5} firstPage={6} />
                 </div>
             </>
-        )
+        );
     },
 
-    name: 'Buttons interactive (click to change active page)'
-}
+    name: "Buttons interactive (click to change active page)",
+};
 
 export const VariantShowLastInteractive = {
     render: () => {
         const InteractivePagination = ({ numOfItems }) => {
-            const [activeIndex, setActiveIndex] = useState(0)
-            const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0))
-            const handleNext = () => setActiveIndex(Math.min(activeIndex + 1, numOfItems))
-            const handleSelect: ComponentProps<typeof EbayPagination>['onSelect'] = (_, data) => setActiveIndex(parseInt(data?.value, 10) - 1)
+            const [activeIndex, setActiveIndex] = useState(0);
+            const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0));
+            const handleNext = () => setActiveIndex(Math.min(activeIndex + 1, numOfItems));
+            const handleSelect: ComponentProps<typeof EbayPagination>["onSelect"] = (_, data) =>
+                setActiveIndex(parseInt(data?.value, 10) - 1);
 
             return (
                 <EbayPagination
@@ -160,26 +158,27 @@ export const VariantShowLastInteractive = {
                     ))}
                     <Item type="next" disabled={activeIndex >= numOfItems - 1} />
                 </EbayPagination>
-            )
-        }
+            );
+        };
 
         return (
             <>
                 <InteractivePagination numOfItems={15} />
             </>
-        )
+        );
     },
 
-    name: 'Variant `showLast` (interactive)'
-}
+    name: "Variant `showLast` (interactive)",
+};
 
 export const VariantOverflowInteractive = {
     render: () => {
         const InteractivePagination = ({ numOfItems }) => {
-            const [activeIndex, setActiveIndex] = useState(0)
-            const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0))
-            const handleNext = () => setActiveIndex(Math.min(activeIndex + 1, numOfItems))
-            const handleSelect: ComponentProps<typeof EbayPagination>['onSelect'] = (_, data) => setActiveIndex(parseInt(data?.value, 10) - 1)
+            const [activeIndex, setActiveIndex] = useState(0);
+            const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0));
+            const handleNext = () => setActiveIndex(Math.min(activeIndex + 1, numOfItems));
+            const handleSelect: ComponentProps<typeof EbayPagination>["onSelect"] = (_, data) =>
+                setActiveIndex(parseInt(data?.value, 10) - 1);
 
             return (
                 <EbayPagination
@@ -197,8 +196,8 @@ export const VariantOverflowInteractive = {
                     ))}
                     <Item type="next" disabled={activeIndex >= numOfItems - 1} />
                 </EbayPagination>
-            )
-        }
+            );
+        };
 
         return (
             <>
@@ -215,20 +214,20 @@ export const VariantOverflowInteractive = {
                     <InteractivePagination numOfItems={15} />
                 </div>
             </>
-        )
+        );
     },
 
-    name: 'Variant `overflow` (interactive)'
-}
+    name: "Variant `overflow` (interactive)",
+};
 
 export const Fluid = () => (
     <>
         <h2>Default fluid</h2>
         <EbayPagination
             fluid
-            onPrevious={action('onPaginationPrevious')}
-            onNext={action('onPaginationNext')}
-            onSelect={action('onPageSelect')}
+            onPrevious={action("onPaginationPrevious")}
+            onNext={action("onPaginationNext")}
+            onSelect={action("onPageSelect")}
         >
             <Item type="previous" />
             <Item>1</Item>
@@ -251,9 +250,9 @@ export const Fluid = () => (
         <EbayPagination
             variant="show-last"
             fluid
-            onPrevious={action('onPaginationPrevious')}
-            onNext={action('onPaginationNext')}
-            onSelect={action('onPageSelect')}
+            onPrevious={action("onPaginationPrevious")}
+            onNext={action("onPaginationNext")}
+            onSelect={action("onPageSelect")}
         >
             <Item type="previous" />
             <Item>1</Item>
@@ -272,16 +271,16 @@ export const Fluid = () => (
             <Item type="next" />
         </EbayPagination>
     </>
-)
+);
 
 export const InsideADialog = {
     render: () => {
         const InteractivePagination = ({ numOfItems }) => {
-            const [activeIndex, setActiveIndex] = useState(0)
-            const [open, setOpen] = useState(false)
-            const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0))
-            const handleNext = () => setActiveIndex(Math.min(activeIndex + 1, numOfItems))
-            const handleSelect = (e, { index }) => setActiveIndex(index)
+            const [activeIndex, setActiveIndex] = useState(0);
+            const [open, setOpen] = useState(false);
+            const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0));
+            const handleNext = () => setActiveIndex(Math.min(activeIndex + 1, numOfItems));
+            const handleSelect = (e, { index }) => setActiveIndex(index);
 
             return (
                 <>
@@ -303,15 +302,15 @@ export const InsideADialog = {
                         </EbayPagination>
                     </EbayLightboxDialog>
                 </>
-            )
-        }
+            );
+        };
 
         return (
             <>
                 <InteractivePagination numOfItems={5} />
             </>
-        )
+        );
     },
 
-    name: 'Inside a dialog'
-}
+    name: "Inside a dialog",
+};

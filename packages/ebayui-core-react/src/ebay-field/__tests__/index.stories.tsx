@@ -1,12 +1,12 @@
-import React from 'react'
-import { EbayTextbox } from '../../ebay-textbox'
-import { EbaySwitch } from '../../ebay-switch'
-import { EbayCheckbox } from '../../ebay-checkbox'
-import { EbayField, EbayLabel, EbayFieldDescription } from '../index'
+import React from "react";
+import { EbayTextbox } from "../../ebay-textbox";
+import { EbaySwitch } from "../../ebay-switch";
+import { EbayCheckbox } from "../../ebay-checkbox";
+import { EbayField, EbayLabel, EbayFieldDescription } from "../index";
 
 export default {
-    title: 'form input/ebay-field'
-}
+    title: "form input/ebay-field",
+};
 
 export const DefaultInline = {
     render: () => (
@@ -26,8 +26,8 @@ export const DefaultInline = {
         </div>
     ),
 
-    name: 'Default - inline'
-}
+    name: "Default - inline",
+};
 
 export const Block = () => (
     <div>
@@ -44,7 +44,7 @@ export const Block = () => (
             <EbayTextbox placeholder="placeholder text" />
         </EbayField>
     </div>
-)
+);
 
 export const BlockAndInlineCombination = {
     render: () => (
@@ -72,8 +72,8 @@ export const BlockAndInlineCombination = {
         </div>
     ),
 
-    name: 'Block and inline combination'
-}
+    name: "Block and inline combination",
+};
 
 export const Required = {
     render: () => (
@@ -93,8 +93,8 @@ export const Required = {
         </div>
     ),
 
-    name: 'required'
-}
+    name: "required",
+};
 
 export const WithDescription = {
     render: () => (
@@ -128,8 +128,8 @@ export const WithDescription = {
         </div>
     ),
 
-    name: 'with description'
-}
+    name: "with description",
+};
 
 export const LabelsOnTheRight = {
     render: () => (
@@ -155,5 +155,5 @@ export const LabelsOnTheRight = {
         </>
     ),
 
-    name: 'Labels on the right'
-}
+    name: "Labels on the right",
+};

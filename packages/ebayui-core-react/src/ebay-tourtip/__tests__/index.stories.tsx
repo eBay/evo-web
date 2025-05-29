@@ -1,35 +1,35 @@
-import React from 'react'
-import { EbayButton } from '../../ebay-button'
+import React from "react";
+import { EbayButton } from "../../ebay-button";
 import {
     EbayTourtip,
     EbayTourtipHeading,
     EbayTourtipContent,
     EbayTourtipHost,
     PointerDirection,
-    EbayTourtipFooter
-} from '../index'
+    EbayTourtipFooter,
+} from "../index";
 
 const allPointers: PointerDirection[] = [
-    'top',
-    'top-left',
-    'top-right',
-    'right',
-    'right-bottom',
-    'right-top',
-    'bottom',
-    'bottom-left',
-    'bottom-right',
-    'left',
-    'left-bottom',
-    'left-top'
-]
+    "top",
+    "top-left",
+    "top-right",
+    "right",
+    "right-bottom",
+    "right-top",
+    "bottom",
+    "bottom-left",
+    "bottom-right",
+    "left",
+    "left-bottom",
+    "left-top",
+];
 
 export default {
-    title: 'notices & tips/ebay-tourtip'
-}
+    title: "notices & tips/ebay-tourtip",
+};
 
 export const DefaultTourtip = () => (
-    <div style={{ width: '100%', margin: 300 }}>
+    <div style={{ width: "100%", margin: 300 }}>
         <EbayTourtip a11yCloseText="close">
             <EbayTourtipContent>
                 <p>Content</p>
@@ -40,7 +40,7 @@ export const DefaultTourtip = () => (
             </EbayTourtipHost>
         </EbayTourtip>
     </div>
-)
+);
 
 export const PointersWithAllDirections = () => (
     <div>
@@ -48,8 +48,8 @@ export const PointersWithAllDirections = () => (
             <div
                 key={index}
                 style={{
-                    width: '100%',
-                    margin: 300
+                    width: "100%",
+                    margin: 300,
                 }}
             >
                 <EbayTourtip pointer={pointerType} a11yCloseText="close">
@@ -64,10 +64,10 @@ export const PointersWithAllDirections = () => (
             </div>
         ))}
     </div>
-)
+);
 
 export const PointerWithCustomLocation = () => (
-    <div style={{ width: '100%', margin: 300 }}>
+    <div style={{ width: "100%", margin: 300 }}>
         <EbayTourtip a11yCloseText="close" pointer="top-left" overlayStyle={{ top: 40, left: -16 }}>
             <EbayTourtipHost>
                 <a href="https://www.ebay.com">View options</a>
@@ -78,10 +78,10 @@ export const PointerWithCustomLocation = () => (
             </EbayTourtipContent>
         </EbayTourtip>
     </div>
-)
+);
 
 export const FooterTourtip = () => (
-    <div style={{ width: '100%', margin: 300 }}>
+    <div style={{ width: "100%", margin: 300 }}>
         <EbayTourtip a11yCloseText="close" pointer="bottom">
             <EbayTourtipHost>
                 <EbayButton>Info</EbayButton>
@@ -95,10 +95,10 @@ export const FooterTourtip = () => (
             </EbayTourtipFooter>
         </EbayTourtip>
     </div>
-)
+);
 
 export const FooterAndHeadingTourtip = () => (
-    <div style={{ width: '100%', margin: 300 }}>
+    <div style={{ width: "100%", margin: 300 }}>
         <EbayTourtip a11yCloseText="close" pointer="bottom">
             <EbayTourtipHost>
                 <EbayButton>Info</EbayButton>
@@ -113,4 +113,4 @@ export const FooterAndHeadingTourtip = () => (
             </EbayTourtipFooter>
         </EbayTourtip>
     </div>
-)
+);

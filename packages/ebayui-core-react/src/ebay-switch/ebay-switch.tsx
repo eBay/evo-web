@@ -1,12 +1,12 @@
-import React, { useState, useEffect, FC, ChangeEvent, ComponentProps } from 'react'
-import classNames from 'classnames'
-import { EbayChangeEventHandler } from '../common/event-utils/types'
+import React, { useState, useEffect, FC, ChangeEvent, ComponentProps } from "react";
+import classNames from "classnames";
+import { EbayChangeEventHandler } from "../common/event-utils/types";
 
-type Props = Omit<ComponentProps<'input'>, 'onChange'> & {
-    onChange?: EbayChangeEventHandler<HTMLInputElement, { value: string | number, checked: boolean }>;
-}
+type Props = Omit<ComponentProps<"input">, "onChange"> & {
+    onChange?: EbayChangeEventHandler<HTMLInputElement, { value: string | number; checked: boolean }>;
+};
 
-const isControlled = checked => typeof checked !== 'undefined'
+const isControlled = (checked) => typeof checked !== "undefined";
 
 const EbaySwitch: FC<Props> = ({
     id,
@@ -18,27 +18,27 @@ const EbaySwitch: FC<Props> = ({
     onChange = () => {},
     ...rest
 }) => {
-    const [isChecked, setChecked] = useState(defaultChecked)
+    const [isChecked, setChecked] = useState(defaultChecked);
 
     useEffect(() => {
-        setChecked(!!checked)
-    }, [checked])
+        setChecked(!!checked);
+    }, [checked]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { value: inputValue = '', checked: inputChecked = false } = e.target || {}
+        const { value: inputValue = "", checked: inputChecked = false } = e.target || {};
 
         onChange(e, {
             value: inputValue,
-            checked: inputChecked
-        })
-        setChecked(inputChecked)
-    }
+            checked: inputChecked,
+        });
+        setChecked(inputChecked);
+    };
 
     return (
         <span className="switch">
             <input
                 {...rest}
-                className={classNames('switch__control', className)}
+                className={classNames("switch__control", className)}
                 id={id}
                 role="switch"
                 type="checkbox"
@@ -50,7 +50,7 @@ const EbaySwitch: FC<Props> = ({
             />
             <span className="switch__button" />
         </span>
-    )
-}
+    );
+};
 
-export default EbaySwitch
+export default EbaySwitch;

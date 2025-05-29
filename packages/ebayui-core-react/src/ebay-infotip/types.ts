@@ -1,1 +1,1 @@
-export type Variant = 'default' | 'modal'
+export type Variant = "default" | "modal";

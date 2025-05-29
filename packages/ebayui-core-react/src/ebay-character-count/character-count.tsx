@@ -1,11 +1,11 @@
-import React, { FC, useState, useEffect, ComponentProps } from 'react';
+import React, { FC, useState, useEffect, ComponentProps } from "react";
 
 export type CharacterCountEvent = {
     count: number;
-    inputAriaLive: 'polite' | 'off';
+    inputAriaLive: "polite" | "off";
 };
 
-export type EbayCharacterCountProps = ComponentProps<'span'> & {
+export type EbayCharacterCountProps = ComponentProps<"span"> & {
     max: number;
     clippedText?: string;
     value?: string | number;
@@ -13,10 +13,10 @@ export type EbayCharacterCountProps = ComponentProps<'span'> & {
 };
 
 const countFromValue = (value?: string | number) => {
-    if (typeof value === 'string') {
+    if (typeof value === "string") {
         return [...value].length;
     }
-    if (typeof value === 'number') {
+    if (typeof value === "number") {
         return value;
     }
     return 0;
@@ -39,7 +39,7 @@ const EbayCharacterCount: FC<EbayCharacterCountProps> = ({
             if (onChange) {
                 onChange({
                     count: newCount,
-                    inputAriaLive: newCount >= max ? 'polite' : 'off',
+                    inputAriaLive: newCount >= max ? "polite" : "off",
                 });
             }
         }, 500);
@@ -54,11 +54,7 @@ const EbayCharacterCount: FC<EbayCharacterCountProps> = ({
             ) : (
                 <>
                     {count}/{max}
-                    {clippedText && (
-                        <span className="clipped">
-                            {clippedText}
-                        </span>
-                    )}
+                    {clippedText && <span className="clipped">{clippedText}</span>}
                 </>
             )}
         </span>

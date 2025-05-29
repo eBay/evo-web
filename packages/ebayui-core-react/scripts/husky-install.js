@@ -1,1 +1,1 @@
-if (!process.env.CI) require('husky').install();
+if (!process.env.CI) require("husky").install();

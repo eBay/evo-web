@@ -1,28 +1,28 @@
-import React, { useState, FC, ComponentProps, ElementType } from 'react';
-import { EbayIcon } from '../ebay-icon'; // Correcting the import path for EbayIcon
-import { FileInputHandler } from './types';
-import { findComponent, excludeComponent } from '../common/component-utils/utils';
-import classNames from 'classnames';
-import { useRandomId } from '../utils';
+import React, { useState, FC, ComponentProps, ElementType } from "react";
+import { EbayIcon } from "../ebay-icon"; // Correcting the import path for EbayIcon
+import { FileInputHandler } from "./types";
+import { findComponent, excludeComponent } from "../common/component-utils/utils";
+import classNames from "classnames";
+import { useRandomId } from "../utils";
 
 type ChildrenProps = ComponentProps<ElementType> & {
-    as?: ElementType
-}
+    as?: ElementType;
+};
 
-export const EbayFileInputHeader: FC<ChildrenProps> = ({ className, as: Component = 'span', ...props }) => (
+export const EbayFileInputHeader: FC<ChildrenProps> = ({ className, as: Component = "span", ...props }) => (
     <Component className={classNames("file-input__content-header", className)} {...props} />
 );
 
-export const EbayFileInputSubheader: FC<ChildrenProps> = ({ className, as: Component = 'span', ...props }) => (
+export const EbayFileInputSubheader: FC<ChildrenProps> = ({ className, as: Component = "span", ...props }) => (
     <Component className={classNames("file-input__content-subheader", className)} {...props} />
 );
 
-export type EbayFileInputProps = Omit<ComponentProps<'input'>, 'onInput' | 'type'> & {
+export type EbayFileInputProps = Omit<ComponentProps<"input">, "onInput" | "type"> & {
     onInput?: FileInputHandler;
-}
+};
 
 const EbayFileInput: React.FC<EbayFileInputProps> = ({ children, onInput, className, ...rest }) => {
-    const inputId = useRandomId()
+    const inputId = useRandomId();
     const [dragging, setDragging] = useState(false);
 
     const handleFileChange: FileInputHandler = (event) => {
@@ -36,11 +36,12 @@ const EbayFileInput: React.FC<EbayFileInputProps> = ({ children, onInput, classN
 
     const header = findComponent(children, EbayFileInputHeader);
     const subheader = findComponent(children, EbayFileInputSubheader);
-    const otherChildren = excludeComponent(children, EbayFileInputHeader)
-        .filter(({ type }) => type !== EbayFileInputSubheader);
+    const otherChildren = excludeComponent(children, EbayFileInputHeader).filter(
+        ({ type }) => type !== EbayFileInputSubheader,
+    );
 
     return (
-        <div className={classNames(`file-input`, dragging && 'file-input___container--dragged-over', className)}>
+        <div className={classNames(`file-input`, dragging && "file-input___container--dragged-over", className)}>
             <div className="file-input__container">
                 <div className="file-input__upload-icon">
                     <EbayIcon name="upload24" />
@@ -50,9 +51,7 @@ const EbayFileInput: React.FC<EbayFileInputProps> = ({ children, onInput, classN
                     {subheader}
                     {otherChildren && (
                         <label htmlFor={rest.id || inputId}>
-                            <span className="file-input__content-cta">
-                                {otherChildren}
-                            </span>
+                            <span className="file-input__content-cta">{otherChildren}</span>
                         </label>
                     )}
                 </div>

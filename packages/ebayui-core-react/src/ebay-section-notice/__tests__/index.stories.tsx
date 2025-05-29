@@ -1,15 +1,10 @@
-import React from 'react'
-import { action } from '@storybook/addon-actions'
-import {
-    EbaySectionNotice,
-    EbayNoticeContent,
-    EbaySectionNoticeTitle,
-    EbaySectionNoticeFooter
-} from '../index'
+import React from "react";
+import { action } from "@storybook/addon-actions";
+import { EbaySectionNotice, EbayNoticeContent, EbaySectionNoticeTitle, EbaySectionNoticeFooter } from "../index";
 
 export default {
-    title: 'notices & tips/ebay-section-notice'
-}
+    title: "notices & tips/ebay-section-notice",
+};
 
 export const DefaultMessageWithNoAction = {
     render: () => (
@@ -17,16 +12,16 @@ export const DefaultMessageWithNoAction = {
             <EbaySectionNotice>
                 <EbayNoticeContent>
                     <p>
-                        Items you didn&apos;t win will now show in the{' '}
-                        <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                        Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                        section of this page.
                     </p>
                 </EbayNoticeContent>
             </EbaySectionNotice>
         </>
     ),
 
-    name: 'Default message (with no action)'
-}
+    name: "Default message (with no action)",
+};
 
 export const DefaultMessageWithAction = {
     render: () => (
@@ -34,12 +29,12 @@ export const DefaultMessageWithAction = {
             <EbaySectionNotice>
                 <EbayNoticeContent>
                     <p>
-                        Items you didn&apos;t win will now show in the{' '}
-                        <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                        Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                        section of this page.
                     </p>
                 </EbayNoticeContent>
                 <EbaySectionNoticeFooter>
-                    <button onClick={action('Action Button Clicked')} className="fake-link">
+                    <button onClick={action("Action Button Clicked")} className="fake-link">
                         Do something
                     </button>
                 </EbaySectionNoticeFooter>
@@ -47,8 +42,8 @@ export const DefaultMessageWithAction = {
         </>
     ),
 
-    name: 'Default message (with action)'
-}
+    name: "Default message (with action)",
+};
 
 export const ConfirmationMessage = {
     render: () => (
@@ -60,7 +55,7 @@ export const ConfirmationMessage = {
                     </EbaySectionNoticeTitle>
                 </EbayNoticeContent>
                 <EbaySectionNoticeFooter>
-                    <button onClick={action('Action Button Clicked')} className="fake-link">
+                    <button onClick={action("Action Button Clicked")} className="fake-link">
                         Take a look
                     </button>
                 </EbaySectionNoticeFooter>
@@ -68,17 +63,13 @@ export const ConfirmationMessage = {
         </>
     ),
 
-    name: 'Confirmation message'
-}
+    name: "Confirmation message",
+};
 
 export const InformationMessageDismissable = {
     render: () => (
         <>
-            <EbaySectionNotice
-                status="information"
-                a11yDismissText="Dismiss"
-                onDismiss={(e) => action('onDismiss')(e)}
-            >
+            <EbaySectionNotice status="information" a11yDismissText="Dismiss" onDismiss={(e) => action("onDismiss")(e)}>
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>
                         <strong>Good news!</strong> You get free shipping on your next pair of shoes!&nbsp;
@@ -92,8 +83,8 @@ export const InformationMessageDismissable = {
         </>
     ),
 
-    name: 'Information message (dismissable)'
-}
+    name: "Information message (dismissable)",
+};
 
 export const AttentionMessage = {
     render: () => (
@@ -103,13 +94,13 @@ export const AttentionMessage = {
                     <p>
                         <strong>Error.</strong> Please take another look at the following:
                         <br />
-                        <a href="http://www.ebay.com">Card number</a>,
-                        <a href="http://www.ebay.com">Expiration date</a> &amp;
+                        <a href="http://www.ebay.com">Card number</a>,<a href="http://www.ebay.com">Expiration date</a>{" "}
+                        &amp;
                         <a href="http://www.ebay.com">Security code</a>.
                     </p>
                 </EbayNoticeContent>
                 <EbaySectionNoticeFooter>
-                    <button onClick={action('Action Button Clicked')} className="fake-link">
+                    <button onClick={action("Action Button Clicked")} className="fake-link">
                         Show more
                     </button>
                 </EbaySectionNoticeFooter>
@@ -117,8 +108,8 @@ export const AttentionMessage = {
         </>
     ),
 
-    name: 'Attention message'
-}
+    name: "Attention message",
+};
 
 export const SectionWithTitle = {
     render: () => (
@@ -127,16 +118,16 @@ export const SectionWithTitle = {
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>Title</EbaySectionNoticeTitle>
                     <p>
-                        Items you didn&apos;t win will now show in the{' '}
-                        <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                        Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                        section of this page.
                     </p>
                 </EbayNoticeContent>
             </EbaySectionNotice>
         </>
     ),
 
-    name: 'Section with title'
-}
+    name: "Section with title",
+};
 
 export const SectionWithLink = {
     render: () => (
@@ -145,8 +136,8 @@ export const SectionWithLink = {
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>Title</EbaySectionNoticeTitle>
                     <p>
-                        Items you didn&apos;t win will now show in the{' '}
-                        <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                        Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                        section of this page.
                     </p>
                 </EbayNoticeContent>
                 <EbaySectionNoticeFooter>
@@ -156,44 +147,44 @@ export const SectionWithLink = {
         </>
     ),
 
-    name: 'Section with link'
-}
+    name: "Section with link",
+};
 
 export const EducationalSectionNotice = () => (
     <>
         <EbaySectionNotice status="education">
             <EbayNoticeContent>
                 <p>
-                    Items you didn&apos;t win will now show in the{' '}
-                    <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                    Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                    section of this page.
                 </p>
             </EbayNoticeContent>
         </EbaySectionNotice>
     </>
-)
+);
 
 export const EducationalSectionNoticeProminent = () => (
     <>
         <EbaySectionNotice status="education" prominent>
             <EbayNoticeContent>
                 <p>
-                    Items you didn&apos;t win will now show in the{' '}
-                    <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                    Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                    section of this page.
                 </p>
             </EbayNoticeContent>
         </EbaySectionNotice>
     </>
-)
+);
 
 export const EducationalSectionNoticeCustomIcon = () => (
     <>
         <EbaySectionNotice status="education" prominent educationIcon="lightningBolt24">
             <EbayNoticeContent>
                 <p>
-                    Items you didn&apos;t win will now show in the{' '}
-                    <a href="http://www.ebay.com">Didn&apos;t win</a> section of this page.
+                    Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
+                    section of this page.
                 </p>
             </EbayNoticeContent>
         </EbaySectionNotice>
     </>
-)
+);

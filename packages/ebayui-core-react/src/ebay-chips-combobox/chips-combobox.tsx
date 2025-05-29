@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import { ChipsComboboxChangeHandler } from './types'
-import classNames from 'classnames'
-import { EbayCombobox, EbayComboboxOption, EbayComboboxProps } from '../ebay-combobox'
-import { filterByType } from '../utils'
-import { EbayChip } from '../ebay-chip'
+import React, { useState } from "react";
+import { ChipsComboboxChangeHandler } from "./types";
+import classNames from "classnames";
+import { EbayCombobox, EbayComboboxOption, EbayComboboxProps } from "../ebay-combobox";
+import { filterByType } from "../utils";
+import { EbayChip } from "../ebay-chip";
 
-export type EbayChipsComboboxProps = Omit<EbayComboboxProps, 'onChange'> & {
-  error?: boolean
-  selected? : string[]
-  defaultSelected?: string[]
-  disabled?: boolean
-  a11yDeleteButtonText?: string
-  onChange?: ChipsComboboxChangeHandler
-}
+export type EbayChipsComboboxProps = Omit<EbayComboboxProps, "onChange"> & {
+    error?: boolean;
+    selected?: string[];
+    defaultSelected?: string[];
+    disabled?: boolean;
+    a11yDeleteButtonText?: string;
+    onChange?: ChipsComboboxChangeHandler;
+};
 
 const EbayChipsCombobox: React.FC<EbayChipsComboboxProps> = ({
     className,
@@ -21,60 +21,60 @@ const EbayChipsCombobox: React.FC<EbayChipsComboboxProps> = ({
     disabled,
     selected: controlledSelected,
     defaultSelected,
-    a11yDeleteButtonText = 'Remove',
+    a11yDeleteButtonText = "Remove",
     onChange,
     children,
     ...rest
 }) => {
-    const options = filterByType(children, EbayComboboxOption)
-    const [selectedOptions, setSelectedOptions] = useState<string[]>(defaultSelected || [])
-    const currentSelected = controlledSelected || selectedOptions
-    const [inputValue, setInputValue] = useState<string>('')
-    const containerRef = React.useRef<HTMLSpanElement>(null)
+    const options = filterByType(children, EbayComboboxOption);
+    const [selectedOptions, setSelectedOptions] = useState<string[]>(defaultSelected || []);
+    const currentSelected = controlledSelected || selectedOptions;
+    const [inputValue, setInputValue] = useState<string>("");
+    const containerRef = React.useRef<HTMLSpanElement>(null);
 
     const handleSelect = (event, value) => {
-        const newSelectedOptions = [...currentSelected, value]
-        setSelectedOptions(newSelectedOptions)
-        onChange?.(event, { selected: [...newSelectedOptions] })
-        setInputValue('')
-    }
+        const newSelectedOptions = [...currentSelected, value];
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(event, { selected: [...newSelectedOptions] });
+        setInputValue("");
+    };
 
     const handleDelete = (event, index) => {
-        const newSelectedOptions = currentSelected.filter((_, i) => i !== index)
-        setSelectedOptions(newSelectedOptions)
-        onChange?.(event, { selected: [...newSelectedOptions] })
-    }
+        const newSelectedOptions = currentSelected.filter((_, i) => i !== index);
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(event, { selected: [...newSelectedOptions] });
+    };
 
-    const handleKeydown = event => {
-        if (event.key === 'Enter') {
-            const value = event.target.value
-            event.preventDefault()
+    const handleKeydown = (event) => {
+        if (event.key === "Enter") {
+            const value = event.target.value;
+            event.preventDefault();
             if (value && !currentSelected.includes(value)) {
-                handleSelect(event, value)
+                handleSelect(event, value);
             }
         }
-    }
+    };
 
     const handleComboboxInputChange = (event, data) => {
-        setInputValue(data.currentInputValue)
-    }
+        setInputValue(data.currentInputValue);
+    };
 
     if (controlledSelected && defaultSelected) {
-        throw new Error('EbayChipsCombobox: You cannot use "selected" and "defaultSelected" at the same time.')
+        throw new Error('EbayChipsCombobox: You cannot use "selected" and "defaultSelected" at the same time.');
     }
 
     if (controlledSelected && !onChange) {
-        throw new Error('EbayChipsCombobox: You must provide an "onChange" prop when using the "selected" prop.')
+        throw new Error('EbayChipsCombobox: You must provide an "onChange" prop when using the "selected" prop.');
     }
 
     return (
         <span
             ref={containerRef}
-            className={classNames(className, 'chips-combobox', {
-                'chips-combobox--fluid': fluid,
-                'chips-combobox--error': error
+            className={classNames(className, "chips-combobox", {
+                "chips-combobox--fluid": fluid,
+                "chips-combobox--error": error,
             })}
-            aria-disabled={disabled ? 'true' : undefined}
+            aria-disabled={disabled ? "true" : undefined}
         >
             {currentSelected.length ? (
                 <ul className="chips-combobox__items">
@@ -106,7 +106,7 @@ const EbayChipsCombobox: React.FC<EbayChipsComboboxProps> = ({
                 {options.filter((option) => !currentSelected.includes(option.props.text))}
             </EbayCombobox>
         </span>
-    )
-}
+    );
+};
 
-export default EbayChipsCombobox
+export default EbayChipsCombobox;

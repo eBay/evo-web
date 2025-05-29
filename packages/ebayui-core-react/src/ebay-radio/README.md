@@ -1,9 +1,11 @@
 # EbayRadio
 
 ## Demo
+
 [Storybook](https://opensource.ebay.com/ebayui-core-react/main/?path=/story/form-input-ebay-radio--default)
 
 ## Install
+
 ```
 yarn add @ebay/ui-core-react
 ```
@@ -11,43 +13,49 @@ yarn add @ebay/ui-core-react
 ## Usage
 
 ### Import JS
+
 ```jsx harmony
-import { EbayRadio } from '@ebay/ui-core-react/ebay-radio'
+import { EbayRadio } from "@ebay/ui-core-react/ebay-radio";
 ```
 
 ### Import LESS from SKIN
+
 ```jsx harmony
-import "@ebay/skin/radio"
+import "@ebay/skin/radio";
 ```
 
 ### or SCSS/CSS
+
 ```jsx harmony
-import '@ebay/skin/radio.css'
+import "@ebay/skin/radio.css";
 ```
 
 ## EbayRadio with EbayLabel
+
 ```jsx harmony
-import { EbayLabel } from '@ebay/ui-core-react/ebay-field';
+import { EbayLabel } from "@ebay/ui-core-react/ebay-field";
 
 <EbayRadio value="1" id="radio-1">
     <Ebaylabel>Choice 1</Ebaylabel>
-</EbayRadio>
+</EbayRadio>;
 ```
 
 ## Icons
+
 This component uses SVG icons, so you need to add the `<EbaySvg/>` component at the end of your html.
 
 ## Attributes
 
-| Name             | Type    | Description |
-| ---------------- | ------- | ----------- |
-| `disabled`       | boolean | Disabled when true |
+| Name             | Type    | Description                                                                                             |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled`       | boolean | Disabled when true                                                                                      |
 | `value`          | string  | The value of radio button component. For the radio checked/unchecked state, please use `checked` props. |
-| `checked`        | boolean | Set the radio button state to checked/unchecked. Use this for **controlled component**. |
-| `defaultChecked` | boolean | Set the radio button initial state to checked/unchecked. Use this for **uncontrolled component**. |
-| `size`           | string  | No | No | Either `large` or `regular` (default). Sets the radio icon size. For mweb this should be set to `large`. (Note: The dimensions of the radio will not change, but only the icon) |
+| `checked`        | boolean | Set the radio button state to checked/unchecked. Use this for **controlled component**.                 |
+| `defaultChecked` | boolean | Set the radio button initial state to checked/unchecked. Use this for **uncontrolled component**.       |
+| `size`           | string  | No                                                                                                      | No  | Either `large` or `regular` (default). Sets the radio icon size. For mweb this should be set to `large`. (Note: The dimensions of the radio will not change, but only the icon) |
 
 ## Callbacks
+
 | Name        | Data                         | Description                                          |
 | ----------- | ---------------------------- | ---------------------------------------------------- |
 | `onChange`  | `(ChangeEvent, { value })`   | Callback fired when selected radio button is changed |

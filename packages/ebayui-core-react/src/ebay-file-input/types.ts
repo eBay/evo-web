@@ -1,4 +1,4 @@
-import { EbayChangeEventHandler } from '../common/event-utils/types';
+import { EbayChangeEventHandler } from "../common/event-utils/types";
 
 export interface FileInputEvent {
     files: FileList;

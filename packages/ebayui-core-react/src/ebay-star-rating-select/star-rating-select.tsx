@@ -1,29 +1,29 @@
-import React, { ComponentProps, FC, useEffect, useState } from 'react'
-import classNames from 'classnames'
-import { EbayIcon } from '../ebay-icon'
-import { range } from '../common/range'
-import { EbayChangeEventHandler, EbayFocusEventHandler, EbayKeyboardEventHandler } from '../common/event-utils/types'
-import { useRandomId } from '../common/random-id'
+import React, { ComponentProps, FC, useEffect, useState } from "react";
+import classNames from "classnames";
+import { EbayIcon } from "../ebay-icon";
+import { range } from "../common/range";
+import { EbayChangeEventHandler, EbayFocusEventHandler, EbayKeyboardEventHandler } from "../common/event-utils/types";
+import { useRandomId } from "../common/random-id";
 
-export type EventProps = { value: number }
-type Props = ComponentProps<'div'> & {
+export type EventProps = { value: number };
+type Props = ComponentProps<"div"> & {
     a11yText?: string;
     value?: string;
-    a11yStarText?: string[]
+    a11yStarText?: string[];
     disabled?: boolean;
     name?: string;
     onKeyDown?: EbayKeyboardEventHandler<HTMLInputElement, EventProps>;
     onChange?: EbayChangeEventHandler<HTMLInputElement, EventProps>;
     onFocus?: EbayFocusEventHandler<HTMLInputElement, EventProps>;
-}
-const stars = range(1, 5)
+};
+const stars = range(1, 5);
 const getValue = (val) => {
-    let value = parseInt(val, 0) || 0
+    let value = parseInt(val, 0) || 0;
     if (value > 5) {
-        value = 0
+        value = 0;
     }
-    return value
-}
+    return value;
+};
 const EbayStarRatingSelect: FC<Props> = ({
     value = 0,
     a11yText,
@@ -36,45 +36,44 @@ const EbayStarRatingSelect: FC<Props> = ({
     name,
     ...rest
 }) => {
-    const rId = useRandomId()
-    const inputName = name || `star-rating-${rId}`
-    const [checkedValue, setChecked] = useState(getValue(value))
+    const rId = useRandomId();
+    const inputName = name || `star-rating-${rId}`;
+    const [checkedValue, setChecked] = useState(getValue(value));
     useEffect(() => {
-        setChecked(getValue(value))
-    }, [value])
-    const handleKeyDown = (i:number) => (e) => {
+        setChecked(getValue(value));
+    }, [value]);
+    const handleKeyDown = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i))
-            onKeyDown(e, { value: i })
+            setChecked(getValue(i));
+            onKeyDown(e, { value: i });
         }
-    }
-    const handleClick = (i:number) => (e) => {
+    };
+    const handleClick = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i))
-            onChange(e, { value: i })
+            setChecked(getValue(i));
+            onChange(e, { value: i });
         }
-    }
-    const handleFocus = (i:number) => (e) => {
+    };
+    const handleFocus = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i))
-            onFocus(e, { value: i })
+            setChecked(getValue(i));
+            onFocus(e, { value: i });
         }
-    }
+    };
     return (
         <div
-            role={a11yText && 'radiogroup'}
+            role={a11yText && "radiogroup"}
             aria-label={a11yText}
-            className={classNames('star-rating-select', className)}
+            className={classNames("star-rating-select", className)}
             {...rest}
         >
             {stars.map((i) => (
                 <span className="star-rating-select__radio" key={i}>
                     <input
                         aria-label={a11yStarText?.[i - 1]}
-                        className={classNames(
-                            'star-rating-select__control',
-                            { 'star-rating-select__control--filled': i <= checkedValue })
-                        }
+                        className={classNames("star-rating-select__control", {
+                            "star-rating-select__control--filled": i <= checkedValue,
+                        })}
                         type="radio"
                         name={inputName}
                         value={i}
@@ -82,14 +81,15 @@ const EbayStarRatingSelect: FC<Props> = ({
                         defaultChecked={checkedValue === i}
                         onClick={handleClick(i)}
                         onFocus={handleFocus(i)}
-                        onKeyDown={handleKeyDown(i)} />
+                        onKeyDown={handleKeyDown(i)}
+                    />
                     <span className="star-rating-select__radio-icon">
                         <EbayIcon className="star-rating__icon" name="starDynamic" />
                     </span>
                 </span>
             ))}
         </div>
-    )
-}
+    );
+};
 
-export default EbayStarRatingSelect
+export default EbayStarRatingSelect;

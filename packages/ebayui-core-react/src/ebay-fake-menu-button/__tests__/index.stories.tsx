@@ -1,30 +1,30 @@
-import React from 'react'
-import { StoryObj, StoryFn, Meta } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { EbayIcon } from '../../ebay-icon'
+import React from "react";
+import { StoryObj, StoryFn, Meta } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { EbayIcon } from "../../ebay-icon";
 import {
     EbayFakeMenuButton,
     EbayFakeMenuButtonItem as Item,
     EbayFakeMenuButtonSeparator as Separator,
-    EbayFakeMenuButtonLabel
-} from '../index'
+    EbayFakeMenuButtonLabel,
+} from "../index";
 
 const meta: Meta<typeof EbayFakeMenuButton> = {
     component: EbayFakeMenuButton,
-    title: 'buttons/ebay-fake-menu-button'
-}
+    title: "buttons/ebay-fake-menu-button",
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
         <EbayFakeMenuButton
             text="eBay Menu"
-            onExpand={() => action('onExpand')()}
-            onCollapse={() => action('onCollapse')()}
-            onKeyDown={(e) => action('onKeyDown')(e)}
-            onMouseDown={(e, props) => action('onMouseDown')(e, props)}
-            onSelect={(e, props) => action('onSelect')(e, props)}
+            onExpand={() => action("onExpand")()}
+            onCollapse={() => action("onCollapse")()}
+            onKeyDown={(e) => action("onKeyDown")(e)}
+            onMouseDown={(e, props) => action("onMouseDown")(e, props)}
+            onSelect={(e, props) => action("onSelect")(e, props)}
         >
             <Item href="http://ebay.com" onClick={(e) => e.preventDefault()}>
                 eBay US
@@ -37,7 +37,7 @@ export const Default: StoryFn<typeof EbayFakeMenuButton> = () => (
             </Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const Expanded: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -47,7 +47,7 @@ export const Expanded: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.co.uk">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const Disabled: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -57,7 +57,7 @@ export const Disabled: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const WithIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -68,7 +68,7 @@ export const WithIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const WithoutToggleIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -78,7 +78,7 @@ export const WithoutToggleIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const Variants: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -103,7 +103,7 @@ export const Variants: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const Priorities: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -118,7 +118,7 @@ export const Priorities: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const Borderless: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -128,7 +128,7 @@ export const Borderless: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const WithCustomLabel: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
@@ -136,14 +136,14 @@ export const WithCustomLabel: StoryFn<typeof EbayFakeMenuButton> = () => (
             <EbayFakeMenuButtonLabel>
                 <span
                     style={{
-                        background: 'url(https://ir.ebaystatic.com/pictures/aw/pics/cmp/ds3/sprds3_21.png)',
-                        display: 'inline-block',
-                        height: '20px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                        width: '26px'
+                        background: "url(https://ir.ebaystatic.com/pictures/aw/pics/cmp/ds3/sprds3_21.png)",
+                        display: "inline-block",
+                        height: "20px",
+                        marginRight: "8px",
+                        verticalAlign: "middle",
+                        width: "26px",
                     }}
-                />{' '}
+                />{" "}
                 Fun with flags!
             </EbayFakeMenuButtonLabel>
             <Item href="http://ebay.com">item 1</Item>
@@ -151,15 +151,15 @@ export const WithCustomLabel: StoryFn<typeof EbayFakeMenuButton> = () => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const WithSeparator: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
         <EbayFakeMenuButton
             {...args}
             text="Complex menu"
-            onExpand={action('Menu expanded!')}
-            onCollapse={action('Menu collapsed!')}
+            onExpand={action("Menu expanded!")}
+            onCollapse={action("Menu collapsed!")}
         >
             <Item href="http://ebay.com">Link 1</Item>
             <Item href="http://ebay.com" current>
@@ -170,12 +170,12 @@ export const WithSeparator: StoryFn<typeof EbayFakeMenuButton> = (args) => (
             <Item href="http://ebay.com">Link 4</Item>
             <Item href="http://ebay.com">Link 5</Item>
             <Separator />
-            <Item href="http://ebay.com" onClick={action('Open login popup!')}>
+            <Item href="http://ebay.com" onClick={action("Open login popup!")}>
                 Log in
             </Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const FixedWidth: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
@@ -185,11 +185,11 @@ export const FixedWidth: StoryFn<typeof EbayFakeMenuButton> = (args) => (
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
     </>
-)
+);
 
 export const ReverseMenuGrowsToTheLeft: StoryObj<typeof EbayFakeMenuButton> = {
     render: () => (
-        <div style={{ marginLeft: '100px' }}>
+        <div style={{ marginLeft: "100px" }}>
             <EbayFakeMenuButton text="Menu grows to the left" reverse>
                 <Item href="http://ebay.com">item 1 that has very very long text</Item>
                 <Item href="http://ebay.com">item 2</Item>
@@ -198,5 +198,5 @@ export const ReverseMenuGrowsToTheLeft: StoryObj<typeof EbayFakeMenuButton> = {
         </div>
     ),
 
-    name: 'Reverse (Menu grows to the left)'
-}
+    name: "Reverse (Menu grows to the left)",
+};

@@ -1,1 +1,1 @@
-export { default as EbayLightboxDialog } from './lightbox-dialog'
+export { default as EbayLightboxDialog } from "./lightbox-dialog";

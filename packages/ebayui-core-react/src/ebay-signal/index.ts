@@ -1,1 +1,1 @@
-export { default as EbaySignal, type SignalStatus } from './signal'
+export { default as EbaySignal, type SignalStatus } from "./signal";

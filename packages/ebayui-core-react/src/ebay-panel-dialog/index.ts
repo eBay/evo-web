@@ -1,1 +1,1 @@
-export { default as EbayPanelDialog } from './panel-dialog'
+export { default as EbayPanelDialog } from "./panel-dialog";

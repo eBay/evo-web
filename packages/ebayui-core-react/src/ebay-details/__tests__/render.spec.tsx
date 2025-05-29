@@ -1,33 +1,33 @@
-import React from 'react'
-import { composeStories } from '@storybook/react'
+import React from "react";
+import { composeStories } from "@storybook/react";
 
-import * as stories from './index.stories'
-import { render } from '@testing-library/react'
+import * as stories from "./index.stories";
+import { render } from "@testing-library/react";
 
-const { Default, CenterAlignment, SmallSize } = composeStories(stories)
+const { Default, CenterAlignment, SmallSize } = composeStories(stories);
 
-describe('<EbayDetails> rendering', () => {
-    it('renders default story correctly', () => {
-        const { container } = render(<Default />)
+describe("<EbayDetails> rendering", () => {
+    it("renders default story correctly", () => {
+        const { container } = render(<Default />);
 
-        const details = container.querySelector('details') as HTMLDetailsElement
+        const details = container.querySelector("details") as HTMLDetailsElement;
 
-        expect(details).toMatchSnapshot()
-    })
+        expect(details).toMatchSnapshot();
+    });
 
-    it('renders center alignment story correctly', () => {
-        const { container } = render(<CenterAlignment />)
+    it("renders center alignment story correctly", () => {
+        const { container } = render(<CenterAlignment />);
 
-        const details = container.querySelector('details') as HTMLDetailsElement
+        const details = container.querySelector("details") as HTMLDetailsElement;
 
-        expect(details).toMatchSnapshot()
-    })
+        expect(details).toMatchSnapshot();
+    });
 
-    it('renders small size story correctly', () => {
-        const { container } = render(<SmallSize />)
+    it("renders small size story correctly", () => {
+        const { container } = render(<SmallSize />);
 
-        const details = container.querySelector('details') as HTMLDetailsElement
+        const details = container.querySelector("details") as HTMLDetailsElement;
 
-        expect(details).toMatchSnapshot()
-    })
-})
+        expect(details).toMatchSnapshot();
+    });
+});

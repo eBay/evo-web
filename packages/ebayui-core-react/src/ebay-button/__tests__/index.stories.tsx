@@ -1,25 +1,25 @@
-import React from 'react'
-import { StoryFn, Meta } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { EbayButton, EbayButtonCell } from '../index'
-import EbayIcon from '../../ebay-icon/icon'
+import React from "react";
+import { StoryFn, Meta } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { EbayButton, EbayButtonCell } from "../index";
+import EbayIcon from "../../ebay-icon/icon";
 
 const meta: Meta<typeof EbayButton> = {
     component: EbayButton,
-    title: 'buttons/ebay-button'
-}
+    title: "buttons/ebay-button",
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayButton> = () => (
     <>
         <p>
             <EbayButton
-                onClick={action('clicked')}
-                onEscape={action('escape pressed')}
-                onFocus={(e) => action('focus')(e)}
-                onBlur={action('blur')}
-                onKeyDown={action('key down')}
+                onClick={action("clicked")}
+                onEscape={action("escape pressed")}
+                onFocus={(e) => action("focus")(e)}
+                onBlur={action("blur")}
+                onKeyDown={action("key down")}
             >
                 Hello, I am a button!
             </EbayButton>
@@ -28,7 +28,7 @@ export const Default: StoryFn<typeof EbayButton> = () => (
             <EbayButton href="https://ebay.com">Hello, I am a link!</EbayButton>
         </p>
     </>
-)
+);
 
 export const Size: StoryFn<typeof EbayButton> = () => (
     <>
@@ -44,12 +44,10 @@ export const Size: StoryFn<typeof EbayButton> = () => (
             <EbayButton>Default Size Button</EbayButton>
         </p>
         <p>
-            <EbayButton href="https://ebay.com">
-                Default Size Link
-            </EbayButton>
+            <EbayButton href="https://ebay.com">Default Size Link</EbayButton>
         </p>
     </>
-)
+);
 
 export const Priority: StoryFn<typeof EbayButton> = () => (
     <>
@@ -87,7 +85,7 @@ export const Priority: StoryFn<typeof EbayButton> = () => (
             <EbayButton priority="none">Base Button</EbayButton>
         </p>
     </>
-)
+);
 
 export const DestructiveVariant: StoryFn<typeof EbayButton> = () => (
     <>
@@ -122,7 +120,7 @@ export const DestructiveVariant: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);
 
 export const Fluid: StoryFn<typeof EbayButton> = () => (
     <>
@@ -140,7 +138,7 @@ export const Fluid: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);
 
 export const WithIcon: StoryFn<typeof EbayButton> = () => (
     <>
@@ -177,7 +175,7 @@ export const WithIcon: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);
 
 export const IconOnly: StoryFn<typeof EbayButton> = () => (
     <>
@@ -203,10 +201,10 @@ export const IconOnly: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);
 
 export const Transparent: StoryFn<typeof EbayButton> = () => (
-    <div style={{ background: 'rgba(66, 214, 205, 0.5)' }}>
+    <div style={{ background: "rgba(66, 214, 205, 0.5)" }}>
         <p>
             <EbayButton>Default Button</EbayButton>
         </p>
@@ -224,7 +222,7 @@ export const Transparent: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </div>
-)
+);
 
 export const Disabled: StoryFn<typeof EbayButton> = () => (
     <>
@@ -242,45 +240,45 @@ export const Disabled: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);
 
 export const PartiallyDisabledButton: StoryFn<typeof EbayButton> = () => (
     <EbayButton priority="primary" partiallyDisabled>
         Hello, I am a button!
     </EbayButton>
-)
+);
 
 export const Truncated: StoryFn<typeof EbayButton> = () => (
     <div>
         <p>
-            <EbayButton truncate style={{ maxWidth: '200px' }}>
+            <EbayButton truncate style={{ maxWidth: "200px" }}>
                 Hello, I am a button! this is a long text
             </EbayButton>
         </p>
         <p>
-            <EbayButton size="large" truncate style={{ maxWidth: '200px' }}>
+            <EbayButton size="large" truncate style={{ maxWidth: "200px" }}>
                 Hello, I am a BIG button! this is a long text
             </EbayButton>
         </p>
         <p>
-            <EbayButton href="https://ebay.com" truncate style={{ maxWidth: '200px' }}>
+            <EbayButton href="https://ebay.com" truncate style={{ maxWidth: "200px" }}>
                 Hello, I am a link! this is a long text
             </EbayButton>
         </p>
     </div>
-)
+);
 
 export const FlexButton: StoryFn<typeof EbayButton> = () => (
     <EbayButton priority="primary" fluid>
-        <EbayButtonCell style={{ justifyContent: 'space-between' }}>
+        <EbayButtonCell style={{ justifyContent: "space-between" }}>
             <span>Select</span>
-            <span style={{ display: 'inline-flex' }}>
+            <span style={{ display: "inline-flex" }}>
                 <span>Any</span>
                 <EbayIcon name="chevronDown12" />
             </span>
         </EbayButtonCell>
     </EbayButton>
-)
+);
 
 export const LoadingButton: StoryFn<typeof EbayButton> = () => (
     <>
@@ -300,14 +298,14 @@ export const LoadingButton: StoryFn<typeof EbayButton> = () => (
             <EbayButton variant="destructive" bodyState="loading" />
         </p>
     </>
-)
+);
 
 export const ExpandButton: StoryFn<typeof EbayButton> = () => (
     <>
         <p>
             <EbayButton priority="primary" bodyState="expand">
                 Primary expand button
-            </EbayButton>{' '}
+            </EbayButton>{" "}
             <EbayButton priority="primary" bodyState="expand" aria-expanded="true">
                 Expanded button
             </EbayButton>
@@ -323,8 +321,8 @@ export const ExpandButton: StoryFn<typeof EbayButton> = () => (
         <p>
             <EbayButton variant="form" bodyState="expand">
                 Form expand button
-            </EbayButton>{' '}
-            <EbayButton variant="form" bodyState="expand" />{' '}
+            </EbayButton>{" "}
+            <EbayButton variant="form" bodyState="expand" />{" "}
             <EbayButton variant="form" bodyState="expand" aria-expanded />
         </p>
         <p>
@@ -333,7 +331,7 @@ export const ExpandButton: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);
 
 export const SplitButton: StoryFn<typeof EbayButton> = () => (
     <>
@@ -374,7 +372,7 @@ export const SplitButton: StoryFn<typeof EbayButton> = () => (
             <EbayButton priority="tertiary" bodyState="expand" split="end" />
         </p>
     </>
-)
+);
 
 export const FormButton: StoryFn<typeof EbayButton> = () => (
     <>
@@ -382,7 +380,7 @@ export const FormButton: StoryFn<typeof EbayButton> = () => (
             <EbayButton variant="form">Form button</EbayButton>
         </p>
     </>
-)
+);
 
 export const BorderlessButton: StoryFn<typeof EbayButton> = () => (
     <>
@@ -390,7 +388,7 @@ export const BorderlessButton: StoryFn<typeof EbayButton> = () => (
             <EbayButton borderless>Borderless button</EbayButton>
         </p>
     </>
-)
+);
 
 export const FixedHeight: StoryFn<typeof EbayButton> = () => (
     <>
@@ -403,4 +401,4 @@ export const FixedHeight: StoryFn<typeof EbayButton> = () => (
             </EbayButton>
         </p>
     </>
-)
+);

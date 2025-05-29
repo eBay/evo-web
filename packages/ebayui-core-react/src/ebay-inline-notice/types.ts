@@ -1,1 +1,1 @@
-export type NoticeStatus = 'general' | 'attention' | 'confirmation' | 'information'
+export type NoticeStatus = "general" | "attention" | "confirmation" | "information";

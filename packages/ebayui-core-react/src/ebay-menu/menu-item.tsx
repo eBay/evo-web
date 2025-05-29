@@ -1,10 +1,10 @@
-import React, { ComponentProps, FC, useEffect, useRef } from 'react'
-import classNames from 'classnames'
-import { EbayBadge } from '../ebay-badge'
-import { EbayIcon } from '../ebay-icon'
-import { EbayMenuType } from './types'
+import React, { ComponentProps, FC, useEffect, useRef } from "react";
+import classNames from "classnames";
+import { EbayBadge } from "../ebay-badge";
+import { EbayIcon } from "../ebay-icon";
+import { EbayMenuType } from "./types";
 
-export type MenuItemProps = ComponentProps<'div'> & {
+export type MenuItemProps = ComponentProps<"div"> & {
     type?: EbayMenuType;
     focused?: boolean;
     tabIndex?: number;
@@ -13,7 +13,7 @@ export type MenuItemProps = ComponentProps<'div'> & {
     disabled?: boolean;
     badgeNumber?: number;
     badgeAriaLabel?: string;
-}
+};
 
 const EbayMenuItem: FC<MenuItemProps> = ({
     className,
@@ -27,23 +27,23 @@ const EbayMenuItem: FC<MenuItemProps> = ({
     children,
     ...rest
 }) => {
-    const ref = useRef(null)
-    const hasBadge = badgeNumber !== undefined
+    const ref = useRef(null);
+    const hasBadge = badgeNumber !== undefined;
 
     useEffect(() => {
         if (ref.current && focused) {
-            ref.current.focus()
+            ref.current.focus();
         }
-    }, [ref, focused])
+    }, [ref, focused]);
 
-    const checkable: EbayMenuType[] = ['radio', 'checkbox']
+    const checkable: EbayMenuType[] = ["radio", "checkbox"];
 
     return (
         <div
             aria-label={badgeAriaLabel}
             {...rest}
             ref={ref}
-            className={classNames(className, 'menu__item', hasBadge && 'menu__item--badged')}
+            className={classNames(className, "menu__item", hasBadge && "menu__item--badged")}
             role={roleFromType(type)}
             aria-checked={checkable.includes(type) ? checked : undefined}
             aria-disabled={disabled}
@@ -55,15 +55,15 @@ const EbayMenuItem: FC<MenuItemProps> = ({
             </span>
             <EbayIcon name="tick16" />
         </div>
-    )
-}
+    );
+};
 
 function roleFromType(type: EbayMenuType) {
     const roles: Record<EbayMenuType, string> = {
-        radio: 'menuitemradio',
-        checkbox: 'menuitemcheckbox'
-    }
-    return roles[type] || 'menuitem'
+        radio: "menuitemradio",
+        checkbox: "menuitemcheckbox",
+    };
+    return roles[type] || "menuitem";
 }
 
-export default EbayMenuItem
+export default EbayMenuItem;

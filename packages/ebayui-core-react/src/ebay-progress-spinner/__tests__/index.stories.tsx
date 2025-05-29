@@ -1,9 +1,9 @@
-import React from 'react'
-import { EbayProgressSpinner } from '../index'
+import React from "react";
+import { EbayProgressSpinner } from "../index";
 
 export default {
-    title: 'progress/ebay-progress-spinner'
-}
+    title: "progress/ebay-progress-spinner",
+};
 
 export const DefaultSmallLarge = {
     render: () => (
@@ -20,5 +20,5 @@ export const DefaultSmallLarge = {
         </>
     ),
 
-    name: 'Default, Small & Large'
-}
+    name: "Default, Small & Large",
+};

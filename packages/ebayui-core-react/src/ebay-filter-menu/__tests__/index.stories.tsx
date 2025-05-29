@@ -1,12 +1,11 @@
-
-import React from 'react'
-import { Meta, StoryFn } from '@storybook/react';
-import { EbayFilterMenu, EbayFilterMenuFooterButton, EbayFilterMenuItem } from '../index';
-import data from './data.json';
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { EbayFilterMenu, EbayFilterMenuFooterButton, EbayFilterMenuItem } from "../index";
+import data from "./data.json";
 
 const meta: Meta<typeof EbayFilterMenu> = {
     component: EbayFilterMenu,
-    title: 'building blocks/ebay-filter-menu',
+    title: "building blocks/ebay-filter-menu",
     argTypes: {
         type: {
             options: ["radio", "checkbox"],
@@ -20,8 +19,7 @@ const meta: Meta<typeof EbayFilterMenu> = {
         },
         classPrefix: {
             control: { type: "text" },
-            description:
-                '"filter-menu" (default) / modifies the base prefix for all Skin classes in the menu',
+            description: '"filter-menu" (default) / modifies the base prefix for all Skin classes in the menu',
         },
         formName: {
             control: { type: "text" },
@@ -37,8 +35,7 @@ const meta: Meta<typeof EbayFilterMenu> = {
         },
         searchHeaderValue: {
             control: { type: "text" },
-            description:
-                "optional value override for the input in the search header",
+            description: "optional value override for the input in the search header",
         },
         searchHeaderPlaceholderText: {
             control: { type: "text" },
@@ -59,7 +56,7 @@ const meta: Meta<typeof EbayFilterMenu> = {
                 },
             },
         },
-        "onFooterClick": {
+        onFooterClick: {
             action: "onFooterClick",
             description: "Triggered on footer clicked",
             table: {
@@ -69,10 +66,9 @@ const meta: Meta<typeof EbayFilterMenu> = {
                 },
             },
         },
-        "onFormSubmit": {
+        onFormSubmit: {
             action: "onFormSubmit",
-            description:
-                'Triggered when using `variant="form"`, and form is submitted (emits current checked state)',
+            description: 'Triggered when using `variant="form"`, and form is submitted (emits current checked state)',
             table: {
                 category: "Events",
                 defaultValue: {
@@ -80,7 +76,7 @@ const meta: Meta<typeof EbayFilterMenu> = {
                 },
             },
         },
-        "onSearchChange": {
+        onSearchChange: {
             action: "onSearchChange",
             description: "Triggered when the search input updates",
             table: {
@@ -91,9 +87,9 @@ const meta: Meta<typeof EbayFilterMenu> = {
             },
         },
     },
-}
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayFilterMenu> = (args) => (
     <EbayFilterMenu {...args}>
@@ -101,18 +97,16 @@ export const Default: StoryFn<typeof EbayFilterMenu> = (args) => (
         <EbayFilterMenuItem value="item 2">item 2</EbayFilterMenuItem>
         <EbayFilterMenuItem value="item 3">item 3</EbayFilterMenuItem>
     </EbayFilterMenu>
-)
+);
 
 export const WithSearch: StoryFn<typeof EbayFilterMenu> = (args) => {
-    const [searchTerm, setSearchTerm] = React.useState('');
+    const [searchTerm, setSearchTerm] = React.useState("");
 
     const handleSearchChange = (event, props) => {
-        setSearchTerm(props?.searchTerm || '');
+        setSearchTerm(props?.searchTerm || "");
     };
 
-    const filteredItems = data.filter(item =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredItems = data.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <EbayFilterMenu
@@ -122,12 +116,14 @@ export const WithSearch: StoryFn<typeof EbayFilterMenu> = (args) => {
             onSearchChange={handleSearchChange}
         >
             {filteredItems.map((item) => (
-                <EbayFilterMenuItem key={item.code} value={item.code}>{item.name}</EbayFilterMenuItem>
+                <EbayFilterMenuItem key={item.code} value={item.code}>
+                    {item.name}
+                </EbayFilterMenuItem>
             ))}
             <EbayFilterMenuFooterButton>Apply</EbayFilterMenuFooterButton>
         </EbayFilterMenu>
     );
-}
+};
 
 export const WithFooterButton: StoryFn<typeof EbayFilterMenu> = (args) => (
     <EbayFilterMenu {...args}>
@@ -136,4 +132,4 @@ export const WithFooterButton: StoryFn<typeof EbayFilterMenu> = (args) => (
         <EbayFilterMenuItem value="item 3">item 3</EbayFilterMenuItem>
         <EbayFilterMenuFooterButton>Apply</EbayFilterMenuFooterButton>
     </EbayFilterMenu>
-)
+);

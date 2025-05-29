@@ -1,10 +1,10 @@
-import React, { FC, useRef } from 'react'
-import classNames from 'classnames'
-import { DialogBaseProps, DialogBaseWithState, EbayDialogFooter } from '../ebay-dialog-base'
-import { DialogCloseEventHandler } from '../ebay-dialog-base/types'
-import { EbayButton } from '../ebay-button'
+import React, { FC, useRef } from "react";
+import classNames from "classnames";
+import { DialogBaseProps, DialogBaseWithState, EbayDialogFooter } from "../ebay-dialog-base";
+import { DialogCloseEventHandler } from "../ebay-dialog-base/types";
+import { EbayButton } from "../ebay-button";
 
-const classPrefix = 'confirm-dialog'
+const classPrefix = "confirm-dialog";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface Props<T = any> extends DialogBaseProps<T> {
@@ -16,16 +16,16 @@ export interface Props<T = any> extends DialogBaseProps<T> {
 }
 
 const EbayConfirmDialog: FC<Props> = ({
-    a11yCloseText = 'Close Dialog',
+    a11yCloseText = "Close Dialog",
     confirmText,
     rejectText,
     onReject = () => {},
     onConfirm = () => {},
     ...rest
 }) => {
-    const confirmBtnRef = useRef(null)
-    const confirmId = 'confirm-dialog-confirm'
-    const mainId = 'confirm-dialog-main'
+    const confirmBtnRef = useRef(null);
+    const confirmId = "confirm-dialog-confirm";
+    const mainId = "confirm-dialog-main";
     return (
         <DialogBaseWithState
             focus={confirmBtnRef}
@@ -41,10 +41,7 @@ const EbayConfirmDialog: FC<Props> = ({
         >
             {rest.children}
             <EbayDialogFooter>
-                <EbayButton
-                    onClick={onReject}
-                    className="confirm-dialog__reject"
-                >
+                <EbayButton onClick={onReject} className="confirm-dialog__reject">
                     {rejectText}
                 </EbayButton>
                 <EbayButton
@@ -59,7 +56,7 @@ const EbayConfirmDialog: FC<Props> = ({
                 </EbayButton>
             </EbayDialogFooter>
         </DialogBaseWithState>
-    )
-}
+    );
+};
 
-export default EbayConfirmDialog
+export default EbayConfirmDialog;
