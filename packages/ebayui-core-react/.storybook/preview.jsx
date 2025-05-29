@@ -15,6 +15,14 @@ export default {
             </StrictMode>
         )
     ],
+    globals: {
+        a11y: {
+            // Disable automatic a11y runs as it impacts performance of storybook.
+            // This started after a change introduced in v8.5.0 that runs the axe-core tests
+            // in sequence instead of parallel.
+            manual: true
+        }
+    },
     parameters: {
         controls: { expanded: true },
         options: {
