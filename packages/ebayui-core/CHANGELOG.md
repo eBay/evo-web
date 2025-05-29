@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.6.1
+
+### Patch Changes
+
+- [`6b371b1`](https://github.com/eBay/evo-web/commit/6b371b181345763495ec805239567a929fe5a7d8) Thanks [@agliga](https://github.com/agliga)! - fix(transition): fixed typo on reduced motion
+
 ## 15.6.0
 
 ### Minor Changes
