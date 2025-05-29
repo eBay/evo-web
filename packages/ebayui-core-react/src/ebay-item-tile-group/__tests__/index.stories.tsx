@@ -1,0 +1,83 @@
+import React from 'react'
+import { Meta, StoryFn } from '@storybook/react'
+import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
+import { EbaySignal } from '../../ebay-signal'
+import {
+    EbayItemTile,
+    EbayItemTileSectionSuperTitle,
+    EbayItemTileSectionTitle,
+    EbayItemTileSectionSubTitle,
+    EbayItemTileSectionDescription
+} from '../../ebay-item-tile'
+import { EbayItemTileGroup } from '..'
+
+const meta: Meta<typeof EbayItemTileGroup> = {
+    title: 'layout/ebay-item-tile-group',
+    component: EbayItemTileGroup,
+    argTypes: {
+        layout: {
+            control: { type: 'select' },
+            options: ['gallery', 'list'],
+            defaultValue: {
+                summary: 'gallery'
+            },
+            description:
+                'The layout of the item-tile. The default is gallery. The list layout takes more horizontal space and is better for displaying more information.'
+        },
+        onAction: {
+            action: 'onAction',
+            description: 'Triggered when the action button is clicked',
+            table: {
+                category: 'Events',
+                defaultValue: {
+                    summary: ''
+                }
+            }
+        }
+    }
+}
+export default meta
+
+export const Default: StoryFn<typeof EbayItemTileGroup> = (args) => {
+    const tiles = Array.from({ length: 5 })
+
+    return (
+        <EbayItemTileGroup {...args}>
+            {tiles.map((_, idx) => (
+                <EbayItemTile
+                    key={idx}
+                    file={{
+                        name: 'file-name.jpg',
+                        type: 'image',
+                        src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
+                    }}
+                >
+                    <EbayFilePreviewCardAction
+                        aria-label="action label"
+                        icon="heart16"
+                    />
+                    <EbayItemTileSectionSuperTitle>
+                        <EbaySignal status="time-sensitive">
+                            Time Sensitive
+                        </EbaySignal>
+                    </EbayItemTileSectionSuperTitle>
+                    <EbayItemTileSectionTitle href="/collection">
+                        Apple iPhone 11 Pro Max{' '}
+                    </EbayItemTileSectionTitle>
+                    <EbayItemTileSectionSubTitle>
+                        256GB Space Gray
+                    </EbayItemTileSectionSubTitle>
+                    <EbayItemTileSectionDescription className="price">
+                        $29.99
+                    </EbayItemTileSectionDescription>
+                    <EbayItemTileSectionDescription as="div">
+                        <a href="https://ebay.com">Buy it now</a>
+                    </EbayItemTileSectionDescription>
+                    <EbayItemTileSectionDescription>
+                        Free shipping
+                    </EbayItemTileSectionDescription>
+                </EbayItemTile>
+            ))}
+        </EbayItemTileGroup>
+    )
+}
