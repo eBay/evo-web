@@ -56,6 +56,7 @@ eBayUI React components
 - [x] [ebay-inline-notice](src/ebay-inline-notice)
 - [x] [ebay-lightbox-dialog](src/ebay-lightbox-dialog)
 - [ ] `ebay-line-chart`
+- [x] [ebay-list](src/ebay-list)
 - [x] [ebay-listbox-button](src/ebay-listbox-button)
 - [x] [ebay-listbox](src/ebay-listbox)
 - [x] [ebay-menu](src/ebay-menu)
