@@ -32,10 +32,11 @@ jobs:
       # Extract target stories from PR body
       - name: Extract target stories
         id: extract_stories
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          # Get the last merged PR details
-          PR_BODY=$(gh pr view $(git log -1 --pretty=format:"%s" | grep -oP '#\d+') --json body -q '.body')
-          if [[ $PR_BODY == *"package: skin"* ]]; then
+          # Use the PR_BODY environment variable securely
+          if [[ "$PR_BODY" == *"package: skin"* ]]; then
             STORIES=$(echo "$PR_BODY" | awk '/Percy Stories/{getline; print}')
             if [ -z "$STORIES" ]; then
               echo "No Percy Stories found in PR body."
