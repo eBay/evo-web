@@ -26,7 +26,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22
 
       # Install dependencies
       - name: Install dependencies
@@ -36,8 +36,10 @@ jobs:
       # Extract target stories from PR body
       - name: Extract target stories
         id: extract_stories
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          STORIES=$(echo "${{ github.event.pull_request.body }}" | awk '/Percy Stories/{getline; print}')
+          STORIES=$(echo "PR_BODY" | awk '/Percy Stories/{getline; print}')
           if [ -z "$STORIES" ]; then
             echo "No Percy Stories found in PR body."
             exit 0
