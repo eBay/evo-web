@@ -39,7 +39,7 @@ jobs:
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          STORIES=$(echo "PR_BODY" | awk '/Percy Stories/{getline; print}')
+          STORIES=$(echo "$PR_BODY" | awk '/Percy Stories/{getline; print}')
           if [ -z "$STORIES" ]; then
             echo "No Percy Stories found in PR body."
             exit 0

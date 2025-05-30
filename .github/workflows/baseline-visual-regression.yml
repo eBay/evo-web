@@ -51,7 +51,9 @@ jobs:
 
       # Debug: Print extracted stories
       - name: Debug extracted stories
-        run: echo "Extracted stories: $stories"
+        run: |
+          STORIES=$(echo "$PR_BODY" | awk '/Percy Stories/{getline; print}')
+          echo "Extracted stories: $STORIES"
         working-directory: ./packages/skin
 
       # Run Percy for the extracted stories
