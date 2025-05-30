@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.6.0
+
+### Minor Changes
+
+- [#156](https://github.com/eBay/evo-web/pull/156) [`6bdf5b9`](https://github.com/eBay/evo-web/commit/6bdf5b9d7190a37e81e02b3179905858b33c2704) Thanks [@agliga](https://github.com/agliga)! - feat(skeleton): updated animations
+
 ## 19.5.2
 
 ### Patch Changes

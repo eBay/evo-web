@@ -1,5 +1,15 @@
 # @ebay/ui-core-react
 
+## 8.7.0
+
+### Minor Changes
+
+- [#159](https://github.com/eBay/evo-web/pull/159) [`cddb5da`](https://github.com/eBay/evo-web/commit/cddb5dacc4c3be302218ee1f64686fc7cfe5af85) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react): add EbayList component
+
+### Patch Changes
+
+- [#158](https://github.com/eBay/evo-web/pull/158) [`00c0449`](https://github.com/eBay/evo-web/commit/00c04496223056eae92da633f1926bd98dd951ac) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - cleanup react carousel animations on unmount
+
 ## 8.6.0
 
 ### Minor Changes
