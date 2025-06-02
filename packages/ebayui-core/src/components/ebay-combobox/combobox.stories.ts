@@ -57,11 +57,6 @@ export default {
             description:
                 "default is `automatic`; available values are `automatic`, `manual`. If set to automatic will automatically fill in the input with the currently highlighted item when using the up/down keys.",
         },
-        "floating-label": {
-            control: { type: "text" },
-            description:
-                "The label to show on the combobox which moves up when focused",
-        },
         fluid: {
             control: { type: "boolean" },
             type: "boolean",
