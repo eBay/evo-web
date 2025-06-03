@@ -1,0 +1,66 @@
+# This workflow runs Percy visual regression tests for pull requests. It extracts the list of stories
+# from the PR body and runs snapshots for those stories to validate visual changes before merging.
+# If Percy detects visual differences, the workflow fails to block merging.
+
+name: Percy PR Visual Regression Tests
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - edited
+      - labeled
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install husky --no-save
+        working-directory: ./packages/skin
+
+      # Extract target stories from PR body
+      - name: Extract target stories
+        id: extract_stories
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          STORIES=$(echo "$PR_BODY" | awk '/Percy Stories/{getline; print}')
+          if [ -z "$STORIES" ]; then
+            echo "No Percy Stories found in PR body."
+            exit 0
+          fi
+          echo "stories=$STORIES" >> $GITHUB_ENV
+        working-directory: ./packages/skin
+
+      # Debug: Print extracted stories
+      - name: Debug extracted stories
+        run: |
+          echo "Extracted stories: $stories"
+        working-directory: ./packages/skin
+
+      # Run Percy for the extracted stories
+      - name: Run Percy visual tests
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: |
+          if [ -z "$PERCY_TOKEN" ]; then
+            echo "Error: PERCY_TOKEN secret is not set in repository settings."
+            exit 1
+          fi
+          npm run snapshots --stories "$stories"
+        working-directory: ./packages/skin
