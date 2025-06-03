@@ -21,7 +21,6 @@ afterEach(cleanup);
 let component;
 let user;
 
-afterEach(cleanup);
 
 describe("accordion", () => {
     beforeEach(() => {
