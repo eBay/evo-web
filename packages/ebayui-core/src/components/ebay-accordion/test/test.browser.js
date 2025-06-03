@@ -7,94 +7,102 @@ import {
     it,
     expect,
 } from "vitest";
-import { render, fireEvent, waitFor, cleanup } from "@marko/testing-library";
+import { render, cleanup, waitFor } from "@marko/testing-library";
+import { userEvent } from "@vitest/browser/context";
 import { fastAnimations } from "../../../common/test-utils/browser";
-import template from "../index.marko";
-import * as mock from "./mock";
+import { diffHTML, visualHTML } from "../../../common/test-utils/snapshots";
+import { composeStories } from "@storybook/marko";
+import * as stories from "../accordion.stories"; // import all stories from the stories file
+const { Default, AutoCollapsed } = composeStories(stories);
 
 beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
 let component;
+let user;
 
-const getSectionText = (item) => item.summary.renderBody.text;
-
-describe("given the accordion in the default state", () => {
-    const input = mock.Default_Accordion;
-
-    beforeEach(async () => {
-        component = await render(template, input);
+describe("accordion", () => {
+    beforeEach(() => {
+        user = userEvent.setup();
     });
-
-    it("should render all sections collapsed", () => {
-        input.details.forEach((item) => {
-            expect(
-                component.getByText(getSectionText(item)).closest("details")
-                    .open,
-            ).to.equal(false);
-        });
+    afterEach(() => {
+        user.cleanup();
     });
-
-    describe("when first section toggled", () => {
+    describe("given the accordion in the default state", () => {
         beforeEach(async () => {
-            await fireEvent.click(
-                component.getByText(getSectionText(input.details[0])),
-            );
+            component = await render(Default);
         });
 
-        it("should open the clicked section", async () => {
-            const firstSection = component.getByText(
-                getSectionText(input.details[0]),
-            );
-            expect(firstSection.closest("details").open).to.equal(true);
+        it("then it matches the snapshot", () => {
+            const html = visualHTML(component.container);
+
+            expect(html).toMatchSnapshot();
         });
 
-        it("should close an open section when clicked again", async () => {
-            const firstSection = component.getByText(
-                getSectionText(input.details[0]),
-            );
-            expect(firstSection.closest("details").open).to.equal(true);
-            await fireEvent.click(firstSection);
-            expect(firstSection.closest("details").open).to.equal(false);
+        describe("when first section toggled", () => {
+            let initialHTML;
+            beforeEach(async () => {
+                initialHTML = diffHTML(component.container);
+                await user.click(component.getByText("Item 1"));
+            });
+
+            it("should open the clicked section", async () => {
+                await waitFor(() =>
+                    expect(initialHTML(component.container)).toMatchSnapshot(),
+                );
+            });
+
+            describe("when another section is opened", () => {
+                beforeEach(async () => {
+                    await user.click(component.getByText("Item 1"));
+                    await user.hover(component.getByText("Item 1"));
+                });
+
+                it("should close an open section when clicked again", async () => {
+                    await waitFor(() =>
+                        expect(
+                            initialHTML(component.container),
+                        ).toMatchSnapshot(
+                            "Should have no changes from initial",
+                        ),
+                    );
+                });
+            });
         });
     });
-});
 
-describe("given the accordion with autocollapse enabled", () => {
-    const input = mock.autoCollapse_Accordion;
+    describe("given the accordion with autocollapse enabled", () => {
+        let initialHTML;
+        beforeEach(async () => {
+            component = await render(AutoCollapsed);
+            initialHTML = diffHTML(component.container);
+        });
+        describe("when first section toggled", () => {
+            beforeEach(async () => {
+                await user.click(component.getByText("Item 1"));
+            });
 
-    beforeEach(async () => {
-        component = await render(template, input);
-    });
+            it("should open as normal", async () => {
+                await waitFor(() =>
+                    expect(initialHTML(component.container)).toMatchSnapshot(),
+                );
+            });
 
-    it("should collapse previous section when new section is opened", async () => {
-        // Open first section
-        await fireEvent.click(
-            component.getByText(getSectionText(input.details[0])),
-        );
-        expect(
-            component
-                .getByText(getSectionText(input.details[0]))
-                .closest("details").open,
-        ).to.equal(true);
-
-        // Open second section
-        await fireEvent.click(
-            component.getByText(getSectionText(input.details[1])),
-        );
-
-        // Verify first section closed and second section opened
-        await waitFor(() => {
-            expect(
-                component
-                    .getByText(getSectionText(input.details[0]))
-                    .closest("details").open,
-            ).to.equal(false);
-            expect(
-                component
-                    .getByText(getSectionText(input.details[1]))
-                    .closest("details").open,
-            ).to.equal(true);
+            describe("when another section is opened", () => {
+                beforeEach(async () => {
+                    initialHTML = diffHTML(component.container);
+                    // Open second section
+                    await user.click(component.getByText("Item 2"));
+                });
+                it("should collapse previous section when new section is opened", async () => {
+                    // Verify first section closed and second section opened
+                    await waitFor(() =>
+                        expect(
+                            initialHTML(component.container),
+                        ).toMatchSnapshot(),
+                    );
+                });
+            });
         });
     });
 });

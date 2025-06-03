@@ -52,6 +52,7 @@
         "tr": "npm run coverage && npm run report && open .coverage/index.html",
         "ts": "npm run test:server",
         "tt": "mtc",
+        "update-snapshots": "vitest run -u --browser.headless",
         "version": "npm run importSVG && npm run build:readme"
     },
     "dependencies": {
