@@ -30,7 +30,9 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install husky --no-save
         working-directory: ./packages/skin
 
       # Extract target stories from PR body
