@@ -49,12 +49,18 @@ jobs:
 
       # Debug: Print extracted stories
       - name: Debug extracted stories
-        run: echo "Extracted stories: $stories"
+        run: |
+          echo "Extracted stories: $stories"
         working-directory: ./packages/skin
 
       # Run Percy for the extracted stories
       - name: Run Percy visual tests
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: npm run snapshots --stories "$stories"
+        run: |
+          if [ -z "$PERCY_TOKEN" ]; then
+            echo "Error: PERCY_TOKEN secret is not set in repository settings."
+            exit 1
+          fi
+          npm run snapshots --stories "$stories"
         working-directory: ./packages/skin
