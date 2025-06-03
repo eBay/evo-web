@@ -22,6 +22,7 @@
     "prepare": "husky",
     "release": "npm run release --ws && changeset publish",
     "test": "npm run test --ws",
+    "update-snapshots": "npm run update-snapshots --ws --if-present",
     "version": "npm run version --ws && changeset version && npm i --package-lock-only && git add -A packages"
   },
   "commitlint": {

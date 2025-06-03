@@ -21,7 +21,6 @@ afterEach(cleanup);
 let component;
 let user;
 
-
 describe("accordion", () => {
     beforeEach(() => {
         user = userEvent.setup();
@@ -63,7 +62,9 @@ describe("accordion", () => {
                     await waitFor(() =>
                         expect(
                             initialHTML(component.container),
-                        ).toMatchSnapshot("Should have no changes from intial"),
+                        ).toMatchSnapshot(
+                            "Should have no changes from initial",
+                        ),
                     );
                 });
             });

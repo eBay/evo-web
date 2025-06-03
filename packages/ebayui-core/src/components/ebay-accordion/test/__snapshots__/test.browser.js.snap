@@ -367,7 +367,7 @@ exports[`accordion > given the accordion in the default state > when first secti
 "
 `;
 
-exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from intial 1`] = `
+exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from initial 1`] = `
 "@@ -26,6 +26,7 @@
        ">
          <summary style="
