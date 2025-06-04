@@ -60,7 +60,7 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
 <const/tag=href ? "a" : "button">
 <${tag}
     ...htmlInput
-    onKeyDown(e:KeyboardEvent) {
+    onKeyDown(e: KeyboardEvent) {
         if (e.key === "Escape" && !input.disabled) {
             input.onEscape?.(e);
         }

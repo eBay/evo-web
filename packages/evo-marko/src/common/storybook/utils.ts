@@ -1,18 +1,18 @@
-function addRenderBodies(input: any): any {
+function addContent(input: any): any {
   if (input && typeof input === "object") {
     if (Array.isArray(input)) {
-      return input.map(addRenderBodies);
+      return input.map(addContent);
     }
 
     const clone: typeof input = {};
     for (const key in input) {
-      clone[key] = addRenderBodies(input[key]);
+      clone[key] = addContent(input[key]);
     }
 
-    const { renderBody } = clone;
-    if (typeof renderBody === "string") {
-      clone.renderBody = (out: any) =>
-        out.html ? out.html(renderBody) : out.write(renderBody);
+    const { content } = clone;
+    if (typeof content === "string") {
+      clone.content = (out: any) =>
+        out.html ? out.html(content) : out.write(content);
     }
 
     return clone;
@@ -27,7 +27,7 @@ function buildExtensionTemplate(
   args: Record<string, any> = {},
 ) {
   const builder = (args: Record<string, any>) => ({
-    input: addRenderBodies(args),
+    input: addContent(args),
     component: template,
   });
 
@@ -43,4 +43,4 @@ function buildExtensionTemplate(
   return builder;
 }
 
-export { addRenderBodies, buildExtensionTemplate };
+export { addContent, buildExtensionTemplate };
