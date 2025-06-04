@@ -1,6 +1,8 @@
 import type { AttrString } from "marko/tags-html";
+static const validPriorities = ["primary", "secondary", "tertiary", "delete"];
+static const validSizes = ["large", "small"] as const;
 
-export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.A, "type" |`on${string}`> {
     href?: string;
     size?: (typeof validSizes)[number];
     priority?: "primary" | "secondary" | "tertiary" | "none";
@@ -14,11 +16,14 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     fixedHeight?: boolean;
     truncate?: boolean;
     split?: string;
+    type?: Marko.HTML.Button["type"] | (string & {});
     "a11y-loading-text"?: AttrString;
     "onEscape"?: (event: KeyboardEvent) => void;
 }
+
 <const/{
-    "a11y-loading-text": a11yText,
+    content,
+    "a11y-loading-text": a11yLoadingText,
     "body-state": bodyState,
     borderless,
     class: inputClass,
@@ -27,7 +32,6 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     href,
     "partially-disabled": partiallyDisabled,
     priority: inputPriority = "secondary",
-    renderBody,
     size: inputSize,
     split = "none",
     transparent,
@@ -35,28 +39,25 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     type = "button",
     variant = "standard",
     ...htmlInput
-} = input>
+}=input>
 
-static const validPriorities = ["primary", "secondary", "tertiary", "delete"];
-static const validSizes = ["large", "small"] as const;
+<const/priority=(borderless || variant === "form") ? "none" : inputPriority>;
+<const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>;
 
-<const/size = inputSize && validSizes.includes(inputSize) ? inputSize : null>;
-
-<const/priority = (borderless || variant === "form") ? "none" : inputPriority>;
-
-<const/baseClass = href ? "fake-btn" : "btn"/>;
-<const/sizeClass = size && baseClass + "--" + size/>;
-<const/truncateClass = (
+<const/baseClass=(href ? "fake-btn" : "btn")/>;
+<const/sizeClass=(size && baseClass + "--" + size)/>;
+<const/truncateClass=(
     truncate &&
     (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
 )>
-<const/transparentClass = transparent ? baseClass + "--transparent" : "">
-<const/fixedHeightClass = (
+<const/transparentClass=transparent && (baseClass + "--transparent")>
+<const/fixedHeightClass=(
     fixedHeight &&
     (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
 )>
-<const/variantClass = variant !== "standard" && `${baseClass}--${variant}`>
-<const/tag = href ? "a" : "button">
+<const/variantClass=variant !== "standard" && `${baseClass}--${variant}`>
+
+<const/tag=href ? "a" : "button">
 <${tag}
     ...htmlInput
     onKeyDown(e:KeyboardEvent) {
@@ -77,9 +78,9 @@ static const validSizes = ["large", "small"] as const;
         borderless && `${baseClass}--borderless`,
         validPriorities.includes(priority) && `${baseClass}--${priority}`,
     ]
-    type=tag === "button" && (type || "button")
+    type=type ?? (tag === "button" && "button")
     aria-disabled=partiallyDisabled && "true"
-    aria-label=(bodyState === "loading" ? a11yText || "Loading..." : input["aria-label"])
+    aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])
 >
     <if(bodyState === "loading")>
         <span class="btn__cell">
@@ -89,12 +90,12 @@ static const validSizes = ["large", "small"] as const;
     <else-if(bodyState === "expand")>
         <span class="btn__cell">
             <span class="btn__text">
-                <${renderBody}/>
+                <${content}/>
             </span>
             <ebay-chevron-down-16-icon/>
         </span>
     </else-if>
     <else>
-        <${renderBody}/>
+        <${content}/>
     </else>
 </>
