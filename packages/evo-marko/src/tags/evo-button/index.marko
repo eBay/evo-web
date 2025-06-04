@@ -1,0 +1,100 @@
+import type { AttrString } from "marko/tags-html";
+
+export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+    href?: string;
+    size?: (typeof validSizes)[number];
+    priority?: "primary" | "secondary" | "tertiary" | "none";
+    variant?: "standard" | "destructive" | "form";
+    "body-state"?: "loading" | "expand" | "reset" | "none";
+    fluid?: boolean;
+    borderless?: boolean;
+    disabled?: boolean;
+    "partially-disabled"?: boolean;
+    transparent?: boolean;
+    fixedHeight?: boolean;
+    truncate?: boolean;
+    split?: string;
+    "a11y-loading-text"?: AttrString;
+    "onEscape"?: (event: KeyboardEvent) => void;
+}
+<const/{
+    "a11y-loading-text": a11yText,
+    "body-state": bodyState,
+    borderless,
+    class: inputClass,
+    fixedHeight,
+    fluid,
+    href,
+    "partially-disabled": partiallyDisabled,
+    priority: inputPriority = "secondary",
+    renderBody,
+    size: inputSize,
+    split = "none",
+    transparent,
+    truncate,
+    type = "button",
+    variant = "standard",
+    ...htmlInput
+} = input>
+
+static const validPriorities = ["primary", "secondary", "tertiary", "delete"];
+static const validSizes = ["large", "small"] as const;
+
+<const/size = inputSize && validSizes.includes(inputSize) ? inputSize : null>;
+
+<const/priority = (borderless || variant === "form") ? "none" : inputPriority>;
+
+<const/baseClass = href ? "fake-btn" : "btn"/>;
+<const/sizeClass = size && baseClass + "--" + size/>;
+<const/truncateClass = (
+    truncate &&
+    (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
+)>
+<const/transparentClass = transparent ? baseClass + "--transparent" : "">
+<const/fixedHeightClass = (
+    fixedHeight &&
+    (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
+)>
+<const/variantClass = variant !== "standard" && `${baseClass}--${variant}`>
+<const/tag = href ? "a" : "button">
+<${tag}
+    ...htmlInput
+    onKeyDown(e:KeyboardEvent) {
+        if (e.key === "Escape" && !input.disabled) {
+            input.onEscape?.(e);
+        }
+    }
+    class=[
+        inputClass,
+        baseClass,
+        fluid && `${baseClass}--fluid`,
+        truncateClass,
+        fixedHeightClass,
+        transparentClass,
+        variantClass,
+        !truncateClass && !fixedHeightClass && sizeClass,
+        split !== "none" && `${baseClass}--split-${split}`,
+        borderless && `${baseClass}--borderless`,
+        validPriorities.includes(priority) && `${baseClass}--${priority}`,
+    ]
+    type=tag === "button" && (type || "button")
+    aria-disabled=partiallyDisabled && "true"
+    aria-label=(bodyState === "loading" ? a11yText || "Loading..." : input["aria-label"])
+>
+    <if(bodyState === "loading")>
+        <span class="btn__cell">
+            <ebay-progress-spinner/>
+        </span>
+    </if>
+    <else-if(bodyState === "expand")>
+        <span class="btn__cell">
+            <span class="btn__text">
+                <${renderBody}/>
+            </span>
+            <ebay-chevron-down-16-icon/>
+        </span>
+    </else-if>
+    <else>
+        <${renderBody}/>
+    </else>
+</>
