@@ -1,5 +1,5 @@
 {
-  "name": "@ebay/evo-marko",
+  "name": "@evo-web/marko",
   "version": "0",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
