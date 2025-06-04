@@ -41,11 +41,11 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     ...htmlInput
 }=input>
 
-<const/priority=(borderless || variant === "form") ? "none" : inputPriority>;
-<const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>;
+<const/priority=(borderless || variant === "form") ? "none" : inputPriority>
+<const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
 
-<const/baseClass=(href ? "fake-btn" : "btn")/>;
-<const/sizeClass=(size && baseClass + "--" + size)/>;
+<const/baseClass=(href ? "fake-btn" : "btn")/>
+<const/sizeClass=(size && baseClass + "--" + size)/>
 <const/truncateClass=(
     truncate &&
     (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
@@ -82,19 +82,19 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     aria-disabled=partiallyDisabled && "true"
     aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])
 >
-    <if(bodyState === "loading")>
+    <if=(bodyState === "loading")>
         <span class="btn__cell">
-            <ebay-progress-spinner/>
+            // <ebay-progress-spinner/>
         </span>
     </if>
-    <else-if(bodyState === "expand")>
+    <else if=(bodyState === "expand")>
         <span class="btn__cell">
             <span class="btn__text">
                 <${content}/>
             </span>
-            <ebay-chevron-down-16-icon/>
+            // <ebay-chevron-down-16-icon/>
         </span>
-    </else-if>
+    </else>
     <else>
         <${content}/>
     </else>
