@@ -65,7 +65,7 @@
   },
   "peerDependencies": {
     "@ebay/skin": "^19.2.0",
-    "marko": "^6"
+    "marko": "5 - 6"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
