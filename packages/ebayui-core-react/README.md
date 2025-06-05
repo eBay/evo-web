@@ -12,7 +12,6 @@ eBayUI React components
 
 ### eBayUI Components
 
-
 - [ ] `ebay-3d-viewer`
 - [x] [ebay-accordion](src/ebay-accordion)
 - [x] [ebay-alert-dialog](src/ebay-alert-dialog)
@@ -55,6 +54,8 @@ eBayUI React components
 - [x] [ebay-image-placeholder](src/ebay-image-placeholder)
 - [x] [ebay-infotip](src/ebay-infotip)
 - [x] [ebay-inline-notice](src/ebay-inline-notice)
+- [x] [ebay-item-tile](src/ebay-item-tile)
+- [x] [ebay-item-tile](src/ebay-item-tile-group)
 - [x] [ebay-lightbox-dialog](src/ebay-lightbox-dialog)
 - [ ] `ebay-line-chart`
 - [x] [ebay-list](src/ebay-list)
