@@ -30,10 +30,6 @@ Add the below icons to the `EbaySvg` component.
 
 Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
 
-```tsx
-<EbaySvg icons={['heart16']} />
-```
-
 ```jsx harmony
 <EbayItemTileGroup onAction={handleAction} layout="list">
     <EbayItemTile
@@ -43,7 +39,7 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
         }}
     >
-        <EbayIconButton aria-label="action label" icon="heart16" />
+        <EbayItemTileAction aria-label="action label" icon="heart16" />
         <EbayItemTileSectionSuperTitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSectionSuperTitle>
@@ -81,4 +77,4 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 
 | Name           | Type           | Required | Description                                        | Data |
 | -------------- | -------------- | -------- | -------------------------------------------------- | ---- |
-| `EbayItemTile` | `EbayItemTile` | Yest     | Tile component that will be rendered in the group. |
+| `EbayItemTile` | `EbayItemTile` | Yest     | Tile component that will be rendered in the group |

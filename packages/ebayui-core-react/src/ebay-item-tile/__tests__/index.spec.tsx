@@ -2,13 +2,13 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
 import {
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
     EbayItemTileSectionTitle,
     EbayItemTileSectionSubTitle,
-    EbayItemTileSectionDescription
+    EbayItemTileSectionDescription,
+    EbayItemTileAction
 } from '../'
 
 describe('<EbayItemTile>', () => {
@@ -23,10 +23,7 @@ describe('<EbayItemTile>', () => {
                 }}
                 onAction={onActionClick}
             >
-                <EbayFilePreviewCardAction
-                    aria-label="action-label"
-                    icon="heart16"
-                />
+                <EbayItemTileAction aria-label="action-label" icon="heart16" />
                 <EbayItemTileSectionSuperTitle>
                     Time Sensitive
                 </EbayItemTileSectionSuperTitle>

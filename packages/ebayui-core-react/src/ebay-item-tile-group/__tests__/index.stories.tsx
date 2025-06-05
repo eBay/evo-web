@@ -1,13 +1,13 @@
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
-import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
 import { EbaySignal } from '../../ebay-signal'
 import {
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
     EbayItemTileSectionTitle,
     EbayItemTileSectionSubTitle,
-    EbayItemTileSectionDescription
+    EbayItemTileSectionDescription,
+    EbayItemTileAction
 } from '../../ebay-item-tile'
 import { EbayItemTileGroup } from '..'
 
@@ -52,7 +52,7 @@ export const Default: StoryFn<typeof EbayItemTileGroup> = (args) => {
                         src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                     }}
                 >
-                    <EbayFilePreviewCardAction
+                    <EbayItemTileAction
                         aria-label="action label"
                         icon="heart16"
                     />

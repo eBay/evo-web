@@ -44,7 +44,7 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
     href="/collection"
     layout="grid"
 >
-    <EbayIconButton aria-label="action label" icon="heart16" />
+    <EbayItemTileAction aria-label="action label" icon="heart16" />
     <EbayItemTileSectionSuperTitle>
         <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
     </EbayItemTileSectionSuperTitle>
@@ -82,4 +82,4 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 
 | Name                        | Type                  | Required | Description                                                                                                            | Data |
 | --------------------------- | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ---- |
-| `EbayFilePreviewCardAction` | `EbayIconButtonProps` | No       | Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render. |
+| `EbayItemTileAction` | `EbayIconButtonProps` | No       | Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render. |

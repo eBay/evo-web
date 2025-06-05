@@ -1,13 +1,13 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { EbayFilePreviewCardAction } from '../../ebay-file-preview-card'
 import {
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
     EbayItemTileSectionTitle,
     EbayItemTileSectionSubTitle,
-    EbayItemTileSectionDescription
+    EbayItemTileSectionDescription,
+    EbayItemTileAction
 } from '../../ebay-item-tile'
 import { EbayItemTileGroup } from '../'
 
@@ -25,7 +25,7 @@ describe('<EbayItemTileGroup>', () => {
                             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                         }}
                     >
-                        <EbayFilePreviewCardAction
+                        <EbayItemTileAction
                             aria-label="action-label"
                             icon="heart16"
                         />
@@ -66,7 +66,7 @@ describe('<EbayItemTileGroup>', () => {
                             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
                         }}
                     >
-                        <EbayFilePreviewCardAction
+                        <EbayItemTileAction
                             aria-label="action-label"
                             icon="heart16"
                         />
