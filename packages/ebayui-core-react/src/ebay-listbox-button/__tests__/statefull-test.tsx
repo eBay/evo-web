@@ -1,34 +1,32 @@
-import React, { useState } from 'react'
-import { EbayListboxButton, EbayListboxButtonOption } from '../index'
-
+import React, { useState } from "react";
+import { EbayListboxButton, EbayListboxButtonOption } from "../index";
 
 const StateFullTest = () => {
-    const [selectedValue, setSelectedValue] = useState(`BB`)
+    const [selectedValue, setSelectedValue] = useState(`BB`);
     const onRadioChange = (value) => {
-        setSelectedValue(value)
-    }
+        setSelectedValue(value);
+    };
     return (
         <div>
-            <EbayListboxButton
-                value={selectedValue}
-            >
+            <EbayListboxButton value={selectedValue}>
                 <EbayListboxButtonOption value="California">California</EbayListboxButtonOption>
                 <EbayListboxButtonOption value="New York">New York</EbayListboxButtonOption>
                 <EbayListboxButtonOption value="Washington">Washington</EbayListboxButtonOption>
             </EbayListboxButton>
             <label>
-                <input
-                    type="radio"
-                    onClick={() => onRadioChange(`California`)}
-                    name="listbox-value" />California
+                <input type="radio" onClick={() => onRadioChange(`California`)} name="listbox-value" />
+                California
             </label>
             <label>
-                <input type="radio" onClick={() => onRadioChange(`New York`)} name="listbox-value" />New York
+                <input type="radio" onClick={() => onRadioChange(`New York`)} name="listbox-value" />
+                New York
             </label>
             <label>
-                <input type="radio" onClick={() => onRadioChange(`Washington`)} name="listbox-value" />Washington
+                <input type="radio" onClick={() => onRadioChange(`Washington`)} name="listbox-value" />
+                Washington
             </label>
-        </div>)
-}
+        </div>
+    );
+};
 
-export default StateFullTest
+export default StateFullTest;

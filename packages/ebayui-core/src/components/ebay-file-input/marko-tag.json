@@ -20,5 +20,5 @@
         "@html-attributes": "expression"
     },
     "@ctaText": "string",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/buttons-ebay-file-upload-input)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/buttons-ebay-file-upload-input)"
 }

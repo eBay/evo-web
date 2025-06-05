@@ -30,5 +30,5 @@
     },
     "@target": "#html-target",
     "@aria-disabled": "never",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/buttons-ebay-segmented-buttons)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/buttons-ebay-segmented-buttons)"
 }

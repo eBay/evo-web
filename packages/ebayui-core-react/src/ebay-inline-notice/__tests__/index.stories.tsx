@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { action } from '@storybook/addon-actions'
-import { EbayButton } from '../../ebay-button'
-import { EbayInlineNotice, EbayNoticeContent } from '../index'
+import React, { useState } from "react";
+import { action } from "@storybook/addon-actions";
+import { EbayButton } from "../../ebay-button";
+import { EbayInlineNotice, EbayNoticeContent } from "../index";
 
 export default {
-    title: 'notices & tips/ebay-inline-notice'
-}
+    title: "notices & tips/ebay-inline-notice",
+};
 
 export const Default = () => (
     <>
@@ -15,7 +15,7 @@ export const Default = () => (
             </EbayNoticeContent>
         </EbayInlineNotice>
     </>
-)
+);
 
 export const ConfirmationMessage = {
     render: () => (
@@ -31,8 +31,8 @@ export const ConfirmationMessage = {
         </>
     ),
 
-    name: 'Confirmation message'
-}
+    name: "Confirmation message",
+};
 
 export const InformationMessage = {
     render: () => (
@@ -45,8 +45,8 @@ export const InformationMessage = {
         </>
     ),
 
-    name: 'Information message'
-}
+    name: "Information message",
+};
 
 export const AttentionMessage = {
     render: () => (
@@ -59,8 +59,8 @@ export const AttentionMessage = {
         </>
     ),
 
-    name: 'Attention message'
-}
+    name: "Attention message",
+};
 
 export const NoticeToggle = {
     render: () => (
@@ -69,18 +69,18 @@ export const NoticeToggle = {
         </>
     ),
 
-    name: 'Notice toggle'
-}
+    name: "Notice toggle",
+};
 
 function NoticeToggleStory() {
-    const [hidden, setHidden] = useState(false)
+    const [hidden, setHidden] = useState(false);
     return (
         <>
-            <EbayButton onClick={() => setHidden(!hidden)}>{hidden ? 'Show' : 'Hide'} Notice</EbayButton>
+            <EbayButton onClick={() => setHidden(!hidden)}>{hidden ? "Show" : "Hide"} Notice</EbayButton>
             <EbayInlineNotice
                 status="confirmation"
                 hidden={hidden}
-                onNoticeShow={action('Showing')}
+                onNoticeShow={action("Showing")}
                 aria-label="Toggle notice"
             >
                 <EbayNoticeContent>
@@ -91,5 +91,5 @@ function NoticeToggleStory() {
                 </EbayNoticeContent>
             </EbayInlineNotice>
         </>
-    )
+    );
 }

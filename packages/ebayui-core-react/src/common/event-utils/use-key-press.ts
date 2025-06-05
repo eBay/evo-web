@@ -1,38 +1,38 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const useKeyPress = (): [boolean, boolean] => {
-    const [arrowUpPressed, setArrowUpPressed] = useState(false)
-    const [arrowDownPressed, setArrowDownPressed] = useState(false)
+    const [arrowUpPressed, setArrowUpPressed] = useState(false);
+    const [arrowDownPressed, setArrowDownPressed] = useState(false);
 
     const upHandler = ({ key }) => {
         const fn = {
             ArrowUp: setArrowUpPressed,
-            ArrowDown: setArrowDownPressed
-        }[key]
+            ArrowDown: setArrowDownPressed,
+        }[key];
 
-        if (fn) fn(false)
-    }
+        if (fn) fn(false);
+    };
 
     const downHandler = ({ key }) => {
         const fn = {
             ArrowUp: setArrowUpPressed,
-            ArrowDown: setArrowDownPressed
-        }[key]
+            ArrowDown: setArrowDownPressed,
+        }[key];
 
-        if (fn) fn(true)
-    }
+        if (fn) fn(true);
+    };
 
     useEffect(() => {
-        window.addEventListener('keydown', downHandler)
-        window.addEventListener('keyup', upHandler)
+        window.addEventListener("keydown", downHandler);
+        window.addEventListener("keyup", upHandler);
 
         return () => {
-            window.removeEventListener('keydown', downHandler)
-            window.removeEventListener('keyup', upHandler)
-        }
-    }, [])
+            window.removeEventListener("keydown", downHandler);
+            window.removeEventListener("keyup", upHandler);
+        };
+    }, []);
 
-    return [arrowUpPressed, arrowDownPressed]
-}
+    return [arrowUpPressed, arrowDownPressed];
+};
 
-export default useKeyPress
+export default useKeyPress;

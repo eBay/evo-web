@@ -1,22 +1,25 @@
 # EbayTooltip
 
 ## Demo
+
 [Storybook](https://opensource.ebay.com/ebayui-core-react/main/?path=/story/notices-tips-ebay-tooltip--default-tooltip)
 
 ## Import JS
 
 ```jsx harmony
-import { EbayTooltip, EbayTooltipHost, EbayTooltipContent } from '@ebay/ui-core-react/ebay-tooltip'
+import { EbayTooltip, EbayTooltipHost, EbayTooltipContent } from "@ebay/ui-core-react/ebay-tooltip";
 ```
 
 ### Import following styles from SKIN
+
 ```jsx harmony
-import "@ebay/skin/tooltip"
+import "@ebay/skin/tooltip";
 ```
 
 ### or if using SCSS/CSS
+
 ```jsx
-import "@ebay/skin/tooltip.css"
+import "@ebay/skin/tooltip.css";
 ```
 
 ## Usage
@@ -48,7 +51,7 @@ yarn add @ebay/ui-core-react
 
 ## Child components
 
-Name | Required | Description
---- | --- | ---
-`EbayTooltipHost` | Yes | Wrapper for trigger that shows the tooltip
-`EbayTooltipContent` | Yes | The content to be displayed in the tooltip
+| Name                 | Required | Description                                |
+| -------------------- | -------- | ------------------------------------------ |
+| `EbayTooltipHost`    | Yes      | Wrapper for trigger that shows the tooltip |
+| `EbayTooltipContent` | Yes      | The content to be displayed in the tooltip |

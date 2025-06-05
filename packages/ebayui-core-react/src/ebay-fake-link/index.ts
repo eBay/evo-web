@@ -1,1 +1,1 @@
-export { default as EbayFakeLink, type EbayFakeLinkProps } from './fake-link'
+export { default as EbayFakeLink, type EbayFakeLinkProps } from "./fake-link";

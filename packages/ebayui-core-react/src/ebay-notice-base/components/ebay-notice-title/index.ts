@@ -1,1 +1,1 @@
-export { default as EbayNoticeTitle } from './notice-title'
+export { default as EbayNoticeTitle } from "./notice-title";

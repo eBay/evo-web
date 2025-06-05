@@ -1,29 +1,22 @@
-import React, {
-    useRef,
-    FC,
-    useCallback,
-    ComponentProps,
-    forwardRef,
-    useLayoutEffect
-} from 'react'
-import classNames from 'classnames'
-import FloatingLabel from 'makeup-floating-label'
+import React, { useRef, FC, useCallback, ComponentProps, forwardRef, useLayoutEffect } from "react";
+import classNames from "classnames";
+import FloatingLabel from "makeup-floating-label";
 
 type MakeupFloatingLabelHookProps = {
     text?: string;
     disabled?: boolean;
     invalid?: boolean;
-    size?: 'default' | 'large';
+    size?: "default" | "large";
     type?: string;
     opaqueLabel?: boolean;
-    containerTagName?: 'span' | 'div';
+    containerTagName?: "span" | "div";
     onMount?: () => void;
-}
+};
 
 type MakeupFloatingLabelHookReturn = {
-    Label: FC<Omit<ComponentProps<'label'>, 'children'>> | FC;
-    Container: FC<ComponentProps<'div' | 'span'>> | FC;
-}
+    Label: FC<Omit<ComponentProps<"label">, "children">> | FC;
+    Container: FC<ComponentProps<"div" | "span">> | FC;
+};
 
 export function useFloatingLabel({
     text,
@@ -32,83 +25,85 @@ export function useFloatingLabel({
     size,
     type,
     opaqueLabel,
-    containerTagName: Container = 'span',
-    onMount = () => {}
+    containerTagName: Container = "span",
+    onMount = () => {},
 }: MakeupFloatingLabelHookProps): MakeupFloatingLabelHookReturn {
-    const containerRef = useRef(null)
-    const floatingLabel = useRef<typeof FloatingLabel>(null)
+    const containerRef = useRef(null);
+    const floatingLabel = useRef<typeof FloatingLabel>(null);
 
     // This effect needs to be defined before the initialization effect
     // as it is only intended for subsequent updates
     useLayoutEffect(() => {
-        floatingLabel.current?.refresh()
-    })
+        floatingLabel.current?.refresh();
+    });
 
     // Use layout effect to avoid flickering of floating label
     useLayoutEffect(() => {
-        if (!text || type === 'date') {
-            return
+        if (!text || type === "date") {
+            return;
         }
 
         if (containerRef.current) {
-            floatingLabel.current = new FloatingLabel(containerRef.current)
+            floatingLabel.current = new FloatingLabel(containerRef.current);
 
-            onMount()
+            onMount();
         }
 
         return () => {
-            floatingLabel.current?.destroy()
-        }
-    }, [text, type])
+            floatingLabel.current?.destroy();
+        };
+    }, [text, type]);
 
     const containerClassName = classNames(`floating-label`, {
-        'floating-label--large': size === `large`,
-        'floating-label--opaque': opaqueLabel
-    })
+        "floating-label--large": size === `large`,
+        "floating-label--opaque": opaqueLabel,
+    });
 
-    const FragmentContainer = useCallback(({ children }) => <>{children}</>, [])
+    const FragmentContainer = useCallback(({ children }) => <>{children}</>, []);
 
-    const FloatingLabelContainer: FC<ComponentProps<'div' | 'span'>> = useCallback(
+    const FloatingLabelContainer: FC<ComponentProps<"div" | "span">> = useCallback(
         // eslint-disable-next-line react/display-name
         forwardRef(({ className, ...rest }, forwardedRef) => (
             <Container
                 {...rest}
                 ref={(value) => {
-                    containerRef.current = value
+                    containerRef.current = value;
 
-                    if (typeof forwardedRef === 'function') {
-                        forwardedRef(value)
+                    if (typeof forwardedRef === "function") {
+                        forwardedRef(value);
                     } else if (forwardedRef) {
-                        forwardedRef.current = value
+                        forwardedRef.current = value;
                     }
                 }}
                 className={classNames(className, containerClassName)}
             />
         )),
-        [containerClassName]
-    )
+        [containerClassName],
+    );
 
-    const labelClassName = classNames('floating-label__label', {
-        'floating-label__label--disabled': disabled,
-        'floating-label__label--invalid': invalid
-    })
+    const labelClassName = classNames("floating-label__label", {
+        "floating-label__label--disabled": disabled,
+        "floating-label__label--invalid": invalid,
+    });
 
-    const Label: FC<Omit<ComponentProps<'label'>, 'children'>> = useCallback(
+    const Label: FC<Omit<ComponentProps<"label">, "children">> = useCallback(
         ({ className, ...props }) => (
-            <label {...props} className={classNames(className, labelClassName)}>{text}</label>
+            <label {...props} className={classNames(className, labelClassName)}>
+                {text}
+            </label>
         ),
-        [labelClassName, text]
-    )
+        [labelClassName, text],
+    );
 
     if (!text) {
         return {
             Label: () => null,
-            Container: FragmentContainer
-        }
+            Container: FragmentContainer,
+        };
     }
 
     return {
         Label,
-        Container: FloatingLabelContainer
-    }
+        Container: FloatingLabelContainer,
+    };
 }

@@ -1,7 +1,7 @@
-import React, { ComponentProps, FC } from 'react'
+import React, { ComponentProps, FC } from "react";
 
-export type EbayVideoSourceProps = ComponentProps<'source'>;
+export type EbayVideoSourceProps = ComponentProps<"source">;
 
-const EbayVideoSource: FC<EbayVideoSourceProps> = ({ ...rest }) => <source {...rest} />
+const EbayVideoSource: FC<EbayVideoSourceProps> = ({ ...rest }) => <source {...rest} />;
 
-export default EbayVideoSource
+export default EbayVideoSource;

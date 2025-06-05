@@ -1,34 +1,33 @@
-import { EbayEekProps } from './eek-rating'
+import { EbayEekProps } from "./eek-rating";
 
 const validRanges = {
-    'A+++': ['D', 'E', 'G'],
-    'A++': ['E', 'G'],
-    'A+': ['F', 'G'],
-    A: ['G']
-}
-
+    "A+++": ["D", "E", "G"],
+    "A++": ["E", "G"],
+    "A+": ["F", "G"],
+    A: ["G"],
+};
 
 export default (input: EbayEekProps): number => {
-    const { max, min, rating } = input
-    const validMax = validRanges[max]
+    const { max, min, rating } = input;
+    const validMax = validRanges[max];
     if (!(validMax && validMax.indexOf(min) > -1)) {
-        return null
+        return null;
     }
     // Count from max until you reach rating
-    let current = max
-    let i = 1
+    let current = max;
+    let i = 1;
     while (current !== rating) {
-        i++
+        i++;
         if (min === current) {
             // It's at end, didn't match rating
-            return null
+            return null;
         } else if (current.length > 1) {
             // Has + in string, remove one plus
-            current = current.slice(0, current.length - 1)
+            current = current.slice(0, current.length - 1);
         } else {
             // No pluses get next character code
-            current = String.fromCharCode(current.charCodeAt(0) + 1)
+            current = String.fromCharCode(current.charCodeAt(0) + 1);
         }
     }
-    return i > 7 ? 7 : i
-}
+    return i > 7 ? 7 : i;
+};

@@ -1,1 +1,1 @@
-export { default as EbayConfirmDialog } from './confirm-dialog'
+export { default as EbayConfirmDialog } from "./confirm-dialog";

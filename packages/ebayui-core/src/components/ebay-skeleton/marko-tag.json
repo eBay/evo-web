@@ -11,5 +11,5 @@
     },
     "@multiline": "boolean",
     "@a11yText": "string",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/docs/building-blocks-ebay-skeleton--documentation)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/building-blocks-ebay-skeleton--documentation)"
 }

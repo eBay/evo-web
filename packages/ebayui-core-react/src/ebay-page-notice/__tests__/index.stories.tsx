@@ -1,16 +1,10 @@
-import React from 'react'
-import {
-    EbayPageNotice,
-    EbayNoticeContent,
-    EbayPageNoticeTitle,
-    EbayPageNoticeFooter,
-    EbayPageNoticeCTA
-} from '..'
-import { action } from '@storybook/addon-actions'
+import React from "react";
+import { EbayPageNotice, EbayNoticeContent, EbayPageNoticeTitle, EbayPageNoticeFooter, EbayPageNoticeCTA } from "..";
+import { action } from "@storybook/addon-actions";
 
 export default {
-    title: 'notices & tips/ebay-page-notice'
-}
+    title: "notices & tips/ebay-page-notice",
+};
 
 export const SimpleUsage = () => (
     <>
@@ -18,7 +12,7 @@ export const SimpleUsage = () => (
             <EbayNoticeContent>text message</EbayNoticeContent>
         </EbayPageNotice>
     </>
-)
+);
 
 export const SimpleUsageWithId = () => (
     <>
@@ -26,7 +20,7 @@ export const SimpleUsageWithId = () => (
             <EbayNoticeContent>text message</EbayNoticeContent>
         </EbayPageNotice>
     </>
-)
+);
 
 export const ConfirmationMessage = () => (
     <>
@@ -39,7 +33,7 @@ export const ConfirmationMessage = () => (
             </EbayNoticeContent>
         </EbayPageNotice>
     </>
-)
+);
 
 export const InformationMessage = () => (
     <>
@@ -52,7 +46,7 @@ export const InformationMessage = () => (
             </EbayNoticeContent>
         </EbayPageNotice>
     </>
-)
+);
 
 export const AttentionMessage = () => (
     <>
@@ -62,13 +56,13 @@ export const AttentionMessage = () => (
                 <p>
                     Please take another look at the following:
                     <br />
-                    <a href="#link">Card number</a>, <a href="#link">Expiration date</a> &amp;{' '}
+                    <a href="#link">Card number</a>, <a href="#link">Expiration date</a> &amp;{" "}
                     <a href="#link">Security code</a>.
                 </p>
             </EbayNoticeContent>
         </EbayPageNotice>
     </>
-)
+);
 
 export const MessageWithFooter = () => (
     <>
@@ -82,7 +76,7 @@ export const MessageWithFooter = () => (
             </EbayPageNoticeFooter>
         </EbayPageNotice>
     </>
-)
+);
 
 export const DismissibleNotice = () => (
     <>
@@ -90,7 +84,7 @@ export const DismissibleNotice = () => (
             status="information"
             aria-label="Information"
             a11yDismissText="Close"
-            onDismiss={(e) => action('onDismiss')(e)}
+            onDismiss={(e) => action("onDismiss")(e)}
         >
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Good news!</EbayPageNoticeTitle>
@@ -100,7 +94,7 @@ export const DismissibleNotice = () => (
             </EbayNoticeContent>
         </EbayPageNotice>
     </>
-)
+);
 
 export const DismissibleMessageWithCta = () => (
     <>
@@ -114,4 +108,4 @@ export const DismissibleMessageWithCta = () => (
             </EbayPageNoticeCTA>
         </EbayPageNotice>
     </>
-)
+);

@@ -9,5 +9,5 @@
         "enum": ["icon"]
     },
     "@number": "number",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/graphics-icons-ebay-badge)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-ebay-badge)"
 }

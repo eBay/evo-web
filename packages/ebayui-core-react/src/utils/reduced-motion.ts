@@ -1,13 +1,13 @@
-import { useSyncExternalStore } from 'react'
+import { useSyncExternalStore } from "react";
 
 export function useReducedMotion(): boolean {
     return useSyncExternalStore(
         () => () => {},
         () => isReducedMotion(),
-        () => false
-    )
+        () => false,
+    );
 }
 
 export function isReducedMotion(): boolean {
-    return Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches)
+    return Boolean(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches);
 }

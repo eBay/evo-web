@@ -1,7 +1,6 @@
-
-import React from 'react'
-import { Meta, StoryFn } from '@storybook/react';
-import { EbayFilter } from '../index';
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { EbayFilter } from "../index";
 
 const meta: Meta<typeof EbayFilter> = {
     title: "building blocks/ebay-filter",
@@ -26,8 +25,7 @@ const meta: Meta<typeof EbayFilter> = {
         },
         a11ySelectedText: {
             control: { type: "text" },
-            description:
-                'defaults to `"Selected"`, but should be changed based on L10N or I18N',
+            description: 'defaults to `"Selected"`, but should be changed based on L10N or I18N',
             table: {
                 category: "when using fake filters",
             },
@@ -43,12 +41,8 @@ const meta: Meta<typeof EbayFilter> = {
             },
         },
     },
-}
+};
 
-export default meta
+export default meta;
 
-export const Default: StoryFn<typeof EbayFilter> = (args) => (
-    <EbayFilter {...args}>
-        Filter
-    </EbayFilter>
-)
+export const Default: StoryFn<typeof EbayFilter> = (args) => <EbayFilter {...args}>Filter</EbayFilter>;

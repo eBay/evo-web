@@ -1,6 +1,6 @@
-import { FC } from 'react'
-import { EbayFakeMenuItem, EbayFakeMenuItemProps } from '../ebay-fake-menu'
+import { FC } from "react";
+import { EbayFakeMenuItem, EbayFakeMenuItemProps } from "../ebay-fake-menu";
 
-const EbayFakeMenuButtonItem: FC<EbayFakeMenuItemProps> = EbayFakeMenuItem
+const EbayFakeMenuButtonItem: FC<EbayFakeMenuItemProps> = EbayFakeMenuItem;
 
-export default EbayFakeMenuButtonItem
+export default EbayFakeMenuButtonItem;

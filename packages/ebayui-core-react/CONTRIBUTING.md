@@ -7,12 +7,12 @@ This page contains instructions and guidelines for anybody contributing code to 
 - Create a feature branch `git checkout -b features/new-component`
 - `yarn install` to install dependencies
 - Add documentation:
-  * `README.md` on component level
-  * Unit test
-  * Storybook file for snapshot tests and also component showcase/demo
+    - `README.md` on component level
+    - Unit test
+    - Storybook file for snapshot tests and also component showcase/demo
 - Make your changes pass the:
-  * `yarn lint`. You can do `yarn lint --fix` to automatically fix small lint issues (e.g indentation, whitespace, semicolons, ...)
-  * `yarn test`. Do `yarn test -u` to automatically the snapshot tests.
+    - `yarn lint`. You can do `yarn lint --fix` to automatically fix small lint issues (e.g indentation, whitespace, semicolons, ...)
+    - `yarn test`. Do `yarn test -u` to automatically the snapshot tests.
 
 ## Extended guidance
 
@@ -91,14 +91,15 @@ Please think very carefully before introducing breaking API changes. Breaking ch
 ### Deprecating Code
 
 Any deprecated code should be clearly documented in the code comments and the release notes. Deprecated code will typically be scheduled for removal in the next major version. Example:
+
 ```ts
 type TabsProps = {
-  onSelect?: (props: OnSelectProps) => void;
-  /**
-   * @deprecated Use onSelect instead
-   */
-  onTabSelect?: (index: number) => void;
-}
+    onSelect?: (props: OnSelectProps) => void;
+    /**
+     * @deprecated Use onSelect instead
+     */
+    onTabSelect?: (index: number) => void;
+};
 ```
 
 ### Avoiding Conflicts
@@ -126,7 +127,6 @@ An admin will merge or squash the pull request when it receives one or two appro
 
 At least one of the commit messages should include a reference to the issue number it resolves (example: `[#45] Extract contributing document from readme`).
 
-
 ## Branching Strategy
 
 Members of the eBayUI team must work in the main repository. Non-members must work in their own fork.
@@ -153,7 +153,6 @@ With this strategy, there are rarely more than a handful of branches at any one 
 - next minor or major milestone branch
 - _n_ number of feature/issue branches
 
-
 ## Unit Tests
 
 Each component has two suites of unit tests: rendering tests & user interaction tests.
@@ -175,7 +174,6 @@ For both types of tests, please observe the following golden rules:
 
 Above all, all aspects of a test should be human-readable. A simple litmus test for this is that anybody should be able to read the test and, within a few seconds, be able to tell you what the _purpose_ of the test is. If they are confused, or ask questions, then it is not a well written test. Go back and refactor!
 
-
 ## Storybook
 
 Storybook is used for components development. It allows you to develop components in isolation. Storybook is also used for visual regression testing. It is also used for documentation and to showcase components.
@@ -183,7 +181,6 @@ Storybook is used for components development. It allows you to develop component
 Each component has its own storybook file in `__tests__/index.stories.tsx`. The storybook file contains stories for all component's variants.
 
 It can also be used to test component's snapshots.
-
 
 ## Definition of Done
 
@@ -222,12 +219,12 @@ One way to comply those guidelines is to implement your new component as similar
 - Support the same props/attributes (e.g. ebay-breadcrumb `a11y-heading-text`, or ebay-button `priority`)
 - Support the same callbacks/events (e.g. ebay-select `select-change` event will become EbaySelect `onSelectChange` callback).
 
-
 ## Notes
 
 ### How to update icons on skin changes
 
 This will update `EbaySvg` and `EbayIcon` components:
+
 ```shell script
 yarn update-icons
 ```

@@ -1,15 +1,15 @@
-import React from 'react'
-import { Meta, StoryFn } from '@storybook/react';
-import { EbayTable, EbayTableCell, EbayTableHeader, EbayTableRow, type TableSortHandler } from '../index';
-import { EbaySignal, SignalStatus } from '../../ebay-signal'
-import { EbaySelect, EbaySelectOption } from '../../ebay-select'
-import { EbayCtaButton } from '../../ebay-cta-button'
-import { EbayIconButton } from '../../ebay-icon-button'
-import data from './data.json'
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { EbayTable, EbayTableCell, EbayTableHeader, EbayTableRow, type TableSortHandler } from "../index";
+import { EbaySignal, SignalStatus } from "../../ebay-signal";
+import { EbaySelect, EbaySelectOption } from "../../ebay-select";
+import { EbayCtaButton } from "../../ebay-cta-button";
+import { EbayIconButton } from "../../ebay-icon-button";
+import data from "./data.json";
 
 const meta: Meta<typeof EbayTable> = {
     component: EbayTable,
-    title: 'data display/ebay-table',
+    title: "data display/ebay-table",
     argTypes: {
         density: {
             control: { type: "select" },
@@ -38,7 +38,7 @@ const meta: Meta<typeof EbayTable> = {
                 defaultValue: {
                     summary: "Select all rows",
                 },
-            }
+            },
         },
         a11ySelectRowText: {
             control: { type: "text" },
@@ -48,7 +48,7 @@ const meta: Meta<typeof EbayTable> = {
                 defaultValue: {
                     summary: "Select row",
                 },
-            }
+            },
         },
         onSelect: {
             action: "onSelect",
@@ -71,9 +71,9 @@ const meta: Meta<typeof EbayTable> = {
             },
         },
     },
-}
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayTable> = (args) => (
     <EbayTable {...args}>
@@ -92,9 +92,7 @@ export const Default: StoryFn<typeof EbayTable> = (args) => (
                 <EbayTableCell>{row.seller}</EbayTableCell>
                 <EbayTableCell>{row.item.title}</EbayTableCell>
                 <EbayTableCell>
-                    <EbaySignal status={row.statusType as SignalStatus}>
-                        {row.status}
-                    </EbaySignal>
+                    <EbaySignal status={row.statusType as SignalStatus}>{row.status}</EbaySignal>
                 </EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.listPrice}</EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.quantityAvailable}</EbayTableCell>
@@ -108,7 +106,7 @@ export const Default: StoryFn<typeof EbayTable> = (args) => (
             </EbayTableRow>
         ))}
     </EbayTable>
-)
+);
 
 export const TableWithAction: StoryFn<typeof EbayTable> = (args) => (
     <EbayTable {...args}>
@@ -136,18 +134,14 @@ export const TableWithAction: StoryFn<typeof EbayTable> = (args) => (
                     </EbaySelect>
                 </EbayTableCell>
                 <EbayTableCell>
-                    <EbayCtaButton href="https://ebay.com">
-                        Edit Listing
-                    </EbayCtaButton>
+                    <EbayCtaButton href="https://ebay.com">Edit Listing</EbayCtaButton>
                     <EbayIconButton icon="overflowVertical16" />
                 </EbayTableCell>
                 <EbayTableCell>
                     <EbayIconButton icon="overflowVertical16" />
                 </EbayTableCell>
                 <EbayTableCell>
-                    <EbaySignal status={row.statusType as SignalStatus}>
-                        {row.status}
-                    </EbaySignal>
+                    <EbaySignal status={row.statusType as SignalStatus}>{row.status}</EbaySignal>
                 </EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.listPrice}</EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.quantityAvailable}</EbayTableCell>
@@ -161,18 +155,28 @@ export const TableWithAction: StoryFn<typeof EbayTable> = (args) => (
             </EbayTableRow>
         ))}
     </EbayTable>
-)
+);
 
 export const ColumnSorting: StoryFn<typeof EbayTable> = (args) => (
     <EbayTable {...args}>
-        <EbayTableHeader sort="none" rowHeader>Seller</EbayTableHeader>
+        <EbayTableHeader sort="none" rowHeader>
+            Seller
+        </EbayTableHeader>
         <EbayTableHeader sort="none">Item</EbayTableHeader>
         <EbayTableHeader sort="none">Status</EbayTableHeader>
-        <EbayTableHeader columnType="numeric" sort="none">List Price</EbayTableHeader>
-        <EbayTableHeader columnType="numeric" sort="none">Quantity Available</EbayTableHeader>
+        <EbayTableHeader columnType="numeric" sort="none">
+            List Price
+        </EbayTableHeader>
+        <EbayTableHeader columnType="numeric" sort="none">
+            Quantity Available
+        </EbayTableHeader>
         <EbayTableHeader sort="none">Orders</EbayTableHeader>
-        <EbayTableHeader columnType="numeric" sort="none">Watchers</EbayTableHeader>
-        <EbayTableHeader columnType="numeric" sort="none">Protection</EbayTableHeader>
+        <EbayTableHeader columnType="numeric" sort="none">
+            Watchers
+        </EbayTableHeader>
+        <EbayTableHeader columnType="numeric" sort="none">
+            Protection
+        </EbayTableHeader>
         <EbayTableHeader sort="none">Shipping</EbayTableHeader>
         <EbayTableHeader sort="none">Delivery</EbayTableHeader>
         {data.map((row, index) => (
@@ -180,9 +184,7 @@ export const ColumnSorting: StoryFn<typeof EbayTable> = (args) => (
                 <EbayTableCell>{row.seller}</EbayTableCell>
                 <EbayTableCell>{row.item.title}</EbayTableCell>
                 <EbayTableCell>
-                    <EbaySignal status={row.statusType as SignalStatus}>
-                        {row.status}
-                    </EbaySignal>
+                    <EbaySignal status={row.statusType as SignalStatus}>{row.status}</EbaySignal>
                 </EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.listPrice}</EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.quantityAvailable}</EbayTableCell>
@@ -196,11 +198,13 @@ export const ColumnSorting: StoryFn<typeof EbayTable> = (args) => (
             </EbayTableRow>
         ))}
     </EbayTable>
-)
+);
 
 export const ColumnSortingWithLinks: StoryFn<typeof EbayTable> = (args) => (
     <EbayTable {...args}>
-        <EbayTableHeader sort="asc" rowHeader href="https://ebay.com">Seller</EbayTableHeader>
+        <EbayTableHeader sort="asc" rowHeader href="https://ebay.com">
+            Seller
+        </EbayTableHeader>
         <EbayTableHeader>Item</EbayTableHeader>
         <EbayTableHeader>Status</EbayTableHeader>
         <EbayTableHeader columnType="numeric">List Price</EbayTableHeader>
@@ -215,9 +219,7 @@ export const ColumnSortingWithLinks: StoryFn<typeof EbayTable> = (args) => (
                 <EbayTableCell>{row.seller}</EbayTableCell>
                 <EbayTableCell>{row.item.title}</EbayTableCell>
                 <EbayTableCell>
-                    <EbaySignal status={row.statusType as SignalStatus}>
-                        {row.status}
-                    </EbaySignal>
+                    <EbaySignal status={row.statusType as SignalStatus}>{row.status}</EbaySignal>
                 </EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.listPrice}</EbayTableCell>
                 <EbayTableCell columnType="numeric">{row.quantityAvailable}</EbayTableCell>
@@ -231,35 +233,39 @@ export const ColumnSortingWithLinks: StoryFn<typeof EbayTable> = (args) => (
             </EbayTableRow>
         ))}
     </EbayTable>
-)
+);
 
 export const ColumnSortingClientSide: StoryFn<typeof EbayTable> = (args) => {
-    const [sortedData, setSortedData] = React.useState(data)
+    const [sortedData, setSortedData] = React.useState(data);
 
     const handleSort: TableSortHandler = (event, { sorted }) => {
         const newSortedData = [...data].sort((a, b) => {
-            if (sorted.listPrice === 'asc') {
-                return Number(a.listPrice.substring(1)) - Number(b.listPrice.substring(1))
-            } else if (sorted.listPrice === 'desc') {
-                return Number(b.listPrice.substring(1)) - Number(a.listPrice.substring(1))
-            } else if (sorted.quantityAvailable === 'asc') {
-                return Number(a.quantityAvailable) - Number(b.quantityAvailable)
-            } else if (sorted.quantityAvailable === 'desc') {
-                return Number(b.quantityAvailable) - Number(a.quantityAvailable)
+            if (sorted.listPrice === "asc") {
+                return Number(a.listPrice.substring(1)) - Number(b.listPrice.substring(1));
+            } else if (sorted.listPrice === "desc") {
+                return Number(b.listPrice.substring(1)) - Number(a.listPrice.substring(1));
+            } else if (sorted.quantityAvailable === "asc") {
+                return Number(a.quantityAvailable) - Number(b.quantityAvailable);
+            } else if (sorted.quantityAvailable === "desc") {
+                return Number(b.quantityAvailable) - Number(a.quantityAvailable);
             }
-            return 0
-        })
+            return 0;
+        });
 
-        setSortedData(newSortedData)
-    }
+        setSortedData(newSortedData);
+    };
 
     return (
         <EbayTable {...args} onSort={handleSort}>
             <EbayTableHeader rowHeader>Seller</EbayTableHeader>
             <EbayTableHeader>Item</EbayTableHeader>
             <EbayTableHeader>Status</EbayTableHeader>
-            <EbayTableHeader name="listPrice" columnType="numeric" sort="none">List Price</EbayTableHeader>
-            <EbayTableHeader name="quantityAvailable" columnType="numeric" sort="none">Quantity Available</EbayTableHeader>
+            <EbayTableHeader name="listPrice" columnType="numeric" sort="none">
+                List Price
+            </EbayTableHeader>
+            <EbayTableHeader name="quantityAvailable" columnType="numeric" sort="none">
+                Quantity Available
+            </EbayTableHeader>
             <EbayTableHeader>Orders</EbayTableHeader>
             <EbayTableHeader columnType="numeric">Watchers</EbayTableHeader>
             <EbayTableHeader columnType="numeric">Protection</EbayTableHeader>
@@ -270,9 +276,7 @@ export const ColumnSortingClientSide: StoryFn<typeof EbayTable> = (args) => {
                     <EbayTableCell>{row.seller}</EbayTableCell>
                     <EbayTableCell>{row.item.title}</EbayTableCell>
                     <EbayTableCell>
-                        <EbaySignal status={row.statusType as SignalStatus}>
-                            {row.status}
-                        </EbaySignal>
+                        <EbaySignal status={row.statusType as SignalStatus}>{row.status}</EbaySignal>
                     </EbayTableCell>
                     <EbayTableCell columnType="numeric">{row.listPrice}</EbayTableCell>
                     <EbayTableCell columnType="numeric">{row.quantityAvailable}</EbayTableCell>
@@ -286,5 +290,5 @@ export const ColumnSortingClientSide: StoryFn<typeof EbayTable> = (args) => {
                 </EbayTableRow>
             ))}
         </EbayTable>
-    )
-}
+    );
+};

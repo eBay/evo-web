@@ -1,22 +1,22 @@
-import React, { ChangeEvent, cloneElement, ComponentProps, FC, useState, FocusEvent } from 'react'
-import classNames from 'classnames'
-import EbaySelectOption from './ebay-select-option'
-import { EbayIcon } from '../ebay-icon'
-import { filterByType, withForwardRef } from '../common/component-utils'
-import { useFloatingLabel } from '../common/floating-label-utils/hooks'
-import { EbayChangeEventHandler } from '../common/event-utils/types'
+import React, { ChangeEvent, cloneElement, ComponentProps, FC, useState, FocusEvent } from "react";
+import classNames from "classnames";
+import EbaySelectOption from "./ebay-select-option";
+import { EbayIcon } from "../ebay-icon";
+import { filterByType, withForwardRef } from "../common/component-utils";
+import { useFloatingLabel } from "../common/floating-label-utils/hooks";
+import { EbayChangeEventHandler } from "../common/event-utils/types";
 
-const isControlled = value => typeof value !== 'undefined'
+const isControlled = (value) => typeof value !== "undefined";
 
 type SelectValue = string | ReadonlyArray<string> | number;
-export type ChangeEventProps = { index: number, selected: string[] }
-export type EbaySelectProps = Omit<ComponentProps<'select'>, 'onChange'> & {
+export type ChangeEventProps = { index: number; selected: string[] };
+export type EbaySelectProps = Omit<ComponentProps<"select">, "onChange"> & {
     borderless?: boolean;
     defaultValue?: SelectValue;
     onChange?: EbayChangeEventHandler<HTMLSelectElement, ChangeEventProps>;
     floatingLabel?: string;
     forwardedRef?: React.Ref<HTMLSelectElement>;
-    inputSize?: 'default' | 'large';
+    inputSize?: "default" | "large";
     invalid?: boolean;
 };
 
@@ -37,37 +37,37 @@ const EbaySelect: FC<EbaySelectProps> = ({
     invalid,
     ...rest
 }) => {
-    const isFieldInvalid = invalid || rest['aria-invalid'] === 'true'
-    const [value, setValue] = useState<SelectValue>(defaultValue)
+    const isFieldInvalid = invalid || rest["aria-invalid"] === "true";
+    const [value, setValue] = useState<SelectValue>(defaultValue);
     const floatingLabel = useFloatingLabel({
         text: floatingLabelText,
         disabled: disabled,
         size: inputSize,
-        invalid: isFieldInvalid
-    })
+        invalid: isFieldInvalid,
+    });
 
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        const { value: newValue, selectedIndex } = e.target
+        const { value: newValue, selectedIndex } = e.target;
 
         if (!isControlled(controlledValue)) {
-            setValue(newValue)
+            setValue(newValue);
         }
 
-        onChange(e, { index: selectedIndex, selected: [newValue] })
-    }
+        onChange(e, { index: selectedIndex, selected: [newValue] });
+    };
 
     const handleBlur = (event: FocusEvent<HTMLSelectElement>) => {
-        onBlur(event)
-    }
+        onBlur(event);
+    };
 
     const handleFocus = (event: FocusEvent<HTMLSelectElement>) => {
-        onFocus(event)
-    }
+        onFocus(event);
+    };
 
-    const selectClassName = classNames('select', className, {
-        'select--borderless': borderless,
-        'select--large': inputSize === `large`
-    })
+    const selectClassName = classNames("select", className, {
+        "select--borderless": borderless,
+        "select--large": inputSize === `large`,
+    });
 
     return (
         <floatingLabel.Container>
@@ -88,54 +88,61 @@ const EbaySelect: FC<EbaySelectProps> = ({
                 <EbayIcon name="chevronDown12" height="8" width="8" />
             </span>
         </floatingLabel.Container>
-    )
-}
+    );
+};
 
-export default withForwardRef<EbaySelectProps>(EbaySelect)
+export default withForwardRef<EbaySelectProps>(EbaySelect);
 
 function optionGroups(data) {
-    const optGroups = {}
+    const optGroups = {};
 
-    data.forEach(opt => {
-        const option = opt.props
+    data.forEach((opt) => {
+        const option = opt.props;
         if (option.optgroup) {
             if (!Object.prototype.hasOwnProperty.call(optGroups, option.optgroup)) {
-                optGroups[option.optgroup] = []
+                optGroups[option.optgroup] = [];
             }
-            optGroups[option.optgroup].push(option)
+            optGroups[option.optgroup].push(option);
         }
-    })
+    });
 
-    return optGroups
+    return optGroups;
 }
 
 function options(children) {
-    const renderedGroups = []
-    const allOptions = []
-    let optGroups = {}
-    let withinGroup = false
+    const renderedGroups = [];
+    const allOptions = [];
+    let optGroups = {};
+    let withinGroup = false;
 
-    const childrenOpts = filterByType(children, EbaySelectOption).map(c => cloneElement(c, {}))
+    const childrenOpts = filterByType(children, EbaySelectOption).map((c) => cloneElement(c, {}));
 
     if (childrenOpts) {
-        optGroups = optionGroups(childrenOpts)
-        let currentGroupName
+        optGroups = optionGroups(childrenOpts);
+        let currentGroupName;
         childrenOpts.forEach((option, idx) => {
-            const { value, className: optionClassName, children: optionChildren, optgroup } = option.props
-            withinGroup = optgroup && renderedGroups.indexOf(optgroup) === -1
+            const { value, className: optionClassName, children: optionChildren, optgroup } = option.props;
+            withinGroup = optgroup && renderedGroups.indexOf(optgroup) === -1;
 
-            if (withinGroup) { // This will always be true when the very first group is encountered.
-                currentGroupName = optgroup
-                const currentGroupOptions = optGroups[currentGroupName]
+            if (withinGroup) {
+                // This will always be true when the very first group is encountered.
+                currentGroupName = optgroup;
+                const currentGroupOptions = optGroups[currentGroupName];
                 const opts = currentGroupOptions.map((groupOption) => (
                     <EbaySelectOption
                         key={`opt-${groupOption.value}`}
                         value={groupOption.value}
-                        className={groupOption.className}>
+                        className={groupOption.className}
+                    >
                         {groupOption.children}
-                    </EbaySelectOption>))
-                allOptions.push(<optgroup key={idx} label={optgroup}>{opts}</optgroup>)
-                renderedGroups.push(optgroup)
+                    </EbaySelectOption>
+                ));
+                allOptions.push(
+                    <optgroup key={idx} label={optgroup}>
+                        {opts}
+                    </optgroup>,
+                );
+                renderedGroups.push(optgroup);
             } else if (!optgroup) {
                 /**
                  * The check below is necessary because we could still be in a group which has already
@@ -144,9 +151,10 @@ function options(children) {
                 allOptions.push(
                     <EbaySelectOption key={idx} value={value} className={optionClassName}>
                         {optionChildren}
-                    </EbaySelectOption>)
+                    </EbaySelectOption>,
+                );
             }
-        })
-        return allOptions
+        });
+        return allOptions;
     }
 }

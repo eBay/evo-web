@@ -1,1 +1,1 @@
-export { default as EbayFullscreenDialogDeprecated } from './fullscreen-dialog'
+export { default as EbayFullscreenDialogDeprecated } from "./fullscreen-dialog";

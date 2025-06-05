@@ -1,15 +1,14 @@
-
-import React from 'react'
-import { Meta, StoryFn } from '@storybook/react';
-import { EbayFakeLink } from '../index';
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { EbayFakeLink } from "../index";
 
 const meta: Meta<typeof EbayFakeLink> = {
     component: EbayFakeLink,
-    title: 'buttons/ebay-fake-link',
+    title: "buttons/ebay-fake-link",
     argTypes: {
         disabled: {
             description: "",
-            control: { type: 'boolean' },
+            control: { type: "boolean" },
             table: {
                 category: "Toggles",
                 defaultValue: {
@@ -69,12 +68,8 @@ const meta: Meta<typeof EbayFakeLink> = {
             },
         },
     },
-}
+};
 
-export default meta
+export default meta;
 
-export const Default: StoryFn<typeof EbayFakeLink> = (args) => (
-    <EbayFakeLink {...args}>
-        Fake-Link
-    </EbayFakeLink>
-)
+export const Default: StoryFn<typeof EbayFakeLink> = (args) => <EbayFakeLink {...args}>Fake-Link</EbayFakeLink>;

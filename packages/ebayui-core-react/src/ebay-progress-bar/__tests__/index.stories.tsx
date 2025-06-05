@@ -1,10 +1,10 @@
-import React from 'react'
-import { EbayProgressBar } from '../index'
+import React from "react";
+import { EbayProgressBar } from "../index";
 
 export default {
-    title: 'progress/ebay-progress-bar',
-    component: EbayProgressBar
-}
+    title: "progress/ebay-progress-bar",
+    component: EbayProgressBar,
+};
 
 export const Default = () => (
     <>
@@ -24,7 +24,7 @@ export const Default = () => (
             <EbayProgressBar value={100} />
         </p>
     </>
-)
+);
 
 export const CustomMax = () => (
     <>
@@ -39,7 +39,7 @@ export const CustomMax = () => (
             <EbayProgressBar value={100} max={200} />
         </p>
     </>
-)
+);
 
 export const Fluid = () => (
     <>
@@ -47,4 +47,4 @@ export const Fluid = () => (
             <EbayProgressBar fluid value={50} />
         </p>
     </>
-)
+);

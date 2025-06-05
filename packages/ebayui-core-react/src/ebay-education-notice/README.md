@@ -11,28 +11,25 @@ import {
     EbayEducationNotice,
     EbayNoticeContent,
     EbayEducationNoticeTitle,
-    EbayEducationNoticeFooter
-} from '@ebay/ui-core-react/ebay-education-notice'
+    EbayEducationNoticeFooter,
+} from "@ebay/ui-core-react/ebay-education-notice";
 ```
 
 ### Import following styles from SKIN
 
 ```jsx harmony
-import '@ebay/skin/education-notice'
+import "@ebay/skin/education-notice";
 ```
 
 ## Use
 
 ```jsx harmony
 <EbayEducationNotice educationIcon={<EbayIcon name="theEbayVault24" />}>
-    <EbayEducationNoticeTitle>
-        Recommended title format
-    </EbayEducationNoticeTitle>
+    <EbayEducationNoticeTitle>Recommended title format</EbayEducationNoticeTitle>
     <EbayNoticeContent>
         <p>
-            Follow the order below to optimize market valuation from Price
-            Guide. Player + Set or Season + Manufacturer + Card number + Variant
-            + Grader + Grade
+            Follow the order below to optimize market valuation from Price Guide. Player + Set or Season + Manufacturer
+            + Card number + Variant + Grader + Grade
         </p>
     </EbayNoticeContent>
     <EbayEducationNoticeFooter>Education footer</EbayEducationNoticeFooter>

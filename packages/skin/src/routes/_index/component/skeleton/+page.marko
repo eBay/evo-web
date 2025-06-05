@@ -720,6 +720,102 @@
             />
         </div>
     </highlight-code>
+    <h3 id="skeleton-animation">
+        Skeleton Animation
+        <sup>EXPERIMENTAL</sup>
+    </h3>
+    <p>
+        The skeleton loader uses view-transition animation to swap between the skeleton and the loaded content. This is an experimental feature and may not be supported in all browsers.
+    </p>
+
+    <p>
+        In order to use view-transition animation, the skeleton must have a
+        <span class="highlight">
+            view-transition-name
+        </span>
+        ${" "}style attribute set. The value of the attribute must be unique for each skeleton on the page. For this you can use${" "}
+        <span class="highlight">
+            skeleton-transition-1
+        </span>
+         and
+        <span class="highlight">
+            skeleton-transition-2
+        </span>
+        ${" "}etc view transition names. These names should correspond to the loaded content view transition names so that they can transition properly.
+    </p>
+    <p>
+        We have defined
+        <span class="highlight">
+            skeleton-transition-*
+        </span>
+        ${" "}so that you can use any arbitray name after skeleton-transition-. Just make sure that the names are unique and do not conflict with other view transition names on the page. Also verify that the view-transition-name set on the skeleton matches the view-transition-name set on the loaded content.
+    </p>
+    <p>
+        Reminder: when swapping between the skeleton and the loaded content, use${" "}
+        <span class="highlight">
+            document.startViewTransition()
+        </span>
+         to start the view transition.
+    </p>
+    <div class="demo">
+        <div class="demo__inner">
+            <button type="button" class="btn skeleton-trigger">
+                Load content
+            </button>
+
+            <div
+                class="skeleton"
+                role="img"
+                aria-label="loading"
+                style="display: flex;"
+            >
+                <span
+                    id="skeleton-transition-0"
+                    class="skeleton__image"
+                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
+                />
+                <span
+                    id="skeleton-transition-1"
+                    class="skeleton__image"
+                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
+                />
+                <span
+                    id="skeleton-transition-2"
+                    class="skeleton__image"
+                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
+                />
+            </div>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <button type="button" class="btn skeleton-trigger">
+            Load content
+        </button>
+
+        <div
+            class="skeleton"
+            role="img"
+            aria-label="loading"
+            style="display: flex;"
+        >
+            <span
+                id="skeleton-transition-0"
+                class="skeleton__image"
+                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
+            />
+            <span
+                id="skeleton-transition-1"
+                class="skeleton__image"
+                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
+            />
+            <span
+                id="skeleton-transition-2"
+                class="skeleton__image"
+                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
+            />
+        </div>
+    </highlight-code>
 
     <h3 id="skeleton-variables">
         Skeleton Variables

@@ -12,5 +12,5 @@
     "@country-code": "string",
     "@value": "string",
     "@aria-disabled": "never",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/form-input-ebay-phone-input-button)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/form-input-ebay-phone-input-button)"
 }

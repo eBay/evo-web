@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { EbayConfirmDialog } from '../index'
-import { EbayDialogHeader } from '../../ebay-dialog-base'
-import { action } from '@storybook/addon-actions'
-import { StoryFn, Meta } from '@storybook/react'
+import React, { useState } from "react";
+import { EbayConfirmDialog } from "../index";
+import { EbayDialogHeader } from "../../ebay-dialog-base";
+import { action } from "@storybook/addon-actions";
+import { StoryFn, Meta } from "@storybook/react";
 
 const story: Meta<typeof EbayConfirmDialog> = {
     component: EbayConfirmDialog,
-    title: 'dialogs/ebay-confirm-dialog'
-}
+    title: "dialogs/ebay-confirm-dialog",
+};
 
 export const Default: StoryFn<typeof EbayConfirmDialog> = (args) => {
-    const [open, setOpen] = useState(true)
-    const close = () => setOpen(false)
+    const [open, setOpen] = useState(true);
+    const close = () => setOpen(false);
 
     return (
         <div>
@@ -21,14 +21,14 @@ export const Default: StoryFn<typeof EbayConfirmDialog> = (args) => {
             <p>Some outside content...</p>
             <EbayConfirmDialog
                 open={open}
-                onOpen={() => action('onOpen')()}
+                onOpen={() => action("onOpen")()}
                 onConfirm={() => {
-                    action('onConfirm')()
-                    close()
+                    action("onConfirm")();
+                    close();
                 }}
                 onReject={() => {
-                    action('onReject')()
-                    close()
+                    action("onReject")();
+                    close();
                 }}
                 confirmText="Okay"
                 rejectText="Cancel"
@@ -38,12 +38,12 @@ export const Default: StoryFn<typeof EbayConfirmDialog> = (args) => {
                 <p>You will permanently lose this address.</p>
             </EbayConfirmDialog>
         </div>
-    )
-}
+    );
+};
 
 export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = () => {
-    const [open, setOpen] = useState(false)
-    const close = () => setOpen(false)
+    const [open, setOpen] = useState(false);
+    const close = () => setOpen(false);
 
     return (
         <div>
@@ -64,7 +64,7 @@ export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = () => {
                 <p>You will permanently lose this address.</p>
             </EbayConfirmDialog>
         </div>
-    )
-}
+    );
+};
 
-export default story
+export default story;

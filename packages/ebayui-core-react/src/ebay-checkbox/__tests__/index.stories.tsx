@@ -1,15 +1,15 @@
-import React, { useState, useRef, ChangeEvent } from 'react'
-import { StoryFn, Meta } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { EbayLabel } from '../../ebay-field'
-import { EbayCheckbox } from '../index'
+import React, { useState, useRef, ChangeEvent } from "react";
+import { StoryFn, Meta } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { EbayLabel } from "../../ebay-field";
+import { EbayCheckbox } from "../index";
 
 const meta: Meta<typeof EbayCheckbox> = {
     component: EbayCheckbox,
-    title: 'form input/ebay-checkbox'
-}
+    title: "form input/ebay-checkbox",
+};
 
-export default meta
+export default meta;
 
 export const DefaultCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
     <>
@@ -17,9 +17,9 @@ export const DefaultCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
             <EbayCheckbox
                 value="123"
                 id="checkbox-11"
-                onChange={(e, props) => action('onChange')(e, props)}
-                onFocus={(e, props) => action('onFocus')(e, props)}
-                onKeyDown={(e, props) => action('onKeyDown')(e, props)}
+                onChange={(e, props) => action("onChange")(e, props)}
+                onFocus={(e, props) => action("onFocus")(e, props)}
+                onKeyDown={(e, props) => action("onKeyDown")(e, props)}
             >
                 <EbayLabel>Default</EbayLabel>
             </EbayCheckbox>
@@ -30,7 +30,7 @@ export const DefaultCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
             </EbayCheckbox>
         </p>
     </>
-)
+);
 
 export const SelectedCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
     <>
@@ -45,7 +45,7 @@ export const SelectedCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
             </EbayCheckbox>
         </p>
     </>
-)
+);
 
 export const DisabledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
     <>
@@ -60,43 +60,28 @@ export const DisabledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
             </EbayCheckbox>
         </p>
     </>
-)
+);
 
 export const GroupedCheckboxButtons: StoryFn<typeof EbayCheckbox> = () => (
     <fieldset>
         <legend>Choose an Option</legend>
         <span className="field">
-            <EbayCheckbox
-                id="group-checkbox-1"
-                value="1"
-                onChange={action('checkbox-change')}
-                name="checkbox-group"
-            >
+            <EbayCheckbox id="group-checkbox-1" value="1" onChange={action("checkbox-change")} name="checkbox-group">
                 <EbayLabel>Option 1</EbayLabel>
             </EbayCheckbox>
         </span>
         <span className="field">
-            <EbayCheckbox
-                id="group-checkbox-2"
-                value="2"
-                onChange={action('checkbox-change')}
-                name="checkbox-group"
-            >
+            <EbayCheckbox id="group-checkbox-2" value="2" onChange={action("checkbox-change")} name="checkbox-group">
                 <EbayLabel>Option 2</EbayLabel>
             </EbayCheckbox>
         </span>
         <span className="field">
-            <EbayCheckbox
-                id="group-checkbox-3"
-                value="3"
-                onChange={action('checkbox-change')}
-                name="checkbox-group"
-            >
+            <EbayCheckbox id="group-checkbox-3" value="3" onChange={action("checkbox-change")} name="checkbox-group">
                 <EbayLabel>Option 3</EbayLabel>
             </EbayCheckbox>
         </span>
     </fieldset>
-)
+);
 
 export const StyledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
     <span className="checkbox">
@@ -105,36 +90,36 @@ export const StyledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
                 __html: `
                 .custom ~ label { color: green; }
                 .custom ~ .checkbox__icon svg { color: green !important; }
-            `
+            `,
             }}
         />
         <EbayCheckbox className="custom" aria-label="custom color checkbox example" id="checkbox-30">
             <EbayLabel>Custom style</EbayLabel>
         </EbayCheckbox>
     </span>
-)
+);
 
 export const ControlValueFromOutside: StoryFn<typeof EbayCheckbox> = () => {
     const Controller = () => {
-        const [isChecked, setChecked] = useState(true)
-        const [isDisabled, setDisabled] = useState(false)
-        const counter = useRef(0)
+        const [isChecked, setChecked] = useState(true);
+        const [isDisabled, setDisabled] = useState(false);
+        const counter = useRef(0);
         const handleOnChange = (
             e: ChangeEvent<HTMLInputElement>,
             {
-                checked
+                checked,
             }: {
                 value: string | number;
                 checked: boolean;
-            }
+            },
         ) => {
             if (counter.current < 4) {
-                setChecked(checked)
+                setChecked(checked);
             } else {
-                setDisabled(true)
+                setDisabled(true);
             }
-            counter.current++
-        }
+            counter.current++;
+        };
 
         return (
             <EbayCheckbox
@@ -151,11 +136,11 @@ export const ControlValueFromOutside: StoryFn<typeof EbayCheckbox> = () => {
                     <EbayLabel>Gets disabled after {5 - counter.current} clicks</EbayLabel>
                 )}
             </EbayCheckbox>
-        )
-    }
+        );
+    };
     return (
         <>
             <Controller />
         </>
-    )
-}
+    );
+};

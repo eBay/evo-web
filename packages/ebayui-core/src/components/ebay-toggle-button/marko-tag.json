@@ -31,5 +31,5 @@
         "@src": "string",
         "@size": "string"
     },
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/buttons-ebay-toggle-button)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/buttons-ebay-toggle-button)"
 }

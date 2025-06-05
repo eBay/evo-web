@@ -1,21 +1,15 @@
-import { EbayEventHandler } from '../common/event-utils/types'
-import { MenuActionEventData } from '../ebay-file-preview-card'
+import { EbayEventHandler } from "../common/event-utils/types";
+import { MenuActionEventData } from "../ebay-file-preview-card";
 
 type EventData = {
-    index: number
-}
+    index: number;
+};
 
 type MenuEventGroup = {
-    index: number
-    menuActionEvent?: MenuActionEventData
-}
+    index: number;
+    menuActionEvent?: MenuActionEventData;
+};
 
-export type FilePreviewCardActionHandler = EbayEventHandler<
-    HTMLElement,
-    EventData
->
+export type FilePreviewCardActionHandler = EbayEventHandler<HTMLElement, EventData>;
 
-export type FilePreviewCardMenuActionHandler = EbayEventHandler<
-    HTMLElement,
-    MenuEventGroup
->
+export type FilePreviewCardMenuActionHandler = EbayEventHandler<HTMLElement, MenuEventGroup>;

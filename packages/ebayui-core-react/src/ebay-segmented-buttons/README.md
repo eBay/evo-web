@@ -1,14 +1,17 @@
 # EbaySegmentedButtons
 
 ## Demo
+
 [Storybook](https://opensource.ebay.com/ebayui-core-react/main/?path=/story/buttons-ebay-segmented-buttons--default)
 
 ## Install
+
 ```
 yarn add @ebay/ui-core-react @ebay/skin
 ```
 
 ## Usage
+
 ```
 import React from 'react'
 import { EbaySegmentedButtons, EbaySegmentedButton as Button } from '@ebay/ui-core-react/ebay-segmented-buttons'
@@ -29,14 +32,14 @@ export const Example = () => (
 
 ## EbaySegmentedButtons Props
 
-Name | Type     | Required | Description
---- |----------| --- | ---
-`size` | enum     | No | Can be `regular` (default) or `large`
-`onChange` | Function | No | props: (e: event, { index: number, value: string), triggered on selected button change
+| Name       | Type     | Required | Description                                                                            |
+| ---------- | -------- | -------- | -------------------------------------------------------------------------------------- |
+| `size`     | enum     | No       | Can be `regular` (default) or `large`                                                  |
+| `onChange` | Function | No       | props: (e: event, { index: number, value: string), triggered on selected button change |
 
 ## EbaySegmentedButton Props
 
-Name | Type | Required                        | Description
---- | --- |---------------------------------| ---
-`value` | String | No                              | the value to use with `onChange` callback
-`selected` | Boolean  | No | Whether or not the button is selected
+| Name       | Type    | Required | Description                               |
+| ---------- | ------- | -------- | ----------------------------------------- |
+| `value`    | String  | No       | the value to use with `onChange` callback |
+| `selected` | Boolean | No       | Whether or not the button is selected     |

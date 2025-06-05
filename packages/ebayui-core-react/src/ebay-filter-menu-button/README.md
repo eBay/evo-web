@@ -41,8 +41,8 @@ import "@ebay/skin/filter-menu-button.css";
 
 The `EbayFilterMenuButton` supports all properties from the [EbayFilterMenu](../ebay-filter-menu/README.md) component. Additionally, it includes the following specific attributes:
 
-| Name         | Type     | Required | Description                                |
-| ------------ | -------- | -------- | ------------------------------------------ |
-| `onExpand`   | Function | No       | Triggered when the menu is expanded        |
-| `onCollapse` | Function | No       | Triggered when the menu is collapsed       |
-| `text`       | String   | No       | The text displayed on the button           |
+| Name         | Type     | Required | Description                          |
+| ------------ | -------- | -------- | ------------------------------------ |
+| `onExpand`   | Function | No       | Triggered when the menu is expanded  |
+| `onCollapse` | Function | No       | Triggered when the menu is collapsed |
+| `text`       | String   | No       | The text displayed on the button     |

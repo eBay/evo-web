@@ -1,10 +1,10 @@
-import React, { ComponentProps, FC, ReactElement } from 'react'
-import classNames from 'classnames'
-import { filterByType } from '../utils'
-import { EbayIcon } from '../ebay-icon'
-import { EbayListboxOptionDescription } from './listbox-option-description'
+import React, { ComponentProps, FC, ReactElement } from "react";
+import classNames from "classnames";
+import { filterByType } from "../utils";
+import { EbayIcon } from "../ebay-icon";
+import { EbayListboxOptionDescription } from "./listbox-option-description";
 
-export type EbayListboxOptionProps = ComponentProps<'div'> & {
+export type EbayListboxOptionProps = ComponentProps<"div"> & {
     icon?: ReactElement;
     text?: string;
     value: string;
@@ -22,17 +22,18 @@ export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
     selected,
     ...rest
 }) => {
-    const description = filterByType(children, EbayListboxOptionDescription)
-    const displayText = text || (!description?.length ? children : '')
+    const description = filterByType(children, EbayListboxOptionDescription);
+    const displayText = text || (!description?.length ? children : "");
 
     return (
         <div
             {...rest}
             tabIndex={disabled ? -1 : tabIndex}
-            className={classNames('listbox__option', className)}
+            className={classNames("listbox__option", className)}
             aria-disabled={disabled}
             aria-selected={selected}
-            role="option">
+            role="option"
+        >
             {icon ? (
                 <span className="listbox__value">
                     {icon}
@@ -47,5 +48,5 @@ export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
             )}
             <EbayIcon name="tick16" />
         </div>
-    )
-}
+    );
+};

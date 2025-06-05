@@ -26,5 +26,5 @@
         "a11yRangeEndText": "string",
         "a11ySeparator": "string"
     },
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/dialogs-ebay-date-textbox)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/dialogs-ebay-date-textbox)"
 }

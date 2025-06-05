@@ -1,1 +1,1 @@
-export { default as EbayCCD } from './ccd';
+export { default as EbayCCD } from "./ccd";

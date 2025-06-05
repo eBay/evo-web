@@ -8,26 +8,31 @@ import React, {
     ReactElement,
     cloneElement,
     ReactNode,
-    KeyboardEvent
-} from 'react'
-import classNames from 'classnames'
-import * as screenreaderTrap from 'makeup-screenreader-trap'
-import * as keyboardTrap from 'makeup-keyboard-trap'
-import { EbayIcon } from '../../ebay-icon'
-import { randomId } from '../../common/random-id'
-import { useDialogAnimation, TransitionElement } from './animation'
-import { DialogCloseEvent, DialogCloseEventHandler } from '../types'
-import { EbayDialogHeaderProps } from './dialog-header'
+    KeyboardEvent,
+} from "react";
+import classNames from "classnames";
+import * as screenreaderTrap from "makeup-screenreader-trap";
+import * as keyboardTrap from "makeup-keyboard-trap";
+import { EbayIcon } from "../../ebay-icon";
+import { randomId } from "../../common/random-id";
+import { useDialogAnimation, TransitionElement } from "./animation";
+import { DialogCloseEvent, DialogCloseEventHandler } from "../types";
+import { EbayDialogHeaderProps } from "./dialog-header";
 
-export type WindowType = 'compact'
-type ClassPrefix = 'fullscreen-dialog' | 'lightbox-dialog' | 'panel-dialog'
-    | 'drawer-dialog' | 'toast-dialog' | 'alert-dialog' | 'confirm-dialog'
-    | 'snackbar-dialog'
-type ButtonPosition = 'top' | 'right' | 'bottom' | 'left' | 'hidden'
-
+export type WindowType = "compact";
+type ClassPrefix =
+    | "fullscreen-dialog"
+    | "lightbox-dialog"
+    | "panel-dialog"
+    | "drawer-dialog"
+    | "toast-dialog"
+    | "alert-dialog"
+    | "confirm-dialog"
+    | "snackbar-dialog";
+type ButtonPosition = "top" | "right" | "bottom" | "left" | "hidden";
 
 export interface DialogBaseProps<T> extends HTMLProps<T> {
-    baseEl?: 'div' | 'span' | 'aside';
+    baseEl?: "div" | "span" | "aside";
     open?: boolean;
     classPrefix?: ClassPrefix;
     windowClass?: string;
@@ -55,14 +60,14 @@ export interface DialogBaseProps<T> extends HTMLProps<T> {
 }
 
 export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
-    baseEl: Container = 'div',
-    classPrefix = 'drawer-dialog',
+    baseEl: Container = "div",
+    classPrefix = "drawer-dialog",
     windowClass,
     windowType,
     mainId,
     top,
     header,
-    buttonPosition = 'right',
+    buttonPosition = "right",
     children,
     ariaLabelledby,
     a11yCloseText,
@@ -77,43 +82,43 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
     closeButton,
     previousButton,
     isModal,
-    role = 'dialog',
+    role = "dialog",
     focus,
     transitionElement,
     animated,
     closeButtonClass,
     ...props
 }) => {
-    const dialogRef = useRef(null)
-    const drawerBaseEl = useRef(null)
-    const closeButtonRef = useRef(null)
+    const dialogRef = useRef(null);
+    const drawerBaseEl = useRef(null);
+    const closeButtonRef = useRef(null);
 
-    const [rId, setRandomId] = useState('')
+    const [rId, setRandomId] = useState("");
 
     useEffect(() => {
-        setRandomId(randomId())
-    }, [])
+        setRandomId(randomId());
+    }, []);
 
     const handleBackgroundClick = (e) => {
-        props.onClick?.(e)
+        props.onClick?.(e);
         if (drawerBaseEl.current && !drawerBaseEl.current.contains(e.target)) {
-            onBackgroundClick(e as unknown as DialogCloseEvent)
+            onBackgroundClick(e as unknown as DialogCloseEvent);
         }
-    }
+    };
 
     useEffect(() => {
         if (open && isModal) {
-            screenreaderTrap.trap(drawerBaseEl.current)
-            keyboardTrap.trap(drawerBaseEl.current)
+            screenreaderTrap.trap(drawerBaseEl.current);
+            keyboardTrap.trap(drawerBaseEl.current);
         } else {
-            screenreaderTrap.untrap()
-            keyboardTrap.untrap()
+            screenreaderTrap.untrap();
+            keyboardTrap.untrap();
         }
         return () => {
-            screenreaderTrap.untrap()
-            keyboardTrap.untrap()
-        }
-    }, [open, isModal])
+            screenreaderTrap.untrap();
+            keyboardTrap.untrap();
+        };
+    }, [open, isModal]);
 
     useDialogAnimation({
         open,
@@ -122,43 +127,43 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
         dialogRef,
         dialogWindowRef: drawerBaseEl,
         enabled: animated,
-        onTransitionEnd: () => handleFocus(open)
-    })
+        onTransitionEnd: () => handleFocus(open),
+    });
 
-    const onKeyDown = (event: KeyboardEvent<HTMLElement> & DocumentEventMap['keydown']) => {
-        if (!ignoreEscape && event.key === 'Escape') {
-            event.stopPropagation()
-            onCloseBtnClick(event)
+    const onKeyDown = (event: KeyboardEvent<HTMLElement> & DocumentEventMap["keydown"]) => {
+        if (!ignoreEscape && event.key === "Escape") {
+            event.stopPropagation();
+            onCloseBtnClick(event);
         }
-    }
+    };
 
     useEffect(() => {
         // For animated dialogs we handle the focus on transitionEnd event
         if (!animated) {
-            handleFocus(open)
+            handleFocus(open);
         }
         if (open) {
-            onOpen()
+            onOpen();
         }
-    }, [open])
+    }, [open]);
 
     function handleFocus(isOpen: boolean) {
         if (isOpen) {
             if (focus) {
-                focus.current?.focus()
+                focus.current?.focus();
             } else if (isModal) {
-                closeButtonRef.current?.focus()
+                closeButtonRef.current?.focus();
             }
-            document.addEventListener('keydown', onKeyDown, false)
-            return () => document.removeEventListener('keydown', onKeyDown, false)
+            document.addEventListener("keydown", onKeyDown, false);
+            return () => document.removeEventListener("keydown", onKeyDown, false);
         }
     }
 
-    const closeButtonContent = buttonPosition !== 'hidden' && (
+    const closeButtonContent = buttonPosition !== "hidden" && (
         <button
             ref={closeButtonRef}
             className={classNames(`icon-btn`, closeButtonClass, `${classPrefix}__close`, {
-                'icon-btn--transparent': classPrefix === `toast-dialog`
+                "icon-btn--transparent": classPrefix === `toast-dialog`,
             })}
             type="button"
             aria-label={a11yCloseText}
@@ -166,13 +171,13 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
         >
             {closeButton || <EbayIcon name="close16" />}
         </button>
-    )
+    );
 
-    const windowClassName = windowType ? `${classPrefix}__${windowType}-window` : `${classPrefix}__window`
+    const windowClassName = windowType ? `${classPrefix}__${windowType}-window` : `${classPrefix}__window`;
 
-    const dialogTitleId = header?.props?.id || `dialog-title-${rId}`
-    const dialogLabelledBy = ariaLabelledby || dialogTitleId
-    const dialogHeader = header ? cloneElement(header, { ...header.props, id: dialogTitleId }) : null
+    const dialogTitleId = header?.props?.id || `dialog-title-${rId}`;
+    const dialogLabelledBy = ariaLabelledby || dialogTitleId;
+    const dialogHeader = header ? cloneElement(header, { ...header.props, id: dialogTitleId }) : null;
 
     return (
         <Container
@@ -182,38 +187,34 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
             role={role}
             hidden={!open}
             className={classNames(classPrefix, props.className)}
-            aria-live={!isModal ? 'polite' : undefined}
+            aria-live={!isModal ? "polite" : undefined}
             ref={dialogRef}
             onKeyDown={onKeyDown as (event: KeyboardEvent<HTMLElement>) => void}
-            onClick={open && buttonPosition !== 'hidden' ? handleBackgroundClick : props.onClick}
+            onClick={open && buttonPosition !== "hidden" ? handleBackgroundClick : props.onClick}
         >
             <div className={classNames(windowClassName, windowClass)} ref={drawerBaseEl}>
                 {top}
                 {dialogHeader && (
                     <div className={`${classPrefix}__header`}>
                         {previousButton}
-                        {buttonPosition === 'right' && dialogHeader}
-                        {buttonPosition !== 'bottom' && closeButtonContent}
-                        {(buttonPosition === 'left' || buttonPosition === 'hidden') && dialogHeader}
+                        {buttonPosition === "right" && dialogHeader}
+                        {buttonPosition !== "bottom" && closeButtonContent}
+                        {(buttonPosition === "left" || buttonPosition === "hidden") && dialogHeader}
                     </div>
                 )}
                 <div id={mainId} className={`${classPrefix}__main`} onScroll={onScroll}>
                     {children}
                 </div>
-                {actions ? (
-                    <div className={`${classPrefix}__actions`}>
-                        {actions}
-                    </div>
-                ) : null}
-                {footer || buttonPosition === 'bottom' ? (
+                {actions ? <div className={`${classPrefix}__actions`}>{actions}</div> : null}
+                {footer || buttonPosition === "bottom" ? (
                     <div className={`${classPrefix}__footer`}>
                         {footer}
-                        {buttonPosition === 'bottom' && closeButtonContent}
+                        {buttonPosition === "bottom" && closeButtonContent}
                     </div>
                 ) : null}
             </div>
         </Container>
-    )
-}
+    );
+};
 
-export default DialogBase
+export default DialogBase;

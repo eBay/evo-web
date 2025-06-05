@@ -36,5 +36,5 @@
         "@html-attributes": "expression"
     },
     "@dismissed": "bool",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/notices-tips-ebay-page-notice)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/notices-tips-ebay-page-notice)"
 }

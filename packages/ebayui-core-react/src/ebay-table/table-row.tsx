@@ -1,11 +1,11 @@
-import React, { ComponentProps, FC, ReactElement } from 'react'
-import type { EbayTableHeaderProps } from './table-header'
-import { filterByType } from '../utils'
-import EbayTableCell from './table-cell'
-import { TableRowSelectHandler, TableMode } from './types'
-import { EbayCheckbox, CheckboxChangeHandler } from '../ebay-checkbox'
+import React, { ComponentProps, FC, ReactElement } from "react";
+import type { EbayTableHeaderProps } from "./table-header";
+import { filterByType } from "../utils";
+import EbayTableCell from "./table-cell";
+import { TableRowSelectHandler, TableMode } from "./types";
+import { EbayCheckbox, CheckboxChangeHandler } from "../ebay-checkbox";
 
-export type EbayTableRowProps = Omit<ComponentProps<'tr'>, 'onSelect'> & {
+export type EbayTableRowProps = Omit<ComponentProps<"tr">, "onSelect"> & {
     name?: string;
     selected?: boolean;
     mode?: TableMode;
@@ -18,7 +18,7 @@ export type EbayTableRowProps = Omit<ComponentProps<'tr'>, 'onSelect'> & {
      * @deprecated
      */
     __headers?: ReactElement<EbayTableHeaderProps>[];
-}
+};
 
 const EbayTableRow: FC<EbayTableRowProps> = ({
     name,
@@ -31,32 +31,37 @@ const EbayTableRow: FC<EbayTableRowProps> = ({
     __headers,
     ...rest
 }: EbayTableRowProps) => {
-    const cells = filterByType(children, EbayTableCell)
+    const cells = filterByType(children, EbayTableCell);
 
     const handleCheckboxChange: CheckboxChangeHandler = (event, { checked }) => {
-        onSelect(event, { name, selected: checked })
-    }
+        onSelect(event, { name, selected: checked });
+    };
 
     return (
         <tr className={className} {...rest}>
-            {mode === 'selection' && (
+            {mode === "selection" && (
                 <EbayTableCell rowHeader key="selection-cell">
                     <EbayCheckbox
                         checked={selected}
-                        aria-label={a11ySelectRowText || 'Select row'}
-                        onChange={handleCheckboxChange} />
+                        aria-label={a11ySelectRowText || "Select row"}
+                        onChange={handleCheckboxChange}
+                    />
                 </EbayTableCell>
             )}
-            {__headers?.map((header, index) => React.cloneElement(cells[index], {
-                rowHeader: typeof header.props.rowHeader === 'boolean'
-                    ? header.props.rowHeader
-                    : cells[index].props.rowHeader,
-                columnType: typeof header.props.columnType === 'string'
-                    ? header.props.columnType
-                    : cells[index].props.columnType
-            }))}
+            {__headers?.map((header, index) =>
+                React.cloneElement(cells[index], {
+                    rowHeader:
+                        typeof header.props.rowHeader === "boolean"
+                            ? header.props.rowHeader
+                            : cells[index].props.rowHeader,
+                    columnType:
+                        typeof header.props.columnType === "string"
+                            ? header.props.columnType
+                            : cells[index].props.columnType,
+                }),
+            )}
         </tr>
-    )
-}
+    );
+};
 
-export default EbayTableRow
+export default EbayTableRow;

@@ -1,1 +1,1 @@
-export { default as EbayChip, type EbayChipProps } from './chip'
+export { default as EbayChip, type EbayChipProps } from "./chip";

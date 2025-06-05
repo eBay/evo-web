@@ -1,21 +1,19 @@
-import React from 'react'
-import { Meta } from '@storybook/react';
-import { action } from '@storybook/addon-actions'
+import React from "react";
+import { Meta } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
-import { EbayListbox, EbayListboxOption, EbayListboxOptionDescription } from '../'
+import { EbayListbox, EbayListboxOption, EbayListboxOptionDescription } from "../";
 
 const meta: Meta<typeof EbayListbox> = {
-    title: 'building blocks/ebay-listbox',
+    title: "building blocks/ebay-listbox",
     argTypes: {
         name: {
-            control: { type: 'text' },
-            description:
-                "used for the `name` attribute of the native `<select>`",
+            control: { type: "text" },
+            description: "used for the `name` attribute of the native `<select>`",
         },
         disabled: {
-            control: { type: 'boolean' },
-            description:
-                "If true, the listbox is disabled",
+            control: { type: "boolean" },
+            description: "If true, the listbox is disabled",
         },
         listSelection: {
             table: {
@@ -26,22 +24,20 @@ const meta: Meta<typeof EbayListbox> = {
             description:
                 "If manual then user will need to press enter to select an item using keyboard. Otherwise auto will automatically select as the user presses up/down",
             options: ["manual", "auto"],
-            control: { type: 'select'}
+            control: { type: "select" },
         },
         maxHeight: {
-            control: { type: 'text' },
-            description:
-                "The max height of the listbox",
+            control: { type: "text" },
+            description: "The max height of the listbox",
         },
         typeaheadTimeoutLength: {
-            control: { type: 'number' },
-            description:
-                "The time in milliseconds to wait before the typeahead search resets",
+            control: { type: "number" },
+            description: "The time in milliseconds to wait before the typeahead search resets",
             table: {
                 defaultValue: {
                     summary: "1300",
                 },
-            }
+            },
         },
         onChange: {
             action: "onChange",
@@ -62,18 +58,18 @@ const meta: Meta<typeof EbayListbox> = {
                     summary: "",
                 },
             },
-        }
-    }
-}
-export default meta
+        },
+    },
+};
+export default meta;
 
 export const Default = (args) => (
     <EbayListbox {...args}>
-        <EbayListboxOption value="AA" text="Option 1"/>
+        <EbayListboxOption value="AA" text="Option 1" />
         <EbayListboxOption value="BB" text="Option 2" />
         <EbayListboxOption value="CC" text="Option 3" />
     </EbayListbox>
-)
+);
 
 export const WithDescription = (args) => (
     <EbayListbox {...args}>
@@ -87,15 +83,15 @@ export const WithDescription = (args) => (
             <EbayListboxOptionDescription>Option 3 extra info</EbayListboxOptionDescription>
         </EbayListboxOption>
     </EbayListbox>
-)
+);
 
 export const WithDisabled = (args) => (
     <EbayListbox {...args}>
-        <EbayListboxOption value="AA" text="Option 1"/>
+        <EbayListboxOption value="AA" text="Option 1" />
         <EbayListboxOption value="BB" text="Option 2" disabled />
         <EbayListboxOption value="CC" text="Option 3" />
     </EbayListbox>
-)
+);
 
 export const WithManyOptions = () => (
     <EbayListbox name="formFieldName">
@@ -103,12 +99,12 @@ export const WithManyOptions = () => (
             <EbayListboxOption key={i} value={i.toString()} text={`Option ${i + 1}`} />
         ))}
     </EbayListbox>
-)
+);
 
 export const WithActions = (args) => (
-    <EbayListbox {...args} name="formFieldName" onChange={action('onChange')} onEscape={action('onEscape')}>
-        <EbayListboxOption value="AA" text="Option 1"/>
+    <EbayListbox {...args} name="formFieldName" onChange={action("onChange")} onEscape={action("onEscape")}>
+        <EbayListboxOption value="AA" text="Option 1" />
         <EbayListboxOption value="BB" text="Option 2" />
         <EbayListboxOption value="CC" text="Option 3" />
     </EbayListbox>
-)
+);

@@ -3,12 +3,8 @@
 ## DialogBase Usage
 
 ```jsx
-<DialogBase
-  open
-  a11yCloseText="Close Dialog Base"
-  onCloseBtnClick={handleCloseBtnClick}
->
-  <h1>Hello World</h1>
+<DialogBase open a11yCloseText="Close Dialog Base" onCloseBtnClick={handleCloseBtnClick}>
+    <h1>Hello World</h1>
 </DialogBase>
 ```
 
