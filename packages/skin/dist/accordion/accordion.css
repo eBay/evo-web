@@ -3,7 +3,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(7px);
+        transform: translateY(-7px);
     }
     to {
         transform: translateY(0);
