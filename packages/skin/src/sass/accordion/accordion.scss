@@ -1,6 +1,30 @@
 @import "../variables/variables";
 @import "../mixins/private/token-mixins";
 
+@keyframes chevron-bounce-open {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes chevron-bounce-close {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 ul.accordion {
     margin: 0;
     padding: 0;
@@ -27,26 +51,28 @@ ul.accordion summary.details__summary {
     padding: 12px 16px;
 }
 
+ul.accordion details {
+    overflow: hidden;
+}
+
+ul.accordion details .details__content {
+    margin: 0 16px 6px;
+    overflow: hidden;
+}
+
 ul.accordion summary.details__summary span.details__icon svg {
     @include fill-token(
         details-secondary-foreground-color,
         color-foreground-secondary
     );
+
+    animation: chevron-bounce-close var(--motion-duration-medium-1)
+        var(--motion-easing-standard);
 }
 
-ul.accordion details .details__content {
-    margin: 0 16px 6px;
-    opacity: 0;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition:
-        opacity var(--motion-duration-medium-3) var(--motion-easing-standard),
-        transform var(--motion-duration-medium-3) var(--motion-easing-standard);
-}
-
-ul.accordion details[open] .details__content {
-    opacity: 1;
-    transform: scaleY(1);
+ul.accordion details[open] summary.details__summary span.details__icon svg {
+    animation: chevron-bounce-open var(--motion-duration-medium-1)
+        var(--motion-easing-standard) var(--motion-duration-short-1);
 }
 
 /* DEPRECATED: Remove next major */
@@ -65,10 +91,26 @@ ul.accordion--large summary.details__summary {
     min-height: 52px;
 }
 
-@media (prefers-reduced-motion) {
-    /* Remove animations */
-    ul.accordion details .details__content,
-    ul.accordion details[open] .details__content {
-        transition: none;
+@supports selector(::details-content) and (interpolate-size: allow-keywords) and
+    (transition: allow-discrete) {
+    :root {
+        interpolate-size: allow-keywords;
+    }
+
+    ul.accordion details::details-content {
+        height: 0;
+        opacity: 0;
+        overflow: clip;
+        transition:
+            height var(--motion-duration-medium-3) var(--motion-easing-standard),
+            content-visibility var(--motion-duration-medium-2)
+                var(--motion-easing-continuous) allow-discrete,
+            opacity var(--motion-duration-medium-2)
+                var(--motion-easing-continuous);
+    }
+
+    ul.accordion details[open]::details-content {
+        height: auto;
+        opacity: 1;
     }
 }

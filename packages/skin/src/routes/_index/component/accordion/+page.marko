@@ -524,6 +524,21 @@
             </li>
         </ul>
     </highlight-code>
+
+    <h3 id="accordion-animation">
+        Accordion Animation
+        <sup>EXPERIMENTAL</sup>
+    </h3>
+    <p>
+        The accordion features smooth animations with progressive enhancement when expanding and collapsing content sections. This is an experimental feature that may not be supported in all browsers.
+    </p>
+    <p>
+       The accordion uses modern CSS features like <span class="highlight">
+            interpolate-size: allow-keywords
+        </span> that enable smooth transitions for intrinsic size values and <span class="highlight">
+            transition-behavior: allow-discrete
+        </span> to allow smoother transitions for discrete properties like <span class="highlight">content-visibility</span>. 
+    </p>
 </div>
 export const metadata = {
     component: "accordion",
