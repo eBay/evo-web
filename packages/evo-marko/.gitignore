@@ -1,0 +1,14 @@
+*.log
+node_modules
+!src/node_modules
+.cache
+static
+coverage
+dist
+_site
+/.vscode
+.yarnclean
+yarn.lock
+.env
+_cdn
+__screenshots__
