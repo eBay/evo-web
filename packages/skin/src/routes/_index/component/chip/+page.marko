@@ -33,6 +33,251 @@
 
     <div class="demo">
         <div class="demo__inner">
+            <button class="chip" type="button" aria-pressed="false">
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+                <svg
+                    class="chip__trailing icon icon--12"
+                    width="13"
+                    height="12"
+                >
+                    <icon-symbol name="close-12"/>
+                </svg>
+            </button>
+
+            <a class="chip" href="https://www.ebay.com">
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+                <svg
+                    class="chip__trailing icon icon--12"
+                    width="13"
+                    height="12"
+                >
+                    <icon-symbol name="close-12"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <h3>Interactive selected chip</h3>
+    <div class="demo">
+        <div class="demo__inner">
+            <button class="chip" type="button" aria-pressed="true">
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+                <svg
+                    class="chip__trailing icon icon--12"
+                    width="13"
+                    height="12"
+                >
+                    <icon-symbol name="close-12"/>
+                </svg>
+            </button>
+
+            <a class="chip chip--selected" href="https://www.ebay.com">
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+                <svg
+                    class="chip__trailing icon icon--12"
+                    width="13"
+                    height="12"
+                >
+                    <icon-symbol name="close-12"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="chip">
+            <span id="chip-interactive-1-text" class="chip__text">
+                Football
+            </span>
+            <button
+                class="chip__button"
+                type="button"
+                aria-label="Remove"
+                aria-describedby="chip-interactive-1-text"
+            >
+                <svg class="icon icon--12" width="13" height="12">
+                    <use href="icons.svg#icon-close-12"/>
+                </svg>
+            </button>
+        </span>
+    </highlight-code>
+
+    <h3 id="interactive-filter-chip">
+        Interactive filter Chip
+    </h3>
+    <p>An interactive chip</p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <button
+                class="chip chip--filter"
+                type="button"
+                aria-pressed="false"
+            >
+                <svg class="icon icon--16" width="16" height="16">
+                    <icon-symbol name="sneaker-16"/>
+                </svg>
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </button>
+
+            <a class="chip chip--filter" href="https://www.ebay.com">
+                <svg class="icon icon--16" width="16" height="16">
+                    <icon-symbol name="sneaker-16"/>
+                </svg>
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </a>
+        </div>
+    </div>
+    <h3>Interactive selected chip</h3>
+    <div class="demo">
+        <div class="demo__inner">
+            <button class="chip chip--filter" type="button" aria-pressed="true">
+                <svg class="icon icon--16" width="16" height="16">
+                    <icon-symbol name="sneaker-16"/>
+                </svg>
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </button>
+
+            <a
+                class="chip chip--selected chip--filter"
+                href="https://www.ebay.com"
+            >
+                <svg class="icon icon--16" width="16" height="16">
+                    <icon-symbol name="sneaker-16"/>
+                </svg>
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="chip">
+            <span id="chip-interactive-1-text" class="chip__text">
+                Football
+            </span>
+            <button
+                class="chip__button"
+                type="button"
+                aria-label="Remove"
+                aria-describedby="chip-interactive-1-text"
+            >
+                <svg class="icon icon--12" width="13" height="12">
+                    <icon-symbol name="close-12"/>
+                </svg>
+            </button>
+        </span>
+    </highlight-code>
+
+    <h3 id="interactive-filter-chip">
+        Interactive discovery Chip
+    </h3>
+    <p>An interactive chip</p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <button
+                class="chip chip--discovery"
+                type="button"
+                aria-pressed="false"
+            >
+                <img
+                    class="chip__media"
+                    src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+                    alt=""
+                >
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </button>
+
+            <a class="chip chip--discovery" href="https://www.ebay.com">
+                <img
+                    class="chip__media"
+                    src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+                    alt=""
+                >
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </a>
+        </div>
+    </div>
+    <h3>Interactive selected chip</h3>
+    <div class="demo">
+        <div class="demo__inner">
+            <button
+                class="chip chip--discovery"
+                type="button"
+                aria-pressed="true"
+            >
+                <img
+                    class="chip__media"
+                    src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+                    alt=""
+                >
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </button>
+
+            <a
+                class="chip chip--selected chip--discovery"
+                href="https://www.ebay.com"
+            >
+                <img
+                    class="chip__media"
+                    src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+                    alt=""
+                >
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="chip">
+            <span id="chip-interactive-1-text" class="chip__text">
+                Football
+            </span>
+            <button
+                class="chip__button"
+                type="button"
+                aria-label="Remove"
+                aria-describedby="chip-interactive-1-text"
+            >
+                <svg class="icon icon--12" width="13" height="12">
+                    <use href="icons.svg#icon-close-12"/>
+                </svg>
+            </button>
+        </span>
+    </highlight-code>
+
+    <h3 id="interactive-chip">
+        Destructive Chip
+    </h3>
+    <p>
+        An desctructive chip is a static chip with a delete button. Once the delete button is clicked, the chip is removed.
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
             <span class="chip">
                 <span id="chip-interactive-1-text" class="chip__text">
                     Football
@@ -43,12 +288,7 @@
                     aria-label="Remove"
                     aria-describedby="chip-interactive-1-text"
                 >
-                    <svg
-                        class="icon icon--12"
-                        width="13"
-                        height="12"
-                        aria-hidden="true"
-                    >
+                    <svg class="icon icon--12" width="13" height="12">
                         <icon-symbol name="close-12"/>
                     </svg>
                 </button>
@@ -67,12 +307,45 @@
                 aria-label="Remove"
                 aria-describedby="chip-interactive-1-text"
             >
-                <svg
-                    class="icon icon--12"
-                    width="13"
-                    height="12"
-                    aria-hidden="true"
-                >
+                <svg class="icon icon--12" width="13" height="12">
+                    <use href="icons.svg#icon-close-12"/>
+                </svg>
+            </button>
+        </span>
+    </highlight-code>
+
+    <h3 id="interactive-chip">
+        Destructive Chip
+    </h3>
+    <p>
+        An desctructive chip is a static chip with a delete button. Once the delete button is clicked, the chip is removed.
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <button class="chip chip--filter" aria-expanded="false">
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+                <svg class="chip__trailing icon icon--12" width="12" height="12">
+                    <use href="#icon-chevron-down-12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="chip">
+            <span id="chip-interactive-1-text" class="chip__text">
+                Football
+            </span>
+            <button
+                class="chip__button"
+                type="button"
+                aria-label="Remove"
+                aria-describedby="chip-interactive-1-text"
+            >
+                <svg class="icon icon--12" width="13" height="12">
                     <use href="icons.svg#icon-close-12"/>
                 </svg>
             </button>
