@@ -1,1 +1,1 @@
-export { default as EbayAlertDialog } from './alert-dialog'
+export { default as EbayAlertDialog } from "./alert-dialog";

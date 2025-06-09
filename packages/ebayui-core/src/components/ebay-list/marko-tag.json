@@ -31,5 +31,5 @@
         "@html-attributes": "expression",
         "@type": "string"
     },
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/building-blocks-ebay-listbox)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/building-blocks-ebay-listbox)"
 }

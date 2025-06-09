@@ -1,8 +1,5 @@
-import { KeyboardEvent, SyntheticEvent, MouseEvent } from 'react'
+import { KeyboardEvent, SyntheticEvent, MouseEvent } from "react";
 
-export type DialogCloseEvent =
-  | SyntheticEvent<HTMLElement>
-  | KeyboardEvent<HTMLElement>
-  | MouseEvent<Element>
+export type DialogCloseEvent = SyntheticEvent<HTMLElement> | KeyboardEvent<HTMLElement> | MouseEvent<Element>;
 
-export type DialogCloseEventHandler = (event: DialogCloseEvent) => void
+export type DialogCloseEventHandler = (event: DialogCloseEvent) => void;

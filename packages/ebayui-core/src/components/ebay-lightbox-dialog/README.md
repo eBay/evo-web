@@ -13,6 +13,6 @@
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/ebayui-core/?path=/story/dialogs-ebay-lightbox-dialog)
-- [Storybook Docs](https://ebay.github.io/ebayui-core/?path=/docs/dialogs-ebay-lightbox-dialog)
-- [Code Examples](https://github.com/eBay/ebayui-core/tree/master/src/components/ebay-lightbox-dialog/examples)
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/dialogs-ebay-lightbox-dialog)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/dialogs-ebay-lightbox-dialog)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-lightbox-dialog/examples)

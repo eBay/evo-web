@@ -1,33 +1,33 @@
-import React, { useState } from 'react'
-import { action } from '@storybook/addon-actions'
-import { EbayIcon } from '../../ebay-icon'
+import React, { useState } from "react";
+import { action } from "@storybook/addon-actions";
+import { EbayIcon } from "../../ebay-icon";
 import {
     EbayMenuButton,
     EbayMenuButtonItem as Item,
     EbayMenuButtonSeparator as Separator,
-    EbayMenuButtonLabel
-} from '../index'
+    EbayMenuButtonLabel,
+} from "../index";
 
 export default {
-    title: 'buttons/ebay-menu-button'
-}
+    title: "buttons/ebay-menu-button",
+};
 
 export const Default = () => (
     <>
         <EbayMenuButton
             text="eBay Menu"
-            onKeyDown={action('key down')}
-            onClick={action('click button')}
-            onSelect={(e, { index, checked }) => action('select')(e, { index, checked })}
-            onExpand={action('expand')}
-            onCollapse={action('collapse')}
+            onKeyDown={action("key down")}
+            onClick={action("click button")}
+            onSelect={(e, { index, checked }) => action("select")(e, { index, checked })}
+            onExpand={action("expand")}
+            onCollapse={action("collapse")}
         >
             <Item>item 1 that has very long text</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const Expanded = () => (
     <>
@@ -37,7 +37,7 @@ export const Expanded = () => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const Disabled = () => (
     <>
@@ -47,7 +47,7 @@ export const Disabled = () => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const WithIcon = {
     render: () => (
@@ -61,8 +61,8 @@ export const WithIcon = {
         </>
     ),
 
-    name: 'With icon'
-}
+    name: "With icon",
+};
 
 export const WithoutToggleIcon = {
     render: () => (
@@ -75,8 +75,8 @@ export const WithoutToggleIcon = {
         </>
     ),
 
-    name: 'Without toggle icon'
-}
+    name: "Without toggle icon",
+};
 
 export const Variants = () => (
     <>
@@ -101,7 +101,7 @@ export const Variants = () => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const Priorities = () => (
     <>
@@ -116,7 +116,7 @@ export const Priorities = () => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const Borderless = () => (
     <>
@@ -126,7 +126,7 @@ export const Borderless = () => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const WithCustomLabel = () => (
     <>
@@ -136,12 +136,12 @@ export const WithCustomLabel = () => (
                 <span
                     style={{
                         background:
-              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='15' viewBox='0 0 5 3'%3E%3Cpath d='M0 0h5v3H0z'/%3E%3Cpath fill='%23D00' d='M0 1h5v2H0z'/%3E%3Cpath fill='%23FFCE00' d='M0 2h5v1H0z'/%3E%3C/svg%3E\") no-repeat 50% 50%",
-                        display: 'inline-block',
-                        height: '20px',
-                        marginRight: '8px',
-                        verticalAlign: 'middle',
-                        width: '26px'
+                            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='15' viewBox='0 0 5 3'%3E%3Cpath d='M0 0h5v3H0z'/%3E%3Cpath fill='%23D00' d='M0 1h5v2H0z'/%3E%3Cpath fill='%23FFCE00' d='M0 2h5v1H0z'/%3E%3C/svg%3E\") no-repeat 50% 50%",
+                        display: "inline-block",
+                        height: "20px",
+                        marginRight: "8px",
+                        verticalAlign: "middle",
+                        width: "26px",
                     }}
                 />
                 Fun with flags!
@@ -183,15 +183,15 @@ export const WithCustomLabel = () => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const WithSeparator = (args) => (
     <>
         <EbayMenuButton
             {...args}
             text="Complex menu"
-            onExpand={action('Menu expanded!')}
-            onCollapse={action('Menu collapsed!')}
+            onExpand={action("Menu expanded!")}
+            onCollapse={action("Menu collapsed!")}
         >
             <Item>item 1</Item>
             <Item>item 2</Item>
@@ -200,10 +200,10 @@ export const WithSeparator = (args) => (
             <Item>item 4</Item>
             <Item>item 5</Item>
             <Separator />
-            <Item onClick={action('Open login popup!')}>Log in</Item>
+            <Item onClick={action("Open login popup!")}>Log in</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const SingleSelectMenuButtonItemChecked = {
     render: (args) => (
@@ -216,14 +216,14 @@ export const SingleSelectMenuButtonItemChecked = {
         </>
     ),
 
-    name: 'Single-Select Menu Button (item.checked)'
-}
+    name: "Single-Select Menu Button (item.checked)",
+};
 
 export const SingleSelectMenuButtonCollapseOnClick = {
     render: () => {
-        const defaultSortIndex = 1
-        const sortItems = ['Date', 'Price', 'Relevance']
-        const [checkedSort, setCheckedSort] = useState(defaultSortIndex)
+        const defaultSortIndex = 1;
+        const sortItems = ["Date", "Price", "Relevance"];
+        const [checkedSort, setCheckedSort] = useState(defaultSortIndex);
 
         return (
             <EbayMenuButton
@@ -238,20 +238,20 @@ export const SingleSelectMenuButtonCollapseOnClick = {
                     <Item key={i}>{item}</Item>
                 ))}
             </EbayMenuButton>
-        )
+        );
     },
 
-    name: 'Single-Select Menu Button (collapse on click)'
-}
+    name: "Single-Select Menu Button (collapse on click)",
+};
 
 export const SingleSelectMenuButtonMenuChecked = {
     render: (args) => {
-        const defaultSortIndex = 2
-        const defaultTopicIndex = 1
-        const sortItems = ['Date', 'Price', 'Relevance']
-        const topicItems = ['Cars', 'Phones', 'Computers']
-        const [checkedSort, setCheckedSort] = useState(defaultSortIndex)
-        const [checkedTopic, setCheckedTopic] = useState(defaultTopicIndex)
+        const defaultSortIndex = 2;
+        const defaultTopicIndex = 1;
+        const sortItems = ["Date", "Price", "Relevance"];
+        const topicItems = ["Cars", "Phones", "Computers"];
+        const [checkedSort, setCheckedSort] = useState(defaultSortIndex);
+        const [checkedTopic, setCheckedTopic] = useState(defaultTopicIndex);
 
         return (
             <>
@@ -267,7 +267,7 @@ export const SingleSelectMenuButtonMenuChecked = {
                         <Item key={i}>{item}</Item>
                     ))}
                 </EbayMenuButton>
-        &nbsp;
+                &nbsp;
                 <EbayMenuButton
                     prefixLabel="Sort order:"
                     text={sortItems[checkedSort]}
@@ -280,11 +280,11 @@ export const SingleSelectMenuButtonMenuChecked = {
                     ))}
                 </EbayMenuButton>
             </>
-        )
+        );
     },
 
-    name: 'Single-Select Menu Button (menu.checked)'
-}
+    name: "Single-Select Menu Button (menu.checked)",
+};
 
 export const MultiSelectMenuButton = {
     render: (args) => (
@@ -297,8 +297,8 @@ export const MultiSelectMenuButton = {
         </>
     ),
 
-    name: 'Multi-Select Menu Button'
-}
+    name: "Multi-Select Menu Button",
+};
 
 export const FixedWidth = (args) => (
     <>
@@ -308,11 +308,11 @@ export const FixedWidth = (args) => (
             <Item>item 3</Item>
         </EbayMenuButton>
     </>
-)
+);
 
 export const ReverseMenuGrowsToTheLeft = {
     render: (args) => (
-        <div style={{ marginLeft: '100px' }}>
+        <div style={{ marginLeft: "100px" }}>
             <EbayMenuButton {...args} text="Menu grows to the left" reverse>
                 <Item>item 1 that has very very long text</Item>
                 <Item>item 2</Item>
@@ -321,5 +321,5 @@ export const ReverseMenuGrowsToTheLeft = {
         </div>
     ),
 
-    name: 'Reverse (Menu grows to the left)'
-}
+    name: "Reverse (Menu grows to the left)",
+};

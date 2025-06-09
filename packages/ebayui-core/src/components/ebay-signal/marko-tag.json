@@ -9,5 +9,5 @@
     "@status": {
         "enum": ["neutral", "time-sensitive", "recent", "trustworthy"]
     },
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/graphics-icons-ebay-signal)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-ebay-signal)"
 }

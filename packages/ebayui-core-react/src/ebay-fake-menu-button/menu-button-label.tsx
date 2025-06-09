@@ -1,7 +1,5 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode } from "react";
 
-const EbayFakeMenuButtonLabel: FC<{ children?: ReactNode }> = ({ children }) => (
-    <>{children}</>
-)
+const EbayFakeMenuButtonLabel: FC<{ children?: ReactNode }> = ({ children }) => <>{children}</>;
 
-export default EbayFakeMenuButtonLabel
+export default EbayFakeMenuButtonLabel;

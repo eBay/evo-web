@@ -1,1 +1,1 @@
-export { default as EbayBadge } from './badge'
+export { default as EbayBadge } from "./badge";

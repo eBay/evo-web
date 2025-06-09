@@ -1,20 +1,18 @@
-
-import React, { ChangeEvent } from 'react'
-import { Meta, StoryFn } from '@storybook/react';
-import { EbayCombobox, EbayComboboxButton } from '../index';
-import { EbayIcon } from '../../ebay-icon';
-import EbayComboboxOption from '../combobox-option';
-import countries from './countries.json';
-import { ComboboxSelectHandler } from '../types';
+import React, { ChangeEvent } from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import { EbayCombobox, EbayComboboxButton } from "../index";
+import { EbayIcon } from "../../ebay-icon";
+import EbayComboboxOption from "../combobox-option";
+import countries from "./countries.json";
+import { ComboboxSelectHandler } from "../types";
 
 const meta: Meta<typeof EbayCombobox> = {
     component: EbayCombobox,
-    title: 'form input/ebay-combobox',
+    title: "form input/ebay-combobox",
     argTypes: {
         name: {
             control: { type: "text" },
-            description:
-                "used for the `name` attribute of the `<input>` element",
+            description: "used for the `name` attribute of the `<input>` element",
         },
         borderless: {
             type: "boolean",
@@ -54,14 +52,12 @@ const meta: Meta<typeof EbayCombobox> = {
         },
         floatingLabel: {
             control: { type: "text" },
-            description:
-                "The label to show on the combobox which moves up when focused",
+            description: "The label to show on the combobox which moves up when focused",
         },
         fluid: {
             control: { type: "boolean" },
             type: "boolean",
-            description:
-                "If true, combobox will span the entire width of it's container",
+            description: "If true, combobox will span the entire width of it's container",
         },
 
         onCollapse: {
@@ -97,8 +93,7 @@ const meta: Meta<typeof EbayCombobox> = {
                     summary: "event, { currentInputValue, selectedOption: { text, value } }",
                 },
             },
-            description:
-                "same as the `onInput` event, which fires with every keypress",
+            description: "same as the `onInput` event, which fires with every keypress",
         },
         onSelect: {
             action: "onSelect",
@@ -108,8 +103,7 @@ const meta: Meta<typeof EbayCombobox> = {
                     summary: "event, { currentInputValue, selectedOption: { text, value } }",
                 },
             },
-            description:
-                "similar to a `<select>`, which fires when an option is clicked or selected",
+            description: "similar to a `<select>`, which fires when an option is clicked or selected",
         },
         onFloatingLabelInit: {
             action: "onFloatingLabelInit",
@@ -130,9 +124,9 @@ const meta: Meta<typeof EbayCombobox> = {
             description: "same as the `onFocus` event, which fires on focus",
         },
     },
-}
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayCombobox> = (args) => (
     <EbayCombobox {...args}>
@@ -142,7 +136,7 @@ export const Default: StoryFn<typeof EbayCombobox> = (args) => (
         <EbayComboboxOption text="Basic Offer 1" />
         <EbayComboboxOption text="Basic Offer 2" />
     </EbayCombobox>
-)
+);
 
 export const FloatingLabel: StoryFn<typeof EbayCombobox> = (args) => (
     <EbayCombobox {...args} floatingLabel={args.floatingLabel || "Default Label"}>
@@ -152,7 +146,7 @@ export const FloatingLabel: StoryFn<typeof EbayCombobox> = (args) => (
         <EbayComboboxOption text="Basic Offer 1" />
         <EbayComboboxOption text="Basic Offer 2" />
     </EbayCombobox>
-)
+);
 
 export const AutomaticallyFilterResults: StoryFn<typeof EbayCombobox> = (args) => (
     <EbayCombobox {...args} autocomplete="list">
@@ -162,38 +156,38 @@ export const AutomaticallyFilterResults: StoryFn<typeof EbayCombobox> = (args) =
         <EbayComboboxOption text="Basic Offer 1" />
         <EbayComboboxOption text="Basic Offer 2" />
     </EbayCombobox>
-)
+);
 
 export const SearchFiltering: StoryFn<typeof EbayCombobox> = (args) => {
-    const [options, setOptions] = React.useState(countries)
-    const [autocomplete, setAutocomplete] = React.useState<'list' | 'none'>("none")
-    const [value, setValue] = React.useState("")
+    const [options, setOptions] = React.useState(countries);
+    const [autocomplete, setAutocomplete] = React.useState<"list" | "none">("none");
+    const [value, setValue] = React.useState("");
 
-    const timeoutRef = React.useRef<number>()
+    const timeoutRef = React.useRef<number>();
 
     const searchCountry = (searchTerm): Promise<typeof countries> => {
         return new Promise((resolve) => {
-            clearTimeout(timeoutRef.current)
+            clearTimeout(timeoutRef.current);
             timeoutRef.current = setTimeout(() => {
-                const filteredOptions = countries.filter((country) =>
-                    country.name.toLowerCase().startsWith(searchTerm.toLowerCase())
-                ).slice(0, 10)
-                resolve(filteredOptions)
-            }, 500) as unknown as number
-        })
-    }
+                const filteredOptions = countries
+                    .filter((country) => country.name.toLowerCase().startsWith(searchTerm.toLowerCase()))
+                    .slice(0, 10);
+                resolve(filteredOptions);
+            }, 500) as unknown as number;
+        });
+    };
 
-    const handleInputChange = async(event: ChangeEvent<HTMLInputElement>, data?: { currentInputValue: string }) => {
-        setAutocomplete('none')
-        setValue(data?.currentInputValue || '')
-        const filteredOptions = await searchCountry(data?.currentInputValue || '')
-        setOptions(filteredOptions)
-        setAutocomplete('list')
-    }
+    const handleInputChange = async (event: ChangeEvent<HTMLInputElement>, data?: { currentInputValue: string }) => {
+        setAutocomplete("none");
+        setValue(data?.currentInputValue || "");
+        const filteredOptions = await searchCountry(data?.currentInputValue || "");
+        setOptions(filteredOptions);
+        setAutocomplete("list");
+    };
 
     const handleSelect: ComboboxSelectHandler = (event, data) => {
-        setValue(data.currentInputValue)
-    }
+        setValue(data.currentInputValue);
+    };
 
     return (
         <EbayCombobox
@@ -204,12 +198,12 @@ export const SearchFiltering: StoryFn<typeof EbayCombobox> = (args) => {
             onInputChange={handleInputChange}
             onSelect={handleSelect}
         >
-            <EbayComboboxButton onClick={() => setValue('')}>
+            <EbayComboboxButton onClick={() => setValue("")}>
                 <EbayIcon name="clear16" />
             </EbayComboboxButton>
             {options.map((option) => (
                 <EbayComboboxOption key={option.name} text={option.name} value={option.code} />
             ))}
         </EbayCombobox>
-    )
-}
+    );
+};

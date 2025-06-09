@@ -1,7 +1,7 @@
-import React, { FC, MouseEvent } from 'react'
-import cx from 'classnames'
-import { EbayIcon } from '../ebay-icon'
-import { ToggleButtonProps } from './types'
+import React, { FC, MouseEvent } from "react";
+import cx from "classnames";
+import { EbayIcon } from "../ebay-icon";
+import { ToggleButtonProps } from "./types";
 
 const ToggleButton: FC<ToggleButtonProps> = ({
     pressed = false,
@@ -9,7 +9,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
     className,
     title,
     subtitle,
-    layoutType = 'minimal',
+    layoutType = "minimal",
     icon,
     img,
     onToggle,
@@ -17,23 +17,21 @@ const ToggleButton: FC<ToggleButtonProps> = ({
 }) => {
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
         if (onToggle) {
-            onToggle(event, { pressed: !pressed })
+            onToggle(event, { pressed: !pressed });
         }
-    }
+    };
 
     const getButtonContent = () => {
         if (children) {
-            return children
+            return children;
         }
         return (
             <>
                 <p className="toggle-button__title">{title}</p>
-                {subtitle && (
-                    <p className="toggle-button__subtitle">{subtitle}</p>
-                )}
+                {subtitle && <p className="toggle-button__subtitle">{subtitle}</p>}
             </>
-        )
-    }
+        );
+    };
 
     const getMediaContent = () => {
         if (icon) {
@@ -41,7 +39,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
                 <div className="toggle-button__icon">
                     <EbayIcon name={icon} />
                 </div>
-            )
+            );
         } else if (img) {
             return (
                 <span className="toggle-button__image-container">
@@ -52,10 +50,9 @@ const ToggleButton: FC<ToggleButtonProps> = ({
                             className="toggle-button__image"
                             style={{
                                 backgroundImage: `url(${img.src})`,
-                                backgroundPosition:
-                                    img.fillPlacement || 'center',
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat'
+                                backgroundPosition: img.fillPlacement || "center",
+                                backgroundSize: "cover",
+                                backgroundRepeat: "no-repeat",
                             }}
                         />
                     ) : (
@@ -64,18 +61,18 @@ const ToggleButton: FC<ToggleButtonProps> = ({
                         </span>
                     )}
                 </span>
-            )
+            );
         }
-        return
-    }
+        return;
+    };
 
     return (
         <button
             onClick={handleClick}
-            className={cx('toggle-button', className, {
-                'toggle-button--minimal-layout': layoutType === 'minimal',
-                'toggle-button--list-layout': layoutType === 'list',
-                'toggle-button--gallery-layout': layoutType === 'gallery'
+            className={cx("toggle-button", className, {
+                "toggle-button--minimal-layout": layoutType === "minimal",
+                "toggle-button--list-layout": layoutType === "list",
+                "toggle-button--gallery-layout": layoutType === "gallery",
             })}
             aria-pressed={pressed}
             {...rest}
@@ -83,7 +80,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
             {getMediaContent()}
             <div className="toggle-button__content">{getButtonContent()}</div>
         </button>
-    )
-}
+    );
+};
 
-export default ToggleButton
+export default ToggleButton;

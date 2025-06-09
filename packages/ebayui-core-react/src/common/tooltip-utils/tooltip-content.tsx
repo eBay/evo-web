@@ -1,10 +1,10 @@
-import React, { FC, CSSProperties, ReactNode } from 'react'
-import { EbayIcon } from '../../ebay-icon'
-import { excludeComponent, findComponent } from '../component-utils'
-import { PointerDirection, TooltipType } from './types'
-import { DEFAULT_POINTER_DIRECTION, POINTER_STYLES, TYPE_ROLES } from './constants'
-import TooltipCloseButton from './tooltip-close-button'
-import TooltipFooter from './tooltip-footer'
+import React, { FC, CSSProperties, ReactNode } from "react";
+import { EbayIcon } from "../../ebay-icon";
+import { excludeComponent, findComponent } from "../component-utils";
+import { PointerDirection, TooltipType } from "./types";
+import { DEFAULT_POINTER_DIRECTION, POINTER_STYLES, TYPE_ROLES } from "./constants";
+import TooltipCloseButton from "./tooltip-close-button";
+import TooltipFooter from "./tooltip-footer";
 
 export type TooltipContentProps = {
     id?: string;
@@ -15,28 +15,29 @@ export type TooltipContentProps = {
     a11yCloseText?: string;
     onClose?: () => void;
     children?: ReactNode;
-}
+};
 
 const TooltipContent: FC<TooltipContentProps> = ({
     id,
     style,
     pointer = DEFAULT_POINTER_DIRECTION,
     children,
-    type = 'tooltip',
+    type = "tooltip",
     showCloseButton,
     a11yCloseText,
-    onClose
+    onClose,
 }) => {
-    const closeButton = findComponent(children, TooltipCloseButton)
-    const footer = findComponent(children, TooltipFooter)
-    const allChildrenExceptFooter = excludeComponent(children, TooltipFooter)
+    const closeButton = findComponent(children, TooltipCloseButton);
+    const footer = findComponent(children, TooltipFooter);
+    const allChildrenExceptFooter = excludeComponent(children, TooltipFooter);
 
     return (
         <span
             className={`${type}__overlay`}
             id={id}
             role={TYPE_ROLES[type] || null}
-            style={{ ...POINTER_STYLES[pointer], ...style }}>
+            style={{ ...POINTER_STYLES[pointer], ...style }}
+        >
             <span className={`${type}__pointer ${type}__pointer--${pointer}`} />
             <span className={`${type}__mask`}>
                 <span className={`${type}__cell`}>
@@ -56,7 +57,7 @@ const TooltipContent: FC<TooltipContentProps> = ({
                 </span>
             </span>
         </span>
-    )
-}
+    );
+};
 
-export default TooltipContent
+export default TooltipContent;

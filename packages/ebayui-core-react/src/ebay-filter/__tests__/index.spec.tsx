@@ -1,24 +1,20 @@
 /// <reference types="@testing-library/jest-dom" />
-import React from 'react'
-import { EbayFilter } from '../index'
-import { render, screen } from '@testing-library/react'
-import { userEvent } from '@testing-library/user-event'
-import { eventOfType } from '../../common/event-utils/__tests__/helpers'
+import React from "react";
+import { EbayFilter } from "../index";
+import { render, screen } from "@testing-library/react";
+import { userEvent } from "@testing-library/user-event";
+import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
-describe('<EbayFilter />', () => {
+describe("<EbayFilter />", () => {
     describe("given filter is enabled", () => {
-        const onClick = jest.fn()
+        const onClick = jest.fn();
 
         beforeEach(() => {
-            render((
-                <EbayFilter onClick={onClick}>Text</EbayFilter>
-            ));
+            render(<EbayFilter onClick={onClick}>Text</EbayFilter>);
         });
 
         it("then it is not selected", () => {
-            expect(screen.getByRole("button")).not.toHaveAttribute(
-                "aria-pressed",
-            );
+            expect(screen.getByRole("button")).not.toHaveAttribute("aria-pressed");
         });
 
         describe("when filter is clicked", () => {
@@ -27,16 +23,13 @@ describe('<EbayFilter />', () => {
             });
 
             it("then it emits the event with correct data", () => {
-                expect(onClick).toHaveBeenCalledWith(eventOfType('click'), {
-                    selected: true
-                })
+                expect(onClick).toHaveBeenCalledWith(eventOfType("click"), {
+                    selected: true,
+                });
             });
 
             it("then it is selected", () => {
-                expect(screen.getByRole("button")).toHaveAttribute(
-                    "aria-pressed",
-                    "true",
-                );
+                expect(screen.getByRole("button")).toHaveAttribute("aria-pressed", "true");
             });
 
             describe("when it is clicked again", () => {
@@ -45,20 +38,20 @@ describe('<EbayFilter />', () => {
                 });
 
                 it("then it is not selected", () => {
-                    expect(screen.getByRole("button")).not.toHaveAttribute(
-                        "aria-pressed",
-                    );
+                    expect(screen.getByRole("button")).not.toHaveAttribute("aria-pressed");
                 });
             });
         });
     });
 
     describe("given filter is disabled", () => {
-        const onClick = jest.fn()
+        const onClick = jest.fn();
         beforeEach(() => {
-            render((
-                <EbayFilter disabled onClick={onClick}>text</EbayFilter>
-            ));
+            render(
+                <EbayFilter disabled onClick={onClick}>
+                    text
+                </EbayFilter>,
+            );
         });
 
         describe("when filter is clicked", () => {
@@ -71,4 +64,4 @@ describe('<EbayFilter />', () => {
             });
         });
     });
-})
+});

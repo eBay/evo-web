@@ -1,54 +1,54 @@
-import React, { useState } from 'react'
-import { Meta, StoryFn } from '@storybook/react'
-import EbayChipsCombobox, { EbayChipsComboboxProps } from '../chips-combobox'
-import { EbayComboboxOption } from '../../ebay-combobox'
-import { EbayButton } from '../../ebay-button'
-import { ChipsComboboxChangeHandler } from '../types'
+import React, { useState } from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import EbayChipsCombobox, { EbayChipsComboboxProps } from "../chips-combobox";
+import { EbayComboboxOption } from "../../ebay-combobox";
+import { EbayButton } from "../../ebay-button";
+import { ChipsComboboxChangeHandler } from "../types";
 
 const meta: Meta<typeof EbayChipsCombobox> = {
     component: EbayChipsCombobox,
-    title: 'form input/ebay-chips-combobox',
+    title: "form input/ebay-chips-combobox",
     argTypes: {
         expanded: {
-            control: 'boolean',
-            description: 'Whether the combobox is expanded'
+            control: "boolean",
+            description: "Whether the combobox is expanded",
         },
         fluid: {
-            control: 'boolean',
-            description: 'Whether the combobox should take full width'
+            control: "boolean",
+            description: "Whether the combobox should take full width",
         },
         error: {
-            control: 'boolean',
-            description: 'Whether the combobox is in an error state'
+            control: "boolean",
+            description: "Whether the combobox is in an error state",
         },
         listSelection: {
-            control: 'select',
-            options: ['manual', 'automatic'],
-            description: 'Selection mode for the list'
+            control: "select",
+            options: ["manual", "automatic"],
+            description: "Selection mode for the list",
         },
         defaultSelected: {
-            control: 'array',
-            description: 'Initial selected options. Use it for uncontrolled components'
+            control: "array",
+            description: "Initial selected options. Use it for uncontrolled components",
         },
         selected: {
-            control: 'array',
-            description: 'Currently selected option. Use it for controlled components'
+            control: "array",
+            description: "Currently selected option. Use it for controlled components",
         },
         disabled: {
-            control: 'boolean',
-            description: 'Whether the combobox is disabled'
+            control: "boolean",
+            description: "Whether the combobox is disabled",
         },
         a11yDeleteButtonText: {
-            control: 'text',
-            description: 'Accessibility text for the delete button'
+            control: "text",
+            description: "Accessibility text for the delete button",
         },
-        onExpand: { action: 'onExpand' },
-        onCollapse: { action: 'onCollapse' },
-        onChange: { action: 'onChange' }
+        onExpand: { action: "onExpand" },
+        onCollapse: { action: "onCollapse" },
+        onChange: { action: "onChange" },
     },
-}
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<EbayChipsComboboxProps> = (args) => (
     <EbayChipsCombobox placeholder="Add item" {...args}>
@@ -56,14 +56,14 @@ export const Default: StoryFn<EbayChipsComboboxProps> = (args) => (
         <EbayComboboxOption text="Chip 2" />
         <EbayComboboxOption text="Chip 3" />
     </EbayChipsCombobox>
-)
+);
 
 export const ControlledCombobox: StoryFn<EbayChipsComboboxProps> = (args) => {
-    const [selected, setSelected] = useState<string[]>([])
+    const [selected, setSelected] = useState<string[]>([]);
 
     const handleChange: ChipsComboboxChangeHandler = (event, data) => {
-        setSelected(data?.selected || [])
-    }
+        setSelected(data?.selected || []);
+    };
 
     return (
         <>
@@ -74,8 +74,8 @@ export const ControlledCombobox: StoryFn<EbayChipsComboboxProps> = (args) => {
             </EbayChipsCombobox>
 
             <div style={{ marginTop: 16 }}>
-                <EbayButton onClick={() => setSelected(['Chip 2'])}>Update with Chip 2</EbayButton>
+                <EbayButton onClick={() => setSelected(["Chip 2"])}>Update with Chip 2</EbayButton>
             </div>
         </>
-    )
-}
+    );
+};

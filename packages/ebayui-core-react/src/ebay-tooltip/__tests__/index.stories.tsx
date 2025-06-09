@@ -1,29 +1,29 @@
-import React from 'react'
-import { EbayButton } from '../../ebay-button'
-import { EbayTextbox } from '../../ebay-textbox'
-import { EbayTooltip, EbayTooltipContent, EbayTooltipHost, PointerDirection } from '../index'
+import React from "react";
+import { EbayButton } from "../../ebay-button";
+import { EbayTextbox } from "../../ebay-textbox";
+import { EbayTooltip, EbayTooltipContent, EbayTooltipHost, PointerDirection } from "../index";
 
 const allPointers: PointerDirection[] = [
-    'top',
-    'top-left',
-    'top-right',
-    'right',
-    'right-bottom',
-    'right-top',
-    'bottom',
-    'bottom-left',
-    'bottom-right',
-    'left',
-    'left-bottom',
-    'left-top'
-]
+    "top",
+    "top-left",
+    "top-right",
+    "right",
+    "right-bottom",
+    "right-top",
+    "bottom",
+    "bottom-left",
+    "bottom-right",
+    "left",
+    "left-bottom",
+    "left-top",
+];
 
 export default {
-    title: 'notices & tips/ebay-tooltip'
-}
+    title: "notices & tips/ebay-tooltip",
+};
 
 export const DefaultTooltip = () => (
-    <div style={{ width: '100%', textAlign: 'center', marginTop: 100 }}>
+    <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <EbayTooltip>
             <EbayTooltipHost>
                 <EbayButton>Info</EbayButton>
@@ -34,10 +34,10 @@ export const DefaultTooltip = () => (
             </EbayTooltipContent>
         </EbayTooltip>
     </div>
-)
+);
 
 export const AnchorHost = () => (
-    <div style={{ width: '100%', textAlign: 'center', marginTop: 100 }}>
+    <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <EbayTooltip>
             <EbayTooltipHost>
                 <a href="https://www.ebay.com">View options</a>
@@ -48,7 +48,7 @@ export const AnchorHost = () => (
             </EbayTooltipContent>
         </EbayTooltip>
     </div>
-)
+);
 
 export const PointersWithAllDirections = () => (
     <div>
@@ -56,9 +56,9 @@ export const PointersWithAllDirections = () => (
             <div
                 key={index}
                 style={{
-                    margin: '100px 0',
-                    width: '100%',
-                    textAlign: 'center'
+                    margin: "100px 0",
+                    width: "100%",
+                    textAlign: "center",
                 }}
             >
                 <EbayTooltip pointer={pointerType}>
@@ -73,10 +73,10 @@ export const PointersWithAllDirections = () => (
             </div>
         ))}
     </div>
-)
+);
 
 export const PointerWithCustomLocation = () => (
-    <div style={{ width: '100%', textAlign: 'center', marginTop: 100 }}>
+    <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <EbayTooltip pointer="top-left" overlayStyle={{ top: 40, left: -16 }}>
             <EbayTooltipHost>
                 <a href="https://www.ebay.com">View options</a>
@@ -87,10 +87,10 @@ export const PointerWithCustomLocation = () => (
             </EbayTooltipContent>
         </EbayTooltip>
     </div>
-)
+);
 
 export const NoHover = () => (
-    <div style={{ width: '100%', textAlign: 'center', marginTop: 100 }}>
+    <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <EbayTooltip noHover pointer="bottom">
             <EbayTooltipHost>
                 <EbayTextbox placeholder="Email address" />
@@ -101,4 +101,4 @@ export const NoHover = () => (
             </EbayTooltipContent>
         </EbayTooltip>
     </div>
-)
+);

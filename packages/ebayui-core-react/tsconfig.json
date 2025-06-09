@@ -1,44 +1,32 @@
 {
-  "compilerOptions": {
-    "target": "ES2015",
-    "module": "ESNext",
-    "lib": [
-        "dom",
-        "es2020",
-        "dom.iterable"
-    ],
-    "allowJs": false,
-    "checkJs": false,
-    "jsx": "react",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "declaration": true,
-    "declarationMap": true,
-    "strict": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": false, // 21 errors
-    "strictNullChecks": false, // 150+ errors
-    "strictPropertyInitialization": false,
-    "useUnknownInCatchVariables": true,
-    "noImplicitAny": false, // 300+ errors
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "types": ["@testing-library/jest-dom"],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  },
-  "include": [
-    "./src",
-    "shaka-player/dist"
-
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/__tests__/*"
-  ]
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "ESNext",
+        "lib": ["dom", "es2020", "dom.iterable"],
+        "allowJs": false,
+        "checkJs": false,
+        "jsx": "react",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "strict": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": false, // 21 errors
+        "strictNullChecks": false, // 150+ errors
+        "strictPropertyInitialization": false,
+        "useUnknownInCatchVariables": true,
+        "noImplicitAny": false, // 300+ errors
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "types": ["@testing-library/jest-dom"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": ["./src", "shaka-player/dist"],
+    "exclude": ["node_modules", "dist", "**/__tests__/*"]
 }

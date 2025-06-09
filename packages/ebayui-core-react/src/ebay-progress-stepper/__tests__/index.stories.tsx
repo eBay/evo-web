@@ -1,15 +1,10 @@
-import React, { FC, useState } from 'react'
-import { EbayButton } from '../../ebay-button'
-import {
-    EbayProgressStepper,
-    EbayProgressStep as Step,
-    EbayProgressTitle as Title,
-    StepState
-} from '../index'
+import React, { FC, useState } from "react";
+import { EbayButton } from "../../ebay-button";
+import { EbayProgressStepper, EbayProgressStep as Step, EbayProgressTitle as Title, StepState } from "../index";
 
 export default {
-    title: 'progress/ebay-progress-stepper'
-}
+    title: "progress/ebay-progress-stepper",
+};
 
 export const Default = () => (
     <div style={{ padding: 50 }}>
@@ -20,7 +15,7 @@ export const Default = () => (
             <Step>Delivered</Step>
         </EbayProgressStepper>
     </div>
-)
+);
 
 export const DefaultStateUpcoming = {
     render: () => (
@@ -46,8 +41,8 @@ export const DefaultStateUpcoming = {
         </div>
     ),
 
-    name: 'Default state: upcoming'
-}
+    name: "Default state: upcoming",
+};
 
 export const DefaultStateComplete = {
     render: () => (
@@ -61,8 +56,8 @@ export const DefaultStateComplete = {
         </div>
     ),
 
-    name: 'Default state: complete'
-}
+    name: "Default state: complete",
+};
 
 export const Blocked = () => (
     <div style={{ padding: 50 }}>
@@ -75,7 +70,7 @@ export const Blocked = () => (
             <Step>Delivered</Step>
         </EbayProgressStepper>
     </div>
-)
+);
 
 export const CustomTitles = () => (
     <div style={{ padding: 50 }}>
@@ -91,7 +86,7 @@ export const CustomTitles = () => (
             </Step>
         </EbayProgressStepper>
     </div>
-)
+);
 
 export const VerticalColumn = {
     render: () => (
@@ -114,23 +109,22 @@ export const VerticalColumn = {
         </div>
     ),
 
-    name: 'Vertical (column)'
-}
+    name: "Vertical (column)",
+};
 
 export const Controlled = () => {
     const TestingComponent: FC = () => {
-        const MIN = 1
-        const MAX = 4
-        const range = (to: number, from = 0): number[] =>
-            Array.from(Array(to - from + 1)).map((v, k) => from + k)
+        const MIN = 1;
+        const MAX = 4;
+        const range = (to: number, from = 0): number[] => Array.from(Array(to - from + 1)).map((v, k) => from + k);
 
-        const [currentNumber, setCurrentNumber] = useState<number>(2)
+        const [currentNumber, setCurrentNumber] = useState<number>(2);
 
         const defaultState = (): StepState => {
-            if (currentNumber < MIN) return 'upcoming'
-            if (currentNumber > MAX) return 'complete'
-            return 'complete'
-        }
+            if (currentNumber < MIN) return "upcoming";
+            if (currentNumber > MAX) return "complete";
+            return "complete";
+        };
 
         return (
             <div style={{ padding: 50 }}>
@@ -144,27 +138,27 @@ export const Controlled = () => {
                 <p>
                     <EbayButton
                         onClick={() => {
-                            setCurrentNumber(Math.max(MIN, currentNumber - 1))
+                            setCurrentNumber(Math.max(MIN, currentNumber - 1));
                         }}
                     >
                         Back
                     </EbayButton>
-          &nbsp;
+                    &nbsp;
                     <EbayButton
                         onClick={() => {
-                            setCurrentNumber(Math.min(MAX, currentNumber + 1))
+                            setCurrentNumber(Math.min(MAX, currentNumber + 1));
                         }}
                     >
                         Forward
                     </EbayButton>
                 </p>
             </div>
-        )
-    }
+        );
+    };
 
     return (
         <>
             <TestingComponent />
         </>
-    )
-}
+    );
+};

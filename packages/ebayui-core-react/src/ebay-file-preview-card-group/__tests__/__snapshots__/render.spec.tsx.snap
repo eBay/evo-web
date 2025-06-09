@@ -18,6 +18,7 @@ exports[`<EbayFilePreviewCardGroup> render renders as div 1`] = `
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -46,6 +47,7 @@ exports[`<EbayFilePreviewCardGroup> render renders as div 1`] = `
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -74,6 +76,7 @@ exports[`<EbayFilePreviewCardGroup> render renders as div 1`] = `
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -98,7 +101,7 @@ exports[`<EbayFilePreviewCardGroup> render renders as div 1`] = `
 exports[`<EbayFilePreviewCardGroup> render renders with less than 15 cards 1`] = `
 <DocumentFragment>
   <div
-    class="file-preview-card-group"
+    class="file-preview-card-group test-class"
   >
     <ul>
       <li
@@ -113,6 +116,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with less than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -141,6 +145,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with less than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -169,6 +174,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with less than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -208,6 +214,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -236,6 +243,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -264,6 +272,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -292,6 +301,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -320,6 +330,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -348,6 +359,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -376,6 +388,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -404,6 +417,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -432,6 +446,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -460,6 +475,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -488,6 +504,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -516,6 +533,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -544,6 +562,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -572,6 +591,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >
@@ -600,6 +620,7 @@ exports[`<EbayFilePreviewCardGroup> render renders with more than 15 cards 1`] =
             src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
           />
           <button
+            aria-label="Delete label"
             class="file-preview-card__action icon-btn"
             type="button"
           >

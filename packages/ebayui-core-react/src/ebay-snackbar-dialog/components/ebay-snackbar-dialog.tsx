@@ -1,17 +1,17 @@
-import classNames from 'classnames'
-import React, { KeyboardEventHandler, MouseEventHandler, ReactElement, useEffect, useRef, useState } from 'react'
-import { DialogBaseProps, DialogBaseWithState, EbayDialogActions } from '../../ebay-dialog-base'
-import { EbaySnackbarDialogAction } from './ebay-snackbar-dialog-action'
-import { excludeComponent, findComponent } from '../../utils'
+import classNames from "classnames";
+import React, { KeyboardEventHandler, MouseEventHandler, ReactElement, useEffect, useRef, useState } from "react";
+import { DialogBaseProps, DialogBaseWithState, EbayDialogActions } from "../../ebay-dialog-base";
+import { EbaySnackbarDialogAction } from "./ebay-snackbar-dialog-action";
+import { excludeComponent, findComponent } from "../../utils";
 
-export type EbaySnackbarDialogProps = Omit<DialogBaseProps<HTMLElement>, 'a11yCloseText'> & {
-    layout?: 'row' | 'column';
+export type EbaySnackbarDialogProps = Omit<DialogBaseProps<HTMLElement>, "a11yCloseText"> & {
+    layout?: "row" | "column";
     onOpen?: () => void;
     onClose?: () => void;
     onAction?: MouseEventHandler<HTMLButtonElement> & KeyboardEventHandler;
-}
+};
 
-const DEFAULT_TIMEOUT_LENGTH = 6000 // 6 seconds
+const DEFAULT_TIMEOUT_LENGTH = 6000; // 6 seconds
 
 export const EbaySnackbarDialog = ({
     className,
@@ -26,81 +26,84 @@ export const EbaySnackbarDialog = ({
     // We use this eventSet to track which event opened the snackbar and we make sure that
     // we don't close the snackbar in an undesired moment.
     // For example, the snackbar should stay open on focus even if the mouseLeave event happened.
-    const eventSet = useRef<Set<string>>(new Set())
-    const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null)
-    const [isOpen, setIsOpen] = useState(open)
+    const eventSet = useRef<Set<string>>(new Set());
+    const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+    const [isOpen, setIsOpen] = useState(open);
 
-    const action = findComponent(children, EbaySnackbarDialogAction)
-    const content = excludeComponent(children, EbaySnackbarDialogAction)
+    const action = findComponent(children, EbaySnackbarDialogAction);
+    const content = excludeComponent(children, EbaySnackbarDialogAction);
 
     const cancelCurrentCloseRequest = () => {
-        clearTimeout(timeoutRef.current)
-    }
+        clearTimeout(timeoutRef.current);
+    };
 
     const closeDialog = () => {
-        setIsOpen(false)
-        onClose()
-    }
+        setIsOpen(false);
+        onClose();
+    };
 
     const requestToCloseDialog = () => {
         // We will make a request to close the snackbar only
         // when there is no pending opening event.
         if (eventSet.current.size === 0) {
-            cancelCurrentCloseRequest()
+            cancelCurrentCloseRequest();
             timeoutRef.current = setTimeout(() => {
-                closeDialog()
-            }, DEFAULT_TIMEOUT_LENGTH)
+                closeDialog();
+            }, DEFAULT_TIMEOUT_LENGTH);
         }
-    }
+    };
 
     const openDialog = () => {
-        setIsOpen(true)
-        onOpen()
-        requestToCloseDialog()
-    }
+        setIsOpen(true);
+        onOpen();
+        requestToCloseDialog();
+    };
 
     const handleFocus = () => {
-        cancelCurrentCloseRequest()
-        eventSet.current.add('focus')
-    }
+        cancelCurrentCloseRequest();
+        eventSet.current.add("focus");
+    };
 
     const handleBlur = () => {
-        eventSet.current.delete('focus')
-        requestToCloseDialog()
-    }
+        eventSet.current.delete("focus");
+        requestToCloseDialog();
+    };
 
     const handleMouseEnter = () => {
-        cancelCurrentCloseRequest()
-        eventSet.current.add('mouseEnter')
-    }
+        cancelCurrentCloseRequest();
+        eventSet.current.add("mouseEnter");
+    };
 
     const handleMouseLeave = () => {
-        eventSet.current.delete('mouseEnter')
-        requestToCloseDialog()
-    }
+        eventSet.current.delete("mouseEnter");
+        requestToCloseDialog();
+    };
 
     const handleAction = (event) => {
-        cancelCurrentCloseRequest()
-        onAction?.(event)
-        action?.props?.onClick?.(event)
+        cancelCurrentCloseRequest();
+        onAction?.(event);
+        action?.props?.onClick?.(event);
 
-        closeDialog()
-    }
+        closeDialog();
+    };
 
-    useEffect(() => () => {
-        // On unmount of the component we
-        // cancel the close request
-        cancelCurrentCloseRequest()
-    }, [])
+    useEffect(
+        () => () => {
+            // On unmount of the component we
+            // cancel the close request
+            cancelCurrentCloseRequest();
+        },
+        [],
+    );
 
     // This useEffect is to make sure that the internal state is in sync with the "open" property.
     useEffect(() => {
         if (open) {
-            openDialog()
+            openDialog();
         } else {
-            closeDialog()
+            closeDialog();
         }
-    }, [open])
+    }, [open]);
 
     return (
         <DialogBaseWithState
@@ -112,8 +115,8 @@ export const EbaySnackbarDialog = ({
             transitionElement="root"
             a11yCloseText=""
             buttonPosition="hidden"
-            className={classNames(className, 'snackbar-dialog--transition')}
-            windowClass={layout === 'column' && 'snackbar-dialog__window--column'}
+            className={classNames(className, "snackbar-dialog--transition")}
+            windowClass={layout === "column" && "snackbar-dialog__window--column"}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
@@ -123,10 +126,10 @@ export const EbaySnackbarDialog = ({
             {action ? (
                 <EbayDialogActions>
                     {React.cloneElement(action, {
-                        onClick: handleAction
+                        onClick: handleAction,
                     })}
                 </EbayDialogActions>
             ) : null}
         </DialogBaseWithState>
-    )
-}
+    );
+};

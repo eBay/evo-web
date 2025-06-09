@@ -1,29 +1,39 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, {
-    cloneElement, ComponentProps, FC, Ref,
-    ChangeEvent, FocusEvent, KeyboardEvent, MouseEvent, SyntheticEvent,
-    useEffect, useState, LegacyRef
-} from 'react'
-import classNames from 'classnames'
-import { findComponent, withForwardRef } from '../common/component-utils'
-import EbayTextboxPostfixIcon from './postfix-icon'
-import EbayTextboxPostfixText from './postfix-text'
-import EbayTextboxPrefixIcon from './prefix-icon'
-import EbayTextboxPrefixText from './prefix-text'
-import { useFloatingLabel } from '../common/floating-label-utils/hooks'
+    cloneElement,
+    ComponentProps,
+    FC,
+    Ref,
+    ChangeEvent,
+    FocusEvent,
+    KeyboardEvent,
+    MouseEvent,
+    SyntheticEvent,
+    useEffect,
+    useState,
+    LegacyRef,
+} from "react";
+import classNames from "classnames";
+import { findComponent, withForwardRef } from "../common/component-utils";
+import EbayTextboxPostfixIcon from "./postfix-icon";
+import EbayTextboxPostfixText from "./postfix-text";
+import EbayTextboxPrefixIcon from "./prefix-icon";
+import EbayTextboxPrefixText from "./prefix-text";
+import { useFloatingLabel } from "../common/floating-label-utils/hooks";
 import {
     EbayChangeEventHandler,
     EbayEventHandler,
     EbayFocusEventHandler,
-    EbayKeyboardEventHandler, EbayMouseEventHandler
-} from '../common/event-utils/types'
-import type { Size } from './types'
+    EbayKeyboardEventHandler,
+    EbayMouseEventHandler,
+} from "../common/event-utils/types";
+import type { Size } from "./types";
 
-export const isControlled = (value?: unknown): boolean => typeof value !== 'undefined'
+export const isControlled = (value?: unknown): boolean => typeof value !== "undefined";
 
-type TextInputProps = ComponentProps<'input'> & ComponentProps<'textarea'>
+type TextInputProps = ComponentProps<"input"> & ComponentProps<"textarea">;
 
-export type TextboxEventProps = { value: string }
+export type TextboxEventProps = { value: string };
 export type EbayTextboxProps = {
     fluid?: boolean;
     invalid?: boolean;
@@ -44,10 +54,10 @@ export type EbayTextboxProps = {
         EbayMouseEventHandler<HTMLInputElement, TextboxEventProps>;
     forwardedRef?: Ref<HTMLTextAreaElement | HTMLInputElement>;
     opaqueLabel?: boolean;
-} & Omit<TextInputProps, 'onFocus' | 'onBlur' | 'onChange' | 'onKeyPress' | 'onKeyUp' | 'onKeyDown' | 'onInvalid'>;
+} & Omit<TextInputProps, "onFocus" | "onBlur" | "onChange" | "onKeyPress" | "onKeyUp" | "onKeyDown" | "onInvalid">;
 
 const EbayTextbox: FC<EbayTextboxProps> = ({
-    type = 'text',
+    type = "text",
     invalid,
     fluid,
     multiline,
@@ -62,18 +72,18 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     onFloatingLabelInit = () => {},
     onButtonClick = () => {},
     autoFocus,
-    defaultValue = '',
+    defaultValue = "",
     value: controlledValue,
     forwardedRef,
-    inputSize = 'default',
+    inputSize = "default",
     floatingLabel: floatingLabelText,
     children,
     placeholder,
     opaqueLabel,
     ...rest
 }) => {
-    const [value, setValue] = useState(defaultValue)
-    const [inputValue, setInputValue] = useState(defaultValue)
+    const [value, setValue] = useState(defaultValue);
+    const [inputValue, setInputValue] = useState(defaultValue);
     const floatingLabel = useFloatingLabel({
         text: floatingLabelText,
         disabled: rest.disabled,
@@ -82,79 +92,79 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
         type,
         opaqueLabel,
         onMount: onFloatingLabelInit,
-        containerTagName: fluid ? 'div' : 'span'
-    })
+        containerTagName: fluid ? "div" : "span",
+    });
 
     const handleFocus = (event?: FocusEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        onFocus(event, { value: event?.target?.value || defaultValue })
-    }
+        onFocus(event, { value: event?.target?.value || defaultValue });
+    };
 
     const handleBlur = (event: FocusEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        const newValue = event.target?.value
-        onBlur(event, { value: newValue })
+        const newValue = event.target?.value;
+        onBlur(event, { value: newValue });
         if (newValue !== value) {
-            onChange(event, { value: newValue })
-            setValue(newValue)
+            onChange(event, { value: newValue });
+            setValue(newValue);
         }
-    }
+    };
 
     const handleKeyPress = (event?: KeyboardEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement
-        onKeyPress(event, { value: textbox?.value })
-    }
+        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement;
+        onKeyPress(event, { value: textbox?.value });
+    };
     const handleKeyUp = (event?: KeyboardEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement
-        onKeyUp(event, { value: textbox?.value })
-    }
+        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement;
+        onKeyUp(event, { value: textbox?.value });
+    };
     const handleKeyDown = (event?: KeyboardEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement
-        onKeyDown(event, { value: textbox?.value })
-    }
+        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement;
+        onKeyDown(event, { value: textbox?.value });
+    };
 
     const handleInvalid = (event?: SyntheticEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement
-        onInvalid(event, { value: textbox?.value })
-    }
+        const textbox = event.target as HTMLInputElement & HTMLTextAreaElement;
+        onInvalid(event, { value: textbox?.value });
+    };
 
     const handleButtonClick = (event?: KeyboardEvent<HTMLInputElement> & MouseEvent<HTMLInputElement>) => {
-        onButtonClick(event, { value })
-    }
+        onButtonClick(event, { value });
+    };
 
     useEffect(() => {
         if (autoFocus) {
-            handleFocus()
+            handleFocus();
         }
-    }, [])
+    }, []);
 
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement & HTMLInputElement>) => {
-        const newValue = e.target?.value
+        const newValue = e.target?.value;
 
         if (!isControlled(controlledValue)) {
-            setInputValue(newValue)
+            setInputValue(newValue);
         }
 
-        onInputChange(e, { value: newValue })
-    }
+        onInputChange(e, { value: newValue });
+    };
 
-    const Input = multiline ? 'textarea' : 'input'
-    const Wrapper = fluid ? 'div' : 'span'
+    const Input = multiline ? "textarea" : "input";
+    const Wrapper = fluid ? "div" : "span";
 
-    const prefixIcon = findComponent(children, EbayTextboxPrefixIcon)
-    const prefixText = findComponent(children, EbayTextboxPrefixText)
-    const prefixId = prefixText?.props?.id
-    const postfixIcon = findComponent(children, EbayTextboxPostfixIcon)
-    const postfixText = findComponent(children, EbayTextboxPostfixText)
-    const postfixId = postfixText?.props?.id
+    const prefixIcon = findComponent(children, EbayTextboxPrefixIcon);
+    const prefixText = findComponent(children, EbayTextboxPrefixText);
+    const prefixId = prefixText?.props?.id;
+    const postfixIcon = findComponent(children, EbayTextboxPostfixIcon);
+    const postfixText = findComponent(children, EbayTextboxPostfixText);
+    const postfixId = postfixText?.props?.id;
 
-    const wrapperClassName = classNames('textbox', rest.className, {
-        'textbox--fluid': fluid,
-        'textbox--large': inputSize === 'large',
+    const wrapperClassName = classNames("textbox", rest.className, {
+        "textbox--fluid": fluid,
+        "textbox--large": inputSize === "large",
         /** start remove after `:has` support */
-        'textbox--disabled': rest.disabled,
-        'textbox--invalid': invalid,
-        'textbox--readonly': rest.readOnly
+        "textbox--disabled": rest.disabled,
+        "textbox--invalid": invalid,
+        "textbox--readonly": rest.readOnly,
         /** end remove after `:has` support */
-    })
+    });
 
     return (
         <floatingLabel.Container>
@@ -163,7 +173,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
                 {prefixIcon}
                 {prefixText}
                 <Input
-                    aria-describedby={[prefixId, postfixId].filter(Boolean).join(' ') || undefined}
+                    aria-describedby={[prefixId, postfixId].filter(Boolean).join(" ") || undefined}
                     {...rest}
                     className="textbox__control"
                     type={type}
@@ -181,17 +191,18 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
                     placeholder={placeholder}
                 />
                 {postfixText}
-                {postfixIcon && cloneElement(postfixIcon, {
-                    ...postfixIcon.props,
-                    onClick: (e) => {
-                        const { onClick: iconClick = () => {} } = postfixIcon.props
-                        iconClick(e)
-                        handleButtonClick(e)
-                    }
-                })}
+                {postfixIcon &&
+                    cloneElement(postfixIcon, {
+                        ...postfixIcon.props,
+                        onClick: (e) => {
+                            const { onClick: iconClick = () => {} } = postfixIcon.props;
+                            iconClick(e);
+                            handleButtonClick(e);
+                        },
+                    })}
             </Wrapper>
         </floatingLabel.Container>
-    )
-}
+    );
+};
 
-export default withForwardRef<EbayTextboxProps>(EbayTextbox)
+export default withForwardRef<EbayTextboxProps>(EbayTextbox);

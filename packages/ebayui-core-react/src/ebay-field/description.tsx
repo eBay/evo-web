@@ -1,30 +1,22 @@
-import React, { ComponentProps, FC } from 'react'
-import classNames from 'classnames'
-import { FieldDescriptionType, FieldDescriptionPosition } from './types'
+import React, { ComponentProps, FC } from "react";
+import classNames from "classnames";
+import { FieldDescriptionType, FieldDescriptionPosition } from "./types";
 
-type DescriptionProps = ComponentProps<'div'> & ComponentProps<'span'> & {
-    type?: FieldDescriptionType;
-    position?: FieldDescriptionPosition;
-}
+type DescriptionProps = ComponentProps<"div"> &
+    ComponentProps<"span"> & {
+        type?: FieldDescriptionType;
+        position?: FieldDescriptionPosition;
+    };
 
-const Description: FC<DescriptionProps> = ({
-    type,
-    position = 'below',
-    className,
-    children,
-    ...rest
-}) => {
-    const wrapperClassName = classNames(
-        className,
-        'field__description',
-        { [`field__description--${type}`]: type }
-    )
-    const WrapperElement = position === 'below' ? `div` : `span`
+const Description: FC<DescriptionProps> = ({ type, position = "below", className, children, ...rest }) => {
+    const wrapperClassName = classNames(className, "field__description", { [`field__description--${type}`]: type });
+    const WrapperElement = position === "below" ? `div` : `span`;
 
     return (
         <WrapperElement {...rest} className={wrapperClassName}>
             {children}
-        </WrapperElement>)
-}
+        </WrapperElement>
+    );
+};
 
-export default Description
+export default Description;

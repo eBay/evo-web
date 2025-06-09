@@ -1,1 +1,1 @@
-export { default as EbayDrawerDialogDeprecated } from './components/drawer'
+export { default as EbayDrawerDialogDeprecated } from "./components/drawer";

@@ -6,8 +6,6 @@ import DefaultTemplateCode from "./examples/default.marko?raw";
 import ControlsTemplate from "./examples/controls.marko";
 import ControlsTemplateCode from "./examples/controls.marko?raw";
 
-
-
 export default {
     title: "form input/ebay-filter-input",
     component: Component,
@@ -160,8 +158,7 @@ export const Default = buildExtensionTemplate(
     DefaultTemplateCode,
     {
         a11yClearButton: "Clear filter input",
-        "aria-label":"Filter input"
-
+        "aria-label": "Filter input",
     },
 );
 
@@ -170,7 +167,7 @@ export const Controls = buildExtensionTemplate(
     ControlsTemplateCode,
     {
         a11yClearButton: "Clear filter input",
-        "aria-label":"Filter input",
-        a11yControlsId: "filter-input-controls"
+        "aria-label": "Filter input",
+        a11yControlsId: "filter-input-controls",
     },
 );

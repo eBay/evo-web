@@ -37,13 +37,7 @@ Add the below icons to the `EbaySvg` component.
 Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
 
 ```tsx
-<EbaySvg
-    icons={[
-        "ccdChargerIncluded",
-        "ccdChargerNotIncluded",
-        "ccdTop",
-    ]}
-/>
+<EbaySvg icons={["ccdChargerIncluded", "ccdChargerNotIncluded", "ccdTop"]} />
 ```
 
 ```jsx harmony
@@ -52,13 +46,13 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 
 ## Attributes
 
-| Name           | Type     | Required | Description                                                             | Data                              |
-| -------------- | -------- | -------- | ----------------------------------------------------------------------- | --------------------------------- |
-| `max`          | String   | No       | The maximum range                                                       |                                   |
-| `min`          | String   | No       | The minimum range                                                       |                                   |
-| `chargerIcon`  | String   | No       | Toggles the charger icon visible or if its included or not              | `included`, `not-included`        |
-| `units`        | String   | No       | The units of the rating                                                 |                                   |
-| `secondaryType`| String   | No       | Toggles the usbpd secondary text                                        | `none`, `usbpd`                   |
-| `secondaryText`| String   | No       | The text used for secondary text                                        |                                   |
-| `a11yUnits`    | String   | No       | The units for the rating used for a11y                                  |                                   |
-| `a11yText`     | String   | No       | Overrides the default aria-label text                                   |                                   |
+| Name            | Type   | Required | Description                                                | Data                       |
+| --------------- | ------ | -------- | ---------------------------------------------------------- | -------------------------- |
+| `max`           | String | No       | The maximum range                                          |                            |
+| `min`           | String | No       | The minimum range                                          |                            |
+| `chargerIcon`   | String | No       | Toggles the charger icon visible or if its included or not | `included`, `not-included` |
+| `units`         | String | No       | The units of the rating                                    |                            |
+| `secondaryType` | String | No       | Toggles the usbpd secondary text                           | `none`, `usbpd`            |
+| `secondaryText` | String | No       | The text used for secondary text                           |                            |
+| `a11yUnits`     | String | No       | The units for the rating used for a11y                     |                            |
+| `a11yText`      | String | No       | Overrides the default aria-label text                      |                            |

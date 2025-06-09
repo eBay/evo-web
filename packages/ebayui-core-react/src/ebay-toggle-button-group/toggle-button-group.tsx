@@ -1,16 +1,16 @@
-import React, { ReactElement, cloneElement, useState, useCallback } from 'react'
-import cx from 'classnames'
-import { filterByType } from '../common/component-utils'
-import { ToggleButtonProps } from '../ebay-toggle-button/types'
+import React, { ReactElement, cloneElement, useState, useCallback } from "react";
+import cx from "classnames";
+import { filterByType } from "../common/component-utils";
+import { ToggleButtonProps } from "../ebay-toggle-button/types";
 
-import { EbayToggleButton } from '../ebay-toggle-button'
-import { ToggleButtonGroupProps } from './types'
+import { EbayToggleButton } from "../ebay-toggle-button";
+import { ToggleButtonGroupProps } from "./types";
 
 const EbayToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
     a11yText,
     a11yLabelId,
-    layoutType = 'minimal',
-    variant = 'checkbox',
+    layoutType = "minimal",
+    variant = "checkbox",
     children,
     columnsMin,
     columnsXS,
@@ -21,49 +21,47 @@ const EbayToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
     className,
     ...rest
 }) => {
-    const buttons = filterByType(children, EbayToggleButton)
+    const buttons = filterByType(children, EbayToggleButton);
     const getInitialPressedButtons = () =>
         buttons.reduce((acc: Record<number, boolean>, button, i) => {
-            acc[i] = button.props.pressed || false
-            return acc
-        }, {})
+            acc[i] = button.props.pressed || false;
+            return acc;
+        }, {});
 
-    const [pressedButtons, setPressedButtons] = useState<
-        Record<number, boolean>
-    >(getInitialPressedButtons)
+    const [pressedButtons, setPressedButtons] = useState<Record<number, boolean>>(getInitialPressedButtons);
 
     const handleToggle = useCallback(
         (toggleEvent: React.MouseEvent<HTMLButtonElement>, index: number) => {
             setPressedButtons((prevState: Record<number, boolean>) => {
-                let newState: Record<number, boolean> = {}
+                let newState: Record<number, boolean> = {};
 
                 switch (variant) {
-                    case 'checkbox':
-                        newState = { ...prevState }
-                        newState[index] = !prevState[index]
-                        break
-                    case 'radio-toggle':
-                        newState[index] = !prevState[index]
-                        break
-                    case 'radio':
-                        newState[index] = true
-                        break
+                    case "checkbox":
+                        newState = { ...prevState };
+                        newState[index] = !prevState[index];
+                        break;
+                    case "radio-toggle":
+                        newState[index] = !prevState[index];
+                        break;
+                    case "radio":
+                        newState[index] = true;
+                        break;
                     default:
-                        break
+                        break;
                 }
 
                 if (onChange) {
-                    onChange(toggleEvent, { pressedButtonsIndex: newState })
+                    onChange(toggleEvent, { pressedButtonsIndex: newState });
                 }
-                return newState
-            })
+                return newState;
+            });
         },
-        [variant, onChange]
-    )
+        [variant, onChange],
+    );
 
     return (
         <div
-            className={cx(className, 'toggle-button-group')}
+            className={cx(className, "toggle-button-group")}
             data-columns-min={columnsMin}
             data-columns-xs={columnsXS}
             data-columns-sm={columnsSM}
@@ -78,14 +76,14 @@ const EbayToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
                             layoutType,
                             pressed: pressedButtons[i],
                             onToggle: (e) => {
-                                handleToggle(e, i)
-                            }
+                                handleToggle(e, i);
+                            },
                         } as ToggleButtonProps)}
                     </li>
                 ))}
             </ul>
         </div>
-    )
-}
+    );
+};
 
-export default EbayToggleButtonGroup
+export default EbayToggleButtonGroup;

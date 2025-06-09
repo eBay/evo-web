@@ -2,7 +2,6 @@
 
 ## Demo
 
-
 [Storybook](https://opensource.ebay.com/ebayui-core-react/main?path=/docs/graphics-icons-ebay-image-placeholder--docs)
 
 ## Usage
@@ -38,9 +37,5 @@ Add the below icon to the `EbaySvg` component.
 Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
 
 ```tsx
-<EbaySvg
-    icons={[
-        "imagePlaceholder",
-    ]}
-/>
+<EbaySvg icons={["imagePlaceholder"]} />
 ```

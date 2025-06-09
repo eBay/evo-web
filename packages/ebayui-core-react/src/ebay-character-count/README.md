@@ -36,9 +36,9 @@ import "@ebay/skin/character-count.css";
 
 ## Attributes
 
-| Name         | Type     | Required | Description                                                                 | Data                         |
-| ------------ | -------- | -------- | --------------------------------------------------------------------------- | ---------------------------- |
-| `value`      | String   | Yes      | String to count characters from, or a number representing the current count |                              |
-| `max`        | Number   | Yes      | Maximum number of characters allowed                                        |                              |
-| `clippedText`| String   | No       | Text to be displayed after the character count                              |                              |
-| `onChange`   | Function | No       | Triggered when the character count changes                                  | `({ count, inputAriaLive })` |
+| Name          | Type     | Required | Description                                                                 | Data                         |
+| ------------- | -------- | -------- | --------------------------------------------------------------------------- | ---------------------------- |
+| `value`       | String   | Yes      | String to count characters from, or a number representing the current count |                              |
+| `max`         | Number   | Yes      | Maximum number of characters allowed                                        |                              |
+| `clippedText` | String   | No       | Text to be displayed after the character count                              |                              |
+| `onChange`    | Function | No       | Triggered when the character count changes                                  | `({ count, inputAriaLive })` |

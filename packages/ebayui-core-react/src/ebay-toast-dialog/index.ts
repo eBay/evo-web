@@ -1,1 +1,1 @@
-export { default as EbayToast } from './components/toast'
+export { default as EbayToast } from "./components/toast";

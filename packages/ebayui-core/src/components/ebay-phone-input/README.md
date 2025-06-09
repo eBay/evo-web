@@ -10,10 +10,10 @@
 ## Localization
 
 In order to localize strings in dropdown, use a tuple array. This will also be the order of items in the list.
-See [this example](https://github.com/eBay/ebayui-core/tree/master/src/components/ebay-phone-input-button/examples/localization.marko) and [this example file](https://github.com/eBay/ebayui-core/tree/master/src/components/ebay-phone-input-button/examples/french.json). This is the [original english](https://github.com/eBay/ebayui-core/tree/master/src/common/countries/english.ts) file used in this component
+See [this example](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-phone-input-button/examples/localization.marko) and [this example file](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-phone-input-button/examples/french.json). This is the [original english](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/common/countries/english.ts) file used in this component
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/ebayui-core/?path=/story/form-input-ebay-phone-input-button)
-- [Storybook Docs](https://ebay.github.io/ebayui-core/?path=/docs/form-input-ebay-phone-input-button)
-- [Code Examples](https://github.com/eBay/ebayui-core/tree/master/src/components/ebay-phone-input-button/examples)
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/form-input-ebay-phone-input-button)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/form-input-ebay-phone-input-button)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-phone-input-button/examples)

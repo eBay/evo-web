@@ -1,21 +1,21 @@
-import React from 'react'
-import { EbayInfotip, EbayInfotipContent, EbayInfotipHeading } from '../../ebay-infotip'
+import React from "react";
+import { EbayInfotip, EbayInfotipContent, EbayInfotipHeading } from "../../ebay-infotip";
 import {
     EbaySectionTitle,
     EbaySectionTitleTitle as Title,
     EbaySectionTitleSubtitle as Subtitle,
-    EbaySectionTitleInfo as Info
-} from '../index'
+    EbaySectionTitleInfo as Info,
+} from "../index";
 
 export default {
-    title: 'navigation & disclosure/ebay-section-title'
-}
+    title: "navigation & disclosure/ebay-section-title",
+};
 
 export const Default = () => (
     <>
         <EbaySectionTitle>Default Section Title</EbaySectionTitle>
     </>
-)
+);
 
 export const WithSubtitle = () => (
     <>
@@ -24,7 +24,7 @@ export const WithSubtitle = () => (
             <Subtitle>Plus, guaranteed best prices.</Subtitle>
         </EbaySectionTitle>
     </>
-)
+);
 
 export const WithTitleButWOSubtitle = {
     render: () => (
@@ -35,8 +35,8 @@ export const WithTitleButWOSubtitle = {
         </>
     ),
 
-    name: 'With Title But W/O Subtitle'
-}
+    name: "With Title But W/O Subtitle",
+};
 
 export const WithCta = {
     render: () => (
@@ -53,8 +53,8 @@ export const WithCta = {
         </>
     ),
 
-    name: 'With CTA'
-}
+    name: "With CTA",
+};
 
 export const WithInfo = () => (
     <>
@@ -76,4 +76,4 @@ export const WithInfo = () => (
             </Info>
         </EbaySectionTitle>
     </>
-)
+);

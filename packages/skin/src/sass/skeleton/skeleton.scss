@@ -2,6 +2,32 @@
 @import "../mixins/private/button-mixins";
 @import "../mixins/private/token-mixins";
 
+@keyframes skeleton-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes skeleton-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+::view-transition-new(skeleton-transition-*) {
+    animation: skeleton-fade-in var(--motion-duration-medium-2)
+        var(--motion-easing-continuous);
+}
+::view-transition-old(skeleton-transition-*) {
+    animation: skeleton-fade-out var(--motion-duration-short-3)
+        var(--motion-easing-continuous);
+}
+
 .skeleton {
     container-name: skeleton-container;
     container-type: inline-size;
@@ -131,16 +157,6 @@ div.skeleton__textbox:not(:last-child) {
     --skeleton-background: var(--color-loading-fill-on-secondary);
 }
 
-@media screen and (max-width: $_screen-size-SM) {
-    .skeleton {
-        --skeleton-background: var(--color-loading-shimmer);
-    }
-
-    .skeleton--on-secondary {
-        --skeleton-background: var(--color-loading-shimmer-on-secondary);
-    }
-}
-
 .skeleton--purple {
     --skeleton-background: var(--color-loading-ai-gradient-purple-subtle);
 }
@@ -154,24 +170,21 @@ div.skeleton__textbox:not(:last-child) {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    @keyframes loading-frames {
+    @keyframes on-primary {
         0% {
-            background-position: 0% 0%;
-        }
-        50% {
-            background-position: 45% 0%;
+            background-color: var(--color-loading-first);
         }
         100% {
-            background-position: 90% 0%;
+            background-color: var(--color-loading-second);
         }
     }
 
-    @keyframes fade-in {
+    @keyframes on-secondary {
         0% {
-            opacity: 0;
+            background-color: var(--color-loading-on-secondary-first);
         }
         100% {
-            opacity: 1;
+            background-color: var(--color-loading-on-secondary-second);
         }
     }
 
@@ -180,13 +193,17 @@ div.skeleton__textbox:not(:last-child) {
     .skeleton__text,
     .skeleton__image,
     .skeleton__textbox {
-        /*  setting animation-iteration-count to 6 (5000/833ms)    */
-        /*  so it does not exceed 5s per WCAG 2.2.2    */
-        animation:
-            fade-in 500ms forwards,
-            loading-frames 833ms 667ms linear 6;
-        animation-fill-mode: both;
-        background-size: 200%;
+        animation: var(--motion-duration-long-3) var(--motion-easing-continuous)
+            infinite alternate on-primary;
+    }
+
+    .skeleton--on-secondary .skeleton__avatar,
+    .skeleton--on-secondary .skeleton__button,
+    .skeleton--on-secondary .skeleton__text,
+    .skeleton--on-secondary .skeleton__image,
+    .skeleton--on-secondary .skeleton__textbox {
+        animation: var(--motion-duration-long-3) var(--motion-easing-continuous)
+            infinite alternate on-secondary;
     }
 }
 
@@ -198,14 +215,6 @@ div.skeleton__textbox:not(:last-child) {
 }
 
 [dir="rtl"] {
-    .skeleton__avatar,
-    .skeleton__button,
-    .skeleton__text,
-    .skeleton__image,
-    .skeleton__textbox {
-        animation-direction: normal, reverse;
-    }
-
     .skeleton__text--multiline::after {
         left: var(--spacing-700);
     }

@@ -1,21 +1,21 @@
-import React from 'react'
-import { render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import EbayFakeLink from '../fake-link';
+import React from "react";
+import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import EbayFakeLink from "../fake-link";
 
-describe('<EbayFakeLink>', () => {
-    let component
-    const onClick = jest.fn()
-    const onEscape = jest.fn()
+describe("<EbayFakeLink>", () => {
+    let component;
+    const onClick = jest.fn();
+    const onEscape = jest.fn();
 
-    afterEach(jest.clearAllMocks)
+    afterEach(jest.clearAllMocks);
 
     describe("given button is enabled", () => {
         beforeEach(async () => {
             component = await render(
                 <EbayFakeLink onClick={onClick} onEscape={onEscape}>
                     Fake-Link
-                </EbayFakeLink>
+                </EbayFakeLink>,
             );
         });
 
@@ -25,18 +25,18 @@ describe('<EbayFakeLink>', () => {
             });
 
             it("should emit the event with correct data", () => {
-                expect(onClick).toHaveBeenCalledTimes(1)
+                expect(onClick).toHaveBeenCalledTimes(1);
             });
         });
 
         describe("when escape key is pressed", () => {
             beforeEach(async () => {
-                component.getByRole("button").focus()
-                await userEvent.keyboard('{escape}');
+                component.getByRole("button").focus();
+                await userEvent.keyboard("{escape}");
             });
 
             it("should emit the event with correct data", () => {
-                expect(onEscape).toHaveBeenCalledTimes(1)
+                expect(onEscape).toHaveBeenCalledTimes(1);
             });
         });
     });
@@ -46,7 +46,7 @@ describe('<EbayFakeLink>', () => {
             component = await render(
                 <EbayFakeLink onClick={onClick} onEscape={onEscape} disabled>
                     Fake-Link
-                </EbayFakeLink>
+                </EbayFakeLink>,
             );
         });
 
@@ -62,8 +62,8 @@ describe('<EbayFakeLink>', () => {
 
         describe("when escape key is pressed", () => {
             beforeEach(async () => {
-                component.getByRole("button").focus()
-                await userEvent.keyboard('{escape}');
+                component.getByRole("button").focus();
+                await userEvent.keyboard("{escape}");
             });
 
             it("should not emit the event", () => {
@@ -71,4 +71,4 @@ describe('<EbayFakeLink>', () => {
             });
         });
     });
-})
+});

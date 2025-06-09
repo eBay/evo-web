@@ -44,6 +44,88 @@ exports[`<EbayFilePreviewCard> renders as span element 1`] = `
 </DocumentFragment>
 `;
 
+exports[`<EbayFilePreviewCard> renders with a href 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <a
+        href="/collection"
+      >
+        <img
+          alt="file-name.jpg"
+          class="file-preview-card__asset"
+          src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+        />
+      </a>
+      <button
+        aria-label="Delete"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-delete-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> renders with action button 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <button
+        aria-label="action label"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-heart-16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<EbayFilePreviewCard> renders with document 1`] = `
 <DocumentFragment>
   <div
@@ -168,6 +250,34 @@ exports[`<EbayFilePreviewCard> renders with multi action button 1`] = `
 </DocumentFragment>
 `;
 
+exports[`<EbayFilePreviewCard> renders with no action button 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<EbayFilePreviewCard> renders with see more button 1`] = `
 <DocumentFragment>
   <div
@@ -198,7 +308,7 @@ exports[`<EbayFilePreviewCard> renders with see more button 1`] = `
 exports[`<EbayFilePreviewCard> renders with status uploading 1`] = `
 <DocumentFragment>
   <div
-    class="file-preview-card"
+    class="file-preview-card test-class"
   >
     <div
       class="file-preview-card__body"

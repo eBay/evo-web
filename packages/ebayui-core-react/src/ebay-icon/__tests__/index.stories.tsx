@@ -1,12 +1,12 @@
-import React from 'react'
-import { Meta } from '@storybook/react'
-import { EbayIcon } from '../index'
-import { icons } from './constants'
+import React from "react";
+import { Meta } from "@storybook/react";
+import { EbayIcon } from "../index";
+import { icons } from "./constants";
 
 export default {
     component: EbayIcon,
-    title: 'graphics & icons/ebay-icon'
-} as Meta
+    title: "graphics & icons/ebay-icon",
+} as Meta;
 
 export const AllIcons = () => (
     <table>
@@ -19,7 +19,7 @@ export const AllIcons = () => (
             </tr>
         ))}
     </table>
-)
+);
 
 export const CustomColor = () => (
     <div>
@@ -31,17 +31,17 @@ export const CustomColor = () => (
             with className <EbayIcon name="notification16" className="demo3" />
         </p>
         <p>
-            with style <EbayIcon name="notification16" style={{ color: 'green' }} />
+            with style <EbayIcon name="notification16" style={{ color: "green" }} />
         </p>
         <p>
-            with style <EbayIcon name="attentionFilled16" style={{ color: 'purple' }} />
+            with style <EbayIcon name="attentionFilled16" style={{ color: "purple" }} />
         </p>
     </div>
-)
+);
 
 export const NonDecorative = () => (
     <div>
         <EbayIcon name="confirmation16" a11yText="Confirmation" />
         <EbayIcon name="attention16" a11yText="Attention" a11yVariant="label" />
     </div>
-)
+);

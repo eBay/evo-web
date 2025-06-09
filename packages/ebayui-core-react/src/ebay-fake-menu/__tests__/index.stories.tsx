@@ -1,37 +1,33 @@
-import React from 'react'
-import { StoryFn, Meta } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import {
-    EbayFakeMenu,
-    EbayFakeMenuItem as Item,
-    EbayFakeMenuSeparator as Separator
-} from '../index'
+import React from "react";
+import { StoryFn, Meta } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { EbayFakeMenu, EbayFakeMenuItem as Item, EbayFakeMenuSeparator as Separator } from "../index";
 
 const meta: Meta<typeof EbayFakeMenu> = {
     component: EbayFakeMenu,
-    title: 'building blocks/ebay-fake-menu'
-}
+    title: "building blocks/ebay-fake-menu",
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayFakeMenu> = () => (
     <>
         <EbayFakeMenu
             onClick={(event) => {
-                action('click')('MENU click event prevented')
-                event.preventDefault()
+                action("click")("MENU click event prevented");
+                event.preventDefault();
             }}
-            onKeyDown={(event, props) => action('onKeyDown')(event, props)}
+            onKeyDown={(event, props) => action("onKeyDown")(event, props)}
             onSelect={(event, props) => {
-                action('onSelect')(event, props)
-                event.preventDefault()
+                action("onSelect")(event, props);
+                event.preventDefault();
             }}
         >
             <Item
                 href="#"
                 onClick={(event) => {
-                    action('click')('ITEM click event prevented')
-                    event.preventDefault()
+                    action("click")("ITEM click event prevented");
+                    event.preventDefault();
                 }}
             >
                 Item 1 that has very long text
@@ -42,27 +38,27 @@ export const Default: StoryFn<typeof EbayFakeMenu> = () => (
             <Item href="#">Item 3</Item>
         </EbayFakeMenu>
     </>
-)
+);
 
 export const WithoutTickIcon: StoryFn<typeof EbayFakeMenu> = () => (
     <>
         <EbayFakeMenu
             itemMatchesUrl={false}
             onClick={(event) => {
-                action('click')('MENU click event prevented')
-                event.preventDefault()
+                action("click")("MENU click event prevented");
+                event.preventDefault();
             }}
-            onKeyDown={action('key down')}
+            onKeyDown={action("key down")}
             onSelect={(event) => {
-                action('select')('event prevented')
-                event.preventDefault()
+                action("select")("event prevented");
+                event.preventDefault();
             }}
         >
             <Item
                 href="#"
                 onClick={(event) => {
-                    action('click')('ITEM click event prevented')
-                    event.preventDefault()
+                    action("click")("ITEM click event prevented");
+                    event.preventDefault();
                 }}
             >
                 Item 1 that has very long text
@@ -73,7 +69,7 @@ export const WithoutTickIcon: StoryFn<typeof EbayFakeMenu> = () => (
             <Item href="#">Item 3</Item>
         </EbayFakeMenu>
     </>
-)
+);
 
 export const WithSeparator: StoryFn<typeof EbayFakeMenu> = () => (
     <>
@@ -86,7 +82,7 @@ export const WithSeparator: StoryFn<typeof EbayFakeMenu> = () => (
             <Item href="#">Item 5</Item>
         </EbayFakeMenu>
     </>
-)
+);
 
 export const WithDisabledItem: StoryFn<typeof EbayFakeMenu> = () => (
     <>
@@ -97,7 +93,7 @@ export const WithDisabledItem: StoryFn<typeof EbayFakeMenu> = () => (
             <Item href="#">Item 3</Item>
         </EbayFakeMenu>
     </>
-)
+);
 
 export const MixedWithButtons: StoryFn<typeof EbayFakeMenu> = () => (
     <>
@@ -110,7 +106,7 @@ export const MixedWithButtons: StoryFn<typeof EbayFakeMenu> = () => (
             </Item>
         </EbayFakeMenu>
     </>
-)
+);
 
 export const WithBadges: StoryFn<typeof EbayFakeMenu> = () => (
     <>
@@ -124,4 +120,4 @@ export const WithBadges: StoryFn<typeof EbayFakeMenu> = () => (
             <Item href="">item 3</Item>
         </EbayFakeMenu>
     </>
-)
+);

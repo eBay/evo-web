@@ -31,19 +31,15 @@ import "@ebay/skin/chip.css";
 ```
 
 ```jsx harmony
-<EbayChip
-    a11yDeleteButtonText="Remove item"
-    onDelete={handleDelete}
-    disabled={false}
->
+<EbayChip a11yDeleteButtonText="Remove item" onDelete={handleDelete} disabled={false}>
     Chip Content
 </EbayChip>
 ```
 
 ## Attributes
 
-| Name                   | Type     | Required | Description                                |
-| ---------------------- | -------- | -------- | ------------------------------------------ |
-| `a11yDeleteButtonText` | String   | No       | Accessibility text for the delete button   |
-| `onDelete`             | Function | Yes      | Triggered when the delete button is clicked|
-| `disabled`             | Boolean  | No       | Whether the chip is disabled               |
+| Name                   | Type     | Required | Description                                 |
+| ---------------------- | -------- | -------- | ------------------------------------------- |
+| `a11yDeleteButtonText` | String   | No       | Accessibility text for the delete button    |
+| `onDelete`             | Function | Yes      | Triggered when the delete button is clicked |
+| `disabled`             | Boolean  | No       | Whether the chip is disabled                |

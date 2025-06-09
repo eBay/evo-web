@@ -8,27 +8,25 @@
  * -------------------------------------------------------------------------------
  */
 if (!Array.prototype.flat) {
-     
-    Object.defineProperty(Array.prototype, 'flat', {
+    Object.defineProperty(Array.prototype, "flat", {
         configurable: true,
         writable: true,
         value: function (d) {
-            const depthArg =
-                typeof d === 'undefined' ? 1 : Number(d) || 0
-            const result = []
-            const forEach = result.forEach
+            const depthArg = typeof d === "undefined" ? 1 : Number(d) || 0;
+            const result = [];
+            const forEach = result.forEach;
 
             const flatDeep = (arr, depth) =>
-                forEach.call(arr, val => {
+                forEach.call(arr, (val) => {
                     if (depth > 0 && Array.isArray(val)) {
-                        flatDeep(val, depth - 1)
+                        flatDeep(val, depth - 1);
                     } else {
-                        result.push(val)
+                        result.push(val);
                     }
-                })
+                });
 
-            flatDeep(this, depthArg)
-            return result
-        }
-    })
+            flatDeep(this, depthArg);
+            return result;
+        },
+    });
 }

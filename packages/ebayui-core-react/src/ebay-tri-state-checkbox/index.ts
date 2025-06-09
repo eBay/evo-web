@@ -1,2 +1,2 @@
-export { default as EbayTriStateCheckbox } from './tri-state-checkbox'
-export * from './types'
+export { default as EbayTriStateCheckbox } from "./tri-state-checkbox";
+export * from "./types";

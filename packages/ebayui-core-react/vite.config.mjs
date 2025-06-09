@@ -3,19 +3,22 @@ import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { nodeExternals } from "rollup-plugin-node-externals";
 import typescript from "@rollup/plugin-typescript";
-import { cjsInterop } from "vite-plugin-cjs-interop"
+import { cjsInterop } from "vite-plugin-cjs-interop";
 
 // find directories in src that starts with 'ebay-'
 let componentEntries = fs
     .readdirSync("./src")
     .filter((file) => fs.statSync(`./src/${file}`).isDirectory() && file.startsWith("ebay-"))
-    .reduce((acc, componentName) => {
-        acc[componentName] = resolve(__dirname, `src/${componentName}/index.ts`);
-        return acc;
-    }, {
-        events: resolve(__dirname, 'src/events/index.ts'),
-        utils: resolve(__dirname, 'src/utils/index.ts'),
-    });
+    .reduce(
+        (acc, componentName) => {
+            acc[componentName] = resolve(__dirname, `src/${componentName}/index.ts`);
+            return acc;
+        },
+        {
+            events: resolve(__dirname, "src/events/index.ts"),
+            utils: resolve(__dirname, "src/utils/index.ts"),
+        },
+    );
 
 export default defineConfig({
     plugins: [
@@ -24,11 +27,7 @@ export default defineConfig({
         cjsInterop({
             // By default this plugin is only for SSR vite build, here we are in library mode, so we enable "client"
             client: true,
-            dependencies: [
-                'makeup-expander',
-                'makeup-typeahead',
-                'makeup-floating-label'
-            ]
+            dependencies: ["makeup-expander", "makeup-typeahead", "makeup-floating-label"],
         }),
         nodeExternals(),
     ],
@@ -42,9 +41,7 @@ export default defineConfig({
             formats: ["cjs"],
         },
         rollupOptions: {
-            plugins: [
-                typescript()
-            ]
-        }
+            plugins: [typescript()],
+        },
     },
 });

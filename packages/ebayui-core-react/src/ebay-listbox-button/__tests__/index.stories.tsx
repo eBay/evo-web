@@ -1,28 +1,28 @@
-import React, { ChangeEvent } from 'react'
-import { action } from '@storybook/addon-actions'
+import React, { ChangeEvent } from "react";
+import { action } from "@storybook/addon-actions";
 
-import { EbayListboxButton, EbayListboxButtonOption } from '../index'
-import StateFullTest from './statefull-test'
-import { ChangeEventProps } from '../listbox-button'
+import { EbayListboxButton, EbayListboxButtonOption } from "../index";
+import StateFullTest from "./statefull-test";
+import { ChangeEventProps } from "../listbox-button";
 
 export default {
-    title: 'buttons/ebay-listbox-button'
-}
+    title: "buttons/ebay-listbox-button",
+};
 
 export const Default = () => (
     <>
         <EbayListboxButton
             value="BB"
-            onChange={(e: ChangeEvent, props: ChangeEventProps) => action('onChange')(e, props)}
-            onCollapse={() => action('onCollapse')()}
-            onExpand={() => action('onExpand')()}
+            onChange={(e: ChangeEvent, props: ChangeEventProps) => action("onChange")(e, props)}
+            onCollapse={() => action("onCollapse")()}
+            onExpand={() => action("onExpand")()}
         >
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const PreselectedIndex = () => (
     <>
@@ -32,44 +32,44 @@ export const PreselectedIndex = () => (
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const DefaultNoSelectedOption = () => (
     <>
-        <EbayListboxButton
-            onChange={(e: ChangeEvent, props: ChangeEventProps) => action('onChange')(e, props)}
-        >
+        <EbayListboxButton onChange={(e: ChangeEvent, props: ChangeEventProps) => action("onChange")(e, props)}>
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const DefaultWithA11YPrefix = {
     render: () => {
-        const listboxBtnLabel = 'listbox-button__label'
+        const listboxBtnLabel = "listbox-button__label";
 
         return (
             <>
-                <label htmlFor="btn-id" id={listboxBtnLabel}>Select these items:</label>
+                <label htmlFor="btn-id" id={listboxBtnLabel}>
+                    Select these items:
+                </label>
                 <br />
                 <br />
                 <EbayListboxButton
                     id="btn-id"
                     value="BB"
                     prefixId={listboxBtnLabel}
-                    onChange={(e, props) => action('onChange')(e, props)}
+                    onChange={(e, props) => action("onChange")(e, props)}
                 >
                     <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
                     <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
                     <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
                 </EbayListboxButton>
             </>
-        )
+        );
     },
-    name: 'Default with A11y Prefix'
-}
+    name: "Default with A11y Prefix",
+};
 
 export const DisabledState = () => (
     <>
@@ -79,7 +79,7 @@ export const DisabledState = () => (
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const InvalidState = () => (
     <>
@@ -89,7 +89,7 @@ export const InvalidState = () => (
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const Borderless = () => (
     <>
@@ -99,23 +99,23 @@ export const Borderless = () => (
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const Fluid = () => (
-    <div style={{ width: '500px' }}>
+    <div style={{ width: "500px" }}>
         <EbayListboxButton value="BB" fluid>
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </div>
-)
+);
 
 export const StatefullComponent = () => (
     <>
         <StateFullTest />
     </>
-)
+);
 
 export const TooManyOptions = () => (
     <>
@@ -161,7 +161,7 @@ export const TooManyOptions = () => (
             <EbayListboxButtonOption value="102">Option 39</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const PrefixLabel = () => (
     <>
@@ -171,7 +171,7 @@ export const PrefixLabel = () => (
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);
 
 export const FloatingLabel = () => (
     <>
@@ -181,4 +181,4 @@ export const FloatingLabel = () => (
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
         </EbayListboxButton>
     </>
-)
+);

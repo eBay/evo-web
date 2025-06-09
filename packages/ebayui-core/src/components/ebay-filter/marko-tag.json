@@ -20,5 +20,5 @@
     "@target": "#html-target",
     "@aria-pressed": "never",
     "@useAriaPressed": "boolean",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/building-blocks-ebay-filter)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/building-blocks-ebay-filter)"
 }

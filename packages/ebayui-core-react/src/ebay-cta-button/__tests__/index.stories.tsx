@@ -1,13 +1,13 @@
-import React from 'react'
-import { StoryFn, Meta } from '@storybook/react'
-import { EbayCtaButton } from '../index'
+import React from "react";
+import { StoryFn, Meta } from "@storybook/react";
+import { EbayCtaButton } from "../index";
 
 const meta: Meta<typeof EbayCtaButton> = {
     component: EbayCtaButton,
-    title: 'buttons/ebay-cta-button'
-}
+    title: "buttons/ebay-cta-button",
+};
 
-export default meta
+export default meta;
 
 export const Default: StoryFn<typeof EbayCtaButton> = () => (
     <>
@@ -15,7 +15,7 @@ export const Default: StoryFn<typeof EbayCtaButton> = () => (
             <EbayCtaButton href="https://ebay.com">Take Action Now!</EbayCtaButton>
         </p>
     </>
-)
+);
 
 export const Large: StoryFn<typeof EbayCtaButton> = () => (
     <>
@@ -25,7 +25,7 @@ export const Large: StoryFn<typeof EbayCtaButton> = () => (
             </EbayCtaButton>
         </p>
     </>
-)
+);
 
 export const Fluid: StoryFn<typeof EbayCtaButton> = () => (
     <>
@@ -40,10 +40,10 @@ export const Fluid: StoryFn<typeof EbayCtaButton> = () => (
             </EbayCtaButton>
         </p>
     </>
-)
+);
 
 export const Truncated: StoryFn<typeof EbayCtaButton> = () => (
-    <div style={{ maxWidth: '200px' }}>
+    <div style={{ maxWidth: "200px" }}>
         <p>
             <EbayCtaButton href="https://ebay.com" truncate>
                 Wide Long Call To Action!
@@ -55,4 +55,4 @@ export const Truncated: StoryFn<typeof EbayCtaButton> = () => (
             </EbayCtaButton>
         </p>
     </div>
-)
+);

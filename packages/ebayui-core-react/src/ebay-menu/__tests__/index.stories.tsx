@@ -1,24 +1,24 @@
-import React from 'react'
-import { action } from '@storybook/addon-actions'
-import { Meta } from '@storybook/react'
-import { EbayIcon } from '../../ebay-icon'
-import { EbayTab, EbayTabPanel, EbayTabs } from '../../ebay-tabs'
-import { EbayMenu, EbayMenuItem as Item, EbayMenuSeparator as Separator } from '../index'
+import React from "react";
+import { action } from "@storybook/addon-actions";
+import { Meta } from "@storybook/react";
+import { EbayIcon } from "../../ebay-icon";
+import { EbayTab, EbayTabPanel, EbayTabs } from "../../ebay-tabs";
+import { EbayMenu, EbayMenuItem as Item, EbayMenuSeparator as Separator } from "../index";
 
 const story = {
     component: EbayMenu,
-    title: 'building blocks/ebay-menu'
-} satisfies Meta<typeof EbayMenu>
+    title: "building blocks/ebay-menu",
+} satisfies Meta<typeof EbayMenu>;
 
 export const Default = () => (
     <>
-        <EbayMenu onClick={action('click')} onKeyDown={action('key down')}>
+        <EbayMenu onClick={action("click")} onKeyDown={action("key down")}>
             <Item>Item 1 that has very long text</Item>
             <Item>Item 2</Item>
             <Item>Item 3</Item>
         </EbayMenu>
     </>
-)
+);
 
 export const Radio = () => (
     <>
@@ -28,10 +28,10 @@ export const Radio = () => (
                 <EbayMenu
                     type="radio"
                     checked={1}
-                    onKeyDown={action('key down')}
+                    onKeyDown={action("key down")}
                     // Test TS complier errors here:
-                    onChange={(e, { index, checked }) => action('change')(e, { index, checked })}
-                    onSelect={(e, { index, checked }) => action('select')(e, { index, checked })}
+                    onChange={(e, { index, checked }) => action("change")(e, { index, checked })}
+                    onSelect={(e, { index, checked }) => action("select")(e, { index, checked })}
                 >
                     <Item>item 0</Item>
                     <Item>Prechecked on menu level</Item>
@@ -43,9 +43,9 @@ export const Radio = () => (
             <EbayTabPanel>
                 <EbayMenu
                     type="radio"
-                    onKeyDown={action('key down')}
-                    onChange={action('change')}
-                    onSelect={action('select')}
+                    onKeyDown={action("key down")}
+                    onChange={action("change")}
+                    onSelect={action("select")}
                 >
                     <Item checked>Prechecked on item level</Item>
                     <Item>item 1</Item>
@@ -58,9 +58,9 @@ export const Radio = () => (
                 <EbayMenu
                     type="radio"
                     checked={1}
-                    onKeyDown={action('key down')}
-                    onChange={action('change')}
-                    onSelect={action('select')}
+                    onKeyDown={action("key down")}
+                    onChange={action("change")}
+                    onSelect={action("select")}
                 >
                     <Item checked>Prechecked on item level</Item>
                     <Item>Prechecked on menu level</Item>
@@ -69,15 +69,15 @@ export const Radio = () => (
             </EbayTabPanel>
         </EbayTabs>
     </>
-)
+);
 
 export const Checkbox = () => (
     <>
         <EbayMenu
             type="checkbox"
-            onKeyDown={action('key down')}
-            onChange={action('change')}
-            onSelect={action('select')}
+            onKeyDown={action("key down")}
+            onChange={action("change")}
+            onSelect={action("select")}
         >
             <Item value="item 1" checked>
                 item 1
@@ -88,7 +88,7 @@ export const Checkbox = () => (
             </Item>
         </EbayMenu>
     </>
-)
+);
 
 export const WithSeparator = () => (
     <>
@@ -101,7 +101,7 @@ export const WithSeparator = () => (
             <Item>Item 5</Item>
         </EbayMenu>
     </>
-)
+);
 
 export const WithDisabledItem = () => (
     <>
@@ -111,7 +111,7 @@ export const WithDisabledItem = () => (
             <Item>Item 3</Item>
         </EbayMenu>
     </>
-)
+);
 
 export const WithBadges = () => (
     <>
@@ -125,23 +125,23 @@ export const WithBadges = () => (
             <Item>item 3</Item>
         </EbayMenu>
     </>
-)
+);
 
 export const WithIcons = () => (
     <>
         <EbayMenu>
             <Item>
-                <EbayIcon name="confirmation16" style={{ marginRight: '8px' }} /> Confirmed
+                <EbayIcon name="confirmation16" style={{ marginRight: "8px" }} /> Confirmed
             </Item>
             <Item value="item 2">
-                <EbayIcon name="attention16" style={{ marginRight: '8px' }} /> Not yet confirmed
+                <EbayIcon name="attention16" style={{ marginRight: "8px" }} /> Not yet confirmed
             </Item>
             <Item value="item 3">
-                <EbayIcon name="attention16" style={{ marginRight: '8px' }} /> Not yet confirmed
+                <EbayIcon name="attention16" style={{ marginRight: "8px" }} /> Not yet confirmed
             </Item>
         </EbayMenu>
     </>
-)
+);
 
 export const DivContainer = {
     render: () => (
@@ -154,7 +154,7 @@ export const DivContainer = {
         </>
     ),
 
-    name: 'Div container'
-}
+    name: "Div container",
+};
 
-export default story
+export default story;

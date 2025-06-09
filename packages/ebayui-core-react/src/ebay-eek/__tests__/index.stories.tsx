@@ -1,13 +1,13 @@
-import React from 'react'
-import { EbayEek, EbayEekProps } from '../index'
-import { StoryObj, StoryFn, Meta } from '@storybook/react'
+import React from "react";
+import { EbayEek, EbayEekProps } from "../index";
+import { StoryObj, StoryFn, Meta } from "@storybook/react";
 
 const meta: Meta<typeof EbayEek> = {
     component: EbayEek,
-    title: 'graphics & icons/ebay-eek'
-}
+    title: "graphics & icons/ebay-eek",
+};
 
-export default meta
+export default meta;
 
 export const RegularA: StoryFn<EbayEekProps> = () => (
     <>
@@ -21,7 +21,7 @@ export const RegularA: StoryFn<EbayEekProps> = () => (
             <EbayEek max="A" min="G" rating="G" />
         </div>
     </>
-)
+);
 
 export const A: StoryObj<EbayEekProps> = {
     render: () => (
@@ -49,8 +49,8 @@ export const A: StoryObj<EbayEekProps> = {
         </>
     ),
 
-    name: 'A++'
-}
+    name: "A++",
+};
 
 export const ValidA: StoryObj<EbayEekProps> = {
     render: () => (
@@ -89,8 +89,8 @@ export const ValidA: StoryObj<EbayEekProps> = {
         </>
     ),
 
-    name: 'Valid A+++'
-}
+    name: "Valid A+++",
+};
 
 export const InvalidCombinations: StoryFn<EbayEekProps> = () => (
     <>
@@ -99,4 +99,4 @@ export const InvalidCombinations: StoryFn<EbayEekProps> = () => (
         <EbayEek max="A++" min="B" rating="A++" />
         <EbayEek max="A+" min="B" rating="A++" />
     </>
-)
+);

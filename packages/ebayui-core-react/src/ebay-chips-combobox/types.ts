@@ -1,7 +1,7 @@
-import { EbayEventHandler } from '../events'
+import { EbayEventHandler } from "../events";
 
 export type ChipsComboboxEvent = {
-    selected: string[]
-}
+    selected: string[];
+};
 
-export type ChipsComboboxChangeHandler = EbayEventHandler<HTMLElement, ChipsComboboxEvent>
+export type ChipsComboboxChangeHandler = EbayEventHandler<HTMLElement, ChipsComboboxEvent>;

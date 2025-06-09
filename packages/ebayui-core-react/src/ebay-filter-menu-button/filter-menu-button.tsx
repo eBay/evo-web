@@ -1,83 +1,79 @@
-import React, { FC, RefCallback, useRef, useState } from 'react'
-import classNames from 'classnames'
-import { useExpander, useFloatingDropdown } from '../common/dropdown'
-import { EbayIcon } from '../ebay-icon'
+import React, { FC, RefCallback, useRef, useState } from "react";
+import classNames from "classnames";
+import { useExpander, useFloatingDropdown } from "../common/dropdown";
+import { EbayIcon } from "../ebay-icon";
 import {
     EbayFilterMenu,
     EbayFilterMenuItem,
     EbayFilterMenuProps,
     FilterMenuChange,
     FilterMenuFooterClick,
-    FilterMenuFormSubmit
-} from '../ebay-filter-menu'
-import { filterByType } from '../utils'
+    FilterMenuFormSubmit,
+} from "../ebay-filter-menu";
+import { filterByType } from "../utils";
 
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
-    className?: string
-    text: string
-    onExpand?: () => void
-    onCollapse?: () => void
-}
+    className?: string;
+    text: string;
+    onExpand?: () => void;
+    onCollapse?: () => void;
+};
 
 const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
-    'aria-label': ariaLabel,
+    "aria-label": ariaLabel,
     onExpand,
     onCollapse,
     onChange,
     children,
     ...filterMenuProps
 }) => {
-    const ref = useRef<HTMLSpanElement>(null)
-    const items = filterByType(children, EbayFilterMenuItem)
-    const [hasChecked, setHasChecked] = useState(() => items.some((item) => item.props.checked))
+    const ref = useRef<HTMLSpanElement>(null);
+    const items = filterByType(children, EbayFilterMenuItem);
+    const [hasChecked, setHasChecked] = useState(() => items.some((item) => item.props.checked));
     const { isExpanded, collapse } = useExpander({
         ref,
         options: {
-            hostSelector: '.filter-menu-button__button',
-            contentSelector: '.filter-menu-button__menu',
-            focusManagement: 'interactive',
+            hostSelector: ".filter-menu-button__button",
+            contentSelector: ".filter-menu-button__menu",
+            focusManagement: "interactive",
             expandOnClick: true,
             autoCollapse: true,
-            alwaysDoFocusManagement: true
+            alwaysDoFocusManagement: true,
         },
         onExpand,
-        onCollapse
-    })
+        onCollapse,
+    });
 
     const { overlayStyles, refs } = useFloatingDropdown({
-        open: isExpanded
-    })
+        open: isExpanded,
+    });
 
     const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
-        filterMenuProps.onKeyDown?.(event)
-        if (event.key === 'Escape') {
-            collapse()
+        filterMenuProps.onKeyDown?.(event);
+        if (event.key === "Escape") {
+            collapse();
         }
-    }
+    };
 
     const handleMenuFormSubmit: FilterMenuFormSubmit = (...args) => {
-        filterMenuProps.onFormSubmit?.(...args)
-        collapse()
-    }
-
+        filterMenuProps.onFormSubmit?.(...args);
+        collapse();
+    };
 
     const handleFooterButtonClick: FilterMenuFooterClick = (...args) => {
-        filterMenuProps.onFooterClick?.(...args)
-        collapse()
-    }
+        filterMenuProps.onFooterClick?.(...args);
+        collapse();
+    };
 
     const handleChange: FilterMenuChange = (event, data) => {
-        onChange?.(event, data)
-        setHasChecked(data.checked?.length > 0)
-    }
+        onChange?.(event, data);
+        setHasChecked(data.checked?.length > 0);
+    };
 
     return (
-        <span
-            ref={ref}
-            className={classNames('filter-menu-button', className)}
-        >
+        <span ref={ref} className={classNames("filter-menu-button", className)}>
             <button
                 type="button"
                 className="filter-menu-button__button"
@@ -105,7 +101,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                 {children}
             </EbayFilterMenu>
         </span>
-    )
-}
+    );
+};
 
-export default EbayFilterMenuButton
+export default EbayFilterMenuButton;

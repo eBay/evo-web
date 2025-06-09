@@ -38,7 +38,7 @@
         "section-primary"
         "section-secondary"
         "section-tertiary";
-    grid-template-rows: 25px 0.75fr 1fr;
+    grid-template-rows: 25px 90px 1fr;
 }
 
 .item-tile--list-view .item-tile__header {
@@ -98,5 +98,15 @@
 }
 
 .item-tile__subtitle {
+    -webkit-box-orient: vertical;
     color: var(--color-foreground-secondary);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .item-tile__body {
+        grid-template-rows: 25px 70px 1fr;
+    }
 }

@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { action } from '@storybook/addon-actions'
-import { Meta, StoryFn } from '@storybook/react'
+import React, { useState } from "react";
+import { action } from "@storybook/addon-actions";
+import { Meta, StoryFn } from "@storybook/react";
 
-import { EbayTabs, EbayTab as Tab, EbayTabPanel as Panel } from '../index'
+import { EbayTabs, EbayTab as Tab, EbayTabPanel as Panel } from "../index";
 
 const story = {
     component: EbayTabs,
-    title: 'navigation & disclosure/ebay-tabs'
-} as Meta
+    title: "navigation & disclosure/ebay-tabs",
+} as Meta;
 
 export const DefaultTabs: StoryFn<typeof EbayTabs> = (args) => (
     <>
-        <EbayTabs onSelect={action('onSelect(props')} {...args}>
+        <EbayTabs onSelect={action("onSelect(props")} {...args}>
             <Tab>Tab 1</Tab>
             <Tab>Tab 2</Tab>
             <Tab>Tab 3</Tab>
@@ -38,7 +38,7 @@ export const DefaultTabs: StoryFn<typeof EbayTabs> = (args) => (
             </Panel>
         </EbayTabs>
     </>
-)
+);
 
 export const PreSelectedTab = {
     render: () => (
@@ -50,35 +50,35 @@ export const PreSelectedTab = {
                 <Panel>
                     <h3>Panel 1</h3>
                     <p>
-                        Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab
-                        1` (skipping `Tab 2` and `Tab 3`)
+                        Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 1`
+                        (skipping `Tab 2` and `Tab 3`)
                     </p>
                 </Panel>
                 <Panel>
                     <h3>Panel 2</h3>
                     <p>
-                        Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab
-                        2` (skipping `Tab 3` and `Tab 1`)
+                        Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 2`
+                        (skipping `Tab 3` and `Tab 1`)
                     </p>
                 </Panel>
                 <Panel>
                     <h3>Panel 3</h3>
                     <p>
-                        Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab
-                        3` (skipping `Tab 1` and `Tab 2`)
+                        Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 3`
+                        (skipping `Tab 1` and `Tab 2`)
                     </p>
                 </Panel>
             </EbayTabs>
         </>
     ),
 
-    name: 'Pre-selected Tab'
-}
+    name: "Pre-selected Tab",
+};
 
 export const ProgrammaticallySelectedTabs = {
     render: () => {
         const Component = () => {
-            const [selectedTab, selectTab] = useState(0)
+            const [selectedTab, selectTab] = useState(0);
 
             return (
                 <>
@@ -102,18 +102,18 @@ export const ProgrammaticallySelectedTabs = {
                         </Panel>
                     </EbayTabs>
                 </>
-            )
-        }
+            );
+        };
 
         return (
             <>
                 <Component />
             </>
-        )
+        );
     },
 
-    name: 'Programmatically selected Tabs'
-}
+    name: "Programmatically selected Tabs",
+};
 
 export const ManuallyActivatedTabs = (args) => (
     <>
@@ -125,29 +125,29 @@ export const ManuallyActivatedTabs = (args) => (
                 <h3>Panel 1</h3>
                 <p>These tabs are activated manually on Space/Enter key press</p>
                 <p>
-                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab
-                    1` (skipping `Tab 2` and `Tab 3`)
+                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 1`
+                    (skipping `Tab 2` and `Tab 3`)
                 </p>
             </Panel>
             <Panel>
                 <h3>Panel 2</h3>
                 <p>These tabs are activated manually on Space/Enter key press</p>
                 <p>
-                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab
-                    2` (skipping `Tab 3` and `Tab 1`)
+                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 2`
+                    (skipping `Tab 3` and `Tab 1`)
                 </p>
             </Panel>
             <Panel>
                 <p>These tabs are activated manually on Space/Enter key press</p>
                 <h3>Panel 3</h3>
                 <p>
-                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab
-                    3` (skipping `Tab 1` and `Tab 2`)
+                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 3`
+                    (skipping `Tab 1` and `Tab 2`)
                 </p>
             </Panel>
         </EbayTabs>
     </>
-)
+);
 
 export const LargeTabs = () => (
     <>
@@ -178,7 +178,7 @@ export const LargeTabs = () => (
             </Panel>
         </EbayTabs>
     </>
-)
+);
 
 export const MultipleTabs = () => (
     <>
@@ -200,7 +200,7 @@ export const MultipleTabs = () => (
                 </Panel>
             </EbayTabs>
         </div>
-        <div style={{ marginTop: '64px' }}>
+        <div style={{ marginTop: "64px" }}>
             <EbayTabs id="tab-lower">
                 <Tab>Tab A</Tab>
                 <Tab>Tab B</Tab>
@@ -226,12 +226,12 @@ export const MultipleTabs = () => (
             </EbayTabs>
         </div>
     </>
-)
+);
 
 export const TabsWithInputs = {
     render: () => {
         const Component = () => {
-            const [name, setName] = useState('John Doe')
+            const [name, setName] = useState("John Doe");
 
             return (
                 <EbayTabs>
@@ -256,30 +256,30 @@ export const TabsWithInputs = {
                         <h3>Panel 3</h3>
                     </Panel>
                 </EbayTabs>
-            )
-        }
+            );
+        };
 
         return (
             <>
                 <Component />
             </>
-        )
+        );
     },
 
-    name: 'Tabs with inputs'
-}
+    name: "Tabs with inputs",
+};
 
 export const BottomTabsOnLongPage = {
     render: () => (
         <>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
-            <p style={{ margin: '10em 0' }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
+            <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
             <EbayTabs>
                 <Tab>Tab 1</Tab>
                 <Tab>Tab 2</Tab>
@@ -295,7 +295,7 @@ export const BottomTabsOnLongPage = {
         </>
     ),
 
-    name: 'Bottom Tabs on Long Page'
-}
+    name: "Bottom Tabs on Long Page",
+};
 
-export default story
+export default story;

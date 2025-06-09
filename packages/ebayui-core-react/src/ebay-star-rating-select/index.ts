@@ -1,1 +1,1 @@
-export { default as EbayStarRatingSelect, type EventProps } from './star-rating-select'
+export { default as EbayStarRatingSelect, type EventProps } from "./star-rating-select";

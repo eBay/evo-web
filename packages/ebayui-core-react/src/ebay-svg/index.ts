@@ -1,1 +1,1 @@
-export { default as EbaySvg } from './svg'
+export { default as EbaySvg } from "./svg";

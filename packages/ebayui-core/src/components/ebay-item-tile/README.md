@@ -13,6 +13,6 @@ This component only works on Marko 5 and later.
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/ebayui-core/?path=/story/structure-ebay-item-tile)
-- [Storybook Docs](https://ebay.github.io/ebayui-core/?path=/docs/structure-ebay-item-tile)
-- [Code Examples](https://github.com/eBay/ebayui-core/tree/master/src/components/ebay-item-tile/examples)
+- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/structure-ebay-item-tile)
+- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/structure-ebay-item-tile)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-item-tile/examples)

@@ -9,7 +9,10 @@
 ### Import JS
 
 ```jsx harmony
-import { EbayProgressBarExpressive, EbayProgressBarExpressiveMessage } from "@ebay/ui-core-react/ebay-progress-bar-expressive";
+import {
+    EbayProgressBarExpressive,
+    EbayProgressBarExpressiveMessage,
+} from "@ebay/ui-core-react/ebay-progress-bar-expressive";
 ```
 
 ### Import following styles from SKIN
@@ -39,14 +42,14 @@ import "@ebay/skin/progress-bar-expressive.css";
 
 ## Attributes
 
-| Name        | Type     | Required | Description                                                                                     | Data |
-| ----------- | -------- | -------- | ----------------------------------------------------------------------------------------------- | ---- |
-| `size`      | String   | No       | Size of the progress bar, can be `medium` or `large`                                            |      |
-| `aria-label`| String   | Yes      | Accessible label for the progress bar                                                           |      |
-| `children`  | Node     | No       | Child nodes, typically `EbayProgressBarExpressiveMessage` components                            |      |
+| Name         | Type   | Required | Description                                                          | Data |
+| ------------ | ------ | -------- | -------------------------------------------------------------------- | ---- |
+| `size`       | String | No       | Size of the progress bar, can be `medium` or `large`                 |      |
+| `aria-label` | String | Yes      | Accessible label for the progress bar                                |      |
+| `children`   | Node   | No       | Child nodes, typically `EbayProgressBarExpressiveMessage` components |      |
 
 ## Message Attributes
 
-| Name      | Type     | Required | Description                                                                                     | Data |
-| --------- | -------- | -------- | ----------------------------------------------------------------------------------------------- | ---- |
-| `duration`| Number   | No       | Duration for which the message is displayed, in milliseconds                                    |      |
+| Name       | Type   | Required | Description                                                  | Data |
+| ---------- | ------ | -------- | ------------------------------------------------------------ | ---- |
+| `duration` | Number | No       | Duration for which the message is displayed, in milliseconds |      |

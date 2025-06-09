@@ -37,11 +37,7 @@ Add the below icons to the `EbaySvg` component.
 Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
 
 ```tsx
-<EbaySvg
-    icons={[
-        "upload24"
-    ]}
-/>
+<EbaySvg icons={["upload24"]} />
 ```
 
 ```jsx harmony
@@ -54,6 +50,6 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
 
 ## Attributes
 
-| Name     | Type     | Required | Description                                                                                   | Data                  |
-| -------- | -------- | -------- | --------------------------------------------------------------------------------------------- | --------------------- |
-| `onInput`| Function | No       | Triggered when files are selected, providing the `files` list as part of the event data       | `event, { files }`    |
+| Name      | Type     | Required | Description                                                                             | Data               |
+| --------- | -------- | -------- | --------------------------------------------------------------------------------------- | ------------------ |
+| `onInput` | Function | No       | Triggered when files are selected, providing the `files` list as part of the event data | `event, { files }` |

@@ -7,5 +7,5 @@
     "@html-attributes": "expression",
     "@value": "#html-value",
     "@a11y-text": "string",
-    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/graphics-icons-ebay-star-rating)"
+    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/graphics-icons-ebay-star-rating)"
 }

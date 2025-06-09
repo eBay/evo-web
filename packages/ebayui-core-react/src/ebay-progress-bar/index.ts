@@ -1,1 +1,1 @@
-export { default as EbayProgressBar, type EbayProgressBarProps } from './progress-bar'
+export { default as EbayProgressBar, type EbayProgressBarProps } from "./progress-bar";

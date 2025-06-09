@@ -32,7 +32,7 @@ export default (
     const transitions = new Set([...transitionList]);
     // On reduce motion devices we don't want to check for transoform
     if (useReducedMotion) {
-        transitions.delete("tranform");
+        transitions.delete("transform");
     }
 
     if (!("ontransitionend" in el)) {
