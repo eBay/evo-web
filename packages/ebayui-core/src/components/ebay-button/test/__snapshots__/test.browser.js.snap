@@ -4,22 +4,16 @@ exports[`given button is enabled > then it matches the snapshot 1`] = `
 "<div>
   <button style="
     background-color: var(--btn-secondary-background-color, transparent);
-    border-bottom-color: ;
-    border-bottom-left-radius: ;
-    border-bottom-right-radius: ;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-left-color: ;
+    border-bottom: 1px solid;
     border-left-style: solid;
     border-left-width: 1px;
-    border-right-color: ;
     border-right-style: solid;
     border-right-width: 1px;
-    border-top-color: ;
-    border-top-left-radius: ;
-    border-top-right-radius: ;
     border-top-style: solid;
     border-top-width: 1px;
+    border-top: 1px solid;
     color: var(
             --btn-secondary-foreground-color,
             var(--color-foreground-accent)
@@ -32,11 +26,8 @@ exports[`given button is enabled > then it matches the snapshot 1`] = `
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 9.5px;
-    transition-behavior: ;
-    transition-delay: ;
-    transition-duration: ;
-    transition-property: ;
-    transition-timing-function: ;
+    transition: all var(--motion-duration-short-3)
+            var(--motion-easing-quick-enter);
     vertical-align: bottom
   ">
     Button
