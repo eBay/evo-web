@@ -35,9 +35,17 @@ export default class {
 
             decrement.addEventListener("click", function () {
                 updateValue(-1);
+                widgetEl.classList.remove("number-input--decrement");
+                widgetEl.classList.remove("number-input--increment");
+                void widgetEl.offsetWidth; // Trigger a reflow
+                widgetEl.classList.add("number-input--decrement");
             });
             increment.addEventListener("click", function () {
                 updateValue(1);
+                widgetEl.classList.remove("number-input--decrement");
+                widgetEl.classList.remove("number-input--increment");
+                void widgetEl.offsetWidth; // Trigger a reflow
+                widgetEl.classList.add("number-input--increment");
             });
             if (trash) {
                 trash.addEventListener("click", function () {

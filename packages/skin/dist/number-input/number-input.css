@@ -1,5 +1,59 @@
+@keyframes number-input-decrement {
+    0% {
+        transform: translateY(0);
+    }
+    99% {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes number-input-increment {
+    0% {
+        transform: translateY(0);
+    }
+    99% {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes number-increment-disabled {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes number-decrement-disabled {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
 .number-input .textbox {
     background: transparent;
+}
+
+.number-input--increment .textbox__control {
+    animation: number-input-increment var(--motion-duration-short-2)
+        var(--motion-easing-soft-exit);
+}
+
+.number-input--decrement .textbox__control {
+    animation: number-input-decrement var(--motion-duration-short-2)
+        var(--motion-easing-soft-exit);
 }
 
 .number-input label:first-child {
@@ -42,7 +96,31 @@
     appearance: textfield;
 }
 
+.number-input .icon-btn {
+    transform: scale(1);
+    transition: transform var(--motion-duration-short-3)
+        var(--motion-easing-standard);
+}
+
+.number-input .icon-btn:hover:not(:disabled) {
+    background-color: var(--state-layer-hover);
+}
+
+.number-input .icon-btn:active {
+    transform: scale(0.97);
+}
+
 .number-input .textbox .icon-btn:not(:disabled) svg {
     color: var(--color-foreground-primary);
     fill: currentColor;
+}
+
+.number-input__decrement:disabled {
+    animation: number-decrement-disabled var(--motion-duration-short-2)
+        var(--motion-easing-standard);
+}
+
+.number-input__increment:disabled {
+    animation: number-increment-disabled var(--motion-duration-short-2)
+        var(--motion-easing-standard);
 }

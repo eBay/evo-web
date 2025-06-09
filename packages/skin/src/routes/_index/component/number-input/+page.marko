@@ -5,6 +5,24 @@
         The number input is a component that allows users to select a number from a range of values. It consists of an input field and two buttons (up and down) to increase or decrease the value.
     </p>
 
+    <h3>Animations</h3>
+    <p>
+        The number input animations for the increment and decrement buttons are handled natively by CSS.
+    </p>
+    <p>
+        For the input animations, you need to add either
+        <code>.number-input--increment</code>
+         or
+        <code>.number-input--decrement</code>
+        ${" "}modifier class to the number input element when the paddles are clicked.
+    </p>
+    <p>
+        In order to allow the animation to play in repetition, you need to remove the modifier class. A good technique is to first remove the old classes, execute${" "}
+        <code> void element.offsetWidth;</code>
+        ${" "}and then add the modifer of increment or decrement, whichever one you want to animate.
+    </p>
+    <p>All following examples have animations applied automatically.</p>
+
     <h3>Base</h3>
     <p>
         The number input is a simple input field with up and down buttons. The buttons are used to increment or decrement the value in the input field. They should not be focusable.
@@ -38,6 +56,7 @@
                         class="textbox__control"
                         type="number"
                         min="0"
+                        max="100"
                         value="0"
                     >
                     <button
