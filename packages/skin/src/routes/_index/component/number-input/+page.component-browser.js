@@ -33,19 +33,20 @@ export default class {
                 updateValue();
             });
 
-            decrement.addEventListener("click", function () {
-                updateValue(-1);
+            function updateAnimationClass(widgetEl, className) {
                 widgetEl.classList.remove("number-input--decrement");
                 widgetEl.classList.remove("number-input--increment");
                 void widgetEl.offsetWidth; // Trigger a reflow
-                widgetEl.classList.add("number-input--decrement");
+                widgetEl.classList.add(className);
+            }
+
+            decrement.addEventListener("click", function () {
+                updateValue(-1);
+                updateAnimationClass(widgetEl, "number-input--decrement");
             });
             increment.addEventListener("click", function () {
                 updateValue(1);
-                widgetEl.classList.remove("number-input--decrement");
-                widgetEl.classList.remove("number-input--increment");
-                void widgetEl.offsetWidth; // Trigger a reflow
-                widgetEl.classList.add("number-input--increment");
+                updateAnimationClass(widgetEl, "number-input--increment");
             });
             if (trash) {
                 trash.addEventListener("click", function () {
