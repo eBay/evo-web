@@ -3,9 +3,9 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import {
     EbayItemTile,
-    EbayItemTileSuperTitle,
+    EbayItemTileSupertitle,
     EbayItemTileTitle,
-    EbayItemTileSubTitle,
+    EbayItemTileSubtitle,
     EbayItemTileDescription,
     EbayItemTileAction,
 } from "../";
@@ -21,9 +21,9 @@ describe("<EbayItemTile>", () => {
                 }}
             >
                 <EbayItemTileAction aria-label="action-label" icon="heart16" />
-                <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                 <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-                <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
                 <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
                 <EbayItemTileDescription as="div">
                     <a href="https://ebay.com">Buy it now</a>
@@ -42,9 +42,9 @@ describe("<EbayItemTile>", () => {
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
             >
-                <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                 <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-                <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
                 <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
                 <EbayItemTileDescription as="div">
                     <a href="https://ebay.com">Buy it now</a>
@@ -63,7 +63,7 @@ describe("<EbayItemTile>", () => {
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
             >
-                <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                 <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
                 <EbayItemTileDescription as="div">
                     <a href="https://ebay.com">Buy it now</a>
@@ -82,9 +82,9 @@ describe("<EbayItemTile>", () => {
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
             >
-                <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                 <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-                <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
             </EbayItemTile>,
         );
         expect(asFragment()).toMatchSnapshot();

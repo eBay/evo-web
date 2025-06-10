@@ -5,9 +5,9 @@ import { filterByType, findComponent } from "../common/component-utils";
 import { EbayFilePreviewCardAction } from "../ebay-file-preview-card";
 import { FilePreviewType, EbayFilePreviewCard } from "../ebay-file-preview-card";
 import EbayItemTileAction from "./item-tile-action";
-import EbayItemTileSuperTitle from "./item-tile-super-title";
+import EbayItemTileSupertitle from "./item-tile-super-title";
 import EbayItemTileTitle from "./item-tile-title";
-import EbayItemTileSubTitle from "./item-tile-sub-title";
+import EbayItemTileSubtitle from "./item-tile-sub-title";
 import EbayItemTileDescription from "./item-tile-description";
 import EbayItemTileSections from "./item-tile-sections";
 import { ItemTileLayout } from "./types";
@@ -20,9 +20,9 @@ export type EbayItemTileProps = ComponentProps<"div"> & {
 };
 
 const EbayItemTile: FC<EbayItemTileProps> = ({ file, href, layout, className, onAction, children, ...rest }) => {
-    const supertitle = findComponent(children, EbayItemTileSuperTitle);
+    const supertitle = findComponent(children, EbayItemTileSupertitle);
     const title = findComponent(children, EbayItemTileTitle);
-    const subtitle = findComponent(children, EbayItemTileSubTitle);
+    const subtitle = findComponent(children, EbayItemTileSubtitle);
     const action = findComponent(children, EbayItemTileAction);
     const descriptions = filterByType(children, EbayItemTileDescription);
 

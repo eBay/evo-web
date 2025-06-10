@@ -3,9 +3,9 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import {
     EbayItemTile,
-    EbayItemTileSuperTitle,
+    EbayItemTileSupertitle,
     EbayItemTileTitle,
-    EbayItemTileSubTitle,
+    EbayItemTileSubtitle,
     EbayItemTileDescription,
     EbayItemTileAction,
 } from "../../ebay-item-tile";
@@ -26,9 +26,9 @@ describe("<EbayItemTileGroup>", () => {
                         }}
                     >
                         <EbayItemTileAction aria-label="action-label" icon="heart16" />
-                        <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                        <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-                        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                        <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
                         <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
                         <EbayItemTileDescription as="div">
                             <a href="https://ebay.com">Buy it now</a>
@@ -54,9 +54,9 @@ describe("<EbayItemTileGroup>", () => {
                         }}
                     >
                         <EbayItemTileAction aria-label="action-label" icon="heart16" />
-                        <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                        <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-                        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                        <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
                         <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
                         <EbayItemTileDescription as="div">
                             <a href="https://ebay.com">Buy it now</a>

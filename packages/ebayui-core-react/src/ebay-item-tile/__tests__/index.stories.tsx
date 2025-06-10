@@ -3,9 +3,9 @@ import { Meta, StoryFn } from "@storybook/react";
 import {
     EbayItemTileAction,
     EbayItemTile,
-    EbayItemTileSuperTitle,
+    EbayItemTileSupertitle,
     EbayItemTileTitle,
-    EbayItemTileSubTitle,
+    EbayItemTileSubtitle,
     EbayItemTileDescription,
 } from "..";
 import { EbaySignal } from "../../ebay-signal";
@@ -59,11 +59,11 @@ export const Default: StoryFn<typeof EbayItemTile> = (args) => (
         {...args}
     >
         <EbayItemTileAction aria-label="action label" icon="heart16" />
-        <EbayItemTileSuperTitle>
+        <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
-        </EbayItemTileSuperTitle>
+        </EbayItemTileSupertitle>
         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+        <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
         <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
         <EbayItemTileDescription as="div">
             <a href="https://ebay.com">Buy it now</a>
@@ -81,11 +81,11 @@ export const NoAction: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayItemTileSuperTitle>
+        <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
-        </EbayItemTileSuperTitle>
+        </EbayItemTileSupertitle>
         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
-        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+        <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
         <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
         <EbayItemTileDescription as="div">
             <a href="https://ebay.com">Buy it now</a>
@@ -104,9 +104,9 @@ export const WithoutSecondarySection: StoryFn<typeof EbayItemTile> = (args) => (
         {...args}
     >
         <EbayItemTileAction aria-label="action label" icon="heart16" />
-        <EbayItemTileSuperTitle>
+        <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
-        </EbayItemTileSuperTitle>
+        </EbayItemTileSupertitle>
         <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
         <EbayItemTileDescription as="div">
             <a href="https://ebay.com">Buy it now</a>
