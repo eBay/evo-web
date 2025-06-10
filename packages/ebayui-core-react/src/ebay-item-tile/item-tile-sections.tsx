@@ -1,12 +1,12 @@
 import React, { FC, ReactNode } from "react";
 
-type EbayTileSectionSecondaryProps = {
+type EbayTileSectionsProps = {
     title: ReactNode;
     subtitle: ReactNode;
     descriptions: ReactNode[];
 };
 
-const EbayTileSectionSecondary: FC<EbayTileSectionSecondaryProps> = ({ title, subtitle, descriptions }) => {
+const EbayTileSections: FC<EbayTileSectionsProps> = ({ title, subtitle, descriptions }) => {
     return (
         <>
             {title || subtitle ? (
@@ -20,4 +20,4 @@ const EbayTileSectionSecondary: FC<EbayTileSectionSecondaryProps> = ({ title, su
     );
 };
 
-export default EbayTileSectionSecondary;
+export default EbayTileSections;
