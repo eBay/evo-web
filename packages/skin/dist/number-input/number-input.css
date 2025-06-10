@@ -3,12 +3,12 @@
         transform: translateY(0);
     }
     to {
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
 }
 @keyframes number-input-decrement-after {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
     to {
         transform: translateY(0);
@@ -19,12 +19,34 @@
         transform: translateY(0);
     }
     to {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 }
 @keyframes number-input-increment-after {
     0% {
-        transform: translateY(20px);
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes number-input-increment-after-disabled {
+    0% {
+        transform: translateY(10px);
+    }
+    33% {
+        transform: translateY(-5px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+@keyframes number-input-decrement-after-disabled {
+    0% {
+        transform: translateY(-10px);
+    }
+    33% {
+        transform: translateY(5px);
     }
     to {
         transform: translateY(0);
@@ -34,7 +56,7 @@
     0% {
         transform: translateX(0);
     }
-    50% {
+    33% {
         transform: translateX(10px);
     }
     to {
@@ -70,6 +92,22 @@
             var(--motion-easing-soft-exit),
         number-input-decrement-after var(--motion-duration-medium-1)
             var(--motion-easing-quick-enter) var(--motion-duration-short-2);
+}
+
+.number-input--decrement-disabled .textbox__control {
+    animation:
+        number-input-decrement-before var(--motion-duration-short-2)
+            var(--motion-easing-soft-exit),
+        number-input-decrement-after-disabled var(--motion-duration-medium-2)
+            var(--motion-easing-standard) var(--motion-duration-short-2);
+}
+
+.number-input--increment-disabled .textbox__control {
+    animation:
+        number-input-increment-before var(--motion-duration-short-2)
+            var(--motion-easing-soft-exit),
+        number-input-increment-after-disabled var(--motion-duration-medium-2)
+            var(--motion-easing-standard) var(--motion-duration-short-2);
 }
 
 .number-input label:first-child {

@@ -17,6 +17,13 @@
         ${" "}modifier class to the number input element when the paddles are clicked.
     </p>
     <p>
+        When it reaches the maximum or minimum value, you can add the <code>.number-input--increment-disabled</code>
+         or
+        <code>.number-input--decrement-disabled</code>
+        to trigger the animation on the input when the paddles will be disabled.
+
+    </p>
+    <p>
         In order to allow the animation to play in repetition, you need to remove the modifier class. A good technique is to first remove the old classes, execute${" "}
         <code> void element.offsetWidth;</code>
         ${" "}and then add the modifier of increment or decrement, whichever one you want to animate.

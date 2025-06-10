@@ -36,17 +36,25 @@ export default class {
             function updateAnimationClass(widgetEl, className) {
                 widgetEl.classList.remove("number-input--decrement");
                 widgetEl.classList.remove("number-input--increment");
+                widgetEl.classList.remove("number-input--decrement-disabled");
+                widgetEl.classList.remove("number-input--increment-disabled");
                 void widgetEl.offsetWidth; // Trigger a reflow
                 widgetEl.classList.add(className);
             }
 
             decrement.addEventListener("click", function () {
                 updateValue(-1);
-                updateAnimationClass(widgetEl, "number-input--decrement");
+                const animationClass = decrement.hasAttribute("disabled")
+                    ? "number-input--decrement-disabled"
+                    : "number-input--decrement";
+                updateAnimationClass(widgetEl, animationClass);
             });
             increment.addEventListener("click", function () {
                 updateValue(1);
-                updateAnimationClass(widgetEl, "number-input--increment");
+                const animationClass = increment.hasAttribute("disabled")
+                    ? "number-input--increment-disabled"
+                    : "number-input--increment";
+                updateAnimationClass(widgetEl, animationClass);
             });
             if (trash) {
                 trash.addEventListener("click", function () {
