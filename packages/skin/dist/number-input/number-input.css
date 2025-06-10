@@ -1,20 +1,30 @@
-@keyframes number-input-decrement {
+@keyframes number-input-decrement-before {
     0% {
         transform: translateY(0);
     }
-    99% {
+    to {
         transform: translateY(10px);
+    }
+}
+@keyframes number-input-decrement-after {
+    0% {
+        transform: translateY(-20px);
     }
     to {
         transform: translateY(0);
     }
 }
-@keyframes number-input-increment {
+@keyframes number-input-increment-before {
     0% {
         transform: translateY(0);
     }
-    99% {
+    to {
         transform: translateY(-10px);
+    }
+}
+@keyframes number-input-increment-after {
+    0% {
+        transform: translateY(20px);
     }
     to {
         transform: translateY(0);
@@ -47,13 +57,19 @@
 }
 
 .number-input--increment .textbox__control {
-    animation: number-input-increment var(--motion-duration-short-2)
-        var(--motion-easing-soft-exit);
+    animation:
+        number-input-increment-before var(--motion-duration-short-2)
+            var(--motion-easing-soft-exit),
+        number-input-increment-after var(--motion-duration-medium-1)
+            var(--motion-easing-quick-enter) var(--motion-duration-short-2);
 }
 
 .number-input--decrement .textbox__control {
-    animation: number-input-decrement var(--motion-duration-short-2)
-        var(--motion-easing-soft-exit);
+    animation:
+        number-input-decrement-before var(--motion-duration-short-2)
+            var(--motion-easing-soft-exit),
+        number-input-decrement-after var(--motion-duration-medium-1)
+            var(--motion-easing-quick-enter) var(--motion-duration-short-2);
 }
 
 .number-input label:first-child {
