@@ -99,4 +99,21 @@ describe("<EbayLightboxDialog>", () => {
 
         expect(onClose).not.toHaveBeenCalled();
     });
+
+    it("should not close the dialog when click starts inside and its dragged outside", () => {
+        const onClose = jest.fn();
+
+        const { container } = render(
+            <EbayLightboxDialog open onClose={onClose} a11yCloseText="Close">
+                <EbayDialogHeader>Heading Text</EbayDialogHeader>
+                <p>Dialog Content</p>
+            </EbayLightboxDialog>,
+        );
+
+        const content = screen.getByText("Dialog Content");
+        fireEvent.mouseDown(content);
+        fireEvent.click(container.querySelector(".lightbox-dialog")!);
+
+        expect(onClose).not.toHaveBeenCalled();
+    });
 });
