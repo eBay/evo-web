@@ -3,10 +3,10 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import {
     EbayItemTile,
-    EbayItemTileSectionSuperTitle,
-    EbayItemTileSectionTitle,
-    EbayItemTileSectionSubTitle,
-    EbayItemTileSectionDescription,
+    EbayItemTileSuperTitle,
+    EbayItemTileTitle,
+    EbayItemTileSubTitle,
+    EbayItemTileDescription,
     EbayItemTileAction,
 } from "../../ebay-item-tile";
 import { EbayItemTileGroup } from "../";
@@ -26,14 +26,14 @@ describe("<EbayItemTileGroup>", () => {
                         }}
                     >
                         <EbayItemTileAction aria-label="action-label" icon="heart16" />
-                        <EbayItemTileSectionSuperTitle>Time Sensitive</EbayItemTileSectionSuperTitle>
-                        <EbayItemTileSectionTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileSectionTitle>
-                        <EbayItemTileSectionSubTitle>256GB Space Gray</EbayItemTileSectionSubTitle>
-                        <EbayItemTileSectionDescription className="price">$29.99</EbayItemTileSectionDescription>
-                        <EbayItemTileSectionDescription as="div">
+                        <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                        <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
+                        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                        <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
+                        <EbayItemTileDescription as="div">
                             <a href="https://ebay.com">Buy it now</a>
-                        </EbayItemTileSectionDescription>
-                        <EbayItemTileSectionDescription>Free shipping</EbayItemTileSectionDescription>
+                        </EbayItemTileDescription>
+                        <EbayItemTileDescription>Free shipping</EbayItemTileDescription>
                     </EbayItemTile>
                 ))}
             </EbayItemTileGroup>,
@@ -54,14 +54,14 @@ describe("<EbayItemTileGroup>", () => {
                         }}
                     >
                         <EbayItemTileAction aria-label="action-label" icon="heart16" />
-                        <EbayItemTileSectionSuperTitle>Time Sensitive</EbayItemTileSectionSuperTitle>
-                        <EbayItemTileSectionTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileSectionTitle>
-                        <EbayItemTileSectionSubTitle>256GB Space Gray</EbayItemTileSectionSubTitle>
-                        <EbayItemTileSectionDescription className="price">$29.99</EbayItemTileSectionDescription>
-                        <EbayItemTileSectionDescription as="div">
+                        <EbayItemTileSuperTitle>Time Sensitive</EbayItemTileSuperTitle>
+                        <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
+                        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+                        <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
+                        <EbayItemTileDescription as="div">
                             <a href="https://ebay.com">Buy it now</a>
-                        </EbayItemTileSectionDescription>
-                        <EbayItemTileSectionDescription>Free shipping</EbayItemTileSectionDescription>
+                        </EbayItemTileDescription>
+                        <EbayItemTileDescription>Free shipping</EbayItemTileDescription>
                     </EbayItemTile>
                 ))}
             </EbayItemTileGroup>,
