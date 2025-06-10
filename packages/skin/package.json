@@ -83,7 +83,8 @@
         "extends @ebay/browserslist-config"
     ],
     "devDependencies": {
-        "@marko/run-adapter-static": "^1.0.2"
+        "@marko/run-adapter-static": "^1.0.2",
+        "husky": "^9.1.7"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org"
