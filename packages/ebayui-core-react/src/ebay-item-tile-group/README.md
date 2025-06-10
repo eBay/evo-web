@@ -40,22 +40,22 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
         }}
     >
         <EbayItemTileAction aria-label="action label" icon="heart16" />
-        <EbayItemTileSectionSuperTitle>
+        <EbayItemTileSuperTitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
-        </EbayItemTileSectionSuperTitle>
-        <EbayItemTileSectionTitle href="/collection">
+        </EbayItemTileSuperTitle>
+        <EbayItemTileTitle href="/collection">
             Apple iPhone 11 Pro Max{' '}
-        </EbayItemTileSectionTitle>
-        <EbayItemTileSectionSubTitle>256GB Space Gray</EbayItemTileSectionSubTitle>
-        <EbayItemTileSectionDescription className="price">
+        </EbayItemTileTitle>
+        <EbayItemTileSubTitle>256GB Space Gray</EbayItemTileSubTitle>
+        <EbayItemTileDescription className="price">
             $29.99
-        </EbayItemTileSectionDescription>
-        <EbayItemTileSectionDescription as="div">
+        </EbayItemTileDescription>
+        <EbayItemTileDescription as="div">
             <a href="https://ebay.com">Buy it now</a>
-        </EbayItemTileSectionDescription>
-        <EbayItemTileSectionDescription>
+        </EbayItemTileDescription>
+        <EbayItemTileDescription>
             Free shipping
-        </EbayItemTileSectionDescription>
+        </EbayItemTileDescription>
     </EbayItemTile>
 <EbayItemTileGroup {...args}>
 ```
