@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { EbayFilePreviewCardAction } from "../../ebay-file-preview-card";
 import {
+    EbayItemTileAction,
     EbayItemTile,
     EbayItemTileSectionSuperTitle,
     EbayItemTileSectionTitle,
@@ -58,7 +58,7 @@ export const Default: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayFilePreviewCardAction aria-label="action label" icon="heart16" />
+        <EbayItemTileAction aria-label="action label" icon="heart16" />
         <EbayItemTileSectionSuperTitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSectionSuperTitle>
@@ -103,6 +103,7 @@ export const WithoutSecondarySection: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
+        <EbayItemTileAction aria-label="action label" icon="heart16" />
         <EbayItemTileSectionSuperTitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSectionSuperTitle>
