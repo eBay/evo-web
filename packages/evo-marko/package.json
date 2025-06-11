@@ -61,7 +61,7 @@
     "shaka-player": "4.14.12"
   },
   "devDependencies": {
-    "marko": "^6"
+    "marko": "^6.0.21"
   },
   "peerDependencies": {
     "@ebay/skin": "^19.2.0",

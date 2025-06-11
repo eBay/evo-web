@@ -38,8 +38,29 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     truncate,
     type = "button",
     variant = "standard",
-    ...htmlInput
-}=input>
+    // ...htmlInput
+}=input/>
+
+// TODO: When this is fixed in Marko switch from iife to const destructure spread
+<const/htmlInput=(({
+    content,
+    "a11y-loading-text": a11yLoadingText,
+    "body-state": bodyState,
+    borderless,
+    class: inputClass,
+    fixedHeight,
+    fluid,
+    href,
+    "partially-disabled": partiallyDisabled,
+    priority: inputPriority = "secondary",
+    size: inputSize,
+    split = "none",
+    transparent,
+    truncate,
+    type = "button",
+    variant = "standard",
+    ...rest
+}) => rest)(input)/>
 
 <const/priority=(borderless || variant === "form") ? "none" : inputPriority>
 <const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>

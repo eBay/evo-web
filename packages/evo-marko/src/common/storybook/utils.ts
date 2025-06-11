@@ -9,13 +9,12 @@ function addContent(input: any): any {
       clone[key] = addContent(input[key]);
     }
 
-    const { content } = clone;
+    const { content, ...rest } = clone;
     if (typeof content === "string") {
-      clone.content = (out: any) =>
-        out.html ? out.html(content) : out.write(content);
+      // TODO: mock `content`
     }
 
-    return clone;
+    return rest;
   }
 
   return input;

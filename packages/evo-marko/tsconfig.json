@@ -19,7 +19,7 @@
     "alwaysStrict": true,
     "moduleResolution": "node",
     "baseUrl": "./",
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "vite/client"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true
