@@ -1,5 +1,17 @@
 # @ebay/ui-core-react
 
+## 8.8.0
+
+### Minor Changes
+
+- [#173](https://github.com/eBay/evo-web/pull/173) [`68afb7a`](https://github.com/eBay/evo-web/commit/68afb7a0b610e456f04269fa05f76d3403aab878) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (250608)
+
+- [#175](https://github.com/eBay/evo-web/pull/175) [`f98d22d`](https://github.com/eBay/evo-web/commit/f98d22d7b8f7255a502d49638e3b8e4101c18b53) Thanks [@bruno2kd](https://github.com/bruno2kd)! - feat: add EbayItemTile and EbayItemTileGroup
+
+### Patch Changes
+
+- [#176](https://github.com/eBay/evo-web/pull/176) [`f60e1d9`](https://github.com/eBay/evo-web/commit/f60e1d90796cdc61e3d79f124edd57de704f69e6) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(react:dialog): keep track of clicked element to avoid close on drag
+
 ## 8.7.0
 
 ### Minor Changes

@@ -39,6 +39,7 @@ export type Icon =
     'amex24Colored' |
     'amex32Colored' |
     'apple24' |
+    'appleMusic24Colored' |
     'applePay12Colored' |
     'applePay18Colored' |
     'applePay24Colored' |
@@ -131,6 +132,9 @@ export type Icon =
     'cart20' |
     'cart24' |
     'cart64' |
+    'cartAdd16' |
+    'cartAdd20' |
+    'cartAdd24' |
     'cashapp12Colored' |
     'cashapp18Colored' |
     'cashapp24Colored' |
@@ -216,6 +220,8 @@ export type Icon =
     'creditCard64' |
     'crop24' |
     'customize16' |
+    'customize16' |
+    'customize24' |
     'customize24' |
     'delete16' |
     'delete20' |
@@ -307,6 +313,8 @@ export type Icon =
     'externalLink16' |
     'externalLink20' |
     'externalLink24' |
+    'eye16' |
+    'eye24' |
     'faceHappiest24' |
     'faceHappy16' |
     'faceHappy24' |
@@ -322,6 +330,9 @@ export type Icon =
     'feedback24' |
     'feedbackError16' |
     'feedbackError24' |
+    'feedbackNegative16' |
+    'feedbackNeutral16' |
+    'feedbackPositive16' |
     'feedbackReceived16' |
     'feedbackReceived24' |
     'file16' |
@@ -489,6 +500,13 @@ export type Icon =
     'listView24' |
     'listViewFilled16' |
     'listViewFilled24' |
+    'liveBag16' |
+    'liveBag20' |
+    'liveBag24' |
+    'liveBagThin16' |
+    'liveBroadcast20' |
+    'liveBroadcast24' |
+    'liveBroadcastThin16' |
     'liveEye16' |
     'liveEye24' |
     'location16' |
@@ -634,6 +652,8 @@ export type Icon =
     'pencil20' |
     'pencil24' |
     'pencilSigned24' |
+    'people16' |
+    'people24' |
     'peso16' |
     'peso24' |
     'phone16' |
@@ -644,6 +664,7 @@ export type Icon =
     'play16' |
     'play20' |
     'play24' |
+    'playDisabled16' |
     'playFilled16Colored' |
     'playFilled24Colored' |
     'playFilled64Colored' |
@@ -834,6 +855,8 @@ export type Icon =
     'textMessaging20' |
     'textMessaging24' |
     'textMessaging64' |
+    'textSize16' |
+    'textSize24' |
     'theEbayVault16' |
     'theEbayVault24' |
     'thumbDown16' |

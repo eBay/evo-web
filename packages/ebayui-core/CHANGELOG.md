@@ -1,5 +1,13 @@
 # eBayUI-Core Changelog
 
+## 15.7.0
+
+### Minor Changes
+
+- [#173](https://github.com/eBay/evo-web/pull/173) [`68afb7a`](https://github.com/eBay/evo-web/commit/68afb7a0b610e456f04269fa05f76d3403aab878) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (250608)
+
+- [#172](https://github.com/eBay/evo-web/pull/172) [`8997ab9`](https://github.com/eBay/evo-web/commit/8997ab9291edf6c642bce9248efceb6e5e529c6d) Thanks [@agliga](https://github.com/agliga)! - feat(number-input): added animation
+
 ## 15.6.1
 
 ### Patch Changes

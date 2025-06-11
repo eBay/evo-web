@@ -109,7 +109,9 @@ class NumberInput extends Marko.Component<Input, State> {
 
     handleIncrement(event: { originalEvent: MouseEvent }) {
         const value = this.checkBoundary(this.textbox.value, 1);
-        this.handleAnimation(value >= this.state.max ? "increment-disabled" : "increment");
+        this.handleAnimation(
+            value >= this.state.max ? "increment-disabled" : "increment",
+        );
         this.state.value = value;
         // Update the input field's value to reflect the bounded value
         this.textbox.value = value.toString();
@@ -119,7 +121,9 @@ class NumberInput extends Marko.Component<Input, State> {
 
     handleDecrement(event: { originalEvent: MouseEvent }) {
         const value = this.checkBoundary(this.textbox.value, -1);
-        this.handleAnimation(value <= this.state.min ? "decrement-disabled" : "decrement");
+        this.handleAnimation(
+            value <= this.state.min ? "decrement-disabled" : "decrement",
+        );
         this.state.value = value;
         // Update the input field's value to reflect the bounded value
         this.textbox.value = value.toString();

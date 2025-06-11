@@ -1,5 +1,21 @@
 # Skin Changelog
 
+## 19.7.0
+
+### Minor Changes
+
+- [#173](https://github.com/eBay/evo-web/pull/173) [`68afb7a`](https://github.com/eBay/evo-web/commit/68afb7a0b610e456f04269fa05f76d3403aab878) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (250608)
+
+- [#172](https://github.com/eBay/evo-web/pull/172) [`8997ab9`](https://github.com/eBay/evo-web/commit/8997ab9291edf6c642bce9248efceb6e5e529c6d) Thanks [@agliga](https://github.com/agliga)! - feat(number-input): added animation
+
+- [#164](https://github.com/eBay/evo-web/pull/164) [`d8e4aaf`](https://github.com/eBay/evo-web/commit/d8e4aafbde2cc4bc2eb9551d49d2ac8c5ad192b3) Thanks [@saiponnada](https://github.com/saiponnada)! - feat(accordion): updated animations
+
+### Patch Changes
+
+- [`c59f5bc`](https://github.com/eBay/evo-web/commit/c59f5bcb47fe1b80e6f946ffa675f00cf9a714e0) Thanks [@agliga](https://github.com/agliga)! - fix(button): added font-family: inherit
+
+- [#166](https://github.com/eBay/evo-web/pull/166) [`5c21dc5`](https://github.com/eBay/evo-web/commit/5c21dc57431c08444b0e3191df538f7e0d6585ef) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Fixed item tile section height distributions
+
 ## 19.6.0
 
 ### Minor Changes
