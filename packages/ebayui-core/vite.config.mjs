@@ -18,13 +18,16 @@ const rawMarkdown = {
 
 export default defineConfig({
     onConsoleLog: () => true,
+    optimizeDeps: {
+        include: [
+            "marko/src/runtime/vdom/hot-reload.js"
+        ]
+    },
     test: {
         onConsoleLog: () => true,
-        pool: "forks",
         globals: true,
         coverage: {
             enabled: isCI,
-            provider: "istanbul",
             reporter: ["json-summary", "html", "cobertura", "lcov"],
             include: ["src/**/*"],
             exclude: [
@@ -33,6 +36,33 @@ export default defineConfig({
                 "src/**/*.stories.ts",
             ],
         },
+        projects: [
+            {
+                extends: true,
+                test: {
+                    name: "browser",
+                    browser: {
+                        enabled: true,
+                        provider: "playwright",
+                        headless: true,
+                        instances: [{
+                            browser: "chromium",
+                        }]
+                    },
+                    include: ["src/**/test.browser.{ts,js}"],
+                    setupFiles: ["./test.setup.ts"]
+                },
+            },
+            {
+                extends: true,
+                test: {
+                    name: "server",
+                    environment: "node",
+                    include: ["src/**/test.server.{ts,js}"],
+                },
+            },
+
+        ]
     },
 
     plugins: [marko({ linked: false }), rawMarkdown],

@@ -428,51 +428,15 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -18,18 +18,14 @@
-       transition-delay: 0.1s;
-       transition-duration: 0.1s
-     ">
--       <details
--         open
--         style="
--           overflow-x: hidden;
--           overflow-y: hidden;
--           transition-delay: 0.1s;
--           transition-duration: 0.1s
--         "
--       >
-+       <details style="
-+         overflow-x: hidden;
-+         overflow-y: hidden;
-+         transition-delay: 0.1s;
-+         transition-duration: 0.1s
-+       ">
+"@@ -29,7 +29,6 @@
+       >
          <summary style="
            align-items: center;
 -           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -65,7 +61,6 @@
-             style="
-               display: inline-flex;
-               margin-inline-start: 8px;
--               transform: rotate(180deg);
-               transition-delay: 0.1s;
-               transition-duration: 0.1s
-             "
-@@ -73,8 +68,8 @@
-             <svg
-               focusable="false"
-               style="
--                 animation: chevron-bounce-open var(--motion-duration-medium-1)
--                         var(--motion-easing-standard) var(--motion-duration-short-1);
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(
-                         --details-secondary-foreground-color,
-@@ -123,14 +118,18 @@
+@@ -123,14 +122,18 @@
        transition-delay: 0.1s;
        transition-duration: 0.1s
      ">
@@ -497,7 +461,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -166,6 +165,7 @@
+@@ -166,6 +169,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -505,7 +469,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -173,8 +173,8 @@
+@@ -173,8 +177,8 @@
              <svg
                focusable="false"
                style="

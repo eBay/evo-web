@@ -33,6 +33,7 @@
     border: none;
     border-radius: var(--btn-border-radius, calc($button-height-regular / 2));
     color: var(--color-foreground-on-primary);
+    font-family: inherit;
     font-size: var(--font-size-default);
     min-height: calc($button-height-regular - (var(--spacing-50) * 2));
     padding: var(--spacing-100) var(--spacing-200);

@@ -79,7 +79,7 @@
     box-sizing: border-box;
     color: inherit;
     display: inline-flex;
-    font: inherit;
+    font-family: inherit;
     height: var(--spacing-400);
     justify-content: center;
     width: var(--spacing-400);

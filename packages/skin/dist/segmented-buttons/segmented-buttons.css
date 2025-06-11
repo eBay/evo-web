@@ -27,6 +27,7 @@
     border: none;
     border-radius: var(--btn-border-radius, 20px);
     color: var(--color-foreground-on-primary);
+    font-family: inherit;
     font-size: var(--font-size-default);
     min-height: calc(40px - var(--spacing-50) * 2);
     padding: var(--spacing-100) var(--spacing-200);

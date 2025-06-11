@@ -10,6 +10,10 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+button {
+    font-family: inherit;
+}
+
 fieldset {
     border: 0;
     padding: 0;
