@@ -94,7 +94,6 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
     const closeButtonRef = useRef(null);
 
     const [rId, setRandomId] = useState("");
-    const startClickElement = useRef(null);
 
     useEffect(() => {
         setRandomId(randomId());
@@ -102,18 +101,10 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
 
     const handleBackgroundClick = (e) => {
         props.onClick?.(e);
-        if (drawerBaseEl.current.contains(startClickElement.current)) {
-            // Started on dialog window and user dragged out, don't close
-            return;
-        }
 
         if (drawerBaseEl.current && !drawerBaseEl.current.contains(e.target)) {
             onBackgroundClick(e as unknown as DialogCloseEvent);
         }
-    };
-
-    const handleStartClick = (e) => {
-        startClickElement.current = e.target;
     };
 
     useEffect(() => {
@@ -200,8 +191,7 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
             aria-live={!isModal ? "polite" : undefined}
             ref={dialogRef}
             onKeyDown={onKeyDown as (event: KeyboardEvent<HTMLElement>) => void}
-            onClick={open && buttonPosition !== "hidden" ? handleBackgroundClick : props.onClick}
-            onMouseDown={handleStartClick}
+            onMouseDown={open && buttonPosition !== "hidden" ? handleBackgroundClick : props.onMouseDown}
         >
             <div className={classNames(windowClassName, windowClass)} ref={drawerBaseEl}>
                 {top}

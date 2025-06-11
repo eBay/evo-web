@@ -1,5 +1,6 @@
 import React from "react";
-import { fireEvent, render, RenderResult } from "@testing-library/react";
+import { render, RenderResult } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { DialogBaseWithState } from "..";
 import DialogBase from "../components/dialogBase";
 import EbayDialogHeader from "../components/dialog-header";
@@ -77,12 +78,12 @@ describe("DialogBase", () => {
                     />,
                 );
             });
-            it("when btn cliked then it should trigger onCloseBtnClick event", () => {
-                fireEvent.click(wrapper.container.querySelector(".drawer-dialog__close")!);
+            it("when btn cliked then it should trigger onCloseBtnClick event", async () => {
+                await userEvent.click(wrapper.container.querySelector(".drawer-dialog__close")!);
                 expect(spyCloseBtnClick).toHaveBeenCalled();
             });
-            it("when background clicked then it should trigger onBackgroundClick event", () => {
-                fireEvent.click(wrapper.container.querySelector(".drawer-dialog")!);
+            it("when background clicked then it should trigger onBackgroundClick event", async () => {
+                await userEvent.click(wrapper.container.querySelector(".drawer-dialog")!);
                 expect(spyBackgroundClick).toHaveBeenCalled();
             });
         });
