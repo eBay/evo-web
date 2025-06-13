@@ -10,7 +10,7 @@
         common loading scenarios
     </a>
      for eBay Skin's
-    <a href="component/skeleton/">
+    <a href="component/skeleton">
         skeleton
     </a>
      module.
@@ -82,7 +82,7 @@
 </p>
 <p>
     The downside is that our
-    <a href="component/skeleton/">
+    <a href="component/skeleton">
         skeleton classes
     </a>
      cannot be leveraged (in theory, LESS mixins could be provided) and
@@ -231,7 +231,7 @@
     Our first progressive rendering example shows how the main article content might be streamed in after the main navigation and featured articles.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-1a/">
+    <a href="guide-examples/skeleton-examples/in-order/example-1a">
         View Example
     </a>
 </p>
@@ -244,7 +244,7 @@
     Now let's add a skeleton placeholder for the main content. Using progressive rendering we stream an opening div tag to the client, and while the server works on getting the next chunk ready, the element will match the CSS :empty rule.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-1b/">
+    <a href="guide-examples/skeleton-examples/in-order/example-1b">
         View Example
     </a>
 </p>
@@ -257,7 +257,7 @@
     To keep things simple lets assume the second column is also static content that will be quickly flushed from the server.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-2a/">
+    <a href="guide-examples/skeleton-examples/in-order/example-2a">
         View Example
     </a>
 </p>
@@ -273,7 +273,7 @@
     With some clever CSS we can create a single background image graphic representing a two column layout on the :empty main column.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-2b/">
+    <a href="guide-examples/skeleton-examples/in-order/example-2b">
         View Example
     </a>
 </p>
@@ -306,7 +306,7 @@
     , therefore never caused existing content or layout to move. Let's see what happens when we stream in our main content, side column and footer out of order.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-1/">
+    <a href="guide-examples/skeleton-examples/out-of-order/example-1">
         View Example
     </a>
 </p>
@@ -325,7 +325,7 @@
     Skeletons can prevent the layout shift associated with out-of-order streaming by reserving the physical space for that content.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-2/">
+    <a href="guide-examples/skeleton-examples/out-of-order/example-2">
         View Example
     </a>
 </p>
@@ -344,17 +344,17 @@
     Let's see what happens when we create skeletons for all main page sections.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-3/">
+    <a href="guide-examples/skeleton-examples/out-of-order/example-3">
         View Example
     </a>
 </p>
 <p>
     Compare this with our
-    <a href="guide-examples/skeleton-examples/out-of-order/example-2/">
+    <a href="guide-examples/skeleton-examples/out-of-order/example-2">
         previous example
     </a>
      or
-    <a href="guide-examples/skeleton-examples/in-order/example-2b/">
+    <a href="guide-examples/skeleton-examples/in-order/example-2b">
         In-Order streaming
     </a>
     . The wait time for the main content is the same, but without any shift or flashing in-and-out of skeletons. Most web pages should not have a 1:1 mapping of page sections to skeletons!
@@ -370,7 +370,7 @@
     ${" "}waiting for the rest of the page. We can then sequence the streaming in a way that only ever appends the content.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-4/">
+    <a href="guide-examples/skeleton-examples/out-of-order/example-4">
         View Example
     </a>
 </p>
@@ -400,7 +400,7 @@
     This example shows an initial expected layout shift upon clicking the load more button. After a 3 second wait we experience an unexpected layout shift (i.e. the button is shunted down the page) due to the skeletons not reserving the same amount of physical space as the content that is fetched.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/csr/example-1/">
+    <a href="guide-examples/skeleton-examples/csr/example-1">
         View Example
     </a>
 </p>
@@ -413,7 +413,7 @@
     One way to make content length less arbitrary is via text truncation. In this example the content has been truncated to two lines, meaning we can be more sure about the physical space that needs to be reserved by the skeleton.
 </p>
 <p>
-    <a href="guide-examples/skeleton-examples/csr/example-2/">
+    <a href="guide-examples/skeleton-examples/csr/example-2">
         View Example
     </a>
 </p>
@@ -427,11 +427,11 @@
 </p>
 <p>
     Just as with loading more content, refreshing a section of content can fall afoul of layout shift if the content size is${" "}
-    <a href="guide-examples/skeleton-examples/csr/example-3/">
+    <a href="guide-examples/skeleton-examples/csr/example-3">
         unpredictable
     </a>
     . Again the situation can be avoided with
-    <a href="guide-examples/skeleton-examples/csr/example-4/">
+    <a href="guide-examples/skeleton-examples/csr/example-4">
         predictable
     </a>
      content size.
