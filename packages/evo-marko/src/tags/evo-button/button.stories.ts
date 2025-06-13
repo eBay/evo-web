@@ -4,6 +4,9 @@ import {
 } from "../../common/storybook/utils";
 import button, { type Input } from "./index.marko";
 import Readme from "./README.md";
+import ButtonTemplate from "./examples/button.marko";
+import ButtonTemplateCode from "./examples/button.marko?raw";
+
 import ExpandButtonTemplate from "./examples/expand-button.marko";
 import ExpandButtonTemplateCode from "./examples/expand-button.marko?raw";
 import { Story } from "@storybook/marko";
@@ -11,7 +14,6 @@ import { Story } from "@storybook/marko";
 const Template: Story<Input> = (args) => ({
   input: addContent(args),
 });
-// const Template = args =({ input: withRenderBody(args) })
 
 export default {
   title: "buttons/evo-button",
@@ -197,28 +199,10 @@ export default {
   },
 };
 
-export const Standard = Template.bind({});
-Standard.args = {
-  content: "Button",
-  href: "",
-  fluid: false,
-  borderless: false,
-  size: null,
-  disabled: false,
-  priority: null,
-  partiallyDisabled: false,
-  transparent: false,
-  fixedHeight: false,
-  truncate: false,
-} as any;
-
-// Standard.parameters = {
-//     docs: {
-//         source: {
-//             code: tagToString("ebay-button", Standard.args),
-//         },
-//     },
-// };
+export const Default = buildExtensionTemplate(
+  ButtonTemplate,
+  ButtonTemplateCode,
+);
 
 export const ExpandButton = buildExtensionTemplate(
   ExpandButtonTemplate,
