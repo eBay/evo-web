@@ -1,0 +1,62 @@
+{
+  "name": "@evo-web/marko",
+  "version": "0",
+  "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
+  "keywords": [
+    "marko-components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ebay/evo-core"
+  },
+  "license": "MIT",
+  "files": [],
+  "scripts": {
+    "build": "exit 0",
+    "build:ci": "CI=true exit 0",
+    "build:readme": "node scripts/add-ds-version",
+    "build:storybook": "storybook build -o ./_site",
+    "deploy": "exit 0",
+    "importSVG": "node --experimental-json-modules --experimental-import-meta-resolve scripts/import-svg && prettier \"{./src/components/ebay-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
+    "lint": "npm run lint:less && npm run lint:js && npm run lint:whitespace",
+    "lint:js": "eslint",
+    "lint:less": "stylelint \"src/**/*.{css,less}\" --config .stylelintrc",
+    "lint:whitespace": "lintspaces *.md src/**/*.md src/**/*.marko src/**/*.less --newline --maxnewlines 1 --trailingspaces --spaces 4",
+    "prepublishOnly": "node scripts/postpublish && node scripts/prepublish",
+    "postpublish": "node scripts/postpublish",
+    "release": "exit 0",
+    "start": "storybook dev -p 6006 --no-open",
+    "test": "vitest run --browser.headless",
+    "test:browser": "vitest run browser",
+    "test:ci": "CI=true vitest run --no-color",
+    "test:server": "vitest run server",
+    "test:watch": "vitest",
+    "version": "exit 0"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.7.0",
+    "@google/model-viewer": "^4.1.0",
+    "highcharts": "^11.4.8",
+    "makeup-active-descendant": "0.7.8",
+    "makeup-expander": "~0.11.7",
+    "makeup-floating-label": "~0.4.7",
+    "makeup-focusables": "~0.4.5",
+    "makeup-key-emitter": "~0.4.5",
+    "makeup-keyboard-trap": "~0.5.5",
+    "makeup-prevent-scroll-keys": "~0.3.4",
+    "makeup-roving-tabindex": "~0.7.5",
+    "makeup-screenreader-trap": "~0.5.4",
+    "makeup-typeahead": "^0.3.3",
+    "shaka-player": "4.14.12"
+  },
+  "devDependencies": {
+    "marko": "^6.0.21"
+  },
+  "peerDependencies": {
+    "@ebay/skin": "^19.2.0",
+    "marko": "5 - 6"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}

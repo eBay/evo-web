@@ -72,6 +72,11 @@
         "makeup-typeahead": "^0.3.3",
         "shaka-player": "4.15.2"
     },
+    "devDependencies": {
+        "@marko/compiler": "^5.39.20",
+        "@marko/prettyprint": "^3.0.1",
+        "marko": "^5.37.31"
+    },
     "peerDependencies": {
         "@ebay/skin": "^19.2.0",
         "marko": "^4.27.0 || ^5.31.12"

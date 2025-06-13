@@ -1,0 +1,122 @@
+import type { AttrString } from "marko/tags-html";
+static const validPriorities = ["primary", "secondary", "tertiary", "delete"];
+static const validSizes = ["large", "small"] as const;
+
+export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.A, "type" |`on${string}`> {
+    href?: string;
+    size?: (typeof validSizes)[number];
+    priority?: "primary" | "secondary" | "tertiary" | "none";
+    variant?: "standard" | "destructive" | "form";
+    "body-state"?: "loading" | "expand" | "reset" | "none";
+    fluid?: boolean;
+    borderless?: boolean;
+    disabled?: boolean;
+    "partially-disabled"?: boolean;
+    transparent?: boolean;
+    fixedHeight?: boolean;
+    truncate?: boolean;
+    split?: string;
+    type?: Marko.HTML.Button["type"] | (string & {});
+    "a11y-loading-text"?: AttrString;
+    "onEscape"?: (event: KeyboardEvent) => void;
+}
+
+<const/{
+    content,
+    "a11y-loading-text": a11yLoadingText,
+    "body-state": bodyState,
+    borderless,
+    class: inputClass,
+    fixedHeight,
+    fluid,
+    href,
+    "partially-disabled": partiallyDisabled,
+    priority: inputPriority = "secondary",
+    size: inputSize,
+    split = "none",
+    transparent,
+    truncate,
+    type = "button",
+    variant = "standard",
+    // ...htmlInput
+}=input/>
+
+// TODO: When this is fixed in Marko switch from iife to const destructure spread
+<const/htmlInput=(({
+    content,
+    "a11y-loading-text": a11yLoadingText,
+    "body-state": bodyState,
+    borderless,
+    class: inputClass,
+    fixedHeight,
+    fluid,
+    href,
+    "partially-disabled": partiallyDisabled,
+    priority: inputPriority = "secondary",
+    size: inputSize,
+    split = "none",
+    transparent,
+    truncate,
+    type = "button",
+    variant = "standard",
+    ...rest
+}) => rest)(input)/>
+
+<const/priority=(borderless || variant === "form") ? "none" : inputPriority>
+<const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
+
+<const/baseClass=(href ? "fake-btn" : "btn")/>
+<const/sizeClass=(size && baseClass + "--" + size)/>
+<const/truncateClass=(
+    truncate &&
+    (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
+)>
+<const/transparentClass=transparent && (baseClass + "--transparent")>
+<const/fixedHeightClass=(
+    fixedHeight &&
+    (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
+)>
+<const/variantClass=variant !== "standard" && `${baseClass}--${variant}`>
+
+<const/tag=href ? "a" : "button">
+<${tag}
+    ...htmlInput
+    onKeyDown(e: KeyboardEvent) {
+        if (e.key === "Escape" && !input.disabled) {
+            input.onEscape?.(e);
+        }
+    }
+    class=[
+        inputClass,
+        baseClass,
+        fluid && `${baseClass}--fluid`,
+        truncateClass,
+        fixedHeightClass,
+        transparentClass,
+        variantClass,
+        !truncateClass && !fixedHeightClass && sizeClass,
+        split !== "none" && `${baseClass}--split-${split}`,
+        borderless && `${baseClass}--borderless`,
+        validPriorities.includes(priority) && `${baseClass}--${priority}`,
+    ]
+    type=type ?? (tag === "button" && "button")
+    aria-disabled=partiallyDisabled && "true"
+    aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])
+>
+    <if=(bodyState === "loading")>
+        <span class="btn__cell">
+            // <ebay-progress-spinner/>
+        </span>
+    </if>
+    <else if=(bodyState === "expand")>
+        <span class="btn__cell">
+            <span class="btn__text">
+                <${content}/>
+            </span>
+            // <ebay-chevron-down-16-icon/>
+        </span>
+    </else>
+    <else>
+        <${content}/>
+    </else>
+</>
