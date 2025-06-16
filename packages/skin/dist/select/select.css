@@ -7,7 +7,6 @@ span.select {
     display: inline-block;
 }
 .select select {
-    -webkit-appearance: none;
     appearance: none;
     background-color: var(
         --select-background-color,

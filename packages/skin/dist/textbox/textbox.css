@@ -98,7 +98,6 @@ input.textbox__control:last-child:not([readonly]) {
 
 input.textbox__control,
 textarea.textbox__control {
-    -webkit-appearance: none;
     appearance: none;
     flex-grow: 1;
     font-size: 1em;

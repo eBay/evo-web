@@ -193,7 +193,6 @@ span.combobox {
     top: calc(50% - 8px);
 }
 .combobox__control > input {
-    -webkit-appearance: none;
     appearance: none;
     background-color: var(
         --combobox-textbox-background-color,

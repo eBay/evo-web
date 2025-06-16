@@ -101,9 +101,6 @@ button.icon-btn.icon-btn--large {
     width: 48px;
 }
 a.icon-link--transparent,
-button.icon-btn--transparent {
-    background-color: initial;
-}
 a.icon-link--transparent:not([disabled], [aria-disabled="true"]):active:after,
 a.icon-link--transparent:not(
         [disabled],
@@ -113,6 +110,7 @@ a.icon-link--transparent:not([disabled], [aria-disabled="true"]):hover:after,
 a.icon-link--transparent[href]:active:after,
 a.icon-link--transparent[href]:focus-visible:after,
 a.icon-link--transparent[href]:hover:after,
+button.icon-btn--transparent,
 button.icon-btn--transparent:not(
         [disabled],
         [aria-disabled="true"]
