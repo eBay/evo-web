@@ -1,0 +1,94 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <section style="
+      background-color: var(--page-notice-information-background-color, var(--color-background-information));
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      color: var(--page-notice-color, var(--color-foreground-on-inverse));
+      display: grid;
+      font-size: var(--font-size-default);
+      grid-template-columns: 32px auto auto auto;
+      margin: var(--spacing-100) 0;
+      padding: var(--spacing-200)
+    ">
+      <div style="
+        grid-column-start: 1;
+        grid-row-start: 1;
+        margin-inline-end: var(--spacing-200)
+      ">
+        <svg
+          height="16"
+          role="img"
+          style="
+            color: var(--page-notice-information-icon-color, var(--color-foreground-on-information));
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+          width="16"
+        >
+          <use href="#icon-information-filled-16"/>
+        </svg>
+      </div>
+      <div style="
+        grid-column-start: 2;
+        grid-row-start: 1;
+        margin-inline-end: var(--spacing-200)
+      ">
+        <p style="
+          font-size: var(--font-size-default);
+          margin-bottom: 0px;
+          margin-top: 2px
+        ">
+          You have opted into eBay Pay
+        </p>
+      </div>
+      <div style="
+        grid-column-start: 4;
+        grid-row-start: 1;
+        text-align: right
+      ">
+        <button style="
+          border-bottom-width: 0px;
+          border-left-width: 0px;
+          border-right-width: 0px;
+          border-top-width: 0px;
+          color: var(--page-notice-color, var(--color-foreground-on-inverse));
+          font-family: inherit;
+          font-size: var(--font-size-default);
+          font-weight: 700;
+          padding-bottom: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+          text-decoration-line: underline
+        ">
+          Dismiss
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
