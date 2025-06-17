@@ -1,4 +1,4 @@
-export default { title: "Skin/Chip/Interactive Chip" };
+export default { title: "Skin/Chip/Destructive Chip" };
 
 export const typical = () => `
 <span class="chip">
