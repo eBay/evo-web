@@ -79,9 +79,12 @@ button.chip__button {
     box-sizing: border-box;
     display: flex;
     flex-shrink: 0;
+    height: var(--spacing-300);
     justify-content: center;
     line-height: 0;
+    margin-inline-end: -8px;
     padding: 0;
+    width: var(--spacing-300);
 }
 
 button.chip__button {

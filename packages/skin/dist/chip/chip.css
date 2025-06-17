@@ -22,8 +22,8 @@ button.chip {
     color: var(--color-foreground-primary);
 }
 
-a.chip .chip__button,
-button.chip .chip__button {
+a.chip .chip__trailing,
+button.chip .chip__trailing {
     rotate: 45deg;
 }
 
@@ -50,10 +50,15 @@ span.chip {
     color: var(--color-foreground-on-strong);
 }
 
-a.chip--selected .chip__button,
-button.chip[aria-pressed="true"] .chip__button,
-span.chip .chip__button {
+a.chip--selected .chip__trailing,
+button.chip[aria-expanded="false"] .chip__trailing,
+button.chip[aria-pressed="true"] .chip__trailing,
+span.chip .chip__trailing {
     rotate: 0deg;
+}
+
+button.chip[aria-expanded="true"] .chip__trailing {
+    rotate: 180deg;
 }
 
 .chip__text {
@@ -63,21 +68,21 @@ span.chip .chip__button {
     white-space: nowrap;
 }
 
-.chip__button {
+button.chip__button {
     align-items: center;
     background-color: initial;
     border: none;
     border-radius: 50px;
     box-sizing: border-box;
+    color: var(--color-foreground-on-strong);
     display: flex;
     flex-shrink: 0;
+    height: var(--spacing-300);
     justify-content: center;
     line-height: 0;
+    margin-inline-end: -8px;
     padding: 0;
-}
-
-button.chip__button {
-    color: var(--color-foreground-on-strong);
+    width: var(--spacing-300);
 }
 
 button.chip__button:focus-visible {
