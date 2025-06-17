@@ -5,6 +5,7 @@ static {
         position?: "start" | "end";
         "on-open"?: () => void;
         "on-close"?: () => void;
+        "on-prevButtonClick"?: () => void;
     }
 }
 $ const {
@@ -19,6 +20,7 @@ export interface Input extends WithNormalizedProps<PanelDialogInput> {}
     classPrefix="panel-dialog"
     onOpen("emit", "open")
     onClose("emit", "close")
+    onPrevButtonClick("emit", "prevButtonClick")
     class=[inputClass, "panel-dialog--mask-fade-slow"]
     windowClass=[
         "panel-dialog__window--slide",

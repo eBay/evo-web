@@ -113,7 +113,7 @@ $ const {
             <if(prevButton)>
                 <button
                     ...processHtmlAttributes(prevButtonHtmlInput)
-                    class=["icon-btn", "lightbox-dialog__prev", prevButtonClass]
+                    class=["icon-btn", `${classPrefix}__prev`, prevButtonClass]
                     type="button"
                     aria-label=prevButtonA11yText
                     on-click("emit", "prevButtonClick")

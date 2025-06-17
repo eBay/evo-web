@@ -49,6 +49,7 @@
 
 /* inherits from .icon-btn */
 /* Might need to see to add a small icon btn */
+button.icon-btn.panel-dialog__prev,
 button.icon-btn.panel-dialog__close {
     align-self: flex-start;
     border: 0;
@@ -58,6 +59,10 @@ button.icon-btn.panel-dialog__close {
     position: relative;
     width: 32px;
     z-index: 1;
+}
+
+button.icon-btn.panel-dialog__prev {
+    margin-inline-end: var(--spacing-200);
 }
 
 .panel-dialog__title {
@@ -127,6 +132,12 @@ button.icon-btn.panel-dialog__close {
 
     .panel-dialog__window--slide {
         transform: translateX(0);
+    }
+}
+
+[dir="rtl"] {
+    button.icon-btn.panel-dialog__prev .icon {
+        transform: rotate(180deg);
     }
 }
 

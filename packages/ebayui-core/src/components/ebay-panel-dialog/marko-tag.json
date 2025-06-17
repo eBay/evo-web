@@ -27,6 +27,15 @@
         },
         "@html-attributes": "expression"
     },
+    "@prevButton <prev-button>": {
+        "attribute-groups": ["html-attributes"],
+        "@*": {
+            "targetProperty": null,
+            "type": "expression"
+        },
+        "@a11y-text": "string",
+        "@html-attributes": "expression"
+    },
     "@footer <footer>": {
         "attribute-groups": ["html-attributes"],
         "@*": {
@@ -35,5 +44,5 @@
         },
         "@html-attributes": "expression"
     },
-    "description": "[view documentation](https://ebay.github.io/evo-web/ebayui-core/?path=/story/dialogs-ebay-panel-dialog)"
+    "description": "[view documentation](https://ebay.github.io/ebayui-core/?path=/story/dialogs-ebay-panel-dialog)"
 }
