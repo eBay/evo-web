@@ -1,0 +1,115 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <span style="
+      display: inline-block;
+      margin-left: 100px;
+      margin-top: 100px;
+      position: relative
+    ">
+      <button style="
+        background-color: var(--icon-button-background-color, var(--color-background-secondary));
+        border-bottom-color: transparent;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-bottom-style: solid;
+        border-left-color: transparent;
+        border-left-style: solid;
+        border-right-color: transparent;
+        border-right-style: solid;
+        border-top-color: transparent;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-top-style: solid;
+        font-family: inherit;
+        height: 40px;
+        justify-content: center;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        vertical-align: text-bottom;
+        width: 40px
+      ">
+        <svg
+          height="16"
+          style="
+            display: inline-block;
+            fill: var(--icon-button-icon-foreground-color, var(--color-foreground-primary));
+            height: 24px;
+            max-width: 75%;
+            pointer-events: none;
+            position: relative;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 24px
+          "
+          width="16"
+        >
+          <use href="#icon-settings-24"/>
+        </svg>
+      </button>
+      <div style="
+        bottom: calc(100% + 12px);
+        box-shadow: var(--bubble-shadow);
+        font-size: 14px;
+        left: 4px;
+        max-width: 344px;
+        position: absolute;
+        transform: scaleX(1);
+        width: max-content;
+        z-index: 1
+      ">
+        <span style="
+          background-color: var(--tooltip-background-color, var(--color-background-inverse));
+          bottom: -4px;
+          height: 8px;
+          left: 12px;
+          position: absolute;
+          transform: rotate(45deg);
+          width: 8px;
+          z-index: 0
+        "/>
+        <div style="
+          background-color: var(--tooltip-background-color, var(--color-background-inverse));
+          color: var(--tooltip-foreground-color, var(--color-foreground-on-inverse));
+          position: relative;
+          z-index: 1
+        ">
+          <div style="
+            display: flex;
+            overflow-wrap: anywhere;
+            padding: var(--spacing-100) var(--spacing-200)
+          ">
+            <div style="flex-grow: 1">
+              <p style="
+                margin-bottom: 0px;
+                margin-top: 0px
+              ">
+                Pointer
+              </p>
+              <p style="
+                margin-bottom: 0px;
+                margin-top: var(--spacing-50)
+              ">
+                Item
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
+</body>

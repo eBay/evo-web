@@ -1,0 +1,85 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <section style="
+      background-color: var(--page-notice-attention-background-color, var(--color-background-attention));
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-style: solid;
+      border-top-width: 1px;
+      color: var(--page-notice-color, var(--color-foreground-on-inverse));
+      display: grid;
+      font-size: var(--font-size-default);
+      grid-template-columns: 32px auto auto auto;
+      margin: var(--spacing-100) 0;
+      padding: var(--spacing-200)
+    ">
+      <div style="
+        grid-column-start: 1;
+        grid-row-start: 1;
+        margin-inline-end: var(--spacing-200)
+      ">
+        <svg
+          height="16"
+          role="img"
+          style="
+            color: var(--page-notice-attention-icon-color, var(--color-foreground-on-attention));
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+          width="16"
+        >
+          <use href="#icon-attention-filled-16"/>
+        </svg>
+      </div>
+      <div style="
+        grid-column-start: 2;
+        grid-row-start: 1;
+        margin-inline-end: var(--spacing-200)
+      ">
+        <h2 style="
+          font-size: var(--font-size-default);
+          font-weight: 400;
+          margin-bottom: 0px;
+          margin-top: 1px
+        ">
+          Your selling account has been deactivated.
+        </h2>
+      </div>
+      <div style="
+        grid-column-start: 4;
+        grid-row-start: 1;
+        text-align: right
+      ">
+        <a style="
+          color: var(--page-notice-color, var(--color-foreground-on-inverse));
+          font-size: var(--font-size-default);
+          font-weight: 700
+        ">
+          Learn More
+        </a>
+      </div>
+    </section>
+  </div>
+</body>
