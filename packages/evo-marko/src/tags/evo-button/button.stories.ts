@@ -69,7 +69,7 @@ export default {
         },
       },
     },
-    "body-state": {
+    bodyState: {
       description:
         "when state is loading, adds progress spinner. when user interacts with button, reset should be called to reset aria-live state. default is none",
       options: ["none", "loading", "reset", "expand"],
@@ -81,7 +81,7 @@ export default {
       },
       type: { category: "Options" },
     },
-    "a11y-text": {
+    a11yLoadingText: {
       description: "aria label for button when bodyState === loading",
       table: {
         defaultValue: "",

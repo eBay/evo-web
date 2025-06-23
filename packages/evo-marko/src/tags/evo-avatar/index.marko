@@ -1,0 +1,75 @@
+import type { AttrString } from "marko/tags-html";
+import { getColorForText } from "./util";
+static type Size = 32 | 40 | 48 | 56 | 64 | 96 | 128;
+static type ImagePlacement = "cover" | "fit";
+export interface Input extends Marko.HTML.Div {
+    username?: string;
+    color?: string;
+    size?: Size | `${Size}`;
+    img?: Marko.AttrTag<Marko.HTML.Img>;
+    knownAspectRatio?: number;
+}
+
+<const/{
+    class: inputClass,
+    size,
+    color,
+    img,
+    username,
+    content,
+    knownAspectRatio,
+    // ...htmlInput
+}=input/>
+
+<const/htmlInput=(({
+    class: inputClass,
+    size,
+    color,
+    img,
+    username,
+    content,
+    knownAspectRatio,
+    ...rest
+}) => rest)(input)/>
+
+<let/imagePlacement=(
+    knownAspectRatio && (knownAspectRatio < 3 / 4 || knownAspectRatio > 4 / 3)
+        ? "fit"
+        : "cover"
+) as ImagePlacement />
+
+<div
+    role="img"
+    class=[
+        "avatar",
+        imagePlacement === "fit" && "avatar--fit",
+        inputClass,
+        size && `avatar--${size}`,
+        username && !img && `avatar--${getColorForText(username, color)}`,
+    ]
+    ...htmlInput
+>
+    <if=img>
+        <img
+            onLoad(e, el) {
+                const aspectRatio = el.naturalWidth / el.naturalHeight;
+                if (aspectRatio < 3 / 4 || aspectRatio > 4 / 3) {
+                    imagePlacement = "fit";
+                } else {
+                    imagePlacement = "cover";
+                }
+            }
+            ...img
+        >
+    </if>
+
+    <else if=content>
+        <${content}/>
+    </else>
+    <else if=username>
+        ${username.charAt(0).toUpperCase()}
+    </else>
+    <else>
+        // <evo-avatar-signed-out-icon/>
+    </else>
+</div>

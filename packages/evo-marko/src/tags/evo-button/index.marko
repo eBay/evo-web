@@ -7,30 +7,30 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     size?: (typeof validSizes)[number];
     priority?: "primary" | "secondary" | "tertiary" | "none";
     variant?: "standard" | "destructive" | "form";
-    "body-state"?: "loading" | "expand" | "reset" | "none";
+    bodyState?: "loading" | "expand" | "reset" | "none";
     fluid?: boolean;
     borderless?: boolean;
     disabled?: boolean;
-    "partially-disabled"?: boolean;
+    partiallyDisabled?: boolean;
     transparent?: boolean;
     fixedHeight?: boolean;
     truncate?: boolean;
     split?: string;
     type?: Marko.HTML.Button["type"] | (string & {});
-    "a11y-loading-text"?: AttrString;
-    "onEscape"?: (event: KeyboardEvent) => void;
+    a11yLoadingText?: AttrString;
+    onEscape?: (event: KeyboardEvent) => void;
 }
 
 <const/{
     content,
-    "a11y-loading-text": a11yLoadingText,
-    "body-state": bodyState,
+    a11yLoadingText,
+    bodyState,
     borderless,
     class: inputClass,
     fixedHeight,
     fluid,
     href,
-    "partially-disabled": partiallyDisabled,
+    partiallyDisabled: partiallyDisabled,
     priority: inputPriority = "secondary",
     size: inputSize,
     split = "none",
@@ -44,14 +44,14 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
 // TODO: When this is fixed in Marko switch from iife to const destructure spread
 <const/htmlInput=(({
     content,
-    "a11y-loading-text": a11yLoadingText,
-    "body-state": bodyState,
+    a11yLoadingText,
+    bodyState,
     borderless,
     class: inputClass,
     fixedHeight,
     fluid,
     href,
-    "partially-disabled": partiallyDisabled,
+    partiallyDisabled,
     priority: inputPriority = "secondary",
     size: inputSize,
     split = "none",
