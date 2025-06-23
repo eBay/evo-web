@@ -1,0 +1,81 @@
+import type { AttrClass, AttrString } from "marko/tags-html";
+import type { ModelViewerElement } from "@google/model-viewer";
+import { load as modelViewerLoad } from "@internal/model-viewer";
+export interface Input extends Partial<ModelViewerElement> {
+    class?: AttrClass;
+    errorText?: AttrString;
+    a11yLoadText?: AttrString;
+    onLoadError?: (err: CustomEvent) => void;
+}
+<const/{
+    class: inputClass,
+    src,
+    errorText,
+    onLoadError,
+    a11yLoadText,
+    // ...htmlInput
+}=input/>
+
+<const/htmlInput=(({
+    class: inputClass,
+    src,
+    errorText,
+    onLoadError,
+    a11yLoadText,
+    ...rest
+}) => rest)(input)/>
+
+<let/ready=false/>
+<let/error=false/>
+
+<script>
+    try {
+        await modelViewerLoad();
+        ready = true;
+    } catch (err:any) {
+        onLoadError?.(err);
+        error = true;
+    }
+</script>
+
+<div class=["three-d-player", inputClass]>
+    <if=ready>
+        <model-viewer
+            camera-controls
+            touch-action="pan-y"
+            src=src
+            ...htmlInput
+        />
+    </if>
+    <else if=error>
+        <div class="three-d-player__overlay">
+            // <ebay-attention-24-icon/>
+            <div class="three-d-player__overlay-text">
+                <if=errorText>
+                    ${errorText}
+                </if>
+                <else>An error has occurred</else>
+            </div>
+        </div>
+    </else>
+    <else>
+        <div class="three-d-player__overlay">
+            <evo-progress-spinner aria-label=a11yLoadText || "Loading"/>
+        </div>
+    </else>
+</div>
+
+<style>
+    .three-d-player {
+        position: relative;
+    }
+
+    .three-d-player__overlay {
+        position: absolute;
+        display: flex;
+        inset: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
