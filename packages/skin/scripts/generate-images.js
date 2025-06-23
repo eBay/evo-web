@@ -145,7 +145,10 @@ class GenerateImages {
         svgFragment.removeAttribute("height");
         const defs = svgFragment.querySelector("defs");
         if (defs) {
-            defsList.push(defs);
+            while (defs.firstChild) {
+                svgFragment.appendChild(defs.firstChild);
+            }
+            // defsList.push(defs);
             defs.remove();
         }
 

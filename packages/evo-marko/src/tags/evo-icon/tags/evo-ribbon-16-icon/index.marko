@@ -1,0 +1,4 @@
+import { symbol } from "./symbol";
+import type { Input as IconInput } from "../../index.marko"
+export type Input = Omit<IconInput, `_${string}`>;
+<evo-icon ...input _name="ribbon-16" _size="16" _type="icon" _symbol=symbol/>
