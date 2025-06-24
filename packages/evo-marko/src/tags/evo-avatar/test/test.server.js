@@ -36,6 +36,6 @@ describe("avatar", () => {
   });
 
   it("renders with custom body", async () => {
-    await htmlSnap(Default, addRenderBodies({ renderBody: "custom body" }));
+    await htmlSnap(Default, addRenderBodies({ content: "custom body" }));
   });
 });

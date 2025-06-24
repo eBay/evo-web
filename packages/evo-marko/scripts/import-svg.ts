@@ -116,7 +116,7 @@ function generateFile(type: string, iconMap: Map<string, string>) {
     }
     const iconFolder = path.join(
       getOutputDir(type),
-      `evo-${name}${postfixName}`,
+      `evo${postfixName}-${name}`,
     );
     const index = path.join(iconFolder, "index.marko");
 
@@ -157,7 +157,7 @@ function generateExamples(type: string, iconsList: string[]) {
       continue;
     }
     const postfixName = type === "icon" ? "-icon" : "";
-    const iconName = `evo-${name}${postfixName}`;
+    const iconName = `evo${postfixName}-${name}`;
     exampleHTML.push(`    div
         span.icon
             ${iconName}

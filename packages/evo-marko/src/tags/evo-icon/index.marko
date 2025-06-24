@@ -13,6 +13,7 @@ export interface Input extends Marko.Input<"svg"> {
 }
 
 <const/{
+    class: inputClass,
     _name,
     _size,
     _type,
@@ -21,7 +22,15 @@ export interface Input extends Marko.Input<"svg"> {
     // ...htmlInput
 }=input/>
 
-<const/htmlInput=(({ _name, _size, _type, _symbol, a11yText, ...rest }) => rest)(input)/>
+<const/htmlInput=(({
+    class: inputClass,
+    _name,
+    _size,
+    _type,
+    _symbol,
+    a11yText,
+    ...rest
+}) => rest)(input)/>
 static function getIconClass(type: string, name: string, size?: string) {
     const colorMap: { [index: string]: string } = {
         "confirmation-filled-16": "confirmation-filled",
@@ -83,16 +92,15 @@ static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
 
 <id/titleId/>
 <const/prefixSvg=(_type === "icon" ? "icon-" : "")/>
-<const/hasA11yText=(a11yText || input["aria-label"])/>
-<const/hasTitle = (a11yText && !input["aria-label"])/>
+<const/hasA11yText=a11yText || input["aria-label"]/>
+<const/hasTitle=a11yText && !input["aria-label"]/>
 
 <svg
     ...htmlInput
-    class=[getIconClass(input._type ?? "", input._name, input._size)]
-    role=(!!hasA11yText && "img")
+    class=[inputClass, getIconClass(input._type ?? "", input._name, input._size)]
+    role=!!hasA11yText && "img"
     aria-hidden=!hasA11yText && "true"
     aria-labelledby=hasTitle && titleId
-
 >
     $!{renderSymbol($global, input._name, input._symbol)}
     <use href=`#icon-${input._name}`/>

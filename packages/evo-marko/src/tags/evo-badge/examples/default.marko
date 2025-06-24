@@ -1,0 +1,7 @@
+import type { Input as BadgeInput} from '../index.marko';
+
+export interface Input extends BadgeInput {
+}
+
+<const/label=`${input.number} unread items`/>
+<evo-badge ...input number=input.number aria-label=label/>

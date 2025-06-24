@@ -1,13 +1,13 @@
 <h1 style='display: flex; justify-content: space-between; align-items: center;'>
     <span>
-        evo-{name}-icon
+        evo-icon-{name}
     </span>
     <span style='font-weight: normal; font-size: medium; margin-bottom: -15px;'>
         DS v1.3.0
     </span>
 </h1>
 
-## evo-{name}-icon Usage
+## evo-icon-{name} Usage
 
 ```marko
 <evo-arrow-left-icon/>

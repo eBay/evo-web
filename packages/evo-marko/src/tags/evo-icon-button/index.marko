@@ -1,0 +1,68 @@
+static const VALID_SIZES = ["small", "large"];
+import type { AttrString } from "marko/tags-html";
+static var validPriorities = ["primary", "secondary", "tertiary"];
+import type { Input as ButtonInput } from "../evo-button/index.marko";
+import type { Input as BadgeInput } from "../evo-badge/index.marko";
+
+export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.A, "type" |`on${string}`> {
+  badge?: Marko.AttrTag<BadgeInput>;
+  badgeNumber?: number | string;
+  href?: string;
+  transparent?: boolean;
+  priority?: "primary" | "secondary" | "tertiary" | "none";
+  size?: "small" | "large";
+  partiallyDisabled?: ButtonInput["partiallyDisabled"];
+  onEscape?: ButtonInput["onEscape"];
+}
+
+<const/{
+    badge,
+    priority = "none",
+    partiallyDisabled,
+    content,
+    size,
+    transparent,
+    class: inputClass,
+    // ...htmlInput
+} = input/>
+
+<const/htmlInput=(({
+    badge,
+    priority = "none",
+    partiallyDisabled,
+    content,
+    size,
+    transparent,
+    class: inputClass,
+    ...rest
+}) => rest)(input)/>
+
+<const/tagType = input.href ? "a" : "button"/>
+<const/baseClassName = input.href ? "icon-link" : "icon-btn"/>
+
+<${tagType}
+    ...htmlInput
+    onKeyDown(e: KeyboardEvent) {
+        if (e.key === "Escape" && !input.disabled) {
+            input.onEscape?.(e);
+        }
+    }
+    class=[
+        inputClass,
+        baseClassName,
+        badge?.number && `${baseClassName}--badged`,
+        transparent && `${baseClassName}--transparent`,
+        validPriorities.includes(priority) && `${baseClassName}--${priority}`,
+        size && VALID_SIZES.includes(size) && `${baseClassName}--${size}`,
+    ]
+    type=tagType === "button" && (input.type || "button")
+    aria-disabled=partiallyDisabled && "true"
+>
+    <${content}/>
+    <if=(badge)>
+        <evo-badge
+            type="icon"
+            ...badge
+        />
+    </if>
+</>
