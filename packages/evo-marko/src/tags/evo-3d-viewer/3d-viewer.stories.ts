@@ -142,6 +142,8 @@ export const Default = Template.bind({});
 Default.args = {
     src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/3d/v1/image.glb",
     alt: "View these shoes for sale.",
+    errorText: "An error has occurred",
+    a11yLoadText: "Loading 3d model",
 };
 Default.parameters = {
     docs: {

@@ -25,7 +25,7 @@ export default {
             description:
                 'size of spinner - can be "small", "large". default is small ',
         },
-        ariaLabel: {
+        "aria-label": {
             control: { type: "text" },
             description: "Description for accessibility",
         },
@@ -34,7 +34,7 @@ export default {
 
 export const Default = Template.bind({});
 Default.args = {
-    ariaLabel: "loading",
+    "aria-label": "loading",
 };
 
 Default.parameters = {

@@ -3,8 +3,8 @@ import type { ModelViewerElement } from "@google/model-viewer";
 import { load as modelViewerLoad } from "@internal/model-viewer";
 export interface Input extends Partial<ModelViewerElement> {
     class?: AttrClass;
-    errorText?: AttrString;
-    a11yLoadText?: AttrString;
+    errorText: AttrString;
+    a11yLoadText: AttrString;
     onLoadError?: (err: CustomEvent) => void;
 }
 <const/{
@@ -25,21 +25,21 @@ export interface Input extends Partial<ModelViewerElement> {
     ...rest
 }) => rest)(input)/>
 
-<let/ready=false/>
-<let/error=false/>
+static type LoadState = "ready" | "error" | "loading";
 
+<let/loadState="loading" as LoadState/>
 <script>
     try {
         await modelViewerLoad();
-        ready = true;
+        loadState = "ready"
     } catch (err:any) {
         onLoadError?.(err);
-        error = true;
+        loadState = "error"
     }
 </script>
 
 <div class=["three-d-player", inputClass]>
-    <if=ready>
+    <if=loadState === "ready">
         <model-viewer
             camera-controls
             touch-action="pan-y"
@@ -47,20 +47,17 @@ export interface Input extends Partial<ModelViewerElement> {
             ...htmlInput
         />
     </if>
-    <else if=error>
+    <else if=loadState === "error">
         <div class="three-d-player__overlay">
             // <ebay-attention-24-icon/>
             <div class="three-d-player__overlay-text">
-                <if=errorText>
-                    ${errorText}
-                </if>
-                <else>An error has occurred</else>
+                ${errorText}
             </div>
         </div>
     </else>
     <else>
         <div class="three-d-player__overlay">
-            <evo-progress-spinner aria-label=a11yLoadText || "Loading"/>
+            <evo-progress-spinner aria-label=a11yLoadText/>
         </div>
     </else>
 </div>
