@@ -57,7 +57,9 @@ describe("<EbayPagination>", () => {
                     </Item>
                     <Item href="#">4</Item>
                     <Item href="#">5</Item>
-                    <Item href="#">6</Item>
+                    <Item href="#" value={6}>
+                        6
+                    </Item>
                     <Item type="next" href="#" />
                 </EbayPagination>,
             );
@@ -83,6 +85,14 @@ describe("<EbayPagination>", () => {
             fireEvent.click(wrapper.getAllByRole("link")[1]);
 
             expect(spyOnSelect).toHaveBeenCalledWith(eventOfType("click"), { value: "", index: 2 });
+            expect(spyOnPrev).not.toHaveBeenCalled();
+            expect(spyOnNext).not.toHaveBeenCalled();
+        });
+
+        it("should trigger onSelect() with value from page", () => {
+            fireEvent.click(wrapper.getByText("6"));
+
+            expect(spyOnSelect).toHaveBeenCalledWith(eventOfType("click"), { value: 6, index: 5 });
             expect(spyOnPrev).not.toHaveBeenCalled();
             expect(spyOnNext).not.toHaveBeenCalled();
         });

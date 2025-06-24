@@ -43,10 +43,11 @@ const EbayPaginationItem: FC<PaginationItemProps> = ({
     className,
     style,
     forwardedRef,
+    value,
     ...rest
 }) => {
     const handlePageNumber = (e) => {
-        onSelect(e, { value: e.currentTarget?.innerText || "", index: pageIndex });
+        onSelect(e, { value: value || e.currentTarget?.innerText || "", index: pageIndex });
     };
 
     const handleNextPage = (e) => {

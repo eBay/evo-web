@@ -53,11 +53,11 @@ import "@ebay/skin/utility.css";
 
 ### EbayPagination Events
 
-| Event        | Data                        | Description                   |
-| ------------ | --------------------------- | ----------------------------- |
-| `onPrevious` | `(Event)`                   | clicked previous arrow button |
-| `onNext`     | `(Event)`                   | clicked next arrow button     |
-| `onSelect`   | `(Event, { value, index })` | page selected clicked         |
+| Event        | Data                        | Description                                                                                |
+| ------------ | --------------------------- | ------------------------------------------------------------------------------------------ |
+| `onPrevious` | `(Event)`                   | clicked previous arrow button                                                              |
+| `onNext`     | `(Event)`                   | clicked next arrow button                                                                  |
+| `onSelect`   | `(Event, { value, index })` | page selected clicked (`value` should be used as `index` is the position in the page list) |
 
 ## EbayPaginationItem Tag
 
@@ -69,12 +69,13 @@ import "@ebay/skin/utility.css";
 
 ### EbayPaginationItem Attributes
 
-| Name       | Type    | Stateful | Description                                                                                                                                             |
-| ---------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `disabled` | Boolean | No       | Previous/next button is disabled or not                                                                                                                 |
-| `href`     | String  | No       | for link that looks like a menu-item; omitting the href will switch to a button                                                                         |
-| `current`  | Boolean | No       | the current page                                                                                                                                        |
-| `type`     | String  | No       | "previous", "next" or "page"(default). To specify if the information entered is for the previous or next arrow button or a page. If the `type='previous | next'`isn't provided the previous/next arrow buttons will be taken as`disabled` |
+| Name       | Type    | Stateful | Description                                                                                                                                                                                                                                  |
+| ---------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled` | Boolean | No       | Previous/next button is disabled or not                                                                                                                                                                                                      |
+| `href`     | String  | No       | for link that looks like a menu-item; omitting the href will switch to a button                                                                                                                                                              |
+| `current`  | Boolean | No       | the current page                                                                                                                                                                                                                             |
+| `type`     | String  | No       | "previous", "next" or "page"(default). To specify if the information entered is for the previous or next arrow button or a page. If the `type='previous \| next'` isn't provided the previous/next arrow buttons will be taken as `disabled` |
+| `value`    | Number  | No       | the page identification                                                                                                                                                                                                                      |
 
 Notes:
 
