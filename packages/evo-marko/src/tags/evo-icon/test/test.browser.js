@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { render, cleanup } from "@marko/testing-library";
-import template from "../icons/ebay-add-24-icon/index.marko";
-import template2 from "../icons/ebay-arrow-left-24-icon/index.marko";
-import template3 from "../icons/ebay-arrow-right-24-icon/index.marko";
-import template4 from "../icons/ebay-ai-spectrum-16-colored-icon/index.marko";
+import template from "../icons/evo-add-24-icon/index.marko";
+import template2 from "../icons/evo-arrow-left-24-icon/index.marko";
+import template3 from "../icons/evo-arrow-right-24-icon/index.marko";
+import template4 from "../icons/evo-ai-spectrum-16-colored-icon/index.marko";
 
 afterEach(cleanup);
 

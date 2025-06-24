@@ -5,42 +5,42 @@ import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 
 const Template: Story<Input> = (args) => ({
-    input: addContent(args),
+  input: addContent(args),
 });
 export default {
-    title: "progress/evo-progress-spinner",
-    component: Component,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "progress/evo-progress-spinner",
+  component: Component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
+  },
 
-    argTypes: {
-        size: {
-            options: ["small", "large", "regular"],
-            control: { type: "select" },
-            description:
-                'size of spinner - can be "small", "large". default is regular',
-        },
-        "aria-label": {
-            control: { type: "text" },
-            description: "Description for accessibility",
-        },
+  argTypes: {
+    size: {
+      options: ["small", "large", "regular"],
+      control: { type: "select" },
+      description:
+        'size of spinner - can be "small", "large". default is regular',
     },
+    "aria-label": {
+      control: { type: "text" },
+      description: "Description for accessibility",
+    },
+  },
 };
 
 export const Default = Template.bind({});
 Default.args = {
-    "aria-label": "loading",
+  "aria-label": "loading",
 };
 
 Default.parameters = {
-    docs: {
-        source: {
-            code: tagToString("evo-progress-spinner", Default.args),
-        },
+  docs: {
+    source: {
+      code: tagToString("evo-progress-spinner", Default.args),
     },
+  },
 };
