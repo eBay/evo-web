@@ -1,5 +1,5 @@
 export interface Input extends Marko.HTML.Span {
-    size?: "large" | "small";
+    size?: "large" | "small" | "regular";
 }
 <const/{ class: inputClass, size, ...htmlInput }=input/>
 
@@ -13,12 +13,12 @@ export interface Input extends Marko.HTML.Span {
     role="img"
 >
     <if=(size === "large")>
-        // <ebay-spinner-30-icon/>
+        <evo-spinner-30-icon/>
     </if>
     <else if=(size === "small")>
-        // <ebay-spinner-20-icon/>
+        <evo-spinner-20-icon/>
     </else>
     <else>
-        // <ebay-spinner-24-icon/>
+        <evo-spinner-24-icon/>
     </else>
 </span>

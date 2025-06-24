@@ -20,10 +20,10 @@ export default {
 
     argTypes: {
         size: {
-            options: ["small", "large"],
+            options: ["small", "large", "regular"],
             control: { type: "select" },
             description:
-                'size of spinner - can be "small", "large". default is small ',
+                'size of spinner - can be "small", "large". default is regular',
         },
         "aria-label": {
             control: { type: "text" },
