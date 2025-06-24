@@ -89,8 +89,7 @@ static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
 <svg
     ...htmlInput
     class=[getIconClass(input._type ?? "", input._name, input._size)]
-    focusable="false"
-    role=(hasA11yText && "img")
+    role=(!!hasA11yText && "img")
     aria-hidden=!hasA11yText && "true"
     aria-labelledby=hasTitle && titleId
 

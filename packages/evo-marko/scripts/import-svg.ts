@@ -26,7 +26,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const outputBaseDir = path.join(__dirname, "../src/tags");
 const outputCommonDir = path.join(__dirname, "../src/common");
-const examplesMap = {};
+const examplesMap: Map<string, string[]> = new Map();
 const iconSizes = [
   "12",
   "16",
@@ -70,15 +70,15 @@ const htmlMinifierOptions = {
   collapseWhitespace: true,
 };
 
-function getOutputDir(fileName) {
+function getOutputDir(fileName: string) {
   return path.join(outputBaseDir, `evo-${fileName}`, "tags");
 }
 
-function getExamples(fileName) {
+function getExamples(fileName: string) {
   return path.join(outputBaseDir, `evo-${fileName}`, "examples", "all.marko");
 }
 
-function setupDir(fileName) {
+function setupDir(fileName: string) {
   const outputDir = getOutputDir(fileName);
   const example = getExamples(fileName);
   cp.execSync(`rm -rf ${JSON.stringify(outputDir)}`);
@@ -87,7 +87,7 @@ function setupDir(fileName) {
   fs.writeFileSync(example, `div.icon-examples`);
 }
 
-function addIcons(component, iconMap) {
+function addIcons(component: string, iconMap: Map<string, string>) {
   let svgFile = path.join(svgDir, `icons.svg`);
   if (component === "flag") {
     svgFile = path.join(svgDir, `flags.svg`);
@@ -98,7 +98,7 @@ function addIcons(component, iconMap) {
   for (const el of Array.from($("symbol"))) {
     const $symbol = $(el)!;
     if ($symbol.attr("id")?.startsWith(component)) {
-      const name = $symbol.attr("id")?.replace(/^(?:svg-)?icon-/, "");
+      const name = $symbol.attr("id")?.replace(/^(?:svg-)?icon-/, "") ?? "";
       if ($symbol.html()?.indexOf("url(#") || -1 > -1) {
         // Find matching def
       }
@@ -108,7 +108,7 @@ function addIcons(component, iconMap) {
     }
   }
 }
-function generateFile(type, iconMap) {
+function generateFile(type: string, iconMap: Map<string, string>) {
   for (const [name, themes] of iconMap) {
     let postfixName = "";
     if (type === "icon") {
@@ -148,11 +148,11 @@ export type Input = Omit<IconInput, \`_\${string}\`>;
   }
 }
 
-function generateExamples(type, iconMap) {
+function generateExamples(type: string, iconsList: string[]) {
   const exampleFile = path.join(getExamples(type));
   const file = fs.readFileSync(exampleFile, "utf-8");
   const exampleHTML: string[] = [];
-  for (const name of iconMap) {
+  for (const name of iconsList) {
     if (skipExamples.indexOf(name) > -1) {
       continue;
     }
@@ -167,20 +167,18 @@ function generateExamples(type, iconMap) {
   fs.writeFileSync(exampleFile, `${file}\n${exampleHTML.join("\n")}`);
 }
 
-function generateIcon(componentName) {
+function generateIcon(componentName: string) {
   const icons = new Map();
   addIcons(componentName, icons);
   generateFile(componentName, icons);
-  examplesMap[componentName] = examplesMap[componentName] || [];
-  for (const [name] of icons) {
-    examplesMap[componentName].push(name);
-  }
+  const iconList = Array.from(icons.keys());
+  examplesMap.set(componentName, iconList);
   if (componentName === "flag") {
     generateFlagComponent(icons);
   }
 }
 
-function generateFlagComponent(iconMap) {
+function generateFlagComponent(iconMap: Map<string, string>) {
   const twoDititCountries = getCountries();
   const countries: Countries = {};
   for (const [name] of iconMap) {
@@ -218,8 +216,8 @@ generateIcon("icon");
 // generateIcon("image-placeholder");
 // generateIcon("flag");
 
-Object.keys(examplesMap).forEach((componentName) => {
-  examplesMap[componentName].sort((a, b) => {
+examplesMap.forEach((items, componentName) => {
+  items.sort((a, b) => {
     if (a < b) {
       return -1;
     }
@@ -228,5 +226,5 @@ Object.keys(examplesMap).forEach((componentName) => {
     }
     return 0;
   });
-  generateExamples(componentName, examplesMap[componentName]);
+  generateExamples(componentName, items);
 });
