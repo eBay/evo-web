@@ -10,7 +10,7 @@ export default {
     decorators: [
         (Story) => (
             <StrictMode>
-                <EbaySvg />
+                <EbaySvg flags />
                 <Story />
             </StrictMode>
         ),
