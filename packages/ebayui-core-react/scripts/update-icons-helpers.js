@@ -19,7 +19,7 @@ function getIconKeys(icons = []) {
     const symbolIds = icons.map((symbol) => symbol.attributes.id);
 
     return {
-        iconKeys: symbolIds.map((symbolId) => camelCased(symbolId.replace(/^icon-/, ""))).sort(),
+        iconKeys: symbolIds.map((symbolId) => camelCased(symbolId.replace(/^(icon|flag)-/, ""))).sort(),
     };
 }
 

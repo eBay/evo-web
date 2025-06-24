@@ -1,5 +1,6 @@
 import React, { StrictMode } from "react";
-import { EbaySvg } from "../src/ebay-svg";
+import { EbaySvg, EbayFlagsSvg } from "../src/ebay-svg";
+
 import "@ebay/skin";
 import "@ebay/skin/dist/tokens/evo-core.css";
 import "@ebay/skin/dist/tokens/evo-light.css";
@@ -11,6 +12,7 @@ export default {
         (Story) => (
             <StrictMode>
                 <EbaySvg />
+                <EbayFlagsSvg />
                 <Story />
             </StrictMode>
         ),

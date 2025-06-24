@@ -13,12 +13,13 @@ yarn add @ebay/ui-core-react
 Import it and place at the end of your HTML and make sure that this component is only rendered on the server and never import it on the client side.
 
 ```jsx harmony
-import { EbaySvg } from "@ebay/ui-core-react/ebay-svg";
+import { EbaySvg, EbayFlagsSvg } from "@ebay/ui-core-react/ebay-svg";
 
 <Html>
     <Component1 />
     <Component2 />
     <EbaySvg />
+    <EbayFlagsSvg />
 </Html>;
 ```
 
