@@ -25,9 +25,9 @@ export default {
       description:
         'size of spinner - can be "small", "large". default is regular',
     },
-    "aria-label": {
+    a11yText: {
       control: { type: "text" },
-      description: "Description for accessibility",
+      description: "The accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as \"Loading\"",
     },
   },
 };
