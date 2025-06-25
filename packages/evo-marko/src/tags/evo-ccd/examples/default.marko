@@ -1,7 +1,5 @@
-import type { Input as CCDInput} from "../index.marko";
-
-export interface Input extends CCDInput {
-};
+import type { Input as CCDInput } from "../index.marko";
+export interface Input extends CCDInput {}
 
 <const/a11yCharger=`${
     input.chargerIcon
@@ -15,4 +13,4 @@ export interface Input extends CCDInput {
 )/>
 <const/a11yCombined=`${a11yCharger} ${a11yFigure}`.trim()/>
 
-<evo-ccd min="1000" max="2000" aria-label=a11yCombined ...input/>
+<evo-ccd min="1000" max="2000" ...input a11yText=a11yCombined/>

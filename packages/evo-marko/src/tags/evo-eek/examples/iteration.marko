@@ -4,6 +4,6 @@ static const ratings = ["A", "B", "C", "D", "E", "F", "G"];
 <div>
     <for|rating| of=ratings>
         <const/label=`Energy Rating: ${rating}. Range ${max} - ${min}` />
-        <evo-eek max=max min=min rating=rating aria-label=label />
+        <evo-eek max=max min=min rating=rating a11yText=label ...input />
     </for>
 </div>

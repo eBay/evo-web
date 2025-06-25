@@ -25,10 +25,10 @@ export default {
   },
 
   argTypes: {
-    "aria-label": {
+    "a11yText": {
       control: { type: "text" },
       description:
-        "The aria-label accessibility label for the eek component. This is for internationalization. It should use min, max, and rating in the label in order to demonstrate to screen readers the content on the component. Expected value `Energy efficiency class ${rating}. ${min} - ${max}`",
+        "Required: The aria-label accessibility label for the eek component. This is for internationalization. It should use min, max, and rating in the label in order to demonstrate to screen readers the content on the component. Expected value `Energy efficiency class ${rating}. ${min} - ${max}`",
     },
     rating: {
       control: { type: "text" },

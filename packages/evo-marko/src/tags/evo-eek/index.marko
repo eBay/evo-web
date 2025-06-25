@@ -1,16 +1,16 @@
 import type { AttrString } from "marko/tags-html";
 export interface Input extends Marko.HTML.Div {
-  max: string;
-  min: string;
-  rating: string;
   /**
-   *  The aria-label accessibility label for the eek rating. This is for internationalization.
+   *  This is the accessibility label for the eek rating. This is also used for internationalization.
    *  It should use eekRating, min, and max values in the label in order to demonstrate
    *  to screen readers the content on the component.
    *
-   *  Expected value `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
+   *  Expected english value `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
    **/
-  "aria-label"?: AttrString;
+  a11yText: Marko.HTML.Div["aria-label"];
+  max: string;
+  min: string;
+  rating: string;
   size?: "regular" | "large";
 }
 static const validRanges = {
@@ -42,8 +42,10 @@ static function eekUtil(max:string, min:string, rating:string) {
   }
   return i > 7 ? 7 : i;
 }
+
 <const/{
   class: inputClass,
+  a11yText,
   size,
   max,
   min,
@@ -53,6 +55,7 @@ static function eekUtil(max:string, min:string, rating:string) {
 
 <const/htmlInput=(({
   class: inputClass,
+  a11yText,
   size,
   max,
   min,
@@ -63,6 +66,7 @@ static function eekUtil(max:string, min:string, rating:string) {
 <const/eekRating=eekUtil(max, min, rating)/>
 <div
   ...htmlInput
+  aria-label=a11yText
   role="figure"
   class=[
     "eek",

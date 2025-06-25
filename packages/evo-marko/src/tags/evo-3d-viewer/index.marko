@@ -4,7 +4,10 @@ import { load as modelViewerLoad } from "@internal/model-viewer";
 export interface Input extends Partial<ModelViewerElement> {
     class?: AttrClass;
     errorText: AttrString;
-    a11yLoadText: AttrString;
+    /**
+     * The aria-label accessibility label for the 3D viewer.
+     **/
+    a11yLoadingText: AttrString;
     onLoadError?: (err: CustomEvent) => void;
 }
 <const/{
@@ -12,7 +15,7 @@ export interface Input extends Partial<ModelViewerElement> {
     src,
     errorText,
     onLoadError,
-    a11yLoadText,
+    a11yLoadingText,
     // ...htmlInput
 }=input/>
 
@@ -21,7 +24,7 @@ export interface Input extends Partial<ModelViewerElement> {
     src,
     errorText,
     onLoadError,
-    a11yLoadText,
+    a11yLoadingText,
     ...rest
 }) => rest)(input)/>
 
