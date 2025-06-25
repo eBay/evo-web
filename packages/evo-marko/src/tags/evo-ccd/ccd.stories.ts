@@ -36,6 +36,10 @@ export default {
         },
       },
     },
+    "aria-label": {
+      control: { type: "text" },
+      description: "The aria-label accessibility label for the ccd component. This is for internationalization. It should use min, max, and charger included or not included, and secondaryText in the label in order to demonstrate to screen readers the content on the component. Expected value `Charger included. ${min} - ${max} Watts. USB PD`",
+    },
     secondaryType: {
       control: { type: "select" },
       options: ["none", "usbpd"],

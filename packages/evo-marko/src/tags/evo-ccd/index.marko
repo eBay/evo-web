@@ -9,7 +9,8 @@ export interface Input extends Marko.HTML.Div {
      * This is for internationalization.
      * It should use min, max, and charger included or not included, and secondaryText in the label in order to demonstrate
      * to screen readers the content on the component.
-     * Expected return `Charger included. ${min} - ${max} Watts. USB PD`
+     *
+     * Expected value `Charger included. ${min} - ${max} Watts. USB PD`
      */
     "aria-label"?: AttrString;
     secondaryType?: "none" | "usbpd";

@@ -1,16 +1,15 @@
 static const VALID_SIZES = ["small", "large"];
 import type { AttrString } from "marko/tags-html";
 static var validPriorities = ["primary", "secondary", "tertiary"];
-import type { Input as ButtonInput } from "../evo-button/index.marko";
+import type { Input as ButtonInput } from "<evo-button>";
 import type { Input as BadgeInput } from "<evo-badge>";
 
-export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.A, "type" |`on${string}`> {
+export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on${string}`> {
   badge?: Marko.AttrTag<BadgeInput>;
-  badgeNumber?: number | string;
   href?: string;
   transparent?: boolean;
-  priority?: "primary" | "secondary" | "tertiary" | "none";
-  size?: "small" | "large";
+  priority?: ButtonInput["priority"]
+  size?: ButtonInput["size"]
   partiallyDisabled?: ButtonInput["partiallyDisabled"];
   onEscape?: ButtonInput["onEscape"];
 }
@@ -20,6 +19,7 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     priority = "none",
     partiallyDisabled,
     content,
+    type,
     size,
     transparent,
     class: inputClass,
@@ -32,6 +32,7 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     partiallyDisabled,
     content,
     size,
+    type,
     transparent,
     class: inputClass,
     ...rest
@@ -55,7 +56,7 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
         validPriorities.includes(priority) && `${baseClassName}--${priority}`,
         size && VALID_SIZES.includes(size) && `${baseClassName}--${size}`,
     ]
-    type=tagType === "button" && (input.type || "button")
+    type=tagType === "button" && (type || "button")
     aria-disabled=partiallyDisabled && "true"
 >
     <${content}/>

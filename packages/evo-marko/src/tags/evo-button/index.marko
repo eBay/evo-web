@@ -2,7 +2,7 @@ import type { AttrString } from "marko/tags-html";
 static const validPriorities = ["primary", "secondary", "tertiary", "delete"];
 static const validSizes = ["large", "small"] as const;
 
-export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.A, "type" |`on${string}`> {
+export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on${string}`> {
     href?: string;
     size?: (typeof validSizes)[number];
     priority?: "primary" | "secondary" | "tertiary" | "none";
@@ -16,7 +16,6 @@ export interface Input extends Omit<Marko.HTML.Button, "type">, Omit<Marko.HTML.
     fixedHeight?: boolean;
     truncate?: boolean;
     split?: string;
-    type?: Marko.HTML.Button["type"] | (string & {});
     a11yLoadingText?: AttrString;
     onEscape?: (event: KeyboardEvent) => void;
 }

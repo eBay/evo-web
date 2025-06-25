@@ -7,7 +7,8 @@ export interface Input extends Marko.HTML.Div {
    *  The aria-label accessibility label for the eek rating. This is for internationalization.
    *  It should use eekRating, min, and max values in the label in order to demonstrate
    *  to screen readers the content on the component.
-   *  Expected return `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
+   *
+   *  Expected value `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
    **/
   "aria-label"?: AttrString;
   size?: "regular" | "large";
@@ -18,8 +19,7 @@ static const validRanges = {
   "A+": ["F", "G"],
   A: ["G"],
 };
-static function eekUtil(input: Input) {
-  const { max, min, rating } = input;
+static function eekUtil(max:string, min:string, rating:string) {
   const validMax = validRanges[max as keyof typeof validRanges];
   if (!(validMax && validMax.indexOf(min) > -1)) {
     return null;
@@ -60,7 +60,7 @@ static function eekUtil(input: Input) {
   ...rest
 }) => rest)(input)/>
 
-<const/eekRating=eekUtil(input)/>
+<const/eekRating=eekUtil(max, min, rating)/>
 <div
   ...htmlInput
   role="figure"
