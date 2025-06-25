@@ -1,6 +1,6 @@
 import type { AttrString } from "marko/tags-html";
-static const validPriorities = ["primary", "secondary", "tertiary", "delete"];
-static const validSizes = ["large", "small"] as const;
+static export const validPriorities = ["primary", "secondary", "tertiary"];
+static export const validSizes = ["large", "small"] as const;
 
 export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on${string}`> {
     href?: string;

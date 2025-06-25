@@ -1,7 +1,4 @@
-static const VALID_SIZES = ["small", "large"];
-import type { AttrString } from "marko/tags-html";
-static var validPriorities = ["primary", "secondary", "tertiary"];
-import type { Input as ButtonInput } from "<evo-button>";
+import { type Input as ButtonInput, validPriorities, validSizes } from "<evo-button>";
 import type { Input as BadgeInput } from "<evo-badge>";
 
 export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on${string}`> {
@@ -54,7 +51,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
         badge?.number && `${baseClassName}--badged`,
         transparent && `${baseClassName}--transparent`,
         validPriorities.includes(priority) && `${baseClassName}--${priority}`,
-        size && VALID_SIZES.includes(size) && `${baseClassName}--${size}`,
+        size && validSizes.includes(size) && `${baseClassName}--${size}`,
     ]
     type=tagType === "button" && (type || "button")
     aria-disabled=partiallyDisabled && "true"
