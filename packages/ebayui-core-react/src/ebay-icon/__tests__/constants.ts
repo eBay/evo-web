@@ -222,8 +222,6 @@ export const icons: Icon[] = [
     'creditCard64',
     'crop24',
     'customize16',
-    'customize16',
-    'customize24',
     'customize24',
     'delete16',
     'delete20',
