@@ -2,6 +2,8 @@
 applyTo: "**/*.marko"
 ---
 
+Follow our styleguide: https://github.com/eBay/evo-web/blob/main/packages/skin/STYLEGUIDE.md
+
 Coding standards, domain knowledge, and preferences that AI should follow.
 
 Always use BEM (Block Element Modifier) naming conventions for all HTML classes and CSS/SCSS selectors.
