@@ -3,22 +3,23 @@ import classNames from "classnames";
 import { withForwardRef } from "../common/component-utils";
 import { randomId } from "../common/random-id";
 import { Icon } from "./types";
+import type { Icon as FlagIcon } from "../ebay-flag";
 
 export type A11yVariant = "label";
 
 export type EbayIconProps = SVGProps<SVGSVGElement> & {
     className?: string;
-    name: Icon;
+    name: Icon | FlagIcon;
     noSkinClasses?: boolean;
     a11yText?: string;
     a11yVariant?: A11yVariant;
     forwardedRef?: Ref<SVGSVGElement>;
     /**
-     * These properties are used by EbayImagePlaceholder and will be used for flags.
+     * These properties are used by EbayImagePlaceholder and for flags.
      * NOTE: The flag "@deprecated" is only to not show this property in the autocomplete list on the top
      * @deprecated
      */
-    __type?: "icon" | "none";
+    __type?: "icon" | "flag" | "none";
 };
 
 const EbayIcon: FC<EbayIconProps> = ({
@@ -51,10 +52,13 @@ const EbayIcon: FC<EbayIconProps> = ({
     const kebabName = kebabCased(name);
     const size = getIconSize(kebabName) || kebabName;
 
-    const skinClassName = [`icon`, `icon--${size}`, getFilledIconName(kebabName)].filter(Boolean).join(" ");
+    const classNamePrefix = __type === "flag" ? "flag" : "icon";
+    const skinClassName = [`${classNamePrefix}`, `${classNamePrefix}--${size}`, getFilledIconName(kebabName)]
+        .filter(Boolean)
+        .join(" ");
     const className = classNames(extraClass, { [skinClassName]: !noSkinClasses });
 
-    const iconPrefix = __type === "icon" ? "icon-" : "";
+    const iconPrefix = ["icon", "flag"].includes(__type) ? `${__type}-` : "";
 
     return (
         <svg

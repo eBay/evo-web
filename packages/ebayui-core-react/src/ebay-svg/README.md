@@ -33,6 +33,14 @@ import { EbaySvg } from "@ebay/ui-core-react/ebay-svg";
 <EbaySvg icons={["attention16", "information16"]} />;
 ```
 
+### Flags
+
+When using flags with the `EbayFlag` component you will need to enable the symbols for the flags. For doing that you use the `flags` attribute:
+
+```jsx
+<EbaySvg flags />
+```
+
 ## Attributes
 
 | Name    | Type   | Stateful | Description |
