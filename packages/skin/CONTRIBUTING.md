@@ -19,7 +19,7 @@ This page contains instructions and guidelines for anybody contributing code to 
     - [Commit Message Format](#commit-message-format)
     - [Pull Requests](#pull-requests)
     - [Naming Scheme](#naming-scheme)
-    - [Style Guide](https://github.com/eBay/evo-web/new/main/packages/skin/STYLEGUIDE.md)
+    - [Style Guide](https://github.com/eBay/evo-web/blob/main/packages/skin/STYLEGUIDE.md)
     - [LESS API (deprecated)](#less-api-deprecated)
     - [Custom Property API](#custom-property-api)
         - [Core Tokens](#core-tokens)
@@ -58,7 +58,7 @@ Here is a rough overview of steps required when contributing code to skin:
 
 - GitHub team members must create a new branch in the Skin repo. Non-team members should create their own fork.
 - Please ensure you branch off from the correct milestone branch! See branching strategy section below.
-- Skin adopts the [BEM](https://css-tricks.com/bem-101/) methodology (a popular naming convention for classes in HTML and CSS). Please familiarize yourself with our [style guide](https://github.com/eBay/evo-web/new/main/packages/skin/STYLEGUIDE.md).
+- Skin adopts the [BEM](https://css-tricks.com/bem-101/) methodology (a popular naming convention for classes in HTML and CSS). Please familiarize yourself with our [style guide](https://github.com/eBay/evo-web/blob/main/packages/skin/STYLEGUIDE.md).
 - After making changes to `.less` files, ensure that no new CSS lint warnings or errors are introduced
 - Add or update the corresponding website documentation. More information in the [documentation](#documentation) section below.
 - Push commit(s) to the upstream branch. Ensure new dist files (i.e. the compiled CSS files) are included!
@@ -242,7 +242,7 @@ eBay Skin is an implementation of the [eBay MIND Patterns](https://ebay.gitbook.
 
 ## Style Guide
 
-When contributing to Skin, please ensure you follow our [style guide](https://github.com/eBay/evo-web/new/main/packages/skin/STYLEGUIDE.md).
+When contributing to Skin, please ensure you follow our [style guide](https://github.com/eBay/evo-web/blob/main/packages/skin/STYLEGUIDE.md).
 
 ## LESS API (deprecated)
 
