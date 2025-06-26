@@ -19,7 +19,7 @@ This page contains instructions and guidelines for anybody contributing code to 
     - [Commit Message Format](#commit-message-format)
     - [Pull Requests](#pull-requests)
     - [Naming Scheme](#naming-scheme)
-    - [Style Guide](https://github.com/eBay/evo-web/new/main/packages/skin/STYLEGUIDE.md))
+    - [Style Guide](https://github.com/eBay/evo-web/new/main/packages/skin/STYLEGUIDE.md)
     - [LESS API (deprecated)](#less-api-deprecated)
     - [Custom Property API](#custom-property-api)
         - [Core Tokens](#core-tokens)
