@@ -1,0 +1,108 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <div
+      dir="rtl"
+      style="
+        display: grid;
+        grid-template-areas: "center";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr
+      "
+    >
+      <div style="
+        background-color: var(--file-input-background-color, var(--color-background-secondary));
+        border-bottom-style: dashed;
+        border-bottom-width: 1px;
+        border-left-style: dashed;
+        border-left-width: 1px;
+        border-right-style: dashed;
+        border-right-width: 1px;
+        border-top-style: dashed;
+        border-top-width: 1px;
+        display: flex;
+        grid-column-end: center;
+        grid-column-start: center;
+        grid-row-end: center;
+        grid-row-start: center;
+        min-width: fit-content;
+        padding: var(--spacing-200);
+        pointer-events: none;
+        z-index: 1
+      ">
+        <div style="
+          align-self: center;
+          background-color: var(--file-input-upload-icon-background-color, var(--color-background-primary));
+          border-bottom-left-radius: 99px;
+          border-bottom-right-radius: 99px;
+          border-top-left-radius: 99px;
+          border-top-right-radius: 99px;
+          padding: var(--spacing-150)
+        ">
+          <svg style="
+            display: inline-block;
+            fill: var(--file-input-upload-icon-fill, var(--color-foreground-primary));
+            height: var(--spacing-300);
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: var(--spacing-300)
+          ">
+            <use href="#icon-upload-24"/>
+          </svg>
+        </div>
+        <div style="
+          align-items: start;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          justify-content: center
+        ">
+          <h4 style="
+            color: var(--file-input-content-header-color, var(--color-foreground-primary));
+            font-size: var(--font-size-14);
+            line-height: var(--spacing-250);
+            margin-block: 0 var(--spacing-50)
+          ">
+            Drag and drop files
+          </h4>
+          <span style="
+            color: var(--file-input-content-subheader-color, var(--color-foreground-secondary));
+            font-size: var(--font-size-12);
+            line-height: var(--spacing-200);
+            margin-block-end: var(--spacing-100)
+          ">
+            Up to 10MB per file in JPG, JPEG, PNG, MP4.
+          </span>
+          <label>
+            <span style="text-decoration-line: underline">
+              Browse files
+            </span>
+          </label>
+        </div>
+      </div>
+      <input
+        multiple
+        style="
+          grid-column-end: center;
+          grid-column-start: center;
+          grid-row-end: center;
+          grid-row-start: center
+        "
+        type="file"
+      />
+    </div>
+  </div>
+</body>

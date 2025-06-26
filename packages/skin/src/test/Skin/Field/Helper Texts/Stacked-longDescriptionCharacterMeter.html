@@ -1,0 +1,86 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <span style="
+      display: inline-block;
+      width: 200px
+    ">
+      <label style="
+        display: block;
+        margin-bottom: 8px;
+        margin-right: 8px
+      ">
+        Field 1
+      </label>
+      <span style="
+        align-items: center;
+        background-color: var(--textbox-background-color, var(--color-background-secondary));
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: var(--textbox-foreground-color, var(--color-foreground-on-secondary));
+        display: inline-flex;
+        font-size: var(--font-size-default);
+        overflow-x: hidden;
+        overflow-y: hidden;
+        position: relative;
+        width: fit-content
+      ">
+        <input style="
+          appearance: none;
+          color: inherit;
+          flex-grow: 1;
+          font-family: inherit;
+          font-size: 1em;
+          height: calc(var(--input-default-height) - 2px);
+          margin-bottom: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-top: 0px;
+          padding-inline-end: var(--spacing-200);
+          padding-inline-start: var(--spacing-200);
+          vertical-align: middle
+        "/>
+      </span>
+      <div style="
+        color: var(--field-description-color, var(--color-foreground-secondary));
+        display: flex;
+        font-size: var(--font-size-small);
+        justify-content: flex-end;
+        line-height: var(--spacing-200);
+        margin-top: var(--spacing-50);
+        margin: var(--spacing-100) 0 0
+      ">
+        <span style="
+          flex-basis: 0%;
+          flex-grow: 1
+        ">
+          Field description or error which is long and should wrap to next line
+        </span>
+        <span style="
+          margin-inline-start: 5px;
+          text-align: right
+        ">
+          0 of 140
+        </span>
+      </div>
+    </span>
+  </div>
+</body>

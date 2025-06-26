@@ -1,0 +1,70 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <div style="
+      --skeleton-background: var(--color-loading-ai-gradient-blue-subtle);
+      container-name: skeleton-container;
+      container-type: inline-size;
+      cursor: progress;
+      width: 225px
+    ">
+      <div style="
+        animation: var(--motion-duration-long-3) var(--motion-easing-continuous) infinite alternate on-primary;
+        background: var(--skeleton-background, var(--color-loading-fill));
+        height: 225px;
+        margin-block-end: var(--spacing-150);
+        width: 225px
+      ">
+        <style>@scope{:scope{
+          &::after {
+            bottom: 0px;
+            height: 100%;
+            left: 0px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 100%
+          }
+        }}</style>
+      </div>
+      <div style="
+        animation: var(--motion-duration-long-3) var(--motion-easing-continuous) infinite alternate on-primary;
+        background: var(--skeleton-background, var(--color-loading-fill));
+        height: 16px;
+        margin-bottom: var(--spacing-300);
+        position: relative;
+        width: calc(100% - var(--spacing-300))
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-attachment: inherit;
+            background-clip: inherit;
+            background-color: inherit;
+            background-image: inherit;
+            background-origin: inherit;
+            background-position-x: inherit;
+            background-position-y: inherit;
+            background-repeat: inherit;
+            background-size: inherit;
+            content: "";
+            height: 16px;
+            margin-top: calc(16px + var(--spacing-100));
+            position: absolute;
+            width: calc(100% - var(--spacing-700))
+          }
+        }}</style>
+      </div>
+    </div>
+  </div>
+</body>

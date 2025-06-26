@@ -1,0 +1,482 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <div
+      dir="rtl"
+      style="
+        container-name: file-preview-cards-container;
+        container-type: inline-size
+      "
+    >
+      <ul style="
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        list-style-type: none;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding-left: 0px;
+        width: 100%
+      ">
+        <li style="
+          display: flex;
+          flex-direction: column;
+          height: max-content
+        ">
+          <div style="
+            aspect-ratio: 1 / 1;
+            background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
+            display: flex;
+            max-width: 396px;
+            min-height: 120px;
+            min-width: 120px;
+            position: relative
+          ">
+            <svg style="
+              display: inline-block;
+              fill: currentcolor;
+              height: 40%;
+              margin-bottom: auto;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: auto;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 40%
+            ">
+              <use href="#icon-file-24"/>
+            </svg>
+            <button style="
+              background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
+              border-bottom-color: transparent;
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius: 50px;
+              border-bottom-style: solid;
+              border-left-color: transparent;
+              border-left-style: solid;
+              border-right-color: transparent;
+              border-right-style: solid;
+              border-top-color: transparent;
+              border-top-left-radius: 50px;
+              border-top-right-radius: 50px;
+              border-top-style: solid;
+              font-family: inherit;
+              height: var(--spacing-400);
+              justify-content: center;
+              left: var(--spacing-100);
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: absolute;
+              top: var(--spacing-100);
+              vertical-align: text-bottom;
+              width: var(--spacing-400);
+              z-index: 1
+            ">
+              <svg
+                height="16"
+                style="
+                  display: inline-block;
+                  fill: var(--icon-button-icon-foreground-color, var(--color-foreground-primary));
+                  height: 16px;
+                  max-width: 75%;
+                  pointer-events: none;
+                  position: relative;
+                  stroke-width: 0;
+                  stroke: currentcolor;
+                  vertical-align: middle;
+                  width: 16px
+                "
+                width="16"
+              >
+                <use href="#icon-overflow-vertical-16"/>
+              </svg>
+            </button>
+            <div style="
+              align-items: center;
+              background-color: var(--file-preview-card-info-background-color, var(--color-background-primary));
+              border-bottom-left-radius: 1em;
+              border-bottom-right-radius: 1em;
+              border-top-left-radius: 1em;
+              border-top-right-radius: 1em;
+              bottom: var(--spacing-100);
+              display: flex;
+              font-size: var(--font-size-12);
+              padding: var(--spacing-50) var(--spacing-100);
+              position: absolute;
+              right: var(--spacing-100);
+              z-index: 1
+            ">
+              CSV
+            </div>
+          </div>
+          <div style="display: grid">
+            <span style="
+              overflow-x: hidden;
+              overflow-y: hidden;
+              text-overflow: ellipsis;
+              text-wrap-mode: nowrap
+            ">
+              countries.csv
+            </span>
+            <span style="
+              color: var(--color-foreground-secondary);
+              font-size: var(--font-size-small);
+              overflow-x: hidden;
+              overflow-y: hidden;
+              text-overflow: ellipsis;
+              text-wrap-mode: nowrap
+            ">
+              English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+            </span>
+          </div>
+        </li>
+        <li style="
+          display: flex;
+          flex-direction: column;
+          height: max-content
+        ">
+          <div style="
+            aspect-ratio: 1 / 1;
+            background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
+            display: flex;
+            max-width: 396px;
+            min-height: 120px;
+            min-width: 120px;
+            position: relative
+          ">
+            <img
+              height=203
+              style="
+                align-self: center;
+                height: 100%;
+                margin-bottom: auto;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                object-fit: contain;
+                width: 100%
+              "
+              width=203
+            />
+            <button style="
+              background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
+              border-bottom-color: transparent;
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius: 50px;
+              border-bottom-style: solid;
+              border-left-color: transparent;
+              border-left-style: solid;
+              border-right-color: transparent;
+              border-right-style: solid;
+              border-top-color: transparent;
+              border-top-left-radius: 50px;
+              border-top-right-radius: 50px;
+              border-top-style: solid;
+              font-family: inherit;
+              height: var(--spacing-400);
+              justify-content: center;
+              left: var(--spacing-100);
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: absolute;
+              top: var(--spacing-100);
+              vertical-align: text-bottom;
+              width: var(--spacing-400);
+              z-index: 1
+            ">
+              <svg
+                height="16"
+                style="
+                  display: inline-block;
+                  fill: var(--icon-button-icon-foreground-color, var(--color-foreground-primary));
+                  height: 16px;
+                  max-width: 75%;
+                  pointer-events: none;
+                  position: relative;
+                  stroke-width: 0;
+                  stroke: currentcolor;
+                  vertical-align: middle;
+                  width: 16px
+                "
+                width="16"
+              >
+                <use href="#icon-overflow-vertical-16"/>
+              </svg>
+            </button>
+          </div>
+        </li>
+        <li style="
+          display: flex;
+          flex-direction: column;
+          height: max-content
+        ">
+          <div style="
+            aspect-ratio: 1 / 1;
+            background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
+            display: flex;
+            max-width: 396px;
+            min-height: 120px;
+            min-width: 120px;
+            position: relative
+          ">
+            <img
+              height=203
+              style="
+                align-self: center;
+                height: 100%;
+                margin-bottom: auto;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                object-fit: contain;
+                width: 100%
+              "
+              width=203
+            />
+            <button style="
+              background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
+              border-bottom-color: transparent;
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius: 50px;
+              border-bottom-style: solid;
+              border-left-color: transparent;
+              border-left-style: solid;
+              border-right-color: transparent;
+              border-right-style: solid;
+              border-top-color: transparent;
+              border-top-left-radius: 50px;
+              border-top-right-radius: 50px;
+              border-top-style: solid;
+              font-family: inherit;
+              height: var(--spacing-400);
+              justify-content: center;
+              left: var(--spacing-100);
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: absolute;
+              top: var(--spacing-100);
+              vertical-align: text-bottom;
+              width: var(--spacing-400);
+              z-index: 1
+            ">
+              <svg
+                height="16"
+                style="
+                  display: inline-block;
+                  fill: var(--icon-button-icon-foreground-color, var(--color-foreground-primary));
+                  height: 16px;
+                  max-width: 75%;
+                  pointer-events: none;
+                  position: relative;
+                  stroke-width: 0;
+                  stroke: currentcolor;
+                  vertical-align: middle;
+                  width: 16px
+                "
+                width="16"
+              >
+                <use href="#icon-overflow-vertical-16"/>
+              </svg>
+            </button>
+          </div>
+        </li>
+        <li style="
+          display: flex;
+          flex-direction: column;
+          height: max-content
+        ">
+          <div style="
+            aspect-ratio: 1 / 1;
+            background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
+            display: flex;
+            max-width: 396px;
+            min-height: 120px;
+            min-width: 120px;
+            position: relative
+          ">
+            <video style="
+              align-self: center;
+              height: 100%;
+              margin-bottom: auto;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: auto;
+              width: 100%
+            "/>
+            <button style="
+              background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
+              border-bottom-color: transparent;
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius: 50px;
+              border-bottom-style: solid;
+              border-left-color: transparent;
+              border-left-style: solid;
+              border-right-color: transparent;
+              border-right-style: solid;
+              border-top-color: transparent;
+              border-top-left-radius: 50px;
+              border-top-right-radius: 50px;
+              border-top-style: solid;
+              font-family: inherit;
+              height: var(--spacing-400);
+              justify-content: center;
+              left: var(--spacing-100);
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: absolute;
+              top: var(--spacing-100);
+              vertical-align: text-bottom;
+              width: var(--spacing-400);
+              z-index: 1
+            ">
+              <svg
+                height="16"
+                style="
+                  display: inline-block;
+                  fill: var(--icon-button-icon-foreground-color, var(--color-foreground-primary));
+                  height: 16px;
+                  max-width: 75%;
+                  pointer-events: none;
+                  position: relative;
+                  stroke-width: 0;
+                  stroke: currentcolor;
+                  vertical-align: middle;
+                  width: 16px
+                "
+                width="16"
+              >
+                <use href="#icon-overflow-vertical-16"/>
+              </svg>
+            </button>
+            <div style="
+              align-items: center;
+              background-color: var(--file-preview-card-info-background-color, var(--color-background-primary));
+              border-bottom-left-radius: 1em;
+              border-bottom-right-radius: 1em;
+              border-top-left-radius: 1em;
+              border-top-right-radius: 1em;
+              bottom: var(--spacing-100);
+              display: flex;
+              font-size: var(--font-size-12);
+              padding: var(--spacing-50) var(--spacing-100);
+              position: absolute;
+              right: var(--spacing-100);
+              z-index: 1
+            ">
+              <svg style="
+                display: inline-block;
+                fill: currentcolor;
+                height: var(--spacing-150);
+                pointer-events: none;
+                stroke-width: 0;
+                stroke: currentcolor;
+                vertical-align: middle;
+                width: var(--spacing-150)
+              ">
+                <use href="#icon-play-16"/>
+              </svg>
+              0:21
+            </div>
+          </div>
+        </li>
+        <li style="
+          display: flex;
+          flex-direction: column;
+          height: max-content
+        ">
+          <div style="
+            aspect-ratio: 1 / 1;
+            background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
+            display: flex;
+            max-width: 396px;
+            min-height: 120px;
+            min-width: 120px;
+            position: relative
+          ">
+            <img
+              height=203
+              style="
+                align-self: center;
+                height: 100%;
+                margin-bottom: auto;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                object-fit: contain;
+                width: 100%
+              "
+              width=203
+            />
+            <button style="
+              background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
+              border-bottom-color: transparent;
+              border-bottom-left-radius: 50px;
+              border-bottom-right-radius: 50px;
+              border-bottom-style: solid;
+              border-left-color: transparent;
+              border-left-style: solid;
+              border-right-color: transparent;
+              border-right-style: solid;
+              border-top-color: transparent;
+              border-top-left-radius: 50px;
+              border-top-right-radius: 50px;
+              border-top-style: solid;
+              font-family: inherit;
+              height: var(--spacing-400);
+              justify-content: center;
+              left: var(--spacing-100);
+              padding-bottom: 0px;
+              padding-left: 0px;
+              padding-right: 0px;
+              padding-top: 0px;
+              position: absolute;
+              top: var(--spacing-100);
+              vertical-align: text-bottom;
+              width: var(--spacing-400);
+              z-index: 1
+            ">
+              <svg
+                height="16"
+                style="
+                  display: inline-block;
+                  fill: var(--icon-button-icon-foreground-color, var(--color-foreground-primary));
+                  height: 16px;
+                  max-width: 75%;
+                  pointer-events: none;
+                  position: relative;
+                  stroke-width: 0;
+                  stroke: currentcolor;
+                  vertical-align: middle;
+                  width: 16px
+                "
+                width="16"
+              >
+                <use href="#icon-overflow-vertical-16"/>
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>

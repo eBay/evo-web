@@ -1,0 +1,1405 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <div style="
+      overflow-x: auto;
+      position: relative;
+      scroll-behavior: smooth;
+      scroll-snap-type: x
+    ">
+      <table style="
+        -webkit-border-horizontal-spacing: 0px;
+        -webkit-border-vertical-spacing: 0px;
+        width: 100%
+      ">
+        <thead>
+          <tr>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 48px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-wrap-mode: nowrap;
+              width: 48px
+            ">
+              <span style="
+                display: inline-flex;
+                position: relative;
+                vertical-align: text-bottom
+              ">
+                <input
+                  style="
+                    font-size: 100%;
+                    height: 18px;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 18px;
+                    opacity: 0;
+                    position: absolute;
+                    width: 18px;
+                    z-index: 1
+                  "
+                  type="checkbox"
+                />
+                <span
+                  hidden
+                  style="
+                    display: inline-flex;
+                    height: 18px;
+                    outline-offset: 1px
+                  "
+                >
+                  <svg
+                    height="18"
+                    style="
+                      color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+                      display: inline-block;
+                      fill: currentcolor;
+                      height: 18px;
+                      pointer-events: none;
+                      stroke-width: 0;
+                      stroke: currentcolor;
+                      vertical-align: middle;
+                      width: 18px
+                    "
+                    width="18"
+                  >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                  </svg>
+                </span>
+              </span>
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Seller
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Item
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Image
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right;
+              text-wrap-mode: nowrap
+            ">
+              List Price
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right;
+              text-wrap-mode: nowrap
+            ">
+              Quantity Available
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right;
+              text-wrap-mode: nowrap
+            ">
+              Quantity Sold
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right;
+              text-wrap-mode: nowrap
+            ">
+              Watchers
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right;
+              text-wrap-mode: nowrap
+            ">
+              Protection
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Shipping
+            </th>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-inline-end: 0px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Delivery
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 48px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: center;
+              width: 48px
+            ">
+              <span style="
+                display: inline-flex;
+                position: relative;
+                vertical-align: text-bottom
+              ">
+                <input
+                  style="
+                    font-size: 100%;
+                    height: 18px;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 18px;
+                    opacity: 0;
+                    position: absolute;
+                    width: 18px;
+                    z-index: 1
+                  "
+                  type="checkbox"
+                />
+                <span
+                  hidden
+                  style="
+                    display: inline-flex;
+                    height: 18px;
+                    outline-offset: 1px
+                  "
+                >
+                  <svg
+                    height="18"
+                    style="
+                      color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+                      display: inline-block;
+                      fill: currentcolor;
+                      height: 18px;
+                      pointer-events: none;
+                      stroke-width: 0;
+                      stroke: currentcolor;
+                      vertical-align: middle;
+                      width: 18px
+                    "
+                    width="18"
+                  >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                  </svg>
+                </span>
+              </span>
+            </td>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              font-weight: 400;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Nintendo
+            </th>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              Switch
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            "/>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $287.96
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              300
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              207
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              95
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $17.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              FREE
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-inline-end: 0px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              4/1 - 4/5
+            </td>
+          </tr>
+          <tr>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 48px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: center;
+              width: 48px
+            ">
+              <span style="
+                display: inline-flex;
+                position: relative;
+                vertical-align: text-bottom
+              ">
+                <input
+                  style="
+                    font-size: 100%;
+                    height: 18px;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 18px;
+                    opacity: 0;
+                    position: absolute;
+                    width: 18px;
+                    z-index: 1
+                  "
+                  type="checkbox"
+                />
+                <span
+                  hidden
+                  style="
+                    display: inline-flex;
+                    height: 18px;
+                    outline-offset: 1px
+                  "
+                >
+                  <svg
+                    height="18"
+                    style="
+                      color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+                      display: inline-block;
+                      fill: currentcolor;
+                      height: 18px;
+                      pointer-events: none;
+                      stroke-width: 0;
+                      stroke: currentcolor;
+                      vertical-align: middle;
+                      width: 18px
+                    "
+                    width="18"
+                  >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                  </svg>
+                </span>
+              </span>
+            </td>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              font-weight: 400;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Nintendo
+            </th>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              SNES
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            "/>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $89.85
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              45
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              17
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              5
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $18.95
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              FREE
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-inline-end: 0px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              4/11 - 4/15
+            </td>
+          </tr>
+          <tr>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 48px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: center;
+              width: 48px
+            ">
+              <span style="
+                display: inline-flex;
+                position: relative;
+                vertical-align: text-bottom
+              ">
+                <input
+                  style="
+                    font-size: 100%;
+                    height: 18px;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 18px;
+                    opacity: 0;
+                    position: absolute;
+                    width: 18px;
+                    z-index: 1
+                  "
+                  type="checkbox"
+                />
+                <span
+                  hidden
+                  style="
+                    display: inline-flex;
+                    height: 18px;
+                    outline-offset: 1px
+                  "
+                >
+                  <svg
+                    height="18"
+                    style="
+                      color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+                      display: inline-block;
+                      fill: currentcolor;
+                      height: 18px;
+                      pointer-events: none;
+                      stroke-width: 0;
+                      stroke: currentcolor;
+                      vertical-align: middle;
+                      width: 18px
+                    "
+                    width="18"
+                  >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                  </svg>
+                </span>
+              </span>
+            </td>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              font-weight: 400;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Microsoft
+            </th>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              XBOX 360
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            "/>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $499.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              345
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              455
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              205
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $17.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              FREE
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-inline-end: 0px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              4/17 - 4/25
+            </td>
+          </tr>
+          <tr>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 48px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: center;
+              width: 48px
+            ">
+              <span style="
+                display: inline-flex;
+                position: relative;
+                vertical-align: text-bottom
+              ">
+                <input
+                  style="
+                    font-size: 100%;
+                    height: 18px;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 18px;
+                    opacity: 0;
+                    position: absolute;
+                    width: 18px;
+                    z-index: 1
+                  "
+                  type="checkbox"
+                />
+                <span
+                  hidden
+                  style="
+                    display: inline-flex;
+                    height: 18px;
+                    outline-offset: 1px
+                  "
+                >
+                  <svg
+                    height="18"
+                    style="
+                      color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+                      display: inline-block;
+                      fill: currentcolor;
+                      height: 18px;
+                      pointer-events: none;
+                      stroke-width: 0;
+                      stroke: currentcolor;
+                      vertical-align: middle;
+                      width: 18px
+                    "
+                    width="18"
+                  >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                  </svg>
+                </span>
+              </span>
+            </td>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              font-weight: 400;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Microsoft
+            </th>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              XBOX One
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            "/>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $499.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              399
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              407
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              305
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $27.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              FREE
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-inline-end: 0px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              4/9 - 4/11
+            </td>
+          </tr>
+          <tr>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 48px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: center;
+              width: 48px
+            ">
+              <span style="
+                display: inline-flex;
+                position: relative;
+                vertical-align: text-bottom
+              ">
+                <input
+                  style="
+                    font-size: 100%;
+                    height: 18px;
+                    margin-bottom: 0px;
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    margin-top: 0px;
+                    min-width: 18px;
+                    opacity: 0;
+                    position: absolute;
+                    width: 18px;
+                    z-index: 1
+                  "
+                  type="checkbox"
+                />
+                <span
+                  hidden
+                  style="
+                    display: inline-flex;
+                    height: 18px;
+                    outline-offset: 1px
+                  "
+                >
+                  <svg
+                    height="18"
+                    style="
+                      color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+                      display: inline-block;
+                      fill: currentcolor;
+                      height: 18px;
+                      pointer-events: none;
+                      stroke-width: 0;
+                      stroke: currentcolor;
+                      vertical-align: middle;
+                      width: 18px
+                    "
+                    width="18"
+                  >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                  </svg>
+                </span>
+              </span>
+            </td>
+            <th style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              font-weight: 400;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left;
+              text-wrap-mode: nowrap
+            ">
+              Sony
+            </th>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              Playstation 5
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            "/>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $519.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              205
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              265
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              199
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: right
+            ">
+              $29.99
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              FREE
+            </td>
+            <td style="
+              background-color: var(--color-background-primary);
+              border-bottom: 1px solid var(--color-stroke-subtle);
+              box-sizing: border-box;
+              height: 64px;
+              max-height: 64px;
+              max-width: 400px;
+              min-width: 124px;
+              padding-bottom: 12px;
+              padding-inline-end: 0px;
+              padding-left: 12px;
+              padding-right: 12px;
+              padding-top: 12px;
+              text-align: left
+            ">
+              4/11 - 4/15
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
