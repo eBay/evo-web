@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.8.0
+
+### Minor Changes
+
+- [#186](https://github.com/eBay/evo-web/pull/186) [`54fb25b`](https://github.com/eBay/evo-web/commit/54fb25b8a443c6743b5cc09a9d5664670cce69c9) Thanks [@saiponnada](https://github.com/saiponnada)! - feat(panel-dialog): added prev button
+
 ## 15.7.0
 
 ### Minor Changes
