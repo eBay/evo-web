@@ -1,0 +1,88 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <span style="
+      display: inline-block;
+      position: relative
+    ">
+      <label style="
+        color: var(--floating-label-color, var(--color-foreground-secondary));
+        display: inline-block;
+        font-size: var(--font-size-default);
+        left: 16px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        pointer-events: none;
+        position: absolute;
+        text-overflow: ellipsis;
+        text-wrap-mode: nowrap;
+        top: 0px;
+        transform-origin: left center;
+        transform: translateY(12px);
+        width: calc(100% - 40px);
+        z-index: 1
+      ">
+        Select Option long text
+      </label>
+      <span style="
+        color: var(--select-foreground-color, var(--color-foreground-primary));
+        display: inline-block;
+        font-size: var(--font-size-default);
+        position: relative
+      ">
+        <select style="
+          appearance: none;
+          background-color: var(--select-background-color, var(--color-background-secondary));
+          color: inherit;
+          font-family: inherit;
+          font-size: 1em;
+          height: 40px;
+          line-height: 52px;
+          padding: 0 var(--spacing-400) 0 var(--spacing-200);
+          vertical-align: middle
+        ">
+          <option selected/>
+          <option label="Pick Option 1 (default)">
+            Pick Option 1 (default)
+          </option>
+          <option label="Pick Option 2">
+            Pick Option 2
+          </option>
+          <option label="Pick Option 3">
+            Pick Option 3
+          </option>
+        </select>
+        <svg
+          height="8"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 100%;
+            pointer-events: none;
+            position: absolute;
+            right: 16px;
+            stroke-width: 0;
+            stroke: currentcolor;
+            top: 0px;
+            vertical-align: middle;
+            width: 12px
+          "
+          width="8"
+        >
+          <use href="#icon-chevron-down-12"/>
+        </svg>
+      </span>
+    </span>
+  </div>
+</body>

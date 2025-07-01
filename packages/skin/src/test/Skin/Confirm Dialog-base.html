@@ -1,0 +1,125 @@
+<body style="
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
+  font-family: "Market Sans", Arial, sans-serif;
+  font-size: var(--font-size-default);
+  line-height: var(--font-line-height-default);
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  min-height: 100vh;
+  text-size-adjust: 100%
+">
+  <div>
+    <div style="
+      align-items: flex-start;
+      background-color: var(--dialog-scrim-color-show);
+      bottom: 0px;
+      display: flex;
+      justify-content: center;
+      left: 0px;
+      overflow-y: auto;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      will-change: background-color;
+      z-index: 100000
+    ">
+      <div style="
+        background-color: var(--dialog-window-background-color, var(--color-background-primary));
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 0;
+        margin-bottom: auto;
+        margin-left: var(--spacing-200);
+        margin-right: var(--spacing-200);
+        margin-top: auto;
+        max-height: 90%;
+        max-width: calc(100% - 32px);
+        min-height: 55px;
+        min-width: 208px;
+        padding: var(--spacing-200);
+        will-change: opacity, transform
+      ">
+        <div>
+          <h2 style="
+            font-size: var(--font-size-large-1);
+            font-weight: var(--font-weight-bold);
+            line-height: 28px;
+            margin-bottom: 0px;
+            margin-top: 0px
+          ">
+            Delete Address?
+          </h2>
+        </div>
+        <div style="
+          margin: var(--spacing-200) 0;
+          min-height: var(--spacing-200)
+        ">
+          <p style="
+            margin-bottom: 0px;
+            margin-top: 0px
+          ">
+            You will permanently lose this address.
+          </p>
+        </div>
+        <div style="text-align: right">
+          <button style="
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom: 1px solid;
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-top: 1px solid;
+            color: inherit;
+            font-family: inherit;
+            font-size: var(--font-size-default);
+            min-height: 40px;
+            min-width: 88px;
+            padding-bottom: 9.5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 9.5px;
+            vertical-align: bottom
+          ">
+            Cancel
+          </button>
+          <button style="
+            background-color: var(--btn-primary-background-color, var(--color-background-accent));
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom: 1px solid;
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-top: 1px solid;
+            color: var(--btn-primary-foreground-color, var(--color-foreground-on-accent));
+            font-family: inherit;
+            font-size: var(--font-size-default);
+            font-weight: 700;
+            margin-left: var(--spacing-100);
+            min-height: 40px;
+            min-width: 88px;
+            padding-bottom: 9.5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 9.5px;
+            transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
+            vertical-align: bottom
+          ">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
