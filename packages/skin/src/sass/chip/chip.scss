@@ -1,5 +1,15 @@
 @import "../variables/variables";
 
+@keyframes fill-horizontal-background {
+    from {
+        background-size: 20% 100%;
+    }
+    to {
+        background-color: var(--color-background-strong);
+        background-size: 100% 100%;
+    }
+}
+
 .chip {
     align-items: center;
     border-radius: var(--border-radius-50);
@@ -19,6 +29,9 @@
 button.chip,
 a.chip {
     background-color: var(--color-background-primary);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
     border: 1px solid var(--color-stroke-default);
     box-shadow: none;
     color: var(--color-foreground-primary);
@@ -29,7 +42,7 @@ a.chip .chip__trailing {
     rotate: 45deg;
 }
 
-.chip--discovery {
+.chip--expressive {
     border-radius: var(--border-radius-150);
     height: 40px;
 }
@@ -49,8 +62,16 @@ a.chip .chip__trailing {
 button.chip[aria-pressed="true"],
 a.chip--selected,
 span.chip {
-    background-color: var(--color-background-strong);
+    animation: fill-horizontal-background var(--motion-duration-medium-2)
+        var(--motion-easing-quick-enter) forwards;
+    background-image: linear-gradient(
+        to right,
+        var(--color-background-strong) 0%,
+        var(--color-background-strong) 100%
+    );
     color: var(--color-foreground-on-strong);
+    transition: color var(--motion-duration-instant)
+        var(--motion-easing-standard);
 }
 
 button.chip[aria-expanded="false"] .chip__trailing,

@@ -11,7 +11,9 @@ export default class {
         this.el.querySelectorAll("button.chip").forEach((chip) => {
             chip.addEventListener("click", () => {
                 toggleAttribute(chip, "aria-expanded");
-                toggleAttribute(chip, "aria-pressed");
+                if (!chip.hasAttribute("aria-expanded")) {
+                    toggleAttribute(chip, "aria-pressed");
+                }
             });
         });
     }

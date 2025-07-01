@@ -27,10 +27,10 @@
     </highlight-code>
 
     <h3 id="toggle-chip">
-        Toggle Chip
+        Selection Chip
     </h3>
-    <p>An toggle chip toggles between two states, selected and unselected.</p>
-
+    <p>An selection chip toggles between two states, selected and unselected.</p>
+    <p>A selection chip is used in a form as a checkbox. This is generally used to select predetermined values</p>
     <div class="demo">
         <div class="demo__inner">
             <button class="chip" type="button" aria-pressed="false">
@@ -46,19 +46,6 @@
                 </svg>
             </button>
             <span style="margin-right: 8px;"/>
-
-            <a class="chip" href="https://www.ebay.com">
-                <span class="chip__text">
-                    Football
-                </span>
-                <svg
-                    class="chip__trailing icon icon--12"
-                    width="13"
-                    height="12"
-                >
-                    <icon-symbol name="close-12"/>
-                </svg>
-            </a>
         </div>
     </div>
     <highlight-code type="html">
@@ -70,83 +57,17 @@
                 <use href="icons.svg#icon-close-12"/>
             </svg>
         </button>
-
-        <a class="chip" href="https://www.ebay.com">
-            <span class="chip__text">
-                Football
-            </span>
-            <svg class="chip__trailing icon icon--12" width="13" height="12">
-                <use href="icons.svg#icon-close-12"/>
-            </svg>
-        </a>
-    </highlight-code>
-    <h3 id="toggle-chip-selected">
-        Toggle chip selected
-    </h3>
-    <p>
-        ${" "}For an link selected toggle chip, it should have a clipped selected text.
-    </p>
-    <div class="demo">
-        <div class="demo__inner">
-            <button class="chip" type="button" aria-pressed="true">
-                <span class="chip__text">
-                    Football
-                </span>
-                <svg
-                    class="chip__trailing icon icon--12"
-                    width="13"
-                    height="12"
-                >
-                    <icon-symbol name="close-12"/>
-                </svg>
-            </button>
-            <span style="margin-right: 8px;"/>
-            <a class="chip chip--selected" href="https://www.ebay.com">
-                <span class="chip__text">
-                    Football
-                    <span class="clipped">
-                        - selected
-                    </span>
-                </span>
-                <svg
-                    class="chip__trailing icon icon--12"
-                    width="13"
-                    height="12"
-                >
-                    <icon-symbol name="close-12"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-
-    <highlight-code type="html">
-        <button class="chip" type="button" aria-pressed="true">
-            <span class="chip__text">
-                Football
-            </span>
-            <svg class="chip__trailing icon icon--12" width="13" height="12">
-                <use href="icons.svg#icon-close-12"/>
-            </svg>
-        </button>
-
-        <a class="chip chip--selected" href="https://www.ebay.com">
-            <span class="chip__text">
-                Football
-                <span class="clipped">
-                    - selected
-                </span>
-            </span>
-            <svg class="chip__trailing icon icon--12" width="13" height="12">
-                <use href="icons.svg#icon-close-12"/>
-            </svg>
-        </a>
     </highlight-code>
 
     <h3 id="toggle-filter-chip">
-        Toggle filter Chip
+        Filter Chip
     </h3>
     <p>
-        To change the look of a chip to make it usable in a filter bar or such, use${" "}
+        A filter chip is used to filter a set of items. It is generally used in a filter bar or a filter menu.
+        It can be used as a button or a link, depending on the context.
+    </p>
+    <p>
+        To use a filter chip, use${" "}
         <code>chip--filter</code>
          modifier.
     </p>
@@ -198,10 +119,10 @@
     </highlight-code>
 
     <h3 id="toggle-filter-chip-selected">
-        Toggle filter chip -- selected
+        Filter chip -- selected
     </h3>
     <p>
-        For an link selected toggle chip, it should have a clipped selected text.
+        For an link selected filter chip, it should have a clipped text of "- filter applied".
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -245,21 +166,21 @@
             <span class="chip__text">
                 Football
                 <span class="clipped">
-                    - selected
+                    - filter applied
                 </span>
             </span>
         </a>
     </highlight-code>
 
     <h3 id="toggle-filter-chip">
-        Toggle discovery Chip
+        Expressive Chip
     </h3>
-    <p>A discovery chip has a leading icon or image.</p>
+    <p>An expressive chip has a leading icon or image.</p>
 
     <div class="demo">
         <div class="demo__inner">
             <button
-                class="chip chip--discovery"
+                class="chip chip--expressive"
                 type="button"
                 aria-pressed="false"
             >
@@ -273,7 +194,7 @@
                 </span>
             </button>
             <span style="margin-right: 8px;"/>
-            <a class="chip chip--discovery" href="https://www.ebay.com">
+            <a class="chip chip--expressive" href="https://www.ebay.com">
                 <img
                     class="chip__media"
                     src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -287,7 +208,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--discovery" type="button" aria-pressed="false">
+        <button class="chip chip--expressive" type="button" aria-pressed="false">
             <img
                 class="chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -298,7 +219,7 @@
             </span>
         </button>
 
-        <a class="chip chip--discovery" href="https://www.ebay.com">
+        <a class="chip chip--expressive" href="https://www.ebay.com">
             <img
                 class="chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -310,14 +231,14 @@
         </a>
     </highlight-code>
 
-    <h3>Toggle discovery chip selected</h3>
+    <h3>Toggle expressive chip selected</h3>
     <p>
         For an link selected toggle chip, it should have a clipped selected text.
     </p>
     <div class="demo">
         <div class="demo__inner">
             <button
-                class="chip chip--discovery"
+                class="chip chip--expressive"
                 type="button"
                 aria-pressed="true"
             >
@@ -332,7 +253,7 @@
             </button>
             <span style="margin-right: 8px;"/>
             <a
-                class="chip chip--selected chip--discovery"
+                class="chip chip--selected chip--expressive"
                 href="https://www.ebay.com"
             >
                 <img
@@ -343,7 +264,7 @@
                 <span class="chip__text">
                     Football
                     <span class="clipped">
-                        - selected
+                        - filter applied
                     </span>
                 </span>
             </a>
@@ -351,7 +272,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--discovery" type="button" aria-pressed="true">
+        <button class="chip chip--expressive" type="button" aria-pressed="true">
             <img
                 class="chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -363,7 +284,7 @@
         </button>
 
         <a
-            class="chip chip--discovery chip--selected"
+            class="chip chip--expressive chip--selected"
             href="https://www.ebay.com"
         >
             <img
@@ -455,6 +376,41 @@
         <button class="chip chip--filter" aria-expanded="false">
             <span class="chip__text">
                 Football
+            </span>
+            <svg class="chip__trailing icon icon--12" width="12" height="12">
+                <use href="icons.svg#icon-chevron-down-16"/>
+            </svg>
+        </button>
+    </highlight-code>
+
+    <h3 id="interactive-chip">
+        Menu button Chip selected
+    </h3>
+    <p>
+        When options are selected, aria-pressed should be set to true and the text should indicate the number of selected items.
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <button class="chip chip--filter" aria-expanded="false" aria-pressed="true">
+                <span class="chip__text">
+                    Football <span class="chip__count">(+3)</span>
+                </span>
+                <svg
+                    class="chip__trailing icon icon--12"
+                    width="12"
+                    height="12"
+                >
+                    <icon-symbol name="chevron-down-16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <button class="chip chip--filter" aria-expanded="false" aria-pressed="true">
+            <span class="chip__text">
+                Football <span class="chip__count">(+3)</span>
             </span>
             <svg class="chip__trailing icon icon--12" width="12" height="12">
                 <use href="icons.svg#icon-chevron-down-16"/>
