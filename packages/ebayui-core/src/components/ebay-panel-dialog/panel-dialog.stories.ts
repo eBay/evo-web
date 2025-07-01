@@ -1,6 +1,4 @@
-import {
-    buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
@@ -113,7 +111,7 @@ Default.parameters = {
             code: tagToString("ebay-panel-dialog", Default.args),
         },
     },
-}
+};
 
 export const WithPrevButton = buildExtensionTemplate(
     WithPrevButtonTemplate,

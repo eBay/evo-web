@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.9.0
+
+### Minor Changes
+
+- [#195](https://github.com/eBay/evo-web/pull/195) [`248ae07`](https://github.com/eBay/evo-web/commit/248ae0760ceb84d1c0901250f5f04d14bec77900) Thanks [@vshrivastav13](https://github.com/vshrivastav13)! - feat(react): add new EbayNumberInput component
+
 ## 8.8.0
 
 ### Minor Changes
