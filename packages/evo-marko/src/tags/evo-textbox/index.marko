@@ -1,0 +1,142 @@
+export interface Input extends Marko.HTML.Input {
+    multiline?: boolean;
+    type?: Marko.HTML.Input["type"];
+    inputSize?: "regular" | "large";
+    fluid?: boolean;
+    opaqueLabel?: boolean;
+    floatingLabel?: string;
+    floatingLabelStatic?: boolean;
+    prefixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
+    prefixText?: Marko.AttrTag<{ content: Marko.Body }>;
+    postfixText?: Marko.AttrTag<{ content: Marko.Body }>;
+    postfixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
+    invalid?: boolean;
+    buttonAriaLabel?: Marko.HTMLAttributes["aria-label"];
+    onButtonClick?: (event: Event) => void;
+    autocorrect?: Marko.HTML.TextArea["autocorrect"];
+    cols?: Marko.HTML.TextArea["cols"];
+    rows?: Marko.HTML.TextArea["rows"];
+}
+
+<const/{
+    buttonAriaLabel,
+    class: inputClass,
+    disabled,
+    floatingLabel,
+    floatingLabelStatic,
+    fluid,
+    id,
+    inputSize,
+    invalid,
+    multiline,
+    opaqueLabel,
+    postfixIcon,
+    prefixIcon,
+    style,
+    type,
+    placeholder = "",
+    prefixText,
+    postfixText,
+    readonly,
+    onButtonClick,
+    onBlur,
+    onFocus,
+    ...htmlInput
+}=input>
+
+<const/isPostfix=!!postfixIcon>
+<const/hasIcon=prefixIcon || isPostfix>
+<const/isLarge=inputSize === "large">
+<const/displayIcon=!multiline && hasIcon>
+<id/generatedId>
+<id/prefixId>
+<id/postfixId>
+<const/textboxId=id || generatedId>
+<const/defaultTag=(fluid ? "div" : "span")>
+<let/focused=false>
+<let/value:=input.value>
+<const/floatingInline=!(value || focused)>
+<const/currentPlaceholder=(placeholder && focused && !value ? placeholder : "")>
+<const/disablePrefix=!!floatingLabel && !floatingLabelStatic>
+
+<${floatingLabel && defaultTag} class=[
+    "floating-label",
+    isLarge && "floating-label--large",
+    opaqueLabel && "floating-label--opaque",
+]>
+    <if=floatingLabel>
+        <label
+            for=textboxId
+            class=[
+                "floating-label__label floating-label__label--animate",
+                disabled && "floating-label__label--disabled",
+                invalid && "floating-label__label--invalid",
+                floatingInline && "floating-label__label--inline",
+                !floatingInline && "floating-label__label--focus",
+                disabled && "floating-label__label--disabled",
+            ]>
+            ${floatingLabel}
+        </label>
+    </if>
+    <${defaultTag}
+        style=style
+        placeholder=currentPlaceholder
+        class=[
+            "textbox" /** start remove after `:has` support */,
+            disabled && "textbox--disabled",
+            invalid && "textbox--invalid",
+            readonly &&
+                "textbox--readonly" /** end remove after `:has` support */,
+            isLarge && "textbox--large",
+            fluid && "textbox--fluid",
+            inputClass,
+        ]>
+        <if=displayIcon && prefixIcon && !disablePrefix>
+            <${prefixIcon}/>
+        </if>
+        <if=prefixText && !disablePrefix>
+            <span id=prefixId ...prefixText>
+                <${prefixText}/>
+            </span>
+        </if>
+        <${multiline ? "textarea" : "input"}
+            aria-describedby=(
+                [prefixId, postfixId].filter(Boolean).join(" ") || undefined
+            )
+            onBlur(e: Event, target: HTMLInputElement) {
+                focused = false;
+                onBlur && onBlur(e, target);
+            }
+            onFocus(e: FocusEvent, target: HTMLInputElement) {
+                focused = true;
+                onFocus && onFocus(e, target);
+            }
+            ...htmlInput
+            id=textboxId
+            key="input"
+            class="textbox__control"
+            type=!multiline && (type || "text")
+            value:=value
+            disabled=disabled
+            aria-invalid=invalid && "true"
+            readonly=readonly
+        />
+       <if=postfixText>
+            <span id=postfixId ...postfixText>
+                <${postfixText}/>
+            </span>
+        </if>
+        <if=displayIcon && postfixIcon>
+            <${buttonAriaLabel && "button"}
+                class="icon-btn icon-btn--transparent"
+                aria-label=buttonAriaLabel
+                type=buttonAriaLabel && "button"
+                disabled=disabled
+                onClick(e: Event) {
+                    onButtonClick?.(e);
+                }>
+                <${postfixIcon}/>
+            </>
+        </if>
+    </>
+</>

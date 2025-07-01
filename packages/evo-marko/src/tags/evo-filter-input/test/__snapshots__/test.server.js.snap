@@ -1,0 +1,373 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-filter-input > renders default input 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"filter-input"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"textbox textbox--fluid"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-search-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M3 6.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Zm11.76 6.85-.021-.01-3.71-3.681-.025-.008A5.465 5.465 0 0 0 12 6.5 5.5 5.5 0 1 0 6.5 12a5.47 5.47 0 0 0 3.118-.972l3.732 3.732a1 1 0 0 0 1.41-1.41Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-search-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Filter input"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-@input-textbox"[39m
+        [33mplaceholder[39m=[32m"Filter"[39m
+        [33mtype[39m=[32m"search"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Clear filter input"[39m
+        [33mclass[39m=[32m"filter-input__clear-btn icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--16"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-clear-16"[39m
+              [33mviewBox[39m=[32m"0 0 16 16"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.71 10.29a1 1 0 1 1-1.41 1.41L8 9.41l-2.29 2.3A1 1 0 0 1 4.3 10.3L6.59 8l-2.3-2.29a1.004 1.004 0 0 1 1.42-1.42L8 6.59l2.29-2.29a1 1 0 0 1 1.41 1.41L9.41 8l2.3 2.29Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-clear-16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-input > renders large 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"filter-input filter-input--large"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"textbox textbox--fluid"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-search-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M3 6.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Zm11.76 6.85-.021-.01-3.71-3.681-.025-.008A5.465 5.465 0 0 0 12 6.5 5.5 5.5 0 1 0 6.5 12a5.47 5.47 0 0 0 3.118-.972l3.732 3.732a1 1 0 0 0 1.41-1.41Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-search-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Filter input"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-@input-textbox"[39m
+        [33mplaceholder[39m=[32m"Filter"[39m
+        [33mtype[39m=[32m"search"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Clear filter input"[39m
+        [33mclass[39m=[32m"filter-input__clear-btn icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--16"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-clear-16"[39m
+              [33mviewBox[39m=[32m"0 0 16 16"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.71 10.29a1 1 0 1 1-1.41 1.41L8 9.41l-2.29 2.3A1 1 0 0 1 4.3 10.3L6.59 8l-2.3-2.29a1.004 1.004 0 0 1 1.42-1.42L8 6.59l2.29-2.29a1 1 0 0 1 1.41 1.41L9.41 8l2.3 2.29Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-clear-16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-input > renders small 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"filter-input filter-input--small"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"textbox textbox--fluid"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-search-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M3 6.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Zm11.76 6.85-.021-.01-3.71-3.681-.025-.008A5.465 5.465 0 0 0 12 6.5 5.5 5.5 0 1 0 6.5 12a5.47 5.47 0 0 0 3.118-.972l3.732 3.732a1 1 0 0 0 1.41-1.41Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-search-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Filter input"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-@input-textbox"[39m
+        [33mplaceholder[39m=[32m"Filter"[39m
+        [33mtype[39m=[32m"search"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Clear filter input"[39m
+        [33mclass[39m=[32m"filter-input__clear-btn icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--16"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-clear-16"[39m
+              [33mviewBox[39m=[32m"0 0 16 16"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.71 10.29a1 1 0 1 1-1.41 1.41L8 9.41l-2.29 2.3A1 1 0 0 1 4.3 10.3L6.59 8l-2.3-2.29a1.004 1.004 0 0 1 1.42-1.42L8 6.59l2.29-2.29a1 1 0 0 1 1.41 1.41L9.41 8l2.3 2.29Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-clear-16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-input > renders with aria-controls 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<div>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-input"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"textbox textbox--fluid"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--16"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-search-16"[39m
+              [33mviewBox[39m=[32m"0 0 16 16"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M3 6.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Zm11.76 6.85-.021-.01-3.71-3.681-.025-.008A5.465 5.465 0 0 0 12 6.5 5.5 5.5 0 1 0 6.5 12a5.47 5.47 0 0 0 3.118-.972l3.732 3.732a1 1 0 0 0 1.41-1.41Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-search-16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [36m<input[39m
+          [33maria-controls[39m=[32m"filter-input-controls"[39m
+          [33maria-label[39m=[32m"Filter input"[39m
+          [33mclass[39m=[32m"textbox__control"[39m
+          [33mid[39m=[32m"s0-1-@input-textbox"[39m
+          [33mplaceholder[39m=[32m"Filter"[39m
+          [33mtype[39m=[32m"search"[39m
+        [36m/>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Clear filter input"[39m
+          [33mclass[39m=[32m"filter-input__clear-btn icon-btn icon-btn--transparent icon-btn--small"[39m
+          [33mdata-ebayui[39m=[32m""[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-clear-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.71 10.29a1 1 0 1 1-1.41 1.41L8 9.41l-2.29 2.3A1 1 0 0 1 4.3 10.3L6.59 8l-2.3-2.29a1.004 1.004 0 0 1 1.42-1.42L8 6.59l2.29-2.29a1 1 0 0 1 1.41 1.41L9.41 8l2.3 2.29Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-clear-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+    [36m<div[39m
+      [33mid[39m=[32m"filter-input-controls"[39m
+    [36m>[39m
+      [0mCurrent value: ""[0m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-input > renders with custom placeholder and aria label 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"filter-input"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"textbox textbox--fluid"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-search-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M3 6.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Zm11.76 6.85-.021-.01-3.71-3.681-.025-.008A5.465 5.465 0 0 0 12 6.5 5.5 5.5 0 1 0 6.5 12a5.47 5.47 0 0 0 3.118-.972l3.732 3.732a1 1 0 0 0 1.41-1.41Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-search-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Custom aria label"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-@input-textbox"[39m
+        [33mplaceholder[39m=[32m"Custom placeholder"[39m
+        [33mtype[39m=[32m"search"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Clear the text"[39m
+        [33mclass[39m=[32m"filter-input__clear-btn icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--16"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-clear-16"[39m
+              [33mviewBox[39m=[32m"0 0 16 16"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm3.71 10.29a1 1 0 1 1-1.41 1.41L8 9.41l-2.29 2.3A1 1 0 0 1 4.3 10.3L6.59 8l-2.3-2.29a1.004 1.004 0 0 1 1.42-1.42L8 6.59l2.29-2.29a1 1 0 0 1 1.41 1.41L9.41 8l2.3 2.29Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-clear-16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-input > renders without clear button and no placeholder 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"filter-input"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"textbox textbox--fluid"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-search-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M3 6.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0Zm11.76 6.85-.021-.01-3.71-3.681-.025-.008A5.465 5.465 0 0 0 12 6.5 5.5 5.5 0 1 0 6.5 12a5.47 5.47 0 0 0 3.118-.972l3.732 3.732a1 1 0 0 0 1.41-1.41Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-search-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Filter input"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-@input-textbox"[39m
+        [33mplaceholder[39m=[32m""[39m
+        [33mtype[39m=[32m"search"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;

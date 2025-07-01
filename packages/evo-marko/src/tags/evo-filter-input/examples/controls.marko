@@ -1,0 +1,13 @@
+<let/value = "">
+<div>
+    <evo-filter-input
+        value:=value
+        a11yControlsId="filter-input-controls"
+        aria-label="Filter input"
+        a11yClearButton="Clear filter input"
+        ...input
+    />
+    <div id="filter-input-controls">
+        Current value: "${value}"
+    </div>
+</div>

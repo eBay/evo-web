@@ -1,0 +1,50 @@
+import type {
+    Input as TextboxInput,
+} from "../evo-textbox/index.marko";
+
+export interface Input extends Omit<TextboxInput, "size"> {
+    size?: ["large", "small"];
+    a11yClearButton: string;
+    a11yControlsId?: string;
+}
+
+<const/{
+    class: inputClass,
+    placeholder: inputPlaceholder = "Filter",
+    a11yClearButton,
+    a11yControlsId,
+    size,
+    ...htmlInput
+} = input>
+
+<span class=["filter-input",
+    size && `filter-input--${size}`,
+    inputClass]>
+    <evo-textbox
+        fluid
+        type="search"
+        key="input"
+        aria-controls=a11yControlsId
+        placeholder=inputPlaceholder
+       ...htmlInput
+    >
+        <@prefixIcon>
+            <evo-icon-search-16/>
+        </@prefixIcon>
+        <@postfixIcon>
+            <if=a11yClearButton>
+                <evo-icon-button
+                    aria-label=a11yClearButton
+                    class="filter-input__clear-btn"
+                    size="small"
+                    transparent
+                    onClick() {
+                        (input.valueChange || null)?.("");
+                    }
+                >
+                    <evo-icon-clear-16/>
+                </evo-icon-button>
+            </if>
+        </@postfixIcon>
+    </evo-textbox>
+</span>
