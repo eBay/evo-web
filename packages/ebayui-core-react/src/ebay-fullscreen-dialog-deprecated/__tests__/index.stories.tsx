@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 import { EbayFullscreenDialogDeprecated } from "../index";
 import { EbayDialogFooter, EbayDialogHeader } from "../../ebay-dialog-base";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 const story: Meta<typeof EbayFullscreenDialogDeprecated> = {
     component: EbayFullscreenDialogDeprecated,

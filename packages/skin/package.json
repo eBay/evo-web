@@ -67,7 +67,7 @@
         "snapshots:execute": "npm run build:snapshots && percy storybook ./.storybook-percy --include",
         "snapshots:execute:dry": "percy storybook ./.storybook-percy --dry-run --include",
         "start": "marko-run",
-        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook",
+        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook --no-open",
         "test": "npm run build",
         "verify": "node scripts verify",
         "version": "npm run build"

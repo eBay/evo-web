@@ -1,5 +1,5 @@
 import React, { ComponentProps, useState } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { EbayPagination, EbayPaginationItem as Item } from "../index";
 import { EbayButton } from "../../ebay-button";
 import { EbayLightboxDialog } from "../../ebay-lightbox-dialog";

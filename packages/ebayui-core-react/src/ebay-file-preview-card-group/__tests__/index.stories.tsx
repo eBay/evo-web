@@ -1,6 +1,6 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { Meta, StoryFn } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 import { EbayFilePreviewCardGroup } from "..";
 import { EbayFilePreviewCardProps, EbayFilePreviewCard, EbayFilePreviewCardAction } from "../../ebay-file-preview-card";
 

@@ -68,7 +68,7 @@ describe("<EbayInfotip>", () => {
             jest.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayInfotip a11yCloseText="Close" />);
-            }).toThrowError(`EbayInfotip: Please use a EbayInfotipContent that defines the content of the infotip`);
+            }).toThrow(`EbayInfotip: Please use a EbayInfotipContent that defines the content of the infotip`);
             (console.error as jest.Mock).mockRestore();
         });
     });

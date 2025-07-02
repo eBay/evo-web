@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayFilterMenuButton, EbayFilterMenuFooterButton, EbayFilterMenuItem } from "../";
 import filterMenuMeta from "../../ebay-filter-menu/__tests__/index.stories";
 import data from "./data.json";

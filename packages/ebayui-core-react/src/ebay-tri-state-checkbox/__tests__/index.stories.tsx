@@ -1,5 +1,5 @@
 import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import { EbayField, EbayLabel } from "../../ebay-field";
 import { EbayTriStateCheckbox } from "../index";
 

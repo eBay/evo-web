@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { composeStory } from "@storybook/react";
+import { composeStory } from "@storybook/react-vite";
 import Meta, { Default, WithAnimation } from "./index.stories";
 
 const DefaultStory = composeStory(Default, Meta);

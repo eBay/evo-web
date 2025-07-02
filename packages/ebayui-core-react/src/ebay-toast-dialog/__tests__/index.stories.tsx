@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { EbayButton } from "../../ebay-button";
 import { EbayDialogFooter, EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayToast } from "../index";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 export default {
     title: "dialogs/ebay-toast-dialog",

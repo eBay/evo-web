@@ -29,8 +29,6 @@
         "coverage": "vitest run --browser.headless --coverage",
         "deploy": "storybook build -o ./_site",
         "importSVG": "node --experimental-json-modules --experimental-import-meta-resolve scripts/import-svg && prettier \"{./src/components/ebay-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
-        "installMarkoV4": "npm remove @marko/compiler && npm i marko@4 --force",
-        "installMarkoV5": "npm i marko@5 @marko/compiler@5 --force",
         "lint": "npm run lint:less && npm run lint:js && npm run lint:whitespace",
         "lint:js": "eslint",
         "lint:less": "stylelint \"src/**/*.{css,less}\" --config .stylelintrc",
@@ -56,7 +54,7 @@
         "version": "npm run importSVG && npm run build:readme"
     },
     "dependencies": {
-        "@floating-ui/dom": "^1.7.1",
+        "@floating-ui/dom": "^1.7.2",
         "@google/model-viewer": "^4.1.0",
         "@marko-tags/subscribe": "^0.5.2",
         "highcharts": "^11.4.8",
@@ -70,12 +68,12 @@
         "makeup-roving-tabindex": "~0.7.5",
         "makeup-screenreader-trap": "~0.5.4",
         "makeup-typeahead": "^0.3.3",
-        "shaka-player": "4.15.2"
+        "shaka-player": "4.15.5"
     },
     "devDependencies": {
-        "@marko/compiler": "^5.39.20",
+        "@marko/compiler": "^5.39.28",
         "@marko/prettyprint": "^3.0.1",
-        "marko": "^5.37.31"
+        "marko": "^5.37.40"
     },
     "peerDependencies": {
         "@ebay/skin": "^19.2.0",

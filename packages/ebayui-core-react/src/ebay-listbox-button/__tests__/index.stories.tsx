@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import { EbayListboxButton, EbayListboxButtonOption } from "../index";
 import StateFullTest from "./statefull-test";

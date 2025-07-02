@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Meta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { Meta } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 import { EbayIcon } from "../../ebay-icon";
 import { EbayMenuButtonItem as Item, EbayMenuButtonSeparator as Separator } from "../../ebay-menu-button";
 import { EbaySplitButton } from "../index";

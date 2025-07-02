@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayFilePreviewCard, EbayFilePreviewCardAction } from "..";
 
 const meta: Meta<typeof EbayFilePreviewCard> = {

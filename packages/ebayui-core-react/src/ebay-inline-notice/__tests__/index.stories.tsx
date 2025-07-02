@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { EbayButton } from "../../ebay-button";
 import { EbayInlineNotice, EbayNoticeContent } from "../index";
 

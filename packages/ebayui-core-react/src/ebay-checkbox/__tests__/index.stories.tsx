@@ -1,6 +1,6 @@
 import React, { useState, useRef, ChangeEvent } from "react";
-import { StoryFn, Meta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { StoryFn, Meta } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 import { EbayLabel } from "../../ebay-field";
 import { EbayCheckbox } from "../index";
 

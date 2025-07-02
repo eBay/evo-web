@@ -1,9 +1,9 @@
 import React, { ComponentProps, createRef, useState } from "react";
 import { EbayButton } from "../../ebay-button";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { EbayDialogFooter, EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayDrawerDialogDeprecated } from "../index";
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 
 const story: Meta<typeof EbayDrawerDialogDeprecated> = {
     component: EbayDrawerDialogDeprecated,

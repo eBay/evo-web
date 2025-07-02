@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import { composeStory } from "@storybook/react";
+import { composeStory } from "@storybook/react-vite";
 import Meta, { RegularA, A, ValidA } from "./index.stories";
 
 const RegularAStory = composeStory(RegularA, Meta);

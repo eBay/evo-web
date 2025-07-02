@@ -63,7 +63,7 @@ describe("<EbayTourtip>", () => {
             jest.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayTourtip a11yCloseText="Close" />);
-            }).toThrowError(`EbayTourtip: Please use a EbayTourtipContent that defines the content of the tourtip`);
+            }).toThrow(`EbayTourtip: Please use a EbayTourtipContent that defines the content of the tourtip`);
             (console.error as jest.Mock).mockRestore();
         });
     });
@@ -84,7 +84,7 @@ describe("<EbayTourtip>", () => {
                         </EbayTourtipFooter>
                     </EbayTourtip>,
                 );
-            }).toThrowError(`EbayTourtip: Please use a EbayTourtipHost that defines the host of the tourtip`);
+            }).toThrow(`EbayTourtip: Please use a EbayTourtipHost that defines the host of the tourtip`);
             (console.error as jest.Mock).mockRestore();
         });
     });

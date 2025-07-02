@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayCombobox, EbayComboboxButton } from "../index";
 import { EbayIcon } from "../../ebay-icon";
 import EbayComboboxOption from "../combobox-option";

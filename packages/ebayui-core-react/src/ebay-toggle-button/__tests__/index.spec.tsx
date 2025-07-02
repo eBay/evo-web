@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { composeStories } from "@storybook/react";
+import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
 
 const { Default, WithChildren, IconButton, ImageButton, ImageButtonWithPlacement } = composeStories(stories);

@@ -1,6 +1,6 @@
 import React from "react";
 import { EbayEek, EbayEekProps } from "../index";
-import { StoryObj, StoryFn, Meta } from "@storybook/react";
+import { StoryObj, StoryFn, Meta } from "@storybook/react-vite";
 
 const meta: Meta<typeof EbayEek> = {
     component: EbayEek,

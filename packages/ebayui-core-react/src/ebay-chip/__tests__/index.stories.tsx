@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayChip, EbayChipProps } from "../index";
 
 const meta: Meta<typeof EbayChip> = {

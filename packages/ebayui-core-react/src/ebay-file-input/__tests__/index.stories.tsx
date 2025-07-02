@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayFileInput, EbayFileInputHeader, EbayFileInputSubheader } from "../index";
 import { EbayFilePreviewCardGroup } from "../../ebay-file-preview-card-group";
 import { EbayFilePreviewCard } from "../../ebay-file-preview-card";

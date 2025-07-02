@@ -13,20 +13,33 @@ exports[`accordion > given the accordion in the default state > then it matches 
     transition-duration: 0.1s;
     width: 100%
   ">
-    <style scoped>
-      ::marker {font-size: 0px}
-    </style>
     <li style="
       border-bottom: 1px solid var(--color-stroke-subtle);
       transition-delay: 0.1s;
       transition-duration: 0.1s
     ">
+      <style>@scope{:scope{
+        &::marker {font-size: 0px}
+      }}</style>
       <details style="
         overflow-x: hidden;
         overflow-y: hidden;
         transition-delay: 0.1s;
         transition-duration: 0.1s
       ">
+        <style>@scope{:scope{
+          &::details-content {
+            opacity: 0;
+            overflow-x: clip;
+            overflow-y: clip;
+            transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+                        content-visibility var(--motion-duration-medium-2)
+                            var(--motion-easing-continuous) allow-discrete,
+                        opacity var(--motion-duration-medium-2)
+                            var(--motion-easing-continuous)
+          }
+          &::marker {font-size: 0px}
+        }}</style>
         <summary style="
           align-items: center;
           box-sizing: border-box;
@@ -48,15 +61,16 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-delay: 0.1s;
           transition-duration: 0.1s
         ">
-          <style scoped>
-            ::before {
-              
-            }
-          </style>
+          <style>@scope{:scope{
+            &::marker {font-size: 0px}
+          }}</style>
           <span style="
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             Item 1
           </span>
           <span
@@ -68,6 +82,9 @@ exports[`accordion > given the accordion in the default state > then it matches 
               transition-duration: 0.1s
             "
           >
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             <svg
               focusable="false"
               style="
@@ -88,13 +105,20 @@ exports[`accordion > given the accordion in the default state > then it matches 
                 width: 16px
               "
             >
+              <style>@scope{:scope{
+                &::marker {font-size: 0px}
+              }}</style>
               <use
                 href="#icon-chevron-down-16"
                 style="
                   transition-delay: 0.1s;
                   transition-duration: 0.1s
                 "
-              />
+              >
+                <style>@scope{:scope{
+                  &::marker {font-size: 0px}
+                }}</style>
+              </use>
             </svg>
           </span>
         </summary>
@@ -107,10 +131,16 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-delay: 0.1s;
           transition-duration: 0.1s
         ">
+          <style>@scope{:scope{
+            &::marker {font-size: 0px}
+          }}</style>
           <p style="
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
@@ -121,12 +151,28 @@ exports[`accordion > given the accordion in the default state > then it matches 
       transition-delay: 0.1s;
       transition-duration: 0.1s
     ">
+      <style>@scope{:scope{
+        &::marker {font-size: 0px}
+      }}</style>
       <details style="
         overflow-x: hidden;
         overflow-y: hidden;
         transition-delay: 0.1s;
         transition-duration: 0.1s
       ">
+        <style>@scope{:scope{
+          &::details-content {
+            opacity: 0;
+            overflow-x: clip;
+            overflow-y: clip;
+            transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+                        content-visibility var(--motion-duration-medium-2)
+                            var(--motion-easing-continuous) allow-discrete,
+                        opacity var(--motion-duration-medium-2)
+                            var(--motion-easing-continuous)
+          }
+          &::marker {font-size: 0px}
+        }}</style>
         <summary style="
           align-items: center;
           box-sizing: border-box;
@@ -148,15 +194,16 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-delay: 0.1s;
           transition-duration: 0.1s
         ">
-          <style scoped>
-            ::before {
-              
-            }
-          </style>
+          <style>@scope{:scope{
+            &::marker {font-size: 0px}
+          }}</style>
           <span style="
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             Item 2
           </span>
           <span
@@ -168,6 +215,9 @@ exports[`accordion > given the accordion in the default state > then it matches 
               transition-duration: 0.1s
             "
           >
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             <svg
               focusable="false"
               style="
@@ -188,13 +238,20 @@ exports[`accordion > given the accordion in the default state > then it matches 
                 width: 16px
               "
             >
+              <style>@scope{:scope{
+                &::marker {font-size: 0px}
+              }}</style>
               <use
                 href="#icon-chevron-down-16"
                 style="
                   transition-delay: 0.1s;
                   transition-duration: 0.1s
                 "
-              />
+              >
+                <style>@scope{:scope{
+                  &::marker {font-size: 0px}
+                }}</style>
+              </use>
             </svg>
           </span>
         </summary>
@@ -207,10 +264,16 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-delay: 0.1s;
           transition-duration: 0.1s
         ">
+          <style>@scope{:scope{
+            &::marker {font-size: 0px}
+          }}</style>
           <p style="
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
@@ -220,12 +283,28 @@ exports[`accordion > given the accordion in the default state > then it matches 
       transition-delay: 0.1s;
       transition-duration: 0.1s
     ">
+      <style>@scope{:scope{
+        &::marker {font-size: 0px}
+      }}</style>
       <details style="
         overflow-x: hidden;
         overflow-y: hidden;
         transition-delay: 0.1s;
         transition-duration: 0.1s
       ">
+        <style>@scope{:scope{
+          &::details-content {
+            opacity: 0;
+            overflow-x: clip;
+            overflow-y: clip;
+            transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+                        content-visibility var(--motion-duration-medium-2)
+                            var(--motion-easing-continuous) allow-discrete,
+                        opacity var(--motion-duration-medium-2)
+                            var(--motion-easing-continuous)
+          }
+          &::marker {font-size: 0px}
+        }}</style>
         <summary style="
           align-items: center;
           box-sizing: border-box;
@@ -247,15 +326,16 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-delay: 0.1s;
           transition-duration: 0.1s
         ">
-          <style scoped>
-            ::before {
-              
-            }
-          </style>
+          <style>@scope{:scope{
+            &::marker {font-size: 0px}
+          }}</style>
           <span style="
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             Item 3
           </span>
           <span
@@ -267,6 +347,9 @@ exports[`accordion > given the accordion in the default state > then it matches 
               transition-duration: 0.1s
             "
           >
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             <svg
               focusable="false"
               style="
@@ -287,13 +370,20 @@ exports[`accordion > given the accordion in the default state > then it matches 
                 width: 16px
               "
             >
+              <style>@scope{:scope{
+                &::marker {font-size: 0px}
+              }}</style>
               <use
                 href="#icon-chevron-down-16"
                 style="
                   transition-delay: 0.1s;
                   transition-duration: 0.1s
                 "
-              />
+              >
+                <style>@scope{:scope{
+                  &::marker {font-size: 0px}
+                }}</style>
+              </use>
             </svg>
           </span>
         </summary>
@@ -306,10 +396,16 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-delay: 0.1s;
           transition-duration: 0.1s
         ">
+          <style>@scope{:scope{
+            &::marker {font-size: 0px}
+          }}</style>
           <p style="
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
+            <style>@scope{:scope{
+              &::marker {font-size: 0px}
+            }}</style>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
@@ -320,10 +416,10 @@ exports[`accordion > given the accordion in the default state > then it matches 
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > should open the clicked section 1`] = `
-"@@ -18,14 +18,18 @@
-       transition-delay: 0.1s;
-       transition-duration: 0.1s
-     ">
+"@@ -18,15 +18,18 @@
+       <style>@scope{:scope{
+         &::marker {font-size: 0px}
+       }}</style>
 -       <details style="
 -         overflow-x: hidden;
 -         overflow-y: hidden;
@@ -339,13 +435,22 @@ exports[`accordion > given the accordion in the default state > when first secti
 +           transition-duration: 0.1s
 +         "
 +       >
+         <style>@scope{:scope{
+           &::details-content {
+-             opacity: 0;
++             height: auto;
+             overflow-x: clip;
+             overflow-y: clip;
+             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+@@ -39,6 +42,7 @@
+         }}</style>
          <summary style="
            align-items: center;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -61,6 +65,7 @@
+@@ -75,6 +79,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -353,7 +458,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -68,8 +73,8 @@
+@@ -85,8 +90,8 @@
              <svg
                focusable="false"
                style="
@@ -368,8 +473,8 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from initial 1`] = `
-"@@ -26,6 +26,7 @@
-       ">
+"@@ -39,6 +39,7 @@
+         }}</style>
          <summary style="
            align-items: center;
 +           background-color: var(--color-state-secondary-hover);
@@ -380,10 +485,10 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > should open as normal 1`] = `
-"@@ -18,14 +18,18 @@
-       transition-delay: 0.1s;
-       transition-duration: 0.1s
-     ">
+"@@ -18,15 +18,18 @@
+       <style>@scope{:scope{
+         &::marker {font-size: 0px}
+       }}</style>
 -       <details style="
 -         overflow-x: hidden;
 -         overflow-y: hidden;
@@ -399,13 +504,22 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +           transition-duration: 0.1s
 +         "
 +       >
+         <style>@scope{:scope{
+           &::details-content {
+-             opacity: 0;
++             height: auto;
+             overflow-x: clip;
+             overflow-y: clip;
+             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+@@ -39,6 +42,7 @@
+         }}</style>
          <summary style="
            align-items: center;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -61,6 +65,7 @@
+@@ -75,6 +79,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -413,7 +527,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -68,8 +73,8 @@
+@@ -85,8 +90,8 @@
              <svg
                focusable="false"
                style="
@@ -428,10 +542,10 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -18,18 +18,14 @@
-       transition-delay: 0.1s;
-       transition-duration: 0.1s
-     ">
+"@@ -18,18 +18,15 @@
+       <style>@scope{:scope{
+         &::marker {font-size: 0px}
+       }}</style>
 -       <details
 -         open
 -         style="
@@ -447,13 +561,22 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +         transition-delay: 0.1s;
 +         transition-duration: 0.1s
 +       ">
+         <style>@scope{:scope{
+           &::details-content {
+-             height: auto;
++             opacity: 0;
+             overflow-x: clip;
+             overflow-y: clip;
+             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+@@ -42,7 +39,6 @@
+         }}</style>
          <summary style="
            align-items: center;
 -           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -65,7 +61,6 @@
+@@ -79,7 +75,6 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -461,7 +584,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -73,8 +68,8 @@
+@@ -90,8 +85,8 @@
              <svg
                focusable="false"
                style="
@@ -472,10 +595,10 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                  display: inline-block;
                  fill: var(
                          --details-secondary-foreground-color,
-@@ -123,14 +118,18 @@
-       transition-delay: 0.1s;
-       transition-duration: 0.1s
-     ">
+@@ -156,15 +151,18 @@
+       <style>@scope{:scope{
+         &::marker {font-size: 0px}
+       }}</style>
 -       <details style="
 -         overflow-x: hidden;
 -         overflow-y: hidden;
@@ -491,13 +614,22 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +           transition-duration: 0.1s
 +         "
 +       >
+         <style>@scope{:scope{
+           &::details-content {
+-             opacity: 0;
++             height: auto;
+             overflow-x: clip;
+             overflow-y: clip;
+             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+@@ -177,6 +175,7 @@
+         }}</style>
          <summary style="
            align-items: center;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -166,6 +165,7 @@
+@@ -213,6 +212,7 @@
              style="
                display: inline-flex;
                margin-inline-start: 8px;
@@ -505,7 +637,117 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -173,8 +173,8 @@
+@@ -223,8 +223,8 @@
+             <svg
+               focusable="false"
+               style="
+-                 animation: chevron-bounce-close var(--motion-duration-medium-1)
+-                         var(--motion-easing-standard);
++                 animation: chevron-bounce-open var(--motion-duration-medium-1)
++                         var(--motion-easing-standard) var(--motion-duration-short-1);
+                 display: inline-block;
+                 fill: var(
+                         --details-secondary-foreground-color,
+"
+`;
+
+exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 2`] = `
+"@@ -18,18 +18,15 @@
+       <style>@scope{:scope{
+         &::marker {font-size: 0px}
+       }}</style>
+-       <details
+-         open
+-         style="
+-           overflow-x: hidden;
+-           overflow-y: hidden;
+-           transition-delay: 0.1s;
+-           transition-duration: 0.1s
+-         "
+-       >
++       <details style="
++         overflow-x: hidden;
++         overflow-y: hidden;
++         transition-delay: 0.1s;
++         transition-duration: 0.1s
++       ">
+         <style>@scope{:scope{
+           &::details-content {
+-             height: auto;
++             opacity: 0;
+             overflow-x: clip;
+             overflow-y: clip;
+             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+@@ -42,7 +39,6 @@
+         }}</style>
+         <summary style="
+           align-items: center;
+-           background-color: var(--color-state-secondary-hover);
+           box-sizing: border-box;
+           color: var(
+                   --details-summary-foreground-color,
+@@ -79,7 +75,6 @@
+             style="
+               display: inline-flex;
+               margin-inline-start: 8px;
+-               transform: rotate(180deg);
+               transition-delay: 0.1s;
+               transition-duration: 0.1s
+             "
+@@ -90,8 +85,8 @@
+             <svg
+               focusable="false"
+               style="
+-                 animation: chevron-bounce-open var(--motion-duration-medium-1)
+-                         var(--motion-easing-standard) var(--motion-duration-short-1);
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(
+                         --details-secondary-foreground-color,
+@@ -156,15 +151,18 @@
+       <style>@scope{:scope{
+         &::marker {font-size: 0px}
+       }}</style>
+-       <details style="
+-         overflow-x: hidden;
+-         overflow-y: hidden;
+-         transition-delay: 0.1s;
+-         transition-duration: 0.1s
+-       ">
++       <details
++         open
++         style="
++           overflow-x: hidden;
++           overflow-y: hidden;
++           transition-delay: 0.1s;
++           transition-duration: 0.1s
++         "
++       >
+         <style>@scope{:scope{
+           &::details-content {
+-             opacity: 0;
++             height: auto;
+             overflow-x: clip;
+             overflow-y: clip;
+             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
+@@ -177,6 +175,7 @@
+         }}</style>
+         <summary style="
+           align-items: center;
++           background-color: var(--color-state-secondary-hover);
+           box-sizing: border-box;
+           color: var(
+                   --details-summary-foreground-color,
+@@ -213,6 +212,7 @@
+             style="
+               display: inline-flex;
+               margin-inline-start: 8px;
++               transform: rotate(180deg);
+               transition-delay: 0.1s;
+               transition-duration: 0.1s
+             "
+@@ -223,8 +223,8 @@
              <svg
                focusable="false"
                style="
