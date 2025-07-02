@@ -29,6 +29,8 @@ export type CarouselProps = ComponentProps<"div"> & {
     onSlide?: ({ slide }) => void;
     onPlay?: (event: React.SyntheticEvent) => void;
     onPause?: (event: React.SyntheticEvent) => void;
+    prevSlideTrackingList?: string;
+    nextSlideTrackingList?: string;
 };
 
 const EbayCarousel: FC<CarouselProps> = ({
@@ -46,6 +48,8 @@ const EbayCarousel: FC<CarouselProps> = ({
     onSlide = () => {},
     onPlay = () => {},
     onPause = () => {},
+    prevSlideTrackingList = null,
+    nextSlideTrackingList = null,
     className,
     children,
     ...rest
@@ -196,6 +200,7 @@ const EbayCarousel: FC<CarouselProps> = ({
                     type="prev"
                     disabled={prevControlDisabled}
                     onClick={handleControlClick}
+                    trackingList={prevSlideTrackingList}
                 />
                 <CarouselList
                     itemsRef={itemsRef}
@@ -216,6 +221,7 @@ const EbayCarousel: FC<CarouselProps> = ({
                     label={a11yNextText}
                     disabled={nextControlDisabled}
                     onClick={handleControlClick}
+                    trackingList={nextSlideTrackingList}
                 />
 
                 {isAutoplayEnabled ? (

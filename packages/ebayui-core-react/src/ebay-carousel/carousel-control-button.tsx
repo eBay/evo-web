@@ -9,6 +9,7 @@ type CarouselControlProps = {
     type: CarouselControlType;
     disabled?: boolean;
     onClick: (event: SyntheticEvent<HTMLButtonElement>, { direction }) => void;
+    trackingList?: string;
 };
 
 const icon: Record<CarouselControlType, Icon> = {
@@ -21,7 +22,14 @@ const typeToDirection: Record<CarouselControlType, MovementDirection> = {
     next: "RIGHT",
 };
 
-const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, disabled, onClick }) => {
+const CarouselControlButton: FC<CarouselControlProps> = ({
+    type,
+    label,
+    hidden,
+    disabled,
+    onClick,
+    trackingList = null,
+}) => {
     const handleOnClick = (event: SyntheticEvent<HTMLButtonElement>) => {
         onClick(event, { direction: typeToDirection[type] });
     };
@@ -33,6 +41,7 @@ const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, 
             aria-disabled={disabled}
             disabled={disabled}
             onClick={handleOnClick}
+            {...(trackingList ? { ["data-click"]: trackingList } : {})}
         >
             <EbayIcon
                 className={classNames("icon", `icon--carousel-${type}`)}
