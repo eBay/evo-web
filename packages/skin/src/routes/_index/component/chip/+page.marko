@@ -18,6 +18,50 @@
         </div>
     </div>
 
+    <h3 id="destructive-chip">
+        Destructive Chip
+    </h3>
+    <p>
+        An desctructive chip is a static chip with a delete button. Once the delete button is clicked, the chip is removed.
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <span class="chip">
+                <span id="chip-interactive-1-text" class="chip__text">
+                    Football
+                </span>
+                <button
+                    class="chip__button"
+                    type="button"
+                    aria-label="Remove"
+                    aria-describedby="chip-interactive-1-text"
+                >
+                    <svg class="icon icon--12" width="13" height="12">
+                        <icon-symbol name="close-12"/>
+                    </svg>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="chip">
+            <span id="chip-interactive-1-text" class="chip__text">
+                Football
+            </span>
+            <button
+                class="chip__button"
+                type="button"
+                aria-label="Remove"
+                aria-describedby="chip-interactive-1-text"
+            >
+                <svg class="icon icon--12" width="13" height="12">
+                    <use href="icons.svg#icon-close-12"/>
+                </svg>
+            </button>
+        </span>
+    </highlight-code>
     <highlight-code type="html">
         <span class="chip">
             <span class="chip__text">
@@ -301,53 +345,8 @@
         </a>
     </highlight-code>
 
-    <h3 id="destructive-chip">
-        Destructive Chip
-    </h3>
-    <p>
-        An desctructive chip is a static chip with a delete button. Once the delete button is clicked, the chip is removed.
-    </p>
-
-    <div class="demo">
-        <div class="demo__inner">
-            <span class="chip">
-                <span id="chip-interactive-1-text" class="chip__text">
-                    Football
-                </span>
-                <button
-                    class="chip__button"
-                    type="button"
-                    aria-label="Remove"
-                    aria-describedby="chip-interactive-1-text"
-                >
-                    <svg class="icon icon--12" width="13" height="12">
-                        <icon-symbol name="close-12"/>
-                    </svg>
-                </button>
-            </span>
-        </div>
-    </div>
-
-    <highlight-code type="html">
-        <span class="chip">
-            <span id="chip-interactive-1-text" class="chip__text">
-                Football
-            </span>
-            <button
-                class="chip__button"
-                type="button"
-                aria-label="Remove"
-                aria-describedby="chip-interactive-1-text"
-            >
-                <svg class="icon icon--12" width="13" height="12">
-                    <use href="icons.svg#icon-close-12"/>
-                </svg>
-            </button>
-        </span>
-    </highlight-code>
-
     <h3 id="interactive-chip">
-        Menu button Chip
+        Menu Button Chip
     </h3>
     <p>
         When a chip is used to trigger a menu, it should have an
