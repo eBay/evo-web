@@ -341,7 +341,10 @@ button.icon-btn.lightbox-dialog__prev {
         max-width: var(--dialog-lightbox-max-width);
     }
     .lightbox-dialog--wide .lightbox-dialog__window {
-        max-width: var(--dialog-lightbox-wide-max-width);
+        max-width: min(
+            var(--dialog-lightbox-wide-max-width),
+            88% - var(--spacing-400)
+        );
     }
     .lightbox-dialog--wide .lightbox-dialog__image {
         height: 256px;
