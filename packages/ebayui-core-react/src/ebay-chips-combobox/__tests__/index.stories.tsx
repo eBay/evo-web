@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import EbayChipsCombobox, { EbayChipsComboboxProps } from "../chips-combobox";
 import { EbayComboboxOption } from "../../ebay-combobox";
 import { EbayButton } from "../../ebay-button";

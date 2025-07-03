@@ -1,6 +1,6 @@
 import React from "react";
-import { Meta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { Meta } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 
 import { EbayListbox, EbayListboxOption, EbayListboxOptionDescription } from "../";
 

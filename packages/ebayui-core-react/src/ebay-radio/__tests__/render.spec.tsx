@@ -1,5 +1,5 @@
 import React from "react";
-import { composeStory } from "@storybook/react";
+import { composeStory } from "@storybook/react-vite";
 import { render } from "@testing-library/react";
 import Meta, {
     UsingCustomLabelHtml,

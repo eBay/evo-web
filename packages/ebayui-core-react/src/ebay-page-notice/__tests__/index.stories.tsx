@@ -1,6 +1,6 @@
 import React from "react";
 import { EbayPageNotice, EbayNoticeContent, EbayPageNoticeTitle, EbayPageNoticeFooter, EbayPageNoticeCTA } from "..";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 export default {
     title: "notices & tips/ebay-page-notice",

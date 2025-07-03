@@ -58,7 +58,7 @@ describe("<EbayInlineNotice>", () => {
             jest.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayInlineNotice aria-label="error" />);
-            }).toThrowError(`EbayInlineNotice: Please use a EbayNoticeContent that defines the content of the notice`);
+            }).toThrow(`EbayInlineNotice: Please use a EbayNoticeContent that defines the content of the notice`);
             (console.error as jest.Mock).mockRestore();
         });
     });

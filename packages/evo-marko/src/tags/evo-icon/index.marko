@@ -1,0 +1,112 @@
+import type { AttrString } from "marko/tags-html";
+static interface IconDefs {
+    server: string;
+    browser: any;
+}
+export interface Input extends Marko.Input<"svg"> {
+    _symbol: () => string;
+    _name: string;
+    _size?: string;
+    _type?: string;
+    _def?: () => IconDefs;
+    a11yText?: AttrString;
+}
+
+<const/{
+    class: inputClass,
+    _name,
+    _size,
+    _type,
+    _symbol,
+    a11yText,
+    // ...htmlInput
+}=input/>
+
+<const/htmlInput=(({
+    class: inputClass,
+    _name,
+    _size,
+    _type,
+    _symbol,
+    a11yText,
+    ...rest
+}) => rest)(input)/>
+static function getIconClass(type: string, name: string, size?: string) {
+    const colorMap: { [index: string]: string } = {
+        "confirmation-filled-16": "confirmation-filled",
+        "confirmation-filled-24": "confirmation-filled",
+        "information-filled-16": "information-filled",
+        "information-filled-24": "information-filled",
+        "attention-filled-16": "attention-filled",
+        "attention-filled-24": "attention-filled",
+    };
+
+    const extraClass = !!colorMap[name] ? ` icon--${colorMap[name]}` : "";
+
+    if (size) {
+        return `icon icon--${size}${extraClass}`;
+    } else if (type === "icon") {
+        return `icon icon--${name}${extraClass}`;
+    } else {
+        const dashedName = name.replace(type, `${type}-`);
+        return `${type} ${dashedName}${extraClass}`;
+    }
+}
+static const isBrowser = typeof document === "object";
+static const seenForKey = new WeakMap<WeakKey, Set<string>>();
+client const getRoot = () => document.getElementById("evo-web-icons");
+static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
+    let seen = seenForKey.get(key);
+    if (!seen) {
+        seen = new Set();
+        seenForKey.set(key, seen);
+
+        if (isBrowser && !getRoot()) {
+            document.body.insertAdjacentHTML(
+                "afterbegin",
+                "<svg id=evo-web-icons>",
+            );
+            const root = getRoot()!;
+            const icons =
+                document.querySelectorAll<SVGSymbolElement>(".icon>symbol");
+            for (let i = icons.length; i--; ) {
+                const icon = icons[i];
+                root.appendChild(icon);
+                seen.add(icon.id.slice("icon-".length));
+            }
+        }
+    }
+
+    if (!seen.has(name)) {
+        seen.add(name);
+
+        if (isBrowser) {
+            getRoot()!.insertAdjacentHTML("beforeend", symbol());
+        } else {
+            return symbol();
+        }
+    }
+
+    return "";
+}
+
+<id/titleId/>
+<const/prefixSvg=(_type === "icon" ? "icon-" : "")/>
+<const/hasA11yText=a11yText || input["aria-label"]/>
+<const/hasTitle=a11yText && !input["aria-label"]/>
+
+<svg
+    ...htmlInput
+    class=[inputClass, getIconClass(input._type ?? "", input._name, input._size)]
+    role=!!hasA11yText && "img"
+    aria-hidden=!hasA11yText && "true"
+    aria-labelledby=hasTitle && titleId
+>
+    $!{renderSymbol($global, input._name, input._symbol)}
+    <use href=`#icon-${input._name}`/>
+    <if=hasTitle>
+        <title id=titleId>
+            ${a11yText}
+        </title>
+    </if>
+</svg>

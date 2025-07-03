@@ -1,6 +1,6 @@
 import React from "react";
 import { render, within } from "@testing-library/react";
-import { composeStories } from "@storybook/react";
+import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
 
 const {

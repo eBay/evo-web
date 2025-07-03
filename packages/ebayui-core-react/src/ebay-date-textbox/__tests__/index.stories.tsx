@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StoryFn, Meta, StoryObj } from "@storybook/react";
+import { StoryFn, Meta, StoryObj } from "@storybook/react-vite";
 import { EbayDateTextbox, EbayDateTextboxProps } from "../index";
 import { EbayButton } from "../../ebay-button";
 

@@ -1,6 +1,6 @@
 import React, { FC, Ref } from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { composeStory } from "@storybook/react";
+import { composeStory } from "@storybook/react-vite";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 import Meta, { Default, Size, Priority, DestructiveVariant } from "./index.stories";
 import { EbayButton, EbayButtonProps } from "../index";

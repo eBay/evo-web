@@ -8,7 +8,7 @@ import {
     EbaySkeletonTextbox,
 } from "../";
 import { EbayButton } from "../../ebay-button";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 
 export type EbaySkeletonStoriesProps = ComponentProps<typeof EbaySkeleton> &
     ComponentProps<typeof EbaySkeletonButton> &

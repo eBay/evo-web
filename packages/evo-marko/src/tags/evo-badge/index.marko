@@ -1,0 +1,27 @@
+import type { AttrClass } from "marko/tags-html";
+export interface Input extends Marko.HTML.Span {
+    type?: "menu" | "icon";
+    number?: number | string;
+    class?: AttrClass;
+}
+<const/{
+    class: inputClass,
+    type,
+    number,
+    // ...htmlInput
+}=input/>
+
+<const/htmlInput=(({ class: inputClass, type, number, ...rest }) => rest)(
+    input,
+)/>
+<const/roundedNumber=Math.round(number as number)/>
+
+<if=(roundedNumber > 0)>
+    <span
+        ...htmlInput
+        role=type !== "menu" && type !== "icon" && "img"
+        class=["badge", inputClass]
+    >
+        ${roundedNumber > 99 ? "99+" : roundedNumber}
+    </span>
+</if>

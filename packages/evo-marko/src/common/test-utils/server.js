@@ -56,25 +56,6 @@ function testPassThroughAttributes(
   });
 }
 
-function getTransformedTemplate(transformer, srcString, componentPath) {
-  const { context, templateAST, code } = getTransformerData(
-    srcString,
-    componentPath,
-    {
-      output: "html",
-    },
-  );
-  if (code) {
-    return code;
-  }
-  const { prettyPrintAST } = require("@marko/prettyprint");
-  context.root = templateAST;
-  transformer(templateAST.body.array[0], context, { output: "" });
-  return prettyPrintAST(templateAST, { filename: componentPath })
-    .replace(/\n/g, "")
-    .replace(/\s{4}/g, "");
-}
-
 function runTransformer(transformer, srcString, componentPath) {
   const { context, templateAST, code } = getTransformerData(
     srcString,

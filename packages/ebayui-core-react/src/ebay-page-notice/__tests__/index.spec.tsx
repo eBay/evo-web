@@ -43,7 +43,7 @@ describe("<EbayPageNotice>", () => {
             jest.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayPageNotice />);
-            }).toThrowError(`EbayPageNotice: Please use a EbayNoticeContent that defines the content of the notice`);
+            }).toThrow(`EbayPageNotice: Please use a EbayNoticeContent that defines the content of the notice`);
             (console.error as jest.Mock).mockRestore();
         });
     });

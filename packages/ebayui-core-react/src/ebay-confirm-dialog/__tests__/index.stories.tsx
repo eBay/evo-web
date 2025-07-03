@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { EbayConfirmDialog } from "../index";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
-import { action } from "@storybook/addon-actions";
-import { StoryFn, Meta } from "@storybook/react";
+import { action } from "storybook/actions";
+import { StoryFn, Meta } from "@storybook/react-vite";
 
 const story: Meta<typeof EbayConfirmDialog> = {
     component: EbayConfirmDialog,

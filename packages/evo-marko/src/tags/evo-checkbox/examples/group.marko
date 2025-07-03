@@ -1,0 +1,31 @@
+<let/checkedItems = [false, false, false]/>
+
+
+<div>
+    ${checkedItems.toString()}
+</div>
+<fieldset>
+    <legend>Choose an Option</legend>
+    <for|_checked, i| of=checkedItems>
+        <let/checked=_checked valueChange(v) {
+            const newItems = [...checkedItems];
+            newItems[i] = v;
+            checkedItems = newItems }/>
+        <span class="field">
+            <evo-checkbox
+                ...input
+                checked:=checked
+                class="field__control"
+                id=`group-checkbox-${i}`
+                value=i
+                name="checkbox-group"
+            />
+            <label
+                class="field__label field__label--end"
+                for=`group-checkbox-${i}`
+            >
+                Option ${i + 1}
+            </label>
+        </span>
+    </for>
+</fieldset>

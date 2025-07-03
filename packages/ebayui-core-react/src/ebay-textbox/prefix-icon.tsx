@@ -4,8 +4,12 @@ import React, { FC } from "react";
 import { EbayIcon } from "../ebay-icon";
 import { EbayTextboxIconProps } from "./types";
 
-const EbayTextboxPrefixIcon: FC<EbayTextboxIconProps> = ({ name, ...rest }: EbayTextboxIconProps) => (
-    <EbayIcon name={name} {...(rest as any)} />
-);
+const EbayTextboxPrefixIcon: FC<EbayTextboxIconProps> = ({ children, name, ...rest }: EbayTextboxIconProps) => {
+    if (name) {
+        return <EbayIcon name={name} {...(rest as any)} />;
+    }
+
+    return children;
+};
 
 export default EbayTextboxPrefixIcon;

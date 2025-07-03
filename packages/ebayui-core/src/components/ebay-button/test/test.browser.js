@@ -4,7 +4,7 @@ import { visualHTML } from "../../../common/test-utils/snapshots";
 import { render, fireEvent, cleanup } from "@marko/testing-library";
 import { pressKey } from "../../../common/test-utils/browser";
 import * as stories from "../button.stories"; // import all stories from the stories file
-const { Standard } = composeStories(stories);
+const { Default } = composeStories(stories);
 
 afterEach(cleanup);
 
@@ -13,7 +13,7 @@ let component;
 
 describe("given button is enabled", () => {
     beforeEach(async () => {
-        component = await render(Standard);
+        component = await render(Default);
     });
 
     it("then it matches the snapshot", () => {
@@ -47,7 +47,7 @@ describe("given button is enabled", () => {
 
 describe("given button is disabled", () => {
     beforeEach(async () => {
-        component = await render(Standard, { disabled: true });
+        component = await render(Default, { disabled: true });
     });
 
     describe("when button is clicked", () => {

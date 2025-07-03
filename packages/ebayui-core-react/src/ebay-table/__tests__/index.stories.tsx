@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayTable, EbayTableCell, EbayTableHeader, EbayTableRow, type TableSortHandler } from "../index";
 import { EbaySignal, SignalStatus } from "../../ebay-signal";
 import { EbaySelect, EbaySelectOption } from "../../ebay-select";

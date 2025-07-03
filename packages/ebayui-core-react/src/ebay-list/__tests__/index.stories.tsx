@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayList, EbayListItem } from "../index";
 import EbayListItemLeading from "../list-item-leading";
 import EbayListItemTrailing from "../list-item-trailing";

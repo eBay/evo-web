@@ -1,0 +1,62 @@
+import type { AttrString } from "marko/tags-html";
+export interface Input extends Marko.HTML.Div {
+    max?: string;
+    min?: string;
+    chargerIcon?: "included" | "not-included";
+    units?: AttrString;
+    /**
+     * The aria-label accessibility label for the ccd component.
+     * This is for internationalization.
+     * It should use min, max, and charger included or not included, and secondaryText in the label in order to demonstrate
+     * to screen readers the content on the component.
+     *
+     * Expected value `Charger included. ${min} - ${max} Watts. USB PD`
+     */
+    a11yText: Marko.HTML.Div["aria-label"];
+    secondaryType?: "none" | "usbpd";
+}
+<const/{
+    class: inputClass,
+    a11yText,
+    chargerIcon,
+    max,
+    min,
+    secondaryType = "none",
+    // ...htmlInput
+}=input/>
+
+<const/htmlInput=(({
+    class: inputClass,
+    a11yText,
+    chargerIcon,
+    max,
+    min,
+    secondaryType = "none",
+    ...rest
+}) => rest)(input)/>
+
+<div
+    ...htmlInput
+    aria-label=a11yText
+    role="figure"
+    class=["ccd", inputClass]
+>
+    <if=chargerIcon === "included">
+        <evo-icon-ccd-charger-included class="ccd__charger-icon"/>
+    </if>
+    <else if=chargerIcon === "not-included">
+        <evo-icon-ccd-charger-not-included class="ccd__charger-icon"/>
+    </else>
+    <if=min || max>
+        <div class="ccd__description-figure">
+            <evo-icon-ccd-top class="ccd__top-icon"/>
+            <div class="ccd__body">
+                <div>${min} - ${max}</div>
+                <div>W</div>
+                <if=secondaryType === "usbpd">
+                    <div>USB PD</div>
+                </if>
+            </div>
+        </div>
+    </if>
+</div>

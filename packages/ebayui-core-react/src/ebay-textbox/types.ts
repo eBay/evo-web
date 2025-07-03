@@ -5,7 +5,7 @@ export type Size = "default" | "large";
 
 export type EbayTextboxIconProps = ComponentProps<"button"> &
     ComponentProps<"a"> & {
-        name: Icon;
+        name?: Icon;
         buttonAriaLabel?: string;
         onClick?: (e: KeyboardEvent | MouseEvent) => void;
     };

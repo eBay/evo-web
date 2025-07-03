@@ -1,4 +1,5 @@
 import fsp from "node:fs/promises";
+import type { StorybookConfig } from "@storybook/marko";
 
 // This is done because lasso does not work with readme.md?raw
 // Lasso is being used to run our browser tests with @marko/test
@@ -16,10 +17,10 @@ const rawMarkdown = {
     },
 };
 
-export default {
+const config: StorybookConfig = {
     stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     framework: "@storybook/marko-vite",
-    addons: ["@storybook/addon-essentials", "@storybook/addon-a11y"],
+    addons: ["@storybook/addon-a11y", "@storybook/addon-docs"],
     parameters: {
         docs: {
             description: {
@@ -29,8 +30,8 @@ export default {
     },
     staticDirs: ["./static"],
     docs: {
-        autodocs: true,
         defaultName: "Documentation",
+        autodocs: "tag",
     },
     core: {
         disableTelemetry: true,
@@ -49,3 +50,5 @@ export default {
         });
     },
 };
+
+export default config;

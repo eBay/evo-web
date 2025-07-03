@@ -1,8 +1,8 @@
 import React, { SyntheticEvent, useState } from "react";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 import "shaka-player/dist/controls.css";
 
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { EbayButton } from "../../ebay-button";
 import { EbayVideo, EbayVideoProps, EbayVideoSource } from "../index";
 import { PlayEventProps, VolumeChangeProps } from "../video";

@@ -2,7 +2,7 @@
 
 exports[`eek > passes through additional html attributes 1`] = `
 <div
-  aria-label="Energy Rating: null. Range: undefined - undefined."
+  aria-label="Energy Rating: undefined. Range: undefined - undefined."
   class="eek class1"
   data-passed-through="true"
   data-testid="AttributePassthrough"
@@ -87,7 +87,7 @@ exports[`eek > passes through additional html attributes 1`] = `
 
 exports[`eek > passes through additional html attributes 2`] = `
 <div
-  aria-label="Energy Rating: null. Range: undefined - undefined."
+  aria-label="Energy Rating: undefined. Range: undefined - undefined."
   class="eek class1"
   data-passed-through="true"
   data-testid="AttributePassthrough"
@@ -197,7 +197,7 @@ exports[`eek > renders default eek 3`] = `
 
 exports[`eek > renders default eek 4`] = `
 <div
-  aria-label="Energy Rating: 5. Range: A+++ - D."
+  aria-label="Energy Rating: B. Range: A+++ - D."
   class="eek eek--rating-5"
   role="figure"
 >
@@ -309,7 +309,7 @@ exports[`eek > renders invalid eek 3`] = `
 
 exports[`eek > renders invalid eek 4`] = `
 <div
-  aria-label="Energy Rating: null. Range: A - D."
+  aria-label="Energy Rating: B. Range: A - D."
   class="eek"
   role="figure"
 >
@@ -421,7 +421,7 @@ exports[`eek > renders large eek 3`] = `
 
 exports[`eek > renders large eek 4`] = `
 <div
-  aria-label="Energy Rating: 5. Range: A+++ - D."
+  aria-label="Energy Rating: B. Range: A+++ - D."
   class="eek eek--rating-5 eek--large"
   role="figure"
 >
@@ -508,7 +508,7 @@ exports[`eek > renders large eek 4`] = `
 
 exports[`eek > renders rating 1 1`] = `
 <div
-  aria-label="Energy Rating: 1. Range: A++ - E."
+  aria-label="Energy Rating: A++. Range: A++ - E."
   class="eek eek--rating-1"
   role="figure"
 >
@@ -595,7 +595,7 @@ exports[`eek > renders rating 1 1`] = `
 
 exports[`eek > renders rating 2 1`] = `
 <div
-  aria-label="Energy Rating: 2. Range: A++ - E."
+  aria-label="Energy Rating: A+. Range: A++ - E."
   class="eek eek--rating-2"
   role="figure"
 >
@@ -682,7 +682,7 @@ exports[`eek > renders rating 2 1`] = `
 
 exports[`eek > renders rating 3 1`] = `
 <div
-  aria-label="Energy Rating: 3. Range: A++ - E."
+  aria-label="Energy Rating: A. Range: A++ - E."
   class="eek eek--rating-3"
   role="figure"
 >
@@ -769,7 +769,7 @@ exports[`eek > renders rating 3 1`] = `
 
 exports[`eek > renders rating 4 1`] = `
 <div
-  aria-label="Energy Rating: 4. Range: A++ - E."
+  aria-label="Energy Rating: B. Range: A++ - E."
   class="eek eek--rating-4"
   role="figure"
 >
@@ -856,7 +856,7 @@ exports[`eek > renders rating 4 1`] = `
 
 exports[`eek > renders rating 5 1`] = `
 <div
-  aria-label="Energy Rating: 5. Range: A++ - E."
+  aria-label="Energy Rating: C. Range: A++ - E."
   class="eek eek--rating-5"
   role="figure"
 >
@@ -943,7 +943,7 @@ exports[`eek > renders rating 5 1`] = `
 
 exports[`eek > renders rating 6 1`] = `
 <div
-  aria-label="Energy Rating: 6. Range: A++ - E."
+  aria-label="Energy Rating: D. Range: A++ - E."
   class="eek eek--rating-6"
   role="figure"
 >
@@ -1030,7 +1030,7 @@ exports[`eek > renders rating 6 1`] = `
 
 exports[`eek > renders rating 7 (not 8) 1`] = `
 <div
-  aria-label="Energy Rating: 7. Range: A++ - G."
+  aria-label="Energy Rating: F. Range: A++ - G."
   class="eek eek--rating-7"
   role="figure"
 >
@@ -1117,7 +1117,7 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
 
 exports[`eek > renders rating 7 (not 8) 2`] = `
 <div
-  aria-label="Energy Rating: 7. Range: A++ - G."
+  aria-label="Energy Rating: G. Range: A++ - G."
   class="eek eek--rating-7"
   role="figure"
 >
@@ -1204,7 +1204,7 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
 
 exports[`eek > renders rating 7 1`] = `
 <div
-  aria-label="Energy Rating: 7. Range: A++ - E."
+  aria-label="Energy Rating: E. Range: A++ - E."
   class="eek eek--rating-7"
   role="figure"
 >
@@ -1291,7 +1291,7 @@ exports[`eek > renders rating 7 1`] = `
 
 exports[`eek > renders the correct eek if rating is outside 1`] = `
 <div
-  aria-label="Energy Rating: null. Range: A+ - D."
+  aria-label="Energy Rating: A++. Range: A+ - D."
   class="eek"
   role="figure"
 >

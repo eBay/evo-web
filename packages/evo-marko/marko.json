@@ -1,0 +1,5 @@
+{
+  "taglib-id": "evo-marko",
+  "tags-dir": "./src/tags",
+  "taglib-imports": ["./src/tags/evo-icon/marko.json"]
+}

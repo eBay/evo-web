@@ -29,7 +29,7 @@ interface State {
 }
 
 class ProgressBarExpressive extends Marko.Component<Input, State> {
-    declare timeouts: { fadeIn?: NodeJS.Timeout; showMessage?: NodeJS.Timeout };
+    declare timeouts: { fadeIn?: NodeJS.Timeout; showMessage?: NodeJS.Timeout | number };
     declare fadeInFirstMessage: boolean;
 
     onCreate(input: Input) {

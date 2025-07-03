@@ -1,6 +1,6 @@
 import React from "react";
-import { StoryObj, StoryFn, Meta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { StoryObj, StoryFn, Meta } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 
 import { EbayBreadcrumbs, EbayBreadcrumbItem as Item } from "../index";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { EbayToggleButtonGroup } from "..";
 import { EbayToggleButton } from "../../ebay-toggle-button";
 

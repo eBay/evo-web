@@ -27,7 +27,7 @@ export default defineConfig({
             include: ["src/**/*"],
             exclude: [
                 "src/**/examples",
-                "src/components/ebay-icon/icons/",
+                "src/components/evo-icon/icons/",
                 "src/**/*.stories.ts",
             ],
         },

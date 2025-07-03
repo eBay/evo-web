@@ -1,5 +1,5 @@
 import React from "react";
-import { StoryObj } from "@storybook/react";
+import { StoryObj } from "@storybook/react-vite";
 import { EbayEducationNotice, EbayNoticeContent, EbayEducationNoticeTitle, EbayEducationNoticeFooter } from "../index";
 
 export default {

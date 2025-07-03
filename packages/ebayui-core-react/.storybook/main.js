@@ -14,21 +14,7 @@ export default {
         },
     },
     addons: [
-        "@storybook/addon-essentials",
         "@storybook/addon-a11y",
-        {
-            name: "@storybook/addon-storysource",
-            options: {
-                rule: {
-                    test: [/\.stories\.tsx?$/],
-                    include: [resolve(__dirname, "../src")],
-                },
-                loaderOptions: {
-                    injectStoryParameters: false,
-                    prettierConfig: { printWidth: 80 },
-                },
-            },
-        },
     ],
 
     framework: {
@@ -41,7 +27,7 @@ export default {
     },
 
     docs: {
-        autodocs: true,
+        autodocs: 'tag',
     },
 
     core: {

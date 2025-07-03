@@ -1,7 +1,12 @@
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component from "./examples/default.marko";
+import WithPrevButtonTemplate from "./examples/with-prev-button.marko";
+import WithPrevButtonCode from "./examples/with-prev-button.marko?raw";
+import WithFooterTemplate from "./examples/with-footer.marko";
+import WithFooterCode from "./examples/with-footer.marko?raw";
 import type { Input } from "./index.marko";
 
 const Template: Story<Input> = (args) => ({
@@ -54,6 +59,15 @@ export default {
             control: { type: "text" },
             description: "A11y text for close button and mask.",
         },
+        prevButton: {
+            name: "@prevButton",
+            control: { type: "object" },
+            table: {
+                category: "@attribute tags",
+            },
+            description:
+                "Previous button, shows up before header. Usually a chevron-left icon.",
+        },
         onOpen: {
             action: "on-open",
             description: "Triggered on dialog opened",
@@ -67,6 +81,16 @@ export default {
         onClose: {
             action: "on-close",
             description: "Triggered on dialog closed.",
+            table: {
+                category: "Events",
+                defaultValue: {
+                    summary: "",
+                },
+            },
+        },
+        onPrevButtonClick: {
+            action: "on-prev-button-click",
+            description: "Triggered when previous button is clicked",
             table: {
                 category: "Events",
                 defaultValue: {
@@ -88,3 +112,13 @@ Default.parameters = {
         },
     },
 };
+
+export const WithPrevButton = buildExtensionTemplate(
+    WithPrevButtonTemplate,
+    WithPrevButtonCode,
+);
+
+export const WithFooter = buildExtensionTemplate(
+    WithFooterTemplate,
+    WithFooterCode,
+);

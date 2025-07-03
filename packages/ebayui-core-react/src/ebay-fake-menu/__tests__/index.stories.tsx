@@ -1,6 +1,6 @@
 import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { StoryFn, Meta } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 import { EbayFakeMenu, EbayFakeMenuItem as Item, EbayFakeMenuSeparator as Separator } from "../index";
 
 const meta: Meta<typeof EbayFakeMenu> = {

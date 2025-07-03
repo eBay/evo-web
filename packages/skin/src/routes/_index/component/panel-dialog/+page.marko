@@ -109,6 +109,138 @@
         </div>
     </highlight-code>
 
+    <h3 id="panel-dialog-prev">
+        Panel dialog with Previous button
+    </h3>
+    <p>
+        If you want to add a previous button to the panel dialog, add the icon button before the dialog heading tag.
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <button
+                class="btn btn--primary dialog-button"
+                data-makeup-for="dialog-left-panel-prev"
+                type="button"
+            >
+                Open Panel
+            </button>
+            <div
+                aria-labelledby="panel-dialog-prev-title"
+                aria-modal="true"
+                class="panel-dialog"
+                hidden
+                id="dialog-left-panel-prev"
+                role="dialog"
+            >
+                <div class="panel-dialog__window">
+                    <div class="panel-dialog__header">
+                        <button
+                            aria-label="Go back"
+                            class="icon-btn panel-dialog__prev"
+                            type="button"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--16"
+                                height="16"
+                                width="16"
+                            >
+                                <icon-symbol name="chevron-left-16"/>
+                            </svg>
+                        </button>
+                        <h2
+                            id="panel-dialog-prev-title"
+                            class="large-text-1 bold-text"
+                        >
+                            Heading
+                        </h2>
+                        <button
+                            aria-label="Close dialog"
+                            class="icon-btn panel-dialog__close"
+                            type="button"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--16"
+                                height="16"
+                                width="16"
+                            >
+                                <icon-symbol name="close-16"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="panel-dialog__main">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p>
+                            <a href="https://www.ebay.com">
+                                www.ebay.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <div
+            aria-labelledby="dialog-title"
+            aria-modal="true"
+            class="panel-dialog"
+            hidden
+            role="dialog"
+        >
+            <div class="panel-dialog__window">
+                <div class="panel-dialog__header">
+                    <button
+                        aria-label="Go back"
+                        class="icon-btn panel-dialog__prev"
+                        type="button"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--16"
+                            height="16"
+                            width="16"
+                        >
+                            <icon-symbol name="chevron-left-16"/>
+                        </svg>
+                    </button>
+                    <h2 id="dialog-title" class="large-text-1 bold-text">
+                        Heading
+                    </h2>
+                    <button
+                        aria-label="Close dialog"
+                        class="icon-btn panel-dialog__close"
+                        type="button"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--16"
+                            height="16"
+                            width="16"
+                        >
+                            <use href="#icon-close-16"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="panel-dialog__main">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <p>
+                        <a href="https://www.ebay.com">
+                            www.ebay.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </highlight-code>
+
     <h3 id="panel-dialog-footer">
         Panel dialog with footer
     </h3>

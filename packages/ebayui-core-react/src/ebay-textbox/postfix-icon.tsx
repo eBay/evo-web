@@ -6,15 +6,21 @@ import { EbayIcon } from "../ebay-icon";
 import { EbayIconButton } from "../ebay-icon-button";
 
 const EbayTextboxPostfixIcon: FC<EbayTextboxIconProps> = ({
+    children,
     name,
     buttonAriaLabel,
     onClick = () => {},
     ...rest
-}: EbayTextboxIconProps) =>
-    buttonAriaLabel ? (
-        <EbayIconButton aria-label={buttonAriaLabel} icon={name} transparent onClick={onClick} {...(rest as any)} />
-    ) : (
-        <EbayIcon name={name} {...(rest as any)} />
-    );
+}: EbayTextboxIconProps) => {
+    if (name) {
+        return buttonAriaLabel ? (
+            <EbayIconButton aria-label={buttonAriaLabel} icon={name} transparent onClick={onClick} {...(rest as any)} />
+        ) : (
+            <EbayIcon name={name} {...(rest as any)} />
+        );
+    }
+
+    return children;
+};
 
 export default EbayTextboxPostfixIcon;

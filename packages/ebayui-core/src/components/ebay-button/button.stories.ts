@@ -199,8 +199,8 @@ export default {
     },
 };
 
-export const Standard = Template.bind({});
-Standard.args = {
+export const Default = Template.bind({});
+Default.args = {
     renderBody: "Button",
     href: "",
     fluid: false,
@@ -214,10 +214,10 @@ Standard.args = {
     truncate: false,
 } as any;
 
-Standard.parameters = {
+Default.parameters = {
     docs: {
         source: {
-            code: tagToString("ebay-button", Standard.args),
+            code: tagToString("ebay-button", Default.args),
         },
     },
 };

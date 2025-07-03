@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import { composeStory } from "@storybook/react";
+import { composeStory } from "@storybook/react-vite";
 import Meta, {
     DefaultTooltip,
     AnchorHost,

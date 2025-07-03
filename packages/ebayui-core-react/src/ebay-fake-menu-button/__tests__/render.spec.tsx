@@ -1,6 +1,6 @@
 import React from "react";
 import { getAllByRole, getByRole, render, screen, within } from "@testing-library/react";
-import { composeStory } from "@storybook/react";
+import { composeStory } from "@storybook/react-vite";
 import Meta, {
     Borderless,
     Default,

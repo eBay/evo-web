@@ -141,7 +141,7 @@ describe("<EbayTooltip>", () => {
                         <button>Test</button>
                     </EbayTooltip>,
                 );
-            }).toThrowError(`EbayTooltip: Please use a EbayTooltipHost that defines the host of the tooltip`);
+            }).toThrow(`EbayTooltip: Please use a EbayTooltipHost that defines the host of the tooltip`);
             (console.error as jest.Mock).mockRestore();
         });
     });
@@ -157,7 +157,7 @@ describe("<EbayTooltip>", () => {
                         </EbayTooltipHost>
                     </EbayTooltip>,
                 );
-            }).toThrowError(`EbayTooltip: Please use a EbayTooltipContent that defines the content of the tooltip`);
+            }).toThrow(`EbayTooltip: Please use a EbayTooltipContent that defines the content of the tooltip`);
             (console.error as jest.Mock).mockRestore();
         });
     });
@@ -175,7 +175,7 @@ describe("<EbayTooltip>", () => {
                         <EbayTooltipContent>Content</EbayTooltipContent>
                     </EbayTooltip>,
                 );
-            }).toThrowError(`React.Children.only expected to receive a single React element child.`);
+            }).toThrow(`React.Children.only expected to receive a single React element child.`);
             (console.error as jest.Mock).mockRestore();
         });
     });

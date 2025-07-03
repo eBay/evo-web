@@ -1,6 +1,6 @@
 {
     "name": "@ebay/skin",
-    "version": "19.7.0",
+    "version": "19.8.0",
     "description": "Skin - CSS modules that represent the brand eBay",
     "keywords": [
         "eBay",
@@ -67,7 +67,7 @@
         "snapshots:execute": "npm run build:snapshots && percy storybook ./.storybook-percy --include",
         "snapshots:execute:dry": "percy storybook ./.storybook-percy --dry-run --include",
         "start": "marko-run",
-        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook",
+        "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook --no-open",
         "test": "npm run build",
         "verify": "node scripts verify",
         "version": "npm run build"
@@ -83,7 +83,7 @@
         "extends @ebay/browserslist-config"
     ],
     "devDependencies": {
-        "@marko/run-adapter-static": "^2.0.0"
+        "@marko/run-adapter-static": "^2.0.1"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org"

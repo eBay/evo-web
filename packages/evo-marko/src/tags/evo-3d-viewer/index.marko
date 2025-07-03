@@ -1,0 +1,81 @@
+import type { AttrClass, AttrString } from "marko/tags-html";
+import type { ModelViewerElement } from "@google/model-viewer";
+import { load as modelViewerLoad } from "@internal/model-viewer";
+export interface Input extends Partial<ModelViewerElement> {
+    class?: AttrClass;
+    errorText: AttrString;
+    /**
+     * The aria-label accessibility label for the 3D viewer.
+     **/
+    a11yLoadingText: AttrString;
+    onLoadError?: (err: CustomEvent) => void;
+}
+<const/{
+    class: inputClass,
+    src,
+    errorText,
+    onLoadError,
+    a11yLoadingText,
+    // ...htmlInput
+}=input/>
+
+<const/htmlInput=(({
+    class: inputClass,
+    src,
+    errorText,
+    onLoadError,
+    a11yLoadingText,
+    ...rest
+}) => rest)(input)/>
+
+static type LoadState = "ready" | "error" | "loading";
+
+<let/loadState="loading" as LoadState/>
+<script>
+    try {
+        await modelViewerLoad();
+        loadState = "ready"
+    } catch (err:any) {
+        onLoadError?.(err);
+        loadState = "error"
+    }
+</script>
+
+<div class=["three-d-player", inputClass]>
+    <if=loadState === "ready">
+        <model-viewer
+            camera-controls
+            touch-action="pan-y"
+            src=src
+            ...htmlInput
+        />
+    </if>
+    <else if=loadState === "error">
+        <div class="three-d-player__overlay">
+            <evo-icon-attention-24/>
+            <div class="three-d-player__overlay-text">
+                ${errorText}
+            </div>
+        </div>
+    </else>
+    <else>
+        <div class="three-d-player__overlay">
+            <evo-progress-spinner aria-label=a11yLoadText/>
+        </div>
+    </else>
+</div>
+
+<style>
+    .three-d-player {
+        position: relative;
+    }
+
+    .three-d-player__overlay {
+        position: absolute;
+        display: flex;
+        inset: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

@@ -1,10 +1,11 @@
 @import "../variables/variables";
 
 :root {
-    --progress-bar-expressive-color-1: #e53238;
-    --progress-bar-expressive-color-2: #0064d2;
-    --progress-bar-expressive-color-3: #f5af02;
-    --progress-bar-expressive-color-4: #86b817;
+    /* Default to logo colors (no variation in dark mode). */
+    --progress-bar-expressive-color-1: var(--color-red-500);
+    --progress-bar-expressive-color-2: var(--color-blue-500);
+    --progress-bar-expressive-color-3: var(--color-yellow-400);
+    --progress-bar-expressive-color-4: var(--color-green-500);
     --progress-bar-expressive-line-border-radius: 2px;
     --progress-bar-expressive-line-count: 12;
     --progress-bar-expressive-line-gap: var(--spacing-50);
@@ -29,13 +30,6 @@
     --progress-bar-expressive-line-width-c4: 12%;
     --progress-bar-expressive-message-animatein-duration: 833ms;
     --progress-bar-expressive-message-animateout-duration: 400ms;
-
-    @media (prefers-color-scheme: dark) {
-        --progress-bar-expressive-color-1: #f0343b;
-        --progress-bar-expressive-color-2: #0078fc;
-        --progress-bar-expressive-color-3: #e8a502;
-        --progress-bar-expressive-color-4: #86b817;
-    }
 }
 
 .progress-bar-expressive {

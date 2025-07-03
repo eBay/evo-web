@@ -94,7 +94,8 @@
 .panel-dialog__footer > :not(:first-child) {
     margin-top: var(--spacing-200);
 }
-button.icon-btn.panel-dialog__close {
+button.icon-btn.panel-dialog__close,
+button.icon-btn.panel-dialog__prev {
     align-self: flex-start;
     border: 0;
     height: 32px;
@@ -103,6 +104,10 @@ button.icon-btn.panel-dialog__close {
     position: relative;
     width: 32px;
     z-index: 1;
+}
+
+button.icon-btn.panel-dialog__prev {
+    margin-inline-end: var(--spacing-200);
 }
 
 .panel-dialog__title:not(:first-child) {
@@ -169,6 +174,10 @@ button.icon-btn.panel-dialog__close {
 .panel-dialog--hide-init .panel-dialog__window--slide,
 .panel-dialog--show .panel-dialog__window--slide {
     transform: translateX(0);
+}
+
+[dir="rtl"] button.icon-btn.panel-dialog__prev .icon {
+    transform: rotate(180deg);
 }
 @media (min-width: 512px) {
     .panel-dialog__window {

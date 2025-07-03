@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayAccordion } from "../index";
 import { EbayDetails } from "../../ebay-details";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import { Meta, StoryFn } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 import { EbayDialogFooter, EbayDialogHeader, EbayDialogPreviousButton } from "../../ebay-dialog-base";
 import { EbayButton } from "../../ebay-button";
 import { EbayCheckbox } from "../../ebay-checkbox";
