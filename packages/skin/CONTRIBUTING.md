@@ -50,7 +50,7 @@ This page contains instructions and guidelines for anybody contributing code to 
 
 ## Contribution Steps
 
-Before writing any code, please submit a new issue to [GitHub](https://github.com/eBay/skin/issues). Or, if you want to work on an _existing_ issue, please request to do so on the relevant ticket.
+Before writing any code, please submit a new issue to [GitHub](https://github.com/eBay/evo-web/issues). Or, if you want to work on an _existing_ issue, please request to do so on the relevant ticket.
 
 We **strongly** advise you to only begin working on issues that are assigned specifically to you and that are part of the upcoming milestone, otherwise your work may end up being in vain.
 
