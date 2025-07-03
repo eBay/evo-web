@@ -1,8 +1,6 @@
 function toggleAttribute(chip, attribute) {
     if (chip.hasAttribute(attribute)) {
-        chip.getAttribute(attribute) === "true"
-            ? chip.setAttribute(attribute, "false")
-            : chip.setAttribute(attribute, "true");
+        chip.toggleAttribute(attribute);
     }
 }
 

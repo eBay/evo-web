@@ -88,7 +88,7 @@ button.chip[aria-expanded="true"] .chip__trailing {
     white-space: nowrap;
 }
 
-button.chip__button {
+.chip button.chip__button {
     align-items: center;
     background-color: initial;
     border: none;
@@ -105,7 +105,7 @@ button.chip__button {
     width: var(--spacing-300);
 }
 
-button.chip__button:focus-visible {
+.chip button.chip__button:focus-visible {
     background-color: var(--state-layer-focus);
     outline-color: var(--color-state-focus-stroke);
     outline-offset: -2px;
@@ -113,6 +113,6 @@ button.chip__button:focus-visible {
     outline-width: 2px;
 }
 
-button.chip__button:hover {
+.chip button.chip__button:hover {
     background-color: var(--state-layer-hover);
 }
