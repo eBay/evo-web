@@ -1,5 +1,15 @@
 # Skin Changelog
 
+## 19.8.1
+
+### Patch Changes
+
+- [#202](https://github.com/eBay/evo-web/pull/202) [`4e045b5`](https://github.com/eBay/evo-web/commit/4e045b5038065bc68a65da8efe3bb551b5610a96) Thanks [@agliga](https://github.com/agliga)! - fix(marketsans): removed all duplicate src values
+
+- [#203](https://github.com/eBay/evo-web/pull/203) [`fb70502`](https://github.com/eBay/evo-web/commit/fb705021ed09ad88c84e533de2e1fe107a973c07) Thanks [@patricknelson](https://github.com/patricknelson)! - fix(progress-bar-expressive): update colors to use logo colors for both light and dark mode
+
+- [#204](https://github.com/eBay/evo-web/pull/204) [`c29b842`](https://github.com/eBay/evo-web/commit/c29b842cc3f98f7d081e0c910c8bc77b03b25540) Thanks [@patricknelson](https://github.com/patricknelson)! - fix(tokens): reconciling brand colors with latest from playbook
+
 ## 19.8.0
 
 ### Minor Changes
