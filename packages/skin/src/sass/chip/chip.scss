@@ -1,3 +1,4 @@
+@use "../mixins/public/animation-mixins";
 @import "../variables/variables";
 
 @keyframes fill-horizontal-background {
@@ -39,7 +40,9 @@ a.chip {
 
 button.chip .chip__trailing,
 a.chip .chip__trailing {
-    rotate: 45deg;
+    rotate: -225deg;
+    transition: rotate var(--motion-duration-medium-3)
+        var(--motion-easing-standard);
 }
 
 .chip--expressive {
@@ -81,8 +84,17 @@ span.chip .chip__trailing {
     rotate: 0deg;
 }
 
+button.chip[aria-expanded="false"] .chip__trailing {
+    @include animation-mixins.chevron-close();
+
+    transition: none;
+}
+
 button.chip[aria-expanded="true"] .chip__trailing {
+    @include animation-mixins.chevron-open();
+
     rotate: 180deg;
+    transition: none;
 }
 
 .chip__text {

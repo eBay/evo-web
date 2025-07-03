@@ -1,0 +1,33 @@
+@keyframes chevron-bounce-open {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes chevron-bounce-close {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@mixin chevron-open() {
+    animation: chevron-bounce-open var(--motion-duration-medium-1)
+        var(--motion-easing-standard) var(--motion-duration-short-1);
+}
+
+@mixin chevron-close() {
+    animation: chevron-bounce-close var(--motion-duration-medium-1)
+        var(--motion-easing-standard);
+}
