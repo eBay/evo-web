@@ -1,18 +1,100 @@
+@use "../mixins/public/animation-mixins";
 @import "../variables/variables";
+
+@keyframes fill-horizontal-background {
+    from {
+        background-size: 20% 100%;
+    }
+    to {
+        background-color: var(--color-background-strong);
+        background-size: 100% 100%;
+    }
+}
 
 .chip {
     align-items: center;
-    background-color: var(--color-background-tertiary);
-    border-radius: var(--spacing-400);
-    color: var(--color-foreground-primary);
+    border-radius: var(--border-radius-50);
+    box-sizing: border-box;
     display: inline-flex;
     font-size: var(--font-size-default);
-    gap: 2px;
+    gap: var(--spacing-75);
+    height: var(--spacing-400);
     justify-content: space-between;
     max-width: 296px;
-    min-height: var(--spacing-250);
     min-width: 32px;
     padding: 0 var(--spacing-150);
+    text-decoration: none;
+    vertical-align: bottom;
+}
+
+button.chip,
+a.chip {
+    background-color: var(--color-background-primary);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border: 1px solid var(--color-stroke-default);
+    box-shadow: none;
+    color: var(--color-foreground-primary);
+}
+
+button.chip .chip__trailing,
+a.chip .chip__trailing {
+    rotate: -225deg;
+    transition: rotate var(--motion-duration-medium-3)
+        var(--motion-easing-standard);
+}
+
+.chip--expressive-filter {
+    border-radius: var(--border-radius-150);
+    height: 40px;
+}
+
+.chip--filter {
+    border-radius: var(--border-radius-100);
+}
+
+.chip__media {
+    border-radius: 32px;
+    height: 32px;
+    margin-inline-start: -8px;
+    width: 32px;
+}
+
+// Static chip has selected state by default
+button.chip[aria-pressed="true"],
+a.chip--selected,
+span.chip {
+    animation: fill-horizontal-background var(--motion-duration-medium-2)
+        var(--motion-easing-quick-enter) forwards;
+    background-image: linear-gradient(
+        to right,
+        var(--color-background-strong) 0%,
+        var(--color-background-strong) 100%
+    );
+    color: var(--color-foreground-on-strong);
+    transition: color var(--motion-duration-instant)
+        var(--motion-easing-standard);
+}
+
+button.chip[aria-expanded="false"] .chip__trailing,
+button.chip[aria-pressed="true"] .chip__trailing,
+a.chip--selected .chip__trailing,
+span.chip .chip__trailing {
+    rotate: 0deg;
+}
+
+button.chip[aria-expanded="false"] .chip__trailing {
+    @include animation-mixins.chevron-close();
+
+    transition: none;
+}
+
+button.chip[aria-expanded="true"] .chip__trailing {
+    @include animation-mixins.chevron-open();
+
+    rotate: 180deg;
+    transition: none;
 }
 
 .chip__text {
@@ -22,20 +104,27 @@
     white-space: nowrap;
 }
 
-button.chip__button {
+.chip button.chip__button {
+    align-items: center;
     background-color: transparent;
     border: none;
     border-radius: 50px;
     box-sizing: border-box;
+    display: flex;
     flex-shrink: 0;
     height: var(--spacing-300);
+    justify-content: center;
     line-height: 0;
     margin-inline-end: -8px;
     padding: 0;
     width: var(--spacing-300);
 }
 
-button.chip__button:focus-visible {
+.chip button.chip__button {
+    color: var(--color-foreground-on-strong);
+}
+
+.chip button.chip__button:focus-visible {
     background-color: var(--state-layer-focus);
     outline-color: var(--color-state-focus-stroke);
     outline-offset: -2px;
@@ -43,10 +132,6 @@ button.chip__button:focus-visible {
     outline-width: 2px;
 }
 
-button.chip__button:hover {
+.chip button.chip__button:hover {
     background-color: var(--state-layer-hover);
-}
-
-button.chip__button > svg {
-    fill: var(--color-foreground-on-primary);
 }
