@@ -103,23 +103,23 @@
         </button>
     </highlight-code>
 
-    <h3 id="filter-chip">
-        Filter Chip
+    <h3 id="icon-chip">
+        Icon Chip
     </h3>
     <p>
-        A filter chip is used to filter a set of items. It is generally used in a filter bar or a filter menu.
+        An icon chip has a custom leading icon. It is generally used in a filter bar or a filter menu.
         It can be used as a button or a link, depending on the context.
     </p>
     <p>
-        To use a filter chip, use${" "}
-        <code>chip--filter</code>
+        To use an icon chip, use${" "}
+        <code>chip--icon</code>
          modifier.
     </p>
 
     <div class="demo">
         <div class="demo__inner">
             <button
-                class="chip chip--filter"
+                class="chip chip--icon"
                 type="button"
                 aria-pressed="false"
             >
@@ -131,7 +131,7 @@
                 </span>
             </button>
             <span style="margin-right: 8px;"/>
-            <a class="chip chip--filter" href="https://www.ebay.com">
+            <a class="chip chip--icon" href="https://www.ebay.com">
                 <svg class="icon icon--16" width="16" height="16">
                     <icon-symbol name="sneaker-16"/>
                 </svg>
@@ -143,7 +143,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--filter" type="button" aria-pressed="false">
+        <button class="chip chip--icon" type="button" aria-pressed="false">
             <svg class="icon icon--16" width="16" height="16">
                 <use href="icons.svg#icon-sneaker-16"/>
             </svg>
@@ -152,7 +152,7 @@
             </span>
         </button>
 
-        <a class="chip chip--filter" href="https://www.ebay.com">
+        <a class="chip chip--icon" href="https://www.ebay.com">
             <svg class="icon icon--16" width="16" height="16">
                 <use href="icons.svg#icon-sneaker-16"/>
             </svg>
@@ -162,15 +162,15 @@
         </a>
     </highlight-code>
 
-    <h3 id="filter-chip-selected">
-        Filter Chip -- selected
+    <h3 id="icon-chip-selected">
+        Icon Chip -- selected
     </h3>
     <p>
-        For an link selected filter chip, it should have a clipped text of "- filter applied".
+        For an link selected icon chip, it should have a clipped text of "- filter applied".
     </p>
     <div class="demo">
         <div class="demo__inner">
-            <button class="chip chip--filter" type="button" aria-pressed="true">
+            <button class="chip chip--icon" type="button" aria-pressed="true">
                 <svg class="icon icon--16" width="16" height="16">
                     <icon-symbol name="sneaker-16"/>
                 </svg>
@@ -180,7 +180,7 @@
             </button>
             <span style="margin-right: 8px;"/>
             <a
-                class="chip chip--selected chip--filter"
+                class="chip chip--selected chip--icon"
                 href="https://www.ebay.com"
             >
                 <svg class="icon icon--16" width="16" height="16">
@@ -194,7 +194,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--filter" type="button" aria-pressed="true">
+        <button class="chip chip--icon" type="button" aria-pressed="true">
             <svg class="icon icon--16" width="16" height="16">
                 <use href="icons.svg#icon-sneaker-16"/>
             </svg>
@@ -203,7 +203,7 @@
             </span>
         </button>
 
-        <a class="chip chip--filter chip--selected" href="https://www.ebay.com">
+        <a class="chip chip--icon chip--selected" href="https://www.ebay.com">
             <svg class="icon icon--16" width="16" height="16">
                 <use href="icons.svg#icon-sneaker-16"/>
             </svg>
@@ -216,15 +216,15 @@
         </a>
     </highlight-code>
 
-    <h3 id="expressive-chip">
-        Filter Expressive Chip
+    <h3 id="image-chip">
+        Image Chip
     </h3>
-    <p>A filter expressive chip has a leading image.</p>
+    <p>An image chip has a leading image.</p>
 
     <div class="demo">
         <div class="demo__inner">
             <button
-                class="chip chip--filter-expressive"
+                class="chip chip--image"
                 type="button"
                 aria-pressed="false"
             >
@@ -238,7 +238,7 @@
                 </span>
             </button>
             <span style="margin-right: 8px;"/>
-            <a class="chip chip--filter-expressive" href="https://www.ebay.com">
+            <a class="chip chip--image" href="https://www.ebay.com">
                 <img
                     class="chip__media"
                     src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -252,7 +252,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--filter-expressive" type="button" aria-pressed="false">
+        <button class="chip chip--image" type="button" aria-pressed="false">
             <img
                 class="chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -263,7 +263,7 @@
             </span>
         </button>
 
-        <a class="chip chip--filter-expressive" href="https://www.ebay.com">
+        <a class="chip chip--image" href="https://www.ebay.com">
             <img
                 class="chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -275,14 +275,14 @@
         </a>
     </highlight-code>
 
-    <h3 id="expressive-chip-selected">Expressive Filter Chip -- selected</h3>
+    <h3 id="image-chip-selected">Image Chip -- selected</h3>
     <p>
         For an link selected toggle chip, it should have a clipped selected text.
     </p>
     <div class="demo">
         <div class="demo__inner">
             <button
-                class="chip chip--filter-expressive"
+                class="chip chip--image"
                 type="button"
                 aria-pressed="true"
             >
@@ -297,7 +297,7 @@
             </button>
             <span style="margin-right: 8px;"/>
             <a
-                class="chip chip--selected chip--filter-expressive"
+                class="chip chip--selected chip--image"
                 href="https://www.ebay.com"
             >
                 <img
@@ -316,7 +316,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--filter-expressive" type="button" aria-pressed="true">
+        <button class="chip chip--image" type="button" aria-pressed="true">
             <img
                 class="chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -328,7 +328,7 @@
         </button>
 
         <a
-            class="chip chip--filter-expressive chip--selected"
+            class="chip chip--image chip--selected"
             href="https://www.ebay.com"
         >
             <img
@@ -356,7 +356,7 @@
 
     <div class="demo">
         <div class="demo__inner">
-            <button class="chip chip--filter" aria-expanded="false">
+            <button class="chip chip--menu" aria-expanded="false">
                 <span class="chip__text">
                     Sport
                 </span>
@@ -372,7 +372,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--filter" aria-expanded="false">
+        <button class="chip chip--menu" aria-expanded="false">
             <span class="chip__text">
                 Sport
             </span>
@@ -391,7 +391,7 @@
 
     <div class="demo">
         <div class="demo__inner">
-            <button class="chip chip--filter" aria-expanded="false" aria-pressed="true">
+            <button class="chip chip--menu" aria-expanded="false" aria-pressed="true">
                 <span class="chip__text">
                     Sport <span class="chip__count">(+3)</span>
                 </span>
@@ -407,7 +407,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="chip chip--filter" aria-expanded="false" aria-pressed="true">
+        <button class="chip chip--menu" aria-expanded="false" aria-pressed="true">
             <span class="chip__text">
                 Sport <span class="chip__count">(+3)</span>
             </span>

@@ -45,12 +45,13 @@ a.chip .chip__trailing {
         var(--motion-easing-standard);
 }
 
-.chip--filter-expressive {
+.chip--image {
     border-radius: var(--border-radius-150);
     height: 40px;
 }
 
-.chip--filter {
+.chip--menu,
+.chip--icon {
     border-radius: var(--border-radius-100);
 }
 
