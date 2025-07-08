@@ -1,24 +1,26 @@
-@keyframes chevron-bounce-open {
-    0% {
-        transform: translateY(0);
+@mixin chevron-keyframes() {
+    @keyframes chevron-bounce-open {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-7px);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
-    50% {
-        transform: translateY(-7px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
 
-@keyframes chevron-bounce-close {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(7px);
-    }
-    100% {
-        transform: translateY(0);
+    @keyframes chevron-bounce-close {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(7px);
+        }
+        100% {
+            transform: translateY(0);
+        }
     }
 }
 

@@ -1,0 +1,56 @@
+@mixin background-keyframes() {
+    @keyframes fill-horizontal-background {
+        from {
+            background-size: 20% 100%;
+        }
+        to {
+            background-color: var(--color-background-strong);
+            background-size: 100% 100%;
+        }
+    }
+}
+
+@mixin base() {
+    align-items: center;
+    box-sizing: border-box;
+    display: inline-flex;
+    font-size: var(--font-size-default);
+    gap: var(--spacing-75);
+    height: var(--spacing-400);
+    justify-content: space-between;
+    max-width: 296px;
+    min-width: 32px;
+    padding: 0 var(--spacing-150);
+    text-decoration: none;
+    vertical-align: bottom;
+}
+
+@mixin interactive() {
+    background-color: var(--color-background-primary);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border: 1px solid var(--color-stroke-default);
+    box-shadow: none;
+    color: var(--color-foreground-primary);
+}
+
+@mixin selected() {
+    animation: fill-horizontal-background var(--motion-duration-medium-2)
+        var(--motion-easing-quick-enter) forwards;
+    background-image: linear-gradient(
+        to right,
+        var(--color-background-strong) 0%,
+        var(--color-background-strong) 100%
+    );
+    color: var(--color-foreground-on-strong);
+    transition: color var(--motion-duration-instant)
+        var(--motion-easing-standard);
+}
+
+@mixin text() {
+    overflow: hidden;
+    padding: var(--spacing-75) 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

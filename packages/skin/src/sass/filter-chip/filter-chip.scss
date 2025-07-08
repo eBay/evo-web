@@ -1,0 +1,53 @@
+@use "../mixins/public/animation-mixins";
+@use "../mixins/private/chip-mixins";
+@import "../variables/variables";
+
+@include chip-mixins.background-keyframes();
+@include animation-mixins.chevron-keyframes();
+
+button.filter-chip,
+a.filter-chip {
+    @include chip-mixins.base();
+    @include chip-mixins.interactive();
+
+    border-radius: var(--border-radius-100);
+}
+
+button.filter-chip--expressive,
+a.filter-chip--expressive {
+    border-radius: var(--border-radius-150);
+    height: 40px;
+}
+
+.filter-chip__media {
+    border-radius: var(--spacing-400);
+    height: var(--spacing-400);
+    margin-inline-start: -8px;
+    width: var(--spacing-400);
+}
+
+button.filter-chip[aria-pressed="true"],
+a.filter-chip--selected {
+    @include chip-mixins.selected();
+}
+
+button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
+    rotate: 0deg;
+}
+
+button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
+    @include animation-mixins.chevron-close();
+
+    transition: none;
+}
+
+button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
+    @include animation-mixins.chevron-open();
+
+    rotate: 180deg;
+    transition: none;
+}
+
+.filter-chip__text {
+    @include chip-mixins.text();
+}

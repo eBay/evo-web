@@ -8,12 +8,9 @@ function toggleAttribute(chip, attribute) {
 
 export default class {
     onMount() {
-        this.el.querySelectorAll("button.chip").forEach((chip) => {
+        this.el.querySelectorAll("button.selection-chip").forEach((chip) => {
             chip.addEventListener("click", () => {
-                toggleAttribute(chip, "aria-expanded");
-                if (!chip.hasAttribute("aria-expanded")) {
-                    toggleAttribute(chip, "aria-pressed");
-                }
+                toggleAttribute(chip, "aria-pressed");
             });
         });
     }

@@ -1,38 +1,9 @@
-@keyframes chevron-bounce-open {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-@keyframes chevron-bounce-close {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(7px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-@keyframes fill-horizontal-background {
-    0% {
-        background-size: 20% 100%;
-    }
-    to {
-        background-color: var(--color-background-strong);
-        background-size: 100% 100%;
-    }
-}
 .chip {
     align-items: center;
+    background-color: var(--color-background-strong);
     border-radius: var(--border-radius-50);
     box-sizing: border-box;
+    color: var(--color-foreground-on-strong);
     display: inline-flex;
     font-size: var(--font-size-default);
     gap: var(--spacing-75);
@@ -43,76 +14,6 @@
     padding: 0 var(--spacing-150);
     text-decoration: none;
     vertical-align: bottom;
-}
-
-a.chip,
-button.chip {
-    background-color: var(--color-background-primary);
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    border: 1px solid var(--color-stroke-default);
-    box-shadow: none;
-    color: var(--color-foreground-primary);
-}
-
-a.chip .chip__trailing,
-button.chip .chip__trailing {
-    rotate: -225deg;
-    transition: rotate var(--motion-duration-medium-3)
-        var(--motion-easing-standard);
-}
-
-.chip--image {
-    border-radius: var(--border-radius-150);
-    height: 40px;
-}
-
-.chip--icon,
-.chip--menu {
-    border-radius: var(--border-radius-100);
-}
-
-.chip__media {
-    border-radius: 32px;
-    height: 32px;
-    margin-inline-start: -8px;
-    width: 32px;
-}
-
-a.chip--selected,
-button.chip[aria-pressed="true"],
-span.chip {
-    animation: fill-horizontal-background var(--motion-duration-medium-2)
-        var(--motion-easing-quick-enter) forwards;
-    background-image: linear-gradient(
-        to right,
-        var(--color-background-strong) 0,
-        var(--color-background-strong) 100%
-    );
-    color: var(--color-foreground-on-strong);
-    transition: color var(--motion-duration-instant)
-        var(--motion-easing-standard);
-}
-
-a.chip--selected .chip__trailing,
-button.chip[aria-expanded="false"] .chip__trailing,
-button.chip[aria-pressed="true"] .chip__trailing,
-span.chip .chip__trailing {
-    rotate: 0deg;
-}
-
-button.chip[aria-expanded="false"] .chip__trailing {
-    animation: chevron-bounce-close var(--motion-duration-medium-1)
-        var(--motion-easing-standard);
-    transition: none;
-}
-
-button.chip[aria-expanded="true"] .chip__trailing {
-    animation: chevron-bounce-open var(--motion-duration-medium-1)
-        var(--motion-easing-standard) var(--motion-duration-short-1);
-    rotate: 180deg;
-    transition: none;
 }
 
 .chip__text {
