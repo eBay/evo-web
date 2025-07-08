@@ -1,13 +1,12 @@
-<div id="chip">
+<div id="filter-chip">
     <section-header metadata=metadata/>
 
-    <h3 id="filter-chip">
-        Filter Chip
-    </h3>
     <p>
-        An filter chip has a custom leading icon. It is generally used in a filter bar or a filter menu.
-        It can be used as a button or a link, depending on the context.
+        A filter chip applies or unapplies its value to a section of dynamic page content (e.g. search results).
     </p>
+
+    <p>A button uses the <span class="highlight">aria-pressed</span> state to convey application or non-application of the filter. For links, no special treatment is required for the unnapplied filter state.</p>
+
     <div class="demo">
         <div class="demo__inner">
             <button
@@ -54,11 +53,8 @@
         </a>
     </highlight-code>
 
-    <h3 id="filter-chip-selected">
-        Filter Chip -- selected
-    </h3>
     <p>
-        For an link selected filter chip, it should have a clipped text of "- filter applied".
+        For the applied filter state, links do not support the <span class="highlight">aria-pressed</span> property; therefore use clipped text to explictly convey that the filter is applied.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -79,7 +75,7 @@
                     <icon-symbol name="sneaker-16"/>
                 </svg>
                 <span class="filter-chip__text">
-                    Football
+                    Football<span class="clipped" >- filter applied</span>
                 </span>
             </a>
         </div>
@@ -111,7 +107,7 @@
     <h3 id="image-chip">
         Expressive Filter Chip
     </h3>
-    <p>An expressive filter chip has a leading image.</p>
+    <p>Replace the icon with an image and use the <span class="highlight">filter-chip--expressive</span> modifier to create a more expressive filter chip.</p>
 
     <div class="demo">
         <div class="demo__inner">
@@ -167,9 +163,8 @@
         </a>
     </highlight-code>
 
-    <h3 id="filter-chip-selected">Expressive Filter Chip -- selected</h3>
     <p>
-        For an link selected toggle expressive filter, it should have a clipped selected text.
+        The same rules for links apply; they require clipped text to explicitly convey that the filter is applied.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -208,7 +203,7 @@
     </div>
 
     <highlight-code type="html">
-        <button class="filter-chip chip--expressive" type="button" aria-pressed="true">
+        <button class="filter-chip filter-chip--expressive" type="button" aria-pressed="true">
             <img
                 class="filter-chip__media"
                 src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
@@ -220,7 +215,7 @@
         </button>
 
         <a
-            class="filter-chip chip--expressive filter-chip--selected"
+            class="filter-chip filter-chip--expressive filter-chip--selected"
             href="https://www.ebay.com"
         >
             <img
@@ -241,16 +236,14 @@
         Menu Button Chip
     </h3>
     <p>
-        When a chip is used to trigger a menu, it should have an
-        <code>aria-expanded</code>
-        ${" "}attribute to indicate the state of the menu. The text should be descriptive of the menu content, and the trailing icon should indicate that it is a menu button.
+        A filter chip can be used as the button inside of a menu button component.
     </p>
 
     <div class="demo">
         <div class="demo__inner">
-            <button class="filter-chip" aria-expanded="false">
+            <button class="filter-chip" aria-pressed="false" aria-expanded="false">
                 <span class="filter-chip__text">
-                    Sport
+                    Sport: - 
                 </span>
                 <svg
                     class="filter-chip__trailing icon icon--12"
@@ -264,9 +257,9 @@
     </div>
 
     <highlight-code type="html">
-        <button class="filter-chip" aria-expanded="false">
+        <button class="filter-chip" aria-pressed="false" aria-expanded="false">
             <span class="filter-chip__text">
-                Sport
+                Sport: - 
             </span>
             <svg class="filter-chip__trailing icon icon--12" width="12" height="12">
                 <use href="icons.svg#icon-chevron-down-16"/>
@@ -274,18 +267,15 @@
         </button>
     </highlight-code>
 
-    <h3 id="menu-button-chip-selected">
-        Menu Button Chip -- selected
-    </h3>
     <p>
-        When options are selected, aria-pressed should be set to true and the text should indicate the number of selected items.
+        When options are selected, the button label should indicate the number of selected filters.
     </p>
 
     <div class="demo">
         <div class="demo__inner">
-            <button class="filter-chip" aria-expanded="false" aria-pressed="true">
+            <button class="filter-chip" aria-pressed="true" aria-expanded="false">
                 <span class="filter-chip__text">
-                    Sport <span class="filter-chip__count">(+3)</span>
+                    Sport: Football <span class="filter-chip__count">(+3)</span>
                 </span>
                 <svg
                     class="filter-chip__trailing icon icon--12"
@@ -299,9 +289,9 @@
     </div>
 
     <highlight-code type="html">
-        <button class="filter-chip" aria-expanded="false" aria-pressed="true">
+        <button class="filter-chip"  aria-pressed="true" aria-expanded="false">
             <span class="filter-chip__text">
-                Sport <span class="filter-chip__count">(+3)</span>
+                Sport: Football <span class="filter-chip__count">(+3)</span>
             </span>
             <svg class="filter-chip__trailing icon icon--12" width="12" height="12">
                 <use href="icons.svg#icon-chevron-down-16"/>
