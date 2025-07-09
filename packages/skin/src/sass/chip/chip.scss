@@ -32,7 +32,7 @@
 
 .chip button.chip__button:focus-visible {
     background-color: var(--state-layer-focus);
-    outline-color: var(--color-state-focus-stroke);
+    outline-color: var(--color-foreground-on-strong);
     outline-offset: -2px;
     outline-style: solid;
     outline-width: 2px;

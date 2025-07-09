@@ -60,10 +60,33 @@ button.filter-chip--expressive {
 }
 
 .filter-chip__media {
+    align-items: center;
+    border-radius: 8px;
     border-radius: var(--spacing-400);
+    display: flex;
     height: var(--spacing-400);
+    justify-content: center;
     margin-inline-start: -8px;
+    overflow: hidden;
+    position: relative;
     width: var(--spacing-400);
+}
+.filter-chip__media:after {
+    background: rgba(0, 0, 0, 0.05);
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.filter-chip__media > img {
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 a.filter-chip--selected,
