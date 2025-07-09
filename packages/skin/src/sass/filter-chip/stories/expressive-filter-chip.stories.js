@@ -56,3 +56,14 @@ export const RTL = () => `
     </button>
 </div>
 `;
+
+export const textSpacing = () => `
+<button class="filter-chip filter-chip--expressive demo-a11y-text-spacing" type="button" aria-pressed="false">
+    <img
+        class="filter-chip__media"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
+        alt=""
+    >
+    <span class="filter-chip__text">Football</span>
+</button>
+`;
