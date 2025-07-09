@@ -1,0 +1,13 @@
+{
+  "codeConnect": {
+    "include": [
+      "*.{tsx,jsx,js,ts}",
+      "../../packages/ebayui-core-react/src/**/*.{tsx,jsx,js,ts}"
+    ],
+    "label": "React",
+    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/zEBdEhbonrBOGzZ0fXzWvM/eBay-Evo-Design-System",
+    "importPaths": {
+      "../../packages/ebayui-core-react/src/*": "@ebay/ui-core-react"
+    }
+  }
+}
