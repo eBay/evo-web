@@ -1,6 +1,5 @@
 @use "../mixins/private/chip-mixins";
 @use "../mixins/public/animation-mixins";
-@import "../variables/variables";
 
 @include chip-mixins.background-keyframes();
 

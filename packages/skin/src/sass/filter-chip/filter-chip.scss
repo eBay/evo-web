@@ -1,7 +1,6 @@
 @use "../mixins/public/animation-mixins";
 @use "../mixins/private/chip-mixins";
 @use "../mixins/public/utility-mixins";
-@import "../variables/variables";
 
 @include chip-mixins.background-keyframes();
 @include animation-mixins.chevron-keyframes();
