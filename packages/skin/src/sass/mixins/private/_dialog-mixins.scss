@@ -55,6 +55,7 @@
 }
 
 // This should become the new ligtbox-dialog-window mixin
+// TODO refactor code to not to use calc and use spacing tokens instead
 @mixin lightbox-dialog-window-centered() {
     @include dialog-window();
     @include border-radius-token(lightbox-border-radius, border-radius-100);

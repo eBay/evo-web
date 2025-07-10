@@ -159,7 +159,7 @@ button.icon-btn.lightbox-dialog__prev {
     .lightbox-dialog__window {
         @include lightbox-dialog-window-large();
 
-        max-width: calc(88% - var(--spacing-400));
+        max-width: 88%;
     }
 
     .lightbox-dialog--narrow .lightbox-dialog__window {
@@ -179,10 +179,7 @@ button.icon-btn.lightbox-dialog__prev {
     }
 
     .lightbox-dialog--wide .lightbox-dialog__window {
-        max-width: min(
-            var(--dialog-lightbox-wide-max-width),
-            calc(88% - var(--spacing-400))
-        );
+        max-width: 88%;
     }
 
     .lightbox-dialog--wide .lightbox-dialog__image {
@@ -193,5 +190,11 @@ button.icon-btn.lightbox-dialog__prev {
         .lightbox-dialog__header
         > * {
         margin-top: 256px;
+    }
+}
+
+@media (min-width: $_screen-size-LG) {
+    .lightbox-dialog--wide .lightbox-dialog__window {
+        max-width: var(--dialog-lightbox-wide-max-width);
     }
 }
