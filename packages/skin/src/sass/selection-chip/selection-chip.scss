@@ -1,4 +1,5 @@
 @use "../mixins/private/chip-mixins";
+@use "../mixins/public/animation-mixins";
 @import "../variables/variables";
 
 @include chip-mixins.background-keyframes();
@@ -10,19 +11,22 @@
     border-radius: var(--border-radius-50);
 }
 
+.selection-chip--loading,
+.selection-chip--loading .selection-chip__trailing {
+    @include animation-mixins.loading();
+}
+
 .selection-chip__trailing {
     rotate: -225deg;
     transition: rotate var(--motion-duration-medium-3)
         var(--motion-easing-standard);
 }
 
-.selection-chip[aria-pressed="true"],
-.selection-chip--selected {
+.selection-chip[aria-pressed="true"] {
     @include chip-mixins.selected();
 }
 
-.selection-chip[aria-pressed="true"] .selection-chip__trailing,
-.selection-chip--selected .selection-chip__trailing {
+.selection-chip[aria-pressed="true"] .selection-chip__trailing {
     rotate: 0deg;
 }
 

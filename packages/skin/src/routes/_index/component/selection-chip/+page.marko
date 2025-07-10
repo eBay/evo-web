@@ -1,11 +1,12 @@
 <div id="selection-chip">
     <section-header metadata=metadata/>
-    
+
     <p>A selection chip is an ARIA toggle button that applies or unapplies its value to a section of a form or application.</p>
     <p>Selection chips typically appear in groups (e.g. "Recommended Categories").</p>
+    <p>When selection chip loads, add <code>selection-chip--loading</code> so that the animation does not trigger on page load. This should be removed after the component is mounted.</p>
     <div class="demo">
         <div class="demo__inner">
-            <button class="selection-chip" type="button" aria-pressed="false">
+            <button class="selection-chip selection-chip--loading" type="button" aria-pressed="false">
                 <span class="selection-chip__text">
                     Football
                 </span>

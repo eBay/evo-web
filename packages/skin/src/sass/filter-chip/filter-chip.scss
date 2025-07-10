@@ -35,9 +35,9 @@ a.filter-chip--selected {
 }
 
 button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
-    rotate: 0deg;
     @include animation-mixins.chevron-close();
 
+    rotate: 0deg;
     transition: none;
 }
 

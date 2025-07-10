@@ -24,6 +24,12 @@
     }
 }
 
+// This is used for when the animations are loading so that there are no animations happening on page load.
+@mixin loading() {
+    animation: none;
+    transition: none;
+}
+
 @mixin chevron-open() {
     animation: chevron-bounce-open var(--motion-duration-medium-1)
         var(--motion-easing-standard) var(--motion-duration-short-1);
