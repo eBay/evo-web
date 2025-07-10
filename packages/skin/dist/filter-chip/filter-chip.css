@@ -1,6 +1,6 @@
 @keyframes fill-horizontal-background {
     0% {
-        background-size: 20% 100%;
+        background-size: 0 100%;
     }
     99% {
         background-color: var(--color-background-primary);
@@ -113,16 +113,24 @@ button.filter-chip[aria-pressed="true"] {
         var(--motion-easing-standard);
 }
 
-button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
+button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
     animation: chevron-bounce-close var(--motion-duration-medium-1)
         var(--motion-easing-standard);
+    rotate: 180deg;
+}
+
+button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
     rotate: 0deg;
     transition: none;
 }
 
-button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
+button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
     animation: chevron-bounce-open var(--motion-duration-medium-1)
         var(--motion-easing-standard) var(--motion-duration-short-1);
+    rotate: 0deg;
+}
+
+button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
     rotate: 180deg;
     transition: none;
 }

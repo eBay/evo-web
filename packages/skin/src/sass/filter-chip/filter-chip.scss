@@ -38,16 +38,24 @@ a.filter-chip--selected {
     @include chip-mixins.selected-animation();
 }
 
-button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
+button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
     @include animation-mixins.chevron-close();
 
+    rotate: 180deg;
+}
+
+button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
     rotate: 0deg;
     transition: none;
 }
 
-button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
+button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
     @include animation-mixins.chevron-open();
 
+    rotate: 0deg;
+}
+
+button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
     rotate: 180deg;
     transition: none;
 }

@@ -1,6 +1,6 @@
 @keyframes fill-horizontal-background {
     0% {
-        background-size: 20% 100%;
+        background-size: 0 100%;
     }
     99% {
         background-color: var(--color-background-primary);
