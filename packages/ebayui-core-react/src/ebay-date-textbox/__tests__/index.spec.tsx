@@ -1,3 +1,4 @@
+/// <reference types="@testing-library/jest-dom" />
 import React from "react";
 
 import { fireEvent, render, screen } from "@testing-library/react";
@@ -140,5 +141,23 @@ describe("<EbayDateTextbox />", () => {
         expect(() => {
             render(<EbayDateTextbox value="invalid" />);
         }).not.toThrow();
+    });
+
+    it("should select the calendar correctly when the value is changed externally", () => {
+        const { container, rerender } = render(<EbayDateTextbox value="2024-01-01" rangeEnd="2024-01-10" />);
+        fireEvent.click(screen.getByLabelText("open calendar"));
+
+        expect(container.querySelector("input")).toHaveValue("2024-01-01");
+
+        const selectedDays = container.querySelectorAll(".calendar__cell--selected");
+        expect(selectedDays[0]).toHaveTextContent("1");
+        expect(selectedDays[1]).toHaveTextContent("10");
+
+        rerender(<EbayDateTextbox value="2024-01-12" rangeEnd="2024-01-15" />);
+        expect(container.querySelector("input")).toHaveValue("2024-01-12");
+
+        const updatedSelectedDays = container.querySelectorAll(".calendar__cell--selected");
+        expect(updatedSelectedDays[0]).toHaveTextContent("12");
+        expect(updatedSelectedDays[1]).toHaveTextContent("15");
     });
 });

@@ -54,8 +54,8 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     const valueToRender = isControlled(controlledValue) ? controlledValue : internalValue;
     const rangeEndToRender = isControlled(controlledRangeEnd) ? controlledRangeEnd : internalRangeEnd;
 
-    const [firstSelected, setFirstSelected] = useState(() => dateArgToISO(valueToRender));
-    const [secondSelected, setSecondSelected] = useState(() => dateArgToISO(rangeEndToRender));
+    const firstSelected = dateArgToISO(valueToRender);
+    const secondSelected = dateArgToISO(rangeEndToRender);
     const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false);
     const [numMonths, setNumMonths] = useState(1);
 
@@ -106,10 +106,8 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
         const iso = isNaN(date.getTime()) ? null : toISO(date);
 
         if (index === 0) {
-            setFirstSelected(iso);
             setInternalValue(iso || "");
         } else {
-            setSecondSelected(iso);
             setInternalRangeEnd(iso || "");
         }
 
@@ -126,7 +124,6 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     };
 
     const handlePopoverSelect = (event: MouseEvent<HTMLInputElement>, { iso }: { iso: DayISO }) => {
-        setFirstSelected(iso);
         setInternalValue(iso);
 
         if (range) {
@@ -139,24 +136,17 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
             if (firstSelected && secondSelected) {
                 // both were selected reset selection
                 setInternalRangeEnd("");
-                setSecondSelected(null);
                 eventData.rangeEnd = null;
             } else if (selected) {
                 // exactly one was selected; fiture out the order
                 if (selected < iso) {
-                    setFirstSelected(selected);
                     setInternalValue(selected);
-
                     setInternalRangeEnd(iso);
-                    setSecondSelected(iso);
                     eventData.rangeStart = selected;
                     eventData.rangeEnd = iso;
                 } else {
-                    setFirstSelected(iso);
                     setInternalValue(iso);
-
                     setInternalRangeEnd(selected);
-                    setSecondSelected(selected);
                     eventData.rangeStart = iso;
                     eventData.rangeEnd = selected;
                 }
