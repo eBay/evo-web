@@ -1,0 +1,15 @@
+import { processHtmlAttributes } from "../../common/html-attributes";
+$ const { renderBody, selected, ...htmlInput } = input;
+
+<button
+    class=["selection-chip", state.mounted && "selection-chip--animated"]
+    aria-pressed=(state.selected ? "true" : "false")
+    type="button"
+    on-click("handleButtonClick")
+    ...processHtmlAttributes(htmlInput)
+>
+    <span class="selection-chip__text">
+        <${renderBody}/>
+    </span>
+    <ebay-close-12-icon class="selection-chip__trailing"/>
+</button>
