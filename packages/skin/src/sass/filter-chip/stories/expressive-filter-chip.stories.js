@@ -23,7 +23,7 @@ export const buttonSelected = () => `
 `;
 
 export const anchor = () => `
-<a class="filter-chip filter-chip--expressive" herf="https://www.ebay.com">
+<a class="filter-chip filter-chip--expressive" href="https://www.ebay.com">
     <img
         class="filter-chip__media"
         src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
