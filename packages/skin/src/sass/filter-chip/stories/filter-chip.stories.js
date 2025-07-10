@@ -20,7 +20,7 @@ export const buttonSelected = () => `
 `;
 
 export const anchor = () => `
-<a class="filter-chip" herf="https://www.ebay.com">
+<a class="filter-chip" href="https://www.ebay.com">
     <svg class="icon icon--16" width="16" height="16">
         <use href="#icon-sneaker-16"/>
     </svg>
