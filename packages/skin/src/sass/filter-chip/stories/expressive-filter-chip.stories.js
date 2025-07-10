@@ -34,7 +34,7 @@ export const anchor = () => `
 `;
 
 export const anchorSelected = () => `
-<a class="filter-chip filter-chip--expressive filter-chip--selected" herf="https://www.ebay.com">
+<a class="filter-chip filter-chip--expressive filter-chip--selected" href="https://www.ebay.com">
     <img
         class="filter-chip__media"
         src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile_optimized.jpg"
