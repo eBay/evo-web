@@ -1,9 +1,14 @@
+@use "./button-mixins";
+
 @mixin background-keyframes() {
     @keyframes fill-horizontal-background {
-        from {
+        0% {
             background-size: 20% 100%;
         }
-        to {
+        99% {
+            background-color: var(--color-background-primary);
+        }
+        100% {
             background-color: var(--color-background-strong);
             background-size: 100% 100%;
         }
@@ -26,6 +31,8 @@
 }
 
 @mixin interactive() {
+    @include button-mixins.btn-animations();
+
     background-color: var(--color-background-primary);
     background-position: center;
     background-repeat: no-repeat;
@@ -36,14 +43,17 @@
 }
 
 @mixin selected() {
-    animation: fill-horizontal-background var(--motion-duration-medium-2)
-        var(--motion-easing-quick-enter) forwards;
     background-image: linear-gradient(
         to right,
         var(--color-background-strong) 0%,
         var(--color-background-strong) 100%
     );
     color: var(--color-foreground-on-strong);
+}
+
+@mixin selected-animation() {
+    animation: fill-horizontal-background var(--motion-duration-medium-2)
+        var(--motion-easing-quick-enter) forwards;
     transition: color var(--motion-duration-instant)
         var(--motion-easing-standard);
 }

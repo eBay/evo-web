@@ -10,15 +10,17 @@
     border-radius: var(--border-radius-50);
 }
 
-.selection-chip--loading,
-.selection-chip--loading .selection-chip__trailing {
-    @include animation-mixins.loading();
+.selection-chip--animated .selection-chip__trailing {
+    transition: rotate var(--motion-duration-medium-3)
+        var(--motion-easing-standard);
+}
+
+.selection-chip--animated[aria-pressed="true"] {
+    @include chip-mixins.selected-animation();
 }
 
 .selection-chip__trailing {
     rotate: -225deg;
-    transition: rotate var(--motion-duration-medium-3)
-        var(--motion-easing-standard);
 }
 
 .selection-chip[aria-pressed="true"] {

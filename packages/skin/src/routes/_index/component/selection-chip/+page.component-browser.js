@@ -10,7 +10,7 @@ export default class {
     onMount() {
         this.el.querySelectorAll("button.selection-chip").forEach((chip) => {
             setTimeout(() => {
-                chip.classList.remove("selection-chip--loading");
+                chip.classList.add("selection-chip--animated");
             }, 0);
             chip.addEventListener("click", () => {
                 toggleAttribute(chip, "aria-pressed");

@@ -23,14 +23,19 @@ a.filter-chip--expressive {
     @include utility-mixins.image-treatment();
 
     border-radius: var(--spacing-400);
-    height: var(--spacing-400);
     margin-inline-start: -8px;
+}
+
+.filter-chip__media > img {
+    height: var(--spacing-400);
+    object-fit: cover;
     width: var(--spacing-400);
 }
 
 button.filter-chip[aria-pressed="true"],
 a.filter-chip--selected {
     @include chip-mixins.selected();
+    @include chip-mixins.selected-animation();
 }
 
 button.filter-chip[aria-expanded="false"] .filter-chip__trailing {

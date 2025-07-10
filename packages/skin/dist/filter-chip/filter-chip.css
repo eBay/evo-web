@@ -2,6 +2,9 @@
     0% {
         background-size: 20% 100%;
     }
+    99% {
+        background-color: var(--color-background-primary);
+    }
     to {
         background-color: var(--color-background-strong);
         background-size: 100% 100%;
@@ -50,7 +53,13 @@ button.filter-chip {
     min-width: 32px;
     padding: 0 var(--spacing-150);
     text-decoration: none;
+    transition: all var(--motion-duration-short-3)
+        var(--motion-easing-quick-enter);
     vertical-align: bottom;
+}
+a.filter-chip:active,
+button.filter-chip:active {
+    transform: scale(0.97);
 }
 
 a.filter-chip--expressive,
@@ -64,12 +73,10 @@ button.filter-chip--expressive {
     border-radius: 8px;
     border-radius: var(--spacing-400);
     display: flex;
-    height: var(--spacing-400);
     justify-content: center;
     margin-inline-start: -8px;
     overflow: hidden;
     position: relative;
-    width: var(--spacing-400);
 }
 .filter-chip__media:after {
     background: rgba(0, 0, 0, 0.05);
@@ -84,9 +91,12 @@ button.filter-chip--expressive {
 }
 .filter-chip__media > img {
     display: inline-block;
+    height: var(--spacing-400);
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
+    object-fit: cover;
+    width: var(--spacing-400);
 }
 
 a.filter-chip--selected,
