@@ -17,7 +17,7 @@
 }
 
 .selection-chip[aria-pressed="true"],
-.selecton-chip--selected {
+.selection-chip--selected {
     @include chip-mixins.selected();
 }
 
