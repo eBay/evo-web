@@ -101,8 +101,9 @@ button.filter-chip--expressive {
 
 a.filter-chip--selected,
 button.filter-chip[aria-pressed="true"] {
-    animation: fill-horizontal-background var(--motion-duration-medium-2)
-        var(--motion-easing-quick-enter) forwards;
+    animation: fill-horizontal-background 0s var(--motion-easing-quick-enter)
+        forwards;
+    animation-duration: var(--motion-duration-medium-2);
     background-image: linear-gradient(
         to right,
         var(--color-background-strong) 0,

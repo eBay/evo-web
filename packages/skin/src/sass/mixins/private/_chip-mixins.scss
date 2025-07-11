@@ -43,6 +43,9 @@
 }
 
 @mixin selected() {
+    // The background color is applied due to the animation. For no animation cases, will apply it instantaly.
+    animation: fill-horizontal-background 0s var(--motion-easing-quick-enter)
+        forwards;
     background-image: linear-gradient(
         to right,
         var(--color-background-strong) 0%,
@@ -52,8 +55,7 @@
 }
 
 @mixin selected-animation() {
-    animation: fill-horizontal-background var(--motion-duration-medium-2)
-        var(--motion-easing-quick-enter) forwards;
+    animation-duration: var(--motion-duration-medium-2);
     transition: color var(--motion-duration-instant)
         var(--motion-easing-standard);
 }

@@ -15,16 +15,16 @@
         var(--motion-easing-standard);
 }
 
-.selection-chip--animated[aria-pressed="true"] {
-    @include chip-mixins.selected-animation();
-}
-
 .selection-chip__trailing {
     rotate: -225deg;
 }
 
 .selection-chip[aria-pressed="true"] {
     @include chip-mixins.selected();
+}
+
+.selection-chip--animated[aria-pressed="true"] {
+    @include chip-mixins.selected-animation();
 }
 
 .selection-chip[aria-pressed="true"] .selection-chip__trailing {
