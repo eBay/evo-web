@@ -10,18 +10,13 @@ export default class {
     onMount() {
         this.el.querySelectorAll("button.filter-chip").forEach((chip) => {
             setTimeout(() => {
-                chip.classList.remove("filter-chip--loading");
+                chip.classList.add("filter-chip--animated");
             });
             chip.addEventListener("click", () => {
                 toggleAttribute(chip, "aria-expanded");
                 if (!chip.hasAttribute("aria-expanded")) {
                     toggleAttribute(chip, "aria-pressed");
                 }
-            });
-        });
-        this.el.querySelectorAll("a.filter-chip").forEach((chip) => {
-            setTimeout(() => {
-                chip.classList.remove("filter-chip--loading");
             });
         });
     }

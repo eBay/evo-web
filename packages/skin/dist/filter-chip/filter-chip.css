@@ -103,13 +103,16 @@ a.filter-chip--selected,
 button.filter-chip[aria-pressed="true"] {
     animation: fill-horizontal-background 0s var(--motion-easing-quick-enter)
         forwards;
-    animation-duration: var(--motion-duration-medium-2);
     background-image: linear-gradient(
         to right,
         var(--color-background-strong) 0,
         var(--color-background-strong) 100%
     );
     color: var(--color-foreground-on-strong);
+}
+
+button.filter-chip--animated[aria-pressed="true"] {
+    animation-duration: var(--motion-duration-medium-2);
     transition: color var(--motion-duration-instant)
         var(--motion-easing-standard);
 }

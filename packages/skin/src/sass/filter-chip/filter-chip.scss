@@ -35,6 +35,9 @@ a.filter-chip--expressive {
 button.filter-chip[aria-pressed="true"],
 a.filter-chip--selected {
     @include chip-mixins.selected();
+}
+
+button.filter-chip--animated[aria-pressed="true"] {
     @include chip-mixins.selected-animation();
 }
 
