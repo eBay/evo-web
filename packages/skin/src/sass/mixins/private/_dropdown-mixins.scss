@@ -1,11 +1,15 @@
-@import "./bubble-mixins";
+@use "./bubble-mixins";
+@use "./token-mixins";
 
 @mixin dropdown-base($component) {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         #{$component}-background-color,
         color-background-elevated
     );
-    @include border-radius-token(#{$component}-border-radius, border-radius-50);
+    @include token-mixins.border-radius-token(
+        #{$component}-border-radius,
+        border-radius-50
+    );
 
     box-shadow: var(--bubble-shadow);
     box-sizing: border-box;
@@ -46,22 +50,22 @@
 
 @mixin dropdown-item-border-radius($component) {
     &:first-child {
-        @include border-top-left-radius-token(
+        @include token-mixins.border-top-left-radius-token(
             #{$component}-border-radius,
             border-radius-50
         );
-        @include border-top-right-radius-token(
+        @include token-mixins.border-top-right-radius-token(
             #{$component}-border-radius,
             border-radius-50
         );
     }
 
     &:last-child {
-        @include border-bottom-left-radius-token(
+        @include token-mixins.border-bottom-left-radius-token(
             #{$component}-border-radius,
             border-radius-50
         );
-        @include border-bottom-right-radius-token(
+        @include token-mixins.border-bottom-right-radius-token(
             #{$component}-border-radius,
             border-radius-50
         );

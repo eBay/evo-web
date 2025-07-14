@@ -1,21 +1,22 @@
-@import "./selection-list-mixins";
+@use "./token-mixins";
+@use "./selection-list-mixins";
 
 @mixin menu-menuitem-base($component) {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         #{$component}-menuitem-border-color,
         color-background-primary
     );
 
-    @include color-token(
+    @include token-mixins.color-token(
         #{$component}-menuitem-foreground-color,
         color-foreground-primary
     );
 
-    @include selection-list-item-base();
+    @include selection-list-mixins.selection-list-item-base();
 
     &:hover {
         background-color: var(--color-state-primary-hover);
-        @include color-token(
+        @include token-mixins.color-token(
             #{$component}-menuitem-hover-foreground-color,
             color-foreground-primary
         );
@@ -27,5 +28,58 @@
 }
 
 @mixin menu-menuitem-status() {
-    @include selection-list-item-status();
+    @include selection-list-mixins.selection-list-item-status();
+}
+
+@mixin menu-footer() {
+    align-items: center;
+    background-color: var(--color-background-elevated);
+    border: none;
+    border-color: var(--color-stroke-subtle);
+    border-top-style: solid;
+    border-top-width: 1px;
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-200);
+}
+
+@mixin menu-filter() {
+    &[role="menuitemcheckbox"][aria-checked="true"],
+    &[role="menuitemradio"][aria-checked="true"] {
+        svg.icon--unchecked {
+            display: none;
+        }
+
+        svg.icon--checked {
+            display: block;
+        }
+    }
+
+    &[role="menuitemcheckbox"] {
+        svg.icon--unchecked {
+            color: var(--color-foreground-secondary);
+            display: block;
+            margin-right: var(--spacing-100);
+        }
+
+        svg.icon--checked {
+            color: var(--color-foreground-primary);
+            display: none;
+            margin-right: var(--spacing-100);
+        }
+    }
+
+    &[role="menuitemradio"] {
+        svg.icon--unchecked {
+            color: var(--color-foreground-primary);
+            display: block;
+            margin-right: var(--spacing-100);
+        }
+
+        svg.icon--checked {
+            color: var(--color-foreground-primary);
+            display: none;
+            margin-right: var(--spacing-100);
+        }
+    }
 }

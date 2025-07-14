@@ -1,11 +1,10 @@
-@import "../variables/variables";
-@import "../mixins/private/dropdown-mixins";
-@import "../mixins/private/menu-mixins";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/menu-mixins";
+@use "../mixins/private/dropdown-mixins";
+@use "../mixins/private/token-mixins";
 
 .menu__items,
 .fake-menu__items {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         menu-background-color,
         color-background-primary
     );
@@ -32,7 +31,7 @@ span.fake-menu__items {
 
 .menu__item > svg.icon--16,
 .fake-menu__item > svg.icon--16 {
-    @include menu-menuitem-status();
+    @include menu-mixins.menu-menuitem-status();
 }
 
 .menu__item > svg.icon--16:last-child,
@@ -44,7 +43,10 @@ span.fake-menu__items {
 }
 
 a.fake-menu__item {
-    @include color-token(menu-anchor-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        menu-anchor-color,
+        color-foreground-primary
+    );
 
     text-decoration: none;
 }
@@ -56,7 +58,7 @@ button.fake-menu__item {
 button.fake-menu__item,
 a.fake-menu__item,
 div.menu__item[role^="menuitem"] {
-    @include menu-menuitem-base(menu);
+    @include menu-mixins.menu-menuitem-base(menu);
 }
 
 a.fake-menu__item:focus {
@@ -71,7 +73,7 @@ button.fake-menu__item[aria-current="page"] svg.icon--16 {
 a.fake-menu__item:not([href]),
 button.fake-menu__item[disabled],
 div.menu__item[role^="menuitem"][aria-disabled="true"] {
-    @include color-token(
+    @include token-mixins.color-token(
         menu-menuitem-disabled-foreground-color,
         color-foreground-disabled
     );
@@ -107,6 +109,10 @@ div.menu__item--badged[role^="menuitem"] span.badge {
     z-index: 1;
 }
 
+.menu__item {
+    @include menu-mixins.menu-filter();
+}
+
 .menu__items--scroll[role="menu"] {
     overflow-y: scroll;
 }
@@ -135,10 +141,21 @@ div.menu__item--badged[role^="menuitem"] span.badge {
 }
 
 hr.menu__separator {
-    @include border-color-token(menu-separator-color, color-stroke-subtle);
+    @include token-mixins.border-color-token(
+        menu-separator-color,
+        color-stroke-subtle
+    );
 
     border-style: solid;
     border-width: 1px;
+}
+
+.menu__footer {
+    @include menu-mixins.menu-footer();
+}
+
+.menu--filter div.menu__item[role^="menuitem"] {
+    justify-content: flex-start;
 }
 
 /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */

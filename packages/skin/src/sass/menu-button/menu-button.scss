@@ -1,8 +1,7 @@
-@import "../variables/variables";
-@import "../mixins/private/dropdown-mixins";
-@import "../mixins/private/menu-mixins";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../mixins/private/dropdown-mixins";
+@use "../mixins/private/menu-mixins";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 .menu-button,
 .fake-menu-button {
@@ -12,7 +11,7 @@
 
 .menu-button__menu,
 .fake-menu-button__menu {
-    @include dropdown-base(menu-button-menu);
+    @include dropdown-mixins.dropdown-base(menu-button-menu);
 
     /* In ebayui there is a bug where if tabindex=-1 outside the menu button */
     /* Any clicks inside will trigger on the outher tabindex=-1. In order to fix it */
@@ -36,15 +35,15 @@ span.fake-menu-button__button {
 }
 
 div.menu-button__item[role^="menuitem"] {
-    @include menu-menuitem-base(menu-button);
-    @include dropdown-item-border-radius(menu-button-menu);
+    @include menu-mixins.menu-menuitem-base(menu-button);
+    @include dropdown-mixins.dropdown-item-border-radius(menu-button-menu);
 
     cursor: default; /* needed to override text cursor */
 }
 
 .menu-button__item > svg.icon--16,
 .fake-menu-button__item > svg.icon--16 {
-    @include menu-menuitem-status();
+    @include menu-mixins.menu-menuitem-status();
 }
 
 .menu-button__item > svg.icon--16:last-child,
@@ -54,7 +53,10 @@ div.menu-button__item[role^="menuitem"] {
 
 /* anchor tag specific */
 a.fake-menu-button__item {
-    @include color-token(menu-button-anchor-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        menu-button-anchor-color,
+        color-foreground-primary
+    );
 
     text-decoration: none;
 
@@ -64,7 +66,7 @@ a.fake-menu-button__item {
 
     &:hover,
     &:visited {
-        @include color-token(
+        @include token-mixins.color-token(
             menu-button-anchor-color,
             color-background-primary
         );
@@ -73,11 +75,11 @@ a.fake-menu-button__item {
 
 /* button tag specific */
 button.fake-menu-button__item {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         menu-button-background-color,
         color-background-primary
     );
-    @include color-token(
+    @include token-mixins.color-token(
         menu-button-foreground-color,
         color-foreground-primary
     );
@@ -96,38 +98,42 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
     opacity: 1;
 }
 
+.menu-button__item {
+    @include menu-mixins.menu-filter();
+}
+
 .fake-menu-button__menu a.fake-menu-button__item,
 .fake-menu-button__menu button.fake-menu-button__item {
-    @include menu-menuitem-base(menu-button);
+    @include menu-mixins.menu-menuitem-base(menu-button);
 }
 
 .fake-menu-button__menu a.fake-menu-button__item:not([href]),
 .fake-menu-button__menu button.fake-menu-button__item[disabled],
 .menu-button__menu
     div.menu-button__item[role^="menuitem"][aria-disabled="true"] {
-    @include color-token(
+    @include token-mixins.color-token(
         menu-button-menuitem-disabled-foreground-color,
         color-foreground-disabled
     );
 }
 
 .fake-menu-button__menu > li:first-child a.fake-menu-button__item {
-    @include border-top-left-radius-token(
+    @include token-mixins.border-top-left-radius-token(
         menu-button-menu-border-radius,
         border-radius-50
     );
-    @include border-top-right-radius-token(
+    @include token-mixins.border-top-right-radius-token(
         menu-button-menu-border-radius,
         border-radius-50
     );
 }
 
 .fake-menu-button__menu > li:last-child a.fake-menu-button__item {
-    @include border-bottom-left-radius-token(
+    @include token-mixins.border-bottom-left-radius-token(
         menu-button-menu-border-radius,
         border-radius-50
     );
-    @include border-bottom-right-radius-token(
+    @include token-mixins.border-bottom-right-radius-token(
         menu-button-menu-border-radius,
         border-radius-50
     );
@@ -138,7 +144,7 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
     width: 100%;
 
     span {
-        @include truncate();
+        @include utility-mixins.truncate();
 
         width: 100%;
     }
@@ -173,7 +179,7 @@ div.menu-button__item--badged[role^="menuitem"] .badge {
 
 .menu-button__menu--reverse,
 .fake-menu-button__menu--reverse {
-    @include dropdown-reverse();
+    @include dropdown-mixins.dropdown-reverse();
 }
 
 .menu-button__button[aria-expanded="true"] ~ .menu-button__menu,
@@ -181,7 +187,8 @@ div.menu-button__item--badged[role^="menuitem"] .badge {
 .menu-button .expand-btn[aria-expanded="true"] ~ .menu-button__menu,
 .fake-menu-button .expand-btn[aria-expanded="true"] ~ .fake-menu-button__menu,
 .menu-button .btn[aria-expanded="true"] ~ .menu-button__menu,
-.fake-menu-button .btn[aria-expanded="true"] ~ .fake-menu-button__menu {
+.fake-menu-button .btn[aria-expanded="true"] ~ .fake-menu-button__menu,
+.menu-button .filter-chip[aria-expanded="true"] ~ .menu-button__menu {
     display: block;
 }
 
@@ -190,7 +197,8 @@ div.menu-button__item--badged[role^="menuitem"] .badge {
 .expand-btn ~ .menu-button__menu--static,
 .expand_btn ~ .fake-menu-button__menu--static,
 .btn ~ .menu-button__menu--static,
-.btn ~ .fake-menu-button__menu--static {
+.btn ~ .fake-menu-button__menu--static,
+.filter-chip ~ .fake-menu-button__menu--static {
     position: static;
 }
 
@@ -199,7 +207,7 @@ div.menu-button__option--active[role="option"] {
 }
 
 hr.menu-button__separator {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         menu-button-separator-color,
         color-stroke-subtle
     );
@@ -207,6 +215,14 @@ hr.menu-button__separator {
     border-style: solid;
     border-width: 1px;
     margin: 0;
+}
+
+.menu-button__footer {
+    @include menu-mixins.menu-footer();
+}
+
+.menu-button--filter div.menu-button__item[role^="menuitem"] {
+    justify-content: flex-start;
 }
 
 /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
