@@ -154,9 +154,9 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
     ) => {
         const target = event.target as HTMLInputElement;
         // When the item is clicked, an event click is triggered on the Label and
-        // then on the checkbox. We need to ignore the click event on the checkbox
+        // then on the checkbox. We need to ignore the click event on the label
         // to avoid triggering the onClick event twice.
-        if (isForm && target.type === "checkbox") {
+        if (isForm && !target.type) {
             return;
         }
 
@@ -229,6 +229,10 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
                             __variant: variant,
                             checked: isRadio ? index === checkedIndex : checkedItems[index],
                             onClick: (event, { checked, value }) => {
+                                if (item.props.disabled) {
+                                    return;
+                                }
+
                                 item.props.onClick?.(event, { checked, value });
                                 handleItemClick(event, {
                                     checked,
@@ -236,8 +240,13 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
                                 });
                             },
                             onKeyDown: (event: KeyboardEvent<HTMLLabelElement & HTMLDivElement>) => {
+                                if (item.props.disabled) {
+                                    return;
+                                }
+
                                 item.props.onKeyDown?.(event);
-                                if (event.key === "Enter" || event.key === " ") {
+                                // For "Space" key, the onClick event is triggered on checkboxes, so we ignore on forms
+                                if (event.key === "Enter" || (event.key === " " && !isForm)) {
                                     const currentChecked = isRadio ? index === checkedIndex : checkedItems[index];
                                     handleItemClick(event, {
                                         checked: !currentChecked,

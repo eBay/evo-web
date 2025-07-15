@@ -133,3 +133,13 @@ export const WithFooterButton: StoryFn<typeof EbayFilterMenu> = (args) => (
         <EbayFilterMenuFooterButton>Apply</EbayFilterMenuFooterButton>
     </EbayFilterMenu>
 );
+
+export const WithDisabledItem: StoryFn<typeof EbayFilterMenu> = (args) => (
+    <EbayFilterMenu variant="form" {...args}>
+        <EbayFilterMenuItem value="item 1">item 1</EbayFilterMenuItem>
+        <EbayFilterMenuItem value="item 2">item 2</EbayFilterMenuItem>
+        <EbayFilterMenuItem value="item 3" disabled>
+            item 3
+        </EbayFilterMenuItem>
+    </EbayFilterMenu>
+);
