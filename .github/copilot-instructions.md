@@ -36,10 +36,7 @@ When reviewing pull requests for the evo-web project, please follow these custom
 - [ ] **Visual Regression**: Ensure Percy build was done and approved for visual regression testing
 - [ ] **Dark Mode**: Verify UI works in dark mode
 - [ ] **RTL Support**: Check right-to-left (RTL) mode compatibility
-- [ ] **Storybook**: Verify Storybook coverage has been added/updated/removed as appropriate
-- [ ] **Required Storybook Stories**: Ensure all components have the following stories (unless explicitly excluded):
-  - RTL (Right-to-Left) story
-  - Text Spacing story
+- [ ] **Storybook**: Refer to the "Code Quality Checks" section for detailed Storybook requirements.
 - [ ] **BEM Naming**: Ensure BEM methodology is followed for all selectors
 - [ ] **CSS Variables**: Check use of CSS variables for colors, spacing, and typography
 - [ ] **Responsive Design**: Verify mobile-friendly design using CSS Grid or Flexbox
