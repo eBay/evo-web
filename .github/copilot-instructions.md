@@ -9,7 +9,7 @@ When reviewing pull requests for the evo-web project, please follow these custom
   - `skin` - CSS/SCSS styling framework
   - `ebayui-core` - Marko components
   - `ebayui-core-react` - React components
-  - `evo-marko` - Marko utilities
+  - `evo-marko` - Marko 6 components
 - **Standards**: BEM methodology, WCAG 2.2 AA accessibility, semantic HTML5
 
 ## Required Checklist Items to Verify
@@ -21,7 +21,6 @@ When reviewing pull requests for the evo-web project, please follow these custom
 
 ### For Markup Changes (Marko/HTML files)
 - [ ] **Breaking Changes**: Verify markup changes won't be breaking (unless major release)
-- [ ] **MIND Pattern**: Check that the MIND pattern for the component has been created/revised
 - [ ] **BEM Naming**: Ensure BEM (Block Element Modifier) conventions are followed
 - [ ] **Semantic HTML**: Verify use of semantic HTML5 elements
 - [ ] **Accessibility**: Check WCAG 2.2 AA compliance including:
@@ -40,6 +39,7 @@ When reviewing pull requests for the evo-web project, please follow these custom
 - [ ] **BEM Naming**: Ensure BEM methodology is followed for all selectors
 - [ ] **CSS Variables**: Check use of CSS variables for colors, spacing, and typography
 - [ ] **Responsive Design**: Verify mobile-friendly design using CSS Grid or Flexbox
+- [ ] **Responsive Breakpoints**: Verify the proper use of responsive breakpoints at the proper sizes (320px, 512px, 768px, 1024px, 1280px, 1440px, 1680px, 1920px).
 
 ## Code Quality Checks
 
@@ -85,7 +85,7 @@ Always prioritize accessibility (a11y) compliance:
 - Check component visual fidelity
 - Verify cross-browser compatibility
 
-### EbayUI Core (Marko)
+### Evo Marko
 - Review Marko component patterns
 - Check component lifecycle handling
 - Verify proper event binding
@@ -104,6 +104,7 @@ Always prioritize accessibility (a11y) compliance:
 - Inconsistent naming conventions
 - Missing documentation updates
 - Performance regressions
+- Missing changesets for non-documentation changes
 
 ## Review Tone
 - Be constructive and educational
