@@ -6,7 +6,7 @@ $ const {
     expanded,
     icon,
     image,
-    clippedText = "Filter Applied",
+    a11ySelectedText = "Filter Applied",
     variant = "default",
     href,
     ...htmlInput
@@ -17,7 +17,7 @@ $ const rootTag = isAnchor ? "a" : "button";
 <${rootTag}
     class=[
         "filter-chip",
-        state.loaded && "filter-chip--animated",
+        state.mounted && "filter-chip--animated",
         variant === "expressive" && "filter-chip--expressive",
         isAnchor && state.selected && "filter-chip--selected",
     ]
@@ -41,7 +41,7 @@ $ const rootTag = isAnchor ? "a" : "button";
         <${renderBody}/>
         <if(state.selected && isAnchor)>
             <span class="clipped">
-                - ${clippedText}
+                - ${a11ySelectedText}
             </span>
         </if>
     </span>

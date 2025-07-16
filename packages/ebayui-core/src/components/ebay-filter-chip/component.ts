@@ -14,7 +14,7 @@ interface FilterChipInput extends Omit<Marko.HTML.Button, `on${string}` | "type"
     disabled?: AttrBoolean;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     image?: Marko.AttrTag<Image>;
-    clippedText?: AttrString;
+    a11ySelectedText?: AttrString;
     expanded?: boolean;
     "on-click"?: (event: {
         originalEvent: MouseEvent;
@@ -27,7 +27,7 @@ export interface Input extends WithNormalizedProps<FilterChipInput> {}
 export interface State {
     expanded?: boolean;
     selected?: boolean;
-    loaded: boolean;
+    mounted: boolean;
 }
 
 class SelectionChip extends Marko.Component<Input, State> {
@@ -51,14 +51,14 @@ class SelectionChip extends Marko.Component<Input, State> {
     }
 
     onMount() {
-        this.state.loaded = true;
+        this.state.mounted = true;
     }
 
     onInput(input: Input) {
         this.state = {
             selected: input.selected || false,
             expanded: input.expanded || false,
-            loaded: false
+            mounted: false
         };
     }
 }

@@ -55,7 +55,7 @@ export default {
             description:
                 "Only used for menu variant. True/false if the menu is in expanded state or not",
         },
-        clippedText: {
+        a11ySelectedText: {
             control: { type: "string" },
             description:
                 "For anchor variant: The clipped text to show when the filter is set. Defaults to \"- filter applied\"",

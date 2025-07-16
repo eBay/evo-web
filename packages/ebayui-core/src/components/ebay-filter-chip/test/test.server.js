@@ -46,7 +46,7 @@ describe("ebay-filter-chip", () => {
     it("renders as link selected", async () => {
         await htmlSnap(Expressive, {
             href: "www.ebay.com",
-            clippedText: "selected",
+            a11ySelectedText: "selected",
             selected: true,
         });
     });
