@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.9.0
+
+### Minor Changes
+
+- [#168](https://github.com/eBay/evo-web/pull/168) [`4198962`](https://github.com/eBay/evo-web/commit/41989628f24228e56d5f204f4e3b84395b84481d) Thanks [@agliga](https://github.com/agliga)! - feat(chip): added new selection and filter chips
+
+### Patch Changes
+
+- [#216](https://github.com/eBay/evo-web/pull/216) [`7cb09c0`](https://github.com/eBay/evo-web/commit/7cb09c0c78acbfb73823bf141f75c73428fb8193) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Icons fix patch
+
+- [#208](https://github.com/eBay/evo-web/pull/208) [`34dae17`](https://github.com/eBay/evo-web/commit/34dae17473de65095bd16e9adb7079c376249700) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(lightbox-dialog): wide variant has incorrect max-width
+
 ## 19.8.1
 
 ### Patch Changes

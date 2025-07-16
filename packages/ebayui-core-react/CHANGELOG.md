@@ -1,5 +1,17 @@
 # @ebay/ui-core-react
 
+## 8.10.0
+
+### Minor Changes
+
+- [#193](https://github.com/eBay/evo-web/pull/193) [`74a0422`](https://github.com/eBay/evo-web/commit/74a0422b1f1742e304ab468d4827bc9fd29b57d3) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(react): add EbayFlag component for SVGs
+
+### Patch Changes
+
+- [#211](https://github.com/eBay/evo-web/pull/211) [`b1de512`](https://github.com/eBay/evo-web/commit/b1de512ff265b84a16e92bbe806486520c741c75) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(react:date-textbox): derive selected dates instead of updating as states
+
+- [#215](https://github.com/eBay/evo-web/pull/215) [`f25342e`](https://github.com/eBay/evo-web/commit/f25342e3659e0e6b91ca03c43751b43be943f549) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(react:filter-menu): avoid checking the item when disabled and fix event handlers
+
 ## 8.9.0
 
 ### Minor Changes
