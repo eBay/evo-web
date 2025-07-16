@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.8.1
+
+### Patch Changes
+
+- [`819cb08`](https://github.com/eBay/evo-web/commit/819cb0804bd0e623e3ebe790f6098c3ad9267d91) Thanks [@agliga](https://github.com/agliga)! - feat(icons): generated new icons from skin
+
 ## 15.8.0
 
 ### Minor Changes
