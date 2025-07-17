@@ -22,24 +22,22 @@ export const collapsed = () => `
                 role="menuitemcheckbox"
                 aria-checked="true"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 1</span>
             </div>
             <div
@@ -47,24 +45,22 @@ export const collapsed = () => `
                 role="menuitemcheckbox"
                 aria-checked="true"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 2</span>
             </div>
             <div
@@ -72,24 +68,22 @@ export const collapsed = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 3</span>
             </div>
         </div>
@@ -119,24 +113,22 @@ export const checkboxExpanded = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 1</span>
             </div>
             <div
@@ -144,24 +136,22 @@ export const checkboxExpanded = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 2</span>
             </div>
             <div
@@ -169,24 +159,22 @@ export const checkboxExpanded = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 3</span>
             </div>
         </div>
@@ -216,24 +204,22 @@ export const checkboxExpandedSelected = () => `
                 role="menuitemcheckbox"
                 aria-checked="true"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 1</span>
             </div>
             <div
@@ -241,24 +227,22 @@ export const checkboxExpandedSelected = () => `
                 role="menuitemcheckbox"
                 aria-checked="true"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 2</span>
             </div>
             <div
@@ -266,24 +250,22 @@ export const checkboxExpandedSelected = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 3</span>
             </div>
         </div>
@@ -313,24 +295,22 @@ export const radioExpanded = () => `
                 role="menuitemradio"
                 aria-checked="false"
             >
-                <span class="menu-button__radio">
-                    <svg
-                        aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-unchecked-18"/>
-                    </svg>
-                    <svg
+                <svg
                     aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-checked-18"/>
-                    </svg>
-                </span>
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
                 <span>Menu Item 1</span>
             </div>
             <div
@@ -338,24 +318,22 @@ export const radioExpanded = () => `
                 role="menuitemradio"
                 aria-checked="false"
             >
-                <span class="menu-button__radio">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
                 <span>Menu Item 2</span>
             </div>
             <div
@@ -363,24 +341,22 @@ export const radioExpanded = () => `
                 role="menuitemradio"
                 aria-checked="false"
             >
-                <span class="menu-button__radio">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
                 <span>Menu Item 3</span>
             </div>
         </div>
@@ -410,24 +386,22 @@ export const radioExpandedSelected = () => `
                 role="menuitemradio"
                 aria-checked="false"
             >
-                <span class="menu-button__radio">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
                 <span>Menu Item 1</span>
             </div>
             <div
@@ -435,24 +409,22 @@ export const radioExpandedSelected = () => `
                 role="menuitemradio"
                 aria-checked="true"
             >
-                <span class="menu-button__radio">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
                 <span>Menu Item 2</span>
             </div>
             <div
@@ -460,24 +432,22 @@ export const radioExpandedSelected = () => `
                 role="menuitemradio"
                 aria-checked="false"
             >
-                <span class="menu-button__radio">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-radio-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-radio-checked-18"/>
+                </svg>
                 <span>Menu Item 3</span>
             </div>
         </div>
@@ -507,24 +477,22 @@ export const expandedWithFooter = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 1</span>
             </div>
             <div
@@ -532,24 +500,22 @@ export const expandedWithFooter = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 2</span>
             </div>
             <div
@@ -557,24 +523,22 @@ export const expandedWithFooter = () => `
                 role="menuitemcheckbox"
                 aria-checked="false"
             >
-                <span class="menu-button__checkbox">
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--unchecked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-unchecked-18"/>
-                    </svg>
-                    <svg
-                    aria-hidden="true"
-                        class="icon icon--18 icon--checked"
-                        height="18"
-                        width="18"
-                    >
-                        <use href="#icon-checkbox-checked-18"/>
-                    </svg>
-                </span>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--unchecked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-unchecked-18"/>
+                </svg>
+                <svg
+                aria-hidden="true"
+                    class="icon icon--18 icon--checked"
+                    height="18"
+                    width="18"
+                >
+                    <use href="#icon-checkbox-checked-18"/>
+                </svg>
                 <span>Menu Item 3</span>
             </div>
        </div>
