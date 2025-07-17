@@ -1,0 +1,337 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-filter-chip > renders as link 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<a[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"icon icon--16"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-sneaker-16"[39m
+          [33mviewBox[39m=[32m"0 0 16 16"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-sneaker-16"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+  [36m</a>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders as link selected 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<a[39m
+    [33mclass[39m=[32m"filter-chip filter-chip--expressive filter-chip--selected"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__media"[39m
+    [36m>[39m
+      [36m<img[39m
+        [33malt[39m=[32m"image"[39m
+        [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"[39m
+      [36m/>[39m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+      [36m<span[39m
+        [33mclass[39m=[32m"clipped"[39m
+      [36m>[39m
+        [0m- selected[0m
+      [36m</span>[39m
+    [36m</span>[39m
+  [36m</a>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders expressive 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"filter-chip filter-chip--expressive"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__media"[39m
+    [36m>[39m
+      [36m<img[39m
+        [33malt[39m=[32m"image"[39m
+        [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"[39m
+      [36m/>[39m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders expressive selected 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mclass[39m=[32m"filter-chip filter-chip--expressive"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__media"[39m
+    [36m>[39m
+      [36m<img[39m
+        [33malt[39m=[32m"image"[39m
+        [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"[39m
+      [36m/>[39m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders menu button 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-chevron-down-12"[39m
+          [33mviewBox[39m=[32m"0 0 12 12"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders menu button expanded 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"true"[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-chevron-down-12"[39m
+          [33mviewBox[39m=[32m"0 0 12 12"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders menu button expanded and selected 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"true"[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-chevron-down-12"[39m
+          [33mviewBox[39m=[32m"0 0 12 12"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders menu button selected 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-chevron-down-12"[39m
+          [33mviewBox[39m=[32m"0 0 12 12"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders static default 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"icon icon--16"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-sneaker-16"[39m
+          [33mviewBox[39m=[32m"0 0 16 16"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-sneaker-16"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-filter-chip > renders static selected 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"true"[39m
+    [33mclass[39m=[32m"filter-chip"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"icon icon--16"[39m
+      [33mfocusable[39m=[32m"false"[39m
+    [36m>[39m
+      [36m<defs>[39m
+        [36m<symbol[39m
+          [33mid[39m=[32m"icon-sneaker-16"[39m
+          [33mviewBox[39m=[32m"0 0 16 16"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33mclip-rule[39m=[32m"evenodd"[39m
+            [33md[39m=[32m"M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"[39m
+            [33mfill-rule[39m=[32m"evenodd"[39m
+          [36m/>[39m
+        [36m</symbol>[39m
+      [36m</defs>[39m
+      [36m<use[39m
+        [33mhref[39m=[32m"#icon-sneaker-16"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"filter-chip__text"[39m
+    [36m>[39m
+      [0mFilter[0m
+    [36m</span>[39m
+  [36m</button>[39m
+[36m</DocumentFragment>[39m"
+`;

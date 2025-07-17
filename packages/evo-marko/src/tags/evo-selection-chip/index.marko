@@ -1,0 +1,33 @@
+import type { AttrBoolean } from "marko/tags-html";
+export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+    content?: Marko.Body;
+    selected?: boolean;
+    selectedChange?: (selected?: boolean) => void;
+    onClick?: (event: PointerEvent, target: HTMLButtonElement) => unknown;
+}
+
+<const/{ content, selected: selectedInput, onClick, ...htmlInput }=input/>
+
+<let/selected:=input.selected/>
+<let/mounted=false/>
+<lifecycle onMount() {
+    mounted = true;
+}/>
+
+<button
+    class=["selection-chip", mounted && "selection-chip--animated"]
+    aria-pressed=(selected ? "true" : "false")
+    type="button"
+    onClick(e: PointerEvent, target: HTMLButtonElement) {
+        if (!input.disabled) {
+            selected = !selected;
+            input.onClick?.(e, target);
+        }
+    }
+    ...htmlInput
+>
+    <span class="selection-chip__text">
+        <${content}/>
+    </span>
+    <evo-icon-close-12 class="selection-chip__trailing"/>
+</button>
