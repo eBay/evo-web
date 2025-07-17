@@ -15,6 +15,6 @@ CSS Grid or Flexbox for layout.
 
 Use CSS variables for colors, spacing, and typography to maintain consistency across the application.
 
-Ensure optimal accessibility (a11y) by following WCAG 2.1 AA guidelines.
+Ensure optimal accessibility (a11y) by following WCAG 2.2 AA guidelines.
 
 Ensure all interactive elements have clear focus states and keyboard navigation support.

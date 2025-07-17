@@ -1,0 +1,123 @@
+.card {
+    background-color: var(--color-background-secondary);
+    border: none;
+    border-radius: var(--border-radius-150);
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 200px;
+    padding-block-end: var(--spacing-150);
+}
+
+.card--outlined {
+    background-color: inherit;
+    border: 1px solid var(--color-stroke-subtle);
+}
+
+a.card {
+    color: inherit;
+    text-decoration: none;
+}
+
+button.card {
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    padding-block-end: var(--spacing-150);
+    text-align: start;
+}
+
+button.card:hover {
+    cursor: pointer;
+}
+
+.card__header {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--border-radius-100);
+    margin: var(--spacing-150);
+}
+
+.card__header img {
+    border-radius: var(--border-radius-100);
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card--full-hero img {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.card__content {
+    display: flex;
+    flex: 1;
+    gap: var(--spacing-200);
+    flex-direction: column;
+    justify-content: space-between;
+    margin-inline: var(--spacing-150);
+}
+
+.card__overline {
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    gap: var(--spacing-100);
+    margin-block-end: var(--spacing-100);
+}
+
+.card__body {
+    flex: 1;
+}
+
+.card__title {
+    font-size: var(--font-size-large-1);
+    font-weight: 700;
+    margin-block-end: var(--spacing-50);
+    margin-block-start: 0;
+}
+
+.card--horizontal {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+}
+
+.card--horizontal .card__header {
+    aspect-ratio: 1 / 1;
+    margin-block-end: 0;
+    max-width: 160px;
+    min-width: 90px;
+    width: 25%;
+}
+
+.card--horizontal .card__hero-image {
+    aspect-ratio: 1 / 1;
+    height: auto;
+}
+
+.card--horizontal .card__content {
+    justify-content: flex-start;
+    margin-block-start: var(--spacing-150);
+    margin-inline-start: 0;
+}
+
+.card--horizontal .card__body {
+    flex: 0;
+}
+
+.card--full-hero .card__header {
+    margin: 0;
+    margin-block-end: var(--spacing-200);
+}
+
+.card--aspect-5-4 .card__header {
+    aspect-ratio: 5 / 4;
+}
+
+.card--aspect-16-9 .card__header {
+    aspect-ratio: 16 / 9;
+}
+    
