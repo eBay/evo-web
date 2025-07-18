@@ -13,6 +13,7 @@ export const Default: StoryObj<EbayDateTextboxProps> = {};
 export const Range: StoryObj<EbayDateTextboxProps> = {
     args: {
         range: true,
+        floatingLabel: ["Start", "End"],
     },
 };
 
@@ -50,6 +51,12 @@ export const ControlledValues: StoryFn<EbayDateTextboxProps> = (args) => {
     };
 
     return <Component />;
+};
+
+export const WithFloatingLabel: StoryObj<EbayDateTextboxProps> = {
+    args: {
+        floatingLabel: "Purchase Price",
+    },
 };
 
 export default story;
