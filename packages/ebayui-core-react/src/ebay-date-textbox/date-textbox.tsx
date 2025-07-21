@@ -25,7 +25,6 @@ export type EbayDateTextboxProps = Omit<EbayCalendarProps, "interactive" | "navi
     inputPlaceholderText?: string | string[];
     a11yOpenPopoverText?: string;
     floatingLabel?: string | string[];
-    invalid?: boolean;
     onChange?: EbayChangeEventHandler<HTMLInputElement, EventData> &
         EbayMouseEventHandler<HTMLInputElement, EventData> &
         EbayFocusEventHandler<HTMLInputElement, EventData>;
@@ -46,7 +45,6 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     defaultRangeEnd,
     collapseOnSelect,
     floatingLabel,
-    invalid,
     onChange = () => {},
     onInputChange = () => {},
     onInputRangeEndChange = () => {},
@@ -185,7 +183,6 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
         <span className={classNames("date-textbox", className)} ref={refs.setHost}>
             {range && (
                 <EbayTextbox
-                    invalid={invalid}
                     floatingLabel={Array.isArray(floatingLabel) ? floatingLabel[0] : floatingLabel}
                     value={valueToRender}
                     placeholder={rangeStartPlaceholder}
@@ -195,7 +192,6 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
             )}
 
             <EbayTextbox
-                invalid={invalid}
                 className="ebay-date-textbox--main"
                 floatingLabel={Array.isArray(floatingLabel) ? floatingLabel[1] : floatingLabel}
                 placeholder={mainPlaceholder}
