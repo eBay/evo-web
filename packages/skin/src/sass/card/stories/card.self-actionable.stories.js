@@ -2,7 +2,7 @@ export default { title: "Skin/Card/Self Actionable" };
 
 export const verticalButton = () => `
 <button class="card">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -18,7 +18,7 @@ export const verticalButton = () => `
 
 export const verticalLink = () => `
 <a class="card" href="https://ebay.com">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -34,7 +34,7 @@ export const verticalLink = () => `
 
 export const horizontalButton = () => `
 <button class="card card--horizontal">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -50,7 +50,7 @@ export const horizontalButton = () => `
 
 export const horizontalLink = () => `
 <a class="card card--horizontal" href="https://ebay.com">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">

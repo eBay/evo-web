@@ -32,13 +32,13 @@ button.card:hover {
     cursor: pointer;
 }
 
-.card__header {
+.card__media {
     aspect-ratio: 1 / 1;
     border-radius: var(--border-radius-100);
     margin: var(--spacing-150);
 }
 
-.card__header img {
+.card__media img {
     border-radius: var(--border-radius-100);
     display: block;
     height: 100%;
@@ -85,7 +85,7 @@ button.card:hover {
     max-width: 100%;
 }
 
-.card--horizontal .card__header {
+.card--horizontal .card__media {
     aspect-ratio: 1 / 1;
     margin-block-end: 0;
     max-width: 160px;
@@ -108,16 +108,16 @@ button.card:hover {
     flex: 0;
 }
 
-.card--full-hero .card__header {
+.card--full-hero .card__media {
     margin: 0;
     margin-block-end: var(--spacing-200);
 }
 
-.card--aspect-5-4 .card__header {
+.card--aspect-5-4 .card__media {
     aspect-ratio: 5 / 4;
 }
 
-.card--aspect-16-9 .card__header {
+.card--aspect-16-9 .card__media {
     aspect-ratio: 16 / 9;
 }
     

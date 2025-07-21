@@ -2,7 +2,7 @@ export default { title: "Skin/Card/Content" };
 
 export const minimumContent = () => `
 <span class="card">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -21,7 +21,7 @@ export const minimumContent = () => `
 
 export const maximumContent = () => `
 <span class="card">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">

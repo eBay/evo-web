@@ -2,7 +2,7 @@ export default { title: "Skin/Card/Text Spacing" };
 
 export const vertical = () => `
 <span class="card demo-a11y-text-spacing">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -28,7 +28,7 @@ export const vertical = () => `
 
 export const horizontal = () => `
 <span class="card card--horizontal demo-a11y-text-spacing">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">

@@ -2,7 +2,7 @@ export default { title: "Skin/Card/Style" };
 
 export const verticalFilled = () => `
 <span class="card">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -28,7 +28,7 @@ export const verticalFilled = () => `
 
 export const verticalOutlined = () => `
 <span class="card card--outlined">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -54,7 +54,7 @@ export const verticalOutlined = () => `
 
 export const horizontalFilled = () => `
 <span class="card card--horizontal">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
@@ -80,7 +80,7 @@ export const horizontalFilled = () => `
 
 export const horizontalOutlined = () => `
 <span class="card card--horizontal card--outlined">
-    <div class="card__header">
+    <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">

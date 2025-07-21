@@ -3,7 +3,7 @@ export default { title: "Skin/Card/RTL" };
 export const vertical = () => `
 <div dir="rtl">
     <span class="card">
-        <div class="card__header">
+        <div class="card__media">
             <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
         </div>
         <div class="card__content">
@@ -31,7 +31,7 @@ export const vertical = () => `
 export const horizontal = () => `
 <div dir="rtl">
     <span class="card card--horizontal">
-        <div class="card__header">
+        <div class="card__media">
             <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
         </div>
         <div class="card__content">
