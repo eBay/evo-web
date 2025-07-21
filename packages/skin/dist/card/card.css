@@ -33,14 +33,17 @@ button.card:hover {
 }
 
 .card__media {
-    aspect-ratio: 1 / 1;
-    border-radius: var(--border-radius-100);
+    aspect-ratio: 1/1;
     margin: var(--spacing-150);
     margin-block-end: var(--spacing-200);
 }
 
+.card__media,
 .card__media img {
     border-radius: var(--border-radius-100);
+}
+
+.card__media img {
     display: block;
     height: 100%;
     object-fit: cover;
@@ -89,7 +92,7 @@ button.card:hover {
 }
 
 .card--horizontal .card__media {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     margin-block-end: 0;
     max-width: 160px;
     min-width: 90px;
@@ -97,7 +100,7 @@ button.card:hover {
 }
 
 .card--horizontal .card__hero-image {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     height: auto;
 }
 
@@ -112,9 +115,9 @@ button.card:hover {
 }
 
 .card--aspect-5-4 .card__media {
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 5/4;
 }
 
 .card--aspect-16-9 .card__media {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16/9;
 }

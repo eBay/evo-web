@@ -6,11 +6,9 @@ export const verticalButton = () => `
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
-        <div class="card__body">
-            <h3 class="card__title">Authentic Rookie Cards</h3>
-            <div class="card__description">
-                Professional-grade rookie cards featuring future Hall of Famers in their awkward rookie photo phase.
-            </div>
+        <h3 class="card__title">Authentic Rookie Cards</h3>
+        <div class="card__description">
+            Professional-grade rookie cards featuring future Hall of Famers in their awkward rookie photo phase.
         </div>
     </div>
 </button>
@@ -22,11 +20,9 @@ export const verticalLink = () => `
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
-        <div class="card__body">
-            <h3 class="card__title">Authentic Rookie Cards</h3>
-            <div class="card__description">
-                A collection proving that somewhere between a curveball, a three-pointer, and a slap shot lies the secret to happiness.
-            </div>
+        <h3 class="card__title">Authentic Rookie Cards</h3>
+        <div class="card__description">
+            A collection proving that somewhere between a curveball, a three-pointer, and a slap shot lies the secret to happiness.
         </div>
     </div>
 </a>
@@ -38,11 +34,9 @@ export const horizontalButton = () => `
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
-        <div class="card__body">
-            <h3 class="card__title">Authentic Rookie Cards</h3>
-            <div class="card__description">
-                Professional-grade rookie cards featuring future Hall of Famers in their awkward rookie photo phase.
-            </div>
+        <h3 class="card__title">Authentic Rookie Cards</h3>
+        <div class="card__description">
+            Professional-grade rookie cards featuring future Hall of Famers in their awkward rookie photo phase.
         </div>
     </div>
 </button>
@@ -54,11 +48,9 @@ export const horizontalLink = () => `
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__content">
-        <div class="card__body">
-            <h3 class="card__title">Authentic Rookie Cards</h3>
-            <div class="card__description">
-                A collection proving that somewhere between a curveball, a three-pointer, and a slap shot lies the secret to happiness.
-            </div>
+        <h3 class="card__title">Authentic Rookie Cards</h3>
+        <div class="card__description">
+            A collection proving that somewhere between a curveball, a three-pointer, and a slap shot lies the secret to happiness.
         </div>
     </div>
 </a>

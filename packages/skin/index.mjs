@@ -5,6 +5,7 @@ import './dist/badge/badge.css';
 import './dist/breadcrumbs/breadcrumbs.css';
 import './dist/button/button.css';
 import './dist/calendar/calendar.css';
+import './dist/card/card.css';
 import './dist/carousel/carousel.css';
 import './dist/ccd/ccd.css';
 import './dist/chart-legend/chart-legend.css';
