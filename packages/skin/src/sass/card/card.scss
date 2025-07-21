@@ -52,7 +52,7 @@ button.card:hover {
     border-bottom-right-radius: 0;
 }
 
-.card__content {
+.card__main {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -101,7 +101,7 @@ button.card:hover {
     height: auto;
 }
 
-.card--horizontal .card__content {
+.card--horizontal .card__main {
     margin-block-start: var(--spacing-150);
     margin-inline-start: 0;
 }

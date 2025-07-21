@@ -6,7 +6,7 @@ export const vertical = () => `
         <div class="card__media">
             <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
         </div>
-        <div class="card__content">
+        <div class="card__main">
             <div class="card__overline">
                 <svg class="icon icon--16" height="16" width="16">
                     <use href="#icon-authenticity-guarantee-filled-16-colored" />
@@ -32,7 +32,7 @@ export const horizontal = () => `
         <div class="card__media">
             <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
         </div>
-        <div class="card__content">
+        <div class="card__main">
             <div class="card__overline">
                 <svg class="icon icon--16" height="16" width="16">
                     <use href="#icon-authenticity-guarantee-filled-16-colored" />

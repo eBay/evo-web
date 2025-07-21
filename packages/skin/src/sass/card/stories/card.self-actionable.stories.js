@@ -5,7 +5,7 @@ export const verticalButton = () => `
     <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
-    <div class="card__content">
+    <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
         <div class="card__description">
             Professional-grade rookie cards featuring future Hall of Famers in their awkward rookie photo phase.
@@ -19,7 +19,7 @@ export const verticalLink = () => `
     <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
-    <div class="card__content">
+    <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
         <div class="card__description">
             A collection proving that somewhere between a curveball, a three-pointer, and a slap shot lies the secret to happiness.
@@ -33,7 +33,7 @@ export const horizontalButton = () => `
     <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
-    <div class="card__content">
+    <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
         <div class="card__description">
             Professional-grade rookie cards featuring future Hall of Famers in their awkward rookie photo phase.
@@ -47,7 +47,7 @@ export const horizontalLink = () => `
     <div class="card__media">
         <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
-    <div class="card__content">
+    <div class="card__main">
         <h3 class="card__title">Authentic Rookie Cards</h3>
         <div class="card__description">
             A collection proving that somewhere between a curveball, a three-pointer, and a slap shot lies the secret to happiness.
