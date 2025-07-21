@@ -46,7 +46,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     defaultRangeEnd,
     collapseOnSelect,
     floatingLabel,
-    invalid = false,
+    invalid,
     onChange = () => {},
     onInputChange = () => {},
     onInputRangeEndChange = () => {},
