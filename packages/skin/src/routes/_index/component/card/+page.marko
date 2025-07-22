@@ -267,6 +267,98 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
 </span>
 </highlight-code>
 
+    <h2 id="disabled-card">Disabled Card</h2>
+
+    <p>
+        Cards that are disabled will appear grayed out and unclickable. For internally-actionable cards, <highlight>aria-disabled="true"</highlight> attribute needs to be set on the card container. This will ensure that screen readers and other assistive technologies recognize the card as disabled.
+    </p>
+
+    <p>
+        For self-actionable cards using a <highlight>button</highlight>, you need to use the <highlight>disabled</highlight> attribute on the element as well as adding <highlight>tabindex="-1"</highlight> to avoid focus. This will prevent any interaction with the card and indicate to users that it is not available for action.
+    </p>
+
+    <p>
+        For self-actionable cards using an <highlight>a</highlight> tag, you can use the <highlight>aria-disabled="true"</highlight> attribute to indicate that the card is disabled as well as <highlight>tabindex="-1"</highlight> and setting the <highlight>href=""</highlight>. This will ensure that screen readers and other assistive technologies recognize the card anchor is not functional.
+    </p>
+
+<demo>
+    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <span class="card card--aspect-16-9" aria-disabled="true">
+            <div class="card__media">
+                <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+            </div>
+            <div class="card__main">
+                <div class="card__description">
+                    Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
+                </div>
+                <div class="card__footer">
+                    <button class="btn btn--primary btn--fluid" tabindex="-1">See Details</button>
+                </div>
+            </div>
+        </span>
+
+        <button class="card card--aspect-16-9" disabled>
+            <div class="card__media">
+                <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+            </div>
+            <div class="card__main">
+                <div class="card__description">
+                    Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
+                </div>
+            </div>
+        </button>
+
+        <a class="card card--aspect-16-9" href="" aria-disabled="true" tabindex="-1">
+            <div class="card__media">
+                <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+            </div>
+            <div class="card__main">
+                <div class="card__description">
+                    Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
+                </div>
+            </div>
+        </a>
+    </div>
+</demo>
+
+<highlight-code type="html">
+    <span class="card card--aspect-16-9" aria-disabled="true">
+        <div class="card__media">
+            <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+        </div>
+        <div class="card__main">
+            <div class="card__description">
+                Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
+            </div>
+            <div class="card__footer">
+                <button class="btn btn--primary btn--fluid" tabindex="-1">See Details</button>
+            </div>
+        </div>
+    </span>
+
+    <button class="card card--aspect-16-9" disabled>
+        <div class="card__media">
+            <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+        </div>
+        <div class="card__main">
+            <div class="card__description">
+                Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
+            </div>
+        </div>
+    </button>
+
+    <a class="card card--aspect-16-9" href="" aria-disabled="true" tabindex="-1">
+        <div class="card__media">
+            <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+        </div>
+        <div class="card__main">
+            <div class="card__description">
+                Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
+            </div>
+        </div>
+    </a>
+</highlight-code>
+
     <h2 id="card-horizontal">Horizontal Card</h2>
 
     <p>
