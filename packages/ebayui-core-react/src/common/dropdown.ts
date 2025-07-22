@@ -44,7 +44,7 @@ export function useFloatingDropdown({ open, options }: FloatingDropdownHookArgs)
 
 type ElementId = string;
 export type ExpanderHookArgs<T extends HTMLElement> = {
-    ref: React.MutableRefObject<T>;
+    ref: React.MutableRefObject<T> | null;
     expanded?: boolean;
     options: {
         contentSelector: string;
@@ -90,12 +90,12 @@ export function useExpander<T extends HTMLElement>(
                 onCollapse?.();
             }
 
-            ref.current?.addEventListener("expander-expand", handleExpand);
-            ref.current?.addEventListener("expander-collapse", handleCollapse);
+            ref?.current?.addEventListener("expander-expand", handleExpand);
+            ref?.current?.addEventListener("expander-collapse", handleCollapse);
 
             return () => {
-                ref.current?.removeEventListener("expander-expand", handleExpand);
-                ref.current?.removeEventListener("expander-collapse", handleCollapse);
+                ref?.current?.removeEventListener("expander-expand", handleExpand);
+                ref?.current?.removeEventListener("expander-collapse", handleCollapse);
             };
         },
         () => expander.current?.expanded,
@@ -103,7 +103,7 @@ export function useExpander<T extends HTMLElement>(
     );
 
     useEffect(() => {
-        if (ref.current) {
+        if (ref?.current) {
             expander.current = new Expander(ref.current, options);
         }
 

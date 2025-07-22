@@ -77,9 +77,31 @@ const EbayCombobox: FC<EbayComboboxProps> = ({
     const containerRef = useRef(null);
     const comboboxRef = useRef<HTMLInputElement>(null);
     const listboxRef = useRef<HTMLDivElement>(null);
+
+    function filterOptions(): typeof options {
+        if (autocomplete === "none") {
+            return options || [];
+        }
+
+        return options.filter((option) =>
+            option.props.text?.toLowerCase().includes(currentValue?.trim()?.toLowerCase()),
+        );
+    }
+
+    const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue || "");
+    const currentValue = typeof controlledValue !== "undefined" ? controlledValue : uncontrolledValue;
+    if (typeof controlledValue === "undefined" && !onInputChange) {
+        console.warn(
+            "EbayCombobox: You provided a value prop without an onInputChange handler." +
+                "This will render a read-only input field. " +
+                "If you want the input to be editable, provide an onInputChange handler.",
+        );
+    }
+
+    const visibleOptions = useMemo(() => filterOptions(), [autocomplete, currentValue, options]);
     const expander = useExpander(
         {
-            ref: dropdownRef || containerRef,
+            ref: visibleOptions.length ? dropdownRef || containerRef : null,
             expanded,
             options: {
                 autoCollapse: expanded,
@@ -93,22 +115,12 @@ const EbayCombobox: FC<EbayComboboxProps> = ({
             onExpand,
             onCollapse,
         },
-        [expanded],
+        [expanded, visibleOptions.length > 0],
     );
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: expander.isExpanded,
     });
-
-    const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue || "");
-    const currentValue = typeof controlledValue !== "undefined" ? controlledValue : uncontrolledValue;
-    if (typeof controlledValue === "undefined" && !onInputChange) {
-        console.warn(
-            "EbayCombobox: You provided a value prop without an onInputChange handler." +
-                "This will render a read-only input field. " +
-                "If you want the input to be editable, provide an onInputChange handler.",
-        );
-    }
 
     const setComboboxValueFromSelection = (event: ComboboxSelectEventArgs, text: string) => {
         if (currentValue !== text) {
@@ -122,18 +134,6 @@ const EbayCombobox: FC<EbayComboboxProps> = ({
             onSelect(event, buildComboboxEventData({ currentInputValue: text }));
         }
     };
-
-    function filterOptions(): typeof options {
-        if (autocomplete === "none") {
-            return options || [];
-        }
-
-        return options.filter((option) =>
-            option.props.text?.toLowerCase().includes(currentValue?.trim()?.toLowerCase()),
-        );
-    }
-
-    const visibleOptions = useMemo(() => filterOptions(), [autocomplete, currentValue, options]);
 
     const handleActiveDescendantChange = useCallback<ActiveDescendantChangeHandler>(
         (event, { toIndex }) => {

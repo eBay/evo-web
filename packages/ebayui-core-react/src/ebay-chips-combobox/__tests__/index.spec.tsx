@@ -196,4 +196,21 @@ describe("EbayChipsCombobox", () => {
         expect(options.length).toBe(1);
         expect(options[0]).toHaveTextContent("Option 3");
     });
+
+    it("should properly render when all options are selected", async () => {
+        render(
+            <EbayChipsCombobox defaultSelected={["Option 1", "Option 2", "Option 3"]} placeholder="Select options">
+                <EbayComboboxOption text="Option 1" />
+                <EbayComboboxOption text="Option 2" />
+                <EbayComboboxOption text="Option 3" />
+            </EbayChipsCombobox>,
+        );
+
+        const optionToRemove = screen.getByLabelText("Remove Option 2");
+        await userEvent.click(optionToRemove);
+
+        const options = screen.getAllByRole("option");
+        expect(options.length).toBe(1);
+        expect(options[0]).toBeVisible();
+    });
 });
