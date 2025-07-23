@@ -73,8 +73,17 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     const [numMonths, setNumMonths] = useState(1);
 
     const EbayTextboxComponentChildren = filterByType(children, EbayTextbox);
-    const EbayTextboxComponentStart = range ? EbayTextboxComponentChildren[1] : EbayTextboxComponentChildren[0];
-    const EbayTextboxComponentEnd = range ? EbayTextboxComponentChildren[0] : EbayTextboxComponentChildren[1];
+
+    // In range mode: first child = end input, second child = start input
+    // In single mode: first child = main input, second child = unused
+    // The reason is that the latest element will have the postfix icon
+    const EbayTextboxComponentStart = range
+        ? EbayTextboxComponentChildren[1] || <EbayTextbox /> // Second child is start in range mode
+        : EbayTextboxComponentChildren[0] || <EbayTextbox />; // First child is main in single mode
+
+    const EbayTextboxComponentEnd = range
+        ? EbayTextboxComponentChildren[0] || <EbayTextbox /> // First child is end in range mode
+        : EbayTextboxComponentChildren[1] || <EbayTextbox />; // Second child unused in single mode
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: isPopoverOpen,
@@ -197,45 +206,24 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     return (
         <span className={classNames("date-textbox", className)} ref={refs.setHost}>
             {range &&
-                (EbayTextboxComponentEnd ? (
-                    cloneElement(EbayTextboxComponentEnd, {
-                        value: valueToRender,
-                        placeholder: rangeStartPlaceholder,
-                        onInputChange: (event) => handleInternalChange(event, 0),
-                        onBlur: (event) => handleInputChange(event, 0),
-                    })
-                ) : (
-                    <EbayTextbox
-                        value={valueToRender}
-                        placeholder={rangeStartPlaceholder}
-                        onInputChange={(event) => handleInternalChange(event, 0)}
-                        onBlur={(event) => handleInputChange(event, 0)}
-                    />
-                ))}
+                cloneElement(EbayTextboxComponentEnd, {
+                    value: valueToRender,
+                    placeholder: rangeStartPlaceholder,
+                    onInputChange: (event) => handleInternalChange(event, 0),
+                    onBlur: (event) => handleInputChange(event, 0),
+                })}
 
-            {EbayTextboxComponentStart ? (
-                cloneElement(
-                    EbayTextboxComponentStart,
-                    {
-                        ...EbayTextboxComponentStart.props,
-                        className: "ebay-date-textbox--main",
-                        placeholder: mainPlaceholder,
-                        value: range ? rangeEndToRender : valueToRender,
-                        onInputChange: (event) => handleInternalChange(event, range ? 1 : 0),
-                        onBlur: (event) => handleInputChange(event, range ? 1 : 0),
-                    },
-                    <EbayTextboxPostfixIcon name="calendar24" buttonAriaLabel={a11yOpenPopoverText} />,
-                )
-            ) : (
-                <EbayTextbox
-                    className="ebay-date-textbox--main"
-                    placeholder={mainPlaceholder}
-                    value={range ? rangeEndToRender : valueToRender}
-                    onInputChange={(event) => handleInternalChange(event, range ? 1 : 0)}
-                    onBlur={(event) => handleInputChange(event, range ? 1 : 0)}
-                >
-                    <EbayTextboxPostfixIcon name="calendar24" buttonAriaLabel={a11yOpenPopoverText} />
-                </EbayTextbox>
+            {cloneElement(
+                EbayTextboxComponentStart,
+                {
+                    ...EbayTextboxComponentStart.props,
+                    className: "ebay-date-textbox--main",
+                    placeholder: mainPlaceholder,
+                    value: range ? rangeEndToRender : valueToRender,
+                    onInputChange: (event) => handleInternalChange(event, range ? 1 : 0),
+                    onBlur: (event) => handleInputChange(event, range ? 1 : 0),
+                },
+                <EbayTextboxPostfixIcon name="calendar24" buttonAriaLabel={a11yOpenPopoverText} />,
             )}
 
             <div hidden={!isPopoverOpen} ref={refs.setOverlay} style={overlayStyles} className="date-textbox__popover">
