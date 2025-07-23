@@ -2,4 +2,4 @@
 "@ebay/ui-core-react": minor
 ---
 
-feat: add floating label to ebay-date-textbox
+feat: ebay-date-textbox add support for children ebay-textbox
