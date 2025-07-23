@@ -39,8 +39,8 @@ button.card {
         var(--motion-easing-quick-enter);
 }
 
-.card[aria-disabled="true"],
-.card[disabled] {
+.card[disabled],
+.card[href=""] {
     filter: grayscale(1);
     opacity: 0.5;
     pointer-events: none;
