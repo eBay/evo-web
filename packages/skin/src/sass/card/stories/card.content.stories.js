@@ -40,3 +40,35 @@ export const maximumContent = () => `
     </div>
 </span>
 `;
+
+export const usingAnchor = () => `
+<span class="card">
+    <div class="card__media">
+        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+    </div>
+    <div class="card__main">
+        <div class="card__description">
+            Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
+        </div>
+        <div class="card__footer">
+            <a href="https://ebay.com" class="fake-btn fake-btn--primary fake-btn--fluid">See Details</a>
+        </div>
+    </div>
+</span>
+`;
+
+export const usingButton = () => `
+<span class="card">
+    <div class="card__media">
+        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+    </div>
+    <div class="card__main">
+        <div class="card__description">
+            Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
+        </div>
+        <div class="card__footer">
+            <button class="btn btn--primary btn--fluid">See Details</button>
+        </div>
+    </div>
+</span>
+`;

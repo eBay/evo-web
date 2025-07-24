@@ -18,7 +18,43 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     </p>
 
     <p>
-        This example includes the most essential aspects of a card - header with a hero image, body with content, and a footer with an action button. The vertical card is by default a square (1:1 aspect ratio) card.
+        This example includes the most essential aspects of a card - header with a hero image, body with content, and a footer with an action button. The vertical card is by default a square (1:1 aspect ratio) card. This uses an anchor link.
+    </p>
+
+<demo>
+    <span class="card">
+        <div class="card__media">
+            <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+        </div>
+        <div class="card__main">
+            <div class="card__description">
+                Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
+            </div>
+            <div class="card__footer">
+                <a href="https://ebay.com" class="fake-btn fake-btn--primary fake-btn--fluid">See Details</a>
+            </div>
+        </div>
+    </span>
+</demo>
+
+<highlight-code type="html">
+<span class="card">
+    <div class="card__media">
+        <img src=imgCards alt="Card Hero Image" class="card__hero-image">
+    </div>
+    <div class="card__main">
+        <div class="card__description">
+            Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
+        </div>
+        <div class="card__footer">
+            <a href="https://ebay.com" class="fake-btn fake-btn--primary fake-btn--fluid">See Details</a>
+        </div>
+    </div>
+</span>
+</highlight-code>
+
+    <p>
+        The card can also be used with a button.
     </p>
 
 <demo>
