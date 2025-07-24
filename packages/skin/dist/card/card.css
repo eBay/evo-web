@@ -10,13 +10,6 @@
     outline: 6px solid transparent;
     outline-offset: 4px;
     padding-block-end: var(--spacing-150);
-    transition:
-        outline-width var(--motion-duration-short-2)
-            var(--motion-easing-quick-enter),
-        outline-color var(--motion-duration-short-2)
-            var(--motion-easing-quick-enter),
-        outline-offset var(--motion-duration-short-2)
-            var(--motion-easing-quick-enter);
 }
 
 .card--outlined {
@@ -35,8 +28,11 @@ button.card {
     padding: 0;
     padding-block-end: var(--spacing-150);
     text-align: start;
-    transition: all var(--motion-duration-medium-3)
-        var(--motion-easing-quick-enter);
+    transition:
+        transform var(--motion-duration-medium-3)
+            var(--motion-easing-quick-enter),
+        box-shadow var(--motion-duration-medium-3)
+            var(--motion-easing-quick-enter);
 }
 
 .card[disabled],
@@ -55,11 +51,8 @@ button.card:hover {
 }
 
 .card:focus-visible {
-    outline-color: var(--color-stroke-accent);
-    outline-offset: 0;
-    outline-width: 2px;
-    transition: all var(--motion-duration-short-3)
-        var(--motion-easing-quick-enter);
+    animation: card-focus-animation var(--motion-duration-short-3)
+        var(--motion-easing-quick-enter) forwards;
 }
 
 .card__media {
@@ -154,4 +147,17 @@ button.card:hover {
 
 .card--aspect-16-9 .card__media {
     aspect-ratio: 16/9;
+}
+
+@keyframes card-focus-animation {
+    0% {
+        outline-color: var(--color-stroke-accent);
+        outline-offset: 4px;
+        outline-width: 6px;
+    }
+    to {
+        outline-color: var(--color-stroke-accent);
+        outline-offset: 0;
+        outline-width: 2px;
+    }
 }
