@@ -1,12 +1,13 @@
 // Keyboard event is handle by ListboxButton component, disabling eslint
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
-import React, { ComponentProps, FC, MouseEvent, RefCallback, RefObject } from "react";
+import React, { ComponentProps, FC, MouseEvent, ReactNode, RefCallback, RefObject } from "react";
 import classNames from "classnames";
 import { EbayIcon } from "../ebay-icon";
 
 export type EbayListboxButtonOptionProps = ComponentProps<"input"> & {
     selected?: boolean;
     index?: number;
+    icon?: ReactNode;
     onClick?: (event: MouseEvent<HTMLDivElement>, value: ComponentProps<"input">["value"], index: number) => void;
     innerRef?: RefObject<HTMLDivElement> | RefCallback<HTMLDivElement>;
 };
@@ -17,6 +18,7 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
     selected,
     onClick,
     index,
+    icon,
     innerRef,
     className,
     ...rest
@@ -35,7 +37,10 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
                 onClick(e, value, index);
             }}
         >
-            <span className="listbox-button__value">{children}</span>
+            <span className="listbox-button__value">
+                {icon}
+                {children}
+            </span>
             <EbayIcon name="tick16" />
         </div>
     );

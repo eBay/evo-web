@@ -41,6 +41,7 @@ export type EbayTextboxProps = {
     defaultValue?: string;
     inputSize?: Size;
     floatingLabel?: string;
+    floatingLabelStatic?: boolean;
     onChange?: EbayChangeEventHandler<HTMLTextAreaElement & HTMLInputElement, TextboxEventProps>;
     onInputChange?: EbayChangeEventHandler<HTMLTextAreaElement & HTMLInputElement, TextboxEventProps>;
     onFocus?: EbayFocusEventHandler<HTMLTextAreaElement & HTMLInputElement, TextboxEventProps>;
@@ -77,6 +78,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     forwardedRef,
     inputSize = "default",
     floatingLabel: floatingLabelText,
+    floatingLabelStatic,
     children,
     placeholder,
     opaqueLabel,
@@ -89,8 +91,8 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
         disabled: rest.disabled,
         size: inputSize,
         invalid,
-        type,
         opaqueLabel,
+        static: floatingLabelStatic || type === "date",
         onMount: onFloatingLabelInit,
         containerTagName: fluid ? "div" : "span",
     });

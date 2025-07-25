@@ -1,0 +1,754 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`EbayPhoneInput render renders basic component 1`] = `
+<span
+  class="phone-input"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--au"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="49"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="44"
+      />
+      <option
+        value="1"
+      />
+    </select>
+  </span>
+  <span
+    class="textbox"
+  >
+    <span
+      id="phone-prefix"
+    >
+      + 
+      61
+    </span>
+    <input
+      aria-describedby="phone-prefix"
+      class="textbox__control"
+      type="tel"
+      value=""
+    />
+  </span>
+</span>
+`;
+
+exports[`EbayPhoneInput render renders disabled state 1`] = `
+<span
+  class="phone-input phone-input--disabled"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      disabled=""
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--us"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="49"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="44"
+      />
+      <option
+        value="1"
+      />
+    </select>
+  </span>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label floating-label__label--disabled"
+    >
+      Phone Number
+    </label>
+    <span
+      class="textbox textbox--disabled"
+    >
+      <span
+        id="phone-prefix"
+      >
+        + 
+        1
+      </span>
+      <input
+        aria-describedby="phone-prefix"
+        class="textbox__control"
+        disabled=""
+        type="tel"
+        value="5551234567"
+      />
+    </span>
+  </span>
+</span>
+`;
+
+exports[`EbayPhoneInput render renders invalid state 1`] = `
+<span
+  class="phone-input phone-input--error"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--us"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="49"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="44"
+      />
+      <option
+        value="1"
+      />
+    </select>
+  </span>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label floating-label__label--invalid"
+    >
+      Phone Number
+    </label>
+    <span
+      class="textbox textbox--invalid"
+    >
+      <span
+        id="phone-prefix"
+      >
+        + 
+        1
+      </span>
+      <input
+        aria-describedby="phone-prefix"
+        aria-invalid="true"
+        class="textbox__control"
+        type="tel"
+        value="invalid"
+      />
+    </span>
+  </span>
+</span>
+`;
+
+exports[`EbayPhoneInput render renders readonly state 1`] = `
+<span
+  class="phone-input phone-input--readonly"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      disabled=""
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--us"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="49"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="44"
+      />
+      <option
+        value="1"
+      />
+    </select>
+  </span>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label"
+    >
+      Phone Number
+    </label>
+    <span
+      class="textbox textbox--readonly"
+    >
+      <span
+        id="phone-prefix"
+      >
+        + 
+        1
+      </span>
+      <input
+        aria-describedby="phone-prefix"
+        class="textbox__control"
+        readonly=""
+        type="tel"
+        value="5551234567"
+      />
+    </span>
+  </span>
+</span>
+`;
+
+exports[`EbayPhoneInput render renders with all props 1`] = `
+<span
+  class="phone-input custom-phone-input"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--us"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="49"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="44"
+      />
+      <option
+        value="1"
+      />
+    </select>
+  </span>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label"
+    >
+      Phone Number
+    </label>
+    <span
+      class="textbox"
+    >
+      <span
+        id="phone-prefix"
+      >
+        + 
+        1
+      </span>
+      <input
+        aria-describedby="phone-prefix"
+        aria-invalid="false"
+        class="textbox__control"
+        type="tel"
+        value="5551234567"
+      />
+    </span>
+  </span>
+</span>
+`;
+
+exports[`EbayPhoneInput render renders with custom locale 1`] = `
+<span
+  class="phone-input"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--fr"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="49"
+      />
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="44"
+      />
+    </select>
+  </span>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label"
+    >
+      Numéro de téléphone
+    </label>
+    <span
+      class="textbox"
+    >
+      <span
+        id="phone-prefix"
+      >
+        + 
+        33
+      </span>
+      <input
+        aria-describedby="phone-prefix"
+        class="textbox__control"
+        type="tel"
+        value=""
+      />
+    </span>
+  </span>
+</span>
+`;
+
+exports[`EbayPhoneInput render renders with different country 1`] = `
+<span
+  class="phone-input"
+>
+  <span
+    class="listbox-button"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      class="btn btn--form btn--split-start"
+      type="button"
+    >
+      <span
+        class="btn__cell"
+      >
+        <span
+          class="btn__text"
+        >
+          <span
+            class="fflag fflag--gb"
+          />
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-chevron-down-16"
+          />
+        </svg>
+      </span>
+    </button>
+    <select
+      class="listbox-button__native"
+      hidden=""
+    >
+      <option
+        value="61"
+      />
+      <option
+        value="55"
+      />
+      <option
+        value="1"
+      />
+      <option
+        value="86"
+      />
+      <option
+        value="33"
+      />
+      <option
+        value="49"
+      />
+      <option
+        value="91"
+      />
+      <option
+        value="39"
+      />
+      <option
+        value="81"
+      />
+      <option
+        value="52"
+      />
+      <option
+        value="34"
+      />
+      <option
+        value="44"
+      />
+      <option
+        value="1"
+      />
+    </select>
+  </span>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label"
+    >
+      Phone Number
+    </label>
+    <span
+      class="textbox"
+    >
+      <span
+        id="phone-prefix"
+      >
+        + 
+        44
+      </span>
+      <input
+        aria-describedby="phone-prefix"
+        class="textbox__control"
+        type="tel"
+        value="2071234567"
+      />
+    </span>
+  </span>
+</span>
+`;

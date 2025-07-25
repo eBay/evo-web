@@ -32,6 +32,7 @@ export type EbayListboxButtonProps = Omit<ComponentProps<"button">, "onChange"> 
     prefixId?: string;
     prefixLabel?: string;
     floatingLabel?: string;
+    split?: "none" | "start" | "end";
     unselectedText?: string;
     onChange?: EbayChangeEventHandler<HTMLButtonElement, ChangeEventProps>;
     onCollapse?: () => void;
@@ -50,6 +51,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
     prefixId,
     prefixLabel,
     floatingLabel,
+    split,
     unselectedText = "-",
     onChange = () => {},
     onCollapse = () => {},
@@ -68,7 +70,9 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
         const selectedIndex =
             selected !== undefined
                 ? selected
-                : listBoxButtonOptions.findIndex(({ props }) => value !== undefined && props.value === value);
+                : listBoxButtonOptions.findIndex(
+                      ({ props }) => (value !== undefined && props.value === value) || props.selected,
+                  );
         const index = selectedIndex > -1 || floatingLabel ? selectedIndex : undefined;
         return {
             option: listBoxButtonOptions[index],
@@ -258,6 +262,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
         "btn--form": !borderless,
         "btn--borderless": borderless,
         "btn--floating-label": floatingLabel && selectedOption,
+        [`btn--split-${split}`]: split !== "none",
     });
     const expandBtnTextId = prefixId && "expand-btn-text";
 
@@ -266,7 +271,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
             {floatingLabel && <span className="btn__floating-label">{floatingLabel}</span>}
             {prefixLabel && <span className="btn__label">{prefixLabel}</span>}
             <span className="btn__text" id={expandBtnTextId}>
-                {selectedOption?.props.children || unselectedText}
+                {selectedOption?.props.icon || selectedOption?.props.children || unselectedText}
             </span>
         </>
     );
@@ -289,7 +294,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
             >
                 <span className="btn__cell">
                     {buttonLabel}
-                    <EbayIcon name="chevronDown12" />
+                    <EbayIcon name="chevronDown16" />
                 </span>
             </button>
             {(expanded || optionsOpened) && (

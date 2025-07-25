@@ -7,8 +7,8 @@ type MakeupFloatingLabelHookProps = {
     disabled?: boolean;
     invalid?: boolean;
     size?: "default" | "large";
-    type?: string;
     opaqueLabel?: boolean;
+    static?: boolean;
     containerTagName?: "span" | "div";
     onMount?: () => void;
 };
@@ -23,8 +23,8 @@ export function useFloatingLabel({
     disabled,
     invalid,
     size,
-    type,
     opaqueLabel,
+    static: floatingLabelStatic,
     containerTagName: Container = "span",
     onMount = () => {},
 }: MakeupFloatingLabelHookProps): MakeupFloatingLabelHookReturn {
@@ -39,7 +39,7 @@ export function useFloatingLabel({
 
     // Use layout effect to avoid flickering of floating label
     useLayoutEffect(() => {
-        if (!text || type === "date") {
+        if (!text || floatingLabelStatic) {
             return;
         }
 
@@ -52,7 +52,7 @@ export function useFloatingLabel({
         return () => {
             floatingLabel.current?.destroy();
         };
-    }, [text, type]);
+    }, [text, floatingLabelStatic]);
 
     const containerClassName = classNames(`floating-label`, {
         "floating-label--large": size === `large`,
