@@ -94,6 +94,14 @@ describe("<EbayTooltip>", () => {
             fireEvent.focus(wrapper.getByText("Info"));
             checkIsExpanded(wrapper);
         });
+
+        it("should collapse the tooltip on pressing 'Esc'", () => {
+            const wrapper = renderComponent();
+            fireEvent.focus(wrapper.getByText("Info"));
+            checkIsExpanded(wrapper);
+            fireEvent.keyDown(document, { key: "Esc" });
+            checkIsCollapsed(wrapper);
+        });
     });
 
     describe("on tooltip blur", () => {

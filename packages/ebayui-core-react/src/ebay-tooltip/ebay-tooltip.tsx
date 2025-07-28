@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useRef } from "react";
+import React, { CSSProperties, FC, useEffect, useRef } from "react";
 import { findComponent } from "../common/component-utils";
 import {
     Tooltip,
@@ -10,6 +10,7 @@ import {
 } from "../common/tooltip-utils";
 import EbayTooltipContent from "./ebay-tooltip-content";
 import EbayTooltipHost from "./ebay-tooltip-host";
+import { handleEscapeKeydown } from "../events";
 
 // @todo: this type is weird, we should improve it
 type Props = Omit<TooltipProps, "ref"> & {
@@ -36,6 +37,20 @@ const EbayTooltip: FC<Props> = ({
 }) => {
     const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand });
     const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+    useEffect(() => {
+        const handleKeydown = function (event: KeyboardEvent) {
+            handleEscapeKeydown(event as unknown as React.KeyboardEvent, collapseTooltip);
+        };
+
+        if (isExpanded) {
+            document.addEventListener("keydown", handleKeydown);
+        }
+
+        return () => {
+            document.removeEventListener("keydown", handleKeydown);
+        };
+    }, [isExpanded]);
 
     const handleOnMouseEnter = (event) => {
         onMouseEnter(event);
