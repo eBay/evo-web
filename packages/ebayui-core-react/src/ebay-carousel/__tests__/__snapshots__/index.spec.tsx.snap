@@ -1,10 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ebay-carousel rendering renders continuous story correctly 1`] = `
 <button
   aria-disabled="true"
   class="carousel__control carousel__control--prev"
-  disabled=""
 >
   <svg
     aria-hidden="true"
@@ -23,7 +22,6 @@ exports[`ebay-carousel rendering renders continuous story correctly 2`] = `
 <button
   aria-disabled="true"
   class="carousel__control carousel__control--next"
-  disabled=""
 >
   <svg
     aria-hidden="true"

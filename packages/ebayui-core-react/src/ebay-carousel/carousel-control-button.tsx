@@ -31,7 +31,6 @@ const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, 
             className={classNames("carousel__control", `carousel__control--${type}`)}
             aria-label={label}
             aria-disabled={disabled}
-            disabled={disabled}
             onClick={handleOnClick}
         >
             <EbayIcon
