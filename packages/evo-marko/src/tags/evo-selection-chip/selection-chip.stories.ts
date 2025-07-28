@@ -31,16 +31,6 @@ export default {
             description:
                 "True/false if the chip is selected or not",
         },
-        onClick: {
-            action: "on-click",
-            description: "Triggered when selection chip is clicked",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, selected }",
-                },
-            },
-        },
     },
 };
 

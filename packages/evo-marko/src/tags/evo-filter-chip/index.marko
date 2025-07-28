@@ -13,7 +13,6 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     a11ySelectedText?: AttrString;
     expanded?: boolean;
     expandedChange?: (expanded?: boolean) => void;
-    onClick?: (event: PointerEvent, target: HTMLButtonElement) => unknown;
 }
 <const/{
     content,

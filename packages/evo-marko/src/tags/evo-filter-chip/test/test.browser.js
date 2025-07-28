@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { render, fireEvent, cleanup } from "@marko/testing-library";
 import * as stories from "../filter-chip.stories"; // import all stories from the stories file
 const { Default, MenuButton } = composeStories(stories);
+// TODO test needs to be cleaned up for marko 6
 
 afterEach(cleanup);
 

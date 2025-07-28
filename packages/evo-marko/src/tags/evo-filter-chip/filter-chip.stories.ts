@@ -60,16 +60,6 @@ export default {
             description:
                 "For anchor variant: The clipped text to show when the filter is set. This is required to switch to anchor type along with href",
         },
-        onClick: {
-            action: "on-click",
-            description: "Triggered when selection chip is clicked",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, selected, expanded }",
-                },
-            },
-        },
     },
 };
 
