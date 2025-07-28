@@ -1,11 +1,13 @@
+/// <reference types="@testing-library/jest-dom" />
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
-import Meta, { Continuous, ItemsPerSlide } from "./index.stories";
+import Meta, { Continuous, ItemsPerSlide, PreserveTabIndex } from "./index.stories";
 import { EbayCarousel, EbayCarouselItem } from "..";
 
 const ContinuousStory = composeStory(Continuous, Meta);
 const ItemsPerSlideStory = composeStory(ItemsPerSlide, Meta);
+const PreserveTabIndexStory = composeStory(PreserveTabIndex, Meta);
 
 // NOTE: need to mock scrollTo since JSDOM does not support it
 jest.mock("../scroll-to-transition");
@@ -55,6 +57,29 @@ describe("ebay-carousel rendering", () => {
         const visibleItems = items.filter((item) => item.getAttribute("aria-hidden"));
         // expect(visibleItems.length).toBe(3)
         expect(visibleItems.length).toBe(items.length);
+    });
+
+    it("should disable focus when elements are not visible", () => {
+        render(<PreserveTabIndexStory />);
+
+        const itemList = screen.getByRole("list");
+        expect(itemList).toHaveClass("carousel__list");
+
+        const items = screen.getAllByRole("listitem");
+        const firstItem = items[0];
+        expect(firstItem).toHaveAttribute("aria-hidden", "false");
+
+        // TODO: enable with browser mode testing
+        // const [dataTabIndexLink, link] = firstItem.querySelectorAll("a");
+        // expect(dataTabIndexLink).toHaveAttribute("tabindex", "-1");
+        // expect(dataTabIndexLink).toHaveAttribute("data-carousel-tabindex", "-1");
+        // expect(link).not.toHaveAttribute("tabindex");
+
+        // TODO: enable with browser mode testing
+        // const lastItem = items[items.length - 1];
+        // expect(lastItem).toHaveAttribute('aria-hidden', 'true')
+        // expect(lastItemDataLink).toHaveAttribute("tabindex", "-1");
+        // expect(lastItemLink).toHaveAttribute('tabindex', '-1')
     });
 
     describe("autoplay", () => {

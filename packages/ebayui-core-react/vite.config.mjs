@@ -27,7 +27,7 @@ export default defineConfig({
         cjsInterop({
             // By default this plugin is only for SSR vite build, here we are in library mode, so we enable "client"
             client: true,
-            dependencies: ["makeup-expander", "makeup-typeahead", "makeup-floating-label"],
+            dependencies: ["makeup-expander", "makeup-typeahead", "makeup-floating-label", "makeup-focusables"],
         }),
         nodeExternals(),
     ],

@@ -1,5 +1,5 @@
 import React from "react";
-import { StoryObj, Meta } from "@storybook/react-vite";
+import { StoryObj, Meta, StoryFn } from "@storybook/react-vite";
 import { EbayCarousel, EbayCarouselItem } from "../index";
 
 const story = {
@@ -89,6 +89,37 @@ export const Autoplay: StoryObj<typeof EbayCarousel> = {
                 ))}
         </EbayCarousel>
     ),
+};
+
+export const PreserveTabIndex: StoryFn<typeof EbayCarousel> = (args) => {
+    return (
+        <EbayCarousel {...args}>
+            {Array(8)
+                .fill(0)
+                .map((_, i) => (
+                    <EbayCarouselItem key={i}>
+                        <div
+                            style={{
+                                color: "#cdf4fd",
+                                background: "#eee",
+                                fontSize: 36,
+                                fontWeight: "bold",
+                                height: 330,
+                                textAlign: "center",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                            }}
+                        >
+                            <a href="https://www.ebay.com" data-carousel-tabindex="-1">
+                                Image here
+                            </a>
+                            <a href="https://www.ebay.com">Card {i + 1}</a>
+                        </div>
+                    </EbayCarouselItem>
+                ))}
+        </EbayCarousel>
+    );
 };
 
 export default story;

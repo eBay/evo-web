@@ -23,6 +23,10 @@ const typeToDirection: Record<CarouselControlType, MovementDirection> = {
 
 const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, disabled, onClick }) => {
     const handleOnClick = (event: SyntheticEvent<HTMLButtonElement>) => {
+        if (disabled) {
+            return;
+        }
+
         onClick(event, { direction: typeToDirection[type] });
     };
 

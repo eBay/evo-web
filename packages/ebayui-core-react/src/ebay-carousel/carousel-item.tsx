@@ -3,10 +3,12 @@ import React, {
     FC,
     RefCallback,
     RefObject,
+    useEffect,
     useImperativeHandle,
     useRef,
     useState,
 } from "react";
+import focusables from "makeup-focusables";
 import { withForwardRef } from "../common/component-utils";
 import { getRelativeRects } from "./helpers";
 import { ListItemRef } from "./types";
@@ -38,6 +40,23 @@ const EbayCarouselItem: FC<CarouselItemProps> = ({ slideWidth, offset, forwarded
             fullyVisible,
         };
     }, [slideWidth, offset]);
+
+    useEffect(() => {
+        if (itemRef.current) {
+            const elements = focusables(itemRef.current);
+            for (const element of elements) {
+                if (isVisible) {
+                    if (element.hasAttribute("data-carousel-tabindex")) {
+                        element.setAttribute("tabindex", element.getAttribute("data-carousel-tabindex"));
+                    } else {
+                        element.removeAttribute("tabindex");
+                    }
+                } else {
+                    element.setAttribute("tabindex", "-1");
+                }
+            }
+        }
+    }, [isVisible]);
 
     return (
         <li {...rest} ref={itemRef} aria-hidden={!isVisible}>

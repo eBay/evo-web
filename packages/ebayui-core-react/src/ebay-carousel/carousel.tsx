@@ -179,6 +179,7 @@ const EbayCarousel: FC<CarouselProps> = ({
                 "carousel--peek": itemsPerSlide % 1 === 0,
                 carousel__autoplay: isAutoplayEnabled,
             })}
+            role="group"
             {...rest}
         >
             <div

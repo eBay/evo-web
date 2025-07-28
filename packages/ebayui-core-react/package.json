@@ -59,6 +59,7 @@
         "makeup-active-descendant": "^0.7.8",
         "makeup-expander": "^0.11.7",
         "makeup-floating-label": "^0.4.7",
+        "makeup-focusables": "^0.4.5",
         "makeup-keyboard-trap": "^0.5.5",
         "makeup-prevent-scroll-keys": "^0.3.4",
         "makeup-roving-tabindex": "^0.7.5",
