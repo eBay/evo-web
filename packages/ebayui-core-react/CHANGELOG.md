@@ -1,5 +1,21 @@
 # @ebay/ui-core-react
 
+## 8.11.0
+
+### Minor Changes
+
+- [#230](https://github.com/eBay/evo-web/pull/230) [`552e51c`](https://github.com/eBay/evo-web/commit/552e51c2c0aac79906c2a8801612d225d7d8542f) Thanks [@bruno2kd](https://github.com/bruno2kd)! - feat: ebay-date-textbox add support for children ebay-textbox
+
+### Patch Changes
+
+- [#237](https://github.com/eBay/evo-web/pull/237) [`cd1218a`](https://github.com/eBay/evo-web/commit/cd1218ae4c5e0a01793edaffac8953b6e3819766) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(EbayCarousel): set control button as aria-disable only
+
+- [#232](https://github.com/eBay/evo-web/pull/232) [`4421d07`](https://github.com/eBay/evo-web/commit/4421d076a6080618c3cc701d21d8ccb7e38555f5) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(combobox): initialize makeup-expander only when there are visible options
+
+- [#237](https://github.com/eBay/evo-web/pull/237) [`cd1218a`](https://github.com/eBay/evo-web/commit/cd1218ae4c5e0a01793edaffac8953b6e3819766) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(EbayCarousel): focus visible elements only
+
+- [#238](https://github.com/eBay/evo-web/pull/238) [`db2fb82`](https://github.com/eBay/evo-web/commit/db2fb8261d5d964f9a6638c180eec38e446f480a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(EbayTooltip): close tooltip on Esc keydown
+
 ## 8.10.0
 
 ### Minor Changes

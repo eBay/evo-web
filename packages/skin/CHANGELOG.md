@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.10.0
+
+### Minor Changes
+
+- [#227](https://github.com/eBay/evo-web/pull/227) [`3fb43df`](https://github.com/eBay/evo-web/commit/3fb43df35aa420361fda5fdd067b538b7f8ff15b) Thanks [@ArtBlue](https://github.com/ArtBlue)! - feat(card): created new component
+
 ## 19.9.0
 
 ### Minor Changes
