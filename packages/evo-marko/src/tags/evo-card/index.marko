@@ -1,0 +1,80 @@
+export type CardLayout = "horizontal" | "vertical";
+export type AspectRatio = "16:9" | "5:4" | "default";
+export interface CardElement extends Marko.HTML.P {
+    as?: string;
+}
+export interface CardOverlineElement extends Marko.HTML.P {
+    text?: string;
+}
+export interface Input extends Omit<Marko.HTML.Div, "title"> {
+    layout?: CardLayout;
+    aspectRatio?: AspectRatio;
+    overline?: Marko.AttrTag<CardOverlineElement>;
+    title?: Marko.AttrTag<CardElement>;
+    description?: Marko.AttrTag<CardElement>;
+    disabled?: boolean;
+    action?: Marko.AttrTag<CardElement>;
+    href?: string;
+    file?:
+        | File
+        | {
+              name: string;
+              type?: File["type"];
+              src?: string;
+          };
+}
+<const/{
+    class: inputClass,
+    layout,
+    href,
+    aspectRatio,
+    file,
+    overline,
+    title,
+    disabled,
+    description,
+    action,
+    ...htmlInput
+}=input>
+<const/elem=(!action ? (href ? "a" : "button") : "span")>
+
+<${elem}
+    class=[
+        "card",
+        aspectRatio === "5:4" && "card--aspect-5-4",
+        aspectRatio === "16:9" && "card--aspect-16-9",
+        layout === "horizontal" && "card--horizontal",
+        inputClass,
+    ]
+    disabled=elem === "button" && disabled
+    type=elem === "button" && "button"
+    href=elem === "a" && (disabled ? "" : href)
+    tabindex=disabled && -1
+    ...htmlInput>
+    <div class="card__media">
+        <img ...file>
+    </div>
+    <div class="card__main">
+        <if=overline>
+            <const/{ text, ...overlineInput }=overline>
+            <div class="card__overline" ...overlineInput>
+                <${overline}/>
+                <span class="card__overline-text">
+                    ${text}
+                </span>
+            </div>
+        </if>
+        <if=title>
+            <const/{ as: elementAs, ...titleInput }=title>
+            <${elementAs || "h3"}
+                ...titleInput
+                class=["card__title", title.class]/>
+        </if>
+        <if=description>
+            <div ...description class=["card__description", description.class]/>
+        </if>
+        <if=action>
+            <div ...action class=["card__action", action.class]/>
+        </if>
+    </div>
+</>

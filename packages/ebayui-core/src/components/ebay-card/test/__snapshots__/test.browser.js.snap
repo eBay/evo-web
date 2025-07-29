@@ -1,0 +1,730 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`card > anchor > then it matches the snapshot 1`] = `
+"<div>
+  <a style="
+    background-color: var(--color-background-secondary);
+    border-bottom: none;
+    border-top: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150);
+    text-decoration-line: none
+  ">
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+    </div>
+  </a>
+</div>"
+`;
+
+exports[`card > anchor disabled > then it matches the snapshot 1`] = `
+"<div>
+  <a style="
+    background-color: var(--color-background-secondary);
+    border-bottom: none;
+    border-top: none;
+    color: inherit;
+    display: flex;
+    filter: grayscale(1);
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 200px;
+    opacity: 0.5;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150);
+    pointer-events: none;
+    text-decoration-line: none
+  ">
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+    </div>
+  </a>
+</div>"
+`;
+
+exports[`card > button > then it matches the snapshot 1`] = `
+"<div>
+  <button style="
+    background-color: var(--color-background-secondary);
+    border-bottom-style: none;
+    border-bottom: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    border-top: none;
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150);
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: start;
+    transition: transform var(--motion-duration-medium-3)
+                var(--motion-easing-quick-enter),
+            box-shadow var(--motion-duration-medium-3)
+                var(--motion-easing-quick-enter)
+  ">
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+    </div>
+  </button>
+</div>"
+`;
+
+exports[`card > button disabled > then it matches the snapshot 1`] = `
+"<div>
+  <button
+    disabled
+    style="
+      background-color: var(--color-background-secondary);
+      border-bottom-style: none;
+      border-bottom: none;
+      border-left-style: none;
+      border-right-style: none;
+      border-top-style: none;
+      border-top: none;
+      color: var(--color-foreground-primary);
+      display: flex;
+      filter: grayscale(1);
+      flex-direction: column;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      max-width: 400px;
+      min-width: 200px;
+      opacity: 0.5;
+      outline-color: transparent;
+      outline-offset: 4px;
+      outline-style: solid;
+      outline-width: 6px;
+      padding-block-end: var(--spacing-150);
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 0px;
+      pointer-events: none;
+      text-align: start;
+      transition: transform var(--motion-duration-medium-3)
+                  var(--motion-easing-quick-enter),
+              box-shadow var(--motion-duration-medium-3)
+                  var(--motion-easing-quick-enter)
+    "
+  >
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+    </div>
+  </button>
+</div>"
+`;
+
+exports[`card > default > then it matches the snapshot 1`] = `
+"<div>
+  <span style="
+    background-color: var(--color-background-secondary);
+    border-bottom: none;
+    border-top: none;
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150)
+  ">
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+      <div style="margin-block-start: var(--spacing-200)">
+        <button style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-bottom: 1px solid;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          border-top: 1px solid;
+          color: inherit;
+          font-family: inherit;
+          font-size: var(--font-size-default);
+          min-height: 40px;
+          min-width: 88px;
+          padding-bottom: 9.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 9.5px;
+          transition: all var(--motion-duration-short-3)
+                  var(--motion-easing-quick-enter);
+          vertical-align: bottom;
+          width: 100%
+        ">
+          See Details
+        </button>
+      </div>
+    </div>
+  </span>
+</div>"
+`;
+
+exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
+"<div>
+  <span style="
+    background-color: var(--color-background-secondary);
+    border-bottom: none;
+    border-top: none;
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150)
+  ">
+    <div style="
+      aspect-ratio: 5 / 4;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+      <div style="margin-block-start: var(--spacing-200)">
+        <button style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-bottom: 1px solid;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          border-top: 1px solid;
+          color: inherit;
+          font-family: inherit;
+          font-size: var(--font-size-default);
+          min-height: 40px;
+          min-width: 88px;
+          padding-bottom: 9.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 9.5px;
+          transition: all var(--motion-duration-short-3)
+                  var(--motion-easing-quick-enter);
+          vertical-align: bottom;
+          width: 100%
+        ">
+          See Details
+        </button>
+      </div>
+    </div>
+  </span>
+</div>"
+`;
+
+exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
+"<div>
+  <span style="
+    background-color: var(--color-background-secondary);
+    border-bottom: none;
+    border-top: none;
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150)
+  ">
+    <div style="
+      aspect-ratio: 16 / 9;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        align-items: center;
+        display: flex;
+        font-weight: 700;
+        margin-block-end: var(--spacing-100)
+      ">
+        <svg
+          focusable="false"
+          style="
+            display: inline-block;
+            fill: currentcolor;
+            height: 16px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
+          "
+        >
+          <use href="#icon-authenticity-guarantee-16"/>
+        </svg>
+        <span>
+          Authenticity Guaranteed
+        </span>
+      </div>
+      <h3 style="
+        font-size: var(--font-size-large-1);
+        margin-block-end: var(--spacing-50);
+        margin-bottom: 0px;
+        margin-top: 0px
+      ">
+        Authentic Rookie Cards
+      </h3>
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+      <div style="margin-block-start: var(--spacing-200)">
+        <button style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-bottom: 1px solid;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          border-top: 1px solid;
+          color: inherit;
+          font-family: inherit;
+          font-size: var(--font-size-default);
+          min-height: 40px;
+          min-width: 88px;
+          padding-bottom: 9.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 9.5px;
+          transition: all var(--motion-duration-short-3)
+                  var(--motion-easing-quick-enter);
+          vertical-align: bottom;
+          width: 100%
+        ">
+          See Details
+        </button>
+      </div>
+    </div>
+  </span>
+</div>"
+`;
+
+exports[`card > minimum > then it matches the snapshot 1`] = `
+"<div>
+  <button style="
+    background-color: var(--color-background-secondary);
+    border-bottom-style: none;
+    border-bottom: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    border-top: none;
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150);
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: start;
+    transition: transform var(--motion-duration-medium-3)
+                var(--motion-easing-quick-enter),
+            box-shadow var(--motion-duration-medium-3)
+                var(--motion-easing-quick-enter)
+  ">
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+    </div>
+  </button>
+</div>"
+`;
