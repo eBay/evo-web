@@ -17,7 +17,7 @@ export const vertical = () => `
             Rookie cards that serve as a hedge against the apocalypse – when society collapses, surely someone will trade food for a mint Luka Dončić card.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary btn--fluid">See Details</button>
         </div>
     </div>
@@ -41,7 +41,7 @@ export const horizontal = () => `
             Rookie cards that serve as a hedge against the apocalypse – when society collapses, surely someone will trade food for a mint Luka Dončić card.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary">See Details</button>
         </div>
     </div>

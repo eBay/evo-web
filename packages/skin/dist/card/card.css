@@ -108,7 +108,7 @@ button.card:hover {
     flex: 1;
 }
 
-.card__footer {
+.card__action {
     margin-block-start: var(--spacing-200);
 }
 

@@ -70,7 +70,7 @@ nav li:first-child {
     margin: 0;
 }
 
-.card__footer button {
+.card__action button {
     width: 100%;
 }
 

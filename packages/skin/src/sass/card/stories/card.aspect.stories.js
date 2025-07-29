@@ -10,7 +10,7 @@ export const verticalAspectSquare = () => `
             Wayne Gretzky's rookie card is so valuable that collectors keep it in climate-controlled vaults guarded by trained penguins.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary btn--fluid">See Details</button>
         </div>
     </div>
@@ -27,7 +27,7 @@ export const verticalAspect_5by4 = () => `
             Football rookie cards so pristine that they've never been touched by human hands, only examined through specialized gloves by card whisperers.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary btn--fluid">See Details</button>
         </div>
     </div>
@@ -44,7 +44,7 @@ export const verticalAspect_9by16 = () => `
             Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary btn--fluid">See Details</button>
         </div>
     </div>

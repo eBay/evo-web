@@ -1,4 +1,4 @@
-export default {title: "Skin/Card/Disabled"};
+export default { title: "Skin/Card/Disabled" };
 
 export const internallyActionable = () => `
 <span class="card card--aspect-16-9">
@@ -9,7 +9,7 @@ export const internallyActionable = () => `
         <div class="card__description">
             Hockey cards collected by enthusiasts who treat them like fine wine – stored in temperature-controlled cellars and discussed in hushed, reverent tones.
         </div>
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary btn--fluid" tabindex="-1" disabled>See Details</button>
         </div>
     </div>

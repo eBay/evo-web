@@ -16,7 +16,7 @@ export const vertical = () => `
         <div class="card__description">
             This legendary rookie card collection features future Hall of Famers back when their biggest concern was remembering to smile for the camera.
         </div>
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary btn--fluid">See Details</button>
         </div>
     </div>
@@ -39,7 +39,7 @@ export const horizontal = () => `
         <div class="card__description">
             This legendary rookie card collection features future Hall of Famers back when their biggest concern was remembering to smile for the camera.
         </div>
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--primary">See Details</button>
         </div>
     </div>

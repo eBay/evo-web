@@ -17,7 +17,7 @@ export const verticalFilled = () => `
             This legendary rookie card collection features future Hall of Famers back when their biggest concern was remembering to smile for the camera.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--tertiary btn--fluid">See Details</button>
         </div>
     </div>
@@ -41,7 +41,7 @@ export const verticalOutlined = () => `
             This legendary rookie card collection features future Hall of Famers back when their biggest concern was remembering to smile for the camera.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--tertiary btn--fluid">See Details</button>
         </div>
     </div>
@@ -65,7 +65,7 @@ export const horizontalFilled = () => `
             This legendary rookie card collection features future Hall of Famers back when their biggest concern was remembering to smile for the camera.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--tertiary">See Details</button>
         </div>
     </div>
@@ -89,7 +89,7 @@ export const horizontalOutlined = () => `
             This legendary rookie card collection features future Hall of Famers back when their biggest concern was remembering to smile for the camera.
         </div>
 
-        <div class="card__footer">
+        <div class="card__action">
             <button class="btn btn--tertiary">See Details</button>
         </div>
     </div>
