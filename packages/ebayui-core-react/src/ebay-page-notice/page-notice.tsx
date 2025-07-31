@@ -20,6 +20,7 @@ const EbayPageNotice: FC<Props> = ({
     a11yDismissText,
     "aria-label": ariaLabel,
     onDismiss = () => {},
+    className = "",
     ...rest
 }) => {
     const [dismissed, setDismissed] = useState(false);
@@ -38,7 +39,7 @@ const EbayPageNotice: FC<Props> = ({
         <section
             {...rest}
             aria-labelledby={id || `${status}-status`}
-            className={`page-notice ${status !== `general` ? `page-notice--${status}` : ``}`}
+            className={`page-notice ${status !== `general` ? `page-notice--${status}` : ``} ${className}`}
         >
             {status !== `general` ? (
                 <div className="page-notice__header" id={id || `${status}-status`}>
