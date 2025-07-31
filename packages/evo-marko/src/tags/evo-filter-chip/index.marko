@@ -1,15 +1,12 @@
 import type { AttrString } from "marko/tags-html";
 import type { AttrBoolean } from "marko/tags-html";
-static interface Image extends Marko.HTML.Img {
-    as?: string;
-}
 export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     selected?: boolean;
     selectedChange?: (selected?: boolean) => void;
     variant?: "default" | "expressive" | "menu";
     disabled?: AttrBoolean;
     icon?: Marko.AttrTag<{ content?: Marko.Body }>;
-    image?: Marko.AttrTag<Image>;
+    image?: Marko.AttrTag<Marko.HTML.Img>;
     a11ySelectedText?: AttrString;
     expanded?: boolean;
     expandedChange?: (expanded?: boolean) => void;
@@ -29,7 +26,6 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
 }=input/>
 <const/isMenu=variant === "menu"/>
 <const/isAnchor=!!href && a11ySelectedText && variant !== "menu"/>
-<const/rootTag=(isAnchor ? "a" : "button")/>
 <let/mounted=false/>
 <lifecycle onMount() {
     mounted = true;
@@ -37,7 +33,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
 <let/selected:=input.selected/>
 <let/expanded:=input.expanded/>
 
-<${rootTag}
+<${isAnchor ? "a" : "button"}
     class=[
         "filter-chip",
         mounted && "filter-chip--animated",
@@ -54,7 +50,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
             } else {
                 selected = !selected;
             }
-            input.onClick?.(e, target);
+            input.onClick.(e, target);
         }
     }
     ...htmlInput
@@ -62,18 +58,18 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
 
     <if=variant === "expressive">
         <span class="filter-chip__media">
-            <${image?.as || "img"} ...image/>
+            <img ...image/>
         </span>
     </if>
     <else if=variant === "default">
-        <${icon} ...icon/>
+        <${icon}/>
     </else>
 
     <span class="filter-chip__text">
         <${content}/>
         <if=selected && isAnchor>
             <span class="clipped">
-                - ${a11ySelectedText}
+                ${" "}- ${a11ySelectedText}
             </span>
         </if>
     </span>
