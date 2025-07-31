@@ -1,6 +1,5 @@
 import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
-import type { AttrBoolean } from "marko/tags-html";
 
 interface Image extends Marko.HTML.Img {
     as?: string;
@@ -11,7 +10,6 @@ interface FilterChipInput extends Omit<Marko.HTML.Button, `on${string}` | "type"
     renderBody?: Marko.Body;
     selected?: boolean;
     variant?: "default" | "expressive" | "menu";
-    disabled?: AttrBoolean;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     image?: Marko.AttrTag<Image>;
     a11ySelectedText?: AttrString;

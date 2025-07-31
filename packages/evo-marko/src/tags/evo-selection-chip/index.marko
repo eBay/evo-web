@@ -1,9 +1,7 @@
 import type { AttrBoolean } from "marko/tags-html";
 export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
-    content?: Marko.Body;
     selected?: boolean;
     selectedChange?: (selected?: boolean) => void;
-    onClick?: (event: PointerEvent, target: HTMLButtonElement) => unknown;
 }
 
 <const/{ content, selected: selectedInput, onClick, ...htmlInput }=input/>
@@ -21,7 +19,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     onClick(e: PointerEvent, target: HTMLButtonElement) {
         if (!input.disabled) {
             selected = !selected;
-            input.onClick?.(e, target);
+            input.onClick && input.onClick(e, target);
         }
     }
     ...htmlInput
