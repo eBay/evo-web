@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.11.0
+
+### Minor Changes
+
+- [#226](https://github.com/eBay/evo-web/pull/226) [`05d3c40`](https://github.com/eBay/evo-web/commit/05d3c4023776de1e2ac1f4c46b8e19dec2e3ddf6) Thanks [@agliga](https://github.com/agliga)! - feat(menu-button): added filter chip
+
 ## 19.10.0
 
 ### Minor Changes

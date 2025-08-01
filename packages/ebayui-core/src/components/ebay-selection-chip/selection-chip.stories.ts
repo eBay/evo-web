@@ -26,8 +26,7 @@ export default {
         },
         selected: {
             control: { type: "boolean" },
-            description:
-                "True/false if the chip is selected or not",
+            description: "True/false if the chip is selected or not",
         },
         onClick: {
             action: "on-click",

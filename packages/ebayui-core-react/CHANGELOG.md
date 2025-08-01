@@ -1,5 +1,15 @@
 # @ebay/ui-core-react
 
+## 8.11.1
+
+### Patch Changes
+
+- [#246](https://github.com/eBay/evo-web/pull/246) [`5eabd92`](https://github.com/eBay/evo-web/commit/5eabd925b8e04a4ddd13716f000c7001633e121a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(EbayLightboxDialog): update keyboard trap on re-rendering of dialogs
+
+- [#243](https://github.com/eBay/evo-web/pull/243) [`d80288b`](https://github.com/eBay/evo-web/commit/d80288b1ace0350d90acab9e9def9c7cc08e0fdf) Thanks [@oxala](https://github.com/oxala)! - fix(EbayPageNotice): fixed className passing to page-notice component
+
+- [#247](https://github.com/eBay/evo-web/pull/247) [`a213c90`](https://github.com/eBay/evo-web/commit/a213c90e44843b7d637b5587e3085ff48bef9d8e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(EbayMenuButton): update checked items when children checked changes
+
 ## 8.11.0
 
 ### Minor Changes

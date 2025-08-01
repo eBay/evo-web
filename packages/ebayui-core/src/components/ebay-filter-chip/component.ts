@@ -5,7 +5,8 @@ interface Image extends Marko.HTML.Img {
     as?: string;
 }
 
-interface FilterChipInput extends Omit<Marko.HTML.Button, `on${string}` | "type">,
+interface FilterChipInput
+    extends Omit<Marko.HTML.Button, `on${string}` | "type">,
         Omit<Marko.HTML.A, `on${string}`> {
     renderBody?: Marko.Body;
     selected?: boolean;
@@ -56,7 +57,7 @@ class SelectionChip extends Marko.Component<Input, State> {
         this.state = {
             selected: input.selected || false,
             expanded: input.expanded || false,
-            mounted: false
+            mounted: false,
         };
     }
 }

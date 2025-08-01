@@ -115,4 +115,3 @@ export const Minimum = buildExtensionTemplate(
     MinimumTemplate,
     MinimumTemplateCode,
 );
-

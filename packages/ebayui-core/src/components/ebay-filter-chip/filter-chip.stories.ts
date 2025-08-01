@@ -1,8 +1,6 @@
-import {
-    buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
-import Component  from "./index.marko";
+import Component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import ExpressiveTemplate from "./examples/expressive.marko";
@@ -58,7 +56,7 @@ export default {
         a11ySelectedText: {
             control: { type: "string" },
             description:
-                "For anchor variant: The clipped text to show when the filter is set. Defaults to \"- filter applied\"",
+                'For anchor variant: The clipped text to show when the filter is set. Defaults to "- filter applied"',
         },
         onClick: {
             action: "on-click",
