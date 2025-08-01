@@ -6,6 +6,7 @@ import { EbayButton } from "../../ebay-button";
 import { EbayCheckbox } from "../../ebay-checkbox";
 import { EbayLabel } from "../../ebay-field";
 import { EbayLightboxDialog } from "../index";
+import { EbayProgressSpinner } from "../../ebay-progress-spinner";
 
 const story: Meta<typeof EbayLightboxDialog> = {
     title: "dialogs/ebay-lightbox-dialog",
@@ -350,6 +351,63 @@ export const Expressive: StoryFn<typeof EbayLightboxDialog> = (args) => {
                 <p>
                     <a href="http://www.ebay.com">www.ebay.com</a>
                 </p>
+            </EbayLightboxDialog>
+        </div>
+    );
+};
+
+export const LazyContent: StoryFn<typeof EbayLightboxDialog> = (args) => {
+    const [open, setOpen] = useState(false);
+    const [isPending, setIsPending] = useState(false);
+    const close = () => {
+        setOpen(false);
+        setIsPending(false);
+    };
+    return (
+        <div>
+            <button
+                className="btn btn--secondary"
+                onClick={() => {
+                    setOpen(!open);
+                    setIsPending(true);
+                    setTimeout(() => setIsPending(false), 1000);
+                }}
+            >
+                Open Dialog
+            </button>
+            <p>Some outside content...</p>
+            <EbayLightboxDialog
+                {...args}
+                open={open}
+                onOpen={() => action("onOpen")()}
+                onClose={() => {
+                    action("onClose")();
+                    close();
+                }}
+                a11yCloseText="Close"
+            >
+                <EbayDialogHeader>Heading</EbayDialogHeader>
+                {isPending ? (
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                        <EbayProgressSpinner />
+                    </div>
+                ) : (
+                    <>
+                        {textParagraph}
+                        <p>
+                            <a href="http://www.ebay.com">www.ebay.com</a>
+                        </p>
+                    </>
+                )}
+
+                {isPending ? null : (
+                    <EbayDialogFooter>
+                        <EbayButton priority="primary" onClick={close}>
+                            OK
+                        </EbayButton>
+                        <EbayButton onClick={close}>Cancel</EbayButton>
+                    </EbayDialogFooter>
+                )}
             </EbayLightboxDialog>
         </div>
     );

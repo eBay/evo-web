@@ -119,7 +119,7 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
             screenreaderTrap.untrap();
             keyboardTrap.untrap();
         };
-    }, [open, isModal]);
+    });
 
     useDialogAnimation({
         open,
