@@ -45,10 +45,13 @@ export default {
             control: { type: "boolean" },
             description: "True if the card is not clickable",
         },
-        file: {
-            type: "object",
+        image: {
+            name: "@image",
+            table: {
+                category: "@attribute tags",
+            },
             description:
-                "File object, can be raw platform `File` or an object containing `name`, `type`, and a `src` for the preview. Used to show the image.",
+                "The top image tag. Will be passed as attributes to the <img> tag.",
         },
         title: {
             name: "@title",

@@ -15,20 +15,14 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
     disabled?: boolean;
     action?: Marko.AttrTag<CardElement>;
     href?: string;
-    file?:
-        | File
-        | {
-              name: string;
-              type?: File["type"];
-              src?: string;
-          };
+    image: Marko.AttrTag<Marko.HTML.Img>;
 }
 <const/{
     class: inputClass,
     layout,
     href,
     aspectRatio,
-    file,
+    image,
     overline,
     title,
     disabled,
@@ -52,17 +46,11 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
     tabindex=disabled && -1
     ...htmlInput>
     <div class="card__media">
-        <img ...file>
+        <img ...image>
     </div>
     <div class="card__main">
         <if=overline>
-            <const/{ text, ...overlineInput }=overline>
-            <div class="card__overline" ...overlineInput>
-                <${overline}/>
-                <span class="card__overline-text">
-                    ${text}
-                </span>
-            </div>
+            <div ...overline class=["card__overline", overline.class]/>
         </if>
         <if=title>
             <const/{ as: elementAs, ...titleInput }=title>

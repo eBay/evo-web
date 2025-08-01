@@ -55,9 +55,7 @@ exports[`card > anchor > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
@@ -136,9 +134,7 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
@@ -229,9 +225,7 @@ exports[`card > button > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
@@ -328,9 +322,7 @@ exports[`card > button disabled > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
@@ -405,9 +397,7 @@ exports[`card > default > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
@@ -511,9 +501,7 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
@@ -617,9 +605,7 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
         >
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
-        <span>
-          Authenticity Guaranteed
-        </span>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);

@@ -1,6 +1,5 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-import type { FilePreviewCardFile } from "../ebay-file-preview-card/component";
 export type CardLayout = "horizontal" | "vertical";
 export type AspectRatio = "16:9" | "5:4" | "default";
 export interface CardElement extends Omit<Marko.HTML.P, `on${string}`> {
@@ -18,7 +17,7 @@ export interface CardInput extends Omit<Marko.HTML.Div, "title" | `on${string}`>
     disabled?: boolean;
     action?: Marko.AttrTag<CardElement>;
     href?: string;
-    file?: FilePreviewCardFile;
+    image: Marko.AttrTag<Marko.HTML.Img>;
     "on-click"?: (event: MouseEvent) => void;
 }
 export interface Input extends WithNormalizedProps<CardInput> {}
@@ -28,7 +27,7 @@ $ const {
     layout,
     href,
     aspectRatio,
-    file,
+    image,
     overline,
     title,
     disabled,
@@ -54,18 +53,15 @@ $ const elem = !action ? (href ? "a" : "button") : "span";
     ...processHtmlAttributes(htmlInput)
 >
     <div class="card__media">
-        <img ...processHtmlAttributes(file || [])>
+        <img ...processHtmlAttributes(image)>
     </div>
     <div class="card__main">
         <if(overline)>
             <div
                 class="card__overline"
-                ...processHtmlAttributes(overline, ["text"])
+                ...processHtmlAttributes(overline)
             >
                 <${overline}/>
-                <span class="card__overline-text">
-                     ${overline.text}
-                </span>
             </div>
         </if>
 

@@ -10,9 +10,8 @@ exports[`ebay-card > renders anchor 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -45,11 +44,7 @@ exports[`ebay-card > renders anchor 1`] = `
             [33mhref[39m=[32m"#icon-authenticity-guarantee-16"[39m
           [36m/>[39m
         [36m</svg>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"card__overline-text"[39m
-        [36m>[39m
-          [0mAuthenticity Guaranteed[0m
-        [36m</span>[39m
+        [0m Authenticity Guaranteed[0m
       [36m</div>[39m
       [36m<h3[39m
         [33mclass[39m=[32m"card__title"[39m
@@ -77,9 +72,8 @@ exports[`ebay-card > renders anchor disabled 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -112,11 +106,7 @@ exports[`ebay-card > renders anchor disabled 1`] = `
             [33mhref[39m=[32m"#icon-authenticity-guarantee-16"[39m
           [36m/>[39m
         [36m</svg>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"card__overline-text"[39m
-        [36m>[39m
-          [0mAuthenticity Guaranteed[0m
-        [36m</span>[39m
+        [0m Authenticity Guaranteed[0m
       [36m</div>[39m
       [36m<h3[39m
         [33mclass[39m=[32m"card__title"[39m
@@ -143,9 +133,8 @@ exports[`ebay-card > renders button 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -178,11 +167,7 @@ exports[`ebay-card > renders button 1`] = `
             [33mhref[39m=[32m"#icon-authenticity-guarantee-16"[39m
           [36m/>[39m
         [36m</svg>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"card__overline-text"[39m
-        [36m>[39m
-          [0mAuthenticity Guaranteed[0m
-        [36m</span>[39m
+        [0m Authenticity Guaranteed[0m
       [36m</div>[39m
       [36m<h3[39m
         [33mclass[39m=[32m"card__title"[39m
@@ -211,9 +196,8 @@ exports[`ebay-card > renders button disabled 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -246,11 +230,7 @@ exports[`ebay-card > renders button disabled 1`] = `
             [33mhref[39m=[32m"#icon-authenticity-guarantee-16"[39m
           [36m/>[39m
         [36m</svg>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"card__overline-text"[39m
-        [36m>[39m
-          [0mAuthenticity Guaranteed[0m
-        [36m</span>[39m
+        [0m Authenticity Guaranteed[0m
       [36m</div>[39m
       [36m<h3[39m
         [33mclass[39m=[32m"card__title"[39m
@@ -276,9 +256,8 @@ exports[`ebay-card > renders default 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -311,11 +290,7 @@ exports[`ebay-card > renders default 1`] = `
             [33mhref[39m=[32m"#icon-authenticity-guarantee-16"[39m
           [36m/>[39m
         [36m</svg>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"card__overline-text"[39m
-        [36m>[39m
-          [0mAuthenticity Guaranteed[0m
-        [36m</span>[39m
+        [0m Authenticity Guaranteed[0m
       [36m</div>[39m
       [36m<h3[39m
         [33mclass[39m=[32m"card__title"[39m
@@ -353,9 +328,8 @@ exports[`ebay-card > renders minimum 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -380,9 +354,8 @@ exports[`ebay-card > renders with layout=vertical 1`] = `
       [33mclass[39m=[32m"card__media"[39m
     [36m>[39m
       [36m<img[39m
-        [33mname[39m=[32m"file-name.jpg"[39m
+        [33malt[39m=[32m"Card"[39m
         [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"[39m
-        [33mtype[39m=[32m"image/jpeg"[39m
       [36m/>[39m
     [36m</div>[39m
     [36m<div[39m
@@ -415,11 +388,7 @@ exports[`ebay-card > renders with layout=vertical 1`] = `
             [33mhref[39m=[32m"#icon-authenticity-guarantee-16"[39m
           [36m/>[39m
         [36m</svg>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"card__overline-text"[39m
-        [36m>[39m
-          [0mAuthenticity Guaranteed[0m
-        [36m</span>[39m
+        [0m Authenticity Guaranteed[0m
       [36m</div>[39m
       [36m<h3[39m
         [33mclass[39m=[32m"card__title"[39m
