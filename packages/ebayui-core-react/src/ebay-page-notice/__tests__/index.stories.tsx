@@ -50,7 +50,7 @@ export const InformationMessage = () => (
 
 export const AttentionMessage = () => (
     <>
-        <EbayPageNotice status="attention" aria-label="Attention" className="custom-class">
+        <EbayPageNotice status="attention" aria-label="Attention">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Error.</EbayPageNoticeTitle>
                 <p>

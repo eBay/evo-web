@@ -91,4 +91,16 @@ describe("<EbayPageNotice>", () => {
             expect(dismissMock).toHaveBeenCalled();
         });
     });
+
+    it("should support passing custom classes", () => {
+        const { container } = render(
+            <EbayPageNotice status="confirmation" className="custom-class">
+                <EbayNoticeContent>
+                    <EbayPageNoticeTitle>Here is the title</EbayPageNoticeTitle>
+                    <p id="details">Here is some details</p>
+                </EbayNoticeContent>
+            </EbayPageNotice>,
+        );
+        expect(container.querySelector(".page-notice")).toHaveClass("custom-class");
+    });
 });

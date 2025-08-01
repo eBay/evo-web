@@ -44,7 +44,7 @@ describe("ebay-page-notice rendering", () => {
         render(<AttentionMessage />);
 
         const pageNotice = screen.getByRole("region");
-        expect(pageNotice).toHaveClass("page-notice page-notice--attention custom-class");
+        expect(pageNotice).toHaveClass("page-notice page-notice--attention");
         expect(pageNotice).toHaveAttribute("aria-labelledby", "attention-status");
 
         const pageNoticeHeader = pageNotice.querySelector(".page-notice__header");
