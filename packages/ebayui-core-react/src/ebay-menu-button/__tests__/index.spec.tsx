@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { EbayMenuButton, EbayMenuButtonItem } from "../index";
 
 const spy = jest.fn();
@@ -100,5 +101,66 @@ describe("<EbayMenuButton>", () => {
 
             expect(spy).toHaveBeenCalledWith(expect.any(Object), expectedEventProps);
         });
+    });
+
+    it("should update the checkboxes on click", async () => {
+        render(
+            <EbayMenuButton type="checkbox" text="Open">
+                <EbayMenuButtonItem value="first" />
+                <EbayMenuButtonItem value="second" />
+            </EbayMenuButton>,
+        );
+
+        await userEvent.click(screen.getByText("Open"));
+
+        const [firstCheck, secondCheck] = screen.getAllByRole("menuitemcheckbox");
+
+        expect(firstCheck).toHaveAttribute("aria-checked", "false");
+        expect(secondCheck).toHaveAttribute("aria-checked", "false");
+
+        await userEvent.click(firstCheck);
+        expect(firstCheck).toHaveAttribute("aria-checked", "true");
+        expect(secondCheck).toHaveAttribute("aria-checked", "false");
+
+        await userEvent.click(secondCheck);
+        expect(firstCheck).toHaveAttribute("aria-checked", "true");
+        expect(secondCheck).toHaveAttribute("aria-checked", "true");
+    });
+
+    it("should update the checked values when children checked are changed", async () => {
+        const TestCase = () => {
+            const [checked, setChecked] = useState([false, true]);
+            return (
+                <>
+                    <EbayMenuButton type="checkbox" text="Open">
+                        <EbayMenuButtonItem value="first" checked={checked[0]} />
+                        <EbayMenuButtonItem value="second" checked={checked[1]} />
+                    </EbayMenuButton>
+
+                    <button onClick={() => setChecked([true, false])}>Reset</button>
+                </>
+            );
+        };
+
+        render(<TestCase />);
+
+        await userEvent.click(screen.getByText("Open"));
+
+        {
+            const [firstCheck, secondCheck] = screen.getAllByRole("menuitemcheckbox");
+
+            expect(firstCheck).toHaveAttribute("aria-checked", "false");
+            expect(secondCheck).toHaveAttribute("aria-checked", "true");
+        }
+
+        const reset = screen.getByText("Reset");
+        await userEvent.click(reset);
+        await userEvent.click(screen.getByText("Open"));
+
+        {
+            const [firstCheck, secondCheck] = screen.getAllByRole("menuitemcheckbox");
+            expect(firstCheck).toHaveAttribute("aria-checked", "true");
+            expect(secondCheck).toHaveAttribute("aria-checked", "false");
+        }
     });
 });

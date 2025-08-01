@@ -51,6 +51,11 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     const menuItems = filterByType<typeof EbayMenuButtonItem>(children, [EbayMenuButtonItem, EbayMenuButtonSeparator]);
     const defaultIndexes = menuItems.map((item) => Boolean(item.props.checked));
     const [checkedIndexes, setCheckedIndexes] = useState<boolean[]>(defaultIndexes);
+    useEffect(() => {
+        if (defaultIndexes.join("|") !== checkedIndexes.join("|")) {
+            setCheckedIndexes(defaultIndexes);
+        }
+    }, [defaultIndexes.join("|")]);
 
     const menuButtonLabel = findComponent(children, EbayMenuButtonLabel);
     const icon = findComponent(children, EbayIcon);
