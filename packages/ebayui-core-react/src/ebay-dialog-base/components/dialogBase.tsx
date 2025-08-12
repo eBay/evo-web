@@ -108,9 +108,25 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
     };
 
     useEffect(() => {
+        let observer: MutationObserver;
+
         if (open && isModal) {
+            observer = new MutationObserver((records) => {
+                for (const record of records) {
+                    if (record.type === "childList") {
+                        keyboardTrap.refresh();
+                        break;
+                    }
+                }
+            });
             screenreaderTrap.trap(drawerBaseEl.current);
             keyboardTrap.trap(drawerBaseEl.current);
+            observer.observe(drawerBaseEl.current, {
+                childList: true,
+                subtree: true,
+                attributes: false,
+                characterData: false,
+            });
         } else {
             screenreaderTrap.untrap();
             keyboardTrap.untrap();
@@ -118,8 +134,9 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
         return () => {
             screenreaderTrap.untrap();
             keyboardTrap.untrap();
+            observer?.disconnect();
         };
-    });
+    }, [open, isModal]);
 
     useDialogAnimation({
         open,

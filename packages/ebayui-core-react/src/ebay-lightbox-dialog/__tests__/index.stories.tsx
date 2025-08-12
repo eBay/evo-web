@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Meta, StoryFn } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EbayDialogFooter, EbayDialogHeader, EbayDialogPreviousButton } from "../../ebay-dialog-base";
@@ -356,12 +356,42 @@ export const Expressive: StoryFn<typeof EbayLightboxDialog> = (args) => {
     );
 };
 
+function LoadContent({ open }) {
+    const [isPending, setIsPending] = useState(true);
+
+    useEffect(() => {
+        let timeout: ReturnType<typeof setTimeout>;
+        if (open) {
+            timeout = setTimeout(() => {
+                setIsPending(false);
+            }, 1000);
+        } else {
+            setIsPending(true);
+        }
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [open]);
+
+    return isPending ? (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+            <EbayProgressSpinner />
+        </div>
+    ) : (
+        <>
+            {textParagraph}
+            <p>
+                <a href="http://www.ebay.com">www.ebay.com</a>
+            </p>
+        </>
+    );
+}
+
 export const LazyContent: StoryFn<typeof EbayLightboxDialog> = (args) => {
     const [open, setOpen] = useState(false);
-    const [isPending, setIsPending] = useState(false);
     const close = () => {
         setOpen(false);
-        setIsPending(false);
     };
     return (
         <div>
@@ -369,8 +399,6 @@ export const LazyContent: StoryFn<typeof EbayLightboxDialog> = (args) => {
                 className="btn btn--secondary"
                 onClick={() => {
                     setOpen(!open);
-                    setIsPending(true);
-                    setTimeout(() => setIsPending(false), 1000);
                 }}
             >
                 Open Dialog
@@ -387,27 +415,7 @@ export const LazyContent: StoryFn<typeof EbayLightboxDialog> = (args) => {
                 a11yCloseText="Close"
             >
                 <EbayDialogHeader>Heading</EbayDialogHeader>
-                {isPending ? (
-                    <div style={{ display: "flex", justifyContent: "center" }}>
-                        <EbayProgressSpinner />
-                    </div>
-                ) : (
-                    <>
-                        {textParagraph}
-                        <p>
-                            <a href="http://www.ebay.com">www.ebay.com</a>
-                        </p>
-                    </>
-                )}
-
-                {isPending ? null : (
-                    <EbayDialogFooter>
-                        <EbayButton priority="primary" onClick={close}>
-                            OK
-                        </EbayButton>
-                        <EbayButton onClick={close}>Cancel</EbayButton>
-                    </EbayDialogFooter>
-                )}
+                <LoadContent open={open} />
             </EbayLightboxDialog>
         </div>
     );
