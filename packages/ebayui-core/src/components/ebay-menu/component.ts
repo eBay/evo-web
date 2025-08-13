@@ -25,10 +25,10 @@ export interface Item extends MenuItem {
     badgeNumber?: number;
 }
 
-interface MenuInput
-    extends BaseMenuInput,
+interface MenuInput extends BaseMenuInput,
         Omit<Marko.HTML.Span, `on${string}`> {
     item?: Marko.AttrTag<Item>;
+    variant?: "filter" | "none";
     "class-prefix"?: string;
     "typeahead-timeout-length"?: number;
     reverse?: boolean;

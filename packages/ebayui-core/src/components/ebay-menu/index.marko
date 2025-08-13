@@ -8,13 +8,15 @@ $ const {
     fixed,
     fixWidth,
     item: items = [],
+    variant,
     ariaLabel,
     ariaLabelledby,
     ...htmlInput
 } = input;
+$ var isFilter = variant === "filter";
 $ var isRadio = type === "radio";
-$ var isCheckbox = type === "checkbox";
-$ var isCheckable = type === "checkbox" || type === "radio";
+$ var isCheckbox = type === "checkbox" || (isFilter && type !== "radio");
+$ var isCheckable = isRadio || isCheckbox;
 $ var baseClass = classPrefix || "menu";
 $ var separatorMap = component.getSeparatorMap(input);
 <span
@@ -24,18 +26,17 @@ $ var separatorMap = component.getSeparatorMap(input);
         reverse && `${baseClass}__menu--reverse`,
         fixed && `${baseClass}__menu--fixed`,
         fixWidth && `${baseClass}__menu--fix-width`,
+        isFilter && `${baseClass}--filter`,
         inputClass,
     ]
-    style=style
->
+    style=style>
     <div
         role="menu"
         class=`${baseClass}__items`
         key="menu"
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
-        id:scoped="menu"
-    >
+        id:scoped="menu">
         <for|item, index| of=component.items>
             $ const {
                 class: itemClass,
@@ -72,15 +73,26 @@ $ var separatorMap = component.getSeparatorMap(input);
                 onClick(!disabled && "handleItemClick", index)
                 onKeydown(!disabled && "handleItemKeydown", index)
                 onKeypress(!disabled && "handleItemKeypress")
-                key="item[]"
-            >
+                key="item[]">
+                <if(isFilter)>
+                    <if(isRadio)>
+                        <ebay-radio-unchecked-18-icon class="icon--unchecked"/>
+                        <ebay-radio-checked-18-icon class="icon--checked"/>
+                    </if>
+                    <else>
+                        <ebay-checkbox-unchecked-18-icon class="icon--unchecked"/>
+                        <ebay-checkbox-checked-18-icon class="icon--checked"/>
+                    </else>
+                </if>
                 <span>
                     <${renderBody}/>
                     <if(badgeNumber)>
                         <ebay-badge type="menu" number=badgeNumber/>
                     </if>
                 </span>
-                <ebay-tick-16-icon/>
+                <if(!isFilter)>
+                    <ebay-tick-16-icon/>
+                </if>
             </div>
         </for>
     </div>

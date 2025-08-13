@@ -7,6 +7,8 @@ import Readme from "./README.md";
 import Component from "./index.marko";
 import BadgedTemplate from "./examples/badged.marko";
 import BadgedTemplateCode from "./examples/badged.marko?raw";
+import FilterTemplate from "./examples/filter.marko";
+import FilterTemplateCode from "./examples/filter.marko?raw";
 import SpritesTemplate from "./examples/sprites.marko";
 import SpritesTemplateCode from "./examples/sprites.marko?raw";
 import TypeaheadTemplate from "./examples/typeahead.marko";
@@ -33,9 +35,16 @@ export default {
 
     argTypes: {
         type: {
-            control: { type: "text" },
+            control: { type: "select" },
+            options: ["radio", "checkbox", "none"],
             description: 'Can be "radio" / "checkbox"',
         },
+        variant: {
+            control: { type: "select" },
+            options: ["filter", "none"],
+            description: 'Either "none" for default menu or "filter" for filter variant',
+        },
+
         priority: {
             control: { type: "select" },
             options: ["primary", "secondary", "none"],
@@ -140,6 +149,10 @@ export const Typeahead = buildExtensionTemplate(
 export const Badged = buildExtensionTemplate(
     BadgedTemplate,
     BadgedTemplateCode,
+);
+export const Filter = buildExtensionTemplate(
+    FilterTemplate,
+    FilterTemplateCode,
 );
 export const Sprites = buildExtensionTemplate(
     SpritesTemplate,

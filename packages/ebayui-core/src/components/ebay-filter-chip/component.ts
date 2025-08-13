@@ -53,12 +53,17 @@ class SelectionChip extends Marko.Component<Input, State> {
         this.state.mounted = true;
     }
 
-    onInput(input: Input) {
+    onCreate() {
         this.state = {
-            selected: input.selected || false,
-            expanded: input.expanded || false,
-            mounted: false,
-        };
+            selected: false,
+            expanded: false,
+            mounted: false
+        }
+    }
+
+    onInput(input: Input) {
+        this.state.selected = input.selected || false;
+        this.state.expanded = input.expanded || false;
     }
 }
 

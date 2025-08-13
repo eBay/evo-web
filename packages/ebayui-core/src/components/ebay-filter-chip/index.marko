@@ -1,5 +1,6 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
+    class: inputClass,
     renderBody,
     disabled,
     selected,
@@ -15,17 +16,18 @@ $ const isAnchor = !!href && variant !== "menu";
 $ const rootTag = isAnchor ? "a" : "button";
 
 <${rootTag}
+    ...processHtmlAttributes(htmlInput)
     class=[
         "filter-chip",
         state.mounted && "filter-chip--animated",
         variant === "expressive" && "filter-chip--expressive",
         isAnchor && state.selected && "filter-chip--selected",
+        inputClass
     ]
     type=!isAnchor && "button"
     aria-pressed=!isAnchor && (state.selected ? "true" : "false")
     aria-expanded=variant === "menu" && (state.expanded ? "true" : "false")
     on-click("handleButtonClick")
-    ...processHtmlAttributes(htmlInput)
 >
 
     <if(variant === "expressive")>

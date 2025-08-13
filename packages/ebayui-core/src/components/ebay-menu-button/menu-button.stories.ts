@@ -14,6 +14,9 @@ import SeparatorTemplate from "./examples/separator.marko";
 import SeparatorTemplateCode from "./examples/separator.marko?raw";
 import PrefixLabelTemplate from "./examples/prefix-label.marko";
 import PrefixLabelTemplateCode from "./examples/prefix-label.marko?raw";
+import FilterTemplate from "./examples/filter.marko";
+import FilterTemplateCode from "./examples/filter.marko?raw";
+
 import Component from "./index.marko";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
@@ -107,7 +110,7 @@ export default {
         },
         variant: {
             control: { type: "select" },
-            options: ["overflow", "form", "button", "icon"],
+            options: ["overflow", "form", "button", "icon", "filter"],
             table: {
                 defaultValue: {
                     summary: "button",
@@ -261,6 +264,12 @@ export const Badged = buildExtensionTemplate(
     BadgedTemplate,
     BadgedTemplateCode,
 );
+
+export const Filter = buildExtensionTemplate(
+    FilterTemplate,
+    FilterTemplateCode,
+);
+
 export const PrefixLabel = buildExtensionTemplate(
     PrefixLabelTemplate,
     PrefixLabelTemplateCode,

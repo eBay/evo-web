@@ -4,7 +4,7 @@ import * as testUtils from "../../../common/test-utils/server";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../menu-button.stories"; // import all stories from the stories file
 
-const { Default, Typeahead, Badged, Separator, IconText, PrefixLabel } =
+const { Default, Typeahead, Badged, Separator, IconText, PrefixLabel, Filter } =
     composeStories(stories);
 const htmlSnap = snapshotHTML(__dirname);
 
@@ -69,10 +69,18 @@ describe("menu-button", () => {
         await htmlSnap(PrefixLabel);
     });
 
+    it("renders with filter", async () => {
+        await htmlSnap(Filter);
+    });
+
     ["radio", "checkbox"].forEach((type) => {
         [true, false].forEach((checked) => {
             it(`renders with type=${type} and checked=${checked}`, async () => {
                 await htmlSnap(Default, { type, item: [{ checked }] });
+            });
+
+            it(`renders with type=${type} and checked=${checked} and as filter`, async () => {
+                await htmlSnap(Filter, { type, item: [{ checked }] });
             });
         });
     });

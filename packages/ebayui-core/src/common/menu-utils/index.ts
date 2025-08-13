@@ -10,11 +10,14 @@ export interface MenuItem extends Omit<Marko.HTML.Button, `on${string}`> {
 export interface BaseMenuInput {
     item?: Marko.AttrTag<MenuItem>;
     type?: string;
+    variant?: string;
 }
 
 export interface MenuState {
     checkedIndex?: number;
     checkedItems?: boolean[];
+    isSelected?: boolean;
+    selectedCount: number;
 }
 
 const Component = (typeof Marko === "object"
@@ -61,18 +64,39 @@ export class MenuUtils<
         */
         this.items = [...(input.item || [])].filter((item) => !item.separator);
         this.type = input.type;
+        if (
+            this.type !== "radio" &&
+            this.type !== "checkbox" &&
+            input.variant === "filter"
+        ) {
+            this.type = "checkbox";
+        }
         if (this.isRadio()) {
+            const checkedIndex = (this.items || []).findIndex(
+                (item) => item.checked || false,
+            );
             return {
-                checkedIndex: (this.items || []).findIndex(
-                    (item) => item.checked || false,
-                ),
+                checkedIndex,
+                isSelected: checkedIndex !== -1,
+                selectedCount: 0,
             };
         }
+        const checkedItems = (this.items || []).map(
+            (item) => item.checked || false,
+        );
+        const selectedCount = this.getSelectedCount(checkedItems);
         return {
-            checkedItems: (this.items || []).map(
-                (item) => item.checked || false,
-            ),
+            checkedItems,
+            isSelected: selectedCount > 0,
+            selectedCount,
         };
+    }
+
+    getSelectedCount(checkedItems?: boolean[]) {
+        return (checkedItems || []).reduce(
+            (prev, item) => prev + (item ? 1 : 0),
+            0,
+        );
     }
 
     isChecked(index: number) {
@@ -90,18 +114,28 @@ export class MenuUtils<
         if (Array.isArray(index)) {
             if (this.isRadio()) {
                 this.state.checkedIndex = index[0];
+                this.state.isSelected = index[0] !== -1;
             } else {
                 this.state.checkedItems = this.state.checkedItems!.map(
                     (item, i) => index.indexOf(i) !== -1,
                 );
+                this.state.selectedCount = this.getSelectedCount(
+                    this.state.checkedItems,
+                );
+                this.state.isSelected = this.state.selectedCount > 0;
             }
             return;
         }
 
         if (this.isRadio() && index !== this.state.checkedIndex) {
             this.state.checkedIndex = index;
+            this.state.isSelected = index !== -1;
         } else if (this.type !== "radio") {
             this.state.checkedItems![index] = !this.state.checkedItems![index];
+            this.state.selectedCount = this.getSelectedCount(
+                this.state.checkedItems,
+            );
+            this.state.isSelected = this.state.selectedCount > 0;
             this.setStateDirty("checkedItems");
         }
     }
