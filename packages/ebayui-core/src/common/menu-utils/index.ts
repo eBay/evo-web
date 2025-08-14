@@ -16,7 +16,7 @@ export interface BaseMenuInput {
 export interface MenuState {
     checkedIndex?: number;
     checkedItems?: boolean[];
-    isSelected?: boolean;
+    isSelected: boolean;
     selectedCount: number;
 }
 

@@ -21,8 +21,7 @@ export interface MenuButtonEvent {
     index?: number;
 }
 
-interface MenuButtonInput
-    extends BaseMenuInput,
+interface MenuButtonInput extends Omit<BaseMenuInput, 'variant'>,
         Omit<Marko.HTML.Span, `on${string}`> {
     "collapse-on-select"?: boolean;
     "prefix-id"?: string;
@@ -41,6 +40,7 @@ interface MenuButtonInput
     }>;
     "prefix-label"?: AttrString;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
+    status?: Marko.AttrTag<{ renderBody?: Marko.Body<[number, Boolean[]]> }>;
     text?: AttrString;
     reverse?: boolean;
     strategy?: "absolute" | "fixed";

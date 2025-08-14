@@ -10,6 +10,11 @@ export interface Input {
     text="Filter Items"
     variant="filter"
     ...input>
+    <@status|count, checkedItems|>
+        <if(count > 0)>
+           (+${count})
+        </if>
+    </@status>
     <@item value="item 1">
         item 1
     </@item>

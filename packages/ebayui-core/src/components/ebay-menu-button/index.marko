@@ -26,6 +26,7 @@ $ const {
     split,
     collapseOnSelect,
     transparent,
+    status,
     ...htmlInput
 } = input;
 $ var labelId = prefixId && component.getElId("label");
@@ -111,8 +112,8 @@ $ var separatorCount = 0;
                         ${text}
                     </span>
                 </if>
-                <if(isFilterVariant && type !== "radio")>
-                    ${state.selectedCount > 0 ? ` (+${state.selectedCount})` : ""}
+                <if(isFilterVariant && status)>
+                    <${status}(state.selectedCount, state.checkedItems || [])/>
                 </if>
             </else>
             <if(isButtonVariant && !noToggleIcon)>
