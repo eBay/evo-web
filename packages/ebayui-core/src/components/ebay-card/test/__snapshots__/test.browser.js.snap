@@ -430,15 +430,30 @@ exports[`card > default > then it matches the snapshot 1`] = `
           font-size: var(--font-size-default);
           min-height: 40px;
           min-width: 88px;
+          overflow-x: hidden;
+          overflow-y: hidden;
           padding-bottom: 9.5px;
           padding-left: 20px;
           padding-right: 20px;
           padding-top: 9.5px;
+          position: relative;
           transition: all var(--motion-duration-short-3)
                   var(--motion-easing-quick-enter);
           vertical-align: bottom;
           width: 100%
         ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
           See Details
         </button>
       </div>
@@ -534,15 +549,30 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
           font-size: var(--font-size-default);
           min-height: 40px;
           min-width: 88px;
+          overflow-x: hidden;
+          overflow-y: hidden;
           padding-bottom: 9.5px;
           padding-left: 20px;
           padding-right: 20px;
           padding-top: 9.5px;
+          position: relative;
           transition: all var(--motion-duration-short-3)
                   var(--motion-easing-quick-enter);
           vertical-align: bottom;
           width: 100%
         ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
           See Details
         </button>
       </div>
@@ -638,15 +668,30 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
           font-size: var(--font-size-default);
           min-height: 40px;
           min-width: 88px;
+          overflow-x: hidden;
+          overflow-y: hidden;
           padding-bottom: 9.5px;
           padding-left: 20px;
           padding-right: 20px;
           padding-top: 9.5px;
+          position: relative;
           transition: all var(--motion-duration-short-3)
                   var(--motion-easing-quick-enter);
           vertical-align: bottom;
           width: 100%
         ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
           See Details
         </button>
       </div>

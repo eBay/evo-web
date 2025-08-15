@@ -1,0 +1,29 @@
+@mixin base($base-color: var(--state-layer-neutral)) {
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+        background-color: $base-color;
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+}
+
+@mixin button() {
+    @include base;
+
+    &:not([disabled], [aria-disabled="true"]),
+    &[href] {
+        &:hover::after {
+            background-color: var(--state-layer-hover);
+        }
+        &:focus::after {
+            background-color: var(--state-layer-focus);
+        }
+        &:active::after {
+            background-color: var(--state-layer-pressed);
+        }
+    }
+}

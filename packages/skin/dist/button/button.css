@@ -11,10 +11,38 @@ button.btn {
     margin: 0;
     min-height: 40px;
     min-width: 88px;
+    overflow: hidden;
     padding: 9.5px 20px;
+    position: relative;
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
+}
+a.fake-btn:after,
+button.btn:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.fake-btn:not([disabled], [aria-disabled="true"]):hover:after,
+a.fake-btn[href]:hover:after,
+button.btn:not([disabled], [aria-disabled="true"]):hover:after,
+button.btn[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.fake-btn:not([disabled], [aria-disabled="true"]):focus:after,
+a.fake-btn[href]:focus:after,
+button.btn:not([disabled], [aria-disabled="true"]):focus:after,
+button.btn[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.fake-btn:not([disabled], [aria-disabled="true"]):active:after,
+a.fake-btn[href]:active:after,
+button.btn:not([disabled], [aria-disabled="true"]):active:after,
+button.btn[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 a.fake-btn--fixed-height,
 a.fake-btn--truncated,
@@ -190,18 +218,6 @@ a.fake-btn--primary:visited {
     );
 }
 
-a.fake-btn--primary[href]:focus,
-a.fake-btn--primary[href]:hover,
-button.btn--primary:not([disabled], [aria-disabled="true"]):focus,
-button.btn--primary:not([disabled], [aria-disabled="true"]):hover {
-    background-blend-mode: multiply;
-    filter: brightness(96%);
-}
-a.fake-btn--primary[href]:active,
-button.btn--primary:not([disabled], [aria-disabled="true"]):active {
-    filter: brightness(92%);
-}
-
 a.fake-btn--primary.fake-btn--destructive,
 button.btn--primary.btn--destructive {
     background-color: var(
@@ -229,26 +245,6 @@ button.btn--primary.btn--destructive[disabled] {
         --btn-primary-destructive-disabled-border,
         var(--color-stroke-disabled)
     );
-}
-
-a.fake-btn--primary.fake-btn--destructive[href]:focus,
-a.fake-btn--primary.fake-btn--destructive[href]:hover,
-button.btn--primary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):focus,
-button.btn--primary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):hover {
-    background-color: var(--color-state-attention-hover);
-}
-a.fake-btn--primary.fake-btn--destructive[href]:active,
-button.btn--primary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):active {
-    background-color: var(--color-state-attention-active);
 }
 
 button.btn .progress-spinner {
@@ -349,21 +345,6 @@ a.fake-btn--secondary:visited {
     );
 }
 
-a.fake-btn--secondary[href]:active,
-button.btn--secondary:not([disabled], [aria-disabled="true"]):active {
-    background-color: var(--color-state-primary-active);
-    border-color: var(--color-state-active-foreground-on-secondary);
-    color: var(--color-state-active-foreground-on-secondary);
-}
-a.fake-btn--secondary[href]:focus,
-a.fake-btn--secondary[href]:hover,
-button.btn--secondary:not([disabled], [aria-disabled="true"]):focus,
-button.btn--secondary:not([disabled], [aria-disabled="true"]):hover {
-    background-color: var(--color-state-primary-hover);
-    border-color: var(--color-state-hover-foreground-on-secondary);
-    color: var(--color-state-hover-foreground-on-secondary);
-}
-
 a.fake-btn--secondary.fake-btn--destructive,
 button.btn--secondary.btn--destructive {
     background-color: var(
@@ -378,32 +359,6 @@ button.btn--secondary.btn--destructive {
         --btn-secondary-destructive-foreground-color,
         var(--color-foreground-attention)
     );
-}
-
-a.fake-btn--secondary.fake-btn--destructive[href]:focus,
-a.fake-btn--secondary.fake-btn--destructive[href]:hover,
-button.btn--secondary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):focus,
-button.btn--secondary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):hover {
-    background-color: var(--color-state-primary-hover);
-    border-color: var(--color-state-hover-foreground-on-secondary-desctructive);
-    color: var(--color-state-hover-foreground-on-secondary-desctructive);
-}
-a.fake-btn--secondary.fake-btn--destructive[href]:active,
-button.btn--secondary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):active {
-    background-color: var(--color-state-primary-active);
-    border-color: var(
-        --color-state-active-foreground-on-secondary-desctructive
-    );
-    color: var(--color-state-active-foreground-on-secondary-desctructive);
 }
 
 button.btn--secondary.btn--destructive .progress-spinner {
@@ -457,17 +412,6 @@ button.btn--tertiary:active {
     transform: scale(0.97);
 }
 
-a.fake-btn--tertiary[href]:focus,
-a.fake-btn--tertiary[href]:hover,
-button.btn--tertiary:not([disabled], [aria-disabled="true"]):focus,
-button.btn--tertiary:not([disabled], [aria-disabled="true"]):hover {
-    background-color: var(--color-state-secondary-hover);
-}
-a.fake-btn--tertiary[href]:active,
-button.btn--tertiary:not([disabled], [aria-disabled="true"]):active {
-    background-color: var(--color-state-secondary-active);
-}
-
 a.fake-btn--tertiary:not([href]),
 a.fake-btn--tertiary[aria-disabled="true"],
 button.btn--tertiary[aria-disabled="true"]:not(
@@ -490,26 +434,6 @@ button.btn--tertiary.btn--destructive {
         --btn-tertiary-destructive-foreground-color,
         var(--color-stroke-subtle)
     );
-}
-
-a.fake-btn--tertiary.fake-btn--destructive[href]:focus,
-a.fake-btn--tertiary.fake-btn--destructive[href]:hover,
-button.btn--tertiary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):focus,
-button.btn--tertiary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):hover {
-    background-color: var(--color-state-secondary-hover);
-}
-a.fake-btn--tertiary.fake-btn--destructive[href]:active,
-button.btn--tertiary.btn--destructive:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):active {
-    background-color: var(--color-state-secondary-active);
 }
 
 button.btn--tertiary.btn--destructive[aria-disabled="true"],
@@ -546,17 +470,6 @@ button.btn--form {
     border-color: inherit;
     border-radius: var(--expand-btn-border-radius, var(--border-radius-50));
     max-width: 100%;
-}
-
-a.fake-btn--form:not([href]):focus,
-a.fake-btn--form:not([href]):hover,
-button.btn--form:not([disabled], [aria-disabled="true"]):focus,
-button.btn--form:not([disabled], [aria-disabled="true"]):hover {
-    background-color: var(--color-state-primary-hover);
-}
-a.fake-btn--form:not([href]):active,
-button.btn--form:not([disabled], [aria-disabled="true"]):active {
-    background-color: var(--color-state-primary-active);
 }
 
 button.btn--form.btn--large {
