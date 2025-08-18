@@ -121,6 +121,10 @@ p.section-notice__cta {
         margin-top: 0;
         padding-right: var(--spacing-200);
     }
+    p.section-notice__cta:last-child {
+        margin-right: 0;
+        padding-right: 0;
+    }
     .section-notice__header ~ .section-notice__cta {
         grid-column: 4;
     }

@@ -148,6 +148,11 @@ p.section-notice__cta {
         margin-right: var(--spacing-200);
         margin-top: 0;
         padding-right: var(--spacing-200);
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
     }
 
     .section-notice__header ~ .section-notice__cta {
