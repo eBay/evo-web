@@ -3,7 +3,8 @@ import type { WithNormalizedProps } from "../../global";
 import EbayTooltipBase from "../components/ebay-tooltip-base/component-browser";
 import type { Input as TooltipBaseInput } from "../components/ebay-tooltip-base/component-browser";
 
-interface InfotipInput extends Omit<Marko.HTML.Span, `on${string}` | "content"> {
+interface InfotipInput
+    extends Omit<Marko.HTML.Span, `on${string}` | "content"> {
     open?: boolean;
     variant?: "modal" | "default";
     offset?: TooltipBaseInput["offset"];

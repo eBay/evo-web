@@ -21,7 +21,8 @@ export interface MenuButtonEvent {
     index?: number;
 }
 
-interface MenuButtonInput extends Omit<BaseMenuInput, 'variant'>,
+interface MenuButtonInput
+    extends Omit<BaseMenuInput, "variant">,
         Omit<Marko.HTML.Span, `on${string}`> {
     "collapse-on-select"?: boolean;
     "prefix-id"?: string;

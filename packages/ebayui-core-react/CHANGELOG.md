@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.11.2
+
+### Patch Changes
+
+- [`469f3c7`](https://github.com/eBay/evo-web/commit/469f3c7b176891b0badea996c520556f9183eb82) Thanks [@agliga](https://github.com/agliga)! - fix(dialog): updated makeup-screen-reader
+
 ## 8.11.1
 
 ### Patch Changes

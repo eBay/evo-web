@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.10.0
+
+### Minor Changes
+
+- [#254](https://github.com/eBay/evo-web/pull/254) [`e75d24c`](https://github.com/eBay/evo-web/commit/e75d24caad5836de242aa2100d3680e5ee0445bc) Thanks [@agliga](https://github.com/agliga)! - feat(menu-button): added filter variant
+
 ## 15.9.0
 
 ### Minor Changes

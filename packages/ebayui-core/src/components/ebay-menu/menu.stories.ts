@@ -42,7 +42,8 @@ export default {
         variant: {
             control: { type: "select" },
             options: ["filter", "none"],
-            description: 'Either "none" for default menu or "filter" for filter variant',
+            description:
+                'Either "none" for default menu or "filter" for filter variant',
         },
 
         priority: {

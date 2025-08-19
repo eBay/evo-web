@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.12.0
+
+### Minor Changes
+
+- [#255](https://github.com/eBay/evo-web/pull/255) [`2d22fc8`](https://github.com/eBay/evo-web/commit/2d22fc895f22a1557367c9d2b8e679f5af7acb76) Thanks [@agliga](https://github.com/agliga)! - feat(button): updated to use proper state layer
+
 ## 19.11.0
 
 ### Minor Changes

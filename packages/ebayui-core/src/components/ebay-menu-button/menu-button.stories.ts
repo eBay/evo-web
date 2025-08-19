@@ -148,7 +148,7 @@ export default {
         status: {
             name: "@status",
             description:
-                "Used to render status of filter menu button. Will pass back {count, selectedList[]} to allow users to render a status of the filter. Usually in the format of \"(+3)\" where 3 is the amount of selected filters.",
+                'Used to render status of filter menu button. Will pass back {count, selectedList[]} to allow users to render a status of the filter. Usually in the format of "(+3)" where 3 is the amount of selected filters.',
 
             table: {
                 category: "@attribute tags",

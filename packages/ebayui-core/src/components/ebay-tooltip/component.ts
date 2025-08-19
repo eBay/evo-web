@@ -3,7 +3,8 @@ import type { WithNormalizedProps } from "../../global";
 import type { Input as TooltipBaseInput } from "../components/ebay-tooltip-base/component-browser";
 import type { Input as TooltipOverlayInput } from "../components/ebay-tooltip-overlay/component-browser";
 
-interface TooltipInput extends Omit<Marko.HTML.Span, `on${string}` | "content"> {
+interface TooltipInput
+    extends Omit<Marko.HTML.Span, `on${string}` | "content"> {
     open?: boolean;
     "no-hover"?: TooltipBaseInput["noHover"];
     host?: Marko.AttrTag<{ renderBody: Marko.Body }>;
