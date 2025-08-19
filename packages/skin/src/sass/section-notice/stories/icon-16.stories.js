@@ -170,6 +170,23 @@ export const RTL = () => `
 </div>
 `;
 
+export const noDismissAndLinkCTA_RTL = () => `
+<div dir="rtl">
+    <div class="section-notice section-notice--confirmation" role="region">
+        <div class="section-notice__header" role="region" aria-roledescription="Notice">
+            <svg aria-hidden="true" class="icon icon--16">
+                <use href="#icon-confirmation-filled-16"></use>
+            </svg>
+        </div>
+        <div class="section-notice__main">
+            <h3 class="section-notice__title">Notification Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
+    </div>
+</div>
+`;
+
 export const textSpacing = () => `
 <div class="section-notice section-notice--confirmation demo-a11y-text-spacing" role="region">
     <div class="section-notice__header" role="region" aria-roledescription="Notice">

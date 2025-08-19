@@ -145,13 +145,11 @@ p.section-notice__cta {
         grid-column: 4;
         grid-row: 1;
         justify-self: flex-end;
-        margin-right: var(--spacing-200);
         margin-top: 0;
-        padding-right: var(--spacing-200);
 
-        &:last-child {
-            margin-right: 0;
-            padding-right: 0;
+        .section-notice:has(.section-notice__dismiss) & {
+            margin-inline-end: var(--spacing-200);
+            padding-inline-end: var(--spacing-200);
         }
     }
 
@@ -175,11 +173,6 @@ p.section-notice__cta {
 
     .section-notice__main {
         padding-right: 0;
-    }
-
-    p.section-notice__cta {
-        margin-left: 16px;
-        padding-left: 16px;
     }
 }
 
