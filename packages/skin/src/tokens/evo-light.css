@@ -145,7 +145,7 @@
     --color-ai-gradient-blue-subtle: linear-gradient(
         270deg,
         var(--color-ai-solid-green-subtle) -36%,
-        var(--color-ai-solid-blue-subtle) -46.87%,
+        var(--color-ai-solid-blue-subtle) 38.5%,
         var(--color-ai-solid-purple-subtle) 113%
     );
     --color-ai-gradient-green-subtle: linear-gradient(
@@ -185,27 +185,19 @@
     );
     --color-loading-ai-gradient-purple-subtle: linear-gradient(
         270deg,
-        var(--color-ai-solid-red-subtle) 0%,
-        var(--color-ai-solid-red-subtle) 34%,
-        var(--color-ai-solid-purple-subtle) 50%,
-        var(--color-ai-solid-red-subtle) 66%,
+        var(--color-ai-solid-purple-subtle) 0%,
         var(--color-ai-solid-red-subtle) 100%
     );
     --color-loading-ai-gradient-blue-subtle: linear-gradient(
         270deg,
-        var(--color-ai-solid-blue-subtle) 0%,
-        var(--color-ai-solid-blue-subtle) 34%,
-        var(--color-ai-solid-purple-subtle) 50%,
-        var(--color-ai-solid-blue-subtle) 66%,
-        var(--color-ai-solid-blue-subtle) 100%
+        var(--color-ai-solid-green-subtle) -36%,
+        var(--color-ai-solid-blue-subtle) 38.5%,
+        var(--color-ai-solid-purple-subtle) 113%
     );
     --color-loading-ai-gradient-green-subtle: linear-gradient(
         270deg,
         var(--color-ai-solid-green-subtle) 0%,
-        var(--color-ai-solid-green-subtle) 34%,
-        var(--color-ai-solid-blue-subtle) 50%,
-        var(--color-ai-solid-green-subtle) 66%,
-        var(--color-ai-solid-green-subtle) 100%
+        var(--color-ai-solid-blue-subtle) 154.5%
     );
     --color-media-disabled-filter: grayscale(1) opacity(0.25);
     /* Motion Functions */
