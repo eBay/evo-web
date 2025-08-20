@@ -90,6 +90,7 @@
         --color-scrim-image: rgba(255, 255, 255, 0.12);
         --color-scrim-background: rgba(0, 0, 0, 0.64);
         --state-layer-neutral: rgb(var(--color-neutral-100-rgb), 0);
+        --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
         --state-layer-focus: rgb(
             var(--color-neutral-100-rgb),
             var(--opacity-50)
@@ -101,6 +102,12 @@
         --state-layer-pressed: rgb(
             var(--color-neutral-100-rgb),
             var(--opacity-100)
+        );
+        --state-layer-focus-on-strong: rgb(var(--color-neutral-900-rgb), var(--opacity-100));
+        --state-layer-hover-on-strong: rgb(var(--color-neutral-900-rgb), var(--opacity-100));
+        --state-layer-pressed-on-strong: rgb(
+            var(--color-neutral-900-rgb),
+            var(--opacity-150)
         );
         --state-layer-drag: rgb(
             var(--color-neutral-100-rgb),

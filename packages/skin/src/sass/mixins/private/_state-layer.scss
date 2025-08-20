@@ -11,7 +11,7 @@
     }
 }
 
-@mixin button() {
+@mixin standard() {
     @include base;
 
     &:not([disabled], [aria-disabled="true"]),
@@ -24,6 +24,23 @@
         }
         &:active::after {
             background-color: var(--state-layer-pressed);
+        }
+    }
+}
+
+@mixin strong() {
+    @include base(var(--state-layer-neutral-on-strong));
+
+    &:not([disabled], [aria-disabled="true"]),
+    &[href] {
+        &:hover::after {
+            background-color: var(--state-layer-hover-on-strong);
+        }
+        &:focus::after {
+            background-color: var(--state-layer-focus-on-strong);
+        }
+        &:active::after {
+            background-color: var(--state-layer-pressed-on-strong);
         }
     }
 }

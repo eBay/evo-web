@@ -134,7 +134,7 @@ a.fake-btn--primary {
     );
 
     @include button-mixins.animations;
-    @include state-layer.button;
+    @include state-layer.standard;
 
     font-weight: bold;
 }
@@ -167,7 +167,7 @@ a.fake-btn--primary.fake-btn--destructive {
         color-foreground-on-attention
     );
 
-    @include state-layer.button;
+    @include state-layer.standard;
 
     font-weight: bold;
 }
@@ -274,7 +274,7 @@ a.fake-btn--secondary {
     );
 
     @include button-mixins.animations;
-    @include state-layer.button;
+    @include state-layer.standard;
 }
 
 a.fake-btn--secondary:visited {
@@ -348,7 +348,7 @@ a.fake-btn--tertiary {
     );
 
     @include button-mixins.animations;
-    @include state-layer.button;
+    @include state-layer.standard;
 }
 
 button.btn--tertiary[disabled],
@@ -413,7 +413,7 @@ a.fake-btn--form {
         expand-btn-border-radius,
         border-radius-50
     );
-    @include state-layer.button;
+    @include state-layer.standard;
 }
 
 button.btn--form.btn--large {

@@ -28,7 +28,9 @@
     justify-content: space-between;
     max-width: 296px;
     min-width: 32px;
+    overflow: hidden;
     padding: 0 var(--spacing-150);
+    position: relative;
     text-decoration: none;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
@@ -36,6 +38,25 @@
 }
 .selection-chip:active {
     transform: scale(0.97);
+}
+.selection-chip:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.selection-chip:not([disabled], [aria-disabled="true"]):hover:after,
+.selection-chip[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+.selection-chip:not([disabled], [aria-disabled="true"]):focus:after,
+.selection-chip[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+.selection-chip:not([disabled], [aria-disabled="true"]):active:after,
+.selection-chip[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 .selection-chip--animated .selection-chip__trailing {
@@ -56,6 +77,36 @@
         var(--color-background-strong) 100%
     );
     color: var(--color-foreground-on-strong);
+    overflow: hidden;
+    position: relative;
+}
+.selection-chip[aria-pressed="true"]:after {
+    background-color: var(--state-layer-neutral-on-strong);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.selection-chip[aria-pressed="true"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+.selection-chip[aria-pressed="true"][href]:hover:after {
+    background-color: var(--state-layer-hover-on-strong);
+}
+.selection-chip[aria-pressed="true"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+.selection-chip[aria-pressed="true"][href]:focus:after {
+    background-color: var(--state-layer-focus-on-strong);
+}
+.selection-chip[aria-pressed="true"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+.selection-chip[aria-pressed="true"][href]:active:after {
+    background-color: var(--state-layer-pressed-on-strong);
 }
 
 .selection-chip--animated[aria-pressed="true"] {

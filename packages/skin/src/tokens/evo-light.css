@@ -104,12 +104,20 @@
     --color-marketing-magenta-foreground-4: var(--color-neutral-100);
     --color-marketing-magenta-background-4: var(--color-pink-400);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-100-rgb), 0);
     --state-layer-focus: rgb(var(--color-neutral-900-rgb), var(--opacity-50));
     --state-layer-hover: rgb(var(--color-neutral-900-rgb), var(--opacity-50));
     --state-layer-pressed: rgb(
         var(--color-neutral-900-rgb),
         var(--opacity-100)
     );
+    --state-layer-focus-on-strong: rgb(var(--color-neutral-100-rgb), var(--opacity-150));
+    --state-layer-hover-on-strong: rgb(var(--color-neutral-100-rgb), var(--opacity-150));
+    --state-layer-pressed-on-strong: rgb(
+        var(--color-neutral-100-rgb),
+        var(--opacity-200)
+    );
+
     --state-layer-drag: rgb(var(--color-neutral-900-rgb), var(--opacity-150));
     --color-ai-gradient-full-spectrum: linear-gradient(
         223deg,

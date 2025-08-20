@@ -1,4 +1,5 @@
 @use "../mixins/private/chip-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/public/animation-mixins";
 
 @include chip-mixins.background-keyframes;
@@ -6,6 +7,7 @@
 .selection-chip {
     @include chip-mixins.base;
     @include chip-mixins.interactive;
+    @include state-layer.standard;
 
     border-radius: var(--border-radius-50);
 }
@@ -21,6 +23,7 @@
 
 .selection-chip[aria-pressed="true"] {
     @include chip-mixins.selected;
+    @include state-layer.strong;
 }
 
 .selection-chip--animated[aria-pressed="true"] {

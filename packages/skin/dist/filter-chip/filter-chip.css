@@ -51,7 +51,9 @@ button.filter-chip {
     justify-content: space-between;
     max-width: 296px;
     min-width: 32px;
+    overflow: hidden;
     padding: 0 var(--spacing-150);
+    position: relative;
     text-decoration: none;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
@@ -60,6 +62,32 @@ button.filter-chip {
 a.filter-chip:active,
 button.filter-chip:active {
     transform: scale(0.97);
+}
+a.filter-chip:after,
+button.filter-chip:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.filter-chip:not([disabled], [aria-disabled="true"]):hover:after,
+a.filter-chip[href]:hover:after,
+button.filter-chip:not([disabled], [aria-disabled="true"]):hover:after,
+button.filter-chip[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.filter-chip:not([disabled], [aria-disabled="true"]):focus:after,
+a.filter-chip[href]:focus:after,
+button.filter-chip:not([disabled], [aria-disabled="true"]):focus:after,
+button.filter-chip[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.filter-chip:not([disabled], [aria-disabled="true"]):active:after,
+a.filter-chip[href]:active:after,
+button.filter-chip:not([disabled], [aria-disabled="true"]):active:after,
+button.filter-chip[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 a.filter-chip--expressive,
@@ -109,6 +137,43 @@ button.filter-chip[aria-pressed="true"] {
         var(--color-background-strong) 100%
     );
     color: var(--color-foreground-on-strong);
+    overflow: hidden;
+    position: relative;
+}
+a.filter-chip--selected:after,
+button.filter-chip[aria-pressed="true"]:after {
+    background-color: var(--state-layer-neutral-on-strong);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.filter-chip--selected:not([disabled], [aria-disabled="true"]):hover:after,
+a.filter-chip--selected[href]:hover:after,
+button.filter-chip[aria-pressed="true"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+button.filter-chip[aria-pressed="true"][href]:hover:after {
+    background-color: var(--state-layer-hover-on-strong);
+}
+a.filter-chip--selected:not([disabled], [aria-disabled="true"]):focus:after,
+a.filter-chip--selected[href]:focus:after,
+button.filter-chip[aria-pressed="true"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+button.filter-chip[aria-pressed="true"][href]:focus:after {
+    background-color: var(--state-layer-focus-on-strong);
+}
+a.filter-chip--selected:not([disabled], [aria-disabled="true"]):active:after,
+a.filter-chip--selected[href]:active:after,
+button.filter-chip[aria-pressed="true"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+button.filter-chip[aria-pressed="true"][href]:active:after {
+    background-color: var(--state-layer-pressed-on-strong);
 }
 
 button.filter-chip--animated[aria-pressed="true"] {

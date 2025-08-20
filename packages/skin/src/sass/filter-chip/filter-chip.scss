@@ -1,5 +1,6 @@
 @use "../mixins/public/animation-mixins";
 @use "../mixins/private/chip-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
 @include chip-mixins.background-keyframes;
@@ -9,6 +10,7 @@ button.filter-chip,
 a.filter-chip {
     @include chip-mixins.base;
     @include chip-mixins.interactive;
+    @include state-layer.standard;
 
     border-radius: var(--border-radius-100);
 }
@@ -35,6 +37,7 @@ a.filter-chip--expressive {
 button.filter-chip[aria-pressed="true"],
 a.filter-chip--selected {
     @include chip-mixins.selected;
+    @include state-layer.strong;
 }
 
 button.filter-chip--animated[aria-pressed="true"] {
