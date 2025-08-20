@@ -1,6 +1,5 @@
 import * as keyboardTrap from "makeup-keyboard-trap";
 import * as screenReaderTrap from "makeup-screenreader-trap";
-import type { AttrClass, AttrString } from "marko/tags-html";
 import * as bodyScroll from "../../../common/body-scroll";
 import * as eventUtils from "../../../common/event-utils";
 import transition from "../../../common/transition";
@@ -17,16 +16,16 @@ interface DialogBaseInput extends Omit<Marko.HTML.Div, `on${string}`> {
         }
     >;
     "class-prefix"?: string;
-    "close-button-text"?: AttrString;
-    "close-button-class"?: AttrClass;
-    "a11y-close-text"?: AttrString;
+    "close-button-text"?: string;
+    "close-button-class"?: Marko.HTMLAttributes["class"];
+    "a11y-close-text"?: Marko.HTMLAttributes["aria-label"];
     "close-button"?:
         | Marko.Renderable
         | Marko.AttrTag<{ renderBody: Marko.Body }>;
     "is-modal"?: boolean;
     "ignore-escape"?: boolean;
     "window-type"?: string;
-    "window-class"?: AttrClass;
+    "window-class"?: Marko.HTMLAttributes["class"];
     top?: Marko.AttrTag<{
         renderBody: Marko.Body;
     }>;
@@ -45,7 +44,7 @@ interface DialogBaseInput extends Omit<Marko.HTML.Div, `on${string}`> {
     "prev-button"?: Marko.AttrTag<
         Omit<Marko.HTML.Button, `on${string}`> &
             WithNormalizedProps<{
-                "a11y-text"?: AttrString;
+                "a11y-text"?: Marko.HTMLAttributes["aria-label"];
             }>
     >;
     "on-open"?: (event: Event) => void;

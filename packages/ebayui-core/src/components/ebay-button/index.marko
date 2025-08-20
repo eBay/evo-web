@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
 static const validSizes = ["large", "small"] as const;
@@ -21,8 +20,8 @@ export interface ButtonInput extends Omit<Marko.HTML.Button, `on${string}` | "ty
     fixedHeight?: boolean;
     truncate?: boolean;
     split?: string;
-    "a11y-text"?: AttrString;
-    "aria-label"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
+    "aria-label"?: Marko.HTMLAttributes["aria-label"];
     "on-click"?: (event: ButtonEvent<MouseEvent>) => void;
     "on-escape"?: (event: ButtonEvent<KeyboardEvent>) => void;
     "on-focus"?: (event: ButtonEvent<FocusEvent>) => void;

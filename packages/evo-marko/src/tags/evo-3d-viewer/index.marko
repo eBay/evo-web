@@ -1,13 +1,12 @@
-import type { AttrClass, AttrString } from "marko/tags-html";
 import type { ModelViewerElement } from "@google/model-viewer";
 import { load as modelViewerLoad } from "@internal/model-viewer";
 export interface Input extends Partial<ModelViewerElement> {
-    class?: AttrClass;
-    errorText: AttrString;
+    class?: Marko.HTMLAttributes["class"];
+    errorText: string;
     /**
      * The aria-label accessibility label for the 3D viewer.
      **/
-    a11yLoadingText: AttrString;
+    a11yLoadingText: Marko.HTMLAttributes["aria-label"];
     onLoadError?: (err: CustomEvent) => void;
 }
 <const/{

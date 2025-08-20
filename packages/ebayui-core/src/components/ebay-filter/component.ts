@@ -1,11 +1,10 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 
 export interface FilterInput extends Omit<Marko.HTML.Button, `on${string}`> {
     selected?: boolean;
     href?: string;
     "use-aria-pressed"?: boolean;
-    "a11y-selected-text"?: AttrString;
+    "a11y-selected-text"?: Marko.HTMLAttributes["aria-label"];
     "on-click"?: (event: {
         selected: boolean;
         originalEvent: MouseEvent;

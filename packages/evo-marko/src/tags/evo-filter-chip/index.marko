@@ -1,11 +1,10 @@
-import type { AttrString } from "marko/tags-html";
 export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     selected?: boolean;
     selectedChange?: (selected?: boolean) => void;
     variant?: "default" | "expressive" | "menu";
     icon?: Marko.AttrTag<{ content?: Marko.Body }>;
     image?: Marko.AttrTag<Marko.HTML.Img>;
-    a11ySelectedText?: AttrString;
+    a11ySelectedText?: Marko.HTMLAttributes["aria-label"];
     expanded?: boolean;
     expandedChange?: (expanded?: boolean) => void;
 }

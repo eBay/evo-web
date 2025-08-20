@@ -8,7 +8,6 @@ import setupMenu, {
 } from "../../common/menu-utils";
 import type { RadioEvent } from "../ebay-radio/component-browser";
 import type { WithNormalizedProps } from "../../global";
-import type { AttrString } from "marko/tags-html";
 
 export interface FilterMenuEvent<T extends Event = Event> {
     el?: Element;
@@ -27,16 +26,16 @@ interface FilterMenuInput
     "form-name"?: string;
     "form-action"?: string;
     "form-method"?: string;
-    "footer-text"?: AttrString;
-    "a11y-footer-text"?: AttrString;
+    "footer-text"?: string;
+    "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
     footer?: WithNormalizedProps<
         Omit<Marko.HTML.Button, `on${string}`> & {
-            "a11y-footer-text"?: AttrString;
+            "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
         }
     >;
     "search-header-value"?: string;
-    "search-header-placeholder-text"?: AttrString;
-    "a11y-search-header-clear-text"?: AttrString;
+    "search-header-placeholder-text"?: string;
+    "a11y-search-header-clear-text"?: Marko.HTMLAttributes["aria-label"];
     "render-body"?: Marko.Body;
     "on-footer-click"?: (event: FilterMenuEvent) => void;
     "on-form-submit"?: (event: FilterMenuEvent) => void;

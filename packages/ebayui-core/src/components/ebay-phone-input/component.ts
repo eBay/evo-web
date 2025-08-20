@@ -1,10 +1,10 @@
 import type { WithNormalizedProps } from "../../global";
-import type { Input as ListboxButton } from "../ebay-listbox-button/component";
+import type { Input as ListboxButtonInput } from "../ebay-listbox-button/component";
+import type { Input as TextboxInput } from "../ebay-textbox/component-browser";
 import type { default as Textbox } from "../ebay-textbox/component-browser";
 import mask, { stripNonDigits } from "../../common/mask";
 
 import countries, { type CountryInterface } from "../../common/countries";
-import { AttrString } from "marko/tags-html";
 import { localeDefault } from "../../common/dates";
 
 export interface PhoneInputEvent {
@@ -15,14 +15,14 @@ export interface PhoneInputEvent {
     countryCode?: string;
 }
 
-interface PhoneInputInput extends Omit<ListboxButton, `on${string}`> {
+interface PhoneInputInput extends Omit<Marko.HTML.Span, `on${string}`> {
     disabled?: boolean;
-    "a11y-icon-prefix-text"?: AttrString;
-    "floating-label"?: AttrString;
-    readonly?: boolean;
-    invalid?: boolean;
+    "a11y-icon-prefix-text"?: ListboxButtonInput["a11y-icon-prefix-text"];
+    "floating-label"?: TextboxInput["floating-label"];
+    readonly?: TextboxInput["readonly"];
+    invalid?: ListboxButtonInput["invalid"];
     "country-code"?: string;
-    value?: string;
+    value?: TextboxInput["value"];
     locale?: string;
     "on-keyup"?: (event: PhoneInputEvent) => void;
     "on-keypress"?: (event: PhoneInputEvent) => void;

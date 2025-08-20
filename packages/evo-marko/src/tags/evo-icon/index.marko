@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 static interface IconDefs {
     server: string;
     browser: any;
@@ -9,7 +8,7 @@ export interface Input extends Marko.Input<"svg"> {
     _size?: string;
     _type?: string;
     _def?: () => IconDefs;
-    a11yText?: AttrString;
+    a11yText?: Marko.HTMLAttributes["aria-label"];
 }
 
 <const/{

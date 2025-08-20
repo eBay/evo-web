@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import * as eventUtils from "../../common/event-utils";
 import type { WithNormalizedProps } from "../../global";
 import type { Input as ButtonInput } from "../ebay-button/index.marko";
@@ -12,7 +11,7 @@ interface IconButtonInput
     priority?: "primary" | "secondary" | "tertiary" | "none";
     size?: "small" | "large";
     partiallyDisabled?: ButtonInput["partiallyDisabled"];
-    "badge-aria-label"?: AttrString;
+    "badge-aria-label"?: Marko.HTMLAttributes["aria-label"];
     "on-click"?: (event: { originalEvent: MouseEvent }) => void;
     "on-escape"?: (event: { originalEvent: KeyboardEvent }) => void;
     "on-focus"?: (event: { originalEvent: FocusEvent }) => void;

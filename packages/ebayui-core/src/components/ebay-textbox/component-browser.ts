@@ -1,10 +1,5 @@
 import FloatingLabel from "makeup-floating-label";
 import type { WithNormalizedProps } from "../../global";
-import type {
-    AttrOnOff,
-    AttrString,
-    AttrStringOrNumber,
-} from "marko/tags-html";
 
 export interface TextboxEvent {
     originalEvent: Event;
@@ -17,14 +12,14 @@ export interface TextboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
     "input-size"?: "regular" | "large";
     fluid?: boolean;
     "opaque-label"?: boolean;
-    "floating-label"?: AttrString;
+    "floating-label"?: string;
     "floating-label-static"?: boolean;
     "prefix-icon"?: Marko.AttrTag<{ renderBody: Marko.Body }>;
     "prefix-text"?: Marko.AttrTag<{ renderBody: Marko.Body }>;
     "postfix-text"?: Marko.AttrTag<{ renderBody: Marko.Body }>;
     "postfix-icon"?: Marko.AttrTag<{ renderBody: Marko.Body }>;
     invalid?: boolean;
-    "button-aria-label"?: AttrString;
+    "button-aria-label"?: Marko.HTMLAttributes["aria-label"];
     "on-floating-label-init"?: () => void;
     "on-keydown"?: (event: TextboxEvent) => void;
     "on-keypress"?: (event: TextboxEvent) => void;
@@ -36,9 +31,9 @@ export interface TextboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
     "on-invalid"?: (event: TextboxEvent) => void;
     "on-button-click"?: (event: TextboxEvent) => void;
     // Fields in textarea that aren't in input that we need to include
-    autocorrect?: AttrOnOff;
-    cols?: AttrStringOrNumber;
-    rows?: AttrStringOrNumber;
+    autocorrect?: Marko.HTML.TextArea["autocorrect"];
+    cols?: Marko.HTML.TextArea["cols"];
+    rows?: Marko.HTML.TextArea["rows"];
 }
 
 export interface Input extends WithNormalizedProps<TextboxInput> {}

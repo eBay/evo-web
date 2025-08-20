@@ -1,5 +1,4 @@
 import { load as shakaLoad } from "@internal/shaka-player";
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import { getElements } from "./elements";
 const DEFAULT_SPINNER_TIMEOUT = 2000;
@@ -66,18 +65,18 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     /**
      * @deprecated Use `a11y-report-text` instead
      */
-    "report-text"?: AttrString;
-    "a11y-report-text"?: AttrString;
-    "a11y-mute-text"?: AttrString;
-    "a11y-unmute-text"?: AttrString;
-    "a11y-fullscreen-text"?: AttrString;
-    "a11y-exit-fullscreen-text"?: AttrString;
+    "report-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-report-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-mute-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-unmute-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-fullscreen-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-exit-fullscreen-text"?: Marko.HTMLAttributes["aria-label"];
     "spinner-timeout"?: number;
     thumbnail?: string;
     track?: Marko.AttrTag<Marko.HTML.Track>;
-    "error-text"?: AttrString;
-    "a11y-play-text"?: AttrString;
-    "a11y-load-text"?: AttrString;
+    "error-text"?: string;
+    "a11y-play-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-load-text"?: Marko.HTMLAttributes["aria-label"];
     "on-play"?: (event: PlayPauseEvent) => void;
     "on-pause"?: (event: PlayPauseEvent) => void;
     "on-volume-change"?: (event: VolumeEvent) => void;

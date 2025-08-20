@@ -1,12 +1,11 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import DialogBase, {
     type Input as BaseInput,
 } from "../components/ebay-dialog-base/component";
 
 interface DrawerDialogInput extends BaseInput {
-    "a11y-maximize-text"?: AttrString;
-    "a11y-minimize-text"?: AttrString;
+    "a11y-maximize-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-minimize-text"?: Marko.HTMLAttributes["aria-label"];
     "no-handle"?: boolean;
     expanded?: boolean;
     "on-expanded"?: () => void;

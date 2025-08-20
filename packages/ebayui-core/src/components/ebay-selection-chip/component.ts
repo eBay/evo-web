@@ -1,9 +1,8 @@
 import type { WithNormalizedProps } from "../../global";
-import type { AttrBoolean } from "marko/tags-html";
 
 interface SelectionChipInput extends Omit<Marko.HTML.Button, `on${string}`> {
     renderBody?: Marko.Body;
-    selected?: AttrBoolean;
+    selected?: boolean;
     "on-click"?: () => void;
 }
 export interface Input extends WithNormalizedProps<SelectionChipInput> {}

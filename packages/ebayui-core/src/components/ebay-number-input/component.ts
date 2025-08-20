@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type {
     Input as TextboxInput,
     TextboxEvent,
@@ -13,7 +12,7 @@ export interface State {
 
 interface NumberInputInput extends Omit<TextboxInput, `on${string}`> {
     label?: Marko.AttrTag<{ renderBody: Marko.Body }>;
-    "a11y-delete-text"?: AttrString;
+    "a11y-delete-text"?: Marko.HTMLAttributes["aria-label"];
     "on-keydown"?: (event: TextboxEvent) => void;
     "on-keypress"?: (event: TextboxEvent) => void;
     "on-keyup"?: (event: TextboxEvent) => void;

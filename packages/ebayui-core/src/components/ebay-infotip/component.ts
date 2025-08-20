@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import EbayTooltipBase from "../components/ebay-tooltip-base/component-browser";
 import type { Input as TooltipBaseInput } from "../components/ebay-tooltip-base/component-browser";
@@ -22,7 +21,7 @@ interface InfotipInput
     "not-inline"?: TooltipBaseInput["not-inline"];
     "no-shift"?: TooltipBaseInput["no-shift"];
     content: Marko.AttrTag<Marko.HTML.Span>;
-    "a11y-close-button-text"?: AttrString;
+    "a11y-close-button-text"?: Marko.HTMLAttributes["aria-label"];
     "on-expand"?: () => void;
     "on-collapse"?: () => void;
 }

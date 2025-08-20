@@ -1,9 +1,8 @@
-import type { AttrString } from "marko/tags-html";
 export interface Input extends Marko.HTML.Div {
     max?: string;
     min?: string;
     chargerIcon?: "included" | "not-included";
-    units?: AttrString;
+    units?: string;
     /**
      * The aria-label accessibility label for the ccd component.
      * This is for internationalization.
@@ -21,6 +20,7 @@ export interface Input extends Marko.HTML.Div {
     chargerIcon,
     max,
     min,
+    units = "W",
     secondaryType = "none",
     // ...htmlInput
 }=input/>
@@ -31,6 +31,7 @@ export interface Input extends Marko.HTML.Div {
     chargerIcon,
     max,
     min,
+    units = "W",
     secondaryType = "none",
     ...rest
 }) => rest)(input)/>
@@ -52,7 +53,7 @@ export interface Input extends Marko.HTML.Div {
             <evo-icon-ccd-top class="ccd__top-icon"/>
             <div class="ccd__body">
                 <div>${min} - ${max}</div>
-                <div>W</div>
+                <div>${units}</div>
                 <if=secondaryType === "usbpd">
                     <div>USB PD</div>
                 </if>

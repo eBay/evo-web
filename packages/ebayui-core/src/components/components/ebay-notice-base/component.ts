@@ -1,4 +1,3 @@
-import type { AttrString, AttrClass } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../../global";
 
 interface NoticeBaseInput
@@ -8,15 +7,15 @@ interface NoticeBaseInput
     "prefix-class"?: string;
     root?: Marko.Renderable;
     "no-a11y-label"?: boolean;
-    "a11y-role-description"?: AttrString;
+    "a11y-role-description"?: Marko.HTMLAttributes["aria-label"];
     icon?: "none";
-    "icon-class"?: AttrClass;
+    "icon-class"?: Marko.HTMLAttributes["class"];
     "header-root"?: Marko.Renderable;
-    "a11y-text"?: AttrString;
-    "a11y-icon-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-icon-text"?: Marko.HTMLAttributes["aria-label"];
     "main-root"?: Marko.Renderable;
     footer?: Marko.AttrTag<Marko.Renderable>;
-    "a11y-dismiss-text"?: AttrString;
+    "a11y-dismiss-text"?: Marko.HTMLAttributes["aria-label"];
     title?: Marko.AttrTag<
         Marko.HTML.Title & {
             as?: Marko.Renderable;

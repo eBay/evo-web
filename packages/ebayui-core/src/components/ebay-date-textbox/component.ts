@@ -2,11 +2,11 @@ import Expander from "makeup-expander";
 import { DropdownUtil } from "../../common/dropdown";
 import { type DayISO, dateArgToISO } from "../../common/dates/date-utils";
 import type { WithNormalizedProps } from "../../global";
-import type { AttrString } from "marko/tags-html";
 import type {
     TextboxEvent,
     Input as TextboxInput,
 } from "../ebay-textbox/component-browser";
+import type { Input as CalendarInput } from "../ebay-calendar/component";
 import { getLocale, parse } from "../../common/dates";
 
 const MIN_WIDTH_FOR_DOUBLE_PANE = 600;
@@ -16,28 +16,15 @@ export interface InvalidDateEvent {
     index: number;
 }
 
-interface DateTextboxInput {
+interface DateTextboxInput extends Omit<CalendarInput, `on${string}`> {
     value?: Date | number | string;
     rangeEnd?: Date | number | string;
-    locale?: string;
-    range?: boolean;
     textbox?: Marko.AttrTag<TextboxInput>;
-    todayISO?: Date | number | string;
     disabled?: boolean;
-    "disable-before"?: Date | number | string;
-    "disable-after"?: Date | number | string;
-    "disable-weekdays"?: number[];
-    "disable-list"?: (Date | number | string)[];
     /** @deprecated use `@textbox-input` instead */
     "input-placeholder-text"?: string | [string, string];
     "collapse-on-select"?: boolean;
-    "get-a11y-show-month-text"?: (monthName: string) => string;
-    "a11y-open-popover-text"?: AttrString;
-    "a11y-selected-text"?: AttrString;
-    "a11y-range-start-text"?: AttrString;
-    "a11y-in-range-text"?: AttrString;
-    "a11y-range-end-text"?: AttrString;
-    "a11y-separator"?: string;
+    "a11y-open-popover-text"?: Marko.HTMLAttributes["aria-label"];
     "on-change"?: (
         event:
             | { selected: DayISO | null }

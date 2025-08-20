@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 static export const validPriorities = ["primary", "secondary", "tertiary"];
 static export const validSizes = ["large", "small"] as const;
 
@@ -16,7 +15,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
     fixedHeight?: boolean;
     truncate?: boolean;
     split?: string;
-    a11yLoadingText?: AttrString;
+    a11yLoadingText?: Marko.HTMLAttributes["aria-label"];
     onEscape?: (event: KeyboardEvent) => void;
 }
 

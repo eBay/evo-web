@@ -5,13 +5,12 @@ import { DropdownUtil } from "../../common/dropdown";
 import { scroll } from "../../common/element-scroll";
 import * as eventUtils from "../../common/event-utils";
 import safeRegex from "../../common/build-safe-regex";
-import type { AttrClass, AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 
 export interface ComboboxOption {
     text: string;
     value?: string;
-    class?: AttrClass;
+    class?: Marko.HTMLAttributes["class"];
     sticky?: boolean;
 }
 
@@ -27,7 +26,7 @@ interface ComboboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
     fluid?: boolean;
     autocomplete?: "list" | "none";
     "list-selection"?: "manual" | "automatic";
-    "floating-label"?: AttrString;
+    "floating-label"?: string;
     strategy?: "fixed" | "absolute";
     button?: Marko.Input<"button"> &
         Marko.AttrTag<{

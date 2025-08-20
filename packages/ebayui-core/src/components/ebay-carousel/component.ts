@@ -1,5 +1,4 @@
 import focusables from "makeup-focusables";
-import type { AttrClass, AttrString, AttrStyle } from "marko/tags-html";
 // TODO check carousel
 import { resizeUtil } from "../../common/event-utils";
 import { processHtmlAttributes } from "../../common/html-attributes";
@@ -16,8 +15,8 @@ const RIGHT = 1;
 interface Item {
     htmlAttributes?: Marko.HTML.LI;
     key?: string;
-    class?: AttrClass;
-    style?: AttrStyle;
+    class?: Marko.HTMLAttributes["class"];
+    style?: Marko.HTMLAttributes["style"];
     transform?: string;
     fullyVisible?: boolean;
     renderBody?: Marko.Body;
@@ -33,12 +32,12 @@ interface CarouselInput {
     "hidden-scrollbar"?: boolean;
     paused?: boolean;
     "no-peek"?: boolean;
-    class?: AttrClass;
-    style?: AttrStyle;
-    "a11y-previous-text"?: AttrString;
-    "a11y-next-text"?: AttrString;
-    "a11y-pause-text"?: AttrString;
-    "a11y-play-text"?: AttrString;
+    class?: Marko.HTMLAttributes["class"];
+    style?: Marko.HTMLAttributes["style"];
+    "a11y-previous-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-next-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-pause-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-play-text"?: Marko.HTMLAttributes["aria-label"];
     "aria-roledescription"?: string;
     "on-move"?: (event: { visibleIndexes: number[] }) => void;
     "on-scroll"?: (event: { index: number }) => void;
@@ -53,8 +52,8 @@ export interface Input extends WithNormalizedProps<CarouselInput> {}
 
 interface State {
     htmlAttributes: Record<string, string>;
-    classes: AttrClass;
-    style: AttrStyle;
+    classes: Marko.HTMLAttributes["class"];
+    style: Marko.HTMLAttributes["style"];
     config: {
         preserveItems?: boolean;
         nativeScrolling?: boolean;

@@ -1,6 +1,5 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import type { WithNormalizedProps } from "../../global";
-import type { AttrString } from "marko/tags-html";
 export interface Step extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
     current?: boolean;
     a11yText?: string;
@@ -16,7 +15,7 @@ static {
         step?: Marko.AttrTag<Step>;
         "default-state"?: "complete" | "upcoming" | "attention" | "current";
         "a11y-heading-tag"?: keyof Marko.NativeTags;
-        "a11y-heading-text"?: AttrString;
+        "a11y-heading-text"?: Marko.HTMLAttributes["aria-label"];
         "auto-paragraph"?: boolean;
     }
 }

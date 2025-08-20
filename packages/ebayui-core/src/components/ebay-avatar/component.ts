@@ -1,5 +1,4 @@
 import type { WithNormalizedProps } from "../../global";
-import type { AttrString } from "marko/tags-html";
 
 type Size = 32 | 40 | 48 | 56 | 64 | 96 | 128;
 
@@ -12,7 +11,7 @@ interface State {
 interface AvatarInput extends Omit<Marko.HTML.Div, `on${string}`> {
     username?: string;
     color?: string;
-    "a11y-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     size?: Size | `${Size}`;
     img?: Marko.AttrTag<Omit<Marko.HTML.Img, `on${string}`>>;
     "known-aspect-ratio"?: number;

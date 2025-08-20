@@ -1,4 +1,3 @@
-import type { AttrBoolean } from "marko/tags-html";
 export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     selected?: boolean;
     selectedChange?: (selected?: boolean) => void;

@@ -8,7 +8,6 @@ import setupMenu, {
 } from "../../common/menu-utils";
 import type { FilterMenuEvent } from "../ebay-filter-menu/component";
 import type { WithNormalizedProps } from "../../global";
-import type { AttrString } from "marko/tags-html";
 
 export interface FilterMenuButtonEvent {
     el?: Element;
@@ -21,12 +20,12 @@ export interface FilterMenuButtonEvent {
 interface FilterMenuButtonInput
     extends BaseMenuInput,
         Omit<Marko.HTML.Span, `on${string}`> {
-    text?: AttrString;
-    "footer-text"?: AttrString;
-    "a11y-footer-text"?: AttrString;
+    text?: string;
+    "footer-text"?: string;
+    "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
     footer?: WithNormalizedProps<
         Omit<Marko.HTML.Button, `on${string}`> & {
-            "a11y-footer-text"?: AttrString;
+            "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];
         }
     >;
     variant?: "form";
@@ -34,10 +33,10 @@ interface FilterMenuButtonInput
     "form-action"?: string;
     "form-method"?: string;
     disabled?: boolean;
-    "a11y-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     "search-header-value"?: string;
-    "search-header-placeholder-text"?: AttrString;
-    "a11y-search-header-clear-text"?: AttrString;
+    "search-header-placeholder-text"?: string;
+    "a11y-search-header-clear-text"?: Marko.HTMLAttributes["aria-label"];
     "on-expand"?: () => void;
     "on-change"?: (event: FilterMenuButtonEvent) => void;
     "on-collapse"?: (event: FilterMenuButtonEvent) => void;

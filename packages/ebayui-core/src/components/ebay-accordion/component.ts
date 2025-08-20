@@ -1,11 +1,10 @@
-import type { AttrBoolean, AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import type { Input as DetailsInput } from "../ebay-details/component-browser";
 
 export interface AccordionInput extends Omit<Marko.Input<"ul">, `on${string}`> {
     size?: "regular" | "large";
-    "auto-collapse"?: AttrBoolean;
-    "a11y-role-description"?: AttrString;
+    "auto-collapse"?: boolean;
+    "a11y-role-description"?: Marko.HTMLAttributes["aria-label"];
     details?: Marko.AttrTag<
         Omit<DetailsInput, "size" | "alignment" | `on${string}`>
     >;

@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 
 export interface CharacterCountEvent {
@@ -10,7 +9,7 @@ interface CharacterCountInput extends Omit<Marko.HTML.Span, `on${string}`> {
     renderBody?: Marko.Body;
     value?: string | number;
     max: number;
-    "clipped-text"?: AttrString;
+    "clipped-text"?: Marko.HTMLAttributes["aria-label"];
     "on-change"?: (event?: CharacterCountEvent) => void;
 }
 

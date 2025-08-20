@@ -1,5 +1,4 @@
 import { createLinear } from "makeup-active-descendant";
-import type { AttrString, AttrStringOrNumber } from "marko/tags-html";
 import typeahead from "makeup-typeahead";
 import { scroll } from "../../common/element-scroll";
 import * as eventUtils from "../../common/event-utils";
@@ -9,13 +8,13 @@ const TYPEAHEAD_TIMEOUT_LENGTH = 1300;
 export interface ChangeEvent {
     index: number;
     wasClicked: boolean;
-    selected: AttrStringOrNumber[];
+    selected: Option["value"][];
     el: HTMLOptionElement;
 }
 
 export interface Option extends Omit<Marko.HTML.Option, `on${string}`> {
     disabled?: boolean;
-    text?: AttrString;
+    text?: string;
     description?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
 }

@@ -1,20 +1,17 @@
-import { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import { handleEnterKeydown } from "../../common/event-utils";
+import type { Input as ComboboxInput } from "../ebay-combobox/component";
 
 export interface ChipsComboboxEvent {
     selected: string[];
 }
 
-interface ChipsComboboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
-    expanded?: boolean;
+interface ChipsComboboxInput extends Omit<ComboboxInput, `on${string}`> {
     fluid?: boolean;
     error?: boolean;
-    "list-selection"?: "manual" | "automatic";
     option?: Marko.AttrTag<{ text: string }>;
     selected?: string[];
-    roledescription?: AttrString;
-    "a11y-delete-button-text"?: AttrString;
+    "a11y-delete-button-text"?: Marko.HTMLAttributes["aria-label"];
     "on-expand"?: () => void;
     "on-collapse"?: () => void;
     "on-change"?: (event: ChipsComboboxEvent) => void;

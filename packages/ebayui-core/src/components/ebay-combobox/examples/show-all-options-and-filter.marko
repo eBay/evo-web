@@ -1,10 +1,9 @@
 import countryList from "./data.json";
-import type { AttrStringOrNumber, AttrClass } from "marko/tags-html";
 import type { Input as ComboboxInput } from "<ebay-combobox>";
 class {
     declare state: {
         autocompleteOption: "list" | "none";
-        value: AttrStringOrNumber;
+        value: ComboboxInput["value"];
     };
     timeout: any;
     onCreate() {
@@ -14,11 +13,11 @@ class {
         };
     }
     inputChange(e: {
-        currentInputValue: AttrStringOrNumber;
+        currentInputValue: ComboboxInput["value"];
         options?: Marko.AttrTag<{
             text: string;
             value?: string;
-            class?: AttrClass;
+            class?: Marko.HTMLAttributes["class"];
             sticky?: boolean;
         }>;
     }) {

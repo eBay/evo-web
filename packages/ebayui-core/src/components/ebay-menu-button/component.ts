@@ -9,7 +9,6 @@ import setupMenu, {
 import type { MenuEvent } from "../ebay-menu/component";
 import type { Input as EbayButtonInput } from "../ebay-button/index.marko";
 import { WithNormalizedProps } from "../../global";
-import type { AttrString } from "marko/tags-html";
 
 export interface MenuButtonEvent {
     el?: Element;
@@ -32,17 +31,17 @@ interface MenuButtonInput
     priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
     size?: EbayButtonInput["size"];
     transparent?: boolean;
-    "a11y-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     disabled?: boolean;
     split?: string;
     "no-toggle-icon"?: boolean;
     label?: Marko.AttrTag<{
         renderBody?: Marko.Body;
     }>;
-    "prefix-label"?: AttrString;
+    "prefix-label"?: string;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     status?: Marko.AttrTag<{ renderBody?: Marko.Body<[number, Boolean[]]> }>;
-    text?: AttrString;
+    text?: string;
     reverse?: boolean;
     strategy?: "absolute" | "fixed";
     "fix-width"?: boolean;

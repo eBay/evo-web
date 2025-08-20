@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import {
     dateArgToISO,
@@ -32,12 +31,12 @@ interface CalendarInput {
     "disable-list"?: (Date | number | string)[];
     "link-builder"?: (iso: string) => string | false | null | undefined;
     "get-a11y-show-month-text"?: (monthName: string) => string;
-    "a11y-selected-text"?: AttrString;
-    "a11y-range-start-text"?: AttrString;
-    "a11y-in-range-text"?: AttrString;
-    "a11y-range-end-text"?: AttrString;
-    "a11y-today-text"?: AttrString;
-    "a11y-disabled-text"?: AttrString;
+    "a11y-selected-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-range-start-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-in-range-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-range-end-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-today-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-disabled-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-separator"?: string;
     "on-select"?: (event: { iso: DayISO }) => void;
     "on-focus"?: (event: { iso: DayISO }) => void;

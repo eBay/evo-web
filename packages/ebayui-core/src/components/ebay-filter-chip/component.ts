@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 
 interface Image extends Marko.HTML.Img {
@@ -13,7 +12,7 @@ interface FilterChipInput
     variant?: "default" | "expressive" | "menu";
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     image?: Marko.AttrTag<Image>;
-    a11ySelectedText?: AttrString;
+    "a11y-selected-text"?: Marko.HTMLAttributes["aria-label"];
     expanded?: boolean;
     "on-click"?: (event: {
         originalEvent: MouseEvent;

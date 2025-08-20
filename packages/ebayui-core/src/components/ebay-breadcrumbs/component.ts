@@ -1,14 +1,13 @@
 import * as eventUtils from "../../common/event-utils";
 import { getMaxWidth } from "../../common/dom";
-import type { AttrClass, AttrString } from "marko/tags-html";
 import type { MenuEvent } from "../ebay-menu/component";
 import type { WithNormalizedProps } from "../../global";
 
 interface BreadcrumbsInput extends Omit<Marko.HTML.Nav, `on${string}`> {
     "a11y-heading-tag"?: keyof Marko.NativeTags;
-    "a11y-heading-text"?: AttrString;
-    "a11y-menu-button-text"?: AttrString;
-    class?: AttrClass;
+    "a11y-heading-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-menu-button-text"?: Marko.HTMLAttributes["aria-label"];
+    class?: Marko.HTMLAttributes["class"];
     item?: Marko.AttrTag<Marko.HTML.A | (Marko.HTML.Button & { href: never })>;
     "on-select"?: (event: { originalEvent: Event; el: HTMLElement }) => void;
 }

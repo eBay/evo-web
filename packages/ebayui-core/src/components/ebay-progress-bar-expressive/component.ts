@@ -1,4 +1,3 @@
-import { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import { useReducedMotion } from "../../common/dom";
 
@@ -13,7 +12,7 @@ interface Message {
 
 interface ProgressBarExpressiveInput
     extends Omit<Marko.HTML.Div, `on${string}`> {
-    "a11y-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     message?: Marko.AttrTag<Message>;
     size?: "medium" | "large";
 }

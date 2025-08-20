@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 import { defNames } from "./util";
 
@@ -17,7 +16,7 @@ interface IconInput extends Omit<Marko.Input<"svg">, `on${string}`> {
     _size?: string;
     _def?: () => IconDefs;
     "a11y-variant"?: "label";
-    "a11y-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     "no-skin-classes"?: boolean;
 }
 

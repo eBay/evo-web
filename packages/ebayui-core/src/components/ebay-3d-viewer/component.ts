@@ -1,16 +1,15 @@
-import type { AttrClass, AttrString } from "marko/tags-html";
 import { load as modelViewerLoad } from "@internal/model-viewer";
 import type { WithNormalizedProps } from "../../global";
 
 interface ViewerInput {
     "cdn-url"?: string;
     version?: string;
-    class?: AttrClass;
-    "a11y-text"?: AttrString;
+    class?: Marko.HTMLAttributes["class"];
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     src?: string;
-    "error-text"?: AttrString;
-    "a11y-start-text"?: AttrString;
-    "a11y-load-text"?: AttrString;
+    "error-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-start-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-load-text"?: Marko.HTMLAttributes["aria-label"];
     // TODO: import types from @google/model-viewer instead of
     // listing manually from https://modelviewer.dev/docs
     poster?: string;

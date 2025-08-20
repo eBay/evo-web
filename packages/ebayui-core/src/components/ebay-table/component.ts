@@ -1,5 +1,4 @@
 import focusables from "makeup-focusables";
-import { AttrString, AttrTriState } from "marko/tags-html";
 import { WithNormalizedProps } from "../../global";
 import { CheckboxEvent } from "../ebay-checkbox/component-browser";
 
@@ -10,7 +9,7 @@ export interface TableHeader extends Omit<Marko.HTML.TH, `on${string}`> {
     "row-header"?: boolean;
     name?: string;
     sort?: TableSort | boolean;
-    href?: AttrString;
+    href?: Marko.HTML.A["href"];
     renderBody: Marko.Body;
 }
 
@@ -26,7 +25,7 @@ export interface TableInput extends Omit<Marko.HTML.Div, `on${string}`> {
     header: Marko.AttrTag<WithNormalizedProps<TableHeader>>;
     mode?: "none" | "selection";
     "body-state"?: "loading" | "none";
-    "all-selected"?: AttrTriState;
+    "all-selected"?: Marko.HTMLAttributes["aria-checked"];
     row?: Marko.AttrTag<TableRow>;
     "frozen-header"?: boolean;
     density?: "compact" | "relaxed" | "none";
@@ -35,7 +34,7 @@ export interface TableInput extends Omit<Marko.HTML.Div, `on${string}`> {
     "a11y-select-row-text"?: string;
     "on-select"?: (event: {
         selected: Record<string, boolean>;
-        allSelected?: AttrTriState;
+        allSelected?: Marko.HTMLAttributes["aria-checked"];
     }) => void;
     "on-sort"?: (event: { sorted: Record<string, TableSort> }) => void;
 }
@@ -45,7 +44,7 @@ export interface Input extends WithNormalizedProps<TableInput> {}
 interface State {
     selected: Record<string, boolean>;
     sorted: Record<string, TableSort | undefined>;
-    allSelected: AttrTriState;
+    allSelected: Marko.HTMLAttributes["aria-checked"];
 }
 
 export default class EbayTable extends Marko.Component<Input, State> {
@@ -111,7 +110,7 @@ export default class EbayTable extends Marko.Component<Input, State> {
         return sorted;
     }
 
-    getAllSelectedState(input: Input): AttrTriState {
+    getAllSelectedState(input: Input): Marko.HTMLAttributes["aria-checked"] {
         if (input.allSelected) {
             return input.allSelected;
         }

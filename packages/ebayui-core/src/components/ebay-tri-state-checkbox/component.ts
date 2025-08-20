@@ -1,15 +1,14 @@
-import type { AttrTriState } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 
 export interface TriStateCheckboxEvent {
     originalEvent: Event;
     value: string;
-    checked: AttrTriState;
+    checked: Marko.HTMLAttributes["aria-checked"];
 }
 
 interface TriStateCheckboxInput
     extends Omit<Marko.HTML.Input, `on${string}` | "checked" | "type"> {
-    checked?: AttrTriState;
+    checked?: Marko.HTMLAttributes["aria-checked"];
     "skip-mixed"?: boolean;
     size?: "regular" | "large";
     "on-change"?: (event: TriStateCheckboxEvent) => void;
@@ -20,7 +19,7 @@ interface TriStateCheckboxInput
 export interface Input extends WithNormalizedProps<TriStateCheckboxInput> {}
 
 interface State {
-    checked: AttrTriState;
+    checked: Marko.HTMLAttributes["aria-checked"];
 }
 
 class TriStateCheckbox extends Marko.Component<Input, State> {

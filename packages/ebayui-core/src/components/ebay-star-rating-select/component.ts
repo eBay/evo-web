@@ -1,4 +1,3 @@
-import type { AttrString } from "marko/tags-html";
 import type { WithNormalizedProps } from "../../global";
 
 export interface StarRatingEvent<T extends Event> {
@@ -9,7 +8,7 @@ export interface StarRatingEvent<T extends Event> {
 interface StarRatingSelectInput extends Omit<Marko.HTML.Div, `on${string}`> {
     value?: string | number;
     "a11y-star-text"?: [string, string, string, string, string];
-    "a11y-text"?: AttrString;
+    "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     disabled?: boolean;
     "on-change"?: (event: StarRatingEvent<PointerEvent>) => void;
     "on-focus"?: (event: StarRatingEvent<FocusEvent>) => void;

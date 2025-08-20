@@ -1,5 +1,4 @@
 import countryList from "./data.json";
-import type { AttrStringOrNumber, AttrClass } from "marko/tags-html";
 import type { Input as ComboboxInput } from "<ebay-combobox>";
 class {
     declare state: {
@@ -8,7 +7,7 @@ class {
             name: string;
         }>;
         autocompleteOption: "list" | "none";
-        value: AttrStringOrNumber;
+        value: ComboboxInput["value"];
     };
     timeout: any;
     onCreate() {
@@ -19,11 +18,11 @@ class {
         };
     }
     async inputChange(e: {
-        currentInputValue: AttrStringOrNumber;
+        currentInputValue: ComboboxInput["value"];
         options?: Marko.AttrTag<{
             text: string;
             value?: string;
-            class?: AttrClass;
+            class?: Marko.HTMLAttributes["class"];
             sticky?: boolean;
         }>;
     }) {
@@ -34,7 +33,7 @@ class {
         this.state.autocompleteOption = "list";
     }
 
-    async searchCountry(currentInputValue: AttrStringOrNumber): Promise<
+    async searchCountry(currentInputValue: ComboboxInput["value"]): Promise<
         Array<{
             code: string;
             name: string;
