@@ -65,7 +65,7 @@
 }
 
 .toast-dialog__window {
-    margin: var(--spacing-100) var(--spacing-200) var(--spacing-200);
+    padding: var(--spacing-100) var(--spacing-200) var(--spacing-200);
 }
 
 .toast-dialog__header {
@@ -80,7 +80,7 @@
 }
 
 /* inherits from .icon-btn */
-button.toast-dialog__close {
+button.icon-btn.toast-dialog__close {
     align-self: flex-start;
     border: 0;
     flex-shrink: 0;
@@ -101,7 +101,7 @@ button.toast-dialog__close {
     }
 }
 
-button.toast-dialog__close > svg {
+button.icon-btn.toast-dialog__close > svg {
     fill: currentColor;
 }
 
@@ -199,6 +199,6 @@ button.toast-dialog__close > svg {
     }
 
     .toast-dialog__window {
-        margin: var(--spacing-200) var(--spacing-300) var(--spacing-300);
+        padding: var(--spacing-200) var(--spacing-300) var(--spacing-300);
     }
 }

@@ -61,7 +61,7 @@
 }
 
 .toast-dialog__window {
-    margin: var(--spacing-100) var(--spacing-200) var(--spacing-200);
+    padding: var(--spacing-100) var(--spacing-200) var(--spacing-200);
 }
 
 .toast-dialog__header {
@@ -72,7 +72,7 @@
 .toast-dialog__title {
     margin: 0;
 }
-button.toast-dialog__close {
+button.icon-btn.toast-dialog__close {
     align-self: flex-start;
     border: 0;
     color: var(
@@ -83,15 +83,15 @@ button.toast-dialog__close {
     margin-inline-start: auto;
     padding: 0;
 }
-button.toast-dialog__close:focus {
+button.icon-btn.toast-dialog__close:focus {
     outline: 2px solid var(--color-foreground-on-information);
 }
-button.toast-dialog__close:focus,
-button.toast-dialog__close:hover {
+button.icon-btn.toast-dialog__close:focus,
+button.icon-btn.toast-dialog__close:hover {
     color: var(--color-state-primary-hover);
 }
 
-button.toast-dialog__close > svg {
+button.icon-btn.toast-dialog__close > svg {
     fill: currentColor;
 }
 
@@ -175,6 +175,6 @@ button.toast-dialog__close > svg {
         width: auto;
     }
     .toast-dialog__window {
-        margin: var(--spacing-200) var(--spacing-300) var(--spacing-300);
+        padding: var(--spacing-200) var(--spacing-300) var(--spacing-300);
     }
 }
