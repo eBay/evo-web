@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.12.1
+
+### Patch Changes
+
+- [#259](https://github.com/eBay/evo-web/pull/259) [`9b9ecd2`](https://github.com/eBay/evo-web/commit/9b9ecd20669bdd8264b5903a5ad5d590de524a78) Thanks [@LuLaValva](https://github.com/LuLaValva)! - fix(skeleton): align AI gradients
+
 ## 19.12.0
 
 ### Minor Changes
