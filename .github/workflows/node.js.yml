@@ -35,6 +35,15 @@ jobs:
             - uses: codecov/codecov-action@v5
               with:
                 token: ${{ secrets.CODECOV_TOKEN }}
+            - name: Check for uncommitted changes
+              run: |
+                if output=$(git status --porcelain) && [ -z "$output" ]; then
+                  echo "Working directory is clean. No uncommitted changes."
+                else
+                  echo "Working directory has uncommitted changes or untracked files. Please run the build and check these files in as part of your PR:"
+                  echo "$output"
+                  exit 1 # Fail the CI run if there are uncommitted changes
+                fi
     # Deployment job
     deploy:
         if: github.ref == 'refs/heads/main'

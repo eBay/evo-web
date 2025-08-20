@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+codecov*
 /dist/
 
 # Coverage directory used by tools like istanbul

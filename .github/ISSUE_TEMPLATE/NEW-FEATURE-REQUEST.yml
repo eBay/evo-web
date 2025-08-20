@@ -37,5 +37,5 @@ body:
       - label: Supports dark mode.
       - label: Supports responsive design.
       - label: Tokens have been provided (or already exist).
-      - label: Successful accessibility review with Core A11Y Team.
+      - label: Successful accessibility review with Core A11Y Team and MIND pattern is created.
       - label: Successful frontend review with eBayUI Team.
