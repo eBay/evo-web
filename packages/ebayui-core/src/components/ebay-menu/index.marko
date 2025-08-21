@@ -99,7 +99,7 @@ $ var separatorMap = component.getSeparatorMap(input);
     </div>
     <if(footerButton)>
         <div class=`${baseClass}__footer` >
-            <ebay-button on-click("emit", "footer-button-click") ...processHtmlAttributes(footerButton)>
+            <ebay-button on-click("emit", "footer-button-click") ...footerButton>
                 <${footerButton}/>
             </>
         </div>
