@@ -7,6 +7,7 @@ export interface Input {
     on-expand("emit", "expand")
     on-change("emit", "change")
     on-select("emit", "select")
+    on-footer-button-click("emit", "footer-button-click")
     text="Filter Items"
     variant="filter"
     ...input>
@@ -24,9 +25,7 @@ export interface Input {
     <@item value="item 3">
         item 3
     </@item>
-    <@footer>
-        <ebay-button priority="tertiary">
+    <@footer-button priority="tertiary">
             Apply
-        </ebay-button>
-    </@footer>
+    </@footer-button>
 </ebay-menu-button>

@@ -164,12 +164,13 @@ export default {
                 category: "@attribute tags",
             },
         },
-        footer: {
-            name: "@footer",
+        footerButton: {
+            name: "@footerButton",
             table: {
                 category: "@attribute tags",
             },
-            description: "The footer content. Generally renders a button. Used for filter type generally."
+            description:
+                "The footer content. Renders an ebay-button component. Used for filter type generally.",
         },
         item: {
             name: "@item",
@@ -206,6 +207,16 @@ export default {
                 category: "Events",
                 defaultValue: {
                     summary: "",
+                },
+            },
+        },
+        "onFooter-button-click": {
+            action: "on-footer-button-click",
+            description: "Triggered on click of footer button",
+            table: {
+                category: "Events",
+                defaultValue: {
+                    summary: "{ originalEvent }",
                 },
             },
         },

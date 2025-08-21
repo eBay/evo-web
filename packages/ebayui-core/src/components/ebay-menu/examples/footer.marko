@@ -3,7 +3,8 @@
     ...input
     on-keydown("emit", "keydown")
     on-change("emit", "change")
-    on-select("emit", "select")>
+    on-select("emit", "select")
+    on-footer-button-click("emit", "footer-button-click")>
     <@item value="item 1">
         item 1
     </@item>
@@ -13,9 +14,7 @@
     <@item value="item 3">
         item 3
     </@item>
-    <@footer>
-        <ebay-button priority="tertiary">
-            Apply
-        </ebay-button>
-    </@footer>
+    <@footer-button priority="tertiary">
+        Apply
+    </@footer-button>
 </ebay-menu>

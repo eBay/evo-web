@@ -7,7 +7,7 @@ import setupMenu, {
     type MenuState,
 } from "../../common/menu-utils";
 import type { MenuEvent } from "../ebay-menu/component";
-import type { Input as EbayButtonInput } from "../ebay-button/index.marko";
+import type { Input as EbayButtonInput, ButtonEvent } from "../ebay-button/index.marko";
 import { WithNormalizedProps } from "../../global";
 import type { AttrString } from "marko/tags-html";
 
@@ -41,7 +41,8 @@ interface MenuButtonInput
     }>;
     "prefix-label"?: AttrString;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
-    footer?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
+    "footer-button"?: Marko.AttrTag<EbayButtonInput>;
+    "on-footer-button-click"?: (event: ButtonEvent<MouseEvent>) => void;
     status?: Marko.AttrTag<{ renderBody?: Marko.Body<[number, Boolean[]]> }>;
     text?: AttrString;
     reverse?: boolean;

@@ -884,7 +884,6 @@ exports[`menu > renders with footer version 1`] = `
       [36m<button[39m
         [33mclass[39m=[32m"btn btn--tertiary"[39m
         [33mdata-ebayui[39m=[32m""[39m
-        [33mdata-marko[39m=[32m"{\\"onclick\\":\\"handleClick s0-0-11-1 false\\",\\"onkeydown\\":\\"handleKeydown s0-0-11-1 false\\",\\"onfocus\\":\\"handleFocus s0-0-11-1 false\\",\\"onblur\\":\\"handleBlur s0-0-11-1 false\\"}"[39m
         [33mtype[39m=[32m"button"[39m
       [36m>[39m
         [0mApply[0m

@@ -87,13 +87,23 @@ export default {
             description:
                 "Passed as the `aria-label` directly to the badge. Required only if badge number is provided",
         },
-        footer: {
-            name: "@footer",
+        footerButton: {
+            name: "@footer-button",
             table: {
                 category: "@attribute tags",
             },
             description:
-                "The footer content. Generally renders a button. Used for filter type generally.",
+                "The footer content. Renders an ebay-button. Used for filter type generally.",
+        },
+        "onFooter-button-click": {
+            action: "on-footer-button-click",
+            description: "Triggered on click of footer button",
+            table: {
+                category: "Events",
+                defaultValue: {
+                    summary: "{ }",
+                },
+            },
         },
         onKeydown: {
             action: "on-keydown",

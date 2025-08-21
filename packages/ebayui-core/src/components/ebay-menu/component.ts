@@ -2,6 +2,7 @@ import * as scrollKeyPreventer from "makeup-prevent-scroll-keys";
 import { createLinear } from "makeup-roving-tabindex";
 import typeahead from "makeup-typeahead";
 import * as eventUtils from "../../common/event-utils";
+import type { Input as EbayButtonInput, ButtonEvent } from "../ebay-button/index.marko";
 import setupMenu, {
     type MenuItem,
     type BaseMenuInput,
@@ -36,8 +37,9 @@ interface MenuInput
     fixed?: boolean;
     "fix-width"?: boolean;
     renderBody?: Marko.Body;
-    footer?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
+    "footer-button"?: Marko.AttrTag<EbayButtonInput>;
     "on-keydown"?: (event: MenuEvent) => void;
+    "on-footer-button-click"?: (event: ButtonEvent<MouseEvent>) => void;
     "on-change"?: (event: MenuEvent) => void;
     "on-select"?: (event: MenuEvent) => void;
 }

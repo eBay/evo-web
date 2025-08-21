@@ -7,7 +7,7 @@ $ const {
     reverse,
     fixed,
     fixWidth,
-    footer,
+    footerButton,
     item: items = [],
     variant,
     ariaLabel,
@@ -97,9 +97,11 @@ $ var separatorMap = component.getSeparatorMap(input);
             </div>
         </for>
     </div>
-    <if(footer)>
-        <div class=`${baseClass}__footer` ...processHtmlAttributes(footer)>
-            <${footer}/>
+    <if(footerButton)>
+        <div class=`${baseClass}__footer` >
+            <ebay-button on-click("emit", "footer-button-click") ...processHtmlAttributes(footerButton)>
+                <${footerButton}/>
+            </>
         </div>
     </if>
 </span>

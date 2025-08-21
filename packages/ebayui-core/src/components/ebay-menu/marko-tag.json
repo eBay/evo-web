@@ -11,7 +11,7 @@
     "@type": "string",
     "@reverse": "boolean",
     "@fix-width": "boolean",
-    "@footer <footer>": {
+    "@footer-button <footer-button>": {
         "@*": {
             "targetProperty": null,
             "type": "expression"

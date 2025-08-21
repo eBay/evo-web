@@ -31,7 +31,7 @@
         },
         "@html-attributes": "expression"
     },
-    "@footer <footer>": {
+    "@footer-button <footer-button>": {
         "@*": {
             "targetProperty": null,
             "type": "expression"
