@@ -16,7 +16,8 @@ import PrefixLabelTemplate from "./examples/prefix-label.marko";
 import PrefixLabelTemplateCode from "./examples/prefix-label.marko?raw";
 import FilterTemplate from "./examples/filter.marko";
 import FilterTemplateCode from "./examples/filter.marko?raw";
-
+import FooterTemplate from "./examples/footer.marko";
+import FooterTemplateCode from "./examples/footer.marko?raw";
 import Component from "./index.marko";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
@@ -163,6 +164,13 @@ export default {
                 category: "@attribute tags",
             },
         },
+        footer: {
+            name: "@footer",
+            table: {
+                category: "@attribute tags",
+            },
+            description: "The footer content. Generally renders a button. Used for filter type generally."
+        },
         item: {
             name: "@item",
             table: {
@@ -277,6 +285,11 @@ export const Badged = buildExtensionTemplate(
 export const Filter = buildExtensionTemplate(
     FilterTemplate,
     FilterTemplateCode,
+);
+
+export const Footer = buildExtensionTemplate(
+    FooterTemplate,
+    FooterTemplateCode,
 );
 
 export const PrefixLabel = buildExtensionTemplate(

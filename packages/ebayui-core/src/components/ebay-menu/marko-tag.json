@@ -11,6 +11,13 @@
     "@type": "string",
     "@reverse": "boolean",
     "@fix-width": "boolean",
+    "@footer <footer>": {
+        "@*": {
+            "targetProperty": null,
+            "type": "expression"
+        },
+        "@html-attributes": "expression"
+    },
     "@item <item>[]": {
         "@*": {
             "targetProperty": null,

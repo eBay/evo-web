@@ -1,0 +1,32 @@
+export interface Input {
+    renderBody: Marko.Body;
+}
+
+<ebay-menu-button
+    on-collapse("emit", "collapse")
+    on-expand("emit", "expand")
+    on-change("emit", "change")
+    on-select("emit", "select")
+    text="Filter Items"
+    variant="filter"
+    ...input>
+    <@status|count, checkedItems|>
+        <if(count > 0)>
+            (+${count})
+        </if>
+    </@status>
+    <@item value="item 1">
+        item 1
+    </@item>
+    <@item value="item 2">
+        item 2
+    </@item>
+    <@item value="item 3">
+        item 3
+    </@item>
+    <@footer>
+        <ebay-button priority="tertiary">
+            Apply
+        </ebay-button>
+    </@footer>
+</ebay-menu-button>

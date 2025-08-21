@@ -4,7 +4,7 @@ import * as testUtils from "../../../common/test-utils/server";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../menu.stories"; // import all stories from the stories file
 
-const { Default, Typeahead, Badged, Sprites, Separator, Filter } =
+const { Default, Typeahead, Badged, Sprites, Separator, Filter, Footer } =
     composeStories(stories);
 const htmlSnap = snapshotHTML(__dirname);
 
@@ -46,7 +46,9 @@ describe("menu", () => {
     it("renders with filter version", async () => {
         await htmlSnap(Filter);
     });
-
+    it("renders with footer version", async () => {
+        await htmlSnap(Footer);
+    });
     ["radio", "checkbox"].forEach((type) => {
         [true, false].forEach((checked) => {
             it(`renders with type=${type} and checked=${checked}`, async () => {

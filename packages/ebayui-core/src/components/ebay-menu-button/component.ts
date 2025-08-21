@@ -41,6 +41,7 @@ interface MenuButtonInput
     }>;
     "prefix-label"?: AttrString;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
+    footer?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     status?: Marko.AttrTag<{ renderBody?: Marko.Body<[number, Boolean[]]> }>;
     text?: AttrString;
     reverse?: boolean;

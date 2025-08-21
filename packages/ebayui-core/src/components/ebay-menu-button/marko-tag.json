@@ -31,6 +31,14 @@
         },
         "@html-attributes": "expression"
     },
+    "@footer <footer>": {
+        "@*": {
+            "targetProperty": null,
+            "type": "expression"
+        },
+        "@html-attributes": "expression"
+    },
+
     "@disabled": "boolean",
     "@collapseOnSelect": "boolean",
     "@variant": "string",

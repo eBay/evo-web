@@ -15,6 +15,8 @@ import TypeaheadTemplate from "./examples/typeahead.marko";
 import TypeaheadTemplateCode from "./examples/typeahead.marko?raw";
 import SeparatorTemplate from "./examples/separator.marko";
 import SeparatorTemplateCode from "./examples/separator.marko?raw";
+import FooterTemplate from "./examples/footer.marko";
+import FooterTemplateCode from "./examples/footer.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
@@ -84,6 +86,14 @@ export default {
             },
             description:
                 "Passed as the `aria-label` directly to the badge. Required only if badge number is provided",
+        },
+        footer: {
+            name: "@footer",
+            table: {
+                category: "@attribute tags",
+            },
+            description:
+                "The footer content. Generally renders a button. Used for filter type generally.",
         },
         onKeydown: {
             action: "on-keydown",
@@ -162,4 +172,8 @@ export const Sprites = buildExtensionTemplate(
 export const Separator = buildExtensionTemplate(
     SeparatorTemplate,
     SeparatorTemplateCode,
+);
+export const Footer = buildExtensionTemplate(
+    FooterTemplate,
+    FooterTemplateCode,
 );

@@ -36,6 +36,7 @@ interface MenuInput
     fixed?: boolean;
     "fix-width"?: boolean;
     renderBody?: Marko.Body;
+    footer?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
     "on-keydown"?: (event: MenuEvent) => void;
     "on-change"?: (event: MenuEvent) => void;
     "on-select"?: (event: MenuEvent) => void;

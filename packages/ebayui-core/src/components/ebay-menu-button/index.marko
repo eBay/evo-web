@@ -16,6 +16,7 @@ $ const {
     borderless,
     size,
     partiallyDisabled,
+    footer,
     priority: inputPriority,
     disabled,
     variant: inputVariant,
@@ -128,6 +129,7 @@ $ var separatorCount = 0;
         type=type
         fixWidth=fixWidth
         tabindex=-1
+        footer=footer
         on-keydown("handleMenuKeydown")
         on-change("handleMenuChange")
         on-select("handleMenuSelect")
