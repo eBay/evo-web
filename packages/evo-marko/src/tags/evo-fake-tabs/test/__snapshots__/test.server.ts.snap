@@ -1,0 +1,260 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fake-tabs > renders default 1`] = `
+<DocumentFragment>
+  <div
+    class="fake-tabs"
+  >
+    <ul
+      class="fake-tabs__items"
+    >
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 1
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a
+          aria-current="page"
+        >
+          Tab 2
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 3
+        </a>
+      </li>
+    </ul>
+    <div
+      class="fake-tabs__content"
+    >
+      <div
+        class="fake-tabs__panel"
+      >
+        <div
+          class="fake-tabs__cell"
+        >
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, quam at lacinia pretium, lacus urna luctus nisi, eget molestie massa tortor id lacus. Aenean ac fringilla lacus. Fusce vel dui ex. Vivamus luctus egestas nulla, non hendrerit purus luctus at. Maecenas vel diam enim. Pellentesque quam neque, porttitor tincidunt vestibulum at, dapibus sit amet tortor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`fake-tabs > renders no panel 1`] = `
+<DocumentFragment>
+  <div
+    class="fake-tabs"
+  >
+    <ul
+      class="fake-tabs__items"
+    >
+      <li
+        class="fake-tabs__item"
+      >
+        <a
+          aria-current="page"
+        >
+          Tab 1
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 2
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 3
+        </a>
+      </li>
+    </ul>
+    <div
+      class="fake-tabs__content"
+    >
+      <div
+        class="fake-tabs__panel"
+      >
+        <div
+          class="fake-tabs__cell"
+        >
+          <div />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`fake-tabs > renders with no selected index 1`] = `
+<DocumentFragment>
+  <div
+    class="fake-tabs"
+  >
+    <ul
+      class="fake-tabs__items"
+    >
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 1
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 2
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 3
+        </a>
+      </li>
+    </ul>
+    <div
+      class="fake-tabs__content"
+    >
+      <div
+        class="fake-tabs__panel"
+      >
+        <div
+          class="fake-tabs__cell"
+        >
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, quam at lacinia pretium, lacus urna luctus nisi, eget molestie massa tortor id lacus. Aenean ac fringilla lacus. Fusce vel dui ex. Vivamus luctus egestas nulla, non hendrerit purus luctus at. Maecenas vel diam enim. Pellentesque quam neque, porttitor tincidunt vestibulum at, dapibus sit amet tortor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`fake-tabs > renders with other selected index 1`] = `
+<DocumentFragment>
+  <div
+    class="fake-tabs"
+  >
+    <ul
+      class="fake-tabs__items"
+    >
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 1
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 2
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a
+          aria-current="page"
+        >
+          Tab 3
+        </a>
+      </li>
+    </ul>
+    <div
+      class="fake-tabs__content"
+    >
+      <div
+        class="fake-tabs__panel"
+      >
+        <div
+          class="fake-tabs__cell"
+        >
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, quam at lacinia pretium, lacus urna luctus nisi, eget molestie massa tortor id lacus. Aenean ac fringilla lacus. Fusce vel dui ex. Vivamus luctus egestas nulla, non hendrerit purus luctus at. Maecenas vel diam enim. Pellentesque quam neque, porttitor tincidunt vestibulum at, dapibus sit amet tortor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`fake-tabs > renders with tabMatchesCurrentUrl=false 1`] = `
+<DocumentFragment>
+  <div
+    class="fake-tabs"
+  >
+    <ul
+      class="fake-tabs__items"
+    >
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 1
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a
+          aria-current="true"
+        >
+          Tab 2
+        </a>
+      </li>
+      <li
+        class="fake-tabs__item"
+      >
+        <a>
+          Tab 3
+        </a>
+      </li>
+    </ul>
+    <div
+      class="fake-tabs__content"
+    >
+      <div
+        class="fake-tabs__panel"
+      >
+        <div
+          class="fake-tabs__cell"
+        >
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, quam at lacinia pretium, lacus urna luctus nisi, eget molestie massa tortor id lacus. Aenean ac fringilla lacus. Fusce vel dui ex. Vivamus luctus egestas nulla, non hendrerit purus luctus at. Maecenas vel diam enim. Pellentesque quam neque, porttitor tincidunt vestibulum at, dapibus sit amet tortor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,40 @@
+<const/{
+    selectedIndex = 0,
+    class: inputClass,
+    tab: tabs = [],
+    tabMatchesCurrentUrl,
+    content,
+    ...htmlInput
+}=input>
+export interface Input extends Marko.HTML.Div {
+    selectedIndex?: number;
+    tab?: Marko.AttrTag<Marko.HTML.A>;
+    tabMatchesCurrentUrl?: boolean;
+}
+<const/tabAriaCurrent=(
+    (tabMatchesCurrentUrl === false
+        ? "true"
+        : "page") as Marko.HTML.LI["aria-current"]
+)>
+
+<div ...htmlInput class=["fake-tabs", inputClass]>
+    <ul class="fake-tabs__items">
+        <for|tab, i| of=tabs || []>
+            <const/{ href, class: tabClass, ...htmlTab }=tab>
+            <li class=[tabClass, "fake-tabs__item"]>
+                <a
+                    aria-current=selectedIndex === i && tabAriaCurrent
+                    ...htmlTab/>
+            </li>
+        </for>
+    </ul>
+    <div class="fake-tabs__content">
+        <div class="fake-tabs__panel">
+            <div class="fake-tabs__cell">
+                <div>
+                    <${content}/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
