@@ -1,0 +1,15 @@
+static type Size = "small" | "large";
+export interface Input extends Marko.HTML.Div {
+    size?: Size;
+    multiline?: boolean;
+}
+<const/{ size, multiline, class: inputClass, ...htmlInput }=input>
+
+<div
+    class=[
+        "skeleton__text",
+        multiline && "skeleton__text--multiline",
+        size === "large" && `skeleton__text--large`,
+        inputClass,
+    ]
+    ...htmlInput/>

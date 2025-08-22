@@ -1,0 +1,24 @@
+static const getData = async (): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve("Button"), 2000);
+    });
+};
+
+<div class="demo-content-container">
+    <try>
+        <@placeholder>
+            <evo-skeleton a11yText="Loading">
+                <evo-skeleton-button/>
+            </evo-skeleton>
+        </@placeholder>
+        <await|data|=getData()>
+            <evo-button>${data}</evo-button>
+        </await>
+    </try>
+</div>
+
+<style>
+    .demo-content-container {
+        width: 88px;
+    }
+</style>

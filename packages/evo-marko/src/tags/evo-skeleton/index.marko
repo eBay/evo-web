@@ -1,0 +1,8 @@
+import type { AttrString } from "marko/tags-html";
+export interface Input extends Marko.HTML.Div {
+    a11yText?: AttrString;
+}
+
+<const/{ class: inputClass, a11yText, ...htmlInput }=input>
+
+<div role="img" aria-label=a11yText class=["skeleton", inputClass] ...htmlInput/>

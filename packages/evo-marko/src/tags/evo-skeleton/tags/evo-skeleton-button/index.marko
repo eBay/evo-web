@@ -1,0 +1,9 @@
+static type Size = "small" | "large";
+export interface Input extends Marko.HTML.Div {
+    size?: Size;
+}
+<const/{ class: inputClass, size, ...htmlInput }=input>
+
+<div
+    class=["skeleton__button", size && `skeleton__button--${size}`, inputClass]
+    ...htmlInput/>
