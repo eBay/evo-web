@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.11.1
+
+### Patch Changes
+
+- [#271](https://github.com/eBay/evo-web/pull/271) [`97adeb9`](https://github.com/eBay/evo-web/commit/97adeb9373eec3bd07a5e32ec0ffb84fe08a6fd8) Thanks [@agliga](https://github.com/agliga)! - fix(selection-chip): moved animated logic to onCreate
+
 ## 15.11.0
 
 ### Minor Changes
