@@ -1,5 +1,17 @@
 # eBayUI-Core Changelog
 
+## 15.11.0
+
+### Minor Changes
+
+- [`6775e83`](https://github.com/eBay/evo-web/commit/6775e83876884db6b38424b3a3197679dfff9a81) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (#229)
+
+- [#267](https://github.com/eBay/evo-web/pull/267) [`30708a1`](https://github.com/eBay/evo-web/commit/30708a1274f1f479f496b2897039c0cc9019180c) Thanks [@agliga](https://github.com/agliga)! - feat(menu/menu-button): added support for footer
+
+### Patch Changes
+
+- [#261](https://github.com/eBay/evo-web/pull/261) [`7b62edf`](https://github.com/eBay/evo-web/commit/7b62edf1daa66da87b79fec5b1c74ff5e51ac7bc) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Stop using private TypeScript types from Marko
+
 ## 15.10.0
 
 ### Minor Changes

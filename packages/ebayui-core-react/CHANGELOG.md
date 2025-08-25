@@ -1,5 +1,13 @@
 # @ebay/ui-core-react
 
+## 8.12.0
+
+### Minor Changes
+
+- [#258](https://github.com/eBay/evo-web/pull/258) [`a102a15`](https://github.com/eBay/evo-web/commit/a102a155c0b07cd0b5cdf4218f22a104ffca1209) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayPhoneInput) add new phone input react component
+
+- [`6775e83`](https://github.com/eBay/evo-web/commit/6775e83876884db6b38424b3a3197679dfff9a81) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (#229)
+
 ## 8.11.2
 
 ### Patch Changes

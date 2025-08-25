@@ -7,7 +7,10 @@ import setupMenu, {
     type MenuState,
 } from "../../common/menu-utils";
 import type { MenuEvent } from "../ebay-menu/component";
-import type { Input as EbayButtonInput, ButtonEvent } from "../ebay-button/index.marko";
+import type {
+    Input as EbayButtonInput,
+    ButtonEvent,
+} from "../ebay-button/index.marko";
 import { WithNormalizedProps } from "../../global";
 
 export interface MenuButtonEvent {

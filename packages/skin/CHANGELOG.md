@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.13.0
+
+### Minor Changes
+
+- [#262](https://github.com/eBay/evo-web/pull/262) [`32db941`](https://github.com/eBay/evo-web/commit/32db9417a61fa03f91039d6329a214b8321684f8) Thanks [@agliga](https://github.com/agliga)! - feat(chips): added state layer to chips
+
+### Patch Changes
+
+- [`01b7fba`](https://github.com/eBay/evo-web/commit/01b7fbab8cc61a57eb9b3a45d70e8c6bcfb32bc3) Thanks [@agliga](https://github.com/agliga)! - fix(dialog): removed overflow-y from window
+
+- [#263](https://github.com/eBay/evo-web/pull/263) [`4562b2f`](https://github.com/eBay/evo-web/commit/4562b2f6f70aff5986013b8574ee32b1e0e7481f) Thanks [@agliga](https://github.com/agliga)! - fix(toast): swapped margin to padding and added a stronger selector for toast close button
+
 ## 19.12.1
 
 ### Patch Changes

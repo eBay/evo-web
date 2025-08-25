@@ -2,7 +2,10 @@ import * as scrollKeyPreventer from "makeup-prevent-scroll-keys";
 import { createLinear } from "makeup-roving-tabindex";
 import typeahead from "makeup-typeahead";
 import * as eventUtils from "../../common/event-utils";
-import type { Input as EbayButtonInput, ButtonEvent } from "../ebay-button/index.marko";
+import type {
+    Input as EbayButtonInput,
+    ButtonEvent,
+} from "../ebay-button/index.marko";
 import setupMenu, {
     type MenuItem,
     type BaseMenuInput,

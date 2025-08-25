@@ -9,12 +9,19 @@ export type Icon =
     'afterpay18Colored' |
     'afterpay24Colored' |
     'afterpay32Colored' |
+    'afterpayLogo24Colored' |
     'ai16' |
     'ai20' |
     'ai24' |
     'aiFilled16' |
     'aiFilled20' |
     'aiFilled24' |
+    'aiSearch16' |
+    'aiSearch20' |
+    'aiSearch24' |
+    'aiShirt16' |
+    'aiShirt20' |
+    'aiShirt24' |
     'aiSpectrum16Colored' |
     'aiSpectrum20Colored' |
     'aiSpectrum24Colored' |
@@ -94,6 +101,7 @@ export type Icon =
     'bankAccount18Colored' |
     'bankAccount24Colored' |
     'bankAccount32Colored' |
+    'bankGroupLogo24Colored' |
     'barChart16' |
     'barChart24' |
     'bids16' |
@@ -216,8 +224,13 @@ export type Icon =
     'coupon16' |
     'coupon24' |
     'creditCard16' |
+    'creditCard20' |
     'creditCard24' |
     'creditCard64' |
+    'creditCardCvvBack20' |
+    'creditCardCvvBack24' |
+    'creditCardCvvFront20' |
+    'creditCardCvvFront24' |
     'crop24' |
     'customize16' |
     'customize24' |
@@ -230,6 +243,10 @@ export type Icon =
     'densityDefault24' |
     'densityRelaxed16' |
     'densityRelaxed24' |
+    'densityRowCompact16' |
+    'densityRowCompact24' |
+    'densityRowRelaxed16' |
+    'densityRowRelaxed24' |
     'diamond16' |
     'diamond24' |
     'diners12Colored' |
@@ -432,8 +449,10 @@ export type Icon =
     'inbox16' |
     'inbox24' |
     'information16' |
+    'information20' |
     'information24' |
     'informationFilled16' |
+    'informationFilled20' |
     'informationFilled24' |
     'inspect16' |
     'inspect24' |
@@ -588,10 +607,14 @@ export type Icon =
     'nfcCard24Colored' |
     'nfcCard32Colored' |
     'noChildrenZeroThree48' |
+    'note16' |
+    'note24' |
     'notification16' |
     'notification20' |
     'notification24' |
     'notification64' |
+    'notificationFilled16' |
+    'notificationFilled20' |
     'notificationFilled24' |
     'outOfReach48' |
     'overflowHorizontal16' |
@@ -626,10 +649,16 @@ export type Icon =
     'pause20' |
     'pause24' |
     'pauseFilled64Colored' |
+    'payByBank12Colored' |
+    'payByBank18Colored' |
+    'payByBank24Colored' |
+    'payByBank32Colored' |
     'payoneer12Colored' |
     'payoneer18Colored' |
     'payoneer24Colored' |
     'payoneer32Colored' |
+    'payout16' |
+    'payout24' |
     'paypal12Colored' |
     'paypal18Colored' |
     'paypal24Colored' |
@@ -743,6 +772,8 @@ export type Icon =
     'searchSimilar24' |
     'seasons16' |
     'seasons24' |
+    'securePurchase16' |
+    'securePurchase24' |
     'securityKey24' |
     'selectAll24' |
     'selling16' |
@@ -765,6 +796,8 @@ export type Icon =
     'shirt16' |
     'shirt24' |
     'shoeBox24' |
+    'shoppingEvent16' |
+    'shoppingEvent24' |
     'shovel16' |
     'shovel24' |
     'show16' |
@@ -924,6 +957,7 @@ export type Icon =
     'visa18Colored' |
     'visa24Colored' |
     'visa32Colored' |
+    'wallet16' |
     'wallet24' |
     'wallet64' |
     'walletBalance12Colored' |
@@ -940,6 +974,10 @@ export type Icon =
     'youtube24' |
     'yuan16' |
     'yuan24' |
+    'zipPay12Colored' |
+    'zipPay18Colored' |
+    'zipPay24Colored' |
+    'zipPay32Colored' |
     'zloty16' |
     'zloty24' |
     'zoomIn16' |

@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/marko",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "marko-components"

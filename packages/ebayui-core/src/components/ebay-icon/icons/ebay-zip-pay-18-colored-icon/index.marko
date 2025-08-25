@@ -1,0 +1,9 @@
+import { symbol } from "./symbol";
+import type { Input as IconInput } from "../../component-browser";
+export type Input = Omit<IconInput, `_${string}`>;
+<ebay-icon
+    ...input
+    _name="zip-pay-18-colored"
+    _size="18-colored"
+    _type="icon"
+    _themes=symbol/>
