@@ -13,6 +13,12 @@ export interface State {
 }
 
 class SelectionChip extends Marko.Component<Input, State> {
+    onCreate(input: Input) {
+        this.state = {
+            mounted: false,
+            selected: input.selected || false,
+        };
+    }
     onMount() {
         this.state.mounted = true;
     }
@@ -28,10 +34,9 @@ class SelectionChip extends Marko.Component<Input, State> {
     }
 
     onInput(input: Input) {
-        this.state = {
-            selected: input.selected || false,
-            mounted: false,
-        };
+        if (input.selected !== undefined) {
+            this.state.selected = input.selected;
+        }
     }
 }
 
