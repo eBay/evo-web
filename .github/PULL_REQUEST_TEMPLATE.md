@@ -1,6 +1,6 @@
 <!-- Insert GitHub issue number below. An issue is required for all PRs -->
 
-Fixes #
+- Fixes #
 
 ## Description
 
