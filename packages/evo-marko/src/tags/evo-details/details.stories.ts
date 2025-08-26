@@ -75,7 +75,7 @@ export default {
       },
     },
     onClick: {
-      action: "on-click",
+      action: "onClick",
       description: "Triggered on click",
       table: {
         category: "Events",

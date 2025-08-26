@@ -1,0 +1,66 @@
+export interface Input extends Marko.HTML.Input {
+    header?: Marko.AttrTag<
+        Marko.Input<`h${number}`> & {
+            as?: `h${number}`;
+        }
+    >;
+    subheader?: Marko.AttrTag<Marko.HTML.Span>;
+}
+
+<const/{
+    class: inputClass,
+    header,
+    subheader,
+    content,
+    ...htmlInput
+} = input>
+<id/inputId/>
+
+<let/dragging=false>
+
+<div class=["file-input", inputClass]>
+    <div class=[
+        "file-input__container",
+        dragging && "file-input___container--dragged-over",
+    ]>
+        <div class="file-input__upload-icon">
+            <evo-icon-upload-24/>
+        </div>
+        <div class="file-input__content">
+            <if=header>
+                <const/{
+                    as: headerAs,
+                    class: headerClass,
+                    ...headerHtmlInput
+                } = header>
+                <${headerAs || "span"}
+                    class=["file-input__content-header", headerClass]
+                    ...headerHtmlInput
+                />
+            </if>
+            <if=subheader>
+                <span
+                    ...subheader
+                    class=["file-input__content-subheader", subheader.class]
+                />
+            </if>
+            <if=content>
+                <label for=inputId>
+                    <span class="file-input__content-cta">
+                        <${content}/>
+                    </span>
+                </label>
+            </if>
+        </div>
+    </div>
+    <input
+        type="file"
+        class="file-input__input"
+        id=inputId
+        ...htmlInput
+        onDragenter() { dragging = true; }
+        onDragover() { dragging = true; }
+        onDragleave() { dragging = false; }
+        onDrop() { dragging = false; }
+    >
+</div>

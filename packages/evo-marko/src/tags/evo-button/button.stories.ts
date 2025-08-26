@@ -1,5 +1,4 @@
 import {
-  addContent,
   buildExtensionTemplate,
 } from "../../common/storybook/utils";
 import button, { type Input } from "./index.marko";
@@ -10,10 +9,6 @@ import ButtonTemplateCode from "./examples/button.marko?raw";
 import ExpandButtonTemplate from "./examples/expand-button.marko";
 import ExpandButtonTemplateCode from "./examples/expand-button.marko?raw";
 import { Story } from "@storybook/marko";
-
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
 
 export default {
   title: "buttons/evo-button",

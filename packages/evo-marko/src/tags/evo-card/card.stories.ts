@@ -84,7 +84,7 @@ export default {
             },
         },
         onClick: {
-            action: "on-click",
+            action: "onClick",
             description: "Triggered when card is clicked",
             table: {
                 category: "Events",

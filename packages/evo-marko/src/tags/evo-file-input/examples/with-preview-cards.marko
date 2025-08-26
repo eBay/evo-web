@@ -1,0 +1,24 @@
+<let/files: File[]=[] as File[]>
+<evo-file-input
+    multiple
+    on-input=(e: InputEvent) => {
+        const fileInput = Array.from(
+            (e.target as HTMLInputElement).files || [],
+        );
+        files = fileInput.concat(Array.from(files));
+    }
+    ...input>
+    <@header class="subtitleClass" id="subtitleId">
+        <p>Multiple files</p>
+    </@header>
+    <span>Browse files</span>
+</evo-file-input>
+
+<evo-file-preview-card-group>
+    <for|file| of=files>
+        <@card file=file>
+            <@deleteAction aria-label="Delete Card" onClick() {}/>
+            <@cancelAction aria-label="Cancel" onClick() {}/>
+        </@card>
+    </for>
+</evo-file-preview-card-group>

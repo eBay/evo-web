@@ -13,4 +13,4 @@ Tabs which link to other pages. This can be used to deep link to other pages whi
 
 - [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/navigation-disclosure-evo-fake-tabs)
 - [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/navigation-disclosure-evo-fake-tabs)
-- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/ebay-video/examples)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/evo-fake-tabs/examples)

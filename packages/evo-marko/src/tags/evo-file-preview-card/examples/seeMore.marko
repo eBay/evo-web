@@ -1,0 +1,13 @@
+<evo-file-preview-card
+    file={
+      name: "file-name.jpg",
+      type: "image/jpeg",
+      src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+    }
+
+    ...input
+>
+    <@cancelAction aria-label="Cancel upload" onClick() { console.log("cancel upload clicked"); } />
+    <@deleteAction aria-label="Delete" onClick=() => console.log("delete clicked")/>
+    <@seeMoreAction>+15</@seeMoreAction>
+</evo-file-preview-card>

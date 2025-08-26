@@ -1,0 +1,41 @@
+import type {
+    Input as FilePreviewCardInput,
+} from "../evo-file-preview-card/index.marko";
+
+export interface Input extends Marko.HTML.Div {
+    card?: Marko.AttrTag<FilePreviewCardInput>;
+    seeMoreAction?: FilePreviewCardInput["seeMoreAction"];
+}
+
+<const/{
+    card = [],
+    seeMoreAction,
+    ...htmlInput
+} = input>
+<const/SHOW_AMOUNT = 15>
+<let/showing = SHOW_AMOUNT>
+<const/cards = [...card]>
+<const/notShowing = cards.length - showing>
+
+<div ...htmlInput class=["file-preview-card-group", input.class] >
+    <ul>
+        <for|i| from=0 to=(notShowing > 0 ? showing : cards.length) - 1>
+            <const/cardInput = cards[i]>
+            <evo-file-preview-card
+                as="li"
+                ...cardInput
+            />
+        </for>
+        <if=(notShowing > 0)>
+            <evo-file-preview-card
+                as="li"
+                file=(cards[showing].file)
+            >
+                <@seeMoreAction ...seeMoreAction onClick(e, target) {
+                    showing += SHOW_AMOUNT;
+                    (seeMoreAction?.onClick || null)?.(e, target);
+                }>+${notShowing}</@seeMoreAction>
+            </evo-file-preview-card>
+        </if>
+    </ul>
+</div>
