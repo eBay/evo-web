@@ -16,7 +16,6 @@ export type FilePreviewCardFile = (
       }
 );
 export interface Input extends Marko.HTML.Div {
-    as?: keyof Marko.NativeTags;
     file?: FilePreviewCardFile;
     status?: "uploading";
     href?: string;
@@ -42,7 +41,6 @@ export interface Input extends Marko.HTML.Div {
     footerSubtitle,
     action,
     href,
-    as: cardEl = "div",
     ...htmlInput
 }=input>
 
@@ -63,7 +61,7 @@ export interface Input extends Marko.HTML.Div {
         : ((rawFile || {}) as Exclude<typeof rawFile, File | undefined>)
 )>
 
-<${cardEl} class="file-preview-card" ...htmlInput>
+<div class="file-preview-card" ...htmlInput>
     <div class="file-preview-card__body">
         <${href ? "a" : null} href=href>
             <if=status === "uploading">

@@ -7,8 +7,8 @@
     labelText="10:30:21"
     ...input
 >
-    <@deleteAction aria-label="Delete" onClick=() => console.log("delete clicked")/>
-    <@cancelAction aria-label="Cancel upload" onClick=() => console.log("cancel upload clicked")/>
+    <@deleteAction aria-label="Delete" onClick() { console.log("delete clicked"); }/>
+    <@cancelAction aria-label="Cancel upload" onClick() { console.log("cancel upload clicked"); }/>
     <@seeMoreAction>
         +15
     </@seeMoreAction>

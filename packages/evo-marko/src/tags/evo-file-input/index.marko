@@ -12,9 +12,13 @@ export interface Input extends Marko.HTML.Input {
     header,
     subheader,
     content,
+    onDragEnter,
+    onDragOver,
+    onDragLeave,
+    onDrop,
     ...htmlInput
-} = input>
-<id/inputId/>
+}=input>
+<id/inputId>
 
 <let/dragging=false>
 
@@ -32,17 +36,15 @@ export interface Input extends Marko.HTML.Input {
                     as: headerAs,
                     class: headerClass,
                     ...headerHtmlInput
-                } = header>
+                }=header>
                 <${headerAs || "span"}
                     class=["file-input__content-header", headerClass]
-                    ...headerHtmlInput
-                />
+                    ...headerHtmlInput/>
             </if>
             <if=subheader>
                 <span
                     ...subheader
-                    class=["file-input__content-subheader", subheader.class]
-                />
+                    class=["file-input__content-subheader", subheader.class]/>
             </if>
             <if=content>
                 <label for=inputId>
@@ -58,9 +60,20 @@ export interface Input extends Marko.HTML.Input {
         class="file-input__input"
         id=inputId
         ...htmlInput
-        onDragenter() { dragging = true; }
-        onDragover() { dragging = true; }
-        onDragleave() { dragging = false; }
-        onDrop() { dragging = false; }
-    >
+        onDragEnter(e, target) {
+            dragging = true;
+            (onDragEnter || null)?.(e, target);
+        }
+        onDragOver(e, target) {
+            dragging = true;
+            (onDragOver || null)?.(e, target);
+        }
+        onDragLeave(e, target) {
+            dragging = false;
+            (onDragLeave || null)?.(e, target);
+        }
+        onDrop(e, target) {
+            dragging = false;
+            (onDrop || null)?.(e, target);
+        }>
 </div>

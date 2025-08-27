@@ -6,12 +6,10 @@
 
 
 <evo-file-preview-card-group ...input>
-    <@seeMoreAction>
-    </@seeMoreAction>
    <for|index| of=[...Array(35)]>
         <@card file=file>
-            <@deleteAction aria-label="Delete" onClick=() => console.log("delete clicked", index)/>
-            <@cancelAction aria-label="Cancel upload" onClick=() => console.log("cancel upload clicked", index)/>
+            <@deleteAction aria-label="Delete" onClick() { console.log("delete clicked", index); }/>
+            <@cancelAction aria-label="Cancel upload" onClick() { console.log("cancel upload clicked", index); }/>
         </@card>
     </for>
 </evo-file-preview-card-group>

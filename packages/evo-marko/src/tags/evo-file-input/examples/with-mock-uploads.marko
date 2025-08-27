@@ -2,28 +2,11 @@ static async function mockFetch() {
     await new Promise((resolve) => setTimeout(resolve, Math.random() * 5000));
     return `https://fakeurl.com/${Math.random().toString(36).substring(7)}`;
 }
-// class {
-//     declare state: {
-//         files: [File, string | undefined][];
-//     };
-//     onCreate() {
-//         this.state = {
-//             files: [],
-//         };
-//     }
-//     handleInput({ files }: FileInputEvent) {
-//    }
-//     handleDelete(index: number) {
-//         this.state.files = [
-//             ...this.state.files.slice(0, index),
-//             ...this.state.files.slice(index + 1),
-//         ];
-//     }
-// }
+
 <let/files=([] as [File, string | undefined][])>
 <evo-file-input
     multiple
-    on-input=(e: InputEvent) => {
+    on-input(e: InputEvent) {
         const fileList = Array.from((e.target as HTMLInputElement).files || []);
         files = files.concat(fileList.map((file) => [file, undefined]));
         for (const file of fileList) {

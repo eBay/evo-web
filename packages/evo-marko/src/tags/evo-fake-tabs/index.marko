@@ -1,3 +1,8 @@
+export interface Input extends Marko.HTML.Div {
+    selectedIndex?: number;
+    tab?: Marko.AttrTag<Marko.HTML.A>;
+    tabMatchesCurrentUrl?: boolean;
+}
 <const/{
     selectedIndex = 0,
     class: inputClass,
@@ -6,11 +11,7 @@
     content,
     ...htmlInput
 }=input>
-export interface Input extends Marko.HTML.Div {
-    selectedIndex?: number;
-    tab?: Marko.AttrTag<Marko.HTML.A>;
-    tabMatchesCurrentUrl?: boolean;
-}
+
 <const/tabAriaCurrent=(
     (tabMatchesCurrentUrl === false
         ? "true"

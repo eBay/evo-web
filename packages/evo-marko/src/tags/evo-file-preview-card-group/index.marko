@@ -7,12 +7,13 @@ export interface Input extends Marko.HTML.Div {
     seeMoreAction?: FilePreviewCardInput["seeMoreAction"];
 }
 
+static const SHOW_AMOUNT = 15;
+
 <const/{
     card = [],
     seeMoreAction,
     ...htmlInput
 } = input>
-<const/SHOW_AMOUNT = 15>
 <let/showing = SHOW_AMOUNT>
 <const/cards = [...card]>
 <const/notShowing = cards.length - showing>

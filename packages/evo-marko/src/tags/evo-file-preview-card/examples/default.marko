@@ -1,4 +1,12 @@
 <evo-file-preview-card ...input>
-    <@deleteAction aria-label="Delete" onClick=() => console.log("delete clicked")/>
-    <@cancelAction aria-label="Cancel upload" onClick=() => console.log("cancel upload clicked")/>
+    <@deleteAction
+        aria-label="Delete"
+        onClick() {
+            console.log("delete clicked");
+        }/>
+    <@cancelAction
+        aria-label="Cancel upload"
+        onClick() {
+            console.log("cancel upload clicked");
+        }/>
 </evo-file-preview-card>
