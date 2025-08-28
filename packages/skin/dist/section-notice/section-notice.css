@@ -12,7 +12,7 @@
 div[role="region"].section-notice,
 section.section-notice {
     display: grid;
-    grid-template-columns: 32px auto auto auto;
+    grid-template-columns: 32px auto min-content min-content;
 }
 .section-notice--education {
     background-color: var(
@@ -119,15 +119,11 @@ p.section-notice__cta {
         justify-self: flex-end;
         margin-top: 0;
     }
-    .section-notice:has(.section-notice__dismiss) p.section-notice__cta {
-        margin-inline-end: var(--spacing-200);
-        padding-inline-end: var(--spacing-200);
-    }
     .section-notice__header ~ .section-notice__cta {
-        grid-column: 4;
+        grid-column: 3;
     }
     .section-notice__footer {
-        padding-left: var(--spacing-200);
+        padding-inline-start: var(--spacing-200);
     }
 }
 [dir="rtl"] .section-notice__footer {
@@ -135,7 +131,6 @@ p.section-notice__cta {
     margin-left: 0;
     margin-right: auto;
     padding-left: 0;
-    padding-right: 0;
 }
 [dir="rtl"] .section-notice__main {
     padding-right: 0;

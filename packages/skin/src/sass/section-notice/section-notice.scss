@@ -20,7 +20,7 @@ div[role="region"].section-notice,
 section.section-notice {
     display: grid;
     /* provide explicit structure up front, create loose markup model */
-    grid-template-columns: 32px auto auto auto;
+    grid-template-columns: 32px auto min-content min-content;
 }
 
 /* TODO: Remove in 18.0.0 since Education Notice is now its own module. */
@@ -146,19 +146,14 @@ p.section-notice__cta {
         grid-row: 1;
         justify-self: flex-end;
         margin-top: 0;
-
-        .section-notice:has(.section-notice__dismiss) & {
-            margin-inline-end: var(--spacing-200);
-            padding-inline-end: var(--spacing-200);
-        }
     }
 
     .section-notice__header ~ .section-notice__cta {
-        grid-column: 4;
+        grid-column: 3;
     }
 
     .section-notice__footer {
-        padding-left: var(--spacing-200);
+        padding-inline-start: var(--spacing-200);
     }
 }
 
@@ -168,7 +163,6 @@ p.section-notice__cta {
         margin-left: initial;
         margin-right: auto;
         padding-left: initial;
-        padding-right: 0;
     }
 
     .section-notice__main {
