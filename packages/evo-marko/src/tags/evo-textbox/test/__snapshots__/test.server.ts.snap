@@ -20,7 +20,6 @@ exports[`evo-textbox > renders a disabled input textbox 1`] = `
         class="textbox__control"
         disabled=""
         id="textbox"
-        key="input"
         type="text"
         value="test"
       />
@@ -49,7 +48,6 @@ exports[`evo-textbox > renders a disabled input textbox with disabled floating l
         class="textbox__control"
         disabled=""
         id="GENERATED-0"
-        key="input"
         type="text"
       />
     </span>
@@ -76,7 +74,6 @@ exports[`evo-textbox > renders a input textbox with external label 1`] = `
         aria-describedby="sM_2 sM_3"
         class="textbox__control"
         id="textbox"
-        key="input"
         type="text"
         value="test"
       />
@@ -96,7 +93,6 @@ exports[`evo-textbox > renders a input textbox with invalid/error state 1`] = `
       aria-invalid="true"
       class="textbox__control"
       id="GENERATED-0"
-      key="input"
       type="text"
     />
   </span>
@@ -113,7 +109,6 @@ exports[`evo-textbox > renders a textarea element 1`] = `
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="GENERATED-0"
-      key="input"
     />
   </span>
 </DocumentFragment>
@@ -129,7 +124,6 @@ exports[`evo-textbox > renders a textarea element with postfix icon 1`] = `
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="GENERATED-0"
-      key="input"
       type="text"
     />
     <svg
@@ -192,31 +186,24 @@ exports[`evo-textbox > renders a textarea element with postfix icon button 1`] =
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="GENERATED-1"
-      key="input"
       type="text"
     />
-    <button
-      aria-label="Clear"
-      class="icon-btn icon-btn--transparent"
-      type="button"
+    <svg
+      aria-hidden="true"
+      class="icon icon--24"
     >
-      <svg
-        aria-hidden="true"
-        class="icon icon--24"
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 24 24"
       >
-        <symbol
-          id="GENERATED-2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12Zm17.968 5.233a.996.996 0 0 0-.32-.989l-4.277-4.27 4.267-4.272a.995.995 0 0 0-1.402-1.404l-4.268 4.271-4.267-4.28a.998.998 0 1 0-1.413 1.413l4.278 4.271-4.268 4.281a.995.995 0 0 0 1.403 1.404l4.267-4.281 4.277 4.27a.994.994 0 0 0 1.723-.414Z"
-          />
-        </symbol>
-        <use
-          href="#icon-clear-24"
+        <path
+          d="M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0 1 24 12c0 6.627-5.373 12-12 12S0 18.627 0 12Zm17.968 5.233a.996.996 0 0 0-.32-.989l-4.277-4.27 4.267-4.272a.995.995 0 0 0-1.402-1.404l-4.268 4.271-4.267-4.28a.998.998 0 1 0-1.413 1.413l4.278 4.271-4.268 4.281a.995.995 0 0 0 1.403 1.404l4.267-4.281 4.277 4.27a.994.994 0 0 0 1.723-.414Z"
         />
-      </svg>
-    </button>
+      </symbol>
+      <use
+        href="#icon-clear-24"
+      />
+    </svg>
   </span>
 </DocumentFragment>
 `;
@@ -249,7 +236,6 @@ exports[`evo-textbox > renders a textarea element with prefix icon 1`] = `
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="GENERATED-1"
-      key="input"
       type="text"
     />
   </span>
@@ -275,7 +261,6 @@ exports[`evo-textbox > renders a textbox element with floating label and without
         aria-describedby="sM_2 sM_3"
         class="textbox__control"
         id="GENERATED-0"
-        key="input"
         type="text"
       />
     </span>
@@ -302,7 +287,6 @@ exports[`evo-textbox > renders an input textbox with inline floating label 1`] =
         aria-describedby="sM_2 sM_3"
         class="textbox__control"
         id="GENERATED-0"
-        key="input"
         type="text"
       />
     </span>
@@ -329,7 +313,6 @@ exports[`evo-textbox > renders an input textbox with inline floating label and a
         aria-describedby="sM_2 sM_3"
         class="textbox__control"
         id="text-id"
-        key="input"
         type="text"
       />
     </span>
@@ -356,7 +339,6 @@ exports[`evo-textbox > renders an input textbox with opaque floating label 1`] =
         aria-describedby="sM_2 sM_3"
         class="textbox__control"
         id="GENERATED-0"
-        key="input"
         type="text"
       />
     </span>
@@ -374,7 +356,6 @@ exports[`evo-textbox > renders default input textbox 1`] = `
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="GENERATED-0"
-      key="input"
       type="text"
     />
   </span>
@@ -391,7 +372,6 @@ exports[`evo-textbox > renders default input textbox with an id 1`] = `
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="textbox-id"
-      key="input"
       type="text"
     />
   </span>
@@ -408,7 +388,6 @@ exports[`evo-textbox > renders fluid input textbox 1`] = `
       aria-describedby="sM_2 sM_3"
       class="textbox__control"
       id="GENERATED-0"
-      key="input"
       type="text"
     />
   </div>

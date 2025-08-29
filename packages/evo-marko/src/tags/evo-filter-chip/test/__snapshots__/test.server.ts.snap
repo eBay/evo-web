@@ -31,46 +31,6 @@ exports[`evo-filter-chip > renders as link 1`] = `
       Filter
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/default.marko_1_renderer"](_.c={}),icon:{content:_._["src/tags/evo-filter-chip/examples/default.marko_2_renderer"](_.c),*[Symbol.iterator](){yield this}},variant:"default",htmlInput:{},isMenu:!1,mounted:!1,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -98,46 +58,6 @@ exports[`evo-filter-chip > renders as link selected 1`] = `
       </span>
     </span>
   </a>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.g=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"a",content:_._["src/tags/evo-filter-chip/examples/expressive.marko_1_renderer"](_.c={}),image:{alt:"image",src:"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png",*[Symbol.iterator](){yield this}},a11ySelectedText:"selected",variant:"expressive",htmlInput:{},isMenu:!1,isAnchor:!0,mounted:!1,selected:!0,"ClosureScopes:selected":_.n=new Set},_.d,_.e={"ConditionalRenderer:#text/2":0,"ConditionalScope:#text/2":_.f={},_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},_.i={_:_.e},1,_.f],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.h=new Set).add(_.i),(_.j=new Set).add(_.f),(_.k=new Set).add(_.e),(_.l=new Set).add(_.e),(_.m=new Set).add(_.e),(_.n).add(_.e),_.g),"src/tags/evo-filter-chip/index.marko_3_image",5,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -162,46 +82,6 @@ exports[`evo-filter-chip > renders expressive 1`] = `
       Filter
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.f=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/expressive.marko_1_renderer"](_.c={}),image:{alt:"image",src:"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png",*[Symbol.iterator](){yield this}},variant:"expressive",htmlInput:{},isMenu:!1,isAnchor:!1,mounted:!1,"ClosureScopes:selected":_.l=new Set},_.d,_.e={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},_.h={_:_.e}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.g=new Set).add(_.h),(_.i=new Set).add(_.e),(_.j=new Set).add(_.e),(_.k=new Set).add(_.e),(_.l).add(_.e),_.f),"src/tags/evo-filter-chip/index.marko_3_image",5,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -226,46 +106,6 @@ exports[`evo-filter-chip > renders expressive selected 1`] = `
       Filter
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.f=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/expressive.marko_1_renderer"](_.c={}),image:{alt:"image",src:"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png",*[Symbol.iterator](){yield this}},variant:"expressive",htmlInput:{},isMenu:!1,isAnchor:!1,mounted:!1,selected:!0,"ClosureScopes:selected":_.l=new Set},_.d,_.e={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},_.h={_:_.e}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.g=new Set).add(_.h),(_.i=new Set).add(_.e),(_.j=new Set).add(_.e),(_.k=new Set).add(_.e),(_.l).add(_.e),_.f),"src/tags/evo-filter-chip/index.marko_3_image",5,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -301,46 +141,6 @@ exports[`evo-filter-chip > renders menu button 1`] = `
       />
     </svg>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/menu-button.marko_1_renderer"](_.c={}),variant:"menu",htmlInput:{},isMenu:!0,isAnchor:!1,mounted:!1,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -376,46 +176,6 @@ exports[`evo-filter-chip > renders menu button expanded 1`] = `
       />
     </svg>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/menu-button.marko_1_renderer"](_.c={}),variant:"menu",htmlInput:{},isMenu:!0,isAnchor:!1,mounted:!1,expanded:!0,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -451,46 +211,6 @@ exports[`evo-filter-chip > renders menu button expanded and selected 1`] = `
       />
     </svg>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/menu-button.marko_1_renderer"](_.c={}),variant:"menu",htmlInput:{},isMenu:!0,isAnchor:!1,mounted:!1,selected:!0,expanded:!0,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -526,46 +246,6 @@ exports[`evo-filter-chip > renders menu button selected 1`] = `
       />
     </svg>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/menu-button.marko_1_renderer"](_.c={}),variant:"menu",htmlInput:{},isMenu:!0,isAnchor:!1,mounted:!1,selected:!0,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -600,46 +280,6 @@ exports[`evo-filter-chip > renders static default 1`] = `
       Filter
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/default.marko_1_renderer"](_.c={}),icon:{content:_._["src/tags/evo-filter-chip/examples/default.marko_2_renderer"](_.c),*[Symbol.iterator](){yield this}},variant:"default",htmlInput:{},isMenu:!1,isAnchor:!1,mounted:!1,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -674,45 +314,5 @@ exports[`evo-filter-chip > renders static selected 1`] = `
       Filter
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.e=[0,1,_.a={"EventAttributes:#text/0":_.b={},"ConditionalScope:#text/0":_.d={},"ConditionalRenderer:#text/0":"button",content:_._["src/tags/evo-filter-chip/examples/default.marko_1_renderer"](_.c={}),icon:{content:_._["src/tags/evo-filter-chip/examples/default.marko_2_renderer"](_.c),*[Symbol.iterator](){yield this}},variant:"default",htmlInput:{},isMenu:!1,isAnchor:!1,mounted:!1,selected:!0,"ClosureScopes:selected":_.j=new Set},_.d,_.g={_:_.a,"ClosureSignalIndex:selected":0,"#ClosestBranchId":3},3,{htmlInput:{}}],_.b.click=_._["src/tags/evo-filter-chip/index.marko_0/onClick"](_.a),(_.f=new Set).add(_.g),(_.h=new Set).add(_.g),(_.i=new Set).add(_.g),(_.j).add(_.g),_.e),"src/tags/evo-icon/index.marko_0_htmlInput",8,"src/tags/evo-filter-chip/index.marko_0",2];M._.w()
-  </script>
 </DocumentFragment>
 `;

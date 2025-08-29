@@ -66,46 +66,6 @@ exports[`ccd > renders ccd with charger included 1`] = `
       </div>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,8,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -178,46 +138,6 @@ exports[`ccd > renders ccd with charger included and usbpd 1`] = `
       </div>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,8,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -287,46 +207,6 @@ exports[`ccd > renders ccd with charger not included 1`] = `
       </div>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,8,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -399,46 +279,6 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
       </div>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,8,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -493,46 +333,6 @@ exports[`ccd > renders ccd with usbpd included 1`] = `
       </div>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -584,46 +384,6 @@ exports[`ccd > renders default ccd 1`] = `
       </div>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -634,46 +394,6 @@ exports[`ccd > renders with no min and max 1`] = `
     class="ccd"
     role="figure"
   />
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}}]),"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -703,46 +423,6 @@ exports[`ccd > renders with no min and max but with charger included 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -772,45 +452,5 @@ exports[`ccd > renders with no min and max but with no charger included 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,"src/tags/evo-ccd/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;

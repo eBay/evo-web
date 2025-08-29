@@ -364,46 +364,6 @@ exports[`eek > renders rating 1 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -477,46 +437,6 @@ exports[`eek > renders rating 2 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -590,46 +510,6 @@ exports[`eek > renders rating 3 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -703,46 +583,6 @@ exports[`eek > renders rating 4 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -816,46 +656,6 @@ exports[`eek > renders rating 5 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -929,46 +729,6 @@ exports[`eek > renders rating 6 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -1042,46 +802,6 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -1155,46 +875,6 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -1268,46 +948,6 @@ exports[`eek > renders rating 7 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -1381,45 +1021,5 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},1,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",3,5,"src/tags/evo-eek/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;

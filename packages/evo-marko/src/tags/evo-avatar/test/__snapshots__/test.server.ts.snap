@@ -9,46 +9,6 @@ exports[`avatar > renders 128 px with magenta 1`] = `
   >
     E
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{size:"128",color:"magenta",username:"Elizabeth",htmlInput:{"aria-label":"Signed in - as Elizabeth"},imagePlacement:"cover"}]),"src/tags/evo-avatar/index.marko_0_size_color_img_username_htmlInput_imagePlacement",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -61,46 +21,6 @@ exports[`avatar > renders defaults 1`] = `
   >
     E
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{color:"teal",username:"Elizabeth",htmlInput:{"aria-label":"Signed in - as Elizabeth"},imagePlacement:"cover"}]),"src/tags/evo-avatar/index.marko_0_size_color_img_username_htmlInput_imagePlacement",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -141,46 +61,6 @@ exports[`avatar > renders signed out 1`] = `
       />
     </svg>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{"aria-label":"Signed out"},imagePlacement:"cover"},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",4,"src/tags/evo-avatar/index.marko_0_size_color_img_username_htmlInput_imagePlacement",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -193,46 +73,6 @@ exports[`avatar > renders with doggy as username 1`] = `
   >
     D
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{color:"teal",username:"doggy",htmlInput:{"aria-label":"Signed in - as Elizabeth"},imagePlacement:"cover"}]),"src/tags/evo-avatar/index.marko_0_size_color_img_username_htmlInput_imagePlacement",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -245,46 +85,6 @@ exports[`avatar > renders with robert as username 1`] = `
   >
     R
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{color:"teal",username:"robert",htmlInput:{"aria-label":"Signed in - as Elizabeth"},imagePlacement:"cover"}]),"src/tags/evo-avatar/index.marko_0_size_color_img_username_htmlInput_imagePlacement",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -297,45 +97,5 @@ exports[`avatar > renders with test as usernames 1`] = `
   >
     T
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{color:"teal",username:"test",htmlInput:{"aria-label":"Signed in - as Elizabeth"},imagePlacement:"cover"}]),"src/tags/evo-avatar/index.marko_0_size_color_img_username_htmlInput_imagePlacement",1];M._.w()
-  </script>
 </DocumentFragment>
 `;

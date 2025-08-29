@@ -30,7 +30,6 @@ exports[`evo-filter-input > renders default input 1`] = `
         aria-label="Filter input"
         class="textbox__control"
         id="GENERATED-1"
-        key="input"
         type="search"
       />
       <button
@@ -90,7 +89,6 @@ exports[`evo-filter-input > renders large 1`] = `
         aria-label="Filter input"
         class="textbox__control"
         id="GENERATED-1"
-        key="input"
         type="search"
       />
       <button
@@ -150,7 +148,6 @@ exports[`evo-filter-input > renders small 1`] = `
         aria-label="Filter input"
         class="textbox__control"
         id="GENERATED-1"
-        key="input"
         type="search"
       />
       <button
@@ -212,7 +209,6 @@ exports[`evo-filter-input > renders with aria-controls 1`] = `
           aria-label="Filter input"
           class="textbox__control"
           id="GENERATED-1"
-          key="input"
           type="search"
           value=""
         />
@@ -279,7 +275,6 @@ exports[`evo-filter-input > renders with custom placeholder and aria label 1`] =
         aria-label="Custom aria label"
         class="textbox__control"
         id="GENERATED-1"
-        key="input"
         type="search"
       />
       <button
@@ -339,7 +334,6 @@ exports[`evo-filter-input > renders without clear button and no placeholder 1`] 
         aria-label="Filter input"
         class="textbox__control"
         id="GENERATED-1"
-        key="input"
         type="search"
       />
     </div>

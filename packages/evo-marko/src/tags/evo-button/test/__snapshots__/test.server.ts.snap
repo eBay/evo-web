@@ -8,46 +8,6 @@ exports[`does not apply priority class for unsupported value 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -97,46 +57,6 @@ exports[`renders a11yText when bodyState === loading 1`] = `
       </span>
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={}),bodyState:"loading"},3,{htmlInput:{}},2,{htmlInput:{}}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d),"src/tags/evo-icon/index.marko_0_htmlInput",9,"src/tags/evo-progress-spinner/index.marko_0_htmlInput",6];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -148,46 +68,6 @@ exports[`renders button with fluid=false 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -199,46 +79,6 @@ exports[`renders button with fluid=true 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -250,46 +90,6 @@ exports[`renders button with priority=delete 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -301,46 +101,6 @@ exports[`renders button with priority=primary 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -352,46 +112,6 @@ exports[`renders button with priority=secondary 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -403,46 +123,6 @@ exports[`renders button with size=large 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -454,46 +134,6 @@ exports[`renders defaults 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -506,46 +146,6 @@ exports[`renders disabled version 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},input_disabled:!0,content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -581,46 +181,6 @@ exports[`renders expanded button 1`] = `
       </svg>
     </span>
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/expand-button.marko_1_renderer"](_.c={}),bodyState:"expand"},5,{htmlInput:{}}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d),"src/tags/evo-icon/index.marko_0_htmlInput",8];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -633,46 +193,6 @@ exports[`renders fake version 1`] = `
   >
     Button
   </a>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -684,46 +204,6 @@ exports[`renders fixed-height button 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -735,46 +215,6 @@ exports[`renders large fixed-height button 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -786,46 +226,6 @@ exports[`renders large truncated button 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -838,46 +238,6 @@ exports[`renders partially disabled version 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -889,46 +249,6 @@ exports[`renders small button 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -940,46 +260,6 @@ exports[`renders truncated button 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -992,46 +272,6 @@ exports[`renders with id override 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;
 
@@ -1043,45 +283,5 @@ exports[`renders with type override 1`] = `
   >
     Button
   </button>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.d=[0,1,_.a={"EventAttributes:#text/0":_.b={},content:_._["src/tags/evo-button/examples/button.marko_1_renderer"](_.c={})}],_.b.keydown=_._["src/tags/evo-button/index.marko_0/onKeyDown"](_.a),_.d)]
-  </script>
 </DocumentFragment>
 `;

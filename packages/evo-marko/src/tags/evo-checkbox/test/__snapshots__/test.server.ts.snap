@@ -149,46 +149,6 @@ exports[`evo-checkbox > renders checkbox with id 1`] = `
       </label>
     </span>
   </fieldset>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.o=[0,_.b={"LoopScopeMap:#text/1":new Map(_.a=[[0,_.c={i:0,checked:!1,"#childScope/0":_.d={"ControlledType:#input/0":0,"ConditionalRenderer:#span/1":1,"ConditionalScope:#span/1":_.l={},htmlInput:_.e={checked:!1,class:"field__control",id:"group-checkbox-0",value:0,name:"checkbox-group"}}}],[1,_.f={i:1,checked:!1,"#childScope/0":_.g={"ControlledType:#input/0":0,"ConditionalRenderer:#span/1":1,"ConditionalScope:#span/1":_.m={},htmlInput:_.h={checked:!1,class:"field__control",id:"group-checkbox-1",value:1,name:"checkbox-group"}}}],[2,_.i={i:2,checked:!1,"#childScope/0":_.j={"ControlledType:#input/0":0,"ConditionalRenderer:#span/1":1,"ConditionalScope:#span/1":_.n={},htmlInput:_.k={checked:!1,class:"field__control",id:"group-checkbox-2",value:2,name:"checkbox-group"}}}]]),input:{},checkedItems:[!1,!1,!1]},_.c,_.d,_.l,1,{htmlInput:{}},1,{htmlInput:{}},_.f,_.g,_.m,1,{htmlInput:{}},1,{htmlInput:{}},_.i,_.j,_.n,1,{htmlInput:{}},1,{htmlInput:{}}],_.c._=_.f._=_.i._=_.b,_.c["TagVariableChange:checked"]=_._["src/tags/evo-checkbox/examples/group.marko_1/valueChange"](_.c),_.d["ControlledHandler:#input/0"]=_.e.checkedChange=_._["src/tags/evo-checkbox/examples/group.marko_1/checkedChange"](_.c),_.f["TagVariableChange:checked"]=_._["src/tags/evo-checkbox/examples/group.marko_1/valueChange"](_.f),_.g["ControlledHandler:#input/0"]=_.h.checkedChange=_._["src/tags/evo-checkbox/examples/group.marko_1/checkedChange"](_.f),_.i["TagVariableChange:checked"]=_._["src/tags/evo-checkbox/examples/group.marko_1/valueChange"](_.i),_.j["ControlledHandler:#input/0"]=_.k.checkedChange=_._["src/tags/evo-checkbox/examples/group.marko_1/checkedChange"](_.i),_.o),"src/tags/evo-icon/index.marko_0_htmlInput",6,8,"src/tags/evo-checkbox/index.marko_0_htmlInput",3,"src/tags/evo-icon/index.marko_0_htmlInput",13,15,"src/tags/evo-checkbox/index.marko_0_htmlInput",10,"src/tags/evo-icon/index.marko_0_htmlInput",20,22,"src/tags/evo-checkbox/index.marko_0_htmlInput",17];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -239,46 +199,6 @@ exports[`evo-checkbox > renders default checkbox 1`] = `
       </svg>
     </span>
   </span>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},2,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",4,6,"src/tags/evo-checkbox/index.marko_0_htmlInput",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
 
@@ -341,45 +261,5 @@ exports[`evo-checkbox > renders disabled checkbox 1`] = `
       Option
     </label>
   </span>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{checked:!1,disabled:!0,class:"field__control",id:"checkbox"}},2,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,7,"src/tags/evo-checkbox/index.marko_0_htmlInput",2];M._.w()
-  </script>
 </DocumentFragment>
 `;

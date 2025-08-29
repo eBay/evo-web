@@ -44,45 +44,5 @@ exports[`3d-viewer > renders default 1`] = `
       </span>
     </div>
   </div>
-  <script>
-    ((runtimeId) =&gt; (
-(self[runtimeId] = (
-  renderId,
-  prefix = runtimeId + renderId,
-  prefixLen = prefix.length,
-  lookup = {},
-  visits = [],
-  doc = document,
-  walker = doc.createTreeWalker(
-    doc,
-    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
-  ),
-) =&gt;
-  doc = (self[runtimeId][renderId] = {
-    i: prefix,
-    d: doc,
-    l: lookup,
-    v: visits,
-    x() {},
-    w(node, op, id) {
-      while ((node = walker.nextNode())) {
-        doc.x(
-          (op =
-            (op = node.data) &&
-            !op.indexOf(prefix) &&
-            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
-          id,
-          node,
-        );
-
-        if (op &gt; "#") {
-          visits.push(node);
-        }
-      }
-    },
-  })),
-self[runtimeId]
-))("M")("_");M._.r=[_=&gt;(_.b=[0,{"ConditionalRenderer:#div/0":2,"ConditionalScope:#div/0":_.a={},src:"https://ir.ebaystatic.com/cr/v/c1/ebayui/3d/v1/image.glb",errorText:"An error has occurred",a11yLoadingText:"Loading 3d model",htmlInput:{alt:"View these shoes for sale."}},_.a,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",6,"src/tags/evo-progress-spinner/index.marko_0_htmlInput",3,"src/tags/evo-3d-viewer/index.marko_0_onLoadError",1];M._.w()
-  </script>
 </DocumentFragment>
 `;
