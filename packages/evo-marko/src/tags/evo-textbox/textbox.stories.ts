@@ -23,12 +23,7 @@ import type { Input } from "./index.marko";
 const Template: Story<Input> = (args) => ({
     input: {
         ...args,
-        renderBody: (args.renderBody
-            ? (out: any) => {
-                  out.html(args.renderBody);
-              }
-            : null) as any,
-    },
+   },
 });
 
 export default {
@@ -94,7 +89,7 @@ export default {
                 },
             },
         },
-        buttonAriaLabel: {
+        a11yButtonText: {
             control: { type: "text" },
             description:
                 "aria-label for postfix. Required to be set in order to render postfix button and attach a `textbox-button-click event`",

@@ -10,7 +10,7 @@ export interface Input extends Omit<TextboxInput, "size"> {
 
 <const/{
     class: inputClass,
-    placeholder: inputPlaceholder = "Filter",
+    placeholder = "Filter",
     a11yClearButton,
     a11yControlsId,
     size,
@@ -23,9 +23,8 @@ export interface Input extends Omit<TextboxInput, "size"> {
     <evo-textbox
         fluid
         type="search"
-        key="input"
         aria-controls=a11yControlsId
-        placeholder=inputPlaceholder
+        placeholder=placeholder
        ...htmlInput
     >
         <@prefixIcon>

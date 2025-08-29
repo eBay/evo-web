@@ -9,17 +9,19 @@ export interface Input extends Marko.HTML.Input {
     prefixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
     prefixText?: Marko.AttrTag<{ content: Marko.Body }>;
     postfixText?: Marko.AttrTag<{ content: Marko.Body }>;
-    postfixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
+    postfixIcon?: Marko.AttrTag<{
+        content: Marko.Body;
+        "aria-label"?: Marko.HTMLAttributes["aria-label"];
+    }>;
     invalid?: boolean;
-    buttonAriaLabel?: Marko.HTMLAttributes["aria-label"];
-    onButtonClick?: (event: Event) => void;
+    a11yButtonLabel?: Marko.HTMLAttributes["aria-label"];
     autocorrect?: Marko.HTML.TextArea["autocorrect"];
     cols?: Marko.HTML.TextArea["cols"];
     rows?: Marko.HTML.TextArea["rows"];
 }
 
 <const/{
-    buttonAriaLabel,
+    a11yButtonLabel,
     class: inputClass,
     disabled,
     floatingLabel,
@@ -38,7 +40,6 @@ export interface Input extends Marko.HTML.Input {
     prefixText,
     postfixText,
     readonly,
-    onButtonClick,
     onBlur,
     onFocus,
     ...htmlInput
@@ -95,9 +96,7 @@ export interface Input extends Marko.HTML.Input {
             <${prefixIcon}/>
         </if>
         <if=prefixText && !disablePrefix>
-            <span id=prefixId ...prefixText>
-                <${prefixText}/>
-            </span>
+            <span ...prefixText id=prefixId/>
         </if>
         <${multiline ? "textarea" : "input"}
             aria-describedby=(
@@ -113,26 +112,21 @@ export interface Input extends Marko.HTML.Input {
             }
             ...htmlInput
             id=textboxId
-            key="input"
             class="textbox__control"
             type=!multiline && (type || "text")
             value:=value
             disabled=disabled
             aria-invalid=invalid && "true"
-            readonly=readonly
-        />
-       <if=postfixText>
-            <span id=postfixId ...postfixText>
-                <${postfixText}/>
-            </span>
+            readonly=readonly/>
+        <if=postfixText>
+            <span ...postfixText id=postfixId/>
         </if>
         <if=displayIcon && postfixIcon>
-            <${buttonAriaLabel && "button"}
-                class="icon-btn icon-btn--transparent"
-                aria-label=buttonAriaLabel
-                type=buttonAriaLabel && "button"
+            <${postfixIcon["aria-label"] && "button"}
+                class=["icon-btn icon-btn--transparent"]
+                type="button"
                 disabled=disabled
-                onClick=onButtonClick>
+                ...postfixIcon>
                 <${postfixIcon}/>
             </>
         </if>

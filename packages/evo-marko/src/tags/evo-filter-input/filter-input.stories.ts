@@ -28,9 +28,7 @@ export default {
       description:
         'either "regular" "small" or "large". If large, then renders larger sized textbox',
       table: {
-        defaultValue: {
-          summary: "regular",
-        },
+        category: "Attributes",
       },
     },
     a11yClearButton: {
@@ -38,18 +36,18 @@ export default {
       control: { type: "text" },
       description:
         "Text for the clear button. If not provided, then no clear button is rendered",
-    },
-    "aria-label": {
-      type: "string",
-      control: { type: "text" },
-      description:
-        "Either this or <label> is required. Renders text for screen readers",
+      table: {
+        category: "Attributes",
+      },
     },
     a11yControlsId: {
       type: "string",
       control: { type: "text" },
       description:
         "Requied. This is the id of the element that this input controls, such as the list of filtered items.",
+      table: {
+        category: "Attributes",
+      },
     },
     placeholder: {
       type: "string",
@@ -58,6 +56,7 @@ export default {
         defaultValue: {
           summary: "Filter",
         },
+        category: "Attributes",
       },
       description:
         "Reqired. Text to show when input is empty. This is not a label",
