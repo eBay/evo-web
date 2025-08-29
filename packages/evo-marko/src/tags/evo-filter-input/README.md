@@ -7,7 +7,7 @@
     </span>
 </h1>
 
-A filter-input is a textbox which is used specifally to filter out content.
+A filter-input is a textbox which is used specifically to filter out content.
 
 ## Examples and Documentation
 
