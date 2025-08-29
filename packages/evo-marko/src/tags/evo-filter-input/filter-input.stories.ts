@@ -121,7 +121,7 @@ export default {
         },
         onKeyup: {
             action: "onKeyup",
-            description: "Triggered on keup",
+            description: "Triggered on keyup",
             table: {
                 category: "Events",
                 defaultValue: {
