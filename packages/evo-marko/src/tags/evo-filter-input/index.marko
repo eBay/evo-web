@@ -3,7 +3,7 @@ import type {
 } from "../evo-textbox/index.marko";
 
 export interface Input extends Omit<TextboxInput, "size"> {
-    size?: ["large", "small"];
+    size?: "large" | "small";
     a11yClearButton: string;
     a11yControlsId?: string;
 }
