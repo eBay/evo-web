@@ -7,167 +7,89 @@ import ControlsTemplate from "./examples/controls.marko";
 import ControlsTemplateCode from "./examples/controls.marko?raw";
 
 export default {
-    title: "form input/evo-filter-input",
-    component: Component,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "form input/evo-filter-input",
+  component: Component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
+  },
 
-    argTypes: {
-        size: {
-            options: ["regular", "small", "large"],
-            type: { category: "Options" },
-            description:
-                'either "regular" "small" or "large". If large, then renders larger sized textbox',
-            table: {
-                defaultValue: {
-                    summary: "regular",
-                },
-            },
-        },
-        a11yClearButton: {
-            type: "string",
-            control: { type: "text" },
-            description:
-                "Text for the clear button. If not provided, then no clear button is rendered",
-        },
-        "aria-label": {
-            type: "string",
-            control: { type: "text" },
-            description:
-                "Either this or <label> is required. Renders text for screen readers",
-        },
-        a11yControlsId: {
-            type: "string",
-            control: { type: "text" },
-            description:
-                "Requied. This is the id of the element that this input controls, such as the list of filtered items.",
-        },
-        placeholder: {
-            type: "string",
-            control: { type: "text" },
-            table: {
-                defaultValue: {
-                    summary: "Filter",
-                },
-            },
-            description:
-                "Reqired. Text to show when input is empty. This is not a label",
-        },
-        value: {
-            type: "string",
-            control: { type: "text" },
-            table: {
-                defaultValue: {
-                    summary: "",
-                },
-            },
-            description:
-                "The value of the input. This is not a label. This is not required",
-        },
-        onChange: {
-            action: "onChange",
-            description: "Triggered whenever the value of the input changes",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        "onInput-change": {
-            action: "onInput-change",
-            description: "Triggered when the value of the input is changed",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onFocus: {
-            action: "onFocus",
-            description: "Triggered on focus",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onBlur: {
-            action: "onBlur",
-            description: "Triggered on blur",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onKeypress: {
-            action: "onKeypress",
-            description: "Triggered on keypress",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onKeyup: {
-            action: "onKeyup",
-            description: "Triggered on keyup",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-
-        onKeydown: {
-            action: "onKeydown",
-            description: "Triggered on keydown",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onClear: {
-            action: "onClear",
-            description: "Triggered when clear button is clicked",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "",
-                },
-            },
-        },
+  argTypes: {
+    "<input>": {
+      description:
+        "All attributes from the [native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) may be passed through",
     },
+    size: {
+      options: ["regular", "small", "large"],
+      type: { category: "Options" },
+      description:
+        'either "regular" "small" or "large". If large, then renders larger sized textbox',
+      table: {
+        defaultValue: {
+          summary: "regular",
+        },
+      },
+    },
+    a11yClearButton: {
+      type: "string",
+      control: { type: "text" },
+      description:
+        "Text for the clear button. If not provided, then no clear button is rendered",
+    },
+    "aria-label": {
+      type: "string",
+      control: { type: "text" },
+      description:
+        "Either this or <label> is required. Renders text for screen readers",
+    },
+    a11yControlsId: {
+      type: "string",
+      control: { type: "text" },
+      description:
+        "Requied. This is the id of the element that this input controls, such as the list of filtered items.",
+    },
+    placeholder: {
+      type: "string",
+      control: { type: "text" },
+      table: {
+        defaultValue: {
+          summary: "Filter",
+        },
+      },
+      description:
+        "Reqired. Text to show when input is empty. This is not a label",
+    },
+    onClear: {
+      action: "onClear",
+      description: "Triggered when clear button is clicked",
+      table: {
+        category: "Events",
+        defaultValue: {
+          summary: "",
+        },
+      },
+    },
+  },
 };
 
 export const Default = buildExtensionTemplate(
-    DefaultTemplate,
-    DefaultTemplateCode,
-    {
-        a11yClearButton: "Clear filter input",
-        "aria-label": "Filter input",
-    },
+  DefaultTemplate,
+  DefaultTemplateCode,
+  {
+    a11yClearButton: "Clear filter input",
+    "aria-label": "Filter input",
+  },
 );
 
 export const Controls = buildExtensionTemplate(
-    ControlsTemplate,
-    ControlsTemplateCode,
-    {
-        a11yClearButton: "Clear filter input",
-        "aria-label": "Filter input",
-        a11yControlsId: "filter-input-controls",
-    },
+  ControlsTemplate,
+  ControlsTemplateCode,
+  {
+    a11yClearButton: "Clear filter input",
+    "aria-label": "Filter input",
+    a11yControlsId: "filter-input-controls",
+  },
 );

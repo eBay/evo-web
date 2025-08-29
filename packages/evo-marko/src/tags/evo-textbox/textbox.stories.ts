@@ -18,7 +18,7 @@ import WithPostfixIconCode from "./examples/postfix-icon.marko?raw";
 import WithPrefixIconCode from "./examples/prefix-icon.marko?raw";
 import FullyDecoratedCode from "./examples/fully-decorated.marko?raw";
 import { Story } from "@storybook/marko";
-import type { Input } from "./component-browser";
+import type { Input } from "./index.marko";
 
 const Template: Story<Input> = (args) => ({
     input: {
@@ -43,6 +43,10 @@ export default {
     },
 
     argTypes: {
+        "<input>": {
+            description:
+                'All attributes from the [native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) may be passed through',
+        },
         fluid: {
             type: "boolean",
             control: { type: "boolean" },
@@ -127,105 +131,14 @@ export default {
                 category: "@attribute tags",
             },
         },
-        onChange: {
-            action: "on-change",
-            description: "Triggered when focus leaves and value is changed",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        "onInput-change": {
-            action: "on-input-change",
-            description: "Triggered when the value of the input is changed",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onFocus: {
-            action: "on-focus",
-            description: "Triggered on focus",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onBlur: {
-            action: "on-blur",
-            description: "Triggered on blur",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onKeypress: {
-            action: "on-keypress",
-            description: "Triggered on keypress",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onKeyup: {
-            action: "on-keyup",
-            description: "Triggered on keyup",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-
-        onKeydown: {
-            action: "on-keydown",
-            description: "Triggered on keydown",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onInvalid: {
-            action: "on-invalid",
-            description: "Triggered when value is invalid",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        "onFloating-label-init": {
-            action: "on-floating-label-init",
-            description: "Triggered when floating label is initialized",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "",
-                },
-            },
-        },
-        "onButton-click": {
-            action: "on-button-click",
+        onButtonClick: {
+            action: "onButtonClick",
             description:
                 "Triggers when clicking on postfix-icon-button. Requires button-aria-label to be present in order to attach correctly",
             table: {
                 category: "Events",
                 defaultValue: {
-                    summary: "{ originalEvent, value }",
+                    summary: "{ }",
                 },
             },
         },
