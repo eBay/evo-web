@@ -132,9 +132,7 @@ export interface Input extends Marko.HTML.Input {
                 aria-label=buttonAriaLabel
                 type=buttonAriaLabel && "button"
                 disabled=disabled
-                onClick(e: Event) {
-                    onButtonClick?.(e);
-                }>
+                onClick=onButtonClick>
                 <${postfixIcon}/>
             </>
         </if>
