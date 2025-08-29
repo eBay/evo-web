@@ -129,7 +129,7 @@ export default {
         },
         onChange: {
             action: "on-change",
-            description: "Triggered when focus leaves and value is changedf",
+            description: "Triggered when focus leaves and value is changed",
             table: {
                 category: "Events",
                 defaultValue: {
