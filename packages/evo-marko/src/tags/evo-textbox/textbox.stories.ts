@@ -61,7 +61,7 @@ export default {
         multiline: {
             type: "boolean",
             control: { type: "boolean" },
-            description: "renders a multi-line texbox if true",
+            description: "renders a multi-line textbox if true",
         },
         invalid: {
             type: "boolean",
