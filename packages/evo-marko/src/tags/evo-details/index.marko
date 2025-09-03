@@ -14,18 +14,8 @@ export interface Input extends Marko.Input<"details"> {
     summary,
     content,
     as: inputAs,
-    // ...htmlInput
+    ...htmlInput
 }=input>
-
-<const/htmlInput=(({
-    class: inputClass,
-    alignment,
-    size,
-    summary,
-    content,
-    as: inputAs,
-    ...rest
-}) => rest)(input)>
 
 <details ...htmlInput class=["details", inputClass]>
     <if=summary>

@@ -1,0 +1,8 @@
+import { symbol } from "./tags/evo-image-placeholder/symbol";
+import type { Input as IconInput } from "<evo-icon>";
+export type Input = Omit<IconInput, `_${string}`>;
+<evo-icon
+    ...input
+    _name="image-placeholder"
+    _type="image-placeholder"
+    _symbol=symbol/>

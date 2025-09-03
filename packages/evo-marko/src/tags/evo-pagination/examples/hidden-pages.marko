@@ -1,0 +1,18 @@
+static const SIZE = 15;
+<let/current=0>
+
+<evo-pagination variant="show-last" a11yCurrentText=`Results Pagination - Page ${current}`>
+    <@item type=("previous" as any) disabled=current === 0 onClick() {
+         current = Math.max(current - 1, 0);
+    }/>
+    <for|i| from=0 to=SIZE>
+        <@item current=i === current onClick() {
+            current = i;
+        }>
+            ${i}
+        </@item>
+    </for>
+    <@item type="next" disabled=current === SIZE onClick() {
+        current = Math.min(current + 1, SIZE);
+    }/>
+</evo-pagination>

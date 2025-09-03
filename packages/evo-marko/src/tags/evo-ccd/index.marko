@@ -20,18 +20,8 @@ export interface Input extends Marko.HTML.Div {
     max,
     min,
     secondaryType = "none",
-    // ...htmlInput
+    ...htmlInput
 }=input/>
-
-<const/htmlInput=(({
-    class: inputClass,
-    a11yText,
-    chargerIcon,
-    max,
-    min,
-    secondaryType = "none",
-    ...rest
-}) => rest)(input)/>
 
 <div
     ...htmlInput

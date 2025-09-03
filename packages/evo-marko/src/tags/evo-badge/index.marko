@@ -6,12 +6,9 @@ export interface Input extends Marko.HTML.Span {
     class: inputClass,
     type,
     number,
-    // ...htmlInput
+    ...htmlInput
 }=input/>
 
-<const/htmlInput=(({ class: inputClass, type, number, ...rest }) => rest)(
-    input,
-)/>
 <const/roundedNumber=Math.round(number as number)/>
 
 <if=(roundedNumber > 0)>

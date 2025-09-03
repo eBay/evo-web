@@ -11,14 +11,8 @@ export interface Input extends Marko.HTML.Span {
     class: inputClass,
     a11yText,
     size,
-    // ...htmlInput
+    ...htmlInput
 }=input/>
-<const/htmlInput=(({
-    class: inputClass,
-    a11yText,
-    size = "regular",
-    ...rest
-}) => rest)(input)/>
 
 <span
     ...htmlInput

@@ -49,18 +49,8 @@ static function eekUtil(max:string, min:string, rating:string) {
   max,
   min,
   rating,
-  // ...htmlInput
+  ...htmlInput
 }=input/>
-
-<const/htmlInput=(({
-  class: inputClass,
-  a11yText,
-  size,
-  max,
-  min,
-  rating,
-  ...rest
-}) => rest)(input)/>
 
 <const/eekRating=eekUtil(max, min, rating)/>
 <div

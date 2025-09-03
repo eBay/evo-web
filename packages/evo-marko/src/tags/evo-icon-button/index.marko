@@ -19,7 +19,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
     type,
     size,
     transparent,
-    // class: inputClass,
+    class: inputClass,
     ...htmlInput
 } = input/>
 
@@ -34,7 +34,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
         }
     }
     class=[
-        // inputClass,
+        inputClass,
         baseClassName,
         badge?.number && `${baseClassName}--badged`,
         transparent && `${baseClassName}--transparent`,

@@ -24,9 +24,6 @@ export default {
       control: { type: "boolean" },
       description: "Whether multiple files can be uploaded",
     },
-    renderBody: {
-      description: "CTA render body",
-    },
     subheader: {
       name: "@subheader",
       table: {

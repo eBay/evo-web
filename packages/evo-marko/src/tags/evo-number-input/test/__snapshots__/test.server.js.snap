@@ -1,0 +1,374 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-number-input > renders default number input 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"number-input"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"textbox"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-remove-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-remove-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Enter a number"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-number-input"[39m
+        [33mmax[39m=[32m"100"[39m
+        [33mmin[39m=[32m"0"[39m
+        [33mtype[39m=[32m"number"[39m
+        [33mvalue[39m=[32m"0"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-add-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11h-8V3a1 1 0 0 0-2 0v8H3a1 1 0 0 0 0 2h8v8a1 1 0 0 0 2 0v-8h8a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-add-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-number-input > renders number input with delete 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"number-input number-input--show-delete"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"textbox"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-remove-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-remove-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Enter a number"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-number-input"[39m
+        [33mmax[39m=[32m"Infinity"[39m
+        [33mmin[39m=[32m"1"[39m
+        [33mtype[39m=[32m"number"[39m
+        [33mvalue[39m=[32m"1"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Delete item"[39m
+        [33mclass[39m=[32m"number-input__delete icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-delete-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M11 11a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33mclip-rule[39m=[32m"evenodd"[39m
+                [33md[39m=[32m"m7.22 5 .431-1.728A3 3 0 0 1 10.561 1h2.878a3 3 0 0 1 2.91 2.272L16.781 5H22a1 1 0 1 1 0 2h-1.59l-1.244 13.28A3 3 0 0 1 16.179 23H7.82a3 3 0 0 1-2.987-2.72L3.59 7H2a1 1 0 0 1 0-2h5.22Zm2.372-1.243a1 1 0 0 1 .97-.757h2.877a1 1 0 0 1 .97.757L14.719 5H9.282l.31-1.243ZM7.979 7h10.422l-1.227 13.093a1 1 0 0 1-.995.907H7.82a1 1 0 0 1-.995-.907L5.598 7H7.98Z"[39m
+                [33mfill-rule[39m=[32m"evenodd"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-delete-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-add-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11h-8V3a1 1 0 0 0-2 0v8H3a1 1 0 0 0 0 2h8v8a1 1 0 0 0 2 0v-8h8a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-add-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-number-input > renders number input with delete hidden 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"number-input"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"textbox"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-remove-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-remove-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<input[39m
+        [33maria-label[39m=[32m"Enter a number"[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-number-input"[39m
+        [33mmax[39m=[32m"Infinity"[39m
+        [33mmin[39m=[32m"1"[39m
+        [33mtype[39m=[32m"number"[39m
+        [33mvalue[39m=[32m"12"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Delete item"[39m
+        [33mclass[39m=[32m"number-input__delete icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-delete-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M11 11a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33mclip-rule[39m=[32m"evenodd"[39m
+                [33md[39m=[32m"m7.22 5 .431-1.728A3 3 0 0 1 10.561 1h2.878a3 3 0 0 1 2.91 2.272L16.781 5H22a1 1 0 1 1 0 2h-1.59l-1.244 13.28A3 3 0 0 1 16.179 23H7.82a3 3 0 0 1-2.987-2.72L3.59 7H2a1 1 0 0 1 0-2h5.22Zm2.372-1.243a1 1 0 0 1 .97-.757h2.877a1 1 0 0 1 .97.757L14.719 5H9.282l.31-1.243ZM7.979 7h10.422l-1.227 13.093a1 1 0 0 1-.995.907H7.82a1 1 0 0 1-.995-.907L5.598 7H7.98Z"[39m
+                [33mfill-rule[39m=[32m"evenodd"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-delete-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-add-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11h-8V3a1 1 0 0 0-2 0v8H3a1 1 0 0 0 0 2h8v8a1 1 0 0 0 2 0v-8h8a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-add-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`evo-number-input > renders number input with label 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"number-input"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"textbox"[39m
+    [36m>[39m
+      [36m<label[39m
+        [33mfor[39m=[32m"s0-0-number-input"[39m
+      [36m>[39m
+        [0mEnter a number[0m
+      [36m</label>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__decrement icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-remove-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-remove-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<input[39m
+        [33mclass[39m=[32m"textbox__control"[39m
+        [33mid[39m=[32m"s0-0-number-input"[39m
+        [33mmax[39m=[32m"100"[39m
+        [33mmin[39m=[32m"0"[39m
+        [33mtype[39m=[32m"number"[39m
+        [33mvalue[39m=[32m"0"[39m
+      [36m/>[39m
+      [36m<button[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"number-input__increment icon-btn icon-btn--transparent icon-btn--small"[39m
+        [33mdata-ebayui[39m=[32m""[39m
+        [33mtabindex[39m=[32m"-1"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"icon icon--24"[39m
+          [33mfocusable[39m=[32m"false"[39m
+        [36m>[39m
+          [36m<defs>[39m
+            [36m<symbol[39m
+              [33mid[39m=[32m"icon-add-24"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M21 11h-8V3a1 1 0 0 0-2 0v8H3a1 1 0 0 0 0 2h8v8a1 1 0 0 0 2 0v-8h8a1 1 0 0 0 0-2Z"[39m
+              [36m/>[39m
+            [36m</symbol>[39m
+          [36m</defs>[39m
+          [36m<use[39m
+            [33mhref[39m=[32m"#icon-add-24"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;

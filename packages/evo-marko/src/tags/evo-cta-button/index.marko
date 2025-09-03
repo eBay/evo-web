@@ -5,15 +5,8 @@ export interface Input extends Marko.HTML.A {
     size = "default",
     class: inputClass,
     content,
-    // ...htmlInput
+    ...htmlInput
 } = input/>
-
-<const/htmlInput=(({
-    size = "default",
-    class: inputClass,
-    content,
-    ...rest
-}) => rest)(input)/>
 
 <a
     ...htmlInput

@@ -1,0 +1,18 @@
+<id/switchItem>
+<evo-list>
+    <@item as="button" onClick() { console.log("Clicked item 1"); }>
+        Item 1
+    </@item>
+    <@item as="a" href="https://www.ebay.com">
+        <@trailing>
+            <evo-icon-chevron-right-16/>
+        </@trailing>
+        Item 2
+    </@item>
+    <@item id=switchItem>
+        <@trailing>
+            <evo-switch aria-labelledby=switchItem/>
+        </@trailing>
+        Item 3
+    </@item>
+</evo-list>

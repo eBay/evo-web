@@ -22,9 +22,6 @@ export default {
     },
 
     argTypes: {
-        renderBody: {
-            control: { type: "text" },
-        },
         layout: {
             control: { type: "select" },
             options: ["horizontal", "vertical"],

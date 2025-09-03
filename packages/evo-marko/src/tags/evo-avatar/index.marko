@@ -10,7 +10,7 @@ export interface Input extends Marko.HTML.Div {
 }
 
 <const/{
-    // class: inputClass,
+    class: inputClass,
     size,
     color,
     img,
@@ -31,7 +31,7 @@ export interface Input extends Marko.HTML.Div {
     class=[
         "avatar",
         imagePlacement === "fit" && "avatar--fit",
-        // inputClass,
+        inputClass,
         size && `avatar--${size}`,
         username && !img && `avatar--${getColorForText(username, color)}`,
     ]

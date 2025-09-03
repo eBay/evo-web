@@ -8,7 +8,6 @@ import ButtonTemplateCode from "./examples/button.marko?raw";
 
 import ExpandButtonTemplate from "./examples/expand-button.marko";
 import ExpandButtonTemplateCode from "./examples/expand-button.marko?raw";
-import { Story } from "@storybook/marko";
 
 export default {
   title: "buttons/evo-button",

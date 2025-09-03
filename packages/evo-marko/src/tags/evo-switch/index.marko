@@ -1,0 +1,16 @@
+export interface Input extends Marko.HTML.Input {}
+
+<const/{
+    class: inputClass,
+    ...htmlInput
+} = input>
+
+<span class=["switch", inputClass]>
+    <input
+        type="checkbox"
+        role="switch"
+        class="switch__control"
+        ...htmlInput
+    >
+    <span class="switch__button"/>
+</span>

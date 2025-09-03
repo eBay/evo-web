@@ -11,27 +11,22 @@ import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 
 export default {
-    title: "form input/evo-selection-chip",
-    component: Component,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "form input/evo-selection-chip",
+  component: Component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
+  },
 
-    argTypes: {
-        renderBody: {
-            control: { type: "text" },
-            description: "Text to be displayed in the chip",
-        },
-        selected: {
-            control: { type: "boolean" },
-            description:
-                "True/false if the chip is selected or not",
-        },
+  argTypes: {
+    selected: {
+      control: { type: "boolean" },
+      description: "True/false if the chip is selected or not",
     },
+  },
 };
 
 export const Default = buildExtensionTemplate(

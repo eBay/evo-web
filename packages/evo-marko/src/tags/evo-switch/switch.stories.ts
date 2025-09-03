@@ -1,0 +1,70 @@
+import type { Story } from "@storybook/marko";
+import { tagToString } from "../../common/storybook/storybook-code-source";
+import Readme from "./README.md";
+import Component, { type Input } from "./index.marko";
+import WithLabelTemplate from "./examples/with-label.marko";
+import DisabledTemplate from "./examples/disabled-with-label.marko";
+import WithLabelCode from "./examples/with-label.marko?raw";
+import DisabledCode from "./examples/disabled-with-label.marko?raw";
+
+const Template: Story<Input> = (args) => ({ input: args });
+
+export default {
+  title: "form input/evo-switch",
+  component: Component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
+    },
+  },
+  argTypes: {
+    onChange: {
+      action: "onChange",
+      description: "Triggered on change",
+      table: {
+        category: "Events",
+        defaultValue: {
+          summary: "{ }",
+        },
+      },
+    },
+  },
+};
+
+export const WithLabel: Story<Input> = (args) => ({
+  input: args,
+  component: WithLabelTemplate,
+});
+WithLabel.args = {};
+WithLabel.parameters = {
+  docs: {
+    source: {
+      code: WithLabelCode,
+    },
+  },
+};
+
+export const Disabled: Story<Input> = (args) => ({
+  input: args,
+  component: DisabledTemplate,
+});
+Disabled.args = {};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: DisabledCode,
+    },
+  },
+};
+
+export const Isolated = Template.bind({});
+Isolated.args = {};
+Isolated.parameters = {
+  docs: {
+    source: {
+      code: tagToString("evo-switch", Isolated.args),
+    },
+  },
+};
