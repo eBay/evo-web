@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.13.0
+
+### Minor Changes
+
+- [`646fed0`](https://github.com/eBay/evo-web/commit/646fed0d74beb86822c5825888152a316d7f3eba) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons #277
+
 ## 8.12.0
 
 ### Minor Changes

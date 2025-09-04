@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.14.0
+
+### Minor Changes
+
+- [`646fed0`](https://github.com/eBay/evo-web/commit/646fed0d74beb86822c5825888152a316d7f3eba) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons #277
+
+### Patch Changes
+
+- [`358dd62`](https://github.com/eBay/evo-web/commit/358dd62b2d7127849030a5ed69d2c6b9fe4e3f13) Thanks [@agliga](https://github.com/agliga)! - fix(icon-button): added display inline-flex to center icon
+
+- [#257](https://github.com/eBay/evo-web/pull/257) [`f868b68`](https://github.com/eBay/evo-web/commit/f868b68afb2cb2e72724020dc1a1024ddf35b211) Thanks [@darkwebdev](https://github.com/darkwebdev)! - feat(section-notice): update cta without footer to latest specs
+
 ## 19.13.0
 
 ### Minor Changes

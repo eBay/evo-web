@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 15.12.0
+
+### Minor Changes
+
+- [`646fed0`](https://github.com/eBay/evo-web/commit/646fed0d74beb86822c5825888152a316d7f3eba) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons #277
+
+### Patch Changes
+
+- [`b6d11c3`](https://github.com/eBay/evo-web/commit/b6d11c3cb1f7b616e2362861365fc59cab374a62) Thanks [@agliga](https://github.com/agliga)! - fix(icon-button): removed ariaLabel from destructure and allow it to spread
+
 ## 15.11.1
 
 ### Patch Changes

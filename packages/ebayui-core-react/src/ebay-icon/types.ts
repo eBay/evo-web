@@ -13,6 +13,9 @@ export type Icon =
     'ai16' |
     'ai20' |
     'ai24' |
+    'aiCamera16' |
+    'aiCamera20' |
+    'aiCamera24' |
     'aiFilled16' |
     'aiFilled20' |
     'aiFilled24' |
@@ -73,6 +76,10 @@ export type Icon =
     'attention64' |
     'attentionFilled16' |
     'attentionFilled24' |
+    'attentionTriangle16' |
+    'attentionTriangle24' |
+    'attentionTriangleFilled16' |
+    'attentionTriangleFilled24' |
     'atv16' |
     'atv24' |
     'audioHigh16' |
@@ -194,6 +201,7 @@ export type Icon =
     'clear24' |
     'clickToCall16' |
     'clickToCall24' |
+    'clock12' |
     'clock16' |
     'clock24' |
     'clock64' |
@@ -204,7 +212,9 @@ export type Icon =
     'close20' |
     'close24' |
     'closedCaption16' |
+    'closedCaption24' |
     'closedCaptionFilled16' |
+    'closedCaptionFilled24' |
     'coin24' |
     'coinBattery48' |
     'collections16' |
@@ -354,6 +364,7 @@ export type Icon =
     'file24' |
     'filter16' |
     'filter24' |
+    'fingerprint16' |
     'fingerprint24' |
     'fingerprint64' |
     'flag16' |
