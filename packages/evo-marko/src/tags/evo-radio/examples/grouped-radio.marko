@@ -1,0 +1,20 @@
+<fieldset>
+    <legend>Choose an Option</legend>
+    <for|label_num| of=[1, 2, 3]>
+        <span class="field">
+            <evo-radio
+                ...input
+                class="field__control"
+                id=`group-radio-${label_num}`
+                value=label_num
+                name="radio-group"
+            />
+            <label
+                class="field__label field__label--end"
+                for=`group-radio-${label_num}`
+            >
+                Option ${label_num}
+            </label>
+        </span>
+    </for>
+</fieldset>

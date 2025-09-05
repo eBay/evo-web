@@ -1,0 +1,58 @@
+export interface Input extends Marko.HTML.Span {
+    value?: string | number;
+    valueChange?: (value?: string | number) => void;
+    count?: number;
+    countChange?: (count?: number) => void;
+    "aria-liveChange"?: (ariaLive?: Marko.HTMLAttributes["aria-live"]) => void;
+    max?: number;
+    clippedText?: Marko.HTMLAttributes["aria-label"];
+}
+
+<const/{
+    content,
+    max = 0,
+    clippedText,
+    value: inputValue,
+    count: inputCount,
+    countChange,
+    "aria-liveChange": ariaLiveChange,
+    ...htmlInput
+}=input>
+
+<let/value:=input.value/>
+
+<const/countFromValue(value?: string | number) {
+    console.log("count, update", value)
+    if (typeof value === "string") {
+        // use iterator to account for emojis and other multi-char symbols
+        return [...value].length;
+    }
+    if (typeof value === "number") {
+        return value;
+    }
+    return 0;
+}>
+
+<let/count = inputCount ? inputCount : countFromValue(value)>
+
+<script>
+    const timeout = setTimeout(() => {
+        count = value ? countFromValue(value) : count;
+        (countChange || null)?.(count);
+        (ariaLiveChange || null)?.(count >= max ? "polite" : "off");
+    }, 500);
+    $signal.onabort = () => clearTimeout(timeout);
+</script>
+<span ...htmlInput>
+    <if=content>
+        <${content}/>
+    </if>
+    <else>
+        ${count}/${max}
+        <if=clippedText>
+            <span class="clipped">
+                ${clippedText}
+            </span>
+        </if>
+    </else>
+</span>

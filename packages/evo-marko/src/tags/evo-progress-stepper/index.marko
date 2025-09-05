@@ -1,0 +1,127 @@
+export interface Step extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
+    current?: boolean;
+    a11yText?: string;
+    title?: Marko.AttrTag<Marko.HTML.H4 & {
+            as?: keyof Marko.NativeTags;
+        }
+    >;
+}
+export interface Input extends Marko.HTML.Div {
+    direction?: "row" | "column";
+    step?: Marko.AttrTag<Step>;
+    defaultState?: "complete" | "upcoming" | "attention" | "current";
+    a11yHeadingTag?: keyof Marko.NativeTags;
+    a11yHeadingText?: Marko.HTMLAttributes["aria-label"];
+    as?: keyof Marko.NativeTags;
+}
+<const/{
+    content,
+    step: steps = [],
+    direction = "row",
+    defaultState,
+    class: inputClass,
+    a11yHeadingTag,
+    a11yHeadingText,
+    as: inputAs,
+    ...htmlInput
+}=input>
+
+<const/getCurrentState() {
+    let currentNumber: number;
+    switch (defaultState) {
+        case "complete":
+        case "upcoming":
+            currentNumber = -1;
+            break;
+        default:
+            const step = [...steps].findIndex((item) => item.current);
+            currentNumber = step === -1 ? 0 : step;
+    }
+    return currentNumber;
+}>
+
+<const/current: number=getCurrentState()>
+<id/stepperHeading>
+
+<div
+    class=[
+        "progress-stepper",
+        direction === "column" && "progress-stepper--vertical",
+        inputClass,
+    ]
+    aria-labelledby=stepperHeading
+    ...htmlInput>
+    <${a11yHeadingTag || "h2"} id=stepperHeading class="clipped">
+        ${a11yHeadingText}
+    </>
+
+    <div
+        class=[
+            "progress-stepper__items",
+            defaultState === "upcoming" && "progress-stepper__items--upcoming",
+            defaultState === "current" && "progress-stepper__items--current",
+        ]
+        role="list">
+        <for|step, index, list| of=steps>
+            <const/{
+                current: stepCurrent,
+                class: stepClass,
+                title,
+                a11yText,
+                content,
+                ...htmlStep
+            }=step>
+            <if=(index > 0)>
+                <hr role="presentation" class="progress-stepper__separator">
+            </if>
+            <div
+                class=[
+                    "progress-stepper__item",
+                    index === current &&
+                        defaultState === "attention" &&
+                        "progress-stepper__item--attention",
+                    stepClass,
+                ]
+                aria-current=current === index && "step"
+                role="listitem"
+                ...htmlStep>
+                <span class="progress-stepper__icon">
+                    <if=index < current || defaultState === "complete">
+                        <evo-icon-stepper-confirmation-24
+                            width="24"
+                            height="24"
+                            a11yText=a11yText || "complete"/>
+                    </if>
+                    <else if=index === current>
+                        <if=defaultState === "attention">
+                            <evo-icon-stepper-attention-24
+                                width="24"
+                                height="24"
+                                a11yText=a11yText || "blocked"/>
+                        </if>
+                        <else>
+                            <evo-icon-stepper-confirmation-24
+                                width="24"
+                                height="24"
+                                a11yText=a11yText || "current"/>
+                        </else>
+                    </else>
+                    <else>
+                        <evo-icon-stepper-upcoming-24
+                            width="24"
+                            height="24"
+                            a11yText=a11yText || "upcoming"/>
+                    </else>
+                </span>
+                <span class="progress-stepper__text">
+                    <if=title>
+                        <${title.as || "h4"} ...title/>
+                    </if>
+                    <${inputAs || "p"}>
+                        <${content}/>
+                    </>
+                </span>
+            </div>
+        </for>
+    </div>
+</div>
