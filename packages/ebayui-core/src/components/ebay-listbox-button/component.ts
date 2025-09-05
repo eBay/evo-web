@@ -25,6 +25,7 @@ interface ListboxButtonInput extends Omit<Marko.HTML.Div, `on${string}`> {
     invalid?: boolean;
     hasError?: boolean;
     "a11y-icon-prefix-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-selected-text"?: string;
     "prefix-label"?: string;
     "postfix-label"?: string;
     "collapse-on-select"?: boolean;

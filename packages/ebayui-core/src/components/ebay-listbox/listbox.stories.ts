@@ -46,6 +46,17 @@ export default {
             description:
                 "allows you to set the selected index option to `selected`",
         },
+        a11ySelectedText: {
+            type: "text",
+            control: { type: "text" },
+            description:
+                "Localized text to be read by screen readers when an option is selected",
+            table: {
+                defaultValue: {
+                    summary: "selected",
+                },
+            },
+        },
         option: {
             name: "@option",
             table: {

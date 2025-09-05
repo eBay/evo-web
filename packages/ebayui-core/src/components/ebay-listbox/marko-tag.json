@@ -16,6 +16,7 @@
     },
     "@button-name": "#html-name",
     "@disabled": "#html-disabled",
+    "@a11y-selected-text": "string",
     "@option <option>[]": {
         "attribute-groups": ["html-attributes"],
         "@*": {

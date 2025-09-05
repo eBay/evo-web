@@ -118,6 +118,17 @@ export default {
                 category: "@option attributes",
             },
         },
+        a11ySelectedText: {
+            type: "text",
+            control: { type: "text" },
+            description:
+                "Localized text to be read by screen readers when an option is selected",
+            table: {
+                defaultValue: {
+                    summary: "selected",
+                },
+            },
+        },
         value: {
             table: {
                 control: { type: "value" },

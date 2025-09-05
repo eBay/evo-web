@@ -15,6 +15,7 @@
     "@prefix-id": "string",
     "@prefix-label": "string",
     "@a11y-icon-prefix-text": "string",
+    "@a11y-selected-text": "string",
     "@floating-label": "string",
     "@unselected-text": "string",
     "@postfix-label": "string",

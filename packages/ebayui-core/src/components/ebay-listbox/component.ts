@@ -22,6 +22,7 @@ export interface Option extends Omit<Marko.HTML.Option, `on${string}`> {
 interface ListboxInput extends Omit<Marko.HTML.Div, `on${string}`> {
     "list-selection"?: "auto" | "manual";
     "typeahead-timeout-length"?: number;
+    "a11y-selected-text"?: string;
     option?: Marko.AttrTag<Option>;
     name?: string;
     disabled?: boolean;

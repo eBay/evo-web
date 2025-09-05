@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`listbox > renders basic version 1`] = `
+exports[`listbox button > renders basic version 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -137,7 +137,7 @@ exports[`listbox > renders basic version 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders fluid layout 1`] = `
+exports[`listbox button > renders fluid layout 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button listbox-button--fluid"[39m
@@ -274,7 +274,7 @@ exports[`listbox > renders fluid layout 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders truncated layout 1`] = `
+exports[`listbox button > renders truncated layout 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<div[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -411,7 +411,7 @@ exports[`listbox > renders truncated layout 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with description 1`] = `
+exports[`listbox button > renders with description 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -470,6 +470,11 @@ exports[`listbox > renders with description 1`] = `
           [33mclass[39m=[32m"listbox__value"[39m
         [36m>[39m
           [0mOption 1[0m
+          [36m<span[39m
+            [33mclass[39m=[32m"clipped"[39m
+          [36m>[39m
+            [0mselected[0m
+          [36m</span>[39m
         [36m</span>[39m
         [36m<span[39m
           [33mclass[39m=[32m"listbox__description"[39m
@@ -567,7 +572,7 @@ exports[`listbox > renders with description 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with error 1`] = `
+exports[`listbox button > renders with error 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"field"[39m
@@ -625,6 +630,11 @@ exports[`listbox > renders with error 1`] = `
             [33mclass[39m=[32m"listbox__value"[39m
           [36m>[39m
             [0mOption 1[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"clipped"[39m
+            [36m>[39m
+              [0mselected[0m
+            [36m</span>[39m
           [36m</span>[39m
           [36m<svg[39m
             [33maria-hidden[39m=[32m"true"[39m
@@ -738,7 +748,7 @@ exports[`listbox > renders with error 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with floating label 1`] = `
+exports[`listbox button > renders with floating label 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -870,7 +880,7 @@ exports[`listbox > renders with floating label 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with form 1`] = `
+exports[`listbox button > renders with form 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button listbox-button--form"[39m
@@ -1007,7 +1017,7 @@ exports[`listbox > renders with form 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with prefix id 1`] = `
+exports[`listbox button > renders with prefix id 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -1146,7 +1156,7 @@ exports[`listbox > renders with prefix id 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with prefix label 1`] = `
+exports[`listbox button > renders with prefix label 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -1283,7 +1293,7 @@ exports[`listbox > renders with prefix label 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with second item selected 1`] = `
+exports[`listbox button > renders with second item selected 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m
@@ -1421,7 +1431,7 @@ exports[`listbox > renders with second item selected 1`] = `
 [36m</DocumentFragment>[39m"
 `;
 
-exports[`listbox > renders with strategy=fixed 1`] = `
+exports[`listbox button > renders with strategy=fixed 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<span[39m
     [33mclass[39m=[32m"listbox-button"[39m

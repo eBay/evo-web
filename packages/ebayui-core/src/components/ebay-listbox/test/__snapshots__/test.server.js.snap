@@ -503,6 +503,11 @@ exports[`listbox > renders with second item disabled 1`] = `
         [33mclass[39m=[32m"listbox__value"[39m
       [36m>[39m
         [0mOption 2[0m
+        [36m<span[39m
+          [33mclass[39m=[32m"clipped"[39m
+        [36m>[39m
+          [0mselected[0m
+        [36m</span>[39m
       [36m</span>[39m
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m
@@ -599,6 +604,11 @@ exports[`listbox > renders with second item selected 1`] = `
         [33mclass[39m=[32m"listbox__value"[39m
       [36m>[39m
         [0mOption 2[0m
+        [36m<span[39m
+          [33mclass[39m=[32m"clipped"[39m
+        [36m>[39m
+          [0mselected[0m
+        [36m</span>[39m
       [36m</span>[39m
       [36m<svg[39m
         [33maria-hidden[39m=[32m"true"[39m

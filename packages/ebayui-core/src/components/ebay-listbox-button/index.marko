@@ -21,6 +21,7 @@ $ const {
     strategy,
     split = "none",
     a11yIconPrefixText,
+    a11ySelectedText = "selected",
     ariaDescribedby: describedby,
     ...htmlInput
 } = input;
@@ -118,6 +119,7 @@ $ var isForm = variant === "form";
         name=name
         tabindex=-1
         listSelection=listSelection
+        a11ySelectedText=a11ySelectedText
         onChange("handleListboxChange")
         onEscape("handleListboxEscape")
     >

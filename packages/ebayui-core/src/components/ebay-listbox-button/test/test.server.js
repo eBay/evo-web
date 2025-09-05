@@ -7,7 +7,7 @@ const { Default, withDescription, withError } = composeStories(stories);
 
 const htmlSnap = snapshotHTML(__dirname);
 
-describe("listbox", () => {
+describe("listbox button", () => {
     it("renders basic version", async () => {
         await htmlSnap(Default);
     });
