@@ -22,6 +22,7 @@ describe("ebay-listbox-button rendering", () => {
         const listboxButton: HTMLElement = container.querySelector(".listbox-button");
         const button = within(listboxButton).getByRole("button", { name: "Option 2" });
         expect(button).toHaveClass("btn btn--form");
+        expect(button).not.toHaveClass("btn--split-undefined");
         expect(button).toHaveAttribute("aria-expanded", "false");
         expect(button).toHaveAttribute("aria-haspopup", "listbox");
         expect(button).toHaveAttribute("type", "button");

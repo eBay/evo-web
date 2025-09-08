@@ -262,7 +262,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
         "btn--form": !borderless,
         "btn--borderless": borderless,
         "btn--floating-label": floatingLabel && selectedOption,
-        [`btn--split-${split}`]: split !== "none",
+        [`btn--split-${split}`]: split && split !== "none",
     });
     const expandBtnTextId = prefixId && "expand-btn-text";
 
