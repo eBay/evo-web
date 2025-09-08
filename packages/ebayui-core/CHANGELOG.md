@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.1
+
+### Patch Changes
+
+- [`4181f96`](https://github.com/eBay/evo-web/commit/4181f963e73dac946c972762048b04d5f6f6de73) Thanks [@agliga](https://github.com/agliga)! - fix(highcharts): fixed lasso loading
+
 ## 15.12.0
 
 ### Minor Changes
