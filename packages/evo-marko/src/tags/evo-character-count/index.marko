@@ -3,7 +3,7 @@ export interface Input extends Marko.HTML.Span {
     valueChange?: (value?: string | number) => void;
     count?: number;
     countChange?: (count?: number) => void;
-    "aria-liveChange"?: (ariaLive?: Marko.HTMLAttributes["aria-live"]) => void;
+    ariaLiveChange?: (ariaLive?: Marko.HTMLAttributes["aria-live"]) => void;
     max?: number;
     clippedText?: Marko.HTMLAttributes["aria-label"];
 }
@@ -15,7 +15,7 @@ export interface Input extends Marko.HTML.Span {
     value: inputValue,
     count: inputCount,
     countChange,
-    "aria-liveChange": ariaLiveChange,
+    ariaLiveChange: ariaLiveChange,
     ...htmlInput
 }=input>
 

@@ -31,7 +31,9 @@ export interface Input {
             id="my-input-charcount"
             count:=charCount
             value:=value
-            aria-live:=ariaLive
+            ariaLiveChange(newAriaLive) {
+                ariaLive = newAriaLive;
+            }
             max=max
         >
             ${charCount} of ${max} (${max - (charCount || 0)} remaining)

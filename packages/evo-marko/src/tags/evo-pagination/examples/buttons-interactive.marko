@@ -6,7 +6,7 @@ static const SIZE = 15;
     a11yCurrentText=`Results Pagination - Page ${current}`
     ...input
 >
-    <@item type="previous" disabled=(current === 0) onClick() {
+    <@prev disabled=(current === 0) onClick() {
         current = Math.max(current - 1, 0);
     }/>
     <for|i| from=0 to=SIZE>
@@ -16,7 +16,7 @@ static const SIZE = 15;
             ${i}
         </@item>
     </for>
-    <@item type="next" disabled=(current === SIZE) onClick() {
+    <@next disabled=(current === SIZE) onClick() {
         current = Math.min(current + 1, SIZE);
     }/>
 </evo-pagination>

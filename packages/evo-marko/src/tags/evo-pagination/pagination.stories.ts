@@ -22,14 +22,6 @@ export default {
   },
 
   argTypes: {
-    a11yPreviousText: {
-      control: { type: "text" },
-      description: "a11y text for previous arrow button",
-    },
-    a11yNextText: {
-      control: { type: "text" },
-      description: "a11y text for next arrow button",
-    },
     a11yCurrentText: {
       control: { type: "text" },
       description: "Description for the current page (e.g. Results of Page 1)",
@@ -76,6 +68,51 @@ export default {
       description:
         '"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`',
     },
+    prev: {
+      name: "@prev",
+      table: {
+        category: "@attribute tags",
+      },
+    },
+    "@prev variant": {
+      name: "variant",
+      table: {
+        category: "@prev attribute tags",
+      },
+      description:
+        '"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`',
+    },
+    "@prev aria-label": {
+      name: "variant",
+      table: {
+        category: "@prev attribute tags",
+      },
+      description:
+        'The aria-label for the prev button. This is required. Defaults to "Previous page"',
+    },
+    next: {
+      name: "@next",
+      table: {
+        category: "@attribute tags",
+      },
+    },
+    "@next variant": {
+      name: "variant",
+      table: {
+        category: "@next attribute tags",
+      },
+      description:
+        '"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`',
+    },
+    "@next aria-label": {
+      name: "variant",
+      table: {
+        category: "@next attribute tags",
+      },
+      description:
+        'The aria-label for the next button. This is required. Defaults to "Next page"',
+    },
+
     current: {
       name: "current",
       table: {

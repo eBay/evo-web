@@ -8,10 +8,10 @@ export interface Item extends Omit<Marko.HTML.Button, "type"> {
 }
 export interface Input extends Marko.HTML.Nav {
     item?: Marko.AttrTag<Item>;
+    prev?: Marko.AttrTag<Item>;
+    next?: Marko.AttrTag<Item>;
     variant?: "show-range" | "show-last" | "overflow";
     a11yCurrentText?: Marko.HTMLAttributes["aria-label"];
-    a11yPreviousText?: Marko.HTMLAttributes["aria-label"];
-    a11yNextText?: Marko.HTMLAttributes["aria-label"];
 }
 static const MAX_PAGES = 9;
 static const MIN_PAGES = 5;
@@ -20,9 +20,9 @@ static const MIN_PAGES = 5;
     class: inputClass,
     variant,
     item: items = [],
+    prev,
+    next,
     a11yCurrentText = "Results Pagination - Page 1",
-    a11yPreviousText = "Previous page",
-    a11yNextText = "Next page",
     ...htmlInput
 }=input>
 <let/itemWidth=0>
@@ -58,25 +58,11 @@ static const MIN_PAGES = 5;
 <const/dotsIndex=(hasDots ? lastItemIndex : -1)>
 <const/leadingDotsIndex=(hasOverflow ? 1 : -1)>
 
-<const/prevItem=(
-    baseItems[0] && baseItems[0].type === "previous"
-        ? baseItems[0]
-        : { disabled: true }
-)>
-<const/nextItem=(
-    baseItems[lastItemIndex] && baseItems[lastItemIndex].type === "next"
-        ? baseItems[lastItemIndex]
-        : { disabled: true }
-)>
-<const/slicedItems=baseItems.slice(
-    prevItem.disabled ? 0 : 1,
-    nextItem.disabled ? undefined : lastItemIndex,
-)>
 <const/{ start, end, hideDots, hideLeadingDots }=(() => {
     let hideDots = false;
     let hideLeadingDots = false;
 
-    const i = slicedItems.findIndex((item) => item.current);
+    const i = baseItems.findIndex((item) => item.current);
     const range = Math.floor(maxItems / 2);
     let start = i - range;
     let end = i + range;
@@ -129,7 +115,7 @@ static const MIN_PAGES = 5;
     );
 }>
 
-<const/getItemTag(item: Item) {
+<const/getItemTag(item: Item = {}) {
     if (item.variant) {
         return item.variant === "link" ? "a" : "button";
     }
@@ -154,16 +140,16 @@ static const MIN_PAGES = 5;
         </h2>
     </span>
 
-    <${getItemTag(prevItem)}
-        ...prevItem
+    <${getItemTag(prev)}
+        ...prev
         class=[
             "pagination__previous",
-            prevItem.href ? "icon-link" : "icon-btn",
-            prevItem.class,
+            prev?.href ? "icon-link" : "icon-btn",
+            prev?.class,
         ]
-        aria-disabled=prevItem.disabled && "true"
-        aria-label=a11yPreviousText
-        style=[prevItem.style, { minWidth: 40 }]>
+        aria-label=prev?.["aria-label"] || "Previous Page"
+        aria-disabled=prev ? prev.disabled && "true" : "true"
+        style=[prev?.style, { minWidth: 40 }]>
         <evo-icon-arrow-left-16/>
     </>
 
@@ -225,16 +211,16 @@ static const MIN_PAGES = 5;
         </for>
     </ol>
 
-    <${getItemTag(nextItem)}
-        ...nextItem
+    <${getItemTag(next)}
+        ...next
         class=[
             "pagination__next",
-            nextItem.href ? "icon-link" : "icon-btn",
-            nextItem.class,
+            next?.href ? "icon-link" : "icon-btn",
+            next?.class,
         ]
-        aria-disabled=nextItem.disabled && "true"
-        aria-label=a11yNextText
-        style=[nextItem.style, { minWidth: 40 }]>
+        aria-label=next?.["aria-label"] || "Next Page"
+        aria-disabled=next ? next.disabled && "true" : "true"
+        style=[next?.style, { minWidth: 40 }]>
         <evo-icon-arrow-right-16/>
     </>
 </nav>

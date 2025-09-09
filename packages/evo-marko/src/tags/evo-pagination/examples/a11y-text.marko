@@ -1,7 +1,5 @@
-<evo-pagination
-    a11y-previous-text="Previous page"
-    a11y-next-text="Next page">
-    <@item href="#" type="previous" disabled/>
+<evo-pagination>
+    <@prev aria-label="Previous Page" href="#" disabled/>
     <@item href="#">
         1
     </@item>
@@ -29,5 +27,5 @@
     <@item href="#">
         9
     </@item>
-    <@item href="#" type="next"/>
+    <@next aria-label="Next Page" href="#" disabled/>
 </evo-pagination>
