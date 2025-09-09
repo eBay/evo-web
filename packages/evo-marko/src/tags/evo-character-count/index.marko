@@ -19,10 +19,9 @@ export interface Input extends Marko.HTML.Span {
     ...htmlInput
 }=input>
 
-<let/value:=input.value/>
+<let/value:=input.value>
 
 <const/countFromValue(value?: string | number) {
-    console.log("count, update", value)
     if (typeof value === "string") {
         // use iterator to account for emojis and other multi-char symbols
         return [...value].length;
@@ -33,12 +32,13 @@ export interface Input extends Marko.HTML.Span {
     return 0;
 }>
 
-<let/count = inputCount ? inputCount : countFromValue(value)>
+<let/count=(
+    inputCount ? inputCount : countFromValue(value)
+) valueChange=countChange>
 
 <script>
     const timeout = setTimeout(() => {
         count = value ? countFromValue(value) : count;
-        (countChange || null)?.(count);
         (ariaLiveChange || null)?.(count >= max ? "polite" : "off");
     }, 500);
     $signal.onabort = () => clearTimeout(timeout);

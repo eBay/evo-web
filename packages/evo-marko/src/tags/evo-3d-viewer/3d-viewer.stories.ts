@@ -64,7 +64,7 @@ export default {
       description: "Text to show error message",
     },
     onAction: {
-      action: "on-action",
+      action: "onAction",
       description: "Triggered when interacting with player",
       table: {
         category: "Events",
@@ -74,7 +74,7 @@ export default {
       },
     },
     onProgress: {
-      action: "on-progress",
+      action: "onProgress",
       description: "Triggered ",
       table: {
         category: "Events",
@@ -84,7 +84,7 @@ export default {
       },
     },
     onLoad: {
-      action: "on-load",
+      action: "onLoad",
       description: "Triggered when loading is complete",
       table: {
         category: "Events",
@@ -94,7 +94,7 @@ export default {
       },
     },
     "onLoad-error": {
-      action: "on-load-error",
+      action: "onLoad-error",
       description: "Triggered when loading error happens",
       table: {
         category: "Events",
@@ -104,7 +104,7 @@ export default {
       },
     },
     "onModel-visibility": {
-      action: "on-model-visibility",
+      action: "onModel-visibility",
       description: "Triggered when model is visible",
       table: {
         category: "Events",
@@ -114,7 +114,7 @@ export default {
       },
     },
     "onRender-scale": {
-      action: "on-render-scale",
+      action: "onRender-scale",
       description: "Triggered when model scales",
       table: {
         category: "Events",
@@ -124,7 +124,7 @@ export default {
       },
     },
     "onPoster-dismissed": {
-      action: "on-poster-dismissed",
+      action: "onPoster-dismissed",
       description:
         "Triggered when there's a placeholder image and it is removed",
       table: {

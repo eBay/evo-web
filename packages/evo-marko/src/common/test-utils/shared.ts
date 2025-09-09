@@ -1,15 +1,14 @@
-
-export function getNItems(n:number, getAttrs:(i:number) => any[]) {
+export function getNItems(n: number, getAttrs: (i: number) => any[]) {
   return Array.from({ length: n }).map((_, i) => getAttrs(i));
 }
 
 // Helper method to render pagination items
 export function getPaginationItems(
-  n:number,
-  href:boolean = false,
-  selected:number = -1,
-  navDisabled:boolean = false,
-  skipPrevNext:boolean = false,
+  n: number,
+  href: boolean = false,
+  selected: number = -1,
+  navDisabled: boolean = false,
+  skipPrevNext: boolean = false,
 ) {
   const items = [];
   if (!skipPrevNext) {

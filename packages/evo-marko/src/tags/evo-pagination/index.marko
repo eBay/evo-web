@@ -25,7 +25,6 @@ static const MIN_PAGES = 5;
     a11yNextText = "Next page",
     ...htmlInput
 }=input>
-static var disabledItem: Item = { disabled: true };
 <let/itemWidth=0>
 <let/maxItems=MIN_PAGES>
 
@@ -58,11 +57,26 @@ static var disabledItem: Item = { disabled: true };
 <const/lastItemIndex=baseItems.length - 1>
 <const/dotsIndex=(hasDots ? lastItemIndex : -1)>
 <const/leadingDotsIndex=(hasOverflow ? 1 : -1)>
-<const/_getVisibleRange(items: Item[]) {
+
+<const/prevItem=(
+    baseItems[0] && baseItems[0].type === "previous"
+        ? baseItems[0]
+        : { disabled: true }
+)>
+<const/nextItem=(
+    baseItems[lastItemIndex] && baseItems[lastItemIndex].type === "next"
+        ? baseItems[lastItemIndex]
+        : { disabled: true }
+)>
+<const/slicedItems=baseItems.slice(
+    prevItem.disabled ? 0 : 1,
+    nextItem.disabled ? undefined : lastItemIndex,
+)>
+<const/{ start, end, hideDots, hideLeadingDots }=(() => {
     let hideDots = false;
     let hideLeadingDots = false;
 
-    const i = items.findIndex((item) => item.current);
+    const i = slicedItems.findIndex((item) => item.current);
     const range = Math.floor(maxItems / 2);
     let start = i - range;
     let end = i + range;
@@ -105,22 +119,7 @@ static var disabledItem: Item = { disabled: true };
         hideDots,
         hideLeadingDots,
     };
-}>
-<const/prevItem=(
-    baseItems[0] && baseItems[0].type === "previous"
-        ? baseItems[0]
-        : { disabled: true }
-)>
-<const/nextItem=(
-    baseItems[lastItemIndex] && baseItems[lastItemIndex].type === "next"
-        ? baseItems[lastItemIndex]
-        : { disabled: true }
-)>
-<const/slicedItems=baseItems.slice(
-    prevItem.disabled ? 0 : 1,
-    nextItem.disabled ? undefined : lastItemIndex,
-)>
-<const/{ start, end, hideDots, hideLeadingDots }=_getVisibleRange(slicedItems)>
+})()>
 
 <const/isItemHidden(index: number) {
     return (
@@ -139,15 +138,9 @@ static var disabledItem: Item = { disabled: true };
 
 <script>
     calculateMaxItems();
-    window.addEventListener(
-        "resize",
-        () => {
-            calculateMaxItems();
-        },
-        {
-            signal: $signal,
-        },
-    );
+    window.addEventListener("resize", calculateMaxItems, {
+        signal: $signal,
+    });
 </script>
 
 <nav/root
@@ -162,6 +155,7 @@ static var disabledItem: Item = { disabled: true };
     </span>
 
     <${getItemTag(prevItem)}
+        ...prevItem
         class=[
             "pagination__previous",
             prevItem.href ? "icon-link" : "icon-btn",
@@ -169,8 +163,7 @@ static var disabledItem: Item = { disabled: true };
         ]
         aria-disabled=prevItem.disabled && "true"
         aria-label=a11yPreviousText
-        style=[prevItem.style, { minWidth: 40 }]
-        ...prevItem>
+        style=[prevItem.style, { minWidth: 40 }]>
         <evo-icon-arrow-left-16/>
     </>
 
@@ -224,15 +217,16 @@ static var disabledItem: Item = { disabled: true };
                 </if>
                 <li hidden=isItemHidden(i)>
                     <${getItemTag(item)}
+                        ...item
                         class=["pagination__item", item.class]
-                        aria-current=item.current && "page"
-                        ...item/>
+                        aria-current=item.current && "page"/>
                 </li>
             </if>
         </for>
     </ol>
 
     <${getItemTag(nextItem)}
+        ...nextItem
         class=[
             "pagination__next",
             nextItem.href ? "icon-link" : "icon-btn",
@@ -240,8 +234,7 @@ static var disabledItem: Item = { disabled: true };
         ]
         aria-disabled=nextItem.disabled && "true"
         aria-label=a11yNextText
-        style=[nextItem.style, { minWidth: 40 }]
-        ...nextItem>
+        style=[nextItem.style, { minWidth: 40 }]>
         <evo-icon-arrow-right-16/>
     </>
 </nav>

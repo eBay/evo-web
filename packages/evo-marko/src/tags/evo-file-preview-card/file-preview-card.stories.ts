@@ -82,7 +82,7 @@ export default {
       description: "Subtitle to display beneath the file title",
     },
     "onMenu-action": {
-      action: "on-menu-action",
+      action: "onMenuAction",
       description: "Triggered when an action is selected from the menu. ",
       table: {
         category: "Events",
@@ -92,7 +92,7 @@ export default {
       },
     },
     "onSee-more": {
-      action: "on-see-more",
+      action: "onSeeMore",
       description: "Triggered when the see more button is clicked",
       table: {
         category: "Events",
@@ -102,7 +102,7 @@ export default {
       },
     },
     onDelete: {
-      action: "on-delete",
+      action: "onDelete",
       description: "Triggered when the delete button is clicked",
       table: {
         category: "Events",
@@ -112,7 +112,7 @@ export default {
       },
     },
     onCancel: {
-      action: "on-cancel",
+      action: "onCancel",
       description: "Triggered when the cancel button is clicked",
       table: {
         category: "Events",

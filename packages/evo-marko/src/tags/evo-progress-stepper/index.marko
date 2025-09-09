@@ -26,21 +26,17 @@ export interface Input extends Marko.HTML.Div {
     ...htmlInput
 }=input>
 
-<const/getCurrentState() {
-    let currentNumber: number;
+<const/current=(() => {
     switch (defaultState) {
         case "complete":
         case "upcoming":
-            currentNumber = -1;
-            break;
+            return -1;
         default:
             const step = [...steps].findIndex((item) => item.current);
-            currentNumber = step === -1 ? 0 : step;
+            return step === -1 ? 0 : step;
     }
-    return currentNumber;
-}>
+})()>
 
-<const/current: number=getCurrentState()>
 <id/stepperHeading>
 
 <div
@@ -115,7 +111,8 @@ export interface Input extends Marko.HTML.Div {
                 </span>
                 <span class="progress-stepper__text">
                     <if=title>
-                        <${title.as || "h4"} ...title/>
+                        <const/{ as: titleEl = "h4", ...titleInput }=title>
+                        <${titleEl} ...title/>
                     </if>
                     <${inputAs || "p"}>
                         <${content}/>

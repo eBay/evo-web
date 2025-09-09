@@ -1,7 +1,7 @@
 import { it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
-import * as stories from "../layout-button.stories"; // import all stories from the stories file
+import * as stories from "../layout-grid.stories"; // import all stories from the stories file
 
 const { Default, WithCustomColumns } = composeStories(stories);
 

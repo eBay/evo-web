@@ -65,7 +65,7 @@ export default {
       },
     },
     onToggle: {
-      action: "on-toggle",
+      action: "onToggle",
       description: "Triggered on toggle",
       table: {
         category: "Events",

@@ -42,7 +42,7 @@ export default {
         "With default body content, clipped text should be provided after the character count for screen readers to announce.",
     },
     onChange: {
-      action: "on-change",
+      action: "onChange",
       description:
         "Triggered when the character count changes. Debounced by 500ms.",
       table: {

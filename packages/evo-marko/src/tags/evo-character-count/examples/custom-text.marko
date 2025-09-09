@@ -4,9 +4,9 @@ export interface Input {
     max?: number;
 }
 <const/{ max = 120 }=input>
-<let/inputValue=input.value>
+<let/value=input.value>
 <let/charCount=input.charCount>
-<let/inputAriaLive=("" as Marko.AriaAttributes["aria-live"])>
+<let/ariaLive=("" as Marko.AriaAttributes["aria-live"])>
 
 <span class="field">
     <label class="field__label field__label--stacked" for="my-input">
@@ -14,12 +14,12 @@ export interface Input {
     </label>
     <span class="field__control">
         <evo-textbox
-            value:=inputValue
+            value:=value
             type="text"
             aria-describedby="my-input-charcount"
             class="textbox__control"
             id="my-input"
-            aria-live=inputAriaLive
+            aria-live=ariaLive
         />
     </span>
     <div class=[
@@ -30,8 +30,8 @@ export interface Input {
         <evo-character-count
             id="my-input-charcount"
             count:=charCount
-            value:=inputValue
-            aria-live:=inputAriaLive
+            value:=value
+            aria-live:=ariaLive
             max=max
         >
             ${charCount} of ${max} (${max - (charCount || 0)} remaining)

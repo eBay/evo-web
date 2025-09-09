@@ -33,7 +33,7 @@ export default {
                 'Either "large" or "regular". Sets the radio icon. Default is regular. For mweb this should be set to large. (Note: The dimensions of the radio will not change, but only the icon)',
         },
         onChange: {
-            action: "on-change",
+            action: "onChange",
             description: "Triggered on change",
             table: {
                 category: "Events",
@@ -43,7 +43,7 @@ export default {
             },
         },
         onFocus: {
-            action: "on-focus",
+            action: "onFocus",
             description: "Triggered on focus",
             table: {
                 category: "Events",
@@ -53,7 +53,7 @@ export default {
             },
         },
         onKeydown: {
-            action: "on-keydown",
+            action: "onKeydown",
             description: "Triggered on keydown",
             table: {
                 category: "Events",
@@ -94,12 +94,7 @@ Disabled.parameters = {
 export const Group: Story<Input> = (args) => ({
     input: {
         ...args,
-        renderBody: (args.renderBody
-            ? (out: any) => {
-                  out.html(args.renderBody);
-              }
-            : null) as any,
-    },
+   },
     component: groupTemplate,
 });
 Group.parameters = {
