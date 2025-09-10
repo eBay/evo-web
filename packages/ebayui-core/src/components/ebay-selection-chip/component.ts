@@ -1,9 +1,14 @@
 import type { WithNormalizedProps } from "../../global";
 
+export interface SelectionChipEvent {
+   selected: boolean;
+   originalEvent: Event
+}
+
 interface SelectionChipInput extends Omit<Marko.HTML.Button, `on${string}`> {
     renderBody?: Marko.Body;
     selected?: boolean;
-    "on-click"?: () => void;
+    "on-click"?: (event: SelectionChipEvent) => void;
 }
 export interface Input extends WithNormalizedProps<SelectionChipInput> {}
 

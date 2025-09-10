@@ -4,6 +4,11 @@ interface Image extends Marko.HTML.Img {
     as?: string;
 }
 
+export interface FilterChipEvent {
+    originalEvent: MouseEvent;
+    expanded: boolean;
+    selected: boolean;
+}
 interface FilterChipInput
     extends Omit<Marko.HTML.Button, `on${string}` | "type">,
         Omit<Marko.HTML.A, `on${string}`> {
@@ -14,11 +19,7 @@ interface FilterChipInput
     image?: Marko.AttrTag<Image>;
     "a11y-selected-text"?: Marko.HTMLAttributes["aria-label"];
     expanded?: boolean;
-    "on-click"?: (event: {
-        originalEvent: MouseEvent;
-        expanded: boolean;
-        selected: boolean;
-    }) => void;
+    "on-click"?: (event: FilterChipEvent) => void;
 }
 export interface Input extends WithNormalizedProps<FilterChipInput> {}
 
