@@ -17,7 +17,7 @@
     "build:readme": "node scripts/add-ds-version",
     "build:storybook": "storybook build -o ./_site",
     "deploy": "exit 0",
-    "importSVG": "tsx scripts/import-svg && prettier \"{./src/components/ebay-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
+    "importSVG": "tsx scripts/import-svg && prettier \"{./src/tags/evo-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
     "lint": "npm run lint:less && npm run lint:js && npm run lint:whitespace",
     "lint:js": "eslint",
     "lint:less": "stylelint \"src/**/*.{css,less}\" --config .stylelintrc",

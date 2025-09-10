@@ -1,0 +1,122 @@
+static interface OptGroup {
+    optgroup: string;
+    options: Option[];
+}
+export interface Option extends Marko.HTML.Option {
+    optgroup?: string;
+}
+export interface Input extends Marko.HTML.Select {
+    option?: Marko.AttrTag<Option>;
+    floatingLabel?: string;
+    size?: "regular" | "large";
+    borderless?: boolean;
+}
+
+<const/{
+    class: inputClass,
+    style,
+    disabled,
+    value,
+    borderless,
+    option: inputOptions = [],
+    floatingLabel,
+    size,
+    id,
+    onBlur,
+    onFocus,
+    ...htmlInput
+}=input>
+<const/options=[...(inputOptions || [])]>
+<id/selectId=id>
+
+<script>
+    const parentForm = selectEl().closest("form");
+    if (parentForm) {
+        const { selectedIndex } = document.getElementById(
+            selectId,
+        ) as HTMLSelectElement;
+        parentForm.addEventListener("reset", () => {}, {
+            signal: $signal,
+        });
+    }
+</script>
+// $ var selectedOption = options[state.selectedIndex];
+<const/list=(() => {
+    const list: (Option | OptGroup)[] = [];
+    const optgroups: Record<string, OptGroup> = {};
+    for (const option of options) {
+        const optgroup = option.optgroup;
+
+        if (optgroup) {
+            if (optgroups[optgroup]) {
+                optgroups[optgroup].options.push(option);
+            } else {
+                list.push(
+                    (optgroups[optgroup] = {
+                        optgroup: optgroup,
+                        options: [option],
+                    }),
+                );
+            }
+        } else {
+            list.push(option);
+        }
+    }
+    return list;
+})()>
+<let/focused=false>
+
+<evo-floating-label
+    inputSize=size
+    id=id
+    disabled=disabled
+    value=value
+    focused=focused>
+    <span/selectEl
+        class=[
+            "select",
+            size === "large" && "select--large",
+            borderless && "select--borderless",
+            inputClass,
+        ]
+        style=style>
+        <select
+            onBlur(e: Event, target: HTMLSelectElement) {
+                focused = false;
+                onBlur && onBlur(e, target);
+            }
+            onFocus(e: FocusEvent, target: HTMLSelectElement) {
+                focused = true;
+                onFocus && onFocus(e, target);
+            }
+            disabled=disabled
+            id=id
+            ...htmlInput>
+            <for|optionOrGroup| of=list>
+                <if=optionOrGroup.optgroup>
+                    <optgroup label=optionOrGroup.optgroup>
+                        <for|option| of=((optionOrGroup as OptGroup).options)>
+                            <const/{
+                                selected,
+                                optgroup,
+                                ...itemHtmlInput
+                            }=option>
+                            <option
+                                key="option[]"
+                                selected=selected
+                                ...itemHtmlInput/>
+                        </for>
+                    </optgroup>
+                </if>
+                <else>
+                    <const/{ optgroup, ...itemHtmlInput }=optionOrGroup>
+                    <option
+                        key="option[]"
+                        // selected=optionOrGroup === selectedOption
+                        ...itemHtmlInput/>
+                </else>
+            </for>
+        </select>
+        <evo-icon-chevron-down-12/>
+    </span>
+</evo-floating-label>

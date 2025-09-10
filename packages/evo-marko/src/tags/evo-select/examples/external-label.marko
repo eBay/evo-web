@@ -1,0 +1,38 @@
+<let/selected = 0>
+<const/options = [
+        {
+            text: "Select an option",
+            value: "",
+        },
+        {
+            text: "option 1",
+            value: "option 1",
+        },
+        {
+            text: "option 2",
+            value: "option 2",
+        },
+        {
+            text: "option 3",
+            value: "option 3",
+        },
+]>
+
+<span class="field">
+    <label class="field__label field__label--start" for="select">
+        Option
+    </label>
+    <evo-select
+        ...input
+        onChange() {}
+        name="formFieldName"
+        id="select"
+    >
+        <for|option, i| of=options>
+            <@option
+                value=option.value
+                selected=i === selected
+            >${option.text}</>
+        </for>
+    </evo-select>
+</span>

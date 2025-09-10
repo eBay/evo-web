@@ -1,0 +1,11 @@
+export interface Input {
+    src: string;
+    alt: string;
+    fillPlacement: string;
+}
+<const/{ src, alt, fillPlacement, ...buttonInput } = input>
+<evo-toggle-button layoutType="list" ...buttonInput>
+    <@subtitle>Subtitle</@subtitle>
+    <@img src=src alt=alt fillPlacement=fillPlacement/>
+    Title
+</evo-toggle-button>

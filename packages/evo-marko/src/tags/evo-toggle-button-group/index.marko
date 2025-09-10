@@ -1,0 +1,86 @@
+import type { Input as ToggleButtonInput } from "../evo-toggle-button/index.marko";
+
+export interface Input<
+  Pressed extends
+      | number
+      | string
+      | (number|string)[]
+      | undefined
+> extends Marko.HTML.Div {
+    button?: Marko.AttrTag<
+        Omit<ToggleButtonInput, "pressed" | "pressedChange"> & {
+            name?: string | number;
+        }
+    >;
+    pressed?: Pressed;
+    pressedChange?: (pressed: Pressed) => void;
+    required?: boolean;
+    a11yText?: string;
+    a11yLabelId?: string;
+    columnsMin?: number;
+    columnsXS?: number;
+    columnsSM?: number;
+    columnsMD?: number;
+    columnsXL?: number;
+    layoutType?: ToggleButtonInput["layoutType"];
+};
+
+<const/{
+    class: inputClass,
+    layoutType: baseLayoutType,
+    columnsMin,
+    columnsXS,
+    columnsSM,
+    columnsMD,
+    columnsXL,
+    a11yText,
+    a11yLabelId,
+    required,
+    pressed: inputPressed,
+    button: buttons = [],
+    ...htmlInput
+}=input>
+<let/pressed:=input.pressed>
+<div
+    class=["toggle-button-group", inputClass]
+    data-columns-min=columnsMin
+    data-columns-xs=columnsXS
+    data-columns-sm=columnsSM
+    data-columns-md=columnsMD
+    data-columns-xl=columnsXL
+    ...htmlInput>
+    <ul aria-label=a11yText aria-labelledby=a11yLabelId>
+        <for|button, i| of=buttons>
+            <const/{
+                layoutType = baseLayoutType,
+                name = i,
+                ...toggleButtonInput
+            }=button>
+            <li>
+                <evo-toggle-button
+                    layoutType=layoutType
+                    ...toggleButtonInput
+                    pressed=(
+                       Array.isArray(pressed)
+                            ? pressed.includes(name)
+                            : pressed === name
+                    )
+                    pressedChange(p) {
+                        if (Array.isArray(pressed)) {
+                            // This is a "checkbox" type
+                            if (!p) {
+                                pressed = pressed.filter((n) => n !== name) as typeof pressed;
+                            } else if (!pressed.includes(name) ){
+                                pressed = [...pressed, name] as typeof pressed ;
+                            }
+                        } else if (p) {
+                            pressed = name as typeof pressed;
+                        } else if (!required) {
+                            pressed = undefined as typeof pressed;
+                        }
+                    }
+                    />
+            </li>
+        </for>
+    </ul>
+</div>

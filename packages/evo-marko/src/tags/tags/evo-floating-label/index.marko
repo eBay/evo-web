@@ -1,0 +1,53 @@
+export interface Input extends Marko.HTML.Input {
+    inputSize?: "regular" | "large";
+    fluid?: boolean;
+    opaqueLabel?: boolean;
+    floatingLabel?: string;
+    focused?: boolean;
+    invalid?: boolean;
+    a11yButtonLabel?: Marko.HTMLAttributes["aria-label"];
+    autocorrect?: Marko.HTML.TextArea["autocorrect"];
+    cols?: Marko.HTML.TextArea["cols"];
+    rows?: Marko.HTML.TextArea["rows"];
+}
+
+<const/{
+    a11yButtonLabel,
+    class: inputClass,
+    disabled,
+    floatingLabel,
+    id,
+    inputSize,
+    focused,
+    value,
+    invalid,
+    opaqueLabel,
+    fluid,
+    content,
+}=input>
+
+<id/textboxId = id>
+<const/defaultTag=(fluid ? "div" : "span")>
+<const/floatingInline=!(value || focused)>
+
+<${floatingLabel && defaultTag} class=[
+    "floating-label",
+    inputSize === "large" && "floating-label--large",
+    opaqueLabel && "floating-label--opaque",
+]>
+    <if=floatingLabel>
+        <label
+            for=textboxId
+            class=[
+                "floating-label__label floating-label__label--animate",
+                disabled && "floating-label__label--disabled",
+                invalid && "floating-label__label--invalid",
+                floatingInline && "floating-label__label--inline",
+                !floatingInline && "floating-label__label--focus",
+                disabled && "floating-label__label--disabled",
+            ]>
+            ${floatingLabel}
+        </label>
+    </if>
+    <${content}/>
+ </>

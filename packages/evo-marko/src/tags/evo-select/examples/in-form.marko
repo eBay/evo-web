@@ -1,0 +1,20 @@
+import type { Input as SelectInput } from "<evo-select>";
+export type Input = SelectInput;
+
+<form style="text-align: center;">
+    <div>
+        <evo-select ...input name="formFieldName">
+            <@option value="1">Option 1</>
+            <@option value="2">Option 2</>
+            <@option value="3">Option 3</>
+        </evo-select>
+    </div>
+    <div style="padding: 1em;">
+        <evo-button type="reset">
+            Reset
+        </evo-button>
+        <evo-button type="submit">
+            Submit
+        </evo-button>
+    </div>
+</form>

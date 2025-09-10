@@ -1,0 +1,93 @@
+export interface Input extends Marko.HTML.Button {
+    pressed?: boolean;
+    pressedChange?: (pressed: boolean) => void;
+    layoutType?: string;
+    icon?: Marko.AttrTag<Marko.Renderable>;
+    img?: Marko.AttrTag<{
+        src: string;
+        alt: string;
+        fillPlacement?: string;
+    }>;
+    subtitle?: string | Marko.AttrTag<Marko.Renderable>;
+    renderBody?: Marko.Body;
+}
+
+<const/{
+    class: inputClass,
+    icon,
+    img,
+    layoutType,
+    pressed: inputPressed,
+    pressedChange,
+    content,
+    subtitle,
+    title,
+    onClick,
+    ...htmlInput
+} = input>
+
+<let/pressed = input.pressed valueChange=pressedChange/>
+
+<button
+    type="button"
+    class=[
+        "toggle-button",
+        layoutType && `toggle-button--${layoutType}-layout`,
+        inputClass,
+    ]
+    aria-pressed=pressed && "true"
+
+    onClick(event, target) {
+        pressed = !pressed;
+        (onClick || null)?.(event, target);
+    }
+    ...htmlInput
+>
+    <if=icon>
+        <span class="toggle-button__icon">
+            <${icon}/>
+        </span>
+    </if>
+    <else if=img>
+        <span class="toggle-button__image-container">
+            <if=img.fillPlacement>
+                <span
+                    role="img"
+                    aria-label=img.alt
+                    class="toggle-button__image"
+                    style={
+                        "background-image": `url(${img.src})`,
+                        "background-position": img.fillPlacement || "center",
+                        "background-size": "cover",
+                        "background-repeat": "no-repeat",
+                    }
+                />
+            </if>
+            <else>
+                <span class="toggle-button__image">
+                    <img src=img.src alt=img.alt>
+                </span>
+            </else>
+        </span>
+    </else>
+    <span class="toggle-button__content">
+        <span class="toggle-button__title">
+            <if=title>
+                ${title}
+            </if>
+            <else>
+                <${content}/>
+            </else>
+        </span>
+        <if=subtitle>
+            <span class="toggle-button__subtitle">
+                <if=typeof subtitle === "string">
+                    ${subtitle}
+                </if>
+                <else>
+                    <${subtitle}/>
+                </else>
+            </span>
+        </if>
+    </span>
+</button>

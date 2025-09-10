@@ -1,0 +1,19 @@
+<let/selected=0>
+<evo-segmented-buttons selected:=selected>
+    <@button onClick() {
+        console.log("Clicked full view");
+    }>
+        <@icon>
+            <evo-icon-full-view-24/>
+        </@icon>
+        Desktop
+    </@button>
+    <@button onClick() {
+        console.log("Clicked mobile");
+    }>
+        <@icon>
+            <evo-icon-mobile-24/>
+        </@icon>
+        Mobile
+    </@button>
+</evo-segmented-buttons>

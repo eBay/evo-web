@@ -49,37 +49,27 @@ export interface Input extends Marko.HTML.Input {
 <const/hasIcon=prefixIcon || isPostfix>
 <const/isLarge=inputSize === "large">
 <const/displayIcon=!multiline && hasIcon>
-<id/generatedId>
 <id/prefixId>
 <id/postfixId>
-<const/textboxId=id || generatedId>
+<id/textboxId=id>
 <const/defaultTag=(fluid ? "div" : "span")>
 <let/focused=false>
 <let/value:=input.value>
-<const/floatingInline=!(value || focused)>
 <const/currentPlaceholder=(placeholder && focused && !value ? placeholder : "")>
 <const/disablePrefix=!!floatingLabel && !floatingLabelStatic>
 
-<${floatingLabel && defaultTag} class=[
-    "floating-label",
-    isLarge && "floating-label--large",
-    opaqueLabel && "floating-label--opaque",
-]>
-    <if=floatingLabel>
-        <label
-            for=textboxId
-            class=[
-                "floating-label__label floating-label__label--animate",
-                disabled && "floating-label__label--disabled",
-                invalid && "floating-label__label--invalid",
-                floatingInline && "floating-label__label--inline",
-                !floatingInline && "floating-label__label--focus",
-                disabled && "floating-label__label--disabled",
-            ]>
-            ${floatingLabel}
-        </label>
-    </if>
-    <${defaultTag}
+<evo-floating-label
+    floatingLabel=floatingLabel
+    inputSize=inputSize
+    opaqueLabel=opaqueLabel
+    id=textboxId
+    disabled=disabled
+    invalid=invalid
+    fluid=fluid
+    value=value
+    focused=focused
+>
+   <${defaultTag}
         style=style
         placeholder=currentPlaceholder
         class=[
