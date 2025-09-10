@@ -2,7 +2,7 @@ import type { WithNormalizedProps } from "../../global";
 
 export interface SelectionChipEvent {
    selected: boolean;
-   originalEvent: Event
+   originalEvent: Event;
 }
 
 interface SelectionChipInput extends Omit<Marko.HTML.Button, `on${string}`> {
