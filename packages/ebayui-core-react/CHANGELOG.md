@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.13.1
+
+### Patch Changes
+
+- [#282](https://github.com/eBay/evo-web/pull/282) [`ae32ad0`](https://github.com/eBay/evo-web/commit/ae32ad096a1fa62b6c07d2b401a7135fdd124222) Thanks [@googletorp](https://github.com/googletorp)! - fix(EbayListboxButton): handle undefined "split" attribute
+
 ## 8.13.0
 
 ### Minor Changes

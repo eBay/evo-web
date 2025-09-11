@@ -1,5 +1,13 @@
 # eBayUI-Core Changelog
 
+## 15.12.2
+
+### Patch Changes
+
+- [#287](https://github.com/eBay/evo-web/pull/287) [`4626373`](https://github.com/eBay/evo-web/commit/4626373f17f7b14872b5c53d55dcf241f7725e02) Thanks [@agliga](https://github.com/agliga)! - fix(chip): added type for event
+
+- [`fc4bf34`](https://github.com/eBay/evo-web/commit/fc4bf34020f78c95956dbf0213d96036088b894b) Thanks [@agliga](https://github.com/agliga)! - fix(carousel): removed aria-roledescription and allow it to go through attribute spread
+
 ## 15.12.1
 
 ### Patch Changes
