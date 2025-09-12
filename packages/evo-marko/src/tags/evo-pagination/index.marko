@@ -18,6 +18,7 @@ static const MIN_PAGES = 5;
 
 <const/{
     class: inputClass,
+    id,
     variant,
     item: items = [],
     prev,
@@ -129,13 +130,14 @@ static const MIN_PAGES = 5;
     });
 </script>
 
+<id/heading = id>
 <nav/root
     ...htmlInput
     role="navigation"
     class=["pagination", inputClass]
-    aria-labelledby:scoped="heading">
+    aria-labelledby=heading>
     <span aria-live="polite" role="status">
-        <h2 id:scoped="heading" class="clipped">
+        <h2 id=heading class="clipped">
             ${a11yCurrentText}
         </h2>
     </span>

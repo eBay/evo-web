@@ -16,7 +16,8 @@ export interface Input extends Marko.HTML.Select {
     class: inputClass,
     style,
     disabled,
-    value,
+    value: inputValue,
+    valueChange,
     borderless,
     option: inputOptions = [],
     floatingLabel,
@@ -28,19 +29,18 @@ export interface Input extends Marko.HTML.Select {
 }=input>
 <const/options=[...(inputOptions || [])]>
 <id/selectId=id>
+<let/value=input.value>
 
 <script>
     const parentForm = selectEl().closest("form");
     if (parentForm) {
-        const { selectedIndex } = document.getElementById(
-            selectId,
-        ) as HTMLSelectElement;
-        parentForm.addEventListener("reset", () => {}, {
+        parentForm.addEventListener("reset", () => {
+            value = "";
+        }, {
             signal: $signal,
         });
     }
 </script>
-// $ var selectedOption = options[state.selectedIndex];
 <const/list=(() => {
     const list: (Option | OptGroup)[] = [];
     const optgroups: Record<string, OptGroup> = {};
@@ -91,29 +91,23 @@ export interface Input extends Marko.HTML.Select {
             }
             disabled=disabled
             id=id
+            value:=value
             ...htmlInput>
             <for|optionOrGroup| of=list>
                 <if=optionOrGroup.optgroup>
                     <optgroup label=optionOrGroup.optgroup>
                         <for|option| of=((optionOrGroup as OptGroup).options)>
                             <const/{
-                                selected,
                                 optgroup,
                                 ...itemHtmlInput
                             }=option>
-                            <option
-                                key="option[]"
-                                selected=selected
-                                ...itemHtmlInput/>
+                            <option ...itemHtmlInput/>
                         </for>
                     </optgroup>
                 </if>
                 <else>
                     <const/{ optgroup, ...itemHtmlInput }=optionOrGroup>
-                    <option
-                        key="option[]"
-                        // selected=optionOrGroup === selectedOption
-                        ...itemHtmlInput/>
+                    <option ...itemHtmlInput/>
                 </else>
             </for>
         </select>
