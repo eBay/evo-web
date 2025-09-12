@@ -26,7 +26,7 @@ export interface Input extends Marko.HTML.Button {
     ...htmlInput
 } = input>
 
-<let/pressed = input.pressed valueChange=pressedChange/>
+<let/pressed:=input.pressed>
 
 <button
     type="button"
