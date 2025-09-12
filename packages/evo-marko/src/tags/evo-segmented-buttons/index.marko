@@ -30,7 +30,7 @@ export interface Input<Selected extends string | number> extends Marko.HTML.Div 
     ]
     ...htmlInput>
     <ul>
-        <for|button, i| of=input.button || []>
+        <for|button, i| of=buttons>
             <const/{
                 class: buttonClass,
                 name = i,
