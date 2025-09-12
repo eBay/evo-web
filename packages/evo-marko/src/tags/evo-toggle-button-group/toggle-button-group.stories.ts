@@ -129,7 +129,7 @@ export const Controlled = buildExtensionTemplate(
     controlledCode,
 );
 
-export const PerferedColumns = buildExtensionTemplate(
+export const PreferredColumns = buildExtensionTemplate(
     columnsTemplate,
     columnsCode,
     {
