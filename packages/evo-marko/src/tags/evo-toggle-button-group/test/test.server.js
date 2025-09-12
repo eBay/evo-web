@@ -20,7 +20,7 @@ describe("evo-toggle-button-group", () => {
     await htmlSnap(Default);
   });
 
-  it("renders with ons", async () => {
+  it("renders with icons", async () => {
     await htmlSnap(WithIcons);
   });
 
