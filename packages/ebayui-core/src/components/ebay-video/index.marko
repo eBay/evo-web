@@ -22,8 +22,8 @@ $ const {
     ...htmlInput
 } = input;
 $ const styleSize = {
-    width: `${width}px`,
-    height: `${height}px`,
+    width: width ? `${width}px` : "",
+    height: height ? `${height}px` : "",
 };
 
 <div

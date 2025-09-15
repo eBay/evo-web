@@ -30,7 +30,6 @@ const eventList = [
 ];
 
 const videoConfig = {
-    addBigPlayButton: false,
     addSeekBar: true,
     controlPanelElements: [
         "play_pause",
@@ -98,6 +97,7 @@ class Video extends Marko.Component<Input, State> {
     declare video: HTMLVideoElement;
     declare root: HTMLElement;
     declare containerEl: HTMLElement;
+    declare playButtonContainer: HTMLElement;
     declare player: any;
     declare ui: any;
     declare shaka: any;
@@ -117,7 +117,7 @@ class Video extends Marko.Component<Input, State> {
     }
 
     handleResize() {
-        if (!this.input.width && this.video) {
+        if (!this.input.width && this.video && this.root) {
             const { width: containerWidth } = this.root.getBoundingClientRect();
             this.containerEl.setAttribute("width", containerWidth.toString());
             this.alignSeekbar();
@@ -133,11 +133,13 @@ class Video extends Marko.Component<Input, State> {
             const rangeContainer = this.el.querySelector<HTMLElement>(
                 ".shaka-range-container",
             )!;
-            const buttonPanelRect = buttonPanel.getBoundingClientRect();
-            const spacerRect = spacer.getBoundingClientRect();
+            if (buttonPanel && spacer) {
+                const buttonPanelRect = buttonPanel.getBoundingClientRect();
+                const spacerRect = spacer.getBoundingClientRect();
 
-            rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
-            rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
+                rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
+                rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
+            }
         }
     }
 
@@ -172,12 +174,8 @@ class Video extends Marko.Component<Input, State> {
     handleError(err: Error) {
         this.state.failed = true;
         this.state.isLoaded = true;
+        this.playButtonContainer.remove();
 
-        if (this.ui) {
-            this.ui.configure({
-                addBigPlayButton: false,
-            });
-        }
         this.emit("load-error", err);
     }
 
@@ -335,7 +333,6 @@ class Video extends Marko.Component<Input, State> {
         );
 
         this.ui.configure({
-            addBigPlayButton: true,
             controlPanelElements: [],
             addSeekBar: false,
         });
@@ -344,10 +341,13 @@ class Video extends Marko.Component<Input, State> {
         if (this.el) {
             const playIcon =
                 this.getComponent("play-icon")!.el!.cloneNode(true);
-            const playButton =
-                this.el.querySelector<HTMLElement>(".shaka-play-button")!;
-            playButton.removeAttribute("icon");
-            playButton.appendChild(playIcon);
+            const container =
+                this.el.querySelector<HTMLElement>(".shaka-controls-container")!;
+            this.playButtonContainer = document.createElement("div");
+            this.playButtonContainer.classList.add("shaka-play-button-container");
+
+            this.playButtonContainer.appendChild(playIcon);
+            container.appendChild(this.playButtonContainer);
 
             const shakaSpinner =
                 this.el.querySelector<HTMLElement>(".shaka-spinner");
