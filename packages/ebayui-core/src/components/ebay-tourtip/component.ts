@@ -6,7 +6,10 @@ interface TourtipInput
     extends Omit<Marko.HTML.Span, `on${string}` | "content"> {
     open?: boolean;
     "no-hover"?: TooltipBaseInput["noHover"];
-    host?: Marko.AttrTag<Marko.HTML.Span>;
+    host?: Marko.AttrTag<Marko.HTML.Span & {
+        as?: string;
+        renderBody?: Marko.Body;
+    }>;
     offset?: TooltipBaseInput["offset"];
     pointer?: TooltipBaseInput["pointer"];
     placement?: TooltipBaseInput["placement"];

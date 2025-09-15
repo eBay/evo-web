@@ -47,7 +47,8 @@
             "targetProperty": null,
             "type": "expression"
         },
-        "@html-attributes": "expression"
+        "@html-attributes": "expression",
+        "@as": "string"
     },
     "@heading <heading>": {
         "attribute-groups": ["html-attributes"],

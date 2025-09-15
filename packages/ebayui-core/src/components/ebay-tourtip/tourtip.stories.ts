@@ -51,7 +51,7 @@ export default {
 
         host: {
             name: "@host",
-            description: "The body which will be wrapped as the tourtip's host",
+            description: "The body which will be wrapped as the tourtip's host. Defaults as span. Use \"as\" attribute on @host to override.",
             table: {
                 category: "@attribute tags",
             },
