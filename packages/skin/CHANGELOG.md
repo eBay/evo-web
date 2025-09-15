@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.14.1
+
+### Patch Changes
+
+- [`bff44ee`](https://github.com/eBay/evo-web/commit/bff44ee26da68bb82985443023c07052b0249c48) Thanks [@agliga](https://github.com/agliga)! - fix(button): added hover overrides for fake button
+
 ## 19.14.0
 
 ### Minor Changes

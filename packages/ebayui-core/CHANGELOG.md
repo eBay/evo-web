@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 15.12.3
+
+### Patch Changes
+
+- [#289](https://github.com/eBay/evo-web/pull/289) [`4c73875`](https://github.com/eBay/evo-web/commit/4c738751a550bb7e2e9319792fcc0f528327653c) Thanks [@agliga](https://github.com/agliga)! - fix(video): fixed several bugs on resize and undefined variables
+
+- [#283](https://github.com/eBay/evo-web/pull/283) [`b80ac35`](https://github.com/eBay/evo-web/commit/b80ac354ab50a4ce7cee93e105389be1d274b46e) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(listbox, listbox-button): explicit announce selected state
+
+- [#289](https://github.com/eBay/evo-web/pull/289) [`4c73875`](https://github.com/eBay/evo-web/commit/4c738751a550bb7e2e9319792fcc0f528327653c) Thanks [@agliga](https://github.com/agliga)! - fix(tourtip): added host container override
+
 ## 15.12.2
 
 ### Patch Changes

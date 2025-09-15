@@ -341,10 +341,13 @@ class Video extends Marko.Component<Input, State> {
         if (this.el) {
             const playIcon =
                 this.getComponent("play-icon")!.el!.cloneNode(true);
-            const container =
-                this.el.querySelector<HTMLElement>(".shaka-controls-container")!;
+            const container = this.el.querySelector<HTMLElement>(
+                ".shaka-controls-container",
+            )!;
             this.playButtonContainer = document.createElement("div");
-            this.playButtonContainer.classList.add("shaka-play-button-container");
+            this.playButtonContainer.classList.add(
+                "shaka-play-button-container",
+            );
 
             this.playButtonContainer.appendChild(playIcon);
             container.appendChild(this.playButtonContainer);
