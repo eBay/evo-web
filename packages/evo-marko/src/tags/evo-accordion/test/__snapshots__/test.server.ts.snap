@@ -1,0 +1,493 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`accordion > renders accordion with auto-collapse true 1`] = `
+<DocumentFragment>
+  <ul
+    aria-roledescription="accordion"
+    class="accordion"
+  >
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 1
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <symbol
+                id="GENERATED-0"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+                />
+              </symbol>
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 2
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 3
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`accordion > renders accordion with large size 1`] = `
+<DocumentFragment>
+  <ul
+    aria-roledescription="accordion"
+    class="accordion accordion--large"
+  >
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 1
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <symbol
+                id="GENERATED-0"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+                />
+              </symbol>
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 2
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 3
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`accordion > renders accordion with localized role description 1`] = `
+<DocumentFragment>
+  <ul
+    aria-roledescription="accordion"
+    class="accordion"
+  >
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 1
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <symbol
+                id="GENERATED-0"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+                />
+              </symbol>
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 2
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 3
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`accordion > renders default accordion 1`] = `
+<DocumentFragment>
+  <ul
+    aria-roledescription="accordion"
+    class="accordion"
+  >
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 1
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <symbol
+                id="GENERATED-0"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+                />
+              </symbol>
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 2
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+    <li>
+      <details
+        class="details"
+      >
+        <summary
+          class="details__summary"
+        >
+          <span
+            class="details__label"
+          >
+            Item 3
+          </span>
+          <span
+            class="details__icon"
+            hidden=""
+          >
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+            >
+              <use
+                href="#icon-chevron-down-16"
+              />
+            </svg>
+          </span>
+        </summary>
+        <div
+          class="details__content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </details>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

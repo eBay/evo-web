@@ -1,0 +1,43 @@
+import type { Input as DetailsInput } from "<evo-details>";
+export interface Input extends Omit<Marko.HTML.UL, `on${string}`> {
+    size?: "regular" | "large";
+    autoCollapse?: boolean;
+    a11yText?: string;
+    details?: Marko.AttrTag<Omit<DetailsInput, "size" | "alignment">>;
+}
+
+<const/{
+    class: inputClass,
+    size,
+    details,
+    autoCollapse = false,
+    a11yText,
+}=input>
+<const/items=[...details || []]>
+
+<let/openState=items.map((item: any) => item.open || false)>
+
+<let/handleAutoCollapse=(newIndex: number) => {
+    if (autoCollapse) {
+        openState = openState.map((_: boolean, index: number) => 
+            index === newIndex ? !openState[newIndex] : false
+        );
+    }
+}>
+
+<ul
+    class=["accordion", size === "large" && "accordion--large", inputClass]
+    aria-roledescription=(a11yText ?? "accordion")>
+    <for|item, index| of=items>
+        <li>
+            <evo-details
+                ...item
+                open=(autoCollapse ? openState[index] : item.open)
+                openChange=(
+                    autoCollapse ? () => handleAutoCollapse(index) : undefined
+                )>
+                <${item.content}/>
+            </evo-details>
+        </li>
+    </for>
+</ul>
