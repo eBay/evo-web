@@ -1,4 +1,4 @@
-<let/selected = 0>
+<let/selected = "">
 <const/options = [
         {
             text: "Select an option",
@@ -24,13 +24,13 @@
     </label>
     <evo-select
         ...input
+        value:=selected
         name="formFieldName"
         id="select"
     >
         <for|option, i| of=options>
             <@option
                 value=option.value
-                selected=i === selected
             >${option.text}</>
         </for>
     </evo-select>
