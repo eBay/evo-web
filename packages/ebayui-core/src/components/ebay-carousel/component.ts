@@ -77,6 +77,7 @@ interface State {
     a11yNextText: string;
     a11yPauseText: string;
     a11yPlayText: string;
+    ariaRoledescription: string;
 }
 
 class Carousel extends Marko.Component<Input, State> {
@@ -441,6 +442,7 @@ class Carousel extends Marko.Component<Input, State> {
             a11yNextText: input.a11yNextText || "Next Slide",
             a11yPauseText: input.a11yPauseText || "Pause",
             a11yPlayText: input.a11yPlayText || "Play",
+            ariaRoledescription: input.ariaRoledescription || "Carousel",
             items: [] as State["items"],
             slideWidth: 0,
             autoplayInterval: 0,
