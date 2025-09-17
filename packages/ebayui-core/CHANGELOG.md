@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.4
+
+### Patch Changes
+
+- [#292](https://github.com/eBay/evo-web/pull/292) [`8658f6d`](https://github.com/eBay/evo-web/commit/8658f6db8dc1db24b8a172a2654d49859dfe98d5) Thanks [@agliga](https://github.com/agliga)! - fix(carousel): set defaults to aria-roledescription if undefined
+
 ## 15.12.3
 
 ### Patch Changes
