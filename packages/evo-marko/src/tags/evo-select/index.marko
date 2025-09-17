@@ -29,7 +29,7 @@ export interface Input extends Marko.HTML.Select {
 }=input>
 <const/options=[...(inputOptions || [])]>
 <id/selectId=id>
-<let/value=input.value>
+<let/value:=input.value>
 
 <script>
     const parentForm = selectEl().closest("form");
