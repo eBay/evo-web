@@ -68,11 +68,11 @@
         "makeup-roving-tabindex": "~0.7.7",
         "makeup-screenreader-trap": "~0.5.6",
         "makeup-typeahead": "^0.3.3",
-        "shaka-player": "4.16.1"
+        "shaka-player": "4.16.2"
     },
     "devDependencies": {
-        "@marko/compiler": "^5.39.34",
-        "marko": "^5.37.54"
+        "@marko/compiler": "^5.39.37",
+        "marko": "^5.37.57"
     },
     "peerDependencies": {
         "@ebay/skin": "^19.12.0",

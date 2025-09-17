@@ -2,8 +2,8 @@ $ var data = component.getTemplateData(state);
 $ var config = data.config;
 
 <div
-    aria-roledescription="Carousel",
     ...data.htmlAttributes
+    aria-roledescription=data.htmlAttributes["aria-roledescription"] || "Carousel",
     class=data.classes
     style=data.style
     role="group"
