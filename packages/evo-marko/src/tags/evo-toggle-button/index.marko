@@ -36,7 +36,6 @@ export interface Input extends Marko.HTML.Button {
         inputClass,
     ]
     aria-pressed=pressed && "true"
-
     onClick(event, target) {
         pressed = !pressed;
         (onClick || null)?.(event, target);

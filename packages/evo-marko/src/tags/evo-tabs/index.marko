@@ -1,0 +1,79 @@
+export interface Input extends Marko.HTML.Div {
+    tab?: Marko.AttrTag<Marko.HTML.Div>;
+    panel?: Marko.AttrTag<Marko.HTML.Div>;
+    activation?: "auto" | "manual";
+    index?: number;
+    indexChange?: (index: number) => void;
+}
+
+<const/{
+    class: inputClass,
+    index: inputIndex,
+    indexChange,
+    activation,
+    tab: tabs = [],
+    panel: panels = [],
+    ...htmlInput
+}=input>
+
+<let/index:=input.index>
+<let/focusIndex=index as number valueChange=(
+    activation === "auto"
+        ? (newFocusIndex: number) => {
+              index = newFocusIndex;
+          }
+        : undefined
+)>
+<id/tabId>
+<id/tabpanelId>
+
+<div class=["tabs", inputClass] ...htmlInput>
+    <div/tabListEl role="tablist" class="tabs__items">
+        <evo-roving-tabindex/{ onKeydown, onClick, tabindex }
+            size=[...tabs].length
+            itemId=tabId
+            autoSelect=(activation === "auto")
+            index:=index />
+            <for|tab, i| of=tabs>
+                <const/isSelected=index === i>
+                <div
+                    ...tab
+                    onClick(e, target) {
+                        (onClick || null)?.(i);
+                        (tab.onClick || null)?.(e, target);
+                    }
+                    onKeydown(e, target) {
+                        (onKeydown || null)?.(e);
+                        (tab.onKeydown || null)?.(e, target);
+                    }
+                    tabindex=tabindex(i)
+                    id=`${tabId}-${i}`
+                    aria-controls=`${tabpanelId}-${i}`
+                    role="tab"
+                    aria-selected=isSelected && "true"
+                    class=[tab.class, "tabs__item"]>
+                    <span>
+                        <${tab.content}/>
+                    </span>
+                </div>
+            </for>
+    </div>
+    <div class="tabs__content">
+        <for|panel, i| of=panels>
+            <const/isSelected=index === i>
+            <div
+                ...panel
+                id=`${tabpanelId}-${i}`
+                aria-labelledby=`${tabId}-${i}`
+                role="tabpanel"
+                class=[panel.class, "tabs__panel"]
+                hidden=!isSelected>
+                <div class="tabs__cell">
+                    <div>
+                        <${panel.content}/>
+                    </div>
+                </div>
+            </div>
+        </for>
+    </div>
+</div>

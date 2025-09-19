@@ -1,0 +1,41 @@
+static interface Ret {
+    typeahead: (e: KeyboardEvent) => number;
+}
+export interface Input {
+    timeoutLength?: number;
+    nodeList: () => (HTMLElement | undefined)[];
+}
+
+<let/typeStr="">
+<const/nodeList=input.nodeList>
+
+<script>
+    if (typeStr) {
+        const timeout = setTimeout(() => {
+            typeStr = "";
+        }, input.timeoutLength || 1000);
+        $signal.onabort = () => {
+            clearTimeout(timeout);
+        };
+    }
+</script>
+
+<return=(
+    {
+        typeahead: function ({ key }) {
+            typeStr = typeStr.concat(key);
+            let index;
+            if (nodeList() == null) return -1;
+            const lowerTypeStr = typeStr.toLocaleLowerCase();
+            index = nodeList().findIndex((el:HTMLElement|undefined) =>
+                el?.textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
+            );
+            if (index === -1) {
+                index = nodeList().findIndex((el:HTMLElement|undefined) =>
+                    el?.textContent.toLocaleLowerCase().includes(lowerTypeStr),
+                );
+            }
+            return index;
+        },
+    } as Ret
+)>

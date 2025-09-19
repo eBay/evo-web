@@ -1,0 +1,89 @@
+static interface Ret {
+    tabindex: (index: number) => 0 | -1;
+    onKeydown: (e: KeyboardEvent) => void;
+    onClick: (index: number) => void;
+}
+export interface Input<
+  Index extends
+      | number
+      | number[]
+      | undefined
+> {
+    index?: Index;
+    indexChange?: (index: Index) => void;
+    autoSelect?: boolean;
+    size: number;
+    itemId: string;
+}
+
+<let/index:=input.index>
+<let/focusIndex:number=(Array.isArray(index) ? 0 : index as number) || 0>
+
+<const/setIndex =(newIndex:number) => {
+    if (Array.isArray(index)) {
+        // This is a "checkbox" type
+        if (index.includes(newIndex)) {
+            index = index.filter((n) => n !== newIndex) as typeof index;
+        } else {
+            index = [...index, newIndex] as typeof index ;
+        }
+    } else {
+        index = newIndex as typeof index;
+    }
+}>
+
+<return=(
+    {
+        setFocusIndex(i:number) {
+            const currentItem = document.getElementById(
+                `${input.itemId}-${i}`,
+            );
+
+            if (currentItem && currentItem.getAttribute("aria-disabled") !== "true") {
+                focusIndex = i;
+                currentItem.focus()
+            }
+        },
+        tabindex(i) {
+            return focusIndex === i ? 0 : -1;
+        },
+        onClick(i) {
+            setIndex(i);
+            focusIndex = i;
+        },
+        onKeydown(e) {
+            if (e.key === "Enter" || e.key === " ") {
+                setIndex(focusIndex);
+            }
+            if (
+                ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(
+                    e.key,
+                ) !== -1
+            ) {
+                const size = input.size;
+                const direction =
+                    e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 1;
+
+                let currentIndex = focusIndex;
+                let currentItem;
+                while (true) {
+                    currentIndex =
+                        ((currentIndex as number) + size + direction) % size;
+                    currentItem = document.getElementById(
+                        `${input.itemId}-${currentIndex}`,
+                    );
+                    if (currentItem && currentItem.getAttribute("aria-disabled") !== "true") {
+                        break;
+                    } else if (currentIndex === focusIndex) {
+                        break;
+                    }
+                }
+                focusIndex = currentIndex;
+                if (input.autoSelect) {
+                    setIndex(currentIndex);
+                }
+                currentItem?.focus();
+            }
+        },
+    } as Ret
+)>
