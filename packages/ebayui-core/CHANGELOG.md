@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.5
+
+### Patch Changes
+
+- [`c222cf5`](https://github.com/eBay/evo-web/commit/c222cf5279144902cae284fe2816ce20f33cf283) Thanks [@agliga](https://github.com/agliga)! - fix: updated marko to fix compile output issue
+
 ## 15.12.4
 
 ### Patch Changes
