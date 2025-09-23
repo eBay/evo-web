@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.6
+
+### Patch Changes
+
+- [`c0da5f6`](https://github.com/eBay/evo-web/commit/c0da5f64f48cdbb721dde1c464a650e302a9d171) Thanks [@agliga](https://github.com/agliga)! - fix: updated marko to allow typescript types to be stipped properly in compiled code
+
 ## 15.12.5
 
 ### Patch Changes
