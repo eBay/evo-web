@@ -1,6 +1,9 @@
+export interface Tab extends Marko.HTML.Div {
+    panel: Marko.AttrTag<Marko.HTML.Div>;
+}
+
 export interface Input extends Marko.HTML.Div {
-    tab?: Marko.AttrTag<Marko.HTML.Div>;
-    panel?: Marko.AttrTag<Marko.HTML.Div>;
+    tab?: Marko.AttrTag<Tab>;
     activation?: "auto" | "manual";
     index?: number;
     indexChange?: (index: number) => void;
@@ -12,18 +15,10 @@ export interface Input extends Marko.HTML.Div {
     indexChange,
     activation,
     tab: tabs = [],
-    panel: panels = [],
     ...htmlInput
 }=input>
 
 <let/index:=input.index>
-<let/focusIndex=index as number valueChange=(
-    activation === "auto"
-        ? (newFocusIndex: number) => {
-              index = newFocusIndex;
-          }
-        : undefined
-)>
 <id/tabId>
 <id/tabpanelId>
 
@@ -59,8 +54,9 @@ export interface Input extends Marko.HTML.Div {
             </for>
     </div>
     <div class="tabs__content">
-        <for|panel, i| of=panels>
+        <for|tab, i| of=tabs>
             <const/isSelected=index === i>
+            <const/panel = tab.panel>
             <div
                 ...panel
                 id=`${tabpanelId}-${i}`

@@ -45,6 +45,7 @@ export interface Input<
 <const/isCheckbox=Array.isArray(inputIndex) || (isFilter && !isRadio)>
 <const/isCheckable=isRadio || isCheckbox>
 <const/baseClass=classPrefix || "menu">
+<const/menuClass=baseClass === "menu" ? "items" : "menu">
 <let/selectedIndex:=input.selectedIndex>
 
 <const/size=[...items].length>
@@ -53,9 +54,9 @@ export interface Input<
     ...htmlInput
     class=[
         classPrefix ? `${baseClass}__menu` : "menu",
-        reverse && `${baseClass}__menu--reverse`,
-        fixed && `${baseClass}__menu--fixed`,
-        fixWidth && `${baseClass}__menu--fix-width`,
+        reverse && `${baseClass}__${menuClass}--reverse`,
+        fixed && `${baseClass}__${menuClass}--fixed`,
+        fixWidth && `${baseClass}__${menuClass}--fix-width`,
         isFilter && `${baseClass}--filter`,
         inputClass,
     ]>
