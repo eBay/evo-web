@@ -23,7 +23,7 @@ export interface Input {
 <return=(
     {
         typeahead: function ({ key }) {
-            typeStr = typeStr.concat(key);
+            typeStr += key;
             let index;
             if (nodeList() == null) return -1;
             const lowerTypeStr = typeStr.toLocaleLowerCase();
