@@ -52,7 +52,7 @@ export interface Input {
         setTimeout(() => {
             document.addEventListener(
                 "click",
-                (e:Event) => {
+                (e: Event) => {
                     if (input.host().contains(e.target as Node) === false || input.collapseOnSelect) {
                         open = false;
                     }
