@@ -1,0 +1,143 @@
+import IconButton from "<evo-icon-button>";
+import FilterChip from "<evo-filter-chip>";
+import Button, { type Input as ButtonInput } from "<evo-button>";
+import { type Item, type Input as MenuInput } from "<evo-menu>";
+export interface Input<Index extends number | number[] | undefined>
+    extends Omit<MenuInput<Index>, "variant"> {
+    collapseOnSelect?: boolean;
+    prefixId?: string;
+    variant?: "form" | "button" | "icon" | "filter";
+    borderless?: boolean;
+    partiallyDisabled?: ButtonInput["partiallyDisabled"];
+    priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+    size?: ButtonInput["size"];
+    transparent?: boolean;
+    disabled?: boolean;
+    split?: string;
+    noToggleIcon?: boolean;
+    label?: Marko.AttrTag<Marko.HTML.Span>;
+    prefixLabel?: string;
+    icon?: Marko.AttrTag<Marko.HTML.Span>;
+    footerButton?: Marko.AttrTag<ButtonInput>;
+    text?: string;
+    reverse?: boolean;
+    strategy?: "absolute" | "fixed";
+    fixWidth?: boolean;
+}
+<const/{
+    class: inputClass,
+    text,
+    icon,
+    noToggleIcon: inputNoToggleIcon,
+    reverse,
+    strategy,
+    fixWidth,
+    borderless,
+    size,
+    partiallyDisabled,
+    footerButton,
+    priority: inputPriority,
+    disabled,
+    variant,
+    item: items = [],
+    label,
+    selectedIndex,
+    selectedIndexChange,
+    prefixLabel,
+    prefixId,
+    split: inputSplit,
+    collapseOnSelect,
+    transparent: inputTransparent,
+    ...htmlInput
+}=input>
+
+<id/labelId>
+<const/{
+    tagName,
+    transparent,
+    selected,
+    split,
+    priority,
+    noToggleIcon,
+}=(() => {
+    let priority = null;
+    let split;
+    let status;
+    let noToggleIcon;
+    let transparent;
+    let tagName;
+    let selected;
+
+    if (variant === "icon") {
+        tagName = IconButton;
+        transparent = inputTransparent;
+    } else if (variant === "filter") {
+        tagName = FilterChip;
+        selected = Array.isArray(selectedIndex) ? selectedIndex.length > 0 : selectedIndex !== -1;
+    } else {
+        tagName = Button;
+        split = inputSplit;
+        noToggleIcon = inputNoToggleIcon;
+        priority = inputPriority;
+    }
+
+    return {
+        tagName,
+        status,
+        split,
+        selected,
+        noToggleIcon,
+        transparent,
+        priority
+    };
+})()>
+<id/menu>
+
+<span/root ...htmlInput class=["menu-button", inputClass]>
+    <evo-expander/{ onClick, ariaExpanded }
+        reverse=reverse
+        strategy=strategy
+        collapseOnSelect=collapseOnSelect
+        host=root
+        overlay=() => { return document.getElementById(menu)!; } />
+    <${tagName}
+        class=[`menu-button__button`]
+        size=size
+        priority=priority as ButtonInput["priority"]
+        borderless=borderless
+        variant=variant
+        aria-haspopup="true"
+        selected=selected
+        transparent=transparent
+        aria-expanded=ariaExpanded
+        aria-labelledby=labelId && `${prefixId} ${labelId}`
+        split=split
+        disabled=disabled
+        partiallyDisabled=partiallyDisabled
+        onClick(e, target) {
+            console.log("crick");
+            onClick();
+            (input.onClick || null)?.(e, target);
+        }>
+        <if=label>
+            <span ...label class=["menu-button-prefix-label", label.class]/>
+            ${" "}
+        </if>
+        <span id=labelId>
+            <${input.content}/>
+        </span>
+        <if=!noToggleIcon>
+            <evo-icon-chevron-down-12/>
+        </if>
+    </>
+    <evo-menu
+        id=menu
+        selectedIndex:=input.selectedIndex
+        classPrefix="menu-button"
+        fixed=strategy === "fixed"
+        variant=(variant as MenuInput["variant"])
+        fixWidth=fixWidth
+        tabindex=-1
+        footerButton=footerButton
+        item=items/>
+</span>

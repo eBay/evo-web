@@ -1,0 +1,97 @@
+import {
+    autoUpdate,
+    computePosition,
+    shift,
+    offset,
+    type ReferenceElement,
+} from "@floating-ui/dom";
+static interface Ret {
+    onClick: () => void;
+    onFocus: () => void;
+    onFocusOut: () => void;
+    onKeydown: (e: KeyboardEvent) => void;
+    ariaExpanded: string;
+}
+export interface Input {
+    open?: boolean;
+    reverse?: boolean;
+    collapseOnSelect?:boolean;
+    strategy?: "absolute" | "fixed";
+    offset?: number;
+    openChange?: (open: boolean) => void;
+    host: () => HTMLElement;
+    overlay: () => HTMLElement;
+}
+
+<const/update=() => {
+    computePosition(input.host(), input.overlay(), {
+        placement: input.reverse ? "bottom-end" : "bottom-start",
+        strategy: input.strategy ?? "fixed",
+        middleware: [offset(input.offset ?? 4), shift()],
+    }).then(({ x, y }) => {
+        Object.assign(input.overlay().style, {
+            left: `${x}px`,
+            top: `${y}px`,
+        });
+    });
+}>
+
+<let/open:=input.open>
+
+<log=open>
+<script>
+    if (open) {
+        const cleanupFn = autoUpdate(input.host(), input.overlay(), update);
+        $signal.onabort = () => {
+            cleanupFn();
+        };
+
+        (input.overlay()?.querySelector('[tabindex]') as HTMLInputElement).focus();
+
+        // Set timeout is here because otherwise the events will bubble and trigger immediately
+        setTimeout(() => {
+            document.addEventListener(
+                "click",
+                (e:Event) => {
+                    if (input.host().contains(e.target as Node) === false || input.collapseOnSelect) {
+                        open = false;
+                    }
+                },
+                {
+                    signal: $signal,
+                },
+            );
+            document.addEventListener(
+                "keydown",
+                (e) => {
+                    if (e.key === "Escape") {
+                        open = false;
+                    }
+                },
+                {
+                    signal: $signal,
+                },
+            );
+        }, 0);
+    }
+</script>
+
+<return=(
+    {
+        onClick() {
+            open = !open;
+        },
+        onFocus() {
+            open = true;
+        },
+        onFocusOut() {
+            open = false;
+        },
+        onKeydown(e) {
+            if (e.key === "Enter" || e.key === " ") {
+                open = true;
+            }
+        },
+        ariaExpanded: open ? "true" : "false",
+    } as Ret
+)>

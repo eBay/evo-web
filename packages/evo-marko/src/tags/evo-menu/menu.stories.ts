@@ -92,7 +92,7 @@ export default {
                 category: "@attribute tags",
             },
             description:
-                "The footer content. Renders an ebay-button. Used for filter type generally.",
+                "The footer content. Renders an evo-button. Used for filter type generally.",
         },
         "onFooter-button-click": {
             action: "on-footer-button-click",

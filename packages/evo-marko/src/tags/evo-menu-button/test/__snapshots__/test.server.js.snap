@@ -1,0 +1,3631 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`menu-button > passes through additional html attributes 1`] = `
+<span
+  class="menu-button class1"
+  data-passed-through="true"
+  data-testid="AttributePassthrough"
+  style="color:red"
+  type="number"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    data-ebayui=""
+    type="button"
+  >
+    <!--F#7-->
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+      focusable="false"
+    >
+      <defs>
+        <symbol
+          id="icon-chevron-down-12"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+      </defs>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+    <!--F/-->
+  </button>
+  <span
+    class="menu-button__menu"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="s0-@content-menu"
+      role="menu"
+    >
+      <div
+        class="menu-button__item"
+        role="menuitem"
+      >
+        <span>
+          <!--F#7[0]-->
+          item 1 that has very long text
+          <!--F/-->
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+        >
+          <defs>
+            <symbol
+              id="icon-tick-16"
+              viewBox="0 0 16 16"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+                fill-rule="evenodd"
+              />
+            </symbol>
+          </defs>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        role="menuitem"
+      >
+        <span>
+          <!--F#7[1]-->
+          item 2
+          <!--F/-->
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        role="menuitem"
+      >
+        <span>
+          <!--F#7[2]-->
+          item 3
+          <!--F/-->
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>
+`;
+
+exports[`menu-button > passes through additional html attributes 2`] = `
+<span
+  class="menu-button class1"
+  data-passed-through="true"
+  data-testid="AttributePassthrough"
+  style="color:red"
+  type="number"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    data-ebayui=""
+    type="button"
+  >
+    <!--F#7-->
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+      focusable="false"
+    >
+      <defs>
+        <symbol
+          id="icon-chevron-down-12"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+      </defs>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+    <!--F/-->
+  </button>
+  <span
+    class="menu-button__menu"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="s0-@content-menu"
+      role="menu"
+    >
+      <div
+        class="menu-button__item"
+        role="menuitem"
+      >
+        <span>
+          <!--F#7[0]-->
+          item 1 that has very long text
+          <!--F/-->
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+        >
+          <defs>
+            <symbol
+              id="icon-tick-16"
+              viewBox="0 0 16 16"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+                fill-rule="evenodd"
+              />
+            </symbol>
+          </defs>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        role="menuitem"
+      >
+        <span>
+          <!--F#7[1]-->
+          item 2
+          <!--F/-->
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        role="menuitem"
+      >
+        <span>
+          <!--F#7[2]-->
+          item 3
+          <!--F/-->
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>
+`;
+
+exports[`menu-button > passes through additional html attributes from child item 1`] = `
+<div
+  class="menu-button__item class1"
+  data-passed-through="true"
+  data-testid="AttributePassthrough"
+  role="menuitem"
+  style="color:red"
+  type="number"
+>
+  <span />
+  <svg
+    aria-hidden="true"
+    class="icon icon--16"
+    focusable="false"
+  >
+    <defs>
+      <symbol
+        id="icon-tick-16"
+        viewBox="0 0 16 16"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+    </defs>
+    <use
+      href="#icon-tick-16"
+    />
+  </svg>
+</div>
+`;
+
+exports[`menu-button > passes through additional html attributes from child item 2`] = `
+<div
+  class="menu-button__item class1"
+  data-passed-through="true"
+  data-testid="AttributePassthrough"
+  role="menuitem"
+  style="color:red"
+  type="number"
+>
+  <span />
+  <svg
+    aria-hidden="true"
+    class="icon icon--16"
+    focusable="false"
+  >
+    <defs>
+      <symbol
+        id="icon-tick-16"
+        viewBox="0 0 16 16"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+    </defs>
+    <use
+      href="#icon-tick-16"
+    />
+  </svg>
+</div>
+`;
+
+exports[`menu-button > renders basic version 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with a badge 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"1 item unread"[39m
+          [33mclass[39m=[32m"menu-button__item menu-button__item--badged"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"badge"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"99 items unread"[39m
+          [33mclass[39m=[32m"menu-button__item menu-button__item--badged"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"badge"[39m
+            [36m>[39m
+              [0m99[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"10 item unread"[39m
+          [33mclass[39m=[32m"menu-button__item menu-button__item--badged"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"badge"[39m
+            [36m>[39m
+              [0m10[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with borderless=true 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--borderless"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with button variant 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0mButton[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with disabled state 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mdisabled[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with filter 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33maria-pressed[39m=[32m"false"[39m
+      [33mclass[39m=[32m"filter-chip menu-button__button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"filter-chip__text"[39m
+      [36m>[39m
+        [36m<span>[39m
+          [0mFilter Items[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button--filter"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-checked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with fix-width=true 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button__menu--fix-width"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with fixed strategy 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button__menu--fixed"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with footer 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33maria-pressed[39m=[32m"false"[39m
+      [33mclass[39m=[32m"filter-chip menu-button__button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"filter-chip__text"[39m
+      [36m>[39m
+        [36m<span>[39m
+          [0mFilter Items[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button--filter"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-checked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__footer"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn--tertiary"[39m
+          [33mdata-ebayui[39m=[32m""[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mApply[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with icon 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-settings-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M10.799.652A1 1 0 0 0 9.86 0H6.14c-.42 0-.793.26-.94.652l-.412 1.11-.316.184-.274.157-1.17-.199a1.001 1.001 0 0 0-1.034.486l-.921 1.594-.01.015-.93 1.61A1 1 0 0 0 .23 6.747l.755.911.002.398-.001.283-.757.913a1 1 0 0 0-.096 1.138l.93 1.61.007.01.924 1.6c.21.362.622.556 1.034.486l1.17-.198.268.152.322.188.412 1.11c.146.392.52.652.939.652h3.72c.419 0 .793-.26.939-.652l.412-1.11.321-.187.27-.153 1.169.198c.412.07.825-.124 1.034-.486l.922-1.596.008-.013.93-1.61a1 1 0 0 0-.096-1.138l-.755-.911-.002-.399.001-.282.757-.913a1 1 0 0 0 .096-1.138L14.936 4l-.005-.008-.926-1.602a1.001 1.001 0 0 0-1.034-.486l-1.17.199-.27-.154-.32-.187L10.8.652ZM5.468 12.318l.628.359a1 1 0 0 1 .441.52l.299.803h2.328l.299-.803a1 1 0 0 1 .442-.52l.626-.358.57-.333c.204-.118.441-.16.673-.122l.845.144.582-1.008.008-.013.575-.994-.548-.66a1 1 0 0 1-.23-.642l.004-.748-.003-.633a1 1 0 0 1 .23-.643l.547-.66-.578-.998-.005-.01-.582-1.007-.845.144a1.003 1.003 0 0 1-.672-.122l-.572-.333-.626-.358a1 1 0 0 1-.441-.52L9.164 2H6.836l-.299.803a1 1 0 0 1-.441.52l-.621.355-.577.336c-.203.118-.44.161-.672.122l-.845-.143L2.799 5l-.01.015-.572.992.547.66a1 1 0 0 1 .23.642l-.004.747.003.634a1 1 0 0 1-.23.643l-.547.66.576.996L2.8 11l.582 1.008.845-.144c.232-.039.47.004.672.122l.57.332Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M8 9a1 1 0 1 0 .001-2.001A1 1 0 0 0 8 9Zm0 2a3.002 3.002 0 0 0 3.003-3c0-1.657-1.344-3-3.003-3a3.002 3.002 0 0 0-3.003 3c0 1.657 1.344 3 3.003 3Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-settings-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+      [36m<span>[39m
+        [0mSettings[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with overflow variant 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button icon-btn"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--16"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-overflow-vertical-16"[39m
+            [33mviewBox[39m=[32m"0 0 16 16"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M8 4.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-overflow-vertical-16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with prefix label 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"menu-button-prefix-label"[39m
+      [36m>[39m
+        [0mSort By:[0m
+      [36m</span>[39m
+      [0mColor[0m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"true"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mColor[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mYear[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mMileage[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with reverse=true 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with separators 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu separator[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<hr[39m
+          [33mclass[39m=[32m"menu-button__separator"[39m
+          [33mrole[39m=[32m"separator"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 4[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<hr[39m
+          [33mclass[39m=[32m"menu-button__separator"[39m
+          [33mrole[39m=[32m"separator"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 5[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 6[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with size=small 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--small btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=false 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<span />[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=false and as filter 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33maria-pressed[39m=[32m"false"[39m
+      [33mclass[39m=[32m"filter-chip menu-button__button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"filter-chip__text"[39m
+      [36m>[39m
+        [36m<span>[39m
+          [0mFilter Items[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button--filter"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-checked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=true 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"true"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<span />[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=true and as filter 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33maria-pressed[39m=[32m"false"[39m
+      [33mclass[39m=[32m"filter-chip menu-button__button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"filter-chip__text"[39m
+      [36m>[39m
+        [36m<span>[39m
+          [0mFilter Items[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button--filter"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-unchecked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-checkbox-checked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemcheckbox"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-checkbox-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=radio and checked=false 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<span />[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=radio and checked=false and as filter 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33maria-pressed[39m=[32m"false"[39m
+      [33mclass[39m=[32m"filter-chip menu-button__button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"filter-chip__text"[39m
+      [36m>[39m
+        [36m<span>[39m
+          [0mFilter Items[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button--filter"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-radio-unchecked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M9 18A9 9 0 1 1 9 0a9 9 0 0 1 0 18ZM9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-radio-checked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0Zm0 17A8 8 0 1 1 9 1a8 8 0 0 1 0 16Zm5-8A5 5 0 1 1 4 9a5 5 0 0 1 10 0Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=radio and checked=true 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"true"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<span />[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with type=radio and checked=true and as filter 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33maria-pressed[39m=[32m"false"[39m
+      [33mclass[39m=[32m"filter-chip menu-button__button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"filter-chip__text"[39m
+      [36m>[39m
+        [36m<span>[39m
+          [0mFilter Items[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"filter-chip__trailing icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu menu-button--filter"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-radio-unchecked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M9 18A9 9 0 1 1 9 0a9 9 0 0 1 0 18ZM9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-radio-checked-18"[39m
+                [33mviewBox[39m=[32m"0 0 18 18"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0Zm0 17A8 8 0 1 1 9 1a8 8 0 0 1 0 16Zm5-8A5 5 0 1 1 4 9a5 5 0 0 1 10 0Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-checked[39m=[32m"false"[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitemradio"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--unchecked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-unchecked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon--checked icon icon--18"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-radio-checked-18"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders with typeahead 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<p>[39m
+    [0mClick the button, then type a name to see focus change. The search will see if any names start with the input, then if there are no matches it will search for the input string anywhere in the names. [0m
+  [36m</p>[39m
+  [36m<p>[39m
+    [0mWait 2 seconds for the typeahead to reset and then try typing again to reset the search.[0m
+  [36m</p>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0mButton[0m
+      [36m</span>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"icon icon--12"[39m
+        [33mfocusable[39m=[32m"false"[39m
+      [36m>[39m
+        [36m<defs>[39m
+          [36m<symbol[39m
+            [33mid[39m=[32m"icon-chevron-down-12"[39m
+            [33mviewBox[39m=[32m"0 0 12 12"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33mclip-rule[39m=[32m"evenodd"[39m
+              [33md[39m=[32m"M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"[39m
+              [33mfill-rule[39m=[32m"evenodd"[39m
+            [36m/>[39m
+          [36m</symbol>[39m
+        [36m</defs>[39m
+        [36m<use[39m
+          [33mhref[39m=[32m"#icon-chevron-down-12"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-2-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mAusten[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mAustin[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJack[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJackman[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJackson[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJasper[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJulia[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJulio[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mJulius[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mLuca[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mLucais[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mLucan[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mLucian[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [36m<span>[39m
+              [0mLucius[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+  [36m<p />[39m
+[36m</DocumentFragment>[39m"
+`;
+
+exports[`menu-button > renders without toggle icon 1`] = `
+"[36m<DocumentFragment>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"menu-button"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"true"[39m
+      [33mclass[39m=[32m"menu-button__button btn btn--secondary"[39m
+      [33mdata-ebayui[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0meBay Menu[0m
+      [36m</span>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"menu-button__menu"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"menu-button__items"[39m
+        [33mid[39m=[32m"s0-@content-menu"[39m
+        [33mrole[39m=[32m"menu"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 1 that has very long text[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<defs>[39m
+              [36m<symbol[39m
+                [33mid[39m=[32m"icon-tick-16"[39m
+                [33mviewBox[39m=[32m"0 0 16 16"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33mclip-rule[39m=[32m"evenodd"[39m
+                  [33md[39m=[32m"M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"[39m
+                  [33mfill-rule[39m=[32m"evenodd"[39m
+                [36m/>[39m
+              [36m</symbol>[39m
+            [36m</defs>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 2[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"menu-button__item"[39m
+          [33mrole[39m=[32m"menuitem"[39m
+        [36m>[39m
+          [36m<span>[39m
+            [0mitem 3[0m
+          [36m</span>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"icon icon--16"[39m
+            [33mfocusable[39m=[32m"false"[39m
+          [36m>[39m
+            [36m<use[39m
+              [33mhref[39m=[32m"#icon-tick-16"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</span>[39m
+  [36m</span>[39m
+[36m</DocumentFragment>[39m"
+`;

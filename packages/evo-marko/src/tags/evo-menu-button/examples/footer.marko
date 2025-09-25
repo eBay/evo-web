@@ -1,0 +1,22 @@
+<let/selectedIndex=[]>
+<evo-menu-button
+    variant="filter"
+    selectedIndex:=selectedIndex
+    ...input>
+    Filter Items
+    <if=(selectedIndex.length > 0)>
+        (+${selectedIndex.length})
+    </if>
+    <@item value="item 1">
+        item 1
+    </@item>
+    <@item value="item 2">
+        item 2
+    </@item>
+    <@item value="item 3">
+        item 3
+    </@item>
+    <@footerButton priority="tertiary">
+            Apply
+    </@footerButton>
+</evo-menu-button>

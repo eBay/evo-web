@@ -1,0 +1,17 @@
+<id/customLabel>
+<let/text="Name">
+<const/clickHandler=(e:Event, target:HTMLElement) => {
+    text = target.textContent;
+}>
+
+<evo-menu-button
+>
+
+    ${text}
+    <@label>
+        Sort By:
+    </@label>
+    <@item onClick=clickHandler>Name</@item>
+    <@item onClick=clickHandler>Year</@item>
+    <@item onClick=clickHandler>Group</@item>
+</evo-menu-button>
