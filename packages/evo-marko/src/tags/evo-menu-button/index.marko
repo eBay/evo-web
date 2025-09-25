@@ -115,7 +115,6 @@ export interface Input<Index extends number | number[] | undefined>
         disabled=disabled
         partiallyDisabled=partiallyDisabled
         onClick(e, target) {
-            console.log("crick");
             onClick();
             (input.onClick || null)?.(e, target);
         }>
