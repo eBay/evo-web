@@ -38,7 +38,6 @@ export interface Input {
 
 <let/open:=input.open>
 
-<log=open>
 <script>
     if (open) {
         const cleanupFn = autoUpdate(input.host(), input.overlay(), update);
