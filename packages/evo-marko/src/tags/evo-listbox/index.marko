@@ -116,7 +116,7 @@ export interface Input<Index extends number | string | undefined>
     </for>
 </div>
 <select hidden class="listbox__native" name=name>
-    <for|option, i| of=options || []>
+    <for|option, i| of=options>
         <option
             value=option.value
             selected=(option.value || i) === selected
