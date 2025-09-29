@@ -32,7 +32,7 @@ export interface Input<Index extends number | string | undefined>
 <id/listbox>
 <let/selected:=input.selected>
 <const/size=([...options].length)>
-<evo-roving-tabindex/{ onKeydown, onClick, isFocused, setFocusIndex }
+<evo-roving-tabindex/rovTabindex
     autoSelect=listSelection === "auto"
     nodeList=() =>
         [...Array(size)].map((v, i) => {
@@ -50,17 +50,18 @@ export interface Input<Index extends number | string | undefined>
     ...htmlInput
     role="listbox"
     onKeydown(e, target) {
-        onKeydown(e);
+        rovTabindex.onKeydown(e);
 
         const newIndex = typeahead(e);
         if (newIndex !== -1) {
-            setFocusIndex(newIndex);
+            rovTabindex.setFocusIndex(newIndex);
         }
 
         (input.onKeydown || null)?.(e, target);
     }
-    class=["listbox__options", inputClass]
-    // TODO remove the || 0 when default params work finally
+    class=(
+        ["listbox__options", inputClass] // TODO remove the || 0 when default params work finally
+    )
     tabindex=tabindex || 0>
     <for|option, index| of=options>
         <const/{
@@ -77,7 +78,7 @@ export interface Input<Index extends number | string | undefined>
             ...htmlOption
             class=[
                 "listbox__option",
-                isFocused(value as string | number) &&
+                rovTabindex.isFocused(value as string | number) &&
                     "listbox__option--active",
                 optionClass,
             ]
@@ -91,7 +92,7 @@ export interface Input<Index extends number | string | undefined>
             )
             id=`${listbox}-${index}`
             onClick(e, target) {
-                onClick(value as string | number);
+                rovTabindex.onClick(value as string | number);
 
                 (option.onClick || null)?.(e, target);
             }>

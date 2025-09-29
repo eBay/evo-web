@@ -64,7 +64,7 @@ export interface Input<
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
         id=menu>
-        <evo-roving-tabindex/{ onKeydown, onClick, isFocused, setFocusIndex }
+        <evo-roving-tabindex/rovTabindex
             nodeList=() =>
                 [...Array(size)].map((v, i) => {
                     return document.getElementById(`${menu}-${i}`);
@@ -115,20 +115,20 @@ export interface Input<
                     ]
                     id=`${menu}-${i}`
                     onClick(e, target) {
-                        onClick(value);
+                        rovTabindex.onClick(value);
                         (item.onClick || null)?.(e, target);
                     }
                     onKeydown(e, target) {
-                        onKeydown(e);
+                        rovTabindex.onKeydown(e);
                         const newIndex = typeahead(e);
                         if (newIndex !== -1) {
-                            setFocusIndex(newIndex);
+                            rovTabindex.setFocusIndex(newIndex);
                         }
 
                         (item.onKeydown || null)?.(e, target);
                     }
                     data-value=value
-                    tabindex=(isFocused(value) ? 0 : -1)
+                    tabindex=(rovTabindex.isFocused(value) ? 0 : -1)
                     aria-checked=isCheckable && (checked ? "true" : "false")
                     aria-disabled=disabled && "true"
                     role=itemRole>

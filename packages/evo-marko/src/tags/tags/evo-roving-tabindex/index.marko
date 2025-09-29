@@ -53,8 +53,8 @@ export interface Input<
                 currentItem.focus();
             }
         },
-        isFocused(i) {
-            return focusIndex === i;
+        isFocused(value) {
+            return focusIndex === value;
         },
         onClick(value) {
             setIndex(value);
