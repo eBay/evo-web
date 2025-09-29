@@ -5,7 +5,7 @@ import * as stories from "../listbox.stories";
 
 const { Default, withDescription } = composeStories(stories);
 
-const option = [...Standard.args.option];
+const option = [...Default.args.option];
 
 describe("listbox", () => {
     it("renders basic version", async () => {
