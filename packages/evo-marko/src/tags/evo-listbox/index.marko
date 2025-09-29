@@ -62,7 +62,7 @@ export interface Input<Index extends number | string | undefined>
     class=["listbox__options", inputClass]
     // TODO remove the || 0 when default params work finally
     tabindex=tabindex || 0>
-    <for|option, index| of=options || []>
+    <for|option, index| of=options>
         <const/{
             value = index,
             class: optionClass,
