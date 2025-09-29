@@ -1,5 +1,5 @@
-<let/selectedIndex=[0]>
-<evo-menu-button selectedIndex:=selectedIndex variant="filter" ...input>
+<let/selected=["item 1"]>
+<evo-menu-button selected:=selected variant="filter" ...input>
     <@item value="item 1">
         item 1
     </@item>
@@ -10,7 +10,7 @@
         item 3
     </@item>
     Filter Items${" "}
-    <if=(selectedIndex.length > 0)>
-        (+${selectedIndex.length})
+    <if=(selected.length > 0)>
+        (+${selected.length})
     </if>
 </evo-menu-button>

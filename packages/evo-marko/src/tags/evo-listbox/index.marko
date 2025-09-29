@@ -1,0 +1,125 @@
+export interface Option extends Marko.HTML.Div {
+    value: Marko.HTML.Option["value"];
+    disabled?: boolean;
+    description?: Marko.AttrTag<Marko.HTML.Span>;
+    icon?: Marko.AttrTag<{ content?: Marko.Body }>;
+}
+export interface Input<Index extends number | string | undefined>
+    extends Marko.HTML.Div {
+    selected?: Index;
+    selectedChange?: (selected: Index) => void;
+    listSelection?: "auto" | "manual";
+    typeaheadTimeoutLength?: number;
+    a11ySelectedText?: string;
+    option?: Marko.AttrTag<Option>;
+    name?: string;
+    disabled?: boolean;
+}
+<const/{
+    name,
+    selected: selectedIndex,
+    selectedChange,
+    class: inputClass,
+    disabled,
+    listSelection,
+    option: options = [],
+    tabindex = 0,
+    typeaheadTimeoutLength,
+    a11ySelectedText = "selected",
+    ...htmlInput
+}=input>
+
+<id/listbox>
+<let/selected:=input.selected>
+<const/size=([...options].length)>
+<evo-roving-tabindex/{ onKeydown, onClick, isFocused, setFocusIndex }
+    autoSelect=listSelection === "auto"
+    nodeList=() =>
+        [...Array(size)].map((v, i) => {
+            return document.getElementById(`${listbox}-${i}`);
+        })
+    selected:=selected/>
+<evo-typeahead/{ typeahead }
+    nodeList=() =>
+        [...Array(size)].map((v, i) => {
+            return document.getElementById(`${listbox}-${i}`);
+        })
+    timeoutLength=typeaheadTimeoutLength/>
+
+<div
+    ...htmlInput
+    role="listbox"
+    onKeydown(e, target) {
+        onKeydown(e);
+
+        const newIndex = typeahead(e);
+        if (newIndex !== -1) {
+            setFocusIndex(newIndex);
+        }
+
+        (input.onKeydown || null)?.(e, target);
+    }
+    class=["listbox__options", inputClass]
+    // TODO remove the || 0 when default params work finally
+    tabindex=tabindex || 0>
+    <for|option, index| of=options || []>
+        <const/{
+            value = index,
+            class: optionClass,
+            disabled,
+            tabindex,
+            icon,
+            description,
+            ...htmlOption
+        }=option>
+        <const/isSelected=value === selected>
+        <div
+            ...htmlOption
+            class=[
+                "listbox__option",
+                isFocused(value as string | number) &&
+                    "listbox__option--active",
+                optionClass,
+            ]
+            role="option"
+            tabindex=(disabled ? -1 : tabindex)
+            aria-disabled=disabled && "true"
+            aria-selected=isSelected && "true"
+            data-value=(
+                value
+                // TODO remove id when we get el reference
+            )
+            id=`${listbox}-${index}`
+            onClick(e, target) {
+                onClick(value as string | number);
+
+                (option.onClick || null)?.(e, target);
+            }>
+            <span class="listbox__value">
+                <${icon}/>
+                <${icon ? "span" : null}>
+                    <${option.content}/>
+                </>
+                <if=isSelected>
+                    <span class="clipped">
+                        ${a11ySelectedText}
+                    </span>
+                </if>
+            </span>
+            <if=description>
+                <span
+                    ...description
+                    class=["listbox__description", description.class]/>
+            </if>
+            <evo-icon-tick-16/>
+        </div>
+    </for>
+</div>
+<select hidden class="listbox__native" name=name>
+    <for|option, i| of=options || []>
+        <option
+            value=option.value
+            selected=(option.value || i) === selected
+            class=option.class/>
+    </for>
+</select>

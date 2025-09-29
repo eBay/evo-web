@@ -8,12 +8,10 @@ export interface Item extends Marko.HTML.Div {
     disabled?: boolean;
 }
 export interface Input<
-  Index extends
-      | number
-      | number[]
-      | undefined> extends Marko.HTML.Span {
-    selectedIndex?: Index;
-    selectedIndexChange?: (selectedIndex: Index) => void;
+    Index extends number | string | (number | string)[] | undefined,
+> extends Marko.HTML.Span {
+    selected?: Index;
+    selectedChange?: (selected: Index) => void;
     item?: Marko.AttrTag<Item>;
     variant?: "filter" | "none";
     classPrefix?: string;
@@ -27,8 +25,8 @@ export interface Input<
 <const/{
     class: inputClass,
     classPrefix,
-    selectedIndex: inputIndex,
-    selectedIndexChange,
+    selected: inputIndex,
+    selectedChange,
     reverse,
     fixed,
     fixWidth,
@@ -40,15 +38,15 @@ export interface Input<
     "aria-labelledby": ariaLabelledby,
     ...htmlInput
 }=input>
-<const/isRadio=typeof inputIndex === "number">
+<const/isRadio=typeof inputIndex === "number" || typeof inputIndex === "string">
 <const/isFilter=variant === "filter">
 <const/isCheckbox=Array.isArray(inputIndex) || (isFilter && !isRadio)>
 <const/isCheckable=isRadio || isCheckbox>
 <const/baseClass=classPrefix || "menu">
-<const/menuClass=baseClass === "menu" ? "items" : "menu">
-<let/selectedIndex:=input.selectedIndex>
+<const/menuClass=(baseClass === "menu" ? "items" : "menu")>
+<let/selected:=input.selected>
 
-<const/size=[...items].length>
+<const/size=([...items].length)>
 <id/menu>
 <span
     ...htmlInput
@@ -66,30 +64,31 @@ export interface Input<
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
         id=menu>
-        <evo-roving-tabindex/{ onKeydown, onClick, tabindex, setFocusIndex }
-            size=size
-            index:=selectedIndex
-            itemId=menu/>
+        <evo-roving-tabindex/{ onKeydown, onClick, isFocused, setFocusIndex }
+            nodeList=() =>
+                [...Array(size)].map((v, i) => {
+                    return document.getElementById(`${menu}-${i}`);
+                })
+            selected:=selected/>
 
-        <evo-typeahead/{typeahead}
-            nodeList=() => [...Array(size)].map((v, i) => {
-                return document.getElementById(`${menu}-${i}`);
-            })
-            timeoutLength=typeaheadTimeoutLength
-            />
-
+        <evo-typeahead/{ typeahead }
+            nodeList=() =>
+                [...Array(size)].map((v, i) => {
+                    return document.getElementById(`${menu}-${i}`);
+                })
+            timeoutLength=typeaheadTimeoutLength/>
 
         <for|item, i| of=items>
             <const/{
                 class: itemClass,
-                value,
+                value = i,
                 checked: itemChecked,
                 separator,
                 badgeNumber,
                 disabled,
                 content,
                 ...htmlItem
-            } = item>
+            }=item>
             <const/itemRole=(
                 (isRadio
                     ? "menuitemradio"
@@ -97,7 +96,11 @@ export interface Input<
                       ? "menuitemcheckbox"
                       : "menuitem") as Marko.HTML.Div["role"]
             )>
-            <const/checked = Array.isArray(selectedIndex) ? selectedIndex.includes(i) : selectedIndex === i>
+            <const/checked=(
+                Array.isArray(selected)
+                    ? selected.includes(value)
+                    : selected === value
+            )>
             <if=separator>
                 <hr class=`${baseClass}__separator` role="separator">
             </if>
@@ -112,20 +115,20 @@ export interface Input<
                     ]
                     id=`${menu}-${i}`
                     onClick(e, target) {
-                        onClick(i);
+                        onClick(value);
                         (item.onClick || null)?.(e, target);
                     }
                     onKeydown(e, target) {
                         onKeydown(e);
-                        const newIndex = typeahead(e)
-                        console.log(newIndex);
+                        const newIndex = typeahead(e);
                         if (newIndex !== -1) {
                             setFocusIndex(newIndex);
                         }
 
                         (item.onKeydown || null)?.(e, target);
                     }
-                    tabindex=tabindex(i)
+                    data-value=value
+                    tabindex=(isFocused(value) ? 0 : -1)
                     aria-checked=isCheckable && (checked ? "true" : "false")
                     aria-disabled=disabled && "true"
                     role=itemRole>

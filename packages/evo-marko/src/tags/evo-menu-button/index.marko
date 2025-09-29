@@ -2,7 +2,7 @@ import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Item, type Input as MenuInput } from "<evo-menu>";
-export interface Input<Index extends number | number[] | undefined>
+export interface Input<Index extends number | string | (number|string)[] | undefined>
     extends Omit<MenuInput<Index>, "variant"> {
     collapseOnSelect?: boolean;
     prefixId?: string;
@@ -41,8 +41,8 @@ export interface Input<Index extends number | number[] | undefined>
     variant,
     item: items = [],
     label,
-    selectedIndex,
-    selectedIndexChange,
+    selected,
+    selectedChange,
     prefixLabel,
     prefixId,
     split: inputSplit,
@@ -55,7 +55,7 @@ export interface Input<Index extends number | number[] | undefined>
 <const/{
     tagName,
     transparent,
-    selected,
+    isSelected,
     split,
     priority,
     noToggleIcon,
@@ -66,14 +66,14 @@ export interface Input<Index extends number | number[] | undefined>
     let noToggleIcon;
     let transparent;
     let tagName;
-    let selected;
+    let isSelected;
 
     if (variant === "icon") {
         tagName = IconButton;
         transparent = inputTransparent;
     } else if (variant === "filter") {
         tagName = FilterChip;
-        selected = Array.isArray(selectedIndex) ? selectedIndex.length > 0 : selectedIndex !== -1;
+        isSelected = Array.isArray(selected) ? selected.length > 0 : selected !== -1;
     } else {
         tagName = Button;
         split = inputSplit;
@@ -85,7 +85,7 @@ export interface Input<Index extends number | number[] | undefined>
         tagName,
         status,
         split,
-        selected,
+        isSelected,
         noToggleIcon,
         transparent,
         priority
@@ -107,7 +107,7 @@ export interface Input<Index extends number | number[] | undefined>
         borderless=borderless
         variant=variant
         aria-haspopup="true"
-        selected=selected
+        selected=isSelected
         transparent=transparent
         aria-expanded=ariaExpanded
         aria-labelledby=labelId && `${prefixId} ${labelId}`
@@ -131,7 +131,7 @@ export interface Input<Index extends number | number[] | undefined>
     </>
     <evo-menu
         id=menu
-        selectedIndex:=input.selectedIndex
+        selected:=input.selected
         classPrefix="menu-button"
         fixed=strategy === "fixed"
         variant=(variant as MenuInput["variant"])

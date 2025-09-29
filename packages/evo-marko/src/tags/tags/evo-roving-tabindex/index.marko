@@ -1,56 +1,64 @@
 static interface Ret {
-    tabindex: (index: number) => 0 | -1;
+    isFocused: (index: number | string) => boolean;
     onKeydown: (e: KeyboardEvent) => void;
-    onClick: (index: number) => void;
-    setFocusIndex: (index: number) => void;
+    onClick: (index: number | string) => void;
+    setFocusIndex: (index: number | string) => void;
 }
 export interface Input<
-  Index extends
-      | number
-      | number[]
-      | undefined
+    Index extends number | string | (number | string)[] | undefined,
 > {
-    index?: Index;
-    indexChange?: (index: Index) => void;
+    selected?: Index;
+    selectedChange?: (selected: Index) => void;
     autoSelect?: boolean;
-    size: number;
-    itemId: string;
+    nodeList: () => (HTMLElement | undefined)[];
 }
 
-<let/index:=input.index>
-<let/focusIndex:number=(Array.isArray(index) ? 0 : index as number) || 0>
+<let/index:=input.selected>
+<let/focusIndex=(((Array.isArray(index) ? index[0] : index) || 0) as number | string)>
 
-<const/setIndex =(newIndex:number) => {
+<const/setIndex=(newIndex: number | string) => {
     if (Array.isArray(index)) {
         // This is a "checkbox" type
         if (index.includes(newIndex)) {
             index = index.filter((n) => n !== newIndex) as typeof index;
         } else {
-            index = [...index, newIndex] as typeof index ;
+            index = [...index, newIndex] as typeof index;
         }
     } else {
         index = newIndex as typeof index;
     }
 }>
 
+<const/getValue=(currentItem?: HTMLElement) => {
+    const value =
+        currentItem?.getAttribute("data-value") ||
+        currentItem?.getAttribute("value");
+    return value;
+}>
 <return=(
     {
-        setFocusIndex(i:number) {
-            const currentItem = document.getElementById(
-                `${input.itemId}-${i}`,
-            );
-
-            if (currentItem && currentItem.getAttribute("aria-disabled") !== "true") {
-                focusIndex = i;
-                currentItem.focus()
+        setFocusIndex(index) {
+            const items = input.nodeList();
+            let currentItem;
+            if (typeof index === "number") {
+                currentItem = items[index];
+            } else {
+                currentItem = items.find((c) => getValue(c) === index);
+            }
+            if (
+                currentItem &&
+                currentItem.getAttribute("aria-disabled") !== "true"
+            ) {
+                focusIndex = index;
+                currentItem.focus();
             }
         },
-        tabindex(i) {
-            return focusIndex === i ? 0 : -1;
+        isFocused(i) {
+            return focusIndex === i;
         },
-        onClick(i) {
-            setIndex(i);
-            focusIndex = i;
+        onClick(value) {
+            setIndex(value);
+            focusIndex = value;
         },
         onKeydown(e) {
             if (e.key === "Enter" || e.key === " ") {
@@ -61,27 +69,41 @@ export interface Input<
                     e.key,
                 ) !== -1
             ) {
-                const size = input.size;
+                const items = input.nodeList();
+                const size = items.length;
                 const direction =
                     e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 1;
 
-                let currentIndex = focusIndex;
+                let currentIndex: number;
+                if (typeof focusIndex === "number") {
+                    currentIndex = focusIndex;
+                } else {
+                    currentIndex = items.findIndex(
+                        (c) => getValue(c) === focusIndex,
+                    );
+                }
+
                 let currentItem;
                 while (true) {
                     currentIndex =
                         ((currentIndex as number) + size + direction) % size;
-                    currentItem = document.getElementById(
-                        `${input.itemId}-${currentIndex}`,
-                    );
-                    if (currentItem && currentItem.getAttribute("aria-disabled") !== "true") {
+                    currentItem = items[currentIndex];
+                    if (
+                        currentItem &&
+                        currentItem.getAttribute("aria-disabled") !== "true"
+                    ) {
                         break;
                     } else if (currentIndex === focusIndex) {
                         break;
                     }
                 }
-                focusIndex = currentIndex;
+                const value =
+                    currentItem?.getAttribute("data-value") ||
+                    currentItem?.getAttribute("value");
+
+                focusIndex = value || currentIndex;
                 if (input.autoSelect) {
-                    setIndex(currentIndex);
+                    setIndex(value || currentIndex);
                 }
                 currentItem?.focus();
             }

@@ -1,5 +1,5 @@
 static interface Ret {
-    typeahead: (e: KeyboardEvent) => number;
+    typeahead: (e: KeyboardEvent) => number | string;
 }
 export interface Input {
     timeoutLength?: number;
@@ -29,15 +29,19 @@ export interface Input {
             typeStr += key;
             if (nodeList() == null) return -1;
             const lowerTypeStr = typeStr.toLocaleLowerCase();
-            let index = nodeList().findIndex((el:HTMLElement|undefined) =>
+            let index = nodeList().findIndex((el: HTMLElement | undefined) =>
                 el?.textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
             );
             if (index === -1) {
-                index = nodeList().findIndex((el:HTMLElement|undefined) =>
+                index = nodeList().findIndex((el: HTMLElement | undefined) =>
                     el?.textContent.toLocaleLowerCase().includes(lowerTypeStr),
                 );
             }
-            return index;
+            const currentItem = nodeList()[index];
+            const value =
+                currentItem?.getAttribute("data-value") ||
+                currentItem?.getAttribute("value");
+            return value || index;
         },
     } as Ret
 )>
