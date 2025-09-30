@@ -1,0 +1,26 @@
+<id/description>
+<let/selected="2">
+<span class="field">
+    <evo-listbox-button
+        name="formFieldName"
+        hasError
+        selected:=selected
+        aria-describedby=description>
+        <@option value="1">
+            Option 1
+        </@option>
+        <@option value="2">
+            Option 2
+        </@option>
+        <@option value="3">
+            Option 3
+        </@option>
+    </evo-listbox-button>
+
+    <div
+        class="field__description field__description--attention"
+        id=description>
+        <evo-icon-attention-filled-16/>
+        <span>There was an error</span>
+    </div>
+</span>
