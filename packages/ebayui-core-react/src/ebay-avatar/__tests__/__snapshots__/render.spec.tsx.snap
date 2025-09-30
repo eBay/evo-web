@@ -86,7 +86,7 @@ exports[`<EbayAvatar /> rendering renders with custom body story correctly 1`] =
 <div>
   <div
     aria-label="Signed in as Elizabeth"
-    class="avatar avatar--teal"
+    class="avatar"
     role="img"
   >
     <div

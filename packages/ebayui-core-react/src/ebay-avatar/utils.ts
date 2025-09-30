@@ -21,3 +21,7 @@ export function getColorForText(username?: string, color?: Color): Color {
     const index = Math.abs(hash) % colorCount;
     return backgroundColors[index];
 }
+
+export function isFit(aspectRatio?: number): boolean {
+    return aspectRatio && (aspectRatio < 3 / 4 || aspectRatio < 4 / 3);
+}
