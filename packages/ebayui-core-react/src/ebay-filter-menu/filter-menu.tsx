@@ -24,8 +24,9 @@ import {
     Variant,
 } from "./types";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
 import { EbayButton } from "../ebay-button";
+import { EbayIconClear20 } from "../ebay-icon/icons/ebay-icon-clear-20";
+import { EbayIconSearch16 } from "../ebay-icon/icons/ebay-icon-search-16";
 
 export type EbayFilterMenuProps = Omit<ComponentProps<"span">, "onChange"> & {
     classPrefix?: string;
@@ -197,7 +198,7 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
         >
             {searchHeaderPlaceholderText ? (
                 <div className="filter-menu__header">
-                    <EbayIcon name="search16" />
+                    <EbayIconSearch16 />
 
                     <input
                         type="text"
@@ -209,7 +210,7 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
                     />
 
                     <EbayButton type="button" onClick={handleClearSearch} aria-label={a11ySearchHeaderClearText}>
-                        <EbayIcon name="clear20" />
+                        <EbayIconClear20 />
                     </EbayButton>
                 </div>
             ) : null}

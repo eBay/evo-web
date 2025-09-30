@@ -1,4 +1,4 @@
-import { EbayChangeEventHandler, EbayFocusEventHandler, EbayKeyboardEventHandler } from "src/events";
+import { EbayChangeEventHandler, EbayFocusEventHandler, EbayKeyboardEventHandler } from "../events";
 
 export type Size = "default" | "large";
 export type CheckboxState = "true" | "false" | "mixed";

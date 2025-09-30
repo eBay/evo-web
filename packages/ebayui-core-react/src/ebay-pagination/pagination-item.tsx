@@ -1,8 +1,9 @@
 import React, { FC, Key, ReactNode, RefObject, StyleHTMLAttributes, ComponentProps } from "react";
-import { EbayIcon } from "../ebay-icon";
 import { withForwardRef } from "../common/component-utils";
 import classNames from "classnames";
 import { EbayEventHandler } from "../common/event-utils/types";
+import { EbayIconArrowLeft16 } from "../ebay-icon/icons/ebay-icon-arrow-left-16";
+import { EbayIconArrowRight16 } from "../ebay-icon/icons/ebay-icon-arrow-right-16";
 
 export type PaginationItemType = "previous" | "next" | "page" | "separator";
 type HtmlProps = Omit<ComponentProps<"button">, "type" | "onSelect"> &
@@ -77,7 +78,7 @@ const EbayPaginationItem: FC<PaginationItemProps> = ({
                     style={arrowStyle}
                     onClick={handlePreviousPage}
                 >
-                    <EbayIcon name="arrowLeft16" />
+                    <EbayIconArrowLeft16 />
                 </ButtonOrAnchor>
             );
         case "next":
@@ -92,7 +93,7 @@ const EbayPaginationItem: FC<PaginationItemProps> = ({
                     style={arrowStyle}
                     onClick={handleNextPage}
                 >
-                    <EbayIcon name="arrowRight16" />
+                    <EbayIconArrowRight16 />
                 </ButtonOrAnchor>
             );
         case "separator":

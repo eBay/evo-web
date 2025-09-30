@@ -24,7 +24,7 @@ export const Example = () => (
         <EbayToggleButton>Child Button</EbayToggleButton>
         <EbayToggleButton title="Button2" subtitle="subtitle" />
         <EbayToggleButton
-            icon="settings24"
+            icon={<EbayIconSettings24 />}
             title="Button3"
             subtitle="subtitle"
         ></EbayToggleButton>

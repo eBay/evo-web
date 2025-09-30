@@ -1,10 +1,10 @@
 import React, { ChangeEvent, cloneElement, ComponentProps, FC, useState, FocusEvent } from "react";
 import classNames from "classnames";
 import EbaySelectOption from "./ebay-select-option";
-import { EbayIcon } from "../ebay-icon";
 import { filterByType, withForwardRef } from "../common/component-utils";
 import { useFloatingLabel } from "../common/floating-label-utils/hooks";
 import { EbayChangeEventHandler } from "../common/event-utils/types";
+import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down-12";
 
 const isControlled = (value) => typeof value !== "undefined";
 
@@ -85,7 +85,7 @@ const EbaySelect: FC<EbaySelectProps> = ({
                 >
                     {options(children)}
                 </select>
-                <EbayIcon name="chevronDown12" height="8" width="8" />
+                <EbayIconChevronDown12 height="8" width="8" />
             </span>
         </floatingLabel.Container>
     );

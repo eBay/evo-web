@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EbayToggleButton } from "..";
+import { EbayIconSettings24 } from "../../ebay-icon/icons/ebay-icon-settings-24";
 
 export default {
     title: "Buttons/ebay-toggle-button",
@@ -106,7 +107,7 @@ export const IconButton = () => (
         title={"Button 1"}
         subtitle={"Some context here"}
         onToggle={action("togle")}
-        icon="settings24"
+        icon={<EbayIconSettings24 />}
     ></EbayToggleButton>
 );
 

@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC, KeyboardEvent, RefObject } from "react";
+import React, { ComponentProps, FC, KeyboardEvent, ReactElement, RefObject } from "react";
 import classNames from "classnames";
 import { EbayIcon, Icon } from "../ebay-icon";
 import { EbayBadge } from "../ebay-badge";
@@ -9,7 +9,7 @@ import { Size } from "../ebay-button";
 export type EbayIconButtonProps = ComponentProps<"button"> &
     ComponentProps<"a"> & {
         href?: string;
-        icon: Icon;
+        icon: Icon | ReactElement;
         badgeNumber?: number;
         badgeAriaLabel?: string;
         transparent?: boolean;
@@ -38,7 +38,7 @@ const EbayIconButton: FC<EbayIconButtonProps> = ({
     });
     const children = (
         <>
-            <EbayIcon name={icon} />
+            {typeof icon === "string" ? <EbayIcon name={icon} /> : icon}
             {badgeNumber && <EbayBadge type="icon" number={badgeNumber} aria-label={badgeAriaLabel} />}
         </>
     );

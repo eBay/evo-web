@@ -1,8 +1,8 @@
 import React, { ComponentProps, FC, useEffect, useRef } from "react";
 import classNames from "classnames";
 import { EbayBadge } from "../ebay-badge";
-import { EbayIcon } from "../ebay-icon";
 import { EbayMenuType } from "./types";
+import { EbayIconTick16 } from "../ebay-icon/icons/ebay-icon-tick-16";
 
 export type MenuItemProps = ComponentProps<"div"> & {
     type?: EbayMenuType;
@@ -53,7 +53,7 @@ const EbayMenuItem: FC<MenuItemProps> = ({
                 {children}
                 {hasBadge && <EbayBadge type="menu" number={badgeNumber} />}
             </span>
-            <EbayIcon name="tick16" />
+            <EbayIconTick16 />
         </div>
     );
 };

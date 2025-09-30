@@ -11,6 +11,7 @@ export type EbayMenuButtonProps = {
     reverse?: boolean;
     text?: string;
     type?: EbayMenuType;
+    icon?: ReactElement;
     variant?: EbayMenuButtonVariant;
     onCollapse?: () => void;
     onExpand?: () => void;

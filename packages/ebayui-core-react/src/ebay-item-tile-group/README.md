@@ -24,12 +24,6 @@ import "@ebay/skin/item-tile-group";
 import "@ebay/skin/item-tile-group.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
 ```jsx harmony
 <EbayItemTileGroup onAction={handleAction} layout="list">
     <EbayItemTile
@@ -39,7 +33,7 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
             src: 'https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg'
         }}
     >
-        <EbayItemTileAction aria-label="action label" icon="heart16" />
+        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
         <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSupertitle>

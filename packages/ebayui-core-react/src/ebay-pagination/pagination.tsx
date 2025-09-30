@@ -16,7 +16,7 @@ import { calcPageState, getMaxWidth } from "./helpers";
 import { filterBy } from "../common/component-utils";
 import { PaginationItemProps, PaginationItemType } from "./pagination-item";
 import { ItemState, PaginationVariant } from "./types";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconOverflowHorizontal24 } from "../ebay-icon/icons/ebay-icon-overflow-horizontal-24";
 import { EbayEventHandler } from "../common/event-utils/types";
 
 export type PaginationProps = Omit<ComponentProps<"nav">, "onSelect"> & {
@@ -109,7 +109,7 @@ const EbayPagination: FC<PaginationProps> = ({
                 disabled,
                 href,
                 type: isSeparator ? "separator" : type,
-                children: isDot ? <EbayIcon name="overflowHorizontal24" focusable={false} /> : text,
+                children: isDot ? <EbayIconOverflowHorizontal24 focusable={false} /> : text,
                 pageIndex: type === "page" ? pageIndex++ : undefined,
                 key,
                 hide,

@@ -12,11 +12,11 @@ import React, {
     ChangeEvent,
 } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
 import { EbayChangeEventHandler, Key } from "../common/event-utils/types";
 import { filterByType } from "../common/component-utils";
 import EbayListboxButtonOption, { EbayListboxButtonOptionProps } from "./listbox-button-option";
 import { useFloatingDropdown } from "../common/dropdown";
+import { EbayIconChevronDown16 } from "../ebay-icon/icons/ebay-icon-chevron-down-16";
 
 export type ChangeEventProps = {
     index: number;
@@ -294,7 +294,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
             >
                 <span className="btn__cell">
                     {buttonLabel}
-                    <EbayIcon name="chevronDown16" />
+                    <EbayIconChevronDown16 />
                 </span>
             </button>
             {(expanded || optionsOpened) && (

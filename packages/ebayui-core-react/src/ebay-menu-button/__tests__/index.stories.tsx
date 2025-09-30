@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { action } from "storybook/actions";
-import { EbayIcon } from "../../ebay-icon";
+import { EbayIconSettings16 } from "../../ebay-icon/icons/ebay-icon-settings-16";
 import {
     EbayMenuButton,
     EbayMenuButtonItem as Item,
@@ -52,8 +52,7 @@ export const Disabled = () => (
 export const WithIcon = {
     render: () => (
         <>
-            <EbayMenuButton text="Settings">
-                <EbayIcon name="settings16" />
+            <EbayMenuButton text="Settings" icon={<EbayIconSettings16 />}>
                 <Item>item 1 that has very long text</Item>
                 <Item>item 2</Item>
                 <Item>item 3</Item>

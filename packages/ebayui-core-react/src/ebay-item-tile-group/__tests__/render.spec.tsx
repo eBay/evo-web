@@ -10,6 +10,7 @@ import {
     EbayItemTileAction,
 } from "../../ebay-item-tile";
 import { EbayItemTileGroup } from "../";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayItemTileGroup>", () => {
     it("renders component in gallery layout", () => {
@@ -25,7 +26,7 @@ describe("<EbayItemTileGroup>", () => {
                             src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                         }}
                     >
-                        <EbayItemTileAction aria-label="action-label" icon="heart16" />
+                        <EbayItemTileAction aria-label="action-label" icon={<EbayIconHeart16 />} />
                         <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
                         <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
@@ -53,7 +54,7 @@ describe("<EbayItemTileGroup>", () => {
                             src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                         }}
                     >
-                        <EbayItemTileAction aria-label="action-label" icon="heart16" />
+                        <EbayItemTileAction aria-label="action-label" icon={<EbayIconHeart16 />} />
                         <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
                         <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>

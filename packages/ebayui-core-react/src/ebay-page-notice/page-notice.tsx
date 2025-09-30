@@ -2,9 +2,13 @@ import React, { ComponentProps, FC, KeyboardEventHandler, MouseEventHandler, use
 import classNames from "classnames";
 import NoticeContent from "../common/notice-utils/notice-content";
 import { EbayNoticeContent } from "../ebay-notice-base/components/ebay-notice-content";
-import { EbayIcon, Icon } from "../ebay-icon";
 import { EbayPageNoticeFooter } from "./index";
 import { findComponent } from "../utils";
+import { EbayIconClose16 } from "../ebay-icon/icons/ebay-icon-close-16";
+import { EbayIconComponent } from "../ebay-icon/icons/types";
+import { EbayIconAttentionFilled16 } from "../ebay-icon/icons/ebay-icon-attention-filled-16";
+import { EbayIconConfirmationFilled16 } from "../ebay-icon/icons/ebay-icon-confirmation-filled-16";
+import { EbayIconInformationFilled16 } from "../ebay-icon/icons/ebay-icon-information-filled-16";
 
 export type PageNoticeStatus = "general" | "attention" | "confirmation" | "information";
 export type Props = ComponentProps<"section"> & {
@@ -12,6 +16,12 @@ export type Props = ComponentProps<"section"> & {
     "aria-label"?: string;
     a11yDismissText?: string;
     onDismiss?: MouseEventHandler & KeyboardEventHandler;
+};
+
+const icons: Record<Exclude<PageNoticeStatus, "general">, EbayIconComponent> = {
+    attention: EbayIconAttentionFilled16,
+    confirmation: EbayIconConfirmationFilled16,
+    information: EbayIconInformationFilled16,
 };
 
 const EbayPageNotice: FC<Props> = ({
@@ -36,6 +46,8 @@ const EbayPageNotice: FC<Props> = ({
         onDismiss(event);
     };
 
+    const Icon = status !== "general" ? icons[status] : null;
+
     return dismissed ? null : (
         <section
             {...rest}
@@ -46,7 +58,7 @@ const EbayPageNotice: FC<Props> = ({
         >
             {status !== `general` ? (
                 <div className="page-notice__header" id={id || `${status}-status`}>
-                    <EbayIcon name={`${status}Filled16` as Icon} a11yText={ariaLabel} a11yVariant="label" />
+                    <Icon a11yText={ariaLabel} a11yVariant="label" />
                 </div>
             ) : null}
             <NoticeContent {...content.props} type="page" />
@@ -58,7 +70,7 @@ const EbayPageNotice: FC<Props> = ({
                         className="fake-link page-notice__dismiss"
                         onClick={handleDismissed}
                     >
-                        <EbayIcon name="close16" />
+                        <EbayIconClose16 />
                     </button>
                 </EbayPageNoticeFooter>
             )}

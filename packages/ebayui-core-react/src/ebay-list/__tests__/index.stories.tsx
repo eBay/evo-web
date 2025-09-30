@@ -3,8 +3,12 @@ import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayList, EbayListItem } from "../index";
 import EbayListItemLeading from "../list-item-leading";
 import EbayListItemTrailing from "../list-item-trailing";
-import { EbayIcon } from "../../ebay-icon";
 import { EbaySwitch } from "../../ebay-switch";
+import { EbayIconFolder16 } from "../../ebay-icon/icons/ebay-icon-folder-16";
+import { EbayIconLamp16 } from "../../ebay-icon/icons/ebay-icon-lamp-16";
+import { EbayIconFile16 } from "../../ebay-icon/icons/ebay-icon-file-16";
+import { EbayIconChevronRight16 } from "../../ebay-icon/icons/ebay-icon-chevron-right-16";
+import { EbayIconLightbulb16 } from "../../ebay-icon/icons/ebay-icon-lightbulb-16";
 
 const meta: Meta<typeof EbayList> = {
     component: EbayList,
@@ -29,19 +33,19 @@ export const Static: StoryFn<typeof EbayList> = (args) => (
     <EbayList {...args}>
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="folder16" />
+                <EbayIconFolder16 />
             </EbayListItemLeading>
             Item 1
         </EbayListItem>
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="lamp16" />
+                <EbayIconLamp16 />
             </EbayListItemLeading>
             Item 2
         </EbayListItem>
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="file16" />
+                <EbayIconFile16 />
             </EbayListItemLeading>
             Item 3
         </EbayListItem>
@@ -54,7 +58,7 @@ export const Interactive: StoryFn<typeof EbayList> = (args) => (
         <EbayListItem as="a" href="https://www.ebay.com">
             Item 2
             <EbayListItemTrailing>
-                <EbayIcon name="chevronRight16" />
+                <EbayIconChevronRight16 />
             </EbayListItemTrailing>
         </EbayListItem>
         <EbayListItem id="switch-item">
@@ -70,33 +74,33 @@ export const WithSeparator: StoryFn<typeof EbayList> = (args) => (
     <EbayList {...args}>
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="folder16" />
+                <EbayIconFolder16 />
             </EbayListItemLeading>
             Item 1
         </EbayListItem>
         <EbayListItem separator />
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="lamp16" />
+                <EbayIconLamp16 />
             </EbayListItemLeading>
             Item 2
         </EbayListItem>
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="file16" />
+                <EbayIconFile16 />
             </EbayListItemLeading>
             Item 3
         </EbayListItem>
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="file16" />
+                <EbayIconFile16 />
             </EbayListItemLeading>
             Item 4
         </EbayListItem>
         <EbayListItem separator />
         <EbayListItem>
             <EbayListItemLeading>
-                <EbayIcon name="lightbulb16" />
+                <EbayIconLightbulb16 />
             </EbayListItemLeading>
             Item 5
         </EbayListItem>

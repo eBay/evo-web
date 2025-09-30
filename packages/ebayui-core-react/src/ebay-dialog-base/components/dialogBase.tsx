@@ -13,11 +13,11 @@ import React, {
 import classNames from "classnames";
 import * as screenreaderTrap from "makeup-screenreader-trap";
 import * as keyboardTrap from "makeup-keyboard-trap";
-import { EbayIcon } from "../../ebay-icon";
 import { randomId } from "../../common/random-id";
 import { useDialogAnimation, TransitionElement } from "./animation";
 import { DialogCloseEvent, DialogCloseEventHandler } from "../types";
 import { EbayDialogHeaderProps } from "./dialog-header";
+import { EbayIconClose16 } from "../../ebay-icon/icons/ebay-icon-close-16";
 
 export type WindowType = "compact";
 type ClassPrefix =
@@ -170,7 +170,7 @@ export const DialogBase: FC<DialogBaseProps<HTMLElement>> = ({
             aria-label={a11yCloseText}
             onClick={onCloseBtnClick}
         >
-            {closeButton || <EbayIcon name="close16" />}
+            {closeButton || <EbayIconClose16 />}
         </button>
     );
 

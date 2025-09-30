@@ -11,7 +11,7 @@ exports[`<EbayEducationNotice> should render notice prominent snapshot 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="icon--prominent icon icon--24"
+        class="icon icon--24 icon--prominent"
         focusable="false"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -71,6 +71,7 @@ exports[`<EbayEducationNotice> should render notice snapshot 1`] = `
         <use
           xlink:href="#icon-the-ebay-vault-24"
         />
+        <defs />
       </svg>
       <h2
         class="education-notice__title"

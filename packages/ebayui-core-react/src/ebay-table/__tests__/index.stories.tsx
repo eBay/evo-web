@@ -6,6 +6,7 @@ import { EbaySelect, EbaySelectOption } from "../../ebay-select";
 import { EbayCtaButton } from "../../ebay-cta-button";
 import { EbayIconButton } from "../../ebay-icon-button";
 import data from "./data.json";
+import { EbayIconOverflowVertical16 } from "../../ebay-icon/icons/ebay-icon-overflow-vertical-16";
 
 const meta: Meta<typeof EbayTable> = {
     component: EbayTable,
@@ -135,10 +136,10 @@ export const TableWithAction: StoryFn<typeof EbayTable> = (args) => (
                 </EbayTableCell>
                 <EbayTableCell>
                     <EbayCtaButton href="https://ebay.com">Edit Listing</EbayCtaButton>
-                    <EbayIconButton icon="overflowVertical16" />
+                    <EbayIconButton icon={<EbayIconOverflowVertical16 />} />
                 </EbayTableCell>
                 <EbayTableCell>
-                    <EbayIconButton icon="overflowVertical16" />
+                    <EbayIconButton icon={<EbayIconOverflowVertical16 />} />
                 </EbayTableCell>
                 <EbayTableCell>
                     <EbaySignal status={row.statusType as SignalStatus}>{row.status}</EbaySignal>

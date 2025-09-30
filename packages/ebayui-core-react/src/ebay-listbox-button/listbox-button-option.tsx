@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/interactive-supports-focus */
 import React, { ComponentProps, FC, MouseEvent, ReactNode, RefCallback, RefObject } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconTick16 } from "../ebay-icon/icons/ebay-icon-tick-16";
 
 export type EbayListboxButtonOptionProps = ComponentProps<"input"> & {
     selected?: boolean;
@@ -41,7 +41,7 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
                 {icon}
                 {children}
             </span>
-            <EbayIcon name="tick16" />
+            <EbayIconTick16 />
         </div>
     );
 };

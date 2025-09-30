@@ -40,7 +40,7 @@ import "@ebay/skin/button.css";
 
 ```jsx
 <EbayButton aria-label="Menu button">
-    <EbayIcon name="menu20" />
+    <EbayIconMenu20 />
 </EbayButton>
 ```
 

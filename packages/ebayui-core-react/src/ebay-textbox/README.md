@@ -88,6 +88,6 @@ It supports all the events supported by an input element (e.g. `onInput`, `onPas
 import { EbayTextbox, EbayTextboxPrefixIcon } from "@ebay/ui-core-react/ebay-textbox";
 
 <EbayTextbox placeholder="email">
-    <EbayTextboxPrefixIcon name="messages" />
+    <EbayTextboxPrefixIcon icon={<EbayTextMessaging16Icon />} />
 </EbayTextbox>;
 ```

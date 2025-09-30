@@ -31,13 +31,13 @@ import "@ebay/skin/icon-button.css";
 ### Icon button
 
 ```jsx harmony
-<EbayIconButton icon="settings" aria-label="settings" />
+<EbayIconButton icon={<EbayIconSettings16 />} aria-label="settings" />
 ```
 
 with badge:
 
 ```jsx harmony
-<EbayIconButton icon="menu" badgeNumber={1} badgeAriaLabel="new feature available" />
+<EbayIconButton icon={<EbayMenu16Icon />} badgeNumber={1} badgeAriaLabel="new feature available" />
 ```
 
 ## Attributes

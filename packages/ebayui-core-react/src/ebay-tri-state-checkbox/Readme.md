@@ -33,27 +33,6 @@ import "@ebay/skin/checkbox";
 import "@ebay/skin/checkbox.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg
-    icons={[
-        "checkboxChecked18",
-        "checkboxUnchecked18",
-        "checkboxMixed18",
-
-        // If using large checkboxes
-        "checkboxChecked24",
-        "checkboxUnchecked24",
-        "checkboxMixed24",
-    ]}
-/>
-```
-
 ```jsx
 import { EbayLabel } from '@ebay/ui-core-react/ebay-field';
 

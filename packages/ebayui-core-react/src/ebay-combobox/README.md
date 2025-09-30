@@ -33,7 +33,7 @@ import "@ebay/skin/combobox.css";
 ```jsx harmony
 <EbayCombobox>
     <EbayComboboxButton>
-        <EbayIcon name="clear16" />
+        <EbayIconClear16 />
     </EbayComboboxButton>
     <EbayComboboxOption>Option 1</EbayComboboxOption>
     <EbayComboboxOption>Option 2</EbayComboboxOption>

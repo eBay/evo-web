@@ -2,9 +2,12 @@ import React, { ComponentProps, FC, ReactNode } from "react";
 import classNames from "classnames";
 import { EbayCheckbox } from "../ebay-checkbox";
 import { EbayRadio } from "../ebay-radio";
-import { EbayIcon } from "../ebay-icon";
 import { useRandomId } from "../utils";
 import { FilterMenuItemClick, Type, Variant } from "./types";
+import { EbayIconRadioChecked18 } from "../ebay-icon/icons/ebay-icon-radio-checked-18";
+import { EbayIconRadioUnchecked18 } from "../ebay-icon/icons/ebay-icon-radio-unchecked-18";
+import { EbayIconCheckboxChecked18 } from "../ebay-icon/icons/ebay-icon-checkbox-checked-18";
+import { EbayIconCheckboxUnchecked18 } from "../ebay-icon/icons/ebay-icon-checkbox-unchecked-18";
 
 export type EbayFilterMenuItemProps = Omit<ComponentProps<"label"> & ComponentProps<"div">, "children" | "onClick"> & {
     checked?: boolean;
@@ -45,8 +48,8 @@ const EbayFilterMenuItem: FC<EbayFilterMenuItemProps> = ({
     const Container = isForm ? "label" : "div";
     const FieldComponent = isRadio ? EbayRadio : EbayCheckbox;
     const fieldClassName = isRadio ? `${__classPrefix}__radio` : `${__classPrefix}__checkbox`;
-    const fieldIconChecked = isRadio ? `radioChecked18` : `checkboxChecked18`;
-    const fieldIconUnchecked = isRadio ? `radioUnchecked18` : `checkboxUnchecked18`;
+    const FieldIconChecked = isRadio ? EbayIconRadioChecked18 : EbayIconCheckboxChecked18;
+    const FieldIconUnchecked = isRadio ? EbayIconRadioUnchecked18 : EbayIconCheckboxUnchecked18;
 
     const handleItemClick = (event) => {
         onClick?.(event, {
@@ -68,9 +71,7 @@ const EbayFilterMenuItem: FC<EbayFilterMenuItemProps> = ({
             {isForm ? (
                 <FieldComponent id={inputId} checked={checked} />
             ) : (
-                <span className={fieldClassName}>
-                    <EbayIcon name={checked ? fieldIconChecked : fieldIconUnchecked} />
-                </span>
+                <span className={fieldClassName}>{checked ? <FieldIconChecked /> : <FieldIconUnchecked />}</span>
             )}
             <span className={`${__classPrefix}__text`}>{children}</span>
         </Container>

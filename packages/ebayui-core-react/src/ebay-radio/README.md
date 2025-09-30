@@ -40,10 +40,6 @@ import { EbayLabel } from "@ebay/ui-core-react/ebay-field";
 </EbayRadio>;
 ```
 
-## Icons
-
-This component uses SVG icons, so you need to add the `<EbaySvg/>` component at the end of your html.
-
 ## Attributes
 
 | Name             | Type    | Description                                                                                             |

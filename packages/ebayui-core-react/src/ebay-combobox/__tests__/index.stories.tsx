@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayCombobox, EbayComboboxButton } from "../index";
-import { EbayIcon } from "../../ebay-icon";
+import { EbayIconClear16 } from "../../ebay-icon/icons/ebay-icon-clear-16";
 import EbayComboboxOption from "../combobox-option";
 import countries from "./countries.json";
 import { ComboboxSelectHandler } from "../types";
@@ -199,7 +199,7 @@ export const SearchFiltering: StoryFn<typeof EbayCombobox> = (args) => {
             onSelect={handleSelect}
         >
             <EbayComboboxButton onClick={() => setValue("")}>
-                <EbayIcon name="clear16" />
+                <EbayIconClear16 />
             </EbayComboboxButton>
             {options.map((option) => (
                 <EbayComboboxOption key={option.name} text={option.name} value={option.code} />

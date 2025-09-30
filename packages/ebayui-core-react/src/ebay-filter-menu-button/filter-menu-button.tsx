@@ -1,7 +1,6 @@
 import React, { FC, RefCallback, useRef, useState } from "react";
 import classNames from "classnames";
 import { useExpander, useFloatingDropdown } from "../common/dropdown";
-import { EbayIcon } from "../ebay-icon";
 import {
     EbayFilterMenu,
     EbayFilterMenuItem,
@@ -11,6 +10,7 @@ import {
     FilterMenuFormSubmit,
 } from "../ebay-filter-menu";
 import { filterByType } from "../utils";
+import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down-12";
 
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
@@ -85,7 +85,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
             >
                 <span className="filter-menu-button__button-cell">
                     <span className="filter-menu-button__button-text">{text}</span>
-                    <EbayIcon name="chevronDown12" />
+                    <EbayIconChevronDown12 />
                 </span>
             </button>
             <EbayFilterMenu

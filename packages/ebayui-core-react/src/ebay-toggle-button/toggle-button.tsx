@@ -36,9 +36,7 @@ const ToggleButton: FC<ToggleButtonProps> = ({
     const getMediaContent = () => {
         if (icon) {
             return (
-                <div className="toggle-button__icon">
-                    <EbayIcon name={icon} />
-                </div>
+                <div className="toggle-button__icon">{typeof icon === "string" ? <EbayIcon name={icon} /> : icon}</div>
             );
         } else if (img) {
             return (

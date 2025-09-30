@@ -1,4 +1,12 @@
-import React, { ComponentProps, FC, KeyboardEventHandler, MouseEventHandler, useEffect, useState } from "react";
+import React, {
+    ComponentProps,
+    FC,
+    KeyboardEventHandler,
+    MouseEventHandler,
+    ReactElement,
+    useEffect,
+    useState,
+} from "react";
 import cx from "classnames";
 import { EbayNoticeContent } from "../ebay-notice-base/components/ebay-notice-content";
 import NoticeContent from "../common/notice-utils/notice-content";
@@ -6,6 +14,12 @@ import { EbayIcon, Icon } from "../ebay-icon";
 import { EbaySectionNoticeFooter } from "./index";
 import { randomId } from "../common/random-id";
 import { findComponent } from "../utils";
+import { EbayIconLightbulb24 } from "../ebay-icon/icons/ebay-icon-lightbulb-24";
+import { EbayIconComponent, EbayIconComponentProps } from "../ebay-icon/icons/types";
+import { EbayIconAttentionFilled16 } from "../ebay-icon/icons/ebay-icon-attention-filled-16";
+import { EbayIconConfirmationFilled16 } from "../ebay-icon/icons/ebay-icon-confirmation-filled-16";
+import { EbayIconInformationFilled16 } from "../ebay-icon/icons/ebay-icon-information-filled-16";
+import { EbayIconClose16 } from "../ebay-icon/icons/ebay-icon-close-16";
 
 export type SectionNoticeStatus = "general" | "none" | "attention" | "confirmation" | "information" | "education";
 export type Props = ComponentProps<"section"> & {
@@ -15,9 +29,15 @@ export type Props = ComponentProps<"section"> & {
     className?: string;
     a11yDismissText?: string;
     onDismiss?: MouseEventHandler & KeyboardEventHandler;
-    educationIcon?: Icon;
+    educationIcon?: Icon | ReactElement;
     iconClass?: string;
     prominent?: boolean;
+};
+
+const statusIcon: Record<Exclude<SectionNoticeStatus, "general" | "none" | "education">, EbayIconComponent> = {
+    attention: EbayIconAttentionFilled16,
+    confirmation: EbayIconConfirmationFilled16,
+    information: EbayIconInformationFilled16,
 };
 
 const EbaySectionNotice: FC<Props> = ({
@@ -44,13 +64,20 @@ const EbaySectionNotice: FC<Props> = ({
     const content = findComponent(children, EbayNoticeContent);
     const hasStatus = status !== "general" && status !== "none";
     const isEducational = status === "education";
-    let iconName = null;
+    let icon = null;
+
+    const iconProps: EbayIconComponentProps = {
+        className: iconClass,
+        a11yText: ariaLabel,
+        a11yVariant: "label",
+    };
 
     if (hasStatus) {
         if (isEducational) {
-            iconName = educationIcon || "lightbulb24";
+            icon = educationIcon || <EbayIconLightbulb24 {...iconProps} />;
         } else {
-            iconName = `${status}Filled16` as Icon;
+            const Icon = statusIcon[status];
+            icon = <Icon {...iconProps} />;
         }
     }
 
@@ -75,9 +102,9 @@ const EbaySectionNotice: FC<Props> = ({
             aria-labelledby={hasStatus ? `section-notice-${status}-${rId}` : null}
             aria-roledescription={ariaRoleDescription}
         >
-            {iconName && (
+            {icon && (
                 <div className="section-notice__header" id={`section-notice-${status}-${rId}`}>
-                    <EbayIcon className={iconClass} name={iconName} a11yText={ariaLabel} a11yVariant="label" />
+                    {typeof icon === "string" ? <EbayIcon name={icon as Icon} {...iconProps} /> : icon}
                 </div>
             )}
             <NoticeContent {...content.props} type="section" />
@@ -89,7 +116,7 @@ const EbaySectionNotice: FC<Props> = ({
                         className="fake-link page-notice__dismiss"
                         onClick={handleDismissed}
                     >
-                        <EbayIcon name="close16" />
+                        <EbayIconClose16 />
                     </button>
                 </EbaySectionNoticeFooter>
             )}

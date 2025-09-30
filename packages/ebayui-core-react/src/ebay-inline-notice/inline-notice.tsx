@@ -3,8 +3,11 @@ import classNames from "classnames";
 import { EbayNoticeContent } from "../ebay-notice-base/components/ebay-notice-content";
 import NoticeContent from "../common/notice-utils/notice-content";
 import { findComponent } from "../common/component-utils";
-import { EbayIcon, Icon } from "../ebay-icon";
 import { NoticeStatus } from "./types";
+import { EbayIconAttentionFilled16 } from "../ebay-icon/icons/ebay-icon-attention-filled-16";
+import { EbayIconConfirmationFilled16 } from "../ebay-icon/icons/ebay-icon-confirmation-filled-16";
+import { EbayIconInformationFilled16 } from "../ebay-icon/icons/ebay-icon-information-filled-16";
+import { EbayIconComponent } from "../ebay-icon/icons/types";
 
 type Props = React.ComponentProps<"div"> & {
     status?: NoticeStatus;
@@ -13,6 +16,12 @@ type Props = React.ComponentProps<"div"> & {
     hidden?: boolean;
     className?: string;
     children?: ReactNode;
+};
+
+const icons: Record<Exclude<NoticeStatus, "general">, EbayIconComponent> = {
+    attention: EbayIconAttentionFilled16,
+    confirmation: EbayIconConfirmationFilled16,
+    information: EbayIconInformationFilled16,
 };
 
 const EbayInlineNotice: FC<Props> = ({
@@ -42,11 +51,13 @@ const EbayInlineNotice: FC<Props> = ({
 
     const isGeneral = status === `general`;
 
+    const Icon = !isGeneral ? icons[status] : null;
+
     return (
         <div {...rest} className={classNames(className, "inline-notice", { [`inline-notice--${status}`]: !isGeneral })}>
             {!isGeneral ? (
                 <span className="inline-notice__header">
-                    <EbayIcon name={`${status}Filled16` as Icon} a11yText={ariaLabel} a11yVariant="label" />
+                    <Icon a11yText={ariaLabel} a11yVariant="label" />
                 </span>
             ) : null}
             <NoticeContent {...content.props} type="inline" />

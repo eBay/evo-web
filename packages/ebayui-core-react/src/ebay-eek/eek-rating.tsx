@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 import eekUtil from "./eek-util";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconEekRangeArrow } from "../ebay-icon/icons/ebay-icon-eek-range-arrow";
+import { EbayIconEekArrow } from "../ebay-icon/icons/ebay-icon-eek-arrow";
 
 export type EbayEekProps = {
     rating: string;
@@ -20,14 +21,14 @@ const EbayEek: FC<EbayEekProps> = ({ min = "", max = "", rating, a11yText, class
             <div className="eek__container" aria-hidden>
                 <span className="eek__rating-range">
                     <span aria-hidden="true">{max}</span>
-                    <EbayIcon name="eekRangeArrow" />
+                    <EbayIconEekRangeArrow />
                     <span aria-hidden="true">{min}</span>
                 </span>
                 <span className="eek__rating" aria-hidden="true">
                     {rating}
                 </span>
             </div>
-            <EbayIcon name="eekArrow" />
+            <EbayIconEekArrow />
         </div>
     );
 };

@@ -10,6 +10,10 @@ import {
     EbayTextboxPrefixIcon,
     EbayTextboxPrefixText,
 } from "../index";
+import { EbayIconClear16 } from "../../ebay-icon/icons/ebay-icon-clear-16";
+import { EbayIconSearch16 } from "../../ebay-icon/icons/ebay-icon-search-16";
+import { EbayIconMail16 } from "../../ebay-icon/icons/ebay-icon-mail-16";
+import { EbayIconProfile20 } from "../../ebay-icon/icons/ebay-icon-profile-20";
 
 export default {
     title: "form input/ebay-textbox",
@@ -58,7 +62,7 @@ export const TestingCallbacks = {
                             required
                         >
                             <EbayTextboxPostfixIcon
-                                name="clear16"
+                                icon={<EbayIconClear16 />}
                                 buttonAriaLabel="Clear"
                                 style={{ opacity: value.length ? "1" : "0" }}
                             />
@@ -182,18 +186,18 @@ export const WithIcon = {
         <div>
             <p>
                 <EbayTextbox placeholder="email">
-                    <EbayTextboxPrefixIcon name="mail16" />
+                    <EbayTextboxPrefixIcon icon={<EbayIconMail16 />} />
                 </EbayTextbox>
             </p>
             <p>
                 <EbayTextbox placeholder="username">
-                    <EbayTextboxPostfixIcon name="profile20" />
+                    <EbayTextboxPostfixIcon icon={<EbayIconProfile20 />} />
                 </EbayTextbox>
             </p>
             <p>
                 <EbayTextbox placeholder="search" onButtonClick={action("Clear!")}>
-                    <EbayTextboxPrefixIcon name="search16" />
-                    <EbayTextboxPostfixIcon name="clear16" buttonAriaLabel="Clear" />
+                    <EbayTextboxPrefixIcon icon={<EbayIconSearch16 />} />
+                    <EbayTextboxPostfixIcon icon={<EbayIconClear16 />} buttonAriaLabel="Clear" />
                 </EbayTextbox>
             </p>
         </div>

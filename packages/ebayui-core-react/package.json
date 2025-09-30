@@ -15,6 +15,10 @@
     "author": "tmanyanov@ebay.com",
     "exports": {
         "./package.json": "./package.json",
+        "./icons/*": {
+            "types": "./ebay-icon/icons/*.d.ts",
+            "default": "./icons/*/index.js"
+        },
         "./*": {
             "types": "./*/index.d.ts",
             "default": "./*/index.js"
@@ -35,8 +39,8 @@
         "smoke-test:react-16": "cd ./smoke-tests/react-16 && npm install && npm run test",
         "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm install && npm run test",
         "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm install && npm run test",
-        "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
         "start": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
+        "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
         "test": "jest",
         "type:check": "tsc --noEmit",
         "update-icons": "node ./scripts/update-icons",

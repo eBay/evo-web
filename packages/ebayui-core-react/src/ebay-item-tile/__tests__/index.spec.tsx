@@ -10,6 +10,7 @@ import {
     EbayItemTileDescription,
     EbayItemTileAction,
 } from "../";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayItemTile>", () => {
     it("should call onAction", async () => {
@@ -23,7 +24,7 @@ describe("<EbayItemTile>", () => {
                 }}
                 onAction={onActionClick}
             >
-                <EbayItemTileAction aria-label="action-label" icon="heart16" />
+                <EbayItemTileAction aria-label="action-label" icon={<EbayIconHeart16 />} />
                 <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                 <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
                 <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>

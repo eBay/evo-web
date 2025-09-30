@@ -1,4 +1,4 @@
-import React, { cloneElement, createElement, CSSProperties, FC, useRef, ReactNode } from "react";
+import React, { cloneElement, createElement, CSSProperties, FC, useRef, ReactNode, ReactElement } from "react";
 import classNames from "classnames";
 import { findComponent } from "../common/component-utils";
 import {
@@ -15,11 +15,12 @@ import { Icon } from "../ebay-icon";
 import { EbayLightboxDialog } from "../ebay-lightbox-dialog";
 import { Variant } from "./types";
 import { EbayInfotipHeading, EbayInfotipContent } from "./index";
-import { TooltipHostProps } from "src/common/tooltip-utils/tooltip-host";
+import { TooltipHostProps } from "../common/tooltip-utils/tooltip-host";
+import { EbayIconInformation16 } from "../ebay-icon/icons/ebay-icon-information-16";
 
 export type InfotipProps = {
     variant?: Variant;
-    icon?: Icon;
+    icon?: Icon | ReactElement;
     disabled?: boolean;
     initialExpanded?: boolean;
     pointer?: PointerDirection;
@@ -41,7 +42,7 @@ const EbayInfotip: FC<InfotipProps> = ({
     onCollapse,
     children,
     initialExpanded,
-    icon = "information16",
+    icon = <EbayIconInformation16 />,
     a11yCloseText,
     "aria-label": ariaLabel,
     className,

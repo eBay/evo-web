@@ -6,6 +6,8 @@ import { EbayMenuButton, EbayMenuButtonItem } from "../ebay-menu-button";
 import { EbayFilePreviewCardActionProps } from "./ebay-file-preview-card-action";
 
 import { FilePreviewCardMenuAction, FilePreviewCardMenuActionHandler } from "./types";
+import { EbayIconClose16 } from "../ebay-icon/icons/ebay-icon-close-16";
+import { EbayIconDelete16 } from "../ebay-icon/icons/ebay-icon-delete-16";
 
 export type FilePreviewActionProps = {
     menuActions?: FilePreviewCardMenuAction[];
@@ -52,7 +54,7 @@ const FilePreviewAction: FC<FilePreviewActionProps> = ({
                 aria-label={a11yCancelUploadText}
                 onClick={onCancel}
                 className="file-preview-card__action"
-                icon="close16"
+                icon={<EbayIconClose16 />}
             />
         );
     }
@@ -89,7 +91,7 @@ const FilePreviewAction: FC<FilePreviewActionProps> = ({
             <EbayIconButton
                 aria-label={deleteText}
                 className="file-preview-card__action"
-                icon="delete16"
+                icon={<EbayIconDelete16 />}
                 onClick={onDelete}
             />
         );

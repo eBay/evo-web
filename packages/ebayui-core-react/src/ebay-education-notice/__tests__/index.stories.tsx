@@ -1,6 +1,7 @@
 import React from "react";
 import { StoryObj } from "@storybook/react-vite";
 import { EbayEducationNotice, EbayNoticeContent, EbayEducationNoticeTitle, EbayEducationNoticeFooter } from "../index";
+import { EbayIconCreditCard24 } from "../../ebay-icon/icons/ebay-icon-credit-card-24";
 
 export default {
     title: "notices & tips/ebay-education-notice",
@@ -110,10 +111,10 @@ export default {
             description: "The title content to be displayed.",
             table: {
                 required: true,
-                category: "@attribute tags",
+                category: "EbayIconComponent",
                 type: { summary: "EbayIcon" },
                 defaultValue: {
-                    summary: "lightbulb24",
+                    summary: "<EbayIconLightbulb24 />",
                 },
             },
         },
@@ -195,7 +196,7 @@ export const DefaultEducationNoticeFooter = {
     render: () => {
         return (
             <>
-                <EbayEducationNotice educationIcon="creditCard24" a11yDismissText="dismiss text">
+                <EbayEducationNotice educationIcon={<EbayIconCreditCard24 />} a11yDismissText="dismiss text">
                     <EbayEducationNoticeTitle>Education notice title</EbayEducationNoticeTitle>
                     <EbayNoticeContent>
                         <p>
