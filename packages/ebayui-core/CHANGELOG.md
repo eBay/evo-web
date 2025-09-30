@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.7
+
+### Patch Changes
+
+- [`1d5ffb3`](https://github.com/eBay/evo-web/commit/1d5ffb326e2c6baf7aa04bd0aa3275a9c55ba8d2) Thanks [@agliga](https://github.com/agliga)! - fix(icon): removed fill from clock-12
+
 ## 15.12.6
 
 ### Patch Changes
