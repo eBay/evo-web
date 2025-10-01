@@ -6,6 +6,7 @@ import {
     type ReferenceElement,
 } from "@floating-ui/dom";
 static interface Ret {
+    floatingStyles: undefined | Marko.HTMLAttributes["style"];
     onClick: () => void;
     onFocus: () => void;
     onFocusOut: () => void;
@@ -23,16 +24,20 @@ export interface Input {
     overlay: () => HTMLElement;
 }
 
+<let/floatingStyles=undefined as Ret["floatingStyles"]>
 <const/update=() => {
     computePosition(input.host(), input.overlay(), {
         placement: input.reverse ? "bottom-end" : "bottom-start",
         strategy: input.strategy ?? "fixed",
         middleware: [offset(input.offset ?? 4), shift()],
     }).then(({ x, y }) => {
-        Object.assign(input.overlay().style, {
+        if ($signal.aborted) {
+            return;
+        }
+        floatingStyles = {
             left: `${x}px`,
             top: `${y}px`,
-        });
+        };
     });
 }>
 
@@ -85,9 +90,10 @@ export interface Input {
 
 <return=(
     {
+        floatingStyles,
         onClick() {
             open = !open;
-        },
+       },
         onFocus() {
             open = true;
         },

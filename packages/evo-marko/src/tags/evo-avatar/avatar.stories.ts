@@ -2,6 +2,8 @@ import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import avatar from "./index.marko";
 import Readme from "./README.md";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultTemplateCode from "./examples/default.marko?raw";
 import imageTemplate from "./examples/image.marko";
 import imageTemplateCode from "./examples/image.marko?raw";
 import autoImageTemplate from "./examples/with-auto-placement.marko";
@@ -67,20 +69,15 @@ export default {
   },
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  "aria-label": "Signed in - as Elizabeth",
-  username: "Elizabeth",
-  color: "teal",
-};
-
-Default.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-avatar", Default.args),
-    },
+export const Default = buildExtensionTemplate(
+  DefaultTemplate,
+  DefaultTemplateCode,
+  {
+    "aria-label": "Signed in - as Elizabeth",
+    username: "Elizabeth",
+    color: "teal",
   },
-};
+);
 
 export const WithImage = buildExtensionTemplate(
   imageTemplate,

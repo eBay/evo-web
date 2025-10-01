@@ -3,6 +3,8 @@ export interface Input<Index extends number | string | undefined>
     extends Marko.HTML.Div {
     selected?: ListboxInput<Index>["selected"];
     selectedChange?: ListboxInput<Index>["selectedChange"];
+    open?: boolean;
+    openChange?: boolean;
     option?: ListboxInput<Index>["option"];
     name?: ListboxInput<Index>["name"];
     listSelection?: ListboxInput<Index>["listSelection"];
@@ -31,6 +33,8 @@ export interface Input<Index extends number | string | undefined>
     class: inputClass,
     selected :inputSelected,
     selectedChange,
+    open :inputOpen,
+    openChange,
     borderless,
     disabled,
     fluid,
@@ -54,7 +58,8 @@ export interface Input<Index extends number | string | undefined>
     "aria-describedby": describedby,
     ...htmlInput
 }=input>
-<let/selected = input.selected>
+<let/selected:= input.selected>
+<let/open:= input.open as Input["open"]>
 <const/optionsList = [...options]>
 <const/selectedIndex = typeof selected === "number"? selected : optionsList.findIndex((o) => o.value === selected)>
 <const/selectedOption = optionsList[selectedIndex]>
@@ -68,7 +73,6 @@ export interface Input<Index extends number | string | undefined>
 <${truncate && !fluid ? "div" : "span"}/root
 
     ...htmlInput
-    id=host
     class=[
         "listbox-button",
         inputClass,
@@ -77,6 +81,7 @@ export interface Input<Index extends number | string | undefined>
         hasError && "listbox-button--error",
     ]>
     <evo-expander/expander
+        open:=open
         strategy=strategy
         collapseOnSelect=collapseOnSelect
         // TODO change this to root once marko works
@@ -95,6 +100,7 @@ export interface Input<Index extends number | string | undefined>
             truncate && "btn--truncated",
             floatingLabel && "btn--floating-label",
         ]
+        id=host
         value=selectedOption.value as string
         type="button"
         disabled=disabled
@@ -145,7 +151,11 @@ export interface Input<Index extends number | string | undefined>
         </span>
     </button>
     <evo-listbox
+        style=expander.floatingStyles
         id=listbox
+        onFocusOut() {
+            expander.onFocusOut();
+        }
         class=[
             "listbox-button__listbox",
             strategy === "fixed" && "listbox-button__listbox--fixed",
