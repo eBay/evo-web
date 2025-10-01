@@ -3,7 +3,11 @@ export interface Input extends Omit<Marko.HTML.UL, `on${string}`> {
     size?: "regular" | "large";
     autoCollapse?: boolean;
     a11yText?: string;
-    details?: Marko.AttrTag<Omit<DetailsInput, "size" | "alignment">>;
+    details?: Marko.AttrTag<
+        Omit<DetailsInput, "size" | "alignment" | "open" | "openChange">
+    >;
+    open?: number | number[];
+    openChange?: (open: number | number[]) => void;
 }
 
 <const/{
@@ -12,30 +16,50 @@ export interface Input extends Omit<Marko.HTML.UL, `on${string}`> {
     details,
     autoCollapse = false,
     a11yText,
+    open: inputOpen,
+    openChange,
+    ...htmlInput
 }=input>
-<const/items=[...details || []]>
+<const/items=[...(details || [])]>
 
-<let/openState=items.map((item: any) => item.open || false)>
-
-<let/handleAutoCollapse=(newIndex: number) => {
-    if (autoCollapse) {
-        openState = openState.map((_: boolean, index: number) => 
-            index === newIndex ? !openState[newIndex] : false
-        );
-    }
-}>
+<let/open:=input.open>
 
 <ul
     class=["accordion", size === "large" && "accordion--large", inputClass]
-    aria-roledescription=(a11yText ?? "accordion")>
+    aria-roledescription=(a11yText ?? "accordion")
+    ...htmlInput>
     <for|item, index| of=items>
         <li>
             <evo-details
                 ...item
-                open=(autoCollapse ? openState[index] : item.open)
-                openChange=(
-                    autoCollapse ? () => handleAutoCollapse(index) : undefined
-                )>
+                open=(
+                    Array.isArray(open) ? open.includes(index) : open === index
+                )
+                openChange(isOpen) {
+                    if (autoCollapse) {
+                        if (isOpen) {
+                            open = index;
+                        } else {
+                            open = -1;
+                        }
+                    } else {
+                        const openArray = Array.isArray(open)
+                            ? open
+                            : typeof open === "number" && open >= 0
+                              ? [open]
+                              : [];
+
+                        if (!isOpen) {
+                            open = openArray.filter((n) => n !== index);
+                        } else if (!openArray.includes(index)) {
+                            open = [...openArray, index];
+                        }
+                    }
+
+                    if (open !== undefined) {
+                        input.openChange?.(open);
+                    }
+                }>
                 <${item.content}/>
             </evo-details>
         </li>
