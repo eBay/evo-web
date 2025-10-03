@@ -57,3 +57,12 @@ export const Transparent = () => (
         </p>
     </>
 );
+
+export const WithPriority = () => (
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <EbayIconButton onClick={action("clicked")} icon="menu20" aria-label="Menu" />
+        <EbayIconButton onClick={action("clicked")} priority="primary" icon="menu20" aria-label="Menu" />
+        <EbayIconButton onClick={action("clicked")} priority="secondary" icon="menu20" aria-label="Menu" />
+        <EbayIconButton onClick={action("clicked")} priority="tertiary" icon="menu20" aria-label="Menu" />
+    </div>
+);

@@ -50,6 +50,7 @@ with badge:
 | `bageAriaLabel` | String  | No       | No       | aria label of the badge                                  |
 | `transparent`   | Boolean | No       | No       | for transparent background                               |
 | `size`          | String  | No       | No       | alternative size for the icon button, 'large' or 'small' |
+| `priority`      | String  | No       | No       | `primary`, `secondary`, `tertiary`, `none` (default)     |
 
 ## Callbacks
 
