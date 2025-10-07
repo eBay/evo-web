@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React, { ComponentProps, FC, ReactElement, useRef } from "react";
 import classNames from "classnames";
 import { DialogBaseProps, DialogBaseWithState, EbayDialogFooter } from "../ebay-dialog-base";
 import { DialogCloseEventHandler } from "../ebay-dialog-base/types";
@@ -9,8 +9,10 @@ const classPrefix = "confirm-dialog";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface Props<T = any> extends DialogBaseProps<T> {
     open?: boolean;
-    confirmText: string;
-    rejectText: string;
+    confirmText?: string;
+    rejectText?: string;
+    confirm?: ReactElement<ComponentProps<typeof EbayButton>>;
+    reject?: ReactElement<ComponentProps<typeof EbayButton>>;
     onReject?: DialogCloseEventHandler;
     onConfirm?: () => void;
 }
@@ -19,6 +21,8 @@ const EbayConfirmDialog: FC<Props> = ({
     a11yCloseText = "Close Dialog",
     confirmText,
     rejectText,
+    confirm,
+    reject,
     onReject = () => {},
     onConfirm = () => {},
     ...rest
@@ -26,6 +30,15 @@ const EbayConfirmDialog: FC<Props> = ({
     const confirmBtnRef = useRef(null);
     const confirmId = "confirm-dialog-confirm";
     const mainId = "confirm-dialog-main";
+
+    if (!confirmText && !confirm) {
+        throw new Error('EbayConfirmDialog: A "confirmText" or a "confirm" component needs to be passed');
+    }
+
+    if (!rejectText && !reject) {
+        throw new Error('EbayConfirmDialog: A "rejectText" or a "reject" component needs to be passed');
+    }
+
     return (
         <DialogBaseWithState
             focus={confirmBtnRef}
@@ -41,18 +54,23 @@ const EbayConfirmDialog: FC<Props> = ({
         >
             {rest.children}
             <EbayDialogFooter>
-                <EbayButton onClick={onReject} className="confirm-dialog__reject">
-                    {rejectText}
+                <EbayButton
+                    onClick={onReject}
+                    {...reject?.props}
+                    className={classNames("confirm-dialog__reject", reject?.props?.className)}
+                >
+                    {reject?.props?.children || rejectText}
                 </EbayButton>
                 <EbayButton
-                    ref={confirmBtnRef}
-                    priority="primary"
-                    onClick={onConfirm}
                     id={confirmId}
+                    onClick={onConfirm}
+                    priority="primary"
+                    {...confirm?.props}
+                    ref={confirmBtnRef}
                     aria-describedby={mainId}
-                    className="confirm-dialog__confirm"
+                    className={classNames("confirm-dialog__confirm", confirm?.props?.className)}
                 >
-                    {confirmText}
+                    {confirm?.props?.children || confirmText}
                 </EbayButton>
             </EbayDialogFooter>
         </DialogBaseWithState>
