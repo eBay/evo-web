@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`<EbayFilterChip /> rendering renders anchor selected story correctly 1`] = `
+<div>
+  <a
+    class="filter-chip filter-chip--selected filter-chip--animated"
+    href="https://ebay.com"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Selected Link
+      <span
+        class="clipped"
+      >
+        - 
+        Filter Applied
+      </span>
+    </span>
+  </a>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders anchor story correctly 1`] = `
+<div>
+  <a
+    class="filter-chip filter-chip--animated"
+    href="https://ebay.com"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Link Filter
+    </span>
+  </a>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders collection story correctly 1`] = `
+<div>
+  <div
+    style="display: flex; gap: 8px; flex-wrap: wrap;"
+  >
+    <button
+      aria-pressed="false"
+      class="filter-chip filter-chip--animated"
+      type="button"
+    >
+      <span
+        class="filter-chip__text"
+      >
+        Brand
+      </span>
+    </button>
+    <button
+      aria-pressed="true"
+      class="filter-chip filter-chip--animated"
+      type="button"
+    >
+      <span
+        class="filter-chip__text"
+      >
+        Color
+      </span>
+    </button>
+    <button
+      aria-pressed="false"
+      class="filter-chip filter-chip--animated"
+      type="button"
+    >
+      <span
+        class="filter-chip__text"
+      >
+        Size
+      </span>
+    </button>
+    <button
+      aria-expanded="false"
+      aria-pressed="false"
+      class="filter-chip filter-chip--animated"
+      type="button"
+    >
+      <span
+        class="filter-chip__text"
+      >
+        Price Range
+      </span>
+      <svg
+        aria-hidden="true"
+        class="filter-chip__trailing icon icon--12"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-chevron-down-12"
+        />
+      </svg>
+    </button>
+    <button
+      aria-pressed="false"
+      class="filter-chip filter-chip--animated"
+      disabled=""
+      type="button"
+    >
+      <span
+        class="filter-chip__text"
+      >
+        Out of Stock
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders default story correctly 1`] = `
+<div>
+  <button
+    aria-pressed="false"
+    class="filter-chip filter-chip--animated"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Default Filter
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders disabled story correctly 1`] = `
+<div>
+  <button
+    aria-pressed="false"
+    class="filter-chip filter-chip--animated"
+    disabled=""
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Disabled Filter
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders expressive selected story correctly 1`] = `
+<div>
+  <button
+    aria-pressed="true"
+    class="filter-chip filter-chip--expressive filter-chip--animated"
+    type="button"
+  >
+    <span
+      class="filter-chip__media"
+    >
+      <img
+        alt="Category"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
+      />
+    </span>
+    <span
+      class="filter-chip__text"
+    >
+      Expressive Selected
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders expressive story correctly 1`] = `
+<div>
+  <button
+    aria-pressed="false"
+    class="filter-chip filter-chip--expressive filter-chip--animated"
+    type="button"
+  >
+    <span
+      class="filter-chip__media"
+    >
+      <img
+        alt="Category"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
+      />
+    </span>
+    <span
+      class="filter-chip__text"
+    >
+      Expressive Filter
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders menu expanded story correctly 1`] = `
+<div>
+  <button
+    aria-expanded="true"
+    aria-pressed="false"
+    class="filter-chip filter-chip--animated"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Menu Expanded
+    </span>
+    <svg
+      aria-hidden="true"
+      class="filter-chip__trailing icon icon--12"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders menu story correctly 1`] = `
+<div>
+  <button
+    aria-expanded="false"
+    aria-pressed="false"
+    class="filter-chip filter-chip--animated"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Menu Filter
+    </span>
+    <svg
+      aria-hidden="true"
+      class="filter-chip__trailing icon icon--12"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders selected story correctly 1`] = `
+<div>
+  <button
+    aria-pressed="true"
+    class="filter-chip filter-chip--animated"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      Selected Filter
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<EbayFilterChip /> rendering renders with icon story correctly 1`] = `
+<div>
+  <button
+    aria-pressed="false"
+    class="filter-chip filter-chip--animated"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use
+        xlink:href="#icon-sneaker-16"
+      />
+    </svg>
+    <span
+      class="filter-chip__text"
+    >
+      Filter with Icon
+    </span>
+  </button>
+</div>
+`;
