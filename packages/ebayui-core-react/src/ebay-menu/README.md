@@ -25,14 +25,18 @@ import "@ebay/skin/menu";
 
 ## EbayMenu Props
 
-| Name        | Type     | Required | Description                                                                                                                                            |
-| ----------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `type`      | String   | No       | Can be `radio`/`checkbox`                                                                                                                              |
-| `checked`   | Number   | No       | when used with `radio` type will check the item with the corresponding index                                                                           |
-| `baseEl`    | String   | No       | Container can be `span` (default) or `div`                                                                                                             |
-| `onKeydown` | Function | No       | props: (e: event, { index: number, checked: number[], checkedValues?: string[] })                                                                      |
-| `onSelect`  | Function | No       | props: (e: event, { index: number }), triggered on item clicked (not for type `radio`/`checkbox`)                                                      |
-| `onChange`  | Function | No       | props: (e: event, { index: number, checked: number[], checkedValues: string[]), triggered on item `checked` change, (for type `radio`/`checkbox` only) |
+| Name          | Type     | Required | Description                                                                                                                                                          |
+| ------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`        | String   | No       | Can be `radio`/`checkbox`                                                                                                                                            |
+| `checked`     | Number   | No       | when used with `radio` type will check the item with the corresponding index                                                                                         |
+| `baseEl`      | String   | No       | Container can be `span` (default) or `div`                                                                                                                           |
+| `onKeydown`   | Function | No       | props: (e: event, { index: number, checked: number[], checkedValues?: string[] })                                                                                    |
+| `onSelect`    | Function | No       | props: (e: event, { index: number }), triggered on item clicked (not for type `radio`/`checkbox`)                                                                    |
+| `onChange`    | Function | No       | props: (e: event, { index: number, checked: number[], checkedValues: string[]), triggered on item `checked` change, (for type `radio`/`checkbox` only)               |
+| `classPrefix` | String   | No       | class prefix for the component, defaults to `menu`                                                                                                                   |
+| `reverse`     | Boolean  | No       | reverse the menu item layout, so that the badge is on the left and the text on the right (default: false)                                                            |
+| `fixWidth`    | Boolean  | No       | makes the menu width the same as its parent                                                                                                                          |
+| `fixed`       | Boolean  | No       | Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when dropdown is in contained in an overflow and needs to be visible as you scroll the screen. |
 
 ## EbayMenuItem Props
 

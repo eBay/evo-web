@@ -323,3 +323,11 @@ export const ReverseMenuGrowsToTheLeft = {
 
     name: "Reverse (Menu grows to the left)",
 };
+
+export const WithFixedStrategy = (args) => (
+    <EbayMenuButton {...args} strategy="fixed" text="Menu has a button width">
+        <Item>item 1 that has very long text</Item>
+        <Item>item 2</Item>
+        <Item>item 3</Item>
+    </EbayMenuButton>
+);

@@ -9,6 +9,7 @@ export type EbayMenuButtonProps = {
     className?: string;
     fixWidth?: boolean;
     reverse?: boolean;
+    strategy?: "absolute" | "fixed";
     text?: string;
     type?: EbayMenuType;
     variant?: EbayMenuButtonVariant;

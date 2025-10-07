@@ -13,6 +13,10 @@ const EbayMenu: FC<EbayMenuProps> = ({
     checked,
     className,
     autofocus,
+    classPrefix,
+    reverse,
+    fixWidth,
+    fixed,
     onClick = () => {},
     onKeyDown = () => {},
     onChange = () => {},
@@ -124,9 +128,21 @@ const EbayMenu: FC<EbayMenuProps> = ({
         }
     };
 
+    const baseClass = classPrefix || "menu";
+
     return (
-        <Container {...rest} className={classNames(className, "menu")} ref={forwardedRef}>
-            <div className="menu__items" role="menu" ref={menuRef}>
+        <Container
+            {...rest}
+            className={classNames(
+                className,
+                classPrefix ? `${baseClass}__menu` : "menu",
+                reverse && `${baseClass}__menu--reverse`,
+                fixed && `${baseClass}__menu--fixed`,
+                fixWidth && `${baseClass}__menu--fix-width`,
+            )}
+            ref={forwardedRef}
+        >
+            <div className={`${baseClass}__items`} role="menu" ref={menuRef}>
                 {childrenArray.map((child: ReactElement, i) => {
                     const {
                         onClick: onItemClick = () => {},
@@ -138,6 +154,7 @@ const EbayMenu: FC<EbayMenuProps> = ({
                     return cloneElement(child, {
                         ...itemRest,
                         type,
+                        baseClass,
                         focused: i === focusedIndex,
                         tabIndex: focusedIndex === undefined ? 0 : -1,
                         checked: checkedIndexes[i],

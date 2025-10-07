@@ -19,6 +19,7 @@ const {
     MultiSelectMenuButton,
     FixedWidth,
     ReverseMenuGrowsToTheLeft,
+    WithFixedStrategy,
 } = composeStories(stories);
 
 describe("EbayMenuButton rendering", () => {
@@ -185,7 +186,7 @@ describe("EbayMenuButton rendering", () => {
         it("should render correctly", () => {
             render(<FixedWidth expanded />);
             const menu = screen.getByRole("menu");
-            expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fix-width menu");
+            expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fix-width");
         });
     });
 
@@ -194,6 +195,14 @@ describe("EbayMenuButton rendering", () => {
             render(<ReverseMenuGrowsToTheLeft expanded />);
             const menu = screen.getByRole("menu");
             expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--reverse");
+        });
+    });
+
+    describe("WithFixedStrategy", () => {
+        it("should render correctly", () => {
+            render(<WithFixedStrategy expanded />);
+            const menu = screen.getByRole("menu");
+            expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fixed");
         });
     });
 });

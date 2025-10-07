@@ -13,6 +13,7 @@ export type MenuItemProps = ComponentProps<"div"> & {
     disabled?: boolean;
     badgeNumber?: number;
     badgeAriaLabel?: string;
+    baseClass?: string;
 };
 
 const EbayMenuItem: FC<MenuItemProps> = ({
@@ -25,6 +26,7 @@ const EbayMenuItem: FC<MenuItemProps> = ({
     badgeNumber,
     badgeAriaLabel,
     children,
+    baseClass = "menu",
     ...rest
 }) => {
     const ref = useRef(null);
@@ -43,7 +45,7 @@ const EbayMenuItem: FC<MenuItemProps> = ({
             aria-label={badgeAriaLabel}
             {...rest}
             ref={ref}
-            className={classNames(className, "menu__item", hasBadge && "menu__item--badged")}
+            className={classNames(className, `${baseClass}__item`, hasBadge && `${baseClass}__item--badged`)}
             role={roleFromType(type)}
             aria-checked={checkable.includes(type) ? checked : undefined}
             aria-disabled={disabled}

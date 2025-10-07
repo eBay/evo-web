@@ -22,6 +22,7 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     text = "",
     fixWidth,
     reverse,
+    strategy,
     expanded: defaultExpanded,
     noToggleIcon,
     checked,
@@ -42,7 +43,7 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: expanded,
-        options: { reverse },
+        options: { reverse, strategy },
     });
 
     const buttonRef = refs.host as React.MutableRefObject<HTMLButtonElement>;
@@ -61,11 +62,6 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     const icon = findComponent(children, EbayIcon);
     const label = labelWithPrefixAndIcon({ text, prefixId, prefixLabel, menuButtonLabel, icon });
     const wrapperClasses = classnames("menu-button", className);
-
-    const menuClasses = classnames("menu-button__menu", {
-        "menu-button__menu--fix-width": fixWidth,
-        "menu-button__menu--reverse": reverse,
-    });
 
     useEffect(() => {
         const handleBackgroundClick = (e: DocumentEventMap["click"]) => {
@@ -143,9 +139,12 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
             {expanded && (
                 <EbayMenu
                     baseEl="div"
+                    classPrefix="menu-button"
+                    reverse={reverse}
+                    fixWidth={fixWidth}
+                    fixed={strategy === "fixed"}
                     ref={refs.setOverlay as unknown as RefCallback<FC<EbayMenuProps>>}
                     type={type}
-                    className={menuClasses}
                     tabIndex={-1}
                     id={menuId}
                     autofocus
