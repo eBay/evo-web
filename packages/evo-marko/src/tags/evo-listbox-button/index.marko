@@ -19,7 +19,7 @@ export interface Input<Index extends number | string | undefined>
     disabled?: boolean;
     buttonName?: string;
     a11yIconText?: string;
-    split?: string;
+    split?: "none" | "start" | "end";
     invalid?: boolean;
     hasError?: boolean;
     a11yIconPrefixText?: Marko.HTMLAttributes["aria-label"];
