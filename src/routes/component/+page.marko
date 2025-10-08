@@ -1,0 +1,126 @@
+import { components, componentTemplate } from "../../components/components.marko";
+import path from "path";
+
+static const componentMetas = import.meta.glob(
+    "./*/+meta.json",
+    { eager: true }
+);
+static const componentMetadata = import.meta.glob(
+    "./*/metadata.json",
+    { eager: true }
+);
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="image-placeholder" viewBox="0 0 24 24">
+        <rect width="24" height="24" fill="#e0e0e0"/>
+        <text x="12" y="12" text-anchor="middle" fill="#9e9e9e" font-size="12">Image</text>
+    </symbol>
+    <symbol id="information-filled-16" viewBox="0 0 16 16">
+        <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 11a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v3ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+        />
+    </symbol>
+</svg>
+
+<main class="component-listings">
+    <h1>All Components</h1>
+
+    <ul class="components-list">
+        <for|key, folder| in=components>
+            $ {
+                const componentName = path.basename(folder);
+                const rawName = componentName.replace(/-([a-z])/g, function (g) {
+                    return ` ${g[1].toUpperCase()}`;
+                });
+                const properName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+                const metaPath = `./${componentName}/+meta.json`;
+                const metadataPath = `./${componentName}/metadata.json`;
+                
+                // Get legacy meta data for page info (title, description, image)
+                let metaData = componentMetas[metaPath];
+                if (metaData) {
+                    if (metaData.default) {
+                        metaData = metaData.default;
+                    } else {
+                        metaData = {
+                            pageTitle: metaData.pageTitle,
+                            pageDescription: metaData.pageDescription,
+                            pageImg: metaData.pageImg || "",
+                        };
+                    }
+                }
+                
+                // Get new metadata structure for version info
+                let componentData = componentMetadata[metadataPath];
+                if (componentData && componentData.default) {
+                    componentData = componentData.default;
+                }
+                
+                // Extract version information from new metadata structure
+                const dsComponent = componentData?.["ds-component"];
+                
+                const componentInfo = {
+                    name: componentName,
+                    properName: properName,
+                    folder: folder,
+                    meta: metaData || {},
+                    dsComponent: dsComponent,
+                    staticVersion: dsComponent?.staticVersion,
+                    markoVersion: dsComponent?.markoVersion,
+                    reactVersion: dsComponent?.reactVersion,
+                    hasVersions: Boolean(dsComponent && (dsComponent.staticVersion || dsComponent.markoVersion || dsComponent.reactVersion))
+                };
+            }
+            <if(componentInfo)>
+                <li>
+                    <a href=`component/${componentInfo.name}` class="card card--aspect-16-9  module-link">
+                        <div class="card__media">
+                            <if(componentInfo.meta.pageImg)>
+                                <img
+                                    src=`${componentInfo.meta.pageImg}`
+                                    alt="Component image"
+                                    class="card__hero-image"
+                                />
+                            </if>
+                            <else>
+                                <svg
+                                    aria-label="image not found"
+                                    class="image-placeholder .card__hero-image"
+                                    role="img"
+                                    >
+                                    <use href="#image-placeholder" />
+                                </svg>
+                            </else>
+                        </div>
+                        <div class="card__main">
+                            <div class="card__overline">
+                                <span class="card__overline-text">
+                                <if(componentInfo.staticVersion)>
+                                    <span class="component-version">
+                                        CSS v${componentInfo.staticVersion}
+                                    </span>
+                                </if>
+                                <if(componentInfo.markoVersion)>
+                                    <span class="component-version">
+                                        Marko v${componentInfo.markoVersion}
+                                    </span>
+                                </if>
+                                <if(componentInfo.reactVersion)>
+                                    <span class="component-version">
+                                        React v${componentInfo.reactVersion}
+                                    </span>
+                                </if>
+                                </span>
+                            </div>
+                            <h2 class="card__title">${componentInfo.properName}</h2>
+                            <div class="card__description">
+                                ${componentInfo.meta?.pageDescription || "TBD"}
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </if>
+        </for>
+    </ul>
+
+</main>

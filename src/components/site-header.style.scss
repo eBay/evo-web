@@ -1,0 +1,272 @@
+header {
+    background-color: var(--color-background-primary);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+    top: 0;
+    z-index: 50;
+}
+
+.nav__container {
+    margin: 0 auto;
+}
+
+.nav__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+
+.nav__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.nav__logo {
+    background-color: var(--color-foreground-primary);
+    padding: var(--spacing-sm);
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+.nav__logo-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-foreground-on-inverse);
+    stroke-width: 3px;
+}
+
+.nav__brand-text {
+    color: var(--color-foreground-primary);
+    font-weight: 600;
+    font-size: clamp(var(--font-size-18), 5vw, var(--font-size-24));
+    line-height: var(--font-size-32);
+    letter-spacing: -.04rem;
+    text-shadow: 0 0 5px var(--color-background-primary);
+}
+
+.nav__links {
+    align-items: center;
+    display: none;
+    gap: var(--spacing-xl);
+    margin-left: auto;
+    padding: 0;
+}
+
+.nav__links ::marker {
+    font-size: 0;
+}
+
+.nav__link {
+    color: var(--color-foreground-primary);
+    font-weight: 600;
+    text-shadow: 0 0 3px var(--color-background-primary);
+    transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav__link:visited {
+    color: var(--color-foreground-primary);
+}
+
+.nav__link:hover {
+    color: var(--color-foreground-accent);
+}
+
+.header__social-icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 1));
+}
+
+.tabs__content ul.subnav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    margin: 0;
+}
+
+.tabs__content ul.subnav__links ::marker {
+    font-size: 0;
+}
+
+.tabs__content ul.subnav__links li a {
+    display: block;
+    padding: 12px;
+}
+
+.tabs__content ul.subnav__links li a:hover {
+    background-color: var(--color-background-secondary);
+}
+
+.nav__cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    white-space: nowrap;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(to right, var(--color-blue-600), var(--color-purple-600));
+    color: white;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav__cta-button:hover {
+    background: linear-gradient(to right, var(--color-blue-700), var(--color-purple-700));
+}
+
+.nav__mobile-toggle {
+    display: block;
+    padding: var(--spacing-sm);
+}
+
+.site-nav-mobile ul ul {
+    padding: 0;
+}
+
+.site-nav-mobile .tabs__items {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-nav-mobile .tabs__item[role="tab"] {
+    align-items: center;
+    border-radius: var(--border-radius-medium);
+    color: var(--color-foreground-primary);
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 8px;
+    line-height: 28px;
+    margin-inline-end: 0;
+    padding: 12px;
+    width: 100%;
+}
+
+.site-nav-mobile .tabs__item[role="tab"]:hover {
+    background-color: var(--color-background-secondary);
+}
+
+.site-nav-mobile .tabs__item.tabs__item[role=tab][aria-selected=true] > span::after,
+.site-nav-mobile li.fake-tabs__item > a[aria-current]::after,
+.site-nav-mobile div.tabs__item[role=tab]:not([aria-selected=true]):hover > span::after {
+    background-color: unset;
+}
+
+.site-nav-mobile .tabs__item[aria-selected="true"] {
+    background-color: var(--color-background-secondary);
+}
+
+@media (min-width: 768px) {
+    .nav__links {
+        display: flex;
+    }
+
+    .nav__mobile-toggle {
+        display: none;
+    }
+
+    button.icon-btn.mobile-nav-toggle {
+        display: none;
+    }
+}
+
+.nav__menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Liquid Glass Effect */
+.glass {
+    /* Tune params */
+    --tint: 255, 255, 255;         /* white-ish tint for light mode */
+    --alpha-strong: 0.35;          /* material "thickness" top */
+    --alpha-weak: 0.15;            /* material "thickness" bottom */
+    --blur: 20px;                  /* blur amount */
+    --saturate: 1.8;               /* saturation amount */
+    --contrast: 1.03;              /* contrast amount */
+
+    background-color: transparent;
+    background:
+        /* specular highlight (static; see JS below for dynamic) */
+        radial-gradient(120% 80% at 50% -20%, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%),
+        /* material tint */
+        linear-gradient(180deg, rgba(var(--tint), var(--alpha-strong)),
+                            rgba(var(--tint), var(--alpha-weak)));
+    /* "mixing" the potion */
+    -webkit-backdrop-filter: blur(var(--blur)) saturate(var(--saturate)) contrast(var(--contrast));
+    backdrop-filter: blur(var(--blur)) saturate(var(--saturate)) contrast(var(--contrast));
+}
+
+/* Optional ultra-subtle noise overlay */
+.glass::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/></filter>\
+<rect width='100%' height='100%' filter='url(%23n)'/></svg>"); /* tiny tiling PNG */
+    opacity: 0.05; mix-blend-mode: overlay; pointer-events: none;
+}
+
+/* Optional: elevate effect with dropshaddow */
+.glass--elevate {
+    box-shadow:
+        inset 0 0 0 0.5px rgba(255,255,255,0.35),  /* inner rim */
+        0 10px 30px rgba(0,0,0,0.18);              /* elevation */
+}
+
+/* Dark mode tweaks */
+@media (prefers-color-scheme: dark) {
+    .glass {
+        --tint: 0, 0, 0;
+        --alpha-strong: 0.45;
+        --alpha-weak: 0.25;
+    }
+
+    .glass--elevate {
+        box-shadow:
+            inset 0 0 0 0.5px rgba(255,255,255,0.12),
+            0 12px 36px rgba(0,0,0,0.5);
+    }
+}
+
+/* Fallback when backdrop-filter isn’t supported */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+        background: rgba(var(--tint), 0.6); /* increase opacity */
+    }
+}
+
+/* Dark mode fallback */
+@media (prefers-color-scheme: dark) {
+    .nav__link {
+        text-shadow: unset;
+    }
+
+    .header__social-icon {
+        filter: unset
+    }
+}
+
+/* Mobile menu styles */
+@media (min-width: 512px) {
+    .panel-dialog__window {
+        width: 100%;
+    }
+}

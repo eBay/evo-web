@@ -1,0 +1,10 @@
+{
+    "name": "accordion",
+    "playbookURL": "https://playbook.ebay.com/design-system/components/accordion",
+    "ds-component": {
+        "name": "accordion",
+        "staticVersion": 1.1,
+        "markoVersion": 1.1,
+        "reactVersion": 1.1
+    }
+}

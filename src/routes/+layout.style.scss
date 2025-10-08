@@ -1,5 +1,5 @@
-@import "../../packages/skin/dist/global/global.css";
-@import "../../packages/skin/dist/layout-grid/layout-grid.css";
+@use "../../packages/skin/dist/global/global.css";
+@use "../../packages/skin/dist/layout-grid/layout-grid.css";
 
 .main {
     display: flex;

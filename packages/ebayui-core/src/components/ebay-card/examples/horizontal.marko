@@ -1,0 +1,32 @@
+class {}
+
+<ebay-card 
+    layout="horizontal"
+    variant="outlined"
+    ...input
+>
+    <@media>
+        <img 
+            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg" 
+            alt="Example card image" 
+            class="card__hero-image"
+        />
+    </@media>
+    
+    <@overline>
+        <ebay-authenticity-guarantee-16-icon />
+        <span>Authenticity Guaranteed</span>
+    </@overline>
+    
+    <@title>Authentic Rookie Cards</@title>
+    
+    <@description>
+        Museum-quality rookie cards from three sports that prove some people's side hustles become billion-dollar careers while others struggle to keep houseplants alive.
+    </@description>
+    
+    <@footer>
+        <ebay-button variant="primary">
+            See Details
+        </ebay-button>
+    </@footer>
+</ebay-card>

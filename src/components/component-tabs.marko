@@ -1,0 +1,42 @@
+$ const componentInfo = input.componentInfo || {};
+$ const currentTab = input.currentTab || "Overview";
+$ const name = componentInfo.name;
+$ let dsComponent = componentInfo["ds-component"] || {};
+
+$ const getAriaCurrentValue = (tabName) => {
+    return currentTab === tabName ? "page" : undefined;
+};
+<div class="component-page">
+    <div class="fake-tabs">
+        <ul class="fake-tabs__items" role="tablist" aria-label="Component implementation tabs">
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`/component/${name}/` role="tab" aria-current=getAriaCurrentValue("Overview")>Overview</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`/component/${name}/accessibility/` role="tab" aria-current=getAriaCurrentValue("A11y")>A11y</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`/component/${name}/css/` role="tab" aria-current=getAriaCurrentValue("CSS")>CSS (${componentInfo["ds-component"].staticVersion})</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`/component/${name}/marko/` role="tab" aria-current=getAriaCurrentValue("Marko")>Marko (${componentInfo["ds-component"].markoVersion})</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`/component/${name}/react/` role="tab" aria-current=getAriaCurrentValue("React")>React (${componentInfo["ds-component"].reactVersion})</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`${dsComponent?.playbookURL || "https://playbook.ebay.com/design-system/components/"}` target="_blank">
+                    Playbook
+                    <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+                        <use href="#icon-external-link-16" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <div class="fake-tabs__content" role="tabpanel">
+            <div class="fake-tabs__cell">
+                <${input.renderBody}/>
+            </div>
+        </div>
+    </div>
+</div>

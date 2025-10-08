@@ -1,0 +1,23 @@
+@use "../../../packages/skin/src/sass/variables/variables";
+@use "../../../packages/skin/src/sass/mixins/public/typography-mixins";
+@use "../../../packages/skin/src/sass/mixins/public/utility-mixins";
+@use "../static/sass/pygments";
+@use "../static/sass/demo-colors";
+@use "../static/sass/page-grid";
+@use "../static/sass/color-schemes";
+@use "../static/sass/site-main.scss";
+@use "../../../packages/skin/src/sass/bundles/skin-full";
+
+/* stylelint-disable no-descending-specificity */
+.component-page {
+    margin-block: var(--spacing-400);
+
+    h1 {
+        margin-block: 24px 16px;
+    }
+
+    .fake-tabs {
+        margin-top: 0;
+    }
+}
+/* stylelint-enable no-descending-specificity */

@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Accordion Component",
+    "pageDescription": "The Accordion component is a responsive and accessible UI element that organizes content into expandable and collapsible sections. Designed to adapt seamlessly across devices and technologies, it provides consistent performance and usability in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/accordion-400.png"
+}

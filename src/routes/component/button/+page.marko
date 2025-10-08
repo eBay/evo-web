@@ -1,0 +1,145 @@
+<div id="button-component">
+    <h1>Button Component</h1>
+
+    <p>
+        A control for executing JavaScript or submitting/resetting form values
+    </p>
+    <p>
+        <img
+            src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcE4sEvl3UwYKTwXn%2Fbutton.png?generation=1548799251657128&amp;alt=media"
+            alt="Form submit and reset buttons"
+        >
+    </p>
+    <h3>Introduction</h3>
+    <p>
+        The button pattern allows the user to input a command, with one of the following possible action types:
+    </p>
+    <ol>
+        <li>Submit form (type="submit")</li>
+        <li>Reset form (type="reset")</li>
+        <li>Run JavaScript (type="button")</li>
+    </ol>
+    <p>
+        The first two types of button are for use inside of a form only, due to their specific behaviour.
+    </p>
+    <p>
+        The third type is a general purpose button used for running client-side script. This type of button appears in many patterns:
+    </p>
+    <ul>
+        <li>
+            <a href="../disclosure/infotip">
+                Infotip
+            </a>
+        </li>
+        <li>
+            <a href="../disclosure/carousel">
+                Carousel
+            </a>
+        </li>
+        <li>
+            <a href="menu-button">
+                Menu Button
+            </a>
+        </li>
+        <li>
+            <a href="../disclosure/lightbox-dialog">
+                Lightbox Dialog
+            </a>
+        </li>
+        <li>and more</li>
+    </ul>
+    <p>
+        Another type of button is the
+        <a href="toggle-button">
+            Toggle Button.
+        </a>
+    </p>
+    <p>
+        <strong>TIP:</strong>
+        ${" "}If left unspecified, the type attribute has a default value of "submit".
+    </p>
+    <h3>Working Examples</h3>
+    <p>
+        Experience the pattern in action on our companion
+        <a href="https://ebay.github.io/mindpatterns/input/button/index.html">
+            eBay MIND Patterns examples website
+        </a>
+        .
+    </p>
+    <p>
+        View a fully styled example on our
+        <a href="https://opensource.ebay.com/skin/component/button/">
+            Skin CSS Framework
+        </a>
+        .
+    </p>
+    <h3>Best Practices</h3>
+    <p>
+        The label
+        <strong>must</strong>
+        ${" "}clearly indicate the purpose of the button (i.e. not 'click here' or 'click me').
+    </p>
+    <p>
+        For buttons with labels that are not unique to the page (e.g. 'Add to Cart', 'Edit' or 'Delete', see the${" "}
+        <a href="../techniques/ambiguous-label">
+            Ambiguous Label
+        </a>
+         technique.
+    </p>
+    <p>
+        A button
+        <strong>must not</strong>
+         open a new page. Use a
+        <a href="../navigation/link">
+            link
+        </a>
+         instead.
+    </p>
+    <p>
+        A button
+        <strong>may</strong>
+        ${" "}update the hash fragment of the URL. For example, if building a single page app experience and explicitly managing the History API.
+    </p>
+    <p>
+        A button
+        <strong>may</strong>
+         open any kind of
+        <a href="https://github.com/ebay/mindpatterns/tree/6c14ac7802634b97b44038d80935b912adbcd5cf/structure/flyout.md">
+            flyout
+        </a>
+        ,
+        <a href="https://github.com/ebay/mindpatterns/tree/6c14ac7802634b97b44038d80935b912adbcd5cf/structure/dialog.md">
+            dialog
+        </a>
+         or
+        <a href="https://github.com/ebay/mindpatterns/tree/6c14ac7802634b97b44038d80935b912adbcd5cf/disclosure/menu.md">
+            menu
+        </a>
+         overlay.
+    </p>
+    <p>
+        A button
+        <strong>may</strong>
+         display a waiting/loading state, but should not be a live-region (see:
+        <a href="../../appendix/faq#when-should-a-live-region-be-used">
+            FAQ: When should a live-region be used?
+        </a>
+        ). Some screen readers automatically announce any changes to the programmatic label, and so using a live-region would trigger a second, redundant announcement.
+    </p>
+</div>
+// export const metadata = {
+
+//     component: "button",
+
+//     "ds-component": {
+
+//         name: "cta-button",
+
+//         version: 1.6,
+
+//         url: "https://playbook.ebay.com/design-system/components/button"
+
+//     },
+
+// };
+

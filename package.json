@@ -20,6 +20,7 @@
     "postinstall": "npx playwright install --with-deps chromium",
     "prepare": "husky",
     "release": "npm run release --ws && changeset publish",
+    "start": "marko-run",
     "test": "npm run test --ws",
     "update-snapshots": "npm run update-snapshots --ws --if-present",
     "version": "npm run version --ws && changeset version && npm i --package-lock-only && git add -A packages"
@@ -193,5 +194,8 @@
     "winston": "^3.17.0",
     "xmlserializer": "^0.6.1",
     "yargs": "^18.0.0"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0"
   }
 }

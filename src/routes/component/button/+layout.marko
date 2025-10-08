@@ -1,0 +1,120 @@
+<div class="component-page">
+    <div class="fake-tabs">
+        <ul class="fake-tabs__items" role="tablist" aria-label="Component implementation tabs">
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href="/component/button/" role="tab" data-tab-href="/component/button/">Overview</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href="/component/button/accessibility/" role="tab" data-tab-href="/component/button/accessibility/">A11y</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href="/component/button/css" role="tab" data-tab-href="/component/button/css">CSS (${componentInfo["ds-component"].staticVersion})</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href="/component/button/marko/" role="tab" data-tab-href="/component/button/marko/">Marko (${componentInfo["ds-component"].markoVersion})</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href="/component/button/react/" role="tab" data-tab-href="/component/button/react/">React (${componentInfo["ds-component"].reactVersion})</a>
+            </li>
+            <li class="fake-tabs__item fake-tabs__items--large">
+                <a href=`${componentInfo?.playbookURL || "https://playbook.ebay.com/design-system/components/"}` target="_blank">
+                    <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+                        <use href="#icon-external-link-16" />
+                    </svg> Playbook
+                </a>
+            </li>
+        </ul>
+        <div class="fake-tabs__content" role="tabpanel">
+            <div class="fake-tabs__cell">
+                <${input.renderBody}/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Set active tab based on current pathname - runs immediately to avoid screen reader issues
+    (function() {
+        const currentPath = window.location.pathname;
+        const tabList = document.querySelector('.fake-tabs__items[role="tablist"]');
+        const tabLinks = document.querySelectorAll('.fake-tabs__items a[data-tab-href]');
+        
+        if (!tabList || !tabLinks.length) return;
+        
+        let activeTabFound = false;
+        
+        tabLinks.forEach((link, index) => {
+            const tabHref = link.getAttribute('data-tab-href');
+            
+            // Reset all tabs
+            link.removeAttribute('aria-current');
+            link.setAttribute('aria-selected', 'false');
+            // link.setAttribute('tabindex', '-1');
+            
+            // Check if current path matches this tab's href
+            const isActive = currentPath === tabHref || 
+                           (currentPath.endsWith('/') && currentPath.slice(0, -1) === tabHref) ||
+                           (tabHref.endsWith('/') && tabHref.slice(0, -1) === currentPath);
+            
+            if (isActive) {
+                link.setAttribute('aria-current', 'page');
+                link.setAttribute('aria-selected', 'true');
+                link.setAttribute('tabindex', '0');
+                activeTabFound = true;
+            }
+            
+            // Add arrow ley keyboard navigation for all tabs
+            // link.addEventListener('keydown', handleTabKeyNavigation);
+        });
+        
+        // Fallback: if no active tab found, make first tab active (for root path)
+        if (!activeTabFound && tabLinks.length > 0) {
+            const firstTab = tabLinks[0];
+            firstTab.setAttribute('aria-current', 'page');
+            firstTab.setAttribute('aria-selected', 'true');
+            firstTab.setAttribute('tabindex', '0');
+        }
+        
+        // Allow arrow key navigation between tabs
+        // function handleTabKeyNavigation(event) {
+        //     const tabs = Array.from(tabLinks);
+        //     const currentIndex = tabs.indexOf(event.target);
+            
+        //     let nextIndex;
+            
+        //     switch (event.key) {
+        //         case 'ArrowRight':
+        //         case 'ArrowDown':
+        //             event.preventDefault();
+        //             nextIndex = (currentIndex + 1) % tabs.length;
+        //             tabs[nextIndex].focus();
+        //             break;
+        //         case 'ArrowLeft':
+        //         case 'ArrowUp':
+        //             event.preventDefault();
+        //             nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        //             tabs[nextIndex].focus();
+        //             break;
+        //         case 'Home':
+        //             event.preventDefault();
+        //             tabs[0].focus();
+        //             break;
+        //         case 'End':
+        //             event.preventDefault();
+        //             tabs[tabs.length - 1].focus();
+        //             break;
+        //     }
+        // }
+    })();
+</script>
+
+export const componentInfo = {
+    name: "button",
+    playbookURL: "https://playbook.ebay.com/design-system/components/button",
+    "ds-component": {
+        name: "cta-button",
+        staticVersion: 1.6,
+        markoVersion: 1.6,
+        reactVersion: 1.6,
+    },
+};

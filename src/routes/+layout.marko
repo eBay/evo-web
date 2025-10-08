@@ -31,10 +31,10 @@ static const basePath = import.meta.env.BASE_URL;
             name="twitter:description"
             content=`${$global.meta.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`
         >
+        <favicons/>
+        <analytics-tracking/>
     </head>
     <body>
-        <main>
-            <${input.renderBody}/>
-        </main>
+        <${input.renderBody}/>
     </body>
 </html>

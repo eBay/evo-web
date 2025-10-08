@@ -1,0 +1,67 @@
+import metadata from "./metadata.json";
+
+<component-tabs componentInfo=metadata currentTab="Overview">
+    <div id="accordion-component">
+        <h1>Accordion Component</h1>
+        <img class="component-banner-img" src="/src/routes/static/img/components/accordion-400.png" aria-hidden="true" />
+
+        <p>
+            The Accordion component is a versatile UI pattern that helps organize content into expandable and collapsible sections. By allowing users to reveal or hide information as needed, it reduces clutter on the page and makes complex layouts easier to navigate. Built with responsive design principles, the accordion adapts seamlessly across devices, ensuring a consistent and user-friendly experience on mobile, tablet, and desktop.
+        </p>
+
+        <p>
+            Accessibility is at the core of the Accordion component. With semantic HTML, keyboard navigation, and screen reader support, it ensures that content remains usable by all audiences. Whether used for FAQs, navigation menus, or structured content organization, the Accordion component provides a reliable, standards-aligned foundation available in Evo Web's CSS, React, and Marko implementations.
+        </p>
+        
+        <p>The accordion pattern makes heavy use of the details.</p>
+        <h3>HTML </h3>
+        <p>The structure is a list of details widgets. Note that in some browsers the implicit list role is removed when CSS <code>list-style-type: none</code> is applied. To hide the list item markers,  use the <code>::marker</code> pseudo-element .</p>
+
+        <highlight-code type="html">
+<ul class="accordion" aria-roledescription="accordion">
+    <li>
+        <details class="accordion__details" open>
+            <summary><h4>Buying</h4></summary>
+            <ul>
+                <li><a href="http://www.ebay.com">Purchases</a></li>
+                <li><a href="http://www.ebay.com">Bids/Offers</a></li>
+                <li><a href="http://www.ebay.com">Didn't Win</a></li>
+            </ul>
+        </details>
+    </li>
+    <li>
+        <details class="accordion__details">
+            <summary><h4>Selling</h4></summary>
+            <ul>
+                <li><a href="http://www.ebay.com">Sold</a></li>
+                <li><a href="http://www.ebay.com">Bids/Offers</a></li>
+                <li><a href="http://www.ebay.com">Didn't Swell</a></li>
+            </ul>
+        </details>
+    </li>
+</ul>
+        </highlight-code>
+        
+        <h2>CSS</h2>
+
+        <p>To address the issue in some browsers where the implicit list role is removed with <code>list-style-type</code>, the following CSS can be applied to hide the list item markers. Beyond this, accordion headers and panels can be styled as desired.</p>
+
+        <highlight-code type="css">
+ul.accordion ::marker {
+  font-size: 0;
+}
+        </highlight-code>
+
+        <h2>JavaScript</h2>
+
+        <p>For accordions that allow all panels to be open at once, no scripting is necessary; each nested details widget will handle the open and close mechanics.</p>
+        <p>For accordions limited to a single open panel, the <code>name</code> attribute allows multiple <code>&lt;details&gt;</code> elements to be linked, ensuring only one is open at a time. This approach effectively eliminates the need for JavaScript.</p>
+        <p>On older browsers that do not yet support the <code>name</code> attribute, the JavaScript steps can be briefly summarized as the following:</p>
+        <ol>
+        <li>Find each nested details element</li>
+        <li>Listen to toggle event of each details element</li>
+        <li>When receiving a toggle event, if the details state has moved from closed to open, close all other details elements</li>
+        </ol>
+        <p>That's it. Pretty straightforward. You can reference our <a href="https://github.com/eBay/mindpatterns/blob/gh-pages/_js/accordion.js">example code on GitHub</a>.</p>
+    </div>
+</component-tabs>
