@@ -7,8 +7,8 @@ import openTemplate from "./examples/opened.marko";
 import openTemplateCode from "./examples/opened.marko?raw";
 import largeTemplate from "./examples/large.marko";
 import largeTemplateCode from "./examples/large.marko?raw";
-import autoCollapsedTemplate from "./examples/autoCollapsed.marko";
-import autoCollapsedTemplateCode from "./examples/autoCollapsed.marko?raw";
+import multiSelectTemplate from "./examples/multiSelect.marko";
+import multiSelectTemplateCode from "./examples/multiSelect.marko?raw";
 
 export default {
     title: "navigation & disclosure/ebay-accordion",
@@ -31,16 +31,6 @@ export default {
                 },
             },
             options: ["regular", "large"],
-        },
-        autoCollapse: {
-            type: "boolean",
-            description:
-                "Whether accordion panels should be autocollapsed when another is opened",
-            table: {
-                defaultValue: {
-                    summary: "false",
-                },
-            },
         },
         a11yRoleDescription: {
             type: "string",
@@ -94,7 +84,7 @@ export const Open = buildExtensionTemplate(openTemplate, openTemplateCode);
 
 export const Large = buildExtensionTemplate(largeTemplate, largeTemplateCode);
 
-export const AutoCollapsed = buildExtensionTemplate(
-    autoCollapsedTemplate,
-    autoCollapsedTemplateCode,
+export const MultiSelect = buildExtensionTemplate(
+    multiSelectTemplate,
+    multiSelectTemplateCode,
 );
