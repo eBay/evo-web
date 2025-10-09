@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.8
+
+### Patch Changes
+
+- [#315](https://github.com/eBay/evo-web/pull/315) [`f64a6a3`](https://github.com/eBay/evo-web/commit/f64a6a36b16e321d80619f6cc157f5fdcba1c864) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(filter-chip): pass href and disabled to the container
+
 ## 15.12.7
 
 ### Patch Changes

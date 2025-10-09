@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.14.3
+
+### Patch Changes
+
+- [#318](https://github.com/eBay/evo-web/pull/318) [`94acd28`](https://github.com/eBay/evo-web/commit/94acd28291cbf689ae858d691eb492571e0080e4) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(section-notice): fixed link text wrapping
+
 ## 19.14.2
 
 ### Patch Changes

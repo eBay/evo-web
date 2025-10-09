@@ -1,5 +1,25 @@
 # @ebay/ui-core-react
 
+## 8.14.0
+
+### Minor Changes
+
+- [#310](https://github.com/eBay/evo-web/pull/310) [`c48fc5b`](https://github.com/eBay/evo-web/commit/c48fc5bbb810806f8252878137db31f6b3c0c095) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayIconButton): add support for 'priority' property
+
+- [#302](https://github.com/eBay/evo-web/pull/302) [`c1c7dc8`](https://github.com/eBay/evo-web/commit/c1c7dc890551b3b4d164b6c0c96fb641cd0a224d) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayIcon): use automatic symbol detection for icons
+
+- [#314](https://github.com/eBay/evo-web/pull/314) [`65f4d0b`](https://github.com/eBay/evo-web/commit/65f4d0b68d21a9c48d615a5901793f27a6515d89) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayAlertDialog|EbayConfirmDialog): Add support for "confirm" and "reject" button for extra props
+
+- [#313](https://github.com/eBay/evo-web/pull/313) [`3b217e6`](https://github.com/eBay/evo-web/commit/3b217e64214ab2346d40279448cf9bccfdd0553e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(MenuButton): add support for 'fixed' layout strategy
+  feat(ListboxButton): add support for 'fixed' layout strategy
+  feat(Menu): add support for 'fixed' layout strategy
+
+- [#315](https://github.com/eBay/evo-web/pull/315) [`f64a6a3`](https://github.com/eBay/evo-web/commit/f64a6a36b16e321d80619f6cc157f5fdcba1c864) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayFilterChip): add new filter-chip component
+
+### Patch Changes
+
+- [#304](https://github.com/eBay/evo-web/pull/304) [`9cbf8ff`](https://github.com/eBay/evo-web/commit/9cbf8ffe4d14f3b00fb1f5269ebdadc8fdaac2d7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - chore(EbayAvatar): remove usage of React.Children and cloneElement
+
 ## 8.13.2
 
 ### Patch Changes
