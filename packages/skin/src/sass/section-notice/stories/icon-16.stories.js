@@ -45,6 +45,23 @@ export const linkCTA = () => `
 </div>
 `;
 
+export const linkCTALongAnchor = () => `
+<div class="section-notice section-notice--confirmation" role="region">
+    <div class="section-notice__header" role="region" aria-roledescription="Notice">
+        <svg aria-hidden="true" class="icon icon--16">
+            <use href="#icon-confirmation-filled-16"></use>
+        </svg>
+    </div>
+    <div class="section-notice__main">
+        <h3 class="section-notice__title">Notification Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="section-notice__footer">
+        <a href="https://www.ebay.com">View detailed report from catalog</a>
+    </div>
+</div>
+`;
+
 // known issue: https://github.com/eBay/skin/issues/2146
 export const fakeLinkCTA = () => `
 <div class="section-notice section-notice--confirmation" role="region">
@@ -96,6 +113,30 @@ export const dismissAndLinkCTA = () => `
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
     <p class="section-notice__cta"><a href="https://www.ebay.com">Action</a></p>
+    <div class="section-notice__footer">
+        <button aria-label="Close notice" class="fake-link section-notice__dismiss">
+            <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
+                <use href="#icon-close-16"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+`;
+
+export const dismissAndLinkCTALongAnchor = () => `
+<div class="section-notice section-notice--confirmation" role="region">
+    <div class="section-notice__header" role="region" aria-roledescription="Notice">
+        <svg aria-hidden="true" class="icon icon--16">
+            <use href="#icon-confirmation-filled-16"></use>
+        </svg>
+    </div>
+    <div class="section-notice__main">
+        <h3 class="section-notice__title">Notification Title</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="section-notice__cta">
+        <a href="https://www.ebay.com">View detailed report from catalog</a>
+    </div>
     <div class="section-notice__footer">
         <button aria-label="Close notice" class="fake-link section-notice__dismiss">
             <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
