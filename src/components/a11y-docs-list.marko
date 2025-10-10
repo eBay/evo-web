@@ -19,9 +19,17 @@ import path from "path";
                 
                 // Extract the folder name after "patterns/"
                 $ const folderName = folder.split('/').pop() || '';
-                
+
+                $ const isComponentPattern = folderName === 'component-patterns';
+
+                $ let link = `/accessibility/${folderName}/${docName}`
+
+                $ if (isComponentPattern) {
+                    link = `/component/${docName}/accessibility`;
+                }
+
                 <li>
-                    <a href=`/accessibility/${folderName}/${docName}` class="nav-link" role="menuitem">
+                    <a href=`${link}` class="nav-link" role="menuitem">
                         ${properName}
                     </a>
                 </li>

@@ -34,6 +34,10 @@ main svg.image-placeholder {
     text-overflow: ellipsis;
 }
 
+.card__footer {
+    margin-block-start: var(--spacing-150);
+}
+
 .component-version {
     background-color: var(--color-background-primary);
     border-radius: 5px;

@@ -93,8 +93,11 @@ static const componentMetadata = import.meta.glob(
                             </else>
                         </div>
                         <div class="card__main">
-                            <div class="card__overline">
-                                <span class="card__overline-text">
+                            <h2 class="card__title">${componentInfo.properName}</h2>
+                            <div class="card__description">
+                                ${componentInfo.meta?.pageDescription || "TBD"}
+                            </div>
+                            <div class="card__footer">
                                 <if(componentInfo.staticVersion)>
                                     <span class="component-version">
                                         CSS v${componentInfo.staticVersion}
@@ -110,11 +113,6 @@ static const componentMetadata = import.meta.glob(
                                         React v${componentInfo.reactVersion}
                                     </span>
                                 </if>
-                                </span>
-                            </div>
-                            <h2 class="card__title">${componentInfo.properName}</h2>
-                            <div class="card__description">
-                                ${componentInfo.meta?.pageDescription || "TBD"}
                             </div>
                         </div>
                     </a>
