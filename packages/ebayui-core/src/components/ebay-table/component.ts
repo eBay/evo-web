@@ -50,6 +50,7 @@ interface State {
 export default class EbayTable extends Marko.Component<Input, State> {
     declare disabledItems: Set<HTMLElement>;
     declare tbody: HTMLElement;
+    declare tableContainer: HTMLElement;
     declare animationFrame: number;
 
     onCreate() {
@@ -63,7 +64,9 @@ export default class EbayTable extends Marko.Component<Input, State> {
     onMount() {
         this.disabledItems = new Set();
         this.tbody = this.getEl("tbody");
+        this.tableContainer = this.getEl();
         this.setLoading();
+        this.setupFocusManagement();
     }
 
     onInput(input: Input) {
@@ -223,6 +226,61 @@ export default class EbayTable extends Marko.Component<Input, State> {
             this.emit("sort", {
                 sorted: { [name]: nextSort },
             });
+        }
+    }
+
+    setupFocusManagement() {
+        // Only add focus management for frozen header tables
+        if (!this.input.frozenHeader) {
+            return;
+        }
+
+        this.tableContainer.addEventListener("focusin", (event) => {
+            const target = event.target as HTMLElement;
+            
+            // Check if the focused element is within the table body
+            if (this.tbody && this.tbody.contains(target)) {
+                // Small delay to allow focus to be fully established
+                requestAnimationFrame(() => {
+                    this.scrollToFocusedElement(target);
+                });
+            }
+        });
+    }
+
+    scrollToFocusedElement(el: HTMLElement) {
+        if (!el || !this.tableContainer) {
+            return;
+        }
+
+        const scrollContainer = this.tableContainer;
+        const thead = scrollContainer.querySelector("thead") as HTMLElement;
+        
+        if (!thead) {
+            return;
+        }
+
+        // Get the height of the sticky header
+        const headerHeight = thead.offsetHeight;
+        
+        // Calculate element position relative to the scroll container
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const elementRect = el.getBoundingClientRect();
+        
+        const elementTop = elementRect.top - containerRect.top + scrollContainer.scrollTop;
+        const elementBottom = elementTop + el.offsetHeight;
+        
+        // Calculate visible area (accounting for sticky header)
+        const visibleTop = scrollContainer.scrollTop + headerHeight;
+        const visibleBottom = scrollContainer.scrollTop + scrollContainer.clientHeight;
+        
+        // Check if element is hidden behind the sticky header or below the visible area
+        if (elementTop < visibleTop) {
+            // Element is hidden behind header, scroll up
+            scrollContainer.scrollTop = elementTop - headerHeight;
+        } else if (elementBottom > visibleBottom) {
+            // Element is below visible area, scroll down
+            scrollContainer.scrollTop = elementBottom - scrollContainer.clientHeight;
         }
     }
 }

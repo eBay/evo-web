@@ -1,6 +1,6 @@
 // TODO check if tabIndex on table should be used
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React, { ComponentProps, FC, MouseEvent, useState } from "react";
+import React, { ComponentProps, FC, MouseEvent, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { EbayTriStateCheckbox, CheckboxState, TriStateCheckboxChangeHandler } from "../ebay-tri-state-checkbox";
 import type {
@@ -41,6 +41,8 @@ const EbayTable: FC<EbayTableProps> = ({
 }: EbayTableProps) => {
     const headers = filterByType(children, EbayTableHeader);
     const rows = filterByType(children, EbayTableRow);
+    const tableContainerRef = useRef<HTMLDivElement>(null);
+    const tbodyRef = useRef<HTMLTableSectionElement>(null);
     const [sortedState, setSortedState] = useState<Record<string, TableSort>>(() =>
         headers.reduce<Record<string, TableSort>>((acc, header, index) => {
             if (!header.props.sort) {
@@ -127,9 +129,73 @@ const EbayTable: FC<EbayTableProps> = ({
         });
     };
 
+    const scrollToFocusedElement = (el: HTMLElement) => {
+        if (!el || !tableContainerRef.current) {
+            return;
+        }
+
+        const scrollContainer = tableContainerRef.current;
+        const thead = scrollContainer.querySelector("thead") as HTMLElement;
+        
+        if (!thead) {
+            return;
+        }
+
+        // Get the height of the sticky header
+        const headerHeight = thead.offsetHeight;
+        
+        // Calculate element position relative to the scroll container
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const elementRect = el.getBoundingClientRect();
+        
+        const elementTop = elementRect.top - containerRect.top + scrollContainer.scrollTop;
+        const elementBottom = elementTop + el.offsetHeight;
+        
+        // Calculate visible area (accounting for sticky header)
+        const visibleTop = scrollContainer.scrollTop + headerHeight;
+        const visibleBottom = scrollContainer.scrollTop + scrollContainer.clientHeight;
+        
+        // Check if element is hidden behind the sticky header or below the visible area
+        if (elementTop < visibleTop) {
+            // Element is hidden behind header, scroll up
+            scrollContainer.scrollTop = elementTop - headerHeight;
+        } else if (elementBottom > visibleBottom) {
+            // Element is below visible area, scroll down
+            scrollContainer.scrollTop = elementBottom - scrollContainer.clientHeight;
+        }
+    };
+
+    useEffect(() => {
+        // Only add focus management for frozen header tables
+        if (!frozenHeader || !tableContainerRef.current || !tbodyRef.current) {
+            return;
+        }
+
+        const handleFocusIn = (event: FocusEvent) => {
+            const target = event.target as HTMLElement;
+            
+            // Check if the focused element is within the table body
+            if (tbodyRef.current && tbodyRef.current.contains(target)) {
+                // Small delay to allow focus to be fully established
+                requestAnimationFrame(() => {
+                    scrollToFocusedElement(target);
+                });
+            }
+        };
+
+        tableContainerRef.current.addEventListener("focusin", handleFocusIn);
+
+        return () => {
+            if (tableContainerRef.current) {
+                tableContainerRef.current.removeEventListener("focusin", handleFocusIn);
+            }
+        };
+    }, [frozenHeader]);
+
     return (
         <div
             {...rest}
+            ref={tableContainerRef}
             className={classNames("table", className, {
                 "table--mode-selection": mode === "selection",
                 "table--frozen-header": frozenHeader,
@@ -158,7 +224,7 @@ const EbayTable: FC<EbayTableProps> = ({
                         )}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody ref={tbodyRef}>
                     {rows.map((row, index) =>
                         React.cloneElement(row, {
                             mode,
