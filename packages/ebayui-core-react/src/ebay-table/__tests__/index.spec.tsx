@@ -19,6 +19,21 @@ const renderComponent = (props) =>
     );
 
 describe("<EbayTable />", () => {
+    it("should add focus management for frozen header tables", () => {
+        const { container } = renderComponent({ frozenHeader: true });
+        const tableContainer = container.querySelector('[role="group"]');
+        
+        expect(tableContainer).toHaveClass("table--frozen-header");
+        expect(tableContainer.querySelector("tbody")).toBeInTheDocument();
+    });
+
+    it("should not add frozen header class when frozenHeader is false", () => {
+        const { container } = renderComponent({ frozenHeader: false });
+        const tableContainer = container.querySelector('[role="group"]');
+        
+        expect(tableContainer).not.toHaveClass("table--frozen-header");
+    });
+
     it("should call onSelect with the event and { selected, allSelected } object when selecting a row", async () => {
         const onSelect = jest.fn();
         renderComponent({ mode: "selection", onSelect });
