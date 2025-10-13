@@ -102,7 +102,7 @@ describe("<EbaySelect>", () => {
                         Option 2 (Disabled)
                     </EbaySelectOption>
                     <EbaySelectOption value="3">Option 3</EbaySelectOption>
-                </EbaySelect>
+                </EbaySelect>,
             );
 
             const options = wrapper.container.querySelectorAll("option");
@@ -121,7 +121,7 @@ describe("<EbaySelect>", () => {
                     <EbaySelectOption value="3" disabled>
                         Option 3 (Disabled)
                     </EbaySelectOption>
-                </EbaySelect>
+                </EbaySelect>,
             );
 
             const options = wrapper.container.querySelectorAll("option");
@@ -146,7 +146,7 @@ describe("<EbaySelect>", () => {
                     <EbaySelectOption optgroup="Group 2" value="4">
                         Group 2 Option 2
                     </EbaySelectOption>
-                </EbaySelect>
+                </EbaySelect>,
             );
 
             const options = wrapper.container.querySelectorAll("option");
