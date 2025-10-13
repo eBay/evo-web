@@ -213,3 +213,23 @@ export const LargeSelect = () => (
         </EbaySelect>
     </>
 );
+
+export const DisabledOptions = {
+    render: () => (
+        <>
+            <EbaySelect name="formSelect" onChange={action("select-change")}>
+                <EbaySelectOption value="">Choose an option</EbaySelectOption>
+                <EbaySelectOption value="1">Available Option 1</EbaySelectOption>
+                <EbaySelectOption value="2" disabled>
+                    Disabled Option 2
+                </EbaySelectOption>
+                <EbaySelectOption value="3">Available Option 3</EbaySelectOption>
+                <EbaySelectOption value="4" disabled>
+                    Disabled Option 4
+                </EbaySelectOption>
+            </EbaySelect>
+        </>
+    ),
+
+    name: "Disabled options",
+};

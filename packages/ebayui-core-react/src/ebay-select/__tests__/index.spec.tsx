@@ -92,6 +92,71 @@ describe("<EbaySelect>", () => {
             expect(wrapper.getByRole("combobox")).toHaveValue("2");
         });
     });
+
+    describe("disabled options", () => {
+        it("should render disabled attribute on option element", () => {
+            const wrapper = render(
+                <EbaySelect name="test-select">
+                    <EbaySelectOption value="1">Option 1</EbaySelectOption>
+                    <EbaySelectOption value="2" disabled>
+                        Option 2 (Disabled)
+                    </EbaySelectOption>
+                    <EbaySelectOption value="3">Option 3</EbaySelectOption>
+                </EbaySelect>
+            );
+
+            const options = wrapper.container.querySelectorAll("option");
+            expect(options[0]).not.toHaveAttribute("disabled");
+            expect(options[1]).toHaveAttribute("disabled");
+            expect(options[2]).not.toHaveAttribute("disabled");
+        });
+
+        it("should render multiple disabled options correctly", () => {
+            const wrapper = render(
+                <EbaySelect name="test-select">
+                    <EbaySelectOption value="1" disabled>
+                        Option 1 (Disabled)
+                    </EbaySelectOption>
+                    <EbaySelectOption value="2">Option 2</EbaySelectOption>
+                    <EbaySelectOption value="3" disabled>
+                        Option 3 (Disabled)
+                    </EbaySelectOption>
+                </EbaySelect>
+            );
+
+            const options = wrapper.container.querySelectorAll("option");
+            expect(options[0]).toHaveAttribute("disabled");
+            expect(options[1]).not.toHaveAttribute("disabled");
+            expect(options[2]).toHaveAttribute("disabled");
+        });
+
+        it("should render disabled options correctly in grouped options", () => {
+            const wrapper = render(
+                <EbaySelect name="test-select">
+                    <EbaySelectOption value="ungrouped">Ungrouped Option</EbaySelectOption>
+                    <EbaySelectOption optgroup="Group 1" value="1">
+                        Group 1 Option 1
+                    </EbaySelectOption>
+                    <EbaySelectOption optgroup="Group 1" value="2" disabled>
+                        Group 1 Option 2 (Disabled)
+                    </EbaySelectOption>
+                    <EbaySelectOption optgroup="Group 2" value="3" disabled>
+                        Group 2 Option 1 (Disabled)
+                    </EbaySelectOption>
+                    <EbaySelectOption optgroup="Group 2" value="4">
+                        Group 2 Option 2
+                    </EbaySelectOption>
+                </EbaySelect>
+            );
+
+            const options = wrapper.container.querySelectorAll("option");
+            expect(options[0]).not.toHaveAttribute("disabled"); // ungrouped
+            expect(options[1]).not.toHaveAttribute("disabled"); // group 1 option 1
+            expect(options[2]).toHaveAttribute("disabled"); // group 1 option 2 (disabled)
+            expect(options[3]).toHaveAttribute("disabled"); // group 2 option 1 (disabled)
+            expect(options[4]).not.toHaveAttribute("disabled"); // group 2 option 2
+        });
+    });
 });
 
 function simulateSelectChange(wrapper, selectedValue, selectedIndex) {

@@ -121,7 +121,7 @@ function options(children) {
         optGroups = optionGroups(childrenOpts);
         let currentGroupName;
         childrenOpts.forEach((option, idx) => {
-            const { value, className: optionClassName, children: optionChildren, optgroup } = option.props;
+            const { value, className: optionClassName, children: optionChildren, optgroup, disabled } = option.props;
             withinGroup = optgroup && renderedGroups.indexOf(optgroup) === -1;
 
             if (withinGroup) {
@@ -133,6 +133,7 @@ function options(children) {
                         key={`opt-${groupOption.value}`}
                         value={groupOption.value}
                         className={groupOption.className}
+                        disabled={groupOption.disabled}
                     >
                         {groupOption.children}
                     </EbaySelectOption>
@@ -149,7 +150,7 @@ function options(children) {
                  * been added to the renderedGroups array. In that case it will be skipped.
                  */
                 allOptions.push(
-                    <EbaySelectOption key={idx} value={value} className={optionClassName}>
+                    <EbaySelectOption key={idx} value={value} className={optionClassName} disabled={disabled}>
                         {optionChildren}
                     </EbaySelectOption>,
                 );
