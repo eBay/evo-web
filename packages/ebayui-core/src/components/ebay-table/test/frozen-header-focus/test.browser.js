@@ -37,14 +37,16 @@ describe("ebay-table frozen header focus management", () => {
         expect(tbody).toBeDefined();
     });
 
-    it("should have the setupFocusManagement method called on mount", () => {
+    it("should have focus event handler attached via template", () => {
         // Verify the frozen header class is applied
         expect(tableContainer.classList.contains("table--frozen-header")).toBe(true);
         
         // Verify the component instance has the necessary properties
         const componentInstance = component.component;
-        expect(componentInstance.tableContainer).toBeDefined();
         expect(componentInstance.tbody).toBeDefined();
+        
+        // Verify handleFocusIn method exists
+        expect(typeof componentInstance.handleFocusIn).toBe('function');
     });
 
     it("should not add focus management for non-frozen header tables", async () => {

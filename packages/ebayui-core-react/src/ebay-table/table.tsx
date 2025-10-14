@@ -143,25 +143,16 @@ const EbayTable: FC<EbayTableProps> = ({
 
         // Get the height of the sticky header
         const headerHeight = thead.offsetHeight;
-        
-        // Calculate element position relative to the scroll container
-        const containerRect = scrollContainer.getBoundingClientRect();
-        const elementRect = el.getBoundingClientRect();
-        
-        const elementTop = elementRect.top - containerRect.top + scrollContainer.scrollTop;
-        const elementBottom = elementTop + el.offsetHeight;
-        
-        // Calculate visible area (accounting for sticky header)
-        const visibleTop = scrollContainer.scrollTop + headerHeight;
-        const visibleBottom = scrollContainer.scrollTop + scrollContainer.clientHeight;
-        
-        // Check if element is hidden behind the sticky header or below the visible area
-        if (elementTop < visibleTop) {
-            // Element is hidden behind header, scroll up
-            scrollContainer.scrollTop = elementTop - headerHeight;
-        } else if (elementBottom > visibleBottom) {
-            // Element is below visible area, scroll down
-            scrollContainer.scrollTop = elementBottom - scrollContainer.clientHeight;
+        const offsetBottom = el.offsetTop + el.offsetHeight;
+        const scrollBottom = scrollContainer.scrollTop + scrollContainer.offsetHeight;
+
+        // Element is above visible area or hidden behind sticky header
+        if (el.offsetTop < scrollContainer.scrollTop + headerHeight) {
+            scrollContainer.scrollTop = el.offsetTop - headerHeight;
+        }
+        // Element is below visible area
+        else if (offsetBottom > scrollBottom) {
+            scrollContainer.scrollTop = offsetBottom - scrollContainer.offsetHeight;
         }
     };
 

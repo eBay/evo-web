@@ -31,6 +31,7 @@ $ const isLoading = bodyState === "loading";
     ]
     role="group"
     tabindex="0"
+    on-focusin("handleFocusIn")
 >
     <table aria-hidden=isLoading && "true" inert=isLoading>
         <thead>
