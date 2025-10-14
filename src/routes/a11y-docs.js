@@ -1,10 +1,10 @@
-static const a11yDocsSources = import.meta.glob(
-    "../../src/docs/a11y/**/*.md"
+const a11yDocsSources = import.meta.glob(
+    "../docs/a11y/**/*.md"
 );
-static const a11yDocsFlat = Object.keys(a11yDocsSources);
+const a11yDocsFlat = Object.keys(a11yDocsSources);
 
 // Organize docs by folder structure
-static const a11yDocs = a11yDocsFlat.reduce((acc, filePath) => {
+const a11yDocs = a11yDocsFlat.reduce((acc, filePath) => {
     // Extract the relative path after "src/docs/a11y/"
     const relativePath = filePath.replace(/.*\/packages\/a11y\//, '');
     const pathParts = relativePath.split('/');
