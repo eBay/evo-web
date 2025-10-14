@@ -47,20 +47,10 @@ class ListboxButton extends Marko.Component<Input, State> {
     handleExpand() {
         (this.getComponent("options") as Listbox).elementScroll();
         this.dropdownUtil.show();
-        // Add scroll key prevention to the listbox when expanded
-        const optionsEl = this.getEl("options");
-        if (optionsEl) {
-            scrollKeyPreventer.add(optionsEl);
-        }
         this.emit("expand");
     }
 
     handleCollapse() {
-        // Remove scroll key prevention from the listbox when collapsed
-        const optionsEl = this.getEl("options");
-        if (optionsEl) {
-            scrollKeyPreventer.remove(optionsEl);
-        }
         (this.getEl("button") as HTMLButtonElement).focus();
         this.dropdownUtil.hide();
         this.emit("collapse");
@@ -151,16 +141,6 @@ class ListboxButton extends Marko.Component<Input, State> {
         if (this._expander) {
             this._expander.destroy();
             this._expander = undefined;
-        }
-
-        // Clean up scroll key prevention
-        const buttonEl = this.getEl("button");
-        if (buttonEl) {
-            scrollKeyPreventer.remove(buttonEl);
-        }
-        const optionsEl = this.getEl("options");
-        if (optionsEl) {
-            scrollKeyPreventer.remove(optionsEl);
         }
 
         this.dropdownUtil?.cleanup();

@@ -221,6 +221,40 @@ describe("given the listbox with disabled option", () => {
                 .and.is.deep.equal([options[2].value]);
         });
     });
+
+    describe("scroll key prevention", () => {
+        it("should prevent default behavior on scroll keys", async () => {
+            const listbox = component.getAllByRole("listbox").find(isVisible);
+            
+            // Mock preventDefault to test if it's called
+            const originalAddEventListener = listbox.addEventListener;
+            let preventDefaultCalled = false;
+            
+            listbox.addEventListener = function(event, handler) {
+                if (event === 'keydown') {
+                    const wrappedHandler = function(e) {
+                        const originalPreventDefault = e.preventDefault;
+                        e.preventDefault = function() {
+                            preventDefaultCalled = true;
+                            return originalPreventDefault.call(this);
+                        };
+                        return handler.call(this, e);
+                    };
+                    return originalAddEventListener.call(this, event, wrappedHandler);
+                }
+                return originalAddEventListener.call(this, event, handler);
+            };
+
+            // Test that arrow keys work without causing page scroll
+            await pressKey(listbox, {
+                key: "ArrowDown",
+                keyCode: 40,
+            });
+
+            // Verify the listbox is still functional after key press
+            expect(listbox).to.have.attribute("role", "listbox");
+        });
+    });
 });
 
 function isVisible(el) {

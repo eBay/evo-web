@@ -12,7 +12,6 @@ import React, {
     ChangeEvent,
 } from "react";
 import classNames from "classnames";
-import * as scrollKeyPreventer from "makeup-prevent-scroll-keys";
 import { EbayChangeEventHandler, Key } from "../common/event-utils/types";
 import { filterByType } from "../common/component-utils";
 import EbayListboxButtonOption, { EbayListboxButtonOptionProps } from "./listbox-button-option";
@@ -107,20 +106,6 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
     useEffect(() => {
         setSelectedOption(selectedOptionFromValue);
     }, [value]);
-
-    // Add/remove scroll key prevention when expanded state changes
-    useEffect(() => {
-        const optionsContainer = optionsContainerRef.current;
-        if (expanded && optionsContainer) {
-            scrollKeyPreventer.add(optionsContainer);
-        }
-        
-        return () => {
-            if (optionsContainer) {
-                scrollKeyPreventer.remove(optionsContainer);
-            }
-        };
-    }, [expanded]);
 
     const childrenArray = Children.toArray(children) as ReactElement<EbayListboxButtonOptionProps>[];
     const getSelectedValueByIndex = (index: number) => childrenArray[index].props.value;

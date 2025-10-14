@@ -1,5 +1,6 @@
 import React, { ChangeEvent, cloneElement, FC, KeyboardEvent, MouseEvent, useEffect } from "react";
 import { createLinear } from "makeup-active-descendant";
+import * as scrollKeyPreventer from "makeup-prevent-scroll-keys";
 import typeahead from "makeup-typeahead";
 import classNames from "classnames";
 import { ComponentProps, ReactNode, useRef, useState } from "react";
@@ -146,6 +147,9 @@ export const EbayListbox: FC<EbayListboxProps> = ({
                 },
             );
 
+            // Add scroll key prevention to the options container
+            scrollKeyPreventer.add(container);
+
             typeaheadRef.current = typeahead();
         }
 
@@ -167,6 +171,8 @@ export const EbayListbox: FC<EbayListboxProps> = ({
 
             if (containerRef.current) {
                 containerRef.current.removeEventListener("activeDescendantChange", handleListboxChange);
+                // Remove scroll key prevention
+                scrollKeyPreventer.remove(containerRef.current);
             }
         };
     }, [selectedIndex, disabled, listSelection]);
