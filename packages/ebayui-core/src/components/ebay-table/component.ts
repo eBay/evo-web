@@ -244,12 +244,8 @@ export default class EbayTable extends Marko.Component<Input, State> {
     }
 
     scrollToFocusedElement(el: HTMLElement) {
-        if (!el) {
-            return;
-        }
-
-        const scrollContainer = this.getEl();
-        const thead = scrollContainer.querySelector("thead") as HTMLElement;
+        const scrollContainer = this.el;
+        const thead = this.getEl("thead");
         
         if (!scrollContainer || !thead) {
             return;
