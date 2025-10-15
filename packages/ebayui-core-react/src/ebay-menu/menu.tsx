@@ -148,6 +148,7 @@ const EbayMenu: FC<EbayMenuProps> = ({
                         onClick: onItemClick = () => {},
                         onFocus: onItemFocus = () => {},
                         onKeyDown: onItemKeyDown = () => {},
+                        disabled,
                         ...itemRest
                     }: MenuItemProps = child.props;
 
@@ -163,13 +164,20 @@ const EbayMenu: FC<EbayMenuProps> = ({
                             onItemFocus(e);
                         },
                         onClick: (e) => {
+                            if (disabled) {
+                                e.stopPropagation();
+                                return;
+                            }
                             handleClick(e, i);
                             onItemClick(e);
                             onClick(e);
                         },
                         onKeyDown: (e) => {
-                            handleKeyDown(e, i);
+                            if (disabled) {
+                                return;
+                            }
                             onItemKeyDown(e);
+                            handleKeyDown(e, i);
                         },
                     } as MenuItemProps);
                 })}
