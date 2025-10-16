@@ -221,12 +221,6 @@ describe("given the listbox with disabled option", () => {
                 .and.is.deep.equal([options[2].value]);
         });
     });
-
-});
-    
-    // NOTE: Scroll key prevention testing is covered by integration tests
-    // since the makeup-prevent-scroll-keys library is well-tested and 
-    // browser testing environment has setup issues
 });
 
 function isVisible(el) {
