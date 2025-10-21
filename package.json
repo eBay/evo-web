@@ -188,7 +188,7 @@
     "typescript": "5",
     "typescript-eslint": "^8.44.1",
     "visual-html": "^2.1.8",
-    "vite": "^7.1.7",
+    "vite": "^7.1.11",
     "vite-plugin-cjs-interop": "^2.3.0",
     "vitest": "^3.2.4",
     "winston": "^3.17.0",
