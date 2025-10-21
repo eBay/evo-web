@@ -331,9 +331,10 @@ export const WithFixedStrategy = (args) => (
     </EbayMenuButton>
 );
 
-export const WithDisabledItem = () => (
+export const WithDisabledItem = (args) => (
     <>
         <EbayMenuButton
+            {...args}
             text="eBay Menu"
             onKeyDown={action("key down")}
             onClick={action("click button")}
