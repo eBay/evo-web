@@ -1,5 +1,5 @@
 $ const componentInfo = input.componentInfo || {};
-$ const currentTab = input.currentTab || "Overview";
+$ const currentTab = $global.url.pathname.split("/")[3] || "overview";
 $ const name = componentInfo.name;
 $ let dsComponent = componentInfo["ds-component"] || {};
 
@@ -10,19 +10,19 @@ $ const getAriaCurrentValue = (tabName) => {
     <div class="fake-tabs">
         <ul class="fake-tabs__items" role="tablist" aria-label="Component implementation tabs">
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/` role="tab" aria-current=getAriaCurrentValue("Overview")>Overview</a>
+                <a href=`/component/${name}/` role="tab" aria-current=getAriaCurrentValue("overview")>Overview</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/accessibility/` role="tab" aria-current=getAriaCurrentValue("A11y")>A11y</a>
+                <a href=`/component/${name}/accessibility/` role="tab" aria-current=getAriaCurrentValue("accessibility")>A11y</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/css/` role="tab" aria-current=getAriaCurrentValue("CSS")>CSS (${componentInfo["ds-component"].staticVersion})</a>
+                <a href=`/component/${name}/css/` role="tab" aria-current=getAriaCurrentValue("css")>CSS (${componentInfo["ds-component"].staticVersion})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/marko/` role="tab" aria-current=getAriaCurrentValue("Marko")>Marko (${componentInfo["ds-component"].markoVersion})</a>
+                <a href=`/component/${name}/marko/` role="tab" aria-current=getAriaCurrentValue("marko")>Marko (${componentInfo["ds-component"].markoVersion})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/react/` role="tab" aria-current=getAriaCurrentValue("React")>React (${componentInfo["ds-component"].reactVersion})</a>
+                <a href=`/component/${name}/react/` role="tab" aria-current=getAriaCurrentValue("react")>React (${componentInfo["ds-component"].reactVersion})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
                 <a href=`${dsComponent?.playbookURL || "https://playbook.ebay.com/design-system/components/"}` target="_blank">
