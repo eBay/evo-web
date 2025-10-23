@@ -1,7 +1,10 @@
-$ const componentInfo = input.componentInfo || {};
+import { getEnhancedComponentMetadata } from '../routes/component-utils.js';
+
+$ const componentName = input.componentName;
+$ const componentData = getEnhancedComponentMetadata(componentName) || {};
+$ const versions = componentData.versions || {};
+$ const designSystemUrl = componentData.primaryUrl;
 $ const currentTab = $global.url.pathname.split("/")[3] || "overview";
-$ const name = componentInfo.name;
-$ let dsComponent = componentInfo["ds-component"] || {};
 
 $ const getAriaCurrentValue = (tabName) => {
     return currentTab === tabName ? "page" : undefined;
@@ -10,23 +13,23 @@ $ const getAriaCurrentValue = (tabName) => {
     <div class="fake-tabs">
         <ul class="fake-tabs__items" role="tablist" aria-label="Component implementation tabs">
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/` role="tab" aria-current=getAriaCurrentValue("overview")>Overview</a>
+                <a href=`/component/${componentName}/` role="tab" aria-current=getAriaCurrentValue("overview")>Overview</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/accessibility/` role="tab" aria-current=getAriaCurrentValue("accessibility")>A11y</a>
+                <a href=`/component/${componentName}/accessibility/` role="tab" aria-current=getAriaCurrentValue("accessibility")>A11y</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/css/` role="tab" aria-current=getAriaCurrentValue("css")>CSS (${componentInfo["ds-component"].staticVersion})</a>
+                <a href=`/component/${componentName}/css/` role="tab" aria-current=getAriaCurrentValue("css")>CSS (${versions.cssVersion || 'N/A'})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/marko/` role="tab" aria-current=getAriaCurrentValue("marko")>Marko (${componentInfo["ds-component"].markoVersion})</a>
+                <a href=`/component/${componentName}/marko/` role="tab" aria-current=getAriaCurrentValue("marko")>Marko (${versions.markoVersion || 'N/A'})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${name}/react/` role="tab" aria-current=getAriaCurrentValue("react")>React (${componentInfo["ds-component"].reactVersion})</a>
+                <a href=`/component/${componentName}/react/` role="tab" aria-current=getAriaCurrentValue("react")>React (${versions.reactVersion || 'N/A'})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`${dsComponent?.playbookURL || "https://playbook.ebay.com/design-system/components/"}` target="_blank">
-                    Playbook
+                <a href=`${designSystemUrl || "https://playbook.ebay.com/design-system/components/"}` target="_blank">
+                    Design System
                     <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                         <use href="#icon-external-link-16" />
                     </svg>

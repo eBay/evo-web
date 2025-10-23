@@ -1,9 +1,9 @@
-import path from "path";
-import { componentTemplate } from "../../components/components.marko";
+import { getAllComponentNames, getEnhancedComponentMetadata } from "../component-utils.js";
+
 $ const metadata = {};
-$ for (let component in componentTemplate) {
-    const componentName = path.basename(path.dirname(component));
-    metadata[componentName] = componentTemplate[component].metadata;
+$ const componentNames = getAllComponentNames();
+$ for (let componentName of componentNames) {
+    metadata[componentName] = getEnhancedComponentMetadata(componentName);
 }
 <!doctype html>
 <html lang="en">
