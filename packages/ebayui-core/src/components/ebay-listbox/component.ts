@@ -170,10 +170,10 @@ class Listbox extends Marko.Component<Input, State> {
                     autoScroll: !this.isAutoSelection,
                 },
             );
-            
+
             // Add scroll key prevention to the options container
             scrollKeyPreventer.add(container);
-            
+
             const { getIndex: getTypeaheadIndex, destroy: destroyTypeahead } =
                 typeahead();
             this.getTypeaheadIndex = getTypeaheadIndex;
@@ -187,7 +187,7 @@ class Listbox extends Marko.Component<Input, State> {
             this._activeDescendant.destroy();
             this._activeDescendant = undefined;
         }
-        
+
         // Remove scroll key prevention
         const container = this.getEl("options");
         if (container) {

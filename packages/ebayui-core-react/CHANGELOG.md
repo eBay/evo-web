@@ -1,5 +1,17 @@
 # @ebay/ui-core-react
 
+## 8.15.0
+
+### Minor Changes
+
+- [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
+
+  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+
+### Patch Changes
+
+- [#321](https://github.com/eBay/evo-web/pull/321) [`0e3cb3b`](https://github.com/eBay/evo-web/commit/0e3cb3bb390e68956b255c6e929220718929cec4) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Fix ebay-listbox: Prevent page scroll when using arrow keys in expanded listbox
+
 ## 8.14.0
 
 ### Minor Changes

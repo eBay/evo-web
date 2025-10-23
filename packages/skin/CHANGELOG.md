@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.15.0
+
+### Minor Changes
+
+- [#325](https://github.com/eBay/evo-web/pull/325) [`7bf11ad`](https://github.com/eBay/evo-web/commit/7bf11ad21e6277493ea5c10a0b502143f5c1d070) Thanks [@ArtBlue](https://github.com/ArtBlue)! - chore(tokens): moved non-color tokens into core
+
 ## 19.14.3
 
 ### Patch Changes
