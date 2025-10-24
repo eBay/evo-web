@@ -1,53 +1,32 @@
+@import "@ebay/design-tokens/dist/css/evo-dark.css" (prefers-color-scheme: dark);
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background-primary: var(--color-neutral-900);
-        --color-background-secondary: var(--color-neutral-800);
-        --color-background-tertiary: var(--color-neutral-700);
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
-        --color-background-disabled: var(--color-neutral-600);
-        --color-background-inverse: var(--color-neutral-300);
-        --color-background-attention: var(--color-red-400);
-        --color-background-confirmation: var(--color-kiwi-500);
+        --color-background-confirmation: var(--color-background-success);
         --color-background-information: var(--color-blue-500);
-        --color-background-education: var(--color-indigo-800);
-        --color-background-accent: var(--color-blue-400);
         --color-background-invalid: var(--color-red-200);
-        --color-background-elevated: var(--color-neutral-800);
-        --color-background-strong: var(--color-neutral-200);
         --color-background-strong-rgb: var(--color-neutral-200-rgb);
-        --color-foreground-primary: var(--color-neutral-200);
-        --color-foreground-secondary: var(--color-neutral-500);
-        --color-foreground-disabled: var(--color-neutral-500);
-        --color-foreground-attention: var(--color-red-400);
         --color-foreground-confirmation: var(--color-kiwi-500);
         --color-foreground-information: var(--color-blue-400);
-        --color-foreground-accent: var(--color-blue-400);
-        --color-foreground-visited: var(--color-pink-500);
+        --color-foreground-visited: var(--color-foreground-link-visited);
         --color-foreground-on-primary: var(--color-neutral-200);
         --color-foreground-on-secondary: var(--color-neutral-200);
-        --color-foreground-on-disabled: var(--color-neutral-600);
-        --color-foreground-on-inverse: var(--color-neutral-800);
-        --color-foreground-on-accent: var(--color-neutral-800);
-        --color-foreground-on-attention: var(--color-neutral-800);
-        --color-foreground-on-confirmation: var(--color-neutral-800);
-        --color-foreground-on-information: var(--color-neutral-800);
-        --color-foreground-on-strong: var(--color-neutral-800);
-        --color-foreground-link-visited: var(--color-pink-400);
-        --color-foreground-link-legal: var(--color-blue-400);
-        --color-foreground-link-primary: var(--color-foreground-primary);
-        --color-stroke-default: var(--color-neutral-600);
-        --color-stroke-accent: var(--color-blue-400);
-        --color-stroke-on-accent: var(--color-neutral-800);
-        --color-stroke-attention: var(--color-red-400);
-        --color-stroke-on-attention: var(--color-neutral-800);
-        --color-stroke-confirmation: var(--color-kiwi-600);
-        --color-stroke-on-confirmation: var(--color-neutral-800);
-        --color-stroke-information: var(--color-blue-400);
-        --color-stroke-disabled: var(--color-neutral-500);
-        --color-stroke-on-disabled: var(--color-neutral-800);
-        --color-stroke-strong: var(--color-neutral-100);
-        --color-stroke-subtle: var(--color-neutral-600);
-        --color-stroke-inverse: var(--color-neutral-800);
+        --color-foreground-on-confirmation: var(--color-foreground-on-success);
+        --color-foreground-on-information: var(--color-foreground-on-success);
+        --color-stroke-default: var(--color-border-medium);
+        --color-stroke-accent: var(--color-border-accent);
+        --color-stroke-on-accent: var(--color-border-on-accent);
+        --color-stroke-attention: var(--color-border-attention);
+        --color-stroke-on-attention: var(--color-border-on-attention);
+        --color-stroke-confirmation: var(--color-border-success);
+        --color-stroke-on-confirmation: var(--color-border-on-success);
+        --color-stroke-information: var(--color-border-accent);
+        --color-stroke-disabled: var(--color-border-disabled);
+        --color-stroke-on-disabled: var(--color-border-on-disabled);
+        --color-stroke-strong: var(--color-border-strong);
+        --color-stroke-subtle: var(--color-border-subtle);
+        --color-stroke-inverse: var(--color-border-on-inverse);
         --color-state-visited: var(--color-magenta-3);
         --color-state-primary-hover: #17212c;
         --color-state-primary-active: #1e2a38;
@@ -88,23 +67,16 @@
         --color-data-viz-tooltip-shadow-primary: #ffffff26;
         --color-data-viz-tooltip-shadow-secondary: #ffffff2b;
         --color-scrim-image: rgba(255, 255, 255, 0.12);
-        --color-scrim-background: rgba(0, 0, 0, 0.64);
         --state-layer-neutral: rgb(var(--color-neutral-100-rgb), 0);
         --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
-        --state-layer-focus: rgb(
-            var(--color-neutral-100-rgb),
-            var(--opacity-50)
-        );
-        --state-layer-hover: rgb(
-            var(--color-neutral-100-rgb),
-            var(--opacity-50)
-        );
-        --state-layer-pressed: rgb(
-            var(--color-neutral-100-rgb),
+        --state-layer-focus-on-strong: rgb(
+            var(--color-neutral-900-rgb),
             var(--opacity-100)
         );
-        --state-layer-focus-on-strong: rgb(var(--color-neutral-900-rgb), var(--opacity-100));
-        --state-layer-hover-on-strong: rgb(var(--color-neutral-900-rgb), var(--opacity-100));
+        --state-layer-hover-on-strong: rgb(
+            var(--color-neutral-900-rgb),
+            var(--opacity-100)
+        );
         --state-layer-pressed-on-strong: rgb(
             var(--color-neutral-900-rgb),
             var(--opacity-150)
@@ -113,58 +85,24 @@
             var(--color-neutral-100-rgb),
             var(--opacity-150)
         );
-        --color-ai-solid-green-subtle: #112611;
-        --color-ai-solid-blue-subtle: #112c31;
-        --color-ai-solid-purple-subtle: #20172f;
-        --color-ai-solid-red-subtle: #321919;
-        --color-ai-gradient-full-spectrum: linear-gradient(
-            223deg,
-            var(--color-ai-solid-yellow-strong) 9.79%,
-            var(--color-ai-solid-red-strong) 26.69%,
-            var(--color-ai-solid-purple-strong) 41.82%,
-            var(--color-ai-solid-blue-strong) 56.17%,
-            var(--color-ai-solid-green-strong) 78.48%
+        --color-ai-gradient-full-spectrum: var(
+            --color-gradient-ai-full-color-diagonal
         );
-        --color-ai-gradient-green-strong: linear-gradient(
-            270deg,
-            var(--color-ai-solid-green-strong) 0%,
-            #44cf63 25%,
-            var(--color-ai-solid-blue-strong) 100%
+        --color-ai-gradient-green-strong: var(--color-gradient-ai-green-strong);
+        --color-ai-gradient-blue-strong: var(--color-gradient-ai-blue-strong);
+        --color-ai-gradient-purple-strong: var(
+            --color-gradient-ai-purple-strong
         );
-        --color-ai-gradient-blue-strong: linear-gradient(
-            270deg,
-            var(--color-ai-solid-green-strong) 0%,
-            var(--color-ai-solid-blue-strong) 55.62%,
-            #5751ea 75.7%,
-            var(--color-ai-solid-purple-strong) 100%
+        --color-ai-gradient-purple-subtle: var(
+            --color-gradient-ai-purple-subtle
         );
-        --color-ai-gradient-purple-strong: linear-gradient(
-            270deg,
-            var(--color-ai-solid-purple-strong) 0%,
-            var(--color-ai-solid-red-strong) 100%
-        );
-        --color-ai-gradient-purple-subtle: linear-gradient(
-            270deg,
-            var(--color-ai-solid-purple-subtle) 0%,
-            var(--color-ai-solid-red-subtle) 100%
-        );
-        --color-ai-gradient-blue-subtle: linear-gradient(
-            270deg,
-            var(--color-ai-solid-green-subtle) -36%,
-            var(--color-ai-solid-blue-subtle) 38.5%,
-            var(--color-ai-solid-purple-subtle) 113%
-        );
-        --color-ai-gradient-green-subtle: linear-gradient(
-            270deg,
-            var(--color-ai-solid-green-subtle) 0%,
-            var(--color-ai-solid-blue-subtle) 154.5%
-        );
+        --color-ai-gradient-blue-subtle: var(--color-gradient-ai-blue-subtle);
+        --color-ai-gradient-green-subtle: var(--color-gradient-ai-green-subtle);
         --color-loading-overlay: var(--color-neutral-900-rgb), 0.7;
         --color-loading-first: var(--color-neutral-800);
         --color-loading-second: var(--color-neutral-700);
         --color-loading-on-secondary-first: var(--color-neutral-700);
         --color-loading-on-secondary-second: var(--color-neutral-600);
-        --color-loading-fill: #2d2d2d;
         /* Deprecated */
         --color-loading-shimmer: linear-gradient(
             270deg,
@@ -174,8 +112,6 @@
             var(--color-loading-fill) 66%,
             var(--color-loading-fill) 100%
         );
-        /* Deprecated */
-        --color-loading-fill-on-secondary: #353535;
         /* Deprecated */
         --color-loading-shimmer-on-secondary: linear-gradient(
             270deg,

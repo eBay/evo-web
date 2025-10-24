@@ -1,52 +1,152 @@
+.evo-light,
 :root {
-    --color-background-primary: var(--color-neutral-100);
-    --color-background-secondary: var(--color-neutral-200);
-    --color-background-tertiary: var(--color-neutral-300);
+    --color-ai-solid-blue-strong: #0968f6;
+    --color-ai-solid-blue-subtle: #f0f6fe;
+    --color-ai-solid-green-strong: #4ee04b;
+    --color-ai-solid-green-subtle: #f1fdf1;
+    --color-ai-solid-purple-strong: #993ee0;
+    --color-ai-solid-purple-subtle: #f9f3fd;
+    --color-ai-solid-red-strong: #ff4242;
+    --color-ai-solid-red-subtle: #fff4f4;
+    --color-ai-solid-yellow-strong: #ffd80e;
+    --color-background-accent: var(--color-core-blue-500);
+    --color-background-attention: var(--color-core-red-600);
+    --color-background-disabled: var(--color-core-neutral-400);
+    --color-background-education: var(--color-core-blue-100);
+    --color-background-elevated: var(--color-core-neutral-100);
+    --color-background-inverse: var(--color-core-neutral-700);
+    --color-background-on-image: rgba(255, 255, 255, 0.9);
+    --color-background-on-secondary: var(--color-core-neutral-100);
+    --color-background-primary: var(--color-core-neutral-100);
+    --color-background-secondary-on-elevated: var(--color-core-neutral-200);
+    --color-background-secondary: var(--color-core-neutral-200);
+    --color-background-strong: var(--color-core-neutral-800);
+    --color-background-success: var(--color-core-kiwi-600);
+    --color-background-tertiary: var(--color-core-neutral-300);
+    --color-background-transparent: var(--color-core-clear);
+    --color-border-accent: var(--color-core-blue-500);
+    --color-border-attention: var(--color-core-red-600);
+    --color-border-disabled: var(--color-core-neutral-400);
+    --color-border-medium: var(--color-core-neutral-500);
+    --color-border-on-accent: var(--color-core-neutral-100);
+    --color-border-on-attention: var(--color-core-neutral-100);
+    --color-border-on-disabled: var(--color-core-neutral-100);
+    --color-border-on-inverse: var(--color-core-neutral-100);
+    --color-border-on-success: var(--color-core-neutral-100);
+    --color-border-strong: var(--color-core-neutral-700);
+    --color-border-subtle: var(--color-core-neutral-300);
+    --color-border-success: var(--color-core-kiwi-600);
+    --color-brand-1: var(--color-core-red-500);
+    --color-brand-2: var(--color-core-blue-500);
+    --color-brand-3: var(--color-core-yellow-400);
+    --color-brand-4: var(--color-core-green-500);
+    --color-foreground-accent: var(--color-core-blue-500);
+    --color-foreground-attention: var(--color-core-red-600);
+    --color-foreground-disabled: var(--color-core-neutral-400);
+    --color-foreground-link-legal: var(--color-core-blue-650);
+    --color-foreground-link-primary: var(--color-foreground-primary);
+    --color-foreground-link-visited: var(--color-core-pink-600);
+    --color-foreground-on-accent: var(--color-core-neutral-100);
+    --color-foreground-on-attention: var(--color-core-neutral-100);
+    --color-foreground-on-disabled: var(--color-core-neutral-100);
+    --color-foreground-on-inverse: var(--color-core-neutral-100);
+    --color-foreground-on-strong: var(--color-core-neutral-100);
+    --color-foreground-on-success: var(--color-core-neutral-100);
+    --color-foreground-primary: var(--color-core-neutral-800);
+    --color-foreground-secondary: var(--color-core-neutral-600);
+    --color-foreground-success: var(--color-core-kiwi-600);
+    --color-gradient-ai-blue-strong: linear-gradient(
+        var(--color-ai-solid-purple-strong),
+        var(--color-ai-solid-blue-strong) 50%,
+        var(--color-ai-solid-green-strong) 100%
+    );
+    --color-gradient-ai-blue-subtle: linear-gradient(
+        var(--color-ai-solid-purple-subtle),
+        var(--color-ai-solid-blue-subtle) 50%,
+        var(--color-ai-solid-green-subtle) 100%
+    );
+    --color-gradient-ai-full-color-diagonal: linear-gradient(
+        var(--color-ai-solid-green-strong) 10%,
+        var(--color-ai-solid-blue-strong) 27%,
+        var(--color-ai-solid-purple-strong) 42%,
+        var(--color-ai-solid-red-strong) 56%,
+        var(--color-ai-solid-yellow-strong) 78%
+    );
+    --color-gradient-ai-green-strong: linear-gradient(
+        var(--color-ai-solid-blue-strong),
+        var(--color-ai-solid-green-strong) 100%
+    );
+    --color-gradient-ai-green-subtle: linear-gradient(
+        var(--color-ai-solid-blue-subtle),
+        var(--color-ai-solid-green-subtle) 100%
+    );
+    --color-gradient-ai-purple-strong: linear-gradient(
+        var(--color-ai-solid-red-strong),
+        var(--color-ai-solid-purple-strong) 100%
+    );
+    --color-gradient-ai-purple-subtle: linear-gradient(
+        var(--color-ai-solid-red-subtle),
+        var(--color-ai-solid-purple-subtle) 100%
+    );
+    --color-gradient-image-scrim: linear-gradient(
+        rgba(248, 248, 248, 0) 52%,
+        rgba(248, 248, 248, 0.03)
+    );
+    --color-gradient-loading-shimmer-on-secondary: linear-gradient(
+        rgba(237, 237, 237, 0),
+        rgba(237, 237, 237, 0.6) 25%,
+        rgba(237, 237, 237, 0.85) 37%,
+        rgba(237, 237, 237, 0.95) 48%,
+        rgba(237, 237, 237, 0.95) 51%,
+        rgba(237, 237, 237, 0.85) 61%,
+        rgba(237, 237, 237, 0.6) 74%,
+        rgba(237, 237, 237, 0)
+    );
+    --color-gradient-loading-shimmer: linear-gradient(
+        rgba(248, 248, 248, 0),
+        rgba(248, 248, 248, 0.6) 25%,
+        rgba(248, 248, 248, 0.85) 37%,
+        rgba(248, 248, 248, 0.95) 48%,
+        rgba(248, 248, 248, 0.95) 51%,
+        rgba(248, 248, 248, 0.85) 61%,
+        rgba(248, 248, 248, 0.6) 74%,
+        rgba(248, 248, 248, 0)
+    );
+    --color-loading-fill-on-secondary: #e4e4e4;
+    --color-loading-fill: #ededed;
+    --color-scrim-background: rgba(0, 0, 0, 0.3);
+    --color-state-layer-focus: rgba(0, 0, 0, 0.04);
+    --color-state-layer-hover: rgba(0, 0, 0, 0.08);
+    --color-state-layer-pressed: rgba(0, 0, 0, 0.08);
+    --color-state-layer-selected: rgba(0, 0, 0, 0.08);
+}
+
+:root {
     --color-background-faint: rgba(var(--color-neutral-900-rgb), 0.05);
-    --color-background-disabled: var(--color-neutral-400);
-    --color-background-inverse: var(--color-neutral-700);
-    --color-background-attention: var(--color-red-600);
-    --color-background-confirmation: var(--color-kiwi-600);
+    --color-background-confirmation: var(--color-background-success);
     --color-background-information: var(--color-blue-500);
-    --color-background-education: var(--color-blue-100);
-    --color-background-accent: var(--color-blue-500);
     --color-background-invalid: var(--color-red-200);
-    --color-background-elevated: var(--color-neutral-100);
-    --color-background-strong: var(--color-neutral-800);
     --color-background-strong-rgb: var(--color-neutral-800-rgb);
-    --color-foreground-primary: var(--color-neutral-800);
-    --color-foreground-secondary: var(--color-neutral-600);
-    --color-foreground-disabled: var(--color-neutral-400);
-    --color-foreground-attention: var(--color-red-600);
     --color-foreground-confirmation: var(--color-kiwi-600);
     --color-foreground-information: var(--color-blue-500);
-    --color-foreground-accent: var(--color-blue-500);
-    --color-foreground-visited: var(--color-pink-600);
+    --color-foreground-visited: var(--color-foreground-link-visited);
     --color-foreground-on-primary: var(--color-neutral-800);
     --color-foreground-on-secondary: var(--color-neutral-800);
-    --color-foreground-on-disabled: var(--color-neutral-300);
-    --color-foreground-on-inverse: var(--color-neutral-100);
-    --color-foreground-on-accent: var(--color-neutral-100);
-    --color-foreground-on-attention: var(--color-neutral-100);
-    --color-foreground-on-confirmation: var(--color-neutral-100);
-    --color-foreground-on-information: var(--color-neutral-100);
-    --color-foreground-on-strong: var(--color-neutral-100);
-    --color-foreground-link-visited: var(--color-pink-600);
-    --color-foreground-link-legal: var(--color-blue-650);
-    --color-foreground-link-primary: var(--color-foreground-primary);
-    --color-stroke-default: var(--color-neutral-500);
-    --color-stroke-accent: var(--color-blue-500);
-    --color-stroke-on-accent: var(--color-neutral-100);
-    --color-stroke-attention: var(--color-red-600);
-    --color-stroke-on-attention: var(--color-neutral-100);
-    --color-stroke-confirmation: var(--color-kiwi-600);
-    --color-stroke-on-confirmation: var(--color-neutral-100);
-    --color-stroke-information: var(--color-blue-500);
-    --color-stroke-disabled: var(--color-neutral-400);
-    --color-stroke-on-disabled: var(--color-neutral-100);
-    --color-stroke-strong: var(--color-neutral-800);
-    --color-stroke-inverse: var(--color-neutral-100);
-    --color-stroke-subtle: var(--color-neutral-300);
+    --color-foreground-on-confirmation: var(--color-foreground-on-success);
+    --color-foreground-on-information: var(--color-foreground-on-success);
+    --color-stroke-default: var(--color-border-medium);
+    --color-stroke-accent: var(--color-border-accent);
+    --color-stroke-on-accent: var(--color-border-on-accent);
+    --color-stroke-attention: var(--color-border-attention);
+    --color-stroke-on-attention: var(--color-border-on-attention);
+    --color-stroke-confirmation: var(--color-border-success);
+    --color-stroke-on-confirmation: var(--color-border-on-success);
+    --color-stroke-information: var(--color-border-accent);
+    --color-stroke-disabled: var(--color-border-disabled);
+    --color-stroke-on-disabled: var(--color-border-on-disabled);
+    --color-stroke-strong: var(--color-border-strong);
+    --color-stroke-subtle: var(--color-border-subtle);
+    --color-stroke-inverse: var(--color-border-on-inverse);
     --color-state-visited: var(--color-pink-600);
     --color-state-focus-stroke: #005fcc;
     --color-state-primary-hover: #f5f5f5;
@@ -88,7 +188,6 @@
     --color-data-viz-tooltip-shadow-primary: #00000026;
     --color-data-viz-tooltip-shadow-secondary: #0000002b;
     --color-scrim-image: rgba(0, 0, 0, 0.04);
-    --color-scrim-background: rgba(0, 0, 0, 0.32);
     --color-marketing-lime-foreground-4: var(--color-green-700);
     --color-marketing-lime-background-4: var(--color-avocado-500);
     --color-marketing-green-foreground-3: var(--color-kiwi-700);
@@ -105,70 +204,33 @@
     --color-marketing-magenta-background-4: var(--color-pink-400);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-100-rgb), 0);
-    --state-layer-focus: rgb(var(--color-neutral-900-rgb), var(--opacity-50));
-    --state-layer-hover: rgb(var(--color-neutral-900-rgb), var(--opacity-50));
-    --state-layer-pressed: rgb(
-        var(--color-neutral-900-rgb),
-        var(--opacity-100)
+    --state-layer-focus-on-strong: rgb(
+        var(--color-neutral-100-rgb),
+        var(--opacity-150)
     );
-    --state-layer-focus-on-strong: rgb(var(--color-neutral-100-rgb), var(--opacity-150));
-    --state-layer-hover-on-strong: rgb(var(--color-neutral-100-rgb), var(--opacity-150));
+    --state-layer-hover-on-strong: rgb(
+        var(--color-neutral-100-rgb),
+        var(--opacity-150)
+    );
     --state-layer-pressed-on-strong: rgb(
         var(--color-neutral-100-rgb),
         var(--opacity-200)
     );
-
     --state-layer-drag: rgb(var(--color-neutral-900-rgb), var(--opacity-150));
-    --color-ai-gradient-full-spectrum: linear-gradient(
-        223deg,
-        var(--color-ai-solid-yellow-strong) 9.79%,
-        var(--color-ai-solid-red-strong) 26.69%,
-        var(--color-ai-solid-purple-strong) 41.82%,
-        var(--color-ai-solid-blue-strong) 56.17%,
-        var(--color-ai-solid-green-strong) 78.48%
+    --color-ai-gradient-full-spectrum: var(
+        --color-gradient-ai-full-color-diagonal
     );
-    --color-ai-gradient-green-strong: linear-gradient(
-        270deg,
-        var(--color-ai-solid-green-strong) 0%,
-        #44cf63 25%,
-        var(--color-ai-solid-blue-strong) 100%
-    );
-    --color-ai-gradient-blue-strong: linear-gradient(
-        270deg,
-        var(--color-ai-solid-green-strong) 0%,
-        var(--color-ai-solid-blue-strong) 55.62%,
-        #5751ea 75.7%,
-        var(--color-ai-solid-purple-strong) 100%
-    );
-    --color-ai-gradient-purple-strong: linear-gradient(
-        270deg,
-        var(--color-ai-solid-purple-strong) 0%,
-        var(--color-ai-solid-red-strong) 100%
-    );
-    --color-ai-gradient-purple-subtle: linear-gradient(
-        270deg,
-        var(--color-ai-solid-purple-subtle) 0%,
-        var(--color-ai-solid-red-subtle) 100%
-    );
-    --color-ai-gradient-blue-subtle: linear-gradient(
-        270deg,
-        var(--color-ai-solid-green-subtle) -36%,
-        var(--color-ai-solid-blue-subtle) 38.5%,
-        var(--color-ai-solid-purple-subtle) 113%
-    );
-    --color-ai-gradient-green-subtle: linear-gradient(
-        270deg,
-        var(--color-ai-solid-green-subtle) 0%,
-        var(--color-ai-solid-blue-subtle) 154.5%
-    );
+    --color-ai-gradient-green-strong: var(--color-gradient-ai-green-strong);
+    --color-ai-gradient-blue-strong: var(--color-gradient-ai-blue-strong);
+    --color-ai-gradient-purple-strong: var(--color-gradient-ai-purple-strong);
+    --color-ai-gradient-purple-subtle: var(--color-gradient-ai-purple-subtle);
+    --color-ai-gradient-blue-subtle: var(--color-gradient-ai-blue-subtle);
+    --color-ai-gradient-green-subtle: var(--color-gradient-ai-green-subtle);
     --color-loading-overlay: var(--color-neutral-100-rgb), 0.7;
     --color-loading-first: var(--color-neutral-200);
     --color-loading-second: var(--color-neutral-300);
     --color-loading-on-secondary-first: var(--color-neutral-300);
     --color-loading-on-secondary-second: var(--color-neutral-400);
-    /* Deprecated */
-    --color-loading-fill: #ededed;
-    /* Deprecated */
     --color-loading-shimmer: linear-gradient(
         270deg,
         var(--color-loading-fill) 0%,
@@ -177,9 +239,6 @@
         var(--color-loading-fill) 66%,
         var(--color-loading-fill) 100%
     );
-    /* Deprecated */
-    --color-loading-fill-on-secondary: #e4e4e4;
-    /* Deprecated */
     --color-loading-shimmer-on-secondary: linear-gradient(
         270deg,
         var(--color-loading-fill-on-secondary) 0%,
