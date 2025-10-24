@@ -47,6 +47,22 @@ export default {
             control: { type: "boolean" },
             description: "True/False to mute or unmute video. Default is false",
         },
+        layout: {
+            type: "string",
+            description:
+                'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remianing time on the videois displayed',
+            control: { type: "text" },
+        },
+        autoPlay: {
+            type: "boolean",
+            description:
+                "True/False to autoplay the video when loaded. Default is false",
+        },
+        loop: {
+            type: "boolean",
+            description:
+                "True/False to loop the video when it ends. Default is false",
+        },
         playView: {
             description:
                 'Either "inline", or "fullscreen". When player strats to play, will either play "inline" (default) or switch to "fullscreen"',
@@ -101,7 +117,14 @@ export default {
                 "The Shaka player [configuration object](https://shaka-player-demo.appspot.com/docs/api/tutorial-config.html). This allows users to control Shaka player.",
             control: { type: "object" },
         },
-
+        nav: {
+            name: "@nav",
+            table: {
+                category: "@attribute tags",
+            },
+            description:
+                "An optional object to turn the video into a link. Accepts `href` and `target` properties.",
+        },
         source: {
             name: "@source",
             table: {
@@ -250,6 +273,30 @@ Default.parameters = {
     },
 };
 
+export const NavEnabled = Template.bind({});
+NavEnabled.storyName = "Navigation Enabled Video";
+NavEnabled.args = {
+    width: "700",
+    height: "400",
+    nav: {
+        href: "https://www.ebay.com",
+        target: "_blank"
+    } as any,
+    source: [
+        {
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+NavEnabled.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", NavEnabled.args),
+        },
+    },
+};
+
 export const ios = Template.bind({});
 ios.storyName = "ios";
 ios.args = {
@@ -297,6 +344,147 @@ mp4.parameters = {
     docs: {
         source: {
             code: tagToString("ebay-video", mp4.args),
+        },
+    },
+};
+
+export const pauseWhenVideoIsOffscreen = Template.bind({});
+pauseWhenVideoIsOffscreen.storyName = "Auto-play/pause on Viewport Visibility";
+pauseWhenVideoIsOffscreen.args = {
+    width: "700",
+    height: "400",
+    nav: {
+        href: "https://www.ebay.com",
+        target: "_blank"
+    } as any,
+    pause_when_offscreen: true,
+    source: [
+        {
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
+            type: "dash",
+        },
+    ] as any
+        
+};
+pauseWhenVideoIsOffscreen.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", pauseWhenVideoIsOffscreen.args),
+        },
+        description: {
+            story: "The video player automatically plays the video when it is 50% visible in the viewport and pauses when it is less than 50% visible. This provides a better user experience by only playing videos when they are actually visible to the user. To test this feature, scroll the page so that the video is partially visible or not visible at all."
+        }
+    },
+};
+
+export const compactLayout = Template.bind({});
+compactLayout.storyName = "Compact Layout";
+compactLayout.args = {
+    width: "700",
+    height: "400",
+    nav: {
+        href: "https://www.ebay.com",
+        target: "_blank"
+    } as any,
+    layout: "compact" as any, // Using 'as any' to maintain backward compatibility
+    autoplay: true,
+    loop: true,
+    // videoTarget property is not defined in the Input type
+    // Using type assertion to maintain backward compatibility
+    thumbnail: "https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp",
+         
+    muted: true,
+    "a11y-load-text": "This video is loading now",
+    "a11y-play-text": "Click to start this video",
+    "a11y-mute-text": "Click to mute this video",
+    "a11y-unmute-text": "Click to unmute this video",
+    "error-text": "Sorry, this video cannot be played at this time.",
+
+    source: [
+        {
+            src: "https://videoservices.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+compactLayout.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video-ad", compactLayout.args),
+        },
+        description: {
+            story: "This example demonstrates how to customize the video player controls using the new configurable videoConfig fields."
+        }
+    },
+};
+
+
+export const videoError = Template.bind({});
+videoError.storyName = "Compact layout with video load error";
+videoError.args = {
+    width: "700",
+    height: "400",
+    layout: "compact",
+    autoplay: true,
+    loop: true,
+    thumbnail: "https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp",
+    muted: true,
+    "a11y-load-text": "This video is loading now",
+    "a11y-play-text": "Click to start this video",
+    "a11y-mute-text": "Click to mute this video",
+    "a11y-unmute-text": "Click to unmute this video",
+    "error-text": "Sorry, this video cannot be played at this time.",
+
+    source: [
+        {
+            src: "https://videoservices1.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+videoError.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", videoError.args),
+        },
+        description: {
+            story: "This example demonstrates how to customize the video player controls using the new configurable videoConfig fields."
+        }
+    },
+};
+
+
+export const compactLayoutSmallContainer = Template.bind({});
+compactLayoutSmallContainer.args = {
+    width: "300",
+    height: "300",
+    layout: "compact",
+    autoplay: true,
+    loop: true,
+    nav: {
+        href: "https://www.ebay.com",
+        target: "_blank"
+    } as any,
+    thumbnail: "https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp",
+         
+    muted: true,
+    "a11y-load-text": "This video is loading now",
+    "a11y-play-text": "Click to start this video",
+    "a11y-mute-text": "Click to mute this video",
+    "a11y-unmute-text": "Click to unmute this video",
+    "error-text": "Sorry, this video cannot be played at this time.",
+
+    source: [
+        {
+            src: "https://videoservices.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+compactLayoutSmallContainer.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", compactLayoutSmallContainer.args),
         },
     },
 };

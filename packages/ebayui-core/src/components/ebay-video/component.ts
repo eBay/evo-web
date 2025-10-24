@@ -29,9 +29,7 @@ const eventList = [
     "waiting",
 ];
 
-const videoConfig = {
-    addSeekBar: true,
-    controlPanelElements: [
+const defaultControlPanelElements = [
         "play_pause",
         "current_time",
         "spacer",
@@ -39,13 +37,29 @@ const videoConfig = {
         "captions",
         "mute_popover",
         "report",
-        "fullscreen_button",
-    ],
+        "fullscreen_button"
+];
+
+const compactLayoutControlPanelElements = [
+    "remaining_time",
+    "mute_popover",
+    "play_pause"
+];
+
+
+let videoConfig = {
+    doubleClickForFullscreen: true,
+    singleClickForPlayAndPause: true,
+    addBigPlayButton: false,
+    addSeekBar: true,
+    controlPanelElements: defaultControlPanelElements
 };
 
 export interface PlayPauseEvent {
     originalEvent: Event;
     player: any;
+    isAutoPlay?: boolean;
+    isAutoPause?: boolean;
 }
 
 export interface VolumeEvent {
@@ -61,6 +75,25 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     "volume-slider"?: boolean;
     clip?: any[];
     source: Marko.AttrTag<Marko.HTML.Source>;
+    /**
+     * Whether to show the default layout or compact layout
+     * @default default
+     */
+    layout?: "default" | "compact";
+     /**
+     * The url target to open when video is clicked in ad layout
+     * @default undefined
+     */
+    /**
+     * The navigation link for the video
+     * @example <@nav href="www.ebay.com" target="_blank"/>
+     */
+    nav?: Marko.AttrTag<Marko.HTML.A>,
+    /**
+     * Whether to pause the video when it is less than 50% visible in the viewport
+     * @default false
+     */
+    pause_when_offscreen?: boolean,
     /**
      * @deprecated Use `a11y-report-text` instead
      */
@@ -101,6 +134,10 @@ class Video extends Marko.Component<Input, State> {
     declare player: any;
     declare ui: any;
     declare shaka: any;
+    declare observer: IntersectionObserver;
+    private isAutoPlay: boolean = false;
+    private isAutoPause: boolean = false; 
+
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
         const type = source.type && source.type.toLowerCase();
@@ -126,20 +163,22 @@ class Video extends Marko.Component<Input, State> {
 
     alignSeekbar() {
         if (this.el) {
-            const buttonPanel = this.el.querySelector<HTMLElement>(
-                ".shaka-controls-button-panel",
-            )!;
-            const spacer = buttonPanel.querySelector(".shaka-spacer")!;
+            
             const rangeContainer = this.el.querySelector<HTMLElement>(
                 ".shaka-range-container",
             )!;
-            if (buttonPanel && spacer) {
+            
+            if(rangeContainer) {
+                const buttonPanel = this.el.querySelector<HTMLElement>(
+                    ".shaka-controls-button-panel",
+                )!;
+                const spacer = buttonPanel.querySelector(".shaka-spacer")!;
                 const buttonPanelRect = buttonPanel.getBoundingClientRect();
                 const spacerRect = spacer.getBoundingClientRect();
-
                 rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
                 rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
             }
+            
         }
     }
 
@@ -148,7 +187,14 @@ class Video extends Marko.Component<Input, State> {
         // This forces the controls to always hide
         this.video.controls = false;
 
-        this.emit("pause", { originalEvent, player: this.player });
+        this.emit("pause", { 
+            originalEvent, 
+            player: this.player,
+            isAutoPause: this.isAutoPause 
+        });
+        
+        // Reset isAutoPause after emitting the event
+        this.isAutoPause = false;
         this.alignSeekbar();
     }
 
@@ -160,7 +206,14 @@ class Video extends Marko.Component<Input, State> {
             this.video.requestFullscreen();
         }
         this.state.played = true;
-        this.emit("play", { originalEvent, player: this.player });
+        this.emit("play", { 
+            originalEvent, 
+            player: this.player,
+            isAutoPlay: this.isAutoPlay
+        });
+        
+        // Reset isAutoPlay after emitting the event
+        this.isAutoPlay = false;
     }
 
     handleVolumeChange(originalEvent: Event) {
@@ -172,10 +225,14 @@ class Video extends Marko.Component<Input, State> {
     }
 
     handleError(err: Error) {
+        // Hide thumbnail overlay on error if there is a poster
+        if(this.input.thumbnail){
+            document.querySelector(".video-player__overlay")?.setAttribute("style", "display:none;");
+        }
         this.state.failed = true;
         this.state.isLoaded = true;
         this.playButtonContainer.remove();
-
+        
         this.emit("load-error", err);
     }
 
@@ -223,14 +280,31 @@ class Video extends Marko.Component<Input, State> {
         }
     }
 
-    onCreate() {
+    onCreate(input: Input) {
         this.state = {
             volumeSlider: false,
             action: "",
             isLoaded: true,
             failed: false,
-            played: false,
+            played: false
         };
+
+        if(input.layout === "compact") {
+             videoConfig = {
+                doubleClickForFullscreen: true,
+                singleClickForPlayAndPause: true,
+                addBigPlayButton: false,
+                addSeekBar: false,
+                controlPanelElements: compactLayoutControlPanelElements
+            }
+        }
+
+        if(input.nav) {
+            videoConfig.doubleClickForFullscreen = false;
+            videoConfig.singleClickForPlayAndPause = false;
+        }
+       
+
     }
 
     _addTextTracks() {
@@ -280,6 +354,7 @@ class Video extends Marko.Component<Input, State> {
         const {
             Report,
             CurrentTime,
+            RemainingTime,
             TotalTime,
             MuteButton,
             FullscreenButton,
@@ -307,6 +382,12 @@ class Video extends Marko.Component<Input, State> {
             "current_time",
             new CurrentTime.Factory(),
         );
+
+         this.shaka.ui.Controls.registerElement(
+            "remaining_time",
+            new RemainingTime.Factory(),
+        );
+
 
         // eslint-disable-next-line no-undef,new-cap
         this.shaka.ui.Controls.registerElement(
@@ -392,12 +473,63 @@ class Video extends Marko.Component<Input, State> {
             );
         });
 
+        if(this.input.pause_when_offscreen) {
+            // Set up Intersection Observer to detect when video is 50% in viewport
+            this.setupIntersectionObserver();
+        }
+
+       
+
         this._loadVideo();
+    }
+
+    setupIntersectionObserver() {
+        // Create options for the observer
+        const options = {
+            root: null, // Use the viewport as the root
+            rootMargin: '0px',
+            threshold: 0.5 // 50% visibility threshold
+        };
+
+        // Create the observer
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                
+                // Auto-play when 50% visible and pause when less than 50% visible
+                if (entry.isIntersecting) {
+                    // Only auto-play if the video is loaded and not already playing
+                    if (this.state.isLoaded && !this.state.failed && this.video.paused) {
+                        // Set isAutoPlay flag to true for tracking
+                        this.isAutoPlay = true;
+                        // Auto-play the video when it becomes visible
+                        this.video.play().catch(e => {
+                           // Reset isAutoPlay if auto-play was prevented
+                            this.isAutoPlay = false;
+                        });
+                    }
+                } else {
+                    // Pause when less than 50% visible
+                    if (!this.video.paused) {
+                        // Set isAutoPause flag to true for tracking
+                        this.isAutoPause = true;
+                        this.video.pause();
+                    }
+                }
+            });
+        }, options);
+
+        // Start observing the video container
+        this.observer.observe(this.containerEl);
     }
 
     onDestroy() {
         if (this.ui) {
             this.ui.destroy();
+        }
+        
+        // Disconnect the observer when component is destroyed
+        if (this.observer) {
+            this.observer.disconnect();
         }
     }
 

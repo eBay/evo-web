@@ -102,3 +102,68 @@
         Arial,
         sans-serif;
 }
+
+.video-player--with-nav .shaka-controls-container {
+    pointer-events: none;
+}
+.video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
+.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
+    pointer-events: auto;
+}
+
+.video-player.video-player--compact {
+    container-type: inline-size;
+    width: 100%;
+}
+.video-player.video-player--compact .video-player__navigate {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.video-player.video-player--compact .shaka-controls-button-panel {
+    background-color: initial;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+.video-player.video-player--compact
+    .shaka-controls-button-panel
+    > :first-child {
+    border-radius: 16px;
+    font-size: 1rem;
+    margin-right: auto;
+    min-width: 60px;
+    padding: 16px 8px;
+}
+.video-player.video-player--compact .shaka-controls-button-panel button * {
+    margin: 0;
+}
+.video-player.video-player--compact .shaka-controls-button-panel button {
+    background-color: rgba(0, 0, 0, 0.32);
+    border-radius: 50%;
+    margin: 5px;
+}
+.video-player.video-player--compact
+    .shaka-controls-button-panel
+    button:enabled {
+    pointer-events: auto;
+}
+.video-player.video-player--compact .shaka-scrim-container {
+    background: none;
+}
+.video-player.video-player--compact .shaka-tooltip:hover:after {
+    visibility: hidden;
+}
+@container (inline-size < 320px) {
+    .video-player.video-player--compact video {
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+    .video-player.video-player--compact .shaka-controls-button-panel {
+        height: 48px;
+    }
+    .video-player.video-player--compact .shaka-remaining-time {
+        display: none;
+    }
+}

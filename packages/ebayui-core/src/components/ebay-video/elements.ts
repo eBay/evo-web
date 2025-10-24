@@ -408,11 +408,82 @@ function getElements(self: EbayVideo) {
         }
     };
 
+    /**
+     * @extends {shaka.ui.Element}
+     * @final
+     * @export
+     */
+    const RemainingTime = class extends self.shaka.ui.Element {
+        /**
+         * @param {!HTMLElement} parent
+         * @param {!shaka.ui.Controls} controls
+         */
+        constructor(parent: HTMLElement, controls: any) {
+            super(parent, controls);
+            /** @type {!HTMLButtonElement} */
+            this.remainingTime_ = document.createElement("button");
+            this.remainingTime_.classList.add("shaka-remaining-time");
+            this.remainingTime_.disabled = true;
+            this.setValue_("0:00");
+            this.parent.appendChild(this.remainingTime_);
+            this.eventManager.listen(
+                this.controls,
+                "timeandseekrangeupdated",
+                () => {
+                    this.updateTime_();
+                },
+            );
+        }
+        /**
+         * @param {string} value
+         * @private
+         */
+        setValue_(value: any) {
+            // To avoid constant updates to the DOM, which makes debugging more
+            // difficult, only set the value if it has changed.  If we don't do this
+            // check, the DOM updates constantly, this element flashes in the debugger
+            // in Chrome, and you can't make changes in the CSS panel.
+            if (value != this.remainingTime_.textContent) {
+                this.remainingTime_.textContent = value;
+            }
+        }
+        /** @private */
+        updateTime_() {
+            const displayTime = this.controls.getDisplayTime();
+            const seekRange = this.player.seekRange();
+            const seekRangeSize = seekRange.end - seekRange.start;
+            
+            if (!isFinite(seekRangeSize)) {
+                this.setValue_("0:00");
+            } else if (this.player.isLive()) {
+                // For live content, don't show remaining time
+                this.setValue_("");
+            } else {
+                const showHour = seekRangeSize >= 3600;
+                // Calculate remaining time (total duration - current time)
+                const remainingTime = Math.max(0, seekRange.end - displayTime);
+                const value = "- " + buildTimeString(remainingTime, showHour);
+                this.setValue_(value);
+            }
+        }
+    };
+    /**
+     * @implements {shaka.extern.IUIElement.Factory}
+     * @final
+     */
+    RemainingTime.Factory = class {
+        /** @override */
+        create(rootElement: HTMLElement, controls: any) {
+            return new RemainingTime(rootElement, controls);
+        }
+    };
+
     return {
         Report,
         MuteButton,
         CurrentTime,
         TotalTime,
+        RemainingTime,
         FullscreenButton,
         TextSelection,
     };
