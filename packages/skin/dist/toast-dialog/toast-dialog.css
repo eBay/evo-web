@@ -77,7 +77,7 @@ button.icon-btn.toast-dialog__close {
     padding: 0;
 }
 button.icon-btn.toast-dialog__close:focus {
-    outline: 2px solid var(--color-foreground-on-information);
+    outline: 2px solid var(--color-foreground-on-success);
 }
 button.icon-btn.toast-dialog__close:focus,
 button.icon-btn.toast-dialog__close:hover {
@@ -121,7 +121,7 @@ button.icon-btn.toast-dialog__close > svg {
 }
 .toast-dialog__footer button.btn--primary:focus,
 .toast-dialog__footer button.btn--secondary:focus {
-    outline: 2px solid var(--color-foreground-on-information);
+    outline: 2px solid var(--color-foreground-on-success);
 }
 .toast-dialog__footer button.btn--primary:not([disabled]):focus,
 .toast-dialog__footer button.btn--primary:not([disabled]):hover {

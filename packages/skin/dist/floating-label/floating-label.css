@@ -45,7 +45,7 @@ label.floating-label__label--focus {
     transform: scale(0.75) translateY(3px);
 }
 label.floating-label__label--inline {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     transform: translateY(12px);
 }
 .floating-label--large label.floating-label__label--inline {

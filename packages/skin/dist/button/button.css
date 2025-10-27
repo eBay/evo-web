@@ -9,7 +9,7 @@ button.btn {
     color: inherit;
     display: inline-block;
     font-family: inherit;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
     min-height: 40px;
     min-width: 88px;
@@ -152,7 +152,7 @@ button.btn__cell--fixed-height svg.icon {
 a.fake-btn--primary,
 button.btn--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-on-accent);
     font-weight: 700;
     transition: all var(--motion-duration-short-3)
@@ -203,7 +203,7 @@ a.fake-btn--primary:visited {
 a.fake-btn--primary.fake-btn--destructive,
 button.btn--primary.btn--destructive {
     background-color: var(--color-background-attention);
-    border-color: var(--color-stroke-attention);
+    border-color: var(--color-border-attention);
     color: var(--color-foreground-on-attention);
     font-weight: 700;
     overflow: hidden;
@@ -256,7 +256,7 @@ button.btn--primary.btn--destructive[href]:active:after {
 button.btn--primary.btn--destructive[aria-disabled="true"],
 button.btn--primary.btn--destructive[disabled] {
     background-color: var(--color-background-disabled);
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 button.btn .progress-spinner {
     height: 24px;
@@ -327,7 +327,7 @@ a.fake-btn--primary[aria-disabled="true"] {
 a.fake-btn--secondary,
 button.btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-accent);
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
@@ -510,7 +510,7 @@ button.btn--large {
 a.fake-btn--small,
 button.btn--small {
     border-radius: var(--btn-border-radius, 16px);
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: 32px;
     padding: 0 16px;
 }

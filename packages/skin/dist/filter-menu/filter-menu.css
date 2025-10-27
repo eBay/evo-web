@@ -64,7 +64,7 @@ span.filter-menu__item[role^="menuitem"] {
         var(--color-foreground-primary)
     );
     display: flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     justify-content: space-between;
     line-height: 1.4em;
     margin: 0;
@@ -121,7 +121,7 @@ span.filter-menu__item[role^="menuitem"] {
     border: none;
     color: var(--color-foreground-primary);
     flex-grow: 1;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
 }
 .filter-menu__header button.btn {
     border: none;
@@ -149,7 +149,7 @@ button.filter-menu__footer {
         var(--color-foreground-primary)
     );
     display: flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     justify-content: space-between;
     line-height: 1.4em;
     margin: 0;

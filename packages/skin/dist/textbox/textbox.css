@@ -19,7 +19,7 @@
         var(--color-foreground-on-secondary)
     );
     display: inline-flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-100);
     overflow: hidden;
     position: relative;
@@ -40,7 +40,7 @@
         var(--color-background-primary)
     );
     border-color: var(--textbox-focus-border-color, var(--color-stroke-strong));
-    box-shadow: 0 0 0 1px var(--color-stroke-strong);
+    box-shadow: 0 0 0 1px var(--color-border-strong);
 }
 
 .textbox--readonly,

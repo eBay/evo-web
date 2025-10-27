@@ -19,7 +19,7 @@
 }
 .donut-chart__title {
     font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 .donut-chart__graph {
     align-self: flex-end;
@@ -31,7 +31,7 @@
 }
 .donut-chart__metric-value {
     font-size: var(--font-size-giant-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 .donut-chart__metric-label {
     font-size: var(--font-size-regular);

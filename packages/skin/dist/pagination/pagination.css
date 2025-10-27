@@ -51,7 +51,7 @@ button.pagination__previous {
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-400);
     height: 44px;
     justify-content: center;
     width: 44px;
@@ -86,7 +86,7 @@ button.pagination__item[aria-current="page"] {
         --pagination-item-current-foreground-color,
         var(--color-foreground-primary)
     );
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 a.pagination__item[aria-current="page"]:after,
 button.pagination__item[aria-current="page"]:after {

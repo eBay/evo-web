@@ -55,7 +55,7 @@ div.file-input__content {
         --file-input-content-header-color,
         var(--color-foreground-primary)
     );
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-body);
     font-weight: 700;
     line-height: var(--spacing-250);
     margin-block: 0 var(--spacing-50);
@@ -65,7 +65,7 @@ span.file-input__content-subheader {
         --file-input-content-subheader-color,
         var(--color-foreground-secondary)
     );
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-small);
     font-weight: 400;
     line-height: var(--spacing-200);
     margin-block-end: var(--spacing-100);
@@ -82,11 +82,11 @@ span.file-input__content-cta {
         padding: var(--spacing-300);
     }
     .file-input__content-header {
-        font-size: var(--font-size-16);
+        font-size: var(--font-size-medium);
         line-height: var(--spacing-300);
     }
     span.file-input__content-subheader {
-        font-size: var(--font-size-14);
+        font-size: var(--font-size-body);
         line-height: var(--spacing-250);
     }
 }

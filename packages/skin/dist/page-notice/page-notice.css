@@ -10,7 +10,7 @@
     border-style: solid;
     border-width: 1px;
     color: var(--page-notice-color, var(--color-foreground-on-inverse));
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: var(--spacing-100) 0;
     padding: var(--spacing-200);
 }
@@ -23,7 +23,7 @@ span[role="region"].page-notice {
     display: grid;
 }
 .page-notice__title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: 400;
     margin: 1px 0 0;
 }
@@ -33,7 +33,7 @@ span[role="region"].page-notice {
 }
 .page-notice a {
     color: var(--page-notice-color, var(--color-foreground-on-inverse));
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
 }
 .page-notice__cta a {
     white-space: nowrap;
@@ -46,7 +46,7 @@ span[role="region"].page-notice {
     color: var(--page-notice-color, var(--color-foreground-on-inverse));
 }
 .page-notice button.fake-link {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: 700;
 }
 .page-notice button.fake-link:hover {
@@ -131,7 +131,7 @@ span[role="region"].page-notice {
     text-align: right;
 }
 .page-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 2px 0 0;
 }
 .page-notice__main .page-notice__title ~ p {

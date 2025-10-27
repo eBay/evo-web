@@ -5,8 +5,8 @@ body {
         Market Sans,
         Arial,
         sans-serif;
-    font-size: var(--font-size-default);
-    line-height: var(--font-line-height-default);
+    font-size: var(--font-size-body);
+    line-height: var(--font-line-height-250);
     -webkit-text-size-adjust: 100%;
 }
 button {

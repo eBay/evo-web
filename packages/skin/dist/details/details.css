@@ -7,8 +7,8 @@ summary.details__summary {
         var(--color-foreground-primary)
     );
     display: inline-flex;
-    font-size: var(--font-size-default);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-600);
     list-style-position: inside;
     list-style-type: none;
     padding: 12px 8px;

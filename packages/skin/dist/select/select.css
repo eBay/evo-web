@@ -1,6 +1,6 @@
 .select {
     color: var(--select-foreground-color, var(--color-foreground-primary));
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     position: relative;
 }
 span.select {

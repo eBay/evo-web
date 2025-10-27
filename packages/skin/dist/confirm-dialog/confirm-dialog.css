@@ -40,7 +40,7 @@
 }
 .confirm-dialog__title {
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 28px;
     margin: 0;
 }

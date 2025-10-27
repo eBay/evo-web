@@ -4,7 +4,7 @@
         var(--color-background-secondary)
     );
     border-radius: var(--section-notice-border-radius, var(--border-radius-50));
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 8px 0;
     padding: 16px;
 }
@@ -32,7 +32,7 @@ span[role="region"].section-notice {
     display: grid;
 }
 .section-notice__title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: 400;
     margin: 0;
 }
@@ -43,7 +43,7 @@ span[role="region"].section-notice {
     font-weight: 700;
 }
 .section-notice button.fake-link {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: 700;
 }
 .section-notice a,
@@ -55,7 +55,7 @@ span[role="region"].section-notice {
     );
 }
 .section-notice a {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: 700;
 }
 .section-notice a:hover {
@@ -90,7 +90,7 @@ span[role="region"].section-notice {
     margin-top: 2px;
 }
 .section-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
 }
 p.section-notice__cta {

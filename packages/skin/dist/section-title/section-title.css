@@ -8,7 +8,7 @@
 }
 .section-title__title {
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 28px;
     margin: 0;
 }
@@ -17,7 +17,7 @@
         --section-title-subtitle-color,
         var(--color-foreground-secondary)
     );
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     line-height: 20px;
 }
 .section-title__title svg.icon {
@@ -53,7 +53,7 @@
 }
 .section-title--large .section-title__title {
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 28px;
 }
 .section-title--large > .section-title__cta,
@@ -75,7 +75,7 @@
 @media (min-width: 512px) {
     .section-title__title {
         font-size: var(--font-size-large-2);
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-600);
         line-height: 32px;
     }
     .section-title__subtitle {

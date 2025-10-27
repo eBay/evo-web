@@ -44,7 +44,7 @@ button.icon-btn:not(:focus-visible) {
 a.icon-link.icon-link--primary,
 button.icon-btn.icon-btn--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-on-accent);
 }
 a.icon-link.icon-link--primary > svg,
@@ -167,7 +167,7 @@ a[aria-disabled="true"].icon-link.icon-link--primary,
 button[aria-disabled="true"].icon-btn.icon-btn--primary,
 button[disabled].icon-btn.icon-btn--primary {
     background-color: var(--color-background-disabled);
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 a:not([href]).icon-link.icon-link--primary > svg,
 a[aria-disabled="true"].icon-link.icon-link--primary > svg,
@@ -183,7 +183,7 @@ button.icon-btn.icon-btn--primary .progress-spinner {
 a.icon-link.icon-link--secondary,
 button.icon-btn.icon-btn--secondary {
     background-color: initial;
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-accent);
 }
 a.icon-link.icon-link--primary:not([disabled], [aria-disabled="true"]):focus,
@@ -213,7 +213,7 @@ a:not([href]).icon-link.icon-link--secondary,
 a[aria-disabled="true"].icon-link.icon-link--secondary,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary,
 button[disabled].icon-btn.icon-btn--secondary {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 a:not([href]).icon-link.icon-blinktn--secondary > svg,
 a[aria-disabled="true"].icon-link.icon-link--secondary > svg,
@@ -243,14 +243,14 @@ button.icon-btn.icon-btn--secondary:not(
 a.icon-link.icon-link--tertiary,
 button.icon-btn.icon-btn--tertiary {
     background-color: initial;
-    border-color: var(--color-stroke-default);
+    border-color: var(--color-border-medium);
     color: var(--color-foreground-accent);
 }
 a:not([href]).icon-link.icon-link--tertiary,
 a[aria-disabled="true"].icon-link.icon-link--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 button[disabled].icon-btn.icon-btn--tertiary {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]):focus,
 a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]):hover,

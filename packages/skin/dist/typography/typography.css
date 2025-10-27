@@ -4,7 +4,7 @@
 }
 .giant-text-2,
 .giant-text-3 {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 .giant-text-2 {
     font-size: var(--font-size-giant-2);
@@ -16,7 +16,7 @@
 }
 .giant-text-1,
 .large-text-2 {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 .large-text-2 {
     font-size: var(--font-size-large-2);
@@ -24,7 +24,7 @@
 }
 .large-text-1 {
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 28px;
 }
 .medium-text {
@@ -32,7 +32,7 @@
     line-height: 24px;
 }
 .regular-text {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     line-height: 20px;
 }
 .small-text {
@@ -40,7 +40,7 @@
     line-height: 16px;
 }
 .bold-text {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 .secondary-text {
     color: var(
@@ -75,14 +75,14 @@
 }
 .small-product-title,
 .small-section-title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     line-height: 16px;
 }
 .giant-section-title,
 .large-section-title,
 .medium-section-title,
 .small-section-title {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 @media (min-width: 512px) {
     .giant-product-title,

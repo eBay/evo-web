@@ -14,7 +14,7 @@
 
 .card--outlined {
     background-color: inherit;
-    border: 1px solid var(--color-stroke-subtle);
+    border: 1px solid var(--color-border-subtle);
 }
 
 a.card {
@@ -151,12 +151,12 @@ button.card:hover {
 
 @keyframes card-focus-animation {
     0% {
-        outline-color: var(--color-stroke-accent);
+        outline-color: var(--color-border-accent);
         outline-offset: 4px;
         outline-width: 6px;
     }
     to {
-        outline-color: var(--color-stroke-accent);
+        outline-color: var(--color-border-accent);
         outline-offset: 0;
         outline-width: 2px;
     }

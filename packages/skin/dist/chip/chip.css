@@ -5,7 +5,7 @@
     box-sizing: border-box;
     color: var(--color-foreground-on-strong);
     display: inline-flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-75);
     height: var(--spacing-400);
     justify-content: space-between;
