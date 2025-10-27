@@ -1,7 +1,7 @@
-@import url("@ebay/design-tokens/dist/css/evo-dark.css")
-(prefers-color-scheme: dark);
+@use "sass:meta";
 
 @media (prefers-color-scheme: dark) {
+    @include meta.load-css("@ebay/design-tokens/dist/css/evo-dark.css");
     .evo-dark,
     :root {
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
