@@ -1,7 +1,6 @@
 div.file-preview-card-group {
     container: file-preview-cards-container/inline-size;
 }
-
 div.file-preview-card-group ul {
     display: grid;
     gap: var(--spacing-100);
@@ -11,11 +10,9 @@ div.file-preview-card-group ul {
     padding: 0;
     width: 100%;
 }
-
 div.file-preview-card-group ul li {
     height: max-content;
 }
-
 @supports not (contain: inline-size) {
     @media (min-width: 512px) {
         div.file-preview-card-group ul {

@@ -2,6 +2,9 @@ const path = require("path");
 
 module.exports = (ctx) => ({
     plugins: [
+        require("postcss-import")({
+            path: ["../../node_modules"],
+        }),
         require("autoprefixer"),
         require("cssnano")({
             preset: [

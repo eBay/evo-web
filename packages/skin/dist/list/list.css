@@ -1,18 +1,15 @@
 .list {
     max-width: 480px;
 }
-
 .list ol,
 .list ul {
     margin: 0;
     padding: 0;
 }
-
 .list li::marker {
     content: "";
     font-size: 0;
 }
-
 .list fieldset > *,
 .list li > * {
     align-items: center;
@@ -29,43 +26,35 @@
     padding: var(--spacing-150) var(--spacing-200);
     width: 100%;
 }
-
 .list__leading {
     margin-inline-end: var(--spacing-200);
 }
-
 .list__trailing {
     margin-inline-start: var(--spacing-200);
 }
-
 .list__body {
     flex: 1;
 }
-
 .list ol li {
     counter-increment: item;
 }
-
 .list ol li > :before {
     content: counter(item) ".";
     margin-inline-end: var(--spacing-200);
     width: var(--spacing-300);
 }
-
 .list li > a,
 .list li > button {
     border: none;
     text-align: left;
     text-decoration: none;
 }
-
 .list li > a:focus,
 .list li > a:hover,
 .list li > button:focus,
 .list li > button:hover {
     color: var(--color-foreground-on-primary);
 }
-
 .list li > a:active,
 .list li > a:focus,
 .list li > a:hover,
@@ -77,7 +66,6 @@
         var(--color-state-primary-hover)
     );
 }
-
 .list hr {
     border: 0;
     border-top: 1px solid var(--color-stroke-subtle);
@@ -85,7 +73,6 @@
     margin-inline: var(--spacing-200);
     padding: 0;
 }
-
 [dir="rtl"] .list li > a,
 [dir="rtl"] .list li > button {
     text-align: right;

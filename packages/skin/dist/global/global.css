@@ -9,20 +9,16 @@ body {
     line-height: var(--font-line-height-default);
     -webkit-text-size-adjust: 100%;
 }
-
 button {
     font-family: inherit;
 }
-
 fieldset {
     border: 0;
     padding: 0;
 }
-
 legend {
     margin-bottom: var(--spacing-100);
 }
-
 a {
     color: var(--color-foreground-link-primary);
 }

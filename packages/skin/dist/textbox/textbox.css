@@ -25,10 +25,12 @@
     position: relative;
     width: fit-content;
 }
+
 .textbox button.icon-btn {
     background-color: initial;
     padding: 0;
 }
+
 .textbox--focus,
 .textbox:has(> .textbox__control:focus):not(.textbox--readonly):not(
         :has(> .textbox__control[readonly])
@@ -40,11 +42,13 @@
     border-color: var(--textbox-focus-border-color, var(--color-stroke-strong));
     box-shadow: 0 0 0 1px var(--color-stroke-strong);
 }
+
 .textbox--readonly,
 .textbox:has(> .textbox__control[readonly]) {
     background-color: initial;
     border: none;
 }
+
 .textbox--disabled,
 .textbox:has(> .textbox__control[disabled]) {
     border-color: var(
@@ -56,6 +60,7 @@
         var(--color-foreground-disabled)
     );
 }
+
 .textbox--invalid,
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
     border-color: var(
@@ -104,6 +109,7 @@ textarea.textbox__control {
     margin: 0;
     outline: none;
 }
+
 input.textbox__control[disabled],
 textarea.textbox__control[disabled] {
     border-color: var(
@@ -115,6 +121,7 @@ textarea.textbox__control[disabled] {
         var(--color-foreground-disabled)
     );
 }
+
 input.textbox__control[disabled]::-webkit-input-placeholder,
 textarea.textbox__control[disabled]::-webkit-input-placeholder {
     color: var(
@@ -122,6 +129,7 @@ textarea.textbox__control[disabled]::-webkit-input-placeholder {
         var(--color-foreground-ghost)
     );
 }
+
 input.textbox__control[disabled]::-moz-placeholder,
 textarea.textbox__control[disabled]::-moz-placeholder {
     color: var(
@@ -129,6 +137,7 @@ textarea.textbox__control[disabled]::-moz-placeholder {
         var(--color-foreground-ghost)
     );
 }
+
 input.textbox__control[disabled]:-ms-input-placeholder,
 textarea.textbox__control[disabled]:-ms-input-placeholder {
     color: var(
@@ -136,6 +145,7 @@ textarea.textbox__control[disabled]:-ms-input-placeholder {
         var(--color-foreground-ghost)
     );
 }
+
 input.textbox__control[aria-invalid="true"],
 textarea.textbox__control[aria-invalid="true"] {
     border-color: var(
@@ -143,6 +153,7 @@ textarea.textbox__control[aria-invalid="true"] {
         var(--color-stroke-attention)
     );
 }
+
 input.textbox__control::placeholder,
 textarea.textbox__control::placeholder {
     color: var(--textbox-placeholder-color, var(--color-foreground-secondary));

@@ -48,7 +48,6 @@
 .carousel__playback .icon--play {
     padding-left: 1px;
 }
-
 .carousel__list--image-treatment > li {
     align-items: center;
     border-radius: 8px;
@@ -74,7 +73,6 @@
     max-width: 100%;
     object-fit: contain;
 }
-
 .carousel__list--image-treatment-large > li {
     align-items: center;
     border-radius: 16px;
@@ -100,11 +98,9 @@
     max-width: 100%;
     object-fit: contain;
 }
-
 div.carousel {
     margin: 16px 0;
 }
-
 .carousel__control {
     align-items: center;
     background-color: var(
@@ -187,16 +183,13 @@ div.carousel {
 .carousel__control:active {
     background-color: var(--color-state-primary-active);
 }
-
 .carousel__playback:focus:not(:focus-visible) {
     outline: none;
 }
-
 span.carousel,
 span.carousel__container {
     display: inline-block;
 }
-
 .carousel__viewport--mask {
     -webkit-mask-image: linear-gradient(
         to right,
@@ -209,7 +202,6 @@ span.carousel__container {
         rgba(0, 0, 0, 0) 100%
     );
 }
-
 [dir="rtl"] .carousel__control--prev {
     left: unset;
     right: calc(var(--spacing-200) * -1);
@@ -292,15 +284,12 @@ span.carousel__container {
 .carousel.carousel--hidden-scrollbar:not(.carousel__autoplay) {
     overflow: hidden;
 }
-
 .carousel--hidden-scrollbar .carousel__container {
     margin-bottom: -80px;
 }
-
 .carousel--hidden-scrollbar .carousel__container .carousel__control {
     margin-top: -40px;
 }
-
 .carousel--hidden-scrollbar .carousel__container .carousel__list {
     padding-bottom: 80px;
 }

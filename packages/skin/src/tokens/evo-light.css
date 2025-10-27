@@ -1,5 +1,6 @@
-@import "@ebay/design-tokens/dist/css/evo-light.css";
+@import url("@ebay/design-tokens/dist/css/evo-light.css");
 
+.evo-light,
 :root {
     --color-background-faint: rgba(var(--color-neutral-900-rgb), 0.05);
     --color-background-confirmation: var(--color-background-success);

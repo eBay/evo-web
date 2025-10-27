@@ -15,11 +15,9 @@
     --row-gallery-toggle-buttons-md: 4;
     --row-gallery-toggle-buttons-xl: 6;
 }
-
 .toggle-button-group {
     container: toggle-buttons-container/inline-size;
 }
-
 @supports not (contain: inline-size) {
     @media (max-width: 320px) {
         .toggle-button-group[data-columns-min="1"] ul {
@@ -54,13 +52,11 @@
     padding: 0;
     width: 100%;
 }
-
 .toggle-button-group li {
     display: inline-block;
     min-height: var(--toggle-button-height-min);
     width: 100%;
 }
-
 .toggle-button-group .toggle-button {
     height: 100%;
     margin: 0;
@@ -70,42 +66,34 @@
 .toggle-button-group--list-layout ul {
     grid-template-columns: repeat(var(--row-list-toggle-buttons-min), 1fr);
 }
-
 .toggle-button-group--list-layout .toggle-button {
     justify-content: left;
     max-width: 100%;
     min-width: auto;
 }
-
 .toggle-button-group--gallery-layout ul {
     grid-template-columns: repeat(var(--row-gallery-toggle-buttons-min), 1fr);
 }
-
 .toggle-button-group--gallery-layout li {
     max-width: 100%;
 }
-
 .toggle-button-group--gallery-layout .toggle-button {
     flex-direction: column;
     max-width: 100%;
     min-width: auto;
 }
-
 .toggle-button-group--list-layout .toggle-button__content:not(:only-child),
 .toggle-button-group--list-layout .toggle-button__image-container {
     align-self: flex-start;
 }
-
 .toggle-button-group--gallery-layout .toggle-button {
     justify-content: flex-start;
 }
-
 .toggle-button-group--gallery-layout .toggle-button__icon,
 .toggle-button-group--gallery-layout .toggle-button__image {
     margin-bottom: 0;
     margin-right: 0;
 }
-
 .toggle-button-group--gallery-layout
     .toggle-button__icon
     ~ .toggle-button__content,
@@ -114,21 +102,18 @@
     ~ .toggle-button__content {
     align-self: flex-start;
 }
-
 .toggle-button-group--gallery-layout .toggle-button__icon,
 .toggle-button-group--gallery-layout .toggle-button__image-container {
     margin-bottom: 0;
     margin-right: 0;
     text-align: left;
 }
-
 .toggle-button-group--gallery-layout .toggle-button__image-container {
     padding-bottom: 60%;
     position: relative;
     text-align: center;
     width: 100%;
 }
-
 .toggle-button-group--gallery-layout .toggle-button__image {
     bottom: 0;
     height: 100%;
@@ -138,7 +123,6 @@
     top: 0;
     width: 100%;
 }
-
 .toggle-button-group--gallery-layout .toggle-button__image-container img {
     height: 100%;
     max-height: 200px;

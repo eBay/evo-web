@@ -28,24 +28,20 @@ summary.details__summary:active {
     background-color: var(--color-state-secondary-active);
     outline: 1;
 }
-
 summary.details__summary--center {
     justify-content: center;
     width: 100%;
 }
-
 summary.details__summary--small {
     font-size: var(--font-size-small);
     padding: 4px 8px;
 }
-
 span.details__icon {
     margin-inline-start: 8px;
 }
 span.details__icon[hidden] {
     display: inline-flex;
 }
-
 details.details[open] span.details__icon {
     transform: rotate(180deg);
 }

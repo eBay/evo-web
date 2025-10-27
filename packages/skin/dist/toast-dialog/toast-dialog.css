@@ -27,7 +27,6 @@
     will-change: opacity, transform;
     z-index: 2;
 }
-
 .toast-dialog,
 .toast-dialog a {
     color: var(
@@ -35,35 +34,29 @@
         var(--color-foreground-on-information)
     );
 }
-
 .toast-dialog a:focus {
     outline: 1px auto currentColor;
 }
-
 .toast-dialog--transition {
     transition:
         opacity 0.2s cubic-bezier(0.21, 0.31, 1, 1.22) 0s,
         transform 0.2s cubic-bezier(0.21, 0.31, 1, 1.22) 0s;
 }
-
 .toast-dialog--hide-init,
 .toast-dialog--show {
     display: block;
     opacity: 1;
     transform: translateY(0);
 }
-
 .toast-dialog--hide,
 .toast-dialog--show-init {
     display: block;
     opacity: 0;
     transform: translateY(110%);
 }
-
 .toast-dialog__window {
     padding: var(--spacing-100) var(--spacing-200) var(--spacing-200);
 }
-
 .toast-dialog__header {
     align-items: center;
     display: flex;
@@ -90,11 +83,9 @@ button.icon-btn.toast-dialog__close:focus,
 button.icon-btn.toast-dialog__close:hover {
     color: var(--color-state-primary-hover);
 }
-
 button.icon-btn.toast-dialog__close > svg {
     fill: currentColor;
 }
-
 .toast-dialog__footer {
     display: flex;
     justify-content: flex-end;
@@ -162,7 +153,6 @@ button.icon-btn.toast-dialog__close > svg {
         var(--color-background-primary)
     );
 }
-
 @media (min-width: 512px) {
     .toast-dialog {
         border-radius: var(

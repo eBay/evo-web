@@ -1,6 +1,8 @@
-@import "@ebay/design-tokens/dist/css/evo-dark.css" (prefers-color-scheme: dark);
+@import url("@ebay/design-tokens/dist/css/evo-dark.css")
+(prefers-color-scheme: dark);
 
 @media (prefers-color-scheme: dark) {
+    .evo-dark,
     :root {
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
         --color-background-confirmation: var(--color-background-success);

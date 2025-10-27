@@ -2,13 +2,11 @@ div.star-rating-select {
     cursor: pointer;
     display: inline-block;
 }
-
 span.star-rating-select__radio {
     display: inline-flex;
     position: relative;
     vertical-align: text-top;
 }
-
 span.star-rating-select__radio svg {
     display: inline-block;
     fill: currentColor;
@@ -17,17 +15,14 @@ span.star-rating-select__radio svg {
     stroke-width: 0;
     vertical-align: middle;
 }
-
 span.star-rating-select__radio-icon {
     display: inline-flex;
     outline-offset: 1px;
 }
-
 span.star-rating-select__radio-icon svg {
     height: 16px;
     width: 16px;
 }
-
 span.star-rating-select__radio input.star-rating-select__control[type="radio"] {
     cursor: pointer;
     font-size: 100%;
@@ -52,11 +47,9 @@ span.star-rating-select__radio
     + span.star-rating-select__radio-icon {
     outline: none;
 }
-
 div.star-rating-select span.star-rating-select__radio-icon svg {
     --color-star-rating-full: var(--color-star-rating-unfilled, transparent);
 }
-
 div.star-rating-select
     input.star-rating-select__control--filled
     + span.star-rating-select__radio-icon

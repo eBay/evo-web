@@ -1,4 +1,4 @@
-@import "@ebay/design-tokens/dist/css/evo-core.css";
+@import url("@ebay/design-tokens/dist/css/evo-core.css");
 
 :root {
     --border-radius-50: 8px;

@@ -2,7 +2,6 @@ div.filter-group {
     display: flex;
     flex-wrap: wrap;
 }
-
 a.filter-link,
 button.filter-button {
     align-items: center;
@@ -43,7 +42,6 @@ button.filter-button:hover {
         var(--color-state-secondary-hover)
     );
 }
-
 a.filter-link .filter-link__cell,
 button.filter-button .filter-button__cell {
     display: inline-block;
@@ -53,19 +51,16 @@ button.filter-button .filter-button__cell {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 a.filter-link:visited {
     color: var(
         --filter-button-foreground-color,
         var(--color-foreground-primary)
     );
 }
-
 a.filter-link--selected,
 button.filter-button[aria-pressed="true"] {
     font-weight: 700;
 }
-
 a.filter-link--selected,
 a.filter-link--selected:visited,
 button.filter-button[aria-pressed="true"] {
@@ -74,7 +69,6 @@ button.filter-button[aria-pressed="true"] {
         var(--color-stroke-strong)
     );
 }
-
 a.filter-link--selected:not([href]),
 a.filter-link--selected[aria-disabled="true"],
 a.filter-link:not([href]),
@@ -114,7 +108,6 @@ button.filter-button[disabled]:hover {
         var(--color-foreground-disabled)
     );
 }
-
 a.filter-link--selected:not([href]):hover,
 a.filter-link--selected[aria-disabled="true"]:hover,
 button.filter-button[aria-pressed="true"][aria-disabled="true"]:hover,

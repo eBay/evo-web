@@ -117,8 +117,6 @@
         --color-state-layer-hover: rgba(255, 255, 255, 0.08);
         --color-state-layer-pressed: rgba(255, 255, 255, 0.08);
         --color-state-layer-selected: rgba(255, 255, 255, 0.08);
-    }
-    :root {
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
         --color-background-confirmation: var(--color-background-success);
         --color-background-information: var(--color-blue-500);

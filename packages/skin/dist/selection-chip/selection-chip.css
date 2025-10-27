@@ -60,16 +60,13 @@
 .selection-chip[href]:active:after {
     background-color: var(--state-layer-pressed);
 }
-
 .selection-chip--animated .selection-chip__trailing {
     transition: rotate var(--motion-duration-medium-3)
         var(--motion-easing-standard);
 }
-
 .selection-chip__trailing {
     rotate: -225deg;
 }
-
 .selection-chip[aria-pressed="true"] {
     animation: fill-horizontal-background 0s var(--motion-easing-quick-enter)
         forwards;
@@ -110,17 +107,14 @@
 .selection-chip[aria-pressed="true"][href]:active:after {
     background-color: var(--state-layer-pressed-on-strong);
 }
-
 .selection-chip--animated[aria-pressed="true"] {
     animation-duration: var(--motion-duration-medium-2);
     transition: color var(--motion-duration-instant)
         var(--motion-easing-standard);
 }
-
 .selection-chip[aria-pressed="true"] .selection-chip__trailing {
     rotate: 0deg;
 }
-
 .selection-chip__text {
     overflow: hidden;
     padding: var(--spacing-75) 0;

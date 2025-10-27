@@ -92,13 +92,11 @@ button.filter-chip:not([disabled], [aria-disabled="true"]):active:after,
 button.filter-chip[href]:active:after {
     background-color: var(--state-layer-pressed);
 }
-
 a.filter-chip--expressive,
 button.filter-chip--expressive {
     border-radius: var(--border-radius-150);
     height: 40px;
 }
-
 .filter-chip__media {
     align-items: center;
     border-radius: var(--spacing-400);
@@ -129,7 +127,6 @@ button.filter-chip--expressive {
     object-fit: cover;
     width: var(--spacing-400);
 }
-
 a.filter-chip--selected,
 button.filter-chip[aria-pressed="true"] {
     animation: fill-horizontal-background 0s var(--motion-easing-quick-enter)
@@ -178,35 +175,29 @@ button.filter-chip[aria-pressed="true"]:not(
 button.filter-chip[aria-pressed="true"][href]:active:after {
     background-color: var(--state-layer-pressed-on-strong);
 }
-
 button.filter-chip--animated[aria-pressed="true"] {
     animation-duration: var(--motion-duration-medium-2);
     transition: color var(--motion-duration-instant)
         var(--motion-easing-standard);
 }
-
 button.filter-chip[aria-expanded="false"]:active .filter-chip__trailing {
     animation: chevron-bounce-close var(--motion-duration-medium-1)
         var(--motion-easing-standard);
     rotate: 180deg;
 }
-
 button.filter-chip[aria-expanded="false"] .filter-chip__trailing {
     rotate: 0deg;
     transition: none;
 }
-
 button.filter-chip[aria-expanded="true"]:active .filter-chip__trailing {
     animation: chevron-bounce-open var(--motion-duration-medium-1)
         var(--motion-easing-standard) var(--motion-duration-short-1);
     rotate: 0deg;
 }
-
 button.filter-chip[aria-expanded="true"] .filter-chip__trailing {
     rotate: 180deg;
     transition: none;
 }
-
 .filter-chip__text {
     overflow: hidden;
     padding: var(--spacing-75) 0;

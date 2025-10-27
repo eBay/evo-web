@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .file-preview-card__body {
     aspect-ratio: 1/1;
     background-color: var(
@@ -19,11 +18,9 @@
     min-width: 120px;
     position: relative;
 }
-
 .file-preview-card__asset {
     margin: auto;
 }
-
 img.file-preview-card__asset,
 video.file-preview-card__asset {
     align-self: center;
@@ -35,41 +32,34 @@ video.file-preview-card__asset {
     object-fit: contain;
     width: 100%;
 }
-
 .file-preview-card__asset--fade {
     background-color: inherit;
     opacity: 0.5;
 }
-
 .file-preview-card__asset.icon {
     height: 40%;
     width: 40%;
 }
-
 .file-preview-card__body .icon-btn {
     height: var(--spacing-400);
     width: var(--spacing-400);
 }
-
 .file-preview-card__body > .file-preview-card__action {
     position: absolute;
     right: var(--spacing-100);
     top: var(--spacing-100);
     z-index: 1;
 }
-
 .file-preview-card__body > .file-preview-card__action:dir(rtl) {
     left: var(--spacing-100);
     right: auto;
 }
-
 .icon-btn.file-preview-card__action:not(:hover) {
     background-color: var(
         --file-preview-card-action-background-color,
         var(--color-background-primary)
     );
 }
-
 .file-preview-card__info {
     align-items: center;
     background-color: var(
@@ -87,17 +77,14 @@ video.file-preview-card__asset {
     position: absolute;
     z-index: 1;
 }
-
 .file-preview-card__info:dir(rtl) {
     left: auto;
     right: var(--spacing-100);
 }
-
 .file-preview-card__info > .icon {
     height: var(--spacing-150);
     width: var(--spacing-150);
 }
-
 .file-preview-card__see-more {
     aspect-ratio: 1/1;
     background-color: rgb(
@@ -124,7 +111,6 @@ video.file-preview-card__asset {
     transform: translate(-50%, -50%);
     z-index: 1;
 }
-
 .file-preview-card__see-more:active,
 .file-preview-card__see-more:focus-visible,
 .file-preview-card__see-more:hover {
@@ -133,7 +119,6 @@ video.file-preview-card__asset {
         var(--color-foreground-primary)
     );
 }
-
 .file-preview-card__see-more:focus-visible,
 .file-preview-card__see-more:hover {
     background-color: rgb(
@@ -144,7 +129,6 @@ video.file-preview-card__asset {
         0.5
     );
 }
-
 .file-preview-card__see-more:active {
     background-color: rgb(
         var(
@@ -154,17 +138,14 @@ video.file-preview-card__asset {
         0.5
     );
 }
-
 .file-preview-card__footer {
     display: grid;
 }
-
 .file-preview-card__footer > * {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .file-preview-card__footer > :not(:first-child) {
     color: var(--color-foreground-secondary);
     font-size: var(--font-size-small);
