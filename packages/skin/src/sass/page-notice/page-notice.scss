@@ -13,7 +13,7 @@
 
     border-style: solid;
     border-width: 1px;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: var(--spacing-100) 0;
     padding: var(--spacing-200);
     @include token-mixins.color-token(
@@ -34,7 +34,7 @@ span[role="region"].page-notice {
 }
 
 .page-notice__title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: normal;
     margin: 1px 0 0;
 }
@@ -50,7 +50,7 @@ span[role="region"].page-notice {
         color-foreground-on-inverse
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -76,7 +76,7 @@ span[role="region"].page-notice {
         color-foreground-on-inverse
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -181,7 +181,7 @@ span[role="region"].page-notice {
 }
 
 .page-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 2px 0 0;
 }
 

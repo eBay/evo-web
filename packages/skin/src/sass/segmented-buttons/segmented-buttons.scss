@@ -2,7 +2,7 @@
 @use "../mixins/private/button-mixins";
 
 .segmented-buttons {
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     border-radius: var(
         --segmented-button-border-radius,
         calc(button-mixins.$button-height-large / 2)
@@ -37,7 +37,7 @@
     );
     color: var(--color-foreground-on-primary);
     font-family: inherit;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: calc(
         button-mixins.$button-height-regular - (var(--spacing-50) * 2)
     );

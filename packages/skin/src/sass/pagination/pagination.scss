@@ -57,7 +57,7 @@ button.pagination__previous {
     @include utility-mixins.inline-flex-items-centered;
 
     box-sizing: border-box;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-400);
     height: 44px;
     width: 44px;
 }
@@ -94,7 +94,7 @@ button.pagination__item {
             color-foreground-primary
         );
 
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-600);
 
         &::after {
             background-color: currentColor;

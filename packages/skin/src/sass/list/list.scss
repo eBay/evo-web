@@ -28,7 +28,7 @@
     box-sizing: border-box;
     color: var(--color-foreground-on-primary);
     display: inline-flex;
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-medium);
     margin-block: 1px;
     min-height: var(--spacing-600);
     padding: var(--spacing-150) var(--spacing-200);
@@ -89,7 +89,7 @@
 
 .list hr {
     border: 0;
-    border-top: 1px solid var(--color-stroke-subtle);
+    border-top: 1px solid var(--color-border-subtle);
     height: 1px;
     margin-inline: var(--spacing-200);
     padding: 0;

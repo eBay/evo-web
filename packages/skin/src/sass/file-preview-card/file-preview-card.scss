@@ -87,7 +87,7 @@ video.file-preview-card__asset {
     border-radius: 1em;
     bottom: var(--spacing-100);
     display: flex;
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-small);
     font-weight: 400;
     gap: var(--spacing-50);
     left: var(--spacing-100);
@@ -122,7 +122,7 @@ video.file-preview-card__asset {
     border: none;
     border-radius: 50%;
     font-family: inherit;
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-body);
     font-weight: 700;
     left: 50%;
     line-height: var(--spacing-250);

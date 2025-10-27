@@ -12,13 +12,13 @@
 
 .toggle-button {
     background-color: var(--color-background-primary);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     border-radius: var(--spacing-100);
     box-shadow: 0 0 0 1px transparent;
     color: var(--color-foreground-primary);
     display: inline-flex;
     font-family: inherit;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     justify-content: center;
     margin-right: var(--spacing-100);
     margin-top: auto;
@@ -37,7 +37,7 @@
 
 .toggle-button[aria-disabled="true"],
 .toggle-button[disabled] {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 .toggle-button * {
@@ -46,14 +46,14 @@
 
 .toggle-button[aria-pressed="true"] {
     background-color: var(--color-background-secondary);
-    border: 1px solid var(--color-stroke-strong);
-    box-shadow: 0 0 0 1px var(--color-stroke-strong);
+    border: 1px solid var(--color-border-strong);
+    box-shadow: 0 0 0 1px var(--color-border-strong);
     font-weight: bold;
 }
 .toggle-button[aria-disabled="true"][aria-pressed="true"],
 .toggle-button[disabled][aria-pressed="true"] {
-    border-color: var(--color-stroke-disabled);
-    box-shadow: 0 0 0 1px var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
+    box-shadow: 0 0 0 1px var(--color-border-disabled);
 }
 
 .toggle-button:not([aria-disabled="true"], [disabled]):hover {

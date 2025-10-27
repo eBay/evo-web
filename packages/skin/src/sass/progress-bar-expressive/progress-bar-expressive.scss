@@ -50,7 +50,7 @@
 .progress-bar-expressive__messages {
     color: var(--color-foreground-primary);
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-400);
     line-height: calc(var(--spacing-50) + var(--spacing-300)); /* 26px */
     margin: 0 var(--spacing-200);
     min-height: 3rem;
@@ -60,7 +60,7 @@
 
 .progress-bar-expressive__messages--medium {
     font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: var(--spacing-300);
 }
 
@@ -433,14 +433,14 @@
 
     100% {
         opacity: 0;
-        transform: translateY(calc(var(--font-size-24) * -1));
+        transform: translateY(calc(var(--font-size-large-2) * -1));
     }
 }
 
 @keyframes progress-bar-expressive-message-animatein {
     0% {
         opacity: 0;
-        transform: translateY(var(--font-size-24));
+        transform: translateY(var(--font-size-large-2));
     }
 
     100% {

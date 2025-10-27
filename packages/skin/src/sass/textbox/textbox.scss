@@ -30,7 +30,7 @@
     display: inline-flex;
 
     /* to align with buttons and select, it needs same font-size */
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-100);
     overflow: hidden;
     position: relative;
@@ -47,7 +47,7 @@
 .textbox:has(> .textbox__control:focus):not(.textbox--readonly):not(
         :has(> .textbox__control[readonly])
     ) {
-    box-shadow: 0 0 0 1px var(--color-stroke-strong);
+    box-shadow: 0 0 0 1px var(--color-border-strong);
     @include token-mixins.border-color-token(
         textbox-focus-border-color,
         color-stroke-strong

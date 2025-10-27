@@ -14,8 +14,8 @@ summary.details__summary {
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
-    font-size: var(--font-size-default);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-600);
     list-style-position: inside;
     list-style-type: none; /* Remove details marker for non-webkit */
     padding: 12px 8px;

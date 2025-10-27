@@ -13,7 +13,7 @@ a.fake-btn {
     );
     color: inherit;
     display: inline-block;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: button-mixins.$button-height-regular;
     min-width: 88px;
     padding: button-mixins.$button-padding-vertical
@@ -122,7 +122,7 @@ a.fake-btn__cell--fixed-height svg.icon {
 button.btn--primary,
 a.fake-btn--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-on-accent);
     font-weight: bold;
 
@@ -144,7 +144,7 @@ a.fake-btn--primary:hover {
 button.btn--primary.btn--destructive,
 a.fake-btn--primary.fake-btn--destructive {
     background-color: var(--color-background-attention);
-    border-color: var(--color-stroke-attention);
+    border-color: var(--color-border-attention);
     color: var(--color-foreground-on-attention);
     font-weight: bold;
 
@@ -154,7 +154,7 @@ a.fake-btn--primary.fake-btn--destructive {
 button.btn--primary.btn--destructive[disabled],
 button.btn--primary.btn--destructive[aria-disabled="true"] {
     background-color: var(--color-background-disabled);
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button.btn .progress-spinner {
@@ -237,7 +237,7 @@ a.fake-btn--primary[aria-disabled="true"] {
 button.btn--secondary,
 a.fake-btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-accent);
 
     @include button-mixins.animations;
@@ -367,7 +367,7 @@ a.fake-btn--small {
         --btn-border-radius,
         calc(button-mixins.$button-height-small / 2)
     );
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: button-mixins.$button-height-small;
     padding: button-mixins.$button-padding-vertical-small
         button-mixins.$button-padding-horizontal-small;

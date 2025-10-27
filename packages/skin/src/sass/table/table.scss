@@ -39,7 +39,7 @@ $density-relaxed-img-radius: 8px;
 .table td {
     // explicit background is needed for sticky columns
     background-color: var(--color-background-primary);
-    border-bottom: 1px solid var(--color-stroke-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
     box-sizing: border-box;
     height: $density-default-cell-height;
     max-height: $density-default-cell-height;
@@ -217,7 +217,7 @@ $density-relaxed-img-radius: 8px;
     color: inherit;
     display: inline-block;
     font-family: inherit;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
     min-height: 40px;
     min-width: auto;
@@ -238,7 +238,7 @@ $density-relaxed-img-radius: 8px;
 
 .table-cell__data--secondary {
     color: var(--color-foreground-secondary);
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-small);
     line-height: var(--spacing-200);
 }
 

@@ -549,7 +549,7 @@
 
 .demo-color-background-primary::before {
     background-color: var(--color-background-primary);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-background-secondary::before {
@@ -569,7 +569,7 @@
 }
 
 .demo-color-background-confirmation::before {
-    background-color: var(--color-background-confirmation);
+    background-color: var(--color-background-success);
 }
 
 .demo-color-background-information::before {
@@ -613,7 +613,7 @@
 }
 
 .demo-color-foreground-visited::before {
-    background-color: var(--color-foreground-visited);
+    background-color: var(--color-foreground-link-visited);
 }
 
 .demo-color-foreground-on-primary::before {
@@ -630,59 +630,59 @@
 
 .demo-color-foreground-on-inverse::before {
     background-color: var(--color-foreground-on-inverse);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-attention::before {
     background-color: var(--color-foreground-on-attention);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-confirmation::before {
-    background-color: var(--color-foreground-on-confirmation);
-    border: 1px solid var(--color-stroke-default);
+    background-color: var(--color-foreground-on-success);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-information::before {
-    background-color: var(--color-foreground-on-information);
-    border: 1px solid var(--color-stroke-default);
+    background-color: var(--color-foreground-on-success);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-accent::before {
     background-color: var(--color-foreground-on-accent);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-stroke-default::before {
-    background-color: var(--color-stroke-default);
+    background-color: var(--color-border-medium);
 }
 
 .demo-color-stroke-accent::before {
-    background-color: var(--color-stroke-accent);
+    background-color: var(--color-border-accent);
 }
 
 .demo-color-stroke-attention::before {
-    background-color: var(--color-stroke-attention);
+    background-color: var(--color-border-attention);
 }
 
 .demo-color-stroke-confirmation::before {
-    background-color: var(--color-stroke-confirmation);
+    background-color: var(--color-border-success);
 }
 
 .demo-color-stroke-information::before {
-    background-color: var(--color-stroke-information);
+    background-color: var(--color-border-accent);
 }
 
 .demo-color-stroke-disabled::before {
-    background-color: var(--color-stroke-disabled);
+    background-color: var(--color-border-disabled);
 }
 
 .demo-color-stroke-strong::before {
-    background-color: var(--color-stroke-strong);
+    background-color: var(--color-border-strong);
 }
 
 .demo-color-stroke-subtle::before {
-    background-color: var(--color-stroke-subtle);
+    background-color: var(--color-border-subtle);
 }
 
 .demo-color-state-visited::before {
@@ -738,29 +738,29 @@
 }
 
 .demo-color-ai-gradient-full-spectrum::before {
-    background: var(--color-ai-gradient-full-spectrum);
+    background: var(--color-gradient-ai-full-color-diagonal);
 }
 
 .demo-color-ai-gradient-green-strong::before {
-    background: var(--color-ai-gradient-green-strong);
+    background: var(--color-gradient-ai-green-strong);
 }
 
 .demo-color-ai-gradient-blue-strong::before {
-    background: var(--color-ai-gradient-blue-strong);
+    background: var(--color-gradient-ai-blue-strong);
 }
 
 .demo-color-ai-gradient-purple-strong::before {
-    background: var(--color-ai-gradient-purple-strong);
+    background: var(--color-gradient-ai-purple-strong);
 }
 
 .demo-color-ai-gradient-green-subtle::before {
-    background: var(--color-ai-gradient-green-subtle);
+    background: var(--color-gradient-ai-green-subtle);
 }
 
 .demo-color-ai-gradient-blue-subtle::before {
-    background: var(--color-ai-gradient-blue-subtle);
+    background: var(--color-gradient-ai-blue-subtle);
 }
 
 .demo-color-ai-gradient-purple-subtle::before {
-    background: var(--color-ai-gradient-purple-subtle);
+    background: var(--color-gradient-ai-purple-subtle);
 }

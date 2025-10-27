@@ -95,13 +95,13 @@ figure.highlight {
 }
 
 .modules-expander li {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
 }
 
 .modules-expander__tip {
     color: var(--color-foreground-primary);
     display: none;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-style: italic;
     margin-left: var(--spacing-200);
 }
@@ -339,7 +339,7 @@ span.demo__inner {
 /* UTILITY & LESS SECTION */
 
 .striped-table {
-    border: 1px solid var(--color-stroke-subtle);
+    border: 1px solid var(--color-border-subtle);
     border-spacing: 0;
     width: 100%;
 }
@@ -363,7 +363,7 @@ span.demo__inner {
 }
 
 .striped-table td {
-    border-top: 1px solid var(--color-stroke-subtle);
+    border-top: 1px solid var(--color-border-subtle);
 }
 
 .demo-typography-giant-3 {

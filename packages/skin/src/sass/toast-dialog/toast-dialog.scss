@@ -92,7 +92,7 @@ button.icon-btn.toast-dialog__close {
     );
 
     &:focus {
-        outline: 2px solid var(--color-foreground-on-information);
+        outline: 2px solid var(--color-foreground-on-success);
     }
 
     &:hover,
@@ -148,7 +148,7 @@ button.icon-btn.toast-dialog__close > svg {
 
     button.btn--primary:focus,
     button.btn--secondary:focus {
-        outline: 2px solid var(--color-foreground-on-information);
+        outline: 2px solid var(--color-foreground-on-success);
     }
 
     button.btn--primary:not([disabled]) {

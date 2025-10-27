@@ -48,7 +48,7 @@ a.icon-link {
 button.icon-btn.icon-btn--primary,
 a.icon-link.icon-link--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-on-accent);
 }
 
@@ -185,7 +185,7 @@ button[aria-disabled="true"].icon-btn.icon-btn--primary,
 a:not([href]).icon-link.icon-link--primary,
 a[aria-disabled="true"].icon-link.icon-link--primary {
     background-color: var(--color-background-disabled);
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button[disabled].icon-btn.icon-btn--primary > svg,
@@ -204,7 +204,7 @@ a.icon-link.icon-link--primary .progress-spinner {
 button.icon-btn.icon-btn--secondary,
 a.icon-link.icon-link--secondary {
     background-color: transparent;
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-accent);
 }
 
@@ -232,7 +232,7 @@ button[disabled].icon-btn.icon-btn--secondary,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary,
 a:not([href]).icon-link.icon-link--secondary,
 a[aria-disabled="true"].icon-link.icon-link--secondary {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button[disabled].icon-btn.icon-btn--secondary > svg,
@@ -257,7 +257,7 @@ a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]) {
 button.icon-btn.icon-btn--tertiary,
 a.icon-link.icon-link--tertiary {
     background-color: transparent;
-    border-color: var(--color-stroke-default);
+    border-color: var(--color-border-medium);
     color: var(--color-foreground-accent);
 }
 
@@ -265,7 +265,7 @@ button[disabled].icon-btn.icon-btn--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 a:not([href]).icon-link.icon-link--tertiary,
 a[aria-disabled="true"].icon-link.icon-link--tertiary {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button.icon-btn.icon-btn--tertiary:not([disabled], [aria-disabled="true"]),
