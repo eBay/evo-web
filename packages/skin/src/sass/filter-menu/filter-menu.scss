@@ -119,7 +119,7 @@ button.filter-menu-form__footer[type="submit"] {
     padding: 16px;
     @include token-mixins.border-color-token(
         filter-menu-border-color,
-        color-stroke-subtle
+        color-border-subtle
     );
     @include filter-menu-mixins.base;
 

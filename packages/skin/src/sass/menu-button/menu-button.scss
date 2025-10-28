@@ -209,7 +209,7 @@ div.menu-button__option--active[role="option"] {
 hr.menu-button__separator {
     @include token-mixins.border-color-token(
         menu-button-separator-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 
     border-style: solid;

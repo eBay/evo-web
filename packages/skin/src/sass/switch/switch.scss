@@ -33,7 +33,7 @@ span.switch__button {
     );
     @include token-mixins.border-color-token(
         switch-border-color,
-        color-stroke-strong
+        color-border-strong
     );
 
     &::after {
@@ -43,7 +43,7 @@ span.switch__button {
         );
         @include token-mixins.border-color-token(
             switch-foreground-border-color,
-            color-stroke-strong
+            color-border-strong
         );
 
         border-radius: 50%;
@@ -79,7 +79,7 @@ input.switch__control[disabled] + span.switch__button,
 span.switch__control[aria-disabled="true"] + span.switch__button {
     @include token-mixins.border-color-token(
         switch-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
 }
 

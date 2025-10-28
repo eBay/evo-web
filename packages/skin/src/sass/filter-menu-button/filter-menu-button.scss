@@ -61,7 +61,7 @@ button.filter-menu-button__button {
 button.filter-menu-button__button[aria-pressed="true"] {
     @include token-mixins.border-color-token(
         filter-button-foreground-color,
-        color-stroke-strong
+        color-border-strong
     );
 
     font-weight: bold;

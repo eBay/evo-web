@@ -29,14 +29,14 @@
     z-index: 2;
     @include token-mixins.color-token(
         toast-dialog-foreground-color,
-        color-foreground-on-information
+        color-foreground-on-success
     );
 }
 
 .toast-dialog a {
     @include token-mixins.color-token(
         toast-dialog-foreground-color,
-        color-foreground-on-information
+        color-foreground-on-success
     );
 }
 
@@ -88,7 +88,7 @@ button.icon-btn.toast-dialog__close {
     padding: 0;
     @include token-mixins.color-token(
         toast-dialog-foreground-color,
-        color-foreground-on-information
+        color-foreground-on-success
     );
 
     &:focus {

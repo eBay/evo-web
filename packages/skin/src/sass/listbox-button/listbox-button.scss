@@ -42,7 +42,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 .listbox-button button[aria-invalid="true"] {
     @include token-mixins.border-color-token(
         listbox-button-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -54,7 +54,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     ).btn--form {
     @include token-mixins.border-color-token(
         listbox-button-border-color,
-        color-stroke-default
+        color-border-medium
     );
 
     &:hover,
@@ -88,7 +88,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     );
     @include token-mixins.border-color-token(
         listbox-button-border-color,
-        color-stroke-default
+        color-border-medium
     );
     @include token-mixins.color-token(
         listbox-button-foreground-color,
@@ -118,7 +118,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 .listbox-button.listbox-button--form button[aria-invalid="true"] {
     @include token-mixins.border-color-token(
         listbox-button-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -129,7 +129,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     );
     @include token-mixins.border-color-token(
         listbox-button-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 

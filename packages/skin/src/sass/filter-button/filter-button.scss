@@ -47,7 +47,7 @@ button.filter-button[aria-pressed="true"],
 a.filter-link--selected {
     @include token-mixins.border-color-token(
         filter-button-selected-border-color,
-        color-stroke-strong
+        color-border-strong
     );
 
     font-weight: bold;
@@ -56,7 +56,7 @@ a.filter-link--selected {
 a.filter-link--selected:visited {
     @include token-mixins.border-color-token(
         filter-button-selected-border-color,
-        color-stroke-strong
+        color-border-strong
     );
 }
 

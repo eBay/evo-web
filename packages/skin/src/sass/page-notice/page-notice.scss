@@ -104,7 +104,7 @@ span[role="region"].page-notice {
     );
     @include token-mixins.border-color-token(
         page-notice-attention-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 
     .page-notice__header svg {
@@ -118,7 +118,7 @@ span[role="region"].page-notice {
 .page-notice--confirmation {
     @include token-mixins.background-color-token(
         page-notice-confirmation-background-color,
-        color-background-confirmation
+        color-background-success
     );
     @include token-mixins.border-color-token(
         page-notice-confirmation-border-color,
@@ -128,7 +128,7 @@ span[role="region"].page-notice {
     .page-notice__header svg {
         @include token-mixins.color-token(
             page-notice-confirmation-icon-color,
-            color-foreground-on-confirmation
+            color-foreground-on-success
         );
     }
 }
@@ -140,13 +140,13 @@ span[role="region"].page-notice {
     );
     @include token-mixins.border-color-token(
         page-notice-information-border-color,
-        color-stroke-information
+        color-border-accent
     );
 
     .page-notice__header svg {
         @include token-mixins.color-token(
             page-notice-information-icon-color,
-            color-foreground-on-information
+            color-foreground-on-success
         );
     }
 }

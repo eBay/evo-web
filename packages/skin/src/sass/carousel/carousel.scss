@@ -40,7 +40,7 @@ $ebay-carousel-transition-function: ease-in-out;
     z-index: 1;
     @include token-mixins.border-color-token(
         carousel-paddle-border-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 
     &--prev {

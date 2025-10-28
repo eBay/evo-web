@@ -26,7 +26,7 @@ button.btn[disabled],
 button.btn[aria-disabled="true"] {
     @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
     @include token-mixins.color-token(
         expand-btn-disabled-foreground-color,
@@ -260,7 +260,7 @@ a.fake-btn--secondary.fake-btn--destructive {
     );
     @include token-mixins.border-color-token(
         btn-secondary-destructive-border-color,
-        color-stroke-attention
+        color-border-attention
     );
     @include token-mixins.color-token(
         btn-secondary-destructive-foreground-color,
@@ -281,7 +281,7 @@ button.btn--secondary[aria-disabled="true"] {
     );
     @include token-mixins.border-color-token(
         btn-secondary-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
     @include token-mixins.color-token(
         btn-secondary-disabled-foreground-color,
@@ -312,7 +312,7 @@ button.btn--tertiary,
 a.fake-btn--tertiary {
     @include token-mixins.border-color-token(
         btn-tertiary-border-color,
-        color-stroke-default
+        color-border-medium
     );
 
     @include button-mixins.animations;
@@ -331,7 +331,7 @@ a.fake-btn--tertiary[aria-disabled="true"] {
     );
     @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
 }
 
@@ -339,7 +339,7 @@ button.btn--tertiary.btn--destructive,
 a.fake-btn--tertiary.fake-btn--destructive {
     @include token-mixins.border-color-token(
         btn-tertiary-destructive-foreground-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 }
 
@@ -517,22 +517,22 @@ button.btn--floating-label .btn__floating-label--inline {
     a.fake-btn.fake-btn--primary.fake-btn--split-end {
         @include token-mixins.border-left-color-token(
             btn-primary-border-color,
-            color-stroke-accent
+            color-border-accent
         );
         @include token-mixins.border-right-color-token(
             primary-border-split-color,
-            color-stroke-subtle
+            color-border-subtle
         );
 
         &:hover,
         &:focus {
             @include token-mixins.border-left-color-token(
                 btn-primary-border-color,
-                color-stroke-accent
+                color-border-accent
             );
             @include token-mixins.border-right-color-token(
                 primary-border-split-color,
-                color-stroke-subtle
+                color-border-subtle
             );
         }
     }

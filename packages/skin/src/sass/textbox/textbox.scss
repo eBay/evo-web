@@ -16,7 +16,7 @@
     );
     @include token-mixins.border-color-token(
         textbox-border-color,
-        color-stroke-default
+        color-border-medium
     );
     @include token-mixins.border-radius-token(
         textbox-border-radius,
@@ -50,7 +50,7 @@
     box-shadow: 0 0 0 1px var(--color-border-strong);
     @include token-mixins.border-color-token(
         textbox-focus-border-color,
-        color-stroke-strong
+        color-border-strong
     );
     @include token-mixins.background-color-token(
         textbox-focus-background-color,
@@ -83,7 +83,7 @@
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
     @include token-mixins.border-color-token(
         textbox-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -162,7 +162,7 @@ textarea.textbox__control {
     &[aria-invalid="true"] {
         @include token-mixins.border-color-token(
             textbox-invalid-foreground-color,
-            color-stroke-attention
+            color-border-attention
         );
     }
 
