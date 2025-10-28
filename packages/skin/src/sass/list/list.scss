@@ -1,6 +1,7 @@
 @use "../variables/variables";
 @use "../mixins/private/button-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 .list {
     max-width: 480px;
@@ -66,25 +67,7 @@
 
 .list li > a,
 .list li > button {
-    &:hover,
-    &:focus {
-        @include token-mixins.background-color-token(
-            list-background-hover-color,
-            color-state-primary-hover
-        );
-
-        color: var(--color-foreground-on-primary);
-    }
-}
-
-.list li > button,
-.list li > a {
-    &:active {
-        @include token-mixins.background-color-token(
-            list-background-hover-color,
-            color-state-primary-hover
-        );
-    }
+    @include state-layer.standard;
 }
 
 .list hr {

@@ -61,7 +61,7 @@ a.cta-btn[aria-disabled="true"] {
     );
     border-color: var(
         --cta-btn-disabled-border-color,
-        var(--color-stroke-disabled)
+        var(--color-border-disabled)
     );
     color: var(
         --cta-btn-disabled-foreground-color,

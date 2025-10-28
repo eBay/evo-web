@@ -1,5 +1,7 @@
 :root {
     --bubble-shadow: 0 2px 7px rgb(0 0 0 / 0.15), 0 5px 17px rgb(0 0 0 / 0.2);
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
 .fake-menu-button,
 .menu-button {
@@ -76,12 +78,37 @@ div.menu-button__item[role^="menuitem"]:not(:last-child) {
 div.menu-button__item[role^="menuitem"]:focus {
     outline-offset: -4px;
 }
-div.menu-button__item[role^="menuitem"]:hover {
-    background-color: var(--color-state-primary-hover);
-    color: var(
-        --menu-button-menuitem-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+div.menu-button__item[role^="menuitem"] {
+    overflow: hidden;
+    position: relative;
+}
+div.menu-button__item[role^="menuitem"]:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+div.menu-button__item[role^="menuitem"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+div.menu-button__item[role^="menuitem"][href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+div.menu-button__item[role^="menuitem"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+div.menu-button__item[role^="menuitem"][href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+div.menu-button__item[role^="menuitem"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+div.menu-button__item[role^="menuitem"][href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 div.menu-button__item[role^="menuitem"]:active {
     font-weight: 700;
@@ -206,13 +233,60 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
 .fake-menu-button__menu button.fake-menu-button__item:focus {
     outline-offset: -4px;
 }
-.fake-menu-button__menu a.fake-menu-button__item:hover,
-.fake-menu-button__menu button.fake-menu-button__item:hover {
-    background-color: var(--color-state-primary-hover);
-    color: var(
-        --menu-button-menuitem-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+.fake-menu-button__menu a.fake-menu-button__item,
+.fake-menu-button__menu button.fake-menu-button__item {
+    overflow: hidden;
+    position: relative;
+}
+.fake-menu-button__menu a.fake-menu-button__item:after,
+.fake-menu-button__menu button.fake-menu-button__item:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.fake-menu-button__menu
+    a.fake-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+.fake-menu-button__menu a.fake-menu-button__item[href]:hover:after,
+.fake-menu-button__menu
+    button.fake-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+.fake-menu-button__menu button.fake-menu-button__item[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+.fake-menu-button__menu
+    a.fake-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+.fake-menu-button__menu a.fake-menu-button__item[href]:focus:after,
+.fake-menu-button__menu
+    button.fake-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+.fake-menu-button__menu button.fake-menu-button__item[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+.fake-menu-button__menu
+    a.fake-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+.fake-menu-button__menu a.fake-menu-button__item[href]:active:after,
+.fake-menu-button__menu
+    button.fake-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+.fake-menu-button__menu button.fake-menu-button__item[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 .fake-menu-button__menu a.fake-menu-button__item:active,
 .fake-menu-button__menu button.fake-menu-button__item:active {
@@ -315,7 +389,7 @@ div.menu-button__option--active[role="option"] {
 hr.menu-button__separator {
     border-color: var(
         --menu-button-separator-color,
-        var(--color-stroke-subtle)
+        var(--color-border-subtle)
     );
     border-style: solid;
     border-width: 1px;

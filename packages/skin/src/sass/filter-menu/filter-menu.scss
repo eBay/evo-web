@@ -122,10 +122,6 @@ button.filter-menu-form__footer[type="submit"] {
         color-border-subtle
     );
     @include filter-menu-mixins.base;
-
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
 }
 
 .filter-menu__text,

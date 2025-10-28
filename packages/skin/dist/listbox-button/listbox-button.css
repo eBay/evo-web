@@ -1,5 +1,7 @@
 :root {
     --bubble-shadow: 0 2px 7px rgb(0 0 0 / 0.15), 0 5px 17px rgb(0 0 0 / 0.2);
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
 .listbox-button {
     line-height: normal;
@@ -52,7 +54,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
 .listbox-button button[aria-invalid="true"] {
     border-color: var(
         --listbox-button-invalid-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 .listbox-button:not(.listbox-button--error)
@@ -63,7 +65,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     ).btn--form {
     border-color: var(
         --listbox-button-border-color,
-        var(--color-stroke-default)
+        var(--color-border-medium)
     );
 }
 .listbox-button:not(.listbox-button--error)
@@ -113,7 +115,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     );
     border-color: var(
         --listbox-button-border-color,
-        var(--color-stroke-default)
+        var(--color-border-medium)
     );
     color: var(
         --listbox-button-foreground-color,
@@ -140,7 +142,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
 .listbox-button.listbox-button--form button[aria-invalid="true"] {
     border-color: var(
         --listbox-button-invalid-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 .listbox-button.listbox-button--error button:not(.btn--borderless) {
@@ -150,7 +152,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
     );
     border-color: var(
         --listbox-button-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 .listbox-button .btn__label {
@@ -173,7 +175,17 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox {
 }
 .listbox-button__options[role="listbox"]:focus
     .listbox-button__option--active[role="option"] {
-    background-color: var(--color-state-primary-hover);
+    overflow: hidden;
+    position: relative;
+}
+.listbox-button__options[role="listbox"]:focus
+    .listbox-button__option--active[role="option"]:after {
+    background-color: var(--color-state-layer-neutral);
+    background-color: var(--color-state-layer-hover);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
 }
 .listbox-button__option svg.icon {
     align-self: center;
@@ -218,12 +230,40 @@ div.listbox-button__option[role="option"]:not(:last-child) {
 div.listbox-button__option[role="option"]:focus {
     outline-offset: -4px;
 }
+div.listbox-button__option[role="option"] {
+    overflow: hidden;
+    position: relative;
+}
+div.listbox-button__option[role="option"]:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+div.listbox-button__option[role="option"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+div.listbox-button__option[role="option"][href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+div.listbox-button__option[role="option"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+div.listbox-button__option[role="option"][href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+div.listbox-button__option[role="option"]:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+div.listbox-button__option[role="option"][href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
 div.listbox-button__option[role="option"][hidden] {
     display: none;
-}
-div.listbox-button__option[role="option"]:hover {
-    background-color: var(--color-state-primary-hover);
-    color: var(--color-foreground-primary);
 }
 div.listbox-button__option[role="option"]:active {
     font-weight: 700;

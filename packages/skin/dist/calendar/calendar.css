@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 .calendar {
     color: var(--calendar-color-token, var(--color-foreground-primary));
     display: table;
@@ -87,13 +91,42 @@
 .calendar__month td > :disabled {
     color: var(--calendar-day-disabled-color, var(--color-foreground-disabled));
 }
+.calendar__month td:not(.calendar__range, .calendar__cell--selected) > button {
+    overflow: hidden;
+    position: relative;
+}
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
-    > button:not(:disabled):hover {
-    background-color: var(
-        --calendar-day-hover-background-color,
-        var(--color-state-primary-hover)
-    );
+    > button:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button:not([disabled], [aria-disabled="true"]):hover:after,
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button:not([disabled], [aria-disabled="true"]):focus:after,
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button:not([disabled], [aria-disabled="true"]):active:after,
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
@@ -112,10 +145,7 @@
     font-weight: 700;
 }
 .calendar__range {
-    background-color: var(
-        --calendar-day-range-background-color,
-        var(--color-state-secondary-active)
-    );
+    background-color: var(--color-state-layer-pressed);
     position: relative;
 }
 .calendar__range:before {
@@ -139,14 +169,14 @@
     background: linear-gradient(
         to right,
         transparent 50%,
-        var(--color-state-secondary-active) 50%
+        var(--color-state-layer-pressed) 50%
     );
 }
 .calendar__range--end {
     background: linear-gradient(
         to left,
         transparent 50%,
-        var(--color-state-secondary-active) 50%
+        var(--color-state-layer-pressed) 50%
     );
 }
 .calendar__range--start.calendar__range--end {
@@ -156,8 +186,5 @@
     > :not(:disabled, [aria-disabled="true"]),
 .calendar__range--start:not(.calendar__cell--selected)
     > :not(:disabled, [aria-disabled="true"]) {
-    background-color: var(
-        --calendar-day-range-end,
-        var(--color-state-secondary-active)
-    );
+    background-color: var(--color-state-layer-pressed);
 }

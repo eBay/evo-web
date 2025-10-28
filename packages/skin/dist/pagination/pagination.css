@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 nav.pagination {
     align-items: center;
     color: var(
@@ -118,12 +122,40 @@ a.pagination__item:focus:not(:focus-visible),
 button.pagination__item:focus:not(:focus-visible) {
     outline: none;
 }
-span.pagination__item button.icon-btn--transparent:focus,
-span.pagination__item button.icon-btn--transparent:hover {
-    background-color: var(--color-state-primary-hover);
+span.pagination__item button.icon-btn--transparent {
+    overflow: hidden;
+    position: relative;
 }
-span.pagination__item button.icon-btn--transparent:active {
-    background-color: var(--color-state-primary-active);
+span.pagination__item button.icon-btn--transparent:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+span.pagination__item
+    button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+span.pagination__item button.icon-btn--transparent[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+span.pagination__item
+    button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+span.pagination__item button.icon-btn--transparent[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+span.pagination__item
+    button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+span.pagination__item button.icon-btn--transparent[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 nav.pagination--fluid {
     width: 100%;

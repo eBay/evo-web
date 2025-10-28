@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 .segmented-buttons {
     border: 1px solid var(--color-border-medium);
     border-radius: var(--segmented-button-border-radius, 24px);
@@ -54,10 +58,35 @@
     background-color: var(--color-foreground-primary);
     color: var(--color-foreground-on-inverse);
 }
-.segmented-buttons__button:not([aria-current]):active {
-    background-color: var(--color-state-primary-active);
+.segmented-buttons__button:not([aria-current]) {
+    overflow: hidden;
+    position: relative;
 }
-.segmented-buttons__button:not([aria-current]):focus,
-.segmented-buttons__button:not([aria-current]):hover {
-    background-color: var(--color-state-primary-hover);
+.segmented-buttons__button:not([aria-current]):after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.segmented-buttons__button:not([aria-current]):not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+.segmented-buttons__button:not([aria-current])[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+.segmented-buttons__button:not([aria-current]):not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+.segmented-buttons__button:not([aria-current])[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+.segmented-buttons__button:not([aria-current]):not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+.segmented-buttons__button:not([aria-current])[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }

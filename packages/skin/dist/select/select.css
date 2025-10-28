@@ -13,7 +13,7 @@ span.select {
         --select-background-color,
         var(--color-background-secondary)
     );
-    border-color: var(--select-border-color, var(--color-stroke-default));
+    border-color: var(--select-border-color, var(--color-border-medium));
     border-radius: var(--select-border-radius, var(--border-radius-50));
     border-style: solid;
     border-width: 1px;
@@ -60,7 +60,7 @@ span.select {
         --select-focus-background-color,
         var(--color-background-primary)
     );
-    border-color: var(--select-focus-border-color, var(--color-stroke-default));
+    border-color: var(--select-focus-border-color, var(--color-border-medium));
     outline: 0;
     text-decoration: underline;
 }
@@ -91,7 +91,7 @@ span.select {
 .select select[aria-invalid="true"] {
     border-color: var(
         --select-invalid-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
     border-style: solid;
     border-width: 1px;
@@ -101,7 +101,7 @@ span.select {
         --select-focus-background-color,
         var(--color-background-primary)
     );
-    border-color: var(--select-focus-border-color, var(--color-stroke-default));
+    border-color: var(--select-focus-border-color, var(--color-border-medium));
 }
 [dir="rtl"] .select > select {
     padding-left: 30px;

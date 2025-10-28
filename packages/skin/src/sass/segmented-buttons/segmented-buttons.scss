@@ -1,5 +1,6 @@
 @use "../variables/variables";
 @use "../mixins/private/button-mixins";
+@use "../mixins/private/state-layer";
 
 .segmented-buttons {
     border: 1px solid var(--color-border-medium);
@@ -67,12 +68,5 @@
 }
 
 .segmented-buttons__button:not([aria-current]) {
-    &:active {
-        background-color: var(--color-state-primary-active);
-    }
-
-    &:hover,
-    &:focus {
-        background-color: var(--color-state-primary-hover);
-    }
+    @include state-layer.standard;
 }

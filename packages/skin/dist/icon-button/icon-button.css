@@ -1,9 +1,45 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 a.icon-link {
     align-items: center;
     display: inline-flex;
 }
 a.icon-link > svg {
     margin: 0 auto;
+}
+a.icon-link,
+button.icon-btn {
+    overflow: hidden;
+    position: relative;
+}
+a.icon-link:after,
+button.icon-btn:after {
+    background-color: var(--color-state-layer-neutral);
+    border-radius: 50px;
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.icon-link:not([disabled], [aria-disabled="true"]):hover:after,
+a.icon-link[href]:hover:after,
+button.icon-btn:not([disabled], [aria-disabled="true"]):hover:after,
+button.icon-btn[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.icon-link:not([disabled], [aria-disabled="true"]):focus:after,
+a.icon-link[href]:focus:after,
+button.icon-btn:not([disabled], [aria-disabled="true"]):focus:after,
+button.icon-btn[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.icon-link:not([disabled], [aria-disabled="true"]):active:after,
+a.icon-link[href]:active:after,
+button.icon-btn:not([disabled], [aria-disabled="true"]):active:after,
+button.icon-btn[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 a.icon-link,
 button.icon-btn {
@@ -26,16 +62,6 @@ button.icon-btn > svg {
     fill: var(--color-foreground-primary);
     max-width: 75%;
     position: relative;
-}
-a.icon-link:focus,
-a.icon-link:hover,
-button.icon-btn:focus,
-button.icon-btn:hover {
-    background-color: var(--color-state-secondary-hover);
-}
-a.icon-link:active,
-button.icon-btn:active {
-    background-color: var(--color-state-secondary-active);
 }
 a.icon-link:not(:focus-visible),
 button.icon-btn:not(:focus-visible) {
@@ -75,13 +101,28 @@ button.icon-btn.icon-btn--large {
     width: 48px;
 }
 a.icon-link--transparent,
-a.icon-link--transparent:active,
-a.icon-link--transparent:focus,
-a.icon-link--transparent:hover,
+a.icon-link--transparent:not([disabled], [aria-disabled="true"]):active:after,
+a.icon-link--transparent:not([disabled], [aria-disabled="true"]):focus:after,
+a.icon-link--transparent:not([disabled], [aria-disabled="true"]):hover:after,
+a.icon-link--transparent[href]:active:after,
+a.icon-link--transparent[href]:focus:after,
+a.icon-link--transparent[href]:hover:after,
 button.icon-btn--transparent,
-button.icon-btn--transparent:active,
-button.icon-btn--transparent:focus,
-button.icon-btn--transparent:hover {
+button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+button.icon-btn--transparent[href]:active:after,
+button.icon-btn--transparent[href]:focus:after,
+button.icon-btn--transparent[href]:hover:after {
     background-color: initial;
 }
 a.icon-link:visited > svg {
@@ -221,25 +262,6 @@ button[aria-disabled="true"].icon-btn.icon-btn--secondary > svg,
 button[disabled].icon-btn.icon-btn--secondary > svg {
     fill: var(--color-foreground-disabled);
 }
-a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]):focus,
-a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]):hover,
-button.icon-btn.icon-btn--secondary:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):focus,
-button.icon-btn.icon-btn--secondary:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):hover {
-    background-color: var(--color-state-secondary-hover);
-}
-a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]):active,
-button.icon-btn.icon-btn--secondary:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):active {
-    background-color: var(--color-state-secondary-active);
-}
 a.icon-link.icon-link--tertiary,
 button.icon-btn.icon-btn--tertiary {
     background-color: initial;
@@ -251,23 +273,4 @@ a[aria-disabled="true"].icon-link.icon-link--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 button[disabled].icon-btn.icon-btn--tertiary {
     border-color: var(--color-border-disabled);
-}
-a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]):focus,
-a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]):hover,
-button.icon-btn.icon-btn--tertiary:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):focus,
-button.icon-btn.icon-btn--tertiary:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):hover {
-    background-color: var(--color-state-secondary-hover);
-}
-a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]):active,
-button.icon-btn.icon-btn--tertiary:not(
-        [disabled],
-        [aria-disabled="true"]
-    ):active {
-    background-color: var(--color-state-secondary-active);
 }

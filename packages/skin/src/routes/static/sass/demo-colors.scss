@@ -653,80 +653,40 @@
     border: 1px solid var(--color-border-medium);
 }
 
-.demo-color-stroke-default::before {
+.demo-color-border-default::before {
     background-color: var(--color-border-medium);
 }
 
-.demo-color-stroke-accent::before {
+.demo-color-border-accent::before {
     background-color: var(--color-border-accent);
 }
 
-.demo-color-stroke-attention::before {
+.demo-color-border-attention::before {
     background-color: var(--color-border-attention);
 }
 
-.demo-color-stroke-confirmation::before {
+.demo-color-border-confirmation::before {
     background-color: var(--color-border-success);
 }
 
-.demo-color-stroke-information::before {
+.demo-color-border-information::before {
     background-color: var(--color-border-accent);
 }
 
-.demo-color-stroke-disabled::before {
+.demo-color-border-disabled::before {
     background-color: var(--color-border-disabled);
 }
 
-.demo-color-stroke-strong::before {
+.demo-color-border-strong::before {
     background-color: var(--color-border-strong);
 }
 
-.demo-color-stroke-subtle::before {
+.demo-color-border-subtle::before {
     background-color: var(--color-border-subtle);
 }
 
 .demo-color-state-visited::before {
     background-color: var(--color-state-visited);
-}
-
-.demo-color-state-primary-hover::before {
-    background-color: var(--color-state-primary-hover);
-}
-
-.demo-color-state-primary-active::before {
-    background-color: var(--color-state-primary-active);
-}
-
-.demo-color-state-secondary-hover::before {
-    background-color: var(--color-state-secondary-hover);
-}
-
-.demo-color-state-secondary-active::before {
-    background-color: var(--color-state-secondary-active);
-}
-
-.demo-color-state-inverse-hover::before {
-    background-color: var(--color-state-inverse-hover);
-}
-
-.demo-color-state-inverse-active::before {
-    background-color: var(--color-state-inverse-active);
-}
-
-.demo-color-state-accent-hover::before {
-    background-color: var(--color-state-accent-hover);
-}
-
-.demo-color-state-accent-active::before {
-    background-color: var(--color-state-accent-active);
-}
-
-.demo-color-state-attention-hover::before {
-    background-color: var(--color-state-attention-hover);
-}
-
-.demo-color-state-attention-active::before {
-    background-color: var(--color-state-attention-active);
 }
 
 .demo-color-scrim-image::before {

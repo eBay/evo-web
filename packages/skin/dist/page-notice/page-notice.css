@@ -64,7 +64,7 @@ span[role="region"].page-notice {
     );
     border-color: var(
         --page-notice-attention-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 .page-notice--attention .page-notice__header svg {
@@ -76,7 +76,7 @@ span[role="region"].page-notice {
 .page-notice--confirmation {
     background-color: var(
         --page-notice-confirmation-background-color,
-        var(--color-background-confirmation)
+        var(--color-background-success)
     );
     border-color: var(
         --page-notice-confirmation-border-color,
@@ -86,7 +86,7 @@ span[role="region"].page-notice {
 .page-notice--confirmation .page-notice__header svg {
     color: var(
         --page-notice-confirmation-icon-color,
-        var(--color-foreground-on-confirmation)
+        var(--color-foreground-on-success)
     );
 }
 .page-notice--information {
@@ -96,13 +96,13 @@ span[role="region"].page-notice {
     );
     border-color: var(
         --page-notice-information-border-color,
-        var(--color-stroke-information)
+        var(--color-border-accent)
     );
 }
 .page-notice--information .page-notice__header svg {
     color: var(
         --page-notice-information-icon-color,
-        var(--color-foreground-on-information)
+        var(--color-foreground-on-success)
     );
 }
 .page-notice--general {

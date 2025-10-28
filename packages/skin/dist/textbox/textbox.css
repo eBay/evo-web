@@ -9,7 +9,7 @@
         --textbox-background-color,
         var(--color-background-secondary)
     );
-    border-color: var(--textbox-border-color, var(--color-stroke-default));
+    border-color: var(--textbox-border-color, var(--color-border-medium));
     border-radius: var(--textbox-border-radius, var(--border-radius-50));
     border-style: solid;
     border-width: 1px;
@@ -39,7 +39,7 @@
         --textbox-focus-background-color,
         var(--color-background-primary)
     );
-    border-color: var(--textbox-focus-border-color, var(--color-stroke-strong));
+    border-color: var(--textbox-focus-border-color, var(--color-border-strong));
     box-shadow: 0 0 0 1px var(--color-border-strong);
 }
 
@@ -65,7 +65,7 @@
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
     border-color: var(
         --textbox-invalid-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 
@@ -150,7 +150,7 @@ input.textbox__control[aria-invalid="true"],
 textarea.textbox__control[aria-invalid="true"] {
     border-color: var(
         --textbox-invalid-foreground-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 

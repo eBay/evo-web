@@ -247,7 +247,7 @@ button.icon-btn.lightbox-dialog__prev {
     transform: translateY(100%);
 }
 .lightbox-dialog__handle:after {
-    background-color: var(--dialog-handle-color, var(--color-stroke-default));
+    background-color: var(--dialog-handle-color, var(--color-border-medium));
     border-radius: 3px;
     content: "";
     display: block;

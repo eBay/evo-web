@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 .list {
     max-width: 480px;
 }
@@ -46,25 +50,36 @@
 .list li > a,
 .list li > button {
     border: none;
+    overflow: hidden;
+    position: relative;
     text-align: left;
     text-decoration: none;
 }
-.list li > a:focus,
-.list li > a:hover,
-.list li > button:focus,
-.list li > button:hover {
-    color: var(--color-foreground-on-primary);
+.list li > a:after,
+.list li > button:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
 }
-.list li > a:active,
-.list li > a:focus,
-.list li > a:hover,
-.list li > button:active,
-.list li > button:focus,
-.list li > button:hover {
-    background-color: var(
-        --list-background-hover-color,
-        var(--color-state-primary-hover)
-    );
+.list li > a:not([disabled], [aria-disabled="true"]):hover:after,
+.list li > a[href]:hover:after,
+.list li > button:not([disabled], [aria-disabled="true"]):hover:after,
+.list li > button[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+.list li > a:not([disabled], [aria-disabled="true"]):focus:after,
+.list li > a[href]:focus:after,
+.list li > button:not([disabled], [aria-disabled="true"]):focus:after,
+.list li > button[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+.list li > a:not([disabled], [aria-disabled="true"]):active:after,
+.list li > a[href]:active:after,
+.list li > button:not([disabled], [aria-disabled="true"]):active:after,
+.list li > button[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 .list hr {
     border: 0;

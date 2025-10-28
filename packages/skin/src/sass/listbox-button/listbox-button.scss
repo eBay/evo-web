@@ -2,6 +2,7 @@
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/listbox-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
 .listbox-button {
@@ -171,7 +172,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 
 .listbox-button__options[role="listbox"]:focus
     .listbox-button__option--active[role="option"] {
-    background-color: var(--color-state-primary-hover);
+    @include state-layer.base;
+    @include state-layer.selector-hover;
 }
 
 .listbox-button__option svg.icon {

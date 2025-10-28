@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 div.filter-group {
     display: flex;
     flex-wrap: wrap;
@@ -31,16 +35,36 @@ button.filter-button + a.filter-link,
 button.filter-button + button.filter-button {
     margin-left: 8px;
 }
-a.filter-link:active,
-a.filter-link:focus,
-a.filter-link:hover,
-button.filter-button:active,
-button.filter-button:focus,
-button.filter-button:hover {
-    background-color: var(
-        --filter-button-background-color,
-        var(--color-state-secondary-hover)
-    );
+a.filter-link,
+button.filter-button {
+    overflow: hidden;
+    position: relative;
+}
+a.filter-link:after,
+button.filter-button:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.filter-link:not([disabled], [aria-disabled="true"]):hover:after,
+a.filter-link[href]:hover:after,
+button.filter-button:not([disabled], [aria-disabled="true"]):hover:after,
+button.filter-button[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+a.filter-link:not([disabled], [aria-disabled="true"]):focus:after,
+a.filter-link[href]:focus:after,
+button.filter-button:not([disabled], [aria-disabled="true"]):focus:after,
+button.filter-button[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+a.filter-link:not([disabled], [aria-disabled="true"]):active:after,
+a.filter-link[href]:active:after,
+button.filter-button:not([disabled], [aria-disabled="true"]):active:after,
+button.filter-button[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
 }
 a.filter-link .filter-link__cell,
 button.filter-button .filter-button__cell {
@@ -66,7 +90,7 @@ a.filter-link--selected:visited,
 button.filter-button[aria-pressed="true"] {
     border-color: var(
         --filter-button-selected-border-color,
-        var(--color-stroke-strong)
+        var(--color-border-strong)
     );
 }
 a.filter-link--selected:not([href]),
@@ -82,40 +106,6 @@ button.filter-button[disabled] {
         var(--color-foreground-disabled)
     );
     font-weight: 400;
-}
-a.filter-link--selected:not([href]):focus,
-a.filter-link--selected:not([href]):hover,
-a.filter-link--selected[aria-disabled="true"]:focus,
-a.filter-link--selected[aria-disabled="true"]:hover,
-a.filter-link:not([href]):focus,
-a.filter-link:not([href]):hover,
-a.filter-link[aria-disabled="true"]:focus,
-a.filter-link[aria-disabled="true"]:hover,
-button.filter-button[aria-disabled="true"]:focus,
-button.filter-button[aria-disabled="true"]:hover,
-button.filter-button[aria-pressed="true"][aria-disabled="true"]:focus,
-button.filter-button[aria-pressed="true"][aria-disabled="true"]:hover,
-button.filter-button[aria-pressed="true"][disabled]:focus,
-button.filter-button[aria-pressed="true"][disabled]:hover,
-button.filter-button[disabled]:focus,
-button.filter-button[disabled]:hover {
-    background-color: var(
-        --filter-button-background-color,
-        var(--color-background-secondary)
-    );
-    color: var(
-        --filter-button-disabled-foreground-color,
-        var(--color-foreground-disabled)
-    );
-}
-a.filter-link--selected:not([href]):hover,
-a.filter-link--selected[aria-disabled="true"]:hover,
-button.filter-button[aria-pressed="true"][aria-disabled="true"]:hover,
-button.filter-button[aria-pressed="true"][disabled]:hover {
-    background-color: var(
-        --filter-button-selected-background-color,
-        var(--color-state-secondary-hover)
-    );
 }
 a.filter-link:focus:not(:focus-visible),
 button.filter-button:focus:not(:focus-visible) {

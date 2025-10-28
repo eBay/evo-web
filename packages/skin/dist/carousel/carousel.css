@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 .carousel {
     position: relative;
 }
@@ -102,15 +106,38 @@ div.carousel {
     margin: 16px 0;
 }
 .carousel__control {
-    align-items: center;
     background-color: var(
         --carousel-paddle-background-color,
         var(--color-background-primary)
     );
+    overflow: hidden;
+    position: relative;
+}
+.carousel__control:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.carousel__control:not([disabled], [aria-disabled="true"]):hover:after,
+.carousel__control[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+.carousel__control:not([disabled], [aria-disabled="true"]):focus:after,
+.carousel__control[href]:focus:after {
+    background-color: var(--color-state-layer-focus);
+}
+.carousel__control:not([disabled], [aria-disabled="true"]):active:after,
+.carousel__control[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+.carousel__control {
+    align-items: center;
     border: 1px solid;
     border-color: var(
         --carousel-paddle-border-color,
-        var(--color-stroke-subtle)
+        var(--color-border-subtle)
     );
     border-radius: 16px;
     box-shadow:
@@ -138,10 +165,7 @@ div.carousel {
     right: calc(var(--spacing-200) * -1);
 }
 .carousel__control svg {
-    color: var(
-        --carousel-paddle-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
 }
 .carousel__control:focus:not(:focus-visible) {
     outline: none;
@@ -170,18 +194,8 @@ div.carousel {
 .carousel__control:focus[aria-disabled="true"] {
     opacity: 0.3;
 }
-.carousel__control:hover {
-    background-color: var(--color-state-primary-hover);
-    border-color: var(--color-state-primary-hover);
-}
 .carousel__control:hover svg {
-    color: var(
-        --carousel-paddle-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
-}
-.carousel__control:active {
-    background-color: var(--color-state-primary-active);
+    color: var(--color-foreground-primary);
 }
 .carousel__playback:focus:not(:focus-visible) {
     outline: none;

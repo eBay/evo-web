@@ -3,6 +3,7 @@
 @use "../mixins/private/filter-button-mixins";
 @use "../mixins/private/filter-menu-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 /* .filter-group also exists in filter-button */
 /* todo: move to utility/layout class and/or mixin */
@@ -25,12 +26,7 @@ button.filter-menu-button__button {
     border-color: var(--color-border-medium);
 
     @include filter-button-mixins.base;
-
-    &:focus,
-    &:hover,
-    &:active {
-        background-color: var(--color-state-secondary-hover);
-    }
+    @include state-layer.standard;
 }
 
 .filter-menu-button__button-cell {
@@ -207,13 +203,10 @@ span.filter-menu-button__radio {
 
 .filter-menu-button__item {
     @include filter-menu-mixins.base;
+    @include state-layer.standard;
 
     outline-offset: -4px;
     padding: 8px 16px;
-
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
 
     &:last-child {
         margin-bottom: 8px;
@@ -271,11 +264,6 @@ button.filter-menu-button__footer {
     transform: translateZ(0);
 
     @include filter-menu-mixins.base;
-
-    &:focus,
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
 }
 
 .filter-menu-button__text {

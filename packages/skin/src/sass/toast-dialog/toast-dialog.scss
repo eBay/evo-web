@@ -1,6 +1,7 @@
 @use "../variables/variables";
 @use "../mixins/private/dialog-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 .toast-dialog {
     @include token-mixins.background-color-token(
@@ -90,14 +91,10 @@ button.icon-btn.toast-dialog__close {
         toast-dialog-foreground-color,
         color-foreground-on-success
     );
+    @include state-layer.standard;
 
     &:focus {
         outline: 2px solid var(--color-foreground-on-success);
-    }
-
-    &:hover,
-    &:focus {
-        color: var(--color-state-primary-hover);
     }
 }
 
@@ -119,6 +116,7 @@ button.icon-btn.toast-dialog__close > svg {
             toast-dialog-foreground-color,
             color-foreground-on-accent
         );
+        @include state-layer.standard;
 
         border-style: solid;
         border-width: 1px;
@@ -149,39 +147,6 @@ button.icon-btn.toast-dialog__close > svg {
     button.btn--primary:focus,
     button.btn--secondary:focus {
         outline: 2px solid var(--color-foreground-on-success);
-    }
-
-    button.btn--primary:not([disabled]) {
-        &:focus,
-        &:hover {
-            background-color: var(--color-state-primary-hover);
-        }
-
-        &:active {
-            background-color: var(--color-state-primary-active);
-        }
-    }
-
-    button.btn--secondary:not([disabled]) {
-        &:focus,
-        &:hover {
-            background-color: var(--color-state-accent-hover);
-            @include token-mixins.border-color-token(
-                toast-dialog-foreground-color,
-                color-foreground-on-accent
-            );
-            @include token-mixins.color-token(
-                toast-dialog-foreground-color,
-                color-background-primary
-            );
-        }
-
-        /* prettier-ignore */
-        &:active {
-            background-color: var(--color-state-accent-active);
-            @include token-mixins.border-color-token(toast-dialog-foreground-color, color-foreground-on-accent);
-            @include token-mixins.color-token(toast-dialog-foreground-color, color-background-primary);
-        }
     }
 }
 
