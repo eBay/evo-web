@@ -303,8 +303,9 @@ class Video extends Marko.Component<Input, State> {
             videoConfig.doubleClickForFullscreen = false;
             videoConfig.singleClickForPlayAndPause = false;
         }
-       
-
+         if(input.action === "play" || input.autoplay === true) {
+            this.isAutoPlay = true;
+        }
     }
 
     _addTextTracks() {
