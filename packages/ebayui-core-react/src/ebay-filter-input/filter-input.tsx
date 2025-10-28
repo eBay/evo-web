@@ -96,8 +96,6 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
         }
     };
 
-
-
     const containerClassName = classnames(
         "filter-input",
         inputSize && validSizes.includes(inputSize) && `filter-input--${inputSize}`,
@@ -132,7 +130,6 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
                 onInputChange={onInputChange}
                 onFocus={onFocus}
                 onBlur={onBlur}
-                onButtonClick={a11yClearButton ? handleButtonClick : undefined}
             >
                 <EbayTextboxPrefixIcon icon={<EbayIconSearch16 />} />
                 {a11yClearButton && (
@@ -140,6 +137,7 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
                         icon={<EbayIconClear16 />}
                         buttonAriaLabel={a11yClearButton}
                         className="filter-input__clear-btn"
+                        onClick={handleButtonClick}
                     />
                 )}
             </EbayTextbox>
