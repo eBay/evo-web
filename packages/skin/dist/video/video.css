@@ -133,8 +133,8 @@
     border-radius: 16px;
     font-size: 1rem;
     margin-right: auto;
-    min-width: 60px;
     padding: 16px 8px;
+    width: auto;
 }
 .video-player.video-player--compact .shaka-controls-button-panel button * {
     margin: 0;
