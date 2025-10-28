@@ -1,20 +1,6 @@
 # Alert Dialog Accessibility
 
-### Working Examples
-
-Experience the pattern in action on our companion [eBay MIND Patterns examples website](https://ebay.github.io/mindpatterns/messaging/alert-dialog).
-
-Examine the required markup structure on our [Bones GitHub Project.](https://github.com/ianmcburnie/bones#user-content-alert-dialog)
-
-View a fully styled example on our [eBay Skin](https://opensource.ebay.com/skin/component/lightbox-dialog/) website.
-
-### Terminology
-
-**Acknowledgement Button**: The button that must be clicked to acknowledge and dismiss the alert dialog.
-
-**Mask**: The semi-opaque layer that sits between the dialog and the main page.
-
-### Best Practices
+## Best Practices
 
 Alert dialogs are always modal and require a mask.
 
@@ -24,11 +10,11 @@ Alert dialogs should be opened as a result of a user action or critical system e
 
 Avoid stacking of alert dialogs.
 
-### Interaction Design
+## Interaction Design
 
-This section provides interaction design for keyboard, screen reader & pointing devices.
+This section provides detailed instructions for how different input types should navigate and operate the pattern.
 
-#### Keyboard
+### Keyboard
 
 Initial keyboard focus should be placed on the _acknowledgement_ button.
 
@@ -36,7 +22,7 @@ The keyboard should be confined to the interactive elements within the dialog (i
 
 Activating the acknowledgment button will close the dialog and return focus to the main page.
 
-#### Screen Reader
+### Screen Reader
 
 Initial screen reader focus will be placed on the _acknowledgement_ button.
 
@@ -44,10 +30,16 @@ When opened, the screen reader should announce the title of the dialog, its role
 
 The screen reader should be confined to the elements within the dialog (i.e. modal behaviour).
 
-#### Pointer
+### Pointer
 
 Clicking the mask **must not** close the alert dialog (an explicit acknowledgement is required).
 
-### Developer Guide
+## ARIA Reference
 
-This section is not yet available.
+| Attribute              | Description                                                                   |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| **role="alertdialog"** | Informs the assistive technology that the user is inside of an alert dialog.  |
+| **aria-modal**         | Conveys that the dialog is modal                                              |
+| **aria-labelledby**    | Use onscreen text to name the alert dialog (typically an h2 heading element). |
+| **aria-label**         | Explicitly name the alert dialog, if no suitable onscreen text exists.        |
+| **aria-describedby**   | References the element containing the alert message content.                  |

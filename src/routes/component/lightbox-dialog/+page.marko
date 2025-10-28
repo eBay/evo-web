@@ -1,14 +1,47 @@
-<div id="lightbox-dialog-overview">
+<div id="lightbox-dialog-component">
     <h1>Lightbox Dialog Component</h1>
+    <p class="component-subtitle">A modal window which dims out the main page behind it.</p>
+    <img class="component-banner-img" src="/src/routes/static/img/components/dialog-400.png" aria-hidden="true" />
     
-    <p>
-        A lightbox dialog is a modal window spawned by the main web page or
-        application.
-    </p>
+    <p>In traditional desktop operating systems, a lightbox dialog is a child-window that typically exists to communicate information to the user, display a prompt for input, or allow the user to verify or cancel an action.</p>
+    
+    <p>Whilst these specific cases are also valid and true on the web, we also see a wide variety of other custom uses. For example, a dialog itself might contain an entire full page-like experience, a video, image gallery, navigation or settings.</p>
+    
+    <p>There are various ways to visually present a dialog. The version here is the "lightbox" version. A dialog that visibly dims out the rest of the page while the dialog is open.</p>
+    
     <p>
         The lightbox-dialog is fully responsive. On large screens it will be
         aligned to the center of the screen; on small screens at the bottom.
         Small screens display an additional "handle" button, used to expand the
         dialog height.
     </p>
+
+    <h2>Terminology</h2>
+    <p>We use the following terminology when discussing this pattern.</p>
+    <ul>
+        <li>
+            <strong>lightbox-dialog</strong>: the pattern as a whole, comprised of the following sub parts
+        </li>
+        <li>
+            <strong>parent window</strong>: the page containing the button that opens the dialog
+        </li>
+        <li>
+            <strong>dialog button</strong>: the button that opens the child window
+        </li>
+        <li>
+            <strong>child window</strong>: the overlay containing the dialog content
+        </li>
+        <li>
+            <strong>title</strong>: the title of the child window
+        </li>
+        <li>
+            <strong>modality</strong>: modal or non-modal, dialogs with a mask are always modal
+        </li>
+        <li>
+            <strong>mask</strong>: CSS effect that visibly dims out the parent window content
+        </li>
+        <li>
+            <strong>dismiss button</strong>: button that dismisses and hides the lightbox
+        </li>
+    </ul>
 </div>

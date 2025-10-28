@@ -304,3 +304,29 @@ body > main:last-child {
   border-radius: var(--border-radius-100);
   display: block;
 }
+
+.component-subtitle {       
+    font-size: var(--font-size-18);
+    font-weight: 400;
+    margin-bottom: var(--spacing-200);
+    margin-top: var(--spacing-200);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--spacing-md) var(--spacing-lg);
+}
+
+table th,
+table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+table th {
+    font-weight: 600;
+    background-color: var(--color-muted);
+    color: var(--color-foreground);
+}
