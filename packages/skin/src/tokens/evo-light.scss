@@ -1,4 +1,5 @@
-@use "@ebay/design-tokens/dist/css/evo-light";
+@use "sass:meta";
+@include meta.load-css("@ebay/design-tokens/dist/css/evo-light.css");
 
 .evo-light,
 :root {
