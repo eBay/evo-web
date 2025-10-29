@@ -168,9 +168,9 @@ input.textbox__control {
 
 .textbox .icon-btn > svg,
 .textbox > svg {
-    color: var(--textbox-icon-color, var(--color-foreground-primary));
+    color: var(--textbox-icon-color, var(--color-foreground-secondary));
     display: inline-flex;
-    fill: var(--textbox-icon-color, var(--color-foreground-primary));
+    fill: var(--textbox-icon-color, var(--color-foreground-secondary));
     height: 1lh;
     pointer-events: none;
 }

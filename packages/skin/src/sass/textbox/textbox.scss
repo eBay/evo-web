@@ -216,7 +216,7 @@ input.textbox__control {
 .textbox .icon-btn > svg {
     @include token-mixins.color-token(
         textbox-icon-color,
-        color-foreground-primary
+        color-foreground-secondary
     );
 
     display: inline-flex;
@@ -224,7 +224,7 @@ input.textbox__control {
     pointer-events: none;
     @include token-mixins.fill-token(
         textbox-icon-color,
-        color-foreground-primary
+        color-foreground-secondary
     );
 }
 
