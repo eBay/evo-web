@@ -36,6 +36,7 @@
     font-weight: var(--font-weight-600);
     height: 37px;
     justify-content: center;
+    line-height: 10px;
     overflow: hidden;
     text-align: center;
     width: 39px;

@@ -536,7 +536,7 @@ exports[`accordion > given the accordion in the default state > when first secti
              &::after {
                animation-duration: 0ms;
 -               background-color: var(--color-state-layer-neutral);
-+               background-color: var(--color-state-layer-focus);
++               background-color: var(--color-state-layer-hover);
                bottom: 0px;
                content: "";
                left: 0px;
@@ -568,7 +568,7 @@ exports[`accordion > given the accordion in the default state > when first secti
              &::after {
                animation-duration: 0ms;
 -               background-color: var(--color-state-layer-neutral);
-+               background-color: var(--color-state-layer-focus);
++               background-color: var(--color-state-layer-hover);
                bottom: 0px;
                content: "";
                left: 0px;
@@ -610,7 +610,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              &::after {
                animation-duration: 0ms;
 -               background-color: var(--color-state-layer-neutral);
-+               background-color: var(--color-state-layer-focus);
++               background-color: var(--color-state-layer-hover);
                bottom: 0px;
                content: "";
                left: 0px;
@@ -675,15 +675,6 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -233,7 +236,7 @@
-           <style>@scope{:scope{
-             &::after {
-               animation-duration: 0ms;
--               background-color: var(--color-state-layer-neutral);
-+               background-color: var(--color-state-layer-focus);
-               bottom: 0px;
-               content: "";
-               left: 0px;
 @@ -262,6 +265,7 @@
                animation-duration: 0ms;
                display: inline-flex;

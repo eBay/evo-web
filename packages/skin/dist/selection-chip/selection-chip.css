@@ -63,8 +63,8 @@
     background-color: var(--color-state-layer-hover);
 }
 
-.selection-chip:not([disabled], [aria-disabled="true"]):focus:after,
-.selection-chip[href]:focus:after {
+.selection-chip:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.selection-chip[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 
@@ -114,8 +114,8 @@
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.selection-chip[aria-pressed="true"][href]:focus:after {
+    ):focus-visible:after,
+.selection-chip[aria-pressed="true"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus-on-strong);
 }
 

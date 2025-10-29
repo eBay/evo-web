@@ -14,7 +14,7 @@
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
-    color: var(--textbox-foreground-color, var(--color-foreground-secondary));
+    color: var(--textbox-foreground-color, var(--color-foreground-primary));
     display: inline-flex;
     font-size: var(--font-size-body);
     gap: var(--spacing-100);
@@ -168,9 +168,9 @@ input.textbox__control {
 
 .textbox .icon-btn > svg,
 .textbox > svg {
-    color: var(--textbox-icon-color, var(--color-foreground-secondary));
+    color: var(--textbox-icon-color, var(--color-foreground-primary));
     display: inline-flex;
-    fill: var(--textbox-icon-color, var(--color-foreground-secondary));
+    fill: var(--textbox-icon-color, var(--color-foreground-primary));
     height: 1lh;
     pointer-events: none;
 }

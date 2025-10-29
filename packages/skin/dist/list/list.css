@@ -69,10 +69,10 @@
 .list li > button[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.list li > a:not([disabled], [aria-disabled="true"]):focus:after,
-.list li > a[href]:focus:after,
-.list li > button:not([disabled], [aria-disabled="true"]):focus:after,
-.list li > button[href]:focus:after {
+.list li > a:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.list li > a[href]:focus-visible:after,
+.list li > button:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.list li > button[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .list li > a:not([disabled], [aria-disabled="true"]):active:after,

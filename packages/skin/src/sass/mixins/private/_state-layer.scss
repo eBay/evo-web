@@ -37,7 +37,7 @@
         &:hover::after {
             background-color: var(--color-state-layer-hover);
         }
-        &:focus::after {
+        &:focus-visible::after {
             background-color: var(--color-state-layer-focus);
         }
         &:active::after {
@@ -50,7 +50,7 @@
     &:not([disabled], [aria-disabled="true"]),
     &[href] {
         &:hover::after,
-        &:focus::after,
+        &:focus-visible::after,
         &:active::after {
             background-color: transparent;
         }
@@ -65,7 +65,7 @@
         &:hover::after {
             background-color: var(--color-state-layer-hover-on-strong);
         }
-        &:focus::after {
+        &:focus-visible::after {
             background-color: var(--color-state-layer-focus-on-strong);
         }
         &:active::after {

@@ -87,6 +87,7 @@
     color: #fff;
     display: inline-block;
     font-size: 18px;
+    line-height: 10px;
     margin-inline-end: 8px;
     text-shadow:
         -0.5px 0.5px 0 #000,
@@ -104,6 +105,7 @@
     display: inline-flex;
     flex-direction: column;
     height: 20px;
+    line-height: 10px;
     margin: 1px;
     padding: 0 1px;
 }

@@ -251,8 +251,8 @@ div.listbox-button__option[role="option"][href]:hover:after {
 div.listbox-button__option[role="option"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-div.listbox-button__option[role="option"][href]:focus:after {
+    ):focus-visible:after,
+div.listbox-button__option[role="option"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.listbox-button__option[role="option"]:not(

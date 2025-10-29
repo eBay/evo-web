@@ -99,8 +99,8 @@ div.menu-button__item[role^="menuitem"][href]:hover:after {
 div.menu-button__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-div.menu-button__item[role^="menuitem"][href]:focus:after {
+    ):focus-visible:after,
+div.menu-button__item[role^="menuitem"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 div.menu-button__item[role^="menuitem"]:not(
@@ -264,14 +264,15 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
     a.fake-menu-button__item:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.fake-menu-button__menu a.fake-menu-button__item[href]:focus:after,
+    ):focus-visible:after,
+.fake-menu-button__menu a.fake-menu-button__item[href]:focus-visible:after,
 .fake-menu-button__menu
     button.fake-menu-button__item:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.fake-menu-button__menu button.fake-menu-button__item[href]:focus:after {
+    ):focus-visible:after,
+.fake-menu-button__menu
+    button.fake-menu-button__item[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .fake-menu-button__menu

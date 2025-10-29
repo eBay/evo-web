@@ -29,10 +29,10 @@ button.icon-btn:not([disabled], [aria-disabled="true"]):hover:after,
 button.icon-btn[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.icon-link:not([disabled], [aria-disabled="true"]):focus:after,
-a.icon-link[href]:focus:after,
-button.icon-btn:not([disabled], [aria-disabled="true"]):focus:after,
-button.icon-btn[href]:focus:after {
+a.icon-link:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.icon-link[href]:focus-visible:after,
+button.icon-btn:not([disabled], [aria-disabled="true"]):focus-visible:after,
+button.icon-btn[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.icon-link:not([disabled], [aria-disabled="true"]):active:after,
@@ -101,13 +101,18 @@ button.icon-btn.icon-btn--large {
     width: 48px;
 }
 a.icon-link--transparent,
+button.icon-btn--transparent {
+    background-color: initial;
+}
 a.icon-link--transparent:not([disabled], [aria-disabled="true"]):active:after,
-a.icon-link--transparent:not([disabled], [aria-disabled="true"]):focus:after,
+a.icon-link--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
 a.icon-link--transparent:not([disabled], [aria-disabled="true"]):hover:after,
 a.icon-link--transparent[href]:active:after,
-a.icon-link--transparent[href]:focus:after,
+a.icon-link--transparent[href]:focus-visible:after,
 a.icon-link--transparent[href]:hover:after,
-button.icon-btn--transparent,
 button.icon-btn--transparent:not(
         [disabled],
         [aria-disabled="true"]
@@ -115,13 +120,13 @@ button.icon-btn--transparent:not(
 button.icon-btn--transparent:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
+    ):focus-visible:after,
 button.icon-btn--transparent:not(
         [disabled],
         [aria-disabled="true"]
     ):hover:after,
 button.icon-btn--transparent[href]:active:after,
-button.icon-btn--transparent[href]:focus:after,
+button.icon-btn--transparent[href]:focus-visible:after,
 button.icon-btn--transparent[href]:hover:after {
     background-color: initial;
 }

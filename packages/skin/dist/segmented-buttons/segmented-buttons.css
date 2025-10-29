@@ -79,8 +79,8 @@
 .segmented-buttons__button:not([aria-current]):not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.segmented-buttons__button:not([aria-current])[href]:focus:after {
+    ):focus-visible:after,
+.segmented-buttons__button:not([aria-current])[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .segmented-buttons__button:not([aria-current]):not(

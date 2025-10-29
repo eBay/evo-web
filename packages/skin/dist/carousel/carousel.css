@@ -124,8 +124,8 @@ div.carousel {
 .carousel__control[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.carousel__control:not([disabled], [aria-disabled="true"]):focus:after,
-.carousel__control[href]:focus:after {
+.carousel__control:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.carousel__control[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .carousel__control:not([disabled], [aria-disabled="true"]):active:after,

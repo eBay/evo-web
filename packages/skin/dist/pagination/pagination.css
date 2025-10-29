@@ -145,8 +145,8 @@ span.pagination__item
     button.icon-btn--transparent:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-span.pagination__item button.icon-btn--transparent[href]:focus:after {
+    ):focus-visible:after,
+span.pagination__item button.icon-btn--transparent[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 span.pagination__item

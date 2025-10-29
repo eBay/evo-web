@@ -60,8 +60,8 @@ button.filter-menu-button__button[href]:hover:after {
 button.filter-menu-button__button:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-button.filter-menu-button__button[href]:focus:after {
+    ):focus-visible:after,
+button.filter-menu-button__button[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-button__button:not(
@@ -264,8 +264,11 @@ span.filter-menu-button__radio svg.icon--checked {
 .filter-menu-button__item[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.filter-menu-button__item:not([disabled], [aria-disabled="true"]):focus:after,
-.filter-menu-button__item[href]:focus:after {
+.filter-menu-button__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+.filter-menu-button__item[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .filter-menu-button__item:not([disabled], [aria-disabled="true"]):active:after,
@@ -342,8 +345,8 @@ button.filter-menu-button__footer[href]:hover:after {
 button.filter-menu-button__footer:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-button.filter-menu-button__footer[href]:focus:after {
+    ):focus-visible:after,
+button.filter-menu-button__footer[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-button__footer:not(

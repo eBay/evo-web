@@ -54,10 +54,13 @@ button.filter-button:not([disabled], [aria-disabled="true"]):hover:after,
 button.filter-button[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.filter-link:not([disabled], [aria-disabled="true"]):focus:after,
-a.filter-link[href]:focus:after,
-button.filter-button:not([disabled], [aria-disabled="true"]):focus:after,
-button.filter-button[href]:focus:after {
+a.filter-link:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.filter-link[href]:focus-visible:after,
+button.filter-button:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+button.filter-button[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.filter-link:not([disabled], [aria-disabled="true"]):active:after,

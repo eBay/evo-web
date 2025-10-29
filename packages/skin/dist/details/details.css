@@ -22,8 +22,11 @@ summary.details__summary:not([disabled], [aria-disabled="true"]):hover:after,
 summary.details__summary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-summary.details__summary:not([disabled], [aria-disabled="true"]):focus:after,
-summary.details__summary[href]:focus:after {
+summary.details__summary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+summary.details__summary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 summary.details__summary:not([disabled], [aria-disabled="true"]):active:after,

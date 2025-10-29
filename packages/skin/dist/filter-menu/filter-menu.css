@@ -79,13 +79,16 @@ span.filter-menu__item[role^="menuitem"] {
 .filter-menu__item[role^="menuitem"][href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-.filter-menu-form__item:not([disabled], [aria-disabled="true"]):focus:after,
-.filter-menu-form__item[href]:focus:after,
+.filter-menu-form__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+.filter-menu-form__item[href]:focus-visible:after,
 .filter-menu__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.filter-menu__item[role^="menuitem"][href]:focus:after {
+    ):focus-visible:after,
+.filter-menu__item[role^="menuitem"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .filter-menu-form__item:not([disabled], [aria-disabled="true"]):active:after,
@@ -186,10 +189,13 @@ button.filter-menu__footer[href]:hover:after {
 button.filter-menu-form__footer[type="submit"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-button.filter-menu-form__footer[type="submit"][href]:focus:after,
-button.filter-menu__footer:not([disabled], [aria-disabled="true"]):focus:after,
-button.filter-menu__footer[href]:focus:after {
+    ):focus-visible:after,
+button.filter-menu-form__footer[type="submit"][href]:focus-visible:after,
+button.filter-menu__footer:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+button.filter-menu__footer[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 button.filter-menu-form__footer[type="submit"]:not(

@@ -121,15 +121,18 @@ div.menu__item[role^="menuitem"][href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
 
-a.fake-menu__item:not([disabled], [aria-disabled="true"]):focus:after,
-a.fake-menu__item[href]:focus:after,
-button.fake-menu__item:not([disabled], [aria-disabled="true"]):focus:after,
-button.fake-menu__item[href]:focus:after,
+a.fake-menu__item:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.fake-menu__item[href]:focus-visible:after,
+button.fake-menu__item:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+button.fake-menu__item[href]:focus-visible:after,
 div.menu__item[role^="menuitem"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-div.menu__item[role^="menuitem"][href]:focus:after {
+    ):focus-visible:after,
+div.menu__item[role^="menuitem"][href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 

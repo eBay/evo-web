@@ -114,10 +114,10 @@
 }
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
-    > button:not([disabled], [aria-disabled="true"]):focus:after,
+    > button:not([disabled], [aria-disabled="true"]):focus-visible:after,
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
-    > button[href]:focus:after {
+    > button[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 .calendar__month

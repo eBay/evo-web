@@ -185,10 +185,10 @@ button.btn--primary:not([disabled], [aria-disabled="true"]):hover:after,
 button.btn--primary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.fake-btn--primary:not([disabled], [aria-disabled="true"]):focus:after,
-a.fake-btn--primary[href]:focus:after,
-button.btn--primary:not([disabled], [aria-disabled="true"]):focus:after,
-button.btn--primary[href]:focus:after {
+a.fake-btn--primary:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.fake-btn--primary[href]:focus-visible:after,
+button.btn--primary:not([disabled], [aria-disabled="true"]):focus-visible:after,
+button.btn--primary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.fake-btn--primary:not([disabled], [aria-disabled="true"]):active:after,
@@ -236,13 +236,13 @@ button.btn--primary.btn--destructive[href]:hover:after {
 a.fake-btn--primary.fake-btn--destructive:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-a.fake-btn--primary.fake-btn--destructive[href]:focus:after,
+    ):focus-visible:after,
+a.fake-btn--primary.fake-btn--destructive[href]:focus-visible:after,
 button.btn--primary.btn--destructive:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-button.btn--primary.btn--destructive[href]:focus:after {
+    ):focus-visible:after,
+button.btn--primary.btn--destructive[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.fake-btn--primary.fake-btn--destructive:not(
@@ -359,10 +359,16 @@ button.btn--secondary:not([disabled], [aria-disabled="true"]):hover:after,
 button.btn--secondary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.fake-btn--secondary:not([disabled], [aria-disabled="true"]):focus:after,
-a.fake-btn--secondary[href]:focus:after,
-button.btn--secondary:not([disabled], [aria-disabled="true"]):focus:after,
-button.btn--secondary[href]:focus:after {
+a.fake-btn--secondary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.fake-btn--secondary[href]:focus-visible:after,
+button.btn--secondary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+button.btn--secondary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.fake-btn--secondary:not([disabled], [aria-disabled="true"]):active:after,
@@ -459,10 +465,16 @@ button.btn--tertiary:not([disabled], [aria-disabled="true"]):hover:after,
 button.btn--tertiary[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.fake-btn--tertiary:not([disabled], [aria-disabled="true"]):focus:after,
-a.fake-btn--tertiary[href]:focus:after,
-button.btn--tertiary:not([disabled], [aria-disabled="true"]):focus:after,
-button.btn--tertiary[href]:focus:after {
+a.fake-btn--tertiary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+a.fake-btn--tertiary[href]:focus-visible:after,
+button.btn--tertiary:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+button.btn--tertiary[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.fake-btn--tertiary:not([disabled], [aria-disabled="true"]):active:after,
@@ -540,10 +552,10 @@ button.btn--form:not([disabled], [aria-disabled="true"]):hover:after,
 button.btn--form[href]:hover:after {
     background-color: var(--color-state-layer-hover);
 }
-a.fake-btn--form:not([disabled], [aria-disabled="true"]):focus:after,
-a.fake-btn--form[href]:focus:after,
-button.btn--form:not([disabled], [aria-disabled="true"]):focus:after,
-button.btn--form[href]:focus:after {
+a.fake-btn--form:not([disabled], [aria-disabled="true"]):focus-visible:after,
+a.fake-btn--form[href]:focus-visible:after,
+button.btn--form:not([disabled], [aria-disabled="true"]):focus-visible:after,
+button.btn--form[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 a.fake-btn--form:not([disabled], [aria-disabled="true"]):active:after,

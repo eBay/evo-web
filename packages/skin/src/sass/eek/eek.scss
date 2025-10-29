@@ -125,6 +125,7 @@ $eek-border-color: $eek-color;
     color: $eek-background-color;
     display: inline-block;
     font-size: 18px;
+    line-height: 10px;
     margin-inline-end: 8px;
     text-shadow:
         -0.5px 0.5px 0 $eek-color,
@@ -144,6 +145,7 @@ $eek-border-color: $eek-color;
     display: inline-flex;
     flex-direction: column;
     height: 20px;
+    line-height: 10px;
     margin: 1px;
     padding: 0 1px;
 }

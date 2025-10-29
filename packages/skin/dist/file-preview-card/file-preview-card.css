@@ -127,8 +127,8 @@ video.file-preview-card__asset {
 .file-preview-card__see-more:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.file-preview-card__see-more[href]:focus:after {
+    ):focus-visible:after,
+.file-preview-card__see-more[href]:focus-visible:after {
     background-color: var(--color-state-layer-focus);
 }
 
