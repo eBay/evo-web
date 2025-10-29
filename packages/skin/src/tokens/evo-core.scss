@@ -37,5 +37,10 @@
     --spacing-800: 64px;
     --color-media-disabled-filter: grayscale(1) opacity(0.25);
     /* Typography */
-    --font-line-height-default: var(--font-line-height-250);
+
+    /*
+    Ratio of 20px (base line height) / 14px (body font)
+    This needs to be unitless for optimal scaling
+    */
+    --font-line-height-default: 1.4286;
 }
