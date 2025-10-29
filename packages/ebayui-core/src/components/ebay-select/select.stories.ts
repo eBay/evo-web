@@ -44,6 +44,11 @@ export default {
             control: { type: "boolean" },
             description: "whether button has borders",
         },
+        fluid: {
+            type: "boolean",
+            control: { type: "boolean" },
+            description: "whether select is fluid width",
+        },
         isLarge: {
             type: "boolean",
             control: { type: "boolean" },
@@ -180,6 +185,34 @@ InForm.parameters = {
     docs: {
         source: {
             code: InFormCode,
+        },
+    },
+};
+
+export const Fluid = Template.bind({});
+Fluid.args = {
+    fluid: true,
+    option: [
+        {
+            text: "option 1",
+            value: "option 1",
+        },
+        {
+            text: "option 2",
+            value: "option 2",
+        },
+        {
+            text: "option 3",
+            value: "option 3",
+        },
+    ] as any,
+};
+Fluid.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-select", Fluid.args, {
+                options: "option",
+            }),
         },
     },
 };

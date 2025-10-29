@@ -44,6 +44,13 @@ describe("select", () => {
         expect(getByRole("combobox")).toMatchSnapshot();
     });
 
+    it("renders with fluid=true", async () => {
+        const input = mock.Fluid_3Options;
+        const { getByRole } = await render(template, input);
+        const rootElement = getByRole("combobox").parentElement;
+        expect(rootElement).toMatchSnapshot();
+    });
+
     it("renders an input select with inline floating label", async () => {
         const input = mock.floatingLabel;
         const { getByRole, getByText } = await render(template, input);

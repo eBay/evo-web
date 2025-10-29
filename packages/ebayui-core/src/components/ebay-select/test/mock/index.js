@@ -23,6 +23,10 @@ export const Borderless_3Options = Object.assign({}, basic3Options, {
     borderless: true,
 });
 
+export const Fluid_3Options = Object.assign({}, basic3Options, {
+    fluid: true,
+});
+
 export const basic3Options1Selected = {
     option: getNItems(3, (i) => ({
         value: String(i),

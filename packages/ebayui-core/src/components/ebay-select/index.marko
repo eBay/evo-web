@@ -5,12 +5,14 @@ $ const {
     style,
     disabled,
     borderless,
+    fluid,
     option: inputOptions = [],
     floatingLabel,
     isLarge,
     ...htmlInput
 } = input;
 $ const options = [...(inputOptions || [])];
+$ var defaultTag = fluid ? "div" : "span";
 static var itemIgnoredAttributes = ["selected", "optgroup"];
 static interface OptGroup {
     optgroup: string;
@@ -43,7 +45,7 @@ $ for (const option of options) {
         list.push(option);
     }
 }
-<${floatingLabel && "span"} class=[
+<${floatingLabel && defaultTag} class=[
     "floating-label",
     isLarge && "floating-label--large",
 ]>
@@ -58,11 +60,12 @@ $ for (const option of options) {
             ${floatingLabel}
         </label>
     </if>
-    <span
+    <${defaultTag}
         class=[
             "select",
             isLarge && "select--large",
             borderless && "select--borderless",
+            fluid && "select--fluid",
             inputClass,
         ]
         style=style
@@ -105,5 +108,5 @@ $ for (const option of options) {
             </for>
         </select>
         <ebay-chevron-down-12-icon/>
-    </span>
+    </>
 </>

@@ -372,6 +372,57 @@ exports[`select > renders with borderless=true 1`] = `
 </select>
 `;
 
+exports[`select > renders with fluid=true 1`] = `
+<div
+  class="select select--fluid"
+>
+  <select
+    id="s0-select"
+  >
+    <option
+      selected=""
+      text="option 0"
+      value="0"
+    >
+      option 0
+    </option>
+    <option
+      text="option 1"
+      value="1"
+    >
+      option 1
+    </option>
+    <option
+      text="option 2"
+      value="2"
+    >
+      option 2
+    </option>
+  </select>
+  <svg
+    aria-hidden="true"
+    class="icon icon--12"
+    focusable="false"
+  >
+    <defs>
+      <symbol
+        id="icon-chevron-down-12"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+    </defs>
+    <use
+      href="#icon-chevron-down-12"
+    />
+  </svg>
+</div>
+`;
+
 exports[`select > renders with second item selected 1`] = `
 <option
   text="option 0"
