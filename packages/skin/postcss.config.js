@@ -1,12 +1,15 @@
-const path = require("path");
+import { resolve } from "path";
+import postcssImport from "postcss-import";
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
 
-module.exports = (ctx) => ({
+export default (ctx) => ({
     plugins: [
-        require("postcss-import")({
-            path: ["../../node_modules"],
+        postcssImport({
+            path: [import.meta.dirname, resolve("../../node_modules")],
         }),
-        require("autoprefixer"),
-        require("cssnano")({
+        autoprefixer,
+        cssnano({
             preset: [
                 "default",
                 {
