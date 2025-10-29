@@ -173,7 +173,7 @@ button.icon-btn > svg.icon--confirmation-filled-16,
 button.icon-btn > svg.icon--confirmation-filled-16:hover,
 button.icon-btn > svg.icon--confirmation-filled-24,
 button.icon-btn > svg.icon--confirmation-filled-24:hover {
-    fill: var(--color-foreground-confirmation);
+    fill: var(--color-foreground-success);
 }
 a.icon-link > svg.icon--attention-filled-16,
 a.icon-link > svg.icon--attention-filled-16:hover,
@@ -193,7 +193,7 @@ button.icon-btn > svg.icon--information-filled-16,
 button.icon-btn > svg.icon--information-filled-16:hover,
 button.icon-btn > svg.icon--information-filled-24,
 button.icon-btn > svg.icon--information-filled-24:hover {
-    fill: var(--color-foreground-information);
+    fill: var(--color-foreground-accent);
 }
 a.icon-link.icon-link--primary,
 a.icon-link.icon-link--secondary,

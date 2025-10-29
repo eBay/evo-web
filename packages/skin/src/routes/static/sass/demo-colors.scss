@@ -572,8 +572,8 @@
     background-color: var(--color-background-success);
 }
 
-.demo-color-background-information::before {
-    background-color: var(--color-background-information);
+.demo-color-background-accent::before {
+    background-color: var(--color-background-accent);
 }
 
 .demo-color-background-accent::before {
@@ -600,12 +600,12 @@
     background-color: var(--color-foreground-attention);
 }
 
-.demo-color-foreground-confirmation::before {
-    background-color: var(--color-foreground-confirmation);
+.demo-color-foreground-success::before {
+    background-color: var(--color-foreground-success);
 }
 
-.demo-color-foreground-information::before {
-    background-color: var(--color-foreground-information);
+.demo-color-foreground-accent::before {
+    background-color: var(--color-foreground-accent);
 }
 
 .demo-color-foreground-accent::before {
@@ -616,12 +616,12 @@
     background-color: var(--color-foreground-link-visited);
 }
 
-.demo-color-foreground-on-primary::before {
-    background-color: var(--color-foreground-on-primary);
+.demo-color-foreground-primary::before {
+    background-color: var(--color-foreground-primary);
 }
 
-.demo-color-foreground-on-secondary::before {
-    background-color: var(--color-foreground-on-secondary);
+.demo-color-foreground-secondary::before {
+    background-color: var(--color-foreground-secondary);
 }
 
 .demo-color-foreground-on-disabled::before {

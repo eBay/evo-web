@@ -26,7 +26,7 @@
     background-color: initial;
     border: none;
     border-radius: var(--btn-border-radius, 20px);
-    color: var(--color-foreground-on-primary);
+    color: var(--color-foreground-primary);
     font-family: inherit;
     font-size: var(--font-size-body);
     min-height: calc(40px - var(--spacing-50) * 2);

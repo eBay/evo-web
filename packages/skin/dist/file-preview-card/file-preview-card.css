@@ -104,17 +104,6 @@ video.file-preview-card__asset {
 }
 
 .file-preview-card__see-more {
-    background-color: rgb(
-        var(
-            --file-preview-card-see-more-background-color-rgb,
-            var(--color-background-strong-rgb)
-        ),
-        0.5
-    );
-    color: var(
-        --file-preview-card-see-more-color,
-        var(--color-foreground-on-strong)
-    );
     overflow: hidden;
     position: relative;
 }
@@ -153,8 +142,10 @@ video.file-preview-card__asset {
 
 .file-preview-card__see-more {
     aspect-ratio: 1/1;
+    background-color: var(--color-background-inverse);
     border: none;
     border-radius: 50%;
+    color: var(--color-foreground-on-strong);
     font-family: inherit;
     font-size: var(--font-size-body);
     font-weight: 700;

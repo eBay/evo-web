@@ -82,7 +82,7 @@
         "extends @ebay/browserslist-config"
     ],
     "devDependencies": {
-        "@ebay/design-tokens": "^1.0.1",
+        "@ebay/design-tokens": "^1.0.2",
         "@marko/run-adapter-static": "^2.0.2"
     },
     "publishConfig": {

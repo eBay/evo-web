@@ -43,13 +43,13 @@ div.field--table {
 .field__description--confirmation {
     color: var(
         --field-description-confirmation-color,
-        var(--color-foreground-confirmation)
+        var(--color-foreground-success)
     );
 }
 .field__description--information {
     color: var(
         --field-description-information-color,
-        var(--color-foreground-information)
+        var(--color-foreground-accent)
     );
 }
 .field__description--attention {

@@ -5,14 +5,14 @@
 :root {
     --color-background-faint: rgba(var(--color-neutral-900-rgb), 0.05);
     --color-background-confirmation: var(--color-background-success);
-    --color-background-information: var(--color-blue-500);
+    --color-background-information: var(--color-background-accent);
     --color-background-invalid: var(--color-red-200);
     --color-background-strong-rgb: var(--color-neutral-800-rgb);
-    --color-foreground-confirmation: var(--color-kiwi-600);
-    --color-foreground-information: var(--color-blue-500);
+    --color-foreground-confirmation: var(--color-foreground-success);
+    --color-foreground-information: var(--color-foreground-accent);
     --color-foreground-visited: var(--color-foreground-link-visited);
-    --color-foreground-on-primary: var(--color-neutral-800);
-    --color-foreground-on-secondary: var(--color-neutral-800);
+    --color-foreground-on-primary: var(--color-foreground-primary);
+    --color-foreground-on-secondary: var(--color-foreground-secondary);
     --color-foreground-on-confirmation: var(--color-foreground-on-success);
     --color-foreground-on-information: var(--color-foreground-on-success);
     --color-stroke-default: var(--color-border-medium);

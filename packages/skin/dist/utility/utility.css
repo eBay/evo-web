@@ -106,7 +106,7 @@
     scroll-snap-type: x proximity;
 }
 .scrollbars-permanent::-webkit-scrollbar {
-    background-color: var(--color-background-faint);
+    background-color: var(--color-state-layer-focus);
     border-radius: 12px;
 }
 .scrollbars-permanent::-webkit-scrollbar:vertical {

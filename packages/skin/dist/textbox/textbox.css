@@ -14,10 +14,7 @@
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
-    color: var(
-        --textbox-foreground-color,
-        var(--color-foreground-on-secondary)
-    );
+    color: var(--textbox-foreground-color, var(--color-foreground-secondary));
     display: inline-flex;
     font-size: var(--font-size-body);
     gap: var(--spacing-100);

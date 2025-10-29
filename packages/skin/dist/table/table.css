@@ -7,7 +7,7 @@
     scroll-snap-type: x proximity;
 }
 .table::-webkit-scrollbar {
-    background-color: var(--color-background-faint);
+    background-color: var(--color-state-layer-focus);
     border-radius: 12px;
 }
 .table::-webkit-scrollbar:vertical {

@@ -8,7 +8,7 @@
 .toast-dialog {
     background-color: var(
         --toast-dialog-background-color,
-        var(--color-background-information)
+        var(--color-background-accent)
     );
     border-top-left-radius: var(
         --toast-dialog-border-radius,

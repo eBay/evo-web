@@ -134,9 +134,9 @@ button.icon-btn > svg.icon--confirmation-filled-24,
 button.icon-btn > svg.icon--confirmation-filled-16,
 a.icon-link > svg.icon--confirmation-filled-24,
 a.icon-link > svg.icon--confirmation-filled-16 {
-    fill: var(--color-foreground-confirmation);
+    fill: var(--color-foreground-success);
     &:hover {
-        fill: var(--color-foreground-confirmation);
+        fill: var(--color-foreground-success);
     }
 }
 
@@ -154,9 +154,9 @@ button.icon-btn > svg.icon--information-filled-24,
 button.icon-btn > svg.icon--information-filled-16,
 a.icon-link > svg.icon--information-filled-24,
 a.icon-link > svg.icon--information-filled-16 {
-    fill: var(--color-foreground-information);
+    fill: var(--color-foreground-accent);
     &:hover {
-        fill: var(--color-foreground-information);
+        fill: var(--color-foreground-accent);
     }
 }
 

@@ -6,7 +6,7 @@
 .toast-dialog {
     @include token-mixins.background-color-token(
         toast-dialog-background-color,
-        color-background-information
+        color-background-accent
     );
     @include token-mixins.border-top-left-radius-token(
         toast-dialog-border-radius,

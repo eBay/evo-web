@@ -122,7 +122,7 @@ span[role="region"].page-notice {
     );
     @include token-mixins.border-color-token(
         page-notice-confirmation-border-color,
-        color-stroke-confirmation
+        color-border-confirmation
     );
 
     .page-notice__header svg {
@@ -136,7 +136,7 @@ span[role="region"].page-notice {
 .page-notice--information {
     @include token-mixins.background-color-token(
         page-notice-information-background-color,
-        color-background-information
+        color-background-accent
     );
     @include token-mixins.border-color-token(
         page-notice-information-border-color,

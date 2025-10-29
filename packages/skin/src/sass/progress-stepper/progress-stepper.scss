@@ -6,7 +6,7 @@ $progress-stepper-large-min-width: 120px;
 /* Shortcut private variables */
 $_progress-stepper-active-gradient: var(
         --progress-stepper-active-color,
-        var(--color-background-information)
+        var(--color-background-accent)
     )
     50%;
 $_progress-stepper-upcoming-gradient: var(
@@ -30,7 +30,7 @@ $_progress-stepper-upcoming-gradient: var(
 hr.progress-stepper__separator {
     @include token-mixins.background-color-token(
         progress-stepper-active-color,
-        color-background-information
+        color-background-accent
     );
 
     border: 0 none;

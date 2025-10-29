@@ -11,7 +11,7 @@
 hr.progress-stepper__separator {
     background-color: var(
         --progress-stepper-active-color,
-        var(--color-background-information)
+        var(--color-background-accent)
     );
     border: 0;
     border-radius: 2px;
@@ -97,11 +97,7 @@ hr.progress-stepper__separator {
 .progress-stepper__item[aria-current] + hr.progress-stepper__separator {
     background-image: linear-gradient(
         90deg,
-        var(
-                --progress-stepper-active-color,
-                var(--color-background-information)
-            )
-            50%,
+        var(--progress-stepper-active-color, var(--color-background-accent)) 50%,
         var(--progress-stepper-upcoming-color, var(--color-background-disabled))
             50%
     );
@@ -142,11 +138,7 @@ hr.progress-stepper__separator {
     + hr.progress-stepper__separator {
     background: linear-gradient(
         180deg,
-        var(
-                --progress-stepper-active-color,
-                var(--color-background-information)
-            )
-            50%,
+        var(--progress-stepper-active-color, var(--color-background-accent)) 50%,
         var(--progress-stepper-upcoming-color, var(--color-background-disabled))
             50%
     );
@@ -197,11 +189,7 @@ hr.progress-stepper__separator {
         90deg,
         var(--progress-stepper-upcoming-color, var(--color-background-disabled))
             50%,
-        var(
-                --progress-stepper-active-color,
-                var(--color-background-information)
-            )
-            50%
+        var(--progress-stepper-active-color, var(--color-background-accent)) 50%
     );
 }
 [dir="rtl"]
@@ -210,11 +198,7 @@ hr.progress-stepper__separator {
     + hr.progress-stepper__separator {
     background: linear-gradient(
         180deg,
-        var(
-                --progress-stepper-active-color,
-                var(--color-background-information)
-            )
-            50%,
+        var(--progress-stepper-active-color, var(--color-background-accent)) 50%,
         var(--progress-stepper-upcoming-color, var(--color-background-disabled))
             50%
     );

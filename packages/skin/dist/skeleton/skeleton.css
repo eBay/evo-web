@@ -126,13 +126,13 @@ div.skeleton__textbox:not(:last-child) {
     --skeleton-background: var(--color-loading-fill-on-secondary);
 }
 .skeleton--purple {
-    --skeleton-background: var(--color-loading-ai-gradient-purple-subtle);
+    --skeleton-background: var(--color-gradient-ai-purple-subtle);
 }
 .skeleton--green {
-    --skeleton-background: var(--color-loading-ai-gradient-green-subtle);
+    --skeleton-background: var(--color-gradient-ai-green-subtle);
 }
 .skeleton--blue {
-    --skeleton-background: var(--color-loading-ai-gradient-blue-subtle);
+    --skeleton-background: var(--color-gradient-ai-blue-subtle);
 }
 @media (prefers-reduced-motion: no-preference) {
     @keyframes on-primary {

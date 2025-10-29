@@ -53,7 +53,7 @@
     color: var(--color-foreground-attention);
 }
 .positive-text {
-    color: var(--color-foreground-confirmation);
+    color: var(--color-foreground-success);
 }
 .disabled-text {
     color: var(--color-foreground-disabled);

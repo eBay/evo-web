@@ -126,7 +126,7 @@ span.combobox {
     );
     @include token-mixins.color-token(
         combobox-textbox-foreground-color,
-        color-foreground-on-secondary
+        color-foreground-secondary
     );
 
     &[readonly] {

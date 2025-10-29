@@ -213,7 +213,7 @@ span.combobox {
     box-sizing: border-box;
     color: var(
         --combobox-textbox-foreground-color,
-        var(--color-foreground-on-secondary)
+        var(--color-foreground-secondary)
     );
     font-family: inherit;
     font-size: inherit;

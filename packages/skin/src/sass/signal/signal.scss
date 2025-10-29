@@ -25,7 +25,7 @@
 .signal--recent {
     @include token-mixins.color-token(
         signal-recent-color,
-        color-foreground-confirmation
+        color-foreground-success
     );
 }
 

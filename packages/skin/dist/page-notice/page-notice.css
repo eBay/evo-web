@@ -80,7 +80,7 @@ span[role="region"].page-notice {
     );
     border-color: var(
         --page-notice-confirmation-border-color,
-        var(--color-stroke-confirmation)
+        var(--color-border-confirmation)
     );
 }
 .page-notice--confirmation .page-notice__header svg {
@@ -92,7 +92,7 @@ span[role="region"].page-notice {
 .page-notice--information {
     background-color: var(
         --page-notice-information-background-color,
-        var(--color-background-information)
+        var(--color-background-accent)
     );
     border-color: var(
         --page-notice-information-border-color,

@@ -36,7 +36,7 @@
         --btn-border-radius,
         calc(button-mixins.$button-height-regular / 2)
     );
-    color: var(--color-foreground-on-primary);
+    color: var(--color-foreground-primary);
     font-family: inherit;
     font-size: var(--font-size-body);
     min-height: calc(
