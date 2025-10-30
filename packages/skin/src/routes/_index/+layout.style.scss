@@ -126,6 +126,17 @@ nav h2 {
     }
 }
 
+.demo-tokens-example {
+    border: 1px solid var(--color-border-strong);
+    border-radius: 4px;
+    display: inline-block;
+    height: 2em;
+    margin-bottom: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 50px;
+}
+
 @media screen and (min-width: variables.$screen-size-XL) {
     .demo-color-primitive {
         column-count: 4;
@@ -294,8 +305,6 @@ span.demo__inner {
     padding: 0;
 }
 
-.demo-color-primitive li::before,
-.demo-color-token li::before,
 .color-swatch {
     border-radius: 4px;
     content: "";

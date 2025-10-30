@@ -1,0 +1,12 @@
+import tokens from "./token-doc.json";
+$ const values = tokens[input.type || "core"];
+<ul class="demo-color-primitive">
+    <for|token| of=values>
+        <li>
+            <div
+                class="demo-tokens-example"
+                style=`background:${token.value};`/>
+                ${token.prop}
+        </li>
+    </for>
+</ul>

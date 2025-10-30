@@ -3,6 +3,7 @@ import { runGenerate } from "./generate-images";
 import { verifyBuild } from "./verify-build";
 import { generateTopLevel, cleanTopLevel } from "./generate-imports";
 import { copySVGIcons, copyCustomStyles, copySVGFlags } from "./storybook/copy";
+import { tokens} from './tokens';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -18,6 +19,14 @@ yargs(hideBin(process.argv))
             } catch (e) {
                 console.log(e);
             }
+        },
+    )
+    .command(
+        "tokens",
+        "Generates all token documentation",
+        (yargs) => {},
+        async (argv) => {
+            await tokens();
         },
     )
     .command(
