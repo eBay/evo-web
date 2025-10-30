@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import classnames from "classnames";
-import React, { FC, useRef, useState } from "react";
+import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from "react";
 import { EbayTextbox, EbayTextboxPrefixIcon, EbayTextboxPostfixIcon, type EbayTextboxProps } from "../ebay-textbox";
 import { EbayIconSearch16 } from "../ebay-icon/icons/ebay-icon-search-16";
 import { EbayIconClear16 } from "../ebay-icon/icons/ebay-icon-clear-16";
@@ -58,17 +57,7 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
         }
     };
 
-    const handleButtonClick = (event: any) => {
-        // Get the input element from the event target
-        const inputElement = (event.target as HTMLElement).closest('.textbox')?.querySelector('input') as HTMLInputElement;
-        
-        // Create synthetic event for the clear action
-        const syntheticEvent = {
-            ...event,
-            target: inputElement || inputRef.current,
-            currentTarget: inputElement || inputRef.current,
-        } as unknown as React.ChangeEvent<HTMLInputElement>;
-
+    const handleButtonClick = (event: KeyboardEvent | MouseEvent) => {
         // Update internal state for uncontrolled mode
         if (!isControlled) {
             setInternalValue("");
@@ -76,11 +65,11 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
         
         // Call onInputChange to notify parent of the change
         if (onInputChange) {
-            onInputChange(syntheticEvent, { value: "" });
+            onInputChange(event as React.ChangeEvent<HTMLInputElement>, { value: "" });
         }
         
         // Call onClear callback
-        onClear(syntheticEvent, { value: "" });
+        onClear(event as React.ChangeEvent<HTMLInputElement>, { value: "" });
     };
 
     const containerClassName = classnames(
