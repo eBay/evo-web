@@ -66,6 +66,7 @@ label.floating-label__label--focus {
 label.floating-label__label--inline {
     font-size: var(--font-size-default);
     transform: translate(0, 12px);
+    width: calc(100% - 40px);
 }
 
 .floating-label--large label.floating-label__label--inline {
