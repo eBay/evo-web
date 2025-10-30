@@ -30,7 +30,7 @@ label.floating-label__label {
     transform: scale(0.75, 0.75) translate(0, 2px);
     transform-origin: left;
     white-space: nowrap;
-    width: calc(100% - 40px);
+    width: calc((100% - var(--spacing-200) * 2 - 2px) / 0.75);
     z-index: 1;
 }
 
