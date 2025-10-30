@@ -37,19 +37,18 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
         : undefined;
 
     const handleButtonClick = (event: any) => {
-        // Note: This uses DOM manipulation as a workaround because the textbox component
-        // manages its own internal state and doesn't expose a proper clear API.
-        // This is not ideal React code but is necessary for integration with the existing textbox.
+        // Get the input element - either from ref or by finding it in the DOM
         const inputElement = inputRef.current || 
                            (event.target as HTMLElement).closest('.textbox')?.querySelector('input') as HTMLInputElement;
         
         if (inputElement) {
-            // Use React's property setter to update the value
+            // Use React's property setter to update the value properly
             const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
             if (nativeInputValueSetter) {
                 nativeInputValueSetter.call(inputElement, '');
                 
                 // Dispatch input event to trigger React's onChange handlers
+                // This works for both controlled and uncontrolled components
                 const inputEvent = new Event('input', { bubbles: true });
                 inputElement.dispatchEvent(inputEvent);
             }
