@@ -116,10 +116,14 @@
         --color-loading-fill-on-secondary: #353535;
         --color-loading-fill: #2d2d2d;
         --color-scrim-background: rgba(0, 0, 0, 0.64);
-        --color-state-layer-focus: rgba(255, 255, 255, 0.04);
+        --color-state-layer-focus-on-strong: rgba(0, 0, 0, 0.08);
+        --color-state-layer-focus: rgba(255, 255, 255, 0.08);
+        --color-state-layer-hover-on-strong: rgba(0, 0, 0, 0.08);
         --color-state-layer-hover: rgba(255, 255, 255, 0.08);
-        --color-state-layer-pressed: rgba(255, 255, 255, 0.08);
-        --color-state-layer-selected: rgba(255, 255, 255, 0.08);
+        --color-state-layer-pressed-on-strong: rgba(0, 0, 0, 0.12);
+        --color-state-layer-pressed: rgba(255, 255, 255, 0.12);
+        --color-state-layer-selected-on-strong: rgba(0, 0, 0, 0.16);
+        --color-state-layer-selected: rgba(255, 255, 255, 0.16);
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
         --color-background-confirmation: var(--color-background-success);
         --color-background-information: var(--color-blue-500);

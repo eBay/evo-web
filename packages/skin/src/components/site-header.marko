@@ -225,14 +225,10 @@ import { components } from "./components.marko";
                             </li>
                             <li>
                                 <select id="theme-selector">
-                                    <option value="">
+                                    <option value="evo-light" >
                                         Theme: Evo
                                     </option>
-                                    <option
-                                        value="live"
-                                        selected=$global.route.startsWith(
-                                            "/live",
-                                        )>
+                                    <option value="evo-live" >
                                         Theme: Evo Live
                                     </option>
                                 </select>
@@ -287,15 +283,16 @@ import { components } from "./components.marko";
             closeNavigation();
         }
     });
+    function updateTheme(theme) {
+        localStorage.setItem("theme", theme);
+    }
+    document
+        .getElementById("theme-selector").value = localStorage.getItem("theme")
+
     document
         .getElementById("theme-selector")
         .addEventListener("change", (e, data) => {
-            const value = e.target.value;
-            const path = window.location.pathname;
-            if (path.startsWith("/live") && !value) {
-                window.location = path.slice(6);
-            } else if (value === "live") {
-                window.location = `/live${path}`;
-            }
+            updateTheme(e.target.value);
+            window.location.reload();
         });
 </script>

@@ -274,7 +274,7 @@
     --expressive-theme-jade-dark-background: var(--color-jade-700);
     --expressive-theme-jade-dark-foreground: var(--color-jade-200);
     --expressive-theme-kiwi-light-background: var(--color-kiwi-400);
-    --expressive-theme-kiwi-light-foreground: var(--color-kiwi-700);
+    --expressive-theme-kiwi-light-foreground: var(--color-kiwi-800);
     --expressive-theme-kiwi-medium-background: var(--color-kiwi-500);
     --expressive-theme-kiwi-medium-foreground: var(--color-kiwi-800);
     --expressive-theme-kiwi-dark-background: var(--color-kiwi-700);
@@ -285,6 +285,12 @@
     --expressive-theme-lilac-medium-foreground: var(--color-lilac-100);
     --expressive-theme-lilac-dark-background: var(--color-lilac-700);
     --expressive-theme-lilac-dark-foreground: var(--color-lilac-200);
+    --expressive-theme-live-light-background: var(--color-violet-600);
+    --expressive-theme-live-light-foreground: var(--color-violet-100);
+    --expressive-theme-live-medium-background: var(--color-violet-600);
+    --expressive-theme-live-medium-foreground: var(--color-violet-100);
+    --expressive-theme-live-dark-background: var(--color-violet-600);
+    --expressive-theme-live-dark-foreground: var(--color-violet-100);
     --expressive-theme-marigold-light-background: var(--color-marigold-400);
     --expressive-theme-marigold-light-foreground: var(--color-marigold-700);
     --expressive-theme-marigold-medium-background: var(--color-marigold-500);

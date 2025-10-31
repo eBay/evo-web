@@ -2,7 +2,7 @@ import path from "path";
 import flags from "./data/flags.json";
 import icons from "./data/icons.json";
 static const componentTemplate = import.meta.glob(
-    "../routes/_theme/_index,live/component/*/*.marko",
+    "../routes/_index/component/*/*.marko",
     { eager: true },
 );
 static const components = Object.keys(componentTemplate).map((filePath) => {
