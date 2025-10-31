@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayFilterInput } from "../index";
+import { EbayButton } from "../../ebay-button";
 
 const meta: Meta<typeof EbayFilterInput> = {
     component: EbayFilterInput,
@@ -10,7 +11,7 @@ const meta: Meta<typeof EbayFilterInput> = {
             description: "Filter input size",
             table: {
                 defaultValue: {
-                    summary: "undefined",
+                    summary: "large",
                 },
             },
             options: ["small", "large"],
@@ -80,9 +81,7 @@ const meta: Meta<typeof EbayFilterInput> = {
 
 export default meta;
 
-export const Default: StoryFn<typeof EbayFilterInput> = (args) => (
-    <EbayFilterInput {...args} />
-);
+export const Default: StoryFn<typeof EbayFilterInput> = (args) => <EbayFilterInput {...args} />;
 
 export const WithClearButton: StoryFn<typeof EbayFilterInput> = (args) => (
     <EbayFilterInput {...args} a11yClearButton="Clear filter" />
@@ -110,33 +109,34 @@ export const CustomPlaceholder: StoryFn<typeof EbayFilterInput> = (args) => (
 
 export const Controlled: StoryFn<typeof EbayFilterInput> = (args) => {
     const [value, setValue] = useState("Controlled value");
-    
+
     return (
         <div>
             <EbayFilterInput
                 {...args}
                 value={value}
                 a11yClearButton="Clear filter"
-                onInputChange={(e, { value: newValue }) => setValue(newValue)}
+                onInputChange={(e, data) => setValue(data!.value)}
                 onClear={() => setValue("")}
             />
             <div style={{ marginTop: "8px" }}>
                 Current value: <strong>{value}</strong>
             </div>
+            <EbayButton onClick={() => setValue("Controlled value")}>Set initial value</EbayButton>
         </div>
     );
 };
 
 export const Uncontrolled: StoryFn<typeof EbayFilterInput> = (args) => {
     const [lastValue, setLastValue] = useState("");
-    
+
     return (
         <div>
             <EbayFilterInput
                 {...args}
                 defaultValue="Initial value"
                 a11yClearButton="Clear filter"
-                onInputChange={(e, { value }) => setLastValue(value)}
+                onInputChange={(e, data) => setLastValue(data!.value)}
             />
             <div style={{ marginTop: "8px" }}>
                 Last input value: <strong>{lastValue}</strong>
@@ -148,10 +148,8 @@ export const Uncontrolled: StoryFn<typeof EbayFilterInput> = (args) => {
 export const WithControlledList: StoryFn<typeof EbayFilterInput> = (args) => {
     const [filterValue, setFilterValue] = useState("");
     const items = ["Apple", "Banana", "Cherry", "Date", "Elderberry", "Fig", "Grape"];
-    const filteredItems = items.filter(item => 
-        item.toLowerCase().includes(filterValue.toLowerCase())
-    );
-    
+    const filteredItems = items.filter((item) => item.toLowerCase().includes(filterValue.toLowerCase()));
+
     return (
         <div>
             <EbayFilterInput
@@ -160,12 +158,12 @@ export const WithControlledList: StoryFn<typeof EbayFilterInput> = (args) => {
                 a11yClearButton="Clear filter"
                 a11yControlsId="filtered-list"
                 placeholder="Filter items..."
-                onInputChange={(e, { value }) => setFilterValue(value)}
+                onInputChange={(e, data) => setFilterValue(data!.value)}
                 onClear={() => setFilterValue("")}
             />
             <ul id="filtered-list" style={{ marginTop: "8px", listStyle: "none", padding: 0 }}>
                 {filteredItems.length > 0 ? (
-                    filteredItems.map(item => (
+                    filteredItems.map((item) => (
                         <li key={item} style={{ padding: "4px 0" }}>
                             {item}
                         </li>

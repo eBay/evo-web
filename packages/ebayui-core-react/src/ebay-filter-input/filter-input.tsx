@@ -1,21 +1,23 @@
 import classnames from "classnames";
-import React, { FC, KeyboardEvent, MouseEvent, useRef, useState } from "react";
+import React, { FC, useState } from "react";
 import { EbayTextbox, EbayTextboxPrefixIcon, EbayTextboxPostfixIcon, type EbayTextboxProps } from "../ebay-textbox";
 import { EbayIconSearch16 } from "../ebay-icon/icons/ebay-icon-search-16";
 import { EbayIconClear16 } from "../ebay-icon/icons/ebay-icon-clear-16";
-import { EbayChangeEventHandler } from "../common/event-utils/types";
+import { EbayEventHandler, EbayMouseEventHandler } from "../common/event-utils/types";
 import type { Size as TextboxSize } from "../ebay-textbox/types";
 
 const validSizes = ["large", "small"] as const;
-export type Size = (typeof validSizes)[number];
+export type Size = "large" | "small";
 
 export type FilterInputEventProps = { value: string };
 
-export type EbayFilterInputProps = Omit<EbayTextboxProps, "inputSize"> & {
+export type EbayFilterInputProps = Omit<EbayTextboxProps, "inputSize" | "ref" | "onInputChange" | "size"> & {
     size?: Size;
     a11yClearButton?: string;
     a11yControlsId?: string;
-    onClear?: EbayChangeEventHandler<HTMLInputElement, FilterInputEventProps>;
+    inputRef?: EbayTextboxProps["forwardedRef"];
+    onClear?: EbayMouseEventHandler<HTMLButtonElement, FilterInputEventProps>;
+    onInputChange?: EbayEventHandler<HTMLInputElement | HTMLButtonElement, FilterInputEventProps>;
 };
 
 const EbayFilterInput: FC<EbayFilterInputProps> = ({
@@ -28,61 +30,60 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
     value: controlledValue,
     defaultValue,
     onInputChange,
+    inputRef,
     ...rest
 }) => {
-    const inputRef = useRef<HTMLInputElement>(null);
     const isControlled = controlledValue !== undefined;
-    
+
     // Always manage internal state, even in controlled mode (for clear functionality)
     const [internalValue, setInternalValue] = useState(defaultValue || "");
-    
+
     // Use controlled value if provided, otherwise use internal state
     const value = isControlled ? controlledValue : internalValue;
-    
+
     // Map filter-input sizes to textbox sizes
     // filter-input "small" -> textbox "default", filter-input "large" -> textbox "large"
-    const textboxSize: TextboxSize | undefined = inputSize && validSizes.includes(inputSize) 
-        ? (inputSize === "small" ? "default" : "large") 
-        : undefined;
+    const textboxSize: TextboxSize | undefined =
+        inputSize && validSizes.includes(inputSize) ? (inputSize === "small" ? "default" : "large") : undefined;
 
-    const handleInputChange: EbayChangeEventHandler<HTMLInputElement, { value: string }> = (event, { value: newValue }) => {
+    const handleInputChange: EbayTextboxProps["onInputChange"] = (event, { value: newValue }) => {
         // Always update internal state for uncontrolled mode
         if (!isControlled) {
             setInternalValue(newValue);
         }
-        
+
         // Call parent's onInputChange if provided
         if (onInputChange) {
             onInputChange(event, { value: newValue });
         }
     };
 
-    const handleButtonClick = (event: KeyboardEvent | MouseEvent) => {
+    const handleButtonClick: EbayMouseEventHandler<HTMLButtonElement> = (event) => {
         // Update internal state for uncontrolled mode
         if (!isControlled) {
             setInternalValue("");
         }
-        
+
         // Call onInputChange to notify parent of the change
         if (onInputChange) {
-            onInputChange(event as React.ChangeEvent<HTMLInputElement>, { value: "" });
+            onInputChange(event, { value: "" });
         }
-        
+
         // Call onClear callback
-        onClear(event as React.ChangeEvent<HTMLInputElement>, { value: "" });
+        onClear(event, { value: "" });
     };
 
     const containerClassName = classnames(
         "filter-input",
         inputSize && validSizes.includes(inputSize) && `filter-input--${inputSize}`,
-        className
+        className,
     );
 
     return (
         <span className={containerClassName}>
             <EbayTextbox
                 {...rest}
-                forwardedRef={inputRef}
+                inputRef={inputRef}
                 value={value}
                 onInputChange={handleInputChange}
                 fluid
@@ -97,7 +98,7 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
                         icon={<EbayIconClear16 />}
                         buttonAriaLabel={a11yClearButton}
                         className="filter-input__clear-btn"
-                        onClick={handleButtonClick}
+                        onClick={(event) => handleButtonClick(event)}
                     />
                 )}
             </EbayTextbox>

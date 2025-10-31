@@ -54,6 +54,7 @@ export type EbayTextboxProps = {
     onButtonClick?: EbayKeyboardEventHandler<HTMLInputElement, TextboxEventProps> &
         EbayMouseEventHandler<HTMLInputElement, TextboxEventProps>;
     forwardedRef?: Ref<HTMLTextAreaElement | HTMLInputElement>;
+    inputRef?: Ref<HTMLTextAreaElement | HTMLInputElement>;
     opaqueLabel?: boolean;
 } & Omit<TextInputProps, "onFocus" | "onBlur" | "onChange" | "onKeyPress" | "onKeyUp" | "onKeyDown" | "onInvalid">;
 
@@ -76,6 +77,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     defaultValue = "",
     value: controlledValue,
     forwardedRef,
+    inputRef,
     inputSize = "default",
     floatingLabel: floatingLabelText,
     floatingLabelStatic,
@@ -189,7 +191,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
                     onKeyDown={handleKeyDown}
                     onInvalid={handleInvalid}
                     autoFocus={autoFocus}
-                    ref={forwardedRef as LegacyRef<HTMLTextAreaElement> & LegacyRef<HTMLInputElement>}
+                    ref={(inputRef || forwardedRef) as LegacyRef<HTMLTextAreaElement> & LegacyRef<HTMLInputElement>}
                     placeholder={placeholder}
                 />
                 {postfixText}
