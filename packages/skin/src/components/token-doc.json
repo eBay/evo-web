@@ -551,7 +551,9 @@
         {
             "value": "#312102",
             "prop": "--color-yellow-800"
-        },
+        }
+    ],
+    "expressive": [
         {
             "value": "var(--color-avocado-400)",
             "prop": "--expressive-theme-avocado-light-background"
@@ -962,6 +964,296 @@
         }
     ],
     "semantic": [
+        {
+            "value": "var(--color-ai-solid-blue-strong)",
+            "prop": "--color-ai-solid-blue-strong"
+        },
+        {
+            "value": "var(--color-ai-solid-blue-subtle)",
+            "prop": "--color-ai-solid-blue-subtle"
+        },
+        {
+            "value": "var(--color-ai-solid-green-strong)",
+            "prop": "--color-ai-solid-green-strong"
+        },
+        {
+            "value": "var(--color-ai-solid-green-subtle)",
+            "prop": "--color-ai-solid-green-subtle"
+        },
+        {
+            "value": "var(--color-ai-solid-purple-strong)",
+            "prop": "--color-ai-solid-purple-strong"
+        },
+        {
+            "value": "var(--color-ai-solid-purple-subtle)",
+            "prop": "--color-ai-solid-purple-subtle"
+        },
+        {
+            "value": "var(--color-ai-solid-red-strong)",
+            "prop": "--color-ai-solid-red-strong"
+        },
+        {
+            "value": "var(--color-ai-solid-red-subtle)",
+            "prop": "--color-ai-solid-red-subtle"
+        },
+        {
+            "value": "var(--color-ai-solid-yellow-strong)",
+            "prop": "--color-ai-solid-yellow-strong"
+        },
+        {
+            "value": "var(--color-background-accent)",
+            "prop": "--color-background-accent"
+        },
+        {
+            "value": "var(--color-background-attention)",
+            "prop": "--color-background-attention"
+        },
+        {
+            "value": "var(--color-background-disabled)",
+            "prop": "--color-background-disabled"
+        },
+        {
+            "value": "var(--color-background-education)",
+            "prop": "--color-background-education"
+        },
+        {
+            "value": "var(--color-background-elevated)",
+            "prop": "--color-background-elevated"
+        },
+        {
+            "value": "var(--color-background-inverse)",
+            "prop": "--color-background-inverse"
+        },
+        {
+            "value": "var(--color-background-on-image)",
+            "prop": "--color-background-on-image"
+        },
+        {
+            "value": "var(--color-background-on-secondary)",
+            "prop": "--color-background-on-secondary"
+        },
+        {
+            "value": "var(--color-background-primary)",
+            "prop": "--color-background-primary"
+        },
+        {
+            "value": "var(--color-background-secondary-on-elevated)",
+            "prop": "--color-background-secondary-on-elevated"
+        },
+        {
+            "value": "var(--color-background-secondary)",
+            "prop": "--color-background-secondary"
+        },
+        {
+            "value": "var(--color-background-strong)",
+            "prop": "--color-background-strong"
+        },
+        {
+            "value": "var(--color-background-success)",
+            "prop": "--color-background-success"
+        },
+        {
+            "value": "var(--color-background-tertiary)",
+            "prop": "--color-background-tertiary"
+        },
+        {
+            "value": "var(--color-background-transparent)",
+            "prop": "--color-background-transparent"
+        },
+        {
+            "value": "var(--color-border-accent)",
+            "prop": "--color-border-accent"
+        },
+        {
+            "value": "var(--color-border-attention)",
+            "prop": "--color-border-attention"
+        },
+        {
+            "value": "var(--color-border-disabled)",
+            "prop": "--color-border-disabled"
+        },
+        {
+            "value": "var(--color-border-medium)",
+            "prop": "--color-border-medium"
+        },
+        {
+            "value": "var(--color-border-on-accent)",
+            "prop": "--color-border-on-accent"
+        },
+        {
+            "value": "var(--color-border-on-attention)",
+            "prop": "--color-border-on-attention"
+        },
+        {
+            "value": "var(--color-border-on-disabled)",
+            "prop": "--color-border-on-disabled"
+        },
+        {
+            "value": "var(--color-border-on-inverse)",
+            "prop": "--color-border-on-inverse"
+        },
+        {
+            "value": "var(--color-border-on-success)",
+            "prop": "--color-border-on-success"
+        },
+        {
+            "value": "var(--color-border-strong)",
+            "prop": "--color-border-strong"
+        },
+        {
+            "value": "var(--color-border-subtle)",
+            "prop": "--color-border-subtle"
+        },
+        {
+            "value": "var(--color-border-success)",
+            "prop": "--color-border-success"
+        },
+        {
+            "value": "var(--color-brand-1)",
+            "prop": "--color-brand-1"
+        },
+        {
+            "value": "var(--color-brand-2)",
+            "prop": "--color-brand-2"
+        },
+        {
+            "value": "var(--color-brand-3)",
+            "prop": "--color-brand-3"
+        },
+        {
+            "value": "var(--color-brand-4)",
+            "prop": "--color-brand-4"
+        },
+        {
+            "value": "var(--color-foreground-accent)",
+            "prop": "--color-foreground-accent"
+        },
+        {
+            "value": "var(--color-foreground-attention)",
+            "prop": "--color-foreground-attention"
+        },
+        {
+            "value": "var(--color-foreground-disabled)",
+            "prop": "--color-foreground-disabled"
+        },
+        {
+            "value": "var(--color-foreground-link-legal)",
+            "prop": "--color-foreground-link-legal"
+        },
+        {
+            "value": "var(--color-foreground-link-primary)",
+            "prop": "--color-foreground-link-primary"
+        },
+        {
+            "value": "var(--color-foreground-link-visited)",
+            "prop": "--color-foreground-link-visited"
+        },
+        {
+            "value": "var(--color-foreground-on-accent)",
+            "prop": "--color-foreground-on-accent"
+        },
+        {
+            "value": "var(--color-foreground-on-attention)",
+            "prop": "--color-foreground-on-attention"
+        },
+        {
+            "value": "var(--color-foreground-on-disabled)",
+            "prop": "--color-foreground-on-disabled"
+        },
+        {
+            "value": "var(--color-foreground-on-inverse)",
+            "prop": "--color-foreground-on-inverse"
+        },
+        {
+            "value": "var(--color-foreground-on-strong)",
+            "prop": "--color-foreground-on-strong"
+        },
+        {
+            "value": "var(--color-foreground-on-success)",
+            "prop": "--color-foreground-on-success"
+        },
+        {
+            "value": "var(--color-foreground-primary)",
+            "prop": "--color-foreground-primary"
+        },
+        {
+            "value": "var(--color-foreground-secondary)",
+            "prop": "--color-foreground-secondary"
+        },
+        {
+            "value": "var(--color-foreground-success)",
+            "prop": "--color-foreground-success"
+        },
+        {
+            "value": "var(--color-gradient-ai-blue-strong)",
+            "prop": "--color-gradient-ai-blue-strong"
+        },
+        {
+            "value": "var(--color-gradient-ai-blue-subtle)",
+            "prop": "--color-gradient-ai-blue-subtle"
+        },
+        {
+            "value": "var(--color-gradient-ai-full-color-diagonal)",
+            "prop": "--color-gradient-ai-full-color-diagonal"
+        },
+        {
+            "value": "var(--color-gradient-ai-green-strong)",
+            "prop": "--color-gradient-ai-green-strong"
+        },
+        {
+            "value": "var(--color-gradient-ai-green-subtle)",
+            "prop": "--color-gradient-ai-green-subtle"
+        },
+        {
+            "value": "var(--color-gradient-ai-purple-strong)",
+            "prop": "--color-gradient-ai-purple-strong"
+        },
+        {
+            "value": "var(--color-gradient-ai-purple-subtle)",
+            "prop": "--color-gradient-ai-purple-subtle"
+        },
+        {
+            "value": "var(--color-gradient-image-scrim)",
+            "prop": "--color-gradient-image-scrim"
+        },
+        {
+            "value": "var(--color-gradient-loading-shimmer-on-secondary)",
+            "prop": "--color-gradient-loading-shimmer-on-secondary"
+        },
+        {
+            "value": "var(--color-gradient-loading-shimmer)",
+            "prop": "--color-gradient-loading-shimmer"
+        },
+        {
+            "value": "var(--color-loading-fill-on-secondary)",
+            "prop": "--color-loading-fill-on-secondary"
+        },
+        {
+            "value": "var(--color-loading-fill)",
+            "prop": "--color-loading-fill"
+        },
+        {
+            "value": "var(--color-scrim-background)",
+            "prop": "--color-scrim-background"
+        },
+        {
+            "value": "var(--color-state-layer-focus)",
+            "prop": "--color-state-layer-focus"
+        },
+        {
+            "value": "var(--color-state-layer-hover)",
+            "prop": "--color-state-layer-hover"
+        },
+        {
+            "value": "var(--color-state-layer-pressed)",
+            "prop": "--color-state-layer-pressed"
+        },
+        {
+            "value": "var(--color-state-layer-selected)",
+            "prop": "--color-state-layer-selected"
+        }
+    ],
+    "live": [
         {
             "value": "var(--color-ai-solid-blue-strong)",
             "prop": "--color-ai-solid-blue-strong"

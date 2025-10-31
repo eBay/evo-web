@@ -10,14 +10,4 @@ export default defineConfig({
             ),
         },
     },
-    // css: {
-    //     preprocessorOptions: {
-    //         sass: {
-    //             loadPaths: [
-    //                 resolve(__dirname, '../../node_modules'),
-    //                 // resolve(__dirname, '../../node_modules/@ebay/design-tokens')
-    //             ]
-    //         }
-    //     }
-    // }
 });
