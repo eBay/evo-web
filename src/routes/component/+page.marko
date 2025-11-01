@@ -1,12 +1,8 @@
 import { components, componentTemplate } from "../../components/components.marko";
 import path from "path";
 
-static const componentMetas = import.meta.glob(
-    "./*/+meta.json",
-    { eager: true }
-);
 static const componentMetadata = import.meta.glob(
-    "./*/metadata.json",
+    "./_tabs/*/+meta.json",
     { eager: true }
 );
 
@@ -33,37 +29,22 @@ static const componentMetadata = import.meta.glob(
                     return ` ${g[1].toUpperCase()}`;
                 });
                 const properName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
-                const metaPath = `./${componentName}/+meta.json`;
-                const metadataPath = `./${componentName}/metadata.json`;
+                const metaPath = `./_tabs/${componentName}/+meta.json`;
                 
                 // Get legacy meta data for page info (title, description, image)
-                let metaData = componentMetas[metaPath];
-                if (metaData) {
-                    if (metaData.default) {
-                        metaData = metaData.default;
-                    } else {
-                        metaData = {
-                            pageTitle: metaData.pageTitle,
-                            pageDescription: metaData.pageDescription,
-                            pageImg: metaData.pageImg || "",
-                        };
-                    }
+                let metadata = componentMetadata[metaPath];
+                if (metadata && metadata.default) {
+                    metadata = metadata.default;
                 }
-                
-                // Get new metadata structure for version info
-                let componentData = componentMetadata[metadataPath];
-                if (componentData && componentData.default) {
-                    componentData = componentData.default;
-                }
-                
+
                 // Extract version information from new metadata structure
-                const dsComponent = componentData?.["ds-component"];
+                const dsComponent = metadata?.["ds-component"];
                 
                 const componentInfo = {
                     name: componentName,
                     properName: properName,
                     folder: folder,
-                    meta: metaData || {},
+                    meta: metadata || {},
                     dsComponent: dsComponent,
                     staticVersion: dsComponent?.staticVersion,
                     markoVersion: dsComponent?.markoVersion,

@@ -1,0 +1,8 @@
+// pulling the name off of the route, because Marko Run doesn't
+// have a way to share dynamic and static directories yet
+$ const pathSegments = $global.url.pathname.split("/")
+$ const componentName = pathSegments[pathSegments.findIndex(v => v === "component") + 1]
+
+<component-tabs componentName=componentName>
+  <${input.renderBody}/>
+</component-tabs>

@@ -1,0 +1,22 @@
+$ const name = $global.params.name;
+
+<await(import(`../${name}/+meta.json`))>
+  <@then|metadata|>
+    <div id=`${name}-marko`>
+        <h1>${metadata.title} Marko Component</h1>
+        <p>
+            Marko components in Evo are managed and presented through storybook.
+        </p>
+
+        <a class="fake-btn fake-btn--primary" href=metadata.markoStorybookURL target="_blank">
+            <span class="fake-btn__cell">
+                <span>Marko ${metadata.title} Storybook</span>
+                <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+                    <use href="#icon-external-link-16" />
+                </svg>
+            </span>
+        </a>
+    </div>
+  </@then>
+</await>
+

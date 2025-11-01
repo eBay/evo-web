@@ -1,0 +1,15 @@
+{
+  "name": "accordion",
+  "title": "Accordion",
+  "pageDescription": "The Accordion component is a responsive and accessible UI element that organizes content into expandable and collapsible sections. Designed to adapt seamlessly across devices and technologies, it provides consistent performance and usability in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/accordion-400.png",
+  "markoStorybookURL": "https://opensource.ebay.com/evo-web/ebayui-core/?path=/docs/navigation-disclosure-ebay-accordion--documentation",
+  "reactStorybookURL": "https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=/docs/navigation-disclosure-ebay-accordion--documentation",
+  "playbookURL": "https://playbook.ebay.com/design-system/components/accordion",
+  "ds-component": {
+    "name": "accordion",
+    "staticVersion": 1.1,
+    "markoVersion": 1.1,
+    "reactVersion": 1.1
+  }
+}
