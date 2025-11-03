@@ -28,7 +28,7 @@ async function generate(fileName: string, color?: (value:string) => boolean) {
     const ret = [] as {[key: string]: any}[];
     for (let item of items) {
         if (!color || color(item.value)) {
-            const value = color ? item.value : `var(${item.prop})`
+            const value = color ? item.value : `var(${item.prop})`;
             ret.push({
                 value,
                 prop: item.prop
