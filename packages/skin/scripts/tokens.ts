@@ -13,7 +13,7 @@ const coreTokensOutput = resolve(
     "../src/components/token-doc.json",
 );
 
-async function generate(fileName: string, color?: (value:string) => boolean) {
+async function generate(fileName: string, color?: (value: string) => boolean) {
     const items = [] as postcss.Declaration[];
     const data = await readFile(resolve(coreTokens, `${fileName}.css`), {
         encoding: "utf-8",
