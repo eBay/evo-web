@@ -225,10 +225,6 @@ class Video extends Marko.Component<Input, State> {
     }
 
     handleError(err: Error) {
-        // Hide thumbnail overlay on error if there is a poster
-        if(this.input.thumbnail){
-            document.querySelector(".video-player__overlay")?.setAttribute("style", "display:none;");
-        }
         this.state.failed = true;
         this.state.isLoaded = true;
         this.playButtonContainer.remove();
