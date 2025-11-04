@@ -96,6 +96,14 @@
     margin: 0 188px 18px 76px;
 }
 
+.video-player .video-player__navigate {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .video-player #shaka-player-ui-time-container {
     display: none;
 }
@@ -112,16 +120,9 @@
     }
 }
 
-.video-player.video-player--compact {
+.video-player--compact {
     container-type: inline-size;
     width: 100%;
-    .video-player__navigate {
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
     .shaka-controls-button-panel {
         background-color: transparent;
         justify-content: flex-end;

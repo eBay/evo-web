@@ -53,16 +53,6 @@ export default {
                 'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remianing time on the videois displayed',
             control: { type: "text" },
         },
-        autoPlay: {
-            type: "boolean",
-            description:
-                "True/False to autoplay the video when loaded. Default is false",
-        },
-        loop: {
-            type: "boolean",
-            description:
-                "True/False to loop the video when it ends. Default is false",
-        },
         playView: {
             description:
                 'Either "inline", or "fullscreen". When player strats to play, will either play "inline" (default) or switch to "fullscreen"',
@@ -345,35 +335,6 @@ mp4.parameters = {
         source: {
             code: tagToString("ebay-video", mp4.args),
         },
-    },
-};
-
-export const pauseWhenVideoIsOffscreen = Template.bind({});
-pauseWhenVideoIsOffscreen.storyName = "Auto-play/pause on Viewport Visibility";
-pauseWhenVideoIsOffscreen.args = {
-    width: "700",
-    height: "400",
-    nav: {
-        href: "https://www.ebay.com",
-        target: "_blank"
-    } as any,
-    pause_when_offscreen: true,
-    source: [
-        {
-            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
-            type: "dash",
-        },
-    ] as any
-        
-};
-pauseWhenVideoIsOffscreen.parameters = {
-    docs: {
-        source: {
-            code: tagToString("ebay-video", pauseWhenVideoIsOffscreen.args),
-        },
-        description: {
-            story: "The video player automatically plays the video when it is 50% visible in the viewport and pauses when it is less than 50% visible. This provides a better user experience by only playing videos when they are actually visible to the user. To test this feature, scroll the page so that the video is partially visible or not visible at all."
-        }
     },
 };
 

@@ -93,7 +93,7 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
      * Whether to pause the video when it is less than 50% visible in the viewport
      * @default false
      */
-    pause_when_offscreen?: boolean,
+    offscreenPause?: boolean,
     /**
      * @deprecated Use `a11y-report-text` instead
      */
@@ -173,10 +173,12 @@ class Video extends Marko.Component<Input, State> {
                     ".shaka-controls-button-panel",
                 )!;
                 const spacer = buttonPanel.querySelector(".shaka-spacer")!;
-                const buttonPanelRect = buttonPanel.getBoundingClientRect();
-                const spacerRect = spacer.getBoundingClientRect();
-                rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
-                rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
+                if (buttonPanel && spacer) {
+                    const buttonPanelRect = buttonPanel.getBoundingClientRect();
+                    const spacerRect = spacer.getBoundingClientRect();
+                    rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
+                    rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
+                }    
             }
             
         }
@@ -286,13 +288,9 @@ class Video extends Marko.Component<Input, State> {
         };
 
         if(input.layout === "compact") {
-             videoConfig = {
-                doubleClickForFullscreen: true,
-                singleClickForPlayAndPause: true,
-                addBigPlayButton: false,
-                addSeekBar: false,
-                controlPanelElements: compactLayoutControlPanelElements
-            }
+            videoConfig.addBigPlayButton = false;
+            videoConfig.addSeekBar = false;
+            videoConfig.controlPanelElements = compactLayoutControlPanelElements;
         }
 
         if(input.nav) {
@@ -470,7 +468,7 @@ class Video extends Marko.Component<Input, State> {
             );
         });
 
-        if(this.input.pause_when_offscreen) {
+        if(this.input.offscreenPause) {
             // Set up Intersection Observer to detect when video is 50% in viewport
             this.setupIntersectionObserver();
         }
