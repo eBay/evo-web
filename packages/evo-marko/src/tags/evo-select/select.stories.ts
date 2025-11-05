@@ -47,7 +47,7 @@ export default {
         fluid: {
             type: "boolean",
             control: { type: "boolean" },
-            description: "If true, then the component takes up 100% of the width of its container",
+            description: "Select takes 100% of the container width",
         },
         isLarge: {
             type: "boolean",
