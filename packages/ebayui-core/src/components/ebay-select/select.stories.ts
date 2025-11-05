@@ -44,6 +44,11 @@ export default {
             control: { type: "boolean" },
             description: "whether button has borders",
         },
+        fluid: {
+            type: "boolean",
+            control: { type: "boolean" },
+            description: "If true, then the select takes 100% of the container width",
+        },
         isLarge: {
             type: "boolean",
             control: { type: "boolean" },

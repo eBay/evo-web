@@ -6,6 +6,7 @@
     },
     "@html-attributes": "expression",
     "@borderless": "boolean",
+    "@fluid": "boolean",
     "@autocomplete": "#html-autocomplete",
     "@autofocus": "#html-autofocus",
     "@disabled": "#html-disabled",

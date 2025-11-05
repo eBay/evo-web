@@ -44,6 +44,11 @@ export default {
             control: { type: "boolean" },
             description: "whether button has borders",
         },
+        fluid: {
+            type: "boolean",
+            control: { type: "boolean" },
+            description: "If true, then the component takes up 100% of the width of its container",
+        },
         isLarge: {
             type: "boolean",
             control: { type: "boolean" },
