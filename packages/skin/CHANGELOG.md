@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.16.0
+
+### Minor Changes
+
+- [#345](https://github.com/eBay/evo-web/pull/345) [`06b7492`](https://github.com/eBay/evo-web/commit/06b7492d5d974316e71eee87276d424de9f86f01) Thanks [@agliga](https://github.com/agliga)! - feat(tokens): added live theme and partial theme
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
+- [#343](https://github.com/eBay/evo-web/pull/343) [`0cd94cf`](https://github.com/eBay/evo-web/commit/0cd94cf609adb6ac12b5c1319f70da13719ed0a3) Thanks [@dukchen](https://github.com/dukchen)! - Fixed floating label width calculation to account for 0.75 scale transformation and added width transition animation to prevent labels from
+
 ## 19.15.0
 
 ### Minor Changes

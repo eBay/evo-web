@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.2
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
 ## 0.1.1
 
 ### Patch Changes

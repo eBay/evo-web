@@ -47,7 +47,8 @@ export default {
         fluid: {
             type: "boolean",
             control: { type: "boolean" },
-            description: "If true, then the select takes 100% of the container width",
+            description:
+                "If true, then the select takes 100% of the container width",
         },
         isLarge: {
             type: "boolean",

@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 15.12.10
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
+- [#348](https://github.com/eBay/evo-web/pull/348) [`0440713`](https://github.com/eBay/evo-web/commit/04407139302c098eba04b1df6464422e752aa02a) Thanks [@agliga](https://github.com/agliga)! - fix(select): added fluid attribute
+
+- [`24964d5`](https://github.com/eBay/evo-web/commit/24964d541c7a5ccc080f4cbb723a5bad187e222c) Thanks [@agliga](https://github.com/agliga)! - fix(listbox-button): removed scroll key prevetor from listbox-button
+
 ## 15.12.9
 
 ### Patch Changes
