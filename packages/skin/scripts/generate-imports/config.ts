@@ -63,6 +63,9 @@ const config: Config = {
         tokens: {
             index: ["evo-core", "evo-light"],
             tokens: ["tokens/evo-core", "tokens/evo-light"],
+            "evo-class": ["tokens/evo-core", "tokens/evo-light-class"],
+            "evo-live": ["tokens/evo-core", "tokens/evo-live-dark"],
+            "evo-live-class": ["tokens/evo-core", "tokens/evo-live-dark-class"],
         },
     },
 };

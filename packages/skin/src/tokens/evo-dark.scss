@@ -1,9 +1,8 @@
-@use "sass:meta";
-
+@use "@ebay/design-tokens/dist/mixins/evo-dark" as tokens;
 @media (prefers-color-scheme: dark) {
-    @include meta.load-css("@ebay/design-tokens/dist/css/evo-dark.css");
-    .evo-dark,
     :root {
+        @include tokens.evo-dark;
+
         --color-background-faint: rgba(var(--color-neutral-100-rgb), 0.05);
         --color-background-confirmation: var(--color-background-success);
         --color-background-information: var(--color-blue-500);

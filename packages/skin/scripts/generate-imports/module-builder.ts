@@ -99,7 +99,16 @@ class ModuleBuilder {
             try {
                 // Remove the as any when @types/node is upgraded past 14.x.
                 // This is due to changesets/cli bringing in an older version of node types
-                await (fs.promises as any).rm(this.moduleName, { recursive: true });
+
+                if (this.options.addIndexModules);
+                for (const file of Object.keys(this.options.addIndexModules)) {
+                    await removeFile(getFileName(file, "js"));
+                    await removeFile(getFileName(file, "css"));
+                }
+
+                await (fs.promises as any).rm(this.moduleName, {
+                    recursive: true,
+                });
                 await removeFile(getFileName(this.moduleName, "js"));
                 await removeFile(getFileName(this.moduleName, "css"));
             } catch (e) {
@@ -140,20 +149,20 @@ class ModuleBuilder {
 
             if (this.options.addIndexModules) {
                 for (const file of Object.keys(this.options.addIndexModules)) {
-                    if (file === this.moduleName) {
-                        await this.overrideData(
-                            { hasBaseModule: false, isNested: false },
-                            this.options.addIndexModules[file],
-                            async () => {
-                                await this.writeModuleFiles(file);
-                            },
-                        );
-                    } else {
+                    if (file === "index") {
                         await this.overrideData(
                             { hasBaseModule: false },
                             this.options.addIndexModules[file],
                             async () => {
                                 await this.writeBrowserJSON(file);
+                                await this.writeModuleFiles(file);
+                            },
+                        );
+                    } else {
+                        await this.overrideData(
+                            { hasBaseModule: false, isNested: false },
+                            this.options.addIndexModules[file],
+                            async () => {
                                 await this.writeModuleFiles(file);
                             },
                         );

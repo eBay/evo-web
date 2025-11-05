@@ -1,8 +1,7 @@
-@use "sass:meta";
-@include meta.load-css("@ebay/design-tokens/dist/css/evo-light.css");
-
-.evo-light,
+@use "@ebay/design-tokens/dist/mixins/evo-light" as tokens;
 :root {
+    @include tokens.evo-light;
+
     --color-background-faint: rgba(var(--color-neutral-900-rgb), 0.05);
     --color-background-confirmation: var(--color-background-success);
     --color-background-information: var(--color-background-accent);

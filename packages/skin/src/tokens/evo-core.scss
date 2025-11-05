@@ -1,6 +1,7 @@
-@use "sass:meta";
-@include meta.load-css("@ebay/design-tokens/dist/css/evo-core.css");
+@use "@ebay/design-tokens/dist/mixins/evo-core" as tokens;
 :root {
+    @include tokens.evo-core;
+
     --border-radius-50: 8px;
     --border-radius-100: 16px;
     --border-radius-150: 24px;

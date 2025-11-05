@@ -52,6 +52,7 @@
     "@docsearch/css": "^4.1.0",
     "@docsearch/js": "^4.1.0",
     "@ebay/browserslist-config": "^2.12.0",
+    "@ebay/design-tokens": "^2.0.1",
     "@ebay/skin": "^19",
     "@floating-ui/dom": "^1.7.4",
     "@marko/run": "^0.8.1",

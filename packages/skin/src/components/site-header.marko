@@ -225,10 +225,10 @@ import { components } from "./components.marko";
                             </li>
                             <li>
                                 <select id="theme-selector">
-                                    <option value="evo-light" >
+                                    <option value="evo-theme">
                                         Theme: Evo
                                     </option>
-                                    <option value="evo-live" >
+                                    <option value="evo-theme-live">
                                         Theme: Evo Live
                                     </option>
                                 </select>
@@ -285,14 +285,18 @@ import { components } from "./components.marko";
     });
     function updateTheme(theme) {
         localStorage.setItem("theme", theme);
+        document.body.className = "";
+        document.body.classList.add(theme);
     }
-    document
-        .getElementById("theme-selector").value = localStorage.getItem("theme")
+
+    const currentTheme = localStorage.getItem("theme") || "evo-theme";
+
+    document.getElementById("theme-selector").value = currentTheme;
+    document.body.classList.add(currentTheme);
 
     document
         .getElementById("theme-selector")
         .addEventListener("change", (e, data) => {
             updateTheme(e.target.value);
-            window.location.reload();
         });
 </script>

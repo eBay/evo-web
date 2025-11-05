@@ -1,6 +1,6 @@
 @use "@ebay/design-tokens/dist/mixins/live-light" as tokens;
 @media (prefers-color-scheme: light) {
-    :root {
+    .evo-theme-live {
         @include tokens.live-light;
     }
 }

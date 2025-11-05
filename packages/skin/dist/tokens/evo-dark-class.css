@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: light) {
-    :root {
+@media (prefers-color-scheme: dark) {
+    .evo-theme {
         --color-ai-solid-blue-strong: #0968f6;
         --color-ai-solid-blue-subtle: #112c31;
         --color-ai-solid-green-strong: #4ee04b;
@@ -9,7 +9,7 @@
         --color-ai-solid-red-strong: #ff4242;
         --color-ai-solid-red-subtle: #321919;
         --color-ai-solid-yellow-strong: #ffd80e;
-        --color-background-accent: var(--color-kiwi-400);
+        --color-background-accent: var(--color-blue-400);
         --color-background-attention: var(--color-red-400);
         --color-background-disabled: var(--color-neutral-600);
         --color-background-education: var(--color-indigo-800);
@@ -24,11 +24,11 @@
         --color-background-success: var(--color-kiwi-500);
         --color-background-tertiary: var(--color-neutral-700);
         --color-background-transparent: var(--color-clear);
-        --color-border-accent: var(--color-kiwi-400);
+        --color-border-accent: var(--color-blue-400);
         --color-border-attention: var(--color-red-400);
         --color-border-disabled: var(--color-neutral-700);
         --color-border-medium: var(--color-neutral-600);
-        --color-border-on-accent: var(--color-kiwi-800);
+        --color-border-on-accent: var(--color-neutral-800);
         --color-border-on-attention: var(--color-neutral-800);
         --color-border-on-disabled: var(--color-neutral-800);
         --color-border-on-inverse: var(--color-neutral-800);
@@ -40,13 +40,13 @@
         --color-brand-2: var(--color-blue-500);
         --color-brand-3: var(--color-yellow-400);
         --color-brand-4: var(--color-green-500);
-        --color-foreground-accent: var(--color-kiwi-400);
+        --color-foreground-accent: var(--color-blue-400);
         --color-foreground-attention: var(--color-red-400);
         --color-foreground-disabled: var(--color-neutral-600);
         --color-foreground-link-legal: var(--color-blue-400);
         --color-foreground-link-primary: var(--color-foreground-primary);
         --color-foreground-link-visited: var(--color-pink-400);
-        --color-foreground-on-accent: var(--color-kiwi-800);
+        --color-foreground-on-accent: var(--color-neutral-800);
         --color-foreground-on-attention: var(--color-neutral-800);
         --color-foreground-on-disabled: var(--color-neutral-800);
         --color-foreground-on-inverse: var(--color-neutral-800);

@@ -6,6 +6,11 @@
 @use "../static/sass/page-grid";
 @use "../static/sass/color-schemes";
 @use "../../sass/bundles/skin-headless";
+@use "../../tokens/evo-core";
+@use "../../tokens/evo-light-class";
+@use "../../tokens/evo-dark-class";
+@use "../../tokens/evo-live-light-class";
+@use "../../tokens/evo-live-dark-class";
 
 :root {
     --color-menu-background: #f2f2f2;

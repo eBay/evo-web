@@ -83,39 +83,48 @@
         </span>
         ${" "}Which imports all live tokens
     </p>
-    <h3>Partial themes</h3>
+    <h3>Subthemes</h3>
     <p>
-        To swap themes within a page, use a partial theme. These are exported as${" "}
+        To swap themes within a page, use the token class themes. These are
+        exported as${" "}
         <span class="highlight">
-            @ebay/skin/evo-live-partial
+            @ebay/skin/evo-live-class
+        </span>
+        ${" "}and ${" "}
+        <span class="highlight">
+            @ebay/skin/evo-class
         </span>
         ${" "}Then, within your page, add a class of${" "}
         <span class="highlight">
-            .evo-live-partial
+            .evo-theme-live
         </span>
         ${" "}and all components within that element will use the partial theme.
     </p>
     <p>Note, this example only works on default evo theme</p>
     <div class="demo">
         <div class="demo__inner">
-            <button class="btn btn--primary">
-                Button
-            </button>
-            <div class="live-light" style="margin-top: 4px;">
+            <div class="evo-theme">
                 <button class="btn btn--primary">
                     Button
                 </button>
+                <div class="evo-theme-live" style="margin-top: 4px;">
+                    <button class="btn btn--primary">
+                        Button
+                    </button>
+                </div>
             </div>
         </div>
     </div>
     <highlight-code type="html">
-        <button class="btn btn--primary">
-            Button
-        </button>
-        <div class="live-light">
+        <div class="evo-theme">
             <button class="btn btn--primary">
                 Button
             </button>
+            <div class="evo-theme-live" style="margin-top: 4px;">
+                <button class="btn btn--primary">
+                    Button
+                </button>
+            </div>
         </div>
     </highlight-code>
 

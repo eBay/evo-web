@@ -1,0 +1,7 @@
+@use "@ebay/design-tokens/dist/mixins/evo-dark" as tokens;
+
+@media (prefers-color-scheme: dark) {
+    .evo-theme {
+        @include tokens.evo-dark;
+    }
+}
