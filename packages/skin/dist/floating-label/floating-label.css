@@ -65,6 +65,7 @@ label.floating-label__label--inline {
 label.floating-label__label--animate {
     transition:
         transform 0.3s ease,
+        width 0.3s ease,
         bottom 0.3s ease;
 }
 
