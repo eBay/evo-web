@@ -330,3 +330,24 @@ export const WithFixedStrategy = (args) => (
         <Item>item 3</Item>
     </EbayMenuButton>
 );
+
+export const WithDisabledItem = (args) => (
+    <>
+        <EbayMenuButton
+            {...args}
+            text="eBay Menu"
+            onKeyDown={action("key down")}
+            onClick={action("click button")}
+            onSelect={(e, { index, checked }) => action("select")(e, { index, checked })}
+            onExpand={action("expand")}
+            onCollapse={action("collapse")}
+            collapseOnSelect={false}
+            type="radio"
+        >
+            <Item>item 1 that has very long text</Item>
+            <Item>item 2</Item>
+            <Item>item 3</Item>
+            <Item disabled>item 4</Item>
+        </EbayMenuButton>
+    </>
+);

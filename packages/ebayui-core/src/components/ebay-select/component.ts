@@ -11,6 +11,7 @@ interface SelectInput extends Omit<Marko.HTML.Select, `on${string}`> {
     "floating-label"?: string;
     "is-large"?: boolean;
     borderless?: boolean;
+    fluid?: boolean;
     "on-change"?: (event: {
         index: number;
         selected: string[];

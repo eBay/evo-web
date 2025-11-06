@@ -24,7 +24,6 @@
     --progress-bar-expressive-message-animatein-duration: 833ms;
     --progress-bar-expressive-message-animateout-duration: 400ms;
 }
-
 .progress-bar-expressive {
     align-items: stretch;
     display: grid;
@@ -35,28 +34,24 @@
     row-gap: var(--spacing-300);
     width: 100%;
 }
-
 .progress-bar-expressive--loaded {
     display: none;
 }
-
 .progress-bar-expressive__messages {
     color: var(--color-foreground-primary);
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-400);
     line-height: calc(var(--spacing-50) + var(--spacing-300));
     margin: 0 var(--spacing-200);
     min-height: 3rem;
     position: relative;
     text-align: center;
 }
-
 .progress-bar-expressive__messages--medium {
     font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: var(--spacing-300);
 }
-
 .progress-bar-expressive__message {
     bottom: 0;
     left: 0;
@@ -69,31 +64,26 @@
 .progress-bar-expressive__message[aria-hidden="true"] {
     opacity: 0;
 }
-
 .progress-bar-expressive__message--in {
     animation: progress-bar-expressive-message-animatein
         var(--progress-bar-expressive-message-animatein-duration)
         cubic-bezier(0.3, 0, 0, 1) both;
 }
-
 .progress-bar-expressive__message--out {
     animation: progress-bar-expressive-message-animateout
         var(--progress-bar-expressive-message-animateout-duration)
         cubic-bezier(0.3, 0, 0, 1) both;
 }
-
 .progress-bar-expressive__progress[role="progressbar"] {
     border-radius: var(--progress-bar-expressive-line-border-radius);
     margin: 0 var(--spacing-200);
     overflow: hidden;
 }
-
 .progress-bar-expressive__lines {
     display: flex;
     overflow: visible;
     width: calc(100% - var(--progress-bar-expressive-line-gap) * 3);
 }
-
 .progress-bar-expressive__line {
     animation:
         progress-bar-expressive-line-reorder
@@ -111,15 +101,12 @@
 .progress-bar-expressive__line:nth-child(4n + 1) {
     background-color: var(--progress-bar-expressive-color-4);
 }
-
 .progress-bar-expressive__line:nth-child(4n + 2) {
     background-color: var(--progress-bar-expressive-color-3);
 }
-
 .progress-bar-expressive__line:nth-child(4n + 3) {
     background-color: var(--progress-bar-expressive-color-2);
 }
-
 .progress-bar-expressive__line:nth-child(4n + 4) {
     background-color: var(--progress-bar-expressive-color-1);
 }
@@ -134,7 +121,6 @@
     );
     width: var(--progress-bar-expressive-line-width-a1);
 }
-
 .progress-bar-expressive__line:nth-child(2) {
     animation-delay: calc(
         (
@@ -146,7 +132,6 @@
     );
     width: var(--progress-bar-expressive-line-width-a2);
 }
-
 .progress-bar-expressive__line:nth-child(3) {
     animation-delay: calc(
         (
@@ -158,7 +143,6 @@
     );
     width: var(--progress-bar-expressive-line-width-a3);
 }
-
 .progress-bar-expressive__line:nth-child(4) {
     animation-delay: calc(
         (
@@ -170,7 +154,6 @@
     );
     width: var(--progress-bar-expressive-line-width-a4);
 }
-
 .progress-bar-expressive__line:nth-child(5) {
     animation-delay: calc(
         (
@@ -182,7 +165,6 @@
     );
     width: var(--progress-bar-expressive-line-width-b1);
 }
-
 .progress-bar-expressive__line:nth-child(6) {
     animation-delay: calc(
         (
@@ -194,7 +176,6 @@
     );
     width: var(--progress-bar-expressive-line-width-b2);
 }
-
 .progress-bar-expressive__line:nth-child(7) {
     animation-delay: calc(
         (
@@ -206,7 +187,6 @@
     );
     width: var(--progress-bar-expressive-line-width-b3);
 }
-
 .progress-bar-expressive__line:nth-child(8) {
     animation-delay: calc(
         (
@@ -218,7 +198,6 @@
     );
     width: var(--progress-bar-expressive-line-width-b4);
 }
-
 .progress-bar-expressive__line:nth-child(9) {
     animation-delay: calc(
         (
@@ -230,7 +209,6 @@
     );
     width: var(--progress-bar-expressive-line-width-c1);
 }
-
 .progress-bar-expressive__line:nth-child(10) {
     animation-delay: calc(
         (
@@ -242,7 +220,6 @@
     );
     width: var(--progress-bar-expressive-line-width-c2);
 }
-
 .progress-bar-expressive__line:nth-child(11) {
     animation-delay: calc(
         (
@@ -254,7 +231,6 @@
     );
     width: var(--progress-bar-expressive-line-width-c3);
 }
-
 .progress-bar-expressive__line:nth-child(12) {
     animation-delay: calc(
         (
@@ -324,13 +300,13 @@
     }
     to {
         opacity: 0;
-        transform: translateY(calc(var(--font-size-24) * -1));
+        transform: translateY(calc(var(--font-size-large-2) * -1));
     }
 }
 @keyframes progress-bar-expressive-message-animatein {
     0% {
         opacity: 0;
-        transform: translateY(var(--font-size-24));
+        transform: translateY(var(--font-size-large-2));
     }
     to {
         opacity: 1;

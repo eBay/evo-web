@@ -10,7 +10,7 @@ span.tabs {
 
 div.tabs__items[role="tablist"],
 ul.fake-tabs__items {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
 }
 
 ul.fake-tabs__items {
@@ -30,6 +30,7 @@ li.fake-tabs__item {
     position: relative;
     -webkit-tap-highlight-color: var(--color-background-secondary);
 }
+
 div.tabs__item[role="tab"]:not(:last-child),
 li.fake-tabs__item:not(:last-child) {
     margin-inline-end: var(--spacing-450);
@@ -49,6 +50,7 @@ li.fake-tabs__item > a {
     color: var(--tabs-item-foreground-color, var(--color-foreground-secondary));
     display: inline-block;
 }
+
 div.tabs__item[role="tab"] > span:after,
 li.fake-tabs__item > a:after {
     background-color: initial;
@@ -68,10 +70,12 @@ li.fake-tabs__item > a[aria-current] {
         var(--color-foreground-primary)
     );
 }
+
 div.tabs__item[role="tab"][aria-selected="true"] > span:after,
 li.fake-tabs__item > a[aria-current]:after {
     background-color: currentColor;
 }
+
 div.tabs__item[role="tab"]:focus:not(:focus-visible),
 li.fake-tabs__item a:focus:not(:focus-visible) {
     outline: none;
@@ -86,6 +90,7 @@ li.fake-tabs__item > a:not([aria-current]):hover {
         var(--color-foreground-secondary)
     );
 }
+
 div.tabs__item[role="tab"]:not([aria-selected="true"]):focus > span:after,
 div.tabs__item[role="tab"]:not([aria-selected="true"]):hover > span:after,
 li.fake-tabs__item > a:not([aria-current]):focus:after,

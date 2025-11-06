@@ -19,7 +19,6 @@
 .panel-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
-
 .panel-dialog__window {
     background-color: var(
         --dialog-window-background-color,
@@ -35,12 +34,10 @@
     overflow-y: auto;
     width: 100%;
 }
-
 .panel-dialog__window--end {
     align-self: flex-end;
     border-left: 1px solid rgba(153, 153, 153, 0.18);
 }
-
 .panel-dialog__header {
     display: flex;
     flex-shrink: 0;
@@ -61,13 +58,11 @@
 .panel-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
-
 .panel-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;
 }
-
 .panel-dialog__main {
     box-sizing: border-box;
     flex: 1 1 auto;
@@ -82,7 +77,6 @@
 .panel-dialog__main > :last-child {
     margin-bottom: 0;
 }
-
 .panel-dialog__footer {
     display: flex;
     flex-direction: column;
@@ -104,15 +98,12 @@ button.icon-btn.panel-dialog__prev {
     width: 32px;
     z-index: 1;
 }
-
 button.icon-btn.panel-dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
-
 .panel-dialog__title:not(:first-child) {
     margin-left: var(--spacing-200);
 }
-
 .panel-dialog--hide.panel-dialog--mask-fade,
 .panel-dialog--show.panel-dialog--mask-fade {
     transition: background-color 0.16s ease-out;
@@ -125,7 +116,6 @@ button.icon-btn.panel-dialog__prev {
 .panel-dialog--show .panel-dialog__window--slide {
     transition: transform 0.32s ease-out;
 }
-
 .panel-dialog--hide.panel-dialog--hide,
 .panel-dialog--hide.panel-dialog--show-init,
 .panel-dialog--show-init.panel-dialog--hide,
@@ -146,18 +136,15 @@ button.icon-btn.panel-dialog__prev {
 .panel-dialog--show-init .panel-dialog__window--slide-right {
     transform: translateX(100%);
 }
-
 .panel-dialog--hide .panel-dialog__window--slide,
 .panel-dialog--show-init .panel-dialog__window--slide {
     transform: translateX(-100%);
 }
-
 .panel-dialog--hide .panel-dialog__window--end.panel-dialog__window--slide,
 .panel-dialog--show-init
     .panel-dialog__window--end.panel-dialog__window--slide {
     transform: translateX(100%);
 }
-
 .panel-dialog--hide-init.panel-dialog--hide-init,
 .panel-dialog--hide-init.panel-dialog--show,
 .panel-dialog--show.panel-dialog--hide-init,
@@ -174,7 +161,6 @@ button.icon-btn.panel-dialog__prev {
 .panel-dialog--show .panel-dialog__window--slide {
     transform: translateX(0);
 }
-
 [dir="rtl"] button.icon-btn.panel-dialog__prev .icon {
     transform: rotate(180deg);
 }

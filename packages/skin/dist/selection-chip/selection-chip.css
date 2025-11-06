@@ -1,3 +1,8 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
+
 @keyframes fill-horizontal-background {
     0% {
         background-size: 0 100%;
@@ -10,19 +15,20 @@
         background-size: 100% 100%;
     }
 }
+
 .selection-chip {
     align-items: center;
     background-color: var(--color-background-primary);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: 0 100%;
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     border-radius: var(--border-radius-50);
     box-shadow: none;
     box-sizing: border-box;
     color: var(--color-foreground-primary);
     display: inline-flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-75);
     height: var(--spacing-400);
     justify-content: space-between;
@@ -34,31 +40,37 @@
         var(--motion-easing-quick-enter);
     vertical-align: bottom;
 }
+
 .selection-chip:active {
     transform: scale(0.97);
 }
+
 .selection-chip {
     overflow: hidden;
     position: relative;
 }
+
 .selection-chip:after {
-    background-color: var(--state-layer-neutral);
+    background-color: var(--color-state-layer-neutral);
     content: "";
     inset: 0;
     pointer-events: none;
     position: absolute;
 }
+
 .selection-chip:not([disabled], [aria-disabled="true"]):hover:after,
 .selection-chip[href]:hover:after {
-    background-color: var(--state-layer-hover);
+    background-color: var(--color-state-layer-hover);
 }
-.selection-chip:not([disabled], [aria-disabled="true"]):focus:after,
-.selection-chip[href]:focus:after {
-    background-color: var(--state-layer-focus);
+
+.selection-chip:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.selection-chip[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
 }
+
 .selection-chip:not([disabled], [aria-disabled="true"]):active:after,
 .selection-chip[href]:active:after {
-    background-color: var(--state-layer-pressed);
+    background-color: var(--color-state-layer-pressed);
 }
 
 .selection-chip--animated .selection-chip__trailing {
@@ -82,33 +94,37 @@
     overflow: hidden;
     position: relative;
 }
+
 .selection-chip[aria-pressed="true"]:after {
-    background-color: var(--state-layer-neutral-on-strong);
+    background-color: var(--color-state-layer-neutral-on-strong);
     content: "";
     inset: 0;
     pointer-events: none;
     position: absolute;
 }
+
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
     ):hover:after,
 .selection-chip[aria-pressed="true"][href]:hover:after {
-    background-color: var(--state-layer-hover-on-strong);
+    background-color: var(--color-state-layer-hover-on-strong);
 }
+
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
-    ):focus:after,
-.selection-chip[aria-pressed="true"][href]:focus:after {
-    background-color: var(--state-layer-focus-on-strong);
+    ):focus-visible:after,
+.selection-chip[aria-pressed="true"][href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus-on-strong);
 }
+
 .selection-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
     ):active:after,
 .selection-chip[aria-pressed="true"][href]:active:after {
-    background-color: var(--state-layer-pressed-on-strong);
+    background-color: var(--color-state-layer-pressed-on-strong);
 }
 
 .selection-chip--animated[aria-pressed="true"] {

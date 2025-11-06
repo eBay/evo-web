@@ -19,11 +19,9 @@
 .fullscreen-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
-
 .fullscreen-dialog--no-mask[role="dialog"] {
     background-color: initial;
 }
-
 .fullscreen-dialog__window {
     background-color: var(
         --dialog-window-background-color,
@@ -38,7 +36,6 @@
     overflow-y: auto;
     width: 100%;
 }
-
 .fullscreen-dialog__header {
     display: flex;
     flex-shrink: 0;
@@ -59,13 +56,11 @@
 .fullscreen-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
-
 .fullscreen-dialog__header .fake-link {
     align-self: flex-start;
     outline-offset: 4px;
     text-decoration: none;
 }
-
 .fullscreen-dialog__main {
     box-sizing: border-box;
     flex: 1 1 auto;
@@ -79,7 +74,6 @@
 .fullscreen-dialog__main > :last-child {
     margin-bottom: 0;
 }
-
 .fullscreen-dialog__footer {
     display: flex;
     flex-direction: column;
@@ -90,7 +84,6 @@
 .fullscreen-dialog__footer > :not(:first-child) {
     margin-top: var(--spacing-200);
 }
-
 button.icon-btn.fullscreen-dialog__close {
     height: 32px;
     min-width: 32px;
@@ -104,7 +97,6 @@ button.fullscreen-dialog__close {
     position: relative;
     z-index: 1;
 }
-
 .fullscreen-dialog--hide.fullscreen-dialog--mask-fade,
 .fullscreen-dialog--show.fullscreen-dialog--mask-fade {
     transition: background-color 0.16s ease-out;
@@ -123,7 +115,6 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show .fullscreen-dialog__window--slide-end {
     transition: transform 0.32s ease-out;
 }
-
 .fullscreen-dialog--hide.fullscreen-dialog--hide,
 .fullscreen-dialog--hide.fullscreen-dialog--show-init,
 .fullscreen-dialog--show-init.fullscreen-dialog--hide,
@@ -148,7 +139,6 @@ button.fullscreen-dialog__close {
 .fullscreen-dialog--show-init .fullscreen-dialog__window--slide-end {
     transform: translateX(100%);
 }
-
 .fullscreen-dialog--hide-init.fullscreen-dialog--hide-init,
 .fullscreen-dialog--hide-init.fullscreen-dialog--show,
 .fullscreen-dialog--show.fullscreen-dialog--hide-init,

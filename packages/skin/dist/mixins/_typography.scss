@@ -1,24 +1,24 @@
 @mixin giant-3() {
     font-size: var(--font-size-giant-3);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 52px;
 }
 
 @mixin giant-2() {
     font-size: var(--font-size-giant-2);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 46px;
 }
 
 @mixin giant-1() {
     font-size: var(--font-size-giant-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 40px;
 }
 
 @mixin large-2() {
     font-size: var(--font-size-large-2);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 32px;
 }
 
@@ -30,7 +30,7 @@
 
 @mixin large-1() {
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 28px;
 }
 
@@ -48,7 +48,7 @@
 @mixin medium-bold() {
     @include medium;
 
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 
 @mixin medium-secondary() {
@@ -58,14 +58,14 @@
 }
 
 @mixin regular() {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     line-height: 20px;
 }
 
 @mixin regular-bold() {
     @include regular;
 
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 
 @mixin regular-secondary() {
@@ -82,7 +82,7 @@
 @mixin small-bold() {
     @include small;
 
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 
 @mixin small-secondary() {

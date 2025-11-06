@@ -3,40 +3,33 @@
     position: relative;
     vertical-align: text-bottom;
 }
-
 .checkbox__control[type="checkbox"] {
     height: 18px;
     min-width: 18px;
     width: 18px;
 }
-
 .checkbox--large .checkbox__control[type="checkbox"] {
     height: 24px;
     min-width: 24px;
     width: 24px;
 }
-
 span.checkbox__icon {
     display: inline-flex;
     height: 18px;
     outline-offset: 1px;
 }
-
 .checkbox--large span.checkbox__icon {
     height: 24px;
 }
 span.checkbox__icon[hidden] {
     display: inline-flex;
 }
-
 svg.checkbox__checked {
     color: var(--checkbox-checked-color, var(--color-foreground-primary));
 }
-
 svg.checkbox__unchecked {
     color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
 }
-
 input.checkbox__control[type="checkbox"] {
     font-size: 100%;
     margin: 0;
@@ -45,7 +38,6 @@ input.checkbox__control[type="checkbox"] {
     position: absolute;
     z-index: 1;
 }
-
 .checkbox svg {
     display: inline-block;
     fill: currentColor;
@@ -56,18 +48,15 @@ input.checkbox__control[type="checkbox"] {
     vertical-align: middle;
     width: 18px;
 }
-
 .checkbox--large svg {
     height: 24px;
     width: 24px;
 }
-
 input.checkbox__control[type="checkbox"]
     + span.checkbox__icon
     svg.checkbox__checked {
     display: none;
 }
-
 input.checkbox__control[type="checkbox"]
     + span.checkbox__icon
     svg.checkbox__unchecked,
@@ -76,13 +65,11 @@ input.checkbox__control[type="checkbox"]:checked
     svg.checkbox__checked {
     display: inline-block;
 }
-
 input.checkbox__control[type="checkbox"]:checked
     + span.checkbox__icon
     svg.checkbox__unchecked {
     display: none;
 }
-
 input.checkbox__control[type="checkbox"][disabled] + span.checkbox__icon {
     opacity: 1;
 }
@@ -94,7 +81,6 @@ input.checkbox__control[type="checkbox"]:focus + span.checkbox__icon {
     outline-color: var(--checkbox-outline, var(--color-foreground-secondary));
     outline-offset: 2px;
 }
-
 input.checkbox__control[type="checkbox"]:focus:not(:focus-visible)
     + span.checkbox__icon {
     outline: none;

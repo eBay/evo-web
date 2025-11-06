@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 .carousel {
     position: relative;
 }
@@ -48,7 +52,6 @@
 .carousel__playback .icon--play {
     padding-left: 1px;
 }
-
 .carousel__list--image-treatment > li {
     align-items: center;
     border-radius: 8px;
@@ -74,7 +77,6 @@
     max-width: 100%;
     object-fit: contain;
 }
-
 .carousel__list--image-treatment-large > li {
     align-items: center;
     border-radius: 16px;
@@ -100,21 +102,42 @@
     max-width: 100%;
     object-fit: contain;
 }
-
 div.carousel {
     margin: 16px 0;
 }
-
 .carousel__control {
-    align-items: center;
     background-color: var(
         --carousel-paddle-background-color,
         var(--color-background-primary)
     );
+    overflow: hidden;
+    position: relative;
+}
+.carousel__control:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.carousel__control:not([disabled], [aria-disabled="true"]):hover:after,
+.carousel__control[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+.carousel__control:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.carousel__control[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+.carousel__control:not([disabled], [aria-disabled="true"]):active:after,
+.carousel__control[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+.carousel__control {
+    align-items: center;
     border: 1px solid;
     border-color: var(
         --carousel-paddle-border-color,
-        var(--color-stroke-subtle)
+        var(--color-border-subtle)
     );
     border-radius: 16px;
     box-shadow:
@@ -142,10 +165,7 @@ div.carousel {
     right: calc(var(--spacing-200) * -1);
 }
 .carousel__control svg {
-    color: var(
-        --carousel-paddle-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
 }
 .carousel__control:focus:not(:focus-visible) {
     outline: none;
@@ -174,29 +194,16 @@ div.carousel {
 .carousel__control:focus[aria-disabled="true"] {
     opacity: 0.3;
 }
-.carousel__control:hover {
-    background-color: var(--color-state-primary-hover);
-    border-color: var(--color-state-primary-hover);
-}
 .carousel__control:hover svg {
-    color: var(
-        --carousel-paddle-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
 }
-.carousel__control:active {
-    background-color: var(--color-state-primary-active);
-}
-
 .carousel__playback:focus:not(:focus-visible) {
     outline: none;
 }
-
 span.carousel,
 span.carousel__container {
     display: inline-block;
 }
-
 .carousel__viewport--mask {
     -webkit-mask-image: linear-gradient(
         to right,
@@ -209,7 +216,6 @@ span.carousel__container {
         rgba(0, 0, 0, 0) 100%
     );
 }
-
 [dir="rtl"] .carousel__control--prev {
     left: unset;
     right: calc(var(--spacing-200) * -1);
@@ -292,15 +298,12 @@ span.carousel__container {
 .carousel.carousel--hidden-scrollbar:not(.carousel__autoplay) {
     overflow: hidden;
 }
-
 .carousel--hidden-scrollbar .carousel__container {
     margin-bottom: -80px;
 }
-
 .carousel--hidden-scrollbar .carousel__container .carousel__control {
     margin-top: -40px;
 }
-
 .carousel--hidden-scrollbar .carousel__container .carousel__list {
     padding-bottom: 80px;
 }

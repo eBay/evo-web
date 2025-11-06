@@ -5,7 +5,12 @@
 @use "../static/sass/demo-colors";
 @use "../static/sass/page-grid";
 @use "../static/sass/color-schemes";
-@use "../../sass/bundles/skin-full";
+@use "../../sass/bundles/skin-headless";
+@use "../../tokens/evo-core";
+@use "../../tokens/evo-light-class";
+@use "../../tokens/evo-dark-class";
+@use "../../tokens/evo-live-light-class";
+@use "../../tokens/evo-live-dark-class";
 
 :root {
     --color-menu-background: #f2f2f2;
@@ -126,6 +131,17 @@ nav h2 {
     }
 }
 
+.demo-tokens-example {
+    border: 1px solid var(--color-border-strong);
+    border-radius: 4px;
+    display: inline-block;
+    height: 2em;
+    margin-bottom: 4px;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 50px;
+}
+
 @media screen and (min-width: variables.$screen-size-XL) {
     .demo-color-primitive {
         column-count: 4;
@@ -192,7 +208,7 @@ figure.highlight {
 
 .modules-expander {
     background: var(--color-menu-background);
-    border: 1px solid var(--color-stroke-subtle);
+    border: 1px solid var(--color-border-subtle);
     box-shadow: var(--shadow-subtle);
     box-sizing: border-box;
     font-size: var(--font-size-medium);
@@ -202,7 +218,7 @@ figure.highlight {
 }
 
 .modules-expander li {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     line-height: 1.5em;
     margin-bottom: 0.5em;
 }
@@ -214,7 +230,7 @@ figure.highlight {
 .modules-expander__tip {
     color: var(--color-foreground-primary);
     display: none;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-style: italic;
     margin-left: var(--spacing-200);
 }
@@ -294,8 +310,6 @@ span.demo__inner {
     padding: 0;
 }
 
-.demo-color-primitive li::before,
-.demo-color-token li::before,
 .color-swatch {
     border-radius: 4px;
     content: "";
@@ -326,7 +340,7 @@ span.demo__inner {
 /* UTILITY & LESS SECTION */
 
 .striped-table {
-    border: 1px solid var(--color-stroke-subtle);
+    border: 1px solid var(--color-border-subtle);
     border-spacing: 0;
     width: 100%;
 }
@@ -350,7 +364,7 @@ span.demo__inner {
 }
 
 .striped-table td {
-    border-top: 1px solid var(--color-stroke-subtle);
+    border-top: 1px solid var(--color-border-subtle);
 }
 
 .demo-typography-giant-3 {

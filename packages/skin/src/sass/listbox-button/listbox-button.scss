@@ -2,6 +2,7 @@
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/listbox-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
 .listbox-button {
@@ -42,7 +43,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 .listbox-button button[aria-invalid="true"] {
     @include token-mixins.border-color-token(
         listbox-button-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -54,7 +55,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     ).btn--form {
     @include token-mixins.border-color-token(
         listbox-button-border-color,
-        color-stroke-default
+        color-border-medium
     );
 
     &:hover,
@@ -88,7 +89,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     );
     @include token-mixins.border-color-token(
         listbox-button-border-color,
-        color-stroke-default
+        color-border-medium
     );
     @include token-mixins.color-token(
         listbox-button-foreground-color,
@@ -118,7 +119,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 .listbox-button.listbox-button--form button[aria-invalid="true"] {
     @include token-mixins.border-color-token(
         listbox-button-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -129,7 +130,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
     );
     @include token-mixins.border-color-token(
         listbox-button-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -171,7 +172,8 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 
 .listbox-button__options[role="listbox"]:focus
     .listbox-button__option--active[role="option"] {
-    background-color: var(--color-state-primary-hover);
+    @include state-layer.base;
+    @include state-layer.selector-hover;
 }
 
 .listbox-button__option svg.icon {

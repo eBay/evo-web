@@ -5,7 +5,6 @@
     --dialog-lightbox-wide-max-width: 896px;
     --dialog-lightbox-narrow-max-width: 480px;
 }
-
 .lightbox-dialog[role="dialog"] {
     align-items: flex-start;
     background-color: var(--dialog-scrim-color-show);
@@ -22,7 +21,6 @@
 .lightbox-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
-
 .lightbox-dialog__window {
     background-color: var(
         --dialog-window-background-color,
@@ -39,7 +37,6 @@
     min-width: 208px;
     will-change: opacity, transform;
 }
-
 .lightbox-dialog__header {
     display: flex;
     flex-shrink: 0;
@@ -60,7 +57,6 @@
 .lightbox-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
-
 .lightbox-dialog__main {
     box-sizing: border-box;
     flex: 1 1 auto;
@@ -75,10 +71,9 @@
 .lightbox-dialog__main > :last-child {
     margin-bottom: 0;
 }
-
 .lightbox-dialog__footer {
     border-top: 1px solid
-        var(--dialog-lightbox-separator-color, var(--color-stroke-subtle));
+        var(--dialog-lightbox-separator-color, var(--color-border-subtle));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +83,6 @@
 .lightbox-dialog__footer > :not(:first-child) {
     margin-top: var(--spacing-200);
 }
-
 .lightbox-dialog__image {
     background-position: 50%;
     background-repeat: no-repeat;
@@ -98,19 +92,15 @@
     position: absolute;
     width: 100%;
 }
-
 .lightbox-dialog--expressive .lightbox-dialog__window {
     padding-bottom: var(--spacing-100);
 }
-
 .lightbox-dialog--expressive .lightbox-dialog__header > * {
     margin-top: 218px;
 }
-
 .lightbox-dialog--expressive .lightbox-dialog__header {
     margin: var(--spacing-300) var(--spacing-300) 0;
 }
-
 .lightbox-dialog--expressive .lightbox-dialog__footer,
 .lightbox-dialog--expressive .lightbox-dialog__main {
     padding: var(--spacing-200) var(--spacing-300);
@@ -125,25 +115,20 @@ button.icon-btn.lightbox-dialog__prev {
     width: 32px;
     z-index: 1;
 }
-
 button.icon-btn.lightbox-dialog__prev {
     margin-inline-end: var(--spacing-200);
 }
-
 .lightbox-dialog--expressive button.icon-btn.lightbox-dialog__close,
 .lightbox-dialog--expressive button.icon-btn.lightbox-dialog__prev {
     align-self: self-start;
     margin: 0;
 }
-
 .lightbox-dialog--expressive button.icon-btn.lightbox-dialog__prev + * {
     margin-left: -32px;
 }
-
 .lightbox-dialog__title:not(:first-child) {
     margin-left: var(--spacing-200);
 }
-
 .lightbox-dialog__title--center {
     text-align: center;
 }
@@ -183,7 +168,6 @@ button.icon-btn.lightbox-dialog__prev {
     transition: opacity var(--motion-duration-medium-2)
         var(--motion-easing-continuous) var(--motion-duration-short-3);
 }
-
 .lightbox-dialog--hide.lightbox-dialog--hide,
 .lightbox-dialog--hide.lightbox-dialog--show-init,
 .lightbox-dialog--show-init.lightbox-dialog--hide,
@@ -204,7 +188,6 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--show-init .lightbox-dialog__window--fade {
     opacity: 0;
 }
-
 .lightbox-dialog--hide-init.lightbox-dialog--hide-init,
 .lightbox-dialog--hide-init.lightbox-dialog--show,
 .lightbox-dialog--show.lightbox-dialog--hide-init,
@@ -225,7 +208,6 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--show .lightbox-dialog__window--fade {
     opacity: 1;
 }
-
 @media (prefers-reduced-motion) {
     .lightbox-dialog--hide.lightbox-dialog--mask-fade,
     .lightbox-dialog--hide.lightbox-dialog--mask-fade-slow {
@@ -260,24 +242,21 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog--show .lightbox-dialog__window--animate {
     transform: translateY(0);
 }
-
 .lightbox-dialog--hide .lightbox-dialog__window--animate,
 .lightbox-dialog--show-init .lightbox-dialog__window--animate {
     transform: translateY(100%);
 }
 .lightbox-dialog__handle:after {
-    background-color: var(--dialog-handle-color, var(--color-stroke-default));
+    background-color: var(--dialog-handle-color, var(--color-border-medium));
     border-radius: 3px;
     content: "";
     display: block;
     height: 2px;
     width: 24px;
 }
-
 [dir="rtl"] button.icon-btn.lightbox-dialog__prev .icon--16 {
     transform: rotate(180deg);
 }
-
 .lightbox-dialog--fullscreen .lightbox-dialog__window,
 .lightbox-dialog--large .lightbox-dialog__window {
     align-self: center;
@@ -285,7 +264,6 @@ button.icon-btn.lightbox-dialog__prev {
     margin: var(--spacing-100);
     max-height: 95%;
 }
-
 @media (max-width: 512px) {
     .lightbox-dialog--large .lightbox-dialog__window {
         height: 95%;

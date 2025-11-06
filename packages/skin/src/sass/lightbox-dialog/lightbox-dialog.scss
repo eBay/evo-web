@@ -28,7 +28,7 @@
 
 .lightbox-dialog__footer {
     border-top: 1px solid
-        var(--dialog-lightbox-separator-color, var(--color-stroke-subtle));
+        var(--dialog-lightbox-separator-color, var(--color-border-subtle));
 
     @include dialog-mixins.footer-content;
 }
@@ -113,7 +113,7 @@ button.icon-btn.lightbox-dialog__prev {
 .lightbox-dialog__handle::after {
     @include token-mixins.background-color-token(
         dialog-handle-color,
-        color-stroke-default
+        color-border-medium
     );
 
     border-radius: 3px;

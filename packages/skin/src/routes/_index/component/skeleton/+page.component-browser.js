@@ -6,7 +6,9 @@ export default class {
      * @returns {Promise} A promise that resolves when the transition is complete
      */
     swapElements(skeletonContainer, index) {
-        const skeletonElement = skeletonContainer.querySelector(`#skeleton-transition-${index}`);
+        const skeletonElement = skeletonContainer.querySelector(
+            `#skeleton-transition-${index}`,
+        );
         if (!skeletonElement) {
             return;
         }
@@ -22,7 +24,8 @@ export default class {
         content.style.width = `${rect.width}px`;
         content.style.height = `${rect.height}px`;
         content.style.marginInlineEnd = "var(--spacing-100)";
-        content.style.borderRadius = "var(--image-border-radius, var(--border-radius-100))";
+        content.style.borderRadius =
+            "var(--image-border-radius, var(--border-radius-100))";
         content.style.position = "relative"; // Ensure proper positioning
         content.textContent = `Here is the loaded content ${index}!`;
 
@@ -34,7 +37,6 @@ export default class {
 
                 skeletonContainer.replaceChild(content, skeletonElement);
             });
-
         } else {
             skeletonContainer.replaceChild(content, skeletonElement);
         }

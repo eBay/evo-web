@@ -19,7 +19,6 @@
 .confirm-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
-
 .confirm-dialog__window {
     background-color: var(
         --dialog-window-background-color,
@@ -39,14 +38,12 @@
     padding: var(--spacing-200);
     will-change: opacity, transform;
 }
-
 .confirm-dialog__title {
     font-size: var(--font-size-large-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     line-height: 28px;
     margin: 0;
 }
-
 .confirm-dialog__main {
     margin: var(--spacing-200) 0;
     min-height: var(--spacing-200);
@@ -57,11 +54,9 @@
 .confirm-dialog__main > :last-child {
     margin-bottom: 0;
 }
-
 .confirm-dialog__footer {
     text-align: right;
 }
-
 a.confirm-dialog__confirm,
 button.confirm-dialog__confirm {
     margin-left: var(--spacing-100);
@@ -102,7 +97,6 @@ button.confirm-dialog__confirm {
     transition: opacity var(--motion-duration-medium-2)
         var(--motion-easing-continuous) var(--motion-duration-short-3);
 }
-
 .confirm-dialog--hide.confirm-dialog--hide,
 .confirm-dialog--hide.confirm-dialog--show-init,
 .confirm-dialog--show-init.confirm-dialog--hide,
@@ -123,7 +117,6 @@ button.confirm-dialog__confirm {
 .confirm-dialog--show-init .confirm-dialog__window--fade {
     opacity: 0;
 }
-
 .confirm-dialog--hide-init.confirm-dialog--hide-init,
 .confirm-dialog--hide-init.confirm-dialog--show,
 .confirm-dialog--show.confirm-dialog--hide-init,
@@ -144,7 +137,6 @@ button.confirm-dialog__confirm {
 .confirm-dialog--show .confirm-dialog__window--fade {
     opacity: 1;
 }
-
 @media (prefers-reduced-motion) {
     .confirm-dialog--hide.confirm-dialog--mask-fade,
     .confirm-dialog--hide.confirm-dialog--mask-fade-slow {
@@ -179,12 +171,10 @@ button.confirm-dialog__confirm {
 .confirm-dialog--show .confirm-dialog__window--animate {
     transform: scale(1);
 }
-
 .confirm-dialog--hide .confirm-dialog__window--animate,
 .confirm-dialog--show-init .confirm-dialog__window--animate {
     transform: scale(0.75);
 }
-
 @media (prefers-reduced-motion) {
     .confirm-dialog--hide .confirm-dialog__window--animate,
     .confirm-dialog--hide-init .confirm-dialog__window--animate,

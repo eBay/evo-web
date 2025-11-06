@@ -1,0 +1,125 @@
+:root {
+    --color-ai-solid-blue-strong: #0968f6;
+    --color-ai-solid-blue-subtle: #112c31;
+    --color-ai-solid-green-strong: #4ee04b;
+    --color-ai-solid-green-subtle: #112611;
+    --color-ai-solid-purple-strong: #993ee0;
+    --color-ai-solid-purple-subtle: #20172f;
+    --color-ai-solid-red-strong: #ff4242;
+    --color-ai-solid-red-subtle: #321919;
+    --color-ai-solid-yellow-strong: #ffd80e;
+    --color-background-accent: var(--color-kiwi-400);
+    --color-background-attention: var(--color-red-400);
+    --color-background-disabled: var(--color-neutral-600);
+    --color-background-education: var(--color-indigo-800);
+    --color-background-elevated: var(--color-neutral-800);
+    --color-background-inverse: var(--color-neutral-300);
+    --color-background-on-image: rgba(0, 0, 0, 0.9);
+    --color-background-on-secondary: var(--color-neutral-900);
+    --color-background-primary: var(--color-neutral-900);
+    --color-background-secondary-on-elevated: var(--color-neutral-900);
+    --color-background-secondary: var(--color-neutral-800);
+    --color-background-strong: var(--color-neutral-200);
+    --color-background-success: var(--color-kiwi-500);
+    --color-background-tertiary: var(--color-neutral-700);
+    --color-background-transparent: var(--color-clear);
+    --color-border-accent: var(--color-kiwi-400);
+    --color-border-attention: var(--color-red-400);
+    --color-border-disabled: var(--color-neutral-700);
+    --color-border-medium: var(--color-neutral-600);
+    --color-border-on-accent: var(--color-kiwi-800);
+    --color-border-on-attention: var(--color-neutral-800);
+    --color-border-on-disabled: var(--color-neutral-800);
+    --color-border-on-inverse: var(--color-neutral-800);
+    --color-border-on-success: var(--color-neutral-800);
+    --color-border-strong: var(--color-neutral-100);
+    --color-border-subtle: var(--color-neutral-700);
+    --color-border-success: var(--color-kiwi-500);
+    --color-brand-1: var(--color-red-500);
+    --color-brand-2: var(--color-blue-500);
+    --color-brand-3: var(--color-yellow-400);
+    --color-brand-4: var(--color-green-500);
+    --color-foreground-accent: var(--color-kiwi-400);
+    --color-foreground-attention: var(--color-red-400);
+    --color-foreground-disabled: var(--color-neutral-600);
+    --color-foreground-link-legal: var(--color-blue-400);
+    --color-foreground-link-primary: var(--color-foreground-primary);
+    --color-foreground-link-visited: var(--color-pink-400);
+    --color-foreground-on-accent: var(--color-kiwi-800);
+    --color-foreground-on-attention: var(--color-neutral-800);
+    --color-foreground-on-disabled: var(--color-neutral-800);
+    --color-foreground-on-inverse: var(--color-neutral-800);
+    --color-foreground-on-strong: var(--color-neutral-800);
+    --color-foreground-on-success: var(--color-neutral-800);
+    --color-foreground-primary: var(--color-neutral-200);
+    --color-foreground-secondary: var(--color-neutral-500);
+    --color-foreground-success: var(--color-kiwi-400);
+    --color-gradient-ai-blue-strong: linear-gradient(
+        var(--color-ai-solid-purple-strong),
+        var(--color-ai-solid-blue-strong) 50%,
+        var(--color-ai-solid-green-strong) 100%
+    );
+    --color-gradient-ai-blue-subtle: linear-gradient(
+        var(--color-ai-solid-purple-subtle),
+        var(--color-ai-solid-blue-subtle) 50%,
+        var(--color-ai-solid-green-subtle) 100%
+    );
+    --color-gradient-ai-full-color-diagonal: linear-gradient(
+        var(--color-ai-solid-green-strong) 10%,
+        var(--color-ai-solid-blue-strong) 27%,
+        var(--color-ai-solid-purple-strong) 42%,
+        var(--color-ai-solid-red-strong) 56%,
+        var(--color-ai-solid-yellow-strong) 78%
+    );
+    --color-gradient-ai-green-strong: linear-gradient(
+        var(--color-ai-solid-blue-strong),
+        var(--color-ai-solid-green-strong) 100%
+    );
+    --color-gradient-ai-green-subtle: linear-gradient(
+        var(--color-ai-solid-blue-subtle),
+        var(--color-ai-solid-green-subtle) 100%
+    );
+    --color-gradient-ai-purple-strong: linear-gradient(
+        var(--color-ai-solid-red-strong),
+        var(--color-ai-solid-purple-strong) 100%
+    );
+    --color-gradient-ai-purple-subtle: linear-gradient(
+        var(--color-ai-solid-red-subtle),
+        var(--color-ai-solid-purple-subtle) 100%
+    );
+    --color-gradient-image-scrim: linear-gradient(
+        rgba(248, 248, 248, 0) 52%,
+        rgba(248, 248, 248, 0.03)
+    );
+    --color-gradient-loading-shimmer-on-secondary: linear-gradient(
+        rgba(35, 35, 35, 0),
+        rgba(35, 35, 35, 0.6) 25%,
+        rgba(35, 35, 35, 0.85) 37%,
+        rgba(35, 35, 35, 0.95) 48%,
+        rgba(35, 35, 35, 0.95) 51%,
+        rgba(35, 35, 35, 0.85) 61%,
+        rgba(35, 35, 35, 0.6) 74%,
+        rgba(35, 35, 35, 0)
+    );
+    --color-gradient-loading-shimmer: linear-gradient(
+        rgba(27, 27, 27, 0),
+        rgba(27, 27, 27, 0.6) 25%,
+        rgba(27, 27, 27, 0.85) 37%,
+        rgba(27, 27, 27, 0.95) 48%,
+        rgba(27, 27, 27, 0.95) 51%,
+        rgba(27, 27, 27, 0.85) 61%,
+        rgba(27, 27, 27, 0.6) 74%,
+        rgba(27, 27, 27, 0)
+    );
+    --color-loading-fill-on-secondary: #353535;
+    --color-loading-fill: #2d2d2d;
+    --color-scrim-background: rgba(0, 0, 0, 0.64);
+    --color-state-layer-focus-on-strong: rgba(0, 0, 0, 0.08);
+    --color-state-layer-focus: rgba(255, 255, 255, 0.08);
+    --color-state-layer-hover-on-strong: rgba(0, 0, 0, 0.08);
+    --color-state-layer-hover: rgba(255, 255, 255, 0.08);
+    --color-state-layer-pressed-on-strong: rgba(0, 0, 0, 0.12);
+    --color-state-layer-pressed: rgba(255, 255, 255, 0.12);
+    --color-state-layer-selected-on-strong: rgba(0, 0, 0, 0.16);
+    --color-state-layer-selected: rgba(255, 255, 255, 0.16);
+}

@@ -4,11 +4,9 @@
 .tourtip {
     position: relative;
 }
-
 span.tourtip {
     display: inline-block;
 }
-
 .tourtip__overlay {
     box-shadow: var(--bubble-shadow);
     display: none;
@@ -20,13 +18,11 @@ span.tourtip {
     transform: scaleX(1);
     width: max-content;
 }
-
 .tourtip__mask,
 .tourtip__overlay {
     border-radius: var(--bubble-border-radius, var(--border-radius-100));
     z-index: 1;
 }
-
 .tourtip__mask {
     background-color: var(
         --tourtip-background-color,
@@ -35,11 +31,9 @@ span.tourtip {
     color: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
     position: relative;
 }
-
 span.tourtip__mask {
     display: block;
 }
-
 .tourtip__cell {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +47,6 @@ span.tourtip__mask {
 .tourtip__cell a:focus {
     outline: 1px dashed currentColor;
 }
-
 .tourtip__content {
     flex-basis: 0;
     flex-grow: 1;
@@ -64,7 +57,6 @@ span.tourtip__mask {
 .tourtip__content p:not(:first-of-type) {
     margin-top: var(--spacing-50);
 }
-
 button.tourtip__close {
     align-self: flex-start;
     background: none;
@@ -81,7 +73,6 @@ button.tourtip__close {
 button.tourtip__close svg.icon {
     fill: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
 }
-
 .tourtip__pointer {
     background-color: var(
         --tourtip-background-color,
@@ -93,88 +84,73 @@ button.tourtip__close svg.icon {
     width: 8px;
     z-index: 0;
 }
-
 .tourtip__pointer--top-left {
     left: 12px;
     top: -4px;
 }
-
 .tourtip__pointer--top {
     left: calc(50% - 4px);
     top: -4px;
 }
-
 .tourtip__pointer--top-right {
     left: auto;
     right: 12px;
     top: -4px;
 }
-
 .tourtip__pointer--bottom-left {
     bottom: -4px;
     left: 12px;
     top: auto;
 }
-
 .tourtip__pointer--bottom {
     bottom: -4px;
     left: calc(50% - 4px);
     top: auto;
 }
-
 .tourtip__pointer--bottom-right {
     bottom: -4px;
     left: auto;
     right: 12px;
     top: auto;
 }
-
 .tourtip__pointer--left {
     left: -4px;
     top: calc(50% - 4px);
 }
-
 .tourtip__pointer--left-bottom {
     bottom: 12px;
     left: -4px;
     top: auto;
 }
-
 .tourtip__pointer--left-top {
     left: -4px;
     top: 12px;
 }
-
 .tourtip__pointer--right {
     left: auto;
     right: -4px;
     top: calc(50% - 4px);
 }
-
 .tourtip__pointer--right-bottom {
     bottom: 12px;
     left: auto;
     right: -4px;
     top: auto;
 }
-
 .tourtip__pointer--right-top {
     left: auto;
     right: -4px;
     top: 12px;
 }
-
 .tourtip__heading {
     font-size: var(--font-size-large-1);
     font-weight: 700;
     margin: 0 0 var(--spacing-100);
 }
-
 .tourtip--expanded .tourtip__overlay,
 span.tourtip__heading {
     display: block;
 }
-
 .tourtip__footer {
     align-items: center;
     display: flex;
@@ -182,7 +158,6 @@ span.tourtip__heading {
     margin-top: 16px;
     width: 100%;
 }
-
 .tourtip__footer > button.btn--primary {
     background-color: var(
         --tourtip-background-color,
@@ -190,7 +165,6 @@ span.tourtip__heading {
     );
     color: var(--tourtip-foreground-color, var(--color-background-inverse));
 }
-
 .tourtip__footer > a:not(:last-child),
 .tourtip__footer > button:not(:last-child) {
     margin-right: var(--spacing-200);
@@ -208,7 +182,6 @@ span.tourtip__heading {
 .tourtip__index {
     flex: 1;
 }
-
 @media (min-width: 512px) {
     .tourtip__overlay {
         max-width: 400px;

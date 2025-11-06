@@ -148,28 +148,40 @@ const EbayMenu: FC<EbayMenuProps> = ({
                         onClick: onItemClick = () => {},
                         onFocus: onItemFocus = () => {},
                         onKeyDown: onItemKeyDown = () => {},
+                        disabled,
                         ...itemRest
                     }: MenuItemProps = child.props;
 
                     return cloneElement(child, {
                         ...itemRest,
+                        disabled,
                         type,
                         baseClass,
                         focused: i === focusedIndex,
                         tabIndex: focusedIndex === undefined ? 0 : -1,
                         checked: checkedIndexes[i],
                         onFocus: (e) => {
+                            if (disabled) {
+                                return;
+                            }
                             setFocusedIndex(i);
                             onItemFocus(e);
                         },
                         onClick: (e) => {
+                            if (disabled) {
+                                e.stopPropagation();
+                                return;
+                            }
                             handleClick(e, i);
                             onItemClick(e);
                             onClick(e);
                         },
                         onKeyDown: (e) => {
-                            handleKeyDown(e, i);
+                            if (disabled) {
+                                return;
+                            }
                             onItemKeyDown(e);
+                            handleKeyDown(e, i);
                         },
                     } as MenuItemProps);
                 })}

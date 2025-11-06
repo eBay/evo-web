@@ -1,6 +1,7 @@
 @use "../variables/variables";
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/listbox-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/private/token-mixins";
 @use "../mixins/public/utility-mixins";
 
@@ -51,17 +52,14 @@ span.combobox {
         margin-bottom: 1px;
     }
 
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
-
     svg.icon {
         @include listbox-mixins.status;
     }
 }
 
 .combobox__option--active[role^="option"] {
-    background-color: var(--color-state-primary-active);
+    @include state-layer.base;
+    @include state-layer.selector-active;
 
     svg.icon {
         opacity: 1;
@@ -124,11 +122,11 @@ span.combobox {
     );
     @include token-mixins.border-color-token(
         combobox-textbox-border-color,
-        color-stroke-default
+        color-border-medium
     );
     @include token-mixins.color-token(
         combobox-textbox-foreground-color,
-        color-foreground-on-secondary
+        color-foreground-primary
     );
 
     &[readonly] {
@@ -175,7 +173,7 @@ span.combobox {
     &[aria-invalid="true"] {
         @include token-mixins.border-color-token(
             combobox-textbox-invalid-foreground-color,
-            color-stroke-attention
+            color-border-attention
         );
     }
 

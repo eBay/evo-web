@@ -13,7 +13,7 @@
 
     border-style: solid;
     border-width: 1px;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: var(--spacing-100) 0;
     padding: var(--spacing-200);
     @include token-mixins.color-token(
@@ -34,7 +34,7 @@ span[role="region"].page-notice {
 }
 
 .page-notice__title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: normal;
     margin: 1px 0 0;
 }
@@ -50,7 +50,7 @@ span[role="region"].page-notice {
         color-foreground-on-inverse
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -76,7 +76,7 @@ span[role="region"].page-notice {
         color-foreground-on-inverse
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -104,7 +104,7 @@ span[role="region"].page-notice {
     );
     @include token-mixins.border-color-token(
         page-notice-attention-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 
     .page-notice__header svg {
@@ -118,17 +118,17 @@ span[role="region"].page-notice {
 .page-notice--confirmation {
     @include token-mixins.background-color-token(
         page-notice-confirmation-background-color,
-        color-background-confirmation
+        color-background-success
     );
     @include token-mixins.border-color-token(
         page-notice-confirmation-border-color,
-        color-stroke-confirmation
+        color-border-confirmation
     );
 
     .page-notice__header svg {
         @include token-mixins.color-token(
             page-notice-confirmation-icon-color,
-            color-foreground-on-confirmation
+            color-foreground-on-success
         );
     }
 }
@@ -136,17 +136,17 @@ span[role="region"].page-notice {
 .page-notice--information {
     @include token-mixins.background-color-token(
         page-notice-information-background-color,
-        color-background-information
+        color-background-accent
     );
     @include token-mixins.border-color-token(
         page-notice-information-border-color,
-        color-stroke-information
+        color-border-accent
     );
 
     .page-notice__header svg {
         @include token-mixins.color-token(
             page-notice-information-icon-color,
-            color-foreground-on-information
+            color-foreground-on-success
         );
     }
 }
@@ -181,7 +181,7 @@ span[role="region"].page-notice {
 }
 
 .page-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 2px 0 0;
 }
 

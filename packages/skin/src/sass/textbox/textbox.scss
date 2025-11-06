@@ -8,7 +8,7 @@
 .textbox {
     @include token-mixins.color-token(
         textbox-foreground-color,
-        color-foreground-on-secondary
+        color-foreground-primary
     );
     @include token-mixins.background-color-token(
         textbox-background-color,
@@ -16,7 +16,7 @@
     );
     @include token-mixins.border-color-token(
         textbox-border-color,
-        color-stroke-default
+        color-border-medium
     );
     @include token-mixins.border-radius-token(
         textbox-border-radius,
@@ -30,7 +30,7 @@
     display: inline-flex;
 
     /* to align with buttons and select, it needs same font-size */
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-100);
     overflow: hidden;
     position: relative;
@@ -47,10 +47,10 @@
 .textbox:has(> .textbox__control:focus):not(.textbox--readonly):not(
         :has(> .textbox__control[readonly])
     ) {
-    box-shadow: 0 0 0 1px var(--color-stroke-strong);
+    box-shadow: 0 0 0 1px var(--color-border-strong);
     @include token-mixins.border-color-token(
         textbox-focus-border-color,
-        color-stroke-strong
+        color-border-strong
     );
     @include token-mixins.background-color-token(
         textbox-focus-background-color,
@@ -83,7 +83,7 @@
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
     @include token-mixins.border-color-token(
         textbox-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 }
 
@@ -162,14 +162,14 @@ textarea.textbox__control {
     &[aria-invalid="true"] {
         @include token-mixins.border-color-token(
             textbox-invalid-foreground-color,
-            color-stroke-attention
+            color-border-attention
         );
     }
 
     &::-webkit-input-placeholder {
         @include token-mixins.color-token(
             textbox-placeholder-color,
-            color-foreground-on-secondary
+            color-foreground-secondary
         );
 
         font-weight: 200;
@@ -178,7 +178,7 @@ textarea.textbox__control {
     &::-moz-placeholder {
         @include token-mixins.color-token(
             textbox-placeholder-color,
-            color-foreground-on-secondary
+            color-foreground-secondary
         );
 
         font-weight: 200;
@@ -187,7 +187,7 @@ textarea.textbox__control {
     &:-ms-input-placeholder {
         @include token-mixins.color-token(
             textbox-placeholder-color,
-            color-foreground-on-secondary
+            color-foreground-secondary
         );
 
         font-weight: 200;

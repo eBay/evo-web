@@ -1,42 +1,25 @@
 @use "./token-mixins";
+@use "./state-layer";
 
 @mixin base() {
-    @include token-mixins.background-color-token(
-        filter-menu-item-background-color,
-        color-background-elevated
-    );
+    @include state-layer.standard;
 
+    background-color: var(--color-background-elevated);
     box-sizing: border-box;
+    color: var(--color-foreground-primary);
     display: flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     justify-content: space-between;
     line-height: 1.4em;
     margin: 0;
     width: 100%;
-    @include token-mixins.color-token(
-        filter-menu-item-foreground-color,
-        color-foreground-primary
-    );
-
-    &:hover {
-        background-color: var(
-            --color-state-primary-hover,
-            color-state-primary-hover
-        );
-    }
 
     &:disabled,
     &[aria-disabled="true"] {
-        @include token-mixins.color-token(
-            filter-menu-item-foreground-color-disabled,
-            color-foreground-disabled
-        );
+        color: var(--color-foreground-disabled);
 
         span > svg {
-            @include token-mixins.color-token(
-                filter-menu-item-icon-color-disabled,
-                color-foreground-disabled
-            );
+            color: var(--color-foreground-disabled);
         }
 
         &:hover {

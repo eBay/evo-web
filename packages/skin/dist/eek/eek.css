@@ -7,11 +7,9 @@
     height: 24px;
     position: relative;
 }
-
 .eek--large {
     height: 32px;
 }
-
 .eek__container {
     align-items: center;
     border: 1px solid #000;
@@ -20,21 +18,17 @@
     display: inline-flex;
     flex-direction: row-reverse;
 }
-
 .eek .icon--eek-arrow {
     rotate: 180deg;
     width: 9px;
 }
-
 .eek--large .icon--eek-arrow {
     width: 12.5px;
 }
-
 .eek__arrow {
     overflow: hidden;
     width: 17px;
 }
-
 .eek__arrow:before {
     border: 0.5px solid #000;
     border-radius: 2px;
@@ -47,67 +41,53 @@
     transform: rotate(45deg);
     width: 19.7989898732px;
 }
-
 .eek--rating-1 .eek__container {
     background: #00a650;
 }
-
 .eek--rating-1 svg.icon--eek-arrow {
     fill: #00a650;
 }
-
 .eek--rating-2 .eek__container {
     background: #4dbd38;
 }
-
 .eek--rating-2 svg.icon--eek-arrow {
     fill: #4dbd38;
 }
-
 .eek--rating-3 .eek__container {
     background: #b3db18;
 }
-
 .eek--rating-3 svg.icon--eek-arrow {
     fill: #b3db18;
 }
-
 .eek--rating-4 .eek__container {
     background: #fff200;
 }
-
 .eek--rating-4 svg.icon--eek-arrow {
     fill: #fff200;
 }
-
 .eek--rating-5 .eek__container {
     background: #fab20b;
 }
-
 .eek--rating-5 svg.icon--eek-arrow {
     fill: #fab20b;
 }
-
 .eek--rating-6 .eek__container {
     background: #f25c19;
 }
-
 .eek--rating-6 svg.icon--eek-arrow {
     fill: #f25c19;
 }
-
 .eek--rating-7 .eek__container {
     background: #ed1c24;
 }
-
 .eek--rating-7 svg.icon--eek-arrow {
     fill: #ed1c24;
 }
-
 .eek__rating {
     color: #fff;
     display: inline-block;
     font-size: 18px;
+    line-height: 10px;
     margin-inline-end: 8px;
     text-shadow:
         -0.5px 0.5px 0 #000,
@@ -115,11 +95,9 @@
         0.5px -0.5px 0 #000,
         -0.5px -0.5px 0 #000;
 }
-
 .eek--large .eek__rating {
     font-size: 24px;
 }
-
 .eek__rating-range {
     align-items: center;
     background-color: #fff;
@@ -127,29 +105,25 @@
     display: inline-flex;
     flex-direction: column;
     height: 20px;
+    line-height: 10px;
     margin: 1px;
     padding: 0 1px;
 }
-
 .eek--large .eek__rating-range {
     height: 28px;
 }
-
 .eek__rating-range > .icon--eek-range-arrow {
     height: 6px;
     width: 5px;
 }
-
 .eek--large .eek__rating-range > .icon--eek-range-arrow {
     height: 7px;
     width: 6px;
 }
-
 .eek__rating-range > span {
     font-size: 8px;
     height: 8px;
 }
-
 .eek--large .eek__rating-range > span {
     font-size: 10px;
     height: 10px;

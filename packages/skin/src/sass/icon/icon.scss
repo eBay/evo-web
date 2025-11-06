@@ -102,9 +102,9 @@ svg {
         @include token-mixins.color-token(color-foreground-attention);
     }
     &.icon--confirmation-filled {
-        @include token-mixins.color-token(color-foreground-confirmation);
+        @include token-mixins.color-token(color-foreground-success);
     }
     &.icon--information-filled {
-        @include token-mixins.color-token(color-foreground-information);
+        @include token-mixins.color-token(color-foreground-accent);
     }
 }

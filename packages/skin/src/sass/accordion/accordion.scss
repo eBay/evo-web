@@ -38,7 +38,7 @@ ul.accordion ::marker {
 }
 
 ul.accordion > li:not(:last-child) {
-    border-bottom: 1px solid var(--color-stroke-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 ul.accordion summary.details__summary {

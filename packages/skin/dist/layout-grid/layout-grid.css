@@ -12,23 +12,18 @@
     --layout-grid-columns-xl4: 14;
     container: layout-grid-container/inline-size;
 }
-
 .layout-grid[data-columns-min="1"] > ul {
     grid-template-columns: repeat(1, 1fr);
 }
-
 .layout-grid[data-columns-min="2"] > ul {
     grid-template-columns: repeat(2, 1fr);
 }
-
 .layout-grid[data-columns-min="3"] > ul {
     grid-template-columns: repeat(3, 1fr);
 }
-
 .layout-grid[data-columns-min="4"] > ul {
     grid-template-columns: repeat(4, 1fr);
 }
-
 @container layout-grid-container (inline-size < 320px) {
     .layout-grid[data-columns-min="1"] > ul {
         grid-template-columns: repeat(1, 1fr);
@@ -52,13 +47,11 @@
     padding: 0;
     width: 100%;
 }
-
 .layout-grid > ul > li {
     display: inline-block;
     min-height: var(--layout-grid-cell-height-min);
     width: 100%;
 }
-
 .layout-grid > ul > li::marker {
     content: "";
     font-size: 0;

@@ -1,8 +1,9 @@
 @use "../variables/variables";
 @use "../mixins/private/button-mixins";
+@use "../mixins/private/state-layer";
 
 .segmented-buttons {
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     border-radius: var(
         --segmented-button-border-radius,
         calc(button-mixins.$button-height-large / 2)
@@ -35,9 +36,9 @@
         --btn-border-radius,
         calc(button-mixins.$button-height-regular / 2)
     );
-    color: var(--color-foreground-on-primary);
+    color: var(--color-foreground-primary);
     font-family: inherit;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: calc(
         button-mixins.$button-height-regular - (var(--spacing-50) * 2)
     );
@@ -67,12 +68,5 @@
 }
 
 .segmented-buttons__button:not([aria-current]) {
-    &:active {
-        background-color: var(--color-state-primary-active);
-    }
-
-    &:hover,
-    &:focus {
-        background-color: var(--color-state-primary-hover);
-    }
+    @include state-layer.standard;
 }

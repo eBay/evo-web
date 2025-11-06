@@ -1,5 +1,17 @@
 # @ebay/ui-core-react
 
+## 8.16.0
+
+### Minor Changes
+
+- [#340](https://github.com/eBay/evo-web/pull/340) [`3817188`](https://github.com/eBay/evo-web/commit/381718889339b90118f4e4f509032dbe2b9363a0) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(EbayFilterInput): add new react component
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
+- [#326](https://github.com/eBay/evo-web/pull/326) [`d6c46ea`](https://github.com/eBay/evo-web/commit/d6c46eaf3143b4a4e94284f1b8bb2f989f66977e) Thanks [@bruno2kd](https://github.com/bruno2kd)! - fix: ebay menu disabled button fix
+
 ## 8.15.0
 
 ### Minor Changes

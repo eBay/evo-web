@@ -37,9 +37,10 @@
     display: flex;
     flex-direction: column;
     font-size: 0.4375rem; // 7px
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
     height: 37px;
     justify-content: center;
+    line-height: 10px;
     overflow: hidden;
     text-align: center;
     width: 39px;

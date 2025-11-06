@@ -5,6 +5,7 @@ $ const {
     style,
     disabled,
     borderless,
+    fluid,
     option: inputOptions = [],
     floatingLabel,
     isLarge,
@@ -63,6 +64,7 @@ $ for (const option of options) {
             "select",
             isLarge && "select--large",
             borderless && "select--borderless",
+            fluid && "select--fluid",
             inputClass,
         ]
         style=style

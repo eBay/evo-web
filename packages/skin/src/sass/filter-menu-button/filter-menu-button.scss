@@ -3,6 +3,7 @@
 @use "../mixins/private/filter-button-mixins";
 @use "../mixins/private/filter-menu-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 /* .filter-group also exists in filter-button */
 /* todo: move to utility/layout class and/or mixin */
@@ -22,15 +23,10 @@ span.filter-menu-button {
 
 button.filter-menu-button__button {
     background-color: var(--color-background-secondary);
-    border-color: var(--color-stroke-default);
+    border-color: var(--color-border-medium);
 
     @include filter-button-mixins.base;
-
-    &:focus,
-    &:hover,
-    &:active {
-        background-color: var(--color-state-secondary-hover);
-    }
+    @include state-layer.standard;
 }
 
 .filter-menu-button__button-cell {
@@ -61,7 +57,7 @@ button.filter-menu-button__button {
 button.filter-menu-button__button[aria-pressed="true"] {
     @include token-mixins.border-color-token(
         filter-button-foreground-color,
-        color-stroke-strong
+        color-border-strong
     );
 
     font-weight: bold;
@@ -207,13 +203,10 @@ span.filter-menu-button__radio {
 
 .filter-menu-button__item {
     @include filter-menu-mixins.base;
+    @include state-layer.standard;
 
     outline-offset: -4px;
     padding: 8px 16px;
-
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
 
     &:last-child {
         margin-bottom: 8px;
@@ -262,7 +255,7 @@ span.filter-menu-button__item {
 
 button.filter-menu-button__footer {
     border: none;
-    border-color: var(--color-stroke-subtle);
+    border-color: var(--color-border-subtle);
     border-top-style: solid;
     border-top-width: 1px;
     bottom: 0;
@@ -271,11 +264,6 @@ button.filter-menu-button__footer {
     transform: translateZ(0);
 
     @include filter-menu-mixins.base;
-
-    &:focus,
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
 }
 
 .filter-menu-button__text {

@@ -18,7 +18,7 @@
 }
 
 .signal--recent {
-    color: var(--signal-recent-color, var(--color-foreground-confirmation));
+    color: var(--signal-recent-color, var(--color-foreground-success));
 }
 
 .signal--time-sensitive {

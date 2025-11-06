@@ -11,7 +11,7 @@
         border-radius-50
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 8px 0;
     padding: 16px;
 }
@@ -47,7 +47,7 @@ span[role="region"].section-notice {
 }
 
 .section-notice__title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: normal;
     margin: 0;
 }
@@ -68,7 +68,7 @@ span[role="region"].section-notice {
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -85,7 +85,7 @@ span[role="region"].section-notice {
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -127,7 +127,7 @@ span[role="region"].section-notice {
 }
 
 .section-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
 }
 

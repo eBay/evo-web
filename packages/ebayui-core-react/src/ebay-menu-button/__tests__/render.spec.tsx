@@ -20,6 +20,7 @@ const {
     FixedWidth,
     ReverseMenuGrowsToTheLeft,
     WithFixedStrategy,
+    WithDisabledItem,
 } = composeStories(stories);
 
 describe("EbayMenuButton rendering", () => {
@@ -203,6 +204,18 @@ describe("EbayMenuButton rendering", () => {
             render(<WithFixedStrategy expanded />);
             const menu = screen.getByRole("menu");
             expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fixed");
+        });
+    });
+
+    describe("WithDisabledItem", () => {
+        it("should render correctly", () => {
+            const { asFragment } = render(<WithDisabledItem expanded />);
+            const snapshot = asFragment();
+            const menuButtonElement = snapshot.querySelector(".menu-button__button");
+            menuButtonElement?.setAttribute("aria-controls", "1234");
+            const menuButtonMenu = snapshot.querySelector(".menu-button__menu");
+            menuButtonMenu?.setAttribute("id", "1234");
+            expect(snapshot).toMatchSnapshot();
         });
     });
 });
