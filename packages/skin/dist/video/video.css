@@ -87,7 +87,6 @@
         Arial,
         sans-serif;
 }
-
 .video-player--with-nav .shaka-controls-container {
     pointer-events: none;
 }
@@ -95,7 +94,6 @@
 .video-player--with-nav .shaka-controls-container .shaka-play-button-container {
     pointer-events: auto;
 }
-
 .video-player--compact {
     container-type: inline-size;
     width: 100%;

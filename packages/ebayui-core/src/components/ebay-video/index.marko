@@ -53,16 +53,16 @@ $ const styleSize = {
         <subscribe to=window on-resize("handleResize")/>
     </if>
     <div class="video-player__container" no-update style=styleSize>
-        <if(nav)>
-            <a
-                class="video-player__navigate"
-                ...processHtmlAttributes(nav)>
-                <video-container/>
-            </a>
-        </if>
-        <else>
-           <video-container/>
-        </else>
+        <${nav ? "a" : null} ...processHtmlAttributes(nav || {})>
+            <video no-controls poster=thumbnail ...processHtmlAttributes(htmlInput)  key="video-element" class="video-player__video-element" muted=muted>
+                <for|src| of=sources>
+                    <source ...src>
+                </for>
+                <for|track| of=tracks>
+                    <track ...track>
+                </for>
+                </video>
+            </>
     </div>
     <div class=[
         "video-player__overlay",
