@@ -80,10 +80,6 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
      * @default default
      */
     layout?: "default" | "compact";
-     /**
-     * The url target to open when video is clicked in ad layout
-     * @default undefined
-     */
     /**
      * The navigation link for the video
      * @example <@nav href="www.ebay.com" target="_blank"/>
@@ -244,6 +240,18 @@ class Video extends Marko.Component<Input, State> {
     showControls() {
         const copyConfig = Object.assign({}, videoConfig);
         copyConfig.controlPanelElements = [...videoConfig.controlPanelElements];
+        
+        if(this.input.layout === "compact") {
+            copyConfig.addBigPlayButton = false;
+            copyConfig.addSeekBar = false;
+            copyConfig.controlPanelElements = compactLayoutControlPanelElements;
+        }
+
+        if(this.input.nav) {
+            copyConfig.doubleClickForFullscreen = false;
+            copyConfig.singleClickForPlayAndPause = false;
+        }
+
         if (this.state.volumeSlider === true) {
             const insertAt =
                 copyConfig.controlPanelElements.length - 2 > 0
@@ -251,6 +259,7 @@ class Video extends Marko.Component<Input, State> {
                     : copyConfig.controlPanelElements.length;
             copyConfig.controlPanelElements.splice(insertAt, 0, "volume");
         }
+        
         this.ui.configure(copyConfig);
         this.video.controls = false;
     }
@@ -294,16 +303,7 @@ class Video extends Marko.Component<Input, State> {
             played: false
         };
 
-        if(input.layout === "compact") {
-            videoConfig.addBigPlayButton = false;
-            videoConfig.addSeekBar = false;
-            videoConfig.controlPanelElements = compactLayoutControlPanelElements;
-        }
-
-        if(input.nav) {
-            videoConfig.doubleClickForFullscreen = false;
-            videoConfig.singleClickForPlayAndPause = false;
-        }
+        
          if(input.action === "play" || input.autoplay === true) {
             this.isAutoPlay = true;
          }
