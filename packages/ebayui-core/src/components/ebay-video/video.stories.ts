@@ -50,7 +50,7 @@ export default {
         layout: {
             type: "string",
             description:
-                'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remianing time on the videois displayed',
+                'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remaining time on the videois displayed',
             control: { type: "text" },
         },
         playView: {
@@ -348,6 +348,7 @@ compactLayout.args = {
         target: "_blank"
     } as any,
     layout: "compact" as any, // Using 'as any' to maintain backward compatibility
+    offscreenPause: true,
     autoplay: true,
     loop: true,
     // videoTarget property is not defined in the Input type

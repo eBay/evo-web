@@ -47,7 +47,7 @@ const compactLayoutControlPanelElements = [
 ];
 
 
-let videoConfig = {
+const videoConfig = {
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
     addBigPlayButton: false,
@@ -136,7 +136,8 @@ class Video extends Marko.Component<Input, State> {
     declare shaka: any;
     declare observer: IntersectionObserver;
     private isAutoPlay: boolean = false;
-    private isAutoPause: boolean = false; 
+    private isAutoPause: boolean = false;
+    private userPaused: boolean = false;
 
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
@@ -189,10 +190,14 @@ class Video extends Marko.Component<Input, State> {
         // This forces the controls to always hide
         this.video.controls = false;
 
+        if (!this.isAutoPause) {
+            this.userPaused = true;
+        }
+
         this.emit("pause", { 
             originalEvent, 
             player: this.player,
-            isAutoPause: this.isAutoPause 
+            isAutoPause: this.isAutoPause
         });
         
         // Reset isAutoPause after emitting the event
@@ -208,6 +213,8 @@ class Video extends Marko.Component<Input, State> {
             this.video.requestFullscreen();
         }
         this.state.played = true;
+        this.userPaused = false;
+
         this.emit("play", { 
             originalEvent, 
             player: this.player,
@@ -299,7 +306,7 @@ class Video extends Marko.Component<Input, State> {
         }
          if(input.action === "play" || input.autoplay === true) {
             this.isAutoPlay = true;
-        }
+         }
     }
 
     _addTextTracks() {
@@ -489,6 +496,10 @@ class Video extends Marko.Component<Input, State> {
         // Create the observer
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                if(this.userPaused) {
+                    // If user has manually paused, do not auto-play/pause
+                    return;
+                }
                 
                 // Auto-play when 50% visible and pause when less than 50% visible
                 if (entry.isIntersecting) {

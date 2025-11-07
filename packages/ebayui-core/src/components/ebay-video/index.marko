@@ -27,16 +27,7 @@ $ const styleSize = {
     width: width ? `${width}px` : "",
     height: height ? `${height}px` : "",
 };
-<macro name="video-container">
-    <video no-controls poster=thumbnail ...processHtmlAttributes(htmlInput)  key="video-element" class="video-player__video-element" muted=muted>
-        <for|src| of=sources>
-            <source ...src>
-        </for>
-        <for|track| of=tracks>
-            <track ...track>
-        </for>
-    </video>
-</macro>
+
 <div
     key="root"
     class=[
