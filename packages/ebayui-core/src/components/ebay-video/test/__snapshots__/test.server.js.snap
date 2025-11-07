@@ -12,6 +12,8 @@ exports[`video > renders default 1`] = `
       [33mstyle[39m=[32m"width:700px;height:400px"[39m
     [36m>[39m
       [36m<video[39m
+        [33mclass[39m=[32m"video-player__video-element"[39m
+        [33mdata-marko-key[39m=[32m"@video-element s0"[39m
         [33mno-controls[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
@@ -270,6 +272,8 @@ exports[`video > renders ios video player 1`] = `
       [33mstyle[39m=[32m"width:700px;height:400px"[39m
     [36m>[39m
       [36m<video[39m
+        [33mclass[39m=[32m"video-player__video-element"[39m
+        [33mdata-marko-key[39m=[32m"@video-element s0"[39m
         [33mno-controls[39m=[32m""[39m
         [33mshaka-config[39m=[32m"{\\"streaming\\":{\\"lowLatencyMode\\":true}}"[39m
       [36m>[39m
@@ -533,6 +537,8 @@ exports[`video > renders with mp4 1`] = `
       [33mstyle[39m=[32m"width:460px;height:300px"[39m
     [36m>[39m
       [36m<video[39m
+        [33mclass[39m=[32m"video-player__video-element"[39m
+        [33mdata-marko-key[39m=[32m"@video-element s0"[39m
         [33mno-controls[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
@@ -790,6 +796,8 @@ exports[`video > renders with report text 1`] = `
       [33mstyle[39m=[32m"width:700px;height:400px"[39m
     [36m>[39m
       [36m<video[39m
+        [33mclass[39m=[32m"video-player__video-element"[39m
+        [33mdata-marko-key[39m=[32m"@video-element s0"[39m
         [33mno-controls[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
