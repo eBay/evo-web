@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.12.11
+
+### Patch Changes
+
+- [#353](https://github.com/eBay/evo-web/pull/353) [`9e13912`](https://github.com/eBay/evo-web/commit/9e13912a50e2a54588cc6d0f155735cd608d1b68) Thanks [@agliga](https://github.com/agliga)! - fix: added focus to menu-button when collapseOnSelect is set
+
 ## 15.12.10
 
 ### Patch Changes
