@@ -3,7 +3,9 @@ import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component from "./index.marko";
 import type { Input } from "./component";
-import compactLayoutComponent from "./examples/compact-layout.marko"
+import compactLayoutComponent from "./examples/compact-layout.marko";
+import compactLayoutSmallComponent from "./examples/compact-layout-small.marko";
+
 const Template: Story<Input> = (args) => ({
     input: {
         ...args,
@@ -322,10 +324,26 @@ compactLayout.args = {};
 compactLayout.parameters = {
      docs: {
         source: {
-            code: tagToString("ebay-video-ad", compactLayout.args),
+            code: tagToString("ebay-video-compact", compactLayout.args),
         },
         description: {
-            story: "This example demonstrates how to customize the video player controls using the new configurable videoConfig fields."
+            story: "This example demonstrates how to customize the video player controls using compact layout."
+        }
+    },
+};
+
+export const compactLayoutSmall: Story<Input> = (args) => ({
+    input: args,
+    component: compactLayoutSmallComponent,
+});
+compactLayoutSmall.args = {};
+compactLayoutSmall.parameters = {
+     docs: {
+        source: {
+            code: tagToString("ebay-video-compact-small", compactLayoutSmall.args),
+        },
+        description: {
+            story: "This example demonstrates how to customize the video player controls using the compact layout - small screen."
         }
     },
 };
