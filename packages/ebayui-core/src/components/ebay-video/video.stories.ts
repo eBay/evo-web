@@ -3,7 +3,7 @@ import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component from "./index.marko";
 import type { Input } from "./component";
-
+import compactLayoutComponent from "./examples/compact-layout.marko"
 const Template: Story<Input> = (args) => ({
     input: {
         ...args,
@@ -314,39 +314,13 @@ mp4.parameters = {
     },
 };
 
-export const compactLayout = Template.bind({});
-compactLayout.storyName = "Compact Layout";
-compactLayout.args = {
-    width: "700",
-    height: "400",
-    nav: {
-        href: "https://www.ebay.com",
-        target: "_blank"
-    } as any,
-    layout: "compact" as any, // Using 'as any' to maintain backward compatibility
-    offscreenPause: true,
-    autoplay: true,
-    loop: true,
-    // videoTarget property is not defined in the Input type
-    // Using type assertion to maintain backward compatibility
-    thumbnail: "https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp",
-         
-    muted: true,
-    "a11y-load-text": "This video is loading now",
-    "a11y-play-text": "Click to start this video",
-    "a11y-mute-text": "Click to mute this video",
-    "a11y-unmute-text": "Click to unmute this video",
-    "error-text": "Sorry, this video cannot be played at this time.",
-
-    source: [
-        {
-            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
-            type: "dash",
-        },
-    ] as any,
-};
+export const compactLayout: Story<Input> = (args) => ({
+    input: args,
+    component: compactLayoutComponent,
+});
+compactLayout.args = {};
 compactLayout.parameters = {
-    docs: {
+     docs: {
         source: {
             code: tagToString("ebay-video-ad", compactLayout.args),
         },
@@ -356,73 +330,3 @@ compactLayout.parameters = {
     },
 };
 
-
-export const videoError = Template.bind({});
-videoError.storyName = "Compact layout with video load error";
-videoError.args = {
-    width: "700",
-    height: "400",
-    layout: "compact",
-    autoplay: true,
-    loop: true,
-    thumbnail: "https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp",
-    muted: true,
-    "a11y-load-text": "This video is loading now",
-    "a11y-play-text": "Click to start this video",
-    "a11y-mute-text": "Click to mute this video",
-    "a11y-unmute-text": "Click to unmute this video",
-    "error-text": "Sorry, this video cannot be played at this time.",
-
-    source: [
-        {
-            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
-            type: "dash",
-        },
-    ] as any,
-};
-videoError.parameters = {
-    docs: {
-        source: {
-            code: tagToString("ebay-video", videoError.args),
-        },
-        description: {
-            story: "This example demonstrates how to customize the video player controls using the new configurable videoConfig fields."
-        }
-    },
-};
-
-
-export const compactLayoutSmallContainer = Template.bind({});
-compactLayoutSmallContainer.args = {
-    width: "300",
-    height: "300",
-    layout: "compact",
-    autoplay: true,
-    loop: true,
-    nav: {
-        href: "https://www.ebay.com",
-        target: "_blank"
-    } as any,
-    thumbnail: "https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp",
-         
-    muted: true,
-    "a11y-load-text": "This video is loading now",
-    "a11y-play-text": "Click to start this video",
-    "a11y-mute-text": "Click to mute this video",
-    "a11y-unmute-text": "Click to unmute this video",
-    "error-text": "Sorry, this video cannot be played at this time.",
-
-    source: [
-        {
-            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
-            type: "dash",
-        },
-    ] as any,
-};
-compactLayoutSmallContainer.parameters = {
-    docs: {
-        source: {
-            code: tagToString("ebay-video", compactLayoutSmallContainer.args),
-        },
-    },
-};

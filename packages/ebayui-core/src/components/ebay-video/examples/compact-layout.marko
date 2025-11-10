@@ -1,24 +1,17 @@
-class {}
-
 <ebay-video
-    width="600"
+    width="700"
     height="400"
-    layout="compact"
+    a11yPlayText = "Click to play",
+    a11yLoadText = "Loading",
+    a11yMuteText = "Click to mute",
+    a11yUnmuteText = "Click to unmute",
+    layout = "compact"
+    thumbnail = "https://i.ebayimg.com/images/g/3hAAAOSw5dVhY2Rm/s-l1600.jpg"
     autoplay
     loop
-    thumbnail="https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp"
-    on-load-error(
-        (err) => {
-            console.log("handle error", err);
-        },
-    )
+    muted
+    offscreenPause = true
 >
-    <@source src="https://videoservices.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd"/>
+    <@nav href="https://www.ebay.com" target="_blank"/>
+    <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd" />
 </ebay-video>
-
-<p>This example demonstrates customizing the video player controls:</p>
-<ul>
-    <li>Added a big play button (add-big-play-button=true)</li>
-    <li>Enabled the seek bar (add-seek-bar=true)</li>
-    <li>Customized control panel elements (removed "report" and "total_time" from the default set)</li>
-</ul>
