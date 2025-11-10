@@ -261,3 +261,4 @@ export default class extends MenuUtils<Input, MenuState> {
         this.dropdownUtil?.cleanup?.();
     }
 }
+
