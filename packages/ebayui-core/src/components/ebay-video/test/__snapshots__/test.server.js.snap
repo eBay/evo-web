@@ -552,7 +552,7 @@ exports[`video > renders with compact layout 1`] = `
           [33mposter[39m=[32m"https://i.ebayimg.com/images/g/EvEAAeSw3oFos1hF/s-l500.webp"[39m
         [36m>[39m
           [36m<source[39m
-            [33msrc[39m=[32m"https://videoservices.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd"[39m
+            [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"[39m
             [33mtype[39m=[32m"dash"[39m
           [36m/>[39m
         [36m</video>[39m
