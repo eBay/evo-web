@@ -55,6 +55,14 @@ const videoConfig = {
     controlPanelElements: defaultControlPanelElements
 };
 
+const compactConfig = {
+    doubleClickForFullscreen: true,
+    singleClickForPlayAndPause: true,
+    addBigPlayButton: false,
+    addSeekBar: false,
+    controlPanelElements: compactLayoutControlPanelElements
+};
+
 export interface PlayPauseEvent {
     originalEvent: Event;
     player: any;
@@ -238,13 +246,11 @@ class Video extends Marko.Component<Input, State> {
     }
 
     showControls() {
-        const copyConfig = Object.assign({}, videoConfig);
+        let copyConfig = Object.assign({}, videoConfig);
         copyConfig.controlPanelElements = [...videoConfig.controlPanelElements];
         
         if(this.input.layout === "compact") {
-            copyConfig.addBigPlayButton = false;
-            copyConfig.addSeekBar = false;
-            copyConfig.controlPanelElements = compactLayoutControlPanelElements;
+            copyConfig = Object.assign({}, compactConfig);
         }
 
         if(this.input.nav) {
@@ -486,37 +492,30 @@ class Video extends Marko.Component<Input, State> {
     }
 
     setupIntersectionObserver() {
-        // Create options for the observer
         const options = {
-            root: null, // Use the viewport as the root
+            root: null, 
             rootMargin: '0px',
-            threshold: 0.5 // 50% visibility threshold
+            threshold: 0.5 
         };
 
-        // Create the observer
         this.observer = new IntersectionObserver((entries) => {
+             // Auto-play when 50% visible and pause when less than 50% visible
             entries.forEach(entry => {
                 if(this.userPaused) {
                     // If user has manually paused, do not auto-play/pause
                     return;
                 }
                 
-                // Auto-play when 50% visible and pause when less than 50% visible
+               
                 if (entry.isIntersecting) {
-                    // Only auto-play if the video is loaded and not already playing
                     if (this.state.isLoaded && !this.state.failed && this.video.paused) {
-                        // Set isAutoPlay flag to true for tracking
                         this.isAutoPlay = true;
-                        // Auto-play the video when it becomes visible
                         this.video.play().catch(e => {
-                           // Reset isAutoPlay if auto-play was prevented
                             this.isAutoPlay = false;
                         });
                     }
                 } else {
-                    // Pause when less than 50% visible
                     if (!this.video.paused) {
-                        // Set isAutoPause flag to true for tracking
                         this.isAutoPause = true;
                         this.video.pause();
                     }
@@ -524,7 +523,6 @@ class Video extends Marko.Component<Input, State> {
             });
         }, options);
 
-        // Start observing the video container
         this.observer.observe(this.containerEl);
     }
 
@@ -533,7 +531,6 @@ class Video extends Marko.Component<Input, State> {
             this.ui.destroy();
         }
         
-        // Disconnect the observer when component is destroyed
         if (this.observer) {
             this.observer.disconnect();
         }

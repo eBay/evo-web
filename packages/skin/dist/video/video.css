@@ -105,9 +105,10 @@
 }
 .video-player--compact .shaka-controls-button-panel > :first-child {
     border-radius: 16px;
-    font-size: 1rem;
+    font-size: var(--font-size-medium);
     margin-right: auto;
-    padding: 16px 8px;
+    min-width: 80px;
+    padding: var(--spacing-200) var(--spacing-100);
     width: auto;
 }
 .video-player--compact .shaka-controls-button-panel button * {

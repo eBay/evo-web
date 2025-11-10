@@ -364,7 +364,7 @@ compactLayout.args = {
 
     source: [
         {
-            src: "https://videoservices.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd",
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
             type: "dash",
         },
     ] as any,
@@ -399,7 +399,7 @@ videoError.args = {
 
     source: [
         {
-            src: "https://videoservices1.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd",
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
             type: "dash",
         },
     ] as any,
@@ -438,7 +438,7 @@ compactLayoutSmallContainer.args = {
 
     source: [
         {
-            src: "https://videoservices.vip.qa.ebay.com/videos/v1/52fced381990ad72e301760efffffef8/playlist.mpd",
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
             type: "dash",
         },
     ] as any,

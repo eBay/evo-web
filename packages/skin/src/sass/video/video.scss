@@ -106,55 +106,56 @@
 
 .video-player--with-nav .shaka-controls-container {
     pointer-events: none;
-    .shaka-bottom-controls,
-    .shaka-play-button-container {
-        pointer-events: auto;
-    }
+}
+.video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
+.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
+    pointer-events: auto;
 }
 
 .video-player--compact {
     container-type: inline-size;
     width: 100%;
-    .shaka-controls-button-panel {
-        background-color: transparent;
-        justify-content: flex-end;
-        pointer-events: none;
-        & > :first-child {
-            border-radius: 16px;
-            font-size: variables.$font-size-medium;
-            margin-right: auto;
-            padding: 16px 8px;
-            width: auto;
+}
+.video-player--compact .shaka-controls-button-panel {
+    background-color: transparent;
+    justify-content: flex-end;
+    pointer-events: none;
+    & > :first-child {
+        border-radius: 16px;
+        font-size: var(--font-size-medium);
+        margin-right: auto;
+        min-width: 80px;
+        padding: var(--spacing-200) var(--spacing-100);
+        width: auto;
+    }
+    button {
+        * {
+            margin: 0;
         }
-        button {
-            * {
-                margin: 0;
-            }
 
-            background-color: rgb(0 0 0 / 0.32);
-            border-radius: 50%;
-            margin: 5px;
-            &:enabled {
-                pointer-events: auto;
-            }
+        background-color: rgb(0 0 0 / 0.32);
+        border-radius: 50%;
+        margin: 5px;
+        &:enabled {
+            pointer-events: auto;
         }
     }
-    .shaka-scrim-container {
-        background: none;
+}
+.video-player--compact .shaka-scrim-container {
+    background: none;
+}
+.video-player--compact .shaka-tooltip:hover::after {
+    visibility: hidden;
+}
+@container (inline-size < #{variables.$screen-size-XS}) {
+    .video-player--compact video {
+        aspect-ratio: 1;
+        object-fit: cover;
     }
-    .shaka-tooltip:hover::after {
-        visibility: hidden;
+    .video-player--compact .shaka-controls-button-panel {
+        height: 48px;
     }
-    @container (inline-size < #{variables.$screen-size-XS}) {
-        video {
-            aspect-ratio: 1;
-            object-fit: cover;
-        }
-        .shaka-controls-button-panel {
-            height: 48px;
-        }
-        .shaka-remaining-time {
-            display: none;
-        }
+    .video-player--compact .shaka-remaining-time {
+        display: none;
     }
 }
