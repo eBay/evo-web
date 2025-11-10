@@ -45,15 +45,15 @@ $ const styleSize = {
     </if>
     <div class="video-player__container" no-update style=styleSize>
         <${nav ? "a" : null} ...processHtmlAttributes(nav || {})>
-            <video no-controls poster=thumbnail ...processHtmlAttributes(htmlInput)  key="video-element" class="video-player__video-element" muted=muted>
-                <for|src| of=sources>
-                    <source ...src>
-                </for>
-                <for|track| of=tracks>
-                    <track ...track>
-                </for>
-                </video>
-            </>
+            <video no-controls poster=thumbnail ...processHtmlAttributes(htmlInput)>
+            <for|src| of=sources>
+                <source ...src>
+            </for>
+            <for|track| of=tracks>
+                <track ...track>
+            </for>
+            </video>
+        </>
     </div>
     <div class=[
         "video-player__overlay",

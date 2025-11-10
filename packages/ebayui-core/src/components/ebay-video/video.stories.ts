@@ -263,30 +263,6 @@ Default.parameters = {
     },
 };
 
-export const NavEnabled = Template.bind({});
-NavEnabled.storyName = "Navigation Enabled Video";
-NavEnabled.args = {
-    width: "700",
-    height: "400",
-    nav: {
-        href: "https://www.ebay.com",
-        target: "_blank"
-    } as any,
-    source: [
-        {
-            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
-            type: "dash",
-        },
-    ] as any,
-};
-NavEnabled.parameters = {
-    docs: {
-        source: {
-            code: tagToString("ebay-video", NavEnabled.args),
-        },
-    },
-};
-
 export const ios = Template.bind({});
 ios.storyName = "ios";
 ios.args = {

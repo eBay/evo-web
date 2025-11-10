@@ -168,24 +168,20 @@ class Video extends Marko.Component<Input, State> {
 
     alignSeekbar() {
         if (this.el) {
-            
+            const buttonPanel = this.el.querySelector<HTMLElement>(
+                ".shaka-controls-button-panel",
+            )!;
+            const spacer = buttonPanel.querySelector(".shaka-spacer")!;
             const rangeContainer = this.el.querySelector<HTMLElement>(
                 ".shaka-range-container",
             )!;
-            
-            if(rangeContainer) {
-                const buttonPanel = this.el.querySelector<HTMLElement>(
-                    ".shaka-controls-button-panel",
-                )!;
-                const spacer = buttonPanel.querySelector(".shaka-spacer")!;
-                if (buttonPanel && spacer) {
-                    const buttonPanelRect = buttonPanel.getBoundingClientRect();
-                    const spacerRect = spacer.getBoundingClientRect();
-                    rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
-                    rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
-                }    
+            if (buttonPanel && spacer) {
+                const buttonPanelRect = buttonPanel.getBoundingClientRect();
+                const spacerRect = spacer.getBoundingClientRect();
+
+                rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
+                rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
             }
-            
         }
     }
 
