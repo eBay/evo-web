@@ -141,6 +141,7 @@ export default class extends MenuUtils<Input, MenuState> {
         if (this.input.disabled) {
             return;
         }
+        this.focus();
         this.dropdownUtil.hide();
         this.emitComponentEvent({ eventType: "collapse" });
     }

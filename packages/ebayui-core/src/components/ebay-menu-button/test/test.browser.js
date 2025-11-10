@@ -191,6 +191,25 @@ describe("given the menu is in the expanded state", () => {
         });
     });
 
+    describe("when an item is clicked with collapseOnSelect enabled", () => {
+        beforeEach(async () => {
+            component = await render(Default, { collapseOnSelect: true });
+            await fireEvent.click(component.getByRole("button"));
+            await fireEvent.click(component.getByText(firstItemText));
+        });
+
+        it("then it collapses the menu", () => {
+            expect(component.getByRole("button")).toHaveAttribute(
+                "aria-expanded",
+                "false",
+            );
+        });
+
+        it("then it retains focus on the button", () => {
+            expect(component.getByRole("button")).toHaveFocus();
+        });
+    });
+
     describe("when the escape key is pressed from an item", () => {
         beforeEach(async () => {
             await pressKey(component.getByText(firstItemText), {
