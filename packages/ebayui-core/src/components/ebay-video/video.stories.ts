@@ -1,10 +1,16 @@
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component from "./index.marko";
 import type { Input } from "./component";
 import compactLayoutComponent from "./examples/compact-layout.marko";
-import compactLayoutSmallComponent from "./examples/compact-layout-small.marko";
+import compactLayoutRaw from "./examples/compact-layout.marko?raw";
+
+import autoPlayComponent from "./examples/auto-play-viewport.marko";
+import autoPlayRaw from "./examples/auto-play-viewport.marko?raw";
+
+
 
 const Template: Story<Input> = (args) => ({
     input: {
@@ -315,36 +321,6 @@ mp4.parameters = {
         },
     },
 };
+export const CompactLayout =  buildExtensionTemplate(compactLayoutComponent, compactLayoutRaw);
 
-export const compactLayout: Story<Input> = (args) => ({
-    input: args,
-    component: compactLayoutComponent,
-});
-compactLayout.args = {};
-compactLayout.parameters = {
-     docs: {
-        source: {
-            code: tagToString("ebay-video-compact", compactLayout.args),
-        },
-        description: {
-            story: "This example demonstrates how to customize the video player controls using compact layout."
-        }
-    },
-};
-
-export const compactLayoutSmall: Story<Input> = (args) => ({
-    input: args,
-    component: compactLayoutSmallComponent,
-});
-compactLayoutSmall.args = {};
-compactLayoutSmall.parameters = {
-     docs: {
-        source: {
-            code: tagToString("ebay-video-compact-small", compactLayoutSmall.args),
-        },
-        description: {
-            story: "This example demonstrates how to customize the video player controls using the compact layout - small screen."
-        }
-    },
-};
-
+export const AutoPlayViewport =  buildExtensionTemplate(autoPlayComponent, autoPlayRaw);

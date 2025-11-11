@@ -540,7 +540,6 @@ exports[`video > renders with compact layout 1`] = `
           [33mautoplay[39m=[32m""[39m
           [33mloop[39m=[32m""[39m
           [33mno-controls[39m=[32m""[39m
-          [33moffscreen-pause[39m=[32m""[39m
           [33mposter[39m=[32m"https://i.ebayimg.com/images/g/3hAAAOSw5dVhY2Rm/s-l1600.jpg"[39m
         [36m>[39m
           [36m<source[39m
