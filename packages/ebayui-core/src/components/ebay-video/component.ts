@@ -137,9 +137,9 @@ class Video extends Marko.Component<Input, State> {
     declare ui: any;
     declare shaka: any;
     declare observer: IntersectionObserver;
-    private isAutoPlay: boolean = false;
-    private isAutoPause: boolean = false;
-    private userPaused: boolean = false;
+    declare isAutoPlay: boolean;
+    declare isAutoPause: boolean;
+    declare userPaused: boolean;
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
         const type = source.type && source.type.toLowerCase();
