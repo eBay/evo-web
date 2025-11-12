@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.13.1
+
+### Patch Changes
+
+- [#357](https://github.com/eBay/evo-web/pull/357) [`9efd6d6`](https://github.com/eBay/evo-web/commit/9efd6d68b99143ca11b6b8a4caf24459421dc883) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix bug with private fields in video
+
 ## 15.13.0
 
 ### Minor Changes

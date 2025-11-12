@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.17.1
+
+### Patch Changes
+
+- [#358](https://github.com/eBay/evo-web/pull/358) [`a3d619d`](https://github.com/eBay/evo-web/commit/a3d619d693e46352a9a3990bb160543066c5bade) Thanks [@agliga](https://github.com/agliga)! - fix(skin): reverted line height value in global.scss
+
 ## 19.17.0
 
 ### Minor Changes
