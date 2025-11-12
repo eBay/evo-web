@@ -132,7 +132,7 @@ Standard.parameters = {
     },
 };
 
-export const buttonHost: Story<Input> = (args:Input, context: any) => ({
+export const buttonHost: Story<Input> = (args: Input, context: any) => ({
     // eslint-disable-next-line new-cap
     input: Template(args, context).input,
     component: buttonComponent,

@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.13.0
+
+### Minor Changes
+
+- [#336](https://github.com/eBay/evo-web/pull/336) [`8477558`](https://github.com/eBay/evo-web/commit/847755885393381ddbafe5b28c924556123789dd) Thanks [@vidyadrao](https://github.com/vidyadrao)! - enable compact layout for ebay-video
+
 ## 15.12.11
 
 ### Patch Changes
