@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.17.2
+
+### Patch Changes
+
+- [#360](https://github.com/eBay/evo-web/pull/360) [`4577fd5`](https://github.com/eBay/evo-web/commit/4577fd50519d32a4f47000ffbcc0a6f85b5864ea) Thanks [@vidyadrao](https://github.com/vidyadrao)! - Fix rendering of small compact videos
+
 ## 19.17.1
 
 ### Patch Changes
