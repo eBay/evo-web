@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.18.0
+
+### Minor Changes
+
+- [`8d9cf6c`](https://github.com/eBay/evo-web/commit/8d9cf6c2928a84145c9b20c6eb93972e190660db) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons
+
 ## 19.17.2
 
 ### Patch Changes

@@ -22,6 +22,7 @@ export type Icon =
 'aiSearch16' |
 'aiSearch20' |
 'aiSearch24' |
+'aiSearchFilled24' |
 'aiShirt16' |
 'aiShirt20' |
 'aiShirt24' |
@@ -531,6 +532,10 @@ export type Icon =
 'liveBag16' |
 'liveBag20' |
 'liveBag24' |
+'liveBagFilled24' |
+'liveBagPlayFilled16Colored' |
+'liveBagPlayFilled24Colored' |
+'liveBagPlayFilled64Colored' |
 'liveBagThin16' |
 'liveBroadcast20' |
 'liveBroadcast24' |
@@ -593,6 +598,10 @@ export type Icon =
 'moneyBackGuaranteeFilled24Colored' |
 'moneyStack16' |
 'moneyStack24' |
+'moneyStackBlue12Colored' |
+'moneyStackBlue18Colored' |
+'moneyStackBlue24Colored' |
+'moneyStackBlue32Colored' |
 'monthlyInvoice12Colored' |
 'monthlyInvoice18Colored' |
 'monthlyInvoice24Colored' |

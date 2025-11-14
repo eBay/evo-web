@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 15.14.0
+
+### Minor Changes
+
+- [`8d9cf6c`](https://github.com/eBay/evo-web/commit/8d9cf6c2928a84145c9b20c6eb93972e190660db) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons
+
+### Patch Changes
+
+- [#366](https://github.com/eBay/evo-web/pull/366) [`dfa3dfc`](https://github.com/eBay/evo-web/commit/dfa3dfc953ce43facf13e2ddd82812d288f6fceb) Thanks [@agliga](https://github.com/agliga)! - fix: toggled between true and false for aria-modal
+
 ## 15.13.1
 
 ### Patch Changes

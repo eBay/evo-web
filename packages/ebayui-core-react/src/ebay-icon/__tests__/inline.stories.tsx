@@ -24,6 +24,7 @@ import { EbayIconAiFilled24 } from "../icons/ebay-icon-ai-filled-24";
 import { EbayIconAiSearch16 } from "../icons/ebay-icon-ai-search-16";
 import { EbayIconAiSearch20 } from "../icons/ebay-icon-ai-search-20";
 import { EbayIconAiSearch24 } from "../icons/ebay-icon-ai-search-24";
+import { EbayIconAiSearchFilled24 } from "../icons/ebay-icon-ai-search-filled-24";
 import { EbayIconAiShirt16 } from "../icons/ebay-icon-ai-shirt-16";
 import { EbayIconAiShirt20 } from "../icons/ebay-icon-ai-shirt-20";
 import { EbayIconAiShirt24 } from "../icons/ebay-icon-ai-shirt-24";
@@ -532,6 +533,10 @@ import { EbayIconListViewFilled24 } from "../icons/ebay-icon-list-view-filled-24
 import { EbayIconLiveBag16 } from "../icons/ebay-icon-live-bag-16";
 import { EbayIconLiveBag20 } from "../icons/ebay-icon-live-bag-20";
 import { EbayIconLiveBag24 } from "../icons/ebay-icon-live-bag-24";
+import { EbayIconLiveBagFilled24 } from "../icons/ebay-icon-live-bag-filled-24";
+import { EbayIconLiveBagPlayFilled16Colored } from "../icons/ebay-icon-live-bag-play-filled-16-colored";
+import { EbayIconLiveBagPlayFilled24Colored } from "../icons/ebay-icon-live-bag-play-filled-24-colored";
+import { EbayIconLiveBagPlayFilled64Colored } from "../icons/ebay-icon-live-bag-play-filled-64-colored";
 import { EbayIconLiveBagThin16 } from "../icons/ebay-icon-live-bag-thin-16";
 import { EbayIconLiveBroadcast20 } from "../icons/ebay-icon-live-broadcast-20";
 import { EbayIconLiveBroadcast24 } from "../icons/ebay-icon-live-broadcast-24";
@@ -594,6 +599,10 @@ import { EbayIconMoneyBackGuaranteeFilled16Colored } from "../icons/ebay-icon-mo
 import { EbayIconMoneyBackGuaranteeFilled24Colored } from "../icons/ebay-icon-money-back-guarantee-filled-24-colored";
 import { EbayIconMoneyStack16 } from "../icons/ebay-icon-money-stack-16";
 import { EbayIconMoneyStack24 } from "../icons/ebay-icon-money-stack-24";
+import { EbayIconMoneyStackBlue12Colored } from "../icons/ebay-icon-money-stack-blue-12-colored";
+import { EbayIconMoneyStackBlue18Colored } from "../icons/ebay-icon-money-stack-blue-18-colored";
+import { EbayIconMoneyStackBlue24Colored } from "../icons/ebay-icon-money-stack-blue-24-colored";
+import { EbayIconMoneyStackBlue32Colored } from "../icons/ebay-icon-money-stack-blue-32-colored";
 import { EbayIconMonthlyInvoice12Colored } from "../icons/ebay-icon-monthly-invoice-12-colored";
 import { EbayIconMonthlyInvoice18Colored } from "../icons/ebay-icon-monthly-invoice-18-colored";
 import { EbayIconMonthlyInvoice24Colored } from "../icons/ebay-icon-monthly-invoice-24-colored";
@@ -1171,6 +1180,14 @@ export const AllIcons = () => (
             <td>ebay-icon-ai-search-24</td>
             <td>
                 <EbayIconAiSearch24 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-ai-search-filled-24</td>
+            <td>
+                <EbayIconAiSearchFilled24 />
             </td>
         </tr>
             
@@ -5240,6 +5257,38 @@ export const AllIcons = () => (
             
 
         <tr>
+            <td>ebay-icon-live-bag-filled-24</td>
+            <td>
+                <EbayIconLiveBagFilled24 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-live-bag-play-filled-16-colored</td>
+            <td>
+                <EbayIconLiveBagPlayFilled16Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-live-bag-play-filled-24-colored</td>
+            <td>
+                <EbayIconLiveBagPlayFilled24Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-live-bag-play-filled-64-colored</td>
+            <td>
+                <EbayIconLiveBagPlayFilled64Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
             <td>ebay-icon-live-bag-thin-16</td>
             <td>
                 <EbayIconLiveBagThin16 />
@@ -5731,6 +5780,38 @@ export const AllIcons = () => (
             <td>ebay-icon-money-stack-24</td>
             <td>
                 <EbayIconMoneyStack24 />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-money-stack-blue-12-colored</td>
+            <td>
+                <EbayIconMoneyStackBlue12Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-money-stack-blue-18-colored</td>
+            <td>
+                <EbayIconMoneyStackBlue18Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-money-stack-blue-24-colored</td>
+            <td>
+                <EbayIconMoneyStackBlue24Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-money-stack-blue-32-colored</td>
+            <td>
+                <EbayIconMoneyStackBlue32Colored />
             </td>
         </tr>
             
