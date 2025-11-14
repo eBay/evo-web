@@ -41,13 +41,9 @@ import "@ebay/skin/table.css";
 
 ```tsx
 <EbayTable>
-    <EbayTableHeader>
-        <EbayTableRow>
-            <EbayTableCell>Column 1</EbayTableCell>
-            <EbayTableCell>Column 2</EbayTableCell>
-            <EbayTableCell>Column 3</EbayTableCell>
-        </EbayTableRow>
-    </EbayTableHeader>
+    <EbayTableHeader>Column 1</EbayTableHeader>
+    <EbayTableHeader>Column 2</EbayTableHeader>
+    <EbayTableHeader>Column 3</EbayTableHeader>
     <EbayTableRow>
         <EbayTableCell>Row 1, Cell 1</EbayTableCell>
         <EbayTableCell>Row 1, Cell 2</EbayTableCell>
