@@ -246,7 +246,7 @@ exports[`dialog-base > renders in open state 1`] = `
 exports[`dialog-base > renders non modal 1`] = `
 <div
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="lightbox-dialog lightbox-dialog--mask-fade"
   hidden=""
   role="dialog"

@@ -81,7 +81,7 @@ $ const {
     ...processHtmlAttributes(htmlInput)
     aria-labelledby=ariaLabelledby ||
     (header && component.getElId("dialog-title"))
-    aria-modal="true"
+    aria-modal=isModal ? "true" : "false"
     role=role || "dialog"
     class=[classPrefix, inputClass]
     hidden:no-update=!state.open
