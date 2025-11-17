@@ -1,6 +1,8 @@
 {
     "accordion": {
         "component": "accordion",
+        "markoStorybookPath": "/docs/navigation-disclosure-ebay-accordion--documentation",
+        "reactStorybookPath": "/docs/navigation-disclosure-ebay-accordion--documentation",
         "ds-component": {
             "name": "accordion",
             "url": "https://playbook.ebay.com/design-system/components/accordion",

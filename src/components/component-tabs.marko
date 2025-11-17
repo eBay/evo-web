@@ -1,10 +1,15 @@
 import { getEnhancedComponentMetadata } from '../routes/component-utils.js';
 
+$ const DSUrlRoot = "https://playbook.ebay.com/design-system/components/";
+$ const EvoMarkoStorybookUrlRoot = "https://opensource.ebay.com/evo-web/ebayui-core/?path=";
+$ const EvoReactStorybookUrlRoot = "https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=";
 $ const componentName = input.componentName;
 $ const componentData = getEnhancedComponentMetadata(componentName) || {};
 $ const versions = componentData.versions || {};
-$ const designSystemUrl = componentData.primaryUrl;
+$ const DSUrl = componentData.primaryUrl;
 $ const currentTab = $global.url.pathname.split("/")[3] || "overview";
+$ const EvoMarkoStorybookUrl = componentData.markoStorybookPath ? EvoMarkoStorybookUrlRoot + componentData.markoStorybookPath : EvoMarkoStorybookUrlRoot;
+$ const EvoReactStorybookUrl = componentData.reactStorybookPath ? EvoReactStorybookUrlRoot + componentData.reactStorybookPath : EvoReactStorybookUrlRoot;
 
 $ const getAriaCurrentValue = (tabName) => {
     return currentTab === tabName ? "page" : undefined;
@@ -22,13 +27,23 @@ $ const getAriaCurrentValue = (tabName) => {
                 <a href=`/component/${componentName}/css/` role="tab" aria-current=getAriaCurrentValue("css")>CSS (${versions.cssVersion || 'N/A'})</a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${componentName}/marko/` role="tab" aria-current=getAriaCurrentValue("marko")>Marko (${versions.markoVersion || 'N/A'})</a>
+                <a href=`${EvoMarkoStorybookUrl}` target="_blank">
+                    Marko Storybook (${versions.markoVersion || ''})
+                    <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+                        <use href="#icon-external-link-16" />
+                    </svg>
+                </a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`/component/${componentName}/react/` role="tab" aria-current=getAriaCurrentValue("react")>React (${versions.reactVersion || 'N/A'})</a>
+                <a href=`${EvoReactStorybookUrl}` target="_blank">
+                    React Storybook (${versions.reactVersion || ''})
+                    <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+                        <use href="#icon-external-link-16" />
+                    </svg>
+                </a>
             </li>
             <li class="fake-tabs__item fake-tabs__items--large">
-                <a href=`${designSystemUrl || "https://playbook.ebay.com/design-system/components/"}` target="_blank">
+                <a href=`${DSUrl || DSUrlRoot}` target="_blank">
                     Design System
                     <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
                         <use href="#icon-external-link-16" />
