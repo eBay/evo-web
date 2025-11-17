@@ -94,6 +94,10 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
                 rovingTabIndex.destroy();
                 rovingTabIndex = null;
             }
+
+            if (menuRef.current) {
+                scrollKeyPreventer.remove(menuRef.current);
+            }
         };
     }, [isForm]);
 

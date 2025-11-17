@@ -1,7 +1,7 @@
 import React, { Children, cloneElement, FC, KeyboardEvent, MouseEvent, ReactElement, useEffect, useState } from "react";
 import classNames from "classnames";
 import useRovingIndex from "../common/event-utils/use-roving-index";
-import { isActionKey } from "../common/event-utils";
+import { isActionKey, handleUpDownArrowsKeydown } from "../common/event-utils";
 import { withForwardRef } from "../common/component-utils";
 import EbayMenuItem, { MenuItemProps } from "./menu-item";
 import { Key } from "../common/event-utils/types";
@@ -105,6 +105,12 @@ const EbayMenu: FC<EbayMenuProps> = ({
 
     const handleKeyDown = (e: KeyboardEvent<HTMLElement>, index: number) => {
         let newValues;
+
+        handleUpDownArrowsKeydown(e, () => {
+            // Prevent page scroll
+            e.preventDefault();
+        });
+
         if (isActionKey(e.key as Key)) {
             newValues = selectIndex(index);
             if (newValues) {
