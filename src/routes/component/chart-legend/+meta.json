@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Chart Legend CSS Component",
-    "pageDescription": "A Chart Legend CSS Component is a responsive and accessible used to display the meaning of the data in a chart.",
+    "pageTitle": "Chart Legend Component",
+    "pageDescription": "The Chart Legend component provides clear labeling and data representation for charts and graphs. Designed with accessibility in mind, it uses semantic HTML to ensure all users can understand visualized data. Available in Evo Web's CSS, React, and Marko implementations.",
     "pageImg": "/src/routes/static/img/components/data-visualization-400.png"
 }

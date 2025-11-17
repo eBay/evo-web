@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Filter Menu Button CSS Component",
-    "pageDescription": "A Filter Menu Button CSS Component is a responsive and accessible filter menu button that is used to filter content."
+    "pageTitle": "Filter Menu Button Component",
+    "pageDescription": "The Filter Menu Button component combines a button trigger with a dropdown filter menu for space-efficient filtering. Designed for accessibility and usability, it provides intuitive access to complex filter options. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/menu-400.png"
 }

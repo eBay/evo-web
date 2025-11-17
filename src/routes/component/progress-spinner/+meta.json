@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Progress Spinner CSS Component",
-    "pageDescription": "A Progress Spinner CSS Component is a responsive and accessible progress spinner that is used to display progress."
+    "pageTitle": "Progress Spinner Component",
+    "pageDescription": "The Progress Spinner component indicates loading states with rotating animation. Built with accessibility labels and reduced motion support, it provides clear feedback during asynchronous operations. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/spinner-400.png"
 }

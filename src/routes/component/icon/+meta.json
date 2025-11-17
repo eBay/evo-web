@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Icon CSS Component",
-    "pageDescription": "An Icon CSS Component is a responsive and accessible icon that is used to display icons."
+    "pageTitle": "Icon Component",
+    "pageDescription": "The Icon component delivers scalable vector icons with consistent sizing and accessibility features. Supporting multiple sizes and colors, it provides a comprehensive icon library for interface design. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/icon-400.png"
 }

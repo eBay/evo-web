@@ -1,0 +1,292 @@
+<div id="filter-input">
+    <section-header metadata=metadata/>
+
+    <p>
+        The Filter Input component is an accessible, responsive component that allows users to filter (real-time with a visual list). The interactive portions require${" "}
+        <highlight>JavaScript</highlight>
+         , which needs to be implemented separately from the static component.
+    </p>
+
+    <h2>Default Filter Input</h2>
+    <p>
+        The default implementation of the Filter Input component is meant to client-side filtering of an existing list in real-time. For accessibility purposes, to tie the Filter Input with the results, the Filter Input should include${" "}
+        <highlight>aria-controls="filter-results-container-id"</highlight>
+         where the ID matches the results container ID.
+    </p>
+
+    <p>
+        The input placeholder is required and should be descriptive of the filtering action. The 'Clear' button show/hide uses${" "}
+        <highlight>CSS</highlight>
+        ${" "}to show/hide the button when the input is empty or filled. Without the placeholder, that interaction would break.
+    </p>
+
+    <demo>
+        <span class="filter-input" role="search" aria-label="Filter list">
+            <span class="textbox textbox--fluid">
+                <svg
+                    class="icon icon--16"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-search-16"/>
+                </svg>
+                <input
+                    class="textbox__control"
+                    placeholder="Filter list"
+                    type="search"
+                    aria-label="Filter list"
+                    aria-controls="filter-results-container-id"
+                    required
+                >
+                <button
+                    class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                    type="button"
+                    aria-label="Clear filter"
+                >
+                    <svg
+                        aria-hidden="true"
+                        class="icon icon--16"
+                        width="16"
+                        height="16"
+                    >
+                        <use href="#icon-clear-16"/>
+                    </svg>
+                </button>
+            </span>
+        </span>
+    </demo>
+
+    <highlight-code type="html">
+        <span class="filter-input" role="search" aria-label="Filter list">
+            <span class="textbox textbox--fluid">
+                <svg
+                    class="icon icon--16"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-search-16"/>
+                </svg>
+                <input
+                    class="textbox__control"
+                    placeholder="Filter list"
+                    type="search"
+                    aria-label="Filter list"
+                    aria-controls="filter-results-container-id"
+                    required
+                >
+                <button
+                    class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                    type="button"
+                    aria-label="Clear filter"
+                >
+                    <svg
+                        aria-hidden="true"
+                        class="icon icon--16"
+                        width="16"
+                        height="16"
+                    >
+                        <use href="#icon-clear-16"/>
+                    </svg>
+                </button>
+            </span>
+        </span>
+    </highlight-code>
+
+    <h2>Filter Input Size Variations</h2>
+    <p>
+        The Filter Input component can be used in different sizes. The default size is medium. The small size can be implemented by adding the modifier,${" "}
+        <highlight>filter-input--small</highlight>
+         and is used when the Filter Input is used in a smaller context.
+    </p>
+    <p>
+        The larger size can be implemented by adding the modifier,
+        <highlight>filter-input--large</highlight>
+        ${" "}. The large size is used when the Filter Input is used in a larger context, such as potentially a full-page implementation.
+    </p>
+
+    <demo>
+        <p>
+            <span
+                class="filter-input filter-input--small"
+                role="search"
+                aria-label="Filter list"
+            >
+                <span class="textbox textbox--fluid">
+                    <svg
+                        class="icon icon--16"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-search-16"/>
+                    </svg>
+                    <input
+                        class="textbox__control"
+                        placeholder="Filter list"
+                        type="search"
+                        aria-controls="filter-results-container-id"
+                        aria-label="Filter list"
+                        required
+                    >
+                    <button
+                        class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                        type="button"
+                        aria-label="Clear filter"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--16"
+                            width="16"
+                            height="16"
+                        >
+                            <use href="#icon-clear-16"/>
+                        </svg>
+                    </button>
+                </span>
+            </span>
+        </p>
+        <p>
+            <span
+                class="filter-input filter-input--large"
+                role="search"
+                aria-label="Filter list"
+            >
+                <span class="textbox textbox--fluid">
+                    <svg
+                        class="icon icon--16"
+                        width="16"
+                        height="16"
+                        aria-hidden="true"
+                    >
+                        <use href="#icon-search-16"/>
+                    </svg>
+                    <input
+                        class="textbox__control"
+                        placeholder="Filter list"
+                        type="search"
+                        aria-controls="filter-results-container-id"
+                        aria-label="Filter list"
+                        required
+                    >
+                    <button
+                        class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                        type="button"
+                        aria-label="Clear filter"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--16"
+                            width="16"
+                            height="16"
+                        >
+                            <use href="#icon-clear-16"/>
+                        </svg>
+                    </button>
+                </span>
+            </span>
+        </p>
+    </demo>
+
+    <highlight-code type="html">
+        <span
+            class="filter-input filter-input--small"
+            role="search"
+            aria-label="Filter list"
+        >
+            <span class="textbox textbox--fluid">
+                <svg
+                    class="icon icon--16"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-search-16"/>
+                </svg>
+                <input
+                    class="textbox__control"
+                    placeholder="Filter list"
+                    type="search"
+                    aria-controls="filter-results-container-id"
+                    aria-label="Filter list"
+                    required
+                >
+                <button
+                    class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                    type="button"
+                    aria-label="Clear filter"
+                >
+                    <svg
+                        aria-hidden="true"
+                        class="icon icon--16"
+                        width="16"
+                        height="16"
+                    >
+                        <use href="#icon-clear-16"/>
+                    </svg>
+                </button>
+            </span>
+        </span>
+
+        <span
+            class="filter-input filter-input--large"
+            role="search"
+            aria-label="Filter list"
+        >
+            <span class="textbox textbox--fluid">
+                <svg
+                    class="icon icon--16"
+                    width="16"
+                    height="16"
+                    aria-hidden="true"
+                >
+                    <use href="#icon-search-16"/>
+                </svg>
+                <input
+                    class="textbox__control"
+                    placeholder="Filter list"
+                    type="search"
+                    aria-controls="filter-results-container-id"
+                    aria-label="Filter list"
+                    required
+                >
+                <button
+                    class="icon-btn icon-btn--transparent icon-btn--small filter-input__clear-btn"
+                    type="button"
+                    aria-label="Clear filter"
+                >
+                    <svg
+                        aria-hidden="true"
+                        class="icon icon--16"
+                        width="16"
+                        height="16"
+                    >
+                        <use href="#icon-clear-16"/>
+                    </svg>
+                </button>
+            </span>
+        </span>
+    </highlight-code>
+</div>
+export const metadata = {
+    component: "filter-input",
+    "ds-component": {
+        name: "search-field",
+        version: 2,
+    },
+    submodules: ["textbox"],
+};
+
+<script>
+    document.querySelectorAll(".filter-input").forEach(function (compEl) {
+        const compInputEl = compEl.querySelector(".textbox__control");
+        const compClearBtnEl = compEl.querySelector(".filter-input__clear-btn");
+        const inputFilledClass = "filter-input--is-filled";
+
+        compClearBtnEl.addEventListener("click", function () {
+            compInputEl.value = "";
+            compEl.classList.remove(inputFilledClass);
+        });
+    });
+</script>

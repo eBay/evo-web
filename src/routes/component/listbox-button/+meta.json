@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Listbox Button CSS Component",
-    "pageDescription": "A Listbox Button CSS Component is a responsive and accessible button with a listbox that can be triggered."
+    "pageTitle": "Listbox Button Component",
+    "pageDescription": "The Listbox Button component combines a button trigger with a dropdown listbox for selection. Designed for space efficiency and accessibility, it provides intuitive single or multi-select capabilities. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/select-400.png"
 }

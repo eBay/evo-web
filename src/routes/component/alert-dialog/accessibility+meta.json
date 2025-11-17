@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Alert Dialog Accessibility Guidelines — Building Inclusive Modal Alerts",
+    "pageDescription": "Learn how to make alert dialog components fully accessible with proper ARIA alertdialog roles, focus management, and keyboard controls. Follow these WCAG-aligned guidelines to ensure your modal alerts effectively communicate critical information to all users.",
+    "pageImg": "/static/img/components/dialog-400.png"
+}

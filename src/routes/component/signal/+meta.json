@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Signal CSS Component",
-    "pageDescription": "A Signal CSS Component is a responsive and accessible signal that is used to display signals.",
-    "pageImg": "/src/routes/static/img/components/signal-400.png"
+    "pageTitle": "Signal Component",
+    "pageDescription": "The Signal component displays status indicators with visual and semantic clarity. Perfect for connection status, signal strength, and state representation, it provides accessible visual feedback. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/icon-400.png"
 }

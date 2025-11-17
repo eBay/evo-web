@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Floating Label CSS Component",
-    "pageDescription": "A Floating Label CSS Component is a responsive and accessible floating label that is used to display floating labels."
+    "pageTitle": "Floating Label Component",
+    "pageDescription": "The Floating Label component provides animated labels that move when input fields receive focus or contain values. Built with smooth transitions and accessibility support, it creates elegant form experiences. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/textbox-400.png"
 }

@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Skeleton Accessibility Guidelines — Creating Inclusive Loading Placeholders",
+    "pageDescription": "Learn how to make skeleton components fully accessible with proper ARIA busy states, loading announcements, and reduced motion support. Follow these WCAG-aligned guidelines to ensure content placeholders work for all users.",
+    "pageImg": "/static/img/components/skeleton-400.png"
+}

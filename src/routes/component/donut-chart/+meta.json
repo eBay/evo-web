@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Donut Chart CSS Component",
-    "pageDescription": "A Donut Chart CSS Component is a responsive and accessible donut chart that is used to display data in a circular format."
+    "pageTitle": "Donut Chart Component",
+    "pageDescription": "The Donut Chart component visualizes proportional data in an accessible circular format. Built with semantic HTML and ARIA labels, it ensures data visualization is understandable for all users including those using assistive technologies. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/data-visualization-400.png"
 }

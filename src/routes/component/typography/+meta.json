@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Typography CSS Component",
-    "pageDescription": "A Typography CSS Component is a responsive and accessible typography that is used to display typography."
+    "pageTitle": "Typography Component",
+    "pageDescription": "The Typography component establishes consistent text styling with semantic HTML and responsive scaling. Built with accessibility and readability in mind, it provides comprehensive type systems for all content. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/typography-400.png"
 }

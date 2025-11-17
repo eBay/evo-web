@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Toggle Button Group CSS Component",
-    "pageDescription": "A Toggle Button Group CSS Component is a responsive and accessible toggle button group that is used to display a group of buttons that can be toggled off or on.",
-    "pageImg": "/src/routes/static/img/components/toggle-button-group-400.png"
+    "pageTitle": "Toggle Button Group Component",
+    "pageDescription": "The Toggle Button Group component organizes multiple toggle buttons for related options. Built with keyboard navigation and accessible selection states, it enables efficient multi-option controls. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/button-400.png"
 }

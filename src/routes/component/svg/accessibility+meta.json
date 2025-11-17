@@ -1,0 +1,5 @@
+{
+    "pageTitle": "SVG Accessibility Guidelines — Making Vector Graphics Inclusive",
+    "pageDescription": "Learn how to make SVG components fully accessible with proper title elements, ARIA roles, and text alternatives. Follow these WCAG-aligned guidelines to ensure scalable vector graphics are accessible to all users, including those using assistive technologies.",
+    "pageImg": "/static/img/components/icon-400.png"
+}

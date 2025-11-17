@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Tourtip CSS Component",
-    "pageDescription": "A Tourtip CSS Component is a responsive and accessible tourtip that is used to display tourtips.",
-    "pageImg": "/src/routes/static/img/components/tourtip-400.png"
+    "pageTitle": "Tourtip Component",
+    "pageDescription": "The Tourtip component guides users through features with sequential, dismissible tooltips. Built with accessibility and user control, it provides effective onboarding and feature discovery. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/tooltip-400.png"
 }

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Badge CSS Component",
-    "pageDescription": "A Badge CSS Component is a responsive and accessible badge that is used to alert the user of a message. Perfect for informing the user of important information in a compact and user-friendly manner for your user interfaces.",
+    "pageTitle": "Badge Component",
+    "pageDescription": "The Badge component is a visual indicator for displaying notifications, counts, and status updates. Designed to catch user attention while maintaining accessibility, it adapts seamlessly across all devices. Available in Evo Web's CSS, React, and Marko implementations.",
     "pageImg": "/src/routes/static/img/components/badge-400.png"
 }

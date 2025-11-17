@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Market Sans CSS Component",
-    "pageDescription": "A Market Sans CSS Component is a responsive and accessible market sans that is used to display market sans text."
+    "pageTitle": "Market Sans Component",
+    "pageDescription": "The Market Sans component provides typography styles using the Market Sans font family. Optimized for readability and brand consistency, it ensures proper font loading and fallbacks. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/typography-400.png"
 }

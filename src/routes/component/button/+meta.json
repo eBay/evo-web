@@ -1,5 +1,5 @@
 {
     "pageTitle": "Button Component",
-    "pageDescription": "A Button Component is a responsive and accessible used to trigger some interaction.",
-    "pageImg": "/src/routes/static/img/components/button-overview-400.png"
+    "pageDescription": "The Button component is a versatile interactive element supporting multiple variants, sizes, and states. Built with accessibility at its core, it provides consistent behavior and appearance across all platforms with full keyboard and screen reader support. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/button-400.png"
 }

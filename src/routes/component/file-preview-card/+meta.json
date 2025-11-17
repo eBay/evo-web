@@ -1,5 +1,5 @@
 {
-    "pageTitle": "File Preview Card CSS Component",
-    "pageDescription": "A File Preview Card CSS Component is a responsive and accessible file preview card that is used to display file information.",
-    "pageImg": "/src/routes/static/img/components/media-container-400.png"
+    "pageTitle": "File Preview Card Component",
+    "pageDescription": "The File Preview Card component displays uploaded files with thumbnails, metadata, and action controls. Built with accessibility features, it provides clear file information and management options for users. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/card-400.png"
 }

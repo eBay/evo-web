@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Notice CSS Component",
-    "pageDescription": "A Notice CSS Component is a responsive and accessible notice that is used to display notices.",
-    "pageImg": "/src/routes/static/img/components/section-notice-400.png"
+    "pageTitle": "Section Notice Component",
+    "pageDescription": "The Section Notice component highlights important information within content sections. Built with clear visual hierarchy and accessibility features, it draws attention to critical messages without disrupting flow. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/notice-400.png"
 }

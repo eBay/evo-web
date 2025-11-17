@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Education Notice CSS Component",
-    "pageDescription": "An Education Notice CSS Component is a responsive and accessible education notice that is used to display educational information.",
-    "pageImg": "/src/routes/static/img/components/education-notice-400.png"
+    "pageTitle": "Education Notice Component",
+    "pageDescription": "The Education Notice component highlights educational content and tips with distinctive styling. Designed to inform and guide users, it provides clear, accessible messaging for learning opportunities and helpful information. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/notice-400.png"
 }

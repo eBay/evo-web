@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Textbox CSS Component",
-    "pageDescription": "A Textbox CSS Component is a responsive and accessible textbox that is used to perform text entry.",
-    "pageImg": "/src/routes/static/img/components/text-field-400.png"
+    "pageTitle": "Textbox Component",
+    "pageDescription": "The Textbox component provides text input with various states, validation, and accessibility features. Supporting multiple input types and formats, it ensures proper form interactions across all devices. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/textbox-400.png"
 }

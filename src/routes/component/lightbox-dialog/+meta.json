@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Lightbox Dialog CSS Component",
-    "pageDescription": "A Lightbox Dialog CSS Component is a responsive and accessible lightbox dialog that is used to display lightbox dialogs.",
+    "pageTitle": "Lightbox Dialog Component",
+    "pageDescription": "The Lightbox Dialog component displays images and content in a modal overlay with zoom and navigation capabilities. Built with keyboard controls and screen reader support, it provides accessible media viewing experiences. Available in Evo Web's CSS, React, and Marko implementations.",
     "pageImg": "/src/routes/static/img/components/dialog-400.png"
 }

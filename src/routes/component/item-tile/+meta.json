@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Item Tile CSS Component",
-    "pageDescription": "The Item Tile CSS Component is a responsive and accessible vertical tile that is used to display a grouped set of information.",
-    "pageImg": "/src/routes/static/img/components/item-tile-400.png"
+    "pageTitle": "Item Tile Component",
+    "pageDescription": "The Item Tile component presents products or content in a compact, scannable card format. Built for e-commerce and content discovery, it provides responsive layouts with accessible interactions. Available in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/card-400.png"
 }

@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Lightbox Dialog Accessibility Guidelines — Building Inclusive Image Modals",
+    "pageDescription": "Learn how to make lightbox dialog components fully accessible with proper focus trapping, keyboard navigation, and ARIA dialog roles. Follow these WCAG-aligned guidelines to ensure image overlays work for all users with assistive technologies.",
+    "pageImg": "/static/img/components/dialog-400.png"
+}

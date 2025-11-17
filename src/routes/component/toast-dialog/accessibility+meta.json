@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Toast Dialog Accessibility Guidelines — Creating Inclusive Temporary Notifications",
+    "pageDescription": "Learn how to make toast dialog components fully accessible with proper ARIA alert roles, timing controls, and dismissal actions. Follow these WCAG-aligned guidelines to ensure temporary notifications reach all users effectively.",
+    "pageImg": "/static/img/components/dialog-400.png"
+}

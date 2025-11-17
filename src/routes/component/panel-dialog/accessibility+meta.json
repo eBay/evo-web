@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Panel Dialog Accessibility Guidelines — Creating Inclusive Side Panels",
+    "pageDescription": "Learn how to make panel dialog components fully accessible with proper ARIA dialog roles, focus management, and keyboard controls. Follow these WCAG-aligned guidelines to ensure slide-in panels work for all users with assistive technologies.",
+    "pageImg": "/static/img/components/dialog-400.png"
+}
