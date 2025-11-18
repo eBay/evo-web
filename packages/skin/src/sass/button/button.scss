@@ -13,7 +13,7 @@ a.fake-btn {
     );
     color: inherit;
     display: inline-block;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: button-mixins.$button-height-regular;
     min-width: 88px;
     padding: button-mixins.$button-padding-vertical
@@ -26,7 +26,7 @@ button.btn[disabled],
 button.btn[aria-disabled="true"] {
     @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
     @include token-mixins.color-token(
         expand-btn-disabled-foreground-color,
@@ -122,7 +122,7 @@ a.fake-btn__cell--fixed-height svg.icon {
 button.btn--primary,
 a.fake-btn--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-on-accent);
     font-weight: bold;
 
@@ -144,7 +144,7 @@ a.fake-btn--primary:hover {
 button.btn--primary.btn--destructive,
 a.fake-btn--primary.fake-btn--destructive {
     background-color: var(--color-background-attention);
-    border-color: var(--color-stroke-attention);
+    border-color: var(--color-border-attention);
     color: var(--color-foreground-on-attention);
     font-weight: bold;
 
@@ -154,7 +154,7 @@ a.fake-btn--primary.fake-btn--destructive {
 button.btn--primary.btn--destructive[disabled],
 button.btn--primary.btn--destructive[aria-disabled="true"] {
     background-color: var(--color-background-disabled);
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button.btn .progress-spinner {
@@ -237,7 +237,7 @@ a.fake-btn--primary[aria-disabled="true"] {
 button.btn--secondary,
 a.fake-btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-accent);
 
     @include button-mixins.animations;
@@ -260,7 +260,7 @@ a.fake-btn--secondary.fake-btn--destructive {
     );
     @include token-mixins.border-color-token(
         btn-secondary-destructive-border-color,
-        color-stroke-attention
+        color-border-attention
     );
     @include token-mixins.color-token(
         btn-secondary-destructive-foreground-color,
@@ -281,7 +281,7 @@ button.btn--secondary[aria-disabled="true"] {
     );
     @include token-mixins.border-color-token(
         btn-secondary-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
     @include token-mixins.color-token(
         btn-secondary-disabled-foreground-color,
@@ -312,7 +312,7 @@ button.btn--tertiary,
 a.fake-btn--tertiary {
     @include token-mixins.border-color-token(
         btn-tertiary-border-color,
-        color-stroke-default
+        color-border-medium
     );
 
     @include button-mixins.animations;
@@ -331,7 +331,7 @@ a.fake-btn--tertiary[aria-disabled="true"] {
     );
     @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
 }
 
@@ -339,7 +339,7 @@ button.btn--tertiary.btn--destructive,
 a.fake-btn--tertiary.fake-btn--destructive {
     @include token-mixins.border-color-token(
         btn-tertiary-destructive-foreground-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 }
 
@@ -367,7 +367,7 @@ a.fake-btn--small {
         --btn-border-radius,
         calc(button-mixins.$button-height-small / 2)
     );
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     min-height: button-mixins.$button-height-small;
     padding: button-mixins.$button-padding-vertical-small
         button-mixins.$button-padding-horizontal-small;
@@ -517,22 +517,22 @@ button.btn--floating-label .btn__floating-label--inline {
     a.fake-btn.fake-btn--primary.fake-btn--split-end {
         @include token-mixins.border-left-color-token(
             btn-primary-border-color,
-            color-stroke-accent
+            color-border-accent
         );
         @include token-mixins.border-right-color-token(
             primary-border-split-color,
-            color-stroke-subtle
+            color-border-subtle
         );
 
         &:hover,
         &:focus {
             @include token-mixins.border-left-color-token(
                 btn-primary-border-color,
-                color-stroke-accent
+                color-border-accent
             );
             @include token-mixins.border-right-color-token(
                 primary-border-split-color,
-                color-stroke-subtle
+                color-border-subtle
             );
         }
     }

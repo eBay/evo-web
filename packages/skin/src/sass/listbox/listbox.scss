@@ -1,6 +1,7 @@
 @use "../variables/variables";
 @use "../mixins/private/dropdown-mixins";
 @use "../mixins/private/listbox-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/private/token-mixins";
 @use "../mixins/public/utility-mixins";
 
@@ -68,7 +69,8 @@ div.listbox__option svg.icon {
 
 div.listbox__options[role="listbox"]:focus
     .listbox__option--active[role="option"] {
-    background-color: var(--color-state-primary-hover);
+    @include state-layer.base;
+    @include state-layer.selector-hover;
 }
 
 div.listbox__option[aria-selected="true"] svg.icon {

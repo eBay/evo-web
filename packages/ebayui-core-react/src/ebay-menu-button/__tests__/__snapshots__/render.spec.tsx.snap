@@ -91,6 +91,136 @@ exports[`EbayMenuButton rendering Variants should render correctly 3`] = `
 </svg>
 `;
 
+exports[`EbayMenuButton rendering WithDisabledItem should render correctly 1`] = `
+<DocumentFragment>
+  <span
+    class="menu-button"
+  >
+    <button
+      aria-controls="1234"
+      aria-expanded="true"
+      aria-haspopup="true"
+      class="btn menu-button__button btn--secondary"
+    >
+      <span>
+        eBay Menu
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-chevron-down-12"
+        />
+      </svg>
+    </button>
+    <div
+      class="menu-button__menu"
+      id="1234"
+      style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);"
+      tabindex="-1"
+    >
+      <div
+        class="menu-button__items"
+        role="menu"
+      >
+        <div
+          aria-checked="false"
+          class="menu-button__item menu-button__item"
+          role="menuitemradio"
+          tabindex="0"
+        >
+          <span
+            aria-hidden="false"
+          >
+            item 1 that has very long text
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-tick-16"
+            />
+          </svg>
+        </div>
+        <div
+          aria-checked="false"
+          class="menu-button__item menu-button__item"
+          role="menuitemradio"
+          tabindex="-1"
+        >
+          <span
+            aria-hidden="false"
+          >
+            item 2
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-tick-16"
+            />
+          </svg>
+        </div>
+        <div
+          aria-checked="false"
+          class="menu-button__item menu-button__item"
+          role="menuitemradio"
+          tabindex="-1"
+        >
+          <span
+            aria-hidden="false"
+          >
+            item 3
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-tick-16"
+            />
+          </svg>
+        </div>
+        <div
+          aria-checked="false"
+          aria-disabled="true"
+          class="menu-button__item menu-button__item"
+          role="menuitemradio"
+          tabindex="-1"
+        >
+          <span
+            aria-hidden="false"
+          >
+            item 4
+          </span>
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-tick-16"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
 exports[`EbayMenuButton rendering WithIcon should render correctly 1`] = `
 <svg
   aria-hidden="true"

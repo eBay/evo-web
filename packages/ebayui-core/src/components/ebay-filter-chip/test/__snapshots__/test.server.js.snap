@@ -4,6 +4,7 @@ exports[`ebay-filter-chip > renders as link 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<a[39m
     [33mclass[39m=[32m"filter-chip"[39m
+    [33mhref[39m=[32m"www.ebay.com"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -39,6 +40,7 @@ exports[`ebay-filter-chip > renders as link selected 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<a[39m
     [33mclass[39m=[32m"filter-chip filter-chip--expressive filter-chip--selected"[39m
+    [33mhref[39m=[32m"www.ebay.com"[39m
   [36m>[39m
     [36m<span[39m
       [33mclass[39m=[32m"filter-chip__media"[39m

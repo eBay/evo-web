@@ -9,6 +9,7 @@ import {
     EbayItemTileDescription,
 } from "..";
 import { EbaySignal } from "../../ebay-signal";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 const meta: Meta<typeof EbayItemTile> = {
     title: "layout/ebay-item-tile",
@@ -58,7 +59,7 @@ export const Default: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayItemTileAction aria-label="action label" icon="heart16" />
+        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
         <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSupertitle>
@@ -103,7 +104,7 @@ export const WithoutSecondarySection: StoryFn<typeof EbayItemTile> = (args) => (
         }}
         {...args}
     >
-        <EbayItemTileAction aria-label="action label" icon="heart16" />
+        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
         <EbayItemTileSupertitle>
             <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
         </EbayItemTileSupertitle>

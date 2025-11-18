@@ -12,7 +12,7 @@ import withCustomCTADismissCode from "./examples/with-custom-cta-dismiss.marko?r
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 
@@ -136,7 +136,7 @@ Basic.parameters = {
     },
 };
 
-export const WithAction: Story<Input> = (args) => ({
+export const WithAction: Story<Input> = (args: Input) => ({
     input: args,
     component: withAction,
 });
@@ -156,7 +156,7 @@ WithAction.parameters = {
     },
 };
 
-export const WithDismiss: Story<Input> = (args) => ({
+export const WithDismiss: Story<Input> = (args: Input) => ({
     input: args,
     component: withDismiss,
 });
@@ -177,7 +177,7 @@ WithDismiss.parameters = {
     },
 };
 
-export const WithCustomCTADismiss: Story<Input> = (args) => ({
+export const WithCustomCTADismiss: Story<Input> = (args: Input) => ({
     input: args,
     component: withCustomCTADismiss,
 });

@@ -18,6 +18,7 @@ import { DayISO, dateArgToISO, toISO } from "../ebay-calendar/date-utils";
 import { EbayChangeEventHandler, EbayFocusEventHandler, EbayMouseEventHandler } from "../common/event-utils/types";
 import { isControlled } from "../ebay-textbox/textbox";
 import { useFloatingDropdown } from "../common/dropdown";
+import { EbayIconCalendar24 } from "../ebay-icon/icons/ebay-icon-calendar-24";
 
 type EventData = {
     selected?: string;
@@ -223,7 +224,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
                     onInputChange: (event) => handleInternalChange(event, range ? 1 : 0),
                     onBlur: (event) => handleInputChange(event, range ? 1 : 0),
                 },
-                <EbayTextboxPostfixIcon name="calendar24" buttonAriaLabel={a11yOpenPopoverText} />,
+                <EbayTextboxPostfixIcon icon={<EbayIconCalendar24 />} buttonAriaLabel={a11yOpenPopoverText} />,
             )}
 
             <div hidden={!isPopoverOpen} ref={refs.setOverlay} style={overlayStyles} className="date-textbox__popover">

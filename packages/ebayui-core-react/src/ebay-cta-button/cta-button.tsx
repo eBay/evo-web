@@ -1,8 +1,8 @@
 import React, { ComponentProps, FC, RefObject } from "react";
 import classnames from "classnames";
 import { withForwardRef } from "../common/component-utils/forwardRef";
-import { EbayIcon } from "../ebay-icon";
 import { EbayButtonCell, Size } from "../ebay-button";
+import { EbayIconArrowRight24 } from "../ebay-icon/icons/ebay-icon-arrow-right-24";
 
 type HTMLAnchorProps = ComponentProps<"a">;
 type Props = HTMLAnchorProps & {
@@ -33,7 +33,7 @@ const EbayCtaButton: FC<Props> = ({
         <a {...rest} className={className} ref={forwardedRef}>
             <EbayButtonCell type="cta">
                 <span>{children}</span>
-                <EbayIcon name="arrowRight24" />
+                <EbayIconArrowRight24 />
             </EbayButtonCell>
         </a>
     );

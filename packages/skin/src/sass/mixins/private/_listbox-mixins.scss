@@ -1,19 +1,16 @@
 @use "./token-mixins";
 @use "./selection-list-mixins";
+@use "./state-layer";
 
 @mixin base() {
     border-color: var(--color-background-primary);
     color: var(--color-foreground-primary);
 
     @include selection-list-mixins.base;
+    @include state-layer.standard;
 
     &[hidden] {
         display: none; /* https://css-tricks.com/the-hidden-attribute-is-visibly-weak/ */
-    }
-
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-        color: var(--color-foreground-primary);
     }
 
     &:active {

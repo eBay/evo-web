@@ -8,12 +8,10 @@ svg.star-rating {
     vertical-align: middle;
     width: 84px;
 }
-
 svg.star-rating__icon {
     height: 16px;
     width: 16px;
 }
-
 div.star-rating[data-stars^="1"] svg:nth-child(-n + 1),
 div.star-rating[data-stars^="2"] svg:nth-child(-n + 2),
 div.star-rating[data-stars^="3"] svg:nth-child(-n + 3),

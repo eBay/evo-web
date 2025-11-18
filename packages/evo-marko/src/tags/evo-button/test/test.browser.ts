@@ -1,7 +1,7 @@
 import { composeStories } from "@storybook/marko";
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest";
 import { render, fireEvent, cleanup } from "@marko/testing-library";
-import { userEvent, type UserEvent } from "@vitest/browser/context";
+import { userEvent, type UserEvent } from "@vitest/browser";
 import * as stories from "../button.stories";
 const { Default } = composeStories(stories);
 

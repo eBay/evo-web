@@ -3,7 +3,7 @@ import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: (args.renderBody

@@ -1,7 +1,8 @@
 import React from "react";
 import { action } from "storybook/actions";
 import { Meta } from "@storybook/react-vite";
-import { EbayIcon } from "../../ebay-icon";
+import { EbayIconConfirmation16 } from "../../ebay-icon/icons/ebay-icon-confirmation-16";
+import { EbayIconAttention16 } from "../../ebay-icon/icons/ebay-icon-attention-16";
 import { EbayTab, EbayTabPanel, EbayTabs } from "../../ebay-tabs";
 import { EbayMenu, EbayMenuItem as Item, EbayMenuSeparator as Separator } from "../index";
 
@@ -131,13 +132,13 @@ export const WithIcons = () => (
     <>
         <EbayMenu>
             <Item>
-                <EbayIcon name="confirmation16" style={{ marginRight: "8px" }} /> Confirmed
+                <EbayIconConfirmation16 style={{ marginRight: "8px" }} /> Confirmed
             </Item>
             <Item value="item 2">
-                <EbayIcon name="attention16" style={{ marginRight: "8px" }} /> Not yet confirmed
+                <EbayIconAttention16 style={{ marginRight: "8px" }} /> Not yet confirmed
             </Item>
             <Item value="item 3">
-                <EbayIcon name="attention16" style={{ marginRight: "8px" }} /> Not yet confirmed
+                <EbayIconAttention16 style={{ marginRight: "8px" }} /> Not yet confirmed
             </Item>
         </EbayMenu>
     </>

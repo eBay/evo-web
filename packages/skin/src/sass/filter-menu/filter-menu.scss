@@ -95,7 +95,7 @@ span.filter-menu-form__item {
     border: none;
     color: var(--color-foreground-primary);
     flex-grow: 1;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
 }
 
 .filter-menu__header button.btn {
@@ -119,13 +119,9 @@ button.filter-menu-form__footer[type="submit"] {
     padding: 16px;
     @include token-mixins.border-color-token(
         filter-menu-border-color,
-        color-stroke-subtle
+        color-border-subtle
     );
     @include filter-menu-mixins.base;
-
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
 }
 
 .filter-menu__text,

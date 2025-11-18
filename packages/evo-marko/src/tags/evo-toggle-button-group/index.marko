@@ -24,7 +24,6 @@ export interface Input<
     columnsXL?: number;
     layoutType?: ToggleButtonInput["layoutType"];
 };
-
 <const/{
     class: inputClass,
     layoutType: baseLayoutType,
@@ -53,9 +52,11 @@ export interface Input<
         <for|button, i| of=buttons>
             <const/{
                 layoutType = baseLayoutType,
-                name = i,
+                name: buttonName,
                 ...toggleButtonInput
             }=button>
+            // TODO remove this and change name = i in destructure above once Marko gets their act together
+            <const/name = buttonName || i>
             <li>
                 <evo-toggle-button
                     layoutType=layoutType

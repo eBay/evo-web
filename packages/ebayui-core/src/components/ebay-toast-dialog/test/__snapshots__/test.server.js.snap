@@ -4,7 +4,7 @@ exports[`toast-dialog > passes through additional html attributes 1`] = `
 <aside
   aria-labelledby="s0-0-dialog-title"
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="toast-dialog class1 toast-dialog--transition"
   data-passed-through="true"
   data-testid="AttributePassthrough"
@@ -66,7 +66,7 @@ exports[`toast-dialog > passes through additional html attributes 2`] = `
 <aside
   aria-labelledby="s0-0-dialog-title"
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="toast-dialog class1 toast-dialog--transition"
   data-passed-through="true"
   data-testid="AttributePassthrough"
@@ -128,7 +128,7 @@ exports[`toast-dialog > renders basic version 1`] = `
 <aside
   aria-labelledby="s0-0-dialog-title"
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="toast-dialog toast-dialog--transition"
   hidden=""
   role="dialog"
@@ -291,7 +291,7 @@ exports[`toast-dialog > renders in open state 1`] = `
 <aside
   aria-labelledby="s0-0-dialog-title"
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="toast-dialog toast-dialog--transition"
   role="dialog"
 >

@@ -33,7 +33,6 @@
     position: relative;
     width: 100%;
 }
-
 .page-grid {
     column-gap: var(--page-grid-column-gaps);
     grid-template-columns: repeat(

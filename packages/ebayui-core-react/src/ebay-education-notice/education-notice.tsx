@@ -1,4 +1,4 @@
-import React, { ComponentProps, FC, useState } from "react";
+import React, { ComponentProps, FC, ReactElement, useState } from "react";
 import cx from "classnames";
 import { EbayNoticeContent } from "../ebay-notice-base/components/ebay-notice-content";
 import NoticeContent from "../common/notice-utils/notice-content";
@@ -9,13 +9,15 @@ import { EbayIconButton } from "../ebay-icon-button";
 import { EducationDismissHandler } from "./types";
 
 import { EbayEducationNoticeTitle, EbayEducationNoticeFooter } from "./index";
+import { EbayIconClose16 } from "../ebay-icon/icons/ebay-icon-close-16";
+import { EbayIconLightbulb24 } from "../ebay-icon/icons/ebay-icon-lightbulb-24";
 
 export type Props = ComponentProps<"section"> & {
     a11yIconText?: string;
     a11yDismissText?: string;
     onDismiss?: EducationDismissHandler;
     dismissed?: boolean;
-    educationIcon?: Icon;
+    educationIcon?: Icon | ReactElement;
     iconClass?: string;
     variant?: "prominent" | "none";
     iconVariant?: "prominent" | "none";
@@ -28,7 +30,9 @@ const EbayEducationNotice: FC<Props> = ({
     variant = "none",
     iconVariant = "none",
     a11yDismissText,
-    educationIcon = "lightbulb24",
+    educationIcon = (
+        <EbayIconLightbulb24 prominent={iconVariant === "prominent"} a11yText={a11yIconText} a11yVariant="label" />
+    ),
     iconClass,
     dismissed = false,
     onDismiss = () => {},
@@ -63,14 +67,17 @@ const EbayEducationNotice: FC<Props> = ({
             })}
         >
             <div className="education-notice__header">
-                <EbayIcon
-                    name={educationIcon}
-                    className={cx(iconClass, {
-                        "icon--prominent": isIconProminent,
-                    })}
-                    a11yText={a11yIconText}
-                    a11yVariant="label"
-                />
+                {typeof educationIcon === "string" ? (
+                    <EbayIcon
+                        name={educationIcon}
+                        className={iconClass}
+                        prominent={isIconProminent}
+                        a11yText={a11yIconText}
+                        a11yVariant="label"
+                    />
+                ) : (
+                    educationIcon
+                )}
 
                 {titleComponent}
                 {a11yDismissText && (
@@ -79,7 +86,7 @@ const EbayEducationNotice: FC<Props> = ({
                         size="small"
                         className="education-notice__dismiss"
                         onClick={handleDismissed}
-                        icon="close16"
+                        icon={<EbayIconClose16 />}
                     />
                 )}
             </div>

@@ -8,15 +8,22 @@ import { EbayIconButton } from "../ebay-icon-button";
 const EbayTextboxPostfixIcon: FC<EbayTextboxIconProps> = ({
     children,
     name,
+    icon,
     buttonAriaLabel,
     onClick = () => {},
     ...rest
 }: EbayTextboxIconProps) => {
-    if (name) {
+    if (name || icon) {
         return buttonAriaLabel ? (
-            <EbayIconButton aria-label={buttonAriaLabel} icon={name} transparent onClick={onClick} {...(rest as any)} />
+            <EbayIconButton
+                aria-label={buttonAriaLabel}
+                icon={icon || name}
+                transparent
+                onClick={onClick}
+                {...(rest as any)}
+            />
         ) : (
-            <EbayIcon name={name} {...(rest as any)} />
+            icon || <EbayIcon name={name} {...(rest as any)} />
         );
     }
 

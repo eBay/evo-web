@@ -17,7 +17,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
   ">
     <li style="
       animation-duration: 0ms;
-      border-bottom: 1px solid var(--color-stroke-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
       transition-delay: 0ms;
       transition-duration: 0ms
     ">
@@ -57,19 +57,35 @@ exports[`accordion > given the accordion in the default state > then it matches 
               );
           display: flex;
           font-size: var(--font-size-medium);
-          font-weight: var(--font-weight-bold);
+          font-weight: var(--font-weight-600);
           justify-content: space-between;
           list-style-position: inside;
           list-style-type: none;
           min-height: 48px;
+          overflow-x: hidden;
+          overflow-y: hidden;
           padding-bottom: 12px;
           padding-left: 16px;
           padding-right: 16px;
           padding-top: 12px;
+          position: relative;
           transition-delay: 0ms;
           transition-duration: 0ms
         ">
           <style>@scope{:scope{
+            &::after {
+              animation-duration: 0ms;
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              transition-delay: 0ms;
+              transition-duration: 0ms
+            }
             &::marker {font-size: 0px}
           }}</style>
           <span style="
@@ -162,7 +178,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
     </li>
     <li style="
       animation-duration: 0ms;
-      border-bottom: 1px solid var(--color-stroke-subtle);
+      border-bottom: 1px solid var(--color-border-subtle);
       transition-delay: 0ms;
       transition-duration: 0ms
     ">
@@ -202,19 +218,35 @@ exports[`accordion > given the accordion in the default state > then it matches 
               );
           display: flex;
           font-size: var(--font-size-medium);
-          font-weight: var(--font-weight-bold);
+          font-weight: var(--font-weight-600);
           justify-content: space-between;
           list-style-position: inside;
           list-style-type: none;
           min-height: 48px;
+          overflow-x: hidden;
+          overflow-y: hidden;
           padding-bottom: 12px;
           padding-left: 16px;
           padding-right: 16px;
           padding-top: 12px;
+          position: relative;
           transition-delay: 0ms;
           transition-duration: 0ms
         ">
           <style>@scope{:scope{
+            &::after {
+              animation-duration: 0ms;
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              transition-delay: 0ms;
+              transition-duration: 0ms
+            }
             &::marker {font-size: 0px}
           }}</style>
           <span style="
@@ -346,19 +378,35 @@ exports[`accordion > given the accordion in the default state > then it matches 
               );
           display: flex;
           font-size: var(--font-size-medium);
-          font-weight: var(--font-weight-bold);
+          font-weight: var(--font-weight-600);
           justify-content: space-between;
           list-style-position: inside;
           list-style-type: none;
           min-height: 48px;
+          overflow-x: hidden;
+          overflow-y: hidden;
           padding-bottom: 12px;
           padding-left: 16px;
           padding-right: 16px;
           padding-top: 12px;
+          position: relative;
           transition-delay: 0ms;
           transition-duration: 0ms
         ">
           <style>@scope{:scope{
+            &::after {
+              animation-duration: 0ms;
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px;
+              transition-delay: 0ms;
+              transition-duration: 0ms
+            }
             &::marker {font-size: 0px}
           }}</style>
           <span style="
@@ -483,15 +531,16 @@ exports[`accordion > given the accordion in the default state > when first secti
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -47,6 +50,7 @@
-         <summary style="
-           align-items: center;
-           animation-duration: 0ms;
-+           background-color: var(--color-state-secondary-hover);
-           box-sizing: border-box;
-           color: var(
-                   --details-summary-foreground-color,
-@@ -85,6 +89,7 @@
+@@ -72,7 +75,7 @@
+           <style>@scope{:scope{
+             &::after {
+               animation-duration: 0ms;
+-               background-color: var(--color-state-layer-neutral);
++               background-color: var(--color-state-layer-hover);
+               bottom: 0px;
+               content: "";
+               left: 0px;
+@@ -101,6 +104,7 @@
                animation-duration: 0ms;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -499,7 +548,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -96,8 +101,8 @@
+@@ -112,8 +116,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -514,14 +563,15 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from initial 1`] = `
-"@@ -47,6 +47,7 @@
-         <summary style="
-           align-items: center;
-           animation-duration: 0ms;
-+           background-color: var(--color-state-secondary-hover);
-           box-sizing: border-box;
-           color: var(
-                   --details-summary-foreground-color,
+"@@ -72,7 +72,7 @@
+           <style>@scope{:scope{
+             &::after {
+               animation-duration: 0ms;
+-               background-color: var(--color-state-layer-neutral);
++               background-color: var(--color-state-layer-hover);
+               bottom: 0px;
+               content: "";
+               left: 0px;
 "
 `;
 
@@ -555,15 +605,16 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -47,6 +50,7 @@
-         <summary style="
-           align-items: center;
-           animation-duration: 0ms;
-+           background-color: var(--color-state-secondary-hover);
-           box-sizing: border-box;
-           color: var(
-                   --details-summary-foreground-color,
-@@ -85,6 +89,7 @@
+@@ -72,7 +75,7 @@
+           <style>@scope{:scope{
+             &::after {
+               animation-duration: 0ms;
+-               background-color: var(--color-state-layer-neutral);
++               background-color: var(--color-state-layer-hover);
+               bottom: 0px;
+               content: "";
+               left: 0px;
+@@ -101,6 +104,7 @@
                animation-duration: 0ms;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -571,7 +622,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -96,8 +101,8 @@
+@@ -112,8 +116,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
@@ -586,15 +637,16 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -47,6 +47,7 @@
-         <summary style="
-           align-items: center;
-           animation-duration: 0ms;
-+           background-color: var(--color-state-secondary-hover);
-           box-sizing: border-box;
-           color: var(
-                   --details-summary-foreground-color,
-@@ -166,17 +167,20 @@
+"@@ -72,7 +72,7 @@
+           <style>@scope{:scope{
+             &::after {
+               animation-duration: 0ms;
+-               background-color: var(--color-state-layer-neutral);
++               background-color: var(--color-state-layer-hover);
+               bottom: 0px;
+               content: "";
+               left: 0px;
+@@ -182,17 +182,20 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
@@ -623,15 +675,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -192,6 +196,7 @@
-         <summary style="
-           align-items: center;
-           animation-duration: 0ms;
-+           background-color: var(--color-state-secondary-hover);
-           box-sizing: border-box;
-           color: var(
-                   --details-summary-foreground-color,
-@@ -230,6 +235,7 @@
+@@ -262,6 +265,7 @@
                animation-duration: 0ms;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -639,7 +683,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -241,8 +247,8 @@
+@@ -273,8 +277,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;

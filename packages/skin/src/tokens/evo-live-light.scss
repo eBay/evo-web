@@ -1,0 +1,6 @@
+@use "@ebay/design-tokens/dist/mixins/live-light" as tokens;
+@media (prefers-color-scheme: light) {
+    :root {
+        @include tokens.live-light;
+    }
+}

@@ -2,7 +2,10 @@ import React from "react";
 import { StoryFn, Meta } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EbayButton, EbayButtonCell } from "../index";
-import EbayIcon from "../../ebay-icon/icon";
+import { EbayIconMenu20 } from "../../ebay-icon/icons/ebay-icon-menu-20";
+import { EbayIconSettings16 } from "../../ebay-icon/icons/ebay-icon-settings-16";
+import { EbayIconDelete16 } from "../../ebay-icon/icons/ebay-icon-delete-16";
+import { EbayIconChevronDown12 } from "../../ebay-icon/icons/ebay-icon-chevron-down-12";
 
 const meta: Meta<typeof EbayButton> = {
     component: EbayButton,
@@ -17,8 +20,8 @@ export const Default: StoryFn<typeof EbayButton> = () => (
             <EbayButton
                 onClick={action("clicked")}
                 onEscape={action("escape pressed")}
-                onFocus={(e) => action("focus")(e)}
                 onBlur={action("blur")}
+                onFocus={(e) => action("focus")(e)}
                 onKeyDown={action("key down")}
             >
                 Hello, I am a button!
@@ -146,7 +149,7 @@ export const WithIcon: StoryFn<typeof EbayButton> = () => (
             Form button:
             <br />
             <EbayButton aria-label="Menu button">
-                <EbayIcon name="menu20" />
+                <EbayIconMenu20 />
                 <span>Button with icon</span>
             </EbayButton>
         </p>
@@ -154,7 +157,7 @@ export const WithIcon: StoryFn<typeof EbayButton> = () => (
             Form fake-button (link):
             <br />
             <EbayButton href="#" variant="form" aria-label="Settings link">
-                <EbayIcon name="settings16" />
+                <EbayIconSettings16 />
                 <span>Button with icon</span>
             </EbayButton>
         </p>
@@ -162,7 +165,7 @@ export const WithIcon: StoryFn<typeof EbayButton> = () => (
             Delete button:
             <br />
             <EbayButton variant="destructive" aria-label="Destructive button">
-                <EbayIcon name="delete16" />
+                <EbayIconDelete16 />
                 <span>Button with icon</span>
             </EbayButton>
         </p>
@@ -170,7 +173,7 @@ export const WithIcon: StoryFn<typeof EbayButton> = () => (
             Expand button:
             <br />
             <EbayButton bodyState="expand" aria-label="Destructive button">
-                <EbayIcon name="settings16" />
+                <EbayIconSettings16 />
                 <span>Expand button</span>
             </EbayButton>
         </p>
@@ -183,21 +186,21 @@ export const IconOnly: StoryFn<typeof EbayButton> = () => (
             Form button:
             <br />
             <EbayButton variant="form" aria-label="Menu button">
-                <EbayIcon name="menu20" />
+                <EbayIconMenu20 />
             </EbayButton>
         </p>
         <p>
             Form fake-button (link):
             <br />
             <EbayButton href="#" variant="form" aria-label="Settings link">
-                <EbayIcon name="settings16" />
+                <EbayIconSettings16 />
             </EbayButton>
         </p>
         <p>
             Delete button:
             <br />
             <EbayButton variant="destructive" aria-label="Destructive button">
-                <EbayIcon name="delete16" />
+                <EbayIconDelete16 />
             </EbayButton>
         </p>
     </>
@@ -274,7 +277,7 @@ export const FlexButton: StoryFn<typeof EbayButton> = () => (
             <span>Select</span>
             <span style={{ display: "inline-flex" }}>
                 <span>Any</span>
-                <EbayIcon name="chevronDown12" />
+                <EbayIconChevronDown12 />
             </span>
         </EbayButtonCell>
     </EbayButton>

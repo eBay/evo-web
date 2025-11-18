@@ -77,8 +77,9 @@ https://reactjs.org/docs/forms.html#the-select-tag. Notice that the selected val
 
 ## EbaySelectOption Attributes
 
-| Name    | Type   | Required | Description                      |
-| ------- | ------ | -------- | -------------------------------- |
-| `value` | String | Yes      | passed to the `<option>` element |
+| Name       | Type    | Required | Description                      |
+| ---------- | ------- | -------- | -------------------------------- |
+| `value`    | String  | Yes      | passed to the `<option>` element |
+| `disabled` | Boolean | No       | disables the option              |
 
 It supports all the supported aria attributes (e.g. `aria-label`, `aria-invalid`)

@@ -7,7 +7,7 @@
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     position: relative;
 }
 
@@ -32,7 +32,7 @@ span.select {
     );
     @include token-mixins.border-color-token(
         select-border-color,
-        color-stroke-default
+        color-border-medium
     );
 }
 
@@ -83,7 +83,7 @@ span.select {
     );
     @include token-mixins.border-color-token(
         select-focus-border-color,
-        color-stroke-default
+        color-border-medium
     );
 
     outline: 0;
@@ -123,7 +123,7 @@ span.select {
 .select select[aria-invalid="true"] {
     @include token-mixins.border-color-token(
         select-invalid-border-color,
-        color-stroke-attention
+        color-border-attention
     );
 
     border-style: solid;
@@ -136,7 +136,7 @@ span.select {
         );
         @include token-mixins.border-color-token(
             select-focus-border-color,
-            color-stroke-default
+            color-border-medium
         );
     }
 }

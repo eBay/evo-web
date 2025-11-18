@@ -1,0 +1,4 @@
+@use "@ebay/design-tokens/dist/mixins/live-dark" as tokens;
+:root {
+    @include tokens.live-dark;
+}

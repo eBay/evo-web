@@ -126,7 +126,7 @@ export default {
     },
 };
 
-export const Standard: Story<Input> = (args) => ({
+export const Standard: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 Standard.args = {
@@ -145,7 +145,7 @@ Standard.parameters = {
     },
 };
 
-export const WithFooter: Story<Input> = (args) => ({
+export const WithFooter: Story<Input> = (args: Input) => ({
     component: withFooter,
     input: addRenderBodies(args),
 });

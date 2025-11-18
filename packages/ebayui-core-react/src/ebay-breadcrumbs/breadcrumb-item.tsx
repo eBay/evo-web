@@ -1,5 +1,5 @@
 import React, { ComponentProps, FC, MouseEventHandler, ReactNode } from "react";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconChevronRight12 } from "../ebay-icon/icons/ebay-icon-chevron-right-12";
 
 type ItemAttributes = ComponentProps<"a"> & ComponentProps<"button">;
 
@@ -31,7 +31,7 @@ const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
     return (
         <li>
             <Item {...itemAttr}>{children}</Item>
-            {!isLastItem && <EbayIcon name="chevronRight12" />}
+            {!isLastItem && <EbayIconChevronRight12 />}
         </li>
     );
 };

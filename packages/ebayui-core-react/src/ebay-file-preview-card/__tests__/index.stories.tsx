@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayFilePreviewCard, EbayFilePreviewCardAction } from "..";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 const meta: Meta<typeof EbayFilePreviewCard> = {
     title: "media/ebay-file-preview-card",
@@ -135,7 +136,7 @@ export const WithAction: StoryFn<typeof EbayFilePreviewCard> = (args) => (
             src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
         }}
     >
-        <EbayFilePreviewCardAction icon="heart16" aria-label="like picture" />
+        <EbayFilePreviewCardAction icon={<EbayIconHeart16 />} aria-label="like picture" />
     </EbayFilePreviewCard>
 );
 

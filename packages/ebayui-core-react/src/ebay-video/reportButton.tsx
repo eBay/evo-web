@@ -1,5 +1,5 @@
 import React, { JSX, ReactNode } from "react";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconFlag24 } from "../ebay-icon/icons/ebay-icon-flag-24";
 
 type ReportButtonProps = {
     callback?: (button: HTMLElement) => void;
@@ -8,7 +8,7 @@ type ReportButtonProps = {
 
 export const ReportButton = ({ callback, children }: ReportButtonProps): JSX.Element => (
     <button className="video-player__report-button" ref={callback}>
-        <EbayIcon name="flag24" />
+        <EbayIconFlag24 />
         {children}
     </button>
 );

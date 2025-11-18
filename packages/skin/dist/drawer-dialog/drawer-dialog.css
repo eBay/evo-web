@@ -8,24 +8,19 @@
 .drawer-dialog[role="dialog"] {
     align-items: flex-end;
     background-color: var(--dialog-scrim-color-show);
-    bottom: 0;
-    left: 0;
+    inset: 0;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     position: fixed;
-    right: 0;
-    top: 0;
     will-change: background-color;
     z-index: 100000;
 }
 .drawer-dialog[role="dialog"]:not([hidden]) {
     display: flex;
 }
-
 .drawer-dialog--no-mask[role="dialog"] {
     background-color: initial;
 }
-
 .drawer-dialog__header {
     display: flex;
     flex-shrink: 0;
@@ -46,12 +41,10 @@
 .drawer-dialog__header > :last-child:not(:only-child) {
     margin-inline-start: var(--spacing-200);
 }
-
 .drawer-dialog__header .fake-link {
     align-self: flex-start;
     text-decoration: none;
 }
-
 .drawer-dialog__handle {
     background-color: initial;
     border: none;
@@ -64,14 +57,13 @@
     z-index: 2;
 }
 .drawer-dialog__handle:after {
-    background-color: var(--dialog-handle-color, var(--color-stroke-default));
+    background-color: var(--dialog-handle-color, var(--color-border-medium));
     border-radius: 3px;
     content: "";
     display: block;
     height: 2px;
     width: 24px;
 }
-
 .drawer-dialog__main {
     box-sizing: border-box;
     flex: 1 1 auto;
@@ -86,7 +78,6 @@
 .drawer-dialog__main > :last-child {
     margin-bottom: 0;
 }
-
 .drawer-dialog__footer {
     display: flex;
     flex-direction: row;
@@ -109,7 +100,6 @@ button.icon-btn.drawer-dialog__close {
     width: 32px;
     z-index: 1;
 }
-
 .drawer-dialog__window {
     background-color: var(
         --dialog-window-background-color,
@@ -126,12 +116,10 @@ button.icon-btn.drawer-dialog__close {
     -webkit-overflow-scrolling: touch;
     overflow-y: hidden;
 }
-
 .drawer-dialog__window--expanded {
     height: 95%;
     max-height: 95%;
 }
-
 .drawer-dialog__window--slide {
     transition: max-height 0.32s ease-out;
 }
@@ -187,7 +175,6 @@ button.icon-btn.drawer-dialog__close {
 .drawer-dialog--show .drawer-dialog__window--slide {
     transform: translateX(0);
 }
-
 .drawer-dialog__handle:focus:not(:focus-visible) {
     outline: none;
 }

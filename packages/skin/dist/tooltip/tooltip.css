@@ -4,11 +4,9 @@
 .tooltip {
     position: relative;
 }
-
 span.tooltip {
     display: inline-block;
 }
-
 .tooltip__overlay {
     box-shadow: var(--bubble-shadow);
     display: none;
@@ -20,13 +18,11 @@ span.tooltip {
     transform: scaleX(1);
     width: max-content;
 }
-
 .tooltip__mask,
 .tooltip__overlay {
     border-radius: var(--bubble-border-radius, var(--border-radius-50));
     z-index: 1;
 }
-
 .tooltip__mask {
     background-color: var(
         --tooltip-background-color,
@@ -35,11 +31,9 @@ span.tooltip {
     color: var(--tooltip-foreground-color, var(--color-foreground-on-inverse));
     position: relative;
 }
-
 span.tooltip__mask {
     display: block;
 }
-
 .tooltip__cell {
     display: flex;
     overflow-wrap: anywhere;
@@ -52,7 +46,6 @@ span.tooltip__mask {
 .tooltip__cell a:focus {
     outline: 1px dashed currentColor;
 }
-
 .tooltip__content {
     flex-grow: 1;
 }
@@ -62,7 +55,6 @@ span.tooltip__mask {
 .tooltip__content p:not(:first-of-type) {
     margin-top: var(--spacing-50);
 }
-
 button.tooltip__close {
     align-self: flex-start;
     background: none;
@@ -75,7 +67,6 @@ button.tooltip__close {
     white-space: nowrap;
     width: 32px;
 }
-
 .tooltip__pointer {
     background-color: var(
         --tooltip-background-color,
@@ -87,82 +78,68 @@ button.tooltip__close {
     width: 8px;
     z-index: 0;
 }
-
 .tooltip__pointer--top-left {
     left: 12px;
     top: -4px;
 }
-
 .tooltip__pointer--top {
     left: calc(50% - 4px);
     top: -4px;
 }
-
 .tooltip__pointer--top-right {
     left: auto;
     right: 12px;
     top: -4px;
 }
-
 .tooltip__pointer--bottom-left {
     bottom: -4px;
     left: 12px;
     top: auto;
 }
-
 .tooltip__pointer--bottom {
     bottom: -4px;
     left: calc(50% - 4px);
     top: auto;
 }
-
 .tooltip__pointer--bottom-right {
     bottom: -4px;
     left: auto;
     right: 12px;
     top: auto;
 }
-
 .tooltip__pointer--left {
     left: -4px;
     top: calc(50% - 4px);
 }
-
 .tooltip__pointer--left-bottom {
     bottom: 12px;
     left: -4px;
     top: auto;
 }
-
 .tooltip__pointer--left-top {
     left: -4px;
     top: 12px;
 }
-
 .tooltip__pointer--right {
     left: auto;
     right: -4px;
     top: calc(50% - 4px);
 }
-
 .tooltip__pointer--right-bottom {
     bottom: 12px;
     left: auto;
     right: -4px;
     top: auto;
 }
-
 .tooltip__pointer--right-top {
     left: auto;
     right: -4px;
     top: 12px;
 }
-
 .tooltip--expanded .tooltip__overlay,
 .tooltip__host[aria-expanded="true"] ~ .tooltip__overlay {
     display: block;
 }
-
 @media (min-width: 512px) {
     .tooltip__overlay {
         max-width: 400px;

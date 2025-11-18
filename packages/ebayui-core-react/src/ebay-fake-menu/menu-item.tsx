@@ -1,7 +1,7 @@
 import React, { ComponentProps, FC, useEffect, useRef } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
 import { EbayBadge } from "../ebay-badge";
+import { EbayIconTick16 } from "../ebay-icon/icons/ebay-icon-tick-16";
 
 export type EbayMenuItemType = "button";
 export type EbayFakeMenuItemProps = Omit<ComponentProps<"a">, "onKeyDown"> &
@@ -40,7 +40,7 @@ const EbayMenuItem: FC<EbayFakeMenuItemProps> = ({
         "aria-label": badgeAriaLabel,
     };
 
-    const tick = <EbayIcon name="tick16" />;
+    const tick = <EbayIconTick16 />;
     // todo: remove this workaround when Skin team fixes https://github.com/eBay/skin/issues/2208
     const badgeStyleFix = {
         marginLeft: "var(--spacing-100)",

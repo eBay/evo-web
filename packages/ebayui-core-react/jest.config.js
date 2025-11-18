@@ -1,14 +1,17 @@
 module.exports = {
     testEnvironment: "jsdom",
+    preset: 'ts-jest/presets/default-esm',
     resolver: "jest-pnp-resolver",
     moduleNameMapper: {
         "\\.(css|less)$": "identity-obj-proxy",
     },
     transform: {
-        "^.+\\.tsx?$": "ts-jest",
+        '^.+\\.[tj]sx?$': ['ts-jest', { useESM: true, diagnostics: false }],
     },
     testRegex: "(/__tests__/.*(spec))\\.(tsx?)$",
-    transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$", "^.+\\.module\\.(css|less)$"],
+    transformIgnorePatterns: [
+        '[/\\\\]node_modules[/\\\\](?!(@storybook|storybook|ts-dedent|uuid)/)',
+         "^.+\\.module\\.(css|less)$"],
     moduleFileExtensions: ["ts", "tsx", "js", "json"],
     modulePathIgnorePatterns: [
         "<rootDir>/build/",

@@ -6,6 +6,7 @@ import {
     EbaySectionTitleSubtitle as Subtitle,
     EbaySectionTitleInfo as Info,
 } from "../index";
+import { EbayIconInformation16 } from "../../ebay-icon/icons/ebay-icon-information-16";
 
 export default {
     title: "navigation & disclosure/ebay-section-title",
@@ -66,7 +67,7 @@ export const WithInfo = () => (
                     a11yCloseText="Dismiss infotip"
                     aria-label="Important information"
                     pointer="top-left"
-                    icon="information16"
+                    icon={<EbayIconInformation16 />}
                 >
                     <EbayInfotipHeading>Important</EbayInfotipHeading>
                     <EbayInfotipContent>

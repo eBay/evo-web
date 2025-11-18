@@ -92,6 +92,25 @@ describe("<EbaySelect>", () => {
             expect(wrapper.getByRole("combobox")).toHaveValue("2");
         });
     });
+
+    describe("disabled options", () => {
+        it("should render disabled attribute on option element", () => {
+            const wrapper = render(
+                <EbaySelect name="test-select">
+                    <EbaySelectOption value="1">Option 1</EbaySelectOption>
+                    <EbaySelectOption value="2" disabled>
+                        Option 2 (Disabled)
+                    </EbaySelectOption>
+                    <EbaySelectOption value="3">Option 3</EbaySelectOption>
+                </EbaySelect>,
+            );
+
+            const options = wrapper.container.querySelectorAll("option");
+            expect(options[0]).not.toHaveAttribute("disabled");
+            expect(options[1]).toHaveAttribute("disabled");
+            expect(options[2]).not.toHaveAttribute("disabled");
+        });
+    });
 });
 
 function simulateSelectChange(wrapper, selectedValue, selectedIndex) {

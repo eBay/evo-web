@@ -2,8 +2,10 @@
 
 .badge {
     align-items: center;
-    border: 2px solid var(--color-stroke-on-attention);
+    background-color: var(--color-background-attention);
+    border: 2px solid var(--color-border-on-attention);
     border-radius: 16px;
+    color: var(--color-foreground-on-attention);
     display: inline-flex;
     font-size: 10px;
     height: 16px;
@@ -11,12 +13,4 @@
     min-width: 8px;
     padding: 2px 6px;
     white-space: nowrap;
-    @include token-mixins.background-color-token(
-        badge-background-color,
-        color-background-attention
-    );
-    @include token-mixins.color-token(
-        badge-foreground-color,
-        color-foreground-on-attention
-    );
 }

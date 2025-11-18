@@ -12,7 +12,7 @@
     );
 
     color: var(--color-foreground-primary);
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     padding: var(--spacing-300);
 }
 
@@ -59,18 +59,18 @@
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: 700;
     white-space: nowrap; /* force links with text having more than one word to remain on same line */
 }
 
 .education-notice__footer button.fake-link {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
 .education-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
 }
 
@@ -85,7 +85,7 @@
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
     height: 24px;
     width: 24px;

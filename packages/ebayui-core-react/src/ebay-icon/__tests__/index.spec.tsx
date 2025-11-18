@@ -2,15 +2,16 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
+import { EbayIconAdd12 } from "../icons/ebay-icon-add-12";
 
-const { AllIcons, CustomColor, NonDecorative } = composeStories(stories);
+const { CustomColor, NonDecorative } = composeStories(stories);
 
 jest.mock("../../common/random-id");
 
 describe("ebay-icon rendering", () => {
     describe("AllIcons story", () => {
         it("renders icons correctly", () => {
-            const { container } = render(<AllIcons />);
+            const { container } = render(<EbayIconAdd12 />);
             const [icon] = container.querySelectorAll("svg");
             expect(icon).toHaveAttribute("aria-hidden", "true");
             expect(icon).toHaveClass("icon icon--12");

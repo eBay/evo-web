@@ -21,7 +21,7 @@ export default {
         },
     },
 };
-export const Default: Story<Input> = (args) => ({
+export const Default: Story<Input> = (args: Input) => ({
     input: args,
     component: fixed,
 });

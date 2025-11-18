@@ -37,6 +37,6 @@
 }
 
 @mixin small-screen-small() {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     line-height: 16px;
 }

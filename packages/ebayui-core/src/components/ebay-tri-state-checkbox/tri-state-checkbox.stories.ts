@@ -9,7 +9,7 @@ import DisabledCode from "./examples/disabled-with-label.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: (args.renderBody
@@ -83,7 +83,7 @@ export default {
     },
 };
 
-export const WithLabel: Story<Input> = (args) => ({
+export const WithLabel: Story<Input> = (args: Input) => ({
     input: args,
     component: WithLabelTemplate,
 });
@@ -96,7 +96,7 @@ WithLabel.parameters = {
     },
 };
 
-export const Disabled: Story<Input> = (args) => ({
+export const Disabled: Story<Input> = (args: Input) => ({
     input: args,
     component: DisabledTemplate,
 });

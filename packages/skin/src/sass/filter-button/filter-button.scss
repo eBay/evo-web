@@ -1,5 +1,6 @@
 @use "../variables/variables";
 @use "../mixins/private/filter-button-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/private/token-mixins";
 
 /* .filter-group also exists in filter-menu-button */
@@ -12,18 +13,10 @@ div.filter-group {
 button.filter-button,
 a.filter-link {
     background-color: var(--color-background-secondary);
-    border-color: var(--color-stroke-default);
+    border-color: var(--color-border-medium);
 
     @include filter-button-mixins.base;
-
-    &:focus,
-    &:hover,
-    &:active {
-        @include token-mixins.background-color-token(
-            filter-button-background-color,
-            color-state-secondary-hover
-        );
-    }
+    @include state-layer.standard;
 }
 
 button.filter-button .filter-button__cell,
@@ -47,7 +40,7 @@ button.filter-button[aria-pressed="true"],
 a.filter-link--selected {
     @include token-mixins.border-color-token(
         filter-button-selected-border-color,
-        color-stroke-strong
+        color-border-strong
     );
 
     font-weight: bold;
@@ -56,7 +49,7 @@ a.filter-link--selected {
 a.filter-link--selected:visited {
     @include token-mixins.border-color-token(
         filter-button-selected-border-color,
-        color-stroke-strong
+        color-border-strong
     );
 }
 
@@ -74,29 +67,6 @@ a.filter-link--selected[aria-disabled="true"] {
     );
 
     font-weight: normal;
-
-    /* todo: we can elimate the need for these overrides by using :not([disabled]) in place where defining hover states */
-    &:hover,
-    &:focus {
-        @include token-mixins.background-color-token(
-            filter-button-background-color,
-            color-background-secondary
-        );
-        @include token-mixins.color-token(
-            filter-button-disabled-foreground-color,
-            color-foreground-disabled
-        );
-    }
-}
-
-button.filter-button[aria-pressed="true"][disabled]:hover,
-button.filter-button[aria-pressed="true"][aria-disabled="true"]:hover,
-a.filter-link--selected:not([href]):hover,
-a.filter-link--selected[aria-disabled="true"]:hover {
-    @include token-mixins.background-color-token(
-        filter-button-selected-background-color,
-        color-state-secondary-hover
-    );
 }
 
 /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */

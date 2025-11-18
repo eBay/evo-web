@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { action } from "storybook/actions";
-import { EbayIcon } from "../../ebay-icon";
+import { EbayIconSettings16 } from "../../ebay-icon/icons/ebay-icon-settings-16";
 import {
     EbayMenuButton,
     EbayMenuButtonItem as Item,
@@ -52,8 +52,7 @@ export const Disabled = () => (
 export const WithIcon = {
     render: () => (
         <>
-            <EbayMenuButton text="Settings">
-                <EbayIcon name="settings16" />
+            <EbayMenuButton text="Settings" icon={<EbayIconSettings16 />}>
                 <Item>item 1 that has very long text</Item>
                 <Item>item 2</Item>
                 <Item>item 3</Item>
@@ -323,3 +322,32 @@ export const ReverseMenuGrowsToTheLeft = {
 
     name: "Reverse (Menu grows to the left)",
 };
+
+export const WithFixedStrategy = (args) => (
+    <EbayMenuButton {...args} strategy="fixed" text="Menu has a button width">
+        <Item>item 1 that has very long text</Item>
+        <Item>item 2</Item>
+        <Item>item 3</Item>
+    </EbayMenuButton>
+);
+
+export const WithDisabledItem = (args) => (
+    <>
+        <EbayMenuButton
+            {...args}
+            text="eBay Menu"
+            onKeyDown={action("key down")}
+            onClick={action("click button")}
+            onSelect={(e, { index, checked }) => action("select")(e, { index, checked })}
+            onExpand={action("expand")}
+            onCollapse={action("collapse")}
+            collapseOnSelect={false}
+            type="radio"
+        >
+            <Item>item 1 that has very long text</Item>
+            <Item>item 2</Item>
+            <Item>item 3</Item>
+            <Item disabled>item 4</Item>
+        </EbayMenuButton>
+    </>
+);

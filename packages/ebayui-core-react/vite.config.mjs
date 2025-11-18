@@ -1,12 +1,12 @@
 import fs from "node:fs";
-import { resolve } from "node:path";
+import { join, resolve } from "node:path";
 import { defineConfig } from "vite";
 import { nodeExternals } from "rollup-plugin-node-externals";
 import typescript from "@rollup/plugin-typescript";
 import { cjsInterop } from "vite-plugin-cjs-interop";
 
 // find directories in src that starts with 'ebay-'
-let componentEntries = fs
+const componentEntries = fs
     .readdirSync("./src")
     .filter((file) => fs.statSync(`./src/${file}`).isDirectory() && file.startsWith("ebay-"))
     .reduce(
@@ -19,6 +19,17 @@ let componentEntries = fs
             utils: resolve(__dirname, "src/utils/index.ts"),
         },
     );
+
+const iconsEntries = fs
+    .readdirSync("./src/ebay-icon/icons")
+    .filter((file) => fs.statSync(`./src/ebay-icon/icons/${file}`).isFile() && file.startsWith("ebay-"))
+    .reduce((acc, componentName) => {
+        acc[join("icons/", componentName.replace(".tsx", ""))] = resolve(
+            __dirname,
+            `src/ebay-icon/icons/${componentName}`,
+        );
+        return acc;
+    }, {});
 
 export default defineConfig({
     plugins: [
@@ -33,7 +44,10 @@ export default defineConfig({
     ],
     build: {
         lib: {
-            entry: componentEntries,
+            entry: {
+                ...componentEntries,
+                ...iconsEntries,
+            },
             fileName: "[name]/index",
             // Use CommonJS only until we upgrade all packages that uses ui-core-react to use ESM.
             // If we use ESM, the bundle might have both ESM and CJS, which will increase the bundle size,

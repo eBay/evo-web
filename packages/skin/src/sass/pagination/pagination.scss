@@ -1,5 +1,6 @@
 @use "../variables/variables";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 @use "../mixins/public/utility-mixins";
 
 nav.pagination {
@@ -57,7 +58,7 @@ button.pagination__previous {
     @include utility-mixins.inline-flex-items-centered;
 
     box-sizing: border-box;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-400);
     height: 44px;
     width: 44px;
 }
@@ -94,7 +95,7 @@ button.pagination__item {
             color-foreground-primary
         );
 
-        font-weight: var(--font-weight-bold);
+        font-weight: var(--font-weight-600);
 
         &::after {
             background-color: currentColor;
@@ -129,14 +130,7 @@ button.pagination__item {
 }
 
 span.pagination__item button.icon-btn--transparent {
-    &:focus,
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-    }
-
-    &:active {
-        background-color: var(--color-state-primary-active);
-    }
+    @include state-layer.standard;
 }
 
 nav.pagination--fluid {

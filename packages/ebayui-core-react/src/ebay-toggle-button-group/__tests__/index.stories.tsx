@@ -2,6 +2,7 @@ import React from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { EbayToggleButtonGroup } from "..";
 import { EbayToggleButton } from "../../ebay-toggle-button";
+import { EbayIconSettings24 } from "../../ebay-icon/icons/ebay-icon-settings-24";
 
 export default {
     title: "Buttons/ebay-toggle-button-group",
@@ -151,7 +152,7 @@ export const Default: StoryObj<typeof EbayToggleButtonGroup> = {
                 <EbayToggleButton pressed title="Button1" />
                 <EbayToggleButton>Child Button</EbayToggleButton>
                 <EbayToggleButton title="Button2" subtitle={"subtitle"} />
-                <EbayToggleButton icon="settings24" title="Button3" subtitle="subtitle"></EbayToggleButton>
+                <EbayToggleButton icon={<EbayIconSettings24 />} title="Button3" subtitle="subtitle"></EbayToggleButton>
                 <EbayToggleButton
                     title="Button4"
                     subtitle="subtitle"

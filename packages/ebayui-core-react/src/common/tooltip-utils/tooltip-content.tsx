@@ -1,10 +1,10 @@
 import React, { FC, CSSProperties, ReactNode } from "react";
-import { EbayIcon } from "../../ebay-icon";
 import { excludeComponent, findComponent } from "../component-utils";
 import { PointerDirection, TooltipType } from "./types";
 import { DEFAULT_POINTER_DIRECTION, POINTER_STYLES, TYPE_ROLES } from "./constants";
 import TooltipCloseButton from "./tooltip-close-button";
 import TooltipFooter from "./tooltip-footer";
+import { EbayIconClose16 } from "../../ebay-icon/icons/ebay-icon-close-16";
 
 export type TooltipContentProps = {
     id?: string;
@@ -50,7 +50,7 @@ const TooltipContent: FC<TooltipContentProps> = ({
                             aria-label={a11yCloseText}
                             onClick={onClose}
                         >
-                            <EbayIcon name="close16" />
+                            <EbayIconClose16 />
                         </button>
                     ) : null}
                     {footer}

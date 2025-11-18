@@ -25,7 +25,7 @@ export const Example = () => (
     >
         <Button value="1" selected>Button 1</Button>
         <Button value="2">Button 2</Button>
-        <Button value="3"><EbayIcon name="settings24" /> Button 3</Button>
+        <Button value="3"><EbayIconSettings24 /> Button 3</Button>
     />
 );
 ```

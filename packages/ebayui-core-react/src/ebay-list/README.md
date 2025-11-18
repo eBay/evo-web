@@ -50,17 +50,17 @@ import "@ebay/skin/list.css";
 <EbayList>
     <EbayListItem>
         <EbayListItemLeading>
-            <EbayIcon name="folder16" />
+            <EbayIconFolder16 />
         </EbayListItemLeading>
         Item 1
     </EbayListItem>
     <EbayListItem>
         <EbayListItemLeading>
-            <EbayIcon name="lamp16" />
+            <EbayIconLamp16 />
         </EbayListItemLeading>
         Item 2
         <EbayListItemTrailing>
-            <EbayIcon name="chevronRight16" />
+            <EbayIconChevronRight16 />
         </EbayListItemTrailing>
     </EbayListItem>
 </EbayList>
@@ -74,7 +74,7 @@ import "@ebay/skin/list.css";
     <EbayListItem as="a" href="https://www.ebay.com">
         Link Item
         <EbayListItemTrailing>
-            <EbayIcon name="chevronRight16" />
+            <EbayIconChevronRight16 />
         </EbayListItemTrailing>
     </EbayListItem>
     <EbayListItem id="switch-item">

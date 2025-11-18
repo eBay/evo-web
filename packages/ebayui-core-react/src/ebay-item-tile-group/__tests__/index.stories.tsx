@@ -10,6 +10,7 @@ import {
     EbayItemTileAction,
 } from "../../ebay-item-tile";
 import { EbayItemTileGroup } from "..";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 const meta: Meta<typeof EbayItemTileGroup> = {
     title: "layout/ebay-item-tile-group",
@@ -52,7 +53,7 @@ export const Default: StoryFn<typeof EbayItemTileGroup> = (args) => {
                         src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                     }}
                 >
-                    <EbayItemTileAction aria-label="action label" icon="heart16" />
+                    <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
                     <EbayItemTileSupertitle>
                         <EbaySignal status="time-sensitive">Time Sensitive</EbaySignal>
                     </EbayItemTileSupertitle>

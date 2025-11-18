@@ -11,7 +11,7 @@
         border-radius-50
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 8px 0;
     padding: 16px;
 }
@@ -20,7 +20,18 @@ div[role="region"].section-notice,
 section.section-notice {
     display: grid;
     /* provide explicit structure up front, create loose markup model */
-    grid-template-columns: 32px auto min-content min-content;
+    grid-template-columns: 32px auto auto;
+}
+
+div[role="region"].section-notice:has(.section-notice__cta),
+section.section-notice:has(.section-notice__cta) {
+    grid-template-columns: 32px auto auto min-content;
+}
+
+div[role="region"].section-notice:has(.section-notice__cta)
+    .section-notice__footer,
+section.section-notice:has(.section-notice__cta) .section-notice__footer {
+    grid-column: 4;
 }
 
 /* TODO: Remove in 18.0.0 since Education Notice is now its own module. */
@@ -36,7 +47,7 @@ span[role="region"].section-notice {
 }
 
 .section-notice__title {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: normal;
     margin: 0;
 }
@@ -57,7 +68,7 @@ span[role="region"].section-notice {
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -74,7 +85,7 @@ span[role="region"].section-notice {
         color-foreground-primary
     );
 
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     font-weight: bold;
 }
 
@@ -109,14 +120,14 @@ span[role="region"].section-notice {
 }
 
 .section-notice__footer {
-    grid-column: 4;
+    grid-column: 3;
     grid-row: 1;
     justify-self: flex-end;
     margin-top: 2px;
 }
 
 .section-notice__main p {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
 }
 

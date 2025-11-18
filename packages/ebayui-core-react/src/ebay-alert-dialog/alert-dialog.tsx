@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React, { ComponentProps, FC, ReactElement, useRef } from "react";
 import classNames from "classnames";
 import { DialogBaseProps, DialogBaseWithState, EbayDialogFooter } from "../ebay-dialog-base";
 import { EbayButton } from "../ebay-button";
@@ -8,14 +8,26 @@ const classPrefix = "alert-dialog";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface Props<T = any> extends DialogBaseProps<T> {
     open?: boolean;
-    confirmText: string;
+    confirmText?: string;
+    confirm?: ReactElement<ComponentProps<typeof EbayButton>>;
     onConfirm?: () => void;
 }
 
-const EbayAlertDialog: FC<Props> = ({ a11yCloseText = "Close Dialog", confirmText, onConfirm = () => {}, ...rest }) => {
+const EbayAlertDialog: FC<Props> = ({
+    a11yCloseText = "Close Dialog",
+    confirmText,
+    confirm,
+    onConfirm = () => {},
+    ...rest
+}) => {
     const confirmBtnRef = useRef(null);
     const confirmId = "alert-dialog-confirm";
     const mainId = "alert-dialog-main";
+
+    if (!confirmText && !confirm) {
+        throw new Error('EbayAlertDialog: A "confirmText" or a "confirm" component needs to be passed');
+    }
+
     return (
         <DialogBaseWithState
             focus={confirmBtnRef}
@@ -33,13 +45,14 @@ const EbayAlertDialog: FC<Props> = ({ a11yCloseText = "Close Dialog", confirmTex
             <EbayDialogFooter>
                 <EbayButton
                     priority="primary"
-                    aria-describedby={mainId}
                     onClick={onConfirm}
+                    {...confirm?.props}
+                    aria-describedby={mainId}
                     ref={confirmBtnRef}
                     id={confirmId}
-                    className="alert-dialog__acknowledge"
+                    className={classNames("alert-dialog__acknowledge", confirm?.props?.className)}
                 >
-                    {confirmText}
+                    {confirm?.props?.children || confirmText}
                 </EbayButton>
             </EbayDialogFooter>
         </DialogBaseWithState>

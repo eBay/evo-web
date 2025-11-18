@@ -12,6 +12,7 @@ import {
     EbayItemTileAction,
 } from "../../ebay-item-tile";
 import { EbayItemTileGroup } from "../";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayItemTileGroup>", () => {
     it("should call onAction", async () => {
@@ -28,7 +29,7 @@ describe("<EbayItemTileGroup>", () => {
                             src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                         }}
                     >
-                        <EbayItemTileAction aria-label={`action-label-${idx}`} icon="heart16" />
+                        <EbayItemTileAction aria-label={`action-label-${idx}`} icon={<EbayIconHeart16 />} />
                         <EbayItemTileSupertitle>Time Sensitive</EbayItemTileSupertitle>
                         <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max </EbayItemTileTitle>
                         <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>

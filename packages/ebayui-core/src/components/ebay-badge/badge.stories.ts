@@ -3,7 +3,7 @@ import { tagToString } from "../../common/storybook/storybook-code-source";
 import badge, { type Input } from "./index.marko";
 import Readme from "./README.md";
 
-const Template: Story<Input> = (args) => ({ input: args });
+const Template: Story<Input> = (args: Input) => ({ input: args });
 
 export default {
     title: "graphics & icons/ebay-badge",

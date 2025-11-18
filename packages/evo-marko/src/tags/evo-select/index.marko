@@ -9,6 +9,7 @@ export interface Input extends Marko.HTML.Select {
     option?: Marko.AttrTag<Option>;
     floatingLabel?: string;
     size?: "regular" | "large";
+    fluid?: boolean;
     borderless?: boolean;
 }
 
@@ -17,6 +18,7 @@ export interface Input extends Marko.HTML.Select {
     style,
     disabled,
     value: inputValue,
+    fluid,
     valueChange,
     borderless,
     option: inputOptions = [],
@@ -76,6 +78,7 @@ export interface Input extends Marko.HTML.Select {
         class=[
             "select",
             size === "large" && "select--large",
+            fluid && "select--fluid",
             borderless && "select--borderless",
             inputClass,
         ]

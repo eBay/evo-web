@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 import { EbayTextbox, EbayTextboxPostfixIcon } from "../index";
+import { EbayIconClear16 } from "../../ebay-icon/icons/ebay-icon-clear-16";
 
 describe("<EbayTextbox>", () => {
     describe("on textbox change", () => {
@@ -123,7 +124,7 @@ describe("<EbayTextbox>", () => {
             const value = "test";
             const wrapper = render(
                 <EbayTextbox defaultValue={value} onButtonClick={textboxSpy}>
-                    <EbayTextboxPostfixIcon name="clear16" buttonAriaLabel="Clear!" onClick={iconSpy} />
+                    <EbayTextboxPostfixIcon icon={<EbayIconClear16 />} buttonAriaLabel="Clear!" onClick={iconSpy} />
                 </EbayTextbox>,
             );
             fireEvent.click(wrapper.getByRole("button"));
@@ -136,7 +137,7 @@ describe("<EbayTextbox>", () => {
             const spy = jest.fn();
             const wrapper = render(
                 <EbayTextbox>
-                    <EbayTextboxPostfixIcon name="clear16" buttonAriaLabel="Clear!" onClick={spy} />
+                    <EbayTextboxPostfixIcon icon={<EbayIconClear16 />} buttonAriaLabel="Clear!" onClick={spy} />
                 </EbayTextbox>,
             );
             fireEvent.click(wrapper.getByRole("button"));

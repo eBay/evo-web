@@ -5,7 +5,7 @@ import code from "./examples/icon-button.marko?raw";
 import Readme from "./README.md";
 import { Input } from "./component-browser";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 // const Template = args =({ input: withRenderBody(args) })

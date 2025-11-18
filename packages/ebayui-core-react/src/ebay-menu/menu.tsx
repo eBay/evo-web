@@ -1,7 +1,7 @@
 import React, { Children, cloneElement, FC, KeyboardEvent, MouseEvent, ReactElement, useEffect, useState } from "react";
 import classNames from "classnames";
 import useRovingIndex from "../common/event-utils/use-roving-index";
-import { isActionKey } from "../common/event-utils";
+import { isActionKey, handleUpDownArrowsKeydown } from "../common/event-utils";
 import { withForwardRef } from "../common/component-utils";
 import EbayMenuItem, { MenuItemProps } from "./menu-item";
 import { Key } from "../common/event-utils/types";
@@ -13,6 +13,10 @@ const EbayMenu: FC<EbayMenuProps> = ({
     checked,
     className,
     autofocus,
+    classPrefix,
+    reverse,
+    fixWidth,
+    fixed,
     onClick = () => {},
     onKeyDown = () => {},
     onChange = () => {},
@@ -101,6 +105,12 @@ const EbayMenu: FC<EbayMenuProps> = ({
 
     const handleKeyDown = (e: KeyboardEvent<HTMLElement>, index: number) => {
         let newValues;
+
+        handleUpDownArrowsKeydown(e, () => {
+            // Prevent page scroll
+            e.preventDefault();
+        });
+
         if (isActionKey(e.key as Key)) {
             newValues = selectIndex(index);
             if (newValues) {
@@ -124,35 +134,60 @@ const EbayMenu: FC<EbayMenuProps> = ({
         }
     };
 
+    const baseClass = classPrefix || "menu";
+
     return (
-        <Container {...rest} className={classNames(className, "menu")} ref={forwardedRef}>
-            <div className="menu__items" role="menu" ref={menuRef}>
+        <Container
+            {...rest}
+            className={classNames(
+                className,
+                classPrefix ? `${baseClass}__menu` : "menu",
+                reverse && `${baseClass}__menu--reverse`,
+                fixed && `${baseClass}__menu--fixed`,
+                fixWidth && `${baseClass}__menu--fix-width`,
+            )}
+            ref={forwardedRef}
+        >
+            <div className={`${baseClass}__items`} role="menu" ref={menuRef}>
                 {childrenArray.map((child: ReactElement, i) => {
                     const {
                         onClick: onItemClick = () => {},
                         onFocus: onItemFocus = () => {},
                         onKeyDown: onItemKeyDown = () => {},
+                        disabled,
                         ...itemRest
                     }: MenuItemProps = child.props;
 
                     return cloneElement(child, {
                         ...itemRest,
+                        disabled,
                         type,
+                        baseClass,
                         focused: i === focusedIndex,
                         tabIndex: focusedIndex === undefined ? 0 : -1,
                         checked: checkedIndexes[i],
                         onFocus: (e) => {
+                            if (disabled) {
+                                return;
+                            }
                             setFocusedIndex(i);
                             onItemFocus(e);
                         },
                         onClick: (e) => {
+                            if (disabled) {
+                                e.stopPropagation();
+                                return;
+                            }
                             handleClick(e, i);
                             onItemClick(e);
                             onClick(e);
                         },
                         onKeyDown: (e) => {
-                            handleKeyDown(e, i);
+                            if (disabled) {
+                                return;
+                            }
                             onItemKeyDown(e);
+                            handleKeyDown(e, i);
                         },
                     } as MenuItemProps);
                 })}

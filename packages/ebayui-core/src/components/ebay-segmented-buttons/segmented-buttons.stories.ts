@@ -9,7 +9,7 @@ import WithIconsTemplate from "./examples/with-icons.marko";
 import WithIconsTemplateCode from "./examples/with-icons.marko?raw";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

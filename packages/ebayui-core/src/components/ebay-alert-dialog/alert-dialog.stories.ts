@@ -5,7 +5,7 @@ import Component from "./examples/default.marko";
 import type { Input } from "./index.marko";
 import code from "./examples/default.marko?raw";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

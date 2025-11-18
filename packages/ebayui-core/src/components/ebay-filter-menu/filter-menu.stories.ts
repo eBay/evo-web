@@ -10,7 +10,7 @@ import type { Input } from "./component";
 import WithSearchTemplate from "./examples/with-search.marko";
 import WithSearchCode from "./examples/with-search.marko?raw";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

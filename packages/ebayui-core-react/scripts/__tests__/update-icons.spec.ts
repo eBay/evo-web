@@ -3,6 +3,8 @@ import { parseSVG, getIconKeys, generateEbaySVG } from "../update-icons-helpers.
 
 const skinCollection = require("./icons.json");
 
+jest.mock("del", () => ({}));
+
 describe("update-icons", () => {
     describe("parseSVG()", () => {
         it("should parse SVG into SVG symbols", () => {

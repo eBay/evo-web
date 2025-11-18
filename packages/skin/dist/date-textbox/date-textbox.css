@@ -5,11 +5,9 @@
     --calendar-month-width: 311px;
     display: inline-block;
 }
-
 .date-textbox > .textbox + .textbox {
     margin-left: var(--spacing-100);
 }
-
 .date-textbox__popover {
     background-color: var(
         --calendar-background-color,
@@ -22,11 +20,9 @@
     position: absolute;
     z-index: 1;
 }
-
 .date-textbox__popover[hidden] {
     display: none;
 }
-
 @media only screen and (max-width: 512px) {
     .date-textbox__popover {
         left: 0;

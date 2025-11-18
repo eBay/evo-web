@@ -5,7 +5,7 @@ import Component from "./index.marko";
 import type { Input } from "./component";
 import sampleSeriesData from "./examples/data.json";
 import { Story } from "@storybook/marko";
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

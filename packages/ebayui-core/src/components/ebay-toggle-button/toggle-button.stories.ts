@@ -11,7 +11,7 @@ import MultilineSubtitleCode from "./examples/multiline-subtitle.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 
@@ -121,7 +121,7 @@ Default.parameters = {
     },
 };
 
-export const WithIcon: Story<Input> = (args) => ({
+export const WithIcon: Story<Input> = (args: Input) => ({
     input: args,
     component: WithIconTemplate,
 });
@@ -134,7 +134,7 @@ WithIcon.parameters = {
     },
 };
 
-export const WithImage: Story<Input> = (args) => ({
+export const WithImage: Story<Input> = (args: Input) => ({
     input: args,
     component: WithImageTemplate,
 });
@@ -151,7 +151,7 @@ WithImage.parameters = {
     },
 };
 
-export const MultilineSubtitle: Story<Input> = (args) => ({
+export const MultilineSubtitle: Story<Input> = (args: Input) => ({
     input: args,
     component: MultilineSubtitleTemplate,
 });

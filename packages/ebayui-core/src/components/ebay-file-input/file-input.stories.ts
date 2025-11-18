@@ -53,7 +53,7 @@ export default {
     },
 };
 
-export const Default: Story<Input> = (args) => ({
+export const Default: Story<Input> = (args: Input) => ({
     input: args,
     component: DefaultTemplate,
 });
@@ -69,7 +69,7 @@ Default.parameters = {
     },
 };
 
-export const WithPreviewCards: Story<Input> = (args) => ({
+export const WithPreviewCards: Story<Input> = (args: Input) => ({
     input: args,
     component: WithPreviewCardsTemplate,
 });
@@ -85,7 +85,7 @@ WithPreviewCards.parameters = {
     },
 };
 
-export const WithMockUploads: Story<Input> = (args) => ({
+export const WithMockUploads: Story<Input> = (args: Input) => ({
     input: args,
     component: WithMockUploadsTemplate,
 });

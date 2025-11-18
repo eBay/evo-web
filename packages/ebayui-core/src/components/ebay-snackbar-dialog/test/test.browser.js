@@ -10,7 +10,7 @@ import {
     vi,
 } from "vitest";
 import { render, cleanup, waitFor } from "@marko/testing-library";
-import { userEvent } from "@vitest/browser/context";
+import { userEvent } from "vitest/browser";
 import { fastAnimations } from "../../../common/test-utils/browser";
 import * as stories from "../snackbar-dialog.stories"; // import all stories from the stories file
 const { Default, WithAction } = composeStories(stories);

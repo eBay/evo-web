@@ -143,7 +143,7 @@ div.menu__item--badged[role^="menuitem"] span.badge {
 hr.menu__separator {
     @include token-mixins.border-color-token(
         menu-separator-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 
     border-style: solid;

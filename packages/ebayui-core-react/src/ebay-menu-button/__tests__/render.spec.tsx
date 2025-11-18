@@ -19,6 +19,8 @@ const {
     MultiSelectMenuButton,
     FixedWidth,
     ReverseMenuGrowsToTheLeft,
+    WithFixedStrategy,
+    WithDisabledItem,
 } = composeStories(stories);
 
 describe("EbayMenuButton rendering", () => {
@@ -185,7 +187,7 @@ describe("EbayMenuButton rendering", () => {
         it("should render correctly", () => {
             render(<FixedWidth expanded />);
             const menu = screen.getByRole("menu");
-            expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fix-width menu");
+            expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fix-width");
         });
     });
 
@@ -194,6 +196,26 @@ describe("EbayMenuButton rendering", () => {
             render(<ReverseMenuGrowsToTheLeft expanded />);
             const menu = screen.getByRole("menu");
             expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--reverse");
+        });
+    });
+
+    describe("WithFixedStrategy", () => {
+        it("should render correctly", () => {
+            render(<WithFixedStrategy expanded />);
+            const menu = screen.getByRole("menu");
+            expect(menu.parentElement).toHaveClass("menu-button__menu menu-button__menu--fixed");
+        });
+    });
+
+    describe("WithDisabledItem", () => {
+        it("should render correctly", () => {
+            const { asFragment } = render(<WithDisabledItem expanded />);
+            const snapshot = asFragment();
+            const menuButtonElement = snapshot.querySelector(".menu-button__button");
+            menuButtonElement?.setAttribute("aria-controls", "1234");
+            const menuButtonMenu = snapshot.querySelector(".menu-button__menu");
+            menuButtonMenu?.setAttribute("id", "1234");
+            expect(snapshot).toMatchSnapshot();
         });
     });
 });

@@ -50,7 +50,7 @@ export default {
     },
 };
 
-export const Default: Story<Input> = (args) => ({ input: args });
+export const Default: Story<Input> = (args: Input) => ({ input: args });
 Default.args = {
     max: "A+++",
     min: "E",

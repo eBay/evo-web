@@ -5,7 +5,7 @@ import fixed from "./examples/all.marko";
 import code from "./examples/all.marko?raw";
 import component, { type Input } from "./index.marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: (args.renderBody
@@ -52,7 +52,7 @@ DynamicStars.parameters = {
     },
 };
 
-export const FixedStars: Story<Input> = (args) => ({
+export const FixedStars: Story<Input> = (args: Input) => ({
     input: args,
     component: fixed,
 });

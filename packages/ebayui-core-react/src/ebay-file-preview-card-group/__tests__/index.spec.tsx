@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import { EbayFilePreviewCardProps, EbayFilePreviewCard, EbayFilePreviewCardAction } from "../../ebay-file-preview-card";
 import { EbayFilePreviewCardGroup } from "../";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayFilePreviewCardGroup>", () => {
     it("click on see more show more images", async () => {
@@ -147,7 +148,7 @@ describe("<EbayFilePreviewCardGroup>", () => {
             <EbayFilePreviewCardGroup onAction={onActionClick}>
                 {cards.map((cardFile, index) => (
                     <EbayFilePreviewCard key={index} {...cardFile}>
-                        <EbayFilePreviewCardAction icon="heart16" aria-label="action-aria-label" />
+                        <EbayFilePreviewCardAction icon={<EbayIconHeart16 />} aria-label="action-aria-label" />
                     </EbayFilePreviewCard>
                 ))}
             </EbayFilePreviewCardGroup>,

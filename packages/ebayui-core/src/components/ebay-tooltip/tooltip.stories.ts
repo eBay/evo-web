@@ -7,7 +7,7 @@ import code from "./examples/icon-button-host.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 
@@ -132,7 +132,7 @@ Standard.parameters = {
     },
 };
 
-export const buttonHost: Story<Input> = (args, context) => ({
+export const buttonHost: Story<Input> = (args: Input, context: any) => ({
     // eslint-disable-next-line new-cap
     input: Template(args, context).input,
     component: buttonComponent,

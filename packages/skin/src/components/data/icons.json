@@ -100,6 +100,12 @@
                 "width": "24"
             },
             {
+                "name": "ai-search-filled-24",
+                "size": "24",
+                "height": "24",
+                "width": "24"
+            },
+            {
                 "name": "ai-shirt-16",
                 "size": "16",
                 "height": "16",
@@ -2699,6 +2705,30 @@
                 "width": "24"
             },
             {
+                "name": "live-bag-filled-24",
+                "size": "24",
+                "height": "24",
+                "width": "24"
+            },
+            {
+                "name": "live-bag-play-filled-16-colored",
+                "size": "16-colored",
+                "height": "16",
+                "width": "16"
+            },
+            {
+                "name": "live-bag-play-filled-24-colored",
+                "size": "24-colored",
+                "height": "24",
+                "width": "24"
+            },
+            {
+                "name": "live-bag-play-filled-64-colored",
+                "size": "64-colored",
+                "height": "64",
+                "width": "64"
+            },
+            {
                 "name": "live-bag-thin-16",
                 "size": "16",
                 "height": "16",
@@ -3009,6 +3039,30 @@
                 "size": "24",
                 "height": "24",
                 "width": "24"
+            },
+            {
+                "name": "money-stack-blue-12-colored",
+                "size": "12-colored",
+                "height": "12",
+                "width": "20"
+            },
+            {
+                "name": "money-stack-blue-18-colored",
+                "size": "18-colored",
+                "height": "18",
+                "width": "30"
+            },
+            {
+                "name": "money-stack-blue-24-colored",
+                "size": "24-colored",
+                "height": "24",
+                "width": "38"
+            },
+            {
+                "name": "money-stack-blue-32-colored",
+                "size": "32-colored",
+                "height": "32",
+                "width": "50"
             },
             {
                 "name": "monthly-invoice-12-colored",

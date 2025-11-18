@@ -1,17 +1,15 @@
 .chips-combobox {
     background-color: var(--color-background-secondary);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     border-radius: var(--border-radius-50);
     display: inline-block;
     padding-block: var(--spacing-100);
     padding-inline: var(--spacing-100) var(--spacing-200);
     position: relative;
 }
-
 .chips-combobox--fluid {
     display: block;
 }
-
 .chips-combobox__items {
     display: flex;
     flex-wrap: wrap;
@@ -21,15 +19,12 @@
     margin-bottom: var(--spacing-100);
     padding: 0;
 }
-
 .chips-combobox__items:empty {
     display: none;
 }
-
 .chips-combobox__items li {
     display: inline-block;
 }
-
 .chips-combobox .combobox__control > input {
     background-color: inherit;
     border: none;
@@ -39,16 +34,13 @@
     padding: var(--spacing-75) 0;
     width: calc(100% - var(--spacing-200));
 }
-
 .chips-combobox .combobox__control > input:focus {
     outline: none;
 }
-
 .chips-combobox .combobox {
     margin-inline-start: calc(var(--spacing-100) * -1);
     width: calc(100% + var(--spacing-300));
 }
-
 .chips-combobox .combobox svg.icon {
     pointer-events: none;
     position: absolute;
@@ -57,49 +49,40 @@
     transform: rotateX(0deg);
     transition: transform 0.2s linear;
 }
-
 .chips-combobox .combobox__listbox--set-position {
     top: calc(100% + var(--spacing-150));
 }
-
 .chips-combobox .combobox__option[role^="option"] {
     border-style: none;
 }
-
 .chips-combobox .combobox__option span {
     pointer-events: none;
 }
-
 .chips-combobox:focus-within {
     background-color: var(--color-background-primary);
-    border-color: var(--color-stroke-strong);
+    border-color: var(--color-border-strong);
 }
 .chips-combobox .combobox--expanded svg.icon {
     transform: rotateX(180deg);
 }
-
 .chips-combobox--error,
 .chips-combobox--error:focus-within {
-    border-color: var(--color-stroke-attention);
+    border-color: var(--color-border-attention);
 }
 .chips-combobox[aria-disabled] {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
     pointer-events: none;
 }
-
 .chips-combobox[aria-disabled] .chip {
     color: var(--color-foreground-disabled);
 }
-
 .chips-combobox[aria-disabled] svg.icon {
     fill: var(--color-foreground-disabled);
 }
-
 .chips-combobox[aria-disabled] .combobox__control > input {
     border: none;
     color: var(--color-foreground-disabled);
 }
-
 .chips-combobox[aria-disabled] .combobox__control > input::placeholder {
     color: var(--color-foreground-disabled);
 }

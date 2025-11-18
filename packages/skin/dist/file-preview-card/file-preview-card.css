@@ -1,3 +1,8 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
+
 .file-preview-card {
     display: flex;
     flex-direction: column;
@@ -79,7 +84,7 @@ video.file-preview-card__asset {
     border-radius: 1em;
     bottom: var(--spacing-100);
     display: flex;
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-small);
     font-weight: 400;
     gap: var(--spacing-50);
     left: var(--spacing-100);
@@ -99,22 +104,50 @@ video.file-preview-card__asset {
 }
 
 .file-preview-card__see-more {
+    overflow: hidden;
+    position: relative;
+}
+
+.file-preview-card__see-more:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.file-preview-card__see-more:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+.file-preview-card__see-more[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+
+.file-preview-card__see-more:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+.file-preview-card__see-more[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+
+.file-preview-card__see-more:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+.file-preview-card__see-more[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
+
+.file-preview-card__see-more {
     aspect-ratio: 1/1;
-    background-color: rgb(
-        var(
-            --file-preview-card-see-more-background-color-rgb,
-            var(--color-background-strong-rgb)
-        ),
-        0.5
-    );
+    background-color: var(--color-background-inverse);
     border: none;
     border-radius: 50%;
-    color: var(
-        --file-preview-card-see-more-color,
-        var(--color-foreground-on-strong)
-    );
+    color: var(--color-foreground-on-strong);
     font-family: inherit;
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-body);
     font-weight: 700;
     left: 50%;
     line-height: var(--spacing-250);
@@ -123,36 +156,6 @@ video.file-preview-card__asset {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-}
-
-.file-preview-card__see-more:active,
-.file-preview-card__see-more:focus-visible,
-.file-preview-card__see-more:hover {
-    color: var(
-        --file-preview-card-see-more-interactive-color,
-        var(--color-foreground-primary)
-    );
-}
-
-.file-preview-card__see-more:focus-visible,
-.file-preview-card__see-more:hover {
-    background-color: rgb(
-        var(
-            --file-preview-card-see-more-interactive-background-color-rgb,
-            var(--color-state-secondary-hover-rgb)
-        ),
-        0.5
-    );
-}
-
-.file-preview-card__see-more:active {
-    background-color: rgb(
-        var(
-            --file-preview-card-see-more-interactive-active-background-color-rgb,
-            var(--color-state-secondary-active-rgb)
-        ),
-        0.5
-    );
 }
 
 .file-preview-card__footer {

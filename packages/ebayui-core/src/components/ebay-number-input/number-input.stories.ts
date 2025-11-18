@@ -168,7 +168,7 @@ export default {
     },
 };
 
-export const Default: Story<Input> = (args) => ({
+export const Default: Story<Input> = (args: Input) => ({
     input: args,
     component: defaultTemplate,
 });
@@ -181,7 +181,7 @@ Default.parameters = {
     },
 };
 
-export const withDelete: Story<Input> = (args) => ({
+export const withDelete: Story<Input> = (args: Input) => ({
     input: args,
     component: withDeleteTemplate,
 });
@@ -194,7 +194,7 @@ withDelete.parameters = {
     },
 };
 
-export const withLabel: Story<Input> = (args) => ({
+export const withLabel: Story<Input> = (args: Input) => ({
     input: args,
     component: withLabelTemplate,
 });

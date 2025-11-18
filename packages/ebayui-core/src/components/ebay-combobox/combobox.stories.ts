@@ -12,7 +12,7 @@ import ActionableButtonTemplate from "./examples/actionable-button.marko";
 import ActionableButtonTemplateCode from "./examples/actionable-button.marko?raw";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

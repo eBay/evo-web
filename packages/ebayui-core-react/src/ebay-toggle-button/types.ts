@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import { EbayMouseEventHandler } from "../common/event-utils/types";
 import { Icon } from "../ebay-icon/types";
 
@@ -19,7 +19,7 @@ export type ToggleButtonProps = Omit<ComponentProps<"button">, "onClick"> & {
     title?: string;
     subtitle?: string | string[];
     layoutType?: "minimal" | "list" | "gallery";
-    icon?: Icon;
+    icon?: Icon | ReactElement;
     img?: ToggleButtonImge;
     onToggle?: ToggleButtonEvent;
 };

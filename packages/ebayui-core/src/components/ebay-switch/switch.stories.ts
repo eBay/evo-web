@@ -8,7 +8,7 @@ import DisabledTemplate from "./examples/disabled-with-label.marko";
 import WithLabelCode from "./examples/with-label.marko?raw";
 import DisabledCode from "./examples/disabled-with-label.marko?raw";
 
-const Template: Story<Input> = (args) => ({ input: args });
+const Template: Story<Input> = (args: Input) => ({ input: args });
 
 export default {
     title: "form input/ebay-switch",
@@ -34,7 +34,7 @@ export default {
     },
 };
 
-export const WithLabel: Story<Input> = (args) => ({
+export const WithLabel: Story<Input> = (args: Input) => ({
     input: args,
     component: WithLabelTemplate,
 });
@@ -47,7 +47,7 @@ WithLabel.parameters = {
     },
 };
 
-export const Disabled: Story<Input> = (args) => ({
+export const Disabled: Story<Input> = (args: Input) => ({
     input: args,
     component: DisabledTemplate,
 });

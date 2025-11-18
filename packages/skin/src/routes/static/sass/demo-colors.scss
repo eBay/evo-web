@@ -549,7 +549,7 @@
 
 .demo-color-background-primary::before {
     background-color: var(--color-background-primary);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-background-secondary::before {
@@ -569,11 +569,11 @@
 }
 
 .demo-color-background-confirmation::before {
-    background-color: var(--color-background-confirmation);
+    background-color: var(--color-background-success);
 }
 
-.demo-color-background-information::before {
-    background-color: var(--color-background-information);
+.demo-color-background-accent::before {
+    background-color: var(--color-background-accent);
 }
 
 .demo-color-background-accent::before {
@@ -600,12 +600,12 @@
     background-color: var(--color-foreground-attention);
 }
 
-.demo-color-foreground-confirmation::before {
-    background-color: var(--color-foreground-confirmation);
+.demo-color-foreground-success::before {
+    background-color: var(--color-foreground-success);
 }
 
-.demo-color-foreground-information::before {
-    background-color: var(--color-foreground-information);
+.demo-color-foreground-accent::before {
+    background-color: var(--color-foreground-accent);
 }
 
 .demo-color-foreground-accent::before {
@@ -613,15 +613,15 @@
 }
 
 .demo-color-foreground-visited::before {
-    background-color: var(--color-foreground-visited);
+    background-color: var(--color-foreground-link-visited);
 }
 
-.demo-color-foreground-on-primary::before {
-    background-color: var(--color-foreground-on-primary);
+.demo-color-foreground-primary::before {
+    background-color: var(--color-foreground-primary);
 }
 
-.demo-color-foreground-on-secondary::before {
-    background-color: var(--color-foreground-on-secondary);
+.demo-color-foreground-secondary::before {
+    background-color: var(--color-foreground-secondary);
 }
 
 .demo-color-foreground-on-disabled::before {
@@ -630,103 +630,63 @@
 
 .demo-color-foreground-on-inverse::before {
     background-color: var(--color-foreground-on-inverse);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-attention::before {
     background-color: var(--color-foreground-on-attention);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-confirmation::before {
-    background-color: var(--color-foreground-on-confirmation);
-    border: 1px solid var(--color-stroke-default);
+    background-color: var(--color-foreground-on-success);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-information::before {
-    background-color: var(--color-foreground-on-information);
-    border: 1px solid var(--color-stroke-default);
+    background-color: var(--color-foreground-on-success);
+    border: 1px solid var(--color-border-medium);
 }
 
 .demo-color-foreground-on-accent::before {
     background-color: var(--color-foreground-on-accent);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
 }
 
-.demo-color-stroke-default::before {
-    background-color: var(--color-stroke-default);
+.demo-color-border-default::before {
+    background-color: var(--color-border-medium);
 }
 
-.demo-color-stroke-accent::before {
-    background-color: var(--color-stroke-accent);
+.demo-color-border-accent::before {
+    background-color: var(--color-border-accent);
 }
 
-.demo-color-stroke-attention::before {
-    background-color: var(--color-stroke-attention);
+.demo-color-border-attention::before {
+    background-color: var(--color-border-attention);
 }
 
-.demo-color-stroke-confirmation::before {
-    background-color: var(--color-stroke-confirmation);
+.demo-color-border-confirmation::before {
+    background-color: var(--color-border-success);
 }
 
-.demo-color-stroke-information::before {
-    background-color: var(--color-stroke-information);
+.demo-color-border-information::before {
+    background-color: var(--color-border-accent);
 }
 
-.demo-color-stroke-disabled::before {
-    background-color: var(--color-stroke-disabled);
+.demo-color-border-disabled::before {
+    background-color: var(--color-border-disabled);
 }
 
-.demo-color-stroke-strong::before {
-    background-color: var(--color-stroke-strong);
+.demo-color-border-strong::before {
+    background-color: var(--color-border-strong);
 }
 
-.demo-color-stroke-subtle::before {
-    background-color: var(--color-stroke-subtle);
+.demo-color-border-subtle::before {
+    background-color: var(--color-border-subtle);
 }
 
 .demo-color-state-visited::before {
     background-color: var(--color-state-visited);
-}
-
-.demo-color-state-primary-hover::before {
-    background-color: var(--color-state-primary-hover);
-}
-
-.demo-color-state-primary-active::before {
-    background-color: var(--color-state-primary-active);
-}
-
-.demo-color-state-secondary-hover::before {
-    background-color: var(--color-state-secondary-hover);
-}
-
-.demo-color-state-secondary-active::before {
-    background-color: var(--color-state-secondary-active);
-}
-
-.demo-color-state-inverse-hover::before {
-    background-color: var(--color-state-inverse-hover);
-}
-
-.demo-color-state-inverse-active::before {
-    background-color: var(--color-state-inverse-active);
-}
-
-.demo-color-state-accent-hover::before {
-    background-color: var(--color-state-accent-hover);
-}
-
-.demo-color-state-accent-active::before {
-    background-color: var(--color-state-accent-active);
-}
-
-.demo-color-state-attention-hover::before {
-    background-color: var(--color-state-attention-hover);
-}
-
-.demo-color-state-attention-active::before {
-    background-color: var(--color-state-attention-active);
 }
 
 .demo-color-scrim-image::before {
@@ -738,29 +698,29 @@
 }
 
 .demo-color-ai-gradient-full-spectrum::before {
-    background: var(--color-ai-gradient-full-spectrum);
+    background: var(--color-gradient-ai-full-color-diagonal);
 }
 
 .demo-color-ai-gradient-green-strong::before {
-    background: var(--color-ai-gradient-green-strong);
+    background: var(--color-gradient-ai-green-strong);
 }
 
 .demo-color-ai-gradient-blue-strong::before {
-    background: var(--color-ai-gradient-blue-strong);
+    background: var(--color-gradient-ai-blue-strong);
 }
 
 .demo-color-ai-gradient-purple-strong::before {
-    background: var(--color-ai-gradient-purple-strong);
+    background: var(--color-gradient-ai-purple-strong);
 }
 
 .demo-color-ai-gradient-green-subtle::before {
-    background: var(--color-ai-gradient-green-subtle);
+    background: var(--color-gradient-ai-green-subtle);
 }
 
 .demo-color-ai-gradient-blue-subtle::before {
-    background: var(--color-ai-gradient-blue-subtle);
+    background: var(--color-gradient-ai-blue-subtle);
 }
 
 .demo-color-ai-gradient-purple-subtle::before {
-    background: var(--color-ai-gradient-purple-subtle);
+    background: var(--color-gradient-ai-purple-subtle);
 }

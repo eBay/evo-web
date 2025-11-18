@@ -1,5 +1,6 @@
 import fsp from "node:fs/promises";
 import { defineConfig } from "vite";
+import { playwright } from '@vitest/browser-playwright';
 import marko from "@marko/vite";
 const isCI = !!process.env.CI;
 
@@ -34,6 +35,8 @@ export default defineConfig({
                 "src/**/examples",
                 "src/components/ebay-icon/icons/",
                 "src/**/*.stories.ts",
+                "src/**/*.md(x?)",
+                "src/**/*.md",
             ],
         },
         projects: [
@@ -43,7 +46,7 @@ export default defineConfig({
                     name: "browser",
                     browser: {
                         enabled: true,
-                        provider: "playwright",
+                        provider: playwright(),
                         headless: true,
                         instances: [{
                             browser: "chromium",

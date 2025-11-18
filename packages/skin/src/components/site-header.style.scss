@@ -108,7 +108,7 @@ header {
 
 .primary-nav:not(.footer-nav) {
     background-color: var(--color-background-secondary);
-    border: 1px solid var(--color-stroke-subtle);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 3px;
     box-shadow: var(--shadow-subtle);
     display: none;
@@ -251,7 +251,7 @@ header {
 }
 
 .mobile-nav-toggle {
-    border: 1px solid var(--color-stroke-subtle);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 2px;
     height: 28px;
     justify-items: center;

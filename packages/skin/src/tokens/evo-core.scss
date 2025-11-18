@@ -1,0 +1,47 @@
+@use "@ebay/design-tokens/dist/mixins/evo-core" as tokens;
+:root {
+    @include tokens.evo-core;
+
+    --border-radius-50: 8px;
+    --border-radius-100: 16px;
+    --border-radius-150: 24px;
+    --color-neutral-100-rgb: 255, 255, 255;
+    --color-neutral-200-rgb: 247, 247, 247;
+    --color-neutral-800-rgb: 25, 25, 25;
+    --color-neutral-900-rgb: 0, 0, 0;
+    --color-ai-solid-green-subtle-dark: #112611;
+    --color-ai-solid-blue-subtle-dark: #112c31;
+    --color-ai-solid-purple-subtle-dark: #20172f;
+    --color-ai-solid-red-subtle-dark: #321919;
+    --opacity-50: 0.04;
+    --opacity-100: 0.08;
+    --opacity-150: 0.12;
+    --opacity-200: 0.16;
+    --font-size-10: var(--font-size-smallest);
+    --font-size-12: var(--font-size-small);
+    --font-size-14: var(--font-size-body);
+    --font-size-16: var(--font-size-medium);
+    --font-size-18: 1.125rem;
+    --font-size-20: var(--font-size-large-1);
+    --font-size-24: var(--font-size-large-2);
+    --font-size-30: var(--font-size-giant-1);
+    --font-size-36: var(--font-size-giant-2);
+    --font-size-46: var(--font-size-giant-3);
+    --font-size-64: 4rem;
+    --font-size-default: var(--font-size-body);
+    --font-size-giant-4: var(--font-size-64);
+    --font-weight-regular: var(--font-weight-400);
+    --font-weight-bold: var(--font-weight-600);
+    --spacing-125: 10px;
+    --spacing-450: 36px;
+    --spacing-700: 56px;
+    --spacing-800: 64px;
+    --color-media-disabled-filter: grayscale(1) opacity(0.25);
+    /* Typography */
+
+    /*
+    Ratio of 20px (base line height) / 14px (body font)
+    This needs to be unitless for optimal scaling
+    */
+    --font-line-height-default: 1.4286;
+}

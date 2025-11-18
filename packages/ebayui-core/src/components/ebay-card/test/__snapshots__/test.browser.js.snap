@@ -429,7 +429,7 @@ exports[`card > default > then it matches the snapshot 1`] = `
           border-top: 1px solid;
           color: inherit;
           font-family: inherit;
-          font-size: var(--font-size-default);
+          font-size: var(--font-size-body);
           min-height: 40px;
           min-width: 88px;
           overflow-x: hidden;
@@ -446,7 +446,7 @@ exports[`card > default > then it matches the snapshot 1`] = `
         ">
           <style>@scope{:scope{
             &::after {
-              background-color: var(--state-layer-neutral);
+              background-color: var(--color-state-layer-neutral);
               bottom: 0px;
               content: "";
               left: 0px;
@@ -550,7 +550,7 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
           border-top: 1px solid;
           color: inherit;
           font-family: inherit;
-          font-size: var(--font-size-default);
+          font-size: var(--font-size-body);
           min-height: 40px;
           min-width: 88px;
           overflow-x: hidden;
@@ -567,7 +567,7 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
         ">
           <style>@scope{:scope{
             &::after {
-              background-color: var(--state-layer-neutral);
+              background-color: var(--color-state-layer-neutral);
               bottom: 0px;
               content: "";
               left: 0px;
@@ -671,7 +671,7 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
           border-top: 1px solid;
           color: inherit;
           font-family: inherit;
-          font-size: var(--font-size-default);
+          font-size: var(--font-size-body);
           min-height: 40px;
           min-width: 88px;
           overflow-x: hidden;
@@ -688,7 +688,7 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
         ">
           <style>@scope{:scope{
             &::after {
-              background-color: var(--state-layer-neutral);
+              background-color: var(--color-state-layer-neutral);
               bottom: 0px;
               content: "";
               left: 0px;

@@ -40,7 +40,7 @@
 .drawer-dialog__handle::after {
     @include token-mixins.background-color-token(
         dialog-handle-color,
-        color-stroke-default
+        color-border-medium
     );
 
     border-radius: 3px;

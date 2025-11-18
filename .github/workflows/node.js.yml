@@ -102,6 +102,7 @@ jobs:
                   publish: npm run release
                   commit: "ci: release"
                   title: "ci: release"
+                  commitMode: "github-api"
               env:
                   # Disable husky
                   HUSKY: 0

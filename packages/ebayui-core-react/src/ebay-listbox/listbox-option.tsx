@@ -1,7 +1,7 @@
 import React, { ComponentProps, FC, ReactElement } from "react";
 import classNames from "classnames";
 import { filterByType } from "../utils";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconTick16 } from "../ebay-icon/icons/ebay-icon-tick-16";
 import { EbayListboxOptionDescription } from "./listbox-option-description";
 
 export type EbayListboxOptionProps = ComponentProps<"div"> & {
@@ -46,7 +46,7 @@ export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
                     {description?.length ? description : null}
                 </>
             )}
-            <EbayIcon name="tick16" />
+            <EbayIconTick16 />
         </div>
     );
 };

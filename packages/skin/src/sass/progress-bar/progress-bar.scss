@@ -14,7 +14,7 @@
 .progress-bar::-webkit-progress-bar {
     @include token-mixins.background-color-token(
         progress-bar-background-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 
     border-radius: 8px;

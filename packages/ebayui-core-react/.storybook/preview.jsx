@@ -1,5 +1,6 @@
 import React, { StrictMode } from "react";
-import { EbaySvg, EbayFlagsSvg } from "../src/ebay-svg";
+import { EbayFlagsSvg } from "../src/ebay-svg";
+import { EbayIconProvider } from "../src/ebay-icon";
 
 import "@ebay/skin";
 import "@ebay/skin/dist/tokens/evo-core.css";
@@ -11,9 +12,10 @@ export default {
     decorators: [
         (Story) => (
             <StrictMode>
-                <EbaySvg />
-                <EbayFlagsSvg />
-                <Story />
+                <EbayIconProvider>
+                    <EbayFlagsSvg />
+                    <Story />
+                </EbayIconProvider>
             </StrictMode>
         ),
     ],

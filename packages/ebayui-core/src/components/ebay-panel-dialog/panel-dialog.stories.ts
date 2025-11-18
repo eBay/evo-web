@@ -9,7 +9,7 @@ import WithFooterTemplate from "./examples/with-footer.marko";
 import WithFooterCode from "./examples/with-footer.marko?raw";
 import type { Input } from "./index.marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: (args.renderBody

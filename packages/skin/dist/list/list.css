@@ -1,18 +1,19 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 .list {
     max-width: 480px;
 }
-
 .list ol,
 .list ul {
     margin: 0;
     padding: 0;
 }
-
 .list li::marker {
     content: "";
     font-size: 0;
 }
-
 .list fieldset > *,
 .list li > * {
     align-items: center;
@@ -21,71 +22,72 @@
         var(--color-background-primary)
     );
     box-sizing: border-box;
-    color: var(--color-foreground-on-primary);
+    color: var(--color-foreground-primary);
     display: inline-flex;
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-medium);
     margin-block: 1px;
     min-height: var(--spacing-600);
     padding: var(--spacing-150) var(--spacing-200);
     width: 100%;
 }
-
 .list__leading {
     margin-inline-end: var(--spacing-200);
 }
-
 .list__trailing {
     margin-inline-start: var(--spacing-200);
 }
-
 .list__body {
     flex: 1;
 }
-
 .list ol li {
     counter-increment: item;
 }
-
 .list ol li > :before {
     content: counter(item) ".";
     margin-inline-end: var(--spacing-200);
     width: var(--spacing-300);
 }
-
 .list li > a,
 .list li > button {
     border: none;
+    overflow: hidden;
+    position: relative;
     text-align: left;
     text-decoration: none;
 }
-
-.list li > a:focus,
-.list li > a:hover,
-.list li > button:focus,
-.list li > button:hover {
-    color: var(--color-foreground-on-primary);
+.list li > a:after,
+.list li > button:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
 }
-
-.list li > a:active,
-.list li > a:focus,
-.list li > a:hover,
-.list li > button:active,
-.list li > button:focus,
-.list li > button:hover {
-    background-color: var(
-        --list-background-hover-color,
-        var(--color-state-primary-hover)
-    );
+.list li > a:not([disabled], [aria-disabled="true"]):hover:after,
+.list li > a[href]:hover:after,
+.list li > button:not([disabled], [aria-disabled="true"]):hover:after,
+.list li > button[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
 }
-
+.list li > a:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.list li > a[href]:focus-visible:after,
+.list li > button:not([disabled], [aria-disabled="true"]):focus-visible:after,
+.list li > button[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+.list li > a:not([disabled], [aria-disabled="true"]):active:after,
+.list li > a[href]:active:after,
+.list li > button:not([disabled], [aria-disabled="true"]):active:after,
+.list li > button[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
 .list hr {
     border: 0;
-    border-top: 1px solid var(--color-stroke-subtle);
+    border-top: 1px solid var(--color-border-subtle);
     height: 1px;
     margin-inline: var(--spacing-200);
     padding: 0;
 }
-
 [dir="rtl"] .list li > a,
 [dir="rtl"] .list li > button {
     text-align: right;

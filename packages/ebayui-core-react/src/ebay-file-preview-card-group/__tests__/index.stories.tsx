@@ -3,6 +3,7 @@ import { Meta, StoryFn } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EbayFilePreviewCardGroup } from "..";
 import { EbayFilePreviewCardProps, EbayFilePreviewCard, EbayFilePreviewCardAction } from "../../ebay-file-preview-card";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 const meta: Meta<typeof EbayFilePreviewCardGroup> = {
     title: "media/ebay-file-preview-card-group",
@@ -87,7 +88,7 @@ export const WithCustomAction: StoryFn<typeof EbayFilePreviewCardGroup> = (args)
         <EbayFilePreviewCardGroup {...args}>
             {cards.map((cardFile, index) => (
                 <EbayFilePreviewCard key={index} {...cardFile}>
-                    <EbayFilePreviewCardAction icon="heart16" aria-label="icon label" />
+                    <EbayFilePreviewCardAction icon={<EbayIconHeart16 />} aria-label="icon label" />
                 </EbayFilePreviewCard>
             ))}
         </EbayFilePreviewCardGroup>

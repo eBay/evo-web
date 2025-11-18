@@ -1,10 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
-import Meta, { Default, WithAnimation } from "./index.stories";
+import Meta, { Default, WithAnimation, WithExtraButtonProps } from "./index.stories";
 
 const DefaultStory = composeStory(Default, Meta);
 const AnimationStory = composeStory(WithAnimation, Meta);
+const WithExtraButtonPropsStory = composeStory(WithExtraButtonProps, Meta);
 
 jest.mock("../../common/random-id");
 
@@ -38,5 +39,17 @@ describe("ebay-confirm-dialog rendering", () => {
 
         const dialog = screen.queryByRole("dialog");
         expect(dialog).not.toBeInTheDocument();
+    });
+
+    it("should render custom confirm and reject buttons", () => {
+        render(<WithExtraButtonPropsStory />);
+
+        const buttonDelete = screen.getByText("Delete");
+        const buttonCancel = screen.getByText("Cancel");
+
+        expect(buttonDelete.textContent).toEqual("Delete");
+        expect(buttonDelete).toHaveClass("btn confirm-dialog__reject custom-class btn--tertiary");
+        expect(buttonCancel.textContent).toEqual("Cancel");
+        expect(buttonCancel).toHaveClass("btn confirm-dialog__confirm btn--destructive");
     });
 });

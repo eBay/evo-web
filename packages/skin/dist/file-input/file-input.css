@@ -4,13 +4,11 @@ div.file-input {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
-
 div.file-input__container,
 input.file-input__input[type="file"] {
     border-radius: var(--file-input-border-radius, var(--border-radius-100));
     grid-area: center;
 }
-
 div.file-input__container {
     background-color: var(
         --file-input-background-color,
@@ -25,14 +23,12 @@ div.file-input__container {
     pointer-events: none;
     z-index: 1;
 }
-
 div.file-input___container--dragged-over {
     background-color: var(
         --file-input-dragged-over-background-color,
         var(--color-background-tertiary)
     );
 }
-
 div.file-input__upload-icon {
     align-self: center;
     background-color: var(
@@ -42,13 +38,11 @@ div.file-input__upload-icon {
     border-radius: 99px;
     padding: var(--spacing-150);
 }
-
 div.file-input__upload-icon svg {
     fill: var(--file-input-upload-icon-fill, var(--color-foreground-primary));
     height: var(--spacing-300);
     width: var(--spacing-300);
 }
-
 div.file-input__content {
     align-items: start;
     display: flex;
@@ -56,33 +50,29 @@ div.file-input__content {
     flex-grow: 1;
     justify-content: center;
 }
-
 .file-input__content-header {
     color: var(
         --file-input-content-header-color,
         var(--color-foreground-primary)
     );
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-body);
     font-weight: 700;
     line-height: var(--spacing-250);
     margin-block: 0 var(--spacing-50);
 }
-
 span.file-input__content-subheader {
     color: var(
         --file-input-content-subheader-color,
         var(--color-foreground-secondary)
     );
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-small);
     font-weight: 400;
     line-height: var(--spacing-200);
     margin-block-end: var(--spacing-100);
 }
-
 span.file-input__content-cta {
     text-decoration-line: underline;
 }
-
 @media screen and (min-width: 768px) {
     div.file-input__container {
         gap: var(--spacing-300);
@@ -92,11 +82,11 @@ span.file-input__content-cta {
         padding: var(--spacing-300);
     }
     .file-input__content-header {
-        font-size: var(--font-size-16);
+        font-size: var(--font-size-medium);
         line-height: var(--spacing-300);
     }
     span.file-input__content-subheader {
-        font-size: var(--font-size-14);
+        font-size: var(--font-size-body);
         line-height: var(--spacing-250);
     }
 }

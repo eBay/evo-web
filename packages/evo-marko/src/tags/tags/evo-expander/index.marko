@@ -6,11 +6,12 @@ import {
     type ReferenceElement,
 } from "@floating-ui/dom";
 static interface Ret {
+    floatingStyles: undefined | Marko.HTMLAttributes["style"];
     onClick: () => void;
     onFocus: () => void;
     onFocusOut: () => void;
     onKeydown: (e: KeyboardEvent) => void;
-    ariaExpanded: string;
+    ariaExpanded: Marko.HTMLAttributes["aria-expanded"];
 }
 export interface Input {
     open?: boolean;
@@ -23,16 +24,20 @@ export interface Input {
     overlay: () => HTMLElement;
 }
 
+<let/floatingStyles=undefined as Ret["floatingStyles"]>
 <const/update=() => {
     computePosition(input.host(), input.overlay(), {
         placement: input.reverse ? "bottom-end" : "bottom-start",
         strategy: input.strategy ?? "fixed",
         middleware: [offset(input.offset ?? 4), shift()],
     }).then(({ x, y }) => {
-        Object.assign(input.overlay().style, {
+        if ($signal.aborted) {
+            return;
+        }
+        floatingStyles = {
             left: `${x}px`,
             top: `${y}px`,
-        });
+        };
     });
 }>
 
@@ -44,15 +49,23 @@ export interface Input {
         $signal.onabort = () => {
             cleanupFn();
         };
-
-        (input.overlay()?.querySelector('[tabindex]') as HTMLInputElement).focus();
+        let focusItem = input
+            .overlay()
+            ?.querySelector("[tabindex]") as HTMLInputElement;
+        if (!focusItem) {
+            focusItem = input.overlay() as HTMLInputElement;
+        }
+        focusItem?.focus();
 
         // Set timeout is here because otherwise the events will bubble and trigger immediately
         setTimeout(() => {
             document.addEventListener(
                 "click",
                 (e: Event) => {
-                    if (input.host().contains(e.target as Node) === false || input.collapseOnSelect) {
+                    if (
+                        input.host().contains(e.target as Node) === false ||
+                        input.collapseOnSelect
+                    ) {
                         open = false;
                     }
                 },
@@ -77,9 +90,10 @@ export interface Input {
 
 <return=(
     {
+        floatingStyles,
         onClick() {
             open = !open;
-        },
+       },
         onFocus() {
             open = true;
         },

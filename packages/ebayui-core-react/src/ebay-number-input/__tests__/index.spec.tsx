@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import EbayNumberInput from "../number-input";
 
 describe("given a number input textbox", () => {
@@ -150,7 +150,9 @@ describe("given a number input textbox with constraints", () => {
 
     describe("when increment is pressed at max value", () => {
         beforeEach(async () => {
-            const { container } = render(<EbayNumberInput max={10} min={1} value={10} onChange={onChange} onIncrement={onIncrement} />);
+            const { container } = render(
+                <EbayNumberInput max={10} min={1} value={10} onChange={onChange} onIncrement={onIncrement} />,
+            );
             const incrementButton = container.querySelector(".number-input__increment");
             await fireEvent.click(incrementButton!);
         });
@@ -166,7 +168,9 @@ describe("given a number input textbox with constraints", () => {
 
     describe("when decrement is pressed", () => {
         beforeEach(async () => {
-            const { container } = render(<EbayNumberInput max={10} min={1} value={10} onChange={onChange} onDecrement={onDecrement} />);
+            const { container } = render(
+                <EbayNumberInput max={10} min={1} value={10} onChange={onChange} onDecrement={onDecrement} />,
+            );
             const decrementButton = container.querySelector(".number-input__decrement");
             await fireEvent.click(decrementButton!);
         });

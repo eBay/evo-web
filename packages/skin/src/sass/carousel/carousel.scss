@@ -1,6 +1,7 @@
 @use "../variables/variables";
 @use "../mixins/private/token-mixins";
 @use "../mixins/public/utility-mixins";
+@use "../mixins/private/state-layer";
 
 $ebay-carousel-transition-time: 0.45s;
 $ebay-carousel-transition-function: ease-in-out;
@@ -18,6 +19,7 @@ $ebay-carousel-transition-function: ease-in-out;
         carousel-paddle-background-color,
         color-background-primary
     );
+    @include state-layer.standard;
 
     align-items: center;
     border: 1px solid;
@@ -40,7 +42,7 @@ $ebay-carousel-transition-function: ease-in-out;
     z-index: 1;
     @include token-mixins.border-color-token(
         carousel-paddle-border-color,
-        color-stroke-subtle
+        color-border-subtle
     );
 
     &--prev {
@@ -54,10 +56,7 @@ $ebay-carousel-transition-function: ease-in-out;
     }
 
     svg {
-        @include token-mixins.color-token(
-            carousel-paddle-foreground-color,
-            color-foreground-primary
-        );
+        color: var(--color-foreground-primary);
     }
 
     /* https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/ */
@@ -89,19 +88,9 @@ $ebay-carousel-transition-function: ease-in-out;
     }
 
     &:hover {
-        background-color: var(--color-state-primary-hover);
-        border-color: var(--color-state-primary-hover);
-
         svg {
-            @include token-mixins.color-token(
-                carousel-paddle-hover-foreground-color,
-                color-foreground-primary
-            );
+            color: var(--color-foreground-primary);
         }
-    }
-
-    &:active {
-        background-color: var(--color-state-primary-active);
     }
 }
 
