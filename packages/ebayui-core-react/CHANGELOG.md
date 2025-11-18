@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.17.1
+
+### Patch Changes
+
+- [#368](https://github.com/eBay/evo-web/pull/368) [`579eda5`](https://github.com/eBay/evo-web/commit/579eda5dfcf2289df3da600b572b0bd0b24f57a0) Thanks [@agliga](https://github.com/agliga)! - fix: added prevention to scroll up and down on page for menu
+
 ## 8.17.0
 
 ### Minor Changes
