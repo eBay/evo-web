@@ -1,0 +1,54 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+    "ignoreFiles": [
+        "dist/**/*",
+        "dist/variables/**/*",
+        "**/*.min.css",
+        "**/*.js",
+        "**/*.less",
+        "**/*.svg"
+    ],
+    "rules": {
+        "comment-empty-line-before": null,
+        "selector-not-notation": null,
+        "no-descending-specificity": null,
+        "no-duplicate-selectors": null,
+        "rule-empty-line-before": null,
+        "property-no-vendor-prefix": null,
+        "selector-no-vendor-prefix": null,
+        "value-no-vendor-prefix": null,
+        "selector-class-pattern": null,
+        "alpha-value-notation": "number",
+        "declaration-block-no-redundant-longhand-properties": null,
+        "media-feature-range-notation": null,
+        "value-keyword-case": [
+            "lower",
+            {
+                "camelCaseSvgKeywords": true
+            }
+        ],
+        "color-function-alias-notation": null,
+        "color-function-notation": null
+    },
+    "overrides": [
+        {
+            "files": ["**/*.scss"],
+            "extends": [
+                "stylelint-config-standard-scss",
+                "stylelint-config-prettier-scss"
+            ],
+            "plugins": ["stylelint-order"],
+            "rules": {
+                "scss/dollar-variable-pattern": null,
+                "nesting-selector-no-missing-scoping-root": null,
+                "order/properties-alphabetical-order": true,
+                "value-keyword-case": [
+                    "lower",
+                    {
+                        "camelCaseSvgKeywords": true
+                    }
+                ]
+            }
+        }
+    ]
+}
