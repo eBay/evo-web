@@ -1,6 +1,7 @@
 {
     "accordion": {
         "component": "accordion",
+        "cssStorybookPath": "/story/skin-accordion--closed",
         "markoStorybookPath": "/docs/navigation-disclosure-ebay-accordion--documentation",
         "reactStorybookPath": "/docs/navigation-disclosure-ebay-accordion--documentation",
         "ds-component": {

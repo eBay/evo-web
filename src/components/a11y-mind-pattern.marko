@@ -2,7 +2,9 @@ import markdownit from 'markdown-it';
 import fs from 'fs';
 import path from 'path';
 
-static const md = markdownit();
+static const md = markdownit({
+    html: true
+});
 
 $ {
     // Get the a11y MIND pattern, read its contents, and convert to HTML
