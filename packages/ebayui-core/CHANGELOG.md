@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 15.14.2
+
+### Patch Changes
+
+- [#373](https://github.com/eBay/evo-web/pull/373) [`ccb9fbc`](https://github.com/eBay/evo-web/commit/ccb9fbcadc06d4fde8b6125a820b9071ed6bf769) Thanks [@agliga](https://github.com/agliga)! - fix(menu-button): added nullish coalescing selector to focus
+
 ## 15.14.1
 
 ### Patch Changes
