@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import cx from "classnames";
 import { EbayProgressSpinner } from "../ebay-progress-spinner";
-import { EbayIcon } from "../ebay-icon";
 import { FilePreviewType } from "./types";
+import { EbayIconFile24 } from "../ebay-icon/icons/ebay-icon-file-24";
 
 export type EbayFilePreviewContentProps = {
     file?: FilePreviewType;
@@ -32,7 +32,7 @@ const EbayFilePreviewContent: FC<EbayFilePreviewContentProps> = ({ file, status,
                 />
             );
         default:
-            return <EbayIcon name="file24" className="file-preview-card__asset" />;
+            return <EbayIconFile24 className="file-preview-card__asset" />;
     }
 };
 

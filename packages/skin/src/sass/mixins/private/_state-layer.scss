@@ -1,8 +1,84 @@
-@mixin base($base-color: var(--state-layer-neutral)) {
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
+
+@mixin base($base-color: var(--color-state-layer-neutral), $radius: null) {
     overflow: hidden;
     position: relative;
 
     &::after {
+        background-color: $base-color;
+        border-radius: $radius;
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+    }
+}
+
+@mixin selector-hover() {
+    &::after {
+        background-color: var(--color-state-layer-hover);
+    }
+}
+
+@mixin selector-active() {
+    &::after {
+        background-color: var(--color-state-layer-pressed);
+    }
+}
+
+@mixin standard($radius: null) {
+    @include base($radius: $radius);
+
+    &:not([disabled], [aria-disabled="true"]),
+    &[href] {
+        &:hover::after {
+            background-color: var(--color-state-layer-hover);
+        }
+        &:focus-visible::after {
+            background-color: var(--color-state-layer-focus);
+        }
+        &:active::after {
+            background-color: var(--color-state-layer-pressed);
+        }
+    }
+}
+
+@mixin transparent() {
+    &:not([disabled], [aria-disabled="true"]),
+    &[href] {
+        &:hover::after,
+        &:focus-visible::after,
+        &:active::after {
+            background-color: transparent;
+        }
+    }
+}
+
+@mixin strong() {
+    @include base(var(--color-state-layer-neutral-on-strong));
+
+    &:not([disabled], [aria-disabled="true"]),
+    &[href] {
+        &:hover::after {
+            background-color: var(--color-state-layer-hover-on-strong);
+        }
+        &:focus-visible::after {
+            background-color: var(--color-state-layer-focus-on-strong);
+        }
+        &:active::after {
+            background-color: var(--color-state-layer-pressed-on-strong);
+        }
+    }
+}
+
+@mixin before-base($base-color: var(--color-state-layer-neutral)) {
+    overflow: hidden;
+    position: relative;
+
+    &::before {
         background-color: $base-color;
         content: "";
         inset: 0;
@@ -11,36 +87,14 @@
     }
 }
 
-@mixin standard() {
-    @include base;
-
-    &:not([disabled], [aria-disabled="true"]),
-    &[href] {
-        &:hover::after {
-            background-color: var(--state-layer-hover);
-        }
-        &:focus::after {
-            background-color: var(--state-layer-focus);
-        }
-        &:active::after {
-            background-color: var(--state-layer-pressed);
-        }
+@mixin before-hover() {
+    &::before {
+        background-color: var(--color-state-layer-hover);
     }
 }
 
-@mixin strong() {
-    @include base(var(--state-layer-neutral-on-strong));
-
-    &:not([disabled], [aria-disabled="true"]),
-    &[href] {
-        &:hover::after {
-            background-color: var(--state-layer-hover-on-strong);
-        }
-        &:focus::after {
-            background-color: var(--state-layer-focus-on-strong);
-        }
-        &:active::after {
-            background-color: var(--state-layer-pressed-on-strong);
-        }
+@mixin before-active() {
+    &::before {
+        background-color: var(--color-state-layer-pressed);
     }
 }

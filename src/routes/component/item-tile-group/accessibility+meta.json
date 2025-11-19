@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Item Tile Group Accessibility Guidelines — Creating Inclusive Product Grids",
-    "pageDescription": "Learn how to make item tile group components fully accessible with proper list semantics, navigation patterns, and responsive layouts. Follow these WCAG-aligned guidelines to ensure product grids work for all users with keyboard and screen reader support.",
-    "pageImg": "/static/img/components/card-400.png"
+  "pageTitle": "Item Tile Group Accessibility Guidelines — Creating Inclusive Product Grids",
+  "pageDescription": "Learn how to make item tile group components fully accessible with proper list semantics, navigation patterns, and responsive layouts. Follow these WCAG-aligned guidelines to ensure product grids work for all users with keyboard and screen reader support.",
+  "pageImg": "/static/img/components/card-400.png"
 }

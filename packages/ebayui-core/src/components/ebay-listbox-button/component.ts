@@ -1,5 +1,4 @@
 import Expander from "makeup-expander";
-import * as scrollKeyPreventer from "makeup-prevent-scroll-keys";
 import { DropdownUtil } from "../../common/dropdown";
 import type { Input as ListboxInput } from "../ebay-listbox/component";
 import type Listbox from "../ebay-listbox/component";
@@ -125,8 +124,6 @@ class ListboxButton extends Marko.Component<Input, State> {
                 focusManagement: "content",
                 collapseOnHostReFocus: true,
             });
-
-            scrollKeyPreventer.add(this.getEl("button"));
         }
         this.dropdownUtil = new DropdownUtil(
             this.getEl("button"),

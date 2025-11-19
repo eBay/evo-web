@@ -25,6 +25,8 @@ $ const rootTag = isAnchor ? "a" : "button";
         inputClass
     ]
     type=!isAnchor && "button"
+    href=!disabled ? href : undefined
+    disabled=!isAnchor ? disabled : undefined
     aria-pressed=!isAnchor && (state.selected ? "true" : "false")
     aria-expanded=variant === "menu" && (state.expanded ? "true" : "false")
     on-click("handleButtonClick")

@@ -7,7 +7,7 @@ import interactiveCode from "./examples/buttons-interactive.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 
@@ -244,7 +244,7 @@ Buttons.parameters = {
     },
 };
 
-export const Interactive: Story<Input> = (args) => ({
+export const Interactive: Story<Input> = (args: Input) => ({
     component: interactiveTemplate,
     input: addRenderBodies(args),
 });

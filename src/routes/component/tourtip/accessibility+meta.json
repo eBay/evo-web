@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Tourtip Accessibility Guidelines — Creating Inclusive Feature Tours",
-    "pageDescription": "Learn how to make tourtip components fully accessible with proper ARIA dialog roles, sequential navigation, and user control. Follow these WCAG-aligned guidelines to ensure guided tours work for all users with assistive technologies.",
-    "pageImg": "/static/img/components/tooltip-400.png"
+  "pageTitle": "Tourtip Accessibility Guidelines — Creating Inclusive Feature Tours",
+  "pageDescription": "Learn how to make tourtip components fully accessible with proper ARIA dialog roles, sequential navigation, and user control. Follow these WCAG-aligned guidelines to ensure guided tours work for all users with assistive technologies.",
+  "pageImg": "/static/img/components/tooltip-400.png"
 }

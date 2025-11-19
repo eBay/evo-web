@@ -12,7 +12,7 @@ import WithSpecificLinksTemplate from "./examples/linkMap.marko";
 import WithSpecificLinksTemplateCode from "./examples/linkMap.marko?raw";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

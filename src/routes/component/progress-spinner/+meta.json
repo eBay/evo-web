@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Progress Spinner Component",
-    "pageDescription": "The Progress Spinner component indicates loading states with rotating animation. Built with accessibility labels and reduced motion support, it provides clear feedback during asynchronous operations. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/spinner-400.png"
+  "pageTitle": "Progress Spinner Component",
+  "pageDescription": "The Progress Spinner component indicates loading states with rotating animation. Built with accessibility labels and reduced motion support, it provides clear feedback during asynchronous operations. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/spinner-400.png"
 }

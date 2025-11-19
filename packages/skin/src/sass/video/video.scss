@@ -103,3 +103,62 @@
 .video-player .shaka-video-container {
     font-family: variables.$font-family-default;
 }
+
+.video-player--with-nav .shaka-controls-container {
+    pointer-events: none;
+}
+.video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
+.video-player--with-nav .shaka-controls-container .shaka-play-button-container {
+    pointer-events: auto;
+}
+
+.video-player--compact {
+    container-type: inline-size;
+    width: 100%;
+}
+.video-player--compact .shaka-controls-button-panel {
+    background-color: transparent;
+    justify-content: flex-end;
+    pointer-events: none;
+    & > :first-child {
+        border-radius: 16px;
+        font-size: var(--font-size-medium);
+        margin-right: auto;
+        min-width: 80px;
+        padding: var(--spacing-200) var(--spacing-100);
+        width: auto;
+    }
+}
+
+.video-player--compact .shaka-controls-button-panel button {
+    * {
+        margin: 0;
+    }
+
+    align-items: center;
+    background-color: rgb(0 0 0 / 0.32);
+    border-radius: 50%;
+    justify-content: center;
+    margin: 0 5px;
+    &:enabled {
+        display: inline-flex;
+        pointer-events: auto;
+    }
+}
+.video-player--compact .shaka-scrim-container {
+    background: none;
+}
+.video-player--compact .shaka-tooltip:hover::after {
+    visibility: hidden;
+}
+@container (inline-size < #{variables.$screen-size-XS}) {
+    .video-player--compact video {
+        object-fit: cover;
+    }
+    .video-player--compact .shaka-controls-button-panel {
+        height: 48px;
+    }
+    .video-player--compact .shaka-remaining-time {
+        display: none;
+    }
+}

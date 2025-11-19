@@ -1,5 +1,59 @@
 # @ebay/ui-core-react
 
+## 8.17.0
+
+### Minor Changes
+
+- [`8d9cf6c`](https://github.com/eBay/evo-web/commit/8d9cf6c2928a84145c9b20c6eb93972e190660db) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons
+
+### Patch Changes
+
+- [#366](https://github.com/eBay/evo-web/pull/366) [`dfa3dfc`](https://github.com/eBay/evo-web/commit/dfa3dfc953ce43facf13e2ddd82812d288f6fceb) Thanks [@agliga](https://github.com/agliga)! - fix: toggled between true and false for aria-modal
+
+## 8.16.0
+
+### Minor Changes
+
+- [#340](https://github.com/eBay/evo-web/pull/340) [`3817188`](https://github.com/eBay/evo-web/commit/381718889339b90118f4e4f509032dbe2b9363a0) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(EbayFilterInput): add new react component
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
+- [#326](https://github.com/eBay/evo-web/pull/326) [`d6c46ea`](https://github.com/eBay/evo-web/commit/d6c46eaf3143b4a4e94284f1b8bb2f989f66977e) Thanks [@bruno2kd](https://github.com/bruno2kd)! - fix: ebay menu disabled button fix
+
+## 8.15.0
+
+### Minor Changes
+
+- [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
+
+  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+
+### Patch Changes
+
+- [#321](https://github.com/eBay/evo-web/pull/321) [`0e3cb3b`](https://github.com/eBay/evo-web/commit/0e3cb3bb390e68956b255c6e929220718929cec4) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Fix ebay-listbox: Prevent page scroll when using arrow keys in expanded listbox
+
+## 8.14.0
+
+### Minor Changes
+
+- [#310](https://github.com/eBay/evo-web/pull/310) [`c48fc5b`](https://github.com/eBay/evo-web/commit/c48fc5bbb810806f8252878137db31f6b3c0c095) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayIconButton): add support for 'priority' property
+
+- [#302](https://github.com/eBay/evo-web/pull/302) [`c1c7dc8`](https://github.com/eBay/evo-web/commit/c1c7dc890551b3b4d164b6c0c96fb641cd0a224d) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayIcon): use automatic symbol detection for icons
+
+- [#314](https://github.com/eBay/evo-web/pull/314) [`65f4d0b`](https://github.com/eBay/evo-web/commit/65f4d0b68d21a9c48d615a5901793f27a6515d89) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayAlertDialog|EbayConfirmDialog): Add support for "confirm" and "reject" button for extra props
+
+- [#313](https://github.com/eBay/evo-web/pull/313) [`3b217e6`](https://github.com/eBay/evo-web/commit/3b217e64214ab2346d40279448cf9bccfdd0553e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(MenuButton): add support for 'fixed' layout strategy
+  feat(ListboxButton): add support for 'fixed' layout strategy
+  feat(Menu): add support for 'fixed' layout strategy
+
+- [#315](https://github.com/eBay/evo-web/pull/315) [`f64a6a3`](https://github.com/eBay/evo-web/commit/f64a6a36b16e321d80619f6cc157f5fdcba1c864) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayFilterChip): add new filter-chip component
+
+### Patch Changes
+
+- [#304](https://github.com/eBay/evo-web/pull/304) [`9cbf8ff`](https://github.com/eBay/evo-web/commit/9cbf8ffe4d14f3b00fb1f5269ebdadc8fdaac2d7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - chore(EbayAvatar): remove usage of React.Children and cloneElement
+
 ## 8.13.2
 
 ### Patch Changes

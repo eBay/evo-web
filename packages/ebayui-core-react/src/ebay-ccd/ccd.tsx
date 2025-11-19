@@ -1,6 +1,8 @@
 import React, { ComponentProps, FC } from "react";
-import { EbayIcon } from "../ebay-icon";
 import classNames from "classnames";
+import { EbayIconCcdChargerIncluded } from "../ebay-icon/icons/ebay-icon-ccd-charger-included";
+import { EbayIconCcdChargerNotIncluded } from "../ebay-icon/icons/ebay-icon-ccd-charger-not-included";
+import { EbayIconCcdTop } from "../ebay-icon/icons/ebay-icon-ccd-top";
 
 type CCDProps = ComponentProps<"div"> & {
     max?: string;
@@ -32,11 +34,11 @@ const EbayCCD: FC<CCDProps> = ({
 
     return (
         <div {...rest} role="figure" aria-label={ariaLabel || a11yCombined} className={classNames("ccd", className)}>
-            {chargerIcon === "included" && <EbayIcon name="ccdChargerIncluded" className="ccd__charger-icon" />}
-            {chargerIcon === "not-included" && <EbayIcon name="ccdChargerNotIncluded" className="ccd__charger-icon" />}
+            {chargerIcon === "included" && <EbayIconCcdChargerIncluded className="ccd__charger-icon" />}
+            {chargerIcon === "not-included" && <EbayIconCcdChargerNotIncluded className="ccd__charger-icon" />}
             {(min || max) && (
                 <div className="ccd__description-figure">
-                    <EbayIcon name="ccdTop" className="ccd__top-icon" />
+                    <EbayIconCcdTop className="ccd__top-icon" />
                     <div className="ccd__body">
                         <div>
                             {min} - {max}

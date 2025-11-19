@@ -1,0 +1,53 @@
+style {
+    .spacer {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        margin-bottom: 20px;
+    }
+    .video-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .instructions {
+        text-align: center;
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #ffffd6;
+        border-radius: 4px;
+    }
+}
+
+<div class="instructions">
+    <h2>Auto-play on Viewport Visibility</h2>
+    <p>Scroll down to see the video. It will automatically play when it's 50% visible in the viewport and pause when it's less than 50% visible.</p>
+</div>
+
+<div class="spacer">
+    Scroll down to see the video
+</div>
+
+<div class="video-container">
+    <ebay-video
+        width="300"
+        height="300"
+        a11yPlayText = "Click to play",
+        a11yLoadText = "Loading",
+        a11yMuteText = "Click to mute",
+        a11yUnmuteText = "Click to unmute",
+        layout = "compact"
+        thumbnail = "https://i.ebayimg.com/images/g/3hAAAOSw5dVhY2Rm/s-l1600.jpg"
+        autoplay
+        loop
+        muted
+        offscreenPause = true
+    >
+        <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
+    </ebay-video>
+</div>
+
+<div class="spacer">
+    Scroll back up to see the video pause
+</div>

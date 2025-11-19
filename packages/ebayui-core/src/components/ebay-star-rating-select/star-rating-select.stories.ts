@@ -6,7 +6,7 @@ import FieldsetCode from "./examples/fieldset.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: (args.renderBody
@@ -96,7 +96,7 @@ Isolated.parameters = {
     },
 };
 
-export const Fieldset: Story<Input> = (args) => ({
+export const Fieldset: Story<Input> = (args: Input) => ({
     input: args,
     component: FieldsetTemplate,
 });

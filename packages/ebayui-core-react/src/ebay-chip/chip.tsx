@@ -1,7 +1,7 @@
 import React, { ComponentProps, FC } from "react";
 import { EbayMouseEventHandler } from "../events";
 import { useRandomId } from "../utils";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconClose12 } from "../ebay-icon/icons/ebay-icon-close-12";
 
 export type EbayChipProps = {
     a11yDeleteButtonText?: string;
@@ -27,7 +27,7 @@ const EbayChip: FC<EbayChipProps> = ({ a11yDeleteButtonText, onDelete, disabled,
                     disabled={disabled}
                     onClick={onDelete}
                 >
-                    <EbayIcon name="close12" />
+                    <EbayIconClose12 />
                 </button>
             ) : null}
         </span>

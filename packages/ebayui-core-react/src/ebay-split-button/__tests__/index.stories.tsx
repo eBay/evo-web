@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Meta } from "@storybook/react-vite";
 import { action } from "storybook/actions";
-import { EbayIcon } from "../../ebay-icon";
 import { EbayMenuButtonItem as Item, EbayMenuButtonSeparator as Separator } from "../../ebay-menu-button";
 import { EbaySplitButton } from "../index";
 import { Priority } from "../../ebay-button";
+import { EbayIconConfirmation16 } from "../../ebay-icon/icons/ebay-icon-confirmation-16";
+import { EbayIconAttention16 } from "../../ebay-icon/icons/ebay-icon-attention-16";
 
 Item.displayName = "Item";
 Item.toString = () => "Item";
@@ -81,13 +82,13 @@ export const Default = () => (
             <EbaySplitButton priority="tertiary" a11yMenuText="Expand" onClick={action("clicked")}>
                 Tertiary button menu with icons
                 <Item>
-                    <EbayIcon name="confirmation16" style={{ marginRight: "8px" }} /> Confirmed
+                    <EbayIconConfirmation16 style={{ marginRight: "8px" }} /> Confirmed
                 </Item>
                 <Item>
-                    <EbayIcon name="attention16" style={{ marginRight: "8px" }} /> Not yet confirmed
+                    <EbayIconAttention16 style={{ marginRight: "8px" }} /> Not yet confirmed
                 </Item>
                 <Item>
-                    <EbayIcon name="attention16" style={{ marginRight: "8px" }} /> Not yet confirmed
+                    <EbayIconAttention16 style={{ marginRight: "8px" }} /> Not yet confirmed
                 </Item>
             </EbaySplitButton>
         </p>

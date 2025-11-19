@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Split Button Accessibility Guidelines — Creating Inclusive Action Menus",
-    "pageDescription": "Learn how to make split button components fully accessible with proper button group semantics, keyboard navigation, and ARIA attributes. Follow these WCAG-aligned guidelines to ensure combined action buttons work for all users.",
-    "pageImg": "/static/img/components/button-400.png"
+  "pageTitle": "Split Button Accessibility Guidelines — Creating Inclusive Action Menus",
+  "pageDescription": "Learn how to make split button components fully accessible with proper button group semantics, keyboard navigation, and ARIA attributes. Follow these WCAG-aligned guidelines to ensure combined action buttons work for all users.",
+  "pageImg": "/static/img/components/button-400.png"
 }

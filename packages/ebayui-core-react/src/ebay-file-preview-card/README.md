@@ -24,16 +24,6 @@ import "@ebay/skin/file-preview-card";
 import "@ebay/skin/file-preview-card.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg icons={["close16", "delete16", "vertical16", "play16", "file24"]} />
-```
-
 ```jsx harmony
 <EbayFilePreviewCard status="uploading" a11yCancelUploadText="Cancel Uploard" onCancel={(e) => action("onCancel")(e)} />
 ```
@@ -47,7 +37,7 @@ Note: Make sure that `EbaySvg` is only rendered on the server so it does not aff
     }}
     onAction={onAction}
 >
-    <EbayFilePreviewCardAction icon="heart16" aria-label="like item" />
+    <EbayFilePreviewCardAction icon={<EbayIconHeart16 />} aria-label="like item" />
 </EbayFilePreviewCard>
 ```
 

@@ -1,7 +1,8 @@
 import React, { FC, SyntheticEvent } from "react";
 import classNames from "classnames";
-import { EbayIcon, Icon } from "../ebay-icon";
 import { CarouselControlType, MovementDirection } from "./types";
+import { EbayIconChevronLeft16 } from "../ebay-icon/icons/ebay-icon-chevron-left-16";
+import { EbayIconChevronRight16 } from "../ebay-icon/icons/ebay-icon-chevron-right-16";
 
 type CarouselControlProps = {
     label?: string;
@@ -9,11 +10,6 @@ type CarouselControlProps = {
     type: CarouselControlType;
     disabled?: boolean;
     onClick: (event: SyntheticEvent<HTMLButtonElement>, { direction }) => void;
-};
-
-const icon: Record<CarouselControlType, Icon> = {
-    prev: "chevronLeft16",
-    next: "chevronRight16",
 };
 
 const typeToDirection: Record<CarouselControlType, MovementDirection> = {
@@ -30,6 +26,8 @@ const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, 
         onClick(event, { direction: typeToDirection[type] });
     };
 
+    const Icon = type === "prev" ? EbayIconChevronLeft16 : EbayIconChevronRight16;
+
     return (
         <button
             className={classNames("carousel__control", `carousel__control--${type}`)}
@@ -37,12 +35,7 @@ const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, 
             aria-disabled={disabled}
             onClick={handleOnClick}
         >
-            <EbayIcon
-                className={classNames("icon", `icon--carousel-${type}`)}
-                focusable={false}
-                name={icon[type]}
-                aria-hidden={hidden}
-            />
+            <Icon className={classNames("icon", `icon--carousel-${type}`)} focusable={false} aria-hidden={hidden} />
         </button>
     );
 };

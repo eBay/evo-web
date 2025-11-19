@@ -30,7 +30,7 @@ label.floating-label__label {
     transform: scale(0.75, 0.75) translate(0, 2px);
     transform-origin: left;
     white-space: nowrap;
-    width: calc(100% - 40px);
+    width: calc((100% - var(--spacing-200) * 2 - 2px) / 0.75);
     z-index: 1;
 }
 
@@ -64,8 +64,9 @@ label.floating-label__label--focus {
 }
 
 label.floating-label__label--inline {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     transform: translate(0, 12px);
+    width: calc(100% - 40px);
 }
 
 .floating-label--large label.floating-label__label--inline {
@@ -75,6 +76,7 @@ label.floating-label__label--inline {
 label.floating-label__label--animate {
     transition:
         transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+        width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
         bottom 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 

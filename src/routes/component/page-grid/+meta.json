@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Page Grid Component",
-    "pageDescription": "The Page Grid component establishes consistent page layouts with responsive column systems. Built for flexible content organization, it adapts seamlessly across all screen sizes. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/layout-400.png"
+  "pageTitle": "Page Grid Component",
+  "pageDescription": "The Page Grid component establishes consistent page layouts with responsive column systems. Built for flexible content organization, it adapts seamlessly across all screen sizes. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/layout-400.png"
 }

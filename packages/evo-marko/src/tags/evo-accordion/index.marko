@@ -1,0 +1,57 @@
+import type { Input as DetailsInput } from "<evo-details>";
+export interface Input<Open extends number | number[] | undefined>
+    extends Marko.HTML.UL {
+    size?: "regular" | "large";
+    a11yText?: string;
+    details?: Marko.AttrTag<
+        Omit<DetailsInput, "size" | "alignment" | "open" | "openChange">
+    >;
+    open?: Open;
+    openChange?: (open: Open) => void;
+}
+
+<const/{
+    class: inputClass,
+    size,
+    details,
+    a11yText,
+    open: inputOpen,
+    openChange,
+    ...htmlInput
+}=input>
+<const/items=[...(details || [])]>
+
+<let/open:=input.open>
+
+<ul
+    class=["accordion", size === "large" && "accordion--large", inputClass]
+    aria-roledescription=(a11yText ?? "accordion")
+    ...htmlInput>
+    <for|item, index| of=items>
+        <li>
+            <evo-details
+                ...item
+                open=(
+                    Array.isArray(open) ? open.includes(index) : open === index
+                )
+                openChange(isOpen) {
+                    if (Array.isArray(open)) {
+                        const currentOpen = Array.isArray(open) ? open : [];
+                        if (isOpen) {
+                            if (!currentOpen.includes(index)) {
+                                open = [...currentOpen, index] as typeof open;
+                            }
+                        } else {
+                            open = currentOpen.filter((n) => n !== index) as typeof open;
+                        }
+                    } else {
+                        if (isOpen) {
+                            open = index as typeof open;
+                        } else {
+                            open = -1 as typeof open;
+                        }
+                    }
+                }/>
+        </li>
+    </for>
+</ul>

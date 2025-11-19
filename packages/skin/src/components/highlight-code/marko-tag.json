@@ -1,4 +1,0 @@
-{
-    "template": "./index.marko",
-    "transform": "./transform.js"
-}

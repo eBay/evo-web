@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/marko",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "marko-components"
@@ -47,7 +47,7 @@
     "makeup-roving-tabindex": "~0.7.7",
     "makeup-screenreader-trap": "~0.5.6",
     "makeup-typeahead": "^0.3.3",
-    "shaka-player": "4.16.2"
+    "shaka-player": "4.16.9"
   },
   "devDependencies": {
     "marko": "^6.0.52"

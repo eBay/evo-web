@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Link Accessibility Guidelines — Creating Inclusive Hyperlinks",
-    "pageDescription": "Learn how to make link components fully accessible with descriptive text, proper contrast, and keyboard focus indicators. Follow these WCAG-aligned guidelines to ensure hyperlinks are usable and understandable by all users.",
-    "pageImg": "/static/img/components/link-400.png"
+  "pageTitle": "Link Accessibility Guidelines — Creating Inclusive Hyperlinks",
+  "pageDescription": "Learn how to make link components fully accessible with descriptive text, proper contrast, and keyboard focus indicators. Follow these WCAG-aligned guidelines to ensure hyperlinks are usable and understandable by all users.",
+  "pageImg": "/static/img/components/link-400.png"
 }

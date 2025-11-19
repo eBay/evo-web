@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Floating Label Component",
-    "pageDescription": "The Floating Label component provides animated labels that move when input fields receive focus or contain values. Built with smooth transitions and accessibility support, it creates elegant form experiences. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/textbox-400.png"
+  "pageTitle": "Floating Label Component",
+  "pageDescription": "The Floating Label component provides animated labels that move when input fields receive focus or contain values. Built with smooth transitions and accessibility support, it creates elegant form experiences. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/textbox-400.png"
 }

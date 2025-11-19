@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Market Sans Component",
-    "pageDescription": "The Market Sans component provides typography styles using the Market Sans font family. Optimized for readability and brand consistency, it ensures proper font loading and fallbacks. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/typography-400.png"
+  "pageTitle": "Market Sans Component",
+  "pageDescription": "The Market Sans component provides typography styles using the Market Sans font family. Optimized for readability and brand consistency, it ensures proper font loading and fallbacks. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/typography-400.png"
 }

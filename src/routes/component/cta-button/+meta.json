@@ -1,5 +1,5 @@
 {
-    "pageTitle": "CTA Button Component",
-    "pageDescription": "The CTA (Call-to-Action) Button component emphasizes primary actions with distinctive styling to drive user engagement. Designed for high visibility and accessibility, it guides users toward key conversion points. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/cta-button-400.png"
+  "pageTitle": "CTA Button Component",
+  "pageDescription": "The CTA (Call-to-Action) Button component emphasizes primary actions with distinctive styling to drive user engagement. Designed for high visibility and accessibility, it guides users toward key conversion points. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/cta-button-400.png"
 }

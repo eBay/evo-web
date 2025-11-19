@@ -4,7 +4,7 @@ import Readme from "./README.md";
 import Component from "./examples/all.marko";
 import type { Input } from "./component-browser";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: args.renderBody

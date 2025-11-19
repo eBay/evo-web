@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { EbayFilePreviewCard, EbayFilePreviewCardAction } from "../";
+import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayFilePreviewCard>", () => {
     it("renders with status uploading", () => {
@@ -53,7 +54,7 @@ describe("<EbayFilePreviewCard>", () => {
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
             >
-                <EbayFilePreviewCardAction icon="heart16" aria-label="action label" />
+                <EbayFilePreviewCardAction icon={<EbayIconHeart16 />} aria-label="action label" />
             </EbayFilePreviewCard>,
         );
         expect(asFragment()).toMatchSnapshot();

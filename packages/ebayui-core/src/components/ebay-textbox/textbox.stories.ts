@@ -20,7 +20,7 @@ import FullyDecoratedCode from "./examples/fully-decorated.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component-browser";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
         renderBody: (args.renderBody
@@ -232,7 +232,7 @@ export default {
     },
 };
 
-export const WithLabel: Story<Input> = (args) => ({
+export const WithLabel: Story<Input> = (args: Input) => ({
     input: args,
     component: WithLabelTemplate,
 });
@@ -245,7 +245,7 @@ WithLabel.parameters = {
     },
 };
 
-export const Disabled: Story<Input> = (args) => ({
+export const Disabled: Story<Input> = (args: Input) => ({
     input: args,
     component: DisabledTemplate,
 });
@@ -258,7 +258,7 @@ Disabled.parameters = {
     },
 };
 
-export const FloatingLabel: Story<Input> = (args) => ({
+export const FloatingLabel: Story<Input> = (args: Input) => ({
     input: args,
     component: FloatingLabelTemplate,
 });
@@ -271,7 +271,7 @@ FloatingLabel.parameters = {
     },
 };
 
-export const FloatingLabelAutocomplete: Story<Input> = (args) => ({
+export const FloatingLabelAutocomplete: Story<Input> = (args: Input) => ({
     input: args,
     component: FloatingLabelAutocompleteTemplate,
 });
@@ -294,7 +294,7 @@ Isolated.parameters = {
     },
 };
 
-export const PrefixIcon: Story<Input> = (args) => ({
+export const PrefixIcon: Story<Input> = (args: Input) => ({
     input: args,
     component: WithPrefixIcon,
 });
@@ -307,7 +307,7 @@ PrefixIcon.parameters = {
     },
 };
 
-export const PostfixIcon: Story<Input> = (args) => ({
+export const PostfixIcon: Story<Input> = (args: Input) => ({
     input: args,
     component: WithPostfixIcon,
 });
@@ -320,7 +320,7 @@ PostfixIcon.parameters = {
     },
 };
 
-export const BothIcons: Story<Input> = (args) => ({
+export const BothIcons: Story<Input> = (args: Input) => ({
     input: args,
     component: WithBothIcons,
 });
@@ -333,7 +333,7 @@ BothIcons.parameters = {
     },
 };
 
-export const FullyDecorated: Story<Input> = (args) => ({
+export const FullyDecorated: Story<Input> = (args: Input) => ({
     input: args,
     component: FullyDecoratedTemplate,
 });

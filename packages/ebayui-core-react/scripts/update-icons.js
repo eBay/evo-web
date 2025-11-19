@@ -9,6 +9,7 @@ const {
     parseSVG,
     parseSVGSymbols,
     getIconKeys,
+    saveIconComponents,
 } = require("./update-icons-helpers");
 
 const skinDir = dirname(require.resolve("@ebay/skin/package.json"));
@@ -18,6 +19,7 @@ const skinIconsFile = join(svgDir, "/icons.svg");
 const iconsSymbolsFile = resolve(__dirname, `../src/ebay-svg/symbols.tsx`);
 const iconsSVG = parseSVG(skinIconsFile);
 saveSvgIcons(iconsSVG, iconsSymbolsFile);
+saveIconComponents(skinIconsFile);
 
 const skinSVGSymbols = parseSVGSymbols(skinIconsFile);
 console.log(`Found ${skinSVGSymbols.length} icons in Skin.`);

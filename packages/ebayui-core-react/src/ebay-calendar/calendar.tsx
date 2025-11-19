@@ -4,6 +4,8 @@ import React, { FC, FocusEvent, KeyboardEvent, MouseEvent, useEffect, useRef, us
 import { EbayIconButton } from "../ebay-icon-button";
 import { DayISO, fromISO, getWeekdayInfo, localeOverride, offsetISO, toISO } from "./date-utils";
 import classNames from "classnames";
+import { EbayIconChevronLeft24 } from "../ebay-icon/icons/ebay-icon-chevron-left-24";
+import { EbayIconChevronRight24 } from "../ebay-icon/icons/ebay-icon-chevron-right-24";
 
 export type EbayCalendarProps = {
     selected?: DayISO | DayISO[];
@@ -299,7 +301,7 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
                         <EbayIconButton
                             transparent
                             size="small"
-                            icon="chevronLeft24"
+                            icon={<EbayIconChevronLeft24 />}
                             disabled={disableBefore && getFirstVisibleISO() <= disableBefore}
                             aria-label={getA11yShowMonthText(monthTitle(getMonthDate(offset - 1)))}
                             onClick={() => prevMonth()}
@@ -312,7 +314,7 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
                         <EbayIconButton
                             transparent
                             size="small"
-                            icon="chevronRight24"
+                            icon={<EbayIconChevronRight24 />}
                             disabled={disableAfter && getLastVisibleISO() >= disableAfter}
                             aria-label={getA11yShowMonthText(monthTitle(getMonthDate(offset + numMonths)))}
                             onClick={() => nextMonth()}

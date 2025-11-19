@@ -2,8 +2,11 @@ import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Item, type Input as MenuInput } from "<evo-menu>";
-export interface Input<Index extends number | string | (number|string)[] | undefined>
-    extends Omit<MenuInput<Index>, "variant"> {
+export interface Input<
+    Index extends number | string | (number | string)[] | undefined,
+> extends Omit<MenuInput<Index>, "variant"> {
+    open?: boolean;
+    openChange?: (open: boolean) => void;
     collapseOnSelect?: boolean;
     prefixId?: string;
     variant?: "form" | "button" | "icon" | "filter";
@@ -41,7 +44,7 @@ export interface Input<Index extends number | string | (number|string)[] | undef
     variant,
     item: items = [],
     label,
-    selected,
+    selected: inputSelected,
     selectedChange,
     prefixLabel,
     prefixId,
@@ -52,6 +55,8 @@ export interface Input<Index extends number | string | (number|string)[] | undef
 }=input>
 
 <id/labelId>
+<let/selected:=input.selected>
+<let/open:=input.open>
 <const/{
     tagName,
     transparent,
@@ -73,7 +78,9 @@ export interface Input<Index extends number | string | (number|string)[] | undef
         transparent = inputTransparent;
     } else if (variant === "filter") {
         tagName = FilterChip;
-        isSelected = Array.isArray(selected) ? selected.length > 0 : selected !== -1;
+        isSelected = Array.isArray(selected)
+            ? selected.length > 0
+            : selected !== -1;
     } else {
         tagName = Button;
         split = inputSplit;
@@ -88,18 +95,20 @@ export interface Input<Index extends number | string | (number|string)[] | undef
         isSelected,
         noToggleIcon,
         transparent,
-        priority
+        priority,
     };
 })()>
 <id/menu>
-
 <span/root ...htmlInput class=["menu-button", inputClass]>
-    <evo-expander/{ onClick, ariaExpanded }
+    <evo-expander/expander
+        open:=open
         reverse=reverse
         strategy=strategy
         collapseOnSelect=collapseOnSelect
         host=root
-        overlay=() => { return document.getElementById(menu)!; } />
+        overlay=() => {
+            return document.getElementById(menu)!;
+        }/>
     <${tagName}
         class=[`menu-button__button`]
         size=size
@@ -109,13 +118,13 @@ export interface Input<Index extends number | string | (number|string)[] | undef
         aria-haspopup="true"
         selected=isSelected
         transparent=transparent
-        aria-expanded=ariaExpanded
+        aria-expanded=expander.ariaExpanded
         aria-labelledby=labelId && `${prefixId} ${labelId}`
         split=split
         disabled=disabled
         partiallyDisabled=partiallyDisabled
         onClick(e, target) {
-            onClick();
+            expander.onClick();
             (input.onClick || null)?.(e, target);
         }>
         <if=label>
@@ -130,11 +139,12 @@ export interface Input<Index extends number | string | (number|string)[] | undef
         </if>
     </>
     <evo-menu
+        style=expander.floatingStyles
         id=menu
         selected:=input.selected
         classPrefix="menu-button"
         fixed=strategy === "fixed"
-        variant=(variant as MenuInput["variant"])
+        variant=(variant as MenuInput<Index>["variant"])
         fixWidth=fixWidth
         tabindex=-1
         footerButton=footerButton

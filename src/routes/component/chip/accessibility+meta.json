@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Chip Accessibility Guidelines — Creating Inclusive Tag and Filter Controls",
-    "pageDescription": "Learn how to make chip components fully accessible with proper button semantics, removal actions, and ARIA labels. Follow these WCAG-aligned guidelines to ensure compact selection elements are usable by all users with assistive technologies.",
-    "pageImg": "/static/img/components/chip-400.png"
+  "pageTitle": "Chip Accessibility Guidelines — Creating Inclusive Tag and Filter Controls",
+  "pageDescription": "Learn how to make chip components fully accessible with proper button semantics, removal actions, and ARIA labels. Follow these WCAG-aligned guidelines to ensure compact selection elements are usable by all users with assistive technologies.",
+  "pageImg": "/static/img/components/chip-400.png"
 }

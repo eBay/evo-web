@@ -70,8 +70,29 @@ describe("<EbayMenu>", () => {
                 <EbayMenu onClick={onClickSpy} onSelect={onSelectSpy} onKeyDown={onKeyDownSpy}>
                     <EbayMenuItem value="1">item1</EbayMenuItem>
                     <EbayMenuItem value="2">item2</EbayMenuItem>
+                    <EbayMenuItem value="3" disabled>
+                        item3
+                    </EbayMenuItem>
                 </EbayMenu>,
             );
+        });
+
+        it("should not fire onClick, onSelect event when disabled", async () => {
+            await act(() => {
+                fireEvent.click(screen.getByText("item3"));
+            });
+
+            expect(onClickSpy).not.toHaveBeenCalled();
+            expect(onSelectSpy).not.toHaveBeenCalled();
+        });
+
+        it("should not fire onKeydown event when disabled", async () => {
+            await act(() => {
+                fireEvent.keyDown(screen.getByText("item3"), { key: "Enter" });
+            });
+
+            expect(onClickSpy).not.toHaveBeenCalled();
+            expect(onSelectSpy).not.toHaveBeenCalled();
         });
 
         it("should fire onClick, onSelect event", async () => {

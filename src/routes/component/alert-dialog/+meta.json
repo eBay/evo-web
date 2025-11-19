@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Alert Dialog Component",
-    "pageDescription": "The Alert Dialog component is a modal dialog that requires explicit user acknowledgment before dismissing. Built with accessibility in mind, it ensures critical messages reach all users through semantic HTML and ARIA support. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/dialog-400.png"
+  "pageTitle": "Alert Dialog Component",
+  "pageDescription": "The Alert Dialog component is a modal dialog that requires explicit user acknowledgment before dismissing. Built with accessibility in mind, it ensures critical messages reach all users through semantic HTML and ARIA support. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/dialog-400.png"
 }

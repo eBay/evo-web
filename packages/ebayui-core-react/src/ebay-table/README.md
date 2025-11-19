@@ -39,37 +39,11 @@ import "@ebay/skin/tokens";
 import "@ebay/skin/table.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg
-    icons={[
-        // If using sorting behavior
-        "sort12",
-        "sort12up",
-        "sort12down",
-
-        // If using selection behavior
-        "checkboxChecked18",
-        "checkboxUnchecked18",
-        "checkboxMixed18",
-    ]}
-/>
-```
-
 ```tsx
 <EbayTable>
-    <EbayTableHeader>
-        <EbayTableRow>
-            <EbayTableCell>Column 1</EbayTableCell>
-            <EbayTableCell>Column 2</EbayTableCell>
-            <EbayTableCell>Column 3</EbayTableCell>
-        </EbayTableRow>
-    </EbayTableHeader>
+    <EbayTableHeader>Column 1</EbayTableHeader>
+    <EbayTableHeader>Column 2</EbayTableHeader>
+    <EbayTableHeader>Column 3</EbayTableHeader>
     <EbayTableRow>
         <EbayTableCell>Row 1, Cell 1</EbayTableCell>
         <EbayTableCell>Row 1, Cell 2</EbayTableCell>

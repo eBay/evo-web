@@ -1,16 +1,9 @@
 import type EbayVideo from "./component";
 
-/**
- * Builds a time string, e.g., 01:04:23, from |displayTime|.
- *
- * @param {number} displayTime (in seconds)
- * @param {boolean} showHour
- * @return {string}
- */
-function buildTimeString(displayTime: any, showHour: any) {
+function buildTimeString(displayTime: number, showHour: boolean) {
     const h = Math.floor(displayTime / 3600);
     const m = Math.floor((displayTime / 60) % 60);
-    let s: any = Math.floor(displayTime % 60);
+    let s: number | string = Math.floor(displayTime % 60);
     if (s < 10) {
         s = "0" + s;
     }
@@ -24,14 +17,7 @@ function buildTimeString(displayTime: any, showHour: any) {
     return text;
 }
 
-/**
- * Depending on the value of display, sets/removes the css class of element to
- * either display it or hide it.
- *
- * @param {Element} element
- * @param {boolean} display
- */
-function setDisplay(element: any, display: any) {
+function setDisplay(element: HTMLElement | null | undefined, display: boolean) {
     if (!element) {
         return;
     }
@@ -84,25 +70,15 @@ function getElements(self: EbayVideo) {
     const TextSelection = self.shaka.ui.TextSelection;
 
     TextSelection.Factory = class {
-        /** @override */
         create(rootElement: HTMLElement, controls: any) {
             return new self.shaka.ui.TextSelection(rootElement, controls);
         }
     };
 
-    /**
-     * @extends {shaka.ui.Element}
-     * @final
-     * @export
-     */
     const CurrentTime = class extends self.shaka.ui.Element {
-        /**
-         * @param {!HTMLElement} parent
-         * @param {!shaka.ui.Controls} controls
-         */
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-            /** @type {!HTMLButtonElement} */
+            /** Button element for displaying current time */
             this.currentTime_ = document.createElement("button");
             this.currentTime_.classList.add("shaka-current-time");
             this.currentTime_.disabled = true;
@@ -125,11 +101,8 @@ function getElements(self: EbayVideo) {
                 this.onTracksChanged_();
             });
         }
-        /**
-         * @param {string} value
-         * @private
-         */
-        setValue_(value: any) {
+
+        setValue_(value: string) {
             // To avoid constant updates to the DOM, which makes debugging more
             // difficult, only set the value if it has changed.  If we don't do this
             // check, the DOM updates constantly, this element flashes in the debugger
@@ -138,7 +111,6 @@ function getElements(self: EbayVideo) {
                 this.currentTime_.textContent = value;
             }
         }
-        /** @private */
         updateTime_() {
             const isSeeking = this.controls.isSeeking();
             let displayTime = this.controls.getDisplayTime();
@@ -176,10 +148,6 @@ function getElements(self: EbayVideo) {
                 this.setValue_(value);
             }
         }
-        /**
-         * Set the aria label to be 'Live' when the content is live stream.
-         * @private
-         */
         onTracksChanged_() {
             if (this.player.isLive()) {
                 const ariaLabel = self.shaka.ui.Locales.Ids.SKIP_TO_LIVE;
@@ -188,30 +156,16 @@ function getElements(self: EbayVideo) {
             }
         }
     };
-    /**
-     * @implements {shaka.extern.IUIElement.Factory}
-     * @final
-     */
     CurrentTime.Factory = class {
-        /** @override */
         create(rootElement: HTMLElement, controls: any) {
             return new CurrentTime(rootElement, controls);
         }
     };
 
-    /**
-     * @extends {shaka.ui.Element}
-     * @final
-     * @export
-     */
     const TotalTime = class extends self.shaka.ui.Element {
-        /**
-         * @param {!HTMLElement} parent
-         * @param {!shaka.ui.Controls} controls
-         */
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-            /** @type {!HTMLButtonElement} */
+            /** Button element for displaying total time */
             this.currentTime_ = document.createElement("button");
             this.currentTime_.classList.add("shaka-current-time");
             this.currentTime_.disabled = true;
@@ -227,11 +181,8 @@ function getElements(self: EbayVideo) {
                 this.onTracksChanged_();
             });
         }
-        /**
-         * @param {string} value
-         * @private
-         */
-        setValue_(value: any) {
+
+        setValue_(value: string) {
             // To avoid constant updates to the DOM, which makes debugging more
             // difficult, only set the value if it has changed.  If we don't do this
             // check, the DOM updates constantly, this element flashes in the debugger
@@ -240,7 +191,6 @@ function getElements(self: EbayVideo) {
                 this.currentTime_.textContent = value;
             }
         }
-        /** @private */
         updateTime_() {
             const seekRange = this.player.seekRange();
             const seekRangeSize = seekRange.end - seekRange.start;
@@ -250,10 +200,6 @@ function getElements(self: EbayVideo) {
             }
         }
 
-        /**
-         * Set the aria label to be 'Live' when the content is live stream.
-         * @private
-         */
         onTracksChanged_() {
             if (this.player.isLive()) {
                 const ariaLabel = self.shaka.ui.Locales.Ids.SKIP_TO_LIVE;
@@ -262,25 +208,16 @@ function getElements(self: EbayVideo) {
             }
         }
     };
-    /**
-     * @implements {shaka.extern.IUIElement.Factory}
-     * @final
-     */
     TotalTime.Factory = class {
-        /** @override */
         create(rootElement: HTMLElement, controls: any) {
             return new TotalTime(rootElement, controls);
         }
     };
 
     const MuteButton = class extends self.shaka.ui.Element {
-        /**
-         * @param {!HTMLElement} parent
-         * @param {!shaka.ui.Controls} controls
-         */
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-            /** @private {!HTMLButtonElement} */
+            /** Button element for mute/unmute */
             this.button_ = document.createElement("button");
             this.button_.classList.add("shaka-mute-button");
             this.button_.classList.add("shaka-tooltip");
@@ -293,10 +230,10 @@ function getElements(self: EbayVideo) {
                 .getComponent("audio-high-icon")!
                 .el!.cloneNode(true);
 
-            /** @private {!HTMLElement} */
+            /** Icon element for mute/unmute button */
             this.icon_ = this.audioOff.cloneNode(true);
             this.button_.appendChild(this.icon_);
-            /** @private {!HTMLElement} */
+            /** Element for displaying current state */
             this.currentState_ = document.createElement("span");
             this.currentState_.classList.add("shaka-current-selection-span");
             this.parent.appendChild(this.button_);
@@ -312,9 +249,6 @@ function getElements(self: EbayVideo) {
                 this.updateIcon_();
             });
         }
-        /**
-         * @private
-         */
         updateIcon_() {
             const icon =
                 this.video.muted || this.video.volume == 0
@@ -323,30 +257,16 @@ function getElements(self: EbayVideo) {
             this.button_.childNodes[0].replaceWith(icon);
         }
     };
-    /**
-     * @implements {shaka.extern.IUIElement.Factory}
-     * @final
-     */
     MuteButton.Factory = class {
-        /** @override */
         create(rootElement: HTMLElement, controls: any) {
             return new MuteButton(rootElement, controls);
         }
     };
 
-    /**
-     * @extends {shaka.ui.Element}
-     * @final
-     * @export
-     */
     const FullscreenButton = class extends self.shaka.ui.Element {
-        /**
-         * @param {!HTMLElement} parent
-         * @param {!shaka.ui.Controls} controls
-         */
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-            /** @private {HTMLMediaElement} */
+            /** Local video element reference */
             this.localVideo_ = this.controls.getLocalVideo();
 
             this.fullscreenIcon = self
@@ -356,7 +276,7 @@ function getElements(self: EbayVideo) {
                 .getComponent("contract-icon")!
                 .el!.cloneNode(true);
 
-            /** @private {!HTMLButtonElement} */
+            /** Button element for fullscreen toggle */
             this.button_ = document.createElement("button");
             this.button_.classList.add("shaka-fullscreen-button");
             this.button_.classList.add("shaka-tooltip");
@@ -376,9 +296,6 @@ function getElements(self: EbayVideo) {
                 this.checkSupport_();
             });
         }
-        /**
-         * @private
-         */
         checkSupport_() {
             // Don't show the button if fullscreen is not supported
             if (!this.controls.isFullScreenSupported()) {
@@ -387,9 +304,6 @@ function getElements(self: EbayVideo) {
                 this.button_.classList.remove("shaka-hidden");
             }
         }
-        /**
-         * @private
-         */
         updateIcon_() {
             const icon = this.controls.isFullScreenEnabled()
                 ? this.exitFullscreenIcon
@@ -397,14 +311,61 @@ function getElements(self: EbayVideo) {
             this.button_.childNodes[0].replaceWith(icon);
         }
     };
-    /**
-     * @implements {shaka.extern.IUIElement.Factory}
-     * @final
-     */
     FullscreenButton.Factory = class {
-        /** @override */
         create(rootElement: HTMLElement, controls: any) {
             return new FullscreenButton(rootElement, controls);
+        }
+    };
+
+    const RemainingTime = class extends self.shaka.ui.Element {
+        constructor(parent: HTMLElement, controls: any) {
+            super(parent, controls);
+            /** Button element for displaying remaining time */
+            this.remainingTime_ = document.createElement("button");
+            this.remainingTime_.classList.add("shaka-remaining-time");
+            this.remainingTime_.disabled = true;
+            this.setValue_("0:00");
+            this.parent.appendChild(this.remainingTime_);
+            this.eventManager.listen(
+                this.controls,
+                "timeandseekrangeupdated",
+                () => {
+                    this.updateTime_();
+                },
+            );
+        }
+
+        setValue_(value: string) {
+            // To avoid constant updates to the DOM, which makes debugging more
+            // difficult, only set the value if it has changed.  If we don't do this
+            // check, the DOM updates constantly, this element flashes in the debugger
+            // in Chrome, and you can't make changes in the CSS panel.
+            if (value != this.remainingTime_.textContent) {
+                this.remainingTime_.textContent = value;
+            }
+        }
+        updateTime_() {
+            const displayTime = this.controls.getDisplayTime();
+            const seekRange = this.player.seekRange();
+            const seekRangeSize = seekRange.end - seekRange.start;
+
+            if (!isFinite(seekRangeSize)) {
+                this.setValue_("0:00");
+            } else if (this.player.isLive()) {
+                // For live content, don't show remaining time
+                this.setValue_("");
+            } else {
+                const showHour = seekRangeSize >= 3600;
+                // Calculate remaining time (total duration - current time)
+                const remainingTime = Math.max(0, seekRange.end - displayTime);
+                const value = "- " + buildTimeString(remainingTime, showHour);
+                this.setValue_(value);
+            }
+        }
+    };
+    RemainingTime.Factory = class {
+        create(rootElement: HTMLElement, controls: any) {
+            return new RemainingTime(rootElement, controls);
         }
     };
 
@@ -413,6 +374,7 @@ function getElements(self: EbayVideo) {
         MuteButton,
         CurrentTime,
         TotalTime,
+        RemainingTime,
         FullscreenButton,
         TextSelection,
     };

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Tooltip Component",
-    "pageDescription": "The Tooltip component displays supplementary information on hover or focus with accessible patterns. Built with proper ARIA support and positioning logic, it provides helpful context without cluttering interfaces. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/tooltip-400.png"
+  "pageTitle": "Tooltip Component",
+  "pageDescription": "The Tooltip component displays supplementary information on hover or focus with accessible patterns. Built with proper ARIA support and positioning logic, it provides helpful context without cluttering interfaces. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/tooltip-400.png"
 }

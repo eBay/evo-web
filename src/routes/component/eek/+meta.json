@@ -1,5 +1,5 @@
 {
-    "pageTitle": "EEK Component",
-    "pageDescription": "The EEK (Energy Efficiency Class) component displays energy ratings and efficiency information for products. Built with clear visual hierarchy and accessibility, it helps users make environmentally conscious purchasing decisions. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/eek-400.png"
+  "pageTitle": "EEK Component",
+  "pageDescription": "The EEK (Energy Efficiency Class) component displays energy ratings and efficiency information for products. Built with clear visual hierarchy and accessibility, it helps users make environmentally conscious purchasing decisions. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/eek-400.png"
 }

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Table Component",
-    "pageDescription": "The Table component displays structured data in rows and columns with sorting and responsive options. Built with semantic HTML and accessibility features, it ensures data tables are usable by everyone. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/table-400.png"
+  "pageTitle": "Table Component",
+  "pageDescription": "The Table component displays structured data in rows and columns with sorting and responsive options. Built with semantic HTML and accessibility features, it ensures data tables are usable by everyone. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/table-400.png"
 }

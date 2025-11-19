@@ -23,6 +23,10 @@ export type EbayMenuProps = ContainerDivProps &
         priority?: EbayMenuPriority;
         checked?: number;
         autofocus?: boolean;
+        classPrefix?: "menu-button";
+        reverse?: boolean;
+        fixed?: boolean;
+        fixWidth?: boolean;
         baseEl?: "div" | "span";
         onKeyDown?: EbayMenuKeyDownEventHandler;
         onChange?: EbayMenuChangeEventHandler;

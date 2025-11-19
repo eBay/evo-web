@@ -66,7 +66,7 @@ import { EbayInfotip, EbayInfotipHeading, EbayInfotipContent } from "@ebay/ui-co
         a11yCloseText="Dismiss infotip"
         aria-label="Important information"
         pointer="top-left"
-        icon="information"
+        icon={<EbayIconInformation16 />}
     >
         <EbayInfotipHeading>Important</EbayInfotipHeading>
         <EbayInfotipContent>

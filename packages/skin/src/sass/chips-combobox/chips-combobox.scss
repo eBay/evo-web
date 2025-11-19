@@ -2,7 +2,7 @@
 
 .chips-combobox {
     background-color: var(--color-background-secondary);
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     border-radius: var(--border-radius-50);
     display: inline-block;
     padding-block: var(--spacing-100);
@@ -74,7 +74,7 @@
 
 .chips-combobox:focus-within {
     background-color: var(--color-background-primary);
-    border-color: var(--color-stroke-strong);
+    border-color: var(--color-border-strong);
 }
 
 /* a custom chevron flip is needed since combobox */
@@ -85,16 +85,16 @@
 
 /** Error State **/
 .chips-combobox--error {
-    border-color: var(--color-stroke-attention);
+    border-color: var(--color-border-attention);
 }
 
 .chips-combobox--error:focus-within {
-    border-color: var(--color-stroke-attention);
+    border-color: var(--color-border-attention);
 }
 
 /** Disabled State **/
 .chips-combobox[aria-disabled] {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
     pointer-events: none;
 }
 

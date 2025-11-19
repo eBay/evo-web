@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Filter Button Component",
-    "pageDescription": "The Filter Button component provides quick access to filtering options with visual state indicators. Built for intuitive filtering experiences, it helps users refine content with accessible controls. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/button-400.png"
+  "pageTitle": "Filter Button Component",
+  "pageDescription": "The Filter Button component provides quick access to filtering options with visual state indicators. Built for intuitive filtering experiences, it helps users refine content with accessible controls. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/button-400.png"
 }

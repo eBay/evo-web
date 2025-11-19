@@ -1,4 +1,5 @@
 @use "../variables/variables";
+@use "../mixins/private/state-layer";
 
 a.icon-link {
     align-items: center;
@@ -11,6 +12,8 @@ a.icon-link {
 
 button.icon-btn,
 a.icon-link {
+    @include state-layer.standard($radius: 50px);
+
     align-items: center;
     background-color: var(--color-background-secondary);
     border: 2px solid transparent;
@@ -31,15 +34,6 @@ a.icon-link {
         position: relative; /* Safari centering */
     }
 
-    &:focus,
-    &:hover {
-        background-color: var(--color-state-secondary-hover);
-    }
-
-    &:active {
-        background-color: var(--color-state-secondary-active);
-    }
-
     &:not(:focus-visible) {
         outline: none;
     }
@@ -48,7 +42,7 @@ a.icon-link {
 button.icon-btn.icon-btn--primary,
 a.icon-link.icon-link--primary {
     background-color: var(--color-background-accent);
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-on-accent);
 }
 
@@ -88,12 +82,7 @@ a.icon-link.icon-link--large {
 button.icon-btn--transparent,
 a.icon-link--transparent {
     background-color: transparent;
-
-    &:active,
-    &:focus,
-    &:hover {
-        background-color: transparent;
-    }
+    @include state-layer.transparent;
 }
 
 a.icon-link:visited > svg {
@@ -145,9 +134,9 @@ button.icon-btn > svg.icon--confirmation-filled-24,
 button.icon-btn > svg.icon--confirmation-filled-16,
 a.icon-link > svg.icon--confirmation-filled-24,
 a.icon-link > svg.icon--confirmation-filled-16 {
-    fill: var(--color-foreground-confirmation);
+    fill: var(--color-foreground-success);
     &:hover {
-        fill: var(--color-foreground-confirmation);
+        fill: var(--color-foreground-success);
     }
 }
 
@@ -165,9 +154,9 @@ button.icon-btn > svg.icon--information-filled-24,
 button.icon-btn > svg.icon--information-filled-16,
 a.icon-link > svg.icon--information-filled-24,
 a.icon-link > svg.icon--information-filled-16 {
-    fill: var(--color-foreground-information);
+    fill: var(--color-foreground-accent);
     &:hover {
-        fill: var(--color-foreground-information);
+        fill: var(--color-foreground-accent);
     }
 }
 
@@ -185,7 +174,7 @@ button[aria-disabled="true"].icon-btn.icon-btn--primary,
 a:not([href]).icon-link.icon-link--primary,
 a[aria-disabled="true"].icon-link.icon-link--primary {
     background-color: var(--color-background-disabled);
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button[disabled].icon-btn.icon-btn--primary > svg,
@@ -204,7 +193,7 @@ a.icon-link.icon-link--primary .progress-spinner {
 button.icon-btn.icon-btn--secondary,
 a.icon-link.icon-link--secondary {
     background-color: transparent;
-    border-color: var(--color-stroke-accent);
+    border-color: var(--color-border-accent);
     color: var(--color-foreground-accent);
 }
 
@@ -232,7 +221,7 @@ button[disabled].icon-btn.icon-btn--secondary,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary,
 a:not([href]).icon-link.icon-link--secondary,
 a[aria-disabled="true"].icon-link.icon-link--secondary {
-    border-color: var(--color-stroke-disabled);
+    border-color: var(--color-border-disabled);
 }
 
 button[disabled].icon-btn.icon-btn--secondary > svg,
@@ -242,22 +231,10 @@ a[aria-disabled="true"].icon-link.icon-link--secondary > svg {
     fill: var(--color-foreground-disabled);
 }
 
-button.icon-btn.icon-btn--secondary:not([disabled], [aria-disabled="true"]),
-a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]) {
-    &:hover,
-    &:focus {
-        background-color: var(--color-state-secondary-hover);
-    }
-
-    &:active {
-        background-color: var(--color-state-secondary-active);
-    }
-}
-
 button.icon-btn.icon-btn--tertiary,
 a.icon-link.icon-link--tertiary {
     background-color: transparent;
-    border-color: var(--color-stroke-default);
+    border-color: var(--color-border-medium);
     color: var(--color-foreground-accent);
 }
 
@@ -265,17 +242,5 @@ button[disabled].icon-btn.icon-btn--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 a:not([href]).icon-link.icon-link--tertiary,
 a[aria-disabled="true"].icon-link.icon-link--tertiary {
-    border-color: var(--color-stroke-disabled);
-}
-
-button.icon-btn.icon-btn--tertiary:not([disabled], [aria-disabled="true"]),
-a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]) {
-    &:hover,
-    &:focus {
-        background-color: var(--color-state-secondary-hover);
-    }
-
-    &:active {
-        background-color: var(--color-state-secondary-active);
-    }
+    border-color: var(--color-border-disabled);
 }

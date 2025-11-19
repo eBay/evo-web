@@ -71,7 +71,7 @@ export default {
     },
 };
 
-export const Static: Story<Input> = (args) => ({
+export const Static: Story<Input> = (args: Input) => ({
     input: args,
     component: StaticTemplate,
 });
@@ -84,7 +84,7 @@ Static.parameters = {
     },
 };
 
-export const Interactive: Story<Input> = (args) => ({
+export const Interactive: Story<Input> = (args: Input) => ({
     input: args,
     component: InteractiveTemplate,
 });
@@ -97,7 +97,7 @@ Interactive.parameters = {
     },
 };
 
-export const WithSeparator: Story<Input> = (args) => ({
+export const WithSeparator: Story<Input> = (args: Input) => ({
     input: args,
     component: WithSeparatorTemplate,
 });

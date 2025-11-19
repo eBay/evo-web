@@ -15,7 +15,7 @@
 
 .phone-input button.btn:focus-visible {
     border-right-style: solid;
-    box-shadow: 0 0 0 1px var(--color-stroke-strong);
+    box-shadow: 0 0 0 1px var(--color-border-strong);
     outline: none;
     z-index: 1;
 }
@@ -71,7 +71,7 @@
 .phone-input--readonly .listbox-button button[disabled] {
     @include token-mixins.border-color-token(
         textbox-border-color,
-        color-stroke-default
+        color-border-medium
     );
 }
 
@@ -89,7 +89,7 @@
     );
     @include token-mixins.border-color-token(
         textbox-border-color,
-        color-stroke-default
+        color-border-medium
     );
 
     border-style: solid;
@@ -125,11 +125,11 @@
 .phone-input.phone-input--error .textbox.textbox {
     @include token-mixins.border-color-token(
         textbox-invalid-foreground-color,
-        color-stroke-attention
+        color-border-attention
     );
     @include token-mixins.border-left-color-token(
         textbox-border-color,
-        color-stroke-default
+        color-border-medium
     );
 }
 

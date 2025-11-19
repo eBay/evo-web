@@ -1,6 +1,5 @@
 import React, { ChangeEvent, ComponentProps, FC, FocusEvent, KeyboardEvent, useState } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
 import {
     CheckboxState,
     TriStateCheckboxChangeHandler,
@@ -8,6 +7,12 @@ import {
     TriStateCheckboxKeyDownHandler,
     Size,
 } from "./types";
+import { EbayIconCheckboxChecked18 } from "../ebay-icon/icons/ebay-icon-checkbox-checked-18";
+import { EbayIconCheckboxUnchecked18 } from "../ebay-icon/icons/ebay-icon-checkbox-unchecked-18";
+import { EbayIconCheckboxMixed18 } from "../ebay-icon/icons/ebay-icon-checkbox-mixed-18";
+import { EbayIconCheckboxChecked24 } from "../ebay-icon/icons/ebay-icon-checkbox-checked-24";
+import { EbayIconCheckboxUnchecked24 } from "../ebay-icon/icons/ebay-icon-checkbox-unchecked-24";
+import { EbayIconCheckboxMixed24 } from "../ebay-icon/icons/ebay-icon-checkbox-mixed-24";
 
 export type EbayTriStateCheckboxProps = Omit<
     ComponentProps<"input">,
@@ -64,13 +69,13 @@ const EbayTriStateCheckbox: FC<EbayTriStateCheckboxProps> = ({
 
     const containerClass = classNames("checkbox", className, { "checkbox--large": size === "large" });
 
-    let iconChecked = <EbayIcon name="checkboxChecked18" className="checkbox__checked" />;
-    let iconUnchecked = <EbayIcon name="checkboxUnchecked18" className="checkbox__unchecked" />;
-    let iconMixed = <EbayIcon name="checkboxMixed18" />;
+    let iconChecked = <EbayIconCheckboxChecked18 className="checkbox__checked" />;
+    let iconUnchecked = <EbayIconCheckboxUnchecked18 className="checkbox__unchecked" />;
+    let iconMixed = <EbayIconCheckboxMixed18 />;
     if (size === "large") {
-        iconChecked = <EbayIcon name="checkboxChecked24" className="checkbox__checked" />;
-        iconUnchecked = <EbayIcon name="checkboxUnchecked24" className="checkbox__unchecked" />;
-        iconMixed = <EbayIcon name="checkboxMixed24" />;
+        iconChecked = <EbayIconCheckboxChecked24 className="checkbox__checked" />;
+        iconUnchecked = <EbayIconCheckboxUnchecked24 className="checkbox__unchecked" />;
+        iconMixed = <EbayIconCheckboxMixed24 />;
     }
 
     const renderCheckboxIcon = () => {

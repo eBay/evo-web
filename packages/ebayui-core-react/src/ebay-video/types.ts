@@ -1,3 +1,4 @@
+import type shaka from "shaka-player/dist/shaka-player.compiled";
 export type VideoAction = "play" | "pause";
 export type VideoPlayView = "inline" | "fullscreen";
 

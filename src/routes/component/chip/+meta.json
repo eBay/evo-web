@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Chip Component",
-    "pageDescription": "The Chip component displays compact elements for tags, filters, and selections with built-in actions. Designed for flexibility and accessibility, it supports various states and interactions across all platforms. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/chip-400.png"
+  "pageTitle": "Chip Component",
+  "pageDescription": "The Chip component displays compact elements for tags, filters, and selections with built-in actions. Designed for flexibility and accessibility, it supports various states and interactions across all platforms. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/chip-400.png"
 }

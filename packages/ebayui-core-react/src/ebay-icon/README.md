@@ -1,6 +1,7 @@
 # EbayIcon
 
-The component will include the actual SVG markup in the HTML and then reference the chosen icon.
+The `EbayIcon` component will include the actual SVG markup in the HTML and then reference the chosen icon.
+Each icon has its own component and all the available icons are listed in the [icons](./icons) folder
 
 ## Demo
 
@@ -9,17 +10,25 @@ The component will include the actual SVG markup in the HTML and then reference 
 ## Usage
 
 ```jsx
-import { EbayIcon } from "@ebay/ui-core-react/ebay-icon";
+import { EbayIconArrowLeft16 } from "@ebay/ui-core-react/icons/ebay-icon-arrow-left-16";
 import "@ebay/skin/icon";
 
-<EbayIcon name="arrowLeft16" />;
+<EbayIconArrowLeft16 />;
 ```
 
-### Notes
+### Add the `EbayIconProvider`
 
-Make sure you use `<EbaySvg />` in your code (ideally on server side only), so that actual SVG icons exist inside HTML.
+In the root of your app, add the `EbayIconProvider` component to avoid loading the SVG markup multiple times for a better server and client performance.
 
-## Attributes
+```jsx
+import { EbayIconProvider } from "@ebay/ui-core-react/ebay-icon";
+
+<EbayIconProvider>
+    <App />
+</EbayIconProvider>;
+```
+
+## `EbayIcon` Attributes
 
 | Name            | Type    | Stateful | Required | Description                                                                                               |
 | --------------- | ------- | -------- | -------- | --------------------------------------------------------------------------------------------------------- |

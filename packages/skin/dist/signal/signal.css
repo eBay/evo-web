@@ -14,20 +14,17 @@
 }
 
 .signal--trustworthy {
-    color: var(--signal-trustworthy-color, var(--color-foreground-accent));
+    color: var(--color-foreground-accent);
 }
 
 .signal--recent {
-    color: var(--signal-recent-color, var(--color-foreground-confirmation));
+    color: var(--color-foreground-success);
 }
 
 .signal--time-sensitive {
-    color: var(
-        --signal-time-sensitive-color,
-        var(--color-foreground-attention)
-    );
+    color: var(--color-foreground-attention);
 }
 
 .signal--neutral {
-    color: var(--signal-neutral-color, var(--color-foreground-secondary));
+    color: var(--color-foreground-secondary);
 }

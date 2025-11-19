@@ -1,5 +1,55 @@
 # eBayUI-Core Changelog
 
+## 15.14.0
+
+### Minor Changes
+
+- [`8d9cf6c`](https://github.com/eBay/evo-web/commit/8d9cf6c2928a84145c9b20c6eb93972e190660db) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons
+
+### Patch Changes
+
+- [#366](https://github.com/eBay/evo-web/pull/366) [`dfa3dfc`](https://github.com/eBay/evo-web/commit/dfa3dfc953ce43facf13e2ddd82812d288f6fceb) Thanks [@agliga](https://github.com/agliga)! - fix: toggled between true and false for aria-modal
+
+## 15.13.1
+
+### Patch Changes
+
+- [#357](https://github.com/eBay/evo-web/pull/357) [`9efd6d6`](https://github.com/eBay/evo-web/commit/9efd6d68b99143ca11b6b8a4caf24459421dc883) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix bug with private fields in video
+
+## 15.13.0
+
+### Minor Changes
+
+- [#336](https://github.com/eBay/evo-web/pull/336) [`8477558`](https://github.com/eBay/evo-web/commit/847755885393381ddbafe5b28c924556123789dd) Thanks [@vidyadrao](https://github.com/vidyadrao)! - enable compact layout for ebay-video
+
+## 15.12.11
+
+### Patch Changes
+
+- [#353](https://github.com/eBay/evo-web/pull/353) [`9e13912`](https://github.com/eBay/evo-web/commit/9e13912a50e2a54588cc6d0f155735cd608d1b68) Thanks [@agliga](https://github.com/agliga)! - fix: added focus to menu-button when collapseOnSelect is set
+
+## 15.12.10
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
+- [#348](https://github.com/eBay/evo-web/pull/348) [`0440713`](https://github.com/eBay/evo-web/commit/04407139302c098eba04b1df6464422e752aa02a) Thanks [@agliga](https://github.com/agliga)! - fix(select): added fluid attribute
+
+- [`24964d5`](https://github.com/eBay/evo-web/commit/24964d541c7a5ccc080f4cbb723a5bad187e222c) Thanks [@agliga](https://github.com/agliga)! - fix(listbox-button): removed scroll key prevetor from listbox-button
+
+## 15.12.9
+
+### Patch Changes
+
+- [#321](https://github.com/eBay/evo-web/pull/321) [`0e3cb3b`](https://github.com/eBay/evo-web/commit/0e3cb3bb390e68956b255c6e929220718929cec4) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - Fix ebay-listbox: Prevent page scroll when using arrow keys in expanded listbox
+
+## 15.12.8
+
+### Patch Changes
+
+- [#315](https://github.com/eBay/evo-web/pull/315) [`f64a6a3`](https://github.com/eBay/evo-web/commit/f64a6a36b16e321d80619f6cc157f5fdcba1c864) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(filter-chip): pass href and disabled to the container
+
 ## 15.12.7
 
 ### Patch Changes

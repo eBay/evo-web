@@ -29,7 +29,7 @@ import groupedTileTemplate from "./examples/grouped-tile.marko";
 import groupedTileCode from "./examples/grouped-tile.marko?raw";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

@@ -21,11 +21,13 @@ export type FloatingDropdownHookArgs = {
 export type FloatingDropdownHookOptions = {
     offset?: number;
     reverse?: boolean;
+    strategy?: "fixed" | "absolute";
 };
 
 export function useFloatingDropdown({ open, options }: FloatingDropdownHookArgs): FloatingDropdownHookReturn {
     const { floatingStyles, refs } = useFloating({
         placement: options?.reverse ? "bottom-end" : "bottom-start",
+        strategy: options?.strategy,
         open,
         middleware: [offset(options?.offset ?? 4), flip(), shift()],
         whileElementsMounted: autoUpdate,

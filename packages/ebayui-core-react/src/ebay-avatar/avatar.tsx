@@ -1,9 +1,10 @@
 import React, { ComponentProps, FC, useState } from "react";
 import cx from "classnames";
-import { EbayIcon } from "../ebay-icon";
+
 import { getColorForText, isFit } from "./utils";
 import { Size, Color } from "./types";
 import { AvatarContext } from "./context";
+import { EbayIconAvatarSignedOut } from "../ebay-icon/icons/ebay-icon-avatar-signed-out";
 
 export type EbayAvatarProps = ComponentProps<"div"> & {
     size?: Size | `${Size}`;
@@ -36,7 +37,7 @@ const EbayAvatar: FC<EbayAvatarProps> = ({
                     username && !children && `avatar--${getColorForText(username, color)}`,
                 )}
             >
-                {children || username?.charAt(0).toUpperCase() || <EbayIcon name="avatarSignedOut" />}
+                {children || username?.charAt(0).toUpperCase() || <EbayIconAvatarSignedOut />}
             </div>
         </AvatarContext.Provider>
     );

@@ -19,7 +19,7 @@
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-75);
     height: var(--spacing-400);
     justify-content: space-between;
@@ -35,7 +35,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 0% 100%;
-    border: 1px solid var(--color-stroke-default);
+    border: 1px solid var(--color-border-medium);
     box-shadow: none;
     color: var(--color-foreground-primary);
 

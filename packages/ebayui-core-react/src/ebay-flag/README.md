@@ -18,7 +18,7 @@ import "@ebay/skin/flag";
 
 ### Notes
 
-Make sure you use `<EbaySvg flags />` in your code (ideally on server side only), so that actual SVG icons exist inside HTML.
+Make sure you use `<EbayFlagsSvg />` in your code (ideally on server side only), so that actual SVG icons exist inside HTML.
 
 ## Attributes
 

@@ -14,7 +14,7 @@ import withCustomCTADismissCode from "./examples/with-custom-cta-dismiss.marko?r
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 
@@ -164,7 +164,7 @@ export const WithDismiss = buildExtensionTemplate(
     },
 );
 
-export const WithCustomCTADismiss: Story<Input> = (args) => ({
+export const WithCustomCTADismiss: Story<Input> = (args: Input) => ({
     input: args,
     component: withCustomCTADismiss,
 });

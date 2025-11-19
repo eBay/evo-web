@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Avatar Component",
-    "pageDescription": "The Avatar component displays user profile images and initials with customizable sizes and colors. Perfect for user interfaces, it provides a consistent visual representation across platforms with full accessibility support. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/avatar-400.png"
+  "pageTitle": "Avatar Component",
+  "pageDescription": "The Avatar component displays user profile images and initials with customizable sizes and colors. Perfect for user interfaces, it provides a consistent visual representation across platforms with full accessibility support. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/avatar-400.png"
 }

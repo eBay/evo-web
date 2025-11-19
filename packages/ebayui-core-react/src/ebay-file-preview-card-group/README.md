@@ -24,16 +24,6 @@ import "@ebay/skin/file-preview-card-group";
 import "@ebay/skin/file-preview-card-group.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg icons={["close16", "delete16", "vertical16", "play16", "file24"]} />
-```
-
 ```jsx harmony
 const fileExample = {
             name: 'file-name.jpg',

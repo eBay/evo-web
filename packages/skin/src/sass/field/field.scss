@@ -68,14 +68,14 @@ div.field--table {
 .field__description--confirmation {
     @include token-mixins.color-token(
         field-description-confirmation-color,
-        color-foreground-confirmation
+        color-foreground-success
     );
 }
 
 .field__description--information {
     @include token-mixins.color-token(
         field-description-information-color,
-        color-foreground-information
+        color-foreground-accent
     );
 }
 

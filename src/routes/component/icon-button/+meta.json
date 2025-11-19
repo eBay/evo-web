@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Icon Button Component",
-    "pageDescription": "The Icon Button component creates compact, icon-only buttons with accessible labels and multiple variants. Perfect for toolbars and space-constrained interfaces, it maintains full keyboard and screen reader support. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/button-400.png"
+  "pageTitle": "Icon Button Component",
+  "pageDescription": "The Icon Button component creates compact, icon-only buttons with accessible labels and multiple variants. Perfect for toolbars and space-constrained interfaces, it maintains full keyboard and screen reader support. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/button-400.png"
 }

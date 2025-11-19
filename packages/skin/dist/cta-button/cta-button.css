@@ -11,7 +11,7 @@ a.cta-btn {
     color: var(--cta-btn-foreground-color, var(--color-foreground-primary));
     display: inline-block;
     font-family: inherit;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     margin: 0;
     max-width: 100%;
     min-height: 40px;
@@ -32,14 +32,12 @@ a.cta-btn:focus-visible {
 a.cta-btn:focus:not(:focus-visible) {
     outline: none;
 }
-
 a.cta-btn:visited {
     color: var(
         --cta-btn-visited-foreground-color,
         var(--color-foreground-primary)
     );
 }
-
 a.cta-btn:focus,
 a.cta-btn:hover {
     background-color: var(
@@ -55,7 +53,6 @@ a.cta-btn:hover {
         var(--color-background-primary)
     );
 }
-
 a.cta-btn:not([href]),
 a.cta-btn[aria-disabled="true"] {
     background-color: var(
@@ -64,18 +61,16 @@ a.cta-btn[aria-disabled="true"] {
     );
     border-color: var(
         --cta-btn-disabled-border-color,
-        var(--color-stroke-disabled)
+        var(--color-border-disabled)
     );
     color: var(
         --cta-btn-disabled-foreground-color,
         var(--color-foreground-disabled)
     );
 }
-
 a.cta-btn--fluid {
     width: 100%;
 }
-
 span.cta-btn__cell {
     align-items: center;
     display: flex;
@@ -96,7 +91,6 @@ span.cta-btn__cell--truncated > svg {
     align-self: baseline;
     max-width: calc(100% - 32px);
 }
-
 a.cta-btn svg.icon {
     align-self: center;
     flex-shrink: 0;
@@ -112,14 +106,12 @@ a.cta-btn svg.icon:last-child {
 a.cta-btn svg.icon:only-child {
     margin: 0;
 }
-
 span.cta-btn__cell--fixed-height svg.icon {
     align-self: center;
     height: 1rem;
     overflow: visible;
     width: 1rem;
 }
-
 a.cta-btn--truncated,
 a.cta-btn--truncated span {
     line-height: 1.4em;
@@ -127,14 +119,12 @@ a.cta-btn--truncated span {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 a.cta-btn--large {
     border-radius: 24px;
     display: inline-flex;
     font-size: var(--font-size-medium);
     min-height: 48px;
 }
-
 [dir="rtl"] a.cta-btn svg.icon--arrow-right-24 {
     transform: rotate(180deg);
 }

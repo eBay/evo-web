@@ -30,16 +30,6 @@ import "@ebay/skin/tokens";
 import "@ebay/skin/ccd.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg icons={["ccdChargerIncluded", "ccdChargerNotIncluded", "ccdTop"]} />
-```
-
 ```jsx harmony
 <EbayCCD chargerIcon="included" max="2000" min="1000" units="W" secondaryType="usbpd" secondaryText="USB PD" />
 ```

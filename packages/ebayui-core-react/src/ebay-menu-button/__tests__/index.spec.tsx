@@ -163,4 +163,36 @@ describe("<EbayMenuButton>", () => {
             expect(secondCheck).toHaveAttribute("aria-checked", "false");
         }
     });
+
+    it("should not emit events when disabled", async () => {
+        const spyCall = jest.fn();
+        render(
+            <EbayMenuButton type="radio" text="Open" onChange={spyCall}>
+                <EbayMenuButtonItem value="first" disabled />
+                <EbayMenuButtonItem value="second" />
+                <EbayMenuButtonItem value="third" />
+            </EbayMenuButton>,
+        );
+
+        await userEvent.click(screen.getByText("Open"));
+
+        const itemFirst = screen.getAllByRole("menuitemradio")[0];
+
+        await userEvent.click(itemFirst);
+
+        expect(spyCall).not.toHaveBeenCalled();
+
+        const itemSecond = screen.getAllByRole("menuitemradio")[1];
+
+        await userEvent.click(itemSecond);
+
+        const expectedEventProps = {
+            index: 1,
+            indexes: [1],
+            checked: [1],
+            checkedValues: ["second"],
+        };
+
+        expect(spyCall).toHaveBeenCalledWith(expect.any(Object), expectedEventProps);
+    });
 });

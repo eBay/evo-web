@@ -8,7 +8,7 @@ import buttonSeeAllComponent from "./examples/save-see-all.marko";
 import buttonSeeAllComponentCode from "./examples/save-see-all.marko?raw";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

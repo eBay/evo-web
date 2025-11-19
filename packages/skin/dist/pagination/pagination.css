@@ -1,3 +1,7 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
 nav.pagination {
     align-items: center;
     color: var(
@@ -11,13 +15,11 @@ nav.pagination {
     margin: var(--spacing-100) 0;
     max-width: 100%;
 }
-
 nav.pagination a,
 nav.pagination button {
     color: inherit;
     font-size: 1em;
 }
-
 ol.pagination__items {
     align-items: center;
     box-sizing: border-box;
@@ -33,7 +35,6 @@ ol.pagination__items li:not([hidden]) {
     display: flex;
     justify-content: center;
 }
-
 a.pagination__next,
 a.pagination__previous,
 button.pagination__next,
@@ -42,37 +43,31 @@ button.pagination__previous {
     display: inline-flex;
     justify-content: center;
 }
-
 a.pagination__next,
 button.pagination__next {
     margin-inline-start: var(--spacing-100);
 }
-
 a.pagination__previous,
 button.pagination__previous {
     margin-inline-end: var(--spacing-100);
 }
-
 .pagination__item {
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-400);
     height: 44px;
     justify-content: center;
     width: 44px;
 }
-
 button.pagination__item {
     background: none;
     border: none;
     font-family: inherit;
 }
-
 a.pagination__item {
     text-decoration: none;
 }
-
 a.pagination__item,
 button.pagination__item {
     position: relative;
@@ -95,7 +90,7 @@ button.pagination__item[aria-current="page"] {
         --pagination-item-current-foreground-color,
         var(--color-foreground-primary)
     );
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 a.pagination__item[aria-current="page"]:after,
 button.pagination__item[aria-current="page"]:after {
@@ -127,33 +122,55 @@ a.pagination__item:focus:not(:focus-visible),
 button.pagination__item:focus:not(:focus-visible) {
     outline: none;
 }
-
-span.pagination__item button.icon-btn--transparent:focus,
-span.pagination__item button.icon-btn--transparent:hover {
-    background-color: var(--color-state-primary-hover);
+span.pagination__item button.icon-btn--transparent {
+    overflow: hidden;
+    position: relative;
 }
-span.pagination__item button.icon-btn--transparent:active {
-    background-color: var(--color-state-primary-active);
+span.pagination__item button.icon-btn--transparent:after {
+    background-color: var(--color-state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
 }
-
+span.pagination__item
+    button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+span.pagination__item button.icon-btn--transparent[href]:hover:after {
+    background-color: var(--color-state-layer-hover);
+}
+span.pagination__item
+    button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+span.pagination__item button.icon-btn--transparent[href]:focus-visible:after {
+    background-color: var(--color-state-layer-focus);
+}
+span.pagination__item
+    button.icon-btn--transparent:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+span.pagination__item button.icon-btn--transparent[href]:active:after {
+    background-color: var(--color-state-layer-pressed);
+}
 nav.pagination--fluid {
     width: 100%;
 }
-
 nav.pagination--fluid ol.pagination__items {
     flex-grow: 1;
     max-width: none;
 }
-
 nav.pagination--fluid ol.pagination__items li {
     flex: 1 0 var(--spacing-600);
 }
-
 [dir="rtl"] nav.pagination svg.icon--arrow-left-16,
 [dir="rtl"] nav.pagination svg.icon--arrow-right-16 {
     transform: rotate(180deg);
 }
-
 @media (min-width: 768px) {
     nav.pagination {
         margin: var(--spacing-200) 0;

@@ -6,7 +6,7 @@ import sampleSeriesData from "./examples/data.json";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 
@@ -158,8 +158,8 @@ WithUnitlessYFormat.args = {
     description:
         "this chart displays 30 days of values for sample1, sample2, sample3, sample4, and sample5",
     series: seriesDataWithoutLabels as Highcharts.SeriesAreaOptions[],
-    yLabelFormatter: (value) => `${value}`,
-    tooltipValueFormatter: (value) => `${value}`,
+    yLabelFormatter: (value: any) => `${value}`,
+    tooltipValueFormatter: (value: any) => `${value}`,
 };
 WithUnitlessYFormat.parameters = {
     docs: {
@@ -175,13 +175,13 @@ WithXLabelFormat.args = {
     description:
         "this chart displays 30 days of values for sample1, sample2, sample3, sample4, and sample5",
     series: sampleSeriesData as Highcharts.SeriesAreaOptions[],
-    xLabelFormatter: (value, dateFormat) => {
+    xLabelFormatter: (value: any, dateFormat: any) => {
         if (typeof value !== "number") {
             return value;
         }
         return dateFormat("%A", value);
     },
-    tooltipTitleFormatter(value, dateFormat) {
+    tooltipTitleFormatter(value: any, dateFormat: any) {
         if (typeof value !== "number") {
             return value;
         }

@@ -1,38 +1,41 @@
 <div id="skeleton">
     <!-- <section-header metadata=metadata/> -->
     <h2>
-        @ebay/skin/skeleton
+        @ebay/skin/skeleton${" "}
         <sup class="beta">
             BETA
         </sup>
     </h2>
     <p>
-        A skeleton is a graphical placeholder, reserving physical space in the page for content that is not yet available for the client to render. A skeleton can be considered as an alternative to the${" "}
+        A skeleton is a graphical placeholder, reserving physical space in the
+        page for content that is not yet available for the client to render. A
+        skeleton can be considered as an alternative to the${" "}
         <a href="component/progress-spinner">
             progress spinner
         </a>
-         in many situations.
+        ${" "}in many situations.
     </p>
     <p>
-        A skeleton is appropriate as a placeholder for content in cases where a service or action may be slow to resolve.
+        A skeleton is appropriate as a placeholder for content in cases where a
+        service or action may be slow to resolve.
     </p>
     <p>
-        A skeleton is NOT appropriate as a placeholder for content if rendering that content or placeholder would cause unexpected page layout shift (see below for more details).
+        A skeleton is NOT appropriate as a placeholder for content if rendering
+        that content or placeholder would cause unexpected page layout shift
+        (see below for more details).
     </p>
 
     <section
         class="section-notice section-notice--attention"
         role="region"
         aria-label="Attention"
-        aria-roledescription="Notice"
-    >
+        aria-roledescription="Notice">
         <div class="section-notice__header" id="section-notice-attention">
             <svg
                 class="icon icon--16"
                 height="16"
                 width="16"
-                aria-label="Attention"
-            >
+                aria-label="Attention">
                 <icon-symbol name="attention-filled-16"/>
             </svg>
         </div>
@@ -41,27 +44,34 @@
                 Cumulative Layout Shift (CLS)
             </h3>
             <p>
-                It is the developer's responsibility to ensure the
+                It is the developer's responsibility to ensure the${" "}
                 <a href="https://web.dev/articles/cls">
                     CLS metric
                 </a>
-                ${" "}of a page is not negatively impacted by the introduction of a skeleton placeholder;${" "}
+                ${" "}of a page is not negatively impacted by the introduction
+                of a skeleton placeholder;${" "}
                 <strong>
-                    a poor CLS score will occur whenever content shifts unexpectedly
+                    a poor CLS score will occur whenever content shifts
+                    unexpectedly
                 </strong>
-                ${" "}. Unexpected movement of page content usually happens because resources are loaded asynchronously or DOM elements get dynamically added to the page above existing content. Skeletons can help mask these problems${" "}
+                ${" "}. Unexpected movement of page content usually happens
+                because resources are loaded asynchronously or DOM elements get
+                dynamically added to the page above existing content. Skeletons
+                can help mask these problems${" "}
                 <em>if</em>
-                ${" "}they reserve the correct amount of physical space, but can compound the problem when they do not.
+                ${" "}they reserve the correct amount of physical space, but can
+                compound the problem when they do not.
             </p>
         </div>
     </section>
 
     <p>
-        The
-        <a href="guides/skeleton">
+        The${" "}
+        <a href="guide/skeleton">
             Skeleton Use Guide
         </a>
-        ${" "}illustrates various techniques for implementing skeletons across some common loading scenarios.
+        ${" "}illustrates various techniques for implementing skeletons across
+        some common loading scenarios.
     </p>
 
     <h3 id="skeleton-types">
@@ -95,8 +105,7 @@
                     <div
                         class="skeleton skeleton--on-secondary"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__avatar"/>
                     </div>
                 </td>
@@ -105,8 +114,7 @@
                     <div
                         class="skeleton skeleton--purple"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__avatar"/>
                     </div>
                 </td>
@@ -114,8 +122,7 @@
                     <div
                         class="skeleton skeleton--green"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__avatar"/>
                     </div>
                 </td>
@@ -123,8 +130,7 @@
                     <div
                         class="skeleton skeleton--blue"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__avatar"/>
                     </div>
                 </td>
@@ -145,8 +151,7 @@
                     <div
                         class="skeleton skeleton--on-secondary"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__button"/>
                     </div>
                 </td>
@@ -155,8 +160,7 @@
                     <div
                         class="skeleton skeleton--purple"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__button"/>
                     </div>
                 </td>
@@ -164,8 +168,7 @@
                     <div
                         class="skeleton skeleton--green"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__button"/>
                     </div>
                 </td>
@@ -173,8 +176,7 @@
                     <div
                         class="skeleton skeleton--blue"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__button"/>
                     </div>
                 </td>
@@ -194,8 +196,7 @@
                     <div
                         class="skeleton skeleton--on-secondary"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__textbox"/>
                     </div>
                 </td>
@@ -203,8 +204,7 @@
                     <div
                         class="skeleton skeleton--purple"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__textbox"/>
                     </div>
                 </td>
@@ -212,8 +212,7 @@
                     <div
                         class="skeleton skeleton--green"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__textbox"/>
                     </div>
                 </td>
@@ -221,8 +220,7 @@
                     <div
                         class="skeleton skeleton--blue"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__textbox"/>
                     </div>
                 </td>
@@ -237,56 +235,47 @@
                     <div class="skeleton" role="img" aria-label="loading">
                         <div
                             class="skeleton__image"
-                            style="height: 50px; width: 50px;"
-                        />
+                            style="height: 50px; width: 50px;"/>
                     </div>
                 </td>
                 <td>
                     <div
                         class="skeleton skeleton--on-secondary"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div
                             class="skeleton__image"
-                            style="height: 50px; width: 50px;"
-                        />
+                            style="height: 50px; width: 50px;"/>
                     </div>
                 </td>
                 <td>
                     <div
                         class="skeleton skeleton--purple"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div
                             class="skeleton__image"
-                            style="height: 50px; width: 50px;"
-                        />
+                            style="height: 50px; width: 50px;"/>
                     </div>
                 </td>
                 <td>
                     <div
                         class="skeleton skeleton--green"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div
                             class="skeleton__image"
-                            style="height: 50px; width: 50px;"
-                        />
+                            style="height: 50px; width: 50px;"/>
                     </div>
                 </td>
                 <td>
                     <div
                         class="skeleton skeleton--blue"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div
                             class="skeleton__image"
-                            style="height: 50px; width: 50px;"
-                        />
+                            style="height: 50px; width: 50px;"/>
                     </div>
                 </td>
             </tr>
@@ -305,8 +294,7 @@
                     <div
                         class="skeleton skeleton--on-secondary"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__text"/>
                     </div>
                 </td>
@@ -314,8 +302,7 @@
                     <div
                         class="skeleton skeleton--purple"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__text"/>
                     </div>
                 </td>
@@ -323,8 +310,7 @@
                     <div
                         class="skeleton skeleton--green"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__text"/>
                     </div>
                 </td>
@@ -332,8 +318,7 @@
                     <div
                         class="skeleton skeleton--blue"
                         role="img"
-                        aria-label="loading"
-                    >
+                        aria-label="loading">
                         <div class="skeleton__text"/>
                     </div>
                 </td>
@@ -342,29 +327,31 @@
     </table>
 
     <p>
-        On large screens, skeleton loaders use a solid fill for background color; on small screens, a shimmer is applied.
+        On large screens, skeleton loaders use a solid fill for background
+        color; on small screens, a shimmer is applied.
     </p>
     <p>
-        The color can be changed to purple, green or blue by applying the appropriate modifier, e.g.${" "}
+        The color can be changed to purple, green or blue by applying the
+        appropriate modifier, e.g.${" "}
         <span class="highlight">
             skeleton--green
         </span>
-         . View the
+        ${" "}. View the${" "}
         <a href="component/skeleton/#skeleton-composite">
             composite skeletons
         </a>
-         examples for further details.
+        ${" "}examples for further details.
     </p>
 
     <h3 id="skeleton-avatar">
         Avatar Skeleton
     </h3>
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__avatar
         </span>
-         class to create a skeleton placeholder for an avatar.
+        ${" "}class to create a skeleton placeholder for an avatar.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -384,11 +371,12 @@
     </h3>
 
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__button
         </span>
-         class to create a skeleton placeholder for the default button shape.
+        ${" "}class to create a skeleton placeholder for the default button
+        shape.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -396,8 +384,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__button"/>
             </div>
         </div>
@@ -407,18 +394,17 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__button"/>
         </div>
     </highlight-code>
 
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             small
         </span>
-         modifier to match the shape of a small button.
+        ${" "}modifier to match the shape of a small button.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -426,8 +412,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__button skeleton__button--small"/>
             </div>
         </div>
@@ -437,18 +422,17 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__button skeleton__button--small"/>
         </div>
     </highlight-code>
 
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             large
         </span>
-         modifier to match the shape of a large button.
+        ${" "}modifier to match the shape of a large button.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -456,8 +440,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__button skeleton__button--large"/>
             </div>
         </div>
@@ -467,8 +450,7 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__button skeleton__button--large"/>
         </div>
     </highlight-code>
@@ -477,11 +459,11 @@
         Textbox Skeleton
     </h3>
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__textbox
         </span>
-         class to create a skeleton placeholder for a textbox.
+        ${" "}class to create a skeleton placeholder for a textbox.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -489,8 +471,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__textbox"/>
             </div>
         </div>
@@ -500,8 +481,7 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__textbox"/>
         </div>
     </highlight-code>
@@ -510,11 +490,11 @@
         Image Skeleton
     </h3>
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__image
         </span>
-         class to create a skeleton placeholder for an image.
+        ${" "}class to create a skeleton placeholder for an image.
     </p>
 
     <div class="demo">
@@ -522,8 +502,7 @@
             <div class="skeleton" role="img" aria-label="loading">
                 <div
                     class="skeleton__image"
-                    style="height: 50px; width: 50px;"
-                />
+                    style="height: 50px; width: 50px;"/>
             </div>
         </div>
     </div>
@@ -534,11 +513,11 @@
     </highlight-code>
 
     <p>
-        Notice that the height and width must be set on the
+        Notice that the height and width must be set on the${" "}
         <span class="highlight">
             skeleton__image
         </span>
-         element.
+        ${" "}element.
     </p>
 
     <div class="demo">
@@ -546,8 +525,7 @@
             <div class="skeleton" role="img" aria-label="loading">
                 <div
                     class="skeleton__image"
-                    style="height: 200px; width: 200px;"
-                />
+                    style="height: 200px; width: 200px;"/>
             </div>
         </div>
     </div>
@@ -561,11 +539,11 @@
         Text Block Skeleton
     </h3>
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__text
         </span>
-         class to create a skeleton for a single block of text.
+        ${" "}class to create a skeleton for a single block of text.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -573,8 +551,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__text"/>
             </div>
         </div>
@@ -584,18 +561,17 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__text skeleton__text--small"/>
         </div>
     </highlight-code>
 
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__text--large
         </span>
-         modifier to match the shape of a large block of text.
+        ${" "}modifier to match the shape of a large block of text.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -603,8 +579,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__text skeleton__text--large"/>
             </div>
         </div>
@@ -614,18 +589,17 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__text skeleton__text--large"/>
         </div>
     </highlight-code>
 
     <p>
-        Use the
+        Use the${" "}
         <span class="highlight">
             skeleton__text--multiline
         </span>
-         mofifier to create a skeleton for two lines of text.
+        ${" "}mofifier to create a skeleton for two lines of text.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -633,8 +607,7 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="width: 200px;"
-            >
+                style="width: 200px;">
                 <div class="skeleton__text skeleton__text--multiline"/>
             </div>
         </div>
@@ -644,8 +617,7 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="width: 200px;"
-        >
+            style="width: 200px;">
             <div class="skeleton__text skeleton__text--multiline"/>
         </div>
     </highlight-code>
@@ -654,7 +626,8 @@
         Composite Skeleton
     </h3>
     <p>
-        Combinations of skeletons can form a custom placeholder for more complex content, such as a typical eCommerce item tile in the example below.
+        Combinations of skeletons can form a custom placeholder for more complex
+        content, such as a typical eCommerce item tile in the example below.
     </p>
 
     <div class="demo">
@@ -663,12 +636,10 @@
                 class="skeleton skeleton--purple"
                 role="img"
                 aria-label="loading"
-                style="width: 225px;"
-            >
+                style="width: 225px;">
                 <div
                     class="skeleton__image"
-                    style="width: 225px; height: 225px"
-                />
+                    style="width: 225px; height: 225px"/>
                 <div class="skeleton__text skeleton__text--multiline"/>
             </div>
         </div>
@@ -678,36 +649,33 @@
             class="skeleton skeleton--purple"
             role="img"
             aria-label="loading"
-            style="width: 225px;"
-        >
+            style="width: 225px;">
             <div class="skeleton__image" style="width: 225px; height: 225px"/>
             <div class="skeleton__text skeleton__text--multiline"/>
         </div>
     </highlight-code>
 
     <p>
-        Here is a skeleton for a compact user profile. Notice that a
+        Here is a skeleton for a compact user profile. Notice that a${" "}
         <span class="highlight">
             div
         </span>
-         tag can be replaced with a
+        ${" "}tag can be replaced with a${" "}
         <span class="highlight">
             span
         </span>
-         tag for inline-block layout of elements.
+        ${" "}tag for inline-block layout of elements.
     </p>
     <div class="demo">
         <div class="demo__inner">
             <div
                 class="skeleton skeleton--blue"
                 role="img"
-                aria-label="loading"
-            >
+                aria-label="loading">
                 <span class="skeleton__avatar"/>
                 <span
                     class="skeleton__text skeleton__text--multiline"
-                    style="width: 200px; vertical-align: top;"
-                />
+                    style="width: 200px; vertical-align: top;"/>
             </div>
         </div>
     </div>
@@ -716,46 +684,54 @@
             <span class="skeleton__avatar"/>
             <span
                 class="skeleton__text skeleton__text--multiline"
-                style="width: 200px; vertical-align: top;"
-            />
+                style="width: 200px; vertical-align: top;"/>
         </div>
     </highlight-code>
     <h3 id="skeleton-animation">
-        Skeleton Animation
+        Skeleton Animation${" "}
         <sup>EXPERIMENTAL</sup>
     </h3>
     <p>
-        The skeleton loader uses view-transition animation to swap between the skeleton and the loaded content. This is an experimental feature and may not be supported in all browsers.
+        The skeleton loader uses view-transition animation to swap between the
+        skeleton and the loaded content. This is an experimental feature and may
+        not be supported in all browsers.
     </p>
 
     <p>
-        In order to use view-transition animation, the skeleton must have a
+        In order to use view-transition animation, the skeleton must have a${" "}
         <span class="highlight">
             view-transition-name
         </span>
-        ${" "}style attribute set. The value of the attribute must be unique for each skeleton on the page. For this you can use${" "}
+        ${" "}style attribute set. The value of the attribute must be unique for
+        each skeleton on the page. For this you can use${" "}
         <span class="highlight">
             skeleton-transition-1
         </span>
-         and
+        ${" "}and${" "}
         <span class="highlight">
             skeleton-transition-2
         </span>
-        ${" "}etc view transition names. These names should correspond to the loaded content view transition names so that they can transition properly.
+        ${" "}etc view transition names. These names should correspond to the
+        loaded content view transition names so that they can transition
+        properly.
     </p>
     <p>
-        We have defined
+        We have defined${" "}
         <span class="highlight">
             skeleton-transition-*
         </span>
-        ${" "}so that you can use any arbitray name after skeleton-transition-. Just make sure that the names are unique and do not conflict with other view transition names on the page. Also verify that the view-transition-name set on the skeleton matches the view-transition-name set on the loaded content.
+        ${" "}so that you can use any arbitray name after skeleton-transition-.
+        Just make sure that the names are unique and do not conflict with other
+        view transition names on the page. Also verify that the
+        view-transition-name set on the skeleton matches the
+        view-transition-name set on the loaded content.
     </p>
     <p>
         Reminder: when swapping between the skeleton and the loaded content, use${" "}
         <span class="highlight">
             document.startViewTransition()
         </span>
-         to start the view transition.
+        ${" "}to start the view transition.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -767,23 +743,19 @@
                 class="skeleton"
                 role="img"
                 aria-label="loading"
-                style="display: flex;"
-            >
+                style="display: flex;">
                 <span
                     id="skeleton-transition-0"
                     class="skeleton__image"
-                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
-                />
+                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"/>
                 <span
                     id="skeleton-transition-1"
                     class="skeleton__image"
-                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
-                />
+                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"/>
                 <span
                     id="skeleton-transition-2"
                     class="skeleton__image"
-                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
-                />
+                    style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"/>
             </div>
         </div>
     </div>
@@ -797,32 +769,29 @@
             class="skeleton"
             role="img"
             aria-label="loading"
-            style="display: flex;"
-        >
+            style="display: flex;">
             <span
                 id="skeleton-transition-0"
                 class="skeleton__image"
-                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"
-            />
+                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-0"/>
             <span
                 id="skeleton-transition-1"
                 class="skeleton__image"
-                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"
-            />
+                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-1"/>
             <span
                 id="skeleton-transition-2"
                 class="skeleton__image"
-                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"
-            />
+                style="height: 200px; width: 200px; view-transition-name: skeleton-transition-2"/>
         </div>
     </highlight-code>
 
     <h3 id="skeleton-variables">
-        Skeleton Variables
+        Skeleton Variables${" "}
         <sup>EXPERIMENTAL</sup>
     </h3>
     <p>
-        The following custom properties (aka CSS Variables) are available for component-level overrides and other general theming purposes.
+        The following custom properties (aka CSS Variables) are available for
+        component-level overrides and other general theming purposes.
     </p>
 
     <ul>

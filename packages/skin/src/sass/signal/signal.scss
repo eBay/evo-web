@@ -16,29 +16,17 @@
 }
 
 .signal--trustworthy {
-    @include token-mixins.color-token(
-        signal-trustworthy-color,
-        color-foreground-accent
-    );
+    color: var(--color-foreground-accent);
 }
 
 .signal--recent {
-    @include token-mixins.color-token(
-        signal-recent-color,
-        color-foreground-confirmation
-    );
+    color: var(--color-foreground-success);
 }
 
 .signal--time-sensitive {
-    @include token-mixins.color-token(
-        signal-time-sensitive-color,
-        color-foreground-attention
-    );
+    color: var(--color-foreground-attention);
 }
 
 .signal--neutral {
-    @include token-mixins.color-token(
-        signal-neutral-color,
-        color-foreground-secondary
-    );
+    color: var(--color-foreground-secondary);
 }

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Calendar Accessibility Guidelines — Building Inclusive Date Selection Interfaces",
-    "pageDescription": "Learn how to make calendar components fully accessible with proper table semantics, keyboard navigation, and ARIA labels. Follow these WCAG-aligned guidelines to ensure date pickers and calendar views work for all users, including those using assistive technologies.",
-    "pageImg": "/static/img/components/calendar-400.png"
+  "pageTitle": "Calendar Accessibility Guidelines — Building Inclusive Date Selection Interfaces",
+  "pageDescription": "Learn how to make calendar components fully accessible with proper table semantics, keyboard navigation, and ARIA labels. Follow these WCAG-aligned guidelines to ensure date pickers and calendar views work for all users, including those using assistive technologies.",
+  "pageImg": "/static/img/components/calendar-400.png"
 }

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Carousel Component",
-    "pageDescription": "The Carousel component displays scrolling content in a horizontal viewport with support for continuous flow and discrete slides. Built with responsive design principles, it provides smooth navigation and accessibility features for showcasing images and content. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/carousel-400.png"
+  "pageTitle": "Carousel Component",
+  "pageDescription": "The Carousel component displays scrolling content in a horizontal viewport with support for continuous flow and discrete slides. Built with responsive design principles, it provides smooth navigation and accessibility features for showcasing images and content. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/carousel-400.png"
 }

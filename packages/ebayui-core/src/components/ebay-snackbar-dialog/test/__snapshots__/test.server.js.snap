@@ -3,7 +3,7 @@
 exports[`snackbar-dialog > passes through additional html attributes 1`] = `
 <div
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="snackbar-dialog class1 snackbar-dialog--transition"
   data-passed-through="true"
   data-testid="AttributePassthrough"
@@ -37,7 +37,7 @@ exports[`snackbar-dialog > passes through additional html attributes 1`] = `
 exports[`snackbar-dialog > passes through additional html attributes 2`] = `
 <div
   aria-live="polite"
-  aria-modal="true"
+  aria-modal="false"
   class="snackbar-dialog class1 snackbar-dialog--transition"
   data-passed-through="true"
   data-testid="AttributePassthrough"
@@ -79,7 +79,7 @@ exports[`snackbar-dialog > renders basic version 1`] = `
   [36m</button>[39m
   [36m<div[39m
     [33maria-live[39m=[32m"polite"[39m
-    [33maria-modal[39m=[32m"true"[39m
+    [33maria-modal[39m=[32m"false"[39m
     [33mclass[39m=[32m"snackbar-dialog snackbar-dialog--transition"[39m
     [33mhidden[39m=[32m""[39m
     [33mrole[39m=[32m"dialog"[39m
@@ -111,7 +111,7 @@ exports[`snackbar-dialog > renders in open state 1`] = `
   [36m</button>[39m
   [36m<div[39m
     [33maria-live[39m=[32m"polite"[39m
-    [33maria-modal[39m=[32m"true"[39m
+    [33maria-modal[39m=[32m"false"[39m
     [33mclass[39m=[32m"snackbar-dialog snackbar-dialog--transition"[39m
     [33mrole[39m=[32m"dialog"[39m
   [36m>[39m
@@ -142,7 +142,7 @@ exports[`snackbar-dialog > renders with action version 1`] = `
   [36m</button>[39m
   [36m<div[39m
     [33maria-live[39m=[32m"polite"[39m
-    [33maria-modal[39m=[32m"true"[39m
+    [33maria-modal[39m=[32m"false"[39m
     [33mclass[39m=[32m"snackbar-dialog snackbar-dialog--transition"[39m
     [33mhidden[39m=[32m""[39m
     [33mrole[39m=[32m"dialog"[39m
@@ -191,7 +191,7 @@ exports[`snackbar-dialog > renders without handle  1`] = `
   [36m</button>[39m
   [36m<div[39m
     [33maria-live[39m=[32m"polite"[39m
-    [33maria-modal[39m=[32m"true"[39m
+    [33maria-modal[39m=[32m"false"[39m
     [33mclass[39m=[32m"snackbar-dialog snackbar-dialog--transition"[39m
     [33mhidden[39m=[32m""[39m
     [33mrole[39m=[32m"dialog"[39m

@@ -30,16 +30,6 @@ import "@ebay/skin/tokens";
 import "@ebay/skin/file-input.css";
 ```
 
-### Import icons
-
-Add the below icons to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg icons={["upload24"]} />
-```
-
 ```jsx harmony
 <EbayFileInput onInput={(event, { files }) => console.log(files)}>
     <EbayFileInputHeader>Upload your files</EbayFileInputHeader>

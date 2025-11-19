@@ -10,6 +10,8 @@ const masterIconPath = path.resolve(svgDir, "icons.svg");
 const { JSDOM } = jsdom;
 const configFilePath = path.resolve(
     currentDir,
+    "../",
+    "../",
     "src",
     "components",
     "data",

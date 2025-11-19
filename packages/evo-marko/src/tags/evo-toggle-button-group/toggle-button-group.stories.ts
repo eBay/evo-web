@@ -6,7 +6,6 @@ import Readme from "./README.md";
 import component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
-
 import withIconsTemplate from "./examples/icons.marko";
 import withIconsCode from "./examples/icons.marko?raw";
 import withDefaultTemplate from "./examples/withDefault.marko";

@@ -1,5 +1,6 @@
 @use "../variables/variables";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 summary.details__summary {
     @include token-mixins.border-radius-token(
@@ -10,12 +11,13 @@ summary.details__summary {
         details-summary-foreground-color,
         color-foreground-primary
     );
+    @include state-layer.standard;
 
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
-    font-size: var(--font-size-default);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-600);
     list-style-position: inside;
     list-style-type: none; /* Remove details marker for non-webkit */
     padding: 12px 8px;
@@ -27,17 +29,6 @@ summary.details__summary {
     /* Remove details marker for non-webkit */
     &::-webkit-details-marker {
         display: none;
-    }
-
-    &:focus,
-    &:hover {
-        background-color: var(--color-state-secondary-hover);
-        outline: 1;
-    }
-
-    &:active {
-        background-color: var(--color-state-secondary-active);
-        outline: 1;
     }
 }
 

@@ -5,7 +5,7 @@
     box-sizing: border-box;
     color: var(--color-foreground-on-strong);
     display: inline-flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-75);
     height: var(--spacing-400);
     justify-content: space-between;
@@ -15,14 +15,12 @@
     text-decoration: none;
     vertical-align: bottom;
 }
-
 .chip__text {
     overflow: hidden;
     padding: var(--spacing-75) 0;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .chip button.chip__button {
     align-items: center;
     background-color: initial;
@@ -39,7 +37,6 @@
     padding: 0;
     width: var(--spacing-300);
 }
-
 .chip button.chip__button:focus-visible {
     background-color: var(--state-layer-focus);
     outline-color: var(--color-foreground-on-strong);
@@ -47,7 +44,6 @@
     outline-style: solid;
     outline-width: 2px;
 }
-
 .chip button.chip__button:hover {
     background-color: var(--state-layer-hover);
 }

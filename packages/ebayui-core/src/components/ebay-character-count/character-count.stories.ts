@@ -12,7 +12,7 @@ import CustomTextTemplate from "./examples/custom-text.marko";
 import CustomTextCode from "./examples/custom-text.marko?raw";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

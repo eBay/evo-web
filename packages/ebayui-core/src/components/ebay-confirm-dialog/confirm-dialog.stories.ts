@@ -5,7 +5,7 @@ import Confirm from "./examples/default.marko";
 import code from "./examples/default.marko?raw";
 import type { Input } from "./index.marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

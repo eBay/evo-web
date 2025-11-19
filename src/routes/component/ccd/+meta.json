@@ -1,5 +1,5 @@
 {
-    "pageTitle": "CCD Component",
-    "pageDescription": "The CCD (Common Charger Directive) component displays pictograms indicating charger inclusion and power specifications for electronic products. Designed for clarity and accessibility, it helps users make informed purchasing decisions. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/ccd-400.png"
+  "pageTitle": "CCD Component",
+  "pageDescription": "The CCD (Common Charger Directive) component displays pictograms indicating charger inclusion and power specifications for electronic products. Designed for clarity and accessibility, it helps users make informed purchasing decisions. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/ccd-400.png"
 }

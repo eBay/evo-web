@@ -12,6 +12,7 @@ import { EbayFakeMenu, EbayFakeMenuItemProps } from "../ebay-fake-menu";
 import { EbayFakeMenuButtonItem, EbayFakeMenuButtonLabel, EbayFakeMenuButtonSeparator } from ".";
 import { useFloatingDropdown } from "../common/dropdown";
 import { EbayFakeMenuProps } from "../ebay-fake-menu/menu";
+import { EbayIconOverflowHorizontal24 } from "../ebay-icon/icons/ebay-icon-overflow-horizontal-24";
 
 export type EbayFakeMenuButtonVariant = "overflow" | "form" | "button";
 
@@ -21,8 +22,10 @@ export type EbayFakeMenuButtonProps = {
     expanded?: boolean;
     fixWidth?: boolean;
     reverse?: boolean;
+    strategy?: "absolute" | "fixed";
     variant?: EbayFakeMenuButtonVariant;
     className?: string;
+    icon?: ReactElement;
     onCollapse?: () => void;
     onExpand?: () => void;
     text?: string;
@@ -42,8 +45,10 @@ const EbayMenuButton: FC<Props> = ({
     fixWidth,
     reverse,
     variant,
+    strategy,
     expanded: defaultExpanded = false,
     className,
+    icon: _icon,
     onCollapse = () => {},
     onExpand = () => {},
     onMouseDown = () => {},
@@ -55,13 +60,13 @@ const EbayMenuButton: FC<Props> = ({
     const [expanded, setExpanded] = useState(defaultExpanded);
     const [menuId, setMenuId] = useState<string | undefined>();
 
-    const icon = findComponent(children, EbayIcon);
+    const icon = _icon || findComponent(children, EbayIcon);
     const label = findComponent(children, EbayFakeMenuButtonLabel) || (icon ? <span>{text}</span> : text);
     const menuItems = filterByType(children, [EbayFakeMenuButtonItem, EbayFakeMenuButtonSeparator]);
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: expanded,
-        options: { reverse },
+        options: { reverse, strategy },
     });
 
     const buttonRef = refs.host as React.MutableRefObject<HTMLButtonElement>;
@@ -118,7 +123,7 @@ const EbayMenuButton: FC<Props> = ({
     return (
         <span className={classnames("fake-menu-button", className)}>
             {variant === "overflow" ? (
-                <EbayIconButton icon="overflowHorizontal24" {...buttonProps} />
+                <EbayIconButton icon={<EbayIconOverflowHorizontal24 />} {...buttonProps} />
             ) : (
                 <EbayButton
                     variant={variant === "form" ? "form" : undefined}

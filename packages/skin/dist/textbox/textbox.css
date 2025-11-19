@@ -9,26 +9,25 @@
         --textbox-background-color,
         var(--color-background-secondary)
     );
-    border-color: var(--textbox-border-color, var(--color-stroke-default));
+    border-color: var(--textbox-border-color, var(--color-border-medium));
     border-radius: var(--textbox-border-radius, var(--border-radius-50));
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
-    color: var(
-        --textbox-foreground-color,
-        var(--color-foreground-on-secondary)
-    );
+    color: var(--textbox-foreground-color, var(--color-foreground-primary));
     display: inline-flex;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     gap: var(--spacing-100);
     overflow: hidden;
     position: relative;
     width: fit-content;
 }
+
 .textbox button.icon-btn {
     background-color: initial;
     padding: 0;
 }
+
 .textbox--focus,
 .textbox:has(> .textbox__control:focus):not(.textbox--readonly):not(
         :has(> .textbox__control[readonly])
@@ -37,14 +36,16 @@
         --textbox-focus-background-color,
         var(--color-background-primary)
     );
-    border-color: var(--textbox-focus-border-color, var(--color-stroke-strong));
-    box-shadow: 0 0 0 1px var(--color-stroke-strong);
+    border-color: var(--textbox-focus-border-color, var(--color-border-strong));
+    box-shadow: 0 0 0 1px var(--color-border-strong);
 }
+
 .textbox--readonly,
 .textbox:has(> .textbox__control[readonly]) {
     background-color: initial;
     border: none;
 }
+
 .textbox--disabled,
 .textbox:has(> .textbox__control[disabled]) {
     border-color: var(
@@ -56,11 +57,12 @@
         var(--color-foreground-disabled)
     );
 }
+
 .textbox--invalid,
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
     border-color: var(
         --textbox-invalid-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
 
@@ -104,6 +106,7 @@ textarea.textbox__control {
     margin: 0;
     outline: none;
 }
+
 input.textbox__control[disabled],
 textarea.textbox__control[disabled] {
     border-color: var(
@@ -115,6 +118,7 @@ textarea.textbox__control[disabled] {
         var(--color-foreground-disabled)
     );
 }
+
 input.textbox__control[disabled]::-webkit-input-placeholder,
 textarea.textbox__control[disabled]::-webkit-input-placeholder {
     color: var(
@@ -122,6 +126,7 @@ textarea.textbox__control[disabled]::-webkit-input-placeholder {
         var(--color-foreground-ghost)
     );
 }
+
 input.textbox__control[disabled]::-moz-placeholder,
 textarea.textbox__control[disabled]::-moz-placeholder {
     color: var(
@@ -129,6 +134,7 @@ textarea.textbox__control[disabled]::-moz-placeholder {
         var(--color-foreground-ghost)
     );
 }
+
 input.textbox__control[disabled]:-ms-input-placeholder,
 textarea.textbox__control[disabled]:-ms-input-placeholder {
     color: var(
@@ -136,13 +142,15 @@ textarea.textbox__control[disabled]:-ms-input-placeholder {
         var(--color-foreground-ghost)
     );
 }
+
 input.textbox__control[aria-invalid="true"],
 textarea.textbox__control[aria-invalid="true"] {
     border-color: var(
         --textbox-invalid-foreground-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
 }
+
 input.textbox__control::placeholder,
 textarea.textbox__control::placeholder {
     color: var(--textbox-placeholder-color, var(--color-foreground-secondary));

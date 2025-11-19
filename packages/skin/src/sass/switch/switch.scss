@@ -1,4 +1,5 @@
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 .switch {
     box-sizing: border-box;
@@ -33,7 +34,7 @@ span.switch__button {
     );
     @include token-mixins.border-color-token(
         switch-border-color,
-        color-stroke-strong
+        color-border-strong
     );
 
     &::after {
@@ -43,7 +44,7 @@ span.switch__button {
         );
         @include token-mixins.border-color-token(
             switch-foreground-border-color,
-            color-stroke-strong
+            color-border-strong
         );
 
         border-radius: 50%;
@@ -79,7 +80,7 @@ input.switch__control[disabled] + span.switch__button,
 span.switch__control[aria-disabled="true"] + span.switch__button {
     @include token-mixins.border-color-token(
         switch-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
 }
 
@@ -113,10 +114,8 @@ input.switch__control:not([disabled]):hover + span.switch__button,
 span.switch__control:not([aria-disabled="true"]):hover + span.switch__button,
 input.switch__control:not([disabled]):focus + span.switch__button,
 span.switch__control:not([aria-disabled="true"]):focus + span.switch__button {
-    @include token-mixins.background-color-token(
-        switch-unchecked-hover-background-color,
-        color-state-secondary-hover
-    );
+    @include state-layer.before-base;
+    @include state-layer.before-hover;
 }
 
 /* ON > Track */
@@ -148,19 +147,7 @@ span.switch__control:not([aria-disabled="true"]):focus-visible
 input.switch__control:not([disabled]):focus-visible + span.switch__button {
     box-shadow:
         0 0 0 2px var(--color-background-primary),
-        0 0 0 4px var(--color-state-accent-hover);
-}
-
-input.switch__control:not([disabled]):checked:hover + span.switch__button,
-span.switch__control:not([aria-disabled="true"])[aria-checked="true"]:hover
-    + span.switch__button,
-input.switch__control:not([disabled]):checked:focus + span.switch__button,
-span.switch__control:not([aria-disabled="true"])[aria-checked="true"]:focus
-    + span.switch__button {
-    @include token-mixins.background-color-token(
-        switch-checked-hover-background-color,
-        color-state-accent-hover
-    );
+        0 0 0 4px var(--color-background-accent);
 }
 
 /* ON > Knob */

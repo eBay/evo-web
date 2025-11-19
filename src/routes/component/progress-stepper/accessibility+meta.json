@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Progress Stepper Accessibility Guidelines — Building Inclusive Multi-Step Indicators",
-    "pageDescription": "Learn how to make progress stepper components fully accessible with proper step labels, current state indication, and navigation controls. Follow these WCAG-aligned guidelines to ensure workflow progress is clear for all users.",
-    "pageImg": "/static/img/components/stepper-400.png"
+  "pageTitle": "Progress Stepper Accessibility Guidelines — Building Inclusive Multi-Step Indicators",
+  "pageDescription": "Learn how to make progress stepper components fully accessible with proper step labels, current state indication, and navigation controls. Follow these WCAG-aligned guidelines to ensure workflow progress is clear for all users.",
+  "pageImg": "/static/img/components/stepper-400.png"
 }

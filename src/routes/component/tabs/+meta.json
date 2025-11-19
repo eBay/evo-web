@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Tabs Component",
-    "pageDescription": "The Tabs component organizes content into switchable panels with keyboard navigation. Built with ARIA attributes and focus management, it provides accessible content organization patterns. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/tabs-400.png"
+  "pageTitle": "Tabs Component",
+  "pageDescription": "The Tabs component organizes content into switchable panels with keyboard navigation. Built with ARIA attributes and focus management, it provides accessible content organization patterns. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/tabs-400.png"
 }

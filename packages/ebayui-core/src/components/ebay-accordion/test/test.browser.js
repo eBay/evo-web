@@ -8,7 +8,7 @@ import {
     expect,
 } from "vitest";
 import { render, cleanup } from "@marko/testing-library";
-import { userEvent } from "@vitest/browser/context";
+import { userEvent } from "vitest/browser";
 import { fastAnimations } from "../../../common/test-utils/browser";
 import { diffHTML, visualHTML } from "../../../common/test-utils/snapshots";
 import { composeStories } from "@storybook/marko";

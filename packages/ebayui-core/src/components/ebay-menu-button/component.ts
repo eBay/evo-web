@@ -82,6 +82,7 @@ export default class extends MenuUtils<Input, MenuState> {
         if (shouldEmitRadio) {
             if (this.input.collapseOnSelect) {
                 this.expander.expanded = false;
+                setTimeout(() => this.focus(), 0);
             }
             this.emitComponentEvent({
                 index,
@@ -92,6 +93,7 @@ export default class extends MenuUtils<Input, MenuState> {
         } else if (this.type !== "radio") {
             if (this.input.collapseOnSelect) {
                 this.expander.expanded = false;
+                setTimeout(() => this.focus(), 0);
             }
             this.emitComponentEvent({
                 index,
@@ -152,6 +154,8 @@ export default class extends MenuUtils<Input, MenuState> {
     handleMenuSelect({ el, originalEvent, index }: MenuEvent) {
         if (this.input.collapseOnSelect) {
             this.expander.expanded = false;
+            // setTimeout is done because otherwise expander stays open unless focus happens after expander is closed
+            setTimeout(() => this.focus(), 0);
         }
 
         this.emitComponentEvent({

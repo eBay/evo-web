@@ -1,7 +1,10 @@
 import React, { ComponentProps, FC } from "react";
 import type { ColumnType, TableHeaderSortHandler, TableSort } from "./types";
 import EbayTableCell from "./table-cell";
-import { EbayIcon, Icon } from "../ebay-icon";
+import { EbayIconSortDown12 } from "../ebay-icon/icons/ebay-icon-sort-down-12";
+import { EbayIconSortUp12 } from "../ebay-icon/icons/ebay-icon-sort-up-12";
+import { EbayIconSort12 } from "../ebay-icon/icons/ebay-icon-sort-12";
+import { EbayIconComponent } from "../ebay-icon/icons/types";
 
 export type EbayTableHeaderProps = ComponentProps<"th"> & {
     columnType?: ColumnType;
@@ -28,16 +31,18 @@ export const EbayTableHeader: FC<EbayTableHeaderProps> = ({
         none: "none",
     };
 
-    const sortIconMap: Record<TableSort, Icon> = {
-        asc: "sortDown12",
-        desc: "sortUp12",
-        none: "sort12",
+    const sortIconMap: Record<TableSort, EbayIconComponent> = {
+        asc: EbayIconSortDown12,
+        desc: EbayIconSortUp12,
+        none: EbayIconSort12,
     };
+
+    const Icon = sortIconMap[sort];
 
     const sortContent = sort ? (
         <>
             {" "}
-            <EbayIcon name={sortIconMap[sort]} />
+            <Icon />
         </>
     ) : null;
 

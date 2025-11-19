@@ -3,13 +3,11 @@
     --donut-chart-graph-size-sm: 140px;
     --donut-chart-graph-size-lg: 210px;
 }
-
 .donut-chart {
     container-name: donut-chart;
     container-type: inline-size;
     width: 100%;
 }
-
 .donut-chart__grid {
     column-gap: var(--spacing-400);
     display: grid;
@@ -19,12 +17,10 @@
     row-gap: var(--spacing-200);
     width: 100%;
 }
-
 .donut-chart__title {
     font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
-
 .donut-chart__graph {
     align-self: flex-end;
     grid-column: 2;
@@ -33,21 +29,17 @@
     position: relative;
     width: 100%;
 }
-
 .donut-chart__metric-value {
     font-size: var(--font-size-giant-1);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
-
 .donut-chart__metric-label {
     font-size: var(--font-size-regular);
 }
-
 .donut-chart__legend {
     align-self: flex-end;
     grid-column: 1 / -1;
 }
-
 @container (width > 450px) {
     .donut-chart__grid {
         column-gap: var(--spacing-800);

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Breadcrumbs Component",
-    "pageDescription": "The Breadcrumbs component provides hierarchical navigation showing users their current location within the site structure. Built with semantic HTML and ARIA landmarks, it enhances wayfinding and improves user experience across all devices. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/breadcrumb-400.png"
+  "pageTitle": "Breadcrumbs Component",
+  "pageDescription": "The Breadcrumbs component provides hierarchical navigation showing users their current location within the site structure. Built with semantic HTML and ARIA landmarks, it enhances wayfinding and improves user experience across all devices. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/breadcrumb-400.png"
 }

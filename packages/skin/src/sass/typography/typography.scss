@@ -35,7 +35,7 @@
 }
 
 .bold-text {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 
 .secondary-text {
@@ -54,7 +54,7 @@
 }
 
 .positive-text {
-    color: var(--color-foreground-confirmation);
+    color: var(--color-foreground-success);
 }
 
 .disabled-text {
@@ -85,7 +85,7 @@
 .large-section-title,
 .medium-section-title,
 .small-section-title {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-600);
 }
 
 @media (min-width: variables.$screen-size-SM) {

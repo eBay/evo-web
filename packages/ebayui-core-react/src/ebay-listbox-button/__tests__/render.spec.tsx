@@ -1,5 +1,6 @@
 import React from "react";
 import { render, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
 
@@ -13,6 +14,7 @@ const {
     InvalidState,
     PrefixLabel,
     FloatingLabel,
+    WithFixedStrategy,
 } = composeStories(stories);
 
 describe("ebay-listbox-button rendering", () => {
@@ -137,5 +139,13 @@ describe("ebay-listbox-button rendering", () => {
         expect(button.querySelector(".btn__floating-label")).toHaveTextContent("Select");
         expect(button.querySelector(".btn__text")).toHaveTextContent("Option 2");
         expect(button.querySelector("svg")).toMatchSnapshot();
+    });
+
+    it("renders with fixed strategy correctly", async () => {
+        const { container } = render(<WithFixedStrategy />);
+
+        const listboxButton: HTMLElement = container.querySelector(".listbox-button button");
+        await userEvent.click(listboxButton);
+        expect(container.querySelector(".listbox-button__listbox")).toHaveClass("listbox-button__listbox--fixed");
     });
 });

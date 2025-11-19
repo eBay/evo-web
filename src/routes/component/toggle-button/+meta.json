@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Toggle Button Component",
-    "pageDescription": "The Toggle Button component creates buttons that maintain pressed state for binary options. Built with accessible state management and clear visual indicators, it provides intuitive toggle controls. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/button-400.png"
+  "pageTitle": "Toggle Button Component",
+  "pageDescription": "The Toggle Button component creates buttons that maintain pressed state for binary options. Built with accessible state management and clear visual indicators, it provides intuitive toggle controls. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/button-400.png"
 }

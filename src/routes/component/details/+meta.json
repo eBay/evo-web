@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Details Component",
-    "pageDescription": "The Details component creates expandable disclosure widgets using native HTML with enhanced styling. Perfect for FAQ sections and progressive disclosure, it provides accessible content expansion without JavaScript. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/details-400.png"
+  "pageTitle": "Details Component",
+  "pageDescription": "The Details component creates expandable disclosure widgets using native HTML with enhanced styling. Perfect for FAQ sections and progressive disclosure, it provides accessible content expansion without JavaScript. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/details-400.png"
 }

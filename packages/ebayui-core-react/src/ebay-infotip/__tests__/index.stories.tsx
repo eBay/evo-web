@@ -1,6 +1,7 @@
 import React from "react";
 import { EbayInfotip, EbayInfotipContent, EbayInfotipHeading, EbayInfotipHost } from "../index";
 import { PointerDirection } from "../../ebay-tooltip";
+import { EbayIconSettings16 } from "../../ebay-icon/icons/ebay-icon-settings-16";
 
 const allPointers: PointerDirection[] = [
     "top",
@@ -35,7 +36,7 @@ export const Default = () => (
 export const CustomIcon = {
     render: () => (
         <div style={{ width: "100%", margin: 200 }}>
-            <EbayInfotip icon="settings16" aria-label="Infotip" a11yCloseText="Close">
+            <EbayInfotip icon={<EbayIconSettings16 />} aria-label="Infotip" a11yCloseText="Close">
                 <EbayInfotipContent>
                     <EbayInfotipHeading>Title</EbayInfotipHeading>
                     <p>Content</p>

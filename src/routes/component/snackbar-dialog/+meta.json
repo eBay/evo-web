@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Snackbar Dialog Component",
-    "pageDescription": "The Snackbar Dialog component displays brief messages at the screen bottom with optional actions. Built with auto-dismiss and accessibility features, it provides non-intrusive feedback to users. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/dialog-400.png"
+  "pageTitle": "Snackbar Dialog Component",
+  "pageDescription": "The Snackbar Dialog component displays brief messages at the screen bottom with optional actions. Built with auto-dismiss and accessibility features, it provides non-intrusive feedback to users. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/dialog-400.png"
 }

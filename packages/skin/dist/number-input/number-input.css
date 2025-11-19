@@ -77,7 +77,6 @@
 .number-input .textbox {
     background: transparent;
 }
-
 .number-input--increment .textbox__control {
     animation:
         number-input-increment-before var(--motion-duration-short-2)
@@ -85,7 +84,6 @@
         number-input-increment-after var(--motion-duration-medium-1)
             var(--motion-easing-quick-enter) var(--motion-duration-short-2);
 }
-
 .number-input--decrement .textbox__control {
     animation:
         number-input-decrement-before var(--motion-duration-short-2)
@@ -93,7 +91,6 @@
         number-input-decrement-after var(--motion-duration-medium-1)
             var(--motion-easing-quick-enter) var(--motion-duration-short-2);
 }
-
 .number-input--decrement-disabled .textbox__control {
     animation:
         number-input-decrement-before var(--motion-duration-short-2)
@@ -101,7 +98,6 @@
         number-input-decrement-after-disabled var(--motion-duration-medium-2)
             var(--motion-easing-standard) var(--motion-duration-short-2);
 }
-
 .number-input--increment-disabled .textbox__control {
     animation:
         number-input-increment-before var(--motion-duration-short-2)
@@ -109,31 +105,25 @@
         number-input-increment-after-disabled var(--motion-duration-medium-2)
             var(--motion-easing-standard) var(--motion-duration-short-2);
 }
-
 .number-input label:first-child {
     flex-grow: 1;
     padding-left: var(--spacing-200);
 }
-
 .number-input label:first-child ~ input.textbox__control {
     flex-grow: 0;
 }
-
 .icon-btn.number-input__delete {
     display: none;
     margin-inline-end: calc(var(--spacing-100) * -1);
     order: -1;
     padding-inline-start: var(--spacing-200);
 }
-
 .number-input--show-delete .number-input__delete {
     display: block;
 }
-
 .number-input--show-delete .number-input__decrement {
     display: none;
 }
-
 .number-input .textbox .textbox__control {
     font-weight: 700;
     text-align: center;
@@ -148,31 +138,25 @@
     -webkit-appearance: textfield;
     appearance: textfield;
 }
-
 .number-input .icon-btn {
     transform: scale(1);
     transition: transform var(--motion-duration-short-3)
         var(--motion-easing-standard);
 }
-
 .number-input .icon-btn:hover:not(:disabled) {
     background-color: var(--state-layer-hover);
 }
-
 .number-input .icon-btn:active {
     transform: scale(0.97);
 }
-
 .number-input .textbox .icon-btn:not(:disabled) svg {
     color: var(--color-foreground-primary);
     fill: currentColor;
 }
-
 .number-input__decrement:disabled {
     animation: number-decrement-disabled var(--motion-duration-short-2)
         var(--motion-easing-standard);
 }
-
 .number-input__increment:disabled {
     animation: number-increment-disabled var(--motion-duration-short-2)
         var(--motion-easing-standard);

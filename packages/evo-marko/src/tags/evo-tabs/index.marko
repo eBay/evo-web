@@ -21,27 +21,30 @@ export interface Input extends Marko.HTML.Div {
 <let/index:=input.index>
 <id/tabId>
 <id/tabpanelId>
+<const/size=([...tabs].length)>
 
 <div class=["tabs", inputClass] ...htmlInput>
     <div/tabListEl role="tablist" class="tabs__items">
-        <evo-roving-tabindex/{ onKeydown, onClick, tabindex }
-            size=[...tabs].length
-            itemId=tabId
+        <evo-roving-tabindex/rovingTabIndex
+            nodeList=() =>
+                [...Array(size)].map((v, i) => {
+                    return document.getElementById(`${tabId}-${i}`);
+                })
             autoSelect=(activation === "auto")
-            index:=index />
+            selected:=index />
             <for|tab, i| of=tabs>
                 <const/isSelected=index === i>
                 <div
                     ...tab
                     onClick(e, target) {
-                        (onClick || null)?.(i);
+                        (rovingTabIndex.onClick || null)?.(i);
                         (tab.onClick || null)?.(e, target);
                     }
                     onKeydown(e, target) {
-                        (onKeydown || null)?.(e);
+                        (rovingTabIndex.onKeydown || null)?.(e);
                         (tab.onKeydown || null)?.(e, target);
                     }
-                    tabindex=tabindex(i)
+                    tabindex=rovingTabIndex.isFocused(i) ? 0 : -1
                     id=`${tabId}-${i}`
                     aria-controls=`${tabpanelId}-${i}`
                     role="tab"

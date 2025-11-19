@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Tokens Component",
-    "pageDescription": "The Tokens component provides design tokens for consistent colors, spacing, typography, and other design decisions. Built for scalability and maintainability, it ensures brand consistency across implementations. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/global-400.png"
+  "pageTitle": "Tokens Component",
+  "pageDescription": "The Tokens component provides design tokens for consistent colors, spacing, typography, and other design decisions. Built for scalability and maintainability, it ensures brand consistency across implementations. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/global-400.png"
 }

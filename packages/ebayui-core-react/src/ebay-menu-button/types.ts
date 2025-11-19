@@ -9,8 +9,10 @@ export type EbayMenuButtonProps = {
     className?: string;
     fixWidth?: boolean;
     reverse?: boolean;
+    strategy?: "absolute" | "fixed";
     text?: string;
     type?: EbayMenuType;
+    icon?: ReactElement;
     variant?: EbayMenuButtonVariant;
     onCollapse?: () => void;
     onExpand?: () => void;

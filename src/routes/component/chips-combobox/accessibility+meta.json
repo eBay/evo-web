@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Chips Combobox Accessibility Guidelines — Building Inclusive Multi-Select Autocomplete",
-    "pageDescription": "Learn how to make chips combobox components fully accessible with proper ARIA combobox patterns, keyboard navigation, and selected item management. Follow these WCAG-aligned guidelines to ensure autocomplete multi-select interfaces work for all users.",
-    "pageImg": "/static/img/components/combobox-400.png"
+  "pageTitle": "Chips Combobox Accessibility Guidelines — Building Inclusive Multi-Select Autocomplete",
+  "pageDescription": "Learn how to make chips combobox components fully accessible with proper ARIA combobox patterns, keyboard navigation, and selected item management. Follow these WCAG-aligned guidelines to ensure autocomplete multi-select interfaces work for all users.",
+  "pageImg": "/static/img/components/combobox-400.png"
 }

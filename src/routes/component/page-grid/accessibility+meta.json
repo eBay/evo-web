@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Page Grid Accessibility Guidelines — Building Inclusive Page Structure",
-    "pageDescription": "Learn how to make page grid components fully accessible with proper landmark roles, skip links, and responsive layouts. Follow these WCAG-aligned guidelines to ensure page structures provide clear navigation for all users.",
-    "pageImg": "/static/img/components/layout-400.png"
+  "pageTitle": "Page Grid Accessibility Guidelines — Building Inclusive Page Structure",
+  "pageDescription": "Learn how to make page grid components fully accessible with proper landmark roles, skip links, and responsive layouts. Follow these WCAG-aligned guidelines to ensure page structures provide clear navigation for all users.",
+  "pageImg": "/static/img/components/layout-400.png"
 }

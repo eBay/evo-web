@@ -35,6 +35,7 @@ const EbaySplitButton: FC<Props> = ({
                 priority={rest.priority}
                 disabled={rest.disabled}
                 transparent={rest.transparent}
+                partiallyDisabled={rest.partiallyDisabled}
                 size={rest.size}
                 type={type}
                 split="end"

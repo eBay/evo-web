@@ -1,7 +1,7 @@
 import React, { ComponentProps, ElementType, FC } from "react";
 import classnames from "classnames";
 import { EbayEventHandler } from "../events";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconChevronDown16 } from "../ebay-icon/icons/ebay-icon-chevron-down-16";
 
 type ToggleProps = {
     open: boolean;
@@ -43,7 +43,7 @@ const EbayDetails: FC<EbayDetailsProps> = ({
             >
                 <span className="details__label">{text}</span>
                 <span className="details__icon" hidden>
-                    <EbayIcon name="chevronDown16" />
+                    <EbayIconChevronDown16 />
                 </span>
             </summary>
             <Component className="details__content">{children}</Component>

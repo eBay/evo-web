@@ -1,9 +1,9 @@
 import React, { ComponentProps, FC, useEffect, useState } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
 import { range } from "../common/range";
 import { EbayChangeEventHandler, EbayFocusEventHandler, EbayKeyboardEventHandler } from "../common/event-utils/types";
 import { useRandomId } from "../common/random-id";
+import { EbayIconStarDynamic } from "../ebay-icon/icons/ebay-icon-star-dynamic";
 
 export type EventProps = { value: number };
 type Props = ComponentProps<"div"> & {
@@ -84,7 +84,7 @@ const EbayStarRatingSelect: FC<Props> = ({
                         onKeyDown={handleKeyDown(i)}
                     />
                     <span className="star-rating-select__radio-icon">
-                        <EbayIcon className="star-rating__icon" name="starDynamic" />
+                        <EbayIconStarDynamic className="star-rating__icon" />
                     </span>
                 </span>
             ))}

@@ -13,7 +13,7 @@ import type { Input } from "./component";
 import Readme from "./README.md";
 import { Story } from "@storybook/marko";
 
-const Template: Story<Input> = (args) => ({
+const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
 });
 

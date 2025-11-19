@@ -7,13 +7,14 @@ import classNames from "classnames";
 import shaka from "shaka-player/dist/shaka-player.ui";
 
 import { filterByType } from "../common/component-utils";
-import { EbayIcon } from "../ebay-icon";
 import { EbayProgressSpinner } from "../ebay-progress-spinner";
 import { Player, VideoAction, VideoPlayView } from "./types";
 import EbayVideoSource from "./source";
 import { defaultVideoConfig, ERROR_ANOTHER_LOAD, ERROR_NO_PLAYER } from "./const";
 import { customControls } from "./controls";
 import { EbayEventHandler } from "../common/event-utils/types";
+import { EbayIconPlayFilled64Colored } from "../ebay-icon/icons/ebay-icon-play-filled-64-colored";
+import { EbayIconAttention64 } from "../ebay-icon/icons/ebay-icon-attention-64";
 
 export type PlayEventProps = {
     player: Player;
@@ -230,7 +231,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
                         style={{ opacity: 1, zIndex: 999 }}
                         aria-label={a11yPlayText}
                     >
-                        <EbayIcon name="playFilled64Colored" />
+                        <EbayIconPlayFilled64Colored />
                     </button>
                 </div>
             )}
@@ -251,7 +252,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
                 </video>
             </div>
             <div className={classNames("video-player__overlay", { "video-player__overlay--hidden": !failed })}>
-                <EbayIcon name="attention64" />
+                <EbayIconAttention64 />
                 <div className="video-player__overlay-text">{errorText}</div>
             </div>
             <div

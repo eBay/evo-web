@@ -28,11 +28,9 @@ ul.accordion {
 ul.accordion ::marker {
     font-size: 0;
 }
-
 ul.accordion > li:not(:last-child) {
-    border-bottom: 1px solid var(--color-stroke-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
 }
-
 ul.accordion summary.details__summary {
     border-radius: 0;
     display: flex;
@@ -41,16 +39,13 @@ ul.accordion summary.details__summary {
     min-height: 48px;
     padding: 12px 16px;
 }
-
 ul.accordion details {
     overflow: hidden;
 }
-
 ul.accordion details .details__content {
     margin: 0 16px 6px;
     overflow: hidden;
 }
-
 ul.accordion summary.details__summary span.details__icon svg {
     animation: chevron-bounce-close var(--motion-duration-medium-1)
         var(--motion-easing-standard);
@@ -59,7 +54,6 @@ ul.accordion summary.details__summary span.details__icon svg {
         var(--color-foreground-secondary)
     );
 }
-
 ul.accordion details[open] summary.details__summary span.details__icon svg {
     animation: chevron-bounce-open var(--motion-duration-medium-1)
         var(--motion-easing-standard) var(--motion-duration-short-1);
@@ -68,17 +62,14 @@ ul.accordion details svg.details__expand,
 ul.accordion details[open] svg.details__collapse {
     display: inline-block;
 }
-
 ul.accordion details svg.details__collapse,
 ul.accordion details[open] svg.details__expand {
     display: none;
 }
-
 ul.accordion--large summary.details__summary {
     font-size: var(--font-size-large-1);
     min-height: 52px;
 }
-
 @supports selector(::details-content) and (interpolate-size: allow-keywords) and
     (transition: allow-discrete) {
     :root {

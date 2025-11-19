@@ -10,7 +10,7 @@ a.cta-btn {
         calc(button-mixins.$button-height-regular / 2)
     );
     display: inline-block;
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     max-width: 100%;
     min-height: button-mixins.$button-height-regular;
     padding: button-mixins.$button-padding-vertical 20px;
@@ -57,7 +57,7 @@ a.cta-btn[aria-disabled="true"] {
     );
     @include token-mixins.border-color-token(
         cta-btn-disabled-border-color,
-        color-stroke-disabled
+        color-border-disabled
     );
     @include token-mixins.color-token(
         cta-btn-disabled-foreground-color,

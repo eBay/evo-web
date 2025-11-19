@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Icon Accessibility Guidelines — Creating Inclusive Iconography",
-    "pageDescription": "Learn how to make icon components fully accessible with proper ARIA labels, hidden decorative icons, and meaningful alternatives. Follow these WCAG-aligned guidelines to ensure icons are properly conveyed to all users, including those using screen readers.",
-    "pageImg": "/static/img/components/icon-400.png"
+  "pageTitle": "Icon Accessibility Guidelines — Creating Inclusive Iconography",
+  "pageDescription": "Learn how to make icon components fully accessible with proper ARIA labels, hidden decorative icons, and meaningful alternatives. Follow these WCAG-aligned guidelines to ensure icons are properly conveyed to all users, including those using screen readers.",
+  "pageImg": "/static/img/components/icon-400.png"
 }

@@ -1,5 +1,6 @@
 @use "./token-mixins";
 @use "./selection-list-mixins";
+@use "./state-layer";
 
 @mixin base($component) {
     @include token-mixins.border-color-token(
@@ -13,14 +14,7 @@
     );
 
     @include selection-list-mixins.base;
-
-    &:hover {
-        background-color: var(--color-state-primary-hover);
-        @include token-mixins.color-token(
-            #{$component}-menuitem-hover-foreground-color,
-            color-foreground-primary
-        );
-    }
+    @include state-layer.standard;
 
     &:active {
         font-weight: bold;
@@ -35,7 +29,7 @@
     align-items: center;
     background-color: var(--color-background-elevated);
     border: none;
-    border-color: var(--color-stroke-subtle);
+    border-color: var(--color-border-subtle);
     border-top-style: solid;
     border-top-width: 1px;
     display: flex;

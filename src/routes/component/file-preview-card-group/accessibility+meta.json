@@ -1,5 +1,5 @@
 {
-    "pageTitle": "File Preview Card Group Accessibility Guidelines — Creating Inclusive File Lists",
-    "pageDescription": "Learn how to make file preview card group components fully accessible with proper list semantics, navigation patterns, and batch action controls. Follow these WCAG-aligned guidelines to ensure grouped file displays work for all users.",
-    "pageImg": "/static/img/components/card-400.png"
+  "pageTitle": "File Preview Card Group Accessibility Guidelines — Creating Inclusive File Lists",
+  "pageDescription": "Learn how to make file preview card group components fully accessible with proper list semantics, navigation patterns, and batch action controls. Follow these WCAG-aligned guidelines to ensure grouped file displays work for all users.",
+  "pageImg": "/static/img/components/card-400.png"
 }

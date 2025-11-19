@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Page Notice Component",
-    "pageDescription": "The Page Notice component displays page-level messages and alerts with prominent visibility. Built with semantic HTML and ARIA roles, it ensures critical information is communicated effectively to all users. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/notice-400.png"
+  "pageTitle": "Page Notice Component",
+  "pageDescription": "The Page Notice component displays page-level messages and alerts with prominent visibility. Built with semantic HTML and ARIA roles, it ensures critical information is communicated effectively to all users. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/notice-400.png"
 }

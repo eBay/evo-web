@@ -1,3 +1,8 @@
+:root {
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
+    --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
+}
+
 .switch {
     box-sizing: border-box;
     height: 40px;
@@ -19,7 +24,7 @@ span.switch__button {
         --switch-unchecked-background-color,
         var(--color-background-secondary)
     );
-    border-color: var(--switch-border-color, var(--color-stroke-strong));
+    border-color: var(--switch-border-color, var(--color-border-strong));
     border-radius: 400px;
     border-style: solid;
     border-width: 1px;
@@ -29,11 +34,13 @@ span.switch__button {
     text-indent: 100%;
     width: 40px;
 }
+
 span.switch__button,
 span.switch__button:after {
     height: 24px;
     transition: left 0.15s ease-out 0s;
 }
+
 span.switch__button:after {
     background-color: var(
         --switch-foreground-color,
@@ -41,7 +48,7 @@ span.switch__button:after {
     );
     border-color: var(
         --switch-foreground-border-color,
-        var(--color-stroke-strong)
+        var(--color-border-strong)
     );
     border-radius: 50%;
     border-style: solid;
@@ -67,21 +74,25 @@ span.switch__control {
     width: 40px;
     z-index: 1;
 }
+
 input.switch__control[disabled] + span.switch__button,
 span.switch__control[aria-disabled="true"] + span.switch__button {
-    border-color: var(--switch-border-color, var(--color-stroke-disabled));
+    border-color: var(--switch-border-color, var(--color-border-disabled));
 }
 
 input.switch__control {
     opacity: 0;
 }
+
 input.switch__control:focus + span.switch__button {
     outline: 1px auto
         var(--switch-custom-outline-color, var(--color-foreground-secondary));
 }
+
 input.switch__control:focus:not(:focus-visible) + span.switch__button {
     outline: none;
 }
+
 input.switch__control[disabled] + span.switch__button:after,
 span.switch__control[aria-disabled="true"] + span.switch__button:after {
     border-color: var(--switch-border-color, var(--color-background-disabled));
@@ -91,11 +102,24 @@ input.switch__control:not([disabled]):focus + span.switch__button,
 input.switch__control:not([disabled]):hover + span.switch__button,
 span.switch__control:not([aria-disabled="true"]):focus + span.switch__button,
 span.switch__control:not([aria-disabled="true"]):hover + span.switch__button {
-    background-color: var(
-        --switch-unchecked-hover-background-color,
-        var(--color-state-secondary-hover)
-    );
+    overflow: hidden;
+    position: relative;
 }
+
+input.switch__control:not([disabled]):focus + span.switch__button:before,
+input.switch__control:not([disabled]):hover + span.switch__button:before,
+span.switch__control:not([aria-disabled="true"]):focus
+    + span.switch__button:before,
+span.switch__control:not([aria-disabled="true"]):hover
+    + span.switch__button:before {
+    background-color: var(--color-state-layer-neutral);
+    background-color: var(--color-state-layer-hover);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
 input.switch__control:not([disabled]):checked + span.switch__button,
 span.switch__control:not([aria-disabled="true"])[aria-checked="true"]
     + span.switch__button {
@@ -104,6 +128,7 @@ span.switch__control:not([aria-disabled="true"])[aria-checked="true"]
         var(--color-background-accent)
     );
 }
+
 input.switch__control[disabled]:checked + span.switch__button,
 span.switch__control[aria-disabled="true"][aria-checked="true"]
     + span.switch__button {
@@ -119,24 +144,14 @@ span.switch__control:not([aria-disabled="true"]):focus-visible
     + span.switch__button {
     box-shadow:
         0 0 0 2px var(--color-background-primary),
-        0 0 0 4px var(--color-state-accent-hover);
+        0 0 0 4px var(--color-background-accent);
 }
 
-input.switch__control:not([disabled]):checked:focus + span.switch__button,
-input.switch__control:not([disabled]):checked:hover + span.switch__button,
-span.switch__control:not([aria-disabled="true"])[aria-checked="true"]:focus
-    + span.switch__button,
-span.switch__control:not([aria-disabled="true"])[aria-checked="true"]:hover
-    + span.switch__button {
-    background-color: var(
-        --switch-checked-hover-background-color,
-        var(--color-state-accent-hover)
-    );
-}
 input.switch__control:checked + span.switch__button:after,
 span.switch__control[aria-checked="true"] + span.switch__button:after {
     left: 15px;
 }
+
 span.switch__control:focus:not(:focus-visible) {
     outline: 0;
 }

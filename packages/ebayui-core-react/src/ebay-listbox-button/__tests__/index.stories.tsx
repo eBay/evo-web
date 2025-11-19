@@ -182,3 +182,11 @@ export const FloatingLabel = () => (
         </EbayListboxButton>
     </>
 );
+
+export const WithFixedStrategy = () => (
+    <EbayListboxButton floatingLabel="Select" value="BB" strategy="fixed">
+        <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
+        <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
+        <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
+    </EbayListboxButton>
+);

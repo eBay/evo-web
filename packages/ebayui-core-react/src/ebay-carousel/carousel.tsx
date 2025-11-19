@@ -5,7 +5,8 @@ import CarouselList from "./carousel-list";
 import { ListItemRef } from "./types";
 import { animateCarouselLoop, getMaxOffset, getNextIndex, getOffset, getSlide } from "./helpers";
 import { debounce } from "../common/debounce";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconPause24 } from "../ebay-icon/icons/ebay-icon-pause-24";
+import { EbayIconPlay24 } from "../ebay-icon/icons/ebay-icon-play-24";
 import reactDom from "react-dom";
 import { useReducedMotion } from "../utils";
 
@@ -226,7 +227,7 @@ const EbayCarousel: FC<CarouselProps> = ({
                         onClick={togglePlayback}
                         aria-label={paused ? a11yPlayText : a11yPauseText}
                     >
-                        <EbayIcon name={paused ? "play24" : "pause24"} />
+                        {paused ? <EbayIconPlay24 /> : <EbayIconPause24 />}
                     </button>
                 ) : null}
             </div>

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Segmented Buttons Component",
-    "pageDescription": "The Segmented Buttons component provides grouped button controls for mutually exclusive options. Built with accessible selection states and keyboard navigation, it offers intuitive toggle interfaces. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/button-400.png"
+  "pageTitle": "Segmented Buttons Component",
+  "pageDescription": "The Segmented Buttons component provides grouped button controls for mutually exclusive options. Built with accessible selection states and keyboard navigation, it offers intuitive toggle interfaces. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/button-400.png"
 }

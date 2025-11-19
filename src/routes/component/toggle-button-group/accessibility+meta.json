@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Toggle Button Group Accessibility Guidelines — Creating Inclusive Multi-Toggle Controls",
-    "pageDescription": "Learn how to make toggle button group components fully accessible with proper keyboard navigation, group semantics, and selection management. Follow these WCAG-aligned guidelines to ensure grouped toggles work for all users.",
-    "pageImg": "/static/img/components/button-400.png"
+  "pageTitle": "Toggle Button Group Accessibility Guidelines — Creating Inclusive Multi-Toggle Controls",
+  "pageDescription": "Learn how to make toggle button group components fully accessible with proper keyboard navigation, group semantics, and selection management. Follow these WCAG-aligned guidelines to ensure grouped toggles work for all users.",
+  "pageImg": "/static/img/components/button-400.png"
 }

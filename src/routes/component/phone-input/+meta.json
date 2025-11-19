@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Phone Input Component",
-    "pageDescription": "The Phone Input component provides formatted phone number entry with country code support and validation. Designed for international accessibility, it handles various phone formats and masks. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/textbox-400.png"
+  "pageTitle": "Phone Input Component",
+  "pageDescription": "The Phone Input component provides formatted phone number entry with country code support and validation. Designed for international accessibility, it handles various phone formats and masks. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/textbox-400.png"
 }

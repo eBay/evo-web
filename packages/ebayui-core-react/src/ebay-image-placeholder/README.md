@@ -29,13 +29,3 @@ import "@ebay/skin/tokens";
 ```jsx harmony
 import "@ebay/skin/image-placeholder.css";
 ```
-
-### Import icons
-
-Add the below icon to the `EbaySvg` component.
-
-Note: Make sure that `EbaySvg` is only rendered on the server so it does not affect the client bundle size.
-
-```tsx
-<EbaySvg icons={["imagePlaceholder"]} />
-```

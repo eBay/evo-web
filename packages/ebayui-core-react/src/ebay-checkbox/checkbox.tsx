@@ -1,9 +1,12 @@
 import React, { ChangeEvent, cloneElement, ComponentProps, FC, FocusEvent, KeyboardEvent, useState } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
 import { EbayLabel, EbayLabelProps } from "../ebay-field";
 import { findComponent } from "../common/component-utils";
 import { CheckboxChangeHandler, CheckboxFocusHandler, CheckboxKeyDownHandler, Size } from "./types";
+import { EbayIconCheckboxChecked24 } from "../ebay-icon/icons/ebay-icon-checkbox-checked-24";
+import { EbayIconCheckboxChecked18 } from "../ebay-icon/icons/ebay-icon-checkbox-checked-18";
+import { EbayIconCheckboxUnchecked24 } from "../ebay-icon/icons/ebay-icon-checkbox-unchecked-24";
+import { EbayIconCheckboxUnchecked18 } from "../ebay-icon/icons/ebay-icon-checkbox-unchecked-18";
 
 export type EbayCheckboxProps = Omit<ComponentProps<"input">, "size" | "onChange" | "onFocus" | "onKeyDown"> & {
     size?: Size;
@@ -47,15 +50,15 @@ const EbayCheckbox: FC<EbayCheckboxProps> = ({
 
     const iconChecked =
         size === "large" ? (
-            <EbayIcon name="checkboxChecked24" className="checkbox__checked" />
+            <EbayIconCheckboxChecked24 className="checkbox__checked" />
         ) : (
-            <EbayIcon name="checkboxChecked18" className="checkbox__checked" />
+            <EbayIconCheckboxChecked18 className="checkbox__checked" />
         );
     const iconUnChecked =
         size === "large" ? (
-            <EbayIcon name="checkboxUnchecked24" className="checkbox__unchecked" />
+            <EbayIconCheckboxUnchecked24 className="checkbox__unchecked" />
         ) : (
-            <EbayIcon name="checkboxUnchecked18" className="checkbox__unchecked" />
+            <EbayIconCheckboxUnchecked18 className="checkbox__unchecked" />
         );
 
     const ebayLabel = findComponent(children, EbayLabel);

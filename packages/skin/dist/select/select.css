@@ -1,13 +1,11 @@
 .select {
     color: var(--select-foreground-color, var(--color-foreground-primary));
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-body);
     position: relative;
 }
-
 span.select {
     display: inline-block;
 }
-
 .select select {
     -webkit-appearance: none;
     appearance: none;
@@ -15,7 +13,7 @@ span.select {
         --select-background-color,
         var(--color-background-secondary)
     );
-    border-color: var(--select-border-color, var(--color-stroke-default));
+    border-color: var(--select-border-color, var(--color-border-medium));
     border-radius: var(--select-border-radius, var(--border-radius-50));
     border-style: solid;
     border-width: 1px;
@@ -26,7 +24,6 @@ span.select {
     padding: 0 var(--spacing-400) 0 var(--spacing-200);
     vertical-align: middle;
 }
-
 .select svg.icon--12 {
     height: 100%;
     pointer-events: none;
@@ -34,17 +31,14 @@ span.select {
     right: 16px;
     top: 0;
 }
-
 .select--large select {
     font-size: var(--font-size-medium);
     height: 48px;
 }
-
 .select--fluid,
 .select--fluid select {
     width: 100%;
 }
-
 .select--borderless select {
     background-color: initial;
     border: 0;
@@ -55,27 +49,24 @@ span.select {
     background-color: initial;
     text-decoration: underline;
 }
-
 .select select:focus {
     background-color: var(
         --select-focus-background-color,
         var(--color-background-primary)
     );
 }
-
 .select select:focus:not(:read-only) {
     background-color: var(
         --select-focus-background-color,
         var(--color-background-primary)
     );
-    border-color: var(--select-focus-border-color, var(--color-stroke-default));
+    border-color: var(--select-focus-border-color, var(--color-border-medium));
     outline: 0;
     text-decoration: underline;
 }
 .select select::-ms-expand {
     display: none;
 }
-
 .select select[disabled] {
     border-color: var(
         --textbox-disabled-border-color,
@@ -87,23 +78,20 @@ span.select {
     );
     opacity: 1;
 }
-
 .select select[disabled] + svg {
     color: var(
         --select-disabled-foregound-color,
         var(--color-foreground-on-disabled)
     );
 }
-
 .select select[readonly] {
     background-color: initial;
     border: none;
 }
-
 .select select[aria-invalid="true"] {
     border-color: var(
         --select-invalid-border-color,
-        var(--color-stroke-attention)
+        var(--color-border-attention)
     );
     border-style: solid;
     border-width: 1px;
@@ -113,7 +101,7 @@ span.select {
         --select-focus-background-color,
         var(--color-background-primary)
     );
-    border-color: var(--select-focus-border-color, var(--color-stroke-default));
+    border-color: var(--select-focus-border-color, var(--color-border-medium));
 }
 [dir="rtl"] .select > select {
     padding-left: 30px;

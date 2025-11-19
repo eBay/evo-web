@@ -1,24 +1,15 @@
 @use "../variables/variables";
 @use "../mixins/private/dialog-mixins";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 .toast-dialog {
-    @include token-mixins.background-color-token(
-        toast-dialog-background-color,
-        color-background-information
-    );
-    @include token-mixins.border-top-left-radius-token(
-        toast-dialog-border-radius,
-        border-radius-100
-    );
-    @include token-mixins.border-top-right-radius-token(
-        toast-dialog-border-radius,
-        border-radius-100
-    );
-
-    bottom: 0;
+    background-color: var(--color-background-accent);
+    border-top-left-radius: var(--border-radius-100);
+    border-top-right-radius: var(--border-radius-100);
     box-shadow: 0 0 3px rgb(0 0 0 / 0.28);
-    left: 0;
+    color: var(--color-foreground-on-success);
+    inset: auto 0 0;
     max-height: 40vh;
     min-width: 320px;
     position: fixed;
@@ -27,17 +18,10 @@
     width: 100vw;
     will-change: opacity, transform;
     z-index: 2;
-    @include token-mixins.color-token(
-        toast-dialog-foreground-color,
-        color-foreground-on-information
-    );
 }
 
 .toast-dialog a {
-    @include token-mixins.color-token(
-        toast-dialog-foreground-color,
-        color-foreground-on-information
-    );
+    color: var(--color-foreground-on-success);
 }
 
 .toast-dialog a:focus {
@@ -83,21 +67,14 @@
 button.icon-btn.toast-dialog__close {
     align-self: flex-start;
     border: 0;
+    color: var(--color-foreground-on-success);
     flex-shrink: 0;
     margin-inline-start: auto;
     padding: 0;
-    @include token-mixins.color-token(
-        toast-dialog-foreground-color,
-        color-foreground-on-information
-    );
+    @include state-layer.standard;
 
     &:focus {
-        outline: 2px solid var(--color-foreground-on-information);
-    }
-
-    &:hover,
-    &:focus {
-        color: var(--color-state-primary-hover);
+        outline: 2px solid var(--color-foreground-on-success);
     }
 }
 
@@ -115,83 +92,35 @@ button.icon-btn.toast-dialog__close > svg {
 
     button.btn--primary,
     button.btn--secondary {
-        @include token-mixins.border-color-token(
-            toast-dialog-foreground-color,
-            color-foreground-on-accent
-        );
+        @include state-layer.standard;
 
+        border-color: var(--color-foreground-on-accent);
         border-style: solid;
         border-width: 1px;
         outline-offset: 2px;
     }
 
     button.btn--primary {
-        @include token-mixins.background-color-token(
-            toast-dialog-foreground-color,
-            color-background-primary
-        );
-        @include token-mixins.color-token(
-            toast-dialog-background-color,
-            color-foreground-accent
-        );
+        background-color: var(--color-background-primary);
+        color: var(--color-foreground-accent);
     }
 
     button.btn--secondary {
         background-color: transparent;
+        color: var(--color-background-primary);
         font-weight: 700;
         margin-inline-end: var(--spacing-100);
-        @include token-mixins.color-token(
-            toast-dialog-foreground-color,
-            color-background-primary
-        );
     }
 
     button.btn--primary:focus,
     button.btn--secondary:focus {
-        outline: 2px solid var(--color-foreground-on-information);
-    }
-
-    button.btn--primary:not([disabled]) {
-        &:focus,
-        &:hover {
-            background-color: var(--color-state-primary-hover);
-        }
-
-        &:active {
-            background-color: var(--color-state-primary-active);
-        }
-    }
-
-    button.btn--secondary:not([disabled]) {
-        &:focus,
-        &:hover {
-            background-color: var(--color-state-accent-hover);
-            @include token-mixins.border-color-token(
-                toast-dialog-foreground-color,
-                color-foreground-on-accent
-            );
-            @include token-mixins.color-token(
-                toast-dialog-foreground-color,
-                color-background-primary
-            );
-        }
-
-        /* prettier-ignore */
-        &:active {
-            background-color: var(--color-state-accent-active);
-            @include token-mixins.border-color-token(toast-dialog-foreground-color, color-foreground-on-accent);
-            @include token-mixins.color-token(toast-dialog-foreground-color, color-background-primary);
-        }
+        outline: 2px solid var(--color-foreground-on-success);
     }
 }
 
 @media (min-width: variables.$screen-size-SM) {
     .toast-dialog {
-        @include token-mixins.border-radius-token(
-            toast-dialog-border-radius,
-            border-radius-100
-        );
-
+        border-radius: var(--border-radius-100);
         bottom: var(--spacing-200);
         left: var(--spacing-200);
         max-width: 480px;

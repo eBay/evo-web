@@ -1,9 +1,9 @@
 import React, { useState, FC, ComponentProps, ElementType } from "react";
-import { EbayIcon } from "../ebay-icon"; // Correcting the import path for EbayIcon
 import { FileInputHandler } from "./types";
 import { findComponent, excludeComponent } from "../common/component-utils/utils";
 import classNames from "classnames";
 import { useRandomId } from "../utils";
+import { EbayIconUpload24 } from "../ebay-icon/icons/ebay-icon-upload-24";
 
 type ChildrenProps = ComponentProps<ElementType> & {
     as?: ElementType;
@@ -44,7 +44,7 @@ const EbayFileInput: React.FC<EbayFileInputProps> = ({ children, onInput, classN
         <div className={classNames(`file-input`, dragging && "file-input___container--dragged-over", className)}>
             <div className="file-input__container">
                 <div className="file-input__upload-icon">
-                    <EbayIcon name="upload24" />
+                    <EbayIconUpload24 />
                 </div>
                 <div className="file-input__content">
                     {header}

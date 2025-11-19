@@ -7,6 +7,7 @@ import {
     EbaySectionNoticeFooter,
     EbaySectionNoticeCTA,
 } from "../index";
+import { EbayIconLightningBolt24 } from "../../ebay-icon/icons/ebay-icon-lightning-bolt-24";
 
 export default {
     title: "notices & tips/ebay-section-notice",
@@ -184,7 +185,7 @@ export const EducationalSectionNoticeProminent = () => (
 
 export const EducationalSectionNoticeCustomIcon = () => (
     <>
-        <EbaySectionNotice status="education" prominent educationIcon="lightningBolt24">
+        <EbaySectionNotice status="education" prominent educationIcon={<EbayIconLightningBolt24 />}>
             <EbayNoticeContent>
                 <p>
                     Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}

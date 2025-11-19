@@ -3,6 +3,9 @@ import classNames from "classnames";
 import { EbayTextbox, EbayTextboxPrefixIcon, EbayTextboxPostfixIcon } from "../ebay-textbox";
 import type { EbayNumberInputProps } from "./types";
 import { EbayIconButton } from "../ebay-icon-button";
+import { EbayIconRemove24 } from "../ebay-icon/icons/ebay-icon-remove-24";
+import { EbayIconDelete24 } from "../ebay-icon/icons/ebay-icon-delete-24";
+import { EbayIconAdd24 } from "../ebay-icon/icons/ebay-icon-add-24";
 
 const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
     const {
@@ -113,7 +116,7 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
             className={classNames(
                 `number-input`,
                 a11yDeleteText && inputValue === 1 && "number-input--show-delete",
-                className
+                className,
             )}
         >
             <EbayTextbox
@@ -135,7 +138,7 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
                         aria-hidden
                         className="number-input__decrement"
                         disabled={inputValue <= min}
-                        icon="remove24"
+                        icon={<EbayIconRemove24 />}
                         onClick={handleDecrement}
                         size="small"
                         tabIndex={-1}
@@ -147,7 +150,7 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
                         <EbayIconButton
                             aria-label={a11yDeleteText}
                             className="number-input__delete"
-                            icon="delete24"
+                            icon={<EbayIconDelete24 />}
                             onClick={handleDeleteClick}
                             size="small"
                             transparent
@@ -157,7 +160,7 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
                         aria-hidden
                         className="number-input__increment"
                         disabled={inputValue >= max}
-                        icon="add24"
+                        icon={<EbayIconAdd24 />}
                         onClick={handleIncrement}
                         size="small"
                         tabIndex={-1}

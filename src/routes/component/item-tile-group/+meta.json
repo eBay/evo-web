@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Item Tile Group Component",
-    "pageDescription": "The Item Tile Group component organizes multiple item tiles in responsive grid layouts. Designed for optimal browsing experiences, it adapts to different screen sizes while maintaining accessibility. Available in Evo Web's CSS, React, and Marko implementations.",
-    "pageImg": "/src/routes/static/img/components/card-400.png"
+  "pageTitle": "Item Tile Group Component",
+  "pageDescription": "The Item Tile Group component organizes multiple item tiles in responsive grid layouts. Designed for optimal browsing experiences, it adapts to different screen sizes while maintaining accessibility. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/card-400.png"
 }

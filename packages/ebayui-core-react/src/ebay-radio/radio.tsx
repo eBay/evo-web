@@ -1,6 +1,9 @@
 import React, { ChangeEvent, FocusEvent, cloneElement, ComponentProps, FC } from "react";
 import classNames from "classnames";
-import { EbayIcon } from "../ebay-icon";
+import { EbayIconRadioChecked24 } from "../ebay-icon/icons/ebay-icon-radio-checked-24";
+import { EbayIconRadioUnchecked24 } from "../ebay-icon/icons/ebay-icon-radio-unchecked-24";
+import { EbayIconRadioChecked18 } from "../ebay-icon/icons/ebay-icon-radio-checked-18";
+import { EbayIconRadioUnchecked18 } from "../ebay-icon/icons/ebay-icon-radio-unchecked-18";
 import { EbayLabel, EbayLabelProps } from "../ebay-field";
 import { EbayChangeEventHandler, EbayFocusEventHandler, EbayKeyboardEventHandler } from "../common/event-utils/types";
 import { findComponent } from "../utils";
@@ -41,15 +44,15 @@ const EbayRadio: FC<InputProps & EbayRadioProps> = ({
 
     const iconChecked =
         size === "large" ? (
-            <EbayIcon name="radioChecked24" className="radio__checked" />
+            <EbayIconRadioChecked24 className="radio__checked" />
         ) : (
-            <EbayIcon name="radioChecked18" className="radio__checked" />
+            <EbayIconRadioChecked18 className="radio__checked" />
         );
     const iconUnChecked =
         size === "large" ? (
-            <EbayIcon name="radioUnchecked24" className="radio__unchecked" />
+            <EbayIconRadioUnchecked24 className="radio__unchecked" />
         ) : (
-            <EbayIcon name="radioUnchecked18" className="radio__unchecked" />
+            <EbayIconRadioUnchecked18 className="radio__unchecked" />
         );
 
     const ebayLabel = findComponent(children, EbayLabel);

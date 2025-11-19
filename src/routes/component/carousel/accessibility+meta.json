@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Carousel Accessibility Guidelines — Creating Inclusive Content Sliders",
-    "pageDescription": "Learn how to make carousel components fully accessible with proper ARIA live regions, keyboard controls, and pause functionality. Follow these WCAG-aligned guidelines to ensure rotating content is accessible to all users, including those using assistive technologies.",
-    "pageImg": "/static/img/components/carousel-400.png"
+  "pageTitle": "Carousel Accessibility Guidelines — Creating Inclusive Content Sliders",
+  "pageDescription": "Learn how to make carousel components fully accessible with proper ARIA live regions, keyboard controls, and pause functionality. Follow these WCAG-aligned guidelines to ensure rotating content is accessible to all users, including those using assistive technologies.",
+  "pageImg": "/static/img/components/carousel-400.png"
 }

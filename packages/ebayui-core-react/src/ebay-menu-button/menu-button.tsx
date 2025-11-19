@@ -6,10 +6,15 @@ import { EbayMenu, EbayMenuChangeEventHandler, EbayMenuProps } from "../ebay-men
 import { EbayButton, EbayButtonProps } from "../ebay-button";
 import { EbayIconButton } from "../ebay-icon-button";
 import { EbayIcon } from "../ebay-icon";
-import { EbayMenuButtonItem, EbayMenuButtonLabel, EbayMenuButtonSeparator, LabelProps, MenuButtonProps } from "./index";
+import type { MenuButtonProps, LabelProps } from "./types";
+import EbayMenuButtonItem from "./menu-button-item";
+import EbayMenuButtonSeparator from "./menu-button-separator";
+import EbayMenuButtonLabel from "./menu-button-label";
 import { randomId } from "../common/random-id";
 import { handleEscapeKeydown } from "../common/event-utils";
 import { useFloatingDropdown } from "../common/dropdown";
+import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down-12";
+import { EbayIconOverflowVertical16 } from "../ebay-icon/icons/ebay-icon-overflow-vertical-16";
 
 type ButtonProps = Omit<EbayButtonProps, "variant" | "onKeyDown" | "onMouseDown"> &
     Omit<ComponentProps<"button">, "onKeyDown" | "onMouseDown" | "onSelect"> &
@@ -22,6 +27,7 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     text = "",
     fixWidth,
     reverse,
+    strategy,
     expanded: defaultExpanded,
     noToggleIcon,
     checked,
@@ -29,6 +35,7 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     a11yText,
     prefixId,
     prefixLabel,
+    icon: _icon,
     onClick = () => {},
     onExpand = () => {},
     onCollapse = () => {},
@@ -42,7 +49,7 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: expanded,
-        options: { reverse },
+        options: { reverse, strategy },
     });
 
     const buttonRef = refs.host as React.MutableRefObject<HTMLButtonElement>;
@@ -58,14 +65,9 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     }, [defaultIndexes.join("|")]);
 
     const menuButtonLabel = findComponent(children, EbayMenuButtonLabel);
-    const icon = findComponent(children, EbayIcon);
+    const icon = _icon || findComponent(children, EbayIcon);
     const label = labelWithPrefixAndIcon({ text, prefixId, prefixLabel, menuButtonLabel, icon });
     const wrapperClasses = classnames("menu-button", className);
-
-    const menuClasses = classnames("menu-button__menu", {
-        "menu-button__menu--fix-width": fixWidth,
-        "menu-button__menu--reverse": reverse,
-    });
 
     useEffect(() => {
         const handleBackgroundClick = (e: DocumentEventMap["click"]) => {
@@ -133,19 +135,22 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     return (
         <span className={wrapperClasses}>
             {variant === "overflow" ? (
-                <EbayIconButton icon="overflowVertical16" {...buttonProps} />
+                <EbayIconButton icon={<EbayIconOverflowVertical16 />} {...buttonProps} />
             ) : (
                 <EbayButton variant={variant === "form" ? "form" : undefined} {...buttonProps}>
                     {label}
-                    {!noToggleIcon ? <EbayIcon name="chevronDown12" /> : null}
+                    {!noToggleIcon ? <EbayIconChevronDown12 /> : null}
                 </EbayButton>
             )}
             {expanded && (
                 <EbayMenu
                     baseEl="div"
+                    classPrefix="menu-button"
+                    reverse={reverse}
+                    fixWidth={fixWidth}
+                    fixed={strategy === "fixed"}
                     ref={refs.setOverlay as unknown as RefCallback<FC<EbayMenuProps>>}
                     type={type}
-                    className={menuClasses}
                     tabIndex={-1}
                     id={menuId}
                     autofocus

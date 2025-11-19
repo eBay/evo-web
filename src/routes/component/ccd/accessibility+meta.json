@@ -1,5 +1,5 @@
 {
-    "pageTitle": "CCD Accessibility Guidelines — Making Charger Directive Icons Inclusive",
-    "pageDescription": "Learn how to make CCD (Common Charger Directive) pictograms fully accessible with proper ARIA labels and figure semantics. Follow these guidelines to ensure energy rating information is conveyed clearly to all users, including those using screen readers.",
-    "pageImg": "/static/img/components/ccd-400.png"
+  "pageTitle": "CCD Accessibility Guidelines — Making Charger Directive Icons Inclusive",
+  "pageDescription": "Learn how to make CCD (Common Charger Directive) pictograms fully accessible with proper ARIA labels and figure semantics. Follow these guidelines to ensure energy rating information is conveyed clearly to all users, including those using screen readers.",
+  "pageImg": "/static/img/components/ccd-400.png"
 }

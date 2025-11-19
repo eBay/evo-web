@@ -1,12 +1,9 @@
 .badge {
     align-items: center;
-    background-color: var(
-        --badge-background-color,
-        var(--color-background-attention)
-    );
-    border: 2px solid var(--color-stroke-on-attention);
+    background-color: var(--color-background-attention);
+    border: 2px solid var(--color-border-on-attention);
     border-radius: 16px;
-    color: var(--badge-foreground-color, var(--color-foreground-on-attention));
+    color: var(--color-foreground-on-attention);
     display: inline-flex;
     font-size: 10px;
     height: 16px;

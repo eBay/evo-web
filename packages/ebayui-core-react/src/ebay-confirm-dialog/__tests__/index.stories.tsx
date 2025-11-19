@@ -3,6 +3,7 @@ import { EbayConfirmDialog } from "../index";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
 import { action } from "storybook/actions";
 import { StoryFn, Meta } from "@storybook/react-vite";
+import { EbayButton } from "../../ebay-button";
 
 const story: Meta<typeof EbayConfirmDialog> = {
     component: EbayConfirmDialog,
@@ -58,6 +59,35 @@ export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = () => {
                 confirmText="Cancel"
                 rejectText="Delete"
                 animated
+                a11yCloseText="Close"
+            >
+                <EbayDialogHeader>Delete Address?</EbayDialogHeader>
+                <p>You will permanently lose this address.</p>
+            </EbayConfirmDialog>
+        </div>
+    );
+};
+
+export const WithExtraButtonProps: StoryFn<typeof EbayConfirmDialog> = () => {
+    const [open, setOpen] = useState(false);
+    const close = () => setOpen(false);
+
+    return (
+        <div>
+            <button className="btn btn--secondary" onClick={() => setOpen(!open)}>
+                Open Dialog
+            </button>
+            <p>Some outside content...</p>
+            <EbayConfirmDialog
+                open={open}
+                onConfirm={close}
+                onReject={close}
+                confirm={<EbayButton variant="destructive">Cancel</EbayButton>}
+                reject={
+                    <EbayButton priority="tertiary" className="custom-class">
+                        Delete
+                    </EbayButton>
+                }
                 a11yCloseText="Close"
             >
                 <EbayDialogHeader>Delete Address?</EbayDialogHeader>

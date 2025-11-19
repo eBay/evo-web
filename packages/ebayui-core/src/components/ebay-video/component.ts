@@ -29,23 +29,43 @@ const eventList = [
     "waiting",
 ];
 
+const defaultControlPanelElements = [
+    "play_pause",
+    "current_time",
+    "spacer",
+    "total_time",
+    "captions",
+    "mute_popover",
+    "report",
+    "fullscreen_button",
+];
+
+const compactLayoutControlPanelElements = [
+    "remaining_time",
+    "mute_popover",
+    "play_pause",
+];
+
 const videoConfig = {
+    doubleClickForFullscreen: true,
+    singleClickForPlayAndPause: true,
+    addBigPlayButton: false,
     addSeekBar: true,
-    controlPanelElements: [
-        "play_pause",
-        "current_time",
-        "spacer",
-        "total_time",
-        "captions",
-        "mute_popover",
-        "report",
-        "fullscreen_button",
-    ],
+    controlPanelElements: defaultControlPanelElements,
+};
+
+const compactConfig = {
+    doubleClickForFullscreen: true,
+    singleClickForPlayAndPause: true,
+    addBigPlayButton: false,
+    addSeekBar: false,
+    controlPanelElements: compactLayoutControlPanelElements,
 };
 
 export interface PlayPauseEvent {
     originalEvent: Event;
     player: any;
+    auto: boolean;
 }
 
 export interface VolumeEvent {
@@ -61,6 +81,21 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     "volume-slider"?: boolean;
     clip?: any[];
     source: Marko.AttrTag<Marko.HTML.Source>;
+    /**
+     * Whether to show the default layout or compact layout
+     * @default default
+     */
+    layout?: "default" | "compact";
+    /**
+     * The navigation link for the video
+     * @example <@nav href="www.ebay.com" target="_blank"/>
+     */
+    nav?: Marko.AttrTag<Marko.HTML.A>;
+    /**
+     * Whether to pause the video when it is less than 50% visible in the viewport
+     * @default false
+     */
+    offscreenPause?: boolean;
     /**
      * @deprecated Use `a11y-report-text` instead
      */
@@ -101,6 +136,10 @@ class Video extends Marko.Component<Input, State> {
     declare player: any;
     declare ui: any;
     declare shaka: any;
+    declare observer: IntersectionObserver;
+    declare isAutoPlay: boolean;
+    declare isAutoPause: boolean;
+    declare userPaused: boolean;
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
         const type = source.type && source.type.toLowerCase();
@@ -148,7 +187,18 @@ class Video extends Marko.Component<Input, State> {
         // This forces the controls to always hide
         this.video.controls = false;
 
-        this.emit("pause", { originalEvent, player: this.player });
+        if (!this.isAutoPause) {
+            this.userPaused = true;
+        }
+
+        this.emit("pause", {
+            originalEvent,
+            player: this.player,
+            auto: this.isAutoPause,
+        });
+
+        // Reset isAutoPause after emitting the event
+        this.isAutoPause = false;
         this.alignSeekbar();
     }
 
@@ -160,7 +210,16 @@ class Video extends Marko.Component<Input, State> {
             this.video.requestFullscreen();
         }
         this.state.played = true;
-        this.emit("play", { originalEvent, player: this.player });
+        this.userPaused = false;
+
+        this.emit("play", {
+            originalEvent,
+            player: this.player,
+            auto: this.isAutoPlay,
+        });
+
+        // Reset isAutoPlay after emitting the event
+        this.isAutoPlay = false;
     }
 
     handleVolumeChange(originalEvent: Event) {
@@ -180,8 +239,18 @@ class Video extends Marko.Component<Input, State> {
     }
 
     showControls() {
-        const copyConfig = Object.assign({}, videoConfig);
+        let copyConfig = Object.assign({}, videoConfig);
         copyConfig.controlPanelElements = [...videoConfig.controlPanelElements];
+
+        if (this.input.layout === "compact") {
+            copyConfig = Object.assign({}, compactConfig);
+        }
+
+        if (this.input.nav) {
+            copyConfig.doubleClickForFullscreen = false;
+            copyConfig.singleClickForPlayAndPause = false;
+        }
+
         if (this.state.volumeSlider === true) {
             const insertAt =
                 copyConfig.controlPanelElements.length - 2 > 0
@@ -189,6 +258,7 @@ class Video extends Marko.Component<Input, State> {
                     : copyConfig.controlPanelElements.length;
             copyConfig.controlPanelElements.splice(insertAt, 0, "volume");
         }
+
         this.ui.configure(copyConfig);
         this.video.controls = false;
     }
@@ -223,7 +293,7 @@ class Video extends Marko.Component<Input, State> {
         }
     }
 
-    onCreate() {
+    onCreate(input: Input) {
         this.state = {
             volumeSlider: false,
             action: "",
@@ -231,6 +301,10 @@ class Video extends Marko.Component<Input, State> {
             failed: false,
             played: false,
         };
+
+        if (input.action === "play" || input.autoplay === true) {
+            this.isAutoPlay = true;
+        }
     }
 
     _addTextTracks() {
@@ -280,6 +354,7 @@ class Video extends Marko.Component<Input, State> {
         const {
             Report,
             CurrentTime,
+            RemainingTime,
             TotalTime,
             MuteButton,
             FullscreenButton,
@@ -306,6 +381,11 @@ class Video extends Marko.Component<Input, State> {
         this.shaka.ui.Controls.registerElement(
             "current_time",
             new CurrentTime.Factory(),
+        );
+
+        this.shaka.ui.Controls.registerElement(
+            "remaining_time",
+            new RemainingTime.Factory(),
         );
 
         // eslint-disable-next-line no-undef,new-cap
@@ -392,12 +472,59 @@ class Video extends Marko.Component<Input, State> {
             );
         });
 
+        if (this.input.offscreenPause) {
+            // Set up Intersection Observer to detect when video is 50% in viewport
+            this.setupIntersectionObserver();
+        }
+
         this._loadVideo();
+    }
+
+    setupIntersectionObserver() {
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5,
+        };
+
+        this.observer = new IntersectionObserver((entries) => {
+            // Auto-play when 50% visible and pause when less than 50% visible
+            entries.forEach((entry) => {
+                if (this.userPaused) {
+                    // If user has manually paused, do not auto-play/pause
+                    return;
+                }
+
+                if (entry.isIntersecting) {
+                    if (
+                        this.state.isLoaded &&
+                        !this.state.failed &&
+                        this.video.paused
+                    ) {
+                        this.isAutoPlay = true;
+                        this.video.play().catch((e) => {
+                            this.isAutoPlay = false;
+                        });
+                    }
+                } else {
+                    if (!this.video.paused) {
+                        this.isAutoPause = true;
+                        this.video.pause();
+                    }
+                }
+            });
+        }, options);
+
+        this.observer.observe(this.containerEl);
     }
 
     onDestroy() {
         if (this.ui) {
             this.ui.destroy();
+        }
+
+        if (this.observer) {
+            this.observer.disconnect();
         }
     }
 

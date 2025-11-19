@@ -1,5 +1,6 @@
 @use "../variables/variables";
 @use "../mixins/private/token-mixins";
+@use "../mixins/private/state-layer";
 
 .calendar {
     display: table;
@@ -137,13 +138,8 @@
     );
 }
 
-.calendar__month
-    td:not(.calendar__range, .calendar__cell--selected)
-    > button:not(:disabled):hover {
-    @include token-mixins.background-color-token(
-        calendar-day-hover-background-color,
-        color-state-primary-hover
-    );
+.calendar__month td:not(.calendar__range, .calendar__cell--selected) > button {
+    @include state-layer.standard;
 }
 
 .calendar__month
@@ -170,11 +166,7 @@
  ************/
 
 .calendar__range {
-    @include token-mixins.background-color-token(
-        calendar-day-range-background-color,
-        color-state-secondary-active
-    );
-
+    background-color: var(--color-state-layer-pressed);
     position: relative;
 }
 
@@ -205,7 +197,7 @@
     background: linear-gradient(
         to right,
         transparent 50%,
-        var(--color-state-secondary-active) 50%
+        var(--color-state-layer-pressed) 50%
     );
 }
 
@@ -213,7 +205,7 @@
     background: linear-gradient(
         to left,
         transparent 50%,
-        var(--color-state-secondary-active) 50%
+        var(--color-state-layer-pressed) 50%
     );
 }
 
@@ -225,8 +217,5 @@
     > :not(:disabled, [aria-disabled="true"]),
 .calendar__range--end:not(.calendar__cell--selected)
     > :not(:disabled, [aria-disabled="true"]) {
-    @include token-mixins.background-color-token(
-        calendar-day-range-end,
-        color-state-secondary-active
-    );
+    background-color: var(--color-state-layer-pressed);
 }

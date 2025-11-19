@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
-import { page } from "@vitest/browser/context";
+import { page } from "@vitest/browser";
 import { render, fireEvent, cleanup } from "@marko/testing-library";
 import { composeStories } from "@storybook/marko";
 import * as stories from "../pagination.stories";

@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Details Accessibility Guidelines — Creating Inclusive Disclosure Widgets",
-    "pageDescription": "Learn how to make details/summary components fully accessible with semantic HTML and keyboard controls. Follow these WCAG-aligned guidelines to ensure expandable content sections work for all users with native browser support.",
-    "pageImg": "/static/img/components/details-400.png"
+  "pageTitle": "Details Accessibility Guidelines — Creating Inclusive Disclosure Widgets",
+  "pageDescription": "Learn how to make details/summary components fully accessible with semantic HTML and keyboard controls. Follow these WCAG-aligned guidelines to ensure expandable content sections work for all users with native browser support.",
+  "pageImg": "/static/img/components/details-400.png"
 }

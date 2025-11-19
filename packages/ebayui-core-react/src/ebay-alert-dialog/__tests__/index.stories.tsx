@@ -3,6 +3,7 @@ import { StoryFn, Meta } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import { EbayAlertDialog } from "../index";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
+import { EbayButton } from "../../ebay-button";
 
 const story = {
     component: EbayAlertDialog,
@@ -58,6 +59,40 @@ export const WithAnimation: StoryFn<typeof EbayAlertDialog> = () => {
             </button>
             <p>Some outside content...</p>
             <EbayAlertDialog open={open} onConfirm={close} confirmText="Confirm" animated a11yCloseText="Close">
+                <EbayDialogHeader>Heading</EbayDialogHeader>
+                {textParagraph}
+                <p>
+                    <a href="http://www.ebay.com">www.ebay.com</a>
+                </p>
+            </EbayAlertDialog>
+        </div>
+    );
+};
+
+export const WithCustomConfirmButton: StoryFn<typeof EbayAlertDialog> = () => {
+    const [open, setOpen] = useState(true);
+    const close = () => setOpen(false);
+    return (
+        <div>
+            <button className="btn btn--secondary" onClick={() => setOpen(!open)}>
+                Open Dialog
+            </button>
+            <p>Some outside content...</p>
+            <EbayAlertDialog
+                open={open}
+                confirm={
+                    <EbayButton
+                        variant="destructive"
+                        onClick={() => {
+                            action("onConfirm")();
+                            close();
+                        }}
+                    >
+                        Custom Confirm
+                    </EbayButton>
+                }
+                a11yCloseText="Close"
+            >
                 <EbayDialogHeader>Heading</EbayDialogHeader>
                 {textParagraph}
                 <p>

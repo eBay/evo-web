@@ -1,5 +1,53 @@
 # Skin Changelog
 
+## 19.18.0
+
+### Minor Changes
+
+- [`8d9cf6c`](https://github.com/eBay/evo-web/commit/8d9cf6c2928a84145c9b20c6eb93972e190660db) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons
+
+## 19.17.2
+
+### Patch Changes
+
+- [#360](https://github.com/eBay/evo-web/pull/360) [`4577fd5`](https://github.com/eBay/evo-web/commit/4577fd50519d32a4f47000ffbcc0a6f85b5864ea) Thanks [@vidyadrao](https://github.com/vidyadrao)! - Fix rendering of small compact videos
+
+## 19.17.1
+
+### Patch Changes
+
+- [#358](https://github.com/eBay/evo-web/pull/358) [`a3d619d`](https://github.com/eBay/evo-web/commit/a3d619d693e46352a9a3990bb160543066c5bade) Thanks [@agliga](https://github.com/agliga)! - fix(skin): reverted line height value in global.scss
+
+## 19.17.0
+
+### Minor Changes
+
+- [#336](https://github.com/eBay/evo-web/pull/336) [`8477558`](https://github.com/eBay/evo-web/commit/847755885393381ddbafe5b28c924556123789dd) Thanks [@vidyadrao](https://github.com/vidyadrao)! - enable compact layout for ebay-video
+
+## 19.16.0
+
+### Minor Changes
+
+- [#345](https://github.com/eBay/evo-web/pull/345) [`06b7492`](https://github.com/eBay/evo-web/commit/06b7492d5d974316e71eee87276d424de9f86f01) Thanks [@agliga](https://github.com/agliga)! - feat(tokens): added live theme and partial theme
+
+### Patch Changes
+
+- [#338](https://github.com/eBay/evo-web/pull/338) [`a709e97`](https://github.com/eBay/evo-web/commit/a709e974375aae17b25ff50698c2efbaa2106868) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Use new DS tokens
+
+- [#343](https://github.com/eBay/evo-web/pull/343) [`0cd94cf`](https://github.com/eBay/evo-web/commit/0cd94cf609adb6ac12b5c1319f70da13719ed0a3) Thanks [@dukchen](https://github.com/dukchen)! - Fixed floating label width calculation to account for 0.75 scale transformation and added width transition animation to prevent labels from
+
+## 19.15.0
+
+### Minor Changes
+
+- [#325](https://github.com/eBay/evo-web/pull/325) [`7bf11ad`](https://github.com/eBay/evo-web/commit/7bf11ad21e6277493ea5c10a0b502143f5c1d070) Thanks [@ArtBlue](https://github.com/ArtBlue)! - chore(tokens): moved non-color tokens into core
+
+## 19.14.3
+
+### Patch Changes
+
+- [#318](https://github.com/eBay/evo-web/pull/318) [`94acd28`](https://github.com/eBay/evo-web/commit/94acd28291cbf689ae858d691eb492571e0080e4) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(section-notice): fixed link text wrapping
+
 ## 19.14.2
 
 ### Patch Changes

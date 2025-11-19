@@ -1,7 +1,7 @@
 import React from "react";
 import { StoryObj, StoryFn, Meta } from "@storybook/react-vite";
 import { action } from "storybook/actions";
-import { EbayIcon } from "../../ebay-icon";
+import { EbayIconSettings16 } from "../../ebay-icon/icons/ebay-icon-settings-16";
 import {
     EbayFakeMenuButton,
     EbayFakeMenuButtonItem as Item,
@@ -61,8 +61,7 @@ export const Disabled: StoryFn<typeof EbayFakeMenuButton> = () => (
 
 export const WithIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
     <>
-        <EbayFakeMenuButton text="Settings">
-            <EbayIcon name="settings16" />
+        <EbayFakeMenuButton text="Settings" icon={<EbayIconSettings16 />}>
             <Item href="http://ebay.com">item 1 that has very long text</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
