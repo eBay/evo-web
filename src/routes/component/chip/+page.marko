@@ -1,12 +1,48 @@
 <div id="chip">
     <section-header metadata=metadata/>
 
-    <p>A chip represents a descrete highlighted value.</p>
+    <p>A chip conveys the application of its value to a section of a form. A chip is typically added to the page via the chips-combobox component.</p>
+    <p>A chip is transient; it can be completely removed from the page via the delete button.</p>
 
-    <h3 id="static-chip">
-        Static Chip
-    </h3>
-    <p>A static chip simply for informational purposes.</p>
+    <div class="demo">
+        <div class="demo__inner">
+            <span class="chip">
+                <span id="chip-text" class="chip__text">
+                    Football
+                </span>
+                <button
+                    class="chip__button"
+                    type="button"
+                    aria-label="Remove value - Football"
+                    aria-describedby="chip-text"
+                >
+                    <svg class="icon icon--12" width="13" height="12">
+                        <icon-symbol name="close-12"/>
+                    </svg>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="chip">
+            <span id="chip-text" class="chip__text">
+                Football
+            </span>
+            <button
+                class="chip__button"
+                type="button"
+                aria-label="Remove value - Football"
+                aria-describedby="chip-text"
+            >
+                <svg class="icon icon--12" width="13" height="12">
+                    <use href="icons.svg#icon-close-12"/>
+                </svg>
+            </button>
+        </span>
+    </highlight-code>
+
+    <p>For a static, readonly chip, the delete button can simply be omitted.</p>
 
     <div class="demo">
         <div class="demo__inner">
@@ -23,59 +59,6 @@
             <span class="chip__text">
                 Football
             </span>
-        </span>
-    </highlight-code>
-
-    <h3 id="interactive-chip">
-        Interactive Chip
-    </h3>
-    <p>An interactive chip has a delete button inside for chip removal.</p>
-
-    <div class="demo">
-        <div class="demo__inner">
-            <span class="chip">
-                <span id="chip-interactive-1-text" class="chip__text">
-                    Football
-                </span>
-                <button
-                    class="chip__button"
-                    type="button"
-                    aria-label="Remove"
-                    aria-describedby="chip-interactive-1-text"
-                >
-                    <svg
-                        class="icon icon--12"
-                        width="13"
-                        height="12"
-                        aria-hidden="true"
-                    >
-                        <icon-symbol name="close-12"/>
-                    </svg>
-                </button>
-            </span>
-        </div>
-    </div>
-
-    <highlight-code type="html">
-        <span class="chip">
-            <span id="chip-interactive-1-text" class="chip__text">
-                Football
-            </span>
-            <button
-                class="chip__button"
-                type="button"
-                aria-label="Remove"
-                aria-describedby="chip-interactive-1-text"
-            >
-                <svg
-                    class="icon icon--12"
-                    width="13"
-                    height="12"
-                    aria-hidden="true"
-                >
-                    <use href="icons.svg#icon-close-12"/>
-                </svg>
-            </button>
         </span>
     </highlight-code>
 
@@ -176,7 +159,7 @@
 export const metadata = {
     component: "chip",
     "ds-component": {
-        name: "chip",
-        version: "1.0.0",
+        name: "input-chip",
+        version: "2.1.0",
     },
 };

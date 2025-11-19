@@ -46,8 +46,8 @@
         "copy:sassToDist": " copyfiles src/sass/variables dist -u 2 && copyfiles src/sass/mixins/public dist/mixins -u 4 && copyfiles src/sass/gh dist -u 2",
         "copy:svgToDist": "copyfiles src/svg dist -u 1",
         "copy:svgToDocs": "copyfiles src/svg src/routes/static -u 2 && copyfiles src/svg/icons.svg src/components/master-icons.marko -f",
-        "deploy": "BASE_URL=/evo-web/skin/ marko-run build -o ./_site && npm run build:storybook && rimraf _site/public/archive && copyfiles docs/archive _site/public -u 1 && touch _site/public/.nojekyll",
-        "deploy:only": "marko-run build -o ./_site && npm run build:storybook && rimraf _site/public/archive && copyfiles docs/archive _site/public -u 1 && touch _site/public/.nojekyll",
+        "deploy": "npm run build:storybook && rimraf _site/public/archive && copyfiles docs/archive _site/public -u 1 && touch _site/public/.nojekyll",
+        "deploy:only": "npm run build:storybook && rimraf _site/public/archive && copyfiles docs/archive _site/public -u 1 && touch _site/public/.nojekyll",
         "format": "npx prettier --write .",
         "lint": "npm run lint:sass && npm run lint:css && npm run lint:js",
         "lint:css": "stylelint dist --config .stylelintrc",
@@ -80,9 +80,6 @@
     "browserslist": [
         "extends @ebay/browserslist-config"
     ],
-    "devDependencies": {
-        "@marko/run-adapter-static": "^2.0.3"
-    },
     "publishConfig": {
         "registry": "https://registry.npmjs.org"
     }

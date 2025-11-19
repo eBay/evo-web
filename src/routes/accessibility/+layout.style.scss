@@ -1,9 +1,9 @@
-@use "../../../packages/skin/src/sass/variables/variables";
-@use "../../../packages/skin/src/sass/mixins/public/typography-mixins";
-@use "../../../packages/skin/src/sass/mixins/public/utility-mixins";
+@use "@ebay/skin/src/sass/variables/variables";
+@use "@ebay/skin/src/sass/mixins/public/typography-mixins";
+@use "@ebay/skin/src/sass/mixins/public/utility-mixins";
 @use "../static/sass/pygments";
 @use "../static/sass/demo-colors";
 @use "../static/sass/page-grid";
 @use "../static/sass/color-schemes";
-@use "../static/sass/site-main.scss";
-@use "../../../packages/skin/src/sass/bundles/skin-full";
+@use "../static/sass/site-main";
+@use "@ebay/skin/src/sass/bundles/skin-";

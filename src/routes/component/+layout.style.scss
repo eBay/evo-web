@@ -1,24 +1,16 @@
-@use "../../../packages/skin/src/sass/variables/variables";
-@use "../../../packages/skin/src/sass/mixins/public/typography-mixins";
-@use "../../../packages/skin/src/sass/mixins/public/utility-mixins";
-@use "../static/sass/pygments";
-@use "../static/sass/demo-colors";
-@use "../static/sass/page-grid";
-@use "../static/sass/color-schemes";
-@use "../static/sass/site-main.scss";
-@use "../../../packages/skin/src/sass/bundles/skin-full";
+@use "../main";
 
 /* stylelint-disable no-descending-specificity */
 .component-page {
-    margin-block: var(--spacing-400);
+  margin-block: var(--spacing-400);
 
-    h1 {
-        margin-block: 24px 16px;
-    }
+  h1 {
+    margin-block: 24px 16px;
+  }
 
-    .fake-tabs {
-        margin-top: 0;
-    }
+  .fake-tabs {
+    margin-top: 0;
+  }
 }
 
 .demo-icon-boxes,
@@ -26,201 +18,225 @@
 .demo-color-swatches,
 .demo-color-primitive,
 .demo-color-token {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.demo-color-primitive li::before,
-.demo-color-token li::before,
-.color-swatch {
-    border-radius: 4px;
-    content: "";
-    display: inline-block;
-    height: 2em;
-    margin-bottom: 4px;
-    margin-right: 8px;
-    vertical-align: middle;
-    width: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .color-swatch {
-    background-color: currentColor;
+  background-color: currentColor;
 }
 
 /* TYPOGRAPHY SECTION */
 
 .demo-typography {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .demo-typography li {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 /* UTILITY & LESS SECTION */
 
 .striped-table {
-    border: 1px solid var(--color-stroke-subtle);
-    border-spacing: 0;
-    width: 100%;
+  border: 1px solid var(--color-stroke-subtle);
+  border-spacing: 0;
+  width: 100%;
 }
 
 .striped-table th {
-    text-transform: uppercase;
+  text-transform: uppercase;
 
-    &:first-child {
-        width: 175px;
-    }
+  &:first-child {
+    width: 175px;
+  }
 }
 
 .striped-table th,
 .striped-table td {
-    padding: var(--spacing-100);
-    text-align: left;
+  padding: var(--spacing-100);
+  text-align: left;
 }
 
 .striped-table tbody tr:nth-child(odd) {
-    background-color: var(--color-background-secondary);
+  background-color: var(--color-background-secondary);
 }
 
 .striped-table td {
-    border-top: 1px solid var(--color-stroke-subtle);
+  border-top: 1px solid var(--color-stroke-subtle);
 }
 
 .demo-typography-giant-3 {
-    @include typography-mixins.typography-giant-3;
+  @include typography-mixins.typography-giant-3;
 }
 
 .demo-typography-giant-2 {
-    @include typography-mixins.typography-giant-2;
+  @include typography-mixins.typography-giant-2;
 }
 
 .demo-typography-giant-1 {
-    @include typography-mixins.typography-giant-1;
+  @include typography-mixins.typography-giant-1;
 }
 
 .demo-typography-large-2 {
-    @include typography-mixins.typography-large-2;
+  @include typography-mixins.typography-large-2;
 }
 
 .demo-typography-large-2-secondary {
-    @include typography-mixins.typography-large-2-secondary;
+  @include typography-mixins.typography-large-2-secondary;
 }
 
 .demo-typography-large-1 {
-    @include typography-mixins.typography-large-1;
+  @include typography-mixins.typography-large-1;
 }
 
 .demo-typography-large-1-secondary {
-    @include typography-mixins.typography-large-1-secondary;
+  @include typography-mixins.typography-large-1-secondary;
 }
 
 .demo-typography-medium-bold {
-    @include typography-mixins.typography-medium-bold;
+  @include typography-mixins.typography-medium-bold;
 }
 
 .demo-typography-medium {
-    @include typography-mixins.typography-medium;
+  @include typography-mixins.typography-medium;
 }
 
 .demo-typography-medium-secondary {
-    @include typography-mixins.typography-medium-secondary;
+  @include typography-mixins.typography-medium-secondary;
 }
 
 .demo-typography-regular-bold {
-    @include typography-mixins.typography-regular-bold;
+  @include typography-mixins.typography-regular-bold;
 }
 
 .demo-typography-regular {
-    @include typography-mixins.typography-regular;
+  @include typography-mixins.typography-regular;
 }
 
 .demo-typography-regular-secondary {
-    @include typography-mixins.typography-regular-secondary;
+  @include typography-mixins.typography-regular-secondary;
 }
 
 .demo-typography-small-bold {
-    @include typography-mixins.typography-small-bold;
+  @include typography-mixins.typography-small-bold;
 }
 
 .demo-typography-small {
-    @include typography-mixins.typography-small;
+  @include typography-mixins.typography-small;
 }
 
 .demo-typography-small-secondary {
-    @include typography-mixins.typography-small-secondary;
+  @include typography-mixins.typography-small-secondary;
 }
 
 /* large screen titles */
 .demo-title-giant-screen-large {
-    @include typography-mixins.title-giant-screen-large;
+  @include typography-mixins.title-giant-screen-large;
 }
 
 .demo-title-large-screen-large {
-    @include typography-mixins.title-large-screen-large;
+  @include typography-mixins.title-large-screen-large;
 }
 
 .demo-title-medium-screen-large {
-    @include typography-mixins.title-medium-screen-large;
+  @include typography-mixins.title-medium-screen-large;
 }
 
 .demo-title-small-screen-large {
-    @include typography-mixins.title-small-screen-large;
+  @include typography-mixins.title-small-screen-large;
 }
 
 /* small screen titles */
 
 .demo-title-giant-screen-small {
-    @include typography-mixins.title-giant-screen-small;
+  @include typography-mixins.title-giant-screen-small;
 }
 
 .demo-title-large-screen-small {
-    @include typography-mixins.title-large-screen-small;
+  @include typography-mixins.title-large-screen-small;
 }
 
 .demo-title-medium-screen-small {
-    @include typography-mixins.title-medium-screen-small;
+  @include typography-mixins.title-medium-screen-small;
 }
 
 .demo-title-small-screen-small {
-    @include typography-mixins.title-small-screen-small;
+  @include typography-mixins.title-small-screen-small;
+}
+
+.demo-tokens-example {
+  border: 1px solid var(--color-border-strong);
+  border-radius: 4px;
+  display: inline-block;
+  height: 2em;
+  margin-bottom: 4px;
+  margin-right: 8px;
+  vertical-align: middle;
+  width: 50px;
+}
+
+.demo-color-primitive {
+  column-count: 2;
+}
+
+@media screen and (min-width: variables.$screen-size-XL) {
+  .demo-color-primitive {
+    column-count: 3;
+  }
+
+  .demo-color-swatches,
+  .demo-color-token {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width: variables.$screen-size-XL3) {
+  .demo-color-primitive {
+    column-count: 5;
+  }
+
+  .demo-color-swatches,
+  .demo-color-token {
+    column-count: 3;
+  }
 }
 
 /* ICON SECTION */
 
 .demo-icon-boxes li,
 .demo-flag-boxes li {
-    align-items: center;
-    background-color: var(--color-background-secondary);
-    border: 1px solid var(--color-neutral-400);
-    display: inline-flex;
-    flex-direction: column;
-    font-size: var(--font-size-small);
-    height: 100px;
-    justify-content: space-around;
-    list-style-type: none;
-    margin: 4px 2px;
-    padding: 4px;
-    text-align: center;
-    vertical-align: middle;
-    width: 100px;
+  align-items: center;
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-neutral-400);
+  display: inline-flex;
+  flex-direction: column;
+  font-size: var(--font-size-small);
+  height: 100px;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 4px 2px;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  width: 100px;
 }
 .demo-icon-boxes li.demo-icon-box--large {
-    width: 218px;
+  width: 218px;
 }
 
 .demo-flag-boxes li {
-    height: 140px;
+  height: 140px;
 }
 
 span.icon {
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-    vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* EEK, Skeleton SECTION */
@@ -228,9 +244,9 @@ span.icon {
 .eek-table,
 .skeleton-table,
 .skeleton-table-colors {
-    border-collapse: collapse;
-    margin: var(--spacing-300) 0;
-    width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-300) 0;
+  width: 100%;
 }
 
 .eek-table th,
@@ -239,24 +255,24 @@ span.icon {
 .skeleton-table td,
 .skeleton-table-colors th,
 .skeleton-table-colors td {
-    padding: var(--spacing-100);
-    text-align: left;
+  padding: var(--spacing-100);
+  text-align: left;
 }
 
 .eek-table th,
 .skeleton-table th,
 .skeleton-table-colors th {
-    background-color: var(--color-background-tertiary);
+  background-color: var(--color-background-tertiary);
 }
 
 .eek-table td,
 .skeleton-table td,
 .skeleton-table-colors td {
-    border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .eek__rating-range {
-    background-color: var(--color-background-primary);
-    color: var(--color-foreground-primary);
+  background-color: var(--color-background-primary);
+  color: var(--color-foreground-primary);
 }
 /* stylelint-enable no-descending-specificity */

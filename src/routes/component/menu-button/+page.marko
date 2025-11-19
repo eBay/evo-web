@@ -1260,6 +1260,620 @@
             </div>
         </span>
     </highlight-code>
+
+    <h3>Filter menu button - checkbox</h3>
+    <p>
+        To use a filter menu button checkbox, use filter-chip as the button and have icon--checked and icon--unchecked elements inside each menuitemcheckbox
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <span class="menu-button menu-button--filter">
+                <button
+                    class="filter-chip"
+                    aria-pressed="false"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <span class="filter-chip__text">
+                        Sport: (+2)
+                    </span>
+                    <svg
+                        aria-hidden="true"
+                        class="filter-chip__trailing icon icon--12"
+                        width="12"
+                        height="12"
+                    >
+                        <icon-symbol name="chevron-down-16"/>
+                    </svg>
+                </button>
+                <div class="menu-button__menu">
+                    <div class="menu-button__items" role="menu">
+                        <div
+                            class="menu-button__item"
+                            role="menuitemcheckbox"
+                            aria-checked="true"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-checked-18"/>
+                            </svg>
+                            <span>Menu Item 1</span>
+                        </div>
+                        <div
+                            class="menu-button__item"
+                            role="menuitemcheckbox"
+                            aria-checked="true"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-checked-18"/>
+                            </svg>
+                            <span>Menu Item 2</span>
+                        </div>
+                        <div
+                            class="menu-button__item"
+                            role="menuitemcheckbox"
+                            aria-checked="false"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-checked-18"/>
+                            </svg>
+                            <span>Menu Item 3</span>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="menu-button menu-button--filter">
+            <button
+                class="filter-chip"
+                aria-pressed="false"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <span class="filter-chip__text btn__text">
+                    Sport: (+2)
+                </span>
+                <svg
+                    aria-hidden="true"
+                    class="filter-chip__trailing icon icon--12"
+                    width="12"
+                    height="12"
+                >
+                    <use href="#icon-chevron-down-16"/>
+                </svg>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-checked-18"/>
+                        </svg>
+                        <span>Menu Item 1</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-checked-18"/>
+                        </svg>
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="false"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-checked-18"/>
+                        </svg>
+                        <span>Menu Item 3</span>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </highlight-code>
+
+    <h3>Filter menu button - radio</h3>
+    <p>
+        To use a filter menu button with radios, use filter-chip as the button and have icon--checked and icon--unchecked elements inside each menuitemradio
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <span class="menu-button menu-button--filter">
+                <button
+                    class="filter-chip"
+                    aria-pressed="false"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <span class="filter-chip__text">
+                        Sport:
+                        <span class="btn__text">
+                            (-)
+                        </span>
+                    </span>
+                    <svg
+                        aria-hidden="true"
+                        class="filter-chip__trailing icon icon--12"
+                        width="12"
+                        height="12"
+                    >
+                        <icon-symbol name="chevron-down-16"/>
+                    </svg>
+                </button>
+                <div class="menu-button__menu">
+                    <div class="menu-button__items" role="menu">
+                        <div
+                            class="menu-button__item"
+                            role="menuitemradio"
+                            data-makeup-group="sort"
+                            aria-checked="false"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="radio-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="radio-checked-18"/>
+                            </svg>
+                            <span>Menu Item 1</span>
+                        </div>
+                        <div
+                            class="menu-button__item"
+                            role="menuitemradio"
+                            data-makeup-group="sort"
+                            aria-checked="true"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="radio-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="radio-checked-18"/>
+                            </svg>
+                            <span>Menu Item 2</span>
+                        </div>
+                        <div
+                            class="menu-button__item"
+                            role="menuitemradio"
+                            data-makeup-group="sort"
+                            aria-checked="false"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="radio-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="radio-checked-18"/>
+                            </svg>
+                            <span>Menu Item 3</span>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="menu-button menu-button--filter">
+            <button
+                class="filter-chip"
+                aria-pressed="false"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <span class="filter-chip__text">
+                    Sport: (+2)
+                </span>
+                <svg
+                    aria-hidden="true"
+                    class="filter-chip__trailing icon icon--12"
+                    width="12"
+                    height="12"
+                >
+                    <use href="#icon-chevron-down-16"/>
+                </svg>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="false"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                        <span>Menu Item 1</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="true"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemradio"
+                        aria-checked="false"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-radio-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-radio-checked-18"/>
+                        </svg>
+                        <span>Menu Item 3</span>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </highlight-code>
+
+    <h3>Filter menu button - with footer</h3>
+    <p>
+        To add a filter menu button with a footer, include
+        <code>.menu-button__footer</code>
+         container
+    </p>
+
+    <div class="demo">
+        <div class="demo__inner">
+            <span class="menu-button menu-button--filter">
+                <button
+                    class="filter-chip"
+                    aria-pressed="false"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <span class="filter-chip__text">
+                        Sport: (+2)
+                    </span>
+                    <svg
+                        aria-hidden="true"
+                        class="filter-chip__trailing icon icon--12"
+                        width="12"
+                        height="12"
+                    >
+                        <icon-symbol name="chevron-down-16"/>
+                    </svg>
+                </button>
+                <div class="menu-button__menu">
+                    <div class="menu-button__items" role="menu">
+                        <div
+                            class="menu-button__item"
+                            role="menuitemcheckbox"
+                            aria-checked="true"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-checked-18"/>
+                            </svg>
+                            <span>Menu Item 1</span>
+                        </div>
+                        <div
+                            class="menu-button__item"
+                            role="menuitemcheckbox"
+                            aria-checked="true"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-checked-18"/>
+                            </svg>
+                            <span>Menu Item 2</span>
+                        </div>
+                        <div
+                            class="menu-button__item"
+                            role="menuitemcheckbox"
+                            aria-checked="false"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--unchecked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-unchecked-18"/>
+                            </svg>
+                            <svg
+                                aria-hidden="true"
+                                class="icon icon--18 icon--checked"
+                                height="18"
+                                width="18"
+                            >
+                                <icon-symbol name="checkbox-checked-18"/>
+                            </svg>
+                            <span>Menu Item 3</span>
+                        </div>
+                    </div>
+                    <div class="menu-button__footer">
+                        <button class="btn btn--tertiary" type="submit">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <highlight-code type="html">
+        <span class="menu-button menu-button--filter">
+            <button
+                class="filter-chip"
+                aria-pressed="false"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <span class="filter-chip__text">
+                    Sport: (+2)
+                </span>
+                <svg
+                    class="filter-chip__trailing icon icon--12"
+                    width="12"
+                    height="12"
+                >
+                    <use href="#icon-chevron-down-16"/>
+                </svg>
+            </button>
+            <div class="menu-button__menu">
+                <div class="menu-button__items" role="menu">
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-checked-18"/>
+                        </svg>
+                        <span>Menu Item 1</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="true"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-checked-18"/>
+                        </svg>
+                        <span>Menu Item 2</span>
+                    </div>
+                    <div
+                        class="menu-button__item"
+                        role="menuitemcheckbox"
+                        aria-checked="false"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--unchecked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-unchecked-18"/>
+                        </svg>
+                        <svg
+                            aria-hidden="true"
+                            class="icon icon--18 icon--checked"
+                            height="18"
+                            width="18"
+                        >
+                            <use href="#icon-checkbox-checked-18"/>
+                        </svg>
+                        <span>Menu Item 3</span>
+                    </div>
+                </div>
+                <div class="menu-button__footer">
+                    <button class="btn btn--tertiary" type="submit">
+                        Apply
+                    </button>
+                </div>
+            </div>
+        </span>
+    </highlight-code>
 </div>
 export const metadata = {
     component: "menu-button",

@@ -2,32 +2,49 @@
 @use "@ebay/skin/dist/layout-grid/layout-grid.css";
 
 .main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 90vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
 }
 
 .main .layout-grid {
-    --layout-grid-columns-min: 1;
-    --layout-grid-columns-xs: 2;
-    --layout-grid-columns-sm: 2;
-    --layout-grid-columns-md: 2;
-    --layout-grid-columns-lg: 2;
-    --layout-grid-columns-xl: 2;
-    --layout-grid-columns-xl2: 2;
-    --layout-grid-columns-xl3: 2;
-    --layout-grid-columns-xl4: 2;
-    --layout-grid-cell-gap: 10px;
+  --layout-grid-columns-min: 1;
+  --layout-grid-columns-xs: 2;
+  --layout-grid-columns-sm: 2;
+  --layout-grid-columns-md: 2;
+  --layout-grid-columns-lg: 2;
+  --layout-grid-columns-xl: 2;
+  --layout-grid-columns-xl2: 2;
+  --layout-grid-columns-xl3: 2;
+  --layout-grid-columns-xl4: 2;
+  --layout-grid-cell-gap: 10px;
 
-    width: 50vw;
+  width: 50vw;
 }
 
 .main nav > ul > li div {
-    padding: 50px 30px;
-    border: 1px solid black;
-    border-radius: 5px;
-    text-align: center;
-    white-space: nowrap;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 50px 30px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* GENERAL */
+div.highlight {
+  background-color: var(--color-background-tertiary);
+  padding: var(--spacing-200);
+}
+
+span.highlight {
+  background-color: var(--color-background-tertiary);
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+  /* fix for long attributes values that don't wrap right */
+  .s {
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
 }
