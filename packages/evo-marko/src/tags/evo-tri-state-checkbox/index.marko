@@ -1,0 +1,63 @@
+<const/{
+    class: inputClass,
+    style,
+    size,
+    skipMixed,
+    checked: inputChecked,
+    checkedChange,
+    onChange,
+    ...htmlInput
+}=input>
+export interface Input extends Omit<Marko.HTML.Input, "checked" | "checkedChange"> {
+    checked?: Marko.HTMLAttributes["aria-checked"];
+    checkedChange?: (checked?: Marko.HTMLAttributes["aria-checked"]) => void;
+    skipMixed?: boolean;
+    size?: "regular" | "large";
+}
+
+<let/checked=inputChecked ?? "false" valueChange=checkedChange>
+<const/checkedBoolean = checked === "true" || checked === "mixed">
+
+<span style=style class=["checkbox", inputClass]>
+    <input
+        ...htmlInput
+        class="checkbox__control"
+        checked=checkedBoolean
+        checkedChange(c) {
+            if (checked === "true") {
+                checked = "false";
+            } else if (checked === "false" && !skipMixed) {
+                checked = "mixed";
+            } else {
+                checked = "true";
+            }
+        }
+        aria-checked=checked || "false"
+        type="checkbox">
+    <span class="checkbox__icon" hidden>
+        <if=checked === "mixed">
+            <if=size === "large">
+                <evo-icon-checkbox-mixed-24 class="checkbox__checked"/>
+            </if>
+            <else>
+                <evo-icon-checkbox-mixed-18 class="checkbox__checked"/>
+            </else>
+        </if>
+        <else if=checked === "true">
+            <if=size === "large">
+                <evo-icon-checkbox-checked-24 class="checkbox__checked"/>
+            </if>
+            <else>
+                <evo-icon-checkbox-checked-18 class="checkbox__checked"/>
+            </else>
+        </else>
+        <else>
+            <if=size === "large">
+                <evo-icon-checkbox-unchecked-24 class="checkbox__unchecked"/>
+            </if>
+            <else>
+                <evo-icon-checkbox-unchecked-18 class="checkbox__unchecked"/>
+            </else>
+        </else>
+    </span>
+</span>
