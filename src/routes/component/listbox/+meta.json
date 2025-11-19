@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Listbox CSS Component",
-    "pageDescription": "A Listbox CSS Component is a responsive and accessible listbox that is used to display listboxes."
+  "pageTitle": "Listbox Component",
+  "pageDescription": "The Listbox component enables single or multi-select from a scrollable list of options. Built with full keyboard navigation and ARIA support, it provides an accessible alternative to native select elements. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/select-400.png"
 }

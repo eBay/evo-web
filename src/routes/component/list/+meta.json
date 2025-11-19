@@ -1,5 +1,5 @@
 {
-    "pageTitle": "List CSS Component",
-    "pageDescription": "A List CSS Component is a responsive and accessible list that is used to display lists.",
-    "pageImg": "/src/routes/static/img/components/list-row-400.png"
+  "pageTitle": "List Component",
+  "pageDescription": "The List component presents ordered and unordered content with semantic HTML and customizable styling. Built with accessibility in mind, it provides clear content structure for screen readers. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/list-400.png"
 }

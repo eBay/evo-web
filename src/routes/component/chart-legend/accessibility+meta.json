@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Chart Legend Accessibility Guidelines — Creating Inclusive Data Visualizations",
+  "pageDescription": "Learn how to make chart legend components fully accessible with semantic HTML and proper ARIA descriptions. Follow these WCAG-aligned guidelines to ensure data visualization labels are understandable by all users, including those using assistive technologies.",
+  "pageImg": "/static/img/components/data-visualization-400.png"
+}

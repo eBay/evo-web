@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Panel Dialog CSS Component",
-    "pageDescription": "A Panel Dialog CSS Component is a responsive and accessible dialog that is used to display panels.",
-    "pageImg": "/src/routes/static/img/components/panel-400.png"
+  "pageTitle": "Panel Dialog Component",
+  "pageDescription": "The Panel Dialog component slides in from the screen edge to display contextual content and actions. Built with focus management and keyboard navigation, it provides accessible secondary interfaces. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/dialog-400.png"
 }

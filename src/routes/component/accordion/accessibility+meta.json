@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Accordion Accessibility Guidelines — Building Inclusive Disclosure Interfaces",
+  "pageDescription": "Learn how to make accordion components fully accessible with correct ARIA roles, keyboard navigation, and logical heading structure. Follow these practical WCAG-aligned guidelines to ensure your expand/collapse patterns work for every user, on every device.",
+  "pageImg": "/static/img/components/accordion-overview-400.png"
+}

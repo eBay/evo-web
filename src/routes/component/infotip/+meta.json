@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Infotip CSS Component",
-    "pageDescription": "An Infotip CSS Component is a responsive and accessible infotip that is used to display information."
+  "pageTitle": "Infotip Component",
+  "pageDescription": "The Infotip component provides contextual information in a hoverable or clickable tooltip. Designed with accessibility in mind, it delivers helpful hints and explanations without cluttering the interface. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/tooltip-400.png"
 }

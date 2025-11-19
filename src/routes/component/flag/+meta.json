@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Flag CSS Component",
-    "pageDescription": "A Flag CSS Component is a responsive and accessible flag that is used to display country flags."
+  "pageTitle": "Flag Component",
+  "pageDescription": "The Flag component displays country and region flags with consistent sizing and accessibility labels. Perfect for international applications, it provides recognizable visual indicators with proper semantic markup. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/flag-400.png"
 }

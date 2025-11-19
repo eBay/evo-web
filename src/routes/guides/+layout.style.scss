@@ -6,4 +6,9 @@
 @use "../static/sass/page-grid";
 @use "../static/sass/color-schemes";
 @use "../static/sass/site-main";
-@use "@ebay/skin/src/sass/bundles/skin-full";
+@use "@ebay/skin/src/sass/bundles/skin-headless";
+@use "@ebay/skin/src/tokens/evo-core";
+@use "@ebay/skin/src/tokens/evo-light-class";
+@use "@ebay/skin/src/tokens/evo-dark-class";
+@use "@ebay/skin/src/tokens/evo-live-light-class";
+@use "@ebay/skin/src/tokens/evo-live-dark-class";

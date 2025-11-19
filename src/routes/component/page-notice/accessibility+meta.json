@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Page Notice Accessibility Guidelines — Creating Inclusive Page-Level Alerts",
+  "pageDescription": "Learn how to make page notice components fully accessible with proper ARIA banner and alert roles, focus management, and dismissal controls. Follow these WCAG-aligned guidelines to ensure page-level messages reach all users.",
+  "pageImg": "/static/img/components/notice-400.png"
+}

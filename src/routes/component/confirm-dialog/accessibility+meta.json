@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Confirm Dialog Accessibility Guidelines — Building Inclusive Confirmation Modals",
+  "pageDescription": "Learn how to make confirm dialog components fully accessible with proper focus management, ARIA dialog roles, and keyboard controls. Follow these WCAG-aligned guidelines to ensure confirmation prompts are clear and accessible to all users.",
+  "pageImg": "/static/img/components/dialog-400.png"
+}

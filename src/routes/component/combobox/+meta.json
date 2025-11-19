@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Combobox CSS Component",
-    "pageDescription": "A Combobox CSS Component is a responsive and accessible component used to filter for and select an options in a list.",
-    "pageImg": "/src/routes/static/img/components/combobox-400.png"
+  "pageTitle": "Combobox Component",
+  "pageDescription": "The Combobox component provides autocomplete functionality with keyboard navigation and filtering capabilities. Designed for accessibility and usability, it helps users quickly find and select from large lists of options. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/combobox-400.png"
 }

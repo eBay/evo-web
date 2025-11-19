@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Skeleton CSS Component",
-    "pageDescription": "A Skeleton CSS Component is a responsive and accessible skeleton that is used to display loading skeletons.",
-    "pageImg": "/src/routes/static/img/components/skeleton-loader-400.png"
+  "pageTitle": "Skeleton Component",
+  "pageDescription": "The Skeleton component creates placeholder loading states that mimic content structure. Built with reduced motion support, it improves perceived performance while content loads. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/skeleton-400.png"
 }

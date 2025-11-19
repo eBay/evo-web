@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Switch Accessibility Guidelines — Building Inclusive Toggle Controls",
+  "pageDescription": "Learn how to make switch components fully accessible with proper ARIA switch roles, keyboard controls, and state announcements. Follow these WCAG-aligned guidelines to ensure toggle switches work for all users with assistive technologies.",
+  "pageImg": "/static/img/components/switch-400.png"
+}

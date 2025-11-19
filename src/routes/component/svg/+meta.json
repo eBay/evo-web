@@ -1,4 +1,5 @@
 {
-    "pageTitle": "SVG CSS Component",
-    "pageDescription": "An SVG CSS Component is a responsive and accessible svg that is used to display svgs."
+  "pageTitle": "SVG Component",
+  "pageDescription": "The SVG component provides utilities and best practices for incorporating scalable vector graphics. Built with accessibility features and optimization techniques, it ensures performant and inclusive graphics. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/icon-400.png"
 }

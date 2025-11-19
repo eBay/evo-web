@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Chips Combobox CSS Component",
-    "pageDescription": "A Chips Combobox CSS Component is a responsive and accessible used to select one or more options in a list.",
-    "pageImg": "/src/routes/static/img/components/combobox-400.png"
+  "pageTitle": "Chips Combobox Component",
+  "pageDescription": "The Chips Combobox component combines autocomplete functionality with chip-based multi-selection. Built with accessibility standards, it provides an intuitive interface for selecting and managing multiple items. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/combobox-400.png"
 }

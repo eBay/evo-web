@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Utility CSS Component",
-    "pageDescription": "A Utility CSS Component is a responsive and accessible utility that is used to display utility."
+  "pageTitle": "Utility Component",
+  "pageDescription": "The Utility component provides helper classes for common styling needs like spacing, visibility, and alignment. Built for efficiency and consistency, it complements component-specific styles with flexible utilities. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/global-400.png"
 }

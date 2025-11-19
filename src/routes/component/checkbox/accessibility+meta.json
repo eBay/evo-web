@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Checkbox Accessibility Guidelines — Building Inclusive Multi-Select Controls",
+  "pageDescription": "Learn how to make checkbox components fully accessible with proper labels, fieldset grouping, and mixed state support. Follow these WCAG-aligned guidelines to ensure form controls work for all users with keyboard navigation and screen reader compatibility.",
+  "pageImg": "/static/img/components/checkbox-400.png"
+}

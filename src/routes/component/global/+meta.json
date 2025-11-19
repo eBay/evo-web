@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Skin CSS Global",
-    "pageDescription": "Skin CSS global styles that are common across one or more components."
+  "pageTitle": "Global Component",
+  "pageDescription": "The Global component provides foundational CSS resets, base styles, and utilities that ensure consistent rendering across browsers. Essential for every project, it establishes typography, spacing, and accessibility defaults. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/global-400.png"
 }

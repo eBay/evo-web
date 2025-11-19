@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Avatar Accessibility Guidelines — Creating Inclusive User Profile Images",
+  "pageDescription": "Learn how to make avatar components fully accessible with appropriate ARIA labels, role attributes, and alternative text patterns. Follow these guidelines to ensure user profile images are properly conveyed to all users, including those using assistive technologies.",
+  "pageImg": "/static/img/components/avatar-400.png"
+}

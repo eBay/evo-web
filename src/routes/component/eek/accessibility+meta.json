@@ -1,0 +1,5 @@
+{
+  "pageTitle": "EEK Accessibility Guidelines — Creating Inclusive Energy Efficiency Labels",
+  "pageDescription": "Learn how to make EEK (Energy Efficiency Class) components fully accessible with proper figure semantics and ARIA labels. Follow these guidelines to ensure energy rating information is clear and accessible to all users, including those using assistive technologies.",
+  "pageImg": "/static/img/components/eek-400.png"
+}

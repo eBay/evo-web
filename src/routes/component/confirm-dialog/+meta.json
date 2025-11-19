@@ -1,5 +1,5 @@
 {
-    "pageTitle": "Confirm Dialog CSS Component",
-    "pageDescription": "A Confirm Dialog CSS Component is a responsive and accessible used to confirm an action.",
-    "pageImg": "/src/routes/static/img/components/dialog-400.png"
+  "pageTitle": "Confirm Dialog Component",
+  "pageDescription": "The Confirm Dialog component prompts users for confirmation before executing critical actions. Built with clear messaging and accessible controls, it prevents accidental destructive operations while maintaining user flow. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/dialog-400.png"
 }

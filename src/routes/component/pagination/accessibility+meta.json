@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Pagination Accessibility Guidelines — Building Inclusive Page Navigation",
+  "pageDescription": "Learn how to make pagination components fully accessible with proper ARIA current page indication, keyboard navigation, and semantic structure. Follow these WCAG-aligned guidelines to ensure multi-page navigation works for all users.",
+  "pageImg": "/static/img/components/pagination-400.png"
+}

@@ -1,4 +1,5 @@
 {
-    "pageTitle": "File Input CSS Component",
-    "pageDescription": "A File Input CSS Component is a responsive and accessible file input that is used to upload files."
+  "pageTitle": "File Input Component",
+  "pageDescription": "The File Input component enables accessible file upload with drag-and-drop support and file type validation. Designed for ease of use, it provides clear feedback and supports multiple file selection. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/textbox-400.png"
 }

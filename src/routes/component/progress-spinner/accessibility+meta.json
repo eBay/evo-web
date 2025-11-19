@@ -1,0 +1,5 @@
+{
+  "pageTitle": "Progress Spinner Accessibility Guidelines — Creating Inclusive Loading Indicators",
+  "pageDescription": "Learn how to make progress spinner components fully accessible with proper ARIA live regions, loading labels, and reduced motion support. Follow these WCAG-aligned guidelines to ensure loading spinners are conveyed to all users.",
+  "pageImg": "/static/img/components/spinner-400.png"
+}

@@ -1,4 +1,5 @@
 {
-    "pageTitle": "Date Textbox CSS Component",
-    "pageDescription": "A Date Textbox CSS Component is a responsive and accessible date textbox that is used to perform date entry."
+  "pageTitle": "Date Textbox Component",
+  "pageDescription": "The Date Textbox component provides formatted date input with validation and mask support. Built with accessibility features, it ensures proper date entry across different locales and formats. Available in Evo Web's CSS, React, and Marko implementations.",
+  "pageImg": "/src/routes/static/img/components/textbox-400.png"
 }
