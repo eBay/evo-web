@@ -1,17 +1,5 @@
 # Carousel Accessibility
 
-![Slideshow carousel of daily deals](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcI_RVIbMg9fnOeB2%2Fslideshow-carousel.png?generation=1548799262646557\&alt=media)
-
-### Introduction
-
-Carousels display a list of thematically similar items in a scrolling, horizontal viewport. Items may be entirely static (e.g. an image), entirely interactive (e.g. button) or contain a mix of static and interactive elements (e.g. a heading, image and link).
-
-Items may be ungrouped and scrolled in a *continuous* manner, or grouped and scrolled via a *discrete* number of items.
-
-Two pagination buttons ('Previous' & 'Next') will move to the previous slide or next slide respectively. Extra controls may allow access to *specific* slides (for examples, small pagination "dots" under the carousel).
-
-![Discrete carousel containing 5 items per slide.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcI_TiaLEFR252P0z%2Fcarousel.png?generation=1548799262613566\&alt=media)
-
 ### Working Examples
 
 You can take a look at the carousel pattern in action on our [examples site](http://ebay.github.io/mindpatterns/disclosure/carousel/).

@@ -1,0 +1,6 @@
+{
+  "pageTitle": "Card Accessibility Guidelines — Building Inclusive Navigation Components",
+  "pageDescription": "Learn how to make card components fully accessible with correct semantic HTML, keyboard navigation, and proper ARIA attributes. Follow these practical WCAG-aligned guidelines to ensure your card patterns work for every user, on every device, whether using internally-actionable, self-actionable, or hybrid card approaches.",
+  "pageImg": "/static/img/components/card-overview-400.png"
+}
+

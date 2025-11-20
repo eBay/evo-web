@@ -1,4 +1,4 @@
-# Item Card Accessibility
+# Card Accessibility
 
 An item card is a display element that is not itself interactive, but houses elements, such as an image wrapped by an anchor, an add to favorites button, item title that is also wrapped in an anchor, etc.
 

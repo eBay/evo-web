@@ -1,0 +1,6 @@
+{
+    "pageTitle": "Card Component",
+    "pageDescription": "The Card component is a responsive and accessible UI element that displays content in structured, visually appealing containers. Designed to adapt seamlessly across devices and technologies, it supports multiple layouts and interaction patterns in Evo Web's CSS, React, and Marko implementations.",
+    "pageImg": "/src/routes/static/img/components/card-400.png"
+}
+

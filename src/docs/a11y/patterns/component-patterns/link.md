@@ -1,11 +1,5 @@
 # Link Accessibility
 
-A hyperlink (or 'link') points to a resource (URL) or to a specific element within a document (URL fragment).
-
-Links are commands followed by humans _and_ machines (a spider or crawler for example).
-
-The web wouldn't be much of a web without links. Let's treat them with the respect they deserve by ensuring we never do anything silly to break them!
-
 ### Working Examples
 
 You can take a look at the link in action on our [examples site](http://ebay.github.io/mindpatterns/navigation/link/).

@@ -1,15 +1,5 @@
 # Infotip Accessibility
 
-![Helping user with form](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFegRsQHCVZ8t7-A%2Fbubblehelp.png?generation=1548799253596376\&alt=media)
-
-### Introduction
-
-Infofip Button is a click-activated [popover](https://ebay.gitbook.io/mindpatterns/disclosure/popover). It discloses supplementary or advisory content about an existing onscreen element or region.
-
-Thematically, you can think of the infotip content fulfilling the same role as footnotes in a page.
-
-Infotip Button is a composite pattern containing a button and an overlay. The button toggles the visibility of the overlay. The overlay contains the help content.
-
 ### Working Examples
 
 Experience the pattern in action on our [eBay MIND patterns examples website](http://ebay.github.io/mindpatterns/disclosure/infotip/).

@@ -1,13 +1,5 @@
 # Alert Dialog Accessibility
 
-![Alert dialog for invalid state](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDvd1xq9SfeqlLI3%2Falert.png?generation=1548799251311764\&alt=media)
-
-### Introduction
-
-The alert dialog pattern is a type of [lightbox dialog](../disclosure/lightbox-dialog) that displays a critical message. The alert must be explicitly acknowledge in order to dismiss it and proceed.
-
-The behaviour is similar to the JavaScript [window.alert()](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert) method.
-
 ### Working Examples
 
 Experience the pattern in action on our companion [eBay MIND Patterns examples website](https://ebay.github.io/mindpatterns/messaging/alert-dialog).

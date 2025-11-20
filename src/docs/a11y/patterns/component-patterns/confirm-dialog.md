@@ -1,13 +1,5 @@
 # Confirm Dialog Accessibility
 
-![Confirm dialog when deleting an address.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-M7nZU76UqpHNvEUBuZ-%2F-M7nk8jQmTyQnmOvZMdP%2Fconfirm-dialog.png?alt=media\&token=854eb611-6cba-4dd7-981d-60cb19e3009c)
-
-### Introduction
-
-The confirm dialog pattern is a specific type of [lightbox dialog](../disclosure/lightbox-dialog) that gives a user the chance to confirm or cancel an action.
-
-The behaviour is similar to the JavaScript [window.confirm()](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm) method.
-
 ### Working Examples
 
 Experience the pattern in action on our companion [eBay MIND Patterns examples website](https://ebay.github.io/mindpatterns/messaging/confirm-dialog).

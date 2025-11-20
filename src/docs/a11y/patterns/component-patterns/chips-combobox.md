@@ -1,11 +1,5 @@
 # Chips Combobox Accessibility
 
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2F7kaY8qbvGBncOArd1Ubw%2Fchips-combobox-filled-rest-state.png?alt=media&#x26;token=918b6317-7d87-42c6-924a-9f71b23e49b1" alt=""><figcaption><p>Prefilled chips combobox</p></figcaption></figure>
-
-### Introduction
-
-The `chips-combobox` is a composite component that combines and implements [`combobox`](combobox) and `chip`. It is responsible for creating and managing `chip` components. It allows the searching of existing selection options and manages additions/removals of `chips`. The search/selection follows the combobox pattern.&#x20;
-
 ### Terminology
 
 * **combobox**: the pattern as a whole, comprised of the following distinct parts

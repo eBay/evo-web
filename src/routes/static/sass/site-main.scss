@@ -33,6 +33,10 @@ body > svg {
     width: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* CSS Variables */
 :root {
   --color-primary: #2563eb;
