@@ -1,12 +1,9 @@
 import { components, componentTemplate } from "../../components/components.marko";
+import componentMetadata from '../static/data/component-metadata.json' with { type: 'json' };
 import path from "path";
 
 static const componentMetas = import.meta.glob(
     "./*/+meta.json",
-    { eager: true }
-);
-static const componentMetadata = import.meta.glob(
-    "./*/metadata.json",
     { eager: true }
 );
 
@@ -51,7 +48,7 @@ static const componentMetadata = import.meta.glob(
                 }
                 
                 // Get new metadata structure for version info
-                let componentData = componentMetadata[metadataPath];
+                let componentData = componentMetadata[componentName];
                 if (componentData && componentData.default) {
                     componentData = componentData.default;
                 }
@@ -65,10 +62,10 @@ static const componentMetadata = import.meta.glob(
                     folder: folder,
                     meta: metaData || {},
                     dsComponent: dsComponent,
-                    staticVersion: dsComponent?.staticVersion,
+                    staticVersion: dsComponent?.cssVersion,
                     markoVersion: dsComponent?.markoVersion,
                     reactVersion: dsComponent?.reactVersion,
-                    hasVersions: Boolean(dsComponent && (dsComponent.staticVersion || dsComponent.markoVersion || dsComponent.reactVersion))
+                    hasVersions: Boolean(dsComponent && (dsComponent.cssVersion || dsComponent.markoVersion || dsComponent.reactVersion))
                 };
             }
             <if(componentInfo)>
