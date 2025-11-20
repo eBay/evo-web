@@ -6,6 +6,16 @@
     margin-block-end: 48px;
 }
 
+.landing-info-container.landing-info-container--simple-content {
+    .landing-info-container__item {
+        padding-block: 32px;
+    }
+
+    .landing-info-container__item_body {
+        display: block;
+    }
+}
+
 .landing-info-container__item {
     background-color: var(--color-background-secondary);
     border-radius: 8px;
