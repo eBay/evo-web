@@ -8,7 +8,6 @@
     flex-direction: column;
     inset: 0;
     overflow: hidden;
-    -webkit-overflow-scrolling: touch;
     position: fixed;
     will-change: background-color;
     z-index: 100000;
@@ -26,10 +25,9 @@
     flex: 1 0 auto;
     flex-direction: column;
     min-height: 55px;
-    will-change: opacity, transform;
-    -webkit-overflow-scrolling: touch;
     overflow-y: auto;
     width: 100%;
+    will-change: opacity, transform;
 }
 .panel-dialog__window--end {
     align-self: flex-end;

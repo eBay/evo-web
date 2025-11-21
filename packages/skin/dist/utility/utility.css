@@ -94,7 +94,6 @@
     white-space: nowrap;
 }
 .scrollbars-permanent {
-    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     scroll-snap-type: proximity;
     scroll-snap-type: x proximity;

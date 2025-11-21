@@ -15,7 +15,6 @@
 .fullscreen-dialog__window {
     @include dialog-mixins.window;
 
-    -webkit-overflow-scrolling: touch;
     overflow-y: auto;
     width: 100%;
 }
