@@ -1,5 +1,4 @@
 {
   "pageTitle": "Star Rating Select Accessibility Guidelines — Creating Inclusive Rating Inputs",
-  "pageDescription": "Learn how to make star rating select components fully accessible with proper keyboard controls, ARIA slider patterns, and value announcements. Follow these WCAG-aligned guidelines to ensure interactive ratings work for all users.",
-  "pageImg": "/static/img/components/star-rating-400.png"
+  "pageDescription": "Learn how to make star rating select components fully accessible with proper keyboard controls, ARIA slider patterns, and value announcements. Follow these WCAG-aligned guidelines to ensure interactive ratings work for all users."
 }

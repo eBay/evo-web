@@ -1,5 +1,5 @@
 {
   "pageTitle": "Section Notice Accessibility Guidelines — Building Inclusive Section Alerts",
   "pageDescription": "Learn how to make section notice components fully accessible with proper ARIA roles, semantic structure, and icon labels. Follow these WCAG-aligned guidelines to ensure section-level messages are clear for all users.",
-  "pageImg": "/static/img/components/notice-400.png"
+  "pageImg": "/src/routes/static/img/components/section-notice-400.png"
 }

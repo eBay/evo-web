@@ -1,5 +1,4 @@
 {
   "pageTitle": "Split Button Component",
-  "pageDescription": "The Split Button component combines a primary action button with a dropdown menu of related actions. Built with keyboard navigation and accessible labeling, it provides efficient access to multiple options. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/button-400.png"
+  "pageDescription": "The Split Button component combines a primary action button with a dropdown menu of related actions. Built with keyboard navigation and accessible labeling, it provides efficient access to multiple options. Available in Evo Web's CSS, React, and Marko implementations."
 }

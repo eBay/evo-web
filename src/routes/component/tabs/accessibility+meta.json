@@ -1,5 +1,5 @@
 {
   "pageTitle": "Tabs Accessibility Guidelines — Building Inclusive Tab Panels",
   "pageDescription": "Learn how to make tabs components fully accessible with proper ARIA tablist patterns, keyboard navigation, and panel associations. Follow these WCAG-aligned guidelines to ensure tabbed interfaces work for all users with assistive technologies.",
-  "pageImg": "/static/img/components/tabs-400.png"
+  "pageImg": "/src/routes/static/img/components/tab-400.png"
 }

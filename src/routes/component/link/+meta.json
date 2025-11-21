@@ -1,5 +1,5 @@
 {
   "pageTitle": "Link Component",
   "pageDescription": "The Link component creates accessible hyperlinks with consistent styling and interaction states. Supporting multiple variants and contexts, it ensures clear navigation cues for all users. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/link-400.png"
+  "pageImg": "/src/routes/static/img/components/link-button-400.png"
 }

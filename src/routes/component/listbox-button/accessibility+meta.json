@@ -1,5 +1,5 @@
 {
   "pageTitle": "Listbox Button Accessibility Guidelines — Building Inclusive Dropdown Selects",
   "pageDescription": "Learn how to make listbox button components fully accessible with proper ARIA combobox patterns, keyboard controls, and selection states. Follow these WCAG-aligned guidelines to ensure dropdown selects work for all users.",
-  "pageImg": "/static/img/components/select-400.png"
+  "pageImg": "/src/routes/static/img/components/select-list-400.png"
 }

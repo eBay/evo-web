@@ -1,5 +1,0 @@
-{
-  "pageTitle": "Filter Menu Button Accessibility Guidelines — Building Inclusive Filter Dropdowns",
-  "pageDescription": "Learn how to make filter menu button components fully accessible with proper ARIA haspopup attributes, focus management, and keyboard controls. Follow these WCAG-aligned guidelines to ensure dropdown filters work for all users.",
-  "pageImg": "/static/img/components/menu-400.png"
-}

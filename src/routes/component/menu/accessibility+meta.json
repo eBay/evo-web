@@ -1,5 +1,4 @@
 {
   "pageTitle": "Menu Accessibility Guidelines — Creating Inclusive Navigation Menus",
-  "pageDescription": "Learn how to make menu components fully accessible with proper ARIA menu roles, keyboard navigation, and submenu patterns. Follow these WCAG-aligned guidelines to ensure dropdown and popup menus work for all users with assistive technologies.",
-  "pageImg": "/static/img/components/menu-400.png"
+  "pageDescription": "Learn how to make menu components fully accessible with proper ARIA menu roles, keyboard navigation, and submenu patterns. Follow these WCAG-aligned guidelines to ensure dropdown and popup menus work for all users with assistive technologies."
 }

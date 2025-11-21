@@ -1,5 +1,5 @@
 {
   "pageTitle": "Progress Stepper Component",
   "pageDescription": "The Progress Stepper component visualizes multi-step processes with clear stage indicators. Built with semantic HTML and ARIA attributes, it helps users understand their position in workflows. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/stepper-400.png"
+  "pageImg": "/src/routes/static/img/components/progress-stepper-400.png"
 }

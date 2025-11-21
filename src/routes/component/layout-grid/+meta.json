@@ -1,5 +1,4 @@
 {
   "pageTitle": "Layout Grid Component",
-  "pageDescription": "The Layout Grid component provides a flexible, responsive grid system for page layouts and content organization. Built with CSS Grid, it ensures consistent spacing and alignment across all devices. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/layout-400.png"
+  "pageDescription": "The Layout Grid component provides a flexible, responsive grid system for page layouts and content organization. Built with CSS Grid, it ensures consistent spacing and alignment across all devices. Available in Evo Web's CSS, React, and Marko implementations."
 }

@@ -1,5 +1,4 @@
 {
   "pageTitle": "Flag Accessibility Guidelines — Creating Inclusive Country and Region Indicators",
-  "pageDescription": "Learn how to make flag components fully accessible with proper alt text, ARIA labels, and semantic markup. Follow these guidelines to ensure flag icons are properly identified by all users, including those using screen readers.",
-  "pageImg": "/static/img/components/flag-400.png"
+  "pageDescription": "Learn how to make flag components fully accessible with proper alt text, ARIA labels, and semantic markup. Follow these guidelines to ensure flag icons are properly identified by all users, including those using screen readers."
 }

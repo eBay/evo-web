@@ -1,5 +1,5 @@
 {
   "pageTitle": "Section Title Component",
   "pageDescription": "The Section Title component provides consistent heading styles for content sections with proper semantic hierarchy. Built with accessibility best practices, it ensures clear document structure for all users. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/typography-400.png"
+  "pageImg": "/src/routes/static/img/components/section-header-400.png"
 }

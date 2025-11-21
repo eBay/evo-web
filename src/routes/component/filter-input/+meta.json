@@ -1,5 +1,5 @@
 {
   "pageTitle": "Filter Input Component",
   "pageDescription": "The Filter Input component enables real-time content filtering with search and selection capabilities. Designed for performance and accessibility, it helps users quickly narrow down large data sets. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/textbox-400.png"
+  "pageImg": "/src/routes/static/img/components/text-field-400.png"
 }

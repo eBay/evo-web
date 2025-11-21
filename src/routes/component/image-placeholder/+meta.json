@@ -1,5 +1,4 @@
 {
   "pageTitle": "Image Placeholder Component",
-  "pageDescription": "The Image Placeholder component displays temporary content while images load, preventing layout shifts and improving perceived performance. Built with responsive sizing and accessibility, it enhances user experience. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/image-400.png"
+  "pageDescription": "The Image Placeholder component displays temporary content while images load, preventing layout shifts and improving perceived performance. Built with responsive sizing and accessibility, it enhances user experience. Available in Evo Web's CSS, React, and Marko implementations."
 }

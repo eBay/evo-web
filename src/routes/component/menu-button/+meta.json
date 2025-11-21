@@ -1,5 +1,4 @@
 {
   "pageTitle": "Menu Button Component",
-  "pageDescription": "The Menu Button component combines a button with a dropdown menu for actions and options. Built with ARIA patterns and keyboard support, it ensures accessible menu interactions. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/menu-400.png"
+  "pageDescription": "The Menu Button component combines a button with a dropdown menu for actions and options. Built with ARIA patterns and keyboard support, it ensures accessible menu interactions. Available in Evo Web's CSS, React, and Marko implementations."
 }

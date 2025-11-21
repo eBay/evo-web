@@ -1,5 +1,0 @@
-{
-  "pageTitle": "Filter Menu Component",
-  "pageDescription": "The Filter Menu component presents filtering options in an organized menu structure with multi-select capabilities. Built with keyboard navigation and screen reader support, it ensures accessible data refinement. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/menu-400.png"
-}

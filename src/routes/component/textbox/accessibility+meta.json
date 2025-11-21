@@ -1,5 +1,5 @@
 {
   "pageTitle": "Textbox Accessibility Guidelines — Creating Inclusive Text Input Fields",
   "pageDescription": "Learn how to make textbox components fully accessible with proper labels, error messages, and input validation. Follow these WCAG-aligned guidelines to ensure text inputs work for all users across different input methods.",
-  "pageImg": "/static/img/components/textbox-400.png"
+  "pageImg": "/src/routes/static/img/components/text-field-400.png"
 }

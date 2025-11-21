@@ -1,5 +1,5 @@
 {
   "pageTitle": "Inline Notice Component",
   "pageDescription": "The Inline Notice component displays contextual messages and alerts within content flow. Built with semantic HTML and ARIA roles, it ensures important information reaches all users effectively. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/notice-400.png"
+  "pageImg": "/src/routes/static/img/components/inline-notice-400.png"
 }

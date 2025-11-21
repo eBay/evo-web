@@ -1,5 +1,4 @@
 {
   "pageTitle": "Star Rating Select Component",
-  "pageDescription": "The Star Rating Select component enables interactive rating input with keyboard and mouse support. Built with accessible interactions and clear visual feedback, it provides intuitive rating experiences. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/star-rating-400.png"
+  "pageDescription": "The Star Rating Select component enables interactive rating input with keyboard and mouse support. Built with accessible interactions and clear visual feedback, it provides intuitive rating experiences. Available in Evo Web's CSS, React, and Marko implementations."
 }

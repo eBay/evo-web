@@ -1,5 +1,4 @@
 {
   "pageTitle": "Menu Component",
-  "pageDescription": "The Menu component creates accessible dropdown and popup menus with keyboard navigation. Supporting nested menus and various triggers, it provides flexible navigation patterns for all users. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/menu-400.png"
+  "pageDescription": "The Menu component creates accessible dropdown and popup menus with keyboard navigation. Supporting nested menus and various triggers, it provides flexible navigation patterns for all users. Available in Evo Web's CSS, React, and Marko implementations."
 }

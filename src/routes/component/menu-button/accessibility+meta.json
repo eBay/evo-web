@@ -1,5 +1,4 @@
 {
   "pageTitle": "Menu Button Accessibility Guidelines — Building Inclusive Menu Triggers",
-  "pageDescription": "Learn how to make menu button components fully accessible with proper ARIA haspopup attributes, focus management, and keyboard controls. Follow these WCAG-aligned guidelines to ensure menu triggers work for all users.",
-  "pageImg": "/static/img/components/menu-400.png"
+  "pageDescription": "Learn how to make menu button components fully accessible with proper ARIA haspopup attributes, focus management, and keyboard controls. Follow these WCAG-aligned guidelines to ensure menu triggers work for all users."
 }
