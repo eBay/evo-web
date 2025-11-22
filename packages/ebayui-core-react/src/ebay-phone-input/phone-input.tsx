@@ -184,7 +184,7 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
         return (
             <EbayListboxButtonOption
                 key={code}
-                value={country.callingCode}
+                value={`${name}-${country.callingCode}`}
                 selected={index === selectedIndex}
                 icon={<EbayFlag flag={country.countryCode.toLowerCase() as Icon} />}
             >

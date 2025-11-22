@@ -187,7 +187,7 @@ describe("<EbayPhoneInput />", () => {
         await user.click(button);
 
         const options = container.querySelectorAll('[role="option"]');
-        await user.click(options[1]);
+        await user.click(options[29]);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
         await user.type(input, "5551234567");
@@ -201,5 +201,26 @@ describe("<EbayPhoneInput />", () => {
                 countryCode: "BR",
             }),
         );
+    });
+
+    it("should not select multiple countries when the same calling code exists", async () => {
+        const user = userEvent.setup();
+        const onChange = jest.fn();
+
+        const { container } = render(<EbayPhoneInput countryCode="us" onChange={onChange} />);
+
+        const button = container.querySelector("button") as HTMLButtonElement;
+        await user.click(button);
+
+        const options = container.querySelectorAll('[role="option"]');
+        for (let i = 0; i < options.length; i++) {
+            const option = options[i];
+            if (option.textContent?.includes("+1")) {
+                await user.click(option);
+                break;
+            }
+        }
+
+        expect(container.querySelectorAll('[role="option"][aria-selected="true"]')).toHaveLength(1);
     });
 });
