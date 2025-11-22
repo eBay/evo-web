@@ -1,6 +1,6 @@
 /// <reference types="@testing-library/jest-dom" />
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { EbayPhoneInput } from "../index";
 
@@ -186,8 +186,8 @@ describe("<EbayPhoneInput />", () => {
         const button = container.querySelector("button") as HTMLButtonElement;
         await user.click(button);
 
-        const options = container.querySelectorAll('[role="option"]');
-        await user.click(options[29]);
+        const option = screen.getByText(/Brazil/);
+        await user.click(option);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
         await user.type(input, "5551234567");
