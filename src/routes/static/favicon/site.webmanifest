@@ -1,6 +1,6 @@
 {
   "name": "Evo Web Site",
-  "short_name": "Evo Web";,
+  "short_name": "Evo Web",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

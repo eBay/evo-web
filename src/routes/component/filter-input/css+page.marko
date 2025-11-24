@@ -272,7 +272,7 @@ export const metadata = {
     submodules: ["textbox"],
 };
 
-<html-script>
+<script>
     document.querySelectorAll(".filter-input").forEach(function (compEl) {
         const compInputEl = compEl.querySelector(".textbox__control");
         const compClearBtnEl = compEl.querySelector(".filter-input__clear-btn");
@@ -283,4 +283,4 @@ export const metadata = {
             compEl.classList.remove(inputFilledClass);
         });
     });
-</html-script>
+</script>

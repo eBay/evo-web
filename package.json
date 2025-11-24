@@ -56,7 +56,7 @@
     "@ebay/design-tokens": "^2.0.2",
     "@ebay/skin": "^19",
     "@floating-ui/dom": "^1.7.4",
-    "@marko-tags/subscribe": "file:./",
+    "@marko-tags/subscribe": "0.0.0",
     "@marko/run": "^0.9.3",
     "@marko/run-adapter-static": "^2.0.3",
     "@marko/testing-library": "^6",

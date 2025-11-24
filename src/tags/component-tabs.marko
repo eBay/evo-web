@@ -12,7 +12,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
 
 <if=componentData>
     <const/versions=componentData.versions || {}>
-    <const/DSUrl=componentData.primaryUrl>
+    <const/DSUrl=componentData.primaryUrl || DSUrlRoot>
     <const/EvoCssStorybookUrl=(
         componentData.cssStorybookPath
             ? EvoCssStorybookUrlRoot + componentData.cssStorybookPath
@@ -29,7 +29,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
             : EvoReactStorybookUrlRoot
     )>
 
-    <const/getAriaCurrentValue=(tabName) => {
+    <const/getAriaCurrentValue(tabName) {
         return currentTab === tabName ? "page" : undefined;
     }>
     <div class="component-page">
@@ -69,7 +69,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
                     </a>
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
-                    <a href=`${EvoMarkoStorybookUrl}` target="_blank">
+                    <a href=EvoMarkoStorybookUrl target="_blank">
                         Marko Storybook${" "}
                         <span
                             class="badge"
@@ -87,7 +87,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
                     </a>
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
-                    <a href=`${EvoReactStorybookUrl}` target="_blank">
+                    <a href=EvoReactStorybookUrl target="_blank">
                         React Storybook${" "}
 
                         <span
@@ -106,7 +106,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
                     </a>
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
-                    <a href=`${DSUrl || DSUrlRoot}` target="_blank">
+                    <a href=DSUrl target="_blank">
                         Design System${" "}
                         <svg
                             class="icon icon--16"
