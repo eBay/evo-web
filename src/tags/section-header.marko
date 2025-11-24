@@ -1,0 +1,73 @@
+<const/metadata=input.metadata || {}>
+<const/skinComponent=metadata["component"] || {}>
+<const/currentComponent=metadata["ds-component"] || {}>
+<const/dsComponent=(
+    currentComponent.length > 0 ? currentComponent[0] : currentComponent
+)>
+<const/properName=(
+    skinComponent.charAt(0).toUpperCase() + skinComponent.slice(1)
+)>
+
+<html-style>
+    .component-header {
+        display: flex;
+        flex-wrap: wrap;
+        margin: var(--spacing-400) 0 var(--spacing-200);
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .component-header h1 {
+        margin: 0;
+    }
+
+    .component-header__link {
+        text-decoration: underline;
+    }
+</html-style>
+<define/body>
+    ${properName} Component${" "}
+    <if=input.beta === "true">
+        <sup>BETA</sup>
+    </if>
+    <else if=input.alpha === "true">
+        <sup>ALPHA</sup>
+    </else>
+</define>
+<div class="component-header">
+    <if=input.header === "h3">
+        <h3>
+            <body/>
+        </h3>
+    </if>
+    <else if=input.header === "h2">
+        <h2>
+            <body/>
+        </h2>
+    </else>
+    <else>
+        <h1>
+            <body/>
+        </h1>
+    </else>
+    // TODO
+    // This no longer should show up at the top since it's Skin specific versioning. It needs to be moved to the Skin tab content file.
+    // <span class="section-header__version">
+    //     DS v${dsComponent?.version || metadata.version}
+    // </span>
+    <span class="component-header__link">
+
+        <a
+            href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
+            target="_blank">
+            <svg
+                class="icon icon--16"
+                height="16"
+                width="16"
+                aria-hidden="true">
+                <use href="#icon-external-link-16"/>
+            </svg>
+            ${" "}Playbook
+        </a>
+    </span>
+</div>

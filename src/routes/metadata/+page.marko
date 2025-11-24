@@ -1,10 +1,15 @@
-import { getAllComponentNames, getEnhancedComponentMetadata } from "../component-utils.js";
+import {
+    getAllComponentNames,
+    getEnhancedComponentMetadata,
+} from "../component-utils.js";
 
-$ const metadata = {};
-$ const componentNames = getAllComponentNames();
-$ for (let componentName of componentNames) {
-    metadata[componentName] = getEnhancedComponentMetadata(componentName);
-}
+<const/metadata=(() => {
+    const metadata = {};
+    for (let componentName of getAllComponentNames()) {
+        metadata[componentName] = getEnhancedComponentMetadata(componentName);
+    }
+    return metadata;
+})()>
 <!doctype html>
 <html lang="en">
     <head>
