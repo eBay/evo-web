@@ -506,22 +506,14 @@
   },
   "lightbox-dialog": {
     "component": "lightbox-dialog",
-    "ds-component": [
-      {
+    "ds-component": {
         "name": "dialog",
         "url": "https://playbook.ebay.com/design-system/components/dialog",
         "cssVersion": 4.1,
         "markoVersion": 4.1,
         "reactVersion": 4.1
-      },
-      {
-        "name": "bottom-sheet",
-        "url": "https://playbook.ebay.com/design-system/components/bottom-sheet",
-        "cssVersion": 3,
-        "markoVersion": 3,
-        "reactVersion": 3
       }
-    ],
+    ,
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-lightbox-dialog--base",
     "markoStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
