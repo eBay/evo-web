@@ -4,59 +4,59 @@
    and we don't need a minimum viewport width to support. */
 
 .content {
-    grid-area: #{"1 / 1 / span 1 / span 8"};
+  grid-area: #{"1 / 1 / span 1 / span 8"};
 }
 
 main:not(.landing-page) {
-    grid-area: #{"1 / 1 / span 1 / span 8"};
+  grid-area: #{"1 / 1 / span 1 / span 8"};
 }
 
 footer {
-    grid-area: #{"2 / 1 / span 1 / span 8"};
+  grid-area: #{"2 / 1 / span 1 / span 8"};
 }
 
 @media screen and (min-width: 512px) {
-    // .site-nav {
-    //     grid-area: #{1 / 1 / span 1 / span 5};
-    // }
+  // .site-nav {
+  //     grid-area: #{1 / 1 / span 1 / span 5};
+  // }
 
-    .content {
-        grid-area: #{1 / 1 / span 1 / span 16};
-    }
+  .content {
+    grid-area: #{1 / 1 / span 1 / span 16};
+  }
 
-    main:not(.landing-page) {
-        grid-area: #{1 / 1 / span 1 / span 16};
-    }
+  main:not(.landing-page) {
+    grid-area: #{1 / 1 / span 1 / span 16};
+  }
 
-    footer {
-        grid-area: #{2 / 1 / span 1 / span 16};
-    }
+  footer {
+    grid-area: #{2 / 1 / span 1 / span 16};
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .site-nav {
-        grid-area: #{1 / 1 / span 1 / span 5};
-    }
+  .site-nav {
+    grid-area: #{1 / 1 / span 1 / span 5};
+  }
 
-    .content {
-        grid-area: #{1 / 1 / span 1 / span 16};
-    }
+  .content {
+    grid-area: #{1 / 1 / span 1 / span 16};
+  }
 
-    main:not(.landing-page) {
-        grid-area: #{1 / 6 / span 1 / span 11};
-    }
+  main:not(.landing-page) {
+    grid-area: #{1 / 6 / span 1 / span 11};
+  }
 
-    footer {
-        grid-area: #{2 / 1 / span 1 / span 16};
-    }
+  footer {
+    grid-area: #{2 / 1 / span 1 / span 16};
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .site-nav {
-        grid-area: #{1 / 1 / span 1 / span 3};
-    }
+  .site-nav {
+    grid-area: #{1 / 1 / span 1 / span 3};
+  }
 
-    main:not(.landing-page) {
-        grid-area: #{1 / 4 / span 1 / span 13};
-    }
+  main:not(.landing-page) {
+    grid-area: #{1 / 4 / span 1 / span 13};
+  }
 }

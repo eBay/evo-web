@@ -1,49 +1,57 @@
-import fs from "fs";
-import path from "path";
-import markdown from 'markdown-it';
-
+server import fs from "fs";
+server import path from "path";
+import markdown from "markdown-it";
 // Initialize markdown parser
-$ const md = new markdown();
-
+<const/md=new markdown()>
 // Get the pattern path from the catch-all route parameters
-$ const patternPath = $global?.params?.patterns || "";
-
+<const/patternPath=($global?.params?.patterns || "")>
 // Base path for a11y documents
-$ const docsRoot = path.join(process.cwd(), "src/docs/a11y/patterns/");
-
-$ let markdownContent = "";
-$ let hasError = false;
-$ let errorMessage = "";
-
-$ if (patternPath) {
-    try {
-        const mdFilePath = path.join(docsRoot, patternPath + ".md");
-        const content = fs.readFileSync(mdFilePath, "utf-8");
-        markdownContent = md.render(content);
-    } catch (error) {
-        hasError = true;
-        if (error.code === 'ENOENT') {
-            errorMessage = `404: Accessibility pattern "${patternPath}" not found`;
-        } else {
-            errorMessage = `Error loading pattern: ${error.message}`;
+<const/docsRoot=path.join(process.cwd(), "src/docs/a11y/patterns/")>
+<const/{ markdownContent, hasError, errorMessage }=(() => {
+    let markdownContent = "";
+    let hasError = false;
+    let errorMessage = "";
+    if (patternPath) {
+        try {
+            const mdFilePath = path.join(docsRoot, patternPath + ".md");
+            const content = fs.readFileSync(mdFilePath, "utf-8");
+            markdownContent = md.render(content);
+        } catch (error) {
+            hasError = true;
+            if (error.code === "ENOENT") {
+                errorMessage = `404: Accessibility pattern "${patternPath}" not found`;
+            } else {
+                errorMessage = `Error loading pattern: ${error.message}`;
+            }
         }
+    } else {
+        hasError = true;
+        errorMessage = "No pattern specified";
     }
-} else {
-    hasError = true;
-    errorMessage = "No pattern specified";
-}
+    return {
+        markdownContent,
+        errorMessage,
+        hasError,
+    };
+})()>
 
-$ const pageTitle = patternPath ? patternPath.split('/').join(' > ') : 'Accessibility Patterns';
+<const/pageTitle=(
+    patternPath ? patternPath.split("/").join(" > ") : "Accessibility Patterns"
+)>
 
 <div class="accessibility-pattern-page">
     <main class="pattern-content">
-        <if(hasError)>
+        <if=hasError>
             <div class="error-message">
                 <h1>Pattern Page Not Found</h1>
                 <div>${errorMessage}</div>
                 // Note: available patterns should be placed in:
                 // src/docs/a11y/patterns/
-                <p><a href="/accessibility">← Back to Accessibility</a></p>
+                <p>
+                    <a href="/accessibility">
+                        ← Back to Accessibility
+                    </a>
+                </p>
             </div>
         </if>
         <else>

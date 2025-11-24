@@ -1,0 +1,131 @@
+import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.js";
+
+<const/DSUrlRoot="https://playbook.ebay.com/design-system/components/">
+<const/EvoCssStorybookUrlRoot="https://opensource.ebay.com/evo-web/skin/storybook/?path=">
+<const/EvoMarkoStorybookUrlRoot="https://opensource.ebay.com/evo-web/ebayui-core/?path=">
+<const/EvoReactStorybookUrlRoot="https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=">
+<const/{
+    componentName,
+    componentData,
+    currentTab,
+}=getEnhancedComponentMetadataFromUrl($global.url.pathname)>
+
+<if=componentData>
+    <const/versions=componentData.versions || {}>
+    <const/DSUrl=componentData.primaryUrl>
+    <const/EvoCssStorybookUrl=(
+        componentData.cssStorybookPath
+            ? EvoCssStorybookUrlRoot + componentData.cssStorybookPath
+            : EvoCssStorybookUrlRoot
+    )>
+    <const/EvoMarkoStorybookUrl=(
+        componentData.markoStorybookPath
+            ? EvoMarkoStorybookUrlRoot + componentData.markoStorybookPath
+            : EvoMarkoStorybookUrlRoot
+    )>
+    <const/EvoReactStorybookUrl=(
+        componentData.reactStorybookPath
+            ? EvoReactStorybookUrlRoot + componentData.reactStorybookPath
+            : EvoReactStorybookUrlRoot
+    )>
+
+    <const/getAriaCurrentValue=(tabName) => {
+        return currentTab === tabName ? "page" : undefined;
+    }>
+    <div class="component-page">
+        <div class="fake-tabs">
+            <ul
+                class="fake-tabs__items"
+                role="tablist"
+                aria-label="Component implementation tabs">
+                <li class="fake-tabs__item fake-tabs__items--large">
+                    <a
+                        href=`/component/${componentName}/`
+                        role="tab"
+                        aria-current=getAriaCurrentValue("overview")>
+                        Overview
+                    </a>
+                </li>
+                <li class="fake-tabs__item fake-tabs__items--large">
+                    <a
+                        href=`/component/${componentName}/accessibility/`
+                        role="tab"
+                        aria-current=getAriaCurrentValue("accessibility")>
+                        Accessibility
+                    </a>
+                </li>
+                <li class="fake-tabs__item fake-tabs__items--large">
+                    <a
+                        href=`/component/${componentName}/css/`
+                        role="tab"
+                        aria-current=getAriaCurrentValue("css")>
+                        CSS${" "}
+                        <span
+                            class="badge"
+                            role="img"
+                            aria-label=`Static version ${versions.cssVersion || ""}`>
+                            ${" "}${versions.cssVersion || ""}${" "}
+                        </span>
+                    </a>
+                </li>
+                <li class="fake-tabs__item fake-tabs__items--large">
+                    <a href=`${EvoMarkoStorybookUrl}` target="_blank">
+                        Marko Storybook${" "}
+                        <span
+                            class="badge"
+                            role="img"
+                            aria-label=`Marko version ${versions.markoVersion || ""}`>
+                            ${" "}${versions.markoVersion || ""}${" "}
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="16"
+                            width="16"
+                            aria-hidden="true">
+                            <use href="#icon-external-link-16"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="fake-tabs__item fake-tabs__items--large">
+                    <a href=`${EvoReactStorybookUrl}` target="_blank">
+                        React Storybook${" "}
+
+                        <span
+                            class="badge"
+                            role="img"
+                            aria-label=`React version ${versions.reactVersion || ""}`>
+                            ${" "}${versions.reactVersion || ""}${" "}
+                        </span>
+                        <svg
+                            class="icon icon--16"
+                            height="16"
+                            width="16"
+                            aria-hidden="true">
+                            <use href="#icon-external-link-16"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="fake-tabs__item fake-tabs__items--large">
+                    <a href=`${DSUrl || DSUrlRoot}` target="_blank">
+                        Design System${" "}
+                        <svg
+                            class="icon icon--16"
+                            height="16"
+                            width="16"
+                            aria-hidden="true">
+                            <use href="#icon-external-link-16"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <div class="fake-tabs__content" role="tabpanel">
+                <div class="fake-tabs__cell">
+                    <${input.content}/>
+                </div>
+            </div>
+        </div>
+    </div>
+</if>
+<else>
+    <${input.content}/>
+</else>

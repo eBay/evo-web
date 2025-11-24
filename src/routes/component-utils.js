@@ -26,12 +26,12 @@ export function getDesignSystemInfo(componentName) {
  */
 export function getDesignSystemUrl(componentName) {
     const dsInfo = getDesignSystemInfo(componentName);
-    
+
     // Handle array of ds-components (like lightbox-dialog)
     if (Array.isArray(dsInfo)) {
         return dsInfo[0]?.url || null;
     }
-    
+
     return dsInfo?.url || null;
 }
 
@@ -42,7 +42,7 @@ export function getDesignSystemUrl(componentName) {
  */
 export function getComponentVersions(componentName) {
     const dsInfo = getDesignSystemInfo(componentName);
-    
+
     // Handle array of ds-components
     if (Array.isArray(dsInfo)) {
         const firstComponent = dsInfo[0];
@@ -52,7 +52,7 @@ export function getComponentVersions(componentName) {
             reactVersion: firstComponent?.reactVersion
         };
     }
-    
+
     if (dsInfo) {
         return {
             cssVersion: dsInfo.cssVersion,
@@ -60,7 +60,7 @@ export function getComponentVersions(componentName) {
             reactVersion: dsInfo.reactVersion
         };
     }
-    
+
     return null;
 }
 
@@ -71,11 +71,11 @@ export function getComponentVersions(componentName) {
  */
 export function getAllDesignSystemUrls(componentName) {
     const dsInfo = getDesignSystemInfo(componentName);
-    
+
     if (Array.isArray(dsInfo)) {
         return dsInfo.map(ds => ds.url).filter(Boolean);
     }
-    
+
     return dsInfo?.url ? [dsInfo.url] : [];
 }
 
@@ -96,7 +96,7 @@ export function getComponentSubmodules(componentName) {
  */
 export function getComponentStatus(componentName) {
     const dsInfo = getDesignSystemInfo(componentName);
-    
+
     // Handle array of ds-components
     if (Array.isArray(dsInfo)) {
         const firstComponent = dsInfo[0];
@@ -106,7 +106,7 @@ export function getComponentStatus(componentName) {
             status: firstComponent?.status || null
         };
     }
-    
+
     return {
         alpha: dsInfo?.alpha || false,
         beta: dsInfo?.beta || false,
@@ -130,7 +130,7 @@ export function getAllComponentNames() {
 export function getComponentsByStatus(status) {
     return getAllComponentNames().filter(name => {
         const componentStatus = getComponentStatus(name);
-        
+
         switch (status.toLowerCase()) {
             case 'alpha':
                 return componentStatus.alpha;
@@ -152,11 +152,11 @@ export function getComponentsByStatus(status) {
 export function findComponentsByDesignSystemName(dsName) {
     return getAllComponentNames().filter(name => {
         const dsInfo = getDesignSystemInfo(name);
-        
+
         if (Array.isArray(dsInfo)) {
             return dsInfo.some(ds => ds.name === dsName);
         }
-        
+
         return dsInfo?.name === dsName;
     });
 }
@@ -168,11 +168,11 @@ export function findComponentsByDesignSystemName(dsName) {
  */
 export function getEnhancedComponentMetadata(componentName) {
     const baseMetadata = getComponentMetadata(componentName);
-    
+
     if (!baseMetadata) {
         return null;
     }
-    
+
     return {
         ...baseMetadata,
         versions: getComponentVersions(componentName),
@@ -180,5 +180,23 @@ export function getEnhancedComponentMetadata(componentName) {
         urls: getAllDesignSystemUrls(componentName),
         primaryUrl: getDesignSystemUrl(componentName),
         submodules: getComponentSubmodules(componentName)
+    };
+}
+
+export function getEnhancedComponentMetadataFromUrl(url) {
+    const paths = url.split("/");
+    let componentName = paths.pop();
+    let currentTab = "overview";
+    let componentData = getEnhancedComponentMetadata(componentName);
+    if (!componentData) {
+        currentTab = componentName;
+        componentName = paths.pop();
+        componentData = getEnhancedComponentMetadata(componentName);
+    }
+
+    return {
+        componentData,
+        currentTab,
+        componentName
     };
 }

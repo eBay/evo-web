@@ -1,12 +1,17 @@
 {
     "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
     "ignoreFiles": [
-        "dist/**/*",
-        "dist/variables/**/*",
+        "!**/*.css",
+        "!**/*.scss",
         "**/*.min.css",
         "**/*.js",
         "**/*.less",
-        "**/*.svg"
+        "src/routes/static/**",
+       "**/*.md",
+        "**/*.svg",
+        "**/*.png",
+        "**/*.json",
+        "**/*.marko"
     ],
     "rules": {
         "comment-empty-line-before": null,

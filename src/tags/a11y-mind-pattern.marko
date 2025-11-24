@@ -1,0 +1,29 @@
+import markdownit from "markdown-it";
+server import fs from "fs";
+server import path from "path";
+static const md = markdownit({
+    html: true,
+});
+
+<const/a11yMindPatternHTML=(() => {
+    // Get the a11y MIND pattern, read its contents, and convert to HTML
+    const pattern = input.pattern;
+    const a11yPatternsDir = "src/docs/a11y/patterns/component-patterns/";
+    const a11yPatternsPath = path.join(
+        process.cwd(),
+        `${a11yPatternsDir}/${pattern}.md`,
+    );
+
+    let a11yMindPatternHTML;
+    if (fs.existsSync(a11yPatternsPath)) {
+        const a11yMindPatternMD = fs.readFileSync(a11yPatternsPath, "utf-8");
+        a11yMindPatternHTML = md.render(a11yMindPatternMD);
+    } else {
+        a11yMindPatternHTML = "<p>Accessibility guidelines coming soon.</p>";
+    }
+    return a11yMindPatternHTML;
+})()>
+
+<div class="a11y-mind-pattern">
+    $!{a11yMindPatternHTML}
+</div>

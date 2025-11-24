@@ -1,0 +1,36 @@
+import { components } from "./components.marko";
+<const/navList = input.navList || "components">
+
+<div class="site-nav secondary-nav">
+    <nav id="components-nav" aria-labelledby="navrail-components-nav_title">
+        <h2 id="navrail-components-nav_title">
+            <a href="/component/">Components</a>
+        </h2>
+        <ul role="menubar">
+            <components-list components=components/>
+        </ul>
+    </nav>
+
+    <nav id="guides-nav" aria-labelledby="navrail-guides-nav_title">
+        <h2 id="navrail-guides-nav_title">
+            Guides
+        </h2>
+        <ul role="menubar">
+            <li>
+                <a href="guides/page-grid" role="menuitem">
+                    Page Grid Use Guide
+                </a>
+            </li>
+            <li>
+                <a href="guides/skeleton" role="menuitem">
+                    Skeleton Use Guide
+                </a>
+            </li>
+            <li>
+                <a href="guides/animation" role="menuitem">
+                    Animation Guide
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

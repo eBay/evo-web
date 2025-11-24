@@ -3,9 +3,10 @@ import { runGenerate } from "./generate-images";
 import { verifyBuild } from "./verify-build";
 import { generateTopLevel, cleanTopLevel } from "./generate-imports";
 import { copySVGIcons, copyCustomStyles, copySVGFlags } from "./storybook/copy";
-import { tokens} from './tokens';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+import { tokens } from "./tokens";
+import { copyMasterIcons } from "./copy-master-icons";
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
 yargs(hideBin(process.argv))
     .usage("Usage: $0 <command> [options]")
@@ -29,6 +30,15 @@ yargs(hideBin(process.argv))
             await tokens();
         },
     )
+    .command(
+        "copy-icons",
+        "Copies master icons for site",
+        (yargs) => {},
+        async (argv) => {
+            await copyMasterIcons();
+        },
+    )
+
     .command(
         "list",
         "List all available modules",

@@ -1,4 +1,4 @@
-import iconJSON from "../../../components/data/icons.json";
+import iconJSON from "../../../data/icons.json";
 <div id="icon">
     <section-header metadata=metadata/>
 
@@ -287,9 +287,9 @@ import iconJSON from "../../../components/data/icons.json";
             <use href="#icon-mastercard-24-colored"/>
         </svg>
     </highlight-code>
-    $ const deprecatedIcons = iconJSON.icons?.deprecated || [];
+    <const/deprecatedIcons = iconJSON.icons?.deprecated || []>
 
-    <if(deprecatedIcons.length > 0)>
+    <if=deprecatedIcons.length > 0>
         <h3>Deprecated Icons</h3>
 
         <p>

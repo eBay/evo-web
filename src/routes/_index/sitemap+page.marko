@@ -1,8 +1,8 @@
 import pkg from "../../../package.json";
-import { components } from "../../components/components.marko";
+import { components } from "../../tags/components.marko";
 import { a11yDocs } from "../a11y-docs.js";
 
-style {
+<style>
     .page-sitemap {
         nav {
             margin-bottom: var(--spacing-400);
@@ -29,7 +29,7 @@ style {
     main {
         grid-area: 1 / 1 / span 1 / span 16;
     }
-}
+</style>
 
 <div class="page-grid-container">
 

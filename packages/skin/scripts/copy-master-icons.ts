@@ -1,0 +1,14 @@
+import fs from "fs";
+import path from "path";
+const currentDir = path.dirname(__dirname);
+const svgIcon= path.resolve(currentDir, "src", "svg", "icons.svg");
+const masterIconsDir = path.resolve(currentDir, "../", "../", "src", "tags", "master-icons.marko");
+
+export async function copyMasterIcons() {
+    const file = await fs.promises.readFile(svgIcon, "utf8");
+    const regex = /<\?xml[^>]*\?>\n/;
+
+    const newOutput = file.replace(regex, "");
+
+    await fs.promises.writeFile(masterIconsDir, newOutput);
+}

@@ -1,326 +1,327 @@
 .landing-info-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-block-end: 48px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-block-end: 48px;
 }
 
 .landing-info-container.landing-info-container--simple-content {
-    .landing-info-container__item {
-        padding-block: 32px;
-    }
+  .landing-info-container__item {
+    padding-block: 32px;
+  }
 
-    .landing-info-container__item_body {
-        display: block;
-    }
+  .landing-info-container__item_body {
+    display: block;
+  }
 }
 
 .landing-info-container__item {
-    background-color: var(--color-background-secondary);
-    border-radius: 8px;
-    display: flex;
-    flex: 1 1;
-    flex-direction: row;
-    gap: 16px;
-    padding-block: 48px;
-    padding-inline: 24px;
+  background-color: var(--color-background-secondary);
+  border-radius: 8px;
+  display: flex;
+  flex: 1 1;
+  flex-direction: row;
+  gap: 16px;
+  padding-block: 48px;
+  padding-inline: 24px;
 }
 
 .landing-info-container__item_icon svg {
-    color: var(--color-foreground-accent);
-    height: 32px;
-    width: 32px;
+  color: var(--color-foreground-accent);
+  height: 32px;
+  width: 32px;
 }
 
 .landing-info-container__item_body {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 16px;
-    line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 8px;
+  line-height: 24px;
 }
 
 .landing-info-container__item_title {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .landing-info-container__item_description {
-    margin: 0;
+  margin: 0;
 }
 
 .landing-hero-text-banner {
-    background-color: var(--color-background-secondary);
-    margin-block: 0 48px;
-    padding: 24px;
+  background-color: var(--color-background-secondary);
+  margin-block: 0 48px;
+  padding: 24px;
 }
 
 .landing-hero-text-banner h1 {
-    font-size: 30px;
-    margin: 0;
-    margin-block-end: 24px;
+  font-size: 30px;
+  margin: 0;
+  margin-block-end: 24px;
 }
 
 .landing-hero-text-banner p {
-    font-size: 20px;
-    margin-block-end: 0;
+  font-size: 20px;
+  margin-block-end: 0;
 }
 
 .landing-hero-text-banner p:first-of-type {
-    margin-block: 0;
+  margin-block: 0;
 }
 
 .landing-hero-actions {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .landing-hero-actions a,
 .landing-hero-actions button {
-    margin-block-start: 12px;
+  margin-block-start: 12px;
 }
 
 .landing-hero-actions a:first-of-type,
 .landing-hero-actions button:first-of-type {
-    margin-inline-end: 16px;
+  margin-inline-end: 16px;
 }
 
 .landing-title {
-    margin-block-end: 24px;
+  margin-block-end: 24px;
 }
 
 .landing-title h2 {
-    font-size: 24px;
-    font-weight: var(--font-weight-bold);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
 }
 
 .landing-title p {
-    color: var(--color-foreground-secondary);
-    font-size: 16px;
-    margin-block-start: 8px;
+  color: var(--color-foreground-secondary);
+  font-size: 16px;
+  margin-block-start: 8px;
 }
 
 .landing-banner-product-4up {
-    margin-block-end: 48px;
+  margin-block-end: 48px;
 }
 
 .landing-banner-product-4up > h2 {
-    font-size: 24px;
-    font-weight: var(--font-weight-bold);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
 }
 
 .landing-banner-product-4up > p {
-    font-size: 16px;
-    color: var(--color-foreground-secondary);
-    margin-block-start: 8px;
+  color: var(--color-foreground-secondary);
+  font-size: 16px;
+  margin-block-start: 8px;
 }
 
 .landing-banner-product-4up > p:last-of-type {
-    margin-block-end: 24px;
+  margin-block-end: 24px;
 }
 
 .landing-banner-product-4up__items {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: 1fr;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
 }
 
 .landing-banner-product-4up__item {
-    background-color: var(--color-background-secondary);
-    border-radius: 16px;
-    padding: 24px;
-    padding-block-end: 48px;
+  background-color: var(--color-background-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  padding-block-end: 48px;
 }
 
 .landing-banner-product-4up__item h3 {
-    font-size: 20px;
-    margin-block-end: 8px;
+  font-size: 20px;
+  margin-block-end: 8px;
 }
 
 .landing-banner-product-4up__item p {
-    font-size: 16px;
-    margin: 0;
+  font-size: 16px;
+  margin: 0;
 }
 
 .landing-banner-product-4up__item ul,
 .landing-banner-product-4up__item ol {
-    font-size: 16px;
-    line-height: 24px;
-    margin: 0;
-    margin-block-start: 24px;
-    padding-left: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  margin-block-start: 24px;
+  padding-left: 16px;
 }
 
 .landing-banner-product-4up__item .btn,
 .landing-banner-product-4up__item .fake-btn {
-    margin-block-start: 16px;
+  margin-block-start: 16px;
 }
 
 .landing-banner-lifestyle-copy {
-    display: grid;
-    font-size: 16px;
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin-block-end: 48px;
+  display: grid;
+  font-size: 16px;
+  gap: 0;
+  grid-template-columns: 1fr;
+  margin-block-end: 48px;
 }
 
 .landing-banner-lifestyle-copy__main h3 {
-    font-size: 24px;
-    margin-block-end: 30px;
+  font-size: 24px;
+  margin-block-end: 30px;
 }
 
 .landing-banner-lifestyle-copy ul {
-    margin: 0;
-    padding: 0;
-    padding-block-end: 16px;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-block-end: 16px;
+  width: 100%;
 }
 
 .landing-banner-lifestyle-copy ul ::marker {
-    font-size: 0;
+  font-size: 0;
 }
 
 .landing-banner-lifestyle-copy li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-block: 0 16px;
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-block: 0 16px;
 }
 
 .landing-banner-lifestyle-copy__main {
-    background-color: var(--color-background-secondary);
-    padding: 32px 24px 48px 24px;
+  background-color: var(--color-background-secondary);
+  padding: 32px 24px 48px;
 }
 
 .landing-banner-lifestyle-copy__main .fake-btn {
-    margin-block-start: 24px;
+  margin-block-start: 24px;
 }
 
 .landing-banner-lifestyle-copy__secondary {
-    background-color: var(--color-background-accent);
-    color: var(--color-foreground-on-inverse);
-    padding: 96px 84px;
+  background-color: var(--color-background-accent);
+  color: var(--color-foreground-on-inverse);
+  padding: 96px 84px;
 }
 
 .landing-banner-lifestyle-copy__secondary h3 {
-    color: var(--color-foreground-on-inverse);
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: var(--spacing-sm);
+  color: var(--color-foreground-on-inverse);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  margin-top: 0;
 }
 
 .landing-banner-lifestyle-copy__highlights {
-    display: grid;
-    gap: 32px;
-    grid-template-columns: 1fr;
-    padding: 16px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+  padding: 16px;
 }
 
 .landing-banner-lifestyle-copy__highlight {
-    align-items: flex-start;
-    color: var(--color-foreground-tertiary);
-    display: flex;
-    gap: 16px;
+  align-items: flex-start;
+  color: var(--color-foreground-tertiary);
+  display: flex;
+  gap: 16px;
 }
 
 .landing-banner-lifestyle-copy__highlight-icon {
-    align-items: center;
-    background-color: var(--color-background-tertiary);
-    border-radius: 12px;
-    display: flex;
-    flex-shrink: 0;
-    height: 3rem;
-    justify-content: center;
-    width: 3rem;
+  align-items: center;
+  background-color: var(--color-background-tertiary);
+  border-radius: 12px;
+  display: flex;
+  flex-shrink: 0;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
 }
 
 .landing-banner-lifestyle-copy__highlight-icon svg {
-    color: var(--color-foreground-primary);
-    height: 24px;
-    width: 24px;
+  color: var(--color-foreground-primary);
+  height: 24px;
+  width: 24px;
 }
 
 @media (min-width: 512px) {
-    .landing-info-container__item {
-        flex-direction: column;
-        flex: 1 1 360px;
-    }
+  .landing-info-container__item {
+    flex: 1 1 360px;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 768px) {
-    .landing-info-container__item {
-        flex: 1 1;
-        gap: 32px;
-        // margin-block-end: 72px;
-        padding-block: 64px;
-        padding-inline: 32px;
-    }
+  .landing-info-container__item {
+    flex: 1 1;
+    gap: 32px;
 
-    .landing-info-container__item_body {
-        gap: 16px;
-    }
+    // margin-block-end: 72px;
+    padding-block: 64px;
+    padding-inline: 32px;
+  }
 
-    .landing-hero-text-banner {
-        padding: 84px;
-        margin-block: 16px 64px;
-    }
+  .landing-info-container__item_body {
+    gap: 16px;
+  }
 
-    .landing-hero-text-banner h1 {
-        font-size: 46px;
-        margin: 0;
-        margin-block-end: 12px;
-    }
+  .landing-hero-text-banner {
+    margin-block: 16px 64px;
+    padding: 84px;
+  }
 
-    .landing-title {
-        margin-block-end: 40px;
-    }
+  .landing-hero-text-banner h1 {
+    font-size: 46px;
+    margin: 0;
+    margin-block-end: 12px;
+  }
 
-    .landing-title h2 {
-        font-size: 30px;
-    }
+  .landing-title {
+    margin-block-end: 40px;
+  }
 
-    .landing-banner-product-4up {
-        margin-block-end: 48px;
-    }
+  .landing-title h2 {
+    font-size: 30px;
+  }
 
-    .landing-banner-product-4up > h2 {
-        font-size: 24px;
-        font-weight: var(--font-weight-bold);
-        padding-block: 0 8px;
-    }
+  .landing-banner-product-4up {
+    margin-block-end: 48px;
+  }
 
-    .landing-banner-product-4up > p {
-        font-size: 16px;
-        color: var(--color-foreground-secondary);
-    }
+  .landing-banner-product-4up > h2 {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    padding-block: 0 8px;
+  }
 
-    .landing-banner-product-4up > p:last-of-type {
-        margin-block-end: 40px;
-    }
+  .landing-banner-product-4up > p {
+    color: var(--color-foreground-secondary);
+    font-size: 16px;
+  }
 
-    .landing-banner-product-4up__items {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .landing-banner-product-4up > p:last-of-type {
+    margin-block-end: 40px;
+  }
 
-    .landing-banner-product-4up__item {
-        padding: 32px;
-    }
+  .landing-banner-product-4up__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .landing-banner-product-4up__item h3 {
-        font-size: 24px;
-        margin-block-end: 16px;
-    }
+  .landing-banner-product-4up__item {
+    padding: 32px;
+  }
 
-    .landing-banner-product-4up__item .btn,
-    .landing-banner-product-4up__item .fake-btn {
-        margin-block-start: 24px;
-    }
+  .landing-banner-product-4up__item h3 {
+    font-size: 24px;
+    margin-block-end: 16px;
+  }
 
-    .landing-banner-lifestyle-copy {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .landing-banner-product-4up__item .btn,
+  .landing-banner-product-4up__item .fake-btn {
+    margin-block-start: 24px;
+  }
 
-    .landing-banner-lifestyle-copy__main {
-        padding: 96px 84px;
-    }
+  .landing-banner-lifestyle-copy {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-banner-lifestyle-copy__main {
+    padding: 96px 84px;
+  }
 }

@@ -13,7 +13,6 @@ const configFilePath = path.resolve(
     "../",
     "../",
     "src",
-    "components",
     "data",
     "icons.json",
 );

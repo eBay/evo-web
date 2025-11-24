@@ -1,21 +1,81 @@
-import { components, componentTemplate } from "../../components/components.marko";
-import componentMetadata from '../static/data/component-metadata.json' with { type: 'json' };
-import path from "path";
+import { components, componentTemplate } from "../../tags/components.marko";
+import componentMetadata from "../static/data/component-metadata.json" with { type: "json" };
+server import path from "path";
+static const componentMetas = import.meta.glob("./*/+meta.json", {
+    eager: true,
+});
+<style.scss>
+    main ul.components-list {
+        container-type: inline-size;
+        container-name: components-list;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-static const componentMetas = import.meta.glob(
-    "./*/+meta.json",
-    { eager: true }
-);
+    main svg.image-placeholder {
+        aspect-ratio: 16 / 9;
+    }
+
+    .card {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-0.25rem);
+        transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(0);
+    }
+
+    .card:hover {
+        box-shadow: var(--shadow-sm);
+        transform: translateY(0.25rem);
+    }
+
+    .card__description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card__footer {
+        margin-block-start: var(--spacing-150);
+    }
+
+    .component-version {
+        background-color: var(--color-background-primary);
+        border-radius: 5px;
+        color: var(--color-foreground-secondary);
+        font-size: 0.75rem;
+        margin-inline-end: 10px;
+        padding: 3px 6px;
+    }
+
+    @container components-list (min-width: 480px) {
+        main li {
+            width: calc(100% / 2 - 14px);
+        }
+    }
+
+    @container components-list (min-width: 700px) {
+        main li {
+            width: calc(100% / 3 - 14px);
+        }
+    }
+</style>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="image-placeholder" viewBox="0 0 24 24">
         <rect width="24" height="24" fill="#e0e0e0"/>
-        <text x="12" y="12" text-anchor="middle" fill="#9e9e9e" font-size="12">Image</text>
+        <text x="12" y="12" text-anchor="middle" fill="#9e9e9e" font-size="12">
+            Image
+        </text>
     </symbol>
     <symbol id="information-filled-16" viewBox="0 0 16 16">
-        <path
-            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 11a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v3ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-        />
+        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 11a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v3ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
     </symbol>
 </svg>
 
@@ -24,15 +84,19 @@ static const componentMetas = import.meta.glob(
 
     <ul class="components-list">
         <for|key, folder| in=components>
-            $ {
+            <const/componentInfo=(() => {
                 const componentName = path.basename(folder);
-                const rawName = componentName.replace(/-([a-z])/g, function (g) {
-                    return ` ${g[1].toUpperCase()}`;
-                });
-                const properName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+                const rawName = componentName.replace(
+                    /-([a-z])/g,
+                    function (g) {
+                        return ` ${g[1].toUpperCase()}`;
+                    },
+                );
+                const properName =
+                    rawName.charAt(0).toUpperCase() + rawName.slice(1);
                 const metaPath = `./${componentName}/+meta.json`;
                 const metadataPath = `./${componentName}/metadata.json`;
-                
+
                 // Get legacy meta data for page info (title, description, image)
                 let metaData = componentMetas[metaPath];
                 if (metaData) {
@@ -46,17 +110,17 @@ static const componentMetas = import.meta.glob(
                         };
                     }
                 }
-                
+
                 // Get new metadata structure for version info
                 let componentData = componentMetadata[componentName];
                 if (componentData && componentData.default) {
                     componentData = componentData.default;
                 }
-                
+
                 // Extract version information from new metadata structure
                 const dsComponent = componentData?.["ds-component"];
-                
-                const componentInfo = {
+
+                return {
                     name: componentName,
                     properName: properName,
                     folder: folder,
@@ -65,47 +129,54 @@ static const componentMetas = import.meta.glob(
                     staticVersion: dsComponent?.cssVersion,
                     markoVersion: dsComponent?.markoVersion,
                     reactVersion: dsComponent?.reactVersion,
-                    hasVersions: Boolean(dsComponent && (dsComponent.cssVersion || dsComponent.markoVersion || dsComponent.reactVersion))
+                    hasVersions: Boolean(
+                        dsComponent &&
+                            (dsComponent.cssVersion ||
+                                dsComponent.markoVersion ||
+                                dsComponent.reactVersion),
+                    ),
                 };
-            }
-            <if(componentInfo)>
+            })()>
+            <if=componentInfo>
                 <li>
-                    <a href=`component/${componentInfo.name}` class="card card--aspect-16-9  module-link">
+                    <a
+                        href=`component/${componentInfo.name}`
+                        class="card card--aspect-16-9  module-link">
                         <div class="card__media">
-                            <if(componentInfo.meta.pageImg)>
+                            <if=(componentInfo.meta.pageImg)>
                                 <img
                                     src=`${componentInfo.meta.pageImg}`
                                     alt="Component image"
-                                    class="card__hero-image"
-                                />
+                                    class="card__hero-image">
                             </if>
                             <else>
                                 <svg
                                     aria-label="image not found"
                                     class="image-placeholder .card__hero-image"
-                                    role="img"
-                                    >
-                                    <use href="#image-placeholder" />
+                                    role="img">
+                                    <use href="#image-placeholder"/>
                                 </svg>
                             </else>
                         </div>
                         <div class="card__main">
-                            <h2 class="card__title">${componentInfo.properName}</h2>
+                            <h2 class="card__title">
+                                ${componentInfo.properName}
+                            </h2>
                             <div class="card__description">
                                 ${componentInfo.meta?.pageDescription || "TBD"}
                             </div>
                             <div class="card__footer">
-                                <if(componentInfo.staticVersion)>
+                                <if=componentInfo.staticVersion>
                                     <span class="component-version">
                                         CSS v${componentInfo.staticVersion}
                                     </span>
                                 </if>
-                                <if(componentInfo.markoVersion)>
+                                <if=componentInfo.markoVersion>
                                     <span class="component-version">
                                         Marko v${componentInfo.markoVersion}
                                     </span>
                                 </if>
-                                <if(componentInfo.reactVersion)>
+                                <if=componentInfo.reactVersion>
                                     <span class="component-version">
                                         React v${componentInfo.reactVersion}
                                     </span>
@@ -117,5 +188,4 @@ static const componentMetas = import.meta.glob(
             </if>
         </for>
     </ul>
-
 </main>
