@@ -1,5 +1,5 @@
 <div id="star-rating-select">
-    <section-header metadata=metadata/>
+    <section-header/>
 
     <h3>Star Rating Select with Visual Semantic Grouping</h3>
     <p>
@@ -348,7 +348,6 @@
 </div>
 export const metadata = {
     component: "star-rating-select",
-    component: "star-rating-select",
     "ds-component": {
         name: "review-input",
         version: 1,
@@ -359,8 +358,8 @@ export const metadata = {
     document
         .querySelectorAll(".star-rating-select")
         .forEach(function (widgetEl) {
-            widgetEl.addEventListener("change", function (e) {
-                const selectedIndex = e.target.value - 1;
+            widgetEl.addEventListener("change", function (e:Event) {
+                const selectedIndex = parseInt((e.target as HTMLInputElement).value) - 1;
                 widgetEl
                     .querySelectorAll("input")
                     .forEach(function (inputEl, index) {

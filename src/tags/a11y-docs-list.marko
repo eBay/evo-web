@@ -1,28 +1,38 @@
 server import path from "path";
+export interface Input {
+    a11yDocs: { [key: string]: string[] };
+}
 
 <for|folder, files| in=input.a11yDocs>
-    <const/folderName = folder.split('/').pop() || 'Root'>
-    <const/displayName = folderName.replace(/-([a-z])/g, function (g) {
+    <const/folderName=((folder as string).split("/").pop() || "Root")>
+    <const/displayName=folderName.replace(/-([a-z])/g, function (g:string) {
         return ` ${g[1].toUpperCase()}`;
     })>
-    <const/properFolderName = displayName.charAt(0).toUpperCase() + displayName.slice(1)>
+    <const/properFolderName=(
+        displayName.charAt(0).toUpperCase() + displayName.slice(1)
+    )>
 
     <li>
         <h3>${properFolderName}</h3>
         <ul>
             <for|filePath| of=files>
-                <const/docName = path.basename(filePath, ".md")>
-                <const/name = docName.replace(/-([a-z])/g, function (g) {
+                <const/docName=path.basename(filePath, ".md")>
+                <const/name=docName.replace(/-([a-z])/g, function (g) {
                     return ` ${g[1].toUpperCase()}`;
                 })>
-                <const/properName = name.charAt(0).toUpperCase() + name.slice(1)>
-
+                <const/properName=(
+                    name.charAt(0).toUpperCase() + name.slice(1)
+                )>
                 // Extract the folder name after "patterns/"
-                <const/folderName = folder.split('/').pop() || ''>
+                <const/folderName=((folder as string).split("/").pop() || "")>
 
-                <const/isComponentPattern = folderName === 'component-patterns'>
+                <const/isComponentPattern=folderName === "component-patterns">
 
-                <const/link = isComponentPattern ? `/component/${docName}/accessibility` : `/accessibility/${folderName}/${docName}`>
+                <const/link=(
+                    isComponentPattern
+                        ? `/component/${docName}/accessibility`
+                        : `/accessibility/${folderName}/${docName}`
+                )>
 
                 <li>
                     <a href=link class="nav-link" role="menuitem">

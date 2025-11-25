@@ -1,7 +1,15 @@
+import { type IconsData, type Icon } from "src/data/icons";
+export interface Input {
+    list?: Icon[];
+    icons: IconsData["icons"];
+}
 <ul class="demo-icon-boxes demo-icon-boxes--deprecated">
     <for|icon| of=(input.icons.deprecated)>
-        <const/containerClass = input.icons.largeDocs.indexOf(icon.name) !== -1 ? "demo-icon-box demo-icon-box--large" : "demo-icon-box">
-        <const/iconClass = `${icon.name}${icon.postfix || ""}`>
+        <const/containerClass=(
+            input.icons.largeDocs.indexOf(icon.name) !== -1
+                ? "demo-icon-box demo-icon-box--large"
+                : "demo-icon-box"
+        )>
 
         <li class=containerClass>
             <span>${icon.name}</span>
@@ -11,14 +19,11 @@
                     input.icons.prefix,
                     `${input.icons.prefix}--${icon.size}`,
                 ]
-                height=icon.height | 24
-                width=icon.width | 24
-            >
+                height=icon.height || 24
+                width=icon.width || 24>
                 <icon-symbol
                     name=icon.name
-                    prefix=(input.icons.prefix)
-                    postfix=(input.icons.postfix)
-                />
+                    prefix=(input.icons.prefix)/>
             </svg>
         </li>
     </for>

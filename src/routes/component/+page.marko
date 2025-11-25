@@ -1,5 +1,5 @@
-import { components, componentTemplate } from "../../tags/components.marko";
-import componentMetadata from "../static/data/component-metadata.json" with { type: "json" };
+import { components, properNameMap } from "../../tags/components.marko";
+import componentMetadata from "../static/data/component-metadata";
 server import path from "path";
 static const componentMetas = import.meta.glob("./*/+meta.json", {
     eager: true,
@@ -67,7 +67,7 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
     }
 </style>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg style="display: none;">
     <symbol id="image-placeholder" viewBox="0 0 24 24">
         <rect width="24" height="24" fill="#e0e0e0"/>
         <text x="12" y="12" text-anchor="middle" fill="#9e9e9e" font-size="12">
@@ -85,20 +85,18 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
     <ul class="components-list">
         <for|key, folder| in=components>
             <const/componentInfo=(() => {
-                const componentName = path.basename(folder);
-                const rawName = componentName.replace(
-                    /-([a-z])/g,
-                    function (g) {
-                        return ` ${g[1].toUpperCase()}`;
-                    },
-                );
-                const properName =
-                    rawName.charAt(0).toUpperCase() + rawName.slice(1);
+                const componentName = path.basename(folder as string);
+                const properName = properNameMap[componentName]
                 const metaPath = `./${componentName}/+meta.json`;
-                const metadataPath = `./${componentName}/metadata.json`;
+                const metadataPath = `./${componentName}/metadata`;
 
                 // Get legacy meta data for page info (title, description, image)
-                let metaData = componentMetas[metaPath];
+                let metaData = componentMetas[metaPath] as {
+                    default?: any;
+                    pageTitle?: string;
+                    pageDescription?: string;
+                    pageImg?: string;
+                };
                 if (metaData) {
                     if (metaData.default) {
                         metaData = metaData.default;
@@ -111,11 +109,10 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
                     }
                 }
 
-                // Get new metadata structure for version info
-                let componentData = componentMetadata[componentName];
-                if (componentData && componentData.default) {
-                    componentData = componentData.default;
-                }
+                const componentData = componentMetadata[componentName];
+                // if (componentData?.default) {
+                //     componentData = componentData.default;
+                // }
 
                 // Extract version information from new metadata structure
                 const dsComponent = componentData?.["ds-component"];

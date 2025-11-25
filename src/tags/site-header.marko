@@ -3,7 +3,7 @@ import pkg from "../../package.json";
 import { components } from "./components.marko";
 import { a11yDocs } from "../routes/a11y-docs.js";
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg style="display: none;">
     <symbol viewBox="0 0 24 24" id="site-logo">
         <polyline points="16 18 22 12 16 6"/>
         <polyline points="8 6 2 12 8 18"/>
@@ -82,7 +82,7 @@ import { a11yDocs } from "../routes/a11y-docs.js";
                         <div class="nav__brand">
                             <div class="nav__logo">
                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
+
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
@@ -125,7 +125,7 @@ import { a11yDocs } from "../routes/a11y-docs.js";
                                 aria-label="Evo Web GitHub"
                                 target="_blank">
                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
+
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
@@ -400,11 +400,11 @@ import { a11yDocs } from "../routes/a11y-docs.js";
 
 <script>
     const sPrimaryNavClass = "glass";
-    const elBody = document.querySelector("body");
-    const navButton = document.getElementById("mobile-nav-toggle");
-    const primaryNavWrapper = document.querySelector(".primary-nav-wrapper");
-    const primaryNavMobilePanel = document.getElementById("site-nav-mobile-panel");
-    const primaryNavMobilePanelCloser = primaryNavMobilePanel.querySelector(".panel-dialog__close");
+    const elBody = document.querySelector("body")!;
+    const navButton = document.getElementById("mobile-nav-toggle")!;
+    const primaryNavWrapper = document.querySelector(".primary-nav-wrapper")!;
+    const primaryNavMobilePanel = document.getElementById("site-nav-mobile-panel")!;
+    const primaryNavMobilePanelCloser = primaryNavMobilePanel?.querySelector(".panel-dialog__close")!;
     const listItems = primaryNavMobilePanel.querySelectorAll("li a");
 
     function openNavigation() {
@@ -427,7 +427,7 @@ import { a11yDocs } from "../routes/a11y-docs.js";
     }
 
     // This function closes an open primaryNav if a user tabs away from the last anchor element in the list. It is reliant on the ul container having a class to check whether the relatedTarget is within the primaryNav. If not, it will close.
-    function handleBlur() {
+    function handleBlur(event:any) {
         const navList = event.currentTarget.closest(".app-bar__links");
         if (!event.relatedTarget || !navList.contains(event.relatedTarget)) {
             closeNavigation();

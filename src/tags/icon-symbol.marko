@@ -1,3 +1,11 @@
+export interface Input {
+    prefix?: string;
+    type?: string;
+    classNames?: Marko.HTMLAttributes["class"];
+    name?: string;
+    postfix?: string;
+    file?: string;
+}
 <const/prefix = input.prefix || input.type || "icon">
 
 <use

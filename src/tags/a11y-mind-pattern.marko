@@ -5,6 +5,10 @@ static const md = markdownit({
     html: true,
 });
 
+export interface Input {
+    pattern: string;
+}
+
 <const/a11yMindPatternHTML=(() => {
     // Get the a11y MIND pattern, read its contents, and convert to HTML
     const pattern = input.pattern;

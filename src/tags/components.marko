@@ -1,12 +1,37 @@
-server import path from "path";
-import flags from "../data/flags.json";
-import icons from "../data/icons.json";
+import flags from "../data/flags";
+import icons from "../data/icons";
 static const componentTemplate = import.meta.glob(
-    "../routes/component/*/+page.marko",
-    { eager: true },
+  "../routes/component/*/+page.marko",
+  { eager: true },
 );
 static const components = Object.keys(componentTemplate).map((filePath) => {
-    const parts = filePath.split("/");
-    return parts.slice(0, parts.length - 1).join("/");
-});
-export { components, componentTemplate, flags, icons };
+  const parts = filePath.split("/");
+  return parts.slice(0, parts.length - 1).join("/");
+}) as string[];
+static const properNameMap = components.reduce<{ [key: string]: string }>(
+  (nameMapper, comp) => {
+    const componentName = getFileNameWithoutExtension(comp);
+    const name = componentName.replace(/-([a-z])/g, function (g) {
+      return ` ${g[1].toUpperCase()}`;
+    });
+    const properName = name.charAt(0).toUpperCase() + name.slice(1);
+    nameMapper[componentName] = properName;
+    return nameMapper;
+  },
+  {},
+);
+static function getFileNameWithoutExtension(filePath: string) {
+  const lastIndex = filePath.lastIndexOf("/");
+  const file = lastIndex !== -1 ? filePath.substring(lastIndex + 1) : filePath;
+
+  const lastDotIndex = file.lastIndexOf(".");
+  return lastDotIndex !== -1 ? file.substring(0, lastDotIndex) : file;
+}
+export {
+  getFileNameWithoutExtension,
+  components,
+  properNameMap,
+  componentTemplate,
+  flags,
+  icons,
+};

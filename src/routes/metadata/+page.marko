@@ -4,7 +4,7 @@ import {
 } from "../component-utils.js";
 
 <const/metadata=(() => {
-    const metadata = {};
+    const metadata: { [key: string]: any } = {};
     for (let componentName of getAllComponentNames()) {
         metadata[componentName] = getEnhancedComponentMetadata(componentName);
     }

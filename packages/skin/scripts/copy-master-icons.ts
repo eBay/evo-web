@@ -8,7 +8,7 @@ export async function copyMasterIcons() {
     const file = await fs.promises.readFile(svgIcon, "utf8");
     const regex = /<\?xml[^>]*\?>\n/;
 
-    const newOutput = file.replace(regex, "");
+    const newOutput = file.replace(regex, "").replace(" xmlns=\"http://www.w3.org/2000/svg\"", "");
 
     await fs.promises.writeFile(masterIconsDir, newOutput);
 }

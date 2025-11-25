@@ -1,5 +1,5 @@
 // Function to convert URL segments to readable labels
-<const/formatBreadcrumbLabel = (segment) => {
+<const/formatBreadcrumbLabel = (segment:string) => {
     return segment
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -11,8 +11,6 @@
     let currentPath = "";
     if (typeof window !== "undefined") {
         currentPath = window.location.pathname;
-    } else if ($global?.route?.pathname) {
-        currentPath = $global.route.pathname;
     } else if ($global?.url) {
         // If we have a full URL, extract just the pathname
         try {

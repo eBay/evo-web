@@ -1,8 +1,8 @@
 import * as prettier from "prettier/standalone";
 import * as prettierPluginBabel from "prettier/plugins/babel";
-import * as prettierPluginEstree from "prettier/plugins/estree";
 import * as prettierPluginHtml from "prettier/plugins/html";
 import * as prettierPluginYaml from "prettier/plugins/yaml";
+import * as prettierPluginEstree from "prettier/plugins/estree";
 import * as prettierPluginCss from "prettier/plugins/postcss";
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
@@ -19,17 +19,25 @@ static const languageMap = {
     js: "javascript",
     html: "html",
     json: "json",
+    css: "",
 };
+export interface Input {
+    type: "js" | "css" | "html" | "json";
+    height?: number;
+    code?: string;
+    bodyCode?: string;
+    content?: Marko.Body
+}
+
 <const/parser=(input.type === "js" ? "babel" : input.type || "html")>
-<const/height=input.height || 400>
 <const/code=input.code || input.bodyCode || "">
 <const/promise=prettier.format(code.trim(), {
     parser,
     plugins: [
         prettierPluginBabel,
-        prettierPluginEstree,
         prettierPluginHtml,
         prettierPluginYaml,
+        prettierPluginEstree as any,
         prettierPluginCss,
     ],
 })>

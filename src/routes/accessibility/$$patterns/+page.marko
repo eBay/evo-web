@@ -16,7 +16,7 @@ import markdown from "markdown-it";
             const mdFilePath = path.join(docsRoot, patternPath + ".md");
             const content = fs.readFileSync(mdFilePath, "utf-8");
             markdownContent = md.render(content);
-        } catch (error) {
+        } catch (error:any) {
             hasError = true;
             if (error.code === "ENOENT") {
                 errorMessage = `404: Accessibility pattern "${patternPath}" not found`;

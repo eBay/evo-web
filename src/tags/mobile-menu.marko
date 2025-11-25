@@ -1,8 +1,9 @@
 import siteMeta from "../data/site.json";
 import pkg from "../../package.json";
-import { components } from "./components.marko";
+import { components } from "/components.marko";
+import { FocusEvent } from "react";
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<svg style="display: none;">
     <symbol viewBox="0 0 20 20" id="icon-menu-20"><path fill-rule="evenodd" d="M2 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path></symbol>
 
     <symbol viewBox="0 0 20 20" id="icon-close-20"><path fill-rule="evenodd" d="M3.293 3.293a1 1 0 0 1 1.414 0L10 8.586l5.293-5.293a1 1 0 1 1 1.414 1.414L11.414 10l5.293 5.293a1 1 0 0 1-1.414 1.414L10 11.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L8.586 10 3.293 4.707a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path></symbol>
@@ -287,12 +288,12 @@ import { components } from "./components.marko";
 </div>
 
 <script>
-    const elBody = document.querySelector("body");
-    const navButton = document.getElementById("mobile-nav-toggle");
-    const primaryNav = document.getElementById("primary-nav");
-    const primaryNavMobilePanel = document.getElementById("site-nav-mobile-panel");
-    const primaryNavMobilePanelCloser = primaryNavMobilePanel.querySelector(".panel-dialog__close");
-    const listItems = primaryNav.querySelectorAll("li a");
+    const elBody = document.querySelector("body")!;
+    const navButton = document.getElementById("mobile-nav-toggle")!;
+    const primaryNav = document.getElementById("primary-nav")!;
+    const primaryNavMobilePanel = document.getElementById("site-nav-mobile-panel")!;
+    const primaryNavMobilePanelCloser = primaryNavMobilePanel.querySelector(".panel-dialog__close")!;
+    const listItems = primaryNav.querySelectorAll("li a")!;
 
     function openNavigation() {
         navButton.setAttribute("aria-expanded", "true");
@@ -312,8 +313,8 @@ import { components } from "./components.marko";
     }
 
     // This function closes an open primaryNav if a user tabs away from the last anchor element in the list. It is reliant on the ul container having a class to check whether the relatedTarget is within the primaryNav. If not, it will close.
-    function handleBlur() {
-        const navList = event.currentTarget.closest(".app-bar__links");
+    function handleBlur(event:any) {
+        const navList = event.currentTarget.closest(".app-bar__links")!;
         if (!event.relatedTarget || !navList.contains(event.relatedTarget)) {
             closeNavigation();
         }

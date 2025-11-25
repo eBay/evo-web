@@ -1,5 +1,5 @@
 <div id="filter-input">
-    <section-header metadata=metadata/>
+    <section-header/>
 
     <h2>Default Filter Input</h2>
     <p>
@@ -274,8 +274,8 @@ export const metadata = {
 
 <script>
     document.querySelectorAll(".filter-input").forEach(function (compEl) {
-        const compInputEl = compEl.querySelector(".textbox__control");
-        const compClearBtnEl = compEl.querySelector(".filter-input__clear-btn");
+        const compInputEl = compEl.querySelector(".textbox__control") as HTMLInputElement;
+        const compClearBtnEl = compEl.querySelector(".filter-input__clear-btn")!;
         const inputFilledClass = "filter-input--is-filled";
 
         compClearBtnEl.addEventListener("click", function () {

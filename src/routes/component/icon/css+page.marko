@@ -1,6 +1,6 @@
-import iconJSON from "../../../data/icons.json";
+import iconJSON from "../../../data/icons";
 <div id="icon">
-    <section-header metadata=metadata/>
+    <section-header/>
 
     <h3>Base Icons Only</h3>
     ${" "}Only base icons should be used. No state-based icons, such as disabled icons or even possibly an icon relaying an error state (likely red), should be used. Those state modifications on icons should be handled downstream using${" "}
@@ -322,7 +322,7 @@ import iconJSON from "../../../data/icons.json";
             </div>
         </section>
 
-        <icon-list icons=($global.meta.icons) list=deprecatedIcons/>
+        <icon-list icons=iconJSON.icons list=deprecatedIcons/>
     </if>
 </div>
 export const metadata = {

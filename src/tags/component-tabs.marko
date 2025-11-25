@@ -1,5 +1,7 @@
 import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.js";
-
+export interface Input {
+    content?: Marko.Body;
+}
 <const/DSUrlRoot="https://playbook.ebay.com/design-system/components/">
 <const/EvoCssStorybookUrlRoot="https://opensource.ebay.com/evo-web/skin/storybook/?path=">
 <const/EvoMarkoStorybookUrlRoot="https://opensource.ebay.com/evo-web/ebayui-core/?path=">
@@ -11,7 +13,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
 }=getEnhancedComponentMetadataFromUrl($global.url.pathname)>
 
 <if=componentData>
-    <const/versions=componentData.versions || {}>
+    <const/versions=componentData.versions>
     <const/DSUrl=componentData.primaryUrl || DSUrlRoot>
     <const/EvoCssStorybookUrl=(
         componentData.cssStorybookPath
@@ -29,7 +31,7 @@ import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.j
             : EvoReactStorybookUrlRoot
     )>
 
-    <const/getAriaCurrentValue(tabName) {
+    <const/getAriaCurrentValue(tabName: string) {
         return currentTab === tabName ? "page" : undefined;
     }>
     <div class="component-page">

@@ -79,6 +79,8 @@
     "@testing-library/react": "^16",
     "@testing-library/user-event": "^14",
     "@types/jest": "^30.0.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/prismjs": "^1.26.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8",

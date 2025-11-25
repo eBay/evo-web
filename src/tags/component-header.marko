@@ -1,14 +1,15 @@
-<const metadata=input.metadata || {}>
-<const/componentName=metadata["name"] || {}>
-<const/currentComponent=metadata["ds-component"] || {}>
-<const/dsComponent=(
-    currentComponent.length > 0
-        ? (currentComponent = currentComponent[0])
-        : currentComponent
-)>
-<const/properName=(
-    componentName.charAt(0).toUpperCase() + componentName.slice(1)
-)>
+import { type ComponentMetadata } from "src/routes/static/data/component-metadata";
+export interface Input {
+    metadata?: ComponentMetadata;
+    alpha?: "true";
+    beta?: "true";
+    header?: string;
+}
+
+<const/metadata=(input.metadata || {} as ComponentMetadata)>
+<const/skinComponent=metadata["component"] || ''>
+<const/dsComponent=metadata["ds-component"] || {}>
+<const/properName=`${skinComponent.charAt(0).toUpperCase()}${skinComponent.slice(1)}`>
 <define/Body>
     ${properName} Component${" "}
     <if=input.beta === "true">

@@ -1,10 +1,14 @@
-<const/metadata=input.metadata || {}>
-<const/skinComponent=metadata["component"] || {}>
-<const/currentComponent=metadata["ds-component"] || {}>
-<const/dsComponent=(
-    currentComponent.length > 0 ? currentComponent[0] : currentComponent
-)>
-<const/properName=`${skinComponent.charAt(0).toUpperCase()}${skinComponent.slice(1)}`>
+import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.js";
+
+<const/{
+    componentName,
+    componentData,
+    currentTab,
+    properName,
+}=getEnhancedComponentMetadataFromUrl($global.url.pathname)>
+export interface Input {
+    header?: string;
+}
 
 <style>
     .component-header {
@@ -25,12 +29,6 @@
 </style>
 <define/Body>
     ${properName} Component${" "}
-    <if=input.beta === "true">
-        <sup>BETA</sup>
-    </if>
-    <else if=input.alpha === "true">
-        <sup>ALPHA</sup>
-    </else>
 </define>
 <div class="component-header">
     <if=input.header === "h3">
@@ -48,15 +46,11 @@
             <Body/>
         </h1>
     </else>
-    // TODO
-    // This no longer should show up at the top since it's Skin specific versioning. It needs to be moved to the Skin tab content file.
-    // <span class="section-header__version">
-    //     DS v${dsComponent?.version || metadata.version}
-    // </span>
+
     <span class="component-header__link">
 
         <a
-            href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
+            href=`${componentData?.urls || "https://playbook.ebay.com/design-system/components/"}`
             target="_blank">
             <svg
                 class="icon icon--16"
