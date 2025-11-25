@@ -1,13 +1,24 @@
 import flags from "../data/flags";
 import icons from "../data/icons";
+import componentMetadata, {
+  type ComponentMetadata,
+  type DsComponent,
+} from "../data/component-metadata";
+static const basePath = import.meta.env.BASE_URL;
 static const componentTemplate = import.meta.glob(
   "../routes/component/*/+page.marko",
   { eager: true },
 );
+/**
+ * List of all components. This takes all components and creates a url lookup for them
+ */
 static const components = Object.keys(componentTemplate).map((filePath) => {
   const parts = filePath.split("/");
   return parts.slice(0, parts.length - 1).join("/");
 }) as string[];
+/**
+ * List of all component names. Key is the non formatted name (dash case in url)
+ */
 static const properNameMap = components.reduce<{ [key: string]: string }>(
   (nameMapper, comp) => {
     const componentName = getFileNameWithoutExtension(comp);
@@ -20,6 +31,9 @@ static const properNameMap = components.reduce<{ [key: string]: string }>(
   },
   {},
 );
+/**
+ * Helper method to basically do path.basename on client
+*/
 static function getFileNameWithoutExtension(filePath: string) {
   const lastIndex = filePath.lastIndexOf("/");
   const file = lastIndex !== -1 ? filePath.substring(lastIndex + 1) : filePath;
@@ -27,11 +41,68 @@ static function getFileNameWithoutExtension(filePath: string) {
   const lastDotIndex = file.lastIndexOf(".");
   return lastDotIndex !== -1 ? file.substring(0, lastDotIndex) : file;
 }
+static function getMetadata(componentName: string) {
+  const metadata = componentMetadata[componentName];
+
+  if (!metadata) {
+    return {};
+  }
+
+  const dsInfo = metadata?.["ds-component"] || {};
+  const dsComponent = Array.isArray(dsInfo) ? dsInfo[0] : dsInfo;
+  const properName = properNameMap[componentName];
+
+  return {
+    metadata,
+    properName,
+    componentUrls: getComponentUrls(componentName, metadata, dsComponent),
+    dsComponent,
+  };
+}
+static function getMetadataFromUrl(url: string) {
+  const paths = url.split("/");
+  let componentName = paths.pop()!;
+  let currentTab = "overview";
+  let componentData = getMetadata(componentName);
+  if (!componentData.metadata) {
+    currentTab = componentName;
+    componentName = paths.pop()!;
+    componentData = getMetadata(componentName);
+  }
+
+console.log(componentName, componentData)
+  return {
+    ...componentData,
+    currentTab,
+    componentName,
+  };
+}
+static function getComponentUrls(
+  componentName: string,
+  metadata: ComponentMetadata,
+  dsComponent: DsComponent,
+) {
+  const componentUrl = `${basePath}component/${componentName}/`;
+
+  return {
+    overview: `${componentUrl}`,
+    accessibility: `${componentUrl}accessibility/`,
+    css: `${componentUrl}css/`,
+    marko: `${basePath}ebayui-core/?path=${metadata.markoStorybookPath}`,
+    react: `${basePath}ebayui-core-react/main/?path=${metadata.reactStorybookPath}`,
+    dsUrl:
+      dsComponent.url || "https://playbook.ebay.com/design-system/components/",
+  };
+}
 export {
+  basePath,
   getFileNameWithoutExtension,
+  getMetadataFromUrl,
+  getMetadata,
   components,
   properNameMap,
   componentTemplate,
   flags,
   icons,
+  componentMetadata,
 };

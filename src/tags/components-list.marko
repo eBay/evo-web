@@ -1,15 +1,16 @@
-import { properNameMap, getFileNameWithoutExtension } from "./components.marko";
-
+import { getFileNameWithoutExtension, getMetadata } from "./components.marko";
 export interface Input {
     components: string[];
 }
 
 <for|comp| of=input.components>
     <const/componentName=getFileNameWithoutExtension(comp)>
-    <const/properName = properNameMap[componentName]>
-    <li>
-        <a href=`component/${componentName}` class="nav-link" role="menuitem">
-            ${properName}
-        </a>
-    </li>
+    <const/{ properName, componentUrls }=getMetadata(componentName)>
+    <if=properName>
+        <li>
+            <a href=componentUrls?.overview class="nav-link" role="menuitem">
+                ${properName}
+            </a>
+        </li>
+    </if>
 </for>

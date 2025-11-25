@@ -1,4 +1,4 @@
-import { components, properNameMap } from "../../tags/components.marko";
+import { components, basePath, properNameMap, getMetadata } from "../../tags/components.marko";
 import componentMetadata from "../static/data/component-metadata";
 server import path from "path";
 static const componentMetas = import.meta.glob("./*/+meta.json", {
@@ -86,9 +86,7 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
         <for|key, folder| in=components>
             <const/componentInfo=(() => {
                 const componentName = path.basename(folder as string);
-                const properName = properNameMap[componentName]
                 const metaPath = `./${componentName}/+meta.json`;
-                const metadataPath = `./${componentName}/metadata`;
 
                 // Get legacy meta data for page info (title, description, image)
                 let metaData = componentMetas[metaPath] as {
@@ -109,35 +107,26 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
                     }
                 }
 
-                const componentData = componentMetadata[componentName];
-                // if (componentData?.default) {
-                //     componentData = componentData.default;
-                // }
+                const {dsComponent, componentUrls, properName} = getMetadata(componentName);
 
-                // Extract version information from new metadata structure
-                const dsComponent = componentData?.["ds-component"];
 
                 return {
                     name: componentName,
                     properName: properName,
+                    componentUrls,
                     folder: folder,
                     meta: metaData || {},
                     dsComponent: dsComponent,
                     staticVersion: dsComponent?.cssVersion,
                     markoVersion: dsComponent?.markoVersion,
                     reactVersion: dsComponent?.reactVersion,
-                    hasVersions: Boolean(
-                        dsComponent &&
-                            (dsComponent.cssVersion ||
-                                dsComponent.markoVersion ||
-                                dsComponent.reactVersion),
-                    ),
                 };
             })()>
             <if=componentInfo>
+                <const/componentUrls = componentInfo.componentUrls>
                 <li>
                     <a
-                        href=`component/${componentInfo.name}`
+                        href=componentUrls?.overview
                         class="card card--aspect-16-9  module-link">
                         <div class="card__media">
                             <if=(componentInfo.meta.pageImg)>

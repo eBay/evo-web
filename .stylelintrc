@@ -1,13 +1,17 @@
 {
-    "extends": ["stylelint-config-standard", "stylelint-prettier/recommended"],
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-prettier/recommended"
+    ],
     "ignoreFiles": [
         "!**/*.css",
         "!**/*.scss",
         "**/*.min.css",
         "**/*.js",
+        "**/*.ts",
         "**/*.less",
         "src/routes/static/**",
-       "**/*.md",
+        "**/*.md",
         "**/*.svg",
         "**/*.png",
         "**/*.json",
@@ -37,12 +41,16 @@
     },
     "overrides": [
         {
-            "files": ["**/*.scss"],
+            "files": [
+                "**/*.scss"
+            ],
             "extends": [
                 "stylelint-config-standard-scss",
                 "stylelint-config-prettier-scss"
             ],
-            "plugins": ["stylelint-order"],
+            "plugins": [
+                "stylelint-order"
+            ],
             "rules": {
                 "scss/dollar-variable-pattern": null,
                 "nesting-selector-no-missing-scoping-root": null,

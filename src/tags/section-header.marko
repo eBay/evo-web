@@ -1,11 +1,9 @@
-import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.js";
+import { getMetadataFromUrl } from "./components.marko";
 
 <const/{
-    componentName,
-    componentData,
-    currentTab,
+    dsComponent,
     properName,
-}=getEnhancedComponentMetadataFromUrl($global.url.pathname)>
+}=getMetadataFromUrl($global.url.pathname)>
 export interface Input {
     header?: string;
 }
@@ -50,7 +48,7 @@ export interface Input {
     <span class="component-header__link">
 
         <a
-            href=`${componentData?.urls || "https://playbook.ebay.com/design-system/components/"}`
+            href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
             target="_blank">
             <svg
                 class="icon icon--16"

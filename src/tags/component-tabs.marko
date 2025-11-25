@@ -1,36 +1,12 @@
-import { getEnhancedComponentMetadataFromUrl } from "../routes/component-utils.js";
+import { getMetadataFromUrl } from "../tags/components.marko";
 export interface Input {
     content?: Marko.Body;
 }
-<const/DSUrlRoot="https://playbook.ebay.com/design-system/components/">
-<const/EvoCssStorybookUrlRoot="https://opensource.ebay.com/evo-web/skin/storybook/?path=">
-<const/EvoMarkoStorybookUrlRoot="https://opensource.ebay.com/evo-web/ebayui-core/?path=">
-<const/EvoReactStorybookUrlRoot="https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=">
-<const/{
-    componentName,
-    componentData,
-    currentTab,
-}=getEnhancedComponentMetadataFromUrl($global.url.pathname)>
+<const/{ dsComponent, metadata, currentTab, componentUrls }=getMetadataFromUrl(
+    $global.url.pathname,
+)>
 
-<if=componentData>
-    <const/versions=componentData.versions>
-    <const/DSUrl=componentData.primaryUrl || DSUrlRoot>
-    <const/EvoCssStorybookUrl=(
-        componentData.cssStorybookPath
-            ? EvoCssStorybookUrlRoot + componentData.cssStorybookPath
-            : EvoCssStorybookUrlRoot
-    )>
-    <const/EvoMarkoStorybookUrl=(
-        componentData.markoStorybookPath
-            ? EvoMarkoStorybookUrlRoot + componentData.markoStorybookPath
-            : EvoMarkoStorybookUrlRoot
-    )>
-    <const/EvoReactStorybookUrl=(
-        componentData.reactStorybookPath
-            ? EvoReactStorybookUrlRoot + componentData.reactStorybookPath
-            : EvoReactStorybookUrlRoot
-    )>
-
+<if=metadata>
     <const/getAriaCurrentValue(tabName: string) {
         return currentTab === tabName ? "page" : undefined;
     }>
@@ -42,7 +18,7 @@ export interface Input {
                 aria-label="Component implementation tabs">
                 <li class="fake-tabs__item fake-tabs__items--large">
                     <a
-                        href=`/component/${componentName}/`
+                        href=componentUrls?.overview
                         role="tab"
                         aria-current=getAriaCurrentValue("overview")>
                         Overview
@@ -50,7 +26,7 @@ export interface Input {
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
                     <a
-                        href=`/component/${componentName}/accessibility/`
+                        href=componentUrls?.accessibility
                         role="tab"
                         aria-current=getAriaCurrentValue("accessibility")>
                         Accessibility
@@ -58,26 +34,28 @@ export interface Input {
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
                     <a
-                        href=`/component/${componentName}/css/`
+                        href=componentUrls?.css
                         role="tab"
                         aria-current=getAriaCurrentValue("css")>
                         CSS${" "}
                         <span
                             class="badge"
                             role="img"
-                            aria-label=`Static version ${versions.cssVersion || ""}`>
-                            ${" "}${versions.cssVersion || ""}${" "}
+                            aria-label=`Static version ${dsComponent.cssVersion || ""}`>
+                            ${" "}${dsComponent.cssVersion || ""}${" "}
                         </span>
                     </a>
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
-                    <a href=EvoMarkoStorybookUrl target="_blank">
+                    <a
+                        href=componentUrls?.marko
+                        target="_blank">
                         Marko Storybook${" "}
                         <span
                             class="badge"
                             role="img"
-                            aria-label=`Marko version ${versions.markoVersion || ""}`>
-                            ${" "}${versions.markoVersion || ""}${" "}
+                            aria-label=`Marko version ${dsComponent.markoVersion || ""}`>
+                            ${" "}${dsComponent.markoVersion || ""}${" "}
                         </span>
                         <svg
                             class="icon icon--16"
@@ -89,14 +67,16 @@ export interface Input {
                     </a>
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
-                    <a href=EvoReactStorybookUrl target="_blank">
+                    <a
+                        href=componentUrls?.react
+                        target="_blank">
                         React Storybook${" "}
 
                         <span
                             class="badge"
                             role="img"
-                            aria-label=`React version ${versions.reactVersion || ""}`>
-                            ${" "}${versions.reactVersion || ""}${" "}
+                            aria-label=`React version ${dsComponent.reactVersion || ""}`>
+                            ${" "}${dsComponent.reactVersion || ""}${" "}
                         </span>
                         <svg
                             class="icon icon--16"
@@ -108,7 +88,7 @@ export interface Input {
                     </a>
                 </li>
                 <li class="fake-tabs__item fake-tabs__items--large">
-                    <a href=DSUrl target="_blank">
+                    <a href=componentUrls?.dsUrl target="_blank">
                         Design System${" "}
                         <svg
                             class="icon icon--16"

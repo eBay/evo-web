@@ -1,15 +1,7 @@
 import {
-    getAllComponentNames,
-    getEnhancedComponentMetadata,
-} from "../component-utils.js";
+    componentMetadata
+} from "../../tags/components.marko";
 
-<const/metadata=(() => {
-    const metadata: { [key: string]: any } = {};
-    for (let componentName of getAllComponentNames()) {
-        metadata[componentName] = getEnhancedComponentMetadata(componentName);
-    }
-    return metadata;
-})()>
 <!doctype html>
 <html lang="en">
     <head>
@@ -17,6 +9,6 @@ import {
     </head>
 
     <body>
-        <p>${JSON.stringify(metadata)}</p>
+        <p>${JSON.stringify(componentMetadata)}</p>
     </body>
 </html>
