@@ -1,6 +1,6 @@
 # Pulldown List Accessibility
 
-![](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FkDQ2qTMlmdpNC31TGBwl%2FPulldown-List.png?alt=media\&token=bd5734d3-6fb3-49ba-8b56-55bfb61fa94a)
+![](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FkDQ2qTMlmdpNC31TGBwl%2FPulldown-List.png?alt=media&token=bd5734d3-6fb3-49ba-8b56-55bfb61fa94a)
 
 ### Introduction
 
@@ -30,7 +30,7 @@ The button text toggles between "Show More" and "Show Less".&#x20;
 
 Button is activated with **ENTER** or **SPACEBAR** key.
 
-After "Show More" button is activated, keyboard focus is placed on the *first* new list item.
+After "Show More" button is activated, keyboard focus is placed on the _first_ new list item.
 
 After "Show Less" button is activated, keyboard focus remains on the button.
 
@@ -48,6 +48,6 @@ This section is currently unavailable.
 
 ### ARIA Reference
 
-#### **aria-label**
-
-Can be used on the button to append additional context to assistive technology if following WCAG 2.4.9
+| Attribute      | Description                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------ |
+| **aria-label** | Can be used on the button to append additional context to assistive technology if following WCAG 2.4.9 |

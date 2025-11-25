@@ -1,6 +1,6 @@
 # Input Validation Accessibility
 
-![An invalid textbox entry](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDXsXrAa24EsIzd2%2Finputvalidation.png?generation=1548799250773699\&alt=media)
+![An invalid textbox entry](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDXsXrAa24EsIzd2%2Finputvalidation.png?generation=1548799250773699&alt=media)
 
 ### Introduction
 
@@ -19,13 +19,13 @@ Examine the required markup structure in the [Bones GitHub project](https://gith
 The validation of an input may occur on the client at any of the following points:
 
 1. The input gains focus
-   * This method is not recommended, because an input should be in a valid or invalid state _before_ it receives focus.
+   - This method is not recommended, because an input should be in a valid or invalid state _before_ it receives focus.
 2. The input changes value
-   * This method is an intrusive way of validating an input. Consider it only in certain, exceptional circumstances. It is intrusive because a notification will fire after every key press.
+   - This method is an intrusive way of validating an input. Consider it only in certain, exceptional circumstances. It is intrusive because a notification will fire after every key press.
 3. The input loses focus
-   * This is usually a good time to do validation as the user has finished entering their value and now moves onto their next task. Consider the [input meter](input-meter) pattern for dynamic feedback to the user after each keystroke. The user must receive polite notification of any error.
+   - This is usually a good time to do validation as the user has finished entering their value and now moves onto their next task. Consider the [input meter](input-meter) pattern for dynamic feedback to the user after each keystroke. The user must receive polite notification of any error.
 4. The form gets submitted
-   * When a user attempts to submit the form that the input belongs to, the input value may be validated on the client and/or the server. For more details please consult the [Form Validation Pattern](form-validation).
+   - When a user attempts to submit the form that the input belongs to, the input value may be validated on the client and/or the server. For more details please consult the [Form Validation Pattern](form-validation).
 
 We recommend methods #3 and #4.
 
@@ -61,10 +61,10 @@ Input validation is an _enhancement_. It progressively enhances the [form valida
 
 Let's assume we will validate the following input, which expects a numerical value for age. The input will be validated when it loses focus.
 
-```markup
+```html
 <span>
-    <label for="age">Age</label>
-    <input id="age" name="age" type="text" />
+  <label for="age">Age</label>
+  <input id="age" name="age" type="text" />
 </span>
 ```
 
@@ -74,10 +74,10 @@ Let's assume we will validate the following input, which expects a numerical val
 
 Our input is currently in a valid state, we should declare it as valid by applying the `aria-invalid` state with a value of false.
 
-```markup
+```html
 <span>
-    <label for="age">Age</label>
-    <input aria-invalid="false" id="age" name="age" type="text" />
+  <label for="age">Age</label>
+  <input aria-invalid="false" id="age" name="age" type="text" />
 </span>
 ```
 
@@ -87,13 +87,21 @@ We will later use JavaScript to manage this state, which is crucial for assistiv
 
 Our next useful ARIA attribute is `aria-describedby`. This attribute, as you might expect, gives the input a description (which is **not** the same as a label).
 
-```markup
+```html
 <span>
-    <label for="age">Age</label>
-    <input aria-describedby="age-description" aria-invalid="false" id="age" name="age" type="text" />
+  <label for="age">Age</label>
+  <input
+    aria-describedby="age-description"
+    aria-invalid="false"
+    id="age"
+    name="age"
+    type="text"
+  />
 </span>
 <span>
-    <span id="age-description"><!-- message content will be inserted here --></span>
+  <span id="age-description"
+    ><!-- message content will be inserted here --></span
+  >
 </span>
 ```
 
@@ -105,13 +113,15 @@ Of course the description is empty for now, because there is no error!
 
 In case you were wondering why the additional span in the last step, it was preparation for the live region:
 
-```markup
+```html
 <span>
-    <label for="age">Age</label>
-    <input aria-describedby="age-description" id="age" name="age" type="text" />
+  <label for="age">Age</label>
+  <input aria-describedby="age-description" id="age" name="age" type="text" />
 </span>
 <span aria-live="polite" role="status">
-    <span id="age-description"><!-- message content will be inserted here --></span>
+  <span id="age-description"
+    ><!-- message content will be inserted here --></span
+  >
 </span>
 ```
 
@@ -128,8 +138,8 @@ In terms of CSS and accessibility there's not a great deal we need to cover. Err
 It's good practice to visually highlight an error field with a border. Again, red is always a good choice!
 
 ```css
-.input-validation input[aria-invalid=true] {
-    border: 1px solid red;
+.input-validation input[aria-invalid="true"] {
+  border: 1px solid red;
 }
 ```
 
@@ -153,23 +163,12 @@ Again, we cannot yet use HTML5 client-side validation, so remember to add the 'n
 
 This section gives an overview of our use of ARIA in this pattern.
 
-#### aria-invalid
-
-Applied to the input element to notify screen reader of validation state (true or false).
-
-#### aria-describedby
-
-Applied to the input element to create a description. Do not confuse "description" with "label" - they are two different things in terms of accessibility.
-
-#### aria-live
-
-Creates a live region. Assistive technology will react accordingly to any dynamic change of visibility or content.
-
-A setting of 'polite' means any content changes get appended to the screen reader event queue.
-
-#### novalidate
-
-Not an ARIA attribute, but very important to apply this on your forms to disable built in validation. Why? Because the built-in validation messages are not accessible and conflict with our design system guidelines.
+| Attribute            | Description                                                                                                                                                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **aria-invalid**     | Applied to the input element to notify screen reader of validation state (true or false).                                                                                                                              |
+| **aria-describedby** | Applied to the input element to create a description. Do not confuse "description" with "label" - they are two different things in terms of accessibility.                                                             |
+| **aria-live**        | Creates a live region. Assistive technology will react accordingly to any dynamic change of visibility or content. A setting of 'polite' means any content changes get appended to the screen reader event queue.      |
+| **novalidate**       | Not an ARIA attribute, but very important to apply this on your forms to disable built in validation. Why? Because the built-in validation messages are not accessible and conflict with our design system guidelines. |
 
 ### The Future
 
@@ -179,4 +178,4 @@ HTML5 also promises us built-in validation on the client for a number of new inp
 
 ### Related Articles
 
-* [Error-Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/) (Norman Nielson Group)
+- [Error-Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/) (Norman Nielson Group)

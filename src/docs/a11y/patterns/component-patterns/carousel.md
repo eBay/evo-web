@@ -10,15 +10,15 @@ You can get an idea of the required markup structure by viewing our [bones site]
 
 Viewport: Visible content area of the carousel. Displays a single slide.
 
-* **Continuous carousel:** items are ungrouped
-* **Discrete carousel**: items are grouped into slides
-* **Slide**: Contains one or more items
-* **Item**: A discrete unit of content inside of a slide (e.g. a tile or image)
-* **Peek**: A partially visible preview of an item on the next or previous slide. Peeks serves as a visual indicator that more slides exist (discrete carousel only)
-* **Next Button/Paddle**: Scrolls viewport forward / moves to next slide
-* **Previous Button/Paddle**: Scrolls viewport left / moves to previous slide
-* **Pagination Buttons/Dots (optional)**: Move to specific slide. Also serve as visual indicators for total number of slides and current slide index (discrete carousel only)
-* **Pagination Bar (optional)**: A scrollbar alternative to pagination buttons. Gives *fuzzy* visual indicator for total number of slides and current slide index
+- **Continuous carousel:** items are ungrouped
+- **Discrete carousel**: items are grouped into slides
+- **Slide**: Contains one or more items
+- **Item**: A discrete unit of content inside of a slide (e.g. a tile or image)
+- **Peek**: A partially visible preview of an item on the next or previous slide. Peeks serves as a visual indicator that more slides exist (discrete carousel only)
+- **Next Button/Paddle**: Scrolls viewport forward / moves to next slide
+- **Previous Button/Paddle**: Scrolls viewport left / moves to previous slide
+- **Pagination Buttons/Dots (optional)**: Move to specific slide. Also serve as visual indicators for total number of slides and current slide index (discrete carousel only)
+- **Pagination Bar (optional)**: A scrollbar alternative to pagination buttons. Gives _fuzzy_ visual indicator for total number of slides and current slide index
 
 ### Best Practices
 
@@ -36,12 +36,12 @@ Peeks **must not** be focusable or interactive.
 
 If the slides can automatically progress, then the carousel **must** include a pause/play button.
 
-* Discrete carousels **should not** start automatically
-* Continuous carousels **must not** start automatically
-* Pause/Play button **should** be the first interactive element in the carousel
-* Pause/Play button **must** always be visible
-* Automatic progression **must** pause when keyboard focus enters widget
-* Automatic progression **must** pause when mouse hovers over widget
+- Discrete carousels **should not** start automatically
+- Continuous carousels **must not** start automatically
+- Pause/Play button **should** be the first interactive element in the carousel
+- Pause/Play button **must** always be visible
+- Automatic progression **must** pause when keyboard focus enters widget
+- Automatic progression **must** pause when mouse hovers over widget
 
 ### Interaction Design
 
@@ -69,8 +69,8 @@ When on last slide, the 'Next' button can remain in tab-order (but **should** be
 
 **Focus Management Summary**
 
-* Activate previous or next button: focus **must** stay on Previous or Next button.
-* Activate Pause/Play button: focus **must** stay on the Pause/Play button.
+- Activate previous or next button: focus **must** stay on Previous or Next button.
+- Activate Pause/Play button: focus **must** stay on the Pause/Play button.
 
 #### Screen Reader
 
@@ -78,7 +78,7 @@ When on last slide, the 'Next' button can remain in tab-order (but **should** be
 
 "Previous" button **must** be announced as “Previous slide”.
 
-If following WCAG AAA (optional), "Next" and "Previous" buttons should also announce with additional context to uniquely identify the button purpose, e.g “Previous slide - *Trending Deals*” and “Next slide - *Trending Deals*”.
+If following WCAG AAA (optional), "Next" and "Previous" buttons should also announce with additional context to uniquely identify the button purpose, e.g “Previous slide - _Trending Deals_” and “Next slide - _Trending Deals_”.
 
 Items outside of the viewport **must not** be reachable with the virtual cursor.
 
@@ -86,13 +86,13 @@ When on first slide, screen reader **must** announce "Previous" button as disabl
 
 When on last slide, screen reader **must** announce "Next" button as disabled.
 
-When moving virtual cursor from item to item, screen reader *might* announce list index position.
+When moving virtual cursor from item to item, screen reader _might_ announce list index position.
 
 Play button label **must** be announced as “Play carousel”.
 
-Pause button label **must** be announced as  “Pause carousel”.
+Pause button label **must** be announced as “Pause carousel”.
 
-If following WCAG AAA (optional), "Play" and "Pause" buttons *should* also announce with additional context to uniquely identify the button purpose, e.g “Play carousel - *Trending Deals*” and “Pause carousel - *Trending Deals*”.
+If following WCAG AAA (optional), "Play" and "Pause" buttons _should_ also announce with additional context to uniquely identify the button purpose, e.g “Play carousel - _Trending Deals_” and “Pause carousel - _Trending Deals_”.
 
 #### Pointer
 
@@ -118,9 +118,9 @@ The carousel content will be fully visible and accessible without CSS and JavaSc
 
 The goal of our content layer is to add the list of items. As usual we begin with our root element.
 
-```markup
+```html
 <div class="carousel">
-    <!-- content will go here -->
+  <!-- content will go here -->
 </div>
 ```
 
@@ -130,11 +130,15 @@ For the purposes of this example, all content will be rendered server-side. You 
 
 The buttons must be inserted before and after the items, acting as bookends for the items.
 
-```markup
+```html
 <div class="carousel">
-    <button aria-label="Previous slide" class="carousel__previous" type="button"></button>
-    <!-- items will go here -->
-    <button aria-label="Next slide" class="carousel__next" type="button"></button>
+  <button
+    aria-label="Previous slide"
+    class="carousel__previous"
+    type="button"
+  ></button>
+  <!-- items will go here -->
+  <button aria-label="Next slide" class="carousel__next" type="button"></button>
 </div>
 ```
 
@@ -145,10 +149,19 @@ Inside of the buttons will typically be SVG icons, which we will omit here for t
 New to ARIA 1.1, the `aria-roledescription` attribute can provide a human readable description to custom widgets. This attribute **must** be applied to an element with an implicit or explicit role, in which case we have chosen `role=group`.
 
 ```html
-<div class="carousel" role="group" aria-roledescription="Carousel" aria-labelledby="id_of_heading_element">
-    <button aria-label="Previous slide" class="carousel__previous" type="button"></button>
-    <!-- items will go here -->
-    <button aria-label="Next slide" class="carousel__next" type="button"></button>
+<div
+  class="carousel"
+  role="group"
+  aria-roledescription="Carousel"
+  aria-labelledby="id_of_heading_element"
+>
+  <button
+    aria-label="Previous slide"
+    class="carousel__previous"
+    type="button"
+  ></button>
+  <!-- items will go here -->
+  <button aria-label="Next slide" class="carousel__next" type="button"></button>
 </div>
 ```
 
@@ -160,7 +173,7 @@ A carousel can contain a list of anything, for example - tiles, images, videos, 
 
 Each item will contain an image, heading, format, price + shipping.
 
-```markup
+```html
 <div class="carousel" role="group" aria-roledescription="Carousel" aria-labelledby="id_of_heading_element">
     <button aria-label="Previous slide" class="carousel__previous" type="button"></button>
     <ul class="carousel__list">
@@ -209,9 +222,9 @@ This section is under development.
 
 #### Behaviour (JS)
 
-The *visual* goal of the behaviour layer is to trigger custom slide transitions whenever the carousel paginates. These transitions are triggered with the "Previous", "Next" and pagination buttons (if they exist). On touch-screen devices these transitions are also triggered with swipe gestures.
+The _visual_ goal of the behaviour layer is to trigger custom slide transitions whenever the carousel paginates. These transitions are triggered with the "Previous", "Next" and pagination buttons (if they exist). On touch-screen devices these transitions are also triggered with swipe gestures.
 
-The *semantic* goal is to ensure that any non visible carousel item is *inaccessible* to all users.
+The _semantic_ goal is to ensure that any non visible carousel item is _inaccessible_ to all users.
 
 Implementing CSS transitions and swipe gestures are outside the scope of this guide. Instead, our main focus will be ensuring the robust, accessible state of the carousel.
 
@@ -219,7 +232,7 @@ Implementing CSS transitions and swipe gestures are outside the scope of this gu
 
 We assume the first slide will be the active slide, therefore the "Previous" button will be partially disabled.
 
-What do we mean by *partially* disabled?
+What do we mean by _partially_ disabled?
 
 We say "partially" disabled when we want an inoperable button to remain keyboard focusable. The inoperable button must be aurally and visually disabled using ARIA (i.e. aria-disabled) and CSS (e.g. opacity) respectively.
 
@@ -235,30 +248,14 @@ This section is under development.
 
 This section gives an overview of ARIA usage within the context of the carousel pattern.
 
-#### aria-roledescription
-
-Human readable description of this custom widget. This attribute MUST be applied to an element with an implicit or explicit role.
-
-#### role=group
-
-Explict role for aria-roledescription.
-
-#### aria-labelledby&#x20;
-
-Label the group using visible onscreen text (typically a heading element).
-
-#### aria-label
-
-Explicit label for group if no suitable onscreen element exists.
-
-#### aria-disabled
-
-Used to notify user that "Next" or "Previous" buttons are in a disabled state. Screen readers will announce 'disabled,' 'dimmed,' 'unavailable,' or words to that effect.
-
-#### aria-label
-
-Used to create accessible labels for graphical icon buttons&#x20;
+| Attribute                | Description                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **aria-roledescription** | Human readable description of this custom widget. This attribute MUST be applied to an element with an implicit or explicit role.                                         |
+| **role=group**           | Explict role for aria-roledescription.                                                                                                                                    |
+| **aria-labelledby**      | Label the group using visible onscreen text (typically a heading element).                                                                                                |
+| **aria-label**           | Explicit label for group if no suitable onscreen element exists. Used to create accessible labels for graphical icon buttons.                                             |
+| **aria-disabled**        | Used to notify user that "Next" or "Previous" buttons are in a disabled state. Screen readers will announce 'disabled,' 'dimmed,' 'unavailable,' or words to that effect. |
 
 ### Further Reading
 
-* <https://adrianroselli.com/2020/04/avoid-aria-roledescription.html> (spoiler: carousel is listed as a *valid* use-case)
+- <https://adrianroselli.com/2020/04/avoid-aria-roledescription.html> (spoiler: carousel is listed as a _valid_ use-case)

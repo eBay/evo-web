@@ -1,8 +1,8 @@
 # Toast Dialog Accessibility
 
-![Toast dialog on small screen.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJiauYJxjbwkTZkWHqK%2F-MJibabBxJBz0rEj6Iue%2Ftoast-mweb.png?alt=media\&token=27b8df76-2447-46a1-892b-41c662ce6109)
+![Toast dialog on small screen.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJiauYJxjbwkTZkWHqK%2F-MJibabBxJBz0rEj6Iue%2Ftoast-mweb.png?alt=media&token=27b8df76-2447-46a1-892b-41c662ce6109)
 
-![Toast dialog on large screen.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJiauYJxjbwkTZkWHqK%2F-MJibhiZsl9UIlEuVTUa%2Ftoast-dweb.png?alt=media\&token=f916e8fd-5b69-44f5-96d2-4d5f9e8b0439)
+![Toast dialog on large screen.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJiauYJxjbwkTZkWHqK%2F-MJibhiZsl9UIlEuVTUa%2Ftoast-dweb.png?alt=media&token=f916e8fd-5b69-44f5-96d2-4d5f9e8b0439)
 
 ### Introduction
 
@@ -56,13 +56,7 @@ This section is not yet available.
 
 This section gives an overview of ARIA usage within the context of this pattern.
 
-#### role=dialog
-
-Informs the assistive technology that the user is inside of a dialog.
-
-#### aria-modal=false
-
-Informs assistive technology that the dialog is not modal.
-
-
-
+| Attribute            | Description                                                           |
+| -------------------- | --------------------------------------------------------------------- |
+| **role=dialog**      | Informs the assistive technology that the user is inside of a dialog. |
+| **aria-modal=false** | Informs assistive technology that the dialog is not modal.            |

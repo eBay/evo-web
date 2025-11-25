@@ -1,6 +1,6 @@
 # Radio Accessibility
 
-![Screenshot depicting radio buttons for user feedback rating](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFnZxkxHARzGs8aS%2Fradiobutton.png?generation=1548799253769744\&alt=media)
+![Screenshot depicting radio buttons for user feedback rating](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFnZxkxHARzGs8aS%2Fradiobutton.png?generation=1548799253769744&alt=media)
 
 ### Introduction
 
@@ -86,10 +86,10 @@ Native HTML radio buttons are 100% accessible by default and support features su
 
 Native HTML radio buttons should **always** be your baseline starting point.
 
-```markup
+```html
 <fieldset>
-  <legend>Listing Format</legend> 
-  <span>    
+  <legend>Listing Format</legend>
+  <span>
     <input id="lf_all" type="radio" name="lf" value="all" />
     <label for="lf_all">All Listings</label>
   </span>
@@ -124,9 +124,15 @@ We are going to:
 
 We need to create a new container element that will host each radio button and its icon. We give it a class of `radio`:
 
-```markup
+```html
 <span class="radio">
-  <input class="radio__control" id="lf_all" type="radio" name="lf" value="all" />
+  <input
+    class="radio__control"
+    id="lf_all"
+    type="radio"
+    name="lf"
+    value="all"
+  />
   <!-- icon goes here -->
 </span>
 ```
@@ -155,12 +161,12 @@ We need two icons: checked and unchecked.
 
 We have mentioned that SVG will be used to create the icon. We actually have two implementation choices when it comes to our SVG:
 
-* background SVG
-* foreground SVG
+- background SVG
+- foreground SVG
 
 Here's how the markup will look with background SVG:
 
-```markup
+```html
 <span class="checkbox">
   <input id="lf_all" type="radio" name="lf" value="all" />
   <span class="radio__icon"></span>
@@ -169,7 +175,7 @@ Here's how the markup will look with background SVG:
 
 And here's how the markup will look with foreground SVG:
 
-```markup
+```html
 <span class="radio">
   <input id="lf_all" type="radio" name="lf" value="all" />
   <span class="radio__icon" hidden>
@@ -189,8 +195,8 @@ The hidden attribute ensures that the SVG icon is not visible if the page is in 
 
 As you can see, the background SVG markup is more concise, however it has two major issues to be aware of:
 
-* the color of the icon is not changeable with CSS
-* alternate variations are needed for windows high contrast mode
+- the color of the icon is not changeable with CSS
+- alternate variations are needed for windows high contrast mode
 
 On the other hand, foreground SVG has neither of these issues, and therefore is our preferred approach.
 
@@ -210,6 +216,6 @@ A dotted border is a good choice, mimicking that of various browsers (such as Fi
 
 This section gives an overview of our use of ARIA, within the specific context of the radio pattern.
 
-#### aria-hidden
-
-Removes the presentational SVG element from the accessibility tree.
+| Attribute       | Description                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| **aria-hidden** | Removes the presentational SVG element from the accessibility tree. |

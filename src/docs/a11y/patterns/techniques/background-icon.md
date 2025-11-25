@@ -10,9 +10,9 @@ All background icons will either be deemed critical or non-critical.
 
 An icon is deemed non-critical if it is purely presentational, or if the information can be found in nearby or adjacent text.
 
-```markup
+```html
 <p>
-  <span class=”icon icon--warning”></span>
+  <span class="”icon" icon--warning”></span>
   <span>Warning: this item is about to expire</span>
 </p>
 ```
@@ -23,17 +23,17 @@ The adjacent text clearly contains the word "Warning" and so the icon does not n
 
 Critical icons are icons with no supplementary text.
 
-```markup
-<span class=”icon icon--hamburger” role="img" aria-label="Options"></span>
+```html
+<span class="”icon" icon--hamburger” role="img" aria-label="Options"></span>
 ```
 
 An aria-label is required to convey the meaning of the icon.
 
 Critical icons are most common in buttons:
 
-```markup
-<button class=”hamburger” aria-label=”Options”>
-  <span class=”icon icon--hamburger”></span>
+```html
+<button class="”hamburger”" aria-label="”Options”">
+  <span class="”icon" icon--hamburger”></span>
 </button>
 ```
 

@@ -43,5 +43,5 @@ If an avatar is placed within an interactive element (such as a button or link),
 
 ## Further Reading
 
-- [Alternative Text Technique](../accessibility/techniques/alternative-text)
-- [Pattern Naming Scheme](../accessibility/appendix/pattern-naming-scheme)
+- [Alternative Text Technique](../techniques/alternative-text.md)
+- [Pattern Naming Scheme](../appendix/pattern-naming-scheme.md)

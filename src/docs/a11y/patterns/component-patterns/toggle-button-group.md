@@ -36,30 +36,26 @@ In a multi select toggle group, pressing a button will have no effect on any of 
 
 The toggle buttons are grouped together in a list. In this example, the third button is in a pressed state.
 
-```markup
+```html
 <h2>Shipping</h2>
 <div class="toggle-button-group">
-    <ul>
-        <li>
-            <button type="button" aria-pressed="false">
-                IMAGE
-                UPS Ground
-                PRICE
-            </button>
-        <li>
-            <button type="button" aria-pressed="false">
-                IMAGE
-                USPS Priority
-                PRICE
-            </button>
-        <li>
-            <button type="button" aria-pressed="true">
-                IMAGE
-                Fedex Ground
-                PRICE
-            </button>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <button type="button" aria-pressed="false">IMAGE UPS Ground PRICE</button>
+    </li>
+
+    <li>
+      <button type="button" aria-pressed="false">
+        IMAGE USPS Priority PRICE
+      </button>
+    </li>
+
+    <li>
+      <button type="button" aria-pressed="true">
+        IMAGE Fedex Ground PRICE
+      </button>
+    </li>
+  </ul>
 </div>
 ```
 
@@ -67,6 +63,6 @@ Under development.
 
 ### ARIA Reference
 
-**aria-pressed**
-
-Conveys whether the button is pressed or not (i.e true or false)
+| Attribute        | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
+| **aria-pressed** | Conveys whether the button is pressed or not (i.e true or false) |

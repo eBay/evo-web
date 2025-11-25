@@ -1,6 +1,6 @@
 # Pagination Accessibility
 
-![SRP Pagination](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEyewE6uvQC83Zlb%2Fpagination.png?generation=1548799252843163\&alt=media)
+![SRP Pagination](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEyewE6uvQC83Zlb%2Fpagination.png?generation=1548799252843163&alt=media)
 
 ### Introduction
 
@@ -18,14 +18,14 @@ You can see a fully-styled implementation by viewing our [eBay Skin](https://ope
 
 ### Terminology
 
-* **Pagination**: the composite pattern as a _whole_, containing the items defined below
-* **Previous**: Link that navigates to previous page of results
-* **Next**: Link that navigates to next page of results
-* **Items**: Links that navigate to exact page of results
-* **Bookends**: Collective name for the previous and next links, as they 'bookend' the navigation items
-* **Current Page**: The current resultset index, as reflected in the pagination UI
-* **Client-Side Pagination**: Pagination links trigger page content updates via AJAX
-* **Server-Side Pagination**: Pagination links trigger page content updates via full page reload
+- **Pagination**: the composite pattern as a _whole_, containing the items defined below
+- **Previous**: Link that navigates to previous page of results
+- **Next**: Link that navigates to next page of results
+- **Items**: Links that navigate to exact page of results
+- **Bookends**: Collective name for the previous and next links, as they 'bookend' the navigation items
+- **Current Page**: The current resultset index, as reflected in the pagination UI
+- **Client-Side Pagination**: Pagination links trigger page content updates via AJAX
+- **Server-Side Pagination**: Pagination links trigger page content updates via full page reload
 
 ### Best Practices
 
@@ -83,9 +83,9 @@ We will step through the creation process for server-side pagination.
 
 We will house the pagination in a navigation landmark, with heading:
 
-```markup
+```html
 <nav class="pagination" role="navigation">
-    <h2 class="clipped">Results Pagination</h2>
+  <h2 class="clipped">Results Pagination</h2>
 </nav>
 ```
 
@@ -93,9 +93,9 @@ The heading doesn't _have_ to go inside of the nav, it could be placed just befo
 
 Navigation landmarks are even more useful when labelled. So let's go ahead and use the heading text as the label of the landmark:
 
-```markup
+```html
 <nav aria-labelledby="pagination-heading" class="pagination" role="navigation">
-    <h2 class="clipped" id="pagination-heading">Results Pagination</h2>
+  <h2 class="clipped" id="pagination-heading">Results Pagination</h2>
 </nav>
 ```
 
@@ -103,20 +103,28 @@ Navigation landmarks are even more useful when labelled. So let's go ahead and u
 
 Our previous and next links are going to 'bookend' the navigation items:
 
-```markup
+```html
 <nav aria-labelledby="pagination-heading" class="pagination" role="navigation">
-    <h2 class="clipped" id="pagination-heading">Results Pagination</h2>
-    <a aria-label="Previous Page" class="pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
-       <svg aria-hidden="true">
-            <use xlink:href="#svg-icon-chevron-light-left"></use>
-        </svg>
-    </a>
-    <!-- navigation items will go here -->
-    <a aria-label="Next Page" class="pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
-        <svg aria-hidden="true">
-            <use xlink:href="#svg-icon-chevron-right"></use>
-        </svg>
-    </a>
+  <h2 class="clipped" id="pagination-heading">Results Pagination</h2>
+  <a
+    aria-label="Previous Page"
+    class="pagination__previous"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+  >
+    <svg aria-hidden="true">
+      <use xlink:href="#svg-icon-chevron-light-left"></use>
+    </svg>
+  </a>
+  <!-- navigation items will go here -->
+  <a
+    aria-label="Next Page"
+    class="pagination__next"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2"
+  >
+    <svg aria-hidden="true">
+      <use xlink:href="#svg-icon-chevron-right"></use>
+    </svg>
+  </a>
 </nav>
 ```
 
@@ -124,31 +132,51 @@ Our previous and next links are going to 'bookend' the navigation items:
 
 The pagination items are represented as a list of links:
 
-```markup
+```html
 <nav aria-labelledby="pagination-heading" class="pagination" role="navigation">
-    <h2 class="clipped" id="pagination-heading">Results Pagination</h2>
-    <a aria-label="Previous Page" class="pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
-       <svg aria-hidden="true">
-            <use xlink:href="#svg-icon-chevron-light-left"></use>
-        </svg>
-    </a>
-    <ol class="pagination__list">
-        <li>
-            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
-        </li>
-        <li>
-            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
-        </li>
-        <li>
-            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
-        </li>
-        ...
-    </ol>
-    <a aria-label="Next Page" class="pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
-        <svg aria-hidden="true">
-            <use xlink:href="#svg-icon-chevron-right"></use>
-        </svg>
-    </a>
+  <h2 class="clipped" id="pagination-heading">Results Pagination</h2>
+  <a
+    aria-label="Previous Page"
+    class="pagination__previous"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+  >
+    <svg aria-hidden="true">
+      <use xlink:href="#svg-icon-chevron-light-left"></use>
+    </svg>
+  </a>
+  <ol class="pagination__list">
+    <li>
+      <a
+        href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+        class="pagination__item"
+        >1</a
+      >
+    </li>
+    <li>
+      <a
+        href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2"
+        class="pagination__item"
+        >2</a
+      >
+    </li>
+    <li>
+      <a
+        href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3"
+        class="pagination__item"
+        >3</a
+      >
+    </li>
+    ...
+  </ol>
+  <a
+    aria-label="Next Page"
+    class="pagination__next"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2"
+  >
+    <svg aria-hidden="true">
+      <use xlink:href="#svg-icon-chevron-right"></use>
+    </svg>
+  </a>
 </nav>
 ```
 
@@ -164,7 +192,7 @@ There are three aspects of state that must be reflected visually and semanticall
 
 The heading can be used to let us quickly know which page we are currently on. This can be achieved by suffixing the header text:
 
-```markup
+```html
 <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
 ```
 
@@ -172,11 +200,16 @@ The heading can be used to let us quickly know which page we are currently on. T
 
 Assuming that the current pagination index is 0 (i.e the first item in the result set), here is how the first bookend would be marked up:
 
-```markup
-<a aria-disabled="true" aria-label="Previous Page" class="pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
-   <svg aria-hidden="true">
-        <use xlink:href="#svg-icon-chevron-light-left"></use>
-    </svg>
+```html
+<a
+  aria-disabled="true"
+  aria-label="Previous Page"
+  class="pagination__previous"
+  href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+>
+  <svg aria-hidden="true">
+    <use xlink:href="#svg-icon-chevron-light-left"></use>
+  </svg>
 </a>
 ```
 
@@ -186,9 +219,14 @@ Because we typically 'grey-out' the first bookend in this state, the `aria-disab
 
 And here is how the first item would be marked up:
 
-```markup
+```html
 <li>
-    <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
+  <a
+    aria-current="page"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+    class="pagination__item"
+    >1</a
+  >
 </li>
 ```
 
@@ -200,31 +238,53 @@ At this point we now have a pagination control that works without CSS and JavaSc
 
 Here is a recap of the final HTML:
 
-```markup
+```html
 <nav aria-labelledby="pagination-heading" class="pagination" role="navigation">
-    <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
-    <a aria-disabled="true" aria-label="Previous Page" class="pagination__previous" href="http://www.ebay.com/sch/i.html?_nkw=guitars">
-       <svg aria-hidden="true">
-        <use xlink:href="#svg-icon-chevron-light-left"></use>
+  <h2 class="clipped" id="pagination-heading">Results Pagination - Page 1</h2>
+  <a
+    aria-disabled="true"
+    aria-label="Previous Page"
+    class="pagination__previous"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+  >
+    <svg aria-hidden="true">
+      <use xlink:href="#svg-icon-chevron-light-left"></use>
     </svg>
-    </a>
-    <ol class="pagination__list">
-        <li>
-            <a aria-current="page" href="http://www.ebay.com/sch/i.html?_nkw=guitars" class="pagination__item">1</a>
-        </li>
-        <li>
-            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2" class="pagination__item">2</a>
-        </li>
-        <li>
-            <a href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3" class="pagination__item">3</a>
-        </li>
-        ...
-    </ol>
-    <a aria-label="Next Page" class="pagination__next" href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2">
-        <svg aria-hidden="true">
-            <use xlink:href="#svg-icon-chevron-right"></use>
-        </svg>
-    </a>
+  </a>
+  <ol class="pagination__list">
+    <li>
+      <a
+        aria-current="page"
+        href="http://www.ebay.com/sch/i.html?_nkw=guitars"
+        class="pagination__item"
+        >1</a
+      >
+    </li>
+    <li>
+      <a
+        href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2"
+        class="pagination__item"
+        >2</a
+      >
+    </li>
+    <li>
+      <a
+        href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=3"
+        class="pagination__item"
+        >3</a
+      >
+    </li>
+    ...
+  </ol>
+  <a
+    aria-label="Next Page"
+    class="pagination__next"
+    href="http://www.ebay.com/sch/i.html?_nkw=guitars&_pgn=2"
+  >
+    <svg aria-hidden="true">
+      <use xlink:href="#svg-icon-chevron-right"></use>
+    </svg>
+  </a>
 </nav>
 ```
 
@@ -242,10 +302,11 @@ It is outside the scope of this guide to write all of the JavaScript behaviour f
 
 ```javascript
 // get the links
-var paginationLinks = document.querySelector('.pagination a');
+var paginationLinks = document.querySelector(".pagination a");
 
 // add click handler
-paginationLinks.forEach(link => link.addEventListener('click', function(e) {
+paginationLinks.forEach((link) =>
+  link.addEventListener("click", function (e) {
     // prevent link behaviour (i.e. window reload)
     e.preventDefault();
 
@@ -253,33 +314,19 @@ paginationLinks.forEach(link => link.addEventListener('click', function(e) {
     // 1. render new results
     // 2. push new url
     // 3. update heading text
-}));
+  }),
+);
 ```
 
 ### ARIA Reference
 
 This section gives an overview of our use of ARIA, within the specific context of this pattern.
 
-#### role=navigation
-
-Creates a navigation landmark for assistive technology.
-
-#### role=img
-
-Applied to bookend SVG tags to reinforce image semantics.
-
-#### aria-labelledby
-
-Use this property to label the navigation landmark with the text of the heading tag.
-
-**aria-disabled**
-
-Use this property on the bookend anchor to convey when it is "greyed-out"
-
-**aria-label**
-
-Use this property to label the bookend anchors.
-
-#### aria-current
-
-Refers to the current item in the pagination (i.e. the current dataset index).
+| Attribute           | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| **role=navigation** | Creates a navigation landmark for assistive technology.                              |
+| **role=img**        | Applied to bookend SVG tags to reinforce image semantics.                            |
+| **aria-labelledby** | Use this property to label the navigation landmark with the text of the heading tag. |
+| **aria-disabled**   | Use this property on the bookend anchor to convey when it is "greyed-out"            |
+| **aria-label**      | Use this property to label the bookend anchors.                                      |
+| **aria-current**    | Refers to the current item in the pagination (i.e. the current dataset index).       |

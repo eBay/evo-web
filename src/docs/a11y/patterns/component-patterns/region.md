@@ -24,31 +24,25 @@ Every region should have a corresponding, on screen level-2 [heading](heading).
 
 The following example shows how we can markup the main regions of a page:
 
-```markup
+```html
 <body>
-    <header>
-       <img src=“sitelogo.jpg” />
-       <nav>
-        …
-       </nav>
-       <div role="search">
-        …
-       </div>
-    </header>
-    <main>
-        <section role=“region” aria-labelledby="userprofile_heading">
-           <h2 id="userprofile_heading">User Profile</h2>
-           …
-        </section>
-        …
-    </main>
-    <aside>
-        <h2>Advertisement</h2>
-        …
-    </aside>
-    <footer>
-        …
-    </footer>
+  <header>
+    <img src="“sitelogo.jpg”" />
+    <nav>…</nav>
+    <div role="search">…</div>
+  </header>
+  <main>
+    <section role="“region”" aria-labelledby="userprofile_heading">
+      <h2 id="userprofile_heading">User Profile</h2>
+      …
+    </section>
+    …
+  </main>
+  <aside>
+    <h2>Advertisement</h2>
+    …
+  </aside>
+  <footer>…</footer>
 </body>
 ```
 
@@ -72,10 +66,7 @@ Regions are not interactive elements and therefore have no pointer interaction.
 
 ### ARIA Reference
 
-#### role=region
-
-Informs assistive technology that this element starts a region landmark
-
-#### aria-labelledby
-
-Regions must be labelled in order to appear in the screen reader's list of custom landmarks.
+| Attribute           | Description                                                                                  |
+| ------------------- | -------------------------------------------------------------------------------------------- |
+| **role=region**     | Informs assistive technology that this element starts a region landmark                      |
+| **aria-labelledby** | Regions must be labelled in order to appear in the screen reader's list of custom landmarks. |

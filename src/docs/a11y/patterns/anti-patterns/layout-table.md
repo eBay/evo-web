@@ -4,32 +4,32 @@ Do not use the HTML table tags (\<table>, \<tr>, \<td>, etc.) for page or module
 
 For example, do not use table rows and columns to arrange the header, sidebar and main content areas of a page or module:
 
-```markup
+```html
 <!-- This is bad! Please do not copy! -->
 <body>
-    <table>
-        <tr>
-            <td colspan="2">
-                <!-- page header/banner -->
-                <img src="sitelogo.jpg" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <h2>Sidebar</h2>
-                <!-- sidebar content -->
-            </td>
-            <td>
-                <h1>Page Header</h1>
-                <!-- main content -->
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <!-- page footer -->
-            </td>
-        </tr>
-    </table>
+  <table>
+    <tr>
+      <td colspan="2">
+        <!-- page header/banner -->
+        <img src="sitelogo.jpg" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h2>Sidebar</h2>
+        <!-- sidebar content -->
+      </td>
+      <td>
+        <h1>Page Header</h1>
+        <!-- main content -->
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <!-- page footer -->
+      </td>
+    </tr>
+  </table>
 </body>
 <!-- Urgh, I felt dirty writing that. The things I do for you all. -->
 ```
@@ -44,9 +44,9 @@ CSS can, and should, be used to achieve row/column layouts in pages and modules 
 
 If you have legacy code that you wish to make accessible, and are unable to rewrite your entire markup and CSS, a quick fix is to apply **role=presentation** to the table tag:
 
-```markup
+```html
 <table role="presentation">
-    <!-- rows and columns go here as normal -->
+  <!-- rows and columns go here as normal -->
 </table>
 ```
 

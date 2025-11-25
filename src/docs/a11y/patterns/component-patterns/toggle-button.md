@@ -36,13 +36,21 @@ Adding `aria-pressed` attribute communicates the current state of the toggle but
 
 ```html
 // when the button is not pressed
-<button type="button" aria-label="Watch - Apple iPhone 11" aria-pressed=“false”>
-    <!-- svg icon goes here -->
+<button
+  type="button"
+  aria-label="Watch - Apple iPhone 11"
+  aria-pressed="“false”"
+>
+  <!-- svg icon goes here -->
 </button>
 
 // when the button is pressed
-<button type="button" aria-label="Watch - Apple iPhone 11" aria-pressed=“true”>
-    <!-- svg icon goes here -->
+<button
+  type="button"
+  aria-label="Watch - Apple iPhone 11"
+  aria-pressed="“true”"
+>
+  <!-- svg icon goes here -->
 </button>
 ```
 
@@ -70,6 +78,6 @@ The screenshot below shows a toggle button with a state that is conveyed via the
 
 ### ARIA Reference
 
-**aria-pressed**
-
-Informs AT the current "pressed" state of a toggle button.
+| Attribute        | Description                                                |
+| ---------------- | ---------------------------------------------------------- |
+| **aria-pressed** | Informs AT the current "pressed" state of a toggle button. |

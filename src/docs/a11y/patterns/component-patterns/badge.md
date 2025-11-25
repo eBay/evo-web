@@ -37,5 +37,5 @@ If a badge is placed within an interactive element (such as a button or link), c
 
 ## Further Reading
 
-- [Background Icon Technique](../accessibility/techniques/background-icon)
-- [Pattern Naming Scheme](../accessibility/appendix/pattern-naming-scheme)
+- [Background Icon Technique](../techniques/background-icon.md)
+- [Pattern Naming Scheme](../appendix/pattern-naming-scheme.md)

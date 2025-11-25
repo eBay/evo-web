@@ -10,18 +10,18 @@ A custom date picker is usually presented in tandem with a textfield, as an alte
 
 ### Terminology
 
-* **Single calendar:** one calendar month is presented at a time
-* **Double calendar:** two calendar months are presented at a time
-* **Calendar title**: the month and year
-* **Calendar headers:** the days of the week, acting as column headers
-* **Previous month button**: moves calendar back one month&#x20;
-* **Next month button:** move calendar forward one month
-* **Date buttons:** selects date. Doing so a second time will create a date range
-* **Date states**: date buttons can represent multiple states
-  * **Start Date**
-  * **End Date**
-  * **Current Date**
-* **Date Range**: a range from start date to end date
+- **Single calendar:** one calendar month is presented at a time
+- **Double calendar:** two calendar months are presented at a time
+- **Calendar title**: the month and year
+- **Calendar headers:** the days of the week, acting as column headers
+- **Previous month button**: moves calendar back one month&#x20;
+- **Next month button:** move calendar forward one month
+- **Date buttons:** selects date. Doing so a second time will create a date range
+- **Date states**: date buttons can represent multiple states
+  - **Start Date**
+  - **End Date**
+  - **Current Date**
+- **Date Range**: a range from start date to end date
 
 ### Best Practices
 
@@ -37,9 +37,9 @@ This section provides interaction design for keyboard, screen reader, voice & po
 
 The date picker exposes 3 keyboard focusable areas with TAB key:
 
-* The previous month button
-* The next month button
-* A date button\*&#x20;
+- The previous month button
+- The next month button
+- A date button\*&#x20;
 
 _\*Which date button receives focus can change depending on certain factors._
 
@@ -73,10 +73,7 @@ This section is not yet available.
 
 ### ARIA Reference
 
-#### aria-label
-
-Previous and next month icon buttons require a programmatic label for assistive technology.
-
-#### role-description
-
-The main calendar table can be given a custom description, such as "Calendar".
+| Attribute            | Description                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------- |
+| **aria-label**       | Previous and next month icon buttons require a programmatic label for assistive technology. |
+| **role-description** | The main calendar table can be given a custom description, such as "Calendar".              |

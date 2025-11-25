@@ -1,6 +1,6 @@
 # Inline Notice Accessibility
 
-![Highest bidder notice](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDyYJQOLTemZe960%2Finlinenotice.png?generation=1548799251668838\&alt=media)
+![Highest bidder notice](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDyYJQOLTemZe960%2Finlinenotice.png?generation=1548799251668838&alt=media)
 
 ### Introduction
 
@@ -8,9 +8,9 @@ A notification that appears next to an individual element or control.
 
 In order of priority, from high to low, the status of an inline notice is classified as either:
 
-* attention
-* confirmation
-* information
+- attention
+- confirmation
+- information
 
 ### Working Examples
 
@@ -64,10 +64,10 @@ Let's make it work on the server first, without any JavaScript or client-side re
 
 We'll need a form, a hidden form input, and a submit button:
 
-```markup
+```html
 <form>
-    <input name="item" type="hidden" value="iphone12345" />
-    <input type="submit" value="Add to Cart" />
+  <input name="item" type="hidden" value="iphone12345" />
+  <input type="submit" value="Add to Cart" />
 </form>
 ```
 
@@ -79,13 +79,13 @@ At this stage, without JavaScript, any error message should be a server-side [pa
 
 For our client side enhancement, let's create our error message inside of a landmark region, with an initial state of `hidden` . When the hidden state is removed, the region will be discoverable via a screen reader's list of landmarks.
 
-```markup
+```html
 <form>
-    <input name="item" type="hidden" value="iphone12345" />
-    <input type="submit" value="Add to Cart" />
-    <span class="inline-notice" role="region" aria-label="Attention" hidden>
-        <p>Add to cart action failed. Please try again later.</p>
-    </span>
+  <input name="item" type="hidden" value="iphone12345" />
+  <input type="submit" value="Add to Cart" />
+  <span class="inline-notice" role="region" aria-label="Attention" hidden>
+    <p>Add to cart action failed. Please try again later.</p>
+  </span>
 </form>
 ```
 
@@ -93,15 +93,15 @@ For our client side enhancement, let's create our error message inside of a land
 
 Of course, we do not want to have to rely on a user opening up their list of landmarks to discover if an action was successful or not! We want to announce any error immediately. We do so by adding a live region inside of our landmark region.
 
-```markup
+```html
 <form>
-    <input name="item" type="hidden" value="iphone12345" />
-    <input type="submit" value="Add to Cart" />
-    <div class="inline-notice" role="region" aria-label="Attention" hidden>
-        <div role="alert">
-            <p>Add to cart action failed. Please try again later.</p>
-        </div>
+  <input name="item" type="hidden" value="iphone12345" />
+  <input type="submit" value="Add to Cart" />
+  <div class="inline-notice" role="region" aria-label="Attention" hidden>
+    <div role="alert">
+      <p>Add to cart action failed. Please try again later.</p>
     </div>
+  </div>
 </form>
 ```
 
@@ -109,15 +109,15 @@ Of course, we do not want to have to rely on a user opening up their list of lan
 
 If the user leaves the button, and then returns back to it, it would be nice to remind the user of any error message. This is achieved this with the `aria-describedby` property.
 
-```markup
+```html
 <form>
-    <input name="item" type="hidden" value="iphone12345" />
-    <input type="submit" value="Add to Cart" aria-describedby="msg" />
-    <div class="inline-notice" role="region" aria-label="Attention" hidden>
-        <div id="msg" role="alert">
-            <p>Add to cart action failed. Please try again later.</p>
-        </div>
+  <input name="item" type="hidden" value="iphone12345" />
+  <input type="submit" value="Add to Cart" aria-describedby="msg" />
+  <div class="inline-notice" role="region" aria-label="Attention" hidden>
+    <div id="msg" role="alert">
+      <p>Add to cart action failed. Please try again later.</p>
     </div>
+  </div>
 </form>
 ```
 
@@ -140,7 +140,7 @@ Step 3 is of most interest to us. We must ensure the error message is accessible
 Assuming there was an error, we update the `hidden` state of the live region content.
 
 ```javascript
-document.getElementById('add-to-cart-error').hidden = false;
+document.getElementById("add-to-cart-error").hidden = false;
 ```
 
 When the `hidden` state is removed, assistive technology detects a visibility change in the subtree of the live region, and the content will be announced.&#x20;

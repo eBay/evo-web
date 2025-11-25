@@ -1,8 +1,6 @@
 # Fake Tabs Accessibility
 
-
-
-![My eBay activity, messages and account links that appear like tabs](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEr8S-QsT0uBtoAM%2Ffauxtabs.png?generation=1548799252525056\&alt=media)
+![My eBay activity, messages and account links that appear like tabs](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEr8S-QsT0uBtoAM%2Ffauxtabs.png?generation=1548799252525056&alt=media)
 
 ### Introduction
 
@@ -42,31 +40,32 @@ The "current" fake tab should be announced as the "current" item (exact words ma
 
 Fake Tabs require no JavaScript, they are simply an ordered list of links.&#x20;
 
-```markup
+```html
 <div class="fake-tabs">
-    <ul class="fake-tabs__items">
-        <li class="fake-tabs__item fake-tabs__item--current">
-            <a aria-current="page" href="http://www.ebay.com">Page 1</a>
-        </li>
-        <li class="fake-tabs__item">
-            <a href="http://www.ebay.com">Page 2</a>
-        </li>
-        <li class="fake-tabs__item">
-            <a href="http://www.ebay.com">Page 3</a>
-        </li>
-    </ul>
-    <!-- optional -->
-    <div class="fake-tabs__content">
-        <div class="fake-tabs__cell">
-            <!-- content -->
-        </div>
+  <ul class="fake-tabs__items">
+    <li class="fake-tabs__item fake-tabs__item--current">
+      <a aria-current="page" href="http://www.ebay.com">Page 1</a>
+    </li>
+    <li class="fake-tabs__item">
+      <a href="http://www.ebay.com">Page 2</a>
+    </li>
+    <li class="fake-tabs__item">
+      <a href="http://www.ebay.com">Page 3</a>
+    </li>
+  </ul>
+  <!-- optional -->
+  <div class="fake-tabs__content">
+    <div class="fake-tabs__cell">
+      <!-- content -->
     </div>
+  </div>
 </div>
-
 ```
 
 Fake tabs may optionally be wrapped inside of a navigation landmark region to aid discoverability.
 
 ### ARIA Reference
 
-* **aria-current**: provides AT with programmatic state on the fake-tab that reflects the current URL.
+| Attribute        | Description                                                                        |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| **aria-current** | Provides AT with programmatic state on the fake-tab that reflects the current URL. |

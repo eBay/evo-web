@@ -1,6 +1,6 @@
 # Checkbox Accessibility
 
-![Custom checkbox style](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcGLYCqUcCFwkuBYV%2Fcheckbox.png?generation=1548799254043735\&alt=media)
+![Custom checkbox style](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcGLYCqUcCFwkuBYV%2Fcheckbox.png?generation=1548799254043735&alt=media)
 
 ### Introduction
 
@@ -78,7 +78,7 @@ Native HTML checkboxes are 100% accessible by default and support features such 
 
 Native HTML checkboxes should **always** be your baseline starting point.
 
-```markup
+```html
 <fieldset>
   <legend>Auction Type</legend>
   <span>
@@ -116,9 +116,14 @@ We are going to:
 
 We need to create a new container element that will host each checkbox and it's icon. We give it a class of `checkbox`:
 
-```markup
+```html
 <span class="checkbox">
-  <input class="checkbox__control" id="at_freeshipping" type="checkbox" name="at_freeshipping" />
+  <input
+    class="checkbox__control"
+    id="at_freeshipping"
+    type="checkbox"
+    name="at_freeshipping"
+  />
   <!-- custom icon goes here -->
 </span>
 ```
@@ -147,23 +152,33 @@ We need two icons: checked and unchecked.
 
 We have mentioned that SVG will be used to create the icon. We actually have two implementation choices when it comes to our SVG:
 
-* background SVG
-* foreground SVG
+- background SVG
+- foreground SVG
 
 Here's how the markup will look with background SVG:
 
-```markup
+```html
 <span class="checkbox">
-  <input class="checkbox__control" id="at_freeshipping" type="checkbox" name="at_freeshipping" />
+  <input
+    class="checkbox__control"
+    id="at_freeshipping"
+    type="checkbox"
+    name="at_freeshipping"
+  />
   <span class="checkbox__icon"></span>
 </span>
 ```
 
 And here's how the markup will look with foreground SVG:
 
-```markup
+```html
 <span class="checkbox">
-  <input class="checkbox__control" id="at_freeshipping" type="checkbox" name="at_freeshipping" />
+  <input
+    class="checkbox__control"
+    id="at_freeshipping"
+    type="checkbox"
+    name="at_freeshipping"
+  />
   <span class="checkbox__icon" hidden>
     <svg aria-hidden="true" class="checkbox__unchecked" focusable="false">
       <use xlink:href="#icon-checkbox-unchecked"></use>
@@ -181,8 +196,8 @@ The hidden attribute ensures that the SVG icon is not visible if the page is in 
 
 As you can see, the background SVG markup is more concise, however it has two issues to be aware of:
 
-* the color of the icon is not changeable with CSS
-* alternate variations are needed for windows high contrast mode
+- the color of the icon is not changeable with CSS
+- alternate variations are needed for windows high contrast mode
 
 On the other hand, foreground SVG has neither of these issues.
 
@@ -202,6 +217,6 @@ A dotted border is a good choice, mimicking that of various browsers (such as Fi
 
 This section gives an overview of our use of ARIA, within the specific context of the checkbox pattern.
 
-#### aria-hidden
-
-Removes the presentational SVG element from the accessibility tree.
+| Attribute       | Description                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| **aria-hidden** | Removes the presentational SVG element from the accessibility tree. |

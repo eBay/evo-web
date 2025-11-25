@@ -52,51 +52,64 @@ A sortable table is a table that allows users to sort the data in the table by c
 
 ```html
 <div class="table" role="group" aria-label="Video games for sale" tabindex="0">
-    <table>
-        <thead>
-            <tr>
-                <th class="table-cell" aria-sort="descending">
-                    <button type="button">
-                        Seller
-                        <svg aria-hidden="true" class="icon icon--12" height="28" width="28">
-                            <use href="#icon-sort-down-12"></use>
-                        </svg>
-                    </button>
-                </th>
-                <th class="table-cell">
-                    <button type="button">
-                        Item
-                        <svg aria-hidden="true" class="icon icon--12" height="28" width="28">
-                            <use href="#icon-sort-12"></use>
-                        </svg>
-                    </button>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th class="table-cell">Nintendo</th>
-                <td class="table-cell">
-                    <div class="table-cell__layout">
-                        <div class="table-cell__thumbnail">
-                            <img src="src/routes/static/img/tb-profile-pic.jpg" alt="Nintendo Switch" />
-                        </div>
-                        <div class="table-cell__multiline">
-                            <div class="table-cell__data">
-                                Nintendo Switch Brand New Gaming System with Four Controllers
-                            </div>
-                            <div class="table-cell__data table-cell__data--secondary">
-                                SKU : A43BTR5678  •  Quantity : 1
-                            </div>
-                        </div>
-                    </div>
-                </td>
-                <td class="table-cell">
-                    <span class="signal signal--recent">Ready to Ship</span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th class="table-cell" aria-sort="descending">
+          <button type="button">
+            Seller
+            <svg
+              aria-hidden="true"
+              class="icon icon--12"
+              height="28"
+              width="28"
+            >
+              <use href="#icon-sort-down-12"></use>
+            </svg>
+          </button>
+        </th>
+        <th class="table-cell">
+          <button type="button">
+            Item
+            <svg
+              aria-hidden="true"
+              class="icon icon--12"
+              height="28"
+              width="28"
+            >
+              <use href="#icon-sort-12"></use>
+            </svg>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="table-cell">Nintendo</th>
+        <td class="table-cell">
+          <div class="table-cell__layout">
+            <div class="table-cell__thumbnail">
+              <img
+                src="src/routes/static/img/tb-profile-pic.jpg"
+                alt="Nintendo Switch"
+              />
+            </div>
+            <div class="table-cell__multiline">
+              <div class="table-cell__data">
+                Nintendo Switch Brand New Gaming System with Four Controllers
+              </div>
+              <div class="table-cell__data table-cell__data--secondary">
+                SKU : A43BTR5678 • Quantity : 1
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="table-cell">
+          <span class="signal signal--recent">Ready to Ship</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 ```
 
@@ -141,7 +154,7 @@ The only special consideration for table is sortable columns. Typically this is 
 
 ### Loading State
 
-When the `table`  is in a loading state, it needs to become inaccessible to the user as new data is fetched and loaded. While that happens, we also need to indicate to users that \[new] data is loading.
+When the `table` is in a loading state, it needs to become inaccessible to the user as new data is fetched and loaded. While that happens, we also need to indicate to users that \[new] data is loading.
 
 This can be achieved by adding the table--loading-state class to the .table element.
 
@@ -152,18 +165,18 @@ Additionally, in the loading state, the module should be inaccessible to the use
 Elements that support `disabled` should be disabled. Anchors do NOT support `disabled`, so they should instead have their `href` attribute values removed.&#x20;
 
 {% hint style="info" %}
-Anchors that need to have their `href` attributes removed during loading, may require those `href` attributes to be restored once the loading state is done. For example, table head anchors that do server-side sorting/filtering. A good way to make those links inaccessible is to rename `href`  to some other attribute, such as `data-href`  during loading, and then revert them all back to `href`  when loading state is complete.
+Anchors that need to have their `href` attributes removed during loading, may require those `href` attributes to be restored once the loading state is done. For example, table head anchors that do server-side sorting/filtering. A good way to make those links inaccessible is to rename `href` to some other attribute, such as `data-href` during loading, and then revert them all back to `href` when loading state is complete.
 {% endhint %}
 
 Here are some other steps to manually ensure the module is inaccessible:
 
-* All interactive elements inside table should be forced to NOT be focusable.
-* The module container should be forced to be unscrollable.
-* The progress bar should be forced to gain focus.
-* All interactive elements inside the table should be disabled or, for links, `href` attributes emptied while loading.
+- All interactive elements inside table should be forced to NOT be focusable.
+- The module container should be forced to be unscrollable.
+- The progress bar should be forced to gain focus.
+- All interactive elements inside the table should be disabled or, for links, `href` attributes emptied while loading.
 
 ### ARIA Reference
 
-#### [aria-sort](https://www.w3.org/TR/wai-aria-1.1/#aria-sort)
-
-Applied to column headings to convey descending or ascending sorted stated.
+| Attribute     | Description                                                                 |
+| ------------- | --------------------------------------------------------------------------- |
+| **aria-sort** | Applied to column headings to convey descending or ascending sorted stated. |

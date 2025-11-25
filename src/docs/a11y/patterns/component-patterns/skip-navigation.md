@@ -1,6 +1,6 @@
 # Skip Navigation Accessibility
 
-![Skip to main content](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcG0pUg0R4d2iuXs8%2Fskipto.png?generation=1548799253737538\&alt=media)
+![Skip to main content](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcG0pUg0R4d2iuXs8%2Fskipto.png?generation=1548799253737538&alt=media)
 
 ### Introduction
 
@@ -54,9 +54,9 @@ Our content contains a source link and a named, target element.
 
 In our target element we specify a unique id, and set a tabindex value of -1.
 
-```markup
+```html
 <main id="mainContent" role="main" tabindex="-1">
-    <!-- all of your main page content goes here -->
+  <!-- all of your main page content goes here -->
 </main>
 ```
 
@@ -68,7 +68,7 @@ Without the tabindex, a screen reader's virtual cursor may get left behind on th
 
 Our source link references the target id:
 
-```markup
+```html
 <a class="skipto" href="#mainContent">Skip to main content</a>
 ```
 
@@ -87,15 +87,15 @@ The goal of the presentation layer is to hide the skip to link until it has keyb
 We use a CSS clipping technique to hide the element offscreen:
 
 ```css
-.skip {    
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px !important;
-    overflow: hidden;
-    padding: 0 !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    width: 1px !important;
+.skip {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 }
 ```
 
@@ -105,9 +105,9 @@ To reveal, we update these styles using the `:focus` pseudo selector:
 
 ```css
 .skip:focus {
-    clip: none;
-    height: auto;
-    width: auto;
+  clip: none;
+  height: auto;
+  width: auto;
 }
 ```
 
@@ -119,7 +119,7 @@ We can remove this outline with CSS:
 
 ```css
 .skip-target:focus {
-    outline: 0 none;
+  outline: 0 none;
 }
 ```
 

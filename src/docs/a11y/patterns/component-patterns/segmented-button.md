@@ -40,18 +40,18 @@ The only thing to set them apart from a normal button, is that "clicking" one se
 
 The segmented buttons are formed together in a list, with one button marked as current:
 
-```markup
+```html
 <h2>Price Guidance</h2>
 <div class="segmented-button">
-    <ul>
-        <li><button type="button">1D</button></li>
-        <li><button type="button">3W</button></li>
-        <li><button type="button" aria-current="true">1M</button></li>
-        <li><button type="button">1Y</button></li>
-    </ul>
+  <ul>
+    <li><button type="button">1D</button></li>
+    <li><button type="button">3W</button></li>
+    <li><button type="button" aria-current="true">1M</button></li>
+    <li><button type="button">1Y</button></li>
+  </ul>
 </div>
 <div>
-    <!-- some chart/graph -->
+  <!-- some chart/graph -->
 </div>
 ```
 
@@ -61,16 +61,16 @@ Under development.
 
 Again, the segmented buttons are formed together in a list, with one button marked as current:
 
-```markup
+```html
 <h2>Create An Account</h2>
 <div class="segmented-button">
-    <ul>
-        <li><button type="button" aria-current="true">Personal</button></li>
-        <li><button type="button">Business</button></li>
-    </ul>
+  <ul>
+    <li><button type="button" aria-current="true">Personal</button></li>
+    <li><button type="button">Business</button></li>
+  </ul>
 </div>
 <form>
-    <!-- form fields change depending on selection -->
+  <!-- form fields change depending on selection -->
 </form>
 ```
 
@@ -78,6 +78,6 @@ Under development.
 
 ### ARIA Reference
 
-**aria-current=true**
-
-Conveys the currently pressed segment.
+| Attribute             | Description                            |
+| --------------------- | -------------------------------------- |
+| **aria-current=true** | Conveys the currently pressed segment. |

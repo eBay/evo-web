@@ -1,6 +1,6 @@
 # Migration Report
 
-**Date:** November 25, 2025  
+**Date:** December 1, 2025  
 **Task:** Restructuring component documentation to match the accordion pattern  
 **Source:** `src/docs/a11y/patterns/component-patterns/[component].md`  
 **Destination:** `src/routes/component/[component]/+page.marko`
@@ -57,6 +57,9 @@ Convert ARIA Reference from old format to a markdown table:
 - **Total Components:** 84
 - **Components with Pattern Documentation:** 61
 - **Components with Terminology Migrated:** 25
+- **Components with Subtitle Added:** 44
+- **Components with Banner Image Added:** 42
+- **Components with ARIA Reference Tables:** 34
 - **Components Pending Full Restructuring:** 59
 
 ---
@@ -65,9 +68,9 @@ Convert ARIA Reference from old format to a markdown table:
 
 ### Status Legend
 
-- **✅ ✅** - Both Pattern Available AND Terminology Migrated (Step 1 complete)
-- **✅ ❌** - Pattern Available but Terminology NOT migrated (Step 1 pending)
-- **❌ ❌** - No Pattern Documentation (Not applicable for migration)
+- **✅** - Feature/section is complete and in proper format
+- **❌** - Feature/section is missing or not applicable
+- **⏸️** - Content not yet available (placeholder exists)
 
 ### Next Steps Required
 
@@ -79,6 +82,17 @@ For components marked **✅ ❌**, complete all migration steps:
 4. ⏳ Add banner image with `class="component-banner-img"`
 5. ⏳ Clean up a11y markdown (keep only Best Practices, Interaction Design, ARIA Reference, Further Reading)
 6. ⏳ Standardize ARIA Reference table format
+
+### Column Descriptions
+
+- **Pattern Available**: Component has accessibility pattern documentation in `src/docs/a11y/patterns/component-patterns/`
+- **Terminology**: Component page includes Terminology section moved from a11y docs
+- **Subtitle**: Component page has subtitle with `class="component-subtitle"`
+- **Banner**: Component page has banner image with `class="component-banner-img"`
+- **ARIA Reference**: A11y pattern docs include ARIA Reference section in clean markdown table format
+  - ✅ = Has ARIA Reference table
+  - ❌ = No ARIA Reference section or N/A
+  - ⏸️ = ARIA Reference placeholder exists but content not yet available
 
 ### Completed Terminology Migration (25 components)
 
@@ -92,96 +106,152 @@ These components have Step 1 (Terminology) complete but still need Steps 3-6:
 - segmented-buttons, select, tabs
 - toggle-button-group, tooltip, tourtip
 
+### Fully Migrated Components (23 components)
+
+These components have all 4 elements complete (Pattern + Terminology + Subtitle + Banner):
+
+- accordion, alert-dialog, avatar, breadcrumbs, calendar
+- carousel, chips-combobox, combobox, confirm-dialog
+- file-preview-card, infotip, lightbox-dialog
+- listbox, listbox-button, menu-button
+- number-input, pagination, phone-input
+- segmented-buttons, select, tabs
+- toggle-button-group, tooltip, tourtip
+
+### ARIA Reference Tables Converted (34 components)
+
+All component pattern docs with ARIA Reference sections now use clean markdown table format:
+
+**With Pattern + ARIA Reference (21):**
+
+- accordion, alert-dialog, avatar, badge, breadcrumbs, button
+- carousel, checkbox, chips-combobox, combobox
+- infotip, lightbox-dialog, link, menu, menu-button
+- pagination, radio, segmented-buttons, switch, table
+- toggle-button, toggle-button-group
+
+**ARIA Reference only (no pattern doc, but has pattern with ARIA) (1):**
+
+- date-textbox
+
+**Pattern docs with ARIA Reference but non-component patterns (12):**
+
+- fake-menu-button, fake-tabs, footnote, form-validation
+- image (⏸️), input-validation, panel-dialog (⏸️), popover
+- pulldown-list, region, toast-dialog
+
+**Note:** Two components (image, panel-dialog) have ARIA Reference placeholders marked as "content not yet available" (⏸️)
+
+### Nearly Complete (1 component)
+
+These components have Pattern + Terminology + Subtitle but are missing Banner:
+
+- menu
+
+### Subtitle & Banner Added (Non-Pattern Components)
+
+These components don't have pattern documentation but have subtitle and banner added:
+
+- ccd, chip, cta-button, date-textbox, icon-button
+- progress-stepper, section-notice, skeleton, snackbar-dialog, textbox
+
+### Components Needing Subtitle & Banner (Pattern with No Terminology)
+
+These components have pattern documentation (no terminology section) but need subtitle and banner:
+
+- file-input, layout-grid, link, panel-dialog, star-rating
+- table, toast-dialog, toggle-button
+
 ---
 
 ## Component Status Table
 
-| Component               | Pattern Available | Terminology |
-| ----------------------- | ----------------- | ----------- |
-| accordion               | ✅                | ✅          |
-| alert-dialog            | ✅                | ✅          |
-| avatar                  | ✅                | ✅          |
-| badge                   | ✅                | ❌          |
-| breadcrumbs             | ✅                | ✅          |
-| button                  | ✅                | ❌          |
-| calendar                | ✅                | ✅          |
-| card                    | ✅                | ❌          |
-| carousel                | ✅                | ✅          |
-| ccd                     | ❌                | ❌          |
-| chart-legend            | ❌                | ❌          |
-| checkbox                | ✅                | ❌          |
-| chip                    | ❌                | ❌          |
-| chips-combobox          | ✅                | ✅          |
-| combobox                | ✅                | ✅          |
-| confirm-dialog          | ✅                | ✅          |
-| cta-button              | ❌                | ❌          |
-| date-textbox            | ❌                | ❌          |
-| details                 | ✅                | ❌          |
-| donut-chart             | ❌                | ❌          |
-| education-notice        | ❌                | ❌          |
-| eek                     | ❌                | ❌          |
-| field                   | ❌                | ❌          |
-| file-input              | ✅                | ❌          |
-| file-preview-card       | ✅                | ✅          |
-| file-preview-card-group | ❌                | ❌          |
-| filter-chip             | ❌                | ❌          |
-| filter-input            | ❌                | ❌          |
-| flag                    | ❌                | ❌          |
-| floating-label          | ❌                | ❌          |
-| global                  | ❌                | ❌          |
-| icon                    | ❌                | ❌          |
-| icon-button             | ❌                | ❌          |
-| image-placeholder       | ❌                | ❌          |
-| infotip                 | ✅                | ✅          |
-| inline-notice           | ✅                | ❌          |
-| item-tile               | ❌                | ❌          |
-| item-tile-group         | ❌                | ❌          |
-| layout-grid             | ✅                | ❌          |
-| less                    | ❌                | ❌          |
-| lightbox-dialog         | ✅                | ✅          |
-| link                    | ✅                | ❌          |
-| list                    | ❌                | ❌          |
-| listbox                 | ✅                | ✅          |
-| listbox-button          | ✅                | ✅          |
-| marketsans              | ❌                | ❌          |
-| menu                    | ✅                | ✅          |
-| menu-button             | ✅                | ✅          |
-| number-input            | ✅                | ✅          |
-| page-grid               | ❌                | ❌          |
-| page-notice             | ✅                | ❌          |
-| pagination              | ✅                | ✅          |
-| panel-dialog            | ✅                | ❌          |
-| phone-input             | ✅                | ✅          |
-| progress-bar            | ❌                | ❌          |
-| progress-bar-expressive | ❌                | ❌          |
-| progress-spinner        | ❌                | ❌          |
-| progress-stepper        | ❌                | ❌          |
-| radio                   | ✅                | ❌          |
-| sass                    | ❌                | ❌          |
-| section-notice          | ❌                | ❌          |
-| section-title           | ❌                | ❌          |
-| segmented-buttons       | ✅                | ✅          |
-| select                  | ✅                | ✅          |
-| selection-chip          | ❌                | ❌          |
-| signal                  | ❌                | ❌          |
-| skeleton                | ❌                | ❌          |
-| snackbar-dialog         | ❌                | ❌          |
-| split-button            | ❌                | ❌          |
-| star-rating             | ✅                | ❌          |
-| star-rating-select      | ❌                | ❌          |
-| svg                     | ❌                | ❌          |
-| switch                  | ✅                | ❌          |
-| table                   | ✅                | ❌          |
-| tabs                    | ✅                | ✅          |
-| textbox                 | ❌                | ❌          |
-| toast-dialog            | ✅                | ❌          |
-| toggle-button           | ✅                | ❌          |
-| toggle-button-group     | ✅                | ✅          |
-| tokens                  | ❌                | ❌          |
-| tooltip                 | ✅                | ✅          |
-| tourtip                 | ✅                | ✅          |
-| typography              | ❌                | ❌          |
-| utility                 | ❌                | ❌          |
+| Component               | Pattern Available | Terminology | Subtitle | Banner | ARIA Reference |
+| ----------------------- | ----------------- | ----------- | -------- | ------ | -------------- |
+| accordion               | ✅                | ✅          | ✅       | ✅     | ✅             |
+| alert-dialog            | ✅                | ✅          | ✅       | ✅     | ✅             |
+| avatar                  | ✅                | ✅          | ✅       | ✅     | ✅             |
+| badge                   | ✅                | ❌          | ✅       | ✅     | ✅             |
+| breadcrumbs             | ✅                | ✅          | ✅       | ✅     | ✅             |
+| button                  | ✅                | ❌          | ✅       | ✅     | ✅             |
+| calendar                | ✅                | ✅          | ✅       | ✅     | ❌             |
+| card                    | ✅                | ❌          | ✅       | ✅     | ❌             |
+| carousel                | ✅                | ✅          | ✅       | ✅     | ✅             |
+| ccd                     | ❌                | ❌          | ❌       | ✅     | ❌             |
+| chart-legend            | ❌                | ❌          | ❌       | ❌     | ❌             |
+| checkbox                | ✅                | ❌          | ✅       | ✅     | ✅             |
+| chip                    | ❌                | ❌          | ✅       | ✅     | ❌             |
+| chips-combobox          | ✅                | ✅          | ✅       | ✅     | ✅             |
+| combobox                | ✅                | ✅          | ✅       | ✅     | ✅             |
+| confirm-dialog          | ✅                | ✅          | ✅       | ✅     | ❌             |
+| cta-button              | ❌                | ❌          | ✅       | ✅     | ❌             |
+| date-textbox            | ❌                | ❌          | ✅       | ✅     | ✅             |
+| details                 | ✅                | ❌          | ✅       | ✅     | ❌             |
+| donut-chart             | ❌                | ❌          | ❌       | ❌     | ❌             |
+| education-notice        | ❌                | ❌          | ❌       | ❌     | ❌             |
+| eek                     | ❌                | ❌          | ❌       | ❌     | ❌             |
+| field                   | ❌                | ❌          | ❌       | ❌     | ❌             |
+| file-input              | ✅                | ❌          | ❌       | ❌     | ❌             |
+| file-preview-card       | ✅                | ✅          | ✅       | ✅     | ❌             |
+| file-preview-card-group | ❌                | ❌          | ❌       | ❌     | ❌             |
+| filter-chip             | ❌                | ❌          | ❌       | ❌     | ❌             |
+| filter-input            | ❌                | ❌          | ❌       | ❌     | ❌             |
+| flag                    | ❌                | ❌          | ❌       | ❌     | ❌             |
+| floating-label          | ❌                | ❌          | ❌       | ❌     | ❌             |
+| global                  | ❌                | ❌          | ❌       | ❌     | ❌             |
+| icon                    | ❌                | ❌          | ❌       | ❌     | ❌             |
+| icon-button             | ❌                | ❌          | ✅       | ✅     | ❌             |
+| image-placeholder       | ❌                | ❌          | ❌       | ❌     | ❌             |
+| infotip                 | ✅                | ✅          | ✅       | ✅     | ✅             |
+| inline-notice           | ✅                | ❌          | ✅       | ✅     | ❌             |
+| item-tile               | ❌                | ❌          | ❌       | ❌     | ❌             |
+| item-tile-group         | ❌                | ❌          | ❌       | ❌     | ❌             |
+| layout-grid             | ✅                | ❌          | ❌       | ❌     | ❌             |
+| less                    | ❌                | ❌          | ❌       | ❌     | ❌             |
+| lightbox-dialog         | ✅                | ✅          | ✅       | ✅     | ✅             |
+| link                    | ✅                | ❌          | ❌       | ❌     | ✅             |
+| list                    | ❌                | ❌          | ✅       | ❌     | ❌             |
+| listbox                 | ✅                | ✅          | ✅       | ✅     | ❌             |
+| listbox-button          | ✅                | ✅          | ✅       | ✅     | ❌             |
+| marketsans              | ❌                | ❌          | ❌       | ❌     | ❌             |
+| menu                    | ✅                | ✅          | ✅       | ❌     | ✅             |
+| menu-button             | ✅                | ✅          | ✅       | ✅     | ✅             |
+| number-input            | ✅                | ✅          | ✅       | ✅     | ❌             |
+| page-grid               | ❌                | ❌          | ❌       | ❌     | ❌             |
+| page-notice             | ✅                | ❌          | ✅       | ✅     | ❌             |
+| pagination              | ✅                | ✅          | ✅       | ✅     | ✅             |
+| panel-dialog            | ✅                | ❌          | ❌       | ❌     | ⏸️             |
+| phone-input             | ✅                | ✅          | ✅       | ✅     | ❌             |
+| progress-bar            | ❌                | ❌          | ❌       | ❌     | ❌             |
+| progress-bar-expressive | ❌                | ❌          | ❌       | ❌     | ❌             |
+| progress-spinner        | ❌                | ❌          | ❌       | ❌     | ❌             |
+| progress-stepper        | ❌                | ❌          | ✅       | ✅     | ❌             |
+| radio                   | ✅                | ❌          | ✅       | ✅     | ✅             |
+| sass                    | ❌                | ❌          | ❌       | ❌     | ❌             |
+| section-notice          | ❌                | ❌          | ✅       | ✅     | ❌             |
+| section-title           | ❌                | ❌          | ❌       | ❌     | ❌             |
+| segmented-buttons       | ✅                | ✅          | ✅       | ✅     | ✅             |
+| select                  | ✅                | ✅          | ✅       | ✅     | ❌             |
+| selection-chip          | ❌                | ❌          | ❌       | ❌     | ❌             |
+| signal                  | ❌                | ❌          | ❌       | ❌     | ❌             |
+| skeleton                | ❌                | ❌          | ✅       | ✅     | ❌             |
+| snackbar-dialog         | ❌                | ❌          | ✅       | ✅     | ❌             |
+| split-button            | ❌                | ❌          | ❌       | ❌     | ❌             |
+| star-rating             | ✅                | ❌          | ❌       | ❌     | ❌             |
+| star-rating-select      | ❌                | ❌          | ❌       | ❌     | ❌             |
+| svg                     | ❌                | ❌          | ❌       | ❌     | ❌             |
+| switch                  | ✅                | ❌          | ✅       | ✅     | ✅             |
+| table                   | ✅                | ❌          | ❌       | ❌     | ✅             |
+| tabs                    | ✅                | ✅          | ✅       | ✅     | ❌             |
+| textbox                 | ❌                | ❌          | ✅       | ✅     | ❌             |
+| toast-dialog            | ✅                | ❌          | ❌       | ❌     | ✅             |
+| toggle-button           | ✅                | ❌          | ❌       | ❌     | ✅             |
+| toggle-button-group     | ✅                | ✅          | ✅       | ✅     | ✅             |
+| tokens                  | ❌                | ❌          | ❌       | ❌     | ❌             |
+| tooltip                 | ✅                | ✅          | ✅       | ✅     | ❌             |
+| tourtip                 | ✅                | ✅          | ✅       | ✅     | ❌             |
+| typography              | ❌                | ❌          | ❌       | ❌     | ❌             |
+| utility                 | ❌                | ❌          | ❌       | ❌     | ❌             |
 
 ---
 
@@ -251,4 +321,4 @@ These components exist in the routes but have no corresponding a11y pattern docu
 - snackbar-dialog, split-button, star-rating-select, svg
 - textbox, tokens, typography, utility
 
-**Report Generated:** November 25, 2025
+**Report Generated:** December 1, 2025

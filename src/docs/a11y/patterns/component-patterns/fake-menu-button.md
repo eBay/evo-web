@@ -1,6 +1,6 @@
 # Fake Menu Button Accessibility
 
-![Screenshot depicting a "menu" of links inside of a popover](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFLXbXOWR_cv1W_g%2Ffauxmenu.png?generation=1548799253201289\&alt=media)
+![Screenshot depicting a "menu" of links inside of a popover](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFLXbXOWR_cv1W_g%2Ffauxmenu.png?generation=1548799253201289&alt=media)
 
 ### Introduction
 
@@ -20,14 +20,14 @@ You can get an idea of the required markup structure by viewing our [bones site]
 
 ### Terminology
 
-* **fake menu button**: the pattern as a whole, comprised of the following sub-parts
-* **host**: a link, button or stealth button that \*hosts\* the overlay
-* **overlay**: the non-modal overlay that contains the fake menu items
-* **fake menu:** the list of fake menu items
-* **fake menu item**: a link or button
-* **expanded/collapsed**: the state of the overlay (i.e. visible or hidden)
-* **hover-activated**: the overlay expands on hover of host (implies host is a link)
-* **click-activated**: the overlay expands on click of host (implies host is a button)
+- **fake menu button**: the pattern as a whole, comprised of the following sub-parts
+- **host**: a link, button or stealth button that \*hosts\* the overlay
+- **overlay**: the non-modal overlay that contains the fake menu items
+- **fake menu:** the list of fake menu items
+- **fake menu item**: a link or button
+- **expanded/collapsed**: the state of the overlay (i.e. visible or hidden)
+- **hover-activated**: the overlay expands on hover of host (implies host is a link)
+- **click-activated**: the overlay expands on click of host (implies host is a button)
 
 ### Best Practices
 
@@ -71,27 +71,27 @@ Clicking button host **must** toggle state of overlay.
 
 Placement of the host (the button) must go directly _before_ the overlay element. This allows natural keyboard flow and reading order from the host into the overlay.
 
-```markup
+```html
 <span class="fake-menu">
-   <button class="fake-menu__host" type="button">Categories</button>
-   <span class="fake-menu__overlay">
-      <!-- fake menu items go here -->
-   </span>
+  <button class="fake-menu__host" type="button">Categories</button>
+  <span class="fake-menu__overlay">
+    <!-- fake menu items go here -->
+  </span>
 </span>
 ```
 
 You may also notice that this structure is almost identical to the [popover](../disclosure/popover). This is because the fake menu pattern is an extension of the popover pattern. In essence it is just a button that opens an overlay of _content_; the content in this case being a list of links (buttons are permissible too).
 
-```markup
+```html
 <span class="fake-menu">
-   <button class="fake-menu__host" type="button">Categories</button>
-   <span class="fake-menu__overlay">
-      <ul>
-         <li><a href="http://www.ebay.com">Fake-Menu Item 1</a></li>
-         <li><a href="http://www.ebay.com">Fake-Menu Item 2</a></li>
-         <li><a href="http://www.ebay.com">Fake-Menu Item 3</a></li>
-      </ul>
-   </span>
+  <button class="fake-menu__host" type="button">Categories</button>
+  <span class="fake-menu__overlay">
+    <ul>
+      <li><a href="http://www.ebay.com">Fake-Menu Item 1</a></li>
+      <li><a href="http://www.ebay.com">Fake-Menu Item 2</a></li>
+      <li><a href="http://www.ebay.com">Fake-Menu Item 3</a></li>
+    </ul>
+  </span>
 </span>
 ```
 
@@ -99,6 +99,6 @@ You may also notice that this structure is almost identical to the [popover](../
 
 This section gives an overview of our use of ARIA, within the specific context of this pattern.
 
-#### aria-expanded
-
-This boolean attribute signifies the expanded state of the host button or stealth button (but is not used on a host link).
+| Attribute         | Description                                                                                                                |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **aria-expanded** | This boolean attribute signifies the expanded state of the host button or stealth button (but is not used on a host link). |

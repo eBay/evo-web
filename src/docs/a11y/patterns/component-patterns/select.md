@@ -1,6 +1,6 @@
 # Select Accessibility
 
-![Select a search category](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEgOBcF4Eo5q_gfN%2Fselect.png?generation=1548799252119387\&alt=media)
+![Select a search category](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEgOBcF4Eo5q_gfN%2Fselect.png?generation=1548799252119387&alt=media)
 
 ### Introduction
 
@@ -22,11 +22,11 @@ View a fully styled example in our [eBay Skin CSS framework](https://opensource.
 
 ### Terminology
 
-* **select**: the pattern as a \*whole\*, comprised of the following sub parts
-* **label**: the labelling element or text for the control
-* **flyout**: contains the full view of options
-* **options**: each option available for selection
-* **multiple**: boolean, indicating if multi-select is allowed
+- **select**: the pattern as a \*whole\*, comprised of the following sub parts
+- **label**: the labelling element or text for the control
+- **flyout**: contains the full view of options
+- **options**: each option available for selection
+- **multiple**: boolean, indicating if multi-select is allowed
 
 ### Best Practices
 
@@ -68,13 +68,13 @@ Clicking or tapping option in flyout will update select to that value.
 
 HTML gives us a native select control that is 100% keyboard and screenreader accessible without any need for JavaScript:
 
-```markup
+```html
 <label for="car">Choose a car</label>
 <select id="car" name="car">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
 </select>
 ```
 

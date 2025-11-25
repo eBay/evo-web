@@ -49,7 +49,9 @@ There are two types of link that need extra care and attention:
 
 ### ARIA Reference
 
-* **aria-current**: used to indicate that this link represents the current page (aria-current="page").
+| Attribute        | Description                                                                        |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| **aria-current** | Used to indicate that this link represents the current page (aria-current="page"). |
 
 ### FAQ
 
@@ -63,5 +65,5 @@ If the link contains an image with embedded text, the image must have alt text.&
 
 ### Further Reading
 
-* [http://webaim.org/techniques/hypertext/hypertext\_links](http://webaim.org/techniques/hypertext/hypertext_links)
-* [https://www.scottohara.me/blog/2021/05/28/disabled-links.html](https://www.scottohara.me/blog/2021/05/28/disabled-links.html)
+- [http://webaim.org/techniques/hypertext/hypertext_links](http://webaim.org/techniques/hypertext/hypertext_links)
+- [https://www.scottohara.me/blog/2021/05/28/disabled-links.html](https://www.scottohara.me/blog/2021/05/28/disabled-links.html)

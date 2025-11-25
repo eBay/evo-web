@@ -2,9 +2,7 @@
 
 ### Screenshots
 
-![Screenshot of menu used for filtering on mobile web](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LexISm2uybKtLNUWrsT%2F-LexIXrfv1JMrjkrwdpg%2Fmenu-mweb.png?alt=media\&token=747fb45a-fce7-40a5-8a89-9eb0512d2326)
-
-
+![Screenshot of menu used for filtering on mobile web](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LexISm2uybKtLNUWrsT%2F-LexIXrfv1JMrjkrwdpg%2Fmenu-mweb.png?alt=media&token=747fb45a-fce7-40a5-8a89-9eb0512d2326)
 
 ### Introduction
 
@@ -20,7 +18,7 @@ If your menu must contain a _mix_ of JavaScript behaviour and links behaviour, p
 
 Experience the pattern in action on our companion [eBay MIND Patterns examples website](http://ebay.github.io/mindpatterns/input/menu/).
 
-on  [Bones GitHub project](https://github.com/ianmcburnie/bones#user-content-popup-menu).
+on [Bones GitHub project](https://github.com/ianmcburnie/bones#user-content-popup-menu).
 
 View a fully styled example in our [eBay Skin CSS framework](https://opensource.ebay.com/skin/component/menu/).
 
@@ -70,7 +68,7 @@ Disabled commands must be announced as disabled.
 
 #### Pointer
 
-Clicking any menu item **must**  activate that command.
+Clicking any menu item **must** activate that command.
 
 ### Developer Guide
 
@@ -80,32 +78,17 @@ Please see the [menu button](menu-button) pattern pattern. A menu is identical e
 
 We have some JavaScript modules that may assist you with creation of an accessible menu widget:
 
-* [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change menu items
+- [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change menu items
 
 ### ARIA Reference
 
 This section gives an overview of our use of ARIA, within the specific context of the menu pattern.
 
-#### role=menu
-
-Informs assistive technology that this is a menu containing menuitems, menuitemradios or menuitemcheckboxes.
-
-#### role=presentation
-
-Informs assistive technology that the divs around groups of menu items are for presentation purposes only and should not be added to accessibility tree.
-
-#### role=menuitem
-
-Informs assistive technology that this menu command has button behaviour.
-
-#### role=menuitemradio
-
-Informs assistive technology that this menu command has radio button behaviour.
-
-#### role=menuitemcheckbox
-
-Informs assistive technology that this menu command has checkbox behaviour.
-
-#### aria-checked
-
-Informs assistive technology whether the menuitemradio or menuitemcheckbox is checked or not. Notice we do not use aria-selected.
+| Attribute                 | Description                                                                                                                                              |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **role=menu**             | Informs assistive technology that this is a menu containing menuitems, menuitemradios or menuitemcheckboxes.                                             |
+| **role=presentation**     | Informs assistive technology that the divs around groups of menu items are for presentation purposes only and should not be added to accessibility tree. |
+| **role=menuitem**         | Informs assistive technology that this menu command has button behaviour.                                                                                |
+| **role=menuitemradio**    | Informs assistive technology that this menu command has radio button behaviour.                                                                          |
+| **role=menuitemcheckbox** | Informs assistive technology that this menu command has checkbox behaviour.                                                                              |
+| **aria-checked**          | Informs assistive technology whether the menuitemradio or menuitemcheckbox is checked or not. Notice we do not use aria-selected.                        |

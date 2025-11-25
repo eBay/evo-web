@@ -34,22 +34,10 @@ We do not supply a developer guide for buttons because you should **always use t
 
 This section lists all relevant ARIA roles, states and properties for a button.
 
-### aria-haspopup
-
-Informs AT that the button opens a [menu](menu) or [dialog](../disclosure/lightbox-dialog) etc. when clicked.
-
-### aria-controls
-
-Informs AT that the button controls another element.
-
-### aria-expanded
-
-Informs AT of the expanded state of any associated element or content
-
-### aria-label
-
-Creates a label for the button. **Warning!** This label will override any inner text that may be present. This property is most commonly used for icon buttons.
-
-### aria-describedby
-
-Informs AT of any extended description or context related to the button. Note that this property has no effect on the accessible label of the button.
+| Attribute            | Description                                                                                                                                                     |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **aria-haspopup**    | Informs AT that the button opens a [menu](menu) or [dialog](../disclosure/lightbox-dialog) etc. when clicked.                                                   |
+| **aria-controls**    | Informs AT that the button controls another element.                                                                                                            |
+| **aria-expanded**    | Informs AT of the expanded state of any associated element or content                                                                                           |
+| **aria-label**       | Creates a label for the button. **Warning!** This label will override any inner text that may be present. This property is most commonly used for icon buttons. |
+| **aria-describedby** | Informs AT of any extended description or context related to the button. Note that this property has no effect on the accessible label of the button.           |

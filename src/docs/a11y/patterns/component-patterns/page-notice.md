@@ -1,6 +1,6 @@
 # Page Notice Accessibility
 
-![Page notice requiring users attention.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJmfnCyi6cADHhV_RQk%2F-MJmjFyF_iT1oRutE__7%2Fpage-notice-dweb.png?alt=media\&token=e4310480-5ad3-4797-a21d-0589bd01f2f7)
+![Page notice requiring users attention.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJmfnCyi6cADHhV_RQk%2F-MJmjFyF_iT1oRutE__7%2Fpage-notice-dweb.png?alt=media&token=e4310480-5ad3-4797-a21d-0589bd01f2f7)
 
 ### Introduction
 
@@ -8,15 +8,15 @@ User notification which appears prominently at the top of the page, above the ma
 
 In order of priority, from high to low, a page notice is classified as either:
 
-* attention
-* confirmation
-* information
+- attention
+- confirmation
+- information
 
 Page-notices may be rendered server-side and visible at page load time or, in a single page app environment, they might instead be triggered on the client after some user action.
 
 Composite patterns containing Page Notices are:
 
-* [Form Validation (server-side)](form-validation)
+- [Form Validation (server-side)](form-validation)
 
 ### Working Examples
 
@@ -60,11 +60,11 @@ A page notice has 4 key pieces of content: icon, heading, copy and call to actio
 
 #### Landmark Region
 
-To aid discoverability of such important content for assistive technology, we make the page notice a landmark, using the `<section>` tag and  `region` role.
+To aid discoverability of such important content for assistive technology, we make the page notice a landmark, using the `<section>` tag and `region` role.
 
-```markup
+```html
 <section class="page-notice page-notice--attention" role="region">
-    <!-- content -->
+  <!-- content -->
 </section>
 ```
 
@@ -74,9 +74,9 @@ The page notice will not appear in the screen reader's list of landmarks until w
 
 Adding a tabindex value of -1 allows programmatic keyboard focus on a high-priority page notice.
 
-```markup
+```html
 <section class="page-notice page-notice--attention" role="region" tabindex="-1">
-    <!-- content -->
+  <!-- content -->
 </section>
 ```
 
@@ -86,11 +86,15 @@ Adding a tabindex value of -1 allows programmatic keyboard focus on a high-prior
 
 Notices rendered or updated on the client must exist within a "live-region".
 
-```markup
+```html
 <div aria-live="polite">
-    <section aria-labelledby="page-notice-title" class="page-notice page-notice--attention" role="region">
-        <!-- content -->
-    </section>
+  <section
+    aria-labelledby="page-notice-title"
+    class="page-notice page-notice--attention"
+    role="region"
+  >
+    <!-- content -->
+  </section>
 </div>
 ```
 
@@ -100,17 +104,17 @@ Assistive technology will now announce any client-side changes to content within
 
 We will begin by structuring the notice into 3 parts: header, main & footer.
 
-```markup
+```html
 <section class="page-notice page-notice--attention" role="region">
-    <div class="page-notice__header">
-        <!-- header content -->
-    </div>
-    <div class="page-notice__main">
-        <!-- main content -->
-    </div>
-    <div class="page-notice__footer">
-        <!-- footer content -->
-    </div>
+  <div class="page-notice__header">
+    <!-- header content -->
+  </div>
+  <div class="page-notice__main">
+    <!-- main content -->
+  </div>
+  <div class="page-notice__footer">
+    <!-- footer content -->
+  </div>
 </section>
 ```
 
@@ -118,19 +122,25 @@ We will begin by structuring the notice into 3 parts: header, main & footer.
 
 The SVG icon fits into the header slot. It has an `aria-label` value of "Attention", "Confirmation" or "Information".
 
-```markup
+```html
 <section class="page-notice page-notice--attention" role="region">
-    <div class="page-notice__header">
-        <svg focusable="false" height="24" width="24" role="img" aria-label="Attention">
-            <use xlink:href="#icon-attention"></use>
-        </svg>
-    </div>
-    <div class="page-notice__main">
-        <!-- main content -->
-    </div>
-    <div class="page-notice__footer">
-        <!-- footer content -->
-    </div>
+  <div class="page-notice__header">
+    <svg
+      focusable="false"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Attention"
+    >
+      <use xlink:href="#icon-attention"></use>
+    </svg>
+  </div>
+  <div class="page-notice__main">
+    <!-- main content -->
+  </div>
+  <div class="page-notice__footer">
+    <!-- footer content -->
+  </div>
 </section>
 ```
 
@@ -138,20 +148,33 @@ The SVG icon fits into the header slot. It has an `aria-label` value of "Attenti
 
 The heading element can be used to as the label for the landmark region, fixing the issue mentioned previously.
 
-```markup
-<section aria-labelledby="page-notice-title" class="page-notice page-notice--attention" role="region">
-    <div class="page-notice__header">
-        <svg focusable="false" height="24" width="24" role="img" aria-label="Attention">
-            <use xlink:href="#icon-attention"></use>
-        </svg>
-    </div>
-    <div class="page-notice__main">
-        <h2 class="page-notice__title" id="page-notice-title">Update bank info</h2>
-        <p>Please update your bank details by [due date] to get you account back in good standing.</p>
-    </div>
-    <div class="page-notice__footer">
-        <!-- footer content -->
-    </div>
+```html
+<section
+  aria-labelledby="page-notice-title"
+  class="page-notice page-notice--attention"
+  role="region"
+>
+  <div class="page-notice__header">
+    <svg
+      focusable="false"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Attention"
+    >
+      <use xlink:href="#icon-attention"></use>
+    </svg>
+  </div>
+  <div class="page-notice__main">
+    <h2 class="page-notice__title" id="page-notice-title">Update bank info</h2>
+    <p>
+      Please update your bank details by [due date] to get you account back in
+      good standing.
+    </p>
+  </div>
+  <div class="page-notice__footer">
+    <!-- footer content -->
+  </div>
 </section>
 ```
 
@@ -159,20 +182,33 @@ The heading element can be used to as the label for the landmark region, fixing 
 
 Finally, any call to action link or button can be placed into the footer slot.
 
-```markup
-<section aria-labelledby="page-notice-title" class="page-notice page-notice--attention" role="region">
-    <div class="page-notice__header">
-        <svg focusable="false" height="24" width="24" role="img" aria-label="Attention">
-            <use xlink:href="#icon-attention"></use>
-        </svg>
-    </div>
-    <div class="page-notice__main">
-        <h2 class="page-notice__title" id="page-notice-title">Update bank info</h2>
-        <p>Please update your bank details by [due date] to get you account back in good standing.</p>
-    </div>
-    <div class="page-notice__footer">
-        <a href="https://www.ebay.com" class="page-notice__cta">Update Info</a>
-    </div>
+```html
+<section
+  aria-labelledby="page-notice-title"
+  class="page-notice page-notice--attention"
+  role="region"
+>
+  <div class="page-notice__header">
+    <svg
+      focusable="false"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Attention"
+    >
+      <use xlink:href="#icon-attention"></use>
+    </svg>
+  </div>
+  <div class="page-notice__main">
+    <h2 class="page-notice__title" id="page-notice-title">Update bank info</h2>
+    <p>
+      Please update your bank details by [due date] to get you account back in
+      good standing.
+    </p>
+  </div>
+  <div class="page-notice__footer">
+    <a href="https://www.ebay.com" class="page-notice__cta">Update Info</a>
+  </div>
 </section>
 ```
 

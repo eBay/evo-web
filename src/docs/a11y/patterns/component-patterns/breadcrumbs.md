@@ -47,4 +47,4 @@ The last breadcrumb (current location) is non-interactive and therefore not clic
 ## Further Reading
 
 - [APG Breadcrumb Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/)
-- [Pattern Naming Scheme](../accessibility/appendix/pattern-naming-scheme)
+- [Pattern Naming Scheme](../appendix/pattern-naming-scheme.md)

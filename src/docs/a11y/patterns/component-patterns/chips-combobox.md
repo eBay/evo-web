@@ -2,14 +2,14 @@
 
 ### Terminology
 
-* **combobox**: the pattern as a whole, comprised of the following distinct parts
-* **textbox**: stores and displays the form value
-* **flyout**: the overlay that contains a listbox
-* **listbox**: [listbox](https://ebay.gitbook.io/mindpatterns/input/listbox) containing options
-* **option/suggestion**: a suggestion inside of the listbox and/or directly after the textbox value
-* **autocomplete**: the autocomplete type (optional)
-* **filter**: the filtering criteria (optional)
-* **chip**: the individual items inside that can be added and removed
+- **combobox**: the pattern as a whole, comprised of the following distinct parts
+- **textbox**: stores and displays the form value
+- **flyout**: the overlay that contains a listbox
+- **listbox**: [listbox](https://ebay.gitbook.io/mindpatterns/input/listbox) containing options
+- **option/suggestion**: a suggestion inside of the listbox and/or directly after the textbox value
+- **autocomplete**: the autocomplete type (optional)
+- **filter**: the filtering criteria (optional)
+- **chip**: the individual items inside that can be added and removed
 
 ### Working Example
 
@@ -29,16 +29,21 @@ Since `chips-combobox` is a composite component and includes a `combobox` , it a
 
 #### Chips
 
-Since `chips-combobox` manages the addition and removal of `chip(s)` , they require some key elements. A `chip` can be static of interactive. Static chips are extremely simple and don't require much guidance. Here, we will only be looking at  interactive `chips`. Here's the markup for each `chip`:&#x20;
+Since `chips-combobox` manages the addition and removal of `chip(s)` , they require some key elements. A `chip` can be static of interactive. Static chips are extremely simple and don't require much guidance. Here, we will only be looking at interactive `chips`. Here's the markup for each `chip`:&#x20;
 
 ```html
 <span class="chip">
-    <span id="chip-interactive-1-1-text" class="chip__text">Football</span>
-    <button class="chip__button" type="button" aria-label="Remove" aria-describedby="chip-interactive-1-1-text">
-        <svg class="icon icon--close-12" width="13" height="12" aria-hidden="true">
-            <use href="#icon-close-12"></use>
-        </svg>
-    </button>
+  <span id="chip-interactive-1-1-text" class="chip__text">Football</span>
+  <button
+    class="chip__button"
+    type="button"
+    aria-label="Remove"
+    aria-describedby="chip-interactive-1-1-text"
+  >
+    <svg class="icon icon--close-12" width="13" height="12" aria-hidden="true">
+      <use href="#icon-close-12"></use>
+    </svg>
+  </button>
 </span>
 ```
 
@@ -98,7 +103,7 @@ Since chips combobox is a composite component and includes a `combobox` , it aut
 
 In addition, there is interaction between the `combobox` and `chip` items.
 
-#### Chip Creation with Keyboard  and Mouse
+#### Chip Creation with Keyboard and Mouse
 
 As the user has gained focus of the textbox, the listbox will display to show all available options. As the user types, the listbox will be filtered to display only items meeting the criteria of the entered text. Consistent with a typical combobox, the user would then use the arrow keys to navigate to the item they'd like to add. Pressing `ENTER` when the indicator is on a specific item, will create a `chip` with that item. Utilizing a mouse, when the user clicks on any of the items in the listbox, a chip will be created for that item.
 
@@ -215,67 +220,57 @@ For the sake of comprehensive coverage, once again, the portions relevant to the
 
 This section gives an overview of ARIA usage, _within the context of this pattern_.
 
-**role=combobox**
-
-This attribute changes the role of the text input from `textbox` to `combobox`. We recommend applying this attribute on the client-side with JavaScript.
-
-**aria-roledescription**
-
-Gives additional instructions on how to operate the combobox options.
-
-**role=listbox**
-
-The list of suggestions has a role of listbox.
-
-**role=option**
-
-Each listbox item has a role of option.
-
-**aria-owns**
-
-This property creates a programmatic hierarchy in the accessibility tree for the combobox and the listbox.
-
-**aria-expanded**
-
-Conveys the expanded state of the combobox.
-
-**aria-label**
-
-Provides the expand/collapse button with an accessible label, in the case where it has no visible text (i.e. an icon button). It also provides an accessible label for the `chips-combobox` unordered list:
-
-```html
-<ul class="chips-combobox__items" aria-label="Selected sports">...
-```
-
-**aria-labeledby**
-
-In instances where a heading or label is provided before the chips-combobox, it can link to the element for its aria label:
+| Attribute                | Description                                                                                                                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **role=combobox**        | This attribute changes the role of the text input from `textbox` to `combobox`. We recommend applying this attribute on the client-side with JavaScript.                                                    |
+| **aria-roledescription** | Gives additional instructions on how to operate the combobox options.                                                                                                                                       |
+| **role=listbox**         | The list of suggestions has a role of listbox.                                                                                                                                                              |
+| **role=option**          | Each listbox item has a role of option.                                                                                                                                                                     |
+| **aria-owns**            | This property creates a programmatic hierarchy in the accessibility tree for the combobox and the listbox.                                                                                                  |
+| **aria-expanded**        | Conveys the expanded state of the combobox.                                                                                                                                                                 |
+| **aria-label**           | Provides the expand/collapse button with an accessible label, in the case where it has no visible text (i.e. an icon button). It also provides an accessible label for the `chips-combobox` unordered list. |
+| **aria-labeledby**       | In instances where a heading or label is provided before the chips-combobox, it can link to the element for its aria label.                                                                                 |
 
 ```html
 <h2 id="sports-chips-combobox">Sports</h2>
 <span class="chips-combobox">
-    <ul class="chips-combobox__items" aria-labeledby="sports-chips-combobox"></ul>
-    <span class="combobox combobox--js chips-combobox__combobox">
-        <span class="combobox__control chips-combobox_combobox__control">
-            <input id="chips-combobox-1-input" role="combobox" type="text" placeholder="Add Sport" aria-haspopup="listbox" aria-owns="listbox-chips-combobox-1" />
-            <svg class="icon icon--chevron-down-16" height="16" width="16" aria-hidden="true">
-                <use href="#icon-chevron-down-16"></use>
-            </svg>
-        </span>
-        <div class="combobox__listbox">
-            <div id="listbox-chips-combobox-1" class="combobox__options" role="listbox">
-                <div class="combobox__option" role="option">
-                    <span>Soccer</span>
-                </div>
-                <div class="combobox__option" role="option">
-                    <span>Hockey</span>
-                </div>
-                <div class="combobox__option" role="option">
-                    <span>Tennis</span>
-                </div>
-            </div>
-        </div>
+  <ul class="chips-combobox__items" aria-labeledby="sports-chips-combobox"></ul>
+  <span class="combobox combobox--js chips-combobox__combobox">
+    <span class="combobox__control chips-combobox_combobox__control">
+      <input
+        id="chips-combobox-1-input"
+        role="combobox"
+        type="text"
+        placeholder="Add Sport"
+        aria-haspopup="listbox"
+        aria-owns="listbox-chips-combobox-1"
+      />
+      <svg
+        class="icon icon--chevron-down-16"
+        height="16"
+        width="16"
+        aria-hidden="true"
+      >
+        <use href="#icon-chevron-down-16"></use>
+      </svg>
     </span>
+    <div class="combobox__listbox">
+      <div
+        id="listbox-chips-combobox-1"
+        class="combobox__options"
+        role="listbox"
+      >
+        <div class="combobox__option" role="option">
+          <span>Soccer</span>
+        </div>
+        <div class="combobox__option" role="option">
+          <span>Hockey</span>
+        </div>
+        <div class="combobox__option" role="option">
+          <span>Tennis</span>
+        </div>
+      </div>
+    </div>
+  </span>
 </span>
 ```
-

@@ -6,26 +6,26 @@ The purpose of the href attribute is to specify a **URL only.** If you wish to r
 
 ### Bad
 
-```markup
+```html
 <a href="javascript:;" id="share">Share on Facebook</a>
 
 <script>
-    $('#share').on('click', function(e) {
-        // do fb share stuff
-    });
+  $("#share").on("click", function (e) {
+    // do fb share stuff
+  });
 </script>
 ```
 
 ### Good
 
-```markup
+```html
 <!-- a button created with JavaScript -->
 <button id="share">Share on Facebook</button>
 
 <script>
-    $('#share').on('click', function(e) {
-        // do fb share stuff
-    });
+  $("#share").on("click", function (e) {
+    // do fb share stuff
+  });
 </script>
 ```
 
@@ -33,15 +33,17 @@ The purpose of the href attribute is to specify a **URL only.** If you wish to r
 
 Use progressive enhancement:
 
-```markup
-<a href="http://www.facebook.com/share?id=12345" id="share">Share on Facebook</a>
+```html
+<a href="http://www.facebook.com/share?id=12345" id="share"
+  >Share on Facebook</a
+>
 
 <script>
-    $('#share').attr('role', 'button');
-    $('#share[role=button]').on('click', function(e) {
-        this.preventDefault();
-        // do fb share stuff
-    })
+  $("#share").attr("role", "button");
+  $("#share[role=button]").on("click", function (e) {
+    this.preventDefault();
+    // do fb share stuff
+  });
 </script>
 ```
 

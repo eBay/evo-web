@@ -1,6 +1,6 @@
 # Description List Accessibility
 
-![A description list for DVD player item listing.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MKgDanA90xey0b_E4Ui%2F-MKgI1_dJsHVgkw8yytC%2Fdescription-list-dweb.png?alt=media\&token=1406ce43-fc0c-4460-bc70-e3fa988b6da0)
+![A description list for DVD player item listing.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MKgDanA90xey0b_E4Ui%2F-MKgI1_dJsHVgkw8yytC%2Fdescription-list-dweb.png?alt=media&token=1406ce43-fc0c-4460-bc70-e3fa988b6da0)
 
 ### Introduction
 
@@ -14,8 +14,8 @@ The content for this section is not yet available.
 
 ### Best Practices
 
-* Every list should have a pairing (name-value).
-* Lists should not be nested within each other.
+- Every list should have a pairing (name-value).
+- Lists should not be nested within each other.
 
 ### Interaction Design
 
@@ -25,14 +25,14 @@ Description lists themselves are not interactive, but may contain nested interac
 
 A description list requires no ARIA.
 
-```markup
+```html
 <dl>
-    <dt>Authors:</dt>
-    <dd>Remy Sharp</dd>
-    <dd>Rich Clark</dd>
-    <dt>Editor:</dt>
-    <dd>Brandan Lennox</dd>
-    <dt>Category:</dt>
-    <dd>Comment</dd>
+  <dt>Authors:</dt>
+  <dd>Remy Sharp</dd>
+  <dd>Rich Clark</dd>
+  <dt>Editor:</dt>
+  <dd>Brandan Lennox</dd>
+  <dt>Category:</dt>
+  <dd>Comment</dd>
 </dl>
 ```

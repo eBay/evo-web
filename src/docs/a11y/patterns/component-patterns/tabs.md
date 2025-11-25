@@ -1,6 +1,6 @@
 # Tabs Accessibility
 
-![Shipping option tabs](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFky70O5U8j-JXcn%2Ftabs.png?generation=1548799253367065\&alt=media)
+![Shipping option tabs](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFky70O5U8j-JXcn%2Ftabs.png?generation=1548799253367065&alt=media)
 
 ### Introduction
 
@@ -18,17 +18,17 @@ View a fully-style example on our [eBay Skin](https://opensource.ebay.com/skin/c
 
 ### Terminology
 
-* **tabs**: the composite patterns as a whole, containing a tablist, tabs and tabpanels
-* **tabs heading**: the heading that immediately precedes the tabs widget
-* **tab list**: contains two or more tabs
-* **tab**: a type of button that displays it's associated tabpanel
-* **selected tab**: the currently selected tab
-* **tab panel**: contains the content related to the tab
-* **tab heading**: the offscreen heading that maintains correct heading structure
+- **tabs**: the composite patterns as a whole, containing a tablist, tabs and tabpanels
+- **tabs heading**: the heading that immediately precedes the tabs widget
+- **tab list**: contains two or more tabs
+- **tab**: a type of button that displays it's associated tabpanel
+- **selected tab**: the currently selected tab
+- **tab panel**: contains the content related to the tab
+- **tab heading**: the offscreen heading that maintains correct heading structure
 
 ### Configuration
 
-* **autoSelect**: for keyboard users, tab selection can either follow keyboard focus (known as auto selection), or require an additional `ENTER` or `SPACEBAR` press to set selection (known as manual selection).
+- **autoSelect**: for keyboard users, tab selection can either follow keyboard focus (known as auto selection), or require an additional `ENTER` or `SPACEBAR` press to set selection (known as manual selection).
 
 ### Best Practices
 
@@ -66,7 +66,7 @@ Tab label **must** be announced, for example "Select Shipping for me".
 
 Tab selected state **must** be announced.
 
-Virtual cursor navigation can move from tab to tab *without* changing the active tab selection.
+Virtual cursor navigation can move from tab to tab _without_ changing the active tab selection.
 
 ### Developer Guide
 
@@ -94,41 +94,41 @@ For the purposes of this example, all panel content will be rendered server-side
 
 The tabs begin life as simple same-page navigation links, linking to the content anchors (panels) below it on the same page:
 
-```markup
+```html
 <div class="tabs tabs--horizontal">
-    <h2>My eBay</h2>
-    <ul class="tabs__items">
-        <li class="tabs__item"><a href="#buying">Buying</a></li>
-        <li class="tabs__item"><a href="#bought">Bought</a></li>
-        <li class="tabs__item"><a href="#selling">Selling</a></li>
-        <li class="tabs__item"><a href="#sold">Sold</a></li>
-    </ul>
-    <div class="tabs__content">
-        <div class="tabs__panel" id="buying" tabindex="-1">
-            <h3>...</h3>
-            <p>...</p>
-        </div>
-        <div class="tabs__panel" id="bought" tabindex="-1">
-            <h3>...</h3>
-            <p>...</p>
-        </div>
-        <div class="tabs__panel" id="selling" tabindex="-1">
-            <h3>...</h3>
-            <p>...</p>
-        </div>
-        <div class="tabs__panel" id="sold" tabindex="-1">
-            <h3>...</h3>
-            <p>...</p>
-        </div>
+  <h2>My eBay</h2>
+  <ul class="tabs__items">
+    <li class="tabs__item"><a href="#buying">Buying</a></li>
+    <li class="tabs__item"><a href="#bought">Bought</a></li>
+    <li class="tabs__item"><a href="#selling">Selling</a></li>
+    <li class="tabs__item"><a href="#sold">Sold</a></li>
+  </ul>
+  <div class="tabs__content">
+    <div class="tabs__panel" id="buying" tabindex="-1">
+      <h3>...</h3>
+      <p>...</p>
     </div>
+    <div class="tabs__panel" id="bought" tabindex="-1">
+      <h3>...</h3>
+      <p>...</p>
+    </div>
+    <div class="tabs__panel" id="selling" tabindex="-1">
+      <h3>...</h3>
+      <p>...</p>
+    </div>
+    <div class="tabs__panel" id="sold" tabindex="-1">
+      <h3>...</h3>
+      <p>...</p>
+    </div>
+  </div>
 </div>
 ```
 
 We call this markup structure our [bones](https://github.corp.ebay.com/f2e/bones); our CSS and JavaScript will be expecting this **exact** DOM structure convention.
 
-This structure has been chosen carefully. It allows us to display tabs horizontally *and* vertically simply by changing the second class (to tabs--horizontal or tabs--vertical).
+This structure has been chosen carefully. It allows us to display tabs horizontally _and_ vertically simply by changing the second class (to tabs--horizontal or tabs--vertical).
 
-**NOTE:** we have found that in some browsers, activating a same page link will only *scroll* the browser to the target, but the focus is left behind on the link. Adding tabindex="-1" also helps move and set focus on the target element.
+**NOTE:** we have found that in some browsers, activating a same page link will only _scroll_ the browser to the target, but the focus is left behind on the link. Adding tabindex="-1" also helps move and set focus on the target element.
 
 **Checkpoint**
 
@@ -147,12 +147,12 @@ How you choose to style the links is outside the scope of this document, because
 ```css
 /* before js init */
 .tabs__content {
-    height: 150px;
-    overflow-y: auto;
+  height: 150px;
+  overflow-y: auto;
 }
 /* after js init */
 .tabs--js .tabs__content {
-    height: auto;
+  height: auto;
 }
 ```
 
@@ -174,15 +174,15 @@ We start by caching references to our most important elements:
 
 ```javascript
 module.exports = class {
-    constructor(widgetEl) {
-        this._el = widgetEl;
+  constructor(widgetEl) {
+    this._el = widgetEl;
 
-        const tabList = this._el.querySelector('.tabs__items', this._el);
-        const tabs = Util.querySelectorAllToArray('.tabs__item', this._el);
-        const panels = Util.querySelectorAllToArray('.tabs__panel', this._el);
-        const links = Util.querySelectorAllToArray('a', tabList);
-    }
-}
+    const tabList = this._el.querySelector(".tabs__items", this._el);
+    const tabs = Util.querySelectorAllToArray(".tabs__item", this._el);
+    const panels = Util.querySelectorAllToArray(".tabs__panel", this._el);
+    const links = Util.querySelectorAllToArray("a", tabList);
+  }
+};
 ```
 
 {% endcode %}
@@ -196,9 +196,9 @@ How does a screen reader know this is a tabs widget? We must add ARIA roles to t
 {% code title="tabs.js" %}
 
 ```javascript
-tabList.setAttribute('role', 'tablist');
-tabs.forEach(el => el.setAttribute('role', 'tab'));
-panels.forEach(el => el.setAttribute('role', 'tabpanel'));
+tabList.setAttribute("role", "tablist");
+tabs.forEach((el) => el.setAttribute("role", "tab"));
+panels.forEach((el) => el.setAttribute("role", "tabpanel"));
 ```
 
 {% endcode %}
@@ -211,8 +211,8 @@ We currently have links nested inside of our tab elements. To avoid conflicts wi
 
 ```javascript
 function removeLink(el) {
-    el.setAttribute('role', 'presentation');
-    el.removeAttribute('href');
+  el.setAttribute("role", "presentation");
+  el.removeAttribute("href");
 }
 ```
 
@@ -227,11 +227,12 @@ How does a screen reader know which tab is currently selected and which panel is
 ```javascript
 let initialIndex = this._options.initialIndex;
 
-tabs[initialIndex].setAttribute('aria-selected', 'true');
+tabs[initialIndex].setAttribute("aria-selected", "true");
 
 // hide all unselected panels
-panels.filter((el, i) => i !== initialIndex).forEach(el => el.hidden = true);
-
+panels
+  .filter((el, i) => i !== initialIndex)
+  .forEach((el) => (el.hidden = true));
 ```
 
 {% endcode %}
@@ -244,13 +245,13 @@ How does a screen reader know which panel belongs to which tab, and the label of
 
 ```javascript
 function linkTabToPanel(widgetID, el, i) {
-    el.setAttribute('id', widgetID + '-tab-' + i);
-    el.setAttribute('aria-controls', widgetID + '-panel-' + i);
+  el.setAttribute("id", widgetID + "-tab-" + i);
+  el.setAttribute("aria-controls", widgetID + "-panel-" + i);
 }
 
 function linkPanelToTab(widgetID, el, i) {
-    el.setAttribute('id', widgetID + '-panel-' + i);
-    el.setAttribute('aria-labelledby', widgetID + '-tab-' + i);
+  el.setAttribute("id", widgetID + "-panel-" + i);
+  el.setAttribute("aria-labelledby", widgetID + "-tab-" + i);
 }
 ```
 
@@ -271,12 +272,12 @@ When the roving tabindex changes, we must update the `aria-selected` and `hidden
 {% code title="tabs.js" %}
 
 ```javascript
-this._el.addEventListener('rovingTabindexChange', function (e) {
-    tabs[e.detail.fromIndex].setAttribute('aria-selected', 'false');
-    panels[e.detail.fromIndex].hidden = true;
+this._el.addEventListener("rovingTabindexChange", function (e) {
+  tabs[e.detail.fromIndex].setAttribute("aria-selected", "false");
+  panels[e.detail.fromIndex].hidden = true;
 
-    tabs[e.detail.toIndex].setAttribute('aria-selected', 'true');
-    panels[e.detail.toIndex].hidden = false;
+  tabs[e.detail.toIndex].setAttribute("aria-selected", "true");
+  panels[e.detail.toIndex].hidden = false;
 });
 ```
 
@@ -289,7 +290,7 @@ When the selected tab has focus, we must prevent arrow keys and spacebar from sc
 {% code title="tabs.js" %}
 
 ```javascript
-const ScrollKeyPreventer = require('makeup-prevent-scroll-keys');
+const ScrollKeyPreventer = require("makeup-prevent-scroll-keys");
 
 ScrollKeyPreventer.add(tabList);
 ```
@@ -303,7 +304,7 @@ Finally we can mark our widget as initialised. Now our CSS rules for our progres
 {% code title="tabs.js" %}
 
 ```javascript
-this._el.classList.add('tabs--js');
+this._el.classList.add("tabs--js");
 ```
 
 {% endcode %}
@@ -316,9 +317,9 @@ We have enhanced our markup with ARIA roles, states and properties for screen re
 
 We have some experimental JavaScript modules that may assist you with creation of an accessible tabs widget:
 
-* [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change tabs
-* [makeup-prevent-scroll-keys](https://github.com/makeup-js/makeup-prevent-scroll-keys) - Useful for preventing keys from scrolling page while focus is on a widget
+- [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change tabs
+- [makeup-prevent-scroll-keys](https://github.com/makeup-js/makeup-prevent-scroll-keys) - Useful for preventing keys from scrolling page while focus is on a widget
 
 ### References
 
-* [WAI-ARIA Authoring Practices 1.1: Tabs](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel)
+- [WAI-ARIA Authoring Practices 1.1: Tabs](https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel)

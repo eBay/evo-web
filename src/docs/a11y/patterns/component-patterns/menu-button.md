@@ -2,7 +2,7 @@
 
 ### Screenshots
 
-![Screenshot of expanded delivery options menu button.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LexISm2uybKtLNUWrsT%2F-LexKci97JEX6CM7SoFJ%2Fmenu-dweb.png?alt=media\&token=171032b9-7390-4e20-a8b9-941f2bbc9959)
+![Screenshot of expanded delivery options menu button.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LexISm2uybKtLNUWrsT%2F-LexKci97JEX6CM7SoFJ%2Fmenu-dweb.png?alt=media&token=171032b9-7390-4e20-a8b9-941f2bbc9959)
 
 ### Introduction
 
@@ -44,7 +44,7 @@ See [menu best practices](menu).
 
 **Care is needed when labelling a menu button!**
 
-If attempting to mimic the behaviour of an HTML select inside of a form,  please use the [Listbox Button](listbox-button).
+If attempting to mimic the behaviour of an HTML select inside of a form, please use the [Listbox Button](listbox-button).
 
 A menu button's accessible label must at **all times** reflect its function. By default, this label is provided by the butto&#x6E;**'**&#x73; inner text (i.e. buttons are not intended to work with `<label>` elements).
 
@@ -82,7 +82,7 @@ If focus is on a command, `ENTER` or `SPACEBAR` keys **must** activate that comm
 
 `ESC` key must collapse menu and return focus to button.
 
-Activating any menu item _should_  collapse menu (typically after a very short delay/transition).
+Activating any menu item _should_ collapse menu (typically after a very short delay/transition).
 
 `TAB` key must move keyboard focus off widget, and onto next interactive element in the page.
 
@@ -96,7 +96,7 @@ Button state **must** be announced (e.g. expanded or collapsed).
 
 #### Pointer
 
-Clicking any menu item _should_  collapse menu (typically after a very short delay/transition).
+Clicking any menu item _should_ collapse menu (typically after a very short delay/transition).
 
 ### Developer Guide
 
@@ -110,10 +110,10 @@ For our developer guide we will create a menu that filters search results. The m
 
 First we add our button:
 
-```markup
+```html
 <div class="button-menu">
-    <button type="button">Search Options</button>
-    <!-- overlay will go here -->
+  <button type="button">Search Options</button>
+  <!-- overlay will go here -->
 </div>
 ```
 
@@ -121,15 +121,22 @@ First we add our button:
 
 The simplest kind of menu contains just regular menu items. You can think of the `menuitem` role as similar to a button.
 
-```markup
+```html
 <div class="menu-button">
-    <button aria-controls="menu-1" aria-expanded="false" aria-haspopup="true" type="button">Search Options</button>
-    <div class="menu" hidden>
-        <div id="menu-1" role="menu">
-            <div role="menuitem">Show Less Results</div>
-            <div role="menuitem">Show More Results</div>
-        </div>
+  <button
+    aria-controls="menu-1"
+    aria-expanded="false"
+    aria-haspopup="true"
+    type="button"
+  >
+    Search Options
+  </button>
+  <div class="menu" hidden>
+    <div id="menu-1" role="menu">
+      <div role="menuitem">Show Less Results</div>
+      <div role="menuitem">Show More Results</div>
     </div>
+  </div>
 </div>
 ```
 
@@ -143,28 +150,35 @@ Each group must be separated with a separator tag (implicit role="separator").
 
 **NOTE**: We have encountered issues when trying to use `role="separator"` on a list tag. It is for this reason that use div-based markup, rather than list-base markup, in the examples.
 
-```markup
+```html
 <div class="menu-button">
-    <button aria-controls="menu-1" aria-expanded="false" aria-haspopup="true" type="button">Search Options</button>
-    <div hidden>
-        <div id="menu-1" role="menu">
-            <div role="presentation">
-                <div role="menuitem">More Results</div>
-                <div role="menuitem">Less Results</div>
-            </div>
-            <hr />
-            <div role="presentation">
-                <div aria-checked="true" role="menuitemradio">Sort by Name</div>
-                <div aria-checked="false" role="menuitemradio">Sort by Price</div>
-                <div aria-checked="false" role="menuitemradio">Sort by Date</div>
-            </div>
-            <hr />
-            <div role="presentation">
-                <div aria-checked="true" role="menuitemcheckbox">Show Buy It Now</div>
-                <div aria-checked="true" role="menuitemcheckbox">Show Auction</div>
-            </div>
-        </div>
+  <button
+    aria-controls="menu-1"
+    aria-expanded="false"
+    aria-haspopup="true"
+    type="button"
+  >
+    Search Options
+  </button>
+  <div hidden>
+    <div id="menu-1" role="menu">
+      <div role="presentation">
+        <div role="menuitem">More Results</div>
+        <div role="menuitem">Less Results</div>
+      </div>
+      <hr />
+      <div role="presentation">
+        <div aria-checked="true" role="menuitemradio">Sort by Name</div>
+        <div aria-checked="false" role="menuitemradio">Sort by Price</div>
+        <div aria-checked="false" role="menuitemradio">Sort by Date</div>
+      </div>
+      <hr />
+      <div role="presentation">
+        <div aria-checked="true" role="menuitemcheckbox">Show Buy It Now</div>
+        <div aria-checked="true" role="menuitemcheckbox">Show Auction</div>
+      </div>
     </div>
+  </div>
 </div>
 ```
 
@@ -188,9 +202,9 @@ The overlay is always hidden by default. The overlay must be absolute or fixed p
 
 ```css
 .menu-button__menu {
-    display: none;
-    position: absolute;
-    z-index: 1;
+  display: none;
+  position: absolute;
+  z-index: 1;
 }
 ```
 
@@ -198,7 +212,7 @@ We can display the menu utilising the ARIA state of the button and the general s
 
 ```css
 .menu-button__button[aria-expanded="true"] ~ .menu-button__menu {
-    display: block;
+  display: block;
 }
 ```
 
@@ -206,7 +220,7 @@ Or leverage a class if necessary (i.e. if the button is not an adjacent sibling)
 
 ```css
 .menu-button--expanded .menu-button__menu {
-    display: block;
+  display: block;
 }
 ```
 
@@ -224,16 +238,16 @@ The goals of the behaviour layer are to:
 CSS alone cannot change the value of an HTML attribute; JavaScript is required. Fortunately, the [makeup-expander](https://github.com/makeup-js/makeup-expander) module can handle this behaviour in just a few lines of code.
 
 ```javascript
-const Expander = require('makeup-expander');
+const Expander = require("makeup-expander");
 
 const widget = new Expander(widgetEl, {
-      contentSelector: '.menu-button__menu',
-      expandOnClick: true,
-      collapseOnClick: true,
-      collapseOnFocusOut: true,
-      expandedClass: 'menu-button--expanded',
-      hostSelector: '.menu-button__button',
-      focusManagement: 'focusable'
+  contentSelector: ".menu-button__menu",
+  expandOnClick: true,
+  collapseOnClick: true,
+  collapseOnFocusOut: true,
+  expandedClass: "menu-button--expanded",
+  hostSelector: ".menu-button__button",
+  focusManagement: "focusable",
 });
 ```
 
@@ -246,11 +260,15 @@ Menu Button now begins to deviate from the base popover pattern. A base popover 
 We have another JavaScript module that helps, the [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) module.
 
 ```javascript
-const RovingTabIndex = require('makeup-roving-tabindex');
+const RovingTabIndex = require("makeup-roving-tabindex");
 
-this._rovingTabIndex = RovingTabIndex.createLinear(widgetEl, '[role^=menuitem]' , {
-    autoReset: 0
-});
+this._rovingTabIndex = RovingTabIndex.createLinear(
+  widgetEl,
+  "[role^=menuitem]",
+  {
+    autoReset: 0,
+  },
+);
 ```
 
 View the [roving tabindex technique](../techniques/roving-tabindex) for further details.
@@ -259,54 +277,21 @@ View the [roving tabindex technique](../techniques/roving-tabindex) for further 
 
 We have some JavaScript modules that may assist you with creation of an accessible menu button widget:
 
-* [makeup-expander](https://github.com/makeup-js/makeup-expander) - Useful for implementing a button that opens a non-modal overlay
-* [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change menu items
+- [makeup-expander](https://github.com/makeup-js/makeup-expander) - Useful for implementing a button that opens a non-modal overlay
+- [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change menu items
 
 ### ARIA Reference
 
 This section gives an overview of our use of ARIA, within the specific context of the menu button pattern.
 
-#### role=menu
-
-Informs assistive technology that this is a menu containing menuitems, menuitemradios or menuitemcheckboxes.
-
-#### role=presentation
-
-Informs assistive technology that the divs around groups of menu items are for presentation purposes only and should not be added to accessibility tree.
-
-#### role=menuitem
-
-Informs assistive technology that this menu command has button behaviour.
-
-#### role=menuitemradio
-
-Informs assistive technology that this menu command has radio button behaviour.
-
-#### role=menuitemcheckbox
-
-Informs assistive technology that this menu command has checkbox behaviour.
-
-#### aria-haspopup=true
-
-Informs assistive technology that the button controls a _popup_ _menu_
-
-#### aria-controls
-
-Inform assistive technology of which menu this button controls.
-
-#### aria-expanded
-
-Informs assistive technology whether the popup menu is expanded or not. And yes, this state goes on the button, not the menu.
-
-#### aria-checked
-
-Informs assistive technology whether the menuitemradio or menuitemcheckbox is checked or not. Notice we do not use aria-selected.
-
-
-
-
-
-
-
-
-
+| Attribute                 | Description                                                                                                                                              |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **role=menu**             | Informs assistive technology that this is a menu containing menuitems, menuitemradios or menuitemcheckboxes.                                             |
+| **role=presentation**     | Informs assistive technology that the divs around groups of menu items are for presentation purposes only and should not be added to accessibility tree. |
+| **role=menuitem**         | Informs assistive technology that this menu command has button behaviour.                                                                                |
+| **role=menuitemradio**    | Informs assistive technology that this menu command has radio button behaviour.                                                                          |
+| **role=menuitemcheckbox** | Informs assistive technology that this menu command has checkbox behaviour.                                                                              |
+| **aria-haspopup=true**    | Informs assistive technology that the button controls a _popup_ _menu_                                                                                   |
+| **aria-controls**         | Inform assistive technology of which menu this button controls.                                                                                          |
+| **aria-expanded**         | Informs assistive technology whether the popup menu is expanded or not. And yes, this state goes on the button, not the menu.                            |
+| **aria-checked**          | Informs assistive technology whether the menuitemradio or menuitemcheckbox is checked or not. Notice we do not use aria-selected.                        |

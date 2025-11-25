@@ -1,6 +1,6 @@
 # Form Validation Accessibility
 
-![Page notice showing form validation errors.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDjeT1gbAxkHBXPR%2Fformvalidation.png?generation=1548799250795256\&alt=media)
+![Page notice showing form validation errors.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDjeT1gbAxkHBXPR%2Fformvalidation.png?generation=1548799250795256&alt=media)
 
 ### Introduction
 
@@ -80,16 +80,16 @@ We should never depend solely on client-side JavaScript to validate an important
 
 We will be assuming that the following form has been submitted by the user:
 
-```markup
+```html
 <form action="/processform">
-    <span>
-        <label for="age">Age</label>
-        <input type="text" name="age" id="age" value="foo" />
-    </span>
-    <span>
-        <label for="size">Shoe Size</label>
-        <input type="text" name="size" id="size" value="bar" />
-    </span>
+  <span>
+    <label for="age">Age</label>
+    <input type="text" name="age" id="age" value="foo" />
+  </span>
+  <span>
+    <label for="size">Shoe Size</label>
+    <input type="text" name="size" id="size" value="bar" />
+  </span>
 </form>
 ```
 
@@ -97,16 +97,26 @@ We will be assuming that the following form has been submitted by the user:
 
 We can use a [page notice](page-notice) to display a prominent error message at the top of the page:
 
-```markup
-<section aria-labelledby="page-notice-title" class="page-notice page-notice--attention" role="region">
-    <div class="page-notice__header">
-        <svg focusable="false" height="24" width="24" role="img" aria-label="Attention">
-            <use xlink:href="#icon-attention"></use>
-        </svg>
-    </div>
-    <div class="page-notice__main">
-        <h2 class="page-notice__title" id="page-notice-title">Error!</h2>
-    </div>
+```html
+<section
+  aria-labelledby="page-notice-title"
+  class="page-notice page-notice--attention"
+  role="region"
+>
+  <div class="page-notice__header">
+    <svg
+      focusable="false"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Attention"
+    >
+      <use xlink:href="#icon-attention"></use>
+    </svg>
+  </div>
+  <div class="page-notice__main">
+    <h2 class="page-notice__title" id="page-notice-title">Error!</h2>
+  </div>
 </section>
 ```
 
@@ -118,24 +128,38 @@ This is one of the few occasions where it is appropriate to create a custom land
 
 It's not enough to just say "Error!" of course! The page notice must also contain descriptive error links to all invalid inputs.
 
-```markup
-<section aria-labelledby="page-notice-title" class="page-notice page-notice--attention" role="region">
-    <div class="page-notice__header">
-        <svg focusable="false" height="24" width="24" role="img" aria-label="Attention">
-            <use xlink:href="#icon-attention"></use>
-        </svg>
-    </div>
-    <div class="page-notice__main">
-        <h2 class="page-notice__title" id="page-notice-title">Error! Please correct the following fields:</h2>
-        <ol>
-            <li>
-                <a href="#age">Age - please enter a valid age (for example, 35)</a>
-            </li>
-            <li>
-                <a href="#size">Shoe-size - please enter a valid shoe size (for example, 8.5)</a>
-            </li>
-        </ol>
-    </div>
+```html
+<section
+  aria-labelledby="page-notice-title"
+  class="page-notice page-notice--attention"
+  role="region"
+>
+  <div class="page-notice__header">
+    <svg
+      focusable="false"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Attention"
+    >
+      <use xlink:href="#icon-attention"></use>
+    </svg>
+  </div>
+  <div class="page-notice__main">
+    <h2 class="page-notice__title" id="page-notice-title">
+      Error! Please correct the following fields:
+    </h2>
+    <ol>
+      <li>
+        <a href="#age">Age - please enter a valid age (for example, 35)</a>
+      </li>
+      <li>
+        <a href="#size"
+          >Shoe-size - please enter a valid shoe size (for example, 8.5)</a
+        >
+      </li>
+    </ol>
+  </div>
 </section>
 ```
 
@@ -145,10 +169,16 @@ Note that Safari has an issue with setting focus on the input after clicking an 
 
 Use `aria-invalid="true"` to mark inputs as invalid to assistive technology.
 
-```markup
+```html
 <span>
-    <label for="age">Age</label>
-    <input aria-describedby="age-description" aria-invalid="true" id="age" name="age" type="text" />
+  <label for="age">Age</label>
+  <input
+    aria-describedby="age-description"
+    aria-invalid="true"
+    id="age"
+    name="age"
+    type="text"
+  />
 </span>
 ```
 
@@ -156,11 +186,17 @@ Use `aria-invalid="true"` to mark inputs as invalid to assistive technology.
 
 In addition to the main notice, each invalid input must display an [inline error notice](inline-notice):
 
-```markup
+```html
 <span>
-    <label for="age">Age</label>
-    <input aria-describedby="age-description" aria-invalid="true" id="age" name="age" type="text" />
-    <span id="age-description">Please enter a correct age</span>
+  <label for="age">Age</label>
+  <input
+    aria-describedby="age-description"
+    aria-invalid="true"
+    id="age"
+    name="age"
+    type="text"
+  />
+  <span id="age-description">Please enter a correct age</span>
 </span>
 ```
 
@@ -171,8 +207,8 @@ There is not much to say in terms of CSS, other than the page notice and all err
 Also, we can leverage ARIA states in our CSS.
 
 ```css
-input[type=text][aria-invalid=true] {
-    border: 1px solid red;
+input[type="text"][aria-invalid="true"] {
+  border: 1px solid red;
 }
 ```
 
@@ -184,24 +220,39 @@ JavaScript enhances our baseline experience by doing everything mentioned above,
 
 We create the exact same notice as in our baseline experience, only now we render the HTML immediately on the client.
 
-```markup
-<section aria-labelledby="page-notice-title" class="page-notice page-notice--attention" role="region" tabindex="-1">
-    <div class="page-notice__header">
-        <svg focusable="false" height="24" width="24" role="img" aria-label="Attention">
-            <use xlink:href="#icon-attention"></use>
-        </svg>
-    </div>
-    <div class="page-notice__main">
-        <h2 class="page-notice__title" id="page-notice-title">Error! Please correct the following fields:</h2>
-        <ol>
-            <li>
-                <a href="#age">Age - please enter a valid age (for example, 35)</a>
-            </li>
-            <li>
-                <a href="#size">Shoe-size - please enter a valid shoe size (for example, 8.5)</a>
-            </li>
-        </ol>
-    </div>
+```html
+<section
+  aria-labelledby="page-notice-title"
+  class="page-notice page-notice--attention"
+  role="region"
+  tabindex="-1"
+>
+  <div class="page-notice__header">
+    <svg
+      focusable="false"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Attention"
+    >
+      <use xlink:href="#icon-attention"></use>
+    </svg>
+  </div>
+  <div class="page-notice__main">
+    <h2 class="page-notice__title" id="page-notice-title">
+      Error! Please correct the following fields:
+    </h2>
+    <ol>
+      <li>
+        <a href="#age">Age - please enter a valid age (for example, 35)</a>
+      </li>
+      <li>
+        <a href="#size"
+          >Shoe-size - please enter a valid shoe size (for example, 8.5)</a
+        >
+      </li>
+    </ol>
+  </div>
 </section>
 ```
 
@@ -211,22 +262,12 @@ With JavaScript available, we can also set focus directly on the page notice. Th
 
 This section gives an overview of our use of ARIA in this pattern.
 
-#### aria-required
-
-Applied to the input element to denote a required field.
-
-We can also use this attribute as a CSS hook.
-
-#### aria-invalid
-
-Applied to the input element to denote an invalid field.
-
-We can also use this attribute as a CSS hook.
-
-#### aria-describedby
-
-Applied to the input element to denote the element containing the error description.
+| Attribute            | Description                                                                                            |
+| -------------------- | ------------------------------------------------------------------------------------------------------ |
+| **aria-required**    | Applied to the input element to denote a required field. We can also use this attribute as a CSS hook. |
+| **aria-invalid**     | Applied to the input element to denote an invalid field. We can also use this attribute as a CSS hook. |
+| **aria-describedby** | Applied to the input element to denote the element containing the error description.                   |
 
 ### Related Articles
 
-* [Error-Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/) (Norman Nielson Group)
+- [Error-Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/) (Norman Nielson Group)

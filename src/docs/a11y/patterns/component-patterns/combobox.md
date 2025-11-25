@@ -1,8 +1,6 @@
 # Combobox Accessibility
 
-
-
-![Select phone model item specifics](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEF1Sjh9adTHwYti%2Fcombobox.png?generation=1548799252047216\&alt=media)
+![Select phone model item specifics](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEF1Sjh9adTHwYti%2Fcombobox.png?generation=1548799252047216&alt=media)
 
 ### Introduction
 
@@ -12,17 +10,17 @@ A combobox typically also offers _autocomplete_ behavour - whereby the list of s
 
 ### Terminology
 
-* **combobox**: the pattern as a whole, comprised of the following distinct parts
-* **textbox**: stores and displays the form value
-* **popover**: the overlay that contains a listbox
-* **listbox**: [listbox](listbox) containing options
-* **option/suggestion**: a suggestion inside of the listbox and/or directly after the textbox value
-* **autocomplete**: the autocomplete type (optional)
-* **filter**: the filtering criteria (optional)
+- **combobox**: the pattern as a whole, comprised of the following distinct parts
+- **textbox**: stores and displays the form value
+- **popover**: the overlay that contains a listbox
+- **listbox**: [listbox](listbox) containing options
+- **option/suggestion**: a suggestion inside of the listbox and/or directly after the textbox value
+- **autocomplete**: the autocomplete type (optional)
+- **filter**: the filtering criteria (optional)
 
 ### Configuration
 
-* **autoSelect**: a combobox with `autoSelect` will automatically select and fill the textbox value when user cycles through listbox options. Otherwise, `ENTER` key is required to manually select an option. Typically autoSelect will be `true` for a combobox with autocomplete behaviour.
+- **autoSelect**: a combobox with `autoSelect` will automatically select and fill the textbox value when user cycles through listbox options. Otherwise, `ENTER` key is required to manually select an option. Typically autoSelect will be `true` for a combobox with autocomplete behaviour.
 
 ### Working Example
 
@@ -100,10 +98,15 @@ Our combobox follows the ARIA 1.0 specification, as it has less issues than the 
 
 We start with a label and textbox.
 
-```markup
+```html
 <span class="combobox" id="combobox-0">
   <label for="combobox-0-input">Game Console</label>
-  <input id="combobox-0-input" name="console" type="text" placeholder="Playstation 4, Xbox One, etc."/>
+  <input
+    id="combobox-0-input"
+    name="console"
+    type="text"
+    placeholder="Playstation 4, Xbox One, etc."
+  />
   <!-- listbox options will go here -->
 </span>
 ```
@@ -118,7 +121,7 @@ A listbox element will be appended to this wrapper. It is up to you whether you 
 
 The listbox may render on the server or the client. It is wise to put the listbox in a hidden state if rendering on the server. To do so, use the `hidden` attribute.
 
-```markup
+```html
 <div class="combobox__overlay" hidden>
   <ul id="combobox_0-listbox" role="listbox">
     <li role="option" id="nid-0">Playstation 3</li>
@@ -133,8 +136,17 @@ The listbox may render on the server or the client. It is wise to put the listbo
 
 Using JavaScript we now begin converting the textbox to a combobox, by adding `role=combobox`. We also create the properties and state that connect the combobox to the listbox:
 
-```markup
-<input id="combobox-0-input" name="console0" type="text" placeholder="Playstation 4, Xbox One, etc." role="combobox" aria-expanded="false" autocomplete="off" aria-owns="combobox_0-listbox">
+```html
+<input
+  id="combobox-0-input"
+  name="console0"
+  type="text"
+  placeholder="Playstation 4, Xbox One, etc."
+  role="combobox"
+  aria-expanded="false"
+  autocomplete="off"
+  aria-owns="combobox_0-listbox"
+/>
 ```
 
 The new attributes are `role`, `aria-expanded`, `autocomplete` and `aria-owns`.
@@ -157,30 +169,15 @@ To make all of this easier, we recommend using a plugin such as [makeup-active-d
 
 This section gives an overview of ARIA usage, _within the context of this pattern_.
 
-#### role=combobox
-
-This attribute changes the role of the text input from `textbox` to `combobox`. We recommend applying this attribute on the client-side with JavaScript.
-
-#### role=listbox
-
-The list of suggestions has a role of listbox.
-
-#### role=option
-
-Each listbox item has a role of option.
-
-#### aria-owns
-
-This property creates a programmatic hierarchy in the accessibility tree for the combobox and the listbox.
-
-#### aria-expanded
-
-Conveys the expanded state of the combobox.
-
-#### aria-label
-
-Provides the expand/collapse button with an accessible label, in the case where it has no visible text (i.e. an icon button).
+| Attribute         | Description                                                                                                                                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **role=combobox** | This attribute changes the role of the text input from `textbox` to `combobox`. We recommend applying this attribute on the client-side with JavaScript. |
+| **role=listbox**  | The list of suggestions has a role of listbox.                                                                                                           |
+| **role=option**   | Each listbox item has a role of option.                                                                                                                  |
+| **aria-owns**     | This property creates a programmatic hierarchy in the accessibility tree for the combobox and the listbox.                                               |
+| **aria-expanded** | Conveys the expanded state of the combobox.                                                                                                              |
+| **aria-label**    | Provides the expand/collapse button with an accessible label, in the case where it has no visible text (i.e. an icon button).                            |
 
 ### Further Reading
 
-* [https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues](https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues)
+- [https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues](https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues)

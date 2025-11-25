@@ -1,6 +1,6 @@
 # Switch Accessibility
 
-![Refinement Switch](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFbkVKWbNaSkVhq1%2Fswitch.png?generation=1548799253302997\&alt=media)
+![Refinement Switch](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFbkVKWbNaSkVhq1%2Fswitch.png?generation=1548799253302997&alt=media)
 
 ### Introduction
 
@@ -60,10 +60,7 @@ This section is not yet available.
 
 This section gives an overview of our use of ARIA, within the specific context of the switch pattern.
 
-#### role=switch
-
-Informs AT that this control has switch behavior.
-
-**aria-checked**
-
-Informs AT the current "checked" state of the switch.
+| Attribute        | Description                                           |
+| ---------------- | ----------------------------------------------------- |
+| **role=switch**  | Informs AT that this control has switch behavior.     |
+| **aria-checked** | Informs AT the current "checked" state of the switch. |
