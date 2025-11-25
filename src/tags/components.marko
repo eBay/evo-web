@@ -9,25 +9,93 @@ static const componentTemplate = import.meta.glob(
   "../routes/component/*/+page.marko",
   { eager: true },
 );
+static const metaJsons = import.meta.glob("../routes/component/*/+meta.json", {
+  eager: true,
+});
+static const a11yDocsTemplates = import.meta.glob("../docs/a11y/**/*.md");
+static const componentMetaJsons = Object.keys(metaJsons).reduce<{
+  [key: string]: any;
+}>((data, filePath) => {
+  const file = getDirectory(filePath);
+  data[file] = metaJsons[filePath];
+  return data;
+}, {});
+export interface A11yDocsMap {
+  [key: string]: {
+    properName: string;
+    list: {
+      properName: string;
+      name: string;
+      fullPath: string;
+      type: string;
+    }[];
+  };
+}
+export interface ComponentMap {
+  [key: string]: {
+    properName: string;
+    name: string;
+    fullPath: string;
+    default?: any;
+    pageTitle?: string;
+    pageDescription?: string;
+    pageImg?: string;
+    hasMetadata: boolean;
+  };
+}
 /**
  * List of all components. This takes all components and creates a url lookup for them
  */
-static const components = Object.keys(componentTemplate).map((filePath) => {
-  const parts = filePath.split("/");
-  return parts.slice(0, parts.length - 1).join("/");
-}) as string[];
-/**
- * List of all component names. Key is the non formatted name (dash case in url)
- */
-static const properNameMap = components.reduce<{ [key: string]: string }>(
-  (nameMapper, comp) => {
-    const componentName = getFileNameWithoutExtension(comp);
-    const name = componentName.replace(/-([a-z])/g, function (g) {
-      return ` ${g[1].toUpperCase()}`;
+static const components = Object.keys(componentTemplate).reduce<ComponentMap>(
+  (data, filePath) => {
+    const parts = filePath.split("/");
+    const root = parts.slice(0, parts.length - 1).join("/");
+    const name = getFileNameWithoutExtension(root);
+    const properName = getProperName(name);
+    const { pageTitle, pageDescription, pageImg } = componentMetaJsons[name] || {};
+
+    data[name] = {
+      properName,
+      name,
+      fullPath: filePath,
+      pageDescription,
+      pageImg,
+      pageTitle,
+      hasMetadata: componentMetaJsons[name]
+    };
+
+    return data;
+  },
+  {},
+);
+static function getProperName(comp: string) {
+  const componentName = getFileNameWithoutExtension(comp);
+  const name = componentName.replace(/-([a-z])/g, function (g) {
+    return ` ${g[1].toUpperCase()}`;
+  });
+  const properName = name.charAt(0).toUpperCase() + name.slice(1);
+
+  return properName;
+}
+static const a11yDocs = Object.keys(a11yDocsTemplates).reduce<A11yDocsMap>(
+  (data, filePath) => {
+    const parts = filePath.split("/");
+    parts.slice(0, parts.length - 1).join("/");
+    const name = getFileNameWithoutExtension(filePath);
+    const type = getDirectory(filePath);
+    const properName = getProperName(name);
+    data[type] = data[type] || {};
+    data[type].properName = getProperName(type);
+    data[type].list = data[type].list || [];
+
+    data[type].list.push({
+      properName,
+      name,
+      fullPath: filePath,
+      type,
     });
-    const properName = name.charAt(0).toUpperCase() + name.slice(1);
-    nameMapper[componentName] = properName;
-    return nameMapper;
+
+    return data;
   },
   {},
 );
@@ -41,6 +109,19 @@ static function getFileNameWithoutExtension(filePath: string) {
   const lastDotIndex = file.lastIndexOf(".");
   return lastDotIndex !== -1 ? file.substring(0, lastDotIndex) : file;
 }
+/**
+ * Helper method to get directory file is in
+*/
+static function getDirectory(filePath: string) {
+  const lastIndex = filePath.lastIndexOf("/");
+  const directoryPath =
+    lastIndex !== -1 ? filePath.substring(0, lastIndex) : filePath;
+
+  const lastIndexDirectory = directoryPath.lastIndexOf("/");
+  return lastIndexDirectory === -1
+    ? directoryPath
+    : directoryPath.substring(lastIndexDirectory + 1);
+}
 static function getMetadata(componentName: string) {
   const metadata = componentMetadata[componentName];
 
@@ -50,7 +131,7 @@ static function getMetadata(componentName: string) {
 
   const dsInfo = metadata?.["ds-component"] || {};
   const dsComponent = Array.isArray(dsInfo) ? dsInfo[0] : dsInfo;
-  const properName = properNameMap[componentName];
+  const properName = components[componentName].properName;
 
   return {
     metadata,
@@ -70,7 +151,6 @@ static function getMetadataFromUrl(url: string) {
     componentData = getMetadata(componentName);
   }
 
-console.log(componentName, componentData)
   return {
     ...componentData,
     currentTab,
@@ -95,12 +175,12 @@ static function getComponentUrls(
   };
 }
 export {
+  a11yDocs,
   basePath,
   getFileNameWithoutExtension,
   getMetadataFromUrl,
   getMetadata,
   components,
-  properNameMap,
   componentTemplate,
   flags,
   icons,

@@ -1,6 +1,5 @@
 import pkg from "../../../package.json";
-import { components } from "../../tags/components.marko";
-import { a11yDocs } from "../a11y-docs.js";
+import { components, a11yDocs } from "../../tags/components.marko";
 
 <style>
     .page-sitemap {
@@ -96,7 +95,7 @@ import { a11yDocs } from "../a11y-docs.js";
 
         <nav aria-labelledby="sitemap-components">
             <ul role="menubar">
-                <components-list components=components/>
+                <components-list/>
             </ul>
         </nav>
 
@@ -130,7 +129,7 @@ import { a11yDocs } from "../a11y-docs.js";
 
         <nav aria-labelledby="sitemap-components">
             <ul role="menubar">
-                <a11y-docs-list a11yDocs=a11yDocs/>
+                <a11y-docs-list/>
             </ul>
         </nav>
     </div>

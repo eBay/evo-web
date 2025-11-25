@@ -1,9 +1,7 @@
-import { components, basePath, properNameMap, getMetadata } from "../../tags/components.marko";
-import componentMetadata from "../static/data/component-metadata";
-server import path from "path";
-static const componentMetas = import.meta.glob("./*/+meta.json", {
-    eager: true,
-});
+import {
+    components,
+    getMetadata,
+} from "../../tags/components.marko";
 <style.scss>
     main ul.components-list {
         container-type: inline-size;
@@ -83,55 +81,19 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
     <h1>Evo Web Components</h1>
 
     <ul class="components-list">
-        <for|key, folder| in=components>
-            <const/componentInfo=(() => {
-                const componentName = path.basename(folder as string);
-                const metaPath = `./${componentName}/+meta.json`;
-
-                // Get legacy meta data for page info (title, description, image)
-                let metaData = componentMetas[metaPath] as {
-                    default?: any;
-                    pageTitle?: string;
-                    pageDescription?: string;
-                    pageImg?: string;
-                };
-                if (metaData) {
-                    if (metaData.default) {
-                        metaData = metaData.default;
-                    } else {
-                        metaData = {
-                            pageTitle: metaData.pageTitle,
-                            pageDescription: metaData.pageDescription,
-                            pageImg: metaData.pageImg || "",
-                        };
-                    }
-                }
-
-                const {dsComponent, componentUrls, properName} = getMetadata(componentName);
-
-
-                return {
-                    name: componentName,
-                    properName: properName,
-                    componentUrls,
-                    folder: folder,
-                    meta: metaData || {},
-                    dsComponent: dsComponent,
-                    staticVersion: dsComponent?.cssVersion,
-                    markoVersion: dsComponent?.markoVersion,
-                    reactVersion: dsComponent?.reactVersion,
-                };
-            })()>
-            <if=componentInfo>
-                <const/componentUrls = componentInfo.componentUrls>
+        <for|key, component| in=components>
+            <const/{ dsComponent, componentUrls, properName }=getMetadata(
+                component.name,
+            )>
+           <if=component.hasMetadata>
                 <li>
                     <a
                         href=componentUrls?.overview
                         class="card card--aspect-16-9  module-link">
                         <div class="card__media">
-                            <if=(componentInfo.meta.pageImg)>
+                            <if=(component.pageImg)>
                                 <img
-                                    src=`${componentInfo.meta.pageImg}`
+                                    src=`${component.pageImg}`
                                     alt="Component image"
                                     class="card__hero-image">
                             </if>
@@ -146,25 +108,25 @@ static const componentMetas = import.meta.glob("./*/+meta.json", {
                         </div>
                         <div class="card__main">
                             <h2 class="card__title">
-                                ${componentInfo.properName}
+                                ${component.properName}
                             </h2>
                             <div class="card__description">
-                                ${componentInfo.meta?.pageDescription || "TBD"}
+                                ${component?.pageDescription || "TBD"}
                             </div>
                             <div class="card__footer">
-                                <if=componentInfo.staticVersion>
+                                <if=dsComponent?.version>
                                     <span class="component-version">
-                                        CSS v${componentInfo.staticVersion}
+                                        CSS v${dsComponent?.version}
                                     </span>
                                 </if>
-                                <if=componentInfo.markoVersion>
+                                <if=dsComponent?.markoVersion>
                                     <span class="component-version">
-                                        Marko v${componentInfo.markoVersion}
+                                        Marko v${dsComponent?.markoVersion}
                                     </span>
                                 </if>
-                                <if=componentInfo.reactVersion>
+                                <if=dsComponent?.reactVersion>
                                     <span class="component-version">
-                                        React v${componentInfo.reactVersion}
+                                        React v${dsComponent?.reactVersion}
                                     </span>
                                 </if>
                             </div>

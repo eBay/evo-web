@@ -1,4 +1,0 @@
-{
-  "pageTitle": "Less Component",
-  "pageDescription": "The Less component provides utilities and mixins for working with Less CSS preprocessor in Evo Web projects. It extends styling capabilities with variables, functions, and reusable patterns. Available in Evo Web's CSS, React, and Marko implementations."
-}

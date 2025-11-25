@@ -1,21 +1,18 @@
 import markdownit from "markdown-it";
 server import fs from "fs";
 server import path from "path";
+import { getMetadataFromUrl } from "./components.marko";
 static const md = markdownit({
     html: true,
 });
 
-export interface Input {
-    pattern: string;
-}
-
+<const/{ componentName }=getMetadataFromUrl($global.url.pathname)>
 <const/a11yMindPatternHTML=(() => {
     // Get the a11y MIND pattern, read its contents, and convert to HTML
-    const pattern = input.pattern;
     const a11yPatternsDir = "src/docs/a11y/patterns/component-patterns/";
     const a11yPatternsPath = path.join(
         process.cwd(),
-        `${a11yPatternsDir}/${pattern}.md`,
+        `${a11yPatternsDir}/${componentName}.md`,
     );
 
     let a11yMindPatternHTML;
@@ -28,6 +25,10 @@ export interface Input {
     return a11yMindPatternHTML;
 })()>
 
-<div class="a11y-mind-pattern">
-    $!{a11yMindPatternHTML}
+<div id=`${componentName}-a11y`>
+    <p>
+        <div class="a11y-mind-pattern">
+            $!{a11yMindPatternHTML}
+        </div>
+    </p>
 </div>

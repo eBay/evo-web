@@ -61,25 +61,33 @@ async function normalizeFiles(svgs) {
     );
 
     for (let filePath of svgFiles) {
-        const fileDir = path.parse(filePath).dir;
-        const fileBase = path.parse(filePath).base;
-        const data = await fs.promises.readFile(filePath, "utf8");
-        const svgJsDom = new JSDOM(data, { contentType: "text/xml" });
-        const querySelector = svgJsDom.window.document.querySelector("svg")!;
+        try {
+            const fileDir = path.parse(filePath).dir;
+            const fileBase = path.parse(filePath).base;
+            const data = await fs.promises.readFile(filePath, "utf8");
+            const svgJsDom = new JSDOM(data, { contentType: "text/xml" });
+            const querySelector =
+                svgJsDom.window.document.querySelector("svg")!;
 
-        querySelector.hasAttribute("height") &&
-            querySelector.removeAttribute("height");
-        querySelector.hasAttribute("width") &&
-            querySelector.removeAttribute("width");
+            querySelector.hasAttribute("height") &&
+                querySelector.removeAttribute("height");
+            querySelector.hasAttribute("width") &&
+                querySelector.removeAttribute("width");
 
-        await fs.promises.writeFile(filePath, await html2xhtml(svgJsDom, true));
+            await fs.promises.writeFile(
+                filePath,
+                await html2xhtml(svgJsDom, true),
+            );
 
-        if (
-            !fileBase.startsWith("icon-") &&
-            !fileBase.startsWith("star-rating-") &&
-            !fileBase.startsWith("image-placeholder")
-        ) {
-            await prefixIcon(fileDir, fileBase);
+            if (
+                !fileBase.startsWith("icon-") &&
+                !fileBase.startsWith("star-rating-") &&
+                !fileBase.startsWith("image-placeholder")
+            ) {
+                await prefixIcon(fileDir, fileBase);
+            }
+        } catch (e) {
+            console.log(e, filePath);
         }
     }
 
@@ -260,6 +268,7 @@ function stripName(name) {
 }
 
 async function runGenerate() {
+    debugger;
     const files = await processFilePrefixing(svgIconDir);
 
     // const files = await getFiles(svgIconDir);
