@@ -125,7 +125,7 @@ header a {
   gap: var(--spacing-sm);
   justify-content: center;
   padding: var(--spacing-sm) var(--spacing-md);
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
 }
 

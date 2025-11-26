@@ -1,12 +1,12 @@
 import markdownit from "markdown-it";
 server import fs from "fs";
 server import path from "path";
-import { getMetadataFromUrl } from "./components";
+import { getMetadataFromUrl } from "../data";
 static const md = markdownit({
     html: true,
 });
 
-<const/{ componentName }=getMetadataFromUrl($global.url.pathname)>
+<const/{ name: componentName }=getMetadataFromUrl($global.url.pathname)>
 <const/a11yMindPatternHTML=(() => {
     // Get the a11y MIND pattern, read its contents, and convert to HTML
     const a11yPatternsDir = "src/docs/a11y/patterns/component-patterns/";

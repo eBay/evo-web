@@ -1,4 +1,4 @@
-import { getMetadataFromUrl } from "../../../../tags/components";
+import { getMetadataFromUrl } from "../../../../data";
 export interface Input {
     content?: Marko.Body;
 }
@@ -41,8 +41,8 @@ export interface Input {
                         <span
                             class="badge"
                             role="img"
-                            aria-label=`Static version ${dsComponent.cssVersion || ""}`>
-                            ${" "}${dsComponent.cssVersion || ""}${" "}
+                            aria-label=`Static version ${dsComponent?.cssVersion || ""}`>
+                            ${" "}${dsComponent?.cssVersion || ""}${" "}
                         </span>
                     </a>
                 </li>
@@ -54,8 +54,8 @@ export interface Input {
                         <span
                             class="badge"
                             role="img"
-                            aria-label=`Marko version ${dsComponent.markoVersion || ""}`>
-                            ${" "}${dsComponent.markoVersion || ""}${" "}
+                            aria-label=`Marko version ${dsComponent?.markoVersion || ""}`>
+                            ${" "}${dsComponent?.markoVersion || ""}${" "}
                         </span>
                         <svg
                             class="icon icon--16"
@@ -75,8 +75,8 @@ export interface Input {
                         <span
                             class="badge"
                             role="img"
-                            aria-label=`React version ${dsComponent.reactVersion || ""}`>
-                            ${" "}${dsComponent.reactVersion || ""}${" "}
+                            aria-label=`React version ${dsComponent?.reactVersion || ""}`>
+                            ${" "}${dsComponent?.reactVersion || ""}${" "}
                         </span>
                         <svg
                             class="icon icon--16"

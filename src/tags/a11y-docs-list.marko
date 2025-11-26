@@ -1,4 +1,4 @@
-import { a11yDocs, components } from "./components";
+import { a11yDocs, components,basePath } from "../data";
 <for|_folder, data| in=a11yDocs>
     <li>
         <h3>${data.properName}</h3>
@@ -8,8 +8,8 @@ import { a11yDocs, components } from "./components";
 
                 <const/link=(
                     isComponentPattern
-                        ? `/component/${item.name}/accessibility`
-                        : `/accessibility/${item.type}/${item.name}`
+                        ? `${basePath}component/${item.name}/accessibility`
+                        : `${basePath}accessibility/${item.type}/${item.name}`
                 )>
 
                 <li>

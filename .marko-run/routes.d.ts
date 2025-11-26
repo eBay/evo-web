@@ -11,12 +11,12 @@ declare module "@marko/run" {
 	interface AppData extends Run.DefineApp<{
 		routes: {
 			"/": { verb: "get"; meta: typeof import("../src/routes/_index/+meta.json"); };
-			"/evo-css-components": { verb: "get"; };
-			"/evo-marko-components": { verb: "get"; };
-			"/evo-react-components": { verb: "get"; };
-			"/sitemap": { verb: "get"; };
+			"/evo-css-components": { verb: "get"; meta: typeof import("../src/routes/_index/evo-css-components+meta.json"); };
+			"/evo-marko-components": { verb: "get"; meta: typeof import("../src/routes/_index/evo-marko-components+meta.json"); };
+			"/evo-react-components": { verb: "get"; meta: typeof import("../src/routes/_index/evo-react-components+meta.json"); };
+			"/sitemap": { verb: "get"; meta: typeof import("../src/routes/_index/sitemap+meta.json"); };
 			"/accessibility": { verb: "get"; meta: typeof import("../src/routes/accessibility/+meta.json"); };
-			"/accessibility/$$patterns": { verb: "get"; };
+			"/accessibility/$$patterns": { verb: "get"; meta: typeof import("../src/routes/accessibility/$$patterns/+meta.json"); };
 			"/component": { verb: "get"; meta: typeof import("../src/routes/component/+meta.json"); };
 			"/component/accordion": { verb: "get"; meta: typeof import("../src/routes/component/accordion/+meta.json"); };
 			"/component/accordion/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/accordion/accessibility+meta.json"); };
@@ -265,9 +265,9 @@ declare module "@marko/run" {
 			"/component/utility": { verb: "get"; meta: typeof import("../src/routes/component/utility/+meta.json"); };
 			"/component/utility/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/utility/accessibility+meta.json"); };
 			"/component/utility/css": { verb: "get"; meta: typeof import("../src/routes/component/utility/css+meta.json"); };
-			"/guide-examples/page-grid-blog-stretchy-nested": { verb: "get"; };
-			"/guide-examples/page-grid-blog-stretchy-subgrid": { verb: "get"; };
-			"/guide-examples/page-grid-pricing": { verb: "get"; };
+			"/guide-examples/page-grid-blog-stretchy-nested": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+meta.json"); };
+			"/guide-examples/page-grid-blog-stretchy-subgrid": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+meta.json"); };
+			"/guide-examples/page-grid-pricing": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-pricing/+meta.json"); };
 			"/guide-examples/skeleton-examples/buffered/example-1": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/buffered/example-1/+meta.json"); };
 			"/guide-examples/skeleton-examples/csr/example-1": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-1/+meta.json"); };
 			"/guide-examples/skeleton-examples/csr/example-2": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/csr/example-2/+meta.json"); };
@@ -281,7 +281,7 @@ declare module "@marko/run" {
 			"/guide-examples/skeleton-examples/out-of-order/example-2": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+meta.json"); };
 			"/guide-examples/skeleton-examples/out-of-order/example-3": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+meta.json"); };
 			"/guide-examples/skeleton-examples/out-of-order/example-4": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+meta.json"); };
-			"/guides": { verb: "get"; };
+			"/guides": { verb: "get"; meta: typeof import("../src/routes/guides/+meta.json"); };
 			"/guides/animation": { verb: "get"; meta: typeof import("../src/routes/guides/animation+meta.json"); };
 			"/guides/page-grid": { verb: "get"; meta: typeof import("../src/routes/guides/page-grid+meta.json"); };
 			"/guides/skeleton": { verb: "get"; meta: typeof import("../src/routes/guides/skeleton+meta.json"); };

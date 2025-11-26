@@ -1,10 +1,9 @@
-import { components, getMetadata } from "./components";
+import { components } from "../data";
 
 <for|_key, comp| in=components>
-    <const/{ componentUrls }=getMetadata(comp.name)>
     <if=comp.properName>
         <li>
-            <a href=componentUrls?.overview class="nav-link" role="menuitem">
+            <a href=comp.componentUrls?.overview class="nav-link" role="menuitem">
                 ${comp.properName}
             </a>
         </li>

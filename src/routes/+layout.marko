@@ -55,8 +55,8 @@ static declare global {
       property="og:description"
       content=`${$global.meta.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`>
     <meta property="og:type" content="website">
-    <meta property="og:image" content=`${$global.meta.pageImgCard || ""}`>
-    <meta name="twitter:image" content=`${$global.meta.pageImgCard || ""}`>
+    <meta property="og:image" content=`${($global.meta as any).pageImg || ""}`>
+    <meta name="twitter:image" content=`${($global.meta as any).pageImg || ""}`>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content=`${$global.meta.pageTitle || "evo web"}`>
     <meta
@@ -65,21 +65,21 @@ static declare global {
     <link
       rel="icon"
       type="image/png"
-      href="/src/routes/static/favicon/favicon-96x96.png"
+      href="./static/favicon/favicon-96x96.png"
       sizes="96x96">
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/src/routes/static/favicon/favicon.svg">
+      href="./static/favicon/favicon.svg">
     <link
       rel="shortcut icon"
-      href="/src/routes/static/favicon/src/routes/static/favicon/favicon.ico">
+      href="./static/favicon/favicon.ico">
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/src/routes/static/favicon/apple-touch-icon.png">
+      href="./static/favicon/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="Evo Web">
-    <link rel="manifest" href="/src/routes/static/favicon/site.webmanifest">
+    <link rel="manifest" href="./static/favicon/site.webmanifest">
     // tracking
     <html-script
       async
