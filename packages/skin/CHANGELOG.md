@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.18.1
+
+### Patch Changes
+
+- [#376](https://github.com/eBay/evo-web/pull/376) [`9dd7b4b`](https://github.com/eBay/evo-web/commit/9dd7b4bc0e715b83198d65f2c8c2e4f3a9388d4b) Thanks [@patrickufer](https://github.com/patrickufer)! - fix: remove `-webkit-overflow-scrolling: touch`
+
 ## 19.18.0
 
 ### Minor Changes

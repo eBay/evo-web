@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 8.17.2
+
+### Patch Changes
+
+- [#379](https://github.com/eBay/evo-web/pull/379) [`61d5e58`](https://github.com/eBay/evo-web/commit/61d5e5816bd660a5a852cacd54e29ab09aa48ebd) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(PhoneInput): add missing countries and fix selection logic
+
 ## 8.17.1
 
 ### Patch Changes
