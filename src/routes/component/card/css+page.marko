@@ -91,7 +91,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     <h3>Card with a 5:4 Aspect Ratio</h3>
 
     <p>
-        You can change the aspect ratio by adding the <highlight>.card--aspect-5-4</highlight> modifier class to the card container.
+        You can change the aspect ratio by adding the <code>.card--aspect-5-4</code> modifier class to the card container.
     </p>
 
 <demo>
@@ -129,7 +129,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     <h3>Card with a 16:9 Aspect Ratio</h3>
 
     <p>
-        For wider cards, use the <highlight>.card--aspect-16-9</highlight> modifier class.
+        For wider cards, use the <code>.card--aspect-16-9</code> modifier class.
     </p>
 
 <demo>
@@ -219,7 +219,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     <h2 id="card-outlined">Outlined Card</h2>
 
     <p>
-        The outlined card is a style variant that uses an outline without a background. This can be implemented by using the <highlight>.card--outlined</highlight> modifier.
+        The outlined card is a style variant that uses an outline without a background. This can be implemented by using the <code>.card--outlined</code> modifier.
     </p>
 
 <demo>
@@ -270,7 +270,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
 
     <h2 id="card-full-hero">Card with Full Hero</h2>
 
-    <p>One of the common layouts for card is to have a full-width hero image that spans the entire width of the card. To accomplish this use the <highlight>.card--full-hero</highlight> modifier.</p>
+    <p>One of the common layouts for card is to have a full-width hero image that spans the entire width of the card. To accomplish this use the <code>.card--full-hero</code> modifier.</p>
 
 <demo>
     <span class="card card--full-hero">
@@ -327,7 +327,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     <h3 id="disabled-internally-actionable-card">Disabled Internally-Actionable Card</h3>
 
     <p>
-        For internally-actionable cards, the button inside will need to be disabled. The outer card does not look or need to look disabled since it's not itself an interactive element. The button will visually indicate its disabled state by setting the button to <highlight>disabled</highlight>.
+        For internally-actionable cards, the button inside will need to be disabled. The outer card does not look or need to look disabled since it's not itself an interactive element. The button will visually indicate its disabled state by setting the button to <code>disabled</code>.
     </p>
 
 <demo>
@@ -365,7 +365,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
 <h3 id="disabled-self-actionable-card-link">Disabled Self-Actionable Card with Link</h3>
 
     <p>
-        For self-actionable cards using an <highlight>a</highlight> tag, set the <highlight>tabindex="-1"</highlight> and <highlight>href=""</highlight>. This will in effect disable the anchor even though technically, anchors cannot get disabled.
+        For self-actionable cards using an <code>a</code> tag, set the <code>tabindex="-1"</code> and <code>href=""</code>. This will in effect disable the anchor even though technically, anchors cannot get disabled.
     </p>
 
 <demo>
@@ -397,7 +397,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     <h3 id="disabled-self-actionable-card-button">Disabled Self-Actionable Card with Button</h3>
 
     <p>
-        For self-actionable cards using a <highlight>button</highlight>, use the <highlight>disabled</highlight> attribute on the element. This will prevent any interaction with the card and indicate to users that it is not available for action.
+        For self-actionable cards using a <code>button</code>, use the <code>disabled</code> attribute on the element. This will prevent any interaction with the card and indicate to users that it is not available for action.
     </p>
 
 <demo>
@@ -429,7 +429,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
     <h2 id="card-horizontal">Horizontal Card</h2>
 
     <p>
-        Card also has a layout variant that can displayed it in a horizontal layout. This is useful when you want to display an image alongside the content. To achieve this, use the <highlight>.card--horizontal</highlight> modifier.
+        Card also has a layout variant that can displayed it in a horizontal layout. This is useful when you want to display an image alongside the content. To achieve this, use the <code>.card--horizontal</code> modifier.
     </p>
 
 <demo>
@@ -484,7 +484,7 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
         The self-actionable card is a variant that allows the entire card to be clickable, leading to a specific action or page. A Self-actionable card <strong>cannot</strong> contain interactive elements such as buttons or links within it.
     </p>
     <p>
-        This variant is useful for cards that represent a single item or entity, such as a product or article. To create a self-actionable card, use an <highlight>a</highlight> tag as the container for navigation, or a <highlight>button</highlight> tag for actions that don't navigate to a different page.
+        This variant is useful for cards that represent a single item or entity, such as a product or article. To create a self-actionable card, use an <code>a</code> tag as the container for navigation, or a <code>button</code> tag for actions that don't navigate to a different page.
     </p>
 
     <p>
@@ -577,12 +577,12 @@ import imgCards from "/src/routes/static/img/cards-card.jpeg";
         </div>
         <div class="section-notice__main">
             <h3 class="section-notice__title">Important Usage Guidelines</h3>
-            <p>It's critical that this variant NOT be implemented using a button or an anchor as the component container to avoid a native navigation item inside another. Instead, use a <highlight>div</highlight> element and perform the navigation programmatically using <highlight>JavaScript</highlight>.</p>
+            <p>It's critical that this variant NOT be implemented using a button or an anchor as the component container to avoid a native navigation item inside another. Instead, use a <code>div</code> element and perform the navigation programmatically using <code>JavaScript</code>.</p>
         </div>
     </section>
 
     <p>
-        To build this variant, use the same markup as the internally-actionable card, adding a <highlight>click</highlight> event listener to the card container. This will allow the card to be self-actionable while still containing the same actionable element inside. Both the card click and the internal button must trigger the identical action.
+        To build this variant, use the same markup as the internally-actionable card, adding a <code>click</code> event listener to the card container. This will allow the card to be self-actionable while still containing the same actionable element inside. Both the card click and the internal button must trigger the identical action.
     </p>
 
 <demo>

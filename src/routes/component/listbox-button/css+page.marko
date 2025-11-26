@@ -150,21 +150,21 @@
 
     <p>
         To give the illusion of a floated label use the
-        <span class="highlight">
+        <code>
             btn--floating-label
-        </span>
+        </code>
          and
-        <span class="highlight">
+        <code>
             btn__floating-label
-        </span>
+        </code>
          classes.
     </p>
     <p>
         <strong>NOTE</strong>
          : a
-        <span class="highlight">
+        <code>
             btn__floating-label--inline
-        </span>
+        </code>
         ${" "}class must also be toggled with JavaScript. It should be present when there is no selection, and vice versa.
     </p>
 
@@ -303,9 +303,9 @@
     </h3>
     <p>
         A selection can be made by applying the
-        <span class="highlight">
+        <code>
             aria-selected
-        </span>
+        </code>
         ${" "}state to a single option; JavaScript is required to update all ARIA and button text state.
     </p>
 
@@ -607,9 +607,9 @@
     </h3>
     <p>
         You can also add a description to each option by using
-        <span class="highlight">
+        <code>
             .listbox-button__description
-        </span>
+        </code>
     </p>
     <p>
         In order to make the description accessible, you need to add a clipped punctuation marker. This ensures screen readers will read the subtitle as a separate sentence.
@@ -782,9 +782,9 @@
     </h3>
     <p>
         Apply the
-        <span class="highlight">
+        <code>
             btn--borderless
-        </span>
+        </code>
          modifier to create a borderless listbox button.
     </p>
 
@@ -916,9 +916,9 @@
     </h3>
     <p>
         Apply the
-        <span class="highlight">
+        <code>
             listbox-button--error
-        </span>
+        </code>
          modifier to create a listbox button in an error state.
     </p>
     <p>
@@ -1079,40 +1079,40 @@
     </h3>
     <p>
         Apply the
-        <span class="highlight">
+        <code>
             listbox-button--form
-        </span>
+        </code>
         ${" "}modifier to create a listbox button inside a form matching other form controls.
     </p>
     <p>
         Additionally, to allow the component to send the value from a selected option in a form submission, there needs to be custom${" "}
-        <span class="highlight">
+        <code>
             js
-        </span>
+        </code>
          to populate the
-        <span class="highlight">
+        <code>
             select.listbox__native
-        </span>
+        </code>
         ${" "}with the value upon selection. If using Skin outside of eBay UI, you will need to account for that independantly.
     </p>
 
     <p>
         NOTE: This component is a bit in transiton and will likely undergo some changes to integrate and simplify the variant implementation. Currently,${" "}
-        <span class="highlight">
+        <code>
             .listbox-button--form
-        </span>
+        </code>
         ${" "}is used as a bit of a patch to create the form variant of the control. It adds some of the styles needed to do form variant styling while other styles are applied separately by${" "}
-        <span class="highlight">
+        <code>
             .btn--form
-        </span>
+        </code>
          . In the future, these styles will be consolidated into
-        <span class="highlight">
+        <code>
             .btn--form
-        </span>
+        </code>
          and will be
-        <span class="highlight">
+        <code>
             .listbox-button--form
-        </span>
+        </code>
          will be phased out.
     </p>
 

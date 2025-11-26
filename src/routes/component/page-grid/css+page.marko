@@ -33,23 +33,23 @@
     </p>
     <p>
         Though our minimum screen width support starts at${" "}
-        <span class="highlight">
+        <code>
             320px
-        </span>
+        </code>
         ${" "}, in theory this means that default styles will support devices
         much narrower than that since we don't set a minimum. The${" "}
-        <span class="highlight">
+        <code>
             320px
-        </span>
+        </code>
         ${" "}is, at best, an implied breakpoint.
     </p>
     <p>
         Subsequent media queries should increase in screen width and alter the
         UI styling additively avoiding style declaration duplications when
         possible. The following${" "}
-        <span class="highlight">
+        <code>
             CSS
-        </span>
+        </code>
         ${" "}shows the grid layout of the Skin website itself.
     </p>
 
@@ -102,18 +102,18 @@
     </h3>
     <p>
         We've set up${" "}
-        <span class="highlight">
+        <code>
             CSS
-        </span>
+        </code>
         ${" "}properties and${" "}
-        <span class="highlight">
+        <code>
             SASS
-        </span>
+        </code>
         ${" "}constants to provide developers with easy reference for responsive
         adjustments of UIs. The${" "}
-        <span class="highlight">
+        <code>
             CSS
-        </span>
+        </code>
         ${" "}properties allow for customization of page grid for UIs that
         require it, but${" "}
         <strong>
@@ -140,9 +140,9 @@
         <div class="section-notice__main">
             <h3 class="section-notice__title">
                 The${" "}
-                <span class="highlight">
+                <code>
                     CSS
-                </span>
+                </code>
                 ${" "}properties to allow for customization
             </h3>
             <p>
@@ -169,9 +169,9 @@
 
     <p>
         Additionally, we've set up${" "}
-        <span class="highlight">
+        <code>
             SASS
-        </span>
+        </code>
         ${" "}constants for easier reference of the current breakpoints as well
         as some other dimension/spacing values.
     </p>
@@ -219,17 +219,17 @@
         </a>
         ${" "}support), but fallbacks allow for a seamless implementation. You
         will need to add a bit of${" "}
-        <span class="highlight">
+        <code>
             CSS
-        </span>
+        </code>
         ${" "}on your implementation side to accomplish this.
     </p>
 
     <p>
         Firstly, you will need to add a class of${" "}
-        <span class="highlight">
+        <code>
             page-grid__subgrid
-        </span>
+        </code>
         ${" "}to the internal subgrid:
     </p>
     <highlight-code type="html">
@@ -256,9 +256,9 @@
 
     <p>
         Additionally, you will need to set up the corresponding subgrid${" "}
-        <span class="highlight">
+        <code>
             CSS
-        </span>
+        </code>
         ${" "}as such to allow for support of subgrids in browsers that do not
         yet have support:
     </p>

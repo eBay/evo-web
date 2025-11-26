@@ -1,71 +1,24 @@
-static const basePath = import.meta.env.BASE_URL;
-import siteMeta from "../../data/site.json";
-client import "../main.js";
-
 <style.scss>
-    @use "@ebay/skin/src/sass/variables/variables";
-    @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
-    @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
-    @use "../static/sass/pygments";
-    @use "../static/sass/demo-colors";
-    @use "../static/sass/page-grid";
-    @use "../static/sass/color-schemes";
-    @use "@ebay/skin/src/sass/bundles/skin-headless";
-    @use "@ebay/skin/src/tokens/evo-core";
-    @use "@ebay/skin/src/tokens/evo-light-class";
-    @use "@ebay/skin/src/tokens/evo-dark-class";
-    @use "@ebay/skin/src/tokens/evo-live-light-class";
-    @use "@ebay/skin/src/tokens/evo-live-dark-class";
+  @use "@ebay/skin/src/sass/variables/variables";
+  @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
+  @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
+  @use "../static/sass/pygments";
+  @use "../static/sass/demo-colors";
+  @use "../static/sass/page-grid";
+  @use "../static/sass/color-schemes";
+  @use "@ebay/skin/src/sass/bundles/skin-headless";
+  @use "@ebay/skin/src/tokens/evo-core";
+  @use "@ebay/skin/src/tokens/evo-light-class";
+  @use "@ebay/skin/src/tokens/evo-dark-class";
+  @use "@ebay/skin/src/tokens/evo-live-light-class";
+  @use "@ebay/skin/src/tokens/evo-live-dark-class";
 
-    @use "@ebay/skin/dist/global/global.css";
-    @use "@ebay/skin/dist/layout-grid/layout-grid.css";
-
-    @use "../static/sass/site-main";
-    @use "../static/sass/landing-page";
-
+  @use "../static/sass/site-main";
+  @use "../static/sass/landing-page";
 </style>
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>${$global.meta.pageTitle || "eBay Skin CSS Framework"}</title>
-        <meta
-            name="description"
-            content=`${$global.meta.pageDescription || "A responsive, accessible, and user-friendly CSS framework created by the engineers at eBay leveraging semantic HTML, SVG & ARIA."}`
-        >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <base href=basePath>
-        <meta property="og:site_name" content=`${siteMeta.pageTitle}`>
-        <meta
-            property="og:title"
-            content=`${$global.meta.pageTitle || "eBay Skin CSS Framework"}`
-        >
-        <meta
-            property="og:description"
-            content=`${$global.meta.pageDescription || "A responsive, accessible, and user-friendly CSS framework created by the engineers at eBay leveraging semantic HTML, SVG & ARIA."}`
-        >
-
-        <meta property="og:type" content="website">
-        <meta property="og:image" content=`${$global.meta.pageImgCard || ""}`>
-        <meta name="twitter:image" content=`${$global.meta.pageImgCard || ""}`>
-        <meta name="twitter:card" content="summary_large_image">
-        <meta
-            name="twitter:title"
-            content=`${$global.meta.pageTitle || "eBay Skin CSS Framework"}`
-        >
-        <meta
-            name="twitter:description"
-            content=`${$global.meta.pageDescription || "A responsive, accessible, and user-friendly CSS framework created by the engineers at eBay leveraging semantic HTML, SVG & ARIA."}`
-        >
-        <favicons/>
-        <analytics-tracking/>
-    </head>
-    <body>
-        <site-header/>
-        <main class="landing-page">
-            <${input.content}/>
-        </main>
-        <site-footer/>
-    </body>
-</html>
+<site-header/>
+<main class="landing-page">
+  <${input.content}/>
+</main>
+<site-footer/>

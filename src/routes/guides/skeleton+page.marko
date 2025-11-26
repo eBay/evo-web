@@ -35,9 +35,9 @@
     </h3>
     <p>
         This technique leverages the CSS
-        <span class="highlight">
+        <code>
             :empty
-        </span>
+        </code>
         pseudo-class, as documented in the article,
         <a href="https://dev.to/tigt/skeleton-screens-but-fast-48f1">
             "Skeleton screens, but fast"
@@ -46,13 +46,13 @@
     </p>
     <p>
         If an element is empty, then its
-        <span class="highlight">
+        <code>
             :empty
-        </span>
+        </code>
         ${" "}selector matches, and the associated styles (i.e. the skeleton graphics) are applied. When the content is rendered,${" "}
-        <span class="highlight">
+        <code>
             :empty
-        </span>
+        </code>
         ${" "}no longer matches, and the styles (our skeleton graphics) are removed. Marvellous!
     </p>
     <p>The HTML would look like this:</p>
@@ -76,9 +76,9 @@
     <p>
         <strong>NOTE:</strong>
         The
-        <span class="highlight">
+        <code>
             :empty
-        </span>
+        </code>
         pseudo-class considers elements with whitespace as not empty!
     </p>
     <p>
@@ -113,9 +113,9 @@
 
     <p>
         Or we can simply hide the skeleton, using the
-        <span class="highlight">
+        <code>
             hidden
-        </span>
+        </code>
         property.
     </p>
 
@@ -214,9 +214,9 @@
     </p>
     <p>
         The CSS
-        <span class="highlight">
+        <code>
             :empty
-        </span>
+        </code>
         ${" "}technique is highly efficient for this scenario and basic skeleton orchestration. Any kind of complex skeleton orchestration would be better left to${" "}
         <a href="#scenario-4">
             out-of-order streaming

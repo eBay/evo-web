@@ -1,19 +1,17 @@
-import flags from "../data/flags";
-import icons from "../data/icons";
 import componentMetadata, {
   type ComponentMetadata,
   type DsComponent,
 } from "../data/component-metadata";
-static const basePath = import.meta.env.BASE_URL;
-static const componentTemplate = import.meta.glob(
+export const basePath = import.meta.env.BASE_URL;
+export const componentTemplate = import.meta.glob(
   "../routes/component/*/+page.marko",
   { eager: true },
 );
-static const metaJsons = import.meta.glob("../routes/component/*/+meta.json", {
+const metaJsons = import.meta.glob("../routes/component/*/+meta.json", {
   eager: true,
 });
-static const a11yDocsTemplates = import.meta.glob("../docs/a11y/**/*.md");
-static const componentMetaJsons = Object.keys(metaJsons).reduce<{
+const a11yDocsTemplates = import.meta.glob("../docs/a11y/**/*.md");
+const componentMetaJsons = Object.keys(metaJsons).reduce<{
   [key: string]: any;
 }>((data, filePath) => {
   const file = getDirectory(filePath);
@@ -46,13 +44,14 @@ export interface ComponentMap {
 /**
  * List of all components. This takes all components and creates a url lookup for them
  */
-static const components = Object.keys(componentTemplate).reduce<ComponentMap>(
+export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
   (data, filePath) => {
     const parts = filePath.split("/");
     const root = parts.slice(0, parts.length - 1).join("/");
     const name = getFileNameWithoutExtension(root);
     const properName = getProperName(name);
-    const { pageTitle, pageDescription, pageImg } = componentMetaJsons[name] || {};
+    const { pageTitle, pageDescription, pageImg } =
+      componentMetaJsons[name] || {};
 
     data[name] = {
       properName,
@@ -61,14 +60,14 @@ static const components = Object.keys(componentTemplate).reduce<ComponentMap>(
       pageDescription,
       pageImg,
       pageTitle,
-      hasMetadata: componentMetaJsons[name]
+      hasMetadata: componentMetaJsons[name],
     };
 
     return data;
   },
   {},
 );
-static function getProperName(comp: string) {
+function getProperName(comp: string) {
   const componentName = getFileNameWithoutExtension(comp);
   const name = componentName.replace(/-([a-z])/g, function (g) {
     return ` ${g[1].toUpperCase()}`;
@@ -77,7 +76,7 @@ static function getProperName(comp: string) {
 
   return properName;
 }
-static const a11yDocs = Object.keys(a11yDocsTemplates).reduce<A11yDocsMap>(
+export const a11yDocs = Object.keys(a11yDocsTemplates).reduce<A11yDocsMap>(
   (data, filePath) => {
     const parts = filePath.split("/");
     parts.slice(0, parts.length - 1).join("/");
@@ -101,8 +100,8 @@ static const a11yDocs = Object.keys(a11yDocsTemplates).reduce<A11yDocsMap>(
 );
 /**
  * Helper method to basically do path.basename on client
-*/
-static function getFileNameWithoutExtension(filePath: string) {
+ */
+export function getFileNameWithoutExtension(filePath: string) {
   const lastIndex = filePath.lastIndexOf("/");
   const file = lastIndex !== -1 ? filePath.substring(lastIndex + 1) : filePath;
 
@@ -111,8 +110,8 @@ static function getFileNameWithoutExtension(filePath: string) {
 }
 /**
  * Helper method to get directory file is in
-*/
-static function getDirectory(filePath: string) {
+ */
+function getDirectory(filePath: string) {
   const lastIndex = filePath.lastIndexOf("/");
   const directoryPath =
     lastIndex !== -1 ? filePath.substring(0, lastIndex) : filePath;
@@ -122,7 +121,7 @@ static function getDirectory(filePath: string) {
     ? directoryPath
     : directoryPath.substring(lastIndexDirectory + 1);
 }
-static function getMetadata(componentName: string) {
+export function getMetadata(componentName: string) {
   const metadata = componentMetadata[componentName];
 
   if (!metadata) {
@@ -140,7 +139,7 @@ static function getMetadata(componentName: string) {
     dsComponent,
   };
 }
-static function getMetadataFromUrl(url: string) {
+export function getMetadataFromUrl(url: string) {
   const paths = url.split("/");
   let componentName = paths.pop()!;
   let currentTab = "overview";
@@ -157,7 +156,7 @@ static function getMetadataFromUrl(url: string) {
     componentName,
   };
 }
-static function getComponentUrls(
+function getComponentUrls(
   componentName: string,
   metadata: ComponentMetadata,
   dsComponent: DsComponent,
@@ -174,15 +173,3 @@ static function getComponentUrls(
       dsComponent.url || "https://playbook.ebay.com/design-system/components/",
   };
 }
-export {
-  a11yDocs,
-  basePath,
-  getFileNameWithoutExtension,
-  getMetadataFromUrl,
-  getMetadata,
-  components,
-  componentTemplate,
-  flags,
-  icons,
-  componentMetadata,
-};

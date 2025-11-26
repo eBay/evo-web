@@ -22,7 +22,18 @@ client import "../main.js";
 <site-header/>
 <div class="content page-grid-container">
     <div class="page-grid">
-        <a11y-navrail/>
+        <div class="site-nav secondary-nav">
+            <nav id="a11y-nav" aria-labelledby="navrail-a11y-nav_title">
+                <h2 id="navrail-a11y-nav_title">
+                    <a href="/accessibility/">
+                        Accessibility Docs
+                    </a>
+                </h2>
+                <ul role="menubar">
+                    <a11y-docs-list/>
+                </ul>
+            </nav>
+        </div>
         <main>
             <breadcrumbs/>
             <${input.content}/>

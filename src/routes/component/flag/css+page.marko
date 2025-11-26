@@ -26,21 +26,21 @@ import flags from "../../../data/flags";
 
     <p>
         For different sizes, you can use${" "}
-        <span class="highlight">
+        <code>
             .ff-sm
-        </span>
+        </code>
         ${" "}for small (18px),${" "}
-        <span class="highlight">
+        <code>
             .ff-md
-        </span>
+        </code>
         ${" "}for medium (27px),${" "}
-        <span class="highlight">
+        <code>
             .ff-lg
-        </span>
+        </code>
         ${" "}for large (42px), and${" "}
-        <span class="highlight">
+        <code>
             .ff-xl
-        </span>
+        </code>
         ${" "}for extra large (60px).
     </p>
 
@@ -100,7 +100,18 @@ import flags from "../../../data/flags";
         </p>
     </highlight-code>
 
-    <flag-list flag=flags/>
+    <ul class="demo-flag-boxes">
+        <for|flag| of=(flags.flags.list)>
+            <li class="demo-flag-box">
+                <b>${flag.code}</b>
+                <span
+                    role="img"
+                    aria-label=`${flag.name} flag`
+                    class=["fflag", `fflag--${flag.code}`, "ff-lg"]/>
+                <span>${flag.name}</span>
+            </li>
+        </for>
+    </ul>
 </div>
 export const metadata = {
     component: "flag",

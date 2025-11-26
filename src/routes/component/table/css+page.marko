@@ -452,9 +452,9 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     <h3>Compact Density Table</h3>
     <p>
         A compact density table is a table with reduced spacing to allow for more rows to be displayed in a smaller space. You can make tables more compact by adding the${" "}
-        <span class="highlight">
+        <code>
             table--density-compact
-        </span>
+        </code>
          modifier class to module.
     </p>
     <div class="demo">
@@ -902,9 +902,9 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     <h3>Relaxed Density Table</h3>
     <p>
         A relaxed density table is a table with increased spacing to allow for larger rows. You can make tables relaxed density by adding the${" "}
-        <span class="highlight">
+        <code>
             table--density-relaxed
-        </span>
+        </code>
          modifier class to module.
     </p>
     <div class="demo">
@@ -1352,9 +1352,9 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     <h3>Table with a Frozen Header</h3>
     <p>
         A table with a frozen header allows the header row to persist in a sticky manner while scrolling vertically through the table. You can make headers frozen by adding the${" "}
-        <span class="highlight">
+        <code>
             table--frozen-header
-        </span>
+        </code>
         ${" "}modifier class to module. When added, the table wrapper will get a fixed max-height allowing the contents inside to scroll. The header will be fixed to the top of the table wrapper.
     </p>
 
@@ -2227,9 +2227,9 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     <h3>Table with Constrained Height</h3>
     <p>
         You may constrain the height of the table, which will constrain the table to a percentage of the viewport height as opposed to allowing the full table contents to be fully visible. This is typically used in a table with a frozen header. To do so, add a${" "}
-        <span class="highlight">
+        <code>
             table--constrained-height
-        </span>
+        </code>
          modifier class to module.
     </p>
 
@@ -2726,13 +2726,13 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     <h3>Table with a Frozen Column</h3>
     <p>
         You may freeze any one of the first three column so it is always present when scrolling by adding${" "}
-        <span class="highlight">
+        <code>
             table--freeze-column-x
-        </span>
+        </code>
          modifier class to module, where
-        <span class="highlight">
+        <code>
             x
-        </span>
+        </code>
          is the column you'd like to freeze.
     </p>
 
@@ -3288,32 +3288,32 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
     <h3>Sortable Table</h3>
     <p>
         A sortable table is a table that allows users to sort the data in the table by clicking on the column headers. You can make tables sortable by using sort buttons in${" "}
-        <span class="highlight">
+        <code>
             &lt;thead&gt; &gt; &lt;th&gt;
-        </span>
+        </code>
         . Additionally, for accessibility purposes,
-        <span class="highlight">
+        <code>
             aria-sort="ascending"
-        </span>
+        </code>
          or
-        <span class="highlight">
+        <code>
             aria-sort="descending"
-        </span>
+        </code>
          should be added respectively to the
-        <span class="highlight">
+        <code>
             &lt;th&gt;
-        </span>
+        </code>
          to reflect the current sort order.
     </p>
     <p>
         If using anchors to sort the table with a page refresh, you would forgo the pressed state and just do${" "}
-        <span class="highlight">
+        <code>
             &lt;a href="my-url"&gt;Seller...&lt;/a&gt;
-        </span>
+        </code>
         . Additionally, you'd need to change the
-        <span class="highlight">
+        <code>
             aria-sort
-        </span>
+        </code>
          attribute to match the sort order after the page refresh.
     </p>
     <div class="demo">
@@ -3963,43 +3963,43 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
 
     <p>
         When a table is fetching data for sorting, filtering, or pagination, a loading state should be displayed to indicate that the table is in the process of loading. This can be achieved by adding the${" "}
-        <span class="highlight">
+        <code>
             table--loading-state
-        </span>
+        </code>
          class to the
-        <span class="highlight">
+        <code>
             .table
-        </span>
+        </code>
          element.
     </p>
 
     <p>
         Additionally, in the loading state, the module should be inaccessible to the user. This can be achieved by adding the${" "}
-        <span class="highlight">
+        <code>
             inert
-        </span>
+        </code>
          attribute to the
-        <span class="highlight">
+        <code>
             &lt;table&gt;
-        </span>
+        </code>
          as well as
-        <highlight>aria-hidden="true"</highlight>
+        <code>aria-hidden="true"</code>
         . Since
-        <span class="highlight">
+        <code>
             inert
-        </span>
+        </code>
         ${" "}is not fully supported in older browsers, it is recommended to either use a polyfill or use${" "}
-        <span class="highlight">
+        <code>
             JavaScript
-        </span>
+        </code>
         ${" "}to disable all interactive elements inside the table when in loading state. Elements that support${" "}
-        <span class="highlight">
+        <code>
             disabled
-        </span>
+        </code>
          should be disabled. Anchors should have their
-        <span class="highlight">
+        <code>
             href
-        </span>
+        </code>
          attributes removed.
     </p>
 
@@ -4023,13 +4023,13 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
             <div class="section-notice__main">
                 <p>
                     Anchors that need to have their
-                    <highlight>href</highlight>
+                    <code>href</code>
                     ${" "}attributes removed during loading, may require those href attributes to be restored once the loading state is done. For example, table head anchors that do server-side sorting/filtering. A good way to make those links inaccessible is to rename${" "}
-                    <highlight>href</highlight>
+                    <code>href</code>
                      to some other attribute, such as
-                    <highlight>data-href</highlight>
+                    <code>data-href</code>
                      during loading, and then revert them all back to
-                    <highlight>href</highlight>
+                    <code>href</code>
                      when loading state is complete.
                 </p>
             </div>
@@ -4052,7 +4052,7 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
 
     <p>
         The loading state should be displayed until the data is fully loaded. In addition to the loading state being set on the table, a progress bar expressive should be added to relay the loading state both visually and for screen readers. The progress bar expressive should be placed inside an a live region, such as${" "}
-        <highlight>&lt;div role="status"&gt;&lt;/div&gt;</highlight>
+        <code>&lt;div role="status"&gt;&lt;/div&gt;</code>
         .
     </p>
 
@@ -4738,9 +4738,9 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
 
     <p>
         A table can be put into 'selection mode' by adding the class
-        <span class="highlight">
+        <code>
             table--mode-selection
-        </span>
+        </code>
         ${" "}to the component parent. This will make slight spacing accommodations for the layout.
     </p>
 
@@ -4754,9 +4754,9 @@ import imgLandscapePic from "/src/routes/static/img/tb-landscape-pic.jpg";
 
     <p>
         Each row should have one column that is its unique idenitifier. That column should typically be the first static column in the row. That column should be indicated using${" "}
-        <span class="highlight">
+        <code>
             &lt;th scope="row"&gt;
-        </span>
+        </code>
          element, which affords various accessibility benefits.
     </p>
 

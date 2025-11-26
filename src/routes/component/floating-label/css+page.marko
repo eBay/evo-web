@@ -102,13 +102,13 @@
     <h3>Floating Label with Disabled Textbox</h3>
     <p>
         Use the
-        <span class="highlight">
+        <code>
             disabled
-        </span>
+        </code>
          property &amp;
-        <span class="highlight">
+        <code>
             floating-label__label--disabled
-        </span>
+        </code>
         ${" "}modifier on the input element and the label element respectively to disable the input.
     </p>
 
@@ -194,17 +194,17 @@
     <h3>Floating Label with Invalid Textbox</h3>
     <p>
         Set the
-        <span class="highlight">
+        <code>
             aria-invalid
-        </span>
+        </code>
          property to
-        <span class="highlight">
+        <code>
             true
-        </span>
+        </code>
          and add
-        <span class="highlight">
+        <code>
             floating-label__label--invalid
-        </span>
+        </code>
          to the label to semantically and visually highlight the invalid state.
     </p>
 
@@ -254,9 +254,9 @@
     </p>
     <p>
         In order to prevent overlap for floating label, use
-        <span class="highlight">
+        <code>
             .floating-label--opaque
-        </span>
+        </code>
          class
     </p>
     <div class="demo">
@@ -856,23 +856,23 @@
     </p>
     <p>
         When JavaScript is ready, the label can be re-positioned inside the textbox by adding the${" "}
-        <span class="highlight">
+        <code>
             floating-label__label--inline
-        </span>
+        </code>
         ${" "}modifier class. By default, this re-positioning of label happens instantly, without a transition. Typically, we do not want to show transitions on the initial page render, as this might be too jarring and distracting for some users.
     </p>
     <p>
         You will also need to add the
-        <span class="highlight">
+        <code>
             floating-label__label--focus
-        </span>
+        </code>
         ${" "}class when the input recieves focus and remove it when the input loses focus. This is to ensure the right colors are applied to the label when focusing the input.
     </p>
     <p>
         To opt into transitions after the initial render is complete, add the
-        <span class="highlight">
+        <code>
             floating-label__label--animate
-        </span>
+        </code>
          modifier when the textbox receives focus.
     </p>
     <p>

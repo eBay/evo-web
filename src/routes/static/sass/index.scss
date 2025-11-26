@@ -52,7 +52,8 @@ div.highlight {
   padding: var(--spacing-200);
 }
 
-span.highlight {
+span.highlight,
+code {
   background-color: #eee;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 

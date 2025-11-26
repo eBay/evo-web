@@ -26,9 +26,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
             </h3>
             <p>
                 Toggle Buttons inside Toggle Button Group are intended to be input controls. They are ment to be used for users to make selection(s) that can be used for additional actions. For example, they can be used to storing the selection(s) and using${" "}
-                <span class="highlight">
+                <code>
                     JavaScript
-                </span>
+                </code>
                  to include the information in a form submission.
             </p>
 
@@ -40,9 +40,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         The component allows for single or multiple selections based on need. However, when using Skin by itself you will need to have your own${" "}
-        <span class="highlight">
+        <code>
             JavaScript
-        </span>
+        </code>
         ${" "}to establish those rules based on the specific needs for each implementation context.
     </p>
 
@@ -143,9 +143,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
     <h4>Off-screen Heading with Associated List (b)</h4>
     <p>
         This implementation is identical to option (a), except the heading is off-screen using the${" "}
-        <span class="highlight">
+        <code>
             clipped
-        </span>
+        </code>
          class.
     </p>
     <div class="demo">
@@ -242,13 +242,13 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         If you're using Skin outside of a
-        <span class="highlight">
+        <code>
             JavaScript
-        </span>
+        </code>
          framework, you will need to write your own
-        <span class="highlight">
+        <code>
             js
-        </span>
+        </code>
          code to accomplish these interactivity cases.
     </p>
 
@@ -256,17 +256,17 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
         It's generally good practice to use delegated event handlers that allow you to set up a a single event handler for the group of buttons instead of on every button.
     </p>
     ${" "}The following examples use an HTML attribute to disitnguish the interaction variations. Using${" "}
-    <span class="highlight">
+    <code>
         data-selection-type
-    </span>
+    </code>
      . For the associated
-    <span class="highlight">
+    <code>
         js
-    </span>
+    </code>
      please see
-    <span class="highlight">
+    <code>
         /docs/src/js/main.js
-    </span>
+    </code>
     ${" "}(TOGGLE-BUTTON-GROUP section) for an example on how the implementation may be accomplished.${" "}
 
     <h4>Multi-select</h4>
@@ -377,9 +377,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
     <h4>Single-select Optional</h4>
     <p>
         In this example of the Single-select Optional variation,
-        <span class="highlight">
+        <code>
             data-selection-type="single-optional"
-        </span>
+        </code>
         ${" "}is used to split off the variation interactivity. This option allows for only one selection, so toggling additional buttons will simply switch the toggled button and retain only one toggled button.
     </p>
     <div class="demo">
@@ -488,9 +488,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
     <h4>Single-select Required</h4>
     <p>
         In this example of the Single-select Optional variation,
-        <span class="highlight">
+        <code>
             data-selection-type="single-required"
-        </span>
+        </code>
         ${" "}is used to split off the variation interactivity. This option allows for only one selection. However, unlike the single-select optional variation, this variation enforces the required single selection so the toggled button cannot be untoggled.
     </p>
 
@@ -605,9 +605,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         We use
-        <span class="highlight">
+        <code>
             display: grid
-        </span>
+        </code>
         ${" "}to create a predefined allotted number of button slots per breakpoint. We also use container queries to modify how many slots should be available per breakpoint. This allows buttons to shrink/stretch the predefined number of buttons at each breakpoint with a fallback to media queries for unsupported browsers.
     </p>
 
@@ -917,67 +917,67 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         Here's a specific example. Suppose we know we're going to have 6 buttons total and we'd like to have perfect visual balance in the UI. We may add the following html attributes/modifiers to${" "}
-        <span class="highlight">
+        <code>
             .toggle-button-group
-        </span>
+        </code>
          to achieve that:
     </p>
 
     <ul>
         <li>
-            <span class="highlight">
+            <code>
                 data-columns-xs="2"
-            </span>
+            </code>
             ${" "}to force 2 toggle buttons on the same line so we'd have 3 balanced lines of buttons at the${" "}
-            <span class="highlight">
+            <code>
                 XS
-            </span>
+            </code>
              breakpoint or at
-            <span class="highlight">
+            <code>
                 320px
-            </span>
+            </code>
              + width.
         </li>
         <li>
-            <span class="highlight">
+            <code>
                 data-columns-sm="3"
-            </span>
+            </code>
             ${" "}to force 3 toggle buttons on the same line so we'd have 2 balanced lines of buttons at the${" "}
-            <span class="highlight">
+            <code>
                 SM
-            </span>
+            </code>
              breakpoint or at
-            <span class="highlight">
+            <code>
                 512px
-            </span>
+            </code>
              + width.
         </li>
         <li>
-            <span class="highlight">
+            <code>
                 data-columns-md="6"
-            </span>
+            </code>
              to force all 6 toggle buttons on the same line at the
-            <span class="highlight">
+            <code>
                 MD
-            </span>
+            </code>
              breakpoint or at
-            <span class="highlight">
+            <code>
                 768px
-            </span>
+            </code>
              + width.
         </li>
         <li>
-            <span class="highlight">
+            <code>
                 data-columns-xl="8"
-            </span>
+            </code>
              to force all 8 toggle buttons on the same line at the
-            <span class="highlight">
+            <code>
                 XL
-            </span>
+            </code>
              breakpoint or at
-            <span class="highlight">
+            <code>
                 1280px
-            </span>
+            </code>
              + width.
         </li>
     </ul>
@@ -1259,17 +1259,17 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
     <p>
         <strong>NOTE:</strong>
          All toggle button examples utilize JavaScript to toggle the
-        <span class="highlight">
+        <code>
             aria-pressed
-        </span>
+        </code>
          state of the button.
     </p>
 
     <p>
         In this example, the container housing the Toggle Button Group is artificially limited to${" "}
-        <span class="highlight">
+        <code>
             500px
-        </span>
+        </code>
         ${" "}to demonstrate how the buttons will wrap after the specific columns (in this case, 3). Feel free to reduce/expand the container width in dev console to see how the columns will react.
     </p>
 
@@ -1541,9 +1541,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         You may use this layout by adding the
-        <span class="highlight">
+        <code>
             toggle-button-group--list-layout
-        </span>
+        </code>
          modifier to the toggle button group.
     </p>
 
@@ -1979,17 +1979,17 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         To add an image to a toggle button, you can use the
-        <span class="highlight">
+        <code>
             toggle-button__image-container
-        </span>
+        </code>
          block using an
-        <span class="highlight">
+        <code>
             &lt;img&gt;
-        </span>
+        </code>
          or as a
-        <span class="highlight">
+        <code>
             css
-        </span>
+        </code>
          background image.
     </p>
 
@@ -2277,9 +2277,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         You may use this layout by adding the
-        <span class="highlight">
+        <code>
             toggle-button-group--gallery-layout
-        </span>
+        </code>
          modifier to the toggle button group.
     </p>
 
@@ -2445,9 +2445,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         Besides using an
-        <span class="highlight">
+        <code>
             &lt;img&gt;
-        </span>
+        </code>
         ${" "}, you may also use CSS images that can provide more flexibility in filling more of the space reserved for images.
     </p>
 
@@ -2457,13 +2457,13 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
 
     <p>
         The examples below have various different implementations of CSS images. The first is a CSS Profile Image button with background-size: contain that will display the image as is and fit the entire image in the container. The second is a CSS Profile Image button with${" "}
-        <span class="highlight">
+        <code>
             background-size: cover
-        </span>
+        </code>
         ${" "}that will display the image to fill as much of the space of the container as possible clipping out the remaining portions of the image that fall outside. With that method, you can also provide guidance for fine-tuning the image positioning to move the focal point into the center of the container. In that example,${" "}
-        <span class="highlight">
+        <code>
             background-position: center 15%;
-        </span>
+        </code>
         ${" "}is used to move the focal point (person with camera) into the center of the frame.
     </p>
 
@@ -2647,9 +2647,9 @@ import imgSquarePic from "/src/routes/static/img/tb-square-pic.jpg";
     </p>
     <p>
         To add an icon to a toggle button, you can use the
-        <span class="highlight">
+        <code>
             toggle-button__icon
-        </span>
+        </code>
          block.
     </p>
 

@@ -1,6 +1,6 @@
-import { components, getMetadata } from "./components.marko";
+import { components, getMetadata } from "./components";
 
-<for|key, comp| in=components>
+<for|_key, comp| in=components>
     <const/{ componentUrls }=getMetadata(comp.name)>
     <if=comp.properName>
         <li>

@@ -1,7 +1,10 @@
-import siteMeta from "../data/site.json";
-import pkg from "../../package.json";
-import { components } from "./components.marko";
-import { a11yDocs } from "./components.marko";
+import { components, a11yDocs } from "../components";
+
+<let/navExpanded=false>
+
+<script>
+    document.body.style.overflowY = navExpanded ? "hidden" : "auto";
+</script>
 
 <svg style="display: none;">
     <symbol viewBox="0 0 24 24" id="site-logo">
@@ -69,7 +72,12 @@ import { a11yDocs } from "./components.marko";
     </symbol>
 </svg>
 
-<header class="primary-nav-wrapper glass">
+<header class=[
+    "primary-nav-wrapper",
+    {
+        glass: !navExpanded,
+    },
+]>
     <div class="page-grid-container">
         <nav
             id="primary-nav"
@@ -82,7 +90,6 @@ import { a11yDocs } from "./components.marko";
                         <div class="nav__brand">
                             <div class="nav__logo">
                                 <svg
-
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
@@ -125,7 +132,6 @@ import { a11yDocs } from "./components.marko";
                                 aria-label="Evo Web GitHub"
                                 target="_blank">
                                 <svg
-
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
@@ -143,13 +149,15 @@ import { a11yDocs } from "./components.marko";
                         </li>
                     </ul>
                     <search/>
-                    // <mobile-menu/>
                     <button
                         id="mobile-nav-toggle"
                         class="app-bar-menu mobile-nav-toggle icon-btn"
                         aria-label="Toggle mobile menu"
-                        aria-expanded="false"
-                        aria-controls="primaryNav">
+                        aria-expanded=(navExpanded ? "true" : "false")
+                        aria-controls="primaryNav"
+                        onClick() {
+                            navExpanded = !navExpanded;
+                        }>
                         <div class="mobile-menu__icon">
                             <svg
                                 class="icon icon-20 mobile-menu__open"
@@ -169,8 +177,13 @@ import { a11yDocs } from "./components.marko";
             aria-labelledby="dialog-title"
             aria-modal="true"
             class="site-nav-mobile-panel panel-dialog panel-dialog--mask-fade-slow panel-dialog--js keyboard-trap--active"
-            hidden
-            role="dialog">
+            hidden=!navExpanded
+            role="dialog"
+            onKeyUp({ key }) {
+                if (key === "Escape") {
+                    navExpanded = false;
+                }
+            }>
             <div class="panel-dialog__window panel-dialog__window--end panel-dialog__window--slide">
                 <div class="panel-dialog__header">
                     <h2 id="dialog-title" class="large-text-1 bold-text">
@@ -179,7 +192,10 @@ import { a11yDocs } from "./components.marko";
                     <button
                         aria-label="Close dialog"
                         class="icon-btn panel-dialog__close"
-                        type="button">
+                        type="button"
+                        onClick() {
+                            navExpanded = false;
+                        }>
                         <svg
                             class="icon icon-20 mobile-menu__close"
                             height="18"
@@ -296,7 +312,27 @@ import { a11yDocs } from "./components.marko";
                                                 <li>
                                                     <a
                                                         role="menuitem"
-                                                        href="https://github.com/eBay/evo-web/">
+                                                        href="https://github.com/eBay/evo-web/"
+                                                        onBlur(event) {
+                                                            const relatedTarget =
+                                                                (
+                                                                    event as FocusEvent
+                                                                ).relatedTarget;
+                                                            const target =
+                                                                event.currentTarget as HTMLElement;
+                                                            const navList =
+                                                                target.closest(
+                                                                    ".app-bar__links",
+                                                                );
+                                                            if (
+                                                                !relatedTarget ||
+                                                                !navList?.contains(
+                                                                    relatedTarget as Node,
+                                                                )
+                                                            ) {
+                                                                navExpanded = false;
+                                                            }
+                                                        }>
                                                         Github Repo
                                                     </a>
                                                 </li>
@@ -397,54 +433,3 @@ import { a11yDocs } from "./components.marko";
         </div>
     </div>
 </header>
-
-<script>
-    const sPrimaryNavClass = "glass";
-    const elBody = document.querySelector("body")!;
-    const navButton = document.getElementById("mobile-nav-toggle")!;
-    const primaryNavWrapper = document.querySelector(".primary-nav-wrapper")!;
-    const primaryNavMobilePanel = document.getElementById("site-nav-mobile-panel")!;
-    const primaryNavMobilePanelCloser = primaryNavMobilePanel?.querySelector(".panel-dialog__close")!;
-    const listItems = primaryNavMobilePanel.querySelectorAll("li a");
-
-    function openNavigation() {
-        // navButton.setAttribute("aria-expanded", "true");
-        elBody.style.overflowY = "hidden";
-        primaryNavWrapper.classList.remove(sPrimaryNavClass);
-        primaryNavMobilePanel.removeAttribute("hidden");
-    }
-
-    function closeNavigation() {
-        // navButton.setAttribute("aria-expanded", "false");
-        elBody.style.overflowY = "auto";
-        primaryNavWrapper.classList.add(sPrimaryNavClass);
-        primaryNavMobilePanel.setAttribute("hidden", "true");
-    }
-
-    function toggleNavigation() {
-        const open = navButton.getAttribute("aria-expanded");
-        open === "false" ? openNavigation() : closeNavigation();
-    }
-
-    // This function closes an open primaryNav if a user tabs away from the last anchor element in the list. It is reliant on the ul container having a class to check whether the relatedTarget is within the primaryNav. If not, it will close.
-    function handleBlur(event:any) {
-        const navList = event.currentTarget.closest(".app-bar__links");
-        if (!event.relatedTarget || !navList.contains(event.relatedTarget)) {
-            closeNavigation();
-        }
-    }
-
-    navButton.addEventListener("click", toggleNavigation);
-    primaryNavMobilePanelCloser.addEventListener("click", closeNavigation);
-
-    // add event to the last item in the nav list to trigger the primaryNav to close if the user tabs out of the primaryNav
-    listItems[listItems.length - 1].addEventListener("blur", handleBlur);
-
-    // Close the primaryNav if a user presses the escape key
-    window.addEventListener("keyup", (e) => {
-        if (e.key === "Escape") {
-            navButton.focus();
-            closeNavigation();
-        }
-    });
-</script>

@@ -4,9 +4,9 @@ import iconJSON from "../../../data/icons";
 
     <h3>Base Icons Only</h3>
     ${" "}Only base icons should be used. No state-based icons, such as disabled icons or even possibly an icon relaying an error state (likely red), should be used. Those state modifications on icons should be handled downstream using${" "}
-    <span class="highlight">
+    <code>
         css
-    </span>
+    </code>
      modifiers to allow for those variations.
 
     <h3>General Markup Approach</h3>
@@ -37,9 +37,9 @@ import iconJSON from "../../../data/icons";
     <p>
         <strong>NOTE:</strong>
          Skin removes all pointer events on icons (via
-        <span class="highlight">
+        <code>
             pointer-events: none
-        </span>
+        </code>
         ) due to a bug in IE. To add events to these icons you should wrap them in another element and attach your events there.
     </p>
 
@@ -76,9 +76,9 @@ import iconJSON from "../../../data/icons";
     <p>
         <strong>NOTE:</strong>
          the SVG tag does not support the
-        <span class="highlight">
+        <code>
             hidden
-        </span>
+        </code>
          attribute, hence a hidden wrapper element is needed.
     </p>
 
@@ -88,9 +88,9 @@ import iconJSON from "../../../data/icons";
     </p>
     <p>
         Presentational icons require
-        <span class="highlight">
+        <code>
             aria-hidden="true"
-        </span>
+        </code>
         , in order to hide them from assistive technology.
     </p>
 
@@ -107,13 +107,13 @@ import iconJSON from "../../../data/icons";
 
     <p>
         Non-presentational icons require both
-        <span class="highlight">
+        <code>
             role="img"
-        </span>
+        </code>
          and an
-        <span class="highlight">
+        <code>
             aria-label
-        </span>
+        </code>
          for assistive technology.
     </p>
 
@@ -132,16 +132,16 @@ import iconJSON from "../../../data/icons";
     <h3>Icon Classes</h3>
     <p>
         Each icon can have a class that corresponds to its width. For example,
-        <span class="highlight">
+        <code>
             icon--24
-        </span>
+        </code>
         ${" "}corresponds to the 24px width icon. These correspond with the size associated with each icon.
     </p>
     <p>
         For colored icons use
-        <span class="highlight">
+        <code>
             icon--24-colored
-        </span>
+        </code>
         ${" "}These will set the height, and the width will align with the aspect ratio
     </p>
 
@@ -155,18 +155,18 @@ import iconJSON from "../../../data/icons";
     </h3>
     <p>
         Most icons can be given a disabled appearance by adding the
-        <span class="highlight">
+        <code>
             icon--disabled
-        </span>
+        </code>
          modifier.
     </p>
 
     <h4>Simple Icons</h4>
     <p>
         Icons that are simple and have only a stroke/fill of a single color simply inherit${" "}
-        <span class="highlight">
+        <code>
             color
-        </span>
+        </code>
          and are disabled by inheriting that color as the stroke/fill.
     </p>
 
@@ -193,9 +193,9 @@ import iconJSON from "../../../data/icons";
     <h4>Filled Icons</h4>
     <p>
         There are certain filled icons that show up black by default. In order to color these icons, apply the${" "}
-        <span class="highlight">
+        <code>
             icon--{name}-filled
-        </span>
+        </code>
          modifier.
     </p>
 
@@ -258,9 +258,9 @@ import iconJSON from "../../../data/icons";
     <h4>Complex Icons</h4>
     <p>
         Icons that are more complex and have multiple colors with a suffix of
-        <span class="highlight">
+        <code>
             -colored
-        </span>
+        </code>
          are grayscaled with an opacity.
     </p>
 

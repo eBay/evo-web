@@ -10,36 +10,36 @@
     </h2>
     <p>
         Skin currently supports two types of dialog transition: fade and slide. Because CSS cannot transition an element to and from${" "}
-        <span class="highlight">
+        <code>
             hidden
-        </span>
+        </code>
         ${" "}(i.e. "display:none"), transitions are acheived using two classes applied during different stages of the animation. Before applying an animation class to the dialog component you must first apply the primer class which will be${" "}
-        <span class="highlight">
+        <code>
             $name-init
-        </span>
+        </code>
         where
-        <span class="highlight">
+        <code>
             $name
-        </span>
+        </code>
         ${" "}is the base class. The dialog component has two different animation base classes${" "}
-        <span class="highlight">
+        <code>
             dialog--show
-        </span>
+        </code>
         and
-        <span class="highlight">
+        <code>
             dialog--hide
-        </span>
+        </code>
         .
     </p>
     <p>
         Firstly the
-        <span class="highlight">
+        <code>
             -init
-        </span>
+        </code>
         ${" "}postfix must be applied to dialog component to prime animation. One animation frame later the${" "}
-        <span class="highlight">
+        <code>
             -init
-        </span>
+        </code>
         ${" "}postfix must be removed and the base class applied to start the animation. Finally once the animation has completed remove the base class.
     </p>
 
