@@ -8,27 +8,9 @@ A combobox serves the exact same _purpose_ as a textbox - allowing text to be in
 
 A combobox typically also offers _autocomplete_ behavour - whereby the list of suggestions is filtered based on the current textbox value (i.e. while the user is typing in the textbox) .
 
-### Terminology
-
-- **combobox**: the pattern as a whole, comprised of the following distinct parts
-- **textbox**: stores and displays the form value
-- **popover**: the overlay that contains a listbox
-- **listbox**: [listbox](listbox) containing options
-- **option/suggestion**: a suggestion inside of the listbox and/or directly after the textbox value
-- **autocomplete**: the autocomplete type (optional)
-- **filter**: the filtering criteria (optional)
-
 ### Configuration
 
 - **autoSelect**: a combobox with `autoSelect` will automatically select and fill the textbox value when user cycles through listbox options. Otherwise, `ENTER` key is required to manually select an option. Typically autoSelect will be `true` for a combobox with autocomplete behaviour.
-
-### Working Example
-
-Experience the pattern in action on our companion [eBay MIND Patterns examples website](http://ebay.github.io/mindpatterns/input/combobox/).
-
-Examine the required markup structure in our [Bones GitHub project](https://opensource.ebay.com/skin/component/combobox/).
-
-View a fully styled example in our [eBay Skin CSS framework](https://opensource.ebay.com/skin/#combobox).
 
 ### Best Practices
 
@@ -87,83 +69,6 @@ The screen reader will announce the current value of the textbox.
 When the combobox receives focus, via click or tap, the listbox should expand to show all options.
 
 Clicking or tapping an option will fill the textbox with that value and collapse the listbox **without** triggering a form submit.
-
-### Developer Guide
-
-Combobox is a good example of progressive enhancement. Until JavaScript is loaded or initalised, the textbox operates as a regular textbox. For example, a user can still enter and submit a value using the plain old textbox. The ability to choose a value from a list of pre-defined options is considered the _enhancement_ that will be available with JavaScript.
-
-Our combobox follows the ARIA 1.0 specification, as it has less issues than the ARIA 1.1 version. See [Resolving ARIA 1.1 Combobox Issues](https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues) for more information.
-
-#### Textbox
-
-We start with a label and textbox.
-
-```html
-<span class="combobox" id="combobox-0">
-  <label for="combobox-0-input">Game Console</label>
-  <input
-    id="combobox-0-input"
-    name="console"
-    type="text"
-    placeholder="Playstation 4, Xbox One, etc."
-  />
-  <!-- listbox options will go here -->
-</span>
-```
-
-We have added our elements inside of a `.combobox` wrapper element. This wrapper acts as our module root and hook for CSS & JavaScript.
-
-Remember: the textbox does not yet have a role of combobox, it is added later with JavaScript.
-
-A listbox element will be appended to this wrapper. It is up to you whether you wish to render this server-side or client-side. There are pros and cons to both approaches, which we will discuss below.
-
-#### Listbox
-
-The listbox may render on the server or the client. It is wise to put the listbox in a hidden state if rendering on the server. To do so, use the `hidden` attribute.
-
-```html
-<div class="combobox__overlay" hidden>
-  <ul id="combobox_0-listbox" role="listbox">
-    <li role="option" id="nid-0">Playstation 3</li>
-    <li role="option" id="nid-1">Playstation 4</li>
-    <li role="option" id="nid-2">Xbox 360</li>
-    <li role="option" id="nid-3">Xbox One</li>
-    <li role="option" id="nid-4">Wii</li>
-    <li role="option" id="nid-5">Wii U</li>
-  </ul>
-</div>
-```
-
-Using JavaScript we now begin converting the textbox to a combobox, by adding `role=combobox`. We also create the properties and state that connect the combobox to the listbox:
-
-```html
-<input
-  id="combobox-0-input"
-  name="console0"
-  type="text"
-  placeholder="Playstation 4, Xbox One, etc."
-  role="combobox"
-  aria-expanded="false"
-  autocomplete="off"
-  aria-owns="combobox_0-listbox"
-/>
-```
-
-The new attributes are `role`, `aria-expanded`, `autocomplete` and `aria-owns`.
-
-#### Keyboard and Screen Reader Navigation
-
-Our elements are now in place, but how does a keyboard user navigate to the options? We cannot use TAB key because focus must stay on the combobox (so that user can type and enter their own value). As with most complex widgets, the answer lies in the arrow keys. Up and down arrow keys are the way to select our combobox options.
-
-If focus must remain on the combobox, how then do we also have focus on the listbox options? The answer is that we don't. Focus always remains on the combobox and instead we have a kind of _pseudo-focus_ on the options.
-
-How does the screen reader know where this pseudo-focus is?
-
-#### Active Descendant
-
-We call the option with pseudo-focus the "active descendant". And guess what, there is an ARIA attribute for this called `aria-activedescendant`. This attribute is placed on the combobox element. The attribute value is the ID of the currently active (pseudo-focussed) option. This allows assistive technology such as a screen reader to programmatically determine
-
-To make all of this easier, we recommend using a plugin such as [makeup-active-descendant](https://github.com/makeup-js/makeup-active-descendant). After your HTML structure is in place, simply initialise the plugin on the widget and up/down arrow keys will update the necessary states. Use CSS to style the active descendant in any way you like.
 
 ### ARIA Reference
 

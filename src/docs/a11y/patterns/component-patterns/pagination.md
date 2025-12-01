@@ -8,25 +8,6 @@ The pagination pattern allows a user to navigate back and forwards through a URL
 
 The pattern is typically used for pagination of search results.
 
-### Working Examples
-
-You can take a look at the pagination pattern in action on our [examples site](http://ebay.github.io/mindpatterns/navigation/pagination/).
-
-You can get an idea of the required markup structure by viewing our [bones project](https://github.com/ianmcburnie/bones#user-content-pagination).
-
-You can see a fully-styled implementation by viewing our [eBay Skin](https://opensource.ebay.com/skin/component/pagination/) example.
-
-### Terminology
-
-- **Pagination**: the composite pattern as a _whole_, containing the items defined below
-- **Previous**: Link that navigates to previous page of results
-- **Next**: Link that navigates to next page of results
-- **Items**: Links that navigate to exact page of results
-- **Bookends**: Collective name for the previous and next links, as they 'bookend' the navigation items
-- **Current Page**: The current resultset index, as reflected in the pagination UI
-- **Client-Side Pagination**: Pagination links trigger page content updates via AJAX
-- **Server-Side Pagination**: Pagination links trigger page content updates via full page reload
-
 ### Best Practices
 
 Pagination may update the results immediately on the client via AJAX, or on the server via a full page reload. In both cases, the browser's URL will be updated to reflect the new, book-markable page of results.
@@ -67,15 +48,18 @@ _If_ a pagination item is visually displayed as the _current_ page, it **must** 
 
 For client-side pagination, the new page index **must** be announced after previous, next or item link activation.
 
-### Developer Guide
+### ARIA Reference
 
-Server-side pagination requires no JavaScript, pagination is simply a collection of links inside of a navigation landmark region.
+This section gives an overview of our use of ARIA, within the specific context of this pattern.
 
-JavaScript may be used to enhance this baseline behavior, so that the page renders the new result set _without_ a full page reload.
-
-To quickly get an idea of the required markup, visit the [pagination bones](https://github.com/ianmcburnie/bones#user-content-pagination).
-
-#### Content Layer (HTML)
+| Attribute           | Description                                                                          |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| **role=navigation** | Creates a navigation landmark for assistive technology.                              |
+| **role=img**        | Applied to bookend SVG tags to reinforce image semantics.                            |
+| **aria-labelledby** | Use this property to label the navigation landmark with the text of the heading tag. |
+| **aria-disabled**   | Use this property on the bookend anchor to convey when it is "greyed-out"            |
+| **aria-label**      | Use this property to label the bookend anchors.                                      |
+| **aria-current**    | Refers to the current item in the pagination (i.e. the current dataset index).       |
 
 We will step through the creation process for server-side pagination.
 

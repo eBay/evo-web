@@ -42,10 +42,6 @@ If following WCAG 2.4.9, button should have additional [offscreen context](https
 
 There is no pointer specific interactions other than the general activation of the button.
 
-### Developer Guide
-
-This section is currently unavailable.
-
 ### ARIA Reference
 
 | Attribute      | Description                                                                                            |

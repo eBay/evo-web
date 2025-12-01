@@ -20,18 +20,6 @@ Popover forms the basis of the following composite patterns:
 
 The pattern discussed here in this document is a more generic use-case, where the popover may contain _any_ kind of content.
 
-### Working Examples
-
-You can take a look at a generic popover on our [examples site](http://ebay.github.io/mindpatterns/disclosure/popover/).
-
-### Terminology
-
-- **popover**: the composite pattern as a \*whole\*, containing an overlay and its host
-- **host**: the element that _hosts_ the overlay
-- **overlay**: the non-modal overlay that contains the content related to its host
-- **content**: the actual content of the overlay
-- **expanded/collapsed**: the overlay state (visible or hidden)
-
 ### Best Practices
 
 The overlay can hold any kind of content, but for an overlay that demands user acknowledgement or input, or with additional rich interactions, consider using a [dialog](https://ebay.gitbook.io/mindpatterns/disclosure/lightbox-dialog) instead.
@@ -94,72 +82,6 @@ Hover behaviour can be problematic or impossible for touch. You may wish to cons
 _If_ click-activated, popover **must** expand when host receives tap.
 
 _if_ system-activated, popover **must** close when tapping close button.
-
-### Developer Guide
-
-Let's examine a click-activated popovers. Click-activated popovers typically occur with buttons, where clicking the button expands the popover.
-
-The key things to consider are:
-
-1. Server-side rendering or client-side rendering of overlay content (or both)
-2. Placement of overlay element in relation to host
-3. Using aria-expanded state to toggle CSS display
-4. Determining the live-region property
-
-#### Content
-
-Content rendered by the server will be visible by default before & without CSS or JavaScript. If the content is secondary in nature, you may wish to render the content on the client instead.&#x20;
-
-Whatever progressive enhancement strategy you choose, the following structure is the goal:
-
-```html
-<span class="popover popover--click">
-  <button class="popover__host" type="button" disabled>Toggle Popover</button>
-  <span aria-live="off">
-    <div class="popover__overlay">
-      <!-- popover content -->
-    </div>
-  </span>
-</span>
-```
-
-Notice placement of the host (the button) directly before the overlay element. This allows natural keyboard and reading order from the host into the overlay.
-
-An optional live-region element wraps the overlay. The live-region property may be set to "off", "polite" or "assertive".
-
-#### Presentation
-
-The overlay can be absolute or fixed positioned:
-
-```css
-.popover__overlay {
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
-```
-
-We have hidden the overlay by default (display: none). We use the aria-expanded state of the host to control the display of the overlay:
-
-```css
-.popover__host[aria-expanded="true"] ~ [aria-live] .popover__overlay {
-  display: block;
-}
-```
-
-#### Behaviour
-
-CSS alone cannot trigger the expanded state, so we require a small amount of Javascript to handle this behaviour:
-
-```javascript
-document.querySelector(".popover__host").addEventListener("click", function () {
-  const isExpanded = this.getAttribute("aria-expanded") === "true";
-
-  this.setAttribute("aria-expanded", isExpanded ? "false" : "true");
-});
-```
-
-Clicking the button with mouse, keyboard or touch will now toggle the aria-expanded state of the button.
 
 ### ARIA Reference
 

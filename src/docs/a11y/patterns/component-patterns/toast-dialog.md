@@ -14,18 +14,6 @@ A toast dialog is non-modal and should **not** steal or trap keyboard focus.
 
 When the dialog becomes visible, it **must** be placed immediately after the current active element in the DOM. This ensures a logical reading and tabbing order in the page.&#x20;
 
-### Working Examples
-
-Experience the pattern in action on our companion [eBay MIND patterns examples website](https://ebay.github.io/mindpatterns/messaging/toast-dialog/index.html).
-
-Examine the required markup structure in the [Bones GitHub project](https://github.com/ianmcburnie/bones#user-content-toast-dialog).
-
-View a fully styled example on our [eBay Skin website](https://opensource.ebay.com/skin/component/toast-dialog/).
-
-### Terminology
-
-This section is not yet available.
-
 ### Interaction Design
 
 This section provides interaction design for keyboard, screen reader and pointing devices.
@@ -45,10 +33,6 @@ The toast should be positioned in the dom so that the virtual cursor moves from 
 The screen reader should announce the title and contents of the toast dialog.
 
 #### Mouse
-
-This section is not yet available.
-
-### Developer Guide
 
 This section is not yet available.
 

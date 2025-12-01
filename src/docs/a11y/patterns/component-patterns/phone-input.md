@@ -8,24 +8,6 @@
 
 The phone input pattern is a progressive enhancement of a textbox that provides as you type phone pattern for country. The country is selected with listbox button.
 
-### Working Examples
-
-Experience the pattern in action on our companion [eBay MIND Patterns examples](https://opensource.ebay.com/mindpatterns/input/phone-input/index.html) website.
-
-View a fully styled example in our [eBay Skin CSS framework](https://opensource.ebay.com/skin/component/phone-input/).
-
-### Terminology
-
-**Phone Input:** The pattern as a whole, a composite component containing a listbox button and a textbox.
-
-**Listbox Button**: The button that opens listbox of countries.
-
-**Textbox**: A regular HTML text (type=tel)&#x20;
-
-**Country code:** The telephone dialing code of a country (e.g. +1 for United States of America)
-
-**Phone number:** The telephone number excluding the country code.
-
 ### Best Practices
 
 Phone input group **could** have an accessible label.
@@ -36,7 +18,7 @@ Textbox must have an accessible label.&#x20;
 
 Textbox should **not** be split to multiple input boxes.
 
-Textbox can have an attribute `autocomplete=tel-national`.  While `autocomplete` is a promising technique for supporting personalization in HTML, support for this in AT is fairly limited.
+Textbox can have an attribute `autocomplete=tel-national`. While `autocomplete` is a promising technique for supporting personalization in HTML, support for this in AT is fairly limited.
 
 ### Interaction Design
 
@@ -65,7 +47,3 @@ Textbox label **must** be announced (e.g. 'phone number').
 #### Pointer
 
 Clicking any listbox item **must** activate that item.
-
-### Developer Guide
-
-This section is not yet available.

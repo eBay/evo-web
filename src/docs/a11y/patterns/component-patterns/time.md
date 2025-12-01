@@ -1,6 +1,6 @@
 # Time Accessibility
 
-![Time left on eBay auction page](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcI8NwaZFbbLo1Fx7%2Ftimer.png?generation=1548799262347179\&alt=media)
+![Time left on eBay auction page](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcI8NwaZFbbLo1Fx7%2Ftimer.png?generation=1548799262347179&alt=media)
 
 ### Introduction
 
@@ -29,7 +29,3 @@ As the time pattern contains no interactive elements, there are no specific call
 #### Screen Reader
 
 Without losing their current point of focus, the screen reader must be alerted of any _critical_ points in the passage of time.
-
-### Developer Guide
-
-The section is not yet available.

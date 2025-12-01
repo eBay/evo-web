@@ -12,14 +12,6 @@ Individual switch **must** have a visible, onscreen label.
 
 Groups of _related_ switch controls **must** have a group label.
 
-### Working Examples
-
-Experience the pattern in action on our [eBay MIND patterns examples website](https://ebay.github.io/mindpatterns/input/switch/index.html).
-
-Examine the required markup structure in the [GitHub bones project](https://github.com/ianmcburnie/bones#switch).
-
-View a fully styled example on our [eBay Skin website](https://opensource.ebay.com/skin/component/switch/).
-
 ### Interaction Design
 
 This section provides interaction design for keyboard, screen reader and pointing devices.
@@ -51,10 +43,6 @@ Switch state **must** be announced.
 Clicking switch **must** toggle the checked state.
 
 Clicking switch label **must** toggle the checked state.
-
-### Developer Guide
-
-This section is not yet available.
 
 ### ARIA Reference
 

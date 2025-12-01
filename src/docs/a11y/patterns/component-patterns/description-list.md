@@ -20,19 +20,3 @@ The content for this section is not yet available.
 ### Interaction Design
 
 Description lists themselves are not interactive, but may contain nested interactive elements (such as links).
-
-### Developer Guide
-
-A description list requires no ARIA.
-
-```html
-<dl>
-  <dt>Authors:</dt>
-  <dd>Remy Sharp</dd>
-  <dd>Rich Clark</dd>
-  <dt>Editor:</dt>
-  <dd>Brandan Lennox</dd>
-  <dt>Category:</dt>
-  <dd>Comment</dd>
-</dl>
-```

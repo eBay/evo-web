@@ -1,23 +1,5 @@
 # Confirm Dialog Accessibility
 
-### Working Examples
-
-Experience the pattern in action on our companion [eBay MIND Patterns examples website](https://ebay.github.io/mindpatterns/messaging/confirm-dialog).
-
-Examine the required markup structure on our [Bones GitHub project.](https://github.com/ianmcburnie/bones#confirm-dialog)
-
-View a fully styled example on our [eBay Skin website](https://opensource.ebay.com/skin/component/lightbox-dialog).
-
-### Terminology
-
-**Confirm Button**: The button that explicitly confirms the action.
-
-**Reject Button**: The button that explicitly rejects/cancels the action.
-
-**Close Button**: The button that implicitly rejects/cancels the action. Usually an 'X' in the top corner.
-
-**Mask**: The semi-opaque layer that sits between the dialog and the main page.
-
 ### Best Practices
 
 Confirm dialogs are always modal and require a mask.
@@ -53,7 +35,3 @@ The screen reader should be confined to the elements within the dialog (i.e. mod
 #### Pointer
 
 Clicking the mask **must** close the confirm dialog, acting as a cancel/non-affirmative response.
-
-### Developer Guide
-
-The section is not yet available.

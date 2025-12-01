@@ -40,13 +40,6 @@ Link **must** invoke using virtual cursor command (e.g. VO+SPACE in Voiceover).
 
 Link **must** announce "new window or tab" behaviour.
 
-### Developer Guide
-
-There are two types of link that need extra care and attention:
-
-1. [Ambiguous Links](../techniques/ambiguous-label)
-2. [Links that Open in a New Window or Tab](../antipatterns/open-new-window)
-
 ### ARIA Reference
 
 | Attribute        | Description                                                                        |

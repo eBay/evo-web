@@ -14,22 +14,6 @@ A menu is not appropriate for a full page reload. For that, please use links ins
 
 If your menu must contain a _mix_ of JavaScript behaviour and links behaviour, please use a list of buttons and links. Do no mix menu items and links.
 
-### Working Examples
-
-Experience the pattern in action on our companion [eBay MIND Patterns examples website](http://ebay.github.io/mindpatterns/input/menu/).
-
-on [Bones GitHub project](https://github.com/ianmcburnie/bones#user-content-popup-menu).
-
-View a fully styled example in our [eBay Skin CSS framework](https://opensource.ebay.com/skin/component/menu/).
-
-### Terminology
-
-**menu**: the pattern as a whole, comprising the parts listed below
-
-**command list**: the list of menu items
-
-**command**: the individual menu item, menu item checkbox or menu item radio commands
-
 ### Best Practices
 
 On desktop, a menu is typically opened with a [menu button](menu-button). On mobile it is common to see a menu embedded directly inside of a filter or refine panel.
@@ -69,16 +53,6 @@ Disabled commands must be announced as disabled.
 #### Pointer
 
 Clicking any menu item **must** activate that command.
-
-### Developer Guide
-
-Please see the [menu button](menu-button) pattern pattern. A menu is identical except for the lack of a button.
-
-### Utilities
-
-We have some JavaScript modules that may assist you with creation of an accessible menu widget:
-
-- [makeup-roving-tabindex](https://github.com/makeup-js/makeup-roving-tabindex) - Useful for implementing the arrow key behaviour to change menu items
 
 ### ARIA Reference
 

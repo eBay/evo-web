@@ -8,21 +8,6 @@
 
 A custom date picker is usually presented in tandem with a textfield, as an alternative means to enter dates and date ranges with a calendar based interface.
 
-### Terminology
-
-- **Single calendar:** one calendar month is presented at a time
-- **Double calendar:** two calendar months are presented at a time
-- **Calendar title**: the month and year
-- **Calendar headers:** the days of the week, acting as column headers
-- **Previous month button**: moves calendar back one month&#x20;
-- **Next month button:** move calendar forward one month
-- **Date buttons:** selects date. Doing so a second time will create a date range
-- **Date states**: date buttons can represent multiple states
-  - **Start Date**
-  - **End Date**
-  - **Current Date**
-- **Date Range**: a range from start date to end date
-
 ### Best Practices
 
 A date picker should have a layout familiar with other popular systems and conventions. A data table works well.
@@ -66,10 +51,6 @@ Picker can be closed via, "Press Escape".
 #### Pointer
 
 todo
-
-### Developer Guide
-
-This section is not yet available.
 
 ### ARIA Reference
 

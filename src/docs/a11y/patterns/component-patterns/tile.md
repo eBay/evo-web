@@ -1,10 +1,10 @@
 # Tile Accessibility
 
-![An eBay Deals card containing 4 tiles](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFBuXI6l1BVejTbi%2Ftile.png?generation=1548799252962034\&alt=media)
+![An eBay Deals card containing 4 tiles](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFBuXI6l1BVejTbi%2Ftile.png?generation=1548799252962034&alt=media)
 
 ### Introduction
 
-A tile is a large, tap-friendly area that provides a  summary-like experience for a link command.
+A tile is a large, tap-friendly area that provides a summary-like experience for a link command.
 
 #### Light Tile
 
@@ -42,8 +42,4 @@ Light tiles inherit all interaction design from the [Link Pattern](link).
 
 For a heavy tile, do not apply `cursor: pointer` to the entire tile. This type of cursor (a little hand) should only appear over the actual link element so that users know where to right-click to copy the link or open in new tab, etc.
 
-For a heavy tile, it is recommended to suppress the default focus indicator of the link inside the tile, and instead display a focus indicator around the entire tile. We discuss how to do this in the developer guide below.
-
-### Developer Guide
-
-The section is not yet available.
+For a heavy tile, it is recommended to suppress the default focus indicator of the link inside the tile, and instead display a focus indicator around the entire tile.

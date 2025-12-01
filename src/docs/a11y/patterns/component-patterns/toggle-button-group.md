@@ -12,18 +12,6 @@ The toggle button group is not a form control; although it can be used within a 
 
 The toggle button group is not a drop-in replacement for radios or checkboxes, nor does it operate like those.
 
-### Terminology
-
-**Toggle Button Group**: the name of the pattern as a whole. For example, the classname would be `.toggle-button-group`
-
-**Toggle Button**: a single button in the group. It can be pressed or unpressed.
-
-**Pressed/Unpressed**: correlates to the `aria-pressed` attribute
-
-### Working Examples
-
-Section under development.
-
 ### Interaction Design
 
 Even though a toggle button group is single-select or multi-select, like radios and checkboxes respectively, they do not share the exact same interactions as radios and checkboxes..
@@ -31,35 +19,6 @@ Even though a toggle button group is single-select or multi-select, like radios 
 In a single select toggle group, pressing one button will unpress any currently pressed button in the group. &#x20;
 
 In a multi select toggle group, pressing a button will have no effect on any of the other buttons in the group.
-
-### Developer Guide
-
-The toggle buttons are grouped together in a list. In this example, the third button is in a pressed state.
-
-```html
-<h2>Shipping</h2>
-<div class="toggle-button-group">
-  <ul>
-    <li>
-      <button type="button" aria-pressed="false">IMAGE UPS Ground PRICE</button>
-    </li>
-
-    <li>
-      <button type="button" aria-pressed="false">
-        IMAGE USPS Priority PRICE
-      </button>
-    </li>
-
-    <li>
-      <button type="button" aria-pressed="true">
-        IMAGE Fedex Ground PRICE
-      </button>
-    </li>
-  </ul>
-</div>
-```
-
-Under development.
 
 ### ARIA Reference
 

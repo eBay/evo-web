@@ -41,7 +41,3 @@ Screen reader will identify heading by it's level, e.g. 1 to 6.
 Headings are not interactive elements and therefore have no pointer interaction.
 
 A heading may give the illusion of being an interactive element if it contains a link, or is wrapped in a link, but the heading element itself is not clickable.
-
-### Developer Guide
-
-_The content for this section is not yet available, please check back again for updates._

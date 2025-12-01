@@ -41,10 +41,6 @@ A screen reader will skip over a decoration image (with empty alt text) and will
 
 Image tags are not interactive by default and therefore are not clickable.
 
-### Developer Guide
-
-The content for this section is not yet available.
-
 ### ARIA Reference
 
 The content for this section is not yet available.

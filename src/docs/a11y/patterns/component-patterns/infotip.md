@@ -1,25 +1,5 @@
 # Infotip Accessibility
 
-### Working Examples
-
-Experience the pattern in action on our [eBay MIND patterns examples website](http://ebay.github.io/mindpatterns/disclosure/infotip/).
-
-Examine the required markup structure on the [bones GitHub project](https://github.com/ianmcburnie/bones#user-content-fake-tabs).
-
-View a fully styled example on the [eBay Skin website](https://opensource.ebay.com/skin/component/infotip/).
-
-### Terminology
-
-We use the following terminology when discussing this pattern.
-
-- **infotip**: the pattern as a whole, comprised of the following sub-parts
-- **button**: the button that hosts the overlay
-- **overlay/bubble**: the overlay that contains the tip
-- **pointer**: the visual affordance that "points" to the button
-- **tip**: the tip content
-- **expanded**: an infotip with expanded overlay
-- **collapsed**: an infotip with collapsed overlay
-
 ### Best Practices
 
 On desktop screens, overlay **must not** be modal. On smaller screens, the overlay may be implemented as a modal dialog.
@@ -63,77 +43,6 @@ Expanded state **must** be announced after expanded.
 #### Pointer
 
 Invoking button **must** toggle the expanded state of the overlay.
-
-### Developer Guide
-
-This implementation will get us quickly up and running with the accessibility requirements of an infotip.
-
-#### HTML
-
-The goal of our content layer is to add the button and overlay. The structure and DOM positioning of these elements is of utmost importance so that keyboard tabbing order and screen reader both naturally flow into the overlay.
-
-```html
-<span class="infotip" id="infotip-0">
-  <button
-    class="infotip__host"
-    aria-controls="infotip-0-overlay"
-    aria-expanded="false"
-    aria-label="Help"
-    type="button"
-  ></button>
-  <span class="infotip__live-region" aria-live="off">
-    <div class="infotip__overlay" id="infotip-0-overlay">
-      <!-- overlay content -->
-    </div>
-  </span>
-</span>
-```
-
-Notice placement of the button directly before the live-region element. This allows natural tab order flow and screen reading order from the button into the overlay.
-
-The live-region property is set to "off". This is a matter of preference. Some people prefer the new content to announce when it appears, using a setting of "polite". At eBay we have this set to `off`; we rely on the `aria-expanded` state as being the affordance that there is new content in the reading order.
-
-#### CSS
-
-The goal of the CSS layer is to hide or show the overlay depending on the aria-expanded state.
-
-```css
-.infotip {
-  position: relative;
-}
-.infotip__overlay {
-  display: none;
-  position: absolute;
-  white-space: nowrap;
-  z-index: 1;
-}
-.infotip__host[aria-expanded="true"] ~ .infotip__live-region .infotip__overlay {
-  display: block;
-}
-```
-
-The overlay **must** have `display: none` when in a collapsed state to ensure that screen readers cannot access the overlay content. You may also wish to leverage the `hidden` property instead.
-
-For a progressive enhancement approach, you may choose to have all infotip content visible by default, and then hide it when JavaScript becomes available. This can however result in a flash of unstyled content (**FOUC**).
-
-#### JavaScript
-
-CSS alone cannot change the value of an aria attribute; we require JavaScript. Fortunately, the [makeup-expander](https://github.com/makeup/makeup-js/tree/master/packages/makeup-expander) module can handle this behaviour for us in just a few lines of code.
-
-```javascript
-const Expander = require("makeup-expander");
-
-const widget = new Expander(widgetEl, {
-  contentSelector: ".infotip__content",
-  expandOnClick: true,
-  collapseOnClick: true,
-  hostSelector: ".infotip__host",
-});
-```
-
-Clicking the button with mouse or keyboard will now toggle the aria-expanded state of the button.
-
-Animations are also possible of course, but fall outside the scope of this book.
 
 ### Utilities
 

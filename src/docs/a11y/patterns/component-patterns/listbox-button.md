@@ -2,7 +2,7 @@
 
 ### Screenshots
 
-![](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MSkRY_jLwiwOHOYOjuz%2F-MSkSQ8xrJKBKWG9pIzd%2Flistbox-dweb-1.png?alt=media\&token=3d9dab13-7c1c-4ba8-8ade-1469d34e85f0)
+![](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MSkRY_jLwiwOHOYOjuz%2F-MSkSQ8xrJKBKWG9pIzd%2Flistbox-dweb-1.png?alt=media&token=3d9dab13-7c1c-4ba8-8ade-1469d34e85f0)
 
 ### Introduction
 
@@ -16,30 +16,8 @@ Because it is not a form control, the button value will not automatically be pas
 
 These are all known _serious_ issues with assistive technology in relation to this pattern:
 
-* [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
-* [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)
-
-### Working Examples
-
-Experience the pattern in action on our companion [eBay MIND Patterns examples website](https://ebay.github.io/mindpatterns/input/listbox-button/index.html).
-
-Examine the required markup structure in our  [Bones GitHub project](https://github.com/ianmcburnie/bones#user-content-listbox-button).
-
-View a fully styled example in our [eBay Skin CSS framework](https://opensource.ebay.com/skin/component/listbox-button/).
-
-### Terminology
-
-**widget**: the pattern as a whole, comprised of the parts below
-
-**button**: the button that opens the flyout
-
-**popover**: the overlay element that contains the listbox
-
-**listbox**: the list of options
-
-**option**: an option, with state
-
-**label**: internal and/or external text element(s)
+- [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
+- [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)
 
 ### Configuration
 
@@ -92,7 +70,3 @@ With virtual cursor on button, screen reader should announce role, label (see "B
 Clicking or tapping button will toggle expanded state of popover.
 
 Clicking or tapping an option in popover will update button value and collapse the popover.
-
-### Developer Guide
-
-This section is not yet available.
