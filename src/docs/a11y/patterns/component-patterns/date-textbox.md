@@ -1,26 +1,22 @@
-# Date Picker Accessibility
-
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FKdRFdVC9rqaCANFioNND%2Fimage.png?alt=media&#x26;token=46605268-9afb-435b-9ffe-c1342fec1dd3" alt=""><figcaption><p>Image of eBay's Date Picker component with single month displayed</p></figcaption></figure>
-
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FauRS74H6MfeGhrMij9uH%2Fimage.png?alt=media&#x26;token=c7deb447-e31d-470f-b790-53c5dd206a42" alt=""><figcaption><p>Image of eBay's Date Picker component with two months displayed</p></figcaption></figure>
+# Date Textbox Accessibility
 
 ### Introduction
 
-A custom date picker is usually presented in tandem with a textfield, as an alternative means to enter dates and date ranges with a calendar based interface.
+A custom date textbox is usually presented in tandem with a textfield, as an alternative means to enter dates and date ranges with a calendar based interface.
 
-### Best Practices
+## Best Practices
 
-A date picker should have a layout familiar with other popular systems and conventions. A data table works well.
+A date textbox should have a layout familiar with other popular systems and conventions. A data table works well.
 
 Dates may be disabled if they are outside of the allowed time range.
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader, voice & pointing devices.
 
-#### Keyboard
+### Keyboard
 
-The date picker exposes 3 keyboard focusable areas with TAB key:
+The date textbox exposes 3 keyboard focusable areas with TAB key:
 
 - The previous month button
 - The next month button
@@ -32,9 +28,9 @@ When a date button inside of the grid receives focus, keyboard interaction switc
 
 SPACEBAR or ENTER key will start or end a date range selection
 
-ESC key will close the date picker, retaining any date selection.
+ESC key will close the date textbox, retaining any date selection.
 
-#### Screen Reader
+### Screen Reader
 
 Date buttons are announced with the day of month, e.g. "12, button". The day of week and month are available on the containing table cell element (see below).
 
@@ -42,17 +38,17 @@ When navigating calendar in table mode, month is announced via table _caption_ s
 
 When navigating calendar in table mode, days of week are announced via table _column header_ semantics.
 
-#### Voice
+### Voice
 
 Date button can be activated via visual label, e.g. "Click button 12".
 
 Picker can be closed via, "Press Escape".
 
-#### Pointer
+### Pointer
 
-todo
+This section is not yet available.
 
-### ARIA Reference
+## ARIA Reference
 
 | Attribute            | Description                                                                                 |
 | -------------------- | ------------------------------------------------------------------------------------------- |

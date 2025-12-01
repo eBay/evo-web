@@ -1,5 +1,9 @@
 # Button Accessibility
 
+## Best Practices
+
+This section is not yet available.
+
 ## Interaction Design
 
 ### Pointer
@@ -26,7 +30,7 @@ Any description **must** be announced (i.e. via aria-describedby).
 
 Any change in label (e.g. a waiting/loading state) _may_ be announced by the screen reader (**NOTE**: a live-region should not be used for this).
 
-### ARIA Reference
+## ARIA Reference
 
 This section lists all relevant ARIA roles, states and properties for a button.
 

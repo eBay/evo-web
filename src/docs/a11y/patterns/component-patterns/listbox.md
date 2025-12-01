@@ -1,10 +1,10 @@
 # Listbox Accessibility
 
-### Screenshots
+## Screenshots
 
 No screenshot yet.
 
-### Introduction
+## Introduction
 
 The listbox pattern is a JavaScript widget. It allows _selection_ of one or more items from a list of options.
 
@@ -12,28 +12,28 @@ Because it is not a form control, the value will not be passed to the server wit
 
 A listbox can be self-contained, or be controlled by another widget (e.g. in a [combobox](combobox) pattern, the textbox _controls_ the listbox).
 
-### Known Issues
+## Known Issues
 
 These are all known _serious_ issues with assistive technology in relation to this pattern:
 
 - [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
 - [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)
 
-### Configuration
+## Configuration
 
 - **autoSelect:** a listbox with auto select will update its checked state automatically as a user navigates with arrow keys (similar to a radio button group).
 - **multiSelect**: a listbox with multiSelect allows more than one option to be selected
 - **owner**: specify the focusable element that will own and control the listbox programmatically (e.g. a [combobox](combobox)).
 
-### Best Practices
+## Best Practices
 
 This section is not yet available.
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader & pointing devices.
 
-#### Keyboard
+### Keyboard
 
 If the listbox has no owner, the listbox **must** be keyboard focusable.
 
@@ -45,7 +45,7 @@ For a listbox with `autoSelect` configuration, highlighting an option **must** a
 
 For a listbox without `autoSelect` configutation, a highlighted option must be manually selected using the `SPACEBAR` or `ENTER` key.
 
-#### Screen Reader
+### Screen Reader
 
 With virtual cursor on listbox, screen reader should announce role of listbox.
 
@@ -53,7 +53,7 @@ The checked state of an option **must** be announced.
 
 Disabled options must be announced as disabled.
 
-#### Pointer
+### Pointer
 
 Clicking or tapping button will toggle expanded state of flyout.
 

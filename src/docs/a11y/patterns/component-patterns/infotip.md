@@ -1,6 +1,6 @@
 # Infotip Accessibility
 
-### Best Practices
+## Best Practices
 
 On desktop screens, overlay **must not** be modal. On smaller screens, the overlay may be implemented as a modal dialog.
 
@@ -16,11 +16,11 @@ Overlay _should_ be hidden by default. If you wish to display a tip on page load
 
 Overlay content _should_ be no more than one or two paragraphs in length. For lengthier content, consider instead using a [dialog](https://ebay.gitbook.io/mindpatterns/disclosure/lightbox-dialog).
 
-### Interaction Design
+## Interaction Design
 
 This section provides the pattern interaction design for keyboard, screen reader & pointing devices.
 
-#### Keyboard
+### Keyboard
 
 Button **must** be keyboard focusable.
 
@@ -30,7 +30,7 @@ If overlay contains focusable elements, tab order **must** flow directly from bu
 
 If the overlay has no focusable elements, tab order **must** flow directly to next page control.
 
-#### Screen Reader
+### Screen Reader
 
 Button purpose **must** be announced (e.g. 'Help).
 
@@ -40,17 +40,17 @@ Reading order **must** flow directly from button into overlay.
 
 Expanded state **must** be announced after expanded.
 
-#### Pointer
+### Pointer
 
 Invoking button **must** toggle the expanded state of the overlay.
 
-### Utilities
+## Utilities
 
 The following JavaScript modules may assist you in creation of an infotip pattern:
 
 - [makeup-expander](https://github.com/makeup/makeup-js/tree/master/packages/makeup-expander): handles some basic accessibility for an element that expands and collapses another element.
 
-### ARIA Reference
+## ARIA Reference
 
 | Attribute         | Description                                                                                                                                  |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,14 +58,14 @@ The following JavaScript modules may assist you in creation of an infotip patter
 | **aria-label**    | Provides an accessible button label/name for the icon button.                                                                                |
 | **aria-expanded** | Informs assistive technology of the expanded state of the button.                                                                            |
 
-### FAQ
+## FAQ
 
-#### What is the difference between Infotip Button and Tooltip?
+### What is the difference between Infotip Button and Tooltip?
 
 A [tooltip](https://ebay.gitbook.io/mindpatterns/disclosure/tooltip) provides a tip about the _primary_ action of an interactive element (typically a button). For example, the trashcan icon button in your mail application. The tooltip can be thought of as the _secondary_ action of the button. It is always triggered by focus and hover.
 
 An infotip button provides a tip about a nearby _static_ element or content. It is always triggered by click.
 
-#### This is different to the way BootStrap 'Popovers' work. Why?
+### This is different to the way BootStrap 'Popovers' work. Why?
 
 The fundamental difference is that the [Bootstrap Popovers](http://getbootstrap.com/javascript/#popovers) get their content from a data attribute, whereas the pattern presented here gets it's content from an actual element. This allows us to more easily place HTML such as hyperlinks & images inside of our popovers and, unlike Bootstrap, the popover content _can_ be fully accessible _without_ JavaScript (assuming you choose to make the content visible by default).

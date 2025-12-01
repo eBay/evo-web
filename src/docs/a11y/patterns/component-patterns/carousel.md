@@ -1,6 +1,6 @@
 # Carousel Accessibility
 
-### Best Practices
+## Best Practices
 
 Carousel **must** have an associated heading in the page heading structure. For example, "Trending Deals", "Watchlist".
 
@@ -23,11 +23,11 @@ If the slides can automatically progress, then the carousel **must** include a p
 - Automatic progression **must** pause when keyboard focus enters widget
 - Automatic progression **must** pause when mouse hovers over widget
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader and pointing devices.
 
-#### Keyboard
+### Keyboard
 
 When "previous" button has focus, `TAB` key **must** move focus to first focusable element in view port.
 
@@ -52,7 +52,7 @@ When on last slide, the 'Next' button can remain in tab-order (but **should** be
 - Activate previous or next button: focus **must** stay on Previous or Next button.
 - Activate Pause/Play button: focus **must** stay on the Pause/Play button.
 
-#### Screen Reader
+### Screen Reader
 
 "Next" button **must** be announced as “Next slide”.
 
@@ -74,7 +74,7 @@ Pause button label **must** be announced as “Pause carousel”.
 
 If following WCAG AAA (optional), "Play" and "Pause" buttons _should_ also announce with additional context to uniquely identify the button purpose, e.g “Play carousel - _Trending Deals_” and “Pause carousel - _Trending Deals_”.
 
-#### Pointer
+### Pointer
 
 Clicking "Next" **must** update viewport with next slide.
 
@@ -82,7 +82,7 @@ Clicking "Previous" **must** update viewport with previous slide.
 
 Clicking pagination button or pagination bar **must** update viewport with respective slide.
 
-### ARIA Reference
+## ARIA Reference
 
 This section gives an overview of ARIA usage within the context of the carousel pattern.
 
@@ -94,6 +94,6 @@ This section gives an overview of ARIA usage within the context of the carousel 
 | **aria-label**           | Explicit label for group if no suitable onscreen element exists. Used to create accessible labels for graphical icon buttons.                                             |
 | **aria-disabled**        | Used to notify user that "Next" or "Previous" buttons are in a disabled state. Screen readers will announce 'disabled,' 'dimmed,' 'unavailable,' or words to that effect. |
 
-### Further Reading
+## Further Reading
 
 - <https://adrianroselli.com/2020/04/avoid-aria-roledescription.html> (spoiler: carousel is listed as a _valid_ use-case)

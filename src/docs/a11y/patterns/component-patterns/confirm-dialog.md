@@ -1,6 +1,6 @@
 # Confirm Dialog Accessibility
 
-### Best Practices
+## Best Practices
 
 Confirm dialogs are always modal and require a mask.
 
@@ -10,11 +10,11 @@ Confirm dialogs should be opened as a result of a user action or critical system
 
 Avoid stacking of confirm dialogs.
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader & pointing devices.
 
-#### Keyboard
+### Keyboard
 
 Keyboard focus should be placed on the _affirmative_ button (e.g. "Ok", "Yes", "Agree").
 
@@ -24,7 +24,7 @@ Pressing `ESC` key **must** close confirm dialog, acting as a cancel/non-affirma
 
 Activating any button will close the dialog and return focus to the main page.
 
-#### Screen Reader
+### Screen Reader
 
 Initial screen reader focus will be placed on the _affirmative_ button.
 
@@ -32,6 +32,6 @@ When opened, the screen reader should announce the title of the dialog, its role
 
 The screen reader should be confined to the elements within the dialog (i.e. modal behaviour).
 
-#### Pointer
+### Pointer
 
 Clicking the mask **must** close the confirm dialog, acting as a cancel/non-affirmative response.

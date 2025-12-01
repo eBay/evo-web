@@ -2,7 +2,7 @@
 
 ![Popover overlays with pointers](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcGd-PekMAyECo7PR%2Fflyout.png?generation=1548799254223918&alt=media)
 
-### Introduction
+## Introduction
 
 **\*NOTE**: This pattern was previously known as "flyout".\*
 
@@ -41,11 +41,11 @@ _If_ system-activated (e.g. a [Tourtip](https://ebay.gitbook.io/mindpatterns/mes
 
 _If_ focus-activated, overlay _should_ _not_ contain long blocks of interactive elements. This measure prevents keyboard users from having to tab through secondary or tertiary content inside of the overlay.
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction guidelines for keyboard, screen reader, and pointing devices.
 
-#### Keyboard
+### Keyboard
 
 Tab order **must** flow directly from host into first focusable element inside overlay. If the overlay has no focusable element, tab order flows to next page control instead.
 
@@ -57,7 +57,7 @@ _If_ focus-activated (discouraged), popover **must** expand when host receives k
 
 _If_ focus-activated (discouraged), popover **must** collapse when flyout loses keyboard focus.
 
-#### Screen Reader
+### Screen Reader
 
 Reading order **must** flow directly from host into overlay.
 
@@ -65,7 +65,7 @@ Overlay must not be conveyed as a dialog.
 
 _If_ system-activated _and_ high-priority, screen reader **must** announce presence and/or content overlay.
 
-#### Mouse
+### Mouse
 
 _If_ hover-activated (discouraged), popover **must** expand when host receives mouse hover.
 
@@ -83,15 +83,15 @@ _If_ click-activated, popover **must** expand when host receives tap.
 
 _if_ system-activated, popover **must** close when tapping close button.
 
-### ARIA Reference
+## ARIA Reference
 
 | Attribute         | Description                                                                                              |
 | ----------------- | -------------------------------------------------------------------------------------------------------- |
 | **aria-expanded** | This boolean attribute signifies the expanded state of the host element.                                 |
 | **aria-live**     | If wishing to announce the content of the popover when it expands, set aria live to polite or assertive. |
 
-### FAQ
+## FAQ
 
-#### Didn't this pattern used to be called Flyout?
+### Didn't this pattern used to be called Flyout?
 
 Yes it did! In most practical senses, the term flyout is synonomous with popover; they are both used to describe transient (i.e. non-modal) overlays of content.

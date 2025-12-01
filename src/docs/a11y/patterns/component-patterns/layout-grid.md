@@ -1,10 +1,12 @@
 # Layout Grid Accessibility
 
+## Introduction
+
 A generic responsive layout grid for repeating UI elements in a container. These could be purely visual elements or interactive. This component will lay out repeating elements based on internal rules per device viewport breakpoint.
 
 <figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FDLGblecoSLFqet2K2SiI%2Fimage.png?alt=media&#x26;token=af31d6a8-8ffc-4a84-b4e1-b5b36a6d580b" alt=""><figcaption><p>A Layout Grid implementation with a set of buttons.</p></figcaption></figure>
 
-### Accessibility
+## Best Practices
 
 The group of items/elements should be identified for screen readers. For lists that have an on-screen description text, it would look like this:
 
@@ -32,6 +34,8 @@ For instances where on-screen text is not available, an `aria-label` would work 
   </ul>
 </div>
 ```
+
+## Interaction Design
 
 ### Keyboard Interaction
 

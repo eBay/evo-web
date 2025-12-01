@@ -2,27 +2,27 @@
 
 ![An eBay Deals card containing 4 tiles](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFBuXI6l1BVejTbi%2Ftile.png?generation=1548799252962034&alt=media)
 
-### Introduction
+## Introduction
 
 A tile is a large, tap-friendly area that provides a summary-like experience for a link command.
 
-#### Light Tile
+### Light Tile
 
 For tiles with a small amount of text (and maybe a graphic or two), you can simply wrap these elements in an anchor tag and refer to the [Link](link) pattern.
 
 We refer to this kind of tile as a _light_ tile.
 
-#### Heavy Tile
+### Heavy Tile
 
 For tiles with longer text and structural elements such as lists, subheadings and tables, the contents cannot simply be wrapped in an anchor tag for fear of the link text becoming too verbose and unwieldy for assistive technology.
 
 We refer to this kind of tile as a _heavy_ tile.
 
-### Working Examples
+## Working Examples
 
 Experience the pattern in action on our companion [eBay MIND Patterns examples website](http://ebay.github.io/mindpatterns/navigation/tile/).
 
-### Best Practices
+## Best Practices
 
 Tile can have one link destination only. Anything more than one link is considered a card.
 
@@ -36,7 +36,7 @@ Light tile **must not** contain long descriptive text or structural elements suc
 
 Heavy tile **must only** contain one hyperlink and no other interactive elements. This ensures that the tile is a single stop in the tab order.
 
-### Interaction Design
+## Interaction Design
 
 Light tiles inherit all interaction design from the [Link Pattern](link).
 

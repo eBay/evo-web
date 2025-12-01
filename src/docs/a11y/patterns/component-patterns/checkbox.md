@@ -2,7 +2,7 @@
 
 ![Custom checkbox style](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcGLYCqUcCFwkuBYV%2Fcheckbox.png?generation=1548799254043735&alt=media)
 
-### Introduction
+## Introduction
 
 Allows selection of zero or more items in a group of options.
 
@@ -10,7 +10,7 @@ HTML gives us native checkboxes that are fully accessible by default. Unfortunat
 
 Our pattern shows how modern CSS and SVG can be used to create a custom _facade_ over the native checkboxes, while maintaining accessibility requirements.
 
-### Best Practices
+## Best Practices
 
 Checkboxes are form controls and _should_ be inside a form tag. The form _should_ have a submit button.
 
@@ -20,11 +20,11 @@ Groups of _related_ checkboxes **must** have a group label. Typically we use fie
 
 Toggling a checkbox should not cause an app update until the related form is submitted by the user. If instant app updates are required, perhaps consider the [switch](switch) pattern or a button-less [menu](menu).
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader and pointing devices.
 
-#### Keyboard
+### Keyboard
 
 Checkbox **must** be keyboard focusable (unless disabled).
 
@@ -34,7 +34,7 @@ If checkbox has keyboard focus, pressing ENTER key **must** submit the form.
 
 If checkbox has keyboard focus, pressing TAB key or SHIFT-TAB key combo moves keyboard focus to next or previous interactive element on page respectively.
 
-#### Screen Reader
+### Screen Reader
 
 Checkbox **must** be reachable with screen reader (even when disabled).
 
@@ -46,13 +46,13 @@ Checkbox group label, if applicable, **must** be announced.
 
 Checkbox state **must** be announced.
 
-#### Pointer
+### Pointer
 
 Clicking checkbox **must** toggle the checked state.
 
 Clicking checkbox label **must** toggle the checked state.
 
-### ARIA Reference
+## ARIA Reference
 
 This section gives an overview of our use of ARIA, within the specific context of the checkbox pattern.
 

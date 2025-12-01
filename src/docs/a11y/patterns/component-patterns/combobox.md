@@ -2,17 +2,17 @@
 
 ![Select phone model item specifics](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEF1Sjh9adTHwYti%2Fcombobox.png?generation=1548799252047216&alt=media)
 
-### Introduction
+## Introduction
 
 A combobox serves the exact same _purpose_ as a textbox - allowing text to be input and submitted via a form. The combobox's main additional _feature_ is a listbox of suggestions that will update the textbox with the corresponding value when chosen.
 
 A combobox typically also offers _autocomplete_ behavour - whereby the list of suggestions is filtered based on the current textbox value (i.e. while the user is typing in the textbox) .
 
-### Configuration
+## Configuration
 
 - **autoSelect**: a combobox with `autoSelect` will automatically select and fill the textbox value when user cycles through listbox options. Otherwise, `ENTER` key is required to manually select an option. Typically autoSelect will be `true` for a combobox with autocomplete behaviour.
 
-### Best Practices
+## Best Practices
 
 Each row in the list of options performs only a singular action: setting the value of the textbox. It is not possible, at the time of writing, to have additional actions per row, e.g. add, edit or delete.
 
@@ -22,9 +22,9 @@ A combobox is an enhancement of textbox. Likewise, **autocomplete** is an enhanc
 
 Examples of autocomplete are the URL bar in browsers, and the main search field in search engines.
 
-### Interaction Design
+## Interaction Design
 
-#### Keyboard
+### Keyboard
 
 When the combobox receives focus, the listbox should expand to show all options.
 
@@ -40,21 +40,21 @@ Pressing `ENTER` key while an option is highlighted **must** collapse the listbo
 
 Pressing `ESC` key while an option is highlighted **must** collapse the listbox.
 
-**For autocomplete type "list":**
+#### For autocomplete type "list"
 
 The listbox remains but the options change based on the custom filtering criteria.
 
 With focus in the empty combobox, type any letter. Any suggestions that match the filter will appear as options in the listbox popover.
 
-**For autocomplete type "inline":**
+#### For autocomplete type "inline"
 
 The listbox is removed. The entire combobox value will update as the user types, with the suggested portion highlighted as a _selection_ range.
 
-**For autocomplete type "both":**
+#### For autocomplete type "both"
 
 This section is under development.
 
-#### Screen Reader
+### Screen Reader
 
 The screen reader will announce the input as "text edit", "combobox" or words to those effect, depending on level of ARIA support.
 
@@ -64,13 +64,13 @@ The screen reader will announce any additional programmatic description, dependi
 
 The screen reader will announce the current value of the textbox.
 
-#### Mouse and Touch
+### Pointer
 
 When the combobox receives focus, via click or tap, the listbox should expand to show all options.
 
 Clicking or tapping an option will fill the textbox with that value and collapse the listbox **without** triggering a form submit.
 
-### ARIA Reference
+## ARIA Reference
 
 This section gives an overview of ARIA usage, _within the context of this pattern_.
 
@@ -83,6 +83,6 @@ This section gives an overview of ARIA usage, _within the context of this patter
 | **aria-expanded** | Conveys the expanded state of the combobox.                                                                                                              |
 | **aria-label**    | Provides the expand/collapse button with an accessible label, in the case where it has no visible text (i.e. an icon button).                            |
 
-### Further Reading
+## Further Reading
 
 - [https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues](https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues)

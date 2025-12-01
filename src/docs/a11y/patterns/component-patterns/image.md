@@ -1,15 +1,13 @@
 # Image Accessibility
 
+## Introduction
+
 There are two types of image:
 
 1. content images
 2. decoration images
 
-### Working Examples
-
-The content for this page is not yet available.
-
-### Best Practices
+## Best Practices
 
 Every image can be classed as important _content_ or non-important _decoration_.
 
@@ -25,22 +23,18 @@ If possible, always try and use CSS background images or generated content (e.g.
 
 Avoid using CSS background images for content images because they are disabled by default in Windows high contrast mode (this setting can be overridden in your application CSS however).
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader and pointing devices.
 
-#### Keyboard
+### Keyboard
 
 Image tags are not interactive by default and therefore should not be keyboard focusable.
 
-#### Screen Reader
+### Screen Reader
 
 A screen reader will skip over a decoration image (with empty alt text) and will read the alt text of content images.
 
-#### Pointer
+### Pointer
 
 Image tags are not interactive by default and therefore are not clickable.
-
-### ARIA Reference
-
-The content for this section is not yet available.

@@ -1,10 +1,10 @@
 # Listbox Button Accessibility
 
-### Screenshots
+## Screenshots
 
 ![](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MSkRY_jLwiwOHOYOjuz%2F-MSkSQ8xrJKBKWG9pIzd%2Flistbox-dweb-1.png?alt=media&token=3d9dab13-7c1c-4ba8-8ade-1469d34e85f0)
 
-### Introduction
+## Introduction
 
 The listbox button pattern is a JavaScript widget. It is a button that expands to reveal a [listbox](listbox) in a [popover](../disclosure/popover).
 
@@ -12,18 +12,18 @@ Because it is not a form control, the button value will not automatically be pas
 
 **Avoid calling a listbox button a "dropdown"!** The term "dropdown" is ambiguous and could be confused with a menu button, combobox, select or any other kind of overlay that "drops down".
 
-### Known Issues
+## Known Issues
 
 These are all known _serious_ issues with assistive technology in relation to this pattern:
 
 - [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
 - [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)
 
-### Configuration
+## Configuration
 
 See related [listbox](listbox) pattern.
 
-### Best Practices
+## Best Practices
 
 A listbox button's accessible label must at **all times** reflect its function.
 
@@ -31,41 +31,41 @@ A listbox button's accessible label must at **all times** reflect its function.
 
 All of this leaves us with a conundrum, with three potential solutions outlined below.
 
-#### **Compound Label**
+### Compound Label
 
 We can use `aria-labelledby` to stitch together an external text element with the internal value, this creating a compound label.
 
 `<span id="el1">Colour</span><button aria-labelledby="el1 el2"><span id="el2">blue</span></button>`
 
-#### **Compact Label**
+### Compact Label
 
 The button's inner text can be written as a key/value pair, where key denotes purpose and value represents the currently selected option.
 
 `<button>Colour: blue<button>`
 
-#### **Explicit Labels**
+### Explicit Labels
 
 We can write our option values such that the context can always be derived from the option value text alone (this isn't always easy or recommended).
 
 `<div role="option">Colour blue</div>`
 
-### Interaction Design
+## Interaction Design
 
 This section provides interaction design for keyboard, screen reader & pointing devices.
 
 Please also see related [listbox](listbox) pattern for best practices of nested listbox.
 
-#### Keyboard
+### Keyboard
 
 With focus on button, pressing `SPACEBAR` will will toggle the expanded state of button. On expand, keyboard focus should move to the listbox. The listbox implements an [active-descendant](../techniques/active-descendant) keyboard model.
 
 With focus on listbox, `ARROW KEYS` will navigate the options, `ESCAPE` key will collapse listbox and move focus on to button. `TAB` key will collapse listbox and move focus to next interactive page element. `SHIFT-TAB` will move focus back to button and listbox will remain expanded.
 
-#### Screen Reader
+### Screen Reader
 
 With virtual cursor on button, screen reader should announce role, label (see "Best Practices" section above), value & state..
 
-#### Pointer
+### Pointer
 
 Clicking or tapping button will toggle expanded state of popover.
 

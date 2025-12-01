@@ -1,6 +1,6 @@
 # Chips Combobox Accessibility
 
-### Best Practices
+## Best Practices
 
 Since `chips-combobox` is a composite component and includes a `combobox` , it automatically inherits its pattern. For the sake of completion, here's that pattern quoted from its own page:
 
@@ -12,7 +12,7 @@ A combobox is an enhancement of textbox. Likewise, **autocomplete** is an enhanc
 
 Examples of autocomplete are the URL bar in browsers, and the main search field in search engines.
 
-#### Chips
+### Chips
 
 Since `chips-combobox` manages the addition and removal of `chip(s)` , they require some key elements. A `chip` can be static of interactive. Static chips are extremely simple and don't require much guidance. Here, we will only be looking at interactive `chips`. Here's the markup for each `chip`:&#x20;
 
@@ -36,11 +36,11 @@ Each `chip` has a `button` inside that removes the chip from the `chips-combobox
 
 The close `svg` icon for each chip needs to have `aria-hidden="true"` since its function is conveyed by the `button`.
 
-### Interaction Design
+## Interaction Design
 
 Since chips combobox is a composite component and includes a `combobox` , it automatically inherits its interaction design. Once again, here's that pattern quoted from its own page:
 
-**Keyboard**
+### Keyboard
 
 When the combobox receives focus, the listbox should expand to show all options.
 
@@ -70,7 +70,7 @@ The listbox is removed. The entire combobox value will update as the user types,
 
 This section is under development.
 
-**Screen Reader**
+### Screen Reader
 
 The screen reader will announce the input as "text edit", "combobox" or words to those effect, depending on level of ARIA support.
 
@@ -80,7 +80,7 @@ The screen reader will announce any additional programmatic description, dependi
 
 The screen reader will announce the current value of the textbox.
 
-**Mouse and Touch**
+### Pointer
 
 When the combobox receives focus, via click or tap, the listbox should expand to show all options.
 
@@ -100,9 +100,9 @@ A custom `chip` can be created only with the keyboard. As the user types inside 
 
 There may be a tendency to consider using a comma(`,`) to fire off the creation of a chip. The current guidance is to avoid doing so. Commas are too specific in usage on certain platforms and do not have as wide of an intuitive base of accepted usage patterns. Conversely, `ENTER` is a universally accepted pattern for submission of an entry.
 
-### ARIA Reference
+## ARIA Reference
 
-This section gives an overview of ARIA usage, _within the context of this pattern_.
+This section gives an overview of ARIA usage, within the context of this pattern.
 
 | Attribute                | Description                                                                                                                                                                                                 |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
