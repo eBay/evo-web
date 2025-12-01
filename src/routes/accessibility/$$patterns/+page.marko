@@ -2,7 +2,11 @@ server import fs from "fs";
 server import path from "path";
 import markdown from "markdown-it";
 // Initialize markdown parser
-<const/md=new markdown()>
+<const/md=new markdown({
+    html: true,
+    linkify: true
+
+})>
 // Get the pattern path from the catch-all route parameters
 <const/patternPath=($global?.params?.patterns || "")>
 // Base path for a11y documents
@@ -44,7 +48,7 @@ import markdown from "markdown-it";
                 // Note: available patterns should be placed in:
                 // src/docs/a11y/patterns/
                 <p>
-                    <a href="/accessibility">
+                    <a href="accessibility">
                         ← Back to Accessibility
                     </a>
                 </p>

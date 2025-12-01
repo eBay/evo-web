@@ -38,7 +38,7 @@
         // Always start with home
         {
             label: 'Evo Web',
-            href: '/',
+            href: './',
             isLast: segments.length === 0
         }
     ];
@@ -52,7 +52,7 @@
             continue;
         }
 
-        const href = '/' + segments.slice(0, i + 1).join('/');
+        const href = segments.slice(0, i + 1).join('/');
         const isLast = i === segments.length - 1;
 
         // Handle special cases for better labels

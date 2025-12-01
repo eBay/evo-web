@@ -63,7 +63,7 @@ export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
       fullPath: filePath,
       pageDescription,
       pageTitle,
-      pageImg: `${basePath}img/components/${name}.png`,
+      pageImg: `img/components/${name}.png`,
       metadata,
       dsComponent,
       componentUrls: getComponentUrls(name, metadata, dsComponent),
@@ -112,7 +112,7 @@ function getComponentUrls(
   metadata?: ComponentMetadata,
   dsComponent?: DsComponent,
 ) {
-  const componentUrl = `${basePath}component/${componentName}/`;
+  const componentUrl = `component/${componentName}/`;
 
   return {
     overview: `${componentUrl}`,

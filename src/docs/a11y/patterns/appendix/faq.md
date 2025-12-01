@@ -16,7 +16,7 @@ NOTE: There is one special type of button that can also change the URL. The form
 
 No. The hand cursor is reserved for links. Affordance of button interactivity comes from how the element _looks_ (i.e. it should look like a button!), and should not require use of a mouse.
 
-See [Hand Cursor on Buttons](../antipatterns/hand-cursor-on-buttons) antipattern for more info.
+See [Hand Cursor on Buttons](../anti-patterns/hand-cursor-on-buttons) antipattern for more info.
 
 ### Can a focussed button be a live-region?
 
@@ -132,9 +132,9 @@ We are not going to go out of our way to cater for these individuals.
 
 However, there are other [_unknown_ factors](https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/) which can potentially place the user into a non-JS or partial-JS state, for example:
 
-* A script fails to load due to poor connectivity
-* A script executes much later or slower than expected
-* A script fails due to incompatible browser support
+- A script fails to load due to poor connectivity
+- A script executes much later or slower than expected
+- A script fails due to incompatible browser support
 
 > &#x20;We don’t have any non-JavaScript users
 >

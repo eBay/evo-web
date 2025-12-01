@@ -4,6 +4,7 @@ server import path from "path";
 import { getMetadataFromUrl } from "../data";
 static const md = markdownit({
     html: true,
+    linkify: true
 });
 
 <const/{ name: componentName }=getMetadataFromUrl($global.url.pathname)>
