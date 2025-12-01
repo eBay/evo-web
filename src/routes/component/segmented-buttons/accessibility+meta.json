@@ -1,5 +1,4 @@
 {
   "pageTitle": "Segmented Buttons Accessibility Guidelines — Building Inclusive Toggle Groups",
-  "pageDescription": "Learn how to make segmented buttons fully accessible with proper ARIA radio group patterns, keyboard navigation, and selection states. Follow these WCAG-aligned guidelines to ensure button groups work for all users.",
-  "pageImg": "/src/routes/static/img/components/segmented-button-400.png"
+  "pageDescription": "Learn how to make segmented buttons fully accessible with proper ARIA radio group patterns, keyboard navigation, and selection states. Follow these WCAG-aligned guidelines to ensure button groups work for all users."
 }

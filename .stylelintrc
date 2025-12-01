@@ -10,7 +10,7 @@
         "**/*.js",
         "**/*.ts",
         "**/*.less",
-        "src/routes/static/**",
+        "src/sass/**",
         "**/*.md",
         "**/*.svg",
         "**/*.png",

@@ -1,5 +1,4 @@
 {
   "pageTitle": "Switch Component",
-  "pageDescription": "The Switch component provides toggle controls for binary settings with clear on/off states. Built with accessible interactions and visual feedback, it ensures proper form controls for all users. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/switch-400.png"
+  "pageDescription": "The Switch component provides toggle controls for binary settings with clear on/off states. Built with accessible interactions and visual feedback, it ensures proper form controls for all users. Available in Evo Web's CSS, React, and Marko implementations."
 }

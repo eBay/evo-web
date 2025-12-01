@@ -1,5 +1,4 @@
 {
   "pageTitle": "Listbox Accessibility Guidelines — Creating Inclusive Selection Lists",
-  "pageDescription": "Learn how to make listbox components fully accessible with proper ARIA listbox roles, keyboard navigation, and selection management. Follow these WCAG-aligned guidelines to ensure custom select alternatives work for all users.",
-  "pageImg": "/src/routes/static/img/components/select-list-400.png"
+  "pageDescription": "Learn how to make listbox components fully accessible with proper ARIA listbox roles, keyboard navigation, and selection management. Follow these WCAG-aligned guidelines to ensure custom select alternatives work for all users."
 }

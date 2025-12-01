@@ -1,5 +1,4 @@
 {
   "pageTitle": "Snackbar Dialog Accessibility Guidelines — Building Inclusive Toast Notifications",
-  "pageDescription": "Learn how to make snackbar dialog components fully accessible with proper ARIA alert roles, auto-dismiss timing, and action controls. Follow these WCAG-aligned guidelines to ensure brief notifications reach all users effectively.",
-  "pageImg": "/static/img/components/dialog-400.png"
+  "pageDescription": "Learn how to make snackbar dialog components fully accessible with proper ARIA alert roles, auto-dismiss timing, and action controls. Follow these WCAG-aligned guidelines to ensure brief notifications reach all users effectively."
 }

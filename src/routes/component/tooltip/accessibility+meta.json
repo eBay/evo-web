@@ -1,5 +1,4 @@
 {
   "pageTitle": "Tooltip Accessibility Guidelines — Building Inclusive Supplementary Information",
-  "pageDescription": "Learn how to make tooltip components fully accessible with proper ARIA tooltip patterns, keyboard triggers, and ESC dismissal. Follow these WCAG-aligned guidelines to ensure tooltips provide helpful context for all users.",
-  "pageImg": "/static/img/components/tooltip-400.png"
+  "pageDescription": "Learn how to make tooltip components fully accessible with proper ARIA tooltip patterns, keyboard triggers, and ESC dismissal. Follow these WCAG-aligned guidelines to ensure tooltips provide helpful context for all users."
 }

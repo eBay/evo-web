@@ -1,5 +1,4 @@
 {
   "pageTitle": "Badge Accessibility Guidelines — Building Inclusive Notification Indicators",
-  "pageDescription": "Learn how to make badge components fully accessible with proper ARIA labels and roles for conveying counts and status. Follow these WCAG-aligned guidelines to ensure notification indicators are understandable by all users, including those using screen readers.",
-  "pageImg": "/static/img/components/badge-400.png"
+  "pageDescription": "Learn how to make badge components fully accessible with proper ARIA labels and roles for conveying counts and status. Follow these WCAG-aligned guidelines to ensure notification indicators are understandable by all users, including those using screen readers."
 }

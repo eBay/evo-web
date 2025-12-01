@@ -1,5 +1,4 @@
 {
   "pageTitle": "Donut Chart Accessibility Guidelines — Making Data Visualizations Inclusive",
-  "pageDescription": "Learn how to make donut chart components fully accessible with proper ARIA labels, data tables, and text alternatives. Follow these WCAG-aligned guidelines to ensure circular data visualizations are understandable by all users, including those using screen readers.",
-  "pageImg": "/static/img/components/data-visualization-400.png"
+  "pageDescription": "Learn how to make donut chart components fully accessible with proper ARIA labels, data tables, and text alternatives. Follow these WCAG-aligned guidelines to ensure circular data visualizations are understandable by all users, including those using screen readers."
 }

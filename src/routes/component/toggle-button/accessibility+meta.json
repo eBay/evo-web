@@ -1,5 +1,4 @@
 {
   "pageTitle": "Toggle Button Accessibility Guidelines — Building Inclusive Pressed State Buttons",
-  "pageDescription": "Learn how to make toggle button components fully accessible with proper ARIA pressed attributes, keyboard controls, and state announcements. Follow these WCAG-aligned guidelines to ensure toggle buttons work for all users.",
-  "pageImg": "/src/routes/static/img/components/toggle-button-group-400.png"
+  "pageDescription": "Learn how to make toggle button components fully accessible with proper ARIA pressed attributes, keyboard controls, and state announcements. Follow these WCAG-aligned guidelines to ensure toggle buttons work for all users."
 }

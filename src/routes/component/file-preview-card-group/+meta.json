@@ -1,5 +1,4 @@
 {
   "pageTitle": "File Preview Card Group Component",
-  "pageDescription": "The File Preview Card Group component organizes multiple file preview cards in a responsive layout. Designed for efficient file management, it provides accessible navigation and batch operations. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/card-400.png"
+  "pageDescription": "The File Preview Card Group component organizes multiple file preview cards in a responsive layout. Designed for efficient file management, it provides accessible navigation and batch operations. Available in Evo Web's CSS, React, and Marko implementations."
 }

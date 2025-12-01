@@ -1,5 +1,4 @@
 {
   "pageTitle": "Date Textbox Component",
-  "pageDescription": "The Date Textbox component provides formatted date input with validation and mask support. Built with accessibility features, it ensures proper date entry across different locales and formats. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/date-textbox-400.png"
+  "pageDescription": "The Date Textbox component provides formatted date input with validation and mask support. Built with accessibility features, it ensures proper date entry across different locales and formats. Available in Evo Web's CSS, React, and Marko implementations."
 }

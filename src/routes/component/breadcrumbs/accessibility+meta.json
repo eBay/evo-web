@@ -1,5 +1,4 @@
 {
   "pageTitle": "Breadcrumbs Accessibility Guidelines — Creating Inclusive Navigation Trails",
-  "pageDescription": "Learn how to make breadcrumb navigation fully accessible with proper landmark roles, current page indication, and semantic HTML structure. Follow these WCAG-aligned guidelines to ensure navigation hierarchy is clear for all users, on every device.",
-  "pageImg": "/static/img/components/breadcrumb-400.png"
+  "pageDescription": "Learn how to make breadcrumb navigation fully accessible with proper landmark roles, current page indication, and semantic HTML structure. Follow these WCAG-aligned guidelines to ensure navigation hierarchy is clear for all users, on every device."
 }

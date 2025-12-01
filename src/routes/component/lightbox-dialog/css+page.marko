@@ -1,3 +1,5 @@
+import tbLandscapeImg from "/img/tb-landscape-pic.jpg";
+static const basePath = import.meta.env.BASE_URL;
 <div id="lightbox-dialog">
     <section-header/>
 
@@ -370,9 +372,7 @@
     </h3>
     <p>
         To have a wider lightbox add${" "}
-        <code>
-            lightbox-dialog--wide
-        </code>
+        <code>lightbox-dialog--wide</code>
         ${" "}to the dialog
     </p>
     <p>
@@ -516,9 +516,7 @@
     </h3>
     <p>
         To have a thinner lightbox add${" "}
-        <code>
-            lightbox-dialog--narrow
-        </code>
+        <code>lightbox-dialog--narrow</code>
         ${" "}to the dialog
     </p>
 
@@ -634,9 +632,7 @@
     </h3>
     <p>
         To have a large lightbox add${" "}
-        <code>
-            lightbox-dialog--large
-        </code>
+        <code>lightbox-dialog--large</code>
         ${" "}to the dialog
     </p>
     <p>
@@ -756,13 +752,9 @@
     </h3>
     <p>
         Any lightbox can be transitioned in and out, using the${" "}
-        <code>
-            lightbox-dialog__window--animate
-        </code>
+        <code>lightbox-dialog__window--animate</code>
         ${" "}and${" "}
-        <code>
-            lightbox-dialog--mask-fade
-        </code>
+        <code>lightbox-dialog--mask-fade</code>
         ${" "}modifiers. On large screens, animate will fade in and on small
         screens the panel will slide in from the bottom.
     </p>
@@ -1029,7 +1021,7 @@
                 <div class="lightbox-dialog__window">
                     <div
                         class="lightbox-dialog__image"
-                        style="background-image:url(src/routes/static/img/tb-landscape-pic.jpg)"/>
+                        style={"background-image": `url('${basePath}/img/tb-landscape-pic.jpg')`}/>
                     <div class="lightbox-dialog__header">
                         <h2
                             id="dialog-title-default"
@@ -1082,7 +1074,7 @@
             <div class="lightbox-dialog__window">
                 <div
                     class="lightbox-dialog__image"
-                    style="background-image:url(src/routes/static/img/tb-landscape-pic.jpg)"/>
+                    style="background-image:url(/img/tb-landscape-pic.jpg)"/>
                 <div class="lightbox-dialog__header">
                     <h2
                         id="lightbox-dialog-title"

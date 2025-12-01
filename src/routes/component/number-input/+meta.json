@@ -1,5 +1,4 @@
 {
   "pageTitle": "Number Input Component",
-  "pageDescription": "The Number Input component provides formatted numeric input with increment/decrement controls and validation. Designed for accessible data entry, it supports various number formats and ranges. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/number-input-400.png"
+  "pageDescription": "The Number Input component provides formatted numeric input with increment/decrement controls and validation. Designed for accessible data entry, it supports various number formats and ranges. Available in Evo Web's CSS, React, and Marko implementations."
 }

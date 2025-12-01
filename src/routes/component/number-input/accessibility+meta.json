@@ -1,5 +1,4 @@
 {
   "pageTitle": "Number Input Accessibility Guidelines — Creating Inclusive Numeric Fields",
-  "pageDescription": "Learn how to make number input components fully accessible with proper labels, increment controls, and validation messages. Follow these WCAG-aligned guidelines to ensure numeric inputs work for all users across different locales.",
-  "pageImg": "/src/routes/static/img/components/number-input-400.png"
+  "pageDescription": "Learn how to make number input components fully accessible with proper labels, increment controls, and validation messages. Follow these WCAG-aligned guidelines to ensure numeric inputs work for all users across different locales."
 }

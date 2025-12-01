@@ -1,5 +1,4 @@
 {
   "pageTitle": "Date Textbox Accessibility Guidelines — Building Inclusive Date Input Fields",
-  "pageDescription": "Learn how to make date textbox components fully accessible with proper input types, validation messages, and format instructions. Follow these WCAG-aligned guidelines to ensure date entry fields work for all users across different locales.",
-  "pageImg": "/src/routes/static/img/components/date-textbox-400.png"
+  "pageDescription": "Learn how to make date textbox components fully accessible with proper input types, validation messages, and format instructions. Follow these WCAG-aligned guidelines to ensure date entry fields work for all users across different locales."
 }

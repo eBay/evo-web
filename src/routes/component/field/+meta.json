@@ -1,5 +1,4 @@
 {
   "pageTitle": "Field Component",
-  "pageDescription": "The Field component provides structured layout for form inputs with labels, descriptions, and error messages. Built with accessibility best practices, it ensures proper form semantics and screen reader support. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/text-field-400.png"
+  "pageDescription": "The Field component provides structured layout for form inputs with labels, descriptions, and error messages. Built with accessibility best practices, it ensures proper form semantics and screen reader support. Available in Evo Web's CSS, React, and Marko implementations."
 }

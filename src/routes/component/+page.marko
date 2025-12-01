@@ -1,6 +1,4 @@
-import {
-    components,
-} from "../../data";
+import { components } from "../../data";
 
 <style.scss>
     main ul.components-list {
@@ -83,26 +81,24 @@ import {
     <ul class="components-list">
         <for|key, component| in=components>
             <const/{ dsComponent, componentUrls, properName }=component>
-           <if=component.metadata>
+            <if=component.metadata>
                 <li>
                     <a
                         href=componentUrls?.overview
                         class="card card--aspect-16-9  module-link">
                         <div class="card__media">
-                            <if=(component.pageImg)>
-                                <img
-                                    src=`${component.pageImg}`
-                                    alt="Component image"
-                                    class="card__hero-image">
-                            </if>
-                            <else>
+                            <object
+                                type="image/png"
+                                class="card__hero-image"
+                                data=component.pageImg
+                                aria-label=component.name>
                                 <svg
                                     aria-label="image not found"
                                     class="image-placeholder .card__hero-image"
                                     role="img">
                                     <use href="#image-placeholder"/>
                                 </svg>
-                            </else>
+                            </object>
                         </div>
                         <div class="card__main">
                             <h2 class="card__title">

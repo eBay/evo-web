@@ -1,5 +1,4 @@
 {
   "pageTitle": "Combobox Accessibility Guidelines — Creating Inclusive Autocomplete Interfaces",
-  "pageDescription": "Learn how to make combobox components fully accessible with proper ARIA combobox roles, keyboard controls, and list navigation. Follow these WCAG-aligned guidelines to ensure autocomplete dropdowns are usable by all users with assistive technologies.",
-  "pageImg": "/static/img/components/combobox-400.png"
+  "pageDescription": "Learn how to make combobox components fully accessible with proper ARIA combobox roles, keyboard controls, and list navigation. Follow these WCAG-aligned guidelines to ensure autocomplete dropdowns are usable by all users with assistive technologies."
 }

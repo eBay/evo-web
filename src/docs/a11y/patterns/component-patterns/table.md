@@ -89,10 +89,7 @@ A sortable table is a table that allows users to sort the data in the table by c
         <td class="table-cell">
           <div class="table-cell__layout">
             <div class="table-cell__thumbnail">
-              <img
-                src="src/routes/static/img/tb-profile-pic.jpg"
-                alt="Nintendo Switch"
-              />
+              <img src="/img/tb-profile-pic.jpg" alt="Nintendo Switch" />
             </div>
             <div class="table-cell__multiline">
               <div class="table-cell__data">

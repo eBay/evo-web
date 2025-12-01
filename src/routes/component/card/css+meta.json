@@ -1,6 +1,4 @@
 {
-    "pageTitle": "Card CSS Component",
-    "pageDescription": "The Card CSS component is a responsive and accessible UI element for displaying structured content in compact, visually appealing containers. Built with pure CSS, it adapts seamlessly to all devices, supports multiple layouts and styles, and follows WCAG 2.2 AA accessibility standards. Perfect for dashboards, product listings, and content galleries.",
-    "pageImg": "/src/routes/static/img/components/card-400.png"
+  "pageTitle": "Card CSS Component",
+  "pageDescription": "The Card CSS component is a responsive and accessible UI element for displaying structured content in compact, visually appealing containers. Built with pure CSS, it adapts seamlessly to all devices, supports multiple layouts and styles, and follows WCAG 2.2 AA accessibility standards. Perfect for dashboards, product listings, and content galleries."
 }
-

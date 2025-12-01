@@ -1,5 +1,4 @@
 {
   "pageTitle": "Pagination Component",
-  "pageDescription": "The Pagination component enables navigation through multi-page content with accessible controls. Supporting various layouts and responsive behavior, it helps users browse large data sets efficiently. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/pagination-400.png"
+  "pageDescription": "The Pagination component enables navigation through multi-page content with accessible controls. Supporting various layouts and responsive behavior, it helps users browse large data sets efficiently. Available in Evo Web's CSS, React, and Marko implementations."
 }

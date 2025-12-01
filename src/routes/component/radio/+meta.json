@@ -1,5 +1,4 @@
 {
   "pageTitle": "Radio Component",
-  "pageDescription": "The Radio component enables single selection from a group of options with accessible markup and custom styling. Supporting various sizes and states, it ensures proper form semantics and keyboard navigation. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/radio-button-400.png"
+  "pageDescription": "The Radio component enables single selection from a group of options with accessible markup and custom styling. Supporting various sizes and states, it ensures proper form semantics and keyboard navigation. Available in Evo Web's CSS, React, and Marko implementations."
 }

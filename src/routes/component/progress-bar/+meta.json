@@ -1,5 +1,4 @@
 {
   "pageTitle": "Progress Bar Component",
-  "pageDescription": "The Progress Bar component visualizes task completion with accessible progress indicators. Built with ARIA attributes and customizable styling, it provides clear feedback for loading states and multi-step processes. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/expressive-loader-400.png"
+  "pageDescription": "The Progress Bar component visualizes task completion with accessible progress indicators. Built with ARIA attributes and customizable styling, it provides clear feedback for loading states and multi-step processes. Available in Evo Web's CSS, React, and Marko implementations."
 }

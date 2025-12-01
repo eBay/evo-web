@@ -1,5 +1,4 @@
 {
   "pageTitle": "Filter Input Accessibility Guidelines — Building Inclusive Search and Filter Fields",
-  "pageDescription": "Learn how to make filter input components fully accessible with proper labels, live region updates, and clear feedback. Follow these WCAG-aligned guidelines to ensure filtering inputs work for all users with assistive technologies.",
-  "pageImg": "/src/routes/static/img/components/text-field-400.png"
+  "pageDescription": "Learn how to make filter input components fully accessible with proper labels, live region updates, and clear feedback. Follow these WCAG-aligned guidelines to ensure filtering inputs work for all users with assistive technologies."
 }

@@ -1,5 +1,4 @@
 {
   "pageTitle": "Progress Bar Expressive Accessibility Guidelines — Building Inclusive Enhanced Progress Indicators",
-  "pageDescription": "Learn how to make expressive progress bar components fully accessible with proper ARIA attributes, motion controls, and meaningful updates. Follow these WCAG-aligned guidelines to ensure enhanced progress indicators work for all users.",
-  "pageImg": "/src/routes/static/img/components/expressive-loader-400.png"
+  "pageDescription": "Learn how to make expressive progress bar components fully accessible with proper ARIA attributes, motion controls, and meaningful updates. Follow these WCAG-aligned guidelines to ensure enhanced progress indicators work for all users."
 }

@@ -1,8 +1,8 @@
 # Migration Report
 
-**Date:** December 1, 2025  
-**Task:** Restructuring component documentation to match the accordion pattern  
-**Source:** `src/docs/a11y/patterns/component-patterns/[component].md`  
+**Date:** December 1, 2025
+**Task:** Restructuring component documentation to match the accordion pattern
+**Source:** `src/docs/a11y/patterns/component-patterns/[component].md`
 **Destination:** `src/routes/component/[component]/+page.marko`
 
 ## Migration Steps
@@ -28,7 +28,7 @@ The component page should include:
 
 - **Component title** - `<h1>[Component] Component</h1>`
 - **Subtitle** - `<p class="component-subtitle">Brief description</p>`
-- **Banner image** - `<img class="component-banner-img" src="/src/routes/static/img/components/[component]-400.png" aria-hidden="true" />`
+- **Banner image** - `<component-banner-img />`
 - **Introduction paragraphs** - Moved from a11y markdown
 - **Terminology section** - Moved from a11y markdown with proper HTML structure
 

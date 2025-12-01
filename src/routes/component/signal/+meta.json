@@ -1,5 +1,4 @@
 {
   "pageTitle": "Signal Component",
-  "pageDescription": "The Signal component displays status indicators with visual and semantic clarity. Perfect for connection status, signal strength, and state representation, it provides accessible visual feedback. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/signal-400.png"
+  "pageDescription": "The Signal component displays status indicators with visual and semantic clarity. Perfect for connection status, signal strength, and state representation, it provides accessible visual feedback. Available in Evo Web's CSS, React, and Marko implementations."
 }

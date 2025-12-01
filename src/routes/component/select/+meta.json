@@ -1,5 +1,4 @@
 {
   "pageTitle": "Select Component",
-  "pageDescription": "The Select component provides accessible dropdown selection with custom styling and enhanced functionality. Supporting single and multi-select modes, it ensures proper keyboard navigation and screen reader support. Available in Evo Web's CSS, React, and Marko implementations.",
-  "pageImg": "/src/routes/static/img/components/select-list-400.png"
+  "pageDescription": "The Select component provides accessible dropdown selection with custom styling and enhanced functionality. Supporting single and multi-select modes, it ensures proper keyboard navigation and screen reader support. Available in Evo Web's CSS, React, and Marko implementations."
 }
