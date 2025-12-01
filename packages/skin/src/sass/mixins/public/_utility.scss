@@ -60,7 +60,6 @@
 
 @mixin scrollbars-permanent($target) {
     #{$target} {
-        -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
         /* stylelint-disable declaration-block-no-duplicate-properties */
         -webkit-scroll-snap-type: mandatory;

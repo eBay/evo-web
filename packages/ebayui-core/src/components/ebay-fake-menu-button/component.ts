@@ -10,7 +10,7 @@ import type { WithNormalizedProps } from "../../global";
 
 interface FakeMenuButtonInput extends Omit<Marko.HTML.Span, `on${string}`> {
     text?: string;
-    size?: "none" | "large";
+    size?: "none" | "small" | "large";
     "prefix-id"?: string;
     variant?: "overflow" | "form" | "button" | "icon";
     priority?: "primary" | "secondary" | "delete" | "tertiary" | "none";

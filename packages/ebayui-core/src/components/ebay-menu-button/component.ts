@@ -122,9 +122,7 @@ export default class extends MenuUtils<Input, MenuState> {
     }
 
     focus() {
-        (
-            (this.getComponent("button") as Marko.Component).el as HTMLElement
-        ).focus();
+        (this.getEl("button") as HTMLElement)?.focus();
     }
 
     handleButtonEscape() {

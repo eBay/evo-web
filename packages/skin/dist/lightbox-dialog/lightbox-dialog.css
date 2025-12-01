@@ -10,7 +10,6 @@
     background-color: var(--dialog-scrim-color-show);
     inset: 0;
     justify-content: center;
-    -webkit-overflow-scrolling: touch;
     position: fixed;
     will-change: background-color;
     z-index: 100000;

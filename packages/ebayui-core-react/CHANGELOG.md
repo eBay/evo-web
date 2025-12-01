@@ -1,5 +1,17 @@
 # @ebay/ui-core-react
 
+## 8.17.2
+
+### Patch Changes
+
+- [#379](https://github.com/eBay/evo-web/pull/379) [`61d5e58`](https://github.com/eBay/evo-web/commit/61d5e5816bd660a5a852cacd54e29ab09aa48ebd) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(PhoneInput): add missing countries and fix selection logic
+
+## 8.17.1
+
+### Patch Changes
+
+- [#368](https://github.com/eBay/evo-web/pull/368) [`579eda5`](https://github.com/eBay/evo-web/commit/579eda5dfcf2289df3da600b572b0bd0b24f57a0) Thanks [@agliga](https://github.com/agliga)! - fix: added prevention to scroll up and down on page for menu
+
 ## 8.17.0
 
 ### Minor Changes
@@ -28,7 +40,7 @@
 
 - [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
 
-  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+    EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
 
 ### Patch Changes
 

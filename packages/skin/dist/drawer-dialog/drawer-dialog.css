@@ -10,7 +10,6 @@
     background-color: var(--dialog-scrim-color-show);
     inset: 0;
     overflow: hidden;
-    -webkit-overflow-scrolling: touch;
     position: fixed;
     will-change: background-color;
     z-index: 100000;
@@ -112,9 +111,8 @@ button.icon-btn.drawer-dialog__close {
     max-height: 50%;
     max-width: 100%;
     min-height: 55px;
-    will-change: opacity, transform;
-    -webkit-overflow-scrolling: touch;
     overflow-y: hidden;
+    will-change: opacity, transform;
 }
 .drawer-dialog__window--expanded {
     height: 95%;

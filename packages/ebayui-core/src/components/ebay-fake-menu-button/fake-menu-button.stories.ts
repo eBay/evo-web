@@ -67,8 +67,9 @@ export default {
             description: "whether button has borders",
         },
         size: {
-            control: { type: "text" },
-            description: 'button size, "large" (default: "none")',
+            control: { type: "select" },
+            options: ["large", "small", "none"],
+            description: 'button size, "large", "small" (default: "none")',
         },
         priority: {
             control: { type: "select" },

@@ -1,5 +1,17 @@
 # eBayUI-Core Changelog
 
+## 15.14.2
+
+### Patch Changes
+
+- [#373](https://github.com/eBay/evo-web/pull/373) [`ccb9fbc`](https://github.com/eBay/evo-web/commit/ccb9fbcadc06d4fde8b6125a820b9071ed6bf769) Thanks [@agliga](https://github.com/agliga)! - fix(menu-button): added nullish coalescing selector to focus
+
+## 15.14.1
+
+### Patch Changes
+
+- [#370](https://github.com/eBay/evo-web/pull/370) [`8b88be1`](https://github.com/eBay/evo-web/commit/8b88be18522391055de9c93671fd5655bb71057e) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(fake-menu-button): add `size` option `small` to type
+
 ## 15.14.0
 
 ### Minor Changes
@@ -143,7 +155,7 @@
 - [#210](https://github.com/eBay/evo-web/pull/210) [`66463ee`](https://github.com/eBay/evo-web/commit/66463ee6cc8b07c6b65f616108daa4bafb663687) Thanks [@agliga](https://github.com/agliga)! - feat(chip): added selection and filter chip
 
 - Updated dependencies [[`05d3c40`](https://github.com/eBay/evo-web/commit/05d3c4023776de1e2ac1f4c46b8e19dec2e3ddf6)]:
-  - @ebay/skin@19.11.0
+    - @ebay/skin@19.11.0
 
 ## 15.8.1
 
