@@ -218,18 +218,17 @@ header a {
   backdrop-filter: blur(var(--blur)) saturate(var(--saturate))
     contrast(var(--contrast));
   background:
-        /* specular highlight (static; see JS below for dynamic) */
+    /* specular highlight (static; see JS below for dynamic) */
     radial-gradient(
       120% 80% at 50% -20%,
       rgba(255, 255, 255, 0.35),
       rgba(255, 255, 255, 0) 60%
     ),
-    /* material tint */
-      linear-gradient(
-        180deg,
-        rgba(var(--tint), var(--alpha-strong)),
-        rgba(var(--tint), var(--alpha-weak))
-      );
+    linear-gradient(
+      180deg,
+      rgba(var(--tint), var(--alpha-strong)),
+      rgba(var(--tint), var(--alpha-weak))
+    );
   background-color: transparent;
 }
 
