@@ -1,33 +1,10 @@
 # Listbox Button Accessibility
 
-## Screenshots
-
-![](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MSkRY_jLwiwOHOYOjuz%2F-MSkSQ8xrJKBKWG9pIzd%2Flistbox-dweb-1.png?alt=media&token=3d9dab13-7c1c-4ba8-8ade-1469d34e85f0)
-
-## Introduction
-
-The listbox button pattern is a JavaScript widget. It is a button that expands to reveal a [listbox](listbox) in a [popover](../disclosure/popover).
-
-Because it is not a form control, the button value will not automatically be passed to the server. If you require this behaviour, please consider the [select](select) pattern instead.
-
-**Avoid calling a listbox button a "dropdown"!** The term "dropdown" is ambiguous and could be confused with a menu button, combobox, select or any other kind of overlay that "drops down".
-
-## Known Issues
-
-These are all known _serious_ issues with assistive technology in relation to this pattern:
-
-- [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
-- [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)
-
-## Configuration
-
-See related [listbox](listbox) pattern.
-
 ## Best Practices
 
 A listbox button's accessible label must at **all times** reflect its function.
 
-**Care is needed when labelling a listbox button!** A listbox button attempts to mimic the behaviour of an HTML select by displaying the currently selected value in its collapsed state. In HTML however, a _button_ is labelled by its inner text, whereas a _select_ is labelled by an external label tag.&#x20;
+**Care is needed when labelling a listbox button!** A listbox button attempts to mimic the behaviour of an HTML select by displaying the currently selected value in its collapsed state. In HTML however, a _button_ is labelled by its inner text, whereas a _select_ is labelled by an external label tag.
 
 All of this leaves us with a conundrum, with three potential solutions outlined below.
 
@@ -70,3 +47,10 @@ With virtual cursor on button, screen reader should announce role, label (see "B
 Clicking or tapping button will toggle expanded state of popover.
 
 Clicking or tapping an option in popover will update button value and collapse the popover.
+
+## Known Issues
+
+These are all known _serious_ issues with assistive technology in relation to this pattern:
+
+- [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
+- [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)

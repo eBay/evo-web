@@ -1,23 +1,5 @@
 # Inline Notice Accessibility
 
-![Highest bidder notice](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcDyYJQOLTemZe960%2Finlinenotice.png?generation=1548799251668838&alt=media)
-
-## Introduction
-
-A notification that appears next to an individual element or control.
-
-In order of priority, from high to low, the status of an inline notice is classified as either:
-
-- attention
-- confirmation
-- information
-
-## Working Examples
-
-Experience the pattern in action on our companion [eBay MIND patterns examples website](http://ebay.github.io/mindpatterns/messaging/inline-notice/).
-
-View a fully styled example on [eBay Skin](https://opensource.ebay.com/skin/component/inline-notice/).
-
 ## Best Practices
 
 Avoid having more than one high-priority notice visible at any time.

@@ -50,7 +50,7 @@ For areas of a page that update a lot of content, it is good practice to try and
 
 ### role=dialog
 
-A `dialog` role informs the user that they are inside of a child window of the main page.&#x20;
+A `dialog` role informs the user that they are inside of a child window of the main page.
 
 A child window typically prompts the user to enter some information, confirm a response or to browse new content.
 
@@ -72,7 +72,7 @@ Caution must be exercised when applying this attribute because it is rare that w
 
 This attribute may only be used if intended to improve the experience for users of assistive technologies by removing redundant or extraneous content. Again, because this area is very subjective, caution is required.
 
-NOTE:  setting `aria-hidden` to "true" is not necessary if the element already has CSS `display: none` or the HTML5 [hidden attribute](http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute).
+NOTE: setting `aria-hidden` to "true" is not necessary if the element already has CSS `display: none` or the HTML5 [hidden attribute](http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute).
 
 ### role=presentation
 
@@ -82,7 +82,7 @@ You can think of this role as essentially converting an element into a meaningle
 
 When applied to a table, for example, the screenreader would no longer announce it as a table or its children as rows or columns, but it would still appear visually as a table. This behaviour can be desirable for pages or modules that use tables for layout rather than CSS.
 
-This attribute must be used with extreme care and prudence!&#x20;
+This attribute must be used with extreme care and prudence!
 
 ### role=application
 

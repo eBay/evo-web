@@ -1,36 +1,44 @@
 <div id="tourtip-overview">
-    <h1>Tourtip Component</h1>
-    <p class="component-subtitle">Informs the user of some new feature or section on the page.</p>
-    <component-banner-img />
+  <h1>Tourtip Component</h1>
+  <p class="component-subtitle">
+    Informs the user of some new feature or section on the page.
+  </p>
+  <component-banner-img/>
 
-    <p>
-        A tourtip points out a new feature or section of the page. A tourtip is open by default and must be explcitly closed using its close button. Once closed, it cannot be reopened.
-    </p>
-    <p>
-        Toggle the
-        <code>
-            tourtip--expanded
-        </code>
-         modifier to expand or collapse the tourtip.
-    </p>
+  <p>
+    Tourtip is a system-activated popover. The purpose of the tourtip is to
+    inform the user of some new feature or section on the page. A tourtip is
+    open by default and must be explicitly closed by the user. Once closed, it
+    cannot be reopened.
+  </p>
+  <p>
+    Toggle the${" "}
+    <code>tourtip--expanded</code>
+    ${" "}modifier to expand or collapse the tourtip.
+  </p>
 
-    <h2>Terminology</h2>
-    <p>We use the following terminology when discussing this pattern.</p>
-    <ul>
-        <li>
-            <strong>tourtip</strong>: the composite pattern as a whole, containing the following sub-parts
-        </li>
-        <li>
-            <strong>host</strong>: the element that hosts the tourtip
-        </li>
-        <li>
-            <strong>overlay</strong>: the non-modal overlay that contains the content related to it's host
-        </li>
-        <li>
-            <strong>tip</strong>: the tip content
-        </li>
-        <li>
-            <strong>expanded</strong>: the overlay state (true or false)
-        </li>
-    </ul>
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>tourtip</strong>
+      : the composite pattern as a whole, containing the following sub-parts
+    </li>
+    <li>
+      <strong>host</strong>
+      : the element that hosts the tourtip
+    </li>
+    <li>
+      <strong>overlay</strong>
+      : the non-modal overlay that contains the content related to it's host
+    </li>
+    <li>
+      <strong>tip</strong>
+      : the tip content
+    </li>
+    <li>
+      <strong>expanded</strong>
+      : the overlay state (true or false)
+    </li>
+  </ul>
 </div>

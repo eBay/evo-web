@@ -22,7 +22,7 @@ Experience the pattern in action on our companion [eBay MIND Patterns examples w
 
 The meter **must not** use colour alone to convey meaning.
 
-Each threshold or boundary that is conveyed via colour must also have that same meaning conveyed in visible text (for example, green = "good", red = "not good").&#x20;
+Each threshold or boundary that is conveyed via colour must also have that same meaning conveyed in visible text (for example, green = "good", red = "not good").
 
 ## Interaction Design
 

@@ -1,31 +1,5 @@
 # Page Notice Accessibility
 
-![Page notice requiring users attention.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJmfnCyi6cADHhV_RQk%2F-MJmjFyF_iT1oRutE__7%2Fpage-notice-dweb.png?alt=media&token=e4310480-5ad3-4797-a21d-0589bd01f2f7)
-
-## Introduction
-
-User notification which appears prominently at the top of the page, above the main content.
-
-In order of priority, from high to low, a page notice is classified as either:
-
-- attention
-- confirmation
-- information
-
-Page-notices may be rendered server-side and visible at page load time or, in a single page app environment, they might instead be triggered on the client after some user action.
-
-Composite patterns containing Page Notices are:
-
-- [Form Validation (server-side)](form-validation)
-
-## Working Examples
-
-Experience the pattern in action on our companion [eBay MIND patterns examples website](http://ebay.github.io/mindpatterns/messaging/page-notice/index.html).
-
-Examine the required markup structure in the [Bones GitHub project](https://github.com/ianmcburnie/bones#page-notice).
-
-View a fully styled example on our [eBay Skin website](https://opensource.ebay.com/skin/component/page-notice/).
-
 ## Best Practices
 
 A page notice **must** appear above the main page content, and _above_ the fold if possible.

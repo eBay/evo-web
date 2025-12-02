@@ -1,11 +1,49 @@
 <div id="table-overview">
-    <h1>Table Component</h1>
-    
-    <p>
-        A table represents tabular data—that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
-    </p>
+  <h1>Table Component</h1>
 
-    <p>
-        To allow scrolling of the table via a keyboard interface, the root element must be added to the page's tab sequence. This in turn requires the root element to have an accessible role and label.
-    </p>
+  <p>
+    A table represents tabular data—that is, information presented in a
+    two-dimensional table comprised of rows and columns of cells containing
+    data.
+  </p>
+
+  <p>
+    To allow scrolling of the table via a keyboard interface, the root element
+    must be added to the page's tab sequence. This in turn requires the root
+    element to have an accessible role and label.
+  </p>
+  <p>
+    **Do** **NOT** use tables as a means for visual layout of page structure in
+    rows and columns. Use CSS instead! See the ${" "}
+    <a href="../antipatterns/layout-table">
+      Layout Tables Anti-Pattern
+    </a>
+    ${" "}for more information.
+  </p>
+  <p>
+    <strong>Responsive Layouts</strong>
+    ${" "}${" "}Responsive considerations should be made to ensure that tables
+    are easily consumable and consistent across all screens.${" "}
+    <ul>
+      <li>
+        Data Tables should continue to look like tables on all screens including
+        smallest phone screens.
+      </li>
+      <li>
+        Data Tables should be fluid stretching to the width of the container.
+      </li>
+      <li>Data Tables should span the full width of containers.</li>
+      <li>
+        Data Tables should allow the columns to scroll horizontally inside the
+        table only. The entire page body should not be scrolling horizontally.
+      </li>
+      <li>
+        Data Tables that have a sticky header with an infinite scroll and no
+        pagination, should typically have a max-height less than the total
+        height of the viewport to allow users to easily scroll past the table
+        without having to exhaust the entire contents of the table before being
+        allowed to scroll to the rest of the page.
+      </li>
+    </ul>
+  </p>
 </div>

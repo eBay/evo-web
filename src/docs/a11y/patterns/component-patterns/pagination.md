@@ -1,13 +1,5 @@
 # Pagination Accessibility
 
-![SRP Pagination](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEyewE6uvQC83Zlb%2Fpagination.png?generation=1548799252843163&alt=media)
-
-## Introduction
-
-The pagination pattern allows a user to navigate back and forwards through a URL based dataset, or jump directly to any specific URL in that set.
-
-The pattern is typically used for pagination of search results.
-
 ## Best Practices
 
 Pagination may update the results immediately on the client via AJAX, or on the server via a full page reload. In both cases, the browser's URL will be updated to reflect the new, book-markable page of results.

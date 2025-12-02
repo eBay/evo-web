@@ -1,21 +1,5 @@
 # Menu Button Accessibility
 
-### Screenshots
-
-![Screenshot of expanded delivery options menu button.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LexISm2uybKtLNUWrsT%2F-LexKci97JEX6CM7SoFJ%2Fmenu-dweb.png?alt=media&token=171032b9-7390-4e20-a8b9-941f2bbc9959)
-
-### Introduction
-
-The menu button pattern is a JavaScript widget. It is a button that expands to reveal a [menu](menu) in a [popover](../disclosure/popover).
-
-A menu is appropriate when requiring a partial page re-render _without_ using a form or full page reload. For example: filtering and sorting of search results.
-
-A menu is not appropriate for a full page reload. For that, please use links instead (see the [Fake Menu](../navigation/fake-menu-button) pattern). The distinction between menu items and links is important. A menu item is a command that executes JavaScript, whereas a link is a command that navigates to a url.
-
-If your menu must contain a _mix_ of JavaScript behaviour and link behaviour, please use a regular list of buttons and links. Do no mix menu items with links.
-
-**TIP**: Do not call a menu button a "dropdown"! The term "dropdown" is ambiguous and could be confused with a listbox, combobox select or any other kind of overlay that "drops down". If you must, call it a dropdown menu.
-
 ### Best Practices
 
 See [menu best practices](menu).

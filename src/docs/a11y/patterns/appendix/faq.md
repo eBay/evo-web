@@ -24,17 +24,17 @@ No. Some screen readers automatically announce any changes to the programmatic l
 
 Also, the purpose of live-regions is for areas of the page _away_ from the current focus.
 
-If visually conveying a loading/waiting state within the button, make sure to change the label to "Busy", so that the busy status is programmatically determinable. If wishing to also convey a final completion state, it is recommended to do that outside of the button (in a Snackbar/Toast for example) using a live-region.&#x20;
+If visually conveying a loading/waiting state within the button, make sure to change the label to "Busy", so that the busy status is programmatically determinable. If wishing to also convey a final completion state, it is recommended to do that outside of the button (in a Snackbar/Toast for example) using a live-region.
 
 ### When should a live-region be used?
 
 Not every dynamic update to the page needs to be communicated to the user via a [live region](../techniques/live-region). Doing so could create a confusing, noisy and distracting experience for users of assistive technology.
 
-So when _should_ they be used? As ever with accessibility, the choice requires some prudence and scrutiny.&#x20;
+So when _should_ they be used? As ever with accessibility, the choice requires some prudence and scrutiny.
 
 #### Downstream Changes
 
-A general rule of thumb is that any change _on_ or _after_ the currently focussed element will be discovered in the natural reading order and therefore does not need to be communicated.&#x20;
+A general rule of thumb is that any change _on_ or _after_ the currently focussed element will be discovered in the natural reading order and therefore does not need to be communicated.
 
 A common pattern with forms is that selecting one option might dynamically change the next set of options. This is how paper forms work too, e.g. "Jump to section F if checkbox 1A is checked"; and removing this "thinking step" from web forms is actually a great accessibility feature! However, we do not need to announce that the options changed or that new options are available, and we certainly do not need to go into excruciating detail about what options _are_ now available. This would quickly get very silly for complicated forms with lots of changes.
 
@@ -136,7 +136,7 @@ However, there are other [_unknown_ factors](https://gds.blog.gov.uk/2013/10/21/
 - A script executes much later or slower than expected
 - A script fails due to incompatible browser support
 
-> &#x20;We don’t have any non-JavaScript users
+> We don’t have any non-JavaScript users
 >
 > No, _all_ your users are non-JS while they’re downloading your JS [Jake Archibald (@jaffathecake) May 28, 2012](https://twitter.com/jaffathecake/status/207096228339658752)
 

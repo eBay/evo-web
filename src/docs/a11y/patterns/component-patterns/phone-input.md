@@ -1,20 +1,12 @@
 # Phone Input Accessibility
 
-## Screenshots
-
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FkKqCdQVc63gOKY2zCG1N%2Fimage.png?alt=media&#x26;token=3accdfd8-bdee-4079-8b9f-883b1f6b3db4" alt=""><figcaption><p>Screenshot of expanded phone input</p></figcaption></figure>
-
-## Introduction
-
-The phone input pattern is a progressive enhancement of a textbox that provides as you type phone pattern for country. The country is selected with listbox button.
-
 ## Best Practices
 
 Phone input group **could** have an accessible label.
 
-Listbox button label must have an accessible label. Check [listbox button](listbox-button) best practices.&#x20;
+Listbox button label must have an accessible label. Check [listbox button](listbox-button) best practices.
 
-Textbox must have an accessible label.&#x20;
+Textbox must have an accessible label.
 
 Textbox should **not** be split to multiple input boxes.
 
@@ -30,7 +22,7 @@ The button **must** be keyboard focusable.
 
 Listbox button and textbox sit in the page's natural tab sequence.
 
-When Listbox button has focus, `TAB` key must move keyboard focus to textbox.&#x20;
+When Listbox button has focus, `TAB` key must move keyboard focus to textbox.
 
 When textbox has focus, `TAB` key moves focus to the next interactive element in the page.
 

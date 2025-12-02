@@ -1,48 +1,62 @@
 <div id="pagination-overview">
-    <h1>Pagination Component</h1>
-    <p class="component-subtitle">Navigate between pages of results.</p>
-    <component-banner-img />
+  <h1>Pagination Component</h1>
+  <p class="component-subtitle">
+    Navigate between pages of results.
+  </p>
+  <component-banner-img/>
 
-    <p>
-        Pagination allows a user to navigate back and forth through a URL based dataset, or jump directly to any specific URL in that set.
-    </p>
-    <p>
-        The pagination set has a maximum of seven items. An item can be a page number or an overflow element (see next section).
-    </p>
-    <p>
-        Traditional MPA pagination uses links to reload the entire page when clicked. For SPAs, this default click event behaviour can be prevented with JavaScript (${" "}
-        <code>
-            aria-live
-        </code>
-         should also be set from "off" to "on").
-    </p>
+  <p>
+    Pagination allows a user to navigate back and forth through a URL based
+    dataset, or jump directly to any specific URL in that set.
+  </p>
+  <p>
+    The pagination set has a maximum of seven items. An item can be a page
+    number or an overflow element (see next section).
+  </p>
+  <p>
+    Traditional MPA pagination uses links to reload the entire page when
+    clicked. For SPAs, this default click event behaviour can be prevented with
+    JavaScript (${" "}
+    <code>aria-live</code>
+    ${" "}should also be set from "off" to "on").
+  </p>
 
-    <h2>Terminology</h2>
-    <p>We use the following terminology when discussing this pattern.</p>
-    <ul>
-        <li>
-            <strong>Pagination</strong>: the composite pattern as a whole, containing the items defined below
-        </li>
-        <li>
-            <strong>Previous</strong>: Link that navigates to previous page of results
-        </li>
-        <li>
-            <strong>Next</strong>: Link that navigates to next page of results
-        </li>
-        <li>
-            <strong>Items</strong>: Links that navigate to exact page of results
-        </li>
-        <li>
-            <strong>Bookends</strong>: Collective name for the previous and next links, as they 'bookend' the navigation items
-        </li>
-        <li>
-            <strong>Current Page</strong>: The current resultset index, as reflected in the pagination UI
-        </li>
-        <li>
-            <strong>Client-Side Pagination</strong>: Pagination links trigger page content updates via AJAX
-        </li>
-        <li>
-            <strong>Server-Side Pagination</strong>: Pagination links trigger page content updates via full page reload
-        </li>
-    </ul>
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>Pagination</strong>
+      ${" "}: the composite pattern as a whole, containing the items defined
+      below
+    </li>
+    <li>
+      <strong>Previous</strong>
+      ${" "}: Link that navigates to previous page of results
+    </li>
+    <li>
+      <strong>Next</strong>
+      ${" "}: Link that navigates to next page of results
+    </li>
+    <li>
+      <strong>Items</strong>
+      ${" "}: Links that navigate to exact page of results
+    </li>
+    <li>
+      <strong>Bookends</strong>
+      ${" "}: Collective name for the previous and next links, as they 'bookend'
+      the navigation items
+    </li>
+    <li>
+      <strong>Current Page</strong>
+      ${" "}: The current resultset index, as reflected in the pagination UI
+    </li>
+    <li>
+      <strong>Client-Side Pagination</strong>
+      ${" "}: Pagination links trigger page content updates via AJAX
+    </li>
+    <li>
+      <strong>Server-Side Pagination</strong>
+      ${" "}: Pagination links trigger page content updates via full page reload
+    </li>
+  </ul>
 </div>

@@ -1,13 +1,5 @@
 # Segmented Buttons Accessibility
 
-<div align="center"><figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FLWAFNPr0PF4lrOEJARmi%2FSegmented%20Button%201.png?alt=media&#x26;token=dee918ca-2fdd-413a-89ea-76f9ae77f42f" alt="Screenshot 1 - Controlling a Chart"><figcaption><p>Screenshot 1 - Controlling a Chart</p></figcaption></figure></div>
-
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2F3QIBAgISkxApvzlTwQe6%2FSegmented%20Button%202.png?alt=media&#x26;token=572664b5-9ec7-4e5d-b644-f0c3829a5d96" alt="Screenshot 2 - Controlling Forms"><figcaption><p>Screenshot 2 - Branching Content</p></figcaption></figure>
-
-## Introduction
-
-Segmented buttons are a list of JavaScript-based buttons; their purpose is to control the state of an object (e.g. a chart) or the visibility of section content (e.g. branching content).
-
 ## Best Practices
 
 Segmented buttons are not form controls; although they can be used within a form to provide branching capabilties, they do not store and submit form data.

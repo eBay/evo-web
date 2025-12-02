@@ -6,7 +6,7 @@
 
 Form validation notifies users of invalid and missing data _after_ a user has attempted to submit the form.
 
-To validate a field _before_ the user attempts to submit the form, please view the [input validation](input-validation) pattern.&#x20;
+To validate a field _before_ the user attempts to submit the form, please view the [input validation](input-validation) pattern.
 
 After attempting to submit a form, the validation results can either be rendered immediately on the client, or rendered after a full page reload.
 

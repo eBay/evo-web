@@ -4,7 +4,7 @@
 
 ## Introduction
 
-A toggle button at the end of a list that when activated will be "pulled down" to reveal more list items. The button can be toggled again, restoring the initial state of the list.&#x20;
+A toggle button at the end of a list that when activated will be "pulled down" to reveal more list items. The button can be toggled again, restoring the initial state of the list.
 
 Not to be confused with the HTML details element. They have slightly different behaviour. The button in a details element always remains in place and its label never changes. In a pulldown list, the button toggles both its place in the DOM and its label.
 
@@ -24,7 +24,7 @@ This section provides interaction guidelines for keyboard, screen reader, and po
 
 Activating the button reveals new list items and moves the button to the end of these new items.
 
-The button text toggles between "Show More" and "Show Less".&#x20;
+The button text toggles between "Show More" and "Show Less".
 
 ### Keyboard
 

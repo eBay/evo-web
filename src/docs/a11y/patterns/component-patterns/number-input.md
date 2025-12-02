@@ -1,15 +1,5 @@
 # Number Input Accessibility
 
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FvXeeTNFYsj8qOuP9XdFS%2Fnumber-input.png?alt=media&#x26;token=d1209eb5-fb93-4f52-99be-a7a86b8f9648" alt="A numeric input field with prominent increase/decrease buttons."><figcaption><p>A numeric input field with prominent increase/decrease buttons.</p></figcaption></figure>
-
-## Introduction
-
-A **number input** allows users to select a number from a range of values. It consists of an input field and two buttons to increase or decrease the value.
-
-The default number type input field in HTML includes two small spin buttons to increase or decrease the input's value by one. Our number input pattern visually hides these default spin buttons, replacing them with larger increase and decrease buttons that perform the same function while providing more tap affordance for pointer users.
-
-Authors may implement a **quantity input** variant, which builds upon the number input pattern by adding a delete button. This variant can be useful in interfaces like digital carts, where users may prefer to remove items entirely rather than setting their quantity to zero.
-
 ## Best Practices
 
 - **Number input:**

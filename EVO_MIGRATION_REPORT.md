@@ -1,6 +1,6 @@
 # Migration Report
 
-**Date:** December 1, 2025
+**Date:** December 2, 2025
 **Task:** Restructuring component documentation to match the accordion pattern
 **Source:** `src/docs/a11y/patterns/component-patterns/[component].md`
 **Destination:** `src/routes/component/[component]/+page.marko`
@@ -55,11 +55,11 @@ Convert ARIA Reference from old format to a markdown table:
 ## Summary
 
 - **Total Components:** 84
-- **Components with Pattern Documentation:** 61
+- **Components with Pattern Documentation:** 62
 - **Components with Terminology Migrated:** 25
 - **Components with Subtitle Added:** 44
 - **Components with Banner Image Added:** 42
-- **Components with ARIA Reference Tables:** 34
+- **Components with ARIA Reference Tables:** 35
 - **Components Pending Full Restructuring:** 59
 
 ---
@@ -106,12 +106,12 @@ These components have Step 1 (Terminology) complete but still need Steps 3-6:
 - segmented-buttons, select, tabs
 - toggle-button-group, tooltip, tourtip
 
-### Fully Migrated Components (23 components)
+### Fully Migrated Components (22 components)
 
 These components have all 4 elements complete (Pattern + Terminology + Subtitle + Banner):
 
 - accordion, alert-dialog, avatar, breadcrumbs, calendar
-- carousel, chips-combobox, combobox, confirm-dialog
+- carousel, combobox, confirm-dialog
 - file-preview-card, infotip, lightbox-dialog
 - listbox, listbox-button, menu-button
 - number-input, pagination, phone-input
@@ -122,37 +122,33 @@ These components have all 4 elements complete (Pattern + Terminology + Subtitle 
 
 All component pattern docs with ARIA Reference sections now use clean markdown table format:
 
-**With Pattern + ARIA Reference (21):**
+**With Pattern + ARIA Reference (22):**
 
 - accordion, alert-dialog, avatar, badge, breadcrumbs, button
-- carousel, checkbox, chips-combobox, combobox
+- carousel, checkbox, chips-combobox, combobox, date-textbox
 - infotip, lightbox-dialog, link, menu, menu-button
 - pagination, radio, segmented-buttons, switch, table
 - toggle-button, toggle-button-group
 
-**ARIA Reference only (no pattern doc, but has pattern with ARIA) (1):**
-
-- date-textbox
-
-**Pattern docs with ARIA Reference but non-component patterns (12):**
+**Pattern docs with ARIA Reference but non-component patterns (13):**
 
 - fake-menu-button, fake-tabs, footnote, form-validation
 - image (⏸️), input-validation, panel-dialog (⏸️), popover
-- pulldown-list, region, toast-dialog
+- pulldown-list, region, star-rating-select, toast-dialog
 
 **Note:** Two components (image, panel-dialog) have ARIA Reference placeholders marked as "content not yet available" (⏸️)
 
-### Nearly Complete (1 component)
+### Nearly Complete (2 components)
 
 These components have Pattern + Terminology + Subtitle but are missing Banner:
 
-- menu
+- chips-combobox, menu
 
 ### Subtitle & Banner Added (Non-Pattern Components)
 
 These components don't have pattern documentation but have subtitle and banner added:
 
-- ccd, chip, cta-button, date-textbox, icon-button
+- ccd, chip, cta-button, icon-button
 - progress-stepper, section-notice, skeleton, snackbar-dialog, textbox
 
 ### Components Needing Subtitle & Banner (Pattern with No Terminology)
@@ -160,7 +156,7 @@ These components don't have pattern documentation but have subtitle and banner a
 These components have pattern documentation (no terminology section) but need subtitle and banner:
 
 - file-input, layout-grid, link, panel-dialog, star-rating
-- table, toast-dialog, toggle-button
+- star-rating-select, table, toast-dialog, toggle-button
 
 ---
 
@@ -181,11 +177,11 @@ These components have pattern documentation (no terminology section) but need su
 | chart-legend            | ❌                | ❌          | ❌       | ❌     | ❌             |
 | checkbox                | ✅                | ❌          | ✅       | ✅     | ✅             |
 | chip                    | ❌                | ❌          | ✅       | ✅     | ❌             |
-| chips-combobox          | ✅                | ✅          | ✅       | ✅     | ✅             |
+| chips-combobox          | ✅                | ✅          | ✅       | ❌     | ✅             |
 | combobox                | ✅                | ✅          | ✅       | ✅     | ✅             |
 | confirm-dialog          | ✅                | ✅          | ✅       | ✅     | ❌             |
 | cta-button              | ❌                | ❌          | ✅       | ✅     | ❌             |
-| date-textbox            | ❌                | ❌          | ✅       | ✅     | ✅             |
+| date-textbox            | ✅                | ❌          | ✅       | ✅     | ✅             |
 | details                 | ✅                | ❌          | ✅       | ✅     | ❌             |
 | donut-chart             | ❌                | ❌          | ❌       | ❌     | ❌             |
 | education-notice        | ❌                | ❌          | ❌       | ❌     | ❌             |
@@ -238,7 +234,7 @@ These components have pattern documentation (no terminology section) but need su
 | snackbar-dialog         | ❌                | ❌          | ✅       | ✅     | ❌             |
 | split-button            | ❌                | ❌          | ❌       | ❌     | ❌             |
 | star-rating             | ✅                | ❌          | ❌       | ❌     | ❌             |
-| star-rating-select      | ❌                | ❌          | ❌       | ❌     | ❌             |
+| star-rating-select      | ✅                | ❌          | ❌       | ❌     | ⏸️             |
 | svg                     | ❌                | ❌          | ❌       | ❌     | ❌             |
 | switch                  | ✅                | ❌          | ✅       | ✅     | ✅             |
 | table                   | ✅                | ❌          | ❌       | ❌     | ✅             |
@@ -259,33 +255,32 @@ These components have pattern documentation (no terminology section) but need su
 
 The following pattern documentation exists but has no corresponding component page:
 
-| Pattern File          | Status                                           |
-| --------------------- | ------------------------------------------------ |
-| description-list.md   | No component page                                |
-| fake-menu-button.md   | No component page                                |
-| fake-tabs.md          | No component page                                |
-| footnote.md           | No component page                                |
-| form.md               | No component page                                |
-| form-validation.md    | No component page                                |
-| heading.md            | No component page                                |
-| image.md              | No component page                                |
-| input-dialog.md       | No component page                                |
-| input-meter.md        | No component page                                |
-| input-validation.md   | No component page                                |
-| popover.md            | No component page                                |
-| pulldown-list.md      | No component page                                |
-| region.md             | No component page                                |
-| skip-navigation.md    | No component page                                |
-| star-rating-static.md | Component named differently (star-rating-select) |
-| table-cell.md         | No component page                                |
-| tile.md               | No component page                                |
-| time.md               | No component page                                |
+| Pattern File        | Status            |
+| ------------------- | ----------------- |
+| description-list.md | No component page |
+| fake-menu-button.md | No component page |
+| fake-tabs.md        | No component page |
+| footnote.md         | No component page |
+| form.md             | No component page |
+| form-validation.md  | No component page |
+| heading.md          | No component page |
+| image.md            | No component page |
+| input-dialog.md     | No component page |
+| input-meter.md      | No component page |
+| input-validation.md | No component page |
+| popover.md          | No component page |
+| pulldown-list.md    | No component page |
+| region.md           | No component page |
+| skip-navigation.md  | No component page |
+| table-cell.md       | No component page |
+| tile.md             | No component page |
+| time.md             | No component page |
 
 ---
 
 ## Migration Details
 
-### Patterns with No Terminology Section (16 components)
+### Patterns with No Terminology Section (18 components)
 
 These components have a11y pattern documentation, but the pattern docs don't include a terminology section:
 
@@ -293,6 +288,7 @@ These components have a11y pattern documentation, but the pattern docs don't inc
 - button
 - card
 - checkbox
+- date-textbox
 - details
 - file-input
 - inline-notice
@@ -302,23 +298,24 @@ These components have a11y pattern documentation, but the pattern docs don't inc
 - panel-dialog (content not yet available)
 - radio
 - star-rating
+- star-rating-select (content not yet available)
 - switch
 - table
 - toast-dialog (content not yet available)
 - toggle-button
 
-### Components Without Pattern Documentation (43 components)
+### Components Without Pattern Documentation (41 components)
 
 These components exist in the routes but have no corresponding a11y pattern documentation:
 
-- ccd, chart-legend, chip, cta-button, date-textbox, donut-chart
+- ccd, chart-legend, chip, cta-button, donut-chart
 - education-notice, eek, field, file-preview-card-group
 - filter-chip, filter-input, flag, floating-label, global
 - icon, icon-button, image-placeholder, item-tile, item-tile-group
 - less, list, marketsans, page-grid
 - progress-bar, progress-bar-expressive, progress-spinner, progress-stepper
 - sass, section-notice, section-title, selection-chip, signal, skeleton
-- snackbar-dialog, split-button, star-rating-select, svg
+- snackbar-dialog, split-button, svg
 - textbox, tokens, typography, utility
 
-**Report Generated:** December 1, 2025
+**Report Generated:** December 2, 2025

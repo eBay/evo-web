@@ -14,7 +14,7 @@ Examples of autocomplete are the URL bar in browsers, and the main search field 
 
 ### Chips
 
-Since `chips-combobox` manages the addition and removal of `chip(s)` , they require some key elements. A `chip` can be static of interactive. Static chips are extremely simple and don't require much guidance. Here, we will only be looking at interactive `chips`. Here's the markup for each `chip`:&#x20;
+Since `chips-combobox` manages the addition and removal of `chip(s)` , they require some key elements. A `chip` can be static of interactive. Static chips are extremely simple and don't require much guidance. Here, we will only be looking at interactive `chips`. Here's the markup for each `chip`:
 
 ```html
 <span class="chip">
@@ -32,7 +32,7 @@ Since `chips-combobox` manages the addition and removal of `chip(s)` , they requ
 </span>
 ```
 
-Each `chip` has a `button` inside that removes the chip from the `chips-combobox` . The `chip__text` needs an `id` that is used by the `button` via `aria-describedby` to link the `button` removal to the specific chip.&#x20;
+Each `chip` has a `button` inside that removes the chip from the `chips-combobox` . The `chip__text` needs an `id` that is used by the `button` via `aria-describedby` to link the `button` removal to the specific chip.
 
 The close `svg` icon for each chip needs to have `aria-hidden="true"` since its function is conveyed by the `button`.
 

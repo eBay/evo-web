@@ -1,18 +1,10 @@
 # Toast Dialog Accessibility
 
-![Toast dialog on small screen.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJiauYJxjbwkTZkWHqK%2F-MJibabBxJBz0rEj6Iue%2Ftoast-mweb.png?alt=media&token=27b8df76-2447-46a1-892b-41c662ce6109)
-
-![Toast dialog on large screen.](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-MJiauYJxjbwkTZkWHqK%2F-MJibhiZsl9UIlEuVTUa%2Ftoast-dweb.png?alt=media&token=f916e8fd-5b69-44f5-96d2-4d5f9e8b0439)
-
-## Introduction
-
-A toast dialog is a non-modal, non-intrusive dialog containing a system level notification for the user.
-
 ## Best Practices
 
 A toast dialog is non-modal and should **not** steal or trap keyboard focus.
 
-When the dialog becomes visible, it **must** be placed immediately after the current active element in the DOM. This ensures a logical reading and tabbing order in the page.&#x20;
+When the dialog becomes visible, it **must** be placed immediately after the current active element in the DOM. This ensures a logical reading and tabbing order in the page.
 
 ## Interaction Design
 

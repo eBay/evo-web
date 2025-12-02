@@ -1,17 +1,5 @@
 # Combobox Accessibility
 
-![Select phone model item specifics](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEF1Sjh9adTHwYti%2Fcombobox.png?generation=1548799252047216&alt=media)
-
-## Introduction
-
-A combobox serves the exact same _purpose_ as a textbox - allowing text to be input and submitted via a form. The combobox's main additional _feature_ is a listbox of suggestions that will update the textbox with the corresponding value when chosen.
-
-A combobox typically also offers _autocomplete_ behavour - whereby the list of suggestions is filtered based on the current textbox value (i.e. while the user is typing in the textbox) .
-
-## Configuration
-
-- **autoSelect**: a combobox with `autoSelect` will automatically select and fill the textbox value when user cycles through listbox options. Otherwise, `ENTER` key is required to manually select an option. Typically autoSelect will be `true` for a combobox with autocomplete behaviour.
-
 ## Best Practices
 
 Each row in the list of options performs only a singular action: setting the value of the textbox. It is not possible, at the time of writing, to have additional actions per row, e.g. add, edit or delete.

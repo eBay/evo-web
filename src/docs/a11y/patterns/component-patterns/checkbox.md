@@ -1,15 +1,5 @@
 # Checkbox Accessibility
 
-![Custom checkbox style](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcGLYCqUcCFwkuBYV%2Fcheckbox.png?generation=1548799254043735&alt=media)
-
-## Introduction
-
-Allows selection of zero or more items in a group of options.
-
-HTML gives us native checkboxes that are fully accessible by default. Unfortunately, the look-and-feel of these controls is often at odds with a web site's design system or branding guidelines. This issue is compounded by the fact that native HTML checkboxes are traditionally very difficult to re-style with CSS.
-
-Our pattern shows how modern CSS and SVG can be used to create a custom _facade_ over the native checkboxes, while maintaining accessibility requirements.
-
 ## Best Practices
 
 Checkboxes are form controls and _should_ be inside a form tag. The form _should_ have a submit button.

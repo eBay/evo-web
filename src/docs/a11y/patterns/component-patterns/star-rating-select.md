@@ -1,4 +1,4 @@
-# Panel Dialog Accessibility
+# Star Rating Select (interactive) Accessibility
 
 ## Best Practices
 

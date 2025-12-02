@@ -1,11 +1,5 @@
 # File Preview Card Accessibility
 
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FRyKkTjbCgQBMWHRG8wt6%2Fmind.png?alt=media&#x26;token=51a067da-be2e-405e-8ab5-e8684bcbaabe" alt="4 file preview cards: 1) File preview card with an icon representation of a CSV, visible name &#x22;countries.csv,&#x22; and menu icon button; 2) file preview card with photo of a frog and a menu icon button; 3) file preview card with a photo of a photographer and a menu icon button; 4) file preview card with a progress spinner and a Delete/Cancel icon button"><figcaption><p>Multiple preview cards with action buttons</p></figcaption></figure>
-
-## Introduction
-
-The file preview card pattern often pairs with the [file input](../input/file-input) pattern to provide information and actions about a file selected for upload. A typical file preview card displays a preview of a selected file, shows the file's upload status, and may include actions (such as "Cancel" or "Edit") for that file upload.
-
 ## Best Practices
 
 File preview cards **must** contain the file name as part of their accessible name. The name may be displayed as text in the card or included as the alternative text for the preview image. If the file name is displayed visually, the preview image's alternative text _should_ be an empty string to avoid redundancy.

@@ -50,7 +50,7 @@ If adding context to an ambiguous link, use [offscreen text](../techniques/offsc
 
 If link tag is empty (e.g. if it displays an icon and has no inner text), use aria-label. However, Voiceover on iOS has problems with empty link tags. Thus, for now, we recommend always using offscreen text.
 
-If the link contains an image with embedded text, the image must have alt text.&#x20;
+If the link contains an image with embedded text, the image must have alt text.
 
 ## Further Reading
 

@@ -1,15 +1,5 @@
 # Tooltip Accessibility
 
-<figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FAUxUfQWvGgLNUfywpM8l%2FTooltip%20-%20Outlook.png?alt=media&#x26;token=5f1eaf23-b468-4708-a1b2-53646f196bf8" alt=""><figcaption><p>Tooltip for the italic button in Microsoft Outlook</p></figcaption></figure>
-
-## Introduction
-
-Tooltip is a hover and focus-activated [popover](https://ebay.gitbook.io/mindpatterns/disclosure/popover).
-
-A tooltip describes the primary action of an interactive control. This content appears inside of an overlay when the control receives hover or focus.
-
-In desktop software tooltips are most commonly used in relation to toolbar buttons (e.g. the trashcan icon in a mail app). Web tooltips are more commonly experienced in relation to links, buttons and form controls.
-
 ## Best Practices
 
 First of all, the HTML title attribute is **not** an accessible tooltip. Read the [title tooltip anti-pattern](https://ebay.gitbook.io/mindpatterns/antipatterns/title-tooltip) for more details.
@@ -54,7 +44,7 @@ Overlay **must** appear after short delay whenever host receives mouseover.
 
 Overlay **must** disappear when neither the host or overlay have mouseover.
 
-### Touch
+### Pointer
 
 Many touch devices do not support hover interactions!
 

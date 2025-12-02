@@ -1,30 +1,5 @@
 # Listbox Accessibility
 
-## Screenshots
-
-No screenshot yet.
-
-## Introduction
-
-The listbox pattern is a JavaScript widget. It allows _selection_ of one or more items from a list of options.
-
-Because it is not a form control, the value will not be passed to the server without the help of some client-side JavaScript.
-
-A listbox can be self-contained, or be controlled by another widget (e.g. in a [combobox](combobox) pattern, the textbox _controls_ the listbox).
-
-## Known Issues
-
-These are all known _serious_ issues with assistive technology in relation to this pattern:
-
-- [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
-- [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)
-
-## Configuration
-
-- **autoSelect:** a listbox with auto select will update its checked state automatically as a user navigates with arrow keys (similar to a radio button group).
-- **multiSelect**: a listbox with multiSelect allows more than one option to be selected
-- **owner**: specify the focusable element that will own and control the listbox programmatically (e.g. a [combobox](combobox)).
-
 ## Best Practices
 
 This section is not yet available.
@@ -58,3 +33,10 @@ Disabled options must be announced as disabled.
 Clicking or tapping button will toggle expanded state of flyout.
 
 Clicking or tapping option in flyout will update button to that value.
+
+## Known Issues
+
+These are all known _serious_ issues with assistive technology in relation to this pattern:
+
+- [https://issues.chromium.org/issues/40260928](https://issues.chromium.org/issues/40260928)
+- [https://issues.chromium.org/issues/40945405](https://issues.chromium.org/issues/40945405)

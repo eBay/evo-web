@@ -22,8 +22,6 @@ The simple single-line numeric cell type contains a number or currency with no l
 
 The simple single-line date cell type contains a date with no layout whatsoever. It is always left-aligned in the cell.
 
-
-
 ## Link Cell
 
 The link cell is a simple cell except that it uses an anchor tag and results in a single-line link.
@@ -46,11 +44,6 @@ This cell type includes a listbox button that allows a user to select from exist
 
 ## Multiline Cell
 
-This is the type of cell that contains `Simple` and `Signal` cell contents but includes more than one line, but no more than a maximum of three lines.&#x20;
+This is the type of cell that contains `Simple` and `Signal` cell contents but includes more than one line, but no more than a maximum of three lines.
 
 <figure><img src="https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-LXQc7GhOtVRa7Lw1InO%2Fuploads%2FKmHHhw8j73s5UDW7bmoZ%2Fimage.png?alt=media&#x26;token=62d137d1-12c5-4a92-820d-a1597f83f0a8" alt=""><figcaption></figcaption></figure>
-
-
-
-
-

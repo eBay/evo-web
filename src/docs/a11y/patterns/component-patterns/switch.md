@@ -1,11 +1,5 @@
 # Switch Accessibility
 
-![Refinement Switch](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFbkVKWbNaSkVhq1%2Fswitch.png?generation=1548799253302997&alt=media)
-
-## Introduction
-
-A switch typically executes JavaScript on the client when toggled rather than storing form data to be sent to the server. If you require the switch to store data inside of a form, you may wish to consider using an actual checkbox instead.
-
 ## Best Practices
 
 Individual switch **must** have a visible, onscreen label.

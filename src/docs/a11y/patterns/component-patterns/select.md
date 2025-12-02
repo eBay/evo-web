@@ -1,17 +1,5 @@
 # Select Accessibility
 
-![Select a search category](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcEgOBcF4Eo5q_gfN%2Fselect.png?generation=1548799252119387&alt=media)
-
-## Introduction
-
-The select pattern is a form control. It allows _selection_ of one or more items from a list of options.
-
-Like all form controls, the value (or values) make up the form data that is passed to the server. If you require similar behaviour, but without the need for form data, please consider the [menu](menu) pattern instead.
-
-HTML already gives us a native select control that is 100% accessible. However, it is difficult to style and it's options do not support inner HTML.
-
-**Do not call a select a "dropdown"!** The term "dropdown" is ambiguous and could be confused with a menu, combobox, listbox or any other kind of overlay that "drops down".
-
 ## Best Practices
 
 Select **must** belong inside of a form element, and that form element **must** have a submit button.

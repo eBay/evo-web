@@ -1,22 +1,10 @@
 # Tabs Accessibility
 
-![Shipping option tabs](https://2555990442-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LXQc7GhOtVRa7Lw1InO%2F-LXQcCeGbjZ8h00A2PcZ%2F-LXQcFky70O5U8j-JXcn%2Ftabs.png?generation=1548799253367065&alt=media)
-
-## Introduction
-
-A tab is a control that allows the user to select and display a single panel of content from a group of choices. By decluttering the user-interface in this way, we say that tabs follow the principal of progressive disclosure.
-
-Selecting a tab should update the visible panel without a full page reload. If a full page load is required instead (i.e. acting like a link), please see the [fake tabs](https://ebay.gitbook.io/mindpatterns/navigation/fake-tabs) section below for more details.
-
-## Configuration
-
-- **autoSelect**: for keyboard users, tab selection can either follow keyboard focus (known as auto selection), or require an additional `ENTER` or `SPACEBAR` press to set selection (known as manual selection).
-
 ## Best Practices
 
 Tab list **must** be preceded by a heading. All tabs **must** be thematically related to this heading. For example, a set of 'Shipping Services' tabs might contain a tab each for USPS, FedEx and UPS.
 
-To maintain correct heading structure, tab panels **should** contain an [offscreen](https://ebay.gitbook.io/mindpatterns/techniques/offscreen-text) heading. The level of this panel heading **must** be exactly one level lower than the heading preceding the tablist. The heading text must match the corresponding tab text.&#x20;
+To maintain correct heading structure, tab panels **should** contain an [offscreen](https://ebay.gitbook.io/mindpatterns/techniques/offscreen-text) heading. The level of this panel heading **must** be exactly one level lower than the heading preceding the tablist. The heading text must match the corresponding tab text.
 
 Tab list **must** have exactly one selected tab.
 

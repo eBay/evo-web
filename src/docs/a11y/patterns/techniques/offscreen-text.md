@@ -65,7 +65,7 @@ Usage of `aria-label` is also supported:
 
 ### Ambiguous link text
 
-Link text that is used and repeated many times on the same page, each with a different context and URL. Again, offscreen text provides the unique context of the link in place.&#x20;
+Link text that is used and repeated many times on the same page, each with a different context and URL. Again, offscreen text provides the unique context of the link in place.
 
 ```html
 <a href="http://www.ebay.com/camera"

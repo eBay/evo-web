@@ -1,26 +1,48 @@
 <div id="listbox-overview">
-    <h1>Listbox Component</h1>
-    <p class="component-subtitle">Allows selection of one or more items from a list of options.</p>
-    <component-banner-img />
+  <h1>Listbox Component</h1>
+  <p class="component-subtitle">
+    Allows selection of one or more items from a list of options.
+  </p>
+  <component-banner-img/>
 
-    <p>
-        A listbox is intended for use as a custom, non-form based implementation of the native HTML select element.
-    </p>
+  <p>
+    The listbox pattern is a JavaScript widget. It allows _selection_ of one or
+    more items from a list of options. Because it is not a form control, the
+    value will not be passed to the server without the help of some client-side
+    JavaScript. A listbox can be self-contained, or be controlled by another
+    widget (e.g. in a [combobox](combobox) pattern, the textbox _controls_ the
+    listbox).
+  </p>
+  <p>
+    **autoSelect:** a listbox with auto select will update its checked state
+    automatically as a user navigates with arrow keys (similar to a radio button
+    group). - **multiSelect**: a listbox with multiSelect allows more than one
+    option to be selected - **owner**: specify the focusable element that will
+    own and control the listbox programmatically (e.g. a [combobox](combobox)).
+  </p>
+  <p>
+    A listbox is intended for use as a custom, non-form based implementation of
+    the native HTML select element.
+  </p>
 
-    <h2>Terminology</h2>
-    <p>We use the following terminology when discussing this pattern.</p>
-    <ul>
-        <li>
-            <strong>widget</strong>: the pattern as a whole, comprised of the parts below
-        </li>
-        <li>
-            <strong>listbox</strong>: contains a list of options
-        </li>
-        <li>
-            <strong>option</strong>: each option available for selection
-        </li>
-        <li>
-            <strong>checked</strong>: state of each option (checked or unchecked)
-        </li>
-    </ul>
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>widget</strong>
+      ${" "}: the pattern as a whole, comprised of the parts below
+    </li>
+    <li>
+      <strong>listbox</strong>
+      ${" "}: contains a list of options
+    </li>
+    <li>
+      <strong>option</strong>
+      ${" "}: each option available for selection
+    </li>
+    <li>
+      <strong>checked</strong>
+      ${" "}: state of each option (checked or unchecked)
+    </li>
+  </ul>
 </div>

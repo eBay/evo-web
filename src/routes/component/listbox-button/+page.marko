@@ -1,37 +1,58 @@
 <div id="listbox-button-overview">
-    <h1>Listbox Button Component</h1>
-    <p class="component-subtitle">A button that expands to reveal a listbox in a flyout.</p>
-    <component-banner-img />
+  <h1>Listbox Button Component</h1>
+  <p class="component-subtitle">
+    A button that expands to reveal a listbox in a flyout.
+  </p>
+  <component-banner-img/>
 
-    <p>
-        A listbox button is intended for use as a custom implementation of the native HTML select element's${" "}
-        <em>single</em>
-         -select use case.
-    </p>
-    <p>
-        Because a button element does not store form data, its value will not be submitted along with other form data without the assistance of JavaScript.
-    </p>
+  <p>
+    The listbox button pattern is a JavaScript widget. It is a button that
+    expands to reveal a [listbox](listbox) in a
+    [popover](../disclosure/popover). Because it is not a form control, the
+    button value will not automatically be passed to the server. If you require
+    this behaviour, please consider the [select](select) pattern instead.
+    **Avoid calling a listbox button a "dropdown"!** The term "dropdown" is
+    ambiguous and could be confused with a menu button, combobox, select or any
+    other kind of overlay that "drops down".
+  </p>
 
-    <h2>Terminology</h2>
-    <p>We use the following terminology when discussing this pattern.</p>
-    <ul>
-        <li>
-            <strong>widget</strong>: the pattern as a whole, comprised of the parts below
-        </li>
-        <li>
-            <strong>button</strong>: the button that opens the flyout
-        </li>
-        <li>
-            <strong>popover</strong>: the overlay element that contains the listbox
-        </li>
-        <li>
-            <strong>listbox</strong>: the list of options
-        </li>
-        <li>
-            <strong>option</strong>: an option, with state
-        </li>
-        <li>
-            <strong>label</strong>: internal and/or external text element(s)
-        </li>
-    </ul>
+  <p>
+    A listbox button is intended for use as a custom implementation of the
+    native HTML select element's${" "}
+    <em>single</em>
+    ${" "}-select use case.
+  </p>
+  <p>
+    Because a button element does not store form data, its value will not be
+    submitted along with other form data without the assistance of JavaScript.
+  </p>
+
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>widget</strong>
+      : the pattern as a whole, comprised of the parts below
+    </li>
+    <li>
+      <strong>button</strong>
+      : the button that opens the flyout
+    </li>
+    <li>
+      <strong>popover</strong>
+      : the overlay element that contains the listbox
+    </li>
+    <li>
+      <strong>listbox</strong>
+      : the list of options
+    </li>
+    <li>
+      <strong>option</strong>
+      : an option, with state
+    </li>
+    <li>
+      <strong>label</strong>
+      : internal and/or external text element(s)
+    </li>
+  </ul>
 </div>

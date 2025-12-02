@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The input dialog pattern is a specific type of [lightbox dialog](../disclosure/lightbox-dialog) that prompts a user for their input.&#x20;
+The input dialog pattern is a specific type of [lightbox dialog](../disclosure/lightbox-dialog) that prompts a user for their input.
 
 The behaviour is similar to JavaScript's [window.prompt()](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) method.
 

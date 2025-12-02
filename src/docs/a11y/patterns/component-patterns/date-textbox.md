@@ -1,9 +1,5 @@
 # Date Textbox Accessibility
 
-### Introduction
-
-A custom date textbox is usually presented in tandem with a textfield, as an alternative means to enter dates and date ranges with a calendar based interface.
-
 ## Best Practices
 
 A date textbox should have a layout familiar with other popular systems and conventions. A data table works well.
@@ -20,7 +16,7 @@ The date textbox exposes 3 keyboard focusable areas with TAB key:
 
 - The previous month button
 - The next month button
-- A date button\*&#x20;
+- A date button\*
 
 _\*Which date button receives focus can change depending on certain factors._
 

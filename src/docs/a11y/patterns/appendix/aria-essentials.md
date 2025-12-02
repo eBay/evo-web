@@ -14,7 +14,7 @@ Use `aria-label` when there is no suitable labeling text onscreen (this issue is
 
 Describe an interactive element using existing onscreen text.
 
-A description is different from a label. Labels indicate the *purpose* of the field, whereas descriptions are give secondary information on how to use or operate the field.
+A description is different from a label. Labels indicate the _purpose_ of the field, whereas descriptions are give secondary information on how to use or operate the field.
 
 For example, using this attribute we could announce the associated terms and conditions of a checkbox.
 
@@ -46,11 +46,11 @@ Changes can be notified assertively, interrupting the screenreader's current ann
 
 By default, only the updated content inside the element will be announced, rather than the entire content of the element. This behaviour can be changed with the [aria-atomic](http://www.w3.org/TR/wai-aria/states_and_properties#aria-atomic) property.
 
-For areas of a page that update a lot of content, it is good practice to try and create a live region that summarizes *what* content has changed, rather than try and announce all of the new content. A data table with lots of dynamically changing data, we could summarize as "table data updated", for example.
+For areas of a page that update a lot of content, it is good practice to try and create a live region that summarizes _what_ content has changed, rather than try and announce all of the new content. A data table with lots of dynamically changing data, we could summarize as "table data updated", for example.
 
 ### role=dialog
 
-A `dialog` role informs the user that they are inside of a child window of the main page.&#x20;
+A `dialog` role informs the user that they are inside of a child window of the main page.
 
 A child window typically prompts the user to enter some information, confirm a response or to browse new content.
 
@@ -62,7 +62,7 @@ With modality set to "true", all input devices should be restricted from accessi
 
 ### **WARNING!**
 
-Our final set of ARIA attributes listed below are deemed as *potentially* dangerous and therefore essential knowledge is required n order to avoid their misuse.
+Our final set of ARIA attributes listed below are deemed as _potentially_ dangerous and therefore essential knowledge is required n order to avoid their misuse.
 
 ### aria-hidden
 
@@ -72,7 +72,7 @@ Caution must be exercised when applying this attribute because it is rare that w
 
 This attribute may only be used if intended to improve the experience for users of assistive technologies by removing redundant or extraneous content. Again, because this area is very subjective, caution is required.
 
-NOTE:  setting `aria-hidden` to "true" is not necessary if the element already has CSS `display: none` or the HTML5 [hidden attribute](http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute).
+NOTE: setting `aria-hidden` to "true" is not necessary if the element already has CSS `display: none` or the HTML5 [hidden attribute](http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute).
 
 ### role=presentation
 
@@ -82,7 +82,7 @@ You can think of this role as essentially converting an element into a meaningle
 
 When applied to a table, for example, the screenreader would no longer announce it as a table or its children as rows or columns, but it would still appear visually as a table. This behaviour can be desirable for pages or modules that use tables for layout rather than CSS.
 
-This attribute must be used with extreme care and prudence!&#x20;
+This attribute must be used with extreme care and prudence!
 
 ### role=application
 
@@ -92,4 +92,4 @@ By applying this role to an element, you are basically saying that you, as the d
 
 Applying this role to an element can have severe consequences to screenreader users. Applying this role to the body tag for example, can render the entire page unusable.
 
-Even if you *think* you need this role, you most probably don't, so please exercise extreme caution. You have been warned!
+Even if you _think_ you need this role, you most probably don't, so please exercise extreme caution. You have been warned!
