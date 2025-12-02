@@ -1,0 +1,69 @@
+<div class="a11y-pattern-content">
+  <h1>Heading</h1>
+  <h2>Introduction</h2>
+  <p>
+    Upon visiting a web page for the first time, a sighted user will typically
+    scan the headings of the page to create a visual model of its content. On
+    subsequent visits to the page, the user recollects this visual model.
+  </p>
+  <p>
+    A non-sighted user will typically want to do exactly the same, using their
+    screen reader to scan for headings to create a mental model.
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    Every page
+    <strong>must</strong>
+    have a single H1 heading.
+  </p>
+  <p>
+    The H1 heading
+    <strong>should</strong>
+    describe the content and purpose of the page.
+  </p>
+  <p>
+    The H1 heading does
+    <em>not</em>
+    need to be the first heading in the page.
+  </p>
+  <p>
+    Every page region requires a single H2 heading. This heading describes the
+    content and purpose of the region. It is good practice to wrap every page
+    region in a div or section tag.
+  </p>
+  <p>
+    Every page region can contain multiple H3 - H6 headings, but they
+    <em>must</em>
+    be placed in the markup in strict hierarchical order.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Headings are not interactive elements and therefore have no keyboard
+    interaction.
+  </p>
+  <p>
+    <strong>NOTE</strong>
+    : headings can
+    <em>contain</em>
+    links, which
+    <em>are</em>
+    interactive elements.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>Screen reader will identify heading by it’s level, e.g. 1 to 6.</p>
+  <h3>Pointer</h3>
+  <p>
+    Headings are not interactive elements and therefore have no pointer
+    interaction.
+  </p>
+  <p>
+    A heading may give the illusion of being an interactive element if it
+    contains a link, or is wrapped in a link, but the heading element itself is
+    not clickable.
+  </p>
+</div>

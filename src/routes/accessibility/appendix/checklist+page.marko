@@ -1,0 +1,727 @@
+<div class="a11y-pattern-content">
+  <h1>Checklist</h1>
+  <p>
+    A manual checklist is of course no substitute for automated testing, or
+    static analysis, of your page. A checklist can though help us catch a
+    certain class of issues that might not be surfaced by such tools, or that
+    might result in false positives.
+  </p>
+  <p>
+    Most, if not all, of the “general” items can be identified with an automated
+    testing tool or browser plugin, such as
+    <a href="https://www.deque.com/axe">
+      Axe by Deque
+    </a>
+    . The component specific level checklists will require manual testing.
+  </p>
+  <h2>General</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure your page has a valid doctype e.g.
+          <code>&lt;!doctype html&gt;</code>
+          for HTML5
+        </td>
+        <td>
+          Standards mode helps improve consistent screen reader behaviour.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure your html tag has a valid lang attribute e.g.
+          <code>&lt;html lang=&quot;en&quot;&gt;</code>
+        </td>
+        <td>
+          Informs the screen reader of which language to read your page in.
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure your head section has a valid title element</td>
+        <td>
+          Informs the screen reader of the purpose and/or content of the page.
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure unique ids for all elements</td>
+        <td>
+          Duplicate IDs can prevent screen reader from reading form labels.
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure dynamically generated ids are unique</td>
+        <td>
+          Duplicate IDs can prevent screen reader from reading form labels.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure HTML attributes are used to convey state rather than classnames
+          e.g.
+          <code>&lt;button disabled&gt;</code>
+          rather than
+          <code>&lt;button class=&quot;disabled&quot;&gt;</code>
+        </td>
+        <td>Class names provide no semantics to screen readers</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure ARIA attributes are used to convey state rather than classnames
+          e.g.
+          <code>
+            &lt;a role=&quot;tab&quot; aria-selected=&quot;true&quot;&gt;
+          </code>
+          rather than
+          <code>
+            &lt;a class=&quot;tab&quot; class=&quot;selected&quot;&gt;
+          </code>
+        </td>
+        <td>Class names provide no semantics to screen readers</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure
+          <code>&lt;i&gt;</code>
+          tags are not used as CSS icon holders. Use a
+          <code>&lt;span&gt;</code>
+          element instead.
+        </td>
+        <td>These tags have specific semantics to screen readers.</td>
+      </tr>
+      <tr>
+        <td>Ensure a single h1 heading exists on the page</td>
+        <td>This tells the user where they are and the purpose of the page.</td>
+      </tr>
+      <tr>
+        <td>Ensure that all main page regions have a single h2 heading</td>
+        <td>
+          This will help a screen reader user make a mental model of the page.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure any page landmarks have relevant ARIA roles (e.g. banner, nav,
+          main, complementary)
+        </td>
+        <td>
+          This will help a screenreader user scan &amp; navigate the page.
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure all page landmarks are labelled (except role=“main”).</td>
+        <td>This will provide a human readable description of the landmark.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure that your main content wrapper has id=“mainContent”,
+          tabindex=“-1”, role=“main”
+        </td>
+        <td>
+          This is required by “Skip to Main Content” link in eBay global header.
+        </td>
+      </tr>
+      <tr>
+        <td>Do not set a tabindex attribute other than -1 or 0</td>
+        <td>
+          Only the DOM order should be used to dictate order of keyboard
+          navigation. A value of -1 allows programmatic focus with JavaScript. A
+          value of 0 adds element to natural tab order. Use with care.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Do not set a non-negative tabindex attribute on non-interactive
+          elements or text
+        </td>
+        <td>Non-interactive elements must never be in the tab order.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure non-modal overlays are placed adjacent in the DOM to their
+          nearest visual element
+        </td>
+        <td>
+          Allows natural tab order and screen reading order from page into
+          flyout overlay
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure noscript tag is only used as a fallback for lazy loaded images
+        </td>
+        <td>
+          Noscript tag is an anti-pattern. Use progressive enhancement instead.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Carousel</h2>
+  <p>
+    A carousel is a composite pattern containing two left/right “paddle” buttons
+    and a viewport. The viewport contains
+    <em>n</em>
+    items and the paddles update the content of this viewport.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ensure the carousel is preceded by a heading</td>
+        <td>
+          Screen reader users (all users, infact) want to know what the carousel
+          contains
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure a list is used to markup the carousel items</td>
+        <td>
+          A list informs screen reader user of number of items and current
+          position in list
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure carousel items outside of viewport are not in taborder</td>
+        <td>Only the visible items should be in tab order</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure carousel items outside of viewport are hidden from screen
+          reader using
+          <code>aria-hidden=&quot;true&quot;</code>
+        </td>
+        <td>Only the visible items should be available to screen reader</td>
+      </tr>
+      <tr>
+        <td>Ensure any slideshow behaviour can be paused</td>
+        <td>Slideshows are distracting to users with cognitive disabilities</td>
+      </tr>
+      <tr>
+        <td>Ensure any auto-play slideshow behaviour loops only once</td>
+        <td>
+          Some users prefer to wait for slideshow to end before interacting with
+          page
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure carousels have left/right pagination buttons</td>
+        <td>Keyboard user needs a way of paginating the carousel viewport</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure all pagination controls have an accessible label e.g.
+          <code>
+            &lt;button class=&quot;icon-arrow-right&quot; aria-label=&quot;Next
+            slide&quot; /&gt;
+          </code>
+        </td>
+        <td>
+          Critical icon buttons need an accessible label for screen readers
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Combobox</h2>
+  <p>
+    Combobox is a composite pattern containing a textbox and flyout listbox. A
+    combobox may optionally be enhanced with autocomplete behaviour (see
+    specific guidance in the table below).
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure text input has
+          <code>autocomplete=&quot;off&quot;</code>
+        </td>
+        <td>
+          Disables built-in HTML5 autocomplete which interferes with this
+          control
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure textbox has
+          <code>role=&quot;combobox&quot;</code>
+        </td>
+        <td>
+          Informs assistive technology that this input has an associated listbox
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure textbox has
+          <code>aria-expanded</code>
+          attribute
+        </td>
+        <td>Informs assistive technology of listbox state (true or false</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure textbox has
+          <code>aria-activedescendant</code>
+          state
+        </td>
+        <td>
+          Informs assistive technology of current active suggestion in list
+        </td>
+      </tr>
+      <tr>
+        <td>Ensure listbox has a unique id</td>
+        <td>The textbox input needs to reference this ID</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure suggestion listbox has
+          <code>role=&quot;listbox&quot;</code>
+        </td>
+        <td>Informs assistive technology of listbox semantics</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure each option in listbox has
+          <code>role=&quot;option&quot;</code>
+        </td>
+        <td>Informs assistive technology of listbox option semantics</td>
+      </tr>
+      <tr>
+        <td>Ensure each option in listbox has unique id</td>
+        <td>Used in conjunction with aria-activedescendant</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure active option in listbox has
+          <code>aria-selected=&quot;true&quot;</code>
+        </td>
+        <td>
+          Required by voiceover (but not other screen readers) to identify the
+          active listbox option
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure listbox active descendant is navigable with up/down arrow keys.
+        </td>
+        <td>Allows keyboard user to select an option</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure focus remains in textbox while options are navigated with arrow
+          keys.
+        </td>
+        <td>Allows keyboard user to edit text</td>
+      </tr>
+      <tr>
+        <td>
+          OPTIONAL: Ensure combobox has offscreen status region detailing number
+          of suggestions
+        </td>
+        <td>
+          In some screen readers, combobox functionality will not be
+          discoverable without this hint
+        </td>
+      </tr>
+      <tr>
+        <td>
+          For autocomplete behaviour, ensure text input has
+          <code>aria-autocomplete=&quot;list&quot;</code>
+        </td>
+        <td>
+          Informs assistive technology that list of suggestions (listbox) will
+          be displayed
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Dialog</h2>
+  <p>Dialogs may be modal or non-modal (less common).</p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure dialog has
+          <code>role=&quot;dialog&quot;</code>
+        </td>
+        <td>
+          Assistive technology will inform user of dialog behaviour when focus
+          enters dialog
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure dialog is labelled with
+          <code>aria-labelledby</code>
+          or
+          <code>aria-label</code>
+        </td>
+        <td>
+          Assistive technology will inform user of dialog purpose when focus
+          enters dialog
+        </td>
+      </tr>
+      <tr>
+        <td>
+          If modal, ensure
+          <code>aria-modal=&quot;true&quot;</code>
+          is present
+        </td>
+        <td>
+          Assistive technology will present different behaviour for input device
+          based on this value
+        </td>
+      </tr>
+      <tr>
+        <td>
+          If modal, ensure dialog contains at least one interactive element
+        </td>
+        <td>This allows us to set focus on a window element on open.</td>
+      </tr>
+      <tr>
+        <td>
+          If modal, ensure dialog has keydown event handler for
+          <code>ESC</code>
+          key
+        </td>
+        <td>This allows keyboard users to easily dismiss the dialog</td>
+      </tr>
+      <tr>
+        <td>If modal, ensure keyboard focus cannot leave dialog</td>
+        <td>Modal elements should constrain keyboard focus</td>
+      </tr>
+      <tr>
+        <td>
+          If modal, ensure screen reader virtual cursor cannot leave dialog
+        </td>
+        <td>Modal elements should constrain virtual cursor</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Switch</h2>
+  <p>
+    Switch is an input pattern that allows user to choose between “on” &amp;
+    “off” states typically by executing JavaScript when toggled.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure switch has a
+          <code>role=&quot;switch&quot;</code>
+        </td>
+        <td>
+          Informs assistive technology that this input is a switch control
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure switch custom control(i.e. not
+          <code>input[type=checkbox]</code>
+          ) has
+          <code>aria-checked=&quot;true&quot;</code>
+          when turned ''on&quot;
+        </td>
+        <td>Informs assistive technology that switch is on</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure switch custom control(i.e. not
+          <code>input[type=checkbox]</code>
+          ) has
+          <code>aria-checked=&quot;false&quot;</code>
+          when turned ''off&quot;
+        </td>
+        <td>Informs assistive technology that switch is off</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure switch control can be toggled with
+          <code>SPACEBAR</code>
+          key on focus.
+        </td>
+        <td>Allows keyboard user to toggle between “on” and “off” states</td>
+      </tr>
+      <tr>
+        <td>
+          OPTIONAL: Ensure switch control is operable with left/right arrow keys
+          on focus.
+        </td>
+        <td>
+          Allows keyboard user to “on” switch using right key and “off” using
+          left key
+        </td>
+      </tr>
+      <tr>
+        <td>
+          OPTIONAL: Ensure switch control can be toggled with
+          <code>ENTER</code>
+          key on focus.
+        </td>
+        <td>Allows keyboard user to toggle between “on” and “off” states</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Infotip</h2>
+  <p>
+    Infofip is a composite pattern with button and a flyout overlay. It
+    discloses supplementary or advisory content about an existing onscreen
+    element or region.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure button has an accessible label e.g.
+          <code>
+            &lt;button class=&quot;infotip__host&quot;
+            aria-label=&quot;Info&quot; .../&gt;
+          </code>
+        </td>
+        <td>Informs assistive technology define purpose (e.g. Info).</td>
+      </tr>
+      <tr>
+        <td>Ensure overlay does not open on button focus/hover.</td>
+        <td>
+          Infotip pattern should not be used for this behavior. Refer tooltip.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure Infotip can toggle overlay using
+          <code>SPACEBAR</code>
+          or
+          <code>ENTER</code>
+          key on focus.
+        </td>
+        <td>Allows keyboard user to toggle the overlay.</td>
+      </tr>
+      <tr>
+        <td>Ensure Infotip remain expanded until explicitly closed.</td>
+        <td>
+          Infotip can be closed with a close button or programmatically closed
+          by another component (e.g. nearby Infotip).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure overlay has
+          <code>display: none</code>
+          or
+          <code>hidden</code>
+          when overlay in collapsed state.
+        </td>
+        <td>Overlay content is programmatically and visually hidden.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure host button has
+          <code>aria-expanded=&quot;false&quot;</code>
+          when overlay is in collapsed state.
+        </td>
+        <td>
+          Informs assistive technology expanded state and the AT cannot access
+          overlay during collapsed state.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure button has
+          <code>aria-expanded=&quot;true&quot;</code>
+          when overlay is in expanded state.
+        </td>
+        <td>Informs assistive technology that overlay is opened.</td>
+      </tr>
+      <tr>
+        <td>Ensure Infotip button overlay is responsive.</td>
+        <td>To ensure content is accessible for all screen sizes.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure Infotip button is placed adjacent to the flyout in the DOM.
+        </td>
+        <td>
+          Allows natural tab order and screen reading order from button into
+          flyout overlay.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure overlay content be no more than two paragraphs in length.
+        </td>
+        <td>Use dialog pattern to for lengthier content.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Tooltip</h2>
+  <p>
+    Tooltip is a composite pattern under flyout. It provides descriptive or
+    advisory content about a control.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure element has an accessible label e.g.
+          <code>
+            &lt;button class=&quot;tooltip__host&quot;
+            aria-label=&quot;Close&quot; .../&gt;
+          </code>
+        </td>
+        <td>Informs assistive technology define purpose (e.g. close).</td>
+      </tr>
+      <tr>
+        <td>Ensure overlay opens on element focus/hover.</td>
+        <td>Tooltips help users with supplementing extra information.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure flyout has
+          <code>role=&quot;tooltip&quot;</code>
+        </td>
+        <td>Informs assistive technology that this element is a tooltip.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure host element is labelled appropriately with
+          <code>aria-describedby</code>
+          .
+        </td>
+        <td>
+          Elements should be referenced through the use of
+          <code>aria-describedby</code>
+          before or when the tooltip is displayed.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure overlay has
+          <code>display: none</code>
+          or
+          <code>hidden</code>
+          when overlay in collapsed state.
+        </td>
+        <td>Overlay content is programmatically and visually hidden.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure host element has
+          <code>aria-expanded=&quot;false&quot;</code>
+          when overlay is in collapsed state.
+        </td>
+        <td>
+          Informs assistive technology expanded state and the AT cannot access
+          overlay during collapsed state.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure host element has
+          <code>aria-expanded=&quot;true&quot;</code>
+          when the overlay is in expanded state.
+        </td>
+        <td>Informs assistive technology that overlay is opened.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure tooltip button is placed adjacent to the flyout in the DOM.
+        </td>
+        <td>
+          Allows natural tab order and screen reading order from page into
+          flyout overlay.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure overlay content be no more than two paragraphs in length.
+        </td>
+        <td>Use dialog pattern to for lengthier content.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Tourtip</h2>
+  <p>
+    Tourtip is a composite pattern under flyout. It informs user of some new
+    features or sections on the page.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>What?</th>
+        <th>Why?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ensure overlay remain on screen until explicitly dismissed by user.
+        </td>
+        <td>Informs assistive technology that an overlay is opened.</td>
+      </tr>
+      <tr>
+        <td>Ensure overlay must contain a button to dismiss the tourtip.</td>
+        <td>Tourtip must be closed by an explicit button.</td>
+      </tr>
+      <tr>
+        <td>
+          Ensure overlay cannot be opened once closed without a full page
+          refresh.
+        </td>
+        <td>Tourtip once closed should not be opened.</td>
+      </tr>
+      <tr>
+        <td>Ensure tourtip is placed adjacent to the flyout in the DOM.</td>
+        <td>
+          Allows natural tab order and screen reading order from page into
+          flyout overlay.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Ensure overlay content be no more than two paragraphs in length.
+        </td>
+        <td>Use dialog pattern to for lengthier content.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We will be adding more checklists soon.</p>
+  <p>Stay tuned. more checklists for custom controls to follow.…</p>
+</div>

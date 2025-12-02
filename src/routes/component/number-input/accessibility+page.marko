@@ -1,1 +1,106 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Number Input Accessibility</h1>
+  <h2>Best Practices</h2>
+  <ul>
+    <li>
+      <strong>Number input:</strong>
+      <ul>
+        <li>
+          The decrease button must be disabled when the value is at its minimum.
+          Similarly, the increase button must be disabled when the value is at
+          its maximum.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Quantity input:</strong>
+      <ul>
+        <li>
+          For fields with a minimum value greater than 0, authors may add a
+          delete button that appears in place of the decrease button when the
+          value reaches its minimum.
+        </li>
+        <li>
+          The delete button must be after the input field in the DOM and tab
+          order, even if it appears visually before it.
+        </li>
+        <li>
+          Pressing the delete button should remove the entire number input.
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction guidelines for keyboard, screen reader,
+    and pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    The input field
+    <strong>must</strong>
+    respect all the default keyboard interactions for an HTML input field
+    of type=“number”. With focus on the input field, user can:
+  </p>
+  <ul>
+    <li>Type a numeric value</li>
+    <li>
+      Press UP arrow to increment the value, up to the max value (if one is set)
+    </li>
+    <li>
+      Press DOWN arrow to decrement the value, down to the min value (if one is
+      set)
+    </li>
+    <li>
+      TAB to next focusable element on the page, SHIFT + TAB to previous
+      focusable element
+    </li>
+  </ul>
+  <p>
+    The increase and decrease buttons
+    <em>should</em>
+    not be keyboard accessible.
+  </p>
+  <p>
+    For quantity input, the delete button
+    <strong>must</strong>
+    follow
+    <a href="https://ebay.gitbook.io/mindpatterns/input/button#interaction-design">
+      all standard button keyboard interactions
+    </a>
+    . After deleting an entry, focus must move to the nearest focusable element.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    The input field
+    <strong>must</strong>
+    be reachable with a screen reader (even when disabled).
+  </p>
+  <p>
+    The input field
+    <strong>must</strong>
+    be announced as an input of type number.
+  </p>
+  <p>
+    The input field’s label
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>
+    The increase and decrease buttons
+    <em>should</em>
+    be hidden from the screen reader to avoid redundancy.
+  </p>
+  <p>
+    For quantity input, the delete button
+    <strong>must</strong>
+    convey its accessible label, e.g. “Delete item.”
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking the increase or decrease buttons
+    <strong>must</strong>
+    adjust the value by one and return focus to the input field, so that
+    the user can easily switch between pointer and keyboard input as desired.
+  </p>
+</div>

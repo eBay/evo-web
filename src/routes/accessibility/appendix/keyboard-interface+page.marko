@@ -1,0 +1,77 @@
+<div class="a11y-pattern-content">
+  <h1>Keyboard Interface</h1>
+  <h2>
+    <strong>Tab sequence</strong>
+  </h2>
+  <p>
+    The TAB and SHIFT+TAB keys move focus from one user interface control to
+    another. The path that the focus follows is known as the tab sequence.
+  </p>
+  <h2>
+    <strong>Composite widgets</strong>
+  </h2>
+  <p>
+    Some controls themselves contain nested interactive items, only reachable
+    with the ARROW keys. These composite, widget-like controls will have one of
+    two interface types:
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Roving Tabindex</th>
+        <th>Active Descendant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <p>
+            Only one item at a given time exists in the page’s tab sequence.
+          </p>
+          <p>
+            The arrow keys move this status (and focus) from one item to the
+            next when pressed.
+          </p>
+        </td>
+        <td>
+          <p>Only the parent/owner is in the page’s tab sequence.</p>
+          <p>
+            The arrow keys move pseudo-focus from one child to the next; the
+            parent/owner retains the real keyboard focus.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>Examples: menu, radio group, tablist.</td>
+        <td>Examples: combobox, listbox.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>
+    <strong>Action keys</strong>
+  </h2>
+  <p>
+    Most interactive elements are actioned using the ENTER and/or SPACEBAR keys
+    (e.g. ENTER key activates a link).
+  </p>
+  <h2>
+    <strong>Escape key</strong>
+  </h2>
+  <p>
+    The ESC key offers a shortcut to cancel, clear or close some step (e.g. ESC
+    key will close a dialog).
+  </p>
+  <h2>
+    <strong>Scroll keys</strong>
+  </h2>
+  <p>
+    These keys can control the scroll position of the current scrollable region,
+    they are: Left Arrow, Right Arrow, Up Arrow, Down Arrow, Spacebar, Page Up,
+    Page Down, Home &amp; End.
+  </p>
+  <h2>Keyboard focus indicator</h2>
+  <p>
+    Interactive elements must have a focus indicator that is visible and
+    distinguishable from the background.
+  </p>
+</div>

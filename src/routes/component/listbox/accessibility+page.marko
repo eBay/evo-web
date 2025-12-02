@@ -1,1 +1,86 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Listbox Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>This section is not yet available.</p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader &amp;
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    If the listbox has no owner, the listbox
+    <strong>must</strong>
+    be keyboard focusable.
+  </p>
+  <p>
+    If a listbox has keyboard focus,
+    <code>UP-ARROW</code>
+    and
+    <code>DOWN-ARROW</code>
+    keys must change the highlighted option (skipping any that are
+    disabled).
+  </p>
+  <p>
+    For a focusable listbox, keyboard focus will
+    <em>appear</em>
+    to be at two places at the same time (the listbox and the options). In
+    actual fact, keyboard focus always stays on the listbox. The
+    <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant">
+      aria-activedescendant
+    </a>
+    property controls the pseudo-focus inside of the listbox and we can
+    use CSS to style the active descendant.
+  </p>
+  <p>
+    For a listbox with
+    <code>autoSelect</code>
+    configuration, highlighting an option
+    <strong>must</strong>
+    also select that option (i.e.
+    <code>aria-checked=&quot;true&quot;</code>
+    ).
+  </p>
+  <p>
+    For a listbox without
+    <code>autoSelect</code>
+    configutation, a highlighted option must be manually selected using
+    the
+    <code>SPACEBAR</code>
+    or
+    <code>ENTER</code>
+    key.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    With virtual cursor on listbox, screen reader should announce role of
+    listbox.
+  </p>
+  <p>
+    The checked state of an option
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>Disabled options must be announced as disabled.</p>
+  <h3>Pointer</h3>
+  <p>Clicking or tapping button will toggle expanded state of flyout.</p>
+  <p>Clicking or tapping option in flyout will update button to that value.</p>
+  <h2>Known Issues</h2>
+  <p>
+    These are all known
+    <em>serious</em>
+    issues with assistive technology in relation to this pattern:
+  </p>
+  <ul>
+    <li>
+      <a href="https://issues.chromium.org/issues/40260928">
+        https://issues.chromium.org/issues/40260928
+      </a>
+    </li>
+    <li>
+      <a href="https://issues.chromium.org/issues/40945405">
+        https://issues.chromium.org/issues/40945405
+      </a>
+    </li>
+  </ul>
+</div>

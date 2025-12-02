@@ -1,0 +1,89 @@
+<div class="a11y-pattern-content">
+  <h1>Tile</h1>
+  <h2>Introduction</h2>
+  <p>
+    A tile is a large, tap-friendly area that provides a summary-like experience
+    for a link command.
+  </p>
+  <h3>Light Tile</h3>
+  <p>
+    For tiles with a small amount of text (and maybe a graphic or two), you can
+    simply wrap these elements in an anchor tag and refer to the
+    <a href="link">
+      Link
+    </a>
+    pattern.
+  </p>
+  <p>
+    We refer to this kind of tile as a
+    <em>light</em>
+    tile.
+  </p>
+  <h3>Heavy Tile</h3>
+  <p>
+    For tiles with longer text and structural elements such as lists,
+    subheadings and tables, the contents cannot simply be wrapped in an anchor
+    tag for fear of the link text becoming too verbose and unwieldy for
+    assistive technology.
+  </p>
+  <p>
+    We refer to this kind of tile as a
+    <em>heavy</em>
+    tile.
+  </p>
+  <h2>Working Examples</h2>
+  <p>
+    Experience the pattern in action on our companion
+    <a href="http://ebay.github.io/mindpatterns/navigation/tile/">
+      eBay MIND Patterns examples website
+    </a>
+    .
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    Tile can have one link destination only. Anything more than one link is
+    considered a card.
+  </p>
+  <p>
+    Tile
+    <strong>should have</strong>
+    a solid outline to identify the touch region.
+  </p>
+  <p>Light tile is simply an anchor wrapping the contents of the tile.</p>
+  <p>
+    Light tile can not contain any interactive elements. This ensures that the
+    tile is a single stop in the tab order.
+  </p>
+  <p>
+    Light tile
+    <strong>must not</strong>
+    contain long descriptive text or structural elements such as lists,
+    tables and widgets.
+  </p>
+  <p>
+    Heavy tile
+    <strong>must only</strong>
+    contain one hyperlink and no other interactive elements. This ensures
+    that the tile is a single stop in the tab order.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    Light tiles inherit all interaction design from the
+    <a href="link">
+      Link Pattern
+    </a>
+    .
+  </p>
+  <p>
+    For a heavy tile, do not apply
+    <code>cursor: pointer</code>
+    to the entire tile. This type of cursor (a little hand) should only
+    appear over the actual link element so that users know where to right-click
+    to copy the link or open in new tab, etc.
+  </p>
+  <p>
+    For a heavy tile, it is recommended to suppress the default focus indicator
+    of the link inside the tile, and instead display a focus indicator around
+    the entire tile.
+  </p>
+</div>

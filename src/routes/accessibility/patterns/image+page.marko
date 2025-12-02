@@ -1,0 +1,68 @@
+<div class="a11y-pattern-content">
+  <h1>Image</h1>
+  <h2>Introduction</h2>
+  <p>There are two types of image:</p>
+  <ol>
+    <li>content images</li>
+    <li>decoration images</li>
+  </ol>
+  <h2>Best Practices</h2>
+  <p>
+    Every image can be classed as important
+    <em>content</em>
+    or non-important
+    <em>decoration</em>
+    .
+  </p>
+  <p>
+    Every image
+    <strong>must</strong>
+    have an alt attribute. There are no exceptions.
+  </p>
+  <p>
+    Decoration images
+    <strong>must</strong>
+    have an empty alt attribute value. This informs screen reader to skip
+    over this element, otherwise the long, ugly URL/filename of image will be
+    read.
+  </p>
+  <p>
+    Content images
+    <strong>must</strong>
+    have a meaningful, descriptive alt attribute value that should be
+    defined by your content team.
+  </p>
+  <p>
+    If a content image is adjacent to descriptive text, for example in the case
+    of an item title right before or after the item image, then the alt text of
+    the image can be left blank.
+  </p>
+  <p>
+    If possible, always try and use CSS background images or generated content
+    (e.g. font icons) for decoration images.
+  </p>
+  <p>
+    Avoid using CSS background images for content images because they are
+    disabled by default in Windows high contrast mode (this setting can be
+    overridden in your application CSS however).
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Image tags are not interactive by default and therefore should not be
+    keyboard focusable.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader will skip over a decoration image (with empty alt text) and
+    will read the alt text of content images.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Image tags are not interactive by default and therefore are not clickable.
+  </p>
+</div>

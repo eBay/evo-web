@@ -2,21 +2,21 @@
     <section-header/>
 
     <p>
-        <strong>NOTE:${" "}</strong>
-        ${" "}.
+        <strong>NOTE:</strong>
+        .
     </p>
 
     <h3 id="menu-button-default">
         Default Menu Button
     </h3>
     <p>
-        The default menu button opens a${" "}
+        The default menu button opens a
         <em>stateless</em>
-        ${" "}menu. Each item has a role of${" "}
+        menu. Each item has a role of
         <code>
             menuitem
         </code>
-        ${" "}.
+        .
     </p>
 
     <div class="demo">
@@ -147,11 +147,11 @@
         Single-Select Menu Button
     </h3>
     <p>
-        For single-select state, use role${" "}
+        For single-select state, use role
         <code>
             menuitemradio
         </code>
-        ${" "}on each menu item.
+        on each menu item.
     </p>
 
     <div class="demo">
@@ -295,11 +295,11 @@
         Multi-Select Menu Button
     </h3>
     <p>
-        For multi-select state, use role${" "}
+        For multi-select state, use role
         <code>
             menuitemcheckbox
         </code>
-        ${" "}on each menu item.
+        on each menu item.
     </p>
 
     <div class="demo">
@@ -442,13 +442,13 @@
         </h3>
         <p>
             By default, the text of any button acts as its accessible label. The
-            accessible label must at${" "}
+            accessible label must at
             <strong>all times</strong>
-            ${" "}reflect the${" "}
+            reflect the
             <em>purpose</em>
-            ${" "}of the button. If the text only conveys a${" "}
+            of the button. If the text only conveys a
             <em>transient value</em>
-            ${" "}, then the criteria would not be satisfied.
+            , then the criteria would not be satisfied.
         </p>
 
         <h4 id="menu-button-label-fixed">
@@ -467,30 +467,30 @@
             If a fixed label is not possible, the button's inner text can
             potentially be written as a key/value pair, where key denotes
             purpose and value repesents the current selection. This is most
-            typical in a${" "}
+            typical in a
             <a href="component/menu-button/#menu-button-radio">
                 single select menu button
             </a>
-            ${" "}. For example: "Sort: Price", "Color: Red". This technique is
-            identical to the method used by${" "}
+            . For example: "Sort: Price", "Color: Red". This technique is
+            identical to the method used by
             <a href="component/listbox-button">
                 Listbox Button
             </a>
-            ${" "}.
+            .
         </p>
 
         <h4 id="menu-button-label-compound">
             Compound Label
         </h4>
         <p>
-            Finally, we can also consider using${" "}
+            Finally, we can also consider using
             <code>
                 aria-labelledby
             </code>
-            ${" "}to stitch together an additional, external element - therefore
-            creating a${" "}
+            to stitch together an additional, external element - therefore
+            creating a
             <em>compound</em>
-            ${" "}label.
+            label.
         </p>
     </div>
 
@@ -498,11 +498,11 @@
         Grouped Menu Button
     </h3>
     <p>
-        Menu button items can be separated into groups, using the${" "}
+        Menu button items can be separated into groups, using the
         <code>
             hr
         </code>
-        ${" "}tag.
+        tag.
     </p>
 
     <div class="demo">
@@ -718,33 +718,33 @@
         Fake Menu Button
     </h3>
     <p>
-        At first glance, a fake menu button${" "}
+        At first glance, a fake menu button
         <em>appears</em>
-        ${" "}to be a normal menu button component, but it contains a list of
+        to be a normal menu button component, but it contains a list of
         hyperlinks and thus behaves more like a navigational component.
     </p>
     <p>
-        Use the${" "}
+        Use the
         <code>
             aria-current
         </code>
-        ${" "}attribute to denote the link that matches the current page URL (if
+        attribute to denote the link that matches the current page URL (if
         applicable).
     </p>
     <p>
-        A valid${" "}
+        A valid
         <code>
             href
         </code>
-        ${" "}attribute is${" "}
+        attribute is
         <strong>required</strong>
-        ${" "}for all anchor tags (a value of "javascript" is${" "}
+        for all anchor tags (a value of "javascript" is
         <strong>not</strong>
-        ${" "}valid!) The${" "}
+        valid!) The
         <code>
             button
         </code>
-        ${" "}tag is also supported (as demonstrated in the following example)
+        tag is also supported (as demonstrated in the following example)
         if JavaScript behaviour is required alongside items with navigation
         behaviour.
     </p>
@@ -869,26 +869,26 @@
         Fixed Width Menu Button
     </h3>
     <p>
-        Use the${" "}
+        Use the
         <code>
             menu-button__menu--fix-width
         </code>
-        ${" "}or${" "}
+        or
         <code>
             fake-menu-button__menu--fix-width
         </code>
-        ${" "}element modifier to fix the width of any menu items to the button
+        element modifier to fix the width of any menu items to the button
         width. This is useful in cases where the menu overlay needs to be
         constrained to the button width, usually to accomodate spacing and
         layout.
     </p>
     <p>
-        <strong>NOTE:${" "}</strong>
-        ${" "}Fixed width is currently only available on menu buttons that use a${" "}
+        <strong>NOTE:</strong>
+        Fixed width is currently only available on menu buttons that use a
         <code>
             span
         </code>
-        ${" "}root tag.
+        root tag.
     </p>
 
     <div class="demo">
@@ -970,30 +970,30 @@
     </h3>
     <p>
         If placing a menu-button alongside a form control (e.g. textbox), you
-        may wish to apply the${" "}
+        may wish to apply the
         <code>
             btn--form
         </code>
-        ${" "}modifier, which better matches the look-and-feel of forms.
+        modifier, which better matches the look-and-feel of forms.
     </p>
     <p>
         <strong>NOTE</strong>
-        ${" "}: a menu-button is a good candidate for a dropdown of actions that
-        make${" "}
+        : a menu-button is a good candidate for a dropdown of actions that
+        make
         <em>changes</em>
-        ${" "}to a form, but it should${" "}
+        to a form, but it should
         <strong>not</strong>
-        ${" "}be used as a dropdown for selecting and storing form${" "}
+        be used as a dropdown for selecting and storing form
         <em>data</em>
-        ${" "}. Please use${" "}
+        . Please use
         <a href="component/button">
             select
         </a>
-        ${" "}or${" "}
+        or
         <a href="component/button">
             listbox-button
         </a>
-        ${" "}for that purpose instead.
+        for that purpose instead.
     </p>
 
     <div class="demo">
@@ -1073,11 +1073,11 @@
         Borderless Menu Button
     </h3>
     <p>
-        Use the${" "}
+        Use the
         <code>
             btn--borderless
         </code>
-        ${" "}modifier to create a minimal borderless button.
+        modifier to create a minimal borderless button.
     </p>
 
     <div class="demo">
@@ -1349,7 +1349,7 @@
                     aria-haspopup="true"
                     aria-expanded="false">
                     <span class="filter-chip__text">
-                        Sport:${" "}
+                        Sport:
                         <span class="btn__text">
                             (-)
                         </span>
@@ -1520,9 +1520,9 @@
 
     <h3>Filter menu button - with footer</h3>
     <p>
-        To add a filter menu button with a footer, include${" "}
+        To add a filter menu button with a footer, include
         <code>.menu-button__footer</code>
-        ${" "}container
+        container
     </p>
 
     <div class="demo">

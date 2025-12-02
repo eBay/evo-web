@@ -1,0 +1,76 @@
+<div class="a11y-pattern-content">
+  <h1>Input Meter</h1>
+  <h2>Introduction</h2>
+  <p>
+    An input meter gauges user input according to a set of pre-defined levels.
+    For example, a password strength meter may indicate “weak”, “medium”,
+    “strong”, etc. Another type of input meter is a character count, which
+    indicates how many characters have been used and/or are remaining.
+  </p>
+  <h2>Working Examples</h2>
+  <p>
+    Experience the pattern in action on our companion
+    <a href="http://ebay.github.io/mindpatterns/messaging/input-meter/">
+      eBay MIND Patterns examples website
+    </a>
+    .
+  </p>
+  <h2>Terminology</h2>
+  <p>
+    <strong>Input Meter:</strong>
+    the pattern as a whole, consisting of the following parts.
+  </p>
+  <p>
+    <strong>Input</strong>
+    : the interactive textbox element
+  </p>
+  <p>
+    <strong>Meter</strong>
+    : the non-interactive meter element
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    The meter
+    <strong>must not</strong>
+    use colour alone to convey meaning.
+  </p>
+  <p>
+    Each threshold or boundary that is conveyed via colour must also have that
+    same meaning conveyed in visible text (for example, green = “good”, red =
+    “not good”).
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader &amp;
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    The meter itself is a non-interactive element, therefore should
+    <strong>not</strong>
+    gain keyboard focus.
+  </p>
+  <p>
+    The input should be focusable and adhere to usual
+    <em>textbox</em>
+    interaction design.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    The input should be reachable via screen reader and adhere to usual
+    <em>textbox</em>
+    interaction design.
+  </p>
+  <p>The screen reader should convey any changes to the meter.</p>
+  <p>
+    When the non-interactive meter element gains virtual cursor focus, the
+    screen reader should it announce its role, value and any state(s).
+  </p>
+  <h3>Pointer</h3>
+  <p>The input should be clickable and focusable like any regular textbox.</p>
+  <p>
+    The meter itself is a non-interactive element, therefore should
+    <strong>not</strong>
+    be clickable or tappable.
+  </p>
+</div>

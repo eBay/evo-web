@@ -1,0 +1,67 @@
+<div class="a11y-pattern-content">
+  <h1>Skip Navigation</h1>
+  <h2>Introduction</h2>
+  <p>
+    The skip navigation pattern is most commonly used to skip past the main site
+    navigation onto the main landmark element.
+  </p>
+  <p>
+    It can be used in other scenarios too; skipping past all links inside of a
+    carousel, for example.
+  </p>
+  <h2>Working Examples</h2>
+  <p>
+    Experience the pattern in action on our companion
+    <a href="https://ebay.github.io/mindpatterns/navigation/skip-navigation">
+      eBay MIND Patterns examples website
+    </a>
+    .
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    Link
+    <strong>must</strong>
+    set keyboard focus on target element when activated.
+  </p>
+  <p>Link can be hidden from view until focused with keyboard.</p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard and screen reader
+    devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Activating the skip link moves keyboard focus to the target element.
+    Depending on the browser, the keyboard focus indicator may or may not be
+    visible on the focussed target element.
+  </p>
+  <p>
+    After activating the skip link, pressing TAB key moves keyboard focus to the
+    first interactive element
+    <em>after</em>
+    the target element and restores focus indicator.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Activating the skip link moves virtual cursor to the target element and
+    screen reader will announce the contents of that element.
+  </p>
+  <p>
+    After activating the skip link, moving screen reader virtual cursor forwards
+    will move virtual cursor to the next element after the target element.
+  </p>
+  <h2>FAQ</h2>
+  <h3>
+    Why do we need tabindex=“-1”? All modern browsers move keyboard focus
+    without it.
+  </h3>
+  <p>
+    All modern browsers do indeed now move the keyboard focus from the link to
+    the target. This is great news for sighted keyboard users. However, we have
+    found that in certain cases a screen reader will get left behind on the
+    link. A tab index of negative one
+    <em>forces</em>
+    the screen reader to move onto the target element. So we can think of
+    this as some additional “focus management”.
+  </p>
+</div>

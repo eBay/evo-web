@@ -1,1 +1,42 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Segmented Buttons Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Segmented buttons are not form controls; although they can be used within a
+    form to provide branching capabilties, they do not store and submit form
+    data.
+  </p>
+  <p>
+    Segmented buttons are not a drop-in replacement for tabs, nor do they
+    operate like tabs. Tabs and Segmented Buttons solve two different problems.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    Even though visually styled as a group, each button has normal button
+    interactions (i.e. they each live in the normal tab order of the page) that
+    triggers arbitrary JavaScript logic.
+  </p>
+  <p>
+    The only thing to set them apart from a normal button, is that “clicking”
+    one segment will unset the current segment (the state is conveyed with the
+    <code>aria-current</code>
+    attribute).
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-current=true</strong>
+        </td>
+        <td>Conveys the currently pressed segment.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

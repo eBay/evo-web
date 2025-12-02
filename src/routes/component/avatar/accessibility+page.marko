@@ -1,1 +1,125 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Avatar Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Informative avatars (standalone without adjacent text) should use
+    <code>role=&quot;img&quot;</code>
+    with
+    <code>aria-label</code>
+    on the container element to convey the user’s identity. The
+    <code>aria-label</code>
+    should describe the purpose, such as “Profile picture - [User Name]”.
+  </p>
+  <p>
+    Decorative avatars (adjacent to user names or descriptive text) should omit
+    the
+    <code>role</code>
+    and
+    <code>aria-label</code>
+    attributes on the container element.
+  </p>
+  <p>
+    When using an
+    <code>&lt;img&gt;</code>
+    element inside an avatar container, it must have an empty
+    <code>alt=&quot;&quot;</code>
+    attribute. The accessible name is provided by the
+    <code>aria-label</code>
+    on the parent container (for informative avatars) or omitted entirely
+    (for decorative avatars).
+  </p>
+  <p>
+    Sighted users can visually distinguish an avatar based on the image; for
+    non-sighted users the equivalent experience is the name of the user (not a
+    description of the image contents).
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides detailed instructions for how different input types
+    should navigate and operate the pattern.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Avatar elements are not interactive by default and therefore should not be
+    keyboard focusable.
+  </p>
+  <p>
+    If an avatar is placed within an interactive element (such as a button or
+    link), the interactive element must be keyboard accessible via
+    <strong>TAB</strong>
+    key.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader will skip over a decorative avatar (without
+    <code>role</code>
+    or
+    <code>aria-label</code>
+    attributes).
+  </p>
+  <p>
+    For informative avatars, a screen reader will announce the
+    <code>role=&quot;img&quot;</code>
+    and the
+    <code>aria-label</code>
+    value (e.g., “Profile picture - Elizabeth, image”).
+  </p>
+  <p>
+    If the avatar is within an interactive element, the screen reader will
+    announce the accessible name of that element, which should include relevant
+    user information.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Avatar elements are not interactive by default and therefore are not
+    clickable.
+  </p>
+  <p>
+    If an avatar is placed within an interactive element (such as a button or
+    link), clicking the avatar will activate that interactive element.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=“img”</strong>
+        </td>
+        <td>
+          Applied to the avatar container to identify it as an image element to
+          assistive technologies.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Applied to the avatar container with
+          <code>role=&quot;img&quot;</code>
+          to provide an accessible name (e.g., “Profile picture - User
+          Name”).
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="../techniques/alternative-text.md">
+        Alternative Text Technique
+      </a>
+    </li>
+    <li>
+      <a href="../appendix/pattern-naming-scheme.md">
+        Pattern Naming Scheme
+      </a>
+    </li>
+  </ul>
+</div>

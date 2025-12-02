@@ -1,1 +1,153 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Table Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    In order to be well-formed and appear in the accessibility tree for
+    assistive technology, a table
+    <strong>requires</strong>
+    the table head (
+    <code>&lt;thead&gt;</code>
+    ) and table body (
+    <code>&lt;tbody&gt;</code>
+    ) elements.
+  </p>
+  <p>
+    Every table cell
+    <strong>requires</strong>
+    a logical column header and/or row header.
+  </p>
+  <p>
+    Columns with string data should be left aligned, while columns with numeric
+    data should be right aligned (vice versa for RTL).
+  </p>
+  <p>
+    A table accessibility may be enhanced by adding a
+    <code>&lt;caption&gt;</code>
+    to relay the subject of the table.
+  </p>
+  <p>
+    A sortable table is a table that allows users to sort the data in the table
+    by clicking on the column headers. You can make tables sortable by using
+    sort buttons in
+    <code>thead &gt; th</code>
+    . Additionally, for accessibility purposes,
+    <code>aria-sort=&quot;ascending&quot;</code>
+    or
+    <code>aria-sort=&quot;descending&quot;</code>
+    should be added respectively to the
+    <code>&lt;th&gt;</code>
+    to reflect the current sort order.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    The top-level container element should have a
+    <code>tabindex=&quot;0&quot;</code>
+    to make it focusable, an
+    <code>aria-label</code>
+    or
+    <code>aria-labeledby</code>
+    to relay context of the table, and should have a
+    <code>role=&quot;group&quot;</code>
+    to make it accessible to screen readers. That will also allow the
+    table elements to be scrollable inside the container, both vertically (when
+    overflowing) and horizontally.
+  </p>
+  <p>
+    Tabbing order for interactive elements inside a table need to follow the
+    natural sequencing of the elements as they appear row by row from top to
+    bottom, and column by column per the respective RTL/LTR modes.
+  </p>
+  <p>
+    Sortable columns are achieved by adding a tri-state button (at rest, toggled
+    sort descending, toggled sort ascending) as the contents of the table header
+    cell. The three states would be cycled through on click/tap/keyboard as
+    such: Rest &gt; Sort Descending &gt; Sort Ascending &gt; Rest …
+  </p>
+  <p>
+    The usual rules for
+    <a href="../input/button">
+      button
+    </a>
+    apply.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Table
+    <strong>must</strong>
+    be listed in screen reader list of tables.
+  </p>
+  <p>
+    Screen reader
+    <strong>must</strong>
+    be navigable with screen reader table command. For example, in
+    VoiceOver this command is
+    <code>VO+CMD+T</code>
+    .
+  </p>
+  <p>
+    Screen reader
+    <strong>must</strong>
+    announce value of every cell.
+  </p>
+  <p>
+    Screen reader
+    <strong>must</strong>
+    announce value of column header when instructed to do so. For example,
+    in VoiceOver this command is
+    <code>VO+C</code>
+    .
+  </p>
+  <p>
+    Sortable column
+    <strong>must</strong>
+    be announced by screen reader.
+  </p>
+  <p>
+    Current sort state of sortable columns
+    <strong>must</strong>
+    be announce by screen reader.
+  </p>
+  <p>
+    When moving from column to column, screen reader announces new column scope.
+    Typically this scope is the value of the column header.
+  </p>
+  <p>
+    When moving from row to row, screen reader announces new row scope.
+    Typically this scope is the value of the row header.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    The only special consideration for table is sortable columns. Typically this
+    is achieved by adding a toggle button as the contents of the table header
+    cell. The usual rules for
+    <a href="../input/button">
+      button
+    </a>
+    apply.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-sort</strong>
+        </td>
+        <td>
+          Applied to column headings to convey descending or ascending sorted
+          stated.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,9 +1,0 @@
-# Tabindex-itis
-
-Do not apply the `tabindex` attribute to *static* text or graphical elements. Doing so will create an unnecessary tabstop for keyboard users.
-
-A common mis-conception amongst developers is that screenreader users will not be able to access and read an element if it is not "tab-able". However, using their own special commands, screen readers *can* focus on *all* elements perfectly well, without the need for the TAB key or the `tabindex` attribute.
-
-A tab stop on a static element will confuse users, because A) it will be interpreted by the screen reader as having a non-interactive role, and B) any attempt to interact with the element (e.g. using SPACE, ENTER or ARROW keys) will be a no-op.
-
-Unnecessary tabstops increase physical discomfort for some users - for example if using a [binary switch](http://en.wikipedia.org/wiki/Switch_Access) rather than a traditional keyboard.

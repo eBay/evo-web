@@ -1,0 +1,66 @@
+<div class="a11y-pattern-content">
+  <h1>Hand Cursor on Buttons</h1>
+  <p>
+    A regular-shaped button does not have the weak affordance issues of text and
+    graphic links. Buttons also do not have any special mouse operations on
+    right-click. These factors explain why the HTML button element was not given
+    any special mouse cursor; it has strong affordance of interactivity on hover
+    and at rest and therefore uses the default system cursor (in the same way as
+    checkbox, radio, details &amp; select).
+  </p>
+  <h2>Affordance of Hover</h2>
+  <p>
+    The edges, or boundaries, of text links and graphics links are not well
+    defined. With the default system pointer it can be unclear when the mouse
+    cursor is registering with the hitbox of the element. The change in style of
+    cursor increases affordance of the interactive hover state.
+  </p>
+  <h2>Affordance at Rest</h2>
+  <p>
+    The understanding of whether something is a button or not should not depend
+    on the hover interaction, it should be discernible from the rest state. It
+    shouldn’t rely on user discovery or guesswork. Not all users are pointer
+    device users so the principle should be easily translated to any screen.
+  </p>
+  <h2>Mouse Cursor Styling</h2>
+  <p>
+    Mouse cursor styling provides affordance of any non-default mouse operations
+    available on an element (e.g. text selection, activating help or context
+    menus, copying content, resizing tables).
+  </p>
+  <h2>Fake Buttons</h2>
+  <p>
+    The elephant in the room is of course
+    <em>links that are styled to look like buttons, aka fake buttons</em>
+    . Our recommendation is to retain the elements
+    <em>default</em>
+    hand cursor - as it reveals the elements true behaviour and its
+    additional functionality (e.g. right-click actions).
+  </p>
+  <h2>Summary</h2>
+  <ul>
+    <li>
+      Buttons do not
+      <em>need</em>
+      a hand cursor
+    </li>
+    <li>All text and graphic links should have a hand cursor</li>
+    <li>
+      We recommend keeping the browser’s default hand cursor on links that are
+      styled to look like buttons
+    </li>
+  </ul>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://medium.com/simple-human/buttons-shouldnt-have-a-hand-cursor-b11e99ca374b">
+        Buttons Shouldn’t Have a Hand Cursor
+      </a>
+    </li>
+    <li>
+      <a href="https://learn.microsoft.com/en-us/windows/win32/uxguide/inter-mouse?redirectedfrom=MSDN#hand-pointers">
+        https://learn.microsoft.com/en-us/windows/win32/uxguide/inter-mouse?redirectedfrom=MSDN#hand-pointers
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,1 +1,49 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Toggle Button Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    The toggle button
+    <strong>must</strong>
+    be a button (i.e. not a link) when using aria-pressed.
+  </p>
+  <p>
+    If the state is conveyed via visible text, a link can be used (resulting in
+    a full page reload).
+  </p>
+  <p>
+    The toggle button
+    <strong>must</strong>
+    have only two states (whether conveyed via aria-pressed or text).
+  </p>
+  <p>
+    The toggle button that uses visible text to convey state change
+    <strong>must</strong>
+    
+    <strong>not</strong>
+    also use aria-pressed.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>If button has focus, SPACEBAR and ENTER keys should toggle button.</p>
+  <p>
+    If button has focus, TAB and SHIFT-TAB keys should move to the next or
+    previous focusable page element respectively.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-pressed</strong>
+        </td>
+        <td>Informs AT the current “pressed” state of a toggle button.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,73 @@
+<div class="a11y-pattern-content">
+  <h1>Footnote</h1>
+  <h2>Introduction</h2>
+  <p>
+    Users must be able to perceive the association between a symbol and and its
+    associated text.
+  </p>
+  <p>The symbol is usually one of the following:</p>
+  <ul>
+    <li>Asterisk: *</li>
+    <li>Double Asterisk: **</li>
+    <li>Dagger: †</li>
+    <li>Double Dagger: † †</li>
+    <li>Numbers: 1, 2, 3, etc</li>
+  </ul>
+  <h2>Example</h2>
+  <p>
+    Here is a footnote symbol contained under a "Seller Fees" section of the
+    page:
+  </p>
+  <pre><code class="language-markup">&lt;h2&gt;Seller Fees&lt;/h2&gt;
+&lt;p&gt;This text has a footnote&lt;sup&gt;*&lt;span class="clipped"&gt; - See Seller Fees Notes&lt;/span&gt;&lt;/sup&gt;&lt;/p&gt;
+</code></pre>
+  <p>Here is the associated notes section of the page:</p>
+  <pre><code class="language-markup">&lt;section role="region" aria-label="Notes - Seller Fees"&gt;
+  &lt;h2 class="clipped"&gt;Notes - Seller Fees&lt;/h2&gt;
+  &lt;ol&gt;
+    &lt;li&gt;This is an actual note&lt;/li&gt;
+    ..
+  &lt;/ol&gt;
+&lt;/section&gt;
+</code></pre>
+  <p>
+    Sometimes there are multiple footnote sections on the same page, therefore
+    both the source symbol and target section much be uniquely identified (as in
+    the example above).
+  </p>
+  <h2>FAQ</h2>
+  <h3>Why is the symbol not hyperlinked to the footnotes section?</h3>
+  <p>
+    While it is certainly possible to create a page anchor relationship between
+    the symbol and the footnote section, doing so opens its own can of worms.
+    For the time being we believe the strong visual affordance and semantics
+    laid out above will allow all users to identify, navigate and discover the
+    system of footnotes using their keyboard (to scroll the page) or screen
+    reader (to jump to landmark or heading).
+  </p>
+  <h3>
+    Why not use aria-describedby on the symbol to read out the
+    description/footnote?
+  </h3>
+  <p>
+    For sighted users, the symbol gives a visual clue that there is a footnote
+    elsewhere on the page. The user is not
+    <em>forced</em>
+    to read the footnote. This reduces cognitive load for the user. Whilst
+    we
+    <em>could</em>
+    use aria-describedby on the symbol, so that a screen reader would
+    automatically announce the footnote content, we have determined that this
+    would be overly verbose in
+    <em>most</em>
+    cases, and would increase cognitive load for the user.
+  </p>
+  <h3>Should I use role="note" or role="region"?</h3>
+  <p>
+    We are currently looking into the current support status of the
+    <a href="https://a11ysupport.io/tech/aria/note_role">
+      ARIA note role
+    </a>
+    . For the time being, please use region.
+  </p>
+</div>

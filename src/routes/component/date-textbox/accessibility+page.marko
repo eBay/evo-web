@@ -1,1 +1,88 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Date Textbox Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A date textbox should have a layout familiar with other popular systems and
+    conventions. A data table works well.
+  </p>
+  <p>Dates may be disabled if they are outside of the allowed time range.</p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader, voice
+    &amp; pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>The date textbox exposes 3 keyboard focusable areas with TAB key:</p>
+  <ul>
+    <li>The previous month button</li>
+    <li>The next month button</li>
+    <li>A date button*</li>
+  </ul>
+  <p>
+    <em>
+      *Which date button receives focus can change depending on certain factors.
+    </em>
+  </p>
+  <p>
+    When a date button inside of the grid receives focus, keyboard interaction
+    switches to a
+    <a href="../techniques/roving-tabindex">
+      roving tabindex
+    </a>
+    based style, using the ARROW keys, e.g. RIGHT-ARROW moves to the
+    button in the next cell to the right, DOWN-ARROW moves to the button in the
+    cell below.
+  </p>
+  <p>SPACEBAR or ENTER key will start or end a date range selection</p>
+  <p>ESC key will close the date textbox, retaining any date selection.</p>
+  <h3>Screen Reader</h3>
+  <p>
+    Date buttons are announced with the day of month, e.g. “12, button”. The day
+    of week and month are available on the containing table cell element (see
+    below).
+  </p>
+  <p>
+    When navigating calendar in table mode, month is announced via table
+    <em>caption</em>
+    semantics.
+  </p>
+  <p>
+    When navigating calendar in table mode, days of week are announced via table
+    <em>column header</em>
+    semantics.
+  </p>
+  <h3>Voice</h3>
+  <p>Date button can be activated via visual label, e.g. “Click button 12”.</p>
+  <p>Picker can be closed via, “Press Escape”.</p>
+  <h3>Pointer</h3>
+  <p>This section is not yet available.</p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Previous and next month icon buttons require a programmatic label for
+          assistive technology.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role-description</strong>
+        </td>
+        <td>
+          The main calendar table can be given a custom description, such as
+          “Calendar”.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

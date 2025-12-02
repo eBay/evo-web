@@ -1,0 +1,36 @@
+<div class="a11y-pattern-content">
+  <h1>Tabindex-itis</h1>
+  <p>
+    Do not apply the
+    <code>tabindex</code>
+    attribute to
+    <em>static</em>
+    text or graphical elements. Doing so will create an unnecessary
+    tabstop for keyboard users.
+  </p>
+  <p>
+    A common mis-conception amongst developers is that screenreader users will
+    not be able to access and read an element if it is not “tab-able”. However,
+    using their own special commands, screen readers
+    <em>can</em>
+    focus on
+    <em>all</em>
+    elements perfectly well, without the need for the TAB key or the
+    <code>tabindex</code>
+    attribute.
+  </p>
+  <p>
+    A tab stop on a static element will confuse users, because A) it will be
+    interpreted by the screen reader as having a non-interactive role, and B)
+    any attempt to interact with the element (e.g. using SPACE, ENTER or ARROW
+    keys) will be a no-op.
+  </p>
+  <p>
+    Unnecessary tabstops increase physical discomfort for some users - for
+    example if using a
+    <a href="http://en.wikipedia.org/wiki/Switch_Access">
+      binary switch
+    </a>
+    rather than a traditional keyboard.
+  </p>
+</div>

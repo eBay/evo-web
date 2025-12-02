@@ -1,1 +1,100 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Alert Dialog Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>Alert dialogs are always modal and require a mask.</p>
+  <p>Avoid opening an alert dialog on page load.</p>
+  <p>
+    Alert dialogs should be opened as a result of a user action or critical
+    system event.
+  </p>
+  <p>Avoid stacking of alert dialogs.</p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides detailed instructions for how different input types
+    should navigate and operate the pattern.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Initial keyboard focus should be placed on the
+    <em>acknowledgement</em>
+    button.
+  </p>
+  <p>
+    The keyboard should be confined to the interactive elements within the
+    dialog (i.e. modal behaviour).
+  </p>
+  <p>
+    Activating the acknowledgment button will close the dialog and return focus
+    to the main page.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Initial screen reader focus will be placed on the
+    <em>acknowledgement</em>
+    button.
+  </p>
+  <p>
+    When opened, the screen reader should announce the title of the dialog, its
+    role (alert dialog) and the label, role and state of the currently focussed
+    element (the acknowledgment button).
+  </p>
+  <p>
+    The screen reader should be confined to the elements within the dialog (i.e.
+    modal behaviour).
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking the mask
+    <strong>must not</strong>
+    close the alert dialog (an explicit acknowledgement is required).
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=“alertdialog”</strong>
+        </td>
+        <td>
+          Informs the assistive technology that the user is inside of an alert
+          dialog.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-modal</strong>
+        </td>
+        <td>Conveys that the dialog is modal</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-labelledby</strong>
+        </td>
+        <td>
+          Use onscreen text to name the alert dialog (typically an h2 heading
+          element).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Explicitly name the alert dialog, if no suitable onscreen text exists.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>References the element containing the alert message content.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

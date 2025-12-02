@@ -1,1 +1,60 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Confirm Dialog Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>Confirm dialogs are always modal and require a mask.</p>
+  <p>Avoid opening a confirm dialog on page load.</p>
+  <p>
+    Confirm dialogs should be opened as a result of a user action or critical
+    system event.
+  </p>
+  <p>Avoid stacking of confirm dialogs.</p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader &amp;
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Keyboard focus should be placed on the
+    <em>affirmative</em>
+    button (e.g. “Ok”, “Yes”, “Agree”).
+  </p>
+  <p>
+    The keyboard should be confined to the interactive elements within the
+    dialog (i.e. modal behaviour).
+  </p>
+  <p>
+    Pressing
+    <code>ESC</code>
+    key
+    <strong>must</strong>
+    close confirm dialog, acting as a cancel/non-affirmative response.
+  </p>
+  <p>
+    Activating any button will close the dialog and return focus to the main
+    page.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Initial screen reader focus will be placed on the
+    <em>affirmative</em>
+    button.
+  </p>
+  <p>
+    When opened, the screen reader should announce the title of the dialog, its
+    role (dialog) and the label, role and state of the currently focussed
+    element (the
+    <em>affirmative</em>
+    button).
+  </p>
+  <p>
+    The screen reader should be confined to the elements within the dialog (i.e.
+    modal behaviour).
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking the mask
+    <strong>must</strong>
+    close the confirm dialog, acting as a cancel/non-affirmative response.
+  </p>
+</div>

@@ -1,1 +1,154 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Pagination Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Pagination may update the results immediately on the client via AJAX, or on
+    the server via a full page reload. In both cases, the browser’s URL will be
+    updated to reflect the new, book-markable page of results.
+  </p>
+  <p>
+    Do not use buttons for URL based pagination. Because the URL is updated, and
+    the browser history stack updated, a link is the correct tag to use.
+  </p>
+  <p>
+    Pagination
+    <strong>must</strong>
+    have a heading element. For example “Results Pagination”. This heading
+    can be hidden offscreen for sighted users.
+  </p>
+  <p>
+    Items
+    <strong>must</strong>
+    be marked up as a list of links (not buttons).
+  </p>
+  <p>
+    Bookends
+    <strong>must</strong>
+    be marked up as links (not buttons).
+  </p>
+  <p>
+    Bookend icons
+    <em>should</em>
+    be created using SVG.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides the pattern interaction design for keyboard, screen
+    reader &amp; pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    The bookend and item links
+    <strong>must</strong>
+    be keyboard focusable at all times (even when visually disabled).
+  </p>
+  <p>
+    If
+    <em>Previous</em>
+    bookend has keyboard focus, pressing TAB key
+    <strong>must</strong>
+    move focus to first pagination link.
+  </p>
+  <p>
+    If pagination item has keyboard focus, pressing TAB key
+    <strong>must</strong>
+    move focus to next pagination item.
+  </p>
+  <p>
+    If last pagination item has keyboard focus, pressing TAB key
+    <strong>must</strong>
+    move focus to
+    <em>Next</em>
+    bookend link.
+  </p>
+  <p>
+    For client-side pagination, keyboard focus
+    <strong>must</strong>
+    remain on the previous, next or item link after activation.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Bookend link text
+    <strong>must</strong>
+    be announced (i.e. “Previous page” and “Next page”).
+  </p>
+  <p>
+    <em>If</em>
+    bookend links are visually disabled, they
+    <strong>must</strong>
+    also be announced as disabled.
+  </p>
+  <p>
+    <em>If</em>
+    a pagination item is visually displayed as the
+    <em>current</em>
+    page, it
+    <strong>must</strong>
+    also be announced as the current page.
+  </p>
+  <p>
+    For client-side pagination, the new page index
+    <strong>must</strong>
+    be announced after previous, next or item link activation.
+  </p>
+  <h3>ARIA Reference</h3>
+  <p>
+    This section gives an overview of our use of ARIA, within the specific
+    context of this pattern.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=navigation</strong>
+        </td>
+        <td>Creates a navigation landmark for assistive technology.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=img</strong>
+        </td>
+        <td>Applied to bookend SVG tags to reinforce image semantics.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-labelledby</strong>
+        </td>
+        <td>
+          Use this property to label the navigation landmark with the text of
+          the heading tag.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-disabled</strong>
+        </td>
+        <td>
+          Use this property on the bookend anchor to convey when it is
+          “greyed-out”
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>Use this property to label the bookend anchors.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-current</strong>
+        </td>
+        <td>
+          Refers to the current item in the pagination (i.e. the current dataset
+          index).
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

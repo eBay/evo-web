@@ -1,1 +1,104 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Switch Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Individual switch
+    <strong>must</strong>
+    have a visible, onscreen label.
+  </p>
+  <p>
+    Groups of
+    <em>related</em>
+    switch controls
+    <strong>must</strong>
+    have a group label.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Switch
+    <strong>must</strong>
+    be keyboard focusable (unless disabled).
+  </p>
+  <p>
+    If switch has keyboard focus, pressing SPACEBAR
+    <strong>must</strong>
+    toggle the checked state.
+  </p>
+  <p>
+    If switch has keyboard focus, pressing ENTER key toggle the checked state
+    (optional).
+  </p>
+  <p>
+    If switch has keyboard focus, pressing TAB key or SHIFT-TAB key combo moves
+    keyboard focus to next or previous interactive element on page respectively.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Switch
+    <strong>must</strong>
+    be reachable with screen reader (even when disabled).
+  </p>
+  <p>
+    Switch
+    <strong>must</strong>
+    be announced as “switch”.
+  </p>
+  <p>
+    Switch label
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>
+    Switch group label, if applicable,
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>
+    Switch state
+    <strong>must</strong>
+    be announced.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking switch
+    <strong>must</strong>
+    toggle the checked state.
+  </p>
+  <p>
+    Clicking switch label
+    <strong>must</strong>
+    toggle the checked state.
+  </p>
+  <h2>ARIA Reference</h2>
+  <p>
+    This section gives an overview of our use of ARIA, within the specific
+    context of the switch pattern.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=switch</strong>
+        </td>
+        <td>Informs AT that this control has switch behavior.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-checked</strong>
+        </td>
+        <td>Informs AT the current “checked” state of the switch.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

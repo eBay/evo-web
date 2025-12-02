@@ -1,1 +1,96 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Breadcrumbs Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Breadcrumbs are typically used as secondary navigation on sites that are
+    organized in a hierarchical manner.
+  </p>
+  <p>An SVG symbol is used to separate each breadcrumb link.</p>
+  <p>
+    The last breadcrumb link, representing the current place in the hierarchy,
+    is non-interactive.
+  </p>
+  <p>
+    Breadcrumbs
+    <strong>must</strong>
+    have a heading of ‘You are here’, or words to those effect. This
+    heading can be visually hidden offscreen.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>Breadcrumb interaction is similar to a simple list of ordered links.</p>
+  <h3>Keyboard</h3>
+  <p>TAB key moves from breadcrumb to breadcrumb.</p>
+  <p>
+    Separator symbols
+    <strong>must not</strong>
+    be keyboard focusable.
+  </p>
+  <p>
+    The last breadcrumb lacks an
+    <code>href</code>
+    value and therefore is omitted from the tab order.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    The screen reader will recognize the breadcrumbs as a navigation landmark.
+  </p>
+  <p>Each breadcrumb will be announced as ‘link’, followed by the link text.</p>
+  <p>The screen reader should ignore each separator icon.</p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking a breadcrumb link will navigate to that location in the site
+    hierarchy.
+  </p>
+  <p>
+    The last breadcrumb (current location) is non-interactive and therefore not
+    clickable.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-current=“location”</strong>
+        </td>
+        <td>
+          Provides AT with programmatic state on the breadcrumb that reflects
+          the current site location.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=“navigation”</strong>
+        </td>
+        <td>Creates a navigational landmark for AT.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-labelledby</strong>
+        </td>
+        <td>
+          References the heading element that labels the breadcrumbs navigation
+          (e.g., “You are here”).
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/">
+        APG Breadcrumb Pattern
+      </a>
+    </li>
+    <li>
+      <a href="../appendix/pattern-naming-scheme.md">
+        Pattern Naming Scheme
+      </a>
+    </li>
+  </ul>
+</div>

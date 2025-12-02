@@ -1,1 +1,241 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Menu Button Accessibility</h1>
+  <h3>Best Practices</h3>
+  <p>
+    See
+    <a href="menu">
+      menu best practices
+    </a>
+    .
+  </p>
+  <p>
+    <strong>Care is needed when labelling a menu button!</strong>
+  </p>
+  <p>
+    If attempting to mimic the behaviour of an HTML select inside of a form,
+    please use the
+    <a href="listbox-button">
+      Listbox Button
+    </a>
+    .
+  </p>
+  <p>
+    A menu button’s accessible label must at
+    <strong>all times</strong>
+    reflect its function. By default, this label is provided by the button
+    <strong>’</strong>
+    s inner text (i.e. buttons are not intended to work with
+    <code>&lt;label&gt;</code>
+    elements).
+  </p>
+  <p>
+    If a menu button’s inner text is intended to also convey some state (i.e.
+    single select) then please consider the following options.
+  </p>
+  <h4>
+    <strong>Internally Labelled Menu Button</strong>
+  </h4>
+  <p>
+    The button’s inner text can be written as a key/value pair, where key
+    denotes purpose and value represents the current selection.
+  </p>
+  <p>
+    <code>&lt;button&gt;Colour: blue&lt;button&gt;</code>
+  </p>
+  <h4>
+    <strong>Additionally Labelled Menu Button</strong>
+  </h4>
+  <p>
+    We can use
+    <code>aria-labelledby</code>
+    to stitch together an external text element with the internal value.
+  </p>
+  <p>
+    <code>
+      &lt;span id=&quot;el1&quot;&gt;Colour&lt;/span&gt;&lt;button
+      aria-labelledby=&quot;el1 el2&quot;&gt;&lt;span
+      id=&quot;el2&quot;&gt;blue&lt;/span&gt;&lt;/button&gt;
+    </code>
+  </p>
+  <h3>Interaction Design</h3>
+  <p>
+    This section provides interaction design for keyboard, screen reader &amp;
+    pointing devices.
+  </p>
+  <p>
+    Please also see related
+    <a href="menu">
+      menu
+    </a>
+    pattern for best practices of nested menu.
+  </p>
+  <h4>Keyboard</h4>
+  <p>
+    The button
+    <strong>must</strong>
+    be keyboard focusable.
+  </p>
+  <p>
+    <code>SPACEBAR</code>
+    or
+    <code>ENTER</code>
+    key on button
+    <strong>must</strong>
+    expand the menu.
+  </p>
+  <p>
+    When menu is expanded, keyboard focus
+    <strong>must</strong>
+    go to the first item in the menu.
+  </p>
+  <p>
+    <code>UP-ARROW</code>
+    and
+    <code>DOWN-ARROW</code>
+    keys
+    <strong>must</strong>
+    navigate keyboard focus through commands via a roving tabindex.
+  </p>
+  <p>
+    If focus is on a command,
+    <code>ENTER</code>
+    or
+    <code>SPACEBAR</code>
+    keys
+    <strong>must</strong>
+    activate that command.
+  </p>
+  <p>
+    <code>ESC</code>
+    key must collapse menu and return focus to button.
+  </p>
+  <p>
+    Activating any menu item
+    <em>should</em>
+    collapse menu (typically after a very short delay/transition).
+  </p>
+  <p>
+    <code>TAB</code>
+    key must move keyboard focus off widget, and onto next interactive
+    element in the page.
+  </p>
+  <p>
+    When widget loses focus, menu
+    <em>should</em>
+    collapse.
+  </p>
+  <h4>Screen Reader</h4>
+  <p>
+    Button label
+    <strong>must</strong>
+    be announced (e.g. ‘Options’).
+  </p>
+  <p>
+    Button state
+    <strong>must</strong>
+    be announced (e.g. expanded or collapsed).
+  </p>
+  <h4>Pointer</h4>
+  <p>
+    Clicking any menu item
+    <em>should</em>
+    collapse menu (typically after a very short delay/transition).
+  </p>
+  <h3>ARIA Reference</h3>
+  <p>
+    This section gives an overview of our use of ARIA, within the specific
+    context of the menu button pattern.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=menu</strong>
+        </td>
+        <td>
+          Informs assistive technology that this is a menu containing menuitems,
+          menuitemradios or menuitemcheckboxes.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=presentation</strong>
+        </td>
+        <td>
+          Informs assistive technology that the divs around groups of menu items
+          are for presentation purposes only and should not be added to
+          accessibility tree.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=menuitem</strong>
+        </td>
+        <td>
+          Informs assistive technology that this menu command has button
+          behaviour.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=menuitemradio</strong>
+        </td>
+        <td>
+          Informs assistive technology that this menu command has radio button
+          behaviour.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=menuitemcheckbox</strong>
+        </td>
+        <td>
+          Informs assistive technology that this menu command has checkbox
+          behaviour.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-haspopup=true</strong>
+        </td>
+        <td>
+          Informs assistive technology that the button controls a
+          <em>popup</em>
+          
+          <em>menu</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-controls</strong>
+        </td>
+        <td>Inform assistive technology of which menu this button controls.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-expanded</strong>
+        </td>
+        <td>
+          Informs assistive technology whether the popup menu is expanded or
+          not. And yes, this state goes on the button, not the menu.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-checked</strong>
+        </td>
+        <td>
+          Informs assistive technology whether the menuitemradio or
+          menuitemcheckbox is checked or not. Notice we do not use
+          aria-selected.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

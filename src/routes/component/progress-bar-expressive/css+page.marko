@@ -6,15 +6,15 @@
     </p>
 
     <p>
-        This pattern consists of an animated progress bar in various colors and an optional set of messages that are cycled into view. These messages render in an element with${" "}
+        This pattern consists of an animated progress bar in various colors and an optional set of messages that are cycled into view. These messages render in an element with
         <code>
             role="status"
         </code>
-        ${" "}, which announces new content to assistive technology. The live examples that follow use${" "}
+        , which announces new content to assistive technology. The live examples that follow use
         <code>
             aria-live="off"
         </code>
-        ${" "}to prevent the status element from proactively announcing new content. This is only for demo purposes, so that this documentation page does not overwhelm the viewer with example status updates. The${" "}
+        to prevent the status element from proactively announcing new content. This is only for demo purposes, so that this documentation page does not overwhelm the viewer with example status updates. The
         <code>
             aria-live
         </code>
@@ -181,11 +181,11 @@
         Expressive Progress Bar with Multiple Messages
     </h3>
     <p>
-        The following examples demonstrate cycling through messages using JavaScript. Note that JavaScript is not bundled with Skin, so you will need to write your own${" "}
+        The following examples demonstrate cycling through messages using JavaScript. Note that JavaScript is not bundled with Skin, so you will need to write your own
         <code>
             js
         </code>
-        ${" "}implementation of this pattern. We have outlined the steps below so you can recreate them in your JavaScript framework of choice.
+        implementation of this pattern. We have outlined the steps below so you can recreate them in your JavaScript framework of choice.
     </p>
 
     <h4>Default behavior</h4>
@@ -196,11 +196,11 @@
                 Animate in the message:
                 <ol>
                     <li>
-                        Put the message content in the aria-hidden element with class${" "}
+                        Put the message content in the aria-hidden element with class
                         <code>
                             progress-bar-expressive__message
                         </code>
-                        ${" "}. This element is used just for the visual message animation; it is not read to screen readers.
+                        . This element is used just for the visual message animation; it is not read to screen readers.
                     </li>
                     <li>
                         Add the
@@ -215,11 +215,11 @@
                 After the message animates in:
                 <ol>
                     <li>
-                        Put the message content in the status element with class${" "}
+                        Put the message content in the status element with class
                         <code>
                             progress-bar-expressive__message
                         </code>
-                        ${" "}. This will read the message aloud to screen reader users.
+                        . This will read the message aloud to screen reader users.
                     </li>
                     <li>
                         Remove the
@@ -235,7 +235,7 @@
                 <code>
                     expressive_loader__message--out
                 </code>
-                ${" "}class to the current message to animate it out of view. This can happen concurrently with the next message animating in.
+                class to the current message to animate it out of view. This can happen concurrently with the next message animating in.
             </li>
         </ol>
     </p>
@@ -246,7 +246,7 @@
         <code>
             @media (prefers-reduced-motion: reduce)
         </code>
-        ${" "}, there is no transition state between messages, so the aria-hidden message is not needed. To fade in the first message, add the${" "}
+        , there is no transition state between messages, so the aria-hidden message is not needed. To fade in the first message, add the
         <code>
             progress-bar-expressive__message--initial
         </code>
@@ -350,7 +350,7 @@
         Medium text
     </h3>
     <p>
-        By default, the expressive progress bar displays with large text. For smaller text, apply the${" "}
+        By default, the expressive progress bar displays with large text. For smaller text, apply the
         <code>
             progress-bar-expressive--medium
         </code>

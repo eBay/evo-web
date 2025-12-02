@@ -1,1 +1,77 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Toast Dialog Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A toast dialog is non-modal and should
+    <strong>not</strong>
+    steal or trap keyboard focus.
+  </p>
+  <p>
+    When the dialog becomes visible, it
+    <strong>must</strong>
+    be placed immediately after the current active element in the DOM.
+    This ensures a logical reading and tabbing order in the page.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    A toast dialog is non-modal and should
+    <strong>not</strong>
+    steal or trap keyboard focus.
+  </p>
+  <p>
+    The toast should be positioned in the dom so that the next
+    <strong>TAB</strong>
+    key press moves focus from the currently focussed element into the
+    toast dialog element.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A toast dialog is non-modal and should
+    <strong>not</strong>
+    steal or trap screen reader virtual cursor.
+  </p>
+  <p>
+    The toast should be positioned in the dom so that the virtual cursor moves
+    from the currently focussed element onto the toast dialog element.
+  </p>
+  <p>
+    The screen reader should announce the title and contents of the toast
+    dialog.
+  </p>
+  <h3>Mouse</h3>
+  <p>This section is not yet available.</p>
+  <h2>ARIA Reference</h2>
+  <p>
+    This section gives an overview of ARIA usage within the context of this
+    pattern.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=dialog</strong>
+        </td>
+        <td>
+          Informs the assistive technology that the user is inside of a dialog.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-modal=false</strong>
+        </td>
+        <td>Informs assistive technology that the dialog is not modal.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,123 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Accordion Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Each header will be in the natural tabindex, courtesy of the details
+    pattern. This natural tabindex must not be removed or tampered with.
+  </p>
+  <p>By default, all panels can be in an open, expanded state.</p>
+  <p>
+    Optionally, the accordion may be restricted to only show one content panel
+    at a time (i.e. opening a panel will close any other open panel). This is
+    known as an auto-collapsing accordion. Note that auto-collapse on accordion
+    should be used cautiously, as it prevents users from comparing content and
+    may disrupt the user experience.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides detailed instructions for how different input types
+    should navigate and operate the pattern.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Pressing
+    <strong>TAB</strong>
+    key
+    <strong>must</strong>
+    move keyboard focus from one header to the next. It will also move
+    focus through any interactive elements inside open panels.
+  </p>
+  <p>
+    Likewise, pressing
+    <strong>SHIFT-TAB</strong>
+    keys moves focus
+    <em>backwards</em>
+    through headers and interactive panel content.
+  </p>
+  <p>
+    Pressing
+    <strong>SPACEBAR</strong>
+    or
+    <strong>ENTER</strong>
+    key on a header with keyboard focus
+    <strong>must</strong>
+    open the panel. For
+    <em>auto-collapse</em>
+    accordions, any other open panel
+    <strong>must</strong>
+    close.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Virtual cursor
+    <strong>must</strong>
+    be able to move from one header to the next.
+  </p>
+  <p>
+    With virtual cursor on header, it
+    <strong>must</strong>
+    be able to open panel via click event simulation. For
+    <em>auto-collapse</em>
+    accordions, any other open panel
+    <strong>must</strong>
+    close, but this should not be announced.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Tapping or clicking a header
+    <strong>must</strong>
+    open the related content panel. For
+    <em>auto-collapse</em>
+    accordions, any other open panel
+    <strong>must</strong>
+    close.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Support</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-roledescription</strong>
+        </td>
+        <td>
+          Defines a human-readable,
+          <strong>author-localized</strong>
+          description for the
+          <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-role">
+            role
+          </a>
+          of an
+          <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-element">
+            element
+          </a>
+          . In this case, “accordion”.
+        </td>
+        <td>
+          <a href="https://a11ysupport.io/tech/aria/aria-roledescription_attribute">
+            View AT support
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">
+        APG accordion pattern
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">
+        APG disclosure pattern
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,1 +1,140 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Link Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Link text
+    <strong>must not</strong>
+    be “click here”.
+  </p>
+  <p>
+    Link text
+    <strong>must</strong>
+    adequately communicate the destination.
+  </p>
+  <p>
+    Links that share the same link text
+    <strong>must all</strong>
+    go to the same URL.
+  </p>
+  <p>
+    HREF attribute
+    <strong>must always</strong>
+    contain a valid URL.
+  </p>
+  <p>
+    HREF attribute
+    <strong>must never</strong>
+    be “javascript”. Please read the
+    <a href="../antipatterns/javascript-href">
+      JavaScript HREF anti-pattern
+    </a>
+    for more information and examples.
+  </p>
+  <p>
+    For links with labels that are not unique to the page (e.g. ‘Add to Cart’,
+    ‘Edit’ or ‘Delete’, see the
+    <a href="../techniques/ambiguous-label">
+      Ambiguous Label
+    </a>
+    technique.
+  </p>
+  <p>
+    Link
+    <strong>must</strong>
+    warn user if it will open in a new window or tab. An icon with
+    alternative text is the recommended approach. Please read the
+    <a href="../antipatterns/open-new-window">
+      Open New Window anti-pattern
+    </a>
+    for more information and examples.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Link
+    <strong>must</strong>
+    activate with ENTER key (not SPACEBAR).
+  </p>
+  <p>
+    Link
+    <strong>must not</strong>
+    prevent default scrolling behaviour of SPACEBAR and ARROW keys.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Link
+    <strong>must</strong>
+    announce with role of “link”.
+  </p>
+  <p>
+    Link
+    <strong>must</strong>
+    announce state of “current” if the HREF matches the current window
+    URL.
+  </p>
+  <p>
+    Link
+    <strong>must</strong>
+    invoke using virtual cursor command (e.g. VO+SPACE in Voiceover).
+  </p>
+  <p>
+    Link
+    <strong>must</strong>
+    announce “new window or tab” behaviour.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-current</strong>
+        </td>
+        <td>
+          Used to indicate that this link represents the current page
+          (aria-current=“page”).
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>FAQ</h2>
+  <h3>Should I use offscreen text or aria-label?</h3>
+  <p>
+    If adding context to an ambiguous link, use
+    <a href="../techniques/offscreen-text">
+      offscreen text
+    </a>
+    .
+  </p>
+  <p>
+    If link tag is empty (e.g. if it displays an icon and has no inner text),
+    use aria-label. However, Voiceover on iOS has problems with empty link tags.
+    Thus, for now, we recommend always using offscreen text.
+  </p>
+  <p>
+    If the link contains an image with embedded text, the image must have alt
+    text.
+  </p>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="http://webaim.org/techniques/hypertext/hypertext_links">
+        http://webaim.org/techniques/hypertext/hypertext_links
+      </a>
+    </li>
+    <li>
+      <a href="https://www.scottohara.me/blog/2021/05/28/disabled-links.html">
+        https://www.scottohara.me/blog/2021/05/28/disabled-links.html
+      </a>
+    </li>
+  </ul>
+</div>

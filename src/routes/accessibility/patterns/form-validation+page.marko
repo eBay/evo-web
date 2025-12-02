@@ -1,0 +1,182 @@
+<div class="a11y-pattern-content">
+  <h1>Form Validation Accessibility</h1>
+  <h2>Introduction</h2>
+  <p>
+    Form validation notifies users of invalid and missing data
+    <em>after</em>
+    a user has attempted to submit the form.
+  </p>
+  <p>
+    To validate a field
+    <em>before</em>
+    the user attempts to submit the form, please view the
+    <a href="input-validation">
+      input validation
+    </a>
+    pattern.
+  </p>
+  <p>
+    After attempting to submit a form, the validation results can either be
+    rendered immediately on the client, or rendered after a full page reload.
+  </p>
+  <h2>Working Examples</h2>
+  <p>
+    Experience the pattern in action on our companion
+    <a href="http://ebay.github.io/mindpatterns/messaging/form-validation/">
+      eBay MIND Patterns examples website
+    </a>
+    .
+  </p>
+  <h2>Terminology</h2>
+  <p>
+    <strong>Form Validation</strong>
+    : The pattern as a whole, containing the following sub parts.
+  </p>
+  <p>
+    <strong>Notice landmark</strong>
+    : page notice or section notice containing list of error links
+  </p>
+  <p>
+    <strong>Error link</strong>
+    : internal link that moves focus to invalid input.
+  </p>
+  <p>
+    <strong>Invalid input</strong>
+    : a form control with an invalid value
+  </p>
+  <p>
+    <strong>Inline notice</strong>
+    : displayed next to an invalid input
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    Immediate client-side results
+    <strong>must</strong>
+    be rendered using a section notice directly
+    <em>above</em>
+    the form.
+  </p>
+  <p>
+    A full-page reload
+    <strong>must</strong>
+    render a
+    <a href="page-notice">
+      page notice
+    </a>
+    at the top of the page.
+  </p>
+  <p>
+    The notice
+    <strong>must</strong>
+    contain a list of errors that link directly to their respective
+    invalid inputs.
+  </p>
+  <p>
+    The errors
+    <strong>must</strong>
+    be visible to all users. Do not try and hide the errors from sighted
+    users!
+  </p>
+  <p>
+    We highly recommend reading
+    <a href="https://www.nngroup.com/articles/error-message-guidelines/">
+      Error-Message Guidelines
+    </a>
+    by the Norman Nielson Group.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    The notice landmark
+    <strong>must</strong>
+    receive programmatic focus when rendered.
+  </p>
+  <p>
+    The notice landmark should not be in tab order (i.e it should have
+    tabindex=“-1”).
+  </p>
+  <p>
+    Activating an error link
+    <strong>must</strong>
+    move focus to the invalid input.
+  </p>
+  <p>
+    Inline errors
+    <strong>must</strong>
+    
+    <strong>not</strong>
+    be focusable (they are static text).
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    User
+    <strong>must</strong>
+    receive notification of all errors preventing progress.
+  </p>
+  <p>
+    An invalid input
+    <strong>must</strong>
+    notify user of the invalid state
+    <strong>and</strong>
+    the error description.
+  </p>
+  <p>
+    Notice landmark
+    <strong>must</strong>
+    be listed as custom landmark and labelled appropriately.
+  </p>
+  <h3>Pointer</h3>
+  <p>Awaiting content for this section.</p>
+  <h2>ARIA Reference</h2>
+  <p>This section gives an overview of our use of ARIA in this pattern.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-required</strong>
+        </td>
+        <td>
+          Applied to the input element to denote a required field. We can also
+          use this attribute as a CSS hook.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-invalid</strong>
+        </td>
+        <td>
+          Applied to the input element to denote an invalid field. We can also
+          use this attribute as a CSS hook.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>
+          Applied to the input element to denote the element containing the
+          error description.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Related Articles</h2>
+  <ul>
+    <li>
+      <a href="https://www.nngroup.com/articles/error-message-guidelines/">
+        Error-Message Guidelines
+      </a>
+      (Norman Nielson Group)
+    </li>
+  </ul>
+</div>

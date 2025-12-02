@@ -1,1 +1,216 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Combobox Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Each row in the list of options performs only a singular action: setting the
+    value of the textbox. It is not possible, at the time of writing, to have
+    additional actions per row, e.g. add, edit or delete.
+  </p>
+  <p>
+    The combobox listbox is
+    <strong>not</strong>
+    intended for storing or display kind of single-select or multi-select
+    state. Again, the purpose of each option is to simply set the value of the
+    textbox.
+  </p>
+  <p>
+    A combobox is an enhancement of textbox. Likewise,
+    <strong>autocomplete</strong>
+    is an enhancement of combobox. Suggestions provided will
+    <em>update</em>
+    
+    <em>dynamically</em>
+    based on user input. The suggested values may appear inline within the
+    textbox, in a list, or both places at once.
+  </p>
+  <p>
+    Examples of autocomplete are the URL bar in browsers, and the main search
+    field in search engines.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    When the combobox receives focus, the listbox should expand to show all
+    options.
+  </p>
+  <p>
+    With listbox expanded, pressing
+    <code>DOWN-ARROW</code>
+    and
+    <code>UP-ARROW</code>
+    keys
+    <strong>must</strong>
+    navigate through the list of options. The keyboard focus will
+    <em>appear</em>
+    to be in two places at the same time - the textbox
+    <em>and</em>
+    the listbox. In actual fact, keyboard focus always stays on the
+    textbox. The
+    <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant">
+      aria-activedescendant
+    </a>
+    property controls the
+    <em>pseudo-focus</em>
+    inside of the listbox.
+  </p>
+  <p>
+    Pressing
+    <code>SPACEBAR</code>
+    
+    <strong>must always</strong>
+    enter a blank space in the textbox.
+  </p>
+  <p>
+    For a combobox with
+    <code>autoSelect</code>
+    , changing the highlighted option will automatically fill the textbox with
+    that option.
+  </p>
+  <p>
+    For a combobox without
+    <code>autoSelect</code>
+    , changing the highlighted option
+    <strong>must</strong>
+    
+    <strong>not</strong>
+    automatically fill the textbox;
+    <code>ENTER</code>
+    key is required to manually select the option.
+  </p>
+  <p>
+    Pressing
+    <code>ENTER</code>
+    key while an option is highlighted
+    <strong>must</strong>
+    collapse the listbox. For a combobox with
+    <code>autoSelect</code>
+    the form will be submitted. For a combobox without
+    <code>autoSelect</code>
+    the form
+    <strong>must not</strong>
+    be submitted.
+  </p>
+  <p>
+    Pressing
+    <code>ESC</code>
+    key while an option is highlighted
+    <strong>must</strong>
+    collapse the listbox.
+  </p>
+  <h4>For autocomplete type “list”</h4>
+  <p>
+    The listbox remains but the options change based on the custom filtering
+    criteria.
+  </p>
+  <p>
+    With focus in the empty combobox, type any letter. Any suggestions that
+    match the filter will appear as options in the listbox popover.
+  </p>
+  <h4>For autocomplete type “inline”</h4>
+  <p>
+    The listbox is removed. The entire combobox value will update as the user
+    types, with the suggested portion highlighted as a
+    <em>selection</em>
+    range.
+  </p>
+  <h4>For autocomplete type “both”</h4>
+  <p>This section is under development.</p>
+  <h3>Screen Reader</h3>
+  <p>
+    The screen reader will announce the input as “text edit”, “combobox” or
+    words to those effect, depending on level of ARIA support.
+  </p>
+  <p>
+    The screen reader will announce “expanded” or “collapsed”, depending on
+    level of ARIA support.
+  </p>
+  <p>
+    The screen reader will announce any additional programmatic description,
+    depending on level of ARIA support.
+  </p>
+  <p>The screen reader will announce the current value of the textbox.</p>
+  <h3>Pointer</h3>
+  <p>
+    When the combobox receives focus, via click or tap, the listbox should
+    expand to show all options.
+  </p>
+  <p>
+    Clicking or tapping an option will fill the textbox with that value and
+    collapse the listbox
+    <strong>without</strong>
+    triggering a form submit.
+  </p>
+  <h2>ARIA Reference</h2>
+  <p>
+    This section gives an overview of ARIA usage,
+    <em>within the context of this pattern</em>
+    .
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=combobox</strong>
+        </td>
+        <td>
+          This attribute changes the role of the text input from
+          <code>textbox</code>
+          to
+          <code>combobox</code>
+          . We recommend applying this attribute on the client-side with
+          JavaScript.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=listbox</strong>
+        </td>
+        <td>The list of suggestions has a role of listbox.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=option</strong>
+        </td>
+        <td>Each listbox item has a role of option.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-owns</strong>
+        </td>
+        <td>
+          This property creates a programmatic hierarchy in the accessibility
+          tree for the combobox and the listbox.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-expanded</strong>
+        </td>
+        <td>Conveys the expanded state of the combobox.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Provides the expand/collapse button with an accessible label, in the
+          case where it has no visible text (i.e. an icon button).
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues">
+        https://github.com/w3c/aria/wiki/Resolving-ARIA-1.1-Combobox-Issues
+      </a>
+    </li>
+  </ul>
+</div>

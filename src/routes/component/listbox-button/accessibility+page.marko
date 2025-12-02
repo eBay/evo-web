@@ -1,1 +1,117 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Listbox Button Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A listbox button’s accessible label must at
+    <strong>all times</strong>
+    reflect its function.
+  </p>
+  <p>
+    <strong>Care is needed when labelling a listbox button!</strong>
+    A listbox button attempts to mimic the behaviour of an HTML select by
+    displaying the currently selected value in its collapsed state. In HTML
+    however, a
+    <em>button</em>
+    is labelled by its inner text, whereas a
+    <em>select</em>
+    is labelled by an external label tag.
+  </p>
+  <p>
+    All of this leaves us with a conundrum, with three potential solutions
+    outlined below.
+  </p>
+  <h3>Compound Label</h3>
+  <p>
+    We can use
+    <code>aria-labelledby</code>
+    to stitch together an external text element with the internal value,
+    this creating a compound label.
+  </p>
+  <p>
+    <code>
+      &lt;span id=&quot;el1&quot;&gt;Colour&lt;/span&gt;&lt;button
+      aria-labelledby=&quot;el1 el2&quot;&gt;&lt;span
+      id=&quot;el2&quot;&gt;blue&lt;/span&gt;&lt;/button&gt;
+    </code>
+  </p>
+  <h3>Compact Label</h3>
+  <p>
+    The button’s inner text can be written as a key/value pair, where key
+    denotes purpose and value represents the currently selected option.
+  </p>
+  <p>
+    <code>&lt;button&gt;Colour: blue&lt;button&gt;</code>
+  </p>
+  <h3>Explicit Labels</h3>
+  <p>
+    We can write our option values such that the context can always be derived
+    from the option value text alone (this isn’t always easy or recommended).
+  </p>
+  <p>
+    <code>&lt;div role=&quot;option&quot;&gt;Colour blue&lt;/div&gt;</code>
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader &amp;
+    pointing devices.
+  </p>
+  <p>
+    Please also see related
+    <a href="listbox">
+      listbox
+    </a>
+    pattern for best practices of nested listbox.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    With focus on button, pressing
+    <code>SPACEBAR</code>
+    will will toggle the expanded state of button. On expand, keyboard
+    focus should move to the listbox. The listbox implements an
+    <a href="../techniques/active-descendant">
+      active-descendant
+    </a>
+    keyboard model.
+  </p>
+  <p>
+    With focus on listbox,
+    <code>ARROW KEYS</code>
+    will navigate the options,
+    <code>ESCAPE</code>
+    key will collapse listbox and move focus on to button.
+    <code>TAB</code>
+    key will collapse listbox and move focus to next interactive page
+    element.
+    <code>SHIFT-TAB</code>
+    will move focus back to button and listbox will remain expanded.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    With virtual cursor on button, screen reader should announce role, label
+    (see “Best Practices” section above), value &amp; state…
+  </p>
+  <h3>Pointer</h3>
+  <p>Clicking or tapping button will toggle expanded state of popover.</p>
+  <p>
+    Clicking or tapping an option in popover will update button value and
+    collapse the popover.
+  </p>
+  <h2>Known Issues</h2>
+  <p>
+    These are all known
+    <em>serious</em>
+    issues with assistive technology in relation to this pattern:
+  </p>
+  <ul>
+    <li>
+      <a href="https://issues.chromium.org/issues/40260928">
+        https://issues.chromium.org/issues/40260928
+      </a>
+    </li>
+    <li>
+      <a href="https://issues.chromium.org/issues/40945405">
+        https://issues.chromium.org/issues/40945405
+      </a>
+    </li>
+  </ul>
+</div>

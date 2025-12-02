@@ -1,1 +1,108 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>File Input Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    File input
+    <strong>must</strong>
+    have an accessible label, such as “Browse files.”
+  </p>
+  <p>
+    File input
+    <em>should</em>
+    support drag-and-drop, to allow for multiple interaction options. Most
+    browsers now support drag-and-drop for file input fields by default.
+  </p>
+  <p>
+    It is recommended to include helper text to inform the user about the
+    availability of drag-and-drop and any constraints on file size or type.
+  </p>
+  <h3>Visual Display</h3>
+  <p>
+    By default, browsers display file input fields as a composite of two
+    elements:
+  </p>
+  <ul>
+    <li>A file selector button, with text like “Browse…” or “Choose File”</li>
+    <li>Text displaying the selected file name(s), or “No file(s) selected”</li>
+  </ul>
+  <p>
+    To provide a larger, more prominent interaction target, authors
+    <em>may</em>
+    visually obscure these elements in favor of a visual container that
+    includes the field label, helper text, and/or additional visual elements.
+  </p>
+  <ul>
+    <li>
+      If the default file selector button is obscured, the container
+      <strong>must</strong>
+      display a clear call to action. This could be the field’s label,
+      e.g. “Browse files.”
+    </li>
+    <li>
+      If the default selected file display is obscured, there
+      <strong>must</strong>
+      be another visual representation of the files to be submitted.
+      <a href="../messaging/file-preview-card">
+        File preview cards
+      </a>
+      are one way to accomplish this.
+    </li>
+  </ul>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    File input
+    <strong>must</strong>
+    be keyboard focusable (unless disabled). Any custom styling
+    <strong>must</strong>
+    ensure a clear focus state distinct from unfocused state.
+  </p>
+  <p>
+    When the file input has keyboard focus, pressing
+    <code>ENTER</code>
+    or
+    <code>SPACEBAR</code>
+    
+    <strong>must</strong>
+    open the operating system’s native file browser, where the user can
+    use their operating system’s typical file browsing controls to navigate and
+    select file(s).
+  </p>
+  <h3>Screen reader</h3>
+  <p>
+    The file input
+    <strong>must</strong>
+    announce its label to screen reader users.
+  </p>
+  <p>
+    The file input
+    <strong>must</strong>
+    announce its role to screen reader users.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking the file input field or its label
+    <strong>must</strong>
+    open the operating system’s native file browser.
+  </p>
+  <p>
+    It is recommended that file input also support drag-and-drop. The entire
+    file input container should be treated as a drop zone; dragging and dropping
+    files directly onto the file input field’s container
+    <em>should</em>
+    select the file(s) for upload.
+  </p>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file">
+        MDN Web Docs: input type=“file”
+      </a>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::file-selector-button">
+        MDN Web Docs: ::file-selector-button
+      </a>
+    </li>
+  </ul>
+</div>

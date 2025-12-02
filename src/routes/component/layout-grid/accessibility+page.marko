@@ -1,1 +1,38 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Layout Grid Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    The group of items/elements should be identified for screen readers. For
+    lists that have an on-screen description text, it would look like this:
+  </p>
+  <pre><code class="language-html">&lt;h3 id=&quot;my-buttons-list-title&quot;&gt;My List of Buttons&lt;/h3&gt;
+&lt;div class=&quot;layout-grid&quot;&gt;
+  &lt;ul aria-labelledby=&quot;my-buttons-list-title&quot;&gt;
+    &lt;li&gt;
+      &lt;button class=&quot;btn btn--fluid&quot;&gt;Button&lt;/button&gt;
+    &lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  <p>
+    For instances where on-screen text is not available, an
+    <code>aria-label</code>
+    would work as well.
+  </p>
+  <pre><code class="language-html">&lt;div class=&quot;layout-grid&quot;&gt;
+  &lt;ul aria-label=&quot;My list of button&quot;&gt;
+    &lt;li&gt;
+      &lt;button class=&quot;btn btn--fluid&quot;&gt;Button&lt;/button&gt;
+    &lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard Interaction</h3>
+  <p>
+    There are no interactive sections in Layout Grid, so there are no keyboard
+    interaction guidelines.
+  </p>
+</div>

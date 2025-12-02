@@ -27,9 +27,9 @@ static const basePath = import.meta.env.BASE_URL;
                 Toggle Buttons inside Toggle Button Group are intended to be
                 input controls. They are ment to be used for users to make
                 selection(s) that can be used for additional actions. For
-                example, they can be used to storing the selection(s) and using${" "}
+                example, they can be used to storing the selection(s) and using
                 <code>JavaScript</code>
-                ${" "}to include the information in a form submission.
+                to include the information in a form submission.
             </p>
 
             <p>
@@ -41,28 +41,28 @@ static const basePath = import.meta.env.BASE_URL;
 
     <p>
         The component allows for single or multiple selections based on need.
-        However, when using Skin by itself you will need to have your own${" "}
+        However, when using Skin by itself you will need to have your own
         <code>JavaScript</code>
-        ${" "}to establish those rules based on the specific needs for each
+        to establish those rules based on the specific needs for each
         implementation context.
     </p>
 
     <p>
         Effort was taken in these docs to provide a good amount of helpful
-        information. Since this component has an atomic piece (${" "}
+        information. Since this component has an atomic piece (
 
         <a href="component/toggle-button">
             Toggle Button
         </a>
-        ${" "}), there may be some information crossover. Though efforts were
+        ), there may be some information crossover. Though efforts were
         taken to isolate the documentation for this parent component, at various
         touchpoints between the two components, there may be some redundancy. In
         other portions, where immediate information appears to be missing here,
-        that information may reside in its child component. Please refer to${" "}
+        that information may reside in its child component. Please refer to
         <a href="component/toggle-button">
             Toggle Button
         </a>
-        ${" "}docs in these situations.
+        docs in these situations.
     </p>
 
     <h3>Accessibility</h3>
@@ -148,9 +148,9 @@ static const basePath = import.meta.env.BASE_URL;
     <h4>Off-screen Heading with Associated List (b)</h4>
     <p>
         This implementation is identical to option (a), except the heading is
-        off-screen using the${" "}
+        off-screen using the
         <code>clipped</code>
-        ${" "}class.
+        class.
     </p>
     <div class="demo">
         <div class="demo__inner">
@@ -245,11 +245,11 @@ static const basePath = import.meta.env.BASE_URL;
     </ol>
 
     <p>
-        If you're using Skin outside of a${" "}
+        If you're using Skin outside of a
         <code>JavaScript</code>
-        ${" "}framework, you will need to write your own${" "}
+        framework, you will need to write your own
         <code>js</code>
-        ${" "}code to accomplish these interactivity cases.
+        code to accomplish these interactivity cases.
     </p>
 
     <p>
@@ -257,15 +257,15 @@ static const basePath = import.meta.env.BASE_URL;
         you to set up a a single event handler for the group of buttons instead
         of on every button.
     </p>
-    ${" "}The following examples use an HTML attribute to disitnguish the
-    interaction variations. Using${" "}
+    The following examples use an HTML attribute to disitnguish the
+    interaction variations. Using
     <code>data-selection-type</code>
-    ${" "}. For the associated${" "}
+    . For the associated
     <code>js</code>
-    ${" "}please see${" "}
+    please see
     <code>/docs/src/js/main.js</code>
-    ${" "}(TOGGLE-BUTTON-GROUP section) for an example on how the implementation
-    may be accomplished.${" "}
+    (TOGGLE-BUTTON-GROUP section) for an example on how the implementation
+    may be accomplished.
 
     <h4>Multi-select</h4>
     <p>
@@ -369,9 +369,9 @@ static const basePath = import.meta.env.BASE_URL;
 
     <h4>Single-select Optional</h4>
     <p>
-        In this example of the Single-select Optional variation,${" "}
+        In this example of the Single-select Optional variation,
         <code>data-selection-type="single-optional"</code>
-        ${" "}is used to split off the variation interactivity. This option
+        is used to split off the variation interactivity. This option
         allows for only one selection, so toggling additional buttons will
         simply switch the toggled button and retain only one toggled button.
     </p>
@@ -473,9 +473,9 @@ static const basePath = import.meta.env.BASE_URL;
 
     <h4>Single-select Required</h4>
     <p>
-        In this example of the Single-select Optional variation,${" "}
+        In this example of the Single-select Optional variation,
         <code>data-selection-type="single-required"</code>
-        ${" "}is used to split off the variation interactivity. This option
+        is used to split off the variation interactivity. This option
         allows for only one selection. However, unlike the single-select
         optional variation, this variation enforces the required single
         selection so the toggled button cannot be untoggled.
@@ -587,9 +587,9 @@ static const basePath = import.meta.env.BASE_URL;
     </p>
 
     <p>
-        We use${" "}
+        We use
         <code>display: grid</code>
-        ${" "}to create a predefined allotted number of button slots per
+        to create a predefined allotted number of button slots per
         breakpoint. We also use container queries to modify how many slots
         should be available per breakpoint. This allows buttons to
         shrink/stretch the predefined number of buttons at each breakpoint with
@@ -893,45 +893,45 @@ static const basePath = import.meta.env.BASE_URL;
     <p>
         Here's a specific example. Suppose we know we're going to have 6 buttons
         total and we'd like to have perfect visual balance in the UI. We may add
-        the following html attributes/modifiers to${" "}
+        the following html attributes/modifiers to
         <code>.toggle-button-group</code>
-        ${" "}to achieve that:
+        to achieve that:
     </p>
 
     <ul>
         <li>
             <code>data-columns-xs="2"</code>
-            ${" "}to force 2 toggle buttons on the same line so we'd have 3
-            balanced lines of buttons at the${" "}
+            to force 2 toggle buttons on the same line so we'd have 3
+            balanced lines of buttons at the
             <code>XS</code>
-            ${" "}breakpoint or at${" "}
+            breakpoint or at
             <code>320px</code>
-            ${" "}+ width.
+            + width.
         </li>
         <li>
             <code>data-columns-sm="3"</code>
-            ${" "}to force 3 toggle buttons on the same line so we'd have 2
-            balanced lines of buttons at the${" "}
+            to force 3 toggle buttons on the same line so we'd have 2
+            balanced lines of buttons at the
             <code>SM</code>
-            ${" "}breakpoint or at${" "}
+            breakpoint or at
             <code>512px</code>
-            ${" "}+ width.
+            + width.
         </li>
         <li>
             <code>data-columns-md="6"</code>
-            ${" "}to force all 6 toggle buttons on the same line at the${" "}
+            to force all 6 toggle buttons on the same line at the
             <code>MD</code>
-            ${" "}breakpoint or at${" "}
+            breakpoint or at
             <code>768px</code>
-            ${" "}+ width.
+            + width.
         </li>
         <li>
             <code>data-columns-xl="8"</code>
-            ${" "}to force all 8 toggle buttons on the same line at the${" "}
+            to force all 8 toggle buttons on the same line at the
             <code>XL</code>
-            ${" "}breakpoint or at${" "}
+            breakpoint or at
             <code>1280px</code>
-            ${" "}+ width.
+            + width.
         </li>
     </ul>
 
@@ -1151,11 +1151,11 @@ static const basePath = import.meta.env.BASE_URL;
     <p>
         There are various layouts that can be used based on the specific needs
         at implementation. The implied theme (needs no modifier), is the minimal
-        layout. For more information about types of layouts, refer to the${" "}
+        layout. For more information about types of layouts, refer to the
         <a href="component/toggle-button">
             Toggle Button
         </a>
-        ${" "}component. The examples below will highlight various layouts.
+        component. The examples below will highlight various layouts.
     </p>
 
     <p>
@@ -1202,16 +1202,16 @@ static const basePath = import.meta.env.BASE_URL;
 
     <p>
         <strong>NOTE:</strong>
-        ${" "}All toggle button examples utilize JavaScript to toggle the${" "}
+        All toggle button examples utilize JavaScript to toggle the
         <code>aria-pressed</code>
-        ${" "}state of the button.
+        state of the button.
     </p>
 
     <p>
         In this example, the container housing the Toggle Button Group is
-        artificially limited to${" "}
+        artificially limited to
         <code>500px</code>
-        ${" "}to demonstrate how the buttons will wrap after the specific
+        to demonstrate how the buttons will wrap after the specific
         columns (in this case, 3). Feel free to reduce/expand the container
         width in dev console to see how the columns will react.
     </p>
@@ -1466,9 +1466,9 @@ static const basePath = import.meta.env.BASE_URL;
     </p>
 
     <p>
-        You may use this layout by adding the${" "}
+        You may use this layout by adding the
         <code>toggle-button-group--list-layout</code>
-        ${" "}modifier to the toggle button group.
+        modifier to the toggle button group.
     </p>
 
     <h4>List Layout Toggle Button Group with Title</h4>
@@ -1875,13 +1875,13 @@ static const basePath = import.meta.env.BASE_URL;
     <h4>List Layout Toggle Button Group with Images</h4>
 
     <p>
-        To add an image to a toggle button, you can use the${" "}
+        To add an image to a toggle button, you can use the
         <code>toggle-button__image-container</code>
-        ${" "}block using an${" "}
+        block using an
         <code>&lt;img&gt;</code>
-        ${" "}or as a${" "}
+        or as a
         <code>css</code>
-        ${" "}background image.
+        background image.
     </p>
 
     <h5 id="toggle-button-group-i">
@@ -2158,9 +2158,9 @@ static const basePath = import.meta.env.BASE_URL;
     </p>
 
     <p>
-        You may use this layout by adding the${" "}
+        You may use this layout by adding the
         <code>toggle-button-group--gallery-layout</code>
-        ${" "}modifier to the toggle button group.
+        modifier to the toggle button group.
     </p>
 
     <h4>Gallery Layout Toggle Button Group with Images</h4>
@@ -2321,9 +2321,9 @@ static const basePath = import.meta.env.BASE_URL;
     <h4>Gallery Layout Toggle Button Group with CSS Images</h4>
 
     <p>
-        Besides using an${" "}
+        Besides using an
         <code>&lt;img&gt;</code>
-        ${" "}, you may also use CSS images that can provide more flexibility in
+        , you may also use CSS images that can provide more flexibility in
         filling more of the space reserved for images.
     </p>
 
@@ -2337,15 +2337,15 @@ static const basePath = import.meta.env.BASE_URL;
         The examples below have various different implementations of CSS images.
         The first is a CSS Profile Image button with background-size: contain
         that will display the image as is and fit the entire image in the
-        container. The second is a CSS Profile Image button with${" "}
+        container. The second is a CSS Profile Image button with
         <code>background-size: cover</code>
-        ${" "}that will display the image to fill as much of the space of the
+        that will display the image to fill as much of the space of the
         container as possible clipping out the remaining portions of the image
         that fall outside. With that method, you can also provide guidance for
         fine-tuning the image positioning to move the focal point into the
-        center of the container. In that example,${" "}
+        center of the container. In that example,
         <code>background-position: center 15%;</code>
-        ${" "}is used to move the focal point (person with camera) into the
+        is used to move the focal point (person with camera) into the
         center of the frame.
     </p>
 
@@ -2517,9 +2517,9 @@ static const basePath = import.meta.env.BASE_URL;
         a Toggle Button Group.
     </p>
     <p>
-        To add an icon to a toggle button, you can use the${" "}
+        To add an icon to a toggle button, you can use the
         <code>toggle-button__icon</code>
-        ${" "}block.
+        block.
     </p>
 
     <div class="demo">

@@ -1,1 +1,45 @@
-<a11y-mind-pattern/>
+<div class="a11y-pattern-content">
+  <h1>Toggle Button Group Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    The toggle button group is not a form control; although it can be used
+    within a form - like all buttons - it does not store and submit form data.
+  </p>
+  <p>
+    The toggle button group is not a drop-in replacement for radios or
+    checkboxes, nor does it operate like those.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    Even though a toggle button group is single-select or multi-select, like
+    radios and checkboxes respectively, they do not share the exact same
+    interactions as radios and checkboxes…
+  </p>
+  <p>
+    In a single select toggle group, pressing one button will unpress any
+    currently pressed button in the group.
+  </p>
+  <p>
+    In a multi select toggle group, pressing a button will have no effect on any
+    of the other buttons in the group.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-pressed</strong>
+        </td>
+        <td>
+          Conveys whether the button is pressed or not (i.e true or false)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
