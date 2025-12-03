@@ -3,7 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 16px;
-  margin-block-end: 48px;
+  margin-block-end: 80px;
 }
 
 .landing-info-container.landing-info-container--simple-content {
@@ -18,7 +18,7 @@
 
 .landing-info-container__item {
   background-color: var(--color-background-secondary);
-  border-radius: 8px;
+  border-radius: var(--border-radius-150);
   display: flex;
   flex: 1 1;
   flex-direction: row;
@@ -28,7 +28,7 @@
 }
 
 .landing-info-container__item_icon svg {
-  color: var(--color-foreground-accent);
+  color: var(--color-foreground-primary);
   height: 32px;
   width: 32px;
 }
@@ -43,6 +43,7 @@
 
 .landing-info-container__item_title {
   font-size: 20px;
+  margin: 0;
 }
 
 .landing-info-container__item_description {
@@ -71,12 +72,12 @@
 }
 
 .landing-hero-actions {
-  margin-top: 12px;
+  margin-block-start: 32px;
 }
 
 .landing-hero-actions a,
 .landing-hero-actions button {
-  margin-block-start: 12px;
+  margin-block-start: 0;
 }
 
 .landing-hero-actions a:first-of-type,
@@ -91,12 +92,13 @@
 .landing-title h2 {
   font-size: 24px;
   font-weight: var(--font-weight-bold);
+  margin: 0;
 }
 
 .landing-title p {
   color: var(--color-foreground-secondary);
   font-size: 16px;
-  margin-block-start: 8px;
+  margin-block-start: 16px;
 }
 
 .landing-banner-product-4up {
@@ -111,7 +113,7 @@
 .landing-banner-product-4up > p {
   color: var(--color-foreground-secondary);
   font-size: 16px;
-  margin-block-start: 8px;
+  margin-block-start: 0;
 }
 
 .landing-banner-product-4up > p:last-of-type {
@@ -120,7 +122,7 @@
 
 .landing-banner-product-4up__items {
   display: grid;
-  gap: 8px;
+  gap: 16px;
   grid-template-columns: 1fr;
 }
 
@@ -158,13 +160,14 @@
 .landing-banner-lifestyle-copy {
   display: grid;
   font-size: 16px;
-  gap: 0;
+  gap: 16px;
   grid-template-columns: 1fr;
-  margin-block-end: 48px;
+  margin-block-end: 80px;
 }
 
 .landing-banner-lifestyle-copy__main h3 {
   font-size: 24px;
+  margin: 0;
   margin-block-end: 30px;
 }
 
@@ -188,6 +191,7 @@
 
 .landing-banner-lifestyle-copy__main {
   background-color: var(--color-background-secondary);
+  border-radius: var(--border-radius-150);
   padding: 32px 24px 48px;
 }
 
@@ -196,13 +200,14 @@
 }
 
 .landing-banner-lifestyle-copy__secondary {
-  background-color: var(--color-background-accent);
-  color: var(--color-foreground-on-inverse);
-  padding: 96px 84px;
+  background-color: var(--color-background-secondary);
+  border-radius: var(--border-radius-150);
+//   color: var(--color-foreground-on-inverse);
+  padding: 56px 32px 56px 48px;
 }
 
 .landing-banner-lifestyle-copy__secondary h3 {
-  color: var(--color-foreground-on-inverse);
+//   color: var(--color-foreground-on-inverse);
   font-size: 20px;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
@@ -213,7 +218,7 @@
   display: grid;
   gap: 32px;
   grid-template-columns: 1fr;
-  padding: 16px;
+//   padding: 16px;
 }
 
 .landing-banner-lifestyle-copy__highlight {
@@ -234,6 +239,10 @@
   width: 3rem;
 }
 
+.landing-banner-lifestyle-copy__highlight p {
+    margin-top: 0;
+}
+
 .landing-banner-lifestyle-copy__highlight-icon svg {
   color: var(--color-foreground-primary);
   height: 24px;
@@ -250,7 +259,7 @@
 @media (min-width: 768px) {
   .landing-info-container__item {
     flex: 1 1;
-    gap: 32px;
+    gap: 16px;
 
     // margin-block-end: 72px;
     padding-block: 64px;
@@ -262,14 +271,16 @@
   }
 
   .landing-hero-text-banner {
-    margin-block: 16px 64px;
+    border-radius: var(--border-radius-150);
+    margin-block: 40px 64px;
     padding: 84px;
   }
 
   .landing-hero-text-banner h1 {
     font-size: 46px;
+    line-height: 52px;
     margin: 0;
-    margin-block-end: 12px;
+    margin-block-end: 16px;
   }
 
   .landing-title {
@@ -281,13 +292,14 @@
   }
 
   .landing-banner-product-4up {
-    margin-block-end: 48px;
+    margin-block-end: 80px;
   }
 
   .landing-banner-product-4up > h2 {
     font-size: 24px;
     font-weight: var(--font-weight-bold);
-    padding-block: 0 8px;
+    margin: 0;
+    padding-block: 0 16px;
   }
 
   .landing-banner-product-4up > p {
@@ -304,11 +316,12 @@
   }
 
   .landing-banner-product-4up__item {
-    padding: 32px;
+    padding: 48px 48px 40px 48px;
   }
 
   .landing-banner-product-4up__item h3 {
     font-size: 24px;
+    margin: 0;
     margin-block-end: 16px;
   }
 
@@ -322,6 +335,6 @@
   }
 
   .landing-banner-lifestyle-copy__main {
-    padding: 96px 84px;
+    padding: 56px 32px 56px 48px;
   }
 }
