@@ -1,79 +1,5 @@
-// Function to convert URL segments to readable labels
-<const/formatBreadcrumbLabel=(segment: string) => {
-  return segment
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}>
-// Get current URL path and create breadcrumb segments
-<const/currentPath=(() => {
-  let currentPath = "";
-  if (typeof window !== "undefined") {
-    currentPath = window.location.pathname;
-  } else if ($global?.url) {
-    // If we have a full URL, extract just the pathname
-    try {
-      const url = new URL($global.url);
-      currentPath = url.pathname;
-    } catch {
-      // Fallback: if it's already a pathname, use it directly
-      const urlString = String($global.url);
-      currentPath = urlString.startsWith("/") ? urlString : "/" + urlString;
-    }
-  }
-  currentPath = currentPath.startsWith("/") ? currentPath : "/" + currentPath;
-  currentPath =
-    currentPath.endsWith("/") && currentPath !== "/"
-      ? currentPath.slice(0, -1)
-      : currentPath;
-
-  return currentPath;
-})()>
-// Parse URL segments to create breadcrumbs
-<const/segments=(currentPath.split("/").filter((segment) => segment !== ""))>
-
-<const/breadcrumbs=(() => {
-  let breadcrumbs = [
-    // Always start with home
-    {
-      label: "Evo Web",
-      href: "./",
-      isLast: segments.length === 0,
-    },
-  ];
-
-  // Add each segment as a breadcrumb
-  for (let i = 0; i < segments.length; i++) {
-    const segment = segments[i];
-
-    // Skip catch-all route markers
-    if (segment.includes("$$")) {
-      continue;
-    }
-
-    const href = segments.slice(0, i + 1).join("/");
-    const isLast = i === segments.length - 1;
-
-    // Handle special cases for better labels
-    let label = formatBreadcrumbLabel(segment);
-
-    // Special handling for common patterns
-    if (segment === "accessibility") {
-      label = "Accessibility";
-    } else if (segment === "anti-patterns") {
-      label = "Anti-patterns";
-    } else if (segment === "patterns") {
-      label = "Patterns";
-    }
-
-    breadcrumbs[breadcrumbs.length] = {
-      label: label,
-      href: href,
-      isLast: isLast,
-    };
-  }
-  return breadcrumbs;
-})()>
+import { getProperName } from '../data';
+<const/url=$global.url.pathname.split("/")>
 
 <div class="site-breadcrumbs">
   <nav
@@ -84,11 +10,13 @@
       You are here
     </p>
     <ul>
-      <for|breadcrumb, index| of=breadcrumbs>
+      <for|breadcrumb, index| of=url>
         <li>
-          <if=!breadcrumb.isLast>
-            <a href=breadcrumb.href>
-              ${breadcrumb.label}
+          <if=(index !== url.length - 1)>
+            <const/href=url.slice(1, index + 1).join('/')>
+            <const/name=!!href ? breadcrumb : "Evo Web">
+            <a href=!!href ? href : "./">
+              ${getProperName(name)}
             </a>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
               <use href="#icon-chevron-right-12"/>
@@ -96,7 +24,7 @@
           </if>
           <else>
             <a aria-current="page">
-              ${breadcrumb.label}
+              ${getProperName(breadcrumb)}
             </a>
           </else>
         </li>
