@@ -2,41 +2,41 @@
   <h1>Tabs Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Tab list${" "}
+    Tab list
     <strong>must</strong>
-    ${" "}be preceded by a heading. All tabs${" "}
+    be preceded by a heading. All tabs
     <strong>must</strong>
-    ${" "}be thematically related to this heading. For example, a set of
+    be thematically related to this heading. For example, a set of
     ‘Shipping Services’ tabs might contain a tab each for USPS, FedEx and UPS.
   </p>
   <p>
-    To maintain correct heading structure, tab panels${" "}
+    To maintain correct heading structure, tab panels
     <strong>should</strong>
-    ${" "}contain an${" "}
+    contain an
     <a href="accessibility/techniques/offscreen-text">
       offscreen
     </a>
-    ${" "}heading. The level of this panel heading${" "}
+    heading. The level of this panel heading
     <strong>must</strong>
-    ${" "}be exactly one level lower than the heading preceding the tablist. The
+    be exactly one level lower than the heading preceding the tablist. The
     heading text must match the corresponding tab text.
   </p>
   <p>
-    Tab list${" "}
+    Tab list
     <strong>must</strong>
-    ${" "}have exactly one selected tab.
+    have exactly one selected tab.
   </p>
   <p>
     If all tab panel content is rendered on page load, tabs should be configured
-    with${" "}
+    with
     <code>autoSelect</code>
-    ${" "}enabled.
+    enabled.
   </p>
   <p>
     If all tab panel content is rendered lazily on client (i.e. using AJAX
-    call), tabs should be configured with${" "}
+    call), tabs should be configured with
     <code>autoSelect</code>
-    ${" "}turned off.
+    turned off.
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -45,67 +45,67 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    Only one tab can be keyboard focusable at any time. This is known as a${" "}
+    Only one tab can be keyboard focusable at any time. This is known as a
     <a href="accessibility/techniques/roving-tabindex">
       roving tab index  
     </a>
-    ${" "}.
+    .
   </p>
   <p>
-    For tabs with${" "}
+    For tabs with
     <code>autoSelect</code>
-    ${" "}enabled,${" "}
+    enabled,
     <code>ARROW</code>
-    ${" "}keys move keyboard focus to next/previous tab and also select that tab
-    (i.e.${" "}
+    keys move keyboard focus to next/previous tab and also select that tab
+    (i.e.
     <code>aria-selected=&quot;true&quot;</code>
-    ${" "}).
+    ).
   </p>
   <p>
-    For tabs without${" "}
+    For tabs without
     <code>autoSelect</code>
-    ${" "}enabled,${" "}
+    enabled,
     <code>ARROW</code>
-    ${" "}keys move keyboard focus to next/previous tab, but${" "}
+    keys move keyboard focus to next/previous tab, but
     <code>ENTER</code>
-    ${" "}or${" "}
+    or
     <code>SPACEBAR</code>
-    ${" "}key is required to set the tab to a selected state.
+    key is required to set the tab to a selected state.
   </p>
   <p>
-    If tab panel contains focusable element(s),${" "}
+    If tab panel contains focusable element(s),
     <code>TAB</code>
-    ${" "}key on selected tab${" "}
+    key on selected tab
     <strong>must</strong>
-    ${" "}move focus to first focusable element in tab panel.
+    move focus to first focusable element in tab panel.
   </p>
   <p>
-    If tab panel does not contain focusable element(s),${" "}
+    If tab panel does not contain focusable element(s),
     <code>TAB</code>
-    ${" "}key on selected tab${" "}
+    key on selected tab
     <strong>must</strong>
-    ${" "}move focus to next focusable element on page.
+    move focus to next focusable element on page.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Tab${" "}
+    Tab
     <strong>must</strong>
-    ${" "}be announce as “Tab”.
+    be announce as “Tab”.
   </p>
   <p>
-    Tab label${" "}
+    Tab label
     <strong>must</strong>
-    ${" "}be announced, for example “Select Shipping for me”.
+    be announced, for example “Select Shipping for me”.
   </p>
   <p>
-    Tab selected state${" "}
+    Tab selected state
     <strong>must</strong>
-    ${" "}be announced.
+    be announced.
   </p>
   <p>
-    Virtual cursor navigation can move from tab to tab${" "}
+    Virtual cursor navigation can move from tab to tab
     <em>without</em>
-    ${" "}changing the active tab selection.
+    changing the active tab selection.
   </p>
   <h2>Further Reading</h2>
   <ul>

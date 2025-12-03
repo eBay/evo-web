@@ -1,7 +1,7 @@
 <div id="skeleton">
   <!-- <section-header/> -->
   <h2>
-    @ebay/skin/skeleton${" "}
+    @ebay/skin/skeleton
     <sup class="beta">
       BETA
     </sup>
@@ -22,32 +22,32 @@
         Cumulative Layout Shift (CLS)
       </h3>
       <p>
-        It is the developer's responsibility to ensure the${" "}
+        It is the developer's responsibility to ensure the
         <a href="https://web.dev/articles/cls">
           CLS metric
         </a>
-        ${" "}of a page is not negatively impacted by the introduction of a
-        skeleton placeholder;${" "}
+        of a page is not negatively impacted by the introduction of a
+        skeleton placeholder;
         <strong>
           a poor CLS score will occur whenever content shifts unexpectedly
         </strong>
-        ${" "}. Unexpected movement of page content usually happens because
+        . Unexpected movement of page content usually happens because
         resources are loaded asynchronously or DOM elements get dynamically
         added to the page above existing content. Skeletons can help mask these
-        problems${" "}
+        problems
         <em>if</em>
-        ${" "}they reserve the correct amount of physical space, but can
+        they reserve the correct amount of physical space, but can
         compound the problem when they do not.
       </p>
     </div>
   </section>
 
   <p>
-    The${" "}
+    The
     <a href="guides/skeleton">
       Skeleton Use Guide
     </a>
-    ${" "}illustrates various techniques for implementing skeletons across some
+    illustrates various techniques for implementing skeletons across some
     common loading scenarios.
   </p>
 
@@ -269,22 +269,22 @@
   </p>
   <p>
     The color can be changed to purple, green or blue by applying the
-    appropriate modifier, e.g.${" "}
+    appropriate modifier, e.g.
     <code>skeleton--green</code>
     . View the
     <a href="component/skeleton/css/#skeleton-composite">
       composite skeletons
     </a>
-    ${" "}examples for further details.
+    examples for further details.
   </p>
 
   <h3 id="skeleton-avatar">
     Avatar Skeleton
   </h3>
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__avatar</code>
-    ${" "}class to create a skeleton placeholder for an avatar.
+    class to create a skeleton placeholder for an avatar.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -304,9 +304,9 @@
   </h3>
 
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__button</code>
-    ${" "}class to create a skeleton placeholder for the default button shape.
+    class to create a skeleton placeholder for the default button shape.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -326,9 +326,9 @@
   </highlight-code>
 
   <p>
-    Use the${" "}
+    Use the
     <code>small</code>
-    ${" "}modifier to match the shape of a small button.
+    modifier to match the shape of a small button.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -348,9 +348,9 @@
   </highlight-code>
 
   <p>
-    Use the${" "}
+    Use the
     <code>large</code>
-    ${" "}modifier to match the shape of a large button.
+    modifier to match the shape of a large button.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -373,9 +373,9 @@
     Textbox Skeleton
   </h3>
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__textbox</code>
-    ${" "}class to create a skeleton placeholder for a textbox.
+    class to create a skeleton placeholder for a textbox.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -398,9 +398,9 @@
     Image Skeleton
   </h3>
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__image</code>
-    ${" "}class to create a skeleton placeholder for an image.
+    class to create a skeleton placeholder for an image.
   </p>
 
   <div class="demo">
@@ -417,9 +417,9 @@
   </highlight-code>
 
   <p>
-    Notice that the height and width must be set on the${" "}
+    Notice that the height and width must be set on the
     <code>skeleton__image</code>
-    ${" "}element.
+    element.
   </p>
 
   <div class="demo">
@@ -439,9 +439,9 @@
     Text Block Skeleton
   </h3>
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__text</code>
-    ${" "}class to create a skeleton for a single block of text.
+    class to create a skeleton for a single block of text.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -461,9 +461,9 @@
   </highlight-code>
 
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__text--large</code>
-    ${" "}modifier to match the shape of a large block of text.
+    modifier to match the shape of a large block of text.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -483,9 +483,9 @@
   </highlight-code>
 
   <p>
-    Use the${" "}
+    Use the
     <code>skeleton__text--multiline</code>
-    ${" "}mofifier to create a skeleton for two lines of text.
+    mofifier to create a skeleton for two lines of text.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -536,11 +536,11 @@
   </highlight-code>
 
   <p>
-    Here is a skeleton for a compact user profile. Notice that a${" "}
+    Here is a skeleton for a compact user profile. Notice that a
     <code>div</code>
-    ${" "}tag can be replaced with a${" "}
+    tag can be replaced with a
     <code>span</code>
-    ${" "}tag for inline-block layout of elements.
+    tag for inline-block layout of elements.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -561,7 +561,7 @@
     </div>
   </highlight-code>
   <h3 id="skeleton-animation">
-    Skeleton Animation${" "}
+    Skeleton Animation
     <sup>EXPERIMENTAL</sup>
   </h3>
   <p>
@@ -571,28 +571,28 @@
   </p>
 
   <p>
-    In order to use view-transition animation, the skeleton must have a${" "}
+    In order to use view-transition animation, the skeleton must have a
     <code>view-transition-name</code>
-    ${" "}style attribute set. The value of the attribute must be unique for
-    each skeleton on the page. For this you can use${" "}
+    style attribute set. The value of the attribute must be unique for
+    each skeleton on the page. For this you can use
     <code>skeleton-transition-1</code>
-    ${" "}and${" "}
+    and
     <code>skeleton-transition-2</code>
-    ${" "}etc view transition names. These names should correspond to the loaded
+    etc view transition names. These names should correspond to the loaded
     content view transition names so that they can transition properly.
   </p>
   <p>
-    We have defined${" "}
+    We have defined
     <code>skeleton-transition-*</code>
-    ${" "}so that you can use any arbitray name after skeleton-transition-. Just
+    so that you can use any arbitray name after skeleton-transition-. Just
     make sure that the names are unique and do not conflict with other view
     transition names on the page. Also verify that the view-transition-name set
     on the skeleton matches the view-transition-name set on the loaded content.
   </p>
   <p>
-    Reminder: when swapping between the skeleton and the loaded content, use${" "}
+    Reminder: when swapping between the skeleton and the loaded content, use
     <code>document.startViewTransition()</code>
-    ${" "}to start the view transition.
+    to start the view transition.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -647,7 +647,7 @@
   </highlight-code>
 
   <h3 id="skeleton-variables">
-    Skeleton Variables${" "}
+    Skeleton Variables
     <sup>EXPERIMENTAL</sup>
   </h3>
   <p>

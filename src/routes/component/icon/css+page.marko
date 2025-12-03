@@ -3,11 +3,11 @@ import iconJSON from "../../../data/icons";
   <section-header/>
 
   <h3>Base Icons Only</h3>
-  ${" "}Only base icons should be used. No state-based icons, such as disabled
+  Only base icons should be used. No state-based icons, such as disabled
   icons or even possibly an icon relaying an error state (likely red), should be
-  used. Those state modifications on icons should be handled downstream using${" "}
+  used. Those state modifications on icons should be handled downstream using
   <code>css</code>
-  ${" "}modifiers to allow for those variations.${" "}
+  modifiers to allow for those variations.
 
   <h3>General Markup Approach</h3>
   <p>
@@ -36,31 +36,31 @@ import iconJSON from "../../../data/icons";
 
   <p>
     <strong>NOTE:</strong>
-    ${" "}Skin removes all pointer events on icons (via${" "}
+    Skin removes all pointer events on icons (via
     <code>pointer-events: none</code>
-    ${" "}) due to a bug in IE. To add events to these icons you should wrap
+    ) due to a bug in IE. To add events to these icons you should wrap
     them in another element and attach your events there.
   </p>
 
   <h3>Including an Icon</h3>
   <p>
-    An icon${" "}
+    An icon
     <a href="https://raw.githubusercontent.com/eBay/skin/master/src/svg/icons.svg">
       symbol
     </a>
-    ${" "}declaration can be referenced from the same file or an${" "}
+    declaration can be referenced from the same file or an
     <a href="component/svg">
       external SVG
     </a>
-    ${" "}file. If in the same file, the symbol must be stamped on the page
+    file. If in the same file, the symbol must be stamped on the page
     inside of an SVG block.
   </p>
   <p>
-    We also provide individual icons as SVGs located in this${" "}
+    We also provide individual icons as SVGs located in this
     <a href="https://github.com/eBay/skin/tree/master/src/svg/icon">
       directory
     </a>
-    ${" "}. You can include these on your page as raw SVGs as needed.
+    . You can include these on your page as raw SVGs as needed.
   </p>
 
   <highlight-code type="html">
@@ -75,9 +75,9 @@ import iconJSON from "../../../data/icons";
 
   <p>
     <strong>NOTE:</strong>
-    ${" "}the SVG tag does not support the${" "}
+    the SVG tag does not support the
     <code>hidden</code>
-    ${" "}attribute, hence a hidden wrapper element is needed.
+    attribute, hence a hidden wrapper element is needed.
   </p>
 
   <h3>Presentational Icons</h3>
@@ -86,9 +86,9 @@ import iconJSON from "../../../data/icons";
     to a page, section or widget.
   </p>
   <p>
-    Presentational icons require${" "}
+    Presentational icons require
     <code>aria-hidden="true"</code>
-    ${" "}, in order to hide them from assistive technology.
+    , in order to hide them from assistive technology.
   </p>
 
   <highlight-code type="html">
@@ -104,11 +104,11 @@ import iconJSON from "../../../data/icons";
   </p>
 
   <p>
-    Non-presentational icons require both${" "}
+    Non-presentational icons require both
     <code>role="img"</code>
-    ${" "}and an${" "}
+    and an
     <code>aria-label</code>
-    ${" "}for assistive technology.
+    for assistive technology.
   </p>
 
   <highlight-code type="html">
@@ -124,15 +124,15 @@ import iconJSON from "../../../data/icons";
 
   <h3>Icon Classes</h3>
   <p>
-    Each icon can have a class that corresponds to its width. For example,${" "}
+    Each icon can have a class that corresponds to its width. For example,
     <code>icon--24</code>
-    ${" "}corresponds to the 24px width icon. These correspond with the size
+    corresponds to the 24px width icon. These correspond with the size
     associated with each icon.
   </p>
   <p>
-    For colored icons use${" "}
+    For colored icons use
     <code>icon--24-colored</code>
-    ${" "}These will set the height, and the width will align with the aspect
+    These will set the height, and the width will align with the aspect
     ratio
   </p>
 
@@ -147,17 +147,17 @@ import iconJSON from "../../../data/icons";
     Disabled Icons
   </h3>
   <p>
-    Most icons can be given a disabled appearance by adding the${" "}
+    Most icons can be given a disabled appearance by adding the
     <code>icon--disabled</code>
-    ${" "}modifier.
+    modifier.
   </p>
 
   <h4>Simple Icons</h4>
   <p>
     Icons that are simple and have only a stroke/fill of a single color simply
-    inherit${" "}
+    inherit
     <code>color</code>
-    ${" "}and are disabled by inheriting that color as the stroke/fill.
+    and are disabled by inheriting that color as the stroke/fill.
   </p>
 
   <div class="demo">
@@ -182,9 +182,9 @@ import iconJSON from "../../../data/icons";
   <h4>Filled Icons</h4>
   <p>
     There are certain filled icons that show up black by default. In order to
-    color these icons, apply the${" "}
+    color these icons, apply the
     <code>icon--{name}-filled</code>
-    ${" "}modifier.
+    modifier.
   </p>
 
   <div class="demo">
@@ -230,9 +230,9 @@ import iconJSON from "../../../data/icons";
 
   <h4>Complex Icons</h4>
   <p>
-    Icons that are more complex and have multiple colors with a suffix of${" "}
+    Icons that are more complex and have multiple colors with a suffix of
     <code>-colored</code>
-    ${" "}are grayscaled with an opacity.
+    are grayscaled with an opacity.
   </p>
 
   <div class="demo">
@@ -256,7 +256,7 @@ import iconJSON from "../../../data/icons";
   <const/deprecatedIcons=(iconJSON.icons?.deprecated || [])>
 
   <if=deprecatedIcons.length>
-    ${" "}0>${" "}
+    0>
     <h3>Deprecated Icons</h3>
 
     <p>

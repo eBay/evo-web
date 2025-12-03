@@ -10,17 +10,17 @@
   </highlight-code>
 
   <p>
-    Any content that is${" "}
+    Any content that is
     <em>off-grid</em>
-    ${" "}, a full bleed banner for example, should be placed outside of these
+    , a full bleed banner for example, should be placed outside of these
     two elements.
   </p>
   <p>
-    Grid areas are definable with${" "}
+    Grid areas are definable with
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">
       CSS Grid syntax
     </a>
-    ${" "}.
+    .
   </p>
 
   <h3>Responsive Methodology</h3>
@@ -32,19 +32,19 @@
     query.
   </p>
   <p>
-    Though our minimum screen width support starts at${" "}
+    Though our minimum screen width support starts at
     <code>320px</code>
-    ${" "}, in theory this means that default styles will support devices much
-    narrower than that since we don't set a minimum. The${" "}
+    , in theory this means that default styles will support devices much
+    narrower than that since we don't set a minimum. The
     <code>320px</code>
-    ${" "}is, at best, an implied breakpoint.
+    is, at best, an implied breakpoint.
   </p>
   <p>
     Subsequent media queries should increase in screen width and alter the UI
     styling additively avoiding style declaration duplications when possible.
-    The following${" "}
+    The following
     <code>CSS</code>
-    ${" "}shows the grid layout of the Skin website itself.
+    shows the grid layout of the Skin website itself.
   </p>
 
   <highlight-code
@@ -84,31 +84,31 @@
   </highlight-code>
 
   <p>
-    You can see how it looks on this page by enabling our${" "}
+    You can see how it looks on this page by enabling our
     <a href="?debug=1#page-grid">
       debug mode
     </a>
-    ${" "}, which gives a quick visual indication of the grid columns.
+    , which gives a quick visual indication of the grid columns.
   </p>
 
   <h3 id="page-grid-vars">
     Page Grid SASS/CSS Properties
   </h3>
   <p>
-    We've set up${" "}
+    We've set up
     <code>CSS</code>
-    ${" "}properties and${" "}
+    properties and
     <code>SASS</code>
-    ${" "}constants to provide developers with easy reference for responsive
-    adjustments of UIs. The${" "}
+    constants to provide developers with easy reference for responsive
+    adjustments of UIs. The
     <code>CSS</code>
-    ${" "}properties allow for customization of page grid for UIs that require
-    it, but${" "}
+    properties allow for customization of page grid for UIs that require
+    it, but
     <strong>
       please use them sparingly and be mindful of the impact those overrides can
       have
     </strong>
-    ${" "}.
+    .
   </p>
 
   <section
@@ -127,18 +127,18 @@
     </div>
     <div class="section-notice__main">
       <h3 class="section-notice__title">
-        The${" "}
+        The
         <code>CSS</code>
-        ${" "}properties to allow for customization
+        properties to allow for customization
       </h3>
       <p>
         These properties allow for costumization of page grid for UIs that
-        require it, but please${" "}
+        require it, but please
         <em>
           use them sparingly and be mindful of the impact those overrides can
           have
         </em>
-        ${" "}.
+        .
       </p>
     </div>
   </section>
@@ -154,9 +154,9 @@
 `/>
 
   <p>
-    Additionally, we've set up${" "}
+    Additionally, we've set up
     <code>SASS</code>
-    ${" "}constants for easier reference of the current breakpoints as well as
+    constants for easier reference of the current breakpoints as well as
     some other dimension/spacing values.
   </p>
 
@@ -192,20 +192,20 @@
   </h3>
   <p>
     Subgrids allow you to create alignment of child elements on the same grid as
-    page grid. Currently, subgrid only has partial support (with and without${" "}
+    page grid. Currently, subgrid only has partial support (with and without
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid">
       CSS Subgrid
     </a>
-    ${" "}support), but fallbacks allow for a seamless implementation. You will
-    need to add a bit of${" "}
+    support), but fallbacks allow for a seamless implementation. You will
+    need to add a bit of
     <code>CSS</code>
-    ${" "}on your implementation side to accomplish this.
+    on your implementation side to accomplish this.
   </p>
 
   <p>
-    Firstly, you will need to add a class of${" "}
+    Firstly, you will need to add a class of
     <code>page-grid__subgrid</code>
-    ${" "}to the internal subgrid:
+    to the internal subgrid:
   </p>
   <highlight-code type="html">
     <div class="page-grid-container">
@@ -230,9 +230,9 @@
   </highlight-code>
 
   <p>
-    Additionally, you will need to set up the corresponding subgrid${" "}
+    Additionally, you will need to set up the corresponding subgrid
     <code>CSS</code>
-    ${" "}as such to allow for support of subgrids in browsers that do not yet
+    as such to allow for support of subgrids in browsers that do not yet
     have support:
   </p>
 

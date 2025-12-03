@@ -2,51 +2,51 @@
   <h1>Link Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Link text${" "}
+    Link text
     <strong>must not</strong>
-    ${" "}be “click here”.
+    be “click here”.
   </p>
   <p>
-    Link text${" "}
+    Link text
     <strong>must</strong>
-    ${" "}adequately communicate the destination.
+    adequately communicate the destination.
   </p>
   <p>
-    Links that share the same link text${" "}
+    Links that share the same link text
     <strong>must all</strong>
-    ${" "}go to the same URL.
+    go to the same URL.
   </p>
   <p>
-    HREF attribute${" "}
+    HREF attribute
     <strong>must always</strong>
-    ${" "}contain a valid URL.
+    contain a valid URL.
   </p>
   <p>
-    HREF attribute${" "}
+    HREF attribute
     <strong>must never</strong>
-    ${" "}be “javascript”. Please read the${" "}
+    be “javascript”. Please read the
     <a href="accessibility/antipatterns/javascript-href">
       JavaScript HREF anti-pattern
     </a>
-    ${" "}for more information and examples.
+    for more information and examples.
   </p>
   <p>
     For links with labels that are not unique to the page (e.g. ‘Add to Cart’,
-    ‘Edit’ or ‘Delete’, see the${" "}
+    ‘Edit’ or ‘Delete’, see the
     <a href="accessibility/techniques/ambiguous-label">
       Ambiguous Label
     </a>
-    ${" "}technique.
+    technique.
   </p>
   <p>
-    Link${" "}
+    Link
     <strong>must</strong>
-    ${" "}warn user if it will open in a new window or tab. An icon with
-    alternative text is the recommended approach. Please read the${" "}
+    warn user if it will open in a new window or tab. An icon with
+    alternative text is the recommended approach. Please read the
     <a href="accessibility/antipatterns/open-new-window">
       Open New Window anti-pattern
     </a>
-    ${" "}for more information and examples.
+    for more information and examples.
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -55,36 +55,36 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    Link${" "}
+    Link
     <strong>must</strong>
-    ${" "}activate with ENTER key (not SPACEBAR).
+    activate with ENTER key (not SPACEBAR).
   </p>
   <p>
-    Link${" "}
+    Link
     <strong>must not</strong>
-    ${" "}prevent default scrolling behaviour of SPACEBAR and ARROW keys.
+    prevent default scrolling behaviour of SPACEBAR and ARROW keys.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Link${" "}
+    Link
     <strong>must</strong>
-    ${" "}announce with role of “link”.
+    announce with role of “link”.
   </p>
   <p>
-    Link${" "}
+    Link
     <strong>must</strong>
-    ${" "}announce state of “current” if the HREF matches the current window
+    announce state of “current” if the HREF matches the current window
     URL.
   </p>
   <p>
-    Link${" "}
+    Link
     <strong>must</strong>
-    ${" "}invoke using virtual cursor command (e.g. VO+SPACE in Voiceover).
+    invoke using virtual cursor command (e.g. VO+SPACE in Voiceover).
   </p>
   <p>
-    Link${" "}
+    Link
     <strong>must</strong>
-    ${" "}announce “new window or tab” behaviour.
+    announce “new window or tab” behaviour.
   </p>
   <h2>ARIA Reference</h2>
   <table>
@@ -109,11 +109,11 @@
   <h2>FAQ</h2>
   <h3>Should I use offscreen text or aria-label?</h3>
   <p>
-    If adding context to an ambiguous link, use${" "}
+    If adding context to an ambiguous link, use
     <a href="accessibility/techniques/offscreen-text">
       offscreen text
     </a>
-    ${" "}.
+    .
   </p>
   <p>
     If link tag is empty (e.g. if it displays an icon and has no inner text),

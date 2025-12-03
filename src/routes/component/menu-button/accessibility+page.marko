@@ -2,31 +2,31 @@
   <h1>Menu Button Accessibility</h1>
   <h3>Best Practices</h3>
   <p>
-    See${" "}
+    See
     <a href="component/menu/accessibility">
       menu best practices
     </a>
-    ${" "}.
+    .
   </p>
   <p>
     <strong>Care is needed when labelling a menu button!</strong>
   </p>
   <p>
     If attempting to mimic the behaviour of an HTML select inside of a form,
-    please use the${" "}
+    please use the
     <a href="component/listbox-button">
       Listbox Button
     </a>
-    ${" "}.
+    .
   </p>
   <p>
-    A menu button’s accessible label must at${" "}
+    A menu button’s accessible label must at
     <strong>all times</strong>
-    ${" "}reflect its function. By default, this label is provided by the button${" "}
+    reflect its function. By default, this label is provided by the button
     <strong>’</strong>
-    ${" "}s inner text (i.e. buttons are not intended to work with${" "}
+    s inner text (i.e. buttons are not intended to work with
     <code>&lt;label&gt;</code>
-    ${" "}elements).
+    elements).
   </p>
   <p>
     If a menu button’s inner text is intended to also convey some state (i.e.
@@ -46,9 +46,9 @@
     <strong>Additionally Labelled Menu Button</strong>
   </h4>
   <p>
-    We can use${" "}
+    We can use
     <code>aria-labelledby</code>
-    ${" "}to stitch together an external text element with the internal value.
+    to stitch together an external text element with the internal value.
   </p>
   <p>
     <code>
@@ -63,83 +63,83 @@
     pointing devices.
   </p>
   <p>
-    Please also see related${" "}
+    Please also see related
     <a href="component/menu">
       menu
     </a>
-    ${" "}pattern for best practices of nested menu.
+    pattern for best practices of nested menu.
   </p>
   <h4>Keyboard</h4>
   <p>
-    The button${" "}
+    The button
     <strong>must</strong>
-    ${" "}be keyboard focusable.
+    be keyboard focusable.
   </p>
   <p>
     <code>SPACEBAR</code>
-    ${" "}or${" "}
+    or
     <code>ENTER</code>
-    ${" "}key on button${" "}
+    key on button
     <strong>must</strong>
-    ${" "}expand the menu.
+    expand the menu.
   </p>
   <p>
-    When menu is expanded, keyboard focus${" "}
+    When menu is expanded, keyboard focus
     <strong>must</strong>
-    ${" "}go to the first item in the menu.
+    go to the first item in the menu.
   </p>
   <p>
     <code>UP-ARROW</code>
-    ${" "}and${" "}
+    and
     <code>DOWN-ARROW</code>
-    ${" "}keys${" "}
+    keys
     <strong>must</strong>
-    ${" "}navigate keyboard focus through commands via a roving tabindex.
+    navigate keyboard focus through commands via a roving tabindex.
   </p>
   <p>
-    If focus is on a command,${" "}
+    If focus is on a command,
     <code>ENTER</code>
-    ${" "}or${" "}
+    or
     <code>SPACEBAR</code>
-    ${" "}keys${" "}
+    keys
     <strong>must</strong>
-    ${" "}activate that command.
+    activate that command.
   </p>
   <p>
     <code>ESC</code>
-    ${" "}key must collapse menu and return focus to button.
+    key must collapse menu and return focus to button.
   </p>
   <p>
-    Activating any menu item${" "}
+    Activating any menu item
     <em>should</em>
-    ${" "}collapse menu (typically after a very short delay/transition).
+    collapse menu (typically after a very short delay/transition).
   </p>
   <p>
     <code>TAB</code>
-    ${" "}key must move keyboard focus off widget, and onto next interactive
+    key must move keyboard focus off widget, and onto next interactive
     element in the page.
   </p>
   <p>
-    When widget loses focus, menu${" "}
+    When widget loses focus, menu
     <em>should</em>
-    ${" "}collapse.
+    collapse.
   </p>
   <h4>Screen Reader</h4>
   <p>
-    Button label${" "}
+    Button label
     <strong>must</strong>
-    ${" "}be announced (e.g. ‘Options’).
+    be announced (e.g. ‘Options’).
   </p>
   <p>
-    Button state${" "}
+    Button state
     <strong>must</strong>
-    ${" "}be announced (e.g. expanded or collapsed).
+    be announced (e.g. expanded or collapsed).
   </p>
   <h4>Pointer</h4>
   <p>
-    Clicking any menu item${" "}
+    Clicking any menu item
     <em>should</em>
-    ${" "}collapse menu (typically after a very short delay/transition).
+    collapse menu (typically after a very short delay/transition).
   </p>
   <h3>ARIA Reference</h3>
   <p>
@@ -205,7 +205,7 @@
           <strong>aria-haspopup=true</strong>
         </td>
         <td>
-          Informs assistive technology that the button controls a${" "}
+          Informs assistive technology that the button controls a
           <em>popup</em>
 
           <em>menu</em>

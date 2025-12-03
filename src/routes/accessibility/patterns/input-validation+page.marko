@@ -2,18 +2,18 @@
   <h1>Input Validation</h1>
   <h3>Introduction</h3>
   <p>
-    The input validation pattern notifies users of invalid and missing data${" "}
+    The input validation pattern notifies users of invalid and missing data
     <em>before</em>
-    ${" "}a user has attempted to submit the form.
+    a user has attempted to submit the form.
   </p>
   <p>
-    To validate a field${" "}
+    To validate a field
     <em>after</em>
     the user attempts to submit the form, please view the
     <a href="accessibility/patterns/form-validation">
       Form Validation
     </a>
-    ${" "}pattern. You may wish to combine both patterns.
+    pattern. You may wish to combine both patterns.
   </p>
   <h3>Best Practices</h3>
   <p>
@@ -22,18 +22,18 @@
   </p>
   <ol>
     <li>
-      The input gains focus${" "}
+      The input gains focus
       <ul>
         <li>
           This method is not recommended, because an input should be in a valid
-          or invalid state${" "}
+          or invalid state
           <em>before</em>
-          ${" "}it receives focus.
+          it receives focus.
         </li>
       </ul>
     </li>
     <li>
-      The input changes value${" "}
+      The input changes value
       <ul>
         <li>
           This method is an intrusive way of validating an input. Consider it
@@ -43,7 +43,7 @@
       </ul>
     </li>
     <li>
-      The input loses focus${" "}
+      The input loses focus
       <ul>
         <li>
           This is usually a good time to do validation as the user has finished
@@ -51,13 +51,13 @@
           <a href="accessibility/patterns/input-meter">
             input meter
           </a>
-          ${" "}pattern for dynamic feedback to the user after each keystroke.
+          pattern for dynamic feedback to the user after each keystroke.
           The user must receive polite notification of any error.
         </li>
       </ul>
     </li>
     <li>
-      The form gets submitted${" "}
+      The form gets submitted
       <ul>
         <li>
           When a user attempts to submit the form that the input belongs to, the
@@ -66,7 +66,7 @@
           <a href="accessibility/patterns/form-validation">
             Form Validation Pattern
           </a>
-          ${" "}.
+          .
         </li>
       </ul>
     </li>
@@ -77,14 +77,14 @@
     <a href="accessibility/patterns/form-validation">
       form validation
     </a>
-    ${" "}pattern.
+    pattern.
   </p>
   <p>
-    We highly recommend reading${" "}
+    We highly recommend reading
     <a href="https://www.nngroup.com/articles/error-message-guidelines/">
       Error-Message Guidelines
     </a>
-    ${" "}by the Norman Nielson Group.
+    by the Norman Nielson Group.
   </p>
   <h3>Interaction Design</h3>
   <p>
@@ -96,29 +96,29 @@
     <a href="component/inline-notice">
       inline notice
     </a>
-    ${" "}interaction design.
+    interaction design.
   </p>
   <h4>Keyboard</h4>
   <p>
-    Error message text${" "}
+    Error message text
     <strong>must</strong>
-    ${" "}not be keyboard focusable (unless it contains links).
+    not be keyboard focusable (unless it contains links).
   </p>
   <p>
-    Hyperlinks or buttons inside of error message text${" "}
+    Hyperlinks or buttons inside of error message text
     <strong>must</strong>
-    ${" "}be keyboard focusable and in logical tab order.
+    be keyboard focusable and in logical tab order.
   </p>
   <h4>Screen Reader</h4>
   <p>
-    Error message${" "}
+    Error message
     <strong>must</strong>
-    ${" "}announce when displayed.
+    announce when displayed.
   </p>
   <p>
-    Input${" "}
+    Input
     <strong>must</strong>
-    ${" "}declare it’s validation state and description.
+    declare it’s validation state and description.
   </p>
   <h3>ARIA Reference</h3>
   <p>This section gives an overview of our use of ARIA in this pattern.</p>
@@ -175,11 +175,11 @@
   </table>
   <h3>The Future</h3>
   <p>
-    ARIA 1.1 also offers us a new${" "}
+    ARIA 1.1 also offers us a new
     <code>aria-errormessage</code>
-    ${" "}property, designed as a replacement for${" "}
+    property, designed as a replacement for
     <code>aria-describedby</code>
-    ${" "}in these situations. However, it is not currently well supported.
+    in these situations. However, it is not currently well supported.
   </p>
   <p>
     HTML5 also promises us built-in validation on the client for a number of new
@@ -193,7 +193,7 @@
       <a href="https://www.nngroup.com/articles/error-message-guidelines/">
         Error-Message Guidelines
       </a>
-      ${" "}(Norman Nielson Group)
+      (Norman Nielson Group)
     </li>
   </ul>
 </div>

@@ -37,11 +37,11 @@
 &lt;!-- Urgh, I felt dirty writing that. The things I do for you all. --&gt;
 </code></pre>
   <p>
-    The table tags should only be used to represent${" "}
+    The table tags should only be used to represent
     <a href="component/table">
       tabular relationships between data
     </a>
-    ${" "}. The table tags have semantics that will cause problems for screen
+    . The table tags have semantics that will cause problems for screen
     reader users if used for layout.
   </p>
   <p>
@@ -56,9 +56,9 @@
   <h2>Legacy Code</h2>
   <p>
     If you have legacy code that you wish to make accessible, and are unable to
-    rewrite your entire markup and CSS, a quick fix is to apply${" "}
+    rewrite your entire markup and CSS, a quick fix is to apply
     <strong>role=presentation</strong>
-    ${" "}to the table tag:
+    to the table tag:
   </p>
   <pre><code class="language-html">&lt;table role=&quot;presentation&quot;&gt;
   &lt;!-- rows and columns go here as normal --&gt;
@@ -74,11 +74,11 @@
     super useful and CSS floats are a pain?
   </p>
   <p>
-    Take a look at${" "}
+    Take a look at
     <a href="http://www.w3.org/TR/CSS2/tables.html#table-display">
       The CSS table model
     </a>
-    ${" "}which lets you layout DIVS and SPANS using similar table-like syntax,
+    which lets you layout DIVS and SPANS using similar table-like syntax,
     without the semantics.
   </p>
 </div>

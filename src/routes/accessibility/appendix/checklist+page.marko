@@ -8,11 +8,11 @@
   </p>
   <p>
     Most, if not all, of the “general” items can be identified with an automated
-    testing tool or browser plugin, such as${" "}
+    testing tool or browser plugin, such as
     <a href="https://www.deque.com/axe">
       Axe by Deque
     </a>
-    ${" "}. The component specific level checklists will require manual testing.
+    . The component specific level checklists will require manual testing.
   </p>
   <h2>General</h2>
   <table>
@@ -25,9 +25,9 @@
     <tbody>
       <tr>
         <td>
-          Ensure your page has a valid doctype e.g.${" "}
+          Ensure your page has a valid doctype e.g.
           <code>&lt;!doctype html&gt;</code>
-          ${" "}for HTML5
+          for HTML5
         </td>
         <td>
           Standards mode helps improve consistent screen reader behaviour.
@@ -35,7 +35,7 @@
       </tr>
       <tr>
         <td>
-          Ensure your html tag has a valid lang attribute e.g.${" "}
+          Ensure your html tag has a valid lang attribute e.g.
           <code>&lt;html lang=&quot;en&quot;&gt;</code>
         </td>
         <td>
@@ -63,9 +63,9 @@
       <tr>
         <td>
           Ensure HTML attributes are used to convey state rather than classnames
-          e.g.${" "}
+          e.g.
           <code>&lt;button disabled&gt;</code>
-          ${" "}rather than${" "}
+          rather than
           <code>&lt;button class=&quot;disabled&quot;&gt;</code>
         </td>
         <td>Class names provide no semantics to screen readers</td>
@@ -73,11 +73,11 @@
       <tr>
         <td>
           Ensure ARIA attributes are used to convey state rather than classnames
-          e.g.${" "}
+          e.g.
           <code>
             &lt;a role=&quot;tab&quot; aria-selected=&quot;true&quot;&gt;
           </code>
-          ${" "}rather than${" "}
+          rather than
           <code>
             &lt;a class=&quot;tab&quot; class=&quot;selected&quot;&gt;
           </code>
@@ -86,11 +86,11 @@
       </tr>
       <tr>
         <td>
-          Ensure${" "}
+          Ensure
           <code>&lt;i&gt;</code>
-          ${" "}tags are not used as CSS icon holders. Use a${" "}
+          tags are not used as CSS icon holders. Use a
           <code>&lt;span&gt;</code>
-          ${" "}element instead.
+          element instead.
         </td>
         <td>These tags have specific semantics to screen readers.</td>
       </tr>
@@ -164,9 +164,9 @@
   <h2>Carousel</h2>
   <p>
     A carousel is a composite pattern containing two left/right “paddle” buttons
-    and a viewport. The viewport contains${" "}
+    and a viewport. The viewport contains
     <em>n</em>
-    ${" "}items and the paddles update the content of this viewport.
+    items and the paddles update the content of this viewport.
   </p>
   <table>
     <thead>
@@ -197,7 +197,7 @@
       <tr>
         <td>
           Ensure carousel items outside of viewport are hidden from screen
-          reader using${" "}
+          reader using
           <code>aria-hidden=&quot;true&quot;</code>
         </td>
         <td>Only the visible items should be available to screen reader</td>
@@ -219,7 +219,7 @@
       </tr>
       <tr>
         <td>
-          Ensure all pagination controls have an accessible label e.g.${" "}
+          Ensure all pagination controls have an accessible label e.g.
           <code>
             &lt;button class=&quot;icon-arrow-right&quot; aria-label=&quot;Next
             slide&quot; /&gt;
@@ -247,7 +247,7 @@
     <tbody>
       <tr>
         <td>
-          Ensure text input has${" "}
+          Ensure text input has
           <code>autocomplete=&quot;off&quot;</code>
         </td>
         <td>
@@ -257,7 +257,7 @@
       </tr>
       <tr>
         <td>
-          Ensure textbox has${" "}
+          Ensure textbox has
           <code>role=&quot;combobox&quot;</code>
         </td>
         <td>
@@ -266,17 +266,17 @@
       </tr>
       <tr>
         <td>
-          Ensure textbox has${" "}
+          Ensure textbox has
           <code>aria-expanded</code>
-          ${" "}attribute
+          attribute
         </td>
         <td>Informs assistive technology of listbox state (true or false</td>
       </tr>
       <tr>
         <td>
-          Ensure textbox has${" "}
+          Ensure textbox has
           <code>aria-activedescendant</code>
-          ${" "}state
+          state
         </td>
         <td>
           Informs assistive technology of current active suggestion in list
@@ -288,14 +288,14 @@
       </tr>
       <tr>
         <td>
-          Ensure suggestion listbox has${" "}
+          Ensure suggestion listbox has
           <code>role=&quot;listbox&quot;</code>
         </td>
         <td>Informs assistive technology of listbox semantics</td>
       </tr>
       <tr>
         <td>
-          Ensure each option in listbox has${" "}
+          Ensure each option in listbox has
           <code>role=&quot;option&quot;</code>
         </td>
         <td>Informs assistive technology of listbox option semantics</td>
@@ -306,7 +306,7 @@
       </tr>
       <tr>
         <td>
-          Ensure active option in listbox has${" "}
+          Ensure active option in listbox has
           <code>aria-selected=&quot;true&quot;</code>
         </td>
         <td>
@@ -339,7 +339,7 @@
       </tr>
       <tr>
         <td>
-          For autocomplete behaviour, ensure text input has${" "}
+          For autocomplete behaviour, ensure text input has
           <code>aria-autocomplete=&quot;list&quot;</code>
         </td>
         <td>
@@ -361,7 +361,7 @@
     <tbody>
       <tr>
         <td>
-          Ensure dialog has${" "}
+          Ensure dialog has
           <code>role=&quot;dialog&quot;</code>
         </td>
         <td>
@@ -371,9 +371,9 @@
       </tr>
       <tr>
         <td>
-          Ensure dialog is labelled with${" "}
+          Ensure dialog is labelled with
           <code>aria-labelledby</code>
-          ${" "}or${" "}
+          or
           <code>aria-label</code>
         </td>
         <td>
@@ -383,9 +383,9 @@
       </tr>
       <tr>
         <td>
-          If modal, ensure${" "}
+          If modal, ensure
           <code>aria-modal=&quot;true&quot;</code>
-          ${" "}is present
+          is present
         </td>
         <td>
           Assistive technology will present different behaviour for input device
@@ -400,9 +400,9 @@
       </tr>
       <tr>
         <td>
-          If modal, ensure dialog has keydown event handler for${" "}
+          If modal, ensure dialog has keydown event handler for
           <code>ESC</code>
-          ${" "}key
+          key
         </td>
         <td>This allows keyboard users to easily dismiss the dialog</td>
       </tr>
@@ -433,7 +433,7 @@
     <tbody>
       <tr>
         <td>
-          Ensure switch has a${" "}
+          Ensure switch has a
           <code>role=&quot;switch&quot;</code>
         </td>
         <td>
@@ -442,29 +442,29 @@
       </tr>
       <tr>
         <td>
-          Ensure switch custom control(i.e. not${" "}
+          Ensure switch custom control(i.e. not
           <code>input[type=checkbox]</code>
-          ${" "}) has${" "}
+          ) has
           <code>aria-checked=&quot;true&quot;</code>
-          ${" "}when turned ''on&quot;
+          when turned ''on&quot;
         </td>
         <td>Informs assistive technology that switch is on</td>
       </tr>
       <tr>
         <td>
-          Ensure switch custom control(i.e. not${" "}
+          Ensure switch custom control(i.e. not
           <code>input[type=checkbox]</code>
-          ${" "}) has${" "}
+          ) has
           <code>aria-checked=&quot;false&quot;</code>
-          ${" "}when turned ''off&quot;
+          when turned ''off&quot;
         </td>
         <td>Informs assistive technology that switch is off</td>
       </tr>
       <tr>
         <td>
-          Ensure switch control can be toggled with${" "}
+          Ensure switch control can be toggled with
           <code>SPACEBAR</code>
-          ${" "}key on focus.
+          key on focus.
         </td>
         <td>Allows keyboard user to toggle between “on” and “off” states</td>
       </tr>
@@ -480,9 +480,9 @@
       </tr>
       <tr>
         <td>
-          OPTIONAL: Ensure switch control can be toggled with${" "}
+          OPTIONAL: Ensure switch control can be toggled with
           <code>ENTER</code>
-          ${" "}key on focus.
+          key on focus.
         </td>
         <td>Allows keyboard user to toggle between “on” and “off” states</td>
       </tr>
@@ -504,7 +504,7 @@
     <tbody>
       <tr>
         <td>
-          Ensure button has an accessible label e.g.${" "}
+          Ensure button has an accessible label e.g.
           <code>
             &lt;button class=&quot;infotip__host&quot;
             aria-label=&quot;Info&quot; .../&gt;
@@ -520,11 +520,11 @@
       </tr>
       <tr>
         <td>
-          Ensure Infotip can toggle overlay using${" "}
+          Ensure Infotip can toggle overlay using
           <code>SPACEBAR</code>
-          ${" "}or${" "}
+          or
           <code>ENTER</code>
-          ${" "}key on focus.
+          key on focus.
         </td>
         <td>Allows keyboard user to toggle the overlay.</td>
       </tr>
@@ -537,19 +537,19 @@
       </tr>
       <tr>
         <td>
-          Ensure overlay has${" "}
+          Ensure overlay has
           <code>display: none</code>
-          ${" "}or${" "}
+          or
           <code>hidden</code>
-          ${" "}when overlay in collapsed state.
+          when overlay in collapsed state.
         </td>
         <td>Overlay content is programmatically and visually hidden.</td>
       </tr>
       <tr>
         <td>
-          Ensure host button has${" "}
+          Ensure host button has
           <code>aria-expanded=&quot;false&quot;</code>
-          ${" "}when overlay is in collapsed state.
+          when overlay is in collapsed state.
         </td>
         <td>
           Informs assistive technology expanded state and the AT cannot access
@@ -558,9 +558,9 @@
       </tr>
       <tr>
         <td>
-          Ensure button has${" "}
+          Ensure button has
           <code>aria-expanded=&quot;true&quot;</code>
-          ${" "}when overlay is in expanded state.
+          when overlay is in expanded state.
         </td>
         <td>Informs assistive technology that overlay is opened.</td>
       </tr>
@@ -600,7 +600,7 @@
     <tbody>
       <tr>
         <td>
-          Ensure element has an accessible label e.g.${" "}
+          Ensure element has an accessible label e.g.
           <code>
             &lt;button class=&quot;tooltip__host&quot;
             aria-label=&quot;Close&quot; .../&gt;
@@ -614,38 +614,38 @@
       </tr>
       <tr>
         <td>
-          Ensure flyout has${" "}
+          Ensure flyout has
           <code>role=&quot;tooltip&quot;</code>
         </td>
         <td>Informs assistive technology that this element is a tooltip.</td>
       </tr>
       <tr>
         <td>
-          Ensure host element is labelled appropriately with${" "}
+          Ensure host element is labelled appropriately with
           <code>aria-describedby</code>
-          ${" "}.
+          .
         </td>
         <td>
-          Elements should be referenced through the use of${" "}
+          Elements should be referenced through the use of
           <code>aria-describedby</code>
-          ${" "}before or when the tooltip is displayed.
+          before or when the tooltip is displayed.
         </td>
       </tr>
       <tr>
         <td>
-          Ensure overlay has${" "}
+          Ensure overlay has
           <code>display: none</code>
-          ${" "}or${" "}
+          or
           <code>hidden</code>
-          ${" "}when overlay in collapsed state.
+          when overlay in collapsed state.
         </td>
         <td>Overlay content is programmatically and visually hidden.</td>
       </tr>
       <tr>
         <td>
-          Ensure host element has${" "}
+          Ensure host element has
           <code>aria-expanded=&quot;false&quot;</code>
-          ${" "}when overlay is in collapsed state.
+          when overlay is in collapsed state.
         </td>
         <td>
           Informs assistive technology expanded state and the AT cannot access
@@ -654,9 +654,9 @@
       </tr>
       <tr>
         <td>
-          Ensure host element has${" "}
+          Ensure host element has
           <code>aria-expanded=&quot;true&quot;</code>
-          ${" "}when the overlay is in expanded state.
+          when the overlay is in expanded state.
         </td>
         <td>Informs assistive technology that overlay is opened.</td>
       </tr>

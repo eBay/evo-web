@@ -5,52 +5,52 @@
   <ul>
     <li>
       <strong>Click-activated</strong>
-      ${" "}: explicitly opened and closed by clicking the button
+      : explicitly opened and closed by clicking the button
     </li>
     <li>
       <strong>System-activated</strong>
-      ${" "}: automatically opened by the system/application on page load or at
+      : automatically opened by the system/application on page load or at
       some other arbitrary time
     </li>
   </ul>
   <p>
     Opening modal dialogs that are not requested by user (i.e. system-activated)
-    are a violation of${" "}
+    are a violation of
     <a href="http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F22">
       WCAG Guideline 3.2.5 (Level AAA)
     </a>
-    ${" "}and therefore should be reserved for exceptional circumstances only.
+    and therefore should be reserved for exceptional circumstances only.
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must not</strong>
-    ${" "}be opened on hover or focus of button.
+    be opened on hover or focus of button.
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must</strong>
-    ${" "}be opened on click-event of button or via an application event.
+    be opened on click-event of button or via an application event.
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must</strong>
-    ${" "}contain a dismiss button.
+    contain a dismiss button.
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must</strong>
-    ${" "}contain at least one interactive element (this can be the dismiss
+    contain at least one interactive element (this can be the dismiss
     button).
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must</strong>
-    ${" "}be clearly labelled by an onscreen heading/title
+    be clearly labelled by an onscreen heading/title
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must</strong>
-    ${" "}start heading hierarchy at level 2.
+    start heading hierarchy at level 2.
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -59,83 +59,83 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    If dialog button has focus,${" "}
+    If dialog button has focus,
     <code>ENTER</code>
-    ${" "}or${" "}
+    or
     <code>SPACE</code>
-    ${" "}key${" "}
+    key
     <strong>must</strong>
-    ${" "}open lightbox dialog.
+    open lightbox dialog.
   </p>
   <p>
-    When lightbox dialog opens, focus${" "}
+    When lightbox dialog opens, focus
     <strong>must</strong>
-    ${" "}move to the dismiss button.
+    move to the dismiss button.
   </p>
   <p>
-    Lightbox dialog${" "}
+    Lightbox dialog
     <strong>must</strong>
-    ${" "}confine${" "}
+    confine
     <code>TAB</code>
-    ${" "}and${" "}
+    and
     <code>SHIFT-TAB</code>
-    ${" "}to focusable elements of child window.
+    to focusable elements of child window.
   </p>
   <p>
-    Pressing${" "}
+    Pressing
     <code>ESC</code>
-    ${" "}key${" "}
+    key
     <strong>must</strong>
-    ${" "}close lightbox dialog (unless the currently focussed element has
-    existing${" "}
+    close lightbox dialog (unless the currently focussed element has
+    existing
     <code>ESC</code>
-    ${" "}key behaviour) with no changes applied (effectively acting as a
+    key behaviour) with no changes applied (effectively acting as a
     “cancel”).
   </p>
   <p>
-    Dialog button${" "}
+    Dialog button
     <strong>must</strong>
-    ${" "}receive focus when lightbox dialog is closed.
+    receive focus when lightbox dialog is closed.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Dialog button${" "}
+    Dialog button
     <strong>must not</strong>
-    ${" "}announce ‘has popup’. A dialog is not considered a popup (i.e${" "}
+    announce ‘has popup’. A dialog is not considered a popup (i.e
     <code>aria-haspopup=&quot;true&quot;</code>
-    ${" "}is not valid in this context).
+    is not valid in this context).
   </p>
   <p>
-    Focussed element${" "}
+    Focussed element
     <em>should</em>
-    ${" "}be announced when child window opens (via focus management).
+    be announced when child window opens (via focus management).
   </p>
   <p>
-    Title${" "}
+    Title
     <strong>must</strong>
-    ${" "}be announced when lightbox dialog opens.
+    be announced when lightbox dialog opens.
   </p>
   <p>
-    Virtual cursor${" "}
+    Virtual cursor
     <strong>must</strong>
-    ${" "}be confined within child window.
+    be confined within child window.
   </p>
   <p>
-    Assistive technology${" "}
+    Assistive technology
     <em>might</em>
-    ${" "}announce “Entering/leaving dialog” (or words to those affect) when
+    announce “Entering/leaving dialog” (or words to those affect) when
     focus enters or leaves the lightbox dialog respectively.
   </p>
   <h3>Pointer</h3>
   <p>
-    Clicking dialog button${" "}
+    Clicking dialog button
     <strong>must</strong>
-    ${" "}open lightbox dialog.
+    open lightbox dialog.
   </p>
   <p>
-    Clicking mask${" "}
+    Clicking mask
     <strong>must</strong>
-    ${" "}dismiss lightbox dialog with no changes applied (effectively acting as
+    dismiss lightbox dialog with no changes applied (effectively acting as
     a “cancel”).
   </p>
   <h2>ARIA Reference</h2>

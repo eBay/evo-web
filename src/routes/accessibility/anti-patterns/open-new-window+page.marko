@@ -2,16 +2,16 @@
   <h1>Open New Window</h1>
   <p>
     Forcing links to open in a new window is an anti-pattern because we are
-    taking control${" "}
+    taking control
     <em>away</em>
-    ${" "}from the user and forcing web-browsing behaviour upon them. If a user
+    from the user and forcing web-browsing behaviour upon them. If a user
     wishes to open a link in a new window, they can do so by using their mouse
     or keyboard shortcut, without our intervention.
   </p>
   <p>
-    If you must create a link that opens in a new window, screen reader users${" "}
+    If you must create a link that opens in a new window, screen reader users
     <strong>must</strong>
-    ${" "}be pre-warned of the behaviour. We achieve this with clipped suffix
+    be pre-warned of the behaviour. We achieve this with clipped suffix
     text:
   </p>
   <pre><code class="language-html">&lt;a href=&quot;http://www.ebay.com/shop&quot; target=&quot;_blank&quot;&gt;
@@ -20,9 +20,9 @@
 </code></pre>
   <h2>Using an Icon</h2>
   <p>
-    Ideally we should also warn${" "}
+    Ideally we should also warn
     <em>sighted</em>
-    ${" "}users of this behaviour. We can do this by adding the text to a
+    users of this behaviour. We can do this by adding the text to a
     foreground image:
   </p>
   <pre><code class="language-html">&lt;a href=&quot;http://www.ebay.com/shop&quot; target=&quot;_blank&quot;&gt;

@@ -2,17 +2,17 @@
   <h1>Menu Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    On desktop, a menu is typically opened with a${" "}
+    On desktop, a menu is typically opened with a
     <a href="menu-button">
       menu button
     </a>
-    ${" "}. On mobile it is common to see a menu embedded directly inside of a
+    . On mobile it is common to see a menu embedded directly inside of a
     filter or refine panel.
   </p>
   <p>
-    Remember, a menu is not a form control. Its purpose is${" "}
+    Remember, a menu is not a form control. Its purpose is
     <strong>not</strong>
-    ${" "}to store or submit data via form submission. A menu, like a button, is
+    to store or submit data via form submission. A menu, like a button, is
     a mechanism to execute JavaScript, and therefore is 100% dependent on
     JavaScript.
   </p>
@@ -27,18 +27,18 @@
     considered non-critical.
   </p>
   <p>
-    Selecting a command${" "}
+    Selecting a command
     <em>should not</em>
-    ${" "}fully reload the page (use a${" "}
+    fully reload the page (use a
     <a href="accessibility/navigation/fake-menu-button">
       fake menu
     </a>
-    ${" "}instead).
+    instead).
   </p>
   <p>
-    Selecting a command${" "}
+    Selecting a command
     <strong>must</strong>
-    ${" "}perform a JavaScript action on the client (e.g. AJAX request then
+    perform a JavaScript action on the client (e.g. AJAX request then
     partial page re-render).
   </p>
   <h2>Interaction Design</h2>
@@ -48,51 +48,51 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    The menu itself does not receive focus; focus${" "}
+    The menu itself does not receive focus; focus
     <strong>must</strong>
-    ${" "}go to the first item in the menu.
+    go to the first item in the menu.
   </p>
   <p>
     <code>UP-ARROW</code>
-    ${" "}and${" "}
+    and
     <code>DOWN-ARROW</code>
-    ${" "}keys${" "}
+    keys
     <strong>must</strong>
-    ${" "}navigate keyboard focus through commands via roving tabindex mechanism
+    navigate keyboard focus through commands via roving tabindex mechanism
     (skipping any that are disabled).
   </p>
   <p>
-    If focus is on a command,${" "}
+    If focus is on a command,
     <code>ENTER</code>
-    ${" "}or${" "}
+    or
     <code>SPACEBAR</code>
-    ${" "}keys${" "}
+    keys
     <strong>must</strong>
-    ${" "}activate that command.
+    activate that command.
   </p>
   <p>
     <code>TAB</code>
-    ${" "}key must move keyboard focus off menu, and onto next interactive
+    key must move keyboard focus off menu, and onto next interactive
     element in the page.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Commands${" "}
+    Commands
     <strong>must</strong>
-    ${" "}be announced as “menu item”, “menu item radio” or “menu item checkbox”
+    be announced as “menu item”, “menu item radio” or “menu item checkbox”
     role.
   </p>
   <p>
-    Checkbox and radio command state${" "}
+    Checkbox and radio command state
     <strong>must</strong>
-    ${" "}be announced as checked or unchecked.
+    be announced as checked or unchecked.
   </p>
   <p>Disabled commands must be announced as disabled.</p>
   <h3>Pointer</h3>
   <p>
-    Clicking any menu item${" "}
+    Clicking any menu item
     <strong>must</strong>
-    ${" "}activate that command.
+    activate that command.
   </p>
   <h2>ARIA Reference</h2>
   <p>

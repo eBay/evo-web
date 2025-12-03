@@ -2,36 +2,36 @@
   <h1>Infotip Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    On desktop screens, overlay${" "}
+    On desktop screens, overlay
     <strong>must not</strong>
-    ${" "}be modal. On smaller screens, the overlay may be implemented as a
+    be modal. On smaller screens, the overlay may be implemented as a
     modal dialog.
   </p>
   <p>
-    Button${" "}
+    Button
     <strong>must not</strong>
-    ${" "}have overlay content duplicated within an${" "}
+    have overlay content duplicated within an
     <code>aria-describedby</code>
-    ${" "}attribute.
+    attribute.
   </p>
   <p>
-    Button${" "}
+    Button
     <strong>must not</strong>
-    ${" "}have${" "}
+    have
     <code>aria-haspopup</code>
-    ${" "}attribute. Despite the name of this property, it is actually intended
-    specifically for a${" "}
+    attribute. Despite the name of this property, it is actually intended
+    specifically for a
     <a href="component/menu">
       Menu
     </a>
-    ${" "}.
+    .
   </p>
   <p>
-    The infotip${" "}
+    The infotip
     <strong>must</strong>
-    ${" "}remain expanded until explicitly closed with the close button${" "}
+    remain expanded until explicitly closed with the close button
     <em>or</em>
-    ${" "}programmatically closed by another component (e.g. when another nearby
+    programmatically closed by another component (e.g. when another nearby
     infotip opens).
   </p>
   <p>
@@ -40,24 +40,24 @@
     the infotip on mouseout, blur or page click.
   </p>
   <p>
-    Overlay${" "}
+    Overlay
     <em>should</em>
-    ${" "}be hidden by default. If you wish to display a tip on page load,
-    consider the${" "}
+    be hidden by default. If you wish to display a tip on page load,
+    consider the
     <a href="component/tourtip">
       Tourtip
     </a>
-    ${" "}.
+    .
   </p>
   <p>
-    Overlay content${" "}
+    Overlay content
     <em>should</em>
-    ${" "}be no more than one or two paragraphs in length. For lengthier
-    content, consider instead using a${" "}
+    be no more than one or two paragraphs in length. For lengthier
+    content, consider instead using a
     <a href="component/lightbox-dialog">
       dialog
     </a>
-    ${" "}.
+    .
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -66,52 +66,52 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    Button${" "}
+    Button
     <strong>must</strong>
-    ${" "}be keyboard focusable.
+    be keyboard focusable.
   </p>
   <p>
-    Activating button${" "}
+    Activating button
     <strong>must</strong>
-    ${" "}toggle the expanded state of the overlay. Keyboard focus should remain
+    toggle the expanded state of the overlay. Keyboard focus should remain
     on the button.
   </p>
   <p>
-    If overlay contains focusable elements, tab order${" "}
+    If overlay contains focusable elements, tab order
     <strong>must</strong>
-    ${" "}flow directly from button to first of those elements.
+    flow directly from button to first of those elements.
   </p>
   <p>
-    If the overlay has no focusable elements, tab order${" "}
+    If the overlay has no focusable elements, tab order
     <strong>must</strong>
-    ${" "}flow directly to next page control.
+    flow directly to next page control.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    Button purpose${" "}
+    Button purpose
     <strong>must</strong>
-    ${" "}be announced (e.g. 'Help).
+    be announced (e.g. 'Help).
   </p>
   <p>
-    Button state${" "}
+    Button state
     <strong>must</strong>
-    ${" "}be announced (i.e. expanded or collapsed).
+    be announced (i.e. expanded or collapsed).
   </p>
   <p>
-    Reading order${" "}
+    Reading order
     <strong>must</strong>
-    ${" "}flow directly from button into overlay.
+    flow directly from button into overlay.
   </p>
   <p>
-    Expanded state${" "}
+    Expanded state
     <strong>must</strong>
-    ${" "}be announced after expanded.
+    be announced after expanded.
   </p>
   <h3>Pointer</h3>
   <p>
-    Invoking button${" "}
+    Invoking button
     <strong>must</strong>
-    ${" "}toggle the expanded state of the overlay.
+    toggle the expanded state of the overlay.
   </p>
   <h2>Utilities</h2>
   <p>
@@ -123,7 +123,7 @@
       <a href="https://github.com/makeup/makeup-js/tree/master/packages/makeup-expander">
         makeup-expander
       </a>
-      ${" "}: handles some basic accessibility for an element that expands and
+      : handles some basic accessibility for an element that expands and
       collapses another element.
     </li>
   </ul>
@@ -164,37 +164,37 @@
   <h2>FAQ</h2>
   <h3>What is the difference between Infotip Button and Tooltip?</h3>
   <p>
-    A${" "}
+    A
     <a href="component/tooltip">
       tooltip
     </a>
-    ${" "}provides a tip about the${" "}
+    provides a tip about the
     <em>primary</em>
-    ${" "}action of an interactive element (typically a button). For example,
+    action of an interactive element (typically a button). For example,
     the trashcan icon button in your mail application. The tooltip can be
-    thought of as the${" "}
+    thought of as the
     <em>secondary</em>
-    ${" "}action of the button. It is always triggered by focus and hover.
+    action of the button. It is always triggered by focus and hover.
   </p>
   <p>
-    An infotip button provides a tip about a nearby${" "}
+    An infotip button provides a tip about a nearby
     <em>static</em>
-    ${" "}element or content. It is always triggered by click.
+    element or content. It is always triggered by click.
   </p>
   <h3>This is different to the way BootStrap ‘Popovers’ work. Why?</h3>
   <p>
-    The fundamental difference is that the${" "}
+    The fundamental difference is that the
     <a href="http://getbootstrap.com/javascript/#popovers">
       Bootstrap Popovers
     </a>
-    ${" "}get their content from a data attribute, whereas the pattern presented
+    get their content from a data attribute, whereas the pattern presented
     here gets it’s content from an actual element. This allows us to more easily
     place HTML such as hyperlinks &amp; images inside of our popovers and,
-    unlike Bootstrap, the popover content${" "}
+    unlike Bootstrap, the popover content
     <em>can</em>
-    ${" "}be fully accessible${" "}
+    be fully accessible
     <em>without</em>
-    ${" "}JavaScript (assuming you choose to make the content visible by
+    JavaScript (assuming you choose to make the content visible by
     default).
   </p>
 </div>

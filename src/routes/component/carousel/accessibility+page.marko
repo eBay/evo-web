@@ -2,71 +2,71 @@
   <h1>Carousel Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Carousel${" "}
+    Carousel
     <strong>must</strong>
-    ${" "}have an associated heading in the page heading structure. For example,
+    have an associated heading in the page heading structure. For example,
     “Trending Deals”, “Watchlist”.
   </p>
   <p>
-    Items${" "}
+    Items
     <strong>must</strong>
-    ${" "}be marked up as a list.
+    be marked up as a list.
   </p>
   <p>
-    Previous and next buttons${" "}
+    Previous and next buttons
     <strong>must</strong>
-    ${" "}use button tags.
+    use button tags.
   </p>
   <p>
-    Pagination indicators (optional)${" "}
+    Pagination indicators (optional)
     <strong>must</strong>
-    ${" "}use button tags.
+    use button tags.
   </p>
   <p>
-    Viewport content${" "}
+    Viewport content
     <strong>must</strong>
-    ${" "}conform to accessibility guidelines.
+    conform to accessibility guidelines.
   </p>
   <p>
-    Peeks${" "}
+    Peeks
     <strong>must not</strong>
-    ${" "}be focusable or interactive.
+    be focusable or interactive.
   </p>
   <p>
-    If the slides can automatically progress, then the carousel${" "}
+    If the slides can automatically progress, then the carousel
     <strong>must</strong>
-    ${" "}include a pause/play button.
+    include a pause/play button.
   </p>
   <ul>
     <li>
-      Discrete carousels${" "}
+      Discrete carousels
       <strong>should not</strong>
-      ${" "}start automatically
+      start automatically
     </li>
     <li>
-      Continuous carousels${" "}
+      Continuous carousels
       <strong>must not</strong>
-      ${" "}start automatically
+      start automatically
     </li>
     <li>
-      Pause/Play button${" "}
+      Pause/Play button
       <strong>should</strong>
-      ${" "}be the first interactive element in the carousel
+      be the first interactive element in the carousel
     </li>
     <li>
-      Pause/Play button${" "}
+      Pause/Play button
       <strong>must</strong>
-      ${" "}always be visible
+      always be visible
     </li>
     <li>
-      Automatic progression${" "}
+      Automatic progression
       <strong>must</strong>
-      ${" "}pause when keyboard focus enters widget
+      pause when keyboard focus enters widget
     </li>
     <li>
-      Automatic progression${" "}
+      Automatic progression
       <strong>must</strong>
-      ${" "}pause when mouse hovers over widget
+      pause when mouse hovers over widget
     </li>
   </ul>
   <h2>Interaction Design</h2>
@@ -76,35 +76,35 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    When “previous” button has focus,${" "}
+    When “previous” button has focus,
     <code>TAB</code>
-    ${" "}key${" "}
+    key
     <strong>must</strong>
-    ${" "}move focus to first focusable element in view port.
+    move focus to first focusable element in view port.
   </p>
   <p>
-    When “next” button has focus,${" "}
+    When “next” button has focus,
     <code>SHIFT+TAB</code>
-    ${" "}key${" "}
+    key
     <strong>must</strong>
-    ${" "}move keyboard focus to last focusable element in view port.
+    move keyboard focus to last focusable element in view port.
   </p>
   <p>
-    Items outside of view port${" "}
+    Items outside of view port
     <strong>must not</strong>
-    ${" "}be keyboard focusable. Keyboard user must use ‘Previous’ and ‘Next’
+    be keyboard focusable. Keyboard user must use ‘Previous’ and ‘Next’
     buttons to control the viewport.
   </p>
   <p>
-    When on first slide, the ‘Previous’ button can remain in tab-order (but${" "}
+    When on first slide, the ‘Previous’ button can remain in tab-order (but
     <strong>should</strong>
-    ${" "}be visually disabled). This helps with issues in some browsers where
+    be visually disabled). This helps with issues in some browsers where
     controls with focus suddenly become disabled and focus is lost.
   </p>
   <p>
-    When on last slide, the ‘Next’ button can remain in tab-order (but${" "}
+    When on last slide, the ‘Next’ button can remain in tab-order (but
     <strong>should</strong>
-    ${" "}be visually disabled). This helps with with issues in some browsers
+    be visually disabled). This helps with with issues in some browsers
     where controls with focus suddenly become disabled and focus is lost.
   </p>
   <p>
@@ -124,91 +124,91 @@
   </p>
   <ul>
     <li>
-      Activate previous or next button: focus${" "}
+      Activate previous or next button: focus
       <strong>must</strong>
-      ${" "}stay on Previous or Next button.
+      stay on Previous or Next button.
     </li>
     <li>
-      Activate Pause/Play button: focus${" "}
+      Activate Pause/Play button: focus
       <strong>must</strong>
-      ${" "}stay on the Pause/Play button.
+      stay on the Pause/Play button.
     </li>
   </ul>
   <h3>Screen Reader</h3>
   <p>
-    “Next” button${" "}
+    “Next” button
     <strong>must</strong>
-    ${" "}be announced as “Next slide”.
+    be announced as “Next slide”.
   </p>
   <p>
-    “Previous” button${" "}
+    “Previous” button
     <strong>must</strong>
-    ${" "}be announced as “Previous slide”.
+    be announced as “Previous slide”.
   </p>
   <p>
     If following WCAG AAA (optional), “Next” and “Previous” buttons should also
     announce with additional context to uniquely identify the button purpose,
-    e.g “Previous slide -${" "}
+    e.g “Previous slide -
     <em>Trending Deals</em>
-    ${" "}” and “Next slide -${" "}
+    ” and “Next slide -
     <em>Trending Deals</em>
-    ${" "}”.
+    ”.
   </p>
   <p>
-    Items outside of the viewport${" "}
+    Items outside of the viewport
     <strong>must not</strong>
-    ${" "}be reachable with the virtual cursor.
+    be reachable with the virtual cursor.
   </p>
   <p>
-    When on first slide, screen reader${" "}
+    When on first slide, screen reader
     <strong>must</strong>
-    ${" "}announce “Previous” button as disabled.
+    announce “Previous” button as disabled.
   </p>
   <p>
-    When on last slide, screen reader${" "}
+    When on last slide, screen reader
     <strong>must</strong>
-    ${" "}announce “Next” button as disabled.
+    announce “Next” button as disabled.
   </p>
   <p>
-    When moving virtual cursor from item to item, screen reader${" "}
+    When moving virtual cursor from item to item, screen reader
     <em>might</em>
-    ${" "}announce list index position.
+    announce list index position.
   </p>
   <p>
-    Play button label${" "}
+    Play button label
     <strong>must</strong>
-    ${" "}be announced as “Play carousel”.
+    be announced as “Play carousel”.
   </p>
   <p>
-    Pause button label${" "}
+    Pause button label
     <strong>must</strong>
-    ${" "}be announced as “Pause carousel”.
+    be announced as “Pause carousel”.
   </p>
   <p>
-    If following WCAG AAA (optional), “Play” and “Pause” buttons${" "}
+    If following WCAG AAA (optional), “Play” and “Pause” buttons
     <em>should</em>
-    ${" "}also announce with additional context to uniquely identify the button
-    purpose, e.g “Play carousel -${" "}
+    also announce with additional context to uniquely identify the button
+    purpose, e.g “Play carousel -
     <em>Trending Deals</em>
-    ${" "}” and “Pause carousel -${" "}
+    ” and “Pause carousel -
     <em>Trending Deals</em>
-    ${" "}”.
+    ”.
   </p>
   <h3>Pointer</h3>
   <p>
-    Clicking “Next”${" "}
+    Clicking “Next”
     <strong>must</strong>
-    ${" "}update viewport with next slide.
+    update viewport with next slide.
   </p>
   <p>
-    Clicking “Previous”${" "}
+    Clicking “Previous”
     <strong>must</strong>
-    ${" "}update viewport with previous slide.
+    update viewport with previous slide.
   </p>
   <p>
-    Clicking pagination button or pagination bar${" "}
+    Clicking pagination button or pagination bar
     <strong>must</strong>
-    ${" "}update viewport with respective slide.
+    update viewport with respective slide.
   </p>
   <h2>ARIA Reference</h2>
   <p>
@@ -274,9 +274,9 @@
       <a href="https://adrianroselli.com/2020/04/avoid-aria-roledescription.html">
         https://adrianroselli.com/2020/04/avoid-aria-roledescription.html
       </a>
-      ${" "}(spoiler: carousel is listed as a${" "}
+      (spoiler: carousel is listed as a
       <em>valid</em>
-      ${" "}use-case)
+      use-case)
     </li>
   </ul>
 </div>

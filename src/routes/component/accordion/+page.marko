@@ -28,35 +28,35 @@
   <ul>
     <li>
       <strong>accordion</strong>
-      ${" "}: the pattern as a whole, comprised of the following sub-parts
+      : the pattern as a whole, comprised of the following sub-parts
     </li>
     <li>
       <strong>panel</strong>
-      ${" "}: each panel in the accordion is a details disclosure widget
+      : each panel in the accordion is a details disclosure widget
     </li>
     <li>
       <strong>header</strong>
-      ${" "}: each panel displays an interactive summary of the panel contents
+      : each panel displays an interactive summary of the panel contents
     </li>
     <li>
       <strong>heading</strong>
-      ${" "}: each header contains a nested heading level element
+      : each header contains a nested heading level element
     </li>
     <li>
       <strong>auto-collapse</strong>
-      ${" "}: an accordion that automatically collapses other open panels when a
+      : an accordion that automatically collapses other open panels when a
       new panel is opened
     </li>
   </ul>
 
-  <h3>HTML${" "}</h3>
+  <h3>HTML</h3>
   <p>
     The structure is a list of details widgets. Note that in some browsers the
-    implicit list role is removed when CSS${" "}
+    implicit list role is removed when CSS
     <code>list-style-type: none</code>
-    ${" "}is applied. To hide the list item markers, use the${" "}
+    is applied. To hide the list item markers, use the
     <code>::marker</code>
-    ${" "}pseudo-element .
+    pseudo-element .
   </p>
 
   <highlight-code type="html">
@@ -116,9 +116,9 @@
 
   <p>
     To address the issue in some browsers where the implicit list role is
-    removed with${" "}
+    removed with
     <code>list-style-type</code>
-    ${" "}, the following CSS can be applied to hide the list item markers.
+    , the following CSS can be applied to hide the list item markers.
     Beyond this, accordion headers and panels can be styled as desired.
   </p>
 
@@ -134,17 +134,17 @@
     mechanics.
   </p>
   <p>
-    For accordions limited to a single open panel, the${" "}
+    For accordions limited to a single open panel, the
     <code>name</code>
-    ${" "}attribute allows multiple${" "}
+    attribute allows multiple
     <code>&lt;details&gt;</code>
-    ${" "}elements to be linked, ensuring only one is open at a time. This
+    elements to be linked, ensuring only one is open at a time. This
     approach effectively eliminates the need for JavaScript.
   </p>
   <p>
-    On older browsers that do not yet support the${" "}
+    On older browsers that do not yet support the
     <code>name</code>
-    ${" "}attribute, the JavaScript steps can be briefly summarized as the
+    attribute, the JavaScript steps can be briefly summarized as the
     following:
   </p>
   <ol>
@@ -156,10 +156,10 @@
     </li>
   </ol>
   <p>
-    That's it. Pretty straightforward. You can reference our${" "}
+    That's it. Pretty straightforward. You can reference our
     <a href="https://github.com/eBay/mindpatterns/blob/gh-pages/_js/accordion.js">
       example code on GitHub
     </a>
-    ${" "}.
+    .
   </p>
 </div>

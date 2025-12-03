@@ -2,18 +2,18 @@
   <h1>Form Validation Accessibility</h1>
   <h2>Introduction</h2>
   <p>
-    Form validation notifies users of invalid and missing data${" "}
+    Form validation notifies users of invalid and missing data
     <em>after</em>
-    ${" "}a user has attempted to submit the form.
+    a user has attempted to submit the form.
   </p>
   <p>
-    To validate a field${" "}
+    To validate a field
     <em>before</em>
-    ${" "}the user attempts to submit the form, please view the${" "}
+    the user attempts to submit the form, please view the
     <a href="input-validation">
       input validation
     </a>
-    ${" "}pattern.
+    pattern.
   </p>
   <p>
     After attempting to submit a form, the validation results can either be
@@ -21,68 +21,68 @@
   </p>
   <h2>Working Examples</h2>
   <p>
-    Experience the pattern in action on our companion${" "}
+    Experience the pattern in action on our companion
     <a href="http://ebay.github.io/mindpatterns/messaging/form-validation/">
       eBay MIND Patterns examples website
     </a>
-    ${" "}.
+    .
   </p>
   <h2>Terminology</h2>
   <p>
     <strong>Form Validation</strong>
-    ${" "}: The pattern as a whole, containing the following sub parts.
+    : The pattern as a whole, containing the following sub parts.
   </p>
   <p>
     <strong>Notice landmark</strong>
-    ${" "}: page notice or section notice containing list of error links
+    : page notice or section notice containing list of error links
   </p>
   <p>
     <strong>Error link</strong>
-    ${" "}: internal link that moves focus to invalid input.
+    : internal link that moves focus to invalid input.
   </p>
   <p>
     <strong>Invalid input</strong>
-    ${" "}: a form control with an invalid value
+    : a form control with an invalid value
   </p>
   <p>
     <strong>Inline notice</strong>
-    ${" "}: displayed next to an invalid input
+    : displayed next to an invalid input
   </p>
   <h2>Best Practices</h2>
   <p>
-    Immediate client-side results${" "}
+    Immediate client-side results
     <strong>must</strong>
-    ${" "}be rendered using a section notice directly${" "}
+    be rendered using a section notice directly
     <em>above</em>
-    ${" "}the form.
+    the form.
   </p>
   <p>
-    A full-page reload${" "}
+    A full-page reload
     <strong>must</strong>
-    ${" "}render a${" "}
+    render a
     <a href="page-notice">
       page notice
     </a>
-    ${" "}at the top of the page.
+    at the top of the page.
   </p>
   <p>
-    The notice${" "}
+    The notice
     <strong>must</strong>
-    ${" "}contain a list of errors that link directly to their respective
+    contain a list of errors that link directly to their respective
     invalid inputs.
   </p>
   <p>
-    The errors${" "}
+    The errors
     <strong>must</strong>
-    ${" "}be visible to all users. Do not try and hide the errors from sighted
+    be visible to all users. Do not try and hide the errors from sighted
     users!
   </p>
   <p>
-    We highly recommend reading${" "}
+    We highly recommend reading
     <a href="https://www.nngroup.com/articles/error-message-guidelines/">
       Error-Message Guidelines
     </a>
-    ${" "}by the Norman Nielson Group.
+    by the Norman Nielson Group.
   </p>
   <h2>Interaction Design</h2>
   <p>
@@ -91,43 +91,43 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    The notice landmark${" "}
+    The notice landmark
     <strong>must</strong>
-    ${" "}receive programmatic focus when rendered.
+    receive programmatic focus when rendered.
   </p>
   <p>
     The notice landmark should not be in tab order (i.e it should have
     tabindex=“-1”).
   </p>
   <p>
-    Activating an error link${" "}
+    Activating an error link
     <strong>must</strong>
-    ${" "}move focus to the invalid input.
+    move focus to the invalid input.
   </p>
   <p>
-    Inline errors${" "}
+    Inline errors
     <strong>must</strong>
 
     <strong>not</strong>
-    ${" "}be focusable (they are static text).
+    be focusable (they are static text).
   </p>
   <h3>Screen Reader</h3>
   <p>
-    User${" "}
+    User
     <strong>must</strong>
-    ${" "}receive notification of all errors preventing progress.
+    receive notification of all errors preventing progress.
   </p>
   <p>
-    An invalid input${" "}
+    An invalid input
     <strong>must</strong>
-    ${" "}notify user of the invalid state${" "}
+    notify user of the invalid state
     <strong>and</strong>
-    ${" "}the error description.
+    the error description.
   </p>
   <p>
-    Notice landmark${" "}
+    Notice landmark
     <strong>must</strong>
-    ${" "}be listed as custom landmark and labelled appropriately.
+    be listed as custom landmark and labelled appropriately.
   </p>
   <h3>Pointer</h3>
   <p>Awaiting content for this section.</p>
@@ -176,7 +176,7 @@
       <a href="https://www.nngroup.com/articles/error-message-guidelines/">
         Error-Message Guidelines
       </a>
-      ${" "}(Norman Nielson Group)
+      (Norman Nielson Group)
     </li>
   </ul>
 </div>

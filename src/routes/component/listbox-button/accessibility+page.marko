@@ -2,19 +2,19 @@
   <h1>Listbox Button Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    A listbox button’s accessible label must at${" "}
+    A listbox button’s accessible label must at
     <strong>all times</strong>
-    ${" "}reflect its function.
+    reflect its function.
   </p>
   <p>
     <strong>Care is needed when labelling a listbox button!</strong>
-    ${" "}A listbox button attempts to mimic the behaviour of an HTML select by
+    A listbox button attempts to mimic the behaviour of an HTML select by
     displaying the currently selected value in its collapsed state. In HTML
-    however, a${" "}
+    however, a
     <em>button</em>
-    ${" "}is labelled by its inner text, whereas a${" "}
+    is labelled by its inner text, whereas a
     <em>select</em>
-    ${" "}is labelled by an external label tag.
+    is labelled by an external label tag.
   </p>
   <p>
     All of this leaves us with a conundrum, with three potential solutions
@@ -22,9 +22,9 @@
   </p>
   <h3>Compound Label</h3>
   <p>
-    We can use${" "}
+    We can use
     <code>aria-labelledby</code>
-    ${" "}to stitch together an external text element with the internal value,
+    to stitch together an external text element with the internal value,
     this creating a compound label.
   </p>
   <p>
@@ -56,34 +56,34 @@
     pointing devices.
   </p>
   <p>
-    Please also see related${" "}
+    Please also see related
     <a href="listbox">
       listbox
     </a>
-    ${" "}pattern for best practices of nested listbox.
+    pattern for best practices of nested listbox.
   </p>
   <h3>Keyboard</h3>
   <p>
-    With focus on button, pressing${" "}
+    With focus on button, pressing
     <code>SPACEBAR</code>
-    ${" "}will will toggle the expanded state of button. On expand, keyboard
-    focus should move to the listbox. The listbox implements an${" "}
+    will will toggle the expanded state of button. On expand, keyboard
+    focus should move to the listbox. The listbox implements an
     <a href="accessibility/techniques/active-descendant">
       active-descendant
     </a>
-    ${" "}keyboard model.
+    keyboard model.
   </p>
   <p>
-    With focus on listbox,${" "}
+    With focus on listbox,
     <code>ARROW KEYS</code>
-    ${" "}will navigate the options,${" "}
+    will navigate the options,
     <code>ESCAPE</code>
-    ${" "}key will collapse listbox and move focus on to button.${" "}
+    key will collapse listbox and move focus on to button.
     <code>TAB</code>
-    ${" "}key will collapse listbox and move focus to next interactive page
-    element.${" "}
+    key will collapse listbox and move focus to next interactive page
+    element.
     <code>SHIFT-TAB</code>
-    ${" "}will move focus back to button and listbox will remain expanded.
+    will move focus back to button and listbox will remain expanded.
   </p>
   <h3>Screen Reader</h3>
   <p>
@@ -98,9 +98,9 @@
   </p>
   <h2>Known Issues</h2>
   <p>
-    These are all known${" "}
+    These are all known
     <em>serious</em>
-    ${" "}issues with assistive technology in relation to this pattern:
+    issues with assistive technology in relation to this pattern:
   </p>
   <ul>
     <li>

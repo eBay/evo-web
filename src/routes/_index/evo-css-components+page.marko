@@ -111,7 +111,7 @@
               frontend engineers at eBay.
             </p>
             <p>
-              Evo CSS's default stylesheet represents${" "}
+              Evo CSS's default stylesheet represents
               <a href="https://playbook.ebay.com">
                 eBay Evo
               </a>
@@ -120,26 +120,26 @@
               <a href="evo-css-components#token-system">
                 token-based configuration
               </a>
-              ${" "}to enable non-eBay branded experiences.
+              to enable non-eBay branded experiences.
             </p>
             <p>Skin adheres to the following core principals:</p>
             <dl>
               <dt>Accessible</dt>
               <dd>
                 Skin leverages semantic HTML, SVG & ARIA to apply our styles
-                wherever possible; thus enforcing correct,${" "}
+                wherever possible; thus enforcing correct,
                 <a href="https://github.com/ianmcburnie/bones">
                   accessible markup
                 </a>
-                ${" "}.
+                .
               </dd>
               <dt>Declarative</dt>
               <dd>
-                Skin follows the${" "}
+                Skin follows the
                 <a href="https://getbem.com">
                   BEM
                 </a>
-                ${" "}methodology ("Block, Element and Modifier") for
+                methodology ("Block, Element and Modifier") for
                 structured, human readable code which embraces the power &
                 efficiency of the cascade.
               </dd>
@@ -147,26 +147,26 @@
               <dd>
                 Skin is decoupled from the JavaScript layer, meaning the HTML
                 and CSS is agnostic of the frontend framework (BYOJ = Bring Your
-                Own Javascript!)${" "}
+                Own Javascript!)
                 <sup>*</sup>
               </dd>
               <dt>Scalable</dt>
               <dd>
-                Skin is built on a system of${" "}
+                Skin is built on a system of
                 <a href="https://tr.designtokens.org/format/">
                   design tokens
                 </a>
-                ${" "}(implemented as CSS Variables); enabling a scalable and
+                (implemented as CSS Variables); enabling a scalable and
                 consistent visual system for UI development.
               </dd>
             </dl>
             <p>
               <sup>*</sup>
-              ${" "}This website uses${" "}
+              This website uses
               <a href="https://github.com/makeup/makeup-js">
                 makeup-js
               </a>
-              ${" "}to add some basic interactivity to examples where needed.
+              to add some basic interactivity to examples where needed.
             </p>
           </div>
         </div>
@@ -181,15 +181,15 @@
                   <div id="getting-started-css">
                     <h2>Getting Started with Evo CSS</h2>
                     <p>
-                      Skin is distributed via NPM under the${" "}
+                      Skin is distributed via NPM under the
                       <code>@ebay/skin</code>
-                      ${" "}package name.
+                      package name.
                     </p>
                     <p>
                       To use Skin, the package should be added as a dependency
-                      in your project's${" "}
+                      in your project's
                       <code>package.json</code>
-                      ${" "}file.
+                      file.
                     </p>
 
                     <highlight-code
@@ -212,33 +212,33 @@
         <div class="landing-info-container__item">
           <div class="landing-info-container__item_body">
             <p>
-              Skin supports${" "}
+              Skin supports
               <a href="https://webpack.js.org">
                 Webpack
               </a>
-              ${" "}and${" "}
+              and
               <a href="https://github.com/lasso-js/lasso">
                 Lasso.js
               </a>
-              ${" "}.
+              .
             </p>
 
             <h3>Webpack</h3>
             <p>
-              Add${" "}
+              Add
               <code>@ebay/skin</code>
-              ${" "}and${" "}
+              and
               <code>@ebay/browserslist-config</code>
-              ${" "}as dependencies to${" "}
+              as dependencies to
               <code>package.json</code>
-              ${" "}.
+              .
             </p>
             <p>
-              The Skin webpack modules will import CSS so make sure to also have${" "}
+              The Skin webpack modules will import CSS so make sure to also have
               <code>css-loader</code>
-              ${" "}and${" "}
+              and
               <code>style-loader</code>
-              ${" "}as dev dependencies.
+              as dev dependencies.
             </p>
             <highlight-code
               type="json"
@@ -277,11 +277,11 @@
 
             <h3>Lasso.js</h3>
             <p>
-              Add the${" "}
+              Add the
               <code>@ebay/skin</code>
-              ${" "}module as a${" "}
+              module as a
               <code>browser.json</code>
-              ${" "}dependency to include the entire set of Skin modules.
+              dependency to include the entire set of Skin modules.
             </p>
             <highlight-code
               type="json"
@@ -317,15 +317,15 @@
         <div class="landing-info-container__item">
           <div class="landing-info-container__item_body">
             <p>
-              As of v14, Skin's token-based design system leverages${" "}
+              As of v14, Skin's token-based design system leverages
               <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">
                 CSS Custom Properties
               </a>
-              ${" "}(previously it used${" "}
+              (previously it used
               <a href="https://lesscss.org/">
                 LESS
               </a>
-              ${" "}).
+              ).
             </p>
             <p>
               Tokens are grouped into three distinct sets, that cascade in the
@@ -339,9 +339,9 @@
 
             <p>
               In order for Skin to render correctly, values for core tokens and
-              light tokens are${" "}
+              light tokens are
               <strong>required</strong>
-              ${" "}.
+              .
             </p>
             <p>
               The easiest way to satisfy this requirement is to include one of
@@ -368,7 +368,7 @@
 
             <p>
               <strong>NOTE:</strong>
-              ${" "}Primitive tokens are not intended to be used by the
+              Primitive tokens are not intended to be used by the
               application; instead, they are utilized by the semantic tokens.
             </p>
           </div>
@@ -420,16 +420,16 @@
             <p>
               Warning! Changing the value of any product-level token will cause
               a ripple effect through all skin modules. If this is not your
-              intention, tokens are also available at the component-level. See${" "}
+              intention, tokens are also available at the component-level. See
               <a href="component/switch#switch-variables">
                 switch-variables
               </a>
-              ${" "}for an example.
+              for an example.
             </p>
           </div>
         </div>
       </div>
     </main>
   </div>
-  ${" "}<!-- End site-wrapper -->
+  <!-- End site-wrapper -->
 </div>

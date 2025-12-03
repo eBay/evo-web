@@ -2,26 +2,26 @@
   <h1>Region</h1>
   <p>
     Upon visiting a website for the first time, a sighted user will typically
-    scan the page with their eyes to create a${" "}
+    scan the page with their eyes to create a
     <em>visual</em>
-    ${" "}model of the page layout. Assuming the page is visually well designed,
+    model of the page layout. Assuming the page is visually well designed,
     the sighted user can quickly glean a high level view of what page regions
     are available.
   </p>
   <p>
     Using screen reader assistive technology, a non-sighted user can achieve a
-    similar a${" "}
+    similar a
     <em>mental</em>
-    ${" "}model; again though, this is assuming the page has been${" "}
+    model; again though, this is assuming the page has been
     <em>semantically</em>
-    ${" "}well structured using regions*.
+    well structured using regions*.
   </p>
   <p>
-    Similar to${" "}
+    Similar to
     <a href="accessibility/patterns/heading">
       headings
     </a>
-    ${" "}, regions can be used as navigational aids. Screen readers like JAWS
+    , regions can be used as navigational aids. Screen readers like JAWS
     and NVDA not only provide a full list of regions, but also provide keyboard
     shortcuts to move between them. For example, in JAWS you can press the R key
     to go to the next region or SHIFT + R to go to the previous one.
@@ -36,14 +36,14 @@
   <p>There are two types of region:</p>
   <p>
     <strong>Landmark regions</strong>
-    ${" "}identify the main regions of a page that are common across websites.
+    identify the main regions of a page that are common across websites.
     Site banner/logo, the search box, site navigation, main content area,
     sidebar, etc. HTML5 and ARIA provide us with a limited list of landmark tags
     and roles respectively.
   </p>
   <p>
     <strong>Custom landmark regions</strong>
-    ${" "}identify the main areas of a page that are common to a specific
+    identify the main areas of a page that are common to a specific
     website. Search filters, user profile, notifications, help, etc. HTML5 and
     ARIA provide us with the section tag and region role respectively, as the
     building blocks to create any number of custom regions.
@@ -54,11 +54,11 @@
     page sections. A general rule of thumb is no more than ten.
   </p>
   <p>
-    Every region should have a corresponding, on screen level-2${" "}
+    Every region should have a corresponding, on screen level-2
     <a href="accessibility/patterns/heading">
       heading
     </a>
-    ${" "}.
+    .
   </p>
   <h3>Example</h3>
   <p>
@@ -86,9 +86,9 @@
 </code></pre>
   <p>
     In this example, we have added a custom user profile region inside of our
-    main content. Custom regions${" "}
+    main content. Custom regions
     <strong>must</strong>
-    ${" "}be labelled. The screen reader will identify the region in our example
+    be labelled. The screen reader will identify the region in our example
     as ‘User Profile region’ (or words to those affect).
   </p>
   <h3>Interaction Design</h3>

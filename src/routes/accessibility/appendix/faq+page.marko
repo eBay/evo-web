@@ -2,17 +2,17 @@
   <h1>Accessibility FAQ</h1>
   <p>
     Listed below are frequently asked questions. If you have a question that is
-    not answered here, please start a${" "}
+    not answered here, please start a
     <a href="https://www.gitbook.com/book/ebay/mindpatterns/discussions">
       discussion
     </a>
-    ${" "}.
+    .
   </p>
   <h2>Should I use a button or a link?</h2>
   <p>
-    A general rule of thumb is that if the resulting action should be be a${" "}
+    A general rule of thumb is that if the resulting action should be be a
     <em>bookmark-able</em>
-    ${" "}URL, or would benefit from being opened in a new window or tab, then a
+    URL, or would benefit from being opened in a new window or tab, then a
     link should be used. Otherwise, if the action just runs some JavaScript
     (i.e. opens a dialog or menu), then a button should be used.
   </p>
@@ -25,34 +25,34 @@
   <p>
     Now, within the context of a Single Page App (SPA), the lines can get a
     little blurry, and there are many opinions either way. However, our guidance
-    remains consistent with above - use links for anything that updates${" "}
+    remains consistent with above - use links for anything that updates
     <em>browser history state</em>
-    ${" "}, as links give the user a hint that they are moving through
+    , as links give the user a hint that they are moving through
     bookmark-able state.
   </p>
   <p>
     NOTE: There is one special type of button that can also change the URL. The
     form submit button. This button will GET or POST to the URL specified in the
-    form’s${" "}
+    form’s
     <code>action</code>
-    ${" "}property.
+    property.
   </p>
   <h2>
     <strong>Should Buttons Have a Hand Cursor?</strong>
   </h2>
   <p>
     No. The hand cursor is reserved for links. Affordance of button
-    interactivity comes from how the element${" "}
+    interactivity comes from how the element
     <em>looks</em>
-    ${" "}(i.e. it should look like a button!), and should not require use of a
+    (i.e. it should look like a button!), and should not require use of a
     mouse.
   </p>
   <p>
-    See${" "}
+    See
     <a href="accessibility/anti-patterns/hand-cursor-on-buttons">
       Hand Cursor on Buttons
     </a>
-    ${" "}antipattern for more info.
+    antipattern for more info.
   </p>
   <h2>Can a focussed button be a live-region?</h2>
   <p>
@@ -61,9 +61,9 @@
     trigger a second, redundant announcement.
   </p>
   <p>
-    Also, the purpose of live-regions is for areas of the page${" "}
+    Also, the purpose of live-regions is for areas of the page
     <em>away</em>
-    ${" "}from the current focus.
+    from the current focus.
   </p>
   <p>
     If visually conveying a loading/waiting state within the button, make sure
@@ -75,26 +75,26 @@
   <h2>When should a live-region be used?</h2>
   <p>
     Not every dynamic update to the page needs to be communicated to the user
-    via a${" "}
+    via a
     <a href="accessibility/techniques/live-region">
       live region
     </a>
-    ${" "}. Doing so could create a confusing, noisy and distracting experience
+    . Doing so could create a confusing, noisy and distracting experience
     for users of assistive technology.
   </p>
   <p>
-    So when${" "}
+    So when
     <em>should</em>
-    ${" "}they be used? As ever with accessibility, the choice requires some
+    they be used? As ever with accessibility, the choice requires some
     prudence and scrutiny.
   </p>
   <h3>Downstream Changes</h3>
   <p>
-    A general rule of thumb is that any change${" "}
+    A general rule of thumb is that any change
     <em>on</em>
-    ${" "}or${" "}
+    or
     <em>after</em>
-    ${" "}the currently focussed element will be discovered in the natural
+    the currently focussed element will be discovered in the natural
     reading order and therefore does not need to be communicated.
   </p>
   <p>
@@ -104,26 +104,26 @@
     from web forms is actually a great accessibility feature! However, we do not
     need to announce that the options changed or that new options are available,
     and we certainly do not need to go into excruciating detail about what
-    options${" "}
+    options
     <em>are</em>
-    ${" "}now available. This would quickly get very silly for complicated forms
+    now available. This would quickly get very silly for complicated forms
     with lots of changes.
   </p>
   <p>
     One exception to this “downstream” rule are elements that are explicitly
     designed to inform the user of an important update. Common examples of this
     are the Snackbar or Toast patterns. Their entire purpose is to grab the
-    users attention,${" "}
+    users attention,
     <em>without</em>
-    ${" "}grabbing their keyboard focus. A great case for a live-region.
+    grabbing their keyboard focus. A great case for a live-region.
   </p>
   <p>
     Other than filling out a form, things can also change frequently downstream
     as a result of user actions on buttons and menus. Checkout totals, shipping
     costs, item quantity, search results, loading spinners, etc. Sometimes all
-    of the above at the same time! Before converting${" "}
+    of the above at the same time! Before converting
     <em>every</em>
-    ${" "}dynamic piece of content into a live region, think about the
+    dynamic piece of content into a live region, think about the
     experience you want the user to have.
   </p>
   <h3>Upstream Changes</h3>
@@ -132,18 +132,18 @@
     certain. Whether the error message appears at the top of the page (many
     pixels away from the submit button the user is currently focussed on) or
     right after the previous textbox they just left, the user should be made
-    aware of the${" "}
+    aware of the
     <em>existence</em>
-    ${" "}of an error message. Note the word “existence”. In the case of
+    of an error message. Note the word “existence”. In the case of
     multiple errors, we do not necessarily need to spell out each and every
     error and how to fix them as part of the live-region announcement, our job
-    is to inform that there${" "}
+    is to inform that there
     <em>was</em>
-    ${" "}an error. They can then navigate to the${" "}
+    an error. They can then navigate to the
     <a href="accessibility/messaging/page-notice">
       page notice
     </a>
-    ${" "}or field to learn more.
+    or field to learn more.
   </p>
   <p>
     Site-level headers and menu-bars are areas that often receive dynamic
@@ -156,14 +156,14 @@
     an announcement of a new notification could be really useful.
   </p>
   <h2>
-    How do I add content${" "}
+    How do I add content
     <em>exclusively</em>
-    ${" "}for screen readers?
+    for screen readers?
   </h2>
   <p>
-    Apply the${" "}
+    Apply the
     <code>.clipped</code>
-    ${" "}class (or its rules) to the element that you want to be visually
+    class (or its rules) to the element that you want to be visually
     hidden. The element will remain accessible in the reading order of screen
     readers.
   </p>
@@ -180,32 +180,32 @@
 }
 </code></pre>
   <p>
-    For interactive elements such as buttons and links, the${" "}
+    For interactive elements such as buttons and links, the
     <code>aria-label</code>
-    ${" "}attribute can be used. This technique is common for icon buttons that
+    attribute can be used. This technique is common for icon buttons that
     do not have any visible text.
   </p>
   <p>
-    For more information please read the excellent${" "}
+    For more information please read the excellent
     <a href="https://www.sitepoint.com/when-and-how-to-visually-hide-content/">
       “When and How to Visually Hide Content”
     </a>
-    ${" "}by Dennis Lembree.
+    by Dennis Lembree.
   </p>
   <h2>Will offscreen text incur a search ranking penalty?</h2>
   <p>
-    No, it is fine to use${" "}
+    No, it is fine to use
     <a href="accessibility/techniques/offscreen-text">
       offscreen text
     </a>
-    ${" "}.
+    .
   </p>
   <p>
-    There is a more detailed answer on the${" "}
+    There is a more detailed answer on the
     <a href="https://productforums.google.com/forum/#!msg/webmasters/YJcZUhtMIE4/XkOEzVakBAAJ">
       Google Webmaster forum
     </a>
-    ${" "}.
+    .
   </p>
   <h2>
     When using Safari I can’t TAB through the links on the page. What’s going
@@ -224,11 +224,11 @@
   </h2>
   <p>
     It is true that Mac keyboards do not have an INSERT key, and this is a known
-    issue with MRD. The workaround is to install a hotkey application such as${" "}
+    issue with MRD. The workaround is to install a hotkey application such as
     <a href="https://pqrs.org/osx/karabiner/">
       Karabiner
     </a>
-    ${" "}.
+    .
   </p>
   <p>
     Once installed, check the checkbox “Enable at only Remote Desktop Connection
@@ -240,15 +240,15 @@
   </p>
   <h2>How do I know where headings are required?</h2>
   <p>
-    As a rough guideline, it can help to think that every${" "}
+    As a rough guideline, it can help to think that every
     <em>block</em>
-    ${" "}or${" "}
+    or
     <em>section</em>
-    ${" "}that sighted people use to create their${" "}
+    that sighted people use to create their
     <em>mental model</em>
-    ${" "}of the page,${" "}
+    of the page,
     <strong>must</strong>
-    ${" "}have a heading. These headings, and the structure they create, allow
+    have a heading. These headings, and the structure they create, allow
     users of assistive technology to create the same mental model.
   </p>
   <p>Identifying headings is the responsibility of the design team.</p>
@@ -281,12 +281,12 @@
   </p>
   <p>We are not going to go out of our way to cater for these individuals.</p>
   <p>
-    However, there are other${" "}
+    However, there are other
     <a href="https://gds.blog.gov.uk/2013/10/21/how-many-people-are-missing-out-on-javascript-enhancement/">
       <em>unknown</em>
-      ${" "}factors
+      factors
     </a>
-    ${" "}which can potentially place the user into a non-JS or partial-JS
+    which can potentially place the user into a non-JS or partial-JS
     state, for example:
   </p>
   <ul>
@@ -297,27 +297,27 @@
   <blockquote>
     <p>We don’t have any non-JavaScript users</p>
     <p>
-      No,${" "}
+      No,
       <em>all</em>
-      ${" "}your users are non-JS while they’re downloading your JS${" "}
+      your users are non-JS while they’re downloading your JS
       <a href="https://twitter.com/jaffathecake/status/207096228339658752">
         Jake Archibald (@jaffathecake) May 28, 2012
       </a>
     </p>
   </blockquote>
   <p>
-    The only realistic way of defending against the${" "}
+    The only realistic way of defending against the
     <em>unknown</em>
-    ${" "}is by building our pages in the${" "}
+    is by building our pages in the
     <a href="http://en.wikipedia.org/wiki/Progressive_Enhancement">
       Progressive Enhancement
     </a>
-    ${" "}way; we make sure our most important content and functionality[1] is
-    always available to users in${" "}
+    way; we make sure our most important content and functionality[1] is
+    always available to users in
     <strong>any</strong>
-    ${" "}browser, in${" "}
+    browser, in
     <strong>any</strong>
-    ${" "}situation.
+    situation.
   </p>
   <p>
     [1] Of course, in certain situations, some functionality simply cannot be
