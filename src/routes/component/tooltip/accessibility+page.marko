@@ -2,64 +2,64 @@
   <h1>Tooltip Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    First of all, the HTML title attribute is
+    First of all, the HTML title attribute is${" "}
     <strong>not</strong>
-    an accessible tooltip. Read the
+    ${" "}an accessible tooltip. Read the${" "}
     <a href="https://ebay.gitbook.io/mindpatterns/antipatterns/title-tooltip">
       title tooltip anti-pattern
     </a>
-    for more details.
+    ${" "}for more details.
   </p>
   <p>
-    Secondly, the tooltip
+    Secondly, the tooltip${" "}
     <strong>must</strong>
-    describe the host element only. Do not create a host element (e.g. a
+    ${" "}describe the host element only. Do not create a host element (e.g. a
     button) purely for the sake of displaying an overlay. If that is your wish,
-    consider the
+    consider the${" "}
     <a href="https://ebay.gitbook.io/mindpatterns/disclosure/infotip">
       Infotip
     </a>
-    pattern instead.
+    ${" "}pattern instead.
   </p>
   <p>
-    Tooltip
+    Tooltip${" "}
     <strong>must not</strong>
-    be applied to static elements. See the
+    ${" "}be applied to static elements. See the${" "}
     <a href="https://ebay.gitbook.io/mindpatterns/antipatterns/non-interactive-hover">
       non-interactive hover
     </a>
-    anti-pattern.
+    ${" "}anti-pattern.
   </p>
   <p>
-    Tooltip
+    Tooltip${" "}
     <strong>must not</strong>
-    use the
+    ${" "}use the${" "}
     <code>aria-haspopup</code>
-    attribute. Tooltips are not considered ‘popups’ in this context.
+    ${" "}attribute. Tooltips are not considered ‘popups’ in this context.
   </p>
   <p>
-    Tooltip
+    Tooltip${" "}
     <em>should not</em>
-    be more than one sentence. Consider using the
+    ${" "}be more than one sentence. Consider using the${" "}
     <a href="https://ebay.gitbook.io/mindpatterns/disclosure/infotip">
       Infotip
     </a>
-    pattern for longer content.
+    ${" "}pattern for longer content.
   </p>
   <p>
-    Tooltip
+    Tooltip${" "}
     <em>should</em>
-    follow the principal of
+    ${" "}follow the principal of${" "}
     <a href="http://en.wikipedia.org/wiki/Progressive_disclosure">
       progressive disclosure
     </a>
-    - revealing the right information, at the right time.
+    ${" "}- revealing the right information, at the right time.
   </p>
   <p>
     <em>If</em>
-    the tooltip conveys crucial information, overlay content
+    ${" "}the tooltip conveys crucial information, overlay content${" "}
     <em>should</em>
-    be visible in a no-JavaScript state (i.e. use progressive
+    ${" "}be visible in a no-JavaScript state (i.e. use progressive
     enhancement).
   </p>
   <h2>Interaction Design</h2>
@@ -69,29 +69,29 @@
   </p>
   <h3>Keyboard</h3>
   <p>
-    Host
+    Host${" "}
     <strong>must</strong>
-    be keyboard focusable.
+    ${" "}be keyboard focusable.
   </p>
   <p>
-    Overlay
+    Overlay${" "}
     <strong>must</strong>
-    appear after short delay when host receives focus.
+    ${" "}appear after short delay when host receives focus.
   </p>
   <p>
-    Keyboard focus order
+    Keyboard focus order${" "}
     <strong>must</strong>
-    move from host to first focusable control in overlay.
+    ${" "}move from host to first focusable control in overlay.
   </p>
   <p>
-    Overlay
+    Overlay${" "}
     <strong>must</strong>
-    disappear when focus leaves popover or when `ESC key is pressed.
+    ${" "}disappear when focus leaves popover or when `ESC key is pressed.
   </p>
   <p>
-    Focus
+    Focus${" "}
     <em>should not</em>
-    move to overlay element itself, only its focusable children.
+    ${" "}move to overlay element itself, only its focusable children.
   </p>
   <h3>Screenreader</h3>
   <p>
@@ -100,63 +100,63 @@
     readers.
   </p>
   <p>
-    Reading order
+    Reading order${" "}
     <strong>must</strong>
-    flow directly from host into overlay.
+    ${" "}flow directly from host into overlay.
   </p>
   <h3>Mouse</h3>
   <p>
-    Overlay
+    Overlay${" "}
     <strong>must</strong>
-    appear after short delay whenever host receives mouseover.
+    ${" "}appear after short delay whenever host receives mouseover.
   </p>
   <p>
-    Overlay
+    Overlay${" "}
     <strong>must</strong>
-    disappear when neither the host or overlay have mouseover.
+    ${" "}disappear when neither the host or overlay have mouseover.
   </p>
   <h3>Pointer</h3>
   <p>Many touch devices do not support hover interactions!</p>
   <p>
-    You
+    You${" "}
     <em>should</em>
-    consider using the click-activated
+    ${" "}consider using the click-activated${" "}
     <a href="https://ebay.gitbook.io/mindpatterns/disclosure/infotip">
       Bubble Help
     </a>
-    pattern instead.
+    ${" "}pattern instead.
   </p>
   <h2>FAQ</h2>
   <h3>What is the difference between Infotip Button and Tooltip?</h3>
   <p>
-    A tooltip provides a tip about the
+    A tooltip provides a tip about the${" "}
     <em>primary</em>
-    action of an interactive element (typically a button). For example,
+    ${" "}action of an interactive element (typically a button). For example,
     the trashcan icon button in your mail application. The tooltip can be
-    thought of as the
+    thought of as the${" "}
     <em>secondary</em>
-    action of the button. It is always triggered by focus and hover.
+    ${" "}action of the button. It is always triggered by focus and hover.
   </p>
   <p>
-    An
+    An${" "}
     <a href="https://ebay.gitbook.io/mindpatterns/disclosure/infotip">
       infotip button
     </a>
-    provides a tip about a nearby static element or content. It is always
+    ${" "}provides a tip about a nearby static element or content. It is always
     triggered by click.
   </p>
   <h3>This is different to the way Bootstrap Tooltip works. Why?</h3>
   <p>
-    The fundamental difference is that the
+    The fundamental difference is that the${" "}
     <a href="http://getbootstrap.com/javascript/#tooltips">
       Bootstrap Tooltip
     </a>
-    get it’s content from the title attribute, whereas the pattern
+    ${" "}get it’s content from the title attribute, whereas the pattern
     presented here gets it’s content from an element’s innerHTML. This allows us
     to more easily place HTML such as hyperlinks inside of our tooltips and,
-    unlike Bootstrap, the tooltip content will be fully accessible
+    unlike Bootstrap, the tooltip content will be fully accessible${" "}
     <em>without</em>
-    JavaScript.
+    ${" "}JavaScript.
   </p>
   <h3>
     Why do we need JavaScript at all? Can’t we do a tooltip with just CSS?
@@ -176,7 +176,7 @@
       <a href="https://github.com/makeup/makeup-js/tree/master/packages/core/makeup-expander">
         makeup-expander
       </a>
-      : creates the basic accessibility for an element that expands and
+      ${" "}: creates the basic accessibility for an element that expands and
       collapses another element (e.g. a popover).
     </li>
   </ul>

@@ -2,9 +2,9 @@
   <h1>Ambiguous Label</h1>
   <p>
     A typical e-commerce sight is rife with buttons and links such as ‘Add’,
-    ‘Edit’, ‘Update’, and ‘Delete’ etc. We class them as
+    ‘Edit’, ‘Update’, and ‘Delete’ etc. We class them as${" "}
     <em>ambiguous labels,</em>
-    because the label is not unique to the page; the visual label alone
+    ${" "}because the label is not unique to the page; the visual label alone
     does not explicitly call out the item, or noun, that it refers to. This can
     be a challenge for users of assistive technology.
   </p>
@@ -14,12 +14,12 @@
     be perceived from the preceding heading.
   </p>
   <p>
-    If the context
+    If the context${" "}
     <em>cannot</em>
-    be derived from the nearest heading, or you are striving to meet WCAG
-    AAA requirements, the
+    ${" "}be derived from the nearest heading, or you are striving to meet WCAG
+    AAA requirements, the${" "}
     <em>programmatic</em>
-    label can be set explicitly (via aria-label) with the necessary
+    ${" "}label can be set explicitly (via aria-label) with the necessary
     context:
   </p>
   <pre><code class="language-html">&lt;a href=&quot;http://www.ebay.com/cart/add&quot; aria-label=&quot;Add to Cart - iPhone 6, 32GB&quot;
@@ -37,17 +37,17 @@
 </code></pre>
   <p>
     Clipped text remains hidden to sighted users but visible for AT. Please
-    refer to the
+    refer to the${" "}
     <a href="accessibility/appendix/utils">
       Utilities page
     </a>
-    for more information on the clipped class.
+    ${" "}for more information on the clipped class.
   </p>
   <p>
     <strong>NOTE</strong>
-    : additions to the labelling text must always be
+    ${" "}: additions to the labelling text must always be${" "}
     <em>appended</em>
-    , not prepended; prepending text that does not appear visually creates
+    ${" "}, not prepended; prepending text that does not appear visually creates
     issues for users of voice input software.
   </p>
 </div>

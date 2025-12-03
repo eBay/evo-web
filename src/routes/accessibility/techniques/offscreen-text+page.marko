@@ -8,9 +8,9 @@
   </p>
   <p>
     <strong>NOTE</strong>
-    :
+    ${" "}:${" "}
     <code>aria-label</code>
-    can also achieve the same result as offscreen text in certain
+    ${" "}can also achieve the same result as offscreen text in certain
     situations (e.g. on links and buttons).
   </p>
   <p>Offscreen text helps in the following situations:</p>
@@ -42,9 +42,9 @@
     </li>
   </ul>
   <p>
-    All of the examples in this page make use of the
+    All of the examples in this page make use of the${" "}
     <code>.clipped</code>
-    class to create offscreen text.
+    ${" "}class to create offscreen text.
   </p>
   <pre><code class="language-css">/* clip element visibility, making it accessible to screen reader only */
 .clipped {
@@ -60,20 +60,20 @@
 }
 </code></pre>
   <p>
-    All scenarios also include an additional
+    All scenarios also include an additional${" "}
     <code>aria-label</code>
-    example.
+    ${" "}example.
   </p>
   <p>
     <strong>IMPORTANT</strong>
-    : When adding offscreen text to any kind of label (e.g. the inner text of a
-    button, or the label of a textbox), aways
+    ${" "}: When adding offscreen text to any kind of label (e.g. the inner text
+    of a button, or the label of a textbox), aways${" "}
     <em>append</em>
-    it after the visible text. The same rule applies when using
+    ${" "}it after the visible text. The same rule applies when using${" "}
     <code>aria-label</code>
-    - always ensure the beginning of the
+    ${" "}- always ensure the beginning of the${" "}
     <code>aria-label</code>
-    matches the visual label.
+    ${" "}matches the visual label.
   </p>
   <h2>Link opens in new window or tab</h2>
   <p>
@@ -83,9 +83,9 @@
   <pre><code class="language-html">&lt;a href=”http://www.ebay.com/help” target=”_blank”&gt;Help&lt;span class=”clipped&gt; - opens in new window or tab&lt;/span&gt;&lt;/a&gt;
 </code></pre>
   <p>
-    Usage of
+    Usage of${" "}
     <code>aria-label</code>
-    is also supported:
+    ${" "}is also supported:
   </p>
   <pre><code>&lt;a href=”http://www.ebay.com/help” target=”_blank” aria-label=&quot;Help - opens in new window or tab&quot;&gt;Help&lt;/a&gt;
 </code></pre>
@@ -100,9 +100,9 @@
 &gt;
 </code></pre>
   <p>
-    Usage of
+    Usage of${" "}
     <code>aria-label</code>
-    is also supported:
+    ${" "}is also supported:
   </p>
   <pre><code>&lt;a href=&quot;http://www.ebay.com&quot; aria-label=&quot;Buy it Now - iPhone 4&quot;&gt;Buy it Now&lt;/a&gt;
 </code></pre>
@@ -121,15 +121,16 @@
     page, it is now possible to determine one from the other.
   </p>
   <p>
-    Again, we can use
+    Again, we can use${" "}
     <code>aria-label</code>
-    instead of clipped text, like so:
+    ${" "}instead of clipped text, like so:
   </p>
   <pre><code>&lt;a href=&quot;http://www.ebay.com/camera&quot; aria-label=&quot;Shop Now - Cameras&quot;&gt;Shop Now&lt;/a&gt;
 </code></pre>
   <p>
     <strong>NOTE</strong>
-    : The scenario presented is technically a WCAG AAA (“triple A”) requirement.
+    ${" "}: The scenario presented is technically a WCAG AAA (“triple A”)
+    requirement.
   </p>
   <h2>Offscreen headings</h2>
   <p>
@@ -140,15 +141,15 @@
   <pre><code class="language-html">&lt;h2 class=&quot;”clipped”&quot;&gt;Search refinements&lt;/h2&gt;
 </code></pre>
   <p>
-    When do we provide offscreen headings? A good rule of thumb is that every
+    When do we provide offscreen headings? A good rule of thumb is that every${" "}
     <em>visually</em>
-    significant module or section of the page should have a heading.
+    ${" "}significant module or section of the page should have a heading.
   </p>
   <h3>Strikethrough price</h3>
   <p>
-    The HTML
+    The HTML${" "}
     <code>&lt;s&gt;</code>
-    tag is often used to visually represent a sale price, or
+    ${" "}tag is often used to visually represent a sale price, or
     “strikethrough” price. Unfortunately, the semantics of this tag are not
     announced by most screen readers. This means that a user may have difficulty
     in comprehending the current price &amp; sale price.

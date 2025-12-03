@@ -1,36 +1,33 @@
 <div id="marketsans">
-    <section-header/>
+  <section-header/>
 
-    <div
-        class="demo"
-        style="font-size: 36px; font-family: 'Market Sans', 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif; word-wrap: break-word"
-    >
-        <div class="demo__inner">
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-            <br>
-             abcdefghijklmnopqrstuvwxyz
-        </div>
+  <div
+    class="demo"
+    style="font-size: 36px; font-family: 'Market Sans', 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif; word-wrap: break-word">
+    <div class="demo__inner">
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ${" "}
+      <br>
+      ${" "}abcdefghijklmnopqrstuvwxyz
     </div>
-    <highlight-code type="html">
-        <style>
-            p {
-                font-family:
-                    "Market Sans", "Helvetica Neue", Helvetica, Arial, Roboto,
-                    sans-serif;
-            }
-        </style>
-    </highlight-code>
+  </div>
+  <highlight-code type="html">
+    <style>
+      p {
+        font-family:
+          "Market Sans", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif;
+      }
+    </style>
+  </highlight-code>
 
-    <p>
-        <strong>TIP:</strong>
-        The Market Sans font-family, and all fallbacks, can also be applied using the Less variable
-        <code>
-            @font-family-market-sans
-        </code>
-        .
-    </p>
+  <p>
+    <strong>TIP:</strong>
+    ${" "}The Market Sans font-family, and all fallbacks, can also be applied
+    using the Less variable${" "}
+    <code>@font-family-market-sans</code>
+    ${" "}.
+  </p>
 </div>
 export const metadata = {
-    component: "marketsans",
-    version: "2.0",
+  component: "marketsans",
+  version: "2.0",
 };

@@ -1,11 +1,12 @@
-
 import {
   getDirectory,
   getFileNameWithoutExtension,
-  getProperName
-} from "./common"
+  getProperName,
+} from "./common";
 
-const a11yDocsTemplates = import.meta.glob("../routes/accessibility/**/*+page.marko");
+const a11yDocsTemplates = import.meta.glob(
+  "../routes/accessibility/**/*+page.marko",
+);
 
 export interface A11yDocsMap {
   [key: string]: {

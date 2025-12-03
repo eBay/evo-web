@@ -5,7 +5,7 @@ static declare global {
     dataLayer: any[]; // Or a more specific type if you define a structure for your dataLayer pushes
   }
 }
-<const/{pageImg} = getMetadataFromUrl($global.url.pathname)>
+<const/{ pageImg }=getMetadataFromUrl($global.url.pathname)>
 
 <style.scss>
   @use "@ebay/skin/dist/global/global.css";
@@ -57,8 +57,12 @@ static declare global {
       property="og:description"
       content=`${$global.meta.pageDescription || "Evo Web contains the latest components built with a11y in mind"}`>
     <meta property="og:type" content="website">
-    <meta property="og:image" content=`${pageImg || ($global.meta as any).pageImg || ""}`>
-    <meta name="twitter:image" content=`${pageImg || ($global.meta as any).pageImg || ""}`>
+    <meta
+      property="og:image"
+      content=`${pageImg || ($global.meta as any).pageImg || ""}`>
+    <meta
+      name="twitter:image"
+      content=`${pageImg || ($global.meta as any).pageImg || ""}`>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content=`${$global.meta.pageTitle || "evo web"}`>
     <meta
@@ -69,13 +73,8 @@ static declare global {
       type="image/png"
       href=`favicon/favicon-96x96.png`
       sizes="96x96">
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href=`favicon/favicon.svg`>
-    <link
-      rel="shortcut icon"
-      href=`favicon/favicon.ico`>
+    <link rel="icon" type="image/svg+xml" href=`favicon/favicon.svg`>
+    <link rel="shortcut icon" href=`favicon/favicon.ico`>
     <link
       rel="apple-touch-icon"
       sizes="180x180"

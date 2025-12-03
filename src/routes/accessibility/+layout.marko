@@ -1,49 +1,49 @@
 import "prismjs";
 client import "../main.js";
 <style.scss>
-    @use "prismjs/themes/prism-tomorrow.css";
-    @use "@ebay/skin/src/sass/variables/variables";
-    @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
-    @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
-    @use "../../sass/pygments";
-    @use "../../sass/demo-colors";
-    @use "../../sass/page-grid";
-    @use "../../sass/color-schemes";
-    @use "../../sass/site-main";
-    @use "@ebay/skin/src/sass/bundles/skin-headless";
-    @use "@ebay/skin/src/tokens/evo-core";
-    @use "@ebay/skin/src/tokens/evo-light-class";
-    @use "@ebay/skin/src/tokens/evo-dark-class";
-    @use "@ebay/skin/src/tokens/evo-live-light-class";
-    @use "@ebay/skin/src/tokens/evo-live-dark-class";
+  @use "prismjs/themes/prism-tomorrow.css";
+  @use "@ebay/skin/src/sass/variables/variables";
+  @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
+  @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
+  @use "../../sass/pygments";
+  @use "../../sass/demo-colors";
+  @use "../../sass/page-grid";
+  @use "../../sass/color-schemes";
+  @use "../../sass/site-main";
+  @use "@ebay/skin/src/sass/bundles/skin-headless";
+  @use "@ebay/skin/src/tokens/evo-core";
+  @use "@ebay/skin/src/tokens/evo-light-class";
+  @use "@ebay/skin/src/tokens/evo-dark-class";
+  @use "@ebay/skin/src/tokens/evo-live-light-class";
+  @use "@ebay/skin/src/tokens/evo-live-dark-class";
 </style>
 
 <master-icons/>
 <site-header/>
 <div class="content page-grid-container">
-    <div class="page-grid">
-        <div class="site-nav secondary-nav">
-            <nav id="a11y-nav" aria-labelledby="navrail-a11y-nav_title">
-                <h2 id="navrail-a11y-nav_title">
-                    <a href="accessibility/">
-                        Accessibility Docs
-                    </a>
-                </h2>
-                <ul role="menubar">
-                    <a11y-docs-list/>
-                </ul>
-            </nav>
-        </div>
-        <main>
-            <breadcrumbs/>
-            <div class="accessibility-pattern-page">
-                <main class="pattern-content">
-                       <div class="a11y-pattern-content">
-                            <${input.content}/>
-                        </div>
-                </main>
-            </div>
-        </main>
+  <div class="page-grid">
+    <div class="site-nav secondary-nav">
+      <nav id="a11y-nav" aria-labelledby="navrail-a11y-nav_title">
+        <h2 id="navrail-a11y-nav_title">
+          <a href="accessibility/">
+            Accessibility Docs
+          </a>
+        </h2>
+        <ul role="menubar">
+          <a11y-docs-list/>
+        </ul>
+      </nav>
     </div>
+    <main>
+      <breadcrumbs/>
+      <div class="accessibility-pattern-page">
+        <main class="pattern-content">
+          <div class="a11y-pattern-content">
+            <${input.content}/>
+          </div>
+        </main>
+      </div>
+    </main>
+  </div>
 </div>
 <site-footer/>

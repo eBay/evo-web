@@ -1,41 +1,52 @@
 <div id="selection-chip">
-    <section-header/>
+  <section-header/>
 
-    <p>A selection chip is an ARIA toggle button that applies or unapplies its value to a section of a form or application.</p>
-    <p>Selection chips typically appear in groups (e.g. "Recommended Categories").</p>
-    <p>After selection chip is loaded in the dom, add <code>selection-chip--animated</code> so the animations can work</p>
-    <div class="demo">
-        <div class="demo__inner">
-            <button class="selection-chip" type="button" aria-pressed="false">
-                <span class="selection-chip__text">
-                    Football
-                </span>
-                <svg
-                    class="selection-chip__trailing icon icon--12"
-                    width="13"
-                    height="12"
-                >
-                    <icon-symbol name="close-12"/>
-                </svg>
-            </button>
-            <span style="margin-right: 8px;"/>
-        </div>
+  <p>
+    A selection chip is an ARIA toggle button that applies or unapplies its
+    value to a section of a form or application.
+  </p>
+  <p>
+    Selection chips typically appear in groups (e.g. "Recommended Categories").
+  </p>
+  <p>
+    After selection chip is loaded in the dom, add${" "}
+    <code>selection-chip--animated</code>
+    ${" "}so the animations can work
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <button class="selection-chip" type="button" aria-pressed="false">
+        <span class="selection-chip__text">
+          Football
+        </span>
+        <svg
+          class="selection-chip__trailing icon icon--12"
+          width="13"
+          height="12">
+          <icon-symbol name="close-12"/>
+        </svg>
+      </button>
+      <span style="margin-right: 8px;"/>
     </div>
-    <highlight-code type="html">
-        <button class="selection-chip" type="button" aria-pressed="false">
-            <span class="selection-chip__text">
-                Football
-            </span>
-            <svg class="selection-chip__trailing icon icon--12" width="13" height="12">
-                <use href="icons.svg#icon-close-12"/>
-            </svg>
-        </button>
-    </highlight-code>
+  </div>
+  <highlight-code type="html">
+    <button class="selection-chip" type="button" aria-pressed="false">
+      <span class="selection-chip__text">
+        Football
+      </span>
+      <svg
+        class="selection-chip__trailing icon icon--12"
+        width="13"
+        height="12">
+        <use href="icons.svg#icon-close-12"/>
+      </svg>
+    </button>
+  </highlight-code>
 </div>
 export const metadata = {
-    component: "selection-chip",
-    "ds-component": {
-        name: "input-chip",
-        version: "2.1.0",
-    },
+  component: "selection-chip",
+  "ds-component": {
+    name: "input-chip",
+    version: "2.1.0",
+  },
 };

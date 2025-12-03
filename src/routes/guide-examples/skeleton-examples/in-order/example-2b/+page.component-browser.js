@@ -1,11 +1,11 @@
 window.addEventListener("load", () => {
-    const navDelay = 250;
-    const heroDelay = 500;
-    const articleDelay = 3500;
-    const footerDelay = 3750;
+  const navDelay = 250;
+  const heroDelay = 500;
+  const articleDelay = 3500;
+  const footerDelay = 3750;
 
-    setTimeout(() => {
-        document.querySelector(".page-grid").innerHTML += `
+  setTimeout(() => {
+    document.querySelector(".page-grid").innerHTML += `
       <nav>
         <ul>
           <li><a href="#">World</a>
@@ -23,10 +23,10 @@ window.addEventListener("load", () => {
         </ul>
       </nav>
     `;
-    }, navDelay);
+  }, navDelay);
 
-    setTimeout(() => {
-        document.querySelector(".page-grid").innerHTML += `
+  setTimeout(() => {
+    document.querySelector(".page-grid").innerHTML += `
       <article id="hero">
         <h2>Title of a longer featured blog post</h2>
         <p>Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most
@@ -57,10 +57,10 @@ window.addEventListener("load", () => {
       </article>
       <main class="demo-skeleton"></main>
     `;
-    }, heroDelay);
+  }, heroDelay);
 
-    setTimeout(() => {
-        document.querySelector("main").innerHTML += `
+  setTimeout(() => {
+    document.querySelector("main").innerHTML += `
       <article>
         <h2>Sample blog post</h2>
         <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam.
@@ -94,7 +94,7 @@ window.addEventListener("load", () => {
       </article>
       `;
 
-        document.querySelector(".page-grid").innerHTML += `
+    document.querySelector(".page-grid").innerHTML += `
       <aside>
         <section id="section-1">
           <h2>About</h2>
@@ -105,13 +105,13 @@ window.addEventListener("load", () => {
           <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
         </section>
       </aside>`;
-    }, articleDelay);
+  }, articleDelay);
 
-    setTimeout(() => {
-        document.body.innerHTML += `
+  setTimeout(() => {
+    document.body.innerHTML += `
       <footer>This pen is a "stretchy" CSS Grid recreation of the <a href="https://getbootstrap.com/docs/4.0/examples/blog/">Bootstrap Blog Example</a>.</footer>
     `;
-    }, footerDelay);
+  }, footerDelay);
 });
 
 export default {};

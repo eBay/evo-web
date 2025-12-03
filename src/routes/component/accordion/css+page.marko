@@ -1,541 +1,636 @@
 <div id="accordion-css">
-    <h1>Accordion CSS Component</h1>
-    <p>
-        An accordion is a series of expandable sections of content. Each section has a summary header that is used to toggle the display of its related content.
-    </p>
+  <h1>Accordion CSS Component</h1>
+  <p>
+    An accordion is a series of expandable sections of content. Each section has
+    a summary header that is used to toggle the display of its related content.
+  </p>
 
-    <h2>Default Accordion</h2>
-    <p>
-        By default, each section is rendered as closed. When opened, the section will stay open until explicitly closed.
-    </p>
-    <div class="demo">
-        <div class="demo__inner">
-            <ul class="accordion" aria-roledescription="accordion">
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Shipping and returns
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Text wraps on small screen with this long text
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Specifications
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
-        </div>
+  <h2>Default Accordion</h2>
+  <p>
+    By default, each section is rendered as closed. When opened, the section
+    will stay open until explicitly closed.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class="accordion" aria-roledescription="accordion">
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Shipping and returns
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Text wraps on small screen with this long text
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Specifications
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </div>
-    <highlight-code type="html">
-        <ul class="accordion" aria-roledescription="accordion">
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Shipping and returns
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Description
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Specifications
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                </details>
-            </li>
-        </ul>
-    </highlight-code>
+  </div>
+  <highlight-code type="html">
+    <ul class="accordion" aria-roledescription="accordion">
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Shipping and returns
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Description
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Specifications
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </details>
+      </li>
+    </ul>
+  </highlight-code>
 
-    <h2>Opened Accordion</h2>
-    <p>
-        Apply the
-        <code>
-            open
-        </code>
-        property to render a section in an open state.
-    </p>
-    <div class="demo">
-        <div class="demo__inner">
-            <ul class="accordion" aria-roledescription="accordion">
-                <li>
-                    <details class="details" open>
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Shipping and returns
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Description
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Specifications
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
-        </div>
+  <h2>Opened Accordion</h2>
+  <p>
+    Apply the${" "}
+    <code>open</code>
+    ${" "}property to render a section in an open state.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class="accordion" aria-roledescription="accordion">
+        <li>
+          <details class="details" open>
+            <summary class="details__summary">
+              <span class="details__label">
+                Shipping and returns
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Description
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Specifications
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <highlight-code type="html">
-        <ul class="accordion" aria-roledescription="accordion">
-            <li>
-                <details class="details" open>
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Shipping and returns
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Description
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Specifications
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-        </ul>
-    </highlight-code>
+  <highlight-code type="html">
+    <ul class="accordion" aria-roledescription="accordion">
+      <li>
+        <details class="details" open>
+          <summary class="details__summary">
+            <span class="details__label">
+              Shipping and returns
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Description
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Specifications
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+    </ul>
+  </highlight-code>
 
-    <h2>Large Accordion</h2>
-    <p>
-        Apply the
-        <code>
-            accordion--large
-        </code>
-        modifier to increase the size of each section summary.
-    </p>
-    <div class="demo">
-        <div class="demo__inner">
-            <ul
-                class="accordion accordion--large"
-                aria-roledescription="accordion"
-            >
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Shipping and returns
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Description
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Specifications
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
-        </div>
+  <h2>Large Accordion</h2>
+  <p>
+    Apply the${" "}
+    <code>accordion--large</code>
+    ${" "}modifier to increase the size of each section summary.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class="accordion accordion--large" aria-roledescription="accordion">
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Shipping and returns
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Description
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Specifications
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </div>
-    <highlight-code type="html">
-        <ul class="accordion accordion--large" aria-roledescription="accordion">
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Shipping and returns
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Description
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Specifications
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-        </ul>
-    </highlight-code>
+  </div>
+  <highlight-code type="html">
+    <ul class="accordion accordion--large" aria-roledescription="accordion">
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Shipping and returns
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Description
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Specifications
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+    </ul>
+  </highlight-code>
 
-    <h2>Auto-Collapsing Accordion</h2>
-    <p>
-        Use the
-        <code>
-            name
-        </code>
-        attribute to ensure only one section can be open at a time, with other sections automatically closing.
-    </p>
-    <p>
-        <b>NOTE:</b>
-        For browsers that do not yet support this attribute, Javascript is needed to mimic the behavior as a fallback.
-    </p>
-    <div class="demo">
-        <div class="demo__inner">
-            <ul class="accordion" aria-roledescription="accordion">
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Shipping and returns
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Text wraps on small screen with this long text
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-                <li>
-                    <details class="details">
-                        <summary class="details__summary">
-                            <span class="details__label">
-                                Specifications
-                            </span>
-                            <span class="details__icon" hidden>
-                                <svg class="icon icon--16" aria-hidden="true">
-                                    <use href="#icon-chevron-down-16"/>
-                                </svg>
-                            </span>
-                        </summary>
-                        <div class="details__content">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                    </details>
-                </li>
-            </ul>
-        </div>
+  <h2>Auto-Collapsing Accordion</h2>
+  <p>
+    Use the${" "}
+    <code>name</code>
+    ${" "}attribute to ensure only one section can be open at a time, with other
+    sections automatically closing.
+  </p>
+  <p>
+    <b>NOTE:</b>
+    ${" "}For browsers that do not yet support this attribute, Javascript is
+    needed to mimic the behavior as a fallback.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class="accordion" aria-roledescription="accordion">
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Shipping and returns
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Text wraps on small screen with this long text
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details class="details">
+            <summary class="details__summary">
+              <span class="details__label">
+                Specifications
+              </span>
+              <span class="details__icon" hidden>
+                <svg class="icon icon--16" aria-hidden="true">
+                  <use href="#icon-chevron-down-16"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="details__content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </details>
+        </li>
+      </ul>
     </div>
-    <highlight-code type="html">
-        <ul class="accordion" aria-roledescription="accordion">
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Shipping and returns
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Description
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-            <li>
-                <details class="details">
-                    <summary class="details__summary">
-                        <span class="details__label">
-                            Specifications
-                        </span>
-                        <span class="details__icon" hidden>
-                            <svg class="icon icon--16" aria-hidden="true">
-                                <use href="#icon-chevron-down-16"/>
-                            </svg>
-                        </span>
-                    </summary>
-                    <div class="details__content">
-                        ...
-                    </div>
-                </details>
-            </li>
-        </ul>
-    </highlight-code>
+  </div>
+  <highlight-code type="html">
+    <ul class="accordion" aria-roledescription="accordion">
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Shipping and returns
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Description
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="details">
+          <summary class="details__summary">
+            <span class="details__label">
+              Specifications
+            </span>
+            <span class="details__icon" hidden>
+              <svg class="icon icon--16" aria-hidden="true">
+                <use href="#icon-chevron-down-16"/>
+              </svg>
+            </span>
+          </summary>
+          <div class="details__content">
+            ...
+          </div>
+        </details>
+      </li>
+    </ul>
+  </highlight-code>
 
-    <h2 id="accordion-animation">
-        Accordion Animation
-        <sup>EXPERIMENTAL</sup>
-    </h2>
-    <p>
-        The accordion features smooth animations with progressive enhancement when expanding and collapsing content sections. This is an experimental feature that may not be supported in all browsers.
-    </p>
-    <p>
-    The accordion uses modern CSS features like <code>
-            interpolate-size: allow-keywords
-        </code> that enable smooth transitions for intrinsic size values and <code>
-            transition-behavior: allow-discrete
-        </code> to allow smoother transitions for discrete properties like <code>content-visibility</code>.
-    </p>
+  <h2 id="accordion-animation">
+    Accordion Animation${" "}
+    <sup>EXPERIMENTAL</sup>
+  </h2>
+  <p>
+    The accordion features smooth animations with progressive enhancement when
+    expanding and collapsing content sections. This is an experimental feature
+    that may not be supported in all browsers.
+  </p>
+  <p>
+    The accordion uses modern CSS features like${" "}
+    <code>interpolate-size: allow-keywords</code>
+    ${" "}that enable smooth transitions for intrinsic size values and${" "}
+    <code>transition-behavior: allow-discrete</code>
+    ${" "}to allow smoother transitions for discrete properties like${" "}
+    <code>content-visibility</code>
+    ${" "}.
+  </p>
 </div>

@@ -2,11 +2,11 @@
   <h1>Chips Combobox Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Since
+    Since${" "}
     <code>chips-combobox</code>
-    is a composite component and includes a
+    ${" "}is a composite component and includes a${" "}
     <code>combobox</code>
-    , it automatically inherits its pattern. For the sake of completion,
+    ${" "}, it automatically inherits its pattern. For the sake of completion,
     here’s that pattern quoted from its own page:
   </p>
   <p>
@@ -15,20 +15,20 @@
     additional actions per row, e.g. add, edit or delete.
   </p>
   <p>
-    The combobox listbox is
+    The combobox listbox is${" "}
     <strong>not</strong>
-    intended for storing or display kind of single-select or multi-select
+    ${" "}intended for storing or display kind of single-select or multi-select
     state. Again, the purpose of each option is to simply set the value of the
     textbox.
   </p>
   <p>
-    A combobox is an enhancement of textbox. Likewise,
+    A combobox is an enhancement of textbox. Likewise,${" "}
     <strong>autocomplete</strong>
-    is an enhancement of combobox. Suggestions provided will
+    ${" "}is an enhancement of combobox. Suggestions provided will${" "}
     <em>update</em>
-    
+
     <em>dynamically</em>
-    based on user input. The suggested values may appear inline within the
+    ${" "}based on user input. The suggested values may appear inline within the
     textbox, in a list, or both places at once.
   </p>
   <p>
@@ -37,18 +37,18 @@
   </p>
   <h3>Chips</h3>
   <p>
-    Since
+    Since${" "}
     <code>chips-combobox</code>
-    manages the addition and removal of
+    ${" "}manages the addition and removal of${" "}
     <code>chip(s)</code>
-    , they require some key elements. A
+    ${" "}, they require some key elements. A${" "}
     <code>chip</code>
-    can be static of interactive. Static chips are extremely simple and
-    don’t require much guidance. Here, we will only be looking at interactive
+    ${" "}can be static of interactive. Static chips are extremely simple and
+    don’t require much guidance. Here, we will only be looking at interactive${" "}
     <code>chips</code>
-    . Here’s the markup for each
+    ${" "}. Here’s the markup for each${" "}
     <code>chip</code>
-    :
+    ${" "}:
   </p>
   <pre><code class="language-html">&lt;span class=&quot;chip&quot;&gt;
   &lt;span id=&quot;chip-interactive-1-1-text&quot; class=&quot;chip__text&quot;&gt;Football&lt;/span&gt;
@@ -65,38 +65,38 @@
 &lt;/span&gt;
 </code></pre>
   <p>
-    Each
+    Each${" "}
     <code>chip</code>
-    has a
+    ${" "}has a${" "}
     <code>button</code>
-    inside that removes the chip from the
+    ${" "}inside that removes the chip from the${" "}
     <code>chips-combobox</code>
-    . The
+    ${" "}. The${" "}
     <code>chip__text</code>
-    needs an
+    ${" "}needs an${" "}
     <code>id</code>
-    that is used by the
+    ${" "}that is used by the${" "}
     <code>button</code>
-    via
+    ${" "}via${" "}
     <code>aria-describedby</code>
-    to link the
+    ${" "}to link the${" "}
     <code>button</code>
-    removal to the specific chip.
+    ${" "}removal to the specific chip.
   </p>
   <p>
-    The close
+    The close${" "}
     <code>svg</code>
-    icon for each chip needs to have
+    ${" "}icon for each chip needs to have${" "}
     <code>aria-hidden=&quot;true&quot;</code>
-    since its function is conveyed by the
+    ${" "}since its function is conveyed by the${" "}
     <code>button</code>
-    .
+    ${" "}.
   </p>
   <h2>Interaction Design</h2>
   <p>
-    Since chips combobox is a composite component and includes a
+    Since chips combobox is a composite component and includes a${" "}
     <code>combobox</code>
-    , it automatically inherits its interaction design. Once again, here’s
+    ${" "}, it automatically inherits its interaction design. Once again, here’s
     that pattern quoted from its own page:
   </p>
   <h3>Keyboard</h3>
@@ -105,68 +105,68 @@
     options.
   </p>
   <p>
-    With listbox expanded, pressing
+    With listbox expanded, pressing${" "}
     <code>DOWN-ARROW</code>
-    and
+    ${" "}and${" "}
     <code>UP-ARROW</code>
-    keys
+    ${" "}keys${" "}
     <strong>must</strong>
-    navigate through the list of options. The keyboard focus will
+    ${" "}navigate through the list of options. The keyboard focus will${" "}
     <em>appear</em>
-    to be in two places at the same time - the textbox
+    ${" "}to be in two places at the same time - the textbox${" "}
     <em>and</em>
-    the listbox. In actual fact, keyboard focus always stays on the
-    textbox. The
+    ${" "}the listbox. In actual fact, keyboard focus always stays on the
+    textbox. The${" "}
     <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-activedescendant">
       aria-activedescendant
     </a>
-    property controls the
+    ${" "}property controls the${" "}
     <em>pseudo-focus</em>
-    inside of the listbox.
+    ${" "}inside of the listbox.
   </p>
   <p>
-    Pressing
+    Pressing${" "}
     <code>SPACEBAR</code>
-    
+
     <strong>must always</strong>
-    enter a blank space in the textbox.
+    ${" "}enter a blank space in the textbox.
   </p>
   <p>
-    For a combobox with
+    For a combobox with${" "}
     <code>autoSelect</code>
-    , changing the highlighted option will automatically fill the textbox with
-    that option.
+    ${" "}, changing the highlighted option will automatically fill the textbox
+    with that option.
   </p>
   <p>
-    For a combobox without
+    For a combobox without${" "}
     <code>autoSelect</code>
-    , changing the highlighted option
+    ${" "}, changing the highlighted option${" "}
     <strong>must</strong>
-    
+
     <strong>not</strong>
-    automatically fill the textbox;
+    ${" "}automatically fill the textbox;${" "}
     <code>ENTER</code>
-    key is required to manually select the option.
+    ${" "}key is required to manually select the option.
   </p>
   <p>
-    Pressing
+    Pressing${" "}
     <code>ENTER</code>
-    key while an option is highlighted
+    ${" "}key while an option is highlighted${" "}
     <strong>must</strong>
-    collapse the listbox. For a combobox with
+    ${" "}collapse the listbox. For a combobox with${" "}
     <code>autoSelect</code>
-    the form will be submitted. For a combobox without
+    ${" "}the form will be submitted. For a combobox without${" "}
     <code>autoSelect</code>
-    the form
+    ${" "}the form${" "}
     <strong>must not</strong>
-    be submitted.
+    ${" "}be submitted.
   </p>
   <p>
-    Pressing
+    Pressing${" "}
     <code>ESC</code>
-    key while an option is highlighted
+    ${" "}key while an option is highlighted${" "}
     <strong>must</strong>
-    collapse the listbox.
+    ${" "}collapse the listbox.
   </p>
   <p>
     <strong>For autocomplete type “list”:</strong>
@@ -184,9 +184,9 @@
   </p>
   <p>
     The listbox is removed. The entire combobox value will update as the user
-    types, with the suggested portion highlighted as a
+    types, with the suggested portion highlighted as a${" "}
     <em>selection</em>
-    range.
+    ${" "}range.
   </p>
   <p>
     <strong>For autocomplete type “both”:</strong>
@@ -213,16 +213,16 @@
   </p>
   <p>
     Clicking or tapping an option will fill the textbox with that value and
-    collapse the listbox
+    collapse the listbox${" "}
     <strong>without</strong>
-    triggering a form submit.
+    ${" "}triggering a form submit.
   </p>
   <p>
-    In addition, there is interaction between the
+    In addition, there is interaction between the${" "}
     <code>combobox</code>
-    and
+    ${" "}and${" "}
     <code>chip</code>
-    items.
+    ${" "}items.
   </p>
   <h4>Chip Creation with Keyboard and Mouse</h4>
   <p>
@@ -230,33 +230,33 @@
     show all available options. As the user types, the listbox will be filtered
     to display only items meeting the criteria of the entered text. Consistent
     with a typical combobox, the user would then use the arrow keys to navigate
-    to the item they’d like to add. Pressing
+    to the item they’d like to add. Pressing${" "}
     <code>ENTER</code>
-    when the indicator is on a specific item, will create a
+    ${" "}when the indicator is on a specific item, will create a${" "}
     <code>chip</code>
-    with that item. Utilizing a mouse, when the user clicks on any of the
+    ${" "}with that item. Utilizing a mouse, when the user clicks on any of the
     items in the listbox, a chip will be created for that item.
   </p>
   <h4>Custom Chip Creation</h4>
   <p>
-    A custom
+    A custom${" "}
     <code>chip</code>
-    can be created only with the keyboard. As the user types inside the
-    textbox, at any given moment, pressing
+    ${" "}can be created only with the keyboard. As the user types inside the
+    textbox, at any given moment, pressing${" "}
     <code>ENTER</code>
-    will create a
+    ${" "}will create a${" "}
     <code>chip</code>
-    with/for the text present in the textbox.
+    ${" "}with/for the text present in the textbox.
   </p>
   <h4>Patterns to Avoid: Comma</h4>
   <p>
-    There may be a tendency to consider using a comma(
+    There may be a tendency to consider using a comma(${" "}
     <code>,</code>
-    ) to fire off the creation of a chip. The current guidance is to avoid doing
-    so. Commas are too specific in usage on certain platforms and do not have as
-    wide of an intuitive base of accepted usage patterns. Conversely,
+    ${" "}) to fire off the creation of a chip. The current guidance is to avoid
+    doing so. Commas are too specific in usage on certain platforms and do not
+    have as wide of an intuitive base of accepted usage patterns. Conversely,${" "}
     <code>ENTER</code>
-    is a universally accepted pattern for submission of an entry.
+    ${" "}is a universally accepted pattern for submission of an entry.
   </p>
   <h2>ARIA Reference</h2>
   <p>
@@ -276,11 +276,11 @@
           <strong>role=combobox</strong>
         </td>
         <td>
-          This attribute changes the role of the text input from
+          This attribute changes the role of the text input from${" "}
           <code>textbox</code>
-          to
+          ${" "}to${" "}
           <code>combobox</code>
-          . We recommend applying this attribute on the client-side with
+          ${" "}. We recommend applying this attribute on the client-side with
           JavaScript.
         </td>
       </tr>
@@ -326,9 +326,9 @@
         <td>
           Provides the expand/collapse button with an accessible label, in the
           case where it has no visible text (i.e. an icon button). It also
-          provides an accessible label for the
+          provides an accessible label for the${" "}
           <code>chips-combobox</code>
-          unordered list.
+          ${" "}unordered list.
         </td>
       </tr>
       <tr>

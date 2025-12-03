@@ -3,33 +3,33 @@
   <h2>aria-label &amp; aria-labelledby</h2>
   <p>Provide an accessible label to an element or widget.</p>
   <p>
-    These two attributes
+    These two attributes${" "}
     <strong>must</strong>
-    
+
     <strong>not</strong>
-    be used on elements or widgets that already have a non-ARIA labelling
-    mechanism in place. Examples of non-ARIA labelling mechanisms are the
+    ${" "}be used on elements or widgets that already have a non-ARIA labelling
+    mechanism in place. Examples of non-ARIA labelling mechanisms are the${" "}
     <code>&lt;label&gt;</code>
-    tag for form inputs, and inner text for buttons.
+    ${" "}tag for form inputs, and inner text for buttons.
   </p>
   <p>
-    Use
+    Use${" "}
     <code>aria-labelledby</code>
-    if there is visible text onscreen that can be used to label the
+    ${" "}if there is visible text onscreen that can be used to label the
     element (a nearby heading, for example).
   </p>
   <p>
-    Use
+    Use${" "}
     <code>aria-label</code>
-    when there is no suitable labeling text onscreen (this issue is common
+    ${" "}when there is no suitable labeling text onscreen (this issue is common
     with icon buttons, for example).
   </p>
   <h2>aria-describedby</h2>
   <p>Describe an interactive element using existing onscreen text.</p>
   <p>
-    A description is different from a label. Labels indicate the
+    A description is different from a label. Labels indicate the${" "}
     <em>purpose</em>
-    of the field, whereas descriptions are give secondary information on
+    ${" "}of the field, whereas descriptions are give secondary information on
     how to use or operate the field.
   </p>
   <p>
@@ -42,36 +42,36 @@
     action.
   </p>
   <p>
-    Commonly used to convert a plain
+    Commonly used to convert a plain${" "}
     <code>&lt;div&gt;</code>
-    or
+    ${" "}or${" "}
     <code>&lt;span&gt;</code>
-    into an interactive button. Also useful in converting
+    ${" "}into an interactive button. Also useful in converting${" "}
     <a href="http://en.wikipedia.org/wiki/Hijax">
       hijaxed
     </a>
-    hyperlinks into buttons.
+    ${" "}hyperlinks into buttons.
   </p>
   <p>
-    Supplying this role alone is
+    Supplying this role alone is${" "}
     <strong>not</strong>
-    sufficient to convert a
+    ${" "}sufficient to convert a${" "}
     <code>&lt;div&gt;</code>
-    or
+    ${" "}or${" "}
     <code>&lt;span&gt;</code>
-    into a fully functioning, keyboard-accessible button. That behaviour
-    must be added with JavaScript. Better yet, just use a native
+    ${" "}into a fully functioning, keyboard-accessible button. That behaviour
+    must be added with JavaScript. Better yet, just use a native${" "}
     <code>&lt;button&gt;</code>
-    element which will give you the screen reader role and keyboard
+    ${" "}element which will give you the screen reader role and keyboard
     behaviour for free without requiring any JavaScript.
   </p>
   <h2>aria-expanded</h2>
   <p>
-    Indicate whether the element, or another element it
+    Indicate whether the element, or another element it${" "}
     <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">
       controls
     </a>
-    , is currently expanded or collapsed.
+    ${" "}, is currently expanded or collapsed.
   </p>
   <p>
     Often used on ‘expando’ or ‘show more’ buttons that dynamically hide &amp;
@@ -84,9 +84,9 @@
     grid.
   </p>
   <p>
-    This attribute is
+    This attribute is${" "}
     <strong>not</strong>
-    intended to be used on elements that open other kinds of popup overlay
+    ${" "}intended to be used on elements that open other kinds of popup overlay
     - such as modals, tooltips, flyouts, etc.
   </p>
   <h2>aria-live</h2>
@@ -101,25 +101,25 @@
   <p>
     By default, only the updated content inside the element will be announced,
     rather than the entire content of the element. This behaviour can be changed
-    with the
+    with the${" "}
     <a href="http://www.w3.org/TR/wai-aria/states_and_properties#aria-atomic">
       aria-atomic
     </a>
-    property.
+    ${" "}property.
   </p>
   <p>
     For areas of a page that update a lot of content, it is good practice to try
-    and create a live region that summarizes
+    and create a live region that summarizes${" "}
     <em>what</em>
-    content has changed, rather than try and announce all of the new
+    ${" "}content has changed, rather than try and announce all of the new
     content. A data table with lots of dynamically changing data, we could
     summarize as “table data updated”, for example.
   </p>
   <h3>role=dialog</h3>
   <p>
-    A
+    A${" "}
     <code>dialog</code>
-    role informs the user that they are inside of a child window of the
+    ${" "}role informs the user that they are inside of a child window of the
     main page.
   </p>
   <p>
@@ -128,11 +128,11 @@
   </p>
   <h2>aria-modal</h2>
   <p>
-    Used on elements with role of
+    Used on elements with role of${" "}
     <code>dialog</code>
-    or
+    ${" "}or${" "}
     <code>alertdialog</code>
-    to indicate modality.
+    ${" "}to indicate modality.
   </p>
   <p>
     With modality set to “true”, all input devices should be restricted from
@@ -142,9 +142,9 @@
     <strong>WARNING!</strong>
   </h2>
   <p>
-    Our final set of ARIA attributes listed below are deemed as
+    Our final set of ARIA attributes listed below are deemed as${" "}
     <em>potentially</em>
-    dangerous and therefore essential knowledge is required n order to
+    ${" "}dangerous and therefore essential knowledge is required n order to
     avoid their misuse.
   </p>
   <h2>aria-hidden</h2>
@@ -163,25 +163,25 @@
     Again, because this area is very subjective, caution is required.
   </p>
   <p>
-    NOTE: setting
+    NOTE: setting${" "}
     <code>aria-hidden</code>
-    to “true” is not necessary if the element already has CSS
+    ${" "}to “true” is not necessary if the element already has CSS${" "}
     <code>display: none</code>
-    or the HTML5
+    ${" "}or the HTML5${" "}
     <a href="http://www.w3.org/html/wg/drafts/html/master/editing.html#the-hidden-attribute">
       hidden attribute
     </a>
-    .
+    ${" "}.
   </p>
   <h2>role=presentation</h2>
   <p>Removes the default semantic meaning of an element.</p>
   <p>
     You can think of this role as essentially converting an element into a
-    meaningless
+    meaningless${" "}
     <code>&lt;div&gt;</code>
-    or
+    ${" "}or${" "}
     <code>&lt;span&gt;</code>
-    but retaining its default styling.
+    ${" "}but retaining its default styling.
   </p>
   <p>
     When applied to a table, for example, the screenreader would no longer
@@ -193,7 +193,7 @@
   <h2>role=application</h2>
   <p>
     <strong>DANGER!</strong>
-    The majority of web pages and web developers will never need to use
+    ${" "}The majority of web pages and web developers will never need to use
     this role.
   </p>
   <p>
@@ -209,9 +209,9 @@
     render the entire page unusable.
   </p>
   <p>
-    Even if you
+    Even if you${" "}
     <em>think</em>
-    you need this role, you most probably don’t, so please exercise
+    ${" "}you need this role, you most probably don’t, so please exercise
     extreme caution. You have been warned!
   </p>
 </div>

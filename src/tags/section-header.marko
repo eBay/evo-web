@@ -1,63 +1,56 @@
 import { getMetadataFromUrl } from "../data";
 
-<const/{
-    dsComponent,
-    properName,
-}=getMetadataFromUrl($global.url.pathname)>
+<const/{ dsComponent, properName }=getMetadataFromUrl($global.url.pathname)>
 export interface Input {
-    header?: string;
+  header?: string;
 }
 
 <style>
-    .component-header {
-        display: flex;
-        flex-wrap: wrap;
-        margin: var(--spacing-400) 0 var(--spacing-200);
-        justify-content: space-between;
-        align-items: baseline;
-    }
+  .component-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--spacing-400) 0 var(--spacing-200);
+    justify-content: space-between;
+    align-items: baseline;
+  }
 
-    .component-header h1 {
-        margin: 0;
-    }
+  .component-header h1 {
+    margin: 0;
+  }
 
-    .component-header__link {
-        text-decoration: underline;
-    }
+  .component-header__link {
+    text-decoration: underline;
+  }
 </style>
 <define/Body>
-    ${properName} Component${" "}
+  ${properName} Component${" "}
 </define>
 <div class="component-header">
-    <if=input.header === "h3">
-        <h3>
-            <Body/>
-        </h3>
-    </if>
-    <else if=input.header === "h2">
-        <h2>
-            <Body/>
-        </h2>
-    </else>
-    <else>
-        <h1>
-            <Body/>
-        </h1>
-    </else>
+  <if=input.header === "h3">
+    <h3>
+      <Body/>
+    </h3>
+  </if>
+  <else if=input.header === "h2">
+    <h2>
+      <Body/>
+    </h2>
+  </else>
+  <else>
+    <h1>
+      <Body/>
+    </h1>
+  </else>
 
-    <span class="component-header__link">
+  <span class="component-header__link">
 
-        <a
-            href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
-            target="_blank">
-            <svg
-                class="icon icon--16"
-                height="16"
-                width="16"
-                aria-hidden="true">
-                <use href="#icon-external-link-16"/>
-            </svg>
-            ${" "}Playbook
-        </a>
-    </span>
+    <a
+      href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
+      target="_blank">
+      <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+        <use href="#icon-external-link-16"/>
+      </svg>
+      ${" "}Playbook
+    </a>
+  </span>
 </div>

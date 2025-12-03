@@ -53,8 +53,7 @@ export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
     const root = parts.slice(0, parts.length - 1).join("/");
     const name = getFileNameWithoutExtension(root);
     const properName = getProperName(name);
-    const { pageTitle, pageDescription } =
-      componentMetaJsons[name] || {};
+    const { pageTitle, pageDescription } = componentMetaJsons[name] || {};
     const { metadata, dsComponent } = getMetadata(name);
 
     data[name] = {

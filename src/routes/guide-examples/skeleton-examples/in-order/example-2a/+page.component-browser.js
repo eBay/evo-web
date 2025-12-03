@@ -1,12 +1,12 @@
 window.addEventListener("load", () => {
-    const navDelay = 250;
-    const heroDelay = 500;
-    const articleDelay = 3500;
-    const asideDelay = 3750;
-    const footerDelay = 4000;
+  const navDelay = 250;
+  const heroDelay = 500;
+  const articleDelay = 3500;
+  const asideDelay = 3750;
+  const footerDelay = 4000;
 
-    setTimeout(() => {
-        document.querySelector(".page-grid").innerHTML += `
+  setTimeout(() => {
+    document.querySelector(".page-grid").innerHTML += `
       <nav>
         <ul>
           <li><a href="#">World</a>
@@ -24,10 +24,10 @@ window.addEventListener("load", () => {
         </ul>
       </nav>
     `;
-    }, navDelay);
+  }, navDelay);
 
-    setTimeout(() => {
-        document.querySelector(".page-grid").innerHTML += `
+  setTimeout(() => {
+    document.querySelector(".page-grid").innerHTML += `
       <article id="hero">
         <h2>Title of a longer featured blog post</h2>
         <p>Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most
@@ -61,10 +61,10 @@ window.addEventListener("load", () => {
       </main>
       <aside></aside>
     `;
-    }, heroDelay);
+  }, heroDelay);
 
-    setTimeout(() => {
-        document.querySelector("main").innerHTML += `
+  setTimeout(() => {
+    document.querySelector("main").innerHTML += `
       <article>
         <h2>Sample blog post</h2>
         <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam.
@@ -97,10 +97,10 @@ window.addEventListener("load", () => {
           Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
       </article>
       `;
-    }, articleDelay);
+  }, articleDelay);
 
-    setTimeout(() => {
-        document.querySelector("aside").innerHTML += `
+  setTimeout(() => {
+    document.querySelector("aside").innerHTML += `
       <section id="section-1">
         <h2>About</h2>
         <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -109,12 +109,12 @@ window.addEventListener("load", () => {
         <h2>Archives</h2>
         <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     </section>`;
-    }, asideDelay);
+  }, asideDelay);
 
-    setTimeout(() => {
-        document.body.innerHTML += `
+  setTimeout(() => {
+    document.body.innerHTML += `
       <footer>This pen is a "stretchy" CSS Grid recreation of the <a href="https://getbootstrap.com/docs/4.0/examples/blog/">Bootstrap Blog Example</a>.</footer>
     `;
-    }, footerDelay);
+  }, footerDelay);
 });
 export default {};

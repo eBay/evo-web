@@ -1,11 +1,11 @@
 export interface Input {
-    idx: number;
-    offset: number;
+  idx: number;
+  offset: number;
 }
 <span>
-    <const/forIndex = input.idx - input.offset>
-    <if=(forIndex >= 1 && forIndex <= 7)>
-        .eek--rating-${forIndex}
-    </if>
-    <else>.eek--rating-7</else>
+  <const/forIndex=input.idx - input.offset>
+  <if=(forIndex >= 1 && forIndex <= 7)>
+    .eek--rating-${forIndex}
+  </if>
+  <else>.eek--rating-7</else>
 </span>

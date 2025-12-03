@@ -1,137 +1,138 @@
 <div id="sass">
-    <section-header/>
-    <p>
-        In comparison to past versions, Skin now offers a very minimal public
-        <a href="https://www.sass.org">
-            SASS
-        </a>
-        API (i.e. SASS variables and mixins).
-    </p>
-    <h3 id="skin-mixins">
-        Typography Mixins
-    </h3>
-    <p>
-        Import the typography package as
-        <code>@use "@ebay/skin/mixins" as skin-mixins</code>
-        All Typography mixins are prefixed with
-        <code>typography-</code>
-    </p>
+  <section-header/>
+  <p>
+    In comparison to past versions, Skin now offers a very minimal public${" "}
+    <a href="https://www.sass.org">
+      SASS
+    </a>
+    ${" "}API (i.e. SASS variables and mixins).
+  </p>
+  <h3 id="skin-mixins">
+    Typography Mixins
+  </h3>
+  <p>
+    Import the typography package as${" "}
+    <code>@use "@ebay/skin/mixins" as skin-mixins</code>
+    ${" "}All Typography mixins are prefixed with${" "}
+    <code>typography-</code>
+  </p>
 
-    <div class="demo">
-        <div class="demo__inner">
-            <ul class="demo-typography">
-                <li class="demo-typography-giant-3">
-                    @include skin-mixins.typography-giant-3;
-                </li>
-                <li class="demo-typography-giant-2">
-                    @include skin-mixins.typography-giant-2;
-                </li>
-                <li class="demo-typography-giant-1">
-                    @include skin-mixins.typography-giant-1;
-                </li>
-                <li class="demo-typography-large-2">
-                    @include skin-mixins.typography-large-2;
-                </li>
-                <li class="demo-typography-large-2-secondary">
-                    @include skin-mixins.typography-large-2-secondary;
-                </li>
-                <li class="demo-typography-large-1">
-                    @include skin-mixins.typography-large-1;
-                </li>
-                <li class="demo-typography-large-1-secondary">
-                    @include skin-mixins.typography-large-1-secondary;
-                </li>
-                <li class="demo-typography-medium-bold">
-                    @include skin-mixins.typography-medium-bold;
-                </li>
-                <li class="demo-typography-medium">
-                    @include skin-mixins.typography-medium;
-                </li>
-                <li class="demo-typography-medium-secondary">
-                    @include skin-mixins.typography-medium-secondary;
-                </li>
-                <li class="demo-typography-regular-bold">
-                    @include skin-mixins.typography-regular-bold;
-                </li>
-                <li class="demo-typography-regular">
-                    @include skin-mixins.typography-regular;
-                </li>
-                <li class="demo-typography-regular-secondary">
-                    @include skin-mixins.typography-regular-secondary;
-                </li>
-                <li class="demo-typography-small-bold">
-                    @include skin-mixins.typography-small-bold;
-                </li>
-                <li class="demo-typography-small">
-                    @include skin-mixins.typography-small;
-                </li>
-                <li class="demo-typography-small-secondary">
-                    @include skin-mixins.typography-small-secondary;
-                </li>
-            </ul>
-        </div>
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class="demo-typography">
+        <li class="demo-typography-giant-3">
+          @include skin-mixins.typography-giant-3;
+        </li>
+        <li class="demo-typography-giant-2">
+          @include skin-mixins.typography-giant-2;
+        </li>
+        <li class="demo-typography-giant-1">
+          @include skin-mixins.typography-giant-1;
+        </li>
+        <li class="demo-typography-large-2">
+          @include skin-mixins.typography-large-2;
+        </li>
+        <li class="demo-typography-large-2-secondary">
+          @include skin-mixins.typography-large-2-secondary;
+        </li>
+        <li class="demo-typography-large-1">
+          @include skin-mixins.typography-large-1;
+        </li>
+        <li class="demo-typography-large-1-secondary">
+          @include skin-mixins.typography-large-1-secondary;
+        </li>
+        <li class="demo-typography-medium-bold">
+          @include skin-mixins.typography-medium-bold;
+        </li>
+        <li class="demo-typography-medium">
+          @include skin-mixins.typography-medium;
+        </li>
+        <li class="demo-typography-medium-secondary">
+          @include skin-mixins.typography-medium-secondary;
+        </li>
+        <li class="demo-typography-regular-bold">
+          @include skin-mixins.typography-regular-bold;
+        </li>
+        <li class="demo-typography-regular">
+          @include skin-mixins.typography-regular;
+        </li>
+        <li class="demo-typography-regular-secondary">
+          @include skin-mixins.typography-regular-secondary;
+        </li>
+        <li class="demo-typography-small-bold">
+          @include skin-mixins.typography-small-bold;
+        </li>
+        <li class="demo-typography-small">
+          @include skin-mixins.typography-small;
+        </li>
+        <li class="demo-typography-small-secondary">
+          @include skin-mixins.typography-small-secondary;
+        </li>
+      </ul>
     </div>
-    <h3 id="sass-title-mixins">
-        Title Mixins
-    </h3>
-    <p>
-        Import the title package as
-        <code>@use "@ebay/skin/mixins" as skin-mixins</code>
-        All Typography mixins are prefixed with
-        <code>title-</code>
-    </p>
+  </div>
+  <h3 id="sass-title-mixins">
+    Title Mixins
+  </h3>
+  <p>
+    Import the title package as${" "}
+    <code>@use "@ebay/skin/mixins" as skin-mixins</code>
+    ${" "}All Typography mixins are prefixed with${" "}
+    <code>title-</code>
+  </p>
 
-    <div class="demo">
-        <div class="demo__inner">
-            <ul class="demo-typography">
-                <li class="demo-title-giant-screen-large">
-                    @include skin-mixins.title-giant-screen-large;
-                </li>
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class="demo-typography">
+        <li class="demo-title-giant-screen-large">
+          @include skin-mixins.title-giant-screen-large;
+        </li>
 
-                <li class="demo-title-large-screen-large">
-                    @include skin-mixins.title-large-screen-large;
-                </li>
+        <li class="demo-title-large-screen-large">
+          @include skin-mixins.title-large-screen-large;
+        </li>
 
-                <li class="demo-title-medium-screen-large">
-                    @include skin-mixins.title-medium-screen-large;
-                </li>
+        <li class="demo-title-medium-screen-large">
+          @include skin-mixins.title-medium-screen-large;
+        </li>
 
-                <li class="demo-title-small-screen-large">
-                    @include skin-mixins.title-small-screen-large;
-                </li>
+        <li class="demo-title-small-screen-large">
+          @include skin-mixins.title-small-screen-large;
+        </li>
 
-                <li class="demo-title-giant-screen-small">
-                    @include skin-mixins.title-giant-screen-small;
-                </li>
+        <li class="demo-title-giant-screen-small">
+          @include skin-mixins.title-giant-screen-small;
+        </li>
 
-                <li class="demo-title-large-screen-small">
-                    @include skin-mixins.title-large-screen-small;
-                </li>
+        <li class="demo-title-large-screen-small">
+          @include skin-mixins.title-large-screen-small;
+        </li>
 
-                <li class="demo-title-medium-screen-small">
-                    @include skin-mixins.title-medium-screen-small;
-                </li>
+        <li class="demo-title-medium-screen-small">
+          @include skin-mixins.title-medium-screen-small;
+        </li>
 
-                <li class="demo-title-small-screen-small">
-                    @include skin-mixins.title-small-screen-small;
-                </li>
-            </ul>
-        </div>
+        <li class="demo-title-small-screen-small">
+          @include skin-mixins.title-small-screen-small;
+        </li>
+      </ul>
     </div>
-    <h3 id="utility-title-mixins">
-        Utility Mixins
-    </h3>
-    <p>
-        Import the utility package as
-        <code>@use "@ebay/skin/mixins" as skin-mixins</code>
-        All Utility mixins are prefixed with
-        <code>utility-</code>
-    </p>
-    <p>
-        All utility mixins found on the utility page and can be used as <code>@include skin-mixins.utility-clipped</code>
-    </p>
+  </div>
+  <h3 id="utility-title-mixins">
+    Utility Mixins
+  </h3>
+  <p>
+    Import the utility package as${" "}
+    <code>@use "@ebay/skin/mixins" as skin-mixins</code>
+    ${" "}All Utility mixins are prefixed with${" "}
+    <code>utility-</code>
+  </p>
+  <p>
+    All utility mixins found on the utility page and can be used as${" "}
+    <code>@include skin-mixins.utility-clipped</code>
+  </p>
 </div>
 export const metadata = {
-    component: "sass",
-    version: "1.0",
+  component: "sass",
+  version: "1.0",
 };

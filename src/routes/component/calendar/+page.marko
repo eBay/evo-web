@@ -1,55 +1,67 @@
 <div id="calendar-overview">
-    <h1>Calendar Component</h1>
-    <p class="component-subtitle">Calendar allow users to choose a single date or a range of dates.</p>
-    <component-banner-img />
+  <h1>Calendar Component</h1>
+  <p class="component-subtitle">
+    Calendar allow users to choose a single date or a range of dates.
+  </p>
+  <component-banner-img/>
 
-    <p>
-        The calendar module offers readonly and interactive calendar capabilities.
-    </p>
-    <p>
-        Both types of calendar are structured as data tables; each column representing a day of the week.
-    </p>
+  <p>
+    The calendar module offers readonly and interactive calendar capabilities.
+  </p>
+  <p>
+    Both types of calendar are structured as data tables; each column
+    representing a day of the week.
+  </p>
 
-    <h2>Terminology</h2>
-    <p>We use the following terminology when discussing this pattern.</p>
-    <ul>
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>Single calendar</strong>
+      ${" "}: one calendar month is presented at a time
+    </li>
+    <li>
+      <strong>Double calendar</strong>
+      ${" "}: two calendar months are presented at a time
+    </li>
+    <li>
+      <strong>Calendar title</strong>
+      ${" "}: the month and year
+    </li>
+    <li>
+      <strong>Calendar headers</strong>
+      ${" "}: the days of the week, acting as column headers
+    </li>
+    <li>
+      <strong>Previous month button</strong>
+      ${" "}: moves calendar back one month
+    </li>
+    <li>
+      <strong>Next month button</strong>
+      ${" "}: move calendar forward one month
+    </li>
+    <li>
+      <strong>Date buttons</strong>
+      ${" "}: selects date. Doing so a second time will create a date range
+    </li>
+    <li>
+      <strong>Date states</strong>
+      ${" "}: date buttons can represent multiple states${" "}
+      <ul>
         <li>
-            <strong>Single calendar</strong>: one calendar month is presented at a time
+          <strong>Start Date</strong>
         </li>
         <li>
-            <strong>Double calendar</strong>: two calendar months are presented at a time
+          <strong>End Date</strong>
         </li>
         <li>
-            <strong>Calendar title</strong>: the month and year
+          <strong>Current Date</strong>
         </li>
-        <li>
-            <strong>Calendar headers</strong>: the days of the week, acting as column headers
-        </li>
-        <li>
-            <strong>Previous month button</strong>: moves calendar back one month
-        </li>
-        <li>
-            <strong>Next month button</strong>: move calendar forward one month
-        </li>
-        <li>
-            <strong>Date buttons</strong>: selects date. Doing so a second time will create a date range
-        </li>
-        <li>
-            <strong>Date states</strong>: date buttons can represent multiple states
-            <ul>
-                <li>
-                    <strong>Start Date</strong>
-                </li>
-                <li>
-                    <strong>End Date</strong>
-                </li>
-                <li>
-                    <strong>Current Date</strong>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <strong>Date Range</strong>: a range from start date to end date
-        </li>
-    </ul>
+      </ul>
+    </li>
+    <li>
+      <strong>Date Range</strong>
+      ${" "}: a range from start date to end date
+    </li>
+  </ul>
 </div>

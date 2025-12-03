@@ -2,30 +2,30 @@
   <h1>Avatar Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Informative avatars (standalone without adjacent text) should use
+    Informative avatars (standalone without adjacent text) should use${" "}
     <code>role=&quot;img&quot;</code>
-    with
+    ${" "}with${" "}
     <code>aria-label</code>
-    on the container element to convey the user’s identity. The
+    ${" "}on the container element to convey the user’s identity. The${" "}
     <code>aria-label</code>
-    should describe the purpose, such as “Profile picture - [User Name]”.
+    ${" "}should describe the purpose, such as “Profile picture - [User Name]”.
   </p>
   <p>
     Decorative avatars (adjacent to user names or descriptive text) should omit
-    the
+    the${" "}
     <code>role</code>
-    and
+    ${" "}and${" "}
     <code>aria-label</code>
-    attributes on the container element.
+    ${" "}attributes on the container element.
   </p>
   <p>
-    When using an
+    When using an${" "}
     <code>&lt;img&gt;</code>
-    element inside an avatar container, it must have an empty
+    ${" "}element inside an avatar container, it must have an empty${" "}
     <code>alt=&quot;&quot;</code>
-    attribute. The accessible name is provided by the
+    ${" "}attribute. The accessible name is provided by the${" "}
     <code>aria-label</code>
-    on the parent container (for informative avatars) or omitted entirely
+    ${" "}on the parent container (for informative avatars) or omitted entirely
     (for decorative avatars).
   </p>
   <p>
@@ -45,24 +45,24 @@
   </p>
   <p>
     If an avatar is placed within an interactive element (such as a button or
-    link), the interactive element must be keyboard accessible via
+    link), the interactive element must be keyboard accessible via${" "}
     <strong>TAB</strong>
-    key.
+    ${" "}key.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    A screen reader will skip over a decorative avatar (without
+    A screen reader will skip over a decorative avatar (without${" "}
     <code>role</code>
-    or
+    ${" "}or${" "}
     <code>aria-label</code>
-    attributes).
+    ${" "}attributes).
   </p>
   <p>
-    For informative avatars, a screen reader will announce the
+    For informative avatars, a screen reader will announce the${" "}
     <code>role=&quot;img&quot;</code>
-    and the
+    ${" "}and the${" "}
     <code>aria-label</code>
-    value (e.g., “Profile picture - Elizabeth, image”).
+    ${" "}value (e.g., “Profile picture - Elizabeth, image”).
   </p>
   <p>
     If the avatar is within an interactive element, the screen reader will
@@ -101,9 +101,9 @@
           <strong>aria-label</strong>
         </td>
         <td>
-          Applied to the avatar container with
+          Applied to the avatar container with${" "}
           <code>role=&quot;img&quot;</code>
-          to provide an accessible name (e.g., “Profile picture - User
+          ${" "}to provide an accessible name (e.g., “Profile picture - User
           Name”).
         </td>
       </tr>

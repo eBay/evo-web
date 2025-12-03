@@ -1,15 +1,13 @@
 import tokens from "./token-doc.json";
 export interface Input {
-    type?: "core" | "expressive" | "semantic" | "live";
+  type?: "core" | "expressive" | "semantic" | "live";
 }
 <const/values=tokens[input.type || "core"]>
 <ul class="demo-color-primitive">
-    <for|token| of=values>
-        <li>
-            <div
-                class="demo-tokens-example"
-                style=`background:${token.value};`/>
-            ${token.prop}
-        </li>
-    </for>
+  <for|token| of=values>
+    <li>
+      <div class="demo-tokens-example" style=`background:${token.value};`/>
+      ${token.prop}
+    </li>
+  </for>
 </ul>

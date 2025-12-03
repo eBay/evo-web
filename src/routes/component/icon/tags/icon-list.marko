@@ -1,28 +1,25 @@
 import { type IconsData, type Icon } from "../../../../data/icons";
 export interface Input {
-    list: Icon[]
-    icons: IconsData["icons"];
+  list: Icon[];
+  icons: IconsData["icons"];
 }
 <ul class="demo-icon-boxes">
-    <for|icon| of=input.list>
-        <const/containerClass  = input.icons.largeDocs.indexOf(icon.name) !== -1 ? "demo-icon-box demo-icon-box--large" : "demo-icon-box">
+  <for|icon| of=input.list>
+    <const/containerClass=(
+      input.icons.largeDocs.indexOf(icon.name) !== -1
+        ? "demo-icon-box demo-icon-box--large"
+        : "demo-icon-box"
+    )>
 
-        <li class=containerClass>
-            <span>${icon.name}</span>
-            <svg
-                aria-hidden="true"
-                class=[
-                    input.icons.prefix,
-                    `${input.icons.prefix}--${icon.size}`,
-                ]
-                height=icon.height || 24
-                width=icon.width || 24
-            >
-                <icon-symbol
-                    name=icon.name
-                    prefix=(input.icons.prefix)
-                />
-            </svg>
-        </li>
-    </for>
+    <li class=containerClass>
+      <span>${icon.name}</span>
+      <svg
+        aria-hidden="true"
+        class=[input.icons.prefix, `${input.icons.prefix}--${icon.size}`]
+        height=icon.height || 24
+        width=icon.width || 24>
+        <icon-symbol name=icon.name prefix=(input.icons.prefix)/>
+      </svg>
+    </li>
+  </for>
 </ul>

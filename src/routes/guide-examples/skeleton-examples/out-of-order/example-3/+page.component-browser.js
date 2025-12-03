@@ -1,16 +1,16 @@
 window.addEventListener("load", () => {
-    const skeletonDelay = 250;
-    const navDelay = 500;
-    const heroDelay = 500;
-    const featured1Delay = 600;
-    const featured2Delay = 700;
-    const articleDelay = 3000;
-    const asideDelay1 = 750;
-    const asideDelay2 = 500;
-    const footerDelay = 500;
+  const skeletonDelay = 250;
+  const navDelay = 500;
+  const heroDelay = 500;
+  const featured1Delay = 600;
+  const featured2Delay = 700;
+  const articleDelay = 3000;
+  const asideDelay1 = 750;
+  const asideDelay2 = 500;
+  const footerDelay = 500;
 
-    setTimeout(() => {
-        document.querySelector(".page-grid").innerHTML += `
+  setTimeout(() => {
+    document.querySelector(".page-grid").innerHTML += `
       <nav>
         <div class="demo-skeleton"></div>
       </nav>
@@ -35,10 +35,10 @@ window.addEventListener("load", () => {
         </section>
       </aside>
     `;
-    }, skeletonDelay);
+  }, skeletonDelay);
 
-    setTimeout(() => {
-        document.querySelector("nav").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("nav").innerHTML = `
       <ul>
         <li><a href="#">World</a>
         <li><a href="#">U.S.</a>
@@ -54,19 +54,19 @@ window.addEventListener("load", () => {
         <li><a href="#">Travel</a>
       </ul>
     `;
-    }, navDelay);
+  }, navDelay);
 
-    setTimeout(() => {
-        document.querySelector("#hero").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("#hero").innerHTML = `
       <h2>Title of a longer featured blog post</h2>
       <p>Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most
         interesting in this post's contents.</p>
       <p><a>Continue reading...</a></p>
     `;
-    }, heroDelay);
+  }, heroDelay);
 
-    setTimeout(() => {
-        document.querySelector("#featured-1").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("#featured-1").innerHTML = `
       <div class="page-grid">
         <div class="featured__article">
           <h2>Featured Post 1</h2>
@@ -77,10 +77,10 @@ window.addEventListener("load", () => {
         </div>
       </div>;
     `;
-    }, featured1Delay);
+  }, featured1Delay);
 
-    setTimeout(() => {
-        document.querySelector("#featured-2").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("#featured-2").innerHTML = `
       <div class="page-grid">
         <div class="featured__article">
           <h2>Featured Post 2</h2>
@@ -91,10 +91,10 @@ window.addEventListener("load", () => {
         </div>
       </div>;
     `;
-    }, featured2Delay);
+  }, featured2Delay);
 
-    setTimeout(() => {
-        document.querySelector("main").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("main").innerHTML = `
       <article>
         <h1>From the Firehose</h1>
         <h2>Sample blog post</h2>
@@ -128,27 +128,27 @@ window.addEventListener("load", () => {
           Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
       </article>
       `;
-    }, articleDelay);
+  }, articleDelay);
 
-    setTimeout(() => {
-        document.querySelector("#section-1").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("#section-1").innerHTML = `
       <h2>About</h2>
       <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     `;
-    }, asideDelay1);
+  }, asideDelay1);
 
-    setTimeout(() => {
-        document.querySelector("#section-2").innerHTML = `
+  setTimeout(() => {
+    document.querySelector("#section-2").innerHTML = `
       <h2>Archives</h2>
       <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     `;
-    }, asideDelay2);
+  }, asideDelay2);
 
-    setTimeout(() => {
-        document.body.innerHTML += `
+  setTimeout(() => {
+    document.body.innerHTML += `
       <footer>This pen is a "stretchy" CSS Grid recreation of the <a href="https://getbootstrap.com/docs/4.0/examples/blog/">Bootstrap Blog Example</a>.</footer>
     `;
-    }, footerDelay);
+  }, footerDelay);
 });
 
 export default {};

@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.body.innerHTML = `
+  setTimeout(() => {
+    document.body.innerHTML = `
   <div class="page-grid-container">
       <div class="page-grid">
         <nav>
@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
       href="https://getbootstrap.com/docs/4.0/examples/blog/">Bootstrap Blog Example</a>.
   </footer>
         `;
-    }, 3000);
+  }, 3000);
 });
 
 export default {};

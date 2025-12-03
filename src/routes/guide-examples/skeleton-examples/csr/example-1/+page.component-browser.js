@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
-    document.querySelector("button").addEventListener("click", function (e) {
-        // load some skeletons first
-        document.querySelector("main").innerHTML += `
+  document.querySelector("button").addEventListener("click", function (e) {
+    // load some skeletons first
+    document.querySelector("main").innerHTML += `
       <div class="skeleton items" role="img" aria-label="loading">
         <div>
           <div class="skeleton__image" style="width: 150px; height: 150px"></div>
@@ -14,10 +14,9 @@ window.addEventListener("load", () => {
       </div>
     `;
 
-        setTimeout(() => {
-            document.querySelectorAll(".skeleton:not([hidden])")[0].hidden =
-                true;
-            document.querySelector("main").innerHTML += `
+    setTimeout(() => {
+      document.querySelectorAll(".skeleton:not([hidden])")[0].hidden = true;
+      document.querySelector("main").innerHTML += `
       <div class="items">
         <div>
           <div class="image" style="background-image: url('https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg');"></div>
@@ -29,8 +28,8 @@ window.addEventListener("load", () => {
         </div>
       </div>
       `;
-        }, 3000);
-    });
+    }, 3000);
+  });
 });
 
 export default {};

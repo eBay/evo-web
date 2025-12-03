@@ -1,133 +1,135 @@
 <style>
-    .page-sitemap {
-        nav {
-            margin-bottom: var(--spacing-400);
-        }
-
-        li {
-            margin-bottom: var(--spacing-200);
-        }
-
-        a.nav-link {
-            text-decoration: underline;
-        }
-
-        a.nav-link:visited,
-        a:visited {
-            color: revert;
-        }
+  .page-sitemap {
+    nav {
+      margin-bottom: var(--spacing-400);
     }
 
-    .site-nav {
-        display: none;
+    li {
+      margin-bottom: var(--spacing-200);
     }
 
-    main {
-        grid-area: 1 / 1 / span 1 / span 16;
+    a.nav-link {
+      text-decoration: underline;
     }
+
+    a.nav-link:visited,
+    a:visited {
+      color: revert;
+    }
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  main {
+    grid-area: 1 / 1 / span 1 / span 16;
+  }
 </style>
 
 <div class="page-grid-container">
 
-    <div class="page-sitemap">
-        <h1>Sitemap</h1>
+  <div class="page-sitemap">
+    <h1>Sitemap</h1>
 
-        <h2 id="sitemap-pages">
-            Main Pages
-        </h2>
+    <h2 id="sitemap-pages">
+      Main Pages
+    </h2>
 
-        <nav aria-labelledby="sitemap-pages">
-            <ul role="menubar">
-                <li>
-                    <a role="menuitem" href="https://github.com/eBay/evo-web/tree/main/packages/skin">
-                        Repo
-                    </a>
-                </li>
-                <li>
-                    <a role="menuitem" href="archive/index.html">
-                        Evo CSS Archive
-                    </a>
-                </li>
-                <li>
-                    Storybooks
-                    <ul role="menubar">
-                        <li>
-                            <a role="menuitem" href="skin/storybook/">
-                                Evo CSS Storybook
-                            </a>
-                        </li>
-                        <li>
-                            <a role="menuitem" href="ebayui-core/">
-                                Evo Marko Storybook
-                            </a>
-                        </li>
-                        <li>
-                            <a role="menuitem" href="ebayui-core-react/main/">
-                                Evo React Storybook
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a role="menuitem" href="evo-css-components">
-                        Evo CSS Components
-                    </a>
-                </li>
-                <li>
-                    <a role="menuitem" href="evo-marko-components">
-                        Evo Marko Components
-                    </a>
-                </li>
-                <li>
-                    <a role="menuitem" href="evo-react-components">
-                        Evo React Components
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <nav aria-labelledby="sitemap-pages">
+      <ul role="menubar">
+        <li>
+          <a
+            role="menuitem"
+            href="https://github.com/eBay/evo-web/tree/main/packages/skin">
+            Repo
+          </a>
+        </li>
+        <li>
+          <a role="menuitem" href="archive/index.html">
+            Evo CSS Archive
+          </a>
+        </li>
+        <li>
+          Storybooks${" "}
+          <ul role="menubar">
+            <li>
+              <a role="menuitem" href="skin/storybook/">
+                Evo CSS Storybook
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="ebayui-core/">
+                Evo Marko Storybook
+              </a>
+            </li>
+            <li>
+              <a role="menuitem" href="ebayui-core-react/main/">
+                Evo React Storybook
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a role="menuitem" href="evo-css-components">
+            Evo CSS Components
+          </a>
+        </li>
+        <li>
+          <a role="menuitem" href="evo-marko-components">
+            Evo Marko Components
+          </a>
+        </li>
+        <li>
+          <a role="menuitem" href="evo-react-components">
+            Evo React Components
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-        <h2 id="sitemap-components">
-            Components
-        </h2>
+    <h2 id="sitemap-components">
+      Components
+    </h2>
 
-        <nav aria-labelledby="sitemap-components">
-            <ul role="menubar">
-                <components-list/>
-            </ul>
-        </nav>
+    <nav aria-labelledby="sitemap-components">
+      <ul role="menubar">
+        <components-list/>
+      </ul>
+    </nav>
 
-        <h2 id="sitemap-guides">
-            Guides
-        </h2>
+    <h2 id="sitemap-guides">
+      Guides
+    </h2>
 
-        <nav aria-labelledby="sitemap-guides">
-            <ul role="menubar">
-                <li>
-                    <a href="guides/page-grid" role="menuitem">
-                        Page Grid Use Guide
-                    </a>
-                </li>
-                <li>
-                    <a href="guides/skeleton" role="menuitem">
-                        Skeleton Use Guide
-                    </a>
-                </li>
-                <li>
-                    <a href="guides/animation" role="menuitem">
-                        Animation Guide
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <nav aria-labelledby="sitemap-guides">
+      <ul role="menubar">
+        <li>
+          <a href="guides/page-grid" role="menuitem">
+            Page Grid Use Guide
+          </a>
+        </li>
+        <li>
+          <a href="guides/skeleton" role="menuitem">
+            Skeleton Use Guide
+          </a>
+        </li>
+        <li>
+          <a href="guides/animation" role="menuitem">
+            Animation Guide
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-        <h2 id="sitemap-components">
-            Accessibility Standards and Patterns
-        </h2>
+    <h2 id="sitemap-components">
+      Accessibility Standards and Patterns
+    </h2>
 
-        <nav aria-labelledby="sitemap-components">
-            <ul role="menubar">
-                <a11y-docs-list/>
-            </ul>
-        </nav>
-    </div>
+    <nav aria-labelledby="sitemap-components">
+      <ul role="menubar">
+        <a11y-docs-list/>
+      </ul>
+    </nav>
+  </div>
 </div>

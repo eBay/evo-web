@@ -1,23 +1,25 @@
-import { a11yDocs, components,basePath } from "../data";
+import { a11yDocs, components, basePath } from "../data";
 <for|_folder, data| in=a11yDocs>
-    <li>
-        <h3>${data.properName}</h3>
-        <ul>
-            <for|item| of=data.list>
-                <const/isComponentPattern=item.type === "component-patterns" && components[item.name]>
+  <li>
+    <h3>${data.properName}</h3>
+    <ul>
+      <for|item| of=data.list>
+        <const/isComponentPattern=(
+          item.type === "component-patterns" && components[item.name]
+        )>
 
-                <const/link=(
-                    isComponentPattern
-                        ? `${basePath}component/${item.name}/accessibility`
-                        : `${basePath}accessibility/${item.type}/${item.name}`
-                )>
+        <const/link=(
+          isComponentPattern
+            ? `${basePath}component/${item.name}/accessibility`
+            : `${basePath}accessibility/${item.type}/${item.name}`
+        )>
 
-                <li>
-                    <a href=link class="nav-link" role="menuitem">
-                        ${item.properName}
-                    </a>
-                </li>
-            </for>
-        </ul>
-    </li>
+        <li>
+          <a href=link class="nav-link" role="menuitem">
+            ${item.properName}
+          </a>
+        </li>
+      </for>
+    </ul>
+  </li>
 </for>
