@@ -75,6 +75,11 @@ export interface ComponentMetadata {
    * Path to React Storybook documentation
    */
   reactStorybookPath?: string;
+
+  /**
+   * Subtitle description of the component
+   */
+  description?: string;
 }
 
 /**

@@ -4,7 +4,6 @@ import componentMetadata, {
 } from "./component-metadata";
 import {
   basePath,
-  getDirectory,
   getFileNameWithoutExtension,
   getProperName,
 } from "./common";
@@ -12,16 +11,6 @@ export const componentTemplate = import.meta.glob(
   "../routes/component/*/+page.marko",
   { eager: true },
 );
-const metaJsons = import.meta.glob("../routes/component/*/+meta.json", {
-  eager: true,
-});
-const componentMetaJsons = Object.keys(metaJsons).reduce<{
-  [key: string]: any;
-}>((data, filePath) => {
-  const file = getDirectory(filePath);
-  data[file] = metaJsons[filePath];
-  return data;
-}, {});
 
 export interface ComponentMap {
   [key: string]: {
@@ -29,8 +18,6 @@ export interface ComponentMap {
     name: string;
     fullPath: string;
     default?: any;
-    pageTitle?: string;
-    pageDescription?: string;
     pageImg?: string;
     metadata?: ComponentMetadata;
     dsComponent?: DsComponent;
@@ -53,15 +40,12 @@ export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
     const root = parts.slice(0, parts.length - 1).join("/");
     const name = getFileNameWithoutExtension(root);
     const properName = getProperName(name);
-    const { pageTitle, pageDescription } = componentMetaJsons[name] || {};
     const { metadata, dsComponent } = getMetadata(name);
 
     data[name] = {
       properName,
       name,
       fullPath: filePath,
-      pageDescription,
-      pageTitle,
       pageImg: `img/components/${name}.png`,
       metadata,
       dsComponent,

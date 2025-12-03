@@ -8,7 +8,7 @@ import { components } from "../../data";
     flex-wrap: wrap;
     gap: 20px;
     list-style: none;
-    padding: 0;
+    padding: 0 0 30px;
     margin: 0;
   }
 
@@ -18,6 +18,7 @@ import { components } from "../../data";
 
   .card {
     box-shadow: var(--shadow-md);
+    // height: 300px;
     transform: translateY(-0.25rem);
     transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
@@ -30,13 +31,17 @@ import { components } from "../../data";
 
   .card__description {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-height: 40px;
     text-overflow: ellipsis;
   }
 
+  .card__media {
+    overflow: visible;
+  }
   .card__footer {
     margin-block-start: var(--spacing-150);
   }
@@ -76,8 +81,6 @@ import { components } from "../../data";
 </svg>
 
 <main class="component-listings">
-  <h1>Evo Web Components</h1>
-
   <ul class="components-list">
     <for|key, component| in=components>
       <const/{ dsComponent, componentUrls, properName }=component>
@@ -105,7 +108,7 @@ import { components } from "../../data";
                 ${component.properName}
               </h2>
               <div class="card__description">
-                ${component?.pageDescription || "TBD"}
+                ${component?.metadata.description}
               </div>
               <div class="card__footer">
                 <if=dsComponent?.version>

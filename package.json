@@ -15,7 +15,7 @@
     "change": "changeset add",
     "copy:coreui-site": "npm run deploy --ws",
     "copy:skin-site": "npm run deploy --ws",
-    "deploy": "npm run deploy --ws && BASE_URL=/evo-web/ marko-run build -o ./_site && npm run deploy:copy-site",
+    "deploy": "copyfiles src/data/component-metadata.json public/ -u 2 && npm run deploy --ws && BASE_URL=/evo-web/ marko-run build -o ./_site && npm run deploy:copy-site",
     "deploy:copy-site": "copyfiles packages/skin/_site/public _site/public/skin -u 4 && copyfiles packages/ebayui-core/_site _site/public/ebayui-core -u 3 && copyfiles packages/ebayui-core-react/_site _site/public/ebayui-core-react -u 3",
     "postinstall": "npx playwright install --with-deps chromium",
     "lint": "stylelint src --config .stylelintrc",

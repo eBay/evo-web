@@ -8,6 +8,7 @@ lerna-debug.log*
 .pnpm-debug.log*
 codecov*
 /dist/
+/public/component-metadata.json
 
 # Coverage directory used by tools like istanbul
 coverage

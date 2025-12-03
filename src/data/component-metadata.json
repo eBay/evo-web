@@ -16,7 +16,8 @@
       "cssVersion": 1.1,
       "markoVersion": 1.1,
       "reactVersion": 1.1
-    }
+    },
+    "description": "A series of expanding/collapsing panels of content."
   },
   "alert-dialog": {
     "component": "alert-dialog",
@@ -30,7 +31,8 @@
     "submodules": ["button"],
     "cssStorybookPath": "/story/skin-alert-dialog--base",
     "markoStorybookPath": "/docs/dialogs-ebay-alert-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-alert-dialog--documentation"
+    "reactStorybookPath": "/docs/dialogs-ebay-alert-dialog--documentation",
+    "description": "A lightbox dialog that prompts user for acknowledgement."
   },
   "avatar": {
     "component": "avatar",
@@ -43,7 +45,8 @@
     },
     "cssStorybookPath": "/story/skin-avatar--base",
     "markoStorybookPath": "/docs/graphics-icons-ebay-avatar--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-avatar--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-avatar--documentation",
+    "description": "A graphical representation of a user's identity."
   },
   "badge": {
     "component": "badge",
@@ -56,7 +59,8 @@
     },
     "cssStorybookPath": "/story/skin-badge--one-digit",
     "markoStorybookPath": "/docs/graphics-icons-ebay-badge--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-badge--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-badge--documentation",
+    "description": "A visual indicator that notifies users of numeric values."
   },
   "breadcrumbs": {
     "component": "breadcrumbs",
@@ -69,7 +73,8 @@
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-breadcrumbs--documentation",
-    "reactStorybookPath": "/docs/navigation-disclosure-ebay-breadcrumbs--documentation"
+    "reactStorybookPath": "/docs/navigation-disclosure-ebay-breadcrumbs--documentation",
+    "description": "A list of links representing current location in site hierarchy."
   },
   "button": {
     "component": "button",
@@ -81,7 +86,8 @@
       "reactVersion": 1.6
     },
     "markoStorybookPath": "/docs/buttons-ebay-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-button--documentation",
+    "description": "A control for executing JavaScript or submitting/resetting form values"
   },
   "calendar": {
     "component": "calendar",
@@ -95,7 +101,8 @@
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-calendar--base",
     "markoStorybookPath": "/docs/building-blocks-ebay-calendar--documentation",
-    "reactStorybookPath": "/docs/building-blocks-ebay-calendar--documentation"
+    "reactStorybookPath": "/docs/building-blocks-ebay-calendar--documentation",
+    "description": "Calendar allow users to choose a single date or a range of dates."
   },
   "card": {
     "component": "card",
@@ -106,7 +113,8 @@
       "markoVersion": 1,
       "reactVersion": 1
     },
-    "markoStorybookPath": "/docs/layout-ebay-card--documentation"
+    "markoStorybookPath": "/docs/layout-ebay-card--documentation",
+    "description": "The Card component is a versatile and visually appealing UI pattern."
   },
   "carousel": {
     "component": "carousel",
@@ -120,7 +128,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-carousel--continuous",
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-carousel--documentation",
-    "reactStorybookPath": "/docs/navigation-disclosure-ebay-carousel--documentation"
+    "reactStorybookPath": "/docs/navigation-disclosure-ebay-carousel--documentation",
+    "description": "A horizontal viewport of grouped or ungrouped content."
   },
   "ccd": {
     "component": "ccd",
@@ -156,7 +165,8 @@
       "reactVersion": 2
     },
     "markoStorybookPath": "/docs/form-input-ebay-checkbox--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-checkbox--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-checkbox--documentation",
+    "description": "A checkbox is a form control that allows multiple selections from a group of\n    choices."
   },
   "chip": {
     "component": "chip",
@@ -168,7 +178,8 @@
       "reactVersion": "2.1.0"
     },
     "markoStorybookPath": "/docs/building-blocks-ebay-chip--documentation",
-    "reactStorybookPath": "/docs/building-blocks-ebay-chip--documentation"
+    "reactStorybookPath": "/docs/building-blocks-ebay-chip--documentation",
+    "description": "A chip conveys the application of its value to a section of a form."
   },
   "chips-combobox": {
     "component": "chips-combobox",
@@ -181,7 +192,8 @@
     },
     "submodules": ["chip", "combobox"],
     "markoStorybookPath": "/docs/form-input-ebay-chips-combobox--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-chips-combobox--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-chips-combobox--documentation",
+    "description": "A quick way to add or remove chips."
   },
   "combobox": {
     "component": "combobox",
@@ -195,7 +207,8 @@
     "submodules": ["icon", "listbox", "textbox"],
     "cssStorybookPath": "/story/skin-combobox--collapsed",
     "markoStorybookPath": "/docs/form-input-ebay-combobox--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-combobox--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-combobox--documentation",
+    "description": "Textbox with quick-entry ability via a list of values."
   },
   "confirm-dialog": {
     "component": "confirm-dialog",
@@ -209,7 +222,8 @@
     "submodules": ["button"],
     "cssStorybookPath": "/story/skin-confirm-dialog--base",
     "markoStorybookPath": "/docs/dialogs-ebay-confirm-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-confirm-dialog--documentation"
+    "reactStorybookPath": "/docs/dialogs-ebay-confirm-dialog--documentation",
+    "description": "A lightbox dialog that prompts user to confirm or cancel an action."
   },
   "cta-button": {
     "component": "cta-button",
@@ -222,7 +236,8 @@
     },
     "cssStorybookPath": "/story/skin-cta-button--base",
     "markoStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-cta-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
+    "description": "An action button takes users to another URL destination."
   },
   "date-textbox": {
     "component": "date-textbox",
@@ -236,7 +251,8 @@
     "submodules": ["calendar", "icon-button", "textbox"],
     "cssStorybookPath": "/story/skin-date-textbox--base",
     "markoStorybookPath": "/docs/form-input-ebay-date-textbox--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-date-textbox--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-date-textbox--documentation",
+    "description": "A calendar based \"date picker\" as an alternative to manual text entry."
   },
   "details": {
     "component": "details",
@@ -250,7 +266,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-details--closed",
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-details--documentation",
-    "reactStorybookPath": "/docs/navigation-disclosure-ebay-details--documentation"
+    "reactStorybookPath": "/docs/navigation-disclosure-ebay-details--documentation",
+    "description": "A region of content that can be expanded and collapsed."
   },
   "donut-chart": {
     "component": "donut-chart",
@@ -342,7 +359,8 @@
     },
     "cssStorybookPath": "/story/skin-file-preview-card--uploading",
     "markoStorybookPath": "/docs/media-ebay-file-preview-card--documentation",
-    "reactStorybookPath": "/docs/media-ebay-file-preview-card--documentation"
+    "reactStorybookPath": "/docs/media-ebay-file-preview-card--documentation",
+    "description": "File preview cards show."
   },
   "filter-chip": {
     "component": "filter-chip",
@@ -416,7 +434,8 @@
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-icon-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
+    "description": "A borderless, actionable icon style."
   },
   "icon": {
     "component": "icon",
@@ -456,7 +475,8 @@
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-infotip--collapsed",
     "markoStorybookPath": "/docs/buttons-ebay-infotip--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-infotip--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-infotip--documentation",
+    "description": "Reveals helpful information about a nearby non-interactive element or region\n    of a page."
   },
   "inline-notice": {
     "component": "inline-notice",
@@ -470,7 +490,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-inline-notice--confirmation",
     "markoStorybookPath": "/docs/notices-tips-ebay-inline-notice--documentation",
-    "reactStorybookPath": "/docs/notices-tips-ebay-inline-notice--documentation"
+    "reactStorybookPath": "/docs/notices-tips-ebay-inline-notice--documentation",
+    "description": "An inline-level notice provides tips, guidance and feedback."
   },
   "item-tile-group": {
     "component": "item-tile-group",
@@ -522,7 +543,8 @@
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-lightbox-dialog--base",
     "markoStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation"
+    "reactStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
+    "description": "A modal window which dims out the main page behind it."
   },
   "link": {
     "component": "link",
@@ -546,7 +568,8 @@
     },
     "cssStorybookPath": "/story/skin-list--base",
     "markoStorybookPath": "/docs/building-blocks-ebay-list--documentation",
-    "reactStorybookPath": "/docs/building-blocks-ebay-list--documentation"
+    "reactStorybookPath": "/docs/building-blocks-ebay-list--documentation",
+    "description": "A list component is used to display certain types of data in a structured\n    format."
   },
   "listbox-button": {
     "component": "listbox-button",
@@ -559,7 +582,8 @@
     },
     "submodules": ["button", "icon"],
     "markoStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-listbox-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
+    "description": "A button that expands to reveal a listbox in a flyout."
   },
   "listbox": {
     "component": "listbox",
@@ -573,7 +597,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-listbox--unselected",
     "markoStorybookPath": "/docs/building-blocks-ebay-listbox--documentation",
-    "reactStorybookPath": "/docs/building-blocks-ebay-listbox--documentation"
+    "reactStorybookPath": "/docs/building-blocks-ebay-listbox--documentation",
+    "description": "Allows selection of one or more items from a list of options."
   },
   "marketsans": {
     "component": "marketsans",
@@ -596,7 +621,8 @@
     },
     "submodules": ["button", "icon", "menu"],
     "markoStorybookPath": "/docs/buttons-ebay-menu-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-menu-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-menu-button--documentation",
+    "description": "A button that expands to reveal a menu within a popover."
   },
   "menu": {
     "component": "menu",
@@ -610,7 +636,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-menu--stateless",
     "markoStorybookPath": "/docs/building-blocks-ebay-menu--documentation",
-    "reactStorybookPath": "/docs/building-blocks-ebay-menu--documentation"
+    "reactStorybookPath": "/docs/building-blocks-ebay-menu--documentation",
+    "description": "Menu items trigger an immediate action within the current page."
   },
   "number-input": {
     "component": "number-input",
@@ -622,7 +649,8 @@
       "reactVersion": 1
     },
     "markoStorybookPath": "/docs/form-input-ebay-number-input--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-number-input--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-number-input--documentation",
+    "description": "A numeric input field with prominent increase/decrease buttons."
   },
   "page-grid": {
     "component": "page-grid",
@@ -646,7 +674,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-page-notice--general",
     "markoStorybookPath": "/docs/notices-tips-ebay-page-notice--documentation",
-    "reactStorybookPath": "/docs/notices-tips-ebay-page-notice--documentation"
+    "reactStorybookPath": "/docs/notices-tips-ebay-page-notice--documentation",
+    "description": "A page notice appears prominently at the top of the page."
   },
   "pagination": {
     "component": "pagination",
@@ -659,7 +688,8 @@
     },
     "submodules": ["icon-link"],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
-    "reactStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation"
+    "reactStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
+    "description": "Navigate between pages of results."
   },
   "panel-dialog": {
     "component": "panel-dialog",
@@ -685,7 +715,8 @@
       "reactVersion": 4
     },
     "markoStorybookPath": "/docs/form-input-ebay-phone-input--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-phone-input--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-phone-input--documentation",
+    "description": "A composite component that allows for phone number input."
   },
   "progress-bar-expressive": {
     "component": "progress-bar-expressive",
@@ -739,7 +770,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-progress-stepper--base",
     "markoStorybookPath": "/docs/progress-ebay-progress-stepper--documentation",
-    "reactStorybookPath": "/docs/progress-ebay-progress-stepper--documentation"
+    "reactStorybookPath": "/docs/progress-ebay-progress-stepper--documentation",
+    "description": "Steppers portray progress through a sequence of steps."
   },
   "radio": {
     "component": "radio-button",
@@ -751,7 +783,8 @@
       "reactVersion": 2
     },
     "markoStorybookPath": "/docs/form-input-ebay-radio--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-radio--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-radio--documentation",
+    "description": "A radio button is a form control that allows a single selection from a group\n    of choices."
   },
   "sass": {
     "component": "sass",
@@ -774,7 +807,8 @@
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
-    "reactStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation"
+    "reactStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
+    "description": "A section notice conveys either system status and feedback to users."
   },
   "section-title": {
     "component": "section-title",
@@ -799,7 +833,8 @@
     },
     "cssStorybookPath": "/story/skin-segmented-buttons--base",
     "markoStorybookPath": "/docs/buttons-ebay-segmented-buttons--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-segmented-buttons--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-segmented-buttons--documentation",
+    "description": "Control the state of an object or the visibility of section content."
   },
   "select": {
     "component": "select",
@@ -812,7 +847,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-select--default-selection",
     "markoStorybookPath": "/docs/form-input-ebay-select--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-select--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-select--documentation",
+    "description": "A control for storing single-select or multi-select form data."
   },
   "selection-chip": {
     "component": "selection-chip",
@@ -846,7 +882,8 @@
       "reactVersion": 1
     },
     "markoStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation",
-    "reactStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation"
+    "reactStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation",
+    "description": "A skeleton is a graphical placeholder."
   },
   "snackbar-dialog": {
     "component": "snackbar",
@@ -858,7 +895,8 @@
     },
     "submodules": ["button"],
     "markoStorybookPath": "/docs/dialogs-ebay-snackbar-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-snackbar-dialog--documentation"
+    "reactStorybookPath": "/docs/dialogs-ebay-snackbar-dialog--documentation",
+    "description": "A snackbar is a non-modal dialog that appears in response to a lightweight\n    user action."
   },
   "split-button": {
     "component": "split-button",
@@ -911,7 +949,8 @@
       "reactVersion": 2.1
     },
     "markoStorybookPath": "/docs/form-input-ebay-switch--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-switch--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-switch--documentation",
+    "description": "A switch behaves a bit like a checkbox - it can be on or off."
   },
   "table": {
     "component": "table",
@@ -935,7 +974,8 @@
       "reactVersion": 2.1
     },
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation",
-    "reactStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation"
+    "reactStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation",
+    "description": "Hide and disclose panels of content via a series of interactive tabs."
   },
   "textbox": {
     "component": "textbox",
@@ -955,7 +995,8 @@
     ],
     "submodules": ["icon-button"],
     "markoStorybookPath": "/docs/form-input-ebay-textbox--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-textbox--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-textbox--documentation",
+    "description": "A textbox allows the user to enter data."
   },
   "toast-dialog": {
     "component": "toast-dialog",
@@ -979,7 +1020,8 @@
     },
     "submodules": ["toggle-button"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation",
+    "description": "A button that can be toggled between two states."
   },
   "toggle-button": {
     "component": "toggle-button",
@@ -1010,7 +1052,8 @@
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-tooltip--collapsed",
     "markoStorybookPath": "/docs/notices-tips-ebay-tooltip--documentation",
-    "reactStorybookPath": "/docs/notices-tips-ebay-tooltip--documentation"
+    "reactStorybookPath": "/docs/notices-tips-ebay-tooltip--documentation",
+    "description": "Describes the action/purpose of an icon button."
   },
   "tourtip": {
     "component": "tourtip",
@@ -1023,7 +1066,8 @@
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-tourtip--collapsed",
     "markoStorybookPath": "/docs/notices-tips-ebay-tourtip--documentation",
-    "reactStorybookPath": "/docs/notices-tips-ebay-tourtip--documentation"
+    "reactStorybookPath": "/docs/notices-tips-ebay-tourtip--documentation",
+    "description": "Informs the user of some new feature or section on the page."
   },
   "typography": {
     "component": "typography",

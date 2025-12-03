@@ -1,4 +1,14 @@
 import { getMetadataFromUrl } from "../data";
 
-<const/{ pageImg }=getMetadataFromUrl($global.url.pathname)>
-<img class="component-banner-img" src=pageImg aria-hidden="true">
+<const/{ pageImg, metadata, properName }=getMetadataFromUrl(
+    $global.url.pathname,
+)>
+
+<h1>${properName} Component</h1>
+<if=metadata?.description>
+    <p class="component-subtitle">
+        ${metadata.description}
+    </p>
+</if>
+
+<img class="component-banner-img" src=pageImg aria-hidden="true" alt="">
