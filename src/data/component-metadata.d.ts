@@ -13,22 +13,21 @@ export interface DsComponent {
   url?: string;
 
   /**
-   * CSS version of the component (can be number or string)
-   */
-  cssVersion?: number | string;
-
-  /**
    * Marko version of the component (can be number or string)
+   * This takes precedence over version if present
    */
-  markoVersion?: number | string;
+  markoVersion?: string;
 
   /**
    * React version of the component (can be number or string)
+   * This takes precedence over version if present
    */
-  reactVersion?: number | string;
+  reactVersion?: string;
 
   /**
-   * General version (for components without specific framework versions)
+   * The common version if all the versions are the same
+   * This is used as the default version.
+   * reactVersion and markoVersion will be used over this version
    */
   version?: string;
 

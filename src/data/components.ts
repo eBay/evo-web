@@ -2,11 +2,7 @@ import componentMetadata, {
   type ComponentMetadata,
   type DsComponent,
 } from "./component-metadata";
-import {
-  basePath,
-  getFileNameWithoutExtension,
-  getProperName,
-} from "./common";
+import { basePath, getFileNameWithoutExtension, getProperName } from "./common";
 export const componentTemplate = import.meta.glob(
   "../routes/component/*/+page.marko",
   { eager: true },
@@ -41,6 +37,8 @@ export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
     const name = getFileNameWithoutExtension(root);
     const properName = getProperName(name);
     const { metadata, dsComponent } = getMetadata(name);
+    dsComponent.markoVersion = dsComponent.markoVersion || dsComponent.version;
+    dsComponent.reactVersion = dsComponent.reactVersion || dsComponent.version;
 
     data[name] = {
       properName,

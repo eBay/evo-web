@@ -13,9 +13,7 @@
     "ds-component": {
       "name": "accordion",
       "url": "https://playbook.ebay.com/design-system/components/accordion",
-      "cssVersion": 1.1,
-      "markoVersion": 1.1,
-      "reactVersion": 1.1
+      "version": "1.1"
     },
     "description": "A series of expanding/collapsing panels of content."
   },
@@ -24,9 +22,7 @@
     "ds-component": {
       "name": "dialog",
       "url": "https://playbook.ebay.com/design-system/components/dialog",
-      "cssVersion": 4.1,
-      "markoVersion": 4.1,
-      "reactVersion": 4.1
+      "version": "4.1"
     },
     "submodules": ["button"],
     "cssStorybookPath": "/story/skin-alert-dialog--base",
@@ -39,9 +35,7 @@
     "ds-component": {
       "name": "avatar",
       "url": "https://playbook.ebay.com/design-system/components/avatar",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-avatar--base",
     "markoStorybookPath": "/docs/graphics-icons-ebay-avatar--documentation",
@@ -53,9 +47,7 @@
     "ds-component": {
       "name": "badge",
       "url": "https://playbook.ebay.com/design-system/components/badge",
-      "cssVersion": 1.2,
-      "markoVersion": 1.2,
-      "reactVersion": 1.2
+      "version": "1.2"
     },
     "cssStorybookPath": "/story/skin-badge--one-digit",
     "markoStorybookPath": "/docs/graphics-icons-ebay-badge--documentation",
@@ -67,9 +59,7 @@
     "ds-component": {
       "name": "breadcrumb",
       "url": "https://playbook.ebay.com/design-system/components/breadcrumb",
-      "cssVersion": 1.2,
-      "markoVersion": 1.2,
-      "reactVersion": 1.2
+      "version": "1.2"
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-breadcrumbs--documentation",
@@ -81,9 +71,7 @@
     "ds-component": {
       "name": "cta-button",
       "url": "https://playbook.ebay.com/design-system/components/cta-button",
-      "cssVersion": 1.6,
-      "markoVersion": 1.6,
-      "reactVersion": 1.6
+      "version": "1.6"
     },
     "markoStorybookPath": "/docs/buttons-ebay-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-button--documentation",
@@ -94,9 +82,7 @@
     "ds-component": {
       "name": "date-picker",
       "url": "https://playbook.ebay.com/design-system/components/date-picker",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-calendar--base",
@@ -109,9 +95,7 @@
     "ds-component": {
       "name": "card",
       "url": "https://playbook.ebay.com/design-system/components/card",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "markoStorybookPath": "/docs/layout-ebay-card--documentation",
     "description": "The Card component is a versatile and visually appealing UI pattern."
@@ -121,9 +105,7 @@
     "ds-component": {
       "name": "carousel",
       "url": "https://playbook.ebay.com/design-system/components/carousel",
-      "cssVersion": 1.1,
-      "markoVersion": 1.1,
-      "reactVersion": 1.1
+      "version": "1.1"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-carousel--continuous",
@@ -136,9 +118,7 @@
     "ds-component": {
       "name": "ccd",
       "url": "https://playbook.ebay.com/design-system/components/ccd",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-ccd--with-charger-and-usb",
@@ -150,9 +130,7 @@
     "ds-component": {
       "name": "graph",
       "url": "https://playbook.ebay.com/design-system/components/graph",
-      "cssVersion": "1.0",
-      "markoVersion": "1.0",
-      "reactVersion": "1.0"
+      "version": "1.0"
     }
   },
   "checkbox": {
@@ -160,9 +138,7 @@
     "ds-component": {
       "name": "checkbox",
       "url": "https://playbook.ebay.com/design-system/components/checkbox",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "markoStorybookPath": "/docs/form-input-ebay-checkbox--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-checkbox--documentation",
@@ -173,9 +149,7 @@
     "ds-component": {
       "name": "input-chip",
       "url": "https://playbook.ebay.com/design-system/components/input-chip",
-      "cssVersion": "2.1.0",
-      "markoVersion": "2.1.0",
-      "reactVersion": "2.1.0"
+      "version": "2.1.0"
     },
     "markoStorybookPath": "/docs/building-blocks-ebay-chip--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-chip--documentation",
@@ -186,9 +160,7 @@
     "ds-component": {
       "name": "combobox",
       "url": "https://playbook.ebay.com/design-system/components/combobox",
-      "cssVersion": "1.0.0",
-      "markoVersion": "1.0.0",
-      "reactVersion": "1.0.0"
+      "version": "1.0"
     },
     "submodules": ["chip", "combobox"],
     "markoStorybookPath": "/docs/form-input-ebay-chips-combobox--documentation",
@@ -200,9 +172,7 @@
     "ds-component": {
       "name": "combobox",
       "url": "https://playbook.ebay.com/design-system/components/combobox",
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "submodules": ["icon", "listbox", "textbox"],
     "cssStorybookPath": "/story/skin-combobox--collapsed",
@@ -215,9 +185,7 @@
     "ds-component": {
       "name": "dialog",
       "url": "https://playbook.ebay.com/design-system/components/dialog",
-      "cssVersion": 4.1,
-      "markoVersion": 4.1,
-      "reactVersion": 4.1
+      "version": "4.1"
     },
     "submodules": ["button"],
     "cssStorybookPath": "/story/skin-confirm-dialog--base",
@@ -230,9 +198,7 @@
     "ds-component": {
       "name": "cta-button",
       "url": "https://playbook.ebay.com/design-system/components/cta-button",
-      "cssVersion": 1.2,
-      "markoVersion": 1.2,
-      "reactVersion": 1.2
+      "version": "1.2"
     },
     "cssStorybookPath": "/story/skin-cta-button--base",
     "markoStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
@@ -244,9 +210,7 @@
     "ds-component": {
       "name": "date-picker",
       "url": "https://playbook.ebay.com/design-system/components/date-picker",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "submodules": ["calendar", "icon-button", "textbox"],
     "cssStorybookPath": "/story/skin-date-textbox--base",
@@ -259,9 +223,7 @@
     "ds-component": {
       "name": "expansion",
       "url": "https://playbook.ebay.com/design-system/components/expansion",
-      "cssVersion": 1.2,
-      "markoVersion": 1.2,
-      "reactVersion": 1.2
+      "version": "1.2"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-details--closed",
@@ -274,9 +236,7 @@
     "ds-component": {
       "name": "donut-chart",
       "url": "https://playbook.ebay.com/design-system/components/donut-chart",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "submodules": ["chart-legend"],
     "markoStorybookPath": "/docs/charts-ebay-donut-chart--documentation"
@@ -286,9 +246,7 @@
     "ds-component": {
       "name": "education-notice",
       "url": "https://playbook.ebay.com/design-system/components/education-notice",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-education-notice--base",
     "markoStorybookPath": "/docs/notices-tips-ebay-education-notice--documentation",
@@ -299,9 +257,7 @@
     "ds-component": {
       "name": "eek-ratings",
       "url": "https://playbook.ebay.com/design-system/components/eek-ratings",
-      "cssVersion": 1.1,
-      "markoVersion": 1.1,
-      "reactVersion": 1.1
+      "version": "1.1"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-eek--typical",
@@ -313,9 +269,7 @@
     "ds-component": {
       "name": "input",
       "url": "https://playbook.ebay.com/design-system/components/input",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "reactStorybookPath": "/docs/form-input-ebay-field--documentation"
   },
@@ -324,10 +278,8 @@
     "ds-component": {
       "name": "file-upload",
       "url": "https://playbook.ebay.com/design-system/components/file-upload",
-      "cssVersion": 0.1,
-      "markoVersion": 0.1,
-      "reactVersion": 0.1,
-      "alpha": true
+      "alpha": true,
+      "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-file-input--base",
     "markoStorybookPath": "/docs/form-input-ebay-file-input--documentation",
@@ -338,10 +290,8 @@
     "ds-component": {
       "name": "file-upload",
       "url": "https://playbook.ebay.com/design-system/components/file-upload",
-      "cssVersion": 0.1,
-      "markoVersion": 0.1,
-      "reactVersion": 0.1,
-      "alpha": true
+      "alpha": true,
+      "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-file-preview-card-group--base",
     "markoStorybookPath": "/docs/media-ebay-file-preview-card-group--documentation",
@@ -352,10 +302,8 @@
     "ds-component": {
       "name": "file-upload",
       "url": "https://playbook.ebay.com/design-system/components/file-upload",
-      "cssVersion": 0.1,
-      "markoVersion": 0.1,
-      "reactVersion": 0.1,
-      "alpha": true
+      "alpha": true,
+      "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-file-preview-card--uploading",
     "markoStorybookPath": "/docs/media-ebay-file-preview-card--documentation",
@@ -367,9 +315,7 @@
     "ds-component": {
       "name": "filter-chip",
       "url": "https://playbook.ebay.com/design-system/components/filter-chip",
-      "cssVersion": "4.1.0",
-      "markoVersion": "4.1.0",
-      "reactVersion": "4.1.0"
+      "version": "4.1.0"
     },
     "markoStorybookPath": "/docs/form-input-ebay-filter-chip--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-filter-chip--documentation"
@@ -379,9 +325,7 @@
     "ds-component": {
       "name": "search-field",
       "url": "https://playbook.ebay.com/design-system/components/search-field",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["textbox"],
     "cssStorybookPath": "/story/skin-filter-input--base",
@@ -393,9 +337,7 @@
     "ds-component": {
       "name": "flag",
       "url": "https://playbook.ebay.com/design-system/components/flag",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-flag--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-flag--documentation",
@@ -406,9 +348,7 @@
     "ds-component": {
       "name": "input",
       "url": "https://playbook.ebay.com/design-system/components/input",
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "cssStorybookPath": "/story/skin-floating-label--base"
   },
@@ -417,9 +357,7 @@
     "ds-component": {
       "name": "global",
       "url": "https://playbook.ebay.com/design-system/global",
-      "cssVersion": "1.0",
-      "markoVersion": "1.0",
-      "reactVersion": "1.0"
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-global--headings"
   },
@@ -428,9 +366,7 @@
     "ds-component": {
       "name": "icon-button",
       "url": "https://playbook.ebay.com/design-system/components/icon-button",
-      "cssVersion": 1.6,
-      "markoVersion": 1.6,
-      "reactVersion": 1.6
+      "version": "1.6"
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
@@ -442,9 +378,7 @@
     "ds-component": {
       "name": "icon",
       "url": "https://playbook.ebay.com/design-system/components/icon",
-      "cssVersion": 1.3,
-      "markoVersion": 1.3,
-      "reactVersion": 1.3
+      "version": "1.3"
     },
     "cssStorybookPath": "/story/skin-icon--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-icon--documentation",
@@ -455,9 +389,7 @@
     "ds-component": {
       "name": "image-placeholder",
       "url": "https://playbook.ebay.com/design-system/components/image-placeholder",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-image-placeholder--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-image-placeholder--documentation",
@@ -468,9 +400,7 @@
     "ds-component": {
       "name": "tourtip",
       "url": "https://playbook.ebay.com/design-system/components/tourtip",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-infotip--collapsed",
@@ -483,9 +413,7 @@
     "ds-component": {
       "name": "inline-notice",
       "url": "https://playbook.ebay.com/design-system/components/inline-notice",
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-inline-notice--confirmation",
@@ -498,9 +426,7 @@
     "ds-component": {
       "name": "item-tile-group",
       "url": "https://playbook.ebay.com/design-system/components/item-tile-group",
-      "cssVersion": 0.1,
-      "markoVersion": 0.1,
-      "reactVersion": 0.1
+      "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-item-tile-group--gallery-view",
     "markoStorybookPath": "/docs/layout-ebay-item-tile-group--documentation",
@@ -511,9 +437,7 @@
     "ds-component": {
       "name": "item-tile",
       "url": "https://playbook.ebay.com/design-system/components/item-tile",
-      "cssVersion": 0.1,
-      "markoVersion": 0.1,
-      "reactVersion": 0.1
+      "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-item-tile--gallery-view",
     "markoStorybookPath": "/docs/layout-ebay-item-tile--documentation",
@@ -524,9 +448,7 @@
     "ds-component": {
       "name": "layout-grid",
       "url": "https://playbook.ebay.com/design-system/components/layout-grid",
-      "cssVersion": "1.0.0",
-      "markoVersion": "1.0.0",
-      "reactVersion": "1.0.0"
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-layout-grid--base",
     "markoStorybookPath": "/docs/layout-ebay-layout-grid--documentation"
@@ -536,9 +458,7 @@
     "ds-component": {
       "name": "dialog",
       "url": "https://playbook.ebay.com/design-system/components/dialog",
-      "cssVersion": 4.1,
-      "markoVersion": 4.1,
-      "reactVersion": 4.1
+      "version": "4.1"
     },
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-lightbox-dialog--base",
@@ -551,9 +471,7 @@
     "ds-component": {
       "name": "text-link",
       "url": "https://playbook.ebay.com/design-system/components/text-link",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "cssStorybookPath": "/story/skin-link--base"
   },
@@ -562,9 +480,7 @@
     "ds-component": {
       "name": "list",
       "url": "https://playbook.ebay.com/design-system/components/list",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-list--base",
     "markoStorybookPath": "/docs/building-blocks-ebay-list--documentation",
@@ -576,9 +492,7 @@
     "ds-component": {
       "name": "dropdown",
       "url": "https://playbook.ebay.com/design-system/components/dropdown",
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "submodules": ["button", "icon"],
     "markoStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
@@ -590,9 +504,7 @@
     "ds-component": {
       "name": "dropdown",
       "url": "https://playbook.ebay.com/design-system/components/dropdown",
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-listbox--unselected",
@@ -605,9 +517,7 @@
     "ds-component": {
       "name": "marketsans",
       "url": "https://playbook.ebay.com/design-system/typography/marketsans",
-      "cssVersion": "2.0",
-      "markoVersion": "2.0",
-      "reactVersion": "2.0"
+      "version": "2.0"
     }
   },
   "menu-button": {
@@ -615,9 +525,7 @@
     "ds-component": {
       "name": "dropdown",
       "url": "https://playbook.ebay.com/design-system/components/dropdown",
-      "cssVersion": 2.3,
-      "markoVersion": 2.3,
-      "reactVersion": 2.3
+      "version": "2.3"
     },
     "submodules": ["button", "icon", "menu"],
     "markoStorybookPath": "/docs/buttons-ebay-menu-button--documentation",
@@ -629,9 +537,7 @@
     "ds-component": {
       "name": "dropdown",
       "url": "https://playbook.ebay.com/design-system/components/dropdown",
-      "cssVersion": 2.3,
-      "markoVersion": 2.3,
-      "reactVersion": 2.3
+      "version": "2.3"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-menu--stateless",
@@ -644,9 +550,7 @@
     "ds-component": {
       "name": "numeric-stepper",
       "url": "https://playbook.ebay.com/design-system/components/numeric-stepper",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "markoStorybookPath": "/docs/form-input-ebay-number-input--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-number-input--documentation",
@@ -657,9 +561,7 @@
     "ds-component": {
       "name": "page-grid",
       "url": "https://playbook.ebay.com/design-system/layout/page-grid",
-      "cssVersion": "1.0.0",
-      "markoVersion": "1.0.0",
-      "reactVersion": "1.0.0"
+      "version": "1.0"
     }
   },
   "page-notice": {
@@ -667,9 +569,7 @@
     "ds-component": {
       "name": "page-notice",
       "url": "https://playbook.ebay.com/design-system/components/page-notice",
-      "cssVersion": 3,
-      "markoVersion": 3,
-      "reactVersion": 3
+      "version": "3.0"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-page-notice--general",
@@ -682,9 +582,7 @@
     "ds-component": {
       "name": "pagination",
       "url": "https://playbook.ebay.com/design-system/components/pagination",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["icon-link"],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
@@ -696,9 +594,7 @@
     "ds-component": {
       "name": "panel",
       "url": "https://playbook.ebay.com/design-system/components/panel",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-panel-dialog--panel-start",
@@ -710,9 +606,7 @@
     "ds-component": {
       "name": "phone-number",
       "url": "https://playbook.ebay.com/design-system/components/phone-number",
-      "cssVersion": 4,
-      "markoVersion": 4,
-      "reactVersion": 4
+      "version": "4.0"
     },
     "markoStorybookPath": "/docs/form-input-ebay-phone-input--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-phone-input--documentation",
@@ -723,9 +617,7 @@
     "ds-component": {
       "name": "loading-expressive",
       "url": "https://playbook.ebay.com/design-system/components/loading-expressive",
-      "cssVersion": 1.1,
-      "markoVersion": 1.1,
-      "reactVersion": 1.1
+      "version": "1.1"
     },
     "cssStorybookPath": "/story/skin-progress-bar-expressive--base",
     "markoStorybookPath": "/docs/progress-ebay-progress-bar-expressive--documentation",
@@ -736,9 +628,7 @@
     "ds-component": {
       "name": "progress-bar",
       "url": "https://playbook.ebay.com/design-system/components/progress-bar",
-      "cssVersion": 3.1,
-      "markoVersion": 3.1,
-      "reactVersion": 3.1
+      "version": "3.1"
     },
     "cssStorybookPath": "/story/skin-progress-bar--empty",
     "markoStorybookPath": "/docs/progress-ebay-progress-bar--documentation",
@@ -749,9 +639,7 @@
     "ds-component": {
       "name": "progress-spinner",
       "url": "https://playbook.ebay.com/design-system/components/progress-spinner",
-      "cssVersion": 3.1,
-      "markoVersion": 3.1,
-      "reactVersion": 3.1
+      "version": "3.1"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-progress-spinner--base",
@@ -763,9 +651,7 @@
     "ds-component": {
       "name": "progress-stepper",
       "url": "https://playbook.ebay.com/design-system/components/progress-stepper",
-      "cssVersion": 4.1,
-      "markoVersion": 4.1,
-      "reactVersion": 4.1
+      "version": "4.1"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-progress-stepper--base",
@@ -778,9 +664,7 @@
     "ds-component": {
       "name": "radio-button",
       "url": "https://playbook.ebay.com/design-system/components/radio-button",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "markoStorybookPath": "/docs/form-input-ebay-radio--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-radio--documentation",
@@ -791,9 +675,7 @@
     "ds-component": {
       "name": "sass",
       "url": "https://playbook.ebay.com/design-system/sass",
-      "cssVersion": "1.0",
-      "markoVersion": "1.0",
-      "reactVersion": "1.0"
+      "version": "1.0"
     }
   },
   "section-notice": {
@@ -801,9 +683,7 @@
     "ds-component": {
       "name": "section-notice",
       "url": "https://playbook.ebay.com/design-system/components/section-notice",
-      "cssVersion": 4,
-      "markoVersion": 4,
-      "reactVersion": 4
+      "version": "4.0"
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
@@ -815,9 +695,7 @@
     "ds-component": {
       "name": "section-title",
       "url": "https://playbook.ebay.com/design-system/components/section-title",
-      "cssVersion": 4,
-      "markoVersion": 4,
-      "reactVersion": 4
+      "version": "4.0"
     },
     "cssStorybookPath": "/story/skin-section-title--heading",
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-section-title--documentation",
@@ -827,9 +705,7 @@
     "component": "segmented-buttons",
     "ds-component": {
       "name": "segmented-button",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-segmented-buttons--base",
     "markoStorybookPath": "/docs/buttons-ebay-segmented-buttons--documentation",
@@ -840,9 +716,7 @@
     "component": "select",
     "ds-component": {
       "name": "select",
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-select--default-selection",
@@ -854,9 +728,7 @@
     "component": "selection-chip",
     "ds-component": {
       "name": "input-chip",
-      "cssVersion": "2.1.0",
-      "markoVersion": "2.1.0",
-      "reactVersion": "2.1.0"
+      "version": "2.1.0"
     },
     "cssStorybookPath": "/story/skin-selection-chip--button",
     "markoStorybookPath": "/docs/form-input-ebay-selection-chip--documentation"
@@ -865,9 +737,7 @@
     "component": "signal",
     "ds-component": {
       "name": "signal",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "markoStorybookPath": "/docs/graphics-icons-ebay-signal--documentation",
     "reactStorybookPath": "/docs/graphics-icons-ebay-signal--documentation"
@@ -877,9 +747,7 @@
     "ds-component": {
       "name": "loading-skeleton",
       "status": "beta",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "markoStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation",
@@ -889,9 +757,7 @@
     "component": "snackbar",
     "ds-component": {
       "name": "snackbar",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["button"],
     "markoStorybookPath": "/docs/dialogs-ebay-snackbar-dialog--documentation",
@@ -902,9 +768,7 @@
     "component": "split-button",
     "ds-component": {
       "name": "split-button",
-      "cssVersion": 1.6,
-      "markoVersion": 1.6,
-      "reactVersion": 1.6
+      "version": "1.6"
     },
     "markoStorybookPath": "/docs/buttons-ebay-split-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-split-button--documentation"
@@ -913,9 +777,7 @@
     "component": "star-rating-select",
     "ds-component": {
       "name": "review-input",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-star-rating-select--empty",
     "markoStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation",
@@ -925,9 +787,7 @@
     "component": "star-rating",
     "ds-component": {
       "name": "review-rating",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-star-rating--empty",
     "markoStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation",
@@ -944,9 +804,7 @@
     "component": "switch",
     "ds-component": {
       "name": "switch",
-      "cssVersion": 2.1,
-      "markoVersion": 2.1,
-      "reactVersion": 2.1
+      "version": "2.1"
     },
     "markoStorybookPath": "/docs/form-input-ebay-switch--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-switch--documentation",
@@ -956,10 +814,8 @@
     "component": "table",
     "ds-component": {
       "name": "table",
-      "cssVersion": 0.1,
-      "markoVersion": 0.1,
-      "reactVersion": 0.1,
-      "alpha": true
+      "alpha": true,
+      "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-table--base",
     "markoStorybookPath": "/docs/data-display-ebay-table--documentation",
@@ -969,9 +825,7 @@
     "component": "tab",
     "ds-component": {
       "name": "tab",
-      "cssVersion": 2.1,
-      "markoVersion": 2.1,
-      "reactVersion": 2.1
+      "version": "2.1"
     },
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation",
     "reactStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation",
@@ -982,15 +836,15 @@
     "ds-component": [
       {
         "name": "text-area",
-        "version": 2.2
+        "version": "2.2"
       },
       {
         "name": "text-field",
-        "version": 2.2
+        "version": "2.2"
       },
       {
         "name": "password",
-        "version": 2.2
+        "version": "2.2"
       }
     ],
     "submodules": ["icon-button"],
@@ -1001,9 +855,7 @@
   "toast-dialog": {
     "component": "toast-dialog",
     "ds-component": {
-      "cssVersion": 2.2,
-      "markoVersion": 2.2,
-      "reactVersion": 2.2
+      "version": "2.2"
     },
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-toast-dialog--primary-action",
@@ -1014,9 +866,7 @@
     "component": "toggle-button-group",
     "ds-component": {
       "name": "toggle-button-group",
-      "cssVersion": 1,
-      "markoVersion": 1,
-      "reactVersion": 1
+      "version": "1.0"
     },
     "submodules": ["toggle-button"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation",
@@ -1027,9 +877,7 @@
     "component": "toggle-button",
     "ds-component": {
       "name": "toggle-button",
-      "cssVersion": "1.0.3",
-      "markoVersion": "1.0.3",
-      "reactVersion": "1.0.3"
+      "version": "1.0.3"
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button--documentation",
@@ -1045,9 +893,7 @@
     "component": "tooltip",
     "ds-component": {
       "name": "tooltip",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-tooltip--collapsed",
@@ -1059,9 +905,7 @@
     "component": "tourtip",
     "ds-component": {
       "name": "tourtip",
-      "cssVersion": 2,
-      "markoVersion": 2,
-      "reactVersion": 2
+      "version": "2.0"
     },
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-tourtip--collapsed",
