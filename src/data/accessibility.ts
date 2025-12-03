@@ -5,7 +5,7 @@ import {
   getProperName
 } from "./common"
 
-const a11yDocsTemplates = import.meta.glob("../docs/a11y/**/*.md");
+const a11yDocsTemplates = import.meta.glob("../routes/accessibility/**/*+page.marko");
 
 export interface A11yDocsMap {
   [key: string]: {
@@ -23,7 +23,12 @@ export const a11yDocs = Object.keys(a11yDocsTemplates).reduce<A11yDocsMap>(
   (data, filePath) => {
     const parts = filePath.split("/");
     parts.slice(0, parts.length - 1).join("/");
-    const name = getFileNameWithoutExtension(filePath);
+    const name = getFileNameWithoutExtension(filePath).replace("+page", "");
+
+    // This is when the actual file is simply +page.marko
+    if (!name) {
+      return data;
+    }
     const type = getDirectory(filePath);
     const properName = getProperName(name);
     data[type] = data[type] || {};
