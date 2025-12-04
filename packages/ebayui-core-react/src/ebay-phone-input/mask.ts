@@ -1,8 +1,15 @@
 // Phone mask utility copied from ebayui-core to avoid cross-package imports
-export default function (input: HTMLInputElement, initialMask: string) {
+export type MaskChangeCallback = (maskedValue: string, originalEvent?: Event) => void;
+
+export default function (input: HTMLInputElement, initialMask: string, onChange?: MaskChangeCallback) {
     let mask = initialMask;
+    let changeCallback = onChange;
     const onInput = (ev: Event) => {
         updateInputValue(input, mask, input.value, (ev as InputEvent).inputType);
+        // Always call the callback with the current (masked) value
+        if (changeCallback) {
+            changeCallback(input.value, ev);
+        }
     };
     input.addEventListener("input", onInput);
 
@@ -16,6 +23,9 @@ export default function (input: HTMLInputElement, initialMask: string) {
         },
         get value() {
             return input.value;
+        },
+        setOnChange(callback: MaskChangeCallback | undefined) {
+            changeCallback = callback;
         },
     };
 }

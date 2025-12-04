@@ -223,4 +223,26 @@ describe("<EbayPhoneInput />", () => {
 
         expect(container.querySelectorAll('[role="option"][aria-selected="true"]')).toHaveLength(1);
     });
+
+    it("should trigger onInputChange with correctly masked value when formatting is disturbed", async () => {
+        const user = userEvent.setup();
+        const onInputChange = jest.fn();
+
+        const { container } = render(<EbayPhoneInput countryCode="us" onInputChange={onInputChange} />);
+
+        const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+
+        // Type an unformatted phone number (simulating a paste operation)
+        await user.type(input, "4152881234");
+
+        // onInputChange should be called with the formatted value
+        expect(onInputChange).toHaveBeenCalled();
+
+        // Get the last call's value
+        const lastCall = onInputChange.mock.calls[onInputChange.mock.calls.length - 1];
+
+        // The value should be formatted according to US mask
+        expect(lastCall[1].value).toMatch(/\(415\) 288-1234/);
+        expect(lastCall[1].rawValue).toBe("4152881234");
+    });
 });

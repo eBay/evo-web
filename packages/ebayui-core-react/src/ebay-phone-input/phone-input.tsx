@@ -9,7 +9,7 @@ import type { ChangeEventProps } from "../ebay-listbox-button/listbox-button";
 
 // Import local utilities
 import countries, { type CountryInterface } from "./countries";
-import mask, { stripNonDigits } from "./mask";
+import mask, { stripNonDigits, type MaskChangeCallback } from "./mask";
 
 export interface PhoneInputEvent {
     value?: string;
@@ -22,6 +22,7 @@ type MaskInstance = {
     update: (value: string, mask: string) => void;
     destroy: () => void;
     value: string;
+    setOnChange: (callback: MaskChangeCallback | undefined) => void;
 };
 
 export type EbayPhoneInputProps = Omit<ComponentProps<"span">, "onChange"> & {
@@ -104,12 +105,43 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     useEffect(() => {
         if (textboxRef.current && selectedCountry()) {
             if (!maskInstance.current) {
-                maskInstance.current = mask(textboxRef.current, selectedCountry().mask);
+                // Initialize mask with callback for when value is formatted
+                maskInstance.current = mask(
+                    textboxRef.current,
+                    selectedCountry().mask,
+                    (maskedValue, originalEvent) => {
+                        // Call onInputChange with the masked value after formatting
+                        if (onInputChange && originalEvent) {
+                            onInputChange(originalEvent as unknown as React.ChangeEvent<HTMLInputElement>, {
+                                value: maskedValue,
+                                rawValue: stripNonDigits(maskedValue),
+                                callingCode: selectedCountry().callingCode,
+                                countryCode: selectedCountry().countryCode,
+                            });
+                        }
+                    },
+                );
             }
 
             maskInstance.current.update(textboxRef.current.value, selectedCountry().mask);
         }
     }, [selectedCountry().mask]);
+
+    // Update the mask callback when onInputChange changes
+    useEffect(() => {
+        if (maskInstance.current) {
+            maskInstance.current.setOnChange((maskedValue, originalEvent) => {
+                if (onInputChange && originalEvent) {
+                    onInputChange(originalEvent as unknown as React.ChangeEvent<HTMLInputElement>, {
+                        value: maskedValue,
+                        rawValue: stripNonDigits(maskedValue),
+                        callingCode: selectedCountry().callingCode,
+                        countryCode: selectedCountry().countryCode,
+                    });
+                }
+            });
+        }
+    }, [onInputChange, selectedCountry]);
 
     // Cleanup mask on unmount
     useEffect(() => {
@@ -152,12 +184,6 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     const handleTextboxChange = (event: React.ChangeEvent<HTMLInputElement & HTMLTextAreaElement>) => {
         if (onChange) {
             onChange(event, createEventData());
-        }
-    };
-
-    const handleTextboxInputChange = (event: React.ChangeEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-        if (onInputChange) {
-            onInputChange(event, createEventData());
         }
     };
 
@@ -228,7 +254,6 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
                 onKeyPress={handleTextboxKeyPress}
                 onKeyUp={handleTextboxKeyUp}
                 onChange={handleTextboxChange}
-                onInputChange={handleTextboxInputChange}
                 ref={textboxRef as unknown as ComponentProps<typeof EbayTextbox>["ref"]}
             >
                 <EbayTextboxPrefixText id="phone-prefix">+ {selectedCountry().callingCode}</EbayTextboxPrefixText>
