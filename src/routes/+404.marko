@@ -1,0 +1,41 @@
+<style.scss>
+  @use "@ebay/skin/src/sass/variables/variables";
+  @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
+  @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
+  @use "../sass/pygments";
+  @use "../sass/demo-colors";
+  @use "../sass/page-grid";
+  @use "../sass/color-schemes";
+  @use "@ebay/skin/src/sass/bundles/skin-headless";
+  @use "@ebay/skin/src/tokens/evo-core";
+  @use "@ebay/skin/src/tokens/evo-light-class";
+  @use "@ebay/skin/src/tokens/evo-dark-class";
+  @use "@ebay/skin/src/tokens/evo-live-light-class";
+  @use "@ebay/skin/src/tokens/evo-live-dark-class";
+
+  @use "../sass/site-main";
+  @use "../sass/landing-page";
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+<html-script>
+  (async function() {
+    const skinSite = window.location.href.replace("skin/", "");
+    if ((await fetch(skinSite, { method:"HEAD" })).status === 200) {
+      window.location.replace(skinSite);
+    }
+  })();
+</html-script>
+
+<site-header/>
+<main class="landing-page">
+    <h1>Page not found</h1>
+    <a class="fake-btn fake-btn--primary" href="./">
+        Go home
+    </a>
+</main>
+<site-footer/>
