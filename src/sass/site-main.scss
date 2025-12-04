@@ -41,52 +41,8 @@ img {
 
 /* CSS Variables */
 :root {
-  --color-primary: #2563eb;
-  --color-primary-foreground: #f8fafc;
-  --color-secondary: #f1f5f9;
-  --color-secondary-foreground: #0f172a;
-  --color-accent: #3b82f6;
-  --color-accent-foreground: #fff;
-  --color-background: #fff;
-  --color-foreground: #0f172a;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #64748b;
   --color-border: #e2e8f0;
-  --color-input: #e2e8f0;
-  --color-ring: #3b82f6;
-  --color-blue-50: #eff6ff;
 
-  // --color-blue-300: #93c5fd;
-  // --color-blue-500: #3b82f6;
-  // --color-blue-600: #2563eb;
-  // --color-blue-700: #1d4ed8;
-
-  --color-purple-300: #d8b4fe;
-  --color-purple-500: #a855f7;
-  --color-purple-600: #9333ea;
-  --color-purple-700: #7e22ce;
-
-  // --color-pink-300: #f9a8d4;
-  // --color-pink-500: #ec4899;
-  // --color-pink-600: #db2777;
-
-  // --color-green-500: #22c55e;
-  // --color-green-600: #16a34a;
-  // --color-green-700: #15803d;
-  --color-emerald-500: #10b981;
-
-  // --color-orange-500: #f97316;
-  // --color-orange-600: #ea580c;
-  // --color-orange-700: #c2410c;
-  // --color-red-500: #ef4444;
-  // --color-red-600: #dc2626;
-  // --color-red-700: #b91c1c;
-
-  --color-cyan-500: #06b6d4;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-900: #111827;
-  --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
@@ -100,8 +56,6 @@ img {
   --radius-xl: 1rem;
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl:
     0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --brand-evo-css-gradient: linear-gradient(
@@ -124,24 +78,7 @@ img {
     var(--color-orange-500),
     var(--color-red-500)
   );
-  --brand-evo-css-background: var(--color-pink-100);
-  --brand-evo-css-border: var(--color-pink-200);
-  --brand-evo-marko-background: var(--color-violet-100);
-  --brand-evo-marko-border: var(--color-violet-200);
-  --brand-evo-react-background: var(--color-indigo-100);
-  --brand-evo-react-border: var(--color-indigo-200);
-  --brand-evo-standards-background: var(--color-marigold-100);
-  --brand-evo-standards-border: var(--color-marigold-200);
-  --brand-rwd-gradient: linear-gradient(
-    to right,
-    var(--color-orange-600),
-    var(--color-red-600)
-  );
-  --brand-a11y-gradient: linear-gradient(
-    to right,
-    var(--color-green-600),
-    var(--color-blue-600)
-  );
+
 }
 
 /* Typography reset */
@@ -159,39 +96,6 @@ h6 {
 h1 {
   font-weight: 700;
   margin-block: var(--spacing-400) var(--spacing-400);
-}
-
-.title-highlight-primary {
-  background: linear-gradient(
-    to right,
-    var(--color-blue-600),
-    var(--color-lilac-600),
-    var(--color-pink-600)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
-
-.title-highlight-secondary {
-  background: linear-gradient(
-    to right,
-    var(--color-green-600),
-    var(--color-blue-600)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
-
-.box-highlight-primary {
-  background: linear-gradient(0deg, rgb(246 240 253), rgb(220 221 255));
-}
-
-.box-highlight-secondary {
-  background: linear-gradient(0deg, rgb(240, 253, 244), rgb(239, 246, 255));
 }
 
 .box-shadow-large {
@@ -237,8 +141,6 @@ body > main:last-child {
 
 .icon-header__icon {
   border-radius: 4px;
-
-  // background-color: var(--color-background-inverse);
   color: var(--color-foreground-primary);
   height: 24px;
   width: 24px;
@@ -327,6 +229,6 @@ table td {
 
 table th {
   background-color: var(--color-muted);
-  color: var(--color-foreground);
+  color: var(--color-foreground-primary);
   font-weight: 600;
 }

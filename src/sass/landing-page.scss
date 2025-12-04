@@ -218,7 +218,6 @@
   display: grid;
   gap: 32px;
   grid-template-columns: 1fr;
-//   padding: 16px;
 }
 
 .landing-banner-lifestyle-copy__highlight {
@@ -230,7 +229,7 @@
 
 .landing-banner-lifestyle-copy__highlight-icon {
   align-items: center;
-  background-color: var(--color-background-tertiary);
+  background-color: var(--color-background-inverse);
   border-radius: 12px;
   display: flex;
   flex-shrink: 0;
@@ -244,7 +243,7 @@
 }
 
 .landing-banner-lifestyle-copy__highlight-icon svg {
-  color: var(--color-foreground-primary);
+  color: var(--color-foreground-on-inverse);
   height: 24px;
   width: 24px;
 }
@@ -260,8 +259,6 @@
   .landing-info-container__item {
     flex: 1 1;
     gap: 16px;
-
-    // margin-block-end: 72px;
     padding-block: 64px;
     padding-inline: 32px;
   }
