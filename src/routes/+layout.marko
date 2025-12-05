@@ -9,13 +9,7 @@ static declare global {
 <const/{ pageImg, page }=getMetadataFromUrl($global.url.pathname)>
 
 <style.scss>
-  @use "@ebay/skin/dist/global/global.css";
-  @use "@ebay/skin/dist/layout-grid/layout-grid.css";
-  @use "@ebay/skin/src/sass/variables/variables";
-  @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
-  @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
   @use "../sass/page-grid";
-  @use "../sass/color-schemes";
   @use "@ebay/skin/src/sass/bundles/skin-headless";
   @use "@ebay/skin/src/tokens/evo-core";
   @use "@ebay/skin/src/tokens/evo-light-class";
