@@ -1,5 +1,13 @@
 # @ebay/ui-core-react
 
+## 8.17.3
+
+### Patch Changes
+
+- [#381](https://github.com/eBay/evo-web/pull/381) [`c8c50cb`](https://github.com/eBay/evo-web/commit/c8c50cba6880d11498f05643838849a74ecabcd4) Thanks [@sparshsamir1993](https://github.com/sparshsamir1993)! - fix(listbox, listbox-button): explicit announce selected state
+
+- [#388](https://github.com/eBay/evo-web/pull/388) [`e065688`](https://github.com/eBay/evo-web/commit/e065688aecee00f968cc0a95a1080d3b964ffbf7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(PhoneInput): change to use react events for masking and add defaultValue
+
 ## 8.17.2
 
 ### Patch Changes
