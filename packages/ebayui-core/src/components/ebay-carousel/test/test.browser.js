@@ -11,16 +11,6 @@ import {
 import { fastAnimations } from "../../../common/test-utils/browser";
 import template from "../index.marko";
 import * as mock from "./mock";
-const supportsNativeScrolling =
-    CSS.supports &&
-    CSS.supports(
-        `(not (-moz-appearance:none)) and (
-    (-webkit-scroll-snap-coordinate: 0 0) or
-    (-ms-scroll-snap-coordinate: 0 0) or
-    (scroll-snap-coordinate: 0 0) or
-    (scroll-snap-align: start))`,
-    );
-
 beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
@@ -88,11 +78,13 @@ describe("given a continuous carousel", () => {
                 await waitForCarouselUpdate();
             });
 
-            it("then it moved to the second item", () => {
-                const secondItem = component.getByText(
-                    input.item[1].renderBody.text,
-                );
-                assertAtStartOfSlide(secondItem);
+            it("then it moved to the second item", async () => {
+                await waitFor(() => {
+                    const secondItem = component.getByText(
+                        input.item[1].renderBody.text,
+                    );
+                    assertAtStartOfSlide(secondItem);
+                });
             });
         });
 
@@ -409,26 +401,23 @@ describe("given a discrete carousel", () => {
         });
 
         //
-        (supportsNativeScrolling ? describe : describe.skip)(
-            "when it is scrolled to the second slide",
-            () => {
-                beforeEach(async () => {
-                    const thirdItem = component.getByText(
-                        input.item[1].renderBody.text,
-                    );
-                    const list = thirdItem.parentElement;
-                    list.scrollLeft = thirdItem.offsetLeft;
-                    fireEvent.scroll(list);
-                    await waitForCarouselUpdate();
-                });
+        describe("when it is scrolled to the second slide", () => {
+            beforeEach(async () => {
+                const thirdItem = component.getByText(
+                    input.item[1].renderBody.text,
+                );
+                const list = thirdItem.parentElement;
+                list.scrollLeft = thirdItem.offsetLeft;
+                fireEvent.scroll(list);
+                await waitForCarouselUpdate();
+            });
 
-                it("then it emitted the scroll event", () => {
-                    expect(component.emitted("scroll")).has.length(1);
-                });
+            it("then it emitted the scroll event", () => {
+                expect(component.emitted("scroll")).has.length(1);
+            });
 
-                thenItMovedToTheSecondSlide();
-            },
-        );
+            thenItMovedToTheSecondSlide();
+        });
 
         function thenItMovedToTheSecondSlide() {
             it("then it moved to the second item", () => {
