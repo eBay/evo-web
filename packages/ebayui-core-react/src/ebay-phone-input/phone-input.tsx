@@ -9,7 +9,7 @@ import type { ChangeEventProps } from "../ebay-listbox-button/listbox-button";
 
 // Import local utilities
 import countries, { type CountryInterface } from "./countries";
-import mask, { stripNonDigits } from "./mask";
+import { applyMask, applyMaskWithCursor, stripNonDigits } from "./mask";
 
 export interface PhoneInputEvent {
     value?: string;
@@ -18,15 +18,10 @@ export interface PhoneInputEvent {
     countryCode?: string;
 }
 
-type MaskInstance = {
-    update: (value: string, mask: string) => void;
-    destroy: () => void;
-    value: string;
-};
-
 export type EbayPhoneInputProps = Omit<ComponentProps<"span">, "onChange"> & {
     countryCode?: string;
     value?: string;
+    defaultValue?: string;
     locale?: string;
     floatingLabel?: string;
     disabled?: boolean;
@@ -50,6 +45,7 @@ const getLocaleDefault = (locale?: string): string => {
 const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     countryCode,
     value,
+    defaultValue = "",
     locale,
     floatingLabel,
     disabled,
@@ -67,6 +63,8 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     onCollapse,
     ...rest
 }: EbayPhoneInputProps) => {
+    // Determine if component is controlled
+    const isControlled = value !== undefined;
     const countryNames = useMemo(() => {
         const normalizedLocale = getLocaleDefault(locale);
         const getName = new Intl.DisplayNames([normalizedLocale], { type: "region" });
@@ -83,8 +81,12 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
 
         return 0;
     });
+
+    // Internal state for uncontrolled mode - stores raw unmasked value
+    const [internalValue, setInternalValue] = useState(defaultValue);
+
     const textboxRef = useRef<HTMLInputElement>(null);
-    const maskInstance = useRef<MaskInstance | null>(null);
+    const pendingCursorPosition = useRef<number | null>(null);
 
     // Set initial country index based on countryCode prop
     useEffect(() => {
@@ -100,39 +102,41 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
         return countries[currentCountryCode];
     };
 
-    // Initialize and manage phone mask
+    // Apply cursor position after render
     useEffect(() => {
-        if (textboxRef.current && selectedCountry()) {
-            if (!maskInstance.current) {
-                maskInstance.current = mask(textboxRef.current, selectedCountry().mask);
-            }
-
-            maskInstance.current.update(textboxRef.current.value, selectedCountry().mask);
+        if (pendingCursorPosition.current !== null && textboxRef.current) {
+            textboxRef.current.setSelectionRange(pendingCursorPosition.current, pendingCursorPosition.current);
+            pendingCursorPosition.current = null;
         }
-    }, [selectedCountry().mask]);
+    });
 
-    // Cleanup mask on unmount
-    useEffect(() => {
-        return () => {
-            if (maskInstance.current) {
-                maskInstance.current.destroy();
-            }
-        };
-    }, []);
+    // Get the current value (controlled or internal)
+    const getCurrentValue = () => {
+        return isControlled ? value : internalValue;
+    };
+
+    // Get the current masked value
+    const getMaskedValue = () => {
+        const currentValue = getCurrentValue();
+        return currentValue ? applyMask(currentValue, selectedCountry().mask) : "";
+    };
 
     // Helper function to create event data
-    const createEventData = (index?: number): PhoneInputEvent => ({
-        value: maskInstance.current?.value || "",
-        rawValue: stripNonDigits(maskInstance.current?.value || ""),
-        callingCode: selectedCountry(index).callingCode,
-        countryCode: selectedCountry(index).countryCode,
-    });
+    const createEventData = (params?: { maskedValue?: string; index?: number }): PhoneInputEvent => {
+        const val = params?.maskedValue !== undefined ? params?.maskedValue : getMaskedValue();
+        return {
+            value: val,
+            rawValue: stripNonDigits(val),
+            callingCode: selectedCountry(params?.index).callingCode,
+            countryCode: selectedCountry(params?.index).countryCode,
+        };
+    };
 
     // Handle country selection change
     const handleCountryChange = (event: React.ChangeEvent<HTMLButtonElement>, { index }: ChangeEventProps) => {
         setSelectedIndex(index);
         if (onChange) {
-            onChange(event as React.ChangeEvent<HTMLInputElement>, createEventData(index));
+            onChange(event as React.ChangeEvent<HTMLInputElement>, createEventData({ index }));
         }
     };
 
@@ -156,8 +160,36 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     };
 
     const handleTextboxInputChange = (event: React.ChangeEvent<HTMLInputElement & HTMLTextAreaElement>) => {
+        const input = event.target;
+        const currentValue = input.value;
+        const cursorPos = input.selectionStart || 0;
+
+        // Determine if this is a delete operation
+        const isDelete =
+            event.nativeEvent && "inputType" in event.nativeEvent
+                ? /delete.*Backward/.test((event.nativeEvent as InputEvent).inputType)
+                : false;
+
+        // Apply mask and get new cursor position
+        const { maskedValue, cursorPosition } = applyMaskWithCursor(
+            currentValue,
+            selectedCountry().mask,
+            cursorPos,
+            isDelete,
+        );
+
+        // Store the cursor position to apply after React updates
+        if (cursorPosition !== undefined) {
+            pendingCursorPosition.current = cursorPosition;
+        }
+
+        // Update internal state if uncontrolled
+        if (!isControlled) {
+            setInternalValue(stripNonDigits(maskedValue));
+        }
+
         if (onInputChange) {
-            onInputChange(event, createEventData());
+            onInputChange(event, createEventData({ maskedValue }));
         }
     };
 
@@ -216,7 +248,7 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
 
             <EbayTextbox
                 type="tel"
-                value={value}
+                value={getMaskedValue()}
                 disabled={disabled}
                 floatingLabel={floatingLabel}
                 floatingLabelStatic

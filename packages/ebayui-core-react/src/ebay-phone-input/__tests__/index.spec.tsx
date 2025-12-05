@@ -166,15 +166,12 @@ describe("<EbayPhoneInput />", () => {
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
         await user.type(input, "5551234567");
 
-        expect(onInputChange).toHaveBeenCalledWith(
-            expect.any(Object),
-            expect.objectContaining({
-                value: expect.any(String),
-                rawValue: expect.any(String),
-                callingCode: "1",
-                countryCode: "US",
-            }),
-        );
+        expect(onInputChange).toHaveBeenCalledWith(expect.any(Object), {
+            value: "(555) 123-4567",
+            rawValue: "5551234567",
+            callingCode: "1",
+            countryCode: "US",
+        });
     });
 
     it("should provide the correct event data on inputChange after changing the country", async () => {
@@ -190,17 +187,14 @@ describe("<EbayPhoneInput />", () => {
         await user.click(option);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
-        await user.type(input, "5551234567");
+        await user.type(input, "48999216078");
 
-        expect(onInputChange).toHaveBeenCalledWith(
-            expect.any(Object),
-            expect.objectContaining({
-                value: expect.any(String),
-                rawValue: expect.any(String),
-                callingCode: "55",
-                countryCode: "BR",
-            }),
-        );
+        expect(onInputChange).toHaveBeenCalledWith(expect.any(Object), {
+            value: "(48) 99921-6078",
+            rawValue: "48999216078",
+            callingCode: "55",
+            countryCode: "BR",
+        });
     });
 
     it("should not select multiple countries when the same calling code exists", async () => {
@@ -222,5 +216,222 @@ describe("<EbayPhoneInput />", () => {
         }
 
         expect(container.querySelectorAll('[role="option"][aria-selected="true"]')).toHaveLength(1);
+    });
+
+    it("should maintain formatting when entering a fully formatted phone number", async () => {
+        const user = userEvent.setup();
+        const onInputChange = jest.fn();
+
+        const { container } = render(<EbayPhoneInput countryCode="us" onInputChange={onInputChange} />);
+
+        const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+
+        // Enter a fully formatted phone number
+        await user.type(input, "(555) 123-4567");
+
+        // Click outside the textbox (blur event)
+        await user.tab();
+
+        expect(onInputChange).toHaveBeenCalledWith(
+            expect.any(Object),
+            expect.objectContaining({
+                value: expect.stringMatching(/\(\d{3}\) \d{3}-\d{4}/),
+            }),
+        );
+    });
+
+    it("should reformat when pasting an unformatted phone number over existing value", async () => {
+        const user = userEvent.setup();
+        const onInputChange = jest.fn();
+
+        const { container } = render(
+            <EbayPhoneInput countryCode="us" defaultValue="5551234567" onInputChange={onInputChange} />,
+        );
+
+        const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+
+        // Initially, the value should be formatted
+        expect(input.value).toMatch(/\(\d{3}\) \d{3}-\d{4}/);
+
+        // Clear the input and paste an unformatted number
+        await user.clear(input);
+        await user.click(input);
+        await user.paste("4152881234");
+
+        // Click outside the textbox (blur event)
+        await user.tab();
+
+        expect(onInputChange).toHaveBeenCalledWith(
+            expect.any(Object),
+            expect.objectContaining({
+                value: "(415) 288-1234",
+            }),
+        );
+    });
+
+    it("should reformat when partially editing a formatted phone number", async () => {
+        const user = userEvent.setup();
+        const onBlur = jest.fn();
+
+        const { container } = render(<EbayPhoneInput countryCode="us" defaultValue="5551234567" onBlur={onBlur} />);
+
+        const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+
+        // Initially formatted as (555) 123-4567
+        const initialValue = input.value;
+        expect(initialValue).toBe("(555) 123-4567");
+
+        // Focus the input
+        await user.click(input);
+
+        // Find the position of '3' in '123' and change it to '9'
+        // The formatted value is "(555) 123-4567"
+        // We want to change '3' to '9' to get "(555) 129-4567"
+        const positionOf3 = initialValue.indexOf("123") + 2;
+
+        // Set cursor position and select the '3'
+        input.setSelectionRange(positionOf3, positionOf3 + 1);
+
+        // Type '9' to replace '3'
+        await user.keyboard("9");
+
+        // Click outside the textbox (blur event)
+        await user.tab();
+
+        expect(onBlur).toHaveBeenCalled();
+        // The value should be reformatted with the change
+        expect(input.value).toBe("(555) 129-4567");
+    });
+
+    it("should handle typing over selected digit", async () => {
+        const user = userEvent.setup();
+        const onInputChange = jest.fn();
+        const onBlur = jest.fn();
+
+        const { container } = render(
+            <EbayPhoneInput countryCode="us" defaultValue="5551234567" onInputChange={onInputChange} onBlur={onBlur} />,
+        );
+
+        const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+
+        await user.click(input);
+
+        // Select a portion of the text and type to replace
+        // This simulates editing the number
+        await user.clear(input);
+        await user.type(input, "5551294567");
+
+        await user.tab();
+
+        expect(onBlur).toHaveBeenCalled();
+        expect(input.value).toBe("(555) 129-4567");
+    });
+
+    describe("controlled mode", () => {
+        it("should apply mask when value prop is updated externally", () => {
+            const { container, rerender } = render(<EbayPhoneInput countryCode="us" value="5551234567" />);
+
+            const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+            expect(input.value).toBe("(555) 123-4567");
+
+            // Update value prop externally
+            rerender(<EbayPhoneInput countryCode="us" value="4152881234" />);
+
+            expect(input.value).toBe("(415) 288-1234");
+        });
+
+        it("should maintain mask when value is updated after user input", async () => {
+            const user = userEvent.setup();
+            const onInputChange = jest.fn();
+
+            const TestComponent = () => {
+                const [value, setValue] = React.useState("5551234567");
+
+                return (
+                    <div>
+                        <EbayPhoneInput
+                            countryCode="us"
+                            value={value}
+                            onInputChange={(e, data) => {
+                                setValue(data.rawValue || "");
+                                onInputChange(e, data);
+                            }}
+                        />
+                        <button onClick={() => setValue("4152881234")}>Update Value</button>
+                    </div>
+                );
+            };
+
+            const { container } = render(<TestComponent />);
+
+            const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+            expect(input.value).toBe("(555) 123-4567");
+
+            // User types to change the value
+            await user.clear(input);
+            await user.click(input);
+            await user.type(input, "5551294567");
+
+            expect(input.value).toBe("(555) 129-4567");
+            expect(onInputChange).toHaveBeenCalledWith(expect.any(Object), {
+                value: "(555) 129-4567",
+                rawValue: "5551294567",
+                callingCode: "1",
+                countryCode: "US",
+            });
+
+            // Programmatically update value via button
+            const button = screen.getByText("Update Value");
+            await user.click(button);
+
+            expect(input.value).toBe("(415) 288-1234");
+        });
+
+        it("should correctly format when value prop changes from empty to filled", () => {
+            const { container, rerender } = render(<EbayPhoneInput countryCode="us" value="" />);
+
+            const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+            expect(input.value).toBe("");
+
+            rerender(<EbayPhoneInput countryCode="us" value="5551234567" />);
+
+            expect(input.value).toBe("(555) 123-4567");
+        });
+
+        it("should correctly format when value prop changes from filled to empty", () => {
+            const { container, rerender } = render(<EbayPhoneInput countryCode="us" value="5551234567" />);
+
+            const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+            expect(input.value).toBe("(555) 123-4567");
+
+            rerender(<EbayPhoneInput countryCode="us" value="" />);
+
+            expect(input.value).toBe("");
+        });
+
+        it("should maintain correct mask when country changes with controlled value", () => {
+            const { container, rerender } = render(<EbayPhoneInput countryCode="us" value="5551234567" />);
+
+            const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+            expect(input.value).toBe("(555) 123-4567");
+
+            // Change country to Brazil
+            rerender(<EbayPhoneInput countryCode="br" value="48999216078" />);
+
+            expect(input.value).toBe("(48) 99921-6078");
+        });
+
+        it("should handle partial phone numbers in controlled mode", () => {
+            const { container, rerender } = render(<EbayPhoneInput countryCode="us" value="555" />);
+
+            const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
+            expect(input.value).toBe("(555");
+
+            rerender(<EbayPhoneInput countryCode="us" value="55512" />);
+            expect(input.value).toBe("(555) 12");
+
+            rerender(<EbayPhoneInput countryCode="us" value="5551234" />);
+            expect(input.value).toBe("(555) 123-4");
+        });
     });
 });

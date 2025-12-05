@@ -205,9 +205,9 @@ export const Interactive: StoryFn<typeof EbayPhoneInput> = (args) => {
                 countryCode="us"
                 floatingLabel="Phone Number"
                 value={value}
-                onChange={(event, data) => {
+                onInputChange={(event, data) => {
                     setValue(data?.value || "");
-                    args.onChange?.(event, data);
+                    args.onInputChange?.(event, data);
                 }}
                 onFocus={args.onFocus}
                 onBlur={args.onBlur}

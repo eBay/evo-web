@@ -1,43 +1,44 @@
-// Phone mask utility copied from ebayui-core to avoid cross-package imports
-export default function (input: HTMLInputElement, initialMask: string) {
-    let mask = initialMask;
-    const onInput = (ev: Event) => {
-        updateInputValue(input, mask, input.value, (ev as InputEvent).inputType);
-    };
-    input.addEventListener("input", onInput);
+// Phone mask utility - pure functions for React-based masking
+
+export interface MaskResult {
+    maskedValue: string;
+    cursorPosition?: number;
+}
+
+/**
+ * Apply phone mask and calculate new cursor position
+ * @param value - The current input value (may be partially formatted)
+ * @param mask - The mask pattern (e.g., "(000) 000-0000")
+ * @param cursorPosition - Current cursor position
+ * @param isDelete - Whether this is a delete operation
+ * @returns Object with masked value and new cursor position
+ */
+export function applyMaskWithCursor(
+    value: string,
+    mask: string,
+    cursorPosition: number,
+    isDelete: boolean = false,
+): MaskResult {
+    const maskedValue = applyMask(value, mask);
+    const newCursorPosition = resolveCursorPosition(maskedValue, value, cursorPosition, isDelete);
 
     return {
-        update(newValue: string, newMask: string) {
-            mask = newMask;
-            updateInputValue(input, mask, newValue, "");
-        },
-        destroy() {
-            input.removeEventListener("input", onInput);
-        },
-        get value() {
-            return input.value;
-        },
+        maskedValue,
+        cursorPosition: newCursorPosition,
     };
 }
 
-function updateInputValue(input: HTMLInputElement, mask: string, value: string, inputType: string) {
-    const isDelete = /delete.*Backwards/.test(inputType);
-    const initialPos = input.selectionStart || 0;
-    const newValue = applyMask(value, mask);
-    if (value !== newValue) {
-        input.value = newValue;
-        const newPosition = resolveCursorPosition(newValue, value, initialPos, isDelete);
-        if (newPosition !== undefined) {
-            input.setSelectionRange(newPosition, newPosition);
-        }
-    }
-}
-
+/**
+ * Strip all non-digit characters from a string
+ */
 export function stripNonDigits(value: string) {
     return value.replace(/\D+/g, "");
 }
 
-function applyMask(value: string, mask: string) {
+/**
+ * Apply mask pattern to a value
+ */
+export function applyMask(value: string, mask: string) {
     const digits = stripNonDigits(value);
     let maskedValue = "";
     let currentDigit = 0;
@@ -57,6 +58,9 @@ function applyMask(value: string, mask: string) {
     return maskedValue;
 }
 
+/**
+ * Calculate the correct cursor position after masking
+ */
 function resolveCursorPosition(updatedValue: string, initialValue: string, initialPosition: number, isDelete: boolean) {
     const cursorAtEnd = initialPosition === initialValue.length;
     if (isDelete || !cursorAtEnd) {

@@ -12,6 +12,7 @@ import React, {
     useEffect,
     useState,
     LegacyRef,
+    useRef,
 } from "react";
 import classNames from "classnames";
 import { findComponent, withForwardRef } from "../common/component-utils";
@@ -86,7 +87,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     opaqueLabel,
     ...rest
 }) => {
-    const [value, setValue] = useState(defaultValue);
+    const oldValue = useRef(defaultValue);
     const [inputValue, setInputValue] = useState(defaultValue);
     const floatingLabel = useFloatingLabel({
         text: floatingLabelText,
@@ -100,15 +101,16 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     });
 
     const handleFocus = (event?: FocusEvent<HTMLInputElement & HTMLTextAreaElement>) => {
+        oldValue.current = event?.target?.value;
         onFocus(event, { value: event?.target?.value || defaultValue });
     };
 
     const handleBlur = (event: FocusEvent<HTMLInputElement & HTMLTextAreaElement>) => {
         const newValue = event.target?.value;
         onBlur(event, { value: newValue });
-        if (newValue !== value) {
+        if (newValue !== oldValue.current) {
             onChange(event, { value: newValue });
-            setValue(newValue);
+            oldValue.current = newValue;
         }
     };
 
@@ -131,7 +133,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     };
 
     const handleButtonClick = (event?: KeyboardEvent<HTMLInputElement> & MouseEvent<HTMLInputElement>) => {
-        onButtonClick(event, { value });
+        onButtonClick(event, { value: inputValue });
     };
 
     useEffect(() => {
@@ -143,9 +145,7 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement & HTMLInputElement>) => {
         const newValue = e.target?.value;
 
-        if (!isControlled(controlledValue)) {
-            setInputValue(newValue);
-        }
+        setInputValue(newValue);
 
         onInputChange(e, { value: newValue });
     };
