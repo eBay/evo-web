@@ -1,0 +1,58 @@
+static const pages = ["component", "accessibility", "guides"];
+import { components } from "../data";
+export interface Input {
+    page?: string;
+    content?: Marko.Body;
+}
+
+<if=(pages.indexOf(input.page || "") > -1)>
+    <div class="content page-grid-container">
+        <div class="page-grid">
+            <div class="site-nav secondary-nav">
+                <nav id="nav" aria-labelledby="navrail-nav_title">
+                    <h2 id="navrail-nav_title">
+                        <a href="component/">
+                            ${input.page?.toLocaleUpperCase()}
+                        </a>
+                    </h2>
+                    <ul role="menubar">
+                        <if=input.page === "component">
+                            <components-list components=components/>
+                        </if>
+                        <else if=input.page === "accessibility">
+                            <a11y-docs-list/>
+                        </else>
+                        <else if=input.page === "guides">
+                            <li>
+                                <a href="guides/page-grid" role="menuitem">
+                                    Page Grid Use Guide
+                                </a>
+                            </li>
+                            <li>
+                                <a href="guides/skeleton" role="menuitem">
+                                    Skeleton Use Guide
+                                </a>
+                            </li>
+                            <li>
+                                <a href="guides/animation" role="menuitem">
+                                    Animation Guide
+                                </a>
+                            </li>
+                        </else>
+                    </ul>
+                </nav>
+            </div>
+            <main>
+                <breadcrumbs/>
+                <component-tabs>
+                    <${input.content}/>
+                </component-tabs>
+            </main>
+        </div>
+    </div>
+</if>
+<else>
+    <main class="landing-page">
+        <${input.content}/>
+    </main>
+</else>

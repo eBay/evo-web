@@ -1,15 +1,30 @@
 import { getMetadataFromUrl } from "../data";
+client import "./main.js";
 static const basePath = import.meta.env.BASE_URL;
 static declare global {
   interface Window {
     dataLayer: any[]; // Or a more specific type if you define a structure for your dataLayer pushes
   }
 }
-<const/{ pageImg }=getMetadataFromUrl($global.url.pathname)>
+<const/{ pageImg, page }=getMetadataFromUrl($global.url.pathname)>
 
 <style.scss>
   @use "@ebay/skin/dist/global/global.css";
   @use "@ebay/skin/dist/layout-grid/layout-grid.css";
+  @use "@ebay/skin/src/sass/variables/variables";
+  @use "@ebay/skin/src/sass/mixins/public/typography-mixins";
+  @use "@ebay/skin/src/sass/mixins/public/utility-mixins";
+  @use "../sass/page-grid";
+  @use "../sass/color-schemes";
+  @use "@ebay/skin/src/sass/bundles/skin-headless";
+  @use "@ebay/skin/src/tokens/evo-core";
+  @use "@ebay/skin/src/tokens/evo-light-class";
+  @use "@ebay/skin/src/tokens/evo-dark-class";
+  @use "@ebay/skin/src/tokens/evo-live-light-class";
+  @use "@ebay/skin/src/tokens/evo-live-dark-class";
+
+  @use "../sass/site-main";
+  @use "../sass/landing-page";
 
   .main {
     align-items: center;
@@ -93,6 +108,11 @@ static declare global {
     </script>
   </head>
   <body class="evo-theme">
-    <${input.content}/>
+    <master-icons/>
+    <site-header/>
+    <navrail page=page>
+      <${input.content}/>
+    </navrail>
+    <site-footer/>
   </body>
 </html>

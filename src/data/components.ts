@@ -57,6 +57,7 @@ export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
 
 export function getMetadataFromUrl(url: string) {
   const paths = url.split("/");
+  const page = paths?.[1];
   let componentName = paths.pop()!;
   let currentTab = "overview";
   let componentData = components[componentName];
@@ -68,6 +69,7 @@ export function getMetadataFromUrl(url: string) {
 
   return {
     ...componentData,
+    page,
     currentTab,
   };
 }
