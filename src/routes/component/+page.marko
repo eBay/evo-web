@@ -17,15 +17,14 @@ import { components } from "../../data";
   }
 
   .card {
-    box-shadow: var(--shadow-md);
-    // height: 300px;
-    transform: translateY(-0.25rem);
-    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-subtle);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
   }
 
   .card:hover {
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-strong);
     transform: translateY(0.25rem);
   }
 
@@ -88,7 +87,7 @@ import { components } from "../../data";
         <li>
           <a
             href=componentUrls?.overview
-            class="card card--aspect-16-9  module-link">
+            class="card card--aspect-16-9">
             <div class="card__media">
               <object
                 type="image/png"

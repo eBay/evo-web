@@ -22,7 +22,7 @@ footer a:visited {
 
 .footer__content {
   display: grid;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-400);
   grid-template-columns: 1fr;
   margin-block: var(--spacing-400);
 }
@@ -123,8 +123,6 @@ footer a:visited {
 /* Bottom Section */
 .footer__bottom {
   border-top: 1px solid rgb(55 65 81);
-
-  // padding-top: var(--spacing-xl);
 }
 
 .footer__bottom-content {

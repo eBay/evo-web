@@ -210,7 +210,7 @@
 //   color: var(--color-foreground-on-inverse);
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-100);
   margin-top: 0;
 }
 
@@ -248,12 +248,12 @@
   width: 24px;
 }
 
-@media (min-width: 512px) {
-  .landing-info-container__item {
-    flex: 1 1 360px;
-    flex-direction: column;
-  }
-}
+// @media (min-width: 512px) {
+//   .landing-info-container__item {
+//     flex: 1 1 360px;
+//     flex-direction: column;
+//   }
+// }
 
 @media (min-width: 768px) {
   .landing-info-container__item {

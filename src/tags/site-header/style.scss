@@ -29,14 +29,14 @@ header a {
 .nav__brand {
   align-items: center;
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-100);
 }
 
 .nav__logo {
   background-color: var(--color-foreground-primary);
   border-radius: 12px;
   height: 40px;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-100);
   width: 40px;
 }
 
@@ -59,7 +59,7 @@ header a {
 .nav__links {
   align-items: center;
   display: none;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-400);
   margin-left: auto;
   padding: 0;
 }
@@ -108,38 +108,6 @@ header a {
 
 .tabs__content ul.subnav__links li a:hover {
   background-color: var(--color-background-secondary);
-}
-
-.nav__cta-button {
-  align-items: center;
-  background: linear-gradient(
-    to right,
-    var(--color-blue-600),
-    var(--color-purple-600)
-  );
-  border-radius: var(--radius-md);
-  color: white;
-  display: inline-flex;
-  font-size: 0.875rem;
-  font-weight: 500;
-  gap: var(--spacing-sm);
-  justify-content: center;
-  padding: var(--spacing-sm) var(--spacing-md);
-  transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-}
-
-.nav__cta-button:hover {
-  background: linear-gradient(
-    to right,
-    var(--color-blue-700),
-    var(--color-purple-700)
-  );
-}
-
-.nav__mobile-toggle {
-  display: block;
-  padding: var(--spacing-sm);
 }
 
 .site-nav-mobile ul ul {
