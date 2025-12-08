@@ -1,3 +1,6 @@
+.banner {
+}
+
 .landing-info-container {
   display: flex;
   flex-direction: row;
@@ -129,13 +132,16 @@
 .landing-banner-product-4up__item {
   background-color: var(--color-background-secondary);
   border-radius: 16px;
-  padding: 24px;
-  padding-block-end: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
 .landing-banner-product-4up__item h3 {
   font-size: 20px;
-  margin-block-end: 8px;
+  margin: 0;
 }
 
 .landing-banner-product-4up__item p {
@@ -148,13 +154,7 @@
   font-size: 16px;
   line-height: 24px;
   margin: 0;
-  margin-block-start: 24px;
   padding-left: 16px;
-}
-
-.landing-banner-product-4up__item .btn,
-.landing-banner-product-4up__item .fake-btn {
-  margin-block-start: 16px;
 }
 
 .landing-banner-lifestyle-copy {
@@ -168,7 +168,6 @@
 .landing-banner-lifestyle-copy__main h3 {
   font-size: 24px;
   margin: 0;
-  margin-block-end: 30px;
 }
 
 .landing-banner-lifestyle-copy ul {
@@ -202,12 +201,12 @@
 .landing-banner-lifestyle-copy__secondary {
   background-color: var(--color-background-secondary);
   border-radius: var(--border-radius-150);
-//   color: var(--color-foreground-on-inverse);
+  //   color: var(--color-foreground-on-inverse);
   padding: 56px 32px 56px 48px;
 }
 
 .landing-banner-lifestyle-copy__secondary h3 {
-//   color: var(--color-foreground-on-inverse);
+  //   color: var(--color-foreground-on-inverse);
   font-size: 20px;
   font-weight: 700;
   margin-bottom: var(--spacing-100);
@@ -239,7 +238,7 @@
 }
 
 .landing-banner-lifestyle-copy__highlight p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .landing-banner-lifestyle-copy__highlight-icon svg {
@@ -310,21 +309,6 @@
 
   .landing-banner-product-4up__items {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .landing-banner-product-4up__item {
-    padding: 48px 48px 40px 48px;
-  }
-
-  .landing-banner-product-4up__item h3 {
-    font-size: 24px;
-    margin: 0;
-    margin-block-end: 16px;
-  }
-
-  .landing-banner-product-4up__item .btn,
-  .landing-banner-product-4up__item .fake-btn {
-    margin-block-start: 24px;
   }
 
   .landing-banner-lifestyle-copy {

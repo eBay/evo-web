@@ -51,22 +51,22 @@ body > main:last-child {
 }
 
 .icon-header {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   gap: 8px;
 }
 
-.icon-header__icon {
-  border-radius: 4px;
-  color: var(--color-foreground-primary);
-  height: 24px;
-  width: 24px;
-}
+// .icon-header__icon {
+//   border-radius: 4px;
+//   color: var(--color-foreground-primary);
+//   height: 24px;
+//   width: 24px;
+// }
 
-.icon-header__icon svg {
-  position: relative;
-  top: 3px;
-}
+// .icon-header__icon svg {
+//   position: relative;
+//   top: 3px;
+// }
 
 /* common global sitenav styles */
 .site-nav {
