@@ -1,7 +1,19 @@
-.component-page .fake-tabs__item .badge {
+.badge {
   background-color: var(--color-background-inverse);
   margin-inline-end: 3px;
   padding: 7px 6px;
   position: relative;
   top: -2px;
+}
+
+.component {
+  margin-block: var(--spacing-400);
+
+  h1 {
+    margin-block: 24px 16px;
+  }
+}
+
+.tabs {
+  margin-top: 0;
 }

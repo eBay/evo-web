@@ -1,0 +1,111 @@
+@use "@ebay/skin/src/sass/mixins/public/typography-mixins";
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  margin: 1rem 0;
+}
+
+.giant3 {
+  @include typography-mixins.typography-giant-3;
+}
+
+.giant2 {
+  @include typography-mixins.typography-giant-2;
+}
+
+.giant1 {
+  @include typography-mixins.typography-giant-1;
+}
+
+.large2 {
+  @include typography-mixins.typography-large-2;
+}
+
+.large2Secondary {
+  @include typography-mixins.typography-large-2-secondary;
+}
+
+.large1 {
+  @include typography-mixins.typography-large-1;
+}
+
+.large1Secondary {
+  @include typography-mixins.typography-large-1-secondary;
+}
+
+.mediumBold {
+  @include typography-mixins.typography-medium-bold;
+}
+
+.medium {
+  @include typography-mixins.typography-medium;
+}
+
+.mediumSecondary {
+  @include typography-mixins.typography-medium-secondary;
+}
+
+.regularBold {
+  @include typography-mixins.typography-regular-bold;
+}
+
+.regular {
+  @include typography-mixins.typography-regular;
+}
+
+.regularSecondary {
+  @include typography-mixins.typography-regular-secondary;
+}
+
+.smallBold {
+  @include typography-mixins.typography-small-bold;
+}
+
+.small {
+  @include typography-mixins.typography-small;
+}
+
+.smallSecondary {
+  @include typography-mixins.typography-small-secondary;
+}
+
+/* large screen titles */
+.giantScreenLarge {
+  @include typography-mixins.title-giant-screen-large;
+}
+
+.largeScreenLarge {
+  @include typography-mixins.title-large-screen-large;
+}
+
+.mediumScreenLarge {
+  @include typography-mixins.title-medium-screen-large;
+}
+
+.smallScreenLarge {
+  @include typography-mixins.title-small-screen-large;
+}
+
+/* small screen titles */
+
+.giantScreenSmall {
+  @include typography-mixins.title-giant-screen-small;
+}
+
+.largeScreenSmall {
+  @include typography-mixins.title-large-screen-small;
+}
+
+.mediumScreenSmall {
+  @include typography-mixins.title-medium-screen-small;
+}
+
+.smallScreenSmall {
+  @include typography-mixins.title-small-screen-small;
+}
+

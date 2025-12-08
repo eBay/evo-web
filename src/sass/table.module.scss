@@ -1,0 +1,19 @@
+.table {
+  border-collapse: collapse;
+  margin: var(--spacing-300) 0;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-100);
+  text-align: left;
+}
+
+.table th {
+  background-color: var(--color-background-tertiary);
+}
+
+.table td {
+  border-bottom: 1px solid #eee;
+}

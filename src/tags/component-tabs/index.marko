@@ -1,4 +1,5 @@
 import { getMetadataFromUrl } from "../../data";
+import styles from "./style.module.scss";
 export interface Input {
   content?: Marko.Body;
 }
@@ -6,12 +7,14 @@ export interface Input {
   $global.url.pathname,
 )>
 
+<const/badgeClass=["badge", styles.badge]>
+
 <if=metadata>
   <const/getAriaCurrentValue(tabName: string) {
     return currentTab === tabName ? "page" : undefined;
   }>
-  <div class="component-page">
-    <div class="fake-tabs">
+  <div class=styles.component>
+    <div class=["fake-tabs", styles.tabs]>
       <ul
         class="fake-tabs__items"
         role="tablist"
@@ -39,7 +42,7 @@ export interface Input {
             aria-current=getAriaCurrentValue("css")>
             CSS
             <span
-              class="badge"
+              class=badgeClass
               role="img"
               aria-label=`Static version ${dsComponent?.version || ""}`>
               ${dsComponent?.version || ""}
@@ -50,7 +53,7 @@ export interface Input {
           <a href=componentUrls?.marko target="_blank">
             Marko Storybook
             <span
-              class="badge"
+              class=badgeClass
               role="img"
               aria-label=`Marko version ${dsComponent?.markoVersion || ""}`>
               ${dsComponent?.markoVersion || ""}
@@ -69,7 +72,7 @@ export interface Input {
             React Storybook
 
             <span
-              class="badge"
+              class=badgeClass
               role="img"
               aria-label=`React version ${dsComponent?.reactVersion || ""}`>
               ${dsComponent?.reactVersion || ""}

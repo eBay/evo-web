@@ -1,0 +1,27 @@
+.table {
+  border: 1px solid var(--color-stroke-subtle);
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table th {
+  text-transform: uppercase;
+
+  &:first-child {
+    width: 175px;
+  }
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-100);
+  text-align: left;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: var(--color-background-secondary);
+}
+
+.table td {
+  border-top: 1px solid var(--color-stroke-subtle);
+}

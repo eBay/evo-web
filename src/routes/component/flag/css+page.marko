@@ -1,4 +1,5 @@
 import flags from "../../../data/flags";
+import styles from "../../../sass/global.module.scss";
 <div id="flag">
   <section-header/>
 
@@ -65,9 +66,9 @@ import flags from "../../../data/flags";
     </p>
   </highlight-code>
 
-  <ul class="demo-flag-boxes">
+  <ul class=styles.flag>
     <for|flag| of=(flags.flags.list)>
-      <li class="demo-flag-box">
+      <li>
         <b>${flag.code}</b>
         <span
           role="img"

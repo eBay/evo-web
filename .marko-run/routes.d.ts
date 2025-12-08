@@ -3950,18 +3950,6 @@ declare module "../src/routes/guide-examples/page-grid-blog-stretchy-nested/+lay
   }
 }
 
-declare module "../src/routes/guide-examples/page-grid-pricing/+layout.marko" {
-  export interface Input extends Run.LayoutInput<typeof import("../src/routes/guide-examples/page-grid-pricing/+layout.marko")> {}
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guide-examples/page-grid-pricing"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
 declare module "../src/routes/guide-examples/skeleton-examples/+layout.marko" {
   export interface Input extends Run.LayoutInput<typeof import("../src/routes/guide-examples/skeleton-examples/+layout.marko")> {}
   namespace MarkoRun {
