@@ -1,0 +1,40 @@
+@use "../../sass/page-grid";
+@use "@ebay/skin/src/sass/bundles/skin-headless";
+@use "@ebay/skin/src/tokens/evo-core";
+@use "@ebay/skin/src/tokens/evo-light-class";
+@use "@ebay/skin/src/tokens/evo-dark-class";
+@use "@ebay/skin/src/tokens/evo-live-light-class";
+@use "@ebay/skin/src/tokens/evo-live-dark-class";
+
+@use "../../sass/site-main";
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+}
+
+.main .layout-grid {
+  --layout-grid-columns-min: 1;
+  --layout-grid-columns-xs: 2;
+  --layout-grid-columns-sm: 2;
+  --layout-grid-columns-md: 2;
+  --layout-grid-columns-lg: 2;
+  --layout-grid-columns-xl: 2;
+  --layout-grid-columns-xl2: 2;
+  --layout-grid-columns-xl3: 2;
+  --layout-grid-columns-xl4: 2;
+  --layout-grid-cell-gap: 10px;
+
+  width: 50vw;
+}
+
+.main nav > ul > li div {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 50px 30px;
+  text-align: center;
+  white-space: nowrap;
+}

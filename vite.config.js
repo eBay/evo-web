@@ -1,8 +1,15 @@
-import { defineConfig } from "vite";
 import { resolve } from "path";
+import { defineConfig } from "vite";
+import { patchCssModules } from "vite-css-modules";
+
 export default defineConfig({
-  assetsInclude: ["**/*.md"],
   base: process.env.BASE_URL,
+  plugins: [
+    patchCssModules({
+      exportMode: "named",
+      generateSourceTypes: true,
+    }),
+  ],
   resolve: {
     alias: {
       "@ebay/design-tokens": resolve(

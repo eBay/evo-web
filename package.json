@@ -177,6 +177,7 @@
     "typescript-eslint": "^8.47.0",
     "visual-html": "^2.1.8",
     "vite": "^7.2.2",
+    "vite-css-modules": "^1.12.0",
     "vite-plugin-cjs-interop": "^2.3.0",
     "vitest": "^4.0.10",
     "xmlserializer": "^0.6.1",

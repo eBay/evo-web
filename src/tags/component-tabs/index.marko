@@ -1,5 +1,5 @@
 import { getMetadataFromUrl } from "../../data";
-import styles from "./style.module.scss";
+import { badge, component, tabs } from "./style.module.scss";
 export interface Input {
   content?: Marko.Body;
 }
@@ -7,14 +7,14 @@ export interface Input {
   $global.url.pathname,
 )>
 
-<const/badgeClass=["badge", styles.badge]>
+<const/badgeClass=[badge]>
 
 <if=metadata>
   <const/getAriaCurrentValue(tabName: string) {
     return currentTab === tabName ? "page" : undefined;
   }>
-  <div class=styles.component>
-    <div class=["fake-tabs", styles.tabs]>
+  <div class=component>
+    <div class=["fake-tabs", tabs]>
       <ul
         class="fake-tabs__items"
         role="tablist"
@@ -40,7 +40,7 @@ export interface Input {
             href=componentUrls?.css
             role="tab"
             aria-current=getAriaCurrentValue("css")>
-            CSS
+            CSS${" "}
             <span
               class=badgeClass
               role="img"
@@ -51,7 +51,7 @@ export interface Input {
         </li>
         <li class="fake-tabs__item fake-tabs__items--large">
           <a href=componentUrls?.marko target="_blank">
-            Marko Storybook
+            Marko Storybook${" "}
             <span
               class=badgeClass
               role="img"
@@ -69,7 +69,7 @@ export interface Input {
         </li>
         <li class="fake-tabs__item fake-tabs__items--large">
           <a href=componentUrls?.react target="_blank">
-            React Storybook
+            React Storybook${" "}
 
             <span
               class=badgeClass
@@ -88,7 +88,7 @@ export interface Input {
         </li>
         <li class="fake-tabs__item fake-tabs__items--large">
           <a href=componentUrls?.dsUrl target="_blank">
-            Design System
+            Design System${" "}
             <svg
               class="icon icon--16"
               height="16"

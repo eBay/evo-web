@@ -1,11 +1,11 @@
-.img {
-  border-radius: var(--border-radius-100);
-  display: block;
-}
-
 .subtitle {
   font-size: var(--font-size-18);
   font-weight: 400;
   margin-bottom: var(--spacing-200);
   margin-top: var(--spacing-200);
+}
+
+.image {
+  border-radius: var(--border-radius-100);
+  display: block;
 }

@@ -1,104 +1,67 @@
-import styles from "./style.module.scss";
-<footer class=styles.footer role="contentinfo">
-  <div class="page-grid-container">
-    <div class=styles.content>
-      <div class=styles.column>
-        <div class=styles.brand>
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
-          </svg>
-          <span class=styles.brandTitle>Evo Web</span>
-        </div>
-        <p>
+import {
+  footer,
+  content,
+  column,
+  brand,
+  brandTitle,
+  end,
+} from "./style.module.scss";
+footer class=footer role="contentinfo"
+  div.page-grid-container
+    div class=content
+      div class=column
+        div class=brand
+          svg
+            ,width="24"
+            ,height="24"
+            ,viewBox="0 0 24 24"
+            ,fill="none"
+            ,stroke="currentColor"
+            ,stroke-width="2"
+            ,stroke-linecap="round"
+            ,stroke-linejoin="round"
+            ,aria-hidden="true"
+            polyline points="16 18 22 12 16 6"
+            polyline points="8 6 2 12 8 18"
+          span class=brandTitle -- Evo Web
+        p --
           Building accessible and performant components for the modern,
           responsive web. Empowering developers to create inclusive user
           experiences.
-        </p>
 
-        <a
-          href="https://github.com/eBay/evo-web"
-          aria-label="Evo-web GitHub">
-          <svg class="icon icon--24">
-            <use href="github-logo-white.svg"/>
-          </svg>
-        </a>
-      </div>
+        a href="https://github.com/eBay/evo-web" aria-label="Evo-web GitHub"
+          svg.icon.icon--24
+            use href="github-logo-white.svg"
 
-      <div class=styles.column>
-        <h3>Main</h3>
-        <ul>
-          <li>
-            <a href="components">
-              Components
-            </a>
-          </li>
-          <li>
-            <a href="accessibility">
-              Accessibility
-            </a>
-          </li>
-          <li>
-            <a href="guides">
-              Guides
-            </a>
-          </li>
-          <li>
-            <a role="menuitem" href="evo-css-components">
-              Evo CSS Components
-            </a>
-          </li>
-          <li>
-            <a role="menuitem" href="evo-marko-components">
-              Evo Marko Components
-            </a>
-          </li>
-          <li>
-            <a role="menuitem" href="evo-react-components">
-              Evo React Components
-            </a>
-          </li>
-          <li>
-            <a href="sitemap">
-              Sitemap
-            </a>
-          </li>
-        </ul>
-      </div>
+      div class=column
+        h3 -- Main
+        ul
+          li
+            a href="components" -- Components
+          li
+            a href="accessibility" -- Accessibility
+          li
+            a href="guides" -- Guides
+          li
+            a role="menuitem" href="evo-css-components" -- Evo CSS Components
+          li
+            a role="menuitem" href="evo-marko-components"
+              -- Evo Marko Components
+          li
+            a role="menuitem" href="evo-react-components"
+              -- Evo React Components
+          li
+            a href="sitemap" -- Sitemap
 
-      <div class=styles.column>
-        <h3>Web Guides and Best Practices</h3>
-        <ul>
-          <li>
-            <a href="guides/page-grid">
-              Page Grid Use Guide
-            </a>
-          </li>
-          <li>
-            <a href="guides/animation">
-              Animation Guide
-            </a>
-          </li>
-          <li>
-            <a href="guides/skeleton">
-              Skeleton Use Guide
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+      div class=column
+        h3 -- Web Guides and Best Practices
+        ul
+          li
+            a href="guides/page-grid" -- Page Grid Use Guide
+          li
+            a href="guides/animation" -- Animation Guide
+          li
+            a href="guides/skeleton" -- Skeleton Use Guide
 
-    <div class=styles.end>
-      <p>© 2025 Evo Web. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+    div class=end
+      p -- © 2025 Evo Web. All rights reserved.

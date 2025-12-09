@@ -1,14 +1,14 @@
 import { getMetadataFromUrl } from "../../data";
-import styles from "./style.module.scss";
+import {header, link} from "./style.module.scss";
 
 <const/{ dsComponent, properName }=getMetadataFromUrl($global.url.pathname)>
 export interface Input {
   header?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
-<div class=styles.header>
+<div class=header>
   <${input.header || "h1"}>${properName} Component</>
 
-  <span class=styles.link>
+  <span class=link>
     <a
       href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
       target="_blank">

@@ -1,3 +1,4 @@
+import "./_index/+layout.style.scss";
 <style.scss>
   .landing-page {
     display: flex;
@@ -8,7 +9,7 @@
 </style>
 <html-script>
   (async function() {
-    const skinSite = window.location.href.replace("skin/", "");
+    const skinSite = window.location.href.replace("skin/", "").replace("component/", "components/");
     if ((await fetch(skinSite, { method:"HEAD" })).status === 200) {
       window.location.replace(skinSite);
     }
