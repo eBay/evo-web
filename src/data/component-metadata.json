@@ -98,7 +98,7 @@
       "version": "1.0"
     },
     "markoStorybookPath": "/docs/layout-ebay-card--documentation",
-    "description": "The Card component is a versatile and visually appealing UI pattern."
+    "description": "High-level entity view with a call to action; typically part of a set."
   },
   "carousel": {
     "component": "carousel",

@@ -26,16 +26,10 @@ declare module "@marko/run" {
 			"/accessibility/anti-patterns/setting-focus-on-page-load": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/setting-focus-on-page-load+meta.json"); };
 			"/accessibility/anti-patterns/tabindex-itis": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/tabindex-itis+meta.json"); };
 			"/accessibility/anti-patterns/title-tooltip": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/title-tooltip+meta.json"); };
-			"/accessibility/appendix": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/+meta.json"); };
-			"/accessibility/appendix/accessibility-pattern-template": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/accessibility-pattern-template+meta.json"); };
-			"/accessibility/appendix/aria-essentials": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/aria-essentials+meta.json"); };
-			"/accessibility/appendix/checklist": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/checklist+meta.json"); };
-			"/accessibility/appendix/faq": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/faq+meta.json"); };
-			"/accessibility/appendix/keyboard-interface": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/keyboard-interface+meta.json"); };
-			"/accessibility/appendix/known-issues": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/known-issues+meta.json"); };
-			"/accessibility/appendix/legacy-patterns": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/legacy-patterns+meta.json"); };
-			"/accessibility/appendix/pattern-naming-scheme": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/pattern-naming-scheme+meta.json"); };
-			"/accessibility/appendix/references": { verb: "get"; meta: typeof import("../src/routes/accessibility/appendix/references+meta.json"); };
+			"/accessibility/misc": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/+meta.json"); };
+			"/accessibility/misc/aria-essentials": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/aria-essentials+meta.json"); };
+			"/accessibility/misc/component-naming-scheme": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/component-naming-scheme+meta.json"); };
+			"/accessibility/misc/faq": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/faq+meta.json"); };
 			"/accessibility/patterns": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/+meta.json"); };
 			"/accessibility/patterns/description-list": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/description-list+meta.json"); };
 			"/accessibility/patterns/fake-menu-button": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/fake-menu-button+meta.json"); };
@@ -53,18 +47,20 @@ declare module "@marko/run" {
 			"/accessibility/patterns/region": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/region+meta.json"); };
 			"/accessibility/patterns/skip-navigation": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/skip-navigation+meta.json"); };
 			"/accessibility/patterns/table-cell": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/table-cell+meta.json"); };
-			"/accessibility/patterns/tile": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/tile+meta.json"); };
 			"/accessibility/patterns/time": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/time+meta.json"); };
 			"/accessibility/techniques": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/+meta.json"); };
 			"/accessibility/techniques/active-descendant": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/active-descendant+meta.json"); };
 			"/accessibility/techniques/alternative-text": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/alternative-text+meta.json"); };
 			"/accessibility/techniques/ambiguous-label": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/ambiguous-label+meta.json"); };
 			"/accessibility/techniques/background-icon": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/background-icon+meta.json"); };
+			"/accessibility/techniques/keyboard-interface": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/keyboard-interface+meta.json"); };
 			"/accessibility/techniques/keyboard-trap": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/keyboard-trap+meta.json"); };
 			"/accessibility/techniques/live-region": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/live-region+meta.json"); };
 			"/accessibility/techniques/offscreen-text": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/offscreen-text+meta.json"); };
 			"/accessibility/techniques/roving-tabindex": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/roving-tabindex+meta.json"); };
 			"/accessibility/techniques/skip-to-main-content": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/skip-to-main-content+meta.json"); };
+			"/accessibility/testing/checklist": { verb: "get"; meta: typeof import("../src/routes/accessibility/testing/checklist+meta.json"); };
+			"/accessibility/testing/known-issues": { verb: "get"; meta: typeof import("../src/routes/accessibility/testing/known-issues+meta.json"); };
 			"/component": { verb: "get"; meta: typeof import("../src/routes/component/+meta.json"); };
 			"/component/accordion": { verb: "get"; meta: typeof import("../src/routes/component/accordion/+meta.json"); };
 			"/component/accordion/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/accordion/accessibility+meta.json"); };
@@ -513,10 +509,10 @@ declare module "../src/routes/accessibility/anti-patterns/title-tooltip+page.mar
   }
 }
 
-declare module "../src/routes/accessibility/appendix/+page.marko" {
+declare module "../src/routes/accessibility/misc/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix"];
+    export type Route = Run.Routes["/accessibility/misc"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -524,10 +520,10 @@ declare module "../src/routes/accessibility/appendix/+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/appendix/accessibility-pattern-template+page.marko" {
+declare module "../src/routes/accessibility/misc/aria-essentials+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/accessibility-pattern-template"];
+    export type Route = Run.Routes["/accessibility/misc/aria-essentials"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -535,10 +531,10 @@ declare module "../src/routes/accessibility/appendix/accessibility-pattern-templ
   }
 }
 
-declare module "../src/routes/accessibility/appendix/aria-essentials+page.marko" {
+declare module "../src/routes/accessibility/misc/component-naming-scheme+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/aria-essentials"];
+    export type Route = Run.Routes["/accessibility/misc/component-naming-scheme"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -546,76 +542,10 @@ declare module "../src/routes/accessibility/appendix/aria-essentials+page.marko"
   }
 }
 
-declare module "../src/routes/accessibility/appendix/checklist+page.marko" {
+declare module "../src/routes/accessibility/misc/faq+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/checklist"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/appendix/faq+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/faq"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/appendix/keyboard-interface+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/keyboard-interface"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/appendix/known-issues+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/known-issues"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/appendix/legacy-patterns+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/legacy-patterns"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/appendix/pattern-naming-scheme+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/pattern-naming-scheme"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/appendix/references+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/appendix/references"];
+    export type Route = Run.Routes["/accessibility/misc/faq"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -810,17 +740,6 @@ declare module "../src/routes/accessibility/patterns/table-cell+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/tile+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility/patterns/tile"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
 declare module "../src/routes/accessibility/patterns/time+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
@@ -887,6 +806,17 @@ declare module "../src/routes/accessibility/techniques/background-icon+page.mark
   }
 }
 
+declare module "../src/routes/accessibility/techniques/keyboard-interface+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/accessibility/techniques/keyboard-interface"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
 declare module "../src/routes/accessibility/techniques/keyboard-trap+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
@@ -935,6 +865,28 @@ declare module "../src/routes/accessibility/techniques/skip-to-main-content+page
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/skip-to-main-content"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/accessibility/testing/checklist+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/accessibility/testing/checklist"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/accessibility/testing/known-issues+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/accessibility/testing/known-issues"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3894,7 +3846,7 @@ declare module "../src/routes/+layout.marko" {
   export interface Input extends Run.LayoutInput<typeof import("../src/routes/+layout.marko")> {}
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/" | "/evo-css-components" | "/evo-marko-components" | "/evo-react-components" | "/sitemap" | "/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/appendix" | "/accessibility/appendix/accessibility-pattern-template" | "/accessibility/appendix/aria-essentials" | "/accessibility/appendix/checklist" | "/accessibility/appendix/faq" | "/accessibility/appendix/keyboard-interface" | "/accessibility/appendix/known-issues" | "/accessibility/appendix/legacy-patterns" | "/accessibility/appendix/pattern-naming-scheme" | "/accessibility/appendix/references" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/tile" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/component" | "/component/accordion" | "/component/accordion/accessibility" | "/component/accordion/css" | "/component/alert-dialog" | "/component/alert-dialog/accessibility" | "/component/alert-dialog/css" | "/component/avatar" | "/component/avatar/accessibility" | "/component/avatar/css" | "/component/badge" | "/component/badge/accessibility" | "/component/badge/css" | "/component/breadcrumbs" | "/component/breadcrumbs/accessibility" | "/component/breadcrumbs/css" | "/component/button" | "/component/button/accessibility" | "/component/button/css" | "/component/button/marko" | "/component/button/react" | "/component/calendar" | "/component/calendar/accessibility" | "/component/calendar/css" | "/component/card" | "/component/card/accessibility" | "/component/card/css" | "/component/carousel" | "/component/carousel/accessibility" | "/component/carousel/css" | "/component/ccd" | "/component/ccd/accessibility" | "/component/ccd/css" | "/component/chart-legend" | "/component/chart-legend/accessibility" | "/component/chart-legend/css" | "/component/checkbox" | "/component/checkbox/accessibility" | "/component/checkbox/css" | "/component/chip" | "/component/chip/accessibility" | "/component/chip/css" | "/component/chips-combobox" | "/component/chips-combobox/accessibility" | "/component/chips-combobox/css" | "/component/combobox" | "/component/combobox/accessibility" | "/component/combobox/css" | "/component/confirm-dialog" | "/component/confirm-dialog/accessibility" | "/component/confirm-dialog/css" | "/component/cta-button" | "/component/cta-button/accessibility" | "/component/cta-button/css" | "/component/date-textbox" | "/component/date-textbox/accessibility" | "/component/date-textbox/css" | "/component/details" | "/component/details/accessibility" | "/component/details/css" | "/component/donut-chart" | "/component/donut-chart/accessibility" | "/component/donut-chart/css" | "/component/education-notice" | "/component/education-notice/accessibility" | "/component/education-notice/css" | "/component/eek" | "/component/eek/accessibility" | "/component/eek/css" | "/component/field" | "/component/field/accessibility" | "/component/field/css" | "/component/file-input" | "/component/file-input/accessibility" | "/component/file-input/css" | "/component/file-preview-card" | "/component/file-preview-card/accessibility" | "/component/file-preview-card/css" | "/component/file-preview-card-group" | "/component/file-preview-card-group/accessibility" | "/component/file-preview-card-group/css" | "/component/filter-chip" | "/component/filter-chip/accessibility" | "/component/filter-chip/css" | "/component/filter-input" | "/component/filter-input/accessibility" | "/component/filter-input/css" | "/component/flag" | "/component/flag/accessibility" | "/component/flag/css" | "/component/floating-label" | "/component/floating-label/accessibility" | "/component/floating-label/css" | "/component/global" | "/component/global/accessibility" | "/component/global/css" | "/component/icon" | "/component/icon/accessibility" | "/component/icon/css" | "/component/icon-button" | "/component/icon-button/accessibility" | "/component/icon-button/css" | "/component/image-placeholder" | "/component/image-placeholder/accessibility" | "/component/image-placeholder/css" | "/component/infotip" | "/component/infotip/accessibility" | "/component/infotip/css" | "/component/inline-notice" | "/component/inline-notice/accessibility" | "/component/inline-notice/css" | "/component/item-tile" | "/component/item-tile/accessibility" | "/component/item-tile/css" | "/component/item-tile-group" | "/component/item-tile-group/accessibility" | "/component/item-tile-group/css" | "/component/layout-grid" | "/component/layout-grid/accessibility" | "/component/layout-grid/css" | "/component/lightbox-dialog" | "/component/lightbox-dialog/accessibility" | "/component/lightbox-dialog/css" | "/component/link" | "/component/link/accessibility" | "/component/link/css" | "/component/list" | "/component/list/accessibility" | "/component/list/css" | "/component/listbox" | "/component/listbox/accessibility" | "/component/listbox/css" | "/component/listbox-button" | "/component/listbox-button/accessibility" | "/component/listbox-button/css" | "/component/marketsans" | "/component/marketsans/accessibility" | "/component/marketsans/css" | "/component/menu" | "/component/menu/accessibility" | "/component/menu/css" | "/component/menu-button" | "/component/menu-button/accessibility" | "/component/menu-button/css" | "/component/number-input" | "/component/number-input/accessibility" | "/component/number-input/css" | "/component/page-grid" | "/component/page-grid/accessibility" | "/component/page-grid/css" | "/component/page-notice" | "/component/page-notice/accessibility" | "/component/page-notice/css" | "/component/pagination" | "/component/pagination/accessibility" | "/component/pagination/css" | "/component/panel-dialog" | "/component/panel-dialog/accessibility" | "/component/panel-dialog/css" | "/component/phone-input" | "/component/phone-input/accessibility" | "/component/phone-input/css" | "/component/progress-bar" | "/component/progress-bar/accessibility" | "/component/progress-bar/css" | "/component/progress-bar-expressive" | "/component/progress-bar-expressive/accessibility" | "/component/progress-bar-expressive/css" | "/component/progress-spinner" | "/component/progress-spinner/accessibility" | "/component/progress-spinner/css" | "/component/progress-stepper" | "/component/progress-stepper/accessibility" | "/component/progress-stepper/css" | "/component/radio" | "/component/radio/accessibility" | "/component/radio/css" | "/component/sass" | "/component/section-notice" | "/component/section-notice/accessibility" | "/component/section-notice/css" | "/component/section-title" | "/component/section-title/accessibility" | "/component/section-title/css" | "/component/segmented-buttons" | "/component/segmented-buttons/accessibility" | "/component/segmented-buttons/css" | "/component/select" | "/component/select/accessibility" | "/component/select/css" | "/component/selection-chip" | "/component/signal" | "/component/signal/accessibility" | "/component/signal/css" | "/component/skeleton" | "/component/skeleton/accessibility" | "/component/skeleton/css" | "/component/snackbar-dialog" | "/component/snackbar-dialog/accessibility" | "/component/snackbar-dialog/css" | "/component/split-button" | "/component/split-button/accessibility" | "/component/split-button/css" | "/component/star-rating" | "/component/star-rating/accessibility" | "/component/star-rating/css" | "/component/star-rating-select" | "/component/star-rating-select/accessibility" | "/component/star-rating-select/css" | "/component/svg" | "/component/svg/accessibility" | "/component/svg/css" | "/component/switch" | "/component/switch/accessibility" | "/component/switch/css" | "/component/table" | "/component/table/accessibility" | "/component/table/css" | "/component/tabs" | "/component/tabs/accessibility" | "/component/tabs/css" | "/component/textbox" | "/component/textbox/accessibility" | "/component/textbox/css" | "/component/toast-dialog" | "/component/toast-dialog/accessibility" | "/component/toast-dialog/css" | "/component/toggle-button" | "/component/toggle-button/accessibility" | "/component/toggle-button/css" | "/component/toggle-button-group" | "/component/toggle-button-group/accessibility" | "/component/toggle-button-group/css" | "/component/tokens" | "/component/tokens/accessibility" | "/component/tokens/css" | "/component/tooltip" | "/component/tooltip/accessibility" | "/component/tooltip/css" | "/component/tourtip" | "/component/tourtip/accessibility" | "/component/tourtip/css" | "/component/typography" | "/component/typography/accessibility" | "/component/typography/css" | "/component/utility" | "/component/utility/accessibility" | "/component/utility/css" | "/guide-examples/page-grid-blog-stretchy-nested" | "/guide-examples/page-grid-blog-stretchy-subgrid" | "/guide-examples/page-grid-pricing" | "/guide-examples/skeleton-examples/buffered/example-1" | "/guide-examples/skeleton-examples/csr/example-1" | "/guide-examples/skeleton-examples/csr/example-2" | "/guide-examples/skeleton-examples/csr/example-3" | "/guide-examples/skeleton-examples/csr/example-4" | "/guide-examples/skeleton-examples/in-order/example-1a" | "/guide-examples/skeleton-examples/in-order/example-1b" | "/guide-examples/skeleton-examples/in-order/example-2a" | "/guide-examples/skeleton-examples/in-order/example-2b" | "/guide-examples/skeleton-examples/out-of-order/example-1" | "/guide-examples/skeleton-examples/out-of-order/example-2" | "/guide-examples/skeleton-examples/out-of-order/example-3" | "/guide-examples/skeleton-examples/out-of-order/example-4" | "/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton"];
+    export type Route = Run.Routes["/" | "/evo-css-components" | "/evo-marko-components" | "/evo-react-components" | "/sitemap" | "/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues" | "/component" | "/component/accordion" | "/component/accordion/accessibility" | "/component/accordion/css" | "/component/alert-dialog" | "/component/alert-dialog/accessibility" | "/component/alert-dialog/css" | "/component/avatar" | "/component/avatar/accessibility" | "/component/avatar/css" | "/component/badge" | "/component/badge/accessibility" | "/component/badge/css" | "/component/breadcrumbs" | "/component/breadcrumbs/accessibility" | "/component/breadcrumbs/css" | "/component/button" | "/component/button/accessibility" | "/component/button/css" | "/component/button/marko" | "/component/button/react" | "/component/calendar" | "/component/calendar/accessibility" | "/component/calendar/css" | "/component/card" | "/component/card/accessibility" | "/component/card/css" | "/component/carousel" | "/component/carousel/accessibility" | "/component/carousel/css" | "/component/ccd" | "/component/ccd/accessibility" | "/component/ccd/css" | "/component/chart-legend" | "/component/chart-legend/accessibility" | "/component/chart-legend/css" | "/component/checkbox" | "/component/checkbox/accessibility" | "/component/checkbox/css" | "/component/chip" | "/component/chip/accessibility" | "/component/chip/css" | "/component/chips-combobox" | "/component/chips-combobox/accessibility" | "/component/chips-combobox/css" | "/component/combobox" | "/component/combobox/accessibility" | "/component/combobox/css" | "/component/confirm-dialog" | "/component/confirm-dialog/accessibility" | "/component/confirm-dialog/css" | "/component/cta-button" | "/component/cta-button/accessibility" | "/component/cta-button/css" | "/component/date-textbox" | "/component/date-textbox/accessibility" | "/component/date-textbox/css" | "/component/details" | "/component/details/accessibility" | "/component/details/css" | "/component/donut-chart" | "/component/donut-chart/accessibility" | "/component/donut-chart/css" | "/component/education-notice" | "/component/education-notice/accessibility" | "/component/education-notice/css" | "/component/eek" | "/component/eek/accessibility" | "/component/eek/css" | "/component/field" | "/component/field/accessibility" | "/component/field/css" | "/component/file-input" | "/component/file-input/accessibility" | "/component/file-input/css" | "/component/file-preview-card" | "/component/file-preview-card/accessibility" | "/component/file-preview-card/css" | "/component/file-preview-card-group" | "/component/file-preview-card-group/accessibility" | "/component/file-preview-card-group/css" | "/component/filter-chip" | "/component/filter-chip/accessibility" | "/component/filter-chip/css" | "/component/filter-input" | "/component/filter-input/accessibility" | "/component/filter-input/css" | "/component/flag" | "/component/flag/accessibility" | "/component/flag/css" | "/component/floating-label" | "/component/floating-label/accessibility" | "/component/floating-label/css" | "/component/global" | "/component/global/accessibility" | "/component/global/css" | "/component/icon" | "/component/icon/accessibility" | "/component/icon/css" | "/component/icon-button" | "/component/icon-button/accessibility" | "/component/icon-button/css" | "/component/image-placeholder" | "/component/image-placeholder/accessibility" | "/component/image-placeholder/css" | "/component/infotip" | "/component/infotip/accessibility" | "/component/infotip/css" | "/component/inline-notice" | "/component/inline-notice/accessibility" | "/component/inline-notice/css" | "/component/item-tile" | "/component/item-tile/accessibility" | "/component/item-tile/css" | "/component/item-tile-group" | "/component/item-tile-group/accessibility" | "/component/item-tile-group/css" | "/component/layout-grid" | "/component/layout-grid/accessibility" | "/component/layout-grid/css" | "/component/lightbox-dialog" | "/component/lightbox-dialog/accessibility" | "/component/lightbox-dialog/css" | "/component/link" | "/component/link/accessibility" | "/component/link/css" | "/component/list" | "/component/list/accessibility" | "/component/list/css" | "/component/listbox" | "/component/listbox/accessibility" | "/component/listbox/css" | "/component/listbox-button" | "/component/listbox-button/accessibility" | "/component/listbox-button/css" | "/component/marketsans" | "/component/marketsans/accessibility" | "/component/marketsans/css" | "/component/menu" | "/component/menu/accessibility" | "/component/menu/css" | "/component/menu-button" | "/component/menu-button/accessibility" | "/component/menu-button/css" | "/component/number-input" | "/component/number-input/accessibility" | "/component/number-input/css" | "/component/page-grid" | "/component/page-grid/accessibility" | "/component/page-grid/css" | "/component/page-notice" | "/component/page-notice/accessibility" | "/component/page-notice/css" | "/component/pagination" | "/component/pagination/accessibility" | "/component/pagination/css" | "/component/panel-dialog" | "/component/panel-dialog/accessibility" | "/component/panel-dialog/css" | "/component/phone-input" | "/component/phone-input/accessibility" | "/component/phone-input/css" | "/component/progress-bar" | "/component/progress-bar/accessibility" | "/component/progress-bar/css" | "/component/progress-bar-expressive" | "/component/progress-bar-expressive/accessibility" | "/component/progress-bar-expressive/css" | "/component/progress-spinner" | "/component/progress-spinner/accessibility" | "/component/progress-spinner/css" | "/component/progress-stepper" | "/component/progress-stepper/accessibility" | "/component/progress-stepper/css" | "/component/radio" | "/component/radio/accessibility" | "/component/radio/css" | "/component/sass" | "/component/section-notice" | "/component/section-notice/accessibility" | "/component/section-notice/css" | "/component/section-title" | "/component/section-title/accessibility" | "/component/section-title/css" | "/component/segmented-buttons" | "/component/segmented-buttons/accessibility" | "/component/segmented-buttons/css" | "/component/select" | "/component/select/accessibility" | "/component/select/css" | "/component/selection-chip" | "/component/signal" | "/component/signal/accessibility" | "/component/signal/css" | "/component/skeleton" | "/component/skeleton/accessibility" | "/component/skeleton/css" | "/component/snackbar-dialog" | "/component/snackbar-dialog/accessibility" | "/component/snackbar-dialog/css" | "/component/split-button" | "/component/split-button/accessibility" | "/component/split-button/css" | "/component/star-rating" | "/component/star-rating/accessibility" | "/component/star-rating/css" | "/component/star-rating-select" | "/component/star-rating-select/accessibility" | "/component/star-rating-select/css" | "/component/svg" | "/component/svg/accessibility" | "/component/svg/css" | "/component/switch" | "/component/switch/accessibility" | "/component/switch/css" | "/component/table" | "/component/table/accessibility" | "/component/table/css" | "/component/tabs" | "/component/tabs/accessibility" | "/component/tabs/css" | "/component/textbox" | "/component/textbox/accessibility" | "/component/textbox/css" | "/component/toast-dialog" | "/component/toast-dialog/accessibility" | "/component/toast-dialog/css" | "/component/toggle-button" | "/component/toggle-button/accessibility" | "/component/toggle-button/css" | "/component/toggle-button-group" | "/component/toggle-button-group/accessibility" | "/component/toggle-button-group/css" | "/component/tokens" | "/component/tokens/accessibility" | "/component/tokens/css" | "/component/tooltip" | "/component/tooltip/accessibility" | "/component/tooltip/css" | "/component/tourtip" | "/component/tourtip/accessibility" | "/component/tourtip/css" | "/component/typography" | "/component/typography/accessibility" | "/component/typography/css" | "/component/utility" | "/component/utility/accessibility" | "/component/utility/css" | "/guide-examples/page-grid-blog-stretchy-nested" | "/guide-examples/page-grid-blog-stretchy-subgrid" | "/guide-examples/page-grid-pricing" | "/guide-examples/skeleton-examples/buffered/example-1" | "/guide-examples/skeleton-examples/csr/example-1" | "/guide-examples/skeleton-examples/csr/example-2" | "/guide-examples/skeleton-examples/csr/example-3" | "/guide-examples/skeleton-examples/csr/example-4" | "/guide-examples/skeleton-examples/in-order/example-1a" | "/guide-examples/skeleton-examples/in-order/example-1b" | "/guide-examples/skeleton-examples/in-order/example-2a" | "/guide-examples/skeleton-examples/in-order/example-2b" | "/guide-examples/skeleton-examples/out-of-order/example-1" | "/guide-examples/skeleton-examples/out-of-order/example-2" | "/guide-examples/skeleton-examples/out-of-order/example-3" | "/guide-examples/skeleton-examples/out-of-order/example-4" | "/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3906,7 +3858,7 @@ declare module "../src/routes/accessibility/+layout.marko" {
   export interface Input extends Run.LayoutInput<typeof import("../src/routes/accessibility/+layout.marko")> {}
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/appendix" | "/accessibility/appendix/accessibility-pattern-template" | "/accessibility/appendix/aria-essentials" | "/accessibility/appendix/checklist" | "/accessibility/appendix/faq" | "/accessibility/appendix/keyboard-interface" | "/accessibility/appendix/known-issues" | "/accessibility/appendix/legacy-patterns" | "/accessibility/appendix/pattern-naming-scheme" | "/accessibility/appendix/references" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/tile" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content"];
+    export type Route = Run.Routes["/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
