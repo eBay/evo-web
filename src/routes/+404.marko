@@ -1,4 +1,5 @@
 import "./_index/+layout.style.scss";
+static const basePath = import.meta.env.BASE_URL;
 <style.scss>
   .landing-page {
     display: flex;
@@ -15,12 +16,20 @@ import "./_index/+layout.style.scss";
     }
   })();
 </html-script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href=basePath>
+  </head>
+  <body>
 
-<site-header/>
-<main class="landing-page">
-    <h1>Page not found</h1>
-    <a class="fake-btn fake-btn--primary" href="./">
+    <site-header/>
+    <main class="landing-page">
+      <h1>Page not found</h1>
+      <a class="fake-btn fake-btn--primary" href="./">
         Go home
-    </a>
-</main>
-<site-footer/>
+      </a>
+    </main>
+    <site-footer/>
+  </body>
+</html>
