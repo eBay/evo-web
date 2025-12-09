@@ -1,0 +1,45 @@
+<div class="a11y-pattern-content">
+  <h1>Card Accessibility</h1>
+  <p>
+    An item card is a display element that is not itself interactive, but houses
+    elements, such as an image wrapped by an anchor, an add to favorites button,
+    item title that is also wrapped in an anchor, etc.
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    Cards must be implemented with accessibility in mind. Self-actionable cards
+    should have clear, descriptive accessible names.
+  </p>
+  <p>
+    Avoid nesting complex structures like headings or lists within
+    self-actionable cards, as screen readers will only announce the button or
+    link text.
+  </p>
+  <p>
+    For hybrid cards, ensure they use a
+    <code>&lt;div&gt;</code>
+    container with JavaScript event handling rather than nested
+    interactive elements, which would violate accessibility guidelines.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    The interaction inside an item card should be simple keyboard
+    <code>TAB</code>
+    navigation of interactive elements with the
+    <code>ENTER</code>
+    key activating the element in focus.
+  </p>
+  <h2>Grouped Item Cards</h2>
+  <p>
+    Item cards typically display in groups. Grouped item cards use and inherit
+    the
+    <code>a11y</code>
+    setup of Layout Grid. For more information about using the grouped
+    item cards, please see the
+    <a href="components/layout-grid">
+      Layout Grid pattern
+    </a>
+    .
+  </p>
+</div>

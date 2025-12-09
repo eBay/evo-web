@@ -1,0 +1,79 @@
+<div class="a11y-pattern-content">
+  <h1>Fake Tabs</h1>
+  <h2>Introduction</h2>
+  <p>
+    Fake tabs have the appearance of dynamic
+    <a href="accessibility/disclosure/tabs">
+      tabs
+    </a>
+    , but perform a full page load when clicked.
+  </p>
+  <h2>Working Examples</h2>
+  <p>
+    Experience the pattern in action on our companion
+    <a href="http://ebay.github.io/mindpatterns/disclosure/tabs/">
+      eBay MIND Patterns examples website
+    </a>
+    .
+  </p>
+  <p>
+    Examine the required markup structure on the
+    <a href="https://github.com/ianmcburnie/bones#user-content-fake-tabs">
+      bones GitHub project
+    </a>
+    .
+  </p>
+  <p>
+    View a fully styled example on the
+    <a href="https://opensource.ebay.com/skin/components/tabs/">
+      eBay Skin website
+    </a>
+    .
+  </p>
+  <h2>Best Practices</h2>
+  <p>
+    Fake tabs is a navigation pattern. The “tabs” are simply a list of links
+    with no additional JavaScript behaviour. For
+    <em>dynamic</em>
+    tabs that hide &amp; show content, please consult the disclosure
+    <a href="accessibility/disclosure/tabs">
+      tabs
+    </a>
+    pattern.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <h3>Keyboard</h3>
+  <p>Tab key navigates the fake tabs.</p>
+  <p>The currently “selected” fake tab can remain in the tabindex.</p>
+  <p>Enter key activates a fake tab (i.e. it navigates to the link href).</p>
+  <h3>Screen Reader</h3>
+  <p>Upon entering the list, the number of list items will be announced.</p>
+  <p>
+    The “current” fake tab should be announced as the “current” item (exact
+    words may differ depending on the screen reader).
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-current</strong>
+        </td>
+        <td>
+          Provides AT with programmatic state on the fake-tab that reflects the
+          current URL.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

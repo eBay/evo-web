@@ -4,7 +4,7 @@ import componentMetadata, {
 } from "./component-metadata";
 import { basePath, getFileNameWithoutExtension, getProperName } from "./common";
 export const componentTemplate = import.meta.glob(
-  "../routes/component/*/+page.marko",
+  "../routes/_index/components/*/+page.marko",
   { eager: true },
 );
 
@@ -95,7 +95,7 @@ function getComponentUrls(
   metadata?: ComponentMetadata,
   dsComponent?: DsComponent,
 ) {
-  const componentUrl = `component/${componentName}/`;
+  const componentUrl = `components/${componentName}/`;
 
   return {
     overview: `${componentUrl}`,

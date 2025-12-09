@@ -1,0 +1,20 @@
+import { type IconsData, type Icon } from "../../../../../data/icons";
+import styles from "../../../../../sass/global.module.scss";
+export interface Input {
+  list: Icon[];
+  icons: IconsData["icons"];
+}
+<ul class=styles.icon>
+  <for|icon| of=input.list>
+    <li class=input.icons.largeDocs.indexOf(icon.name) !== -1 && styles.large>
+      <span>${icon.name}</span>
+      <svg
+        aria-hidden="true"
+        class=[input.icons.prefix, `${input.icons.prefix}--${icon.size}`]
+        height=icon.height || 24
+        width=icon.width || 24>
+        <icon-symbol name=icon.name prefix=(input.icons.prefix)/>
+      </svg>
+    </li>
+  </for>
+</ul>

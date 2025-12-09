@@ -1,0 +1,199 @@
+<div class="a11y-pattern-content">
+  <h1>Input Validation</h1>
+  <h3>Introduction</h3>
+  <p>
+    The input validation pattern notifies users of invalid and missing data
+    <em>before</em>
+    a user has attempted to submit the form.
+  </p>
+  <p>
+    To validate a field
+    <em>after</em>
+    the user attempts to submit the form, please view the
+    <a href="accessibility/patterns/form-validation">
+      Form Validation
+    </a>
+    pattern. You may wish to combine both patterns.
+  </p>
+  <h3>Best Practices</h3>
+  <p>
+    The validation of an input may occur on the client at any of the following
+    points:
+  </p>
+  <ol>
+    <li>
+      The input gains focus
+      <ul>
+        <li>
+          This method is not recommended, because an input should be in a valid
+          or invalid state
+          <em>before</em>
+          it receives focus.
+        </li>
+      </ul>
+    </li>
+    <li>
+      The input changes value
+      <ul>
+        <li>
+          This method is an intrusive way of validating an input. Consider it
+          only in certain, exceptional circumstances. It is intrusive because a
+          notification will fire after every key press.
+        </li>
+      </ul>
+    </li>
+    <li>
+      The input loses focus
+      <ul>
+        <li>
+          This is usually a good time to do validation as the user has finished
+          entering their value and now moves onto their next task. Consider the
+          <a href="accessibility/patterns/input-meter">
+            input meter
+          </a>
+          pattern for dynamic feedback to the user after each keystroke.
+          The user must receive polite notification of any error.
+        </li>
+      </ul>
+    </li>
+    <li>
+      The form gets submitted
+      <ul>
+        <li>
+          When a user attempts to submit the form that the input belongs to, the
+          input value may be validated on the client and/or the server. For more
+          details please consult the
+          <a href="accessibility/patterns/form-validation">
+            Form Validation Pattern
+          </a>
+          .
+        </li>
+      </ul>
+    </li>
+  </ol>
+  <p>We recommend methods #3 and #4.</p>
+  <p>
+    We cover method #3 in this pattern, and method #4 as part of the
+    <a href="accessibility/patterns/form-validation">
+      form validation
+    </a>
+    pattern.
+  </p>
+  <p>
+    We highly recommend reading
+    <a href="https://www.nngroup.com/articles/error-message-guidelines/">
+      Error-Message Guidelines
+    </a>
+    by the Norman Nielson Group.
+  </p>
+  <h3>Interaction Design</h3>
+  <p>
+    This section provides interaction design for keyboard, screen reader and
+    pointing devices.
+  </p>
+  <p>
+    This pattern inherits all
+    <a href="components/inline-notice">
+      inline notice
+    </a>
+    interaction design.
+  </p>
+  <h4>Keyboard</h4>
+  <p>
+    Error message text
+    <strong>must</strong>
+    not be keyboard focusable (unless it contains links).
+  </p>
+  <p>
+    Hyperlinks or buttons inside of error message text
+    <strong>must</strong>
+    be keyboard focusable and in logical tab order.
+  </p>
+  <h4>Screen Reader</h4>
+  <p>
+    Error message
+    <strong>must</strong>
+    announce when displayed.
+  </p>
+  <p>
+    Input
+    <strong>must</strong>
+    declare it’s validation state and description.
+  </p>
+  <h3>ARIA Reference</h3>
+  <p>This section gives an overview of our use of ARIA in this pattern.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-invalid</strong>
+        </td>
+        <td>
+          Applied to the input element to notify screen reader of validation
+          state (true or false).
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>
+          Applied to the input element to create a description. Do not confuse
+          “description” with “label” - they are two different things in terms of
+          accessibility.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-live</strong>
+        </td>
+        <td>
+          Creates a live region. Assistive technology will react accordingly to
+          any dynamic change of visibility or content. A setting of ‘polite’
+          means any content changes get appended to the screen reader event
+          queue.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>novalidate</strong>
+        </td>
+        <td>
+          Not an ARIA attribute, but very important to apply this on your forms
+          to disable built in validation. Why? Because the built-in validation
+          messages are not accessible and conflict with our design system
+          guidelines.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>The Future</h3>
+  <p>
+    ARIA 1.1 also offers us a new
+    <code>aria-errormessage</code>
+    property, designed as a replacement for
+    <code>aria-describedby</code>
+    in these situations. However, it is not currently well supported.
+  </p>
+  <p>
+    HTML5 also promises us built-in validation on the client for a number of new
+    input types (number, date, url, etc). However, at the time of writing -
+    support across devices is not good enough for us to consider using them and
+    they should be avoided for now until further notice.
+  </p>
+  <h3>Related Articles</h3>
+  <ul>
+    <li>
+      <a href="https://www.nngroup.com/articles/error-message-guidelines/">
+        Error-Message Guidelines
+      </a>
+      (Norman Nielson Group)
+    </li>
+  </ul>
+</div>

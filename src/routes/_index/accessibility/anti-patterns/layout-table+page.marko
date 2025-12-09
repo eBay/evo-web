@@ -1,0 +1,71 @@
+<div class="a11y-pattern-content">
+  <h1>Layout Table</h1>
+  <p>
+    Do not use the HTML table tags (&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, etc.)
+    for page or module layout.
+  </p>
+  <p>
+    For example, do not use table rows and columns to arrange the header,
+    sidebar and main content areas of a page or module:
+  </p>
+  <pre><code class="language-html">&lt;!-- This is bad! Please do not copy! --&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td colspan=&quot;2&quot;&gt;
+        &lt;!-- page header/banner --&gt;
+        &lt;img src=&quot;sitelogo.jpg&quot; /&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;h2&gt;Sidebar&lt;/h2&gt;
+        &lt;!-- sidebar content --&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;h1&gt;Page Header&lt;/h1&gt;
+        &lt;!-- main content --&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan=&quot;2&quot;&gt;
+        &lt;!-- page footer --&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;!-- Urgh, I felt dirty writing that. The things I do for you all. --&gt;
+</code></pre>
+  <p>
+    The table tags should only be used to represent
+    <a href="components/table">
+      tabular relationships between data
+    </a>
+    . The table tags have semantics that will cause problems for screen
+    reader users if used for layout.
+  </p>
+  <p>
+    For example, in the code example above, the screen reader would pre-announce
+    all elements inside the sidebar as “row 2 column 1”, and all elements in the
+    main content with “row 2 column 2” etc.
+  </p>
+  <p>
+    CSS can, and should, be used to achieve row/column layouts in pages and
+    modules and this layout is transparent to the screen reader user.
+  </p>
+  <h2>Legacy Code</h2>
+  <p>
+    If you have legacy code that you wish to make accessible, and are unable to
+    rewrite your entire markup and CSS, a quick fix is to apply
+    <strong>role=presentation</strong>
+    to the table tag:
+  </p>
+  <pre><code class="language-html">&lt;table role=&quot;presentation&quot;&gt;
+  &lt;!-- rows and columns go here as normal --&gt;
+&lt;/table&gt;
+</code></pre>
+  <p>
+    With this role, visual layout will be maintained but all table, row and
+    column semantics will be removed from the accessibility tree.
+  </p>
+</div>

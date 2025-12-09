@@ -1,4 +1,4 @@
-static const pages = ["component", "accessibility", "guides"];
+static const pages = ["components", "accessibility", "guides"];
 import { components } from "../data";
 export interface Input {
     page?: string;
@@ -11,12 +11,12 @@ export interface Input {
             <div class="site-nav secondary-nav">
                 <nav id="nav" aria-labelledby="navrail-nav_title">
                     <h2 id="navrail-nav_title">
-                        <a href="component/">
+                        <a href="components/">
                             ${input.page?.toLocaleUpperCase()}
                         </a>
                     </h2>
                     <ul role="menubar">
-                        <if=input.page === "component">
+                        <if=input.page === "components">
                             <components-list components=components/>
                         </if>
                         <else if=input.page === "accessibility">

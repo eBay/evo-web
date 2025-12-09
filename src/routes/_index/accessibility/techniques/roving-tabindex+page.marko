@@ -1,0 +1,32 @@
+<div class="a11y-pattern-content">
+  <h1>Roving Tabindex</h1>
+  <p>
+    A roving tab index is a technique whereby only one collection element is in
+    the sequential tab order and can have focus at any given time (i.e. has a
+    tabindex value of zero). All other elements have a negative tabindex. We can
+    say the collection is now more widget-like, as it takes one TAB key press to
+    enter the widget, and one TAB key press to exit the widget. A user changes
+    the roving tabindex state and focus by using the ARROW keys.
+  </p>
+  <p>
+    Compare this to
+    <a href="accessibility/techniques/active-descendant">
+      active-descendant
+    </a>
+    based navigation where focus always remains on one element (usually a
+    textbox), but has the
+    <em>appearance</em>
+    of moving elsewhere when using the arrow keys.
+  </p>
+  <p>
+    Components that utilize a roving tab index are
+    <a href="components/menu">
+      menu
+    </a>
+    and
+    <a href="components/tabs">
+      tabs
+    </a>
+    .
+  </p>
+</div>

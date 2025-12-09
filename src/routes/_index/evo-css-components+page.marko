@@ -1,0 +1,355 @@
+import "../../sass/landing-page.scss";
+<div class="page-grid-container">
+
+  <div class="site-wrapper">
+    <!-- Header/Hero Section -->
+    <div class="hero-card">
+      <h1>Evo CSS Components</h1>
+      <p>
+        Universal, lightweight, and framework-agnostic styling for rapid
+        front-end development. Build beautiful, accessible user interfaces with
+        just 'vanilla' CSS.
+      </p>
+      <div class="hero-card__actions">
+        <a href="components/" class="fake-btn fake-btn--primary">
+          Explore CSS Components
+        </a>
+      </div>
+    </div>
+    <section id="features" class="page-section">
+      <div class="landing-title">
+        <h2>Why Choose Evo CSS?</h2>
+      </div>
+
+      <div class="content-container">
+        <div class="content-card">
+          <div>
+            <svg
+              width="32"
+              height="32"
+              class="icon icon--32"
+              aria-hidden="true">
+              <use href="#icon-lightning-bolt-24"/>
+            </svg>
+          </div>
+          <div class="content-card__body">
+            <h3>Truly Lightweight CSS</h3>
+            <p>
+              Evo components are pure, "vanilla" CSS. No complex build tools,
+              JavaScript overhead, or proprietary syntaxes required. This
+              ensures maximum performance and minimal page weight, making your
+              application feel fast and snappy.
+            </p>
+          </div>
+        </div>
+        <!-- Feature 2: Universal Integration -->
+        <div class="content-card">
+          <div>
+            <svg class="icon icon--32">
+              <use href="#icon-package-24"/>
+            </svg>
+          </div>
+          <div class="content-card__body">
+            <h3>Framework-Agnostic</h3>
+            <p>
+              Designed for flexibility. Whether you are using React, Angular,
+              Vue, Marko, or even legacy HTML, Evo CSS drops in seamlessly. This
+              eliminates integration headaches and allows you to use one style
+              system across your entire technology stack.
+            </p>
+          </div>
+        </div>
+        <!-- Feature 3: Easy Customization & Theming -->
+        <div class="content-card">
+          <div>
+            <svg class="icon icon--32">
+              <use href="#icon-auto-adjust-24"/>
+            </svg>
+          </div>
+          <div class="content-card__body">
+            <h3>Simple to Override and Theme</h3>
+            <p>
+              Built with clean, organized CSS, customization is straightforward.
+              Overriding default styles is as simple as adding your own CSS
+              rules. Leverage CSS variables to quickly manage and switch themes
+              across your whole application.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="landing-title">
+      <h2>About Evo CSS</h2>
+    </div>
+
+    <div class="content-container">
+      <div class="content-card">
+        <div class="content-card__body">
+          <p>
+            Evo CSS is a pure CSS framework, created by a team of passionate
+            frontend engineers at eBay.
+          </p>
+          <p>
+            Evo CSS's default stylesheet represents${" "}
+            <a href="https://playbook.ebay.com">
+              eBay Evo
+            </a>
+            ${" "}- eBay's evolved brand and design system - but Evo CSS also
+            offers${" "}
+            <a href="evo-css-components#token-system">
+              token-based configuration
+            </a>
+            ${" "}to enable non-eBay branded experiences.
+          </p>
+          <p>Skin adheres to the following core principals:</p>
+          <dl>
+            <dt>Accessible</dt>
+            <dd>
+              Skin leverages semantic HTML, SVG & ARIA to apply our styles
+              wherever possible; thus enforcing correct,${" "}
+              <a href="https://github.com/ianmcburnie/bones">
+                accessible markup
+              </a>
+              ${" "}.
+            </dd>
+            <dt>Declarative</dt>
+            <dd>
+              Skin follows the${" "}
+              <a href="https://getbem.com">
+                BEM
+              </a>
+              ${" "}methodology ("Block, Element and Modifier") for structured,
+              human readable code which embraces the power & efficiency of the
+              cascade.
+            </dd>
+            <dt>Decoupled</dt>
+            <dd>
+              Skin is decoupled from the JavaScript layer, meaning the HTML and
+              CSS is agnostic of the frontend framework (BYOJ = Bring Your Own
+              Javascript!)${" "}
+              <sup>*</sup>
+            </dd>
+            <dt>Scalable</dt>
+            <dd>
+              Skin is built on a system of${" "}
+              <a href="https://tr.designtokens.org/format/">
+                design tokens
+              </a>
+              ${" "}(implemented as CSS Variables); enabling a scalable and
+              consistent visual system for UI development.
+            </dd>
+          </dl>
+          <p>
+            <sup>*</sup>
+            ${" "}This website uses${" "}
+            <a href="https://github.com/makeup/makeup-js">
+              makeup-js
+            </a>
+            ${" "}to add some basic interactivity to examples where needed.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Code Example Section (Mockup) -->
+    <section class="page-section">
+      <div class="code-example-container">
+        <div class="code-example-grid">
+          <div class="content-container">
+            <div class="content-card content-card--column">
+              <h2>Getting Started with Evo CSS</h2>
+              <div class="content-card__body">
+                <div id="getting-started-css">
+                  <p>
+                    Skin is distributed via NPM under the${" "}
+                    <code>@ebay/skin</code>
+                    ${" "}package name.
+                  </p>
+                  <p>
+                    To use Skin, the package should be added as a dependency in
+                    your project's${" "}
+                    <code>package.json</code>
+                    ${" "}file.
+                  </p>
+
+                  <highlight-code
+                    type="json"
+                    code='{ "dependencies": { "@ebay/skin": "^latest_version" } }'/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="landing-title">
+      <h2 id="bundling">
+        Bundling
+      </h2>
+    </div>
+    <div class="content-container">
+      <div class="content-card">
+        <div class="content-card__body">
+          <p>
+            Skin supports${" "}
+            <a href="https://webpack.js.org">
+              Webpack
+            </a>
+            ${" "}and${" "}
+            <a href="https://github.com/lasso-js/lasso">
+              Lasso.js
+            </a>
+            ${" "}(deprecated) .
+          </p>
+
+          <h3>Webpack</h3>
+          <p>
+            Add${" "}
+            <code>@ebay/skin</code>
+            ${" "}and${" "}
+            <code>@ebay/browserslist-config</code>
+            ${" "}as dependencies to${" "}
+            <code>package.json</code>
+            ${" "}.
+          </p>
+          <p>
+            The Skin webpack modules will import CSS so make sure to also have${" "}
+            <code>css-loader</code>
+            ${" "}and${" "}
+            <code>style-loader</code>
+            ${" "}as dev dependencies.
+          </p>
+          <highlight-code
+            type="json"
+            code=`
+                        {
+                            "dependencies": {
+                                "@ebay/browserslist-config": "^1",
+                                "@ebay/skin": "^latest_version",
+                            },
+                            "devDependencies": {
+                                "css-loader": "^3",
+                                "style-loader": "^1"
+                            }
+                        }`/>
+
+          <p>Webpack configuration:</p>
+          <highlight-code
+            type="js"
+            code=`
+                        module.exports = {
+                            module: {
+                                rules: [
+                                {
+                                    test: /\.css$/,
+                                    use: [
+                                        'style-loader',
+                                        'css-loader',
+                                    ],
+                                },
+                                ],
+                            },
+                        };`/>
+
+          <p>Usage:</p>
+          <highlight-code type="js" code=`import "@ebay/skin/button";`/>
+
+          <h3>Lasso.js (deprecated)</h3>
+          <p>
+            Add the${" "}
+            <code>@ebay/skin</code>
+            ${" "}module as a${" "}
+            <code>browser.json</code>
+            ${" "}dependency to include the entire set of Skin modules.
+          </p>
+          <highlight-code
+            type="json"
+            code=`
+                        {
+                            "dependencies": [
+                                "@ebay/skin"
+                            ]
+                        }`/>
+
+          <p>Or, alternatively, by specifying modules on a per-need basis.</p>
+
+          <highlight-code
+            type="json"
+            code=`
+                        {
+                            "dependencies": [
+                                "@ebay/skin/tokens",
+                                "@ebay/skin/global",
+                                "@ebay/skin/button",
+                                "@ebay/skin/icon"
+                            ]
+                        }`/>
+        </div>
+      </div>
+    </div>
+
+    <div class="landing-title">
+      <h2 id="token-system">
+        Token System
+      </h2>
+    </div>
+
+    <div class="content-container">
+      <div class="content-card">
+        <div class="content-card__body">
+          <p>
+            Skin's token-based design system leverages${" "}
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">
+              CSS Custom Properties
+            </a>
+            .
+          </p>
+          <p>
+            Tokens are grouped into three distinct sets, that cascade in the
+            following order:
+          </p>
+          <ol>
+            <li>Primitive tokens</li>
+            <li>Semantic tokens for light mode</li>
+            <li>Semantic tokens for dark mode</li>
+          </ol>
+
+          <p>
+            In order for Skin to render correctly, values for core tokens and
+            light tokens are${" "}
+            <strong>required</strong>
+            ${" "}.
+          </p>
+          <p>
+            The easiest way to satisfy this requirement is to include one of the
+            following bundles:
+          </p>
+          <ul>
+            <li>
+              <a href="components/tokens">
+                @ebay/skin/tokens
+              </a>
+            </li>
+            <li>
+              <a href="components/tokens#evo-live">
+                @ebay/skin/evo-live
+              </a>
+            </li>
+          </ul>
+
+          <p>
+            It is also possible for a page to roll their own tokens sets,
+            enabling a themed or even non-eBay branded look and feel. More
+            information will be provided in a future release.
+          </p>
+
+          <p>
+            <strong>NOTE:</strong>
+            ${" "}Primitive tokens are not intended to be used by the
+            application; instead, they are utilized by the semantic tokens.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

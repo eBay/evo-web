@@ -1,0 +1,55 @@
+<div id="tooltip-overview">
+  <component-banner-img/>
+
+  <p>
+    Tooltip is a hover and focus-activated
+    <a href="components/popover">
+      popover
+    </a>
+    . A
+    tooltip describes the primary action of an interactive control. This content
+    appears inside of an overlay when the control receives hover or focus. In
+    desktop software tooltips are most commonly used in relation to toolbar
+    buttons (e.g. the trashcan icon in a mail app). Web tooltips are more
+    commonly experienced in relation to links, buttons and form controls.
+  </p>
+
+  <p>
+    A tooltip gives additional information about an interactive element -
+    typically a button. The tooltip activates on mouse hover or keyboard focus
+    of the button.
+  </p>
+  <p>
+    The tooltip must be programmatically associated with the button by using the
+    <code>aria-describedby</code>
+    property and
+    <code>tooltip</code>
+    role.
+  </p>
+  <p>
+    Toggle the
+    <code>aria-expanded</code>
+    state of the button to expand or collapse its associated tooltip.
+  </p>
+
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>tooltip</strong>
+      : the composite pattern as a whole, containing a host and overlay
+    </li>
+    <li>
+      <strong>host</strong>
+      : the control that hosts the overlay
+    </li>
+    <li>
+      <strong>overlay</strong>
+      : the overlay that contains the tip
+    </li>
+    <li>
+      <strong>tip</strong>
+      : the content inside of the overlay
+    </li>
+  </ul>
+</div>

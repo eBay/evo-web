@@ -5,7 +5,7 @@ import {
 } from "./common";
 
 const a11yDocsTemplates = import.meta.glob(
-  "../routes/accessibility/**/*+page.marko",
+  "../routes/_index/accessibility/**/*+page.marko",
 );
 
 export interface A11yDocsMap {

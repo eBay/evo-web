@@ -1,0 +1,140 @@
+import styles from "../../../../sass/typography.module.scss";
+<div id="sass">
+  <component-banner-img/>
+
+  <p>
+    In comparison to past versions, Skin now offers a very minimal public
+    <a href="https://www.sass.org">
+      SASS
+    </a>
+    API (i.e. SASS variables and mixins).
+  </p>
+  <h3 id="skin-mixins">
+    Typography Mixins
+  </h3>
+  <p>
+    Import the typography package as
+    <code>@use "@ebay/skin/mixins" as skin-mixins</code>
+    All Typography mixins are prefixed with
+    <code>typography-</code>
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class=styles.list>
+        <li class="giant-text-3">
+          @include skin-mixins.typography-giant-3;
+        </li>
+        <li class="giant-text-2">
+          @include skin-mixins.typography-giant-2;
+        </li>
+        <li class="giant-text-1">
+          @include skin-mixins.typography-giant-1;
+        </li>
+        <li class="large-text-2">
+          @include skin-mixins.typography-large-2;
+        </li>
+        <li class="large-text-2-secondary">
+          @include skin-mixins.typography-large-2-secondary;
+        </li>
+        <li class="large-text-1">
+          @include skin-mixins.typography-large-1;
+        </li>
+        <li class="large-text-1-secondary">
+          @include skin-mixins.typography-large-1-secondary;
+        </li>
+        <li class="medium-text-bold">
+          @include skin-mixins.typography-medium-bold;
+        </li>
+        <li class="medium-text">
+          @include skin-mixins.typography-medium;
+        </li>
+        <li class="medium-text-secondary">
+          @include skin-mixins.typography-medium-secondary;
+        </li>
+        <li class="regular-text-bold">
+          @include skin-mixins.typography-regular-bold;
+        </li>
+        <li class="regular-text">
+          @include skin-mixins.typography-regular;
+        </li>
+        <li class="regular-text-secondary">
+          @include skin-mixins.typography-regular-secondary;
+        </li>
+        <li class="small-text-bold">
+          @include skin-mixins.typography-small-bold;
+        </li>
+        <li class="small-text">
+          @include skin-mixins.typography-small;
+        </li>
+        <li class="small-text-secondary">
+          @include skin-mixins.typography-small-secondary;
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h3 id="sass-title-mixins">
+    Title Mixins
+  </h3>
+  <p>
+    Import the title package as
+    <code>@use "@ebay/skin/mixins" as skin-mixins</code>
+    All Typography mixins are prefixed with
+    <code>title-</code>
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <ul class=styles.list>
+        <li class=styles.giantScreenLarge>
+          @include skin-mixins.title-giant-screen-large;
+        </li>
+
+        <li class=styles.largeScreenLarge>
+          @include skin-mixins.title-large-screen-large;
+        </li>
+
+        <li class=styles.mediumScreenLarge>
+          @include skin-mixins.title-medium-screen-large;
+        </li>
+
+        <li class=styles.smallScreenLarge>
+          @include skin-mixins.title-small-screen-large;
+        </li>
+
+        <li class=styles.giantScreenSmall>
+          @include skin-mixins.title-giant-screen-small;
+        </li>
+
+        <li class=styles.largeScreenSmall>
+          @include skin-mixins.title-large-screen-small;
+        </li>
+
+        <li class=styles.mediumScreenSmall>
+          @include skin-mixins.title-medium-screen-small;
+        </li>
+
+        <li class=styles.smallScreenSmall>
+          @include skin-mixins.title-small-screen-small;
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h3 id="utility-title-mixins">
+    Utility Mixins
+  </h3>
+  <p>
+    Import the utility package as
+    <code>@use "@ebay/skin/mixins" as skin-mixins</code>
+    All Utility mixins are prefixed with
+    <code>utility-</code>
+  </p>
+  <p>
+    All utility mixins found on the utility page and can be used as
+    <code>@include skin-mixins.utility-clipped</code>
+  </p>
+</div>
+export const metadata = {
+  component: "sass",
+  version: "1.0",
+};

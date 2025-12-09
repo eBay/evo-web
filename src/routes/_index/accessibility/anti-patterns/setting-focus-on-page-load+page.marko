@@ -1,0 +1,49 @@
+<div class="a11y-pattern-content">
+  <h1>Setting Focus on Page Load</h1>
+  <p>
+    In typical web documents (as opposed to
+    <em>applications</em>
+    ), setting keyboard focus on page load creates more disadvantages than
+    advantages for users of assistive technology.
+  </p>
+  <p>
+    You
+    <strong>must not</strong>
+    set focus on page load without strong justification that it does not
+    create a barrier for users of assistive technology.
+  </p>
+  <h2>Disadvantages</h2>
+  <ul>
+    <li>
+      creates an inconsistency in navigation within the site/subsite since most
+      pages do not set focus on page load
+    </li>
+    <li>
+      sighted keyboard users that rely on keyboard shortcuts for navigation
+      (Page Down/Spacebar, End, etc.) will need to leave the context of the text
+      input in order to navigate
+    </li>
+    <li>
+      screen reader users that rely on shortcuts for navigation will either need
+      to leave the context of the input or exit “forms” mode in order to
+      navigate
+    </li>
+  </ul>
+  <h2>Advantages</h2>
+  <ul>
+    <li>mouse users are saved one click</li>
+    <li>
+      can bring users attention to a
+      <strong>critical</strong>
+      error message
+    </li>
+  </ul>
+  <h2>Exceptions</h2>
+  <p>
+    Specific MIND Patterns, such as
+    <a href="components/page-notice">
+      Page Notice
+    </a>
+    , may direct you to set focus on page load for critical error cases.
+  </p>
+</div>

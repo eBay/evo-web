@@ -10,305 +10,309 @@ import type * as Run from "@marko/run";
 declare module "@marko/run" {
 	interface AppData extends Run.DefineApp<{
 		routes: {
-			"/": { verb: "get"; meta: typeof import("../src/routes/+meta.json"); };
-			"/evo-css-components": { verb: "get"; meta: typeof import("../src/routes/evo-css-components+meta.json"); };
-			"/evo-marko-components": { verb: "get"; meta: typeof import("../src/routes/evo-marko-components+meta.json"); };
-			"/evo-react-components": { verb: "get"; meta: typeof import("../src/routes/evo-react-components+meta.json"); };
-			"/sitemap": { verb: "get"; meta: typeof import("../src/routes/sitemap+meta.json"); };
-			"/accessibility": { verb: "get"; meta: typeof import("../src/routes/accessibility/+meta.json"); };
-			"/accessibility/anti-patterns": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/+meta.json"); };
-			"/accessibility/anti-patterns/disabling-pinch-to-zoom": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/disabling-pinch-to-zoom+meta.json"); };
-			"/accessibility/anti-patterns/hand-cursor-on-buttons": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/hand-cursor-on-buttons+meta.json"); };
-			"/accessibility/anti-patterns/javascript-href": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/javascript-href+meta.json"); };
-			"/accessibility/anti-patterns/layout-table": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/layout-table+meta.json"); };
-			"/accessibility/anti-patterns/non-interactive-hover": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/non-interactive-hover+meta.json"); };
-			"/accessibility/anti-patterns/open-new-window": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/open-new-window+meta.json"); };
-			"/accessibility/anti-patterns/setting-focus-on-page-load": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/setting-focus-on-page-load+meta.json"); };
-			"/accessibility/anti-patterns/tabindex-itis": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/tabindex-itis+meta.json"); };
-			"/accessibility/anti-patterns/title-tooltip": { verb: "get"; meta: typeof import("../src/routes/accessibility/anti-patterns/title-tooltip+meta.json"); };
-			"/accessibility/misc": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/+meta.json"); };
-			"/accessibility/misc/aria-essentials": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/aria-essentials+meta.json"); };
-			"/accessibility/misc/component-naming-scheme": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/component-naming-scheme+meta.json"); };
-			"/accessibility/misc/faq": { verb: "get"; meta: typeof import("../src/routes/accessibility/misc/faq+meta.json"); };
-			"/accessibility/patterns": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/+meta.json"); };
-			"/accessibility/patterns/description-list": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/description-list+meta.json"); };
-			"/accessibility/patterns/fake-menu-button": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/fake-menu-button+meta.json"); };
-			"/accessibility/patterns/fake-tabs": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/fake-tabs+meta.json"); };
-			"/accessibility/patterns/footnote": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/footnote+meta.json"); };
-			"/accessibility/patterns/form": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/form+meta.json"); };
-			"/accessibility/patterns/form-validation": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/form-validation+meta.json"); };
-			"/accessibility/patterns/heading": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/heading+meta.json"); };
-			"/accessibility/patterns/image": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/image+meta.json"); };
-			"/accessibility/patterns/input-dialog": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/input-dialog+meta.json"); };
-			"/accessibility/patterns/input-meter": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/input-meter+meta.json"); };
-			"/accessibility/patterns/input-validation": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/input-validation+meta.json"); };
-			"/accessibility/patterns/popover": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/popover+meta.json"); };
-			"/accessibility/patterns/pulldown-list": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/pulldown-list+meta.json"); };
-			"/accessibility/patterns/region": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/region+meta.json"); };
-			"/accessibility/patterns/skip-navigation": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/skip-navigation+meta.json"); };
-			"/accessibility/patterns/table-cell": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/table-cell+meta.json"); };
-			"/accessibility/patterns/time": { verb: "get"; meta: typeof import("../src/routes/accessibility/patterns/time+meta.json"); };
-			"/accessibility/techniques": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/+meta.json"); };
-			"/accessibility/techniques/active-descendant": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/active-descendant+meta.json"); };
-			"/accessibility/techniques/alternative-text": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/alternative-text+meta.json"); };
-			"/accessibility/techniques/ambiguous-label": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/ambiguous-label+meta.json"); };
-			"/accessibility/techniques/background-icon": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/background-icon+meta.json"); };
-			"/accessibility/techniques/keyboard-interface": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/keyboard-interface+meta.json"); };
-			"/accessibility/techniques/keyboard-trap": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/keyboard-trap+meta.json"); };
-			"/accessibility/techniques/live-region": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/live-region+meta.json"); };
-			"/accessibility/techniques/offscreen-text": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/offscreen-text+meta.json"); };
-			"/accessibility/techniques/roving-tabindex": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/roving-tabindex+meta.json"); };
-			"/accessibility/techniques/skip-to-main-content": { verb: "get"; meta: typeof import("../src/routes/accessibility/techniques/skip-to-main-content+meta.json"); };
-			"/accessibility/testing/checklist": { verb: "get"; meta: typeof import("../src/routes/accessibility/testing/checklist+meta.json"); };
-			"/accessibility/testing/known-issues": { verb: "get"; meta: typeof import("../src/routes/accessibility/testing/known-issues+meta.json"); };
-			"/component": { verb: "get"; meta: typeof import("../src/routes/component/+meta.json"); };
-			"/component/accordion": { verb: "get"; meta: typeof import("../src/routes/component/accordion/+meta.json"); };
-			"/component/accordion/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/accordion/accessibility+meta.json"); };
-			"/component/accordion/css": { verb: "get"; meta: typeof import("../src/routes/component/accordion/css+meta.json"); };
-			"/component/alert-dialog": { verb: "get"; meta: typeof import("../src/routes/component/alert-dialog/+meta.json"); };
-			"/component/alert-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/alert-dialog/accessibility+meta.json"); };
-			"/component/alert-dialog/css": { verb: "get"; meta: typeof import("../src/routes/component/alert-dialog/css+meta.json"); };
-			"/component/avatar": { verb: "get"; meta: typeof import("../src/routes/component/avatar/+meta.json"); };
-			"/component/avatar/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/avatar/accessibility+meta.json"); };
-			"/component/avatar/css": { verb: "get"; meta: typeof import("../src/routes/component/avatar/css+meta.json"); };
-			"/component/badge": { verb: "get"; meta: typeof import("../src/routes/component/badge/+meta.json"); };
-			"/component/badge/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/badge/accessibility+meta.json"); };
-			"/component/badge/css": { verb: "get"; meta: typeof import("../src/routes/component/badge/css+meta.json"); };
-			"/component/breadcrumbs": { verb: "get"; meta: typeof import("../src/routes/component/breadcrumbs/+meta.json"); };
-			"/component/breadcrumbs/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/breadcrumbs/accessibility+meta.json"); };
-			"/component/breadcrumbs/css": { verb: "get"; meta: typeof import("../src/routes/component/breadcrumbs/css+meta.json"); };
-			"/component/button": { verb: "get"; meta: typeof import("../src/routes/component/button/+meta.json"); };
-			"/component/button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/button/accessibility+meta.json"); };
-			"/component/button/css": { verb: "get"; meta: typeof import("../src/routes/component/button/css+meta.json"); };
-			"/component/button/marko": { verb: "get"; meta: typeof import("../src/routes/component/button/marko+meta.json"); };
-			"/component/button/react": { verb: "get"; meta: typeof import("../src/routes/component/button/react+meta.json"); };
-			"/component/calendar": { verb: "get"; meta: typeof import("../src/routes/component/calendar/+meta.json"); };
-			"/component/calendar/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/calendar/accessibility+meta.json"); };
-			"/component/calendar/css": { verb: "get"; meta: typeof import("../src/routes/component/calendar/css+meta.json"); };
-			"/component/card": { verb: "get"; meta: typeof import("../src/routes/component/card/+meta.json"); };
-			"/component/card/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/card/accessibility+meta.json"); };
-			"/component/card/css": { verb: "get"; meta: typeof import("../src/routes/component/card/css+meta.json"); };
-			"/component/carousel": { verb: "get"; meta: typeof import("../src/routes/component/carousel/+meta.json"); };
-			"/component/carousel/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/carousel/accessibility+meta.json"); };
-			"/component/carousel/css": { verb: "get"; meta: typeof import("../src/routes/component/carousel/css+meta.json"); };
-			"/component/ccd": { verb: "get"; meta: typeof import("../src/routes/component/ccd/+meta.json"); };
-			"/component/ccd/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/ccd/accessibility+meta.json"); };
-			"/component/ccd/css": { verb: "get"; meta: typeof import("../src/routes/component/ccd/css+meta.json"); };
-			"/component/chart-legend": { verb: "get"; meta: typeof import("../src/routes/component/chart-legend/+meta.json"); };
-			"/component/chart-legend/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/chart-legend/accessibility+meta.json"); };
-			"/component/chart-legend/css": { verb: "get"; meta: typeof import("../src/routes/component/chart-legend/css+meta.json"); };
-			"/component/checkbox": { verb: "get"; meta: typeof import("../src/routes/component/checkbox/+meta.json"); };
-			"/component/checkbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/checkbox/accessibility+meta.json"); };
-			"/component/checkbox/css": { verb: "get"; meta: typeof import("../src/routes/component/checkbox/css+meta.json"); };
-			"/component/chip": { verb: "get"; meta: typeof import("../src/routes/component/chip/+meta.json"); };
-			"/component/chip/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/chip/accessibility+meta.json"); };
-			"/component/chip/css": { verb: "get"; meta: typeof import("../src/routes/component/chip/css+meta.json"); };
-			"/component/chips-combobox": { verb: "get"; meta: typeof import("../src/routes/component/chips-combobox/+meta.json"); };
-			"/component/chips-combobox/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/chips-combobox/accessibility+meta.json"); };
-			"/component/chips-combobox/css": { verb: "get"; meta: typeof import("../src/routes/component/chips-combobox/css+meta.json"); };
-			"/component/combobox": { verb: "get"; meta: typeof import("../src/routes/component/combobox/+meta.json"); };
-			"/component/combobox/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/combobox/accessibility+meta.json"); };
-			"/component/combobox/css": { verb: "get"; meta: typeof import("../src/routes/component/combobox/css+meta.json"); };
-			"/component/confirm-dialog": { verb: "get"; meta: typeof import("../src/routes/component/confirm-dialog/+meta.json"); };
-			"/component/confirm-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/confirm-dialog/accessibility+meta.json"); };
-			"/component/confirm-dialog/css": { verb: "get"; meta: typeof import("../src/routes/component/confirm-dialog/css+meta.json"); };
-			"/component/cta-button": { verb: "get"; meta: typeof import("../src/routes/component/cta-button/+meta.json"); };
-			"/component/cta-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/cta-button/accessibility+meta.json"); };
-			"/component/cta-button/css": { verb: "get"; meta: typeof import("../src/routes/component/cta-button/css+meta.json"); };
-			"/component/date-textbox": { verb: "get"; meta: typeof import("../src/routes/component/date-textbox/+meta.json"); };
-			"/component/date-textbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/date-textbox/accessibility+meta.json"); };
-			"/component/date-textbox/css": { verb: "get"; meta: typeof import("../src/routes/component/date-textbox/css+meta.json"); };
-			"/component/details": { verb: "get"; meta: typeof import("../src/routes/component/details/+meta.json"); };
-			"/component/details/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/details/accessibility+meta.json"); };
-			"/component/details/css": { verb: "get"; meta: typeof import("../src/routes/component/details/css+meta.json"); };
-			"/component/donut-chart": { verb: "get"; meta: typeof import("../src/routes/component/donut-chart/+meta.json"); };
-			"/component/donut-chart/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/donut-chart/accessibility+meta.json"); };
-			"/component/donut-chart/css": { verb: "get"; meta: typeof import("../src/routes/component/donut-chart/css+meta.json"); };
-			"/component/education-notice": { verb: "get"; meta: typeof import("../src/routes/component/education-notice/+meta.json"); };
-			"/component/education-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/education-notice/accessibility+meta.json"); };
-			"/component/education-notice/css": { verb: "get"; meta: typeof import("../src/routes/component/education-notice/css+meta.json"); };
-			"/component/eek": { verb: "get"; meta: typeof import("../src/routes/component/eek/+meta.json"); };
-			"/component/eek/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/eek/accessibility+meta.json"); };
-			"/component/eek/css": { verb: "get"; meta: typeof import("../src/routes/component/eek/css+meta.json"); };
-			"/component/field": { verb: "get"; meta: typeof import("../src/routes/component/field/+meta.json"); };
-			"/component/field/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/field/accessibility+meta.json"); };
-			"/component/field/css": { verb: "get"; meta: typeof import("../src/routes/component/field/css+meta.json"); };
-			"/component/file-input": { verb: "get"; meta: typeof import("../src/routes/component/file-input/+meta.json"); };
-			"/component/file-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/file-input/accessibility+meta.json"); };
-			"/component/file-input/css": { verb: "get"; meta: typeof import("../src/routes/component/file-input/css+meta.json"); };
-			"/component/file-preview-card": { verb: "get"; meta: typeof import("../src/routes/component/file-preview-card/+meta.json"); };
-			"/component/file-preview-card/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/file-preview-card/accessibility+meta.json"); };
-			"/component/file-preview-card/css": { verb: "get"; meta: typeof import("../src/routes/component/file-preview-card/css+meta.json"); };
-			"/component/file-preview-card-group": { verb: "get"; meta: typeof import("../src/routes/component/file-preview-card-group/+meta.json"); };
-			"/component/file-preview-card-group/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/file-preview-card-group/accessibility+meta.json"); };
-			"/component/file-preview-card-group/css": { verb: "get"; meta: typeof import("../src/routes/component/file-preview-card-group/css+meta.json"); };
-			"/component/filter-chip": { verb: "get"; meta: typeof import("../src/routes/component/filter-chip/+meta.json"); };
-			"/component/filter-chip/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/filter-chip/accessibility+meta.json"); };
-			"/component/filter-chip/css": { verb: "get"; meta: typeof import("../src/routes/component/filter-chip/css+meta.json"); };
-			"/component/filter-input": { verb: "get"; meta: typeof import("../src/routes/component/filter-input/+meta.json"); };
-			"/component/filter-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/filter-input/accessibility+meta.json"); };
-			"/component/filter-input/css": { verb: "get"; meta: typeof import("../src/routes/component/filter-input/css+meta.json"); };
-			"/component/flag": { verb: "get"; meta: typeof import("../src/routes/component/flag/+meta.json"); };
-			"/component/flag/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/flag/accessibility+meta.json"); };
-			"/component/flag/css": { verb: "get"; meta: typeof import("../src/routes/component/flag/css+meta.json"); };
-			"/component/floating-label": { verb: "get"; meta: typeof import("../src/routes/component/floating-label/+meta.json"); };
-			"/component/floating-label/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/floating-label/accessibility+meta.json"); };
-			"/component/floating-label/css": { verb: "get"; meta: typeof import("../src/routes/component/floating-label/css+meta.json"); };
-			"/component/global": { verb: "get"; meta: typeof import("../src/routes/component/global/+meta.json"); };
-			"/component/global/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/global/accessibility+meta.json"); };
-			"/component/global/css": { verb: "get"; meta: typeof import("../src/routes/component/global/css+meta.json"); };
-			"/component/icon": { verb: "get"; meta: typeof import("../src/routes/component/icon/+meta.json"); };
-			"/component/icon/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/icon/accessibility+meta.json"); };
-			"/component/icon/css": { verb: "get"; meta: typeof import("../src/routes/component/icon/css+meta.json"); };
-			"/component/icon-button": { verb: "get"; meta: typeof import("../src/routes/component/icon-button/+meta.json"); };
-			"/component/icon-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/icon-button/accessibility+meta.json"); };
-			"/component/icon-button/css": { verb: "get"; meta: typeof import("../src/routes/component/icon-button/css+meta.json"); };
-			"/component/image-placeholder": { verb: "get"; meta: typeof import("../src/routes/component/image-placeholder/+meta.json"); };
-			"/component/image-placeholder/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/image-placeholder/accessibility+meta.json"); };
-			"/component/image-placeholder/css": { verb: "get"; meta: typeof import("../src/routes/component/image-placeholder/css+meta.json"); };
-			"/component/infotip": { verb: "get"; meta: typeof import("../src/routes/component/infotip/+meta.json"); };
-			"/component/infotip/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/infotip/accessibility+meta.json"); };
-			"/component/infotip/css": { verb: "get"; meta: typeof import("../src/routes/component/infotip/css+meta.json"); };
-			"/component/inline-notice": { verb: "get"; meta: typeof import("../src/routes/component/inline-notice/+meta.json"); };
-			"/component/inline-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/inline-notice/accessibility+meta.json"); };
-			"/component/inline-notice/css": { verb: "get"; meta: typeof import("../src/routes/component/inline-notice/css+meta.json"); };
-			"/component/item-tile": { verb: "get"; meta: typeof import("../src/routes/component/item-tile/+meta.json"); };
-			"/component/item-tile/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/item-tile/accessibility+meta.json"); };
-			"/component/item-tile/css": { verb: "get"; meta: typeof import("../src/routes/component/item-tile/css+meta.json"); };
-			"/component/item-tile-group": { verb: "get"; meta: typeof import("../src/routes/component/item-tile-group/+meta.json"); };
-			"/component/item-tile-group/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/item-tile-group/accessibility+meta.json"); };
-			"/component/item-tile-group/css": { verb: "get"; meta: typeof import("../src/routes/component/item-tile-group/css+meta.json"); };
-			"/component/layout-grid": { verb: "get"; meta: typeof import("../src/routes/component/layout-grid/+meta.json"); };
-			"/component/layout-grid/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/layout-grid/accessibility+meta.json"); };
-			"/component/layout-grid/css": { verb: "get"; meta: typeof import("../src/routes/component/layout-grid/css+meta.json"); };
-			"/component/lightbox-dialog": { verb: "get"; meta: typeof import("../src/routes/component/lightbox-dialog/+meta.json"); };
-			"/component/lightbox-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/lightbox-dialog/accessibility+meta.json"); };
-			"/component/lightbox-dialog/css": { verb: "get"; meta: typeof import("../src/routes/component/lightbox-dialog/css+meta.json"); };
-			"/component/link": { verb: "get"; meta: typeof import("../src/routes/component/link/+meta.json"); };
-			"/component/link/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/link/accessibility+meta.json"); };
-			"/component/link/css": { verb: "get"; meta: typeof import("../src/routes/component/link/css+meta.json"); };
-			"/component/list": { verb: "get"; meta: typeof import("../src/routes/component/list/+meta.json"); };
-			"/component/list/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/list/accessibility+meta.json"); };
-			"/component/list/css": { verb: "get"; meta: typeof import("../src/routes/component/list/css+meta.json"); };
-			"/component/listbox": { verb: "get"; meta: typeof import("../src/routes/component/listbox/+meta.json"); };
-			"/component/listbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/listbox/accessibility+meta.json"); };
-			"/component/listbox/css": { verb: "get"; meta: typeof import("../src/routes/component/listbox/css+meta.json"); };
-			"/component/listbox-button": { verb: "get"; meta: typeof import("../src/routes/component/listbox-button/+meta.json"); };
-			"/component/listbox-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/listbox-button/accessibility+meta.json"); };
-			"/component/listbox-button/css": { verb: "get"; meta: typeof import("../src/routes/component/listbox-button/css+meta.json"); };
-			"/component/marketsans": { verb: "get"; meta: typeof import("../src/routes/component/marketsans/+meta.json"); };
-			"/component/marketsans/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/marketsans/accessibility+meta.json"); };
-			"/component/marketsans/css": { verb: "get"; meta: typeof import("../src/routes/component/marketsans/css+meta.json"); };
-			"/component/menu": { verb: "get"; meta: typeof import("../src/routes/component/menu/+meta.json"); };
-			"/component/menu/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/menu/accessibility+meta.json"); };
-			"/component/menu/css": { verb: "get"; meta: typeof import("../src/routes/component/menu/css+meta.json"); };
-			"/component/menu-button": { verb: "get"; meta: typeof import("../src/routes/component/menu-button/+meta.json"); };
-			"/component/menu-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/menu-button/accessibility+meta.json"); };
-			"/component/menu-button/css": { verb: "get"; meta: typeof import("../src/routes/component/menu-button/css+meta.json"); };
-			"/component/number-input": { verb: "get"; meta: typeof import("../src/routes/component/number-input/+meta.json"); };
-			"/component/number-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/number-input/accessibility+meta.json"); };
-			"/component/number-input/css": { verb: "get"; meta: typeof import("../src/routes/component/number-input/css+meta.json"); };
-			"/component/page-grid": { verb: "get"; meta: typeof import("../src/routes/component/page-grid/+meta.json"); };
-			"/component/page-grid/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/page-grid/accessibility+meta.json"); };
-			"/component/page-grid/css": { verb: "get"; meta: typeof import("../src/routes/component/page-grid/css+meta.json"); };
-			"/component/page-notice": { verb: "get"; meta: typeof import("../src/routes/component/page-notice/+meta.json"); };
-			"/component/page-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/page-notice/accessibility+meta.json"); };
-			"/component/page-notice/css": { verb: "get"; meta: typeof import("../src/routes/component/page-notice/css+meta.json"); };
-			"/component/pagination": { verb: "get"; meta: typeof import("../src/routes/component/pagination/+meta.json"); };
-			"/component/pagination/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/pagination/accessibility+meta.json"); };
-			"/component/pagination/css": { verb: "get"; meta: typeof import("../src/routes/component/pagination/css+meta.json"); };
-			"/component/panel-dialog": { verb: "get"; meta: typeof import("../src/routes/component/panel-dialog/+meta.json"); };
-			"/component/panel-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/panel-dialog/accessibility+meta.json"); };
-			"/component/panel-dialog/css": { verb: "get"; meta: typeof import("../src/routes/component/panel-dialog/css+meta.json"); };
-			"/component/phone-input": { verb: "get"; meta: typeof import("../src/routes/component/phone-input/+meta.json"); };
-			"/component/phone-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/phone-input/accessibility+meta.json"); };
-			"/component/phone-input/css": { verb: "get"; meta: typeof import("../src/routes/component/phone-input/css+meta.json"); };
-			"/component/progress-bar": { verb: "get"; meta: typeof import("../src/routes/component/progress-bar/+meta.json"); };
-			"/component/progress-bar/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/progress-bar/accessibility+meta.json"); };
-			"/component/progress-bar/css": { verb: "get"; meta: typeof import("../src/routes/component/progress-bar/css+meta.json"); };
-			"/component/progress-bar-expressive": { verb: "get"; meta: typeof import("../src/routes/component/progress-bar-expressive/+meta.json"); };
-			"/component/progress-bar-expressive/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/progress-bar-expressive/accessibility+meta.json"); };
-			"/component/progress-bar-expressive/css": { verb: "get"; meta: typeof import("../src/routes/component/progress-bar-expressive/css+meta.json"); };
-			"/component/progress-spinner": { verb: "get"; meta: typeof import("../src/routes/component/progress-spinner/+meta.json"); };
-			"/component/progress-spinner/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/progress-spinner/accessibility+meta.json"); };
-			"/component/progress-spinner/css": { verb: "get"; meta: typeof import("../src/routes/component/progress-spinner/css+meta.json"); };
-			"/component/progress-stepper": { verb: "get"; meta: typeof import("../src/routes/component/progress-stepper/+meta.json"); };
-			"/component/progress-stepper/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/progress-stepper/accessibility+meta.json"); };
-			"/component/progress-stepper/css": { verb: "get"; meta: typeof import("../src/routes/component/progress-stepper/css+meta.json"); };
-			"/component/radio": { verb: "get"; meta: typeof import("../src/routes/component/radio/+meta.json"); };
-			"/component/radio/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/radio/accessibility+meta.json"); };
-			"/component/radio/css": { verb: "get"; meta: typeof import("../src/routes/component/radio/css+meta.json"); };
-			"/component/sass": { verb: "get"; meta: typeof import("../src/routes/component/sass/+meta.json"); };
-			"/component/section-notice": { verb: "get"; meta: typeof import("../src/routes/component/section-notice/+meta.json"); };
-			"/component/section-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/section-notice/accessibility+meta.json"); };
-			"/component/section-notice/css": { verb: "get"; meta: typeof import("../src/routes/component/section-notice/css+meta.json"); };
-			"/component/section-title": { verb: "get"; meta: typeof import("../src/routes/component/section-title/+meta.json"); };
-			"/component/section-title/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/section-title/accessibility+meta.json"); };
-			"/component/section-title/css": { verb: "get"; meta: typeof import("../src/routes/component/section-title/css+meta.json"); };
-			"/component/segmented-buttons": { verb: "get"; meta: typeof import("../src/routes/component/segmented-buttons/+meta.json"); };
-			"/component/segmented-buttons/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/segmented-buttons/accessibility+meta.json"); };
-			"/component/segmented-buttons/css": { verb: "get"; meta: typeof import("../src/routes/component/segmented-buttons/css+meta.json"); };
-			"/component/select": { verb: "get"; meta: typeof import("../src/routes/component/select/+meta.json"); };
-			"/component/select/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/select/accessibility+meta.json"); };
-			"/component/select/css": { verb: "get"; meta: typeof import("../src/routes/component/select/css+meta.json"); };
-			"/component/selection-chip": { verb: "get"; meta: typeof import("../src/routes/component/selection-chip/+meta.json"); };
-			"/component/signal": { verb: "get"; meta: typeof import("../src/routes/component/signal/+meta.json"); };
-			"/component/signal/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/signal/accessibility+meta.json"); };
-			"/component/signal/css": { verb: "get"; meta: typeof import("../src/routes/component/signal/css+meta.json"); };
-			"/component/skeleton": { verb: "get"; meta: typeof import("../src/routes/component/skeleton/+meta.json"); };
-			"/component/skeleton/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/skeleton/accessibility+meta.json"); };
-			"/component/skeleton/css": { verb: "get"; meta: typeof import("../src/routes/component/skeleton/css+meta.json"); };
-			"/component/snackbar-dialog": { verb: "get"; meta: typeof import("../src/routes/component/snackbar-dialog/+meta.json"); };
-			"/component/snackbar-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/snackbar-dialog/accessibility+meta.json"); };
-			"/component/snackbar-dialog/css": { verb: "get"; meta: typeof import("../src/routes/component/snackbar-dialog/css+meta.json"); };
-			"/component/split-button": { verb: "get"; meta: typeof import("../src/routes/component/split-button/+meta.json"); };
-			"/component/split-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/split-button/accessibility+meta.json"); };
-			"/component/split-button/css": { verb: "get"; meta: typeof import("../src/routes/component/split-button/css+meta.json"); };
-			"/component/star-rating": { verb: "get"; meta: typeof import("../src/routes/component/star-rating/+meta.json"); };
-			"/component/star-rating/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/star-rating/accessibility+meta.json"); };
-			"/component/star-rating/css": { verb: "get"; meta: typeof import("../src/routes/component/star-rating/css+meta.json"); };
-			"/component/star-rating-select": { verb: "get"; meta: typeof import("../src/routes/component/star-rating-select/+meta.json"); };
-			"/component/star-rating-select/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/star-rating-select/accessibility+meta.json"); };
-			"/component/star-rating-select/css": { verb: "get"; meta: typeof import("../src/routes/component/star-rating-select/css+meta.json"); };
-			"/component/svg": { verb: "get"; meta: typeof import("../src/routes/component/svg/+meta.json"); };
-			"/component/svg/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/svg/accessibility+meta.json"); };
-			"/component/svg/css": { verb: "get"; meta: typeof import("../src/routes/component/svg/css+meta.json"); };
-			"/component/switch": { verb: "get"; meta: typeof import("../src/routes/component/switch/+meta.json"); };
-			"/component/switch/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/switch/accessibility+meta.json"); };
-			"/component/switch/css": { verb: "get"; meta: typeof import("../src/routes/component/switch/css+meta.json"); };
-			"/component/table": { verb: "get"; meta: typeof import("../src/routes/component/table/+meta.json"); };
-			"/component/table/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/table/accessibility+meta.json"); };
-			"/component/table/css": { verb: "get"; meta: typeof import("../src/routes/component/table/css+meta.json"); };
-			"/component/tabs": { verb: "get"; meta: typeof import("../src/routes/component/tabs/+meta.json"); };
-			"/component/tabs/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/tabs/accessibility+meta.json"); };
-			"/component/tabs/css": { verb: "get"; meta: typeof import("../src/routes/component/tabs/css+meta.json"); };
-			"/component/textbox": { verb: "get"; meta: typeof import("../src/routes/component/textbox/+meta.json"); };
-			"/component/textbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/textbox/accessibility+meta.json"); };
-			"/component/textbox/css": { verb: "get"; meta: typeof import("../src/routes/component/textbox/css+meta.json"); };
-			"/component/toast-dialog": { verb: "get"; meta: typeof import("../src/routes/component/toast-dialog/+meta.json"); };
-			"/component/toast-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/toast-dialog/accessibility+meta.json"); };
-			"/component/toast-dialog/css": { verb: "get"; meta: typeof import("../src/routes/component/toast-dialog/css+meta.json"); };
-			"/component/toggle-button": { verb: "get"; meta: typeof import("../src/routes/component/toggle-button/+meta.json"); };
-			"/component/toggle-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/toggle-button/accessibility+meta.json"); };
-			"/component/toggle-button/css": { verb: "get"; meta: typeof import("../src/routes/component/toggle-button/css+meta.json"); };
-			"/component/toggle-button-group": { verb: "get"; meta: typeof import("../src/routes/component/toggle-button-group/+meta.json"); };
-			"/component/toggle-button-group/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/toggle-button-group/accessibility+meta.json"); };
-			"/component/toggle-button-group/css": { verb: "get"; meta: typeof import("../src/routes/component/toggle-button-group/css+meta.json"); };
-			"/component/tokens": { verb: "get"; meta: typeof import("../src/routes/component/tokens/+meta.json"); };
-			"/component/tokens/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/tokens/accessibility+meta.json"); };
-			"/component/tokens/css": { verb: "get"; meta: typeof import("../src/routes/component/tokens/css+meta.json"); };
-			"/component/tooltip": { verb: "get"; meta: typeof import("../src/routes/component/tooltip/+meta.json"); };
-			"/component/tooltip/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/tooltip/accessibility+meta.json"); };
-			"/component/tooltip/css": { verb: "get"; meta: typeof import("../src/routes/component/tooltip/css+meta.json"); };
-			"/component/tourtip": { verb: "get"; meta: typeof import("../src/routes/component/tourtip/+meta.json"); };
-			"/component/tourtip/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/tourtip/accessibility+meta.json"); };
-			"/component/tourtip/css": { verb: "get"; meta: typeof import("../src/routes/component/tourtip/css+meta.json"); };
-			"/component/typography": { verb: "get"; meta: typeof import("../src/routes/component/typography/+meta.json"); };
-			"/component/typography/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/typography/accessibility+meta.json"); };
-			"/component/typography/css": { verb: "get"; meta: typeof import("../src/routes/component/typography/css+meta.json"); };
-			"/component/utility": { verb: "get"; meta: typeof import("../src/routes/component/utility/+meta.json"); };
-			"/component/utility/accessibility": { verb: "get"; meta: typeof import("../src/routes/component/utility/accessibility+meta.json"); };
-			"/component/utility/css": { verb: "get"; meta: typeof import("../src/routes/component/utility/css+meta.json"); };
+			"/": { verb: "get"; meta: typeof import("../src/routes/_index/+meta.json"); };
+			"/evo-css-components": { verb: "get"; meta: typeof import("../src/routes/_index/evo-css-components+meta.json"); };
+			"/evo-marko-components": { verb: "get"; meta: typeof import("../src/routes/_index/evo-marko-components+meta.json"); };
+			"/evo-react-components": { verb: "get"; meta: typeof import("../src/routes/_index/evo-react-components+meta.json"); };
+			"/sitemap": { verb: "get"; meta: typeof import("../src/routes/_index/sitemap+meta.json"); };
+			"/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/+meta.json"); };
+			"/accessibility/anti-patterns": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/+meta.json"); };
+			"/accessibility/anti-patterns/disabling-pinch-to-zoom": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/disabling-pinch-to-zoom+meta.json"); };
+			"/accessibility/anti-patterns/hand-cursor-on-buttons": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/hand-cursor-on-buttons+meta.json"); };
+			"/accessibility/anti-patterns/javascript-href": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/javascript-href+meta.json"); };
+			"/accessibility/anti-patterns/layout-table": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/layout-table+meta.json"); };
+			"/accessibility/anti-patterns/non-interactive-hover": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/non-interactive-hover+meta.json"); };
+			"/accessibility/anti-patterns/open-new-window": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/open-new-window+meta.json"); };
+			"/accessibility/anti-patterns/setting-focus-on-page-load": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/setting-focus-on-page-load+meta.json"); };
+			"/accessibility/anti-patterns/tabindex-itis": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/tabindex-itis+meta.json"); };
+			"/accessibility/anti-patterns/title-tooltip": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/anti-patterns/title-tooltip+meta.json"); };
+			"/accessibility/misc": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/misc/+meta.json"); };
+			"/accessibility/misc/aria-essentials": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/misc/aria-essentials+meta.json"); };
+			"/accessibility/misc/component-naming-scheme": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/misc/component-naming-scheme+meta.json"); };
+			"/accessibility/misc/faq": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/misc/faq+meta.json"); };
+			"/accessibility/patterns": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/+meta.json"); };
+			"/accessibility/patterns/description-list": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/description-list+meta.json"); };
+			"/accessibility/patterns/fake-menu-button": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/fake-menu-button+meta.json"); };
+			"/accessibility/patterns/fake-tabs": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/fake-tabs+meta.json"); };
+			"/accessibility/patterns/footnote": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/footnote+meta.json"); };
+			"/accessibility/patterns/form": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/form+meta.json"); };
+			"/accessibility/patterns/form-validation": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/form-validation+meta.json"); };
+			"/accessibility/patterns/heading": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/heading+meta.json"); };
+			"/accessibility/patterns/image": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/image+meta.json"); };
+			"/accessibility/patterns/input-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/input-dialog+meta.json"); };
+			"/accessibility/patterns/input-meter": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/input-meter+meta.json"); };
+			"/accessibility/patterns/input-validation": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/input-validation+meta.json"); };
+			"/accessibility/patterns/popover": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/popover+meta.json"); };
+			"/accessibility/patterns/pulldown-list": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/pulldown-list+meta.json"); };
+			"/accessibility/patterns/region": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/region+meta.json"); };
+			"/accessibility/patterns/skip-navigation": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/skip-navigation+meta.json"); };
+			"/accessibility/patterns/table-cell": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/table-cell+meta.json"); };
+			"/accessibility/patterns/time": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/patterns/time+meta.json"); };
+			"/accessibility/techniques": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/+meta.json"); };
+			"/accessibility/techniques/active-descendant": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/active-descendant+meta.json"); };
+			"/accessibility/techniques/alternative-text": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/alternative-text+meta.json"); };
+			"/accessibility/techniques/ambiguous-label": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/ambiguous-label+meta.json"); };
+			"/accessibility/techniques/background-icon": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/background-icon+meta.json"); };
+			"/accessibility/techniques/keyboard-interface": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/keyboard-interface+meta.json"); };
+			"/accessibility/techniques/keyboard-trap": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/keyboard-trap+meta.json"); };
+			"/accessibility/techniques/live-region": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/live-region+meta.json"); };
+			"/accessibility/techniques/offscreen-text": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/offscreen-text+meta.json"); };
+			"/accessibility/techniques/roving-tabindex": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/roving-tabindex+meta.json"); };
+			"/accessibility/techniques/skip-to-main-content": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/techniques/skip-to-main-content+meta.json"); };
+			"/accessibility/testing/checklist": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/testing/checklist+meta.json"); };
+			"/accessibility/testing/known-issues": { verb: "get"; meta: typeof import("../src/routes/_index/accessibility/testing/known-issues+meta.json"); };
+			"/components": { verb: "get"; meta: typeof import("../src/routes/_index/components/+meta.json"); };
+			"/components/accordion": { verb: "get"; meta: typeof import("../src/routes/_index/components/accordion/+meta.json"); };
+			"/components/accordion/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/accordion/accessibility+meta.json"); };
+			"/components/accordion/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/accordion/css+meta.json"); };
+			"/components/alert-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/components/alert-dialog/+meta.json"); };
+			"/components/alert-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/alert-dialog/accessibility+meta.json"); };
+			"/components/alert-dialog/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/alert-dialog/css+meta.json"); };
+			"/components/avatar": { verb: "get"; meta: typeof import("../src/routes/_index/components/avatar/+meta.json"); };
+			"/components/avatar/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/avatar/accessibility+meta.json"); };
+			"/components/avatar/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/avatar/css+meta.json"); };
+			"/components/badge": { verb: "get"; meta: typeof import("../src/routes/_index/components/badge/+meta.json"); };
+			"/components/badge/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/badge/accessibility+meta.json"); };
+			"/components/badge/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/badge/css+meta.json"); };
+			"/components/breadcrumbs": { verb: "get"; meta: typeof import("../src/routes/_index/components/breadcrumbs/+meta.json"); };
+			"/components/breadcrumbs/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/breadcrumbs/accessibility+meta.json"); };
+			"/components/breadcrumbs/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/breadcrumbs/css+meta.json"); };
+			"/components/button": { verb: "get"; meta: typeof import("../src/routes/_index/components/button/+meta.json"); };
+			"/components/button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/button/accessibility+meta.json"); };
+			"/components/button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/button/css+meta.json"); };
+			"/components/button/marko": { verb: "get"; meta: typeof import("../src/routes/_index/components/button/marko+meta.json"); };
+			"/components/button/react": { verb: "get"; meta: typeof import("../src/routes/_index/components/button/react+meta.json"); };
+			"/components/calendar": { verb: "get"; meta: typeof import("../src/routes/_index/components/calendar/+meta.json"); };
+			"/components/calendar/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/calendar/accessibility+meta.json"); };
+			"/components/calendar/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/calendar/css+meta.json"); };
+			"/components/card": { verb: "get"; meta: typeof import("../src/routes/_index/components/card/+meta.json"); };
+			"/components/card/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/card/accessibility+meta.json"); };
+			"/components/card/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/card/css+meta.json"); };
+			"/components/carousel": { verb: "get"; meta: typeof import("../src/routes/_index/components/carousel/+meta.json"); };
+			"/components/carousel/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/carousel/accessibility+meta.json"); };
+			"/components/carousel/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/carousel/css+meta.json"); };
+			"/components/ccd": { verb: "get"; meta: typeof import("../src/routes/_index/components/ccd/+meta.json"); };
+			"/components/ccd/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/ccd/accessibility+meta.json"); };
+			"/components/ccd/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/ccd/css+meta.json"); };
+			"/components/chart-legend": { verb: "get"; meta: typeof import("../src/routes/_index/components/chart-legend/+meta.json"); };
+			"/components/chart-legend/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/chart-legend/accessibility+meta.json"); };
+			"/components/chart-legend/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/chart-legend/css+meta.json"); };
+			"/components/checkbox": { verb: "get"; meta: typeof import("../src/routes/_index/components/checkbox/+meta.json"); };
+			"/components/checkbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/checkbox/accessibility+meta.json"); };
+			"/components/checkbox/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/checkbox/css+meta.json"); };
+			"/components/chip": { verb: "get"; meta: typeof import("../src/routes/_index/components/chip/+meta.json"); };
+			"/components/chip/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/chip/accessibility+meta.json"); };
+			"/components/chip/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/chip/css+meta.json"); };
+			"/components/chips-combobox": { verb: "get"; meta: typeof import("../src/routes/_index/components/chips-combobox/+meta.json"); };
+			"/components/chips-combobox/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/chips-combobox/accessibility+meta.json"); };
+			"/components/chips-combobox/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/chips-combobox/css+meta.json"); };
+			"/components/combobox": { verb: "get"; meta: typeof import("../src/routes/_index/components/combobox/+meta.json"); };
+			"/components/combobox/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/combobox/accessibility+meta.json"); };
+			"/components/combobox/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/combobox/css+meta.json"); };
+			"/components/confirm-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/components/confirm-dialog/+meta.json"); };
+			"/components/confirm-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/confirm-dialog/accessibility+meta.json"); };
+			"/components/confirm-dialog/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/confirm-dialog/css+meta.json"); };
+			"/components/cta-button": { verb: "get"; meta: typeof import("../src/routes/_index/components/cta-button/+meta.json"); };
+			"/components/cta-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/cta-button/accessibility+meta.json"); };
+			"/components/cta-button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/cta-button/css+meta.json"); };
+			"/components/date-textbox": { verb: "get"; meta: typeof import("../src/routes/_index/components/date-textbox/+meta.json"); };
+			"/components/date-textbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/date-textbox/accessibility+meta.json"); };
+			"/components/date-textbox/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/date-textbox/css+meta.json"); };
+			"/components/details": { verb: "get"; meta: typeof import("../src/routes/_index/components/details/+meta.json"); };
+			"/components/details/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/details/accessibility+meta.json"); };
+			"/components/details/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/details/css+meta.json"); };
+			"/components/donut-chart": { verb: "get"; meta: typeof import("../src/routes/_index/components/donut-chart/+meta.json"); };
+			"/components/donut-chart/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/donut-chart/accessibility+meta.json"); };
+			"/components/donut-chart/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/donut-chart/css+meta.json"); };
+			"/components/education-notice": { verb: "get"; meta: typeof import("../src/routes/_index/components/education-notice/+meta.json"); };
+			"/components/education-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/education-notice/accessibility+meta.json"); };
+			"/components/education-notice/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/education-notice/css+meta.json"); };
+			"/components/eek": { verb: "get"; meta: typeof import("../src/routes/_index/components/eek/+meta.json"); };
+			"/components/eek/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/eek/accessibility+meta.json"); };
+			"/components/eek/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/eek/css+meta.json"); };
+			"/components/field": { verb: "get"; meta: typeof import("../src/routes/_index/components/field/+meta.json"); };
+			"/components/field/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/field/accessibility+meta.json"); };
+			"/components/field/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/field/css+meta.json"); };
+			"/components/file-input": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-input/+meta.json"); };
+			"/components/file-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-input/accessibility+meta.json"); };
+			"/components/file-input/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-input/css+meta.json"); };
+			"/components/file-preview-card": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-preview-card/+meta.json"); };
+			"/components/file-preview-card/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-preview-card/accessibility+meta.json"); };
+			"/components/file-preview-card/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-preview-card/css+meta.json"); };
+			"/components/file-preview-card-group": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-preview-card-group/+meta.json"); };
+			"/components/file-preview-card-group/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-preview-card-group/accessibility+meta.json"); };
+			"/components/file-preview-card-group/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/file-preview-card-group/css+meta.json"); };
+			"/components/filter-chip": { verb: "get"; meta: typeof import("../src/routes/_index/components/filter-chip/+meta.json"); };
+			"/components/filter-chip/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/filter-chip/accessibility+meta.json"); };
+			"/components/filter-chip/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/filter-chip/css+meta.json"); };
+			"/components/filter-input": { verb: "get"; meta: typeof import("../src/routes/_index/components/filter-input/+meta.json"); };
+			"/components/filter-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/filter-input/accessibility+meta.json"); };
+			"/components/filter-input/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/filter-input/css+meta.json"); };
+			"/components/flag": { verb: "get"; meta: typeof import("../src/routes/_index/components/flag/+meta.json"); };
+			"/components/flag/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/flag/accessibility+meta.json"); };
+			"/components/flag/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/flag/css+meta.json"); };
+			"/components/floating-label": { verb: "get"; meta: typeof import("../src/routes/_index/components/floating-label/+meta.json"); };
+			"/components/floating-label/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/floating-label/accessibility+meta.json"); };
+			"/components/floating-label/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/floating-label/css+meta.json"); };
+			"/components/global": { verb: "get"; meta: typeof import("../src/routes/_index/components/global/+meta.json"); };
+			"/components/global/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/global/accessibility+meta.json"); };
+			"/components/global/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/global/css+meta.json"); };
+			"/components/icon": { verb: "get"; meta: typeof import("../src/routes/_index/components/icon/+meta.json"); };
+			"/components/icon/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/icon/accessibility+meta.json"); };
+			"/components/icon/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/icon/css+meta.json"); };
+			"/components/icon-button": { verb: "get"; meta: typeof import("../src/routes/_index/components/icon-button/+meta.json"); };
+			"/components/icon-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/icon-button/accessibility+meta.json"); };
+			"/components/icon-button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/icon-button/css+meta.json"); };
+			"/components/image-placeholder": { verb: "get"; meta: typeof import("../src/routes/_index/components/image-placeholder/+meta.json"); };
+			"/components/image-placeholder/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/image-placeholder/accessibility+meta.json"); };
+			"/components/image-placeholder/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/image-placeholder/css+meta.json"); };
+			"/components/infotip": { verb: "get"; meta: typeof import("../src/routes/_index/components/infotip/+meta.json"); };
+			"/components/infotip/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/infotip/accessibility+meta.json"); };
+			"/components/infotip/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/infotip/css+meta.json"); };
+			"/components/inline-notice": { verb: "get"; meta: typeof import("../src/routes/_index/components/inline-notice/+meta.json"); };
+			"/components/inline-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/inline-notice/accessibility+meta.json"); };
+			"/components/inline-notice/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/inline-notice/css+meta.json"); };
+			"/components/item-tile": { verb: "get"; meta: typeof import("../src/routes/_index/components/item-tile/+meta.json"); };
+			"/components/item-tile/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/item-tile/accessibility+meta.json"); };
+			"/components/item-tile/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/item-tile/css+meta.json"); };
+			"/components/item-tile-group": { verb: "get"; meta: typeof import("../src/routes/_index/components/item-tile-group/+meta.json"); };
+			"/components/item-tile-group/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/item-tile-group/accessibility+meta.json"); };
+			"/components/item-tile-group/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/item-tile-group/css+meta.json"); };
+			"/components/layout-grid": { verb: "get"; meta: typeof import("../src/routes/_index/components/layout-grid/+meta.json"); };
+			"/components/layout-grid/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/layout-grid/accessibility+meta.json"); };
+			"/components/layout-grid/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/layout-grid/css+meta.json"); };
+			"/components/lightbox-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/components/lightbox-dialog/+meta.json"); };
+			"/components/lightbox-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/lightbox-dialog/accessibility+meta.json"); };
+			"/components/lightbox-dialog/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/lightbox-dialog/css+meta.json"); };
+			"/components/link": { verb: "get"; meta: typeof import("../src/routes/_index/components/link/+meta.json"); };
+			"/components/link/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/link/accessibility+meta.json"); };
+			"/components/link/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/link/css+meta.json"); };
+			"/components/list": { verb: "get"; meta: typeof import("../src/routes/_index/components/list/+meta.json"); };
+			"/components/list/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/list/accessibility+meta.json"); };
+			"/components/list/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/list/css+meta.json"); };
+			"/components/listbox": { verb: "get"; meta: typeof import("../src/routes/_index/components/listbox/+meta.json"); };
+			"/components/listbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/listbox/accessibility+meta.json"); };
+			"/components/listbox/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/listbox/css+meta.json"); };
+			"/components/listbox-button": { verb: "get"; meta: typeof import("../src/routes/_index/components/listbox-button/+meta.json"); };
+			"/components/listbox-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/listbox-button/accessibility+meta.json"); };
+			"/components/listbox-button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/listbox-button/css+meta.json"); };
+			"/components/marketsans": { verb: "get"; meta: typeof import("../src/routes/_index/components/marketsans/+meta.json"); };
+			"/components/marketsans/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/marketsans/accessibility+meta.json"); };
+			"/components/marketsans/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/marketsans/css+meta.json"); };
+			"/components/menu": { verb: "get"; meta: typeof import("../src/routes/_index/components/menu/+meta.json"); };
+			"/components/menu/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/menu/accessibility+meta.json"); };
+			"/components/menu/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/menu/css+meta.json"); };
+			"/components/menu-button": { verb: "get"; meta: typeof import("../src/routes/_index/components/menu-button/+meta.json"); };
+			"/components/menu-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/menu-button/accessibility+meta.json"); };
+			"/components/menu-button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/menu-button/css+meta.json"); };
+			"/components/number-input": { verb: "get"; meta: typeof import("../src/routes/_index/components/number-input/+meta.json"); };
+			"/components/number-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/number-input/accessibility+meta.json"); };
+			"/components/number-input/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/number-input/css+meta.json"); };
+			"/components/page-grid": { verb: "get"; meta: typeof import("../src/routes/_index/components/page-grid/+meta.json"); };
+			"/components/page-grid/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/page-grid/accessibility+meta.json"); };
+			"/components/page-grid/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/page-grid/css+meta.json"); };
+			"/components/page-notice": { verb: "get"; meta: typeof import("../src/routes/_index/components/page-notice/+meta.json"); };
+			"/components/page-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/page-notice/accessibility+meta.json"); };
+			"/components/page-notice/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/page-notice/css+meta.json"); };
+			"/components/pagination": { verb: "get"; meta: typeof import("../src/routes/_index/components/pagination/+meta.json"); };
+			"/components/pagination/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/pagination/accessibility+meta.json"); };
+			"/components/pagination/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/pagination/css+meta.json"); };
+			"/components/panel-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/components/panel-dialog/+meta.json"); };
+			"/components/panel-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/panel-dialog/accessibility+meta.json"); };
+			"/components/panel-dialog/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/panel-dialog/css+meta.json"); };
+			"/components/phone-input": { verb: "get"; meta: typeof import("../src/routes/_index/components/phone-input/+meta.json"); };
+			"/components/phone-input/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/phone-input/accessibility+meta.json"); };
+			"/components/phone-input/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/phone-input/css+meta.json"); };
+			"/components/progress-bar": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-bar/+meta.json"); };
+			"/components/progress-bar/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-bar/accessibility+meta.json"); };
+			"/components/progress-bar/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-bar/css+meta.json"); };
+			"/components/progress-bar-expressive": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-bar-expressive/+meta.json"); };
+			"/components/progress-bar-expressive/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-bar-expressive/accessibility+meta.json"); };
+			"/components/progress-bar-expressive/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-bar-expressive/css+meta.json"); };
+			"/components/progress-spinner": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-spinner/+meta.json"); };
+			"/components/progress-spinner/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-spinner/accessibility+meta.json"); };
+			"/components/progress-spinner/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-spinner/css+meta.json"); };
+			"/components/progress-stepper": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-stepper/+meta.json"); };
+			"/components/progress-stepper/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-stepper/accessibility+meta.json"); };
+			"/components/progress-stepper/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/progress-stepper/css+meta.json"); };
+			"/components/radio": { verb: "get"; meta: typeof import("../src/routes/_index/components/radio/+meta.json"); };
+			"/components/radio/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/radio/accessibility+meta.json"); };
+			"/components/radio/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/radio/css+meta.json"); };
+			"/components/sass": { verb: "get"; meta: typeof import("../src/routes/_index/components/sass/+meta.json"); };
+			"/components/section-notice": { verb: "get"; meta: typeof import("../src/routes/_index/components/section-notice/+meta.json"); };
+			"/components/section-notice/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/section-notice/accessibility+meta.json"); };
+			"/components/section-notice/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/section-notice/css+meta.json"); };
+			"/components/section-title": { verb: "get"; meta: typeof import("../src/routes/_index/components/section-title/+meta.json"); };
+			"/components/section-title/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/section-title/accessibility+meta.json"); };
+			"/components/section-title/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/section-title/css+meta.json"); };
+			"/components/segmented-buttons": { verb: "get"; meta: typeof import("../src/routes/_index/components/segmented-buttons/+meta.json"); };
+			"/components/segmented-buttons/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/segmented-buttons/accessibility+meta.json"); };
+			"/components/segmented-buttons/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/segmented-buttons/css+meta.json"); };
+			"/components/select": { verb: "get"; meta: typeof import("../src/routes/_index/components/select/+meta.json"); };
+			"/components/select/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/select/accessibility+meta.json"); };
+			"/components/select/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/select/css+meta.json"); };
+			"/components/selection-chip": { verb: "get"; meta: typeof import("../src/routes/_index/components/selection-chip/+meta.json"); };
+			"/components/signal": { verb: "get"; meta: typeof import("../src/routes/_index/components/signal/+meta.json"); };
+			"/components/signal/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/signal/accessibility+meta.json"); };
+			"/components/signal/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/signal/css+meta.json"); };
+			"/components/skeleton": { verb: "get"; meta: typeof import("../src/routes/_index/components/skeleton/+meta.json"); };
+			"/components/skeleton/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/skeleton/accessibility+meta.json"); };
+			"/components/skeleton/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/skeleton/css+meta.json"); };
+			"/components/snackbar-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/components/snackbar-dialog/+meta.json"); };
+			"/components/snackbar-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/snackbar-dialog/accessibility+meta.json"); };
+			"/components/snackbar-dialog/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/snackbar-dialog/css+meta.json"); };
+			"/components/split-button": { verb: "get"; meta: typeof import("../src/routes/_index/components/split-button/+meta.json"); };
+			"/components/split-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/split-button/accessibility+meta.json"); };
+			"/components/split-button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/split-button/css+meta.json"); };
+			"/components/star-rating": { verb: "get"; meta: typeof import("../src/routes/_index/components/star-rating/+meta.json"); };
+			"/components/star-rating/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/star-rating/accessibility+meta.json"); };
+			"/components/star-rating/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/star-rating/css+meta.json"); };
+			"/components/star-rating-select": { verb: "get"; meta: typeof import("../src/routes/_index/components/star-rating-select/+meta.json"); };
+			"/components/star-rating-select/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/star-rating-select/accessibility+meta.json"); };
+			"/components/star-rating-select/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/star-rating-select/css+meta.json"); };
+			"/components/svg": { verb: "get"; meta: typeof import("../src/routes/_index/components/svg/+meta.json"); };
+			"/components/svg/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/svg/accessibility+meta.json"); };
+			"/components/svg/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/svg/css+meta.json"); };
+			"/components/switch": { verb: "get"; meta: typeof import("../src/routes/_index/components/switch/+meta.json"); };
+			"/components/switch/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/switch/accessibility+meta.json"); };
+			"/components/switch/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/switch/css+meta.json"); };
+			"/components/table": { verb: "get"; meta: typeof import("../src/routes/_index/components/table/+meta.json"); };
+			"/components/table/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/table/accessibility+meta.json"); };
+			"/components/table/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/table/css+meta.json"); };
+			"/components/tabs": { verb: "get"; meta: typeof import("../src/routes/_index/components/tabs/+meta.json"); };
+			"/components/tabs/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/tabs/accessibility+meta.json"); };
+			"/components/tabs/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/tabs/css+meta.json"); };
+			"/components/textbox": { verb: "get"; meta: typeof import("../src/routes/_index/components/textbox/+meta.json"); };
+			"/components/textbox/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/textbox/accessibility+meta.json"); };
+			"/components/textbox/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/textbox/css+meta.json"); };
+			"/components/toast-dialog": { verb: "get"; meta: typeof import("../src/routes/_index/components/toast-dialog/+meta.json"); };
+			"/components/toast-dialog/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/toast-dialog/accessibility+meta.json"); };
+			"/components/toast-dialog/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/toast-dialog/css+meta.json"); };
+			"/components/toggle-button": { verb: "get"; meta: typeof import("../src/routes/_index/components/toggle-button/+meta.json"); };
+			"/components/toggle-button/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/toggle-button/accessibility+meta.json"); };
+			"/components/toggle-button/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/toggle-button/css+meta.json"); };
+			"/components/toggle-button-group": { verb: "get"; meta: typeof import("../src/routes/_index/components/toggle-button-group/+meta.json"); };
+			"/components/toggle-button-group/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/toggle-button-group/accessibility+meta.json"); };
+			"/components/toggle-button-group/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/toggle-button-group/css+meta.json"); };
+			"/components/tokens": { verb: "get"; meta: typeof import("../src/routes/_index/components/tokens/+meta.json"); };
+			"/components/tokens/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/tokens/accessibility+meta.json"); };
+			"/components/tokens/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/tokens/css+meta.json"); };
+			"/components/tooltip": { verb: "get"; meta: typeof import("../src/routes/_index/components/tooltip/+meta.json"); };
+			"/components/tooltip/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/tooltip/accessibility+meta.json"); };
+			"/components/tooltip/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/tooltip/css+meta.json"); };
+			"/components/tourtip": { verb: "get"; meta: typeof import("../src/routes/_index/components/tourtip/+meta.json"); };
+			"/components/tourtip/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/tourtip/accessibility+meta.json"); };
+			"/components/tourtip/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/tourtip/css+meta.json"); };
+			"/components/typography": { verb: "get"; meta: typeof import("../src/routes/_index/components/typography/+meta.json"); };
+			"/components/typography/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/typography/accessibility+meta.json"); };
+			"/components/typography/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/typography/css+meta.json"); };
+			"/components/utility": { verb: "get"; meta: typeof import("../src/routes/_index/components/utility/+meta.json"); };
+			"/components/utility/accessibility": { verb: "get"; meta: typeof import("../src/routes/_index/components/utility/accessibility+meta.json"); };
+			"/components/utility/css": { verb: "get"; meta: typeof import("../src/routes/_index/components/utility/css+meta.json"); };
+			"/guides": { verb: "get"; meta: typeof import("../src/routes/_index/guides/+meta.json"); };
+			"/guides/animation": { verb: "get"; meta: typeof import("../src/routes/_index/guides/animation+meta.json"); };
+			"/guides/page-grid": { verb: "get"; meta: typeof import("../src/routes/_index/guides/page-grid+meta.json"); };
+			"/guides/skeleton": { verb: "get"; meta: typeof import("../src/routes/_index/guides/skeleton+meta.json"); };
 			"/guide-examples/page-grid-blog-stretchy-nested": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+meta.json"); };
 			"/guide-examples/page-grid-blog-stretchy-subgrid": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+meta.json"); };
 			"/guide-examples/page-grid-pricing": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-pricing/+meta.json"); };
@@ -325,15 +329,11 @@ declare module "@marko/run" {
 			"/guide-examples/skeleton-examples/out-of-order/example-2": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-2/+meta.json"); };
 			"/guide-examples/skeleton-examples/out-of-order/example-3": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-3/+meta.json"); };
 			"/guide-examples/skeleton-examples/out-of-order/example-4": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+meta.json"); };
-			"/guides": { verb: "get"; meta: typeof import("../src/routes/guides/+meta.json"); };
-			"/guides/animation": { verb: "get"; meta: typeof import("../src/routes/guides/animation+meta.json"); };
-			"/guides/page-grid": { verb: "get"; meta: typeof import("../src/routes/guides/page-grid+meta.json"); };
-			"/guides/skeleton": { verb: "get"; meta: typeof import("../src/routes/guides/skeleton+meta.json"); };
 		}
 	}> {}
 }
 
-declare module "../src/routes/+page.marko" {
+declare module "../src/routes/_index/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/"];
@@ -344,7 +344,7 @@ declare module "../src/routes/+page.marko" {
   }
 }
 
-declare module "../src/routes/evo-css-components+page.marko" {
+declare module "../src/routes/_index/evo-css-components+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/evo-css-components"];
@@ -355,7 +355,7 @@ declare module "../src/routes/evo-css-components+page.marko" {
   }
 }
 
-declare module "../src/routes/evo-marko-components+page.marko" {
+declare module "../src/routes/_index/evo-marko-components+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/evo-marko-components"];
@@ -366,7 +366,7 @@ declare module "../src/routes/evo-marko-components+page.marko" {
   }
 }
 
-declare module "../src/routes/evo-react-components+page.marko" {
+declare module "../src/routes/_index/evo-react-components+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/evo-react-components"];
@@ -377,7 +377,7 @@ declare module "../src/routes/evo-react-components+page.marko" {
   }
 }
 
-declare module "../src/routes/sitemap+page.marko" {
+declare module "../src/routes/_index/sitemap+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/sitemap"];
@@ -388,7 +388,7 @@ declare module "../src/routes/sitemap+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/+page.marko" {
+declare module "../src/routes/_index/accessibility/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility"];
@@ -399,7 +399,7 @@ declare module "../src/routes/accessibility/+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns"];
@@ -410,7 +410,7 @@ declare module "../src/routes/accessibility/anti-patterns/+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/disabling-pinch-to-zoom+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/disabling-pinch-to-zoom+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/disabling-pinch-to-zoom"];
@@ -421,7 +421,7 @@ declare module "../src/routes/accessibility/anti-patterns/disabling-pinch-to-zoo
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/hand-cursor-on-buttons+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/hand-cursor-on-buttons+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/hand-cursor-on-buttons"];
@@ -432,7 +432,7 @@ declare module "../src/routes/accessibility/anti-patterns/hand-cursor-on-buttons
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/javascript-href+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/javascript-href+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/javascript-href"];
@@ -443,7 +443,7 @@ declare module "../src/routes/accessibility/anti-patterns/javascript-href+page.m
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/layout-table+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/layout-table+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/layout-table"];
@@ -454,7 +454,7 @@ declare module "../src/routes/accessibility/anti-patterns/layout-table+page.mark
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/non-interactive-hover+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/non-interactive-hover+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/non-interactive-hover"];
@@ -465,7 +465,7 @@ declare module "../src/routes/accessibility/anti-patterns/non-interactive-hover+
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/open-new-window+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/open-new-window+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/open-new-window"];
@@ -476,7 +476,7 @@ declare module "../src/routes/accessibility/anti-patterns/open-new-window+page.m
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/setting-focus-on-page-load+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/setting-focus-on-page-load+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/setting-focus-on-page-load"];
@@ -487,7 +487,7 @@ declare module "../src/routes/accessibility/anti-patterns/setting-focus-on-page-
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/tabindex-itis+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/tabindex-itis+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/tabindex-itis"];
@@ -498,7 +498,7 @@ declare module "../src/routes/accessibility/anti-patterns/tabindex-itis+page.mar
   }
 }
 
-declare module "../src/routes/accessibility/anti-patterns/title-tooltip+page.marko" {
+declare module "../src/routes/_index/accessibility/anti-patterns/title-tooltip+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/anti-patterns/title-tooltip"];
@@ -509,7 +509,7 @@ declare module "../src/routes/accessibility/anti-patterns/title-tooltip+page.mar
   }
 }
 
-declare module "../src/routes/accessibility/misc/+page.marko" {
+declare module "../src/routes/_index/accessibility/misc/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/misc"];
@@ -520,7 +520,7 @@ declare module "../src/routes/accessibility/misc/+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/misc/aria-essentials+page.marko" {
+declare module "../src/routes/_index/accessibility/misc/aria-essentials+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/misc/aria-essentials"];
@@ -531,7 +531,7 @@ declare module "../src/routes/accessibility/misc/aria-essentials+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/misc/component-naming-scheme+page.marko" {
+declare module "../src/routes/_index/accessibility/misc/component-naming-scheme+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/misc/component-naming-scheme"];
@@ -542,7 +542,7 @@ declare module "../src/routes/accessibility/misc/component-naming-scheme+page.ma
   }
 }
 
-declare module "../src/routes/accessibility/misc/faq+page.marko" {
+declare module "../src/routes/_index/accessibility/misc/faq+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/misc/faq"];
@@ -553,7 +553,7 @@ declare module "../src/routes/accessibility/misc/faq+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns"];
@@ -564,7 +564,7 @@ declare module "../src/routes/accessibility/patterns/+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/description-list+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/description-list+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/description-list"];
@@ -575,7 +575,7 @@ declare module "../src/routes/accessibility/patterns/description-list+page.marko
   }
 }
 
-declare module "../src/routes/accessibility/patterns/fake-menu-button+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/fake-menu-button+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/fake-menu-button"];
@@ -586,7 +586,7 @@ declare module "../src/routes/accessibility/patterns/fake-menu-button+page.marko
   }
 }
 
-declare module "../src/routes/accessibility/patterns/fake-tabs+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/fake-tabs+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/fake-tabs"];
@@ -597,7 +597,7 @@ declare module "../src/routes/accessibility/patterns/fake-tabs+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/footnote+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/footnote+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/footnote"];
@@ -608,7 +608,7 @@ declare module "../src/routes/accessibility/patterns/footnote+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/form+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/form+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/form"];
@@ -619,7 +619,7 @@ declare module "../src/routes/accessibility/patterns/form+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/form-validation+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/form-validation+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/form-validation"];
@@ -630,7 +630,7 @@ declare module "../src/routes/accessibility/patterns/form-validation+page.marko"
   }
 }
 
-declare module "../src/routes/accessibility/patterns/heading+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/heading+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/heading"];
@@ -641,7 +641,7 @@ declare module "../src/routes/accessibility/patterns/heading+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/image+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/image+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/image"];
@@ -652,7 +652,7 @@ declare module "../src/routes/accessibility/patterns/image+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/input-dialog+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/input-dialog+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/input-dialog"];
@@ -663,7 +663,7 @@ declare module "../src/routes/accessibility/patterns/input-dialog+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/input-meter+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/input-meter+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/input-meter"];
@@ -674,7 +674,7 @@ declare module "../src/routes/accessibility/patterns/input-meter+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/input-validation+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/input-validation+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/input-validation"];
@@ -685,7 +685,7 @@ declare module "../src/routes/accessibility/patterns/input-validation+page.marko
   }
 }
 
-declare module "../src/routes/accessibility/patterns/popover+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/popover+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/popover"];
@@ -696,7 +696,7 @@ declare module "../src/routes/accessibility/patterns/popover+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/pulldown-list+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/pulldown-list+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/pulldown-list"];
@@ -707,7 +707,7 @@ declare module "../src/routes/accessibility/patterns/pulldown-list+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/region+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/region+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/region"];
@@ -718,7 +718,7 @@ declare module "../src/routes/accessibility/patterns/region+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/skip-navigation+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/skip-navigation+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/skip-navigation"];
@@ -729,7 +729,7 @@ declare module "../src/routes/accessibility/patterns/skip-navigation+page.marko"
   }
 }
 
-declare module "../src/routes/accessibility/patterns/table-cell+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/table-cell+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/table-cell"];
@@ -740,7 +740,7 @@ declare module "../src/routes/accessibility/patterns/table-cell+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/patterns/time+page.marko" {
+declare module "../src/routes/_index/accessibility/patterns/time+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/patterns/time"];
@@ -751,7 +751,7 @@ declare module "../src/routes/accessibility/patterns/time+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/techniques/+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques"];
@@ -762,7 +762,7 @@ declare module "../src/routes/accessibility/techniques/+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/techniques/active-descendant+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/active-descendant+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/active-descendant"];
@@ -773,7 +773,7 @@ declare module "../src/routes/accessibility/techniques/active-descendant+page.ma
   }
 }
 
-declare module "../src/routes/accessibility/techniques/alternative-text+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/alternative-text+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/alternative-text"];
@@ -784,7 +784,7 @@ declare module "../src/routes/accessibility/techniques/alternative-text+page.mar
   }
 }
 
-declare module "../src/routes/accessibility/techniques/ambiguous-label+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/ambiguous-label+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/ambiguous-label"];
@@ -795,7 +795,7 @@ declare module "../src/routes/accessibility/techniques/ambiguous-label+page.mark
   }
 }
 
-declare module "../src/routes/accessibility/techniques/background-icon+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/background-icon+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/background-icon"];
@@ -806,7 +806,7 @@ declare module "../src/routes/accessibility/techniques/background-icon+page.mark
   }
 }
 
-declare module "../src/routes/accessibility/techniques/keyboard-interface+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/keyboard-interface+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/keyboard-interface"];
@@ -817,7 +817,7 @@ declare module "../src/routes/accessibility/techniques/keyboard-interface+page.m
   }
 }
 
-declare module "../src/routes/accessibility/techniques/keyboard-trap+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/keyboard-trap+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/keyboard-trap"];
@@ -828,7 +828,7 @@ declare module "../src/routes/accessibility/techniques/keyboard-trap+page.marko"
   }
 }
 
-declare module "../src/routes/accessibility/techniques/live-region+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/live-region+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/live-region"];
@@ -839,7 +839,7 @@ declare module "../src/routes/accessibility/techniques/live-region+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/techniques/offscreen-text+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/offscreen-text+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/offscreen-text"];
@@ -850,7 +850,7 @@ declare module "../src/routes/accessibility/techniques/offscreen-text+page.marko
   }
 }
 
-declare module "../src/routes/accessibility/techniques/roving-tabindex+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/roving-tabindex+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/roving-tabindex"];
@@ -861,7 +861,7 @@ declare module "../src/routes/accessibility/techniques/roving-tabindex+page.mark
   }
 }
 
-declare module "../src/routes/accessibility/techniques/skip-to-main-content+page.marko" {
+declare module "../src/routes/_index/accessibility/techniques/skip-to-main-content+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/techniques/skip-to-main-content"];
@@ -872,7 +872,7 @@ declare module "../src/routes/accessibility/techniques/skip-to-main-content+page
   }
 }
 
-declare module "../src/routes/accessibility/testing/checklist+page.marko" {
+declare module "../src/routes/_index/accessibility/testing/checklist+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/testing/checklist"];
@@ -883,7 +883,7 @@ declare module "../src/routes/accessibility/testing/checklist+page.marko" {
   }
 }
 
-declare module "../src/routes/accessibility/testing/known-issues+page.marko" {
+declare module "../src/routes/_index/accessibility/testing/known-issues+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility/testing/known-issues"];
@@ -894,10 +894,10 @@ declare module "../src/routes/accessibility/testing/known-issues+page.marko" {
   }
 }
 
-declare module "../src/routes/component/+page.marko" {
+declare module "../src/routes/_index/components/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component"];
+    export type Route = Run.Routes["/components"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -905,10 +905,10 @@ declare module "../src/routes/component/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/accordion/+page.marko" {
+declare module "../src/routes/_index/components/accordion/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/accordion"];
+    export type Route = Run.Routes["/components/accordion"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -916,10 +916,10 @@ declare module "../src/routes/component/accordion/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/accordion/accessibility+page.marko" {
+declare module "../src/routes/_index/components/accordion/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/accordion/accessibility"];
+    export type Route = Run.Routes["/components/accordion/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -927,10 +927,10 @@ declare module "../src/routes/component/accordion/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/accordion/css+page.marko" {
+declare module "../src/routes/_index/components/accordion/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/accordion/css"];
+    export type Route = Run.Routes["/components/accordion/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -938,10 +938,10 @@ declare module "../src/routes/component/accordion/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/alert-dialog/+page.marko" {
+declare module "../src/routes/_index/components/alert-dialog/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/alert-dialog"];
+    export type Route = Run.Routes["/components/alert-dialog"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -949,10 +949,10 @@ declare module "../src/routes/component/alert-dialog/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/alert-dialog/accessibility+page.marko" {
+declare module "../src/routes/_index/components/alert-dialog/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/alert-dialog/accessibility"];
+    export type Route = Run.Routes["/components/alert-dialog/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -960,10 +960,10 @@ declare module "../src/routes/component/alert-dialog/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/alert-dialog/css+page.marko" {
+declare module "../src/routes/_index/components/alert-dialog/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/alert-dialog/css"];
+    export type Route = Run.Routes["/components/alert-dialog/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -971,10 +971,10 @@ declare module "../src/routes/component/alert-dialog/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/avatar/+page.marko" {
+declare module "../src/routes/_index/components/avatar/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/avatar"];
+    export type Route = Run.Routes["/components/avatar"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -982,10 +982,10 @@ declare module "../src/routes/component/avatar/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/avatar/accessibility+page.marko" {
+declare module "../src/routes/_index/components/avatar/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/avatar/accessibility"];
+    export type Route = Run.Routes["/components/avatar/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -993,10 +993,10 @@ declare module "../src/routes/component/avatar/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/avatar/css+page.marko" {
+declare module "../src/routes/_index/components/avatar/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/avatar/css"];
+    export type Route = Run.Routes["/components/avatar/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1004,10 +1004,10 @@ declare module "../src/routes/component/avatar/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/badge/+page.marko" {
+declare module "../src/routes/_index/components/badge/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/badge"];
+    export type Route = Run.Routes["/components/badge"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1015,10 +1015,10 @@ declare module "../src/routes/component/badge/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/badge/accessibility+page.marko" {
+declare module "../src/routes/_index/components/badge/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/badge/accessibility"];
+    export type Route = Run.Routes["/components/badge/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1026,10 +1026,10 @@ declare module "../src/routes/component/badge/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/badge/css+page.marko" {
+declare module "../src/routes/_index/components/badge/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/badge/css"];
+    export type Route = Run.Routes["/components/badge/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1037,10 +1037,10 @@ declare module "../src/routes/component/badge/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/breadcrumbs/+page.marko" {
+declare module "../src/routes/_index/components/breadcrumbs/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/breadcrumbs"];
+    export type Route = Run.Routes["/components/breadcrumbs"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1048,10 +1048,10 @@ declare module "../src/routes/component/breadcrumbs/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/breadcrumbs/accessibility+page.marko" {
+declare module "../src/routes/_index/components/breadcrumbs/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/breadcrumbs/accessibility"];
+    export type Route = Run.Routes["/components/breadcrumbs/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1059,10 +1059,10 @@ declare module "../src/routes/component/breadcrumbs/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/breadcrumbs/css+page.marko" {
+declare module "../src/routes/_index/components/breadcrumbs/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/breadcrumbs/css"];
+    export type Route = Run.Routes["/components/breadcrumbs/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1070,10 +1070,10 @@ declare module "../src/routes/component/breadcrumbs/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/button/+page.marko" {
+declare module "../src/routes/_index/components/button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/button"];
+    export type Route = Run.Routes["/components/button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1081,10 +1081,10 @@ declare module "../src/routes/component/button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/button/accessibility"];
+    export type Route = Run.Routes["/components/button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1092,10 +1092,10 @@ declare module "../src/routes/component/button/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/button/css+page.marko" {
+declare module "../src/routes/_index/components/button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/button/css"];
+    export type Route = Run.Routes["/components/button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1103,10 +1103,10 @@ declare module "../src/routes/component/button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/button/marko+page.marko" {
+declare module "../src/routes/_index/components/button/marko+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/button/marko"];
+    export type Route = Run.Routes["/components/button/marko"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1114,10 +1114,10 @@ declare module "../src/routes/component/button/marko+page.marko" {
   }
 }
 
-declare module "../src/routes/component/button/react+page.marko" {
+declare module "../src/routes/_index/components/button/react+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/button/react"];
+    export type Route = Run.Routes["/components/button/react"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1125,10 +1125,10 @@ declare module "../src/routes/component/button/react+page.marko" {
   }
 }
 
-declare module "../src/routes/component/calendar/+page.marko" {
+declare module "../src/routes/_index/components/calendar/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/calendar"];
+    export type Route = Run.Routes["/components/calendar"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1136,10 +1136,10 @@ declare module "../src/routes/component/calendar/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/calendar/accessibility+page.marko" {
+declare module "../src/routes/_index/components/calendar/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/calendar/accessibility"];
+    export type Route = Run.Routes["/components/calendar/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1147,10 +1147,10 @@ declare module "../src/routes/component/calendar/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/calendar/css+page.marko" {
+declare module "../src/routes/_index/components/calendar/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/calendar/css"];
+    export type Route = Run.Routes["/components/calendar/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1158,10 +1158,10 @@ declare module "../src/routes/component/calendar/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/card/+page.marko" {
+declare module "../src/routes/_index/components/card/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/card"];
+    export type Route = Run.Routes["/components/card"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1169,10 +1169,10 @@ declare module "../src/routes/component/card/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/card/accessibility+page.marko" {
+declare module "../src/routes/_index/components/card/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/card/accessibility"];
+    export type Route = Run.Routes["/components/card/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1180,10 +1180,10 @@ declare module "../src/routes/component/card/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/card/css+page.marko" {
+declare module "../src/routes/_index/components/card/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/card/css"];
+    export type Route = Run.Routes["/components/card/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1191,10 +1191,10 @@ declare module "../src/routes/component/card/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/carousel/+page.marko" {
+declare module "../src/routes/_index/components/carousel/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/carousel"];
+    export type Route = Run.Routes["/components/carousel"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1202,10 +1202,10 @@ declare module "../src/routes/component/carousel/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/carousel/accessibility+page.marko" {
+declare module "../src/routes/_index/components/carousel/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/carousel/accessibility"];
+    export type Route = Run.Routes["/components/carousel/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1213,10 +1213,10 @@ declare module "../src/routes/component/carousel/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/carousel/css+page.marko" {
+declare module "../src/routes/_index/components/carousel/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/carousel/css"];
+    export type Route = Run.Routes["/components/carousel/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1224,10 +1224,10 @@ declare module "../src/routes/component/carousel/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/ccd/+page.marko" {
+declare module "../src/routes/_index/components/ccd/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/ccd"];
+    export type Route = Run.Routes["/components/ccd"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1235,10 +1235,10 @@ declare module "../src/routes/component/ccd/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/ccd/accessibility+page.marko" {
+declare module "../src/routes/_index/components/ccd/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/ccd/accessibility"];
+    export type Route = Run.Routes["/components/ccd/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1246,10 +1246,10 @@ declare module "../src/routes/component/ccd/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/ccd/css+page.marko" {
+declare module "../src/routes/_index/components/ccd/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/ccd/css"];
+    export type Route = Run.Routes["/components/ccd/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1257,10 +1257,10 @@ declare module "../src/routes/component/ccd/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chart-legend/+page.marko" {
+declare module "../src/routes/_index/components/chart-legend/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chart-legend"];
+    export type Route = Run.Routes["/components/chart-legend"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1268,10 +1268,10 @@ declare module "../src/routes/component/chart-legend/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chart-legend/accessibility+page.marko" {
+declare module "../src/routes/_index/components/chart-legend/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chart-legend/accessibility"];
+    export type Route = Run.Routes["/components/chart-legend/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1279,10 +1279,10 @@ declare module "../src/routes/component/chart-legend/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chart-legend/css+page.marko" {
+declare module "../src/routes/_index/components/chart-legend/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chart-legend/css"];
+    export type Route = Run.Routes["/components/chart-legend/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1290,10 +1290,10 @@ declare module "../src/routes/component/chart-legend/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/checkbox/+page.marko" {
+declare module "../src/routes/_index/components/checkbox/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/checkbox"];
+    export type Route = Run.Routes["/components/checkbox"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1301,10 +1301,10 @@ declare module "../src/routes/component/checkbox/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/checkbox/accessibility+page.marko" {
+declare module "../src/routes/_index/components/checkbox/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/checkbox/accessibility"];
+    export type Route = Run.Routes["/components/checkbox/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1312,10 +1312,10 @@ declare module "../src/routes/component/checkbox/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/checkbox/css+page.marko" {
+declare module "../src/routes/_index/components/checkbox/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/checkbox/css"];
+    export type Route = Run.Routes["/components/checkbox/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1323,10 +1323,10 @@ declare module "../src/routes/component/checkbox/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chip/+page.marko" {
+declare module "../src/routes/_index/components/chip/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chip"];
+    export type Route = Run.Routes["/components/chip"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1334,10 +1334,10 @@ declare module "../src/routes/component/chip/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chip/accessibility+page.marko" {
+declare module "../src/routes/_index/components/chip/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chip/accessibility"];
+    export type Route = Run.Routes["/components/chip/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1345,10 +1345,10 @@ declare module "../src/routes/component/chip/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chip/css+page.marko" {
+declare module "../src/routes/_index/components/chip/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chip/css"];
+    export type Route = Run.Routes["/components/chip/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1356,10 +1356,10 @@ declare module "../src/routes/component/chip/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chips-combobox/+page.marko" {
+declare module "../src/routes/_index/components/chips-combobox/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chips-combobox"];
+    export type Route = Run.Routes["/components/chips-combobox"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1367,10 +1367,10 @@ declare module "../src/routes/component/chips-combobox/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/chips-combobox/accessibility+page.marko" {
+declare module "../src/routes/_index/components/chips-combobox/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chips-combobox/accessibility"];
+    export type Route = Run.Routes["/components/chips-combobox/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1378,10 +1378,10 @@ declare module "../src/routes/component/chips-combobox/accessibility+page.marko"
   }
 }
 
-declare module "../src/routes/component/chips-combobox/css+page.marko" {
+declare module "../src/routes/_index/components/chips-combobox/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/chips-combobox/css"];
+    export type Route = Run.Routes["/components/chips-combobox/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1389,10 +1389,10 @@ declare module "../src/routes/component/chips-combobox/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/combobox/+page.marko" {
+declare module "../src/routes/_index/components/combobox/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/combobox"];
+    export type Route = Run.Routes["/components/combobox"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1400,10 +1400,10 @@ declare module "../src/routes/component/combobox/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/combobox/accessibility+page.marko" {
+declare module "../src/routes/_index/components/combobox/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/combobox/accessibility"];
+    export type Route = Run.Routes["/components/combobox/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1411,10 +1411,10 @@ declare module "../src/routes/component/combobox/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/combobox/css+page.marko" {
+declare module "../src/routes/_index/components/combobox/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/combobox/css"];
+    export type Route = Run.Routes["/components/combobox/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1422,10 +1422,10 @@ declare module "../src/routes/component/combobox/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/confirm-dialog/+page.marko" {
+declare module "../src/routes/_index/components/confirm-dialog/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/confirm-dialog"];
+    export type Route = Run.Routes["/components/confirm-dialog"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1433,10 +1433,10 @@ declare module "../src/routes/component/confirm-dialog/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/confirm-dialog/accessibility+page.marko" {
+declare module "../src/routes/_index/components/confirm-dialog/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/confirm-dialog/accessibility"];
+    export type Route = Run.Routes["/components/confirm-dialog/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1444,10 +1444,10 @@ declare module "../src/routes/component/confirm-dialog/accessibility+page.marko"
   }
 }
 
-declare module "../src/routes/component/confirm-dialog/css+page.marko" {
+declare module "../src/routes/_index/components/confirm-dialog/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/confirm-dialog/css"];
+    export type Route = Run.Routes["/components/confirm-dialog/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1455,10 +1455,10 @@ declare module "../src/routes/component/confirm-dialog/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/cta-button/+page.marko" {
+declare module "../src/routes/_index/components/cta-button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/cta-button"];
+    export type Route = Run.Routes["/components/cta-button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1466,10 +1466,10 @@ declare module "../src/routes/component/cta-button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/cta-button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/cta-button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/cta-button/accessibility"];
+    export type Route = Run.Routes["/components/cta-button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1477,10 +1477,10 @@ declare module "../src/routes/component/cta-button/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/cta-button/css+page.marko" {
+declare module "../src/routes/_index/components/cta-button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/cta-button/css"];
+    export type Route = Run.Routes["/components/cta-button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1488,10 +1488,10 @@ declare module "../src/routes/component/cta-button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/date-textbox/+page.marko" {
+declare module "../src/routes/_index/components/date-textbox/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/date-textbox"];
+    export type Route = Run.Routes["/components/date-textbox"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1499,10 +1499,10 @@ declare module "../src/routes/component/date-textbox/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/date-textbox/accessibility+page.marko" {
+declare module "../src/routes/_index/components/date-textbox/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/date-textbox/accessibility"];
+    export type Route = Run.Routes["/components/date-textbox/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1510,10 +1510,10 @@ declare module "../src/routes/component/date-textbox/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/date-textbox/css+page.marko" {
+declare module "../src/routes/_index/components/date-textbox/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/date-textbox/css"];
+    export type Route = Run.Routes["/components/date-textbox/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1521,10 +1521,10 @@ declare module "../src/routes/component/date-textbox/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/details/+page.marko" {
+declare module "../src/routes/_index/components/details/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/details"];
+    export type Route = Run.Routes["/components/details"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1532,10 +1532,10 @@ declare module "../src/routes/component/details/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/details/accessibility+page.marko" {
+declare module "../src/routes/_index/components/details/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/details/accessibility"];
+    export type Route = Run.Routes["/components/details/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1543,10 +1543,10 @@ declare module "../src/routes/component/details/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/details/css+page.marko" {
+declare module "../src/routes/_index/components/details/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/details/css"];
+    export type Route = Run.Routes["/components/details/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1554,10 +1554,10 @@ declare module "../src/routes/component/details/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/donut-chart/+page.marko" {
+declare module "../src/routes/_index/components/donut-chart/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/donut-chart"];
+    export type Route = Run.Routes["/components/donut-chart"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1565,10 +1565,10 @@ declare module "../src/routes/component/donut-chart/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/donut-chart/accessibility+page.marko" {
+declare module "../src/routes/_index/components/donut-chart/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/donut-chart/accessibility"];
+    export type Route = Run.Routes["/components/donut-chart/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1576,10 +1576,10 @@ declare module "../src/routes/component/donut-chart/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/donut-chart/css+page.marko" {
+declare module "../src/routes/_index/components/donut-chart/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/donut-chart/css"];
+    export type Route = Run.Routes["/components/donut-chart/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1587,10 +1587,10 @@ declare module "../src/routes/component/donut-chart/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/education-notice/+page.marko" {
+declare module "../src/routes/_index/components/education-notice/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/education-notice"];
+    export type Route = Run.Routes["/components/education-notice"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1598,10 +1598,10 @@ declare module "../src/routes/component/education-notice/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/education-notice/accessibility+page.marko" {
+declare module "../src/routes/_index/components/education-notice/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/education-notice/accessibility"];
+    export type Route = Run.Routes["/components/education-notice/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1609,10 +1609,10 @@ declare module "../src/routes/component/education-notice/accessibility+page.mark
   }
 }
 
-declare module "../src/routes/component/education-notice/css+page.marko" {
+declare module "../src/routes/_index/components/education-notice/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/education-notice/css"];
+    export type Route = Run.Routes["/components/education-notice/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1620,10 +1620,10 @@ declare module "../src/routes/component/education-notice/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/eek/+page.marko" {
+declare module "../src/routes/_index/components/eek/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/eek"];
+    export type Route = Run.Routes["/components/eek"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1631,10 +1631,10 @@ declare module "../src/routes/component/eek/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/eek/accessibility+page.marko" {
+declare module "../src/routes/_index/components/eek/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/eek/accessibility"];
+    export type Route = Run.Routes["/components/eek/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1642,10 +1642,10 @@ declare module "../src/routes/component/eek/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/eek/css+page.marko" {
+declare module "../src/routes/_index/components/eek/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/eek/css"];
+    export type Route = Run.Routes["/components/eek/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1653,10 +1653,10 @@ declare module "../src/routes/component/eek/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/field/+page.marko" {
+declare module "../src/routes/_index/components/field/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/field"];
+    export type Route = Run.Routes["/components/field"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1664,10 +1664,10 @@ declare module "../src/routes/component/field/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/field/accessibility+page.marko" {
+declare module "../src/routes/_index/components/field/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/field/accessibility"];
+    export type Route = Run.Routes["/components/field/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1675,10 +1675,10 @@ declare module "../src/routes/component/field/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/field/css+page.marko" {
+declare module "../src/routes/_index/components/field/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/field/css"];
+    export type Route = Run.Routes["/components/field/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1686,10 +1686,10 @@ declare module "../src/routes/component/field/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-input/+page.marko" {
+declare module "../src/routes/_index/components/file-input/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-input"];
+    export type Route = Run.Routes["/components/file-input"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1697,10 +1697,10 @@ declare module "../src/routes/component/file-input/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-input/accessibility+page.marko" {
+declare module "../src/routes/_index/components/file-input/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-input/accessibility"];
+    export type Route = Run.Routes["/components/file-input/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1708,10 +1708,10 @@ declare module "../src/routes/component/file-input/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-input/css+page.marko" {
+declare module "../src/routes/_index/components/file-input/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-input/css"];
+    export type Route = Run.Routes["/components/file-input/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1719,10 +1719,10 @@ declare module "../src/routes/component/file-input/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-preview-card/+page.marko" {
+declare module "../src/routes/_index/components/file-preview-card/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-preview-card"];
+    export type Route = Run.Routes["/components/file-preview-card"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1730,10 +1730,10 @@ declare module "../src/routes/component/file-preview-card/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-preview-card/accessibility+page.marko" {
+declare module "../src/routes/_index/components/file-preview-card/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-preview-card/accessibility"];
+    export type Route = Run.Routes["/components/file-preview-card/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1741,10 +1741,10 @@ declare module "../src/routes/component/file-preview-card/accessibility+page.mar
   }
 }
 
-declare module "../src/routes/component/file-preview-card/css+page.marko" {
+declare module "../src/routes/_index/components/file-preview-card/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-preview-card/css"];
+    export type Route = Run.Routes["/components/file-preview-card/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1752,10 +1752,10 @@ declare module "../src/routes/component/file-preview-card/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-preview-card-group/+page.marko" {
+declare module "../src/routes/_index/components/file-preview-card-group/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-preview-card-group"];
+    export type Route = Run.Routes["/components/file-preview-card-group"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1763,10 +1763,10 @@ declare module "../src/routes/component/file-preview-card-group/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/file-preview-card-group/accessibility+page.marko" {
+declare module "../src/routes/_index/components/file-preview-card-group/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-preview-card-group/accessibility"];
+    export type Route = Run.Routes["/components/file-preview-card-group/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1774,10 +1774,10 @@ declare module "../src/routes/component/file-preview-card-group/accessibility+pa
   }
 }
 
-declare module "../src/routes/component/file-preview-card-group/css+page.marko" {
+declare module "../src/routes/_index/components/file-preview-card-group/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/file-preview-card-group/css"];
+    export type Route = Run.Routes["/components/file-preview-card-group/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1785,10 +1785,10 @@ declare module "../src/routes/component/file-preview-card-group/css+page.marko" 
   }
 }
 
-declare module "../src/routes/component/filter-chip/+page.marko" {
+declare module "../src/routes/_index/components/filter-chip/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/filter-chip"];
+    export type Route = Run.Routes["/components/filter-chip"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1796,10 +1796,10 @@ declare module "../src/routes/component/filter-chip/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/filter-chip/accessibility+page.marko" {
+declare module "../src/routes/_index/components/filter-chip/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/filter-chip/accessibility"];
+    export type Route = Run.Routes["/components/filter-chip/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1807,10 +1807,10 @@ declare module "../src/routes/component/filter-chip/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/filter-chip/css+page.marko" {
+declare module "../src/routes/_index/components/filter-chip/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/filter-chip/css"];
+    export type Route = Run.Routes["/components/filter-chip/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1818,10 +1818,10 @@ declare module "../src/routes/component/filter-chip/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/filter-input/+page.marko" {
+declare module "../src/routes/_index/components/filter-input/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/filter-input"];
+    export type Route = Run.Routes["/components/filter-input"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1829,10 +1829,10 @@ declare module "../src/routes/component/filter-input/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/filter-input/accessibility+page.marko" {
+declare module "../src/routes/_index/components/filter-input/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/filter-input/accessibility"];
+    export type Route = Run.Routes["/components/filter-input/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1840,10 +1840,10 @@ declare module "../src/routes/component/filter-input/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/filter-input/css+page.marko" {
+declare module "../src/routes/_index/components/filter-input/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/filter-input/css"];
+    export type Route = Run.Routes["/components/filter-input/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1851,10 +1851,10 @@ declare module "../src/routes/component/filter-input/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/flag/+page.marko" {
+declare module "../src/routes/_index/components/flag/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/flag"];
+    export type Route = Run.Routes["/components/flag"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1862,10 +1862,10 @@ declare module "../src/routes/component/flag/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/flag/accessibility+page.marko" {
+declare module "../src/routes/_index/components/flag/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/flag/accessibility"];
+    export type Route = Run.Routes["/components/flag/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1873,10 +1873,10 @@ declare module "../src/routes/component/flag/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/flag/css+page.marko" {
+declare module "../src/routes/_index/components/flag/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/flag/css"];
+    export type Route = Run.Routes["/components/flag/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1884,10 +1884,10 @@ declare module "../src/routes/component/flag/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/floating-label/+page.marko" {
+declare module "../src/routes/_index/components/floating-label/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/floating-label"];
+    export type Route = Run.Routes["/components/floating-label"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1895,10 +1895,10 @@ declare module "../src/routes/component/floating-label/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/floating-label/accessibility+page.marko" {
+declare module "../src/routes/_index/components/floating-label/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/floating-label/accessibility"];
+    export type Route = Run.Routes["/components/floating-label/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1906,10 +1906,10 @@ declare module "../src/routes/component/floating-label/accessibility+page.marko"
   }
 }
 
-declare module "../src/routes/component/floating-label/css+page.marko" {
+declare module "../src/routes/_index/components/floating-label/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/floating-label/css"];
+    export type Route = Run.Routes["/components/floating-label/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1917,10 +1917,10 @@ declare module "../src/routes/component/floating-label/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/global/+page.marko" {
+declare module "../src/routes/_index/components/global/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/global"];
+    export type Route = Run.Routes["/components/global"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1928,10 +1928,10 @@ declare module "../src/routes/component/global/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/global/accessibility+page.marko" {
+declare module "../src/routes/_index/components/global/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/global/accessibility"];
+    export type Route = Run.Routes["/components/global/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1939,10 +1939,10 @@ declare module "../src/routes/component/global/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/global/css+page.marko" {
+declare module "../src/routes/_index/components/global/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/global/css"];
+    export type Route = Run.Routes["/components/global/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1950,10 +1950,10 @@ declare module "../src/routes/component/global/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/icon/+page.marko" {
+declare module "../src/routes/_index/components/icon/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/icon"];
+    export type Route = Run.Routes["/components/icon"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1961,10 +1961,10 @@ declare module "../src/routes/component/icon/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/icon/accessibility+page.marko" {
+declare module "../src/routes/_index/components/icon/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/icon/accessibility"];
+    export type Route = Run.Routes["/components/icon/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1972,10 +1972,10 @@ declare module "../src/routes/component/icon/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/icon/css+page.marko" {
+declare module "../src/routes/_index/components/icon/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/icon/css"];
+    export type Route = Run.Routes["/components/icon/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1983,10 +1983,10 @@ declare module "../src/routes/component/icon/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/icon-button/+page.marko" {
+declare module "../src/routes/_index/components/icon-button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/icon-button"];
+    export type Route = Run.Routes["/components/icon-button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -1994,10 +1994,10 @@ declare module "../src/routes/component/icon-button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/icon-button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/icon-button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/icon-button/accessibility"];
+    export type Route = Run.Routes["/components/icon-button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2005,10 +2005,10 @@ declare module "../src/routes/component/icon-button/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/icon-button/css+page.marko" {
+declare module "../src/routes/_index/components/icon-button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/icon-button/css"];
+    export type Route = Run.Routes["/components/icon-button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2016,10 +2016,10 @@ declare module "../src/routes/component/icon-button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/image-placeholder/+page.marko" {
+declare module "../src/routes/_index/components/image-placeholder/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/image-placeholder"];
+    export type Route = Run.Routes["/components/image-placeholder"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2027,10 +2027,10 @@ declare module "../src/routes/component/image-placeholder/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/image-placeholder/accessibility+page.marko" {
+declare module "../src/routes/_index/components/image-placeholder/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/image-placeholder/accessibility"];
+    export type Route = Run.Routes["/components/image-placeholder/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2038,10 +2038,10 @@ declare module "../src/routes/component/image-placeholder/accessibility+page.mar
   }
 }
 
-declare module "../src/routes/component/image-placeholder/css+page.marko" {
+declare module "../src/routes/_index/components/image-placeholder/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/image-placeholder/css"];
+    export type Route = Run.Routes["/components/image-placeholder/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2049,10 +2049,10 @@ declare module "../src/routes/component/image-placeholder/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/infotip/+page.marko" {
+declare module "../src/routes/_index/components/infotip/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/infotip"];
+    export type Route = Run.Routes["/components/infotip"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2060,10 +2060,10 @@ declare module "../src/routes/component/infotip/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/infotip/accessibility+page.marko" {
+declare module "../src/routes/_index/components/infotip/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/infotip/accessibility"];
+    export type Route = Run.Routes["/components/infotip/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2071,10 +2071,10 @@ declare module "../src/routes/component/infotip/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/infotip/css+page.marko" {
+declare module "../src/routes/_index/components/infotip/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/infotip/css"];
+    export type Route = Run.Routes["/components/infotip/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2082,10 +2082,10 @@ declare module "../src/routes/component/infotip/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/inline-notice/+page.marko" {
+declare module "../src/routes/_index/components/inline-notice/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/inline-notice"];
+    export type Route = Run.Routes["/components/inline-notice"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2093,10 +2093,10 @@ declare module "../src/routes/component/inline-notice/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/inline-notice/accessibility+page.marko" {
+declare module "../src/routes/_index/components/inline-notice/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/inline-notice/accessibility"];
+    export type Route = Run.Routes["/components/inline-notice/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2104,10 +2104,10 @@ declare module "../src/routes/component/inline-notice/accessibility+page.marko" 
   }
 }
 
-declare module "../src/routes/component/inline-notice/css+page.marko" {
+declare module "../src/routes/_index/components/inline-notice/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/inline-notice/css"];
+    export type Route = Run.Routes["/components/inline-notice/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2115,10 +2115,10 @@ declare module "../src/routes/component/inline-notice/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/item-tile/+page.marko" {
+declare module "../src/routes/_index/components/item-tile/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/item-tile"];
+    export type Route = Run.Routes["/components/item-tile"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2126,10 +2126,10 @@ declare module "../src/routes/component/item-tile/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/item-tile/accessibility+page.marko" {
+declare module "../src/routes/_index/components/item-tile/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/item-tile/accessibility"];
+    export type Route = Run.Routes["/components/item-tile/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2137,10 +2137,10 @@ declare module "../src/routes/component/item-tile/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/item-tile/css+page.marko" {
+declare module "../src/routes/_index/components/item-tile/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/item-tile/css"];
+    export type Route = Run.Routes["/components/item-tile/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2148,10 +2148,10 @@ declare module "../src/routes/component/item-tile/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/item-tile-group/+page.marko" {
+declare module "../src/routes/_index/components/item-tile-group/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/item-tile-group"];
+    export type Route = Run.Routes["/components/item-tile-group"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2159,10 +2159,10 @@ declare module "../src/routes/component/item-tile-group/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/item-tile-group/accessibility+page.marko" {
+declare module "../src/routes/_index/components/item-tile-group/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/item-tile-group/accessibility"];
+    export type Route = Run.Routes["/components/item-tile-group/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2170,10 +2170,10 @@ declare module "../src/routes/component/item-tile-group/accessibility+page.marko
   }
 }
 
-declare module "../src/routes/component/item-tile-group/css+page.marko" {
+declare module "../src/routes/_index/components/item-tile-group/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/item-tile-group/css"];
+    export type Route = Run.Routes["/components/item-tile-group/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2181,10 +2181,10 @@ declare module "../src/routes/component/item-tile-group/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/layout-grid/+page.marko" {
+declare module "../src/routes/_index/components/layout-grid/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/layout-grid"];
+    export type Route = Run.Routes["/components/layout-grid"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2192,10 +2192,10 @@ declare module "../src/routes/component/layout-grid/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/layout-grid/accessibility+page.marko" {
+declare module "../src/routes/_index/components/layout-grid/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/layout-grid/accessibility"];
+    export type Route = Run.Routes["/components/layout-grid/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2203,10 +2203,10 @@ declare module "../src/routes/component/layout-grid/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/layout-grid/css+page.marko" {
+declare module "../src/routes/_index/components/layout-grid/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/layout-grid/css"];
+    export type Route = Run.Routes["/components/layout-grid/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2214,10 +2214,10 @@ declare module "../src/routes/component/layout-grid/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/lightbox-dialog/+page.marko" {
+declare module "../src/routes/_index/components/lightbox-dialog/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/lightbox-dialog"];
+    export type Route = Run.Routes["/components/lightbox-dialog"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2225,10 +2225,10 @@ declare module "../src/routes/component/lightbox-dialog/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/lightbox-dialog/accessibility+page.marko" {
+declare module "../src/routes/_index/components/lightbox-dialog/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/lightbox-dialog/accessibility"];
+    export type Route = Run.Routes["/components/lightbox-dialog/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2236,10 +2236,10 @@ declare module "../src/routes/component/lightbox-dialog/accessibility+page.marko
   }
 }
 
-declare module "../src/routes/component/lightbox-dialog/css+page.marko" {
+declare module "../src/routes/_index/components/lightbox-dialog/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/lightbox-dialog/css"];
+    export type Route = Run.Routes["/components/lightbox-dialog/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2247,10 +2247,10 @@ declare module "../src/routes/component/lightbox-dialog/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/link/+page.marko" {
+declare module "../src/routes/_index/components/link/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/link"];
+    export type Route = Run.Routes["/components/link"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2258,10 +2258,10 @@ declare module "../src/routes/component/link/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/link/accessibility+page.marko" {
+declare module "../src/routes/_index/components/link/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/link/accessibility"];
+    export type Route = Run.Routes["/components/link/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2269,10 +2269,10 @@ declare module "../src/routes/component/link/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/link/css+page.marko" {
+declare module "../src/routes/_index/components/link/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/link/css"];
+    export type Route = Run.Routes["/components/link/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2280,10 +2280,10 @@ declare module "../src/routes/component/link/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/list/+page.marko" {
+declare module "../src/routes/_index/components/list/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/list"];
+    export type Route = Run.Routes["/components/list"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2291,10 +2291,10 @@ declare module "../src/routes/component/list/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/list/accessibility+page.marko" {
+declare module "../src/routes/_index/components/list/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/list/accessibility"];
+    export type Route = Run.Routes["/components/list/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2302,10 +2302,10 @@ declare module "../src/routes/component/list/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/list/css+page.marko" {
+declare module "../src/routes/_index/components/list/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/list/css"];
+    export type Route = Run.Routes["/components/list/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2313,10 +2313,10 @@ declare module "../src/routes/component/list/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/listbox/+page.marko" {
+declare module "../src/routes/_index/components/listbox/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/listbox"];
+    export type Route = Run.Routes["/components/listbox"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2324,10 +2324,10 @@ declare module "../src/routes/component/listbox/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/listbox/accessibility+page.marko" {
+declare module "../src/routes/_index/components/listbox/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/listbox/accessibility"];
+    export type Route = Run.Routes["/components/listbox/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2335,10 +2335,10 @@ declare module "../src/routes/component/listbox/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/listbox/css+page.marko" {
+declare module "../src/routes/_index/components/listbox/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/listbox/css"];
+    export type Route = Run.Routes["/components/listbox/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2346,10 +2346,10 @@ declare module "../src/routes/component/listbox/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/listbox-button/+page.marko" {
+declare module "../src/routes/_index/components/listbox-button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/listbox-button"];
+    export type Route = Run.Routes["/components/listbox-button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2357,10 +2357,10 @@ declare module "../src/routes/component/listbox-button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/listbox-button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/listbox-button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/listbox-button/accessibility"];
+    export type Route = Run.Routes["/components/listbox-button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2368,10 +2368,10 @@ declare module "../src/routes/component/listbox-button/accessibility+page.marko"
   }
 }
 
-declare module "../src/routes/component/listbox-button/css+page.marko" {
+declare module "../src/routes/_index/components/listbox-button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/listbox-button/css"];
+    export type Route = Run.Routes["/components/listbox-button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2379,10 +2379,10 @@ declare module "../src/routes/component/listbox-button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/marketsans/+page.marko" {
+declare module "../src/routes/_index/components/marketsans/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/marketsans"];
+    export type Route = Run.Routes["/components/marketsans"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2390,10 +2390,10 @@ declare module "../src/routes/component/marketsans/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/marketsans/accessibility+page.marko" {
+declare module "../src/routes/_index/components/marketsans/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/marketsans/accessibility"];
+    export type Route = Run.Routes["/components/marketsans/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2401,10 +2401,10 @@ declare module "../src/routes/component/marketsans/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/marketsans/css+page.marko" {
+declare module "../src/routes/_index/components/marketsans/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/marketsans/css"];
+    export type Route = Run.Routes["/components/marketsans/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2412,10 +2412,10 @@ declare module "../src/routes/component/marketsans/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/menu/+page.marko" {
+declare module "../src/routes/_index/components/menu/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/menu"];
+    export type Route = Run.Routes["/components/menu"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2423,10 +2423,10 @@ declare module "../src/routes/component/menu/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/menu/accessibility+page.marko" {
+declare module "../src/routes/_index/components/menu/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/menu/accessibility"];
+    export type Route = Run.Routes["/components/menu/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2434,10 +2434,10 @@ declare module "../src/routes/component/menu/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/menu/css+page.marko" {
+declare module "../src/routes/_index/components/menu/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/menu/css"];
+    export type Route = Run.Routes["/components/menu/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2445,10 +2445,10 @@ declare module "../src/routes/component/menu/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/menu-button/+page.marko" {
+declare module "../src/routes/_index/components/menu-button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/menu-button"];
+    export type Route = Run.Routes["/components/menu-button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2456,10 +2456,10 @@ declare module "../src/routes/component/menu-button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/menu-button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/menu-button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/menu-button/accessibility"];
+    export type Route = Run.Routes["/components/menu-button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2467,10 +2467,10 @@ declare module "../src/routes/component/menu-button/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/menu-button/css+page.marko" {
+declare module "../src/routes/_index/components/menu-button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/menu-button/css"];
+    export type Route = Run.Routes["/components/menu-button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2478,10 +2478,10 @@ declare module "../src/routes/component/menu-button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/number-input/+page.marko" {
+declare module "../src/routes/_index/components/number-input/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/number-input"];
+    export type Route = Run.Routes["/components/number-input"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2489,10 +2489,10 @@ declare module "../src/routes/component/number-input/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/number-input/accessibility+page.marko" {
+declare module "../src/routes/_index/components/number-input/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/number-input/accessibility"];
+    export type Route = Run.Routes["/components/number-input/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2500,10 +2500,10 @@ declare module "../src/routes/component/number-input/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/number-input/css+page.marko" {
+declare module "../src/routes/_index/components/number-input/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/number-input/css"];
+    export type Route = Run.Routes["/components/number-input/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2511,10 +2511,10 @@ declare module "../src/routes/component/number-input/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/page-grid/+page.marko" {
+declare module "../src/routes/_index/components/page-grid/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/page-grid"];
+    export type Route = Run.Routes["/components/page-grid"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2522,10 +2522,10 @@ declare module "../src/routes/component/page-grid/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/page-grid/accessibility+page.marko" {
+declare module "../src/routes/_index/components/page-grid/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/page-grid/accessibility"];
+    export type Route = Run.Routes["/components/page-grid/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2533,10 +2533,10 @@ declare module "../src/routes/component/page-grid/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/page-grid/css+page.marko" {
+declare module "../src/routes/_index/components/page-grid/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/page-grid/css"];
+    export type Route = Run.Routes["/components/page-grid/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2544,10 +2544,10 @@ declare module "../src/routes/component/page-grid/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/page-notice/+page.marko" {
+declare module "../src/routes/_index/components/page-notice/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/page-notice"];
+    export type Route = Run.Routes["/components/page-notice"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2555,10 +2555,10 @@ declare module "../src/routes/component/page-notice/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/page-notice/accessibility+page.marko" {
+declare module "../src/routes/_index/components/page-notice/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/page-notice/accessibility"];
+    export type Route = Run.Routes["/components/page-notice/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2566,10 +2566,10 @@ declare module "../src/routes/component/page-notice/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/page-notice/css+page.marko" {
+declare module "../src/routes/_index/components/page-notice/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/page-notice/css"];
+    export type Route = Run.Routes["/components/page-notice/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2577,10 +2577,10 @@ declare module "../src/routes/component/page-notice/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/pagination/+page.marko" {
+declare module "../src/routes/_index/components/pagination/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/pagination"];
+    export type Route = Run.Routes["/components/pagination"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2588,10 +2588,10 @@ declare module "../src/routes/component/pagination/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/pagination/accessibility+page.marko" {
+declare module "../src/routes/_index/components/pagination/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/pagination/accessibility"];
+    export type Route = Run.Routes["/components/pagination/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2599,10 +2599,10 @@ declare module "../src/routes/component/pagination/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/pagination/css+page.marko" {
+declare module "../src/routes/_index/components/pagination/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/pagination/css"];
+    export type Route = Run.Routes["/components/pagination/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2610,10 +2610,10 @@ declare module "../src/routes/component/pagination/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/panel-dialog/+page.marko" {
+declare module "../src/routes/_index/components/panel-dialog/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/panel-dialog"];
+    export type Route = Run.Routes["/components/panel-dialog"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2621,10 +2621,10 @@ declare module "../src/routes/component/panel-dialog/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/panel-dialog/accessibility+page.marko" {
+declare module "../src/routes/_index/components/panel-dialog/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/panel-dialog/accessibility"];
+    export type Route = Run.Routes["/components/panel-dialog/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2632,10 +2632,10 @@ declare module "../src/routes/component/panel-dialog/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/panel-dialog/css+page.marko" {
+declare module "../src/routes/_index/components/panel-dialog/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/panel-dialog/css"];
+    export type Route = Run.Routes["/components/panel-dialog/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2643,10 +2643,10 @@ declare module "../src/routes/component/panel-dialog/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/phone-input/+page.marko" {
+declare module "../src/routes/_index/components/phone-input/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/phone-input"];
+    export type Route = Run.Routes["/components/phone-input"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2654,10 +2654,10 @@ declare module "../src/routes/component/phone-input/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/phone-input/accessibility+page.marko" {
+declare module "../src/routes/_index/components/phone-input/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/phone-input/accessibility"];
+    export type Route = Run.Routes["/components/phone-input/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2665,10 +2665,10 @@ declare module "../src/routes/component/phone-input/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/phone-input/css+page.marko" {
+declare module "../src/routes/_index/components/phone-input/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/phone-input/css"];
+    export type Route = Run.Routes["/components/phone-input/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2676,10 +2676,10 @@ declare module "../src/routes/component/phone-input/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-bar/+page.marko" {
+declare module "../src/routes/_index/components/progress-bar/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-bar"];
+    export type Route = Run.Routes["/components/progress-bar"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2687,10 +2687,10 @@ declare module "../src/routes/component/progress-bar/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-bar/accessibility+page.marko" {
+declare module "../src/routes/_index/components/progress-bar/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-bar/accessibility"];
+    export type Route = Run.Routes["/components/progress-bar/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2698,10 +2698,10 @@ declare module "../src/routes/component/progress-bar/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-bar/css+page.marko" {
+declare module "../src/routes/_index/components/progress-bar/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-bar/css"];
+    export type Route = Run.Routes["/components/progress-bar/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2709,10 +2709,10 @@ declare module "../src/routes/component/progress-bar/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-bar-expressive/+page.marko" {
+declare module "../src/routes/_index/components/progress-bar-expressive/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-bar-expressive"];
+    export type Route = Run.Routes["/components/progress-bar-expressive"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2720,10 +2720,10 @@ declare module "../src/routes/component/progress-bar-expressive/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-bar-expressive/accessibility+page.marko" {
+declare module "../src/routes/_index/components/progress-bar-expressive/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-bar-expressive/accessibility"];
+    export type Route = Run.Routes["/components/progress-bar-expressive/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2731,10 +2731,10 @@ declare module "../src/routes/component/progress-bar-expressive/accessibility+pa
   }
 }
 
-declare module "../src/routes/component/progress-bar-expressive/css+page.marko" {
+declare module "../src/routes/_index/components/progress-bar-expressive/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-bar-expressive/css"];
+    export type Route = Run.Routes["/components/progress-bar-expressive/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2742,10 +2742,10 @@ declare module "../src/routes/component/progress-bar-expressive/css+page.marko" 
   }
 }
 
-declare module "../src/routes/component/progress-spinner/+page.marko" {
+declare module "../src/routes/_index/components/progress-spinner/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-spinner"];
+    export type Route = Run.Routes["/components/progress-spinner"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2753,10 +2753,10 @@ declare module "../src/routes/component/progress-spinner/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-spinner/accessibility+page.marko" {
+declare module "../src/routes/_index/components/progress-spinner/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-spinner/accessibility"];
+    export type Route = Run.Routes["/components/progress-spinner/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2764,10 +2764,10 @@ declare module "../src/routes/component/progress-spinner/accessibility+page.mark
   }
 }
 
-declare module "../src/routes/component/progress-spinner/css+page.marko" {
+declare module "../src/routes/_index/components/progress-spinner/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-spinner/css"];
+    export type Route = Run.Routes["/components/progress-spinner/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2775,10 +2775,10 @@ declare module "../src/routes/component/progress-spinner/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-stepper/+page.marko" {
+declare module "../src/routes/_index/components/progress-stepper/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-stepper"];
+    export type Route = Run.Routes["/components/progress-stepper"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2786,10 +2786,10 @@ declare module "../src/routes/component/progress-stepper/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/progress-stepper/accessibility+page.marko" {
+declare module "../src/routes/_index/components/progress-stepper/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-stepper/accessibility"];
+    export type Route = Run.Routes["/components/progress-stepper/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2797,10 +2797,10 @@ declare module "../src/routes/component/progress-stepper/accessibility+page.mark
   }
 }
 
-declare module "../src/routes/component/progress-stepper/css+page.marko" {
+declare module "../src/routes/_index/components/progress-stepper/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/progress-stepper/css"];
+    export type Route = Run.Routes["/components/progress-stepper/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2808,10 +2808,10 @@ declare module "../src/routes/component/progress-stepper/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/radio/+page.marko" {
+declare module "../src/routes/_index/components/radio/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/radio"];
+    export type Route = Run.Routes["/components/radio"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2819,10 +2819,10 @@ declare module "../src/routes/component/radio/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/radio/accessibility+page.marko" {
+declare module "../src/routes/_index/components/radio/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/radio/accessibility"];
+    export type Route = Run.Routes["/components/radio/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2830,10 +2830,10 @@ declare module "../src/routes/component/radio/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/radio/css+page.marko" {
+declare module "../src/routes/_index/components/radio/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/radio/css"];
+    export type Route = Run.Routes["/components/radio/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2841,10 +2841,10 @@ declare module "../src/routes/component/radio/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/sass/+page.marko" {
+declare module "../src/routes/_index/components/sass/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/sass"];
+    export type Route = Run.Routes["/components/sass"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2852,10 +2852,10 @@ declare module "../src/routes/component/sass/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/section-notice/+page.marko" {
+declare module "../src/routes/_index/components/section-notice/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/section-notice"];
+    export type Route = Run.Routes["/components/section-notice"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2863,10 +2863,10 @@ declare module "../src/routes/component/section-notice/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/section-notice/accessibility+page.marko" {
+declare module "../src/routes/_index/components/section-notice/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/section-notice/accessibility"];
+    export type Route = Run.Routes["/components/section-notice/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2874,10 +2874,10 @@ declare module "../src/routes/component/section-notice/accessibility+page.marko"
   }
 }
 
-declare module "../src/routes/component/section-notice/css+page.marko" {
+declare module "../src/routes/_index/components/section-notice/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/section-notice/css"];
+    export type Route = Run.Routes["/components/section-notice/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2885,10 +2885,10 @@ declare module "../src/routes/component/section-notice/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/section-title/+page.marko" {
+declare module "../src/routes/_index/components/section-title/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/section-title"];
+    export type Route = Run.Routes["/components/section-title"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2896,10 +2896,10 @@ declare module "../src/routes/component/section-title/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/section-title/accessibility+page.marko" {
+declare module "../src/routes/_index/components/section-title/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/section-title/accessibility"];
+    export type Route = Run.Routes["/components/section-title/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2907,10 +2907,10 @@ declare module "../src/routes/component/section-title/accessibility+page.marko" 
   }
 }
 
-declare module "../src/routes/component/section-title/css+page.marko" {
+declare module "../src/routes/_index/components/section-title/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/section-title/css"];
+    export type Route = Run.Routes["/components/section-title/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2918,10 +2918,10 @@ declare module "../src/routes/component/section-title/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/segmented-buttons/+page.marko" {
+declare module "../src/routes/_index/components/segmented-buttons/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/segmented-buttons"];
+    export type Route = Run.Routes["/components/segmented-buttons"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2929,10 +2929,10 @@ declare module "../src/routes/component/segmented-buttons/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/segmented-buttons/accessibility+page.marko" {
+declare module "../src/routes/_index/components/segmented-buttons/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/segmented-buttons/accessibility"];
+    export type Route = Run.Routes["/components/segmented-buttons/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2940,10 +2940,10 @@ declare module "../src/routes/component/segmented-buttons/accessibility+page.mar
   }
 }
 
-declare module "../src/routes/component/segmented-buttons/css+page.marko" {
+declare module "../src/routes/_index/components/segmented-buttons/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/segmented-buttons/css"];
+    export type Route = Run.Routes["/components/segmented-buttons/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2951,10 +2951,10 @@ declare module "../src/routes/component/segmented-buttons/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/select/+page.marko" {
+declare module "../src/routes/_index/components/select/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/select"];
+    export type Route = Run.Routes["/components/select"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2962,10 +2962,10 @@ declare module "../src/routes/component/select/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/select/accessibility+page.marko" {
+declare module "../src/routes/_index/components/select/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/select/accessibility"];
+    export type Route = Run.Routes["/components/select/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2973,10 +2973,10 @@ declare module "../src/routes/component/select/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/select/css+page.marko" {
+declare module "../src/routes/_index/components/select/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/select/css"];
+    export type Route = Run.Routes["/components/select/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2984,10 +2984,10 @@ declare module "../src/routes/component/select/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/selection-chip/+page.marko" {
+declare module "../src/routes/_index/components/selection-chip/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/selection-chip"];
+    export type Route = Run.Routes["/components/selection-chip"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -2995,10 +2995,10 @@ declare module "../src/routes/component/selection-chip/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/signal/+page.marko" {
+declare module "../src/routes/_index/components/signal/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/signal"];
+    export type Route = Run.Routes["/components/signal"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3006,10 +3006,10 @@ declare module "../src/routes/component/signal/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/signal/accessibility+page.marko" {
+declare module "../src/routes/_index/components/signal/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/signal/accessibility"];
+    export type Route = Run.Routes["/components/signal/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3017,10 +3017,10 @@ declare module "../src/routes/component/signal/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/signal/css+page.marko" {
+declare module "../src/routes/_index/components/signal/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/signal/css"];
+    export type Route = Run.Routes["/components/signal/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3028,10 +3028,10 @@ declare module "../src/routes/component/signal/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/skeleton/+page.marko" {
+declare module "../src/routes/_index/components/skeleton/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/skeleton"];
+    export type Route = Run.Routes["/components/skeleton"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3039,10 +3039,10 @@ declare module "../src/routes/component/skeleton/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/skeleton/accessibility+page.marko" {
+declare module "../src/routes/_index/components/skeleton/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/skeleton/accessibility"];
+    export type Route = Run.Routes["/components/skeleton/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3050,10 +3050,10 @@ declare module "../src/routes/component/skeleton/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/skeleton/css+page.marko" {
+declare module "../src/routes/_index/components/skeleton/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/skeleton/css"];
+    export type Route = Run.Routes["/components/skeleton/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3061,10 +3061,10 @@ declare module "../src/routes/component/skeleton/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/snackbar-dialog/+page.marko" {
+declare module "../src/routes/_index/components/snackbar-dialog/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/snackbar-dialog"];
+    export type Route = Run.Routes["/components/snackbar-dialog"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3072,10 +3072,10 @@ declare module "../src/routes/component/snackbar-dialog/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/snackbar-dialog/accessibility+page.marko" {
+declare module "../src/routes/_index/components/snackbar-dialog/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/snackbar-dialog/accessibility"];
+    export type Route = Run.Routes["/components/snackbar-dialog/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3083,10 +3083,10 @@ declare module "../src/routes/component/snackbar-dialog/accessibility+page.marko
   }
 }
 
-declare module "../src/routes/component/snackbar-dialog/css+page.marko" {
+declare module "../src/routes/_index/components/snackbar-dialog/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/snackbar-dialog/css"];
+    export type Route = Run.Routes["/components/snackbar-dialog/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3094,10 +3094,10 @@ declare module "../src/routes/component/snackbar-dialog/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/split-button/+page.marko" {
+declare module "../src/routes/_index/components/split-button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/split-button"];
+    export type Route = Run.Routes["/components/split-button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3105,10 +3105,10 @@ declare module "../src/routes/component/split-button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/split-button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/split-button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/split-button/accessibility"];
+    export type Route = Run.Routes["/components/split-button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3116,10 +3116,10 @@ declare module "../src/routes/component/split-button/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/split-button/css+page.marko" {
+declare module "../src/routes/_index/components/split-button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/split-button/css"];
+    export type Route = Run.Routes["/components/split-button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3127,10 +3127,10 @@ declare module "../src/routes/component/split-button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/star-rating/+page.marko" {
+declare module "../src/routes/_index/components/star-rating/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/star-rating"];
+    export type Route = Run.Routes["/components/star-rating"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3138,10 +3138,10 @@ declare module "../src/routes/component/star-rating/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/star-rating/accessibility+page.marko" {
+declare module "../src/routes/_index/components/star-rating/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/star-rating/accessibility"];
+    export type Route = Run.Routes["/components/star-rating/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3149,10 +3149,10 @@ declare module "../src/routes/component/star-rating/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/star-rating/css+page.marko" {
+declare module "../src/routes/_index/components/star-rating/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/star-rating/css"];
+    export type Route = Run.Routes["/components/star-rating/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3160,10 +3160,10 @@ declare module "../src/routes/component/star-rating/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/star-rating-select/+page.marko" {
+declare module "../src/routes/_index/components/star-rating-select/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/star-rating-select"];
+    export type Route = Run.Routes["/components/star-rating-select"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3171,10 +3171,10 @@ declare module "../src/routes/component/star-rating-select/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/star-rating-select/accessibility+page.marko" {
+declare module "../src/routes/_index/components/star-rating-select/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/star-rating-select/accessibility"];
+    export type Route = Run.Routes["/components/star-rating-select/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3182,10 +3182,10 @@ declare module "../src/routes/component/star-rating-select/accessibility+page.ma
   }
 }
 
-declare module "../src/routes/component/star-rating-select/css+page.marko" {
+declare module "../src/routes/_index/components/star-rating-select/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/star-rating-select/css"];
+    export type Route = Run.Routes["/components/star-rating-select/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3193,10 +3193,10 @@ declare module "../src/routes/component/star-rating-select/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/svg/+page.marko" {
+declare module "../src/routes/_index/components/svg/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/svg"];
+    export type Route = Run.Routes["/components/svg"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3204,10 +3204,10 @@ declare module "../src/routes/component/svg/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/svg/accessibility+page.marko" {
+declare module "../src/routes/_index/components/svg/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/svg/accessibility"];
+    export type Route = Run.Routes["/components/svg/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3215,10 +3215,10 @@ declare module "../src/routes/component/svg/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/svg/css+page.marko" {
+declare module "../src/routes/_index/components/svg/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/svg/css"];
+    export type Route = Run.Routes["/components/svg/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3226,10 +3226,10 @@ declare module "../src/routes/component/svg/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/switch/+page.marko" {
+declare module "../src/routes/_index/components/switch/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/switch"];
+    export type Route = Run.Routes["/components/switch"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3237,10 +3237,10 @@ declare module "../src/routes/component/switch/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/switch/accessibility+page.marko" {
+declare module "../src/routes/_index/components/switch/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/switch/accessibility"];
+    export type Route = Run.Routes["/components/switch/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3248,10 +3248,10 @@ declare module "../src/routes/component/switch/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/switch/css+page.marko" {
+declare module "../src/routes/_index/components/switch/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/switch/css"];
+    export type Route = Run.Routes["/components/switch/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3259,10 +3259,10 @@ declare module "../src/routes/component/switch/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/table/+page.marko" {
+declare module "../src/routes/_index/components/table/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/table"];
+    export type Route = Run.Routes["/components/table"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3270,10 +3270,10 @@ declare module "../src/routes/component/table/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/table/accessibility+page.marko" {
+declare module "../src/routes/_index/components/table/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/table/accessibility"];
+    export type Route = Run.Routes["/components/table/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3281,10 +3281,10 @@ declare module "../src/routes/component/table/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/table/css+page.marko" {
+declare module "../src/routes/_index/components/table/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/table/css"];
+    export type Route = Run.Routes["/components/table/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3292,10 +3292,10 @@ declare module "../src/routes/component/table/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tabs/+page.marko" {
+declare module "../src/routes/_index/components/tabs/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tabs"];
+    export type Route = Run.Routes["/components/tabs"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3303,10 +3303,10 @@ declare module "../src/routes/component/tabs/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tabs/accessibility+page.marko" {
+declare module "../src/routes/_index/components/tabs/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tabs/accessibility"];
+    export type Route = Run.Routes["/components/tabs/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3314,10 +3314,10 @@ declare module "../src/routes/component/tabs/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tabs/css+page.marko" {
+declare module "../src/routes/_index/components/tabs/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tabs/css"];
+    export type Route = Run.Routes["/components/tabs/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3325,10 +3325,10 @@ declare module "../src/routes/component/tabs/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/textbox/+page.marko" {
+declare module "../src/routes/_index/components/textbox/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/textbox"];
+    export type Route = Run.Routes["/components/textbox"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3336,10 +3336,10 @@ declare module "../src/routes/component/textbox/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/textbox/accessibility+page.marko" {
+declare module "../src/routes/_index/components/textbox/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/textbox/accessibility"];
+    export type Route = Run.Routes["/components/textbox/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3347,10 +3347,10 @@ declare module "../src/routes/component/textbox/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/textbox/css+page.marko" {
+declare module "../src/routes/_index/components/textbox/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/textbox/css"];
+    export type Route = Run.Routes["/components/textbox/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3358,10 +3358,10 @@ declare module "../src/routes/component/textbox/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toast-dialog/+page.marko" {
+declare module "../src/routes/_index/components/toast-dialog/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toast-dialog"];
+    export type Route = Run.Routes["/components/toast-dialog"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3369,10 +3369,10 @@ declare module "../src/routes/component/toast-dialog/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toast-dialog/accessibility+page.marko" {
+declare module "../src/routes/_index/components/toast-dialog/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toast-dialog/accessibility"];
+    export type Route = Run.Routes["/components/toast-dialog/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3380,10 +3380,10 @@ declare module "../src/routes/component/toast-dialog/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toast-dialog/css+page.marko" {
+declare module "../src/routes/_index/components/toast-dialog/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toast-dialog/css"];
+    export type Route = Run.Routes["/components/toast-dialog/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3391,10 +3391,10 @@ declare module "../src/routes/component/toast-dialog/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toggle-button/+page.marko" {
+declare module "../src/routes/_index/components/toggle-button/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toggle-button"];
+    export type Route = Run.Routes["/components/toggle-button"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3402,10 +3402,10 @@ declare module "../src/routes/component/toggle-button/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toggle-button/accessibility+page.marko" {
+declare module "../src/routes/_index/components/toggle-button/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toggle-button/accessibility"];
+    export type Route = Run.Routes["/components/toggle-button/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3413,10 +3413,10 @@ declare module "../src/routes/component/toggle-button/accessibility+page.marko" 
   }
 }
 
-declare module "../src/routes/component/toggle-button/css+page.marko" {
+declare module "../src/routes/_index/components/toggle-button/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toggle-button/css"];
+    export type Route = Run.Routes["/components/toggle-button/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3424,10 +3424,10 @@ declare module "../src/routes/component/toggle-button/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toggle-button-group/+page.marko" {
+declare module "../src/routes/_index/components/toggle-button-group/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toggle-button-group"];
+    export type Route = Run.Routes["/components/toggle-button-group"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3435,10 +3435,10 @@ declare module "../src/routes/component/toggle-button-group/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/toggle-button-group/accessibility+page.marko" {
+declare module "../src/routes/_index/components/toggle-button-group/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toggle-button-group/accessibility"];
+    export type Route = Run.Routes["/components/toggle-button-group/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3446,10 +3446,10 @@ declare module "../src/routes/component/toggle-button-group/accessibility+page.m
   }
 }
 
-declare module "../src/routes/component/toggle-button-group/css+page.marko" {
+declare module "../src/routes/_index/components/toggle-button-group/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/toggle-button-group/css"];
+    export type Route = Run.Routes["/components/toggle-button-group/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3457,10 +3457,10 @@ declare module "../src/routes/component/toggle-button-group/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tokens/+page.marko" {
+declare module "../src/routes/_index/components/tokens/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tokens"];
+    export type Route = Run.Routes["/components/tokens"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3468,10 +3468,10 @@ declare module "../src/routes/component/tokens/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tokens/accessibility+page.marko" {
+declare module "../src/routes/_index/components/tokens/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tokens/accessibility"];
+    export type Route = Run.Routes["/components/tokens/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3479,10 +3479,10 @@ declare module "../src/routes/component/tokens/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tokens/css+page.marko" {
+declare module "../src/routes/_index/components/tokens/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tokens/css"];
+    export type Route = Run.Routes["/components/tokens/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3490,10 +3490,10 @@ declare module "../src/routes/component/tokens/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tooltip/+page.marko" {
+declare module "../src/routes/_index/components/tooltip/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tooltip"];
+    export type Route = Run.Routes["/components/tooltip"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3501,10 +3501,10 @@ declare module "../src/routes/component/tooltip/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tooltip/accessibility+page.marko" {
+declare module "../src/routes/_index/components/tooltip/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tooltip/accessibility"];
+    export type Route = Run.Routes["/components/tooltip/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3512,10 +3512,10 @@ declare module "../src/routes/component/tooltip/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tooltip/css+page.marko" {
+declare module "../src/routes/_index/components/tooltip/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tooltip/css"];
+    export type Route = Run.Routes["/components/tooltip/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3523,10 +3523,10 @@ declare module "../src/routes/component/tooltip/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tourtip/+page.marko" {
+declare module "../src/routes/_index/components/tourtip/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tourtip"];
+    export type Route = Run.Routes["/components/tourtip"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3534,10 +3534,10 @@ declare module "../src/routes/component/tourtip/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tourtip/accessibility+page.marko" {
+declare module "../src/routes/_index/components/tourtip/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tourtip/accessibility"];
+    export type Route = Run.Routes["/components/tourtip/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3545,10 +3545,10 @@ declare module "../src/routes/component/tourtip/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/tourtip/css+page.marko" {
+declare module "../src/routes/_index/components/tourtip/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/tourtip/css"];
+    export type Route = Run.Routes["/components/tourtip/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3556,10 +3556,10 @@ declare module "../src/routes/component/tourtip/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/typography/+page.marko" {
+declare module "../src/routes/_index/components/typography/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/typography"];
+    export type Route = Run.Routes["/components/typography"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3567,10 +3567,10 @@ declare module "../src/routes/component/typography/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/typography/accessibility+page.marko" {
+declare module "../src/routes/_index/components/typography/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/typography/accessibility"];
+    export type Route = Run.Routes["/components/typography/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3578,10 +3578,10 @@ declare module "../src/routes/component/typography/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/typography/css+page.marko" {
+declare module "../src/routes/_index/components/typography/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/typography/css"];
+    export type Route = Run.Routes["/components/typography/css"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3589,10 +3589,10 @@ declare module "../src/routes/component/typography/css+page.marko" {
   }
 }
 
-declare module "../src/routes/component/utility/+page.marko" {
+declare module "../src/routes/_index/components/utility/+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/utility"];
+    export type Route = Run.Routes["/components/utility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3600,10 +3600,10 @@ declare module "../src/routes/component/utility/+page.marko" {
   }
 }
 
-declare module "../src/routes/component/utility/accessibility+page.marko" {
+declare module "../src/routes/_index/components/utility/accessibility+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/utility/accessibility"];
+    export type Route = Run.Routes["/components/utility/accessibility"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3611,10 +3611,54 @@ declare module "../src/routes/component/utility/accessibility+page.marko" {
   }
 }
 
-declare module "../src/routes/component/utility/css+page.marko" {
+declare module "../src/routes/_index/components/utility/css+page.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component/utility/css"];
+    export type Route = Run.Routes["/components/utility/css"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/_index/guides/+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/guides"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/_index/guides/animation+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/guides/animation"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/_index/guides/page-grid+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/guides/page-grid"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/_index/guides/skeleton+page.marko" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/guides/skeleton"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3798,10 +3842,11 @@ declare module "../src/routes/guide-examples/skeleton-examples/out-of-order/exam
   }
 }
 
-declare module "../src/routes/guides/+page.marko" {
+declare module "../src/routes/_index/+layout.marko" {
+  export interface Input extends Run.LayoutInput<typeof import("../src/routes/_index/+layout.marko")> {}
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guides"];
+    export type Route = Run.Routes["/" | "/evo-css-components" | "/evo-marko-components" | "/evo-react-components" | "/sitemap" | "/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues" | "/components" | "/components/accordion" | "/components/accordion/accessibility" | "/components/accordion/css" | "/components/alert-dialog" | "/components/alert-dialog/accessibility" | "/components/alert-dialog/css" | "/components/avatar" | "/components/avatar/accessibility" | "/components/avatar/css" | "/components/badge" | "/components/badge/accessibility" | "/components/badge/css" | "/components/breadcrumbs" | "/components/breadcrumbs/accessibility" | "/components/breadcrumbs/css" | "/components/button" | "/components/button/accessibility" | "/components/button/css" | "/components/button/marko" | "/components/button/react" | "/components/calendar" | "/components/calendar/accessibility" | "/components/calendar/css" | "/components/card" | "/components/card/accessibility" | "/components/card/css" | "/components/carousel" | "/components/carousel/accessibility" | "/components/carousel/css" | "/components/ccd" | "/components/ccd/accessibility" | "/components/ccd/css" | "/components/chart-legend" | "/components/chart-legend/accessibility" | "/components/chart-legend/css" | "/components/checkbox" | "/components/checkbox/accessibility" | "/components/checkbox/css" | "/components/chip" | "/components/chip/accessibility" | "/components/chip/css" | "/components/chips-combobox" | "/components/chips-combobox/accessibility" | "/components/chips-combobox/css" | "/components/combobox" | "/components/combobox/accessibility" | "/components/combobox/css" | "/components/confirm-dialog" | "/components/confirm-dialog/accessibility" | "/components/confirm-dialog/css" | "/components/cta-button" | "/components/cta-button/accessibility" | "/components/cta-button/css" | "/components/date-textbox" | "/components/date-textbox/accessibility" | "/components/date-textbox/css" | "/components/details" | "/components/details/accessibility" | "/components/details/css" | "/components/donut-chart" | "/components/donut-chart/accessibility" | "/components/donut-chart/css" | "/components/education-notice" | "/components/education-notice/accessibility" | "/components/education-notice/css" | "/components/eek" | "/components/eek/accessibility" | "/components/eek/css" | "/components/field" | "/components/field/accessibility" | "/components/field/css" | "/components/file-input" | "/components/file-input/accessibility" | "/components/file-input/css" | "/components/file-preview-card" | "/components/file-preview-card/accessibility" | "/components/file-preview-card/css" | "/components/file-preview-card-group" | "/components/file-preview-card-group/accessibility" | "/components/file-preview-card-group/css" | "/components/filter-chip" | "/components/filter-chip/accessibility" | "/components/filter-chip/css" | "/components/filter-input" | "/components/filter-input/accessibility" | "/components/filter-input/css" | "/components/flag" | "/components/flag/accessibility" | "/components/flag/css" | "/components/floating-label" | "/components/floating-label/accessibility" | "/components/floating-label/css" | "/components/global" | "/components/global/accessibility" | "/components/global/css" | "/components/icon" | "/components/icon/accessibility" | "/components/icon/css" | "/components/icon-button" | "/components/icon-button/accessibility" | "/components/icon-button/css" | "/components/image-placeholder" | "/components/image-placeholder/accessibility" | "/components/image-placeholder/css" | "/components/infotip" | "/components/infotip/accessibility" | "/components/infotip/css" | "/components/inline-notice" | "/components/inline-notice/accessibility" | "/components/inline-notice/css" | "/components/item-tile" | "/components/item-tile/accessibility" | "/components/item-tile/css" | "/components/item-tile-group" | "/components/item-tile-group/accessibility" | "/components/item-tile-group/css" | "/components/layout-grid" | "/components/layout-grid/accessibility" | "/components/layout-grid/css" | "/components/lightbox-dialog" | "/components/lightbox-dialog/accessibility" | "/components/lightbox-dialog/css" | "/components/link" | "/components/link/accessibility" | "/components/link/css" | "/components/list" | "/components/list/accessibility" | "/components/list/css" | "/components/listbox" | "/components/listbox/accessibility" | "/components/listbox/css" | "/components/listbox-button" | "/components/listbox-button/accessibility" | "/components/listbox-button/css" | "/components/marketsans" | "/components/marketsans/accessibility" | "/components/marketsans/css" | "/components/menu" | "/components/menu/accessibility" | "/components/menu/css" | "/components/menu-button" | "/components/menu-button/accessibility" | "/components/menu-button/css" | "/components/number-input" | "/components/number-input/accessibility" | "/components/number-input/css" | "/components/page-grid" | "/components/page-grid/accessibility" | "/components/page-grid/css" | "/components/page-notice" | "/components/page-notice/accessibility" | "/components/page-notice/css" | "/components/pagination" | "/components/pagination/accessibility" | "/components/pagination/css" | "/components/panel-dialog" | "/components/panel-dialog/accessibility" | "/components/panel-dialog/css" | "/components/phone-input" | "/components/phone-input/accessibility" | "/components/phone-input/css" | "/components/progress-bar" | "/components/progress-bar/accessibility" | "/components/progress-bar/css" | "/components/progress-bar-expressive" | "/components/progress-bar-expressive/accessibility" | "/components/progress-bar-expressive/css" | "/components/progress-spinner" | "/components/progress-spinner/accessibility" | "/components/progress-spinner/css" | "/components/progress-stepper" | "/components/progress-stepper/accessibility" | "/components/progress-stepper/css" | "/components/radio" | "/components/radio/accessibility" | "/components/radio/css" | "/components/sass" | "/components/section-notice" | "/components/section-notice/accessibility" | "/components/section-notice/css" | "/components/section-title" | "/components/section-title/accessibility" | "/components/section-title/css" | "/components/segmented-buttons" | "/components/segmented-buttons/accessibility" | "/components/segmented-buttons/css" | "/components/select" | "/components/select/accessibility" | "/components/select/css" | "/components/selection-chip" | "/components/signal" | "/components/signal/accessibility" | "/components/signal/css" | "/components/skeleton" | "/components/skeleton/accessibility" | "/components/skeleton/css" | "/components/snackbar-dialog" | "/components/snackbar-dialog/accessibility" | "/components/snackbar-dialog/css" | "/components/split-button" | "/components/split-button/accessibility" | "/components/split-button/css" | "/components/star-rating" | "/components/star-rating/accessibility" | "/components/star-rating/css" | "/components/star-rating-select" | "/components/star-rating-select/accessibility" | "/components/star-rating-select/css" | "/components/svg" | "/components/svg/accessibility" | "/components/svg/css" | "/components/switch" | "/components/switch/accessibility" | "/components/switch/css" | "/components/table" | "/components/table/accessibility" | "/components/table/css" | "/components/tabs" | "/components/tabs/accessibility" | "/components/tabs/css" | "/components/textbox" | "/components/textbox/accessibility" | "/components/textbox/css" | "/components/toast-dialog" | "/components/toast-dialog/accessibility" | "/components/toast-dialog/css" | "/components/toggle-button" | "/components/toggle-button/accessibility" | "/components/toggle-button/css" | "/components/toggle-button-group" | "/components/toggle-button-group/accessibility" | "/components/toggle-button-group/css" | "/components/tokens" | "/components/tokens/accessibility" | "/components/tokens/css" | "/components/tooltip" | "/components/tooltip/accessibility" | "/components/tooltip/css" | "/components/tourtip" | "/components/tourtip/accessibility" | "/components/tourtip/css" | "/components/typography" | "/components/typography/accessibility" | "/components/typography/css" | "/components/utility" | "/components/utility/accessibility" | "/components/utility/css" | "/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3809,53 +3854,8 @@ declare module "../src/routes/guides/+page.marko" {
   }
 }
 
-declare module "../src/routes/guides/animation+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guides/animation"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/guides/page-grid+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guides/page-grid"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/guides/skeleton+page.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guides/skeleton"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/+layout.marko" {
-  export interface Input extends Run.LayoutInput<typeof import("../src/routes/+layout.marko")> {}
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/" | "/evo-css-components" | "/evo-marko-components" | "/evo-react-components" | "/sitemap" | "/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues" | "/component" | "/component/accordion" | "/component/accordion/accessibility" | "/component/accordion/css" | "/component/alert-dialog" | "/component/alert-dialog/accessibility" | "/component/alert-dialog/css" | "/component/avatar" | "/component/avatar/accessibility" | "/component/avatar/css" | "/component/badge" | "/component/badge/accessibility" | "/component/badge/css" | "/component/breadcrumbs" | "/component/breadcrumbs/accessibility" | "/component/breadcrumbs/css" | "/component/button" | "/component/button/accessibility" | "/component/button/css" | "/component/button/marko" | "/component/button/react" | "/component/calendar" | "/component/calendar/accessibility" | "/component/calendar/css" | "/component/card" | "/component/card/accessibility" | "/component/card/css" | "/component/carousel" | "/component/carousel/accessibility" | "/component/carousel/css" | "/component/ccd" | "/component/ccd/accessibility" | "/component/ccd/css" | "/component/chart-legend" | "/component/chart-legend/accessibility" | "/component/chart-legend/css" | "/component/checkbox" | "/component/checkbox/accessibility" | "/component/checkbox/css" | "/component/chip" | "/component/chip/accessibility" | "/component/chip/css" | "/component/chips-combobox" | "/component/chips-combobox/accessibility" | "/component/chips-combobox/css" | "/component/combobox" | "/component/combobox/accessibility" | "/component/combobox/css" | "/component/confirm-dialog" | "/component/confirm-dialog/accessibility" | "/component/confirm-dialog/css" | "/component/cta-button" | "/component/cta-button/accessibility" | "/component/cta-button/css" | "/component/date-textbox" | "/component/date-textbox/accessibility" | "/component/date-textbox/css" | "/component/details" | "/component/details/accessibility" | "/component/details/css" | "/component/donut-chart" | "/component/donut-chart/accessibility" | "/component/donut-chart/css" | "/component/education-notice" | "/component/education-notice/accessibility" | "/component/education-notice/css" | "/component/eek" | "/component/eek/accessibility" | "/component/eek/css" | "/component/field" | "/component/field/accessibility" | "/component/field/css" | "/component/file-input" | "/component/file-input/accessibility" | "/component/file-input/css" | "/component/file-preview-card" | "/component/file-preview-card/accessibility" | "/component/file-preview-card/css" | "/component/file-preview-card-group" | "/component/file-preview-card-group/accessibility" | "/component/file-preview-card-group/css" | "/component/filter-chip" | "/component/filter-chip/accessibility" | "/component/filter-chip/css" | "/component/filter-input" | "/component/filter-input/accessibility" | "/component/filter-input/css" | "/component/flag" | "/component/flag/accessibility" | "/component/flag/css" | "/component/floating-label" | "/component/floating-label/accessibility" | "/component/floating-label/css" | "/component/global" | "/component/global/accessibility" | "/component/global/css" | "/component/icon" | "/component/icon/accessibility" | "/component/icon/css" | "/component/icon-button" | "/component/icon-button/accessibility" | "/component/icon-button/css" | "/component/image-placeholder" | "/component/image-placeholder/accessibility" | "/component/image-placeholder/css" | "/component/infotip" | "/component/infotip/accessibility" | "/component/infotip/css" | "/component/inline-notice" | "/component/inline-notice/accessibility" | "/component/inline-notice/css" | "/component/item-tile" | "/component/item-tile/accessibility" | "/component/item-tile/css" | "/component/item-tile-group" | "/component/item-tile-group/accessibility" | "/component/item-tile-group/css" | "/component/layout-grid" | "/component/layout-grid/accessibility" | "/component/layout-grid/css" | "/component/lightbox-dialog" | "/component/lightbox-dialog/accessibility" | "/component/lightbox-dialog/css" | "/component/link" | "/component/link/accessibility" | "/component/link/css" | "/component/list" | "/component/list/accessibility" | "/component/list/css" | "/component/listbox" | "/component/listbox/accessibility" | "/component/listbox/css" | "/component/listbox-button" | "/component/listbox-button/accessibility" | "/component/listbox-button/css" | "/component/marketsans" | "/component/marketsans/accessibility" | "/component/marketsans/css" | "/component/menu" | "/component/menu/accessibility" | "/component/menu/css" | "/component/menu-button" | "/component/menu-button/accessibility" | "/component/menu-button/css" | "/component/number-input" | "/component/number-input/accessibility" | "/component/number-input/css" | "/component/page-grid" | "/component/page-grid/accessibility" | "/component/page-grid/css" | "/component/page-notice" | "/component/page-notice/accessibility" | "/component/page-notice/css" | "/component/pagination" | "/component/pagination/accessibility" | "/component/pagination/css" | "/component/panel-dialog" | "/component/panel-dialog/accessibility" | "/component/panel-dialog/css" | "/component/phone-input" | "/component/phone-input/accessibility" | "/component/phone-input/css" | "/component/progress-bar" | "/component/progress-bar/accessibility" | "/component/progress-bar/css" | "/component/progress-bar-expressive" | "/component/progress-bar-expressive/accessibility" | "/component/progress-bar-expressive/css" | "/component/progress-spinner" | "/component/progress-spinner/accessibility" | "/component/progress-spinner/css" | "/component/progress-stepper" | "/component/progress-stepper/accessibility" | "/component/progress-stepper/css" | "/component/radio" | "/component/radio/accessibility" | "/component/radio/css" | "/component/sass" | "/component/section-notice" | "/component/section-notice/accessibility" | "/component/section-notice/css" | "/component/section-title" | "/component/section-title/accessibility" | "/component/section-title/css" | "/component/segmented-buttons" | "/component/segmented-buttons/accessibility" | "/component/segmented-buttons/css" | "/component/select" | "/component/select/accessibility" | "/component/select/css" | "/component/selection-chip" | "/component/signal" | "/component/signal/accessibility" | "/component/signal/css" | "/component/skeleton" | "/component/skeleton/accessibility" | "/component/skeleton/css" | "/component/snackbar-dialog" | "/component/snackbar-dialog/accessibility" | "/component/snackbar-dialog/css" | "/component/split-button" | "/component/split-button/accessibility" | "/component/split-button/css" | "/component/star-rating" | "/component/star-rating/accessibility" | "/component/star-rating/css" | "/component/star-rating-select" | "/component/star-rating-select/accessibility" | "/component/star-rating-select/css" | "/component/svg" | "/component/svg/accessibility" | "/component/svg/css" | "/component/switch" | "/component/switch/accessibility" | "/component/switch/css" | "/component/table" | "/component/table/accessibility" | "/component/table/css" | "/component/tabs" | "/component/tabs/accessibility" | "/component/tabs/css" | "/component/textbox" | "/component/textbox/accessibility" | "/component/textbox/css" | "/component/toast-dialog" | "/component/toast-dialog/accessibility" | "/component/toast-dialog/css" | "/component/toggle-button" | "/component/toggle-button/accessibility" | "/component/toggle-button/css" | "/component/toggle-button-group" | "/component/toggle-button-group/accessibility" | "/component/toggle-button-group/css" | "/component/tokens" | "/component/tokens/accessibility" | "/component/tokens/css" | "/component/tooltip" | "/component/tooltip/accessibility" | "/component/tooltip/css" | "/component/tourtip" | "/component/tourtip/accessibility" | "/component/tourtip/css" | "/component/typography" | "/component/typography/accessibility" | "/component/typography/css" | "/component/utility" | "/component/utility/accessibility" | "/component/utility/css" | "/guide-examples/page-grid-blog-stretchy-nested" | "/guide-examples/page-grid-blog-stretchy-subgrid" | "/guide-examples/page-grid-pricing" | "/guide-examples/skeleton-examples/buffered/example-1" | "/guide-examples/skeleton-examples/csr/example-1" | "/guide-examples/skeleton-examples/csr/example-2" | "/guide-examples/skeleton-examples/csr/example-3" | "/guide-examples/skeleton-examples/csr/example-4" | "/guide-examples/skeleton-examples/in-order/example-1a" | "/guide-examples/skeleton-examples/in-order/example-1b" | "/guide-examples/skeleton-examples/in-order/example-2a" | "/guide-examples/skeleton-examples/in-order/example-2b" | "/guide-examples/skeleton-examples/out-of-order/example-1" | "/guide-examples/skeleton-examples/out-of-order/example-2" | "/guide-examples/skeleton-examples/out-of-order/example-3" | "/guide-examples/skeleton-examples/out-of-order/example-4" | "/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/accessibility/+layout.marko" {
-  export interface Input extends Run.LayoutInput<typeof import("../src/routes/accessibility/+layout.marko")> {}
+declare module "../src/routes/_index/accessibility/+layout.marko" {
+  export interface Input extends Run.LayoutInput<typeof import("../src/routes/_index/accessibility/+layout.marko")> {}
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/accessibility" | "/accessibility/anti-patterns" | "/accessibility/anti-patterns/disabling-pinch-to-zoom" | "/accessibility/anti-patterns/hand-cursor-on-buttons" | "/accessibility/anti-patterns/javascript-href" | "/accessibility/anti-patterns/layout-table" | "/accessibility/anti-patterns/non-interactive-hover" | "/accessibility/anti-patterns/open-new-window" | "/accessibility/anti-patterns/setting-focus-on-page-load" | "/accessibility/anti-patterns/tabindex-itis" | "/accessibility/anti-patterns/title-tooltip" | "/accessibility/misc" | "/accessibility/misc/aria-essentials" | "/accessibility/misc/component-naming-scheme" | "/accessibility/misc/faq" | "/accessibility/patterns" | "/accessibility/patterns/description-list" | "/accessibility/patterns/fake-menu-button" | "/accessibility/patterns/fake-tabs" | "/accessibility/patterns/footnote" | "/accessibility/patterns/form" | "/accessibility/patterns/form-validation" | "/accessibility/patterns/heading" | "/accessibility/patterns/image" | "/accessibility/patterns/input-dialog" | "/accessibility/patterns/input-meter" | "/accessibility/patterns/input-validation" | "/accessibility/patterns/popover" | "/accessibility/patterns/pulldown-list" | "/accessibility/patterns/region" | "/accessibility/patterns/skip-navigation" | "/accessibility/patterns/table-cell" | "/accessibility/patterns/time" | "/accessibility/techniques" | "/accessibility/techniques/active-descendant" | "/accessibility/techniques/alternative-text" | "/accessibility/techniques/ambiguous-label" | "/accessibility/techniques/background-icon" | "/accessibility/techniques/keyboard-interface" | "/accessibility/techniques/keyboard-trap" | "/accessibility/techniques/live-region" | "/accessibility/techniques/offscreen-text" | "/accessibility/techniques/roving-tabindex" | "/accessibility/techniques/skip-to-main-content" | "/accessibility/testing/checklist" | "/accessibility/testing/known-issues"];
@@ -3866,11 +3866,23 @@ declare module "../src/routes/accessibility/+layout.marko" {
   }
 }
 
-declare module "../src/routes/component/+layout.marko" {
-  export interface Input extends Run.LayoutInput<typeof import("../src/routes/component/+layout.marko")> {}
+declare module "../src/routes/_index/components/+layout.marko" {
+  export interface Input extends Run.LayoutInput<typeof import("../src/routes/_index/components/+layout.marko")> {}
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/component" | "/component/accordion" | "/component/accordion/accessibility" | "/component/accordion/css" | "/component/alert-dialog" | "/component/alert-dialog/accessibility" | "/component/alert-dialog/css" | "/component/avatar" | "/component/avatar/accessibility" | "/component/avatar/css" | "/component/badge" | "/component/badge/accessibility" | "/component/badge/css" | "/component/breadcrumbs" | "/component/breadcrumbs/accessibility" | "/component/breadcrumbs/css" | "/component/button" | "/component/button/accessibility" | "/component/button/css" | "/component/button/marko" | "/component/button/react" | "/component/calendar" | "/component/calendar/accessibility" | "/component/calendar/css" | "/component/card" | "/component/card/accessibility" | "/component/card/css" | "/component/carousel" | "/component/carousel/accessibility" | "/component/carousel/css" | "/component/ccd" | "/component/ccd/accessibility" | "/component/ccd/css" | "/component/chart-legend" | "/component/chart-legend/accessibility" | "/component/chart-legend/css" | "/component/checkbox" | "/component/checkbox/accessibility" | "/component/checkbox/css" | "/component/chip" | "/component/chip/accessibility" | "/component/chip/css" | "/component/chips-combobox" | "/component/chips-combobox/accessibility" | "/component/chips-combobox/css" | "/component/combobox" | "/component/combobox/accessibility" | "/component/combobox/css" | "/component/confirm-dialog" | "/component/confirm-dialog/accessibility" | "/component/confirm-dialog/css" | "/component/cta-button" | "/component/cta-button/accessibility" | "/component/cta-button/css" | "/component/date-textbox" | "/component/date-textbox/accessibility" | "/component/date-textbox/css" | "/component/details" | "/component/details/accessibility" | "/component/details/css" | "/component/donut-chart" | "/component/donut-chart/accessibility" | "/component/donut-chart/css" | "/component/education-notice" | "/component/education-notice/accessibility" | "/component/education-notice/css" | "/component/eek" | "/component/eek/accessibility" | "/component/eek/css" | "/component/field" | "/component/field/accessibility" | "/component/field/css" | "/component/file-input" | "/component/file-input/accessibility" | "/component/file-input/css" | "/component/file-preview-card" | "/component/file-preview-card/accessibility" | "/component/file-preview-card/css" | "/component/file-preview-card-group" | "/component/file-preview-card-group/accessibility" | "/component/file-preview-card-group/css" | "/component/filter-chip" | "/component/filter-chip/accessibility" | "/component/filter-chip/css" | "/component/filter-input" | "/component/filter-input/accessibility" | "/component/filter-input/css" | "/component/flag" | "/component/flag/accessibility" | "/component/flag/css" | "/component/floating-label" | "/component/floating-label/accessibility" | "/component/floating-label/css" | "/component/global" | "/component/global/accessibility" | "/component/global/css" | "/component/icon" | "/component/icon/accessibility" | "/component/icon/css" | "/component/icon-button" | "/component/icon-button/accessibility" | "/component/icon-button/css" | "/component/image-placeholder" | "/component/image-placeholder/accessibility" | "/component/image-placeholder/css" | "/component/infotip" | "/component/infotip/accessibility" | "/component/infotip/css" | "/component/inline-notice" | "/component/inline-notice/accessibility" | "/component/inline-notice/css" | "/component/item-tile" | "/component/item-tile/accessibility" | "/component/item-tile/css" | "/component/item-tile-group" | "/component/item-tile-group/accessibility" | "/component/item-tile-group/css" | "/component/layout-grid" | "/component/layout-grid/accessibility" | "/component/layout-grid/css" | "/component/lightbox-dialog" | "/component/lightbox-dialog/accessibility" | "/component/lightbox-dialog/css" | "/component/link" | "/component/link/accessibility" | "/component/link/css" | "/component/list" | "/component/list/accessibility" | "/component/list/css" | "/component/listbox" | "/component/listbox/accessibility" | "/component/listbox/css" | "/component/listbox-button" | "/component/listbox-button/accessibility" | "/component/listbox-button/css" | "/component/marketsans" | "/component/marketsans/accessibility" | "/component/marketsans/css" | "/component/menu" | "/component/menu/accessibility" | "/component/menu/css" | "/component/menu-button" | "/component/menu-button/accessibility" | "/component/menu-button/css" | "/component/number-input" | "/component/number-input/accessibility" | "/component/number-input/css" | "/component/page-grid" | "/component/page-grid/accessibility" | "/component/page-grid/css" | "/component/page-notice" | "/component/page-notice/accessibility" | "/component/page-notice/css" | "/component/pagination" | "/component/pagination/accessibility" | "/component/pagination/css" | "/component/panel-dialog" | "/component/panel-dialog/accessibility" | "/component/panel-dialog/css" | "/component/phone-input" | "/component/phone-input/accessibility" | "/component/phone-input/css" | "/component/progress-bar" | "/component/progress-bar/accessibility" | "/component/progress-bar/css" | "/component/progress-bar-expressive" | "/component/progress-bar-expressive/accessibility" | "/component/progress-bar-expressive/css" | "/component/progress-spinner" | "/component/progress-spinner/accessibility" | "/component/progress-spinner/css" | "/component/progress-stepper" | "/component/progress-stepper/accessibility" | "/component/progress-stepper/css" | "/component/radio" | "/component/radio/accessibility" | "/component/radio/css" | "/component/sass" | "/component/section-notice" | "/component/section-notice/accessibility" | "/component/section-notice/css" | "/component/section-title" | "/component/section-title/accessibility" | "/component/section-title/css" | "/component/segmented-buttons" | "/component/segmented-buttons/accessibility" | "/component/segmented-buttons/css" | "/component/select" | "/component/select/accessibility" | "/component/select/css" | "/component/selection-chip" | "/component/signal" | "/component/signal/accessibility" | "/component/signal/css" | "/component/skeleton" | "/component/skeleton/accessibility" | "/component/skeleton/css" | "/component/snackbar-dialog" | "/component/snackbar-dialog/accessibility" | "/component/snackbar-dialog/css" | "/component/split-button" | "/component/split-button/accessibility" | "/component/split-button/css" | "/component/star-rating" | "/component/star-rating/accessibility" | "/component/star-rating/css" | "/component/star-rating-select" | "/component/star-rating-select/accessibility" | "/component/star-rating-select/css" | "/component/svg" | "/component/svg/accessibility" | "/component/svg/css" | "/component/switch" | "/component/switch/accessibility" | "/component/switch/css" | "/component/table" | "/component/table/accessibility" | "/component/table/css" | "/component/tabs" | "/component/tabs/accessibility" | "/component/tabs/css" | "/component/textbox" | "/component/textbox/accessibility" | "/component/textbox/css" | "/component/toast-dialog" | "/component/toast-dialog/accessibility" | "/component/toast-dialog/css" | "/component/toggle-button" | "/component/toggle-button/accessibility" | "/component/toggle-button/css" | "/component/toggle-button-group" | "/component/toggle-button-group/accessibility" | "/component/toggle-button-group/css" | "/component/tokens" | "/component/tokens/accessibility" | "/component/tokens/css" | "/component/tooltip" | "/component/tooltip/accessibility" | "/component/tooltip/css" | "/component/tourtip" | "/component/tourtip/accessibility" | "/component/tourtip/css" | "/component/typography" | "/component/typography/accessibility" | "/component/typography/css" | "/component/utility" | "/component/utility/accessibility" | "/component/utility/css"];
+    export type Route = Run.Routes["/components" | "/components/accordion" | "/components/accordion/accessibility" | "/components/accordion/css" | "/components/alert-dialog" | "/components/alert-dialog/accessibility" | "/components/alert-dialog/css" | "/components/avatar" | "/components/avatar/accessibility" | "/components/avatar/css" | "/components/badge" | "/components/badge/accessibility" | "/components/badge/css" | "/components/breadcrumbs" | "/components/breadcrumbs/accessibility" | "/components/breadcrumbs/css" | "/components/button" | "/components/button/accessibility" | "/components/button/css" | "/components/button/marko" | "/components/button/react" | "/components/calendar" | "/components/calendar/accessibility" | "/components/calendar/css" | "/components/card" | "/components/card/accessibility" | "/components/card/css" | "/components/carousel" | "/components/carousel/accessibility" | "/components/carousel/css" | "/components/ccd" | "/components/ccd/accessibility" | "/components/ccd/css" | "/components/chart-legend" | "/components/chart-legend/accessibility" | "/components/chart-legend/css" | "/components/checkbox" | "/components/checkbox/accessibility" | "/components/checkbox/css" | "/components/chip" | "/components/chip/accessibility" | "/components/chip/css" | "/components/chips-combobox" | "/components/chips-combobox/accessibility" | "/components/chips-combobox/css" | "/components/combobox" | "/components/combobox/accessibility" | "/components/combobox/css" | "/components/confirm-dialog" | "/components/confirm-dialog/accessibility" | "/components/confirm-dialog/css" | "/components/cta-button" | "/components/cta-button/accessibility" | "/components/cta-button/css" | "/components/date-textbox" | "/components/date-textbox/accessibility" | "/components/date-textbox/css" | "/components/details" | "/components/details/accessibility" | "/components/details/css" | "/components/donut-chart" | "/components/donut-chart/accessibility" | "/components/donut-chart/css" | "/components/education-notice" | "/components/education-notice/accessibility" | "/components/education-notice/css" | "/components/eek" | "/components/eek/accessibility" | "/components/eek/css" | "/components/field" | "/components/field/accessibility" | "/components/field/css" | "/components/file-input" | "/components/file-input/accessibility" | "/components/file-input/css" | "/components/file-preview-card" | "/components/file-preview-card/accessibility" | "/components/file-preview-card/css" | "/components/file-preview-card-group" | "/components/file-preview-card-group/accessibility" | "/components/file-preview-card-group/css" | "/components/filter-chip" | "/components/filter-chip/accessibility" | "/components/filter-chip/css" | "/components/filter-input" | "/components/filter-input/accessibility" | "/components/filter-input/css" | "/components/flag" | "/components/flag/accessibility" | "/components/flag/css" | "/components/floating-label" | "/components/floating-label/accessibility" | "/components/floating-label/css" | "/components/global" | "/components/global/accessibility" | "/components/global/css" | "/components/icon" | "/components/icon/accessibility" | "/components/icon/css" | "/components/icon-button" | "/components/icon-button/accessibility" | "/components/icon-button/css" | "/components/image-placeholder" | "/components/image-placeholder/accessibility" | "/components/image-placeholder/css" | "/components/infotip" | "/components/infotip/accessibility" | "/components/infotip/css" | "/components/inline-notice" | "/components/inline-notice/accessibility" | "/components/inline-notice/css" | "/components/item-tile" | "/components/item-tile/accessibility" | "/components/item-tile/css" | "/components/item-tile-group" | "/components/item-tile-group/accessibility" | "/components/item-tile-group/css" | "/components/layout-grid" | "/components/layout-grid/accessibility" | "/components/layout-grid/css" | "/components/lightbox-dialog" | "/components/lightbox-dialog/accessibility" | "/components/lightbox-dialog/css" | "/components/link" | "/components/link/accessibility" | "/components/link/css" | "/components/list" | "/components/list/accessibility" | "/components/list/css" | "/components/listbox" | "/components/listbox/accessibility" | "/components/listbox/css" | "/components/listbox-button" | "/components/listbox-button/accessibility" | "/components/listbox-button/css" | "/components/marketsans" | "/components/marketsans/accessibility" | "/components/marketsans/css" | "/components/menu" | "/components/menu/accessibility" | "/components/menu/css" | "/components/menu-button" | "/components/menu-button/accessibility" | "/components/menu-button/css" | "/components/number-input" | "/components/number-input/accessibility" | "/components/number-input/css" | "/components/page-grid" | "/components/page-grid/accessibility" | "/components/page-grid/css" | "/components/page-notice" | "/components/page-notice/accessibility" | "/components/page-notice/css" | "/components/pagination" | "/components/pagination/accessibility" | "/components/pagination/css" | "/components/panel-dialog" | "/components/panel-dialog/accessibility" | "/components/panel-dialog/css" | "/components/phone-input" | "/components/phone-input/accessibility" | "/components/phone-input/css" | "/components/progress-bar" | "/components/progress-bar/accessibility" | "/components/progress-bar/css" | "/components/progress-bar-expressive" | "/components/progress-bar-expressive/accessibility" | "/components/progress-bar-expressive/css" | "/components/progress-spinner" | "/components/progress-spinner/accessibility" | "/components/progress-spinner/css" | "/components/progress-stepper" | "/components/progress-stepper/accessibility" | "/components/progress-stepper/css" | "/components/radio" | "/components/radio/accessibility" | "/components/radio/css" | "/components/sass" | "/components/section-notice" | "/components/section-notice/accessibility" | "/components/section-notice/css" | "/components/section-title" | "/components/section-title/accessibility" | "/components/section-title/css" | "/components/segmented-buttons" | "/components/segmented-buttons/accessibility" | "/components/segmented-buttons/css" | "/components/select" | "/components/select/accessibility" | "/components/select/css" | "/components/selection-chip" | "/components/signal" | "/components/signal/accessibility" | "/components/signal/css" | "/components/skeleton" | "/components/skeleton/accessibility" | "/components/skeleton/css" | "/components/snackbar-dialog" | "/components/snackbar-dialog/accessibility" | "/components/snackbar-dialog/css" | "/components/split-button" | "/components/split-button/accessibility" | "/components/split-button/css" | "/components/star-rating" | "/components/star-rating/accessibility" | "/components/star-rating/css" | "/components/star-rating-select" | "/components/star-rating-select/accessibility" | "/components/star-rating-select/css" | "/components/svg" | "/components/svg/accessibility" | "/components/svg/css" | "/components/switch" | "/components/switch/accessibility" | "/components/switch/css" | "/components/table" | "/components/table/accessibility" | "/components/table/css" | "/components/tabs" | "/components/tabs/accessibility" | "/components/tabs/css" | "/components/textbox" | "/components/textbox/accessibility" | "/components/textbox/css" | "/components/toast-dialog" | "/components/toast-dialog/accessibility" | "/components/toast-dialog/css" | "/components/toggle-button" | "/components/toggle-button/accessibility" | "/components/toggle-button/css" | "/components/toggle-button-group" | "/components/toggle-button-group/accessibility" | "/components/toggle-button-group/css" | "/components/tokens" | "/components/tokens/accessibility" | "/components/tokens/css" | "/components/tooltip" | "/components/tooltip/accessibility" | "/components/tooltip/css" | "/components/tourtip" | "/components/tourtip/accessibility" | "/components/tourtip/css" | "/components/typography" | "/components/typography/accessibility" | "/components/typography/css" | "/components/utility" | "/components/utility/accessibility" | "/components/utility/css"];
+    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/_index/guides/+layout.marko" {
+  export interface Input extends Run.LayoutInput<typeof import("../src/routes/_index/guides/+layout.marko")> {}
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton"];
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
@@ -3907,29 +3919,6 @@ declare module "../src/routes/guide-examples/skeleton-examples/+layout.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
     export type Route = Run.Routes["/guide-examples/skeleton-examples/buffered/example-1" | "/guide-examples/skeleton-examples/csr/example-1" | "/guide-examples/skeleton-examples/csr/example-2" | "/guide-examples/skeleton-examples/csr/example-3" | "/guide-examples/skeleton-examples/csr/example-4" | "/guide-examples/skeleton-examples/in-order/example-1a" | "/guide-examples/skeleton-examples/in-order/example-1b" | "/guide-examples/skeleton-examples/in-order/example-2a" | "/guide-examples/skeleton-examples/in-order/example-2b" | "/guide-examples/skeleton-examples/out-of-order/example-1" | "/guide-examples/skeleton-examples/out-of-order/example-2" | "/guide-examples/skeleton-examples/out-of-order/example-3" | "/guide-examples/skeleton-examples/out-of-order/example-4"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/guides/+layout.marko" {
-  export interface Input extends Run.LayoutInput<typeof import("../src/routes/guides/+layout.marko")> {}
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guides" | "/guides/animation" | "/guides/page-grid" | "/guides/skeleton"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
-declare module "../src/routes/+404.marko" {
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Route;
     export type Context = Run.MultiRouteContext<Route> & Marko.Global;
     export type Handler = Run.HandlerLike<Route>;
     /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
