@@ -109,3 +109,12 @@ main {
   line-height: 1.25em;
   margin-bottom: 0.75em;
 }
+
+.demo {
+    border: 1px dashed var(--color-neutral-300);
+}
+
+.demo__inner {
+  margin: var(--spacing-100);
+
+}
