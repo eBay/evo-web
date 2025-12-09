@@ -1,0 +1,11 @@
+.breadcrumbs {
+  padding-block-start: 8px;
+}
+
+.breadcrumbs nav {
+  padding-inline-start: 0;
+}
+
+.breadcrumbs ~ main h1 {
+  margin-block: 0 16px;
+}

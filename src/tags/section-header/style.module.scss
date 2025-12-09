@@ -1,0 +1,15 @@
+.header {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: var(--spacing-400) 0 var(--spacing-200);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.link {
+  text-decoration: underline;
+}

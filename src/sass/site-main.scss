@@ -50,11 +50,9 @@ body > main:last-child {
   margin-bottom: 0;
 }
 
- main {
+main {
   margin-bottom: var(--spacing-400);
 }
-
-
 
 .icon-header {
   align-items: center;
@@ -111,16 +109,3 @@ body > main:last-child {
   line-height: 1.25em;
   margin-bottom: 0.75em;
 }
-
-.component-banner-img {
-  border-radius: var(--border-radius-100);
-  display: block;
-}
-
-.component-subtitle {
-  font-size: var(--font-size-18);
-  font-weight: 400;
-  margin-bottom: var(--spacing-200);
-  margin-top: var(--spacing-200);
-}
-

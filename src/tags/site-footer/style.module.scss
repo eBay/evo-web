@@ -1,0 +1,87 @@
+/* Footer */
+.footer {
+  background-color: var(--color-background-strong);
+  color: var(--color-foreground-on-strong);
+}
+
+.footer a {
+  color: var(--color-foreground-on-strong);
+  text-decoration: none;
+  transition: text-decoration var(--transition-duration);
+}
+
+.footer a:visited {
+  color: var(--color-foreground-on-strong);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  margin-bottom: var(--spacing-300);
+  max-width: 24rem;
+}
+
+.footer h3 {
+  font-size: var(--font-size-large-1);
+}
+
+.footer ul ::marker {
+  font-size: 0;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  display: grid;
+  gap: var(--spacing-400);
+  grid-template-columns: 1fr;
+  margin-block: var(--spacing-400);
+}
+
+@media (min-width: 768px) {
+  .content {
+    align-items: start;
+    gap: var(--spacing-600);
+    grid-template-columns: 2fr auto auto;
+  }
+}
+
+/* Brand Section - Left Column */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-100);
+  margin-bottom: var(--spacing-200);
+}
+
+.brand > svg {
+  background-color: var(--color-background-primary);
+  border-radius: var(--spacing-100);
+  color: var(--color-foreground-primary);
+  height: var(--spacing-500);
+  padding: var(--spacing-100);
+  width: var(--spacing-500);
+}
+
+.brandTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.end {
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: row;
+  font-size: var(--font-size-small);
+  justify-content: center;
+}
