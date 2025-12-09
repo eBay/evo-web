@@ -1,14 +1,15 @@
+import '../sass/landing-page.scss';
 <div class="page-grid-container">
 
   <div class="site-wrapper">
     <!-- Header/Hero Section -->
-    <div class="landing-hero-text-banner">
+    <div class="hero-card">
       <h1>Evo React Components</h1>
       <p>
         Leverage the world's most popular library for building complex,
         interactive user interfaces with reusable, stateful components.
       </p>
-      <div class="landing-hero-actions">
+      <div class="hero-card__actions">
         <a href="component/" class="fake-btn fake-btn--primary">
           Explore React Components
         </a>
@@ -21,54 +22,52 @@
           <h2>Why Choose Evo CSS?</h2>
         </div>
 
-        <div class="landing-info-container">
-          <div class="landing-info-container__item">
-            <div class="landing-info-container__item_icon">
-              <svg class="icon icon--24">
+        <div class="content-container">
+          <div class="content-card">
+            <div>
+              <svg class="icon icon--32">
                 <use href="#icon-item-list-24"/>
               </svg>
             </div>
-            <div class="landing-info-container__item_body">
-              <h3 class="landing-info-container__item_title">
+            <div class="content-card__body">
+              <h3>
                 Component-Based Architecture
               </h3>
-              <p class="landing-info-container__item_description">
+              <p>
                 Build complex UIs from small, isolated components. This ensures
                 **maximum reusability**, predictability, and maintainability
                 across large-scale applications.
               </p>
             </div>
           </div>
-          <!-- Feature 2: Universal Integration -->
-          <div class="landing-info-container__item">
-            <div class="landing-info-container__item_icon">
-              <svg class="icon icon--24">
+          <div class="content-card">
+            <div>
+              <svg class="icon icon--32">
                 <use href="#icon-wrench-24"/>
               </svg>
             </div>
-            <div class="landing-info-container__item_body">
-              <h3 class="landing-info-container__item_title">
+            <div class="content-card__body">
+              <h3>
                 Rich Ecosystem and Tooling
               </h3>
-              <p class="landing-info-container__item_description">
+              <p>
                 Access a massive library of third-party tools, state management
                 solutions (Redux, Zustand), and developer utilities that
                 accelerate project development and **scaling**.
               </p>
             </div>
           </div>
-          <!-- Feature 3: Easy Customization & Theming -->
-          <div class="landing-info-container__item">
-            <div class="landing-info-container__item_icon">
-              <svg class="icon icon--24">
+          <div class="content-card">
+            <div>
+              <svg class="icon icon--32">
                 <use href="#icon-auto-adjust-24"/>
               </svg>
             </div>
-            <div class="landing-info-container__item_body">
-              <h3 class="landing-info-container__item_title">
+            <div class="content-card__body">
+              <h3>
                 Modern Hooks for State Management
               </h3>
-              <p class="landing-info-container__item_description">
+              <p>
                 Utilize functional components and **hooks** (`useState`,
                 `useEffect`) for predictable, declarative state management,
                 making complex UI interactions simple and efficient.

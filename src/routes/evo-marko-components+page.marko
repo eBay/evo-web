@@ -1,12 +1,13 @@
+import '../sass/landing-page.scss';
 <div class="page-grid-container">
-  <div class="landing-hero-text-banner">
+  <div class="hero-card">
     <h1>Evo Marko Components</h1>
     <p>
       Experience cutting-edge performance with components powered by the
       streaming, modern Marko view engine. Optimized for the fastest server-side
       rendering.
     </p>
-    <div class="landing-hero-actions">
+    <div class="hero-card__actions">
       <a href="component/" class="fake-btn fake-btn--primary">
         Explore Marko Components
       </a>
@@ -18,19 +19,19 @@
         <h2>Why Choose Evo Marko Components?</h2>
       </div>
 
-      <div class="landing-info-container">
+      <div class="content-container">
         <!-- Feature 1: Streaming SSR -->
-        <div class="landing-info-container__item">
-          <div class="landing-info-container__item_icon">
-            <svg class="icon icon--24">
+        <div class="content-card">
+          <div>
+            <svg class="icon icon--32">
               <use href="#icon-lightning-bolt-24"/>
             </svg>
           </div>
-          <div class="landing-info-container__item_body">
-            <h3 class="landing-info-container__item_title">
+          <div class="content-card__body">
+            <h3>
               Native Streaming Server-Side Rendering (SSR)
             </h3>
-            <p class="landing-info-container__item_description">
+            <p>
               Marko renders pages on the server and streams HTML directly to the
               browser, significantly reducing Time To First Byte (TTFB). This
               provides immediate visual feedback to the user, improving
@@ -39,17 +40,17 @@
           </div>
         </div>
         <!-- Feature 2: Minimal Hydration -->
-        <div class="landing-info-container__item">
-          <div class="landing-info-container__item_icon">
-            <svg class="icon icon--24">
+        <div class="content-card">
+          <div>
+            <svg class="icon icon--32">
               <use href="#icon-wrench-24"/>
             </svg>
           </div>
-          <div class="landing-info-container__item_body">
-            <h3 class="landing-info-container__item_title">
+          <div class="content-card__body">
+            <h3>
               High Efficiency with Minimal Hydration
             </h3>
-            <p class="landing-info-container__item_description">
+            <p>
               Marko intelligently updates components without re-rendering the
               entire view. It only hydrates necessary client-side logic,
               resulting in less JavaScript being shipped and faster
@@ -58,17 +59,17 @@
           </div>
         </div>
         <!-- Feature 3: Modern Component Syntax -->
-        <div class="landing-info-container__item">
-          <div class="landing-info-container__item_icon">
-            <svg class="icon icon--24">
+        <div class="content-card">
+          <div>
+            <svg class="icon icon--32">
               <use href="#icon-item-list-24"/>
             </svg>
           </div>
-          <div class="landing-info-container__item_body">
-            <h3 class="landing-info-container__item_title">
+          <div class="content-card__body">
+            <h3>
               Intuitive and Clean Syntax
             </h3>
-            <p class="landing-info-container__item_description">
+            <p>
               Write faster, more readable components using Marko's declarative
               syntax, which natively supports HTML, JavaScript, and CSS within a
               single, highly performant component file.
