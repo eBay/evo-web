@@ -16,6 +16,7 @@ import "../../../../sass/accessibility.scss";
     self-actionable cards, as screen readers will only announce the button or
     link text.
   </p>
+  <p>A self-actionable card cannot contain interactive elements such as buttons or links within it.</p>
   <p>
     For hybrid cards, ensure they use a
     <code>&lt;div&gt;</code>
@@ -25,11 +26,13 @@ import "../../../../sass/accessibility.scss";
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
-    The interaction inside an item card should be simple keyboard
-    <code>TAB</code>
-    navigation of interactive elements with the
-    <code>ENTER</code>
-    key activating the element in focus.
+    Interaction differs depending on whether the card is self-actionable or not.
+  </p>
+  <p>
+    For self-actionable cards, keyboard focus lands only on the card itself, which is typically an anchor tag or button element.
+  </p>
+  <p>
+    For non-self actionable cards, keyboard focus lands on nested interactive elements.
   </p>
   <h2>Grouped Item Cards</h2>
   <p>

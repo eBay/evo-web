@@ -88,7 +88,7 @@
     "cssStorybookPath": "/story/skin-calendar--base",
     "markoStorybookPath": "/docs/building-blocks-ebay-calendar--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-calendar--documentation",
-    "description": "Calendar allow users to choose a single date or a range of dates."
+    "description": "A calendar shows the days, weeks, and months of a given year."
   },
   "card": {
     "component": "card",
@@ -123,7 +123,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-ccd--with-charger-and-usb",
     "markoStorybookPath": "/docs/graphics-icons-ebay-ccd--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-ccd--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-ccd--documentation",
+    "description": "Pictogram for the EU Common Charger Directive (CCD)."
   },
   "chart-legend": {
     "component": "chart-legend",
@@ -131,7 +132,8 @@
       "name": "graph",
       "url": "https://playbook.ebay.com/design-system/components/graph",
       "version": "1.0"
-    }
+    },
+    "description": "Serves as a key to interpreting the information presented in a chart."
   },
   "checkbox": {
     "component": "checkbox",
@@ -142,7 +144,7 @@
     },
     "markoStorybookPath": "/docs/form-input-ebay-checkbox--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-checkbox--documentation",
-    "description": "A checkbox is a form control that allows multiple selections from a group of\n    choices."
+    "description": "A form control that allows multiple selections from a group of choices."
   },
   "chip": {
     "component": "chip",
@@ -193,18 +195,6 @@
     "reactStorybookPath": "/docs/dialogs-ebay-confirm-dialog--documentation",
     "description": "A lightbox dialog that prompts user to confirm or cancel an action."
   },
-  "cta-button": {
-    "component": "cta-button",
-    "ds-component": {
-      "name": "cta-button",
-      "url": "https://playbook.ebay.com/design-system/components/cta-button",
-      "version": "1.2"
-    },
-    "cssStorybookPath": "/story/skin-cta-button--base",
-    "markoStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-cta-button--documentation",
-    "description": "An action button takes users to another URL destination."
-  },
   "date-textbox": {
     "component": "date-textbox",
     "ds-component": {
@@ -239,7 +229,8 @@
       "version": "1.0"
     },
     "submodules": ["chart-legend"],
-    "markoStorybookPath": "/docs/charts-ebay-donut-chart--documentation"
+    "markoStorybookPath": "/docs/charts-ebay-donut-chart--documentation",
+    "description": "A variation of a pie chart that displays data in a ring shape."
   },
   "education-notice": {
     "component": "education-notice",
@@ -250,7 +241,8 @@
     },
     "cssStorybookPath": "/story/skin-education-notice--base",
     "markoStorybookPath": "/docs/notices-tips-ebay-education-notice--documentation",
-    "reactStorybookPath": "/docs/notices-tips-ebay-education-notice--documentation"
+    "reactStorybookPath": "/docs/notices-tips-ebay-education-notice--documentation",
+    "description": "A special type of section notice that educates users on programs and features."
   },
   "eek": {
     "component": "eek",
@@ -262,7 +254,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-eek--typical",
     "markoStorybookPath": "/docs/graphics-icons-ebay-eek--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-eek--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-eek--documentation",
+    "description": "Pictogram for EU Energy Rating labels."
   },
   "field": {
     "component": "field",
@@ -271,7 +264,8 @@
       "url": "https://playbook.ebay.com/design-system/components/input",
       "version": "1.0"
     },
-    "reactStorybookPath": "/docs/form-input-ebay-field--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-field--documentation",
+    "description": "A CSS utility for form field layout and structure."
   },
   "file-input": {
     "component": "file-input",
@@ -283,7 +277,8 @@
     },
     "cssStorybookPath": "/story/skin-file-input--base",
     "markoStorybookPath": "/docs/form-input-ebay-file-input--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-file-input--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-file-input--documentation",
+    "description": "Allows users to select files from their device to upload."
   },
   "file-preview-card-group": {
     "component": "file-preview-card-group",
@@ -295,7 +290,8 @@
     },
     "cssStorybookPath": "/story/skin-file-preview-card-group--base",
     "markoStorybookPath": "/docs/media-ebay-file-preview-card-group--documentation",
-    "reactStorybookPath": "/docs/media-ebay-file-preview-card-group--documentation"
+    "reactStorybookPath": "/docs/media-ebay-file-preview-card-group--documentation",
+    "description": "Used to properly layout a group of file preview cards."
   },
   "file-preview-card": {
     "component": "file-preview-card",
@@ -308,7 +304,7 @@
     "cssStorybookPath": "/story/skin-file-preview-card--uploading",
     "markoStorybookPath": "/docs/media-ebay-file-preview-card--documentation",
     "reactStorybookPath": "/docs/media-ebay-file-preview-card--documentation",
-    "description": "File preview cards show."
+    "description": "A card-like preview of the file being uploaded."
   },
   "filter-chip": {
     "component": "filter-chip",
@@ -318,7 +314,8 @@
       "version": "4.1.0"
     },
     "markoStorybookPath": "/docs/form-input-ebay-filter-chip--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-filter-chip--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-filter-chip--documentation",
+    "description": "Provides immediate visual feedback and input of filters."
   },
   "filter-input": {
     "component": "filter-input",
@@ -330,7 +327,8 @@
     "submodules": ["textbox"],
     "cssStorybookPath": "/story/skin-filter-input--base",
     "markoStorybookPath": "/docs/form-input-ebay-filter-input--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-filter-input--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-filter-input--documentation",
+    "description": "A textbox for dynamic, real-time filtering of in-page data sets"
   },
   "flag": {
     "component": "flag",
@@ -341,7 +339,8 @@
     },
     "cssStorybookPath": "/story/skin-flag--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-flag--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-flag--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-flag--documentation",
+    "description": "All international country flags represented in a sprite."
   },
   "floating-label": {
     "component": "floating-label",
@@ -350,7 +349,8 @@
       "url": "https://playbook.ebay.com/design-system/components/input",
       "version": "2.2"
     },
-    "cssStorybookPath": "/story/skin-floating-label--base"
+    "cssStorybookPath": "/story/skin-floating-label--base",
+    "description": "An HTML label that is rendered inside the bounds of a textbox or button."
   },
   "global": {
     "component": "global",
@@ -359,7 +359,8 @@
       "url": "https://playbook.ebay.com/design-system/global",
       "version": "1.0"
     },
-    "cssStorybookPath": "/story/skin-global--headings"
+    "cssStorybookPath": "/story/skin-global--headings",
+    "description": "Small collection of CSS type selectors for global styles."
   },
   "icon-button": {
     "component": "icon-button",
@@ -371,7 +372,7 @@
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
-    "description": "A borderless, actionable icon style."
+    "description": "A button with icon only and no visible text."
   },
   "icon": {
     "component": "icon",
@@ -382,7 +383,8 @@
     },
     "cssStorybookPath": "/story/skin-icon--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-icon--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-icon--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-icon--documentation",
+    "description": "The full set of Evo icons."
   },
   "image-placeholder": {
     "component": "image-placeholder",
@@ -393,7 +395,8 @@
     },
     "cssStorybookPath": "/story/skin-image-placeholder--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-image-placeholder--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-image-placeholder--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-image-placeholder--documentation",
+    "description": "A fallback image for use when an image is unavailable."
   },
   "infotip": {
     "component": "infotip",

@@ -2,7 +2,7 @@
   <component-banner-img/>
 
   <p>
-    The Accordion component is a versatile UI pattern that helps organize
+    The accordion component is a versatile UI pattern that helps organize
     content into expandable and collapsible sections. By allowing users to
     reveal or hide information as needed, it reduces clutter on the page and
     makes complex layouts easier to navigate. Built with responsive design
@@ -11,10 +11,10 @@
   </p>
 
   <p>
-    Accessibility is at the core of the Accordion component. With semantic HTML,
+    Accessibility is at the core of the accordion component. With semantic HTML,
     keyboard navigation, and screen reader support, it ensures that content
     remains usable by all audiences. Whether used for FAQs, navigation menus, or
-    structured content organization, the Accordion component provides a
+    structured content organization, the accordion component provides a
     reliable, standards-aligned foundation available in Evo Web's CSS, React,
     and Marko implementations.
   </p>
@@ -49,14 +49,9 @@
     </li>
   </ul>
 
-  <h3>HTML</h3>
+  <h2>HTML</h2>
   <p>
-    The structure is a list of details widgets. Note that in some browsers the
-    implicit list role is removed when CSS
-    <code>list-style-type: none</code>
-    is applied. To hide the list item markers, use the
-    <code>::marker</code>
-    pseudo-element .
+    The semantic structure is a list of details widgets.
   </p>
 
   <highlight-code type="html">
@@ -114,12 +109,12 @@
 
   <h2>CSS</h2>
 
-  <p>
-    To address the issue in some browsers where the implicit list role is
-    removed with
-    <code>list-style-type</code>
-    , the following CSS can be applied to hide the list item markers.
-    Beyond this, accordion headers and panels can be styled as desired.
+  <p>In some browsers the
+    implicit list role is removed when CSS
+    <code>list-style-type: none</code>
+    is applied, therefore our CSS uses the
+    <code>::marker</code>
+    pseudo-element instead.
   </p>
 
   <highlight-code type="css">
@@ -135,7 +130,7 @@
   </p>
   <p>
     For accordions limited to a single open panel, the
-    <code>name</code>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name"><code>name</code></a>
     attribute allows multiple
     <code>&lt;details&gt;</code>
     elements to be linked, ensuring only one is open at a time. This
@@ -155,11 +150,4 @@
       to open, close all other details elements
     </li>
   </ol>
-  <p>
-    That's it. Pretty straightforward. You can reference our
-    <a href="https://github.com/eBay/mindpatterns/blob/gh-pages/_js/accordion.js">
-      example code on GitHub
-    </a>
-    .
-  </p>
 </div>
