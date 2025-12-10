@@ -384,7 +384,7 @@
     "cssStorybookPath": "/story/skin-icon--inside-heading",
     "markoStorybookPath": "/docs/graphics-icons-ebay-icon--documentation",
     "reactStorybookPath": "/docs/graphics-icons-ebay-icon--documentation",
-    "description": "The full set of Evo icons."
+    "description": "Our iconography in SVG format."
   },
   "image-placeholder": {
     "component": "image-placeholder",
@@ -433,7 +433,8 @@
     },
     "cssStorybookPath": "/story/skin-item-tile-group--gallery-view",
     "markoStorybookPath": "/docs/layout-ebay-item-tile-group--documentation",
-    "reactStorybookPath": "/docs/layout-ebay-item-tile-group--documentation"
+    "reactStorybookPath": "/docs/layout-ebay-item-tile-group--documentation",
+    "description": "Used to properly layout a group of item tiles."
   },
   "item-tile": {
     "component": "item-tile",
@@ -444,7 +445,8 @@
     },
     "cssStorybookPath": "/story/skin-item-tile--gallery-view",
     "markoStorybookPath": "/docs/layout-ebay-item-tile--documentation",
-    "reactStorybookPath": "/docs/layout-ebay-item-tile--documentation"
+    "reactStorybookPath": "/docs/layout-ebay-item-tile--documentation",
+    "description": "A card-like component that displays key information about an item."
   },
   "layout-grid": {
     "component": "layout-grid",
@@ -454,7 +456,8 @@
       "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-layout-grid--base",
-    "markoStorybookPath": "/docs/layout-ebay-layout-grid--documentation"
+    "markoStorybookPath": "/docs/layout-ebay-layout-grid--documentation",
+    "description": "A generic, responsive layout grid for repeating UI elements in a container."
   },
   "lightbox-dialog": {
     "component": "lightbox-dialog",
@@ -467,7 +470,7 @@
     "cssStorybookPath": "/story/skin-lightbox-dialog--base",
     "markoStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
     "reactStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
-    "description": "A modal window which dims out the main page behind it."
+    "description": "A modal, child window; renders the main window content inert."
   },
   "link": {
     "component": "link",
@@ -476,7 +479,8 @@
       "url": "https://playbook.ebay.com/design-system/components/text-link",
       "version": "2.0"
     },
-    "cssStorybookPath": "/story/skin-link--base"
+    "cssStorybookPath": "/story/skin-link--base",
+    "description": "Allow users to move from one URL to another or access different resources."
   },
   "list": {
     "component": "list",
@@ -488,7 +492,7 @@
     "cssStorybookPath": "/story/skin-list--base",
     "markoStorybookPath": "/docs/building-blocks-ebay-list--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-list--documentation",
-    "description": "A list component is used to display certain types of data in a structured\n    format."
+    "description": "Combines a set of content inside a horizontal layout."
   },
   "listbox-button": {
     "component": "listbox-button",
@@ -500,7 +504,7 @@
     "submodules": ["button", "icon"],
     "markoStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-listbox-button--documentation",
-    "description": "A button that expands to reveal a listbox in a flyout."
+    "description": "A button that expands to reveal a listbox in a popover."
   },
   "listbox": {
     "component": "listbox",
@@ -521,7 +525,8 @@
       "name": "marketsans",
       "url": "https://playbook.ebay.com/design-system/typography/marketsans",
       "version": "2.0"
-    }
+    },
+    "description": "eBay's custom typeface for digital experiences."
   },
   "menu-button": {
     "component": "menu-button",
@@ -565,7 +570,8 @@
       "name": "page-grid",
       "url": "https://playbook.ebay.com/design-system/layout/page-grid",
       "version": "1.0"
-    }
+    },
+    "description": "A CSS utility for creating page layouts with a grid system."
   },
   "page-notice": {
     "component": "page-notice",
@@ -602,7 +608,8 @@
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-panel-dialog--panel-start",
     "markoStorybookPath": "/docs/dialogs-ebay-panel-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-panel-dialog--documentation"
+    "reactStorybookPath": "/docs/dialogs-ebay-panel-dialog--documentation",
+    "description": "A slide-in dialog that appears from the side of the screen."
   },
   "phone-input": {
     "component": "phone-input",
@@ -624,7 +631,8 @@
     },
     "cssStorybookPath": "/story/skin-progress-bar-expressive--base",
     "markoStorybookPath": "/docs/progress-ebay-progress-bar-expressive--documentation",
-    "reactStorybookPath": "/docs/progress-ebay-progress-bar-expressive--documentation"
+    "reactStorybookPath": "/docs/progress-ebay-progress-bar-expressive--documentation",
+    "description": "An alternative to the progress spinner, especially for longer anticipated loading times."
   },
   "progress-bar": {
     "component": "progress-bar",
@@ -635,7 +643,8 @@
     },
     "cssStorybookPath": "/story/skin-progress-bar--empty",
     "markoStorybookPath": "/docs/progress-ebay-progress-bar--documentation",
-    "reactStorybookPath": "/docs/progress-ebay-progress-bar--documentation"
+    "reactStorybookPath": "/docs/progress-ebay-progress-bar--documentation",
+    "description": "Indicates the completion progress of a task or process."
   },
   "progress-spinner": {
     "component": "progress-spinner",
@@ -647,7 +656,8 @@
     "submodules": ["icon"],
     "cssStorybookPath": "/story/skin-progress-spinner--base",
     "markoStorybookPath": "/docs/progress-ebay-progress-spinner--documentation",
-    "reactStorybookPath": "/docs/progress-ebay-progress-spinner--documentation"
+    "reactStorybookPath": "/docs/progress-ebay-progress-spinner--documentation",
+    "description": "Indicates that content is loading or an action is being processed."
   },
   "progress-stepper": {
     "component": "progress-stepper",
@@ -671,7 +681,7 @@
     },
     "markoStorybookPath": "/docs/form-input-ebay-radio--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-radio--documentation",
-    "description": "A radio button is a form control that allows a single selection from a group\n    of choices."
+    "description": "A form control that allows a single selection from a group of choices."
   },
   "sass": {
     "component": "sass",
@@ -679,7 +689,8 @@
       "name": "sass",
       "url": "https://playbook.ebay.com/design-system/sass",
       "version": "1.0"
-    }
+    },
+    "description": "Small collection of SASS variables and mixins."
   },
   "section-notice": {
     "component": "section-notice",
@@ -691,23 +702,25 @@
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
     "reactStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
-    "description": "A section notice conveys either system status and feedback to users."
+    "description": "A section notice conveys system status and/or feedback to users."
   },
   "section-title": {
     "component": "section-title",
     "ds-component": {
       "name": "section-title",
-      "url": "https://playbook.ebay.com/design-system/components/section-title",
+      "url": "https://playbook.ebay.com/design-system/components/section-header",
       "version": "4.0"
     },
     "cssStorybookPath": "/story/skin-section-title--heading",
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-section-title--documentation",
-    "reactStorybookPath": "/docs/navigation-disclosure-ebay-section-title--documentation"
+    "reactStorybookPath": "/docs/navigation-disclosure-ebay-section-title--documentation",
+    "description": "Separates bodies of content to establish hierarchy throughout the experience."
   },
   "segmented-buttons": {
     "component": "segmented-buttons",
     "ds-component": {
       "name": "segmented-button",
+      "url": "https://playbook.ebay.com/design-system/components/segmented-button",
       "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-segmented-buttons--base",

@@ -3,16 +3,25 @@
 
   <p>
     The menu button pattern is a JavaScript widget. It is a button that expands
-    to reveal a [menu](menu) in a [popover](../disclosure/popover). A menu is
-    appropriate when requiring a partial page re-render _without_ using a form
-    or full page reload. For example: filtering and sorting of search results. A
-    menu is not appropriate for a full page reload. For that, please use links
-    instead (see the [Fake Menu](../navigation/fake-menu-button) pattern). The
+    to reveal a <a href="components/menu">menu</a> in a popover.
+  </p>
+  <p>
+    A menu is
+    appropriate when requiring a partial page re-render <em>without</em> using a form
+    or full page reload. For example: dynamic filtering and sorting of search results.
+  </p>
+  <p>
+    A
+    menu is <strong>not</strong> appropriate for a full page reload. For that, please use links
+    instead (see the <a href="accssibility/patterns/fake-menu">fake menu</a> pattern. The
     distinction between menu items and links is important. A menu item is a
     command that executes JavaScript, whereas a link is a command that navigates
-    to a url. If your menu must contain a _mix_ of JavaScript behaviour and link
+    to a url. If your menu must contain a mix of JavaScript behaviour and link
     behaviour, please use a regular list of buttons and links. Do no mix menu
-    items with links. **TIP**: Do not call a menu button a "dropdown"! The term
+    items with links.
+  </p>
+  <p>
+    <strong>TIP</strong>: Do not call a menu button a "dropdown"! The term
     "dropdown" is ambiguous and could be confused with a listbox, combobox
     select or any other kind of overlay that "drops down". If you must, call it
     a dropdown menu.
@@ -24,17 +33,6 @@
       progressive disclosure
     </a>
     , it keeps secondary commands hidden from view until needed.
-  </p>
-  <p>
-    Selecting a menu item command should update the page
-    <strong>without</strong>
-    a full page reload (i.e. acting similar to buttons, checkboxes or
-    radios). If a full page load is required instead (i.e. acting like links),
-    please refer to the
-    <a href="accessibility/patterns/fake-menu-button">
-      fake menu button
-    </a>
-    .
   </p>
 
   <h2>Terminology</h2>
