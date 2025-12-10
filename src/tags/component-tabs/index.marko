@@ -1,11 +1,18 @@
 import { getMetadataFromUrl } from "../../data";
-import { badge, component, tabs } from "./style.module.scss";
+import { badge, component, tabs, page } from "./style.module.scss";
 export interface Input {
   content?: Marko.Body;
 }
-<const/{ dsComponent, metadata, currentTab, componentUrls }=getMetadataFromUrl(
-  $global.url.pathname,
-)>
+<const/{
+  dsComponent,
+  metadata,
+  currentTab,
+  componentUrls,
+  a11yPage,
+  cssPage,
+  next,
+  prev,
+}=getMetadataFromUrl($global.url.pathname)>
 
 <const/badgeClass=[badge]>
 
@@ -13,7 +20,30 @@ export interface Input {
   <const/getAriaCurrentValue(tabName: string) {
     return currentTab === tabName ? "page" : undefined;
   }>
+
   <div class=component>
+    <div class=page>
+      <if=prev>
+        <a href=(prev.componentUrls.overview)>
+          <svg class="icon icon--12">
+            <use href="#icon-arrow-left-12"/>
+          </svg>
+          ${prev.properName} Component
+        </a>
+      </if>
+      <else>
+        <!-- Extra empty element -->
+        <span/>
+      </else>
+      <if=next>
+        <a href=(next.componentUrls.overview)>
+          <span>${next.properName} Component</span>
+          <svg class="icon icon--12">
+            <use href="#icon-arrow-right-12"/>
+          </svg>
+        </a>
+      </if>
+    </div>
     <div class=["fake-tabs", tabs]>
       <ul
         class="fake-tabs__items"
@@ -27,77 +57,87 @@ export interface Input {
             Overview
           </a>
         </li>
-        <li class="fake-tabs__item fake-tabs__items--large">
-          <a
-            href=componentUrls?.accessibility
-            role="tab"
-            aria-current=getAriaCurrentValue("accessibility")>
-            Accessibility
-          </a>
-        </li>
-        <li class="fake-tabs__item fake-tabs__items--large">
-          <a
-            href=componentUrls?.css
-            role="tab"
-            aria-current=getAriaCurrentValue("css")>
-            CSS${" "}
-            <span
-              class=badgeClass
-              role="img"
-              aria-label=`Static version ${dsComponent?.version || ""}`>
-              ${dsComponent?.version || ""}
-            </span>
-          </a>
-        </li>
-        <li class="fake-tabs__item fake-tabs__items--large">
-          <a href=componentUrls?.marko target="_blank">
-            Marko Storybook${" "}
-            <span
-              class=badgeClass
-              role="img"
-              aria-label=`Marko version ${dsComponent?.markoVersion || ""}`>
-              ${dsComponent?.markoVersion || ""}
-            </span>
-            <svg
-              class="icon icon--16"
-              height="16"
-              width="16"
-              aria-hidden="true">
-              <use href="#icon-external-link-16"/>
-            </svg>
-          </a>
-        </li>
-        <li class="fake-tabs__item fake-tabs__items--large">
-          <a href=componentUrls?.react target="_blank">
-            React Storybook${" "}
+        <if=a11yPage>
+          <li class="fake-tabs__item fake-tabs__items--large">
+            <a
+              href=componentUrls?.accessibility
+              role="tab"
+              aria-current=getAriaCurrentValue("accessibility")>
+              Accessibility
+            </a>
+          </li>
+        </if>
+        <if=cssPage>
+          <li class="fake-tabs__item fake-tabs__items--large">
+            <a
+              href=componentUrls?.css
+              role="tab"
+              aria-current=getAriaCurrentValue("css")>
+              CSS${" "}
+              <span
+                class=badgeClass
+                role="img"
+                aria-label=`Static version ${dsComponent?.version || ""}`>
+                ${dsComponent?.version || ""}
+              </span>
+            </a>
+          </li>
+        </if>
+        <if=componentUrls?.marko>
+          <li class="fake-tabs__item fake-tabs__items--large">
+            <a href=componentUrls?.marko target="_blank">
+              Marko Storybook${" "}
+              <span
+                class=badgeClass
+                role="img"
+                aria-label=`Marko version ${dsComponent?.markoVersion || ""}`>
+                ${dsComponent?.markoVersion || ""}
+              </span>
+              <svg
+                class="icon icon--16"
+                height="16"
+                width="16"
+                aria-hidden="true">
+                <use href="#icon-external-link-16"/>
+              </svg>
+            </a>
+          </li>
+        </if>
+        <if=componentUrls?.react>
+          <li class="fake-tabs__item fake-tabs__items--large">
+            <a href=componentUrls?.react target="_blank">
+              React Storybook${" "}
 
-            <span
-              class=badgeClass
-              role="img"
-              aria-label=`React version ${dsComponent?.reactVersion || ""}`>
-              ${dsComponent?.reactVersion || ""}
-            </span>
-            <svg
-              class="icon icon--16"
-              height="16"
-              width="16"
-              aria-hidden="true">
-              <use href="#icon-external-link-16"/>
-            </svg>
-          </a>
-        </li>
-        <li class="fake-tabs__item fake-tabs__items--large">
-          <a href=componentUrls?.dsUrl target="_blank">
-            Design System${" "}
-            <svg
-              class="icon icon--16"
-              height="16"
-              width="16"
-              aria-hidden="true">
-              <use href="#icon-external-link-16"/>
-            </svg>
-          </a>
-        </li>
+              <span
+                class=badgeClass
+                role="img"
+                aria-label=`React version ${dsComponent?.reactVersion || ""}`>
+                ${dsComponent?.reactVersion || ""}
+              </span>
+              <svg
+                class="icon icon--16"
+                height="16"
+                width="16"
+                aria-hidden="true">
+                <use href="#icon-external-link-16"/>
+              </svg>
+            </a>
+          </li>
+        </if>
+        <if=componentUrls?.dsUrl>
+          <li class="fake-tabs__item fake-tabs__items--large">
+            <a href=componentUrls?.dsUrl target="_blank">
+              Design System${" "}
+              <svg
+                class="icon icon--16"
+                height="16"
+                width="16"
+                aria-hidden="true">
+                <use href="#icon-external-link-16"/>
+              </svg>
+            </a>
+          </li>
+        </if>
       </ul>
       <div class="fake-tabs__content" role="tabpanel">
         <div class="fake-tabs__cell">

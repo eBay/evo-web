@@ -18,3 +18,29 @@
 .tabs {
   margin-top: 0;
 }
+
+.page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page > a:last-child {
+  text-align: right;
+}
+
+.page > a {
+  align-items: center;
+  color: var(--color-foreground-secondary);
+  display: inline-flex;
+  font-size: var(--font-size-small);
+  gap: var(--spacing-50);
+  text-decoration: none;
+}
+
+.page > a:visited {
+  color: var(--color-foreground-secondary);
+}
+.page > a:hover {
+  color: var(--color-foreground-primary);
+  text-decoration: underline;
+}

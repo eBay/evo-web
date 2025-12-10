@@ -1,4 +1,4 @@
-import '../../sass/landing-page.scss';
+import "../../sass/landing-page.scss";
 <div class="page-grid-container">
   <div class="hero-card">
     <h1>Evo Marko Components</h1>
@@ -8,7 +8,15 @@ import '../../sass/landing-page.scss';
       rendering.
     </p>
     <div class="hero-card__actions">
-      <a href="components/" class="fake-btn fake-btn--primary">
+      <a href="ebayui-core/" class="fake-btn fake-btn--primary">
+        <div class="fake-btn__cell">
+          <span>Explore Marko Storybook</span>
+          <svg class="icon icon--16">
+            <use href="#icon-external-link-16"/>
+          </svg>
+        </div>
+      </a>
+      <a href="components/" class="fake-btn">
         Explore Marko Components
       </a>
     </div>
@@ -28,9 +36,7 @@ import '../../sass/landing-page.scss';
             </svg>
           </div>
           <div class="content-card__body">
-            <h3>
-              Native Streaming Server-Side Rendering (SSR)
-            </h3>
+            <h3>Native Streaming Server-Side Rendering (SSR)</h3>
             <p>
               Marko renders pages on the server and streams HTML directly to the
               browser, significantly reducing Time To First Byte (TTFB). This
@@ -47,9 +53,7 @@ import '../../sass/landing-page.scss';
             </svg>
           </div>
           <div class="content-card__body">
-            <h3>
-              High Efficiency with Minimal Hydration
-            </h3>
+            <h3>High Efficiency with Minimal Hydration</h3>
             <p>
               Marko intelligently updates components without re-rendering the
               entire view. It only hydrates necessary client-side logic,
@@ -66,9 +70,7 @@ import '../../sass/landing-page.scss';
             </svg>
           </div>
           <div class="content-card__body">
-            <h3>
-              Intuitive and Clean Syntax
-            </h3>
+            <h3>Intuitive and Clean Syntax</h3>
             <p>
               Write faster, more readable components using Marko's declarative
               syntax, which natively supports HTML, JavaScript, and CSS within a
