@@ -27,7 +27,7 @@ $ const {
                 value=i
                 disabled=disabled
                 checked=state.value === i
-                onClick("emitEvent", "change", i)
+                onClick("handleChange", i)
                 onFocus("emitEvent", "focus", i)
                 onKeydown("emitEvent", "keydown", i)
             >

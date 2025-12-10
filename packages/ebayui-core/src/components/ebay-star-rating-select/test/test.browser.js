@@ -73,6 +73,16 @@ describe("when native focus event is fired on star", () => {
         expect(eventArg).has.property("originalEvent").is.an.instanceOf(Event);
         expect(eventArg.value).to.equal(2);
     });
+
+    it("then it does not select the star", () => {
+        const starInput = component.getByLabelText("2 stars");
+        expect(starInput.checked).to.equal(false);
+    });
+
+    it("then it does not emit change event", () => {
+        const changeEvents = component.emitted("change");
+        expect(changeEvents).has.length(0);
+    });
 });
 
 describe("when native keyboard event is fired on star", () => {

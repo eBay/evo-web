@@ -34,6 +34,16 @@ class StarRating extends Marko.Component<Input, State> {
         }
         this.state.value = value;
     }
+    handleChange(value: number, originalEvent: PointerEvent, el: HTMLInputElement) {
+        if (!el.disabled) {
+            this.state.value = value;
+            this.emit("change", {
+                originalEvent,
+                value: value,
+            } satisfies StarRatingEvent<PointerEvent>);
+        }
+    }
+
     emitEvent<T extends Event>(
         name: string,
         value: number,
@@ -41,7 +51,6 @@ class StarRating extends Marko.Component<Input, State> {
         el: HTMLInputElement,
     ) {
         if (!el.disabled) {
-            this.state.value = value;
             this.emit(name, {
                 originalEvent,
                 value: value,
