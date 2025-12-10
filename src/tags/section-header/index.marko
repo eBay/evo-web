@@ -1,16 +1,17 @@
 import { getMetadataFromUrl } from "../../data";
 import {header, link} from "./style.module.scss";
 
-<const/{ dsComponent, properName }=getMetadataFromUrl($global.url.pathname)>
+<const/{ properName, componentUrls}=getMetadataFromUrl($global.url.pathname)>
 export interface Input {
   header?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
 <div class=header>
   <${input.header || "h1"}>${properName} Component</>
 
+  <if=componentUrls.dsUrl>
   <span class=link>
     <a
-      href=`${dsComponent?.url || "https://playbook.ebay.com/design-system/components/"}`
+      href=componentUrls.dsUrl
       target="_blank">
       <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
         <use href="#icon-external-link-16"/>
@@ -18,4 +19,5 @@ export interface Input {
       ${" "}Playbook
     </a>
   </span>
+  </if>
 </div>

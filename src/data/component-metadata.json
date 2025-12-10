@@ -130,7 +130,7 @@
     "component": "chart-legend",
     "ds-component": {
       "name": "graph",
-      "url": "https://playbook.ebay.com/design-system/components/graph",
+      "url": "https://playbook.ebay.com/design-system/components/graphs",
       "version": "1.0"
     },
     "description": "Serves as a key to interpreting the information presented in a chart."
@@ -225,7 +225,7 @@
     "component": "donut-chart",
     "ds-component": {
       "name": "donut-chart",
-      "url": "https://playbook.ebay.com/design-system/components/donut-chart",
+      "url": "https://playbook.ebay.com/design-system/components/graphs",
       "version": "1.0"
     },
     "submodules": ["chart-legend"],
@@ -248,7 +248,7 @@
     "component": "eek",
     "ds-component": {
       "name": "eek-ratings",
-      "url": "https://playbook.ebay.com/design-system/components/eek-ratings",
+      "url": "https://playbook.ebay.com/design-system/components/eek",
       "version": "1.1"
     },
     "submodules": ["icon"],
@@ -261,7 +261,7 @@
     "component": "field",
     "ds-component": {
       "name": "input",
-      "url": "https://playbook.ebay.com/design-system/components/input",
+      "url": "https://playbook.ebay.com/design-system/components/text-field",
       "version": "1.0"
     },
     "reactStorybookPath": "/docs/form-input-ebay-field--documentation",
@@ -334,7 +334,7 @@
     "component": "flag",
     "ds-component": {
       "name": "flag",
-      "url": "https://playbook.ebay.com/design-system/components/flag",
+      "url": "https://playbook.ebay.com/foundations/iconography/our-icons",
       "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-flag--inside-heading",
@@ -346,7 +346,7 @@
     "component": "floating-label",
     "ds-component": {
       "name": "input",
-      "url": "https://playbook.ebay.com/design-system/components/input",
+      "url": "https://playbook.ebay.com/design-system/components/text-field",
       "version": "2.2"
     },
     "cssStorybookPath": "/story/skin-floating-label--base",
@@ -354,11 +354,6 @@
   },
   "global": {
     "component": "global",
-    "ds-component": {
-      "name": "global",
-      "url": "https://playbook.ebay.com/design-system/global",
-      "version": "1.0"
-    },
     "cssStorybookPath": "/story/skin-global--headings",
     "description": "Small collection of CSS type selectors for global styles."
   },
@@ -378,7 +373,7 @@
     "component": "icon",
     "ds-component": {
       "name": "icon",
-      "url": "https://playbook.ebay.com/design-system/components/icon",
+      "url": "https://playbook.ebay.com/foundations/iconography/our-icons",
       "version": "1.3"
     },
     "cssStorybookPath": "/story/skin-icon--inside-heading",
@@ -390,7 +385,7 @@
     "component": "image-placeholder",
     "ds-component": {
       "name": "image-placeholder",
-      "url": "https://playbook.ebay.com/design-system/components/image-placeholder",
+      "url": "https://playbook.ebay.com/foundations/iconography/our-icons",
       "version": "1.0"
     },
     "cssStorybookPath": "/story/skin-image-placeholder--inside-heading",
@@ -428,7 +423,7 @@
     "component": "item-tile-group",
     "ds-component": {
       "name": "item-tile-group",
-      "url": "https://playbook.ebay.com/design-system/components/item-tile-group",
+      "url": "https://playbook.ebay.com/design-system/components/item-tile",
       "version": "0.1"
     },
     "cssStorybookPath": "/story/skin-item-tile-group--gallery-view",
@@ -450,11 +445,6 @@
   },
   "layout-grid": {
     "component": "layout-grid",
-    "ds-component": {
-      "name": "layout-grid",
-      "url": "https://playbook.ebay.com/design-system/components/layout-grid",
-      "version": "1.0"
-    },
     "cssStorybookPath": "/story/skin-layout-grid--base",
     "markoStorybookPath": "/docs/layout-ebay-layout-grid--documentation",
     "description": "A generic, responsive layout grid for repeating UI elements in a container."
@@ -523,7 +513,6 @@
     "component": "marketsans",
     "ds-component": {
       "name": "marketsans",
-      "url": "https://playbook.ebay.com/design-system/typography/marketsans",
       "version": "2.0"
     },
     "description": "eBay's custom typeface for digital experiences."
@@ -568,7 +557,6 @@
     "component": "page-grid",
     "ds-component": {
       "name": "page-grid",
-      "url": "https://playbook.ebay.com/design-system/layout/page-grid",
       "version": "1.0"
     },
     "description": "A CSS utility for creating page layouts with a grid system."
@@ -638,7 +626,6 @@
     "component": "progress-bar",
     "ds-component": {
       "name": "progress-bar",
-      "url": "https://playbook.ebay.com/design-system/components/progress-bar",
       "version": "3.1"
     },
     "cssStorybookPath": "/story/skin-progress-bar--empty",
@@ -650,7 +637,6 @@
     "component": "progress-spinner",
     "ds-component": {
       "name": "progress-spinner",
-      "url": "https://playbook.ebay.com/design-system/components/progress-spinner",
       "version": "3.1"
     },
     "submodules": ["icon"],
@@ -685,11 +671,6 @@
   },
   "sass": {
     "component": "sass",
-    "ds-component": {
-      "name": "sass",
-      "url": "https://playbook.ebay.com/design-system/sass",
-      "version": "1.0"
-    },
     "description": "Small collection of SASS variables and mixins."
   },
   "section-notice": {
@@ -934,9 +915,6 @@
     "version": "1.1"
   },
   "utility": {
-    "component": "utility",
-    "ds-component": {
-      "version": "1.0"
-    }
+    "component": "utility"
   }
 }

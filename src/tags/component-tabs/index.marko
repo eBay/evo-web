@@ -22,28 +22,6 @@ export interface Input {
   }>
 
   <div class=component>
-    <div class=page>
-      <if=prev>
-        <a href=(prev.componentUrls.overview)>
-          <svg class="icon icon--12">
-            <use href="#icon-arrow-left-12"/>
-          </svg>
-          ${prev.properName} Component
-        </a>
-      </if>
-      <else>
-        <!-- Extra empty element -->
-        <span/>
-      </else>
-      <if=next>
-        <a href=(next.componentUrls.overview)>
-          <span>${next.properName} Component</span>
-          <svg class="icon icon--12">
-            <use href="#icon-arrow-right-12"/>
-          </svg>
-        </a>
-      </if>
-    </div>
     <div class=["fake-tabs", tabs]>
       <ul
         class="fake-tabs__items"
@@ -74,12 +52,14 @@ export interface Input {
               role="tab"
               aria-current=getAriaCurrentValue("css")>
               CSS${" "}
-              <span
-                class=badgeClass
-                role="img"
-                aria-label=`Static version ${dsComponent?.version || ""}`>
-                ${dsComponent?.version || ""}
-              </span>
+              <if=dsComponent?.version>
+                <span
+                  class=badgeClass
+                  role="img"
+                  aria-label=`Static version ${dsComponent?.version || ""}`>
+                  ${dsComponent?.version || ""}
+                </span>
+              </if>
             </a>
           </li>
         </if>
@@ -144,6 +124,28 @@ export interface Input {
           <${input.content}/>
         </div>
       </div>
+    </div>
+    <div class=page>
+      <if=prev>
+        <a href=(prev.componentUrls.overview)>
+          <svg class="icon icon--12">
+            <use href="#icon-arrow-left-12"/>
+          </svg>
+          ${prev.properName} Component
+        </a>
+      </if>
+      <else>
+        <!-- Extra empty element -->
+        <span/>
+      </else>
+      <if=next>
+        <a href=(next.componentUrls.overview)>
+          <span>${next.properName} Component</span>
+          <svg class="icon icon--12">
+            <use href="#icon-arrow-right-12"/>
+          </svg>
+        </a>
+      </if>
     </div>
   </div>
 </if>

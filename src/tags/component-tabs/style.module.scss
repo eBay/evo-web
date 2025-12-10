@@ -20,8 +20,11 @@
 }
 
 .page {
+  border-top: 1px dashed var(--color-neutral-300);
   display: flex;
   justify-content: space-between;
+  margin-block: var(--spacing-200);
+  padding-block: var(--spacing-200);
 }
 
 .page > a:last-child {
