@@ -728,7 +728,8 @@
       "version": "2.1.0"
     },
     "cssStorybookPath": "/story/skin-selection-chip--button",
-    "markoStorybookPath": "/docs/form-input-ebay-selection-chip--documentation"
+    "markoStorybookPath": "/docs/form-input-ebay-selection-chip--documentation",
+    "description": "Helps users quickly toggle pre-validated input values."
   },
   "signal": {
     "component": "signal",
@@ -737,7 +738,8 @@
       "version": "1.0"
     },
     "markoStorybookPath": "/docs/graphics-icons-ebay-signal--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-signal--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-signal--documentation",
+    "description": "A product signal for an item, e.g. New Listing, Great Price."
   },
   "skeleton": {
     "component": "skeleton",
@@ -759,7 +761,7 @@
     "submodules": ["button"],
     "markoStorybookPath": "/docs/dialogs-ebay-snackbar-dialog--documentation",
     "reactStorybookPath": "/docs/dialogs-ebay-snackbar-dialog--documentation",
-    "description": "A snackbar is a non-modal dialog that appears in response to a lightweight\n    user action."
+    "description": "A non-modal dialog; appears in response to a lightweight\n    user action."
   },
   "split-button": {
     "component": "split-button",
@@ -768,7 +770,8 @@
       "version": "1.6"
     },
     "markoStorybookPath": "/docs/buttons-ebay-split-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-split-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-split-button--documentation",
+    "description": "Button combining a primary action with dropdown of secondary actions."
   },
   "star-rating-select": {
     "component": "star-rating-select",
@@ -778,7 +781,8 @@
     },
     "cssStorybookPath": "/story/skin-star-rating-select--empty",
     "markoStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation",
-    "reactStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation"
+    "reactStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation",
+    "description": "Interactive star rating input for user reviews or feedback."
   },
   "star-rating": {
     "component": "star-rating",
@@ -788,14 +792,16 @@
     },
     "cssStorybookPath": "/story/skin-star-rating--empty",
     "markoStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation",
-    "reactStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation",
+    "description": "Star rating graphic to represent user reviews or feedback."
   },
   "svg": {
     "component": "svg",
     "ds-component": {
       "version": "1.0"
     },
-    "reactStorybookPath": "/docs/graphics-icons-ebay-svg--documentation"
+    "reactStorybookPath": "/docs/graphics-icons-ebay-svg--documentation",
+    "description": "Our SVG symbol references."
   },
   "switch": {
     "component": "switch",
@@ -805,7 +811,7 @@
     },
     "markoStorybookPath": "/docs/form-input-ebay-switch--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-switch--documentation",
-    "description": "A switch behaves a bit like a checkbox - it can be on or off."
+    "description": "An on/off switch that dynamically toggles a setting."
   },
   "table": {
     "component": "table",
@@ -816,7 +822,8 @@
     },
     "cssStorybookPath": "/story/skin-table--base",
     "markoStorybookPath": "/docs/data-display-ebay-table--documentation",
-    "reactStorybookPath": "/docs/data-display-ebay-table--documentation"
+    "reactStorybookPath": "/docs/data-display-ebay-table--documentation",
+    "description": "Data structured in rows and columns."
   },
   "tabs": {
     "component": "tab",
@@ -857,7 +864,8 @@
     "submodules": ["button", "icon-button"],
     "cssStorybookPath": "/story/skin-toast-dialog--primary-action",
     "markoStorybookPath": "/docs/dialogs-ebay-toast-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-toast-dialog--documentation"
+    "reactStorybookPath": "/docs/dialogs-ebay-toast-dialog--documentation",
+    "description": "A non-modal dialog; appears in response to a system-level action."
   },
   "toggle-button-group": {
     "component": "toggle-button-group",
@@ -868,7 +876,7 @@
     "submodules": ["toggle-button"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation",
-    "description": "A button that can be toggled between two states."
+    "description": "Used to properly layout a group of toggle buttons."
   },
   "toggle-button": {
     "component": "toggle-button",
@@ -878,13 +886,15 @@
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button--documentation",
-    "reactStorybookPath": "/docs/buttons-ebay-toggle-button--documentation"
+    "reactStorybookPath": "/docs/buttons-ebay-toggle-button--documentation",
+    "description": "An ARIA toggle button; typically used in a group."
   },
   "tokens": {
     "component": "tokens",
     "ds-component": {
       "version": "1.0"
-    }
+    },
+    "description": "Our Evo design tokens represented in CSS variables."
   },
   "tooltip": {
     "component": "tooltip",
@@ -896,7 +906,7 @@
     "cssStorybookPath": "/story/skin-tooltip--collapsed",
     "markoStorybookPath": "/docs/notices-tips-ebay-tooltip--documentation",
     "reactStorybookPath": "/docs/notices-tips-ebay-tooltip--documentation",
-    "description": "Describes the action/purpose of an icon button."
+    "description": "Small popover describing the action/purpose of an icon button."
   },
   "tourtip": {
     "component": "tourtip",
@@ -908,13 +918,15 @@
     "cssStorybookPath": "/story/skin-tourtip--collapsed",
     "markoStorybookPath": "/docs/notices-tips-ebay-tourtip--documentation",
     "reactStorybookPath": "/docs/notices-tips-ebay-tourtip--documentation",
-    "description": "Informs the user of some new feature or section on the page."
+    "description": "Popover informing the user of a new feature or section on the page."
   },
   "typography": {
     "component": "typography",
-    "version": "1.1"
+    "version": "1.1",
+    "description": "Our Evo type ramp represented in CSS classes."
   },
   "utility": {
-    "component": "utility"
+    "component": "utility",
+    "description": "A small set of common, utility classes."
   }
 }
