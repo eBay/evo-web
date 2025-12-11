@@ -795,14 +795,6 @@
     "reactStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation",
     "description": "Star rating graphic to represent user reviews or feedback."
   },
-  "svg": {
-    "component": "svg",
-    "ds-component": {
-      "version": "1.0"
-    },
-    "reactStorybookPath": "/docs/graphics-icons-ebay-svg--documentation",
-    "description": "Our SVG symbol references."
-  },
   "switch": {
     "component": "switch",
     "ds-component": {
