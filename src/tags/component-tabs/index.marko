@@ -23,14 +23,10 @@ export interface Input {
 
   <div class=component>
     <div class=["fake-tabs", tabs]>
-      <ul
-        class="fake-tabs__items"
-        role="tablist"
-        aria-label="Component implementation tabs">
+      <ul class="fake-tabs__items" aria-label="Component implementation tabs">
         <li class="fake-tabs__item fake-tabs__items--large">
           <a
             href=componentUrls?.overview
-            role="tab"
             aria-current=getAriaCurrentValue("overview")>
             Overview
           </a>
@@ -39,7 +35,6 @@ export interface Input {
           <li class="fake-tabs__item fake-tabs__items--large">
             <a
               href=componentUrls?.accessibility
-              role="tab"
               aria-current=getAriaCurrentValue("accessibility")>
               Accessibility
             </a>
@@ -47,10 +42,7 @@ export interface Input {
         </if>
         <if=cssPage>
           <li class="fake-tabs__item fake-tabs__items--large">
-            <a
-              href=componentUrls?.css
-              role="tab"
-              aria-current=getAriaCurrentValue("css")>
+            <a href=componentUrls?.css aria-current=getAriaCurrentValue("css")>
               CSS${" "}
               <if=dsComponent?.version>
                 <span
