@@ -70,7 +70,7 @@
         "makeup-roving-tabindex": "^0.7.7",
         "makeup-screenreader-trap": "^0.5.6",
         "makeup-typeahead": "^0.3.3",
-        "react-remove-scroll": "^2.7.1"
+        "react-remove-scroll": "^2.7.2"
     },
     "peerDependencies": {
         "@ebay/skin": "^19.0.0",
@@ -78,7 +78,7 @@
         "react-dom": ">= 16.0.0"
     },
     "optionalDependencies": {
-        "shaka-player": "^4.16.9"
+        "shaka-player": "^4.16.11"
     },
     "publishConfig": {
         "directory": "dist",
