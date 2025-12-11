@@ -18,8 +18,9 @@ import { components } from "../../../data";
 
   .card {
     box-shadow: var(--shadow-subtle);
-    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0);
   }
 
@@ -79,15 +80,13 @@ import { components } from "../../../data";
   </symbol>
 </svg>
 
-<main class="component-listings">
+<div class="component-listings">
   <ul class="components-list">
     <for|key, component| in=components>
       <const/{ dsComponent, componentUrls, properName }=component>
       <if=component.metadata>
         <li>
-          <a
-            href=componentUrls?.overview
-            class="card card--aspect-16-9">
+          <a href=componentUrls?.overview class="card card--aspect-16-9">
             <div class="card__media">
               <object
                 type="image/png"
@@ -132,4 +131,4 @@ import { components } from "../../../data";
       </if>
     </for>
   </ul>
-</main>
+</div>
