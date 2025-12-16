@@ -46,7 +46,7 @@ div.tabs__item[role="tab"] > span {
     padding: 2px 0;
 }
 
-div.tabs__item[role="tab"] > span,
+div.tabs__item[role="tab"],
 li.fake-tabs__item > a {
     @include token-mixins.color-token(
         tabs-item-foreground-color,
@@ -67,7 +67,7 @@ li.fake-tabs__item > a {
     }
 }
 
-div.tabs__item[role="tab"][aria-selected="true"] > span,
+div.tabs__item[role="tab"][aria-selected="true"],
 li.fake-tabs__item > a[aria-current] {
     @include token-mixins.color-token(
         tabs-item-selected-foreground-color,
@@ -87,17 +87,27 @@ li.fake-tabs__item a:focus {
     }
 }
 
-div.tabs__item[role="tab"]:not([aria-selected="true"]):focus > span,
-div.tabs__item[role="tab"]:not([aria-selected="true"]):hover > span,
-li.fake-tabs__item > a:not([aria-current]):focus,
-li.fake-tabs__item > a:not([aria-current]):hover {
-    @include token-mixins.color-token(
-        tabs-item-hover-foreground-color,
-        color-foreground-secondary
-    );
+div.tabs__item[role="tab"]:not([aria-selected="true"])[aria-disabled="true"],
+li.fake-tabs__item > a:not([aria-current]):not([href]) {
+    &,
+    &:focus,
+    &:hover {
+        color: var(--color-foreground-disabled);
+        &::after {
+            background-color: transparent;
+        }
+    }
+}
 
-    &::after {
-        background-color: currentColor;
+div.tabs__item[role="tab"]:not([aria-selected="true"]),
+li.fake-tabs__item > a:not([aria-current]) {
+    &:hover,
+    &:focus {
+        color: var(--color-foreground-secondary);
+
+        &::after {
+            background-color: currentColor;
+        }
     }
 }
 

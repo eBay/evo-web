@@ -5,16 +5,28 @@ type TabProps = ComponentProps<"div"> & {
     index?: number;
     parentId?: string;
     selected?: boolean;
+    disabled?: boolean;
     focused?: boolean;
     refCallback?: RefCallback<HTMLElement>;
 };
 
-const Tab: FC<TabProps> = ({ children, index, parentId, selected, focused, className, refCallback, ...rest }) => (
+const Tab: FC<TabProps> = ({
+    children,
+    index,
+    parentId,
+    selected,
+    disabled,
+    focused,
+    className,
+    refCallback,
+    ...rest
+}) => (
     <div
         {...rest}
         ref={refCallback}
         aria-controls={`${parentId || "default"}-tabpanel-${index}`}
         aria-selected={selected}
+        aria-disabled={disabled}
         className={classNames(className, "tabs__item")}
         id={`${parentId || "default"}-tab-${index}`}
         role="tab"

@@ -180,6 +180,37 @@ export const LargeTabs = () => (
     </>
 );
 
+export const Disabled: StoryFn<typeof EbayTabs> = (args) => (
+    <>
+        <EbayTabs onSelect={action("onSelect(props")} {...args}>
+            <Tab>Tab 1</Tab>
+            <Tab disabled>Tab 2</Tab>
+            <Tab>Tab 3</Tab>
+            <Panel>
+                <h3>Panel 1</h3>
+                <p>
+                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 1`
+                    (skipping `Tab 2` and `Tab 3`)
+                </p>
+            </Panel>
+            <Panel>
+                <h3>Panel 2</h3>
+                <p>
+                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 2`
+                    (skipping `Tab 3` and `Tab 1`)
+                </p>
+            </Panel>
+            <Panel>
+                <h3>Panel 3</h3>
+                <p>
+                    Focus should go to <a href="#link">this link</a> using `tab`-key immediately after the `Tab 3`
+                    (skipping `Tab 1` and `Tab 2`)
+                </p>
+            </Panel>
+        </EbayTabs>
+    </>
+);
+
 export const MultipleTabs = () => (
     <>
         <div>

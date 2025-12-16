@@ -29,6 +29,9 @@
     </a>
     .
   </p>
+  <p>
+    To disable a tab, add <code>aria-disabled="true"</code> to the tab to disable. Disabled state on the currently selected tab is not valid.
+  </p>
 
   <div class="demo">
     <div class="demo__inner">
@@ -220,9 +223,8 @@
     rather than a dynamic user interface control.
   </p>
   <p>
-    A valid HREF attribute is
-    <strong>required</strong>
-    for all anchor tags. A value of "javascript" (or any such variant) is
+    If HREF is not present, then the tab will be in disabled state.
+    A value of "javascript" (or any such variant) is
     <strong>not</strong>
     a valid URL!
   </p>

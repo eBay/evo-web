@@ -45,13 +45,13 @@ div.tabs__item[role="tab"] > span {
     padding: 2px 0;
 }
 
-div.tabs__item[role="tab"] > span,
+div.tabs__item[role="tab"],
 li.fake-tabs__item > a {
     color: var(--tabs-item-foreground-color, var(--color-foreground-secondary));
     display: inline-block;
 }
 
-div.tabs__item[role="tab"] > span:after,
+div.tabs__item[role="tab"]:after,
 li.fake-tabs__item > a:after {
     background-color: initial;
     border-radius: 6px;
@@ -63,7 +63,7 @@ li.fake-tabs__item > a:after {
     width: 100%;
 }
 
-div.tabs__item[role="tab"][aria-selected="true"] > span,
+div.tabs__item[role="tab"][aria-selected="true"],
 li.fake-tabs__item > a[aria-current] {
     color: var(
         --tabs-item-selected-foreground-color,
@@ -71,7 +71,7 @@ li.fake-tabs__item > a[aria-current] {
     );
 }
 
-div.tabs__item[role="tab"][aria-selected="true"] > span:after,
+div.tabs__item[role="tab"][aria-selected="true"]:after,
 li.fake-tabs__item > a[aria-current]:after {
     background-color: currentColor;
 }
@@ -81,18 +81,43 @@ li.fake-tabs__item a:focus:not(:focus-visible) {
     outline: none;
 }
 
-div.tabs__item[role="tab"]:not([aria-selected="true"]):focus > span,
-div.tabs__item[role="tab"]:not([aria-selected="true"]):hover > span,
-li.fake-tabs__item > a:not([aria-current]):focus,
-li.fake-tabs__item > a:not([aria-current]):hover {
-    color: var(
-        --tabs-item-hover-foreground-color,
-        var(--color-foreground-secondary)
-    );
+div.tabs__item[role="tab"]:not([aria-selected="true"])[aria-disabled="true"],
+div.tabs__item[role="tab"]:not(
+        [aria-selected="true"]
+    )[aria-disabled="true"]:focus,
+div.tabs__item[role="tab"]:not(
+        [aria-selected="true"]
+    )[aria-disabled="true"]:hover,
+li.fake-tabs__item > a:not([aria-current]):not([href]),
+li.fake-tabs__item > a:not([aria-current]):not([href]):focus,
+li.fake-tabs__item > a:not([aria-current]):not([href]):hover {
+    color: var(--color-foreground-disabled);
 }
 
-div.tabs__item[role="tab"]:not([aria-selected="true"]):focus > span:after,
-div.tabs__item[role="tab"]:not([aria-selected="true"]):hover > span:after,
+div.tabs__item[role="tab"]:not(
+        [aria-selected="true"]
+    )[aria-disabled="true"]:after,
+div.tabs__item[role="tab"]:not(
+        [aria-selected="true"]
+    )[aria-disabled="true"]:focus:after,
+div.tabs__item[role="tab"]:not(
+        [aria-selected="true"]
+    )[aria-disabled="true"]:hover:after,
+li.fake-tabs__item > a:not([aria-current]):not([href]):after,
+li.fake-tabs__item > a:not([aria-current]):not([href]):focus:after,
+li.fake-tabs__item > a:not([aria-current]):not([href]):hover:after {
+    background-color: initial;
+}
+
+div.tabs__item[role="tab"]:not([aria-selected="true"]):focus,
+div.tabs__item[role="tab"]:not([aria-selected="true"]):hover,
+li.fake-tabs__item > a:not([aria-current]):focus,
+li.fake-tabs__item > a:not([aria-current]):hover {
+    color: var(--color-foreground-secondary);
+}
+
+div.tabs__item[role="tab"]:not([aria-selected="true"]):focus:after,
+div.tabs__item[role="tab"]:not([aria-selected="true"]):hover:after,
 li.fake-tabs__item > a:not([aria-current]):focus:after,
 li.fake-tabs__item > a:not([aria-current]):hover:after {
     background-color: currentColor;

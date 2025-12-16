@@ -45,7 +45,13 @@ const Tabs: FC<TabsProps> = ({
             const len = filterByType(children, Tab).length;
             const direction = ["Left", "ArrowLeft"].includes(ev.key) ? -1 : 1;
             const currentIndex = focusedIndex === undefined ? selectedIndex : focusedIndex;
-            const nextIndex = (currentIndex + len + direction) % len;
+            let nextIndex = (currentIndex + len + direction) % len;
+            while (true) {
+                if (headings[nextIndex].getAttribute("aria-disabled") !== "true" || nextIndex === currentIndex) {
+                    break;
+                }
+                nextIndex = (nextIndex + direction) % len;
+            }
             setFocusedIndex(nextIndex);
             headings[nextIndex]?.focus();
 
@@ -72,6 +78,9 @@ const Tabs: FC<TabsProps> = ({
             selected: selectedIndex === i,
             focused: focusedIndex === i,
             onClick: () => {
+                if (item.props.disabled) {
+                    return;
+                }
                 handleSelect(i);
                 setFocusedIndex(i);
             },

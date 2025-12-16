@@ -37,6 +37,18 @@ export const PreSelectedTab = {
     name: "Pre-selected Tab",
 };
 
+export const Disabled = () => (
+    <>
+        <EbayFakeTabs>
+            <Tab href="http://ebay.com">eBay.com</Tab>
+            <Tab>eBay.de</Tab>
+            <Tab href="http://ebay.co.uk">eBay.co.uk</Tab>
+            <h3>eBay.com Content</h3>
+            <p>Some US content...</p>
+        </EbayFakeTabs>
+    </>
+);
+
 export const TabMatchesCurrentUrlFalse = {
     render: () => (
         <>

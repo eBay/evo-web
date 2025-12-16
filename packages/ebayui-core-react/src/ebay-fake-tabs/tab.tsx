@@ -2,7 +2,7 @@ import React, { ComponentProps, FC } from "react";
 import classNames from "classnames";
 
 type TabProps = ComponentProps<"li"> & {
-    href: string;
+    href?: string;
     ariaCurrent?: "page" | "true";
 };
 

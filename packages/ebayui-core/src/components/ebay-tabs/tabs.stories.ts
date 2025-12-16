@@ -1,9 +1,14 @@
-import { addRenderBodies } from "../../common/storybook/utils";
+import {
+    addRenderBodies,
+    buildExtensionTemplate,
+} from "../../common/storybook/utils";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component from "./index.marko";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
+import DisabledTabsTemplate from "./examples/disabled.marko";
+import DisabledTabsCode from "./examples/disabled.marko?raw";
 
 const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
@@ -90,3 +95,8 @@ Standard.parameters = {
         },
     },
 };
+
+export const Disabled = buildExtensionTemplate(
+    DisabledTabsTemplate,
+    DisabledTabsCode,
+);

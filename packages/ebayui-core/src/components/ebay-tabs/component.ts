@@ -4,7 +4,9 @@ import type { WithNormalizedProps } from "../../global";
 
 export interface Panel extends Omit<Marko.HTML.Div, `on${string}`> {}
 
-export interface Tab extends Omit<Marko.HTML.Div, `on${string}`> {}
+export interface Tab extends Omit<Marko.HTML.Div, `on${string}`> {
+    disabled?: Marko.HTML.Button["disabled"];
+}
 
 export interface TabsEvent {
     selectedIndex: number;
@@ -47,8 +49,19 @@ class Tabs extends Marko.Component<Input, State> {
             const len = state.tab.length;
             const keyCode = event.charCode || event.keyCode;
             const direction = keyCode === 37 || keyCode === 38 ? -1 : 1;
-            const selectedIndex = (state.selectedIndex + len + direction) % len;
-            (this.getEl(`tabs-${selectedIndex}`) as HTMLElement)?.focus();
+            let selectedIndex = (state.selectedIndex + len + direction) % len;
+            let selectedEl;
+            while (true) {
+                selectedEl = this.getEl(`tabs-${selectedIndex}`) as HTMLElement;
+                if (
+                    selectedEl.getAttribute("aria-disabled") !== "true" ||
+                    selectedIndex === state.selectedIndex
+                ) {
+                    break;
+                }
+                selectedIndex = (selectedIndex + direction) % len;
+            }
+            selectedEl?.focus();
 
             if (!input.activation || input.activation === "auto") {
                 this._setIndex(selectedIndex);

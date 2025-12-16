@@ -9,7 +9,7 @@ $ const {
     ...htmlInput
 } = input;
 export interface Tab extends Omit<Marko.HTML.LI, `on${string}`> {
-    href: string;
+    href?: string;
 }
 static {
     interface FakeTabsInput extends Omit<Marko.HTML.Div, `on${string}`> {

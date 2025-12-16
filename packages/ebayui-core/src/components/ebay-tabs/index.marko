@@ -1,5 +1,5 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
-static var itemAnchorIgnoredAttributes = ["href"];
+static var itemAnchorIgnoredAttributes = ["href", "disabled"];
 $ const {
     class: inputClass,
     selectedIndex,
@@ -20,8 +20,9 @@ $ const {
                 aria-controls:scoped=`tabpanel-${i}`
                 role="tab"
                 aria-selected=isSelected && "true"
+                aria-disabled=tab.disabled && "true"
                 class=[tab.class, "tabs__item"]
-                onClick("handleHeadingClick", i)
+                onClick(!tab.disabled && "handleHeadingClick", i)
                 onKeydown("handleHeadingKeydown", i)
             >
                 <span>
