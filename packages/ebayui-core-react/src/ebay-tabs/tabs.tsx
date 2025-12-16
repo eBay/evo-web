@@ -50,7 +50,7 @@ const Tabs: FC<TabsProps> = ({
                 if (headings[nextIndex].getAttribute("aria-disabled") !== "true" || nextIndex === currentIndex) {
                     break;
                 }
-                nextIndex = (nextIndex + direction) % len;
+                nextIndex = (nextIndex + len + direction) % len;
             }
             setFocusedIndex(nextIndex);
             headings[nextIndex]?.focus();

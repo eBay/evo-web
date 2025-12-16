@@ -1,7 +1,7 @@
 ---
-"@ebay/ui-core-react": patch
-"@ebay/ebayui-core": patch
-"@ebay/skin": patch
+"@ebay/ui-core-react": minor
+"@ebay/ebayui-core": minor
+"@ebay/skin": minor
 ---
 
 feat(tabs): added disabled tabs

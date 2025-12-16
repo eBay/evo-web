@@ -59,7 +59,7 @@ class Tabs extends Marko.Component<Input, State> {
                 ) {
                     break;
                 }
-                selectedIndex = (selectedIndex + direction) % len;
+                selectedIndex = (selectedIndex + len + direction) % len;
             }
             selectedEl?.focus();
 
