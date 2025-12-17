@@ -18,8 +18,7 @@ export interface FilterMenuButtonEvent {
 }
 
 interface FilterMenuButtonInput
-    extends BaseMenuInput,
-        Omit<Marko.HTML.Span, `on${string}`> {
+    extends BaseMenuInput, Omit<Marko.HTML.Span, `on${string}`> {
     text?: string;
     "footer-text"?: string;
     "a11y-footer-text"?: Marko.HTMLAttributes["aria-label"];

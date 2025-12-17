@@ -1,7 +1,9 @@
 import type { WithNormalizedProps } from "../../../global";
 
-interface NoticeBaseInput
-    extends Omit<Marko.HTML.Section, "title" | `on${string}`> {
+interface NoticeBaseInput extends Omit<
+    Marko.HTML.Section,
+    "title" | `on${string}`
+> {
     status?: "confirmation" | "attention" | "information" | "education";
     type?: "section";
     "prefix-class"?: string;

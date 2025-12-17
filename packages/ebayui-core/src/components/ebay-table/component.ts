@@ -13,8 +13,10 @@ export interface TableHeader extends Omit<Marko.HTML.TH, `on${string}`> {
     renderBody: Marko.Body;
 }
 
-export interface TableCell
-    extends Omit<Marko.HTML.TD & Marko.HTML.TH, `on${string}`> {}
+export interface TableCell extends Omit<
+    Marko.HTML.TD & Marko.HTML.TH,
+    `on${string}`
+> {}
 
 export interface TableRow extends Omit<Marko.HTML.TR, `on${string}`> {
     name?: string;

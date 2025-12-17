@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.19.0
+
+### Minor Changes
+
+- [#399](https://github.com/eBay/evo-web/pull/399) [`d7833c9`](https://github.com/eBay/evo-web/commit/d7833c91dcef7df97148695722c11609af8cdf4a) Thanks [@agliga](https://github.com/agliga)! - feat(tabs): added disabled tabs
+
 ## 19.18.1
 
 ### Patch Changes

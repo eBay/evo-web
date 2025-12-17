@@ -10,7 +10,8 @@ export interface FilterChipEvent {
     selected: boolean;
 }
 interface FilterChipInput
-    extends Omit<Marko.HTML.Button, `on${string}` | "type">,
+    extends
+        Omit<Marko.HTML.Button, `on${string}` | "type">,
         Omit<Marko.HTML.A, `on${string}`> {
     renderBody?: Marko.Body;
     selected?: boolean;

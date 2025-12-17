@@ -10,15 +10,16 @@ interface Message {
     duration?: number;
 }
 
-interface ProgressBarExpressiveInput
-    extends Omit<Marko.HTML.Div, `on${string}`> {
+interface ProgressBarExpressiveInput extends Omit<
+    Marko.HTML.Div,
+    `on${string}`
+> {
     "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     message?: Marko.AttrTag<Message>;
     size?: "medium" | "large";
 }
 
-export interface Input
-    extends WithNormalizedProps<ProgressBarExpressiveInput> {}
+export interface Input extends WithNormalizedProps<ProgressBarExpressiveInput> {}
 
 interface State {
     isInitialMessage: boolean;

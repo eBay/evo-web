@@ -1,11 +1,10 @@
 import type { Input as NoticeBaseInput } from "../components/ebay-notice-base/component";
 import type { WithNormalizedProps } from "../../global";
 
-interface SectionNoticeInput
-    extends Omit<
-        NoticeBaseInput,
-        "role" | "prefixClass" | "mainRoot" | `on${string}`
-    > {
+interface SectionNoticeInput extends Omit<
+    NoticeBaseInput,
+    "role" | "prefixClass" | "mainRoot" | `on${string}`
+> {
     dismissed?: boolean;
     "on-dismiss"?: () => void;
     "on-cta-click"?: () => void;

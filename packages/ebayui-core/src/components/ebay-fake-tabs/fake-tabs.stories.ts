@@ -1,4 +1,7 @@
-import { addRenderBodies, buildExtensionTemplate } from "../../common/storybook/utils";
+import {
+    addRenderBodies,
+    buildExtensionTemplate,
+} from "../../common/storybook/utils";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";

@@ -19,8 +19,7 @@ export interface FilterMenuEvent<T extends Event = Event> {
 }
 
 interface FilterMenuInput
-    extends BaseMenuInput,
-        Omit<Marko.HTML.Span, `on${string}`> {
+    extends BaseMenuInput, Omit<Marko.HTML.Span, `on${string}`> {
     variant?: "form";
     "class-prefix"?: string;
     "form-name"?: string;

@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 15.15.0
+
+### Minor Changes
+
+- [#399](https://github.com/eBay/evo-web/pull/399) [`d7833c9`](https://github.com/eBay/evo-web/commit/d7833c91dcef7df97148695722c11609af8cdf4a) Thanks [@agliga](https://github.com/agliga)! - feat(tabs): added disabled tabs
+
+### Patch Changes
+
+- [#394](https://github.com/eBay/evo-web/pull/394) [`025ce05`](https://github.com/eBay/evo-web/commit/025ce05397ae18d42817f09e69827ba87ca5f04b) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(star-select): trigger change event on focus
+
 ## 15.14.2
 
 ### Patch Changes
@@ -155,7 +165,7 @@
 - [#210](https://github.com/eBay/evo-web/pull/210) [`66463ee`](https://github.com/eBay/evo-web/commit/66463ee6cc8b07c6b65f616108daa4bafb663687) Thanks [@agliga](https://github.com/agliga)! - feat(chip): added selection and filter chip
 
 - Updated dependencies [[`05d3c40`](https://github.com/eBay/evo-web/commit/05d3c4023776de1e2ac1f4c46b8e19dec2e3ddf6)]:
-    - @ebay/skin@19.11.0
+  - @ebay/skin@19.11.0
 
 ## 15.8.1
 

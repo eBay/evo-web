@@ -6,8 +6,10 @@ export interface TriStateCheckboxEvent {
     checked: Marko.HTMLAttributes["aria-checked"];
 }
 
-interface TriStateCheckboxInput
-    extends Omit<Marko.HTML.Input, `on${string}` | "checked" | "type"> {
+interface TriStateCheckboxInput extends Omit<
+    Marko.HTML.Input,
+    `on${string}` | "checked" | "type"
+> {
     checked?: Marko.HTMLAttributes["aria-checked"];
     "skip-mixed"?: boolean;
     size?: "regular" | "large";

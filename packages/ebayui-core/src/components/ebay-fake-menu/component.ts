@@ -22,8 +22,7 @@ export interface Item extends MenuItem {
 
 export interface Separator {}
 interface FakeMenuInput
-    extends BaseMenuInput,
-        Omit<Marko.HTML.Span, `on${string}`> {
+    extends BaseMenuInput, Omit<Marko.HTML.Span, `on${string}`> {
     item?: Marko.AttrTag<Item>;
     "class-prefix"?: string;
     reverse?: boolean;

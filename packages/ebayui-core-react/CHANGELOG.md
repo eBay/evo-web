@@ -1,5 +1,15 @@
 # @ebay/ui-core-react
 
+## 8.18.0
+
+### Minor Changes
+
+- [#399](https://github.com/eBay/evo-web/pull/399) [`d7833c9`](https://github.com/eBay/evo-web/commit/d7833c91dcef7df97148695722c11609af8cdf4a) Thanks [@agliga](https://github.com/agliga)! - feat(tabs): added disabled tabs
+
+### Patch Changes
+
+- [#401](https://github.com/eBay/evo-web/pull/401) [`e58d172`](https://github.com/eBay/evo-web/commit/e58d172d41f4667cd7aab719dfa0ed60e5d83c6a) Thanks [@bpushpkar](https://github.com/bpushpkar)! - Add aria-label to ebayNumberInput
+
 ## 8.17.3
 
 ### Patch Changes
@@ -48,7 +58,7 @@
 
 - [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
 
-    EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
 
 ### Patch Changes
 

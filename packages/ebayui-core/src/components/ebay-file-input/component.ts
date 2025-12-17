@@ -5,8 +5,10 @@ export interface FileInputEvent {
     originalEvent: Event;
 }
 
-interface FileInputInput
-    extends Omit<Marko.HTML.Input, `on${string}` | "type"> {
+interface FileInputInput extends Omit<
+    Marko.HTML.Input,
+    `on${string}` | "type"
+> {
     renderBody?: Marko.Body;
     header?: Marko.AttrTag<
         Marko.Input<`h${number}`> & {

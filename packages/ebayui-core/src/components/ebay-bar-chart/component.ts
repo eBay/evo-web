@@ -22,7 +22,8 @@ import subtemplate from "./subtemplate.marko";
 import type { WithNormalizedProps } from "../../global";
 
 interface SeriesItem
-    extends Highcharts.PlotBarOptions,
+    extends
+        Highcharts.PlotBarOptions,
         Omit<Highcharts.SeriesBarOptions, "dataLabels" | "pointRange"> {
     top?: boolean;
     bottom?: boolean;
