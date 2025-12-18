@@ -3,7 +3,7 @@ export default { title: "Skin/Card/Style" };
 export const verticalFilled = () => `
 <span class="card">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">
@@ -27,7 +27,7 @@ export const verticalFilled = () => `
 export const verticalOutlined = () => `
 <span class="card card--outlined">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">
@@ -51,7 +51,7 @@ export const verticalOutlined = () => `
 export const horizontalFilled = () => `
 <span class="card card--horizontal">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">
@@ -75,7 +75,7 @@ export const horizontalFilled = () => `
 export const horizontalOutlined = () => `
 <span class="card card--horizontal card--outlined">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__overline">

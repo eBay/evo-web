@@ -3,7 +3,7 @@ export default { title: "Skin/Card/Disabled" };
 export const internallyActionable = () => `
 <span class="card card--aspect-16-9">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
@@ -19,7 +19,7 @@ export const internallyActionable = () => `
 export const selfActionableButton = () => `
 <button class="card card--aspect-16-9" disabled>
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
@@ -32,7 +32,7 @@ export const selfActionableButton = () => `
 export const selfActionableLink = () => `
 <a class="card card--aspect-16-9" href="" tabindex="-1">
     <div class="card__media">
-        <img src="/img/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
+        <img src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/cards-card.jpeg" alt="Sports trading cards" class="card__hero-image">
     </div>
     <div class="card__main">
         <div class="card__description">
