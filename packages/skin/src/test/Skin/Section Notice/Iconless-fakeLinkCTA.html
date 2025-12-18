@@ -11,65 +11,63 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
+  <div style="
+    background-color: var(--section-notice-default-background-color, var(--color-background-secondary));
+    display: grid;
+    font-size: var(--font-size-body);
+    grid-template-columns: 32px auto auto;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px
+  ">
     <div style="
-      background-color: var(--section-notice-default-background-color, var(--color-background-secondary));
-      display: grid;
-      font-size: var(--font-size-body);
-      grid-template-columns: 32px auto auto;
-      margin-bottom: 8px;
-      margin-top: 8px;
-      padding-bottom: 16px;
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-top: 16px
+      grid-column-end: 3;
+      grid-column-start: 1;
+      grid-row-start: 1;
+      margin-inline-end: var(--spacing-200)
     ">
-      <div style="
-        grid-column-end: 3;
-        grid-column-start: 1;
-        grid-row-start: 1;
-        margin-inline-end: var(--spacing-200)
+      <h3 style="
+        font-size: var(--font-size-body);
+        margin-bottom: 0px;
+        margin-top: 0px
       ">
-        <h3 style="
-          font-size: var(--font-size-body);
-          margin-bottom: 0px;
-          margin-top: 0px
-        ">
-          Notification Title
-        </h3>
-        <p style="
-          font-size: var(--font-size-body);
-          margin-bottom: 0px;
-          margin-top: 0px;
-          margin: var(--spacing-50) 0 0
-        ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </div>
-      <div style="
-        grid-column-start: 3;
-        grid-row-start: 1;
-        justify-self: flex-end;
-        margin-top: 2px
+        Notification Title
+      </h3>
+      <p style="
+        font-size: var(--font-size-body);
+        margin-bottom: 0px;
+        margin-top: 0px;
+        margin: var(--spacing-50) 0 0
       ">
-        <button style="
-          border-bottom-width: 0px;
-          border-left-width: 0px;
-          border-right-width: 0px;
-          border-top-width: 0px;
-          color: var(--section-notice-foreground-color, var(--color-foreground-primary));
-          font-family: inherit;
-          font-size: var(--font-size-body);
-          font-weight: 700;
-          padding-bottom: 0px;
-          padding-left: 0px;
-          padding-right: 0px;
-          padding-top: 0px;
-          text-decoration-line: underline
-        ">
-          Action
-        </button>
-      </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+    <div style="
+      grid-column-start: 3;
+      grid-row-start: 1;
+      justify-self: flex-end;
+      margin-top: 2px
+    ">
+      <button style="
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 0px;
+        color: var(--section-notice-foreground-color, var(--color-foreground-primary));
+        font-family: inherit;
+        font-size: var(--font-size-body);
+        font-weight: 700;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        text-decoration-line: underline
+      ">
+        Action
+      </button>
     </div>
   </div>
 </body>

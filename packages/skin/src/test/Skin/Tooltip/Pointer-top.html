@@ -11,126 +11,124 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
-      display: inline-block;
-      margin-left: 100px;
-      margin-top: 100px;
-      position: relative
+  <span style="
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 100px;
+    position: relative
+  ">
+    <button style="
+      align-items: center;
+      background-color: var(--color-background-secondary);
+      border-bottom-color: transparent;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-bottom-style: solid;
+      border-left-color: transparent;
+      border-left-style: solid;
+      border-right-color: transparent;
+      border-right-style: solid;
+      border-top-color: transparent;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-top-style: solid;
+      display: inline-flex;
+      font-family: inherit;
+      height: 40px;
+      justify-content: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 0px;
+      position: relative;
+      vertical-align: text-bottom;
+      width: 40px
     ">
-      <button style="
-        align-items: center;
-        background-color: var(--color-background-secondary);
-        border-bottom-color: transparent;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        border-bottom-style: solid;
-        border-left-color: transparent;
-        border-left-style: solid;
-        border-right-color: transparent;
-        border-right-style: solid;
-        border-top-color: transparent;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-top-style: solid;
-        display: inline-flex;
-        font-family: inherit;
-        height: 40px;
-        justify-content: center;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-bottom: 0px;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-top: 0px;
-        position: relative;
-        vertical-align: text-bottom;
-        width: 40px
-      ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-            bottom: 0px;
-            content: "";
-            left: 0px;
-            pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
-        <svg
-          height="16"
-          style="
-            display: inline-block;
-            fill: var(--color-foreground-primary);
-            height: 24px;
-            max-width: 75%;
-            pointer-events: none;
-            position: relative;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 24px
-          "
-          width="16"
-        >
-          <use href="#icon-settings-24"/>
-        </svg>
-      </button>
-      <div style="
-        box-shadow: var(--bubble-shadow);
-        font-size: 14px;
-        left: 50%;
-        max-width: 344px;
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+          border-top-left-radius: 50px;
+          border-top-right-radius: 50px;
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <svg
+        height="16"
+        style="
+          display: inline-block;
+          fill: var(--color-foreground-primary);
+          height: 24px;
+          max-width: 75%;
+          pointer-events: none;
+          position: relative;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 24px
+        "
+        width="16"
+      >
+        <use href="#icon-settings-24"/>
+      </svg>
+    </button>
+    <div style="
+      box-shadow: var(--bubble-shadow);
+      font-size: 14px;
+      left: 50%;
+      max-width: 344px;
+      position: absolute;
+      top: calc(100% + 12px);
+      transform: translateX(-50%);
+      width: max-content;
+      z-index: 1
+    ">
+      <span style="
+        background-color: var(--tooltip-background-color, var(--color-background-inverse));
+        height: 8px;
+        left: calc(50% - 4px);
         position: absolute;
-        top: calc(100% + 12px);
-        transform: translateX(-50%);
-        width: max-content;
+        top: -4px;
+        transform: rotate(45deg);
+        width: 8px;
+        z-index: 0
+      "/>
+      <div style="
+        background-color: var(--tooltip-background-color, var(--color-background-inverse));
+        color: var(--tooltip-foreground-color, var(--color-foreground-on-inverse));
+        position: relative;
         z-index: 1
       ">
-        <span style="
-          background-color: var(--tooltip-background-color, var(--color-background-inverse));
-          height: 8px;
-          left: calc(50% - 4px);
-          position: absolute;
-          top: -4px;
-          transform: rotate(45deg);
-          width: 8px;
-          z-index: 0
-        "/>
         <div style="
-          background-color: var(--tooltip-background-color, var(--color-background-inverse));
-          color: var(--tooltip-foreground-color, var(--color-foreground-on-inverse));
-          position: relative;
-          z-index: 1
+          display: flex;
+          overflow-wrap: anywhere;
+          padding: var(--spacing-100) var(--spacing-200)
         ">
-          <div style="
-            display: flex;
-            overflow-wrap: anywhere;
-            padding: var(--spacing-100) var(--spacing-200)
-          ">
-            <div style="flex-grow: 1">
-              <p style="
-                margin-bottom: 0px;
-                margin-top: 0px
-              ">
-                Pointer
-              </p>
-              <p style="
-                margin-bottom: 0px;
-                margin-top: var(--spacing-50)
-              ">
-                Item
-              </p>
-            </div>
+          <div style="flex-grow: 1">
+            <p style="
+              margin-bottom: 0px;
+              margin-top: 0px
+            ">
+              Pointer
+            </p>
+            <p style="
+              margin-bottom: 0px;
+              margin-top: var(--spacing-50)
+            ">
+              Item
+            </p>
           </div>
         </div>
       </div>
-    </span>
-  </div>
+    </div>
+  </span>
 </body>

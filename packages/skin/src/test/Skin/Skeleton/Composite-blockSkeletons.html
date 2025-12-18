@@ -11,27 +11,25 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
+  <div style="
+    --skeleton-background: var(--color-loading-fill-on-secondary);
+    container-name: skeleton-container;
+    container-type: inline-size;
+    cursor: progress;
+    width: 100%
+  ">
     <div style="
-      --skeleton-background: var(--color-loading-fill-on-secondary);
-      container-name: skeleton-container;
-      container-type: inline-size;
-      cursor: progress;
+      animation: var(--motion-duration-long-3) var(--motion-easing-continuous) infinite alternate on-secondary;
+      background: var(--skeleton-background, var(--color-loading-fill));
+      height: 40px;
+      margin-block-end: var(--spacing-150);
       width: 100%
-    ">
-      <div style="
-        animation: var(--motion-duration-long-3) var(--motion-easing-continuous) infinite alternate on-secondary;
-        background: var(--skeleton-background, var(--color-loading-fill));
-        height: 40px;
-        margin-block-end: var(--spacing-150);
-        width: 100%
-      "/>
-      <div style="
-        animation: var(--motion-duration-long-3) var(--motion-easing-continuous) infinite alternate on-secondary;
-        background: var(--skeleton-background, var(--color-loading-fill));
-        height: 40px;
-        width: 100%
-      "/>
-    </div>
+    "/>
+    <div style="
+      animation: var(--motion-duration-long-3) var(--motion-easing-continuous) infinite alternate on-secondary;
+      background: var(--skeleton-background, var(--color-loading-fill));
+      height: 40px;
+      width: 100%
+    "/>
   </div>
 </body>

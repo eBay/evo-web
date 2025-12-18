@@ -11,199 +11,197 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
-      background-color: var(--filter-menu-item-background-color, var(--color-background-primary));
-      display: inline-block;
-      min-width: 144px
+  <span style="
+    background-color: var(--filter-menu-item-background-color, var(--color-background-primary));
+    display: inline-block;
+    min-width: 144px
+  ">
+    <div style="
+      margin-top: 8px;
+      min-width: 100%;
+      position: relative
     ">
       <div style="
-        margin-top: 8px;
-        min-width: 100%;
-        position: relative
+        background-color: var(--color-background-elevated);
+        box-sizing: border-box;
+        color: var(--color-foreground-disabled);
+        display: flex;
+        font-size: var(--font-size-body);
+        justify-content: space-between;
+        line-height: 1.4em;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        position: relative;
+        width: 100%
       ">
-        <div style="
-          background-color: var(--color-background-elevated);
-          box-sizing: border-box;
-          color: var(--color-foreground-disabled);
-          display: flex;
-          font-size: var(--font-size-body);
-          justify-content: space-between;
-          line-height: 1.4em;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
-          padding-top: 8px;
-          position: relative;
-          width: 100%
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          display: block;
+          height: 18px;
+          min-width: 18px;
+          width: 18px
         ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
+          <svg
+            height="18"
+            style="
+              color: var(--color-foreground-disabled);
+              display: block;
+              fill: currentcolor;
+              height: 18px;
               pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
-          <span style="
-            display: block;
-            height: 18px;
-            min-width: 18px;
-            width: 18px
-          ">
-            <svg
-              height="18"
-              style="
-                color: var(--color-foreground-disabled);
-                display: block;
-                fill: currentcolor;
-                height: 18px;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 18px
-              "
-              width="18"
-            >
-              <use href="#icon-checkbox-unchecked-18"/>
-            </svg>
-          </span>
-          <span style="
-            flex-grow: 1;
-            margin-inline-start: 8px
-          ">
-            Item 1 with a long string that will wrap to another line
-          </span>
-        </div>
-        <div style="
-          background-color: var(--color-background-elevated);
-          box-sizing: border-box;
-          color: var(--color-foreground-primary);
-          display: flex;
-          font-size: var(--font-size-body);
-          justify-content: space-between;
-          line-height: 1.4em;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
-          padding-top: 8px;
-          position: relative;
-          width: 100%
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 18px
+            "
+            width="18"
+          >
+            <use href="#icon-checkbox-unchecked-18"/>
+          </svg>
+        </span>
+        <span style="
+          flex-grow: 1;
+          margin-inline-start: 8px
         ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
-          <span style="
-            display: block;
-            height: 18px;
-            min-width: 18px;
-            width: 18px
-          ">
-            <svg
-              height="18"
-              style="
-                color: var(--filter-menu-item-icon-color, var(--color-foreground-primary));
-                display: block;
-                fill: currentcolor;
-                height: 18px;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 18px
-              "
-              width="18"
-            >
-              <use href="#icon-checkbox-unchecked-18"/>
-            </svg>
-          </span>
-          <span style="
-            flex-grow: 1;
-            margin-inline-start: 8px
-          ">
-            Item 2
-          </span>
-        </div>
-        <div style="
-          background-color: var(--color-background-elevated);
-          box-sizing: border-box;
-          color: var(--color-foreground-disabled);
-          display: flex;
-          font-size: var(--font-size-body);
-          justify-content: space-between;
-          line-height: 1.4em;
-          margin-bottom: 8px;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 8px;
-          padding-left: 16px;
-          padding-right: 16px;
-          padding-top: 8px;
-          position: relative;
-          width: 100%
-        ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
-          <span style="
-            display: block;
-            height: 18px;
-            min-width: 18px;
-            width: 18px
-          ">
-            <svg
-              height="18"
-              style="
-                color: var(--color-foreground-disabled);
-                display: block;
-                fill: currentcolor;
-                height: 18px;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 18px
-              "
-              width="18"
-            >
-              <use href="#icon-checkbox-checked-18"/>
-            </svg>
-          </span>
-          <span style="
-            flex-grow: 1;
-            margin-inline-start: 8px
-          ">
-            Item 3
-          </span>
-        </div>
+          Item 1 with a long string that will wrap to another line
+        </span>
       </div>
-    </span>
-  </div>
+      <div style="
+        background-color: var(--color-background-elevated);
+        box-sizing: border-box;
+        color: var(--color-foreground-primary);
+        display: flex;
+        font-size: var(--font-size-body);
+        justify-content: space-between;
+        line-height: 1.4em;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        position: relative;
+        width: 100%
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          display: block;
+          height: 18px;
+          min-width: 18px;
+          width: 18px
+        ">
+          <svg
+            height="18"
+            style="
+              color: var(--filter-menu-item-icon-color, var(--color-foreground-primary));
+              display: block;
+              fill: currentcolor;
+              height: 18px;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 18px
+            "
+            width="18"
+          >
+            <use href="#icon-checkbox-unchecked-18"/>
+          </svg>
+        </span>
+        <span style="
+          flex-grow: 1;
+          margin-inline-start: 8px
+        ">
+          Item 2
+        </span>
+      </div>
+      <div style="
+        background-color: var(--color-background-elevated);
+        box-sizing: border-box;
+        color: var(--color-foreground-disabled);
+        display: flex;
+        font-size: var(--font-size-body);
+        justify-content: space-between;
+        line-height: 1.4em;
+        margin-bottom: 8px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
+        position: relative;
+        width: 100%
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          display: block;
+          height: 18px;
+          min-width: 18px;
+          width: 18px
+        ">
+          <svg
+            height="18"
+            style="
+              color: var(--color-foreground-disabled);
+              display: block;
+              fill: currentcolor;
+              height: 18px;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 18px
+            "
+            width="18"
+          >
+            <use href="#icon-checkbox-checked-18"/>
+          </svg>
+        </span>
+        <span style="
+          flex-grow: 1;
+          margin-inline-start: 8px
+        ">
+          Item 3
+        </span>
+      </div>
+    </div>
+  </span>
 </body>

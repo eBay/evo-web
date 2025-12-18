@@ -11,44 +11,42 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
+  <span style="
+    background-color: var(--color-background-secondary);
+    border: 1px solid var(--color-border-medium);
+    display: inline-block;
+    padding-block: var(--spacing-100);
+    padding-inline: var(--spacing-100) var(--spacing-200);
+    position: relative
+  ">
     <span style="
-      background-color: var(--color-background-secondary);
-      border: 1px solid var(--color-border-medium);
+      box-sizing: border-box;
       display: inline-block;
-      padding-block: var(--spacing-100);
-      padding-inline: var(--spacing-100) var(--spacing-200);
-      position: relative
+      margin-inline-start: calc(var(--spacing-100)*-1);
+      position: relative;
+      vertical-align: bottom;
+      width: calc(100% + var(--spacing-300))
     ">
-      <span style="
-        box-sizing: border-box;
-        display: inline-block;
-        margin-inline-start: calc(var(--spacing-100)*-1);
-        position: relative;
-        vertical-align: bottom;
-        width: calc(100% + var(--spacing-300))
-      ">
-        <span>
-          <input
-            placeholder="Add Sport"
-            style="
-              appearance: none;
-              background-color: inherit;
-              color: var(--combobox-textbox-foreground-color, var(--color-foreground-primary));
-              font-family: inherit;
-              font-size: inherit;
-              height: auto;
-              margin-left: 0px;
-              margin-right: 0px;
-              margin: 0 var(--spacing-100);
-              padding-left: 16px;
-              padding-right: 32px;
-              padding: var(--spacing-75) 0;
-              width: calc(100% - var(--spacing-200))
-            "
-          />
-        </span>
+      <span>
+        <input
+          placeholder="Add Sport"
+          style="
+            appearance: none;
+            background-color: inherit;
+            color: var(--combobox-textbox-foreground-color, var(--color-foreground-primary));
+            font-family: inherit;
+            font-size: inherit;
+            height: auto;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin: 0 var(--spacing-100);
+            padding-left: 16px;
+            padding-right: 32px;
+            padding: var(--spacing-75) 0;
+            width: calc(100% - var(--spacing-200))
+          "
+        />
       </span>
     </span>
-  </div>
+  </span>
 </body>

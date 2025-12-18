@@ -11,83 +11,81 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
+  <span style="
+    display: inline-block;
+    position: relative
+  ">
+    <label style="
+      color: var(--floating-label-color, var(--color-foreground-secondary));
       display: inline-block;
+      left: 16px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      pointer-events: none;
+      position: absolute;
+      text-overflow: ellipsis;
+      text-wrap-mode: nowrap;
+      top: 0px;
+      transform-origin: left center;
+      transform: scale(0.75) translateY(2px);
+      width: calc(133.33333% - var(--spacing-200)*2/.75 - 2.66667px);
+      z-index: 1
+    ">
+      Choose Option
+    </label>
+    <span style="
+      color: var(--select-foreground-color, var(--color-foreground-primary));
+      display: inline-block;
+      font-size: var(--font-size-body);
       position: relative
     ">
-      <label style="
-        color: var(--floating-label-color, var(--color-foreground-secondary));
-        display: inline-block;
-        left: 16px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        pointer-events: none;
-        position: absolute;
-        text-overflow: ellipsis;
-        text-wrap-mode: nowrap;
-        top: 0px;
-        transform-origin: left center;
-        transform: scale(0.75) translateY(2px);
-        width: calc(133.33333% - var(--spacing-200)*2/.75 - 2.66667px);
-        z-index: 1
-      ">
-        Choose Option
-      </label>
-      <span style="
-        color: var(--select-foreground-color, var(--color-foreground-primary));
-        display: inline-block;
-        font-size: var(--font-size-body);
-        position: relative
-      ">
-        <select
-          disabled
-          style="
-            appearance: none;
-            background-color: var(--select-background-color, var(--color-background-secondary));
-            color: var(--select-disabled-foregound-color, var(--color-foreground-disabled));
-            font-family: inherit;
-            font-size: 1em;
-            height: 40px;
-            line-height: 52px;
-            padding: 0 var(--spacing-400) 0 var(--spacing-200);
-            vertical-align: middle
-          "
+      <select
+        disabled
+        style="
+          appearance: none;
+          background-color: var(--select-background-color, var(--color-background-secondary));
+          color: var(--select-disabled-foregound-color, var(--color-foreground-disabled));
+          font-family: inherit;
+          font-size: 1em;
+          height: 40px;
+          line-height: 52px;
+          padding: 0 var(--spacing-400) 0 var(--spacing-200);
+          vertical-align: middle
+        "
+      >
+        <option
+          label="Option 1"
+          selected
         >
-          <option
-            label="Option 1"
-            selected
-          >
-            Option 1
-          </option>
-          <option label="Option 2 can't pick">
-            Option 2 can't pick
-          </option>
-          <option label="Option 3">
-            Option 3
-          </option>
-        </select>
-        <svg
-          height="8"
-          style="
-            color: var(--select-disabled-foregound-color, var(--color-foreground-on-disabled));
-            display: inline-block;
-            fill: currentcolor;
-            height: 100%;
-            pointer-events: none;
-            position: absolute;
-            right: 16px;
-            stroke-width: 0;
-            stroke: currentcolor;
-            top: 0px;
-            vertical-align: middle;
-            width: 12px
-          "
-          width="8"
-        >
-          <use href="#icon-chevron-down-12"/>
-        </svg>
-      </span>
+          Option 1
+        </option>
+        <option label="Option 2 can't pick">
+          Option 2 can't pick
+        </option>
+        <option label="Option 3">
+          Option 3
+        </option>
+      </select>
+      <svg
+        height="8"
+        style="
+          color: var(--select-disabled-foregound-color, var(--color-foreground-on-disabled));
+          display: inline-block;
+          fill: currentcolor;
+          height: 100%;
+          pointer-events: none;
+          position: absolute;
+          right: 16px;
+          stroke-width: 0;
+          stroke: currentcolor;
+          top: 0px;
+          vertical-align: middle;
+          width: 12px
+        "
+        width="8"
+      >
+        <use href="#icon-chevron-down-12"/>
+      </svg>
     </span>
-  </div>
+  </span>
 </body>

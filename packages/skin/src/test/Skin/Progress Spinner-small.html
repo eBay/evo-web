@@ -11,30 +11,28 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
-      animation-duration: 1.5s;
-      animation-iteration-count: infinite;
-      animation-name: spin;
-      animation-timing-function: cubic-bezier(0.7, 0.2, 0.3, 0.73);
+  <span style="
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: spin;
+    animation-timing-function: cubic-bezier(0.7, 0.2, 0.3, 0.73);
+    display: inline-block;
+    height: 20px;
+    width: 20px
+  ">
+    <svg style="
       display: inline-block;
-      height: 20px;
-      width: 20px
+      fill: currentcolor;
+      height: inherit;
+      max-height: inherit;
+      max-width: inherit;
+      pointer-events: none;
+      stroke-width: 0;
+      stroke: currentcolor;
+      vertical-align: middle;
+      width: inherit
     ">
-      <svg style="
-        display: inline-block;
-        fill: currentcolor;
-        height: inherit;
-        max-height: inherit;
-        max-width: inherit;
-        pointer-events: none;
-        stroke-width: 0;
-        stroke: currentcolor;
-        vertical-align: middle;
-        width: inherit
-      ">
-        <use href="#icon-spinner-20"/>
-      </svg>
-    </span>
-  </div>
+      <use href="#icon-spinner-20"/>
+    </svg>
+  </span>
 </body>

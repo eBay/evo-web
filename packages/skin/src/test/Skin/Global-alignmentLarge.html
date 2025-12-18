@@ -11,87 +11,194 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
-      align-items: center;
-      background-color: var(--textbox-background-color, var(--color-background-secondary));
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-      border-left-style: solid;
-      border-left-width: 1px;
-      border-right-style: solid;
-      border-right-width: 1px;
-      border-top-style: solid;
-      border-top-width: 1px;
-      box-sizing: border-box;
-      color: var(--textbox-foreground-color, var(--color-foreground-primary));
-      display: inline-flex;
-      font-size: var(--font-size-body);
-      overflow-x: hidden;
-      overflow-y: hidden;
-      position: relative;
-      width: fit-content
+  <span style="
+    align-items: center;
+    background-color: var(--textbox-background-color, var(--color-background-secondary));
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: var(--textbox-foreground-color, var(--color-foreground-primary));
+    display: inline-flex;
+    font-size: var(--font-size-body);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    width: fit-content
+  ">
+    <input
+      placeholder="placeholder text"
+      style="
+        appearance: none;
+        color: inherit;
+        flex-grow: 1;
+        font-family: inherit;
+        font-size: 1em;
+        height: calc(var(--input-large-height) - 2px);
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding-inline-end: var(--spacing-200);
+        padding-inline-start: var(--spacing-200);
+        vertical-align: middle
+      "
+    />
+  </span>
+  <span style="
+    color: var(--select-foreground-color, var(--color-foreground-primary));
+    display: inline-block;
+    font-size: var(--font-size-body);
+    position: relative
+  ">
+    <select style="
+      appearance: none;
+      background-color: var(--select-background-color, var(--color-background-secondary));
+      color: inherit;
+      font-family: inherit;
+      font-size: var(--font-size-medium);
+      height: 48px;
+      padding: 0 var(--spacing-400) 0 var(--spacing-200);
+      vertical-align: middle
     ">
+      <option
+        label="Option 1"
+        selected
+      >
+        Option 1
+      </option>
+      <option label="Option 2">
+        Option 2
+      </option>
+      <option label="Option 3">
+        Option 3
+      </option>
+    </select>
+    <svg
+      height="8"
+      style="
+        display: inline-block;
+        fill: currentcolor;
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        right: 16px;
+        stroke-width: 0;
+        stroke: currentcolor;
+        top: 0px;
+        vertical-align: middle;
+        width: 12px
+      "
+      width="8"
+    >
+      <use href="#icon-chevron-down-12"/>
+    </svg>
+  </span>
+  <button style="
+    align-content: center;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom: 1px solid;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top: 1px solid;
+    color: inherit;
+    font-family: inherit;
+    font-size: var(--font-size-medium);
+    height: 48px;
+    min-height: 48px;
+    min-width: 88px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    vertical-align: bottom
+  ">
+    Button
+  </button>
+  <a style="
+    align-content: center;
+    align-items: center;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom: 1px solid;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top: 1px solid;
+    box-sizing: border-box;
+    color: inherit;
+    display: inline-block;
+    font-family: inherit;
+    font-size: var(--font-size-medium);
+    height: 48px;
+    min-height: 48px;
+    min-width: 88px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    text-decoration-line: none;
+    vertical-align: bottom
+  ">
+    Link
+  </a>
+  <span style="
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom
+  ">
+    <span>
       <input
-        placeholder="placeholder text"
+        placeholder="Combobox"
         style="
           appearance: none;
-          color: inherit;
-          flex-grow: 1;
+          background-color: var(--combobox-textbox-background-color, var(--color-background-secondary));
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          color: var(--combobox-textbox-foreground-color, var(--color-foreground-primary));
           font-family: inherit;
-          font-size: 1em;
-          height: calc(var(--input-large-height) - 2px);
-          margin-bottom: 0px;
+          font-size: var(--font-size-medium);
+          height: 48px;
           margin-left: 0px;
           margin-right: 0px;
-          margin-top: 0px;
-          padding-inline-end: var(--spacing-200);
-          padding-inline-start: var(--spacing-200);
-          vertical-align: middle
+          padding-left: 16px;
+          padding-right: 32px
         "
       />
-    </span>
-    <span style="
-      color: var(--select-foreground-color, var(--color-foreground-primary));
-      display: inline-block;
-      font-size: var(--font-size-body);
-      position: relative
-    ">
-      <select style="
-        appearance: none;
-        background-color: var(--select-background-color, var(--color-background-secondary));
-        color: inherit;
-        font-family: inherit;
-        font-size: var(--font-size-medium);
-        height: 48px;
-        padding: 0 var(--spacing-400) 0 var(--spacing-200);
-        vertical-align: middle
-      ">
-        <option
-          label="Option 1"
-          selected
-        >
-          Option 1
-        </option>
-        <option label="Option 2">
-          Option 2
-        </option>
-        <option label="Option 3">
-          Option 3
-        </option>
-      </select>
       <svg
         height="8"
         style="
+          color: var(--combobox-textbox-icon-color, var(--color-foreground-primary));
           display: inline-block;
           fill: currentcolor;
-          height: 100%;
+          height: 12px;
+          margin-inline-start: 8px;
           pointer-events: none;
           position: absolute;
-          right: 16px;
+          right: 17px;
           stroke-width: 0;
           stroke: currentcolor;
-          top: 0px;
+          top: calc(50% - 8px);
           vertical-align: middle;
           width: 12px
         "
@@ -100,16 +207,26 @@
         <use href="#icon-chevron-down-12"/>
       </svg>
     </span>
+  </span>
+  <span style="
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom
+  ">
     <button style="
       align-content: center;
       align-items: center;
+      border-bottom-color: inherit;
       border-bottom-style: solid;
       border-bottom-width: 1px;
       border-bottom: 1px solid;
+      border-left-color: inherit;
       border-left-style: solid;
       border-left-width: 1px;
+      border-right-color: inherit;
       border-right-style: solid;
       border-right-width: 1px;
+      border-top-color: inherit;
       border-top-style: solid;
       border-top-width: 1px;
       border-top: 1px solid;
@@ -117,89 +234,54 @@
       font-family: inherit;
       font-size: var(--font-size-medium);
       height: 48px;
+      max-width: 100%;
       min-height: 48px;
       min-width: 88px;
+      overflow-x: hidden;
+      overflow-y: hidden;
       padding-bottom: 0px;
       padding-left: 20px;
       padding-right: 20px;
       padding-top: 0px;
-      vertical-align: bottom
-    ">
-      Button
-    </button>
-    <a style="
-      align-content: center;
-      align-items: center;
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-      border-bottom: 1px solid;
-      border-left-style: solid;
-      border-left-width: 1px;
-      border-right-style: solid;
-      border-right-width: 1px;
-      border-top-style: solid;
-      border-top-width: 1px;
-      border-top: 1px solid;
-      box-sizing: border-box;
-      color: inherit;
-      display: inline-block;
-      font-family: inherit;
-      font-size: var(--font-size-medium);
-      height: 48px;
-      min-height: 48px;
-      min-width: 88px;
-      padding-left: 20px;
-      padding-right: 20px;
-      text-align: center;
-      text-decoration-line: none;
-      vertical-align: bottom
-    ">
-      Link
-    </a>
-    <span style="
-      box-sizing: border-box;
-      display: inline-block;
       position: relative;
       vertical-align: bottom
     ">
-      <span>
-        <input
-          placeholder="Combobox"
-          style="
-            appearance: none;
-            background-color: var(--combobox-textbox-background-color, var(--color-background-secondary));
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            color: var(--combobox-textbox-foreground-color, var(--color-foreground-primary));
-            font-family: inherit;
-            font-size: var(--font-size-medium);
-            height: 48px;
-            margin-left: 0px;
-            margin-right: 0px;
-            padding-left: 16px;
-            padding-right: 32px
-          "
-        />
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <span style="
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 100%
+      ">
+        <span style="
+          font-weight: 700;
+          margin-right: auto
+        ">
+          Options
+        </span>
         <svg
           height="8"
           style="
-            color: var(--combobox-textbox-icon-color, var(--color-foreground-primary));
+            align-self: center;
             display: inline-block;
             fill: currentcolor;
             height: 12px;
             margin-inline-start: 8px;
+            max-height: 48px;
             pointer-events: none;
-            position: absolute;
-            right: 17px;
             stroke-width: 0;
             stroke: currentcolor;
-            top: calc(50% - 8px);
             vertical-align: middle;
             width: 12px
           "
@@ -208,167 +290,83 @@
           <use href="#icon-chevron-down-12"/>
         </svg>
       </span>
-    </span>
-    <span style="
-      display: inline-block;
+    </button>
+  </span>
+  <span style="position: relative">
+    <button style="
+      align-content: center;
+      align-items: center;
+      border-bottom-color: inherit;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom: 1px solid;
+      border-left-color: inherit;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-color: inherit;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-color: inherit;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-top: 1px solid;
+      color: inherit;
+      font-family: inherit;
+      font-size: var(--font-size-medium);
+      height: 48px;
+      max-width: 100%;
+      min-height: 48px;
+      min-width: 88px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding-bottom: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0px;
       position: relative;
       vertical-align: bottom
     ">
-      <button style="
-        align-content: center;
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <span style="
         align-items: center;
-        border-bottom-color: inherit;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom: 1px solid;
-        border-left-color: inherit;
-        border-left-style: solid;
-        border-left-width: 1px;
-        border-right-color: inherit;
-        border-right-style: solid;
-        border-right-width: 1px;
-        border-top-color: inherit;
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top: 1px solid;
-        color: inherit;
-        font-family: inherit;
-        font-size: var(--font-size-medium);
-        height: 48px;
-        max-width: 100%;
-        min-height: 48px;
-        min-width: 88px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-bottom: 0px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 0px;
-        position: relative;
-        vertical-align: bottom
+        display: flex;
+        justify-content: space-between;
+        width: 100%
       ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            bottom: 0px;
-            content: "";
-            left: 0px;
-            pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
-        <span style="
-          align-items: center;
-          display: flex;
-          justify-content: space-between;
-          width: 100%
-        ">
-          <span style="
-            font-weight: 700;
-            margin-right: auto
-          ">
-            Options
-          </span>
-          <svg
-            height="8"
-            style="
-              align-self: center;
-              display: inline-block;
-              fill: currentcolor;
-              height: 12px;
-              margin-inline-start: 8px;
-              max-height: 48px;
-              pointer-events: none;
-              stroke-width: 0;
-              stroke: currentcolor;
-              vertical-align: middle;
-              width: 12px
-            "
-            width="8"
-          >
-            <use href="#icon-chevron-down-12"/>
-          </svg>
+        <span>
+          Menu
         </span>
-      </button>
-    </span>
-    <span style="position: relative">
-      <button style="
-        align-content: center;
-        align-items: center;
-        border-bottom-color: inherit;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom: 1px solid;
-        border-left-color: inherit;
-        border-left-style: solid;
-        border-left-width: 1px;
-        border-right-color: inherit;
-        border-right-style: solid;
-        border-right-width: 1px;
-        border-top-color: inherit;
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top: 1px solid;
-        color: inherit;
-        font-family: inherit;
-        font-size: var(--font-size-medium);
-        height: 48px;
-        max-width: 100%;
-        min-height: 48px;
-        min-width: 88px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-bottom: 0px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 0px;
-        position: relative;
-        vertical-align: bottom
-      ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            bottom: 0px;
-            content: "";
-            left: 0px;
+        <svg
+          height="8"
+          style="
+            align-self: center;
+            display: inline-block;
+            fill: currentcolor;
+            height: 12px;
+            margin-inline-start: 8px;
+            max-height: 48px;
             pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
-        <span style="
-          align-items: center;
-          display: flex;
-          justify-content: space-between;
-          width: 100%
-        ">
-          <span>
-            Menu
-          </span>
-          <svg
-            height="8"
-            style="
-              align-self: center;
-              display: inline-block;
-              fill: currentcolor;
-              height: 12px;
-              margin-inline-start: 8px;
-              max-height: 48px;
-              pointer-events: none;
-              stroke-width: 0;
-              stroke: currentcolor;
-              vertical-align: middle;
-              width: 12px
-            "
-            width="8"
-          >
-            <use href="#icon-chevron-down-12"/>
-          </svg>
-        </span>
-      </button>
-    </span>
-  </div>
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 12px
+          "
+          width="8"
+        >
+          <use href="#icon-chevron-down-12"/>
+        </svg>
+      </span>
+    </button>
+  </span>
 </body>

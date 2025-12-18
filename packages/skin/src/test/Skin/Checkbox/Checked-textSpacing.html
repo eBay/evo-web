@@ -12,70 +12,68 @@
   text-size-adjust: 100%
 ">
   <div>
-    <div>
-      <legend style="margin-bottom: var(--spacing-100)">
-        Choose an Option
-      </legend>
-      <div style="
-        display: flex;
-        margin-bottom: 16px;
-        margin-top: 16px
+    <legend style="margin-bottom: var(--spacing-100)">
+      Choose an Option
+    </legend>
+    <div style="
+      display: flex;
+      margin-bottom: 16px;
+      margin-top: 16px
+    ">
+      <span style="
+        display: inline-flex;
+        position: relative;
+        vertical-align: text-bottom
       ">
-        <span style="
-          display: inline-flex;
-          position: relative;
-          vertical-align: text-bottom
-        ">
-          <input
+        <input
+          style="
+            font-size: 100%;
+            height: 18px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            min-width: 18px;
+            opacity: 0;
+            position: absolute;
+            width: 18px;
+            z-index: 1
+          "
+          type="checkbox"
+        />
+        <span
+          hidden
+          style="
+            display: inline-flex;
+            height: 18px;
+            outline-offset: 1px
+          "
+        >
+          <svg
+            height="18"
             style="
-              font-size: 100%;
+              color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
+              display: inline-block;
+              fill: currentcolor;
               height: 18px;
-              margin-bottom: 0px;
-              margin-left: 0px;
-              margin-right: 0px;
-              margin-top: 0px;
-              min-width: 18px;
-              opacity: 0;
-              position: absolute;
-              width: 18px;
-              z-index: 1
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 18px
             "
-            type="checkbox"
-          />
-          <span
-            hidden
-            style="
-              display: inline-flex;
-              height: 18px;
-              outline-offset: 1px
-            "
+            width="18"
           >
-            <svg
-              height="18"
-              style="
-                color: var(--checkbox-unchecked-color, var(--color-foreground-primary));
-                display: inline-block;
-                fill: currentcolor;
-                height: 18px;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 18px
-              "
-              width="18"
-            >
-              <use href="#icon-checkbox-unchecked-18"/>
-            </svg>
-          </span>
+            <use href="#icon-checkbox-unchecked-18"/>
+          </svg>
         </span>
-        <label style="
-          margin-left: 4px;
-          margin-right: auto
-        ">
-          Option 2
-        </label>
-      </div>
+      </span>
+      <label style="
+        margin-left: 4px;
+        margin-right: auto
+      ">
+        Option 2
+      </label>
     </div>
   </div>
 </body>

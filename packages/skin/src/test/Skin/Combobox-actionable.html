@@ -11,76 +11,152 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
-      box-sizing: border-box;
-      display: inline-block;
-      position: relative;
-      vertical-align: bottom
-    ">
-      <span>
-        <input
-          placeholder="Combobox"
-          style="
-            appearance: none;
-            background-color: var(--combobox-textbox-background-color, var(--color-background-secondary));
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            color: var(--combobox-textbox-foreground-color, var(--color-foreground-primary));
-            font-family: inherit;
-            font-size: inherit;
-            height: 40px;
-            margin-left: 0px;
-            margin-right: 0px;
-            padding-left: 16px;
-            padding-right: 32px
-          "
-        />
-        <button style="
-          align-items: center;
-          background-color: var(--color-background-secondary);
-          border-bottom-color: transparent;
-          border-bottom-left-radius: 50px;
-          border-bottom-right-radius: 50px;
+  <span style="
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom
+  ">
+    <span>
+      <input
+        placeholder="Combobox"
+        style="
+          appearance: none;
+          background-color: var(--combobox-textbox-background-color, var(--color-background-secondary));
           border-bottom-style: solid;
-          border-left-color: transparent;
+          border-bottom-width: 1px;
           border-left-style: solid;
-          border-right-color: transparent;
+          border-left-width: 1px;
           border-right-style: solid;
-          border-top-color: transparent;
-          border-top-left-radius: 50px;
-          border-top-right-radius: 50px;
+          border-right-width: 1px;
           border-top-style: solid;
-          display: inline-flex;
+          border-top-width: 1px;
+          color: var(--combobox-textbox-foreground-color, var(--color-foreground-primary));
           font-family: inherit;
-          height: 38px;
-          justify-content: center;
-          margin-inline-start: 8px;
+          font-size: inherit;
+          height: 40px;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-left: 16px;
+          padding-right: 32px
+        "
+      />
+      <button style="
+        align-items: center;
+        background-color: var(--color-background-secondary);
+        border-bottom-color: transparent;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-bottom-style: solid;
+        border-left-color: transparent;
+        border-left-style: solid;
+        border-right-color: transparent;
+        border-right-style: solid;
+        border-top-color: transparent;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-top-style: solid;
+        display: inline-flex;
+        font-family: inherit;
+        height: 38px;
+        justify-content: center;
+        margin-inline-start: 8px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        vertical-align: text-bottom;
+        width: 38px
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <svg
+          height="8"
+          style="
+            display: inline-block;
+            fill: var(--color-foreground-primary);
+            height: 12px;
+            left: 0px;
+            max-width: 75%;
+            pointer-events: none;
+            position: relative;
+            right: 0px;
+            stroke-width: 0;
+            stroke: currentcolor;
+            transform: rotate(180deg);
+            vertical-align: middle;
+            width: 12px
+          "
+          width="8"
+        >
+          <use href="#icon-chevron-down-12"/>
+        </svg>
+      </button>
+    </span>
+    <div style="
+      background-color: var(--color-background-elevated);
+      box-shadow: var(--bubble-shadow);
+      box-sizing: border-box;
+      left: 0px;
+      max-height: 400px;
+      min-width: 100%;
+      overflow-y: auto;
+      position: absolute;
+      top: calc(100% + 4px);
+      width: auto;
+      z-index: 2
+    ">
+      <div>
+        <div style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-left-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
+          border-top-right-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
+          justify-content: space-between;
+          margin-bottom: 1px;
           overflow-x: hidden;
           overflow-y: hidden;
-          padding-bottom: 0px;
-          padding-left: 0px;
-          padding-right: 0px;
-          padding-top: 0px;
-          position: absolute;
-          right: 1px;
-          top: 1px;
-          vertical-align: text-bottom;
-          width: 38px
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
+          width: 100%
         ">
           <style>@scope{:scope{
             &::after {
               background-color: var(--color-state-layer-neutral);
-              border-bottom-left-radius: 50px;
-              border-bottom-right-radius: 50px;
-              border-top-left-radius: 50px;
-              border-top-right-radius: 50px;
               bottom: 0px;
               content: "";
               left: 0px;
@@ -90,174 +166,96 @@
               top: 0px
             }
           }}</style>
-          <svg
-            height="8"
-            style="
-              display: inline-block;
-              fill: var(--color-foreground-primary);
-              height: 12px;
+          <span>
+            Option 1
+          </span>
+        </div>
+        <div style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
+          justify-content: space-between;
+          margin-bottom: 1px;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
+          width: 100%
+        ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
               left: 0px;
-              max-width: 75%;
               pointer-events: none;
-              position: relative;
+              position: absolute;
               right: 0px;
-              stroke-width: 0;
-              stroke: currentcolor;
-              transform: rotate(180deg);
-              vertical-align: middle;
-              width: 12px
-            "
-            width="8"
-          >
-            <use href="#icon-chevron-down-12"/>
-          </svg>
-        </button>
-      </span>
-      <div style="
-        background-color: var(--color-background-elevated);
-        box-shadow: var(--bubble-shadow);
-        box-sizing: border-box;
-        left: 0px;
-        max-height: 400px;
-        min-width: 100%;
-        overflow-y: auto;
-        position: absolute;
-        top: calc(100% + 4px);
-        width: auto;
-        z-index: 2
-      ">
-        <div>
-          <div style="
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-left-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
-            border-top-right-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            margin-bottom: 1px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
-          ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span>
-              Option 1
-            </span>
-          </div>
-          <div style="
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            margin-bottom: 1px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
-          ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span>
-              Option 2
-            </span>
-          </div>
-          <div style="
-            border-bottom-left-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
-            border-bottom-right-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
-          ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span>
-              Option 3
-            </span>
-          </div>
+              top: 0px
+            }
+          }}</style>
+          <span>
+            Option 2
+          </span>
+        </div>
+        <div style="
+          border-bottom-left-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
+          border-bottom-right-radius: var(--combobox-listbox-border-radius, var(--border-radius-50));
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
+          justify-content: space-between;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
+          width: 100%
+        ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
+          <span>
+            Option 3
+          </span>
         </div>
       </div>
-    </span>
-  </div>
+    </div>
+  </span>
 </body>

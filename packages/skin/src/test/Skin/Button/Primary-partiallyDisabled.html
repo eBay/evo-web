@@ -11,77 +11,75 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <button style="
-      align-content: center;
+  <button style="
+    align-content: center;
+    align-items: center;
+    background-color: var(--btn-primary-disabled-background-color, var(--color-foreground-disabled));
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom: 1px solid;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top: 1px solid;
+    color: var(--btn-primary-foreground-color, var(--color-foreground-on-accent));
+    font-family: inherit;
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    min-height: 40px;
+    min-width: 88px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    position: relative;
+    transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
+    vertical-align: bottom
+  ">
+    <style>@scope{:scope{
+      &::after {
+        background-color: var(--color-state-layer-neutral);
+        bottom: 0px;
+        content: "";
+        left: 0px;
+        pointer-events: none;
+        position: absolute;
+        right: 0px;
+        top: 0px
+      }
+    }}</style>
+    <span style="
       align-items: center;
-      background-color: var(--btn-primary-disabled-background-color, var(--color-foreground-disabled));
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-      border-bottom: 1px solid;
-      border-left-style: solid;
-      border-left-width: 1px;
-      border-right-style: solid;
-      border-right-width: 1px;
-      border-top-style: solid;
-      border-top-width: 1px;
-      border-top: 1px solid;
-      color: var(--btn-primary-foreground-color, var(--color-foreground-on-accent));
-      font-family: inherit;
-      font-size: var(--font-size-body);
-      font-weight: 700;
-      min-height: 40px;
-      min-width: 88px;
-      overflow-x: hidden;
-      overflow-y: hidden;
-      padding-bottom: 0px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 0px;
-      position: relative;
-      transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
-      vertical-align: bottom
+      display: flex;
+      justify-content: center;
+      width: 100%
     ">
-      <style>@scope{:scope{
-        &::after {
-          background-color: var(--color-state-layer-neutral);
-          bottom: 0px;
-          content: "";
-          left: 0px;
+      <svg
+        height="16"
+        style="
+          align-self: center;
+          display: inline-block;
+          fill: var(--btn-primary-disabled-foreground-color, var(--color-background-primary));
+          height: 16px;
+          margin-inline-end: 8px;
           pointer-events: none;
-          position: absolute;
-          right: 0px;
-          top: 0px
-        }
-      }}</style>
-      <span style="
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        width: 100%
-      ">
-        <svg
-          height="16"
-          style="
-            align-self: center;
-            display: inline-block;
-            fill: var(--btn-primary-disabled-foreground-color, var(--color-background-primary));
-            height: 16px;
-            margin-inline-end: 8px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-          width="16"
-        >
-          <use href="#icon-close-16"/>
-        </svg>
-        <span>
-          Button
-        </span>
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        "
+        width="16"
+      >
+        <use href="#icon-close-16"/>
+      </svg>
+      <span>
+        Button
       </span>
-    </button>
-  </div>
+    </span>
+  </button>
 </body>

@@ -11,69 +11,67 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <div dir="rtl">
-      <button style="
-        align-items: center;
-        background-color: var(--color-background-primary);
-        background-position-x: 50%;
-        background-position-y: center;
-        background-repeat: no-repeat;
-        background-size: 0px 100%;
-        border: 1px solid var(--color-border-medium);
-        color: var(--color-foreground-primary);
-        display: inline-flex;
-        font-family: inherit;
-        font-size: var(--font-size-body);
-        height: var(--spacing-400);
-        justify-content: space-between;
-        max-width: 296px;
-        min-width: 32px;
+  <div dir="rtl">
+    <button style="
+      align-items: center;
+      background-color: var(--color-background-primary);
+      background-position-x: 50%;
+      background-position-y: center;
+      background-repeat: no-repeat;
+      background-size: 0px 100%;
+      border: 1px solid var(--color-border-medium);
+      color: var(--color-foreground-primary);
+      display: inline-flex;
+      font-family: inherit;
+      font-size: var(--font-size-body);
+      height: var(--spacing-400);
+      justify-content: space-between;
+      max-width: 296px;
+      min-width: 32px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding: 0 var(--spacing-150);
+      position: relative;
+      transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
+      vertical-align: bottom
+    ">
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <svg
+        height="16"
+        style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        "
+        width="16"
+      >
+        <use href="#icon-sneaker-16"/>
+      </svg>
+      <span style="
         overflow-x: hidden;
         overflow-y: hidden;
-        padding: 0 var(--spacing-150);
-        position: relative;
-        transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
-        vertical-align: bottom
+        padding: var(--spacing-75) 0;
+        text-overflow: ellipsis;
+        text-wrap-mode: nowrap
       ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            bottom: 0px;
-            content: "";
-            left: 0px;
-            pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
-        <svg
-          height="16"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-          width="16"
-        >
-          <use href="#icon-sneaker-16"/>
-        </svg>
-        <span style="
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding: var(--spacing-75) 0;
-          text-overflow: ellipsis;
-          text-wrap-mode: nowrap
-        ">
-          Football
-        </span>
-      </button>
-    </div>
+        Football
+      </span>
+    </button>
   </div>
 </body>

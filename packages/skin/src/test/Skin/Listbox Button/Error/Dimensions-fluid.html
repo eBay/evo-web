@@ -11,74 +11,155 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
-      display: inline-block;
+  <span style="
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    width: 100%
+  ">
+    <button style="
+      align-content: center;
+      align-items: center;
+      background-color: var(--listbox-button-background-color, var(--color-background-secondary));
+      border-bottom-color: inherit;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom: 1px solid;
+      border-left-color: inherit;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-right-color: inherit;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-top-color: inherit;
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-top: 1px solid;
+      color: inherit;
+      font-family: inherit;
+      font-size: var(--font-size-body);
+      max-width: 100%;
+      min-height: 40px;
+      min-width: 88px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding-bottom: 0px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 0px;
       position: relative;
       vertical-align: bottom;
       width: 100%
     ">
-      <button style="
-        align-content: center;
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <span style="
         align-items: center;
-        background-color: var(--listbox-button-background-color, var(--color-background-secondary));
-        border-bottom-color: inherit;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom: 1px solid;
-        border-left-color: inherit;
-        border-left-style: solid;
-        border-left-width: 1px;
-        border-right-color: inherit;
-        border-right-style: solid;
-        border-right-width: 1px;
-        border-top-color: inherit;
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top: 1px solid;
-        color: inherit;
-        font-family: inherit;
-        font-size: var(--font-size-body);
-        max-width: 100%;
-        min-height: 40px;
-        min-width: 88px;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-bottom: 0px;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 0px;
-        position: relative;
-        vertical-align: bottom;
+        display: flex;
+        justify-content: space-between;
         width: 100%
       ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            bottom: 0px;
-            content: "";
-            left: 0px;
-            pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
         <span style="
-          align-items: center;
-          display: flex;
+          color: var(--listbox-button-label-color, var(--color-foreground-attention));
+          margin-right: 3px
+        ">
+          Color:
+        </span>
+        <span style="
+          font-weight: 700;
+          margin-right: auto
+        ">
+          Red
+        </span>
+        <svg
+          height="8"
+          style="
+            align-self: center;
+            display: inline-block;
+            fill: currentcolor;
+            height: 12px;
+            margin-inline-start: 8px;
+            pointer-events: none;
+            stroke-width: 0;
+            stroke: currentcolor;
+            transform: rotate(180deg);
+            vertical-align: middle;
+            width: 12px
+          "
+          width="8"
+        >
+          <use href="#icon-chevron-down-12"/>
+        </svg>
+      </span>
+    </button>
+    <div style="
+      background-color: var(--color-background-elevated);
+      box-shadow: var(--bubble-shadow);
+      box-sizing: border-box;
+      left: 0px;
+      max-height: 400px;
+      min-width: 100%;
+      overflow-y: auto;
+      position: absolute;
+      top: calc(100% + 4px);
+      width: 100%;
+      z-index: 2
+    ">
+      <div>
+        <div style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-left-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
+          border-top-right-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
           justify-content: space-between;
+          margin-bottom: 1px;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
           width: 100%
         ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
           <span style="
-            color: var(--listbox-button-label-color, var(--color-foreground-attention));
-            margin-right: 3px
-          ">
-            Color:
-          </span>
-          <span style="
-            font-weight: 700;
-            margin-right: auto
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-wrap-mode: nowrap
           ">
             Red
           </span>
@@ -88,307 +169,224 @@
               align-self: center;
               display: inline-block;
               fill: currentcolor;
-              height: 12px;
-              margin-inline-start: 8px;
+              height: 16px;
+              margin-inline-start: var(--spacing-100);
+              margin-left: auto;
+              margin-right: auto;
               pointer-events: none;
               stroke-width: 0;
               stroke: currentcolor;
-              transform: rotate(180deg);
               vertical-align: middle;
-              width: 12px
+              width: 16px
             "
             width="8"
           >
-            <use href="#icon-chevron-down-12"/>
+            <use href="#icon-tick-16"/>
           </svg>
-        </span>
-      </button>
-      <div style="
-        background-color: var(--color-background-elevated);
-        box-shadow: var(--bubble-shadow);
-        box-sizing: border-box;
-        left: 0px;
-        max-height: 400px;
-        min-width: 100%;
-        overflow-y: auto;
-        position: absolute;
-        top: calc(100% + 4px);
-        width: 100%;
-        z-index: 2
-      ">
-        <div>
-          <div style="
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-left-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
-            border-top-right-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            margin-bottom: 1px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
+        </div>
+        <div style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
+          justify-content: space-between;
+          margin-bottom: 1px;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
+          width: 100%
+        ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
+          <span style="
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-wrap-mode: nowrap
           ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span style="
-              flex-grow: 1;
-              flex-shrink: 0;
-              text-wrap-mode: nowrap
-            ">
-              Red
-            </span>
-            <svg
-              height="8"
-              style="
-                align-self: center;
-                display: inline-block;
-                fill: currentcolor;
-                height: 16px;
-                margin-inline-start: var(--spacing-100);
-                margin-left: auto;
-                margin-right: auto;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 16px
-              "
-              width="8"
-            >
-              <use href="#icon-tick-16"/>
-            </svg>
-          </div>
-          <div style="
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            margin-bottom: 1px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
+            Blue
+          </span>
+          <svg
+            height="8"
+            style="
+              align-self: center;
+              display: inline-block;
+              fill: currentcolor;
+              height: 16px;
+              margin-inline-start: var(--spacing-100);
+              margin-left: auto;
+              margin-right: auto;
+              opacity: 0;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 16px
+            "
+            width="8"
+          >
+            <use href="#icon-tick-16"/>
+          </svg>
+        </div>
+        <div style="
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
+          justify-content: space-between;
+          margin-bottom: 1px;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
+          width: 100%
+        ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
+          <span style="
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-wrap-mode: nowrap
           ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span style="
-              flex-grow: 1;
-              flex-shrink: 0;
-              text-wrap-mode: nowrap
-            ">
-              Blue
-            </span>
-            <svg
-              height="8"
-              style="
-                align-self: center;
-                display: inline-block;
-                fill: currentcolor;
-                height: 16px;
-                margin-inline-start: var(--spacing-100);
-                margin-left: auto;
-                margin-right: auto;
-                opacity: 0;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 16px
-              "
-              width="8"
-            >
-              <use href="#icon-tick-16"/>
-            </svg>
-          </div>
-          <div style="
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            margin-bottom: 1px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
+            Yellow
+          </span>
+          <svg
+            height="8"
+            style="
+              align-self: center;
+              display: inline-block;
+              fill: currentcolor;
+              height: 16px;
+              margin-inline-start: var(--spacing-100);
+              margin-left: auto;
+              margin-right: auto;
+              opacity: 0;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 16px
+            "
+            width="8"
+          >
+            <use href="#icon-tick-16"/>
+          </svg>
+        </div>
+        <div style="
+          border-bottom-left-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
+          border-bottom-right-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
+          border-bottom-style: solid;
+          border-bottom-width: 1px;
+          border-left-style: solid;
+          border-left-width: 1px;
+          border-right-style: solid;
+          border-right-width: 1px;
+          border-top-style: solid;
+          border-top-width: 1px;
+          box-sizing: border-box;
+          color: var(--color-foreground-primary);
+          cursor: default;
+          display: inline-grid;
+          font-family: inherit;
+          grid-template-columns: auto auto;
+          justify-content: space-between;
+          overflow-x: hidden;
+          overflow-y: hidden;
+          padding-bottom: 8px;
+          padding-left: 15px;
+          padding-right: 15px;
+          padding-top: 8px;
+          position: relative;
+          width: 100%
+        ">
+          <style>@scope{:scope{
+            &::after {
+              background-color: var(--color-state-layer-neutral);
+              bottom: 0px;
+              content: "";
+              left: 0px;
+              pointer-events: none;
+              position: absolute;
+              right: 0px;
+              top: 0px
+            }
+          }}</style>
+          <span style="
+            flex-grow: 1;
+            flex-shrink: 0;
+            text-wrap-mode: nowrap
           ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span style="
-              flex-grow: 1;
-              flex-shrink: 0;
-              text-wrap-mode: nowrap
-            ">
-              Yellow
-            </span>
-            <svg
-              height="8"
-              style="
-                align-self: center;
-                display: inline-block;
-                fill: currentcolor;
-                height: 16px;
-                margin-inline-start: var(--spacing-100);
-                margin-left: auto;
-                margin-right: auto;
-                opacity: 0;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 16px
-              "
-              width="8"
-            >
-              <use href="#icon-tick-16"/>
-            </svg>
-          </div>
-          <div style="
-            border-bottom-left-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
-            border-bottom-right-radius: var(--listbox-button-listbox-border-radius, var(--border-radius-50));
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            box-sizing: border-box;
-            color: var(--color-foreground-primary);
-            cursor: default;
-            display: inline-grid;
-            font-family: inherit;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 8px;
-            position: relative;
-            width: 100%
-          ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <span style="
-              flex-grow: 1;
-              flex-shrink: 0;
-              text-wrap-mode: nowrap
-            ">
-              Green
-            </span>
-            <svg
-              height="8"
-              style="
-                align-self: center;
-                display: inline-block;
-                fill: currentcolor;
-                height: 16px;
-                margin-inline-start: var(--spacing-100);
-                margin-left: auto;
-                margin-right: auto;
-                opacity: 0;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                vertical-align: middle;
-                width: 16px
-              "
-              width="8"
-            >
-              <use href="#icon-tick-16"/>
-            </svg>
-          </div>
+            Green
+          </span>
+          <svg
+            height="8"
+            style="
+              align-self: center;
+              display: inline-block;
+              fill: currentcolor;
+              height: 16px;
+              margin-inline-start: var(--spacing-100);
+              margin-left: auto;
+              margin-right: auto;
+              opacity: 0;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              vertical-align: middle;
+              width: 16px
+            "
+            width="8"
+          >
+            <use href="#icon-tick-16"/>
+          </svg>
         </div>
       </div>
-    </span>
-  </div>
+    </div>
+  </span>
 </body>

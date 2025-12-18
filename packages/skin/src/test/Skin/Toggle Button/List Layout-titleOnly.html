@@ -11,44 +11,42 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <button style="
-      background-color: var(--color-background-primary);
-      border: 1px solid var(--color-border-medium);
-      box-shadow: transparent 0px 0px 0px 1px;
-      color: var(--color-foreground-primary);
-      display: inline-flex;
-      font-family: inherit;
-      font-size: var(--font-size-body);
-      justify-content: left;
-      margin-right: var(--spacing-100);
-      margin-top: auto;
-      max-width: var(--toggle-button-list-width-max);
-      min-height: var(--toggle-button-height-min);
-      min-width: var(--toggle-button-list-width-min);
-      padding: 0 var(--spacing-200);
-      vertical-align: top
+  <button style="
+    background-color: var(--color-background-primary);
+    border: 1px solid var(--color-border-medium);
+    box-shadow: transparent 0px 0px 0px 1px;
+    color: var(--color-foreground-primary);
+    display: inline-flex;
+    font-family: inherit;
+    font-size: var(--font-size-body);
+    justify-content: left;
+    margin-right: var(--spacing-100);
+    margin-top: auto;
+    max-width: var(--toggle-button-list-width-max);
+    min-height: var(--toggle-button-height-min);
+    min-width: var(--toggle-button-list-width-min);
+    padding: 0 var(--spacing-200);
+    vertical-align: top
+  ">
+    <span style="
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      pointer-events: none;
+      text-align: left
     ">
       <span style="
-        align-self: center;
-        display: flex;
-        flex-direction: column;
+        font-size: var(--font-size-medium);
+        font-weight: 700;
+        line-height: var(--font-size-large-2);
+        margin-bottom: auto;
+        margin-top: auto;
         pointer-events: none;
-        text-align: left
+        text-align: center;
+        width: 100%
       ">
-        <span style="
-          font-size: var(--font-size-medium);
-          font-weight: 700;
-          line-height: var(--font-size-large-2);
-          margin-bottom: auto;
-          margin-top: auto;
-          pointer-events: none;
-          text-align: center;
-          width: 100%
-        ">
-          Simple Text Button
-        </span>
+        Simple Text Button
       </span>
-    </button>
-  </div>
+    </span>
+  </button>
 </body>

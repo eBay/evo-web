@@ -11,183 +11,181 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <span style="
+  <span style="
+    align-items: center;
+    background-color: var(--textbox-background-color, var(--color-background-secondary));
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: var(--textbox-foreground-color, var(--color-foreground-primary));
+    display: inline-flex;
+    font-size: var(--font-size-body);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    width: 100%
+  ">
+    <label style="
+      flex-grow: 1;
+      padding-left: var(--spacing-200)
+    ">
+      Add a number
+    </label>
+    <button style="
       align-items: center;
-      background-color: var(--textbox-background-color, var(--color-background-secondary));
+      border-bottom-color: transparent;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
       border-bottom-style: solid;
-      border-bottom-width: 1px;
+      border-left-color: transparent;
       border-left-style: solid;
-      border-left-width: 1px;
+      border-right-color: transparent;
       border-right-style: solid;
-      border-right-width: 1px;
+      border-top-color: transparent;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
       border-top-style: solid;
-      border-top-width: 1px;
-      box-sizing: border-box;
-      color: var(--textbox-foreground-color, var(--color-foreground-primary));
       display: inline-flex;
-      font-size: var(--font-size-body);
+      font-family: inherit;
+      height: 40px;
+      justify-content: center;
       overflow-x: hidden;
       overflow-y: hidden;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 0px;
       position: relative;
-      width: 100%
+      transform: scale(1);
+      transition: transform var(--motion-duration-short-3) var(--motion-easing-standard);
+      vertical-align: text-bottom;
+      width: 40px
     ">
-      <label style="
-        flex-grow: 1;
-        padding-left: var(--spacing-200)
-      ">
-        Add a number
-      </label>
-      <button style="
-        align-items: center;
-        border-bottom-color: transparent;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        border-bottom-style: solid;
-        border-left-color: transparent;
-        border-left-style: solid;
-        border-right-color: transparent;
-        border-right-style: solid;
-        border-top-color: transparent;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-top-style: solid;
-        display: inline-flex;
-        font-family: inherit;
-        height: 40px;
-        justify-content: center;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-bottom: 0px;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-top: 0px;
-        position: relative;
-        transform: scale(1);
-        transition: transform var(--motion-duration-short-3) var(--motion-easing-standard);
-        vertical-align: text-bottom;
-        width: 40px
-      ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-            bottom: 0px;
-            content: "";
-            left: 0px;
-            pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
-        <svg
-          height="24"
-          style="
-            color: var(--textbox-icon-color, var(--color-foreground-secondary));
-            display: inline-flex;
-            fill: var(--textbox-icon-color, var(--color-foreground-secondary));
-            height: 1lh;
-            max-width: 100%;
-            pointer-events: none;
-            position: relative;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 24px
-          "
-          width="24"
-        >
-          <use href="#icon-remove-24"/>
-        </svg>
-      </button>
-      <input
-        min="0"
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+          border-top-left-radius: 50px;
+          border-top-right-radius: 50px;
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <svg
+        height="24"
         style="
-          appearance: none;
-          color: inherit;
-          font-family: inherit;
-          font-size: 1em;
-          height: calc(var(--input-default-height) - 2px);
-          margin-bottom: 0px;
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-top: 0px;
+          color: var(--textbox-icon-color, var(--color-foreground-secondary));
+          display: inline-flex;
+          fill: var(--textbox-icon-color, var(--color-foreground-secondary));
+          height: 1lh;
+          max-width: 100%;
+          pointer-events: none;
+          position: relative;
+          stroke-width: 0;
+          stroke: currentcolor;
           vertical-align: middle;
-          width: 100%
+          width: 24px
         "
-        type="number"
-      />
-      <button style="
-        align-items: center;
-        border-bottom-color: transparent;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-        border-bottom-style: solid;
-        border-left-color: transparent;
-        border-left-style: solid;
-        border-right-color: transparent;
-        border-right-style: solid;
-        border-top-color: transparent;
-        border-top-left-radius: 50px;
-        border-top-right-radius: 50px;
-        border-top-style: solid;
-        display: inline-flex;
+        width="24"
+      >
+        <use href="#icon-remove-24"/>
+      </svg>
+    </button>
+    <input
+      min="0"
+      style="
+        appearance: none;
+        color: inherit;
         font-family: inherit;
-        height: 40px;
-        justify-content: center;
-        margin-inline-start: calc(var(--spacing-100)*-1);
-        overflow-x: hidden;
-        overflow-y: hidden;
-        padding-bottom: 0px;
-        padding-left: 0px;
-        padding-right: 0px;
-        padding-top: 0px;
-        position: relative;
-        transform: scale(1);
-        transition: transform var(--motion-duration-short-3) var(--motion-easing-standard);
-        vertical-align: text-bottom;
-        width: 40px
-      ">
-        <style>@scope{:scope{
-          &::after {
-            background-color: var(--color-state-layer-neutral);
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
-            bottom: 0px;
-            content: "";
-            left: 0px;
-            pointer-events: none;
-            position: absolute;
-            right: 0px;
-            top: 0px
-          }
-        }}</style>
-        <svg
-          height="24"
-          style="
-            color: var(--textbox-icon-color, var(--color-foreground-secondary));
-            display: inline-flex;
-            fill: var(--textbox-icon-color, var(--color-foreground-secondary));
-            height: 1lh;
-            max-width: 100%;
-            pointer-events: none;
-            position: relative;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 24px
-          "
-          width="24"
-        >
-          <use href="#icon-add-24"/>
-        </svg>
-      </button>
-    </span>
-  </div>
+        font-size: 1em;
+        height: calc(var(--input-default-height) - 2px);
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        vertical-align: middle;
+        width: 100%
+      "
+      type="number"
+    />
+    <button style="
+      align-items: center;
+      border-bottom-color: transparent;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-bottom-style: solid;
+      border-left-color: transparent;
+      border-left-style: solid;
+      border-right-color: transparent;
+      border-right-style: solid;
+      border-top-color: transparent;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      border-top-style: solid;
+      display: inline-flex;
+      font-family: inherit;
+      height: 40px;
+      justify-content: center;
+      margin-inline-start: calc(var(--spacing-100)*-1);
+      overflow-x: hidden;
+      overflow-y: hidden;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 0px;
+      position: relative;
+      transform: scale(1);
+      transition: transform var(--motion-duration-short-3) var(--motion-easing-standard);
+      vertical-align: text-bottom;
+      width: 40px
+    ">
+      <style>@scope{:scope{
+        &::after {
+          background-color: var(--color-state-layer-neutral);
+          border-bottom-left-radius: 50px;
+          border-bottom-right-radius: 50px;
+          border-top-left-radius: 50px;
+          border-top-right-radius: 50px;
+          bottom: 0px;
+          content: "";
+          left: 0px;
+          pointer-events: none;
+          position: absolute;
+          right: 0px;
+          top: 0px
+        }
+      }}</style>
+      <svg
+        height="24"
+        style="
+          color: var(--textbox-icon-color, var(--color-foreground-secondary));
+          display: inline-flex;
+          fill: var(--textbox-icon-color, var(--color-foreground-secondary));
+          height: 1lh;
+          max-width: 100%;
+          pointer-events: none;
+          position: relative;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 24px
+        "
+        width="24"
+      >
+        <use href="#icon-add-24"/>
+      </svg>
+    </button>
+  </span>
 </body>

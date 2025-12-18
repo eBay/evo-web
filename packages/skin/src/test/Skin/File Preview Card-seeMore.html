@@ -11,78 +11,77 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
+  <div style="
+    display: flex;
+    flex-direction: column
+  ">
     <div style="
+      aspect-ratio: 1 / 1;
+      background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
       display: flex;
-      flex-direction: column
+      max-width: 396px;
+      min-height: 120px;
+      min-width: 120px;
+      position: relative
     ">
-      <div style="
+      <img
+        height=396
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+        style="
+          align-self: center;
+          background-color: inherit;
+          height: 100%;
+          margin-bottom: auto;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: auto;
+          object-fit: contain;
+          opacity: 0.5;
+          width: 100%
+        "
+        width=396
+      />
+      <button style="
         aspect-ratio: 1 / 1;
-        background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
-        display: flex;
-        max-width: 396px;
-        min-height: 120px;
-        min-width: 120px;
-        position: relative
+        background-color: var(--color-background-inverse);
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-style: none;
+        border-left-style: none;
+        border-right-style: none;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-top-style: none;
+        color: var(--color-foreground-on-strong);
+        font-family: inherit;
+        font-size: var(--font-size-body);
+        font-weight: 700;
+        left: 50%;
+        line-height: var(--spacing-250);
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding: var(--spacing-100);
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1
       ">
-        <img
-          height=396
-          style="
-            align-self: center;
-            background-color: inherit;
-            height: 100%;
-            margin-bottom: auto;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: auto;
-            object-fit: contain;
-            opacity: 0.5;
-            width: 100%
-          "
-          width=396
-        />
-        <button style="
-          aspect-ratio: 1 / 1;
-          background-color: var(--color-background-inverse);
-          border-bottom-left-radius: 50%;
-          border-bottom-right-radius: 50%;
-          border-bottom-style: none;
-          border-left-style: none;
-          border-right-style: none;
-          border-top-left-radius: 50%;
-          border-top-right-radius: 50%;
-          border-top-style: none;
-          color: var(--color-foreground-on-strong);
-          font-family: inherit;
-          font-size: var(--font-size-body);
-          font-weight: 700;
-          left: 50%;
-          line-height: var(--spacing-250);
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding: var(--spacing-100);
-          position: absolute;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1
-        ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
-          <span>
-            +15
-          </span>
-        </button>
-      </div>
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span>
+          +15
+        </span>
+      </button>
     </div>
   </div>
 </body>

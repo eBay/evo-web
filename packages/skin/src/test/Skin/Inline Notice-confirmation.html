@@ -11,40 +11,38 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <div style="
+  <div style="
+    display: flex;
+    margin: var(--spacing-100) 0
+  ">
+    <span style="
       display: flex;
-      margin: var(--spacing-100) 0
+      margin-inline-end: var(--spacing-100);
+      margin-top: var(--spacing-50)
     ">
-      <span style="
-        display: flex;
-        margin-inline-end: var(--spacing-100);
-        margin-top: var(--spacing-50)
+      <svg
+        role="img"
+        style="
+          display: inline-block;
+          fill: currentcolor;
+          height: 16px;
+          pointer-events: none;
+          stroke-width: 0;
+          stroke: currentcolor;
+          vertical-align: middle;
+          width: 16px
+        "
+      >
+        <use href="#icon-confirmation-filled-16"/>
+      </svg>
+    </span>
+    <span>
+      <p style="
+        margin-bottom: 3px;
+        margin-top: 3px
       ">
-        <svg
-          role="img"
-          style="
-            display: inline-block;
-            fill: currentcolor;
-            height: 16px;
-            pointer-events: none;
-            stroke-width: 0;
-            stroke: currentcolor;
-            vertical-align: middle;
-            width: 16px
-          "
-        >
-          <use href="#icon-confirmation-filled-16"/>
-        </svg>
-      </span>
-      <span>
-        <p style="
-          margin-bottom: 3px;
-          margin-top: 3px
-        ">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-      </span>
-    </div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </span>
   </div>
 </body>

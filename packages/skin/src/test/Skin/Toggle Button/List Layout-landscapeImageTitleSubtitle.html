@@ -11,76 +11,74 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <button style="
-      background-color: var(--color-background-primary);
-      border: 1px solid var(--color-border-medium);
-      box-shadow: transparent 0px 0px 0px 1px;
-      color: var(--color-foreground-primary);
-      display: inline-flex;
-      font-family: inherit;
-      font-size: var(--font-size-body);
-      justify-content: left;
-      margin-right: var(--spacing-100);
-      margin-top: auto;
-      max-width: var(--toggle-button-list-width-max);
-      min-height: var(--toggle-button-height-min);
-      min-width: var(--toggle-button-list-width-min);
-      padding: 0 var(--spacing-200);
-      vertical-align: top
+  <button style="
+    background-color: var(--color-background-primary);
+    border: 1px solid var(--color-border-medium);
+    box-shadow: transparent 0px 0px 0px 1px;
+    color: var(--color-foreground-primary);
+    display: inline-flex;
+    font-family: inherit;
+    font-size: var(--font-size-body);
+    justify-content: left;
+    margin-right: var(--spacing-100);
+    margin-top: auto;
+    max-width: var(--toggle-button-list-width-max);
+    min-height: var(--toggle-button-height-min);
+    min-width: var(--toggle-button-list-width-min);
+    padding: 0 var(--spacing-200);
+    vertical-align: top
+  ">
+    <span style="
+      align-self: self-start;
+      margin-bottom: var(--spacing-200);
+      margin-right: var(--spacing-200);
+      margin-top: var(--spacing-200);
+      pointer-events: none
     ">
       <span style="
-        align-self: self-start;
-        margin-bottom: var(--spacing-200);
-        margin-right: var(--spacing-200);
+        display: inline-block;
+        height: 56px;
+        pointer-events: none;
+        width: 56px
+      ">
+        <img
+          height=56
+          src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg"
+          style="
+            height: 100%;
+            max-height: 56px;
+            max-width: 56px;
+            pointer-events: none
+          "
+          width=56
+        />
+      </span>
+    </span>
+    <span style="
+      align-self: self-start;
+      display: flex;
+      flex-direction: column;
+      pointer-events: none;
+      text-align: left
+    ">
+      <span style="
+        font-size: var(--font-size-medium);
+        font-weight: 700;
+        line-height: var(--font-size-large-2);
+        margin-bottom: var(--spacing-50);
         margin-top: var(--spacing-200);
         pointer-events: none
       ">
-        <span style="
-          display: inline-block;
-          height: 56px;
-          pointer-events: none;
-          width: 56px
-        ">
-          <img
-            height=56
-            src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg"
-            style="
-              height: 100%;
-              max-height: 56px;
-              max-width: 56px;
-              pointer-events: none
-            "
-            width=56
-          />
-        </span>
+        Image Button Title
       </span>
       <span style="
-        align-self: self-start;
-        display: flex;
-        flex-direction: column;
-        pointer-events: none;
-        text-align: left
+        color: var(--color-foreground-secondary);
+        line-height: var(--font-size-large-1);
+        margin-bottom: var(--spacing-200);
+        pointer-events: none
       ">
-        <span style="
-          font-size: var(--font-size-medium);
-          font-weight: 700;
-          line-height: var(--font-size-large-2);
-          margin-bottom: var(--spacing-50);
-          margin-top: var(--spacing-200);
-          pointer-events: none
-        ">
-          Image Button Title
-        </span>
-        <span style="
-          color: var(--color-foreground-secondary);
-          line-height: var(--font-size-large-1);
-          margin-bottom: var(--spacing-200);
-          pointer-events: none
-        ">
-          Image Button Subtitle
-        </span>
+        Image Button Subtitle
       </span>
-    </button>
-  </div>
+    </span>
+  </button>
 </body>

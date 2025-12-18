@@ -11,22 +11,79 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <div dir="rtl">
-      <span style="display: inline-flex">
+  <div dir="rtl">
+    <span style="display: inline-flex">
+      <button style="
+        align-content: center;
+        align-items: center;
+        background-color: var(--color-background-accent);
+        border-bottom-right-radius: 24px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom: 1px solid;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-right-radius: 24px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top: 1px solid;
+        color: var(--color-foreground-on-accent);
+        font-family: inherit;
+        font-size: var(--font-size-body);
+        font-weight: 700;
+        min-height: 40px;
+        min-width: 88px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0px;
+        position: relative;
+        transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
+        vertical-align: bottom
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          width: 100%
+        ">
+          <span>
+            Button
+          </span>
+        </span>
+      </button>
+      <span style="position: relative">
         <button style="
           align-content: center;
           align-items: center;
           background-color: var(--color-background-accent);
-          border-bottom-right-radius: 24px;
+          border-bottom-left-radius: 24px;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
+          border-left-color: var(--btn-primary-border-color, var(--color-border-accent));
           border-left-style: solid;
           border-left-width: 1px;
+          border-right-color: var(--primary-border-split-color, var(--color-border-subtle));
           border-right-style: solid;
           border-right-width: 1px;
-          border-top-right-radius: 24px;
+          border-top-left-radius: 24px;
           border-top-style: solid;
           border-top-width: 1px;
           border-top: 1px solid;
@@ -34,13 +91,15 @@
           font-family: inherit;
           font-size: var(--font-size-body);
           font-weight: 700;
+          margin-left: inherit;
+          margin-right: -1px;
           min-height: 40px;
-          min-width: 88px;
+          min-width: 40px;
           overflow-x: hidden;
           overflow-y: hidden;
           padding-bottom: 0px;
-          padding-left: 20px;
-          padding-right: 20px;
+          padding-left: 8px;
+          padding-right: 8px;
           padding-top: 0px;
           position: relative;
           transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
@@ -58,247 +117,186 @@
               top: 0px
             }
           }}</style>
-          <span style="
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            width: 100%
-          ">
-            <span>
-              Button
-            </span>
-          </span>
+          <svg
+            height="10"
+            style="
+              align-self: center;
+              display: inline-block;
+              fill: currentcolor;
+              height: 12px;
+              margin-inline-end: 8px;
+              margin-inline-start: 8px;
+              pointer-events: none;
+              stroke-width: 0;
+              stroke: currentcolor;
+              transform: rotate(180deg);
+              vertical-align: middle;
+              width: 12px
+            "
+            width="14"
+          >
+            <use href="#icon-chevron-down-12"/>
+          </svg>
         </button>
-        <span style="position: relative">
-          <button style="
-            align-content: center;
-            align-items: center;
-            background-color: var(--color-background-accent);
-            border-bottom-left-radius: 24px;
-            border-bottom-style: solid;
-            border-bottom-width: 1px;
-            border-bottom: 1px solid;
-            border-left-color: var(--btn-primary-border-color, var(--color-border-accent));
-            border-left-style: solid;
-            border-left-width: 1px;
-            border-right-color: var(--primary-border-split-color, var(--color-border-subtle));
-            border-right-style: solid;
-            border-right-width: 1px;
-            border-top-left-radius: 24px;
-            border-top-style: solid;
-            border-top-width: 1px;
-            border-top: 1px solid;
-            color: var(--color-foreground-on-accent);
-            font-family: inherit;
-            font-size: var(--font-size-body);
-            font-weight: 700;
-            margin-left: inherit;
-            margin-right: -1px;
-            min-height: 40px;
-            min-width: 40px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            padding-bottom: 0px;
-            padding-left: 8px;
-            padding-right: 8px;
-            padding-top: 0px;
-            position: relative;
-            transition: all var(--motion-duration-short-3) var(--motion-easing-quick-enter);
-            vertical-align: bottom
-          ">
-            <style>@scope{:scope{
-              &::after {
-                background-color: var(--color-state-layer-neutral);
-                bottom: 0px;
-                content: "";
-                left: 0px;
-                pointer-events: none;
-                position: absolute;
-                right: 0px;
-                top: 0px
-              }
-            }}</style>
-            <svg
-              height="10"
-              style="
-                align-self: center;
-                display: inline-block;
-                fill: currentcolor;
-                height: 12px;
-                margin-inline-end: 8px;
-                margin-inline-start: 8px;
-                pointer-events: none;
-                stroke-width: 0;
-                stroke: currentcolor;
-                transform: rotate(180deg);
-                vertical-align: middle;
-                width: 12px
-              "
-              width="14"
-            >
-              <use href="#icon-chevron-down-12"/>
-            </svg>
-          </button>
-          <div style="
-            background-color: var(--color-background-elevated);
-            box-shadow: var(--bubble-shadow);
-            box-sizing: border-box;
-            left: 0px;
-            max-height: 400px;
-            min-width: 100%;
-            overflow-y: auto;
-            position: absolute;
-            right: unset;
-            top: calc(100% + 4px);
-            width: auto;
-            z-index: 2
-          ">
-            <div>
-              <div style="
-                border-bottom-style: solid;
-                border-bottom-width: 1px;
-                border-left-style: solid;
-                border-left-width: 1px;
-                border-right-style: solid;
-                border-right-width: 1px;
-                border-top-left-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
-                border-top-right-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
-                border-top-style: solid;
-                border-top-width: 1px;
-                box-sizing: border-box;
-                color: var(--menu-button-menuitem-foreground-color, var(--color-foreground-primary));
-                cursor: default;
-                display: inline-grid;
-                font-family: inherit;
-                grid-template-columns: auto auto;
-                justify-content: space-between;
-                margin-bottom: 1px;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                padding-bottom: 8px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-top: 8px;
-                position: relative;
-                width: 100%
+        <div style="
+          background-color: var(--color-background-elevated);
+          box-shadow: var(--bubble-shadow);
+          box-sizing: border-box;
+          left: 0px;
+          max-height: 400px;
+          min-width: 100%;
+          overflow-y: auto;
+          position: absolute;
+          right: unset;
+          top: calc(100% + 4px);
+          width: auto;
+          z-index: 2
+        ">
+          <div>
+            <div style="
+              border-bottom-style: solid;
+              border-bottom-width: 1px;
+              border-left-style: solid;
+              border-left-width: 1px;
+              border-right-style: solid;
+              border-right-width: 1px;
+              border-top-left-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
+              border-top-right-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
+              border-top-style: solid;
+              border-top-width: 1px;
+              box-sizing: border-box;
+              color: var(--menu-button-menuitem-foreground-color, var(--color-foreground-primary));
+              cursor: default;
+              display: inline-grid;
+              font-family: inherit;
+              grid-template-columns: auto auto;
+              justify-content: space-between;
+              margin-bottom: 1px;
+              overflow-x: hidden;
+              overflow-y: hidden;
+              padding-bottom: 8px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-top: 8px;
+              position: relative;
+              width: 100%
+            ">
+              <style>@scope{:scope{
+                &::after {
+                  background-color: var(--color-state-layer-neutral);
+                  bottom: 0px;
+                  content: "";
+                  left: 0px;
+                  pointer-events: none;
+                  position: absolute;
+                  right: 0px;
+                  top: 0px
+                }
+              }}</style>
+              <span style="
+                flex-grow: 1;
+                flex-shrink: 0;
+                text-wrap-mode: nowrap
               ">
-                <style>@scope{:scope{
-                  &::after {
-                    background-color: var(--color-state-layer-neutral);
-                    bottom: 0px;
-                    content: "";
-                    left: 0px;
-                    pointer-events: none;
-                    position: absolute;
-                    right: 0px;
-                    top: 0px
-                  }
-                }}</style>
-                <span style="
-                  flex-grow: 1;
-                  flex-shrink: 0;
-                  text-wrap-mode: nowrap
-                ">
-                  Item 10000
-                </span>
-              </div>
-              <div style="
-                border-bottom-style: solid;
-                border-bottom-width: 1px;
-                border-left-style: solid;
-                border-left-width: 1px;
-                border-right-style: solid;
-                border-right-width: 1px;
-                border-top-style: solid;
-                border-top-width: 1px;
-                box-sizing: border-box;
-                color: var(--menu-button-menuitem-foreground-color, var(--color-foreground-primary));
-                cursor: default;
-                display: inline-grid;
-                font-family: inherit;
-                grid-template-columns: auto auto;
-                justify-content: space-between;
-                margin-bottom: 1px;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                padding-bottom: 8px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-top: 8px;
-                position: relative;
-                width: 100%
+                Item 10000
+              </span>
+            </div>
+            <div style="
+              border-bottom-style: solid;
+              border-bottom-width: 1px;
+              border-left-style: solid;
+              border-left-width: 1px;
+              border-right-style: solid;
+              border-right-width: 1px;
+              border-top-style: solid;
+              border-top-width: 1px;
+              box-sizing: border-box;
+              color: var(--menu-button-menuitem-foreground-color, var(--color-foreground-primary));
+              cursor: default;
+              display: inline-grid;
+              font-family: inherit;
+              grid-template-columns: auto auto;
+              justify-content: space-between;
+              margin-bottom: 1px;
+              overflow-x: hidden;
+              overflow-y: hidden;
+              padding-bottom: 8px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-top: 8px;
+              position: relative;
+              width: 100%
+            ">
+              <style>@scope{:scope{
+                &::after {
+                  background-color: var(--color-state-layer-neutral);
+                  bottom: 0px;
+                  content: "";
+                  left: 0px;
+                  pointer-events: none;
+                  position: absolute;
+                  right: 0px;
+                  top: 0px
+                }
+              }}</style>
+              <span style="
+                flex-grow: 1;
+                flex-shrink: 0;
+                text-wrap-mode: nowrap
               ">
-                <style>@scope{:scope{
-                  &::after {
-                    background-color: var(--color-state-layer-neutral);
-                    bottom: 0px;
-                    content: "";
-                    left: 0px;
-                    pointer-events: none;
-                    position: absolute;
-                    right: 0px;
-                    top: 0px
-                  }
-                }}</style>
-                <span style="
-                  flex-grow: 1;
-                  flex-shrink: 0;
-                  text-wrap-mode: nowrap
-                ">
-                  Item 20000
-                </span>
-              </div>
-              <div style="
-                border-bottom-left-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
-                border-bottom-right-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
-                border-bottom-style: solid;
-                border-bottom-width: 1px;
-                border-left-style: solid;
-                border-left-width: 1px;
-                border-right-style: solid;
-                border-right-width: 1px;
-                border-top-style: solid;
-                border-top-width: 1px;
-                box-sizing: border-box;
-                color: var(--menu-button-menuitem-foreground-color, var(--color-foreground-primary));
-                cursor: default;
-                display: inline-grid;
-                font-family: inherit;
-                grid-template-columns: auto auto;
-                justify-content: space-between;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                padding-bottom: 8px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-top: 8px;
-                position: relative;
-                width: 100%
+                Item 20000
+              </span>
+            </div>
+            <div style="
+              border-bottom-left-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
+              border-bottom-right-radius: var(--menu-button-menu-border-radius, var(--border-radius-50));
+              border-bottom-style: solid;
+              border-bottom-width: 1px;
+              border-left-style: solid;
+              border-left-width: 1px;
+              border-right-style: solid;
+              border-right-width: 1px;
+              border-top-style: solid;
+              border-top-width: 1px;
+              box-sizing: border-box;
+              color: var(--menu-button-menuitem-foreground-color, var(--color-foreground-primary));
+              cursor: default;
+              display: inline-grid;
+              font-family: inherit;
+              grid-template-columns: auto auto;
+              justify-content: space-between;
+              overflow-x: hidden;
+              overflow-y: hidden;
+              padding-bottom: 8px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-top: 8px;
+              position: relative;
+              width: 100%
+            ">
+              <style>@scope{:scope{
+                &::after {
+                  background-color: var(--color-state-layer-neutral);
+                  bottom: 0px;
+                  content: "";
+                  left: 0px;
+                  pointer-events: none;
+                  position: absolute;
+                  right: 0px;
+                  top: 0px
+                }
+              }}</style>
+              <span style="
+                flex-grow: 1;
+                flex-shrink: 0;
+                text-wrap-mode: nowrap
               ">
-                <style>@scope{:scope{
-                  &::after {
-                    background-color: var(--color-state-layer-neutral);
-                    bottom: 0px;
-                    content: "";
-                    left: 0px;
-                    pointer-events: none;
-                    position: absolute;
-                    right: 0px;
-                    top: 0px
-                  }
-                }}</style>
-                <span style="
-                  flex-grow: 1;
-                  flex-shrink: 0;
-                  text-wrap-mode: nowrap
-                ">
-                  Item 30000
-                </span>
-              </div>
+                Item 30000
+              </span>
             </div>
           </div>
-        </span>
+        </div>
       </span>
-    </div>
+    </span>
   </div>
 </body>

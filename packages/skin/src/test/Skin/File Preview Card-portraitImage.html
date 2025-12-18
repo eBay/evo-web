@@ -11,103 +11,101 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
+  <div style="
+    display: flex;
+    flex-direction: column
+  ">
     <div style="
+      aspect-ratio: 1 / 1;
+      background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
       display: flex;
-      flex-direction: column
+      max-width: 396px;
+      min-height: 120px;
+      min-width: 120px;
+      position: relative
     ">
-      <div style="
-        aspect-ratio: 1 / 1;
-        background-color: var(--file-preview-card-background-color, var(--color-background-secondary));
-        display: flex;
-        max-width: 396px;
-        min-height: 120px;
-        min-width: 120px;
-        position: relative
+      <img
+        height=396
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg"
+        style="
+          align-self: center;
+          height: 100%;
+          margin-bottom: auto;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: auto;
+          object-fit: contain;
+          width: 100%
+        "
+        width=396
+      />
+      <button style="
+        align-items: center;
+        background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
+        border-bottom-color: transparent;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border-bottom-style: solid;
+        border-left-color: transparent;
+        border-left-style: solid;
+        border-right-color: transparent;
+        border-right-style: solid;
+        border-top-color: transparent;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-top-style: solid;
+        display: inline-flex;
+        font-family: inherit;
+        height: var(--spacing-400);
+        justify-content: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        position: absolute;
+        right: var(--spacing-100);
+        top: var(--spacing-100);
+        vertical-align: text-bottom;
+        width: var(--spacing-400);
+        z-index: 1
       ">
-        <img
-          height=396
-          src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-profile-pic.jpg"
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <svg
+          height="16"
           style="
-            align-self: center;
-            height: 100%;
-            margin-bottom: auto;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: auto;
-            object-fit: contain;
-            width: 100%
+            display: inline-block;
+            fill: var(--color-foreground-primary);
+            height: 16px;
+            max-width: 75%;
+            pointer-events: none;
+            position: relative;
+            stroke-width: 0;
+            stroke: currentcolor;
+            vertical-align: middle;
+            width: 16px
           "
-          width=396
-        />
-        <button style="
-          align-items: center;
-          background-color: var(--file-preview-card-action-background-color, var(--color-background-primary));
-          border-bottom-color: transparent;
-          border-bottom-left-radius: 50px;
-          border-bottom-right-radius: 50px;
-          border-bottom-style: solid;
-          border-left-color: transparent;
-          border-left-style: solid;
-          border-right-color: transparent;
-          border-right-style: solid;
-          border-top-color: transparent;
-          border-top-left-radius: 50px;
-          border-top-right-radius: 50px;
-          border-top-style: solid;
-          display: inline-flex;
-          font-family: inherit;
-          height: var(--spacing-400);
-          justify-content: center;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 0px;
-          padding-left: 0px;
-          padding-right: 0px;
-          padding-top: 0px;
-          position: absolute;
-          right: var(--spacing-100);
-          top: var(--spacing-100);
-          vertical-align: text-bottom;
-          width: var(--spacing-400);
-          z-index: 1
-        ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              border-bottom-left-radius: 50px;
-              border-bottom-right-radius: 50px;
-              border-top-left-radius: 50px;
-              border-top-right-radius: 50px;
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
-          <svg
-            height="16"
-            style="
-              display: inline-block;
-              fill: var(--color-foreground-primary);
-              height: 16px;
-              max-width: 75%;
-              pointer-events: none;
-              position: relative;
-              stroke-width: 0;
-              stroke: currentcolor;
-              vertical-align: middle;
-              width: 16px
-            "
-            width="16"
-          >
-            <use href="#icon-overflow-vertical-16"/>
-          </svg>
-        </button>
-      </div>
+          width="16"
+        >
+          <use href="#icon-overflow-vertical-16"/>
+        </svg>
+      </button>
     </div>
   </div>
 </body>

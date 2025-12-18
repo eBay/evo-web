@@ -11,232 +11,230 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
+  <span style="
+    display: inline-block;
+    vertical-align: bottom
+  ">
     <span style="
-      display: inline-block;
-      vertical-align: bottom
+      background-color: var(--menu-background-color, var(--color-background-primary));
+      cursor: default;
+      display: inline-block
     ">
-      <span style="
-        background-color: var(--menu-background-color, var(--color-background-primary));
-        cursor: default;
-        display: inline-block
+      <div style="
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: var(--menu-menuitem-foreground-color, var(--color-foreground-primary));
+        display: inline-grid;
+        font-family: inherit;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        margin-bottom: 1px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 8px;
+        position: relative;
+        width: 100%
       ">
-        <div style="
-          border-bottom-style: solid;
-          border-bottom-width: 1px;
-          border-left-style: solid;
-          border-left-width: 1px;
-          border-right-style: solid;
-          border-right-width: 1px;
-          border-top-style: solid;
-          border-top-width: 1px;
-          box-sizing: border-box;
-          color: var(--menu-menuitem-foreground-color, var(--color-foreground-primary));
-          display: inline-grid;
-          font-family: inherit;
-          grid-template-columns: auto auto;
-          justify-content: space-between;
-          margin-bottom: 1px;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 8px;
-          padding-left: 15px;
-          padding-right: 15px;
-          padding-top: 8px;
-          position: relative;
-          width: 100%
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          flex-shrink: 0;
+          text-align: left;
+          text-wrap-mode: nowrap
         ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
+          Button 1
           <span style="
-            flex-shrink: 0;
-            text-align: left;
-            text-wrap-mode: nowrap
+            align-items: center;
+            background-color: var(--color-background-attention);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border: 2px solid var(--color-border-on-attention);
+            color: var(--color-foreground-on-attention);
+            display: inline-flex;
+            font-size: 10px;
+            height: 16px;
+            justify-content: center;
+            margin-left: var(--spacing-100);
+            margin-right: var(--spacing-100);
+            min-width: 8px;
+            padding-bottom: 1px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 1px;
+            position: absolute;
+            text-wrap-mode: nowrap;
+            top: 0px;
+            z-index: 1
           ">
-            Button 1
-            <span style="
-              align-items: center;
-              background-color: var(--color-background-attention);
-              border-bottom-left-radius: 16px;
-              border-bottom-right-radius: 16px;
-              border-top-left-radius: 16px;
-              border-top-right-radius: 16px;
-              border: 2px solid var(--color-border-on-attention);
-              color: var(--color-foreground-on-attention);
-              display: inline-flex;
-              font-size: 10px;
-              height: 16px;
-              justify-content: center;
-              margin-left: var(--spacing-100);
-              margin-right: var(--spacing-100);
-              min-width: 8px;
-              padding-bottom: 1px;
-              padding-left: 5px;
-              padding-right: 5px;
-              padding-top: 1px;
-              position: absolute;
-              text-wrap-mode: nowrap;
-              top: 0px;
-              z-index: 1
-            ">
-              1
-            </span>
+            1
           </span>
-        </div>
-        <div style="
-          border-bottom-style: solid;
-          border-bottom-width: 1px;
-          border-left-style: solid;
-          border-left-width: 1px;
-          border-right-style: solid;
-          border-right-width: 1px;
-          border-top-style: solid;
-          border-top-width: 1px;
-          box-sizing: border-box;
-          color: var(--menu-menuitem-foreground-color, var(--color-foreground-primary));
-          display: inline-grid;
-          font-family: inherit;
-          grid-template-columns: auto auto;
-          justify-content: space-between;
-          margin-bottom: 1px;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 8px;
-          padding-left: 15px;
-          padding-right: 15px;
-          padding-top: 8px;
-          position: relative;
-          width: 100%
+        </span>
+      </div>
+      <div style="
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: var(--menu-menuitem-foreground-color, var(--color-foreground-primary));
+        display: inline-grid;
+        font-family: inherit;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        margin-bottom: 1px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 8px;
+        position: relative;
+        width: 100%
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          flex-shrink: 0;
+          text-align: left;
+          text-wrap-mode: nowrap
         ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
+          Button 2
           <span style="
-            flex-shrink: 0;
-            text-align: left;
-            text-wrap-mode: nowrap
+            align-items: center;
+            background-color: var(--color-background-attention);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border: 2px solid var(--color-border-on-attention);
+            color: var(--color-foreground-on-attention);
+            display: inline-flex;
+            font-size: 10px;
+            height: 16px;
+            justify-content: center;
+            margin-left: var(--spacing-100);
+            margin-right: var(--spacing-100);
+            min-width: 8px;
+            padding-bottom: 1px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 1px;
+            position: absolute;
+            text-wrap-mode: nowrap;
+            top: 0px;
+            z-index: 1
           ">
-            Button 2
-            <span style="
-              align-items: center;
-              background-color: var(--color-background-attention);
-              border-bottom-left-radius: 16px;
-              border-bottom-right-radius: 16px;
-              border-top-left-radius: 16px;
-              border-top-right-radius: 16px;
-              border: 2px solid var(--color-border-on-attention);
-              color: var(--color-foreground-on-attention);
-              display: inline-flex;
-              font-size: 10px;
-              height: 16px;
-              justify-content: center;
-              margin-left: var(--spacing-100);
-              margin-right: var(--spacing-100);
-              min-width: 8px;
-              padding-bottom: 1px;
-              padding-left: 5px;
-              padding-right: 5px;
-              padding-top: 1px;
-              position: absolute;
-              text-wrap-mode: nowrap;
-              top: 0px;
-              z-index: 1
-            ">
-              10
-            </span>
+            10
           </span>
-        </div>
-        <div style="
-          border-bottom-style: solid;
-          border-bottom-width: 1px;
-          border-left-style: solid;
-          border-left-width: 1px;
-          border-right-style: solid;
-          border-right-width: 1px;
-          border-top-style: solid;
-          border-top-width: 1px;
-          box-sizing: border-box;
-          color: var(--menu-menuitem-foreground-color, var(--color-foreground-primary));
-          display: inline-grid;
-          font-family: inherit;
-          grid-template-columns: auto auto;
-          justify-content: space-between;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          padding-bottom: 8px;
-          padding-left: 15px;
-          padding-right: 15px;
-          padding-top: 8px;
-          position: relative;
-          width: 100%
+        </span>
+      </div>
+      <div style="
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: var(--menu-menuitem-foreground-color, var(--color-foreground-primary));
+        display: inline-grid;
+        font-family: inherit;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 8px;
+        position: relative;
+        width: 100%
+      ">
+        <style>@scope{:scope{
+          &::after {
+            background-color: var(--color-state-layer-neutral);
+            bottom: 0px;
+            content: "";
+            left: 0px;
+            pointer-events: none;
+            position: absolute;
+            right: 0px;
+            top: 0px
+          }
+        }}</style>
+        <span style="
+          flex-shrink: 0;
+          text-align: left;
+          text-wrap-mode: nowrap
         ">
-          <style>@scope{:scope{
-            &::after {
-              background-color: var(--color-state-layer-neutral);
-              bottom: 0px;
-              content: "";
-              left: 0px;
-              pointer-events: none;
-              position: absolute;
-              right: 0px;
-              top: 0px
-            }
-          }}</style>
+          Button 3
           <span style="
-            flex-shrink: 0;
-            text-align: left;
-            text-wrap-mode: nowrap
+            align-items: center;
+            background-color: var(--color-background-attention);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border: 2px solid var(--color-border-on-attention);
+            color: var(--color-foreground-on-attention);
+            display: inline-flex;
+            font-size: 10px;
+            height: 16px;
+            justify-content: center;
+            margin-left: var(--spacing-100);
+            margin-right: var(--spacing-100);
+            min-width: 8px;
+            padding-bottom: 1px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 1px;
+            position: absolute;
+            text-wrap-mode: nowrap;
+            top: 0px;
+            z-index: 1
           ">
-            Button 3
-            <span style="
-              align-items: center;
-              background-color: var(--color-background-attention);
-              border-bottom-left-radius: 16px;
-              border-bottom-right-radius: 16px;
-              border-top-left-radius: 16px;
-              border-top-right-radius: 16px;
-              border: 2px solid var(--color-border-on-attention);
-              color: var(--color-foreground-on-attention);
-              display: inline-flex;
-              font-size: 10px;
-              height: 16px;
-              justify-content: center;
-              margin-left: var(--spacing-100);
-              margin-right: var(--spacing-100);
-              min-width: 8px;
-              padding-bottom: 1px;
-              padding-left: 5px;
-              padding-right: 5px;
-              padding-top: 1px;
-              position: absolute;
-              text-wrap-mode: nowrap;
-              top: 0px;
-              z-index: 1
-            ">
-              99+
-            </span>
+            99+
           </span>
-        </div>
-      </span>
+        </span>
+      </div>
     </span>
-  </div>
+  </span>
 </body>

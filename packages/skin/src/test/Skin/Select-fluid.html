@@ -11,56 +11,54 @@
   min-height: 100vh;
   text-size-adjust: 100%
 ">
-  <div>
-    <div style="
-      color: var(--select-foreground-color, var(--color-foreground-primary));
-      font-size: var(--font-size-body);
-      position: relative;
+  <div style="
+    color: var(--select-foreground-color, var(--color-foreground-primary));
+    font-size: var(--font-size-body);
+    position: relative;
+    width: 100%
+  ">
+    <select style="
+      appearance: none;
+      background-color: var(--select-background-color, var(--color-background-secondary));
+      color: inherit;
+      font-family: inherit;
+      font-size: 1em;
+      height: 40px;
+      padding: 0 var(--spacing-400) 0 var(--spacing-200);
+      vertical-align: middle;
       width: 100%
     ">
-      <select style="
-        appearance: none;
-        background-color: var(--select-background-color, var(--color-background-secondary));
-        color: inherit;
-        font-family: inherit;
-        font-size: 1em;
-        height: 40px;
-        padding: 0 var(--spacing-400) 0 var(--spacing-200);
-        vertical-align: middle;
-        width: 100%
-      ">
-        <option
-          label="Option 1"
-          selected
-        >
-          Option 1
-        </option>
-        <option label="Option 2">
-          Option 2
-        </option>
-        <option label="Option 3">
-          Option 3
-        </option>
-      </select>
-      <svg
-        height="8"
-        style="
-          display: inline-block;
-          fill: currentcolor;
-          height: 100%;
-          pointer-events: none;
-          position: absolute;
-          right: 16px;
-          stroke-width: 0;
-          stroke: currentcolor;
-          top: 0px;
-          vertical-align: middle;
-          width: 12px
-        "
-        width="8"
+      <option
+        label="Option 1"
+        selected
       >
-        <use href="#icon-chevron-down-12"/>
-      </svg>
-    </div>
+        Option 1
+      </option>
+      <option label="Option 2">
+        Option 2
+      </option>
+      <option label="Option 3">
+        Option 3
+      </option>
+    </select>
+    <svg
+      height="8"
+      style="
+        display: inline-block;
+        fill: currentcolor;
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        right: 16px;
+        stroke-width: 0;
+        stroke: currentcolor;
+        top: 0px;
+        vertical-align: middle;
+        width: 12px
+      "
+      width="8"
+    >
+      <use href="#icon-chevron-down-12"/>
+    </svg>
   </div>
 </body>
