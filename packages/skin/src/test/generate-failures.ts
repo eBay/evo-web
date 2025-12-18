@@ -3,6 +3,11 @@ import { server } from "vitest/browser";
 const { readFile, writeFile, removeFile } = server.commands;
 import fs from "fs";
 
+export function getDir(failureDirectory, name) {
+
+    return `src/test/failures/${failureDirectory}-${name}.html`;
+}
+
 export async function genFailure(
     newHtml: string,
     failureDirectory: string,
@@ -11,10 +16,17 @@ export async function genFailure(
     const oldHtml = await readFile(`src/test/${failureDirectory}-${name}.html`);
     const tokens = await readFile(`dist/tokens/evo-core.css`);
     const tokensLight = await readFile(`dist/tokens/evo-light.css`);
+    const icons = await readFile(`dist/svg/icons.svg`);
+    const file =  getDir(failureDirectory, name);
 
     await writeFile(
-        `src/test/failures/${failureDirectory}-${name}.html`,
+        file,
         `
+        <head>
+            <div style="height: 0; width:0;>
+            ${icons}
+            </div>
+        </head>
         <style>
         ${tokens}
         ${tokensLight}
