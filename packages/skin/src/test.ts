@@ -56,9 +56,7 @@ for (const file in storyFiles) {
                     }),
                 );
 
-                await expect(document.body).toMatchScreenshot(
-                    `./test/${module.default.title}-${storyName}.html`,
-                );
+                await expect(document.body).toMatchScreenshot();
                 document.body.innerHTML = "";
             });
         }
