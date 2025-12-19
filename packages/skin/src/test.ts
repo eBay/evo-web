@@ -1,12 +1,23 @@
 // Example: my-component.test.tsx
-import { onTestFailed, test, describe } from "vitest";
+import { onTestFailed, test, beforeAll, describe } from "vitest";
 import visualHTML from "visual-html";
+import { server } from "vitest/browser";
+
+const { readFile, writeFile, removeFile } = server.commands;
 
 const storyFiles = import.meta.glob("../src/**/*.stories.@(js|jsx|ts|tsx)", {
     eager: true,
 });
-import { genFailure, getDir } from "./test/generate-failures";
+// import { genFailure, getDir } from "./test/generate-failures";
 
+beforeAll(async () => {
+    const icons = await readFile(`dist/svg/icons.svg`);
+    const container = document.createElement("div");
+    container.style.height = "0";
+    container.style.width = "0";
+    container.innerHTML = icons;
+    document.head.appendChild(container);
+});
 for (const file in storyFiles) {
     describe(`Rendering stories from ${file}`, () => {
         const module = storyFiles[file];

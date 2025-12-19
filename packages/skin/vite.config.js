@@ -18,17 +18,6 @@ export default defineConfig({
             enabled: true,
             provider: playwright(),
             headless: true,
-            expect: {
-                toMatchScreenshot: {
-                    comparatorName: "pixelmatch",
-                    comparatorOptions: {
-                        // 0-1, how different can colors be?
-                        threshold: 0.2,
-                        // 1% of pixels can differ
-                        allowedMismatchedPixelRatio: 0.01,
-                    },
-                },
-            },
             instances: [
                 {
                     browser: "chromium",
