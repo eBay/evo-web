@@ -4,7 +4,6 @@ const { readFile, writeFile, removeFile } = server.commands;
 import fs from "fs";
 
 export function getDir(failureDirectory, name) {
-
     return `src/test/failures/${failureDirectory}-${name}.html`;
 }
 

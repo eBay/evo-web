@@ -14,18 +14,38 @@ for (const file in storyFiles) {
             if (storyName === "default") continue;
 
             test(`renders ${storyName} from ${file}`, async ({ annotate }) => {
-                onTestFailed(async ({ annotate, task }) => {
-                    await genFailure(output, module.default.title, storyName);
-                });
+                // onTestFailed(async ({ annotate, task }) => {
+                //     await genFailure(output, module.default.title, storyName);
+                // });
                 const html = typeof storyFn === "function" ? storyFn() : "";
                 document.body.innerHTML = html;
-                const output = visualHTML(document.body);
-
-                await annotate(
-                    `Failure comparison at: "${getDir(module.default.title, storyName)}"`,
-                    "error",
+                await document.fonts.ready;
+                await Promise.all(
+                    Array.from(document.querySelectorAll("img")).map((el) => {
+                        return new Promise<void>((resolve) => {
+                            el.onload = () => {
+                                resolve();
+                            };
+                        });
+                    }),
                 );
-                await expect(output).toMatchFileSnapshot(
+                await Promise.all(
+                    Array.from(document.querySelectorAll("video")).map((el) => {
+                        return new Promise<void>((resolve) => {
+                            if (el.readyState >= 1) {
+                                resolve();
+                            } else {
+                                el.addEventListener(
+                                    "loadedmetadata",
+                                    () => resolve(),
+                                    { once: true },
+                                );
+                            }
+                        });
+                    }),
+                );
+
+                await expect(document.body).toMatchScreenshot(
                     `./test/${module.default.title}-${storyName}.html`,
                 );
                 document.body.innerHTML = "";

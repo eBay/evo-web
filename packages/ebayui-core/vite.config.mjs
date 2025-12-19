@@ -50,7 +50,18 @@ export default defineConfig({
                         headless: true,
                         instances: [{
                             browser: "chromium",
-                        }]
+                        }],
+                        expect: {
+                            toMatchScreenshot: {
+                                comparatorName: 'pixelmatch',
+                                comparatorOptions: {
+                                    // 0-1, how different can colors be?
+                                    threshold: 0.2,
+                                    // 1% of pixels can differ
+                                    allowedMismatchedPixelRatio: 0.01,
+                                },
+                            },
+                        },
                     },
                     include: ["src/**/test.browser.{ts,js}"],
                     setupFiles: ["./test.setup.ts"]

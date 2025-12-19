@@ -46,7 +46,7 @@ public/ebayui-core/
 public/skin-storybook/
 
 packages/skin/src/test/failures
-packages/skin/src/__screenshots__
+.vitest-attachments
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
