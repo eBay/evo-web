@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.0.0
+
+### Major Changes
+
+- [`feffa15`](https://github.com/eBay/evo-web/commit/feffa1575a12028fc384b326674d088e3e466a9c) Thanks [@agliga](https://github.com/agliga)! - feat: removed marko 4 support
+
 ## 15.15.0
 
 ### Minor Changes
