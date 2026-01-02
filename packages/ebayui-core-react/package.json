@@ -73,9 +73,9 @@
         "react-remove-scroll": "^2.7.2"
     },
     "peerDependencies": {
-        "@ebay/skin": "^19.0.0",
-        "react": ">= 16.0.0",
-        "react-dom": ">= 16.0.0"
+        "@ebay/skin": "^19",
+        "react": "^19",
+        "react-dom": "^19"
     },
     "optionalDependencies": {
         "shaka-player": "^4.16.12"
