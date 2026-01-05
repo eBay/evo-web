@@ -14,18 +14,3 @@ exports[`ebay-select rendering > renders basic story correctly 1`] = `
   />
 </svg>
 `;
-
-exports[`ebay-select rendering renders basic story correctly 1`] = `
-<svg
-  aria-hidden="true"
-  class="icon icon--12"
-  focusable="false"
-  height="8"
-  width="8"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <use
-    xlink:href="#icon-chevron-down-12"
-  />
-</svg>
-`;

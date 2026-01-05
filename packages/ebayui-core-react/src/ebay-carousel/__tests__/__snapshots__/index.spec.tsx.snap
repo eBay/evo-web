@@ -35,39 +35,3 @@ exports[`ebay-carousel rendering > renders continuous story correctly 2`] = `
   </svg>
 </button>
 `;
-
-exports[`ebay-carousel rendering renders continuous story correctly 1`] = `
-<button
-  aria-disabled="true"
-  class="carousel__control carousel__control--prev"
->
-  <svg
-    aria-hidden="true"
-    class="icon icon--carousel-prev icon icon--16"
-    focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <use
-      xlink:href="#icon-chevron-left-16"
-    />
-  </svg>
-</button>
-`;
-
-exports[`ebay-carousel rendering renders continuous story correctly 2`] = `
-<button
-  aria-disabled="true"
-  class="carousel__control carousel__control--next"
->
-  <svg
-    aria-hidden="true"
-    class="icon icon--carousel-next icon icon--16"
-    focusable="false"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <use
-      xlink:href="#icon-chevron-right-16"
-    />
-  </svg>
-</button>
-`;

@@ -25,29 +25,3 @@ exports[`ebay-calendar rendering > renders navigable story correctly 2`] = `
   />
 </svg>
 `;
-
-exports[`ebay-calendar rendering renders navigable story correctly 1`] = `
-<svg
-  aria-hidden="true"
-  class="icon icon--24"
-  focusable="false"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <use
-    xlink:href="#icon-chevron-left-24"
-  />
-</svg>
-`;
-
-exports[`ebay-calendar rendering renders navigable story correctly 2`] = `
-<svg
-  aria-hidden="true"
-  class="icon icon--24"
-  focusable="false"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <use
-    xlink:href="#icon-chevron-right-24"
-  />
-</svg>
-`;

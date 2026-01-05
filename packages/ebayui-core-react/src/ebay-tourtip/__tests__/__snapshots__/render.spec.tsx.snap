@@ -12,16 +12,3 @@ exports[`ebay-tourtip rendering > renders default story correctly 1`] = `
   />
 </svg>
 `;
-
-exports[`ebay-tourtip rendering renders default story correctly 1`] = `
-<svg
-  aria-hidden="true"
-  class="icon icon--16"
-  focusable="false"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <use
-    xlink:href="#icon-close-16"
-  />
-</svg>
-`;
