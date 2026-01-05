@@ -53,7 +53,7 @@ span.tourtip__mask {
     @include bubble-mixins.content;
 }
 
-button.tourtip__close {
+.tourtip button.tourtip__close {
     outline-offset: -2px;
 
     @include bubble-mixins.close;

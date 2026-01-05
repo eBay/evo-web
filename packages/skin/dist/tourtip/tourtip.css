@@ -57,7 +57,7 @@ span.tourtip__mask {
 .tourtip__content p:not(:first-of-type) {
     margin-top: var(--spacing-50);
 }
-button.tourtip__close {
+.tourtip button.tourtip__close {
     align-self: flex-start;
     background: none;
     border: 0;
@@ -70,7 +70,7 @@ button.tourtip__close {
     white-space: nowrap;
     width: 32px;
 }
-button.tourtip__close svg.icon {
+.tourtip button.tourtip__close svg.icon {
     fill: var(--tourtip-foreground-color, var(--color-foreground-on-inverse));
 }
 .tourtip__pointer {

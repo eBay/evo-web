@@ -132,6 +132,7 @@ class TooltipBase extends Marko.Component<Input> {
                 placement:
                     this.input.placement ||
                     pointerStyles[this.input.pointer ?? "bottom"],
+                strategy: "absolute",
                 middleware: [
                     offset(this.input.offset || 6),
                     !this.input.notInline && inline(),
