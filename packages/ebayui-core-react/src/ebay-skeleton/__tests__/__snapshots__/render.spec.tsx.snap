@@ -1,4 +1,275 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeleton color blue component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton skeleton--blue"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__textbox"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeleton color green component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton skeleton--green"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__textbox"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeleton color purple component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton skeleton--purple"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__textbox"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeleton component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__textbox"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeleton composite component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 300px;"
+>
+  <div>
+    <span
+      class="skeleton__avatar"
+    />
+    <span
+      class="skeleton__text skeleton__text--multiline"
+      style="width: 220px; vertical-align: top;"
+    />
+  </div>
+  <div
+    class="skeleton__button"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeleton tile component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__image"
+    style="width: 220px; height: 220px;"
+  />
+  <div
+    class="skeleton__text skeleton__text--multiline skeleton__text--large"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonAvatar component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+>
+  <div
+    class="skeleton__avatar"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonAvatar with "as" prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+>
+  <span
+    class="skeleton__avatar"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonButton component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__button"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonButton with "as" prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <span
+    class="skeleton__button"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonButton with size prop large component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__button skeleton__button--large"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonButton with size prop small component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__button skeleton__button--small"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonImage component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+>
+  <div
+    class="skeleton__image"
+    style="width: 220px; height: 220px;"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonImage with "as" prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+>
+  <span
+    class="skeleton__image"
+    style="width: 220px; height: 220px;"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonText component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__text"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonText with "as" prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <span
+    class="skeleton__text"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonText with multiline prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__text skeleton__text--multiline"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonText with size prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__text skeleton__text--large"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonTextBox component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <div
+    class="skeleton__textbox"
+  />
+</div>
+`;
+
+exports[`Render <EbaySkeleton /> component > should render the EbaySkeletonTextBox with "as" prop component 1`] = `
+<div
+  aria-label="Loading..."
+  class="skeleton"
+  role="img"
+  style="width: 220px;"
+>
+  <span
+    class="skeleton__textbox"
+  />
+</div>
+`;
 
 exports[`Render <EbaySkeleton /> component should render the EbaySkeleton color blue component 1`] = `
 <div

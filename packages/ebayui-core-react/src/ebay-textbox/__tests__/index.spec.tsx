@@ -1,4 +1,5 @@
 import React, { ComponentProps, FC } from "react";
+import { vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
@@ -8,7 +9,7 @@ import { EbayIconClear16 } from "../../ebay-icon/icons/ebay-icon-clear-16";
 describe("<EbayTextbox>", () => {
     describe("on textbox change", () => {
         it("should fire an onInputChange event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(<EbayTextbox onInputChange={spy} />);
 
             const value = `It's a spy!`;
@@ -21,7 +22,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox change (and focus leaving the field)", () => {
         it("should fire an onChange event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(<EbayTextbox onChange={spy} />);
 
             const value = `It's a spy!`;
@@ -37,7 +38,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox focus", () => {
         it("should fire an onFocus event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(<EbayTextbox onFocus={spy} />);
             const value = `It's a spy!`;
 
@@ -48,7 +49,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox blur", () => {
         it("should fire an onBlur event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(<EbayTextbox onBlur={spy} />);
             const value = `It's a spy!`;
 
@@ -70,7 +71,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox key down", () => {
         it("should fire an onKeyDown event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(<EbayTextbox onKeyDown={spy} />);
             const value = `It's a spy!`;
 
@@ -81,7 +82,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox key up", () => {
         it("should fire an onKeyUp event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(<EbayTextbox onKeyUp={spy} />);
             const value = `It's a spy!`;
 
@@ -92,7 +93,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox key press", () => {
         it("should fire an onKeyPress event", async () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const value = `It's a spy!`;
             render(<EbayTextbox onKeyPress={spy} defaultValue={value} />);
 
@@ -104,7 +105,7 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox invalid value", () => {
         it("should fire an onInvalid event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const ref = React.createRef<HTMLFormElement>();
             render(
                 <form ref={ref}>
@@ -119,8 +120,8 @@ describe("<EbayTextbox>", () => {
 
     describe("on textbox button click", () => {
         it("textbox should fire two events", () => {
-            const textboxSpy = jest.fn();
-            const iconSpy = jest.fn();
+            const textboxSpy = vi.fn();
+            const iconSpy = vi.fn();
             const value = "test";
             const wrapper = render(
                 <EbayTextbox defaultValue={value} onButtonClick={textboxSpy}>
@@ -134,7 +135,7 @@ describe("<EbayTextbox>", () => {
         });
 
         it("button should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(
                 <EbayTextbox>
                     <EbayTextboxPostfixIcon icon={<EbayIconClear16 />} buttonAriaLabel="Clear!" onClick={spy} />

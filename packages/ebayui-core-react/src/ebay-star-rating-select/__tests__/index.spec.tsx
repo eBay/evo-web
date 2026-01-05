@@ -1,4 +1,6 @@
+/* eslint-disable vitest/expect-expect */
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { Isolated, Fieldset } from "./mocks";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
@@ -9,9 +11,9 @@ const htmlSnap = async (ui: React.ReactElement): Promise<void> => {
 };
 
 let component;
-const onChangeSpy = jest.fn();
-const onFocusSpy = jest.fn();
-const onKeyDownSpy = jest.fn();
+const onChangeSpy = vi.fn();
+const onFocusSpy = vi.fn();
+const onKeyDownSpy = vi.fn();
 
 describe("star-rating-select", () => {
     it("renders defaults", async () => {

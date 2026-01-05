@@ -5,7 +5,7 @@ import * as stories from "./index.stories";
 
 const { Default, Disabled, Controls, Loading, Size, Transparent, Truncated } = composeStories(stories);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("ebay-split-button rendering", () => {
     it("renders split button correctly", () => {

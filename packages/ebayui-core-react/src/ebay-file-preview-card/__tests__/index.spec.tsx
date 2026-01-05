@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
@@ -7,7 +8,7 @@ import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayFilePreviewCard>", () => {
     it("should call onCancel", async () => {
-        const onCancelClick = jest.fn();
+        const onCancelClick = vi.fn();
         render(
             <EbayFilePreviewCard status="uploading" a11yCancelUploadText="Cancel upload" onCancel={onCancelClick} />,
         );
@@ -18,7 +19,7 @@ describe("<EbayFilePreviewCard>", () => {
         expect(onCancelClick).toHaveBeenCalled();
     });
     it("should call onDelete", async () => {
-        const onDeleteClick = jest.fn();
+        const onDeleteClick = vi.fn();
         render(
             <EbayFilePreviewCard
                 a11yCancelUploadText="Cancel upload"
@@ -38,8 +39,8 @@ describe("<EbayFilePreviewCard>", () => {
         expect(onDeleteClick).toHaveBeenCalled();
     });
     it("should call multi action menu delete call", async () => {
-        const onDeleteClick = jest.fn();
-        const onMenuAction = jest.fn();
+        const onDeleteClick = vi.fn();
+        const onMenuAction = vi.fn();
         render(
             <EbayFilePreviewCard
                 a11yCancelUploadText="Cancel upload"
@@ -72,9 +73,9 @@ describe("<EbayFilePreviewCard>", () => {
         expect(onDeleteClick).toHaveBeenCalled();
         expect(onMenuAction).not.toHaveBeenCalled();
     });
-    it("should call multi action menu delete call", async () => {
-        const onDeleteClick = jest.fn();
-        const onMenuAction = jest.fn();
+    it("should call multi action menu edit call", async () => {
+        const onDeleteClick = vi.fn();
+        const onMenuAction = vi.fn();
         render(
             <EbayFilePreviewCard
                 a11yCancelUploadText="Cancel upload"
@@ -115,7 +116,7 @@ describe("<EbayFilePreviewCard>", () => {
         expect(onDeleteClick).not.toHaveBeenCalled();
     });
     it("should call see more", async () => {
-        const onSeeMoreMock = jest.fn();
+        const onSeeMoreMock = vi.fn();
         render(
             <EbayFilePreviewCard
                 a11yCancelUploadText="Cancel upload"
@@ -137,7 +138,7 @@ describe("<EbayFilePreviewCard>", () => {
         expect(onSeeMoreMock).toHaveBeenCalled();
     });
     it("should call on action", async () => {
-        const onActionMock = jest.fn();
+        const onActionMock = vi.fn();
         render(
             <EbayFilePreviewCard
                 a11yCancelUploadText="Cancel upload"

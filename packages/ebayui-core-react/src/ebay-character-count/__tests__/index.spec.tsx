@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import EbayCharacterCount from "../character-count";
@@ -10,25 +11,25 @@ describe("EbayCharacterCount", () => {
     });
 
     it("should update count after timeout when value changes", () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         const { rerender } = render(<EbayCharacterCount value="Hello" max={120} />);
         rerender(<EbayCharacterCount value="Hello world" max={120} />);
 
         expect(screen.getByText("5/120")).toBeInTheDocument();
 
         act(() => {
-            jest.advanceTimersByTime(500);
+            vi.advanceTimersByTime(500);
         });
 
         expect(screen.getByText("11/120")).toBeInTheDocument();
     });
 
     it("should call onChange handler", () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(<EbayCharacterCount value="Hello" max={120} onChange={handleChange} />);
 
         act(() => {
-            jest.advanceTimersByTime(500);
+            vi.advanceTimersByTime(500);
         });
 
         expect(handleChange).toHaveBeenCalledWith(expect.objectContaining({ count: 5 }));

@@ -6,7 +6,7 @@ import { render } from "@testing-library/react";
 const { Default, WithMessages, WithSingleMessage, WithLongMessage, WithCustomTiming, WithMediumSize } =
     composeStories(stories);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("<EbayProgressBarExpressive /> rendering", () => {
     it("renders default story correctly", () => {

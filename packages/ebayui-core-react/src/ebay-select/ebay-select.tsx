@@ -129,6 +129,8 @@ function options(children) {
                 currentGroupName = optgroup;
                 const currentGroupOptions = optGroups[currentGroupName];
                 const opts = currentGroupOptions.map((groupOption) => {
+                    // Explicitly removing optgroup to avoid passing it down to option element
+                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
                     const { children: groupOptionChildren, optgroup: _, ...groupOptionProps } = groupOption;
                     return (
                         <EbaySelectOption key={`opt-${groupOption.value}`} {...groupOptionProps}>

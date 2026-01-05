@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -61,7 +62,7 @@ describe("<EbayTabs>", () => {
         let spy, tabs;
 
         beforeEach(() => {
-            spy = jest.fn();
+            spy = vi.fn();
 
             render(<DefaultTabs onSelect={spy} />);
             tabs = screen.getAllByRole("tab");
@@ -97,7 +98,7 @@ describe("<EbayTabs>", () => {
             let spy, tabs;
 
             beforeEach(() => {
-                spy = jest.fn();
+                spy = vi.fn();
                 render(<ManuallyActivatedTabs onSelect={spy} />);
                 tabs = screen.getAllByRole("tab");
             });

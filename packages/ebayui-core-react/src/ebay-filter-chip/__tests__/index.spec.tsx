@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { EbayFilterChip } from "../index";
 import { render } from "@testing-library/react";
@@ -8,7 +9,7 @@ import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 describe("<EbayFilterChip />", () => {
     describe("default variant", () => {
         it("should trigger onClick when button is clicked", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const { getByRole } = render(<EbayFilterChip onClick={onClick}>Filter Chip</EbayFilterChip>);
 
             await userEvent.click(getByRole("button"));
@@ -20,7 +21,7 @@ describe("<EbayFilterChip />", () => {
         });
 
         it("should toggle selected state on click", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const { getByRole } = render(<EbayFilterChip onClick={onClick}>Filter Chip</EbayFilterChip>);
 
             const button = getByRole("button");
@@ -59,7 +60,7 @@ describe("<EbayFilterChip />", () => {
 
     describe("menu variant", () => {
         it("should toggle expanded state on click", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const { getByRole } = render(
                 <EbayFilterChip variant="menu" onClick={onClick}>
                     Menu Filter
@@ -165,7 +166,7 @@ describe("<EbayFilterChip />", () => {
 
     describe("disabled state", () => {
         it("should not trigger onClick when disabled", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             const { getByRole } = render(
                 <EbayFilterChip disabled onClick={onClick}>
                     Disabled Filter

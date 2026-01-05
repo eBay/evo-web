@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render } from "@testing-library/react";
 import { EbayInlineNotice, EbayNoticeContent } from "../index";
 
@@ -32,7 +33,7 @@ describe("<EbayInlineNotice>", () => {
 
     describe("on going from hidden -> not hidden", () => {
         it("should call onNoticeShow", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const { rerender } = render(
                 <EbayInlineNotice hidden aria-label="notice" onNoticeShow={spy}>
                     <EbayNoticeContent>
@@ -55,7 +56,7 @@ describe("<EbayInlineNotice>", () => {
 
     describe("on using the notice with no content", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayInlineNotice aria-label="error" />);
             }).toThrow(`EbayInlineNotice: Please use a EbayNoticeContent that defines the content of the notice`);
@@ -64,4 +65,4 @@ describe("<EbayInlineNotice>", () => {
     });
 });
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");

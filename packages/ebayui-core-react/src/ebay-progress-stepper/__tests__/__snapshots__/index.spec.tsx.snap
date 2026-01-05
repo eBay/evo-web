@@ -1,4 +1,186 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ebay-progress-stepper rendering > renders blocked story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  aria-label="complete"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders blocked story correctly 2`] = `
+<svg
+  aria-hidden="true"
+  aria-label="complete"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders blocked story correctly 3`] = `
+<svg
+  aria-hidden="true"
+  aria-label="current"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-attention-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders custom titles story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  aria-label="complete"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders custom titles story correctly 2`] = `
+<svg
+  aria-hidden="true"
+  aria-label="current"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders custom titles story correctly 3`] = `
+<svg
+  aria-hidden="true"
+  aria-label="upcoming"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-upcoming-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders default story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  aria-label="complete"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders default story correctly 2`] = `
+<svg
+  aria-hidden="true"
+  aria-label="complete"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders default story correctly 3`] = `
+<svg
+  aria-hidden="true"
+  aria-label="current"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders default story correctly 4`] = `
+<svg
+  aria-hidden="true"
+  aria-label="upcoming"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-upcoming-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders vertical column story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  aria-label="complete"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders vertical column story correctly 2`] = `
+<svg
+  aria-hidden="true"
+  aria-label="current"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-confirmation-24"
+  />
+</svg>
+`;
+
+exports[`ebay-progress-stepper rendering > renders vertical column story correctly 3`] = `
+<svg
+  aria-hidden="true"
+  aria-label="upcoming"
+  class="icon icon--24"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-stepper-upcoming-24"
+  />
+</svg>
+`;
 
 exports[`ebay-progress-stepper rendering renders blocked story correctly 1`] = `
 <svg

@@ -1,12 +1,13 @@
 import React, { ComponentProps } from "react";
+import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayDrawerDialogDeprecated } from "../index";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 const classPrefix = "drawer-dialog";
-const closeDrawerHandler = jest.fn();
+const closeDrawerHandler = vi.fn();
 let wrapper;
 const renderComponent = (props?: ComponentProps<typeof EbayDrawerDialogDeprecated>) => {
     wrapper = render(

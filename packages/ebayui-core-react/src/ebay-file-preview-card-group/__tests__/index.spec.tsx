@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
@@ -42,7 +43,7 @@ describe("<EbayFilePreviewCardGroup>", () => {
             },
             a11yCancelUploadText: "Cancel upload",
         }));
-        const onCancelClick = jest.fn();
+        const onCancelClick = vi.fn();
         render(
             <EbayFilePreviewCardGroup onCancel={onCancelClick}>
                 {cards.map((cardFile, index) => (
@@ -59,8 +60,8 @@ describe("<EbayFilePreviewCardGroup>", () => {
         expect(onCancelClick).toHaveBeenCalled();
     });
     it("click on menu action fire onMenuAction event", async () => {
-        const onDeleteClick = jest.fn();
-        const onMenuAction = jest.fn();
+        const onDeleteClick = vi.fn();
+        const onMenuAction = vi.fn();
         const cards: EbayFilePreviewCardProps[] = Array.from({ length: 2 }, () => ({
             file: {
                 name: "file-name.jpg",
@@ -108,7 +109,7 @@ describe("<EbayFilePreviewCardGroup>", () => {
         expect(onDeleteClick).not.toHaveBeenCalled();
     });
     it("click on delete fire onDelete event", async () => {
-        const onDeleteClick = jest.fn();
+        const onDeleteClick = vi.fn();
         const cards: EbayFilePreviewCardProps[] = Array.from({ length: 2 }, () => ({
             file: {
                 name: "file-name.jpg",
@@ -135,7 +136,7 @@ describe("<EbayFilePreviewCardGroup>", () => {
         expect(onDeleteClick).toHaveBeenCalled();
     });
     it("click on action fire onAction event", async () => {
-        const onActionClick = jest.fn();
+        const onActionClick = vi.fn();
         const cards: EbayFilePreviewCardProps[] = Array.from({ length: 2 }, () => ({
             file: {
                 name: "file-name.jpg",

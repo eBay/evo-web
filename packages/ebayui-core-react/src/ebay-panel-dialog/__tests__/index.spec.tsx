@@ -1,12 +1,13 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayDialogCloseButton, EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayPanelDialog } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
-const closeSpy = jest.fn();
-const openSpy = jest.fn();
+const closeSpy = vi.fn();
+const openSpy = vi.fn();
 const openDialog = () =>
     render(
         <EbayPanelDialog animated={false} open onOpen={openSpy} onClose={closeSpy} a11yCloseText="Close">

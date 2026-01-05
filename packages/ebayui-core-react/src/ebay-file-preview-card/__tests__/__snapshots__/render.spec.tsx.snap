@@ -1,4 +1,496 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<EbayFilePreviewCard> > renders as span element 1`] = `
+<DocumentFragment>
+  <span
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <button
+        aria-label="Delete"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-delete-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </span>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with a href 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <a
+        href="/collection"
+      >
+        <img
+          alt="file-name.jpg"
+          class="file-preview-card__asset"
+          src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+        />
+      </a>
+      <button
+        aria-label="Delete"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-delete-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with action button 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <button
+        aria-label="action label"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-heart-16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with document 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <span
+        class="menu-button file-preview-card__action"
+      >
+        <button
+          aria-controls="1234"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="menu-button__button icon-btn"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-overflow-vertical-16"
+            />
+          </svg>
+        </button>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with image, delete button and footer 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <button
+        aria-label="Delete"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-delete-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with multi action button 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <span
+        class="menu-button file-preview-card__action"
+      >
+        <button
+          aria-controls="1234"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="menu-button__button icon-btn"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-overflow-vertical-16"
+            />
+          </svg>
+        </button>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with no action button 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with see more button 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset file-preview-card__asset--fade"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <button
+        aria-label="See more"
+        class="file-preview-card__see-more"
+        type="button"
+      >
+        <span>
+          +15
+        </span>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with status uploading 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card test-class"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <span
+        aria-label="Busy"
+        class="progress-spinner file-preview-card__asset"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--24"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-spinner-24"
+          />
+        </svg>
+      </span>
+      <button
+        aria-label="Cancel upload"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-close-16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > renders with video 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <img
+        alt="file-name.jpg"
+        class="file-preview-card__asset"
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+      />
+      <span
+        class="menu-button file-preview-card__action"
+      >
+        <button
+          aria-controls="1234"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="menu-button__button icon-btn"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-overflow-vertical-16"
+            />
+          </svg>
+        </button>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > should render with mock file 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <svg
+        aria-hidden="true"
+        class="file-preview-card__asset icon icon--24"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-file-24"
+        />
+      </svg>
+      <button
+        aria-label="Delete"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-delete-16"
+          />
+        </svg>
+      </button>
+      <div
+        class="file-preview-card__info"
+      >
+        TXT
+      </div>
+    </div>
+    <div
+      class="file-preview-card__footer"
+    >
+      <span>
+        file-name.csv
+      </span>
+      <span>
+        English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<EbayFilePreviewCard> > should render with video 1`] = `
+<DocumentFragment>
+  <div
+    class="file-preview-card"
+  >
+    <div
+      class="file-preview-card__body"
+    >
+      <video
+        class="file-preview-card__asset"
+        src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+      />
+      <button
+        aria-label="Delete"
+        class="file-preview-card__action icon-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-delete-16"
+          />
+        </svg>
+      </button>
+      <div
+        class="file-preview-card__info"
+      >
+        <svg
+          aria-hidden="true"
+          class="file-preview-card__video-icon icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-play-16"
+          />
+        </svg>
+        MOV
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
 exports[`<EbayFilePreviewCard> renders as span element 1`] = `
 <DocumentFragment>

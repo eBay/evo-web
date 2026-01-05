@@ -10,7 +10,7 @@ const ItemsPerSlideStory = composeStory(ItemsPerSlide, Meta);
 const PreserveTabIndexStory = composeStory(PreserveTabIndex, Meta);
 
 // NOTE: need to mock scrollTo since JSDOM does not support it
-jest.mock("../scroll-to-transition");
+vi.mock("../scroll-to-transition");
 
 // Testing current slide or items per slides is not possible
 // because we are using `getBoundingClientRect()` and when testing it returns 0 everytime
@@ -83,7 +83,7 @@ describe("ebay-carousel rendering", () => {
     });
 
     describe("autoplay", () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         it("should autoplay the carousel", () => {
             render(
@@ -103,7 +103,7 @@ describe("ebay-carousel rendering", () => {
             // TODO: Update when using vitest browser mode as getBoundingClientRect() is not supported in JSDOM
             // expect(secondItem.closest('li')).toHaveAttribute('aria-hidden', 'true')
 
-            jest.advanceTimersByTime(4000);
+            vi.advanceTimersByTime(4000);
             // expect(firstItem.closest('li')).toHaveAttribute('aria-hidden', 'true')
             expect(secondItem.closest("li")).toHaveAttribute("aria-hidden", "false");
         });

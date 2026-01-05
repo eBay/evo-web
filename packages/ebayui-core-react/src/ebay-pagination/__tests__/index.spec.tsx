@@ -1,11 +1,12 @@
 import React from "react";
+import { vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { EbayPagination, EbayPaginationItem as Item } from "../index";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
-jest.mock("react-dom", () => {
+vi.mock("react-dom", () => {
     const original = jest.requireActual("react-dom");
     return {
         ...original,
@@ -16,7 +17,7 @@ jest.mock("react-dom", () => {
 describe("<EbayPagination>", () => {
     describe("on page click", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(
                 <EbayPagination onSelect={spy}>
                     <Item type="previous" href="#" />
@@ -44,9 +45,9 @@ describe("<EbayPagination>", () => {
         let spyOnSelect;
 
         beforeEach(() => {
-            spyOnPrev = jest.fn();
-            spyOnNext = jest.fn();
-            spyOnSelect = jest.fn();
+            spyOnPrev = vi.fn();
+            spyOnNext = vi.fn();
+            spyOnSelect = vi.fn();
             wrapper = render(
                 <EbayPagination onPrevious={spyOnPrev} onNext={spyOnNext} onSelect={spyOnSelect}>
                     <Item type="previous" href="#" />

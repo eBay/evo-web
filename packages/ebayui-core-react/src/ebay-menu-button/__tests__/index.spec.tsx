@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { vi } from "vitest";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { EbayMenuButton, EbayMenuButtonItem } from "../index";
 
-const spy = jest.fn();
+const spy = vi.fn();
 
 describe("<EbayMenuButton>", () => {
     describe("on button click", () => {
@@ -165,7 +166,7 @@ describe("<EbayMenuButton>", () => {
     });
 
     it("should not emit events when disabled", async () => {
-        const spyCall = jest.fn();
+        const spyCall = vi.fn();
         render(
             <EbayMenuButton type="radio" text="Open" onChange={spyCall}>
                 <EbayMenuButtonItem value="first" disabled />

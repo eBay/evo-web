@@ -7,7 +7,7 @@ const DefaultStory = composeStory(Default, Meta);
 const AnimationStory = composeStory(WithAnimation, Meta);
 const WithExtraButtonPropsStory = composeStory(WithExtraButtonProps, Meta);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("ebay-confirm-dialog rendering", () => {
     it("renders default story correctly", () => {

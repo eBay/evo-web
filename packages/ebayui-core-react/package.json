@@ -41,7 +41,7 @@
         "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm install && npm run test",
         "start": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
         "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
-        "test": "jest",
+        "test": "vitest",
         "type:check": "tsc --noEmit",
         "update-icons": "node ./scripts/update-icons",
         "version": "npm run update-icons && git add -A src"
@@ -71,6 +71,9 @@
         "makeup-screenreader-trap": "^0.5.6",
         "makeup-typeahead": "^0.3.3",
         "react-remove-scroll": "^2.7.2"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^5.1.2"
     },
     "peerDependencies": {
         "@ebay/skin": "^19.0.0",

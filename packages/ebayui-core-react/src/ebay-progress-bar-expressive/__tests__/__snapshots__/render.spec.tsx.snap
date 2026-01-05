@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<EbayProgressBarExpressive /> rendering renders default story correctly 1`] = `
+exports[`<EbayProgressBarExpressive /> rendering > renders default story correctly 1`] = `
 <div>
   <div
     class="progress-bar-expressive"
@@ -55,7 +55,7 @@ exports[`<EbayProgressBarExpressive /> rendering renders default story correctly
 </div>
 `;
 
-exports[`<EbayProgressBarExpressive /> rendering renders with custom timing story correctly 1`] = `
+exports[`<EbayProgressBarExpressive /> rendering > renders with custom timing story correctly 1`] = `
 <div>
   <div
     class="progress-bar-expressive"
@@ -121,7 +121,7 @@ exports[`<EbayProgressBarExpressive /> rendering renders with custom timing stor
 </div>
 `;
 
-exports[`<EbayProgressBarExpressive /> rendering renders with long message story correctly 1`] = `
+exports[`<EbayProgressBarExpressive /> rendering > renders with long message story correctly 1`] = `
 <div>
   <div
     class="progress-bar-expressive"
@@ -186,7 +186,7 @@ exports[`<EbayProgressBarExpressive /> rendering renders with long message story
 </div>
 `;
 
-exports[`<EbayProgressBarExpressive /> rendering renders with medium size story correctly 1`] = `
+exports[`<EbayProgressBarExpressive /> rendering > renders with medium size story correctly 1`] = `
 <div>
   <div
     class="progress-bar-expressive"
@@ -258,7 +258,7 @@ exports[`<EbayProgressBarExpressive /> rendering renders with medium size story 
 </div>
 `;
 
-exports[`<EbayProgressBarExpressive /> rendering renders with messages story correctly 1`] = `
+exports[`<EbayProgressBarExpressive /> rendering > renders with messages story correctly 1`] = `
 <div>
   <div
     class="progress-bar-expressive"
@@ -323,7 +323,7 @@ exports[`<EbayProgressBarExpressive /> rendering renders with messages story cor
 </div>
 `;
 
-exports[`<EbayProgressBarExpressive /> rendering renders with single message story correctly 1`] = `
+exports[`<EbayProgressBarExpressive /> rendering > renders with single message story correctly 1`] = `
 <div>
   <div
     class="progress-bar-expressive"

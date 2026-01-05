@@ -1,4 +1,5 @@
 import React, { FC, Ref } from "react";
+import { vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
@@ -96,7 +97,7 @@ describe("<EbayButton>", () => {
 
     describe("should fire the corresponding callbacks", () => {
         it("on click", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(<EbayButton onClick={spy} />);
 
             fireEvent.click(wrapper.getByRole("button"));
@@ -104,7 +105,7 @@ describe("<EbayButton>", () => {
             expect(spy).toHaveBeenCalledWith(eventOfType("click"));
         });
         it("on escape", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(<EbayButton onEscape={spy} />);
 
             fireEvent.keyDown(wrapper.getByRole("button"), { key: "Escape" });
@@ -112,7 +113,7 @@ describe("<EbayButton>", () => {
             expect(spy).toHaveBeenCalledWith(eventOfType("keydown"));
         });
         it("on focus", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(<EbayButton onFocus={spy} />);
 
             fireEvent.focus(wrapper.getByRole("button"));
@@ -120,7 +121,7 @@ describe("<EbayButton>", () => {
             expect(spy).toHaveBeenCalledWith(eventOfType("focus"));
         });
         it("on blur", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(<EbayButton onBlur={spy} />);
 
             fireEvent.blur(wrapper.getByRole("button"));

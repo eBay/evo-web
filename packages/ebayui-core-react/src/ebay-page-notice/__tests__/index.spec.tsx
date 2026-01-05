@@ -1,9 +1,10 @@
 import React from "react";
+import { vi } from "vitest";
 import { act, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { EbayNoticeContent, EbayPageNotice, EbayPageNoticeTitle } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 const clickEvent = expect.objectContaining({ type: "click" });
 
@@ -40,7 +41,7 @@ describe("<EbayPageNotice>", () => {
 
     describe("on using the notice with no content", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayPageNotice />);
             }).toThrow(`EbayPageNotice: Please use a EbayNoticeContent that defines the content of the notice`);
@@ -51,7 +52,7 @@ describe("<EbayPageNotice>", () => {
     describe("when allyDismissText is provided...", () => {
         let wrapper;
         let dismissButton;
-        const dismissMock = jest.fn();
+        const dismissMock = vi.fn();
 
         beforeEach(() => {
             wrapper = render(

@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 import { EbaySwitch } from "../index";
@@ -6,7 +7,7 @@ import { EbaySwitch } from "../index";
 describe("<EbaySwitch>", () => {
     describe("on switch-button click", () => {
         it("should fire an onChange callback", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const value = "test";
             const wrapper = render(<EbaySwitch value={value} onChange={spy} />);
             fireEvent.click(wrapper.container.querySelector("input"));

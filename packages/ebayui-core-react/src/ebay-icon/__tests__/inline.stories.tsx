@@ -1008,8037 +1008,7033 @@ import { EbayIconStarRatingSmall45 } from "../icons/ebay-icon-star-rating-small-
 import { EbayIconStarRatingSmall5 } from "../icons/ebay-icon-star-rating-small-5";
 
 export default {
-component: EbayIcon,
-title: "graphics & icons/ebay-icon",
+    component: EbayIcon,
+    title: "graphics & icons/ebay-icon",
 } as Meta;
 
 export const AllIcons = () => (
-<table>
-    <tbody>
-        
-        <tr>
-            <td>ebay-icon-add-12</td>
-            <td>
-                <EbayIconAdd12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-add-16</td>
-            <td>
-                <EbayIconAdd16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-add-24</td>
-            <td>
-                <EbayIconAdd24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-add-image-24</td>
-            <td>
-                <EbayIconAddImage24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-afterpay-12-colored</td>
-            <td>
-                <EbayIconAfterpay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-afterpay-18-colored</td>
-            <td>
-                <EbayIconAfterpay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-afterpay-24-colored</td>
-            <td>
-                <EbayIconAfterpay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-afterpay-32-colored</td>
-            <td>
-                <EbayIconAfterpay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-afterpay-logo-24-colored</td>
-            <td>
-                <EbayIconAfterpayLogo24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-16</td>
-            <td>
-                <EbayIconAi16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-20</td>
-            <td>
-                <EbayIconAi20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-24</td>
-            <td>
-                <EbayIconAi24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-camera-16</td>
-            <td>
-                <EbayIconAiCamera16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-camera-20</td>
-            <td>
-                <EbayIconAiCamera20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-camera-24</td>
-            <td>
-                <EbayIconAiCamera24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-filled-16</td>
-            <td>
-                <EbayIconAiFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-filled-20</td>
-            <td>
-                <EbayIconAiFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-filled-24</td>
-            <td>
-                <EbayIconAiFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-search-16</td>
-            <td>
-                <EbayIconAiSearch16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-search-20</td>
-            <td>
-                <EbayIconAiSearch20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-search-24</td>
-            <td>
-                <EbayIconAiSearch24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-search-filled-24</td>
-            <td>
-                <EbayIconAiSearchFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-shirt-16</td>
-            <td>
-                <EbayIconAiShirt16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-shirt-20</td>
-            <td>
-                <EbayIconAiShirt20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-shirt-24</td>
-            <td>
-                <EbayIconAiShirt24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-16-colored</td>
-            <td>
-                <EbayIconAiSpectrum16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-20-colored</td>
-            <td>
-                <EbayIconAiSpectrum20Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-24-colored</td>
-            <td>
-                <EbayIconAiSpectrum24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-filled-16-colored</td>
-            <td>
-                <EbayIconAiSpectrumFilled16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-filled-20-colored</td>
-            <td>
-                <EbayIconAiSpectrumFilled20Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-filled-24-colored</td>
-            <td>
-                <EbayIconAiSpectrumFilled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-spectrum-thin-16-colored</td>
-            <td>
-                <EbayIconAiSpectrumThin16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-thin-16</td>
-            <td>
-                <EbayIconAiThin16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-tools-16</td>
-            <td>
-                <EbayIconAiTools16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-tools-20</td>
-            <td>
-                <EbayIconAiTools20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ai-tools-24</td>
-            <td>
-                <EbayIconAiTools24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-cn-12-colored</td>
-            <td>
-                <EbayIconAlipayCn12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-cn-18-colored</td>
-            <td>
-                <EbayIconAlipayCn18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-cn-24-colored</td>
-            <td>
-                <EbayIconAlipayCn24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-cn-32-colored</td>
-            <td>
-                <EbayIconAlipayCn32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-hk-12-colored</td>
-            <td>
-                <EbayIconAlipayHk12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-hk-18-colored</td>
-            <td>
-                <EbayIconAlipayHk18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-hk-24-colored</td>
-            <td>
-                <EbayIconAlipayHk24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-alipay-hk-32-colored</td>
-            <td>
-                <EbayIconAlipayHk32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-amex-12-colored</td>
-            <td>
-                <EbayIconAmex12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-amex-18-colored</td>
-            <td>
-                <EbayIconAmex18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-amex-24-colored</td>
-            <td>
-                <EbayIconAmex24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-amex-32-colored</td>
-            <td>
-                <EbayIconAmex32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-apple-24</td>
-            <td>
-                <EbayIconApple24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-apple-music-24-colored</td>
-            <td>
-                <EbayIconAppleMusic24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-apple-pay-12-colored</td>
-            <td>
-                <EbayIconApplePay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-apple-pay-18-colored</td>
-            <td>
-                <EbayIconApplePay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-apple-pay-24-colored</td>
-            <td>
-                <EbayIconApplePay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-apple-pay-32-colored</td>
-            <td>
-                <EbayIconApplePay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-archive-16</td>
-            <td>
-                <EbayIconArchive16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-archive-24</td>
-            <td>
-                <EbayIconArchive24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-left-12</td>
-            <td>
-                <EbayIconArrowLeft12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-left-16</td>
-            <td>
-                <EbayIconArrowLeft16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-left-20</td>
-            <td>
-                <EbayIconArrowLeft20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-left-24</td>
-            <td>
-                <EbayIconArrowLeft24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-right-12</td>
-            <td>
-                <EbayIconArrowRight12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-right-16</td>
-            <td>
-                <EbayIconArrowRight16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-right-20</td>
-            <td>
-                <EbayIconArrowRight20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrow-right-24</td>
-            <td>
-                <EbayIconArrowRight24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrows-3d-16</td>
-            <td>
-                <EbayIconArrows3d16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrows-3d-24</td>
-            <td>
-                <EbayIconArrows3d24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrows-3d-filled-64-colored</td>
-            <td>
-                <EbayIconArrows3dFilled64Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrows-expand-16</td>
-            <td>
-                <EbayIconArrowsExpand16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-arrows-expand-24</td>
-            <td>
-                <EbayIconArrowsExpand24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-article-16</td>
-            <td>
-                <EbayIconArticle16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-article-24</td>
-            <td>
-                <EbayIconArticle24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-16</td>
-            <td>
-                <EbayIconAttention16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-24</td>
-            <td>
-                <EbayIconAttention24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-64</td>
-            <td>
-                <EbayIconAttention64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-filled-16</td>
-            <td>
-                <EbayIconAttentionFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-filled-24</td>
-            <td>
-                <EbayIconAttentionFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-triangle-16</td>
-            <td>
-                <EbayIconAttentionTriangle16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-triangle-24</td>
-            <td>
-                <EbayIconAttentionTriangle24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-triangle-filled-16</td>
-            <td>
-                <EbayIconAttentionTriangleFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-attention-triangle-filled-24</td>
-            <td>
-                <EbayIconAttentionTriangleFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-atv-16</td>
-            <td>
-                <EbayIconAtv16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-atv-24</td>
-            <td>
-                <EbayIconAtv24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-high-16</td>
-            <td>
-                <EbayIconAudioHigh16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-high-20</td>
-            <td>
-                <EbayIconAudioHigh20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-high-24</td>
-            <td>
-                <EbayIconAudioHigh24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-low-16</td>
-            <td>
-                <EbayIconAudioLow16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-off-16</td>
-            <td>
-                <EbayIconAudioOff16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-off-20</td>
-            <td>
-                <EbayIconAudioOff20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-audio-off-24</td>
-            <td>
-                <EbayIconAudioOff24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-authenticity-guarantee-16</td>
-            <td>
-                <EbayIconAuthenticityGuarantee16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-authenticity-guarantee-24</td>
-            <td>
-                <EbayIconAuthenticityGuarantee24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-authenticity-guarantee-filled-16-colored</td>
-            <td>
-                <EbayIconAuthenticityGuaranteeFilled16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-authenticity-guarantee-filled-24-colored</td>
-            <td>
-                <EbayIconAuthenticityGuaranteeFilled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-auto-adjust-24</td>
-            <td>
-                <EbayIconAutoAdjust24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-avatar-signed-out</td>
-            <td>
-                <EbayIconAvatarSignedOut />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-background-removal-16</td>
-            <td>
-                <EbayIconBackgroundRemoval16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-background-removal-24</td>
-            <td>
-                <EbayIconBackgroundRemoval24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bancontact-12-colored</td>
-            <td>
-                <EbayIconBancontact12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bancontact-18-colored</td>
-            <td>
-                <EbayIconBancontact18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bancontact-24-colored</td>
-            <td>
-                <EbayIconBancontact24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bancontact-32-colored</td>
-            <td>
-                <EbayIconBancontact32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-16</td>
-            <td>
-                <EbayIconBank16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-24</td>
-            <td>
-                <EbayIconBank24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-64</td>
-            <td>
-                <EbayIconBank64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-account-12-colored</td>
-            <td>
-                <EbayIconBankAccount12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-account-18-colored</td>
-            <td>
-                <EbayIconBankAccount18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-account-24-colored</td>
-            <td>
-                <EbayIconBankAccount24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-account-32-colored</td>
-            <td>
-                <EbayIconBankAccount32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bank-group-logo-24-colored</td>
-            <td>
-                <EbayIconBankGroupLogo24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bar-chart-16</td>
-            <td>
-                <EbayIconBarChart16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bar-chart-24</td>
-            <td>
-                <EbayIconBarChart24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bids-16</td>
-            <td>
-                <EbayIconBids16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bids-24</td>
-            <td>
-                <EbayIconBids24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bids-64</td>
-            <td>
-                <EbayIconBids64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-boat-16</td>
-            <td>
-                <EbayIconBoat16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-boat-24</td>
-            <td>
-                <EbayIconBoat24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-book-16</td>
-            <td>
-                <EbayIconBook16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-book-24</td>
-            <td>
-                <EbayIconBook24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bookmark-16</td>
-            <td>
-                <EbayIconBookmark16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bookmark-24</td>
-            <td>
-                <EbayIconBookmark24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bookmark-filled-16</td>
-            <td>
-                <EbayIconBookmarkFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-bookmark-filled-24</td>
-            <td>
-                <EbayIconBookmarkFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-brand-authorized-seller-16</td>
-            <td>
-                <EbayIconBrandAuthorizedSeller16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-brand-authorized-seller-24</td>
-            <td>
-                <EbayIconBrandAuthorizedSeller24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-brightness-16</td>
-            <td>
-                <EbayIconBrightness16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-brightness-20</td>
-            <td>
-                <EbayIconBrightness20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-brightness-24</td>
-            <td>
-                <EbayIconBrightness24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-calendar-16</td>
-            <td>
-                <EbayIconCalendar16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-calendar-24</td>
-            <td>
-                <EbayIconCalendar24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-calendar-64</td>
-            <td>
-                <EbayIconCalendar64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-camera-16</td>
-            <td>
-                <EbayIconCamera16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-camera-24</td>
-            <td>
-                <EbayIconCamera24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-camera-64</td>
-            <td>
-                <EbayIconCamera64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-car-16</td>
-            <td>
-                <EbayIconCar16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-car-24</td>
-            <td>
-                <EbayIconCar24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-car-brake-16</td>
-            <td>
-                <EbayIconCarBrake16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-car-brake-24</td>
-            <td>
-                <EbayIconCarBrake24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-card-stack-64</td>
-            <td>
-                <EbayIconCardStack64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-carnet-12-colored</td>
-            <td>
-                <EbayIconCarnet12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-carnet-18-colored</td>
-            <td>
-                <EbayIconCarnet18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-carnet-24-colored</td>
-            <td>
-                <EbayIconCarnet24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-carnet-32-colored</td>
-            <td>
-                <EbayIconCarnet32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-carryon-24</td>
-            <td>
-                <EbayIconCarryon24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-16</td>
-            <td>
-                <EbayIconCart16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-20</td>
-            <td>
-                <EbayIconCart20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-24</td>
-            <td>
-                <EbayIconCart24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-64</td>
-            <td>
-                <EbayIconCart64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-add-16</td>
-            <td>
-                <EbayIconCartAdd16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-add-20</td>
-            <td>
-                <EbayIconCartAdd20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cart-add-24</td>
-            <td>
-                <EbayIconCartAdd24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cashapp-12-colored</td>
-            <td>
-                <EbayIconCashapp12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cashapp-18-colored</td>
-            <td>
-                <EbayIconCashapp18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cashapp-24-colored</td>
-            <td>
-                <EbayIconCashapp24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cashapp-32-colored</td>
-            <td>
-                <EbayIconCashapp32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-categories-16</td>
-            <td>
-                <EbayIconCategories16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-categories-24</td>
-            <td>
-                <EbayIconCategories24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cb-12-colored</td>
-            <td>
-                <EbayIconCb12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cb-18-colored</td>
-            <td>
-                <EbayIconCb18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cb-24-colored</td>
-            <td>
-                <EbayIconCb24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-cb-32-colored</td>
-            <td>
-                <EbayIconCb32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ccd-charger-included</td>
-            <td>
-                <EbayIconCcdChargerIncluded />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ccd-charger-not-included</td>
-            <td>
-                <EbayIconCcdChargerNotIncluded />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ccd-top</td>
-            <td>
-                <EbayIconCcdTop />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-certified-recycled-16</td>
-            <td>
-                <EbayIconCertifiedRecycled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-certified-recycled-24</td>
-            <td>
-                <EbayIconCertifiedRecycled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chair-16</td>
-            <td>
-                <EbayIconChair16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chair-24</td>
-            <td>
-                <EbayIconChair24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chat-16</td>
-            <td>
-                <EbayIconChat16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chat-24</td>
-            <td>
-                <EbayIconChat24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chat-64</td>
-            <td>
-                <EbayIconChat64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-check-in-24</td>
-            <td>
-                <EbayIconCheckIn24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkbox-checked-18</td>
-            <td>
-                <EbayIconCheckboxChecked18 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkbox-checked-24</td>
-            <td>
-                <EbayIconCheckboxChecked24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkbox-mixed-18</td>
-            <td>
-                <EbayIconCheckboxMixed18 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkbox-mixed-24</td>
-            <td>
-                <EbayIconCheckboxMixed24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkbox-unchecked-18</td>
-            <td>
-                <EbayIconCheckboxUnchecked18 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkbox-unchecked-24</td>
-            <td>
-                <EbayIconCheckboxUnchecked24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-checkmark-24</td>
-            <td>
-                <EbayIconCheckmark24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-down-12</td>
-            <td>
-                <EbayIconChevronDown12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-down-16</td>
-            <td>
-                <EbayIconChevronDown16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-down-20</td>
-            <td>
-                <EbayIconChevronDown20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-down-24</td>
-            <td>
-                <EbayIconChevronDown24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-left-12</td>
-            <td>
-                <EbayIconChevronLeft12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-left-16</td>
-            <td>
-                <EbayIconChevronLeft16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-left-20</td>
-            <td>
-                <EbayIconChevronLeft20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-left-24</td>
-            <td>
-                <EbayIconChevronLeft24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-right-12</td>
-            <td>
-                <EbayIconChevronRight12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-right-16</td>
-            <td>
-                <EbayIconChevronRight16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-right-20</td>
-            <td>
-                <EbayIconChevronRight20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-right-24</td>
-            <td>
-                <EbayIconChevronRight24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-up-12</td>
-            <td>
-                <EbayIconChevronUp12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-up-16</td>
-            <td>
-                <EbayIconChevronUp16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-up-20</td>
-            <td>
-                <EbayIconChevronUp20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chevron-up-24</td>
-            <td>
-                <EbayIconChevronUp24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chinese-coin-16</td>
-            <td>
-                <EbayIconChineseCoin16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-chinese-coin-24</td>
-            <td>
-                <EbayIconChineseCoin24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clear-16</td>
-            <td>
-                <EbayIconClear16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clear-20</td>
-            <td>
-                <EbayIconClear20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clear-24</td>
-            <td>
-                <EbayIconClear24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-click-to-call-16</td>
-            <td>
-                <EbayIconClickToCall16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-click-to-call-24</td>
-            <td>
-                <EbayIconClickToCall24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clock-12</td>
-            <td>
-                <EbayIconClock12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clock-16</td>
-            <td>
-                <EbayIconClock16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clock-24</td>
-            <td>
-                <EbayIconClock24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clock-64</td>
-            <td>
-                <EbayIconClock64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clock-fast-16</td>
-            <td>
-                <EbayIconClockFast16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-clock-fast-24</td>
-            <td>
-                <EbayIconClockFast24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-close-12</td>
-            <td>
-                <EbayIconClose12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-close-16</td>
-            <td>
-                <EbayIconClose16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-close-20</td>
-            <td>
-                <EbayIconClose20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-close-24</td>
-            <td>
-                <EbayIconClose24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-closed-caption-16</td>
-            <td>
-                <EbayIconClosedCaption16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-closed-caption-24</td>
-            <td>
-                <EbayIconClosedCaption24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-closed-caption-filled-16</td>
-            <td>
-                <EbayIconClosedCaptionFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-closed-caption-filled-24</td>
-            <td>
-                <EbayIconClosedCaptionFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-coin-24</td>
-            <td>
-                <EbayIconCoin24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-coin-battery-48</td>
-            <td>
-                <EbayIconCoinBattery48 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-collections-16</td>
-            <td>
-                <EbayIconCollections16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-collections-24</td>
-            <td>
-                <EbayIconCollections24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-condensed-grid-24</td>
-            <td>
-                <EbayIconCondensedGrid24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-condensed-grid-filled-24</td>
-            <td>
-                <EbayIconCondensedGridFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-confirmation-16</td>
-            <td>
-                <EbayIconConfirmation16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-confirmation-24</td>
-            <td>
-                <EbayIconConfirmation24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-confirmation-64</td>
-            <td>
-                <EbayIconConfirmation64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-confirmation-filled-12</td>
-            <td>
-                <EbayIconConfirmationFilled12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-confirmation-filled-16</td>
-            <td>
-                <EbayIconConfirmationFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-confirmation-filled-24</td>
-            <td>
-                <EbayIconConfirmationFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-contract-16</td>
-            <td>
-                <EbayIconContract16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-contrast-24</td>
-            <td>
-                <EbayIconContrast24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-copy-16</td>
-            <td>
-                <EbayIconCopy16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-copy-24</td>
-            <td>
-                <EbayIconCopy24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-coupon-16</td>
-            <td>
-                <EbayIconCoupon16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-coupon-24</td>
-            <td>
-                <EbayIconCoupon24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-16</td>
-            <td>
-                <EbayIconCreditCard16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-20</td>
-            <td>
-                <EbayIconCreditCard20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-24</td>
-            <td>
-                <EbayIconCreditCard24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-64</td>
-            <td>
-                <EbayIconCreditCard64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-cvv-back-20</td>
-            <td>
-                <EbayIconCreditCardCvvBack20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-cvv-back-24</td>
-            <td>
-                <EbayIconCreditCardCvvBack24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-cvv-front-20</td>
-            <td>
-                <EbayIconCreditCardCvvFront20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-credit-card-cvv-front-24</td>
-            <td>
-                <EbayIconCreditCardCvvFront24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-crop-24</td>
-            <td>
-                <EbayIconCrop24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-customize-16</td>
-            <td>
-                <EbayIconCustomize16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-customize-24</td>
-            <td>
-                <EbayIconCustomize24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-delete-16</td>
-            <td>
-                <EbayIconDelete16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-delete-20</td>
-            <td>
-                <EbayIconDelete20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-delete-24</td>
-            <td>
-                <EbayIconDelete24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-compact-16</td>
-            <td>
-                <EbayIconDensityCompact16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-compact-24</td>
-            <td>
-                <EbayIconDensityCompact24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-default-16</td>
-            <td>
-                <EbayIconDensityDefault16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-default-24</td>
-            <td>
-                <EbayIconDensityDefault24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-relaxed-16</td>
-            <td>
-                <EbayIconDensityRelaxed16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-relaxed-24</td>
-            <td>
-                <EbayIconDensityRelaxed24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-row-compact-16</td>
-            <td>
-                <EbayIconDensityRowCompact16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-row-compact-24</td>
-            <td>
-                <EbayIconDensityRowCompact24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-row-relaxed-16</td>
-            <td>
-                <EbayIconDensityRowRelaxed16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-density-row-relaxed-24</td>
-            <td>
-                <EbayIconDensityRowRelaxed24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-diamond-16</td>
-            <td>
-                <EbayIconDiamond16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-diamond-24</td>
-            <td>
-                <EbayIconDiamond24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-diners-12-colored</td>
-            <td>
-                <EbayIconDiners12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-diners-18-colored</td>
-            <td>
-                <EbayIconDiners18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-diners-24-colored</td>
-            <td>
-                <EbayIconDiners24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-diners-32-colored</td>
-            <td>
-                <EbayIconDiners32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-direct-debit-12-colored</td>
-            <td>
-                <EbayIconDirectDebit12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-direct-debit-18-colored</td>
-            <td>
-                <EbayIconDirectDebit18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-direct-debit-24-colored</td>
-            <td>
-                <EbayIconDirectDebit24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-direct-debit-32-colored</td>
-            <td>
-                <EbayIconDirectDebit32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-direct-from-brand-16</td>
-            <td>
-                <EbayIconDirectFromBrand16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-direct-from-brand-24</td>
-            <td>
-                <EbayIconDirectFromBrand24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discord-24</td>
-            <td>
-                <EbayIconDiscord24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discount-16</td>
-            <td>
-                <EbayIconDiscount16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discount-24</td>
-            <td>
-                <EbayIconDiscount24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discount-auto-16</td>
-            <td>
-                <EbayIconDiscountAuto16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discount-auto-24</td>
-            <td>
-                <EbayIconDiscountAuto24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discover-12-colored</td>
-            <td>
-                <EbayIconDiscover12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discover-18-colored</td>
-            <td>
-                <EbayIconDiscover18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discover-24-colored</td>
-            <td>
-                <EbayIconDiscover24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-discover-32-colored</td>
-            <td>
-                <EbayIconDiscover32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-dollar-16</td>
-            <td>
-                <EbayIconDollar16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-dollar-24</td>
-            <td>
-                <EbayIconDollar24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-dollar-off-24</td>
-            <td>
-                <EbayIconDollarOff24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-download-16</td>
-            <td>
-                <EbayIconDownload16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-download-20</td>
-            <td>
-                <EbayIconDownload20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-download-24</td>
-            <td>
-                <EbayIconDownload24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-drag-drop-16</td>
-            <td>
-                <EbayIconDragDrop16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-drag-drop-24</td>
-            <td>
-                <EbayIconDragDrop24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-balance-12-colored</td>
-            <td>
-                <EbayIconEbayBalance12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-balance-18-colored</td>
-            <td>
-                <EbayIconEbayBalance18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-balance-24-colored</td>
-            <td>
-                <EbayIconEbayBalance24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-balance-32-colored</td>
-            <td>
-                <EbayIconEbayBalance32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-bucks-logo-16-colored</td>
-            <td>
-                <EbayIconEbayBucksLogo16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-for-charity-16</td>
-            <td>
-                <EbayIconEbayForCharity16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-for-charity-24</td>
-            <td>
-                <EbayIconEbayForCharity24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-international-shipping-16</td>
-            <td>
-                <EbayIconEbayInternationalShipping16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-international-shipping-24</td>
-            <td>
-                <EbayIconEbayInternationalShipping24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-international-shipping-64</td>
-            <td>
-                <EbayIconEbayInternationalShipping64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-live-16</td>
-            <td>
-                <EbayIconEbayLive16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-live-24</td>
-            <td>
-                <EbayIconEbayLive24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-logo-16-colored</td>
-            <td>
-                <EbayIconEbayLogo16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-mastercard-12-colored</td>
-            <td>
-                <EbayIconEbayMastercard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-mastercard-18-colored</td>
-            <td>
-                <EbayIconEbayMastercard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-mastercard-24-colored</td>
-            <td>
-                <EbayIconEbayMastercard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-mastercard-32-colored</td>
-            <td>
-                <EbayIconEbayMastercard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-money-back-guarantee-logo-16-colored</td>
-            <td>
-                <EbayIconEbayMoneyBackGuaranteeLogo16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-plus-16</td>
-            <td>
-                <EbayIconEbayPlus16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-plus-24</td>
-            <td>
-                <EbayIconEbayPlus24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-plus-logo-16-colored</td>
-            <td>
-                <EbayIconEbayPlusLogo16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-plus-logo-dark-16-colored</td>
-            <td>
-                <EbayIconEbayPlusLogoDark16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-preloved-16</td>
-            <td>
-                <EbayIconEbayPreloved16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-preloved-24</td>
-            <td>
-                <EbayIconEbayPreloved24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-refurbished-16</td>
-            <td>
-                <EbayIconEbayRefurbished16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ebay-refurbished-24</td>
-            <td>
-                <EbayIconEbayRefurbished24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eek-arrow</td>
-            <td>
-                <EbayIconEekArrow />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eek-range-arrow</td>
-            <td>
-                <EbayIconEekRangeArrow />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eftpos-12-colored</td>
-            <td>
-                <EbayIconEftpos12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eftpos-18-colored</td>
-            <td>
-                <EbayIconEftpos18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eftpos-24-colored</td>
-            <td>
-                <EbayIconEftpos24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eftpos-32-colored</td>
-            <td>
-                <EbayIconEftpos32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-elo-12-colored</td>
-            <td>
-                <EbayIconElo12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-elo-18-colored</td>
-            <td>
-                <EbayIconElo18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-elo-24-colored</td>
-            <td>
-                <EbayIconElo24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-elo-32-colored</td>
-            <td>
-                <EbayIconElo32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-escrow-card-12-colored</td>
-            <td>
-                <EbayIconEscrowCard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-escrow-card-18-colored</td>
-            <td>
-                <EbayIconEscrowCard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-escrow-card-24-colored</td>
-            <td>
-                <EbayIconEscrowCard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-escrow-card-32-colored</td>
-            <td>
-                <EbayIconEscrowCard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-euro-16</td>
-            <td>
-                <EbayIconEuro16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-euro-24</td>
-            <td>
-                <EbayIconEuro24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-european-conformity-48</td>
-            <td>
-                <EbayIconEuropeanConformity48 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-exclude-16</td>
-            <td>
-                <EbayIconExclude16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-exclude-24</td>
-            <td>
-                <EbayIconExclude24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-exclude-64</td>
-            <td>
-                <EbayIconExclude64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-expand-16</td>
-            <td>
-                <EbayIconExpand16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-explore-16</td>
-            <td>
-                <EbayIconExplore16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-explore-24</td>
-            <td>
-                <EbayIconExplore24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-external-link-16</td>
-            <td>
-                <EbayIconExternalLink16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-external-link-20</td>
-            <td>
-                <EbayIconExternalLink20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-external-link-24</td>
-            <td>
-                <EbayIconExternalLink24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eye-16</td>
-            <td>
-                <EbayIconEye16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-eye-24</td>
-            <td>
-                <EbayIconEye24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-face-happiest-24</td>
-            <td>
-                <EbayIconFaceHappiest24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-face-happy-16</td>
-            <td>
-                <EbayIconFaceHappy16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-face-happy-24</td>
-            <td>
-                <EbayIconFaceHappy24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-face-neutral-24</td>
-            <td>
-                <EbayIconFaceNeutral24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-face-sad-24</td>
-            <td>
-                <EbayIconFaceSad24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-face-saddest-24</td>
-            <td>
-                <EbayIconFaceSaddest24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-facebook-24</td>
-            <td>
-                <EbayIconFacebook24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-facebook-messenger-24</td>
-            <td>
-                <EbayIconFacebookMessenger24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-fall-leaf-16</td>
-            <td>
-                <EbayIconFallLeaf16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-fall-leaf-24</td>
-            <td>
-                <EbayIconFallLeaf24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-16</td>
-            <td>
-                <EbayIconFeedback16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-20</td>
-            <td>
-                <EbayIconFeedback20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-24</td>
-            <td>
-                <EbayIconFeedback24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-error-16</td>
-            <td>
-                <EbayIconFeedbackError16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-error-24</td>
-            <td>
-                <EbayIconFeedbackError24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-negative-16</td>
-            <td>
-                <EbayIconFeedbackNegative16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-neutral-16</td>
-            <td>
-                <EbayIconFeedbackNeutral16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-positive-16</td>
-            <td>
-                <EbayIconFeedbackPositive16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-received-16</td>
-            <td>
-                <EbayIconFeedbackReceived16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-feedback-received-24</td>
-            <td>
-                <EbayIconFeedbackReceived24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-file-16</td>
-            <td>
-                <EbayIconFile16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-file-24</td>
-            <td>
-                <EbayIconFile24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-filter-16</td>
-            <td>
-                <EbayIconFilter16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-filter-24</td>
-            <td>
-                <EbayIconFilter24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-fingerprint-16</td>
-            <td>
-                <EbayIconFingerprint16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-fingerprint-24</td>
-            <td>
-                <EbayIconFingerprint24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-fingerprint-64</td>
-            <td>
-                <EbayIconFingerprint64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flag-16</td>
-            <td>
-                <EbayIconFlag16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flag-24</td>
-            <td>
-                <EbayIconFlag24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flag-filled-16</td>
-            <td>
-                <EbayIconFlagFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flag-filled-24</td>
-            <td>
-                <EbayIconFlagFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flash-24</td>
-            <td>
-                <EbayIconFlash24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flash-auto-24</td>
-            <td>
-                <EbayIconFlashAuto24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-flash-off-24</td>
-            <td>
-                <EbayIconFlashOff24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-folder-16</td>
-            <td>
-                <EbayIconFolder16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-folder-24</td>
-            <td>
-                <EbayIconFolder24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-folder-add-16</td>
-            <td>
-                <EbayIconFolderAdd16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-folder-add-24</td>
-            <td>
-                <EbayIconFolderAdd24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-forklift-16</td>
-            <td>
-                <EbayIconForklift16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-forklift-24</td>
-            <td>
-                <EbayIconForklift24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-franc-16</td>
-            <td>
-                <EbayIconFranc16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-franc-24</td>
-            <td>
-                <EbayIconFranc24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-free-warranty-16</td>
-            <td>
-                <EbayIconFreeWarranty16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-free-warranty-24</td>
-            <td>
-                <EbayIconFreeWarranty24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-full-view-16</td>
-            <td>
-                <EbayIconFullView16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-full-view-24</td>
-            <td>
-                <EbayIconFullView24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-full-view-filled-16</td>
-            <td>
-                <EbayIconFullViewFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-full-view-filled-24</td>
-            <td>
-                <EbayIconFullViewFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gallery-16</td>
-            <td>
-                <EbayIconGallery16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gallery-24</td>
-            <td>
-                <EbayIconGallery24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-general-card-12-colored</td>
-            <td>
-                <EbayIconGeneralCard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-general-card-18-colored</td>
-            <td>
-                <EbayIconGeneralCard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-general-card-24-colored</td>
-            <td>
-                <EbayIconGeneralCard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-general-card-32-colored</td>
-            <td>
-                <EbayIconGeneralCard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-generic-card-12-colored</td>
-            <td>
-                <EbayIconGenericCard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-generic-card-18-colored</td>
-            <td>
-                <EbayIconGenericCard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-generic-card-24-colored</td>
-            <td>
-                <EbayIconGenericCard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-generic-card-32-colored</td>
-            <td>
-                <EbayIconGenericCard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-16</td>
-            <td>
-                <EbayIconGift16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-24</td>
-            <td>
-                <EbayIconGift24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-64</td>
-            <td>
-                <EbayIconGift64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-card-12-colored</td>
-            <td>
-                <EbayIconGiftCard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-card-18-colored</td>
-            <td>
-                <EbayIconGiftCard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-card-24-colored</td>
-            <td>
-                <EbayIconGiftCard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-gift-card-32-colored</td>
-            <td>
-                <EbayIconGiftCard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-girocard-12-colored</td>
-            <td>
-                <EbayIconGirocard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-girocard-18-colored</td>
-            <td>
-                <EbayIconGirocard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-girocard-24-colored</td>
-            <td>
-                <EbayIconGirocard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-girocard-32-colored</td>
-            <td>
-                <EbayIconGirocard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-glasses-24</td>
-            <td>
-                <EbayIconGlasses24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-glasses-64</td>
-            <td>
-                <EbayIconGlasses64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-google-24</td>
-            <td>
-                <EbayIconGoogle24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-google-pay-12-colored</td>
-            <td>
-                <EbayIconGooglePay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-google-pay-18-colored</td>
-            <td>
-                <EbayIconGooglePay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-google-pay-24-colored</td>
-            <td>
-                <EbayIconGooglePay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-google-pay-32-colored</td>
-            <td>
-                <EbayIconGooglePay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-graph-16</td>
-            <td>
-                <EbayIconGraph16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-graph-24</td>
-            <td>
-                <EbayIconGraph24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-graph-64</td>
-            <td>
-                <EbayIconGraph64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-graph-dynamic-16</td>
-            <td>
-                <EbayIconGraphDynamic16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-graph-dynamic-24</td>
-            <td>
-                <EbayIconGraphDynamic24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-grid-view-16</td>
-            <td>
-                <EbayIconGridView16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-grid-view-24</td>
-            <td>
-                <EbayIconGridView24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-grid-view-filled-16</td>
-            <td>
-                <EbayIconGridViewFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-grid-view-filled-24</td>
-            <td>
-                <EbayIconGridViewFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-hand-swipe-40</td>
-            <td>
-                <EbayIconHandSwipe40 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-handbag-16</td>
-            <td>
-                <EbayIconHandbag16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-handbag-24</td>
-            <td>
-                <EbayIconHandbag24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-hanger-16</td>
-            <td>
-                <EbayIconHanger16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-hanger-24</td>
-            <td>
-                <EbayIconHanger24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-headlight-16</td>
-            <td>
-                <EbayIconHeadlight16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-headlight-24</td>
-            <td>
-                <EbayIconHeadlight24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-headphone-16</td>
-            <td>
-                <EbayIconHeadphone16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-headphone-24</td>
-            <td>
-                <EbayIconHeadphone24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-heart-16</td>
-            <td>
-                <EbayIconHeart16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-heart-20</td>
-            <td>
-                <EbayIconHeart20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-heart-24</td>
-            <td>
-                <EbayIconHeart24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-heart-filled-16</td>
-            <td>
-                <EbayIconHeartFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-heart-filled-20</td>
-            <td>
-                <EbayIconHeartFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-heart-filled-24</td>
-            <td>
-                <EbayIconHeartFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-help-16</td>
-            <td>
-                <EbayIconHelp16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-help-20</td>
-            <td>
-                <EbayIconHelp20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-help-24</td>
-            <td>
-                <EbayIconHelp24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-help-outline-16</td>
-            <td>
-                <EbayIconHelpOutline16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-help-outline-20</td>
-            <td>
-                <EbayIconHelpOutline20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-help-outline-24</td>
-            <td>
-                <EbayIconHelpOutline24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-hide-16</td>
-            <td>
-                <EbayIconHide16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-hide-24</td>
-            <td>
-                <EbayIconHide24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-history-16</td>
-            <td>
-                <EbayIconHistory16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-history-24</td>
-            <td>
-                <EbayIconHistory24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-history-64</td>
-            <td>
-                <EbayIconHistory64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-home-24</td>
-            <td>
-                <EbayIconHome24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-home-filled-24</td>
-            <td>
-                <EbayIconHomeFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-image-16</td>
-            <td>
-                <EbayIconImage16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-image-24</td>
-            <td>
-                <EbayIconImage24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-image-64</td>
-            <td>
-                <EbayIconImage64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-inbox-16</td>
-            <td>
-                <EbayIconInbox16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-inbox-24</td>
-            <td>
-                <EbayIconInbox24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-information-16</td>
-            <td>
-                <EbayIconInformation16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-information-20</td>
-            <td>
-                <EbayIconInformation20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-information-24</td>
-            <td>
-                <EbayIconInformation24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-information-filled-16</td>
-            <td>
-                <EbayIconInformationFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-information-filled-20</td>
-            <td>
-                <EbayIconInformationFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-information-filled-24</td>
-            <td>
-                <EbayIconInformationFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-inspect-16</td>
-            <td>
-                <EbayIconInspect16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-inspect-24</td>
-            <td>
-                <EbayIconInspect24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-inspect-64</td>
-            <td>
-                <EbayIconInspect64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-instagram-24</td>
-            <td>
-                <EbayIconInstagram24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-interac-12-colored</td>
-            <td>
-                <EbayIconInterac12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-interac-18-colored</td>
-            <td>
-                <EbayIconInterac18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-interac-24-colored</td>
-            <td>
-                <EbayIconInterac24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-interac-32-colored</td>
-            <td>
-                <EbayIconInterac32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-item-list-16</td>
-            <td>
-                <EbayIconItemList16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-item-list-20</td>
-            <td>
-                <EbayIconItemList20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-item-list-24</td>
-            <td>
-                <EbayIconItemList24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-jcb-12-colored</td>
-            <td>
-                <EbayIconJcb12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-jcb-18-colored</td>
-            <td>
-                <EbayIconJcb18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-jcb-24-colored</td>
-            <td>
-                <EbayIconJcb24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-jcb-32-colored</td>
-            <td>
-                <EbayIconJcb32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-jet-ski-16</td>
-            <td>
-                <EbayIconJetSki16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-jet-ski-24</td>
-            <td>
-                <EbayIconJetSki24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-kakao-pay-12-colored</td>
-            <td>
-                <EbayIconKakaoPay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-kakao-pay-18-colored</td>
-            <td>
-                <EbayIconKakaoPay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-kakao-pay-24-colored</td>
-            <td>
-                <EbayIconKakaoPay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-kakao-pay-32-colored</td>
-            <td>
-                <EbayIconKakaoPay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-key-16</td>
-            <td>
-                <EbayIconKey16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-key-24</td>
-            <td>
-                <EbayIconKey24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-keyboard-16</td>
-            <td>
-                <EbayIconKeyboard16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-keyboard-24</td>
-            <td>
-                <EbayIconKeyboard24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-black-12-colored</td>
-            <td>
-                <EbayIconKlarnaBlack12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-black-18-colored</td>
-            <td>
-                <EbayIconKlarnaBlack18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-black-24-colored</td>
-            <td>
-                <EbayIconKlarnaBlack24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-black-32-colored</td>
-            <td>
-                <EbayIconKlarnaBlack32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-pink-12-colored</td>
-            <td>
-                <EbayIconKlarnaPink12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-pink-18-colored</td>
-            <td>
-                <EbayIconKlarnaPink18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-pink-24-colored</td>
-            <td>
-                <EbayIconKlarnaPink24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-pink-32-colored</td>
-            <td>
-                <EbayIconKlarnaPink32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-white-12-colored</td>
-            <td>
-                <EbayIconKlarnaWhite12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-white-18-colored</td>
-            <td>
-                <EbayIconKlarnaWhite18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-white-24-colored</td>
-            <td>
-                <EbayIconKlarnaWhite24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-klarna-white-32-colored</td>
-            <td>
-                <EbayIconKlarnaWhite32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-krona-16</td>
-            <td>
-                <EbayIconKrona16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-krona-24</td>
-            <td>
-                <EbayIconKrona24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lamp-16</td>
-            <td>
-                <EbayIconLamp16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lamp-24</td>
-            <td>
-                <EbayIconLamp24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-large-box-16</td>
-            <td>
-                <EbayIconLargeBox16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-large-box-24</td>
-            <td>
-                <EbayIconLargeBox24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-authenticity-guarantee-48-colored</td>
-            <td>
-                <EbayIconLegacyAuthenticityGuarantee48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-click-to-call-48-colored</td>
-            <td>
-                <EbayIconLegacyClickToCall48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-escrow-48-colored</td>
-            <td>
-                <EbayIconLegacyEscrow48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-free-warranty-48-colored</td>
-            <td>
-                <EbayIconLegacyFreeWarranty48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-money-back-guarantee-chf-48-colored</td>
-            <td>
-                <EbayIconLegacyMoneyBackGuaranteeChf48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-money-back-guarantee-eu-48-colored</td>
-            <td>
-                <EbayIconLegacyMoneyBackGuaranteeEu48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-money-back-guarantee-uk-48-colored</td>
-            <td>
-                <EbayIconLegacyMoneyBackGuaranteeUk48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-money-back-guarantee-us-48-colored</td>
-            <td>
-                <EbayIconLegacyMoneyBackGuaranteeUs48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-money-back-guarantee-zl-48-colored</td>
-            <td>
-                <EbayIconLegacyMoneyBackGuaranteeZl48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-legacy-top-rated-seller-48-colored</td>
-            <td>
-                <EbayIconLegacyTopRatedSeller48Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lightbulb-16</td>
-            <td>
-                <EbayIconLightbulb16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lightbulb-24</td>
-            <td>
-                <EbayIconLightbulb24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lightning-bolt-16</td>
-            <td>
-                <EbayIconLightningBolt16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lightning-bolt-24</td>
-            <td>
-                <EbayIconLightningBolt24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-link-24</td>
-            <td>
-                <EbayIconLink24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-linkedin-24</td>
-            <td>
-                <EbayIconLinkedin24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-list-view-16</td>
-            <td>
-                <EbayIconListView16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-list-view-24</td>
-            <td>
-                <EbayIconListView24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-list-view-filled-16</td>
-            <td>
-                <EbayIconListViewFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-list-view-filled-24</td>
-            <td>
-                <EbayIconListViewFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-16</td>
-            <td>
-                <EbayIconLiveBag16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-20</td>
-            <td>
-                <EbayIconLiveBag20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-24</td>
-            <td>
-                <EbayIconLiveBag24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-filled-24</td>
-            <td>
-                <EbayIconLiveBagFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-play-filled-16-colored</td>
-            <td>
-                <EbayIconLiveBagPlayFilled16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-play-filled-24-colored</td>
-            <td>
-                <EbayIconLiveBagPlayFilled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-play-filled-64-colored</td>
-            <td>
-                <EbayIconLiveBagPlayFilled64Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-bag-thin-16</td>
-            <td>
-                <EbayIconLiveBagThin16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-broadcast-20</td>
-            <td>
-                <EbayIconLiveBroadcast20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-broadcast-24</td>
-            <td>
-                <EbayIconLiveBroadcast24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-broadcast-thin-16</td>
-            <td>
-                <EbayIconLiveBroadcastThin16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-eye-16</td>
-            <td>
-                <EbayIconLiveEye16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-live-eye-24</td>
-            <td>
-                <EbayIconLiveEye24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-location-16</td>
-            <td>
-                <EbayIconLocation16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-location-24</td>
-            <td>
-                <EbayIconLocation24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-location-64</td>
-            <td>
-                <EbayIconLocation64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-location-arrow-16</td>
-            <td>
-                <EbayIconLocationArrow16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-location-arrow-24</td>
-            <td>
-                <EbayIconLocationArrow24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lock-16</td>
-            <td>
-                <EbayIconLock16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lock-24</td>
-            <td>
-                <EbayIconLock24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lock-filled-16</td>
-            <td>
-                <EbayIconLockFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lock-filled-20</td>
-            <td>
-                <EbayIconLockFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-lock-filled-24</td>
-            <td>
-                <EbayIconLockFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-maestro-12-colored</td>
-            <td>
-                <EbayIconMaestro12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-maestro-18-colored</td>
-            <td>
-                <EbayIconMaestro18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-maestro-24-colored</td>
-            <td>
-                <EbayIconMaestro24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-maestro-32-colored</td>
-            <td>
-                <EbayIconMaestro32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-16</td>
-            <td>
-                <EbayIconMail16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-20</td>
-            <td>
-                <EbayIconMail20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-24</td>
-            <td>
-                <EbayIconMail24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-64</td>
-            <td>
-                <EbayIconMail64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-move-16</td>
-            <td>
-                <EbayIconMailMove16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-move-24</td>
-            <td>
-                <EbayIconMailMove24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-open-16</td>
-            <td>
-                <EbayIconMailOpen16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-open-24</td>
-            <td>
-                <EbayIconMailOpen24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-unread-16</td>
-            <td>
-                <EbayIconMailUnread16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mail-unread-24</td>
-            <td>
-                <EbayIconMailUnread24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-map-16</td>
-            <td>
-                <EbayIconMap16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-map-20</td>
-            <td>
-                <EbayIconMap20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-map-24</td>
-            <td>
-                <EbayIconMap24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-masonry-view-16</td>
-            <td>
-                <EbayIconMasonryView16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-masonry-view-24</td>
-            <td>
-                <EbayIconMasonryView24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-masonry-view-filled-16</td>
-            <td>
-                <EbayIconMasonryViewFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-masonry-view-filled-24</td>
-            <td>
-                <EbayIconMasonryViewFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mastercard-12-colored</td>
-            <td>
-                <EbayIconMastercard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mastercard-18-colored</td>
-            <td>
-                <EbayIconMastercard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mastercard-24-colored</td>
-            <td>
-                <EbayIconMastercard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mastercard-32-colored</td>
-            <td>
-                <EbayIconMastercard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-medium-box-16</td>
-            <td>
-                <EbayIconMediumBox16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-medium-box-24</td>
-            <td>
-                <EbayIconMediumBox24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-megaphone-16</td>
-            <td>
-                <EbayIconMegaphone16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-megaphone-24</td>
-            <td>
-                <EbayIconMegaphone24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-menu-16</td>
-            <td>
-                <EbayIconMenu16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-menu-20</td>
-            <td>
-                <EbayIconMenu20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-menu-24</td>
-            <td>
-                <EbayIconMenu24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mercado-pago-12-colored</td>
-            <td>
-                <EbayIconMercadoPago12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mercado-pago-18-colored</td>
-            <td>
-                <EbayIconMercadoPago18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mercado-pago-24-colored</td>
-            <td>
-                <EbayIconMercadoPago24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mercado-pago-32-colored</td>
-            <td>
-                <EbayIconMercadoPago32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-microphone-16</td>
-            <td>
-                <EbayIconMicrophone16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-microphone-24</td>
-            <td>
-                <EbayIconMicrophone24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mobile-24</td>
-            <td>
-                <EbayIconMobile24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mobile-signal-24</td>
-            <td>
-                <EbayIconMobileSignal24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-back-guarantee-16</td>
-            <td>
-                <EbayIconMoneyBackGuarantee16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-back-guarantee-24</td>
-            <td>
-                <EbayIconMoneyBackGuarantee24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-back-guarantee-filled-16-colored</td>
-            <td>
-                <EbayIconMoneyBackGuaranteeFilled16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-back-guarantee-filled-24-colored</td>
-            <td>
-                <EbayIconMoneyBackGuaranteeFilled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-stack-16</td>
-            <td>
-                <EbayIconMoneyStack16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-stack-24</td>
-            <td>
-                <EbayIconMoneyStack24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-stack-blue-12-colored</td>
-            <td>
-                <EbayIconMoneyStackBlue12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-stack-blue-18-colored</td>
-            <td>
-                <EbayIconMoneyStackBlue18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-stack-blue-24-colored</td>
-            <td>
-                <EbayIconMoneyStackBlue24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-money-stack-blue-32-colored</td>
-            <td>
-                <EbayIconMoneyStackBlue32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-monthly-invoice-12-colored</td>
-            <td>
-                <EbayIconMonthlyInvoice12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-monthly-invoice-18-colored</td>
-            <td>
-                <EbayIconMonthlyInvoice18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-monthly-invoice-24-colored</td>
-            <td>
-                <EbayIconMonthlyInvoice24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-monthly-invoice-32-colored</td>
-            <td>
-                <EbayIconMonthlyInvoice32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-moon-16</td>
-            <td>
-                <EbayIconMoon16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-moon-20</td>
-            <td>
-                <EbayIconMoon20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-moon-24</td>
-            <td>
-                <EbayIconMoon24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-motorcycle-16</td>
-            <td>
-                <EbayIconMotorcycle16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-motorcycle-24</td>
-            <td>
-                <EbayIconMotorcycle24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mountain-16</td>
-            <td>
-                <EbayIconMountain16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-mountain-24</td>
-            <td>
-                <EbayIconMountain24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-move-16</td>
-            <td>
-                <EbayIconMove16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-move-24</td>
-            <td>
-                <EbayIconMove24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nectar-logo-24-colored</td>
-            <td>
-                <EbayIconNectarLogo24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-negative-filled-16</td>
-            <td>
-                <EbayIconNegativeFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-negative-filled-24</td>
-            <td>
-                <EbayIconNegativeFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-neutral-16</td>
-            <td>
-                <EbayIconNeutral16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-neutral-24</td>
-            <td>
-                <EbayIconNeutral24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nfc-16</td>
-            <td>
-                <EbayIconNfc16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nfc-24</td>
-            <td>
-                <EbayIconNfc24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nfc-card-12-colored</td>
-            <td>
-                <EbayIconNfcCard12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nfc-card-18-colored</td>
-            <td>
-                <EbayIconNfcCard18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nfc-card-24-colored</td>
-            <td>
-                <EbayIconNfcCard24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-nfc-card-32-colored</td>
-            <td>
-                <EbayIconNfcCard32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-no-children-zero-three-48</td>
-            <td>
-                <EbayIconNoChildrenZeroThree48 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-note-16</td>
-            <td>
-                <EbayIconNote16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-note-24</td>
-            <td>
-                <EbayIconNote24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-16</td>
-            <td>
-                <EbayIconNotification16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-20</td>
-            <td>
-                <EbayIconNotification20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-24</td>
-            <td>
-                <EbayIconNotification24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-64</td>
-            <td>
-                <EbayIconNotification64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-filled-16</td>
-            <td>
-                <EbayIconNotificationFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-filled-20</td>
-            <td>
-                <EbayIconNotificationFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-notification-filled-24</td>
-            <td>
-                <EbayIconNotificationFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-out-of-reach-48</td>
-            <td>
-                <EbayIconOutOfReach48 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-overflow-horizontal-16</td>
-            <td>
-                <EbayIconOverflowHorizontal16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-overflow-horizontal-20</td>
-            <td>
-                <EbayIconOverflowHorizontal20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-overflow-horizontal-24</td>
-            <td>
-                <EbayIconOverflowHorizontal24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-overflow-vertical-16</td>
-            <td>
-                <EbayIconOverflowVertical16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-overflow-vertical-20</td>
-            <td>
-                <EbayIconOverflowVertical20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-overflow-vertical-24</td>
-            <td>
-                <EbayIconOverflowVertical24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-package-16</td>
-            <td>
-                <EbayIconPackage16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-package-24</td>
-            <td>
-                <EbayIconPackage24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-package-64</td>
-            <td>
-                <EbayIconPackage64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-package-error-24</td>
-            <td>
-                <EbayIconPackageError24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-16</td>
-            <td>
-                <EbayIconPanel16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-20</td>
-            <td>
-                <EbayIconPanel20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-24</td>
-            <td>
-                <EbayIconPanel24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-close-16</td>
-            <td>
-                <EbayIconPanelClose16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-close-20</td>
-            <td>
-                <EbayIconPanelClose20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-close-24</td>
-            <td>
-                <EbayIconPanelClose24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-close-vertical-16</td>
-            <td>
-                <EbayIconPanelCloseVertical16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-close-vertical-20</td>
-            <td>
-                <EbayIconPanelCloseVertical20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-close-vertical-24</td>
-            <td>
-                <EbayIconPanelCloseVertical24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-open-16</td>
-            <td>
-                <EbayIconPanelOpen16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-open-20</td>
-            <td>
-                <EbayIconPanelOpen20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-open-24</td>
-            <td>
-                <EbayIconPanelOpen24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-open-vertical-16</td>
-            <td>
-                <EbayIconPanelOpenVertical16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-open-vertical-20</td>
-            <td>
-                <EbayIconPanelOpenVertical20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-panel-open-vertical-24</td>
-            <td>
-                <EbayIconPanelOpenVertical24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-passkey-16</td>
-            <td>
-                <EbayIconPasskey16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-passkey-24</td>
-            <td>
-                <EbayIconPasskey24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-passkey-64</td>
-            <td>
-                <EbayIconPasskey64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pause-16</td>
-            <td>
-                <EbayIconPause16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pause-20</td>
-            <td>
-                <EbayIconPause20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pause-24</td>
-            <td>
-                <EbayIconPause24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pause-filled-64-colored</td>
-            <td>
-                <EbayIconPauseFilled64Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pay-by-bank-12-colored</td>
-            <td>
-                <EbayIconPayByBank12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pay-by-bank-18-colored</td>
-            <td>
-                <EbayIconPayByBank18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pay-by-bank-24-colored</td>
-            <td>
-                <EbayIconPayByBank24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pay-by-bank-32-colored</td>
-            <td>
-                <EbayIconPayByBank32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-payoneer-12-colored</td>
-            <td>
-                <EbayIconPayoneer12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-payoneer-18-colored</td>
-            <td>
-                <EbayIconPayoneer18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-payoneer-24-colored</td>
-            <td>
-                <EbayIconPayoneer24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-payoneer-32-colored</td>
-            <td>
-                <EbayIconPayoneer32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-payout-16</td>
-            <td>
-                <EbayIconPayout16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-payout-24</td>
-            <td>
-                <EbayIconPayout24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-12-colored</td>
-            <td>
-                <EbayIconPaypal12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-18-colored</td>
-            <td>
-                <EbayIconPaypal18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-24-colored</td>
-            <td>
-                <EbayIconPaypal24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-32-colored</td>
-            <td>
-                <EbayIconPaypal32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-credit-12-colored</td>
-            <td>
-                <EbayIconPaypalCredit12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-credit-18-colored</td>
-            <td>
-                <EbayIconPaypalCredit18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-credit-24-colored</td>
-            <td>
-                <EbayIconPaypalCredit24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-credit-32-colored</td>
-            <td>
-                <EbayIconPaypalCredit32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-disabled-12-colored</td>
-            <td>
-                <EbayIconPaypalDisabled12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-disabled-18-colored</td>
-            <td>
-                <EbayIconPaypalDisabled18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-disabled-24-colored</td>
-            <td>
-                <EbayIconPaypalDisabled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypal-disabled-32-colored</td>
-            <td>
-                <EbayIconPaypalDisabled32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypay-12-colored</td>
-            <td>
-                <EbayIconPaypay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypay-18-colored</td>
-            <td>
-                <EbayIconPaypay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypay-24-colored</td>
-            <td>
-                <EbayIconPaypay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-paypay-32-colored</td>
-            <td>
-                <EbayIconPaypay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pencil-16</td>
-            <td>
-                <EbayIconPencil16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pencil-20</td>
-            <td>
-                <EbayIconPencil20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pencil-24</td>
-            <td>
-                <EbayIconPencil24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pencil-signed-24</td>
-            <td>
-                <EbayIconPencilSigned24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-people-16</td>
-            <td>
-                <EbayIconPeople16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-people-24</td>
-            <td>
-                <EbayIconPeople24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-peso-16</td>
-            <td>
-                <EbayIconPeso16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-peso-24</td>
-            <td>
-                <EbayIconPeso24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-phone-16</td>
-            <td>
-                <EbayIconPhone16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-phone-24</td>
-            <td>
-                <EbayIconPhone24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pin-24</td>
-            <td>
-                <EbayIconPin24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pin-filled-24</td>
-            <td>
-                <EbayIconPinFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pinterest-24</td>
-            <td>
-                <EbayIconPinterest24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-16</td>
-            <td>
-                <EbayIconPlay16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-20</td>
-            <td>
-                <EbayIconPlay20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-24</td>
-            <td>
-                <EbayIconPlay24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-disabled-16</td>
-            <td>
-                <EbayIconPlayDisabled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-filled-16-colored</td>
-            <td>
-                <EbayIconPlayFilled16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-filled-24-colored</td>
-            <td>
-                <EbayIconPlayFilled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-play-filled-64-colored</td>
-            <td>
-                <EbayIconPlayFilled64Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-postepay-12-colored</td>
-            <td>
-                <EbayIconPostepay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-postepay-18-colored</td>
-            <td>
-                <EbayIconPostepay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-postepay-24-colored</td>
-            <td>
-                <EbayIconPostepay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-postepay-32-colored</td>
-            <td>
-                <EbayIconPostepay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-potted-plant-16</td>
-            <td>
-                <EbayIconPottedPlant16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-potted-plant-24</td>
-            <td>
-                <EbayIconPottedPlant24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pound-16</td>
-            <td>
-                <EbayIconPound16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-pound-24</td>
-            <td>
-                <EbayIconPound24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-print-16</td>
-            <td>
-                <EbayIconPrint16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-print-24</td>
-            <td>
-                <EbayIconPrint24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-profile-16</td>
-            <td>
-                <EbayIconProfile16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-profile-20</td>
-            <td>
-                <EbayIconProfile20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-profile-24</td>
-            <td>
-                <EbayIconProfile24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-profile-filled-24</td>
-            <td>
-                <EbayIconProfileFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-progress-current-24</td>
-            <td>
-                <EbayIconProgressCurrent24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-progress-upcoming-24</td>
-            <td>
-                <EbayIconProgressUpcoming24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-promotion-16</td>
-            <td>
-                <EbayIconPromotion16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-promotion-24</td>
-            <td>
-                <EbayIconPromotion24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-16</td>
-            <td>
-                <EbayIconPsa16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-16-colored</td>
-            <td>
-                <EbayIconPsa16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-logo-16</td>
-            <td>
-                <EbayIconPsaLogo16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-logo-color-16-colored</td>
-            <td>
-                <EbayIconPsaLogoColor16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-vault-16</td>
-            <td>
-                <EbayIconPsaVault16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-vault-16-colored</td>
-            <td>
-                <EbayIconPsaVault16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-vault-24</td>
-            <td>
-                <EbayIconPsaVault24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-vault-logo-16</td>
-            <td>
-                <EbayIconPsaVaultLogo16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-psa-vault-logo-color-16-colored</td>
-            <td>
-                <EbayIconPsaVaultLogoColor16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-qr-code-16</td>
-            <td>
-                <EbayIconQrCode16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-qr-code-24</td>
-            <td>
-                <EbayIconQrCode24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-radio-checked-18</td>
-            <td>
-                <EbayIconRadioChecked18 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-radio-checked-24</td>
-            <td>
-                <EbayIconRadioChecked24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-radio-unchecked-18</td>
-            <td>
-                <EbayIconRadioUnchecked18 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-radio-unchecked-24</td>
-            <td>
-                <EbayIconRadioUnchecked24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-recovery-code-16</td>
-            <td>
-                <EbayIconRecoveryCode16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-recovery-code-24</td>
-            <td>
-                <EbayIconRecoveryCode24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-reddit-24</td>
-            <td>
-                <EbayIconReddit24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-refresh-16</td>
-            <td>
-                <EbayIconRefresh16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-refresh-20</td>
-            <td>
-                <EbayIconRefresh20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-refresh-24</td>
-            <td>
-                <EbayIconRefresh24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-relaxed-grid-24</td>
-            <td>
-                <EbayIconRelaxedGrid24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-relaxed-grid-filled-24</td>
-            <td>
-                <EbayIconRelaxedGridFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-remove-12</td>
-            <td>
-                <EbayIconRemove12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-remove-16</td>
-            <td>
-                <EbayIconRemove16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-remove-24</td>
-            <td>
-                <EbayIconRemove24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-reply-16</td>
-            <td>
-                <EbayIconReply16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-reply-24</td>
-            <td>
-                <EbayIconReply24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-return-16</td>
-            <td>
-                <EbayIconReturn16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-return-24</td>
-            <td>
-                <EbayIconReturn24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ribbon-16</td>
-            <td>
-                <EbayIconRibbon16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ribbon-24</td>
-            <td>
-                <EbayIconRibbon24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rim-16</td>
-            <td>
-                <EbayIconRim16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rim-24</td>
-            <td>
-                <EbayIconRim24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ringgit-16</td>
-            <td>
-                <EbayIconRinggit16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ringgit-24</td>
-            <td>
-                <EbayIconRinggit24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rotate-24</td>
-            <td>
-                <EbayIconRotate24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rotate-landscape-left-24</td>
-            <td>
-                <EbayIconRotateLandscapeLeft24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rotate-landscape-right-24</td>
-            <td>
-                <EbayIconRotateLandscapeRight24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rotate-portrait-left-24</td>
-            <td>
-                <EbayIconRotatePortraitLeft24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rotate-portrait-right-24</td>
-            <td>
-                <EbayIconRotatePortraitRight24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ruler-16</td>
-            <td>
-                <EbayIconRuler16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ruler-24</td>
-            <td>
-                <EbayIconRuler24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rupee-16</td>
-            <td>
-                <EbayIconRupee16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-rupee-24</td>
-            <td>
-                <EbayIconRupee24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-satchel-16</td>
-            <td>
-                <EbayIconSatchel16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-satchel-24</td>
-            <td>
-                <EbayIconSatchel24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-scan-16</td>
-            <td>
-                <EbayIconScan16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-scan-24</td>
-            <td>
-                <EbayIconScan24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-16</td>
-            <td>
-                <EbayIconSearch16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-20</td>
-            <td>
-                <EbayIconSearch20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-24</td>
-            <td>
-                <EbayIconSearch24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-64</td>
-            <td>
-                <EbayIconSearch64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-filled-24</td>
-            <td>
-                <EbayIconSearchFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-similar-16</td>
-            <td>
-                <EbayIconSearchSimilar16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-similar-20</td>
-            <td>
-                <EbayIconSearchSimilar20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-search-similar-24</td>
-            <td>
-                <EbayIconSearchSimilar24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-seasons-16</td>
-            <td>
-                <EbayIconSeasons16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-seasons-24</td>
-            <td>
-                <EbayIconSeasons24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-secure-purchase-16</td>
-            <td>
-                <EbayIconSecurePurchase16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-secure-purchase-24</td>
-            <td>
-                <EbayIconSecurePurchase24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-security-key-24</td>
-            <td>
-                <EbayIconSecurityKey24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-select-all-24</td>
-            <td>
-                <EbayIconSelectAll24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-selling-16</td>
-            <td>
-                <EbayIconSelling16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-selling-20</td>
-            <td>
-                <EbayIconSelling20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-selling-24</td>
-            <td>
-                <EbayIconSelling24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-selling-filled-24</td>
-            <td>
-                <EbayIconSellingFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-send-24</td>
-            <td>
-                <EbayIconSend24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-settings-16</td>
-            <td>
-                <EbayIconSettings16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-settings-20</td>
-            <td>
-                <EbayIconSettings20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-settings-24</td>
-            <td>
-                <EbayIconSettings24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-share-android-16</td>
-            <td>
-                <EbayIconShareAndroid16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-share-android-20</td>
-            <td>
-                <EbayIconShareAndroid20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-share-android-24</td>
-            <td>
-                <EbayIconShareAndroid24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-share-ios-16</td>
-            <td>
-                <EbayIconShareIos16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-share-ios-20</td>
-            <td>
-                <EbayIconShareIos20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-share-ios-24</td>
-            <td>
-                <EbayIconShareIos24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sharpen-24</td>
-            <td>
-                <EbayIconSharpen24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ship-and-local-16</td>
-            <td>
-                <EbayIconShipAndLocal16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-ship-and-local-24</td>
-            <td>
-                <EbayIconShipAndLocal24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shirt-16</td>
-            <td>
-                <EbayIconShirt16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shirt-24</td>
-            <td>
-                <EbayIconShirt24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shoe-box-24</td>
-            <td>
-                <EbayIconShoeBox24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shopping-event-16</td>
-            <td>
-                <EbayIconShoppingEvent16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shopping-event-24</td>
-            <td>
-                <EbayIconShoppingEvent24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shovel-16</td>
-            <td>
-                <EbayIconShovel16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-shovel-24</td>
-            <td>
-                <EbayIconShovel24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-show-16</td>
-            <td>
-                <EbayIconShow16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-show-24</td>
-            <td>
-                <EbayIconShow24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-small-box-16</td>
-            <td>
-                <EbayIconSmallBox16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-small-box-24</td>
-            <td>
-                <EbayIconSmallBox24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-small-letter-24</td>
-            <td>
-                <EbayIconSmallLetter24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sneaker-16</td>
-            <td>
-                <EbayIconSneaker16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sneaker-24</td>
-            <td>
-                <EbayIconSneaker24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-snowflake-16</td>
-            <td>
-                <EbayIconSnowflake16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-snowflake-24</td>
-            <td>
-                <EbayIconSnowflake24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-snowmobile-16</td>
-            <td>
-                <EbayIconSnowmobile16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-snowmobile-24</td>
-            <td>
-                <EbayIconSnowmobile24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sort-12</td>
-            <td>
-                <EbayIconSort12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sort-16</td>
-            <td>
-                <EbayIconSort16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sort-24</td>
-            <td>
-                <EbayIconSort24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sort-down-12</td>
-            <td>
-                <EbayIconSortDown12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sort-up-12</td>
-            <td>
-                <EbayIconSortUp12 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-down-16</td>
-            <td>
-                <EbayIconSparklineDown16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-down-20</td>
-            <td>
-                <EbayIconSparklineDown20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-down-24</td>
-            <td>
-                <EbayIconSparklineDown24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-up-16</td>
-            <td>
-                <EbayIconSparklineUp16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-up-20</td>
-            <td>
-                <EbayIconSparklineUp20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-up-24</td>
-            <td>
-                <EbayIconSparklineUp24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-sparkline-up-filled-24</td>
-            <td>
-                <EbayIconSparklineUpFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-speedometer-16</td>
-            <td>
-                <EbayIconSpeedometer16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-speedometer-24</td>
-            <td>
-                <EbayIconSpeedometer24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-spinner-20</td>
-            <td>
-                <EbayIconSpinner20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-spinner-24</td>
-            <td>
-                <EbayIconSpinner24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-spinner-30</td>
-            <td>
-                <EbayIconSpinner30 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-split-payment-16</td>
-            <td>
-                <EbayIconSplitPayment16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-split-payment-24</td>
-            <td>
-                <EbayIconSplitPayment24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-split-view-24</td>
-            <td>
-                <EbayIconSplitView24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-split-view-filled-24</td>
-            <td>
-                <EbayIconSplitViewFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-spring-leaf-16</td>
-            <td>
-                <EbayIconSpringLeaf16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-spring-leaf-24</td>
-            <td>
-                <EbayIconSpringLeaf24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-dynamic</td>
-            <td>
-                <EbayIconStarDynamic />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-empty-16</td>
-            <td>
-                <EbayIconStarEmpty16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-empty-24</td>
-            <td>
-                <EbayIconStarEmpty24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-empty-40</td>
-            <td>
-                <EbayIconStarEmpty40 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-filled-16</td>
-            <td>
-                <EbayIconStarFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-filled-24</td>
-            <td>
-                <EbayIconStarFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-filled-40</td>
-            <td>
-                <EbayIconStarFilled40 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-half-16-colored</td>
-            <td>
-                <EbayIconStarHalf16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-half-24-colored</td>
-            <td>
-                <EbayIconStarHalf24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-half-dark-16-colored</td>
-            <td>
-                <EbayIconStarHalfDark16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-half-dark-24-colored</td>
-            <td>
-                <EbayIconStarHalfDark24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-stepper-attention-24</td>
-            <td>
-                <EbayIconStepperAttention24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-stepper-confirmation-24</td>
-            <td>
-                <EbayIconStepperConfirmation24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-stepper-current-24</td>
-            <td>
-                <EbayIconStepperCurrent24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-stepper-upcoming-24</td>
-            <td>
-                <EbayIconStepperUpcoming24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-store-16</td>
-            <td>
-                <EbayIconStore16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-store-24</td>
-            <td>
-                <EbayIconStore24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-store-64</td>
-            <td>
-                <EbayIconStore64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-store-filled-24</td>
-            <td>
-                <EbayIconStoreFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-suitcase-24</td>
-            <td>
-                <EbayIconSuitcase24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-support-24</td>
-            <td>
-                <EbayIconSupport24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-swap-16</td>
-            <td>
-                <EbayIconSwap16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-swap-24</td>
-            <td>
-                <EbayIconSwap24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-switch-camera-24</td>
-            <td>
-                <EbayIconSwitchCamera24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-target-16</td>
-            <td>
-                <EbayIconTarget16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-target-24</td>
-            <td>
-                <EbayIconTarget24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-text-messaging-16</td>
-            <td>
-                <EbayIconTextMessaging16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-text-messaging-20</td>
-            <td>
-                <EbayIconTextMessaging20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-text-messaging-24</td>
-            <td>
-                <EbayIconTextMessaging24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-text-messaging-64</td>
-            <td>
-                <EbayIconTextMessaging64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-text-size-16</td>
-            <td>
-                <EbayIconTextSize16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-text-size-24</td>
-            <td>
-                <EbayIconTextSize24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-the-ebay-vault-16</td>
-            <td>
-                <EbayIconTheEbayVault16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-the-ebay-vault-24</td>
-            <td>
-                <EbayIconTheEbayVault24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-down-16</td>
-            <td>
-                <EbayIconThumbDown16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-down-20</td>
-            <td>
-                <EbayIconThumbDown20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-down-24</td>
-            <td>
-                <EbayIconThumbDown24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-down-filled-16</td>
-            <td>
-                <EbayIconThumbDownFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-down-filled-20</td>
-            <td>
-                <EbayIconThumbDownFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-down-filled-24</td>
-            <td>
-                <EbayIconThumbDownFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-16</td>
-            <td>
-                <EbayIconThumbUp16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-20</td>
-            <td>
-                <EbayIconThumbUp20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-24</td>
-            <td>
-                <EbayIconThumbUp24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-64</td>
-            <td>
-                <EbayIconThumbUp64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-filled-16</td>
-            <td>
-                <EbayIconThumbUpFilled16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-filled-20</td>
-            <td>
-                <EbayIconThumbUpFilled20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-thumb-up-filled-24</td>
-            <td>
-                <EbayIconThumbUpFilled24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-tick-16</td>
-            <td>
-                <EbayIconTick16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-tick-24</td>
-            <td>
-                <EbayIconTick24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-tiktok-24</td>
-            <td>
-                <EbayIconTiktok24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-toggle-mode-bottom-24</td>
-            <td>
-                <EbayIconToggleModeBottom24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-toggle-mode-top-24</td>
-            <td>
-                <EbayIconToggleModeTop24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-rated-plus-16</td>
-            <td>
-                <EbayIconTopRatedPlus16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-rated-plus-24</td>
-            <td>
-                <EbayIconTopRatedPlus24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-rated-seller-16</td>
-            <td>
-                <EbayIconTopRatedSeller16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-rated-seller-24</td>
-            <td>
-                <EbayIconTopRatedSeller24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-service-16</td>
-            <td>
-                <EbayIconTopService16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-service-24</td>
-            <td>
-                <EbayIconTopService24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-service-filled-16-colored</td>
-            <td>
-                <EbayIconTopServiceFilled16Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-top-service-filled-24-colored</td>
-            <td>
-                <EbayIconTopServiceFilled24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trading-card-16</td>
-            <td>
-                <EbayIconTradingCard16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trading-card-24</td>
-            <td>
-                <EbayIconTradingCard24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trading-card-edition-24</td>
-            <td>
-                <EbayIconTradingCardEdition24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trading-card-grade-16</td>
-            <td>
-                <EbayIconTradingCardGrade16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trading-card-grade-24</td>
-            <td>
-                <EbayIconTradingCardGrade24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-transaction-24</td>
-            <td>
-                <EbayIconTransaction24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-translate-16</td>
-            <td>
-                <EbayIconTranslate16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-translate-20</td>
-            <td>
-                <EbayIconTranslate20 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-translate-24</td>
-            <td>
-                <EbayIconTranslate24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trend-down-16-fit</td>
-            <td>
-                <EbayIconTrendDown16Fit />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trend-up-16-fit</td>
-            <td>
-                <EbayIconTrendUp16Fit />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trophy-16</td>
-            <td>
-                <EbayIconTrophy16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-trophy-24</td>
-            <td>
-                <EbayIconTrophy24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-truck-16</td>
-            <td>
-                <EbayIconTruck16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-truck-24</td>
-            <td>
-                <EbayIconTruck24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-truck-64</td>
-            <td>
-                <EbayIconTruck64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-truck-shipped-16</td>
-            <td>
-                <EbayIconTruckShipped16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-truck-shipped-24</td>
-            <td>
-                <EbayIconTruckShipped24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-twitter-24</td>
-            <td>
-                <EbayIconTwitter24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-undo-16</td>
-            <td>
-                <EbayIconUndo16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-undo-24</td>
-            <td>
-                <EbayIconUndo24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unionpay-12-colored</td>
-            <td>
-                <EbayIconUnionpay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unionpay-18-colored</td>
-            <td>
-                <EbayIconUnionpay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unionpay-24-colored</td>
-            <td>
-                <EbayIconUnionpay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unionpay-32-colored</td>
-            <td>
-                <EbayIconUnionpay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unlock-16</td>
-            <td>
-                <EbayIconUnlock16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unlock-24</td>
-            <td>
-                <EbayIconUnlock24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-unselect-all-24</td>
-            <td>
-                <EbayIconUnselectAll24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-upload-16</td>
-            <td>
-                <EbayIconUpload16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-upload-24</td>
-            <td>
-                <EbayIconUpload24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-venmo-12-colored</td>
-            <td>
-                <EbayIconVenmo12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-venmo-18-colored</td>
-            <td>
-                <EbayIconVenmo18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-venmo-24-colored</td>
-            <td>
-                <EbayIconVenmo24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-venmo-32-colored</td>
-            <td>
-                <EbayIconVenmo32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-verified-condition-16</td>
-            <td>
-                <EbayIconVerifiedCondition16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-verified-condition-24</td>
-            <td>
-                <EbayIconVerifiedCondition24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-video-24</td>
-            <td>
-                <EbayIconVideo24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-visa-12-colored</td>
-            <td>
-                <EbayIconVisa12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-visa-18-colored</td>
-            <td>
-                <EbayIconVisa18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-visa-24-colored</td>
-            <td>
-                <EbayIconVisa24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-visa-32-colored</td>
-            <td>
-                <EbayIconVisa32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-16</td>
-            <td>
-                <EbayIconWallet16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-24</td>
-            <td>
-                <EbayIconWallet24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-64</td>
-            <td>
-                <EbayIconWallet64 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-balance-12-colored</td>
-            <td>
-                <EbayIconWalletBalance12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-balance-18-colored</td>
-            <td>
-                <EbayIconWalletBalance18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-balance-24-colored</td>
-            <td>
-                <EbayIconWalletBalance24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wallet-balance-32-colored</td>
-            <td>
-                <EbayIconWalletBalance32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-watch-16</td>
-            <td>
-                <EbayIconWatch16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-watch-24</td>
-            <td>
-                <EbayIconWatch24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-whatsapp-24</td>
-            <td>
-                <EbayIconWhatsapp24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-won-16</td>
-            <td>
-                <EbayIconWon16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-won-24</td>
-            <td>
-                <EbayIconWon24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wrench-16</td>
-            <td>
-                <EbayIconWrench16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-wrench-24</td>
-            <td>
-                <EbayIconWrench24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-youtube-24</td>
-            <td>
-                <EbayIconYoutube24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-yuan-16</td>
-            <td>
-                <EbayIconYuan16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-yuan-24</td>
-            <td>
-                <EbayIconYuan24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zip-pay-12-colored</td>
-            <td>
-                <EbayIconZipPay12Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zip-pay-18-colored</td>
-            <td>
-                <EbayIconZipPay18Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zip-pay-24-colored</td>
-            <td>
-                <EbayIconZipPay24Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zip-pay-32-colored</td>
-            <td>
-                <EbayIconZipPay32Colored />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zloty-16</td>
-            <td>
-                <EbayIconZloty16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zloty-24</td>
-            <td>
-                <EbayIconZloty24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zoom-in-16</td>
-            <td>
-                <EbayIconZoomIn16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zoom-in-24</td>
-            <td>
-                <EbayIconZoomIn24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zoom-out-16</td>
-            <td>
-                <EbayIconZoomOut16 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-zoom-out-24</td>
-            <td>
-                <EbayIconZoomOut24 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-image-placeholder</td>
-            <td>
-                <EbayIconImagePlaceholder />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-0</td>
-            <td>
-                <EbayIconStarRating0 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-0-5</td>
-            <td>
-                <EbayIconStarRating05 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-1</td>
-            <td>
-                <EbayIconStarRating1 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-1-5</td>
-            <td>
-                <EbayIconStarRating15 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-2</td>
-            <td>
-                <EbayIconStarRating2 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-2-5</td>
-            <td>
-                <EbayIconStarRating25 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-3</td>
-            <td>
-                <EbayIconStarRating3 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-3-5</td>
-            <td>
-                <EbayIconStarRating35 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-4</td>
-            <td>
-                <EbayIconStarRating4 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-4-5</td>
-            <td>
-                <EbayIconStarRating45 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-5</td>
-            <td>
-                <EbayIconStarRating5 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-0</td>
-            <td>
-                <EbayIconStarRatingSmall0 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-0-5</td>
-            <td>
-                <EbayIconStarRatingSmall05 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-1</td>
-            <td>
-                <EbayIconStarRatingSmall1 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-1-5</td>
-            <td>
-                <EbayIconStarRatingSmall15 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-2</td>
-            <td>
-                <EbayIconStarRatingSmall2 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-2-5</td>
-            <td>
-                <EbayIconStarRatingSmall25 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-3</td>
-            <td>
-                <EbayIconStarRatingSmall3 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-3-5</td>
-            <td>
-                <EbayIconStarRatingSmall35 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-4</td>
-            <td>
-                <EbayIconStarRatingSmall4 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-4-5</td>
-            <td>
-                <EbayIconStarRatingSmall45 />
-            </td>
-        </tr>
-            
-
-        <tr>
-            <td>ebay-icon-star-rating-small-5</td>
-            <td>
-                <EbayIconStarRatingSmall5 />
-            </td>
-        </tr>
-            
-    </tbody>
-</table>
+    <table>
+        <tbody>
+            <tr>
+                <td>ebay-icon-add-12</td>
+                <td>
+                    <EbayIconAdd12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-add-16</td>
+                <td>
+                    <EbayIconAdd16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-add-24</td>
+                <td>
+                    <EbayIconAdd24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-add-image-24</td>
+                <td>
+                    <EbayIconAddImage24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-afterpay-12-colored</td>
+                <td>
+                    <EbayIconAfterpay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-afterpay-18-colored</td>
+                <td>
+                    <EbayIconAfterpay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-afterpay-24-colored</td>
+                <td>
+                    <EbayIconAfterpay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-afterpay-32-colored</td>
+                <td>
+                    <EbayIconAfterpay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-afterpay-logo-24-colored</td>
+                <td>
+                    <EbayIconAfterpayLogo24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-16</td>
+                <td>
+                    <EbayIconAi16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-20</td>
+                <td>
+                    <EbayIconAi20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-24</td>
+                <td>
+                    <EbayIconAi24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-camera-16</td>
+                <td>
+                    <EbayIconAiCamera16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-camera-20</td>
+                <td>
+                    <EbayIconAiCamera20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-camera-24</td>
+                <td>
+                    <EbayIconAiCamera24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-filled-16</td>
+                <td>
+                    <EbayIconAiFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-filled-20</td>
+                <td>
+                    <EbayIconAiFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-filled-24</td>
+                <td>
+                    <EbayIconAiFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-search-16</td>
+                <td>
+                    <EbayIconAiSearch16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-search-20</td>
+                <td>
+                    <EbayIconAiSearch20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-search-24</td>
+                <td>
+                    <EbayIconAiSearch24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-search-filled-24</td>
+                <td>
+                    <EbayIconAiSearchFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-shirt-16</td>
+                <td>
+                    <EbayIconAiShirt16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-shirt-20</td>
+                <td>
+                    <EbayIconAiShirt20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-shirt-24</td>
+                <td>
+                    <EbayIconAiShirt24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-16-colored</td>
+                <td>
+                    <EbayIconAiSpectrum16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-20-colored</td>
+                <td>
+                    <EbayIconAiSpectrum20Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-24-colored</td>
+                <td>
+                    <EbayIconAiSpectrum24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-filled-16-colored</td>
+                <td>
+                    <EbayIconAiSpectrumFilled16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-filled-20-colored</td>
+                <td>
+                    <EbayIconAiSpectrumFilled20Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-filled-24-colored</td>
+                <td>
+                    <EbayIconAiSpectrumFilled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-spectrum-thin-16-colored</td>
+                <td>
+                    <EbayIconAiSpectrumThin16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-thin-16</td>
+                <td>
+                    <EbayIconAiThin16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-tools-16</td>
+                <td>
+                    <EbayIconAiTools16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-tools-20</td>
+                <td>
+                    <EbayIconAiTools20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ai-tools-24</td>
+                <td>
+                    <EbayIconAiTools24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-cn-12-colored</td>
+                <td>
+                    <EbayIconAlipayCn12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-cn-18-colored</td>
+                <td>
+                    <EbayIconAlipayCn18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-cn-24-colored</td>
+                <td>
+                    <EbayIconAlipayCn24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-cn-32-colored</td>
+                <td>
+                    <EbayIconAlipayCn32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-hk-12-colored</td>
+                <td>
+                    <EbayIconAlipayHk12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-hk-18-colored</td>
+                <td>
+                    <EbayIconAlipayHk18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-hk-24-colored</td>
+                <td>
+                    <EbayIconAlipayHk24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-alipay-hk-32-colored</td>
+                <td>
+                    <EbayIconAlipayHk32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-amex-12-colored</td>
+                <td>
+                    <EbayIconAmex12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-amex-18-colored</td>
+                <td>
+                    <EbayIconAmex18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-amex-24-colored</td>
+                <td>
+                    <EbayIconAmex24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-amex-32-colored</td>
+                <td>
+                    <EbayIconAmex32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-apple-24</td>
+                <td>
+                    <EbayIconApple24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-apple-music-24-colored</td>
+                <td>
+                    <EbayIconAppleMusic24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-apple-pay-12-colored</td>
+                <td>
+                    <EbayIconApplePay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-apple-pay-18-colored</td>
+                <td>
+                    <EbayIconApplePay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-apple-pay-24-colored</td>
+                <td>
+                    <EbayIconApplePay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-apple-pay-32-colored</td>
+                <td>
+                    <EbayIconApplePay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-archive-16</td>
+                <td>
+                    <EbayIconArchive16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-archive-24</td>
+                <td>
+                    <EbayIconArchive24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-left-12</td>
+                <td>
+                    <EbayIconArrowLeft12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-left-16</td>
+                <td>
+                    <EbayIconArrowLeft16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-left-20</td>
+                <td>
+                    <EbayIconArrowLeft20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-left-24</td>
+                <td>
+                    <EbayIconArrowLeft24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-right-12</td>
+                <td>
+                    <EbayIconArrowRight12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-right-16</td>
+                <td>
+                    <EbayIconArrowRight16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-right-20</td>
+                <td>
+                    <EbayIconArrowRight20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrow-right-24</td>
+                <td>
+                    <EbayIconArrowRight24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrows-3d-16</td>
+                <td>
+                    <EbayIconArrows3d16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrows-3d-24</td>
+                <td>
+                    <EbayIconArrows3d24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrows-3d-filled-64-colored</td>
+                <td>
+                    <EbayIconArrows3dFilled64Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrows-expand-16</td>
+                <td>
+                    <EbayIconArrowsExpand16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-arrows-expand-24</td>
+                <td>
+                    <EbayIconArrowsExpand24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-article-16</td>
+                <td>
+                    <EbayIconArticle16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-article-24</td>
+                <td>
+                    <EbayIconArticle24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-16</td>
+                <td>
+                    <EbayIconAttention16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-24</td>
+                <td>
+                    <EbayIconAttention24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-64</td>
+                <td>
+                    <EbayIconAttention64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-filled-16</td>
+                <td>
+                    <EbayIconAttentionFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-filled-24</td>
+                <td>
+                    <EbayIconAttentionFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-triangle-16</td>
+                <td>
+                    <EbayIconAttentionTriangle16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-triangle-24</td>
+                <td>
+                    <EbayIconAttentionTriangle24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-triangle-filled-16</td>
+                <td>
+                    <EbayIconAttentionTriangleFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-attention-triangle-filled-24</td>
+                <td>
+                    <EbayIconAttentionTriangleFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-atv-16</td>
+                <td>
+                    <EbayIconAtv16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-atv-24</td>
+                <td>
+                    <EbayIconAtv24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-high-16</td>
+                <td>
+                    <EbayIconAudioHigh16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-high-20</td>
+                <td>
+                    <EbayIconAudioHigh20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-high-24</td>
+                <td>
+                    <EbayIconAudioHigh24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-low-16</td>
+                <td>
+                    <EbayIconAudioLow16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-off-16</td>
+                <td>
+                    <EbayIconAudioOff16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-off-20</td>
+                <td>
+                    <EbayIconAudioOff20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-audio-off-24</td>
+                <td>
+                    <EbayIconAudioOff24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-authenticity-guarantee-16</td>
+                <td>
+                    <EbayIconAuthenticityGuarantee16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-authenticity-guarantee-24</td>
+                <td>
+                    <EbayIconAuthenticityGuarantee24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-authenticity-guarantee-filled-16-colored</td>
+                <td>
+                    <EbayIconAuthenticityGuaranteeFilled16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-authenticity-guarantee-filled-24-colored</td>
+                <td>
+                    <EbayIconAuthenticityGuaranteeFilled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-auto-adjust-24</td>
+                <td>
+                    <EbayIconAutoAdjust24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-avatar-signed-out</td>
+                <td>
+                    <EbayIconAvatarSignedOut />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-background-removal-16</td>
+                <td>
+                    <EbayIconBackgroundRemoval16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-background-removal-24</td>
+                <td>
+                    <EbayIconBackgroundRemoval24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bancontact-12-colored</td>
+                <td>
+                    <EbayIconBancontact12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bancontact-18-colored</td>
+                <td>
+                    <EbayIconBancontact18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bancontact-24-colored</td>
+                <td>
+                    <EbayIconBancontact24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bancontact-32-colored</td>
+                <td>
+                    <EbayIconBancontact32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-16</td>
+                <td>
+                    <EbayIconBank16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-24</td>
+                <td>
+                    <EbayIconBank24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-64</td>
+                <td>
+                    <EbayIconBank64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-account-12-colored</td>
+                <td>
+                    <EbayIconBankAccount12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-account-18-colored</td>
+                <td>
+                    <EbayIconBankAccount18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-account-24-colored</td>
+                <td>
+                    <EbayIconBankAccount24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-account-32-colored</td>
+                <td>
+                    <EbayIconBankAccount32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bank-group-logo-24-colored</td>
+                <td>
+                    <EbayIconBankGroupLogo24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bar-chart-16</td>
+                <td>
+                    <EbayIconBarChart16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bar-chart-24</td>
+                <td>
+                    <EbayIconBarChart24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bids-16</td>
+                <td>
+                    <EbayIconBids16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bids-24</td>
+                <td>
+                    <EbayIconBids24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bids-64</td>
+                <td>
+                    <EbayIconBids64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-boat-16</td>
+                <td>
+                    <EbayIconBoat16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-boat-24</td>
+                <td>
+                    <EbayIconBoat24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-book-16</td>
+                <td>
+                    <EbayIconBook16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-book-24</td>
+                <td>
+                    <EbayIconBook24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bookmark-16</td>
+                <td>
+                    <EbayIconBookmark16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bookmark-24</td>
+                <td>
+                    <EbayIconBookmark24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bookmark-filled-16</td>
+                <td>
+                    <EbayIconBookmarkFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-bookmark-filled-24</td>
+                <td>
+                    <EbayIconBookmarkFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-brand-authorized-seller-16</td>
+                <td>
+                    <EbayIconBrandAuthorizedSeller16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-brand-authorized-seller-24</td>
+                <td>
+                    <EbayIconBrandAuthorizedSeller24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-brightness-16</td>
+                <td>
+                    <EbayIconBrightness16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-brightness-20</td>
+                <td>
+                    <EbayIconBrightness20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-brightness-24</td>
+                <td>
+                    <EbayIconBrightness24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-calendar-16</td>
+                <td>
+                    <EbayIconCalendar16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-calendar-24</td>
+                <td>
+                    <EbayIconCalendar24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-calendar-64</td>
+                <td>
+                    <EbayIconCalendar64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-camera-16</td>
+                <td>
+                    <EbayIconCamera16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-camera-24</td>
+                <td>
+                    <EbayIconCamera24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-camera-64</td>
+                <td>
+                    <EbayIconCamera64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-car-16</td>
+                <td>
+                    <EbayIconCar16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-car-24</td>
+                <td>
+                    <EbayIconCar24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-car-brake-16</td>
+                <td>
+                    <EbayIconCarBrake16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-car-brake-24</td>
+                <td>
+                    <EbayIconCarBrake24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-card-stack-64</td>
+                <td>
+                    <EbayIconCardStack64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-carnet-12-colored</td>
+                <td>
+                    <EbayIconCarnet12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-carnet-18-colored</td>
+                <td>
+                    <EbayIconCarnet18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-carnet-24-colored</td>
+                <td>
+                    <EbayIconCarnet24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-carnet-32-colored</td>
+                <td>
+                    <EbayIconCarnet32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-carryon-24</td>
+                <td>
+                    <EbayIconCarryon24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-16</td>
+                <td>
+                    <EbayIconCart16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-20</td>
+                <td>
+                    <EbayIconCart20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-24</td>
+                <td>
+                    <EbayIconCart24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-64</td>
+                <td>
+                    <EbayIconCart64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-add-16</td>
+                <td>
+                    <EbayIconCartAdd16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-add-20</td>
+                <td>
+                    <EbayIconCartAdd20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cart-add-24</td>
+                <td>
+                    <EbayIconCartAdd24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cashapp-12-colored</td>
+                <td>
+                    <EbayIconCashapp12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cashapp-18-colored</td>
+                <td>
+                    <EbayIconCashapp18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cashapp-24-colored</td>
+                <td>
+                    <EbayIconCashapp24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cashapp-32-colored</td>
+                <td>
+                    <EbayIconCashapp32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-categories-16</td>
+                <td>
+                    <EbayIconCategories16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-categories-24</td>
+                <td>
+                    <EbayIconCategories24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cb-12-colored</td>
+                <td>
+                    <EbayIconCb12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cb-18-colored</td>
+                <td>
+                    <EbayIconCb18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cb-24-colored</td>
+                <td>
+                    <EbayIconCb24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-cb-32-colored</td>
+                <td>
+                    <EbayIconCb32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ccd-charger-included</td>
+                <td>
+                    <EbayIconCcdChargerIncluded />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ccd-charger-not-included</td>
+                <td>
+                    <EbayIconCcdChargerNotIncluded />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ccd-top</td>
+                <td>
+                    <EbayIconCcdTop />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-certified-recycled-16</td>
+                <td>
+                    <EbayIconCertifiedRecycled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-certified-recycled-24</td>
+                <td>
+                    <EbayIconCertifiedRecycled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chair-16</td>
+                <td>
+                    <EbayIconChair16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chair-24</td>
+                <td>
+                    <EbayIconChair24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chat-16</td>
+                <td>
+                    <EbayIconChat16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chat-24</td>
+                <td>
+                    <EbayIconChat24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chat-64</td>
+                <td>
+                    <EbayIconChat64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-check-in-24</td>
+                <td>
+                    <EbayIconCheckIn24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkbox-checked-18</td>
+                <td>
+                    <EbayIconCheckboxChecked18 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkbox-checked-24</td>
+                <td>
+                    <EbayIconCheckboxChecked24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkbox-mixed-18</td>
+                <td>
+                    <EbayIconCheckboxMixed18 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkbox-mixed-24</td>
+                <td>
+                    <EbayIconCheckboxMixed24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkbox-unchecked-18</td>
+                <td>
+                    <EbayIconCheckboxUnchecked18 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkbox-unchecked-24</td>
+                <td>
+                    <EbayIconCheckboxUnchecked24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-checkmark-24</td>
+                <td>
+                    <EbayIconCheckmark24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-down-12</td>
+                <td>
+                    <EbayIconChevronDown12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-down-16</td>
+                <td>
+                    <EbayIconChevronDown16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-down-20</td>
+                <td>
+                    <EbayIconChevronDown20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-down-24</td>
+                <td>
+                    <EbayIconChevronDown24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-left-12</td>
+                <td>
+                    <EbayIconChevronLeft12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-left-16</td>
+                <td>
+                    <EbayIconChevronLeft16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-left-20</td>
+                <td>
+                    <EbayIconChevronLeft20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-left-24</td>
+                <td>
+                    <EbayIconChevronLeft24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-right-12</td>
+                <td>
+                    <EbayIconChevronRight12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-right-16</td>
+                <td>
+                    <EbayIconChevronRight16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-right-20</td>
+                <td>
+                    <EbayIconChevronRight20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-right-24</td>
+                <td>
+                    <EbayIconChevronRight24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-up-12</td>
+                <td>
+                    <EbayIconChevronUp12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-up-16</td>
+                <td>
+                    <EbayIconChevronUp16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-up-20</td>
+                <td>
+                    <EbayIconChevronUp20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chevron-up-24</td>
+                <td>
+                    <EbayIconChevronUp24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chinese-coin-16</td>
+                <td>
+                    <EbayIconChineseCoin16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-chinese-coin-24</td>
+                <td>
+                    <EbayIconChineseCoin24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clear-16</td>
+                <td>
+                    <EbayIconClear16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clear-20</td>
+                <td>
+                    <EbayIconClear20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clear-24</td>
+                <td>
+                    <EbayIconClear24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-click-to-call-16</td>
+                <td>
+                    <EbayIconClickToCall16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-click-to-call-24</td>
+                <td>
+                    <EbayIconClickToCall24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clock-12</td>
+                <td>
+                    <EbayIconClock12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clock-16</td>
+                <td>
+                    <EbayIconClock16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clock-24</td>
+                <td>
+                    <EbayIconClock24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clock-64</td>
+                <td>
+                    <EbayIconClock64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clock-fast-16</td>
+                <td>
+                    <EbayIconClockFast16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-clock-fast-24</td>
+                <td>
+                    <EbayIconClockFast24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-close-12</td>
+                <td>
+                    <EbayIconClose12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-close-16</td>
+                <td>
+                    <EbayIconClose16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-close-20</td>
+                <td>
+                    <EbayIconClose20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-close-24</td>
+                <td>
+                    <EbayIconClose24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-closed-caption-16</td>
+                <td>
+                    <EbayIconClosedCaption16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-closed-caption-24</td>
+                <td>
+                    <EbayIconClosedCaption24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-closed-caption-filled-16</td>
+                <td>
+                    <EbayIconClosedCaptionFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-closed-caption-filled-24</td>
+                <td>
+                    <EbayIconClosedCaptionFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-coin-24</td>
+                <td>
+                    <EbayIconCoin24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-coin-battery-48</td>
+                <td>
+                    <EbayIconCoinBattery48 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-collections-16</td>
+                <td>
+                    <EbayIconCollections16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-collections-24</td>
+                <td>
+                    <EbayIconCollections24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-condensed-grid-24</td>
+                <td>
+                    <EbayIconCondensedGrid24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-condensed-grid-filled-24</td>
+                <td>
+                    <EbayIconCondensedGridFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-confirmation-16</td>
+                <td>
+                    <EbayIconConfirmation16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-confirmation-24</td>
+                <td>
+                    <EbayIconConfirmation24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-confirmation-64</td>
+                <td>
+                    <EbayIconConfirmation64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-confirmation-filled-12</td>
+                <td>
+                    <EbayIconConfirmationFilled12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-confirmation-filled-16</td>
+                <td>
+                    <EbayIconConfirmationFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-confirmation-filled-24</td>
+                <td>
+                    <EbayIconConfirmationFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-contract-16</td>
+                <td>
+                    <EbayIconContract16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-contrast-24</td>
+                <td>
+                    <EbayIconContrast24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-copy-16</td>
+                <td>
+                    <EbayIconCopy16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-copy-24</td>
+                <td>
+                    <EbayIconCopy24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-coupon-16</td>
+                <td>
+                    <EbayIconCoupon16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-coupon-24</td>
+                <td>
+                    <EbayIconCoupon24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-16</td>
+                <td>
+                    <EbayIconCreditCard16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-20</td>
+                <td>
+                    <EbayIconCreditCard20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-24</td>
+                <td>
+                    <EbayIconCreditCard24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-64</td>
+                <td>
+                    <EbayIconCreditCard64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-cvv-back-20</td>
+                <td>
+                    <EbayIconCreditCardCvvBack20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-cvv-back-24</td>
+                <td>
+                    <EbayIconCreditCardCvvBack24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-cvv-front-20</td>
+                <td>
+                    <EbayIconCreditCardCvvFront20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-credit-card-cvv-front-24</td>
+                <td>
+                    <EbayIconCreditCardCvvFront24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-crop-24</td>
+                <td>
+                    <EbayIconCrop24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-customize-16</td>
+                <td>
+                    <EbayIconCustomize16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-customize-24</td>
+                <td>
+                    <EbayIconCustomize24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-delete-16</td>
+                <td>
+                    <EbayIconDelete16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-delete-20</td>
+                <td>
+                    <EbayIconDelete20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-delete-24</td>
+                <td>
+                    <EbayIconDelete24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-compact-16</td>
+                <td>
+                    <EbayIconDensityCompact16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-compact-24</td>
+                <td>
+                    <EbayIconDensityCompact24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-default-16</td>
+                <td>
+                    <EbayIconDensityDefault16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-default-24</td>
+                <td>
+                    <EbayIconDensityDefault24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-relaxed-16</td>
+                <td>
+                    <EbayIconDensityRelaxed16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-relaxed-24</td>
+                <td>
+                    <EbayIconDensityRelaxed24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-row-compact-16</td>
+                <td>
+                    <EbayIconDensityRowCompact16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-row-compact-24</td>
+                <td>
+                    <EbayIconDensityRowCompact24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-row-relaxed-16</td>
+                <td>
+                    <EbayIconDensityRowRelaxed16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-density-row-relaxed-24</td>
+                <td>
+                    <EbayIconDensityRowRelaxed24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-diamond-16</td>
+                <td>
+                    <EbayIconDiamond16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-diamond-24</td>
+                <td>
+                    <EbayIconDiamond24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-diners-12-colored</td>
+                <td>
+                    <EbayIconDiners12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-diners-18-colored</td>
+                <td>
+                    <EbayIconDiners18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-diners-24-colored</td>
+                <td>
+                    <EbayIconDiners24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-diners-32-colored</td>
+                <td>
+                    <EbayIconDiners32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-direct-debit-12-colored</td>
+                <td>
+                    <EbayIconDirectDebit12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-direct-debit-18-colored</td>
+                <td>
+                    <EbayIconDirectDebit18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-direct-debit-24-colored</td>
+                <td>
+                    <EbayIconDirectDebit24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-direct-debit-32-colored</td>
+                <td>
+                    <EbayIconDirectDebit32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-direct-from-brand-16</td>
+                <td>
+                    <EbayIconDirectFromBrand16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-direct-from-brand-24</td>
+                <td>
+                    <EbayIconDirectFromBrand24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discord-24</td>
+                <td>
+                    <EbayIconDiscord24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discount-16</td>
+                <td>
+                    <EbayIconDiscount16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discount-24</td>
+                <td>
+                    <EbayIconDiscount24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discount-auto-16</td>
+                <td>
+                    <EbayIconDiscountAuto16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discount-auto-24</td>
+                <td>
+                    <EbayIconDiscountAuto24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discover-12-colored</td>
+                <td>
+                    <EbayIconDiscover12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discover-18-colored</td>
+                <td>
+                    <EbayIconDiscover18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discover-24-colored</td>
+                <td>
+                    <EbayIconDiscover24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-discover-32-colored</td>
+                <td>
+                    <EbayIconDiscover32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-dollar-16</td>
+                <td>
+                    <EbayIconDollar16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-dollar-24</td>
+                <td>
+                    <EbayIconDollar24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-dollar-off-24</td>
+                <td>
+                    <EbayIconDollarOff24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-download-16</td>
+                <td>
+                    <EbayIconDownload16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-download-20</td>
+                <td>
+                    <EbayIconDownload20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-download-24</td>
+                <td>
+                    <EbayIconDownload24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-drag-drop-16</td>
+                <td>
+                    <EbayIconDragDrop16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-drag-drop-24</td>
+                <td>
+                    <EbayIconDragDrop24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-balance-12-colored</td>
+                <td>
+                    <EbayIconEbayBalance12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-balance-18-colored</td>
+                <td>
+                    <EbayIconEbayBalance18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-balance-24-colored</td>
+                <td>
+                    <EbayIconEbayBalance24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-balance-32-colored</td>
+                <td>
+                    <EbayIconEbayBalance32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-bucks-logo-16-colored</td>
+                <td>
+                    <EbayIconEbayBucksLogo16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-for-charity-16</td>
+                <td>
+                    <EbayIconEbayForCharity16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-for-charity-24</td>
+                <td>
+                    <EbayIconEbayForCharity24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-international-shipping-16</td>
+                <td>
+                    <EbayIconEbayInternationalShipping16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-international-shipping-24</td>
+                <td>
+                    <EbayIconEbayInternationalShipping24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-international-shipping-64</td>
+                <td>
+                    <EbayIconEbayInternationalShipping64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-live-16</td>
+                <td>
+                    <EbayIconEbayLive16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-live-24</td>
+                <td>
+                    <EbayIconEbayLive24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-logo-16-colored</td>
+                <td>
+                    <EbayIconEbayLogo16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-mastercard-12-colored</td>
+                <td>
+                    <EbayIconEbayMastercard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-mastercard-18-colored</td>
+                <td>
+                    <EbayIconEbayMastercard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-mastercard-24-colored</td>
+                <td>
+                    <EbayIconEbayMastercard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-mastercard-32-colored</td>
+                <td>
+                    <EbayIconEbayMastercard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-money-back-guarantee-logo-16-colored</td>
+                <td>
+                    <EbayIconEbayMoneyBackGuaranteeLogo16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-plus-16</td>
+                <td>
+                    <EbayIconEbayPlus16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-plus-24</td>
+                <td>
+                    <EbayIconEbayPlus24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-plus-logo-16-colored</td>
+                <td>
+                    <EbayIconEbayPlusLogo16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-plus-logo-dark-16-colored</td>
+                <td>
+                    <EbayIconEbayPlusLogoDark16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-preloved-16</td>
+                <td>
+                    <EbayIconEbayPreloved16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-preloved-24</td>
+                <td>
+                    <EbayIconEbayPreloved24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-refurbished-16</td>
+                <td>
+                    <EbayIconEbayRefurbished16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ebay-refurbished-24</td>
+                <td>
+                    <EbayIconEbayRefurbished24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eek-arrow</td>
+                <td>
+                    <EbayIconEekArrow />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eek-range-arrow</td>
+                <td>
+                    <EbayIconEekRangeArrow />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eftpos-12-colored</td>
+                <td>
+                    <EbayIconEftpos12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eftpos-18-colored</td>
+                <td>
+                    <EbayIconEftpos18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eftpos-24-colored</td>
+                <td>
+                    <EbayIconEftpos24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eftpos-32-colored</td>
+                <td>
+                    <EbayIconEftpos32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-elo-12-colored</td>
+                <td>
+                    <EbayIconElo12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-elo-18-colored</td>
+                <td>
+                    <EbayIconElo18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-elo-24-colored</td>
+                <td>
+                    <EbayIconElo24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-elo-32-colored</td>
+                <td>
+                    <EbayIconElo32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-escrow-card-12-colored</td>
+                <td>
+                    <EbayIconEscrowCard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-escrow-card-18-colored</td>
+                <td>
+                    <EbayIconEscrowCard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-escrow-card-24-colored</td>
+                <td>
+                    <EbayIconEscrowCard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-escrow-card-32-colored</td>
+                <td>
+                    <EbayIconEscrowCard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-euro-16</td>
+                <td>
+                    <EbayIconEuro16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-euro-24</td>
+                <td>
+                    <EbayIconEuro24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-european-conformity-48</td>
+                <td>
+                    <EbayIconEuropeanConformity48 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-exclude-16</td>
+                <td>
+                    <EbayIconExclude16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-exclude-24</td>
+                <td>
+                    <EbayIconExclude24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-exclude-64</td>
+                <td>
+                    <EbayIconExclude64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-expand-16</td>
+                <td>
+                    <EbayIconExpand16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-explore-16</td>
+                <td>
+                    <EbayIconExplore16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-explore-24</td>
+                <td>
+                    <EbayIconExplore24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-external-link-16</td>
+                <td>
+                    <EbayIconExternalLink16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-external-link-20</td>
+                <td>
+                    <EbayIconExternalLink20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-external-link-24</td>
+                <td>
+                    <EbayIconExternalLink24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eye-16</td>
+                <td>
+                    <EbayIconEye16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-eye-24</td>
+                <td>
+                    <EbayIconEye24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-face-happiest-24</td>
+                <td>
+                    <EbayIconFaceHappiest24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-face-happy-16</td>
+                <td>
+                    <EbayIconFaceHappy16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-face-happy-24</td>
+                <td>
+                    <EbayIconFaceHappy24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-face-neutral-24</td>
+                <td>
+                    <EbayIconFaceNeutral24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-face-sad-24</td>
+                <td>
+                    <EbayIconFaceSad24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-face-saddest-24</td>
+                <td>
+                    <EbayIconFaceSaddest24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-facebook-24</td>
+                <td>
+                    <EbayIconFacebook24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-facebook-messenger-24</td>
+                <td>
+                    <EbayIconFacebookMessenger24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-fall-leaf-16</td>
+                <td>
+                    <EbayIconFallLeaf16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-fall-leaf-24</td>
+                <td>
+                    <EbayIconFallLeaf24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-16</td>
+                <td>
+                    <EbayIconFeedback16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-20</td>
+                <td>
+                    <EbayIconFeedback20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-24</td>
+                <td>
+                    <EbayIconFeedback24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-error-16</td>
+                <td>
+                    <EbayIconFeedbackError16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-error-24</td>
+                <td>
+                    <EbayIconFeedbackError24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-negative-16</td>
+                <td>
+                    <EbayIconFeedbackNegative16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-neutral-16</td>
+                <td>
+                    <EbayIconFeedbackNeutral16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-positive-16</td>
+                <td>
+                    <EbayIconFeedbackPositive16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-received-16</td>
+                <td>
+                    <EbayIconFeedbackReceived16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-feedback-received-24</td>
+                <td>
+                    <EbayIconFeedbackReceived24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-file-16</td>
+                <td>
+                    <EbayIconFile16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-file-24</td>
+                <td>
+                    <EbayIconFile24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-filter-16</td>
+                <td>
+                    <EbayIconFilter16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-filter-24</td>
+                <td>
+                    <EbayIconFilter24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-fingerprint-16</td>
+                <td>
+                    <EbayIconFingerprint16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-fingerprint-24</td>
+                <td>
+                    <EbayIconFingerprint24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-fingerprint-64</td>
+                <td>
+                    <EbayIconFingerprint64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flag-16</td>
+                <td>
+                    <EbayIconFlag16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flag-24</td>
+                <td>
+                    <EbayIconFlag24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flag-filled-16</td>
+                <td>
+                    <EbayIconFlagFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flag-filled-24</td>
+                <td>
+                    <EbayIconFlagFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flash-24</td>
+                <td>
+                    <EbayIconFlash24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flash-auto-24</td>
+                <td>
+                    <EbayIconFlashAuto24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-flash-off-24</td>
+                <td>
+                    <EbayIconFlashOff24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-folder-16</td>
+                <td>
+                    <EbayIconFolder16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-folder-24</td>
+                <td>
+                    <EbayIconFolder24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-folder-add-16</td>
+                <td>
+                    <EbayIconFolderAdd16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-folder-add-24</td>
+                <td>
+                    <EbayIconFolderAdd24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-forklift-16</td>
+                <td>
+                    <EbayIconForklift16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-forklift-24</td>
+                <td>
+                    <EbayIconForklift24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-franc-16</td>
+                <td>
+                    <EbayIconFranc16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-franc-24</td>
+                <td>
+                    <EbayIconFranc24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-free-warranty-16</td>
+                <td>
+                    <EbayIconFreeWarranty16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-free-warranty-24</td>
+                <td>
+                    <EbayIconFreeWarranty24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-full-view-16</td>
+                <td>
+                    <EbayIconFullView16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-full-view-24</td>
+                <td>
+                    <EbayIconFullView24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-full-view-filled-16</td>
+                <td>
+                    <EbayIconFullViewFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-full-view-filled-24</td>
+                <td>
+                    <EbayIconFullViewFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gallery-16</td>
+                <td>
+                    <EbayIconGallery16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gallery-24</td>
+                <td>
+                    <EbayIconGallery24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-general-card-12-colored</td>
+                <td>
+                    <EbayIconGeneralCard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-general-card-18-colored</td>
+                <td>
+                    <EbayIconGeneralCard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-general-card-24-colored</td>
+                <td>
+                    <EbayIconGeneralCard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-general-card-32-colored</td>
+                <td>
+                    <EbayIconGeneralCard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-generic-card-12-colored</td>
+                <td>
+                    <EbayIconGenericCard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-generic-card-18-colored</td>
+                <td>
+                    <EbayIconGenericCard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-generic-card-24-colored</td>
+                <td>
+                    <EbayIconGenericCard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-generic-card-32-colored</td>
+                <td>
+                    <EbayIconGenericCard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-16</td>
+                <td>
+                    <EbayIconGift16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-24</td>
+                <td>
+                    <EbayIconGift24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-64</td>
+                <td>
+                    <EbayIconGift64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-card-12-colored</td>
+                <td>
+                    <EbayIconGiftCard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-card-18-colored</td>
+                <td>
+                    <EbayIconGiftCard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-card-24-colored</td>
+                <td>
+                    <EbayIconGiftCard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-gift-card-32-colored</td>
+                <td>
+                    <EbayIconGiftCard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-girocard-12-colored</td>
+                <td>
+                    <EbayIconGirocard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-girocard-18-colored</td>
+                <td>
+                    <EbayIconGirocard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-girocard-24-colored</td>
+                <td>
+                    <EbayIconGirocard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-girocard-32-colored</td>
+                <td>
+                    <EbayIconGirocard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-glasses-24</td>
+                <td>
+                    <EbayIconGlasses24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-glasses-64</td>
+                <td>
+                    <EbayIconGlasses64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-google-24</td>
+                <td>
+                    <EbayIconGoogle24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-google-pay-12-colored</td>
+                <td>
+                    <EbayIconGooglePay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-google-pay-18-colored</td>
+                <td>
+                    <EbayIconGooglePay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-google-pay-24-colored</td>
+                <td>
+                    <EbayIconGooglePay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-google-pay-32-colored</td>
+                <td>
+                    <EbayIconGooglePay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-graph-16</td>
+                <td>
+                    <EbayIconGraph16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-graph-24</td>
+                <td>
+                    <EbayIconGraph24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-graph-64</td>
+                <td>
+                    <EbayIconGraph64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-graph-dynamic-16</td>
+                <td>
+                    <EbayIconGraphDynamic16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-graph-dynamic-24</td>
+                <td>
+                    <EbayIconGraphDynamic24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-grid-view-16</td>
+                <td>
+                    <EbayIconGridView16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-grid-view-24</td>
+                <td>
+                    <EbayIconGridView24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-grid-view-filled-16</td>
+                <td>
+                    <EbayIconGridViewFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-grid-view-filled-24</td>
+                <td>
+                    <EbayIconGridViewFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-hand-swipe-40</td>
+                <td>
+                    <EbayIconHandSwipe40 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-handbag-16</td>
+                <td>
+                    <EbayIconHandbag16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-handbag-24</td>
+                <td>
+                    <EbayIconHandbag24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-hanger-16</td>
+                <td>
+                    <EbayIconHanger16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-hanger-24</td>
+                <td>
+                    <EbayIconHanger24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-headlight-16</td>
+                <td>
+                    <EbayIconHeadlight16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-headlight-24</td>
+                <td>
+                    <EbayIconHeadlight24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-headphone-16</td>
+                <td>
+                    <EbayIconHeadphone16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-headphone-24</td>
+                <td>
+                    <EbayIconHeadphone24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-heart-16</td>
+                <td>
+                    <EbayIconHeart16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-heart-20</td>
+                <td>
+                    <EbayIconHeart20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-heart-24</td>
+                <td>
+                    <EbayIconHeart24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-heart-filled-16</td>
+                <td>
+                    <EbayIconHeartFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-heart-filled-20</td>
+                <td>
+                    <EbayIconHeartFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-heart-filled-24</td>
+                <td>
+                    <EbayIconHeartFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-help-16</td>
+                <td>
+                    <EbayIconHelp16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-help-20</td>
+                <td>
+                    <EbayIconHelp20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-help-24</td>
+                <td>
+                    <EbayIconHelp24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-help-outline-16</td>
+                <td>
+                    <EbayIconHelpOutline16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-help-outline-20</td>
+                <td>
+                    <EbayIconHelpOutline20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-help-outline-24</td>
+                <td>
+                    <EbayIconHelpOutline24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-hide-16</td>
+                <td>
+                    <EbayIconHide16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-hide-24</td>
+                <td>
+                    <EbayIconHide24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-history-16</td>
+                <td>
+                    <EbayIconHistory16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-history-24</td>
+                <td>
+                    <EbayIconHistory24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-history-64</td>
+                <td>
+                    <EbayIconHistory64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-home-24</td>
+                <td>
+                    <EbayIconHome24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-home-filled-24</td>
+                <td>
+                    <EbayIconHomeFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-image-16</td>
+                <td>
+                    <EbayIconImage16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-image-24</td>
+                <td>
+                    <EbayIconImage24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-image-64</td>
+                <td>
+                    <EbayIconImage64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-inbox-16</td>
+                <td>
+                    <EbayIconInbox16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-inbox-24</td>
+                <td>
+                    <EbayIconInbox24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-information-16</td>
+                <td>
+                    <EbayIconInformation16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-information-20</td>
+                <td>
+                    <EbayIconInformation20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-information-24</td>
+                <td>
+                    <EbayIconInformation24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-information-filled-16</td>
+                <td>
+                    <EbayIconInformationFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-information-filled-20</td>
+                <td>
+                    <EbayIconInformationFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-information-filled-24</td>
+                <td>
+                    <EbayIconInformationFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-inspect-16</td>
+                <td>
+                    <EbayIconInspect16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-inspect-24</td>
+                <td>
+                    <EbayIconInspect24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-inspect-64</td>
+                <td>
+                    <EbayIconInspect64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-instagram-24</td>
+                <td>
+                    <EbayIconInstagram24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-interac-12-colored</td>
+                <td>
+                    <EbayIconInterac12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-interac-18-colored</td>
+                <td>
+                    <EbayIconInterac18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-interac-24-colored</td>
+                <td>
+                    <EbayIconInterac24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-interac-32-colored</td>
+                <td>
+                    <EbayIconInterac32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-item-list-16</td>
+                <td>
+                    <EbayIconItemList16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-item-list-20</td>
+                <td>
+                    <EbayIconItemList20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-item-list-24</td>
+                <td>
+                    <EbayIconItemList24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-jcb-12-colored</td>
+                <td>
+                    <EbayIconJcb12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-jcb-18-colored</td>
+                <td>
+                    <EbayIconJcb18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-jcb-24-colored</td>
+                <td>
+                    <EbayIconJcb24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-jcb-32-colored</td>
+                <td>
+                    <EbayIconJcb32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-jet-ski-16</td>
+                <td>
+                    <EbayIconJetSki16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-jet-ski-24</td>
+                <td>
+                    <EbayIconJetSki24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-kakao-pay-12-colored</td>
+                <td>
+                    <EbayIconKakaoPay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-kakao-pay-18-colored</td>
+                <td>
+                    <EbayIconKakaoPay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-kakao-pay-24-colored</td>
+                <td>
+                    <EbayIconKakaoPay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-kakao-pay-32-colored</td>
+                <td>
+                    <EbayIconKakaoPay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-key-16</td>
+                <td>
+                    <EbayIconKey16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-key-24</td>
+                <td>
+                    <EbayIconKey24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-keyboard-16</td>
+                <td>
+                    <EbayIconKeyboard16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-keyboard-24</td>
+                <td>
+                    <EbayIconKeyboard24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-black-12-colored</td>
+                <td>
+                    <EbayIconKlarnaBlack12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-black-18-colored</td>
+                <td>
+                    <EbayIconKlarnaBlack18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-black-24-colored</td>
+                <td>
+                    <EbayIconKlarnaBlack24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-black-32-colored</td>
+                <td>
+                    <EbayIconKlarnaBlack32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-pink-12-colored</td>
+                <td>
+                    <EbayIconKlarnaPink12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-pink-18-colored</td>
+                <td>
+                    <EbayIconKlarnaPink18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-pink-24-colored</td>
+                <td>
+                    <EbayIconKlarnaPink24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-pink-32-colored</td>
+                <td>
+                    <EbayIconKlarnaPink32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-white-12-colored</td>
+                <td>
+                    <EbayIconKlarnaWhite12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-white-18-colored</td>
+                <td>
+                    <EbayIconKlarnaWhite18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-white-24-colored</td>
+                <td>
+                    <EbayIconKlarnaWhite24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-klarna-white-32-colored</td>
+                <td>
+                    <EbayIconKlarnaWhite32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-krona-16</td>
+                <td>
+                    <EbayIconKrona16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-krona-24</td>
+                <td>
+                    <EbayIconKrona24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lamp-16</td>
+                <td>
+                    <EbayIconLamp16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lamp-24</td>
+                <td>
+                    <EbayIconLamp24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-large-box-16</td>
+                <td>
+                    <EbayIconLargeBox16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-large-box-24</td>
+                <td>
+                    <EbayIconLargeBox24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-authenticity-guarantee-48-colored</td>
+                <td>
+                    <EbayIconLegacyAuthenticityGuarantee48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-click-to-call-48-colored</td>
+                <td>
+                    <EbayIconLegacyClickToCall48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-escrow-48-colored</td>
+                <td>
+                    <EbayIconLegacyEscrow48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-free-warranty-48-colored</td>
+                <td>
+                    <EbayIconLegacyFreeWarranty48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-money-back-guarantee-chf-48-colored</td>
+                <td>
+                    <EbayIconLegacyMoneyBackGuaranteeChf48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-money-back-guarantee-eu-48-colored</td>
+                <td>
+                    <EbayIconLegacyMoneyBackGuaranteeEu48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-money-back-guarantee-uk-48-colored</td>
+                <td>
+                    <EbayIconLegacyMoneyBackGuaranteeUk48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-money-back-guarantee-us-48-colored</td>
+                <td>
+                    <EbayIconLegacyMoneyBackGuaranteeUs48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-money-back-guarantee-zl-48-colored</td>
+                <td>
+                    <EbayIconLegacyMoneyBackGuaranteeZl48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-legacy-top-rated-seller-48-colored</td>
+                <td>
+                    <EbayIconLegacyTopRatedSeller48Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lightbulb-16</td>
+                <td>
+                    <EbayIconLightbulb16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lightbulb-24</td>
+                <td>
+                    <EbayIconLightbulb24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lightning-bolt-16</td>
+                <td>
+                    <EbayIconLightningBolt16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lightning-bolt-24</td>
+                <td>
+                    <EbayIconLightningBolt24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-link-24</td>
+                <td>
+                    <EbayIconLink24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-linkedin-24</td>
+                <td>
+                    <EbayIconLinkedin24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-list-view-16</td>
+                <td>
+                    <EbayIconListView16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-list-view-24</td>
+                <td>
+                    <EbayIconListView24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-list-view-filled-16</td>
+                <td>
+                    <EbayIconListViewFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-list-view-filled-24</td>
+                <td>
+                    <EbayIconListViewFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-16</td>
+                <td>
+                    <EbayIconLiveBag16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-20</td>
+                <td>
+                    <EbayIconLiveBag20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-24</td>
+                <td>
+                    <EbayIconLiveBag24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-filled-24</td>
+                <td>
+                    <EbayIconLiveBagFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-play-filled-16-colored</td>
+                <td>
+                    <EbayIconLiveBagPlayFilled16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-play-filled-24-colored</td>
+                <td>
+                    <EbayIconLiveBagPlayFilled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-play-filled-64-colored</td>
+                <td>
+                    <EbayIconLiveBagPlayFilled64Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-bag-thin-16</td>
+                <td>
+                    <EbayIconLiveBagThin16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-broadcast-20</td>
+                <td>
+                    <EbayIconLiveBroadcast20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-broadcast-24</td>
+                <td>
+                    <EbayIconLiveBroadcast24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-broadcast-thin-16</td>
+                <td>
+                    <EbayIconLiveBroadcastThin16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-eye-16</td>
+                <td>
+                    <EbayIconLiveEye16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-live-eye-24</td>
+                <td>
+                    <EbayIconLiveEye24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-location-16</td>
+                <td>
+                    <EbayIconLocation16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-location-24</td>
+                <td>
+                    <EbayIconLocation24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-location-64</td>
+                <td>
+                    <EbayIconLocation64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-location-arrow-16</td>
+                <td>
+                    <EbayIconLocationArrow16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-location-arrow-24</td>
+                <td>
+                    <EbayIconLocationArrow24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lock-16</td>
+                <td>
+                    <EbayIconLock16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lock-24</td>
+                <td>
+                    <EbayIconLock24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lock-filled-16</td>
+                <td>
+                    <EbayIconLockFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lock-filled-20</td>
+                <td>
+                    <EbayIconLockFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-lock-filled-24</td>
+                <td>
+                    <EbayIconLockFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-maestro-12-colored</td>
+                <td>
+                    <EbayIconMaestro12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-maestro-18-colored</td>
+                <td>
+                    <EbayIconMaestro18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-maestro-24-colored</td>
+                <td>
+                    <EbayIconMaestro24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-maestro-32-colored</td>
+                <td>
+                    <EbayIconMaestro32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-16</td>
+                <td>
+                    <EbayIconMail16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-20</td>
+                <td>
+                    <EbayIconMail20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-24</td>
+                <td>
+                    <EbayIconMail24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-64</td>
+                <td>
+                    <EbayIconMail64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-move-16</td>
+                <td>
+                    <EbayIconMailMove16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-move-24</td>
+                <td>
+                    <EbayIconMailMove24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-open-16</td>
+                <td>
+                    <EbayIconMailOpen16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-open-24</td>
+                <td>
+                    <EbayIconMailOpen24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-unread-16</td>
+                <td>
+                    <EbayIconMailUnread16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mail-unread-24</td>
+                <td>
+                    <EbayIconMailUnread24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-map-16</td>
+                <td>
+                    <EbayIconMap16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-map-20</td>
+                <td>
+                    <EbayIconMap20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-map-24</td>
+                <td>
+                    <EbayIconMap24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-masonry-view-16</td>
+                <td>
+                    <EbayIconMasonryView16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-masonry-view-24</td>
+                <td>
+                    <EbayIconMasonryView24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-masonry-view-filled-16</td>
+                <td>
+                    <EbayIconMasonryViewFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-masonry-view-filled-24</td>
+                <td>
+                    <EbayIconMasonryViewFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mastercard-12-colored</td>
+                <td>
+                    <EbayIconMastercard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mastercard-18-colored</td>
+                <td>
+                    <EbayIconMastercard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mastercard-24-colored</td>
+                <td>
+                    <EbayIconMastercard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mastercard-32-colored</td>
+                <td>
+                    <EbayIconMastercard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-medium-box-16</td>
+                <td>
+                    <EbayIconMediumBox16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-medium-box-24</td>
+                <td>
+                    <EbayIconMediumBox24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-megaphone-16</td>
+                <td>
+                    <EbayIconMegaphone16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-megaphone-24</td>
+                <td>
+                    <EbayIconMegaphone24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-menu-16</td>
+                <td>
+                    <EbayIconMenu16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-menu-20</td>
+                <td>
+                    <EbayIconMenu20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-menu-24</td>
+                <td>
+                    <EbayIconMenu24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mercado-pago-12-colored</td>
+                <td>
+                    <EbayIconMercadoPago12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mercado-pago-18-colored</td>
+                <td>
+                    <EbayIconMercadoPago18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mercado-pago-24-colored</td>
+                <td>
+                    <EbayIconMercadoPago24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mercado-pago-32-colored</td>
+                <td>
+                    <EbayIconMercadoPago32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-microphone-16</td>
+                <td>
+                    <EbayIconMicrophone16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-microphone-24</td>
+                <td>
+                    <EbayIconMicrophone24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mobile-24</td>
+                <td>
+                    <EbayIconMobile24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mobile-signal-24</td>
+                <td>
+                    <EbayIconMobileSignal24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-back-guarantee-16</td>
+                <td>
+                    <EbayIconMoneyBackGuarantee16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-back-guarantee-24</td>
+                <td>
+                    <EbayIconMoneyBackGuarantee24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-back-guarantee-filled-16-colored</td>
+                <td>
+                    <EbayIconMoneyBackGuaranteeFilled16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-back-guarantee-filled-24-colored</td>
+                <td>
+                    <EbayIconMoneyBackGuaranteeFilled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-stack-16</td>
+                <td>
+                    <EbayIconMoneyStack16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-stack-24</td>
+                <td>
+                    <EbayIconMoneyStack24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-stack-blue-12-colored</td>
+                <td>
+                    <EbayIconMoneyStackBlue12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-stack-blue-18-colored</td>
+                <td>
+                    <EbayIconMoneyStackBlue18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-stack-blue-24-colored</td>
+                <td>
+                    <EbayIconMoneyStackBlue24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-money-stack-blue-32-colored</td>
+                <td>
+                    <EbayIconMoneyStackBlue32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-monthly-invoice-12-colored</td>
+                <td>
+                    <EbayIconMonthlyInvoice12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-monthly-invoice-18-colored</td>
+                <td>
+                    <EbayIconMonthlyInvoice18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-monthly-invoice-24-colored</td>
+                <td>
+                    <EbayIconMonthlyInvoice24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-monthly-invoice-32-colored</td>
+                <td>
+                    <EbayIconMonthlyInvoice32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-moon-16</td>
+                <td>
+                    <EbayIconMoon16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-moon-20</td>
+                <td>
+                    <EbayIconMoon20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-moon-24</td>
+                <td>
+                    <EbayIconMoon24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-motorcycle-16</td>
+                <td>
+                    <EbayIconMotorcycle16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-motorcycle-24</td>
+                <td>
+                    <EbayIconMotorcycle24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mountain-16</td>
+                <td>
+                    <EbayIconMountain16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-mountain-24</td>
+                <td>
+                    <EbayIconMountain24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-move-16</td>
+                <td>
+                    <EbayIconMove16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-move-24</td>
+                <td>
+                    <EbayIconMove24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nectar-logo-24-colored</td>
+                <td>
+                    <EbayIconNectarLogo24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-negative-filled-16</td>
+                <td>
+                    <EbayIconNegativeFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-negative-filled-24</td>
+                <td>
+                    <EbayIconNegativeFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-neutral-16</td>
+                <td>
+                    <EbayIconNeutral16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-neutral-24</td>
+                <td>
+                    <EbayIconNeutral24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nfc-16</td>
+                <td>
+                    <EbayIconNfc16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nfc-24</td>
+                <td>
+                    <EbayIconNfc24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nfc-card-12-colored</td>
+                <td>
+                    <EbayIconNfcCard12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nfc-card-18-colored</td>
+                <td>
+                    <EbayIconNfcCard18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nfc-card-24-colored</td>
+                <td>
+                    <EbayIconNfcCard24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-nfc-card-32-colored</td>
+                <td>
+                    <EbayIconNfcCard32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-no-children-zero-three-48</td>
+                <td>
+                    <EbayIconNoChildrenZeroThree48 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-note-16</td>
+                <td>
+                    <EbayIconNote16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-note-24</td>
+                <td>
+                    <EbayIconNote24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-16</td>
+                <td>
+                    <EbayIconNotification16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-20</td>
+                <td>
+                    <EbayIconNotification20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-24</td>
+                <td>
+                    <EbayIconNotification24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-64</td>
+                <td>
+                    <EbayIconNotification64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-filled-16</td>
+                <td>
+                    <EbayIconNotificationFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-filled-20</td>
+                <td>
+                    <EbayIconNotificationFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-notification-filled-24</td>
+                <td>
+                    <EbayIconNotificationFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-out-of-reach-48</td>
+                <td>
+                    <EbayIconOutOfReach48 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-overflow-horizontal-16</td>
+                <td>
+                    <EbayIconOverflowHorizontal16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-overflow-horizontal-20</td>
+                <td>
+                    <EbayIconOverflowHorizontal20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-overflow-horizontal-24</td>
+                <td>
+                    <EbayIconOverflowHorizontal24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-overflow-vertical-16</td>
+                <td>
+                    <EbayIconOverflowVertical16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-overflow-vertical-20</td>
+                <td>
+                    <EbayIconOverflowVertical20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-overflow-vertical-24</td>
+                <td>
+                    <EbayIconOverflowVertical24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-package-16</td>
+                <td>
+                    <EbayIconPackage16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-package-24</td>
+                <td>
+                    <EbayIconPackage24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-package-64</td>
+                <td>
+                    <EbayIconPackage64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-package-error-24</td>
+                <td>
+                    <EbayIconPackageError24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-16</td>
+                <td>
+                    <EbayIconPanel16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-20</td>
+                <td>
+                    <EbayIconPanel20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-24</td>
+                <td>
+                    <EbayIconPanel24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-close-16</td>
+                <td>
+                    <EbayIconPanelClose16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-close-20</td>
+                <td>
+                    <EbayIconPanelClose20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-close-24</td>
+                <td>
+                    <EbayIconPanelClose24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-close-vertical-16</td>
+                <td>
+                    <EbayIconPanelCloseVertical16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-close-vertical-20</td>
+                <td>
+                    <EbayIconPanelCloseVertical20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-close-vertical-24</td>
+                <td>
+                    <EbayIconPanelCloseVertical24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-open-16</td>
+                <td>
+                    <EbayIconPanelOpen16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-open-20</td>
+                <td>
+                    <EbayIconPanelOpen20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-open-24</td>
+                <td>
+                    <EbayIconPanelOpen24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-open-vertical-16</td>
+                <td>
+                    <EbayIconPanelOpenVertical16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-open-vertical-20</td>
+                <td>
+                    <EbayIconPanelOpenVertical20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-panel-open-vertical-24</td>
+                <td>
+                    <EbayIconPanelOpenVertical24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-passkey-16</td>
+                <td>
+                    <EbayIconPasskey16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-passkey-24</td>
+                <td>
+                    <EbayIconPasskey24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-passkey-64</td>
+                <td>
+                    <EbayIconPasskey64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pause-16</td>
+                <td>
+                    <EbayIconPause16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pause-20</td>
+                <td>
+                    <EbayIconPause20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pause-24</td>
+                <td>
+                    <EbayIconPause24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pause-filled-64-colored</td>
+                <td>
+                    <EbayIconPauseFilled64Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pay-by-bank-12-colored</td>
+                <td>
+                    <EbayIconPayByBank12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pay-by-bank-18-colored</td>
+                <td>
+                    <EbayIconPayByBank18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pay-by-bank-24-colored</td>
+                <td>
+                    <EbayIconPayByBank24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pay-by-bank-32-colored</td>
+                <td>
+                    <EbayIconPayByBank32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-payoneer-12-colored</td>
+                <td>
+                    <EbayIconPayoneer12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-payoneer-18-colored</td>
+                <td>
+                    <EbayIconPayoneer18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-payoneer-24-colored</td>
+                <td>
+                    <EbayIconPayoneer24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-payoneer-32-colored</td>
+                <td>
+                    <EbayIconPayoneer32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-payout-16</td>
+                <td>
+                    <EbayIconPayout16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-payout-24</td>
+                <td>
+                    <EbayIconPayout24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-12-colored</td>
+                <td>
+                    <EbayIconPaypal12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-18-colored</td>
+                <td>
+                    <EbayIconPaypal18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-24-colored</td>
+                <td>
+                    <EbayIconPaypal24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-32-colored</td>
+                <td>
+                    <EbayIconPaypal32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-credit-12-colored</td>
+                <td>
+                    <EbayIconPaypalCredit12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-credit-18-colored</td>
+                <td>
+                    <EbayIconPaypalCredit18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-credit-24-colored</td>
+                <td>
+                    <EbayIconPaypalCredit24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-credit-32-colored</td>
+                <td>
+                    <EbayIconPaypalCredit32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-disabled-12-colored</td>
+                <td>
+                    <EbayIconPaypalDisabled12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-disabled-18-colored</td>
+                <td>
+                    <EbayIconPaypalDisabled18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-disabled-24-colored</td>
+                <td>
+                    <EbayIconPaypalDisabled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypal-disabled-32-colored</td>
+                <td>
+                    <EbayIconPaypalDisabled32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypay-12-colored</td>
+                <td>
+                    <EbayIconPaypay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypay-18-colored</td>
+                <td>
+                    <EbayIconPaypay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypay-24-colored</td>
+                <td>
+                    <EbayIconPaypay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-paypay-32-colored</td>
+                <td>
+                    <EbayIconPaypay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pencil-16</td>
+                <td>
+                    <EbayIconPencil16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pencil-20</td>
+                <td>
+                    <EbayIconPencil20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pencil-24</td>
+                <td>
+                    <EbayIconPencil24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pencil-signed-24</td>
+                <td>
+                    <EbayIconPencilSigned24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-people-16</td>
+                <td>
+                    <EbayIconPeople16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-people-24</td>
+                <td>
+                    <EbayIconPeople24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-peso-16</td>
+                <td>
+                    <EbayIconPeso16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-peso-24</td>
+                <td>
+                    <EbayIconPeso24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-phone-16</td>
+                <td>
+                    <EbayIconPhone16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-phone-24</td>
+                <td>
+                    <EbayIconPhone24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pin-24</td>
+                <td>
+                    <EbayIconPin24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pin-filled-24</td>
+                <td>
+                    <EbayIconPinFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pinterest-24</td>
+                <td>
+                    <EbayIconPinterest24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-16</td>
+                <td>
+                    <EbayIconPlay16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-20</td>
+                <td>
+                    <EbayIconPlay20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-24</td>
+                <td>
+                    <EbayIconPlay24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-disabled-16</td>
+                <td>
+                    <EbayIconPlayDisabled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-filled-16-colored</td>
+                <td>
+                    <EbayIconPlayFilled16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-filled-24-colored</td>
+                <td>
+                    <EbayIconPlayFilled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-play-filled-64-colored</td>
+                <td>
+                    <EbayIconPlayFilled64Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-postepay-12-colored</td>
+                <td>
+                    <EbayIconPostepay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-postepay-18-colored</td>
+                <td>
+                    <EbayIconPostepay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-postepay-24-colored</td>
+                <td>
+                    <EbayIconPostepay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-postepay-32-colored</td>
+                <td>
+                    <EbayIconPostepay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-potted-plant-16</td>
+                <td>
+                    <EbayIconPottedPlant16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-potted-plant-24</td>
+                <td>
+                    <EbayIconPottedPlant24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pound-16</td>
+                <td>
+                    <EbayIconPound16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-pound-24</td>
+                <td>
+                    <EbayIconPound24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-print-16</td>
+                <td>
+                    <EbayIconPrint16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-print-24</td>
+                <td>
+                    <EbayIconPrint24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-profile-16</td>
+                <td>
+                    <EbayIconProfile16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-profile-20</td>
+                <td>
+                    <EbayIconProfile20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-profile-24</td>
+                <td>
+                    <EbayIconProfile24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-profile-filled-24</td>
+                <td>
+                    <EbayIconProfileFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-progress-current-24</td>
+                <td>
+                    <EbayIconProgressCurrent24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-progress-upcoming-24</td>
+                <td>
+                    <EbayIconProgressUpcoming24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-promotion-16</td>
+                <td>
+                    <EbayIconPromotion16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-promotion-24</td>
+                <td>
+                    <EbayIconPromotion24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-16</td>
+                <td>
+                    <EbayIconPsa16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-16-colored</td>
+                <td>
+                    <EbayIconPsa16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-logo-16</td>
+                <td>
+                    <EbayIconPsaLogo16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-logo-color-16-colored</td>
+                <td>
+                    <EbayIconPsaLogoColor16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-vault-16</td>
+                <td>
+                    <EbayIconPsaVault16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-vault-16-colored</td>
+                <td>
+                    <EbayIconPsaVault16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-vault-24</td>
+                <td>
+                    <EbayIconPsaVault24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-vault-logo-16</td>
+                <td>
+                    <EbayIconPsaVaultLogo16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-psa-vault-logo-color-16-colored</td>
+                <td>
+                    <EbayIconPsaVaultLogoColor16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-qr-code-16</td>
+                <td>
+                    <EbayIconQrCode16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-qr-code-24</td>
+                <td>
+                    <EbayIconQrCode24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-radio-checked-18</td>
+                <td>
+                    <EbayIconRadioChecked18 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-radio-checked-24</td>
+                <td>
+                    <EbayIconRadioChecked24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-radio-unchecked-18</td>
+                <td>
+                    <EbayIconRadioUnchecked18 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-radio-unchecked-24</td>
+                <td>
+                    <EbayIconRadioUnchecked24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-recovery-code-16</td>
+                <td>
+                    <EbayIconRecoveryCode16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-recovery-code-24</td>
+                <td>
+                    <EbayIconRecoveryCode24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-reddit-24</td>
+                <td>
+                    <EbayIconReddit24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-refresh-16</td>
+                <td>
+                    <EbayIconRefresh16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-refresh-20</td>
+                <td>
+                    <EbayIconRefresh20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-refresh-24</td>
+                <td>
+                    <EbayIconRefresh24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-relaxed-grid-24</td>
+                <td>
+                    <EbayIconRelaxedGrid24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-relaxed-grid-filled-24</td>
+                <td>
+                    <EbayIconRelaxedGridFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-remove-12</td>
+                <td>
+                    <EbayIconRemove12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-remove-16</td>
+                <td>
+                    <EbayIconRemove16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-remove-24</td>
+                <td>
+                    <EbayIconRemove24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-reply-16</td>
+                <td>
+                    <EbayIconReply16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-reply-24</td>
+                <td>
+                    <EbayIconReply24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-return-16</td>
+                <td>
+                    <EbayIconReturn16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-return-24</td>
+                <td>
+                    <EbayIconReturn24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ribbon-16</td>
+                <td>
+                    <EbayIconRibbon16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ribbon-24</td>
+                <td>
+                    <EbayIconRibbon24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rim-16</td>
+                <td>
+                    <EbayIconRim16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rim-24</td>
+                <td>
+                    <EbayIconRim24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ringgit-16</td>
+                <td>
+                    <EbayIconRinggit16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ringgit-24</td>
+                <td>
+                    <EbayIconRinggit24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rotate-24</td>
+                <td>
+                    <EbayIconRotate24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rotate-landscape-left-24</td>
+                <td>
+                    <EbayIconRotateLandscapeLeft24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rotate-landscape-right-24</td>
+                <td>
+                    <EbayIconRotateLandscapeRight24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rotate-portrait-left-24</td>
+                <td>
+                    <EbayIconRotatePortraitLeft24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rotate-portrait-right-24</td>
+                <td>
+                    <EbayIconRotatePortraitRight24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ruler-16</td>
+                <td>
+                    <EbayIconRuler16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ruler-24</td>
+                <td>
+                    <EbayIconRuler24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rupee-16</td>
+                <td>
+                    <EbayIconRupee16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-rupee-24</td>
+                <td>
+                    <EbayIconRupee24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-satchel-16</td>
+                <td>
+                    <EbayIconSatchel16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-satchel-24</td>
+                <td>
+                    <EbayIconSatchel24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-scan-16</td>
+                <td>
+                    <EbayIconScan16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-scan-24</td>
+                <td>
+                    <EbayIconScan24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-16</td>
+                <td>
+                    <EbayIconSearch16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-20</td>
+                <td>
+                    <EbayIconSearch20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-24</td>
+                <td>
+                    <EbayIconSearch24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-64</td>
+                <td>
+                    <EbayIconSearch64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-filled-24</td>
+                <td>
+                    <EbayIconSearchFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-similar-16</td>
+                <td>
+                    <EbayIconSearchSimilar16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-similar-20</td>
+                <td>
+                    <EbayIconSearchSimilar20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-search-similar-24</td>
+                <td>
+                    <EbayIconSearchSimilar24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-seasons-16</td>
+                <td>
+                    <EbayIconSeasons16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-seasons-24</td>
+                <td>
+                    <EbayIconSeasons24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-secure-purchase-16</td>
+                <td>
+                    <EbayIconSecurePurchase16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-secure-purchase-24</td>
+                <td>
+                    <EbayIconSecurePurchase24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-security-key-24</td>
+                <td>
+                    <EbayIconSecurityKey24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-select-all-24</td>
+                <td>
+                    <EbayIconSelectAll24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-selling-16</td>
+                <td>
+                    <EbayIconSelling16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-selling-20</td>
+                <td>
+                    <EbayIconSelling20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-selling-24</td>
+                <td>
+                    <EbayIconSelling24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-selling-filled-24</td>
+                <td>
+                    <EbayIconSellingFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-send-24</td>
+                <td>
+                    <EbayIconSend24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-settings-16</td>
+                <td>
+                    <EbayIconSettings16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-settings-20</td>
+                <td>
+                    <EbayIconSettings20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-settings-24</td>
+                <td>
+                    <EbayIconSettings24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-share-android-16</td>
+                <td>
+                    <EbayIconShareAndroid16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-share-android-20</td>
+                <td>
+                    <EbayIconShareAndroid20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-share-android-24</td>
+                <td>
+                    <EbayIconShareAndroid24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-share-ios-16</td>
+                <td>
+                    <EbayIconShareIos16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-share-ios-20</td>
+                <td>
+                    <EbayIconShareIos20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-share-ios-24</td>
+                <td>
+                    <EbayIconShareIos24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sharpen-24</td>
+                <td>
+                    <EbayIconSharpen24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ship-and-local-16</td>
+                <td>
+                    <EbayIconShipAndLocal16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-ship-and-local-24</td>
+                <td>
+                    <EbayIconShipAndLocal24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shirt-16</td>
+                <td>
+                    <EbayIconShirt16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shirt-24</td>
+                <td>
+                    <EbayIconShirt24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shoe-box-24</td>
+                <td>
+                    <EbayIconShoeBox24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shopping-event-16</td>
+                <td>
+                    <EbayIconShoppingEvent16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shopping-event-24</td>
+                <td>
+                    <EbayIconShoppingEvent24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shovel-16</td>
+                <td>
+                    <EbayIconShovel16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-shovel-24</td>
+                <td>
+                    <EbayIconShovel24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-show-16</td>
+                <td>
+                    <EbayIconShow16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-show-24</td>
+                <td>
+                    <EbayIconShow24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-small-box-16</td>
+                <td>
+                    <EbayIconSmallBox16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-small-box-24</td>
+                <td>
+                    <EbayIconSmallBox24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-small-letter-24</td>
+                <td>
+                    <EbayIconSmallLetter24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sneaker-16</td>
+                <td>
+                    <EbayIconSneaker16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sneaker-24</td>
+                <td>
+                    <EbayIconSneaker24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-snowflake-16</td>
+                <td>
+                    <EbayIconSnowflake16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-snowflake-24</td>
+                <td>
+                    <EbayIconSnowflake24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-snowmobile-16</td>
+                <td>
+                    <EbayIconSnowmobile16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-snowmobile-24</td>
+                <td>
+                    <EbayIconSnowmobile24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sort-12</td>
+                <td>
+                    <EbayIconSort12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sort-16</td>
+                <td>
+                    <EbayIconSort16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sort-24</td>
+                <td>
+                    <EbayIconSort24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sort-down-12</td>
+                <td>
+                    <EbayIconSortDown12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sort-up-12</td>
+                <td>
+                    <EbayIconSortUp12 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-down-16</td>
+                <td>
+                    <EbayIconSparklineDown16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-down-20</td>
+                <td>
+                    <EbayIconSparklineDown20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-down-24</td>
+                <td>
+                    <EbayIconSparklineDown24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-up-16</td>
+                <td>
+                    <EbayIconSparklineUp16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-up-20</td>
+                <td>
+                    <EbayIconSparklineUp20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-up-24</td>
+                <td>
+                    <EbayIconSparklineUp24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-sparkline-up-filled-24</td>
+                <td>
+                    <EbayIconSparklineUpFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-speedometer-16</td>
+                <td>
+                    <EbayIconSpeedometer16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-speedometer-24</td>
+                <td>
+                    <EbayIconSpeedometer24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-spinner-20</td>
+                <td>
+                    <EbayIconSpinner20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-spinner-24</td>
+                <td>
+                    <EbayIconSpinner24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-spinner-30</td>
+                <td>
+                    <EbayIconSpinner30 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-split-payment-16</td>
+                <td>
+                    <EbayIconSplitPayment16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-split-payment-24</td>
+                <td>
+                    <EbayIconSplitPayment24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-split-view-24</td>
+                <td>
+                    <EbayIconSplitView24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-split-view-filled-24</td>
+                <td>
+                    <EbayIconSplitViewFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-spring-leaf-16</td>
+                <td>
+                    <EbayIconSpringLeaf16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-spring-leaf-24</td>
+                <td>
+                    <EbayIconSpringLeaf24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-dynamic</td>
+                <td>
+                    <EbayIconStarDynamic />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-empty-16</td>
+                <td>
+                    <EbayIconStarEmpty16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-empty-24</td>
+                <td>
+                    <EbayIconStarEmpty24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-empty-40</td>
+                <td>
+                    <EbayIconStarEmpty40 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-filled-16</td>
+                <td>
+                    <EbayIconStarFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-filled-24</td>
+                <td>
+                    <EbayIconStarFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-filled-40</td>
+                <td>
+                    <EbayIconStarFilled40 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-half-16-colored</td>
+                <td>
+                    <EbayIconStarHalf16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-half-24-colored</td>
+                <td>
+                    <EbayIconStarHalf24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-half-dark-16-colored</td>
+                <td>
+                    <EbayIconStarHalfDark16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-half-dark-24-colored</td>
+                <td>
+                    <EbayIconStarHalfDark24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-stepper-attention-24</td>
+                <td>
+                    <EbayIconStepperAttention24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-stepper-confirmation-24</td>
+                <td>
+                    <EbayIconStepperConfirmation24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-stepper-current-24</td>
+                <td>
+                    <EbayIconStepperCurrent24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-stepper-upcoming-24</td>
+                <td>
+                    <EbayIconStepperUpcoming24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-store-16</td>
+                <td>
+                    <EbayIconStore16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-store-24</td>
+                <td>
+                    <EbayIconStore24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-store-64</td>
+                <td>
+                    <EbayIconStore64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-store-filled-24</td>
+                <td>
+                    <EbayIconStoreFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-suitcase-24</td>
+                <td>
+                    <EbayIconSuitcase24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-support-24</td>
+                <td>
+                    <EbayIconSupport24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-swap-16</td>
+                <td>
+                    <EbayIconSwap16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-swap-24</td>
+                <td>
+                    <EbayIconSwap24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-switch-camera-24</td>
+                <td>
+                    <EbayIconSwitchCamera24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-target-16</td>
+                <td>
+                    <EbayIconTarget16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-target-24</td>
+                <td>
+                    <EbayIconTarget24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-text-messaging-16</td>
+                <td>
+                    <EbayIconTextMessaging16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-text-messaging-20</td>
+                <td>
+                    <EbayIconTextMessaging20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-text-messaging-24</td>
+                <td>
+                    <EbayIconTextMessaging24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-text-messaging-64</td>
+                <td>
+                    <EbayIconTextMessaging64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-text-size-16</td>
+                <td>
+                    <EbayIconTextSize16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-text-size-24</td>
+                <td>
+                    <EbayIconTextSize24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-the-ebay-vault-16</td>
+                <td>
+                    <EbayIconTheEbayVault16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-the-ebay-vault-24</td>
+                <td>
+                    <EbayIconTheEbayVault24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-down-16</td>
+                <td>
+                    <EbayIconThumbDown16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-down-20</td>
+                <td>
+                    <EbayIconThumbDown20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-down-24</td>
+                <td>
+                    <EbayIconThumbDown24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-down-filled-16</td>
+                <td>
+                    <EbayIconThumbDownFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-down-filled-20</td>
+                <td>
+                    <EbayIconThumbDownFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-down-filled-24</td>
+                <td>
+                    <EbayIconThumbDownFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-16</td>
+                <td>
+                    <EbayIconThumbUp16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-20</td>
+                <td>
+                    <EbayIconThumbUp20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-24</td>
+                <td>
+                    <EbayIconThumbUp24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-64</td>
+                <td>
+                    <EbayIconThumbUp64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-filled-16</td>
+                <td>
+                    <EbayIconThumbUpFilled16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-filled-20</td>
+                <td>
+                    <EbayIconThumbUpFilled20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-thumb-up-filled-24</td>
+                <td>
+                    <EbayIconThumbUpFilled24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-tick-16</td>
+                <td>
+                    <EbayIconTick16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-tick-24</td>
+                <td>
+                    <EbayIconTick24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-tiktok-24</td>
+                <td>
+                    <EbayIconTiktok24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-toggle-mode-bottom-24</td>
+                <td>
+                    <EbayIconToggleModeBottom24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-toggle-mode-top-24</td>
+                <td>
+                    <EbayIconToggleModeTop24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-rated-plus-16</td>
+                <td>
+                    <EbayIconTopRatedPlus16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-rated-plus-24</td>
+                <td>
+                    <EbayIconTopRatedPlus24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-rated-seller-16</td>
+                <td>
+                    <EbayIconTopRatedSeller16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-rated-seller-24</td>
+                <td>
+                    <EbayIconTopRatedSeller24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-service-16</td>
+                <td>
+                    <EbayIconTopService16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-service-24</td>
+                <td>
+                    <EbayIconTopService24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-service-filled-16-colored</td>
+                <td>
+                    <EbayIconTopServiceFilled16Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-top-service-filled-24-colored</td>
+                <td>
+                    <EbayIconTopServiceFilled24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trading-card-16</td>
+                <td>
+                    <EbayIconTradingCard16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trading-card-24</td>
+                <td>
+                    <EbayIconTradingCard24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trading-card-edition-24</td>
+                <td>
+                    <EbayIconTradingCardEdition24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trading-card-grade-16</td>
+                <td>
+                    <EbayIconTradingCardGrade16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trading-card-grade-24</td>
+                <td>
+                    <EbayIconTradingCardGrade24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-transaction-24</td>
+                <td>
+                    <EbayIconTransaction24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-translate-16</td>
+                <td>
+                    <EbayIconTranslate16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-translate-20</td>
+                <td>
+                    <EbayIconTranslate20 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-translate-24</td>
+                <td>
+                    <EbayIconTranslate24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trend-down-16-fit</td>
+                <td>
+                    <EbayIconTrendDown16Fit />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trend-up-16-fit</td>
+                <td>
+                    <EbayIconTrendUp16Fit />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trophy-16</td>
+                <td>
+                    <EbayIconTrophy16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-trophy-24</td>
+                <td>
+                    <EbayIconTrophy24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-truck-16</td>
+                <td>
+                    <EbayIconTruck16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-truck-24</td>
+                <td>
+                    <EbayIconTruck24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-truck-64</td>
+                <td>
+                    <EbayIconTruck64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-truck-shipped-16</td>
+                <td>
+                    <EbayIconTruckShipped16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-truck-shipped-24</td>
+                <td>
+                    <EbayIconTruckShipped24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-twitter-24</td>
+                <td>
+                    <EbayIconTwitter24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-undo-16</td>
+                <td>
+                    <EbayIconUndo16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-undo-24</td>
+                <td>
+                    <EbayIconUndo24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unionpay-12-colored</td>
+                <td>
+                    <EbayIconUnionpay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unionpay-18-colored</td>
+                <td>
+                    <EbayIconUnionpay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unionpay-24-colored</td>
+                <td>
+                    <EbayIconUnionpay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unionpay-32-colored</td>
+                <td>
+                    <EbayIconUnionpay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unlock-16</td>
+                <td>
+                    <EbayIconUnlock16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unlock-24</td>
+                <td>
+                    <EbayIconUnlock24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-unselect-all-24</td>
+                <td>
+                    <EbayIconUnselectAll24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-upload-16</td>
+                <td>
+                    <EbayIconUpload16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-upload-24</td>
+                <td>
+                    <EbayIconUpload24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-venmo-12-colored</td>
+                <td>
+                    <EbayIconVenmo12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-venmo-18-colored</td>
+                <td>
+                    <EbayIconVenmo18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-venmo-24-colored</td>
+                <td>
+                    <EbayIconVenmo24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-venmo-32-colored</td>
+                <td>
+                    <EbayIconVenmo32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-verified-condition-16</td>
+                <td>
+                    <EbayIconVerifiedCondition16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-verified-condition-24</td>
+                <td>
+                    <EbayIconVerifiedCondition24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-video-24</td>
+                <td>
+                    <EbayIconVideo24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-visa-12-colored</td>
+                <td>
+                    <EbayIconVisa12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-visa-18-colored</td>
+                <td>
+                    <EbayIconVisa18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-visa-24-colored</td>
+                <td>
+                    <EbayIconVisa24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-visa-32-colored</td>
+                <td>
+                    <EbayIconVisa32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-16</td>
+                <td>
+                    <EbayIconWallet16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-24</td>
+                <td>
+                    <EbayIconWallet24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-64</td>
+                <td>
+                    <EbayIconWallet64 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-balance-12-colored</td>
+                <td>
+                    <EbayIconWalletBalance12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-balance-18-colored</td>
+                <td>
+                    <EbayIconWalletBalance18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-balance-24-colored</td>
+                <td>
+                    <EbayIconWalletBalance24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wallet-balance-32-colored</td>
+                <td>
+                    <EbayIconWalletBalance32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-watch-16</td>
+                <td>
+                    <EbayIconWatch16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-watch-24</td>
+                <td>
+                    <EbayIconWatch24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-whatsapp-24</td>
+                <td>
+                    <EbayIconWhatsapp24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-won-16</td>
+                <td>
+                    <EbayIconWon16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-won-24</td>
+                <td>
+                    <EbayIconWon24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wrench-16</td>
+                <td>
+                    <EbayIconWrench16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-wrench-24</td>
+                <td>
+                    <EbayIconWrench24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-youtube-24</td>
+                <td>
+                    <EbayIconYoutube24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-yuan-16</td>
+                <td>
+                    <EbayIconYuan16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-yuan-24</td>
+                <td>
+                    <EbayIconYuan24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zip-pay-12-colored</td>
+                <td>
+                    <EbayIconZipPay12Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zip-pay-18-colored</td>
+                <td>
+                    <EbayIconZipPay18Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zip-pay-24-colored</td>
+                <td>
+                    <EbayIconZipPay24Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zip-pay-32-colored</td>
+                <td>
+                    <EbayIconZipPay32Colored />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zloty-16</td>
+                <td>
+                    <EbayIconZloty16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zloty-24</td>
+                <td>
+                    <EbayIconZloty24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zoom-in-16</td>
+                <td>
+                    <EbayIconZoomIn16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zoom-in-24</td>
+                <td>
+                    <EbayIconZoomIn24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zoom-out-16</td>
+                <td>
+                    <EbayIconZoomOut16 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-zoom-out-24</td>
+                <td>
+                    <EbayIconZoomOut24 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-image-placeholder</td>
+                <td>
+                    <EbayIconImagePlaceholder />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-0</td>
+                <td>
+                    <EbayIconStarRating0 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-0-5</td>
+                <td>
+                    <EbayIconStarRating05 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-1</td>
+                <td>
+                    <EbayIconStarRating1 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-1-5</td>
+                <td>
+                    <EbayIconStarRating15 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-2</td>
+                <td>
+                    <EbayIconStarRating2 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-2-5</td>
+                <td>
+                    <EbayIconStarRating25 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-3</td>
+                <td>
+                    <EbayIconStarRating3 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-3-5</td>
+                <td>
+                    <EbayIconStarRating35 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-4</td>
+                <td>
+                    <EbayIconStarRating4 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-4-5</td>
+                <td>
+                    <EbayIconStarRating45 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-5</td>
+                <td>
+                    <EbayIconStarRating5 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-0</td>
+                <td>
+                    <EbayIconStarRatingSmall0 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-0-5</td>
+                <td>
+                    <EbayIconStarRatingSmall05 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-1</td>
+                <td>
+                    <EbayIconStarRatingSmall1 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-1-5</td>
+                <td>
+                    <EbayIconStarRatingSmall15 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-2</td>
+                <td>
+                    <EbayIconStarRatingSmall2 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-2-5</td>
+                <td>
+                    <EbayIconStarRatingSmall25 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-3</td>
+                <td>
+                    <EbayIconStarRatingSmall3 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-3-5</td>
+                <td>
+                    <EbayIconStarRatingSmall35 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-4</td>
+                <td>
+                    <EbayIconStarRatingSmall4 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-4-5</td>
+                <td>
+                    <EbayIconStarRatingSmall45 />
+                </td>
+            </tr>
+
+            <tr>
+                <td>ebay-icon-star-rating-small-5</td>
+                <td>
+                    <EbayIconStarRatingSmall5 />
+                </td>
+            </tr>
+        </tbody>
+    </table>
 );

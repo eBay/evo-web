@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { EbaySnackbarDialog, EbaySnackbarDialogAction } from "../index";
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe("<EbaySnackbarDialog />", () => {
     function openSnackbar() {
@@ -47,13 +47,13 @@ describe("<EbaySnackbarDialog />", () => {
 
         const snackbar = screen.getByText("Snackbar text");
 
-        jest.advanceTimersByTime(3000 /* 3 seconds */);
+        vi.advanceTimersByTime(3000 /* 3 seconds */);
 
         // Make sure that after 3 seconds is still open
         expect(snackbar).toBeInTheDocument();
 
         act(() => {
-            jest.advanceTimersByTime(3000 /* 3 seconds */);
+            vi.advanceTimersByTime(3000 /* 3 seconds */);
         });
 
         expect(snackbar).not.toBeInTheDocument();
@@ -66,7 +66,7 @@ describe("<EbaySnackbarDialog />", () => {
 
         fireEvent.focus(snackbar);
 
-        jest.advanceTimersByTime(7000 /* 7 seconds */);
+        vi.advanceTimersByTime(7000 /* 7 seconds */);
 
         expect(snackbar).toBeInTheDocument();
     });
@@ -75,13 +75,13 @@ describe("<EbaySnackbarDialog />", () => {
         openSnackbar();
         const snackbar = screen.getByText("Snackbar text");
         fireEvent.focus(snackbar);
-        jest.advanceTimersByTime(7000 /* 7 seconds */);
+        vi.advanceTimersByTime(7000 /* 7 seconds */);
         expect(snackbar).toBeInTheDocument();
 
         fireEvent.blur(snackbar);
 
         act(() => {
-            jest.advanceTimersByTime(7000 /* 7 seconds */);
+            vi.advanceTimersByTime(7000 /* 7 seconds */);
         });
 
         expect(snackbar).not.toBeInTheDocument();
@@ -94,7 +94,7 @@ describe("<EbaySnackbarDialog />", () => {
 
         fireEvent.mouseEnter(snackbar);
 
-        jest.advanceTimersByTime(7000 /* 7 seconds */);
+        vi.advanceTimersByTime(7000 /* 7 seconds */);
 
         expect(snackbar).toBeInTheDocument();
     });
@@ -103,13 +103,13 @@ describe("<EbaySnackbarDialog />", () => {
         openSnackbar();
         const snackbar = screen.getByText("Snackbar text");
         fireEvent.mouseEnter(snackbar);
-        jest.advanceTimersByTime(7000 /* 7 seconds */);
+        vi.advanceTimersByTime(7000 /* 7 seconds */);
         expect(snackbar).toBeInTheDocument();
 
         fireEvent.mouseLeave(snackbar);
 
         act(() => {
-            jest.advanceTimersByTime(7000 /* 7 seconds */);
+            vi.advanceTimersByTime(7000 /* 7 seconds */);
         });
 
         expect(snackbar).not.toBeInTheDocument();
@@ -120,13 +120,13 @@ describe("<EbaySnackbarDialog />", () => {
         const snackbar = screen.getByText("Snackbar text");
         fireEvent.mouseEnter(snackbar);
         fireEvent.focus(snackbar);
-        jest.advanceTimersByTime(7000 /* 7 seconds */);
+        vi.advanceTimersByTime(7000 /* 7 seconds */);
         expect(snackbar).toBeInTheDocument();
 
         fireEvent.mouseLeave(snackbar);
 
         act(() => {
-            jest.advanceTimersByTime(7000 /* 7 seconds */);
+            vi.advanceTimersByTime(7000 /* 7 seconds */);
         });
 
         expect(snackbar).toBeInTheDocument();
@@ -137,13 +137,13 @@ describe("<EbaySnackbarDialog />", () => {
         const snackbar = screen.getByText("Snackbar text");
         fireEvent.mouseEnter(snackbar);
         fireEvent.focus(snackbar);
-        jest.advanceTimersByTime(7000 /* 7 seconds */);
+        vi.advanceTimersByTime(7000 /* 7 seconds */);
         expect(snackbar).toBeInTheDocument();
 
         fireEvent.blur(snackbar);
 
         act(() => {
-            jest.advanceTimersByTime(7000 /* 7 seconds */);
+            vi.advanceTimersByTime(7000 /* 7 seconds */);
         });
 
         expect(snackbar).toBeInTheDocument();

@@ -1,4 +1,56 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ebay-pagination rendering > renders basic links story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon icon--16"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-arrow-left-16"
+  />
+</svg>
+`;
+
+exports[`ebay-pagination rendering > renders basic links story correctly 2`] = `
+<svg
+  aria-hidden="true"
+  class="icon icon--16"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-arrow-right-16"
+  />
+</svg>
+`;
+
+exports[`ebay-pagination rendering > renders buttons story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon icon--16"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-arrow-left-16"
+  />
+</svg>
+`;
+
+exports[`ebay-pagination rendering > renders buttons story correctly 2`] = `
+<svg
+  aria-hidden="true"
+  class="icon icon--16"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-arrow-right-16"
+  />
+</svg>
+`;
 
 exports[`ebay-pagination rendering renders basic links story correctly 1`] = `
 <svg

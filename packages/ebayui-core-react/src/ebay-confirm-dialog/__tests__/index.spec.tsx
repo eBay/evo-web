@@ -1,13 +1,14 @@
 import React from "react";
+import { vi } from "vitest";
 import { screen, render, fireEvent } from "@testing-library/react";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayConfirmDialog } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
-const openSpy = jest.fn();
-const confirmSpy = jest.fn();
-const rejectSpy = jest.fn();
+const openSpy = vi.fn();
+const confirmSpy = vi.fn();
+const rejectSpy = vi.fn();
 
 const showDialog = () =>
     render(

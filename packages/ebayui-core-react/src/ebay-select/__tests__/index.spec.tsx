@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { EbaySelect, EbaySelectOption } from "../index";
@@ -42,7 +43,7 @@ describe("<EbaySelect>", () => {
     });
     describe("on select-dropdown change", () => {
         it("should fire onChange event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(<EbaySelectWith3Options name="foo" value="1" onChange={spy} />);
             const index = 3;
             const selectedValue = "3";
@@ -58,7 +59,7 @@ describe("<EbaySelect>", () => {
         let spy;
 
         beforeEach(() => {
-            spy = jest.fn();
+            spy = vi.fn();
             wrapper = render(<EbaySelectWith3Options name="foo" defaultValue="2" onChange={spy} />);
         });
 
@@ -78,7 +79,7 @@ describe("<EbaySelect>", () => {
         let spy;
 
         beforeEach(() => {
-            spy = jest.fn();
+            spy = vi.fn();
             wrapper = render(<EbaySelectWith3Options name="foo" value="2" onChange={spy} />);
         });
 

@@ -20,7 +20,8 @@ describe("<EbayLightboxDialog /> render", () => {
     });
 
     describe("a11y", () => {
-        it("should trap the focus on the dialog", async () => {
+        // TODO: Enable when using vitest browser mode, as makeup-focusables needs element offsets
+        it.todo("should trap the focus on the dialog", async () => {
             render(<LazyContent />);
 
             const button = screen.getByText("Open Dialog");
@@ -31,25 +32,24 @@ describe("<EbayLightboxDialog /> render", () => {
                 interval: 2000,
             });
 
-            // TODO: Enable when using vitest browser mode, as makeup-focusables needs element offsets
-            // const closeButton = screen.getByLabelText('Close')
-            // const link = screen.getByText('www.ebay.com')
-            // const primaryButton = screen.getByText('OK')
-            // const secondaryButton = screen.getByText('Cancel')
-            //
-            // expect(document.activeElement).toBe(closeButton)
-            //
-            // await userEvent.tab()
-            // expect(document.activeElement).toBe(link)
-            //
-            // await userEvent.tab()
-            // expect(document.activeElement).toBe(primaryButton)
-            //
-            // await userEvent.tab()
-            // expect(document.activeElement).toBe(secondaryButton)
-            //
-            // await userEvent.tab()
-            // expect(document.activeElement).toBe(closeButton)
+            const closeButton = screen.getByLabelText("Close");
+            const link = screen.getByText("www.ebay.com");
+            const primaryButton = screen.getByText("OK");
+            const secondaryButton = screen.getByText("Cancel");
+
+            expect(document.activeElement).toBe(closeButton);
+
+            await userEvent.tab();
+            expect(document.activeElement).toBe(link);
+
+            await userEvent.tab();
+            expect(document.activeElement).toBe(primaryButton);
+
+            await userEvent.tab();
+            expect(document.activeElement).toBe(secondaryButton);
+
+            await userEvent.tab();
+            expect(document.activeElement).toBe(closeButton);
         });
     });
 });

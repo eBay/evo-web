@@ -1,4 +1,99 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<EbayEducationNotice> > should render notice prominent snapshot 1`] = `
+<DocumentFragment>
+  <section
+    aria-roledescription="Notice"
+    class="education-notice education-notice--prominent"
+  >
+    <div
+      class="education-notice__header"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--24 icon--prominent"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-lightbulb-24"
+        />
+      </svg>
+      <h2
+        class="education-notice__title"
+      >
+        Recommended title format
+      </h2>
+      <button
+        aria-label="dismiss notice"
+        class="education-notice__dismiss icon-btn icon-btn--small"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-close-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="education-notice__main"
+    >
+      <p>
+        Follow the order below to optimize market valuation from Price Guide. Player + Set or Season + Manufacturer + Card number + Variant + Grader + Grade
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`<EbayEducationNotice> > should render notice snapshot 1`] = `
+<DocumentFragment>
+  <section
+    aria-roledescription="Notice"
+    class="education-notice"
+  >
+    <div
+      class="education-notice__header"
+    >
+      <svg
+        aria-label="a11y notice"
+        class="icon icon--24"
+        focusable="false"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <use
+          xlink:href="#icon-the-ebay-vault-24"
+        />
+        <defs />
+      </svg>
+      <h2
+        class="education-notice__title"
+      >
+        Recommended title format
+      </h2>
+    </div>
+    <div
+      class="education-notice__main"
+    >
+      <p>
+        Follow the order below to optimize market valuation from Price Guide. Player + Set or Season + Manufacturer + Card number + Variant + Grader + Grade
+      </p>
+    </div>
+    <div
+      class="education-notice__footer"
+    >
+      Education footer
+    </div>
+  </section>
+</DocumentFragment>
+`;
 
 exports[`<EbayEducationNotice> should render notice prominent snapshot 1`] = `
 <DocumentFragment>

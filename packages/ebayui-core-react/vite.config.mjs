@@ -58,4 +58,31 @@ export default defineConfig({
             plugins: [typescript()],
         },
     },
+    test: {
+        globals: true,
+        environment: "jsdom",
+        setupFiles: ["./test.setup.ts"],
+        environmentOptions: {
+            jsdom: {
+                resources: "usable",
+            },
+        },
+        include: ["src/**/__tests__/**/*.spec.{ts,tsx}"],
+        exclude: ["**/node_modules/**", "**/build/**", "**/.yarn-cache/**", "**/build-ebay/**"],
+        coverage: {
+            provider: "v8",
+            reporter: ["json", "lcov", "text", "cobertura"],
+            include: ["src/**/*.{ts,tsx}"],
+            exclude: [
+                "**/__tests__/**/*.{ts,tsx}",
+                "src/components/*/index.ts",
+                "src/**/*.stories.tsx",
+                "src/**/index.d.ts",
+                "src/config.ts",
+                "**/node_modules/**",
+            ],
+        },
+        testTimeout: 10000,
+        hookTimeout: 10000,
+    },
 });

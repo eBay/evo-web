@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { composeStories } from "@storybook/react-vite";
@@ -38,7 +39,7 @@ describe("<EbayToggleButton />", () => {
         expect(snapshot).toMatchSnapshot();
     });
     it("should fire onToggle when clicking", async () => {
-        const mockOnToggle = jest.fn();
+        const mockOnToggle = vi.fn();
 
         const { getByRole } = render(<Default onToggle={mockOnToggle} />);
 
@@ -48,7 +49,7 @@ describe("<EbayToggleButton />", () => {
         expect(mockOnToggle).toHaveBeenCalledTimes(1);
     });
     it("should not click if disabled", async () => {
-        const mockOnToggle = jest.fn();
+        const mockOnToggle = vi.fn();
 
         const { getByRole } = render(<Default disabled={true} />);
 

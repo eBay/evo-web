@@ -1,4 +1,6 @@
+/* eslint-disable vitest/expect-expect */
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent, RenderResult } from "@testing-library/react";
 import { EbayButton } from "../../ebay-button";
 import { EbayTourtip, EbayTourtipContent, EbayTourtipFooter, EbayTourtipHeading, EbayTourtipHost } from "../index";
@@ -38,6 +40,19 @@ describe("<EbayTourtip>", () => {
             fireEvent.click(wrapper.container.querySelector("button.tourtip__host"));
             checkIsExpanded(wrapper);
         });
+
+        it("should pass the property to the button that close the tourtip", () => {
+            const wrapper = renderComponent();
+            expect(wrapper.container.querySelector('.tourtip__close[aria-label="close"]')).toBeInTheDocument();
+        });
+        it("should handle focus correctly", () => {
+            const wrapper = renderComponent();
+            expect(wrapper.container.querySelector('.tourtip__close[aria-label="close"]')).toBeInTheDocument();
+            const host = wrapper.container.querySelector("button.tourtip__host");
+            expect(host).not.toHaveFocus();
+            fireEvent.click(wrapper.container.querySelector("button.tourtip__close"));
+            expect(host).toHaveFocus();
+        });
     });
 
     describe("on tourtip button close click", () => {
@@ -50,7 +65,7 @@ describe("<EbayTourtip>", () => {
 
     describe("on tourtip collapsed", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onCollapse: spy });
             fireEvent.click(wrapper.container.querySelector("button.tourtip__host"));
             fireEvent.click(wrapper.container.querySelector("button.tourtip__close"));
@@ -60,7 +75,7 @@ describe("<EbayTourtip>", () => {
 
     describe("on using the tourtip with no content", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayTourtip a11yCloseText="Close" />);
             }).toThrow(`EbayTourtip: Please use a EbayTourtipContent that defines the content of the tourtip`);
@@ -70,7 +85,7 @@ describe("<EbayTourtip>", () => {
 
     describe("on using the tourtip with no host", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(
                     <EbayTourtip a11yCloseText="close" pointer="bottom">
@@ -86,21 +101,6 @@ describe("<EbayTourtip>", () => {
                 );
             }).toThrow(`EbayTourtip: Please use a EbayTourtipHost that defines the host of the tourtip`);
             (console.error as jest.Mock).mockRestore();
-        });
-    });
-
-    describe("on tourtip button click", () => {
-        it("should pass the property to the button that close the tourtip", () => {
-            const wrapper = renderComponent();
-            expect(wrapper.container.querySelector('.tourtip__close[aria-label="close"]')).toBeInTheDocument();
-        });
-        it("should handle focus correctly", () => {
-            const wrapper = renderComponent();
-            expect(wrapper.container.querySelector('.tourtip__close[aria-label="close"]')).toBeInTheDocument();
-            const host = wrapper.container.querySelector("button.tourtip__host");
-            expect(host).not.toHaveFocus();
-            fireEvent.click(wrapper.container.querySelector("button.tourtip__close"));
-            expect(host).toHaveFocus();
         });
     });
 });

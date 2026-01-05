@@ -1,12 +1,13 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayFullscreenDialogDeprecated } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
-const closeSpy = jest.fn();
-const openSpy = jest.fn();
+const closeSpy = vi.fn();
+const openSpy = vi.fn();
 const openDialog = () =>
     render(
         <EbayFullscreenDialogDeprecated animated={false} open onOpen={openSpy} onClose={closeSpy} a11yCloseText="Close">

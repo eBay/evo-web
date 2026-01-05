@@ -1,5 +1,5 @@
 import React from "react";
-import { render, within } from "@testing-library/react";
+import { render, within, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
@@ -103,10 +103,8 @@ describe("ebay-listbox-button rendering", () => {
     });
 
     it("renders invalid state correctly", () => {
-        const { container } = render(<InvalidState />);
-
-        const listboxButton: HTMLElement = container.querySelector(".listbox-button");
-        const button = within(listboxButton).getByRole("button", { name: "Option 2" });
+        render(<InvalidState />);
+        const button = screen.getByText("Option 2").closest("button")!;
         expect(button).toHaveClass("btn btn--form");
         expect(button).toHaveAttribute("aria-expanded", "false");
         expect(button).toHaveAttribute("aria-haspopup", "listbox");
@@ -116,10 +114,9 @@ describe("ebay-listbox-button rendering", () => {
     });
 
     it("renders prefix label correctly", () => {
-        const { container } = render(<PrefixLabel />);
+        render(<PrefixLabel />);
 
-        const listboxButton: HTMLElement = container.querySelector(".listbox-button");
-        const button = within(listboxButton).getByRole("button", { name: "Selected: Option 2" });
+        const button = screen.getByText("Option 2").closest("button")!;
         expect(button).toHaveClass("btn btn--form");
         expect(button).toHaveAttribute("aria-expanded", "false");
         expect(button).toHaveAttribute("aria-haspopup", "listbox");

@@ -12,7 +12,7 @@ export const Default: StoryObj<EbayCalendarProps> = {};
 export const Interactive: StoryObj<EbayCalendarProps> = {
     args: {
         interactive: true,
-        selected: "2024-01-03",
+        selected: "2024-02-1\n5",
     },
 };
 

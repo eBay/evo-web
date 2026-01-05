@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -40,7 +41,7 @@ function setupMockEnv() {
 
 describe("EbayFilterMenuButton", () => {
     it("should call onExpand when the menu is expanded", async () => {
-        const onExpand = jest.fn();
+        const onExpand = vi.fn();
         render(
             <EbayFilterMenuButton onExpand={onExpand} text="Menu">
                 <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
@@ -55,7 +56,7 @@ describe("EbayFilterMenuButton", () => {
     });
 
     it("should call onCollapse when the menu is collapsed", async () => {
-        const onCollapse = jest.fn();
+        const onCollapse = vi.fn();
         render(
             <EbayFilterMenuButton onCollapse={onCollapse} text="Menu">
                 <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
@@ -72,7 +73,7 @@ describe("EbayFilterMenuButton", () => {
 
     it("should call onCollapse when Escape key is pressed", async () => {
         setupMockEnv();
-        const onCollapse = jest.fn();
+        const onCollapse = vi.fn();
         render(
             <EbayFilterMenuButton onCollapse={onCollapse} text="Menu">
                 <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>

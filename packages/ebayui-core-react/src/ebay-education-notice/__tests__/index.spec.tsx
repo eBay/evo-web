@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render } from "@testing-library/react";
 import { EbayEducationNotice, EbayNoticeContent, EbayEducationNoticeTitle } from "../index";
 import userEvent from "@testing-library/user-event";
@@ -28,7 +29,7 @@ describe("<EbayEducationNotice>", () => {
     });
 
     it("onDismiss being fired", async () => {
-        const onDismissMock = jest.fn();
+        const onDismissMock = vi.fn();
         const { getByRole } = render(
             <EbayEducationNotice
                 a11yDismissText="notice dismiss"

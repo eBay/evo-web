@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -35,8 +36,8 @@ describe("<EbayList />", () => {
     });
 
     it("should render interactive list", async () => {
-        const onClick = jest.fn();
-        const onButtonClick = jest.fn();
+        const onClick = vi.fn();
+        const onButtonClick = vi.fn();
 
         render(
             <EbayList onButtonClick={onButtonClick}>

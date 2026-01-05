@@ -1,9 +1,11 @@
+/* eslint-disable vitest/expect-expect */
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent, RenderResult } from "@testing-library/react";
 import { EbayInfotip, EbayInfotipContent, EbayInfotipHeading } from "../index";
 import { InfotipProps } from "../ebay-infotip";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 const renderComponent = (props?: InfotipProps) =>
     render(
@@ -44,7 +46,7 @@ describe("<EbayInfotip>", () => {
 
     describe("on infotip expanded", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onExpand: spy });
             fireEvent.click(wrapper.container.querySelector("button.infotip__host"));
 
@@ -54,7 +56,7 @@ describe("<EbayInfotip>", () => {
 
     describe("on infotip collapsed", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onCollapse: spy });
             fireEvent.click(wrapper.container.querySelector("button.infotip__host"));
             fireEvent.click(wrapper.container.querySelector("button.infotip__close"));
@@ -65,7 +67,7 @@ describe("<EbayInfotip>", () => {
 
     describe("on using the infotip with no content", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbayInfotip a11yCloseText="Close" />);
             }).toThrow(`EbayInfotip: Please use a EbayInfotipContent that defines the content of the infotip`);

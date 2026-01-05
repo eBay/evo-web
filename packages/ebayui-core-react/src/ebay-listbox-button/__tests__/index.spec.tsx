@@ -1,10 +1,11 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 import { EbayListboxButton, EbayListboxButtonOption } from "..";
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 describe("<EbayListboxButton>", () => {
     describe("a11y prefix", () => {
         const renderListbox = (listboxBtnLabel?) => {
@@ -153,7 +154,7 @@ describe("<EbayListboxButton>", () => {
             });
             it("focus should move to listbox", () => {
                 const listbox = screen.getByRole("listbox");
-                jest.runAllTimers();
+                vi.runAllTimers();
                 expect(listbox).toHaveFocus();
             });
             describe("when the button is clicked again", () => {
@@ -163,9 +164,9 @@ describe("<EbayListboxButton>", () => {
                 it("then it has collapsed the listbox", () => {
                     expect(screen.getByRole("button")).toHaveAttribute("aria-expanded", `false`);
                 });
-                xit("focus should move to button", () => {
+                it.todo("focus should move to button", () => {
                     const button = screen.getByRole("button");
-                    jest.runAllTimers();
+                    vi.runAllTimers();
                     expect(button).toHaveFocus();
                 });
             });
@@ -174,7 +175,7 @@ describe("<EbayListboxButton>", () => {
 
     describe("on change", () => {
         it("should fire onChange event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(
                 <EbayListboxButton onChange={spy}>
                     <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
@@ -191,7 +192,7 @@ describe("<EbayListboxButton>", () => {
         });
 
         it(`should pass the current selected value`, () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(
                 <EbayListboxButton onChange={spy}>
                     <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
@@ -216,7 +217,7 @@ describe("<EbayListboxButton>", () => {
     });
     describe("on expand", () => {
         it("should fire onExpand event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(
                 <EbayListboxButton onExpand={spy}>
                     <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
@@ -231,7 +232,7 @@ describe("<EbayListboxButton>", () => {
     });
     describe("on collapse", () => {
         it("should fire a event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(
                 <EbayListboxButton onCollapse={spy}>
                     <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>

@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -15,7 +16,7 @@ describe("<EbayToggleButtonGroup />", () => {
         expect(snapshot).toMatchSnapshot();
     });
     it("should fire onChange when clicking", async () => {
-        const mockOnChange = jest.fn();
+        const mockOnChange = vi.fn();
 
         const { getByRole } = render(<Default onChange={mockOnChange} />);
 

@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
 import Meta, { Default, Navigable, RangeSelected } from "./index.stories";
 
-jest.useFakeTimers().setSystemTime(new Date("2024-03-05").getTime());
+vi.useFakeTimers().setSystemTime(new Date("2024-03-05").getTime());
 
 const DefaultStory = composeStory(Default, Meta);
 const NavigableStory = composeStory(Navigable, Meta);
@@ -58,7 +58,7 @@ describe("ebay-calendar rendering", () => {
     });
 
     // todo: finish after bug fix
-    it.skip("renders range selected story correctly", () => {
+    it.todo("renders range selected story correctly", () => {
         const { container } = render(<RangeSelectedStory />);
         expect(container.querySelector(".calendar")).toBeInTheDocument();
         expect(screen.getByRole("table")).toBeInTheDocument();

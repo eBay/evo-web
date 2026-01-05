@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -27,7 +28,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should call onSearchChange correctly", async () => {
-        const handleSearchChange = jest.fn();
+        const handleSearchChange = vi.fn();
         render(<EbayFilterMenu searchHeaderPlaceholderText="Search..." onSearchChange={handleSearchChange} />);
         const searchInput = screen.getByPlaceholderText("Search...");
         await userEvent.type(searchInput, "test");
@@ -46,7 +47,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should call onChange handler with correct parameters for radio type", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayFilterMenu onChange={handleChange} type="radio">
                 <EbayFilterMenuItem value="item1">Item 1</EbayFilterMenuItem>
@@ -72,7 +73,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should call onChange handler with correct parameters for checkbox type with multiple selections", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayFilterMenu onChange={handleChange} type="checkbox">
                 <EbayFilterMenuItem value="item1">Item 1</EbayFilterMenuItem>
@@ -91,7 +92,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should update selected elements correctly when unselecting a checkbox", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayFilterMenu onChange={handleChange} type="checkbox">
                 <EbayFilterMenuItem value="item1">Item 1</EbayFilterMenuItem>
@@ -111,7 +112,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should call onFormSubmit handler with correct parameters", async () => {
-        const handleFormSubmit = jest.fn((event) => {
+        const handleFormSubmit = vi.fn((event) => {
             event.preventDefault();
         });
         render(
@@ -132,7 +133,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should call onFormSubmit handler with correct parameters for radio buttons", async () => {
-        const handleFormSubmit = jest.fn((event) => {
+        const handleFormSubmit = vi.fn((event) => {
             event.preventDefault();
         });
         render(
@@ -153,7 +154,7 @@ describe("EbayFilterMenu Component", () => {
     });
 
     it("should handle footer button click", async () => {
-        const handleFooterClick = jest.fn();
+        const handleFooterClick = vi.fn();
         render(
             <EbayFilterMenu onFooterClick={handleFooterClick}>
                 <EbayFilterMenuFooterButton>Footer Button</EbayFilterMenuFooterButton>

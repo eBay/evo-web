@@ -1,3 +1,4 @@
+/* eslint-disable vitest/expect-expect */
 import React from "react";
 import { render } from "@testing-library/react";
 import { EbayEek } from "../index";

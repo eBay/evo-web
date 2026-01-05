@@ -1,14 +1,15 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent, screen } from "@testing-library/react";
 import { act } from "@testing-library/react";
 
 import { EbayMenu, EbayMenuItem } from "../index";
 import { WithBadges, WithSeparator, Radio } from "./index.stories";
 
-const onKeyDownSpy = jest.fn();
-const onClickSpy = jest.fn();
-const onSelectSpy = jest.fn();
-const onChangeSpy = jest.fn();
+const onKeyDownSpy = vi.fn();
+const onClickSpy = vi.fn();
+const onSelectSpy = vi.fn();
+const onChangeSpy = vi.fn();
 
 describe("<EbayMenu>", () => {
     describe("rendering", () => {

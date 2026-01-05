@@ -21,7 +21,7 @@
         "noImplicitThis": true,
         "alwaysStrict": true,
         "moduleResolution": "node",
-        "types": ["@testing-library/jest-dom", "@types/node"],
+        "types": ["@testing-library/jest-dom", "@types/node", "vitest/globals"],
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "skipLibCheck": true

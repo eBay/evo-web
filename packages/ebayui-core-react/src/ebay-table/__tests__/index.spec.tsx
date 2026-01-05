@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -20,7 +21,7 @@ const renderComponent = (props) =>
 
 describe("<EbayTable />", () => {
     it("should call onSelect with the event and { selected, allSelected } object when selecting a row", async () => {
-        const onSelect = jest.fn();
+        const onSelect = vi.fn();
         renderComponent({ mode: "selection", onSelect });
 
         const checkbox = screen.getByLabelText("Select value 1");
@@ -36,7 +37,7 @@ describe("<EbayTable />", () => {
     });
 
     it("should call onSelect with the event and { selected, allSelected } object when selecting all rows", async () => {
-        const onSelect = jest.fn();
+        const onSelect = vi.fn();
         renderComponent({ mode: "selection", onSelect });
 
         const checkbox = screen.getByRole("checkbox", { name: "Select all rows" });
@@ -52,7 +53,7 @@ describe("<EbayTable />", () => {
     });
 
     it("should use the row name in the selected state", async () => {
-        const onSelect = jest.fn();
+        const onSelect = vi.fn();
         render(
             <EbayTable mode="selection" onSelect={onSelect}>
                 <EbayTableHeader>Column</EbayTableHeader>
@@ -78,7 +79,7 @@ describe("<EbayTable />", () => {
     });
 
     it("should call onSort with the event and { sorted } object when sorting a column", async () => {
-        const onSort = jest.fn();
+        const onSort = vi.fn();
         render(
             <EbayTable mode="selection" onSort={onSort}>
                 <EbayTableHeader sort="none">Column</EbayTableHeader>
@@ -166,7 +167,7 @@ describe("<EbayTable />", () => {
     });
 
     it("should select all rows when the allSelected checkbox is checked", async () => {
-        const onSelect = jest.fn();
+        const onSelect = vi.fn();
         renderComponent({ mode: "selection", onSelect });
 
         const checkboxAll = screen.getByRole("checkbox", { name: "Select all rows" });
@@ -180,7 +181,7 @@ describe("<EbayTable />", () => {
     });
 
     it("should deselect all rows when the allSelected checkbox is unchecked", async () => {
-        const onSelect = jest.fn();
+        const onSelect = vi.fn();
         renderComponent({ mode: "selection", onSelect });
 
         const checkboxAll = screen.getByRole("checkbox", { name: "Select all rows" });

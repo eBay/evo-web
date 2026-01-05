@@ -1,11 +1,12 @@
 import React from "react";
+import { vi } from "vitest";
 import { screen, fireEvent, render } from "@testing-library/react";
 import { EbayAlertDialog } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
-const closeSpy = jest.fn();
-const openSpy = jest.fn();
+const closeSpy = vi.fn();
+const openSpy = vi.fn();
 
 describe("<EbayAlertDialog>", () => {
     beforeEach(() => {

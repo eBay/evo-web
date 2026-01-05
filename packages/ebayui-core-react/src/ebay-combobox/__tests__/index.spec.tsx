@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -177,7 +178,7 @@ describe("<EbayCombobox />", () => {
 
     describe("event handlers", () => {
         it("should call EbayComboboxButton onClick event handler when clicked", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             render(
                 <EbayCombobox>
                     <EbayComboboxButton onClick={onClick}>Button</EbayComboboxButton>
@@ -193,7 +194,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onExpand on clicking the combobox input", async () => {
-            const onExpand = jest.fn();
+            const onExpand = vi.fn();
             renderCombobox({ onExpand });
             const input = screen.getByRole("combobox");
 
@@ -203,7 +204,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onExpand once on arrow down event", async () => {
-            const onExpand = jest.fn();
+            const onExpand = vi.fn();
             renderCombobox({ onExpand });
             const input = screen.getByRole("combobox");
 
@@ -215,7 +216,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onCollapse on escape", async () => {
-            const onCollapse = jest.fn();
+            const onCollapse = vi.fn();
             renderCombobox({ onCollapse });
             const input = screen.getByRole("combobox");
 
@@ -226,7 +227,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onCollapse when tabing out of the input", async () => {
-            const onCollapse = jest.fn();
+            const onCollapse = vi.fn();
             renderCombobox({ onCollapse });
             const input = screen.getByRole("combobox");
 
@@ -240,7 +241,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onCollapse when clicking the option", async () => {
-            const onCollapse = jest.fn();
+            const onCollapse = vi.fn();
             renderCombobox({ onCollapse });
             const input = screen.getByRole("combobox");
 
@@ -253,7 +254,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should not call onCollapse when clicking the button", async () => {
-            const onCollapse = jest.fn();
+            const onCollapse = vi.fn();
             render(
                 <EbayCombobox onCollapse={onCollapse}>
                     <EbayComboboxButton>Button</EbayComboboxButton>
@@ -269,7 +270,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onInputChange event handler on typing in the input", async () => {
-            const onInputChange = jest.fn();
+            const onInputChange = vi.fn();
             renderCombobox({ onInputChange });
             const input = screen.getByRole("combobox");
 
@@ -283,7 +284,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onInputChange with the selected option when an option is selected", async () => {
-            const onInputChange = jest.fn();
+            const onInputChange = vi.fn();
             renderCombobox({ onInputChange });
             const input = screen.getByRole("combobox");
 
@@ -299,7 +300,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onChange event handler on blur of the input", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderCombobox({ onChange });
             const input = screen.getByRole("combobox");
 
@@ -315,7 +316,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should not call onChange event handler on blur when the value is the same", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderCombobox({ onChange });
             const input = screen.getByRole("combobox");
 
@@ -331,7 +332,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onClick event handler when clicking the input", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             renderCombobox({ onClick });
             const input = screen.getByRole("combobox");
 
@@ -345,7 +346,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onClick event handler with the selected option when an option is selected", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             renderCombobox({ onClick });
             const input = screen.getByRole("combobox");
 
@@ -360,7 +361,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onFocus event handler when focusing the input", async () => {
-            const onFocus = jest.fn();
+            const onFocus = vi.fn();
             renderCombobox({ onFocus });
             const input = screen.getByRole("combobox");
 
@@ -374,7 +375,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onFocus event handler with the selected option when an option is selected", async () => {
-            const onFocus = jest.fn();
+            const onFocus = vi.fn();
             renderCombobox({ onFocus });
             const input = screen.getByRole("combobox");
 
@@ -390,7 +391,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onSelect event handler when pressing enter", async () => {
-            const onSelect = jest.fn();
+            const onSelect = vi.fn();
             renderCombobox({ onSelect });
             const input = screen.getByRole("combobox");
 
@@ -406,7 +407,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should not call onSelect on arrow down", async () => {
-            const onSelect = jest.fn();
+            const onSelect = vi.fn();
             renderCombobox({ onSelect });
             const input = screen.getByRole("combobox");
 
@@ -416,7 +417,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onSelect when the option is clicked", async () => {
-            const onSelect = jest.fn();
+            const onSelect = vi.fn();
             renderCombobox({ onSelect });
             const input = screen.getByRole("combobox");
 
@@ -432,7 +433,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onClick event of the EbayComboboxOption when clicked", async () => {
-            const onClick = jest.fn();
+            const onClick = vi.fn();
             render(
                 <EbayCombobox>
                     <EbayComboboxOption onClick={onClick} text="option 1" />
@@ -447,7 +448,7 @@ describe("<EbayCombobox />", () => {
         });
 
         it("should call onFloatingLabelInit on floating label init and update", () => {
-            const onFloatingLabelInit = jest.fn();
+            const onFloatingLabelInit = vi.fn();
             const { rerender } = renderCombobox({ floatingLabel: "Label", onFloatingLabelInit });
 
             expect(onFloatingLabelInit).toHaveBeenCalledTimes(1);

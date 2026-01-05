@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 
 const { Default, WithSearch, WithFooterButton, WithDisabledItem } = composeStories(stories);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("<EbayFilterMenu /> rendering", () => {
     it("renders Default story correctly", () => {

@@ -1,13 +1,14 @@
 import React, { useCallback, useState } from "react";
+import { vi } from "vitest";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { EbayDialogFooter, EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayLightboxDialog } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
-const closeSpy = jest.fn();
-const openSpy = jest.fn();
+const closeSpy = vi.fn();
+const openSpy = vi.fn();
 const openDialog = (props = {}) =>
     render(
         <EbayLightboxDialog animated={false} open onOpen={openSpy} onClose={closeSpy} a11yCloseText="Close" {...props}>
@@ -67,7 +68,7 @@ describe("<EbayLightboxDialog>", () => {
         // to trigger events, all the handlers are executed in the same task, before the microtask, but
         // that is different in the browser, where each handler is a separate task, causing the React micro task
         // to be executed before the next handler.
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         const TestCase = () => {
             const [showButton, setShowButton] = useState(true);
             const handleClose = useCallback(onClose, []);
@@ -101,7 +102,7 @@ describe("<EbayLightboxDialog>", () => {
     });
 
     it("should not close the dialog when click starts inside and its dragged outside", () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         const { container } = render(
             <EbayLightboxDialog open onClose={onClose} a11yCloseText="Close">

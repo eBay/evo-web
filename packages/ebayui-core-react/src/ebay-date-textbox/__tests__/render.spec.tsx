@@ -5,14 +5,12 @@ import * as stories from "./index.stories";
 
 const { Default, Range, ControlledValues, RangeWithFloatingLabel, WithFloatingLabel } = composeStories(stories);
 
-jest.mock("makeup-next-id", () => (el) => el.setAttribute("id", "testid"));
-
 describe("ebay-date-textbox rendering", () => {
     it("renders default story correctly", () => {
         const { container } = render(<Default />);
 
         const dateTextbox: HTMLElement = container.querySelector(".date-textbox");
-        expect(dateTextbox).toHaveAttribute("id", "testid");
+        expect(dateTextbox).toHaveAttribute("id");
 
         const textbox = dateTextbox.querySelector(".textbox");
         expect(textbox).toHaveClass("ebay-date-textbox--main");
@@ -28,12 +26,12 @@ describe("ebay-date-textbox rendering", () => {
         expect(button).toHaveAttribute("aria-label", "open calendar");
         expect(button).toHaveAttribute("type", "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-controls", "testid-content");
+        expect(button).toHaveAttribute("aria-controls", `${dateTextbox.id}-content`);
         expect(button.querySelector("svg")).toMatchSnapshot();
 
         const popover = dateTextbox.querySelector(".date-textbox__popover");
         expect(popover).toHaveAttribute("hidden", "");
-        expect(popover).toHaveAttribute("id", "testid-content");
+        expect(popover).toHaveAttribute("id", `${dateTextbox.id}-content`);
 
         const calendar = popover.querySelector(".calendar");
         expect(calendar).toBeInTheDocument();
@@ -43,7 +41,7 @@ describe("ebay-date-textbox rendering", () => {
         const { container } = render(<Range />);
 
         const dateTextbox = container.querySelector(".date-textbox");
-        expect(dateTextbox).toHaveAttribute("id", "testid");
+        expect(dateTextbox).toHaveAttribute("id");
 
         const [textboxStart, textboxEnd] = dateTextbox.querySelectorAll(".textbox");
         expect(textboxEnd).toHaveClass("ebay-date-textbox--main");
@@ -65,12 +63,12 @@ describe("ebay-date-textbox rendering", () => {
         expect(button).toHaveAttribute("aria-label", "open calendar");
         expect(button).toHaveAttribute("type", "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-controls", "testid-content");
+        expect(button).toHaveAttribute("aria-controls", `${dateTextbox.id}-content`);
         expect(button.querySelector("svg")).toMatchSnapshot();
 
         const popover = dateTextbox.querySelector(".date-textbox__popover");
         expect(popover).toHaveAttribute("hidden", "");
-        expect(popover).toHaveAttribute("id", "testid-content");
+        expect(popover).toHaveAttribute("id", `${dateTextbox.id}-content`);
 
         const calendar = popover.querySelector(".calendar");
         expect(calendar).toBeInTheDocument();
@@ -80,7 +78,7 @@ describe("ebay-date-textbox rendering", () => {
         const { container } = render(<ControlledValues value="2024-01-03" />);
 
         const dateTextbox: HTMLElement = container.querySelector(".date-textbox");
-        expect(dateTextbox).toHaveAttribute("id", "testid");
+        expect(dateTextbox).toHaveAttribute("id");
 
         const textbox = dateTextbox.querySelector(".textbox");
         expect(textbox).toHaveClass("ebay-date-textbox--main");
@@ -95,7 +93,7 @@ describe("ebay-date-textbox rendering", () => {
         const { container } = render(<RangeWithFloatingLabel />);
 
         const dateTextbox = container.querySelector(".date-textbox");
-        expect(dateTextbox).toHaveAttribute("id", "testid");
+        expect(dateTextbox).toHaveAttribute("id");
 
         const [textboxStart, textboxEnd] = dateTextbox.querySelectorAll(".textbox");
         expect(textboxEnd).toHaveClass("ebay-date-textbox--main");
@@ -121,11 +119,11 @@ describe("ebay-date-textbox rendering", () => {
         expect(button).toHaveAttribute("aria-label", "open calendar");
         expect(button).toHaveAttribute("type", "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-controls", "testid-content");
+        expect(button).toHaveAttribute("aria-controls", `${dateTextbox.id}-content`);
 
         const popover = dateTextbox.querySelector(".date-textbox__popover");
         expect(popover).toHaveAttribute("hidden", "");
-        expect(popover).toHaveAttribute("id", "testid-content");
+        expect(popover).toHaveAttribute("id", `${dateTextbox.id}-content`);
 
         const calendar = popover.querySelector(".calendar");
         expect(calendar).toBeInTheDocument();
@@ -135,7 +133,7 @@ describe("ebay-date-textbox rendering", () => {
         const { container } = render(<WithFloatingLabel />);
 
         const dateTextbox: HTMLElement = container.querySelector(".date-textbox");
-        expect(dateTextbox).toHaveAttribute("id", "testid");
+        expect(dateTextbox).toHaveAttribute("id");
 
         const textbox = dateTextbox.querySelector(".textbox");
         expect(textbox).toHaveClass("ebay-date-textbox--main");
@@ -153,11 +151,11 @@ describe("ebay-date-textbox rendering", () => {
         expect(button).toHaveAttribute("aria-label", "open calendar");
         expect(button).toHaveAttribute("type", "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-controls", "testid-content");
+        expect(button).toHaveAttribute("aria-controls", `${dateTextbox.id}-content`);
 
         const popover = dateTextbox.querySelector(".date-textbox__popover");
         expect(popover).toHaveAttribute("hidden", "");
-        expect(popover).toHaveAttribute("id", "testid-content");
+        expect(popover).toHaveAttribute("id", `${dateTextbox.id}-content`);
 
         const calendar = popover.querySelector(".calendar");
         expect(calendar).toBeInTheDocument();

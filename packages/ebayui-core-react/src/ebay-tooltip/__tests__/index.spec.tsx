@@ -1,8 +1,10 @@
+/* eslint-disable vitest/expect-expect */
 import React from "react";
+import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayTooltip, EbayTooltipContent, EbayTooltipHost } from "../index";
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 const renderComponent = (props = {}) =>
     render(
@@ -29,7 +31,7 @@ const checkIsCollapsed = (wrapper) => {
 describe("<EbayTooltip>", () => {
     describe("on tooltip mouse enter", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const { getByText } = renderComponent({ onMouseEnter: spy });
             fireEvent.mouseEnter(getByText("Info content"));
 
@@ -51,7 +53,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on tooltip mouse leave", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onMouseLeave: spy });
             fireEvent.mouseLeave(wrapper.getByText("Info content"));
 
@@ -61,7 +63,7 @@ describe("<EbayTooltip>", () => {
         it("should collapse the tooltip", () => {
             const wrapper = renderComponent();
             fireEvent.mouseLeave(wrapper.getByText("Info content"));
-            jest.runAllTimers();
+            vi.runAllTimers();
             checkIsCollapsed(wrapper);
         });
 
@@ -76,7 +78,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on tooltip focus", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onFocus: spy });
             fireEvent.focus(wrapper.getByText("Info"));
 
@@ -106,7 +108,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on tooltip blur", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onBlur: spy });
             fireEvent.blur(wrapper.getByText("Info"));
 
@@ -122,7 +124,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on tooltip expanded", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onExpand: spy });
             fireEvent.focus(wrapper.getByText("Info"));
 
@@ -132,7 +134,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on tooltip collapsed", () => {
         it("should fire an event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = renderComponent({ onCollapse: spy });
             fireEvent.blur(wrapper.getByText("Info"));
 
@@ -142,7 +144,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on using the tooltip with no host", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(
                     <EbayTooltip>
@@ -156,7 +158,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on using the tooltip with no content", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(
                     <EbayTooltip>
@@ -172,7 +174,7 @@ describe("<EbayTooltip>", () => {
 
     describe("on using more than one element in the host", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(
                     <EbayTooltip>

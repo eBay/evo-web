@@ -6,7 +6,7 @@ import Meta, { Default, AlwaysOpened } from "./index.stories";
 const DefaultStory = composeStory(Default, Meta);
 const AlwaysOpenedStory = composeStory(AlwaysOpened, Meta);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("ebay-fullscreen-dialog-deprecated rendering", () => {
     it("renders default story correctly", () => {

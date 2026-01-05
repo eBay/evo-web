@@ -1,16 +1,17 @@
 import React from "react";
+import { vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { EbayMenuButtonItem as Item } from "../../ebay-menu-button";
 import { EbaySplitButton, Props } from "../index";
 
 const values = ["first", "second", "third"];
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("<EbaySplitButton>", () => {
     describe("on button click", () => {
         it("should fire onClick event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(splitButton({ onClick: spy }));
             fireEvent.click(wrapper.getAllByRole("button")[0]);
 
@@ -19,7 +20,7 @@ describe("<EbaySplitButton>", () => {
     });
     describe("on escape keydown", () => {
         it("should fire onEscape event", () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(splitButton({ onEscape: (e) => spy(e) }));
 
             fireEvent.keyDown(wrapper.getAllByRole("button")[0], { key: "Escape" });
@@ -29,8 +30,8 @@ describe("<EbaySplitButton>", () => {
     });
     describe("on expand/collapse", () => {
         it("should fire onExpand/onCollapse event", async () => {
-            const expandSpy = jest.fn();
-            const collapseSpy = jest.fn();
+            const expandSpy = vi.fn();
+            const collapseSpy = vi.fn();
             render(splitButton({ onExpand: expandSpy, onCollapse: collapseSpy }));
 
             const dropdownButton = screen.getAllByRole("button")[1];
@@ -50,8 +51,8 @@ describe("<EbaySplitButton>", () => {
 
     describe("on focus/blur", () => {
         it("should fire onFocus/onBlur event", () => {
-            const focusSpy = jest.fn();
-            const blurSpy = jest.fn();
+            const focusSpy = vi.fn();
+            const blurSpy = vi.fn();
             render(splitButton({ onFocus: focusSpy, onBlur: blurSpy }));
 
             const [mainButton] = screen.getAllByRole("button");
@@ -72,7 +73,7 @@ describe("<EbaySplitButton>", () => {
     describe("on select", () => {
         it("should fire onSelect event", () => {
             const indexToSelect = 0;
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(splitButton({ onSelect: spy }));
 
             const dropdownButton = screen.getAllByRole("button")[1];
@@ -91,7 +92,7 @@ describe("<EbaySplitButton>", () => {
         it("should fire onChange event", () => {
             const indexToCheck = 1;
             const anotherIndexToCheck = 2;
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(splitButton({ type: "radio", onChange: spy }));
 
             const dropdownButton = screen.getAllByRole("button")[1];
@@ -126,7 +127,7 @@ describe("<EbaySplitButton>", () => {
         it("should fire onChange event", () => {
             const indexToCheck = 1;
             const anotherIndexToCheck = 2;
-            const spy = jest.fn();
+            const spy = vi.fn();
             render(splitButton({ type: "checkbox", onChange: spy }));
 
             const dropdownButton = screen.getAllByRole("button")[1];

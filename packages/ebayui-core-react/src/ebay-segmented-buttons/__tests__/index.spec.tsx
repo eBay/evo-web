@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
@@ -19,7 +20,7 @@ describe("<EbaySegmentedButtons>", () => {
     });
 
     it("should handle button clicks", () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
         render(<Default onChange={spy} />);
 
         const firstButton = screen.getByRole("button", { name: "Q1" });

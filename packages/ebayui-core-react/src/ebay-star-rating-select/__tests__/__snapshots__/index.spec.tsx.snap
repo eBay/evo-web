@@ -1,4 +1,682 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`star-rating-select > renders basic fieldset 1`] = `
+<DocumentFragment>
+  <fieldset>
+    <legend>
+      Rate Product
+    </legend>
+    <div
+      class="star-rating-select"
+    >
+      <span
+        class="star-rating-select__radio"
+      >
+        <input
+          aria-label="1 star"
+          class="star-rating-select__control"
+          name="star-rating"
+          type="radio"
+          value="1"
+        />
+        <span
+          class="star-rating-select__radio-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="star-rating__icon icon icon--star-dynamic"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-star-dynamic"
+            />
+          </svg>
+        </span>
+      </span>
+      <span
+        class="star-rating-select__radio"
+      >
+        <input
+          aria-label="2 stars"
+          class="star-rating-select__control"
+          name="star-rating"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="star-rating-select__radio-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="star-rating__icon icon icon--star-dynamic"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-star-dynamic"
+            />
+          </svg>
+        </span>
+      </span>
+      <span
+        class="star-rating-select__radio"
+      >
+        <input
+          aria-label="3 stars"
+          class="star-rating-select__control"
+          name="star-rating"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="star-rating-select__radio-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="star-rating__icon icon icon--star-dynamic"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-star-dynamic"
+            />
+          </svg>
+        </span>
+      </span>
+      <span
+        class="star-rating-select__radio"
+      >
+        <input
+          aria-label="4 stars"
+          class="star-rating-select__control"
+          name="star-rating"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="star-rating-select__radio-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="star-rating__icon icon icon--star-dynamic"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-star-dynamic"
+            />
+          </svg>
+        </span>
+      </span>
+      <span
+        class="star-rating-select__radio"
+      >
+        <input
+          aria-label="5 stars"
+          class="star-rating-select__control"
+          name="star-rating"
+          type="radio"
+          value="5"
+        />
+        <span
+          class="star-rating-select__radio-icon"
+        >
+          <svg
+            aria-hidden="true"
+            class="star-rating__icon icon icon--star-dynamic"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <use
+              xlink:href="#icon-star-dynamic"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </fieldset>
+</DocumentFragment>
+`;
+
+exports[`star-rating-select > renders defaults 1`] = `
+<DocumentFragment>
+  <div
+    class="star-rating-select"
+  >
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="1"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="2"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="3"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="4"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="5"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`star-rating-select > renders with 0 selected 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Rate product"
+    class="star-rating-select"
+    role="radiogroup"
+  >
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="1 star"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="1"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="2 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="2"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="3 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="3"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="4 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="4"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="5 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="5"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`star-rating-select > renders with 2 selected 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Rate product"
+    class="star-rating-select"
+    role="radiogroup"
+  >
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="1 star"
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="1"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="2 stars"
+        checked=""
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="2"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="3 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="3"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="4 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="4"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="5 stars"
+        class="star-rating-select__control"
+        name="star-rating"
+        type="radio"
+        value="5"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`star-rating-select > renders with 5 selected 1`] = `
+<DocumentFragment>
+  <div
+    aria-label="Rate product"
+    class="star-rating-select"
+    role="radiogroup"
+  >
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="1 star"
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="1"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="2 stars"
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="2"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="3 stars"
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="3"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="4 stars"
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="4"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="star-rating-select__radio"
+    >
+      <input
+        aria-label="5 stars"
+        checked=""
+        class="star-rating-select__control star-rating-select__control--filled"
+        name="star-rating"
+        type="radio"
+        value="5"
+      />
+      <span
+        class="star-rating-select__radio-icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="star-rating__icon icon icon--star-dynamic"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use
+            xlink:href="#icon-star-dynamic"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</DocumentFragment>
+`;
 
 exports[`star-rating-select renders basic fieldset 1`] = `
 <DocumentFragment>

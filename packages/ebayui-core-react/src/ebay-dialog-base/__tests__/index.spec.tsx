@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, RenderResult } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { DialogBaseWithState } from "..";
@@ -66,8 +67,8 @@ describe("DialogBase", () => {
             expect(wrapper.container.querySelector(".closeButtonClass")).toBeInTheDocument();
         });
         describe("click events", () => {
-            const spyCloseBtnClick = jest.fn();
-            const spyBackgroundClick = jest.fn();
+            const spyCloseBtnClick = vi.fn();
+            const spyBackgroundClick = vi.fn();
             beforeEach(() => {
                 wrapper = render(
                     <HeaderFooterDialog

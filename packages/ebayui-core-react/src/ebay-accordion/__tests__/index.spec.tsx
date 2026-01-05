@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { EbayAccordion } from "../index";
 import { render, waitFor } from "@testing-library/react";
@@ -8,7 +9,7 @@ import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
 describe("<EbayAccordion />", () => {
     it("should trigger onToggle when a details element is toggled", async () => {
-        const onToggle = jest.fn();
+        const onToggle = vi.fn();
         const { getByText } = render(
             <EbayAccordion onToggle={onToggle}>
                 <EbayDetails text="Summary 1">Details 1</EbayDetails>
@@ -34,7 +35,7 @@ describe("<EbayAccordion />", () => {
     });
 
     it("should trigger the onToggle on the EbayDetails component", async () => {
-        const onToggle = jest.fn();
+        const onToggle = vi.fn();
         const { getByText } = render(
             <EbayAccordion>
                 <EbayDetails text="Summary 1" onToggle={onToggle}>
@@ -77,7 +78,7 @@ describe("<EbayAccordion />", () => {
         });
 
         it("should trigger onToggle when a details element is toggled", async () => {
-            const onToggle = jest.fn();
+            const onToggle = vi.fn();
             const { getByText } = render(
                 <EbayAccordion autoCollapse onToggle={onToggle}>
                     <EbayDetails text="Summary 1">Details 1</EbayDetails>

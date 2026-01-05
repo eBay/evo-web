@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-autofocus */
+import { vi } from "vitest";
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
 import { EbayFakeMenu, EbayFakeMenuItem } from "../index";
@@ -9,7 +10,7 @@ const keyDownEvent = expect.objectContaining({ type: "keydown" });
 describe("<EbayFakeMenu>", () => {
     describe("on menu item click", () => {
         it("should fire onClick event", () => {
-            const onClickSpy = jest.fn();
+            const onClickSpy = vi.fn();
             const wrapper = render(
                 <EbayFakeMenu>
                     <EbayFakeMenuItem href="#" onClick={onClickSpy} />
@@ -23,7 +24,7 @@ describe("<EbayFakeMenu>", () => {
     });
     describe("on key down", () => {
         it("should fire onKeyDown event", () => {
-            const onKeyDownSpy = jest.fn();
+            const onKeyDownSpy = vi.fn();
             const wrapper = render(
                 <EbayFakeMenu onKeyDown={onKeyDownSpy}>
                     <EbayFakeMenuItem href="#" />
@@ -38,7 +39,7 @@ describe("<EbayFakeMenu>", () => {
     });
     describe("on item select", () => {
         it("should fire onSelect event", () => {
-            const onSelectSpy = jest.fn();
+            const onSelectSpy = vi.fn();
             const wrapper = render(
                 <EbayFakeMenu onSelect={onSelectSpy}>
                     <EbayFakeMenuItem href="#" />

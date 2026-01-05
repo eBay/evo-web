@@ -60,7 +60,7 @@ describe("useRovingIndex", () => {
         expect(result.current[0]).toEqual(2);
     });
 
-    it("should update index on keyDown", () => {
+    it("should update index on keyDown for index 2", () => {
         const { result, rerender } = renderHook(() => useRovingIndex(children, TestComponent));
 
         act(() => {

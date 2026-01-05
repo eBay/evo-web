@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
@@ -16,7 +17,7 @@ import { EbayIconHeart16 } from "../../ebay-icon/icons/ebay-icon-heart-16";
 
 describe("<EbayItemTileGroup>", () => {
     it("should call onAction", async () => {
-        const onActionClick = jest.fn();
+        const onActionClick = vi.fn();
         const tiles = Array.from({ length: 3 });
         render(
             <EbayItemTileGroup onAction={onActionClick}>

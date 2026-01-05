@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { EbayFilter } from "../index";
 import { render, screen } from "@testing-library/react";
@@ -7,7 +8,7 @@ import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
 describe("<EbayFilter />", () => {
     describe("given filter is enabled", () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
 
         beforeEach(() => {
             render(<EbayFilter onClick={onClick}>Text</EbayFilter>);
@@ -45,7 +46,7 @@ describe("<EbayFilter />", () => {
     });
 
     describe("given filter is disabled", () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         beforeEach(() => {
             render(
                 <EbayFilter disabled onClick={onClick}>

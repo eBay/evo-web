@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import "@testing-library/jest-dom";
 import { fireEvent, render } from "@testing-library/react";
 import EbayNumberInput from "../number-input";
@@ -9,9 +10,9 @@ describe("given a number input textbox", () => {
     let onDecrement: jest.Mock;
 
     beforeEach(() => {
-        onChange = jest.fn();
-        onIncrement = jest.fn();
-        onDecrement = jest.fn();
+        onChange = vi.fn();
+        onIncrement = vi.fn();
+        onDecrement = vi.fn();
     });
 
     describe("when increment is pressed", () => {
@@ -54,10 +55,10 @@ describe("given a number input textbox with delete", () => {
     let onDeleteClick: jest.Mock;
 
     beforeEach(() => {
-        onChange = jest.fn();
-        onIncrement = jest.fn();
-        onDecrement = jest.fn();
-        onDeleteClick = jest.fn();
+        onChange = vi.fn();
+        onIncrement = vi.fn();
+        onDecrement = vi.fn();
+        onDeleteClick = vi.fn();
     });
 
     describe("when delete is pressed", () => {
@@ -143,9 +144,9 @@ describe("given a number input textbox with constraints", () => {
     let onDecrement: jest.Mock;
 
     beforeEach(() => {
-        onChange = jest.fn();
-        onIncrement = jest.fn();
-        onDecrement = jest.fn();
+        onChange = vi.fn();
+        onIncrement = vi.fn();
+        onDecrement = vi.fn();
     });
 
     describe("when input value exceeds max", () => {

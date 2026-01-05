@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { act, render } from "@testing-library/react";
 import { EbayButton } from "../../ebay-button";
 import { EbayNoticeContent, EbaySectionNotice } from "../index";
@@ -49,7 +50,7 @@ describe("<EbaySectionNotice>", () => {
 
     describe("on using the notice with no content", () => {
         it("should throw an error", () => {
-            jest.spyOn(console, "error").mockImplementation(() => null);
+            vi.spyOn(console, "error").mockImplementation(() => null);
             expect(() => {
                 render(<EbaySectionNotice />);
             }).toThrow(`EbaySectionNotice: Please use a EbayNoticeContent that defines the content of the notice`);
@@ -60,7 +61,7 @@ describe("<EbaySectionNotice>", () => {
     describe("when allyDismissText is provided...", () => {
         let wrapper;
         let dismissButton;
-        const dismissMock = jest.fn();
+        const dismissMock = vi.fn();
 
         beforeEach(() => {
             wrapper = render(

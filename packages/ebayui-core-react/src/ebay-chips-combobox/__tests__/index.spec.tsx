@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -8,7 +9,7 @@ import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
 describe("EbayChipsCombobox", () => {
     it("should renders the component", () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -20,7 +21,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should selects an option when clicked", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange}>
                 <EbayComboboxOption text="Option 1" />
@@ -33,7 +34,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should add a chip when Enter is pressed", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -46,7 +47,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should add a chip when Enter is pressed and the option is not in the list", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -59,7 +60,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should maintain previous selected options", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -74,7 +75,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should hide the option from the combobox when selected", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -90,7 +91,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should remove a chip when the delete button is clicked", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -106,7 +107,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should support control of selected options", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} selected={["Option 1"]} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -126,7 +127,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it('should update the list when "selected" prop changes', () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         const { rerender } = render(
             <EbayChipsCombobox onChange={handleChange} selected={["Option 1"]} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />
@@ -149,7 +150,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it('should throw an error when "selected" prop is used with "defaultSelected"', () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         expect(() =>
             render(
                 <EbayChipsCombobox
@@ -179,7 +180,7 @@ describe("EbayChipsCombobox", () => {
     });
 
     it("should support uncontrolled when passing defaultSelected", async () => {
-        const handleChange = jest.fn();
+        const handleChange = vi.fn();
         render(
             <EbayChipsCombobox onChange={handleChange} defaultSelected={["Option 1"]} placeholder="Select options">
                 <EbayComboboxOption text="Option 1" />

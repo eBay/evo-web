@@ -4,7 +4,7 @@ import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
 import { render } from "@testing-library/react";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 const { Default, WithMockUploads, WithPreviewCards } = composeStories(stories);
 

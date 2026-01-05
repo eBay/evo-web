@@ -1,4 +1,5 @@
 import React from "react";
+import { vi } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -8,7 +9,7 @@ import { EbayBreadcrumbs, EbayBreadcrumbItem } from "../index";
 describe("<EbayBreadcrumbs>", () => {
     describe("on category click", () => {
         it("should fire an event", async () => {
-            const spy = jest.fn();
+            const spy = vi.fn();
             const wrapper = render(
                 <EbayBreadcrumbs onSelect={spy}>
                     <EbayBreadcrumbItem>home</EbayBreadcrumbItem>

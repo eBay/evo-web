@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 
 import { fireEvent, render, screen } from "@testing-library/react";
@@ -6,11 +7,11 @@ import EbayDateTextbox from "../date-textbox";
 import { EbayTextbox } from "../../ebay-textbox";
 import userEvent from "@testing-library/user-event";
 
-jest.useFakeTimers().setSystemTime(new Date("2024-01-05").getTime());
+vi.useFakeTimers().setSystemTime(new Date("2024-01-05").getTime());
 
 // makeup-expander uses a random generated id, so we need to mock it for the
 // snapshot to be consistent
-jest.mock("makeup-next-id", () => (el) => el.setAttribute("id", "testid"));
+vi.mock("makeup-next-id", () => (el) => el.setAttribute("id", "testid"));
 
 describe("<EbayDateTextbox />", () => {
     it("should open the calendar when clicking on the postfix icon", () => {
@@ -96,7 +97,7 @@ describe("<EbayDateTextbox />", () => {
 
     describe("onChange", () => {
         it("should be called with the selected date when selecting a date", () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             render(<EbayDateTextbox onChange={onChange} />);
             fireEvent.click(screen.getByLabelText("open calendar"));
 
@@ -104,7 +105,7 @@ describe("<EbayDateTextbox />", () => {
             expect(onChange).toHaveBeenCalledWith(expect.anything(), { selected: "2024-01-01" });
         });
         it("should be called with the selected date when selecting a date with children", () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             render(
                 <EbayDateTextbox onChange={onChange}>
                     <EbayTextbox floatingLabel="Purchase price" />
@@ -117,7 +118,7 @@ describe("<EbayDateTextbox />", () => {
         });
 
         it("should be called with the selected range when selecting a range", () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             render(<EbayDateTextbox range onChange={onChange} />);
             fireEvent.click(screen.getByLabelText("open calendar"));
 
@@ -136,14 +137,14 @@ describe("<EbayDateTextbox />", () => {
     });
 
     it("should update numMonths on resize of the window", () => {
-        jest.spyOn(document.documentElement, "clientWidth", "get").mockImplementation(() => 800);
+        vi.spyOn(document.documentElement, "clientWidth", "get").mockImplementation(() => 800);
 
         const { container } = render(<EbayDateTextbox />);
         fireEvent.click(screen.getByLabelText("open calendar"));
 
         expect(container.querySelectorAll(".calendar__month")).toHaveLength(2);
 
-        jest.spyOn(document.documentElement, "clientWidth", "get").mockImplementation(() => 500);
+        vi.spyOn(document.documentElement, "clientWidth", "get").mockImplementation(() => 500);
 
         fireEvent.resize(window);
         expect(container.querySelectorAll(".calendar__month")).toHaveLength(1);

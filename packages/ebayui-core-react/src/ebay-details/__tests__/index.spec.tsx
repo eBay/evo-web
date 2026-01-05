@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { EbayDetails } from "../index";
@@ -27,7 +28,7 @@ describe("<EbayDetails>", () => {
     });
 
     it("should fire onToggle event", async () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
 
         render(
             <EbayDetails onToggle={spy} text="detail">
@@ -45,7 +46,7 @@ describe("<EbayDetails>", () => {
     });
 
     it("should fire onClick event", async () => {
-        const spy = jest.fn();
+        const spy = vi.fn();
 
         render(
             <EbayDetails onClick={spy} text="detail">

@@ -5,7 +5,7 @@ import * as stories from "./index.stories";
 
 const { AllSVGFlags, AllFlagsSpan } = composeStories(stories);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("ebay-flag rendering", () => {
     describe("AllSVGFlags story", () => {

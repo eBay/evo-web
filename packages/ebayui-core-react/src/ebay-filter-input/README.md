@@ -36,20 +36,20 @@ import "@ebay/skin/filter-input.css";
 
 ## Props
 
-| Name               | Type                                           | Stateful | Required | Description                                                          |
-| ------------------ | ---------------------------------------------- | -------- | -------- | -------------------------------------------------------------------- |
-| `size`             | `"large"` \| `"small"`                         | No       | No       | The input size variant                                               |
-| `placeholder`      | String                                         | No       | No       | Placeholder text (default: `"Filter"`)                              |
-| `a11yClearButton`  | String                                         | No       | No       | Aria-label for clear button. When provided, shows clear button      |
-| `a11yControlsId`   | String                                         | No       | No       | ID of element that this input controls (for `aria-controls`)        |
-| `onClear`          | Function                                       | No       | No       | Callback for clear button click: `(event, { value }) => void`       |
-| `onChange`         | Function                                       | No       | No       | Callback for input blur: `(event, { value }) => void`               |
-| `onInputChange`    | Function                                       | No       | No       | Callback for input value change: `(event, { value }) => void`       |
-| `onFocus`          | Function                                       | No       | No       | Callback for input focus: `(event, { value }) => void`              |
-| `onBlur`           | Function                                       | No       | No       | Callback for input blur: `(event, { value }) => void`               |
-| `onKeyDown`        | Function                                       | No       | No       | Callback for key down: `(event, { value }) => void`                 |
-| `onKeyPress`       | Function                                       | No       | No       | Callback for key press: `(event, { value }) => void`                |
-| `onKeyUp`          | Function                                       | No       | No       | Callback for key up: `(event, { value }) => void`                   |
+| Name              | Type                   | Stateful | Required | Description                                                    |
+| ----------------- | ---------------------- | -------- | -------- | -------------------------------------------------------------- |
+| `size`            | `"large"` \| `"small"` | No       | No       | The input size variant                                         |
+| `placeholder`     | String                 | No       | No       | Placeholder text (default: `"Filter"`)                         |
+| `a11yClearButton` | String                 | No       | No       | Aria-label for clear button. When provided, shows clear button |
+| `a11yControlsId`  | String                 | No       | No       | ID of element that this input controls (for `aria-controls`)   |
+| `onClear`         | Function               | No       | No       | Callback for clear button click: `(event, { value }) => void`  |
+| `onChange`        | Function               | No       | No       | Callback for input blur: `(event, { value }) => void`          |
+| `onInputChange`   | Function               | No       | No       | Callback for input value change: `(event, { value }) => void`  |
+| `onFocus`         | Function               | No       | No       | Callback for input focus: `(event, { value }) => void`         |
+| `onBlur`          | Function               | No       | No       | Callback for input blur: `(event, { value }) => void`          |
+| `onKeyDown`       | Function               | No       | No       | Callback for key down: `(event, { value }) => void`            |
+| `onKeyPress`      | Function               | No       | No       | Callback for key press: `(event, { value }) => void`           |
+| `onKeyUp`         | Function               | No       | No       | Callback for key up: `(event, { value }) => void`              |
 
 ## Examples
 
@@ -62,10 +62,10 @@ import "@ebay/skin/filter-input.css";
 ### With Clear Button
 
 ```jsx
-<EbayFilterInput 
+<EbayFilterInput
     placeholder="Filter results"
     a11yClearButton="Clear filters"
-    onClear={(event, { value }) => console.log('Cleared:', value)}
+    onClear={(event, { value }) => console.log("Cleared:", value)}
 />
 ```
 
@@ -82,13 +82,13 @@ import "@ebay/skin/filter-input.css";
 <EbayFilterInput
     placeholder="Search items"
     a11yClearButton="Clear search"
-    onInputChange={(event, { value }) => console.log('Input changed:', value)}
+    onInputChange={(event, { value }) => console.log("Input changed:", value)}
     onKeyDown={(event, { value }) => {
-        if (event.key === 'Enter') {
-            console.log('Search submitted:', value);
+        if (event.key === "Enter") {
+            console.log("Search submitted:", value);
         }
     }}
-    onClear={(event, { value }) => console.log('Search cleared')}
+    onClear={(event, { value }) => console.log("Search cleared")}
 />
 ```
 

@@ -1,14 +1,15 @@
 import React from "react";
+import { vi } from "vitest";
 import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import EbayFakeLink from "../fake-link";
 
 describe("<EbayFakeLink>", () => {
     let component;
-    const onClick = jest.fn();
-    const onEscape = jest.fn();
+    const onClick = vi.fn();
+    const onEscape = vi.fn();
 
-    afterEach(jest.clearAllMocks);
+    afterEach(vi.clearAllMocks);
 
     describe("given button is enabled", () => {
         beforeEach(async () => {

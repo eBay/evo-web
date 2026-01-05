@@ -1,4 +1,106 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ebay-textbox rendering > renders floating label fluid story correctly 1`] = `
+<div>
+  <div
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label floating-label__label--inline"
+    >
+      Floating label
+    </label>
+    <div
+      class="textbox textbox--fluid"
+    >
+      <input
+        class="textbox__control"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ebay-textbox rendering > renders floating label story correctly 1`] = `
+<div>
+  <span
+    class="floating-label"
+  >
+    <label
+      class="floating-label__label floating-label__label--inline"
+    >
+      Floating label
+    </label>
+    <span
+      class="textbox"
+    >
+      <input
+        class="textbox__control"
+        type="text"
+        value=""
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`ebay-textbox rendering > renders with icon story correctly 1`] = `
+<svg
+  aria-hidden="true"
+  class="icon icon--16"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <use
+    xlink:href="#icon-mail-16"
+  />
+</svg>
+`;
+
+exports[`ebay-textbox rendering > renders with pre/post fix text correctly 1`] = `
+<div>
+  <div>
+    <p>
+      <span
+        class="textbox"
+      >
+        <span
+          id="prefix"
+        >
+          $
+        </span>
+        <input
+          aria-describedby="prefix"
+          class="textbox__control"
+          placeholder="0.00"
+          type="text"
+          value=""
+        />
+      </span>
+    </p>
+    <p>
+      <span
+        class="textbox"
+      >
+        <input
+          aria-describedby="postfix"
+          class="textbox__control"
+          placeholder="0"
+          type="text"
+          value=""
+        />
+        <span
+          id="postfix"
+        >
+          in.
+        </span>
+      </span>
+    </p>
+  </div>
+</div>
+`;
 
 exports[`ebay-textbox rendering renders floating label fluid story correctly 1`] = `
 <div>

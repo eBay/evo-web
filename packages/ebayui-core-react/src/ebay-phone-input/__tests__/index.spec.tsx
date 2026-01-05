@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
@@ -23,7 +24,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should trigger onInputChange when phone number is entered", async () => {
         const user = userEvent.setup();
-        const onInputChange = jest.fn();
+        const onInputChange = vi.fn();
         const { container } = render(<EbayPhoneInput countryCode="us" onInputChange={onInputChange} />);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
@@ -36,7 +37,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should trigger onFocus when input is focused", async () => {
         const user = userEvent.setup();
-        const onFocus = jest.fn();
+        const onFocus = vi.fn();
         const { container } = render(<EbayPhoneInput onFocus={onFocus} />);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
@@ -47,7 +48,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should trigger onBlur when input loses focus", async () => {
         const user = userEvent.setup();
-        const onBlur = jest.fn();
+        const onBlur = vi.fn();
         const { container } = render(<EbayPhoneInput onBlur={onBlur} />);
 
         const input = container.querySelector('input[type="tel"]') as HTMLInputElement;
@@ -59,9 +60,9 @@ describe("<EbayPhoneInput />", () => {
 
     it("should trigger keyboard events", async () => {
         const user = userEvent.setup();
-        const onKeyDown = jest.fn();
-        const onKeyPress = jest.fn();
-        const onKeyUp = jest.fn();
+        const onKeyDown = vi.fn();
+        const onKeyPress = vi.fn();
+        const onKeyUp = vi.fn();
 
         const { container } = render(
             <EbayPhoneInput onKeyDown={onKeyDown} onKeyPress={onKeyPress} onKeyUp={onKeyUp} />,
@@ -118,8 +119,8 @@ describe("<EbayPhoneInput />", () => {
 
     it("should trigger expand/collapse events when dropdown opens/closes", async () => {
         const user = userEvent.setup();
-        const onExpand = jest.fn();
-        const onCollapse = jest.fn();
+        const onExpand = vi.fn();
+        const onCollapse = vi.fn();
 
         const { container } = render(<EbayPhoneInput onExpand={onExpand} onCollapse={onCollapse} />);
 
@@ -136,7 +137,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should change country when different option is selected", async () => {
         const user = userEvent.setup();
-        const onChange = jest.fn();
+        const onChange = vi.fn();
 
         const { container } = render(<EbayPhoneInput countryCode="us" onChange={onChange} />);
 
@@ -144,10 +145,8 @@ describe("<EbayPhoneInput />", () => {
         await user.click(button);
 
         const options = container.querySelectorAll('[role="option"]');
-        if (options.length > 1) {
-            await user.click(options[1]);
-            expect(onChange).toHaveBeenCalled();
-        }
+        await user.click(options[1]);
+        expect(onChange).toHaveBeenCalled();
     });
 
     it("should format phone number according to country mask", () => {
@@ -159,7 +158,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should provide correct event data in onInputChange", async () => {
         const user = userEvent.setup();
-        const onInputChange = jest.fn();
+        const onInputChange = vi.fn();
 
         const { container } = render(<EbayPhoneInput countryCode="us" onInputChange={onInputChange} />);
 
@@ -176,7 +175,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should provide the correct event data on inputChange after changing the country", async () => {
         const user = userEvent.setup();
-        const onInputChange = jest.fn();
+        const onInputChange = vi.fn();
 
         const { container } = render(<EbayPhoneInput countryCode="us" onInputChange={onInputChange} />);
 
@@ -199,7 +198,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should not select multiple countries when the same calling code exists", async () => {
         const user = userEvent.setup();
-        const onChange = jest.fn();
+        const onChange = vi.fn();
 
         const { container } = render(<EbayPhoneInput countryCode="us" onChange={onChange} />);
 
@@ -220,7 +219,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should maintain formatting when entering a fully formatted phone number", async () => {
         const user = userEvent.setup();
-        const onInputChange = jest.fn();
+        const onInputChange = vi.fn();
 
         const { container } = render(<EbayPhoneInput countryCode="us" onInputChange={onInputChange} />);
 
@@ -242,7 +241,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should reformat when pasting an unformatted phone number over existing value", async () => {
         const user = userEvent.setup();
-        const onInputChange = jest.fn();
+        const onInputChange = vi.fn();
 
         const { container } = render(
             <EbayPhoneInput countryCode="us" defaultValue="5551234567" onInputChange={onInputChange} />,
@@ -271,7 +270,7 @@ describe("<EbayPhoneInput />", () => {
 
     it("should reformat when partially editing a formatted phone number", async () => {
         const user = userEvent.setup();
-        const onBlur = jest.fn();
+        const onBlur = vi.fn();
 
         const { container } = render(<EbayPhoneInput countryCode="us" defaultValue="5551234567" onBlur={onBlur} />);
 
@@ -305,8 +304,8 @@ describe("<EbayPhoneInput />", () => {
 
     it("should handle typing over selected digit", async () => {
         const user = userEvent.setup();
-        const onInputChange = jest.fn();
-        const onBlur = jest.fn();
+        const onInputChange = vi.fn();
+        const onBlur = vi.fn();
 
         const { container } = render(
             <EbayPhoneInput countryCode="us" defaultValue="5551234567" onInputChange={onInputChange} onBlur={onBlur} />,
@@ -342,7 +341,7 @@ describe("<EbayPhoneInput />", () => {
 
         it("should maintain mask when value is updated after user input", async () => {
             const user = userEvent.setup();
-            const onInputChange = jest.fn();
+            const onInputChange = vi.fn();
 
             const TestComponent = () => {
                 const [value, setValue] = React.useState("5551234567");

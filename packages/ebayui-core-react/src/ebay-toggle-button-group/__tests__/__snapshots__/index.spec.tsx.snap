@@ -1,4 +1,136 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<EbayToggleButtonGroup /> > should render component - <Default /> 1`] = `
+<DocumentFragment>
+  <div
+    style="padding: 3rem;"
+  >
+    <div
+      class="toggle-button-group"
+    >
+      <ul>
+        <li>
+          <button
+            aria-pressed="true"
+            class="toggle-button toggle-button--minimal-layout"
+          >
+            <div
+              class="toggle-button__content"
+            >
+              <p
+                class="toggle-button__title"
+              >
+                Button1
+              </p>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button
+            aria-pressed="false"
+            class="toggle-button toggle-button--minimal-layout"
+          >
+            <div
+              class="toggle-button__content"
+            >
+              Child Button
+            </div>
+          </button>
+        </li>
+        <li>
+          <button
+            aria-pressed="false"
+            class="toggle-button toggle-button--minimal-layout"
+          >
+            <div
+              class="toggle-button__content"
+            >
+              <p
+                class="toggle-button__title"
+              >
+                Button2
+              </p>
+              <p
+                class="toggle-button__subtitle"
+              >
+                subtitle
+              </p>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button
+            aria-pressed="false"
+            class="toggle-button toggle-button--minimal-layout"
+          >
+            <div
+              class="toggle-button__icon"
+            >
+              <svg
+                aria-hidden="true"
+                class="icon icon--24"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <use
+                  xlink:href="#icon-settings-24"
+                />
+              </svg>
+            </div>
+            <div
+              class="toggle-button__content"
+            >
+              <p
+                class="toggle-button__title"
+              >
+                Button3
+              </p>
+              <p
+                class="toggle-button__subtitle"
+              >
+                subtitle
+              </p>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button
+            aria-pressed="false"
+            class="toggle-button toggle-button--minimal-layout"
+          >
+            <span
+              class="toggle-button__image-container"
+            >
+              <span
+                class="toggle-button__image"
+              >
+                <img
+                  alt="image alt"
+                  src="https://cloudfront.slrlounge.com/wp-content/uploads/2012/07/01-SLRLounge-Holding-Standing-Wrong.jpg"
+                />
+              </span>
+            </span>
+            <div
+              class="toggle-button__content"
+            >
+              <p
+                class="toggle-button__title"
+              >
+                Button4
+              </p>
+              <p
+                class="toggle-button__subtitle"
+              >
+                subtitle
+              </p>
+            </div>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
 exports[`<EbayToggleButtonGroup /> should render component - <Default /> 1`] = `
 <DocumentFragment>

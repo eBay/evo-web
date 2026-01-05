@@ -3,12 +3,13 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import storybook from "eslint-plugin-storybook";
+import vitest from "@vitest/eslint-plugin";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
     {
-        ignores: ["dist", "config", "scripts", ".storybook", "jest.config.js", "node_modules", "_site"],
+        ignores: ["dist", "config", "scripts", ".storybook", "vitest.config.ts", "node_modules", "_site"],
     },
     eslint.configs.recommended,
     ...tseslint.configs.recommended,
@@ -32,12 +33,14 @@ export default tseslint.config(
 
         plugins: {
             "react-hooks": reactHooks,
+            vitest,
         },
 
         rules: {
             "no-console": ["error", { allow: ["error", "warn"] }],
             "react/prop-types": "off",
             "react/react-in-jsx-scope": "off",
+            ...vitest.configs.recommended.rules,
         },
     },
 );

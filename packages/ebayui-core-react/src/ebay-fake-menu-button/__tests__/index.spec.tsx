@@ -1,16 +1,17 @@
 import React from "react";
+import { vi } from "vitest";
 import { screen, fireEvent, render } from "@testing-library/react";
 import { EbayFakeMenuButton, EbayFakeMenuButtonItem } from "..";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe("<EbayFakeMenuButton>", () => {
     describe("on button click", () => {
         let expandSpy;
 
         beforeEach(() => {
-            expandSpy = jest.fn();
+            expandSpy = vi.fn();
         });
         afterEach(() => {
             expandSpy.mockClear();
@@ -44,10 +45,10 @@ describe("<EbayFakeMenuButton>", () => {
         let collapseSpy, keyDownSpy, mouseDownSpy, selectSpy, button;
 
         beforeEach(() => {
-            collapseSpy = jest.fn();
-            keyDownSpy = jest.fn();
-            mouseDownSpy = jest.fn();
-            selectSpy = jest.fn();
+            collapseSpy = vi.fn();
+            keyDownSpy = vi.fn();
+            mouseDownSpy = vi.fn();
+            selectSpy = vi.fn();
             render(
                 <EbayFakeMenuButton
                     onCollapse={collapseSpy}
@@ -90,7 +91,7 @@ describe("<EbayFakeMenuButton>", () => {
         });
 
         it("should close on BG click", () => {
-            jest.runAllTimers();
+            vi.runAllTimers();
             document.body.click();
 
             expect(collapseSpy).toHaveBeenCalled();

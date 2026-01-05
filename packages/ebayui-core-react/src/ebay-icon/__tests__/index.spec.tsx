@@ -6,7 +6,7 @@ import { EbayIconAdd12 } from "../icons/ebay-icon-add-12";
 
 const { CustomColor, NonDecorative } = composeStories(stories);
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("ebay-icon rendering", () => {
     describe("AllIcons story", () => {

@@ -1,4 +1,5 @@
 /// <reference types="@testing-library/jest-dom" />
+import { vi } from "vitest";
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -26,7 +27,7 @@ describe("<EbayListbox />", () => {
 
     describe("when listSelection=auto", () => {
         it("should emit change event on arrow down key press", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "auto", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -38,7 +39,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should emit change event on arrow up key press", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "auto", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -52,7 +53,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should not select the option on filtering by typing", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "auto", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -66,7 +67,7 @@ describe("<EbayListbox />", () => {
 
     describe("when listSelection=manual", () => {
         it("should not emit change event on arrow down key press", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "manual", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -78,7 +79,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should not emit change event on arrow up key press", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "manual", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -90,7 +91,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should emit change event on space key press", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "manual", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -102,7 +103,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should emit change event on enter key press", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "manual", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -119,7 +120,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should emit change event on click", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "manual", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -130,7 +131,7 @@ describe("<EbayListbox />", () => {
         });
 
         it("should select the option on filtering by typing", async () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             renderListbox({ listSelection: "manual", onChange });
 
             const listbox = screen.getByRole("listbox");
@@ -143,7 +144,7 @@ describe("<EbayListbox />", () => {
     });
 
     it("should not emit change event when clicking the disabled option", async () => {
-        const onChange = jest.fn();
+        const onChange = vi.fn();
         render(
             <EbayListbox onChange={onChange}>
                 <EbayListboxOption value="1">Option 1</EbayListboxOption>
@@ -162,7 +163,7 @@ describe("<EbayListbox />", () => {
     });
 
     it("should emit onEscape when pressing the escape key", async () => {
-        const onEscape = jest.fn();
+        const onEscape = vi.fn();
         renderListbox({ onEscape });
 
         const listbox = screen.getByRole("listbox");

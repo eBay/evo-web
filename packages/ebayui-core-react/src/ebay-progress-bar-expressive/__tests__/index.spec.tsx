@@ -1,25 +1,38 @@
 import React from "react";
-import "@testing-library/jest-dom";
-import { render, screen, act, waitFor } from "@testing-library/react";
+import { vi } from "vitest";
+import { render, screen, act } from "@testing-library/react";
 import EbayProgressBarExpressive from "../progress-bar-expressive";
 import EbayProgressBarExpressiveMessage from "../progress-bar-expressive-message";
 import { useReducedMotion } from "../../utils";
 
-jest.useFakeTimers();
-
-jest.mock("../../utils", () => ({
-    ...jest.requireActual("../../utils"),
-    useReducedMotion: jest.fn(() => false),
+vi.mock("../../utils", async () => ({
+    ...(await vi.importActual("../../utils")),
+    useReducedMotion: vi.fn(() => false),
 }));
 
+function advanceNextMessageTimers(duration = 1500) {
+    act(() => {
+        vi.advanceTimersByTime(duration + 834); // Default duration + fade-in time
+    });
+}
+
 describe("EbayProgressBarExpressive", () => {
+    beforeEach(() => {
+        vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+        vi.clearAllTimers();
+        vi.resetAllMocks();
+    });
+
     it("should render without messages", () => {
         render(<EbayProgressBarExpressive aria-label="Progress" />);
         const progressBar = screen.getByRole("progressbar");
         expect(progressBar).toBeInTheDocument();
     });
 
-    it("should render with messages and show each message after default duration", async () => {
+    it("should render with messages and show each message after default duration", () => {
         render(
             <EbayProgressBarExpressive aria-label="Progress">
                 <EbayProgressBarExpressiveMessage>Message 1</EbayProgressBarExpressiveMessage>
@@ -30,26 +43,18 @@ describe("EbayProgressBarExpressive", () => {
         // Next message has aria-hidden=true
         expect(screen.getByText("Message 1")).toHaveAttribute("aria-hidden", "true");
 
-        act(() => {
-            jest.advanceTimersByTime(1500); // Default duration
-        });
+        advanceNextMessageTimers();
 
-        await waitFor(() => {
-            expect(screen.getByText("Message 1")).not.toHaveAttribute("aria-hidden", "true");
-            expect(screen.getByText("Message 2")).toHaveAttribute("aria-hidden", "true");
-        });
+        expect(screen.getByText("Message 1")).not.toHaveAttribute("aria-hidden", "true");
+        expect(screen.getByText("Message 2")).toHaveAttribute("aria-hidden", "true");
 
-        act(() => {
-            jest.advanceTimersByTime(1500); // Default duration
-        });
+        advanceNextMessageTimers();
 
-        await waitFor(() => {
-            expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
-            expect(screen.getByText("Message 1")).toHaveAttribute("aria-hidden", "true");
-        });
+        expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
+        expect(screen.getByText("Message 1")).toHaveAttribute("aria-hidden", "true");
     });
 
-    it("should handle custom duration for each message", async () => {
+    it("should handle custom duration for each message", () => {
         render(
             <EbayProgressBarExpressive aria-label="Progress">
                 <EbayProgressBarExpressiveMessage duration={2000}>Message 1</EbayProgressBarExpressiveMessage>
@@ -57,31 +62,23 @@ describe("EbayProgressBarExpressive", () => {
             </EbayProgressBarExpressive>,
         );
 
-        act(() => {
-            jest.advanceTimersByTime(2000); // Custom duration for Message 1
-        });
+        advanceNextMessageTimers(2000); // Custom duration for Message 1
 
-        await waitFor(() => {
-            expect(screen.getByText("Message 1")).not.toHaveAttribute("aria-hidden", "true");
-            expect(screen.getByText("Message 2")).toHaveAttribute("aria-hidden", "true");
-        });
+        expect(screen.getByText("Message 1")).not.toHaveAttribute("aria-hidden", "true");
+        expect(screen.getByText("Message 2")).toHaveAttribute("aria-hidden", "true");
 
-        act(() => {
-            jest.advanceTimersByTime(3000); // Custom duration for Message 2
-        });
+        advanceNextMessageTimers(3000); // Custom duration for Message 2
 
-        await waitFor(() => {
-            expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
-            expect(screen.getByText("Message 1")).toHaveAttribute("aria-hidden", "true");
-        });
+        expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
+        expect(screen.getByText("Message 1")).toHaveAttribute("aria-hidden", "true");
     });
 
     describe("Reduced Motion", () => {
         beforeEach(() => {
-            (useReducedMotion as jest.MockedFunction<typeof useReducedMotion>).mockReturnValue(true);
+            vi.mocked(useReducedMotion).mockReturnValue(true);
         });
 
-        it("should show the first message immediately and apply reduced motion multiplier to subsequent messages", async () => {
+        it("should show the first message immediately and apply reduced motion multiplier to subsequent messages", () => {
             render(
                 <EbayProgressBarExpressive aria-label="Progress">
                     <EbayProgressBarExpressiveMessage>Message 1</EbayProgressBarExpressiveMessage>
@@ -93,24 +90,18 @@ describe("EbayProgressBarExpressive", () => {
             expect(screen.getByText("Message 1")).toBeInTheDocument();
             expect(screen.getByText("Message 1")).not.toHaveAttribute("aria-hidden", "true");
 
-            act(() => {
-                jest.advanceTimersByTime(1500); // Check before multiplier is applied
-            });
+            advanceNextMessageTimers();
 
             // Second message should not be rendered yet
             expect(screen.queryByText("Message 2")).not.toBeInTheDocument();
 
-            act(() => {
-                jest.advanceTimersByTime(1500 * 0.5); // Remaining time with multiplier
-            });
+            advanceNextMessageTimers(1500 * 0.5); // Remaining time with multiplier
 
-            await waitFor(() => {
-                expect(screen.getByText("Message 2")).toBeInTheDocument();
-                expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
-            });
+            expect(screen.getByText("Message 2")).toBeInTheDocument();
+            expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
         });
 
-        it("should apply reduced motion multiplier to custom duration for subsequent messages", async () => {
+        it("should apply reduced motion multiplier to custom duration for subsequent messages", () => {
             render(
                 <EbayProgressBarExpressive aria-label="Progress">
                     <EbayProgressBarExpressiveMessage duration={2000}>Message 1</EbayProgressBarExpressiveMessage>
@@ -122,21 +113,15 @@ describe("EbayProgressBarExpressive", () => {
             expect(screen.getByText("Message 1")).toBeInTheDocument();
             expect(screen.getByText("Message 1")).not.toHaveAttribute("aria-hidden", "true");
 
-            act(() => {
-                jest.advanceTimersByTime(3000); // Check before multiplier is applied
-            });
+            advanceNextMessageTimers(3000);
 
             // Second message should not be rendered yet
             expect(screen.queryByText("Message 2")).not.toBeInTheDocument();
 
-            act(() => {
-                jest.advanceTimersByTime(3000 * 0.5); // Remaining time with multiplier
-            });
+            advanceNextMessageTimers(3000 * 0.5);
 
-            await waitFor(() => {
-                expect(screen.getByText("Message 2")).toBeInTheDocument();
-                expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
-            });
+            expect(screen.getByText("Message 2")).toBeInTheDocument();
+            expect(screen.getByText("Message 2")).not.toHaveAttribute("aria-hidden", "true");
         });
     });
 });

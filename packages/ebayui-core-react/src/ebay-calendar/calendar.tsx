@@ -221,7 +221,6 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
         const dayChange = DAY_UPDATE_KEYMAP[event.key as keyof typeof DAY_UPDATE_KEYMAP];
 
         if (dayChange) {
-            event.preventDefault();
             let tries = 7;
             let iso = tabIndexISO;
             do {

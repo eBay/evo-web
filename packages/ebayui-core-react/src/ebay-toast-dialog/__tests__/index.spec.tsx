@@ -1,12 +1,13 @@
 import * as React from "react";
+import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayDialogHeader } from "../../ebay-dialog-base";
 import { EbayToast } from "../index";
 
-jest.mock("../../common/random-id");
+vi.mock("../../common/random-id");
 
 describe("<EbayToast>", () => {
-    const closeToastHandler = jest.fn();
+    const closeToastHandler = vi.fn();
 
     beforeEach(() => {
         render(

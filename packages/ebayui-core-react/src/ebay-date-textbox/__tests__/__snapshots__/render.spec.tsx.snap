@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ebay-date-textbox rendering renders default story correctly 1`] = `
+exports[`ebay-date-textbox rendering > renders default story correctly 1`] = `
 <svg
   aria-hidden="true"
   class="icon icon--24"
@@ -13,7 +13,7 @@ exports[`ebay-date-textbox rendering renders default story correctly 1`] = `
 </svg>
 `;
 
-exports[`ebay-date-textbox rendering renders range story correctly 1`] = `
+exports[`ebay-date-textbox rendering > renders range story correctly 1`] = `
 <svg
   aria-hidden="true"
   class="icon icon--24"
