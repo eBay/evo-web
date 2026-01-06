@@ -49,7 +49,7 @@ export const Default: StoryFn<typeof EbayAvatar> = (args) => (
 
 export const WithImage: StoryFn<typeof EbayAvatar> = (args) => (
     <EbayAvatar {...args} aria-label="Signed in as Elizabeth" username={args.username || "Elizabeth"}>
-        <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png" alt="my photo" />
+        <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png" />
     </EbayAvatar>
 );
 
@@ -77,19 +77,19 @@ export const WithAutoPlacement: StoryFn<typeof EbayAvatar> = (args) => (
     <>
         <div>
             <EbayAvatar {...args} aria-label="Signed in as Doggy">
-                <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png" alt="my photo" />
+                <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png" />
             </EbayAvatar>
         </div>
 
         <div>
             <EbayAvatar {...args} aria-label="Signed in as Doggy">
-                <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile3.png" alt="my photo" />
+                <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile3.png" />
             </EbayAvatar>
         </div>
 
         <div>
             <EbayAvatar {...args} aria-label="Signed in as Doggy">
-                <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile4.png" alt="my photo" />
+                <EbayAvatarImage src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile4.png" />
             </EbayAvatar>
         </div>
     </>
