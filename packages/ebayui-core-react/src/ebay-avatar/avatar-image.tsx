@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { ComponentProps, FC, useContext } from "react";
 import { AvatarContext } from "./context";
 import { isFit } from "./utils";
@@ -17,7 +16,7 @@ const AvatarImage: FC<EbayAvatarImageProps> = ({ onLoad, ...props }) => {
         context.setImagePlacement(isFit(aspectRatio) ? "fit" : "cover");
         onLoad?.(event);
     };
-    return <img onLoad={handleImageLoad} {...props} />;
+    return <img {...props} alt="" onLoad={handleImageLoad} />;
 };
 
 export default AvatarImage;

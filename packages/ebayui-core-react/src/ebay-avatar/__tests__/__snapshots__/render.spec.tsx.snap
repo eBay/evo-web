@@ -76,6 +76,7 @@ exports[`<EbayAvatar /> rendering renders the image-fit correctly 1`] = `
     role="img"
   >
     <img
+      alt=""
       src="http://example.com/picture.jpg"
     />
   </div>
@@ -108,7 +109,7 @@ exports[`<EbayAvatar /> rendering renders with image story correctly 1`] = `
     role="img"
   >
     <img
-      alt="my photo"
+      alt=""
       src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png"
     />
   </div>
@@ -122,6 +123,7 @@ exports[`<EbayAvatar /> rendering should automatically define image-fit on image
     role="img"
   >
     <img
+      alt=""
       src="http://example.com/picture.jpg"
     />
   </div>

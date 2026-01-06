@@ -99,7 +99,7 @@ exports[`avatar > renders with image 1`] = `
     [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<img[39m
-      [33malt[39m=[32m"my photo"[39m
+      [33malt[39m=[32m""[39m
       [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile.png"[39m
     [36m/>[39m
   [36m</div>[39m
