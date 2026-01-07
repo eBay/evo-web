@@ -1,14 +1,15 @@
 var child_process = require("child_process");
 var yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 
 async function runSnapshots(storiesList, isDryRun) {
-    const stories =
-        yargs.argv.stories === undefined ? storiesList : yargs.argv.stories;
+    const argv = yargs(hideBin(process.argv)).parse();
+    const stories = argv.stories === undefined ? storiesList : argv.stories;
     const aStories = stories.split(",");
     const storiesReg = aStories.join("|");
     const storiesRX = `^\\bSkin/\(?:${storiesReg})\\b`;
     const storiesRXString = "\\bSkin/\\(?:" + storiesReg + ")\\b";
-    const dryRun = yargs.argv.dry === undefined ? isDryRun : yargs.argv.dry;
+    const dryRun = argv.dry === undefined ? isDryRun : argv.dry;
     const percyExecutable = dryRun
         ? "snapshots:execute:dry"
         : "snapshots:execute";
