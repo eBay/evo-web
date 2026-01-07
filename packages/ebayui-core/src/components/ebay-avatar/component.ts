@@ -13,7 +13,7 @@ interface AvatarInput extends Omit<Marko.HTML.Div, `on${string}`> {
     color?: string;
     "a11y-text"?: Marko.HTMLAttributes["aria-label"];
     size?: Size | `${Size}`;
-    img?: Marko.AttrTag<Omit<Marko.HTML.Img, `on${string}`>>;
+    img?: Marko.AttrTag<Omit<Marko.HTML.Img, `on${string}` | "alt">>;
     "known-aspect-ratio"?: number;
 }
 

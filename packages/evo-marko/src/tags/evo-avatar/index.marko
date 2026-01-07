@@ -5,7 +5,7 @@ export interface Input extends Marko.HTML.Div {
     username?: string;
     color?: string;
     size?: Size | `${Size}`;
-    img?: Marko.AttrTag<Marko.HTML.Img>;
+    img?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
     knownAspectRatio?: number;
 }
 

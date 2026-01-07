@@ -3,7 +3,7 @@ import { AvatarContext } from "./context";
 import { isFit } from "./utils";
 import { invariant } from "../utils/invariant";
 
-export type EbayAvatarImageProps = ComponentProps<"img">;
+export type EbayAvatarImageProps = Omit<ComponentProps<"img">, "alt">;
 
 const AvatarImage: FC<EbayAvatarImageProps> = ({ onLoad, ...props }) => {
     const context = useContext(AvatarContext);
