@@ -315,55 +315,99 @@ Each story must be isolated to a single test. This allows us to easily run visua
 
 ## Visual Regression Testing
 
-We use Percy to do visual regression and compare visual changes in feature branches with the UIs in production. As such, changes to any specific module will need to verified against unintended consequences of those changes. This is usually to be done by internal contributors.
+We use Percy for automated visual regression testing. Percy runs automatically in CI/CD for all pull requests to ensure visual changes are reviewed before merging.
+
+### How It Works
+
+**For All Contributors:**
+
+1. Create a PR with Skin component changes
+2. Percy automatically detects changed components
+3. Percy captures and compares snapshots at multiple viewport widths
+4. Review Percy results in the PR checks tab
+5. Request review from a maintainer to approve Percy changes
+6. Merge PR once Percy and all other checks pass
+
+**Automatic Detection:**
+
+- Percy intelligently detects which components changed in your PR
+- Only changed components are snapshot tested (faster builds)
+- Global changes (tokens, variables, mixins) trigger the full snapshot suite
+- No manual setup required
+
+**CI/CD Behavior:**
+
+- **Pull Requests**: Percy runs automatically and blocks merge until approved by a maintainer
+- **Main Branch**: Percy runs after merge and auto-approves to update the baseline
+
+### Manual Percy Runs (Local Development)
+
+Internal contributors can run Percy locally for testing before pushing changes.
+
+#### Prerequisites
+
+Set Percy token in your environment:
+```bash
+export PERCY_TOKEN=[TOKEN_FROM_PERCY_DASHBOARD]
+```
+
+#### Run Specific Components
+
+```bash
+cd packages/skin
+
+# Single component
+export STORIES="Button"
+npm run snapshots
+
+# Multiple components
+export STORIES="Button,Icon,Badge"
+npm run snapshots
+```
+
+#### Run All Components
+
+```bash
+cd packages/skin
+npm run snapshots:all
+```
+
+#### Dry Run (Test Without Upload)
+
+```bash
+cd packages/skin
+
+# Specific components
+export STORIES="Button"
+npm run snapshots:dry
+
+# All components
+npm run snapshots:all:dry
+```
 
 ### External Contributors
 
-External contributors cannot run Percy visual regression tests. However, they should mark the modules that were changed in pull requests to allow the internal team to run visual regression tests.
+External contributors cannot run Percy locally (token required), but Percy runs automatically in CI for all PRs. The eBay team will review and approve Percy builds as part of the PR review process.
 
-### Internal Contributors
+### Troubleshooting
 
-Internal contributors will need to set up to run Percy snapshots by adding the Percy token to their operating system's environment variables. On a Mac, it would be like so:
+**Percy Build Pending:**
+- Wait for build to complete (may take 5-10 minutes for partial builds, longer for full builds)
+- Check Percy dashboard for detailed results
+- Request review from maintainer to approve
 
-`export PERCY_TOKEN=[TOKEN_GOES_HERE]`
+**Percy Build Failed:**
+- Review visual diffs in Percy dashboard
+- If changes are intentional: maintainer approves
+- If changes are bugs: fix and push update
 
-This will allow internal contributors to run Percy snapshot tests.
+**Percy Skipped:**
+- No Skin component changes detected
+- Percy only runs for changes in `packages/skin/src/sass/`, `packages/skin/src/tokens/`, or `packages/skin/.storybook/`
 
-Snapshots will likely be run by developers locally before pushing up changes. Once they are run, Percy dashboard should be checked to ensure no unintended style changes have taken place. If there are unintended style changes that have occurred, those should be reverted/fixed. Once the set of new local changes is final and in scope with the changes related to the issue, the snapshot run will need to be marked as the canonical version against which future updates are compared.
+### Technical Notes
 
-#### Build Modes
-
-Running snapshots has two modes for all variations - build mode and dry mode.
-
-Build mode creates snapshots for stories, uploads the snapshots to Percy and created a new Percy build for the purposes of making comparisons to previous visual builds.
-
-Dry mode runs through snapshots (mainly for the purpose of verifying which stories will be captured) but does not upload the snapshots and does not create a Percy build.
-
-#### Run All Snapshots
-
-To run all storybook snapshots in build mode:
-`npm run snapshots:all`
-
-To run all storybook snapshots in dry mode:
-`npm run snapshots:all:dry`
-
-#### Run Specific Snapshot(s)
-
-To run single specific storybook snapshot in build mode for single module:
-`npm run snapshots 'Button'`
-
-To run multiple specific storybook snapshots in build mode for single module:
-`npm run snapshots 'Button,Icon'`
-
-To run single storybook snapshots in build mode for single module:
-`npm run snapshots:dry 'Button'`
-
-To run multiple storybook snapshots in dry mode for single module:
-`npm run snapshots:dry 'Button,Icon'`
-
-#### Technical Notes
-
-As internal contributors may see in `package.json`, there are two other scripts, `snapshots:execute`, `snapshots:execute:dry`. These are scripts that should not be run directly. They are fired from `gulpfils.js` after the Percy storybook regexes have been formatted.
+As you may see in `package.json`, there are two helper scripts, `snapshots:execute` and `snapshots:execute:dry`. These should not be run directly - they are called by `gulpfile.js` after Percy storybook regexes have been formatted.
 
 ## Website
 

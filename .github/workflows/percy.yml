@@ -1,0 +1,95 @@
+name: Percy Visual Regression
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'packages/skin/src/sass/**'
+      - 'packages/skin/src/tokens/**'
+      - 'packages/skin/.storybook/**'
+  push:
+    branches: ["main"]
+    paths:
+      - 'packages/skin/src/sass/**'
+      - 'packages/skin/src/tokens/**'
+      - 'packages/skin/.storybook/**'
+
+concurrency:
+  group: "percy-${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  statuses: write
+
+jobs:
+  percy-pr:
+    name: Percy Snapshots (PR)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for git diff
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Detect changed components
+        id: detect
+        run: |
+          cd packages/skin
+          CHANGED=$(node scripts/detect-changed-components.js)
+          echo "components=$CHANGED" >> $GITHUB_OUTPUT
+          echo "Changed components: $CHANGED"
+
+      - name: Build Storybook for Percy
+        if: steps.detect.outputs.components != ''
+        run: npm run build:snapshots -w packages/skin
+
+      - name: Run Percy (Partial)
+        if: steps.detect.outputs.components != '' && steps.detect.outputs.components != 'all'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_PARTIAL_BUILD: 1
+          STORIES: ${{ steps.detect.outputs.components }}
+        run: npm run snapshots -w packages/skin
+
+      - name: Run Percy (All)
+        if: steps.detect.outputs.components == 'all'
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: npm run snapshots:all -w packages/skin
+
+  percy-main:
+    name: Percy Baseline (Main Branch)
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Build Storybook for Percy
+        run: npm run build:snapshots -w packages/skin
+
+      - name: Run Percy (All - Auto-approve)
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_ENABLE_AUTOCOMMIT: true  # Auto-approve baselines on main
+        run: npm run snapshots:all -w packages/skin
