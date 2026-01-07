@@ -13,35 +13,34 @@
  *   - "" (empty) if no relevant changes
  */
 
-const { execSync } = require('child_process');
+const { execSync } = require("child_process");
 
 // Directories that affect all components (global changes)
 const GLOBAL_PATHS = [
-  'packages/skin/src/sass/global/',
-  'packages/skin/src/sass/variables/',
-  'packages/skin/src/sass/mixins/',
-  'packages/skin/src/tokens/',
-  'packages/skin/src/sass/bundles/',
-  'packages/skin/.storybook/',
+    "packages/skin/src/sass/global/",
+    "packages/skin/src/sass/variables/",
+    "packages/skin/src/sass/mixins/",
+    "packages/skin/src/tokens/",
+    "packages/skin/src/sass/bundles/",
+    "packages/skin/.storybook/",
 ];
 
 // Directories to ignore (not component directories)
-const IGNORED_DIRS = ['global', 'variables', 'mixins', 'bundles'];
+const IGNORED_DIRS = ["global", "variables", "mixins", "bundles"];
 
 /**
  * Get list of changed files from git diff
  * Compares current branch against main
  */
 function getChangedFiles() {
-  try {
-    const baseBranch = process.env.GITHUB_BASE_REF || 'main';
-    const command = `git diff ${baseBranch}...HEAD --name-only`;
-    const output = execSync(command, { encoding: 'utf-8' });
-    return output.trim().split('\n').filter(Boolean);
-  } catch (error) {
-    console.error('Error getting changed files:', error.message);
-    process.exit(1);
-  }
+    try {
+        const baseBranch = process.env.GITHUB_BASE_REF || "main";
+        const command = `git diff ${baseBranch}...HEAD --name-only`;
+        const output = execSync(command, { encoding: "utf-8" });
+        return output.trim().split("\n").filter(Boolean);
+    } catch (error) {
+        process.exit(1);
+    }
 }
 
 /**
@@ -50,10 +49,10 @@ function getChangedFiles() {
  * e.g., 'button' → 'Button'
  */
 function toStoryTitleFormat(componentDir) {
-  return componentDir
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('-');
+    return componentDir
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join("-");
 }
 
 /**
@@ -61,70 +60,64 @@ function toStoryTitleFormat(componentDir) {
  * Pattern: packages/skin/src/sass/{component-name}/...
  */
 function extractComponentFromPath(filePath) {
-  const match = filePath.match(/packages\/skin\/src\/sass\/([^\/]+)\//);
-  if (!match || !match[1]) {
-    return null;
-  }
+    const match = filePath.match(/packages\/skin\/src\/sass\/([^\/]+)\//);
+    if (!match || !match[1]) {
+        return null;
+    }
 
-  const componentDir = match[1];
+    const componentDir = match[1];
 
-  // Skip non-component directories
-  if (IGNORED_DIRS.includes(componentDir)) {
-    return null;
-  }
+    // Skip non-component directories
+    if (IGNORED_DIRS.includes(componentDir)) {
+        return null;
+    }
 
-  return toStoryTitleFormat(componentDir);
+    return toStoryTitleFormat(componentDir);
 }
 
 /**
  * Check if any changed file is in a global path
  */
 function hasGlobalChanges(changedFiles) {
-  return changedFiles.some(file =>
-    GLOBAL_PATHS.some(globalPath => file.includes(globalPath))
-  );
+    return changedFiles.some((file) =>
+        GLOBAL_PATHS.some((globalPath) => file.includes(globalPath)),
+    );
 }
 
 /**
  * Main function
  */
 function main() {
-  const changedFiles = getChangedFiles();
+    const changedFiles = getChangedFiles();
 
-  if (changedFiles.length === 0) {
-    console.log('No files changed');
-    console.log('');
-    return;
-  }
-
-  console.log(`Analyzing ${changedFiles.length} changed files...`);
-
-  // Check for global changes first
-  if (hasGlobalChanges(changedFiles)) {
-    console.log('Global files changed - running all snapshots');
-    console.log('all');
-    return;
-  }
-
-  // Extract unique component names
-  const changedComponents = new Set();
-
-  changedFiles.forEach(file => {
-    const component = extractComponentFromPath(file);
-    if (component) {
-      changedComponents.add(component);
+    if (changedFiles.length === 0) {
+        console.log("");
+        return;
     }
-  });
 
-  if (changedComponents.size === 0) {
-    console.log('No component changes detected');
-    console.log('');
-    return;
-  }
+    // Check for global changes first
+    if (hasGlobalChanges(changedFiles)) {
+        console.log("all");
+        return;
+    }
 
-  const componentList = Array.from(changedComponents).sort().join(',');
-  console.log(`Changed components: ${componentList}`);
-  console.log(componentList);
+    // Extract unique component names
+    const changedComponents = new Set();
+
+    changedFiles.forEach((file) => {
+        const component = extractComponentFromPath(file);
+        if (component) {
+            changedComponents.add(component);
+        }
+    });
+
+    if (changedComponents.size === 0) {
+        console.log("");
+        return;
+    }
+
+    const componentList = Array.from(changedComponents).sort().join(",");
+    console.log(componentList);
 }
 
 main();
