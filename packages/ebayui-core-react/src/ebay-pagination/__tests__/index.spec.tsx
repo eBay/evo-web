@@ -2,6 +2,7 @@ import React from "react";
 import { vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 import { EbayPagination, EbayPaginationItem as Item } from "../index";
+import { EbayTabs, EbayTab, EbayTabPanel } from "../../ebay-tabs";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
 vi.mock("../../common/random-id");
@@ -126,6 +127,39 @@ describe("<EbayPagination>", () => {
             );
             resizeWindow();
             expect(wrapper.container.querySelectorAll("li")[1]).not.toHaveAttribute("hidden");
+        });
+    });
+
+    describe("inside EbayTab", () => {
+        // TODO: Enable this test when running in browser mode - IntersectionObserver and offsetWidth requires a real browser environment
+        it.todo("should recalculate visible pages when tab becomes visible", async () => {
+            const wrapper = render(
+                <EbayTabs>
+                    <EbayTab>First Tab</EbayTab>
+                    <EbayTab>Second Tab</EbayTab>
+                    <EbayTabPanel>
+                        <p>First tab content</p>
+                    </EbayTabPanel>
+                    <EbayTabPanel>
+                        <EbayPagination variant="show-last" a11yPreviousText="Previous page" a11yNextText="Next page">
+                            <Item type="previous" />
+                            <Item>1</Item>
+                            <Item current>2</Item>
+                            <Item>3</Item>
+                            <Item type="next" />
+                        </EbayPagination>
+                    </EbayTabPanel>
+                </EbayTabs>,
+            );
+
+            // Click on the second tab to make the pagination visible
+            const tabs = wrapper.getAllByRole("tab");
+            fireEvent.click(tabs[1]);
+
+            const paginationItems = wrapper.container.querySelectorAll(".pagination__items li");
+            expect(paginationItems[0]).not.toHaveAttribute("hidden");
+            expect(paginationItems[1]).not.toHaveAttribute("hidden");
+            expect(paginationItems[2]).not.toHaveAttribute("hidden");
         });
     });
 });

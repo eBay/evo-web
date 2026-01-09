@@ -3,6 +3,7 @@ import { action } from "storybook/actions";
 import { EbayPagination, EbayPaginationItem as Item } from "../index";
 import { EbayButton } from "../../ebay-button";
 import { EbayLightboxDialog } from "../../ebay-lightbox-dialog";
+import { EbayTabs, EbayTab, EbayTabPanel } from "../../ebay-tabs";
 
 export default {
     title: "navigation & disclosure/ebay-pagination",
@@ -313,4 +314,25 @@ export const InsideADialog = {
     },
 
     name: "Inside a dialog",
+};
+
+export const InsideTabPanel = () => {
+    return (
+        <EbayTabs size="large">
+            <EbayTab className="tab">Upload Process</EbayTab>
+            <EbayTab className="tab">Buyer View</EbayTab>
+            <EbayTabPanel>
+                <p>Test content in first tab</p>
+            </EbayTabPanel>
+            <EbayTabPanel>
+                <EbayPagination variant="show-last" a11yPreviousText="Previous page" a11yNextText="Next page">
+                    <Item type="previous" />
+                    <Item>1</Item>
+                    <Item current>2</Item>
+                    <Item>3</Item>
+                    <Item type="next" />
+                </EbayPagination>
+            </EbayTabPanel>
+        </EbayTabs>
+    );
 };

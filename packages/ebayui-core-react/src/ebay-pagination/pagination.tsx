@@ -52,14 +52,10 @@ const EbayPagination: FC<PaginationProps> = ({
         children,
         ({ props }: ReactElement<PaginationItemProps>) => props.type === undefined || props.type === "page",
     ).length;
-    const itemWidthRef = useRef<number>(0);
-    const arrowWidthRef = useRef<number>(0);
     const getNumOfVisiblePageItems = () => {
-        const pageArrowWidth = arrowWidthRef.current || childPageRefs.current[0]?.current?.offsetWidth;
-        arrowWidthRef.current = pageArrowWidth; // cache arrow width since it should be static
-
-        const pageItemWidth = itemWidthRef.current || childPageRefs.current[1]?.current?.offsetWidth;
-        itemWidthRef.current = pageItemWidth; // cache item width since it should be static
+        const pageArrowWidth = childPageRefs.current[0]?.current?.offsetWidth;
+        const pageItemWidth = childPageRefs.current.slice(1).find((pageRef) => pageRef.current?.offsetWidth)
+            ?.current?.offsetWidth;
 
         return pageItemWidth
             ? Math.floor((getMaxWidth(paginationContainerRef.current) - pageArrowWidth * 2) / pageItemWidth)
@@ -82,11 +78,39 @@ const EbayPagination: FC<PaginationProps> = ({
     useEffect(() => {
         const debouncedUpdate = debounce(updatePages, 16);
 
+        // Initial calculation
         updatePages();
-        window.addEventListener("resize", () => debouncedUpdate());
+
+        // Window resize listener
+        const resizeHandler = () => debouncedUpdate();
+        window.addEventListener("resize", resizeHandler);
+
+        // Visibility detection using IntersectionObserver
+        // This handles cases where the pagination component might be
+        // inside a tab or an accordion that gets shown/hidden
+        let observer: IntersectionObserver | null = null;
+        if (paginationContainerRef.current) {
+            observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        // When element becomes visible (intersecting) or visibility changes
+                        if (entry.isIntersecting) {
+                            updatePages();
+                        }
+                    });
+                },
+                {
+                    threshold: 0, // Trigger as soon as any part is visible
+                    root: null, // Observe relative to viewport
+                },
+            );
+
+            observer.observe(paginationContainerRef.current);
+        }
 
         return () => {
-            window.removeEventListener("resize", () => debouncedUpdate());
+            window.removeEventListener("resize", resizeHandler);
+            observer?.disconnect();
         };
     }, [children]);
 
