@@ -102,7 +102,7 @@ const EbayPagination: FC<PaginationProps> = ({
                     });
                 },
                 {
-                    threshold: 0, // Trigger as soon as any part is visible
+                    threshold: 0, // Fire when visibility crosses 0%: when any part becomes visible or when it becomes fully hidden
                     root: null, // Observe relative to viewport
                 },
             );
