@@ -54,8 +54,10 @@ const EbayPagination: FC<PaginationProps> = ({
     ).length;
     const getNumOfVisiblePageItems = () => {
         const pageArrowWidth = childPageRefs.current[0]?.current?.offsetWidth;
-        const pageItemWidth = childPageRefs.current.slice(1).find((pageRef) => pageRef.current?.offsetWidth)
-            ?.current?.offsetWidth;
+        const firstPageRefWithWidth = childPageRefs.current
+            .slice(1)
+            .find((pageRef) => pageRef.current?.offsetWidth);
+        const pageItemWidth = firstPageRefWithWidth?.current?.offsetWidth;
 
         return pageItemWidth
             ? Math.floor((getMaxWidth(paginationContainerRef.current) - pageArrowWidth * 2) / pageItemWidth)
