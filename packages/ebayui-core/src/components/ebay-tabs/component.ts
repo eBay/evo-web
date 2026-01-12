@@ -16,6 +16,7 @@ interface TabsInput extends Omit<Marko.HTML.Div, `on${string}`> {
     tab?: Marko.AttrTag<Tab>;
     panel?: Marko.AttrTag<Panel>;
     activation?: "auto" | "manual";
+    size?: "large" | "regular";
     fake?: boolean;
     "selected-index"?: number | string;
     "on-select"?: (event: TabsEvent) => void;

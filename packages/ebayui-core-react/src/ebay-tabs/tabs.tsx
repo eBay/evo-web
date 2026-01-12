@@ -102,8 +102,8 @@ const Tabs: FC<TabsProps> = ({
     });
 
     return (
-        <div id={id} className={classNames(className, "tabs")}>
-            <div className={classNames("tabs__items", { "tabs__items--large": isLarge })} role="tablist">
+        <div id={id} className={classNames(className, "tabs", { "tabs--large": isLarge })}>
+            <div className={classNames("tabs__items")} role="tablist">
                 {tabHeadings}
             </div>
             <div className="tabs__content">{tabPanels}</div>

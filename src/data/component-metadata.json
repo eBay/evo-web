@@ -821,7 +821,7 @@
     "component": "tab",
     "ds-component": {
       "name": "tab",
-      "version": "2.1"
+      "version": "2.2"
     },
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation",
     "reactStorybookPath": "/docs/navigation-disclosure-ebay-tabs--documentation",

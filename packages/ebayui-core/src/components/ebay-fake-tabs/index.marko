@@ -3,6 +3,7 @@ import type { WithNormalizedProps } from "../../global";
 $ const {
     selectedIndex = 0,
     class: inputClass,
+    size,
     tab: tabs = [],
     tabMatchesCurrentUrl,
     renderBody,
@@ -14,6 +15,7 @@ export interface Tab extends Omit<Marko.HTML.LI, `on${string}`> {
 static {
     interface FakeTabsInput extends Omit<Marko.HTML.Div, `on${string}`> {
         "selected-index"?: number;
+        size?: "large" | "regular";
         tab?: Marko.AttrTag<Tab>;
         "tab-matches-current-url"?: boolean;
     }
@@ -23,7 +25,7 @@ $ var tabAriaCurrent: Marko.HTML.LI["aria-current"] = (
     tabMatchesCurrentUrl === false ? "true" : "page"
 );
 
-<div ...processHtmlAttributes(htmlInput) class=["fake-tabs", inputClass]>
+<div ...processHtmlAttributes(htmlInput) class=["fake-tabs", size === "large" && "fake-tabs--large", inputClass]>
     <ul class="fake-tabs__items">
         <for|tab, i| of=tabs || []>
             $ const { href, ...htmlTab } = tab;

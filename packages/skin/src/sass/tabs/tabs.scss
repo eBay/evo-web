@@ -1,10 +1,5 @@
 @use "../mixins/private/token-mixins";
 
-.tabs,
-.fake-tabs {
-    margin-top: var(--spacing-200);
-}
-
 span.tabs,
 span.fake-tabs {
     display: inline-block;
@@ -12,13 +7,24 @@ span.fake-tabs {
 
 div.tabs__items[role="tablist"],
 ul.fake-tabs__items {
+    display: flex;
+    flex-wrap: wrap;
     font-size: var(--font-size-body);
+    gap: var(--spacing-50);
+
+    // This is done to prevent extra indentation at the start
+    margin: 0;
+    margin-inline-start: calc(0px - var(--spacing-200));
+}
+
+.tabs--large div.tabs__items[role="tablist"],
+.fake-tabs--large ul.fake-tabs__items {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-600);
 }
 
 ul.fake-tabs__items {
-    display: block;
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
@@ -31,19 +37,10 @@ li.fake-tabs__item {
     display: inline-block;
     position: relative;
     -webkit-tap-highlight-color: var(--color-background-secondary);
-
-    &:not(:last-child) {
-        margin-inline-end: var(--spacing-450);
-    }
 }
 
 li.fake-tabs__item > a {
-    padding: 1px 0;
     text-decoration: none;
-}
-
-div.tabs__item[role="tab"] > span {
-    padding: 2px 0;
 }
 
 div.tabs__item[role="tab"],
@@ -54,6 +51,7 @@ li.fake-tabs__item > a {
     );
 
     display: inline-block;
+    padding: var(--spacing-150) var(--spacing-200);
 
     &::after {
         background-color: transparent;
@@ -61,9 +59,8 @@ li.fake-tabs__item > a {
         content: "";
         display: block;
         height: 2px;
-        margin-top: var(--spacing-50);
+        inset: auto var(--spacing-200) 0;
         position: absolute; /* required to avoid focus outline issues */
-        width: 100%;
     }
 }
 

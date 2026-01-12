@@ -33,6 +33,7 @@ import "@ebay/skin/tabs";
 | Name                   | Type    | Stateful | Description                                                                                                                                                                                                                       |
 | ---------------------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `selectedIndex`        | Number  | Yes      | 0-based index of selected tab heading                                                                                                                                                                                             |
+| `size`                 | Enum    | No       | Sets the size of the tabs. Can be either regular (Default) or large                                                                                                                                                               |
 | `tabMatchesCurrentUrl` | Boolean | No       | Specify whether the href of the currently active fake tab matches the current window url. Default is true. This property is used to configure the underlying aria-current attribute (i.e. a value of "page" (default) or "true"). |
 
 ## EbayFakeTab

@@ -40,6 +40,11 @@ export default {
                 category: "@attribute tags",
             },
         },
+        size: {
+            type: "select",
+            options: ["regular", "large"],
+            description: "The size of the tabs",
+        },
         href: {
             control: { type: "text" },
             description: "The link to take the user to for each tab",

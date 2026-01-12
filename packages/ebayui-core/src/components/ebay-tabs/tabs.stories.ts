@@ -35,6 +35,11 @@ export default {
             description:
                 'whether to use automatic or manual activation when navigating by keyboard, "auto" (default) / "manual"',
         },
+        size: {
+            type: "select",
+            options: ["regular", "large"],
+            description: "The size of the tabs",
+        },
         tab: {
             name: "@tab",
             table: {
