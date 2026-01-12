@@ -73,6 +73,18 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: npm run snapshots:all -w packages/skin
 
+      - name: Wait for Percy build and comment on PR
+        if: steps.detect.outputs.components != ''
+        env:
+          PERCY_READ_TOKEN: ${{ secrets.PERCY_READ_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          cd packages/skin
+          node scripts/percy-wait-and-comment.js
+
   percy-main:
     name: Percy Baseline (Main Branch)
     if: github.ref == 'refs/heads/main'
