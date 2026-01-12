@@ -1,4 +1,4 @@
-import { components } from "../../../data";
+import { components, urls } from "../../../data";
 
 <style.scss>
   main ul.components-list {
@@ -7,6 +7,7 @@ import { components } from "../../../data";
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
     list-style: none;
     padding: 0 0 30px;
     margin: 0;
@@ -55,18 +56,55 @@ import { components } from "../../../data";
     padding: 3px 6px;
   }
 
-  @container components-list (min-width: 480px) {
+  @container components-list (min-width: 512px) {
     main li {
       width: calc(100% / 2 - 14px);
     }
   }
 
-  @container components-list (min-width: 700px) {
+  @container components-list (min-width: 768px) {
     main li {
       width: calc(100% / 3 - 14px);
     }
   }
+  main {
+    container-type: inline-size;
+  }
+
+  .link-container {
+    display: flex;
+    gap: var(--spacing-200);
+    justify-content: center;
+    margin-block-end: var(--spacing-400);
+    .nav-link {
+      display: inline-flex;
+      gap: var(--spacing-50);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  @container (width < 512px) {
+    .link-container {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
 </style>
+
+<div class="link-container">
+  <a class="nav-link" href=urls.markoStorybook>
+    <span>Marko Components Storybook</span>
+    <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+      <use href="#icon-external-link-16"/>
+    </svg>
+  </a>
+  <a class="nav-link" href=urls.reactStorybook>
+    <span>React Components Storybook</span>
+    <svg class="icon icon--16" height="16" width="16" aria-hidden="true">
+      <use href="#icon-external-link-16"/>
+    </svg>
+  </a>
+</div>
 
 <div class="component-listings">
   <ul class="components-list">
@@ -102,12 +140,16 @@ import { components } from "../../../data";
                     CSS v${dsComponent?.version}
                   </span>
                 </if>
-                <if=dsComponent?.markoVersion && component?.componentUrls.marko>
+                <if=(
+                  dsComponent?.markoVersion && component?.componentUrls.marko
+                )>
                   <span class="component-version">
                     Marko v${dsComponent?.markoVersion}
                   </span>
                 </if>
-                <if=dsComponent?.reactVersion && component?.componentUrls.react>
+                <if=(
+                  dsComponent?.reactVersion && component?.componentUrls.react
+                )>
                   <span class="component-version">
                     React v${dsComponent?.reactVersion}
                   </span>
