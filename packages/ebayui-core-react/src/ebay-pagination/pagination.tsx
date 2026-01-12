@@ -89,7 +89,7 @@ const EbayPagination: FC<PaginationProps> = ({
         // This handles cases where the pagination component might be
         // inside a tab or an accordion that gets shown/hidden
         let observer: IntersectionObserver | null = null;
-        if (paginationContainerRef.current) {
+        if (paginationContainerRef.current && typeof IntersectionObserver !== "undefined") {
             observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
