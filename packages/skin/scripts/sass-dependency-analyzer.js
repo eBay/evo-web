@@ -129,7 +129,9 @@ async function findScssFiles(dir) {
     try {
         // Use fs.glob to find all .scss files
         // Pattern: **/*.scss matches all .scss files recursively
-        const files = await fs.glob("**/*.scss", {
+        // Note: fs.glob returns an AsyncGenerator, not a Promise<Array>
+        const files = [];
+        const globIterator = fs.glob("**/*.scss", {
             cwd: dir,
             absolute: true,
             exclude: (name) => {
@@ -137,6 +139,10 @@ async function findScssFiles(dir) {
                 return name.includes("node_modules") || name.includes("/.");
             },
         });
+
+        for await (const file of globIterator) {
+            files.push(file);
+        }
 
         return files;
     } catch (error) {
