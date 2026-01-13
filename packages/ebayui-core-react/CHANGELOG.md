@@ -1,5 +1,27 @@
 # @ebay/ui-core-react
 
+## 9.0.0
+
+### Major Changes
+
+- [#406](https://github.com/eBay/evo-web/pull/406) [`c81e6ba`](https://github.com/eBay/evo-web/commit/c81e6bae9c776662817bd0ac6f9284ab20e44777) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat: removed React 16/17/18 support
+
+### Minor Changes
+
+- [#422](https://github.com/eBay/evo-web/pull/422) [`a4ecde1`](https://github.com/eBay/evo-web/commit/a4ecde100980e065b795b6acbd39b99177933a52) Thanks [@agliga](https://github.com/agliga)! - feat(tabs): added large variant and cleaned up tab spacing
+
+- [`cae0ba5`](https://github.com/eBay/evo-web/commit/cae0ba51a5c63a0fc76894d4b92b8fd89d412110) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (#380)
+
+### Patch Changes
+
+- [#413](https://github.com/eBay/evo-web/pull/413) [`df550f5`](https://github.com/eBay/evo-web/commit/df550f5f7d009511f37c4764d1981ca2959d77fa) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(avatar): add alt="" to img for accessibility
+
+  Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
+
+- [#421](https://github.com/eBay/evo-web/pull/421) [`bd7df41`](https://github.com/eBay/evo-web/commit/bd7df41c69dbb15edab329abdb907cfa838fb30c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(pagination): add visibility detection for pagination inside hidden containers
+
+  Fixed issue where EbayPagination would miscalculate visible pages when rendered inside EbayTab or other hidden containers. The component now uses IntersectionObserver to detect when it becomes visible and automatically recalculates the page layout. Also fixed a memory leak in the resize event listener cleanup.
+
 ## 8.18.0
 
 ### Minor Changes
@@ -58,7 +80,7 @@
 
 - [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
 
-    EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
 
 ### Patch Changes
 

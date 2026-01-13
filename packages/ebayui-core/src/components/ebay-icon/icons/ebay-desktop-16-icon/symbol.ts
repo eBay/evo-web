@@ -1,0 +1,4 @@
+export function symbol() {
+    // eslint-disable-next-line max-len,quotes
+    return '<symbol viewbox="0 0 16 16" id=icon-desktop-16><path d="M13.5 1A2.5 2.5 0 0 1 16 3.5v6a2.5 2.5 0 0 1-2.5 2.5H9v2h2a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2h2v-2H2.5A2.5 2.5 0 0 1 0 9.5l.001-6a2.5 2.5 0 0 1 2.5-2.5H13.5ZM2.501 3a.5.5 0 0 0-.5.5L2 9.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5H2.501Z"></path></symbol>';
+}

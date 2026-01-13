@@ -1,0 +1,4 @@
+export function symbol() {
+    // eslint-disable-next-line max-len,quotes
+    return '<symbol viewbox="0 0 16 16" id=icon-lightning-bolt-filled-16><path d="M7.157.456A1 1 0 0 1 8.997 1v4h2.996c1.585 0 2.54 1.757 1.677 3.088l-4.835 7.456A1 1 0 0 1 6.997 15v-4h-2.99c-1.585 0-2.54-1.756-1.678-3.087L7.157.456Z"></path></symbol>';
+}

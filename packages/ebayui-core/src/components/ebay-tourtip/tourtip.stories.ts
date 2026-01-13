@@ -147,7 +147,7 @@ Standard.args = {
         renderBody: `<p>This new feature was added.</p>`,
     },
     a11yCloseText: "close",
-    notInline: true
+    notInline: true,
 } as any;
 Standard.parameters = {
     docs: {
@@ -179,7 +179,7 @@ withFooter.args = {
         renderBody:
             '<button class="fake-link">Back</button><button class="btn btn--primary">Next</button>',
     },
-    notInline: true
+    notInline: true,
 } as any;
 withFooter.parameters = {
     docs: {

@@ -57,6 +57,10 @@ export type Icon =
 'applePay32Colored' |
 'archive16' |
 'archive24' |
+'arrowDown12' |
+'arrowDown16' |
+'arrowDown20' |
+'arrowDown24' |
 'arrowLeft12' |
 'arrowLeft16' |
 'arrowLeft20' |
@@ -65,6 +69,10 @@ export type Icon =
 'arrowRight16' |
 'arrowRight20' |
 'arrowRight24' |
+'arrowUp12' |
+'arrowUp16' |
+'arrowUp20' |
+'arrowUp24' |
 'arrows3d16' |
 'arrows3d24' |
 'arrows3dFilled64Colored' |
@@ -258,6 +266,9 @@ export type Icon =
 'densityRowCompact24' |
 'densityRowRelaxed16' |
 'densityRowRelaxed24' |
+'desktop16' |
+'desktop20' |
+'desktop24' |
 'diamond16' |
 'diamond24' |
 'diners12Colored' |
@@ -523,6 +534,9 @@ export type Icon =
 'lightbulb24' |
 'lightningBolt16' |
 'lightningBolt24' |
+'lightningBoltFilled12' |
+'lightningBoltFilled16' |
+'lightningBoltFilled24' |
 'link24' |
 'linkedin24' |
 'listView16' |
@@ -590,6 +604,8 @@ export type Icon =
 'mercadoPago32Colored' |
 'microphone16' |
 'microphone24' |
+'mobile16' |
+'mobile20' |
 'mobile24' |
 'mobileSignal24' |
 'moneyBackGuarantee16' |
@@ -705,7 +721,9 @@ export type Icon =
 'peso24' |
 'phone16' |
 'phone24' |
+'pin16' |
 'pin24' |
+'pinFilled16' |
 'pinFilled24' |
 'pinterest24' |
 'play16' |
@@ -900,6 +918,9 @@ export type Icon =
 'swap16' |
 'swap24' |
 'switchCamera24' |
+'tablet16' |
+'tablet20' |
+'tablet24' |
 'target16' |
 'target24' |
 'textMessaging16' |

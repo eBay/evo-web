@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.20.0
+
+### Minor Changes
+
+- [#422](https://github.com/eBay/evo-web/pull/422) [`a4ecde1`](https://github.com/eBay/evo-web/commit/a4ecde100980e065b795b6acbd39b99177933a52) Thanks [@agliga](https://github.com/agliga)! - feat(tabs): added large variant and cleaned up tab spacing
+
+- [`cae0ba5`](https://github.com/eBay/evo-web/commit/cae0ba51a5c63a0fc76894d4b92b8fd89d412110) Thanks [@agliga](https://github.com/agliga)! - feat(icons): added new icons (#380)
+
+### Patch Changes
+
+- [#410](https://github.com/eBay/evo-web/pull/410) [`05948f2`](https://github.com/eBay/evo-web/commit/05948f2f60e05e9576dfe6e215f77a0201ec1334) Thanks [@agliga](https://github.com/agliga)! - fix(tourtip): added stronger selector to tourtip icon-btn
+
 ## 19.19.0
 
 ### Minor Changes
