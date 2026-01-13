@@ -130,7 +130,9 @@ async function main() {
                 }
 
                 // Convert to absolute path for graph lookup
-                const absPath = path.resolve(file);
+                // git diff returns paths relative to repo root, so join with repo root
+                const repoRoot = path.join(__dirname, "../../..");
+                const absPath = path.join(repoRoot, file);
 
                 // Add the changed file itself
                 allAffectedFiles.add(absPath);
