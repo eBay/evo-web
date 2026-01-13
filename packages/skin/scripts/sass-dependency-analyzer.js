@@ -133,7 +133,6 @@ async function findScssFiles(dir) {
         const files = [];
         const globIterator = fs.glob("**/*.scss", {
             cwd: dir,
-            absolute: true,
             exclude: (name) => {
                 // Exclude node_modules and hidden directories
                 return name.includes("node_modules") || name.includes("/.");
@@ -141,7 +140,8 @@ async function findScssFiles(dir) {
         });
 
         for await (const file of globIterator) {
-            files.push(file);
+            // Convert to absolute path since fs.glob returns relative paths
+            files.push(path.join(dir, file));
         }
 
         return files;
