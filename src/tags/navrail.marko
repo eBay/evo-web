@@ -51,7 +51,7 @@ export interface Input {
                     </ul>
                 </nav>
             </div>
-            <main>
+            <main id="main">
                 <breadcrumbs/>
                 <component-tabs>
                     <${input.content}/>
@@ -61,7 +61,7 @@ export interface Input {
     </div>
 </if>
 <else>
-    <main class="landing-page">
+    <main id="main" class="landing-page">
         <${input.content}/>
     </main>
 </else>

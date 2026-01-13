@@ -52,6 +52,7 @@ body > main:last-child {
 
 main {
   margin-bottom: var(--spacing-400);
+  scroll-margin-top: var(--spacing-600);
 }
 
 .icon-header {
@@ -120,4 +121,13 @@ main {
 
 .nav-link[aria-current] {
   font-weight: var(--font-weight-bold);
+}
+
+.skip-to-main-content a:focus {
+  background-color: var(--color-background-primary);
+  left: 0;
+  padding: var(--spacing-100) var(--spacing-200);
+  position: absolute;
+  top: 0;
+  z-index: 100000;
 }
