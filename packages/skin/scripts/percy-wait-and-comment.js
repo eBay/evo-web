@@ -73,11 +73,11 @@ async function getPercyProject() {
         console.log("Fetching Percy project details...");
         const response = await percyReadClient.get("/projects");
 
-        if (!response.data || !response.data.data) {
+        if (!response.data) {
             throw new Error("Invalid response from Percy API");
         }
 
-        const project = response.data.data;
+        const project = response.data;
         const fullSlug = project.attributes["full-slug"];
         const projectName = project.attributes.name;
 
