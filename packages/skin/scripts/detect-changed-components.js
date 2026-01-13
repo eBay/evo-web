@@ -25,10 +25,10 @@ const path = require("path");
 const analyzer = require("./sass-dependency-analyzer");
 
 // Directories that affect all components (global changes)
+// Note: mixins/ is NOT in this list - dependency graph will handle mixin changes
 const GLOBAL_PATHS = [
     "packages/skin/src/sass/global/",
     "packages/skin/src/sass/variables/",
-    "packages/skin/src/sass/mixins/",
     "packages/skin/src/tokens/",
     "packages/skin/src/sass/bundles/",
     "packages/skin/.storybook/",
