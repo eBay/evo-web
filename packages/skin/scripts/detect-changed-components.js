@@ -4,6 +4,9 @@
  * Detect which Skin components have changed in the current PR/branch
  * and output a comma-separated list for Percy partial snapshots.
  *
+ * Enhanced with SASS dependency graph analysis to detect components
+ * affected by changes to shared files (mixins, variables, etc.)
+ *
  * Usage:
  *   node detect-changed-components.js
  *
@@ -11,9 +14,15 @@
  *   - "all" if global files changed (run all snapshots)
  *   - "Component1,Component2" for specific components
  *   - "" (empty) if no relevant changes
+ *
+ * IMPORTANT: stdout is captured by GitHub Actions as a variable.
+ * Only the final result should be written to stdout. All logging/errors
+ * should go to stderr or be omitted to avoid polluting the output.
  */
 
 const { execSync } = require("child_process");
+const path = require("path");
+const analyzer = require("./sass-dependency-analyzer");
 
 // Directories that affect all components (global changes)
 const GLOBAL_PATHS = [
@@ -85,39 +94,87 @@ function hasGlobalChanges(changedFiles) {
 }
 
 /**
- * Main function
+ * Main function (async to support dependency graph building)
  */
-function main() {
-    const changedFiles = getChangedFiles();
+async function main() {
+    try {
+        const changedFiles = getChangedFiles();
 
-    if (changedFiles.length === 0) {
-        console.log("");
-        return;
-    }
-
-    // Check for global changes first
-    if (hasGlobalChanges(changedFiles)) {
-        console.log("all");
-        return;
-    }
-
-    // Extract unique component names
-    const changedComponents = new Set();
-
-    changedFiles.forEach((file) => {
-        const component = extractComponentFromPath(file);
-        if (component) {
-            changedComponents.add(component);
+        if (changedFiles.length === 0) {
+            console.log("");
+            return;
         }
-    });
 
-    if (changedComponents.size === 0) {
-        console.log("");
-        return;
+        // Check for global changes first (existing behavior)
+        if (hasGlobalChanges(changedFiles)) {
+            console.log("all");
+            return;
+        }
+
+        // NEW: Build dependency graph and find all affected files
+        let allAffectedFiles = new Set();
+
+        try {
+            const sassDir = path.join(__dirname, "../src/sass");
+
+            // Build forward and reverse dependency graphs
+            const forwardGraph = await analyzer.buildDependencyGraph(sassDir);
+            const reverseGraph =
+                analyzer.buildReverseDependencyGraph(forwardGraph);
+
+            // For each changed file, find all its dependents
+            for (const file of changedFiles) {
+                // Only analyze SCSS files
+                if (!file.endsWith(".scss")) {
+                    continue;
+                }
+
+                // Convert to absolute path for graph lookup
+                const absPath = path.resolve(file);
+
+                // Add the changed file itself
+                allAffectedFiles.add(absPath);
+
+                // Find all files that transitively depend on this changed file
+                const dependents = analyzer.findAllDependents(
+                    absPath,
+                    reverseGraph,
+                );
+                dependents.forEach((dep) => allAffectedFiles.add(dep));
+            }
+
+            // If no SCSS files were affected, fall back to original behavior
+            if (allAffectedFiles.size === 0) {
+                allAffectedFiles = new Set(changedFiles);
+            }
+        } catch (error) {
+            // FAIL SAFE: If dependency analysis fails, run all snapshots
+            // Note: Don't log error details to avoid polluting stdout
+            console.log("all");
+            return;
+        }
+
+        // Extract unique component names from all affected files
+        const changedComponents = new Set();
+
+        allAffectedFiles.forEach((file) => {
+            const component = extractComponentFromPath(file);
+            if (component) {
+                changedComponents.add(component);
+            }
+        });
+
+        if (changedComponents.size === 0) {
+            console.log("");
+            return;
+        }
+
+        const componentList = Array.from(changedComponents).sort().join(",");
+        console.log(componentList);
+    } catch (error) {
+        // Critical error - exit with error code but don't pollute stdout
+        process.exit(1);
     }
-
-    const componentList = Array.from(changedComponents).sort().join(",");
-    console.log(componentList);
 }
 
 main();
