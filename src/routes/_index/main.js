@@ -599,13 +599,14 @@ document.querySelectorAll(".star-rating-select").forEach(function (widgetEl) {
 
 // TABS
 document.querySelectorAll(".tabs").forEach(function (widgetEl) {
-  RovingTabindex.createLinear(widgetEl, "[role=tab]", { wrap: true });
+  const tabList = widgetEl.querySelector("[role=tablist]");
+  RovingTabindex.createLinear(tabList, "[role=tab]", { wrap: true });
   const tabItems = widgetEl.querySelectorAll("[role=tab]");
   const tabPanels = widgetEl.querySelectorAll("[role=tabpanel]");
 
-  ScrollKeyPreventer.add(widgetEl);
+  ScrollKeyPreventer.add(tabList);
 
-  widgetEl.addEventListener("rovingTabindexChange", function (e) {
+  tabList.addEventListener("rovingTabindexChange", function (e) {
     tabItems[e.detail.fromIndex].setAttribute("aria-selected", "false");
     tabItems[e.detail.toIndex].setAttribute("aria-selected", "true");
 
