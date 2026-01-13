@@ -2,7 +2,8 @@ import React, { cloneElement, ComponentProps, FC } from "react";
 import classNames from "classnames";
 
 import { excludeComponent, filterByType } from "../common/component-utils";
-import Tab, { type Size } from "./tab";
+import Tab from "./tab";
+export type Size = "regular" | "large";
 
 type FakeTabsProps = ComponentProps<"div"> & {
     selectedIndex?: number;

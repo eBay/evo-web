@@ -1,8 +1,6 @@
 import React, { ComponentProps, FC } from "react";
 import classNames from "classnames";
 
-export type Size = "regular" | "large";
-
 type TabProps = ComponentProps<"li"> & {
     href?: string;
     ariaCurrent?: "page" | "true";
