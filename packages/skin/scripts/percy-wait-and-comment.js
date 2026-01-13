@@ -22,7 +22,7 @@
  *   node percy-wait-and-comment.js
  */
 
-const PercyClient = require("@percy/client");
+const { PercyClient } = require("@percy/client");
 const { Octokit } = require("@octokit/rest");
 
 // Configuration
