@@ -5,7 +5,7 @@
 }
 .confirm-dialog[role="dialog"] {
     align-items: flex-start;
-    background-color: var(--dialog-scrim-color-show);
+    background-color: red;
     inset: 0;
     justify-content: center;
     position: fixed;
