@@ -45,7 +45,7 @@ export class DropdownUtil {
         if (this.options.flip) {
             middleware.push(
                 flip({
-                    crossAxis: "alignment",
+                    crossAxis: true,
                 }),
             );
         }
