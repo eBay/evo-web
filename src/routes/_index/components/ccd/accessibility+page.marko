@@ -1,4 +1,91 @@
+import "../../../../sass/accessibility.scss";
+
 <div class="a11y-pattern-content">
-  <h1>CCS Accessibility</h1>
-  <p>The content is not yet available.</p>
+  <h1>CCD Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    CCD pictograms
+    <strong>must </strong>
+    use
+    <code>role=&quot;figure&quot;</code>
+    with
+    <code>aria-label</code>
+    to convey their meaning to assistive technologies.
+  </p>
+  <p>
+    The
+    <code>aria-label </code>
+    <strong>must </strong>
+    include charger inclusion status, wattage range, and fast charging
+    specification if applicable (e.g., "Charger included. 1001 - 2000 watts. USB
+    PD").
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    CCD pictograms are not interactive and should not be keyboard focusable.
+  </p>
+  <p>
+    If placed within an interactive element (such as a button or link), the
+    interactive element
+    <strong>must</strong>
+    be keyboard accessible via
+    <strong>TAB</strong>
+    key.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader will announce the CCD as a figure along with its
+    <code>aria-label</code>
+    value (e.g., "Charger included. 1001 - 2000 watts. USB PD, figure").
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    CCD pictograms are not clickable. If placed within an interactive element,
+    clicking the pictogram will activate that element.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="figure"</strong>
+        </td>
+        <td>
+          Applied to the CCD element to identify it as a figure to assistive
+          technologies.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Applied to the CCD with
+          <code>role=&quot;figure&quot;</code>
+          to provide an accessible name with charging information (e.g.,
+          "Charger included. 1001 - 2000 watts. USB PD").
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red/one-common-charging-solution-all_en">
+        EU Common Charger Directive
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/tutorials/images/informative/">
+        W3C Informative Images
+      </a>
+    </li>
+  </ul>
 </div>
