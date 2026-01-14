@@ -4,7 +4,7 @@
     --dialog-lightbox-max-width: 616px;
 }
 .panel-dialog[role="dialog"] {
-    background-color: var(--dialog-scrim-color-show);
+    background-color: red;
     flex-direction: column;
     inset: 0;
     overflow: hidden;
