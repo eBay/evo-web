@@ -101,6 +101,16 @@ export default {
             description:
                 "Swap between fixed and absolute positioning strategy. Use fixed when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
         },
+        flip: {
+            control: { type: "boolean" },
+            table: {
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+            description:
+                "Adds flip to dropdown middleware. This allows the dropdown to flip automatically if it overflows",
+        },
         onCollapse: {
             action: "on-collapse",
             table: {

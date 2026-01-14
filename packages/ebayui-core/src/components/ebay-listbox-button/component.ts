@@ -15,6 +15,7 @@ interface ListboxButtonInput extends Omit<Marko.HTML.Div, `on${string}`> {
     truncate?: boolean;
     fluid?: boolean;
     strategy?: "fixed" | "absolute";
+    flip?: boolean;
     borderless?: boolean;
     "floating-label"?: string;
     disabled?: boolean;
@@ -130,6 +131,7 @@ class ListboxButton extends Marko.Component<Input, State> {
             this.getEl("options"),
             {
                 strategy: input.strategy,
+                flip: input.flip,
             },
         );
     }

@@ -2,12 +2,15 @@ import {
     autoUpdate,
     computePosition,
     shift,
+    flip,
     offset,
     type ReferenceElement,
+    type Middleware,
 } from "@floating-ui/dom";
 
 interface DropdownUtilOptions {
     reverse?: boolean;
+    flip?: boolean;
     strategy?: "absolute" | "fixed";
     offset?: number;
 }
@@ -37,10 +40,20 @@ export class DropdownUtil {
     }
 
     update() {
+        const middleware = [] as Middleware[];
+        middleware.push(offset(this.options.offset ?? 4));
+        if (this.options.flip) {
+            middleware.push(
+                flip({
+                    crossAxis: "alignment",
+                }),
+            );
+        }
+        middleware.push(shift());
         computePosition(this.host, this.overlay, {
             placement: this.options.reverse ? "bottom-end" : "bottom-start",
             strategy: this.options.strategy ?? "fixed",
-            middleware: [offset(this.options.offset ?? 4), shift()],
+            middleware,
         }).then(({ x, y }) => {
             Object.assign(this.overlay.style, {
                 left: `${x}px`,

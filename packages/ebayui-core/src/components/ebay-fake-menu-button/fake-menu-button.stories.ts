@@ -108,6 +108,16 @@ export default {
             description:
                 "for link that looks like a menu-item. If not set for fake type, will also disable the item",
         },
+        flip: {
+            control: { type: "boolean" },
+            table: {
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+            description:
+                "Adds flip to dropdown middleware. This allows the dropdown to flip automatically if it overflows",
+        },
         strategy: {
             control: { type: "select" },
             options: ["absolute", "fixed"],

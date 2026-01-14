@@ -75,6 +75,17 @@ export default {
             option: ["manual", "auto"],
             type: "select",
         },
+        flip: {
+            control: { type: "boolean" },
+            table: {
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+            description:
+                "Adds flip to dropdown middleware. This allows the dropdown to flip automatically if it overflows",
+        },
+
         strategy: {
             control: { type: "select" },
             options: ["absolute", "fixed"],

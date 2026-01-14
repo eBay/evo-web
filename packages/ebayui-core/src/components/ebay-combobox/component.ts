@@ -28,6 +28,7 @@ interface ComboboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
     "list-selection"?: "manual" | "automatic";
     "floating-label"?: string;
     strategy?: "fixed" | "absolute";
+    flip?: boolean;
     button?: Marko.Input<"button"> &
         Marko.AttrTag<{
             htmlAttributes?: Record<string, unknown>;
@@ -321,6 +322,7 @@ export default class Combobox extends Marko.Component<Input, State> {
             this.getEl("listbox"),
             {
                 strategy: this.input.strategy,
+                flip: this.input.flip
             },
         );
         if (this.isExpanded()) {

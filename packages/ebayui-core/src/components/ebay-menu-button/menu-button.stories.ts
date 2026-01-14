@@ -87,6 +87,16 @@ export default {
             options: ["primary", "secondary", "delete", "tertiary", "none"],
             description: 'button priority, only used when variant="button"',
         },
+        flip: {
+            control: { type: "boolean" },
+            table: {
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+            description:
+                "Adds flip to dropdown middleware. This allows the dropdown to flip automatically if it overflows",
+        },
         strategy: {
             control: { type: "select" },
             options: ["absolute", "fixed"],

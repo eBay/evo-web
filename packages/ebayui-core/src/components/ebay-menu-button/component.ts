@@ -50,6 +50,7 @@ interface MenuButtonInput
     text?: string;
     reverse?: boolean;
     strategy?: "absolute" | "fixed";
+    flip?: boolean;
     "fix-width"?: boolean;
     "on-expand"?: (event: MenuButtonEvent) => void;
     "on-collapse"?: (event: MenuButtonEvent) => void;
@@ -250,6 +251,7 @@ export default class extends MenuUtils<Input, MenuState> {
             {
                 reverse: this.input.reverse,
                 strategy: this.input.strategy,
+                flip: this.input.flip,
             },
         );
     }
