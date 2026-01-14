@@ -22,6 +22,7 @@
 
 const { execSync } = require("child_process");
 const path = require("path");
+const fs = require("fs/promises");
 const analyzer = require("./sass-dependency-analyzer");
 
 // Directories that affect all components (global changes)
@@ -53,20 +54,62 @@ function getChangedFiles() {
 }
 
 /**
- * Convert kebab-case component directory name to Title-Case for story matching
- * e.g., 'alert-dialog' → 'Alert-Dialog'
- * e.g., 'button' → 'Button'
+ * Extract the actual story title by importing the .stories.js file
+ * @param {string} filePath - Absolute path to .stories.js file
+ * @returns {string|null} Story title (e.g., "Skin/Alert Dialog") or null
  */
-function toStoryTitleFormat(componentDir) {
-    return componentDir
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join("-");
+function extractStoryTitle(filePath) {
+    try {
+        // Import the story file
+        const storyModule = require(filePath);
+
+        // Extract title from default export
+        if (storyModule && storyModule.default && storyModule.default.title) {
+            return storyModule.default.title;
+        }
+    } catch (error) {
+        // File import error or missing title - skip this file
+    }
+    return null;
 }
 
 /**
- * Extract component name from file path
+ * Get all story titles for a given component directory
+ * @param {string} componentDir - Component directory name (e.g., 'alert-dialog')
+ * @returns {Promise<string[]>} Array of component names (e.g., ["Alert Dialog"])
+ */
+async function getStoryTitlesForComponent(componentDir) {
+    const sassDir = path.join(__dirname, "../src/sass");
+    const componentPath = path.join(sassDir, componentDir);
+
+    // Use fs.glob (Node.js 20+) to find all .stories.js files
+    // Note: fs.glob returns an AsyncGenerator
+    const globIterator = fs.glob("**/*.stories.js", { cwd: componentPath });
+    const componentNames = new Set();
+
+    for await (const file of globIterator) {
+        // Convert to absolute path since fs.glob returns relative paths
+        const absolutePath = path.join(componentPath, file);
+        const title = extractStoryTitle(absolutePath);
+
+        if (title) {
+            // Extract just the component part: "Skin/Alert Dialog" → "Alert Dialog"
+            // "Skin/Button/Primary" → "Button" (parent category only)
+            const parts = title.split("/");
+            if (parts.length >= 2 && parts[0] === "Skin") {
+                componentNames.add(parts[1]); // Get the component name after "Skin/"
+            }
+        }
+    }
+
+    return Array.from(componentNames);
+}
+
+/**
+ * Extract component directory name from file path
  * Pattern: packages/skin/src/sass/{component-name}/...
+ * @param {string} filePath - File path
+ * @returns {string|null} Component directory name (e.g., 'alert-dialog') or null
  */
 function extractComponentFromPath(filePath) {
     const match = filePath.match(/packages\/skin\/src\/sass\/([^\/]+)\//);
@@ -81,7 +124,7 @@ function extractComponentFromPath(filePath) {
         return null;
     }
 
-    return toStoryTitleFormat(componentDir);
+    return componentDir; // Return raw directory name (e.g., 'alert-dialog')
 }
 
 /**
@@ -156,23 +199,38 @@ async function main() {
             return;
         }
 
-        // Extract unique component names from all affected files
-        const changedComponents = new Set();
+        // Extract unique component directories from all affected files
+        const changedComponentDirs = new Set();
 
         allAffectedFiles.forEach((file) => {
-            const component = extractComponentFromPath(file);
-            if (component) {
-                changedComponents.add(component);
+            const componentDir = extractComponentFromPath(file);
+            if (componentDir) {
+                changedComponentDirs.add(componentDir);
             }
         });
 
-        if (changedComponents.size === 0) {
+        if (changedComponentDirs.size === 0) {
             console.log("");
             return;
         }
 
-        const componentList = Array.from(changedComponents).sort().join(",");
-        console.log(componentList);
+        // For each component directory, get its actual story titles
+        // by importing and parsing the .stories.js files
+        const allStoryTitles = new Set();
+
+        for (const componentDir of changedComponentDirs) {
+            const titles = await getStoryTitlesForComponent(componentDir);
+            titles.forEach((title) => allStoryTitles.add(title));
+        }
+
+        if (allStoryTitles.size === 0) {
+            console.log("");
+            return;
+        }
+
+        // Output comma-separated story titles (e.g., "Alert Dialog,Button,Badge")
+        const titleList = Array.from(allStoryTitles).sort().join(",");
+        console.log(titleList);
     } catch (error) {
         // Critical error - exit with error code but don't pollute stdout
         process.exit(1);
