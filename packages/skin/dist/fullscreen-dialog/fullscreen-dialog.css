@@ -6,7 +6,7 @@
     --dialog-lightbox-max-width: 616px;
 }
 .fullscreen-dialog[role="dialog"] {
-    background-color: var(--dialog-scrim-color-show);
+    background-color: red;
     inset: 0;
     position: fixed;
     will-change: background-color;
