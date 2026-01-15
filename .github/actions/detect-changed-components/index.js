@@ -38,6 +38,9 @@ const GLOBAL_PATHS = [
   "packages/skin/.storybook/",
 ];
 
+// Directories to ignore (not component directories)
+const IGNORED_DIRS = ["global", "variables", "mixins", "bundles"];
+
 /**
  * Get list of changed files from git diff
  * Compares current branch against base branch
@@ -124,9 +127,13 @@ function extractComponentFromPath(filePath) {
   }
 
   const componentDir = match[1];
-  core.debug(
-    `[extractComponentFromPath] Matched component dir: ${componentDir}`,
-  );
+  core.debug(`[extractComponentFromPath] Matched component dir: ${componentDir}`);
+
+  // Skip non-component directories
+  if (IGNORED_DIRS.includes(componentDir)) {
+    core.debug(`[extractComponentFromPath] Skipping ignored dir: ${componentDir}`);
+    return null;
+  }
 
   core.debug(`[extractComponentFromPath] Returning: ${componentDir}`);
   return componentDir; // Return raw directory name (e.g., 'alert-dialog')
@@ -166,7 +173,7 @@ async function main() {
     // Log first few changed files for debugging
     if (changedFiles.length > 0) {
       core.startGroup("Changed files (first 10)");
-      changedFiles.slice(0, 10).forEach((file) => core.info(`  ${file}`));
+      changedFiles.slice(0, 10).forEach(file => core.info(`  ${file}`));
       if (changedFiles.length > 10) {
         core.info(`  ... and ${changedFiles.length - 10} more`);
       }
@@ -188,7 +195,7 @@ async function main() {
       core.endGroup();
       return;
     }
-    core.info("✓ No global changes detected");
+    core.info("✓ No global changes detected")
 
     // NEW: Build dependency graph and find all affected files
     let allAffectedFiles = new Set();
@@ -234,12 +241,8 @@ async function main() {
         dependents.forEach((dep) => allAffectedFiles.add(dep));
       }
 
-      core.info(
-        `✓ Analyzed ${scssFileCount} SCSS file(s) from ${changedFiles.length} total changed files`,
-      );
-      core.info(
-        `✓ Found ${allAffectedFiles.size} total affected file(s) (including transitive dependencies)`,
-      );
+      core.info(`✓ Analyzed ${scssFileCount} SCSS file(s) from ${changedFiles.length} total changed files`);
+      core.info(`✓ Found ${allAffectedFiles.size} total affected file(s) (including transitive dependencies)`);
       core.endGroup();
 
       // If no SCSS files were affected, fall back to original behavior
@@ -272,9 +275,7 @@ async function main() {
       }
     });
 
-    core.info(
-      `✓ Found ${changedComponentDirs.size} affected component(s): ${Array.from(changedComponentDirs).join(", ")}`,
-    );
+    core.info(`✓ Found ${changedComponentDirs.size} affected component(s): ${Array.from(changedComponentDirs).join(", ")}`);
     core.endGroup();
 
     if (changedComponentDirs.size === 0) {
@@ -297,9 +298,7 @@ async function main() {
       );
 
       if (titles.length > 0) {
-        core.info(
-          `    ✓ Found ${titles.length} story title(s): ${titles.join(", ")}`,
-        );
+        core.info(`    ✓ Found ${titles.length} story title(s): ${titles.join(", ")}`);
         titles.forEach((title) => allStoryTitles.add(title));
       } else {
         core.warning(`    No story titles found for ${componentDir}`);
