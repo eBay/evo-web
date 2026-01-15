@@ -160,13 +160,17 @@ async function main() {
     core.info(`Found ${changedFiles.length} changed files`);
 
     if (changedFiles.length === 0) {
+<<<<<<< HEAD
       core.info("No changed files detected - skipping Percy snapshots");
+=======
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
       core.setOutput("components", "");
       core.endGroup();
       return;
     }
 
     // Check for global changes first (existing behavior)
+<<<<<<< HEAD
     core.info("Checking for global file changes...");
     if (hasGlobalChanges(changedFiles)) {
       core.info("✓ Global files changed - running all snapshots");
@@ -175,11 +179,20 @@ async function main() {
       return;
     }
     core.info("✓ No global changes detected")
+=======
+    if (hasGlobalChanges(changedFiles)) {
+      core.setOutput("components", "all");
+      core.info("Global files changed - running all snapshots");
+      core.endGroup();
+      return;
+    }
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
 
     // NEW: Build dependency graph and find all affected files
     let allAffectedFiles = new Set();
 
     try {
+<<<<<<< HEAD
       core.startGroup("Building SASS dependency graph");
       core.info("Analyzing SASS dependencies to detect indirect impacts...");
 
@@ -204,6 +217,19 @@ async function main() {
         scssFileCount++;
         core.debug(`Analyzing SCSS file: ${file}`);
 
+=======
+      // Build forward and reverse dependency graphs
+      const forwardGraph = await analyzer.buildDependencyGraph(sassDir);
+      const reverseGraph = analyzer.buildReverseDependencyGraph(forwardGraph);
+
+      // For each changed file, find all its dependents
+      for (const file of changedFiles) {
+        // Only analyze SCSS files
+        if (!file.endsWith(".scss")) {
+          continue;
+        }
+
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
         // Convert to absolute path for graph lookup
         // git diff returns paths relative to repo root, so join with repo root
         const repoRoot = process.cwd();
@@ -214,6 +240,7 @@ async function main() {
 
         // Find all files that transitively depend on this changed file
         const dependents = analyzer.findAllDependents(absPath, reverseGraph);
+<<<<<<< HEAD
         if (dependents.size > 0) {
           core.info(`  ${file} affects ${dependents.size} other file(s)`);
         }
@@ -227,6 +254,13 @@ async function main() {
       // If no SCSS files were affected, fall back to original behavior
       if (allAffectedFiles.size === 0) {
         core.info("No SCSS files in changes - analyzing all changed files");
+=======
+        dependents.forEach((dep) => allAffectedFiles.add(dep));
+      }
+
+      // If no SCSS files were affected, fall back to original behavior
+      if (allAffectedFiles.size === 0) {
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
         allAffectedFiles = new Set(changedFiles);
       }
     } catch (error) {
@@ -240,22 +274,32 @@ async function main() {
     }
 
     // Extract unique component directories from all affected files
+<<<<<<< HEAD
     core.startGroup("Extracting component directories");
+=======
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
     const changedComponentDirs = new Set();
 
     allAffectedFiles.forEach((file) => {
       const componentDir = extractComponentFromPath(file);
       if (componentDir) {
+<<<<<<< HEAD
         core.debug(`  ${file} → ${componentDir}`);
+=======
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
         changedComponentDirs.add(componentDir);
       }
     });
 
+<<<<<<< HEAD
     core.info(`✓ Found ${changedComponentDirs.size} affected component(s): ${Array.from(changedComponentDirs).join(", ")}`);
     core.endGroup();
 
     if (changedComponentDirs.size === 0) {
       core.info("No component directories affected - skipping Percy snapshots");
+=======
+    if (changedComponentDirs.size === 0) {
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
       core.setOutput("components", "");
       core.endGroup();
       return;
@@ -263,6 +307,7 @@ async function main() {
 
     // For each component directory, get its actual story titles
     // by importing and parsing the .stories.js files
+<<<<<<< HEAD
     core.startGroup("Extracting story titles from components");
     const allStoryTitles = new Set();
 
@@ -283,6 +328,16 @@ async function main() {
 
     if (allStoryTitles.size === 0) {
       core.warning("No story titles found - skipping Percy snapshots");
+=======
+    const allStoryTitles = new Set();
+
+    for (const componentDir of changedComponentDirs) {
+      const titles = await getStoryTitlesForComponent(componentDir, sassDir);
+      titles.forEach((title) => allStoryTitles.add(title));
+    }
+
+    if (allStoryTitles.size === 0) {
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
       core.setOutput("components", "");
       core.endGroup();
       return;
@@ -291,7 +346,11 @@ async function main() {
     // Output comma-separated story titles (e.g., "Alert Dialog,Button,Badge")
     const titleList = Array.from(allStoryTitles).sort().join(",");
     core.setOutput("components", titleList);
+<<<<<<< HEAD
     core.info(`\n✓ Output set: ${titleList}`);
+=======
+    core.info(`Changed components: ${titleList}`);
+>>>>>>> 2ff96043c (chore: move scripts to github actions for better error logging)
     core.endGroup();
   } catch (error) {
     core.setFailed(
