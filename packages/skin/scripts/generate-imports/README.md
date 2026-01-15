@@ -19,7 +19,6 @@ By default, the script scans all files in the `dist` folder and for each folder 
 | skip         | array  | A list of modules in `dist` folder to skip and not create files for                                                                                                                                            |
 | skipIndex    | array  | A list of modules that should not go into `index.css` and `index.js` by default                                                                                                                                |
 | overrideFile | object | Each key will be a module, with each value will be a custom filename. By default the lookup will be `[module].css` files in dist. This will override in case another filetype should be looked up.             |
-| addModules   | object | Each key will be a module name, while each value will be an array. These will be additional requires that each module will need                                                                                |
 
 ## Example configs
 
@@ -64,46 +63,6 @@ require('./utility');
         "require: ./root",
         "require: ./global",
         "require: ./utility"
-    ]
-}
-```
-
-### addModules
-
-Config:
-
-```
-{
-   "addModules": {
-        "infotip": [
-            "icon-button"
-        ]
-   }
-}
-```
-
-Output:
-`infotip.js`
-
-```
-require('./icon-button');
-require('./dist/infotip/infotip.css');
-```
-
-`infotip.css`
-
-```
-@import './icon-button';
-@import './dist/infotip/infotip.css';
-```
-
-`infotip.browser.json`
-
-```
-{
-    "dependencies": [
-        "require: ./icon-button",
-        "require: ./infotip"
     ]
 }
 ```

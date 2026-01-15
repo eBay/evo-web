@@ -201,7 +201,10 @@ async function main() {
       const forwardGraph = await analyzer.buildDependencyGraph(sassDirAbsolute);
       core.info(`✓ Built dependency graph with ${forwardGraph.size} files`);
 
-      const reverseGraph = analyzer.buildReverseDependencyGraph(forwardGraph);
+      const reverseGraph = analyzer.buildReverseDependencyGraph(
+        forwardGraph,
+        sassDirAbsolute,
+      );
       core.info(`✓ Built reverse dependency graph`);
       core.endGroup();
 

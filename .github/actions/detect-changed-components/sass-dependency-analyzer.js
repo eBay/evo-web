@@ -15,22 +15,52 @@
 
 const fs = require("fs/promises");
 const path = require("path");
-
-// Try to require @actions/core for GitHub Actions integration
-// Falls back to console.log if not in Actions environment
-let core;
-try {
-  core = require("@actions/core");
-} catch (e) {
-  // Not in GitHub Actions environment, use console.log fallback
-  core = {
-    debug: (...args) => console.log(...args),
-  };
-}
+const core = require("@actions/core");
 
 // Regex to match @use and @forward directives
 // Matches: @use "../path/to/file" or @forward '../another/file'
 const SASS_IMPORT_REGEX = /@(?:use|forward)\s+['"]([^'"]+)['"]/g;
+
+/**
+ * Module dependencies map
+ *
+ * Maps: changed module → modules that need to be re-snapshotted
+ * These represent CSS class-based dependencies found in story files.
+ *
+ * For example, the calendar module uses icon-button class in its stories,
+ * so when icon-button changes, calendar needs Percy snapshots even though
+ * there's no Sass @use/@forward relationship.
+ */
+const MODULE_DEPENDENCIES = {
+  icon: ["icon-button", "breadcrumbs", "card"],
+  "progress-spinner": ["icon-button"],
+  "icon-button": [
+    "calendar",
+    "drawer-dialog",
+    "fullscreen-dialog",
+    "infotip",
+    "lightbox-dialog",
+    "pagination",
+    "panel-dialog",
+    "toast-dialog",
+    "tourtip",
+  ],
+  button: [
+    "listbox-button",
+    "menu-button",
+    "page-notice",
+    "section-notice",
+    "card",
+    "split-button",
+  ],
+  "menu-button": ["split-button"],
+  calendar: ["date-textbox"],
+  textbox: ["date-textbox", "number-input"],
+  "toggle-button": ["toggle-button-group"],
+  "chart-legend": ["donut-chart"],
+  chip: ["chips-combobox"],
+  combobox: ["chips-combobox"],
+};
 
 /**
  * Parse SCSS file content to extract @use and @forward import paths
@@ -57,7 +87,7 @@ function parseScssImports(fileContent) {
       continue;
     }
 
-    // Skip external packages (though rare in @use/@forward)
+    // Skip external packages
     if (!importPath.startsWith(".") && !importPath.startsWith("/")) {
       continue;
     }
@@ -131,7 +161,6 @@ async function findScssFiles(dir) {
   try {
     core.debug(`[Percy Deps] Searching for SCSS files in: ${dir}`);
 
-    // Check if directory exists
     try {
       const stats = await fs.stat(dir);
       if (!stats.isDirectory()) {
@@ -145,14 +174,10 @@ async function findScssFiles(dir) {
       return [];
     }
 
-    // Use fs.glob to find all .scss files
-    // Pattern: **/*.scss matches all .scss files recursively
-    // Note: fs.glob returns an AsyncGenerator, not a Promise<Array>
     const files = [];
     const globIterator = fs.glob("**/*.scss", {
       cwd: dir,
       exclude: (name) => {
-        // Exclude node_modules and hidden directories
         return name.includes("node_modules") || name.includes("/.");
       },
     });
@@ -242,9 +267,11 @@ async function buildDependencyGraph(sassDir) {
  * Build reverse dependency graph (file → files that depend on it)
  *
  * Inverts the forward dependency graph to create a map of each file
- * to all the files that import it.
+ * to all the files that import it. Also merges in manual module dependencies
+ * that aren't captured by @use/@forward (e.g., CSS class-based dependencies).
  *
  * @param {Map<string, Array<string>>} forwardGraph - Forward dependency graph from buildDependencyGraph()
+ * @param {string} sassDir - Root SASS directory (e.g., packages/skin/src/sass) for resolving module names
  * @returns {Map<string, Array<string>>} Map of file path → array of dependent paths
  *
  * @example
@@ -252,20 +279,18 @@ async function buildDependencyGraph(sassDir) {
  *   ['a.scss', ['b.scss', 'c.scss']],
  *   ['d.scss', ['b.scss']]
  * ]);
- * const reverse = buildReverseDependencyGraph(forward);
+ * const reverse = buildReverseDependencyGraph(forward, '/path/to/sass');
  * // Returns: Map {
  * //   'b.scss' => ['a.scss', 'd.scss'],
  * //   'c.scss' => ['a.scss']
  * // }
  */
-function buildReverseDependencyGraph(forwardGraph) {
+function buildReverseDependencyGraph(forwardGraph, sassDir) {
   const reverseGraph = new Map();
 
-  // For each file and its dependencies
+  // Step 1: Build reverse graph from Sass @use/@forward imports
   for (const [file, dependencies] of forwardGraph.entries()) {
-    // For each dependency
     for (const dep of dependencies) {
-      // Add the current file as a dependent of that dependency
       if (!reverseGraph.has(dep)) {
         reverseGraph.set(dep, []);
       }
@@ -274,8 +299,51 @@ function buildReverseDependencyGraph(forwardGraph) {
   }
 
   core.debug(
-    `[Percy Deps] Reverse graph built with ${reverseGraph.size} files that have dependents`,
+    `[Percy Deps] Reverse graph built from Sass imports: ${reverseGraph.size} files with dependents`,
   );
+
+  // Step 2: Merge manual module dependencies
+  // Convert module names to file paths and add to reverse graph
+  let manualDepsAdded = 0;
+  for (const [changedModule, dependentModules] of Object.entries(
+    MODULE_DEPENDENCIES,
+  )) {
+    // Find the main SCSS file for the changed module
+    // Pattern: {sassDir}/{moduleName}/{moduleName}.scss
+    const changedFilePath = path.join(
+      sassDir,
+      changedModule,
+      `${changedModule}.scss`,
+    );
+
+    // Initialize reverse graph entry if it doesn't exist
+    if (!reverseGraph.has(changedFilePath)) {
+      reverseGraph.set(changedFilePath, []);
+    }
+
+    // Add each dependent module to the reverse graph
+    for (const dependentModule of dependentModules) {
+      const dependentFilePath = path.join(
+        sassDir,
+        dependentModule,
+        `${dependentModule}.scss`,
+      );
+
+      // Add to reverse graph (avoiding duplicates)
+      if (!reverseGraph.get(changedFilePath).includes(dependentFilePath)) {
+        reverseGraph.get(changedFilePath).push(dependentFilePath);
+        manualDepsAdded++;
+      }
+    }
+  }
+
+  core.debug(
+    `[Percy Deps] Added ${manualDepsAdded} manual dependencies to reverse graph`,
+  );
+  core.debug(
+    `[Percy Deps] Final reverse graph has ${reverseGraph.size} files with dependents`,
+  );
+
   return reverseGraph;
 }
 
