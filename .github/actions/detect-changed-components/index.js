@@ -153,12 +153,7 @@ async function main() {
     const sassDir = core.getInput("sass-dir", { required: true });
     const baseBranch = core.getInput("base-branch") || "main";
 
-    // Convert relative path to absolute path
-    const sassDirAbsolute = path.isAbsolute(sassDir)
-      ? sassDir
-      : path.join(process.cwd(), sassDir);
-
-    core.info(`Using SASS directory: ${sassDir} (${sassDirAbsolute})`);
+    core.info(`Using SASS directory: ${sassDir}`);
     core.info(`Comparing against base branch: ${baseBranch}`);
 
     const changedFiles = getChangedFiles(baseBranch);
@@ -189,7 +184,7 @@ async function main() {
       core.info("Analyzing SASS dependencies to detect indirect impacts...");
 
       // Build forward and reverse dependency graphs
-      const forwardGraph = await analyzer.buildDependencyGraph(sassDirAbsolute);
+      const forwardGraph = await analyzer.buildDependencyGraph(sassDir);
       core.info(`✓ Built dependency graph with ${forwardGraph.size} files`);
 
       const reverseGraph = analyzer.buildReverseDependencyGraph(forwardGraph);
@@ -273,10 +268,7 @@ async function main() {
 
     for (const componentDir of changedComponentDirs) {
       core.info(`  Analyzing component: ${componentDir}`);
-      const titles = await getStoryTitlesForComponent(
-        componentDir,
-        sassDirAbsolute,
-      );
+      const titles = await getStoryTitlesForComponent(componentDir, sassDir);
 
       if (titles.length > 0) {
         core.info(`    ✓ Found ${titles.length} story title(s): ${titles.join(", ")}`);

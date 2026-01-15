@@ -136,20 +136,6 @@ async function resolveScssPath(fromFile, importPath) {
  */
 async function findScssFiles(dir) {
   try {
-    log(`Searching for SCSS files in: ${dir}`);
-
-    // Check if directory exists
-    try {
-      const stats = await fs.stat(dir);
-      if (!stats.isDirectory()) {
-        core.debug(`[Percy Deps] Path is not a directory: ${dir}`);
-        return [];
-      }
-    } catch (error) {
-      core.debug(`[Percy Deps] Directory does not exist: ${dir} - ${error.message}`);
-      return [];
-    }
-
     // Use fs.glob to find all .scss files
     // Pattern: **/*.scss matches all .scss files recursively
     // Note: fs.glob returns an AsyncGenerator, not a Promise<Array>
@@ -167,11 +153,9 @@ async function findScssFiles(dir) {
       files.push(path.join(dir, file));
     }
 
-    log(`Found ${files.length} SCSS files in ${dir}`);
     return files;
   } catch (error) {
-    core.debug(`[Percy Deps] Error finding SCSS files in "${dir}": ${error.message}`);
-    core.debug(`[Percy Deps] Stack: ${error.stack}`);
+    log(`Error finding SCSS files in "${dir}":`, error.message);
     return [];
   }
 }
