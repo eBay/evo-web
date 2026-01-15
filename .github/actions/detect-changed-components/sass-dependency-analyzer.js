@@ -329,55 +329,9 @@ function findAllDependents(changedFile, reverseGraph) {
   return result;
 }
 
-/**
- * Extract component name from file path
- *
- * Converts SCSS file paths to component names for Percy story matching.
- * Pattern: packages/skin/src/sass/{component-name}/... → Component-Name
- *
- * @param {string} filePath - Absolute or relative file path
- * @param {Array<string>} ignoredDirs - Directories to skip (not components)
- * @returns {string|null} Component name in Title-Case, or null if not a component
- *
- * @example
- * filePathToComponentName('packages/skin/src/sass/alert-dialog/alert-dialog.scss')
- * // Returns: 'Alert-Dialog'
- *
- * filePathToComponentName('packages/skin/src/sass/mixins/private/_button-mixins.scss')
- * // Returns: null (mixins is ignored)
- */
-function filePathToComponentName(
-  filePath,
-  ignoredDirs = ["global", "variables", "mixins", "bundles"],
-) {
-  // Match pattern: packages/skin/src/sass/{component-name}/...
-  const match = filePath.match(/packages\/skin\/src\/sass\/([^\/]+)\//);
-
-  if (!match || !match[1]) {
-    return null;
-  }
-
-  const componentDir = match[1];
-
-  // Skip non-component directories
-  if (ignoredDirs.includes(componentDir)) {
-    return null;
-  }
-
-  // Convert kebab-case to Title-Case
-  // 'alert-dialog' → 'Alert-Dialog'
-  return componentDir
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join("-");
-}
-
 // Export functions for use in detect-changed-components.js
 module.exports = {
-  parseScssImports,
-  resolveScssPath,
   buildDependencyGraph,
   buildReverseDependencyGraph,
   findAllDependents,
-  filePathToComponentName,
 };
