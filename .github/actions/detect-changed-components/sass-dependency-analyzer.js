@@ -8,8 +8,8 @@
  *
  * Key Features:
  * - Parses modern Sass @use/@forward syntax (not legacy @import)
- * - Builds forward and reverse dependency graphs
- * - Finds transitive dependencies (if C→B→A, changing C affects A, B, and C)
+ * - Builds dependency graph mapping files to their dependents (files that import them)
+ * - Finds transitive dependencies (if C→B→A, changing A affects B and C)
  * - Handles circular dependencies gracefully
  */
 
@@ -199,25 +199,33 @@ async function findScssFiles(dir) {
 }
 
 /**
- * Build forward dependency graph (file → its dependencies)
+ * Build dependency graph (file → files that depend on it)
  *
- * Traverses all SCSS files in the given directory and builds a map of
- * each file to the files it imports via @use/@forward.
+ * Analyzes all SCSS files and builds a map of each file to all the files that depend on it.
+ * This enables efficient "impact analysis" - when a file changes, we can quickly find all
+ * files that need to be rebuilt.
+ *
+ * Implementation:
+ * 1. Builds import relationships (file → files it imports)
+ * 2. Inverts to dependency relationships (file → files that import it)
+ * 3. Merges manual module dependencies for CSS class-based relationships
  *
  * @param {string} sassDir - Root SASS directory to analyze (e.g., packages/skin/src/sass)
- * @returns {Promise<Map<string, Array<string>>>} Promise resolving to map of file path → array of dependency paths
+ * @returns {Promise<Map<string, Array<string>>>} Map of file path → array of dependent file paths
  *
  * @example
  * const graph = await buildDependencyGraph('/path/to/sass');
  * // Returns: Map {
- * //   '/path/to/button/button.scss' => ['/path/to/variables/variables.scss', ...],
+ * //   'variables.scss' => ['button.scss', 'checkbox.scss', ...],
+ * //   'mixins.scss' => ['button.scss', ...],
  * //   ...
  * // }
  */
 async function buildDependencyGraph(sassDir) {
-  const graph = new Map();
-
   core.debug(`[Percy Deps] Building dependency graph for: ${sassDir}`);
+
+  // Step 1: Build import graph (file → files it imports)
+  const importGraph = new Map();
 
   // Find all SCSS files using glob
   const scssFiles = await findScssFiles(sassDir);
@@ -244,7 +252,7 @@ async function buildDependencyGraph(sassDir) {
         }
       }
 
-      graph.set(filePath, resolvedDeps);
+      importGraph.set(filePath, resolvedDeps);
 
       if (resolvedDeps.length > 0) {
         core.debug(
@@ -259,51 +267,26 @@ async function buildDependencyGraph(sassDir) {
     }
   }
 
-  core.debug(`[Percy Deps] Dependency graph built with ${graph.size} files`);
-  return graph;
-}
+  core.debug(`[Percy Deps] Import graph built with ${importGraph.size} files`);
 
-/**
- * Build reverse dependency graph (file → files that depend on it)
- *
- * Inverts the forward dependency graph to create a map of each file
- * to all the files that import it. Also merges in manual module dependencies
- * that aren't captured by @use/@forward (e.g., CSS class-based dependencies).
- *
- * @param {Map<string, Array<string>>} forwardGraph - Forward dependency graph from buildDependencyGraph()
- * @param {string} sassDir - Root SASS directory (e.g., packages/skin/src/sass) for resolving module names
- * @returns {Map<string, Array<string>>} Map of file path → array of dependent paths
- *
- * @example
- * const forward = new Map([
- *   ['a.scss', ['b.scss', 'c.scss']],
- *   ['d.scss', ['b.scss']]
- * ]);
- * const reverse = buildReverseDependencyGraph(forward, '/path/to/sass');
- * // Returns: Map {
- * //   'b.scss' => ['a.scss', 'd.scss'],
- * //   'c.scss' => ['a.scss']
- * // }
- */
-function buildReverseDependencyGraph(forwardGraph, sassDir) {
-  const reverseGraph = new Map();
+  // Step 2: Invert to dependency graph (file → files that import it)
+  const dependencyGraph = new Map();
 
-  // Step 1: Build reverse graph from Sass @use/@forward imports
-  for (const [file, dependencies] of forwardGraph.entries()) {
-    for (const dep of dependencies) {
-      if (!reverseGraph.has(dep)) {
-        reverseGraph.set(dep, []);
+  for (const [file, imports] of importGraph.entries()) {
+    for (const importedFile of imports) {
+      if (!dependencyGraph.has(importedFile)) {
+        dependencyGraph.set(importedFile, []);
       }
-      reverseGraph.get(dep).push(file);
+      dependencyGraph.get(importedFile).push(file);
     }
   }
 
   core.debug(
-    `[Percy Deps] Reverse graph built from Sass imports: ${reverseGraph.size} files with dependents`,
+    `[Percy Deps] Dependency graph built from Sass imports: ${dependencyGraph.size} files with dependents`,
   );
 
-  // Step 2: Merge manual module dependencies
-  // Convert module names to file paths and add to reverse graph
+  // Step 3: Merge manual module dependencies
+  // Convert module names to file paths and add to dependency graph
   let manualDepsAdded = 0;
   for (const [changedModule, dependentModules] of Object.entries(
     MODULE_DEPENDENCIES,
@@ -316,12 +299,12 @@ function buildReverseDependencyGraph(forwardGraph, sassDir) {
       `${changedModule}.scss`,
     );
 
-    // Initialize reverse graph entry if it doesn't exist
-    if (!reverseGraph.has(changedFilePath)) {
-      reverseGraph.set(changedFilePath, []);
+    // Initialize dependency graph entry if it doesn't exist
+    if (!dependencyGraph.has(changedFilePath)) {
+      dependencyGraph.set(changedFilePath, []);
     }
 
-    // Add each dependent module to the reverse graph
+    // Add each dependent module to the dependency graph
     for (const dependentModule of dependentModules) {
       const dependentFilePath = path.join(
         sassDir,
@@ -329,22 +312,22 @@ function buildReverseDependencyGraph(forwardGraph, sassDir) {
         `${dependentModule}.scss`,
       );
 
-      // Add to reverse graph (avoiding duplicates)
-      if (!reverseGraph.get(changedFilePath).includes(dependentFilePath)) {
-        reverseGraph.get(changedFilePath).push(dependentFilePath);
+      // Add to dependency graph (avoiding duplicates)
+      if (!dependencyGraph.get(changedFilePath).includes(dependentFilePath)) {
+        dependencyGraph.get(changedFilePath).push(dependentFilePath);
         manualDepsAdded++;
       }
     }
   }
 
   core.debug(
-    `[Percy Deps] Added ${manualDepsAdded} manual dependencies to reverse graph`,
+    `[Percy Deps] Added ${manualDepsAdded} manual dependencies to graph`,
   );
   core.debug(
-    `[Percy Deps] Final reverse graph has ${reverseGraph.size} files with dependents`,
+    `[Percy Deps] Final dependency graph has ${dependencyGraph.size} files with dependents`,
   );
 
-  return reverseGraph;
+  return dependencyGraph;
 }
 
 /**
@@ -356,18 +339,18 @@ function buildReverseDependencyGraph(forwardGraph, sassDir) {
  * Handles circular dependencies by tracking visited files.
  *
  * @param {string} changedFile - Absolute path to the changed file
- * @param {Map<string, Array<string>>} reverseGraph - Reverse dependency graph
+ * @param {Map<string, Array<string>>} dependencyGraph - Dependency graph from buildDependencyGraph()
  * @returns {Set<string>} Set of all file paths that depend on the changed file
  *
  * @example
- * const reverseGraph = new Map([
+ * const graph = new Map([
  *   ['variables.scss', ['mixins.scss']],
  *   ['mixins.scss', ['button.scss', 'checkbox.scss']]
  * ]);
- * findAllDependents('variables.scss', reverseGraph)
+ * findAllDependents('variables.scss', graph)
  * // Returns: Set { 'mixins.scss', 'button.scss', 'checkbox.scss' }
  */
-function findAllDependents(changedFile, reverseGraph) {
+function findAllDependents(changedFile, dependencyGraph) {
   const result = new Set();
   const queue = [changedFile];
   const visited = new Set();
@@ -382,7 +365,7 @@ function findAllDependents(changedFile, reverseGraph) {
     visited.add(current);
 
     // Get direct dependents
-    const dependents = reverseGraph.get(current) || [];
+    const dependents = dependencyGraph.get(current) || [];
 
     // Add each dependent to results and queue for transitive search
     for (const dependent of dependents) {
@@ -400,6 +383,5 @@ function findAllDependents(changedFile, reverseGraph) {
 // Export functions for use in detect-changed-components.js
 module.exports = {
   buildDependencyGraph,
-  buildReverseDependencyGraph,
   findAllDependents,
 };

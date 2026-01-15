@@ -197,15 +197,12 @@ async function main() {
       core.startGroup("Building SASS dependency graph");
       core.info("Analyzing SASS dependencies to detect indirect impacts...");
 
-      // Build forward and reverse dependency graphs
-      const forwardGraph = await analyzer.buildDependencyGraph(sassDirAbsolute);
-      core.info(`✓ Built dependency graph with ${forwardGraph.size} files`);
-
-      const reverseGraph = analyzer.buildReverseDependencyGraph(
-        forwardGraph,
-        sassDirAbsolute,
+      // Build dependency graph (file → files that depend on it)
+      const dependencyGraph =
+        await analyzer.buildDependencyGraph(sassDirAbsolute);
+      core.info(
+        `✓ Built dependency graph with ${dependencyGraph.size} files with dependents`,
       );
-      core.info(`✓ Built reverse dependency graph`);
       core.endGroup();
 
       core.startGroup("Analyzing impact of changed files");
@@ -230,7 +227,7 @@ async function main() {
         allAffectedFiles.add(absPath);
 
         // Find all files that transitively depend on this changed file
-        const dependents = analyzer.findAllDependents(absPath, reverseGraph);
+        const dependents = analyzer.findAllDependents(absPath, dependencyGraph);
         if (dependents.size > 0) {
           core.info(`  ${file} affects ${dependents.size} other file(s)`);
         }
