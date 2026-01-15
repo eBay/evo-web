@@ -54,10 +54,6 @@ jobs:
           sass-dir: 'packages/skin/src/sass'
           base-branch: 'main'
 
-      - name: Build Storybook for Percy
-        if: steps.detect.outputs.components != ''
-        run: npm run build:snapshots -w packages/skin
-
       - name: Run Percy (Partial)
         if: steps.detect.outputs.components != '' && steps.detect.outputs.components != 'all'
         env:
@@ -87,9 +83,6 @@ jobs:
 
       - name: Install dependencies
         run: npm i
-
-      - name: Build Storybook for Percy
-        run: npm run build:snapshots -w packages/skin
 
       - name: Run Percy (All - Auto-approve)
         env:
