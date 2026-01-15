@@ -118,24 +118,18 @@ async function getStoryTitlesForComponent(componentDir, sassDir) {
  * @returns {string|null} Component directory name (e.g., 'alert-dialog') or null
  */
 function extractComponentFromPath(filePath) {
-  core.debug(`[extractComponentFromPath] Checking: ${filePath}`);
-
   const match = filePath.match(/packages\/skin\/src\/sass\/([^\/]+)\//);
   if (!match || !match[1]) {
-    core.debug(`[extractComponentFromPath] No match for pattern`);
     return null;
   }
 
   const componentDir = match[1];
-  core.debug(`[extractComponentFromPath] Matched component dir: ${componentDir}`);
 
   // Skip non-component directories
   if (IGNORED_DIRS.includes(componentDir)) {
-    core.debug(`[extractComponentFromPath] Skipping ignored dir: ${componentDir}`);
     return null;
   }
 
-  core.debug(`[extractComponentFromPath] Returning: ${componentDir}`);
   return componentDir; // Return raw directory name (e.g., 'alert-dialog')
 }
 
@@ -169,16 +163,6 @@ async function main() {
 
     const changedFiles = getChangedFiles(baseBranch);
     core.info(`Found ${changedFiles.length} changed files`);
-
-    // Log first few changed files for debugging
-    if (changedFiles.length > 0) {
-      core.startGroup("Changed files (first 10)");
-      changedFiles.slice(0, 10).forEach(file => core.info(`  ${file}`));
-      if (changedFiles.length > 10) {
-        core.info(`  ... and ${changedFiles.length - 10} more`);
-      }
-      core.endGroup();
-    }
 
     if (changedFiles.length === 0) {
       core.info("No changed files detected - skipping Percy snapshots");
@@ -262,16 +246,13 @@ async function main() {
 
     // Extract unique component directories from all affected files
     core.startGroup("Extracting component directories");
-    core.info(`Processing ${allAffectedFiles.size} affected file(s)`);
     const changedComponentDirs = new Set();
 
     allAffectedFiles.forEach((file) => {
       const componentDir = extractComponentFromPath(file);
       if (componentDir) {
-        core.info(`  ${file} → ${componentDir}`);
+        core.debug(`  ${file} → ${componentDir}`);
         changedComponentDirs.add(componentDir);
-      } else {
-        core.debug(`  ${file} → (no component match)`);
       }
     });
 

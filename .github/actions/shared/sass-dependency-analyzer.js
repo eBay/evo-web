@@ -32,6 +32,15 @@ try {
 // Matches: @use "../path/to/file" or @forward '../another/file'
 const SASS_IMPORT_REGEX = /@(?:use|forward)\s+['"]([^'"]+)['"]/g;
 
+// Enable debug logging with DEBUG_PERCY_DEPS=true
+const DEBUG = process.env.DEBUG_PERCY_DEPS === "true";
+
+function log(...args) {
+  if (DEBUG) {
+    core.debug(`[Percy Deps] ${args.join(" ")}`);
+  }
+}
+
 /**
  * Parse SCSS file content to extract @use and @forward import paths
  *
@@ -115,7 +124,7 @@ async function resolveScssPath(fromFile, importPath) {
   }
 
   // Couldn't resolve - warn but don't fail
-  core.debug(`[Percy Deps] Warning: Could not resolve import "${importPath}" from "${fromFile}"`);
+  log(`Warning: Could not resolve import "${importPath}" from "${fromFile}"`);
   return null;
 }
 
@@ -127,7 +136,7 @@ async function resolveScssPath(fromFile, importPath) {
  */
 async function findScssFiles(dir) {
   try {
-    core.debug(`[Percy Deps] Searching for SCSS files in: ${dir}`);
+    log(`Searching for SCSS files in: ${dir}`);
 
     // Check if directory exists
     try {
@@ -158,7 +167,7 @@ async function findScssFiles(dir) {
       files.push(path.join(dir, file));
     }
 
-    core.debug(`[Percy Deps] Found ${files.length} SCSS files in ${dir}`);
+    log(`Found ${files.length} SCSS files in ${dir}`);
     return files;
   } catch (error) {
     core.debug(`[Percy Deps] Error finding SCSS files in "${dir}": ${error.message}`);
@@ -186,16 +195,11 @@ async function findScssFiles(dir) {
 async function buildDependencyGraph(sassDir) {
   const graph = new Map();
 
-  core.debug(`[Percy Deps] Building dependency graph for: ${sassDir}`);
+  log(`Building dependency graph for: ${sassDir}`);
 
   // Find all SCSS files using glob
   const scssFiles = await findScssFiles(sassDir);
-  core.debug(`[Percy Deps] Found ${scssFiles.length} SCSS files to analyze`);
-
-  if (scssFiles.length > 0) {
-    core.debug(`[Percy Deps] Sample files (first 5):`);
-    scssFiles.slice(0, 5).forEach(file => core.debug(`[Percy Deps]   ${file}`));
-  }
+  log(`Found ${scssFiles.length} SCSS files`);
 
   // Parse each file for imports
   for (const filePath of scssFiles) {
@@ -214,17 +218,17 @@ async function buildDependencyGraph(sassDir) {
       graph.set(filePath, resolvedDeps);
 
       if (resolvedDeps.length > 0) {
-        core.debug(
-          `[Percy Deps] ${path.relative(sassDir, filePath)} imports ${resolvedDeps.length} files`,
+        log(
+          `${path.relative(sassDir, filePath)} imports ${resolvedDeps.length} files`,
         );
       }
     } catch (error) {
-      core.debug(`[Percy Deps] Warning: Could not parse file "${filePath}": ${error.message}`);
+      log(`Warning: Could not parse file "${filePath}":`, error.message);
       // Continue processing other files
     }
   }
 
-  core.debug(`[Percy Deps] Dependency graph built with ${graph.size} files`);
+  log(`Dependency graph built with ${graph.size} files`);
   return graph;
 }
 
@@ -263,8 +267,8 @@ function buildReverseDependencyGraph(forwardGraph) {
     }
   }
 
-  core.debug(
-    `[Percy Deps] Reverse graph built with ${reverseGraph.size} files that have dependents`,
+  log(
+    `Reverse graph built with ${reverseGraph.size} files that have dependents`,
   );
   return reverseGraph;
 }
@@ -313,8 +317,8 @@ function findAllDependents(changedFile, reverseGraph) {
     }
   }
 
-  core.debug(
-    `[Percy Deps] File ${path.basename(changedFile)} has ${result.size} transitive dependents`,
+  log(
+    `File ${path.basename(changedFile)} has ${result.size} transitive dependents`,
   );
   return result;
 }
