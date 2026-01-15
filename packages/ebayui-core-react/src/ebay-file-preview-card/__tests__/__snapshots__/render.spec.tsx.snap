@@ -146,6 +146,7 @@ exports[`<EbayFilePreviewCard> > renders with document 1`] = `
           aria-controls="1234"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-label="Menu button"
           class="menu-button__button icon-btn"
           type="button"
         >
@@ -230,6 +231,7 @@ exports[`<EbayFilePreviewCard> > renders with multi action button 1`] = `
           aria-controls="1234"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-label="Menu button"
           class="menu-button__button icon-btn"
           type="button"
         >
@@ -370,6 +372,7 @@ exports[`<EbayFilePreviewCard> > renders with video 1`] = `
           aria-controls="1234"
           aria-expanded="false"
           aria-haspopup="true"
+          aria-label="Menu button"
           class="menu-button__button icon-btn"
           type="button"
         >

@@ -8,6 +8,7 @@ $ const {
     infoText,
     menuActions,
     a11ySeeMoreText,
+    a11yMenuButtonText,
     footerTitle,
     footerSubtitle,
     action,
@@ -82,6 +83,7 @@ $ file.type = type;
                 <if(menuActions?.length)>
                     <ebay-menu-button
                         class="file-preview-card__action"
+                        a11yText=a11yMenuButtonText
                         variant="overflow"
                         on-select("handleMenuSelect")
                     >

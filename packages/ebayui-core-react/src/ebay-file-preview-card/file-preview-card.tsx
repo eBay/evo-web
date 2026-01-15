@@ -17,6 +17,7 @@ export type EbayFilePreviewCardProps = ComponentProps<"div"> & {
     status?: "uploading";
     infoText?: string;
     menuActions?: FilePreviewCardMenuAction[];
+    a11yMenuButtonText?: string;
     seeMore?: number;
     a11ySeeMoreText?: string;
     footerTitle?: string;
@@ -40,6 +41,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     footerSubtitle,
     a11ySeeMoreText,
     menuActions,
+    a11yMenuButtonText,
     infoText,
     href,
     onCancel,
@@ -98,6 +100,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
                 ) : (
                     <FilePreviewAction
                         a11yCancelUploadText={a11yCancelUploadText}
+                        a11yMenuButtonText={a11yMenuButtonText}
                         status={status}
                         menuActions={menuActions}
                         onMenuAction={onMenuAction}

@@ -60,6 +60,14 @@ export default {
                 category: "Menu Actions",
             },
         },
+        a11yMenuButtonText: {
+            type: "string",
+            description:
+                "Accessibility label for menu button. This is required if menuActions are set",
+            table: {
+                category: "Menu Actions",
+            },
+        },
         seeMore: {
             type: "number",
             control: { type: "number" },
@@ -182,6 +190,7 @@ export const MultipleMenuActions = Template.bind({});
 MultipleMenuActions.args = {
     a11yCancelUploadText: "Cancel upload",
     deleteText: "Delete",
+    a11yMenuButtonText: "Menu Actions",
     file: {
         name: "file-name.jpg",
         type: "image/jpeg",

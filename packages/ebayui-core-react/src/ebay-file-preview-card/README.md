@@ -55,6 +55,7 @@ import "@ebay/skin/file-preview-card.css";
 | `infoText`             | `String`                                                     | No       | Text to display info in file if not image.                                                                   |      |
 | `file`                 | `File` or `{name: string, type?: File[type], src?: string }` | No       | File object, can be raw platform `File` or an object containing `name`, `type`, and a `src` for the preview. |      |
 | `menuActions`          | `{event: string, label: string }[]`                          | No       | Array of menu actions, containing event and label.                                                           |      |
+| `a11yMenuButtonText`   | `String`                                                     | No       | a11y text for menu button button. This is required when menuActions is set.                                  |      |
 | `seeMore`              | `Number`                                                     | No       | Passing a number here will convert the card to a "see more" card.                                            |      |
 | `a11ySeeMoreText`      | `String`                                                     | No       | a11y text for see more button.                                                                               |
 | `href`                 | `String`                                                     | No       | href that will wrapper the file preview card.                                                                |

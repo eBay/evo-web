@@ -100,6 +100,7 @@ describe("<EbayFilePreviewCard>", () => {
                     type: "image/jpeg",
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
+                a11yMenuButtonText="Menu button"
                 menuActions={[
                     {
                         event: "edit",
@@ -129,6 +130,7 @@ describe("<EbayFilePreviewCard>", () => {
                     type: "image/jpeg",
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
+                a11yMenuButtonText="Menu button"
                 menuActions={[
                     {
                         event: "edit",
@@ -158,6 +160,7 @@ describe("<EbayFilePreviewCard>", () => {
                     type: "image/jpeg",
                     src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
                 }}
+                a11yMenuButtonText="Menu button"
                 menuActions={[
                     {
                         event: "edit",

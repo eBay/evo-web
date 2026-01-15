@@ -31,6 +31,7 @@ interface FilePreviewCardInput extends Omit<Marko.HTML.Div, `on${string}`> {
     action?: Marko.AttrTag<Marko.HTML.Button>;
     "see-more"?: number;
     "a11y-see-more-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-menu-button-text"?: Marko.HTMLAttributes["aria-label"];
     "footer-title"?: string;
     "footer-subtitle"?: string;
     "on-menu-action"?: (name: string, event: MenuButtonEvent) => void;

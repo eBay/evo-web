@@ -29,6 +29,12 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
             control: { type: "text" },
             description: "Text to display info in file if not image",
         },
+        a11yMenuButtonText: {
+            table: {
+                category: "Menu Actions",
+            },
+            description: "Accessibility text for menu button. This is required when menuActions is set",
+        },
         menuActions: {
             description: "Array of menu actions, containing `event` and `label`",
             table: {

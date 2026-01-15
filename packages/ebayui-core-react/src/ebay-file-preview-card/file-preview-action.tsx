@@ -14,6 +14,7 @@ export type FilePreviewActionProps = {
     deleteText?: string;
     status?: "uploading";
     a11yCancelUploadText?: string;
+    a11yMenuButtonText?: string;
     onMenuAction?: FilePreviewCardMenuActionHandler;
     onCancel?: EbayEventHandler<HTMLElement>;
     onDelete?: EbayEventHandler<HTMLElement>;
@@ -30,6 +31,7 @@ const FilePreviewAction: FC<FilePreviewActionProps> = ({
     onDelete,
     onAction,
     a11yCancelUploadText,
+    a11yMenuButtonText,
     action,
 }) => {
     const handleMenuSelect: FilePreviewCardMenuActionHandler = (e, selectedProps) => {
@@ -61,7 +63,12 @@ const FilePreviewAction: FC<FilePreviewActionProps> = ({
     if (menuActions?.length) {
         return (
             <>
-                <EbayMenuButton variant="overflow" className="file-preview-card__action" onSelect={handleMenuSelect}>
+                <EbayMenuButton
+                    variant="overflow"
+                    className="file-preview-card__action"
+                    a11yText={a11yMenuButtonText}
+                    onSelect={handleMenuSelect}
+                >
                     {menuActions.map((action) => (
                         <EbayMenuButtonItem value={action.event} key={action.label}>
                             {action.label}
