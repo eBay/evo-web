@@ -26,7 +26,7 @@ const { execSync } = require("child_process");
 const path = require("path");
 const fs = require("fs/promises");
 const core = require("@actions/core");
-const analyzer = require("../shared/sass-dependency-analyzer");
+const analyzer = require("./sass-dependency-analyzer");
 
 // Directories that affect all components (global changes)
 // Note: mixins/ is NOT in this list - dependency graph will handle mixin changes

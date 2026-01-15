@@ -115,7 +115,9 @@ async function resolveScssPath(fromFile, importPath) {
   }
 
   // Couldn't resolve - warn but don't fail
-  core.debug(`[Percy Deps] Warning: Could not resolve import "${importPath}" from "${fromFile}"`);
+  core.debug(
+    `[Percy Deps] Warning: Could not resolve import "${importPath}" from "${fromFile}"`,
+  );
   return null;
 }
 
@@ -137,7 +139,9 @@ async function findScssFiles(dir) {
         return [];
       }
     } catch (error) {
-      core.debug(`[Percy Deps] Directory does not exist: ${dir} - ${error.message}`);
+      core.debug(
+        `[Percy Deps] Directory does not exist: ${dir} - ${error.message}`,
+      );
       return [];
     }
 
@@ -161,7 +165,9 @@ async function findScssFiles(dir) {
     core.debug(`[Percy Deps] Found ${files.length} SCSS files in ${dir}`);
     return files;
   } catch (error) {
-    core.debug(`[Percy Deps] Error finding SCSS files in "${dir}": ${error.message}`);
+    core.debug(
+      `[Percy Deps] Error finding SCSS files in "${dir}": ${error.message}`,
+    );
     core.debug(`[Percy Deps] Stack: ${error.stack}`);
     return [];
   }
@@ -194,7 +200,9 @@ async function buildDependencyGraph(sassDir) {
 
   if (scssFiles.length > 0) {
     core.debug(`[Percy Deps] Sample files (first 5):`);
-    scssFiles.slice(0, 5).forEach(file => core.debug(`[Percy Deps]   ${file}`));
+    scssFiles
+      .slice(0, 5)
+      .forEach((file) => core.debug(`[Percy Deps]   ${file}`));
   }
 
   // Parse each file for imports
@@ -219,7 +227,9 @@ async function buildDependencyGraph(sassDir) {
         );
       }
     } catch (error) {
-      core.debug(`[Percy Deps] Warning: Could not parse file "${filePath}": ${error.message}`);
+      core.debug(
+        `[Percy Deps] Warning: Could not parse file "${filePath}": ${error.message}`,
+      );
       // Continue processing other files
     }
   }
