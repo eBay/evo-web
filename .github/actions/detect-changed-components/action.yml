@@ -1,0 +1,20 @@
+name: 'Detect Changed Components'
+description: 'Detects which Skin components changed based on git diff and SASS dependency analysis'
+author: 'eBay Skin Team'
+
+inputs:
+  sass-dir:
+    description: 'Path to SASS directory (e.g., packages/skin/src/sass)'
+    required: true
+  base-branch:
+    description: 'Base branch to compare against'
+    required: false
+    default: 'main'
+
+outputs:
+  components:
+    description: 'Comma-separated list of changed components ("all" for global changes, "" for no changes)'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
