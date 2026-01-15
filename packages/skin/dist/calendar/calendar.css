@@ -4,7 +4,7 @@
 }
 .calendar {
     color: var(--calendar-color-token, var(--color-foreground-primary));
-    display: table;
+    display: flex;
 }
 .calendar__header {
     display: table-caption;

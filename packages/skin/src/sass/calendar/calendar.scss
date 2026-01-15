@@ -3,7 +3,7 @@
 @use "../mixins/private/state-layer";
 
 .calendar {
-    display: table;
+    display: flex;
     @include token-mixins.color-token(
         calendar-color-token,
         color-foreground-primary
