@@ -38,6 +38,7 @@
     "extends @ebay/browserslist-config"
   ],
   "devDependencies": {
+    "@actions/core": "^1.11.1",
     "@babel/core": "^7.28.5",
     "@babel/eslint-parser": "^7.28.5",
     "@babel/plugin-syntax-import-assertions": "^7.27.1",
