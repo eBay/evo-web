@@ -97,6 +97,7 @@
       "url": "https://playbook.ebay.com/design-system/components/card",
       "version": "1.0"
     },
+    "submodules": ["icon", "button"],
     "markoStorybookPath": "/docs/layout-ebay-card--documentation",
     "description": "High-level entity view with a call to action; typically part of a set."
   },
@@ -364,7 +365,7 @@
       "url": "https://playbook.ebay.com/design-system/components/icon-button",
       "version": "1.6"
     },
-    "submodules": ["icon"],
+    "submodules": ["icon", "progress-spinner"],
     "markoStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-icon-button--documentation",
     "description": "A button with icon only and no visible text."
@@ -549,6 +550,7 @@
       "url": "https://playbook.ebay.com/design-system/components/numeric-stepper",
       "version": "1.0"
     },
+    "submodules": ["textbox"],
     "markoStorybookPath": "/docs/form-input-ebay-number-input--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-number-input--documentation",
     "description": "A numeric input field with prominent increase/decrease buttons."
@@ -568,7 +570,7 @@
       "url": "https://playbook.ebay.com/design-system/components/page-notice",
       "version": "3.0"
     },
-    "submodules": ["icon"],
+    "submodules": ["icon", "button"],
     "cssStorybookPath": "/story/skin-page-notice--general",
     "markoStorybookPath": "/docs/notices-tips-ebay-page-notice--documentation",
     "reactStorybookPath": "/docs/notices-tips-ebay-page-notice--documentation",
@@ -581,7 +583,7 @@
       "url": "https://playbook.ebay.com/design-system/components/pagination",
       "version": "2.0"
     },
-    "submodules": ["icon-link"],
+    "submodules": ["icon-link", "icon-button"],
     "markoStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
     "reactStorybookPath": "/docs/navigation-disclosure-ebay-pagination--documentation",
     "description": "Navigate between pages of results."
@@ -680,7 +682,7 @@
       "url": "https://playbook.ebay.com/design-system/components/section-notice",
       "version": "4.0"
     },
-    "submodules": ["icon"],
+    "submodules": ["icon", "button"],
     "markoStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
     "reactStorybookPath": "/docs/notices-tips-ebay-section-notice--documentation",
     "description": "A section notice conveys system status and/or feedback to users."
@@ -769,6 +771,7 @@
       "name": "split-button",
       "version": "1.6"
     },
+    "submodules": ["button", "menu-button"],
     "markoStorybookPath": "/docs/buttons-ebay-split-button--documentation",
     "reactStorybookPath": "/docs/buttons-ebay-split-button--documentation",
     "description": "Button combining a primary action with dropdown of secondary actions."

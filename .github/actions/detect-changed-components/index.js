@@ -4,8 +4,9 @@
  * Detect which Skin components have changed in the current PR/branch
  * and output a comma-separated list for Percy partial snapshots.
  *
- * Enhanced with SASS dependency graph analysis to detect components
- * affected by changes to shared files (mixins, variables, etc.)
+ * Detects changes to compiled CSS files in packages/skin/dist/ and uses
+ * component-metadata.json to find dependent components via reverse lookup
+ * through the submodules property (with transitive dependency support).
  *
  * Usage (GitHub Actions):
  *   uses: ./.github/actions/detect-changed-components
@@ -17,22 +18,18 @@
  *   - components: "all" if global files changed (run all snapshots)
  *   - components: "Component1,Component2" for specific components
  *   - components: "" (empty) if no relevant changes
- *
- * Environment Variables:
- *   - DEBUG_PERCY_DEPS: Enable dependency graph debug logging
  */
 
 const { execSync } = require("child_process");
 const path = require("path");
 const fs = require("fs/promises");
 const core = require("@actions/core");
-const analyzer = require("./sass-dependency-analyzer");
 
 // Directories that affect all components (global changes)
-// Note: mixins/ is NOT in this list - dependency graph will handle mixin changes
 const GLOBAL_PATHS = [
   "packages/skin/src/sass/global/",
   "packages/skin/src/sass/variables/",
+  "packages/skin/src/sass/mixins/",
   "packages/skin/src/tokens/",
   "packages/skin/src/sass/bundles/",
   "packages/skin/.storybook/",
@@ -110,14 +107,14 @@ async function getStoryTitlesForComponent(componentDir, sassDir) {
 
 /**
  * Extract component directory name from file path
- * Pattern: packages/skin/src/sass/{component-name}/...
+ * Pattern: packages/skin/dist/{component-name}/{component-name}.css
  * @param {string} filePath - File path
  * @returns {string|null} Component directory name (e.g., 'alert-dialog') or null
  */
 function extractComponentFromPath(filePath) {
   core.debug(`[extractComponentFromPath] Checking: ${filePath}`);
 
-  const match = filePath.match(/packages\/skin\/src\/sass\/([^\/]+)\//);
+  const match = filePath.match(/packages\/skin\/dist\/([^\/]+)\//);
   if (!match || !match[1]) {
     core.debug(`[extractComponentFromPath] No match for pattern`);
     return null;
@@ -190,90 +187,46 @@ async function main() {
     }
     core.info("✓ No global changes detected");
 
-    // NEW: Build dependency graph and find all affected files
-    let allAffectedFiles = new Set();
-
+    // Load component metadata for dependency lookup
+    let componentMetadata;
     try {
-      core.startGroup("Building SASS dependency graph");
-      core.info("Analyzing SASS dependencies to detect indirect impacts...");
-
-      // Build dependency graph (file → files that depend on it)
-      const dependencyGraph =
-        await analyzer.buildDependencyGraph(sassDirAbsolute);
-      core.info(
-        `✓ Built dependency graph with ${dependencyGraph.size} files with dependents`,
+      const metadataPath = path.join(
+        process.cwd(),
+        "src/data/component-metadata.json",
       );
-      core.endGroup();
-
-      core.startGroup("Analyzing impact of changed files");
-      // For each changed file, find all its dependents
-      let scssFileCount = 0;
-      for (const file of changedFiles) {
-        // Only analyze SCSS files
-        if (!file.endsWith(".scss")) {
-          core.debug(`Skipping non-SCSS file: ${file}`);
-          continue;
-        }
-
-        scssFileCount++;
-        core.debug(`Analyzing SCSS file: ${file}`);
-
-        // Convert to absolute path for graph lookup
-        // git diff returns paths relative to repo root, so join with repo root
-        const repoRoot = process.cwd();
-        const absPath = path.join(repoRoot, file);
-
-        // Add the changed file itself
-        allAffectedFiles.add(absPath);
-
-        // Find all files that transitively depend on this changed file
-        const dependents = analyzer.findAllDependents(absPath, dependencyGraph);
-        if (dependents.size > 0) {
-          core.info(`  ${file} affects ${dependents.size} other file(s)`);
-        }
-        dependents.forEach((dep) => allAffectedFiles.add(dep));
-      }
-
+      const metadataContent = await fs.readFile(metadataPath, "utf-8");
+      componentMetadata = JSON.parse(metadataContent);
       core.info(
-        `✓ Analyzed ${scssFileCount} SCSS file(s) from ${changedFiles.length} total changed files`,
+        `✓ Loaded component metadata with ${Object.keys(componentMetadata).length} components`,
       );
-      core.info(
-        `✓ Found ${allAffectedFiles.size} total affected file(s) (including transitive dependencies)`,
-      );
-      core.endGroup();
-
-      // If no SCSS files were affected, fall back to original behavior
-      if (allAffectedFiles.size === 0) {
-        core.info("No SCSS files in changes - analyzing all changed files");
-        allAffectedFiles = new Set(changedFiles);
-      }
     } catch (error) {
-      // FAIL SAFE: If dependency analysis fails, run all snapshots
       core.warning(
-        `Dependency analysis failed - running all snapshots as fallback: ${error.message}`,
+        `Failed to load component metadata - running all snapshots: ${error.message}`,
       );
       core.setOutput("components", "all");
       core.endGroup();
       return;
     }
 
-    // Extract unique component directories from all affected files
-    core.startGroup("Extracting component directories");
-    core.info(`Processing ${allAffectedFiles.size} affected file(s)`);
+    // Extract component directories from changed CSS files in dist folder
+    core.startGroup("Detecting changed components");
     const changedComponentDirs = new Set();
 
-    allAffectedFiles.forEach((file) => {
+    for (const file of changedFiles) {
+      // Only analyze CSS files from dist folder
+      if (!file.endsWith(".css") || !file.includes("packages/skin/dist/")) {
+        continue;
+      }
+
       const componentDir = extractComponentFromPath(file);
       if (componentDir) {
         core.info(`  ${file} → ${componentDir}`);
         changedComponentDirs.add(componentDir);
-      } else {
-        core.debug(`  ${file} → (no component match)`);
       }
-    });
+    }
 
     core.info(
-      `✓ Found ${changedComponentDirs.size} affected component(s): ${Array.from(changedComponentDirs).join(", ")}`,
+      `Found ${changedComponentDirs.size} directly changed component(s): ${Array.from(changedComponentDirs).join(", ")}`,
     );
     core.endGroup();
 
@@ -284,12 +237,53 @@ async function main() {
       return;
     }
 
+    // Find all components that depend on changed components (reverse lookup with transitive dependencies)
+    core.startGroup("Finding dependent components (including transitive)");
+    const allAffectedComponents = new Set(changedComponentDirs);
+    const queue = [...changedComponentDirs];
+    const visited = new Set();
+
+    while (queue.length > 0) {
+      const currentComponent = queue.shift();
+
+      if (visited.has(currentComponent)) {
+        continue;
+      }
+      visited.add(currentComponent);
+
+      // Find all components that have currentComponent in their submodules
+      for (const [componentName, metadata] of Object.entries(
+        componentMetadata,
+      )) {
+        if (
+          metadata.submodules &&
+          metadata.submodules.includes(currentComponent)
+        ) {
+          if (!allAffectedComponents.has(componentName)) {
+            core.info(
+              `  ${componentName} depends on ${currentComponent} - adding to affected list`,
+            );
+            allAffectedComponents.add(componentName);
+            queue.push(componentName); // Add to queue to find its dependents too
+          }
+        }
+      }
+    }
+
+    core.info(
+      `Total affected components (including transitive dependents): ${allAffectedComponents.size}`,
+    );
+    core.info(
+      `Affected components: ${Array.from(allAffectedComponents).sort().join(", ")}`,
+    );
+    core.endGroup();
+
     // For each component directory, get its actual story titles
     // by importing and parsing the .stories.js files
     core.startGroup("Extracting story titles from components");
     const allStoryTitles = new Set();
 
-    for (const componentDir of changedComponentDirs) {
+    for (const componentDir of allAffectedComponents) {
       core.info(`  Analyzing component: ${componentDir}`);
       const titles = await getStoryTitlesForComponent(
         componentDir,

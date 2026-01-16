@@ -56,9 +56,15 @@ export interface ComponentMetadata {
   version?: string;
 
   /**
-   * List of submodule dependencies
+   * List of submodule dependencies (components this component depends on)
    */
   submodules?: string[];
+
+  /**
+   * List of components that depend on this component
+   * Used by Percy CI to determine which components need snapshots when this component changes
+   */
+  dependents?: string[];
 
   /**
    * Path to CSS Storybook story
