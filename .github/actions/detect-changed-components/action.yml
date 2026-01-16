@@ -1,5 +1,5 @@
 name: 'Detect Changed Components'
-description: 'Detects which Skin components changed based on git diff and SASS dependency analysis'
+description: 'Detects which Skin components changed based on git diff'
 author: 'eBay Skin Team'
 
 inputs:

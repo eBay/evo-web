@@ -25,7 +25,6 @@ const path = require("path");
 const fs = require("fs/promises");
 const core = require("@actions/core");
 
-// Directories that affect all components (global changes)
 const GLOBAL_PATHS = [
   "packages/skin/src/sass/global/",
   "packages/skin/src/sass/variables/",
@@ -82,9 +81,7 @@ function extractStoryTitle(filePath) {
 async function getStoryTitlesForComponent(componentDir, sassDir) {
   const componentPath = path.join(sassDir, componentDir);
 
-  // Use fs.glob (Node.js 20+) to find all .stories.js files
-  // Note: fs.glob returns an AsyncGenerator
-  const globIterator = fs.glob("**/*.stories.js", { cwd: componentPath });
+  const globIterator = fs.glob("**/*.stories.(js|ts)", { cwd: componentPath });
   const componentNames = new Set();
 
   for await (const file of globIterator) {
@@ -168,16 +165,13 @@ async function main() {
         core.info(`  ... and ${changedFiles.length - 10} more`);
       }
       core.endGroup();
-    }
-
-    if (changedFiles.length === 0) {
+    } else {
       core.info("No changed files detected - skipping Percy snapshots");
       core.setOutput("components", "");
       core.endGroup();
       return;
     }
 
-    // Check for global changes first (existing behavior)
     core.info("Checking for global file changes...");
     if (hasGlobalChanges(changedFiles)) {
       core.info("✓ Global files changed - running all snapshots");
@@ -208,24 +202,19 @@ async function main() {
       return;
     }
 
-    // Extract component directories from changed CSS files in dist folder
-    // and story titles from changed story files
     core.startGroup("Detecting changed components");
     const changedComponentDirs = new Set();
     const directStoryTitles = new Set();
 
     for (const file of changedFiles) {
-      // Check for CSS files from dist folder
       if (file.endsWith(".css") && file.includes("packages/skin/dist/")) {
         const componentDir = extractComponentFromPath(file);
         if (componentDir) {
           core.info(`  ${file} → ${componentDir}`);
           changedComponentDirs.add(componentDir);
         }
-      }
-      // Check for story files
-      else if (
-        file.endsWith(".stories.js") &&
+      } else if (
+        (file.endsWith(".stories.js") || file.endsWith(".stories.ts")) &&
         file.includes("packages/skin/src/sass/")
       ) {
         const absolutePath = path.join(process.cwd(), file);
@@ -260,7 +249,6 @@ async function main() {
       return;
     }
 
-    // Find all components that depend on changed components (reverse lookup with transitive dependencies)
     core.startGroup("Finding dependent components (including transitive)");
     const allAffectedComponents = new Set(changedComponentDirs);
     const queue = [...changedComponentDirs];
@@ -301,8 +289,6 @@ async function main() {
     );
     core.endGroup();
 
-    // For each component directory, get its actual story titles
-    // by importing and parsing the .stories.js files
     core.startGroup("Extracting story titles from components");
     const allStoryTitles = new Set();
 
@@ -325,7 +311,6 @@ async function main() {
 
     core.info(`✓ Story titles from CSS changes: ${allStoryTitles.size}`);
 
-    // Merge direct story titles (from story file changes)
     directStoryTitles.forEach((title) => allStoryTitles.add(title));
 
     core.info(
