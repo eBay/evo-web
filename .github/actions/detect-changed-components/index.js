@@ -209,29 +209,52 @@ async function main() {
     }
 
     // Extract component directories from changed CSS files in dist folder
+    // and story titles from changed story files
     core.startGroup("Detecting changed components");
     const changedComponentDirs = new Set();
+    const directStoryTitles = new Set();
 
     for (const file of changedFiles) {
-      // Only analyze CSS files from dist folder
-      if (!file.endsWith(".css") || !file.includes("packages/skin/dist/")) {
-        continue;
+      // Check for CSS files from dist folder
+      if (file.endsWith(".css") && file.includes("packages/skin/dist/")) {
+        const componentDir = extractComponentFromPath(file);
+        if (componentDir) {
+          core.info(`  ${file} → ${componentDir}`);
+          changedComponentDirs.add(componentDir);
+        }
       }
+      // Check for story files
+      else if (
+        file.endsWith(".stories.js") &&
+        file.includes("packages/skin/src/sass/")
+      ) {
+        const absolutePath = path.join(process.cwd(), file);
+        const title = extractStoryTitle(absolutePath);
 
-      const componentDir = extractComponentFromPath(file);
-      if (componentDir) {
-        core.info(`  ${file} → ${componentDir}`);
-        changedComponentDirs.add(componentDir);
+        if (title) {
+          // Extract component name: "Skin/Button/Base" → "Button"
+          const parts = title.split("/");
+          if (parts.length >= 2 && parts[0] === "Skin") {
+            const componentName = parts[1];
+            core.info(`  ${file} → ${componentName} (from story)`);
+            directStoryTitles.add(componentName);
+          }
+        }
       }
     }
 
     core.info(
-      `Found ${changedComponentDirs.size} directly changed component(s): ${Array.from(changedComponentDirs).join(", ")}`,
+      `Found ${changedComponentDirs.size} directly changed component(s) from CSS: ${Array.from(changedComponentDirs).join(", ") || "(none)"}`,
+    );
+    core.info(
+      `Found ${directStoryTitles.size} directly changed component(s) from stories: ${Array.from(directStoryTitles).join(", ") || "(none)"}`,
     );
     core.endGroup();
 
-    if (changedComponentDirs.size === 0) {
-      core.info("No component directories affected - skipping Percy snapshots");
+    if (changedComponentDirs.size === 0 && directStoryTitles.size === 0) {
+      core.info(
+        "No component directories or stories affected - skipping Percy snapshots",
+      );
       core.setOutput("components", "");
       core.endGroup();
       return;
@@ -300,6 +323,14 @@ async function main() {
       }
     }
 
+    core.info(`✓ Story titles from CSS changes: ${allStoryTitles.size}`);
+
+    // Merge direct story titles (from story file changes)
+    directStoryTitles.forEach((title) => allStoryTitles.add(title));
+
+    core.info(
+      `✓ Story titles from direct story changes: ${directStoryTitles.size}`,
+    );
     core.info(`✓ Total unique story titles: ${allStoryTitles.size}`);
     core.endGroup();
 
