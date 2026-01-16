@@ -10,19 +10,17 @@ When you modify Skin components (CSS, tokens, or Storybook configuration), Percy
 
 ## How does Percy know which components to test?
 
-Percy uses an intelligent detection script that analyzes your git diff to determine which components changed:
+We map all the modules dependencies in the [component-metadata.json](../../src/data/component-metadata.json) file and based on the files that changes we build the stories that needs snapshots.
 
 - **Component-specific changes**: Only tests the components you modified (e.g., if you change `button.scss`, only Button stories are tested)
 - **Global changes**: If you modify shared files like tokens, variables, or mixins, all components are tested
 - **Non-component changes**: If you only change documentation or non-Skin files, Percy is skipped entirely
 
-This smart detection makes builds faster and more efficient.
-
 ## How long does Percy take?
 
 - **Partial builds** (single component): 3-5 minutes
 - **Partial builds** (multiple components): 5-10 minutes
-- **Full builds** (all components): 15-20 minutes
+- **Full builds** (all components): 25 minutes
 
 Build time depends on the number of stories being captured and Percy's current load.
 
@@ -31,9 +29,11 @@ Build time depends on the number of stories being captured and Percy's current l
 When Percy detects visual differences, it means your changes altered the visual appearance of components. This could be:
 
 **Intentional changes**: You meant to change how the component looks
+
 - Action: A maintainer will review the changes in Percy dashboard and approve the build
 
 **Unintended regressions**: Your changes accidentally affected other components or states
+
 - Action: Review the diffs, fix the issues, and push an update to the PR
 
 ## How do I view Percy results?
@@ -42,9 +42,9 @@ When Percy detects visual differences, it means your changes altered the visual 
 2. Scroll to the checks section at the bottom
 3. Click on "Details" next to the Percy check
 4. This will take you to the Percy dashboard where you can see:
-   - All captured snapshots
-   - Visual diffs highlighting what changed
-   - Side-by-side comparisons of before/after
+    - All captured snapshots
+    - Visual diffs highlighting what changed
+    - Side-by-side comparisons of before/after
 
 ## How do I approve Percy changes?
 
@@ -65,6 +65,7 @@ If you're making changes that shouldn't require visual testing (like internal re
 ## What triggers a full Percy run vs partial?
 
 **Full run (all ~180 stories)**:
+
 - Changes to `packages/skin/src/tokens/`
 - Changes to `packages/skin/src/sass/global/`
 - Changes to `packages/skin/src/sass/variables/`
@@ -72,12 +73,14 @@ If you're making changes that shouldn't require visual testing (like internal re
 - Changes to `packages/skin/.storybook/`
 
 **Partial run (only affected components)**:
+
 - Changes to specific component directories like `packages/skin/src/sass/button/`
 - Changes to component stories
 
 ## How are baselines updated?
 
 When your PR is merged to the main branch:
+
 1. Percy runs automatically with all snapshots
 2. The build is auto-approved
 3. These become the new baseline images for future PRs
@@ -89,18 +92,22 @@ This ensures the baseline always reflects what's in production.
 Common issues and solutions:
 
 **"Percy token not found"**
+
 - This is a CI configuration issue - contact a maintainer
 - They need to ensure `PERCY_TOKEN` is set in GitHub Secrets
 
 **"Build timed out"**
+
 - Percy may be experiencing issues - check [Percy status page](https://status.percy.io/)
 - Try re-running the workflow
 
 **"No snapshots captured"**
+
 - The detection script may not have found any changed components
 - Verify your changes are in `packages/skin/src/sass/` or related directories
 
 **"Build pending for too long"**
+
 - Check the Percy dashboard for the build status
 - If it's stuck, contact a maintainer to restart it
 
@@ -126,6 +133,7 @@ External contributors cannot run Percy locally but it runs automatically in CI f
 ## What are the snapshot widths?
 
 Percy captures each story at 4 different viewport widths to test responsive behavior:
+
 - 320px (mobile)
 - 512px (large mobile/small tablet)
 - 768px (tablet)
