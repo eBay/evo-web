@@ -2,8 +2,8 @@
     --dialog-scrim-color-hide: rgb(17 24 32 / 0);
     --dialog-scrim-color-show: rgb(17 24 32 / 0.7);
     --dialog-lightbox-max-width: 616px;
-    --dialog-lightbox-wide-max-width: 896px;
-    --dialog-lightbox-narrow-max-width: 480px;
+    --dialog-lightbox-wide-max-width: 500px;
+    --dialog-lightbox-narrow-max-width: 200px;
 }
 .lightbox-dialog[role="dialog"] {
     align-items: flex-start;

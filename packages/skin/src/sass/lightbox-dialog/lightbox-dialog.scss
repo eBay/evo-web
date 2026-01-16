@@ -3,8 +3,8 @@
 @use "../mixins/private/token-mixins";
 
 :root {
-    --dialog-lightbox-wide-max-width: 896px;
-    --dialog-lightbox-narrow-max-width: 480px;
+    --dialog-lightbox-wide-max-width: 500px;
+    --dialog-lightbox-narrow-max-width: 200px;
 }
 
 .lightbox-dialog[role="dialog"] {
