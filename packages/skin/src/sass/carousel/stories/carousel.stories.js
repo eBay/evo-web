@@ -3,6 +3,7 @@ export default { title: "Skin/Carousel" };
 export const continuous = () => `
 <div class="carousel">
     <div class="carousel__container">
+        <h1>HELLO</h1>
         <button class="carousel__control carousel__control--prev" aria-label="Previous Slide - Top Products">
             <svg aria-hidden="true" class="icon icon--16">
                 <use href="#icon-chevron-left-16"></use>
