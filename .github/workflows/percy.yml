@@ -4,14 +4,12 @@ on:
   pull_request:
     types: [opened, synchronize]
     paths:
-      - 'packages/skin/src/sass/**'
-      - 'packages/skin/src/tokens/**'
+      - 'packages/skin/dist/**'
       - 'packages/skin/.storybook/**'
   push:
     branches: ["main"]
     paths:
-      - 'packages/skin/src/sass/**'
-      - 'packages/skin/src/tokens/**'
+      - 'packages/skin/dist/**'
       - 'packages/skin/.storybook/**'
 
 concurrency:
