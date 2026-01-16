@@ -2,7 +2,9 @@
 
 **Last Updated:** January 14, 2026
 
-## Current Architecture
+## Generating Accessibility Documentation
+
+### Current Architecture
 
 Component documentation is now split into three separate files per component:
 
@@ -13,6 +15,34 @@ Component documentation is now split into three separate files per component:
 | `accessibility+page.marko` | Accessibility documentation         |
 
 **Location:** `src/routes/_index/components/[component]/`
+
+### Content Guidelines
+
+1. **Match existing patterns** - Reference other accessibility component pages (avatar, accordion, CCD) to understand the structure and format
+
+2. **Match the tone** - Direct, concise language:
+   - Short declarative sentences
+   - Use **must** (bold) for requirements
+   - Avoid wordy explanations
+   - No intro paragraphs like "This section provides..."
+
+3. **Align terminology with the component intro** - Use the same terms from `+page.marko`:
+   - Use consistent naming (e.g., "pictogram" not "element")
+   - Match descriptive terms from the overview
+
+4. **Use correct ARIA from CSS examples** - Check `css+page.marko` for actual implementation:
+   - Verify the correct `role` attribute used
+   - Match the `aria-label` format from examples
+
+### Structure
+
+Standard sections: Best Practices → Interaction Design (Keyboard, Screen Reader, Pointer) → ARIA Reference table → Further Reading
+
+### Cleanup Rules
+
+- Remove redundancy between sections
+- Consolidate where possible (e.g., Pointer section: 2 sentences instead of 2 paragraphs)
+- Keep intro (`+page.marko`) and accessibility page terminology consistent
 
 ---
 
@@ -98,7 +128,7 @@ Component documentation is now split into three separate files per component:
 | select                  | ✅   |
 | selection-chip          | —    |
 | signal                  | ⏸️   |
-| skeleton                | ⏸️   |
+| skeleton                | ✅   |
 | snackbar-dialog         | ✅   |
 | split-button            | ⏸️   |
 | star-rating             | ✅   |
@@ -115,30 +145,6 @@ Component documentation is now split into three separate files per component:
 | tourtip                 | ✅   |
 | typography              | ⏸️   |
 | utility                 | —    |
-
----
-
-## Next Steps
-
-### Priority 1: Complete Placeholder Accessibility Docs
-
-These components need accessibility documentation written:
-
-**Interactive Components (High Priority):**
-
-- calendar, filter-chip, filter-input, icon-button
-- panel-dialog, progress-stepper, split-button, star-rating-select, textbox
-
-**Display Components:**
-
-- chip, donut-chart, eek, flag, icon, image-placeholder
-- progress-bar, progress-bar-expressive, progress-spinner
-- section-notice, section-title, signal, skeleton
-
-**Layout/Utility Components (Lower Priority):**
-
-- field, floating-label, global, layout-grid, list
-- marketsans, page-grid, typography
 
 ---
 

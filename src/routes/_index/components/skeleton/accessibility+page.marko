@@ -1,1 +1,92 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Skeleton Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Skeleton placeholders
+    <strong>must</strong>
+    use
+    <code>role="img"</code>
+    with
+    <code>aria-label="loading"</code>
+    to convey their loading state to assistive technologies.
+  </p>
+  <p>
+    The skeleton container element receives the ARIA attributes; child elements
+    (e.g.,
+    <code>skeleton__avatar</code>
+    ,
+    <code>skeleton__text</code>
+    ) do not require additional accessibility markup.
+  </p>
+  <p>
+    When content finishes loading, the skeleton
+    <strong>must</strong>
+    be replaced with the actual content. Do not leave skeleton placeholders in
+    the DOM alongside loaded content.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    Skeleton placeholders are not interactive and should not be keyboard
+    focusable.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader will announce the skeleton as an image with its
+    <code>aria-label</code>
+    value (e.g., "loading, image").
+  </p>
+  <p>
+    For composite skeletons with multiple placeholder elements, only the parent
+    container requires
+    <code>role="img"</code>
+    and
+    <code>aria-label</code>
+    —this prevents repetitive announcements.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Skeleton placeholders are not clickable. They serve only as visual
+    indicators of loading content.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="img"</strong>
+        </td>
+        <td>
+          Applied to the skeleton container to identify it as an image element
+          to assistive technologies.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label="loading"</strong>
+        </td>
+        <td>
+          Applied to the skeleton container to provide an accessible name
+          indicating the loading state.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/">
+        Accessible Names and Descriptions
+      </a>
+    </li>
+  </ul>
+</div>

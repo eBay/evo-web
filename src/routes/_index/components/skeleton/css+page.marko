@@ -10,41 +10,6 @@ import {urls} from "../../../../data";
     </sup>
   </h2>
 
-  <section
-    class="section-notice section-notice--attention"
-    role="region"
-    aria-label="Attention"
-    aria-roledescription="Notice">
-    <div class="section-notice__header" id="section-notice-attention">
-      <svg class="icon icon--16" height="16" width="16" aria-label="Attention">
-        <icon-symbol name="attention-filled-16"/>
-      </svg>
-    </div>
-    <div class="section-notice__main">
-      <h3 class="section-notice__title">
-        Cumulative Layout Shift (CLS)
-      </h3>
-      <p>
-        It is the developer's responsibility to ensure the
-        <a href="https://web.dev/articles/cls">
-          CLS metric
-        </a>
-        of a page is not negatively impacted by the introduction of a
-        skeleton placeholder;
-        <strong>
-          a poor CLS score will occur whenever content shifts unexpectedly
-        </strong>
-        . Unexpected movement of page content usually happens because
-        resources are loaded asynchronously or DOM elements get dynamically
-        added to the page above existing content. Skeletons can help mask these
-        problems
-        <em>if</em>
-        they reserve the correct amount of physical space, but can
-        compound the problem when they do not.
-      </p>
-    </div>
-  </section>
-
   <p>
     The
     <a href=`${urls.guides}/skeleton`>
