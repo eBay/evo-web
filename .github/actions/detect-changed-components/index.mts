@@ -40,11 +40,14 @@ interface ComponentMetadata {
 
 type ComponentMetadataMap = Record<string, ComponentMetadata>;
 
-interface StoryModule {
-  default?: {
-    title?: string;
-  };
-}
+type StoryMetadata = {
+  title?: string;
+};
+type StoryModule =
+  | StoryMetadata
+  | {
+      default?: StoryMetadata;
+    };
 
 /**
  * Get list of changed files from git diff
@@ -70,13 +73,17 @@ function getChangedFiles(baseBranch: string): string[] {
  */
 async function extractStoryTitle(filePath: string): Promise<string | null> {
   try {
-    // Import the story file
     const storyModule = (await import(filePath)) as StoryModule;
 
-    // Extract title from default export
-    if (storyModule?.default?.title) {
-      return storyModule.default.title;
+    if ("default" in storyModule && storyModule?.default) {
+      return storyModule.default.title || null;
     }
+
+    if ("title" in storyModule && storyModule?.title) {
+      return storyModule.title;
+    }
+
+    return null;
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     core.debug(
