@@ -20,10 +20,10 @@
  *   - components: "" (empty) if no relevant changes
  */
 
-const { execSync } = require("child_process");
-const path = require("path");
-const fs = require("fs/promises");
-const core = require("@actions/core");
+import { execSync } from "child_process";
+import path from "path";
+import fs from "fs/promises";
+import * as core from "@actions/core";
 
 const GLOBAL_PATHS = [
   "packages/skin/src/sass/global/",
@@ -32,41 +32,55 @@ const GLOBAL_PATHS = [
   "packages/skin/src/tokens/",
   "packages/skin/src/sass/bundles/",
   "packages/skin/.storybook/",
-];
+] as const;
+
+interface ComponentMetadata {
+  submodules?: string[];
+}
+
+type ComponentMetadataMap = Record<string, ComponentMetadata>;
+
+interface StoryModule {
+  default?: {
+    title?: string;
+  };
+}
 
 /**
  * Get list of changed files from git diff
  * Compares current branch against base branch
- * @param {string} baseBranch - Base branch to compare against
+ * @param baseBranch - Base branch to compare against
  */
-function getChangedFiles(baseBranch) {
+function getChangedFiles(baseBranch: string): string[] {
   try {
     const command = `git diff ${baseBranch}...HEAD --name-only`;
     const output = execSync(command, { encoding: "utf-8" });
     return output.trim().split("\n").filter(Boolean);
   } catch (error) {
-    core.setFailed(`Failed to get changed files: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    core.setFailed(`Failed to get changed files: ${errorMessage}`);
     process.exit(1);
   }
 }
 
 /**
  * Extract the actual story title by importing the .stories.js file
- * @param {string} filePath - Absolute path to .stories.js file
- * @returns {string|null} Story title (e.g., "Skin/Alert Dialog") or null
+ * @param filePath - Absolute path to .stories.js file
+ * @returns Story title (e.g., "Skin/Alert Dialog") or null
  */
-function extractStoryTitle(filePath) {
+async function extractStoryTitle(filePath: string): Promise<string | null> {
   try {
     // Import the story file
-    const storyModule = require(filePath);
+    const storyModule = (await import(filePath)) as StoryModule;
 
     // Extract title from default export
-    if (storyModule && storyModule.default && storyModule.default.title) {
+    if (storyModule?.default?.title) {
       return storyModule.default.title;
     }
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
     core.debug(
-      `Could not extract story title from ${filePath}: ${error.message}`,
+      `Could not extract story title from ${filePath}: ${errorMessage}`,
     );
   }
   return null;
@@ -74,20 +88,23 @@ function extractStoryTitle(filePath) {
 
 /**
  * Get all story titles for a given component directory
- * @param {string} componentDir - Component directory name (e.g., 'alert-dialog')
- * @param {string} sassDir - Path to SASS directory
- * @returns {Promise<string[]>} Array of component names (e.g., ["Alert Dialog"])
+ * @param componentDir - Component directory name (e.g., 'alert-dialog')
+ * @param sassDir - Path to SASS directory
+ * @returns Array of component names (e.g., ["Alert Dialog"])
  */
-async function getStoryTitlesForComponent(componentDir, sassDir) {
+async function getStoryTitlesForComponent(
+  componentDir: string,
+  sassDir: string,
+): Promise<string[]> {
   const componentPath = path.join(sassDir, componentDir);
 
   const globIterator = fs.glob("**/*.stories.(js|ts)", { cwd: componentPath });
-  const componentNames = new Set();
+  const componentNames = new Set<string>();
 
   for await (const file of globIterator) {
     // Convert to absolute path since fs.glob returns relative paths
     const absolutePath = path.join(componentPath, file);
-    const title = extractStoryTitle(absolutePath);
+    const title = await extractStoryTitle(absolutePath);
 
     if (title) {
       // Extract just the component part: "Skin/Alert Dialog" → "Alert Dialog"
@@ -105,10 +122,10 @@ async function getStoryTitlesForComponent(componentDir, sassDir) {
 /**
  * Extract component directory name from file path
  * Pattern: packages/skin/dist/{component-name}/{component-name}.css
- * @param {string} filePath - File path
- * @returns {string|null} Component directory name (e.g., 'alert-dialog') or null
+ * @param filePath - File path
+ * @returns Component directory name (e.g., 'alert-dialog') or null
  */
-function extractComponentFromPath(filePath) {
+function extractComponentFromPath(filePath: string): string | null {
   core.debug(`[extractComponentFromPath] Checking: ${filePath}`);
 
   const match = filePath.match(/packages\/skin\/dist\/([^\/]+)\//);
@@ -129,7 +146,7 @@ function extractComponentFromPath(filePath) {
 /**
  * Check if any changed file is in a global path
  */
-function hasGlobalChanges(changedFiles) {
+function hasGlobalChanges(changedFiles: string[]): boolean {
   return changedFiles.some((file) =>
     GLOBAL_PATHS.some((globalPath) => file.includes(globalPath)),
   );
@@ -138,7 +155,7 @@ function hasGlobalChanges(changedFiles) {
 /**
  * Main function (async to support dependency graph building)
  */
-async function main() {
+async function main(): Promise<void> {
   try {
     core.startGroup("Detecting changed components");
 
@@ -182,20 +199,22 @@ async function main() {
     core.info("✓ No global changes detected");
 
     // Load component metadata for dependency lookup
-    let componentMetadata;
+    let componentMetadata: ComponentMetadataMap;
     try {
       const metadataPath = path.join(
         process.cwd(),
         "src/data/component-metadata.json",
       );
       const metadataContent = await fs.readFile(metadataPath, "utf-8");
-      componentMetadata = JSON.parse(metadataContent);
+      componentMetadata = JSON.parse(metadataContent) as ComponentMetadataMap;
       core.info(
         `✓ Loaded component metadata with ${Object.keys(componentMetadata).length} components`,
       );
     } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
       core.warning(
-        `Failed to load component metadata - running all snapshots: ${error.message}`,
+        `Failed to load component metadata - running all snapshots: ${errorMessage}`,
       );
       core.setOutput("components", "all");
       core.endGroup();
@@ -203,8 +222,8 @@ async function main() {
     }
 
     core.startGroup("Detecting changed components");
-    const changedComponentDirs = new Set();
-    const directStoryTitles = new Set();
+    const changedComponentDirs = new Set<string>();
+    const directStoryTitles = new Set<string>();
 
     for (const file of changedFiles) {
       if (file.endsWith(".css") && file.includes("packages/skin/dist/")) {
@@ -218,7 +237,7 @@ async function main() {
         file.includes("packages/skin/src/sass/")
       ) {
         const absolutePath = path.join(process.cwd(), file);
-        const title = extractStoryTitle(absolutePath);
+        const title = await extractStoryTitle(absolutePath);
 
         if (title) {
           // Extract component name: "Skin/Button/Base" → "Button"
@@ -250,14 +269,14 @@ async function main() {
     }
 
     core.startGroup("Finding dependent components (including transitive)");
-    const allAffectedComponents = new Set(changedComponentDirs);
+    const allAffectedComponents = new Set<string>(changedComponentDirs);
     const queue = [...changedComponentDirs];
-    const visited = new Set();
+    const visited = new Set<string>();
 
     while (queue.length > 0) {
       const currentComponent = queue.shift();
 
-      if (visited.has(currentComponent)) {
+      if (!currentComponent || visited.has(currentComponent)) {
         continue;
       }
       visited.add(currentComponent);
@@ -266,10 +285,7 @@ async function main() {
       for (const [componentName, metadata] of Object.entries(
         componentMetadata,
       )) {
-        if (
-          metadata.submodules &&
-          metadata.submodules.includes(currentComponent)
-        ) {
+        if (metadata.submodules?.includes(currentComponent)) {
           if (!allAffectedComponents.has(componentName)) {
             core.info(
               `  ${componentName} depends on ${currentComponent} - adding to affected list`,
@@ -290,7 +306,7 @@ async function main() {
     core.endGroup();
 
     core.startGroup("Extracting story titles from components");
-    const allStoryTitles = new Set();
+    const allStoryTitles = new Set<string>();
 
     for (const componentDir of allAffectedComponents) {
       core.info(`  Analyzing component: ${componentDir}`);
@@ -332,15 +348,16 @@ async function main() {
     core.info(`\n✓ Output set: ${titleList}`);
     core.endGroup();
   } catch (error) {
-    core.setFailed(
-      `Fatal error in detect-changed-components: ${error.message}`,
-    );
-    if (error.stack) {
-      core.debug(error.stack);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    const errorStack = error instanceof Error ? error.stack : undefined;
+
+    core.setFailed(`Fatal error in detect-changed-components: ${errorMessage}`);
+    if (errorStack) {
+      core.debug(errorStack);
     }
     core.endGroup();
     process.exit(1);
   }
 }
 
-main();
+await main();
