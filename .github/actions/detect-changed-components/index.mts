@@ -94,13 +94,12 @@ async function getStoryTitlesForComponent(
 ): Promise<string[]> {
   const componentPath = path.join(sassDir, componentDir);
 
-  const globIterator = fs.glob("**/*.stories.(js|ts)", { cwd: componentPath });
+  const globIterator = fs.glob("**/*.stories.{js,ts}", { cwd: componentPath });
   const componentNames = new Set<string>();
 
   for await (const file of globIterator) {
     // Convert to absolute path since fs.glob returns relative paths
     const absolutePath = path.join(componentPath, file);
-    core.info(`File: "${file}", absolutePath: "${absolutePath}"`);
     const title = await extractStoryTitle(absolutePath);
 
     if (title) {
