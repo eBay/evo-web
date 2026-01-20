@@ -339,7 +339,7 @@ async function main(): Promise<void> {
     }
 
     // Output comma-separated story titles (e.g., "Alert Dialog,Button,Badge")
-    const titleList = Array.from(allStoryTitles).sort().join(",");
+    const titleList = Array.from(allStoryTitles).sort().join("|");
     core.setOutput("components", titleList);
     core.info(`\n✓ Output set: ${titleList}`);
     core.endGroup();
