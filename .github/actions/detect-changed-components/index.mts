@@ -83,6 +83,19 @@ async function extractStoryTitle(filePath: string): Promise<string | null> {
 }
 
 /**
+ * Extract component name from story title
+ * @param title - Story title (e.g., "Skin/Alert Dialog" or "Skin/Button/Primary")
+ * @returns Component name (e.g., "Alert Dialog" or "Button") or null if invalid format
+ */
+function extractComponentNameFromStoryTitle(title: string): string | null {
+  const parts = title.split("/");
+  if (parts.length >= 2 && parts[0] === "Skin") {
+    return parts[1];
+  }
+  return null;
+}
+
+/**
  * Get all story titles for a given component directory
  * @param componentDir - Component directory name (e.g., 'alert-dialog')
  * @param sassDir - Path to SASS directory
@@ -103,11 +116,9 @@ async function getStoryTitlesForComponent(
     const title = await extractStoryTitle(absolutePath);
 
     if (title) {
-      // Extract just the component part: "Skin/Alert Dialog" → "Alert Dialog"
-      // "Skin/Button/Primary" → "Button" (parent category only)
-      const parts = title.split("/");
-      if (parts.length >= 2 && parts[0] === "Skin") {
-        componentNames.add(parts[1]); // Get the component name after "Skin/"
+      const componentName = extractComponentNameFromStoryTitle(title);
+      if (componentName) {
+        componentNames.add(componentName);
       }
     }
   }
@@ -236,10 +247,8 @@ async function main(): Promise<void> {
         const title = await extractStoryTitle(absolutePath);
 
         if (title) {
-          // Extract component name: "Skin/Button/Base" → "Button"
-          const parts = title.split("/");
-          if (parts.length >= 2 && parts[0] === "Skin") {
-            const componentName = parts[1];
+          const componentName = extractComponentNameFromStoryTitle(title);
+          if (componentName) {
             core.info(`  ${file} → ${componentName} (from story)`);
             directStoryTitles.add(componentName);
           }
