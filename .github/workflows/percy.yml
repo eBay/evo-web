@@ -87,5 +87,4 @@ jobs:
       - name: Run Percy (All - Auto-approve)
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          PERCY_ENABLE_AUTOCOMMIT: true  # Auto-approve baselines on main
         run: npm run snapshots:all -w packages/skin
