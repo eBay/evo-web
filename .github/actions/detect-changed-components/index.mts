@@ -73,7 +73,9 @@ function getChangedFiles(baseBranch: string): string[] {
  */
 async function extractStoryTitle(filePath: string): Promise<string | null> {
   try {
+    core.info(`Importing "${filePath}"`);
     const storyModule = (await import(filePath)) as StoryModule;
+    core.info(JSON.stringify(storyModule));
 
     if ("default" in storyModule && storyModule?.default) {
       return storyModule.default.title || null;
