@@ -34,20 +34,18 @@ const GLOBAL_PATHS = [
   "packages/skin/.storybook/",
 ] as const;
 
-interface ComponentMetadata {
+type ComponentMetadata = {
   submodules?: string[];
-}
+};
 
 type ComponentMetadataMap = Record<string, ComponentMetadata>;
 
 type StoryMetadata = {
   title?: string;
 };
-type StoryModule =
-  | StoryMetadata
-  | {
-      default?: StoryMetadata;
-    };
+type StoryModule = {
+  default?: StoryMetadata;
+};
 
 /**
  * Get list of changed files from git diff
@@ -73,19 +71,8 @@ function getChangedFiles(baseBranch: string): string[] {
  */
 async function extractStoryTitle(filePath: string): Promise<string | null> {
   try {
-    core.info(`Importing "${filePath}"`);
     const storyModule = (await import(filePath)) as StoryModule;
-    core.info(JSON.stringify(storyModule));
-
-    if ("default" in storyModule && storyModule?.default) {
-      return storyModule.default.title || null;
-    }
-
-    if ("title" in storyModule && storyModule?.title) {
-      return storyModule.title;
-    }
-
-    return null;
+    return storyModule.default?.title || null;
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     core.debug(
@@ -113,6 +100,7 @@ async function getStoryTitlesForComponent(
   for await (const file of globIterator) {
     // Convert to absolute path since fs.glob returns relative paths
     const absolutePath = path.join(componentPath, file);
+    core.info(`File: "${file}", absolutePath: "${absolutePath}"`);
     const title = await extractStoryTitle(absolutePath);
 
     if (title) {
