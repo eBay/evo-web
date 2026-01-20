@@ -347,6 +347,7 @@ Internal contributors can run Percy locally for testing before pushing changes.
 #### Prerequisites
 
 Set Percy token in your environment:
+
 ```bash
 export PERCY_TOKEN=[TOKEN_FROM_PERCY_DASHBOARD]
 ```
@@ -357,12 +358,10 @@ export PERCY_TOKEN=[TOKEN_FROM_PERCY_DASHBOARD]
 cd packages/skin
 
 # Single component
-export STORIES="Button"
-npm run snapshots
+PERCY_PARTIAL_BUILD=1 STORIES="Button" npm run snapshots
 
 # Multiple components
-export STORIES="Button,Icon,Badge"
-npm run snapshots
+PERCY_PARTIAL_BUILD=1 STORIES="Button,Icon,Badge" npm run snapshots
 ```
 
 #### Run All Components
@@ -372,14 +371,15 @@ cd packages/skin
 npm run snapshots:all
 ```
 
-#### Dry Run (Test Without Upload)
+#### Dry Run
+
+Dry run will print the snapshot names that would be tested without executing the tests or creating a Percy build.
 
 ```bash
 cd packages/skin
 
 # Specific components
-export STORIES="Button"
-npm run snapshots:dry
+STORIES="Button,Icon,Badge" npm run snapshots:dry
 
 # All components
 npm run snapshots:all:dry
@@ -392,16 +392,19 @@ External contributors cannot run Percy locally (token required), but Percy runs 
 ### Troubleshooting
 
 **Percy Build Pending:**
+
 - Wait for build to complete (may take 5-10 minutes for partial builds, longer for full builds)
 - Check Percy dashboard for detailed results
 - Request review from maintainer to approve
 
 **Percy Build Failed:**
+
 - Review visual diffs in Percy dashboard
 - If changes are intentional: maintainer approves
 - If changes are bugs: fix and push update
 
 **Percy Skipped:**
+
 - No Skin component changes detected
 - Percy only runs for changes in `packages/skin/src/sass/`, `packages/skin/src/tokens/`, or `packages/skin/.storybook/`
 
