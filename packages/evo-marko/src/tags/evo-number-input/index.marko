@@ -4,7 +4,12 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     valueChange?: (value?:number) => void;
     min?: number;
     max?: number;
-    a11yDeleteText?: Marko.HTMLAttributes["aria-label"];
+    /**
+     * The `aria-label` for the delete button
+     * 
+     * English default to be overridden is `"Delete"`
+     */
+    a11yDeleteText: Marko.HTMLAttributes["aria-label"];
     onIncrement?: (event: Event, target: HTMLElement, value:number) => void;
     onDecrement?: (event: Event, target:HTMLElement, value:number) => void;
     onDelete?: (event: Event, target:HTMLElement) => void;
@@ -18,7 +23,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
 <const/{
     label,
     a11yText,
-    a11yDeleteText,
+    a11yDeleteText = "Delete",
     class: inputClass,
     min = defaultMin,
     max = Infinity,
