@@ -19,12 +19,12 @@
     display: none;
     font-size: 14px;
     left: 0;
-    max-width: 344px;
+    min-width: 280px;
     position: absolute;
     top: 0;
     /* kick in hardware acceleration for GPU processing - fixes issues with filter/display reflow/repaint */
     transform: scale3d(1, 1, 1);
-    width: max-content;
+    width: fit-content;
     z-index: 1;
 }
 
@@ -40,6 +40,7 @@
 
 @mixin large-screen() {
     max-width: 400px;
+    width: max-content;
 }
 
 /* creates basic layout */

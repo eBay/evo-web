@@ -119,7 +119,7 @@ class TooltipBase extends Marko.Component<Input> {
             this.cleanup = autoUpdate(
                 this.hostEl,
                 this.overlayEl,
-                this.update.bind(this),
+                this.updateTip.bind(this),
             );
         }
     }
@@ -136,7 +136,11 @@ class TooltipBase extends Marko.Component<Input> {
                 middleware: [
                     offset(this.input.offset || 6),
                     !this.input.notInline && inline(),
-                    !this.input.noFlip && flip(),
+                    !this.input.noFlip &&
+                        flip({
+                            fallbackAxisSideDirection: "end",
+                            flipAlignment: false,
+                        }),
                     !this.input.noShift && shift(),
                     arrow({
                         element: this.arrowEl as HTMLElement,
