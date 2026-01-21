@@ -110,14 +110,14 @@ export interface Input<
                         rovTabindex.onClick(value);
                         (item.onClick || null)?.(e, target);
                     }
-                    onKeydown(e, target) {
-                        rovTabindex.onKeydown(e);
+                    onKeyDown(e, target) {
+                        rovTabindex.onKeyDown(e);
                         const newIndex = typeahead(e);
                         if (newIndex !== -1) {
                             rovTabindex.setFocusIndex(newIndex);
                         }
 
-                        (item.onKeydown || null)?.(e, target);
+                        (item.onKeyDown || null)?.(e, target);
                     }
                     data-value=value
                     tabindex=(rovTabindex.isFocused(value) ? 0 : -1)

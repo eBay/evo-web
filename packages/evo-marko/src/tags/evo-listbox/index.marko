@@ -41,7 +41,7 @@ export interface Input<Index extends number | string | undefined>
     ...htmlInput
     role="listbox"
     onKeyDown(e, target) {
-        rovTabindex.onKeydown(e);
+        rovTabindex.onKeyDown(e);
 
         const newIndex = typeahead(e);
         if (newIndex !== -1) {

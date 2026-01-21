@@ -85,7 +85,7 @@ export interface Input {
     onFocusOut() {
         open = false;
     },
-    onKeydown(e: KeyboardEvent) {
+    onKeyDown(e: KeyboardEvent) {
         if (e.key === "Enter" || e.key === " ") {
             open = true;
         }

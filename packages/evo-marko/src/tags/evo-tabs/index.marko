@@ -38,7 +38,7 @@ export interface Input extends Marko.HTML.Div {
                     (tab.onClick || null)?.(e, target);
                 }
                 onKeyDown(e, target) {
-                    (rovingTabIndex.onKeydown || null)?.(e);
+                    (rovingTabIndex.onKeyDown || null)?.(e);
                     (tab.onKeyDown || null)?.(e, target);
                 }
                 tabindex=(rovingTabIndex.isFocused(i) ? 0 : -1)
