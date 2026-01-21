@@ -19,16 +19,20 @@ export default {
 
   argTypes: {
     size: {
-      options: ["small", "large", "regular"],
+      options: ["default", "small", "large"],
       control: { type: "select" },
       description:
-        'size of spinner - can be "small", "large". default is regular',
+        'size of spinner. Default is `24`, can be "small" (`20`) or "large" (`30`).',
     },
     a11yText: {
       control: { type: "text" },
-      description: "The accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as \"Loading\"",
+      description:
+        'The accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as "Loading"',
     },
   },
 };
 
-export const Default = buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode);
+export const Default = buildExtensionTemplate(
+  DefaultTemplate,
+  DefaultTemplateCode,
+);

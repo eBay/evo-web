@@ -1,15 +1,15 @@
 export interface Input extends Marko.HTML.Span {
     /**
-     * The accessibility label for the progress spinner.
-     * This is for internationalization.
-     * It should describe the purpose of the spinner, such as "Loading"
-     **/
+     * The `aria-label` for the progress spinner
+     * 
+     * English default to be overridden is `"Loading"`
+     */
     a11yText: Marko.HTML.Span["aria-label"];
-    size?: "large" | "small" | "regular";
+    size?: "large" | "small";
 }
 <const/{
     class: inputClass,
-    a11yText,
+    a11yText = "Loading",
     size,
     ...htmlInput
 }=input/>

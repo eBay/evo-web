@@ -1,22 +1,15 @@
-export type CardLayout = "horizontal" | "vertical";
-export type AspectRatio = "16:9" | "5:4" | "default";
-export interface CardElement extends Marko.HTML.P {
-    as?: string;
-}
-export interface CardOverlineElement extends Marko.HTML.P {
-    text?: string;
-}
-export interface Input extends Omit<Marko.HTML.Div, "title"> {
-    layout?: CardLayout;
-    aspectRatio?: AspectRatio;
-    overline?: Marko.AttrTag<CardOverlineElement>;
-    title?: Marko.AttrTag<CardElement>;
-    description?: Marko.AttrTag<CardElement>;
+export interface Input extends Omit<Marko.HTML.Span, "title"> {
+    layout?: "horizontal" | "vertical";
+    aspectRatio?: "16:9" | "5:4";
+    overline?: Marko.AttrTag<Marko.HTML.P & { text?: string }>;
+    title?: Marko.AttrTag<Marko.HTML.H3 & { as?: string }>;
+    description?: Marko.AttrTag<Marko.HTML.Div>;
     disabled?: boolean;
-    action?: Marko.AttrTag<CardElement>;
+    action?: Marko.AttrTag<Marko.HTML.Div>;
     href?: string;
     image: Marko.AttrTag<Marko.HTML.Img>;
 }
+
 <const/{
     class: inputClass,
     layout,
@@ -30,21 +23,24 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
     action,
     ...htmlInput
 }=input>
-<const/elem=(!action ? (href ? "a" : "button") : "span")>
 
-<${elem}
-    class=[
-        "card",
-        aspectRatio === "5:4" && "card--aspect-5-4",
-        aspectRatio === "16:9" && "card--aspect-16-9",
-        layout === "horizontal" && "card--horizontal",
-        inputClass,
-    ]
-    disabled=elem === "button" && disabled
-    type=elem === "button" && "button"
-    href=elem === "a" && (disabled ? "" : href)
-    tabindex=disabled && -1
-    ...htmlInput>
+<const/[tagName, extraAttrs]=((): [string, Marko.HTML.A | Marko.HTML.Button] => {
+    if (action) {
+        return ["span", {}];
+    } else if (href) {
+        return ["a", { href: disabled ? "" : href }];
+    } else {
+        return ["button", { type: "button", disabled }];
+    }
+})()>
+
+<${tagName} ...htmlInput ...extraAttrs class=[
+    "card",
+    aspectRatio === "5:4" && "card--aspect-5-4",
+    aspectRatio === "16:9" && "card--aspect-16-9",
+    layout === "horizontal" && "card--horizontal",
+    inputClass,
+]>
     <div class="card__media">
         <img ...image>
     </div>
@@ -53,10 +49,8 @@ export interface Input extends Omit<Marko.HTML.Div, "title"> {
             <div ...overline class=["card__overline", overline.class]/>
         </if>
         <if=title>
-            <const/{ as: elementAs, ...titleInput }=title>
-            <${elementAs || "h3"}
-                ...titleInput
-                class=["card__title", title.class]/>
+            <const/{ as: elName = "h3", ...titleInput }=title>
+            <${elName} ...titleInput class=["card__title", title.class]/>
         </if>
         <if=description>
             <div ...description class=["card__description", description.class]/>

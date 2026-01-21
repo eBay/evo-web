@@ -1,6 +1,6 @@
-export interface Input extends Marko.HTML.Input {
+export interface Input extends Omit<Marko.HTML.Input, "type"> {
     header?: Marko.AttrTag<
-        Marko.Input<`h${number}`> & {
+        Marko.Input<"h1"> & {
             as?: `h${number}`;
         }
     >;
@@ -38,8 +38,8 @@ export interface Input extends Marko.HTML.Input {
                     ...headerHtmlInput
                 }=header>
                 <${headerAs || "span"}
-                    class=["file-input__content-header", headerClass]
-                    ...headerHtmlInput/>
+                    ...headerHtmlInput
+                    class=["file-input__content-header", headerClass]/>
             </if>
             <if=subheader>
                 <span
@@ -56,10 +56,10 @@ export interface Input extends Marko.HTML.Input {
         </div>
     </div>
     <input
+        ...htmlInput
         type="file"
         class="file-input__input"
         id=inputId
-        ...htmlInput
         onDragEnter(e, target) {
             dragging = true;
             (onDragEnter || null)?.(e, target);

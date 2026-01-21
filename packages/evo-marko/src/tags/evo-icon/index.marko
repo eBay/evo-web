@@ -18,18 +18,8 @@ export interface Input extends Marko.Input<"svg"> {
     _type,
     _symbol,
     a11yText,
-    // ...htmlInput
-}=input/>
-
-<const/htmlInput=(({
-    class: inputClass,
-    _name,
-    _size,
-    _type,
-    _symbol,
-    a11yText,
-    ...rest
-}) => rest)(input)/>
+    ...htmlInput
+}=input>
 static function getIconClass(type: string, name: string, size?: string) {
     const colorMap: { [index: string]: string } = {
         "confirmation-filled-16": "confirmation-filled",
@@ -63,7 +53,7 @@ static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
         if (isBrowser && !getRoot()) {
             document.body.insertAdjacentHTML(
                 "afterbegin",
-                "<svg id=evo-web-icons style=\"position:absolute;width:0;height:0;\">",
+                '<svg id=evo-web-icons style="position:absolute;width:0;height:0;">',
             );
             const root = getRoot()!;
             const icons =
@@ -89,18 +79,19 @@ static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
     return "";
 }
 
-<id/titleId/>
-<const/prefixSvg=(_type === "icon" ? "icon-" : "")/>
-<const/hasA11yText=a11yText || input["aria-label"]/>
-<const/hasTitle=a11yText && !input["aria-label"]/>
+<id/titleId>
+<const/hasA11yText=a11yText || input["aria-label"]>
+<const/hasTitle=a11yText && !input["aria-label"]>
 
 <svg
     ...htmlInput
-    class=[inputClass, getIconClass(input._type ?? "", input._name, input._size)]
+    class=[
+        inputClass,
+        getIconClass(input._type ?? "", input._name, input._size),
+    ]
     role=!!hasA11yText && "img"
     aria-hidden=!hasA11yText && "true"
-    aria-labelledby=hasTitle && titleId
->
+    aria-labelledby=hasTitle && titleId>
     $!{renderSymbol($global, input._name, input._symbol)}
     <use href=`#icon-${input._name}`/>
     <if=hasTitle>

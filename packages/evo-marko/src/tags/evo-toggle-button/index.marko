@@ -29,6 +29,7 @@ export interface Input extends Marko.HTML.Button {
 <let/pressed:=input.pressed>
 
 <button
+    ...htmlInput
     type="button"
     class=[
         "toggle-button",
@@ -40,7 +41,6 @@ export interface Input extends Marko.HTML.Button {
         pressed = !pressed;
         (onClick || null)?.(event, target);
     }
-    ...htmlInput
 >
     <if=icon>
         <span class="toggle-button__icon">

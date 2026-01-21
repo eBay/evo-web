@@ -1,23 +1,23 @@
-import type {
-    Input as TextboxInput,
-} from "../evo-textbox/index.marko";
-
-export interface Input extends Omit<TextboxInput, "value" | "valueChange"> {
+import type { Input as TextboxInput } from "../evo-textbox/index.marko";
+export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     value?: number;
     valueChange?: (value?:number) => void;
     min?: number;
     max?: number;
-    label?: Marko.AttrTag<{ content: Marko.Body }>;
     a11yDeleteText?: Marko.HTMLAttributes["aria-label"];
     onIncrement?: (event: Event, target: HTMLElement, value:number) => void;
     onDecrement?: (event: Event, target:HTMLElement, value:number) => void;
     onDelete?: (event: Event, target:HTMLElement) => void;
-}
+} & (
+    | { label: Marko.AttrTag<{ content: Marko.Body }>; a11yText?: never }
+    | { a11yText: Marko.HTMLAttributes["aria-label"]; label?: never; }
+);
 
-<const/defaultMin = input.a11yDeleteText ? 1 : 0>
+<const/defaultMin=(input.a11yDeleteText ? 1 : 0)>
 
 <const/{
     label,
+    a11yText,
     a11yDeleteText,
     class: inputClass,
     min = defaultMin,
@@ -27,12 +27,12 @@ export interface Input extends Omit<TextboxInput, "value" | "valueChange"> {
     onDecrement,
     onDelete,
     ...htmlInput
-} = input>
+}=input>
 
 <id/numberInput=id>
 <let/value:=input.value>
 
-<const/displayValue = value || defaultMin/>
+<const/displayValue=value || defaultMin>
 
 <const/checkBoundary(value: number, inc: number = 0) {
     let newValue = value + inc;
@@ -44,7 +44,7 @@ export interface Input extends Omit<TextboxInput, "value" | "valueChange"> {
         newValue = min;
     }
     return newValue;
-}/>
+}>
 
 <span class=[
     "number-input",
@@ -53,16 +53,15 @@ export interface Input extends Omit<TextboxInput, "value" | "valueChange"> {
 ]>
     <evo-textbox
         ...htmlInput
+        aria-label=(!a11yText && !label ? "Number Input" : a11yText)
         min=min
         max=max
         id=numberInput
         type="number"
-        key="input"
         value=displayValue
         valueChange(newValue) {
-            value = checkBoundary(parseInt(newValue, 10)|| defaultMin, 0) ;
-        }
-    >
+            value = checkBoundary(parseInt(newValue, 10) || defaultMin, 0);
+        }>
         <@prefixIcon>
             <if=label>
                 <label for=numberInput>
@@ -79,25 +78,21 @@ export interface Input extends Omit<TextboxInput, "value" | "valueChange"> {
                 onClick(event, target) {
                     value = checkBoundary(displayValue, -1);
                     (onDecrement || null)?.(event, target, value!);
-                }
-            >
+                }>
                 <evo-icon-remove-24/>
             </evo-icon-button>
         </@prefixIcon>
         <@postfixIcon>
-            <if=a11yDeleteText>
-                <evo-icon-button
-                    class="number-input__delete"
-                    size="small"
-                    transparent
-                    aria-label=a11yDeleteText
-                    on-click(event, target) {
-                        (onDelete || null)?.(event, target);
-                    }
-                >
-                    <evo-icon-delete-24/>
-                </evo-icon-button>
-            </if>
+            <evo-icon-button
+                class="number-input__delete"
+                size="small"
+                transparent
+                aria-label=a11yDeleteText
+                on-click(event, target) {
+                    (onDelete || null)?.(event, target);
+                }>
+                <evo-icon-delete-24/>
+            </evo-icon-button>
 
             <evo-icon-button
                 aria-hidden="true"
@@ -109,8 +104,7 @@ export interface Input extends Omit<TextboxInput, "value" | "valueChange"> {
                     value = checkBoundary(displayValue, 1);
                     (onIncrement || null)?.(event, target, value!);
                 }
-                tabindex="-1"
-            >
+                tabindex="-1">
                 <evo-icon-add-24/>
             </evo-icon-button>
         </@postfixIcon>

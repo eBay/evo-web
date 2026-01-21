@@ -11,7 +11,12 @@ export interface Input extends Marko.HTML.Div {
     step?: Marko.AttrTag<Step>;
     defaultState?: "complete" | "upcoming" | "attention" | "current";
     a11yHeadingTag?: keyof Marko.NativeTags;
-    a11yHeadingText?: Marko.HTMLAttributes["aria-label"];
+    /**
+     * The clipped text that describes the heading for the progress stepper
+     * 
+     * English default to be overridden is `"Progress"`
+     */
+    a11yHeadingText: Marko.HTMLAttributes["aria-label"];
     as?: keyof Marko.NativeTags;
 }
 <const/{
@@ -21,7 +26,7 @@ export interface Input extends Marko.HTML.Div {
     defaultState,
     class: inputClass,
     a11yHeadingTag,
-    a11yHeadingText,
+    a11yHeadingText = "Progress",
     as: inputAs,
     ...htmlInput
 }=input>

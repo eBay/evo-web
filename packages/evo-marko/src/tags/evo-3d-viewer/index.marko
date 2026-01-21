@@ -4,7 +4,9 @@ export interface Input extends Partial<ModelViewerElement> {
     class?: Marko.HTMLAttributes["class"];
     errorText: string;
     /**
-     * The aria-label accessibility label for the 3D viewer.
+     * The `aria-label` for `<evo-progress-spinner>` while model is loading
+     * 
+     * English default to be overridden is `"loading"`
      **/
     a11yLoadingText: Marko.HTMLAttributes["aria-label"];
     onLoadError?: (err: CustomEvent) => void;
@@ -14,18 +16,9 @@ export interface Input extends Partial<ModelViewerElement> {
     src,
     errorText,
     onLoadError,
-    a11yLoadingText,
-    // ...htmlInput
+    a11yLoadingText = "loading",
+    ...htmlInput
 }=input/>
-
-<const/htmlInput=(({
-    class: inputClass,
-    src,
-    errorText,
-    onLoadError,
-    a11yLoadingText,
-    ...rest
-}) => rest)(input)/>
 
 static type LoadState = "ready" | "error" | "loading";
 
@@ -40,17 +33,17 @@ static type LoadState = "ready" | "error" | "loading";
     }
 </script>
 
-<div class=["three-d-player", inputClass]>
+<div class=[styles.player, inputClass]>
     <if=loadState === "ready">
         <model-viewer
+            ...htmlInput
             camera-controls
             touch-action="pan-y"
             src=src
-            ...htmlInput
         />
     </if>
     <else if=loadState === "error">
-        <div class="three-d-player__overlay">
+        <div class=styles.overlay>
             <evo-icon-attention-24/>
             <div class="three-d-player__overlay-text">
                 ${errorText}
@@ -58,18 +51,18 @@ static type LoadState = "ready" | "error" | "loading";
         </div>
     </else>
     <else>
-        <div class="three-d-player__overlay">
+        <div class=styles.overlay>
             <evo-progress-spinner a11yText=a11yLoadingText/>
         </div>
     </else>
 </div>
 
-<style>
-    .three-d-player {
+<style/styles>
+    .player {
         position: relative;
     }
 
-    .three-d-player__overlay {
+    .overlay {
         position: absolute;
         display: flex;
         inset: 0;

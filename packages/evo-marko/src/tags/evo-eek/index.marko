@@ -4,8 +4,8 @@ export interface Input extends Marko.HTML.Div {
    *  It should use eekRating, min, and max values in the label in order to demonstrate
    *  to screen readers the content on the component.
    *
-   *  Expected english value `Energy Rating: ${eekRating}. Range: ${max} - ${min}.`
-   **/
+   *  Expected english value is `"Energy Rating: ${eekRating}. Range: ${max} - ${min}."`
+   */
   a11yText: Marko.HTML.Div["aria-label"];
   max: string;
   min: string;

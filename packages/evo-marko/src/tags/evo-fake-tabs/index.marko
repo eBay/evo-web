@@ -24,8 +24,8 @@ export interface Input extends Marko.HTML.Div {
             <const/{ href, class: tabClass, ...htmlTab }=tab>
             <li class=[tabClass, "fake-tabs__item"]>
                 <a
-                    aria-current=selectedIndex === i && tabAriaCurrent
-                    ...htmlTab/>
+                    ...htmlTab
+                    aria-current=selectedIndex === i && tabAriaCurrent/>
             </li>
         </for>
     </ul>

@@ -1,58 +1,42 @@
-export interface Input extends Marko.HTML.Span {
-    value?: string | number;
-    valueChange?: (value?: string | number) => void;
+export interface Input extends Omit<Marko.HTML.Span, "content"> {
+    string: string;
     count?: number;
-    countChange?: (count?: number) => void;
-    ariaLiveChange?: (ariaLive?: Marko.HTMLAttributes["aria-live"]) => void;
-    max?: number;
-    clippedText?: Marko.HTMLAttributes["aria-label"];
+    max: number;
+    /**
+     * Clipped text for screen readers. Often something like `"characters used"`
+     */
+    clippedText?: string;
+}
+static const segmenter = (
+    "Segmenter" in Intl
+        ? new (Intl as any).Segmenter(undefined, { granularity: "grapheme" })
+        : null
+);
+static function countGraphemes(value: string): number {
+    if (segmenter) {
+        return [...segmenter.segment(value)].length;
+    }
+    return [...value].length;
 }
 
-<const/{
-    content,
-    max = 0,
-    clippedText,
-    value: inputValue,
-    count: inputCount,
-    countChange,
-    ariaLiveChange: ariaLiveChange,
-    ...htmlInput
-}=input>
+<const/{ string, max, clippedText, count: inputCount, ...htmlInput }=input>
 
-<let/value:=input.value>
+<const/count=(inputCount !== undefined ? inputCount : countGraphemes(string))>
 
-<const/countFromValue(value?: string | number) {
-    if (typeof value === "string") {
-        // use iterator to account for emojis and other multi-char symbols
-        return [...value].length;
-    }
-    if (typeof value === "number") {
-        return value;
-    }
-    return 0;
-}>
-
-<let/count=(
-    inputCount ? inputCount : countFromValue(value)
-) valueChange=countChange>
-
-<script>
-    const timeout = setTimeout(() => {
-        count = value ? countFromValue(value) : count;
-        (ariaLiveChange || null)?.(count >= max ? "polite" : "off");
-    }, 500);
-    $signal.onabort = () => clearTimeout(timeout);
-</script>
-<span ...htmlInput>
-    <if=content>
-        <${content}/>
-    </if>
-    <else>
+<define/Display>
+    <span ...htmlInput>
         ${count}/${max}
         <if=clippedText>
+            ${" "}
             <span class="clipped">
                 ${clippedText}
             </span>
         </if>
-    </else>
-</span>
+    </span>
+</define>
+
+<return={
+    count,
+    ariaLive: count > max ? "polite" as const : "off" as const,
+    Display,
+}>

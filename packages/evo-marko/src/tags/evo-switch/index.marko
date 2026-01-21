@@ -1,4 +1,4 @@
-export interface Input extends Marko.HTML.Input {}
+export interface Input extends Omit<Marko.HTML.Input, "type" | "role"> {}
 
 <const/{
     class: inputClass,

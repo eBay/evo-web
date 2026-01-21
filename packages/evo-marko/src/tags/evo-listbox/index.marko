@@ -29,27 +29,18 @@ export interface Input<Index extends number | string | undefined>
     ...htmlInput
 }=input>
 
-<id/listbox>
 <let/selected:=input.selected>
-<const/size=([...options].length)>
+
 <evo-roving-tabindex/rovTabindex
     autoSelect=listSelection === "auto"
-    nodeList=() =>
-        [...Array(size)].map((v, i) => {
-            return document.getElementById(`${listbox}-${i}`);
-        })
+    nodeList=$item
     selected:=selected/>
-<evo-typeahead/{ typeahead }
-    nodeList=() =>
-        [...Array(size)].map((v, i) => {
-            return document.getElementById(`${listbox}-${i}`);
-        })
-    timeoutLength=typeaheadTimeoutLength/>
+<evo-typeahead/{ typeahead } nodeList=$item timeoutLength=typeaheadTimeoutLength/>
 
-<div
+<div/$root
     ...htmlInput
     role="listbox"
-    onKeydown(e, target) {
+    onKeyDown(e, target) {
         rovTabindex.onKeydown(e);
 
         const newIndex = typeahead(e);
@@ -57,12 +48,10 @@ export interface Input<Index extends number | string | undefined>
             rovTabindex.setFocusIndex(newIndex);
         }
 
-        (input.onKeydown || null)?.(e, target);
+        (input.onKeyDown || null)?.(e, target);
     }
-    class=(
-        ["listbox__options", inputClass] // TODO remove the || 0 when default params work finally
-    )
-    tabindex=tabindex || 0>
+    class=["listbox__options", inputClass]
+    tabindex=tabindex>
     <for|option, index| of=options>
         <const/{
             value = index,
@@ -74,7 +63,7 @@ export interface Input<Index extends number | string | undefined>
             ...htmlOption
         }=option>
         <const/isSelected=value === selected>
-        <div
+        <div/$item
             ...htmlOption
             class=[
                 "listbox__option",
@@ -86,11 +75,7 @@ export interface Input<Index extends number | string | undefined>
             tabindex=(disabled ? -1 : tabindex)
             aria-disabled=disabled && "true"
             aria-selected=isSelected && "true"
-            data-value=(
-                value
-                // TODO remove id when we get el reference
-            )
-            id=`${listbox}-${index}`
+            data-value=value
             onClick(e, target) {
                 rovTabindex.onClick(value as string | number);
 
@@ -112,7 +97,8 @@ export interface Input<Index extends number | string | undefined>
                     ...description
                     class=["listbox__description", description.class]/>
             </if>
-            ${" "}<evo-icon-tick-16/>
+            ${" "}
+            <evo-icon-tick-16/>
         </div>
     </for>
 </div>
@@ -124,3 +110,5 @@ export interface Input<Index extends number | string | undefined>
             class=option.class/>
     </for>
 </select>
+
+<return=$root>

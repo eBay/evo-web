@@ -2,7 +2,7 @@ export interface Input extends Marko.Input<"details"> {
     summary?: Marko.AttrTag<Marko.Input<"span">>;
     size?: "regular" | "small";
     alignment?: "regular" | "center";
-    as?: keyof Marko.NativeTags;
+    contentAs?: keyof Marko.NativeTags;
     open?: boolean;
     openChange?: (open?: boolean) => void;
 }
@@ -13,7 +13,7 @@ export interface Input extends Marko.Input<"details"> {
     size,
     summary,
     content,
-    as: inputAs,
+    contentAs,
     ...htmlInput
 }=input>
 
@@ -24,15 +24,13 @@ export interface Input extends Marko.Input<"details"> {
             size === "small" && "details__summary--small",
             alignment === "center" && "details__summary--center",
         ]>
-            <span class="details__label">
-                <${summary.content}/>
-            </span>
+            <span ...summary class=["details__label", summary.class]/>
             <span class="details__icon" hidden>
                 <evo-icon-chevron-down-16/>
             </span>
         </summary>
     </if>
-    <${inputAs || "div"} class="details__content">
+    <${contentAs || "div"} class="details__content">
         <${content}/>
     </>
 </details>

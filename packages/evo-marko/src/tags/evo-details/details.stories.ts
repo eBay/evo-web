@@ -1,7 +1,5 @@
 import { Story } from "@storybook/marko";
-import {
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
 import Details, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
@@ -56,8 +54,9 @@ export default {
         },
       },
     },
-    as: {
-      description: "The root element.",
+    contentAs: {
+      description:
+        "The root element inside the `<details>` that wraps content. Defaults to `<div>`",
       table: {
         defaultValue: {
           summary: "div",

@@ -1,18 +1,4 @@
-import {
-    autoUpdate,
-    computePosition,
-    shift,
-    offset,
-    type ReferenceElement,
-} from "@floating-ui/dom";
-static interface Ret {
-    floatingStyles: undefined | Marko.HTMLAttributes["style"];
-    onClick: () => void;
-    onFocus: () => void;
-    onFocusOut: () => void;
-    onKeydown: (e: KeyboardEvent) => void;
-    ariaExpanded: Marko.HTMLAttributes["aria-expanded"];
-}
+import { autoUpdate, computePosition, shift, offset } from "@floating-ui/dom";
 export interface Input {
     open?: boolean;
     reverse?: boolean;
@@ -24,7 +10,7 @@ export interface Input {
     overlay: () => HTMLElement;
 }
 
-<let/floatingStyles=undefined as Ret["floatingStyles"]>
+<let/floatingStyles=undefined as undefined | Marko.HTMLAttributes["style"]>
 <const/update=() => {
     computePosition(input.host(), input.overlay(), {
         placement: input.reverse ? "bottom-end" : "bottom-start",
@@ -88,23 +74,23 @@ export interface Input {
     }
 </script>
 
-<return=(
-    {
-        floatingStyles,
-        onClick() {
-            open = !open;
-       },
-        onFocus() {
+<return={
+    floatingStyles,
+    onClick() {
+        open = !open;
+    },
+    onFocus() {
+        open = true;
+    },
+    onFocusOut() {
+        open = false;
+    },
+    onKeydown(e: KeyboardEvent) {
+        if (e.key === "Enter" || e.key === " ") {
             open = true;
-        },
-        onFocusOut() {
-            open = false;
-        },
-        onKeydown(e) {
-            if (e.key === "Enter" || e.key === " ") {
-                open = true;
-            }
-        },
-        ariaExpanded: open ? "true" : "false",
-    } as Ret
-)>
+        }
+    },
+    ariaExpanded: open
+        ? "true"
+        : ("false" as Marko.HTMLAttributes["aria-expanded"]),
+}>

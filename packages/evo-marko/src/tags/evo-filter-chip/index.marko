@@ -1,4 +1,5 @@
-export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+export interface Input
+    extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     selected?: boolean;
     selectedChange?: (selected?: boolean) => void;
     variant?: "default" | "expressive" | "menu";
@@ -9,7 +10,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     expandedChange?: (expanded?: boolean) => void;
 }
 <const/{
-    // class: inputClass,
+    class: inputClass,
     content,
     disabled,
     selected: inputSelected,
@@ -21,15 +22,15 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     href,
     onClick,
     ...htmlInput
-}=input/>
-<const/isMenu=variant === "menu"/>
-<const/isAnchor=!!href && a11ySelectedText && variant !== "menu"/>
-<let/mounted=false/>
-<lifecycle onMount() {
+}=input>
+<const/isMenu=variant === "menu">
+<const/isAnchor=!!href && a11ySelectedText && variant !== "menu">
+<let/mounted=false>
+<script>
     mounted = true;
-}/>
-<let/selected:=input.selected/>
-<let/expanded:=input.expanded/>
+</script>
+<let/selected:=input.selected>
+<let/expanded:=input.expanded>
 
 <${isAnchor ? "a" : "button"}
     ...htmlInput
@@ -38,9 +39,10 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
         mounted && "filter-chip--animated",
         variant === "expressive" && "filter-chip--expressive",
         isAnchor && selected && "filter-chip--selected",
+        inputClass,
     ]
-    href=!disabled ? href : undefined
-    disabled=!isAnchor ? disabled : undefined
+    href=(!disabled ? href : undefined)
+    disabled=(!isAnchor ? disabled : undefined)
     type=!isAnchor && "button"
     aria-pressed=!isAnchor && (selected ? "true" : "false")
     aria-expanded=variant === "menu" && (expanded ? "true" : "false")
@@ -51,14 +53,13 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
             } else {
                 selected = !selected;
             }
-            input.onClick && input.onClick(e, target);
+            (input.onClick || null)?.(e, target);
         }
-    }
->
+    }>
 
     <if=variant === "expressive">
         <span class="filter-chip__media">
-            <img ...image/>
+            <img ...(image!)>
         </span>
     </if>
     <else if=variant === "default">

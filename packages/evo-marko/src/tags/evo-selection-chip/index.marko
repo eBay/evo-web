@@ -1,18 +1,26 @@
-export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+export interface Input
+    extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     selected?: boolean;
     selectedChange?: (selected?: boolean) => void;
 }
 
-<const/{ content, selected: selectedInput, onClick, ...htmlInput }=input/>
+<const/{
+    content,
+    class: inputClass,
+    selected: selectedInput,
+    onClick,
+    ...htmlInput
+}=input>
 
-<let/selected:=input.selected/>
-<let/mounted=false/>
+<let/selected:=input.selected>
+<let/mounted=false>
 <lifecycle onMount() {
     mounted = true;
-}/>
+}>
 
 <button
-    class=["selection-chip", mounted && "selection-chip--animated"]
+    ...htmlInput
+    class=["selection-chip", mounted && "selection-chip--animated", inputClass]
     aria-pressed=(selected ? "true" : "false")
     type="button"
     onClick(e: PointerEvent, target: HTMLButtonElement) {
@@ -20,9 +28,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
             selected = !selected;
             input.onClick && input.onClick(e, target);
         }
-    }
-    ...htmlInput
->
+    }>
     <span class="selection-chip__text">
         <${content}/>
     </span>

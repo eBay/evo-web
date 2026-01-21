@@ -46,7 +46,6 @@ export interface Input<
 <const/menuClass=(baseClass === "menu" ? "items" : "menu")>
 <let/selected:=input.selected>
 
-<const/size=([...items].length)>
 <id/menu>
 <span
     ...htmlInput
@@ -65,17 +64,11 @@ export interface Input<
         aria-labelledby=ariaLabelledby
         id=menu>
         <evo-roving-tabindex/rovTabindex
-            nodeList=() =>
-                [...Array(size)].map((v, i) => {
-                    return document.getElementById(`${menu}-${i}`);
-                })
+            nodeList=$item
             selected:=selected/>
 
         <evo-typeahead/{ typeahead }
-            nodeList=() =>
-                [...Array(size)].map((v, i) => {
-                    return document.getElementById(`${menu}-${i}`);
-                })
+            nodeList=$item
             timeoutLength=typeaheadTimeoutLength/>
 
         <for|item, i| of=items>
@@ -105,7 +98,7 @@ export interface Input<
                 <hr class=`${baseClass}__separator` role="separator">
             </if>
             <else>
-                <div
+                <div/$item
                     ...htmlItem
                     class=[
                         `${baseClass}__item`,
@@ -113,7 +106,6 @@ export interface Input<
                         badgeNumber !== undefined &&
                             `${baseClass}__item--badged`,
                     ]
-                    id=`${menu}-${i}`
                     onClick(e, target) {
                         rovTabindex.onClick(value);
                         (item.onClick || null)?.(e, target);

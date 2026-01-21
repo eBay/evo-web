@@ -11,7 +11,6 @@ import GroupCode from "./examples/group.marko?raw";
 import WithLabelCode from "./examples/WithLabel.marko?raw";
 import DisabledCode from "./examples/DisabledWithLabel.marko?raw";
 import IsolatedTemplateCode from "./examples/isolated.marko?raw";
-import { Story } from "@storybook/marko";
 import type { Input } from "./index.marko";
 
 export default {
@@ -26,56 +25,17 @@ export default {
   },
 
   argTypes: {
-    checked: {
-      description: "if checked or not",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
-      type: "boolean",
-    },
     size: {
-      options: ["regular", "large"],
+      options: ["small (default)", "large"],
 
       description:
-        "Sets the checkbox icon. Default is regular. For mweb this should be set to large. (Note: The dimensions of the checkbox will not change, but only the icon)",
+        "Sets the checkbox icon. Default is small. (Note: The dimensions of the checkbox will not change, but only the icon)",
       table: {
         defaultValue: {
           summary: "regular",
         },
       },
       type: { category: "Options" },
-    },
-    onChange: {
-      action: "onChange",
-      description: "Triggered on change",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent, value, checked }",
-        },
-      },
-    },
-    onFocus: {
-      action: "onFocus",
-      description: "Triggered on focus",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent, value }",
-        },
-      },
-    },
-    onKeydown: {
-      action: "onKeydown",
-      description: "Triggered on keydown",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent, value }",
-        },
-      },
     },
   },
 };

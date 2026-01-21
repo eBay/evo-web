@@ -10,108 +10,85 @@ import DisabledCode from "./examples/disabled-with-label.marko?raw";
 import { Story } from "@storybook/marko";
 
 export default {
-    title: "form input/evo-radio",
-    component: Component,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "form input/evo-radio",
+  component: Component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
+  },
 
-    argTypes: {
-        size: {
-            options: ["regular", "large"],
-            type: { category: "Options" },
-            table: {
-                defaultValue: {
-                    summary: "regular",
-                },
-            },
-            description:
-                'Either "large" or "regular". Sets the radio icon. Default is regular. For mweb this should be set to large. (Note: The dimensions of the radio will not change, but only the icon)',
+  argTypes: {
+    size: {
+      options: ["regular (default)", "large"],
+      type: { category: "Options" },
+      table: {
+        defaultValue: {
+          summary: "undefined",
         },
-        onChange: {
-            action: "onChange",
-            description: "Triggered on change",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onFocus: {
-            action: "onFocus",
-            description: "Triggered on focus",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
-        onKeydown: {
-            action: "onKeydown",
-            description: "Triggered on keydown",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, value }",
-                },
-            },
-        },
+      },
+      description:
+        'Either `"large"` or `undefined` (regular size). Sets the radio icon. (Note: The dimensions of the radio will not change, but only the icon)',
     },
+    "all <input> attributes": {
+      description:
+        "All attributes from the [native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) may be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
+      table: {
+        category: "<input> attributes",
+      },
+    },
+  },
 };
 
 export const WithLabel: Story<Input> = (args) => ({
-    input: args,
-    component: WithLabelTemplate,
+  input: args,
+  component: WithLabelTemplate,
 });
 
 WithLabel.parameters = {
-    docs: {
-        source: {
-            code: WithLabelCode,
-        },
+  docs: {
+    source: {
+      code: WithLabelCode,
     },
+  },
 };
 
 export const Disabled: Story<Input> = (args) => ({
-    input: args,
-    component: DisabledTemplate,
+  input: args,
+  component: DisabledTemplate,
 });
 
 Disabled.parameters = {
-    docs: {
-        source: {
-            code: DisabledCode,
-        },
+  docs: {
+    source: {
+      code: DisabledCode,
     },
+  },
 };
 
 export const Group: Story<Input> = (args) => ({
-    input: {
-        ...args,
-   },
-    component: groupTemplate,
+  input: {
+    ...args,
+  },
+  component: groupTemplate,
 });
 Group.parameters = {
-    docs: {
-        source: {
-            code: groupCode,
-        },
+  docs: {
+    source: {
+      code: groupCode,
     },
+  },
 };
 
 export const Isolated: any = {};
 Isolated.args = {};
 Isolated.component = Component;
 Isolated.parameters = {
-    docs: {
-        source: {
-            code: tagToString("evo-radio", Isolated.args),
-        },
+  docs: {
+    source: {
+      code: tagToString("evo-radio", Isolated.args),
     },
+  },
 };

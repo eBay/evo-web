@@ -1,13 +1,9 @@
-static interface Ret {
-    typeahead: (e: KeyboardEvent) => number | string;
-}
 export interface Input {
     timeoutLength?: number;
-    nodeList: () => (HTMLElement | undefined)[];
+    nodeList: Iterable<() => HTMLElement>;
 }
 
 <let/typeStr="">
-<const/nodeList=input.nodeList>
 
 <script>
     if (typeStr) {
@@ -20,28 +16,29 @@ export interface Input {
     }
 </script>
 
-<return=(
-    {
-        typeahead: function ({ key }) {
-            if (!/^(?:\w| )$/.test(key)) {
-                return -1;
-            }
-            typeStr += key;
-            if (nodeList() == null) return -1;
-            const lowerTypeStr = typeStr.toLocaleLowerCase();
-            let index = nodeList().findIndex((el: HTMLElement | undefined) =>
-                el?.textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
+<return={
+    typeahead({ key }: KeyboardEvent) {
+        if (!/^(?:\w| )$/.test(key)) {
+            return -1;
+        }
+        typeStr += key;
+        const nodes = [...input.nodeList];
+        if (nodes.length === 0) return -1;
+        const lowerTypeStr = typeStr.toLocaleLowerCase();
+        let index = nodes.findIndex((el) =>
+            el().textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
+        );
+        if (index === -1) {
+            index = nodes.findIndex((el) =>
+                el().textContent.toLocaleLowerCase().includes(lowerTypeStr),
             );
-            if (index === -1) {
-                index = nodeList().findIndex((el: HTMLElement | undefined) =>
-                    el?.textContent.toLocaleLowerCase().includes(lowerTypeStr),
-                );
-            }
-            const currentItem = nodeList()[index];
-            const value =
-                currentItem?.getAttribute("data-value") ||
-                currentItem?.getAttribute("value");
-            return value || index;
-        },
-    } as Ret
-)>
+        }
+        if (index < 0) return index;
+        const node = nodes[index]();
+        return (
+            node.getAttribute("data-value") ||
+            node.getAttribute("value") ||
+            index
+        );
+    },
+}>

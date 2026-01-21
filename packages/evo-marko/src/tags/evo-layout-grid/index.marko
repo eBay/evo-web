@@ -13,12 +13,7 @@ export interface Input extends Marko.HTML.UL {
     item?: Marko.AttrTag<Marko.Renderable>;
     columns?: LayoutOptions;
 }
-<const/{
-    item: items,
-    class: inputClass,
-    columns = {},
-    ...htmlInput
-}=input>
+<const/{ item: items, class: inputClass, columns = {}, ...htmlInput }=input>
 
 <div
     class=["layout-grid", inputClass]

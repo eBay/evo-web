@@ -1,6 +1,5 @@
 export interface ListItem
-    extends Marko.HTML.Button,
-        Omit<Marko.HTML.A, "type" | `on${string}`> {
+    extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     as?: keyof Marko.NativeTags;
     separator?: boolean;
     leading?: Marko.AttrTag<Marko.HTML.Div>;
@@ -12,9 +11,9 @@ export interface Input extends Marko.HTML.Div {
 
 <const/{ class: inputClass, style, item: items = [], ...htmlInput }=input>
 
-<div style=style class=["list", inputClass] ...htmlInput>
+<div ...htmlInput style=style class=["list", inputClass]>
     <ul>
-        <for|item, i| of=items || []>
+        <for|item| of=items || []>
             <const/{
                 class: itemInputClass,
                 as = "div",
@@ -32,16 +31,16 @@ export interface Input extends Marko.HTML.Div {
 
                         <if=leading>
                             <div
-                                class=["list__leading", leading.class]
-                                ...leading/>
+                                ...leading
+                                class=["list__leading", leading.class]/>
                         </if>
                         <div class="list__body">
                             <${item}/>
                         </div>
                         <if=trailing>
                             <div
-                                class=["list__trailing", trailing.class]
-                                ...trailing/>
+                                ...trailing
+                                class=["list__trailing", trailing.class]/>
                         </if>
                     </>
                 </li>

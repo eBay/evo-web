@@ -1,7 +1,5 @@
 import { tagToString } from "../../common/storybook/storybook-code-source";
-import {
-    buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
 import component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
@@ -18,124 +16,115 @@ import columnsTemplate from "./examples/columns.marko";
 import columnsCode from "./examples/columns.marko?raw";
 
 export default {
-    title: "buttons/evo-toggle-button-group",
-    component,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "buttons/evo-toggle-button-group",
+  component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
-    argTypes: {
-        variant: {
-            type: "string",
-            control: { type: "select" },
-            options: ["checkbox", "radio", "radio-toggle"],
-            description:
-                'Selection type for the buttons in the group. May be `"checkbox"` (default), `"radio"`, or `"radio-toggle"` (same as radio but with the option to deselect)',
-        },
-        columnsMin: {
-            type: "number",
-            control: { type: "number" },
-            description:
-                "Preferred minimum number of columns for smallest container/screen (1-3). If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
-        },
-        columnsXS: {
-            type: "number",
-            control: { type: "number" },
-            description:
-                "Preferred minimum number of columns within extra small containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
-        },
-        columnsSM: {
-            type: "number",
-            control: { type: "number" },
-            description:
-                "Preferred minimum number of columns within small containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
-        },
-        columnsMD: {
-            type: "number",
-            control: { type: "number" },
-            description:
-                "Preferred minimum number of columns within medium containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
-        },
-        columnsXL: {
-            type: "number",
-            control: { type: "number" },
-            description:
-                "Preferred minimum number of columns within extra large containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
-        },
-        a11yText: {
-            type: "string",
-            description:
-                "Accessibility text for the group. Cannot be used together with `a11yLabelId`",
-        },
-        a11yLabelId: {
-            type: "string",
-            description:
-                "Id of the element that labels the group. Required for a11y compliance. Cannot be used together with `a11yText`",
-        },
-        layoutType: {
-            type: "string",
-            control: { type: "select" },
-            options: ["minimal", "list", "gallery"],
-            description:
-                'Enforced layout type of all buttons. May be `"minimal"` (default), `"list"`, or `"gallery"`. Gallery layout may only be used when there is also an icon or an image, and minimal layout may **not** be used when there is an icon or an image',
-        },
-        buttons: {
-            name: "@button",
-            description:
-                "Represents an `<evo-toggle-button/>` to be used as part of the group",
-            table: {
-                category: "@attribute tags",
-            },
-        },
-        onChange: {
-            action: "on-change",
-            description: "Triggered when the pressed state changes",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, pressed }",
-                },
-            },
-        },
+  },
+  argTypes: {
+    pressed: {
+      type: "string | number | (string | number)[]",
+      control: { type: "text" },
+      description:
+        "Values that are currently selected. Use a string or number for single select, or an array for multiselect",
     },
+    pressedChange: {
+      type: "function",
+      description:
+        "Used to hoist value using the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
+    },
+    columnsMin: {
+      type: "number",
+      control: { type: "number" },
+      description:
+        "Preferred minimum number of columns for smallest container/screen (1-3). If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
+    },
+    columnsXS: {
+      type: "number",
+      control: { type: "number" },
+      description:
+        "Preferred minimum number of columns within extra small containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
+    },
+    columnsSM: {
+      type: "number",
+      control: { type: "number" },
+      description:
+        "Preferred minimum number of columns within small containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
+    },
+    columnsMD: {
+      type: "number",
+      control: { type: "number" },
+      description:
+        "Preferred minimum number of columns within medium containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
+    },
+    columnsXL: {
+      type: "number",
+      control: { type: "number" },
+      description:
+        "Preferred minimum number of columns within extra large containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
+    },
+    a11yText: {
+      type: "string",
+      description:
+        "Accessibility text for the group. Cannot be used together with `a11yLabelId`",
+    },
+    a11yLabelId: {
+      type: "string",
+      description:
+        "Id of the element that labels the group. Required for a11y compliance. Cannot be used together with `a11yText`",
+    },
+    layoutType: {
+      type: "string",
+      control: { type: "select" },
+      options: ["minimal", "list", "gallery"],
+      description:
+        'Enforced layout type of all buttons. May be `"minimal"` (default), `"list"`, or `"gallery"`. Gallery layout may only be used when there is also an icon or an image, and minimal layout may **not** be used when there is an icon or an image',
+    },
+    button: {
+      name: "@button",
+      description:
+        "Represents an `<evo-toggle-button/>` to be used as part of the group",
+      table: {
+        category: "@attribute tags",
+      },
+    },
+  },
 };
 
-export const Default = buildExtensionTemplate(
-    DefaultTemplate,
-    DefaultCode
-);
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 
 export const WithIcons = buildExtensionTemplate(
-    withIconsTemplate,
-    withIconsCode,
+  withIconsTemplate,
+  withIconsCode,
 );
 
 export const WithDefaultSelected = buildExtensionTemplate(
-    withDefaultTemplate,
-    withDefaultCode,
+  withDefaultTemplate,
+  withDefaultCode,
 );
 
 export const externalLabel = buildExtensionTemplate(
-    externalLabelTemplate,
-    externalLabelCode,
+  externalLabelTemplate,
+  externalLabelCode,
 );
 
 export const Controlled = buildExtensionTemplate(
-    controlledTemplate,
-    controlledCode,
+  controlledTemplate,
+  controlledCode,
 );
 
 export const PreferredColumns = buildExtensionTemplate(
-    columnsTemplate,
-    columnsCode,
-    {
-        columnsMin: 1,
-        columnsSM: 3,
-        columnsXS: 2,
-        columnsMD: 6,
-        columnsXL: 8,
-    },
+  columnsTemplate,
+  columnsCode,
+  {
+    columnsMin: 1,
+    columnsSM: 3,
+    columnsXS: 2,
+    columnsMD: 6,
+    columnsXL: 8,
+  },
 );

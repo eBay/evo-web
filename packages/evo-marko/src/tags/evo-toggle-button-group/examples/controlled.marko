@@ -9,9 +9,9 @@
         Clear Selection
     </evo-button>
     <evo-toggle-button-group
+        ...input
         pressed:=pressed
         a11yText="Toggle Button Group"
-        ...input
     >
         <for|title, i| of=titles>
             <@button name=`button${i}`>

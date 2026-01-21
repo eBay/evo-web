@@ -1,7 +1,5 @@
 import { Story } from "@storybook/marko";
-import {
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 

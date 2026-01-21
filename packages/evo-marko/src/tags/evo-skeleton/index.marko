@@ -1,8 +1,16 @@
-import type { AttrString } from "marko/tags-html";
-export interface Input extends Marko.HTML.Div {
-    a11yText?: AttrString;
+export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
+    /**
+     * The accessibility text for the skeleton
+     *
+     * English default to be overridden is `"Loading..."`
+     */
+    a11yText: Marko.HTML.Div["aria-label"];
 }
 
-<const/{ class: inputClass, a11yText, ...htmlInput }=input>
+<const/{ class: inputClass, a11yText = "Loading...", ...htmlInput }=input>
 
-<div role="img" aria-label=a11yText class=["skeleton", inputClass] ...htmlInput/>
+<div
+    ...htmlInput
+    role="img"
+    aria-label=a11yText
+    class=["skeleton", inputClass]/>

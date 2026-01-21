@@ -30,19 +30,8 @@ export interface Input extends Marko.HTML.Select {
     ...htmlInput
 }=input>
 <const/options=[...(inputOptions || [])]>
-<id/selectId=id>
 <let/value:=input.value>
 
-<script>
-    const parentForm = selectEl().closest("form");
-    if (parentForm) {
-        parentForm.addEventListener("reset", () => {
-            value = "";
-        }, {
-            signal: $signal,
-        });
-    }
-</script>
 <const/list=(() => {
     const list: (Option | OptGroup)[] = [];
     const optgroups: Record<string, OptGroup> = {};
@@ -109,8 +98,8 @@ export interface Input extends Marko.HTML.Select {
                     </optgroup>
                 </if>
                 <else>
-                    <const/{ optgroup, ...itemHtmlInput }=optionOrGroup>
-                    <option ...itemHtmlInput/>
+                    <const/{ optgroup, ...itemHtmlInput }=(optionOrGroup as Option)>
+                    <option ...optionOrGroup/>
                 </else>
             </for>
         </select>

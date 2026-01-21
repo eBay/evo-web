@@ -20,11 +20,8 @@ export default {
   },
 
   argTypes: {
-    renderBody: {
-      description: "If set, will override the default body content",
-    },
-    value: {
-      type: "string|number",
+    string: {
+      type: { name: "string", required: true },
       control: { type: "text" },
       description:
         "String to count characters from, or a number representing the current character count",
@@ -41,22 +38,11 @@ export default {
       description:
         "With default body content, clipped text should be provided after the character count for screen readers to announce.",
     },
-    onChange: {
-      action: "onChange",
-      description:
-        "Triggered when the character count changes. Debounced by 500ms.",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ count, inputAriaLive }",
-        },
-      },
-    },
   },
 };
 
 export const Default = buildExtensionTemplate(IsolatedTemplate, IsolatedCode, {
-  value: "Hello world",
+  string: "Hello world",
   clippedText: "characters remaining",
   max: 120,
 });
@@ -67,6 +53,6 @@ export const CustomText = buildExtensionTemplate(
   CustomTextTemplate,
   CustomTextCode,
   {
-    max:120
-  }
+    max: 120,
+  },
 );

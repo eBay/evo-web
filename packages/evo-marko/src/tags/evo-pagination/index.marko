@@ -11,7 +11,12 @@ export interface Input extends Marko.HTML.Nav {
     prev?: Marko.AttrTag<Item>;
     next?: Marko.AttrTag<Item>;
     variant?: "show-range" | "show-last" | "overflow";
-    a11yCurrentText?: Marko.HTMLAttributes["aria-label"];
+    /**
+     * The clipped text that describes the _whole menu_ in a heading for assistive technology
+     * 
+     * English default to be overridden is `"Results Pagination - Page 1"`
+     */
+    a11yCurrentText: Marko.HTMLAttributes["aria-label"];
 }
 static const MAX_PAGES = 9;
 static const MIN_PAGES = 5;
@@ -28,6 +33,7 @@ static const MIN_PAGES = 5;
 }=input>
 <let/itemWidth=0>
 <let/maxItems=MIN_PAGES>
+<const/baseItems=[...items]>
 
 <const/calculateMaxItems() {
     if (!baseItems.some((item) => !item.type)) {
@@ -54,7 +60,6 @@ static const MIN_PAGES = 5;
 
 <const/hasDots=variant === "show-last" || variant === "overflow">
 <const/hasOverflow=variant === "overflow">
-<const/baseItems=[...items]>
 <const/lastItemIndex=baseItems.length - 1>
 <const/dotsIndex=(hasDots ? lastItemIndex : -1)>
 <const/leadingDotsIndex=(hasOverflow ? 1 : -1)>
@@ -117,10 +122,7 @@ static const MIN_PAGES = 5;
 }>
 
 <const/getItemTag(item: Item = {}) {
-    if (item.variant) {
-        return item.variant === "link" ? "a" : "button";
-    }
-    return !!item.href ? "a" : "button";
+    return (item.variant === "link" || item.href) ? "a" : "button";
 }>
 
 <script>
@@ -130,7 +132,7 @@ static const MIN_PAGES = 5;
     });
 </script>
 
-<id/heading = id>
+<id/heading=id>
 <nav/root
     ...htmlInput
     role="navigation"

@@ -1,4 +1,3 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import avatar from "./index.marko";
 import Readme from "./README.md";
@@ -11,7 +10,6 @@ import autoImageTemplateCode from "./examples/with-auto-placement.marko?raw";
 import signedOutTemplate from "./examples/signedout.marko";
 import signedOutTemplateCode from "./examples/signedout.marko?raw";
 
-import { Story } from "@storybook/marko";
 import type { Input } from "./index.marko";
 
 export default {
@@ -54,7 +52,7 @@ export default {
     },
     username: {
       description:
-        "The username to display. If there is no body, then this will deternmine what the content is. If there is no username passed, then user is signed out. Based on the username, the icon will change colors and show the first letter if there is no user profile pic.",
+        "The username to display. If there is no body, then this will determine what the content is. If there is no username passed, then user is signed out. Based on the username, the icon will change colors and show the first letter if there is no user profile pic.",
     },
     "aria-label": {
       control: { type: "text" },
@@ -98,8 +96,8 @@ export const WithAutoPlacement = buildExtensionTemplate(
 );
 
 export const SignedOut = buildExtensionTemplate(
-  autoImageTemplate,
-  autoImageTemplateCode,
+  signedOutTemplate,
+  signedOutTemplateCode,
   {
     "aria-label": "Signed out",
   },

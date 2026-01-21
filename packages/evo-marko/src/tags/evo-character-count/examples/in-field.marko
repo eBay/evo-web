@@ -1,13 +1,12 @@
 export interface Input {
-    value?: string | number;
-    charCount?: number;
+    value?: string;
     max?: number;
     clippedText?: string;
 }
-<const/{ max = 120, clippedText }=input>
-<let/value=input.value>
-<let/charCount=input.charCount>
-<let/ariaLive=("" as Marko.AriaAttributes["aria-live"])>
+<const/{ max = 120 }=input>
+<let/value=input.value || "">
+
+<evo-character-count/{ ariaLive, Display: CharCount } string=value max=max/>
 
 <span class="field">
     <label class="field__label field__label--stacked" for="my-input">
@@ -26,14 +25,6 @@ export interface Input {
         <span id="my-input-description">
             Brief description
         </span>
-        <evo-character-count
-            id="my-input-charcount"
-            count:=charCount
-            value=value
-            ariaLiveChange(newAriaLive) {
-                ariaLive = newAriaLive;
-            }
-            max=max
-            clippedText=clippedText/>
+        <CharCount/>
     </div>
 </span>

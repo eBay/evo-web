@@ -11,73 +11,72 @@ import multiSelectTemplate from "./examples/multiSelect.marko";
 import multiSelectTemplateCode from "./examples/multiSelect.marko?raw";
 
 export default {
-    title: "navigation & disclosure/ebay-accordion",
-    component: Accordion,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "navigation & disclosure/evo-accordion",
+  component: Accordion,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
+  },
 
-    argTypes: {
-        size: {
-            type: "options",
-            description: "Size of the details",
-            table: {
-                defaultValue: {
-                    summary: "regular",
-                },
-            },
-            options: ["regular", "large"],
+  argTypes: {
+    size: {
+      type: "options",
+      description: "Size of the details",
+      table: {
+        defaultValue: {
+          summary: "regular",
         },
-        a11yRoleDescription: {
-            type: "string",
-            control: { type: "text" },
-            description:
-                "The localized role description to announce the component role for a11y users.",
-            table: {
-                defaultValue: {
-                    summary: "accordion",
-                },
-            },
-        },
-        details: {
-            name: "@details",
-            description:
-                "Represents an <ebay-details/> element to be used as part of the group. Allowed attributes are `open`, `as`, `text` and `renderBody`",
-            table: {
-                category: "@attribute tags",
-            },
-        },
-        onToggle: {
-            action: "on-toggle",
-            description:
-                "Triggered on toggle of details to control auto-collapse",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent, open }",
-                },
-            },
-        },
-        onClick: {
-            action: "on-click",
-            description: "Triggered on click of details",
-            table: {
-                category: "Events",
-                defaultValue: {
-                    summary: "{ originalEvent }",
-                },
-            },
-        },
+      },
+      options: ["regular", "large"],
     },
+    a11yRoleDescription: {
+      type: "string",
+      control: { type: "text" },
+      description:
+        "The localized role description to announce the component role for a11y users.",
+      table: {
+        defaultValue: {
+          summary: "accordion",
+        },
+      },
+    },
+    details: {
+      name: "@details",
+      description:
+        "Represents an <ebay-details/> element to be used as part of the group. Allowed attributes are `open`, `as`, `text` and `renderBody`",
+      table: {
+        category: "@attribute tags",
+      },
+    },
+    onToggle: {
+      action: "on-toggle",
+      description: "Triggered on toggle of details to control auto-collapse",
+      table: {
+        category: "Events",
+        defaultValue: {
+          summary: "{ originalEvent, open }",
+        },
+      },
+    },
+    onClick: {
+      action: "on-click",
+      description: "Triggered on click of details",
+      table: {
+        category: "Events",
+        defaultValue: {
+          summary: "{ originalEvent }",
+        },
+      },
+    },
+  },
 };
 
 export const Default = buildExtensionTemplate(
-    defaultTemplate,
-    defaultTemplateCode,
+  defaultTemplate,
+  defaultTemplateCode,
 );
 
 export const Open = buildExtensionTemplate(openTemplate, openTemplateCode);
@@ -85,6 +84,6 @@ export const Open = buildExtensionTemplate(openTemplate, openTemplateCode);
 export const Large = buildExtensionTemplate(largeTemplate, largeTemplateCode);
 
 export const MultiSelect = buildExtensionTemplate(
-    multiSelectTemplate,
-    multiSelectTemplateCode,
+  multiSelectTemplate,
+  multiSelectTemplateCode,
 );

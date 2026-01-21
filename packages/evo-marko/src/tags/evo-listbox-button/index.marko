@@ -4,7 +4,7 @@ export interface Input<Index extends number | string | undefined>
     selected?: ListboxInput<Index>["selected"];
     selectedChange?: ListboxInput<Index>["selectedChange"];
     open?: boolean;
-    openChange?: boolean;
+    openChange?: (newOpen: boolean) => void;
     option?: ListboxInput<Index>["option"];
     name?: ListboxInput<Index>["name"];
     listSelection?: ListboxInput<Index>["listSelection"];
@@ -31,9 +31,9 @@ export interface Input<Index extends number | string | undefined>
 <const/{
     name,
     class: inputClass,
-    selected :inputSelected,
+    selected: inputSelected,
     selectedChange,
-    open :inputOpen,
+    open: inputOpen,
     openChange,
     borderless,
     disabled,
@@ -58,21 +58,32 @@ export interface Input<Index extends number | string | undefined>
     "aria-describedby": describedby,
     ...htmlInput
 }=input>
-<let/selected:= input.selected>
-<let/open:= input.open as Input["open"]>
-<const/optionsList = [...options]>
-<const/selectedIndex = typeof selected === "number"? selected : optionsList.findIndex((o) => o.value === selected)>
-<const/selectedOption = optionsList[selectedIndex]>
+<let/selected:=input.selected>
+<let/open:=input.open>
+<const/optionsList=[...options]>
+<const/selectedIndex=(
+    typeof selected === "number"
+        ? selected
+        : optionsList.findIndex((o) => o.value === selected)
+)>
+<const/selectedOption=optionsList[selectedIndex]>
 
-<id/labelId = prefixId>
-<const/isForm = variant === "form">
-<id/listbox>
+<id/labelId=prefixId>
+<const/isForm=variant === "form">
 
-// TODO remove host once dynamic tags work with returning an element
-<id/host>
-<${truncate && !fluid ? "div" : "span"}/root
+<id/rootId> // TODO: remove in favor of $root once Marko supports dynamic tag return
 
+<evo-expander/expander
+    open:=open
+    strategy=strategy
+    collapseOnSelect=collapseOnSelect
+    host=() => document.getElementById(rootId)
+    overlay=$listbox/>
+
+
+<${truncate && !fluid ? "div" : "span"}/$root
     ...htmlInput
+    id=rootId
     class=[
         "listbox-button",
         inputClass,
@@ -80,17 +91,6 @@ export interface Input<Index extends number | string | undefined>
         isForm && `listbox-button--form`,
         hasError && "listbox-button--error",
     ]>
-    <evo-expander/expander
-        open:=open
-        strategy=strategy
-        collapseOnSelect=collapseOnSelect
-        // TODO change this to root once marko works
-        host=() => document.getElementById(host)!
-        // host=root
-        overlay=() => {
-            return document.getElementById(listbox)!;
-        }/>
-
     <button
         class=[
             "listbox-button__control",
@@ -100,7 +100,6 @@ export interface Input<Index extends number | string | undefined>
             truncate && "btn--truncated",
             floatingLabel && "btn--floating-label",
         ]
-        id=host
         value=selectedOption.value as string
         type="button"
         disabled=disabled
@@ -110,7 +109,6 @@ export interface Input<Index extends number | string | undefined>
         aria-labelledby=labelId && `${prefixId} ${labelId}`
         aria-invalid=invalid && "true"
         aria-expanded=expander.ariaExpanded
-        // todo add aria label
         onClick() {
             expander.onClick();
         }>
@@ -150,9 +148,8 @@ export interface Input<Index extends number | string | undefined>
             <evo-icon-chevron-down-16/>
         </span>
     </button>
-    <evo-listbox
+    <evo-listbox/$listbox
         style=expander.floatingStyles
-        id=listbox
         onFocusOut() {
             expander.onFocusOut();
         }
@@ -164,7 +161,5 @@ export interface Input<Index extends number | string | undefined>
         name=name
         listSelection=listSelection
         a11ySelectedText=a11ySelectedText
-        option=input.option
-        >
-    </evo-listbox>
+        option=input.option/>
 </>

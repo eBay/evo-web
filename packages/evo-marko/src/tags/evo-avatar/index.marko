@@ -1,7 +1,7 @@
 import { getColorForText } from "./util";
 static type Size = 32 | 40 | 48 | 56 | 64 | 96 | 128;
 static type ImagePlacement = "cover" | "fit";
-export interface Input extends Marko.HTML.Div {
+export interface Input extends Omit<Marko.HTML.Div, "role"> {
     username?: string;
     color?: string;
     size?: Size | `${Size}`;
@@ -18,15 +18,18 @@ export interface Input extends Marko.HTML.Div {
     content,
     knownAspectRatio,
     ...htmlInput
-}=input/>
+}=input>
 
-<let/imagePlacement=(
-    knownAspectRatio && (knownAspectRatio < 3 / 4 || knownAspectRatio > 4 / 3)
+<let/aspectRatio=knownAspectRatio>
+
+<const/imagePlacement=(
+    (aspectRatio && (aspectRatio < 3 / 4 || aspectRatio > 4 / 3)
         ? "fit"
-        : "cover"
-) as ImagePlacement />
+        : "cover") as ImagePlacement
+)>
 
 <div
+    ...htmlInput
     role="img"
     class=[
         "avatar",
@@ -34,24 +37,16 @@ export interface Input extends Marko.HTML.Div {
         inputClass,
         size && `avatar--${size}`,
         username && !img && `avatar--${getColorForText(username, color)}`,
-    ]
-    ...htmlInput
->
+    ]>
     <if=img>
         <img
             ...img
             alt=""
-            onLoad(e:Event, el:HTMLImageElement) {
-                const aspectRatio = el.naturalWidth / el.naturalHeight;
-                if (aspectRatio < 3 / 4 || aspectRatio > 4 / 3) {
-                    imagePlacement = "fit";
-                } else {
-                    imagePlacement = "cover";
-                }
+            onLoad(_, el) {
+                aspectRatio = el.naturalWidth / el.naturalHeight;
             }
         >
     </if>
-
     <else if=content>
         <${content}/>
     </else>
