@@ -1,1 +1,185 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>Textbox Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Every textbox${" "}
+        <strong>must</strong>
+        ${" "}have an associated visible label. Use a${" "}
+        <code>&lt;label&gt;</code>
+        ${" "}element with a${" "}
+        <code>for</code>
+        ${" "}attribute matching the input's${" "}
+        <code>id</code>
+        ${" "}.
+    </p>
+    <p>
+        Placeholder text is not a substitute for a label. It disappears on input
+        and has insufficient contrast. In cases where a visible label is not
+        possible (e.g., search, phone input), use${" "}
+        <code>aria-label</code>
+        ${" "}to provide an accessible name.
+    </p>
+    <p>
+        Icons inside textboxes are decorative and${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>aria-hidden="true"</code>
+        ${" "}. Icon buttons (e.g., clear button)${" "}
+        <strong>must</strong>
+        ${" "}have an${" "}
+        <code>aria-label</code>
+        ${" "}describing their action.
+    </p>
+    <p>
+        For validation errors, apply${" "}
+        <code>aria-invalid="true"</code>
+        ${" "}to the input and associate an error message using${" "}
+        <code>aria-describedby</code>
+        ${" "}.
+    </p>
+    <h2>Interaction Design</h2>
+    <p>
+        This section provides detailed instructions for how different input
+        types should navigate and operate the pattern.
+    </p>
+    <h3>Keyboard</h3>
+    <p>
+        Pressing${" "}
+        <strong>TAB${" "}</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}move focus to the textbox input.
+    </p>
+    <p>
+        Likewise, pressing${" "}
+        <strong>SHIFT-TAB${" "}</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}move focus backwards.
+    </p>
+    <p>
+        When focused, arrow keys${" "}
+        <strong>must</strong>
+        ${" "}navigate through the text. Backspace and delete keys${" "}
+        <strong>must</strong>
+        ${" "}work as expected.
+    </p>
+    <p>
+        If an icon button is present,${" "}
+        <strong>TAB${" "}</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}move focus to the button. Pressing${" "}
+        <strong>ENTER${" "}</strong>
+        ${" "}or${" "}
+        <strong>SPACEBAR${" "}</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}activate the button.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the textbox label, its role (text field or text area),
+        and current value.
+    </p>
+    <p>
+        When${" "}
+        <code>aria-invalid="true"</code>
+        ${" "}is set, the screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the invalid state. If${" "}
+        <code>aria-describedby</code>
+        ${" "}references an error message, it${" "}
+        <strong>must</strong>
+        ${" "}be announced.
+    </p>
+    <p>
+        Disabled and readonly states${" "}
+        <strong>must</strong>
+        ${" "}be announced when the input receives focus.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Clicking or tapping the textbox${" "}
+        <strong>must</strong>
+        ${" "}place focus in the input. Clicking an icon button${" "}
+        <strong>must</strong>
+        ${" "}activate the button.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to the input in rare cases when a visible label is
+                    not possible. Provides the accessible name for the textbox.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-invalid="true"</strong>
+                </td>
+                <td>Applied to the input to indicate validation has failed.</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-describedby</strong>
+                </td>
+                <td>
+                    Applied to the input to reference an element containing the
+                    error message or additional description.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to decorative icons inside the textbox to hide them
+                    from assistive technologies.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-required</strong>
+                </td>
+                <td>
+                    Applied to the input element to denote a required field. We
+                    can also use this attribute as a CSS hook.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href=`${urls.accessibility}/patterns/input-meter`>
+                Input Meter
+            </a>
+        </li>
+        <li>
+            <a href=`${urls.accessibility}/patterns/form-validation`>
+                Form Validation
+            </a>
+        </li>
+        <li>
+            <a href=`${urls.accessibility}/patterns/input-validation`>
+                Input Validation
+            </a>
+        </li>
+    </ul>
+</div>
