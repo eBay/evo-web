@@ -1,1 +1,118 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>Icon Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Most icons are presentational (decorative). They accompany text or exist
+        within interactive elements that already have accessible names. These${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>aria-hidden="true"</code>
+        ${" "}to hide them from assistive technology.
+    </p>
+    <p>
+        Standalone informative icons are rare. When an icon conveys meaning
+        without accompanying text, it${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>role="img"</code>
+        ${" "}and${" "}
+        <code>aria-label</code>
+        ${" "}to provide an accessible name.
+    </p>
+    <h2>Interaction Design</h2>
+    <p>
+        This section provides detailed instructions for how different input
+        types should navigate and operate the pattern.
+    </p>
+    <h3>Keyboard</h3>
+    <p>
+        If an icon is placed within an interactive element (such as a button),
+        the interactive element${" "}
+        <strong>must</strong>
+        ${" "}be keyboard accessible via${" "}
+        <strong>TAB</strong>
+        ${" "}key. Refer to the${" "}
+        <a href=`${urls.components}/icon-button`>
+            Icon Button
+        </a>
+        ${" "}pattern for more information on interactive icons.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        Presentational icons${" "}
+        <strong>must</strong>
+        ${" "}be skipped by screen readers.
+    </p>
+    <p>
+        Standalone informative icons${" "}
+        <strong>must</strong>
+        ${" "}announce the${" "}
+        <code>aria-label</code>
+        ${" "}value and image role.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Icons are not clickable by default. If placed within an interactive
+        element, clicking the icon will perform the desired action.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to presentational icons to hide them from assistive
+                    technologies.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>role="img"</strong>
+                </td>
+                <td>
+                    Applied to standalone informative icons to identify them as
+                    images to assistive technologies.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to standalone informative icons with${" "}
+                    <code>role="img"</code>
+                    ${" "}to provide an accessible name.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href=`${urls.accessibility}/techniques/background-icon`>
+                Background Icon Accessibility
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/tutorials/images/decorative/">
+                W3C Decorative Images
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/tutorials/images/informative/">
+                W3C Informative Images
+            </a>
+        </li>
+    </ul>
+</div>

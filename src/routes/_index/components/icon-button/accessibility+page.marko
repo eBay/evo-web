@@ -1,1 +1,117 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+
+<div class="a11y-pattern-content">
+    <h1>Icon Button Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Every icon button${" "}
+        <strong>must</strong>
+        ${" "}have an${" "}
+        <code>aria-label</code>
+        ${" "}that describes the action (e.g., "Menu", "Close", "Save"). The
+        inner SVG icon${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>aria-hidden="true"</code>
+        ${" "}since the accessible name is provided by the button.
+    </p>
+    <p>
+        For badged icon buttons, the badge${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>aria-hidden="true"</code>
+        . Include the badge count in the button's${" "}
+        <code>aria-label</code>
+        ${" "}(e.g., "Watchlist (4 notifications)").
+    </p>
+    <h2>Interaction Design</h2>
+    <p>
+        This section provides detailed instructions for how different input
+        types should navigate and operate the pattern.
+    </p>
+    <h3>Keyboard</h3>
+    <p>
+        Pressing${" "}
+        <strong>TAB</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}move focus to the icon button.
+    </p>
+    <p>
+        Pressing${" "}
+        <strong>ENTER</strong>
+        ${" "}or${" "}
+        <strong>SPACEBAR</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}activate the button. If the icon button triggers a modal or
+        popover, closing it${" "}
+        <strong>must</strong>
+        ${" "}return focus to the icon button.
+    </p>
+    <p>
+        For icon links, pressing${" "}
+        <strong>ENTER</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}follow the link.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the${" "}
+        <code>aria-label</code>
+        ${" "}value and the element role (button or link).
+    </p>
+    <p>
+        If disabled, the screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the disabled state.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Clicking or tapping the icon button${" "}
+        <strong>must</strong>
+        ${" "}activate the action. Clicking an icon link${" "}
+        <strong>must</strong>
+        ${" "}follow the link.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to the button or link element to provide an
+                    accessible name describing the action.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to the inner SVG icon and badge elements to hide
+                    them from assistive technologies.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/">
+                APG Button Pattern
+            </a>
+        </li>
+    </ul>
+</div>
