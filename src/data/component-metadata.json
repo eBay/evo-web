@@ -88,7 +88,7 @@
     "cssStorybookPath": "/story/skin-calendar--base",
     "markoStorybookPath": "/docs/building-blocks-ebay-calendar--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-calendar--documentation",
-    "description": "A calendar shows the days, weeks, and months of a given year."
+    "description": "A control that facilitates date selection across days, weeks, and months."
   },
   "card": {
     "component": "card",
@@ -753,7 +753,7 @@
     },
     "markoStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation",
     "reactStorybookPath": "/docs/building-blocks-ebay-skeleton--documentation",
-    "description": "A skeleton is a graphical placeholder."
+    "description": "A graphical placeholder."
   },
   "snackbar-dialog": {
     "component": "snackbar",
