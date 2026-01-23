@@ -1,0 +1,70 @@
+{
+  "name": "@evo-web/react",
+  "version": "0.0.0",
+  "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
+  "keywords": [
+    "React",
+    "eBay Evo",
+    "evo-web",
+    "components",
+    "design-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eBay/evo-web",
+    "directory": "packages/evo-react"
+  },
+  "license": "MIT",
+  "sideEffects": [
+    "./**/*.css"
+  ],
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "npm run type:check && npm run test && vite build",
+    "build:storybook": "storybook build -o ./_site/evo-react/$(git branch --show-current)",
+    "deploy": "exit 0",
+    "format": "eslint . --fix && prettier . --write --log-level=warn",
+    "lint": "eslint . && prettier . --check --log-level=warn",
+    "release": "npm run build",
+    "start": "storybook dev -p 9001",
+    "test": "vitest --browser.headless --passWithNoTests",
+    "type:check": "tsc --noEmit",
+    "update-icons": "node ./scripts/update-icons",
+    "version": "npm run update-icons && git add -A src"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.16",
+    "classnames": "^2.5.1",
+    "makeup-active-descendant": "^0.7.10",
+    "makeup-expander": "^0.11.9",
+    "makeup-floating-label": "^0.4.9",
+    "makeup-focusables": "^0.4.5",
+    "makeup-keyboard-trap": "^0.5.7",
+    "makeup-prevent-scroll-keys": "^0.3.4",
+    "makeup-roving-tabindex": "^0.7.7",
+    "makeup-screenreader-trap": "^0.5.6",
+    "makeup-typeahead": "^0.3.3",
+    "react-remove-scroll": "^2.7.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/browser-playwright": "^4.0.18",
+    "vitest-browser-react": "^2.0.4"
+  },
+  "peerDependencies": {
+    "@ebay/skin": "^19",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}
