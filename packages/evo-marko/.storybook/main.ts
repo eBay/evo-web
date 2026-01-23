@@ -14,7 +14,7 @@ const rawMarkdown = {
 };
 
 export default {
-  stories: ["../src/**/*.stories.ts"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   framework: "@storybook/marko-vite",
   addons: ["@storybook/addon-a11y"],
   parameters: {
