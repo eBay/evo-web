@@ -17,13 +17,18 @@
     "useUnknownInCatchVariables": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "baseUrl": "./",
     "types": ["@testing-library/jest-dom", "vite/client"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["./src", "shaka-player/dist"],
-  "exclude": ["node_modules", "dist", "**/__tests__/*"]
+  "include": ["./src"],
+  "exclude": [
+    "**/examples/**/*",
+    "**/*test*/**/*",
+    "**/storybook/**/*",
+    "**/*.stories.ts"
+  ]
 }

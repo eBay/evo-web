@@ -1,19 +1,21 @@
-export interface Input extends Marko.HTML.Input {
+export interface Input {
+    id?: string | undefined
     inputSize?: "regular" | "large";
     fluid?: boolean;
     opaqueLabel?: boolean;
     floatingLabel?: string;
     focused?: boolean;
     invalid?: boolean;
+    value?: unknown;
+    disabled?: Marko.HTML.Input["disabled"];
     a11yButtonLabel?: Marko.HTMLAttributes["aria-label"];
     autocorrect?: Marko.HTML.TextArea["autocorrect"];
     cols?: Marko.HTML.TextArea["cols"];
     rows?: Marko.HTML.TextArea["rows"];
+    content?: Marko.Body
 }
 
 <const/{
-    a11yButtonLabel,
-    class: inputClass,
     disabled,
     floatingLabel,
     id,

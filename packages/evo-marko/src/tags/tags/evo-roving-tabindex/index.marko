@@ -18,12 +18,12 @@ export interface Input<
         if (selected.includes(newSelected)) {
             selected = selected.filter(
                 (n) => n !== newSelected,
-            ) as typeof selected;
+            ) as Index;
         } else {
-            selected = [...selected, newSelected] as typeof selected;
+            selected = [...selected, newSelected] as Index;
         }
     } else {
-        selected = newSelected as typeof selected;
+        selected = newSelected as Index;
     }
 }>
 static function getValue(el: HTMLElement) {

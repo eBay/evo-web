@@ -33,30 +33,6 @@ static type LoadState = "ready" | "error" | "loading";
     }
 </script>
 
-<div class=[styles.player, inputClass]>
-    <if=loadState === "ready">
-        <model-viewer
-            ...htmlInput
-            camera-controls
-            touch-action="pan-y"
-            src=src
-        />
-    </if>
-    <else if=loadState === "error">
-        <div class=styles.overlay>
-            <evo-icon-attention-24/>
-            <div class="three-d-player__overlay-text">
-                ${errorText}
-            </div>
-        </div>
-    </else>
-    <else>
-        <div class=styles.overlay>
-            <evo-progress-spinner a11yText=a11yLoadingText/>
-        </div>
-    </else>
-</div>
-
 <style/styles>
     .player {
         position: relative;
@@ -71,3 +47,28 @@ static type LoadState = "ready" | "error" | "loading";
         justify-content: center;
     }
 </style>
+
+<div class=[(styles as any).player, inputClass]>
+    <if=loadState === "ready">
+        <model-viewer
+            ...htmlInput
+            camera-controls
+            touch-action="pan-y"
+            src=src
+        />
+    </if>
+    <else if=loadState === "error">
+        <div class=(styles as any).overlay>
+            <evo-icon-attention-24/>
+            <div class="three-d-player__overlay-text">
+                ${errorText}
+            </div>
+        </div>
+    </else>
+    <else>
+        <div class=(styles as any).overlay>
+            <evo-progress-spinner a11yText=a11yLoadingText/>
+        </div>
+    </else>
+</div>
+

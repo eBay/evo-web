@@ -6,6 +6,7 @@ export interface Option extends Marko.HTML.Option {
     optgroup?: string;
 }
 export interface Input extends Marko.HTML.Select {
+    id?: string;
     option?: Marko.AttrTag<Option>;
     floatingLabel?: string;
     size?: "regular" | "large";
@@ -21,7 +22,7 @@ export interface Input extends Marko.HTML.Select {
     fluid,
     valueChange,
     borderless,
-    option: inputOptions = [],
+    option: inputOptions,
     floatingLabel,
     size,
     id,
@@ -86,9 +87,9 @@ export interface Input extends Marko.HTML.Select {
             value:=value
             ...htmlInput>
             <for|optionOrGroup| of=list>
-                <if=optionOrGroup.optgroup>
+                <if=isGroup(optionOrGroup)>
                     <optgroup label=optionOrGroup.optgroup>
-                        <for|option| of=((optionOrGroup as OptGroup).options)>
+                        <for|option| of=optionOrGroup.options>
                             <const/{
                                 optgroup,
                                 ...itemHtmlInput
@@ -98,11 +99,14 @@ export interface Input extends Marko.HTML.Select {
                     </optgroup>
                 </if>
                 <else>
-                    <const/{ optgroup, ...itemHtmlInput }=(optionOrGroup as Option)>
-                    <option ...optionOrGroup/>
+                    <option ...optionOrGroup as any/>
                 </else>
             </for>
         </select>
         <evo-icon-chevron-down-12/>
     </span>
 </evo-floating-label>
+
+static function isGroup(v: Option | OptGroup): v is OptGroup {
+    return !!v.optgroup;
+}

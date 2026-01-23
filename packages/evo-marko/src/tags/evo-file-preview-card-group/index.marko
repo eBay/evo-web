@@ -5,9 +5,9 @@ export interface Input extends Marko.HTML.Div {
 }
 static const SHOW_AMOUNT = 15;
 
-<const/{ card = [], seeMoreAction, ...htmlInput }=input>
+<const/{ card, seeMoreAction, ...htmlInput }=input>
 <let/showing=SHOW_AMOUNT>
-<const/cards=[...card]>
+<const/cards=[...card || []]>
 
 <div ...htmlInput class=["file-preview-card-group", input.class]>
     <ul>

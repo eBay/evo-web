@@ -36,7 +36,7 @@ export interface Input<
     a11yLabelId,
     required,
     pressed: inputPressed,
-    button: buttons = [],
+    button: buttons,
     ...htmlInput
 }=input>
 <let/pressed:=input.pressed>
@@ -68,14 +68,14 @@ export interface Input<
                         if (Array.isArray(pressed)) {
                             // This is a "checkbox" type
                             if (!p) {
-                                pressed = pressed.filter((n) => n !== name) as typeof pressed;
+                                pressed = pressed.filter((n) => n !== name) as Pressed;
                             } else if (!pressed.includes(name) ){
-                                pressed = [...pressed, name] as typeof pressed ;
+                                pressed = [...pressed, name] as Pressed;
                             }
                         } else if (p) {
-                            pressed = name as typeof pressed;
+                            pressed = name as Pressed;
                         } else if (!required) {
-                            pressed = undefined as typeof pressed;
+                            pressed = undefined as Pressed;
                         }
                     }
                     />

@@ -15,7 +15,7 @@ export interface Input<Selected extends string | number> extends Marko.HTML.Div 
     selectedChange,
     size: inputSize,
     class: inputClass,
-    button: buttons = [],
+    button: buttons,
     ...htmlInput
 }=input>
 

@@ -15,6 +15,7 @@ export interface Input<Index extends number | string | undefined>
     name?: string;
     disabled?: boolean;
 }
+
 <const/{
     name,
     selected: selectedIndex,
@@ -22,7 +23,7 @@ export interface Input<Index extends number | string | undefined>
     class: inputClass,
     disabled,
     listSelection,
-    option: options = [],
+    option: options,
     tabindex = 0,
     typeaheadTimeoutLength,
     a11ySelectedText = "selected",

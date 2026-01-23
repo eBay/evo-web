@@ -13,14 +13,14 @@ export interface Input extends Marko.HTML.Div {
     index: inputIndex,
     indexChange,
     activation,
-    tab: tabs = [],
+    tab: tabs,
     ...htmlInput
 }=input>
 
 <let/index:=input.index>
 <id/tabId>
 <id/tabpanelId>
-<const/size=([...tabs].length)>
+<const/size=([...tabs || []].length)>
 
 <evo-roving-tabindex/rovingTabIndex
     autoSelect=activation === "auto"

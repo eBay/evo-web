@@ -91,6 +91,6 @@ export interface Input {
         }
     },
     ariaExpanded: open
-        ? "true"
-        : ("false" as Marko.HTMLAttributes["aria-expanded"]),
+        ? "true" as const
+        : "false" as const,
 }>

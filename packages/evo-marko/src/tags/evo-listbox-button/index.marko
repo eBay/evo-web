@@ -40,7 +40,7 @@ export interface Input<Index extends number | string | undefined>
     fluid,
     invalid,
     buttonName,
-    option: options = [],
+    option: options,
     truncate,
     prefixLabel,
     prefixId,
@@ -60,7 +60,7 @@ export interface Input<Index extends number | string | undefined>
 }=input>
 <let/selected:=input.selected>
 <let/open:=input.open>
-<const/optionsList=[...options]>
+<const/optionsList=[...options || []]>
 <const/selectedIndex=(
     typeof selected === "number"
         ? selected
@@ -77,11 +77,11 @@ export interface Input<Index extends number | string | undefined>
     open:=open
     strategy=strategy
     collapseOnSelect=collapseOnSelect
-    host=() => document.getElementById(rootId)
+    host=() => (document.getElementById(rootId)!)
     overlay=$listbox/>
 
 
-<${truncate && !fluid ? "div" : "span"}/$root
+<${truncate && !fluid ? "div" : "span"}
     ...htmlInput
     id=rootId
     class=[

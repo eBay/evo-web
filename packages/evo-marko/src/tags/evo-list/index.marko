@@ -9,11 +9,11 @@ export interface Input extends Marko.HTML.Div {
     item?: Marko.AttrTag<ListItem>;
 }
 
-<const/{ class: inputClass, style, item: items = [], ...htmlInput }=input>
+<const/{ class: inputClass, style, item: items, ...htmlInput }=input>
 
 <div ...htmlInput style=style class=["list", inputClass]>
     <ul>
-        <for|item| of=items || []>
+        <for|item| of=items>
             <const/{
                 class: itemInputClass,
                 as = "div",

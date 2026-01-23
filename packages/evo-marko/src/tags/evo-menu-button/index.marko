@@ -1,7 +1,7 @@
 import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
-import { type Item, type Input as MenuInput } from "<evo-menu>";
+import { type Input as MenuInput } from "<evo-menu>";
 export interface Input<
     Index extends number | string | (number | string)[] | undefined,
 > extends Omit<MenuInput<Index>, "variant"> {
@@ -42,7 +42,7 @@ export interface Input<
     priority: inputPriority,
     disabled,
     variant,
-    item: items = [],
+    item: items,
     label,
     selected: inputSelected,
     selectedChange,
@@ -99,22 +99,22 @@ export interface Input<
     };
 })()>
 <id/menu>
+<evo-expander/expander
+    open:=open
+    reverse=reverse
+    strategy=strategy
+    collapseOnSelect=collapseOnSelect
+    host=root
+    overlay=() => {
+        return document.getElementById(menu)!;
+    }/>
 <span/root ...htmlInput class=["menu-button", inputClass]>
-    <evo-expander/expander
-        open:=open
-        reverse=reverse
-        strategy=strategy
-        collapseOnSelect=collapseOnSelect
-        host=root
-        overlay=() => {
-            return document.getElementById(menu)!;
-        }/>
     <${tagName}
         class=[`menu-button__button`]
         size=size
         priority=priority as ButtonInput["priority"]
         borderless=borderless
-        variant=variant
+        variant=variant as any
         aria-haspopup="true"
         selected=isSelected
         transparent=transparent

@@ -21,7 +21,7 @@ export interface Input extends Marko.HTML.Div {
 }
 <const/{
     content,
-    step: steps = [],
+    step: steps,
     direction = "row",
     defaultState,
     class: inputClass,
@@ -37,7 +37,7 @@ export interface Input extends Marko.HTML.Div {
         case "upcoming":
             return -1;
         default:
-            const step = [...steps].findIndex((item) => item.current);
+            const step = [...steps || []].findIndex((item) => item.current);
             return step === -1 ? 0 : step;
     }
 })()>
@@ -63,7 +63,7 @@ export interface Input extends Marko.HTML.Div {
             defaultState === "current" && "progress-stepper__items--current",
         ]
         role="list">
-        <for|step, index, list| of=steps>
+        <for|step, index| of=steps>
             <const/{
                 current: stepCurrent,
                 class: stepClass,
