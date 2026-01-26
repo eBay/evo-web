@@ -242,3 +242,17 @@ A final release is always made from the `master` branch.
 7. The package will be published to NPM.
 
 After every major and minor release, please take the opportunity to upgrade any outdated dependencies and devDependencies (_hint_: run `npm outdated` to see outdated dependencies). Except for major version upgrades, the version in `package.json` should always reflect the last known working version, not the version you are upgrading to.
+
+### Icon Release Process
+
+When updating icons across the eBay UI ecosystem, follow this coordinated release process:
+
+1. **Prepare Changesets**: Include this package in the changesets for the PR that's releasing the icons documenting the icon changes and specifying the appropriate version bump (patch, minor, or major).
+
+2. **Commit and Create Pull Request**: Commit all icon-related files along with the changeset files, then an automatic PR will be created containing the icon updates.
+
+3. **Automated Release Pull Request**: After the icon PR is merged, the Changesets GitHub Action will automatically generate a release PR that consolidates all icon updates for the packages included in the release.
+
+4. **Publish Release**: Review the automatically generated release PR for accuracy, then merge it to publish the updated packages with the new icons to NPM.
+
+This workflow ensures icon changes are properly versioned and released across all dependent packages simultaneously.
