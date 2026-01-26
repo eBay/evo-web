@@ -1,0 +1,3 @@
+{
+  "taglib-imports": ["./evo-icon/marko.json", "./evo-skeleton/marko.json"]
+}
