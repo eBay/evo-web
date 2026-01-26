@@ -21,6 +21,9 @@ export default defineConfig({
       fileName: "index",
     },
     rollupOptions: {
+      output: {
+        banner: `"use client";\n`,
+      },
       plugins: [
         typescript({
           // We use a different tsconfig for building so vite doesn't generate types for tests,
