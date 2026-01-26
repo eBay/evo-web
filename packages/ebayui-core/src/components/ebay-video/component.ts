@@ -478,7 +478,7 @@ class Video extends Marko.Component<Input, State> {
             // Add window focus event listener to play video when window regains focus
             window.addEventListener("focus", this.handleWindowFocus.bind(this));
             // Add window blur event listener to pause video when window loses focus
-            window.addEventListener("blur", this.handleWindowFocus.bind(this));
+            window.addEventListener("blur", this.handleWindowBlur.bind(this));
         }
 
         this._loadVideo();
@@ -522,17 +522,17 @@ class Video extends Marko.Component<Input, State> {
         this.observer.observe(this.containerEl);
     }
 
-    handleWindowFocus(originalEvent: FocusEvent) {
-        if (
-            originalEvent.type === "focus" &&
-            !this.userPaused &&
-            this.video.paused
-        ) {
+    handleWindowFocus() {
+        if (this.video.paused && !this.userPaused) {
             this.isAutoPlay = true;
             this.video.play().catch((e) => {
                 this.isAutoPlay = false;
             });
-        } else if (originalEvent.type === "blur" && !this.video.paused) {
+        }
+    }
+
+    handleWindowBlur() {
+        if (!this.video.paused) {
             this.isAutoPause = true;
             this.video.pause();
         }
