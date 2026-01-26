@@ -12,8 +12,8 @@
   "license": "MIT",
   "files": [],
   "scripts": {
-    "build": "exit 0",
-    "build:ci": "CI=true exit 0",
+    "build": "mtc",
+    "build:ci": "CI=true mtc",
     "build:readme": "node scripts/add-ds-version",
     "build:storybook": "storybook build -o ./_site",
     "deploy": "exit 0",
