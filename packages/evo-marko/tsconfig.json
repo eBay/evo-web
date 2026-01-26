@@ -25,10 +25,5 @@
     "skipLibCheck": true
   },
   "include": ["./src"],
-  "exclude": [
-    "**/examples/**/*",
-    "**/*test*/**/*",
-    "**/storybook/**/*",
-    "**/*.stories.ts"
-  ]
+  "exclude": ["**/*test*/**/*", "**/storybook/**/*", "**/*.stories.ts"]
 }
