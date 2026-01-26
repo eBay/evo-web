@@ -56,13 +56,18 @@ export default {
         layout: {
             type: "string",
             description:
-                'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remaining time on the videois displayed',
+                'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remaining time on the video is displayed',
             control: { type: "text" },
         },
         playView: {
             description:
                 'Either "inline", or "fullscreen". When player strats to play, will either play "inline" (default) or switch to "fullscreen"',
             control: { type: "text" },
+        },
+        offscreenPause: {
+            type: "boolean",
+            description:
+                "True/False to pause the video when it is less than 50% visible in the viewport. Also adds auto-pause (and resume) when window loses focus (ex. tab change). Default is False",
         },
         a11yLoadText: {
             control: { type: "text" },

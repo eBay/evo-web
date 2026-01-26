@@ -475,6 +475,10 @@ class Video extends Marko.Component<Input, State> {
         if (this.input.offscreenPause) {
             // Set up Intersection Observer to detect when video is 50% in viewport
             this.setupIntersectionObserver();
+            // Add window focus event listener to play video when window regains focus
+            window.addEventListener("focus", this.handleWindowFocus.bind(this));
+            // Add window blur event listener to pause video when window loses focus
+            window.addEventListener("blur", this.handleWindowFocus.bind(this));
         }
 
         this._loadVideo();
@@ -516,6 +520,22 @@ class Video extends Marko.Component<Input, State> {
         }, options);
 
         this.observer.observe(this.containerEl);
+    }
+
+    handleWindowFocus(originalEvent: FocusEvent) {
+        if (
+            originalEvent.type === "focus" &&
+            !this.userPaused &&
+            this.video.paused
+        ) {
+            this.isAutoPlay = true;
+            this.video.play().catch((e) => {
+                this.isAutoPlay = false;
+            });
+        } else if (originalEvent.type === "blur" && !this.video.paused) {
+            this.isAutoPause = true;
+            this.video.pause();
+        }
     }
 
     onDestroy() {
