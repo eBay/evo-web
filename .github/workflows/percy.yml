@@ -7,12 +7,16 @@ on:
       - 'packages/skin/dist/**'
       - 'packages/skin/.storybook/**'
       - 'packages/skin/src/sass/**/*.stories.js'
+      - '.github/workflows/percy.yml'
+      - 'packages/skin/.percy.yml'
   push:
     branches: ["main"]
     paths:
       - 'packages/skin/dist/**'
       - 'packages/skin/.storybook/**'
       - 'packages/skin/src/sass/**/*.stories.js'
+      - '.github/workflows/percy.yml'
+      - 'packages/skin/.percy.yml'
 
 concurrency:
   group: "percy-${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}"
@@ -53,6 +57,9 @@ jobs:
         with:
           sass-dir: 'packages/skin/src/sass'
           base-branch: 'main'
+
+      - name: Copy Storybook assets
+        run: npm run copy:assetsToStorybook -w packages/skin
 
       - name: Run Percy (Partial)
         if: steps.detect.outputs.components != '' && steps.detect.outputs.components != 'all'

@@ -32,6 +32,8 @@ const GLOBAL_PATHS = [
   "packages/skin/src/tokens/",
   "packages/skin/src/sass/bundles/",
   "packages/skin/.storybook/",
+  ".github/workflows/percy.yml",
+  "packages/skin/.percy.yml",
 ] as const;
 
 type ComponentMetadata = {
