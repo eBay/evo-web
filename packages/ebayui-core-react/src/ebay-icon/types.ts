@@ -100,7 +100,9 @@ export type Icon =
 'audioOff24' |
 'authenticityGuarantee16' |
 'authenticityGuarantee24' |
+'authenticityGuaranteeFilled16' |
 'authenticityGuaranteeFilled16Colored' |
+'authenticityGuaranteeFilled24' |
 'authenticityGuaranteeFilled24Colored' |
 'autoAdjust24' |
 'avatarSignedOut' |
@@ -421,6 +423,7 @@ export type Icon =
 'girocard18Colored' |
 'girocard24Colored' |
 'girocard32Colored' |
+'github24' |
 'glasses24' |
 'glasses64' |
 'google24' |
@@ -610,7 +613,9 @@ export type Icon =
 'mobileSignal24' |
 'moneyBackGuarantee16' |
 'moneyBackGuarantee24' |
+'moneyBackGuaranteeFilled16' |
 'moneyBackGuaranteeFilled16Colored' |
+'moneyBackGuaranteeFilled24' |
 'moneyBackGuaranteeFilled24Colored' |
 'moneyStack16' |
 'moneyStack24' |
@@ -643,6 +648,7 @@ export type Icon =
 'nfcCard24Colored' |
 'nfcCard32Colored' |
 'noChildrenZeroThree48' |
+'note12' |
 'note16' |
 'note24' |
 'notification16' |
@@ -747,6 +753,9 @@ export type Icon =
 'profile20' |
 'profile24' |
 'profileFilled24' |
+'profileVerification16' |
+'profileVerification20' |
+'profileVerification24' |
 'progressCurrent24' |
 'progressUpcoming24' |
 'promotion16' |
@@ -955,7 +964,9 @@ export type Icon =
 'topRatedSeller24' |
 'topService16' |
 'topService24' |
+'topServiceFilled16' |
 'topServiceFilled16Colored' |
+'topServiceFilled24' |
 'topServiceFilled24Colored' |
 'tradingCard16' |
 'tradingCard24' |
@@ -973,6 +984,7 @@ export type Icon =
 'truck16' |
 'truck24' |
 'truck64' |
+'truckShipped12' |
 'truckShipped16' |
 'truckShipped24' |
 'twitter24' |
