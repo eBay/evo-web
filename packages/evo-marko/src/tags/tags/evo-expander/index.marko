@@ -10,7 +10,7 @@ export interface Input {
     overlay: () => HTMLElement;
 }
 
-<let/floatingStyles=undefined as undefined | Marko.HTMLAttributes["style"]>
+<let/floatingStyles=(undefined as undefined | Record<string, string>)>
 <const/update=() => {
     computePosition(input.host(), input.overlay(), {
         placement: input.reverse ? "bottom-end" : "bottom-start",

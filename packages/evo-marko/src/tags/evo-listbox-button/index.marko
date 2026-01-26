@@ -148,7 +148,7 @@ export interface Input<Index extends number | string | undefined>
             <evo-icon-chevron-down-16/>
         </span>
     </button>
-    <evo-listbox/$listbox
+    <evo-listbox/$listbox:(() => HTMLElement)
         style=expander.floatingStyles
         onFocusOut() {
             expander.onFocusOut();
