@@ -24,17 +24,19 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
     ...htmlInput
 }=input>
 
-<const/[tagName, extraAttrs]=((): [string, Marko.HTML.A | Marko.HTML.Button] => {
-    if (action) {
-        return ["span", {}];
-    } else if (href) {
-        return ["a", { href: disabled ? "" : href }];
-    } else {
-        return ["button", { type: "button", disabled }];
-    }
-})()>
+<define/Root|input: (Marko.HTML.Span | Marko.HTML.A | Marko.HTML.Button)|>
+    <if=action>
+        <span ...(input as Marko.HTML.Span)/>
+    </if>
+    <else if=href>
+        <a ...(input as Marko.HTML.A) href=disabled ? "" : href/>
+    </else>
+    <else>
+        <button ...(input as Marko.HTML.Button) type="button" disabled=disabled/>
+    </else>
+</define>
 
-<${tagName} ...htmlInput ...extraAttrs class=[
+<Root ...htmlInput class=[
     "card",
     aspectRatio === "5:4" && "card--aspect-5-4",
     aspectRatio === "16:9" && "card--aspect-16-9",
