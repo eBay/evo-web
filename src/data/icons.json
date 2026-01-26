@@ -308,10 +308,22 @@
         "width": "24"
       },
       {
+        "name": "authenticity-guarantee-filled-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
         "name": "authenticity-guarantee-filled-16-colored",
         "size": "16-colored",
         "height": "16",
         "width": "16"
+      },
+      {
+        "name": "authenticity-guarantee-filled-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
       },
       {
         "name": "authenticity-guarantee-filled-24-colored",
@@ -1420,6 +1432,7 @@
         "height": "32",
         "width": "50"
       },
+      { "name": "github-24", "size": "24", "height": "24", "width": "24" },
       { "name": "glasses-24", "size": "24", "height": "24", "width": "24" },
       { "name": "glasses-64", "size": "64", "height": "64", "width": "64" },
       { "name": "google-24", "size": "24", "height": "24", "width": "24" },
@@ -2044,10 +2057,22 @@
         "width": "24"
       },
       {
+        "name": "money-back-guarantee-filled-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
         "name": "money-back-guarantee-filled-16-colored",
         "size": "16-colored",
         "height": "16",
         "width": "16"
+      },
+      {
+        "name": "money-back-guarantee-filled-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
       },
       {
         "name": "money-back-guarantee-filled-24-colored",
@@ -2166,6 +2191,7 @@
         "height": "48",
         "width": "48"
       },
+      { "name": "note-12", "size": "12", "height": "12", "width": "12" },
       { "name": "note-16", "size": "16", "height": "16", "width": "16" },
       { "name": "note-24", "size": "24", "height": "24", "width": "24" },
       {
@@ -2556,6 +2582,24 @@
       { "name": "profile-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "profile-filled-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
+      },
+      {
+        "name": "profile-verification-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
+        "name": "profile-verification-20",
+        "size": "20",
+        "height": "20",
+        "width": "20"
+      },
+      {
+        "name": "profile-verification-24",
         "size": "24",
         "height": "24",
         "width": "24"
@@ -3084,10 +3128,22 @@
       { "name": "top-service-16", "size": "16", "height": "16", "width": "16" },
       { "name": "top-service-24", "size": "24", "height": "24", "width": "24" },
       {
+        "name": "top-service-filled-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
         "name": "top-service-filled-16-colored",
         "size": "16-colored",
         "height": "16",
         "width": "16"
+      },
+      {
+        "name": "top-service-filled-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
       },
       {
         "name": "top-service-filled-24-colored",
@@ -3146,6 +3202,12 @@
       { "name": "truck-16", "size": "16", "height": "16", "width": "16" },
       { "name": "truck-24", "size": "24", "height": "24", "width": "24" },
       { "name": "truck-64", "size": "64", "height": "64", "width": "64" },
+      {
+        "name": "truck-shipped-12",
+        "size": "12",
+        "height": "12",
+        "width": "12"
+      },
       {
         "name": "truck-shipped-16",
         "size": "16",
