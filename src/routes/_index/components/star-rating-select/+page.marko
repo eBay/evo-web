@@ -2,7 +2,7 @@ import { urls } from "../../../../data";
 <div id="star-rating-select-overview">
   <component-banner-img/>
 
-<p>
+  <p>
     Star rating select allows users to interact with and set a star rating.
     Typically allows user to allocate a rating of 1 to 5, and may also allow
     half-values.
@@ -11,14 +11,16 @@ import { urls } from "../../../../data";
   <p>
     Star rating select uses radio buttons under the hood so even in the absence
     of CSS, its gracefully degradation should allow for full accessible
-    interactivity and use.
+    interactivity and use. Any custom implementations${" "}
+    <strong>must not</strong>
+    ${" "}override these default browser behaviors.
   </p>
 
   <p>
-    For a non-interactive star rating, refer
+    For a non-interactive star rating, refer${" "}
     <a href=`${urls.components}/star-rating`>
       star-rating
     </a>
-    pattern.
+    ${" "}pattern.
   </p>
 </div>

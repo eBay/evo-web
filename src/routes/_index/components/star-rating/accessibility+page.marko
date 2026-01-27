@@ -1,12 +1,91 @@
 import "../../../../sass/accessibility.scss";
 import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
-  <h1>Star Rating (static) Accessibility</h1>
-  <p>
-    For a non-interactive star rating, use a static image with
-    <a href=`${urls.accessibility}/techniques/alttext`>
-      text alternatives
-    </a>
-    .
-  </p>
+    <h1>Star Rating Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Star Rating container${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>role="img"</code>
+        ${" "}and${" "}
+        <code>aria-label</code>
+        ${" "}to convey the rating value (e.g., "Rating: 2.5 out of 5").
+    </p>
+    <p>
+        Individual star icons${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>aria-hidden="true"</code>
+        ${" "}since the accessible name is provided by the container.
+    </p>
+    <h2>Interaction Design</h2>
+    <h3>Keyboard</h3>
+    <p>
+        Star rating is not interactive and should not be keyboard focusable.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the${" "}
+        <code>aria-label</code>
+        ${" "}value and image role (e.g., "Rating: 2.5 out of 5, image").
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Star rating is not clickable.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>role="img"</strong>
+                </td>
+                <td>
+                    Applied to the star rating container to identify it as an
+                    image to assistive technologies.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to the container to provide the rating value
+                    (e.g., "Rating: 2.5 out of 5").
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to individual star icons to hide them from
+                    assistive technologies.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href=`${urls.components}/star-rating-select`>
+                Star Rating Select
+            </a>
+        </li>
+        <li>
+            <a href=`${urls.accessibility}/techniques/alttext`>
+                Text Alternatives
+            </a>
+        </li>
+    </ul>
 </div>

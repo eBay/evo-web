@@ -785,7 +785,7 @@
     "cssStorybookPath": "/story/skin-star-rating-select--empty",
     "markoStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation",
     "reactStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation",
-    "description": "Interactive star rating input for user reviews or feedback."
+    "description": "An interactive input for user reviews or feedback."
   },
   "star-rating": {
     "component": "star-rating",
@@ -796,7 +796,7 @@
     "cssStorybookPath": "/story/skin-star-rating--empty",
     "markoStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation",
     "reactStorybookPath": "/docs/graphics-icons-ebay-star-rating--documentation",
-    "description": "Star rating graphic to represent user reviews or feedback."
+    "description": "A graphic to represent user reviews or feedback."
   },
   "switch": {
     "component": "switch",

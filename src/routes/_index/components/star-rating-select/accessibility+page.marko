@@ -1,5 +1,125 @@
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
-  <h1>Star Rating Select Accessibility</h1>
-  <p>The content is not yet available.</p>
+    <h1>Star Rating Select Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Star Rating Select container${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>role="radiogroup"</code>
+        ${" "}with${" "}
+        <code>aria-label</code>
+        ${" "}to describe the purpose (e.g., "Rate this product").
+    </p>
+    <p>
+        Each radio input${" "}
+        <strong>must</strong>
+        ${" "}have an${" "}
+        <code>aria-label</code>
+        ${" "}describing its value (e.g., "1 Star", "2 Stars").
+    </p>
+    <p>
+        Star icons${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>aria-hidden="true"</code>
+        ${" "}since accessible names are provided by the radio inputs.
+    </p>
+    <p>
+        For non-interactive star ratings, use the${" "}
+        <a href=`${urls.components}/star-rating`>Star Rating</a>
+        ${" "}pattern.
+    </p>
+    <h2>Interaction Design</h2>
+    <h3>Keyboard</h3>
+    <p>
+        Pressing${" "}
+        <strong>TAB</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}move focus to the radio group. If a rating is already selected,
+        focus lands on the selected radio.
+    </p>
+    <p>
+        If the radio group is focused, pressing${" "}
+        <strong>LEFT/UP</strong>
+        ${" "}arrow keys${" "}
+        <strong>must</strong>
+        ${" "}select the previous rating.${" "}
+        <strong>RIGHT/DOWN</strong>
+        ${" "}arrow keys${" "}
+        <strong>must</strong>
+        ${" "}select the next rating.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the radiogroup label, current radio label, and selection
+        state.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Clicking or tapping a star${" "}
+        <strong>must</strong>
+        ${" "}select that rating value.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>role="radiogroup"</strong>
+                </td>
+                <td>
+                    Applied to the container to group the radio buttons.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                    ${" "}(on container)
+                </td>
+                <td>
+                    Describes the purpose of the rating selection
+                    (e.g., "Rate this product").
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                    ${" "}(on radio)
+                </td>
+                <td>
+                    Describes the rating value for each option
+                    (e.g., "1 Star", "2 Stars").
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to star icons to hide them from assistive
+                    technologies.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/radio/">
+                APG Radio Group Pattern
+            </a>
+        </li>
+    </ul>
 </div>
