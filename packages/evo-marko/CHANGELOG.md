@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.5
+
+### Patch Changes
+
+- [#470](https://github.com/eBay/evo-web/pull/470) [`cafad45`](https://github.com/eBay/evo-web/commit/cafad45f692c7240ab1642461e45040812dae3e9) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Build evo-marko for publishing
+
 ## 0.1.4
 
 ### Patch Changes
