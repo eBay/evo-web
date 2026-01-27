@@ -3,25 +3,31 @@
   "version": "0.1.3",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
-    "marko-components"
+    "marko-components",
+    "marko-tags"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ebay/evo-core"
   },
   "license": "MIT",
-  "files": [],
+  "files": [
+    "dist",
+    "marko.json",
+    "!**/*test*",
+    "!**/examples",
+    "!**/storybook",
+    "!*.tsbuildinfo",
+    "!**/{,*.}stories.*"
+  ],
   "scripts": {
-    "build": "mtc",
-    "build:ci": "CI=true mtc",
+    "build": "mtc && cp -r src/node_modules dist/",
     "build:readme": "node scripts/add-ds-version",
     "build:storybook": "storybook build -o ./_site",
     "deploy": "exit 0",
+    "format": "eslint --fix; prettier . --write --log-level=warn",
     "importSVG": "tsx scripts/import-svg && prettier \"{./src/tags/evo-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
-    "lint": "npm run lint:less && npm run lint:js && npm run lint:whitespace",
-    "lint:js": "eslint",
-    "lint:less": "stylelint \"src/**/*.{css,less}\" --config .stylelintrc",
-    "lint:whitespace": "lintspaces *.md src/**/*.md src/**/*.marko src/**/*.less --newline --maxnewlines 1 --trailingspaces --spaces 4",
+    "lint": "mtc && eslint && prettier . --check --log-level=warn",
     "prepublishOnly": "exit 0",
     "postpublish": "exit 0",
     "release": "exit 0",
@@ -50,7 +56,7 @@
     "shaka-player": "4.16.12"
   },
   "devDependencies": {
-    "marko": "^6.0.133"
+    "marko": "^6.0.136"
   },
   "peerDependencies": {
     "@ebay/skin": "^19.2.0",

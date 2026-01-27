@@ -93,7 +93,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
                 size="small"
                 transparent
                 aria-label=a11yDeleteText
-                on-click(event, target) {
+                onClick(event, target) {
                     (onDelete || null)?.(event, target);
                 }>
                 <evo-icon-delete-24/>
