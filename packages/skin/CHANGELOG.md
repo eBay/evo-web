@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.20.1
+
+### Patch Changes
+
+- [#447](https://github.com/eBay/evo-web/pull/447) [`e780e13`](https://github.com/eBay/evo-web/commit/e780e130fc10c337784d171e76f2debd977c996d) Thanks [@agliga](https://github.com/agliga)! - fix(tips): fixed issue with small screens not fitting correctly
+
 ## 19.20.0
 
 ### Minor Changes

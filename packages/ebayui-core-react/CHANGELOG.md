@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.1.0
+
+### Minor Changes
+
+- [#434](https://github.com/eBay/evo-web/pull/434) [`db7d0af`](https://github.com/eBay/evo-web/commit/db7d0afbeb36dae32c4ea310eb816b46fb6c3f56) Thanks [@agliga](https://github.com/agliga)! - feat(file-preview-card): added a11yMenuButtonText
+
 ## 9.0.0
 
 ### Major Changes

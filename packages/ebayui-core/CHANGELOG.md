@@ -1,5 +1,19 @@
 # eBayUI-Core Changelog
 
+## 16.2.0
+
+### Minor Changes
+
+- [#429](https://github.com/eBay/evo-web/pull/429) [`439a1c0`](https://github.com/eBay/evo-web/commit/439a1c04b9db435b9a76ead0d2eff150e31a893b) Thanks [@agliga](https://github.com/agliga)! - feat(dropdowns): added option to flip dropdown
+
+- [#434](https://github.com/eBay/evo-web/pull/434) [`db7d0af`](https://github.com/eBay/evo-web/commit/db7d0afbeb36dae32c4ea310eb816b46fb6c3f56) Thanks [@agliga](https://github.com/agliga)! - feat(file-preview-card): added a11yMenuButtonText
+
+### Patch Changes
+
+- [#459](https://github.com/eBay/evo-web/pull/459) [`7ea96ae`](https://github.com/eBay/evo-web/commit/7ea96aee5537325135f6d86da17182948ddeb4f5) Thanks [@patrickufer](https://github.com/patrickufer)! - feat: (video) add auto-pause on window.blur
+
+- [#447](https://github.com/eBay/evo-web/pull/447) [`e780e13`](https://github.com/eBay/evo-web/commit/e780e130fc10c337784d171e76f2debd977c996d) Thanks [@agliga](https://github.com/agliga)! - fix(tips): fixed issue with small screens not fitting correctly
+
 ## 16.1.0
 
 ### Minor Changes

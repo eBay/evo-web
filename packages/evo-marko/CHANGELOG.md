@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.4
+
+### Patch Changes
+
+- [#455](https://github.com/eBay/evo-web/pull/455) [`6c668d8`](https://github.com/eBay/evo-web/commit/6c668d80a148c9cd9f6d08752b985a3dbccebdf5) Thanks [@DylanPiercey](https://github.com/DylanPiercey)! - Initial release version
+
 ## 0.1.3
 
 ### Patch Changes
