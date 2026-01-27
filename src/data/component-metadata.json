@@ -737,11 +737,12 @@
     "component": "signal",
     "ds-component": {
       "name": "signal",
+      "url": "https://playbook.ebay.com/design-system/components/signal",
       "version": "1.0"
     },
     "markoStorybookPath": "/docs/graphics-icons-ebay-signal--documentation",
     "reactStorybookPath": "/docs/graphics-icons-ebay-signal--documentation",
-    "description": "A product signal for an item, e.g. New Listing, Great Price."
+    "description": "A product indicator for an item, e.g. New Listing, Great Price."
   },
   "skeleton": {
     "component": "skeleton",

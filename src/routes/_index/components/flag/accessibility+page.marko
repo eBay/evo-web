@@ -1,1 +1,92 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+
+<div class="a11y-pattern-content">
+    <h1>Flag Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        Each flag image ${" "}
+        <strong>must</strong>
+        ${" "}use${" "}
+        <code>role="img"</code>
+        ${" "}and${" "}
+        <code>aria-label</code>
+        ${" "}to convey the country name (e.g., "United States flag", "Canada flag").
+    </p>
+    <p>
+        When a flag appears alongside visible text that already identifies the
+        country, the flag is decorative and should use${" "}
+        <code>aria-hidden="true"</code>
+        ${" "}instead.
+    </p>
+    <h2>Interaction Design</h2>
+    <h3>Keyboard</h3>
+    <p>
+        Flags are not interactive and should not be keyboard focusable.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the label and image role (e.g., "US flag, image").
+    </p>
+    <p>
+        Decorative flags ${" "}
+        <strong>must</strong>
+        ${" "}be skipped by screen readers.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Flags are not clickable.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>role="img"</strong>
+                </td>
+                <td>
+                    Applied to informative flags to identify them as images to
+                    assistive technologies.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to informative flags to provide the country name
+                    (e.g., "US flag").
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to decorative flags when country is already
+                    identified by adjacent text.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://www.w3.org/WAI/tutorials/images/informative/">
+                W3C Informative Images
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/tutorials/images/decorative/">
+                W3C Decorative Images
+            </a>
+        </li>
+    </ul>
+</div>
