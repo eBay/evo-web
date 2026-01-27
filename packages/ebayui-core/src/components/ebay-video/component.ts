@@ -141,6 +141,9 @@ class Video extends Marko.Component<Input, State> {
     declare isAutoPause: boolean;
     declare userPaused: boolean;
     declare isFocusFromVideoClick: boolean;
+    declare mouseDownHandler: () => void;
+    declare windowFocusHandler: () => void;
+    declare windowBlurHandler: () => void;
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
         const type = source.type && source.type.toLowerCase();
@@ -477,14 +480,14 @@ class Video extends Marko.Component<Input, State> {
             // Set up Intersection Observer to detect when video is 50% in viewport
             this.setupIntersectionObserver();
             // Add mousedown listener to intercept focus events from user clicking on video
-            this.root.addEventListener(
-                "mousedown",
-                this.handleMouseDown.bind(this),
-            );
+            this.mouseDownHandler = this.handleMouseDown.bind(this);
+            this.root.addEventListener("mousedown", this.mouseDownHandler);
             // Add window focus event listener to play video when window regains focus
-            window.addEventListener("focus", this.handleWindowFocus.bind(this));
+            this.windowFocusHandler = this.handleWindowFocus.bind(this);
+            window.addEventListener("focus", this.windowFocusHandler);
             // Add window blur event listener to pause video when window loses focus
-            window.addEventListener("blur", this.handleWindowBlur.bind(this));
+            this.windowBlurHandler = this.handleWindowBlur.bind(this);
+            window.addEventListener("blur", this.windowBlurHandler);
         }
 
         this._loadVideo();
@@ -562,6 +565,12 @@ class Video extends Marko.Component<Input, State> {
 
         if (this.observer) {
             this.observer.disconnect();
+        }
+
+        if (this.input.offscreenPause) {
+            this.root.removeEventListener("mousedown", this.mouseDownHandler);
+            window.removeEventListener("focus", this.windowFocusHandler);
+            window.removeEventListener("blur", this.windowBlurHandler);
         }
     }
 

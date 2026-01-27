@@ -61,7 +61,7 @@ export default {
         },
         playView: {
             description:
-                'Either "inline", or "fullscreen". When player strats to play, will either play "inline" (default) or switch to "fullscreen"',
+                'Either "inline", or "fullscreen". When player starts to play, will either play "inline" (default) or switch to "fullscreen"',
             control: { type: "text" },
         },
         offscreenPause: {
