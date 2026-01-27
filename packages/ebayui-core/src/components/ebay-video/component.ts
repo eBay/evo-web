@@ -140,6 +140,7 @@ class Video extends Marko.Component<Input, State> {
     declare isAutoPlay: boolean;
     declare isAutoPause: boolean;
     declare userPaused: boolean;
+    declare isFocusFromVideoClick: boolean;
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
         const type = source.type && source.type.toLowerCase();
@@ -475,6 +476,11 @@ class Video extends Marko.Component<Input, State> {
         if (this.input.offscreenPause) {
             // Set up Intersection Observer to detect when video is 50% in viewport
             this.setupIntersectionObserver();
+            // Add mousedown listener to intercept focus events from user clicking on video
+            this.root.addEventListener(
+                "mousedown",
+                this.handleMouseDown.bind(this),
+            );
             // Add window focus event listener to play video when window regains focus
             window.addEventListener("focus", this.handleWindowFocus.bind(this));
             // Add window blur event listener to pause video when window loses focus
@@ -522,7 +528,18 @@ class Video extends Marko.Component<Input, State> {
         this.observer.observe(this.containerEl);
     }
 
+    handleMouseDown() {
+        if (!document.hasFocus()) {
+            this.isFocusFromVideoClick = true;
+        }
+    }
+
     handleWindowFocus() {
+        if (this.isFocusFromVideoClick) {
+            // Let the video click event handle play
+            this.isFocusFromVideoClick = false;
+            return;
+        }
         if (this.video.paused && !this.userPaused) {
             this.isAutoPlay = true;
             this.video.play().catch((e) => {
