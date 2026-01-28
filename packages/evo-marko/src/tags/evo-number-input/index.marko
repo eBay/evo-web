@@ -1,7 +1,7 @@
 import type { Input as TextboxInput } from "../evo-textbox/index.marko";
 export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     value?: number;
-    valueChange?: (value?:number) => void;
+    valueChange?: (value: number) => void;
     min?: number;
     max?: number;
     /**

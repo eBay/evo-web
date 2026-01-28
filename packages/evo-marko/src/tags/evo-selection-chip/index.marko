@@ -1,7 +1,7 @@
 export interface Input
     extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
     selected?: boolean;
-    selectedChange?: (selected?: boolean) => void;
+    selectedChange?: (selected: boolean) => void;
 }
 
 <const/{

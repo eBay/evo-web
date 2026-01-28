@@ -4,7 +4,7 @@ export interface Input extends Marko.Input<"details"> {
     alignment?: "regular" | "center";
     contentAs?: keyof Marko.NativeTags;
     open?: boolean;
-    openChange?: (open?: boolean) => void;
+    openChange?: (open: boolean) => void;
 }
 
 <const/{
