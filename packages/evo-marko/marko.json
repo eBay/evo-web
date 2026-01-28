@@ -1,4 +1,8 @@
 {
   "taglib-id": "evo-marko",
-  "exports": "./dist/tags"
+  "tags-dir": [
+    "./src/tags",
+    "./src/tags/evo-icon/tags",
+    "./src/tags/evo-skeleton/tags"
+  ]
 }

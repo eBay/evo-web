@@ -21,15 +21,15 @@
     "!**/{,*.}stories.*"
   ],
   "scripts": {
-    "build": "mtc && cp -r src/node_modules dist/",
+    "build": "mtc",
     "build:readme": "node scripts/add-ds-version",
     "build:storybook": "storybook build -o ./_site",
     "deploy": "exit 0",
     "format": "eslint --fix; prettier . --write --log-level=warn",
     "importSVG": "tsx scripts/import-svg && prettier \"{./src/tags/evo-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
     "lint": "mtc && eslint && prettier . --check --log-level=warn",
-    "prepublishOnly": "exit 0",
-    "postpublish": "exit 0",
+    "prepublishOnly": "node scripts/prepublish",
+    "postpublish": "node scripts/postpublish",
     "release": "npm run build",
     "start": "storybook dev -p 6006 --no-open",
     "test": "vitest run --browser.headless",

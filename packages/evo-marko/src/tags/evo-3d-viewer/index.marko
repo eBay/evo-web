@@ -50,7 +50,7 @@ static type LoadState = "ready" | "error" | "loading";
 
 <div class=[(styles as any).player, inputClass]>
     <if=loadState === "ready">
-        <model-viewer
+        <${"model-viewer"}
             ...htmlInput
             camera-controls
             touch-action="pan-y"
