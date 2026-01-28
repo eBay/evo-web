@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.2.0
+
+### Minor Changes
+
+- [#461](https://github.com/eBay/evo-web/pull/461) [`f18a9bb`](https://github.com/eBay/evo-web/commit/f18a9bb8a7f4f4f06b78b602c90c430bfbc7a6da) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Updated icons
+
 ## 9.1.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.7
+
+### Patch Changes
+
+- [#476](https://github.com/eBay/evo-web/pull/476) [`7e89e71`](https://github.com/eBay/evo-web/commit/7e89e71c7f08dd781aa9f2b7615d1b85163223c3) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Simplify marko.json patterns
+
 ## 0.1.6
 
 ### Patch Changes
