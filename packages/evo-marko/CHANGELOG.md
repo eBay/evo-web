@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.6
+
+### Patch Changes
+
+- [#472](https://github.com/eBay/evo-web/pull/472) [`6039fc4`](https://github.com/eBay/evo-web/commit/6039fc46ef27c9f489ca8a277b2b53f8081337b7) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add release script
+
 ## 0.1.5
 
 ### Patch Changes
