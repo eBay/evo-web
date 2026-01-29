@@ -3,7 +3,7 @@ static interface IconDefs {
     browser: any;
 }
 export interface Input extends Marko.Input<"svg"> {
-    _symbol: () => string;
+    _symbol: string;
     _name: string;
     _size?: string;
     _type?: string;
@@ -44,7 +44,7 @@ static function getIconClass(type: string, name: string, size?: string) {
 static const isBrowser = typeof document === "object";
 static const seenForKey = new WeakMap<WeakKey, Set<string>>();
 client const getRoot = () => document.getElementById("evo-web-icons");
-static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
+static function renderSymbol(key: WeakKey, name: string, symbol: string) {
     let seen = seenForKey.get(key);
     if (!seen) {
         seen = new Set();
@@ -70,9 +70,9 @@ static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
         seen.add(name);
 
         if (isBrowser) {
-            getRoot()!.insertAdjacentHTML("beforeend", symbol());
+            getRoot()!.insertAdjacentHTML("beforeend", symbol);
         } else {
-            return symbol();
+            return symbol;
         }
     }
 

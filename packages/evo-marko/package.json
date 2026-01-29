@@ -26,7 +26,7 @@
     "build:storybook": "storybook build -o ./_site",
     "deploy": "exit 0",
     "format": "eslint --fix; prettier . --write --log-level=warn",
-    "importSVG": "tsx scripts/import-svg && prettier \"{./src/tags/evo-{icon,flag,star-rating,image-placeholder}/**/*,**/*.{js,ts,json,MD}}\" --write --log-level=warn",
+    "importSVG": "tsx scripts/import-svg",
     "lint": "mtc && eslint && prettier . --check --log-level=warn",
     "prepublishOnly": "node scripts/prepublish",
     "postpublish": "node scripts/postpublish",
@@ -56,7 +56,7 @@
     "shaka-player": "4.16.12"
   },
   "devDependencies": {
-    "marko": "^6.0.136"
+    "marko": "^6.0.138"
   },
   "peerDependencies": {
     "@ebay/skin": "^19.2.0",
