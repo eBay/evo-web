@@ -1,8 +1,5 @@
-import { Story } from "@storybook/marko";
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import component from "./index.marko";
-import type { Input } from "./temp";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";

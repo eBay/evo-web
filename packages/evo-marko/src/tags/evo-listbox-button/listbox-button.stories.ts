@@ -1,4 +1,3 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
 import Component from "./index.marko";
@@ -8,7 +7,6 @@ import WithDescriptionTemplate from "./examples/with-description.marko";
 import WithDescriptionTemplateCode from "./examples/with-description.marko?raw";
 import WithErrorTemplate from "./examples/with-error.marko";
 import WithErrorTemplateCode from "./examples/with-error.marko?raw";
-import { Story } from "@storybook/marko";
 
 export default {
   title: "buttons/evo-listbox-button",

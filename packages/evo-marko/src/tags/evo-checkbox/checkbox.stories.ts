@@ -1,6 +1,4 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
-
 import Readme from "./README.md";
 import Checkbox from "./index.marko";
 import GroupTemplate from "./examples/group.marko";
@@ -11,7 +9,6 @@ import GroupCode from "./examples/group.marko?raw";
 import WithLabelCode from "./examples/WithLabel.marko?raw";
 import DisabledCode from "./examples/DisabledWithLabel.marko?raw";
 import IsolatedTemplateCode from "./examples/isolated.marko?raw";
-import type { Input } from "./index.marko";
 
 export default {
   title: "form input/evo-checkbox",

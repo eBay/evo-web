@@ -1,5 +1,5 @@
 import Readme from "./README.md";
-import Component, { type Input } from "./index.marko";
+import Component from "./index.marko";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
@@ -47,4 +47,3 @@ export const NoPanel = buildExtensionTemplate(
   NoPanelTemplate,
   NoPanelTemplateCode,
 );
-

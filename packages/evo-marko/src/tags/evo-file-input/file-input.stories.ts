@@ -5,7 +5,7 @@ import WithPreviewCardsTemplate from "./examples/with-preview-cards.marko";
 import WithPreviewCardsCode from "./examples/with-preview-cards.marko?raw";
 import WithMockUploadsTemplate from "./examples/with-mock-uploads.marko";
 import WithMockUploadsCode from "./examples/with-mock-uploads.marko?raw";
-import { Story } from "@storybook/marko";
+import type { StoryFn } from "@storybook/marko";
 import component, { type Input } from "./index.marko";
 
 export default {
@@ -39,7 +39,7 @@ export default {
   },
 };
 
-export const Default: Story<Input> = (args) => ({
+export const Default: StoryFn<Input> = (args) => ({
   input: args,
   component: DefaultTemplate,
 });
@@ -56,7 +56,7 @@ Default.parameters = {
   },
 };
 
-export const WithPreviewCards: Story<Input> = (args) => ({
+export const WithPreviewCards: StoryFn<Input> = (args) => ({
   input: args,
   component: WithPreviewCardsTemplate,
 });
@@ -73,7 +73,7 @@ WithPreviewCards.parameters = {
   },
 };
 
-export const WithMockUploads: Story<Input> = (args) => ({
+export const WithMockUploads: StoryFn<Input> = (args) => ({
   input: args,
   component: WithMockUploadsTemplate,
 });

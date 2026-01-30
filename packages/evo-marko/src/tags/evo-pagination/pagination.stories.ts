@@ -7,8 +7,6 @@ import buttonsTemplate from "./examples/buttons.marko";
 import buttonsTemplateCode from "./examples/buttons.marko?raw";
 import interactiveTemplate from "./examples/buttons-interactive.marko";
 import interactiveTemplateCode from "./examples/buttons-interactive.marko?raw";
-import { Story } from "@storybook/marko";
-import type { Input } from "./temp";
 
 export default {
   title: "navigation & disclosure/evo-pagination",

@@ -1,8 +1,5 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
-import {
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
-import Component, { type Input } from "./index.marko";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import Component from "./index.marko";
 import Readme from "./README.md";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
@@ -28,7 +25,6 @@ import compositeTemplate from "./examples/composite.marko";
 import compositeCode from "./examples/composite.marko?raw";
 import groupedTileTemplate from "./examples/grouped-tile.marko";
 import groupedTileCode from "./examples/grouped-tile.marko?raw";
-import { Story } from "@storybook/marko";
 
 export default {
   title: "building blocks/evo-skeleton",
@@ -77,7 +73,10 @@ export default {
   },
 };
 
-export const Default = buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode);
+export const Default = buildExtensionTemplate(
+  DefaultTemplate,
+  DefaultTemplateCode,
+);
 export const Avatar = buildExtensionTemplate(avatarTemplate, avatarCode);
 
 export const Button = buildExtensionTemplate(buttonTemplate, buttonCode);

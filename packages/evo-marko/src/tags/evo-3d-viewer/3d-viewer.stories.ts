@@ -1,7 +1,6 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
-import Component, { type Input } from "./index.marko";
+import Component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 
@@ -135,4 +134,7 @@ export default {
   },
 };
 
-export const Default = buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode);
+export const Default = buildExtensionTemplate(
+  DefaultTemplate,
+  DefaultTemplateCode,
+);

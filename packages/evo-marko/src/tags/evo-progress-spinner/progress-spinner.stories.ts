@@ -1,10 +1,8 @@
-import { Story } from "@storybook/marko";
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import Readme from "./README.md";
-import Component, { type Input } from "./index.marko";
+import Component from "./index.marko";
 
 export default {
   title: "progress/evo-progress-spinner",

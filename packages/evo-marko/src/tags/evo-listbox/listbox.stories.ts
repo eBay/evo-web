@@ -1,12 +1,10 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import WithDescriptionTemplate from "./examples/with-description.marko";
 import WithDescriptionTemplateCode from "./examples/with-description.marko?raw";
-import type { Input } from "./component";
 
 export default {
   title: "building blocks/evo-listbox",

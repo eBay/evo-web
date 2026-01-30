@@ -98,16 +98,13 @@ export interface Input<
         priority,
     };
 })()>
-<id/menu>
 <evo-expander/expander
     open:=open
     reverse=reverse
     strategy=strategy
     collapseOnSelect=collapseOnSelect
     host=root
-    overlay=() => {
-        return document.getElementById(menu)!;
-    }/>
+    overlay=$menu/>
 <span/root ...htmlInput class=["menu-button", inputClass]>
     <${tagName}
         class=[`menu-button__button`]
@@ -138,9 +135,8 @@ export interface Input<
             <evo-icon-chevron-down-12/>
         </if>
     </>
-    <evo-menu
+    <evo-menu/$menu:(() => HTMLSpanElement)
         style=expander.floatingStyles
-        id=menu
         selected:=input.selected
         classPrefix="menu-button"
         fixed=strategy === "fixed"

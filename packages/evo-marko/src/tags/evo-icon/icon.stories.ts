@@ -1,12 +1,7 @@
-import { Story } from "@storybook/marko";
-import { tagToString } from "../../common/storybook/storybook-code-source";
-import {
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 
 import Readme from "./README.md";
 import Component from "./examples/all.marko";
-import type { Input } from "./index.marko";
 
 export default {
   title: "graphics & icons/evo-icon",

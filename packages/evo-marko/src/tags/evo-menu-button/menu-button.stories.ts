@@ -1,4 +1,3 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
 import DefaultTemplate from "./examples/default.marko";
@@ -18,8 +17,6 @@ import FilterTemplateCode from "./examples/filter.marko?raw";
 import FooterTemplate from "./examples/footer.marko";
 import FooterTemplateCode from "./examples/footer.marko?raw";
 import Component from "./index.marko";
-import { Story } from "@storybook/marko";
-import type { Input } from "./component";
 
 export default {
   title: "buttons/evo-menu-button",

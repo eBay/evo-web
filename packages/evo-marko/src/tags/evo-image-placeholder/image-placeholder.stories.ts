@@ -7,31 +7,31 @@ import ResizedTemplate from "./examples/resized.marko";
 import ResizedTemplateCode from "./examples/resized.marko?raw";
 
 export default {
-    title: "graphics & icons/evo-image-placeholder",
-    component: Component,
-    parameters: {
-        docs: {
-            description: {
-                component: Readme,
-            },
-        },
+  title: "graphics & icons/evo-image-placeholder",
+  component: Component,
+  parameters: {
+    docs: {
+      description: {
+        component: Readme,
+      },
     },
+  },
 
-    argTypes: {
-        a11yText: {
-            control: { type: "text" },
-            description:
-                "text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
-        },
+  argTypes: {
+    a11yText: {
+      control: { type: "text" },
+      description:
+        "text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
     },
+  },
 };
 
 export const Default = buildExtensionTemplate(
-    DefaultTemplate,
-    DefaultTemplateCode,
+  DefaultTemplate,
+  DefaultTemplateCode,
 );
 
 export const Resized = buildExtensionTemplate(
-    ResizedTemplate,
-    ResizedTemplateCode,
+  ResizedTemplate,
+  ResizedTemplateCode,
 );

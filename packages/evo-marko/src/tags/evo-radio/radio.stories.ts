@@ -7,7 +7,7 @@ import DisabledTemplate from "./examples/disabled-with-label.marko";
 import groupCode from "./examples/grouped-radio.marko?raw";
 import WithLabelCode from "./examples/with-label.marko?raw";
 import DisabledCode from "./examples/disabled-with-label.marko?raw";
-import { Story } from "@storybook/marko";
+import type { StoryFn } from "@storybook/marko";
 
 export default {
   title: "form input/evo-radio",
@@ -42,7 +42,7 @@ export default {
   },
 };
 
-export const WithLabel: Story<Input> = (args) => ({
+export const WithLabel: StoryFn<Input> = (args) => ({
   input: args,
   component: WithLabelTemplate,
 });
@@ -55,7 +55,7 @@ WithLabel.parameters = {
   },
 };
 
-export const Disabled: Story<Input> = (args) => ({
+export const Disabled: StoryFn<Input> = (args) => ({
   input: args,
   component: DisabledTemplate,
 });
@@ -68,7 +68,7 @@ Disabled.parameters = {
   },
 };
 
-export const Group: Story<Input> = (args) => ({
+export const Group: StoryFn<Input> = (args) => ({
   input: {
     ...args,
   },

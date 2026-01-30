@@ -1,11 +1,8 @@
-import { Story } from "@storybook/marko";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
-import { type Input } from "./index.marko";
 
 export default {
   title: "buttons/evo-cta-button",

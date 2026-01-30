@@ -1,11 +1,7 @@
-import { Story } from "@storybook/marko";
-import {
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import Readme from "./README.md";
-import type { Input } from "./index.marko";
 
 export default {
   title: "buttons/evo-icon-button",

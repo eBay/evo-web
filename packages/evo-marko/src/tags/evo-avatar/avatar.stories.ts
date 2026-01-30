@@ -10,8 +10,6 @@ import autoImageTemplateCode from "./examples/with-auto-placement.marko?raw";
 import signedOutTemplate from "./examples/signedout.marko";
 import signedOutTemplateCode from "./examples/signedout.marko?raw";
 
-import type { Input } from "./index.marko";
-
 export default {
   title: "graphics & icons/evo-avatar",
   component: avatar,

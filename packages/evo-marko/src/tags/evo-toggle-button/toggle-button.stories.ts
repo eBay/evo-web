@@ -1,7 +1,6 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
-import component, { type Input } from "./index.marko";
+import component from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import WithIconTemplate from "./examples/with-icon.marko";
@@ -10,7 +9,6 @@ import WithImageTemplate from "./examples/with-image.marko";
 import WithImageCode from "./examples/with-image.marko?raw";
 import MultilineSubtitleTemplate from "./examples/multiline-subtitle.marko";
 import MultilineSubtitleCode from "./examples/multiline-subtitle.marko?raw";
-import { Story } from "@storybook/marko";
 
 export default {
   title: "buttons/evo-toggle-button",

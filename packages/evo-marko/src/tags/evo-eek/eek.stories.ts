@@ -11,7 +11,7 @@ import example2Code from "./examples/A++.marko?raw";
 import example3Code from "./examples/A+.marko?raw";
 import example4Code from "./examples/A.marko?raw";
 import example5Code from "./examples/invalid.marko?raw";
-import { Story } from "@storybook/marko";
+import type { StoryFn } from "@storybook/marko";
 
 export default {
   title: "graphics & icons/evo-eek",
@@ -25,7 +25,7 @@ export default {
   },
 
   argTypes: {
-    "a11yText": {
+    a11yText: {
       control: { type: "text" },
       description:
         "Required: The aria-label accessibility label for the eek component. This is for internationalization. It should use min, max, and rating in the label in order to demonstrate to screen readers the content on the component. Expected value `Energy efficiency class ${rating}. ${min} - ${max}`",
@@ -56,7 +56,7 @@ export default {
   },
 };
 
-export const Default: Story<Input> = (args) => ({ input: args });
+export const Default: StoryFn<Input> = (args) => ({ input: args });
 Default.args = {
   max: "A+++",
   min: "E",

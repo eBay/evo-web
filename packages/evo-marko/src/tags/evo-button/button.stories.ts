@@ -1,7 +1,5 @@
-import {
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
-import button, { type Input } from "./index.marko";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import button from "./index.marko";
 import Readme from "./README.md";
 import ButtonTemplate from "./examples/button.marko";
 import ButtonTemplateCode from "./examples/button.marko?raw";

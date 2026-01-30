@@ -48,7 +48,7 @@ export interface Input<
 <let/selected:=input.selected>
 
 <id/menu>
-<span
+<span/$el
     ...htmlInput
     class=[
         classPrefix ? `${baseClass}__menu` : "menu",
@@ -154,3 +154,5 @@ export interface Input<
         </div>
     </if>
 </span>
+
+<return=$el>

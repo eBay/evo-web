@@ -1,4 +1,4 @@
-import type { Story } from "@storybook/marko";
+import type { StoryFn } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
@@ -7,7 +7,7 @@ import DisabledTemplate from "./examples/disabled-with-label.marko";
 import WithLabelCode from "./examples/with-label.marko?raw";
 import DisabledCode from "./examples/disabled-with-label.marko?raw";
 
-const Template: Story<Input> = (args) => ({ input: args });
+const Template: StoryFn<Input> = (args) => ({ input: args });
 
 export default {
   title: "form input/evo-switch",
@@ -33,7 +33,7 @@ export default {
   },
 };
 
-export const WithLabel: Story<Input> = (args) => ({
+export const WithLabel: StoryFn<Input> = (args) => ({
   input: args,
   component: WithLabelTemplate,
 });
@@ -46,7 +46,7 @@ WithLabel.parameters = {
   },
 };
 
-export const Disabled: Story<Input> = (args) => ({
+export const Disabled: StoryFn<Input> = (args) => ({
   input: args,
   component: DisabledTemplate,
 });

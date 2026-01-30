@@ -1,4 +1,3 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
 import component from "./index.marko";

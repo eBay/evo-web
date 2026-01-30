@@ -6,7 +6,7 @@ import InteractiveTemplate from "./examples/interactive.marko";
 import InteractiveTemplateCode from "./examples/interactive.marko?raw";
 import WithSeparatorTemplate from "./examples/with-separator.marko";
 import WithSeparatorTemplateCode from "./examples/with-separator.marko?raw";
-import { Story } from "@storybook/marko";
+import type { StoryFn } from "@storybook/marko";
 
 export default {
   title: "building blocks/evo-list",
@@ -59,7 +59,7 @@ export default {
   },
 };
 
-export const Static: Story<Input> = (args) => ({
+export const Static: StoryFn<Input> = (args) => ({
   input: args,
   component: StaticTemplate,
 });
@@ -72,7 +72,7 @@ Static.parameters = {
   },
 };
 
-export const Interactive: Story<Input> = (args) => ({
+export const Interactive: StoryFn<Input> = (args) => ({
   input: args,
   component: InteractiveTemplate,
 });
@@ -85,7 +85,7 @@ Interactive.parameters = {
   },
 };
 
-export const WithSeparator: Story<Input> = (args) => ({
+export const WithSeparator: StoryFn<Input> = (args) => ({
   input: args,
   component: WithSeparatorTemplate,
 });
