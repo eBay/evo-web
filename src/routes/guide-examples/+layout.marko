@@ -2,7 +2,7 @@ import { getMetadataFromUrl } from "../../data";
 static const basePath = import.meta.env.BASE_URL;
 static declare global {
   interface Window {
-    dataLayer: any[]; // Or a more specific type if you define a structure for your dataLayer pushes
+    dataLayer: any[];
   }
 }
 <const/{ pageImg, page }=getMetadataFromUrl($global.url.pathname)>
