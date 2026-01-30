@@ -3830,18 +3830,6 @@ declare module "../src/routes/guide-examples/page-grid-blog-stretchy-nested/+lay
   }
 }
 
-declare module "../src/routes/guide-examples/skeleton-examples/+layout.marko" {
-  export interface Input extends Run.LayoutInput<typeof import("../src/routes/guide-examples/skeleton-examples/+layout.marko")> {}
-  namespace MarkoRun {
-    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
-    export type Route = Run.Routes["/guide-examples/skeleton-examples/buffered/example-1" | "/guide-examples/skeleton-examples/csr/example-1" | "/guide-examples/skeleton-examples/csr/example-2" | "/guide-examples/skeleton-examples/csr/example-3" | "/guide-examples/skeleton-examples/csr/example-4" | "/guide-examples/skeleton-examples/in-order/example-1a" | "/guide-examples/skeleton-examples/in-order/example-1b" | "/guide-examples/skeleton-examples/in-order/example-2a" | "/guide-examples/skeleton-examples/in-order/example-2b" | "/guide-examples/skeleton-examples/out-of-order/example-1" | "/guide-examples/skeleton-examples/out-of-order/example-2" | "/guide-examples/skeleton-examples/out-of-order/example-3" | "/guide-examples/skeleton-examples/out-of-order/example-4"];
-    export type Context = Run.MultiRouteContext<Route> & Marko.Global;
-    export type Handler = Run.HandlerLike<Route>;
-    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
-    export const route: Run.HandlerTypeFn<Route>;
-  }
-}
-
 declare module "../src/routes/+404.marko" {
   namespace MarkoRun {
     export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
