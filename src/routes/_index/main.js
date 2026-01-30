@@ -410,7 +410,6 @@ class PopperTooltip {
     this.init();
   }
   isExpanded() {
-    console.log(this.host, this.host.getAttribute("aria-expanded"));
     return this.host.getAttribute("aria-expanded") === "true";
   }
 
@@ -653,7 +652,7 @@ document.querySelectorAll(".listbox-button").forEach(function (widgetEl) {
 
   popperDropdown.attachEvents();
   widgetEl.addEventListener("makeup-listbox-button-change", (e) => {
-    console.log(e.type, e.detail);
+    // nothing to do here yet
   });
 });
 
@@ -677,7 +676,7 @@ document
     );
 
     widgetEl.addEventListener("makeup-listbox-button-change", (e) => {
-      console.log(e.type, e.detail);
+      // nothing to do here yet
       const selectedOption = widgetEl.querySelector(
         '.listbox-button__option[aria-selected="true"]',
       );
@@ -857,7 +856,6 @@ document.querySelectorAll(".toggle-button").forEach(function (elToggleButton) {
         elButtonGroup
           .querySelectorAll(sSelectorButtons)
           .forEach(function (elBtn) {
-            // console.warn(elBtn);
             if (isButtonSelected(elBtn)) {
               toggleButton(elBtn);
             }

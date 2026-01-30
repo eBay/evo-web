@@ -58,7 +58,7 @@ export default class {
       });
       if (trash) {
         trash.addEventListener("click", function () {
-          console.log("trash");
+          // nothing to do here yet
         });
       }
     });
