@@ -44,7 +44,6 @@ export interface Input<
 <const/isCheckable=isRadio || isCheckbox>
 <const/baseClass=classPrefix || "menu">
 <const/menuClass=(baseClass === "menu" ? "items" : "menu")>
-<const/$items: Iterable<() => HTMLElement>=$item>
 <let/selected:=input.selected>
 
 <id/menu>
@@ -64,10 +63,10 @@ export interface Input<
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
         id=menu>
+        <const/$items: Iterable<HTMLElement>=$item> // TODO: remove when Marko TS works
         <evo-roving-tabindex/rovTabindex
             nodeList=$items
             selected:=selected/>
-
         <evo-typeahead/{ typeahead }
             nodeList=$items
             timeoutLength=typeaheadTimeoutLength/>

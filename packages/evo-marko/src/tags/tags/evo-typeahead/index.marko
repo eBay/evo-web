@@ -1,6 +1,6 @@
 export interface Input {
     timeoutLength?: number;
-    nodeList: Iterable<() => HTMLElement>;
+    nodeList: Iterable<HTMLElement>;
 }
 
 <let/typeStr="">
@@ -26,15 +26,15 @@ export interface Input {
         if (nodes.length === 0) return -1;
         const lowerTypeStr = typeStr.toLocaleLowerCase();
         let index = nodes.findIndex((el) =>
-            el().textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
+            el.textContent.toLocaleLowerCase().startsWith(lowerTypeStr),
         );
         if (index === -1) {
             index = nodes.findIndex((el) =>
-                el().textContent.toLocaleLowerCase().includes(lowerTypeStr),
+                el.textContent.toLocaleLowerCase().includes(lowerTypeStr),
             );
         }
         if (index < 0) return index;
-        const node = nodes[index]();
+        const node = nodes[index];
         return (
             node.getAttribute("data-value") ||
             node.getAttribute("value") ||

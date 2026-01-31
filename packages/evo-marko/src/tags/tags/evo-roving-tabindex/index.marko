@@ -4,7 +4,7 @@ export interface Input<
     selected?: Index;
     selectedChange?: (selected: Index) => void;
     autoSelect?: boolean;
-    nodeList: Iterable<() => HTMLElement>;
+    nodeList: Iterable<HTMLElement>;
 }
 
 <let/selected:=input.selected>
@@ -35,9 +35,9 @@ static function getValue(el: HTMLElement) {
         const nodes = [...input.nodeList];
         let currentItem: HTMLElement | undefined;
         if (typeof value === "number") {
-            currentItem = nodes[value]();
+            currentItem = nodes[value];
         } else {
-            currentItem = nodes.find((node) => getValue(node()) === value)?.();
+            currentItem = nodes.find((node) => getValue(node) === value);
         }
         if (
             currentItem &&
@@ -73,7 +73,7 @@ static function getValue(el: HTMLElement) {
                 currentIndex = focusValue;
             } else {
                 currentIndex = nodes.findIndex(
-                    (node) => getValue(node()) === focusValue,
+                    (node) => getValue(node) === focusValue,
                 );
             }
 
@@ -81,7 +81,7 @@ static function getValue(el: HTMLElement) {
             while (true) {
                 currentIndex =
                     ((currentIndex as number) + size + direction) % size;
-                currentItem = nodes[currentIndex]();
+                currentItem = nodes[currentIndex];
                 if (
                     currentItem.getAttribute("aria-disabled") !== "true" ||
                     currentIndex === focusValue
