@@ -100,7 +100,7 @@ export interface Input<
 })()>
 <evo-expander/expander
     open:=open
-    reverse=reverse
+    placement=(reverse ? "bottom-end" : "bottom-start")
     strategy=strategy
     collapseOnSelect=collapseOnSelect
     host=root

@@ -1,0 +1,15 @@
+<let/open=true>
+
+<button onClick() { open = !open; }>
+    Tourtip is ${open ? "open" : "closed"}
+</button>
+
+<div>
+    <evo-tourtip
+        open:=open
+        a11yCloseText="Dismiss tourtip">
+        <@host as="p">Toggle with the close button <strong>or</strong> the button above</@host>
+        <@heading>Controlled Tourtip</@heading>
+        <p>The open state is managed by the parent component.</p>
+    </evo-tourtip>
+</div>
