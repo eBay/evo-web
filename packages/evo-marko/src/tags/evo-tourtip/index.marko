@@ -64,7 +64,7 @@ export interface Input extends Marko.HTML.Span {
     collapseOnClickOutside=false
     collapseOnEscape=false
     focusOnOpen=false
-    host=() => document.getElementById(hostId)!
+    host=(() => document.getElementById(hostId)!)
     overlay=$overlay
     arrow=$arrow/>
 

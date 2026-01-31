@@ -78,7 +78,8 @@ export interface Input<Index extends number | string | undefined>
     strategy=strategy
     collapseOnSelect=collapseOnSelect
     host=() => (document.getElementById(rootId)!)
-    overlay=$listbox/>
+    overlay=$listbox
+    trigger=$trigger/>
 
 
 <${truncate && !fluid ? "div" : "span"}
@@ -91,7 +92,7 @@ export interface Input<Index extends number | string | undefined>
         isForm && `listbox-button--form`,
         hasError && "listbox-button--error",
     ]>
-    <button
+    <button/$trigger
         class=[
             "listbox-button__control",
             "btn",
@@ -108,10 +109,7 @@ export interface Input<Index extends number | string | undefined>
         aria-describedby=describedby
         aria-labelledby=labelId && `${prefixId} ${labelId}`
         aria-invalid=invalid && "true"
-        aria-expanded=expander.ariaExpanded
-        onClick() {
-            expander.onClick();
-        }>
+        aria-expanded=expander.ariaExpanded>
         <span class="btn__cell">
             <if=floatingLabel>
                 <span class=[
@@ -151,7 +149,7 @@ export interface Input<Index extends number | string | undefined>
     <evo-listbox/$listbox:(() => HTMLElement)
         style=expander.floatingStyles
         onFocusOut() {
-            expander.onFocusOut();
+            open = false;
         }
         class=[
             "listbox-button__listbox",

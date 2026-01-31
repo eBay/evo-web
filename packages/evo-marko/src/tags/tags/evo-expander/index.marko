@@ -14,6 +14,7 @@ export interface Input {
     openChange?: (open: boolean) => void;
     host: () => HTMLElement;
     overlay: () => HTMLElement;
+    trigger?: () => HTMLElement;
     arrow?: () => HTMLElement;
     placement?: Placement;
     strategy?: "absolute" | "fixed";
@@ -87,6 +88,14 @@ export interface Input {
 <let/open:=input.open>
 
 <script>
+    if (input.trigger) {
+        input.trigger().addEventListener("click", () => {
+            open = !open;
+        }, { signal: $signal });
+    }
+</script>
+
+<script>
     if (open) {
         const cleanupFn = autoUpdate(input.host(), input.overlay(), update);
         $signal.onabort = () => {
@@ -137,20 +146,6 @@ export interface Input {
 <return={
     floatingStyles,
     arrowStyles,
-    onClick() {
-        open = !open;
-    },
-    onFocus() {
-        open = true;
-    },
-    onFocusOut() {
-        open = false;
-    },
-    onKeyDown(e: KeyboardEvent) {
-        if (e.key === "Enter" || e.key === " ") {
-            open = true;
-        }
-    },
     ariaExpanded: open
         ? "true" as const
         : "false" as const,

@@ -62,7 +62,7 @@
     "@marko/run": "^0.9.4",
     "@marko/run-adapter-static": "^2.0.4",
     "@marko/testing-library": "^6",
-    "@marko/type-check": "^2.1.18",
+    "@marko/type-check": "^2.1.19",
     "@marko/vite": "^5.4.2",
     "@mdx-js/mdx": "^3.1.1",
     "@octokit/rest": "^22.0.0",
