@@ -151,11 +151,11 @@ describe("<EbayDateTextbox />", () => {
     });
 
     it("should allow clear the text field value after selection", () => {
-        const { container } = render(<EbayDateTextbox />);
+        const { container } = render(<EbayDateTextbox locale="en-US" />);
         fireEvent.click(screen.getByLabelText("open calendar"));
 
         fireEvent.click(screen.getByText("1"));
-        expect(container.querySelector("input")).toHaveValue("2024-01-01");
+        expect(container.querySelector("input")).toHaveValue("01/01/2024");
 
         userEvent.clear(container.querySelector("input") as HTMLInputElement);
         expect(container.querySelector("input")).toHaveValue("");
@@ -163,22 +163,24 @@ describe("<EbayDateTextbox />", () => {
 
     it("should not fail if the date passed is invalid", () => {
         expect(() => {
-            render(<EbayDateTextbox value="invalid" />);
+            render(<EbayDateTextbox locale="en-US" value="invalid" />);
         }).not.toThrow();
     });
 
     it("should select the calendar correctly when the value is changed externally", () => {
-        const { container, rerender } = render(<EbayDateTextbox value="2024-01-01" rangeEnd="2024-01-10" />);
+        const { container, rerender } = render(
+            <EbayDateTextbox locale="en-US" value="2024-01-01" rangeEnd="2024-01-10" />,
+        );
         fireEvent.click(screen.getByLabelText("open calendar"));
 
-        expect(container.querySelector("input")).toHaveValue("2024-01-01");
+        expect(container.querySelector("input")).toHaveValue("01/01/2024");
 
         const selectedDays = container.querySelectorAll(".calendar__cell--selected");
         expect(selectedDays[0]).toHaveTextContent("1");
         expect(selectedDays[1]).toHaveTextContent("10");
 
-        rerender(<EbayDateTextbox value="2024-01-12" rangeEnd="2024-01-15" />);
-        expect(container.querySelector("input")).toHaveValue("2024-01-12");
+        rerender(<EbayDateTextbox locale="en-US" value="2024-01-12" rangeEnd="2024-01-15" />);
+        expect(container.querySelector("input")).toHaveValue("01/12/2024");
 
         const updatedSelectedDays = container.querySelectorAll(".calendar__cell--selected");
         expect(updatedSelectedDays[0]).toHaveTextContent("12");
@@ -186,21 +188,21 @@ describe("<EbayDateTextbox />", () => {
     });
     it("should select the calendar correctly when the value is changed externally - with children", () => {
         const { container, rerender } = render(
-            <EbayDateTextbox value="2024-01-01" rangeEnd="2024-01-10">
+            <EbayDateTextbox locale="en-US" value="2024-01-01" rangeEnd="2024-01-10">
                 <EbayTextbox floatingLabel="Start" />
                 <EbayTextbox floatingLabel="End" />
             </EbayDateTextbox>,
         );
         fireEvent.click(screen.getByLabelText("open calendar"));
 
-        expect(container.querySelector("input")).toHaveValue("2024-01-01");
+        expect(container.querySelector("input")).toHaveValue("01/01/2024");
 
         const selectedDays = container.querySelectorAll(".calendar__cell--selected");
         expect(selectedDays[0]).toHaveTextContent("1");
         expect(selectedDays[1]).toHaveTextContent("10");
 
-        rerender(<EbayDateTextbox value="2024-01-12" rangeEnd="2024-01-15" />);
-        expect(container.querySelector("input")).toHaveValue("2024-01-12");
+        rerender(<EbayDateTextbox locale="en-US" value="2024-01-12" rangeEnd="2024-01-15" />);
+        expect(container.querySelector("input")).toHaveValue("01/12/2024");
 
         const updatedSelectedDays = container.querySelectorAll(".calendar__cell--selected");
         expect(updatedSelectedDays[0]).toHaveTextContent("12");

@@ -9,11 +9,16 @@ const story: Meta<typeof EbayDateTextbox> = {
     title: "form input/ebay-date-textbox",
 };
 
-export const Default: StoryObj<EbayDateTextboxProps> = {};
+export const Default: StoryObj<EbayDateTextboxProps> = {
+    args: {
+        locale: "en-CA",
+    },
+};
 
 export const Range: StoryObj<EbayDateTextboxProps> = {
     args: {
         range: true,
+        locale: "en-CA",
     },
 };
 
@@ -38,6 +43,7 @@ export const ControlledValues: StoryFn<EbayDateTextboxProps> = (args) => {
         return (
             <>
                 <EbayDateTextbox
+                    locale="en-CA"
                     value={value}
                     onChange={handleOnChange}
                     onInputChange={handleOnInputChange}
@@ -87,5 +93,48 @@ export const RangeWithFloatingLabel: StoryFn<EbayDateTextboxProps> = (args) => {
 
     return <Component />;
 };
+
+export const LocalizedGerman: StoryObj<EbayDateTextboxProps> = {
+    name: "Localized (German - de-DE)",
+    args: {
+        locale: "de-DE",
+    },
+};
+
+export const LocalizedBritish: StoryObj<EbayDateTextboxProps> = {
+    name: "Localized Range (British English - en-GB)",
+    args: {
+        locale: "en-GB",
+        range: true,
+    },
+};
+
+export const LocalizedJapanese: StoryObj<EbayDateTextboxProps> = {
+    name: "Localized (Japanese - ja)",
+    args: {
+        locale: "ja",
+    },
+};
+
+export const LocalizedWithInvalidHandler: StoryFn<EbayDateTextboxProps> = (args) => {
+    const Component = () => {
+        const [invalidMessage, setInvalidMessage] = useState("");
+
+        const handleInvalidDate = ({ value, index }) => {
+            setInvalidMessage(`Invalid date entered: "${value}" at input ${index + 1}`);
+            setTimeout(() => setInvalidMessage(""), 3000);
+        };
+
+        return (
+            <>
+                <EbayDateTextbox locale="en-US" onInvalidDate={handleInvalidDate} {...args} />
+                {invalidMessage && <div style={{ marginTop: 16, color: "red" }}>{invalidMessage}</div>}
+            </>
+        );
+    };
+
+    return <Component />;
+};
+LocalizedWithInvalidHandler.storyName = "Localized with Invalid Date Handling";
 
 export default story;

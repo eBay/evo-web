@@ -25,7 +25,10 @@ const dayNums = {
     sat: 6,
 };
 
-const modernLocales = availableLocales.availableLocales.modern;
+const modernLocales =
+    availableLocales.availableLocales.modern.length > 0
+        ? availableLocales.availableLocales.modern
+        : availableLocales.availableLocales.full;
 const defaultCountries = Object.fromEntries(
     defaultContent.defaultContent.map((locale) => {
         const index = locale.lastIndexOf("-");
@@ -49,32 +52,21 @@ for (const locale of files) {
     editing._ ??= {};
     editing = editing._;
 
-    const dateFields = JSON.parse(
-        fs.readFileSync(`${dirPath}/${locale}/dateFields.json`),
-    );
-    const caGeneric = JSON.parse(
-        fs.readFileSync(`${dirPath}/${locale}/ca-generic.json`),
-    );
+    const dateFields = JSON.parse(fs.readFileSync(`${dirPath}/${locale}/dateFields.json`));
+    const caGeneric = JSON.parse(fs.readFileSync(`${dirPath}/${locale}/ca-generic.json`));
 
-    const getLetter = (time) =>
-        dateFields.main[locale].dates.fields[time].displayName
-            .charAt(0)
-            .toUpperCase();
+    const getLetter = (time) => dateFields.main[locale].dates.fields[time].displayName.charAt(0).toUpperCase();
     editing.y = getLetter("year-narrow");
     editing.m = getLetter("month-narrow");
     editing.d = getLetter("day-narrow");
     const { order, seps } = formatFromAvailable(
-        caGeneric.main[locale].dates.calendars.generic.dateTimeFormats
-            .availableFormats,
+        caGeneric.main[locale].dates.calendars.generic.dateTimeFormats.availableFormats,
     );
     editing.o = order;
     editing.s = seps;
     if (parts[1] && firstDays[parts[1]]) {
         editing.w = dayNums[firstDays[parts[1]]];
-    } else if (
-        defaultCountries[locale] &&
-        firstDays[defaultCountries[locale]]
-    ) {
+    } else if (defaultCountries[locale] && firstDays[defaultCountries[locale]]) {
         editing.w = dayNums[firstDays[defaultCountries[locale]]];
     } else {
         editing.w = 0;
@@ -109,11 +101,7 @@ function formatFromAvailable(availableFormats) {
 function pruneDuplication(obj, parent, parentKey) {
     if (typeof obj === "object" && obj !== null) {
         for (const key in obj) {
-            if (
-                typeof obj[key] === "object" &&
-                obj[key] !== null &&
-                key !== "_"
-            ) {
+            if (typeof obj[key] === "object" && obj[key] !== null && key !== "_") {
                 pruneDuplication(obj[key], obj, key);
             }
         }
@@ -123,10 +111,7 @@ function pruneDuplication(obj, parent, parentKey) {
             delete parent[parentKey];
         } else if (parent._) {
             for (const field in obj._) {
-                if (
-                    JSON.stringify(obj._[field]) ===
-                    JSON.stringify(parent._[field])
-                ) {
+                if (JSON.stringify(obj._[field]) === JSON.stringify(parent._[field])) {
                     delete obj._[field];
                 }
             }
@@ -139,20 +124,22 @@ pruneDuplication(output);
 /**
  * Manual Overrides
  */
-output.uz._.s = [".", "."];
-output.hy._.s = [".", "."];
-output.bg._.s = [".", "."];
-output.ar._.s = ["/", "/"];
-delete output.ar._.d;
-delete output.ar._.m;
-delete output.ar._.y;
-output.yo._.d = "ọ";
-output.fr.ca._ = { w: 0 };
+if (output.uz?._) output.uz._.s = [".", "."];
+if (output.hy?._) output.hy._.s = [".", "."];
+if (output.bg?._) output.bg._.s = [".", "."];
+if (output.ar?._) {
+    output.ar._.s = ["/", "/"];
+    delete output.ar._.d;
+    delete output.ar._.m;
+    delete output.ar._.y;
+}
+if (output.yo?._) output.yo._.d = "ọ";
+if (output.fr?.ca?._) output.fr.ca._ = { w: 0 };
 
 fs.writeFileSync(
-    "src/common/dates/locale-info.ts",
+    "src/utils/dates/locale-info.ts",
     `// GENERATED FILE - DO NOT MODIFY
-// Information pulled from cldr-core, see \`scripts/generate-date-info.js\` for more details
+// Information pulled from cldr-core, see \`scripts/generate-locale-info.js\` for more details
 
 export interface LocaleInfo {
     /** order of year, month, and day in date format */
@@ -174,5 +161,5 @@ export interface Locales {
     [country: string]: Locales | Partial<LocaleInfo>;
 }
 
-export default ${JSON.stringify(output)} as Locales;`,
+export default ${JSON.stringify(output, null, 2)} as Locales;`,
 );

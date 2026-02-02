@@ -28,6 +28,7 @@
         "build": "npm run clean && npm run type:check && npm run test && vite build && npm run copy && npm run smoke-test",
         "build:storybook": "storybook build",
         "clean": "node scripts/clean",
+        "generate-locale-info": "node scripts/generate-locale-info.js",
         "copy": "copyfiles package.json README.md dist && npm run copy:rest",
         "copy:rest": "copyfiles 'src/**/*.md' dist -u 1",
         "coverage": "npm run clean && npm run test -- --coverage --ci",

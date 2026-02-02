@@ -2,6 +2,7 @@ import React, {
     ChangeEvent,
     FC,
     FocusEvent,
+    KeyboardEvent,
     MouseEvent,
     useEffect,
     useRef,
@@ -14,11 +15,12 @@ import classNames from "classnames";
 import { filterByType } from "../common/component-utils";
 import EbayCalendar, { EbayCalendarProps } from "../ebay-calendar/calendar";
 import { EbayTextbox, EbayTextboxPostfixIcon } from "../ebay-textbox";
-import { DayISO, dateArgToISO, toISO } from "../ebay-calendar/date-utils";
+import { DayISO, dateArgToISO } from "../ebay-calendar/date-utils";
 import { EbayChangeEventHandler, EbayFocusEventHandler, EbayMouseEventHandler } from "../common/event-utils/types";
 import { isControlled } from "../ebay-textbox/textbox";
 import { useFloatingDropdown } from "../common/dropdown";
 import { EbayIconCalendar24 } from "../ebay-icon/icons/ebay-icon-calendar-24";
+import { parse, format, placeholder, getLocale } from "../utils/dates";
 
 type EventData = {
     selected?: string;
@@ -37,18 +39,20 @@ export type EbayDateTextboxProps = Omit<EbayCalendarProps, "interactive" | "navi
         collapseOnSelect?: boolean;
         inputPlaceholderText?: string | string[];
         a11yOpenPopoverText?: string;
+        locale?: string;
         onChange?: EbayChangeEventHandler<HTMLInputElement, EventData> &
             EbayMouseEventHandler<HTMLInputElement, EventData> &
             EbayFocusEventHandler<HTMLInputElement, EventData>;
         onInputChange?: EbayChangeEventHandler<HTMLInputElement>;
         onInputRangeEndChange?: EbayChangeEventHandler<HTMLInputElement>;
+        onInvalidDate?: (event: { value: string; index: number }) => void;
     };
 
 const MIN_WIDTH_FOR_DOUBLE_PANE = 600;
 
 const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     className,
-    inputPlaceholderText = "YYYY-MM-DD",
+    inputPlaceholderText,
     a11yOpenPopoverText = "open calendar",
     range,
     value: controlledValue,
@@ -56,10 +60,12 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     defaultValue,
     defaultRangeEnd,
     collapseOnSelect,
+    locale,
     children,
     onChange = () => {},
     onInputChange = () => {},
     onInputRangeEndChange = () => {},
+    onInvalidDate = () => {},
     ...rest
 }) => {
     const expander = useRef<typeof Expander>(null);
@@ -129,15 +135,22 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     }, []);
 
     const handleInputChange = (event: FocusEvent<HTMLInputElement>, index: number) => {
-        const date = new Date(event.target.value);
-        const iso = isNaN(date.getTime()) ? null : toISO(date);
+        const userInput = event.target.value;
+        const iso = parse(userInput, locale);
 
-        if (index === 0) {
-            setInternalValue(iso || "");
-        } else {
-            setInternalRangeEnd(iso || "");
+        if (iso === null) {
+            onInvalidDate({ value: userInput, index });
+            return;
         }
 
+        // Valid date - update internal state with ISO format
+        if (index === 0) {
+            setInternalValue(iso);
+        } else {
+            setInternalRangeEnd(iso);
+        }
+
+        // Emit onChange with ISO format
         if (range) {
             onChange(event, {
                 rangeStart: index === 0 ? iso : firstSelected,
@@ -200,18 +213,56 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
         }
     };
 
+    const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+        // Only process if user typed a digit
+        if (!/^\d$/.test(event.key)) return;
+
+        const input = event.target as HTMLInputElement;
+        const { value } = input;
+
+        // Only auto-insert if cursor is at end
+        if (input.selectionStart !== value.length) return;
+
+        const { o: order, s: sep } = getLocale(locale);
+
+        // Find which date segment we're currently in
+        let i = 0;
+        let start = 0;
+        for (let currStart; ~(currStart = value.indexOf(sep[i], start)); ) {
+            start = currStart + sep[i].length;
+            i++;
+        }
+
+        // Check if current segment is complete (2 digits for m/d, 4 for y)
+        const segmentLength = order[i] === "y" ? 4 : 2;
+        if (value.length - start === segmentLength && sep[i]) {
+            input.value += sep[i];
+            // Update internal state as well
+            if (range && input.className.includes("ebay-date-textbox--main")) {
+                setInternalRangeEnd(input.value);
+            } else {
+                setInternalValue(input.value);
+            }
+        }
+    };
+
+    // Generate locale-aware placeholders
+    const autoPlaceholder = placeholder(locale);
     const [rangeStartPlaceholder, mainPlaceholder] = Array.isArray(inputPlaceholderText)
         ? inputPlaceholderText
-        : [inputPlaceholderText, inputPlaceholderText];
+        : inputPlaceholderText
+          ? [inputPlaceholderText, inputPlaceholderText]
+          : [autoPlaceholder, autoPlaceholder];
 
     return (
         <span className={classNames("date-textbox", className)} ref={refs.setHost}>
             {range &&
                 cloneElement(EbayTextboxComponentEnd, {
-                    value: valueToRender,
+                    value: format(valueToRender as DayISO, locale) || valueToRender,
                     placeholder: rangeStartPlaceholder,
                     onInputChange: (event) => handleInternalChange(event, 0),
                     onBlur: (event) => handleInputChange(event, 0),
+                    onKeyUp: handleKeyUp,
                 })}
 
             {cloneElement(
@@ -220,9 +271,12 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
                     ...EbayTextboxComponentStart.props,
                     className: "ebay-date-textbox--main",
                     placeholder: mainPlaceholder,
-                    value: range ? rangeEndToRender : valueToRender,
+                    value:
+                        format((range ? rangeEndToRender : valueToRender) as DayISO, locale) ||
+                        (range ? rangeEndToRender : valueToRender),
                     onInputChange: (event) => handleInternalChange(event, range ? 1 : 0),
                     onBlur: (event) => handleInputChange(event, range ? 1 : 0),
+                    onKeyUp: handleKeyUp,
                 },
                 <EbayTextboxPostfixIcon icon={<EbayIconCalendar24 />} buttonAriaLabel={a11yOpenPopoverText} />,
             )}
@@ -230,6 +284,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
             <div hidden={!isPopoverOpen} ref={refs.setOverlay} style={overlayStyles} className="date-textbox__popover">
                 <EbayCalendar
                     {...rest}
+                    locale={locale}
                     range={range}
                     interactive
                     navigable
