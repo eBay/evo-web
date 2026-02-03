@@ -1,22 +1,22 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
-import WithFooterTemplate from "./examples/with-footer.marko";
-import WithFooterTemplateCode from "./examples/with-footer.marko?raw";
-import ControlledTemplate from "./examples/controlled.marko";
-import ControlledTemplateCode from "./examples/controlled.marko?raw";
+import NoHoverTemplate from "./examples/no-hover.marko";
+import NoHoverTemplateCode from "./examples/no-hover.marko?raw";
 import PlacementsTemplate from "./examples/placements.marko";
 import PlacementsTemplateCode from "./examples/placements.marko?raw";
+import IconButtonHostTemplate from "./examples/icon-button-host.marko";
+import IconButtonHostTemplateCode from "./examples/icon-button-host.marko?raw";
 import Component from "./index.marko";
 
 export default {
-  title: "notices & tips/evo-tourtip",
+  title: "notices & tips/evo-tooltip",
   component: Component,
   parameters: {
     docs: {
       description: {
         component:
-          "A tourtip is used to highlight new features or guide users through an experience.",
+          "A tooltip provides brief, supplementary information on hover or focus.",
       },
     },
   },
@@ -25,10 +25,10 @@ export default {
     open: {
       type: "boolean",
       control: { type: "boolean" },
-      description: "Whether the tourtip is open (defaults to true)",
+      description: "Whether the tooltip is open",
       table: {
         defaultValue: {
-          summary: "true",
+          summary: "false",
         },
       },
     },
@@ -36,7 +36,6 @@ export default {
       description:
         "Used to hoist `open` value with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
       table: {
-        category: "Events",
         defaultValue: {
           summary: "(open: boolean) => void",
         },
@@ -61,7 +60,7 @@ export default {
       description: "Position of the overlay relative to the host element",
       table: {
         defaultValue: {
-          summary: "top",
+          summary: "bottom",
         },
       },
     },
@@ -70,7 +69,7 @@ export default {
       description: "Offset distance from the host element in pixels",
       table: {
         defaultValue: {
-          summary: "6",
+          summary: "8",
         },
       },
     },
@@ -90,7 +89,7 @@ export default {
       description: "Enable automatic shifting when near viewport edge",
       table: {
         defaultValue: {
-          summary: "false",
+          summary: "true",
         },
       },
     },
@@ -104,19 +103,20 @@ export default {
         },
       },
     },
-    a11yCloseText: {
-      control: { type: "text" },
-      description: "Accessibility label for the close button",
+    noHover: {
+      type: "boolean",
+      control: { type: "boolean" },
+      description: "Disable hover behavior (focus-only)",
       table: {
         defaultValue: {
-          summary: "Dismiss tourtip",
+          summary: "false",
         },
       },
     },
     host: {
       name: "@host",
       description:
-        "The host element that the tourtip is attached to. Supports `as` attribute for custom element.",
+        "The host element that triggers the tooltip. Supports `as` attribute for custom element.",
       table: {
         category: "@attribute tags",
       },
@@ -129,14 +129,6 @@ export default {
         category: "@attribute tags",
       },
     },
-    footer: {
-      name: "@footer",
-      description:
-        "Optional footer content. Supports `index` attribute for pagination display (e.g., '1 of 3').",
-      table: {
-        category: "@attribute tags",
-      },
-    },
   },
 };
 
@@ -145,14 +137,14 @@ export const Default = buildExtensionTemplate(
   DefaultTemplateCode,
 );
 
-export const WithFooter = buildExtensionTemplate(
-  WithFooterTemplate,
-  WithFooterTemplateCode,
+export const NoHover = buildExtensionTemplate(
+  NoHoverTemplate,
+  NoHoverTemplateCode,
 );
 
-export const Controlled = buildExtensionTemplate(
-  ControlledTemplate,
-  ControlledTemplateCode,
+export const IconButtonHost = buildExtensionTemplate(
+  IconButtonHostTemplate,
+  IconButtonHostTemplateCode,
 );
 
 export const Placements = buildExtensionTemplate(

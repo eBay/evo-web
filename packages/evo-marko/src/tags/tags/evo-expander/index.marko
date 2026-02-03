@@ -22,131 +22,144 @@ export interface Input {
     flip?: boolean;
     shift?: boolean;
     inline?: boolean;
-    collapseOnClickOutside?: boolean;
+    expandOnFocus?: boolean;
+    expandOnHover?: boolean;
+    collapseOnClickOut?: boolean;
+    collapseOnFocusOut?: boolean;
+    collapseOnMouseOut?: boolean;
     collapseOnEscape?: boolean;
     collapseOnSelect?: boolean;
-    focusOnOpen?: boolean;
 }
 
 <let/floatingStyles=({ visibility: "hidden" } as Record<string, string>)>
 <let/arrowStyles=(undefined as undefined | Record<string, string>)>
+<let/open:=input.open>
 
 <const/update=() => {
     const hostEl = input.host();
     const overlayEl = input.overlay();
     const arrowEl = input.arrow?.();
 
-    const middleware = [
-        offset(input.offset ?? 4),
-        (input.inline !== false) && inline(),
-        (input.flip !== false) && flip({
-            fallbackAxisSideDirection: "end",
-            flipAlignment: false,
-        }),
-        (input.shift !== false) && shift(),
-        arrowEl && arrow({
-            element: arrowEl,
-            padding: 20,
-        }),
-    ].filter(Boolean);
-
     computePosition(hostEl, overlayEl, {
         placement: input.placement ?? "bottom-start",
         strategy: input.strategy ?? "fixed",
-        middleware,
+        middleware: [
+            offset(input.offset ?? 4),
+            (input.inline !== false) && inline(),
+            (input.flip !== false) && flip({ fallbackAxisSideDirection: "end", flipAlignment: false }),
+            (input.shift !== false) && shift(),
+            arrowEl && arrow({ element: arrowEl, padding: 20 }),
+        ].filter(Boolean),
     }).then(({ x, y, placement, middlewareData }) => {
-        if ($signal.aborted) {
-            return;
-        }
-
-        floatingStyles = {
-            left: `${x}px`,
-            top: `${y}px`,
-            visibility: "visible",
-        };
-
+        if ($signal.aborted) return;
+        floatingStyles = { left: `${x}px`, top: `${y}px`, visibility: "visible" };
         if (arrowEl && middlewareData.arrow) {
             const { x: arrowX, y: arrowY } = middlewareData.arrow;
-            const staticSide = {
-                top: "bottom",
-                right: "left",
-                bottom: "top",
-                left: "right",
-            }[placement.split("-")[0]] as string;
-
+            const staticSide = { top: "bottom", right: "left", bottom: "top", left: "right" }[placement.split("-")[0]] as string;
             arrowStyles = {
                 left: arrowX != null ? `${arrowX}px` : "",
                 top: arrowY != null ? `${arrowY}px` : "",
-                right: "",
-                bottom: "",
+                right: "", bottom: "",
                 [staticSide]: "-4px",
             };
         }
     });
 }>
 
-<let/open:=input.open>
-
 <script>
-    if (input.trigger) {
-        input.trigger().addEventListener("click", () => {
-            open = !open;
+    const hostEl = input.host();
+    const overlayEl = input.overlay();
+    const triggerEl = input.trigger?.();
+
+    // Smart defaults for collapse behaviors
+    const collapseOnClickOut = input.collapseOnClickOut ?? (triggerEl || input.expandOnFocus);
+    const collapseOnFocusOut = input.collapseOnFocusOut ?? input.expandOnFocus;
+    const collapseOnMouseOut = input.collapseOnMouseOut ?? input.expandOnHover;
+    const collapseOnEscape = input.collapseOnEscape ?? true;
+
+    // Helper: is target inside widget?
+    const isInWidget = (el: Node | null) => el && (hostEl.contains(el) || overlayEl.contains(el));
+
+    // Hover state
+    let hoverTimeout: ReturnType<typeof setTimeout> | undefined;
+    const clearHoverTimeout = () => clearTimeout(hoverTimeout);
+
+    // EXPAND TRIGGERS
+
+    if (triggerEl) {
+        triggerEl.addEventListener("click", () => { open = !open; }, { signal: $signal });
+    }
+
+    if (input.expandOnFocus) {
+        hostEl.addEventListener("focusin", () => { open = true; }, { signal: $signal });
+    }
+
+    if (input.expandOnHover) {
+        const onMouseEnter = () => { clearHoverTimeout(); open = true; };
+        hostEl.addEventListener("mouseenter", onMouseEnter, { signal: $signal });
+        overlayEl.addEventListener("mouseenter", onMouseEnter, { signal: $signal });
+    }
+
+    // COLLAPSE TRIGGERS
+
+    if (collapseOnMouseOut) {
+        const onMouseLeave = (e: MouseEvent) => {
+            if (isInWidget(e.relatedTarget as Node)) return;
+            clearHoverTimeout();
+            hoverTimeout = setTimeout(() => { open = false; }, 300);
+        };
+        hostEl.addEventListener("mouseleave", onMouseLeave, { signal: $signal });
+        overlayEl.addEventListener("mouseleave", onMouseLeave, { signal: $signal });
+    }
+
+    if (collapseOnFocusOut) {
+        // Track mousedown to handle clicks on non-focusable elements
+        let mouseDownInWidget = false;
+        document.addEventListener("mousedown", (e) => {
+            mouseDownInWidget = !!isInWidget(e.target as Node);
+        }, { signal: $signal });
+        document.addEventListener("mouseup", () => {
+            mouseDownInWidget = false;
+        }, { signal: $signal });
+
+        const onFocusOut = (e: FocusEvent) => {
+            if (isInWidget(e.relatedTarget as Node)) return;
+            if (mouseDownInWidget) return;
+            open = false;
+        };
+        hostEl.addEventListener("focusout", onFocusOut, { signal: $signal });
+        overlayEl.addEventListener("focusout", onFocusOut, { signal: $signal });
+    }
+
+    if (collapseOnClickOut) {
+        setTimeout(() => {
+            document.addEventListener("click", (e) => {
+                if (!open) return;
+                if (input.collapseOnSelect || !isInWidget(e.target as Node)) {
+                    open = false;
+                }
+            }, { signal: $signal });
+        }, 0);
+    }
+
+    if (collapseOnEscape) {
+        document.addEventListener("keydown", (e) => {
+            if (open && e.key === "Escape") open = false;
         }, { signal: $signal });
     }
+
+    $signal.onabort = clearHoverTimeout;
 </script>
 
 <script>
     if (open) {
-        const cleanupFn = autoUpdate(input.host(), input.overlay(), update);
-        $signal.onabort = () => {
-            cleanupFn();
-        };
-
-        if (input.focusOnOpen !== false) {
-            let focusItem = input
-                .overlay()
-                ?.querySelector("[tabindex]") as HTMLInputElement;
-            if (!focusItem) {
-                focusItem = input.overlay() as HTMLInputElement;
-            }
-            focusItem?.focus();
-        }
-
-        setTimeout(() => {
-            if (input.collapseOnClickOutside !== false) {
-                document.addEventListener(
-                    "click",
-                    (e: Event) => {
-                        if (
-                            input.host().contains(e.target as Node) === false ||
-                            input.collapseOnSelect
-                        ) {
-                            open = false;
-                        }
-                    },
-                    { signal: $signal },
-                );
-            }
-
-            if (input.collapseOnEscape !== false) {
-                document.addEventListener(
-                    "keydown",
-                    (e) => {
-                        if (e.key === "Escape") {
-                            open = false;
-                        }
-                    },
-                    { signal: $signal },
-                );
-            }
-        }, 0);
+        const cleanup = autoUpdate(input.host(), input.overlay(), update);
+        $signal.onabort = cleanup;
     }
 </script>
 
 <return={
     floatingStyles,
     arrowStyles,
-    ariaExpanded: open
-        ? "true" as const
-        : "false" as const,
+    ariaExpanded: open ? "true" as const : "false" as const,
 }>

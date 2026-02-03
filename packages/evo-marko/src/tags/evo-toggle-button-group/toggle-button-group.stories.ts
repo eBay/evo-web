@@ -34,7 +34,7 @@ export default {
     pressedChange: {
       type: "function",
       description:
-        "Used to hoist value using the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
+        "Used to hoist `pressed` value with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
     },
     columnsMin: {
       type: "number",

@@ -1,0 +1,86 @@
+import type { Placement } from "@floating-ui/dom";
+
+export interface Input extends Marko.HTML.Span {
+    open?: boolean;
+    openChange?: (open: boolean) => void;
+    placement?: Placement;
+    offset?: number;
+    flip?: boolean;
+    shift?: boolean;
+    inline?: boolean;
+    noHover?: boolean;
+    host: Marko.AttrTag<
+        Marko.HTML.Span & {
+            as?: Marko.Renderable;
+        }
+    >;
+    heading?: Marko.AttrTag<
+        Marko.HTML.Span & {
+            as?: Marko.Renderable;
+        }
+    >;
+}
+
+<const/{
+    class: inputClass,
+    placement = "bottom" as Placement,
+    offset: inputOffset,
+    flip,
+    shift,
+    inline,
+    noHover,
+    host,
+    heading,
+    ...htmlInput
+}=input>
+
+<let/open=(input.open ?? false) valueChange=input.openChange>
+
+<id/hostId>
+<id/overlayId>
+<id/arrowId>
+
+<evo-expander/expander
+    open:=open
+    placement=placement
+    offset=(inputOffset ?? 8)
+    flip=flip
+    shift=shift
+    inline=inline
+    strategy="absolute"
+    expandOnFocus
+    expandOnHover=!noHover
+    host=(() => document.getElementById(hostId)!)
+    overlay=(() => document.getElementById(overlayId)!)
+    arrow=(() => document.getElementById(arrowId)!)/>
+
+<span ...htmlInput class=["tooltip", inputClass]>
+    <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
+    <${hostAs}
+        ...htmlHost
+        id=hostId
+        class=["tooltip__host", hostClass]
+        aria-expanded=expander.ariaExpanded/>
+    <span
+        id=overlayId
+        class="tooltip__overlay"
+        style=expander.floatingStyles
+        role="tooltip">
+        <span id=arrowId class="tooltip__pointer" style=expander.arrowStyles/>
+        <span class="tooltip__mask">
+            <span class="tooltip__cell">
+                <span class="tooltip__content">
+                    <if=heading>
+                        <const/{
+                            as: headingAs = "span",
+                            class: headingClass,
+                            ...htmlHeading
+                        }=heading>
+                        <${headingAs} ...htmlHeading class=["tooltip__heading", headingClass]/>
+                    </if>
+                    <${input.content}/>
+                </span>
+            </span>
+        </span>
+    </span>
+</span>

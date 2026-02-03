@@ -14,11 +14,11 @@
         "bottom-start", "bottom", "bottom-end",
         "left-start", "left", "left-end",
     ] as const)>
-        <let/open=false>
-        <evo-tourtip ...input open:=open placement=placement a11yCloseText="Dismiss" flip=false>
-            <@host as="button" onClick() { open = !open }>${placement}</@host>
-            <@heading>${placement}</@heading>
+        <evo-tooltip ...input placement=placement flip=false>
+            <@host as="button">${placement}</@host>
+            <p>Tooltip content for <code>${placement}</code></p>
             <p>Here we explicitly set <code>flip=false</code> for demonstration. By default, tourtip will not extend outside the window</p>
-        </evo-tourtip>
+        </evo-tooltip>
     </for>
 </div>
+a

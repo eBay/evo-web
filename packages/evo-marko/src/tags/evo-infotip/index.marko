@@ -1,0 +1,121 @@
+import type { Placement } from "@floating-ui/dom";
+
+export interface Input extends Marko.HTML.Span {
+    open?: boolean;
+    openChange?: (open: boolean) => void;
+    placement?: Placement;
+    offset?: number;
+    flip?: boolean;
+    shift?: boolean;
+    inline?: boolean;
+    disabled?: boolean;
+    icon?: Marko.AttrTag<Marko.HTML.Span>;
+    heading?: Marko.AttrTag<
+        Marko.HTML.Span & {
+            as?: Marko.Renderable;
+        }
+    >;
+    /**
+     * The `aria-label` for the infotip trigger button
+     *
+     * English default to be overridden is `"Help"`
+     */
+    a11yIconText: string;
+    /**
+     * The `aria-label` for the close button
+     *
+     * English default to be overridden is `"Dismiss infotip"`
+     */
+    a11yCloseText: string;
+}
+
+<const/{
+    class: inputClass,
+    placement = "bottom" as Placement,
+    offset: inputOffset,
+    open: inputOpen,
+    openChange,
+    flip,
+    shift,
+    inline,
+    disabled,
+    icon,
+    heading,
+    a11yIconText = "Help",
+    a11yCloseText = "Dismiss infotip",
+    ...htmlInput
+}=input>
+
+<let/open=(inputOpen ?? false) valueChange=openChange>
+
+<id/hostId>
+<id/overlayId>
+<id/arrowId>
+<id/headingId>
+
+<evo-expander/expander
+    open:=open
+    placement=placement
+    offset=(inputOffset ?? 8)
+    flip=flip
+    shift=shift
+    inline=inline
+    strategy="absolute"
+    trigger=(() => document.getElementById(hostId)!)
+    host=(() => document.getElementById(hostId)!)
+    overlay=(() => document.getElementById(overlayId)!)
+    arrow=(() => document.getElementById(arrowId)!)/>
+
+<span ...htmlInput class=["infotip", inputClass]>
+    <button
+        id=hostId
+        class="infotip__host icon-btn icon-btn--transparent"
+        type="button"
+        disabled=disabled
+        aria-label=a11yIconText
+        aria-expanded=expander.ariaExpanded>
+        <if=icon>
+            <const/{ content: iconContent }=icon>
+            <${iconContent}/>
+        </if>
+        <else>
+            <evo-icon-information-16/>
+        </else>
+    </button>
+    <span
+        id=overlayId
+        class="infotip__overlay"
+        style=expander.floatingStyles
+        role="tooltip"
+        aria-labelledby=(heading && headingId)>
+        <span id=arrowId class="infotip__pointer" style=expander.arrowStyles/>
+        <span class="infotip__mask">
+            <span class="infotip__cell">
+                <span class="infotip__content">
+                    <if=heading>
+                        <const/{
+                            as: headingAs,
+                            class: headingClass,
+                            content: headingContent,
+                        }=heading>
+                        <${headingAs ?? "span"}
+                            class=["infotip__heading", headingClass]
+                            id=headingId>
+                            <${headingContent}/>
+                        </>
+                    </if>
+                    <${input.content}/>
+                </span>
+                <button
+                    aria-label=a11yCloseText
+                    class="icon-btn icon-btn--transparent infotip__close"
+                    type="button"
+                    onClick() {
+                        open = false;
+                    }>
+                    <evo-icon-close-16/>
+                </button>
+            </span>
+        </span>
+    </span>
+</span>

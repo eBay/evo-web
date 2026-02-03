@@ -1,22 +1,24 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
-import WithFooterTemplate from "./examples/with-footer.marko";
-import WithFooterTemplateCode from "./examples/with-footer.marko?raw";
+import InParagraphTemplate from "./examples/in-paragraph.marko";
+import InParagraphTemplateCode from "./examples/in-paragraph.marko?raw";
+import DisabledTemplate from "./examples/disabled.marko";
+import DisabledTemplateCode from "./examples/disabled.marko?raw";
+import CustomIconTemplate from "./examples/custom-icon.marko";
+import CustomIconTemplateCode from "./examples/custom-icon.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
 import ControlledTemplateCode from "./examples/controlled.marko?raw";
-import PlacementsTemplate from "./examples/placements.marko";
-import PlacementsTemplateCode from "./examples/placements.marko?raw";
 import Component from "./index.marko";
 
 export default {
-  title: "notices & tips/evo-tourtip",
+  title: "notices & tips/evo-infotip",
   component: Component,
   parameters: {
     docs: {
       description: {
         component:
-          "A tourtip is used to highlight new features or guide users through an experience.",
+          "An infotip provides additional information via a clickable info icon button.",
       },
     },
   },
@@ -25,10 +27,10 @@ export default {
     open: {
       type: "boolean",
       control: { type: "boolean" },
-      description: "Whether the tourtip is open (defaults to true)",
+      description: "Whether the infotip is open",
       table: {
         defaultValue: {
-          summary: "true",
+          summary: "false",
         },
       },
     },
@@ -58,19 +60,19 @@ export default {
         "left-start",
         "left-end",
       ],
-      description: "Position of the overlay relative to the host element",
+      description: "Position of the overlay relative to the trigger button",
       table: {
         defaultValue: {
-          summary: "top",
+          summary: "bottom",
         },
       },
     },
     offset: {
       control: { type: "number" },
-      description: "Offset distance from the host element in pixels",
+      description: "Offset distance from the trigger button in pixels",
       table: {
         defaultValue: {
-          summary: "6",
+          summary: "8",
         },
       },
     },
@@ -90,7 +92,7 @@ export default {
       description: "Enable automatic shifting when near viewport edge",
       table: {
         defaultValue: {
-          summary: "false",
+          summary: "true",
         },
       },
     },
@@ -104,19 +106,37 @@ export default {
         },
       },
     },
+    disabled: {
+      type: "boolean",
+      control: { type: "boolean" },
+      description: "Disable the trigger button",
+      table: {
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    a11yIconText: {
+      control: { type: "text" },
+      description: "Accessibility label for the trigger button",
+      table: {
+        defaultValue: {
+          summary: "Help",
+        },
+      },
+    },
     a11yCloseText: {
       control: { type: "text" },
       description: "Accessibility label for the close button",
       table: {
         defaultValue: {
-          summary: "Dismiss tourtip",
+          summary: "Dismiss infotip",
         },
       },
     },
-    host: {
-      name: "@host",
-      description:
-        "The host element that the tourtip is attached to. Supports `as` attribute for custom element.",
+    icon: {
+      name: "@icon",
+      description: "Custom icon to replace the default info icon.",
       table: {
         category: "@attribute tags",
       },
@@ -129,14 +149,6 @@ export default {
         category: "@attribute tags",
       },
     },
-    footer: {
-      name: "@footer",
-      description:
-        "Optional footer content. Supports `index` attribute for pagination display (e.g., '1 of 3').",
-      table: {
-        category: "@attribute tags",
-      },
-    },
   },
 };
 
@@ -145,17 +157,22 @@ export const Default = buildExtensionTemplate(
   DefaultTemplateCode,
 );
 
-export const WithFooter = buildExtensionTemplate(
-  WithFooterTemplate,
-  WithFooterTemplateCode,
+export const InParagraph = buildExtensionTemplate(
+  InParagraphTemplate,
+  InParagraphTemplateCode,
+);
+
+export const Disabled = buildExtensionTemplate(
+  DisabledTemplate,
+  DisabledTemplateCode,
+);
+
+export const CustomIcon = buildExtensionTemplate(
+  CustomIconTemplate,
+  CustomIconTemplateCode,
 );
 
 export const Controlled = buildExtensionTemplate(
   ControlledTemplate,
   ControlledTemplateCode,
-);
-
-export const Placements = buildExtensionTemplate(
-  PlacementsTemplate,
-  PlacementsTemplateCode,
 );

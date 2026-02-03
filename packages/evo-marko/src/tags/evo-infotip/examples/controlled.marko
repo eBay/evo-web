@@ -1,0 +1,13 @@
+<let/open=false>
+
+<evo-button onClick() { open = !open; }>
+    Toggle Infotip
+</evo-button>
+
+<evo-infotip
+    open:=open
+    a11yIconText="Help"
+    a11yCloseText="Dismiss">
+    <@heading>Controlled</@heading>
+    This infotip is controlled externally.
+</evo-infotip>
