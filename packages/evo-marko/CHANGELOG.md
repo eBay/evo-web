@@ -1,5 +1,13 @@
 # @evo-web/marko
 
+## 0.1.8
+
+### Patch Changes
+
+- [#479](https://github.com/eBay/evo-web/pull/479) [`41e8def`](https://github.com/eBay/evo-web/commit/41e8def3fd140beaa02f79e890ecf907a7ff5ddc) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Simplify icon code
+
+- [#478](https://github.com/eBay/evo-web/pull/478) [`3e0b0d9`](https://github.com/eBay/evo-web/commit/3e0b0d9de6274213af2039f02dd77702ca802392) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix types for change handlers
+
 ## 0.1.7
 
 ### Patch Changes

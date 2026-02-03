@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.2.1
+
+### Patch Changes
+
+- [#489](https://github.com/eBay/evo-web/pull/489) [`aeb17b5`](https://github.com/eBay/evo-web/commit/aeb17b588dc06ea7bbd6332b3e1034f82c44e9c9) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(EbayDateTextbox): add support for locales textbox
+
 ## 9.2.0
 
 ### Minor Changes

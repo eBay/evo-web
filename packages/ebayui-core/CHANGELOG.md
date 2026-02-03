@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.3.1
+
+### Patch Changes
+
+- [#491](https://github.com/eBay/evo-web/pull/491) [`5d116f6`](https://github.com/eBay/evo-web/commit/5d116f679b0f8ded626a5f855e82814a2415a85e) Thanks [@agliga](https://github.com/agliga)! - fix(icons): fixed icon sizing
+
 ## 16.3.0
 
 ### Minor Changes
