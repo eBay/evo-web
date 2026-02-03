@@ -1,9 +1,9 @@
-import type { Placement } from "@floating-ui/dom";
+import type { Input as ExpanderInput } from "<evo-expander>";
 
 export interface Input extends Marko.HTML.Span {
     open?: boolean;
     openChange?: (open: boolean) => void;
-    placement?: Placement;
+    placement?: ExpanderInput["placement"];
     offset?: number;
     flip?: boolean;
     shift?: boolean;
@@ -31,7 +31,7 @@ export interface Input extends Marko.HTML.Span {
 
 <const/{
     class: inputClass,
-    placement = "bottom" as Placement,
+    placement = "bottom" as const,
     offset: inputOffset,
     open: inputOpen,
     openChange,
@@ -75,8 +75,7 @@ export interface Input extends Marko.HTML.Span {
         aria-label=a11yIconText
         aria-expanded=expander.ariaExpanded>
         <if=icon>
-            <const/{ content: iconContent }=icon>
-            <${iconContent}/>
+            <${icon}/>
         </if>
         <else>
             <evo-icon-information-16/>
@@ -94,15 +93,14 @@ export interface Input extends Marko.HTML.Span {
                 <span class="infotip__content">
                     <if=heading>
                         <const/{
-                            as: headingAs,
+                            as: headingAs = "span",
                             class: headingClass,
-                            content: headingContent,
+                            ...htmlHeading
                         }=heading>
-                        <${headingAs ?? "span"}
+                        <${headingAs}
+                            ...htmlHeading
                             class=["infotip__heading", headingClass]
-                            id=headingId>
-                            <${headingContent}/>
-                        </>
+                            id=headingId/>
                     </if>
                     <${input.content}/>
                 </span>

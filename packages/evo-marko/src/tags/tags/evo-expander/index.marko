@@ -77,7 +77,6 @@ export interface Input {
     const collapseOnMouseOut = input.collapseOnMouseOut ?? input.expandOnHover;
     const collapseOnEscape = input.collapseOnEscape ?? true;
 
-    // Helper: is target inside widget?
     const isInWidget = (el: Node | null) => el && (hostEl.contains(el) || overlayEl.contains(el));
 
     // Hover state
@@ -153,8 +152,7 @@ export interface Input {
 
 <script>
     if (open) {
-        const cleanup = autoUpdate(input.host(), input.overlay(), update);
-        $signal.onabort = cleanup;
+        $signal.onabort = autoUpdate(input.host(), input.overlay(), update);
     }
 </script>
 
