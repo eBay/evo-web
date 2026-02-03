@@ -47,6 +47,12 @@ svg {
         width: 32px;
     }
 
+    &.icon--40,
+    &.icon--40-fit {
+        height: 40px;
+        width: 40px;
+    }
+
     &.icon--48,
     &.icon--48-fit {
         height: 48px;
@@ -61,38 +67,47 @@ svg {
 
     &.icon--12-colored {
         height: 12px;
+        width: fit-content;
     }
 
     &.icon--16-colored {
         height: 16px;
+        width: fit-content;
     }
 
     &.icon--18-colored {
         height: 18px;
+        width: fit-content;
     }
 
     &.icon--20-colored {
         height: 20px;
+        width: fit-content;
     }
 
     &.icon--24-colored {
         height: 24px;
+        width: fit-content;
     }
 
     &.icon--30-colored {
         height: 30px;
+        width: fit-content;
     }
 
     &.icon--32-colored {
         height: 32px;
+        width: fit-content;
     }
 
     &.icon--48-colored {
         height: 48px;
+        width: fit-content;
     }
 
     &.icon--64-colored {
         height: 64px;
+        width: fit-content;
     }
 
     &.icon--disabled {

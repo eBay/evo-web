@@ -40,6 +40,8 @@ const iconSizes = [
     "24",
     "30",
     "32",
+    "40",
+    "48",
     "64",
     "12-colored",
     "16-colored",
