@@ -26,11 +26,9 @@ export interface Input {
 <let/arrowStyles=(undefined as undefined | Record<string, string>)>
 
 <const/update=() => {
-    const hostEl = input.host();
-    const overlayEl = input.overlay();
     const arrowEl = input.arrow?.();
 
-    computePosition(hostEl, overlayEl, {
+    computePosition(input.host(), input.overlay(), {
         placement: input.placement ?? "bottom-start",
         strategy: input.strategy ?? "fixed",
         middleware: [
