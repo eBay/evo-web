@@ -1,5 +1,4 @@
 import type { Placement } from "@floating-ui/dom";
-
 export interface Input extends Marko.HTML.Span {
     open?: boolean;
     openChange?: (open: boolean) => void;
@@ -31,18 +30,34 @@ export interface Input extends Marko.HTML.Span {
     noHover,
     host,
     heading,
+    onMouseEnter,
+    onMouseLeave,
+    onFocusIn,
+    onFocusOut,
     ...htmlInput
 }=input>
 
 <let/open=(input.open ?? false) valueChange=input.openChange>
 <let/hoverTimeout=(undefined as ReturnType<typeof setTimeout> | undefined)>
 
-<id/hostId> // TODO: Remove when Marko support dynamic tag variables
-<const/$host() { return document.getElementById(hostId)! }>
-<id/overlayId> // TODO: remove when Marko TS fixes its recursive issue
-<const/$overlay() { return document.getElementById(overlayId)! }>
-<id/arrowId> // TODO: remove when Marko TS fixes its recursive issue
-<const/$arrow() { return document.getElementById(arrowId)! }>
+<id/hostId>
+-- ${" "}
+// TODO: Remove when Marko support dynamic tag variables
+<const/$host() {
+    return document.getElementById(hostId)!;
+}>
+<id/overlayId>
+-- ${" "}
+// TODO: remove when Marko TS fixes its recursive issue
+<const/$overlay() {
+    return document.getElementById(overlayId)!;
+}>
+<id/arrowId>
+-- ${" "}
+// TODO: remove when Marko TS fixes its recursive issue
+<const/$arrow() {
+    return document.getElementById(arrowId)!;
+}>
 
 <evo-expander/expander
     open=open
@@ -59,27 +74,42 @@ export interface Input extends Marko.HTML.Span {
 <span/$root
     ...htmlInput
     class=["tooltip", inputClass]
-    onMouseEnter=(!noHover && (() => {
+    onMouseEnter=noHover ? onMouseEnter :
+    ((e, el) => {
         clearTimeout(hoverTimeout);
         open = true;
-    }))
-    onMouseLeave=(!noHover && (() => {
+        onMouseEnter && onMouseEnter(e, el);
+    })
+    onMouseLeave=noHover ? onMouseLeave :
+    ((e, el) => {
         clearTimeout(hoverTimeout);
-        hoverTimeout = setTimeout(() => { open = false; }, 300);
-    }))>
+        hoverTimeout = setTimeout(() => {
+            open = false;
+        }, 300);
+        onMouseLeave && onMouseLeave(e, el);
+    })
+    onFocusIn(e, el) {
+        open = true;
+        onFocusIn && onFocusIn(e, el);
+    }
+    onFocusOut(e, el) {
+        open = el.contains(e.relatedTarget as Node | null);
+        onFocusOut && onFocusOut(e, el);
+    }>
     <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
     <${hostAs}
         ...htmlHost
         id=hostId
         class=["tooltip__host", hostClass]
-        aria-expanded=expander.ariaExpanded
-        onFocusIn() { open = true; }
-        onFocusOut(e: FocusEvent) {
-            if ($root().contains(e.relatedTarget as Node)) return;
-            open = false;
-        }/>
+        tabindex=(
+            -1 // enables tooltips on non-focusable items
+        )
+        aria-expanded=expander.ariaExpanded/>
     <span
         id=overlayId
+        tabindex=(
+            -1 // required to prevent onFocusOut from closing the tooltip
+        )
         class="tooltip__overlay"
         style=expander.floatingStyles
         role="tooltip">
@@ -93,7 +123,9 @@ export interface Input extends Marko.HTML.Span {
                             class: headingClass,
                             ...htmlHeading
                         }=heading>
-                        <${headingAs} ...htmlHeading class=["tooltip__heading", headingClass]/>
+                        <${headingAs}
+                            ...htmlHeading
+                            class=["tooltip__heading", headingClass]/>
                     </if>
                     <${input.content}/>
                 </span>

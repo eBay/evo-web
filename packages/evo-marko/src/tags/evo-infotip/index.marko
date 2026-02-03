@@ -77,7 +77,9 @@ export interface Input extends Marko.HTML.Span {
         disabled=disabled
         aria-label=a11yIconText
         aria-expanded=expander.ariaExpanded
-        onClick() { open = !open; }>
+        onClick() {
+            open = !open;
+        }>
         <if=icon>
             <${icon}/>
         </if>
@@ -112,7 +114,9 @@ export interface Input extends Marko.HTML.Span {
                     aria-label=a11yCloseText
                     class="icon-btn icon-btn--transparent infotip__close"
                     type="button"
-                    onClick() { open = false; }>
+                    onClick() {
+                        open = false;
+                    }>
                     <evo-icon-close-16/>
                 </button>
             </span>

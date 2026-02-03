@@ -56,6 +56,8 @@ export interface Input<Index extends number | string | undefined>
     a11yIconPrefixText,
     a11ySelectedText = "selected",
     "aria-describedby": describedby,
+    onKeyDown,
+    onFocusOut,
     ...htmlInput
 }=input>
 <let/selected:=input.selected>
@@ -90,15 +92,17 @@ export interface Input<Index extends number | string | undefined>
         isForm && `listbox-button--form`,
         hasError && "listbox-button--error",
     ]
-    onKeyDown(e: KeyboardEvent) {
+    onKeyDown(e: KeyboardEvent, el: HTMLDivElement) {
         if (open && e.key === "Escape") {
             open = false;
         }
+        onKeyDown && onKeyDown(e, el);
     }
-    onFocusOut(e: FocusEvent, el: HTMLElement) {
+    onFocusOut(e: FocusEvent, el: HTMLDivElement) {
         if (!el.contains(e.relatedTarget as Node)) {
             open = false;
         }
+        onFocusOut && onFocusOut(e, el);
     }>
     <button
         class=[

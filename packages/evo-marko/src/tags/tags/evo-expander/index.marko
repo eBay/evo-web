@@ -23,7 +23,7 @@ export interface Input {
 }
 
 <let/floatingStyles=({ visibility: "hidden" } as Record<string, string>)>
-<let/arrowStyles=(undefined as undefined | Record<string, string>)>
+<let/arrowStyles=(undefined as Record<string, string> | undefined)>
 
 <const/update=() => {
     const arrowEl = input.arrow?.();

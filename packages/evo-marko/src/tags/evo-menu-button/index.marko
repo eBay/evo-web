@@ -51,6 +51,7 @@ export interface Input<
     split: inputSplit,
     collapseOnSelect,
     transparent: inputTransparent,
+    onKeyDown,
     ...htmlInput
 }=input>
 
@@ -67,7 +68,6 @@ export interface Input<
 }=(() => {
     let priority = null;
     let split;
-    let status;
     let noToggleIcon;
     let transparent;
     let tagName;
@@ -90,7 +90,6 @@ export interface Input<
 
     return {
         tagName,
-        status,
         split,
         isSelected,
         noToggleIcon,
@@ -109,8 +108,9 @@ export interface Input<
 <span/$root
     ...htmlInput
     class=["menu-button", inputClass]
-    onKeyDown(e: KeyboardEvent) {
+    onKeyDown(e, el) {
         if (open && e.key === "Escape") open = false;
+        onKeyDown && onKeyDown(e, el);
     }>
     <${tagName}
         class=[`menu-button__button`]
