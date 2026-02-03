@@ -11,10 +11,8 @@ import {
 
 export interface Input {
     open?: boolean;
-    openChange?: (open: boolean) => void;
     host: () => HTMLElement;
     overlay: () => HTMLElement;
-    trigger?: () => HTMLElement;
     arrow?: () => HTMLElement;
     placement?: Placement;
     strategy?: "absolute" | "fixed";
@@ -22,18 +20,10 @@ export interface Input {
     flip?: boolean;
     shift?: boolean;
     inline?: boolean;
-    expandOnFocus?: boolean;
-    expandOnHover?: boolean;
-    collapseOnClickOut?: boolean;
-    collapseOnFocusOut?: boolean;
-    collapseOnMouseOut?: boolean;
-    collapseOnEscape?: boolean;
-    collapseOnSelect?: boolean;
 }
 
 <let/floatingStyles=({ visibility: "hidden" } as Record<string, string>)>
 <let/arrowStyles=(undefined as undefined | Record<string, string>)>
-<let/open:=input.open>
 
 <const/update=() => {
     const hostEl = input.host();
@@ -67,91 +57,7 @@ export interface Input {
 }>
 
 <script>
-    const hostEl = input.host();
-    const overlayEl = input.overlay();
-    const triggerEl = input.trigger?.();
-
-    // Smart defaults for collapse behaviors
-    const collapseOnClickOut = input.collapseOnClickOut ?? (triggerEl || input.expandOnFocus);
-    const collapseOnFocusOut = input.collapseOnFocusOut ?? input.expandOnFocus;
-    const collapseOnMouseOut = input.collapseOnMouseOut ?? input.expandOnHover;
-    const collapseOnEscape = input.collapseOnEscape ?? true;
-
-    const isInWidget = (el: Node | null) => el && (hostEl.contains(el) || overlayEl.contains(el));
-
-    // Hover state
-    let hoverTimeout: ReturnType<typeof setTimeout> | undefined;
-    const clearHoverTimeout = () => clearTimeout(hoverTimeout);
-
-    // EXPAND TRIGGERS
-
-    if (triggerEl) {
-        triggerEl.addEventListener("click", () => { open = !open; }, { signal: $signal });
-    }
-
-    if (input.expandOnFocus) {
-        hostEl.addEventListener("focusin", () => { open = true; }, { signal: $signal });
-    }
-
-    if (input.expandOnHover) {
-        const onMouseEnter = () => { clearHoverTimeout(); open = true; };
-        hostEl.addEventListener("mouseenter", onMouseEnter, { signal: $signal });
-        overlayEl.addEventListener("mouseenter", onMouseEnter, { signal: $signal });
-    }
-
-    // COLLAPSE TRIGGERS
-
-    if (collapseOnMouseOut) {
-        const onMouseLeave = (e: MouseEvent) => {
-            if (isInWidget(e.relatedTarget as Node)) return;
-            clearHoverTimeout();
-            hoverTimeout = setTimeout(() => { open = false; }, 300);
-        };
-        hostEl.addEventListener("mouseleave", onMouseLeave, { signal: $signal });
-        overlayEl.addEventListener("mouseleave", onMouseLeave, { signal: $signal });
-    }
-
-    if (collapseOnFocusOut) {
-        // Track mousedown to handle clicks on non-focusable elements
-        let mouseDownInWidget = false;
-        document.addEventListener("mousedown", (e) => {
-            mouseDownInWidget = !!isInWidget(e.target as Node);
-        }, { signal: $signal });
-        document.addEventListener("mouseup", () => {
-            mouseDownInWidget = false;
-        }, { signal: $signal });
-
-        const onFocusOut = (e: FocusEvent) => {
-            if (isInWidget(e.relatedTarget as Node)) return;
-            if (mouseDownInWidget) return;
-            open = false;
-        };
-        hostEl.addEventListener("focusout", onFocusOut, { signal: $signal });
-        overlayEl.addEventListener("focusout", onFocusOut, { signal: $signal });
-    }
-
-    if (collapseOnClickOut) {
-        setTimeout(() => {
-            document.addEventListener("click", (e) => {
-                if (!open) return;
-                if (input.collapseOnSelect || !isInWidget(e.target as Node)) {
-                    open = false;
-                }
-            }, { signal: $signal });
-        }, 0);
-    }
-
-    if (collapseOnEscape) {
-        document.addEventListener("keydown", (e) => {
-            if (open && e.key === "Escape") open = false;
-        }, { signal: $signal });
-    }
-
-    $signal.onabort = clearHoverTimeout;
-</script>
-
-<script>
-    if (open) {
+    if (input.open) {
         $signal.onabort = autoUpdate(input.host(), input.overlay(), update);
     }
 </script>
@@ -159,5 +65,5 @@ export interface Input {
 <return={
     floatingStyles,
     arrowStyles,
-    ariaExpanded: open ? "true" as const : "false" as const,
+    ariaExpanded: input.open ? "true" as const : "false" as const,
 }>

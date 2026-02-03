@@ -56,14 +56,13 @@ export interface Input extends Marko.HTML.Span {
 <id/arrowId>
 
 <evo-expander/expander
-    open:=open
+    open=open
     placement=placement
     offset=(inputOffset ?? 6)
     flip=flip
     shift=shift
     inline=inline
     strategy="absolute"
-    collapseOnEscape=false
     host=() => (document.getElementById(hostId)!)
     overlay=() => (document.getElementById(overlayId)!)
     arrow=() => (document.getElementById(arrowId)!)/>

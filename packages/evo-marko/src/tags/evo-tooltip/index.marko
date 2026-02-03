@@ -35,32 +35,49 @@ export interface Input extends Marko.HTML.Span {
 }=input>
 
 <let/open=(input.open ?? false) valueChange=input.openChange>
+<let/hoverTimeout=(undefined as ReturnType<typeof setTimeout> | undefined)>
 
-<id/hostId>
-<id/overlayId>
-<id/arrowId>
+<id/hostId> // TODO: Remove when Marko support dynamic tag variables
+<const/$host() { return document.getElementById(hostId)! }>
+<id/overlayId> // TODO: remove when Marko TS fixes its recursive issue
+<const/$overlay() { return document.getElementById(overlayId)! }>
+<id/arrowId> // TODO: remove when Marko TS fixes its recursive issue
+<const/$arrow() { return document.getElementById(arrowId)! }>
 
 <evo-expander/expander
-    open:=open
+    open=open
     placement=placement
     offset=(inputOffset ?? 8)
     flip=flip
     shift=shift
     inline=inline
     strategy="absolute"
-    expandOnFocus
-    expandOnHover=!noHover
-    host=(() => document.getElementById(hostId)!)
-    overlay=(() => document.getElementById(overlayId)!)
-    arrow=(() => document.getElementById(arrowId)!)/>
+    host=$host
+    overlay=$overlay
+    arrow=$arrow/>
 
-<span ...htmlInput class=["tooltip", inputClass]>
+<span/$root
+    ...htmlInput
+    class=["tooltip", inputClass]
+    onMouseEnter=(!noHover && (() => {
+        clearTimeout(hoverTimeout);
+        open = true;
+    }))
+    onMouseLeave=(!noHover && (() => {
+        clearTimeout(hoverTimeout);
+        hoverTimeout = setTimeout(() => { open = false; }, 300);
+    }))>
     <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
     <${hostAs}
         ...htmlHost
         id=hostId
         class=["tooltip__host", hostClass]
-        aria-expanded=expander.ariaExpanded/>
+        aria-expanded=expander.ariaExpanded
+        onFocusIn() { open = true; }
+        onFocusOut(e: FocusEvent) {
+            if ($root().contains(e.relatedTarget as Node)) return;
+            open = false;
+        }/>
     <span
         id=overlayId
         class="tooltip__overlay"

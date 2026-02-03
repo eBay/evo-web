@@ -72,15 +72,13 @@ export interface Input<Index extends number | string | undefined>
 <const/isForm=variant === "form">
 
 <id/rootId> // TODO: remove in favor of $root once Marko supports dynamic tag return
+<const/$root() { return document.getElementById(rootId)! }>
 
 <evo-expander/expander
-    open:=open
+    open=open
     strategy=strategy
-    collapseOnSelect=collapseOnSelect
-    host=() => (document.getElementById(rootId)!)
-    overlay=$listbox
-    trigger=$trigger/>
-
+    host=$root
+    overlay=$listbox/>
 
 <${truncate && !fluid ? "div" : "span"}
     ...htmlInput
@@ -91,8 +89,18 @@ export interface Input<Index extends number | string | undefined>
         fluid && "listbox-button--fluid",
         isForm && `listbox-button--form`,
         hasError && "listbox-button--error",
-    ]>
-    <button/$trigger
+    ]
+    onKeyDown(e: KeyboardEvent) {
+        if (open && e.key === "Escape") {
+            open = false;
+        }
+    }
+    onFocusOut(e: FocusEvent, el: HTMLElement) {
+        if (!el.contains(e.relatedTarget as Node)) {
+            open = false;
+        }
+    }>
+    <button
         class=[
             "listbox-button__control",
             "btn",
@@ -109,7 +117,8 @@ export interface Input<Index extends number | string | undefined>
         aria-describedby=describedby
         aria-labelledby=labelId && `${prefixId} ${labelId}`
         aria-invalid=invalid && "true"
-        aria-expanded=expander.ariaExpanded>
+        aria-expanded=expander.ariaExpanded
+        onClick() { open = !open; }>
         <span class="btn__cell">
             <if=floatingLabel>
                 <span class=[
@@ -148,9 +157,6 @@ export interface Input<Index extends number | string | undefined>
     </button>
     <evo-listbox/$listbox:(() => HTMLElement)
         style=expander.floatingStyles
-        onFocusOut() {
-            open = false;
-        }
         class=[
             "listbox-button__listbox",
             strategy === "fixed" && "listbox-button__listbox--fixed",
@@ -159,5 +165,8 @@ export interface Input<Index extends number | string | undefined>
         name=name
         listSelection=listSelection
         a11ySelectedText=a11ySelectedText
+        onClick() {
+            if (collapseOnSelect) open = false;
+        }
         option=input.option/>
 </>

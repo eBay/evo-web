@@ -99,20 +99,21 @@ export interface Input<
     };
 })()>
 
-<id/triggerId> // TODO: remove once Marko dynamic tag vars work
-
 <evo-expander/expander
-    open:=open
+    open=open
     placement=(reverse ? "bottom-end" : "bottom-start")
     strategy=strategy
-    collapseOnSelect=collapseOnSelect
     host=$root
-    overlay=$menu
-    trigger=(() => document.getElementById(triggerId)!)/>
-<span/$root ...htmlInput class=["menu-button", inputClass]>
+    overlay=$menu/>
+
+<span/$root
+    ...htmlInput
+    class=["menu-button", inputClass]
+    onKeyDown(e: KeyboardEvent) {
+        if (open && e.key === "Escape") open = false;
+    }>
     <${tagName}
         class=[`menu-button__button`]
-        id=triggerId
         size=size
         priority=priority as ButtonInput["priority"]
         borderless=borderless
@@ -124,7 +125,8 @@ export interface Input<
         aria-labelledby=labelId && `${prefixId} ${labelId}`
         split=split
         disabled=disabled
-        partiallyDisabled=partiallyDisabled>
+        partiallyDisabled=partiallyDisabled
+        onClick() { open = !open; }>
         <if=label>
             <span ...label class=["menu-button-prefix-label", label.class]/>
             ${" "}
@@ -145,5 +147,8 @@ export interface Input<
         fixWidth=fixWidth
         tabindex=-1
         footerButton=footerButton
+        onClick() {
+            if (collapseOnSelect) open = false;
+        }
         item=items/>
 </span>
