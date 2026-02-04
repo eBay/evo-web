@@ -41,19 +41,16 @@ export interface Input extends Marko.HTML.Span {
 <let/hoverTimeout=(undefined as ReturnType<typeof setTimeout> | undefined)>
 
 <id/hostId>
--- ${" "}
 // TODO: Remove when Marko support dynamic tag variables
 <const/$host() {
     return document.getElementById(hostId)!;
 }>
 <id/overlayId>
--- ${" "}
 // TODO: remove when Marko TS fixes its recursive issue
 <const/$overlay() {
     return document.getElementById(overlayId)!;
 }>
 <id/arrowId>
--- ${" "}
 // TODO: remove when Marko TS fixes its recursive issue
 <const/$arrow() {
     return document.getElementById(arrowId)!;
@@ -101,14 +98,11 @@ export interface Input extends Marko.HTML.Span {
         ...htmlHost
         id=hostId
         class=["tooltip__host", hostClass]
-        tabindex=(
-            -1 // enables tooltips on non-focusable items
-        )
         aria-expanded=expander.ariaExpanded/>
     <span
         id=overlayId
         tabindex=(
-            -1 // required to prevent onFocusOut from closing the tooltip
+            open && -1 // required to prevent onFocusOut from closing the tooltip
         )
         class="tooltip__overlay"
         style=expander.floatingStyles
