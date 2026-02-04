@@ -1,28 +1,4 @@
-@use "../mixins/private/token-mixins";
-
-@keyframes chevron-bounce-open {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes chevron-bounce-close {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(7px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
+@use "../mixins/public/animation";
 
 ul.accordion {
     margin: 0;
@@ -59,19 +35,28 @@ ul.accordion details .details__content {
     overflow: hidden;
 }
 
-ul.accordion summary.details__summary span.details__icon svg {
-    @include token-mixins.fill-token(
-        details-secondary-foreground-color,
-        color-foreground-secondary
-    );
-
-    animation: chevron-bounce-close var(--motion-duration-medium-1)
-        var(--motion-easing-standard);
+ul.accordion
+    details:not([open])
+    summary.details__summary
+    span.details__icon
+    svg {
+    fill: var(--color-foreground-secondary);
 }
 
-ul.accordion details[open] summary.details__summary span.details__icon svg {
-    animation: chevron-bounce-open var(--motion-duration-medium-1)
-        var(--motion-easing-standard) var(--motion-duration-short-1);
+ul.accordion--animated
+    details:not([open])
+    summary.details__summary
+    span.details__icon
+    svg {
+    @include animation.chevron-close;
+}
+
+ul.accordion--animated
+    details[open]
+    summary.details__summary
+    span.details__icon
+    svg {
+    @include animation.chevron-open;
 }
 
 /* DEPRECATED: Remove next major */

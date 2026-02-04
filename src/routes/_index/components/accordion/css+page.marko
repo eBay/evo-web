@@ -1,3 +1,12 @@
+<script>
+  document.querySelectorAll(".accordion").forEach((accordion) => {
+    accordion.querySelectorAll("details").forEach((details) => {
+      details.addEventListener("toggle", () => {
+        accordion.classList.add("accordion--animated");
+      });
+    });
+  });
+</script>
 <div id="accordion-css">
   <h1>Accordion CSS Component</h1>
   <p>
@@ -173,9 +182,9 @@
 
   <h2>Opened Accordion</h2>
   <p>
-    Apply the
+    Apply the${" "}
     <code>open</code>
-    property to render a section in an open state.
+    ${" "}property to render a section in an open state.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -325,9 +334,9 @@
 
   <h2>Large Accordion</h2>
   <p>
-    Apply the
+    Apply the${" "}
     <code>accordion--large</code>
-    modifier to increase the size of each section summary.
+    ${" "}modifier to increase the size of each section summary.
   </p>
   <div class="demo">
     <div class="demo__inner">
@@ -468,14 +477,14 @@
 
   <h2>Auto-Collapsing Accordion</h2>
   <p>
-    Use the
+    Use the${" "}
     <code>name</code>
-    attribute to ensure only one section can be open at a time, with other
+    ${" "}attribute to ensure only one section can be open at a time, with other
     sections automatically closing.
   </p>
   <p>
     <b>NOTE:</b>
-    For browsers that do not yet support this attribute, Javascript is
+    ${" "}For browsers that do not yet support this attribute, Javascript is
     needed to mimic the behavior as a fallback.
   </p>
   <div class="demo">
@@ -616,7 +625,7 @@
   </highlight-code>
 
   <h2 id="accordion-animation">
-    Accordion Animation
+    Accordion Animation${" "}
     <sup>EXPERIMENTAL</sup>
   </h2>
   <p>
@@ -625,12 +634,19 @@
     that may not be supported in all browsers.
   </p>
   <p>
-    The accordion uses modern CSS features like
+    To enable all aniations, add${" "}
+    <code>accordion--animated</code>
+    ${" "}class. This should be added after the user interacts with the
+    component in order to prevent animations from triggering when the component
+    is rendered.
+  </p>
+  <p>
+    The accordion uses modern CSS features like${" "}
     <code>interpolate-size: allow-keywords</code>
-    that enable smooth transitions for intrinsic size values and
+    ${" "}that enable smooth transitions for intrinsic size values and${" "}
     <code>transition-behavior: allow-discrete</code>
-    to allow smoother transitions for discrete properties like
+    ${" "}to allow smoother transitions for discrete properties like${" "}
     <code>content-visibility</code>
-    .
+    ${" "}.
   </p>
 </div>

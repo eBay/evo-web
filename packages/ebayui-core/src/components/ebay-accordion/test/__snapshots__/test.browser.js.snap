@@ -115,13 +115,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
               focusable="false"
               style="
                 animation-duration: 0ms;
-                animation: chevron-bounce-close var(--motion-duration-medium-1)
-                        var(--motion-easing-standard);
                 display: inline-block;
-                fill: var(
-                        --details-secondary-foreground-color,
-                        var(--color-foreground-secondary)
-                    );
+                fill: var(--color-foreground-secondary);
                 height: 16px;
                 pointer-events: none;
                 stroke-width: 0;
@@ -276,13 +271,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
               focusable="false"
               style="
                 animation-duration: 0ms;
-                animation: chevron-bounce-close var(--motion-duration-medium-1)
-                        var(--motion-easing-standard);
                 display: inline-block;
-                fill: var(
-                        --details-secondary-foreground-color,
-                        var(--color-foreground-secondary)
-                    );
+                fill: var(--color-foreground-secondary);
                 height: 16px;
                 pointer-events: none;
                 stroke-width: 0;
@@ -436,13 +426,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
               focusable="false"
               style="
                 animation-duration: 0ms;
-                animation: chevron-bounce-close var(--motion-duration-medium-1)
-                        var(--motion-easing-standard);
                 display: inline-block;
-                fill: var(
-                        --details-secondary-foreground-color,
-                        var(--color-foreground-secondary)
-                    );
+                fill: var(--color-foreground-secondary);
                 height: 16px;
                 pointer-events: none;
                 stroke-width: 0;
@@ -548,17 +533,36 @@ exports[`accordion > given the accordion in the default state > when first secti
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -112,8 +116,8 @@
+@@ -112,8 +116,10 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
--                 animation: chevron-bounce-close var(--motion-duration-medium-1)
--                         var(--motion-easing-standard);
 +                 animation: chevron-bounce-open var(--motion-duration-medium-1)
 +                         var(--motion-easing-standard) var(--motion-duration-short-1);
                  display: inline-block;
-                 fill: var(
-                         --details-secondary-foreground-color,
+-                 fill: var(--color-foreground-secondary);
++                 fill: currentcolor;
+                 height: 16px;
+                 pointer-events: none;
+                 stroke-width: 0;
+@@ -268,6 +274,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
+@@ -423,6 +431,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
 "
 `;
 
@@ -572,6 +576,33 @@ exports[`accordion > given the accordion in the default state > when first secti
                bottom: 0px;
                content: "";
                left: 0px;
+@@ -112,6 +112,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
+@@ -268,6 +270,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
+@@ -423,6 +427,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
 "
 `;
 
@@ -622,17 +653,36 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -112,8 +116,8 @@
+@@ -112,8 +116,10 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
--                 animation: chevron-bounce-close var(--motion-duration-medium-1)
--                         var(--motion-easing-standard);
 +                 animation: chevron-bounce-open var(--motion-duration-medium-1)
 +                         var(--motion-easing-standard) var(--motion-duration-short-1);
                  display: inline-block;
-                 fill: var(
-                         --details-secondary-foreground-color,
+-                 fill: var(--color-foreground-secondary);
++                 fill: currentcolor;
+                 height: 16px;
+                 pointer-events: none;
+                 stroke-width: 0;
+@@ -268,6 +274,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
+@@ -423,6 +431,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
 "
 `;
 
@@ -646,7 +696,16 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                bottom: 0px;
                content: "";
                left: 0px;
-@@ -182,17 +182,20 @@
+@@ -112,6 +112,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
+@@ -177,17 +179,20 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
@@ -675,7 +734,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -262,6 +265,7 @@
+@@ -257,6 +262,7 @@
                animation-duration: 0ms;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -683,16 +742,26 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -273,8 +277,8 @@
+@@ -268,8 +274,10 @@
                focusable="false"
                style="
                  animation-duration: 0ms;
--                 animation: chevron-bounce-close var(--motion-duration-medium-1)
--                         var(--motion-easing-standard);
 +                 animation: chevron-bounce-open var(--motion-duration-medium-1)
 +                         var(--motion-easing-standard) var(--motion-duration-short-1);
                  display: inline-block;
-                 fill: var(
-                         --details-secondary-foreground-color,
+-                 fill: var(--color-foreground-secondary);
++                 fill: currentcolor;
+                 height: 16px;
+                 pointer-events: none;
+                 stroke-width: 0;
+@@ -423,6 +431,8 @@
+               focusable="false"
+               style="
+                 animation-duration: 0ms;
++                 animation: chevron-bounce-close var(--motion-duration-medium-1)
++                         var(--motion-easing-standard);
+                 display: inline-block;
+                 fill: var(--color-foreground-secondary);
+                 height: 16px;
 "
 `;

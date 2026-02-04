@@ -4,7 +4,7 @@ export interface Input<Open extends number | number[] | undefined>
     size?: "regular" | "large";
     /**
      * The `aria-roledescription` of the list
-     * 
+     *
      * English default to be overridden is `"accordion"`
      */
     a11yText: string;
@@ -26,11 +26,17 @@ export interface Input<Open extends number | number[] | undefined>
 }=input>
 
 <let/open:=input.open>
+<let/interacted=false>
 
 <ul
     ...htmlInput
     aria-roledescription=a11yText
-    class=["accordion", size === "large" && "accordion--large", inputClass]>
+    class=[
+        "accordion",
+        size === "large" && "accordion--large",
+        inputClass,
+        interacted && "accordion--animated",
+    ]>
     <for|item, index| of=details>
         <li>
             <evo-details
@@ -39,6 +45,7 @@ export interface Input<Open extends number | number[] | undefined>
                     Array.isArray(open) ? open.includes(index) : open === index
                 )
                 openChange(isOpen) {
+                    interacted = true;
                     if (Array.isArray(open)) {
                         const currentOpen = open;
                         if (isOpen) {
@@ -51,7 +58,7 @@ export interface Input<Open extends number | number[] | undefined>
                             ) as Open;
                         }
                     } else {
-                        open = (isOpen ? index : -1) as Open
+                        open = (isOpen ? index : -1) as Open;
                     }
                 }/>
         </li>

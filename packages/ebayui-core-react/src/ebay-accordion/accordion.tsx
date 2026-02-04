@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import React, { ComponentProps, FC, ReactElement, useRef } from "react";
+import React, { ComponentProps, FC, ReactElement, useRef, useState } from "react";
 import { EbayDetails, EbayDetailsProps } from "../ebay-details";
 import { filterByType } from "../utils";
 import { EbayEventHandler } from "../events";
@@ -26,6 +26,7 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
     ...rest
 }: EbayAccordionProps) => {
     const listRef = useRef<HTMLUListElement>(null);
+    const [interacted, setInteracted] = useState(false);
 
     const details = filterByType(children, EbayDetails);
     if (!details.length) {
@@ -36,6 +37,7 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
     const detailsWithAccordionProps = details.map((detailComponent, detailsIndex) =>
         React.cloneElement(detailComponent as ReactElement<EbayDetailsProps>, {
             onToggle: (event, { open }) => {
+                setInteracted(true);
                 if (autoCollapse && open) {
                     const detailsElements = listRef.current?.querySelectorAll("details");
                     detailsElements?.forEach((detailElement, elementIndex) => {
@@ -60,6 +62,7 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
             ref={listRef}
             className={classnames("accordion", className, {
                 "accordion--large": size === "large",
+                "accordion--animated": interacted,
             })}
             aria-roledescription={ariaRoledescription}
         >
