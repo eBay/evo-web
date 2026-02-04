@@ -26,5 +26,4 @@
 <!-- For CSS changes -->
 
 - [ ] I tested the UI in all supported browsers
-- [ ] I did a visual regression check of the components impacted by doing a Percy build and approved the build
 - [ ] I tested the UI in dark mode and RTL mode
