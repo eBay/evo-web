@@ -15,16 +15,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
-      - run: npm i
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
       - run: npm run build:ci
+        env:
+          CI: true
       - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: |
+            packages/*/dist
+            packages/*/_site
+          retention-days: 1
       - name: Check for uncommitted changes
         run: |
           if output=$(git status --porcelain) && [ -z "$output" ]; then
@@ -32,12 +49,12 @@ jobs:
           else
             echo "Working directory has uncommitted changes or untracked files. Please run the build and check these files in as part of your PR:"
             echo "$output"
-            exit 1 # Fail the CI run if there are uncommitted changes
+            exit 1
           fi
+
   # Deployment job
   deploy:
     if: github.ref == 'refs/heads/main'
-    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
     permissions:
       pages: write
       id-token: write
@@ -53,13 +70,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: packages/
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
       - name: Install dependencies
-        run: npm i
+        run: npm ci --ignore-scripts
       - name: Deploy job
         run: npm run deploy
       - name: Upload artifact
@@ -69,6 +93,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
   release:
     needs: [build]
     permissions:
@@ -80,6 +105,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: packages/
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -88,7 +120,7 @@ jobs:
       - name: Update npm
         run: npm update -g npm
       - name: Install dependencies
-        run: npm i
+        run: npm ci --ignore-scripts
       - name: Release
         id: changesets
         uses: changesets/action@v1
@@ -99,7 +131,6 @@ jobs:
           title: "ci: release"
           commitMode: "github-api"
         env:
-          # Disable husky
           HUSKY: 0
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ''
