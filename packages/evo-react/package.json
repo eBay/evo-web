@@ -34,7 +34,7 @@
     "lint": "eslint . && prettier . --check --log-level=warn",
     "release": "npm run build",
     "start": "storybook dev -p 9001",
-    "test": "vitest --browser.headless --passWithNoTests",
+    "test": "vitest run --browser.headless --passWithNoTests",
     "type:check": "tsc --noEmit",
     "update-icons": "exit 0",
     "version": "npm run update-icons && git add -A src"

@@ -59,6 +59,7 @@ export default defineConfig({
         },
     },
     test: {
+        define: { global: 'window' },
         globals: true,
         environment: "jsdom",
         setupFiles: ["./test.setup.ts"],

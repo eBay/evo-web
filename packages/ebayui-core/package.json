@@ -34,7 +34,7 @@
         "lint:js": "eslint",
         "lint:less": "stylelint \"src/**/*.{css,less}\" --config .stylelintrc",
         "lint:whitespace": "lintspaces *.md src/**/*.md src/**/*.marko src/**/*.less --newline --maxnewlines 1 --trailingspaces --spaces 4",
-        "prepublishOnly": "node scripts/postpublish && node scripts/prepublish",
+        "prepublishOnly": "node scripts/postpublish && mtc && node scripts/prepublish",
         "postpublish": "node scripts/postpublish",
         "release": "node scripts/postpublish && node scripts/prepublish",
         "report": "nyc report --reporter=text-summary",

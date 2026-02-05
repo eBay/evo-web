@@ -31,14 +31,13 @@
     "lint": "mtc && eslint && prettier . --check --log-level=warn",
     "prepublishOnly": "node scripts/prepublish",
     "postpublish": "node scripts/postpublish",
-    "release": "npm run build",
+    "release": "mtc",
     "start": "storybook dev -p 6006 --no-open",
     "test": "vitest run --browser.headless",
     "test:browser": "vitest run browser",
     "test:ci": "CI=true vitest run --no-color",
     "test:server": "vitest run server",
-    "test:watch": "vitest",
-    "version": "exit 0"
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.7.4",

@@ -49,7 +49,7 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Detect changed components
         id: detect
@@ -57,9 +57,6 @@ jobs:
         with:
           sass-dir: 'packages/skin/src/sass'
           base-branch: 'main'
-
-      - name: Copy Storybook assets
-        run: npm run copy:assetsToStorybook -w packages/skin
 
       - name: Run Percy (Partial)
         if: steps.detect.outputs.components != '' && steps.detect.outputs.components != 'all'
@@ -89,7 +86,7 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
       - name: Run Percy (All - Auto-approve)
         env:

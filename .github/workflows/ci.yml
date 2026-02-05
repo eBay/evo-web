@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm i
+      - run: npm ci
       - run: npm run build:ci
       - uses: codecov/codecov-action@v5
         with:
@@ -59,7 +59,7 @@ jobs:
           node-version: 24
           cache: npm
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Deploy job
         run: npm run deploy
       - name: Upload artifact
@@ -85,10 +85,8 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - name: Update npm
-        run: npm update -g npm
       - name: Install dependencies
-        run: npm i
+        run: npm ci
       - name: Release
         id: changesets
         uses: changesets/action@v1
@@ -102,4 +100,3 @@ jobs:
           # Disable husky
           HUSKY: 0
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ''

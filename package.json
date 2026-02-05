@@ -10,8 +10,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run lint && mtc && npm run build -w packages/skin && npm run build -w packages/ebayui-core && npm run build -w packages/evo-marko && npm run build -w packages/ebayui-core-react",
-    "build:ci": "CI=true npm run build -w packages/skin && npm run build -w packages/ebayui-core && npm run build -w packages/evo-marko && npm run build -w packages/ebayui-core-react && npm run build -w packages/evo-react",
+    "build": "npm run lint && mtc && npm run build -w packages/skin && npm run build -w packages/ebayui-core -w packages/evo-marko -w packages/ebayui-core-react",
+    "build:ci": "CI=true npm run build -w packages/skin && npm run build -w packages/ebayui-core -w packages/evo-marko -w packages/ebayui-core-react -w packages/evo-react",
     "change": "changeset add",
     "copy:coreui-site": "npm run deploy --ws",
     "copy:skin-site": "npm run deploy --ws",
@@ -21,11 +21,11 @@
     "postinstall": "npx playwright install --with-deps chromium",
     "lint": "stylelint src --config .stylelintrc",
     "prepare": "husky",
-    "release": "npm run release --ws && changeset publish",
+    "release": "npm run release --ws --if-present && changeset publish",
     "start": "marko-run",
     "test": "npm run test --ws",
     "update-snapshots": "npm run update-snapshots --ws --if-present",
-    "version": "npm run version --ws && changeset version && npm i --package-lock-only && git add -A packages"
+    "version": "npm run version --ws --if-present && changeset version && npm i --package-lock-only && git add -A packages"
   },
   "commitlint": {
     "extends": "@commitlint/config-conventional"
