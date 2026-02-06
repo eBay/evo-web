@@ -37,7 +37,7 @@
         "format": "eslint . --fix 'src/**/*.{ts,tsx}' && prettier . --write --log-level=warn",
         "lint": "eslint . --ext .ts,.tsx && prettier . --check --log-level=warn",
         "release": "vite build && npm run copy",
-        "smoke-test": "concurrently \"npm run smoke-test:react-16\" \"npm run smoke-test:react-18\" \"npm run smoke-test:react-19\"",
+        "smoke-test": "concurrently --kill-others-on-fail \"npm run smoke-test:react-16\" \"npm run smoke-test:react-18\" \"npm run smoke-test:react-19\"",
         "smoke-test:react-16": "cd ./smoke-tests/react-16 && npm ci && npm run test",
         "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm ci && npm run test",
         "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm ci && npm run test",

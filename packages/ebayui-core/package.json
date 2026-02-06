@@ -23,7 +23,7 @@
         "!**/{,*.}stories-ignore.*"
     ],
     "scripts": {
-        "build": "rm -rf dist && concurrently \"mtc\" \"npm run lint\" \"node scripts/check-postpublish\" \"npm test\"",
+        "build": "rm -rf dist && concurrently --kill-others-on-fail \"mtc\" \"npm run lint\" \"node scripts/check-postpublish\" \"npm test\"",
         "build:readme": "node scripts/add-ds-version",
         "coverage": "vitest run --browser.headless --coverage",
         "deploy": "storybook build -o ./_site",
