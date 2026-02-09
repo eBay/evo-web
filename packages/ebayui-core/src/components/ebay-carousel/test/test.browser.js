@@ -7,13 +7,47 @@ import {
     describe,
     it,
     expect,
+    vi,
 } from "vitest";
 import { fastAnimations } from "../../../common/test-utils/browser";
 import template from "../index.marko";
 import * as mock from "./mock";
+import * as scrollTransitionModule from "../utils/scroll-transition";
+
 beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
+
+beforeEach(() => {
+    vi.useFakeTimers({
+        toFake: [
+            "setTimeout",
+            "clearTimeout",
+            "setImmediate",
+            "clearImmediate",
+            "setInterval",
+            "clearInterval",
+            "requestAnimationFrame",
+            "cancelAnimationFrame",
+        ],
+        shouldAdvanceTime: true,
+    });
+
+    vi.mock("../utils/scroll-transition", { spy: true });
+
+    vi.mocked(scrollTransitionModule.scrollTransition).mockImplementation(
+        (el, to, fn) => {
+            el.scrollLeft = to;
+            fn();
+            return () => {};
+        },
+    );
+});
+
+afterEach(() => {
+    vi.clearAllTimers();
+    vi.resetAllMocks();
+});
 
 /** @type import("@marko/testing-library").RenderResult */
 let component;
@@ -650,7 +684,7 @@ describe("given a discrete carousel", () => {
                 await component.rerender(
                     Object.assign({}, input, { paused: true }),
                 );
-                await new Promise((resolve) => setTimeout(resolve, 600));
+                vi.advanceTimersByTime(600);
             });
 
             it("then it did not emit any updates", () => {
@@ -666,7 +700,7 @@ describe("given a discrete carousel", () => {
             });
 
             it("then the autoplay does not run", async () => {
-                await new Promise((resolve) => setTimeout(resolve, 600));
+                vi.advanceTimersByTime(600);
                 expect(component.emitted("move")).has.length(0);
             });
 
@@ -711,6 +745,8 @@ function doesNotEventuallyScroll() {
             window.removeEventListener("scroll", handleScroll);
             reject(err);
         }
+
+        vi.advanceTimersByTime(400);
     });
 }
 

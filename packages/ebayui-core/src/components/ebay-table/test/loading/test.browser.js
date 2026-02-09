@@ -77,25 +77,23 @@ describe("given table with actions with loading", () => {
 
     describe("all interactive elements should be disabled and have tabindex -1", () => {
         it("should have all buttons disabled", async () => {
-            component
-                .getAllByRole("button", { hidden: true })
-                .forEach(async (button) => {
-                    await waitFor(() => {
-                        expect(button).toHaveAttribute("disabled", "");
-                        expect(button).toHaveAttribute("tabindex", "-1");
-                    });
+            for (const button of component.getAllByRole("button", {
+                hidden: true,
+            })) {
+                await waitFor(() => {
+                    expect(button).toHaveAttribute("disabled", "true");
+                    expect(button).toHaveAttribute("tabindex", "-1");
                 });
+            }
         });
-        it("should have all links disabled", async () => {
-            component
-                .getAllByRole("link", { hidden: true })
-                .forEach(async (button) => {
-                    await waitFor(() => {
-                        expect(button).toHaveAttribute("disabled", "");
-                        expect(button).toHaveAttribute("tabindex", "-1");
-                    });
-                });
-        });
+    });
+    it("should have all links disabled", async () => {
+        for (const button of component.getAllByRole("link", { hidden: true })) {
+            await waitFor(() => {
+                expect(button).not.toHaveAttribute("href");
+                expect(button).toHaveAttribute("tabindex", "-1");
+            });
+        }
     });
     describe("When table is rerendered without loading", () => {
         beforeEach(async () => {
@@ -104,17 +102,14 @@ describe("given table with actions with loading", () => {
 
         describe("all interactive elements should be enabled", () => {
             it("should have all buttons disabled", async () => {
-                component
-                    .getAllByRole("button", { hidden: true })
-                    .forEach(async (button) => {
-                        await waitFor(() => {
-                            expect(button).not.toHaveAttribute("disabled", "");
-                            expect(button).not.toHaveAttribute(
-                                "tabindex",
-                                "-1",
-                            );
-                        });
+                for (const button of component.getAllByRole("button", {
+                    hidden: true,
+                })) {
+                    await waitFor(() => {
+                        expect(button).not.toHaveAttribute("disabled", "");
+                        expect(button).not.toHaveAttribute("tabindex", "-1");
                     });
+                }
             });
         });
     });
@@ -130,14 +125,14 @@ describe("given table with header actions with loading", () => {
 
     describe("all interactive elements should be disabled and have tabindex -1", () => {
         it("should have all buttons disabled", async () => {
-            component
-                .getAllByRole("button", { hidden: true })
-                .forEach(async (button) => {
-                    await waitFor(() => {
-                        expect(button).toHaveAttribute("disabled", "");
-                        expect(button).toHaveAttribute("tabindex", "-1");
-                    });
+            for (const button of component.getAllByRole("button", {
+                hidden: true,
+            })) {
+                await waitFor(() => {
+                    expect(button).toHaveAttribute("disabled", "");
+                    expect(button).toHaveAttribute("tabindex", "-1");
                 });
+            }
         });
     });
     describe("When table is rerendered without loading", () => {
@@ -147,12 +142,14 @@ describe("given table with header actions with loading", () => {
 
         describe("all interactive elements should be enabled", () => {
             it("should have all buttons disabled", async () => {
-                component.getAllByRole("button").forEach(async (button) => {
+                for (const button of component.getAllByRole("button", {
+                    hidden: true,
+                })) {
                     await waitFor(() => {
                         expect(button).not.toHaveAttribute("disabled", "");
                         expect(button).not.toHaveAttribute("tabindex", "-1");
                     });
-                });
+                }
             });
         });
     });

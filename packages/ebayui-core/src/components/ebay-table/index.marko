@@ -86,6 +86,7 @@ $ const isLoading = bodyState === "loading";
                         } else if (sortOrder) {
                             sortEleAttr = {
                                 type: "button",
+                                tabindex: isLoading ? -1 : null,
                                 disabled: isLoading,
                             };
                         }
