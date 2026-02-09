@@ -1,5 +1,5 @@
 import React from "react";
-import { vi } from "vitest";
+import { beforeEach, afterEach, vi } from "vitest";
 
 import { waitFor, render, screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -17,7 +17,7 @@ describe("<EbayCalendar />", () => {
         };
     });
 
-    beforeAll(() => {
+    afterEach(() => {
         vi.useRealTimers();
     });
 

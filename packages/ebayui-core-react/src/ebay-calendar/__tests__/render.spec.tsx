@@ -3,7 +3,14 @@ import { render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
 import Meta, { Default, Navigable, RangeSelected } from "./index.stories";
 
-vi.useFakeTimers().setSystemTime(new Date("2024-03-05").getTime());
+beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2024-03-05"));
+});
+
+afterEach(() => {
+    vi.useRealTimers();
+});
 
 const DefaultStory = composeStory(Default, Meta);
 const NavigableStory = composeStory(Navigable, Meta);

@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { composeStory } from "@storybook/react-vite";
 import Meta, { Continuous, ItemsPerSlide, PreserveTabIndex } from "./index.stories";
 import { EbayCarousel, EbayCarouselItem } from "..";
+import { beforeEach, afterEach, expect, vi, describe, it } from "vitest";
 
 const ContinuousStory = composeStory(Continuous, Meta);
 const ItemsPerSlideStory = composeStory(ItemsPerSlide, Meta);
@@ -83,7 +84,13 @@ describe("ebay-carousel rendering", () => {
     });
 
     describe("autoplay", () => {
-        vi.useFakeTimers();
+        beforeEach(() => {
+            vi.useFakeTimers();
+        });
+
+        afterEach(() => {
+            vi.useRealTimers();
+        });
 
         it("should autoplay the carousel", () => {
             render(

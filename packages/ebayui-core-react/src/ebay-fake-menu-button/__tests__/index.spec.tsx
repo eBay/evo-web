@@ -4,7 +4,14 @@ import { screen, fireEvent, render } from "@testing-library/react";
 import { EbayFakeMenuButton, EbayFakeMenuButtonItem } from "..";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
-vi.useFakeTimers();
+beforeEach(() => {
+    vi.useFakeTimers();
+});
+
+afterEach(() => {
+    vi.restoreAllMocks();
+    vi.useRealTimers();
+});
 
 describe("<EbayFakeMenuButton>", () => {
     describe("on button click", () => {

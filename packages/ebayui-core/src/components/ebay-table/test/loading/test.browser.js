@@ -81,7 +81,7 @@ describe("given table with actions with loading", () => {
                 hidden: true,
             })) {
                 await waitFor(() => {
-                    expect(button).toHaveAttribute("disabled", "true");
+                    expect(button).toBeDisabled();
                     expect(button).toHaveAttribute("tabindex", "-1");
                 });
             }
@@ -106,7 +106,7 @@ describe("given table with actions with loading", () => {
                     hidden: true,
                 })) {
                     await waitFor(() => {
-                        expect(button).not.toHaveAttribute("disabled", "");
+                        expect(button).not.toBeDisabled();
                         expect(button).not.toHaveAttribute("tabindex", "-1");
                     });
                 }
@@ -129,7 +129,7 @@ describe("given table with header actions with loading", () => {
                 hidden: true,
             })) {
                 await waitFor(() => {
-                    expect(button).toHaveAttribute("disabled", "");
+                    expect(button).toBeDisabled();
                     expect(button).toHaveAttribute("tabindex", "-1");
                 });
             }
@@ -141,12 +141,12 @@ describe("given table with header actions with loading", () => {
         });
 
         describe("all interactive elements should be enabled", () => {
-            it("should have all buttons disabled", async () => {
+            it("should have all disabled state removed", async () => {
                 for (const button of component.getAllByRole("button", {
                     hidden: true,
                 })) {
                     await waitFor(() => {
-                        expect(button).not.toHaveAttribute("disabled", "");
+                        expect(button).not.toBeDisabled();
                         expect(button).not.toHaveAttribute("tabindex", "-1");
                     });
                 }

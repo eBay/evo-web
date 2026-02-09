@@ -5,7 +5,13 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 import { EbayListboxButton, EbayListboxButtonOption } from "..";
 
-vi.useFakeTimers();
+beforeEach(() => {
+    vi.useFakeTimers();
+});
+
+afterEach(() => {
+    vi.useRealTimers();
+});
 describe("<EbayListboxButton>", () => {
     describe("a11y prefix", () => {
         const renderListbox = (listboxBtnLabel?) => {

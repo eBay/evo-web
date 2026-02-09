@@ -40,6 +40,7 @@ describe("given an open snackbar", () => {
     });
 
     afterEach(() => {
+        vi.useRealTimers();
         vi.restoreAllMocks();
         user.cleanup();
     });

@@ -4,7 +4,13 @@ import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayTooltip, EbayTooltipContent, EbayTooltipHost } from "../index";
 
-vi.useFakeTimers();
+beforeEach(() => {
+    vi.useFakeTimers();
+});
+
+afterEach(() => {
+    vi.useRealTimers();
+});
 
 const renderComponent = (props = {}) =>
     render(
