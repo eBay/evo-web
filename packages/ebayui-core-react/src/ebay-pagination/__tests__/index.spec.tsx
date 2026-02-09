@@ -1,11 +1,17 @@
 import React from "react";
-import { vi } from "vitest";
-import { fireEvent, render } from "@testing-library/react";
+import { beforeEach, expect, it, describe, vi } from "vitest";
+import { fireEvent, render, act } from "@testing-library/react";
 import { EbayPagination, EbayPaginationItem as Item } from "../index";
 import { EbayTabs, EbayTab, EbayTabPanel } from "../../ebay-tabs";
 import { eventOfType } from "../../common/event-utils/__tests__/helpers";
 
 vi.mock("../../common/random-id");
+vi.mock("../../common/debounce", () => ({
+    debounce:
+        (fn) =>
+        (...args) =>
+            act(() => fn(...args)),
+}));
 
 vi.mock("react-dom", () => {
     const original = jest.requireActual("react-dom");
