@@ -1,5 +1,13 @@
 # Skin Changelog
 
+## 19.21.2
+
+### Patch Changes
+
+- [`e846f88`](https://github.com/eBay/evo-web/commit/e846f8872484bda7a255ddda4865a87fd8593d12) Thanks [@agliga](https://github.com/agliga)! - fix(tokens): updated to the latest version to fix font-weight to be a number
+
+- [#492](https://github.com/eBay/evo-web/pull/492) [`77d5f15`](https://github.com/eBay/evo-web/commit/77d5f156d76075890c9e22936ab28e44654bb4d7) Thanks [@agliga](https://github.com/agliga)! - fix(accordion): added a delay in animation to trigger only when component is interacted
+
 ## 19.21.1
 
 ### Patch Changes

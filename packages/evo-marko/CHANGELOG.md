@@ -1,5 +1,15 @@
 # @evo-web/marko
 
+## 0.1.9
+
+### Patch Changes
+
+- [#460](https://github.com/eBay/evo-web/pull/460) [`cc5f867`](https://github.com/eBay/evo-web/commit/cc5f86734f69d215e491fc00cb481645805c7ce7) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Refactor evo-card
+
+- [#490](https://github.com/eBay/evo-web/pull/490) [`b878a51`](https://github.com/eBay/evo-web/commit/b878a514ae2ff37c859317ce4b287f711c1ac694) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add tooltip, tourtip, and infotip
+
+- [#492](https://github.com/eBay/evo-web/pull/492) [`77d5f15`](https://github.com/eBay/evo-web/commit/77d5f156d76075890c9e22936ab28e44654bb4d7) Thanks [@agliga](https://github.com/agliga)! - fix(accordion): added a delay in animation to trigger only when component is interacted
+
 ## 0.1.8
 
 ### Patch Changes

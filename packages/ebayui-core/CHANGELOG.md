@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.3.2
+
+### Patch Changes
+
+- [#492](https://github.com/eBay/evo-web/pull/492) [`77d5f15`](https://github.com/eBay/evo-web/commit/77d5f156d76075890c9e22936ab28e44654bb4d7) Thanks [@agliga](https://github.com/agliga)! - fix(accordion): added a delay in animation to trigger only when component is interacted
+
 ## 16.3.1
 
 ### Patch Changes

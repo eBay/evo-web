@@ -21,8 +21,8 @@ export default {
         },
         flag: {
             description: "The 2 letter country code of what flag to display",
-            type: "string"
-        }
+            type: "string",
+        },
     },
 };
 export const Default: Story<Input> = (args: Input) => ({

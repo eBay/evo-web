@@ -1,6 +1,6 @@
 {
     "name": "@ebay/ebayui-core",
-    "version": "16.3.1",
+    "version": "16.3.2",
     "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
     "keywords": [
         "marko-components"
