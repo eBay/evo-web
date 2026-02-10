@@ -1,0 +1,168 @@
+:root {
+    --dialog-scrim-color-hide: rgb(17 24 32 / 0);
+    --dialog-scrim-color-show: rgb(17 24 32 / 0.7);
+    --dialog-lightbox-max-width: 616px;
+}
+.dialog {
+    background-color: var(--color-background-primary);
+    border: none;
+    border-radius: var(--border-radius-150);
+    flex-direction: column;
+    max-height: 90%;
+    min-height: 55px;
+    min-width: 208px;
+    padding: 0;
+}
+.dialog__header {
+    display: flex;
+    flex-shrink: 0;
+    padding: var(--spacing-200) var(--spacing-200) 0;
+    position: relative;
+}
+.dialog__header h1,
+.dialog__header h2,
+.dialog__header h3,
+.dialog__header h4,
+.dialog__header h5,
+.dialog__header h6 {
+    align-self: center;
+    flex: 1 1 auto;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.dialog__header > :last-child:not(:only-child) {
+    margin-inline-start: var(--spacing-200);
+}
+.dialog__main {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    padding: var(--spacing-200);
+    position: relative;
+}
+.dialog__main > :first-child {
+    margin-top: 0;
+}
+.dialog__main > :last-child {
+    margin-bottom: 0;
+}
+.dialog__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-200);
+    position: relative;
+}
+.dialog__footer > :not(:first-child) {
+    margin-top: var(--spacing-200);
+}
+.dialog[open] {
+    display: flex;
+}
+.dialog[open].dialog-close::backdrop {
+    animation: dialog-scrim var(--motion-duration-short-3)
+        var(--motion-easing-continuous) forwards;
+    animation-direction: reverse;
+}
+.dialog[open]::backdrop {
+    animation: dialog-scrim var(--motion-duration-short-3)
+        var(--motion-easing-continuous) forwards;
+}
+.dialog[open].dialog-close {
+    animation:
+        dialog-close-scale var(--motion-duration-medium-3)
+            var(--motion-easing-soft-exit),
+        dialog-close-opacity var(--motion-duration-short-3)
+            var(--motion-easing-continuous);
+    transition:
+        display var(--motion-duration-short-3) allow-discrete,
+        overlay var(--motion-duration-short-3) allow-discrete;
+}
+.dialog[open] {
+    animation:
+        dialog-open-scale var(--motion-duration-medium-3)
+            var(--motion-easing-standard),
+        dialog-open-opacity var(--motion-duration-short-3)
+            var(--motion-easing-continuous);
+}
+@keyframes dialog-scrim {
+    0% {
+        background: transparent;
+    }
+    to {
+        background-color: rgba(17, 24, 32, 0.7);
+    }
+}
+@keyframes dialog-open-scale {
+    0% {
+        scale: 0.75;
+    }
+    to {
+        scale: 1;
+    }
+}
+@keyframes dialog-close-scale {
+    0% {
+        scale: 1;
+    }
+    to {
+        scale: 0.75;
+    }
+}
+@keyframes dialog-open-opacity {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes dialog-close-opacity {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.dialog--large {
+    align-self: center;
+    height: 70%;
+    margin: var(--spacing-100);
+    max-height: 95%;
+}
+@media (min-width: 512px) {
+    .dialog {
+        border-radius: var(--lightbox-border-radius, var(--border-radius-100));
+        max-width: 88%;
+    }
+    .dialog--narrow {
+        max-width: var(--dialog-lightbox-narrow-max-width);
+    }
+    .dialog__footer {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .dialog__footer > :not(:first-child) {
+        margin-left: var(--spacing-100);
+        margin-top: 0;
+    }
+}
+@media (min-width: 768px) {
+    .dialog {
+        max-width: var(--dialog-lightbox-max-width);
+    }
+    .dialog--wide {
+        max-width: 88%;
+    }
+    .dialog--wide .dialog__image {
+        height: 256px;
+    }
+    .dialog--wide.dialog--expressive .dialog__header > * {
+        margin-top: 256px;
+    }
+}
+@media (min-width: 1024px) {
+    .dialog--wide .dialog {
+        max-width: var(--dialog-lightbox-wide-max-width);
+    }
+}

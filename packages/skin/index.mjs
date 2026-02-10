@@ -17,6 +17,7 @@ import './dist/confirm-dialog/confirm-dialog.css';
 import './dist/cta-button/cta-button.css';
 import './dist/date-textbox/date-textbox.css';
 import './dist/details/details.css';
+import './dist/dialog/dialog.css';
 import './dist/donut-chart/donut-chart.css';
 import './dist/drawer-dialog/drawer-dialog.css';
 import './dist/education-notice/education-notice.css';

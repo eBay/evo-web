@@ -222,6 +222,19 @@
     "reactStorybookPath": "/docs/navigation-disclosure-ebay-details--documentation",
     "description": "A region of content that can be expanded and collapsed."
   },
+  "dialog": {
+    "component": "dialog",
+    "ds-component": {
+      "name": "dialog",
+      "url": "https://playbook.ebay.com/design-system/components/dialog",
+      "version": "4.1"
+    },
+    "submodules": ["button", "icon-button"],
+    "cssStorybookPath": "/story/skin-lightbox-dialog--base",
+    "markoStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
+    "reactStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
+    "description": "A modal, child window; renders the main window content inert."
+  },
   "donut-chart": {
     "component": "donut-chart",
     "ds-component": {
