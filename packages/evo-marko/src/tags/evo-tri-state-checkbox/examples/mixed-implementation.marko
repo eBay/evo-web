@@ -1,65 +1,38 @@
-<let/checked=[false, true, true, false]>
-<let/cachedChecked=[false, true, true, false]>
+static const boxes = ["A", "B", "C", "D"];
 
-<const/updateChecked(index: number) {
-    return (ch: boolean) => {
-        const newChecked = [...checked];
-        newChecked[index] = ch;
-        checked = newChecked;
-        cachedChecked = [...checked];
-    };
-}>
+<let/checkedValue=[] as string[]>
+<let/lastMixed=null as string[] | null>
+<const/checked=checkedValue.length === boxes.length ? "true" as const : checkedValue.length ? "mixed" as const : "false" as const>
 
-// Gets the value of the tri state checkbox
-<const/triStateChecked=(() => {
-    const allUnchecked = checked.every((v) => v === false);
-    const allChecked = checked.every((v) => v === true);
-    return (
-        allUnchecked ? "false" : allChecked ? "true" : "mixed"
-    ) as Marko.HTMLAttributes["aria-checked"];
-})()>
-
-// If all items are checked or unchecked, then don't used mixed state.
-// Toggles between all checked and unchecked
-<const/skipMixed=(() => {
-    const allUnchecked = cachedChecked.every((v) => v === false);
-    const allChecked = cachedChecked.every((v) => v === true);
-    return allChecked || allUnchecked;
-})()>
-
-<const/updateParent(ch: Marko.HTMLAttributes["aria-checked"]) {
-    let newChecked = [...checked];
-    if (ch === "true") {
-        newChecked.fill(true);
-    } else if (ch === "mixed") {
-        newChecked = [...cachedChecked];
-    } else {
-        newChecked.fill(false);
-    }
-    checked = newChecked;
-}>
-
-<id/checkboxAll>
 <div class="field">
+    <id/id>
     <evo-tri-state-checkbox
-        skipMixed=skipMixed
-        checked=triStateChecked
-        checkedChange=updateParent
-        id=checkboxAll/>
-    <label class="field__label field__label--end" for:scoped="checkbox-all">
+        checked=checked
+        checkedChange() {
+            if (checked === "mixed") {
+                lastMixed = checkedValue;
+                checkedValue = [...boxes];
+            } else if (checked === "true") {
+                checkedValue = [];
+            } else {
+                checkedValue = lastMixed || [...boxes];
+            }
+        }
+        id=id/>
+    <label class="field__label field__label--end" for=id>
         Select all
     </label>
 </div>
 <div class="container" style="margin-left: 10px;">
-    <for|ch, index| of=checked>
-        <id/checkboxId>
+    <for|value| of=boxes>
+        <id/id>
         <div class="field">
             <evo-checkbox
-                id=checkboxId
-                checked=ch
-                checkedChange=updateChecked(index)/>
-            <label class="field__label field__label--end" for=checkboxId>
-                Option ${index}
+                id=id
+                value=value
+                checkedValue:=checkedValue/>
+            <label class="field__label field__label--end" for=id>
+                Option ${value}
             </label>
         </div>
     </for>
