@@ -1,6 +1,7 @@
 static const boxes = ["A", "B", "C", "D"];
 
 <let/checkedValue=[] as string[]>
+<let/lastMixed=null as string[] | null>
 <const/checked=checkedValue.length === boxes.length ? "true" as const : checkedValue.length ? "mixed" as const : "false" as const>
 
 <div class="field">
@@ -8,10 +9,13 @@ static const boxes = ["A", "B", "C", "D"];
     <evo-tri-state-checkbox
         checked=checked
         checkedChange() {
-            if (checked === "true") {
+            if (checked === "mixed") {
+                lastMixed = checkedValue;
+                checkedValue = [...boxes];
+            } else if (checked === "true") {
                 checkedValue = [];
             } else {
-                checkedValue = boxes;
+                checkedValue = lastMixed || [...boxes];
             }
         }
         id=id/>
