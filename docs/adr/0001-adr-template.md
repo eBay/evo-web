@@ -1,4 +1,4 @@
-# 1. Architecture decisions
+# 1. ADR Template
 
 Date: 2026-01-28
 
