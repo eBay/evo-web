@@ -2,12 +2,82 @@
 @use "../mixins/private/dialog-mixins";
 @use "../mixins/private/token-mixins";
 
+:root {
+    --dialog-max-width: 616px;
+    --dialog-wide-max-width: 896px;
+    --dialog-narrow-max-width: 480px;
+    --dialog-scrim-color: rgb(17 24 32 / 0.7);
+
+    // This prevents layout shift in modern browsers
+    scrollbar-gutter: stable;
+}
+
+@keyframes dialog-open-scrim {
+    from {
+        background: transparent;
+    }
+    to {
+        background-color: var(--dialog-scrim-color);
+    }
+}
+
+@keyframes dialog-close-scrim {
+    from {
+        background-color: var(--dialog-scrim-color);
+    }
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes dialog-open-scale {
+    from {
+        scale: 0.75;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes dialog-close-scale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 0.75;
+    }
+}
+
+@keyframes dialog-open-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dialog-close-opacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+// This is to prevent parent page from scrolling when dialog is open
+body:has(.dialog[open]) {
+    overflow: hidden !important;
+}
+
 .dialog {
     background-color: var(--color-background-primary);
     border: none;
     border-radius: var(--border-radius-150);
     flex-direction: column;
     max-height: 90%;
+    max-width: 88%;
     min-height: 55px;
     min-width: 208px;
     padding: 0;
@@ -15,7 +85,6 @@
 
 .dialog__header {
     display: flex;
-    /* Fix for Safari not honoring min-height */
     flex-shrink: 0;
     padding: var(--spacing-200) var(--spacing-200) 0;
     position: relative;
@@ -64,21 +133,38 @@
     }
 }
 
+.dialog__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: var(--border-radius-100) var(--border-radius-100) 0 0;
+    height: 218px;
+    position: absolute;
+    width: 100%;
+}
+
+.dialog--expressive .dialog__header > * {
+    margin-top: 218px;
+}
+
+button.icon-btn.dialog__prev {
+    margin-inline-end: var(--spacing-200);
+}
+
 .dialog[open] {
     display: flex;
 }
-.dialog[open].dialog-close::backdrop {
-    animation: dialog-scrim var(--motion-duration-short-3)
+.dialog[open].dialog--close::backdrop {
+    animation: dialog-close-scrim var(--motion-duration-short-3)
         var(--motion-easing-continuous) forwards;
-    animation-direction: reverse;
 }
 
 .dialog[open]::backdrop {
-    animation: dialog-scrim var(--motion-duration-short-3)
+    animation: dialog-open-scrim var(--motion-duration-short-3)
         var(--motion-easing-continuous) forwards;
 }
 
-.dialog[open].dialog-close {
+.dialog[open].dialog--close {
     animation:
         dialog-close-scale var(--motion-duration-medium-3)
             var(--motion-easing-soft-exit),
@@ -97,66 +183,29 @@
             var(--motion-easing-continuous);
 }
 
-@keyframes dialog-scrim {
-    from {
-        background: transparent;
-    }
-    to {
-        background-color: rgb(17 24 32 / 0.7);
-    }
-}
-
-@keyframes dialog-open-scale {
-    from {
-        scale: 0.75;
-    }
-    to {
-        scale: 1;
-    }
-}
-
-@keyframes dialog-close-scale {
-    from {
-        scale: 1;
-    }
-    to {
-        scale: 0.75;
-    }
-}
-
-@keyframes dialog-open-opacity {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes dialog-close-opacity {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
 .dialog--large {
-    align-self: center;
-    height: 70%;
-    margin: var(--spacing-100);
-    max-height: 95%;
+    height: 98%;
+    max-height: 98%;
+    width: 95%;
 }
 
-@media (min-width: 512px) {
+@media (min-width: variables.$screen-size-SM) {
     .dialog {
-        border-radius: var(--lightbox-border-radius, var(--border-radius-100));
+        border-radius: var(--border-radius-100);
+    }
+
+    .dialog--wide {
         max-width: 88%;
     }
-    .dialog--narrow {
-        max-width: var(--dialog-lightbox-narrow-max-width);
+
+    .dialog--wide .dialog__image {
+        height: 256px;
     }
+
+    .dialog--wide.dialog--expressive .dialog__header > * {
+        margin-top: 256px;
+    }
+
     .dialog__footer {
         flex-direction: row;
         justify-content: flex-end;
@@ -165,24 +214,30 @@
         margin-left: var(--spacing-100);
         margin-top: 0;
     }
-}
 
-@media (min-width: 768px) {
-    .dialog {
-        max-width: var(--dialog-lightbox-max-width);
+    .dialog--large {
+        align-self: center;
+        height: 70%;
+        max-height: 95%;
     }
+}
+@media (min-width: variables.$screen-size-MD) {
+    .dialog {
+        max-width: var(--dialog-max-width);
+    }
+
+    .dialog--narrow {
+        max-width: var(--dialog-narrow-max-width);
+    }
+
     .dialog--wide {
+        max-width: var(--dialog-wide-max-width);
         max-width: 88%;
     }
-    .dialog--wide .dialog__image {
-        height: 256px;
-    }
-    .dialog--wide.dialog--expressive .dialog__header > * {
-        margin-top: 256px;
-    }
 }
-@media (min-width: 1024px) {
-    .dialog--wide .dialog {
-        max-width: var(--dialog-lightbox-wide-max-width);
+
+@media (min-width: variables.$screen-size-LG) {
+    .dialog--wide {
+        max-width: var(--dialog-wide-max-width);
     }
 }

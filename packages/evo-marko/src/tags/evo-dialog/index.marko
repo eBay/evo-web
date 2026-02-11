@@ -1,0 +1,51 @@
+<!-- NOTE, this is not a full implementation but only here so the code is not lost -->
+<let/open = false>
+<let/visible = false>
+<script>
+  if (open) {
+    $dialog().showModal();
+    $dialog().addEventListener(
+      "keydown",
+      (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          open = false;
+        }
+      },
+      {
+        signal: $signal,
+      },
+    );
+    $dialog().addEventListener(
+      "click",
+      (event) => {
+        if (event.target === $dialog()) {
+          open = false;
+        }
+      },
+      {
+        signal: $signal,
+      },
+    );
+    visible = true;
+  } else {
+    if (visible) {
+      $dialog().classList.add("dialog-close");
+      $dialog().addEventListener(
+        "animationend",
+        () => {
+          $dialog().close();
+          visible = false;
+          $dialog().classList.remove("dialog-close");
+        },
+        {
+          signal: $signal,
+          once: true,
+        },
+      );
+    }
+  }
+</script>
+
+<dialog/$dialog class="dialog" ...input>
+</dialog>
