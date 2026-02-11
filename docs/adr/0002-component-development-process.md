@@ -10,7 +10,7 @@ Accepted
 
 For years, the team has followed a de facto ground-up approach when building components: starting with semantic HTML and CSS, validating accessibility and interaction requirements, and then layering in behavior and framework-specific implementations. This practice has contributed to strong accessibility outcomes, framework agnosticism, and long-term maintainability.
 
-Recently, we have observed a tendency to begin directly within frameworks (e.g., Marco, React) for speed or convenience. While efficient in the short term, this shift risks reducing accessibility transparency, introducing framework-specific assumptions too early, and making components harder to reason about outside of a specific implementation.
+Recently, we have observed a tendency to begin directly within frameworks (e.g., Marko, React) for speed or convenience. While efficient in the short term, this shift risks reducing accessibility transparency, introducing framework-specific assumptions too early, and making components harder to reason about outside of a specific implementation.
 
 To preserve the strengths of our established practice and prevent further drift, we are formalizing the default authoring approach for all new components.
 
@@ -43,7 +43,7 @@ We will adopt the following **ground‑up, accessibility‑first component devel
 
 5. **Implement framework‑specific versions thereafter**
 
-   * Create Marco, React, or other wrappers that preserve the validated foundation and documented behavior.
+   * Create Marko, React, or other wrappers that preserve the validated foundation and documented behavior.
 
 This process serves as the default authoring model unless an explicit exception is documented in a separate ADR.
 
