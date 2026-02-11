@@ -230,9 +230,6 @@
       "version": "4.1"
     },
     "submodules": ["button", "icon-button"],
-    "cssStorybookPath": "/story/skin-lightbox-dialog--base",
-    "markoStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
-    "reactStorybookPath": "/docs/dialogs-ebay-lightbox-dialog--documentation",
     "description": "A modal, child window; renders the main window content inert."
   },
   "donut-chart": {

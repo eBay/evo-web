@@ -12,6 +12,7 @@ function closeDialog(dialog: HTMLDialogElement) {
   );
 }
 
+// Find all dialog elements
 for (const dialog of document.querySelectorAll(".dialog")) {
   // Close when clicking on mask
   dialog.addEventListener("click", (event) => {

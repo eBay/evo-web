@@ -88,11 +88,13 @@ body:has(.dialog[open]) {
     overflow-wrap: anywhere;
 }
 .dialog__header > :last-child:not(:only-child) {
+    flex-shrink: 0;
     margin-inline-start: var(--spacing-200);
 }
 .dialog__main {
     box-sizing: border-box;
     flex: 1 1 auto;
+    overflow: auto;
     padding: var(--spacing-200);
     position: relative;
 }
@@ -203,4 +205,7 @@ button.icon-btn.dialog__prev {
     .dialog--wide {
         max-width: var(--dialog-wide-max-width);
     }
+}
+[dir="rtl"] button.icon-btn.dialog__prev .icon--16 {
+    transform: rotate(180deg);
 }
