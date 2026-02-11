@@ -14,18 +14,10 @@ function closeDialog(dialog: HTMLDialogElement) {
 
 // Find all dialog elements
 for (const dialog of document.querySelectorAll(".dialog")) {
-  // Close when clicking on mask
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) {
-      closeDialog(dialog as HTMLDialogElement);
-    }
-  });
-
-  dialog.addEventListener("keydown", (event) => {
-    if ((event as KeyboardEvent).key === "Escape") {
-      event.preventDefault();
-      closeDialog(dialog as HTMLDialogElement);
-    }
+  dialog.setAttribute("closedby", "any");
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeDialog(dialog as HTMLDialogElement);
   });
 
   // Close button

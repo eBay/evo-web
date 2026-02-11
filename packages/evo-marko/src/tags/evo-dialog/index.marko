@@ -4,29 +4,6 @@
 <script>
   if (open) {
     $dialog().showModal();
-    $dialog().addEventListener(
-      "keydown",
-      (event) => {
-        if (event.key === "Escape") {
-          event.preventDefault();
-          open = false;
-        }
-      },
-      {
-        signal: $signal,
-      },
-    );
-    $dialog().addEventListener(
-      "click",
-      (event) => {
-        if (event.target === $dialog()) {
-          open = false;
-        }
-      },
-      {
-        signal: $signal,
-      },
-    );
     visible = true;
   } else {
     if (visible) {
@@ -47,5 +24,12 @@
   }
 </script>
 
-<dialog/$dialog class="dialog" ...input>
+<dialog/$dialog
+  class="dialog"
+  // closedby="any"
+  onCancel(e) {
+    e.preventDefault();
+    open = false;
+  }
+ ...input>
 </dialog>
