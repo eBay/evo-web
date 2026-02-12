@@ -19,7 +19,7 @@
     display: none;
     font-size: 14px;
     left: 0;
-    max-width: 260px;
+    max-width: min(344px, 80vw);
     position: absolute;
     top: 0;
     /* kick in hardware acceleration for GPU processing - fixes issues with filter/display reflow/repaint */
