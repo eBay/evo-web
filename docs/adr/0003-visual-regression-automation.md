@@ -16,12 +16,12 @@ We will automate visual regression testing through GitHub Actions with intellige
 
 1. **Partial builds for PRs**: Execute only snapshots related to changed files by:
    - Detecting changed components from git diff against main branch
-   - Using the existing `component-metadata.json` mappings (component and submodules fields) to determine snapshot dependencies
+   - Using the existing `component-metadata.json` mappings (`component` and `submodules` fields) to determine snapshot dependencies
    - Triggering full builds only when global files change (tokens, variables, mixins)
 
 2. **Full builds for main commits**: Execute and auto-approve the complete snapshot suite on the main branch
 
-3. **Simplified dependency tracking**: Re-use existing component metadata instead of automated code analysis (e.g., mixin dependency detection), as the additional complexity provides minimal benefit
+3. **Simplified dependency tracking**: Reuse existing component metadata instead of automated code analysis (e.g., mixin dependency detection), as the additional complexity provides minimal benefit
 
 ## Consequences
 
