@@ -1,4 +1,4 @@
-# 2. Percy Automation
+# 3. Visual Regression Automation
 
 Date: 2026-02-12
 
@@ -12,7 +12,7 @@ We need automated visual regression testing to catch unintended UI changes. Prev
 
 ## Decision
 
-We will automate Percy visual regression testing through GitHub Actions with intelligent partial builds:
+We will automate visual regression testing through GitHub Actions with intelligent partial builds:
 
 1. **Partial builds for PRs**: Execute only snapshots related to changed files by:
    - Detecting changed components from git diff against main branch
@@ -26,12 +26,14 @@ We will automate Percy visual regression testing through GitHub Actions with int
 ## Consequences
 
 **Positive:**
-- Significantly reduced Percy build times and costs for PRs by running only relevant snapshots
+
+- Significantly reduced build times and costs for PRs by running only relevant snapshots
 - Automated workflow reduces manual effort and human error
 - Catches visual regressions before merge
 - Full coverage maintained on main branch
 
 **Negative:**
+
 - Dependency mapping must be manually maintained in `component-metadata.json`
 - Risk of missing visual regressions if dependencies are not accurately mapped
 - Global changes (tokens, variables, mixins) still trigger full builds
