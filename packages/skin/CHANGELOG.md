@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.21.3
+
+### Patch Changes
+
+- [#512](https://github.com/eBay/evo-web/pull/512) [`373ea7d`](https://github.com/eBay/evo-web/commit/373ea7d64c03103c6c9a12a176495f50bbe8742a) Thanks [@agliga](https://github.com/agliga)! - fix(tips): updated to use width: max-content and added a max width
+
 ## 19.21.2
 
 ### Patch Changes
