@@ -118,6 +118,7 @@ npx vitest run packages/ebayui-core-react/src/ebay-button/__tests__/index.spec.t
 src/components/ebay-button/
 ├── index.marko              # Template with TypeScript interfaces
 ├── component.ts             # Lifecycle and behavior (optional)
+├── component-browser.ts             # Client side only lifecycle and behavior  (optional)
 ├── marko-tag.json          # Attribute validation
 ├── style.ts                # Imports Skin CSS
 ├── browser.json            # Build remapping
