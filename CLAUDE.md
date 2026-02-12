@@ -138,7 +138,7 @@ src/components/ebay-button/
 </button>
 // Marko 6 (evo-marko)
 <button onClick((e) => input.onClick?.(e))>
-  <${content}/>
+  <${input.content}/>
 </button>
 ```
 
