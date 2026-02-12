@@ -206,7 +206,7 @@ All components must meet **WCAG 2.2 AA** standards:
 
 **Storybook requirements:**
 
-- All components must include RTL and Text Spacing stories (unless excluded)
+- All components in skin must include RTL and Text Spacing stories (unless excluded)
 - Stories should demonstrate key variants and states
 
 ### Versioning and Releases
