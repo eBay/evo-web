@@ -11,6 +11,6 @@ A checkbox that toggles from unchecked, to partially checked, to fully checked s
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/form-input-evo-tri-state-checkbox)
-- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/form-input-evo-tri-state-checkbox)
-- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/evo-tri-state-checkbox/examples)
+- [Storybook](https://ebay.github.io/evo-web/evo-marko/?path=/story/form-input-evo-tri-state-checkbox)
+- [Storybook Docs](https://ebay.github.io/evo-web/evo-marko/?path=/docs/form-input-evo-tri-state-checkbox)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/evo-marko/src/tags/evo-tri-state-checkbox/examples)
