@@ -43,7 +43,7 @@
         "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm ci && npm run test",
         "start": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
         "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
-        "test": "vitest",
+        "test": "vitest run",
         "type:check": "tsc --noEmit",
         "update-icons": "node ./scripts/update-icons",
         "version": "npm run update-icons && git add -A src"
