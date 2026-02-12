@@ -9,7 +9,7 @@ Evo-web is eBay's design system monorepo containing:
 - **@ebay/skin** - Pure CSS/SCSS framework (foundation layer)
 - **@ebay/ebayui-core** - Marko 5 components (legacy, 92 components)
 - **@evo-web/marko** - Marko 6 components (new, 43 components migrated)
-- **@ebay/ui-core-react** - React components with CommonJS (legacy, 86+ components)
+- **@ebay/ebayui-core-react** (`packages/ebayui-core-react`) - React components with CommonJS (legacy, 86+ components)
 - **@evo-web/react** - React 19 ESM components (new, pre-release)
 
 **Layered Architecture:**
