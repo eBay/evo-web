@@ -9,7 +9,6 @@ import WithLabelTemplate from "./examples/with-label.marko";
 import DisabledTemplate from "./examples/disabled-with-label.marko";
 import WithLabelCode from "./examples/with-label.marko?raw";
 import DisabledCode from "./examples/disabled-with-label.marko?raw";
-import type { Input } from "./component";
 
 export default {
   title: "form input/evo-tri-state-checkbox",
