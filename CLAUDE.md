@@ -34,13 +34,16 @@ All components wrap Skin CSS modules. CSS is the single source of truth for styl
 # Install dependencies (also installs Playwright with chromium)
 npm install
 
-# Build all packages in correct order
+# Build all packages in correct order and runs all the "tests"
 npm run build
+
+# builds the site for publishing to _site directory
+npm run deploy
 
 # Lint CSS/SCSS
 npm run lint
 
-# Run all package tests
+# Only used for testing individual packages and shouldn't be used to validate the build is successful
 npm test
 
 # Start local development site (Marko-Run docs site)
@@ -60,6 +63,7 @@ npm run release
 
 ```bash
 # Build specific package
+## These commands should only be run by changesets
 npm run build -w packages/skin
 npm run build -w packages/ebayui-core
 npm run build -w packages/evo-marko
@@ -103,12 +107,14 @@ npx vitest run packages/ebayui-core-react/src/ebay-button/__tests__/index.spec.t
 
 ### Component Development Flow
 
-**Always start with CSS first:**
+**Always start with HTML/CSS first:**
 
-1. Create/modify Skin module in `packages/skin/src/`
-2. Build component wrapper (Marko or React) that imports the Skin CSS
-3. Add MakeupJS behaviors if interactive (keyboard nav, ARIA management)
-4. Components support pass-through HTML attributes to root/control elements
+1. Create/modify the static Skin component in `packages/skin/src/`
+2. Write semantic HTML structure for the component (following BEM and accessibility guidelines)
+3. Write SCSS following BEM rules
+4. Build component wrapper (Marko or React) that imports the Skin CSS
+5. Add JS interaction layer if it's an interactive component (keyboard nav, ARIA management)
+6. Components support pass-through HTML attributes to root/control elements
 
 ### Marko Component Structure
 
@@ -239,7 +245,7 @@ Site embeds package Storybooks and deploys to `_site/` with nested builds.
 
 - From: `@ebay/ebayui-core`
 - To: `@evo-web/marko`
-- Status: 43/92 components migrated
+- Status: In progress - See this PR for reference and details: https://github.com/eBay/evo-web/issues/499
 
 **React CJS → ESM:**
 
