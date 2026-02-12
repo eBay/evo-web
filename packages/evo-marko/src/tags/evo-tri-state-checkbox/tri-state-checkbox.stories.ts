@@ -80,7 +80,7 @@ export const WithLabel = buildExtensionTemplate(
 
 export const Disabled = buildExtensionTemplate(DisabledTemplate, DisabledCode);
 
-export const mixedImplementation = buildExtensionTemplate(
+export const MixedImplementation = buildExtensionTemplate(
   mixedImplementationTemplate,
   mixedImplementationCode,
 );
