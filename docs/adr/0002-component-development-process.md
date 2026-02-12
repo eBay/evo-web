@@ -20,6 +20,7 @@ To adopt the following **ground‑up, accessibility‑first component developmen
 
    * Define structure, design hooks, and theming.
    * Prefer native elements and web standards where appropriate.
+   * Confirm cross‑browser expectations.
 
 2. **Document accessibility and interaction requirements early**
 
