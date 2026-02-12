@@ -228,7 +228,7 @@ Root site (`/src/routes/`) uses **Marko-Run** (file-based routing):
 
 - `/src/routes/_index/components/` - Component documentation
 - `/src/routes/_index/accessibility/` - A11y guides
-- `/src/routes/guide-examples/` - Live examples
+- `/src/routes/guide-examples/` - Live examples on how to implement certain patterns
 - `/src/data/component-metadata.json` - Central component registry
 
 Site embeds package Storybooks and deploys to `_site/` with nested builds.
