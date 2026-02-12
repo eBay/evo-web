@@ -266,7 +266,7 @@ Legacy packages maintained for backwards compatibility.
 
 **CSS/SCSS changes:**
 
-- Regenerate `dist/` folder
+- Regenerate `dist/` folder using `npm run build`
 - Test in all supported browsers
 - Percy visual regression approved
 - Verify dark mode and RTL support
