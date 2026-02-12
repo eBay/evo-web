@@ -371,6 +371,10 @@ class PopperTooltip {
         middleware: [
           offset(6),
           inline(),
+          flip({
+            fallbackAxisSideDirection: "end",
+            flipAlignment: false,
+          }),
           shift(),
           arrow({ element: this.arrowEl, padding: 20 }),
         ],
