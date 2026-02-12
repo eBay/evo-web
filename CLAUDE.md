@@ -21,7 +21,7 @@ HTML Semantic Structure (Bones)
     ↓
 Marko/React Components (Framework wrappers)
     ↓
-MakeupJS (Interactive behaviors)
+Interactive behaviors (As part of the component)
 ```
 
 All components wrap Skin CSS modules. CSS is the single source of truth for styling.
