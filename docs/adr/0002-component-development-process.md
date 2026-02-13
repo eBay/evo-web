@@ -14,7 +14,7 @@ Some other approaches to build components are to build everything together from 
 
 ## Decision
 
-To adopt the following **ground‑up, accessibility‑first component development process**:
+We will adopt the following **ground‑up, accessibility‑first component development process**:
 
 1. **Start with semantic HTML and CSS**
 
