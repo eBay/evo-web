@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.3.3
+
+### Patch Changes
+
+- [#517](https://github.com/eBay/evo-web/pull/517) [`c0fd9ae`](https://github.com/eBay/evo-web/commit/c0fd9ae99ace575d40ce9c45794844c1dde41fc8) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(video): window focus event should not autoplay if video not in viewport
+
 ## 16.3.2
 
 ### Patch Changes
