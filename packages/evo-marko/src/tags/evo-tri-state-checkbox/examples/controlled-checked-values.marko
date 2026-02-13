@@ -1,24 +1,10 @@
 static const boxes = ["A", "B", "C", "D"];
 
 <let/checkedValue=[] as string[]>
-<let/lastMixed=null as string[] | null>
-<const/checked=checkedValue.length === boxes.length ? "true" as const : checkedValue.length ? "mixed" as const : "false" as const>
 
 <div class="field">
     <id/id>
-    <evo-tri-state-checkbox
-        checked=checked
-        checkedChange() {
-            if (checked === "mixed") {
-                lastMixed = checkedValue;
-                checkedValue = [...boxes];
-            } else if (checked === "true") {
-                checkedValue = [];
-            } else {
-                checkedValue = lastMixed || [...boxes];
-            }
-        }
-        id=id/>
+    <evo-tri-state-checkbox ...input id=id checkedValues:=checkedValue values=boxes/>
     <label class="field__label field__label--end" for=id>
         Select all
     </label>
