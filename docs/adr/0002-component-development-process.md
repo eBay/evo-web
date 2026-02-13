@@ -32,7 +32,7 @@ To adopt the following **ground‑up, accessibility‑first component developmen
 
 3. **Add minimal JavaScript only when needed**
 
-   * Build only the bare minumim interactions needed for validation.
+   * Build only the bare minimum interactions needed for validation.
 
 ## Consequences
 
