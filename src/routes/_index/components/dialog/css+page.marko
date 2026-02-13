@@ -12,15 +12,10 @@ client import "./dialog";
 
   <div class="demo">
     <div class="demo__inner">
-      <button
-        class="btn btn--primary"
-        onClick(e, el) {
-          (el.nextElementSibling as HTMLDialogElement).showModal();
-        }
-        type="button">
+      <button class="btn btn--primary" type="button">
         Open Dialog
       </button>
-      <dialog/$dialog1 class="dialog" data-dialog-id="1">
+      <dialog class="dialog">
         <div class="dialog__header">
           <h2 id="dialog-title-default" class="large-text-1 bold-text">
             Dialog
@@ -325,7 +320,6 @@ client import "./dialog";
             Dialog
           </h2>
           <button
-            onclick="this.parentElement.parentElement.close()"
             aria-label="Close dialog"
             class="icon-btn dialog__close"
             type="button">
