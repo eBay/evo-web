@@ -137,6 +137,7 @@ class Video extends Marko.Component<Input, State> {
     declare ui: any;
     declare shaka: any;
     declare observer: IntersectionObserver;
+    declare isInViewport: boolean;
     declare isAutoPlay: boolean;
     declare isAutoPause: boolean;
     declare userPaused: boolean;
@@ -509,6 +510,7 @@ class Video extends Marko.Component<Input, State> {
                 }
 
                 if (entry.isIntersecting) {
+                    this.isInViewport = true;
                     if (
                         this.state.isLoaded &&
                         !this.state.failed &&
@@ -520,6 +522,7 @@ class Video extends Marko.Component<Input, State> {
                         });
                     }
                 } else {
+                    this.isInViewport = false;
                     if (!this.video.paused) {
                         this.isAutoPause = true;
                         this.video.pause();
@@ -543,7 +546,7 @@ class Video extends Marko.Component<Input, State> {
             this.isFocusFromVideoClick = false;
             return;
         }
-        if (this.video.paused && !this.userPaused) {
+        if (this.isInViewport && this.video.paused && !this.userPaused) {
             this.isAutoPlay = true;
             this.video.play().catch((e) => {
                 this.isAutoPlay = false;
