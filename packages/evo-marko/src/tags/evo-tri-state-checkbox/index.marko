@@ -16,13 +16,14 @@ export interface Input extends Omit<Marko.HTML.Input, "checked" | "checkedChange
     checked: inputChecked,
     checkedChange,
     values,
-    checkedValues,
+    checkedValues : inputCheckedValues,
     checkedValuesChange,
     onChange,
     ...htmlInput
 }=input>
 
 <let/checked=inputChecked || "false" valueChange=checkedChange>
+<let/checkedValues=inputCheckedValues as string[] valueChange=checkedValuesChange>
 
 <const/usesCheckedValue=!!(checkedValues && checkedValuesChange && values)>
 <let/lastMixed=null as string[] | null>
@@ -43,15 +44,15 @@ export interface Input extends Omit<Marko.HTML.Input, "checked" | "checkedChange
         ...htmlInput
         class="checkbox__control"
         checked=effectiveChecked !== "false"
-        checkedChange() {
+        checkedChange(ch) {
             if (usesCheckedValue) {
                 if (effectiveChecked === "true") {
                     checkedValues = [];
                 } else if (effectiveChecked === "mixed") {
                     lastMixed = checkedValues!;
-                    checkedValues = values;
+                    checkedValues = values!;
                 } else {
-                    checkedValues = lastMixed || values;
+                    checkedValues = lastMixed || values!;
                 }
             } else {
                 if (checked === "true") {
