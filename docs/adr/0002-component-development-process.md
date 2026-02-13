@@ -8,7 +8,7 @@ Accepted
 
 ## Context
 
-There are many different ways to build components. Traditionally, this team has built components with a de facto ground-up approach. This approach was starting with semantic HTML and CSS, validating accessibility and interaction requirements, and then layering in behavior and framework-specific implementations. This practice has contributed to strong accessibility outcomes, a single source of truth, and long-term architecture.
+There are many different ways to build components. Traditionally, this team has built components with a de facto ground-up approach. This approach was starting with semantic HTML and CSS, validating accessibility and interaction requirements, and then layering in behavior. This practice has contributed to strong accessibility outcomes, a single source of truth, and long-term architecture.
 
 Some other approaches to build components are to build everything together from the start. This approach can be quicker to ramp up and build components, but we see there are some long term issues with this approach.
 
