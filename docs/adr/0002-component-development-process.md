@@ -40,7 +40,7 @@ This approach ensures:
 
 * **Accessibility** is treated as first‑class from the start.
 * **Transparency** for designers and accessibility partners.
-* **Durability** across and APIs.
+* **Durability** across implementations and APIs.
 * **Consistent behavior** documented and validated before abstraction.
 
 Trade‑offs include slower initial implementation velocity and potential duplication across different implementations. However, upholding accessibility, consistency, long term architecture, and a single source of truth is prioritized.
