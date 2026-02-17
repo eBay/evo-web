@@ -83,7 +83,7 @@
         "react-dom": "^19"
     },
     "optionalDependencies": {
-        "shaka-player": "^4.16.16"
+        "shaka-player": "^5.0.2"
     },
     "publishConfig": {
         "directory": "dist"

@@ -35,8 +35,8 @@
     ],
     "scripts": {
         "prebuild": "npm run clean",
-        "build": "npm run build:css && npm run lint:js && npm run build:icons && npm run copy && tsx scripts gen-build",
-        "build:css": "npm run lint:sass && rimraf dist && npm run bundle && npm run postcss && tsx scripts/add-y-comments && prettier dist --write && npm run lint:css",
+        "build": "npm run lint:sass && npm run build:css && npm run lint:js && npm run build:icons && npm run copy && tsx scripts gen-build",
+        "build:css": "rimraf dist && npm run bundle && npm run postcss && tsx scripts/add-y-comments && prettier dist --write && npm run lint:css",
         "build:icons": "tsx scripts genSVG && prettier ../../src/data/icons.json --write",
         "build:storybook": "npm run copy:assetsToStorybook && storybook build -o ./_site/public/storybook",
         "bundle": "sass src/sass:dist src/tokens:dist/tokens --no-source-map -I \"../../node_modules\"",

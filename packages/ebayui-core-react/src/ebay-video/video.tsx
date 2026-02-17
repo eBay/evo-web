@@ -11,7 +11,7 @@ import { EbayProgressSpinner } from "../ebay-progress-spinner";
 import { Player, VideoAction, VideoPlayView } from "./types";
 import EbayVideoSource from "./source";
 import { defaultVideoConfig, ERROR_ANOTHER_LOAD, ERROR_NO_PLAYER } from "./const";
-import { customControls } from "./controls";
+import { customControls, TotalTime, CurrentTime } from "./controls";
 import { EbayEventHandler } from "../common/event-utils/types";
 import { EbayIconPlayFilled64Colored } from "../ebay-icon/icons/ebay-icon-play-filled-64-colored";
 import { EbayIconAttention64 } from "../ebay-icon/icons/ebay-icon-attention-64";
@@ -119,6 +119,9 @@ const EbayVideo: FC<EbayVideoProps> = ({
             });
     };
 
+    shaka.ui.Controls.registerElement("current_time", new CurrentTime.Factory());
+    shaka.ui.Controls.registerElement("total_time", new TotalTime.Factory());
+
     useEffect(() => {
         const video = videoRef.current;
         const container = containerRef.current;
@@ -138,7 +141,6 @@ const EbayVideo: FC<EbayVideoProps> = ({
 
         uiRef.current = new shaka.ui.Overlay(playerRef.current, container, video, reportText);
         uiRef.current.configure({
-            addBigPlayButton: true,
             controlPanelElements: [],
             addSeekBar: false,
         });
@@ -183,6 +185,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
             ...updatedControls,
         });
         videoRef.current.controls = false;
+        setTimeout(() => alignSeekbar(), 10);
     };
 
     const handlePlaying = (e: SyntheticEvent<HTMLVideoElement, Event>) => {
@@ -208,6 +211,20 @@ const EbayVideo: FC<EbayVideoProps> = ({
             volume: Math.round((eventTarget.volume + Number.EPSILON) * 100) / 100,
             muted: eventTarget.muted,
         });
+    };
+    const alignSeekbar = () => {
+        if (containerRef.current) {
+            const buttonPanel = containerRef.current.querySelector<HTMLElement>(".shaka-controls-button-panel")!;
+            const spacer = buttonPanel.querySelector(".shaka-spacer")!;
+            const rangeContainer = containerRef.current.querySelector<HTMLElement>(".shaka-range-container")!;
+            if (buttonPanel && spacer) {
+                const buttonPanelRect = buttonPanel.getBoundingClientRect();
+                const spacerRect = spacer.getBoundingClientRect();
+
+                rangeContainer.style.marginRight = `${buttonPanelRect.right - spacerRect.right}px`;
+                rangeContainer.style.marginLeft = `${spacerRect.left - buttonPanelRect.left}px`;
+            }
+        }
     };
 
     const handleOnPause = () => {

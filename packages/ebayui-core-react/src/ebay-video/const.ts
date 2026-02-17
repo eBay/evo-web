@@ -1,12 +1,12 @@
 export const ERROR_ANOTHER_LOAD = 7000;
 export const ERROR_NO_PLAYER = 11;
 export const defaultVideoConfig = {
-    addBigPlayButton: false,
     addSeekBar: true,
     controlPanelElements: [
         "play_pause",
-        "time_and_duration",
+        "current_time",
         "spacer",
+        "total_time",
         "mute",
         "report",
         "captions",
