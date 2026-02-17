@@ -138,16 +138,7 @@ src/components/ebay-button/
 
 **Marko 5 vs 6 syntax:**
 
-```marko
-// Marko 5 (ebayui-core)
-<button onClick("handleClick")>
-  <${renderBody}/>
-</button>
-// Marko 6 (evo-marko)
-<button onClick((e) => input.onClick?.(e))>
-  <${input.content}/>
-</button>
-```
+For guidance on usage of either Marko5 or Marco 6 or for the Marko 5 → 6 syntax and migration, see the dedicated reference: https://markojs.com/llms.txt
 
 ### React Component Structure
 
