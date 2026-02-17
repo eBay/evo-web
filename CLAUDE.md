@@ -152,7 +152,8 @@ src/ebay-button/
 ├── types.ts                # TypeScript types
 └── __tests__/
     ├── index.spec.tsx
-    └── index.stories.tsx
+    ├── index.stories.tsx
+    └── render.spec.tsx
 ```
 
 **Key differences:**
@@ -160,7 +161,8 @@ src/ebay-button/
 - `ebayui-core-react`: Uses forwardRef, CommonJS build, external MakeupJS
 - `evo-react`: React 19 native (no forwardRef), ESM-only, bundled MakeupJS
 
-React components assume `@ebay/skin` is loaded globally (no CSS imports).
+React components in `ui-core-react` assume `@ebay/skin` is loaded globally (no CSS imports),
+but that will change on evo-react.
 
 ### CSS/SCSS Guidelines (Skin)
 
@@ -170,15 +172,8 @@ React components assume `@ebay/skin` is loaded globally (no CSS imports).
 - Element: `.btn__cell`
 - Modifier: `.btn--primary`
 
-**Key rules from STYLEGUIDE.md:**
-
-- Use ARIA attributes as styling hooks when possible (safeguards accessibility)
-- Never chain BEM modifiers (e.g., `.btn--large.btn--primary`)
-- Use semantic names (`.btn--secondary` not `.btn--green`)
-- Avoid over-nesting SCSS (restrict to pseudo-selectors)
-- Use `<svg>` for icons, never `<i>`
-- Don't wrap inputs with labels; use explicit `for`/`id` attributes
-- Every `<img>` must have `alt` attribute (can be empty string)
+**Style Conventions**
+See `./packages/skin/STYLEGUIDE.md` for detailed style conventions.
 
 **PostCSS pipeline:** Sass → PostCSS → Autoprefixer → cssnano → `dist/`
 
