@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Storybook](https://opensource.ebay.com/ebayui-core-react/main/?path=/docs/buttons-ebay-fake-link--docs)
+[Storybook](https://opensource.ebay.com/ebayui-core-react/main/?path=/docs/buttons-ebay-fake-link--documentation)
 
 ## Usage
 
