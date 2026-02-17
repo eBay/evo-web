@@ -1,6 +1,6 @@
 # 2. Component Development Process
 
-**Date:** 2026‑02‑10
+**Date:** 2026-02-10
 
 ## Status
 
@@ -8,52 +8,32 @@ Accepted
 
 ## Context
 
-For years, the team has followed a de facto ground-up approach when building components: starting with semantic HTML and CSS, validating accessibility and interaction requirements, and then layering in behavior and framework-specific implementations. This practice has contributed to strong accessibility outcomes, framework agnosticism, and long-term maintainability.
+Components should have a clear, framework-agnostic foundation grounded in semantic HTML and CSS. This supports accessibility, clarity of intent, and long-term maintainability independent of any specific implementation technology.
 
-Recently, we have observed a tendency to begin directly within frameworks (e.g., Marko, React) for speed or convenience. While efficient in the short term, this shift risks reducing accessibility transparency, introducing framework-specific assumptions too early, and making components harder to reason about outside of a specific implementation.
-
-To preserve the strengths of our established practice and prevent further drift, we are formalizing the default authoring approach for all new components.
+This ADR defines the required foundation for new components. It does not prescribe a specific development workflow or restrict exploratory approaches.
 
 ## Decision
 
-We will adopt the following **ground‑up, accessibility‑first component development process** for all new components:
+For all new components:
 
-1. **Start with semantic HTML and CSS**
+1. A semantic HTML and CSS representation must exist as a framework-agnostic foundation for the component.
+   * Prefer native elements and established web standards.
+   * Define structure, states, and styling hooks.
 
-   * Define structure, design hooks, and theming.
-   * Prefer native elements and web standards where appropriate.
+2. Accessibility and interaction expectations must be documented alongside the HTML/CSS foundation.
+   * Focus behavior (where applicable)
+   * Keyboard interaction
+   * Screen reader expectations
+   * States and variants
 
-2. **Document accessibility and interaction requirements early**
+3. JavaScript must be minimal and introduced only where required for behavior.
+   * A complete vanilla JavaScript component is not required.
+   * Framework implementations must preserve the validated HTML/CSS foundation and documented behavior.
 
-   * Focus management (where applicable)
-   * Keyboard support
-   * Screen reader behavior
-   * States, variants, and edge cases
-   * Provide prose explanations that are understandable without requiring JavaScript knowledge.
-
-3. **Add minimal JavaScript only when needed**
-
-   * Support required interaction and state management.
-   * Avoid premature framework abstractions.
-
-4. **Validate the foundation before framework implementations**
-
-   * Review semantics, styling, and accessibility behavior.
-   * Confirm cross‑browser expectations.
-
-5. **Implement framework‑specific versions thereafter**
-
-   * Create Marko, React, or other wrappers that preserve the validated foundation and documented behavior.
-
-This process serves as the default authoring model unless an explicit exception is documented in a separate ADR.
+This ADR establishes required artifacts, not a mandated step-by-step process.
 
 ## Consequences
 
-This approach ensures:
-
-* **Accessibility** is treated as first‑class from the start.
-* **Transparency** for designers, accessibility partners, and non‑framework consumers.
-* **Durability** across frameworks and APIs.
-* **Consistent behavior** documented and validated before abstraction.
-
-Trade‑offs include slower initial implementation velocity and potential duplication across vanilla and framework versions. However, upholding accessibility, consistency, and long‑term maintainability is prioritized.
+* Accessibility and semantics are defined independently of framework abstractions.
+* Implementations remain durable across frameworks.
+* Contributors have a clear, framework-agnostic reference point.
