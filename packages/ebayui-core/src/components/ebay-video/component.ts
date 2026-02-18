@@ -52,16 +52,17 @@ const videoConfig = {
     singleClickForPlayAndPause: true,
     customContextMenu: true,
     contextMenuElements: ["mute"],
+    showUIAlways: false,
     addSeekBar: true,
     controlPanelElements: defaultControlPanelElements,
-};
+}
 
 const compactConfig = {
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
     customContextMenu: true,
     contextMenuElements: ["mute"],
-    showUIAlways: true,
+    showUIAlways: false,
     addSeekBar: false,
     controlPanelElements: compactLayoutControlPanelElements,
 };
@@ -259,6 +260,7 @@ class Video extends Marko.Component<Input, State> {
         if (this.input.nav) {
             copyConfig.doubleClickForFullscreen = false;
             copyConfig.singleClickForPlayAndPause = false;
+            copyConfig.showUIAlways = true;
         }
 
         if (this.state.volumeSlider === true) {
