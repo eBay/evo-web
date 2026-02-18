@@ -1,6 +1,4 @@
 import tbLandscapeImg from "/img/tb-landscape-pic.jpg";
-client import "./dialog";
-
 <div id="dialog">
   <section-header/>
   <h3>Dialog base element</h3>
@@ -667,41 +665,4 @@ client import "./dialog";
       </div>
     </dialog>
   </highlight-code>
-
-  <h3 id="dialog-animations">Animations</h3>
-  <p>
-    ${" "}All dialog animations for opening the dialog should work out of the
-    box when calling${" "}
-    <code>dialog.showModal()</code>
-  </p>
-  <p>
-    ${" "}For closing the dialog, add${" "}
-    <code>dialog--close</code>
-    ${" "}class to the dialog before calling${" "}
-    <code>dialog.close()</code>
-    ${" "}. Once that animation ends, you can call${" "}
-    <code>dialog.close()</code>
-    ${" "}and remove the${" "}
-    <code>dialog--close</code>
-  </p>
-  <p>
-    ${" "}A typical code workflow would be to do the following code segmenet
-    when closing a dialog
-  </p>
-  <highlight-code
-    type="js"
-    code=`
-    document.querySelector(".dialog");
-      dialog.classList.add("dialog--close");
-      dialog.addEventListener(
-        "animationend",
-        () => {
-          dialog.close();
-          dialog.classList.remove("dialog--close");
-        },
-        {
-          once: true,
-        },
-      );
-      `/>
 </div>

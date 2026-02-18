@@ -18,6 +18,12 @@ export const cssTemplate = import.meta.glob(
   { eager: true },
 );
 
+export const jsTemplate = import.meta.glob(
+  "../routes/_index/components/*/js+page.marko",
+  { eager: true },
+);
+
+
 export const a11yTemplate = import.meta.glob(
   "../routes/_index/components/*/accessibility+page.marko",
   { eager: true },
@@ -32,12 +38,14 @@ export interface ComponentMap {
     pageImg?: string;
     a11yPage: boolean;
     cssPage?: boolean;
+    jsPage?: boolean;
     metadata?: ComponentMetadata;
     dsComponent?: DsComponent;
     componentUrls: {
       overview: string;
       accessibility: string;
       css: string;
+      js: string;
       marko?: string;
       react?: string;
       dsUrl?: string;
@@ -61,6 +69,16 @@ export const cssPages = Object.keys(cssTemplate).reduce<Set<string>>(
   new Set<string>(),
 );
 
+export const jsPages = Object.keys(jsTemplate).reduce<Set<string>>(
+  (data, filePath) => {
+    data.add(getRawName(filePath));
+    return data;
+  },
+  new Set<string>(),
+);
+
+
+
 /**
  * List of all components. This takes all components and creates a url lookup for them
  */
@@ -81,6 +99,7 @@ export const components = Object.keys(componentTemplate).reduce<ComponentMap>(
       dsComponent,
       a11yPage: a11yPages.has(name),
       cssPage: cssPages.has(name),
+      jsPage: jsPages.has(name),
       componentUrls: getComponentUrls(name, metadata, dsComponent),
     };
 
@@ -151,6 +170,7 @@ function getComponentUrls(
     overview: `${componentUrl}`,
     accessibility: `${componentUrl}/accessibility`,
     css: `${componentUrl}/css`,
+    js: `${componentUrl}/js`,
     marko:
       (metadata?.markoStorybookPath ?? false)
         ? `${basePath}ebayui-core/?path=${metadata?.markoStorybookPath}`

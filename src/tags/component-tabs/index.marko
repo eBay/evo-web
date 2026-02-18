@@ -11,6 +11,7 @@ export interface Input {
   componentUrls,
   a11yPage,
   cssPage,
+  jsPage,
   next,
   prev,
 }=getMetadataFromUrl($global.url.pathname)>
@@ -56,6 +57,14 @@ export interface Input {
             </a>
           </li>
         </if>
+        <if=jsPage>
+          <li class="fake-tabs__item fake-tabs__items--large">
+            <a href=componentUrls?.js aria-current=getAriaCurrentValue("js")>
+              Javascript${" "}
+            </a>
+          </li>
+        </if>
+
         <if=componentUrls?.marko>
           <li class="fake-tabs__item fake-tabs__items--large">
             <a href=componentUrls?.marko target="_blank">

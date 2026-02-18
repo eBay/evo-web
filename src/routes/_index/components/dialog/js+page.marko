@@ -1,0 +1,137 @@
+import tbLandscapeImg from "/img/tb-landscape-pic.jpg";
+client import "./dialog";
+
+<div id="dialog">
+  <section-header/>
+  <h3>Dialog base interactions</h3>
+  <p>
+    ${" "}The dialog element uses the native html ${"<dialog>"} element as well
+    as built in Javascript interactions
+  </p>
+  <p>
+    To open the dialog use${" "}
+    <code>dialog.showModal()</code>
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <button class="btn btn--primary" type="button">
+        Open Dialog
+      </button>
+      <dialog class="dialog">
+        <div class="dialog__header">
+          <h2 id="dialog-title-default" class="large-text-1 bold-text">
+            Dialog
+          </h2>
+          <button
+            aria-label="Close dialog"
+            class="icon-btn dialog__close"
+            type="button">
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+              height="16"
+              width="16">
+              <icon-symbol name="close-16"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dialog__main">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            <a href="https://www.ebay.com">
+              www.ebay.com
+            </a>
+          </p>
+        </div>
+      </dialog>
+    </div>
+  </div>
+  <highlight-code
+    type="js"
+    code=`
+  button.addEventListener("click", (e) => {
+    dialog.showModal();
+  });
+`/>
+  <h3>Dialog closing</h3>
+  <p>
+    A dialog should close on clicking the mask. Dialog supports the${" "}
+    <code>closedBy</code>
+    ${" "}attribute which can close the dialog when clicking the mask.${" "}
+  </p>
+  <p>
+    Due to not having full cross browser support, a better way to close a dialog
+    by clicking the mask is to add a click event handler to the dialog itself.
+    To detect if the click was clicked on the backdrop you can check if the
+    click target was on the dialog element itself.
+  </p>
+
+  <highlight-code
+    type="js"
+    code=`
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      // Trigger close
+    }
+  });
+  `/>
+
+  <h3 id="dialog-animations">
+    Dialog closing Animations
+  </h3>
+  <p>
+    ${" "}All dialog animations for opening the dialog should work out of the
+    box when calling${" "}
+    <code>dialog.showModal()</code>
+  </p>
+  <p>
+    ${" "}For closing the dialog, add${" "}
+    <code>dialog--close</code>
+    ${" "}class to the dialog before calling${" "}
+    <code>dialog.close()</code>
+    ${" "}. Once that animation ends, you can call${" "}
+    <code>dialog.close()</code>
+    ${" "}and remove the${" "}
+    <code>dialog--close</code>
+  </p>
+  <p>
+    ${" "}A typical code workflow would be to do the following code segmenet
+    when closing a dialog
+  </p>
+  <highlight-code
+    type="js"
+    code=`
+    document.querySelector(".dialog");
+      dialog.classList.add("dialog--close");
+      dialog.addEventListener(
+        "animationend",
+        () => {
+          dialog.close();
+          dialog.classList.remove("dialog--close");
+        },
+        {
+          once: true,
+        },
+      );
+      `/>
+  <h3>Dialog keyboard ESCAPE</h3>
+  <p>
+    ${" "}A dialog should close when hitting the escape key. The issue is the
+    dialog will close immediatly without any animation to trigger.
+  </p>
+  <p>
+    To resolve this, adding${" "}
+    <code>preventDefault()</code>
+    ${" "}when escape is pressed and then triggering the code to close the
+    dialog by adding the animation classes is the right way to approach this.
+  </p>
+</div>
