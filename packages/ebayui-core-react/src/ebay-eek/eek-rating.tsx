@@ -20,13 +20,11 @@ const EbayEek: FC<EbayEekProps> = ({ min = "", max = "", rating, a11yText, class
         <div className={className} role="figure" aria-label={a11yText || backupA11yText}>
             <div className="eek__container" aria-hidden>
                 <span className="eek__rating-range">
-                    <span aria-hidden="true">{max}</span>
+                    <span>{max}</span>
                     <EbayIconEekRangeArrow />
-                    <span aria-hidden="true">{min}</span>
+                    <span>{min}</span>
                 </span>
-                <span className="eek__rating" aria-hidden="true">
-                    {rating}
-                </span>
+                <span className="eek__rating">{rating}</span>
             </div>
             <EbayIconEekArrow />
         </div>

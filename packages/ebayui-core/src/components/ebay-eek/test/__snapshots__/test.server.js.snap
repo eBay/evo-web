@@ -17,9 +17,7 @@ exports[`eek > passes through additional html attributes 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      />
+      <span />
       <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
@@ -47,12 +45,9 @@ exports[`eek > passes through additional html attributes 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      />
+      <span />
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     />
   </div>
@@ -102,9 +97,7 @@ exports[`eek > passes through additional html attributes 2`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      />
+      <span />
       <!--M#s0-4-0-->
       <svg
         aria-hidden="true"
@@ -132,12 +125,9 @@ exports[`eek > passes through additional html attributes 2`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      />
+      <span />
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     />
   </div>
@@ -171,24 +161,19 @@ exports[`eek > passes through additional html attributes 2`] = `
 `;
 
 exports[`eek > renders default eek 1`] = `
-<span
-  aria-hidden="true"
->
+<span>
   A+++
 </span>
 `;
 
 exports[`eek > renders default eek 2`] = `
-<span
-  aria-hidden="true"
->
+<span>
   D
 </span>
 `;
 
 exports[`eek > renders default eek 3`] = `
 <span
-  aria-hidden="true"
   class="eek__rating"
 >
   B
@@ -208,9 +193,7 @@ exports[`eek > renders default eek 4`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A+++
       </span>
       <!--M#s0-4-0-->
@@ -240,14 +223,11 @@ exports[`eek > renders default eek 4`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         D
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       B
@@ -283,24 +263,19 @@ exports[`eek > renders default eek 4`] = `
 `;
 
 exports[`eek > renders invalid eek 1`] = `
-<span
-  aria-hidden="true"
->
+<span>
   A
 </span>
 `;
 
 exports[`eek > renders invalid eek 2`] = `
-<span
-  aria-hidden="true"
->
+<span>
   D
 </span>
 `;
 
 exports[`eek > renders invalid eek 3`] = `
 <span
-  aria-hidden="true"
   class="eek__rating"
 >
   B
@@ -320,9 +295,7 @@ exports[`eek > renders invalid eek 4`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A
       </span>
       <!--M#s0-4-0-->
@@ -352,14 +325,11 @@ exports[`eek > renders invalid eek 4`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         D
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       B
@@ -395,24 +365,19 @@ exports[`eek > renders invalid eek 4`] = `
 `;
 
 exports[`eek > renders large eek 1`] = `
-<span
-  aria-hidden="true"
->
+<span>
   A+++
 </span>
 `;
 
 exports[`eek > renders large eek 2`] = `
-<span
-  aria-hidden="true"
->
+<span>
   D
 </span>
 `;
 
 exports[`eek > renders large eek 3`] = `
 <span
-  aria-hidden="true"
   class="eek__rating"
 >
   B
@@ -432,9 +397,7 @@ exports[`eek > renders large eek 4`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A+++
       </span>
       <!--M#s0-4-0-->
@@ -464,14 +427,11 @@ exports[`eek > renders large eek 4`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         D
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       B
@@ -519,9 +479,7 @@ exports[`eek > renders rating 1 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -551,14 +509,11 @@ exports[`eek > renders rating 1 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       A++
@@ -606,9 +561,7 @@ exports[`eek > renders rating 2 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -638,14 +591,11 @@ exports[`eek > renders rating 2 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       A+
@@ -693,9 +643,7 @@ exports[`eek > renders rating 3 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -725,14 +673,11 @@ exports[`eek > renders rating 3 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       A
@@ -780,9 +725,7 @@ exports[`eek > renders rating 4 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -812,14 +755,11 @@ exports[`eek > renders rating 4 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       B
@@ -867,9 +807,7 @@ exports[`eek > renders rating 5 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -899,14 +837,11 @@ exports[`eek > renders rating 5 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       C
@@ -954,9 +889,7 @@ exports[`eek > renders rating 6 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -986,14 +919,11 @@ exports[`eek > renders rating 6 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       D
@@ -1041,9 +971,7 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -1073,14 +1001,11 @@ exports[`eek > renders rating 7 (not 8) 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         G
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       F
@@ -1128,9 +1053,7 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -1160,14 +1083,11 @@ exports[`eek > renders rating 7 (not 8) 2`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         G
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       G
@@ -1215,9 +1135,7 @@ exports[`eek > renders rating 7 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A++
       </span>
       <!--M#s0-4-0-->
@@ -1247,14 +1165,11 @@ exports[`eek > renders rating 7 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         E
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       E
@@ -1302,9 +1217,7 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
     <span
       class="eek__rating-range"
     >
-      <span
-        aria-hidden="true"
-      >
+      <span>
         A+
       </span>
       <!--M#s0-4-0-->
@@ -1334,14 +1247,11 @@ exports[`eek > renders the correct eek if rating is outside 1`] = `
         />
       </svg>
       <!--M/-->
-      <span
-        aria-hidden="true"
-      >
+      <span>
         D
       </span>
     </span>
     <span
-      aria-hidden="true"
       class="eek__rating"
     >
       A++
