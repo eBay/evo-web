@@ -2,6 +2,9 @@ import React from "react";
 import { Meta, StoryFn } from "@storybook/react-vite";
 import { EbayAccordion } from "../index";
 import { EbayDetails } from "../../ebay-details";
+import { EbayIconPencil16 } from "../../ebay-icon/icons/ebay-icon-pencil-16";
+import { EbayIconGraph16 } from "../../ebay-icon/icons/ebay-icon-graph-16";
+import { EbayIconLightbulb16 } from "../../ebay-icon/icons/ebay-icon-lightbulb-16";
 
 const meta: Meta<typeof EbayAccordion> = {
     component: EbayAccordion,
@@ -158,6 +161,38 @@ export const AutoCollapse: StoryFn<typeof EbayAccordion> = (args) => (
             </p>
         </EbayDetails>
         <EbayDetails text="Item 3">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+        </EbayDetails>
+    </EbayAccordion>
+);
+
+export const LeadingIcon: StoryFn<typeof EbayAccordion> = (args) => (
+    <EbayAccordion {...args}>
+        <EbayDetails text="Item 1" leading={<EbayIconLightbulb16 />}>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+        </EbayDetails>
+        <EbayDetails text="Item 2" leading={<EbayIconPencil16 />}>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+        </EbayDetails>
+        <EbayDetails text="Item 3" leading={<EbayIconGraph16 />}>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip

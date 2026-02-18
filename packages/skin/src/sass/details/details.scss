@@ -18,6 +18,7 @@ summary.details__summary {
     display: inline-flex;
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-600);
+    gap: var(--spacing-100);
     list-style-position: inside;
     list-style-type: none; /* Remove details marker for non-webkit */
     padding: 12px 8px;
@@ -40,10 +41,6 @@ summary.details__summary--center {
 summary.details__summary--small {
     font-size: var(--font-size-small);
     padding: 4px 8px;
-}
-
-span.details__icon {
-    margin-inline-start: 8px;
 }
 
 /* progressive enhancement - override hidden SVG */

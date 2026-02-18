@@ -61,7 +61,7 @@
         "snapshots:all": "npm run copy:assetsToStorybook && percy storybook:start --include '.*'",
         "snapshots:all:dry": "percy storybook:start --dry-run --include '.*'",
         "snapshots:dry": "percy storybook:start --dry-run --include \"$(echo $STORIES)\"",
-        "start": "marko-run",
+        "start": "npm run storybook",
         "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook --no-open",
         "test": "npm run build",
         "verify": "tsx scripts verify"

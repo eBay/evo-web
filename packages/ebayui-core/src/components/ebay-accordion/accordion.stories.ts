@@ -9,6 +9,10 @@ import largeTemplate from "./examples/large.marko";
 import largeTemplateCode from "./examples/large.marko?raw";
 import autoCollapsedTemplate from "./examples/autoCollapsed.marko";
 import autoCollapsedTemplateCode from "./examples/autoCollapsed.marko?raw";
+import withIconTemplate from "./examples/withIcon.marko";
+import withIconTemplateCode from "./examples/withIcon.marko?raw";
+
+
 
 export default {
     title: "navigation & disclosure/ebay-accordion",
@@ -97,4 +101,9 @@ export const Large = buildExtensionTemplate(largeTemplate, largeTemplateCode);
 export const AutoCollapsed = buildExtensionTemplate(
     autoCollapsedTemplate,
     autoCollapsedTemplateCode,
+);
+
+export const WithIcon = buildExtensionTemplate(
+    withIconTemplate,
+    withIconTemplateCode,
 );

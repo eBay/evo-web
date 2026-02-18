@@ -5,6 +5,7 @@ export interface DetailsInput extends Omit<
     `on${string}`
 > {
     summary?: Marko.AttrTag<Marko.Input<"span">>;
+    leading?: Marko.AttrTag<Marko.Input<"span">>;
     size?: "regular" | "small";
     alignment?: "regular" | "center";
     as?: keyof Marko.NativeTags;

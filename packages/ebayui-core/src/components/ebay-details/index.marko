@@ -6,6 +6,7 @@ $ const {
     alignment,
     size,
     summary,
+    leading,
     renderBody,
     as: inputAs,
     ...htmlInput
@@ -26,6 +27,11 @@ $ (input as any).toJSON = noop;
             size === "small" && "details__summary--small",
             alignment === "center" && "details__summary--center",
         ]>
+            <if(leading)>
+                <span ...leading class=["details__leading", leading.class]>
+                    <${leading}/>
+                </span>
+            </if>
             <span class="details__label">
                 <${summary.renderBody}/>
             </span>

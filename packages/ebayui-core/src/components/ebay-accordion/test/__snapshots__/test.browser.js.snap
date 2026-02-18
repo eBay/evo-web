@@ -58,7 +58,6 @@ exports[`accordion > given the accordion in the default state > then it matches 
           display: flex;
           font-size: var(--font-size-medium);
           font-weight: var(--font-weight-600);
-          justify-content: space-between;
           list-style-position: inside;
           list-style-type: none;
           min-height: 48px;
@@ -90,6 +89,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
           }}</style>
           <span style="
             animation-duration: 0ms;
+            flex-basis: 0%;
+            flex-grow: 1;
             transition-delay: 0ms;
             transition-duration: 0ms
           ">
@@ -103,7 +104,6 @@ exports[`accordion > given the accordion in the default state > then it matches 
             style="
               animation-duration: 0ms;
               display: inline-flex;
-              margin-inline-start: 8px;
               transition-delay: 0ms;
               transition-duration: 0ms
             "
@@ -214,7 +214,6 @@ exports[`accordion > given the accordion in the default state > then it matches 
           display: flex;
           font-size: var(--font-size-medium);
           font-weight: var(--font-weight-600);
-          justify-content: space-between;
           list-style-position: inside;
           list-style-type: none;
           min-height: 48px;
@@ -246,6 +245,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
           }}</style>
           <span style="
             animation-duration: 0ms;
+            flex-basis: 0%;
+            flex-grow: 1;
             transition-delay: 0ms;
             transition-duration: 0ms
           ">
@@ -259,7 +260,6 @@ exports[`accordion > given the accordion in the default state > then it matches 
             style="
               animation-duration: 0ms;
               display: inline-flex;
-              margin-inline-start: 8px;
               transition-delay: 0ms;
               transition-duration: 0ms
             "
@@ -369,7 +369,6 @@ exports[`accordion > given the accordion in the default state > then it matches 
           display: flex;
           font-size: var(--font-size-medium);
           font-weight: var(--font-weight-600);
-          justify-content: space-between;
           list-style-position: inside;
           list-style-type: none;
           min-height: 48px;
@@ -401,6 +400,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
           }}</style>
           <span style="
             animation-duration: 0ms;
+            flex-basis: 0%;
+            flex-grow: 1;
             transition-delay: 0ms;
             transition-duration: 0ms
           ">
@@ -414,7 +415,6 @@ exports[`accordion > given the accordion in the default state > then it matches 
             style="
               animation-duration: 0ms;
               display: inline-flex;
-              margin-inline-start: 8px;
               transition-delay: 0ms;
               transition-duration: 0ms
             "
@@ -516,7 +516,7 @@ exports[`accordion > given the accordion in the default state > when first secti
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -72,7 +75,7 @@
+@@ -71,7 +74,7 @@
            <style>@scope{:scope{
              &::after {
                animation-duration: 0ms;
@@ -526,9 +526,9 @@ exports[`accordion > given the accordion in the default state > when first secti
                content: "";
                left: 0px;
 @@ -101,6 +104,7 @@
+             style="
                animation-duration: 0ms;
                display: inline-flex;
-               margin-inline-start: 8px;
 +               transform: rotate(180deg);
                transition-delay: 0ms;
                transition-duration: 0ms
@@ -567,7 +567,7 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from initial 1`] = `
-"@@ -72,7 +72,7 @@
+"@@ -71,7 +71,7 @@
            <style>@scope{:scope{
              &::after {
                animation-duration: 0ms;
@@ -636,7 +636,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -72,7 +75,7 @@
+@@ -71,7 +74,7 @@
            <style>@scope{:scope{
              &::after {
                animation-duration: 0ms;
@@ -646,9 +646,9 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                content: "";
                left: 0px;
 @@ -101,6 +104,7 @@
+             style="
                animation-duration: 0ms;
                display: inline-flex;
-               margin-inline-start: 8px;
 +               transform: rotate(180deg);
                transition-delay: 0ms;
                transition-duration: 0ms
@@ -687,7 +687,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -72,7 +72,7 @@
+"@@ -71,7 +71,7 @@
            <style>@scope{:scope{
              &::after {
                animation-duration: 0ms;
@@ -735,9 +735,9 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-y: clip;
              transition-delay: 0ms;
 @@ -257,6 +262,7 @@
+             style="
                animation-duration: 0ms;
                display: inline-flex;
-               margin-inline-start: 8px;
 +               transform: rotate(180deg);
                transition-delay: 0ms;
                transition-duration: 0ms

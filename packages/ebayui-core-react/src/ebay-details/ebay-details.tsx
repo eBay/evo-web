@@ -1,14 +1,14 @@
-import React, { ComponentProps, ElementType, FC } from "react";
+import React, { ComponentProps, ElementType, FC, ReactElement } from "react";
 import classnames from "classnames";
 import { EbayEventHandler } from "../events";
 import { EbayIconChevronDown16 } from "../ebay-icon/icons/ebay-icon-chevron-down-16";
-
 type ToggleProps = {
     open: boolean;
 };
 
 export type EbayDetailsProps = Omit<ComponentProps<"details">, "onToggle"> & {
     text: string;
+    leading?: ReactElement;
     className?: string;
     size?: "regular" | "small";
     alignment?: "regular" | "center";
@@ -20,6 +20,7 @@ const EbayDetails: FC<EbayDetailsProps> = ({
     size,
     alignment,
     text,
+    leading,
     as: Component = "div",
     className,
     open,
@@ -41,6 +42,7 @@ const EbayDetails: FC<EbayDetailsProps> = ({
                     "details__summary--center": alignment === "center",
                 })}
             >
+                {leading && <span className="details__leading">{leading}</span>}
                 <span className="details__label">{text}</span>
                 <span className="details__icon" hidden>
                     <EbayIconChevronDown16 />

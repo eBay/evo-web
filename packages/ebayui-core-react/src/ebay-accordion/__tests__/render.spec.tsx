@@ -4,7 +4,7 @@ import { composeStories } from "@storybook/react-vite";
 import * as stories from "./index.stories";
 import { render } from "@testing-library/react";
 
-const { Default, Large, Open, AutoCollapse } = composeStories(stories);
+const { Default, Large, Open, AutoCollapse, LeadingIcon } = composeStories(stories);
 
 describe("<EbayAccordion /> rendering", () => {
     it("renders default story correctly", () => {
@@ -24,6 +24,11 @@ describe("<EbayAccordion /> rendering", () => {
 
     it("renders autoCollapse story correctly", () => {
         const { container } = render(<AutoCollapse />);
+        expect(container).toMatchSnapshot();
+    });
+
+    it("renders with icon story correctly", () => {
+        const { container } = render(<LeadingIcon />);
         expect(container).toMatchSnapshot();
     });
 });
