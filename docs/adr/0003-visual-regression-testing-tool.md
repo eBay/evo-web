@@ -32,7 +32,6 @@ Key factors in this decision:
 **Positive:**
 
 - Cross-browser visual regression coverage without additional infrastructure
-- Leverages existing eBay Percy enterprise plan
 - No need to maintain custom visual regression infrastructure
 - Better collaboration through Percy's PR integration and review UI
 
