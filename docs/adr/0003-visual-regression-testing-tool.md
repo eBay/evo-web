@@ -24,9 +24,8 @@ Key factors in this decision:
 
 1. **Existing infrastructure**: We already have an enterprise Percy plan at eBay, eliminating procurement and setup overhead
 2. **Cross-browser testing**: Percy provides testing across multiple browsers (Chrome, Firefox, Safari, Edge), which visual-html does not natively support
-3. **Cost management**: While Percy has costs associated with our 990 snapshots, we can manage this through partial builds that only run snapshots for changed components
-4. **Cloud infrastructure**: Percy's cloud-based service reduces our CI infrastructure burden compared to self-hosting visual-html
-5. **Integration**: Percy integrates well with our GitHub Actions workflow and provides PR integration
+3. **Accurate**: Percy has been found to be accurate in finding differences between snapshots. Some other tools tend to show a lot of false positive
+4. **Cloud infrastructure**: Percy's cloud-based service provides a good UI to quickly see the visual differences and approve the build.
 
 ## Consequences
 
