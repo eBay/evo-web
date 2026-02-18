@@ -1,4 +1,4 @@
-<div id="lightbox-dialog-component">
+<div id="dialog-component">
   <component-banner-img/>
 
   <p>
@@ -60,4 +60,15 @@
       : button that dismisses and hides the lightbox
     </li>
   </ul>
+
+  <h2>HTML Dialog Attributes</h2>
+  <p>
+    Modern browsers support the native <code>&lt;dialog&gt;</code> element along with
+    related HTML attributes such as the Invoker Commands API (e.g., <code>commandfor</code>,
+    <code>command</code>). While these attributes provide enhanced functionality for dialog
+    management, <strong>most are not yet widely supported across all browsers</strong>.
+    Due to limited browser availability, we cannot rely on these newer attributes in our
+    components at this time. We continue to use JavaScript-based approaches to ensure
+    consistent behavior across all supported browsers.
+  </p>
 </div>

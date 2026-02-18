@@ -14,7 +14,12 @@ function closeDialog(dialog: HTMLDialogElement) {
 
 // Find all dialog elements
 for (const dialog of document.querySelectorAll(".dialog")) {
-  dialog.setAttribute("closedby", "any");
+  // Clicking mask
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      closeDialog(dialog as HTMLDialogElement);
+    }
+  });
   dialog.addEventListener("cancel", (event) => {
     event.preventDefault();
     closeDialog(dialog as HTMLDialogElement);

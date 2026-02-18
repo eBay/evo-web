@@ -2,6 +2,8 @@ import "../../../../sass/accessibility.scss";
 <div class="a11y-pattern-content">
   <h1>Dialog Accessibility</h1>
   <h2>Best Practices</h2>
+
+  <p> A dialog should use a native HTML <code>${"<dialog>"}</code> element.</p>
   <p>A dialog is typically opened in one of two ways:</p>
   <ul>
     <li>
@@ -14,6 +16,7 @@ import "../../../../sass/accessibility.scss";
       some other arbitrary time
     </li>
   </ul>
+  <p>Both of these should leverage using <code>dialog.showModal()</code> in order to show the dialog as a modal</p>
   <p>
     Opening modal dialogs that are not requested by user (i.e. system-activated)
     are a violation of${" "}
@@ -66,10 +69,10 @@ import "../../../../sass/accessibility.scss";
     <code>SPACE</code>
     ${" "}key${" "}
     <strong>must</strong>
-    ${" "}open lightbox dialog.
+    ${" "}open the dialog.
   </p>
   <p>
-    When lightbox dialog opens, focus${" "}
+    When the dialog opens, focus${" "}
     <strong>must</strong>
     ${" "}move to the dismiss button.
   </p>
@@ -87,7 +90,7 @@ import "../../../../sass/accessibility.scss";
     <code>ESC</code>
     ${" "}key${" "}
     <strong>must</strong>
-    ${" "}close lightbox dialog (unless the currently focussed element has
+    ${" "}close the dialog (unless the currently focussed element has
     existing${" "}
     <code>ESC</code>
     ${" "}key behaviour) with no changes applied (effectively acting as a
@@ -96,7 +99,7 @@ import "../../../../sass/accessibility.scss";
   <p>
     Dialog button${" "}
     <strong>must</strong>
-    ${" "}receive focus when lightbox dialog is closed.
+    ${" "}receive focus when the dialog is closed.
   </p>
   <h3>Screen Reader</h3>
   <p>
@@ -114,7 +117,7 @@ import "../../../../sass/accessibility.scss";
   <p>
     Title${" "}
     <strong>must</strong>
-    ${" "}be announced when lightbox dialog opens.
+    ${" "}be announced when the dialog opens.
   </p>
   <p>
     Virtual cursor${" "}
@@ -148,15 +151,6 @@ import "../../../../sass/accessibility.scss";
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
-          <strong>${"<dialog>"}</strong>
-        </td>
-        <td>
-          Informs the assistive technology that the user is inside of a dialog.
-          Also conveys the dialog is a modal if opened with showModal()
-        </td>
-      </tr>
       <tr>
         <td>
           <strong>aria-labelledby</strong>
