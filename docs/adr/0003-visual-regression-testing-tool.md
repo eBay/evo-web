@@ -22,7 +22,7 @@ We will use Percy for visual regression testing.
 
 Key factors in this decision:
 
-1. **Existing infrastructure**: We already have an enterprise Percy plan at eBay, eliminating procurement and setup overhead
+1. **Existing infrastructure**: We already have an existing Percy account, eliminating procurement and setup overhead
 2. **Cross-browser testing**: Percy provides testing across multiple browsers (Chrome, Firefox, Safari, Edge), which visual-html does not natively support
 3. **Accurate**: Percy has been found to be accurate in finding differences between snapshots. Some other tools tend to show a lot of false positive
 4. **Cloud infrastructure**: Percy's cloud-based service provides a good UI to quickly see the visual differences and approve the build.
