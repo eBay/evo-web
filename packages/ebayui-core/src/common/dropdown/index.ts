@@ -1,12 +1,13 @@
-import {
+import type {
     autoUpdate,
     computePosition,
     shift,
     flip,
     offset,
-    type ReferenceElement,
-    type Middleware,
+    ReferenceElement,
+    Middleware,
 } from "@floating-ui/dom";
+import { load as floatinguiLoad } from "@internal/floating-ui";
 
 interface DropdownUtilOptions {
     reverse?: boolean;
@@ -20,6 +21,13 @@ export class DropdownUtil {
     declare overlay: HTMLElement;
     declare cleanupFn: any;
     declare options: DropdownUtilOptions;
+    declare loaded: boolean;
+    declare triggerShow: boolean;
+    declare computePosition: typeof computePosition;
+    declare autoUpdate: typeof autoUpdate;
+    declare offset: typeof offset;
+    declare flip: typeof flip;
+    declare shift: typeof shift;
 
     constructor(
         host: HTMLElement,
@@ -29,28 +37,47 @@ export class DropdownUtil {
         this.host = host as ReferenceElement;
         this.overlay = overlay as HTMLElement;
         this.options = options ?? {};
+
+        floatinguiLoad().then((floatingUI) => {
+            this.computePosition =
+                floatingUI.computePosition as typeof computePosition;
+            this.autoUpdate = floatingUI.autoUpdate as typeof autoUpdate;
+            this.offset = floatingUI.offset;
+            this.flip = floatingUI.flip;
+            this.shift = floatingUI.shift;
+
+            this.loaded = true;
+            if (this.triggerShow) {
+                this.triggerShow = false;
+                this.show();
+            }
+        });
     }
 
     show() {
-        this.cleanupFn = autoUpdate(
-            this.host,
-            this.overlay,
-            this.update.bind(this),
-        );
+        if (this.loaded) {
+            this.cleanupFn = this.autoUpdate(
+                this.host,
+                this.overlay,
+                this.update.bind(this),
+            );
+        } else {
+            this.triggerShow = true;
+        }
     }
 
     update() {
         const middleware = [] as Middleware[];
-        middleware.push(offset(this.options.offset ?? 4));
+        middleware.push(this.offset(this.options.offset ?? 4));
         if (this.options.flip) {
             middleware.push(
-                flip({
+                this.flip({
                     crossAxis: true,
                 }),
             );
         }
-        middleware.push(shift());
-        computePosition(this.host, this.overlay, {
+        middleware.push(this.shift());
+        this.computePosition(this.host, this.overlay, {
             placement: this.options.reverse ? "bottom-end" : "bottom-start",
             strategy: this.options.strategy ?? "fixed",
             middleware,

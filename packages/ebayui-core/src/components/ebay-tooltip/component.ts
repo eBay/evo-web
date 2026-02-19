@@ -18,6 +18,7 @@ interface TooltipInput extends Omit<
     "not-inline"?: TooltipBaseInput["not-inline"];
     "no-shift"?: TooltipBaseInput["no-shift"];
     "no-flip"?: TooltipBaseInput["no-flip"];
+    "on-loaded"?: () => void;
     "on-expand"?: () => void;
     "on-collapse"?: () => void;
 }

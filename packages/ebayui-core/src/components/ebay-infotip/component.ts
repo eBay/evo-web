@@ -24,6 +24,7 @@ interface InfotipInput extends Omit<
     "no-shift"?: TooltipBaseInput["no-shift"];
     content: Marko.AttrTag<Marko.HTML.Span>;
     "a11y-close-button-text"?: Marko.HTMLAttributes["aria-label"];
+    "on-loaded"?: () => void;
     "on-expand"?: () => void;
     "on-collapse"?: () => void;
 }

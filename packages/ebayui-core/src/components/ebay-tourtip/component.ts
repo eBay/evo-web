@@ -58,8 +58,15 @@ class Tourtip extends Marko.Component<Input, State> {
 
     onCreate() {
         this.state = {
-            expanded: true,
+            expanded: false,
         };
+    }
+    handleLoaded() {
+        // This is only done to prevent a blink when loading floating ui library
+        if (this.input.open !== false) {
+            this.state.expanded = true;
+        }
+        this.emit("loaded");
     }
 }
 

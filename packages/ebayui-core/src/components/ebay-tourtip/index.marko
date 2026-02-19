@@ -15,6 +15,7 @@ $ const {
 
 <span>
     <ebay-tooltip-base
+        open=state.expanded
         key="base"
         type="tourtip"
         noFlip=noFlip
@@ -23,6 +24,7 @@ $ const {
         pointer=input.pointer
         placement=input.placement
         offset=input.offset
+        on-loaded("handleLoaded")
         overlay-id:scoped="overlay">
         <span
             ...processHtmlAttributes(htmlInput)

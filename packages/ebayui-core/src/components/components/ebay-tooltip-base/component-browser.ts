@@ -1,17 +1,18 @@
 import Expander from "makeup-expander";
+import { load as floatinguiLoad } from "@internal/floating-ui";
 import focusables from "makeup-focusables";
-import {
-    autoUpdate,
-    flip,
-    computePosition,
-    shift,
-    offset,
-    arrow,
-    type Placement,
-    inline,
-} from "@floating-ui/dom";
 import { pointerStyles } from "./constants";
 import type { WithNormalizedProps } from "../../../global";
+import type {
+    Placement,
+    computePosition,
+    autoUpdate,
+    offset,
+    flip,
+    shift,
+    arrow,
+    inline,
+} from "@floating-ui/dom";
 
 interface TooptipBaseInput {
     open?: boolean;
@@ -28,10 +29,14 @@ interface TooptipBaseInput {
     pointer?: keyof typeof pointerStyles;
     "on-base-expand"?: (event: { originalEvent: Event }) => void;
     "on-base-collapse"?: (event: { originalEvent: Event }) => void;
+    "on-loaded"?: (event: { originalEvent: Event }) => void;
 }
 export interface Input extends WithNormalizedProps<TooptipBaseInput> {}
+export interface State {
+    loaded: boolean;
+}
 
-class TooltipBase extends Marko.Component<Input> {
+class TooltipBase extends Marko.Component<Input, State> {
     declare action: "expand" | "collapse" | null;
     declare _expander: any;
     declare cancelFocus: ReturnType<typeof focusables>;
@@ -39,12 +44,35 @@ class TooltipBase extends Marko.Component<Input> {
     declare overlayEl: HTMLElement | null;
     declare arrowEl: HTMLElement | null;
     declare cleanup: (() => void) | undefined;
+    declare computePosition: typeof computePosition;
+    declare autoUpdate: typeof autoUpdate;
+    declare offset: typeof offset;
+    declare flip: typeof flip;
+    declare shift: typeof shift;
+    declare arrow: typeof arrow;
+    declare inline: typeof inline;
+
+    positionTip() {
+        if (this.hostEl && this.overlayEl) {
+            this.cleanup?.();
+            this.updateTip();
+            this.cleanup = this.autoUpdate(
+                this.hostEl,
+                this.overlayEl,
+                this.updateTip.bind(this),
+            );
+        }
+    }
+
+    onCreate() {
+        this.state = {
+            loaded: false,
+        };
+    }
 
     handleExpand() {
         this.emit("base-expand");
-        if (this.hostEl && this.overlayEl) {
-            this.updateTip();
-        }
+        this.updateTip();
     }
 
     handleCollapse() {
@@ -53,6 +81,21 @@ class TooltipBase extends Marko.Component<Input> {
 
     onMount() {
         this._setupBaseTooltip();
+        floatinguiLoad().then((floatingUI) => {
+            this.computePosition =
+                floatingUI.computePosition as typeof computePosition;
+            this.autoUpdate = floatingUI.autoUpdate as typeof autoUpdate;
+            this.offset = floatingUI.offset;
+            this.flip = floatingUI.flip;
+            this.shift = floatingUI.shift;
+            this.arrow = floatingUI.arrow;
+            this.inline = floatingUI.inline;
+            this.state.loaded = true;
+            if (this.input.open !== false) {
+                this.positionTip();
+            }
+            this.emit("loaded");
+        });
     }
 
     onUpdate() {
@@ -114,18 +157,13 @@ class TooltipBase extends Marko.Component<Input> {
                 host.setAttribute("aria-describedby", input.overlayId!);
             }
         }
-        if (this.hostEl && this.overlayEl) {
-            this.updateTip();
-            this.cleanup = autoUpdate(
-                this.hostEl,
-                this.overlayEl,
-                this.updateTip.bind(this),
-            );
+        if (this.input.open !== false && this.state.loaded) {
+            this.positionTip();
         }
     }
 
     updateTip() {
-        computePosition(
+        this.computePosition(
             this.hostEl as HTMLElement,
             this.overlayEl as HTMLElement,
             {
@@ -134,15 +172,15 @@ class TooltipBase extends Marko.Component<Input> {
                     pointerStyles[this.input.pointer ?? "bottom"],
                 strategy: "absolute",
                 middleware: [
-                    offset(this.input.offset || 6),
-                    !this.input.notInline && inline(),
+                    this.offset(this.input.offset || 6),
+                    !this.input.notInline && this.inline(),
                     !this.input.noFlip &&
-                        flip({
+                        this.flip({
                             fallbackAxisSideDirection: "end",
                             flipAlignment: false,
                         }),
-                    !this.input.noShift && shift(),
-                    arrow({
+                    !this.input.noShift && this.shift(),
+                    this.arrow({
                         element: this.arrowEl as HTMLElement,
                         padding: 20,
                     }),

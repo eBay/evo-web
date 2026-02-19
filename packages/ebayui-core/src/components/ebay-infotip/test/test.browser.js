@@ -23,6 +23,8 @@ let component;
 describe("given the default infotip", () => {
     beforeEach(async () => {
         component = await render(Default);
+        // Wait for floating-ui to load
+        await waitFor(() => expect(component.emitted("loaded")).has.length(1));
     });
 
     thenItCanBeOpenAndClosed();
