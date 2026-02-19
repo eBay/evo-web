@@ -1,0 +1,83 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoButton SSR > should render button with bodyState=expand 1`] = `"<button class="btn btn--secondary"><span class="btn__cell"><span class="btn__text">Button</span><span>▼</span></span></button>"`;
+
+exports[`EvoButton SSR > should render button with bodyState=loading 1`] = `"<button aria-live="polite" class="btn btn--secondary"><span class="btn__cell"><span>Loading...</span></span></button>"`;
+
+exports[`EvoButton SSR > should render button with borderless=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with borderless=true 1`] = `"<button class="btn btn--borderless">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with disabled=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with disabled=true 1`] = `"<button disabled="" class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with fixedHeight=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with fixedHeight=true 1`] = `"<button class="btn btn--secondary btn--fixed-height">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with fluid=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with fluid=true 1`] = `"<button class="btn btn--secondary btn--fluid">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with partiallyDisabled=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with partiallyDisabled=true 1`] = `"<button aria-disabled="true" class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with priority=none 1`] = `"<button class="btn">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with priority=primary 1`] = `"<button class="btn btn--primary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with priority=secondary 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with priority=tertiary 1`] = `"<button class="btn btn--tertiary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with size=large 1`] = `"<button class="btn btn--secondary btn--large">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with size=small 1`] = `"<button class="btn btn--secondary btn--small">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with split=end 1`] = `"<button class="btn btn--primary btn--split-end">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with split=start 1`] = `"<button class="btn btn--primary btn--split-start">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with transparent=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with transparent=true 1`] = `"<button class="btn btn--secondary btn--transparent">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with truncate=false 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with truncate=true 1`] = `"<button class="btn btn--secondary btn--truncated">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with variant=destructive 1`] = `"<button class="btn btn--secondary btn--destructive">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with variant=form 1`] = `"<button class="btn btn--form">Button</button>"`;
+
+exports[`EvoButton SSR > should render button with variant=standard 1`] = `"<button class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render combined: primary large fluid 1`] = `"<button class="btn btn--primary btn--large btn--fluid">Combined</button>"`;
+
+exports[`EvoButton SSR > should render defaults 1`] = `"<button class="btn btn--secondary">Default Button</button>"`;
+
+exports[`EvoButton SSR > should render destructive primary large 1`] = `"<button class="btn btn--primary btn--large btn--destructive">Delete</button>"`;
+
+exports[`EvoButton SSR > should render disabled link without href 1`] = `"<a class="fake-btn fake-btn--secondary">Disabled Link</a>"`;
+
+exports[`EvoButton SSR > should render fake version (anchor) 1`] = `"<a aria-label="fake button" class="fake-btn fake-btn--primary fake-btn--large" href="https://ebay.com">Link Button</a>"`;
+
+exports[`EvoButton SSR > should render form variant with expand 1`] = `"<button class="btn btn--form"><span class="btn__cell"><span class="btn__text">Form Expand</span><span>▼</span></span></button>"`;
+
+exports[`EvoButton SSR > should render large fixed-height button 1`] = `"<button class="btn btn--secondary btn--large btn--large-fixed-height">Large Fixed Height</button>"`;
+
+exports[`EvoButton SSR > should render large truncated button 1`] = `"<button class="btn btn--secondary btn--large btn--truncated">Large Truncated</button>"`;
+
+exports[`EvoButton SSR > should render with ButtonCell 1`] = `"<button class="btn btn--secondary"><span class="btn__cell" style="justify-content:space-between"><span>Left</span><span>Right</span></span></button>"`;
+
+exports[`EvoButton SSR > should render with aria-label 1`] = `"<button aria-label="Submit form" class="btn btn--secondary">Submit</button>"`;
+
+exports[`EvoButton SSR > should render with custom className 1`] = `"<button class="btn custom-class btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render with data attributes 1`] = `"<button data-testid="button" class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render with id override 1`] = `"<button id="test" class="btn btn--secondary">Button</button>"`;
+
+exports[`EvoButton SSR > should render with type override 1`] = `"<button type="submit" class="btn btn--secondary">Submit</button>"`;

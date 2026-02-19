@@ -59,6 +59,7 @@ export default defineConfig({
         extends: true,
         test: {
           name: "browser",
+          setupFiles: ["./test.setup.ts"],
           browser: {
             enabled: true,
             provider: playwright(),
