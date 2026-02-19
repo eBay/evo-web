@@ -1,4 +1,4 @@
-# 2. Component Development Process
+# 2. Component Development Foundations
 
 **Date:** 2026-02-10
 
