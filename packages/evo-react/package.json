@@ -15,9 +15,7 @@
     "directory": "packages/evo-react"
   },
   "license": "MIT",
-  "sideEffects": [
-    "./**/*.css"
-  ],
+  "sideEffects": false,
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
