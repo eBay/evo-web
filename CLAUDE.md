@@ -138,7 +138,7 @@ src/components/ebay-button/
 
 **Marko 5 vs 6 syntax:**
 
-For guidance on usage of either Marko5 or Marco 6 or for the Marko 5 → 6 syntax and migration, see the dedicated reference: https://markojs.com/llms.txt
+For guidance on usage of either Marko 5 or Marko 6 or for the Marko 5 → 6 syntax and migration, see the dedicated reference: https://markojs.com/llms.txt
 
 ### React Component Structure
 
