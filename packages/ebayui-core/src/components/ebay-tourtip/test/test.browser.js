@@ -22,7 +22,7 @@ describe("given the default tourtip", () => {
 
     describe("after it is rerendered", () => {
         beforeEach(async () => {
-            component.rerender({ open: true });
+            await component.rerender({ open: true });
         });
 
         thenItIsOpen();
