@@ -15,7 +15,7 @@ const renderBodyText = "View options";
 describe("default tooltip", () => {
     beforeEach(async () => {
         component = await render(Standard);
-        // Wait for floating-ui to load and tourtip to open
+        // Wait for floating-ui to load and tooltip to open
         await waitFor(() => expect(component.emitted("loaded")).has.length(1));
     });
 
