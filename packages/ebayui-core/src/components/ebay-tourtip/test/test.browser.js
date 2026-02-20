@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { render, fireEvent, cleanup, waitFor } from "@marko/testing-library";
 import * as stories from "../tourtip.stories";
+import { addRenderBodies } from "../../../common/storybook/utils";
 
 const { Standard } = composeStories(stories);
 
@@ -22,7 +23,11 @@ describe("given the default tourtip", () => {
 
     describe("after it is rerendered", () => {
         beforeEach(async () => {
-            await component.rerender({ open: true });
+            await component.rerender(
+                Object.assign({}, addRenderBodies(Standard.args), {
+                    open: true,
+                }),
+            );
         });
 
         thenItIsOpen();
