@@ -29,7 +29,7 @@ interface TooptipBaseInput {
     pointer?: keyof typeof pointerStyles;
     "on-base-expand"?: (event: { originalEvent: Event }) => void;
     "on-base-collapse"?: (event: { originalEvent: Event }) => void;
-    "on-loaded"?: (event: { originalEvent: Event }) => void;
+    "on-loaded"?: () => void;
 }
 export interface Input extends WithNormalizedProps<TooptipBaseInput> {}
 export interface State {
