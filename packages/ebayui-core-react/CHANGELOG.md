@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.2.3
+
+### Patch Changes
+
+- [#524](https://github.com/eBay/evo-web/pull/524) [`9117681`](https://github.com/eBay/evo-web/commit/91176816e5b09c47807b81cf40725a2d4bcfb8b0) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(eek): add a11y docs, remove redundant aria-hidden
+
 ## 9.2.2
 
 ### Patch Changes

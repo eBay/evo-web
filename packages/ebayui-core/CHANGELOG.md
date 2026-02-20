@@ -1,5 +1,16 @@
 # eBayUI-Core Changelog
 
+## 16.4.0
+
+### Minor Changes
+
+- [#529](https://github.com/eBay/evo-web/pull/529) [`ea905f1`](https://github.com/eBay/evo-web/commit/ea905f1a5d5ba0d82afbef22275555bc3a9f9710) Thanks [@agliga](https://github.com/agliga)! - fix(tips): only calculate position of tooltips when its open
+  fix(floating-ui): added async loading for floating-ui library
+
+### Patch Changes
+
+- [#524](https://github.com/eBay/evo-web/pull/524) [`9117681`](https://github.com/eBay/evo-web/commit/91176816e5b09c47807b81cf40725a2d4bcfb8b0) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(eek): add a11y docs, remove redundant aria-hidden
+
 ## 16.3.3
 
 ### Patch Changes
