@@ -125,6 +125,10 @@
         );
         --color-loading-fill-on-secondary: #353535;
         --color-loading-fill: #2d2d2d;
+        --color-loading-on-primary-state-1: var(--color-neutral-800);
+        --color-loading-on-primary-state-2: var(--color-neutral-700);
+        --color-loading-on-secondary-state-1: var(--color-neutral-700);
+        --color-loading-on-secondary-state-2: var(--color-neutral-600);
         --color-scrim-background: rgba(0, 0, 0, 0.64);
         --color-state-layer-focus-on-strong: rgba(0, 0, 0, 0.08);
         --color-state-layer-focus: rgba(255, 255, 255, 0.08);

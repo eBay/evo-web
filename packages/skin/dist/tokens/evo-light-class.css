@@ -124,6 +124,10 @@
     );
     --color-loading-fill-on-secondary: #e4e4e4;
     --color-loading-fill: #ededed;
+    --color-loading-on-primary-state-1: var(--color-neutral-200);
+    --color-loading-on-primary-state-2: var(--color-neutral-300);
+    --color-loading-on-secondary-state-1: var(--color-neutral-300);
+    --color-loading-on-secondary-state-2: var(--color-neutral-400);
     --color-scrim-background: rgba(0, 0, 0, 0.3);
     --color-state-layer-focus-on-strong: rgba(255, 255, 255, 0.12);
     --color-state-layer-focus: rgba(0, 0, 0, 0.04);

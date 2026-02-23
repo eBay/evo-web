@@ -190,19 +190,19 @@ div.skeleton__textbox:not(:last-child) {
 @media (prefers-reduced-motion: no-preference) {
     @keyframes on-primary {
         0% {
-            background-color: var(--color-loading-first);
+            background-color: var(--color-loading-on-primary-state-1);
         }
         100% {
-            background-color: var(--color-loading-second);
+            background-color: var(--color-loading-on-primary-state-2);
         }
     }
 
     @keyframes on-secondary {
         0% {
-            background-color: var(--color-loading-on-secondary-first);
+            background-color: var(--color-loading-on-secondary-state-1);
         }
         100% {
-            background-color: var(--color-loading-on-secondary-second);
+            background-color: var(--color-loading-on-secondary-state-2);
         }
     }
 
