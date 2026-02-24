@@ -32,8 +32,8 @@ export interface Input extends Marko.HTML.Span {
 <const/{
     class: inputClass,
     placement = "bottom" as const,
-    offset: inputOffset,
-    open: inputOpen,
+    offset = 8,
+    open: inputOpen = false,
     openChange,
     flip,
     shift,
@@ -46,7 +46,7 @@ export interface Input extends Marko.HTML.Span {
     ...htmlInput
 }=input>
 
-<let/open=(inputOpen ?? false) valueChange=openChange>
+<let/open=inputOpen valueChange=openChange>
 
 <id/hostId> // TODO: Remove once we fix Marko TS recursive issue
 <const/$host() { return document.getElementById(hostId)! }>
@@ -60,7 +60,7 @@ export interface Input extends Marko.HTML.Span {
 <evo-expander/expander
     open=open
     placement=placement
-    offset=(inputOffset ?? 8)
+    offset=offset
     flip=flip
     shift=shift
     inline=inline

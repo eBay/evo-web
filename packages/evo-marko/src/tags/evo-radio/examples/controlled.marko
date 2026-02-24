@@ -1,0 +1,22 @@
+static const items = ["A", "B", "C", "D"];
+
+<let/checked="A">
+
+<for|item| of=items>
+    <label>
+        <evo-radio name="radio-group-1" value=item checkedValue:=checked/>
+        ${item} 
+    </label>
+</for>
+
+
+<p>
+    Selected item is ${checked}
+</p>
+
+<for|item| of=items>
+    <label>
+        <evo-radio name="radio-group-2" value=item checkedValue:=checked/>
+        ${item} 
+    </label>
+</for>

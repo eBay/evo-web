@@ -1,29 +1,19 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import Select, { type Input } from "./index.marko";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultCode from "./examples/default.marko?raw";
 import WithLabelTemplate from "./examples/external-label.marko";
-import InFormTemplate from "./examples/in-form.marko";
-import DisabledTemplate from "./examples/disabled-with-label.marko";
 import WithLabelCode from "./examples/external-label.marko?raw";
-import InFormCode from "./examples/in-form.marko";
-import DisabledCode from "./examples/disabled-with-label.marko";
-import type { StoryFn } from "@storybook/marko";
-import type { Input } from "./index.marko";
-
-const Template: StoryFn<Input> = (args) => ({
-  input: {
-    ...args,
-    renderBody: (args.renderBody
-      ? (out: any) => {
-          out.html(args.renderBody);
-        }
-      : null) as any,
-  },
-});
+import InFormTemplate from "./examples/in-form.marko";
+import InFormCode from "./examples/in-form.marko?raw";
+import DisabledTemplate from "./examples/disabled-with-label.marko";
+import DisabledCode from "./examples/disabled-with-label.marko?raw";
 
 export default {
   title: "form input/evo-select",
-  component: Component,
+  component: Select,
   parameters: {
     docs: {
       description: {
@@ -33,157 +23,61 @@ export default {
   },
 
   argTypes: {
-    floatingLabel: {
-      type: "string",
-      control: { type: "string" },
-      description:
-        "if set, then label will move up and down. Need to have first option to have a nullable value.",
-    },
-    borderless: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "whether button has borders",
-    },
-    fluid: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "Select takes 100% of the container width",
-    },
-    isLarge: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "to show large version",
-    },
-
-    text: {
-      control: { type: "text" },
-      description: "text to use in the option",
-      table: {
-        category: "@option attributes",
-      },
-    },
-    value: {
-      control: { type: "text" },
-      description: "used for the `value` attribute of the native `<option>`",
-      table: {
-        category: "@option attributes",
-      },
-    },
-    selected: {
-      control: { type: "text" },
-      description:
-        "used to determine which option is selected. This should be included in one and only one option.",
-      table: {
-        category: "@option attributes",
-      },
-    },
     option: {
-      name: "@option",
-      table: {
-        category: "@attribute tags",
-      },
-    },
-    onChange: {
-      action: "on-change",
-      description: "Triggered on option selected",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ el, index, selected }",
+      description: "An option in the `<select>`.",
+      "@": {
+        optgroup: {
+          type: "string",
+          control: "text",
+          description:
+            "If present, this option will be placed inside an `<optgroup>` tag.",
+        },
+        ["<option> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<option>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/option) will be passed through",
         },
       },
     },
-  },
-};
-
-export const Floating = Template.bind({});
-Floating.args = {
-  floatingLabel: "Option",
-  option: [
-    {
-      text: "Select an option",
-      value: "",
+    floatingLabel: {
+      type: "string",
+      control: "text",
+      description:
+        "Adds a floating label. For it to float down, the first option must have a nullable value.",
     },
-    {
-      text: "option 1",
-      value: "option 1",
+    size: {
+      type: "string",
+      options: ["regular (default)", "large"],
+      control: "text",
+      description: "Optionally change size of the component.",
     },
-    {
-      text: "option 2",
-      value: "option 2",
+    borderless: {
+      type: "boolean",
+      control: "boolean",
+      description: "Removes borders of the button.s",
     },
-    {
-      text: "option 3",
-      value: "option 3",
+    fluid: {
+      type: "boolean",
+      control: "boolean",
+      description: "Select takes 100% of the container width",
     },
-  ] as any,
-};
-Floating.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-select", Floating.args, {
-        options: "option",
-      }),
+    value: {
+      changeHandler: true,
+      type: "string",
+      control: "text",
+      description:
+        "Marko [adds `value` to the native `<select>` tag](https://markojs.com/docs/reference/native-tag#select).",
     },
-  },
-};
-
-export const ExternalLabel: StoryFn<Input> = (args) => ({
-  input: args,
-  component: WithLabelTemplate,
-});
-
-ExternalLabel.parameters = {
-  docs: {
-    source: {
-      code: WithLabelCode,
+    ["<select> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<select>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
-ExternalLabel.args = {
-  option: [
-    {
-      text: "Select an option",
-      value: "",
-    },
-    {
-      text: "option 1",
-      value: "option 1",
-    },
-    {
-      text: "option 2",
-      value: "option 2",
-    },
-    {
-      text: "option 3",
-      value: "option 3",
-    },
-  ] as any,
-};
-
-export const Disabled: StoryFn<Input> = (args) => ({
-  input: args,
-  component: DisabledTemplate,
-});
-
-Disabled.parameters = {
-  docs: {
-    source: {
-      code: DisabledCode,
-    },
-  },
-};
-
-export const InForm: StoryFn<Input> = (args) => ({
-  input: args,
-  component: InFormTemplate,
-});
-
-InForm.parameters = {
-  docs: {
-    source: {
-      code: InFormCode,
-    },
-  },
-};
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
+export const WithLabel = buildExtensionTemplate(
+  WithLabelTemplate,
+  WithLabelCode,
+);
+export const InForm = buildExtensionTemplate(InFormTemplate, InFormCode);
+export const Disabled = buildExtensionTemplate(DisabledTemplate, DisabledCode);

@@ -1,14 +1,12 @@
 import { type Input as ButtonInput } from "../evo-button/index.marko";
 export interface Item extends Marko.HTML.Div {
-    href?: string;
     value?: string;
     separator?: boolean;
-    checked?: boolean;
     badgeNumber?: number;
     disabled?: boolean;
 }
 export interface Input<
-    Index extends number | string | (number | string)[] | undefined,
+    Index extends number | string | (number | string)[],
 > extends Marko.HTML.Span {
     selected?: Index;
     selectedChange?: (selected: Index) => void;
@@ -75,7 +73,6 @@ export interface Input<
             <const/{
                 class: itemClass,
                 value = i,
-                checked: itemChecked,
                 separator,
                 badgeNumber,
                 disabled,
@@ -137,7 +134,7 @@ export interface Input<
                     <span>
                         <${content}/>
                         <if=badgeNumber>
-                            <evo-badge type="menu" number=badgeNumber/>
+                            <evo-badge type="menu" number=badgeNumber a11yText=""/>
                         </if>
                     </span>
                     <if=!isFilter>

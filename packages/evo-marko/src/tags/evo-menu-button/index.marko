@@ -3,7 +3,7 @@ import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Input as MenuInput } from "<evo-menu>";
 export interface Input<
-    Index extends number | string | (number | string)[] | undefined,
+    Index extends number | string | (number | string)[],
 > extends Omit<MenuInput<Index>, "variant"> {
     open?: boolean;
     openChange?: (open: boolean) => void;
@@ -16,21 +16,16 @@ export interface Input<
     size?: ButtonInput["size"];
     transparent?: boolean;
     disabled?: boolean;
-    split?: string;
+    split?: ButtonInput["split"];
     noToggleIcon?: boolean;
     label?: Marko.AttrTag<Marko.HTML.Span>;
-    prefixLabel?: string;
-    icon?: Marko.AttrTag<Marko.HTML.Span>;
     footerButton?: Marko.AttrTag<ButtonInput>;
-    text?: string;
     reverse?: boolean;
     strategy?: "absolute" | "fixed";
     fixWidth?: boolean;
 }
 <const/{
     class: inputClass,
-    text,
-    icon,
     noToggleIcon: inputNoToggleIcon,
     reverse,
     strategy,
@@ -46,7 +41,6 @@ export interface Input<
     label,
     selected: inputSelected,
     selectedChange,
-    prefixLabel,
     prefixId,
     split: inputSplit,
     collapseOnSelect,
@@ -112,7 +106,7 @@ export interface Input<
         if (open && e.key === "Escape") open = false;
         onKeyDown && onKeyDown(e, el);
     }>
-    <${tagName}
+    <${tagName as any}
         class=[`menu-button__button`]
         size=size
         priority=priority as ButtonInput["priority"]

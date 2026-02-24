@@ -1,7 +1,7 @@
 <evo-pagination a11yCurrentText="Results — Page 1"
     ...input
     class="example-05">
-    <@prev disabled/>
+    <@prev a11yText="Previous" disabled/>
     <@item current onClick() { console.log(1); }>
         1
     </@item>
@@ -13,5 +13,5 @@
     <@item onClick() { console.log(7); }>7</@item>
     <@item onClick() { console.log(8); }>8</@item>
     <@item onClick() { console.log(9); }>9</@item>
-    <@next onClick() { console.log("next"); }/>
+    <@next a11yText="Next" onClick() { console.log("next"); }/>
 </evo-pagination>

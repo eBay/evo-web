@@ -1,0 +1,19 @@
+<let/value=0>
+<evo-number-input
+    min=0
+    max=100
+    a11yText="Enter a number"
+    ...input
+    value:=value
+/>
+
+<p>
+    Current value is ${value}. Skip to:
+</p>
+
+<p>
+    <evo-button onClick() { value = 0 }>0</evo-button>
+    <evo-button onClick() { value = 10 }>10</evo-button>
+    <evo-button onClick() { value = 25 }>25</evo-button>
+    <evo-button onClick() { value = 50 }>50</evo-button>
+</p>

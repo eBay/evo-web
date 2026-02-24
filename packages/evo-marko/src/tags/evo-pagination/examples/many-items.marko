@@ -1,0 +1,8 @@
+<evo-pagination a11yCurrentText="Results — Page 1" ...input>
+    <@prev a11yText="Previous" disabled/>
+    <@item current>1</@item>
+    <for|i| from=2 to=50>
+      <@item>${i}</@item>
+    </for>
+    <@next a11yText="Next"/>
+</evo-pagination>

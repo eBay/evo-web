@@ -1,5 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
+import EvoMenuButton, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import BadgedTemplate from "./examples/badged-items.marko";
@@ -16,11 +18,10 @@ import FilterTemplate from "./examples/filter.marko";
 import FilterTemplateCode from "./examples/filter.marko?raw";
 import FooterTemplate from "./examples/footer.marko";
 import FooterTemplateCode from "./examples/footer.marko?raw";
-import Component from "./index.marko";
 
 export default {
   title: "buttons/evo-menu-button",
-  component: Component,
+  component: EvoMenuButton,
   parameters: {
     docs: {
       description: {
@@ -30,222 +31,112 @@ export default {
   },
 
   argTypes: {
-    text: {
-      control: { type: "text" },
-      description: "button text",
-    },
-    a11yText: {
-      description:
-        "Localized, a11y text for the button, especially for cases without text",
-      control: { type: "text" },
-    },
-    noToggleIcon: {
+    open: {
+      changeHandler: true,
       type: "boolean",
-      description: "whether to hide the chevron toggle icon",
-      control: { type: "boolean" },
-    },
-    expanded: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description:
-        "whether content is expanded (Note: not supported as initial attribute)",
-    },
-    type: {
-      control: { type: "select" },
-      options: ["none", "radio", "checkbox"],
-      description: 'Can be "radio" / "checkbox"',
-    },
-    reverse: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "expand menu flyout to the left",
-    },
-    fixWidth: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "constrain items container width to button width",
-    },
-    borderless: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "whether button has borders. Forces variant=button",
-    },
-    size: {
-      control: { type: "text" },
-      description: 'button size, "large" (default: "none")',
-    },
-    priority: {
-      control: { type: "select" },
-      options: ["primary", "secondary", "delete", "tertiary", "none"],
-      description: 'button priority, only used when variant="button"',
-    },
-    strategy: {
-      control: { type: "select" },
-      options: ["absolute", "fixed"],
-      table: {
-        defaultValue: {
-          summary: "absolute",
-        },
-      },
-
-      description:
-        "Swap between fixed and absolute positioning strategy. Use fixed when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
-    },
-    checked: {
-      description:
-        "will set the corresponding index item to `checked` state and use the `aria-checked` attribute in markup",
-    },
-    disabled: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description:
-        "Will disable the entire dropdown (disables the evo-button label) if set to true",
-    },
-    variant: {
-      control: { type: "select" },
-      options: ["overflow", "form", "button", "icon", "filter"],
-      table: {
-        defaultValue: {
-          summary: "button",
-        },
-      },
-      description:
-        'will change the button style, "overflow", "form" or "button"',
+      control: "boolean",
+      description: "Allows control over the open state of the menu",
     },
     collapseOnSelect: {
       type: "boolean",
-      control: { type: "boolean" },
-      description:
-        'Will collapse whole menu when an item is selected in menu. Typically used in `type="radio"`',
-    },
-    partiallyDisabled: {
-      description: "programmatically disabled, but remains keyboard focusable",
-      control: { type: "boolean" },
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
+      control: "boolean",
+      description: "When an option is selected, `open` is toggled to `false`.",
     },
     prefixId: {
-      control: { type: "text" },
+      type: "string",
+      control: "text",
       description:
-        "The id of an external element to use as the prefix label for the menu button. Cannot be used with `prefix-label`",
+        "Id of an external element to use as the prefix label for the listbox button. Should not be used with `prefixLabel`",
     },
-    prefixLabel: {
-      control: { type: "text" },
-      description:
-        "The label to add before each selected item on the button. Cannot be used with `prefix-id, Only works when @label is passed`",
+    variant: {
+      type: "string",
+      options: ["button (default)", "overflow", "form", "icon", "filter"],
+      control: "select",
+      table: { defaultValue: { summary: "button" } },
+      description: "Controls the button style",
     },
-    status: {
-      name: "@status",
+    borderless: {
+      type: "boolean",
+      control: "boolean",
+      description: 'whether button has borders. Forces `variant="button"`',
+    },
+    partiallyDisabled: {
+      type: "boolean",
+      control: "boolean",
+      description: "programmatically disabled, but remains keyboard focusable",
+    },
+    priority: {
+      type: "string",
+      options: ["none (default)", "primary", "secondary", "delete", "tertiary"],
+      control: "select",
+      description: 'button priority, only used when `variant="button"`',
+    },
+    size: {
+      type: "string",
+      options: ["regular (default)", "large", "small"],
+      control: "inline-radio",
+      description: "The size of the button",
+    },
+    transparent: {
+      type: "boolean",
+      control: "boolean",
+      description: "Removes the background color of the button",
+    },
+    disabled: {
+      type: "boolean",
+      control: "boolean",
       description:
-        'Used to render status of filter menu button. Will pass back {count, selectedList[]} to allow users to render a status of the filter. Usually in the format of "(+3)" where 3 is the amount of selected filters.',
-
-      table: {
-        category: "@attribute tags",
-      },
+        "Will disable the entire dropdown (also disables the `evo-button` label) if set to true",
+    },
+    split: {
+      type: "string",
+      options: ["none (default)", "start", "end"],
+      control: "inline-radio",
+      description: "Apply split button styles.",
+    },
+    noToggleIcon: {
+      type: "boolean",
+      control: "boolean",
+      description: "Hides the chevron toggle icon.",
     },
     label: {
-      name: "@label",
-      description:
-        "The menu button label. Cannot be used in conjunction with text.",
-
-      table: {
-        category: "@attribute tags",
+      description: "The prefix label. Cannot be used in conjunction with text.",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
     footerButton: {
-      name: "@footerButton",
-      table: {
-        category: "@attribute tags",
-      },
       description:
-        "The footer content. Renders an evo-button component. Used for filter type generally.",
-    },
-    item: {
-      name: "@item",
-      table: {
-        category: "@attribute tags",
+        'The footer content, rendered [an `<evo-button>` component](?path=/docs/buttons-evo-button--docs). Generally used only when `variant="filter"`.',
+      "@": {
+        ["<evo-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-button>` component](?path=/docs/buttons-evo-button--docs) will be passed through to `<@footerButton>`",
+        },
       },
     },
-    icon: {
-      name: "@icon",
-      table: {
-        category: "@attribute tags",
-      },
+    reverse: {
+      type: "boolean",
+      control: "boolean",
+      description: "Expand the menu flyout to the left",
     },
-    badgeNumber: {
-      controls: { hideNoControlsWarning: true },
-      description: "used as the number to be placed in the badge",
-      table: {
-        category: "@item attribute tags",
-      },
-    },
-    "aria-label": {
-      controls: { hideNoControlsWarning: true },
+    strategy: {
+      type: "string",
+      options: ["absolute", "fixed"],
+      control: "inline-radio",
+      table: { defaultValue: { summary: "absolute" } },
       description:
-        "Passed as the `aria-label` directly to the badge. Required only if badge number is provided",
-
-      table: {
-        category: "@item attribute tags",
-      },
+        "Positioning strategy for the dropdown. Use fixed when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
     },
-    onCollapse: {
-      action: "on-collapse",
-      description: "Triggered on menu collapse",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
-    },
-    "onFooter-button-click": {
-      action: "on-footer-button-click",
-      description: "Triggered on click of footer button",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
-    },
-    onExpand: {
-      action: "on-expand",
-      description: "Triggered on menu expand",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
-    },
-    onChange: {
-      action: "on-change",
+    ["<evo-menu> attributes" as any]: {
       description:
-        "Triggered on item checked change, (checkbox/radio type only)",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary:
-            "radio: { el, index, checked } | checkbox: { el, [indexes], [checked] }",
-        },
-      },
-    },
-
-    onSelect: {
-      action: "on-select",
-      description: "Triggered on item clicked (non radio/checkbox)",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ el, index, checked }",
-        },
-      },
+        "All attributes and event handlers from [the `<evo-menu>` component](?path=/docs/building-blocks-evo-menu--docs) will be passed through",
     },
   },
-};
+} satisfies Meta<Input<any>>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

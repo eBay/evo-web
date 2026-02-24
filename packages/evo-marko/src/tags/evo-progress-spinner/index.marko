@@ -1,10 +1,10 @@
-export interface Input extends Marko.HTML.Span {
+export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
     /**
      * The `aria-label` for the progress spinner
      * 
      * English default to be overridden is `"Loading"`
      */
-    a11yText: Marko.HTML.Span["aria-label"];
+    a11yText: string;
     size?: "large" | "small";
 }
 <const/{

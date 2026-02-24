@@ -1,15 +1,15 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
-import button from "./index.marko";
+import { type Meta } from "@storybook/marko";
+import Button, { type Input } from "./index.marko";
 import Readme from "./README.md";
 import ButtonTemplate from "./examples/button.marko";
 import ButtonTemplateCode from "./examples/button.marko?raw";
-
 import ExpandButtonTemplate from "./examples/expand-button.marko";
 import ExpandButtonTemplateCode from "./examples/expand-button.marko?raw";
 
 export default {
   title: "buttons/evo-button",
-  component: button,
+  component: Button,
   parameters: {
     docs: {
       description: {
@@ -18,178 +18,96 @@ export default {
     },
   },
   argTypes: {
-    content: {},
     href: {
-      description: "url for link behaviour (switches to anchor tag)",
+      description: "URL for link behavior (switches to anchor tag)",
     },
     size: {
-      options: ["large", "regular", "small"],
-      description: "",
-      table: {
-        defaultValue: {
-          summary: "none",
-        },
-      },
-      type: { category: "Options" },
+      type: "string",
+      options: ["regular (default)", "large", "small"],
+      control: "inline-radio",
+      description: "The size of the button",
     },
     priority: {
+      type: "string",
       options: ["primary", "secondary", "tertiary", "none"],
-      description: "",
-
-      table: {
-        defaultValue: {
-          summary: "secondary",
-        },
-      },
-      type: { category: "Options" },
+      control: "inline-radio",
+      description: "Button priority",
+      table: { defaultValue: { summary: "secondary" } },
     },
     fluid: {
-      description: "button fills 100% width of container",
-      table: {
-        category: "Toggles",
-        defaultValue: {
-          summary: "false",
-        },
-      },
+      type: "boolean",
+      description: "If `true`, button will fill 100% of the container width.",
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     borderless: {
-      description: "Shows button without border.",
-      table: {
-        category: "Toggles",
-        defaultValue: {
-          summary: "false",
-        },
-      },
+      type: "boolean",
+      description: "If `true`, border is removed.",
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     bodyState: {
+      type: "string",
       description:
         "when state is loading, adds progress spinner. when user interacts with button, reset should be called to reset aria-live state. default is none",
       options: ["none", "loading", "reset", "expand"],
-      control: { type: "select" },
-      table: {
-        defaultValue: {
-          summary: "none",
-        },
-      },
-      type: { category: "Options" },
+      control: "inline-radio",
+      table: { defaultValue: { summary: "none" } },
     },
     a11yLoadingText: {
-      description: "Localized, aria label for button when bodyState === loading",
-      table: {
-        defaultValue: "",
-      },
-      control: { type: "text" },
-      type: { category: "Options" },
+      type: "string",
+      description:
+        "Localized aria label for button when `bodyState` is `loading`",
+      control: "text",
     },
     disabled: {
-      description: "",
-      table: {
-        category: "Toggles",
-        defaultValue: {
-          summary: "false",
-        },
-      },
+      type: "boolean",
+      description: "Disabled state",
+      table: { defaultValue: { summary: "false" } },
     },
     variant: {
-      options: ["standard", "destructive", "form"],
-      description:
-        "transforms to a specific variant that styles in conjunction with priority",
-      table: {
-        defaultValue: {
-          summary: "standard",
-        },
-      },
-      type: { category: "Options" },
+      type: "string",
+      options: ["standard (default)", "destructive", "form"],
+      control: "inline-radio",
+      description: "Additional style transformations beyond `priority`.",
     },
     partiallyDisabled: {
+      type: "boolean",
       description: "programmatically disabled, but remains keyboard focusable",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-        category: "Toggles",
-      },
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     transparent: {
-      description:
-        "transparent background color (overrides `priority` setting)",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-        category: "Toggles",
-      },
+      type: "boolean",
+      description: "transparent background color (overrides `priority`).",
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     fixedHeight: {
+      type: "boolean",
       description: "fixes the height based on `size`",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-        category: "Toggles",
-      },
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
     truncate: {
+      type: "boolean",
       description:
         "used in conjunction with `fixedHeight`; truncates text to single line with ellipsis when text overflows",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-        category: "Toggles",
-      },
+      control: "boolean",
+      table: { defaultValue: { summary: "false" } },
     },
-    onClick: {
-      action: "onClick",
-      description: "Triggered on click",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
+    split: {
+      type: "string",
+      options: ["none (default)", "start", "end"],
+      control: "inline-radio",
+      description: "Apply split button styles.",
     },
-    onEscape: {
-      action: "onEscape",
-      description: "Triggered on escape key",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
-    },
-    onFocus: {
-      action: "onFocus",
-      description: "Triggered on focus",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
-    },
-    onBlur: {
-      action: "onBlur",
-      description: "Triggered on blur",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
-    },
-    spread: {
-      control: {
-        type: "object",
-      },
-      description: "Additional attributes being passed to component",
-      table: {
-        category: "Other",
-      },
+    ["<button> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   ButtonTemplate,

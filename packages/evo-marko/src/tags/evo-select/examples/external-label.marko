@@ -1,22 +1,22 @@
 <let/selected = "">
-<const/options = [
+static const options = [
         {
             text: "Select an option",
             value: "",
         },
         {
             text: "option 1",
-            value: "option 1",
+            value: "1",
         },
         {
             text: "option 2",
-            value: "option 2",
+            value: "2",
         },
         {
             text: "option 3",
-            value: "option 3",
+            value: "3",
         },
-]>
+];
 
 <span class="field">
     <label class="field__label field__label--start" for="select">
@@ -28,10 +28,8 @@
         name="formFieldName"
         id="select"
     >
-        <for|option, i| of=options>
-            <@option
-                value=option.value
-            >${option.text}</>
+        <for|option| of=options>
+            <@option value=option.value>${option.text}</>
         </for>
     </evo-select>
 </span>

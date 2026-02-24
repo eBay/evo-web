@@ -9,25 +9,25 @@ export interface Step extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
 export interface Input extends Marko.HTML.Div {
     direction?: "row" | "column";
     step?: Marko.AttrTag<Step>;
-    defaultState?: "complete" | "upcoming" | "attention" | "current";
-    a11yHeadingTag?: keyof Marko.NativeTags;
+    defaultState?: "active" | "complete" | "upcoming" | "attention" | "current";
+    a11yHeadingAs?: keyof Marko.NativeTags;
     /**
      * The clipped text that describes the heading for the progress stepper
      * 
      * English default to be overridden is `"Progress"`
      */
-    a11yHeadingText: Marko.HTMLAttributes["aria-label"];
-    as?: keyof Marko.NativeTags;
+    a11yHeadingText: string;
+    stepContentAs?: keyof Marko.NativeTags;
 }
 <const/{
     content,
     step: steps,
-    direction = "row",
+    direction,
     defaultState,
     class: inputClass,
-    a11yHeadingTag,
+    a11yHeadingAs = "h2",
     a11yHeadingText = "Progress",
-    as: inputAs,
+    stepContentAs = "p",
     ...htmlInput
 }=input>
 
@@ -52,7 +52,7 @@ export interface Input extends Marko.HTML.Div {
     ]
     aria-labelledby=stepperHeading
     ...htmlInput>
-    <${a11yHeadingTag || "h2"} id=stepperHeading class="clipped">
+    <${a11yHeadingAs} id=stepperHeading class="clipped">
         ${a11yHeadingText}
     </>
 
@@ -87,7 +87,7 @@ export interface Input extends Marko.HTML.Div {
                 role="listitem"
                 ...htmlStep>
                 <span class="progress-stepper__icon">
-                    <if=index < current || defaultState === "complete">
+                    <if=(index < current || defaultState === "complete")>
                         <evo-icon-stepper-confirmation-24
                             width="24"
                             height="24"
@@ -119,7 +119,7 @@ export interface Input extends Marko.HTML.Div {
                         <const/{ as: titleEl = "h4", ...titleInput }=title>
                         <${titleEl} ...title/>
                     </if>
-                    <${inputAs || "p"}>
+                    <${stepContentAs}>
                         <${content}/>
                     </>
                 </span>

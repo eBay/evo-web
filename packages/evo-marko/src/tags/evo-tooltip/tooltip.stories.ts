@@ -1,4 +1,6 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
+import Tooltip, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import NoHoverTemplate from "./examples/no-hover.marko";
@@ -7,11 +9,10 @@ import PlacementsTemplate from "./examples/placements.marko";
 import PlacementsTemplateCode from "./examples/placements.marko?raw";
 import IconButtonHostTemplate from "./examples/icon-button-host.marko";
 import IconButtonHostTemplateCode from "./examples/icon-button-host.marko?raw";
-import Component from "./index.marko";
 
 export default {
   title: "notices & tips/evo-tooltip",
-  component: Component,
+  component: Tooltip,
   parameters: {
     docs: {
       description: {
@@ -23,26 +24,14 @@ export default {
 
   argTypes: {
     open: {
+      changeHandler: true,
       type: "boolean",
-      control: { type: "boolean" },
-      description: "Whether the tooltip is open",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
-    },
-    openChange: {
-      description:
-        "Used to hoist `open` value with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
-      table: {
-        defaultValue: {
-          summary: "(open: boolean) => void",
-        },
-      },
+      control: "boolean",
+      description: "Visibility of the tooltip.",
     },
     placement: {
-      control: { type: "select" },
+      type: "string",
+      control: "select",
       options: [
         "top",
         "top-start",
@@ -58,79 +47,78 @@ export default {
         "left-end",
       ],
       description: "Position of the overlay relative to the host element",
-      table: {
-        defaultValue: {
-          summary: "bottom",
-        },
-      },
+      table: { defaultValue: { summary: "bottom" } },
     },
     offset: {
-      control: { type: "number" },
+      type: "number",
+      control: "number",
       description: "Offset distance from the host element in pixels",
-      table: {
-        defaultValue: {
-          summary: "8",
-        },
-      },
+      table: { defaultValue: { summary: "8" } },
     },
     flip: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable automatic flipping when near viewport edge",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     shift: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable automatic shifting when near viewport edge",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     inline: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable inline positioning middleware",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     noHover: {
       type: "boolean",
-      control: { type: "boolean" },
-      description: "Disable hover behavior (focus-only)",
-      table: {
-        defaultValue: {
-          summary: "false",
+      control: "boolean",
+      description: "Disable hover behavior (only focus will open the tooltip)",
+      table: { defaultValue: { summary: "false" } },
+    },
+    host: {
+      type: { name: "object", value: {}, required: true },
+      description: "The host element that triggers the tooltip.",
+      table: { type: { summary: undefined } },
+      "@": {
+        as: {
+          type: "string",
+          control: "text",
+          description:
+            "Override the element that the item is rendered as, instead of `<span>`",
+          table: { defaultValue: { summary: "span" } },
+        },
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
         },
       },
     },
-    host: {
-      name: "@host",
-      description:
-        "The host element that triggers the tooltip. Supports `as` attribute for custom element.",
-      table: {
-        category: "@attribute tags",
+    heading: {
+      description: "Optional heading content, rendered as a styled `<span>`.",
+      "@": {
+        as: {
+          type: "string",
+          control: "text",
+          description:
+            "Override the element that the item is rendered as, instead of `<span>`",
+          table: { defaultValue: { summary: "span" } },
+        },
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
-    heading: {
-      name: "@heading",
+    ["<span> attributes" as any]: {
       description:
-        "Optional heading content. Supports `as` attribute for custom heading element.",
-      table: {
-        category: "@attribute tags",
-      },
+        "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

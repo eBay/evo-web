@@ -1,6 +1,7 @@
 import { tagToString } from "../../common/storybook/storybook-code-source";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import eek, { type Input } from "./index.marko";
+import EEK, { type Input } from "./index.marko";
 import example1 from "./examples/A+++.marko";
 import example2 from "./examples/A++.marko";
 import example3 from "./examples/A+.marko";
@@ -15,7 +16,7 @@ import type { StoryFn } from "@storybook/marko";
 
 export default {
   title: "graphics & icons/evo-eek",
-  component: eek,
+  component: EEK,
   parameters: {
     docs: {
       description: {
@@ -26,35 +27,38 @@ export default {
 
   argTypes: {
     a11yText: {
-      control: { type: "text" },
+      type: { name: "string", required: true },
+      control: "text",
       description:
         "Required: Localized, the aria-label accessibility label for the eek component. This is for internationalization. It should use min, max, and rating in the label in order to demonstrate to screen readers the content on the component. Expected value `Energy efficiency class ${rating}. ${min} - ${max}`",
     },
     rating: {
-      control: { type: "text" },
+      type: "string",
+      control: "text",
       description: "The energy rating",
     },
-
     max: {
-      control: { type: "text" },
+      type: "string",
+      control: "text",
       description: "The maximum range",
     },
     min: {
-      control: { type: "text" },
+      type: "string",
+      control: "text",
       description: "The minimum range",
     },
     size: {
-      options: ["large", "regular"],
-      table: {
-        defaultValue: {
-          summary: "regular",
-        },
-      },
-      type: { category: "Options" },
+      type: "string",
+      options: ["regular (default)", "large"],
+      control: "inline-radio",
       description: "The size of the EEK.",
     },
+    ["<div> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through",
+    },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default: StoryFn<Input> = (args) => ({ input: args });
 Default.args = {

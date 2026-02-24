@@ -1,4 +1,6 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
+import Tourtip, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import WithFooterTemplate from "./examples/with-footer.marko";
@@ -7,11 +9,10 @@ import ControlledTemplate from "./examples/controlled.marko";
 import ControlledTemplateCode from "./examples/controlled.marko?raw";
 import PlacementsTemplate from "./examples/placements.marko";
 import PlacementsTemplateCode from "./examples/placements.marko?raw";
-import Component from "./index.marko";
 
 export default {
   title: "notices & tips/evo-tourtip",
-  component: Component,
+  component: Tourtip,
   parameters: {
     docs: {
       description: {
@@ -23,27 +24,14 @@ export default {
 
   argTypes: {
     open: {
+      changeHandler: true,
       type: "boolean",
-      control: { type: "boolean" },
-      description: "Whether the tourtip is open (defaults to true)",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
-    },
-    openChange: {
-      description:
-        "Used to hoist `open` value with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "(open: boolean) => void",
-        },
-      },
+      control: "boolean",
+      description: "Visibility of the tooltip.",
     },
     placement: {
-      control: { type: "select" },
+      type: "string",
+      control: "select",
       options: [
         "top",
         "top-start",
@@ -59,86 +47,92 @@ export default {
         "left-end",
       ],
       description: "Position of the overlay relative to the host element",
-      table: {
-        defaultValue: {
-          summary: "top",
-        },
-      },
+      table: { defaultValue: { summary: "bottom" } },
     },
     offset: {
-      control: { type: "number" },
+      type: "number",
+      control: "number",
       description: "Offset distance from the host element in pixels",
-      table: {
-        defaultValue: {
-          summary: "6",
-        },
-      },
+      table: { defaultValue: { summary: "6" } },
     },
     flip: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable automatic flipping when near viewport edge",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     shift: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable automatic shifting when near viewport edge",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     inline: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable inline positioning middleware",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     a11yCloseText: {
-      control: { type: "text" },
-      description: "Localized, accessibility label for the close button",
-      table: {
-        defaultValue: {
-          summary: "Dismiss tourtip",
-        },
-      },
+      control: { name: "text", required: true },
+      description: "Localized accessibility label for the close button",
+      table: { defaultValue: { summary: "Dismiss tourtip" } },
     },
     host: {
-      name: "@host",
-      description:
-        "The host element that the tourtip is attached to. Supports `as` attribute for custom element.",
-      table: {
-        category: "@attribute tags",
+      type: { name: "object", value: {}, required: true },
+      description: "The host element that triggers the tooltip.",
+      table: { type: { summary: undefined } },
+      "@": {
+        as: {
+          type: "string",
+          control: "text",
+          description:
+            "Override the element that the item is rendered as, instead of `<span>`",
+          table: { defaultValue: { summary: "span" } },
+        },
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
     heading: {
-      name: "@heading",
-      description:
-        "Optional heading content. Supports `as` attribute for custom heading element.",
-      table: {
-        category: "@attribute tags",
+      description: "Optional heading content, rendered as a styled `<span>`.",
+      "@": {
+        as: {
+          type: "string",
+          control: "text",
+          description:
+            "Override the element that the item is rendered as, instead of `<h2>`",
+          table: { defaultValue: { summary: "h2" } },
+        },
+        ["<h2> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<h2>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements) will be passed through",
+        },
       },
     },
     footer: {
-      name: "@footer",
-      description:
-        "Optional footer content. Supports `index` attribute for pagination display (e.g., '1 of 3').",
-      table: {
-        category: "@attribute tags",
+      description: "Optional footer content, rendered as a styled `<span>`.",
+      "@": {
+        index: {
+          type: "string",
+          control: "text",
+          description: "Text for pagination display`",
+          table: { defaultValue: { summary: "h2" } },
+        },
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
+    ["<span> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+    },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

@@ -1,6 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import component from "./index.marko";
+import ToggleButtonGroup, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import withIconsTemplate from "./examples/icons.marko";
@@ -16,7 +17,7 @@ import columnsCode from "./examples/columns.marko?raw";
 
 export default {
   title: "buttons/evo-toggle-button-group",
-  component,
+  component: ToggleButtonGroup,
   parameters: {
     docs: {
       description: {
@@ -25,74 +26,85 @@ export default {
     },
   },
   argTypes: {
+    button: {
+      description: "Represents a toggle button to be used as part of the group",
+      "@": {
+        name: {
+          type: "string",
+          control: "string",
+          description:
+            "Used instead of `id` to check for equality with `pressed` with more consistency.",
+        },
+        ["<evo-toggle-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-toggle-button>` tag](?path=/docs/buttons-evo-toggle-button--docs) will be passed through to `<@button>`, except `pressed` since it is handled in the parent",
+        },
+      },
+    },
     pressed: {
-      type: "string | number | (string | number)[]",
-      control: { type: "text" },
+      changeHandler: true,
+      control: "text",
       description:
         "Values that are currently selected. Use a string or number for single select, or an array for multiselect",
+      table: { type: { summary: "string | number | (string | number)[]" } },
     },
-    pressedChange: {
-      type: "function",
-      description:
-        "Used to hoist `pressed` value with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
+    required: {
+      type: "boolean",
+      control: "boolean",
+      description: "At least one button must be pressed at all times",
     },
     columnsMin: {
       type: "number",
-      control: { type: "number" },
+      control: "number",
       description:
         "Preferred minimum number of columns for smallest container/screen (1-3). If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
     },
     columnsXS: {
       type: "number",
-      control: { type: "number" },
+      control: "number",
       description:
         "Preferred minimum number of columns within extra small containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
     },
     columnsSM: {
       type: "number",
-      control: { type: "number" },
+      control: "number",
       description:
         "Preferred minimum number of columns within small containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
     },
     columnsMD: {
       type: "number",
-      control: { type: "number" },
+      control: "number",
       description:
         "Preferred minimum number of columns within medium containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
     },
     columnsXL: {
       type: "number",
-      control: { type: "number" },
+      control: "number",
       description:
         "Preferred minimum number of columns within extra large containers. If this is not set will do an automatic layout. It is recommended to not set this unless needed.",
     },
     a11yText: {
       type: "string",
+      control: "text",
       description:
         "Localized, accessibility text for the group. Cannot be used together with `a11yLabelId`",
     },
     a11yLabelId: {
       type: "string",
+      control: "text",
       description:
         "Id of the element that labels the group. Required for a11y compliance. Cannot be used together with `a11yText`",
     },
     layoutType: {
       type: "string",
-      control: { type: "select" },
+      control: "inline-radio",
       options: ["minimal", "list", "gallery"],
       description:
-        'Enforced layout type of all buttons. May be `"minimal"` (default), `"list"`, or `"gallery"`. Gallery layout may only be used when there is also an icon or an image, and minimal layout may **not** be used when there is an icon or an image',
-    },
-    button: {
-      name: "@button",
-      description:
-        "Represents an `<evo-toggle-button/>` to be used as part of the group",
-      table: {
-        category: "@attribute tags",
-      },
+        "Enforced layout type of all buttons. Gallery layout may only be used when there is also an icon or an image, and minimal layout may **not** be used when there is an icon or an image",
+      table: { defaultValue: { summary: "undefined" } },
     },
   },
-};
+} satisfies Meta<Input<any>>;
 
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 

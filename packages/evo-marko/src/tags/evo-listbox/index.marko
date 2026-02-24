@@ -4,16 +4,20 @@ export interface Option extends Marko.HTML.Div {
     description?: Marko.AttrTag<Marko.HTML.Span>;
     icon?: Marko.AttrTag<{ content?: Marko.Body }>;
 }
-export interface Input<Index extends number | string | undefined>
+export interface Input<Index extends number | string>
     extends Marko.HTML.Div {
     selected?: Index;
     selectedChange?: (selected: Index) => void;
     listSelection?: "auto" | "manual";
     typeaheadTimeoutLength?: number;
-    a11ySelectedText?: string;
+    /**
+     * The clipped text for screen readers when an option is selected
+     * 
+     * English default to be overridden is `"selected"`
+     **/
+    a11ySelectedText: string;
     option?: Marko.AttrTag<Option>;
     name?: string;
-    disabled?: boolean;
 }
 
 <const/{
@@ -21,7 +25,6 @@ export interface Input<Index extends number | string | undefined>
     selected: selectedIndex,
     selectedChange,
     class: inputClass,
-    disabled,
     listSelection,
     option: options,
     tabindex = 0,

@@ -1,4 +1,5 @@
 import Readme from "./README.md";
+import { type Meta } from "@storybook/marko";
 import Component, { type Input } from "./index.marko";
 import StaticTemplate from "./examples/static.marko";
 import StaticTemplateCode from "./examples/static.marko?raw";
@@ -21,43 +22,46 @@ export default {
 
   argTypes: {
     item: {
-      name: "@item",
       description: "Item to render in the list",
-      table: {
-        category: "@attribute tags",
+      "@": {
+        as: {
+          type: "string",
+          control: "text",
+          description:
+            "Override the element that the item is rendered as, instead of `<div>`",
+          table: { defaultValue: { summary: "div" } },
+        },
+        separator: {
+          type: "boolean",
+          control: { type: "boolean" },
+          description: "Render a separator instead of a regular list item",
+        },
+        leading: {
+          description: "Optional leading content, rendered as a `<div>`",
+          "@": {
+            ["<div> attributes" as any]: {
+              description:
+                "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@leading>`",
+            },
+          },
+        },
+        trailing: {
+          description: "Optional trailing content, rendered as a `<div>`",
+          "@": {
+            ["<div> attributes" as any]: {
+              description:
+                "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@trailing>`",
+            },
+          },
+        },
       },
     },
-    as: {
-      name: "as",
-      description: "Element to render the item as",
-      table: {
-        category: "@item attributes",
-      },
-    },
-    leading: {
-      name: "@leading",
-      description: "Leading content to render in the list item",
-      table: {
-        category: "@item attributes",
-      },
-    },
-
-    trailing: {
-      name: "@trailing",
-      description: "Trailing content to render in the list item",
-      table: {
-        category: "@item attributes",
-      },
-    },
-    separator: {
-      name: "separator",
-      description: "If true, will render the current item as a separator",
-      table: {
-        category: "@item attributes",
-      },
+    ["<div> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Static: StoryFn<Input> = (args) => ({
   input: args,

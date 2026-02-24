@@ -1,12 +1,12 @@
 export interface Input extends Marko.HTML.Div {
   /**
-   *  This is the accessibility label for the eek rating. This is also used for internationalization.
+   *  The accessibility label for the eek rating.
    *  It should use eekRating, min, and max values in the label in order to demonstrate
    *  to screen readers the content on the component.
    *
    *  Expected english value is `"Energy Rating: ${eekRating}. Range: ${max} - ${min}."`
    */
-  a11yText: Marko.HTML.Div["aria-label"];
+  a11yText: string;
   max: string;
   min: string;
   rating: string;

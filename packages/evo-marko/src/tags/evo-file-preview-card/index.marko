@@ -1,3 +1,5 @@
+import { type Input as IconButtonInput } from "<evo-icon-button>"
+
 export interface FilePreviewCardEvent {
     file: File;
     menuAction: FilePreviewCardMenuAction;
@@ -21,11 +23,11 @@ export interface Input extends Marko.HTML.Div {
     status?: "uploading";
     href?: string;
     infoText?: string;
-    deleteAction?: Marko.AttrTag<Marko.HTML.Button>;
+    deleteAction?: Marko.AttrTag<IconButtonInput>;
     menuActions?: FilePreviewCardMenuAction[];
-    action?: Marko.AttrTag<Marko.HTML.Button>;
-    seeMoreAction?: Marko.AttrTag<Marko.HTML.Button>;
-    cancelAction?: Marko.AttrTag<Marko.HTML.Button>;
+    action?: Marko.AttrTag<IconButtonInput>;
+    seeMoreAction?: Marko.AttrTag<IconButtonInput>;
+    cancelAction?: Marko.AttrTag<IconButtonInput>;
     footerTitle?: string;
     footerSubtitle?: string;
 }
@@ -93,7 +95,7 @@ export interface Input extends Marko.HTML.Div {
                 aria-label=null/>
         </if>
         <else>
-            <if=status === "uploading">
+            <if=status === "uploading" && cancelAction>
                 <evo-icon-button
                     ...cancelAction
                     class=["file-preview-card__action", cancelAction?.class]>

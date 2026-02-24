@@ -9,13 +9,13 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
      * 
      * English default to be overridden is `"Delete"`
      */
-    a11yDeleteText: Marko.HTMLAttributes["aria-label"];
+    a11yDeleteText?: string;
     onIncrement?: (event: Event, target: HTMLElement, value:number) => void;
     onDecrement?: (event: Event, target:HTMLElement, value:number) => void;
     onDelete?: (event: Event, target:HTMLElement) => void;
 } & (
-    | { label: Marko.AttrTag<{ content: Marko.Body }>; a11yText?: never }
-    | { a11yText: Marko.HTMLAttributes["aria-label"]; label?: never; }
+    | { label: Marko.AttrTag<Marko.HTML.Label>; a11yText?: never }
+    | { a11yText: string; label?: never; }
 );
 
 <const/defaultMin=(input.a11yDeleteText ? 1 : 0)>
@@ -23,7 +23,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
 <const/{
     label,
     a11yText,
-    a11yDeleteText = "Delete",
+    a11yDeleteText,
     class: inputClass,
     min = defaultMin,
     max = Infinity,
@@ -69,12 +69,11 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
         }>
         <@prefixIcon>
             <if=label>
-                <label for=numberInput>
-                    <${label}/>
-                </label>
+                <label ...label for=numberInput/>
             </if>
             <evo-icon-button
                 aria-hidden="true"
+                a11yText=""
                 disabled=(displayValue <= min)
                 size="small"
                 class="number-input__decrement"
@@ -88,19 +87,22 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
             </evo-icon-button>
         </@prefixIcon>
         <@postfixIcon>
-            <evo-icon-button
-                class="number-input__delete"
-                size="small"
-                transparent
-                aria-label=a11yDeleteText
-                onClick(event, target) {
-                    (onDelete || null)?.(event, target);
-                }>
-                <evo-icon-delete-24/>
-            </evo-icon-button>
+            <if=a11yDeleteText>
+                <evo-icon-button
+                    class="number-input__delete"
+                    size="small"
+                    transparent
+                    a11yText=a11yDeleteText
+                    onClick(event, target) {
+                        (onDelete || null)?.(event, target);
+                    }>
+                    <evo-icon-delete-24/>
+                </evo-icon-button>
+            </if>
 
             <evo-icon-button
                 aria-hidden="true"
+                a11yText=""
                 disabled=(displayValue >= max)
                 class="number-input__increment"
                 size="small"

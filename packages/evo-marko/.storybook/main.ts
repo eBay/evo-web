@@ -1,4 +1,5 @@
 import fsp from "node:fs/promises";
+import type { StorybookConfig } from "@storybook/marko-vite";
 
 const markdownMatch = /\.md$/;
 const rawMarkdown = {
@@ -16,19 +17,9 @@ const rawMarkdown = {
 export default {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.ts"],
   framework: "@storybook/marko-vite",
-  addons: ["@storybook/addon-a11y"],
-  parameters: {
-    docs: {
-      description: {
-        component: "Another description, overriding the comments",
-      },
-    },
-  },
+  addons: ["@storybook/addon-docs", "@storybook/addon-a11y"],
   staticDirs: ["./static"],
-  docs: {
-    autodocs: true,
-    defaultName: "Documentation",
-  },
+  docs: { defaultName: "Docs" },
   core: {
     disableTelemetry: true,
     disableWhatsNewNotifications: true,
@@ -45,4 +36,4 @@ export default {
       },
     });
   },
-};
+} satisfies StorybookConfig;

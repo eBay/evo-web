@@ -1,6 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import Component, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 
@@ -16,29 +17,8 @@ export default {
   },
   argTypes: {
     src: {
-      control: { type: "text" },
+      control: "text",
       description: "The asset to load",
-    },
-    a11yText: {
-      control: { type: "text" },
-      table: {
-        category: "Accessibility",
-        defaultValue: {
-          summary: "",
-        },
-      },
-      description:
-        "Localized, the text for screen readers to read out when interacting with the 3d player.",
-    },
-    a11yStartText: {
-      control: { type: "text" },
-      table: {
-        category: "Accessibility",
-        defaultValue: {
-          summary: "Click to start",
-        },
-      },
-      description: "Localized, text for start icon to load viewer",
     },
     a11yLoadingText: {
       control: { type: "text" },
@@ -48,91 +28,20 @@ export default {
           summary: "Loading",
         },
       },
-      description: "Localized, text for loading icon loading viewer",
+      description: "Localized text for loading icon loading viewer",
     },
     errorText: {
-      control: { type: "text" },
-      table: {
-        category: "Accessibility",
-        defaultValue: {
-          summary: "An error has occurred",
-        },
-      },
-      description: "Text to show error message",
+      control: "text",
+      description: "Localized text to show error message",
     },
-    onAction: {
-      action: "onAction",
-      description: "Triggered when interacting with player",
+    onLoadError: {
+      description: "Triggered when there is an error during loading",
       table: {
         category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
-      },
-    },
-    onProgress: {
-      action: "onProgress",
-      description: "Triggered ",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
-      },
-    },
-    onLoad: {
-      action: "onLoad",
-      description: "Triggered when loading is complete",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
-      },
-    },
-    "onLoad-error": {
-      action: "onLoad-error",
-      description: "Triggered when loading error happens",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
-      },
-    },
-    "onModel-visibility": {
-      action: "onModel-visibility",
-      description: "Triggered when model is visible",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
-      },
-    },
-    "onRender-scale": {
-      action: "onRender-scale",
-      description: "Triggered when model scales",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
-      },
-    },
-    "onPoster-dismissed": {
-      action: "onPoster-dismissed",
-      description:
-        "Triggered when there's a placeholder image and it is removed",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
-        },
       },
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

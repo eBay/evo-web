@@ -1,5 +1,5 @@
 export interface Input {
-    id?: string | undefined
+    id?: Marko.HTMLAttributes["id"]
     inputSize?: "regular" | "large";
     fluid?: boolean;
     opaqueLabel?: boolean;
@@ -8,7 +8,6 @@ export interface Input {
     invalid?: boolean;
     value?: unknown;
     disabled?: Marko.HTML.Input["disabled"];
-    a11yButtonLabel?: Marko.HTMLAttributes["aria-label"];
     autocorrect?: Marko.HTML.TextArea["autocorrect"];
     cols?: Marko.HTML.TextArea["cols"];
     rows?: Marko.HTML.TextArea["rows"];
@@ -28,7 +27,7 @@ export interface Input {
     content,
 }=input>
 
-<id/textboxId = id>
+<id/textboxId=id>
 <const/defaultTag=(fluid ? "div" : "span")>
 <const/floatingInline=!(value || focused)>
 

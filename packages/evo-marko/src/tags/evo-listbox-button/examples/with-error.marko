@@ -2,10 +2,11 @@
 <let/selected="2">
 <span class="field">
     <evo-listbox-button
+        a11ySelectedText="selected" 
         name="formFieldName"
         hasError
         selected:=selected
-        aria-describedby=description>
+        buttonDescribedBy=description>
         <@option value="1">
             Option 1
         </@option>

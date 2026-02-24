@@ -1,34 +1,13 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
-import Component from "./index.marko";
+import { type Meta } from "@storybook/marko";
+import Skeleton from "./index.marko";
 import Readme from "./README.md";
-import DefaultTemplate from "./examples/default.marko";
-import DefaultTemplateCode from "./examples/default.marko?raw";
-import avatarTemplate from "./examples/avatar.marko";
-import avatarCode from "./examples/avatar.marko?raw";
-import buttonTemplate from "./examples/button.marko";
-import buttonCode from "./examples/button.marko?raw";
-import buttonSmallTemplate from "./examples/button-small.marko";
-import buttonSmallCode from "./examples/button-small.marko?raw";
-import textTemplate from "./examples/text.marko";
-import textCode from "./examples/text.marko?raw";
-import textMultilineTemplate from "./examples/text-multiline.marko";
-import textMultilineCode from "./examples/text-multiline.marko?raw";
-import textboxTemplate from "./examples/textbox.marko";
-import textboxCode from "./examples/textbox.marko?raw";
-import imageTemplate from "./examples/image.marko";
-import imageCode from "./examples/image.marko?raw";
-import tileTemplate from "./examples/tile.marko";
-import tileCode from "./examples/tile.marko?raw";
-import withContentTemplate from "./examples/withContent.marko";
-import withContentCode from "./examples/withContent.marko?raw";
-import compositeTemplate from "./examples/composite.marko";
-import compositeCode from "./examples/composite.marko?raw";
-import groupedTileTemplate from "./examples/grouped-tile.marko";
-import groupedTileCode from "./examples/grouped-tile.marko?raw";
+import AllTemplate from "./examples/all.marko";
+import AllCode from "./examples/all.marko?raw";
 
 export default {
   title: "building blocks/evo-skeleton",
-  component: Component,
+  component: Skeleton,
   parameters: {
     docs: {
       description: {
@@ -38,20 +17,16 @@ export default {
   },
 
   argTypes: {
-    content: {},
     a11yText: {
-      control: { type: "text" },
+      type: { name: "string", required: true },
+      control: "text",
       description:
-        "Localized, the accessibility text for the component. By default, Loading is used.",
-      table: {
-        defaultValue: {
-          summary: "Loading",
-        },
-      },
+        'Localized accessibility text for the component. English default to be overridden is "Loading..."',
     },
     size: {
-      control: { type: "select" },
-      options: ["small", "large"],
+      type: "string",
+      options: ["default", "small", "large"],
+      control: "inline-radio",
       table: {
         defaultValue: {
           summary: "default",
@@ -61,55 +36,16 @@ export default {
         "The Size of the component to render. Applicable for `evo-skeleton-button` and `evo-skeleton-text` only",
     },
     multiline: {
-      control: { type: "boolean" },
-      table: {
-        defaultValue: {
-          summary: false,
-        },
-      },
+      type: "boolean",
+      control: "boolean",
       description:
         "Boolean flag to make `evo-skeleton-text` render more than one line",
     },
+    ["<div> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through",
+    },
   },
-};
+} satisfies Meta;
 
-export const Default = buildExtensionTemplate(
-  DefaultTemplate,
-  DefaultTemplateCode,
-);
-export const Avatar = buildExtensionTemplate(avatarTemplate, avatarCode);
-
-export const Button = buildExtensionTemplate(buttonTemplate, buttonCode);
-
-export const ButtonSmall = buildExtensionTemplate(
-  buttonSmallTemplate,
-  buttonSmallCode,
-);
-
-export const Text = buildExtensionTemplate(textTemplate, textCode);
-
-export const TextMultiLine = buildExtensionTemplate(
-  textMultilineTemplate,
-  textMultilineCode,
-);
-
-export const TextBox = buildExtensionTemplate(textboxTemplate, textboxCode);
-
-export const Image = buildExtensionTemplate(imageTemplate, imageCode);
-
-export const Tile = buildExtensionTemplate(tileTemplate, tileCode);
-
-export const composite = buildExtensionTemplate(
-  compositeTemplate,
-  compositeCode,
-);
-
-export const withContent = buildExtensionTemplate(
-  withContentTemplate,
-  withContentCode,
-);
-
-export const GroupedTile = buildExtensionTemplate(
-  groupedTileTemplate,
-  groupedTileCode,
-);
+export const Default = buildExtensionTemplate(AllTemplate, AllCode);

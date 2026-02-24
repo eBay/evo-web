@@ -1,22 +1,29 @@
-export interface Input extends Marko.HTML.Span {
+export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
     type?: "menu" | "icon";
     number?: number | string;
+    /**
+     * The `aria-label` of the badge
+     *
+     * English default to be overridden is `"n unread items"`
+     */
+    a11yText: string;
 }
 <const/{
     class: inputClass,
     type,
     number,
+    a11yText = `${number} unread items`,
     ...htmlInput
-}=input/>
+}=input>
 
-<const/roundedNumber=Math.round(number as number)/>
+<const/roundedNumber=Math.round(number as number)>
 
 <if=(roundedNumber > 0)>
     <span
         ...htmlInput
+        aria-label=a11yText
         role=type !== "menu" && type !== "icon" && "img"
-        class=["badge", inputClass]
-    >
+        class=["badge", inputClass]>
         ${roundedNumber > 99 ? "99+" : roundedNumber}
     </span>
 </if>

@@ -1,0 +1,66 @@
+export interface Input {
+  a11yText: string;
+  size?: "small" | "large";
+  multiline: boolean;
+}
+
+<const/{ a11yText, size, multiline }=input>
+
+<div class=(styles as any).grid>
+  <div>
+    <evo-skeleton a11yText="Loading...">
+      <evo-skeleton-avatar/>
+    </evo-skeleton>
+    <code>&lt;evo-skeleton-avatar&gt;</code>
+  </div>
+  <div>
+    <evo-skeleton a11yText="Loading...">
+      <evo-skeleton-button size=size/>
+    </evo-skeleton>
+    <code>&lt;evo-skeleton-button&gt;</code>
+  </div>
+  <div>
+    <evo-skeleton a11yText="Loading...">
+      <evo-skeleton-image/>
+    </evo-skeleton>
+    <code>&lt;evo-skeleton-image&gt;</code>
+  </div>
+  <div>
+    <evo-skeleton a11yText="Loading...">
+      <evo-skeleton-text size=size multiline=multiline/>
+    </evo-skeleton>
+    <code>&lt;evo-skeleton-text&gt;</code>
+  </div>
+  <div>
+    <evo-skeleton a11yText="Loading...">
+      <evo-skeleton-textbox/>
+    </evo-skeleton>
+    <code>&lt;evo-skeleton-textbox&gt;</code>
+  </div>
+</div>
+
+<style/styles>
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+
+    & > div {
+      width: 15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 1px solid var(--color-border-strong);
+      padding: 1rem;
+
+
+      & > :first-child {
+        height: 10rem;
+      }
+      & > code {
+        text-align: center;
+      }
+    }
+  }
+</style>

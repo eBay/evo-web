@@ -1,4 +1,6 @@
 import Readme from "./README.md";
+import { type Meta } from "@storybook/marko";
+import FileInput, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import WithPreviewCardsTemplate from "./examples/with-preview-cards.marko";
@@ -6,11 +8,10 @@ import WithPreviewCardsCode from "./examples/with-preview-cards.marko?raw";
 import WithMockUploadsTemplate from "./examples/with-mock-uploads.marko";
 import WithMockUploadsCode from "./examples/with-mock-uploads.marko?raw";
 import type { StoryFn } from "@storybook/marko";
-import component, { type Input } from "./index.marko";
 
 export default {
   title: "form input/evo-file-input",
-  component,
+  component: FileInput,
   parameters: {
     docs: {
       description: {
@@ -21,23 +22,39 @@ export default {
   argTypes: {
     multiple: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Whether multiple files can be uploaded",
     },
     subheader: {
-      name: "@subheader",
-      table: {
-        category: "@attribute tags",
+      description: "an optional subheading",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
     header: {
-      name: "@header",
-      table: {
-        category: "@attribute tags",
+      description: "The header text",
+      "@": {
+        as: {
+          type: "string",
+          options: ["h1", "h2", "h3", "h4", "h5", "h6", "span"],
+          control: "select",
+          description: "Overrides the tag used for the header text",
+        },
+        ["<h3> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native `<h3>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements) will be passed through to `<@title>`.",
+        },
       },
     },
+    ["<input> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) will be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
+    },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default: StoryFn<Input> = (args) => ({
   input: args,

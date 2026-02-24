@@ -8,7 +8,7 @@ export interface Input extends Partial<ModelViewerElement> {
      * 
      * English default to be overridden is `"loading"`
      **/
-    a11yLoadingText: Marko.HTMLAttributes["aria-label"];
+    a11yLoadingText: string;
     onLoadError?: (err: CustomEvent) => void;
 }
 <const/{

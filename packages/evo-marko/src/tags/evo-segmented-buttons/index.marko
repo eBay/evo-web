@@ -1,7 +1,6 @@
 static const validSizes = ["large"] as const;
 export interface SegmentedButton extends Omit<Marko.HTML.Button, 'name'> {
     name?: string;
-    selected?: boolean;
     icon?: Marko.AttrTag<{ content: Marko.Body }>;
 }
 export interface Input<Selected extends string | number> extends Marko.HTML.Div {

@@ -2,13 +2,13 @@ static interface IconDefs {
     server: string;
     browser: any;
 }
-export interface Input extends Marko.Input<"svg"> {
+export interface Input extends Marko.SVG.SVG {
     _symbol: string;
     _name: string;
     _size?: string;
     _type?: string;
     _def?: () => IconDefs;
-    a11yText?: Marko.HTMLAttributes["aria-label"];
+    a11yText?: string;
 }
 
 <const/{

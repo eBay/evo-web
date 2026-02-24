@@ -1,10 +1,13 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import Readme from "./README.md";
+import { type Meta } from "@storybook/marko";
+import Badge, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 
 export default {
   title: "graphics & icons/evo-badge",
+  component: Badge,
   parameters: {
     docs: {
       description: {
@@ -16,20 +19,32 @@ export default {
   argTypes: {
     number: {
       type: "number",
+      control: "number",
       description: "Used as the number to be placed in the badge",
     },
-    "aria-label": {
+    type: {
+      type: "string",
+      options: ["menu", "icon"],
+      control: "inline-radio",
+      description: "The badge type",
+    },
+    a11yText: {
+      type: "string",
+      control: "text",
       description:
         'A descriptive label of what the badge represents (e.g. "5 unread items")',
     },
+    ["<span> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through, except `role`.",
+    },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
   {
     number: 5,
-    "aria-label": "5 unread items",
   },
 );

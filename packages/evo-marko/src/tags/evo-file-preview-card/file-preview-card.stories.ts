@@ -1,5 +1,6 @@
 import Readme from "./README.md";
-import component from "./index.marko";
+import { type Meta } from "@storybook/marko";
+import FilePreviewCard, { type Input } from "./index.marko";
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
@@ -8,7 +9,7 @@ import SeeMoreTemplateCode from "./examples/seeMore.marko?raw";
 
 export default {
   title: "media/evo-file-preview-card",
-  component,
+  component: FilePreviewCard,
   parameters: {
     docs: {
       description: {
@@ -17,109 +18,96 @@ export default {
     },
   },
   argTypes: {
-    cancelUpload: {
+    as: {
       type: "string",
-      name: "@cancelUpload",
-      control: { type: "object" },
-      description:
-        "Attribute tag for canceling upload. This requires an aria-label and an onClick event which will attach to the icon-button for canceling upload",
-      table: {
-        category: "@attribute tag",
-      },
-    },
-    deleteAction: {
-      type: "string",
-      name: "@deleteAction",
-      control: { type: "object" },
-      description:
-        "Attribute tag for delete. This requires an aria-label and an onClick event which will attach to the icon-button. If not present a delete button won't render.",
+      control: "text",
+      description: "Override the tag used to wrap this component",
     },
     file: {
-      type: "object",
+      type: { name: "object", value: {} },
+      control: { type: "file" },
       description:
         "File object, can be raw platform `File` or an object containing `name`, `type`, and a `src` for the preview",
-      table: {
-        category: "File",
-      },
+      table: { type: { summary: "file" } },
     },
     status: {
       type: "string",
-      control: {
-        type: "select",
-        options: ["uploading"],
-      },
+      options: ["undefined (default)", "uploading"],
+      control: "inline-radio",
       description: 'Status of the file, can be `"uploading"` or `undefined`',
     },
-    labelText: {
+    href: {
       type: "string",
-      control: { type: "text" },
-      description: "Text to display in the label",
+      control: "text",
+      description: "If present, wrap the card in an `<a>` tag",
     },
-    menuActions: {
-      type: "array",
-      description: "Array of menu actions, containing `event` and `label`",
-      table: {
-        category: "Menu Actions",
+    infoText: {
+      type: "string",
+      control: "text",
+      description:
+        "File information. If not present, this will default to the file extension",
+    },
+    deleteAction: {
+      description:
+        "The delete button. Requires `a11yText` and `onClick` attributes which will attach to the icon-button.",
+      "@": {
+        ["<evo-icon-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-icon-button>` tag](?path=/docs/buttons-evo-icon-button--docs) will be passed through to `<@deleteAction>`",
+        },
       },
     },
-    seeMore: {
-      type: "number",
-      control: { type: "number" },
+    menuActions: {
+      control: "object",
+      description: "Array of menu actions, containing `event` and `label`",
+      table: { type: { summary: "{ event: string, label: string }[]" } },
+    },
+    action: {
       description:
-        'Passing a number here will convert the card to a "see more" card',
+        "Additional action. Requires `a11yText` and `onClick` attributes, and an icon in `content`",
+      "@": {
+        ["<evo-icon-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-icon-button>` tag](?path=/docs/buttons-evo-icon-button--docs) will be passed through to `<@action>`",
+        },
+      },
+    },
+    seeMoreAction: {
+      description:
+        'The "see more" button. Requires `a11yText` and `onClick` attributes which will attach to the icon-button.',
+      "@": {
+        ["<evo-icon-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-icon-button>` tag](?path=/docs/buttons-evo-icon-button--docs) will be passed through to `<@seeMoreAction>`",
+        },
+      },
+    },
+    cancelAction: {
+      description:
+        'The "cancel upload" button. Requires `a11yText` and `onClick` attributes which will attach to the icon-button.',
+      "@": {
+        ["<evo-icon-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-icon-button>` tag](?path=/docs/buttons-evo-icon-button--docs) will be passed through to `<@cancelAction>`",
+        },
+      },
     },
     footerTitle: {
       type: "string",
-      control: { type: "text" },
+      control: "text",
       description: "Title to display beneath the file, usually the filename",
     },
     footerSubtitle: {
       type: "string",
-      control: { type: "text" },
+      control: "text",
       description: "Subtitle to display beneath the file title",
     },
-    "onMenu-action": {
-      action: "onMenuAction",
-      description: "Triggered when an action is selected from the menu. ",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "name, event /* from evo-menu-button */",
-        },
-      },
-    },
-    "onSee-more": {
-      action: "onSeeMore",
-      description: "Triggered when the see more button is clicked",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
-    },
-    onDelete: {
-      action: "onDelete",
-      description: "Triggered when the delete button is clicked",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
-    },
-    onCancel: {
-      action: "onCancel",
-      description: "Triggered when the cancel button is clicked",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
+    ["<div> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Uploading = buildExtensionTemplate(
   DefaultTemplate,

@@ -1,6 +1,5 @@
-<let/selected="5">
-<evo-listbox name="formFieldName" selected:=selected>
+<evo-listbox a11ySelectedText="selected" ...input>
     <for|i| from=1 to=20>
-        <@option value=i> ${`Option ${i}`}</>
+        <@option value=i>Option ${i}</>
     </for>
 </evo-listbox>

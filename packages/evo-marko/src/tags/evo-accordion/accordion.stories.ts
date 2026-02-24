@@ -1,14 +1,13 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
-import Accordion from "./index.marko";
+import { type Meta } from "@storybook/marko";
+import Accordion, { type Input } from "./index.marko";
 import Readme from "./README.md";
-import defaultTemplate from "./examples/default.marko";
-import defaultTemplateCode from "./examples/default.marko?raw";
-import openTemplate from "./examples/opened.marko";
-import openTemplateCode from "./examples/opened.marko?raw";
-import largeTemplate from "./examples/large.marko";
-import largeTemplateCode from "./examples/large.marko?raw";
-import multiSelectTemplate from "./examples/multiSelect.marko";
-import multiSelectTemplateCode from "./examples/multiSelect.marko?raw";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultCode from "./examples/default.marko?raw";
+import ControlledTemplate from "./examples/controlled.marko";
+import ControlledCode from "./examples/controlled.marko?raw";
+import ControlledAdvancedTemplate from "./examples/controlled-advanced.marko";
+import ControlledAdvancedCode from "./examples/controlled-advanced.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-accordion",
@@ -20,23 +19,20 @@ export default {
       },
     },
   },
-
   argTypes: {
     size: {
-      type: "options",
-      description: "Size of the details",
-      table: {
-        defaultValue: {
-          summary: "regular",
-        },
-      },
-      options: ["regular", "large"],
-    },
-    a11yRoleDescription: {
       type: "string",
-      control: { type: "text" },
+      options: ["regular (default)", "large"],
+      control: {
+        type: "inline-radio",
+      },
+      description: "Size of the details",
+    },
+    a11yText: {
+      type: "string",
+      control: "text",
       description:
-        "Localized, the role description to announce the component role for a11y users.",
+        "Localized role description to announce the component role for a11y users.",
       table: {
         defaultValue: {
           summary: "accordion",
@@ -44,46 +40,37 @@ export default {
       },
     },
     details: {
-      name: "@details",
       description:
-        "Represents an <ebay-details/> element to be used as part of the group. Allowed attributes are `open`, `as`, `text` and `renderBody`",
-      table: {
-        category: "@attribute tags",
-      },
-    },
-    onToggle: {
-      action: "on-toggle",
-      description: "Triggered on toggle of details to control auto-collapse",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent, open }",
+        "Represents an [`<evo-details>` tag](?path=/story/navigation-disclosure-evo-details--default) to be used as part of the group.",
+      "@": {
+        ["<evo-details> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-details>` tag](?path=/story/navigation-disclosure-evo-details--docs) will be passed through to `<@details>`, except `open`",
         },
       },
     },
-    onClick: {
-      action: "on-click",
-      description: "Triggered on click of details",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
+    open: {
+      changeHandler: true,
+      control: "number",
+      description:
+        "The index or indices of the open items. Pass a number if only one may be open at a time, or an array for multiple",
+      table: { type: { summary: "number | number[]" } },
+    },
+    ["<ul> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<ul>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul) will be passed through",
     },
   },
-};
+} satisfies Meta<Input<any>>;
 
-export const Default = buildExtensionTemplate(
-  defaultTemplate,
-  defaultTemplateCode,
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
+
+export const Controlled = buildExtensionTemplate(
+  ControlledTemplate,
+  ControlledCode,
 );
 
-export const Open = buildExtensionTemplate(openTemplate, openTemplateCode);
-
-export const Large = buildExtensionTemplate(largeTemplate, largeTemplateCode);
-
-export const MultiSelect = buildExtensionTemplate(
-  multiSelectTemplate,
-  multiSelectTemplateCode,
+export const ControlledAdvanced = buildExtensionTemplate(
+  ControlledAdvancedTemplate,
+  ControlledAdvancedCode,
 );

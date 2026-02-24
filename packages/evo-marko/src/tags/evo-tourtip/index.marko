@@ -13,7 +13,7 @@ export interface Input extends Marko.HTML.Span {
         }
     >;
     heading?: Marko.AttrTag<
-        Marko.HTML.Span & {
+        Marko.HTML.H2 & {
             as?: Marko.Renderable;
         }
     >;
@@ -35,7 +35,7 @@ export interface Input extends Marko.HTML.Span {
     open: inputOpen = true,
     openChange,
     placement = "top" as const,
-    offset: inputOffset,
+    offset = 6,
     flip,
     shift = false,
     inline,
@@ -58,7 +58,7 @@ export interface Input extends Marko.HTML.Span {
 <evo-expander/expander
     open=open
     placement=placement
-    offset=(inputOffset ?? 6)
+    offset=offset
     flip=flip
     shift=shift
     inline=inline
@@ -85,12 +85,12 @@ export interface Input extends Marko.HTML.Span {
                 <span class="tourtip__content">
                     <if=heading>
                         <const/{
-                            as: headingAs,
+                            as: headingAs = "h2",
                             class: headingClass,
                             content: headingContent,
                             ...headingInput
                         }=heading>
-                        <${headingAs ?? "h2"}
+                        <${headingAs}
                             ...headingInput
                             class=["tourtip__heading", headingClass]
                             id=headingId>

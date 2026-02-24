@@ -1,17 +1,17 @@
 import Readme from "./README.md";
-import Component from "./index.marko";
-import type { StoryFn } from "@storybook/marko";
-import type { Input } from "./index.marko";
-import defaultTemplate from "./examples/default.marko";
-import defaultTemplateCode from "./examples/default.marko?raw";
-import withDeleteTemplate from "./examples/with-delete.marko";
-import withDeleteTemplateCode from "./examples/with-delete.marko?raw";
-import withLabelTemplate from "./examples/with-label.marko";
-import withLabelTemplateCode from "./examples/with-label.marko?raw";
+import { type Meta } from "@storybook/marko";
+import NumberInput, { type Input } from "./index.marko";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultCode from "./examples/default.marko?raw";
+import ControlledTemplate from "./examples/controlled.marko";
+import ControlledCode from "./examples/controlled.marko?raw";
+import WithLabelTemplate from "./examples/with-label.marko";
+import WithLabelCode from "./examples/with-label.marko?raw";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 
 export default {
   title: "form input/evo-number-input",
-  component: Component,
+  component: NumberInput,
   parameters: {
     docs: {
       description: {
@@ -21,116 +21,68 @@ export default {
   },
 
   argTypes: {
-    fluid: {
-      type: "boolean",
-      control: { type: "boolean" },
+    value: {
+      changeHandler: true,
+      type: "number",
+      control: "number",
+      description: "The value of the input.",
     },
-    inputSize: {
-      options: ["regular", "large"],
-      type: { category: "Options" },
-      description:
-        'either "regular" or "large". If large, then renders larger sized textbox',
-      table: {
-        defaultValue: {
-          summary: "regular",
-        },
-      },
+    min: {
+      type: "number",
+      control: "number",
+      description: "The minimum value.",
     },
-    multiline: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "renders a multi-line texbox if true",
+    max: {
+      type: "number",
+      control: "number",
+      description: "The maximum value.",
     },
-    invalid: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "indicates a field-level error with red border if true",
-    },
-    "aria-label": {
+    a11yDeleteText: {
       type: "string",
-      control: { type: "Options" },
+      control: "text",
       description:
-        "Either this or @label is required. Renders text for screen readers",
+        "The accessibility text for the delete button. Required for a delete button to render",
+    },
+    a11yText: {
+      type: "string",
+      control: "text",
+      description:
+        "Either this or `<@label>` is required. Renders text for screen readers",
     },
     label: {
       description:
-        "Either this or aria-label is required. Renders label inside input if set",
-      control: { type: "text" },
-      table: {
-        category: "@attribute tag",
-        defaultValue: {
-          summary: "",
+        "Either this or `a11yText` is required. Renders label inside input if set",
+      "@": {
+        ["<label> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<label>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label) will be passed through",
         },
       },
     },
     onIncrement: {
       action: "onIncrement",
       description: "Triggered when increment button is clicked",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
+      table: { category: "Events" },
     },
     onDecrement: {
       action: "onDecrement",
       description: "Triggered when decrement button is clicked",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
+      table: { category: "Events" },
     },
     onDelete: {
       action: "onDelete",
       description: "Triggered when delete button is clicked",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "",
-        },
-      },
+      table: { category: "Events" },
     },
   },
-};
+} satisfies Meta<Input>;
 
-export const Default: StoryFn<Input> = (args) => ({
-  input: args,
-  component: defaultTemplate,
-});
-Default.args = {};
-Default.parameters = {
-  docs: {
-    source: {
-      code: defaultTemplateCode,
-    },
-  },
-};
-
-export const withDelete: StoryFn<Input> = (args) => ({
-  input: args,
-  component: withDeleteTemplate,
-});
-withDelete.args = {};
-withDelete.parameters = {
-  docs: {
-    source: {
-      code: withDeleteTemplateCode,
-    },
-  },
-};
-
-export const withLabel: StoryFn<Input> = (args) => ({
-  input: args,
-  component: withLabelTemplate,
-});
-withLabel.args = {};
-withLabel.parameters = {
-  docs: {
-    source: {
-      code: withLabelTemplateCode,
-    },
-  },
-};
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
+export const Controlled = buildExtensionTemplate(
+  ControlledTemplate,
+  DefaultCode,
+);
+export const WithLabel = buildExtensionTemplate(
+  WithLabelTemplate,
+  WithLabelCode,
+);

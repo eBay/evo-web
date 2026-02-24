@@ -36,6 +36,6 @@ it("renders default without pragraph", async () => {
   await htmlSnap(InProgress, {
     autoParagraph: false,
     a11yHeadingText: "Other",
-    a11yHeadingTag: "h3",
+    a11yHeadingAs: "h3",
   });
 });

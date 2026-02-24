@@ -1,15 +1,14 @@
 export interface Input extends Marko.HTML.Button {
     pressed?: boolean;
     pressedChange?: (pressed: boolean) => void;
-    layoutType?: string;
-    icon?: Marko.AttrTag<Marko.Renderable>;
+    layoutType?: "minimal" | "list" | "gallery";
+    icon?: Marko.AttrTag<Marko.HTML.Span>;
     img?: Marko.AttrTag<{
         src: string;
         alt: string;
         fillPlacement?: string;
     }>;
-    subtitle?: string | Marko.AttrTag<Marko.Renderable>;
-    renderBody?: Marko.Body;
+    subtitle?: Marko.AttrTag<Marko.HTML.Span>;
 }
 
 <const/{
@@ -43,9 +42,7 @@ export interface Input extends Marko.HTML.Button {
     }
 >
     <if=icon>
-        <span class="toggle-button__icon">
-            <${icon}/>
-        </span>
+        <span ...icon class=["toggle-button__icon", icon.class]/>
     </if>
     <else if=img>
         <span class="toggle-button__image-container">
@@ -79,14 +76,7 @@ export interface Input extends Marko.HTML.Button {
             </else>
         </span>
         <if=subtitle>
-            <span class="toggle-button__subtitle">
-                <if=typeof subtitle === "string">
-                    ${subtitle}
-                </if>
-                <else>
-                    <${subtitle}/>
-                </else>
-            </span>
+            <span ...subtitle class=["toggle-button__subtitle", subtitle.class]/>
         </if>
     </span>
 </button>

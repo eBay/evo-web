@@ -1,10 +1,13 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
+import IconButton, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import Readme from "./README.md";
 
 export default {
   title: "buttons/evo-icon-button",
+  component: IconButton,
   parameters: {
     docs: {
       description: {
@@ -13,141 +16,58 @@ export default {
     },
   },
   argTypes: {
-    href: {
-      description: "url for link behaviour (switches to anchor tag)",
-    },
-    disabled: {
-      description: "",
-      table: {
-        category: "Toggles",
-        defaultValue: {
-          summary: "false",
+    badge: {
+      description: "An optional badge attached to the button",
+      "@": {
+        ["<evo-badge> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-badge>` tag](?path=/docs/graphics-icons-evo-badge--docs) will be passed through to `<@badge>`, _except_ `a11yText`. The a11y label for the badge should be included in `a11yText` for the button.",
         },
       },
-      control: { type: "boolean" },
+    },
+    href: {
+      type: "string",
+      control: "text",
+      description: "URL for link behavior (switches to `<a>` tag)",
+    },
+    transparent: {
+      type: "boolean",
+      control: "boolean",
+      description: "Uses transparent styles for the button.",
     },
     size: {
-      description: "alternative size for the icon button",
-      options: ["small", "regular", "large"],
-      control: { type: "select" },
-      table: {
-        defaultValue: {
-          summary: "regular",
-        },
-      },
+      options: ["regular (default)", "small", "large"],
+      control: "inline-radio",
+      description: "Alternative size for the icon button",
     },
     priority: {
-      options: ["primary", "secondary", "tertiary", "none"],
-      description:
-        "Priority of the button. Toggle the color and border of the button",
-      table: {
-        defaultValue: {
-          summary: "none",
-        },
-      },
-      type: { category: "Options" },
+      options: ["none (default)", "primary", "secondary", "tertiary"],
+      control: "inline-radio",
+      description: "Priority of the button. Changes color and border.",
     },
-    ariaLabel: {
-      control: { type: "text" },
-      name: "aria-label",
+    a11yText: {
+      type: { name: "string", required: true },
+      control: "text",
       description: "A descriptive label of what the icon button represents",
     },
     partiallyDisabled: {
-      name: "partially-disabled",
+      type: "boolean",
+      control: "boolean",
       description: "programmatically disabled, but remains keyboard focusable",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-        category: "Toggles",
-      },
-      control: { type: "boolean" },
-    },
-    badgeNumber: {
-      name: "badge-number",
-      description: "number to show in badge",
-      table: {
-        category: "Badge (only with variant=icon)",
-      },
-      type: "number",
-    },
-    badgeAriaLabel: {
-      name: "badge-aria-label",
-      description: "`aria-label` for badge",
-      table: {
-        category: "Badge",
-      },
-    },
-    transparent: {
-      description: "is icon button is transparent or not",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-        category: "Toggles",
-      },
-      control: { type: "boolean" },
-    },
-    onClick: {
-      action: "onClick",
-      description: "Triggered on click",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
     },
     onEscape: {
       action: "onEscape",
       description: "Triggered on escape key",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
+      table: { category: "Events" },
     },
-    onFocus: {
-      action: "onFocus",
-      description: "Triggered on focus",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
-    },
-    onBlur: {
-      action: "onBlur",
-      description: "Triggered on blur",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ originalEvent }",
-        },
-      },
-    },
-    spread: {
-      control: {
-        type: "object",
-      },
-      description: "Additional attributes being passed to component",
-      table: {
-        category: "Other",
-      },
+    ["<button> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through (or to [the `<a>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a) for anchor variants)",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
-  {
-    href: "",
-    disabled: false,
-    partiallyDisabled: false,
-    badgeNumber: 0,
-    ariaLabel: "menu",
-  },
 );

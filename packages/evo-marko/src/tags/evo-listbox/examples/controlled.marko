@@ -1,0 +1,18 @@
+import { type Input as ListboxInput } from "<evo-listbox>";
+
+export interface Input extends ListboxInput<string> {}
+
+<let/selected=input.selected ?? "A" valueChange=input.selectedChange>
+
+<evo-listbox ...input selected:=selected>
+    <@option value="A">Option A</>
+    <@option value="B">Option B</>
+    <@option value="C">Option C</>
+</evo-listbox>
+
+<for|value| of=["A", "B", "C"]>
+  <label>
+    <input type="radio" value=value checkedValue:=selected>
+    ${value}
+  </label>
+</for>

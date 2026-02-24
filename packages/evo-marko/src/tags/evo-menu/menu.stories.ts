@@ -1,6 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import Menu, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import RadioTemplate from "./examples/radio.marko";
@@ -22,7 +23,7 @@ import FooterTemplateCode from "./examples/footer.marko?raw";
 
 export default {
   title: "building blocks/evo-menu",
-  component: Component,
+  component: Menu,
   parameters: {
     docs: {
       description: {
@@ -32,143 +33,128 @@ export default {
   },
 
   argTypes: {
-    type: {
-      control: { type: "select" },
-      options: ["radio", "checkbox", "none"],
-      description: 'Can be "radio" / "checkbox"',
-    },
-    variant: {
-      control: { type: "select" },
-      options: ["filter", "none"],
+    selected: {
+      changeHandler: true,
       description:
-        'Either "none" for default menu or "filter" for filter variant',
-    },
-
-    priority: {
-      control: { type: "select" },
-      options: ["primary", "secondary", "none"],
-      description:
-        'button priority, "primary" / "secondary" (default) / "none"',
-    },
-    checked: {
-      description:
-        "will set the corresponding index item to `checked` state and use the `aria-checked` attribute in markup",
+        "If present, indicates the selected item(s) in the menu and automatically updates them on click. Use a single value for single-select, or an array for multi-select. Compares with `value` is present in `@option`, otherwise index.",
+      table: { type: { summary: "number | string | (number | string)[]" } },
     },
     item: {
-      name: "@item",
-      table: {
-        category: "@attribute tags",
+      description: "Attribute tag representing a menu item",
+      "@": {
+        value: {
+          type: "string",
+          control: "text",
+          description: "Used for tracking the selected item",
+        },
+        separator: {
+          type: "boolean",
+          control: "boolean",
+          description: "Render as a separator instead of an item",
+        },
+        badgeNumber: {
+          type: "number",
+          control: "number",
+          description:
+            "Displays [an `<evo-badge>` component](?path=/docs/graphics-icons-evo-badge--docs) after the content containing this number.",
+        },
+        disabled: {
+          type: "boolean",
+          control: "boolean",
+          description:
+            "Item will not be clickable, and keyboard navigation will skip over it",
+        },
+        ["<div> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@item>`",
+        },
       },
     },
-    value: {
-      control: { type: "text" },
-      table: {
-        category: "@item attributes",
-      },
+    variant: {
+      type: "string",
+      options: ["none (default)", "filter"],
+      control: "inline-radio",
       description:
-        "the value to use with event responses for for the `checked` array",
+        'Setting to "filter" changes styles to align with filter components',
     },
-    badgeNumber: {
-      controls: { hideNoControlsWarning: true },
-      table: {
-        category: "@item attributes",
-      },
-      description: "used as the number to be placed in the badge",
+    classPrefix: {
+      type: "string",
+      control: "text",
+      description: "Prefix built-in class names",
     },
-    "aria-label": {
-      controls: { hideNoControlsWarning: true },
-      table: {
-        category: "@item attributes",
-      },
+    typeaheadTimeoutLength: {
+      type: "number",
+      control: "number",
       description:
-        "Passed as the `aria-label` directly to the badge. Required only if badge number is provided",
+        "Time (ms) that users need to wait between typing characters for typeahead to reset",
+    },
+    reverse: {
+      type: "boolean",
+      control: "boolean",
+      description: "Show elements right-to-left instead of left-to-right",
+    },
+    fixed: {
+      type: "boolean",
+      control: "boolean",
+      description: "Fixes menu in place",
+    },
+    fixWidth: {
+      type: "boolean",
+      control: "boolean",
+      description: "Fix the dropdown width to match the button width",
     },
     footerButton: {
-      name: "@footer-button",
-      table: {
-        category: "@attribute tags",
-      },
       description:
-        "The footer content. Renders an evo-button. Used for filter type generally.",
-    },
-    "onFooter-button-click": {
-      action: "on-footer-button-click",
-      description: "Triggered on click of footer button",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
+        'The footer content, rendered [an `<evo-button>` component](?path=/docs/buttons-evo-button--docs). Generally used only when `variant="filter"`.',
+      "@": {
+        ["<evo-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-button>` component](?path=/docs/buttons-evo-button--docs) will be passed through to `<@footerButton>`",
         },
       },
     },
-    onKeydown: {
-      action: "on-keydown",
-      description: "Triggered on keydown",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ el, index, checked }",
-        },
-      },
-    },
-    onChange: {
-      action: "on-change",
+    ["<span> attributes" as any]: {
       description:
-        "Triggered on item checked change, (checkbox/radio type only)",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary:
-            "radio: { el, index, checked } | checkbox: { el, [indexes], [checked] }",
-        },
-      },
-    },
-
-    onSelect: {
-      action: "on-select",
-      description: "Triggered on item clicked (non radio/checkbox)",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ el, index, checked }",
-        },
-      },
+        "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
     },
   },
-};
+} satisfies Meta<Input<any>>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
 );
 
-export const Radio = buildExtensionTemplate(RadioTemplate, RadioTemplateCode);
-
-export const Checkbox = buildExtensionTemplate(
-  CheckboxTemplate,
-  CheckboxTemplateCode,
+export const SingleSelect = buildExtensionTemplate(
+  DefaultTemplate,
+  DefaultTemplateCode,
+  {
+    selected: 0,
+  },
+);
+export const MultiSelect = buildExtensionTemplate(
+  DefaultTemplate,
+  DefaultTemplateCode,
+  {
+    selected: [0],
+  },
 );
 
 export const Typeahead = buildExtensionTemplate(
   TypeaheadTemplate,
   TypeaheadTemplateCode,
 );
+
 export const Badged = buildExtensionTemplate(
   BadgedTemplate,
   BadgedTemplateCode,
 );
-export const Filter = buildExtensionTemplate(
-  FilterTemplate,
-  FilterTemplateCode,
-);
+
 export const Sprites = buildExtensionTemplate(
   SpritesTemplate,
   SpritesTemplateCode,
 );
-export const Separator = buildExtensionTemplate(
-  SeparatorTemplate,
-  SeparatorTemplateCode,
-);
+
 export const Footer = buildExtensionTemplate(
   FooterTemplate,
   FooterTemplateCode,

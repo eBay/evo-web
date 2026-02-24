@@ -1,6 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import component from "./index.marko";
+import ToggleButton, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import WithIconTemplate from "./examples/with-icon.marko";
@@ -12,7 +13,7 @@ import MultilineSubtitleCode from "./examples/multiline-subtitle.marko?raw";
 
 export default {
   title: "buttons/evo-toggle-button",
-  component,
+  component: ToggleButton,
   parameters: {
     docs: {
       description: {
@@ -21,77 +22,66 @@ export default {
     },
   },
   argTypes: {
-    renderBody: {
-      control: { type: "text" },
+    pressed: {
+      changeHandler: true,
+      type: "boolean",
+      control: "boolean",
+      description: "Pressed state of the button",
     },
     layoutType: {
       type: "string",
-      control: { type: "select" },
       options: ["minimal", "list", "gallery"],
+      control: "inline-radio",
       description:
-        'Enforced layout type of the button. May be `"minimal"` (default), `"list"`, or `"gallery"`. Gallery layout may only be used when there is also an icon or an image.',
-    },
-    pressed: {
-      type: "boolean",
-      control: { type: "boolean" },
-      description: "Pressed state of the button",
-    },
-    title: {
-      type: "string",
-      control: { type: "text" },
-      description: "Title attribute for the button",
-    },
-    subtitle: {
-      type: "string|@subtitle",
-      control: { type: "text" },
-      description: "Subtitle attribute for the button",
+        "Enforced layout type of the button. Gallery layout may only be used when there is also an icon or an image.",
+      table: { defaultValue: { summary: "minimal" } },
     },
     icon: {
-      name: "@icon",
-      description: "An `<evo-[name]-icon>` to show as the button's icon",
-      table: {
-        category: "@attribute tags",
+      description: "An `<evo-icon-*>` to show as the button's icon",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
     img: {
-      name: "@img",
-      description: "An `<img>` to show as the button's image",
-      table: {
-        category: "@attribute tags",
-      },
-    },
-    subtitleTag: {
-      name: "@subtitle",
       description:
-        "May be used instead of the `subtitle` attribute for more control. Should contain no more than two brief lines of text",
-      table: {
-        category: "@attribute tags",
+        "An optional image. May be used when `<@icon>` is _not_ present",
+      "@": {
+        src: {
+          type: { name: "string", required: true },
+          control: "text",
+          description: "The image source URL",
+        },
+        alt: {
+          type: { name: "string", required: true },
+          control: "text",
+          description: "Alt text for the image",
+        },
+        fillPlacement: {
+          type: "string",
+          control: "text",
+          description:
+            "Position of the image. May be any valid value for [the CSS `background-position` attribute](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-position).",
+        },
       },
     },
-    src: {
-      table: {
-        category: "@img attributes",
+    subtitle: {
+      description: "An optional subtitle.",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
-      control: { type: "text" },
-      description: "Link to the image source",
     },
-    alt: {
-      table: {
-        category: "@img attributes",
-      },
-      control: { type: "text" },
-      description: "Alt text for the image",
-    },
-    fillPlacement: {
-      table: {
-        category: "@img attributes",
-      },
-      control: { type: "text" },
+    ["<button> attributes" as any]: {
       description:
-        "Placement of the image within the given bounds using the CSS `background-position` property. Options include [keywords, lengths, and edge distances](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position). Using this property will switch the image fit from `contain` to `cover`",
+        "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 

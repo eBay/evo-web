@@ -4,7 +4,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
      *
      * English default to be overridden is `"Loading..."`
      */
-    a11yText: Marko.HTML.Div["aria-label"];
+    a11yText: string;
 }
 
 <const/{ class: inputClass, a11yText = "Loading...", ...htmlInput }=input>

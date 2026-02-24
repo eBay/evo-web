@@ -1,4 +1,6 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
+import Infotip, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import InParagraphTemplate from "./examples/in-paragraph.marko";
@@ -9,11 +11,10 @@ import CustomIconTemplate from "./examples/custom-icon.marko";
 import CustomIconTemplateCode from "./examples/custom-icon.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
 import ControlledTemplateCode from "./examples/controlled.marko?raw";
-import Component from "./index.marko";
 
 export default {
   title: "notices & tips/evo-infotip",
-  component: Component,
+  component: Infotip,
   parameters: {
     docs: {
       description: {
@@ -25,27 +26,13 @@ export default {
 
   argTypes: {
     open: {
+      changeHandler: true,
       type: "boolean",
-      control: { type: "boolean" },
-      description: "Whether the infotip is open",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
-    },
-    openChange: {
-      description:
-        "Used to hoist `open` value with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "(open: boolean) => void",
-        },
-      },
+      control: "boolean",
+      description: "Whether the infotip is open.",
     },
     placement: {
-      control: { type: "select" },
+      type: "string",
       options: [
         "top",
         "top-start",
@@ -60,97 +47,80 @@ export default {
         "left-start",
         "left-end",
       ],
+      control: "select",
       description: "Position of the overlay relative to the trigger button",
-      table: {
-        defaultValue: {
-          summary: "bottom",
-        },
-      },
+      table: { defaultValue: { summary: "bottom" } },
     },
     offset: {
-      control: { type: "number" },
+      type: "number",
+      control: "number",
       description: "Offset distance from the trigger button in pixels",
-      table: {
-        defaultValue: {
-          summary: "8",
-        },
-      },
+      table: { defaultValue: { summary: "8" } },
     },
     flip: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable automatic flipping when near viewport edge",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     shift: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable automatic shifting when near viewport edge",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     inline: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Enable inline positioning middleware",
-      table: {
-        defaultValue: {
-          summary: "true",
-        },
-      },
+      table: { defaultValue: { summary: "true" } },
     },
     disabled: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description: "Disable the trigger button",
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
+      table: { defaultValue: { summary: "false" } },
     },
     a11yIconText: {
-      control: { type: "text" },
-      description: "Localized, accessibility label for the trigger button",
-      table: {
-        defaultValue: {
-          summary: "Help",
-        },
-      },
+      type: { name: "string", required: true },
+      control: "text",
+      description: "Localized accessibility label for the trigger button",
+      table: { defaultValue: { summary: "Help" } },
     },
     a11yCloseText: {
-      control: { type: "text" },
-      description: "Localized, accessibility label for the close button",
-      table: {
-        defaultValue: {
-          summary: "Dismiss infotip",
-        },
-      },
+      type: { name: "string", required: true },
+      control: "text",
+      description: "Localized accessibility label for the close button",
+      table: { defaultValue: { summary: "Dismiss infotip" } },
     },
     icon: {
-      name: "@icon",
       description: "Custom icon to replace the default info icon.",
-      table: {
-        category: "@attribute tags",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through to `<@icon>`",
+        },
       },
     },
     heading: {
       name: "@heading",
       description:
-        "Optional heading content. Supports `as` attribute for custom heading element.",
-      table: {
-        category: "@attribute tags",
+        "Optional heading content. Defaults to `<span>`, but can be overridden",
+      "@": {
+        as: {
+          type: "string",
+          options: ["span", "h1", "h2", "s", "h4", "h5", "h6"],
+          control: "select",
+          description: "Overrides the tag used for the header text",
+        },
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through to `<@title>`.",
+        },
       },
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

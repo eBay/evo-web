@@ -1,34 +1,29 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import Textbox, { type Input } from "./index.marko";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultCode from "./examples/default.marko?raw";
 import WithLabelTemplate from "./examples/external-label.marko";
-import DisabledTemplate from "./examples/external-label-disabled.marko";
-import FloatingLabelTemplate from "./examples/floating-label.marko";
-import FloatingLabelAutocompleteTemplate from "./examples/floating-label-autocomplete.marko";
-import WithBothIcons from "./examples/both-icons.marko";
-import WithPostfixIcon from "./examples/postfix-icon.marko";
-import WithPrefixIcon from "./examples/prefix-icon.marko";
-import FullyDecoratedTemplate from "./examples/fully-decorated.marko";
 import WithLabelCode from "./examples/external-label.marko?raw";
+import DisabledTemplate from "./examples/external-label-disabled.marko";
 import DisabledCode from "./examples/external-label-disabled.marko?raw";
+import FloatingLabelTemplate from "./examples/floating-label.marko";
 import FloatingLabelCode from "./examples/floating-label.marko?raw";
+import FloatingLabelAutocompleteTemplate from "./examples/floating-label-autocomplete.marko";
 import FloatingLabelAutocompleteCode from "./examples/floating-label-autocomplete.marko?raw";
+import WithBothIconsTemplate from "./examples/both-icons.marko";
 import WithBothIconsCode from "./examples/both-icons.marko?raw";
+import WithPostfixIconTemplate from "./examples/postfix-icon.marko";
 import WithPostfixIconCode from "./examples/postfix-icon.marko?raw";
+import WithPrefixIconTemplate from "./examples/prefix-icon.marko";
 import WithPrefixIconCode from "./examples/prefix-icon.marko?raw";
+import FullyDecoratedTemplate from "./examples/fully-decorated.marko";
 import FullyDecoratedCode from "./examples/fully-decorated.marko?raw";
-import type { StoryFn } from "@storybook/marko";
-import type { Input } from "./index.marko";
-
-const Template: StoryFn<Input> = (args) => ({
-  input: {
-    ...args,
-  },
-});
 
 export default {
   title: "form input/evo-textbox",
-  component: Component,
+  component: Textbox,
   parameters: {
     docs: {
       description: {
@@ -38,217 +33,123 @@ export default {
   },
 
   argTypes: {
-    "<input>": {
-      description:
-        "All attributes from the [native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) may be passed through",
-    },
-    fluid: {
-      type: "boolean",
-      control: { type: "boolean" },
-    },
-    inputSize: {
-      options: ["regular", "large"],
-      type: { category: "Options" },
-      description:
-        'either "regular" or "large". If large, then renders larger sized textbox',
-      table: {
-        defaultValue: {
-          summary: "regular",
-        },
-      },
+    value: {
+      changeHandler: true,
+      type: "string",
+      control: "text",
+      description: "The value of the textbox",
     },
     multiline: {
       type: "boolean",
-      control: { type: "boolean" },
-      description: "renders a multi-line textbox if true",
+      control: "boolean",
+      description:
+        'Switches to `<textarea>` instead of `<input type="text">`. All other behavior remains the same',
     },
-    invalid: {
+    inputSize: {
+      type: "string",
+      options: ["regular (default)", "large"],
+      control: "inline-radio",
+      description: "If large, renders larger sized textbox.",
+    },
+    fluid: {
       type: "boolean",
-      control: { type: "boolean" },
-      description: "indicates a field-level error with red border if true",
-    },
-    floatingLabel: {
-      description: "If set then shows this text as the floating label.",
-      control: { type: "text" },
-      table: {
-        category: "floating-label",
-        defaultValue: {
-          summary: "",
-        },
-      },
+      control: "boolean",
+      description: "Textbox fills 100% of its container width.",
     },
     opaqueLabel: {
+      type: "boolean",
+      control: "boolean",
       description:
         "Only works with floating label. If set, then background is obscured of the floating label. Used with textarea to prevent label overlap",
-      control: { type: "boolean" },
-      table: {
-        category: "floating-label",
-        defaultValue: {
-          summary: "false",
-        },
-      },
     },
-    a11yButtonText: {
-      control: { type: "text" },
-      description:
-        "Localized, aria-label for postfix. Required to be set in order to render postfix button and attach a `textbox-button-click event`",
+    floatingLabel: {
+      type: "string",
+      control: "text",
+      description: "If set then shows this text as the floating label.",
+    },
+    floatingLabelStatic: {
+      type: "boolean",
+      control: "boolean",
+      description: 'Floating label will _always_ stay in the "up" position',
     },
     prefixIcon: {
-      name: "@prefix-icon",
       description:
-        "An `<evo-{name}-icon>` to show as the prefix icon. Cannot be used with floating-label.",
-      table: {
-        category: "@attribute tags",
-      },
-    },
-    postfixIcon: {
-      name: "@postfix-icon",
-      description:
-        "An `<evo-{name}-icon>` to show as the postfix icon. Cannot be used with floating-label.",
-      table: {
-        category: "@attribute tags",
-      },
+        "An `<evo-icon-*>` to show before the input. Cannot be used with floatingLabel.",
+      "@": {},
     },
     prefixText: {
-      name: "@prefix-text",
-      description:
-        "Text to show before the input. Can be used alongside prefix-icon.",
-      table: {
-        category: "@attribute tags",
+      description: "Text to show before the input.",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
       },
     },
     postfixText: {
-      name: "@postfix-text",
-      description:
-        "Text to show after the input. Can be used alongside postfix-icon.",
-      table: {
-        category: "@attribute tags",
-      },
-    },
-    onButtonClick: {
-      action: "onButtonClick",
-      description:
-        "Triggers when clicking on postfix-icon-button. Requires button-aria-label to be present in order to attach correctly",
-      table: {
-        category: "Events",
-        defaultValue: {
-          summary: "{ }",
+      description: "Text to show after the input.",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
         },
       },
     },
-  },
-};
-
-export const WithLabel: StoryFn<Input> = (args) => ({
-  input: args,
-  component: WithLabelTemplate,
-});
-WithLabel.args = {};
-WithLabel.parameters = {
-  docs: {
-    source: {
-      code: WithLabelCode,
+    postfixIcon: {
+      description:
+        "An `<evo-icon-*>` to show after the input. Cannot be used with floatingLabel.",
+      "@": {
+        "aria-label": {
+          type: "string",
+          control: "text",
+          description:
+            "If present, the icon will be clickable and wrapped with a `<button>` tag",
+        },
+        ["<button> attributes" as any]: {
+          description:
+            "If `aria-label` is present, all attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through",
+        },
+      },
+    },
+    invalid: {
+      type: "boolean",
+      control: "boolean",
+      description: "Indicates a field-level error with red border",
+    },
+    ["<input> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) will be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange). If `multiline=true`, attributes from [the native HTML `<textarea>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea)",
     },
   },
-};
+} satisfies Meta<Input>;
 
-export const Disabled: StoryFn<Input> = (args) => ({
-  input: args,
-  component: DisabledTemplate,
-});
-Disabled.args = {};
-Disabled.parameters = {
-  docs: {
-    source: {
-      code: DisabledCode,
-    },
-  },
-};
-
-export const FloatingLabel: StoryFn<Input> = (args) => ({
-  input: args,
-  component: FloatingLabelTemplate,
-});
-FloatingLabel.args = {};
-FloatingLabel.parameters = {
-  docs: {
-    source: {
-      code: FloatingLabelCode,
-    },
-  },
-};
-
-export const FloatingLabelAutocomplete: StoryFn<Input> = (args) => ({
-  input: args,
-  component: FloatingLabelAutocompleteTemplate,
-});
-FloatingLabelAutocomplete.args = {};
-FloatingLabelAutocomplete.parameters = {
-  docs: {
-    source: {
-      code: FloatingLabelAutocompleteCode,
-    },
-  },
-};
-
-export const Isolated = Template.bind({});
-Isolated.args = {};
-Isolated.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-textbox", Isolated.args),
-    },
-  },
-};
-
-export const PrefixIcon: StoryFn<Input> = (args) => ({
-  input: args,
-  component: WithPrefixIcon,
-});
-PrefixIcon.args = {};
-PrefixIcon.parameters = {
-  docs: {
-    source: {
-      code: WithPrefixIconCode,
-    },
-  },
-};
-
-export const PostfixIcon: StoryFn<Input> = (args) => ({
-  input: args,
-  component: WithPostfixIcon,
-});
-PostfixIcon.args = {};
-PostfixIcon.parameters = {
-  docs: {
-    source: {
-      code: WithPostfixIconCode,
-    },
-  },
-};
-
-export const BothIcons: StoryFn<Input> = (args) => ({
-  input: args,
-  component: WithBothIcons,
-});
-BothIcons.args = {};
-BothIcons.parameters = {
-  docs: {
-    source: {
-      code: WithBothIconsCode,
-    },
-  },
-};
-
-export const FullyDecorated: StoryFn<Input> = (args) => ({
-  input: args,
-  component: FullyDecoratedTemplate,
-});
-FullyDecorated.args = {};
-FullyDecorated.parameters = {
-  docs: {
-    source: {
-      code: FullyDecoratedCode,
-    },
-  },
-};
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
+export const WithLabel = buildExtensionTemplate(
+  WithLabelTemplate,
+  WithLabelCode,
+);
+export const Disabled = buildExtensionTemplate(DisabledTemplate, DisabledCode);
+export const FloatingLabel = buildExtensionTemplate(
+  FloatingLabelTemplate,
+  FloatingLabelCode,
+);
+export const FloatingLabelAutocomplete = buildExtensionTemplate(
+  FloatingLabelAutocompleteTemplate,
+  FloatingLabelAutocompleteCode,
+);
+export const WithPrefixIcon = buildExtensionTemplate(
+  WithPrefixIconTemplate,
+  WithPrefixIconCode,
+);
+export const WithPostfixIcon = buildExtensionTemplate(
+  WithPostfixIconTemplate,
+  WithPostfixIconCode,
+);
+export const WithBothIcons = buildExtensionTemplate(
+  WithBothIconsTemplate,
+  WithBothIconsCode,
+);
+export const FullyDecorated = buildExtensionTemplate(
+  FullyDecoratedTemplate,
+  FullyDecoratedCode,
+);

@@ -10,7 +10,7 @@ export interface LayoutOptions {
     xl4?: number;
 }
 export interface Input extends Marko.HTML.UL {
-    item?: Marko.AttrTag<Marko.Renderable>;
+    item?: Marko.AttrTag<Marko.HTML.LI>;
     columns?: LayoutOptions;
 }
 <const/{ item: items, class: inputClass, columns = {}, ...htmlInput }=input>
@@ -28,9 +28,7 @@ export interface Input extends Marko.HTML.UL {
     data-columns-xl4=columns.xl4>
     <ul ...htmlInput>
         <for|item| of=items>
-            <li>
-                <${item}/>
-            </li>
+            <li ...item/>
         </for>
     </ul>
 </div>

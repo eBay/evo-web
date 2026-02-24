@@ -1,6 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import FilterChip, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import ExpressiveTemplate from "./examples/expressive.marko";
@@ -10,7 +11,7 @@ import MenuButtonTemplateCode from "./examples/menu-button.marko?raw";
 
 export default {
   title: "form input/evo-filter-chip",
-  component: Component,
+  component: FilterChip,
   parameters: {
     docs: {
       description: {
@@ -20,46 +21,51 @@ export default {
   },
 
   argTypes: {
-    content: {
-      control: { type: "text" },
-      description: "Text to be displayed in the chip",
-    },
     selected: {
-      control: { type: "boolean" },
-      description: "True/false if the chip is selected or not",
+      changeHandler: true,
+      type: "boolean",
+      control: "boolean",
+      description: "Selected state of the chip",
     },
     variant: {
+      type: "string",
       options: ["default", "expressive", "menu"],
+      control: "inline-radio",
       description:
         "The variant of the filter. Default and expressive are toggle buttons, while menu turns it into a dropdown.",
-      control: { type: "select" },
     },
     icon: {
-      name: "@icon",
       description: "The leading icon. Only used for default variant",
-      table: {
-        category: "@attribute tags",
-      },
+      "@": {},
     },
-    image: {
-      name: "@image",
+    img: {
       description: "The leading image. Only used for expressive variant",
-      table: {
-        category: "@attribute tags",
+      "@": {
+        ["<img> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@img>`",
+        },
       },
     },
     expanded: {
-      control: { type: "boolean" },
+      changeHandler: true,
+      type: "boolean",
+      control: "boolean",
       description:
         "Only used for menu variant. True/false if the menu is in expanded state or not",
     },
     a11ySelectedText: {
-      control: { type: "string" },
+      type: "string",
+      control: "text",
       description:
         "Localized, for anchor variant: the clipped text to show when the filter is set. This is required to switch to anchor type along with href",
     },
+    ["<button> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through (or to [the `<a>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a) for anchor variants)",
+    },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

@@ -1,14 +1,16 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
-import Component from "./index.marko";
+import { type Meta } from "@storybook/marko";
+import LayoutGrid, { type Input } from "./index.marko";
 import Readme from "./README.md";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import WithCustomColumnsTemplate from "./examples/with-custom-columns.marko";
 import WithCustomColumnsTemplateCode from "./examples/with-custom-columns.marko?raw";
 
+const sizes = ["min", "xs", "sm", "md", "lg", "xl", "xl2", "xl3", "xl4"];
 export default {
   title: "layout/evo-layout-grid",
-  component: Component,
+  component: LayoutGrid,
   parameters: {
     docs: {
       description: {
@@ -19,9 +21,14 @@ export default {
 
   argTypes: {
     columns: {
-      control: { type: "object" },
+      type: {
+        name: "object",
+        value: Object.fromEntries(sizes.map((s) => [s, { name: "number" }])),
+      },
+      control: "object",
       description:
-        "Number of columns per screen size. Object with keys: min, xs, sm, md, lg, xl, xl2, xl3, xl4",
+        "Number of columns per screen size. Object keys: " +
+        sizes.map((s) => `\`${s}\``).join(", "),
 
       table: {
         defaultValue: {
@@ -30,8 +37,21 @@ export default {
         },
       },
     },
+    item: {
+      description: "Repeatable attr tag, acts as an `<li>` tag",
+      "@": {
+        ["<li> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<li>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/li) will be passed through",
+        },
+      },
+    },
+    ["<ul> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the native HTML `<ul>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul) will be passed through",
+    },
   },
-};
+} satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(
   DefaultTemplate,

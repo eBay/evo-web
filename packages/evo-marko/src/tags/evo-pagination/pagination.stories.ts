@@ -1,16 +1,19 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
-import basicLinksTemplate from "./examples/basic-links.marko";
-import basicLinksTemplateCode from "./examples/basic-links.marko?raw";
-import buttonsTemplate from "./examples/buttons.marko";
-import buttonsTemplateCode from "./examples/buttons.marko?raw";
-import interactiveTemplate from "./examples/buttons-interactive.marko";
-import interactiveTemplateCode from "./examples/buttons-interactive.marko?raw";
+import Pagination, { type Input } from "./index.marko";
+import BasicLinksTemplate from "./examples/basic-links.marko";
+import BasicLinksCode from "./examples/basic-links.marko?raw";
+import ButtonsTemplate from "./examples/buttons.marko";
+import ButtonsCode from "./examples/buttons.marko?raw";
+import InteractiveTemplate from "./examples/buttons-interactive.marko";
+import InteractiveCode from "./examples/buttons-interactive.marko?raw";
+import ManyItemsTemplate from "./examples/many-items.marko";
+import ManyItemsCode from "./examples/many-items.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-pagination",
-  component: Component,
+  component: Pagination,
   parameters: {
     docs: {
       description: {
@@ -21,139 +24,73 @@ export default {
 
   argTypes: {
     a11yCurrentText: {
-      control: { type: "text" },
-      description: "Localized, description for the current page (e.g. Results of Page 1)",
-    },
-    variant: {
-      control: { type: "select" },
-
-      table: {
-        defaultValue: {
-          summary: "show-range",
-        },
-      },
-
-      options: ["show-last", "show-range", "overflow"],
+      type: { name: "string", required: true },
+      control: "text",
       description:
-        "Either `show-last`, or `show-range`. If `show-last` then will show the last page always and will put `…` between the last visible range and the last page. `…` and the last page will take up two items in the range. `…` will be hidden when the range to the last item is fully visible.",
-    },
-    disabled: {
-      name: "disabled",
-      table: {
-        category: "@item attribute tags",
-      },
-      description: "Previous/next button is disabled or not",
-    },
-    href: {
-      name: "href",
-      table: {
-        category: "@item attribute tags",
-      },
-      description:
-        "for link that looks like a menu-item; omitting the href will switch to a button",
+        "Localized description for the current page (e.g. Results of Page 1)",
     },
     item: {
-      name: "@item",
-      table: {
-        category: "@attribute tags",
+      description: "Attribute tag representing a pagination item",
+      "@": {
+        current: {
+          type: "boolean",
+          control: "boolean",
+          description: "Indicates that this item is the current page",
+        },
+        href: {
+          type: "string",
+          control: "string",
+          description: "When present, switch to `<a>` instead of `<button>`",
+        },
+        ["<button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through (or to [the `<a>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a) when `href` is present)",
+        },
       },
-    },
-    "@item variant": {
-      name: "variant",
-      table: {
-        category: "@item attribute tags",
-      },
-      description:
-        '"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`',
     },
     prev: {
-      name: "@prev",
-      table: {
-        category: "@attribute tags",
+      description: "Attribute tag for the previous button",
+      "@": {
+        ["<evo-icon-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-icon-button>` tag](?path=/docs/buttons-evo-icon-button--docs) will be passed through to `<@prev>`",
+        },
       },
-    },
-    "@prev variant": {
-      name: "variant",
-      table: {
-        category: "@prev attribute tags",
-      },
-      description:
-        '"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`',
-    },
-    "@prev aria-label": {
-      name: "variant",
-      table: {
-        category: "@prev attribute tags",
-      },
-      description:
-        'The aria-label for the prev button. This is required. Defaults to "Previous page"',
     },
     next: {
-      name: "@next",
-      table: {
-        category: "@attribute tags",
+      description: "Attribute tag for the next button",
+      "@": {
+        ["<evo-icon-button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the `<evo-icon-button>` tag](?path=/docs/buttons-evo-icon-button--docs) will be passed through to `<@next>`",
+        },
       },
     },
-    "@next variant": {
-      name: "variant",
-      table: {
-        category: "@next attribute tags",
-      },
+    variant: {
+      type: "string",
+      options: ["show-last", "show-range", "overflow"],
+      control: "inline-radio",
       description:
-        '"button" or "link". Will force an item to be a link if href is omitted. Defaults to button. If not specified, tag type will still be controlled by `href`',
+        "If `show-last` then will show the last page always and will put `…` between the last visible range and the last page. `…` and the last page will take up two items in the range. `…` will be hidden when the range to the last item is fully visible.",
+      table: { defaultValue: { summary: "show-range" } },
     },
-    "@next aria-label": {
-      name: "variant",
-      table: {
-        category: "@next attribute tags",
-      },
+    ["<nav> attributes" as any]: {
       description:
-        'The aria-label for the next button. This is required. Defaults to "Next page"',
-    },
-
-    current: {
-      name: "current",
-      table: {
-        category: "@item attribute tags",
-      },
-      description: "the current page",
-    },
-    type: {
-      name: "type",
-      table: {
-        category: "@item attribute tags",
-      },
-      description: `"previous", "next" or "page"(default). To specify if the information entered is for the previous or next arrrow button or a page. If the type='previous  | next' isn't provided the previous/next arrow buttons will be taken as'disabled'`,
+        "All attributes and event handlers from [the native HTML `<nav>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav) will be passed through",
     },
   },
-};
+} satisfies Meta<Input>;
 
-export const Links = buildExtensionTemplate(
-  basicLinksTemplate,
-  basicLinksTemplateCode,
-  {
-    a11yPreviousText: "previous",
-    a11yNextText: "next",
-    a11yCurrentText: "Current page",
-  },
-);
+export const Links = buildExtensionTemplate(BasicLinksTemplate, BasicLinksCode);
 
-export const Buttons = buildExtensionTemplate(
-  buttonsTemplate,
-  buttonsTemplateCode,
-  {
-    a11yPreviousText: "previous",
-    a11yNextText: "next",
-    a11yCurrentText: "Current page",
-  },
-);
+export const Buttons = buildExtensionTemplate(ButtonsTemplate, ButtonsCode);
 
 export const Interactive = buildExtensionTemplate(
-  interactiveTemplate,
-  interactiveTemplateCode,
-  {
-    a11yPreviousText: "previous",
-    a11yNextText: "next",
-    a11yCurrentText: "Current page",
-  },
+  InteractiveTemplate,
+  InteractiveCode,
+);
+
+export const ManyItems = buildExtensionTemplate(
+  ManyItemsTemplate,
+  ManyItemsCode,
 );

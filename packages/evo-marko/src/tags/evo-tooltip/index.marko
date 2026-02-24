@@ -1,8 +1,8 @@
-import type { Placement } from "@floating-ui/dom";
+import type { Input as ExpanderInput } from "<evo-expander>";
 export interface Input extends Marko.HTML.Span {
     open?: boolean;
     openChange?: (open: boolean) => void;
-    placement?: Placement;
+    placement?: ExpanderInput["placement"];
     offset?: number;
     flip?: boolean;
     shift?: boolean;
@@ -22,8 +22,8 @@ export interface Input extends Marko.HTML.Span {
 
 <const/{
     class: inputClass,
-    placement = "bottom" as Placement,
-    offset: inputOffset,
+    placement = "bottom" as const,
+    offset = 8,
     flip,
     shift,
     inline,
@@ -59,7 +59,7 @@ export interface Input extends Marko.HTML.Span {
 <evo-expander/expander
     open=open
     placement=placement
-    offset=(inputOffset ?? 8)
+    offset=offset
     flip=flip
     shift=shift
     inline=inline

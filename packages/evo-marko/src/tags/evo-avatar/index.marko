@@ -7,6 +7,12 @@ export interface Input extends Omit<Marko.HTML.Div, "role"> {
     size?: Size | `${Size}`;
     img?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
     knownAspectRatio?: number;
+    /**
+     * The `aria-label` of the avatar
+     *
+     * English default to be overridden is `"avatar"`
+     */
+    a11yText: string;
 }
 
 <const/{
@@ -17,6 +23,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role"> {
     username,
     content,
     knownAspectRatio,
+    a11yText = "avatar",
     ...htmlInput
 }=input>
 
@@ -30,6 +37,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role"> {
 
 <div
     ...htmlInput
+    aria-label=a11yText
     role="img"
     class=[
         "avatar",
@@ -44,6 +52,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role"> {
             alt=""
             onLoad(_, el) {
                 aspectRatio = el.naturalWidth / el.naturalHeight;
+                img.onLoad && img.onLoad(_, el);
             }
         >
     </if>

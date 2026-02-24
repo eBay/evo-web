@@ -1,0 +1,29 @@
+<let/curr=0>
+
+<evo-button onClick() { curr = 0 } priority=curr === 0 ? "tertiary" : "secondary">
+    Select the first tab
+</evo-button>
+
+<evo-tabs ...input index:=curr>
+    <@tab>
+        <@panel>
+            <h3>Panel 1</h3>
+            <p>1. Lorem ipsum dolor sit amet</p>
+        </@panel>
+        Tab 1
+    </@tab>
+    <@tab>
+        <@panel>
+            <h3>Panel 2</h3>
+            <p>2. Lorem ipsum dolor sit amet</p>
+        </@panel>
+        Tab 2
+    </@tab>
+    <@tab>
+        <@panel>
+            <h3>Panel 3</h3>
+            <p>3. Lorem ipsum dolor sit amet</p>
+        </@panel>
+        Tab 3
+    </@tab>
+</evo-tabs>

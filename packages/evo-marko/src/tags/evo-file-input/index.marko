@@ -1,7 +1,7 @@
 export interface Input extends Omit<Marko.HTML.Input, "type"> {
     header?: Marko.AttrTag<
         Marko.Input<"h1"> & {
-            as?: `h${number}`;
+            as?: keyof Marko.NativeTags;
         }
     >;
     subheader?: Marko.AttrTag<Marko.HTML.Span>;

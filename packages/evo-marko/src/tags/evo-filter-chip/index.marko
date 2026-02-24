@@ -4,8 +4,8 @@ export interface Input
     selectedChange?: (selected: boolean) => void;
     variant?: "default" | "expressive" | "menu";
     icon?: Marko.AttrTag<{ content?: Marko.Body }>;
-    image?: Marko.AttrTag<Marko.HTML.Img>;
-    a11ySelectedText?: Marko.HTMLAttributes["aria-label"];
+    img?: Marko.AttrTag<Marko.HTML.Img>;
+    a11ySelectedText?: string;
     expanded?: boolean;
     expandedChange?: (expanded: boolean) => void;
 }
@@ -16,7 +16,7 @@ export interface Input
     selected: inputSelected,
     expanded: inputExpanded,
     icon,
-    image,
+    img,
     a11ySelectedText,
     variant = "default",
     href,
@@ -59,7 +59,7 @@ export interface Input
 
     <if=variant === "expressive">
         <span class="filter-chip__media">
-            <img ...(image!)>
+            <img ...(img!)>
         </span>
     </if>
     <else if=variant === "default">

@@ -1,17 +1,19 @@
-import { tagToString } from "../../common/storybook/storybook-code-source";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component, { type Input } from "./index.marko";
-import groupTemplate from "./examples/grouped-radio.marko";
+import Radio, { type Input } from "./index.marko";
+import GroupTemplate from "./examples/grouped-radio.marko";
+import GroupCode from "./examples/grouped-radio.marko?raw";
 import WithLabelTemplate from "./examples/with-label.marko";
-import DisabledTemplate from "./examples/disabled-with-label.marko";
-import groupCode from "./examples/grouped-radio.marko?raw";
 import WithLabelCode from "./examples/with-label.marko?raw";
+import DisabledTemplate from "./examples/disabled-with-label.marko";
 import DisabledCode from "./examples/disabled-with-label.marko?raw";
-import type { StoryFn } from "@storybook/marko";
+import ControlledTemplate from "./examples/controlled.marko";
+import ControlledCode from "./examples/controlled.marko?raw";
 
 export default {
   title: "form input/evo-radio",
-  component: Component,
+  component: Radio,
   parameters: {
     docs: {
       description: {
@@ -23,72 +25,25 @@ export default {
   argTypes: {
     size: {
       options: ["regular (default)", "large"],
-      type: { category: "Options" },
-      table: {
-        defaultValue: {
-          summary: "undefined",
-        },
-      },
       description:
-        'Either `"large"` or `undefined` (regular size). Sets the radio icon. (Note: The dimensions of the radio will not change, but only the icon)',
+        "Icon size. (Note: The dimensions of the radio will not change, but only the icon)",
     },
-    "all <input> attributes": {
+    ["<input> attributes" as any]: {
       description:
-        "All attributes from the [native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) may be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
-      table: {
-        category: "<input> attributes",
-      },
+        "All attributes and event handlers from [the native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) will be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
     },
   },
-};
+} satisfies Meta<Input>;
 
-export const WithLabel: StoryFn<Input> = (args) => ({
-  input: args,
-  component: WithLabelTemplate,
-});
+export const WithLabel = buildExtensionTemplate(
+  WithLabelTemplate,
+  WithLabelCode,
+);
+export const Disabled = buildExtensionTemplate(DisabledTemplate, DisabledCode);
+export const Group = buildExtensionTemplate(GroupTemplate, GroupCode);
+export const Controlled = buildExtensionTemplate(
+  ControlledTemplate,
+  ControlledCode,
+);
 
-WithLabel.parameters = {
-  docs: {
-    source: {
-      code: WithLabelCode,
-    },
-  },
-};
-
-export const Disabled: StoryFn<Input> = (args) => ({
-  input: args,
-  component: DisabledTemplate,
-});
-
-Disabled.parameters = {
-  docs: {
-    source: {
-      code: DisabledCode,
-    },
-  },
-};
-
-export const Group: StoryFn<Input> = (args) => ({
-  input: {
-    ...args,
-  },
-  component: groupTemplate,
-});
-Group.parameters = {
-  docs: {
-    source: {
-      code: groupCode,
-    },
-  },
-};
-
-export const Isolated: any = {};
-Isolated.args = {};
-Isolated.component = Component;
-Isolated.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-radio", Isolated.args),
-    },
-  },
-};
+export const Isolated = {};

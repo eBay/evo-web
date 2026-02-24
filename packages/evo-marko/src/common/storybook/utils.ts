@@ -1,23 +1,13 @@
-function buildExtensionTemplate(
+import type { StoryObj } from "@storybook/marko";
+
+export function buildExtensionTemplate(
   template: Marko.Template,
   code: string,
-  args: Record<string, any> = {},
-) {
-  const builder = (args: Record<string, any>) => ({
-    input: args,
-    component: template,
-  });
-
-  builder.args = Object.assign({}, args);
-  builder.parameters = {
-    docs: {
-      source: {
-        code,
-      },
-    },
+  args: Record<string, unknown> = {},
+): StoryObj {
+  return {
+    render: (input) => ({ component: template, input }),
+    args: { ...args },
+    parameters: { docs: { source: { code } } },
   };
-
-  return builder;
 }
-
-export { buildExtensionTemplate };

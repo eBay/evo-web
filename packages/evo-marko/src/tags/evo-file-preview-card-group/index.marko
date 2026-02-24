@@ -2,11 +2,13 @@ import type { Input as FilePreviewCardInput } from "../evo-file-preview-card/ind
 export interface Input extends Marko.HTML.Div {
     card?: Marko.AttrTag<FilePreviewCardInput>;
     seeMoreAction?: FilePreviewCardInput["seeMoreAction"];
+    visibleCardCount?: number;
+    visibleCardCountChange?: (s: number) => void;
 }
 static const SHOW_AMOUNT = 15;
 
-<const/{ card, seeMoreAction, ...htmlInput }=input>
-<let/showing=SHOW_AMOUNT>
+<const/{ card, seeMoreAction, visibleCardCount, visibleCardCountChange, ...htmlInput }=input>
+<let/showing=visibleCardCount ?? SHOW_AMOUNT valueChange=visibleCardCountChange>
 <const/cards=[...card || []]>
 
 <div ...htmlInput class=["file-preview-card-group", input.class]>
@@ -18,6 +20,7 @@ static const SHOW_AMOUNT = 15;
         <if=(cards.length > showing)>
             <evo-file-preview-card as="li" file=(cards[showing].file)>
                 <@seeMoreAction
+                    a11yText=""
                     ...seeMoreAction
                     onClick(e, target) {
                         showing += SHOW_AMOUNT;

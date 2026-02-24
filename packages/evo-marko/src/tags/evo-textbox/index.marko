@@ -1,28 +1,23 @@
 export interface Input extends Marko.HTML.Input {
-    id?: string
     multiline?: boolean;
-    type?: Marko.HTML.Input["type"];
     inputSize?: "regular" | "large";
     fluid?: boolean;
     opaqueLabel?: boolean;
     floatingLabel?: string;
     floatingLabelStatic?: boolean;
     prefixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
-    prefixText?: Marko.AttrTag<{ content: Marko.Body }>;
-    postfixText?: Marko.AttrTag<{ content: Marko.Body }>;
-    postfixIcon?: Marko.AttrTag<{
-        content: Marko.Body;
-        "aria-label"?: Marko.HTMLAttributes["aria-label"];
+    prefixText?: Marko.AttrTag<Marko.HTML.Span>;
+    postfixText?: Marko.AttrTag<Marko.HTML.Span>;
+    postfixIcon?: Marko.AttrTag<Marko.HTML.Button & {
+        "aria-label"?: string;
     }>;
     invalid?: boolean;
-    a11yButtonLabel?: Marko.HTMLAttributes["aria-label"];
     autocorrect?: Marko.HTML.TextArea["autocorrect"];
     cols?: Marko.HTML.TextArea["cols"];
     rows?: Marko.HTML.TextArea["rows"];
 }
 
 <const/{
-    a11yButtonLabel,
     class: inputClass,
     disabled,
     floatingLabel,
@@ -90,6 +85,7 @@ export interface Input extends Marko.HTML.Input {
             <span ...prefixText id=prefixId/>
         </if>
         <${multiline ? "textarea" : "input"}
+            ...htmlInput
             aria-describedby=(
                 [prefixId, postfixId].filter(Boolean).join(" ") || undefined
             )
@@ -101,7 +97,6 @@ export interface Input extends Marko.HTML.Input {
                 focused = true;
                 onFocus && onFocus(e, target);
             }
-            ...htmlInput
             id=textboxId
             class="textbox__control"
             type=!multiline && (type || "text")
@@ -114,10 +109,10 @@ export interface Input extends Marko.HTML.Input {
         </if>
         <if=displayIcon && postfixIcon>
             <${postfixIcon["aria-label"] && "button"}
-                class=["icon-btn icon-btn--transparent"]
+                ...postfixIcon
+                class=["icon-btn", "icon-btn--transparent", postfixIcon.class]
                 type="button"
-                disabled=disabled
-                ...postfixIcon>
+                disabled=disabled>
                 <${postfixIcon}/>
             </>
         </if>

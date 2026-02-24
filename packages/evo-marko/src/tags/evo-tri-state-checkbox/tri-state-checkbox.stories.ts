@@ -1,6 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
+import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import Component, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
@@ -25,74 +26,43 @@ export default {
 
   argTypes: {
     checked: {
+      changeHandler: true,
+      type: "string",
       options: ["false", "mixed", "true"],
-      type: { category: "Options" },
-      description:
-        'Either "true", "false" or "mixed". Defaults to "false". Changes the checkbox state to the given one depending on the checked state.',
-      table: {
-        defaultValue: {
-          summary: "false",
-        },
-      },
-    },
-    checkedChange: {
-      description:
-        "Used to hoist `checked` with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern. Typically added implicitly by [`:=` bind syntax](https://markojs.com/docs/reference/language#shorthand-change-handlers-two-way-binding).",
-      table: {
-        defaultValue: {
-          summary: "(open: boolean) => void",
-        },
-      },
+      control: "inline-radio",
+      description: "String enumeration of checkbox state.",
+      table: { defaultValue: { summary: "false" } },
     },
     skipMixed: {
       type: "boolean",
-      control: { type: "boolean" },
+      control: "boolean",
       description:
         "If set, then will skip the mixed toggle when clicking on checkbox. Used if in some cases you want to toggle between all items selected or none.",
     },
     size: {
+      type: "string",
       options: ["regular (default)", "large"],
-      type: { category: "Options" },
+      control: "inline-radio",
       description:
         "Sets the checkbox icon. Default is regular. (Note: The dimensions of the checkbox will not change, but only the icon)",
-      table: {
-        defaultValue: {
-          summary: "regular",
-        },
-      },
     },
     values: {
       description:
         'Used alongside `checkedValues` for a [controllable](https://markojs.com/docs/explanation/controllable-components) pattern that aligns with [Marko\'s `checkedValue` checkbox pattern](https://markojs.com/docs/reference/native-tag#input-typeradio-and-input-typecheckbox). List of _all_ "child" checkbox values',
-      table: {
-        type: { summary: "string[]" },
-      },
+      table: { type: { summary: "string[]" } },
     },
     checkedValues: {
+      changeHandler: true,
       description:
-        '**Must** be accompanied by `values` and `checkedValuesChange` (usually via [`:=` bind syntax](https://markojs.com/docs/reference/language#shorthand-change-handlers-two-way-binding)). Leverages [Marko\'s `checkedValue` checkbox pattern](https://markojs.com/docs/reference/native-tag#input-typeradio-and-input-typecheckbox) for "select/deselect all" behavior',
-      table: {
-        type: { summary: "string[]" },
-      },
+        '**Must** be accompanied by `values` and `checkedValuesChange` (usually via [the `:=` bind syntax](https://markojs.com/docs/reference/language#shorthand-change-handlers-two-way-binding)). Leverages [Marko\'s `checkedValue` checkbox pattern](https://markojs.com/docs/reference/native-tag#input-typeradio-and-input-typecheckbox) for "select/deselect all" behavior',
+      table: { type: { summary: "string[]" } },
     },
-    checkedValuesChange: {
+    ["<input> attributes" as any]: {
       description:
-        "Used to hoist `checkedValues` with the [controllable](https://markojs.com/docs/explanation/controllable-components) pattern. Typically added implicitly by [`:=` bind syntax](https://markojs.com/docs/reference/language#shorthand-change-handlers-two-way-binding).",
-      table: {
-        defaultValue: {
-          summary: "(checkedValues: string[]) => void",
-        },
-      },
-    },
-    "all <input> attributes": {
-      description:
-        "All attributes and event handlers from the [native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) may be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
-      table: {
-        category: "<input> attributes",
-      },
+        "All attributes and event handlers from [the native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) will be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
     },
   },
-};
+} satisfies Meta<Input>;
 
 export const WithLabel = buildExtensionTemplate(
   WithLabelTemplate,
