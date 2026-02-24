@@ -27,6 +27,7 @@ ul.accordion summary.details__summary {
 
 ul.accordion .details__label {
     flex: 1;
+    min-width: 0;
 }
 
 ul.accordion details {
