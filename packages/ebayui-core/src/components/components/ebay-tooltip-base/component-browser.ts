@@ -100,7 +100,7 @@ class TooltipBase extends Marko.Component<Input, State> {
                     this.emit("loaded");
                 })
                 .catch(() => {
-                    // This is the case where its loaded on the server.
+                    // This is the case where it's loaded on the server.
                     // Should be no-op
                 });
         }
