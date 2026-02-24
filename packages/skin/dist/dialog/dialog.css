@@ -63,6 +63,7 @@ body:has(.dialog[open]) {
     background-color: var(--color-background-primary);
     border: none;
     border-radius: var(--border-radius-150);
+    color: var(--color-foreground-primary);
     flex-direction: column;
     max-height: 90%;
     max-width: 88%;
