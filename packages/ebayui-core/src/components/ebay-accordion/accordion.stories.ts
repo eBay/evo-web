@@ -13,7 +13,6 @@ import withIconTemplate from "./examples/withIcon.marko";
 import withIconTemplateCode from "./examples/withIcon.marko?raw";
 
 
-
 export default {
     title: "navigation & disclosure/ebay-accordion",
     component: Accordion,
