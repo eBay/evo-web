@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.4.1
+
+### Patch Changes
+
+- [#537](https://github.com/eBay/evo-web/pull/537) [`47e4ee8`](https://github.com/eBay/evo-web/commit/47e4ee859c54abeb4818b0d4a312301de39da2b5) Thanks [@agliga](https://github.com/agliga)! - fix(@internal): fixed noop-for-node exports
+
 ## 16.4.0
 
 ### Minor Changes
