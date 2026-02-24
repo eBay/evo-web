@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.0.3
+
+### Patch Changes
+
+- [`9f81411`](https://github.com/eBay/evo-web/commit/9f81411c825c481e6c93ce0e62869f32dc8ba136) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(evo-react): add .mjs extension to @ebay/skin/button import
+
 ## 0.0.2
 
 ### Patch Changes
