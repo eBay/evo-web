@@ -38,20 +38,25 @@ export class DropdownUtil {
         this.overlay = overlay as HTMLElement;
         this.options = options ?? {};
 
-        floatinguiLoad().then((floatingUI) => {
-            this.computePosition =
-                floatingUI.computePosition as typeof computePosition;
-            this.autoUpdate = floatingUI.autoUpdate as typeof autoUpdate;
-            this.offset = floatingUI.offset;
-            this.flip = floatingUI.flip;
-            this.shift = floatingUI.shift;
+        floatinguiLoad()
+            .then((floatingUI) => {
+                this.computePosition =
+                    floatingUI.computePosition as typeof computePosition;
+                this.autoUpdate = floatingUI.autoUpdate as typeof autoUpdate;
+                this.offset = floatingUI.offset;
+                this.flip = floatingUI.flip;
+                this.shift = floatingUI.shift;
 
-            this.loaded = true;
-            if (this.triggerShow) {
-                this.triggerShow = false;
-                this.show();
-            }
-        });
+                this.loaded = true;
+                if (this.triggerShow) {
+                    this.triggerShow = false;
+                    this.show();
+                }
+            })
+            .catch(() => {
+                // This is the case where its loaded on the server.
+                // Should be no-op
+            });
     }
 
     show() {

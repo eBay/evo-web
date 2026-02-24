@@ -82,21 +82,27 @@ class TooltipBase extends Marko.Component<Input, State> {
     onMount() {
         this._setupBaseTooltip();
         if (!this.state.loaded) {
-            floatinguiLoad().then((floatingUI) => {
-                this.computePosition =
-                    floatingUI.computePosition as typeof computePosition;
-                this.autoUpdate = floatingUI.autoUpdate as typeof autoUpdate;
-                this.offset = floatingUI.offset;
-                this.flip = floatingUI.flip;
-                this.shift = floatingUI.shift;
-                this.arrow = floatingUI.arrow;
-                this.inline = floatingUI.inline;
-                this.state.loaded = true;
-                if (this.input.open !== false) {
-                    this.positionTip();
-                }
-                this.emit("loaded");
-            });
+            floatinguiLoad()
+                .then((floatingUI) => {
+                    this.computePosition =
+                        floatingUI.computePosition as typeof computePosition;
+                    this.autoUpdate =
+                        floatingUI.autoUpdate as typeof autoUpdate;
+                    this.offset = floatingUI.offset;
+                    this.flip = floatingUI.flip;
+                    this.shift = floatingUI.shift;
+                    this.arrow = floatingUI.arrow;
+                    this.inline = floatingUI.inline;
+                    this.state.loaded = true;
+                    if (this.input.open !== false) {
+                        this.positionTip();
+                    }
+                    this.emit("loaded");
+                })
+                .catch(() => {
+                    // This is the case where its loaded on the server.
+                    // Should be no-op
+                });
         }
     }
 
