@@ -54,7 +54,7 @@ export class DropdownUtil {
                 }
             })
             .catch(() => {
-                // This is the case where its loaded on the server.
+                // This is the case where it's loaded on the server.
                 // Should be no-op
             });
     }
