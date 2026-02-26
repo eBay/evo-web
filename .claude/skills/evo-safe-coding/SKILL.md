@@ -1,7 +1,6 @@
 ---
 name: evo-safe-coding
 description: Org-grade safe coding mode for agent-driven changes in VS Code. Use for any code edits, refactors, bug fixes, or feature work. Enforces risk gating, minimal diffs, clarification, and merge readiness.
-user-invocable: true
 ---
 
 # Org-Safe Coding (VS Code)

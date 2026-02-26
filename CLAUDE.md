@@ -1,254 +1,176 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+AI configuration for eBay's evo-web components monorepo.
 
-## Overview
+---
 
-Evo-web is eBay's design system monorepo containing:
+<agent_constraints>
 
-- **@ebay/skin** - Pure CSS/SCSS framework (foundation layer)
-- **@ebay/ebayui-core** - Marko 5 components (legacy, 92 components)
-- **@evo-web/marko** - Marko 6 components (new, 43 components migrated)
-- **@ebay/ebayui-core-react** (`packages/ebayui-core-react`) - React components with CommonJS (legacy, 86+ components)
-- **@evo-web/react** - React 19 ESM components (new, pre-release)
+- Never auto-commit or push without explicit user request
+- Always run `npm run build` before marking component work complete
+- Prefer reading existing patterns over introducing new ones
+  </agent_constraints>
 
-**Layered Architecture:**
+## <architecture_rules>
+
+### Layered Architecture (Non-Negotiable)
 
 ```
-HTML Semantic Structure (Bones)
-    ↓
-@ebay/skin (CSS styling with BEM)
-    ↓
-Marko/React Components (Framework wrappers)
-    ↓
-Interactive behaviors (As part of the component)
+HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → Interactive Behaviors
 ```
 
-All components wrap Skin CSS modules. CSS is the single source of truth for styling.
+**CSS is the single source of truth.** All components wrap Skin CSS modules.
 
-## Common Commands
+### Package Structure
 
-### Root-level commands
+- `@ebay/skin` - Pure CSS/SCSS (foundation layer)
+- `@ebay/ebayui-core` - Marko 5 (legacy)
+- `@evo-web/marko` - Marko 6 (new, under migration)
+- `@ebay/ebayui-core-react` - React CJS (legacy)
+- `@evo-web/react` - React 19 ESM (new, under migration)
 
-```bash
-# Install dependencies (also installs Playwright with chromium)
-npm install
+### Component Development Flow (MANDATORY)
 
-# Build all packages in correct order and runs all the "tests"
-npm run build
+1. Create/modify Skin component in `packages/skin/src/` (HTML + SCSS)
+2. Write semantic HTML following BEM + a11y guidelines
+3. Build framework wrapper (Marko/React) importing Skin CSS
+4. Add JS interaction layer (keyboard nav, ARIA) if needed
+5. Support pass-through HTML attributes to root/control elements
 
-# builds the site for publishing to _site directory
-npm run deploy
+</architecture_rules>
 
-# Lint CSS/SCSS
-npm run lint
+---
 
-# Only used for testing individual packages and shouldn't be used to validate the build is successful
-npm test
+## <accessibility_guardrails>
 
-# Start local development site (Marko-Run docs site)
-npm start
+**All components MUST meet WCAG 2.2 AA standards:**
 
-# Create a changeset for versioning
-npm run change
+- Follow eBay accessibility standards and patterns
+- Prefer native HTML over custom controls
+- If ARIA needed: follow "Five Rules of ARIA" (minimal/correct usage)
+- Ensure keyboard operability, focus states, sufficient contrast
+- Test in light/dark modes
+- Test zoom up to 400% and with assistive technologies (screen readers, keyboard-only)
+- Support RTL (right-to-left) layouts
 
-# Version packages and update changelogs
-npm run version
+</accessibility_guardrails>
 
-# Release packages to npm
-npm run release
-```
+---
 
-### Working with specific packages
+## <css_methodology>
 
-```bash
-# Build specific package
-## These commands should only be run by changesets
-npm run build -w packages/skin
-npm run build -w packages/ebayui-core
-npm run build -w packages/evo-marko
-npm run build -w packages/ebayui-core-react
-npm run build -w packages/evo-react
+**BEM Strict Enforcement:**
 
-# Test specific package
-npm test -w packages/ebayui-core
+- Block: `.btn` or `.chips-combobox` (for multi-word)
+- Element: `.btn__cell`
+- Modifier: `.btn--primary`
 
-# Update visual snapshots (Marko packages)
-npm run update-snapshots -w packages/ebayui-core
+**Build Pipeline:** Sass → PostCSS → Autoprefixer → cssnano → `dist/`
 
-# Start Storybook (per package)
-cd packages/skin && npm run storybook
-cd packages/ebayui-core && npm run storybook
-cd packages/ebayui-core-react && npm run storybook
-```
+**Style Conventions:** See `./packages/skin/STYLEGUIDE.md`
 
-### Testing Patterns
+</css_methodology>
 
-**Marko components** have dual test suites:
+---
 
-- `test/test.browser.js` - Browser tests with Playwright (Vitest)
-- `test/test.server.js` - Server-side rendering tests (Vitest)
+## <correctness_guards>
 
-**React components** use jsdom:
+**Version-Specific Syntax (Prevent Hallucination):**
 
-- `__tests__/index.spec.tsx` - Vitest with @testing-library/react
+**Marko 6 Syntax:**
 
-Run individual test files:
+- ✅ Use: `<let/x=0>` or `<const/y=x*2>`
+- ❌ Never: `$ let x = 0;` (Marko 5 deprecated)
+- ✅ Events: `onClick() { /* code */ }` or `onClick=handler`
+- ❌ Never: `onClick("handleClick")` (Marko 5 deprecated)
 
-```bash
-# Marko browser test
-npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser.js
+**React Package Differences:**
 
-# React test
-npx vitest run packages/ebayui-core-react/src/ebay-button/__tests__/index.spec.tsx
-```
+- `ebayui-core-react`: Requires `React.forwardRef` wrapper
+- `evo-react`: Use native `ref` (React 19, no forwardRef needed)
 
-## Architecture and Patterns
+**BEM Syntax:**
 
-### Component Development Flow
+- Block: `.btn` or `.chips-combobox` (for multi-word)
+- Element: `.btn__cell` (double underscore, NOT single)
+- Modifier: `.btn--primary` (double dash, NOT single)
+- ❌ Modifiers or Children Never: `.btn-primary` or `.btn_cell`
 
-**Always start with HTML/CSS first:**
+</correctness_guards>
 
-1. Create/modify the static Skin component in `packages/skin/src/`
-2. Write semantic HTML structure for the component (following BEM and accessibility guidelines)
-3. Write SCSS following BEM rules
-4. Build component wrapper (Marko or React) that imports the Skin CSS
-5. Add JS interaction layer if it's an interactive component (keyboard nav, ARIA management)
-6. Components support pass-through HTML attributes to root/control elements
+---
 
-### Marko Component Structure
+## File Structure Conventions
 
-**ebayui-core (Marko 5):**
+### Marko 5 (ebayui-core)
 
 ```
 src/components/ebay-button/
-├── index.marko              # Template with TypeScript interfaces
-├── component.ts             # Lifecycle and behavior (optional)
-├── component-browser.ts             # Client side only lifecycle and behavior  (optional)
-├── marko-tag.json          # Attribute validation
-├── style.ts                # Imports Skin CSS
-├── browser.json            # Build remapping
-├── *.stories.ts            # Storybook docs
+├── index.marko            # Template + TS interfaces
+├── component.ts           # Server+client lifecycle (optional)
+├── component-browser.ts   # Client-only lifecycle (optional)
+├── marko-tag.json         # Attribute validation
+├── style.ts               # Imports Skin CSS
+├── browser.json           # Build remapping
+├── *.stories.ts
 └── test/
-    ├── test.browser.js
-    └── test.server.js
+    ├── test.browser.js    # Playwright (Vitest)
+    └── test.server.js     # SSR tests (Vitest)
 ```
 
 **Event naming:** kebab-case (`on-click`, `on-expand`)
 
-**Marko 5 vs 6 syntax:**
+**Marko 5→6 Syntax Migration:**
 
-For guidance on usage of either Marko 5 or Marko 6 or for the Marko 5 → 6 syntax and migration, see the dedicated reference: https://markojs.com/llms.txt
+- Tag variables: Use `<let/x=0>` or `<const/y=x*2>` (NOT `$ let x = 0;`)
+- Style tags: Use `<style>` with standard CSS (NOT `style { ... }` blocks)
+- Events: Use `onClick() { /* code */ }` or `onClick=handler` (NOT `onClick("handleClick")`)
+- `<script>` tags: Similar to React effects, use sparingly (NOT for state/functions)
 
-### React Component Structure
-
-**ebayui-core-react / evo-react:**
+### React (ebayui-core-react / evo-react)
 
 ```
 src/ebay-button/
-├── button.tsx              # Main component
-├── button-cell.tsx         # Sub-components
-├── index.ts                # Exports with types
-├── types.ts                # TypeScript types
+├── button.tsx
+├── button-cell.tsx
+├── index.ts              # Exports + types
+├── types.ts
 └── __tests__/
-    ├── index.spec.tsx
+    ├── index.spec.tsx    # Vitest + @testing-library/react (jsdom)
     ├── index.stories.tsx
     └── render.spec.tsx
 ```
 
 **Key differences:**
 
-- `ebayui-core-react`: Uses forwardRef, CommonJS build, external MakeupJS
-- `evo-react`: React 19 native (no forwardRef), ESM-only, bundled MakeupJS
+- `ebayui-core-react`: forwardRef, CommonJS, external MakeupJS, assumes global `@ebay/skin`
+- `evo-react`: React 19 native, ESM-only, bundled MakeupJS, imports Skin CSS
 
-React components in `ui-core-react` assume `@ebay/skin` is loaded globally (no CSS imports),
-but that will change on evo-react.
+---
 
-### CSS/SCSS Guidelines (Skin)
+## Testing Requirements
 
-**BEM Methodology:**
-
-- Block: `.btn`
-- Element: `.btn__cell`
-- Modifier: `.btn--primary`
-
-**Style Conventions**
-See `./packages/skin/STYLEGUIDE.md` for detailed style conventions.
-
-**PostCSS pipeline:** Sass → PostCSS → Autoprefixer → cssnano → `dist/`
-
-### Accessibility Requirements
-
-All components must meet **WCAG 2.2 AA** standards:
-
-- Follow eBay MIND Patterns (https://ebay.gitbooks.io/mindpatterns/content/)
-- Always prefer native HTML over custom controls
-- If ARIA needed, follow "Five Rules of ARIA" (use minimally/correctly)
-- Ensure keyboard operability for all interactive elements
-- Maintain focus states and sufficient color contrast
-- Test in both light and dark modes
-- Support RTL (right-to-left) layouts
-
-### Testing Requirements
-
-**Required for all components:**
+**Mandatory for all components:**
 
 - Adequate test coverage for new/modified code
-- Browser tests (Marko) or jsdom tests (React)
-- Visual regression testing via Percy (for CSS changes)
+- Browser tests (Marko via Playwright) or jsdom tests (React)
+- Visual regression via Percy (CSS changes)
 
 **Storybook requirements:**
 
-- All components in skin must include RTL and Text Spacing stories (unless excluded)
-- Stories should demonstrate key variants and states
+- Include RTL + Text Spacing stories (unless excluded)
+- Demonstrate key variants/states
 
-### Versioning and Releases
+---
 
-**Changesets workflow:**
-
-1. Make changes to packages
-2. Run `npm run change` to create a changeset
-3. Commit the changeset file (`.changeset/*.md`)
-4. On merge to main, changesets bot creates version PR
-5. Merge version PR to trigger `npm run release`
-
-**Packages version independently** (no monorepo version linking).
-
-### Site/Documentation Architecture
-
-Root site (`/src/routes/`) uses **Marko-Run** (file-based routing):
-
-- `/src/routes/_index/components/` - Component documentation
-- `/src/routes/_index/accessibility/` - A11y guides
-- `/src/routes/guide-examples/` - Live examples on how to implement certain patterns
-- `/src/data/component-metadata.json` - Central component registry
-
-Site embeds package Storybooks and deploys to `_site/` with nested builds.
-
-### Migration Paths
-
-**Marko 5 → 6:**
-
-- From: `@ebay/ebayui-core`
-- To: `@evo-web/marko`
-- Status: In progress - See this PR for reference and details: https://github.com/eBay/evo-web/issues/499
-
-**React CJS → ESM:**
-
-- From: `@ebay/ui-core-react`
-- To: `@evo-web/react`
-- Status: Pre-release
-
-Legacy packages maintained for backwards compatibility.
-
-## PR Checklist Highlights
+## PR Checklist
 
 **All PRs:**
 
-- Build must be green
-- Changes within scope of linked issue
-- Reference issue with "Fixes #[number]"
-- Include changeset (unless docs-only)
+- ✅ Build must be green
+- ✅ Changes within scope of linked issue
+- ✅ Reference issue: `Fixes #[number]`
+- ✅ Include changeset (unless docs-only)
 
 **Markup changes:**
 
@@ -258,17 +180,72 @@ Legacy packages maintained for backwards compatibility.
 
 **CSS/SCSS changes:**
 
-- Regenerate `dist/` folder using `npm run build`
+- Regenerate `dist/` folder via `npm run build`
 - Test in all supported browsers
 - Percy visual regression approved
-- Verify dark mode and RTL support
-- Check responsive breakpoints (320px, 512px, 768px, 1024px, 1280px, 1440px, 1680px, 1920px)
+- Verify dark mode + RTL support
+- Check responsive breakpoints: 320px, 512px, 768px, 1024px, 1280px, 1440px, 1680px, 1920px
 
 **Breaking changes:**
 
-- Only allowed in major version releases
-- Must be clearly documented in changeset
+- Only in major version releases
+- Must be documented in changeset
 
-## Browser Support
+---
 
-Defined by `@ebay/browserslist-config` (no IE10 or below).
+## Common Development Commands
+
+**Root-level (frequently used):**
+
+```bash
+npm run build    # Build all packages + run tests
+npm test         # Test (for individual packages only)
+npm start        # Start local dev site (Marko-Run)
+npm run lint     # Lint CSS/SCSS
+```
+
+**Testing patterns:**
+
+- Marko: `test/test.browser.js` (Playwright) + `test/test.server.js` (SSR)
+- React: `__tests__/index.spec.tsx` (Vitest + @testing-library/react)
+
+**Run specific test:**
+
+```bash
+npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser.js
+```
+
+---
+
+## Repository Metadata
+
+**Site Architecture:**
+
+- Root site: Marko-Run (file-based routing at `/src/routes/`)
+- `/src/routes/_index/components/` - Component docs
+- `/src/routes/_index/accessibility/` - A11y guides
+- `/src/data/component-metadata.json` - Component registry
+- Deploys to `_site/` with nested Storybook builds
+- New components need documentation in `/src/routes/_index/components/` with Overview, Accessibility, CSS tabs.
+- New components also need tab links to Marko and React components storybooks as well as the Design System Playbook page for the component.
+
+**Versioning:**
+
+- Changesets workflow (packages version independently)
+- No monorepo version linking
+
+**Browser Support:**
+
+- Defined by `@ebay/browserslist-config` (no IE10 or below)
+
+---
+
+## Skills
+
+For specialized workflows:
+
+- `/evo-release-workflow` - Changesets versioning and release procedure (invoke when creating releases)
+
+For comprehensive command reference (less frequently used commands):
+
+- `/evo-commands` - Full npm scripts reference, package-specific builds, Storybook setup
