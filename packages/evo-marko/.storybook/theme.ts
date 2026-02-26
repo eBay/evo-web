@@ -5,8 +5,11 @@ export default create({
 
   // Typography
   fontBase: '"Market Sans", Arial',
+
+  // Color
   colorSecondary: "#b7204b",
   appBg: "#fff8fb",
+  appHoverBg: "#fae6ee",
 
   // Brand assets
   brandTitle: "Evo Marko",
