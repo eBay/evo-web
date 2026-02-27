@@ -79,6 +79,9 @@
     min-width: 80px;
     padding: var(--spacing-200) var(--spacing-100);
 }
+.video-player--with-nav.video-player--compact .shaka-big-buttons-container {
+    display: none;
+}
 @container (inline-size < 320px) {
     .video-player--compact video {
         object-fit: cover;
