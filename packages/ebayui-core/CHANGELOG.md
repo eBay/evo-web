@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.5.0
+
+### Minor Changes
+
+- [#522](https://github.com/eBay/evo-web/pull/522) [`c7e00f9`](https://github.com/eBay/evo-web/commit/c7e00f9503ff721ae5b80e258cc5670af7b7d5dd) Thanks [@agliga](https://github.com/agliga)! - feat(video): updated shaka player to the latest and fixed several bugs
+
 ## 16.4.1
 
 ### Patch Changes

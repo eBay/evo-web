@@ -55,7 +55,7 @@ const videoConfig = {
     showUIAlways: false,
     addSeekBar: true,
     controlPanelElements: defaultControlPanelElements,
-}
+};
 
 const compactConfig = {
     doubleClickForFullscreen: true,

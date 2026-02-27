@@ -1,5 +1,15 @@
 # Skin Changelog
 
+## 19.22.0
+
+### Minor Changes
+
+- [#522](https://github.com/eBay/evo-web/pull/522) [`c7e00f9`](https://github.com/eBay/evo-web/commit/c7e00f9503ff721ae5b80e258cc5670af7b7d5dd) Thanks [@agliga](https://github.com/agliga)! - feat(video): updated shaka player to the latest and fixed several bugs
+
+### Patch Changes
+
+- [#530](https://github.com/eBay/evo-web/pull/530) [`7c386a8`](https://github.com/eBay/evo-web/commit/7c386a8ac6ed471abb432b9385ed8c90e2cec65a) Thanks [@agliga](https://github.com/agliga)! - fix: updated to the latest tokens and fixed skeleton tokens
+
 ## 19.21.3
 
 ### Patch Changes
