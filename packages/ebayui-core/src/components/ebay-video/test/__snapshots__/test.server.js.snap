@@ -13,6 +13,7 @@ exports[`video > renders default 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
           [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"[39m
@@ -231,6 +232,7 @@ exports[`video > renders ios video player 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
         [33mshaka-config[39m=[32m"{\\"streaming\\":{\\"lowLatencyMode\\":true}}"[39m
       [36m>[39m
         [36m<source[39m
@@ -460,6 +462,7 @@ exports[`video > renders with compact layout 1`] = `
           [33mautoplay[39m=[32m""[39m
           [33mloop[39m=[32m""[39m
           [33mno-controls[39m=[32m""[39m
+          [33mplaysinline[39m=[32m""[39m
           [33mposter[39m=[32m"https://i.ebayimg.com/images/g/3hAAAOSw5dVhY2Rm/s-l1600.jpg"[39m
         [36m>[39m
           [36m<source[39m
@@ -679,6 +682,7 @@ exports[`video > renders with mp4 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
           [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/video.mp4"[39m
@@ -896,6 +900,7 @@ exports[`video > renders with report text 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
           [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"[39m
