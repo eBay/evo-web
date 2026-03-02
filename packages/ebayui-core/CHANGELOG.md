@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.5.1
+
+### Patch Changes
+
+- [#545](https://github.com/eBay/evo-web/pull/545) [`12d07a2`](https://github.com/eBay/evo-web/commit/12d07a22da57df49cfa48e6ca9ba95a314c72544) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Prevent auto-fullscreen on video component
+
 ## 16.5.0
 
 ### Minor Changes
