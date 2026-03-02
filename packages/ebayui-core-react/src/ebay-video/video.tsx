@@ -257,6 +257,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
                     ref={videoRef}
                     style={style}
                     poster={thumbnail}
+                    playsInline
                     muted={muted || false}
                     onPlaying={handlePlaying}
                     onPause={handleOnPause}

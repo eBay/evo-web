@@ -54,10 +54,11 @@ export default {
             description: "True/False to mute or unmute video. Default is false",
         },
         layout: {
+            options: ["default", "compact"],
             type: "string",
+            control: { type: "select" },
             description:
                 'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remaining time on the video is displayed',
-            control: { type: "text" },
         },
         playView: {
             description:

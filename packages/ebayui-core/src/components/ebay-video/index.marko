@@ -45,6 +45,7 @@ $ const styleSize = {
         <${nav ? "a" : null} ...processHtmlAttributes(nav || {})>
             <video
                 no-controls
+                playsinline
                 poster=thumbnail
                 ...processHtmlAttributes(htmlInput)>
                 <for|src| of=sources>
