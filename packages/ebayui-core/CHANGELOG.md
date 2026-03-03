@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.5.2
+
+### Patch Changes
+
+- [#547](https://github.com/eBay/evo-web/pull/547) [`57b379c`](https://github.com/eBay/evo-web/commit/57b379ca1f759ab5541df47e74fe7bcc01db0a1a) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(video): null reference error on play/pause
+
 ## 16.5.1
 
 ### Patch Changes
