@@ -173,7 +173,7 @@ class Video extends Marko.Component<Input, State> {
     }
 
     alignSeekbar() {
-        if (this.el) {
+        if (this.el && this.input.layout !== "compact") {
             const buttonPanel = this.el.querySelector<HTMLElement>(
                 ".shaka-controls-button-panel",
             )!;

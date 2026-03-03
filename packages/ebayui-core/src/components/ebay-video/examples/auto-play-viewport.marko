@@ -22,7 +22,10 @@ style {
 
 <div class="instructions">
     <h2>Auto-play on Viewport Visibility</h2>
-    <p>Scroll down to see the video. It will automatically play when it's 50% visible in the viewport and pause when it's less than 50% visible.</p>
+    <p>
+        Scroll down to see the video. It will automatically play when it's 50%
+        visible in the viewport and pause when it's less than 50% visible.
+    </p>
 </div>
 
 <div class="spacer">
@@ -33,17 +36,16 @@ style {
     <ebay-video
         width="300"
         height="300"
-        a11yPlayText = "Click to play",
-        a11yLoadText = "Loading",
-        a11yMuteText = "Click to mute",
-        a11yUnmuteText = "Click to unmute",
-        layout = "compact"
-        thumbnail = "https://i.ebayimg.com/images/g/3hAAAOSw5dVhY2Rm/s-l1600.jpg"
+        a11yPlayText="Click to play"
+        a11yLoadText="Loading"
+        a11yMuteText="Click to mute"
+        a11yUnmuteText="Click to unmute"
+        layout="compact"
+        thumbnail="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/iphone-thumbnail.jpg"
         autoplay
         loop
         muted
-        offscreenPause = true
-    >
+        offscreenPause>
         <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
     </ebay-video>
 </div>
