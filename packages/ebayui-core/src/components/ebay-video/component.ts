@@ -173,7 +173,7 @@ class Video extends Marko.Component<Input, State> {
     }
 
     alignSeekbar() {
-        if (this.el && this.input.layout !== "compact") {
+        if (this.el) {
             const buttonPanel = this.el.querySelector<HTMLElement>(
                 ".shaka-controls-button-panel",
             )!;
@@ -181,7 +181,7 @@ class Video extends Marko.Component<Input, State> {
             const rangeContainer = this.el.querySelector<HTMLElement>(
                 ".shaka-range-container",
             )!;
-            if (buttonPanel && spacer) {
+            if (buttonPanel && spacer && rangeContainer) {
                 const buttonPanelRect = buttonPanel.getBoundingClientRect();
                 const spacerRect = spacer.getBoundingClientRect();
 
