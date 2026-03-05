@@ -37,7 +37,7 @@ Will the AI reliably follow these rules?
 
 - ✅ **Critical constraints in primacy zone** - First 2,000 tokens exploit the Primacy Effect (Liu et al., 2024 - "Lost in the Middle")
 - ✅ **XML encapsulation for Claude** - Wrapping rules in `<architecture_rules>`, `<correctness_guards>` creates structural boundaries preventing context bleeding (Anthropic-optimized)
-- ✅ **Correctness Guards present** - Version-specific syntax examples (e.g., Bootstrap 5, Marko 6) prevent hallucination to training data
+- ✅ **Correctness Guards present** - Version-specific syntax examples (e.g., Marko 6, BEM, React 19) prevent hallucination to training data
 - ❌ **Avoid indirection layers** - External references land in weak attention zone (middle of context)
 - ❌ **No vague commands** - "Be thorough" triggers infinite tool loops (Thoroughness Anti-Pattern)
 
@@ -84,7 +84,7 @@ Core architectural constraints that must never be violated
 </architecture_rules>
 
 <correctness_guards>
-Version-specific syntax examples (Bootstrap 5, Tailwind 4, React 19, etc.)
+Version-specific syntax examples (framework-specific: Marko 6, BEM, React 19, etc.)
 </correctness_guards>
 
 <logic_gate>
@@ -107,9 +107,9 @@ Structure for the Primacy Effect:
 - Correctness Guards (version-specific syntax)
 
 [MIDDLE]
-- File structure conventions
-- Frequently-used reference material (if used >50% of sessions)
-- Testing patterns
+- Component patterns (reference to existing examples, not full documentation)
+- Non-discoverable conventions only (syntax, APIs, framework differences)
+- Testing requirements (what's mandatory, not how to structure)
 
 [BOTTOM]
 - Repository metadata
@@ -133,10 +133,15 @@ Use "Golden Snippets" for version-specific syntax:
 
 ```xml
 <correctness_guards>
-- **Bootstrap 5:** Use `data-bs-toggle` NOT legacy `data-toggle`
-- **Marko 6:** Use `<let/x=0>` NOT `$ let x = 0;`
-- **React 19:** No forwardRef in new code (native ref support)
-- **Tailwind v4:** Use `@theme` blocks NOT deprecated utilities
+**Version-specific syntax (prevents training data hallucination):**
+- **Marko 6:** Use `<let/x=0>` NOT `$ let x = 0;` (Marko 5 deprecated)
+- **Marko Events:** Use `onClick() { }` or `onClick=handler` NOT `onClick("handleClick")`
+- **BEM Syntax:** `.btn__cell` (double underscore) NOT `.btn_cell` (single)
+- **BEM Modifiers:** `.btn--primary` (double dash) NOT `.btn-primary` (single)
+- **React Packages:** `ebayui-core-react` needs `React.forwardRef`, `evo-react` uses native `ref` (React 19)
+- **CSS Framework:** Import from `@ebay/skin` (project CSS foundation, NOT external frameworks)
+
+**Note:** Use actual examples from the project being audited, not generic frameworks.
 </correctness_guards>
 ```
 
@@ -150,6 +155,30 @@ Key principles:
 - "Write Everything Twice" (WET) prevents attention decay
 - 5,000-token config at 90% cache rate > 1,100-token "clean" config
 - If clean code habits make AI dumber, they're technical debt
+
+### 6. **Discovery-First Architecture**
+
+LLMs have powerful file exploration tools (Glob, Grep, Read). Optimize for signal-to-noise:
+
+**Discoverable vs Non-Discoverable Material:**
+
+- ❌ **DON'T include:** File structures, directory layouts, naming patterns visible via file exploration
+- ✅ **DO include:** Non-obvious conventions, version-specific syntax, framework API differences
+- **Test:** "Could an AI discover this with Read/Glob/Grep in 1-2 files?" → If yes, replace with reference to example
+- **Exception:** Brief pointers to example locations are good ("See packages/ebayui-core/src/components/ebay-button/")
+
+**Pattern Documentation Strategy:**
+
+- **Point, don't duplicate** - "Reference existing patterns at X" not ASCII file trees
+- **Signal over noise** - Every token should prevent an error or clarify non-obvious behavior
+- **Examples over documentation** - "See how ebay-button handles this" > full explanation
+
+**Test questions:**
+
+1. Is this pattern visible in file structure? → Reference the file, don't duplicate
+2. Is this non-obvious or version-specific? → Include explicitly
+3. Could AI infer this from 1-2 examples? → Point to examples
+4. Does this prevent training data hallucination? → Include with emphasis
 
 ## Expected Workflow
 
@@ -206,6 +235,10 @@ Provide:
 - Missing Correctness Guards (version hallucination risk)
 - Vague commands like "be thorough" (tool loop trigger)
 - Over-compression sacrificing fidelity (Clean Code Tax)
+- File structure ASCII art (discoverable via exploration)
+- Documenting patterns instead of referencing examples
+- Including obvious information in comments (e.g., "# Exports + types")
+- Using examples from frameworks not in the project (Bootstrap when using Skin)
 
 **Good Patterns to Recognize:**
 
@@ -214,6 +247,11 @@ Provide:
 - XML-wrapped guardrails for Claude
 - Version-specific syntax examples inline
 - Frequently-used reference material kept inline
+- "Reference existing patterns" guidance over full documentation
+- Critical API differences prominently labeled (CRITICAL, prevents hallucination)
+- Focus on non-discoverable, version-specific rules
+- Examples from the actual project tech stack (not generic frameworks)
+- Token efficiency through discovery-first approach
 
 ### 3. Identify Issues (Repo-Wide)
 
@@ -259,15 +297,6 @@ Provide:
 - Package-level nested files: ~100-300 tokens each (domain-specific extensions)
 - Combined total: <2,000 tokens for cache activation
 - Headroom target: 30-40% under threshold for future growth
-
-## Research Foundation
-
-This framework is based on:
-
-- **Liu et al. (2024)** - "Lost in the Middle" effect (arXiv:2307.03172)
-- **Gloaguen et al. (2026)** - AGENTS.md evaluation showing repository-level context files reduce task success (arXiv:2602.11988)
-- **Anthropic Documentation** - System prompts, prompt caching, XML optimization
-- **28 primary sources** on context architecture, attention patterns, and LLM fidelity
 
 ## Final Checklist
 

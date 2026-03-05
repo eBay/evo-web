@@ -100,51 +100,60 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 
 ---
 
-## File Structure Conventions
+## Component Patterns
 
-### Marko 5 (ebayui-core)
+Reference existing components for structure and conventions:
 
-```
-src/components/ebay-button/
-├── index.marko            # Template + TS interfaces
-├── component.ts           # Server+client lifecycle (optional)
-├── component-browser.ts   # Client-only lifecycle (optional)
-├── marko-tag.json         # Attribute validation
-├── style.ts               # Imports Skin CSS
-├── browser.json           # Build remapping
-├── *.stories.ts
-└── test/
-    ├── test.browser.js    # Playwright (Vitest)
-    └── test.server.js     # SSR tests (Vitest)
-```
+- Skin: `packages/skin/src/components/ebay-button/`
+- Marko: `packages/ebayui-core/src/components/ebay-button/`
+- React: `packages/ebayui-core-react/src/ebay-button/`
 
-**Event naming:** kebab-case (`on-click`, `on-expand`)
+### Component Storybooks
 
-**Marko 5→6 Syntax Migration:**
+### Skin Components
+
+**Non-obvious conventions:**
+
+- BEM naming strictly enforced
+- SCSS modules imported in component files
+- Tests in `test/` directory: `test.browser.js` (Playwright) and `test.server.js` (SSR)
+
+### Marko Components
+
+**Non-obvious conventions:**
+
+- Event naming: kebab-case (`on-click`, `on-expand`)
+- Tests in `test/` directory: `test.browser.js` (Playwright) and `test.server.js` (SSR)
+- `browser.json` for build remapping (client-only code)
+
+**Marko 5→6 Syntax (CRITICAL - prevents hallucination):**
 
 - Tag variables: Use `<let/x=0>` or `<const/y=x*2>` (NOT `$ let x = 0;`)
 - Style tags: Use `<style>` with standard CSS (NOT `style { ... }` blocks)
 - Events: Use `onClick() { /* code */ }` or `onClick=handler` (NOT `onClick("handleClick")`)
 - `<script>` tags: Similar to React effects, use sparingly (NOT for state/functions)
 
-### React (ebayui-core-react / evo-react)
+### React Components
 
-```
-src/ebay-button/
-├── button.tsx
-├── button-cell.tsx
-├── index.ts              # Exports + types
-├── types.ts
-└── __tests__/
-    ├── index.spec.tsx    # Vitest + @testing-library/react (jsdom)
-    ├── index.stories.tsx
-    └── render.spec.tsx
-```
+**Non-obvious conventions:**
 
-**Key differences:**
+- Tests in `__tests__/` directory (not `test/`)
+- Stories colocated with tests (`*.stories.tsx` in `__tests__/`)
+- Multi-file components split into `-cell.tsx`, `-text.tsx`, etc.
 
-- `ebayui-core-react`: forwardRef, CommonJS, external MakeupJS, assumes global `@ebay/skin`
-- `evo-react`: React 19 native, ESM-only, bundled MakeupJS, imports Skin CSS
+**CRITICAL package differences:**
+
+- `@ebay/ebayui-core-react`:
+  - Requires `React.forwardRef` wrapper for ref forwarding
+  - CommonJS build target
+  - External MakeupJS dependency
+  - Assumes global `@ebay/skin` SCSS/CSS
+
+- `@evo-web/react`:
+  - Use native `ref` prop (React 19, no forwardRef needed)
+  - ESM-only build target
+  - Bundled MakeupJS utilities
+  - Imports Skin CSS directly in component files
 
 ---
 
@@ -158,8 +167,9 @@ src/ebay-button/
 
 **Storybook requirements:**
 
-- Include RTL + Text Spacing stories (unless excluded)
-- Demonstrate key variants/states
+- Skin storybook is required to include all the visual permutations of the component
+- Skin storybook is required to include RTL + Text Spacing stories (unless excluded)
+- Marko/React storybooks should have the high-level permutations only since they include interactive options that allow users to see the component in different states without needing separate stories for each permutation.
 
 ---
 
