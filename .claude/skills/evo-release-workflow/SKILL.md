@@ -15,15 +15,52 @@ Edit code in one or more packages as needed.
 
 ### 2. Create a Changeset
 
-```bash
-npm run change
+Create a new file in `.changeset/` with a unique name (e.g., `word1-word2-word3.md`) with random words in the following format:
+
+```markdown
+---
+"@package/name": patch | minor | major
+"@another/package": patch | minor | major
+---
+
+Brief description of the changes
 ```
 
-This will prompt you to:
+**File naming convention:**
 
-- Select which packages changed
-- Specify bump type (major/minor/patch)
-- Write a summary of the changes
+- Use random words separated by hyphens in lowercase, like `big-breads-jog.md`
+
+**Version bump types:**
+
+- `patch` - Bug fixes, minor updates (0.0.x)
+- `minor` - New features, non-breaking changes (0.x.0)
+- `major` - Breaking changes (x.0.0)
+
+**Example changeset file** (`.changeset/big-breads-jog.md`):
+
+```markdown
+---
+"@ebay/ui-core-react": minor
+"@ebay/ebayui-core": minor
+"@ebay/skin": minor
+---
+
+release(changeset): releasing changes
+```
+
+**Package inclusion rules:**
+
+- Include all packages that were directly modified by your changes.
+- Do not include packages that were not affected.
+- If a package depends on another package that changed, include it only if the changes affect its public API.
+
+**Common package names:**
+
+- `@ebay/skin` - markup CSS/SCSS changes
+- `@ebay/ebayui-core` - legacy Marko 5 components
+- `@evo-web/marko` - new Marko 6 components
+- `@ebay/ebayui-core-react` - legacy React components
+- `@evo-web/react` - new React components
 
 ### 3. Commit the Changeset File
 
