@@ -75,6 +75,6 @@
     },
     "peerDependencies": {
         "@ebay/skin": "^19",
-        "marko": "^5.38.29"
+        "marko": "^5.38.20"
     }
 }
