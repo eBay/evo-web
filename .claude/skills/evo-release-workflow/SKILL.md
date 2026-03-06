@@ -45,7 +45,7 @@ Brief description of the changes
 "@ebay/skin": minor
 ---
 
-release(changeset): releasing changes
+feat(module): adding a new feature
 ```
 
 **Package inclusion rules:**
