@@ -31,8 +31,9 @@ ul.accordion details {
 }
 
 ul.accordion details .details__content {
-    margin: 0 16px 6px;
+    margin: 0 16px;
     overflow: hidden;
+    padding-block-end: 6px;
 }
 
 ul.accordion
@@ -87,7 +88,7 @@ ul.accordion--large summary.details__summary {
         overflow: clip;
         transition:
             height var(--motion-duration-medium-3) var(--motion-easing-standard),
-            content-visibility var(--motion-duration-medium-2)
+            content-visibility var(--motion-duration-medium-3)
                 var(--motion-easing-continuous) allow-discrete,
             opacity var(--motion-duration-medium-2)
                 var(--motion-easing-continuous);
