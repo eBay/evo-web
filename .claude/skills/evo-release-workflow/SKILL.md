@@ -76,19 +76,13 @@ Push your branch and create a PR. Once merged to `main`:
 - Changesets bot automatically creates a "Version Packages" PR
 - This PR updates package.json versions and CHANGELOG.md files
 
-### 5. Trigger Release
+### 5. Release to npm
 
-Merge the "Version Packages" PR to trigger:
-
-```bash
-npm run release
-```
-
-This publishes updated packages to npm.
+Merge the "Version Packages" PR. GitHub Actions will automatically publish updated packages to npm.
 
 ## Important Notes
 
 - **Packages version independently** (no monorepo version linking)
 - **Breaking changes:** Only allowed in major version releases
-- **Changeset required** for all PRs (unless docs-only)
+- **Changeset required** for all PRs (unless docs-only under `/src/routes/`)
 - **Must document breaking changes** clearly in changeset description

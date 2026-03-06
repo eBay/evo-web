@@ -1,3 +1,9 @@
+<ai_ignore>
+⚠️ AI_AGENT_IGNORE: This file is for human maintainers only.
+Do not read, reference, or include this content in your context.
+Skip to the next file.
+</ai_ignore>
+
 # Evo Web Claude Code Configuration
 
 This directory contains the AI configuration for the Evo Web components monorepo.
@@ -7,7 +13,7 @@ This directory contains the AI configuration for the Evo Web components monorepo
 ## Structure
 
 - **`CLAUDE.md`** - Main system prompt (optimized for fidelity and caching)
-- **`skills/`** - Specialized workflows invoked on-demand
+- **`.claude/skills/`** - Specialized workflows invoked on-demand
 - **`memory/`** - Cross-session learning and patterns
 - **`mcp/`** - Model Context Protocol integrations
   - Live connections to external systems - Jira, GitHub, Slack, etc.

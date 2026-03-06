@@ -28,20 +28,16 @@ npm test
 # Start local development site (Marko-Run docs)
 npm start
 
-# Create a changeset for versioning
-npm run change
-
-# Version packages and update changelogs
-npm run version
-
-# Release packages to npm
-npm run release
+# ⚠️ NEVER RUN THESE - GitHub Actions only:
+# npm run change     # Triggers changeset prompts - agents can't interact
+# npm run version    # GitHub Actions only - updates versions
+# npm run release    # GitHub Actions only - publishes to npm
 ```
 
 ## Package-Specific Commands
 
 ```bash
-# Build specific package (should only be run by changesets)
+# Build specific package (useful for single-package development)
 npm run build -w packages/skin
 npm run build -w packages/ebayui-core
 npm run build -w packages/evo-marko
@@ -55,20 +51,18 @@ npm test -w packages/ebayui-core
 npm run update-snapshots -w packages/ebayui-core
 
 # Start Storybook (per package)
-cd packages/skin && npm run storybook
-cd packages/ebayui-core && npm run storybook
-cd packages/ebayui-core-react && npm run storybook
+npm run storybook -w packages/skin
+npm run storybook -w packages/ebayui-core
+npm run storybook -w packages/ebayui-core-react
 ```
 
-## Testing Patterns
+## Test File Locations & Patterns
 
-### Marko Components (Dual Test Suites)
-
+**Marko component test structure:**
 - `test/test.browser.js` - Browser tests with Playwright (Vitest)
 - `test/test.server.js` - Server-side rendering tests (Vitest)
 
-### React Components
-
+**React component test structure:**
 - `__tests__/index.spec.tsx` - Vitest with @testing-library/react (jsdom)
 
 ### Run Individual Test Files

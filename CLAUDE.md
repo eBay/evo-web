@@ -102,11 +102,11 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 
 ## Component Patterns
 
-Reference existing components for structure and conventions:
+Follow existing component structures:
 
-- Skin: `packages/skin/src/components/ebay-button/`
-- Marko: `packages/ebayui-core/src/components/ebay-button/`
-- React: `packages/ebayui-core-react/src/ebay-button/`
+- **Skin components:** Follow `packages/skin/src/components/ebay-button/` structure
+- **Marko components:** Follow `packages/ebayui-core/src/components/ebay-button/` structure
+- **React components:** Follow `packages/ebayui-core-react/src/ebay-button/` structure
 
 ### Component Storybooks
 
@@ -180,13 +180,7 @@ Reference existing components for structure and conventions:
 - ✅ Build must be green
 - ✅ Changes within scope of linked issue
 - ✅ Reference issue: `Fixes #[number]`
-- ✅ Include changeset (unless docs-only)
-
-**Markup changes:**
-
-- BEM naming conventions
-- Semantic HTML5 elements
-- WCAG 2.2 AA compliance
+- ✅ Include changeset (unless docs-only, in `/src/routes/`)
 
 **CSS/SCSS changes:**
 
@@ -241,7 +235,7 @@ npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser
 
 **Versioning:**
 
-- Changesets workflow (packages version independently)
+- Changesets workflow (packages version independently) - see `/evo-release-workflow` skill
 - No monorepo version linking
 
 **Browser Support:**
