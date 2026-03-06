@@ -50,3 +50,6 @@ public/skin-storybook/
 .parcel-cache
 _site
 .DS_Store
+
+# agentic local settings
+.claude/settings.local.json
