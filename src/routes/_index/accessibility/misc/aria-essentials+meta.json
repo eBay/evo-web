@@ -1,4 +1,4 @@
 {
   "pageTitle": "ARIA Essentials",
-  "pageDescription": ""
+  "pageDescription": "Reference for essential ARIA attributes: labeling (aria-label, aria-labelledby), descriptions (aria-describedby), common roles (button, dialog), state (aria-expanded, aria-haspopup, aria-live, aria-modal), and when to avoid aria-hidden, role=presentation, and role=application."
 }
