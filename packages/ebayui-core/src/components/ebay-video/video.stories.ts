@@ -98,7 +98,7 @@ export default {
         a11yExitFullscreenText: {
             control: { type: "text" },
             description:
-                'Localized, the accessibility text for enter fullscreen. Default is "Exit Fullscreen"',
+                'Localized, the accessibility text for exiting fullscreen. Default is "Exit Fullscreen"',
         },
         errorText: {
             control: { type: "text" },
