@@ -18,7 +18,7 @@ export default {
     a11yText: {
       control: { type: "text" },
       description:
-        "text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
+        "Localized, text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
     },
   },
 };

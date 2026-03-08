@@ -63,7 +63,7 @@ export default {
             },
         },
         a11yText: {
-            description: "adding description for the notice for a11y users",
+            description: "Localized, adding description for the notice for a11y users",
         },
         a11yRoleDescription: {
             table: {
@@ -72,7 +72,7 @@ export default {
                 },
             },
             description:
-                "The roledescription to announce the component type for a11y users.",
+                "Localized, the roledescription to announce the component type for a11y users.",
         },
         dismissed: {
             description: "whether or not the notice is dismissed",

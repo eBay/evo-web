@@ -46,7 +46,7 @@ export default {
             type: "string",
             control: { type: "text" },
             description:
-                "The localized role description to announce the component role for a11y users.",
+                "Localized, the role description to announce the component role for a11y users.",
             table: {
                 defaultValue: {
                     summary: "accordion",

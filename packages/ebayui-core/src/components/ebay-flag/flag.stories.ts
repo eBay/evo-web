@@ -17,7 +17,7 @@ export default {
 
     argTypes: {
         a11yText: {
-            description: "The aria label for the outer container.",
+            description: "Localized, the aria label for the outer container.",
         },
         flag: {
             description: "The 2 letter country code of what flag to display",

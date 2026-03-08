@@ -25,16 +25,16 @@ export default {
     argTypes: {
         a11yPreviousText: {
             control: { type: "text" },
-            description: "a11y text for previous arrow button",
+            description: "Localized, a11y text for previous arrow button",
         },
         a11yNextText: {
             control: { type: "text" },
-            description: "a11y text for next arrow button",
+            description: "Localized, a11y text for next arrow button",
         },
         a11yCurrentText: {
             control: { type: "text" },
             description:
-                "Description for the current page (e.g. Results of Page 1)",
+                "Localized, description for the current page (e.g. Results of Page 1)",
         },
         variant: {
             control: { type: "select" },

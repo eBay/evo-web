@@ -78,7 +78,7 @@ export default {
         },
         a11yPrefixIconText: {
             description:
-                "The label for the listbox button with text that prefixes the selected icon value.",
+                "Localized, the label for the listbox button with text that prefixes the selected icon value.",
             control: { type: "boolean" },
             table: {
                 category: "Accessibility",

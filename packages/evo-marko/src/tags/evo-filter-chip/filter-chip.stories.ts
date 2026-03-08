@@ -56,7 +56,7 @@ export default {
     a11ySelectedText: {
       control: { type: "string" },
       description:
-        "For anchor variant: The clipped text to show when the filter is set. This is required to switch to anchor type along with href",
+        "Localized, for anchor variant: the clipped text to show when the filter is set. This is required to switch to anchor type along with href",
     },
   },
 };

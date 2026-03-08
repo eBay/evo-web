@@ -46,7 +46,7 @@ export default {
         },
         a11yCloseText: {
             control: { type: "text" },
-            description: "A11y text for close button",
+            description: "Localized, a11y text for close button",
         },
 
         host: {

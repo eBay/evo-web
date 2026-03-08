@@ -52,11 +52,11 @@ export default {
         },
         a11yIconText: {
             description:
-                "adding description for the icon in the notice for a11y users",
+                "Localized, adding description for the icon in the notice for a11y users",
         },
         a11yDismissText: {
             description:
-                "This adds a dismiss icon allowing the notice to be dismissed/hidden and sets the a11y text on the icon",
+                "Localized, this adds a dismiss icon allowing the notice to be dismissed/hidden and sets the a11y text on the icon",
         },
         dismissed: {
             description: "whether or not the notice is dismissed",

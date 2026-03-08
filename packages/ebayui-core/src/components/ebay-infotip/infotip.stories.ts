@@ -95,7 +95,7 @@ export default {
         },
         a11yCloseButtonText: {
             control: { type: "text" },
-            description: "A11y text for close button",
+            description: "Localized, a11y text for close button",
         },
         ariaLabel: {
             control: { type: "text" },

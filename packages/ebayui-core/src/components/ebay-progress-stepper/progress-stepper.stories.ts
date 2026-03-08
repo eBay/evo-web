@@ -58,7 +58,7 @@ export default {
             type: "string",
             control: { type: "text" },
             description:
-                "heading text for progress stepper which will be clipped",
+                "Localized, heading text for progress stepper which will be clipped",
         },
         step: {
             name: "@step",
@@ -93,7 +93,7 @@ export default {
             },
             type: "string",
             description:
-                "The accessibility text for the icon. Defaults to either complete, upcoming, current, or blocked depending on type or current",
+                "Localized, the accessibility text for the icon. Defaults to either complete, upcoming, current, or blocked depending on type or current",
         },
     },
 };

@@ -25,7 +25,7 @@ export default {
     a11yText: {
       control: { type: "text" },
       description:
-        'The accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as "Loading"',
+        'Localized, the accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as "Loading"',
     },
   },
 };

@@ -38,7 +38,7 @@ export default {
         a11ySelectedText: {
             control: { type: "text" },
             description:
-                'defaults to `"Selected"`, but should be changed based on L10N or I18N',
+                'Localized, defaults to `"Selected"`, but should be changed based on L10N or I18N',
             table: {
                 category: "when using fake filters",
             },

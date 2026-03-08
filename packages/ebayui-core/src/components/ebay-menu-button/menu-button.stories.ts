@@ -44,7 +44,7 @@ export default {
         },
         a11yText: {
             description:
-                "a11y text for the button, especially for cases without text",
+                "Localized, a11y text for the button, especially for cases without text",
             control: { type: "text" },
         },
         noToggleIcon: {

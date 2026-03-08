@@ -31,7 +31,7 @@ export default {
             type: "string",
             control: { type: "text" },
             description:
-                "a11y text for cancel upload button, applied to all cards",
+                "Localized, a11y text for cancel upload button, applied to all cards",
         },
         deleteText: {
             type: "string",
@@ -46,7 +46,7 @@ export default {
         a11ySeeMoreText: {
             type: "string",
             control: { type: "text" },
-            description: "a11y text for see more button, applied to all cards",
+            description: "Localized, a11y text for see more button, applied to all cards",
         },
         "onMenu-action": {
             action: "on-menu-action",

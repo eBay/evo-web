@@ -30,7 +30,7 @@ export default {
     argTypes: {
         a11yHeadingText: {
             control: { type: "text" },
-            description: "heading for breadcrumb which will be clipped",
+            description: "Localized, heading for breadcrumb which will be clipped",
         },
         a11yHeadingTag: {
             control: { type: "text" },
@@ -43,7 +43,7 @@ export default {
         },
         a11yMenuButtonText: {
             control: { type: "text" },
-            description: "a11y text for the collapsed menu button",
+            description: "Localized, a11y text for the collapsed menu button",
         },
         href: {
             name: "href",

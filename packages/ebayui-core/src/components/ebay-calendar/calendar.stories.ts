@@ -169,7 +169,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers when a date is selected",
+                "Localized, text to be read by screen readers when a date is selected",
             table: {
                 defaultValue: {
                     summary: "selected",
@@ -180,7 +180,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers when a date is the start of a range",
+                "Localized, text to be read by screen readers when a date is the start of a range",
             table: {
                 defaultValue: {
                     summary: "start of range",
@@ -191,7 +191,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers when a date is in a range",
+                "Localized, text to be read by screen readers when a date is in a range",
             table: {
                 defaultValue: {
                     summary: "in range",
@@ -202,7 +202,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers when a date is the end of a range",
+                "Localized, text to be read by screen readers when a date is the end of a range",
             table: {
                 defaultValue: {
                     summary: "end of range",
@@ -213,7 +213,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers when a date is the current date",
+                "Localized, text to be read by screen readers when a date is the current date",
             table: {
                 defaultValue: {
                     summary: "today",
@@ -224,7 +224,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers when a date is disabled",
+                "Localized, text to be read by screen readers when a date is disabled",
             table: {
                 defaultValue: {
                     summary: "inactive",
@@ -235,7 +235,7 @@ export default {
             type: "text",
             control: { type: "text" },
             description:
-                "Text to be read by screen readers to separate properties",
+                "Localized, text to be read by screen readers to separate properties",
             table: {
                 defaultValue: {
                     summary: " - ",

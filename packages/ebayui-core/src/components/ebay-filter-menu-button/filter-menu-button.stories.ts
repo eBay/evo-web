@@ -37,7 +37,7 @@ export default {
         },
         a11yText: {
             control: { type: "text" },
-            description: "a11y text for the button",
+            description: "Localized, a11y text for the button",
         },
         pressed: {
             control: { type: "boolean" },
@@ -80,7 +80,7 @@ export default {
         },
         a11ySearchHeaderClearText: {
             control: { type: "text" },
-            description: "a11y text for the search header clear button",
+            description: "Localized, a11y text for the search header clear button",
         },
         formName: {
             control: { type: "text" },

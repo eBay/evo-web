@@ -81,7 +81,7 @@ export default {
             type: { category: "Options" },
         },
         a11yText: {
-            description: "aria label for button when bodyState === loading",
+            description: "Localized, aria label for button when bodyState === loading",
             table: {
                 defaultValue: "",
             },

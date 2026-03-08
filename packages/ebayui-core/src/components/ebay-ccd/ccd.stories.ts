@@ -68,7 +68,7 @@ export default {
         },
         a11yUnits: {
             control: { type: "text" },
-            description: "The units for the rating used for a11y",
+            description: "Localized, the units for the rating used for a11y",
             table: {
                 defaultValue: {
                     summary: "watts",
@@ -77,7 +77,7 @@ export default {
         },
         a11yText: {
             control: { type: "text" },
-            description: "Overrides the default aria-label text",
+            description: "Localized, overrides the default aria-label text",
         },
     },
 };

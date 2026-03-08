@@ -22,7 +22,7 @@ export default {
   argTypes: {
     a11yCurrentText: {
       control: { type: "text" },
-      description: "Description for the current page (e.g. Results of Page 1)",
+      description: "Localized, description for the current page (e.g. Results of Page 1)",
     },
     variant: {
       control: { type: "select" },

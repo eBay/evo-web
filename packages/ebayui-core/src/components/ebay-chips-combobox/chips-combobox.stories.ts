@@ -45,7 +45,7 @@ export default {
         },
         a11yDeleteButtonText: {
             control: { type: "text" },
-            description: "The aria-label for the delete button on each chip.",
+            description: "Localized, the aria-label for the delete button on each chip.",
         },
         roledescription: {
             control: { type: "text" },

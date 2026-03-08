@@ -33,7 +33,7 @@ export default {
             type: "string",
             control: { type: "text" },
             description:
-                "Text for the clear button. If not provided, then no clear button is rendered",
+                "Localized, text for the clear button. If not provided, then no clear button is rendered",
         },
         "aria-label": {
             type: "string",

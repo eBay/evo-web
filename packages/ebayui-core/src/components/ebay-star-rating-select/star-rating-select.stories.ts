@@ -39,12 +39,12 @@ export default {
         },
         a11yStarText: {
             control: "object",
-            description: "Array object which sets the aria label for each star",
+            description: "Localized, array object which sets the aria label for each star",
         },
         a11yText: {
             control: { type: "text" },
             description:
-                "The aria label for the outer container. Only used on isolated case.",
+                "Localized, the aria label for the outer container. Only used on isolated case.",
         },
 
         onChange: {
