@@ -8,3 +8,10 @@ Element.prototype.scroll = vi.fn();
 if (typeof window.URL.createObjectURL === "undefined") {
     Object.defineProperty(window.URL, "createObjectURL", { value: () => {} });
 }
+
+if (typeof window.SVGPathElement === "undefined") {
+    Object.defineProperty(window, "SVGPathElement", {
+        writable: true,
+        value: class SVGPathElement extends HTMLElement {},
+    });
+}

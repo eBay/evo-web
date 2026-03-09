@@ -23,7 +23,7 @@ export default {
         a11yCancelUploadText: {
             type: "string",
             control: { type: "text" },
-            description: "a11y text for cancel upload button",
+            description: "Localized, a11y text for cancel upload button",
         },
         deleteText: {
             type: "string",
@@ -63,7 +63,7 @@ export default {
         a11yMenuButtonText: {
             type: "string",
             description:
-                "Accessibility label for menu button. This is required if menuActions are set",
+                "Localized, accessibility label for menu button. This is required if menuActions are set",
             table: {
                 category: "Menu Actions",
             },

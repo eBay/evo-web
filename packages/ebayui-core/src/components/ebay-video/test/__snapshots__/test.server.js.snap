@@ -13,6 +13,7 @@ exports[`video > renders default 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
           [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"[39m
@@ -47,46 +48,6 @@ exports[`video > renders default 1`] = `
       [36m>[39m
         [0mAn error has occurred[0m
       [36m</div>[39m
-    [36m</div>[39m
-    [36m<div[39m
-      [33mclass[39m=[32m"video-player__overlay video-player__overlay--hidden"[39m
-    [36m>[39m
-      [36m<span[39m
-        [33mclass[39m=[32m"progress-spinner"[39m
-        [33mrole[39m=[32m"img"[39m
-      [36m>[39m
-        [36m<svg[39m
-          [33maria-hidden[39m=[32m"true"[39m
-          [33mclass[39m=[32m"icon icon--24"[39m
-          [33mfocusable[39m=[32m"false"[39m
-        [36m>[39m
-          [36m<defs>[39m
-            [36m<symbol[39m
-              [33mfill[39m=[32m"none"[39m
-              [33mid[39m=[32m"icon-spinner-24"[39m
-              [33mviewBox[39m=[32m"0 0 24 24"[39m
-            [36m>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M22.5 12A10.5 10.5 0 1 1 9.514 1.798"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-background, #3665F3)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-foreground, #E5E5E5)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-            [36m</symbol>[39m
-          [36m</defs>[39m
-          [36m<use[39m
-            [33mhref[39m=[32m"#icon-spinner-24"[39m
-          [36m/>[39m
-        [36m</svg>[39m
-      [36m</span>[39m
     [36m</div>[39m
     [36m<div[39m
       [33mstyle[39m=[32m"display:none"[39m
@@ -271,6 +232,7 @@ exports[`video > renders ios video player 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
         [33mshaka-config[39m=[32m"{\\"streaming\\":{\\"lowLatencyMode\\":true}}"[39m
       [36m>[39m
         [36m<source[39m
@@ -310,46 +272,6 @@ exports[`video > renders ios video player 1`] = `
       [36m>[39m
         [0mAn error has occurred[0m
       [36m</div>[39m
-    [36m</div>[39m
-    [36m<div[39m
-      [33mclass[39m=[32m"video-player__overlay video-player__overlay--hidden"[39m
-    [36m>[39m
-      [36m<span[39m
-        [33mclass[39m=[32m"progress-spinner"[39m
-        [33mrole[39m=[32m"img"[39m
-      [36m>[39m
-        [36m<svg[39m
-          [33maria-hidden[39m=[32m"true"[39m
-          [33mclass[39m=[32m"icon icon--24"[39m
-          [33mfocusable[39m=[32m"false"[39m
-        [36m>[39m
-          [36m<defs>[39m
-            [36m<symbol[39m
-              [33mfill[39m=[32m"none"[39m
-              [33mid[39m=[32m"icon-spinner-24"[39m
-              [33mviewBox[39m=[32m"0 0 24 24"[39m
-            [36m>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M22.5 12A10.5 10.5 0 1 1 9.514 1.798"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-background, #3665F3)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-foreground, #E5E5E5)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-            [36m</symbol>[39m
-          [36m</defs>[39m
-          [36m<use[39m
-            [33mhref[39m=[32m"#icon-spinner-24"[39m
-          [36m/>[39m
-        [36m</svg>[39m
-      [36m</span>[39m
     [36m</div>[39m
     [36m<div[39m
       [33mstyle[39m=[32m"display:none"[39m
@@ -540,7 +462,8 @@ exports[`video > renders with compact layout 1`] = `
           [33mautoplay[39m=[32m""[39m
           [33mloop[39m=[32m""[39m
           [33mno-controls[39m=[32m""[39m
-          [33mposter[39m=[32m"https://i.ebayimg.com/images/g/3hAAAOSw5dVhY2Rm/s-l1600.jpg"[39m
+          [33mplaysinline[39m=[32m""[39m
+          [33mposter[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/iphone-thumbnail.jpg"[39m
         [36m>[39m
           [36m<source[39m
             [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"[39m
@@ -575,46 +498,6 @@ exports[`video > renders with compact layout 1`] = `
       [36m>[39m
         [0mAn error has occurred[0m
       [36m</div>[39m
-    [36m</div>[39m
-    [36m<div[39m
-      [33mclass[39m=[32m"video-player__overlay video-player__overlay--hidden"[39m
-    [36m>[39m
-      [36m<span[39m
-        [33mclass[39m=[32m"progress-spinner"[39m
-        [33mrole[39m=[32m"img"[39m
-      [36m>[39m
-        [36m<svg[39m
-          [33maria-hidden[39m=[32m"true"[39m
-          [33mclass[39m=[32m"icon icon--24"[39m
-          [33mfocusable[39m=[32m"false"[39m
-        [36m>[39m
-          [36m<defs>[39m
-            [36m<symbol[39m
-              [33mfill[39m=[32m"none"[39m
-              [33mid[39m=[32m"icon-spinner-24"[39m
-              [33mviewBox[39m=[32m"0 0 24 24"[39m
-            [36m>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M22.5 12A10.5 10.5 0 1 1 9.514 1.798"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-background, #3665F3)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-foreground, #E5E5E5)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-            [36m</symbol>[39m
-          [36m</defs>[39m
-          [36m<use[39m
-            [33mhref[39m=[32m"#icon-spinner-24"[39m
-          [36m/>[39m
-        [36m</svg>[39m
-      [36m</span>[39m
     [36m</div>[39m
     [36m<div[39m
       [33mstyle[39m=[32m"display:none"[39m
@@ -799,6 +682,7 @@ exports[`video > renders with mp4 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
           [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/video.mp4"[39m
@@ -832,46 +716,6 @@ exports[`video > renders with mp4 1`] = `
       [36m>[39m
         [0mAn error has occurred[0m
       [36m</div>[39m
-    [36m</div>[39m
-    [36m<div[39m
-      [33mclass[39m=[32m"video-player__overlay video-player__overlay--hidden"[39m
-    [36m>[39m
-      [36m<span[39m
-        [33mclass[39m=[32m"progress-spinner"[39m
-        [33mrole[39m=[32m"img"[39m
-      [36m>[39m
-        [36m<svg[39m
-          [33maria-hidden[39m=[32m"true"[39m
-          [33mclass[39m=[32m"icon icon--24"[39m
-          [33mfocusable[39m=[32m"false"[39m
-        [36m>[39m
-          [36m<defs>[39m
-            [36m<symbol[39m
-              [33mfill[39m=[32m"none"[39m
-              [33mid[39m=[32m"icon-spinner-24"[39m
-              [33mviewBox[39m=[32m"0 0 24 24"[39m
-            [36m>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M22.5 12A10.5 10.5 0 1 1 9.514 1.798"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-background, #3665F3)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-foreground, #E5E5E5)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-            [36m</symbol>[39m
-          [36m</defs>[39m
-          [36m<use[39m
-            [33mhref[39m=[32m"#icon-spinner-24"[39m
-          [36m/>[39m
-        [36m</svg>[39m
-      [36m</span>[39m
     [36m</div>[39m
     [36m<div[39m
       [33mstyle[39m=[32m"display:none"[39m
@@ -1056,6 +900,7 @@ exports[`video > renders with report text 1`] = `
     [36m>[39m
       [36m<video[39m
         [33mno-controls[39m=[32m""[39m
+        [33mplaysinline[39m=[32m""[39m
       [36m>[39m
         [36m<source[39m
           [33msrc[39m=[32m"https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"[39m
@@ -1090,46 +935,6 @@ exports[`video > renders with report text 1`] = `
       [36m>[39m
         [0mAn error has occurred[0m
       [36m</div>[39m
-    [36m</div>[39m
-    [36m<div[39m
-      [33mclass[39m=[32m"video-player__overlay video-player__overlay--hidden"[39m
-    [36m>[39m
-      [36m<span[39m
-        [33mclass[39m=[32m"progress-spinner"[39m
-        [33mrole[39m=[32m"img"[39m
-      [36m>[39m
-        [36m<svg[39m
-          [33maria-hidden[39m=[32m"true"[39m
-          [33mclass[39m=[32m"icon icon--24"[39m
-          [33mfocusable[39m=[32m"false"[39m
-        [36m>[39m
-          [36m<defs>[39m
-            [36m<symbol[39m
-              [33mfill[39m=[32m"none"[39m
-              [33mid[39m=[32m"icon-spinner-24"[39m
-              [33mviewBox[39m=[32m"0 0 24 24"[39m
-            [36m>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M22.5 12A10.5 10.5 0 1 1 9.514 1.798"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-background, #3665F3)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-              [36m<path[39m
-                [33md[39m=[32m"M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"[39m
-                [33mstroke[39m=[32m"var(--color-spinner-icon-foreground, #E5E5E5)"[39m
-                [33mstroke-linecap[39m=[32m"round"[39m
-                [33mstroke-linejoin[39m=[32m"round"[39m
-                [33mstroke-width[39m=[32m"3"[39m
-              [36m/>[39m
-            [36m</symbol>[39m
-          [36m</defs>[39m
-          [36m<use[39m
-            [33mhref[39m=[32m"#icon-spinner-24"[39m
-          [36m/>[39m
-        [36m</svg>[39m
-      [36m</span>[39m
     [36m</div>[39m
     [36m<div[39m
       [33mstyle[39m=[32m"display:none"[39m

@@ -41,8 +41,7 @@ function getElements(self: EbayVideo) {
     const Report = class extends self.shaka.ui.Element {
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-
-            if (!self.input.reportText || !self.input.a11yReportText) {
+            if (!self.input.reportText && !self.input.a11yReportText) {
                 return;
             }
 

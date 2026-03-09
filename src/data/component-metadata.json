@@ -399,7 +399,7 @@
     "ds-component": {
       "name": "tourtip",
       "url": "https://playbook.ebay.com/design-system/components/tourtip",
-      "version": "2.0"
+      "version": "2.2"
     },
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-infotip--collapsed",
@@ -908,7 +908,7 @@
     "component": "tourtip",
     "ds-component": {
       "name": "tourtip",
-      "version": "2.0"
+      "version": "2.2"
     },
     "submodules": ["icon-button"],
     "cssStorybookPath": "/story/skin-tourtip--collapsed",

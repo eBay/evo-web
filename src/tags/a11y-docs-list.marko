@@ -1,6 +1,5 @@
 import { urls, a11yDocs, a11yList, components, basePath, getMetadataFromUrl } from "../data";
 <const/{name, currentTab}=getMetadataFromUrl($global.url.pathname)>
-<log=name>
 <for|key| of=a11yList>
   <const/data=a11yDocs[key]>
   <li>

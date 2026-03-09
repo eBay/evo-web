@@ -30,6 +30,7 @@ $ var classPrefix = !isModal ? "infotip" : "dialog--mini";
         offset=input.offset
         pointer=input.pointer
         placement=input.placement
+        on-loaded("emit", "loaded")
         onBase-expand(isModal ? undefined : "handleExpand")
         onBase-collapse(isModal ? undefined : "handleCollapse")
     >

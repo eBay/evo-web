@@ -35,7 +35,7 @@ export default {
                 "Only for <ebay-star-rating/>. 1 - 5, depending on how many starts are selected. If 0 or null defaults to no stars selected. Can use 2-5 for 2 and a half stars",
         },
         a11yText: {
-            description: "The aria label for the outer container.",
+            description: "Localized, the aria label for the outer container.",
         },
     },
 };

@@ -1,0 +1,9 @@
+import { type Input as TriStateCheckboxInput } from "<evo-tri-state-checkbox>";
+
+export interface Input extends TriStateCheckboxInput {}
+
+<let/checked=input.checked || "false" as const>
+
+<id/id>
+<evo-tri-state-checkbox ...input id=id checked:=checked/>
+<label for=id> "${checked}"</label>

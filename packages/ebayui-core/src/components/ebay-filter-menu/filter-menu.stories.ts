@@ -64,7 +64,7 @@ export default {
         },
         a11ySearchHeaderClearText: {
             control: { type: "text" },
-            description: "a11y text for the search header clear button",
+            description: "Localized, a11y text for the search header clear button",
         },
         item: {
             table: {

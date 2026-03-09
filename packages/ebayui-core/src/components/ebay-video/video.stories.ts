@@ -54,10 +54,11 @@ export default {
             description: "True/False to mute or unmute video. Default is false",
         },
         layout: {
+            options: ["default", "compact"],
             type: "string",
+            control: { type: "select" },
             description:
                 'Either "default" or "compact". In "compact" layout, only play/pause, mute/unmute controls are available. Also the remaining time on the video is displayed',
-            control: { type: "text" },
         },
         playView: {
             description:
@@ -72,32 +73,32 @@ export default {
         a11yLoadText: {
             control: { type: "text" },
             description:
-                'The accessibility text for the loading spinner. Default is "Loading"',
+                'Localized, the accessibility text for the loading spinner. Default is "Loading"',
         },
         a11yPlayText: {
             control: { type: "text" },
             description:
-                'The accessibility text for the play button. Default is "Click to play"',
+                'Localized, the accessibility text for the play button. Default is "Click to play"',
         },
         a11yMuteText: {
             control: { type: "text" },
             description:
-                'The accessibility text for mute video. Default is "Mute"',
+                'Localized, the accessibility text for mute video. Default is "Mute"',
         },
         a11yUnmuteText: {
             control: { type: "text" },
             description:
-                'The accessibility text for unmute video. Default is "Unmute"',
+                'Localized, the accessibility text for unmute video. Default is "Unmute"',
         },
         a11yFullscreenText: {
             control: { type: "text" },
             description:
-                'The accessibility text for enter fullscreen. Default is "Enter Fullscreen"',
+                'Localized, the accessibility text for enter fullscreen. Default is "Enter Fullscreen"',
         },
         a11yExitFullscreenText: {
             control: { type: "text" },
             description:
-                'The accessibility text for enter fullscreen. Default is "Exit Fullscreen"',
+                'Localized, the accessibility text for exiting fullscreen. Default is "Exit Fullscreen"',
         },
         errorText: {
             control: { type: "text" },
@@ -106,7 +107,7 @@ export default {
         },
         a11yReportText: {
             control: { type: "text" },
-            description: 'The text for report button. Default is "Report"',
+            description: 'Localized, the text for report button. Default is "Report"',
         },
         volumeSlider: {
             type: "boolean",

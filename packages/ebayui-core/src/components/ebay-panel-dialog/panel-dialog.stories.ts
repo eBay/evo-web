@@ -57,7 +57,7 @@ export default {
         },
         a11yCloseText: {
             control: { type: "text" },
-            description: "A11y text for close button and mask.",
+            description: "Localized, a11y text for close button and mask.",
         },
         prevButton: {
             name: "@prevButton",

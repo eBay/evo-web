@@ -28,7 +28,7 @@ export default {
         },
       },
       description:
-        "The text for screen readers to read out when interacting with the 3d player.",
+        "Localized, the text for screen readers to read out when interacting with the 3d player.",
     },
     a11yStartText: {
       control: { type: "text" },
@@ -38,7 +38,7 @@ export default {
           summary: "Click to start",
         },
       },
-      description: "Text for start icon to load viewer",
+      description: "Localized, text for start icon to load viewer",
     },
     a11yLoadingText: {
       control: { type: "text" },
@@ -48,7 +48,7 @@ export default {
           summary: "Loading",
         },
       },
-      description: "Text for loading icon loading viewer",
+      description: "Localized, text for loading icon loading viewer",
     },
     errorText: {
       control: { type: "text" },

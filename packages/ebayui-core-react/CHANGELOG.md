@@ -1,5 +1,23 @@
 # @ebay/ui-core-react
 
+## 9.3.1
+
+### Patch Changes
+
+- [#545](https://github.com/eBay/evo-web/pull/545) [`12d07a2`](https://github.com/eBay/evo-web/commit/12d07a22da57df49cfa48e6ca9ba95a314c72544) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Prevent auto-fullscreen on video component
+
+## 9.3.0
+
+### Minor Changes
+
+- [#522](https://github.com/eBay/evo-web/pull/522) [`c7e00f9`](https://github.com/eBay/evo-web/commit/c7e00f9503ff721ae5b80e258cc5670af7b7d5dd) Thanks [@agliga](https://github.com/agliga)! - feat(video): updated shaka player to the latest and fixed several bugs
+
+## 9.2.3
+
+### Patch Changes
+
+- [#524](https://github.com/eBay/evo-web/pull/524) [`9117681`](https://github.com/eBay/evo-web/commit/91176816e5b09c47807b81cf40725a2d4bcfb8b0) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(eek): add a11y docs, remove redundant aria-hidden
+
 ## 9.2.2
 
 ### Patch Changes

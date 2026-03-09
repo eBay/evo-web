@@ -1,0 +1,25 @@
+static const boxes = ["A", "B", "C", "D"];
+
+<let/checkedValue=[] as string[]>
+
+<div class="field">
+    <id/id>
+    <evo-tri-state-checkbox ...input id=id checkedValues:=checkedValue values=boxes/>
+    <label class="field__label field__label--end" for=id>
+        Select all
+    </label>
+</div>
+<div class="container" style="margin-left: 10px;">
+    <for|value| of=boxes>
+        <id/id>
+        <div class="field">
+            <evo-checkbox
+                id=id
+                value=value
+                checkedValue:=checkedValue/>
+            <label class="field__label field__label--end" for=id>
+                Option ${value}
+            </label>
+        </div>
+    </for>
+</div>

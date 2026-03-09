@@ -56,7 +56,7 @@ export default {
         a11ySelectedText: {
             control: { type: "string" },
             description:
-                'For anchor variant: The clipped text to show when the filter is set. Defaults to "- filter applied"',
+                'Localized, for anchor variant: the clipped text to show when the filter is set. Defaults to "- filter applied"',
         },
         onClick: {
             action: "on-click",

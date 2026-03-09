@@ -42,6 +42,7 @@ const defaultControlPanelElements = [
 
 const compactLayoutControlPanelElements = [
     "remaining_time",
+    "spacer",
     "mute_popover",
     "play_pause",
 ];
@@ -49,7 +50,9 @@ const compactLayoutControlPanelElements = [
 const videoConfig = {
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
-    addBigPlayButton: false,
+    customContextMenu: true,
+    contextMenuElements: ["mute"],
+    showUIAlways: false,
     addSeekBar: true,
     controlPanelElements: defaultControlPanelElements,
 };
@@ -57,7 +60,9 @@ const videoConfig = {
 const compactConfig = {
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
-    addBigPlayButton: false,
+    customContextMenu: true,
+    contextMenuElements: ["mute"],
+    showUIAlways: false,
     addSeekBar: false,
     controlPanelElements: compactLayoutControlPanelElements,
 };
@@ -123,7 +128,6 @@ export interface Input extends WithNormalizedProps<VideoInput> {}
 interface State {
     played: boolean;
     failed: boolean;
-    isLoaded: boolean;
     volumeSlider: boolean;
     action: "play" | "pause" | "";
 }
@@ -137,6 +141,7 @@ class Video extends Marko.Component<Input, State> {
     declare ui: any;
     declare shaka: any;
     declare observer: IntersectionObserver;
+    declare isInViewport: boolean;
     declare isAutoPlay: boolean;
     declare isAutoPause: boolean;
     declare userPaused: boolean;
@@ -176,7 +181,7 @@ class Video extends Marko.Component<Input, State> {
             const rangeContainer = this.el.querySelector<HTMLElement>(
                 ".shaka-range-container",
             )!;
-            if (buttonPanel && spacer) {
+            if (buttonPanel && spacer && rangeContainer) {
                 const buttonPanelRect = buttonPanel.getBoundingClientRect();
                 const spacerRect = spacer.getBoundingClientRect();
 
@@ -210,7 +215,10 @@ class Video extends Marko.Component<Input, State> {
         this.showControls();
         this.alignSeekbar();
 
-        if (this.input.playView === "fullscreen") {
+        if (
+            this.input.playView === "fullscreen" &&
+            this.input.layout !== "compact"
+        ) {
             this.video.requestFullscreen();
         }
         this.state.played = true;
@@ -236,7 +244,6 @@ class Video extends Marko.Component<Input, State> {
 
     handleError(err: Error) {
         this.state.failed = true;
-        this.state.isLoaded = true;
         this.playButtonContainer.remove();
 
         this.emit("load-error", err);
@@ -253,6 +260,7 @@ class Video extends Marko.Component<Input, State> {
         if (this.input.nav) {
             copyConfig.doubleClickForFullscreen = false;
             copyConfig.singleClickForPlayAndPause = false;
+            copyConfig.showUIAlways = true;
         }
 
         if (this.state.volumeSlider === true) {
@@ -301,24 +309,12 @@ class Video extends Marko.Component<Input, State> {
         this.state = {
             volumeSlider: false,
             action: "",
-            isLoaded: true,
             failed: false,
             played: false,
         };
 
         if (input.action === "play" || input.autoplay === true) {
             this.isAutoPlay = true;
-        }
-    }
-
-    _addTextTracks() {
-        (this.input.clip || []).forEach((track) => {
-            this.player.addTextTrack(track.src, track.srclang, track.kind);
-        });
-
-        const [track] = this.player.getTextTracks();
-        if (track) {
-            this.player.selectTextTrack(track.id); // => this finds the id and everythings fine but it does nothing
         }
     }
 
@@ -334,18 +330,24 @@ class Video extends Marko.Component<Input, State> {
         this.player
             .load(src.src)
             .then(() => {
-                this._addTextTracks();
-                this.state.isLoaded = true;
                 this.state.failed = false;
+                return Promise.all(
+                    (this.input.clip || []).map((track) => {
+                        return this.player.addTextTrack(
+                            track.src,
+                            track.srclang,
+                            track.kind,
+                        );
+                    }),
+                );
+            })
+            .then(() => {
+                const [track] = this.player.getTextTracks();
+                if (track) {
+                    this.player.selectTextTrack(track.id); // => this finds the id and everythings fine but it does nothing
+                }
             })
             .catch((err: Error & { code: number }) => {
-                if (err.code === 7000) {
-                    // Load interrupted by another load, just return
-                    return;
-                } else if (err.code === 11) {
-                    // Retry, player is not loaded yet
-                    setTimeout(() => this._loadSrc(currentIndex), 0);
-                }
                 if (nextIndex) {
                     setTimeout(() => this._loadSrc(nextIndex), 0);
                 } else {
@@ -509,17 +511,15 @@ class Video extends Marko.Component<Input, State> {
                 }
 
                 if (entry.isIntersecting) {
-                    if (
-                        this.state.isLoaded &&
-                        !this.state.failed &&
-                        this.video.paused
-                    ) {
+                    this.isInViewport = true;
+                    if (!this.state.failed && this.video.paused) {
                         this.isAutoPlay = true;
                         this.video.play().catch((e) => {
                             this.isAutoPlay = false;
                         });
                     }
                 } else {
+                    this.isInViewport = false;
                     if (!this.video.paused) {
                         this.isAutoPause = true;
                         this.video.pause();
@@ -543,7 +543,7 @@ class Video extends Marko.Component<Input, State> {
             this.isFocusFromVideoClick = false;
             return;
         }
-        if (this.video.paused && !this.userPaused) {
+        if (this.isInViewport && this.video.paused && !this.userPaused) {
             this.isAutoPlay = true;
             this.video.play().catch((e) => {
                 this.isAutoPlay = false;
@@ -576,7 +576,6 @@ class Video extends Marko.Component<Input, State> {
 
     _loadVideo() {
         this.state.failed = false;
-        this.state.isLoaded = false;
         shakaLoad()
             .then((shaka: any) => {
                 this.shaka = shaka.default || shaka;

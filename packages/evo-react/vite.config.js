@@ -18,10 +18,12 @@ export default defineConfig({
     lib: {
       entry: "./src/index.ts",
       formats: ["es"],
-      fileName: "index",
     },
     rollupOptions: {
       output: {
+        preserveModules: true,
+        preserveModulesRoot: "src",
+        entryFileNames: "[name].js",
         banner: `"use client";\n`,
       },
       plugins: [
@@ -59,6 +61,7 @@ export default defineConfig({
         extends: true,
         test: {
           name: "browser",
+          setupFiles: ["./test.setup.ts"],
           browser: {
             enabled: true,
             provider: playwright(),

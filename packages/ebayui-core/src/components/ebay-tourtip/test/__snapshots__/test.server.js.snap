@@ -5,7 +5,7 @@ exports[`tourtip > renders default tourtip 1`] = `
   [36m<span>[39m
     [36m<span>[39m
       [36m<span[39m
-        [33mclass[39m=[32m"tourtip tourtip--expanded"[39m
+        [33mclass[39m=[32m"tourtip"[39m
       [36m>[39m
         [36m<span[39m
           [33mclass[39m=[32m"tourtip__host"[39m
@@ -167,7 +167,7 @@ exports[`tourtip > renders with footer 1`] = `
   [36m<span>[39m
     [36m<span>[39m
       [36m<span[39m
-        [33mclass[39m=[32m"tourtip tourtip--expanded"[39m
+        [33mclass[39m=[32m"tourtip"[39m
       [36m>[39m
         [36m<span[39m
           [33mclass[39m=[32m"tourtip__host"[39m

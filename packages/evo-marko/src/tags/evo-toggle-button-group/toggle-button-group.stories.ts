@@ -69,7 +69,7 @@ export default {
     a11yText: {
       type: "string",
       description:
-        "Accessibility text for the group. Cannot be used together with `a11yLabelId`",
+        "Localized, accessibility text for the group. Cannot be used together with `a11yLabelId`",
     },
     a11yLabelId: {
       type: "string",

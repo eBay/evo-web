@@ -62,7 +62,7 @@ export default {
         a11yText: {
             control: { type: "text" },
             description:
-                'The label to describe the users state as well as their user name. Usually in the format of "Signed in as Bob" or "Signed out"',
+                'Localized, the label to describe the users state as well as their user name. Usually in the format of "Signed in as Bob" or "Signed out"',
         },
         knownAspectRatio: {
             control: { type: "number" },

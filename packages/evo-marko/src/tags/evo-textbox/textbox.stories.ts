@@ -91,7 +91,7 @@ export default {
     a11yButtonText: {
       control: { type: "text" },
       description:
-        "aria-label for postfix. Required to be set in order to render postfix button and attach a `textbox-button-click event`",
+        "Localized, aria-label for postfix. Required to be set in order to render postfix button and attach a `textbox-button-click event`",
     },
     prefixIcon: {
       name: "@prefix-icon",

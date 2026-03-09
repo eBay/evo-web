@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/react",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "React",
@@ -15,9 +15,7 @@
     "directory": "packages/evo-react"
   },
   "license": "MIT",
-  "sideEffects": [
-    "./**/*.css"
-  ],
+  "sideEffects": false,
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -26,6 +24,9 @@
       "default": "./dist/index.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "npm run type:check && npm run test && vite build",
     "build:storybook": "storybook build -o ./_site/evo-react/$(git branch --show-current)",

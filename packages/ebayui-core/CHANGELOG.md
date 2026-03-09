@@ -1,5 +1,46 @@
 # eBayUI-Core Changelog
 
+## 16.5.2
+
+### Patch Changes
+
+- [#547](https://github.com/eBay/evo-web/pull/547) [`57b379c`](https://github.com/eBay/evo-web/commit/57b379ca1f759ab5541df47e74fe7bcc01db0a1a) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(video): null reference error on play/pause
+
+## 16.5.1
+
+### Patch Changes
+
+- [#545](https://github.com/eBay/evo-web/pull/545) [`12d07a2`](https://github.com/eBay/evo-web/commit/12d07a22da57df49cfa48e6ca9ba95a314c72544) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Prevent auto-fullscreen on video component
+
+## 16.5.0
+
+### Minor Changes
+
+- [#522](https://github.com/eBay/evo-web/pull/522) [`c7e00f9`](https://github.com/eBay/evo-web/commit/c7e00f9503ff721ae5b80e258cc5670af7b7d5dd) Thanks [@agliga](https://github.com/agliga)! - feat(video): updated shaka player to the latest and fixed several bugs
+
+## 16.4.1
+
+### Patch Changes
+
+- [#537](https://github.com/eBay/evo-web/pull/537) [`47e4ee8`](https://github.com/eBay/evo-web/commit/47e4ee859c54abeb4818b0d4a312301de39da2b5) Thanks [@agliga](https://github.com/agliga)! - fix(@internal): fixed noop-for-node exports
+
+## 16.4.0
+
+### Minor Changes
+
+- [#529](https://github.com/eBay/evo-web/pull/529) [`ea905f1`](https://github.com/eBay/evo-web/commit/ea905f1a5d5ba0d82afbef22275555bc3a9f9710) Thanks [@agliga](https://github.com/agliga)! - fix(tips): only calculate position of tooltips when its open
+  fix(floating-ui): added async loading for floating-ui library
+
+### Patch Changes
+
+- [#524](https://github.com/eBay/evo-web/pull/524) [`9117681`](https://github.com/eBay/evo-web/commit/91176816e5b09c47807b81cf40725a2d4bcfb8b0) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(eek): add a11y docs, remove redundant aria-hidden
+
+## 16.3.3
+
+### Patch Changes
+
+- [#517](https://github.com/eBay/evo-web/pull/517) [`c0fd9ae`](https://github.com/eBay/evo-web/commit/c0fd9ae99ace575d40ce9c45794844c1dde41fc8) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(video): window focus event should not autoplay if video not in viewport
+
 ## 16.3.2
 
 ### Patch Changes

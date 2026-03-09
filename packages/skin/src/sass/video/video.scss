@@ -49,64 +49,28 @@
     width: 24px;
 }
 
-.video-player .shaka-play-button {
-    background: none;
-    box-shadow: none;
-    height: auto;
-    padding: 0;
-    width: auto;
-}
-
-.video-player .icon--video-play,
-.video-player .shaka-play-button svg {
-    height: 48px;
-    width: 48px;
-}
-
-.video-player .shaka-bottom-controls {
-    box-sizing: border-box;
-    margin-bottom: 3%;
-    padding-bottom: 0;
-    position: relative;
-    width: 94%;
-}
-
-.video-player .shaka-controls-button-panel {
-    background-color: rgb(0 0 0 / 0.7);
-    border-radius: 8px;
-    bottom: 0;
-    height: 40px;
-    position: absolute;
-    width: 100%;
-
-    :first-child {
-        margin-left: 8px;
-    }
-    :last-child {
-        margin-right: 8px;
-    }
-}
-
-.video-player--poster .shaka-scrim-container {
-    visibility: hidden;
-}
-
 .video-player .shaka-range-container {
-    box-sizing: border-box;
-    margin: 0 188px 18px 76px;
+    margin-bottom: -25px;
+
+    // These are base margins added to position the slider in place.
+    // After page load, these will be changed with JS
+    margin-left: 105px;
+    margin-right: 133px;
+    z-index: 3;
 }
 
-.video-player #shaka-player-ui-time-container {
-    display: none;
-}
-
-.video-player .shaka-video-container {
-    font-family: variables.$font-family-default;
+.video-player .shaka-controls-container .shaka-play-button-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
 }
 
 .video-player--with-nav .shaka-controls-container {
     pointer-events: none;
 }
+
 .video-player--with-nav .shaka-controls-container .shaka-bottom-controls,
 .video-player--with-nav .shaka-controls-container .shaka-play-button-container {
     pointer-events: auto;
@@ -116,41 +80,31 @@
     container-type: inline-size;
     width: 100%;
 }
+
 .video-player--compact .shaka-controls-button-panel {
     background-color: transparent;
-    justify-content: flex-end;
-    pointer-events: none;
-    & > :first-child {
-        border-radius: 16px;
-        font-size: var(--font-size-medium);
-        margin-right: auto;
-        min-width: 80px;
-        padding: var(--spacing-200) var(--spacing-100);
-        width: auto;
-    }
+    margin-bottom: 10px;
 }
 
 .video-player--compact .shaka-controls-button-panel button {
-    * {
-        margin: 0;
-    }
-
-    align-items: center;
     background-color: rgb(0 0 0 / 0.32);
     border-radius: 50%;
-    justify-content: center;
     margin: 0 5px;
-    &:enabled {
-        display: inline-flex;
-        pointer-events: auto;
-    }
 }
-.video-player--compact .shaka-scrim-container {
-    background: none;
+
+.video-player--compact
+    .shaka-controls-button-panel
+    button.shaka-remaining-time {
+    border-radius: 16px;
+    font-size: var(--font-size-medium);
+    min-width: 80px;
+    padding: var(--spacing-200) var(--spacing-100);
 }
-.video-player--compact .shaka-tooltip:hover::after {
-    visibility: hidden;
+
+.video-player--with-nav.video-player--compact .shaka-big-buttons-container {
+    display: none;
 }
+
 @container (inline-size < #{variables.$screen-size-XS}) {
     .video-player--compact video {
         object-fit: cover;

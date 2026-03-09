@@ -45,6 +45,7 @@ $ const styleSize = {
         <${nav ? "a" : null} ...processHtmlAttributes(nav || {})>
             <video
                 no-controls
+                playsinline
                 poster=thumbnail
                 ...processHtmlAttributes(htmlInput)>
                 <for|src| of=sources>
@@ -67,12 +68,6 @@ $ const styleSize = {
             </if>
             <else>An error has occurred</else>
         </div>
-    </div>
-    <div class=[
-        "video-player__overlay",
-        state.isLoaded && "video-player__overlay--hidden",
-    ]>
-        <ebay-progress-spinner a11yText=a11yLoadText/>
     </div>
     <div style="display:none">
         <ebay-play-filled-64-colored-icon key="play-icon"/>

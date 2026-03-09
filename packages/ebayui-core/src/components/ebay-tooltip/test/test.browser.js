@@ -15,6 +15,8 @@ const renderBodyText = "View options";
 describe("default tooltip", () => {
     beforeEach(async () => {
         component = await render(Standard);
+        // Wait for floating-ui to load and tooltip to open
+        await waitFor(() => expect(component.emitted("loaded")).has.length(1));
     });
 
     describe("when the host element is hovered", () => {
@@ -48,6 +50,8 @@ describe("given the a custom aligned tooltip", () => {
         component = await render(Standard, {
             offset: 50,
         });
+        // Wait for floating-ui to load
+        await waitFor(() => expect(component.emitted("loaded")).has.length(1));
     });
 
     describe("when the host element is hovered", () => {

@@ -1,6 +1,6 @@
 {
     "name": "@ebay/ui-core-react",
-    "version": "9.2.2",
+    "version": "9.3.1",
     "description": "Skin components build off React",
     "keywords": [
         "React",
@@ -26,7 +26,7 @@
         }
     },
     "scripts": {
-        "build": "npm run clean && npm run type:check && npm run test && vite build && npm run copy && npm run smoke-test",
+        "build": "npm run clean && npm run type:check && vitest run && vite build && npm run copy && npm run smoke-test",
         "build:storybook": "storybook build",
         "clean": "node scripts/clean",
         "generate-locale-info": "node scripts/generate-locale-info.js",
@@ -37,7 +37,7 @@
         "format": "eslint . --fix 'src/**/*.{ts,tsx}' && prettier . --write --log-level=warn",
         "lint": "eslint . --ext .ts,.tsx && prettier . --check --log-level=warn",
         "release": "vite build && npm run copy",
-        "smoke-test": "npm run smoke-test:react-16 && npm run smoke-test:react-18 && npm run smoke-test:react-19",
+        "smoke-test": "concurrently --kill-others-on-fail \"npm run smoke-test:react-16\" \"npm run smoke-test:react-18\" \"npm run smoke-test:react-19\"",
         "smoke-test:react-16": "cd ./smoke-tests/react-16 && npm ci && npm run test",
         "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm ci && npm run test",
         "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm ci && npm run test",
@@ -83,7 +83,7 @@
         "react-dom": "^19"
     },
     "optionalDependencies": {
-        "shaka-player": "^4.16.16"
+        "shaka-player": "^5.0.2"
     },
     "publishConfig": {
         "directory": "dist"

@@ -106,7 +106,7 @@ export default {
     },
     a11yCloseText: {
       control: { type: "text" },
-      description: "Accessibility label for the close button",
+      description: "Localized, accessibility label for the close button",
       table: {
         defaultValue: {
           summary: "Dismiss tourtip",

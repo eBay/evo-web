@@ -12,11 +12,11 @@ span.tourtip {
     display: none;
     font-size: 14px;
     left: 0;
-    min-width: 280px;
+    max-width: min(344px, 80vw);
     position: absolute;
     top: 0;
     transform: scaleX(1);
-    width: fit-content;
+    width: max-content;
 }
 .tourtip__mask,
 .tourtip__overlay {
@@ -185,6 +185,5 @@ span.tourtip__heading {
 @media (min-width: 512px) {
     .tourtip__overlay {
         max-width: 400px;
-        width: max-content;
     }
 }

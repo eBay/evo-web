@@ -1,1 +1,95 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>EEK Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        The EEK component <strong>must</strong> have a descriptive <code>aria-label</code> that
+        conveys both the energy rating and the range. Format: "Energy Rating: [rating]. Range: [max] - [min]".
+    </p>
+    <p>
+        Color alone <strong>must not</strong> be the only means of conveying the energy rating.
+        The rating value in the <code>aria-label</code> provides the accessible alternative.
+    </p>
+    <h2>Interaction Design</h2>
+    <h3>Keyboard</h3>
+    <p>
+        EEK elements are not interactive by default and therefore should not be
+        keyboard focusable.
+    </p>
+    <p>
+        If an EEK is placed within an interactive element (such as a button or
+        link), the interactive element must be keyboard accessible via
+        <strong>TAB</strong>
+        key.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader <strong>must</strong> announce the label content,
+        including the energy rating and range. The figure role provides semantic context.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        EEK elements are not interactive by default and therefore are not
+        clickable.
+    </p>
+    <p>
+        If an EEK is placed within an interactive element (such as a button or
+        link), clicking the EEK will activate that interactive element.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>role="figure"</strong></td>
+                <td>
+                    Identifies the EEK as a figure element, providing semantic meaning
+                    for the graphical representation of the energy rating.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>aria-label</strong></td>
+                <td>
+                    Provides the accessible name for the figure. (e.g., "Energy Rating: A+++. Range: A+++ - D").
+                </td>
+            </tr>
+            <tr>
+                <td><strong>aria-hidden="true"</strong></td>
+                <td>
+                    Applied to the content container (<code>eek__container</code>), which
+                    hides all visual children—rating text, range text, and SVG icons—as a group.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html">
+                WCAG Use of Color
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6">
+                ARIA6: Using aria-label to provide labels
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/figure_role">
+                MDN: ARIA figure role
+            </a>
+        </li>
+        <li>
+            <a href="${urls.components}/icon/accessibility">
+                Icon Accessibility
+            </a>
+        </li>
+    </ul>
+</div>

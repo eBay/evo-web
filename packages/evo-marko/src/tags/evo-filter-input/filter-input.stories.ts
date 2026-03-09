@@ -31,7 +31,7 @@ export default {
       },
       control: { type: "text" },
       description:
-        "Text for the clear button. If not provided, then no clear button is rendered",
+        "Localized, text for the clear button. If not provided, then no clear button is rendered",
     },
     a11yControlsId: {
       type: "string",

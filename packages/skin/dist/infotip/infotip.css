@@ -12,11 +12,11 @@ span.infotip {
     display: none;
     font-size: 14px;
     left: 0;
-    min-width: 280px;
+    max-width: min(344px, 80vw);
     position: absolute;
     top: 0;
     transform: scaleX(1);
-    width: fit-content;
+    width: max-content;
 }
 .infotip__mask,
 .infotip__overlay {
@@ -143,6 +143,5 @@ button.infotip__close {
 @media (min-width: 512px) {
     .infotip__overlay {
         max-width: 400px;
-        width: max-content;
     }
 }

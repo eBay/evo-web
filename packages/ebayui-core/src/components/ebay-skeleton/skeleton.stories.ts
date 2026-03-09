@@ -51,7 +51,7 @@ export default {
         a11yText: {
             control: { type: "text" },
             description:
-                "The localized accessibility text for the component. By default for english, Loading is used.",
+                "Localized, the accessibility text for the component. By default, Loading is used.",
             table: {
                 defaultValue: {
                     summary: "Loading",

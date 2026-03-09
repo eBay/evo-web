@@ -55,17 +55,17 @@ export default {
         },
         a11yCloseText: {
             control: { type: "text" },
-            description: "A11y text for close button and mask.",
+            description: "Localized, a11y text for close button and mask.",
         },
         a11yMinimizeText: {
             control: { type: "text" },
             description:
-                "A11y text for draggable handle when drawer is maximized and clicking handle will minimize the drawer.",
+                "Localized, a11y text for draggable handle when drawer is maximized and clicking handle will minimize the drawer.",
         },
         a11yMaximizeText: {
             control: { type: "text" },
             description:
-                "A11y text for draggable handle when drawer is minimized and clicking handle will maximize the drawer.",
+                "Localized, a11y text for draggable handle when drawer is minimized and clicking handle will maximize the drawer.",
         },
 
         header: {

@@ -27,7 +27,7 @@ export default {
         a11yDeleteButtonText: {
             control: { type: "text" },
             description:
-                "A11y text for the delete button, also determines if delete button is shown",
+                "Localized, a11y text for the delete button, also determines if delete button is shown",
         },
         onDelete: {
             action: "on-delete",

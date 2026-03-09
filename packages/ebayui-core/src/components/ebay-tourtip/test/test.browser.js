@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, it, expect } from "vitest";
 import { composeStories } from "@storybook/marko";
-import { render, fireEvent, cleanup } from "@marko/testing-library";
+import { render, fireEvent, cleanup, waitFor } from "@marko/testing-library";
 import * as stories from "../tourtip.stories";
+import { addRenderBodies } from "../../../common/storybook/utils";
 
 const { Standard } = composeStories(stories);
 
@@ -13,6 +14,8 @@ let component;
 describe("given the default tourtip", () => {
     beforeEach(async () => {
         component = await render(Standard);
+        // Wait for floating-ui to load and tourtip to open
+        await waitFor(() => expect(component.emitted("loaded")).has.length(1));
     });
 
     thenItIsOpen();
@@ -20,7 +23,11 @@ describe("given the default tourtip", () => {
 
     describe("after it is rerendered", () => {
         beforeEach(async () => {
-            component = await render(Standard, { open: true });
+            await component.rerender(
+                Object.assign({}, addRenderBodies(Standard.args), {
+                    open: true,
+                }),
+            );
         });
 
         thenItIsOpen();
