@@ -20,7 +20,7 @@ export default {
 
   argTypes: {
     index: {
-      changeHandler: true,
+      controllable: true,
       type: "number",
       control: "number",
       description: "Zero-based index of the selected tab/panel",

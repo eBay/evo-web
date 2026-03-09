@@ -32,7 +32,7 @@ export default {
     },
     checked: {
       type: "boolean",
-      changeHandler: true,
+      controllable: true,
       control: "boolean",
       description: "The native `checked=` value of the `<input>`",
     },

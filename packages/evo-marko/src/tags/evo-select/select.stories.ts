@@ -61,7 +61,7 @@ export default {
       description: "Select takes 100% of the container width",
     },
     value: {
-      changeHandler: true,
+      controllable: true,
       type: "string",
       control: "text",
       description:

@@ -25,7 +25,7 @@ export default {
   },
   argTypes: {
     checked: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "The checked/selected state.",

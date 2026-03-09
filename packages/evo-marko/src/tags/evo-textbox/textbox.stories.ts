@@ -34,7 +34,7 @@ export default {
 
   argTypes: {
     value: {
-      changeHandler: true,
+      controllable: true,
       type: "string",
       control: "text",
       description: "The value of the textbox",

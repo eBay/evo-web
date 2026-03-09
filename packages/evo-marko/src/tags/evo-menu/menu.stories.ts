@@ -34,7 +34,7 @@ export default {
 
   argTypes: {
     selected: {
-      changeHandler: true,
+      controllable: true,
       description:
         "If present, indicates the selected item(s) in the menu and automatically updates them on click. Use a single value for single-select, or an array for multi-select. Compares with `value` is present in `@option`, otherwise index.",
       table: { type: { summary: "number | string | (number | string)[]" } },

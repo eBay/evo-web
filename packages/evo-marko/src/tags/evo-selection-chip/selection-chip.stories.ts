@@ -20,7 +20,7 @@ export default {
 
   argTypes: {
     selected: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "Selected state of the chip",

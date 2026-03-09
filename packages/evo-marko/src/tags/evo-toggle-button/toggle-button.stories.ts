@@ -23,7 +23,7 @@ export default {
   },
   argTypes: {
     pressed: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "Pressed state of the button",

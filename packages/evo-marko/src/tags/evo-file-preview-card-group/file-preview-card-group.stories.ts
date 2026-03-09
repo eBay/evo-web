@@ -39,7 +39,7 @@ export default {
       },
     },
     visibleCardCount: {
-      changeHandler: true,
+      controllable: true,
       type: "number",
       control: "number",
       description:

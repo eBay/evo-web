@@ -22,7 +22,7 @@ export default {
 
   argTypes: {
     value: {
-      changeHandler: true,
+      controllable: true,
       type: "number",
       control: "number",
       description: "The value of the input.",

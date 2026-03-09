@@ -41,7 +41,7 @@ export default {
     },
     open: {
       type: "boolean",
-      changeHandler: true,
+      controllable: true,
       description: "Whether details is open",
       table: { defaultValue: { summary: "false" } },
     },

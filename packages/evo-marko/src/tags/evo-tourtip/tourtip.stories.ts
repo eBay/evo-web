@@ -24,7 +24,7 @@ export default {
 
   argTypes: {
     open: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "Visibility of the tooltip.",

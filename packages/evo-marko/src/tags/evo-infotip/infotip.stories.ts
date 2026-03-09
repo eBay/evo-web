@@ -26,7 +26,7 @@ export default {
 
   argTypes: {
     open: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "Whether the infotip is open.",

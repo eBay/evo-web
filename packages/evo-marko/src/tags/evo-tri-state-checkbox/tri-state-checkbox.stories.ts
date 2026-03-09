@@ -26,7 +26,7 @@ export default {
 
   argTypes: {
     checked: {
-      changeHandler: true,
+      controllable: true,
       type: "string",
       options: ["false", "mixed", "true"],
       control: "inline-radio",
@@ -52,7 +52,7 @@ export default {
       table: { type: { summary: "string[]" } },
     },
     checkedValues: {
-      changeHandler: true,
+      controllable: true,
       description:
         '**Must** be accompanied by `values` and `checkedValuesChange` (usually via [the `:=` bind syntax](https://markojs.com/docs/reference/language#shorthand-change-handlers-two-way-binding)). Leverages [Marko\'s `checkedValue` checkbox pattern](https://markojs.com/docs/reference/native-tag#input-typeradio-and-input-typecheckbox) for "select/deselect all" behavior',
       table: { type: { summary: "string[]" } },

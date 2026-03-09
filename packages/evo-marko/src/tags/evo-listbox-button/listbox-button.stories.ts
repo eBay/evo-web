@@ -24,14 +24,14 @@ export default {
 
   argTypes: {
     selected: {
-      changeHandler: true,
+      controllable: true,
       type: "string",
       control: "text",
       description:
         "The selected item in the list. Checks for equality with `value` in each `@option`",
     },
     open: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "Allows control over the open state of the listbox",

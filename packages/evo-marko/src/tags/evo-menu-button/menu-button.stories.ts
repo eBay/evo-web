@@ -32,7 +32,7 @@ export default {
 
   argTypes: {
     open: {
-      changeHandler: true,
+      controllable: true,
       type: "boolean",
       control: "boolean",
       description: "Allows control over the open state of the menu",

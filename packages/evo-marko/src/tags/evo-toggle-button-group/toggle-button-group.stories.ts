@@ -42,7 +42,7 @@ export default {
       },
     },
     pressed: {
-      changeHandler: true,
+      controllable: true,
       control: "text",
       description:
         "Values that are currently selected. Use a string or number for single select, or an array for multiselect",

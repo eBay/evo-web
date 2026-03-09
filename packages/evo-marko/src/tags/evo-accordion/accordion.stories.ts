@@ -50,7 +50,7 @@ export default {
       },
     },
     open: {
-      changeHandler: true,
+      controllable: true,
       control: "number",
       description:
         "The index or indices of the open items. Pass a number if only one may be open at a time, or an array for multiple",

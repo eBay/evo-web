@@ -22,7 +22,7 @@ export default {
 
   argTypes: {
     selected: {
-      changeHandler: true,
+      controllable: true,
       type: "string",
       control: "text",
       description:

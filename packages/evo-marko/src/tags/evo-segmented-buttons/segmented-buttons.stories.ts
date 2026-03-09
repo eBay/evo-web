@@ -19,7 +19,7 @@ export default {
   },
   argTypes: {
     selected: {
-      changeHandler: true,
+      controllable: true,
       control: "text",
       description: "Index of the selected button, or name if present",
       table: { type: { summary: "string | number" } },
