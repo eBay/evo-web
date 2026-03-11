@@ -72,6 +72,7 @@ export class DropdownUtil {
     }
 
     update() {
+        if (!this.loaded) return;
         const middleware = [] as Middleware[];
         middleware.push(this.offset(this.options.offset ?? 4));
         if (this.options.flip) {

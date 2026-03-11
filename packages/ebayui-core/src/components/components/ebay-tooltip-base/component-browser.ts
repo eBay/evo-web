@@ -171,6 +171,7 @@ class TooltipBase extends Marko.Component<Input, State> {
     }
 
     updateTip() {
+        if (!this.state.loaded) return;
         this.computePosition(
             this.hostEl as HTMLElement,
             this.overlayEl as HTMLElement,
