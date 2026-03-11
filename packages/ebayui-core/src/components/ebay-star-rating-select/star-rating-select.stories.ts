@@ -39,7 +39,8 @@ export default {
         },
         a11yStarText: {
             control: "object",
-            description: "Localized, array object which sets the aria label for each star",
+            description:
+                "Localized, array object which sets the aria label for each star",
         },
         a11yText: {
             control: { type: "text" },

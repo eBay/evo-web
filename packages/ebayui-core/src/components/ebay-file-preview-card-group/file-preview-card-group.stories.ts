@@ -46,7 +46,8 @@ export default {
         a11ySeeMoreText: {
             type: "string",
             control: { type: "text" },
-            description: "Localized, a11y text for see more button, applied to all cards",
+            description:
+                "Localized, a11y text for see more button, applied to all cards",
         },
         "onMenu-action": {
             action: "on-menu-action",

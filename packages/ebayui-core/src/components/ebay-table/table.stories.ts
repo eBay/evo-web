@@ -132,13 +132,15 @@ export default {
             },
         },
         a11ySelectAllText: {
-            description: "Localized, text for selecting all rows. Used with select mode",
+            description:
+                "Localized, text for selecting all rows. Used with select mode",
             table: {
                 category: "a11y",
             },
         },
         a11ySelectRowText: {
-            description: "Localized, text for selecting a row. Used with select mode",
+            description:
+                "Localized, text for selecting a row. Used with select mode",
             table: {
                 category: "a11y",
             },

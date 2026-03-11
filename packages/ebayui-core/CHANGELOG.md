@@ -1,5 +1,13 @@
 # eBayUI-Core Changelog
 
+## 16.5.3
+
+### Patch Changes
+
+- [#553](https://github.com/eBay/evo-web/pull/553) [`1be72e3`](https://github.com/eBay/evo-web/commit/1be72e3c4a195be81b3a0e3802d915e65e7dfd7f) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Update peer dependency
+
+- [#560](https://github.com/eBay/evo-web/pull/560) [`04b3b12`](https://github.com/eBay/evo-web/commit/04b3b125a695a9096e54a16805687dae7afbc9c9) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix floating UI loading bug
+
 ## 16.5.2
 
 ### Patch Changes

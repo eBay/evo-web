@@ -30,7 +30,8 @@ export default {
     argTypes: {
         a11yHeadingText: {
             control: { type: "text" },
-            description: "Localized, heading for breadcrumb which will be clipped",
+            description:
+                "Localized, heading for breadcrumb which will be clipped",
         },
         a11yHeadingTag: {
             control: { type: "text" },

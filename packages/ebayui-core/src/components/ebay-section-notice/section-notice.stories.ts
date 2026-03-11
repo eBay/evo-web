@@ -53,7 +53,8 @@ export default {
                 'matches whatever is specified by the "status", or if none hides icon',
         },
         a11yText: {
-            description: "Localized, adding description for the notice for a11y users",
+            description:
+                "Localized, adding description for the notice for a11y users",
         },
         a11yRoleDescription: {
             table: {

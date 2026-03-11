@@ -107,7 +107,8 @@ export default {
         },
         a11yReportText: {
             control: { type: "text" },
-            description: 'Localized, the text for report button. Default is "Report"',
+            description:
+                'Localized, the text for report button. Default is "Report"',
         },
         volumeSlider: {
             type: "boolean",
