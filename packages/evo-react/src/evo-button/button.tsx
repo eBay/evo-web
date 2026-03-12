@@ -8,6 +8,7 @@ import type {
   Size,
   Split,
 } from "./types";
+import { EvoIconChevronDown16 } from "../evo-icon/icons/evo-icon-chevron-down-16";
 import "@ebay/skin/button.mjs";
 
 export function EvoButton(props: AnchorButtonProps): React.JSX.Element;
@@ -83,8 +84,7 @@ export function EvoButton(
         return (
           <span className="btn__cell">
             <span className="btn__text">{children}</span>
-            {/* TODO: Replace with <EvoIconChevronDown16 /> when available */}
-            <span>▼</span>
+            <EvoIconChevronDown16 />
           </span>
         );
       default:

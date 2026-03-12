@@ -7,3 +7,6 @@ export type {
   BodyState,
   Split,
 } from "./evo-button";
+
+export { EvoIconProvider, IconContext } from "./evo-icon";
+export type { EvoIconProps, A11yVariant } from "./evo-icon";

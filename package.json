@@ -177,6 +177,7 @@
     "vite-css-modules": "^1.12.0",
     "vite-plugin-cjs-interop": "^2.3.0",
     "vitest": "^4.0.18",
+    "vitest-browser-react": "^2.0.5",
     "xmlserializer": "^0.6.1",
     "yargs": "^18.0.0"
   }

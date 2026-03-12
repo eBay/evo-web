@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import { join, resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { nodeExternals } from "rollup-plugin-node-externals";
@@ -5,6 +7,21 @@ import typescript from "@rollup/plugin-typescript";
 import { playwright } from "@vitest/browser-playwright";
 
 const isCI = !!process.env.CI;
+
+const iconsEntries = fs
+  .readdirSync("./src/evo-icon/icons")
+  .filter(
+    (file) =>
+      fs.statSync(`./src/evo-icon/icons/${file}`).isFile() &&
+      file.startsWith("evo-icon-"),
+  )
+  .reduce((acc, componentName) => {
+    acc[join("evo-icon/icons/", componentName.replace(".tsx", ""))] = resolve(
+      import.meta.dirname,
+      `src/evo-icon/icons/${componentName}`,
+    );
+    return acc;
+  }, {});
 
 export default defineConfig({
   plugins: [
@@ -16,7 +33,10 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: "./src/index.ts",
+      entry: {
+        index: "./src/index.ts",
+        ...iconsEntries,
+      },
       formats: ["es"],
     },
     rollupOptions: {

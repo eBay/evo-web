@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`EvoButton SSR > should render button with bodyState=expand 1`] = `"<button class="btn btn--secondary"><span class="btn__cell"><span class="btn__text">Button</span><span>▼</span></span></button>"`;
+exports[`EvoButton SSR > should render button with bodyState=expand 1`] = `"<button class="btn btn--secondary"><span class="btn__cell"><span class="btn__text">Button</span><svg class="icon icon--16" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-chevron-down-16"></use><defs><symbol viewBox="0 0 16 16" id="icon-chevron-down-16"><path d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"/></symbol></defs></svg></span></button>"`;
 
 exports[`EvoButton SSR > should render button with bodyState=loading 1`] = `"<button aria-live="polite" class="btn btn--secondary"><span class="btn__cell"><span>Loading...</span></span></button>"`;
 
@@ -64,7 +64,7 @@ exports[`EvoButton SSR > should render disabled link without href 1`] = `"<a cla
 
 exports[`EvoButton SSR > should render fake version (anchor) 1`] = `"<a aria-label="fake button" class="fake-btn fake-btn--primary fake-btn--large" href="https://ebay.com">Link Button</a>"`;
 
-exports[`EvoButton SSR > should render form variant with expand 1`] = `"<button class="btn btn--form"><span class="btn__cell"><span class="btn__text">Form Expand</span><span>▼</span></span></button>"`;
+exports[`EvoButton SSR > should render form variant with expand 1`] = `"<button class="btn btn--form"><span class="btn__cell"><span class="btn__text">Form Expand</span><svg class="icon icon--16" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-chevron-down-16"></use></svg></span></button>"`;
 
 exports[`EvoButton SSR > should render large fixed-height button 1`] = `"<button class="btn btn--secondary btn--large btn--large-fixed-height">Large Fixed Height</button>"`;
 
