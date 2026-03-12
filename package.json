@@ -160,7 +160,7 @@
     "rollup-plugin-node-externals": "^8.1.2",
     "sass": "^1.97.1",
     "shaka-player": "^4.16.12",
-    "storybook": "^10.1.11",
+    "storybook": "^10.2.17",
     "stylelint": "^16.26.1",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-standard": "^39",
