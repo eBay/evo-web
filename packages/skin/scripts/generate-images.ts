@@ -187,6 +187,27 @@ class GenerateImages {
 
         const [, , width, height] = sizes.split(" ");
 
+        // Validate viewBox matches expected size from filename
+        // Skip icons that intentionally have non-square aspect ratios:
+        // - Colored icons (payment methods, etc.)
+        // - Logo icons (brand marks)
+        // - PSA icons (brand-specific aspect ratios)
+        const isColoredIcon = filename.includes("-colored");
+        const isLogoIcon = filename.includes("-logo");
+        const isPSAIcon = filename.startsWith("icon-psa");
+        if (
+            nameObj.rawSize &&
+            width !== nameObj.rawSize &&
+            !isColoredIcon &&
+            !isLogoIcon &&
+            !isPSAIcon
+        ) {
+            console.warn(
+                `⚠️  ViewBox mismatch in ${filename}: ` +
+                    `expected ${nameObj.rawSize}x${nameObj.rawSize}, got ${width}x${height}`,
+            );
+        }
+
         if (isAllowedInDocs) {
             this.imageList.push({
                 name: nameObj.fullName,

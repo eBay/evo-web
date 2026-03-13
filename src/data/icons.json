@@ -236,14 +236,14 @@
       {
         "name": "arrows-expand-16",
         "size": "16",
-        "height": "24",
-        "width": "24"
+        "height": "16",
+        "width": "16"
       },
       {
         "name": "arrows-expand-24",
         "size": "24",
-        "height": "16",
-        "width": "16"
+        "height": "24",
+        "width": "24"
       },
       { "name": "article-16", "size": "16", "height": "16", "width": "16" },
       { "name": "article-24", "size": "24", "height": "24", "width": "24" },
@@ -669,7 +669,7 @@
       { "name": "clock-64", "size": "64", "height": "64", "width": "64" },
       { "name": "clock-fast-16", "size": "16", "height": "16", "width": "16" },
       { "name": "clock-fast-24", "size": "24", "height": "24", "width": "24" },
-      { "name": "close-12", "size": "12", "height": "12", "width": "13" },
+      { "name": "close-12", "size": "12", "height": "12", "width": "12" },
       { "name": "close-16", "size": "16", "height": "16", "width": "16" },
       { "name": "close-20", "size": "20", "height": "20", "width": "20" },
       { "name": "close-24", "size": "24", "height": "24", "width": "24" },
@@ -1244,14 +1244,14 @@
       {
         "name": "feedback-error-16",
         "size": "16",
-        "height": "24",
-        "width": "24"
+        "height": "16",
+        "width": "16"
       },
       {
         "name": "feedback-error-24",
         "size": "24",
-        "height": "16",
-        "width": "16"
+        "height": "24",
+        "width": "24"
       },
       {
         "name": "feedback-negative-16",
@@ -1289,7 +1289,7 @@
       { "name": "filter-24", "size": "24", "height": "24", "width": "24" },
       { "name": "fingerprint-16", "size": "16", "height": "16", "width": "16" },
       { "name": "fingerprint-24", "size": "24", "height": "24", "width": "24" },
-      { "name": "fingerprint-64", "size": "64", "height": "64", "width": "65" },
+      { "name": "fingerprint-64", "size": "64", "height": "64", "width": "64" },
       { "name": "flag-16", "size": "16", "height": "16", "width": "16" },
       { "name": "flag-24", "size": "24", "height": "24", "width": "24" },
       { "name": "flag-filled-16", "size": "16", "height": "16", "width": "16" },
@@ -3189,13 +3189,13 @@
         "name": "trend-down-16-fit",
         "size": "16-fit",
         "height": "16",
-        "width": "13"
+        "width": "16"
       },
       {
         "name": "trend-up-16-fit",
         "size": "16-fit",
         "height": "16",
-        "width": "13"
+        "width": "16"
       },
       { "name": "trophy-16", "size": "16", "height": "16", "width": "16" },
       { "name": "trophy-24", "size": "24", "height": "24", "width": "24" },
