@@ -11,6 +11,7 @@ import {
 import EbayTooltipContent from "./ebay-tooltip-content";
 import EbayTooltipHost from "./ebay-tooltip-host";
 import { handleEscapeKeydown } from "../events";
+import { useFloatingTooltip } from "../common/floating-ui";
 
 // @todo: this type is weird, we should improve it
 type Props = Omit<TooltipProps, "ref"> & {
@@ -19,6 +20,10 @@ type Props = Omit<TooltipProps, "ref"> & {
     onCollapse?: () => void;
     pointer?: PointerDirection;
     overlayStyle?: CSSProperties;
+    offset?: number;
+    noFlip?: boolean;
+    noShift?: boolean;
+    notInline?: boolean;
 };
 
 const EbayTooltip: FC<Props> = ({
@@ -26,6 +31,10 @@ const EbayTooltip: FC<Props> = ({
     pointer,
     overlayStyle,
     noHover,
+    offset,
+    noFlip,
+    noShift,
+    notInline,
     onFocus = () => {},
     onBlur = () => {},
     onMouseEnter = () => {},
@@ -35,8 +44,21 @@ const EbayTooltip: FC<Props> = ({
     children,
     ...rest
 }) => {
+    const hostRef = useRef<HTMLElement>(null);
     const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand });
     const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+    const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
+        open: isExpanded,
+        hostRef,
+        options: {
+            pointer,
+            offset,
+            noFlip,
+            noShift,
+            notInline,
+        },
+    });
 
     useEffect(() => {
         const handleKeydown = function (event: KeyboardEvent) {
@@ -102,8 +124,16 @@ const EbayTooltip: FC<Props> = ({
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
         >
-            <TooltipHost {...host.props} />
-            <TooltipContent {...content.props} type="tooltip" style={overlayStyle} pointer={pointer} />
+            <TooltipHost {...host.props} forwardedRef={hostRef} />
+            <TooltipContent
+                {...content.props}
+                type="tooltip"
+                style={{ ...overlayStyles, ...overlayStyle }}
+                pointer={pointer}
+                arrowStyle={arrowStyles}
+                overlayRef={refs.setOverlay}
+                arrowRef={refs.arrow}
+            />
         </Tooltip>
     );
 };

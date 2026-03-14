@@ -1,48 +1,9 @@
 import { useEffect, useRef, useSyncExternalStore } from "react";
-import { autoUpdate, flip, offset, shift, useFloating } from "@floating-ui/react";
 import Expander from "makeup-expander";
 import { ActiveDescendantOptions, createLinear, LinearActiveDescendant } from "makeup-active-descendant";
 
-export type FloatingDropdownHookReturn = {
-    overlayStyles: ReturnType<typeof useFloating>["floatingStyles"];
-    refs: {
-        host: ReturnType<typeof useFloating>["refs"]["reference"];
-        overlay: ReturnType<typeof useFloating>["refs"]["floating"];
-        setHost: ReturnType<typeof useFloating>["refs"]["setReference"];
-        setOverlay: ReturnType<typeof useFloating>["refs"]["setFloating"];
-    };
-};
-
-export type FloatingDropdownHookArgs = {
-    open?: boolean;
-    options?: FloatingDropdownHookOptions;
-};
-
-export type FloatingDropdownHookOptions = {
-    offset?: number;
-    reverse?: boolean;
-    strategy?: "fixed" | "absolute";
-};
-
-export function useFloatingDropdown({ open, options }: FloatingDropdownHookArgs): FloatingDropdownHookReturn {
-    const { floatingStyles, refs } = useFloating({
-        placement: options?.reverse ? "bottom-end" : "bottom-start",
-        strategy: options?.strategy,
-        open,
-        middleware: [offset(options?.offset ?? 4), flip(), shift()],
-        whileElementsMounted: autoUpdate,
-    });
-
-    return {
-        overlayStyles: floatingStyles,
-        refs: {
-            host: refs.reference,
-            overlay: refs.floating,
-            setHost: refs.setReference,
-            setOverlay: refs.setFloating,
-        },
-    };
-}
+export type { FloatingDropdownHookReturn, FloatingDropdownHookArgs, FloatingDropdownHookOptions } from "./floating-ui";
+export { useFloatingDropdown } from "./floating-ui";
 
 type ElementId = string;
 export type ExpanderHookArgs<T extends HTMLElement> = {

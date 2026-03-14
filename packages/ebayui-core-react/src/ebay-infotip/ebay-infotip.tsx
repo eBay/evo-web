@@ -17,6 +17,7 @@ import { Variant } from "./types";
 import { EbayInfotipHeading, EbayInfotipContent } from "./index";
 import { TooltipHostProps } from "../common/tooltip-utils/tooltip-host";
 import { EbayIconInformation16 } from "../ebay-icon/icons/ebay-icon-information-16";
+import { useFloatingTooltip } from "../common/floating-ui";
 
 export type InfotipProps = {
     variant?: Variant;
@@ -25,6 +26,10 @@ export type InfotipProps = {
     initialExpanded?: boolean;
     pointer?: PointerDirection;
     overlayStyle?: CSSProperties;
+    offset?: number;
+    noFlip?: boolean;
+    noShift?: boolean;
+    notInline?: boolean;
     onExpand?: () => void;
     onCollapse?: () => void;
     a11yCloseText: string;
@@ -37,6 +42,10 @@ const EbayInfotip: FC<InfotipProps> = ({
     variant = "default",
     pointer,
     overlayStyle,
+    offset,
+    noFlip,
+    noShift,
+    notInline,
     disabled,
     onExpand,
     onCollapse,
@@ -53,6 +62,18 @@ const EbayInfotip: FC<InfotipProps> = ({
         onExpand,
         initialExpanded,
         hostRef: buttonRef,
+    });
+
+    const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
+        open: isExpanded,
+        hostRef: buttonRef,
+        options: {
+            pointer,
+            offset,
+            noFlip,
+            noShift,
+            notInline,
+        },
     });
 
     const isModal = variant === "modal";
@@ -99,11 +120,14 @@ const EbayInfotip: FC<InfotipProps> = ({
                     <TooltipContent
                         {...contentProps}
                         type="infotip"
-                        style={overlayStyle}
+                        style={{ ...overlayStyles, ...overlayStyle }}
                         pointer={pointer}
                         showCloseButton
                         a11yCloseText={a11yCloseText}
                         onClose={collapseTooltip}
+                        overlayRef={refs.setOverlay}
+                        arrowRef={refs.arrow}
+                        arrowStyle={arrowStyles}
                     >
                         {heading}
                         {contentChildren}
