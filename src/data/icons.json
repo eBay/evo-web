@@ -236,14 +236,14 @@
       {
         "name": "arrows-expand-16",
         "size": "16",
-        "height": "24",
-        "width": "24"
+        "height": "16",
+        "width": "16"
       },
       {
         "name": "arrows-expand-24",
         "size": "24",
-        "height": "16",
-        "width": "16"
+        "height": "24",
+        "width": "24"
       },
       { "name": "article-16", "size": "16", "height": "16", "width": "16" },
       { "name": "article-24", "size": "24", "height": "24", "width": "24" },
@@ -1244,14 +1244,14 @@
       {
         "name": "feedback-error-16",
         "size": "16",
-        "height": "24",
-        "width": "24"
+        "height": "16",
+        "width": "16"
       },
       {
         "name": "feedback-error-24",
         "size": "24",
-        "height": "16",
-        "width": "16"
+        "height": "24",
+        "width": "24"
       },
       {
         "name": "feedback-negative-16",
