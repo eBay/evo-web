@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.6.0
+
+### Minor Changes
+
+- [#535](https://github.com/eBay/evo-web/pull/535) [`9e8e718`](https://github.com/eBay/evo-web/commit/9e8e7185f6f4dca396cdc1c1223c2178371e06b6) Thanks [@agliga](https://github.com/agliga)! - feat(accordion): added support for leading icon
+
 ## 16.5.3
 
 ### Patch Changes

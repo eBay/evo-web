@@ -1,5 +1,17 @@
 # Skin Changelog
 
+## 19.23.0
+
+### Minor Changes
+
+- [#535](https://github.com/eBay/evo-web/pull/535) [`9e8e718`](https://github.com/eBay/evo-web/commit/9e8e7185f6f4dca396cdc1c1223c2178371e06b6) Thanks [@agliga](https://github.com/agliga)! - feat(accordion): added support for leading icon
+
+### Patch Changes
+
+- [#569](https://github.com/eBay/evo-web/pull/569) [`a1fd480`](https://github.com/eBay/evo-web/commit/a1fd48028bce70156fe40109463aeba3bf67e388) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(icons): fixed the misalignment of id:viewBox in some icons
+
+- [#552](https://github.com/eBay/evo-web/pull/552) [`80fc036`](https://github.com/eBay/evo-web/commit/80fc036de326a20eb4d6ae0cc6579f9224ef288c) Thanks [@caseycarroll](https://github.com/caseycarroll)! - Adjust accordion open/close animation to avoid jumpiness
+
 ## 19.22.0
 
 ### Minor Changes

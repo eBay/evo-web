@@ -1,5 +1,13 @@
 # @ebay/ui-core-react
 
+## 9.4.0
+
+### Minor Changes
+
+- [#535](https://github.com/eBay/evo-web/pull/535) [`9e8e718`](https://github.com/eBay/evo-web/commit/9e8e7185f6f4dca396cdc1c1223c2178371e06b6) Thanks [@agliga](https://github.com/agliga)! - feat(accordion): added support for leading icon
+
+- [#566](https://github.com/eBay/evo-web/pull/566) [`391673f`](https://github.com/eBay/evo-web/commit/391673f166c16e801094f9eb4cb207d36fdf4cfc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayTooltip): use floating-ui for infotip,tooltip,tourtip
+
 ## 9.3.1
 
 ### Patch Changes
