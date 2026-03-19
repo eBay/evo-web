@@ -56,6 +56,7 @@ exports[`video > renders default 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
         [33mfocusable[39m=[32m"false"[39m
+        [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -280,6 +281,7 @@ exports[`video > renders ios video player 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
         [33mfocusable[39m=[32m"false"[39m
+        [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -506,6 +508,7 @@ exports[`video > renders with compact layout 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
         [33mfocusable[39m=[32m"false"[39m
+        [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -724,6 +727,7 @@ exports[`video > renders with mp4 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
         [33mfocusable[39m=[32m"false"[39m
+        [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m
@@ -943,6 +947,7 @@ exports[`video > renders with report text 1`] = `
         [33maria-hidden[39m=[32m"true"[39m
         [33mclass[39m=[32m"icon icon--64-colored"[39m
         [33mfocusable[39m=[32m"false"[39m
+        [33mwidth[39m=[32m"64"[39m
       [36m>[39m
         [36m<defs>[39m
           [36m<symbol[39m

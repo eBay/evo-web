@@ -10,7 +10,7 @@ describe("ebay-video rendering", () => {
         const { container } = render(<DefaultStory />);
         const player = container.querySelector(".video-player");
         expect(player).toHaveClass("video-player--poster");
-        expect(player).toHaveAttribute("style", "width: 600px; height: 400px;");
+        expect(player).toHaveAttribute("style", "width: 700px; height: 400px;");
 
         const videoContainer = player.querySelector(".video-player__container");
         expect(videoContainer).toHaveClass("shaka-video-container");
@@ -52,6 +52,5 @@ describe("ebay-video rendering", () => {
             "poster",
             "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/iphone-thumbnail.jpg",
         );
-        expect(video).toHaveAttribute("style", "width: 600px; height: 400px;");
     });
 });

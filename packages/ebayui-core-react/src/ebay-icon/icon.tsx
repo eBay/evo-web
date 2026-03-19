@@ -136,9 +136,14 @@ const EbayIcon: FC<EbayIconProps> = ({
           };
     const kebabName = kebabCased(name);
     const size = getIconSize(kebabName) || kebabName;
+    const isColored = kebabName.endsWith("-colored");
 
     const classNamePrefix = __type === "flag" ? "flag" : "icon";
-    const skinClassName = [`${classNamePrefix}`, `${classNamePrefix}--${size}`, getFilledIconName(kebabName)]
+    const skinClassName = [
+        `${classNamePrefix}`,
+        `${classNamePrefix}--${size}${isColored ? "-colored" : ""}`,
+        getFilledIconName(kebabName),
+    ]
         .filter(Boolean)
         .join(" ");
     const className = classNames(extraClass, {

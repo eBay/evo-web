@@ -13,10 +13,9 @@ export default {
 } as Meta;
 
 const defaultProps: EbayVideoProps = {
-    a11yLoadText: "Loading",
     a11yPlayText: "Click to play",
     errorText: "An error has occurred",
-    width: 600,
+    width: 700,
     height: 400,
     onPlay: (e: SyntheticEvent<HTMLVideoElement>, props: PlayEventProps) => action("onPlay")(e, props),
     onVolumeChange: (e: SyntheticEvent<HTMLVideoElement>, props: VolumeChangeProps) =>

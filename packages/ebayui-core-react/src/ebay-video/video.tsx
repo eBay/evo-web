@@ -1,29 +1,44 @@
-// TODO enable media-has-caption back by introducing a EbayVideoTrack component
 /* eslint-disable @typescript-eslint/ban-ts-comment, jsx-a11y/media-has-caption */
-import React, { ComponentProps, FC, SyntheticEvent, MouseEvent, useEffect, useRef, useState } from "react";
+import React, {
+    ComponentProps,
+    FC,
+    SyntheticEvent,
+    MouseEvent,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from "react";
+import { createPortal } from "react-dom";
 import classNames from "classnames";
 // need that for broken definitions workaround
 // @ts-ignore
 import shaka from "shaka-player/dist/shaka-player.ui";
 
 import { filterByType } from "../common/component-utils";
-import { EbayProgressSpinner } from "../ebay-progress-spinner";
 import { Player, VideoAction, VideoPlayView } from "./types";
 import EbayVideoSource from "./source";
-import { defaultVideoConfig, ERROR_ANOTHER_LOAD, ERROR_NO_PLAYER } from "./const";
-import { customControls, TotalTime, CurrentTime } from "./controls";
+import { ERROR_ANOTHER_LOAD, ERROR_NO_PLAYER, DEFAULT_SPINNER_TIMEOUT } from "./const";
+import { MuteButtonControl } from "./controls/mute-button-control";
+import { FullscreenButtonControl } from "./controls/fullscreen-button-control";
+import { RemainingTimeControl } from "./controls/remaining-time-control";
+import { CurrentTimeControl } from "./controls/current-time-control";
+import { TotalTimeControl } from "./controls/total-time-control";
+import { ReportButtonControl } from "./controls/report-button-control";
+import { CaptionsControl } from "./controls/captions-control";
 import { EbayEventHandler } from "../common/event-utils/types";
 import { EbayIconPlayFilled64Colored } from "../ebay-icon/icons/ebay-icon-play-filled-64-colored";
 import { EbayIconAttention64 } from "../ebay-icon/icons/ebay-icon-attention-64";
 
 export type PlayEventProps = {
     player: Player;
+    auto: boolean;
 };
 export type VolumeChangeProps = {
     volume: number;
     muted: boolean;
 };
-export type EbayVideoProps = Omit<ComponentProps<"video">, "onPlay" | "onVolumeChange"> & {
+export type EbayVideoProps = Omit<ComponentProps<"video">, "onPlay" | "onPause" | "onVolumeChange"> & {
     width?: number;
     height?: number;
     thumbnail?: string;
@@ -33,19 +48,57 @@ export type EbayVideoProps = Omit<ComponentProps<"video">, "onPlay" | "onVolumeC
     volumeSlider?: boolean;
     hideReportButton?: boolean;
     playView?: VideoPlayView;
-    // todo: implement CDN support
-    cdnUrl?: string;
-    cssUrl?: string;
     cdnVersion?: string;
-    //
-    a11yLoadText: string;
     a11yPlayText: string;
     errorText: string;
     reportText?: string;
+    a11yReportText?: string;
+    a11yMuteText?: string;
+    a11yUnmuteText?: string;
+    a11yFullscreenText?: string;
+    a11yExitFullscreenText?: string;
+    a11ySkipToLiveText?: string;
+    shakaConfig?: Record<string, unknown>;
+    spinnerTimeout?: number;
+    layout?: "default" | "compact";
     onLoadError?: (err: Error) => void;
     onPlay?: EbayEventHandler<HTMLVideoElement, PlayEventProps>;
+    onPause?: EbayEventHandler<HTMLVideoElement, PlayEventProps>;
     onVolumeChange?: EbayEventHandler<HTMLVideoElement, VolumeChangeProps>;
     onReport?: (event?: MouseEvent<HTMLButtonElement>) => void;
+};
+
+const defaultControlPanelElements = [
+    "play_pause",
+    "current_time",
+    "spacer",
+    "total_time",
+    "captions",
+    "mute_popover",
+    "report",
+    "fullscreen_button",
+];
+
+const compactLayoutControlPanelElements = ["remaining_time", "spacer", "mute_popover", "play_pause"];
+
+const videoConfig = {
+    doubleClickForFullscreen: true,
+    singleClickForPlayAndPause: true,
+    customContextMenu: true,
+    contextMenuElements: ["mute"],
+    showUIAlways: false,
+    addSeekBar: true,
+    controlPanelElements: defaultControlPanelElements,
+};
+
+const compactConfig = {
+    doubleClickForFullscreen: true,
+    singleClickForPlayAndPause: true,
+    customContextMenu: true,
+    contextMenuElements: ["mute"],
+    showUIAlways: false,
+    addSeekBar: false,
+    controlPanelElements: compactLayoutControlPanelElements,
 };
 
 const EbayVideo: FC<EbayVideoProps> = ({
@@ -55,24 +108,34 @@ const EbayVideo: FC<EbayVideoProps> = ({
     action,
     muted,
     playView = "inline",
-    a11yLoadText,
+    layout = "default",
     a11yPlayText,
     reportText,
+    a11yReportText,
+    a11yMuteText,
+    a11yUnmuteText,
+    a11yFullscreenText,
+    a11yExitFullscreenText,
+    a11ySkipToLiveText,
     volumeSlider,
     volume = 1,
     hideReportButton,
     errorText,
+    shakaConfig,
+    spinnerTimeout,
     onVolumeChange = () => {},
     onLoadError = () => {},
     onPlay = () => {},
+    onPause = () => {},
     onReport = () => {},
     children,
     ...rest
 }) => {
-    const [loaded, setLoaded] = useState<boolean>();
-    const [buffering, setBuffering] = useState<boolean>();
     const [playing, setPlaying] = useState<boolean>();
     const [failed, setFailed] = useState<boolean>();
+    const [isAutoPlay, setIsAutoPlay] = useState(action === "play" || rest.autoPlay === true);
+    const [isAutoPause, setIsAutoPause] = useState(false);
+    const [showInitialPlayButton, setShowInitialPlayButton] = useState(false);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -82,15 +145,15 @@ const EbayVideo: FC<EbayVideoProps> = ({
     const sources = filterByType(children, EbayVideoSource).map(({ props }) => props);
 
     const handleError = (err: Error) => {
-        setLoaded(true);
         setFailed(true);
+        // Hide initial play button on error
+        setShowInitialPlayButton(false);
         onLoadError(err);
     };
 
     const loadSource = (index = 0) => {
         if (!sources.length || !playerRef.current) return;
 
-        setLoaded(false);
         playerRef.current
             .load(sources[index]?.src)
             .then(() => {
@@ -113,55 +176,68 @@ const EbayVideo: FC<EbayVideoProps> = ({
                         }
                     }
                 }
-            })
-            .finally(() => {
-                setLoaded(true);
             });
     };
 
-    shaka.ui.Controls.registerElement("current_time", new CurrentTime.Factory());
-    shaka.ui.Controls.registerElement("total_time", new TotalTime.Factory());
-
-    useEffect(() => {
+    useLayoutEffect(() => {
         const video = videoRef.current;
         const container = containerRef.current;
         if (!video || !container) return;
 
         video.volume = volume;
+        video.muted = muted !== false;
 
-        shaka.polyfill.installAll(); // todo: check if we need that
+        shaka.polyfill.installAll();
 
         playerRef.current = new shaka.Player(video);
         if (!playerRef.current) return;
 
-        playerRef.current.addEventListener("error", () => handleError(new Error("Shake-Player error")));
-        playerRef.current.addEventListener("buffering", (e) => {
-            setBuffering((e as unknown as { buffering: boolean }).buffering);
-        });
+        if (shakaConfig) {
+            playerRef.current.configure(shakaConfig);
+        }
 
-        uiRef.current = new shaka.ui.Overlay(playerRef.current, container, video, reportText);
+        playerRef.current.addEventListener("error", () => handleError(new Error("Shaka-Player error")));
+
+        // Create UI overlay
+        uiRef.current = new shaka.ui.Overlay(playerRef.current, container, video);
         uiRef.current.configure({
             controlPanelElements: [],
             addSeekBar: false,
         });
 
-        if (!hideReportButton) {
-            const { Report } = customControls(onReport);
-            shaka.ui.Controls.registerElement("report", new Report.Factory(reportText));
+        // Set locale if document language is available
+        if (document?.documentElement?.lang) {
+            uiRef.current.getControls().getLocalization().changeLocale([document.documentElement.lang]);
+        }
+
+        // Trigger re-render to show initial play button portal
+        setShowInitialPlayButton(true);
+
+        // Hide spinner after timeout
+        const shakaSpinner = container.querySelector<HTMLElement>(".shaka-spinner");
+        if (shakaSpinner) {
+            setTimeout(() => {
+                shakaSpinner.hidden = true;
+            }, spinnerTimeout || DEFAULT_SPINNER_TIMEOUT);
         }
 
         loadSource();
-        hideSpinner(container);
 
-        // return () => {
-        //     playerRef.current.destroy()
-        //     uiRef.current.destroy()
-        // }
+        return () => {
+            if (playerRef.current) {
+                playerRef.current.destroy();
+            }
+            if (uiRef.current) {
+                uiRef.current.destroy();
+            }
+        };
     }, []);
 
     useEffect(() => {
+        if (!videoRef.current) return;
         switch (action) {
             case "play":
+                setIsAutoPlay(true);
                 videoRef.current.play();
                 break;
             case "pause":
@@ -174,16 +250,21 @@ const EbayVideo: FC<EbayVideoProps> = ({
     const showControls = () => {
         if (!uiRef.current) return;
 
-        const updatedControls = volumeSlider
-            ? {
-                  controlPanelElements: withVolumeControl(defaultVideoConfig.controlPanelElements),
-              }
-            : {};
+        const baseConfig = layout === "compact" ? compactConfig : videoConfig;
+        const copyConfig = {
+            ...baseConfig,
+            controlPanelElements: [...baseConfig.controlPanelElements],
+        };
 
-        uiRef.current.configure({
-            ...defaultVideoConfig,
-            ...updatedControls,
-        });
+        if (volumeSlider === true) {
+            const insertAt =
+                copyConfig.controlPanelElements.length - 2 > 0
+                    ? copyConfig.controlPanelElements.length - 2
+                    : copyConfig.controlPanelElements.length;
+            copyConfig.controlPanelElements.splice(insertAt, 0, "volume");
+        }
+
+        uiRef.current.configure(copyConfig);
         videoRef.current.controls = false;
         setTimeout(() => alignSeekbar(), 10);
     };
@@ -192,16 +273,22 @@ const EbayVideo: FC<EbayVideoProps> = ({
         e.stopPropagation();
 
         showControls();
+        alignSeekbar();
 
-        if (playView === "fullscreen") {
+        if (playView === "fullscreen" && layout !== "compact") {
             videoRef.current.requestFullscreen();
         }
 
         setPlaying(true);
-        onPlay(e, { player: playerRef.current });
+        onPlay(e, { player: playerRef.current, auto: isAutoPlay });
+
+        // Reset isAutoPlay after emitting the event
+        setIsAutoPlay(false);
     };
 
     const handleOnPlayClick = () => {
+        // Remove play button from React tree before shaka player removes it
+        setShowInitialPlayButton(false);
         videoRef.current.play();
     };
 
@@ -227,10 +314,16 @@ const EbayVideo: FC<EbayVideoProps> = ({
         }
     };
 
-    const handleOnPause = () => {
+    const handleOnPause = (e: SyntheticEvent<HTMLVideoElement, Event>) => {
         // On IOS, the controls force showing up if the video exist fullscreen while playing.
         // This forces the controls to always hide
         videoRef.current.controls = false;
+
+        onPause(e, { player: playerRef.current, auto: isAutoPause });
+
+        // Reset isAutoPause after emitting the event
+        setIsAutoPause(false);
+        alignSeekbar();
     };
 
     const style = {
@@ -238,24 +331,23 @@ const EbayVideo: FC<EbayVideoProps> = ({
         height: height ? `${height}px` : undefined,
     };
 
+    // Query for shaka controls container on render when play button should be shown
+    const shakaControlsContainer =
+        showInitialPlayButton && containerRef.current
+            ? containerRef.current.querySelector<HTMLElement>(".shaka-controls-container")
+            : null;
+
     return (
-        <div style={style} className={classNames("video-player", { "video-player--poster": !playing })}>
-            {!playing && loaded && !failed && !buffering && (
-                <div className="shaka-play-button-container">
-                    <button
-                        onClick={handleOnPlayClick}
-                        className="shaka-play-button"
-                        style={{ opacity: 1, zIndex: 999 }}
-                        aria-label={a11yPlayText}
-                    >
-                        <EbayIconPlayFilled64Colored />
-                    </button>
-                </div>
-            )}
-            <div className="video-player__container" ref={containerRef}>
+        <div
+            style={style}
+            className={classNames("video-player", {
+                "video-player--poster": !playing,
+                "video-player--compact": layout === "compact",
+            })}
+        >
+            <div className="video-player__container" ref={containerRef} style={style}>
                 <video
                     ref={videoRef}
-                    style={style}
                     poster={thumbnail}
                     playsInline
                     muted={muted || false}
@@ -273,29 +365,29 @@ const EbayVideo: FC<EbayVideoProps> = ({
                 <EbayIconAttention64 />
                 <div className="video-player__overlay-text">{errorText}</div>
             </div>
-            <div
-                className={classNames("video-player__overlay", {
-                    "video-player__overlay--hidden": loaded && (failed || !buffering),
-                })}
-            >
-                <EbayProgressSpinner size="large" aria-label={a11yLoadText} />
-            </div>
+            {shakaControlsContainer &&
+                createPortal(
+                    <div className="shaka-play-button-container">
+                        <button className="shaka-play-button" aria-label={a11yPlayText} onClick={handleOnPlayClick}>
+                            <EbayIconPlayFilled64Colored width={64} />
+                        </button>
+                    </div>,
+                    shakaControlsContainer,
+                )}
+            {!hideReportButton && (
+                <ReportButtonControl reportText={reportText} a11yReportText={a11yReportText} onReport={onReport} />
+            )}
+            <CurrentTimeControl a11ySkipToLiveText={a11ySkipToLiveText} />
+            <RemainingTimeControl />
+            <TotalTimeControl a11ySkipToLiveText={a11ySkipToLiveText} />
+            <MuteButtonControl a11yMuteText={a11yMuteText} a11yUnmuteText={a11yUnmuteText} />
+            <FullscreenButtonControl
+                a11yFullscreenText={a11yFullscreenText}
+                a11yExitFullscreenText={a11yExitFullscreenText}
+            />
+            <CaptionsControl />
         </div>
     );
 };
-
-function withVolumeControl(controls: string[]): string[] {
-    const insertAt = controls.length - 2 > 0 ? controls.length - 2 : controls.length;
-    const controlsWithVolume = [...controls];
-    controlsWithVolume.splice(insertAt, 0, "volume");
-    return controlsWithVolume;
-}
-
-function hideSpinner(container: HTMLDivElement) {
-    const shakaSpinner = container.querySelectorAll(".shaka-spinner")[0];
-    if (shakaSpinner) {
-        shakaSpinner.setAttribute("hidden", "");
-    }
-}
 
 export default EbayVideo;

@@ -435,7 +435,16 @@ class Video extends Marko.Component<Input, State> {
                 "shaka-play-button-container",
             );
 
-            this.playButtonContainer.appendChild(playIcon);
+            // Create button wrapper for accessibility
+            const playButton = document.createElement("button");
+            playButton.classList.add("shaka-play-button");
+            playButton.setAttribute("aria-label", this.input.a11yPlayText || "Click to play");
+            playButton.onclick = () => {
+                this.video.play();
+            };
+
+            playButton.appendChild(playIcon);
+            this.playButtonContainer.appendChild(playButton);
             container.appendChild(this.playButtonContainer);
 
             const shakaSpinner =
