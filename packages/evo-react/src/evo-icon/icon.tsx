@@ -16,7 +16,6 @@ function createRoot(): SVGSVGElement {
 }
 
 export type EvoIconProps = SVGProps<SVGSVGElement> & {
-  className?: string;
   name: string;
   noSkinClasses?: boolean;
   a11yText?: string;
