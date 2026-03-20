@@ -43,6 +43,7 @@ packages/evo-react/src/evo-{name}/
   {name}.tsx                ← main component
   {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
   types.ts                  ← all exported types
+  README.md                 ← component name + Documentation section with Storybook link only
   {name}.stories.tsx        ← Storybook stories (co-located, NOT in __tests__/)
   test/
     test.browser.tsx        ← browser interaction tests (vitest-browser-react)
@@ -50,6 +51,16 @@ packages/evo-react/src/evo-{name}/
 ```
 
 **Key difference from ebayui-core-react:** tests live in `test/` (not `__tests__/`), stories co-located with source (not inside `__tests__/`).
+
+**README.md format** — keep it minimal, just a Storybook link (props and usage docs live in the story):
+
+```md
+# EvoButton
+
+## Documentation
+
+[Storybook](https://opensource.ebay.com/evo-web/react/main/?path=/docs/buttons-evo-button--documentation)
+```
 
 ---
 
@@ -307,6 +318,7 @@ export type { EvoButtonProps, Priority } from "./evo-button";
 - [ ] No `React.Children`, `findComponent`, or child-scanning — asked if encountered
 - [ ] `test/test.browser.tsx` uses `vitest-browser-react`
 - [ ] `test/test.server.tsx` uses `renderToString` + snapshots
+- [ ] `README.md` created with component name and Storybook documentation link only
 - [ ] Stories in `{name}.stories.tsx` co-located with source
 - [ ] Story title follows `"category/evo-{name}"` pattern
 - [ ] Exports registered in `packages/evo-react/src/index.ts`
