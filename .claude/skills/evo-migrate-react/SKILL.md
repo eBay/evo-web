@@ -14,8 +14,9 @@ You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/`
    - `packages/evo-marko/src/tags/evo-${ARGUMENTS#ebay-}/style.ts`, or
    - `packages/ebayui-core/src/components/$ARGUMENTS/style.ts`
      This gives you the correct skin module name to import (e.g. `@ebay/skin/button` → used as `@ebay/skin/button.mjs`).
-3. Read `packages/evo-react/src/evo-button/` as the canonical reference for all conventions.
-4. Read `packages/evo-react/src/index.ts` to know where to add the new exports.
+3. Read the evo-marko component (`packages/evo-marko/src/tags/evo-${ARGUMENTS#ebay-}/index.marko` and its `marko-tag.json` or tag definition) to extract the full list of supported props and their types.
+4. Read `packages/evo-react/src/evo-button/` as the canonical reference for all conventions.
+5. Read `packages/evo-react/src/index.ts` to know where to add the new exports.
 
 ---
 
@@ -128,6 +129,20 @@ onEscape?.(event);
 onEscape = () => {}
 onEscape(event);
 ```
+
+### Prop audit — align with evo-marko and eliminate unnecessary props
+
+Before finalising the prop surface, compare the ebayui-core-react props against the evo-marko component you read in Step 0:
+
+1. **Props in evo-marko but missing from ebayui-core-react** — add them to evo-react.
+2. **Props in ebayui-core-react but missing from evo-marko** — investigate whether they are still needed:
+   - Does CSS/Skin handle it now (so the prop is redundant)?
+   - Was it a framework workaround that React 19 / evo-react no longer needs?
+   - A real example: `noSkinClasses` on `EbayIcon` existed to opt out of skin class generation, but evo-react icon components always apply skin classes — the prop is unnecessary and should be dropped.
+   - If you are uncertain whether a prop should be kept or removed, **stop and ask** before proceeding. Explain what the prop does and why you think it may be removable.
+3. **Mismatched types or semantics** — if a prop exists in both but with different types or behaviour, **stop and ask** before deciding which to follow.
+
+Do not silently carry over every prop from ebayui-core-react. Each prop must have a clear purpose in the evo-react context.
 
 ### Never use `React.Children` APIs
 
@@ -288,6 +303,7 @@ export type { EvoButtonProps, Priority } from "./evo-button";
 - [ ] Skin CSS imported with `.mjs` extension
 - [ ] Individual `EvoIcon*` components used (no `<EbayIcon name="..." />`)
 - [ ] Optional callbacks use `?.` (no `= () => {}` defaults)
+- [ ] Props cross-checked against evo-marko — missing props added, unnecessary props removed or queried
 - [ ] No `React.Children`, `findComponent`, or child-scanning — asked if encountered
 - [ ] `test/test.browser.tsx` uses `vitest-browser-react`
 - [ ] `test/test.server.tsx` uses `renderToString` + snapshots
