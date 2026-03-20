@@ -3,4 +3,4 @@
 import type { ComponentProps } from 'react';
 import type { EvoIcon } from '../icon';
 
-export type EvoIconComponentProps = Omit<ComponentProps<typeof EvoIcon>, 'name' | '__symbol'>;
+export type EvoIconComponentProps = Omit<ComponentProps<typeof EvoIcon>, '__name' | '__symbol'>;
