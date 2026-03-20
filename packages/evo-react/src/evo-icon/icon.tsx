@@ -16,8 +16,11 @@ function createRoot(): SVGSVGElement {
 }
 
 export type EvoIconProps = SVGProps<SVGSVGElement> & {
-  name: string;
-  noSkinClasses?: boolean;
+  /**
+   * Internal use only - icon name (camelCase). Use __name to avoid conflict with SVG name attribute.
+   * @internal
+   */
+  __name: string;
   a11yText?: string;
   a11yVariant?: A11yVariant;
   prominent?: boolean;
@@ -31,9 +34,8 @@ export type EvoIconProps = SVGProps<SVGSVGElement> & {
 const fallbackLookup = new Set<string>();
 
 export function EvoIcon({
-  name,
+  __name,
   className: extraClass,
-  noSkinClasses = false,
   a11yText,
   a11yVariant,
   prominent,
@@ -53,7 +55,7 @@ export function EvoIcon({
     // On the browser this is not an issue since there is always one single instance per page.
     if (typeof window === "undefined" && typeof setImmediate !== "undefined") {
       console.warn(
-        `Icon "${name}" used without wrapping it in a <EvoIconProvider />, for better server performance make sure to wrap your application with <EvoIconProvider> component.`,
+        `Icon "${__name}" used without wrapping it in a <EvoIconProvider />, for better server performance make sure to wrap your application with <EvoIconProvider> component.`,
       );
 
       setImmediate(() => {
@@ -63,9 +65,9 @@ export function EvoIcon({
   }
 
   let inlineSvg = "";
-  if (!lookup?.has(name)) {
+  if (!lookup?.has(__name)) {
     if (typeof window === "undefined") {
-      lookup?.add(name);
+      lookup?.add(__name);
     }
 
     inlineSvg = __symbol || "";
@@ -94,8 +96,8 @@ export function EvoIcon({
     if (defRef.current) {
       const defs = defRef.current;
       const symbol = defs.querySelector("symbol");
-      if (symbol && !lookup?.has(name)) {
-        lookup?.add(name);
+      if (symbol && !lookup?.has(__name)) {
+        lookup?.add(__name);
         rootSvg.appendChild(symbol);
       }
 
@@ -115,17 +117,18 @@ export function EvoIcon({
         "aria-hidden": true,
       };
 
-  const kebabName = kebabCased(name);
+  const kebabName = kebabCased(__name);
   const size = getIconSize(kebabName) || kebabName;
 
-  const skinClassName = [`icon`, `icon--${size}`, getFilledIconName(kebabName)]
-    .filter(Boolean)
-    .join(" ");
-
-  const className = classNames(extraClass, {
-    [skinClassName]: !noSkinClasses,
-    "icon--prominent": prominent,
-  });
+  const className = classNames(
+    `icon`,
+    `icon--${size}`,
+    getFilledIconName(kebabName),
+    extraClass,
+    {
+      "icon--prominent": prominent,
+    },
+  );
 
   return (
     <svg

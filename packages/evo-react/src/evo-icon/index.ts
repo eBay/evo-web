@@ -1,2 +1,3 @@
 export { EvoIconProvider, IconContext } from "./context";
-export type { EvoIconProps, A11yVariant } from "./icon";
+export type { A11yVariant } from "./icon";
+export type { EvoIconComponentProps } from "./icons/types";

@@ -64,7 +64,6 @@ import type { ComponentProps } from 'react';
 import type { EvoIcon } from '../icon';
 
 export type EvoIconComponentProps = Omit<ComponentProps<typeof EvoIcon>, 'name' | '__symbol'>;
-export type EvoIconComponent = (props: EvoIconComponentProps) => React.JSX.Element;
 `,
   );
 
@@ -84,13 +83,13 @@ export type EvoIconComponent = (props: EvoIconComponentProps) => React.JSX.Eleme
 
     const content = `${fileHeader}\n
 import { EvoIcon } from "../icon";
-import type { EvoIconComponent } from "./types";
+import type { EvoIconComponentProps } from "./types";
 
 const SYMBOL = \`${data.content}\`;
 
-export const ${iconComponentName}: EvoIconComponent = props => (
-    <EvoIcon {...props} name="${iconNameCamelCase}" __symbol={SYMBOL} />
-);
+export function ${iconComponentName}(props: EvoIconComponentProps) {
+  return <EvoIcon {...props} __name="${iconNameCamelCase}" __symbol={SYMBOL} />;
+}
 `;
 
     fs.writeFileSync(filename, content);
@@ -99,16 +98,35 @@ export const ${iconComponentName}: EvoIconComponent = props => (
   console.log(`Created ${icons.length} icon components.`);
 
   // Create Storybook stories file
-  const storiesFile = path.resolve(__dirname, "../src/evo-icon/icon.stories.tsx");
+  const storiesFile = path.resolve(
+    __dirname,
+    "../src/evo-icon/icon.stories.tsx",
+  );
 
   const storiesContent = `${fileHeader}\n
-import type { Meta } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoIconProvider } from "./context";
+import type { EvoIconComponentProps } from "./icons/types";
 ${icons.map(({ componentName, filePath }) => `import { ${componentName} } from "./icons/${filePath}";`).join("\n")}
 
-const meta: Meta = {
+const meta: Meta<EvoIconComponentProps> = {
   title: "Graphics & Icons/EvoIcon",
   tags: ["autodocs"],
+  argTypes: {
+    a11yText: {
+      control: "text",
+      description: "Accessible label text for the icon. When provided, the icon will have role=\\"img\\".",
+    },
+    a11yVariant: {
+      control: "select",
+      options: ["label"],
+      description: "Controls how the accessible text is exposed. \\"label\\" uses aria-label directly; default uses a <title> element with aria-labelledby.",
+    },
+    prominent: {
+      control: "boolean",
+      description: "Applies the prominent style modifier to the icon.",
+    },
+  },
   parameters: {
     docs: {
       description: {
@@ -149,26 +167,30 @@ Over 1,000 icons available in multiple sizes (12, 16, 20, 24, 32, 48, 64).
 
 export default meta;
 
-export const AllIcons = () => (
-  <EvoIconProvider>
-    <table>
-      <tbody>
-        ${icons
-          .map(
-            ({ componentName, filePath }) => `
-        <tr>
-          <td>{${componentName}.name || "${filePath}"}</td>
-          <td>
-            <${componentName} />
-          </td>
-        </tr>
-            `,
-          )
-          .join("\n")}
-      </tbody>
-    </table>
-  </EvoIconProvider>
-);
+type Story = StoryObj<EvoIconComponentProps>;
+
+export const AllIcons: Story = {
+  render: (args) => (
+    <EvoIconProvider>
+      <table>
+        <tbody>
+          ${icons
+            .map(
+              ({ componentName, filePath }) => `
+          <tr>
+            <td>{${componentName}.name || "${filePath}"}</td>
+            <td>
+              <${componentName} {...args} />
+            </td>
+          </tr>
+              `,
+            )
+            .join("\n")}
+        </tbody>
+      </table>
+    </EvoIconProvider>
+  ),
+};
 `;
 
   fs.writeFileSync(storiesFile, storiesContent);

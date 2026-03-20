@@ -47,13 +47,6 @@ describe("evo-icon", () => {
       expect(icon?.classList.contains("icon")).toBe(true);
     });
 
-    it("supports noSkinClasses prop", async () => {
-      const screen = await render(<EvoIconCart16 noSkinClasses />);
-
-      const icon = screen.container.querySelector("svg");
-      expect(icon?.classList.contains("icon")).toBe(false);
-    });
-
     it("applies prominent class", async () => {
       const screen = await render(<EvoIconCart16 prominent />);
 
