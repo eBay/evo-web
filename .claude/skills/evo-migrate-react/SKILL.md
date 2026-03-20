@@ -155,6 +155,24 @@ Before finalising the prop surface, compare the ebayui-core-react props against 
 
 Do not silently carry over every prop from ebayui-core-react. Each prop must have a clear purpose in the evo-react context.
 
+### Accessibility prop naming — prefer `a11yText` over `aria-label`
+
+evo-react standardises accessible label props as `a11yText` instead of raw `aria-label` for consistency across components. Before deciding the prop name:
+
+1. Check how the evo-marko component names it (from the `marko-tag.json` / tag definition you read in Step 0).
+2. If evo-marko uses `a11yText`, use `a11yText` in evo-react and map it to `aria-label` on the underlying element internally:
+
+```tsx
+// ✅ evo-react
+export function EvoButton({ a11yText, ...rest }: EvoButtonProps) {
+  return <button aria-label={a11yText} {...rest} />;
+}
+
+// ❌ do not expose aria-label as a custom prop name when a11yText is the standard
+```
+
+3. If evo-marko uses a different name, or the pattern is unclear, **stop and ask** before proceeding.
+
 ### Never use `React.Children` APIs
 
 Do **not** use `Children.map`, `Children.toArray`, `findComponent`, `filterComponent`, or any child-scanning pattern.
@@ -315,6 +333,7 @@ export type { EvoButtonProps, Priority } from "./evo-button";
 - [ ] Individual `EvoIcon*` components used (no `<EbayIcon name="..." />`)
 - [ ] Optional callbacks use `?.` (no `= () => {}` defaults)
 - [ ] Props cross-checked against evo-marko — missing props added, unnecessary props removed or queried
+- [ ] `aria-label` prop replaced with `a11yText` if evo-marko uses it (mapped internally to `aria-label`); asked if naming is unclear
 - [ ] No `React.Children`, `findComponent`, or child-scanning — asked if encountered
 - [ ] `test/test.browser.tsx` uses `vitest-browser-react`
 - [ ] `test/test.server.tsx` uses `renderToString` + snapshots
