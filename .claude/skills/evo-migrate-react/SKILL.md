@@ -323,6 +323,22 @@ export type { EvoButtonProps, Priority } from "./evo-button";
 
 ---
 
+## Update the app migration skill
+
+After completing the component, update `.claude/skills/evo-app-migrate-react/SKILL.md`:
+
+1. Add a new `### \`ebay-{name}\`` section under **Step 3 — Apply per-component prop changes**.
+2. Document every prop that changed compared to `ebayui-core-react`:
+   - Removed props (with reason, e.g. "handled by CSS now")
+   - Renamed props (old → new)
+   - Type changes
+   - Behavior differences
+3. If nothing changed beyond the global renames, write: `No prop changes. Global renames (Step 2) are sufficient.`
+
+Keep entries concise — one line per change. App owners read this, not component authors.
+
+---
+
 ## Checklist before finishing
 
 - [ ] All files use named exports (no `export default`)
