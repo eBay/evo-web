@@ -1,7 +1,7 @@
 import { SVGProps, use, useId, useLayoutEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { IconContext, ROOT_ID } from "./context";
-import "@ebay/skin/icon";
+import "@ebay/skin/icon.mjs";
 
 export type A11yVariant = "label";
 
