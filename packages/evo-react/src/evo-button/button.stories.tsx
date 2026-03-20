@@ -3,7 +3,7 @@ import { EvoButton } from "./button";
 import { EvoButtonCell } from "./button-cell";
 
 const meta: Meta<typeof EvoButton> = {
-  title: "Components/EvoButton",
+  title: "buttons/evo-button",
   component: EvoButton,
   tags: ["autodocs"],
   parameters: {
