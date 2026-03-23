@@ -58,11 +58,16 @@ export default {
                 "Either this or aria-label is required. Renders label inside input if set",
             control: { type: "text" },
             table: {
-                category: "@attribute tag",
+                category: "@attribute tags",
                 defaultValue: {
                     summary: "",
                 },
             },
+        },
+        a11yDeleteText: {
+            control: { type: "text" },
+            description:
+                "Localized text for delete button. Shows delete button when value is 1",
         },
         "on-change": {
             action: "on-change",

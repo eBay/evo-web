@@ -67,6 +67,13 @@ export default {
                 },
             },
         },
+        leading: {
+            name: "@leading",
+            description: "Leading content before the label",
+            table: {
+                category: "@attribute tags",
+            },
+        },
         onToggle: {
             action: "on-toggle",
             description: "Triggered on toggle",

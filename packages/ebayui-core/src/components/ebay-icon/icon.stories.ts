@@ -37,6 +37,12 @@ export default {
             description:
                 "Localized, text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
         },
+        a11yVariant: {
+            control: { type: "select" },
+            options: ["label"],
+            description:
+                "If set to 'label', uses aria-label instead of title element",
+        },
     },
 };
 

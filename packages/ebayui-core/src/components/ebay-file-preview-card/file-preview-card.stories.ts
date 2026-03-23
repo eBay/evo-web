@@ -30,6 +30,29 @@ export default {
             control: { type: "text" },
             description: "Text for delete button",
         },
+        as: {
+            control: { type: "text" },
+            description: "HTML tag to use for the card container",
+        },
+        href: {
+            control: { type: "text" },
+            description: "URL for the file preview link",
+        },
+        infoText: {
+            control: { type: "text" },
+            description: "Informational text to display",
+        },
+        action: {
+            name: "@action",
+            table: {
+                category: "@attribute tags",
+            },
+            description: "Custom action button",
+        },
+        a11ySeeMoreText: {
+            control: { type: "text" },
+            description: "Localized, a11y text for see more button",
+        },
         file: {
             type: "object",
             description:

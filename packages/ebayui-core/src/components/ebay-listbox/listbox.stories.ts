@@ -81,6 +81,16 @@ export default {
                 category: "@option attributes",
             },
         },
+        typeaheadTimeoutLength: {
+            control: { type: "number" },
+            description:
+                "Timeout length in milliseconds for typeahead functionality",
+            table: {
+                defaultValue: {
+                    summary: "1300",
+                },
+            },
+        },
         onChange: {
             action: "on-change",
             description: "Triggered on item clicked",

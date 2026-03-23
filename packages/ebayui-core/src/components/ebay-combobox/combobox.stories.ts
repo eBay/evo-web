@@ -57,10 +57,26 @@ export default {
             description:
                 "default is `automatic`; available values are `automatic`, `manual`. If set to automatic will automatically fill in the input with the currently highlighted item when using the up/down keys.",
         },
-        "floating-label": {
+        floatingLabel: {
             control: { type: "text" },
             description:
                 "The label to show on the combobox which moves up when focused",
+        },
+        chevronSize: {
+            control: { type: "select" },
+            options: ["large"],
+            description: "Size of the chevron icon",
+        },
+        dropdownElement: {
+            description:
+                "For internal use only. Used when combobox container changes. Returns the dropdown element to be used for the combobox",
+            table: {
+                category: "Internal",
+            },
+        },
+        button: {
+            name: "@button",
+            description: "Button element configuration",
         },
         fluid: {
             control: { type: "boolean" },

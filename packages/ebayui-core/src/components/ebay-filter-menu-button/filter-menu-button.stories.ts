@@ -97,6 +97,13 @@ export default {
                 category: 'when variant="form"',
             },
         },
+        formMethod: {
+            control: { type: "text" },
+            description: "forms `method` attribute",
+            table: {
+                category: 'when variant="form"',
+            },
+        },
         checked: {
             control: { type: "boolean" },
             description: "whether or not the item is checked",

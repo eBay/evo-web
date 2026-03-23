@@ -47,6 +47,10 @@ export default {
                 category: "@attribute tags",
             },
         },
+        confirmText: {
+            control: { type: "text" },
+            description: "Text for confirm button",
+        },
         onOpen: {
             action: "on-open",
             description: "Triggered on dialog open",

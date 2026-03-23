@@ -35,6 +35,32 @@ export default {
             control: { type: "text" },
             description: "button text",
         },
+        prefixId: {
+            control: { type: "text" },
+            description: "Prefix for generated IDs",
+        },
+        transparent: {
+            type: "boolean",
+            control: { type: "boolean" },
+            description: "Transparent button background",
+        },
+        label: {
+            name: "@label",
+            table: {
+                category: "@attribute tags",
+            },
+            description: "Custom label content",
+        },
+        textAlign: {
+            control: { type: "select" },
+            options: ["center"],
+            description: "Text alignment within button",
+        },
+        collapseOnSelect: {
+            type: "boolean",
+            control: { type: "boolean" },
+            description: "Whether to collapse menu when an item is selected",
+        },
         a11yText: {
             description:
                 "Localized, a11y text for the button, especially for cases without text",

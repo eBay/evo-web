@@ -110,6 +110,14 @@ export default {
             description:
                 'Localized, the text for report button. Default is "Report"',
         },
+        reportText: {
+            control: { type: "text" },
+            description:
+                'Deprecated - use a11y-report-text instead. Localized, the text for report button. Default is "Report"',
+            table: {
+                category: "Deprecated",
+            },
+        },
         volumeSlider: {
             type: "boolean",
             description:

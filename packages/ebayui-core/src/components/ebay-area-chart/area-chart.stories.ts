@@ -65,6 +65,15 @@ export default {
             description:
                 "A function that will be used to format the tooltip series values and total. By default is formatted as USD currency.",
         },
+        tooltipTitleFormatter: {
+            type: { name: "function", required: false },
+            description:
+                "A function that will be used to format the tooltip title. Provides the value and a date formatter function.",
+        },
+        cdnHighcharts: {
+            type: { name: "string", required: false },
+            description: "CDN URL for highcharts library",
+        },
         areaType: {
             type: { name: "string", required: false },
             description:

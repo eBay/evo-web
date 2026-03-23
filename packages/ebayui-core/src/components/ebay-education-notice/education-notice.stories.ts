@@ -79,6 +79,10 @@ export default {
             description: "whether or not the notice is dismissed",
             type: "boolean",
         },
+        a11yDismissText: {
+            control: { type: "text" },
+            description: "Localized text for dismiss button",
+        },
         title: {
             name: "@title",
             description: "The title content to be displayed.",

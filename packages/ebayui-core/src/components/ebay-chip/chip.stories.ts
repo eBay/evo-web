@@ -29,6 +29,10 @@ export default {
             description:
                 "Localized, a11y text for the delete button, also determines if delete button is shown",
         },
+        disabled: {
+            control: { type: "boolean" },
+            description: "Whether the chip delete button is disabled",
+        },
         onDelete: {
             action: "on-delete",
             description: "Triggered when delete button is clicked",

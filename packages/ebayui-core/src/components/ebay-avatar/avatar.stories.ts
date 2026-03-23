@@ -69,6 +69,10 @@ export default {
             description:
                 "Optional, as aspect ratio will be calculated when the image loads on the client. This can be passed to help prevent a flash of incorrectly styled content before the image loads",
         },
+        img: {
+            name: "@img",
+            description: "Image element attributes",
+        },
     },
 };
 

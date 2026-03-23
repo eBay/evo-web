@@ -64,6 +64,14 @@ export default {
             },
             type: { category: "Options" },
         },
+        confirmText: {
+            control: { type: "text" },
+            description: "Text for confirm button",
+        },
+        rejectText: {
+            control: { type: "text" },
+            description: "Text for reject button",
+        },
         onOpen: {
             action: "on-open",
             description: "Triggered on dialog open",

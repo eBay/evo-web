@@ -23,6 +23,42 @@ export default {
             control: { type: "text" },
             description: "The asset to load",
         },
+        cdnUrl: {
+            control: { type: "text" },
+            description: "CDN URL for the model viewer library",
+        },
+        version: {
+            control: { type: "text" },
+            description: "Version of the model viewer library",
+        },
+        poster: {
+            control: { type: "text" },
+            description: "URL of a poster image to display before the model loads",
+        },
+        loading: {
+            control: { type: "select" },
+            options: ["auto", "lazy", "eager"],
+            description: "Loading strategy for the 3D model",
+            table: {
+                defaultValue: {
+                    summary: "auto",
+                },
+            },
+        },
+        reveal: {
+            control: { type: "select" },
+            options: ["auto", "manual"],
+            description: "Controls when the model is revealed",
+            table: {
+                defaultValue: {
+                    summary: "auto",
+                },
+            },
+        },
+        withCredentials: {
+            control: { type: "boolean" },
+            description: "Whether to use credentials when loading the model",
+        },
         a11yText: {
             control: { type: "text" },
             table: {

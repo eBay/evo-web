@@ -41,6 +41,22 @@ export default {
             description:
                 'button priority, "primary" / "secondary" (default) / "none"',
         },
+        reverse: {
+            control: { type: "boolean" },
+            description: "Whether menu displays in reverse order",
+        },
+        fixWidth: {
+            control: { type: "boolean" },
+            description: "Constrain items to the width of the button",
+        },
+        fixed: {
+            control: { type: "boolean" },
+            description: "Whether the menu is fixed positioning",
+        },
+        classPrefix: {
+            control: { type: "text" },
+            description: "A prefix to be added to all classes",
+        },
         item: {
             name: "@item",
             table: {

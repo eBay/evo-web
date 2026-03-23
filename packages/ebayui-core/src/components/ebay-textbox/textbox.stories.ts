@@ -90,6 +90,17 @@ export default {
                 },
             },
         },
+        floatingLabelStatic: {
+            description:
+                "Only works with floating label. If set to true, the label will not animate on focus/blur",
+            control: { type: "boolean" },
+            table: {
+                category: "floating-label",
+                defaultValue: {
+                    summary: "false",
+                },
+            },
+        },
         buttonAriaLabel: {
             control: { type: "text" },
             description:

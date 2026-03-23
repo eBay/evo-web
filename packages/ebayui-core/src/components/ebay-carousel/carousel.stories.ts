@@ -51,6 +51,10 @@ export default {
             },
             type: "select",
         },
+        hiddenScrollbar: {
+            control: { type: "boolean" },
+            description: "Whether the scrollbar should be hidden",
+        },
         index: {
             type: "number",
             description: "0-based index position",

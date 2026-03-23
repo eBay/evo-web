@@ -107,6 +107,14 @@ export default {
             description:
                 "allows dev to specify whether infotip is open or closed",
         },
+        pointer: {
+            control: { type: "select" },
+            options: ["top", "right", "bottom", "left"],
+            description: "The position of the pointer",
+            table: {
+                defaultValue: { summary: "bottom" },
+            },
+        },
         onCollapse: {
             action: "on-collapse",
             description: "Triggered on menu collapse",

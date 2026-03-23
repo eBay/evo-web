@@ -47,6 +47,11 @@ export default {
             type: { category: "Options" },
             description: "The size of the EEK.",
         },
+        a11yText: {
+            control: { type: "text" },
+            description:
+                "a11y text for the energy rating. Defaults to 'Energy Rating: {rating}. Range: {max} - {min}.'",
+        },
     },
 };
 

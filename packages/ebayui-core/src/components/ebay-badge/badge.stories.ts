@@ -21,6 +21,11 @@ export default {
             type: "number",
             description: "Used as the number to be placed in the badge",
         },
+        type: {
+            control: { type: "select" },
+            options: ["menu", "icon"],
+            description: "Badge type",
+        },
         "aria-label": {
             description:
                 'A descriptive label of what the badge represents (e.g. "5 unread items")',

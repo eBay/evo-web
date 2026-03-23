@@ -95,6 +95,13 @@ export default {
                 },
             },
         },
+        onFloatingLabelInit: {
+            action: "on-floating-label-init",
+            description: "Triggered when floating label finishes initializing",
+            table: {
+                category: "Events",
+            },
+        },
     },
 };
 

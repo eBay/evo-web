@@ -45,6 +45,16 @@ export default {
                 },
             },
         },
+        type: {
+            control: { type: "select" },
+            options: ["button", "submit", "reset"],
+            description: "The button type",
+            table: {
+                defaultValue: {
+                    summary: "button",
+                },
+            },
+        },
         onClick: {
             action: "on-click",
             description: "Triggered on click",

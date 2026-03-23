@@ -52,6 +52,10 @@ export default {
                 category: "@attribute tags",
             },
         },
+        fake: {
+            control: { type: "boolean" },
+            description: "Whether to use fake tabs (no roving tabindex)",
+        },
         onSelect: {
             action: "on-select",
             description: "Triggered on tab selected",

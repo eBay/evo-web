@@ -111,6 +111,13 @@ export default {
                 },
             },
         },
+        onLoaded: {
+            action: "on-loaded",
+            description: "Triggered when tooltip finishes loading",
+            table: {
+                category: "Events",
+            },
+        },
     },
 };
 
