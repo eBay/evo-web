@@ -63,7 +63,8 @@ export default {
             description: "The ID of an element that describes the error state",
         },
         split: {
-            control: { type: "text" },
+            type: "boolean",
+            control: { type: "boolean" },
             description: "Whether to render in split button format",
         },
         a11yIconText: {
