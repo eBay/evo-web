@@ -122,7 +122,7 @@ span[role="region"].page-notice {
     );
     @include token-mixins.border-color-token(
         page-notice-confirmation-border-color,
-        color-border-confirmation
+        color-border-success
     );
 
     .page-notice__header svg {
