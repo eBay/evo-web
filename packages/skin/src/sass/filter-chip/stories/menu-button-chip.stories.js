@@ -1,7 +1,7 @@
 export default { title: "Skin/Filter Chip/Menu" };
 
 export const collapsed = () => `
-<button class="filter-chip" aria-expanded="false" aria-pressed="false">
+<button class="filter-chip" aria-expanded="false">
     <span class="filter-chip__text">Football</span>
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
@@ -10,7 +10,7 @@ export const collapsed = () => `
 `;
 
 export const expanded = () => `
-<button class="filter-chip" aria-expanded="true" aria-pressed="false">
+<button class="filter-chip" aria-expanded="true">
     <span class="filter-chip__text">Football</span>
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
@@ -19,26 +19,28 @@ export const expanded = () => `
 `;
 
 export const collapsedSelected = () => `
-<button class="filter-chip" aria-expanded="false" aria-pressed="true">
+<button class="filter-chip filter-chip--selected" aria-expanded="false">
     <span class="filter-chip__text">Football</span>
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
     </svg>
+    <span class="clipped">filter applied</span>
 </button>
 `;
 
 export const expandedSelected = () => `
-<button class="filter-chip" aria-expanded="true" aria-pressed="true">
+<button class="filter-chip filter-chip--selected" aria-expanded="true">
     <span class="filter-chip__text">Football</span>
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
     </svg>
+    <span class="clipped">filter applied</span>
 </button>
 `;
 
 export const RTL = () => `
 <div dir="rtl">
-    <button class="filter-chip" aria-expanded="false" aria-pressed="false">
+    <button class="filter-chip" aria-expanded="false">
         <span class="filter-chip__text">Football</span>
         <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
             <use href="#icon-chevron-down-12"/>
@@ -48,7 +50,7 @@ export const RTL = () => `
 `;
 
 export const textSpacing = () => `
-<button class="filter-chip demo-a11y-text-spacing" aria-expanded="false" aria-pressed="false">
+<button class="filter-chip demo-a11y-text-spacing" aria-expanded="false">
     <span class="filter-chip__text">Football</span>
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
