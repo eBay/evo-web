@@ -78,7 +78,7 @@ export interface Input<Index extends number | string>
 <id/rootId> // TODO: remove in favor of $root once Marko supports dynamic tag return
 <const/$root() { return document.getElementById(rootId)! }>
 
-<evo-expander/expander
+<evo-expander/expander: Marko.Return<typeof import("<evo-expander>")["default"]>["value"]
     open=open
     strategy=strategy
     host=$root
@@ -163,7 +163,7 @@ export interface Input<Index extends number | string>
             <evo-icon-chevron-down-16/>
         </span>
     </button>
-    <evo-listbox/$listbox:(() => HTMLElement)
+    <evo-listbox/$listbox
         style=expander.floatingStyles
         class=[
             "listbox-button__listbox",

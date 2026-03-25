@@ -34,14 +34,14 @@ static async function mockFetch() {
             file=file
             status=(url ? undefined : "uploading")>
             <@deleteAction
-                aria-label="Delete Card"
+                a11yText="Delete Card"
                 onClick() {
                     files = [
                         ...files.slice(0, index),
                         ...files.slice(index + 1),
                     ];
                 }/>
-            <@cancelAction aria-label="Cancel" onClick() {}/>
+            <@cancelAction a11yText="Cancel" onClick() {}/>
         </@card>
     </for>
 </evo-file-preview-card-group>

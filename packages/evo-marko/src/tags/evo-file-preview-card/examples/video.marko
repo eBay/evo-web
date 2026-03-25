@@ -6,9 +6,9 @@
     }
     ...input
 >
-    <@deleteAction aria-label="Delete" onClick() { console.log("delete clicked"); }/>
-    <@cancelAction aria-label="Cancel upload" onClick() { console.log("cancel upload clicked"); }/>
-    <@seeMoreAction>
+    <@deleteAction a11yText="Delete" onClick() { console.log("delete clicked"); }/>
+    <@cancelAction a11yText="Cancel upload" onClick() { console.log("cancel upload clicked"); }/>
+    <@seeMoreAction a11yText=null>
         +15
     </@seeMoreAction>
 </evo-file-preview-card>
