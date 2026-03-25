@@ -241,6 +241,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
                 videoRef.current.play();
                 break;
             case "pause":
+                setIsAutoPause(true);
                 videoRef.current.pause();
                 break;
             default:
@@ -301,10 +302,10 @@ const EbayVideo: FC<EbayVideoProps> = ({
     };
     const alignSeekbar = () => {
         if (containerRef.current) {
-            const buttonPanel = containerRef.current.querySelector<HTMLElement>(".shaka-controls-button-panel")!;
-            const spacer = buttonPanel.querySelector(".shaka-spacer")!;
-            const rangeContainer = containerRef.current.querySelector<HTMLElement>(".shaka-range-container")!;
-            if (buttonPanel && spacer) {
+            const buttonPanel = containerRef.current.querySelector<HTMLElement>(".shaka-controls-button-panel");
+            const spacer = buttonPanel?.querySelector(".shaka-spacer");
+            const rangeContainer = containerRef.current.querySelector<HTMLElement>(".shaka-range-container");
+            if (buttonPanel && spacer && rangeContainer) {
                 const buttonPanelRect = buttonPanel.getBoundingClientRect();
                 const spacerRect = spacer.getBoundingClientRect();
 
@@ -350,7 +351,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
                     ref={videoRef}
                     poster={thumbnail}
                     playsInline
-                    muted={muted || false}
+                    muted={muted !== false}
                     onPlaying={handlePlaying}
                     onPause={handleOnPause}
                     onVolumeChange={handleVolumeChange}
@@ -368,7 +369,12 @@ const EbayVideo: FC<EbayVideoProps> = ({
             {shakaControlsContainer &&
                 createPortal(
                     <div className="shaka-play-button-container">
-                        <button className="shaka-play-button" aria-label={a11yPlayText} onClick={handleOnPlayClick}>
+                        <button
+                            type="button"
+                            className="shaka-play-button"
+                            aria-label={a11yPlayText}
+                            onClick={handleOnPlayClick}
+                        >
                             <EbayIconPlayFilled64Colored width={64} />
                         </button>
                     </div>,

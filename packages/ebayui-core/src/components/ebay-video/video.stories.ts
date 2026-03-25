@@ -78,7 +78,7 @@ export default {
         a11yPlayText: {
             control: { type: "text" },
             description:
-                'Localized, the accessibility text for the play button. Default is "Click to play"',
+                'Localized, the accessibility text for the play button. Default is "Play"',
         },
         a11yMuteText: {
             control: { type: "text" },

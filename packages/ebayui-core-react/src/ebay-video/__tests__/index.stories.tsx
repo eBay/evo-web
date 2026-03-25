@@ -13,7 +13,7 @@ export default {
 } as Meta;
 
 const defaultProps: EbayVideoProps = {
-    a11yPlayText: "Click to play",
+    a11yPlayText: "Play",
     errorText: "An error has occurred",
     width: 700,
     height: 400,
