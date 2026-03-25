@@ -88,7 +88,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
 >
     <if=(bodyState === "loading")>
         <span class="btn__cell">
-            <evo-progress-spinner a11yText=""/>
+            <evo-progress-spinner a11yText=null/>
         </span>
     </if>
     <else if=(bodyState === "expand")>

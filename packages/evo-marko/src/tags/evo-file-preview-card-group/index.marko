@@ -20,7 +20,7 @@ static const SHOW_AMOUNT = 15;
         <if=(cards.length > showing)>
             <evo-file-preview-card as="li" file=(cards[showing].file)>
                 <@seeMoreAction
-                    a11yText=""
+                    a11yText=null
                     ...seeMoreAction
                     onClick(e, target) {
                         showing += SHOW_AMOUNT;

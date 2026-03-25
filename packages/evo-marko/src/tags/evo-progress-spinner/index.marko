@@ -3,8 +3,10 @@ export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
      * The `aria-label` for the progress spinner
      * 
      * English default to be overridden is `"Loading"`
+     * 
+     * Pass `null` explicitly _only_ if alternative accessibility information is present
      */
-    a11yText: string;
+    a11yText: string | null;
     size?: "large" | "small";
 }
 <const/{

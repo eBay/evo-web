@@ -1,13 +1,15 @@
 import type { Input as DetailsInput } from "<evo-details>";
 export interface Input<Open extends number | number[] | undefined>
-    extends Marko.HTML.UL {
+    extends Omit<Marko.HTML.UL, "aria-roledescription"> {
     size?: "regular" | "large";
     /**
      * The `aria-roledescription` of the list
      *
      * English default to be overridden is `"accordion"`
+     * 
+     * Pass `null` explicitly _only_ if alternative accessibility information is present
      */
-    a11yText: string;
+    a11yText: string | null;
     details?: Marko.AttrTag<
         Omit<DetailsInput, "size" | "alignment" | "open" | "openChange">
     >;

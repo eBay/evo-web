@@ -17,8 +17,10 @@ export interface Input
      * The `aria-label` of the button
      *
      * English default to be overridden is `"button"`
+     * 
+     * Pass `null` explicitly _only_ if alternative accessibility information is present
      */
-    a11yText: string;
+    a11yText: string | null;
 }
 
 <const/{
@@ -58,6 +60,6 @@ export interface Input
     aria-disabled=partiallyDisabled && "true">
     <${content}/>
     <if=badge>
-        <evo-badge ...badge type="icon" a11yText=""/>
+        <evo-badge ...badge type="icon" a11yText=null/>
     </if>
 </>

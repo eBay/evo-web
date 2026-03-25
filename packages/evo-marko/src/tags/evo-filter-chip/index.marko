@@ -24,7 +24,7 @@ export interface Input
     ...htmlInput
 }=input>
 <const/isMenu=variant === "menu">
-<const/isAnchor=!!href && a11ySelectedText && variant !== "menu">
+<const/isAnchor=href && a11ySelectedText && variant !== "menu">
 <let/mounted=false>
 <script>
     mounted = true;
@@ -32,19 +32,31 @@ export interface Input
 <let/selected:=input.selected>
 <let/expanded:=input.expanded>
 
-<${isAnchor ? "a" : "button"}
+<define/Root|input: (Marko.HTML.A | Marko.HTML.Button)|>
+    <if=isAnchor>
+        <a
+            ...input as Marko.HTML.A
+            class=[input.class, selected && "filter-chip--selected"]
+            href=!disabled && href/>
+    </if>
+    <else>
+        <button
+            ...input as Marko.HTML.Button
+            disabled=disabled
+            type="button"
+            aria-selected=(selected ? "true" : "false")/>
+    </else>
+</define>
+
+<Root
     ...htmlInput
     class=[
         "filter-chip",
         mounted && "filter-chip--animated",
         variant === "expressive" && "filter-chip--expressive",
-        isAnchor && selected && "filter-chip--selected",
         inputClass,
     ]
     href=(!disabled ? href : undefined)
-    disabled=(!isAnchor ? disabled : undefined)
-    type=!isAnchor && "button"
-    aria-pressed=!isAnchor && (selected ? "true" : "false")
     aria-expanded=variant === "menu" && (expanded ? "true" : "false")
     onClick(e: PointerEvent, target: HTMLButtonElement) {
         if (!disabled) {
@@ -77,4 +89,4 @@ export interface Input
     <if=variant === "menu">
         <evo-icon-chevron-down-12 class="filter-chip__trailing"/>
     </if>
-</>
+</Root>

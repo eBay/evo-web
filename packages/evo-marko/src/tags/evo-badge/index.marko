@@ -5,8 +5,10 @@ export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
      * The `aria-label` of the badge
      *
      * English default to be overridden is `"n unread items"`
+     * 
+     * Pass `null` explicitly _only_ if alternative accessibility information is present
      */
-    a11yText: string;
+    a11yText: string | null;
 }
 <const/{
     class: inputClass,

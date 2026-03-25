@@ -1,12 +1,14 @@
-export interface Input extends Marko.HTML.Div {
+export interface Input extends Omit<Marko.HTML.Div, "aria-label"> {
   /**
-   *  The accessibility label for the eek rating.
-   *  It should use eekRating, min, and max values in the label in order to demonstrate
-   *  to screen readers the content on the component.
+   * The `aria-label` for the eek rating.
+   * It should use eekRating, min, and max values in the label in order to demonstrate
+   * to screen readers the content on the component.
    *
-   *  Expected english value is `"Energy Rating: ${eekRating}. Range: ${max} - ${min}."`
+   * Expected english value is `"Energy Rating: ${eekRating}. Range: ${max} - ${min}."`
+   * 
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
    */
-  a11yText: string;
+  a11yText: string | null;
   max: string;
   min: string;
   rating: string;

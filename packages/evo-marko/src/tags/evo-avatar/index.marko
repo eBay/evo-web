@@ -1,7 +1,7 @@
 import { getColorForText } from "./util";
 static type Size = 32 | 40 | 48 | 56 | 64 | 96 | 128;
 static type ImagePlacement = "cover" | "fit";
-export interface Input extends Omit<Marko.HTML.Div, "role"> {
+export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
     username?: string;
     color?: string;
     size?: Size | `${Size}`;
@@ -11,8 +11,10 @@ export interface Input extends Omit<Marko.HTML.Div, "role"> {
      * The `aria-label` of the avatar
      *
      * English default to be overridden is `"avatar"`
+     * 
+     * Pass `null` explicitly _only_ if alternative accessibility information is present
      */
-    a11yText: string;
+    a11yText: string | null;
 }
 
 <const/{
