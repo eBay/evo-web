@@ -40,7 +40,6 @@ interface ComboboxInput extends Omit<Marko.HTML.Input, `on${string}`> {
      * @returns The dropdown element to be used for the combobox
      */
     "dropdown-element"?: () => HTMLElement;
-    "chevron-size"?: "large";
     "on-focus"?: (event: ComboboxEvent) => void;
     "on-button-click"?: (event: { originalEvent: MouseEvent }) => void;
     "on-expand"?: () => void;
