@@ -106,6 +106,7 @@ export interface Input<Index extends number | string>
         }
         onFocusOut && onFocusOut(e, el);
     }>
+    <id/labelId>
     <button
         class=[
             "listbox-button__control",
@@ -121,7 +122,7 @@ export interface Input<Index extends number | string>
         name=buttonName
         aria-haspopup="listbox"
         aria-describedby=buttonDescribedBy
-        aria-labelledby=prefixId
+        aria-labelledby=prefixId ? `${prefixId} ${labelId}` : labelId
         aria-invalid=invalid && "true"
         aria-expanded=expander.ariaExpanded
         onClick() { open = !open; }>
@@ -141,7 +142,6 @@ export interface Input<Index extends number | string>
                 </span>
             </else>
 
-            <id/labelId>
             <if=selectedOption>
                 <if=selectedOption.icon>
                     <span ...selectedOption.icon id=labelId class="btn__text"/>

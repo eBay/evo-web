@@ -3,8 +3,8 @@ import { type Meta } from "@storybook/marko";
 import SelectionChip, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
-import ControlledTemplate from "./examples/default.marko";
-import ControlledTemplateCode from "./examples/default.marko?raw";
+import ControlledTemplate from "./examples/controlled.marko";
+import ControlledTemplateCode from "./examples/controlled.marko?raw";
 import Readme from "./README.md";
 
 export default {

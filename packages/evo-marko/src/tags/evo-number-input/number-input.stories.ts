@@ -80,7 +80,7 @@ export default {
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 export const Controlled = buildExtensionTemplate(
   ControlledTemplate,
-  DefaultCode,
+  ControlledCode,
 );
 export const WithLabel = buildExtensionTemplate(
   WithLabelTemplate,

@@ -47,7 +47,7 @@ export default {
         "left-end",
       ],
       description: "Position of the overlay relative to the host element",
-      table: { defaultValue: { summary: "bottom" } },
+      table: { defaultValue: { summary: "top" } },
     },
     offset: {
       type: "number",
@@ -65,7 +65,7 @@ export default {
       type: "boolean",
       control: "boolean",
       description: "Enable automatic shifting when near viewport edge",
-      table: { defaultValue: { summary: "true" } },
+      table: { defaultValue: { summary: "false" } },
     },
     inline: {
       type: "boolean",
@@ -97,7 +97,8 @@ export default {
       },
     },
     heading: {
-      description: "Optional heading content, rendered as a styled `<span>`.",
+      description:
+        "Optional heading content, rendered as an `<h2>` by default.",
       "@": {
         as: {
           type: "string",

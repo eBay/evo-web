@@ -30,7 +30,7 @@ export default {
     },
     listSelection: {
       type: "string",
-      option: ["manual (default)", "auto"],
+      options: ["manual (default)", "auto"],
       control: "inline-radio",
       description:
         "If manual then user will need to press enter to select an item using keyboard. Otherwise auto will automatically select as the user presses up/down",
