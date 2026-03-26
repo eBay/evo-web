@@ -62,11 +62,6 @@ export default {
             description:
                 "The label to show on the combobox which moves up when focused",
         },
-        chevronSize: {
-            control: { type: "select" },
-            options: ["large"],
-            description: "Size of the chevron icon",
-        },
         dropdownElement: {
             description:
                 "For internal use only. Used when combobox container changes. Returns the dropdown element to be used for the combobox",

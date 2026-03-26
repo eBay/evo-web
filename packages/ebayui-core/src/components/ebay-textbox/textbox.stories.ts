@@ -92,7 +92,7 @@ export default {
         },
         floatingLabelStatic: {
             description:
-                "Only works with floating label. If set to true, the label will not animate on focus/blur",
+                "Only works with floating label. Disables label animation (MakeupJS FloatingLabel not initialized) and enables prefix icon/text rendering. No visible effect unless prefix content is also configured.",
             control: { type: "boolean" },
             table: {
                 category: "floating-label",

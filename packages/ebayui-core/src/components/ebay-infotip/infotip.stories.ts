@@ -109,8 +109,22 @@ export default {
         },
         pointer: {
             control: { type: "select" },
-            options: ["top", "right", "bottom", "left"],
-            description: "The position of the pointer",
+            options: [
+                "top",
+                "top-left",
+                "top-right",
+                "bottom",
+                "bottom-left",
+                "bottom-right",
+                "left",
+                "left-top",
+                "left-bottom",
+                "right",
+                "right-top",
+                "right-bottom",
+            ],
+            description:
+                "The position of the pointer. Note: Floating-UI flip middleware may adjust placement based on viewport space.",
             table: {
                 defaultValue: { summary: "bottom" },
             },

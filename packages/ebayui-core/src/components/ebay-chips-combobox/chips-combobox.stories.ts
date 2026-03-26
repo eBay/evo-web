@@ -43,16 +43,6 @@ export default {
             description:
                 "default is `automatic`; available values are `automatic`, `manual`. If set to automatic will automatically fill in the input with the currently highlighted item when using the up/down keys.",
         },
-        autocomplete: {
-            control: { type: "select" },
-            options: ["list", "none"],
-            description:
-                "default is `none`; available values are `none` or `list`. For list, will automatically filter results while typing.",
-        },
-        borderless: {
-            control: { type: "boolean" },
-            description: "whether button has borders",
-        },
         a11yDeleteButtonText: {
             control: { type: "text" },
             description:

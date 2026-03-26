@@ -252,20 +252,6 @@ export default {
                 category: "@attribute tags",
             },
         },
-        navigable: {
-            control: { type: "boolean" },
-            description: "Whether the calendar can be navigated",
-            table: {
-                category: "@textbox attributes",
-            },
-        },
-        interactive: {
-            control: { type: "boolean" },
-            description: "Whether the calendar supports interaction",
-            table: {
-                category: "@textbox attributes",
-            },
-        },
         onChange: {
             action: "on-change",
             description: "Triggered when the selection changes",

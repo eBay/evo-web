@@ -63,13 +63,9 @@ export default {
             description: "The ID of an element that describes the error state",
         },
         split: {
-            type: "boolean",
-            control: { type: "boolean" },
+            control: { type: "select" },
+            options: ["none", "start", "end"],
             description: "Whether to render in split button format",
-        },
-        a11yIconText: {
-            control: { type: "text" },
-            description: "Accessibility text for icon",
         },
         a11yIconPrefixText: {
             control: { type: "text" },

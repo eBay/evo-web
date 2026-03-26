@@ -44,10 +44,6 @@ export default {
             description:
                 'Either "large" or "regular". Sets the radio icon. Default is regular. For mweb this should be set to large. (Note: The dimensions of the radio will not change, but only the icon)',
         },
-        iconStyle: {
-            control: { type: "text" },
-            description: "Custom style for the radio icon span",
-        },
         onChange: {
             action: "on-change",
             description: "Triggered on change",
