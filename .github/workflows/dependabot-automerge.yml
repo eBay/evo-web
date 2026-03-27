@@ -1,0 +1,52 @@
+name: Dependabot security auto-merge
+
+on:
+  workflow_run:
+    workflows: ["evo-web CI"]
+    types: [completed]
+
+jobs:
+  automerge:
+    # Only proceed if CI passed
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+      - name: Get PR number for this workflow run
+        id: get-pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          PR_NUMBER=$(gh api repos/${{ github.repository }}/pulls \
+            --jq ".[] | select(.head.sha == \"$HEAD_SHA\") | .number" | head -1)
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Get PR author and changed files
+        id: pr-info
+        if: steps.get-pr.outputs.pr_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.get-pr.outputs.pr_number }}
+        run: |
+          AUTHOR=$(gh api repos/${{ github.repository }}/pulls/$PR_NUMBER \
+            --jq '.user.login')
+          FILES=$(gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/files \
+            --jq '[.[].filename] | join(" ")')
+          echo "author=$AUTHOR" >> $GITHUB_OUTPUT
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+
+      - name: Auto-approve and merge security-only lock file updates
+        if: |
+          steps.pr-info.outputs.author == 'dependabot[bot]' &&
+          steps.pr-info.outputs.files == 'package-lock.json'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.get-pr.outputs.pr_number }}
+        run: |
+          gh pr review $PR_NUMBER --approve --repo ${{ github.repository }} \
+            --body "Auto-approving: security patch, package-lock.json only."
+          gh pr merge $PR_NUMBER --squash --repo ${{ github.repository }}
