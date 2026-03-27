@@ -7,6 +7,50 @@ import { EbayTabs, EbayTab as Tab, EbayTabPanel as Panel } from "../index";
 const story = {
     component: EbayTabs,
     title: "navigation & disclosure/ebay-tabs",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbayTabs, EbayTab, EbayTabPanel } from "@ebay/ui-core-react/ebay-tabs";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/tabs";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/tabs.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        selectedIndex: { description: "0-based index of selected tab heading and panel", control: "number" },
+        activation: {
+            description:
+                "whether to use automatic or manual activation when navigating by keyboard, can be `auto` (default) or `manual`",
+            options: ["auto", "manual"],
+            control: { type: "select" },
+        },
+        size: {
+            description: "Whether to opt into larger font-size for tab headings, can be `medium` (default) or `large`",
+            options: ["medium", "large"],
+            control: { type: "select" },
+        },
+        onSelect: {
+            description: "Called when a tab is selected",
+            action: "onSelect",
+            table: { category: "Events", defaultValue: { summary: "(Event)" } },
+        },
+    },
 } as Meta;
 
 export const DefaultTabs: StoryFn<typeof EbayTabs> = (args) => (

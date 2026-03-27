@@ -43,6 +43,65 @@ const meta: Meta<EbaySkeletonStoriesProps> = {
             control: { type: "boolean" },
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import {
+    EbaySkeleton,
+    EbaySkeletonAvatar,
+    EbaySkeletonButton,
+    EbaySkeletonImage,
+    EbaySkeletonText,
+    EbaySkeletonTextbox,
+} from "@ebay/ui-core-react/ebay-skeleton";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/skeleton";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/skeleton.css";
+\`\`\`
+### Composite
+
+### Basic
+
+\`\`\`jsx
+<EbaySkeleton color={color} style={{ width: "300px" }}>
+    <div>
+        <EbaySkeletonAvatar as="span" />
+        <EbaySkeletonText
+            multiline={multiline}
+            as="span"
+            size={size}
+            style={{ width: "220px", verticalAlign: "top" }}
+        />
+    </div>
+    <EbaySkeletonButton size={size} />
+</EbaySkeleton>
+\`\`\`
+
+### Tile
+
+\`\`\`jsx
+<EbaySkeleton color={color} style={{ width: "220px" }}>
+    <EbaySkeletonImage style={{ width: "220px", height: "220px" }} />
+    <EbaySkeletonText multiline={multiline} size={size} />
+</EbaySkeleton>
+\`\`\``,
+            },
+        },
+    },
 };
 
 export default meta;

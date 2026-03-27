@@ -68,6 +68,39 @@ const meta: Meta<typeof EbayFakeLink> = {
             },
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFakeLink } from "@ebay/ui-core-react/ebay-fake-link";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/link";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/link.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayFakeLink>Fake Link</EbayFakeLink>
+\`\`\``,
+            },
+        },
+    },
 };
 
 export default meta;

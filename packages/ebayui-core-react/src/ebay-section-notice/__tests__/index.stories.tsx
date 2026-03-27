@@ -11,6 +11,67 @@ import { EbayIconLightningBolt24 } from "../../ebay-icon/icons/ebay-icon-lightni
 
 export default {
     title: "notices & tips/ebay-section-notice",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import {
+    EbaySectionNotice,
+    EbayNoticeContent,
+    EbaySectionNoticeTitle,
+    EbaySectionNoticeFooter,
+} from "@ebay/ui-core-react/ebay-section-notice";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/section-notice";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/section-notice.css";
+@import "@ebay/skin/icon.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        status: { description: "Determines the style and type of notice to be displayed", control: "text" },
+        "aria-label": {
+            description:
+                "The description of the notice itself for screen readers. Check out [this issue](https://github.com/eBay/skin/issues/1001) for more context.",
+            control: "text",
+        },
+        "aria-roledescription": {
+            description: "Adds role description attribute to the section notice",
+            control: "text",
+        },
+        children: {
+            description:
+                "The content to be displayed within the notice. **Must have the EbayNoticeContent within the children!**",
+            control: "text",
+        },
+        educationIcon: { description: "Icon of the educational banner", control: "text" },
+        iconClass: { description: "Class that will be added to the icon svg", control: "text" },
+        prominent: { description: "Sets the educational banner with a more prominent background", control: "boolean" },
+        a11yDismissText: {
+            description: "Accessible label for the dismiss button",
+            control: "text",
+        },
+        onDismiss: {
+            description: "Triggered on notice dismiss",
+            action: "onDismiss",
+            table: { category: "Events", defaultValue: { summary: "(Event)" } },
+        },
+    },
 };
 
 export const DefaultMessageWithNoAction = {

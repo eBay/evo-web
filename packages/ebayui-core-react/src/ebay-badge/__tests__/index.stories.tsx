@@ -5,6 +5,44 @@ import { EbayBadgeProps } from "../badge";
 const meta: Meta<typeof EbayBadge> = {
     component: EbayBadge,
     title: "graphics & icons/ebay-badge",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayBadge } from "@ebay/ui-core-react/ebay-badge";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/badge";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/badge.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayBadge number={5} />
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        type: { description: "Yes", control: "text" },
+        number: { description: "Yes", control: "number" },
+        "aria-label": { description: "Yes", control: "text" },
+    },
 };
 
 export default meta;

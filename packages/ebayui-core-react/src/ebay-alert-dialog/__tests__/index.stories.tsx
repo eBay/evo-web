@@ -8,6 +8,55 @@ import { EbayButton } from "../../ebay-button";
 const story = {
     component: EbayAlertDialog,
     title: "dialogs/ebay-alert-dialog",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayAlertDialog } from "@ebay/ui-core-react/ebay-alert-dialog";
+import { EbayDialogHeader, EbayDialogFooter } from "@ebay/ui-core-react/ebay-dialog-base";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/alert-dialog";
+import "@ebay/skin/button";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/alert-dialog.css";
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/icon.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        open: { description: "Whether dialog is open.", control: "boolean" },
+        focus: {
+            description:
+                "An id for an element which will receive focus when the drawer opens (defaults to close button).",
+            control: "text",
+        },
+        a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
+        confirmText: { description: "Text for confirm button", control: "text" },
+        confirm: { description: "Custom confirm button (if you need to pass additional props)", control: "text" },
+        animated: {
+            description: "Renders the dialog with an animation. Note that the dialog will always be present in the DOM",
+            control: "boolean",
+        },
+        onConfirm: { action: "onConfirm", description: "Called when the confirm button is clicked" },
+        onOpen: { action: "onOpen", description: "Called when the dialog is opened" },
+    },
 } satisfies Meta<typeof EbayAlertDialog>;
 
 const textParagraph = (

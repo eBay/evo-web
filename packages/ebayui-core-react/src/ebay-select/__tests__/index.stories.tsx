@@ -5,6 +5,71 @@ import { EbaySelect, EbaySelectOption, ChangeEventProps } from "../index";
 
 export default {
     title: "form input/ebay-select",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `This component is used to create a native \`<select>\` form element with default browser styling.
+
+## Import
+
+\`\`\`jsx harmony
+import { EbaySelect, EbaySelectOption } from "@ebay/ui-core-react/ebay-select";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/select";
+import "@ebay/skin/icon";
+import "@ebay/skin/floating-label";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/select.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/floating-label.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        name: { description: "passed to the `<select>` element", control: "text" },
+        value: {
+            description: "Set the value of the `<select>` element. Use this for **controlled component**.",
+            control: "text",
+        },
+        defaultValue: {
+            description: "Set the initial value for `<select>` element, only for **uncontrolled component**.",
+            control: "text",
+        },
+        disabled: {
+            description: "passed to the `<select>` element, default is `false`",
+            options: ["<select>", "false"],
+            control: { type: "select" },
+        },
+        className: { description: "passed to the wrapper-element of the `<select>` element", control: "text" },
+        borderless: { description: "whether select has borders, default is `false`", control: "text" },
+        floatingLabel: {
+            description: "Indicates that the select is a floating label type and renders it as a label",
+            control: "text",
+        },
+        inputSize: {
+            description: "`default` (default), `large`",
+            options: ["default", "large"],
+            control: { type: "select" },
+        },
+        invalid: { description: "Indicates a field-level error with red border if true", control: "boolean" },
+        onChange: {
+            description:
+                "Called on option change with arguments: `(ChangeEvent, { index: number, selected: string[] }`",
+            action: "onChange",
+            table: { category: "Events" },
+        },
+    },
 };
 
 export const Basic = () => (

@@ -60,6 +60,53 @@ const meta: Meta<typeof EbayTriStateCheckbox> = {
                 },
             },
         },
+
+        disabled: { control: "boolean" },
+        defaultChecked: {
+            options: ["true", "false", "mixed"],
+            control: { type: "select" },
+            description: "Initial uncontrolled checked state",
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayTriStateCheckbox } from "@ebay/ui-core-react/ebay-tri-state-checkbox";
+import { EbayLabel } from "@ebay/ui-core-react/ebay-field";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/checkbox";
+import "@ebay/skin/field";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/checkbox.css";
+@import "@ebay/skin/field.css";
+@import "@ebay/skin/icon.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayTriStateCheckbox id="tri-checkbox-1">
+    <EbayLabel>Select all</EbayLabel>
+</EbayTriStateCheckbox>
+\`\`\``,
+            },
+        },
     },
 };
 

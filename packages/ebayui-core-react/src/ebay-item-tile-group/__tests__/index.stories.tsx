@@ -35,6 +35,57 @@ const meta: Meta<typeof EbayItemTileGroup> = {
                 },
             },
         },
+
+        EbayItemTile: { description: "Tile component that will be rendered in the group", control: "text" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayItemTileGroup } from "@ebay/ui-core-react/ebay-item-tile-group";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/badge";
+import "@ebay/skin/button";
+import "@ebay/skin/file-preview-card";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/item-tile";
+import "@ebay/skin/item-tile-group";
+import "@ebay/skin/layout-grid";
+import "@ebay/skin/menu";
+import "@ebay/skin/menu-button";
+import "@ebay/skin/progress-spinner";
+import "@ebay/skin/signal";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/badge.css";
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/file-preview-card.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/item-tile.css";
+@import "@ebay/skin/item-tile-group.css";
+@import "@ebay/skin/layout-grid.css";
+@import "@ebay/skin/menu.css";
+@import "@ebay/skin/menu-button.css";
+@import "@ebay/skin/progress-spinner.css";
+@import "@ebay/skin/signal.css";
+\`\`\``,
+            },
+        },
     },
 };
 export default meta;

@@ -41,6 +41,45 @@ const meta: Meta<typeof EbayFilter> = {
             },
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFilter } from "@ebay/ui-core-react/ebay-filter";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/filter-button";
+
+// When using with "href"
+import "@ebay/skin/filter-link";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/filter-button.css";
+
+/* When using with "href" */
+@import "@ebay/skin/filter-link.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayFilter>Text</EbayFilter>
+\`\`\``,
+            },
+        },
+    },
 };
 
 export default meta;

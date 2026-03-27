@@ -85,6 +85,44 @@ const meta: Meta<typeof EbayFilterChip> = {
                 },
             },
         },
+
+        icon: { description: "Icon props for default variant", control: "text" },
+        image: { description: "Image props for expressive variant", control: "text" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx
+import { EbayFilterChip } from "@ebay/ui-core-react/ebay-filter-chip";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/filter-chip";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/filter-chip.css";
+@import "@ebay/skin/icon.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayFilterChip>Filter Chip</EbayFilterChip>
+\`\`\``,
+            },
+        },
     },
 };
 

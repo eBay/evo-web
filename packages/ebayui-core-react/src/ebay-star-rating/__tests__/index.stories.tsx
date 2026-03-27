@@ -15,6 +15,45 @@ export default {
             description: "The aria label for the outer container.",
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `For full stars use (rating from 0-5): \`ebay-star-rating-{rating}\`
+
+For half stars use: \`ebay-star-rating-{rating}-5\`
+
+## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayStarRating } from "@ebay/ui-core-react/ebay-star-rating";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/star-rating";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/star-rating.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayStarRating a11yText="Rated 3 out of 5 stars" value="3" />
+\`\`\``,
+            },
+        },
+    },
 };
 
 export const Stars = () => (

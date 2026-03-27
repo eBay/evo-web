@@ -4,6 +4,58 @@ import { action } from "storybook/actions";
 
 export default {
     title: "notices & tips/ebay-page-notice",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import {
+    EbayPageNotice,
+    EbayNoticeContent,
+    EbayPageNoticeTitle,
+    EbayPageNoticeFooter,
+    EbayPageNoticeCTA,
+} from "@ebay/ui-core-react/ebay-page-notice";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/page-notice";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/page-notice.css";
+@import "@ebay/skin/icon.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        status: { description: "Determines the style and type of notice to be displayed", control: "text" },
+        "aria-label": {
+            description:
+                "The description of the notice itself for screen readers. Check out [this issue](https://github.com/eBay/skin/issues/1001) for more context.",
+            control: "text",
+        },
+        children: { description: "The content to be displayed within the notice", control: "text" },
+        a11yDismissText: {
+            description:
+                "Determines if the notice will have a dismiss button. Acts as the aria-label for the dismiss button. Should not be used with a footer.",
+            control: "text",
+        },
+        onDismiss: {
+            description: "Triggered on notice dismiss",
+            action: "onDismiss",
+            table: { category: "Events", defaultValue: { summary: "(Event)" } },
+        },
+    },
 };
 
 export const SimpleUsage = () => (

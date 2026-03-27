@@ -5,6 +5,47 @@ import { StoryObj, StoryFn, Meta } from "@storybook/react-vite";
 const meta: Meta<typeof EbayEek> = {
     component: EbayEek,
     title: "graphics & icons/ebay-eek",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `This component displays the current European Union Energy (EEK) rating of certain items that consume energy.
+
+## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayEek } from "@ebay/ui-core-react/ebay-eek";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/eek";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/eek.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayEek max="A+++" min="E" rating="C" />
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        rating: { description: "The energy rating", control: "text" },
+        max: { description: "The maximum range", control: "text" },
+        min: { description: "The minimum range", control: "text" },
+        a11yText: { description: "Accessible label for the energy rating figure", control: "text" },
+    },
 };
 
 export default meta;

@@ -4,6 +4,45 @@ import { EbaySwitch } from "../index";
 
 export default {
     title: "form input/ebay-switch",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbaySwitch } from "@ebay/ui-core-react/ebay-switch";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/switch";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/switch.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        checked: { description: "Whether the switch is checked (controlled)", control: "boolean" },
+        defaultChecked: { description: "Whether the switch is initially checked (uncontrolled)", control: "boolean" },
+        disabled: { control: "boolean" },
+        value: { description: "Value of the switch input", control: "text" },
+        onChange: {
+            description: "Triggered on change",
+            action: "onChange",
+            table: {
+                category: "Events",
+                defaultValue: { summary: "`(ChangeEvent, { value: string, checked: boolean }`" },
+            },
+        },
+    },
 };
 
 export const DefaultSwitchButton = {

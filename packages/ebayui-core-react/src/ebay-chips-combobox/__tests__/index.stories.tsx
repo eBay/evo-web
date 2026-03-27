@@ -42,9 +42,69 @@ const meta: Meta<typeof EbayChipsCombobox> = {
             control: "text",
             description: "Accessibility text for the delete button",
         },
+        borderless: {
+            control: "boolean",
+            description: "Removes input borders",
+        },
+        floatingLabel: {
+            control: "text",
+            description: "Floating label text",
+        },
+        autocomplete: {
+            control: "select",
+            options: ["list", "none"],
+            description: "Auto-filtering mode",
+        },
         onExpand: { action: "onExpand" },
         onCollapse: { action: "onCollapse" },
         onChange: { action: "onChange" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayChipsCombobox, EbayComboboxOption } from "@ebay/ui-core-react/ebay-chips-combobox";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/chip";
+import "@ebay/skin/chips-combobox";
+import "@ebay/skin/combobox";
+import "@ebay/skin/floating-label";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/chip.css";
+@import "@ebay/skin/chips-combobox.css";
+@import "@ebay/skin/combobox.css";
+@import "@ebay/skin/floating-label.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayChipsCombobox onChange={handleChange}>
+    <EbayComboboxOption value="option1">Option 1</EbayComboboxOption>
+    <EbayComboboxOption value="option2">Option 2</EbayComboboxOption>
+    <EbayComboboxOption value="option3">Option 3</EbayComboboxOption>
+</EbayChipsCombobox>
+\`\`\``,
+            },
+        },
     },
 };
 

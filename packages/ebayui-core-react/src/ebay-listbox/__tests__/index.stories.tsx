@@ -68,6 +68,70 @@ const meta: Meta<typeof EbayListbox> = {
                 },
             },
         },
+
+        selectClassName: {
+            control: { type: "text" },
+            description: "CSS class for the hidden native select element",
+        },
+
+        icon: { description: "An optional icon to display alongside the option text.", control: "text" },
+        text: { description: "The text to display for the option.", control: "text" },
+        value: { description: "The value of the option.", control: "text" },
+        selected: { description: "Set to true if the option is selected by default.", control: "boolean" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbayListbox, EbayListboxOption, EbayListboxOptionDescription } from "@ebay/ui-core-react/ebay-listbox";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/listbox";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/listbox.css";
+\`\`\`
+### Default
+
+### Basic
+
+\`\`\`jsx
+<EbayListbox>
+    <EbayListboxOption value="AA" text="Option 1" />
+    <EbayListboxOption value="BB" text="Option 2" />
+    <EbayListboxOption value="CC" text="Option 3" />
+</EbayListbox>
+\`\`\`
+
+### With Description
+
+\`\`\`jsx
+<EbayListbox>
+    <EbayListboxOption value="AA" text="Option 1">
+        <EbayListboxOptionDescription>Option 1 extra info</EbayListboxOptionDescription>
+    </EbayListboxOption>
+    <EbayListboxOption value="BB" text="Option 2">
+        <EbayListboxOptionDescription>Option 2 extra info</EbayListboxOptionDescription>
+    </EbayListboxOption>
+    <EbayListboxOption value="CC" text="Option 3">
+        <EbayListboxOptionDescription>Option 3 extra info</EbayListboxOptionDescription>
+    </EbayListboxOption>
+</EbayListbox>
+\`\`\``,
+            },
+        },
     },
 };
 export default meta;

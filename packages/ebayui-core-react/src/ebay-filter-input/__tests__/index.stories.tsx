@@ -76,6 +76,128 @@ const meta: Meta<typeof EbayFilterInput> = {
                 },
             },
         },
+
+        onChange: {
+            description: "Callback for input blur: `(event, { value }) => void`",
+            action: "onChange",
+            table: { category: "Events" },
+        },
+        onFocus: {
+            description: "Callback for input focus: `(event, { value }) => void`",
+            action: "onFocus",
+            table: { category: "Events" },
+        },
+        onBlur: {
+            description: "Callback for input blur: `(event, { value }) => void`",
+            action: "onBlur",
+            table: { category: "Events" },
+        },
+        onKeyDown: {
+            description: "Callback for key down: `(event, { value }) => void`",
+            action: "onKeyDown",
+            table: { category: "Events" },
+        },
+        onKeyPress: {
+            description: "Callback for key press: `(event, { value }) => void`",
+            action: "onKeyPress",
+            table: { category: "Events" },
+        },
+        onKeyUp: {
+            description: "Callback for key up: `(event, { value }) => void`",
+            action: "onKeyUp",
+            table: { category: "Events" },
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx
+import { EbayFilterInput } from "@ebay/ui-core-react/ebay-filter-input";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/filter-input";
+import "@ebay/skin/icon";
+import "@ebay/skin/textbox";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/filter-input.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/textbox.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayFilterInput placeholder="Search items" />
+\`\`\`
+
+## Examples
+
+### Basic Filter Input
+
+\`\`\`jsx
+<EbayFilterInput placeholder="Filter results" />
+\`\`\`
+
+### With Clear Button
+
+\`\`\`jsx
+<EbayFilterInput
+    placeholder="Filter results"
+    a11yClearButton="Clear filters"
+    onClear={(event, { value }) => console.log("Cleared:", value)}
+/>
+\`\`\`
+
+### With Size Variants
+
+\`\`\`jsx
+<EbayFilterInput size="large" placeholder="Large filter input" />
+<EbayFilterInput size="small" placeholder="Small filter input" />
+\`\`\`
+
+### With Event Handlers
+
+\`\`\`jsx
+<EbayFilterInput
+    placeholder="Search items"
+    a11yClearButton="Clear search"
+    onInputChange={(event, { value }) => console.log("Input changed:", value)}
+    onKeyDown={(event, { value }) => {
+        if (event.key === "Enter") {
+            console.log("Search submitted:", value);
+        }
+    }}
+    onClear={(event, { value }) => console.log("Search cleared")}
+/>
+\`\`\`
+
+### Controlling Results List
+
+\`\`\`jsx
+<EbayFilterInput
+    placeholder="Filter list items"
+    a11yControlsId="filtered-list"
+    onInputChange={(event, { value }) => filterList(value)}
+/>
+<ul id="filtered-list">
+    {/* Filtered list items */}
+</ul>
+\`\`\``,
+            },
+        },
     },
 };
 

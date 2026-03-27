@@ -37,7 +37,7 @@ const story: Meta<typeof EbayLightboxDialog> = {
                 "Position of the image within the given bounds using the CSS `background-position` property. Options include [keywords, lengths, and edge distances](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)",
         },
         size: {
-            options: ["regular", "wide", "narrow", "large"],
+            options: ["wide", "narrow", "fullscreen", "large"],
             description: "The size of the dialog",
             table: {
                 defaultValue: {
@@ -64,6 +64,56 @@ const story: Meta<typeof EbayLightboxDialog> = {
                 defaultValue: {
                     summary: "",
                 },
+            },
+        },
+
+        mode: { description: "Can be `default`, `mini`.", options: ["default", "mini"], control: { type: "select" } },
+        buttonPosition: {
+            control: { type: "text" },
+            description: "Close button placement",
+        },
+        isModal: {
+            control: { type: "boolean" },
+            description: "Whether the dialog is modal",
+        },
+        ignoreEscape: {
+            control: { type: "boolean" },
+            description: "Whether to ignore Escape key",
+        },
+        animated: {
+            description: "Renders the dialog with an animation. Note that the dialog will always be present in the DOM",
+            control: "boolean",
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayLightboxDialog } from "@ebay/ui-core-react/ebay-lightbox-dialog";
+import { EbayDialogHeader, EbayDialogFooter } from "@ebay/ui-core-react/ebay-dialog-base";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/lightbox-dialog";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/lightbox-dialog.css";
+\`\`\``,
             },
         },
     },

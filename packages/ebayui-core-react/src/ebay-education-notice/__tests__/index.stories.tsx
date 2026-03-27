@@ -135,6 +135,17 @@ export default {
                 type: { summary: "EbayEducationNoticeFooter" },
             },
         },
+
+        children: {
+            description:
+                "The content to be displayed within the notice. **Must have the EbayEducationNoticeTitle within the children!**",
+            control: "text",
+        },
+        onDismiss: {
+            description: "Triggered on notice dismiss",
+            action: "onDismiss",
+            table: { category: "Events", defaultValue: { summary: "(Event)" } },
+        },
     },
     decorators: [
         (Story) => (
@@ -143,6 +154,40 @@ export default {
             </div>
         ),
     ],
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import {
+    EbayEducationNotice,
+    EbayNoticeContent,
+    EbayEducationNoticeTitle,
+    EbayEducationNoticeFooter,
+} from "@ebay/ui-core-react/ebay-education-notice";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/education-notice";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/education-notice.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+\`\`\``,
+            },
+        },
+    },
 };
 
 export const Default: StoryObj<typeof EbayEducationNotice> = {

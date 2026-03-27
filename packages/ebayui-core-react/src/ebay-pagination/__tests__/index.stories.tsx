@@ -7,6 +7,109 @@ import { EbayTabs, EbayTab, EbayTabPanel } from "../../ebay-tabs";
 
 export default {
     title: "navigation & disclosure/ebay-pagination",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbayPagination, EbayPaginationItem } from "@ebay/ui-core-react/ebay-pagination";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/menu";
+import "@ebay/skin/menu-button";
+import "@ebay/skin/pagination";
+import "@ebay/skin/utility";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/menu.css";
+@import "@ebay/skin/menu-button.css";
+@import "@ebay/skin/pagination.css";
+@import "@ebay/skin/utility.css";
+\`\`\`
+
+### EbayPagination Usage
+
+### Basic
+
+\`\`\`jsx
+<EbayPagination a11yPreviousText="Previous page" a11yNextText="Next page" a11yCurrentText="Results Pagination - Page 2">
+    <EbayPaginationItem href="#" type="previous" disabled />
+    <EbayPaginationItem href="#" current>
+        item 1
+    </EbayPaginationItem>
+    <EbayPaginationItem href="#">item 2</EbayPaginationItem>
+    <EbayPaginationItem href="#">item 3</EbayPaginationItem>
+    <EbayPaginationItem href="#" type="next" />
+</EbayPagination>
+\`\`\`
+
+## EbayPaginationItem Tag
+
+### EbayPaginationItem Usage
+
+\`\`\`jsx
+<EbayPaginationItem>1</EbayPaginationItem>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        a11yPreviousText: { description: "a11y text for previous arrow button", control: "text" },
+        a11yNextText: { description: "a11y text for next arrow button", control: "text" },
+        a11yCurrentText: { description: "Description for the current page (e.g. Results of Page 1)", control: "text" },
+        variant: {
+            description:
+                "Either `show-last`, or `show-range` (default). If show-last then will show the last page always and will put `…` between the last visible range and the last page. `…` and the last page will take up two items in the range. `…` will be hidden when the range to the last item is fully visible.",
+            options: ["show-last", "show-range", "overflow"],
+            control: { type: "select" },
+        },
+        fluid: {
+            description:
+                "Will fill all available horizontal space. Horizontal space will be distributed around each item as necessary.",
+            control: "boolean",
+        },
+        disabled: { description: "Previous/next button is disabled or not", control: "boolean" },
+        href: {
+            description: "for link that looks like a menu-item; omitting the href will switch to a button",
+            control: "text",
+        },
+        current: { description: "the current page", control: "boolean" },
+        type: {
+            description:
+                '"previous", "next" or "page"(default). To specify if the information entered is for the previous or next arrow button or a page. If the `type=\'previous',
+            control: "text",
+        },
+        onPrevious: {
+            description: "Called when previous button is clicked",
+            action: "onPrevious",
+            table: { category: "Events" },
+        },
+        onNext: {
+            description: "Called when next button is clicked",
+            action: "onNext",
+            table: { category: "Events" },
+        },
+        onSelect: {
+            description: "Called when a page item is selected",
+            action: "onSelect",
+            table: { category: "Events" },
+        },
+    },
 };
 
 export const BasicLinks = {

@@ -42,14 +42,53 @@ export default {
                 },
             },
         },
-        onKeydown: {
-            action: "onKeydown",
+        onKeyDown: {
+            action: "onKeyDown",
             description: "Triggered on keydown",
             table: {
                 category: "Events",
                 defaultValue: {
                     summary: "{ originalEvent }, value",
                 },
+            },
+        },
+        name: {
+            control: { type: "text" },
+            description: "Name attribute for the rating input",
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayStarRatingSelect } from "@ebay/ui-core-react/ebay-star-rating-select";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/star-rating-select";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/star-rating-select.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayStarRatingSelect a11yText="Rate this item" />
+\`\`\``,
             },
         },
     },

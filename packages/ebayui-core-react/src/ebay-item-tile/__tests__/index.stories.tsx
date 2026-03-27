@@ -46,6 +46,58 @@ const meta: Meta<typeof EbayItemTile> = {
                 },
             },
         },
+
+        EbayItemTileAction: {
+            description:
+                "Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render.",
+            options: ["icon", "aria-label"],
+            control: { type: "select" },
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayItemTile } from "@ebay/ui-core-react/ebay-item-tile";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/badge";
+import "@ebay/skin/button";
+import "@ebay/skin/file-preview-card";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/item-tile";
+import "@ebay/skin/menu";
+import "@ebay/skin/menu-button";
+import "@ebay/skin/progress-spinner";
+import "@ebay/skin/signal";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/badge.css";
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/file-preview-card.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/item-tile.css";
+@import "@ebay/skin/menu.css";
+@import "@ebay/skin/menu-button.css";
+@import "@ebay/skin/progress-spinner.css";
+@import "@ebay/skin/signal.css";
+\`\`\``,
+            },
+        },
     },
 };
 export default meta;

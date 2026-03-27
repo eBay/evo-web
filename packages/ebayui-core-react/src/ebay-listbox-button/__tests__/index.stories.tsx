@@ -7,6 +7,96 @@ import { ChangeEventProps } from "../listbox-button";
 
 export default {
     title: "buttons/ebay-listbox-button",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbayListboxButton, EbayListboxButtonOption } from "@ebay/ui-core-react/ebay-listbox-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/button";
+import "@ebay/skin/listbox-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/listbox-button.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        value: { description: "Allows you to set the selected option to the one with `value`", control: "text" },
+        selected: { description: "Allows you to set the selected index option to `selected`", control: "number" },
+        "aria-disabled": { description: "Set to true if the field is disabled", control: "boolean" },
+        "aria-invalid": { description: "Set to true if the field is invalid", control: "boolean" },
+        fluid: { description: "To make the listbox fluid", control: "boolean" },
+        borderless: { description: "To make the listbox borderless", control: "boolean" },
+        maxHeight: { description: "example: 100px, 200px, 10rem", control: "text" },
+        prefixId: {
+            description: "The id of an external element to use as the a11y prefix label for the listbox button.",
+            control: "text",
+        },
+        prefixLabel: {
+            description: "The label to add before selected option on the button. Cannot be used with `prefixId`",
+            control: "text",
+        },
+        floatingLabel: {
+            description: "Indicates that the listbox is a floating label type and renders it with a label",
+            control: "text",
+        },
+        unselectedText: {
+            description:
+                "The text to be shown when no options are selected. Default is '-'. Cannot be used with `floating-label`",
+            control: "text",
+        },
+        strategy: {
+            description:
+                "Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
+            options: ["fixed", "absolute", "fixed"],
+            control: { type: "select" },
+        },
+        a11ySelectedText: {
+            description: 'Accessible text for selected option. Default is "selected".',
+            control: "text",
+        },
+        onChange: {
+            description: "triggered on change",
+            action: "onChange",
+            table: {
+                category: "Events",
+                defaultValue: {
+                    summary: "`(ChangeEvent, { index: number, selected: string[] , wasClicked: boolean })`",
+                },
+            },
+        },
+        split: {
+            description: "Split button appearance",
+            options: ["none", "start", "end"],
+            control: { type: "select" },
+        },
+        onCollapse: {
+            description: "triggered on collapse",
+            action: "onCollapse",
+            table: { category: "Events", defaultValue: { summary: "`()`" } },
+        },
+        onExpand: {
+            description: "triggered on expand",
+            action: "onExpand",
+            table: { category: "Events", defaultValue: { summary: "`()`" } },
+        },
+    },
 };
 
 export const Default = () => (

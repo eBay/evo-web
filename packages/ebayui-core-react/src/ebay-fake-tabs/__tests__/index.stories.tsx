@@ -5,6 +5,41 @@ import { EbayFakeTabs, EbayFakeTab as Tab } from "../index";
 
 const meta: Meta<typeof EbayFakeTabs> = {
     title: "navigation & disclosure/ebay-fake-tabs",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbayFakeTabs, EbayFakeTab } from "@ebay/ui-core-react/ebay-fake-tabs";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/tabs";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/tabs.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        selectedIndex: { description: "0-based index of selected tab heading", control: "number" },
+        size: { description: "Sets the size of the tabs. Can be either regular (Default) or large", control: "text" },
+        tabMatchesCurrentUrl: {
+            description:
+                'Specify whether the href of the currently active fake tab matches the current window url. Default is true. This property is used to configure the underlying aria-current attribute (i.e. a value of "page" (default) or "true").',
+            control: "boolean",
+        },
+        href: { description: "The link to take the user to for each tab", control: "text" },
+    },
 };
 
 export default meta;

@@ -143,6 +143,48 @@ export default {
             },
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayToggleButtonGroup } from "@ebay/ui-core-react/ebay-toggle-button-group";
+import { EbayToggleButton } from "@ebay/ui-core-react/ebay-toggle-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/toggle-button";
+import "@ebay/skin/toggle-button-group";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/toggle-button.css";
+@import "@ebay/skin/toggle-button-group.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayToggleButtonGroup>
+    <EbayToggleButton pressed title="Option 1" />
+    <EbayToggleButton title="Option 2" />
+    <EbayToggleButton title="Option 3" />
+</EbayToggleButtonGroup>
+\`\`\``,
+            },
+        },
+    },
 } as Meta<typeof EbayToggleButtonGroup>;
 
 export const Default: StoryObj<typeof EbayToggleButtonGroup> = {

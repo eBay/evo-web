@@ -26,6 +26,45 @@ const meta: Meta<typeof EbayFileInput> = {
             },
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFileInput, EbayFileInputHeader, EbayFileInputSubheader } from "@ebay/ui-core-react/ebay-file-input";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/file-input";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/file-input.css";
+@import "@ebay/skin/icon.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayFileInput onInput={(event, { files }) => console.log(files)}>
+    <EbayFileInputHeader>Upload your files</EbayFileInputHeader>
+    <EbayFileInputSubheader>Supported formats: .jpg, .png</EbayFileInputSubheader>
+    <span>Click or drag files here to upload</span>
+</EbayFileInput>
+\`\`\``,
+            },
+        },
+    },
 };
 
 export default meta;

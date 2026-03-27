@@ -12,6 +12,50 @@ Item.toString = () => "Item";
 
 export default {
     title: "buttons/ebay-split-button",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbaySplitButton } from "@ebay/ui-core-react/ebay-split-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/button";
+import "@ebay/skin/menu-button";
+import "@ebay/skin/split-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/menu-button.css";
+@import "@ebay/skin/split-button.css";
+\`\`\`
+### Icon button
+
+### Basic
+
+\`\`\`jsx harmony
+<EbaySplitButton a11yMenuText="Show save options">
+    Save document
+    <Item>Save as...</Item>
+    <Item>Export</Item>
+</EbaySplitButton>
+\`\`\``,
+            },
+        },
+    },
 };
 
 export const Controls = {
@@ -42,6 +86,48 @@ export const Controls = {
             onCollapse: { action: "collapsed" },
             onExpand: { action: "expanded" },
             onSelect: { action: "selected" },
+
+            a11yMenuText: { description: "aria label for menu button part", control: "text" },
+            href: { description: "url for link behaviour (switches to anchor tag)", control: "text" },
+            size: {
+                description: "button size: `small` or `large`",
+                options: ["small", "large"],
+                control: { type: "select" },
+            },
+            bodyState: {
+                description:
+                    "`loading` adds progress spinner, when user interacts with button, `reset` should be called to reset `aria-live` state, default is `none`",
+                options: ["loading", "reset", "aria-live", "none"],
+                control: { type: "select" },
+            },
+            a11yButtonLoadingText: {
+                description: "`aria-label` for button when `bodyState` is `loading`",
+                options: ["aria-label", "bodyState", "loading"],
+                control: { type: "select" },
+            },
+            type: {
+                description: "menu items type: `radio` or `checkbox`",
+                options: ["radio", "checkbox"],
+                control: { type: "select" },
+            },
+            borderless: { description: "shows button without border", control: "boolean" },
+            fixedHeight: { description: "fixes the height based on size", control: "boolean" },
+            fluid: { description: "takes the whole width of the parent element", control: "boolean" },
+            transparent: { description: "for transparent background", control: "boolean" },
+            truncate: { description: "truncates the button text with an ellipsis", control: "boolean" },
+            variant: {
+                description: "button variant: `standard` (default), `destructive`, `form`",
+                options: ["standard", "destructive", "form"],
+                control: { type: "select" },
+            },
+            disabled: { control: "boolean" },
+            partiallyDisabled: { description: "sets `aria-disabled` but not `disabled` prop", control: "boolean" },
+            onChange: {
+                description:
+                    "Arguments: (e: event, { index: number, checked: number[], checkedValues: string[] }) for type `radio`/`checkbox`",
+                action: "onChange",
+                table: { category: "Events" },
+            },
         },
     } as Meta<typeof EbaySplitButton>,
 };

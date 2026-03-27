@@ -10,6 +10,153 @@ import {
 
 export default {
     title: "buttons/ebay-menu-button",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import {
+    EbayMenuButton,
+    EbayMenuButtonItem as Item,
+    EbayMenuButtonSeparator as Separator,
+    EbayMenuButtonLabel as Label
+} from "@ebay/ui-core-react/ebay-menu-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+import "@ebay/skin/icon";
+import "@ebay/skin/menu";
+import "@ebay/skin/menu-button";
+
+// For variant=overflow
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/menu.css";
+@import "@ebay/skin/menu-button.css";
+
+/* For variant=overflow */
+@import "@ebay/skin/icon-button.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayMenuButton text="Menu">
+    <Item>Item 1</Item>
+    <Item>Item 2</Item>
+    <Separator />
+    <Item>Item 3</Item>
+</EbayMenuButton>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        text: { description: "button label text", control: "text" },
+        a11yText: { description: "a11y text for the button", control: "text" },
+        noToggleIcon: { description: "whether to hide the chevron toggle icon", control: "boolean" },
+        expanded: { description: "whether content is expanded", control: "boolean" },
+        type: {
+            description: "can be `radio` or `checkbox`",
+            options: ["radio", "checkbox"],
+            control: { type: "select" },
+        },
+        reverse: { description: "expand menu flyout to the left", control: "boolean" },
+        fixWidth: { description: "Constrain items container width to button width", control: "boolean" },
+        borderless: { description: "Whether button has borders", control: "boolean" },
+        size: {
+            description: "button size: `small` or `large`",
+            options: ["small", "large"],
+            control: { type: "select" },
+        },
+        priority: {
+            description: "button size: `primary`, `secondary` (default), `tertiary`, `none`",
+            options: ["primary", "secondary", "tertiary", "none"],
+            control: { type: "select" },
+        },
+        checked: {
+            description:
+                "will set the corresponding index item to checked state and use the `aria-checked` attribute in markup",
+            control: "number",
+        },
+        disabled: {
+            description: "will disable the entire dropdown (disables the ebay-button label) if set to true",
+            control: "boolean",
+        },
+        variant: {
+            description: "will change the button style: `overflow`, `form` or `button`",
+            options: ["overflow", "form", "button"],
+            control: { type: "select" },
+        },
+        collapseOnSelect: {
+            description: "Will collapse whole menu when an item is selected in menu. Typically used in type=`radio`",
+            control: "boolean",
+        },
+        prefixId: {
+            description:
+                "The id of an external element to use as the prefix label for the menu button. Cannot be used with `prefix-label`",
+            control: "text",
+        },
+        prefixLabel: {
+            description:
+                "The label to add before each selected item on the button. Cannot be used with `prefix-id` (NOT YET IMPLEMENTED)",
+            control: "text",
+        },
+        onExpand: { description: "Called when content is expanded", action: "onExpand", table: { category: "Events" } },
+        onCollapse: {
+            description: "Called when content is collapsed",
+            action: "onCollapse",
+            table: { category: "Events" },
+        },
+        onSelect: {
+            description:
+                "props: (e: event, { index: number }), triggered on item clicked (not for type `radio`/`checkbox`)",
+            action: "onSelect",
+            table: { category: "Events" },
+        },
+        onChange: {
+            description:
+                "props: (e: event, { index: number, checked: number[], checkedValues: string[] }), triggered on item `checked` change, (for type `radio`/`checkbox` only)",
+            action: "onChange",
+            table: { category: "Events" },
+        },
+        strategy: {
+            description:
+                "Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
+            options: ["fixed", "absolute", "fixed"],
+            control: { type: "select" },
+        },
+        value: {
+            description: "for type `radio`, `checkbox`: the value to use with callbacks for `checkedValues[]`",
+            options: ["radio", "checkbox", "checkedValues[]"],
+            control: { type: "select" },
+        },
+        badgeNumber: { description: "used as the number to be placed in the badge", control: "number" },
+        badgeAriaLabel: {
+            description: "used as the number to be placed in the badge (NOT YET IMPLEMENTED)",
+            control: "number",
+        },
+        onClick: {
+            description: "For a non-link menu item, with param `{ originalEvent }`",
+            action: "onClick",
+            table: { category: "Events" },
+        },
+        icon: { description: "Icon element to display alongside button text", control: { type: "object" } },
+    },
 };
 
 export const Default = () => (

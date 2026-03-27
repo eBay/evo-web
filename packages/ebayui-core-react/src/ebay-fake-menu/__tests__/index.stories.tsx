@@ -6,6 +6,72 @@ import { EbayFakeMenu, EbayFakeMenuItem as Item, EbayFakeMenuSeparator as Separa
 const meta: Meta<typeof EbayFakeMenu> = {
     component: EbayFakeMenu,
     title: "building blocks/ebay-fake-menu",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFakeMenu, EbayFakeMenuItem as Item } from "@ebay/ui-core-react/ebay-fake-menu";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/badge";
+import "@ebay/skin/icon";
+import "@ebay/skin/menu";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/badge.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/menu.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayFakeMenu>
+    <Item href="https://ebay.com">eBay US</Item>
+    <Item href="https://ebay.com/uk">eBay UK</Item>
+</EbayFakeMenu>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        itemMatchesUrl: {
+            description:
+                "used in conjunction with `current` -- This determines whether aria-current will be `page` or `true` -- Defaults to `true` which gives `aria-current` a value of `page`",
+            control: "boolean",
+        },
+        onKeyDown: {
+            description: "triggered on key down",
+            action: "onKeyDown",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent" } },
+        },
+        onSelect: {
+            description: "For using with keyboard navigation",
+            action: "onSelect",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent" } },
+        },
+        href: { description: "Redirection link on click", control: "text" },
+        type: { description: "Set to `button` to render menu-item as a button instead of a link", control: "text" },
+        current: { description: "Whether or not the href is the current href of the page", control: "boolean" },
+        badgeNumber: { description: "Used as a number to be placed inside the badge", control: "number" },
+        badgeAriaLabel: {
+            description: "Only if `badgeNumber` provided, passed as the `aria-label` directly to the badge",
+            control: "number",
+        },
+        disabled: { description: "Whether the menu item is disabled", control: "boolean" },
+    },
 };
 
 export default meta;

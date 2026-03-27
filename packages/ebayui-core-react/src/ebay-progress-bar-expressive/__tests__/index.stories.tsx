@@ -30,6 +30,51 @@ const meta: Meta<typeof EbayProgressBarExpressive> = {
                 },
             },
         },
+
+        children: {
+            description: "Child nodes, typically `EbayProgressBarExpressiveMessage` components",
+            control: "text",
+        },
+        duration: { description: "Duration for which the message is displayed, in milliseconds", control: "number" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import {
+    EbayProgressBarExpressive,
+    EbayProgressBarExpressiveMessage,
+} from "@ebay/ui-core-react/ebay-progress-bar-expressive";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/progress-bar-expressive";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/progress-bar-expressive.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayProgressBarExpressive aria-label="Progress">
+    <EbayProgressBarExpressiveMessage>Message 1</EbayProgressBarExpressiveMessage>
+    <EbayProgressBarExpressiveMessage>Message 2</EbayProgressBarExpressiveMessage>
+</EbayProgressBarExpressive>
+\`\`\``,
+            },
+        },
     },
 };
 

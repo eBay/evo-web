@@ -7,6 +7,87 @@ import { EbayCheckbox } from "../index";
 const meta: Meta<typeof EbayCheckbox> = {
     component: EbayCheckbox,
     title: "form input/ebay-checkbox",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayCheckbox } from "@ebay/ui-core-react/ebay-checkbox";
+import { EbayLabel } from "@ebay/ui-core-react/ebay-field";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/checkbox";
+import "@ebay/skin/field";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/checkbox.css";
+@import "@ebay/skin/field.css";
+@import "@ebay/skin/icon.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayCheckbox id="checkbox-1">
+    <EbayLabel>Remember me!</EbayLabel>
+</EbayCheckbox>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        size: {
+            description:
+                "Either `large` or `regular` (default). Sets the checkbox icon size. For mweb this should be set to `large`. (Note: The dimensions of the radio will not change, but only the icon)",
+            options: ["large", "regular", "large"],
+            control: { type: "select" },
+        },
+        disabled: { control: "boolean" },
+        checked: {
+            description: "indicates the checked value of the input element, required for a controlled component.",
+            control: "boolean",
+        },
+        defaultChecked: {
+            description: "indicates the default checked input element value. Use when the component is not controlled.",
+            control: "boolean",
+        },
+        onChange: {
+            description: "Callback fired on change",
+            action: "onChange",
+            table: {
+                category: "Events",
+                defaultValue: { summary: "`(event: ChangeEvent, { value: string, checked: Boolean })`" },
+            },
+        },
+        onFocus: {
+            description: "Callback fired when button is focused",
+            action: "onFocus",
+            table: {
+                category: "Events",
+                defaultValue: { summary: "`(event: FocusEvent, { value: string, checked: Boolean })`" },
+            },
+        },
+        onKeyDown: {
+            description: "Callback fired when key is pressed",
+            action: "onKeyDown",
+            table: {
+                category: "Events",
+                defaultValue: { summary: "`(event: KeyboardEvent, { value: string, checked: Boolean })`" },
+            },
+        },
+    },
 };
 
 export default meta;

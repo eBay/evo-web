@@ -6,6 +6,79 @@ import { EbayRadio } from "../index";
 
 export default {
     title: "form input/ebay-radio",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayRadio } from "@ebay/ui-core-react/ebay-radio";
+import { EbayLabel } from "@ebay/ui-core-react/ebay-field";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/field";
+import "@ebay/skin/icon";
+import "@ebay/skin/radio";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/field.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/radio.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayRadio value="1" id="radio-1">
+    <EbayLabel>Choice 1</EbayLabel>
+</EbayRadio>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        disabled: { description: "Disabled when true", control: "boolean" },
+        value: {
+            description:
+                "The value of radio button component. For the radio checked/unchecked state, please use `checked` props.",
+            control: "text",
+        },
+        checked: {
+            description: "Set the radio button state to checked/unchecked. Use this for **controlled component**.",
+            control: "boolean",
+        },
+        defaultChecked: {
+            description:
+                "Set the radio button initial state to checked/unchecked. Use this for **uncontrolled component**.",
+            control: "boolean",
+        },
+        size: { description: "No", control: "text" },
+        onChange: {
+            description: "Callback fired when selected radio button is changed",
+            action: "onChange",
+            table: { category: "Events", defaultValue: { summary: "`(ChangeEvent, { value })`" } },
+        },
+        onFocus: {
+            description: "Callback fired when radio button is focused",
+            action: "onFocus",
+            table: { category: "Events", defaultValue: { summary: "`(FocusEvent, { value })`" } },
+        },
+        onKeyDown: {
+            description: "Callback fired when key is down",
+            action: "onKeyDown",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent, { value })`" } },
+        },
+    },
 };
 
 export const Default = () => (

@@ -5,6 +5,64 @@ import { EbayInlineNotice, EbayNoticeContent } from "../index";
 
 export default {
     title: "notices & tips/ebay-inline-notice",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayInlineNotice, EbayNoticeContent } from "@ebay/ui-core-react/ebay-inline-notice";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/inline-notice";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/inline-notice.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayInlineNotice status="confirmation" aria-label="Confirmation">
+    <EbayNoticeContent>
+        <p>Delivered on May 1, 2017</p>
+    </EbayNoticeContent>
+</EbayInlineNotice>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        status: { description: "Determines the style and type of notice to be displayed", control: "text" },
+        "aria-label": {
+            description:
+                "The description of the notice itself for screen readers. Check out [this issue](https://github.com/eBay/skin/issues/1001) for more context.",
+            control: "text",
+        },
+        hidden: { description: "Determines whether the notice is hidden or not.", control: "boolean" },
+        onNoticeShow: {
+            description: "A function that is called when the notice is displayed",
+            action: "onNoticeShow",
+            table: { category: "Events" },
+        },
+        children: {
+            description:
+                "The content to be displayed within the notice. **Must have the EbayNoticeContent within the children!**",
+            control: "text",
+        },
+    },
 };
 
 export const Default = () => (

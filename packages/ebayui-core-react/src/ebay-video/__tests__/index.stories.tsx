@@ -10,6 +10,90 @@ import { PlayEventProps, VolumeChangeProps } from "../video";
 export default {
     component: EbayVideo,
     title: "media/ebay-video",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `Video player. Supports either MPD or M3U8 playlist formats. Natively uses \`shaka\` player under the hood. For resizing, \`ebay-video\` supports fixed width or variable width. If no width is provided the video tag will resize based on the container size.
+
+## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayVideo } from "@ebay/ui-core-react/ebay-video";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/progress-spinner";
+import "@ebay/skin/video";
+import "shaka-player/dist/controls.css";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/progress-spinner.css";
+@import "@ebay/skin/video.css";
+import "shaka-player/dist/controls.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        width: { control: "number" },
+        height: { control: "number" },
+        thumbnail: { description: "URL path for the video thumbnail", control: "text" },
+        action: {
+            description: "`play` or `pause`: will programatically perform the given action",
+            options: ["play", "pause"],
+            control: { type: "select" },
+        },
+        volume: { description: "sets sound volume", control: "number" },
+        volumeSlider: { description: "keep or remove volume slider, default is `false`", control: "boolean" },
+        muted: { description: "mute or unmute video, default is `false`", control: "boolean" },
+        playView: {
+            description:
+                "`inline` or `fullscreen`. When player starts to play, will either play `inline` (default) or switch to `fullscreen`",
+            options: ["inline", "fullscreen", "inline", "fullscreen"],
+            control: { type: "select" },
+        },
+        a11yLoadText: { description: "a11y text for the loading spinner", control: "text" },
+        a11yPlayText: { description: "a11y text for the play button", control: "text" },
+        errorText: {
+            description: "content for error when an either the library or video cannot load",
+            control: "text",
+        },
+        reportText: { description: "text for report button", control: "text" },
+        onLoadError: {
+            description: "triggered when there is a load error with video player or source",
+            action: "onLoadError",
+            table: { category: "Events", defaultValue: { summary: "(Event)" } },
+        },
+        onPlay: {
+            description: "triggered when playback starts",
+            action: "onPlay",
+            table: { category: "Events", defaultValue: { summary: "(Event, { player })" } },
+        },
+        onVolumeChange: {
+            description: "triggered when volume is changed",
+            action: "onVolumeChange",
+            table: { category: "Events", defaultValue: { summary: "(Event, { volume: number, muted: boolean })" } },
+        },
+        onReport: {
+            description: "triggered when report button is clicked",
+            action: "onReport",
+            table: { category: "Events" },
+        },
+        src: { description: "video/playlist URL", control: "text" },
+        type: { description: "playlist type, `hls` or `dash`", options: ["hls", "dash"], control: { type: "select" } },
+        hideReportButton: { description: "Hides the report button", control: "boolean" },
+    },
 } as Meta;
 
 const defaultProps: EbayVideoProps = {

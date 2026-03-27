@@ -4,6 +4,102 @@ import { EbayProgressStepper, EbayProgressStep as Step, EbayProgressTitle as Tit
 
 export default {
     title: "progress/ebay-progress-stepper",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayProgressStepper, EbayProgressStep, EbayProgressTitle } from "@ebay/ui-core-react/ebay-progress-stepper";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/progress-stepper";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/progress-stepper.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayProgressStepper>
+    <EbayProgressStep>Started</EbayProgressStep>
+    <EbayProgressStep>Shipped</EbayProgressStep>
+    <EbayProgressStep current>Transit</EbayProgressStep>
+    <EbayProgressStep>Delivered</EbayProgressStep>
+</EbayProgressStepper>
+\`\`\`
+
+## Components
+
+### EbayProgressStepper
+
+This is the container of the wizard stepper and you can define the direction of the stepper and pass properties to
+customize the layout (\`className\` or \`style\`)
+
+### EbayProgressStep
+
+This component is used to render each step. It renders an icon, a title and a text label.
+
+### EbayProgressTitle
+
+The bolded title for each step. Will be rendered in an \`h4\` by default.
+
+#### Example
+
+\`\`\`jsx
+<EbayProgressStepper>
+    <EbayProgressStep>
+        <EbayProgressTitle>Started</EbayProgressTitle>
+        July 3rd
+    </EbayProgressStep>
+
+    <EbayProgressStep current>
+        <EbayProgressTitle>Shipped</EbayProgressTitle>
+        July 4th
+    </EbayProgressStep>
+</EbayProgressStepper>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        direction: {
+            description:
+                "Either `column` or `row` (default). Will display stepper as a vertical column or horizontal row.",
+            options: ["column", "row"],
+            control: { type: "select" },
+        },
+        defaultState: {
+            description:
+                "`complete`: all items will be in `complete` state by default, `upcoming`:all items will be in `upcoming` state, `attention`: current item will be shown as blocked. Otherwise, default state (`active`) will change items based on the current item (defaults to first step if not set).",
+            options: ["complete", "complete", "upcoming", "upcoming", "attention", "active"],
+            control: { type: "select" },
+        },
+        current: {
+            description:
+                "The current step. Only first step that has this property will be considered current. All steps before will be rendered as complete, and all after will render as upcoming. If not present on any step, then will render based on `defaultState` property",
+            control: "boolean",
+        },
+        as: { description: "HTML tag to use instead of `h4`", control: "text" },
+        state: {
+            description: "State of a progress step",
+            options: ["complete", "upcoming", "attention", "active"],
+            control: { type: "select" },
+        },
+    },
 };
 
 export const Default = () => (

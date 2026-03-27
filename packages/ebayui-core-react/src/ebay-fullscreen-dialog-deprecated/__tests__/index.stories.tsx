@@ -7,6 +7,55 @@ import { action } from "storybook/actions";
 const story: Meta<typeof EbayFullscreenDialogDeprecated> = {
     component: EbayFullscreenDialogDeprecated,
     title: "deprecated/ebay-fullscreen-dialog-deprecated",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `**Deprecated will be removed next major** (Use \`EbayLightboxDialog\` instead)
+
+## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFullscreenDialogDeprecated } from "@ebay/ui-core-react/ebay-fullscreen-dialog-deprecated";
+import { EbayDialogHeader, EbayDialogFooter } from "@ebay/ui-core-react/ebay-dialog-base";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/fullscreen-dialog";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/fullscreen-dialog.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        open: { description: "Whether dialog is open.", control: "boolean" },
+        focus: {
+            description:
+                "An id for an element which will receive focus when the drawer opens (defaults to close button).",
+            control: "text",
+        },
+        a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
+        animated: {
+            description: "Renders the dialog with an animation. Note that the dialog will always be present in the DOM",
+            control: "boolean",
+        },
+        onClose: { description: "Triggered when the dialog is closed", action: "onClose" },
+        onOpen: { description: "Triggered when the dialog is opened", action: "onOpen" },
+    },
 };
 
 export const Default = () => {

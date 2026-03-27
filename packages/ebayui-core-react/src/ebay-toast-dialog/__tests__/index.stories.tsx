@@ -7,6 +7,46 @@ import { action } from "storybook/actions";
 
 export default {
     title: "dialogs/ebay-toast-dialog",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayToast } from "@ebay/ui-core-react/ebay-toast-dialog";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/toast-dialog";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/toast-dialog.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        open: { description: "Whether toast is open.", control: "boolean" },
+        a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
+        animated: {
+            description: "Renders the dialog with an animation. Note that the dialog will always be present in the DOM",
+            control: "boolean",
+        },
+        onClose: { description: "Called when the toast is closed", action: "onClose", table: { category: "Events" } },
+    },
 };
 
 export const Default = () => {

@@ -76,6 +76,47 @@ export default {
                 },
             },
         },
+
+        onToggle: {
+            description: "Triggered when the button is toggled: { originalEvent, pressed }",
+            action: "onToggle",
+            table: { category: "Events" },
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayToggleButton } from "@ebay/ui-core-react/ebay-toggle-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/toggle-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/toggle-button.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayToggleButton title="Label" subtitle="Subtitle" />
+\`\`\``,
+            },
+        },
     },
 } as Meta<typeof EbayToggleButton>;
 

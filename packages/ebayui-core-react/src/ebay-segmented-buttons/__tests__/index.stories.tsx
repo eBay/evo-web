@@ -29,6 +29,48 @@ export default {
                 },
             },
         },
+
+        value: { description: "the value to use with `onChange` callback", control: "text" },
+        selected: { description: "Whether or not the button is selected", control: "boolean" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbaySegmentedButtons, EbaySegmentedButton as Button } from "@ebay/ui-core-react/ebay-segmented-buttons";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/segmented-buttons";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/segmented-buttons.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbaySegmentedButtons>
+    <Button pressed>Option 1</Button>
+    <Button>Option 2</Button>
+    <Button>Option 3</Button>
+</EbaySegmentedButtons>
+\`\`\``,
+            },
+        },
     },
 } as Meta<typeof EbaySegmentedButtons>;
 

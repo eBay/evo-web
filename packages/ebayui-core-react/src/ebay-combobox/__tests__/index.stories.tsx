@@ -60,6 +60,18 @@ const meta: Meta<typeof EbayCombobox> = {
             description: "If true, combobox will span the entire width of it's container",
         },
 
+        opaqueLabel: {
+            control: { type: "boolean" },
+            description: "Whether the floating label background is opaque",
+        },
+        value: {
+            control: { type: "text" },
+            description: "Controlled input value",
+        },
+        defaultValue: {
+            control: { type: "text" },
+            description: "Default input value for uncontrolled mode",
+        },
         onCollapse: {
             action: "onCollapse",
             table: {
@@ -122,6 +134,52 @@ const meta: Meta<typeof EbayCombobox> = {
             },
 
             description: "same as the `onFocus` event, which fires on focus",
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayCombobox, EbayComboboxOption, EbayComboboxButton } from "@ebay/ui-core-react/ebay-combobox";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/combobox";
+import "@ebay/skin/floating-label";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/combobox.css";
+@import "@ebay/skin/floating-label.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayCombobox>
+    <EbayComboboxButton>
+        <EbayIconClear16 />
+    </EbayComboboxButton>
+    <EbayComboboxOption>Option 1</EbayComboboxOption>
+    <EbayComboboxOption>Option 2</EbayComboboxOption>
+    <EbayComboboxOption>Option 3</EbayComboboxOption>
+</EbayCombobox>
+\`\`\``,
+            },
         },
     },
 };

@@ -39,6 +39,41 @@ const meta: Meta<typeof EbayAvatar> = {
                 "Optional, as aspect ratio will be calculated when the image loads on the client. This can be passed to help prevent a flash of incorrectly styled content before the image loads",
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayAvatar } from "@ebay/ui-core-react/ebay-avatar";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/avatar";
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/avatar.css";
+@import "@ebay/skin/icon.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayAvatar username="Joe" />
+\`\`\``,
+            },
+        },
+    },
 };
 
 export default meta;

@@ -9,6 +9,102 @@ import { EbayMenu, EbayMenuItem as Item, EbayMenuSeparator as Separator } from "
 const story = {
     component: EbayMenu,
     title: "building blocks/ebay-menu",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayMenu, EbayMenuItem as Item } from "@ebay/ui-core-react/ebay-menu";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/badge";
+import "@ebay/skin/icon";
+import "@ebay/skin/menu";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/badge.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/menu.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayMenu>
+    <Item>Item 1</Item>
+    <Item>Item 2</Item>
+    <Item>Item 3</Item>
+</EbayMenu>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        type: { description: "Can be `radio`/`checkbox`", options: ["radio", "checkbox"], control: { type: "select" } },
+        checked: {
+            description: "when used with `radio` type will check the item with the corresponding index",
+            control: "number",
+        },
+        baseEl: {
+            description: "Container can be `span` (default) or `div`",
+            options: ["span", "div"],
+            control: { type: "select" },
+        },
+        onKeyDown: {
+            description: "props: (e: event, { index: number, checked: number[], checkedValues?: string[] })",
+            action: "onKeyDown",
+            table: { category: "Events" },
+        },
+        onSelect: {
+            description:
+                "props: (e: event, { index: number }), triggered on item clicked (not for type `radio`/`checkbox`)",
+            action: "onSelect",
+            table: { category: "Events" },
+        },
+        onChange: {
+            description:
+                "props: (e: event, { index: number, checked: number[], checkedValues: string[]), triggered on item `checked` change, (for type `radio`/`checkbox` only)",
+            action: "onChange",
+            table: { category: "Events" },
+        },
+        classPrefix: { description: "class prefix for the component, defaults to `menu`", control: "text" },
+        reverse: {
+            description:
+                "reverse the menu item layout, so that the badge is on the left and the text on the right (default: false)",
+            control: "boolean",
+        },
+        fixWidth: { description: "makes the menu width the same as its parent", control: "boolean" },
+        fixed: {
+            description:
+                "Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
+            control: "boolean",
+        },
+        value: {
+            description: "for type `radio`, `checkbox`: the value to use with callbacks for `checkedValues[]`",
+            options: ["radio", "checkbox", "checkedValues[]"],
+            control: { type: "select" },
+        },
+        disabled: { description: "makes the menu item disabled", control: "boolean" },
+        badgeNumber: { description: "used as the number to be placed in the badge", control: "number" },
+        badgeAriaLabel: { control: "text" },
+        priority: {
+            description: "Menu priority style",
+            options: ["primary", "secondary", "none"],
+            control: { type: "select" },
+        },
+        autofocus: { description: "Auto-focus menu on mount", control: "boolean" },
+    },
 } satisfies Meta<typeof EbayMenu>;
 
 export const Default = () => (

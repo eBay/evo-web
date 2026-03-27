@@ -12,6 +12,128 @@ import {
 const meta: Meta<typeof EbayFakeMenuButton> = {
     component: EbayFakeMenuButton,
     title: "buttons/ebay-fake-menu-button",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import {
+    EbayFakeMenuButton,
+    EbayFakeMenuButtonItem as Item,
+    EbayFakeMenuButtonSeparator as Separator,
+    EbayFakeMenuButtonLabel as Label
+} from "@ebay/ui-core-react/ebay-fake-menu-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+import "@ebay/skin/icon";
+import "@ebay/skin/menu";
+import "@ebay/skin/menu-button";
+
+// For variant=overflow
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/menu.css";
+@import "@ebay/skin/menu-button.css";
+
+/* For variant=overflow */
+@import "@ebay/skin/icon-button.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayFakeMenuButton text="Menu">
+    <Item href="https://ebay.com">Home</Item>
+    <Item href="https://ebay.com/my">My eBay</Item>
+    <Separator />
+    <Item>Log in</Item>
+</EbayFakeMenuButton>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        text: { description: "Button label text", control: "text" },
+        a11yText: { description: "A11y text for the button", control: "text" },
+        noToggleIcon: { description: "whether to hide the chevron toggle icon", control: "boolean" },
+        expanded: { description: "whether content is expanded", control: "boolean" },
+        type: { description: "Not yet implemented", control: "text" },
+        variant: {
+            description: "will change the button style: `overflow`, `form` or `button`",
+            options: ["overflow", "form", "button"],
+            control: { type: "select" },
+        },
+        priority: {
+            description: "button priority, only used when `variant` is `button`",
+            options: ["variant", "button"],
+            control: { type: "select" },
+        },
+        reverse: { description: "expand menu flyout to the left", control: "boolean" },
+        fixWidth: { description: "Constrain items container width to button width", control: "boolean" },
+        borderless: { description: "Whether button has borders", control: "boolean" },
+        size: {
+            description: "button size: `small` or `large`",
+            options: ["small", "large"],
+            control: { type: "select" },
+        },
+        href: { description: "Creates a menu-item with a link", control: "text" },
+        current: { description: "Whether or not the href is the current href of the page", control: "boolean" },
+        value: { description: "Not yet implemented", control: "text" },
+        checked: { description: "Not yet implemented", control: "boolean" },
+        "badge-number": { description: "Not yet implemented", control: "number" },
+        "badge-aria-label": { description: "Not yet implemented", control: "text" },
+        onClick: {
+            description: "For a non-link menu item, with param `{ originalEvent }`",
+            action: "onClick",
+            table: { category: "Events" },
+        },
+        onKeyDown: {
+            description: "Triggered on key down",
+            action: "onKeyDown",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent)`" } },
+        },
+        onMouseDown: {
+            description: "Triggered on mouse down on menu item",
+            action: "onMouseDown",
+            table: { category: "Events", defaultValue: { summary: "`(MouseEvent, { index: number })`" } },
+        },
+        onCollapse: {
+            description: "Triggered on menu collapse",
+            action: "onCollapse",
+            table: { category: "Events", defaultValue: { summary: "`()`" } },
+        },
+        onExpand: {
+            description: "Triggered on menu expand",
+            action: "onExpand",
+            table: { category: "Events", defaultValue: { summary: "`()`" } },
+        },
+        onSelect: {
+            description: "Not yet implemented",
+            action: "onSelect",
+            table: { category: "Events", defaultValue: { summary: "`(ChangeEvent, { index: number })`" } },
+        },
+        strategy: {
+            description: "CSS positioning strategy for dropdown",
+            options: ["absolute", "fixed"],
+            control: { type: "select" },
+        },
+        icon: { description: "Icon element to render in the button", control: { type: "text" } },
+    },
 };
 
 export default meta;

@@ -111,6 +111,54 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
                 },
             },
         },
+
+        as: { description: "Element type for the preview card, default is `div`", control: "text" },
+        deleteText: { description: "Text for delete button.", control: "text" },
+        labelText: { description: "Text to display in the label.", control: "text" },
+        a11ySeeMoreText: { description: "a11y text for see more button.", control: "text" },
+        EbayFilePreviewCardAction: {
+            description:
+                "Action component that will be used to render EbayIconButton and needs to have an `icon` and `aria-label` to be render.",
+            options: ["icon", "aria-label"],
+            control: { type: "select" },
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFilePreviewCard } from "@ebay/ui-core-react/ebay-file-preview-card";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+import "@ebay/skin/file-preview-card";
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/menu-button";
+import "@ebay/skin/progress-spinner";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/file-preview-card.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/menu-button.css";
+@import "@ebay/skin/progress-spinner.css";
+\`\`\``,
+            },
+        },
     },
 };
 export default meta;

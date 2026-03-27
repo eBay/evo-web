@@ -6,6 +6,50 @@ import { EbayField, EbayLabel, EbayFieldDescription } from "../index";
 
 export default {
     title: "form input/ebay-field",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Import
+
+\`\`\`jsx harmony
+import { EbayField, EbayLabel, EbayFieldDescription } from "@ebay/ui-core-react/ebay-field";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/field";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/field.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        layout: {
+            description: "`block`, `inline` (default)",
+            options: ["block", "inline"],
+            control: { type: "select" },
+        },
+        stacked: { description: "display label above the field if true", control: "boolean" },
+        required: { description: "indicates the field is required if true", control: "boolean" },
+        position: {
+            description: "`start` (default) or `end` position towards the input",
+            options: ["start", "end"],
+            control: { type: "select" },
+        },
+        type: {
+            description: "`confirmation`, `default`(Default), `attention`, `information`, `group`",
+            options: ["confirmation", "default", "attention", "information", "group"],
+            control: { type: "select" },
+        },
+    },
 };
 
 export const DefaultInline = {

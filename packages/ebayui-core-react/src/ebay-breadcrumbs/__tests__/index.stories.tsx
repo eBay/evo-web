@@ -7,6 +7,60 @@ import { EbayBreadcrumbs, EbayBreadcrumbItem as Item } from "../index";
 const meta: Meta<typeof EbayBreadcrumbs> = {
     component: EbayBreadcrumbs,
     title: "navigation & disclosure/ebay-breadcrumbs",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayBreadcrumbs, EbayBreadcrumbItem } from "@ebay/ui-core-react/ebay-breadcrumbs";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/breadcrumbs";
+import "@ebay/skin/icon";
+import "@ebay/skin/utility";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/breadcrumbs.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/utility.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx
+<EbayBreadcrumbs a11yHeadingText="Page navigation">
+    <EbayBreadcrumbItem href="https://ebay.com">eBay</EbayBreadcrumbItem>
+    <EbayBreadcrumbItem href="https://ebay.com/cars">Auto Parts</EbayBreadcrumbItem>
+    <EbayBreadcrumbItem>Motors Parts</EbayBreadcrumbItem>
+</EbayBreadcrumbs>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        a11yHeadingText: {
+            description: "heading for breadcrumb which will be clipped (default: 'Page navigation')",
+            control: "text",
+        },
+        a11yHeadingTag: { description: "heading tag for breadcrumb (default: `h2`)", control: "text" },
+        onSelect: {
+            description: "click breadcrumb items",
+            action: "onSelect",
+            table: { category: "Events", defaultValue: { summary: "`(event: MouseEvent" } },
+        },
+        href: { description: "anchor href; omitting the href will switch to a button", control: "text" },
+    },
 };
 
 export default meta;

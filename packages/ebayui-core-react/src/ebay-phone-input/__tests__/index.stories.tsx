@@ -162,6 +162,110 @@ const meta: Meta<typeof EbayPhoneInput> = {
                 },
             },
         },
+        defaultValue: {
+            description: "Initial value for uncontrolled mode",
+            control: { type: "text" },
+            table: {
+                defaultValue: {
+                    summary: "",
+                },
+            },
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayPhoneInput } from "@ebay/ui-core-react/ebay-phone-input";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+import "@ebay/skin/flag";
+import "@ebay/skin/icon";
+import "@ebay/skin/listbox-button";
+import "@ebay/skin/phone-input";
+import "@ebay/skin/textbox";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/flag.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/listbox-button.css";
+@import "@ebay/skin/phone-input.css";
+@import "@ebay/skin/textbox.css";
+\`\`\`
+
+## Examples
+
+### Basic usage
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayPhoneInput
+    countryCode="us"
+    floatingLabel="Phone Number"
+    value=""
+    onInputChange={(event, data) => console.log(data)}
+/>
+\`\`\`
+
+### With localization
+
+\`\`\`jsx harmony
+<EbayPhoneInput
+    countryCode="us"
+    locale="en-US"
+    floatingLabel="Phone Number"
+    value=""
+    onInputChange={(event, data) => console.log(data)}
+/>
+\`\`\`
+
+### Disabled state
+
+\`\`\`jsx harmony
+<EbayPhoneInput countryCode="us" floatingLabel="Phone Number" value="(555) 123-4567" disabled />
+\`\`\`
+
+### Read-only state
+
+\`\`\`jsx harmony
+<EbayPhoneInput countryCode="us" floatingLabel="Phone Number" value="(555) 123-4567" readonly />
+\`\`\`
+
+### Invalid state
+
+\`\`\`jsx harmony
+<EbayPhoneInput countryCode="us" floatingLabel="Phone Number" value="invalid" invalid />
+\`\`\`
+
+## Event Data
+
+All input events (\`onFocus\`, \`onBlur\`, \`onChange\`, \`onKeyDown\`, \`onKeyPress\`, \`onKeyUp\`) receive a \`PhoneInputEvent\` object as the second parameter:
+
+\`\`\`typescript
+interface PhoneInputEvent {
+    value?: string; // Formatted phone number
+    rawValue?: string; // Raw digits only
+    callingCode?: string; // Country calling code (e.g., "1", "44")
+    countryCode?: string; // Country code (e.g., "US", "GB")
+}
+\`\`\``,
+            },
+        },
     },
 };
 

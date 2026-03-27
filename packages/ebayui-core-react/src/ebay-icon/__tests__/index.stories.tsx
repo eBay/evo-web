@@ -9,6 +9,75 @@ import EbayIcon from "../icon";
 export default {
     component: EbayIcon,
     title: "graphics & icons/ebay-icon",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `The \`EbayIcon\` component will include the actual SVG markup in the HTML and then reference the chosen icon.
+Each icon has its own component and all the available icons are listed in the [icons](./icons) folder
+
+## Usage
+
+\`\`\`jsx
+import { EbayIconArrowLeft16 } from "@ebay/ui-core-react/icons/ebay-icon-arrow-left-16";
+import "@ebay/skin/icon";
+
+<EbayIconArrowLeft16 />;
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/star-rating";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/star-rating.css";
+\`\`\`
+### Add the \`EbayIconProvider\`
+
+In the root of your app, add the \`EbayIconProvider\` component to avoid loading the SVG markup multiple times for a better server and client performance.
+
+\`\`\`jsx
+import { EbayIconProvider } from "@ebay/ui-core-react/ebay-icon";
+
+<EbayIconProvider>
+    <App />
+</EbayIconProvider>;
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        name: {
+            description:
+                "name of the icon from [Skin](./types.ts), transparent versions of colored icons has `-transparent` suffix",
+            control: "text",
+        },
+        noSkinClasses: {
+            description: "Used for special cases where `icon` classes from Skin should not be applied",
+            control: "boolean",
+        },
+        a11yText: {
+            description: "text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
+            control: "text",
+        },
+        type: {
+            description: "'icon' or 'program-badge' default 'icon' (DEPRECATED, use <EbayProgramBadge /> instead)",
+            control: "text",
+        },
+        a11yVariant: {
+            description: "Controls aria-label vs aria-labelledby",
+            options: ["label"],
+            control: { type: "select" },
+        },
+        prominent: { description: "Adds icon--prominent CSS class", control: "boolean" },
+    },
 } as Meta;
 
 export const CustomColor = () => (

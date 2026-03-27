@@ -55,6 +55,33 @@ const meta: Meta<typeof EbayFilePreviewCardGroup> = {
             },
         },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFilePreviewCardGroup } from "@ebay/ui-core-react/ebay-file-preview-card-group";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/file-preview-card-group";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/file-preview-card-group.css";
+\`\`\``,
+            },
+        },
+    },
 };
 export default meta;
 

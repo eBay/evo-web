@@ -10,7 +10,25 @@ export default {
     parameters: {
         docs: {
             description: {
-                component: "A component to display character count with optional clipped text.",
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayCharacterCount } from "@ebay/ui-core-react/ebay-character-count";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/character-count";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/character-count.css";
+\`\`\``,
             },
         },
     },
@@ -35,6 +53,8 @@ export default {
             description: "Triggered when the character count changes. Debounced by 500ms.",
         },
     },
+
+    tags: ["autodocs"],
 } as Meta;
 
 export const Default: StoryFn<EbayCharacterCountProps> = (args) => <EbayCharacterCount {...args} />;

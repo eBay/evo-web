@@ -20,6 +20,84 @@ const allPointers: PointerDirection[] = [
 
 export default {
     title: "notices & tips/ebay-tooltip",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayTooltip, EbayTooltipHost, EbayTooltipContent } from "@ebay/ui-core-react/ebay-tooltip";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon-button";
+import "@ebay/skin/tooltip";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/tooltip.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayTooltip pointer="bottom-left">
+    <EbayTooltipHost>
+        <EbayButton>Info</EbayButton>
+    </EbayTooltipHost>
+    <EbayTooltipContent>
+        <span>Here's a tip to help you be successful at your task.</span>
+    </EbayTooltipContent>
+</EbayTooltip>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        pointer: {
+            description:
+                "options are `top-left`, `top`, `top-right`, `right`, `right-bottom`, `right-top`, `bottom-left`, `bottom-right`, `bottom`, `left`, `left-bottom`, `left-top`",
+            options: [
+                "top-left",
+                "top",
+                "top-right",
+                "right",
+                "right-bottom",
+                "right-top",
+                "bottom-left",
+                "bottom-right",
+                "bottom",
+                "left",
+                "left-bottom",
+                "left-top",
+            ],
+            control: { type: "select" },
+        },
+        overlayStyle: {
+            description:
+                "Style object to customize default values for the overlay. It can be used all CSS properties like `top`, `left`, `bottom`, `right`.",
+            options: ["top", "left", "bottom", "right"],
+            control: { type: "select" },
+        },
+        noHover: { description: "disable hover (and only use focus) to open the tooltip", control: "boolean" },
+        onExpand: { description: "overlay has been expanded", action: "onExpand", table: { category: "Events" } },
+        onCollapse: { description: "overlay has been collapsed", action: "onCollapse", table: { category: "Events" } },
+        EbayTooltipHost: { description: "Wrapper for trigger that shows the tooltip", control: "text" },
+        EbayTooltipContent: { description: "The content to be displayed in the tooltip", control: "text" },
+        offset: { description: "Numeric offset for positioning", control: { type: "number" } },
+        noFlip: { description: "Disable automatic flip behavior", control: "boolean" },
+        noShift: { description: "Disable automatic shift behavior", control: "boolean" },
+        notInline: { description: "Opt out of inline display", control: "boolean" },
+    },
 };
 
 export const DefaultTooltip = () => (

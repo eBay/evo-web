@@ -29,6 +29,48 @@ const story = {
         onPrevious: { action: "onPrevious" },
         onNext: { action: "onNext" },
         onScroll: { action: "onScroll" },
+
+        autoplay: {
+            description:
+                "If true, will automatically scroll through the carousel. If a number is provided, will set the interval in milliseconds.",
+            control: "text",
+        },
+        a11yPreviousText: { description: "A11y text for previous button and mask.", control: "text" },
+        a11yNextText: { description: "A11y text for next button and mask.", control: "text" },
+        a11yPauseText: { description: "A11y text for pause button.", control: "text" },
+        a11yPlayText: { description: "A11y text for play button.", control: "text" },
+        imageTreatment: { description: "Apply image slide styling", control: "boolean" },
+        onPlay: { action: "onPlay" },
+        onPause: { action: "onPause" },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayCarousel, EbayCarouselItem } from "@ebay/ui-core-react/ebay-carousel";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/carousel";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/carousel.css";
+\`\`\``,
+            },
+        },
     },
 } as Meta<typeof EbayCarousel>;
 

@@ -10,6 +10,123 @@ import { EbayIconChevronDown12 } from "../../ebay-icon/icons/ebay-icon-chevron-d
 const meta: Meta<typeof EbayButton> = {
     component: EbayButton,
     title: "buttons/ebay-button",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayButton } from "@ebay/ui-core-react/ebay-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+
+// When using bodyState=loading
+import "@ebay/skin/icon";
+import "@ebay/skin/progress-spinner";
+
+// When using bodyState=expand
+import "@ebay/skin/icon";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+
+/* When using bodyState=loading */
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/progress-spinner.css";
+
+/* When using bodyState=expand */
+@import "@ebay/skin/icon.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayButton>Click me!</EbayButton>
+\`\`\`
+
+### With an Icon
+
+\`\`\`jsx
+<EbayButton aria-label="Menu button">
+    <EbayIconMenu20 />
+</EbayButton>
+\`\`\`
+
+### Complex button
+
+\`\`\`jsx
+<EbayButton priority="primary" fluid>
+    <EbayButtonCell style={{ justifyContent: "space-between" }}>
+        <span>Label</span>
+        <span>Filter</span>
+    </EbayButtonCell>
+</EbayButton>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        priority: {
+            description: "`primary`, `secondary` (default), `tertiary`, `none`",
+            options: ["primary", "secondary", "tertiary", "none"],
+            control: { type: "select" },
+        },
+        variant: {
+            description: "`standard` (default), `destructive`, `form`",
+            options: ["standard", "destructive", "form"],
+            control: { type: "select" },
+        },
+        size: { description: "`small` or `large`", options: ["small", "large"], control: { type: "select" } },
+        split: {
+            description: "Split button visual position",
+            options: ["start", "end"],
+            control: { type: "select" },
+        },
+        bodyState: { description: "`loading`, `expand`", options: ["loading", "expand"], control: { type: "select" } },
+        href: { description: "for link that looks like a button", control: "text" },
+        fluid: { description: "takes the whole width of the parent element", control: "boolean" },
+        disabled: { control: "boolean" },
+        partiallyDisabled: { description: "sets `aria-disabled` but not `disabled` prop", control: "boolean" },
+        transparent: { description: "transparent background color (overrides `priority` prop)", control: "boolean" },
+        truncate: {
+            description:
+                "will truncate the text of the button onto a single line, and adds an ellipsis, when the button's text overflows",
+            control: "boolean",
+        },
+        borderless: { description: "shows button without border", control: "boolean" },
+        fixedHeight: { description: "fixes the height based on `size`", control: "boolean" },
+        onClick: {
+            description: "click or action key pressed (`Space` / `Enter`)",
+            action: "onClick",
+            table: { category: "Events", defaultValue: { summary: "`(event: MouseEvent" } },
+        },
+        onEscape: {
+            description: "`Esc`-key pressed",
+            action: "onEscape",
+            table: { category: "Events", defaultValue: { summary: "`(event: KeyboardEvent)`" } },
+        },
+        onFocus: {
+            description: "triggered on focus",
+            action: "onFocus",
+            table: { category: "Events", defaultValue: { summary: "`(event: FocusEvent)`" } },
+        },
+        onBlur: {
+            description: "triggered on blur",
+            action: "onBlur",
+            table: { category: "Events", defaultValue: { summary: "`(event: FocusEvent)`" } },
+        },
+    },
 };
 
 export default meta;

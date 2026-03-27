@@ -16,6 +16,52 @@ const meta: Meta<typeof EbayFilterMenuButton> = {
         onExpand: { action: "onExpand" },
         onCollapse: { action: "onCollapse" },
     },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayFilterMenuButton, EbayFilterMenuItem } from "@ebay/ui-core-react/ebay-filter-menu-button";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/button";
+import "@ebay/skin/checkbox";
+import "@ebay/skin/filter-menu";
+import "@ebay/skin/filter-menu-button";
+import "@ebay/skin/icon";
+import "@ebay/skin/radio";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/button.css";
+@import "@ebay/skin/checkbox.css";
+@import "@ebay/skin/filter-menu.css";
+@import "@ebay/skin/filter-menu-button.css";
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/radio.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayFilterMenuButton>
+    <EbayFilterMenuItem value="item1">Item 1</EbayFilterMenuItem>
+    <EbayFilterMenuItem value="item2">Item 2</EbayFilterMenuItem>
+</EbayFilterMenuButton>
+\`\`\``,
+            },
+        },
+    },
 };
 
 export default meta;

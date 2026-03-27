@@ -20,6 +20,106 @@ const allPointers: PointerDirection[] = [
 
 export default {
     title: "buttons/ebay-infotip",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayInfotip, EbayInfotipHost, EbayInfotipContent, EbayInfotipHeading } from "@ebay/ui-core-react/ebay-infotip";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/infotip";
+
+// When using variant="modal"
+import "@ebay/skin/lightbox-dialog"
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/infotip.css";
+
+/* When using variant="modal" */
+@import "@ebay/skin/lightbox-dialog.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayInfotip>
+    <EbayInfotipHeading>Heading</EbayInfotipHeading>
+    <EbayInfotipContent>
+        <p>Here's a tip to help you be successful at your task.</p>
+    </EbayInfotipContent>
+</EbayInfotip>
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        variant: {
+            description: "Either modal or default. If modal will show the mobile version of infotip",
+            control: "text",
+        },
+        pointer: {
+            description:
+                "options are `top-left`, `top`, `top-right`, `right`, `right-bottom`, `right-top`, `bottom-left`, `bottom-right`, `bottom`, `left`, `left-bottom`, `left-top`",
+            options: [
+                "top-left",
+                "top",
+                "top-right",
+                "right",
+                "right-bottom",
+                "right-top",
+                "bottom-left",
+                "bottom-right",
+                "bottom",
+                "left",
+                "left-bottom",
+                "left-top",
+            ],
+            control: { type: "select" },
+        },
+        icon: {
+            description:
+                "Different icon to be used than `information-small`. Full list [here](https://ebay.github.io/skin/index.html#icon)",
+            control: "text",
+        },
+        disabled: { description: "Define if the infotip is disabled or not", control: "boolean" },
+        overlayStyle: {
+            description:
+                "Style object to customize default values for the overlay. It can be used all CSS properties like `top`, `left`, `bottom`, `right`.",
+            options: ["top", "left", "bottom", "right"],
+            control: { type: "select" },
+        },
+        initialExpanded: { description: "Open the tooltip on the initial render", control: "boolean" },
+        a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
+        "aria-label": {
+            description: 'A descriptive label of what the infotip button represents (e.g. "Important information")',
+            control: "text",
+        },
+        offset: { description: "Numeric offset for floating-ui positioning", control: { type: "number" } },
+        noFlip: { description: "Disable automatic flip behavior", control: "boolean" },
+        noShift: { description: "Disable automatic shift behavior", control: "boolean" },
+        notInline: { description: "Opt out of inline display", control: "boolean" },
+        onExpand: { description: "overlay has been expanded", action: "onExpand", table: { category: "Events" } },
+        onCollapse: { description: "overlay has been collapsed", action: "onCollapse", table: { category: "Events" } },
+        EbayInfotipHost: { description: "The custom host-button (trigger) for the Infotip", control: "text" },
+        EbayInfotipHeading: { description: "The heading to be displayed in the infotip", control: "text" },
+        EbayInfotipContent: { description: "The content to be displayed in the infotip", control: "text" },
+    },
 };
 
 export const Default = () => (

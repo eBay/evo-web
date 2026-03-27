@@ -7,6 +7,59 @@ import { Meta } from "@storybook/react-vite";
 const story: Meta<typeof EbayPanelDialog> = {
     component: EbayPanelDialog,
     title: "dialogs/ebay-panel-dialog",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayPanelDialog } from "@ebay/ui-core-react/ebay-panel-dialog";
+import { EbayDialogHeader, EbayDialogCloseButton } from "@ebay/ui-core-react/ebay-dialog-base";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/icon-button";
+import "@ebay/skin/panel-dialog";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/icon-button.css";
+@import "@ebay/skin/panel-dialog.css";
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        open: { description: "Whether dialog is open.", control: "boolean" },
+        position: {
+            description:
+                "`end` or `start` (default), the position of the panel, either at the start (left side) of the page, or end (right side) of the page.",
+            options: ["end", "start"],
+            control: { type: "select" },
+        },
+        focus: {
+            description:
+                "An id for an element which will receive focus when the drawer opens (defaults to close button).",
+            control: "text",
+        },
+        a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
+        animated: {
+            description: "Renders the dialog with an animation. Note that the dialog will always be present in the DOM",
+            control: "boolean",
+        },
+        onClose: { description: "Called when dialog is closed", action: "onClose", table: { category: "Events" } },
+        onOpen: { description: "Called when dialog is opened", action: "onOpen", table: { category: "Events" } },
+    },
 };
 
 const textParagraph = (

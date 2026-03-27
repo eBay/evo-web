@@ -17,6 +17,137 @@ import { EbayIconProfile20 } from "../../ebay-icon/icons/ebay-icon-profile-20";
 
 export default {
     title: "form input/ebay-textbox",
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayTextbox } from "@ebay/ui-core-react/ebay-textbox";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/floating-label";
+import "@ebay/skin/textbox";
+import "@ebay/skin/icon-button";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/floating-label.css";
+@import "@ebay/skin/textbox.css";
+@import "@ebay/skin/icon-button.css";
+\`\`\`
+
+### Basic
+
+\`\`\`jsx harmony
+<EbayTextbox value="Search for anything" />
+\`\`\``,
+            },
+        },
+    },
+    argTypes: {
+        fluid: { description: "Takes the full width of the container", control: "boolean" },
+        multiline: { description: "Renders a multi-line textbox if true", control: "boolean" },
+        opaqueLabel: {
+            description:
+                "Only works with floating label. If set, then background is obscured of the floating label. Used with textarea to prevent label overlap",
+            control: "boolean",
+        },
+        invalid: { description: "Indicates a field-level error with red border if true", control: "boolean" },
+        type: {
+            description: "Default: `text`, can be `password` if needed",
+            options: ["text", "password"],
+            control: { type: "select" },
+        },
+        value: {
+            description: "Indicates the value of the input element, required for a controlled component.",
+            control: "text",
+        },
+        defaultValue: {
+            description: "Indicates the default input element value. Use when the component is not controlled.",
+            control: "text",
+        },
+        inputSize: {
+            description: "`default` (default), `large`",
+            options: ["default", "large"],
+            control: { type: "select" },
+        },
+        floatingLabel: {
+            description: "Indicates that the input is a floating label type and renders it as a label",
+            control: "text",
+        },
+        floatingLabelStatic: {
+            description: "Forces floating label to static/raised position",
+            control: "boolean",
+        },
+        onChange: {
+            description: "Triggered when focus leaves and value is changed.",
+            action: "onChange",
+            table: { category: "Events", defaultValue: { summary: "`(ChangeEvent, { value: string })`" } },
+        },
+        onInputChange: {
+            description: "Triggered when the value of the input is changed.",
+            action: "onInputChange",
+            table: { category: "Events", defaultValue: { summary: "`(ChangeEvent, { value: string })`" } },
+        },
+        onFocus: {
+            description: "Called when input gets focus",
+            action: "onFocus",
+            table: { category: "Events", defaultValue: { summary: "`(FocusEvent, { value: string })`" } },
+        },
+        onBlur: {
+            description: "Called when input loses focus",
+            action: "onBlur",
+            table: { category: "Events", defaultValue: { summary: "`(FocusEvent, { value: string })`" } },
+        },
+        onKeyPress: {
+            description: "Called on key press",
+            action: "onKeyPress",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent, { value: string })`" } },
+        },
+        onKeyUp: {
+            description: "Called on key up",
+            action: "onKeyUp",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent, { value: string })`" } },
+        },
+        onKeyDown: {
+            description: "Called on key down",
+            action: "onKeyDown",
+            table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent, { value: string })`" } },
+        },
+        onInvalid: {
+            description: "Triggered when value is invalid",
+            action: "onInvalid",
+            table: { category: "Events", defaultValue: { summary: "`(ChangeEvent, { value: string })`" } },
+        },
+        onFloatingLabelInit: {
+            description: "Triggered when floating label is initialized",
+            action: "onFloatingLabelInit",
+            table: { category: "Events", defaultValue: { summary: "`()`" } },
+        },
+        onButtonClick: {
+            description:
+                "Triggers when clicking on postfix-icon-button. Requires `buttonAriaLabel` to be present in order to attach correctly",
+            action: "onButtonClick",
+            table: { category: "Events", defaultValue: { summary: "`(MouseEvent, { value: string })`" } },
+        },
+        name: { description: "Name of the icon to show", control: "text" },
+        buttonAriaLabel: {
+            description: "Aria-label for postfix icon/button. Required in order to render postfix button",
+            control: "text",
+        },
+    },
 };
 
 export const DefaultTextbox = {

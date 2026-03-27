@@ -11,6 +11,48 @@ const meta: Meta<typeof EbayImagePlaceholder> = {
             control: { type: "text" },
             description: "text for non-decorative inline icon; icon is assumed to be decorative if this is not passed",
         },
+        noSkinClasses: {
+            control: { type: "boolean" },
+            description: "Suppress Skin CSS classes",
+        },
+        a11yVariant: {
+            options: ["label"],
+            control: { type: "select" },
+            description: "Controls aria-label vs aria-labelledby",
+        },
+        prominent: {
+            control: { type: "boolean" },
+            description: "Adds prominent styling",
+        },
+    },
+
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: `## Usage
+
+### Import
+
+\`\`\`jsx harmony
+import { EbayImagePlaceholder } from "@ebay/ui-core-react/ebay-image-placeholder";
+\`\`\`
+
+### Import following styles from SKIN
+
+\`\`\`jsx harmony
+import "@ebay/skin/icon";
+import "@ebay/skin/star-rating";
+\`\`\`
+
+or import styles using SCSS/CSS
+
+\`\`\`css
+@import "@ebay/skin/icon.css";
+@import "@ebay/skin/star-rating.css";
+\`\`\``,
+            },
+        },
     },
 };
 
