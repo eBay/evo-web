@@ -179,7 +179,7 @@ class BarChart extends Marko.Component<Input> {
         let maxVal = 0; // use to determine the highest yAxis value
         series.forEach((s) => {
             maxVal = s.data!.reduce(
-                (p: number, c: any) => (c > p ? c : p),
+                (p: number, c: any) => (c.y > p ? c.y : p),
                 maxVal,
             ) as number;
         });

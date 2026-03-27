@@ -11,9 +11,8 @@ export function eBayColumns(HighCharts: any) {
                     bottom = this.options.bottom; // pull out the bottom value from the highcarts options object
 
                 // this runs the original code for this translate function at this point
-                // if it is not run HighCharts.each will not exist yet
                 proceed.call(this);
-                HighCharts.each(this.points, (point: any) => {
+                this.points.forEach((point: any) => {
                     // loop over each data point element
                     const shapeArgs = point.shapeArgs, // reference to the points shapeArgs object
                         x = shapeArgs.x, // references to the shapeArgs X value

@@ -29,12 +29,12 @@
         "build": "npm run clean && npm run type:check && vitest run && vite build && npm run copy && npm run smoke-test",
         "build:storybook": "storybook build",
         "clean": "node scripts/clean",
-        "generate-locale-info": "node scripts/generate-locale-info.js",
         "copy": "copyfiles package.json README.md dist && npm run copy:rest",
         "copy:rest": "copyfiles 'src/**/*.md' dist -u 1",
         "coverage": "npm run clean && npm run test -- --coverage --ci",
         "deploy": "NODE_OPTIONS=--max-old-space-size=8192 storybook build -o ./_site/$(git branch --show-current)",
         "format": "eslint . --fix 'src/**/*.{ts,tsx}' && prettier . --write --log-level=warn",
+        "generate-locale-info": "node scripts/generate-locale-info.js",
         "lint": "eslint . --ext .ts,.tsx && prettier . --check --log-level=warn",
         "release": "vite build && npm run copy",
         "smoke-test": "concurrently --kill-others-on-fail \"npm run smoke-test:react-16\" \"npm run smoke-test:react-18\" \"npm run smoke-test:react-19\"",
@@ -83,6 +83,8 @@
         "react-dom": "^19"
     },
     "optionalDependencies": {
+        "@highcharts/react": "^4.0.0",
+        "highcharts": "^12.0.0",
         "shaka-player": "^5.0.2"
     },
     "publishConfig": {
