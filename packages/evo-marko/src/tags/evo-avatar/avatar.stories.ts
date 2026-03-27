@@ -57,7 +57,7 @@ export default {
       type: { name: "string", required: true },
       control: "text",
       description:
-        'Required. The label to describe the users state as well as their user name. Usually in the format of "Signed in as Bob" or "Signed out"',
+        'The label to describe the users state as well as their user name. Usually in the format of "Signed in as Bob" or "Signed out". May be set to `null` only if accessibility is provided through other means.',
     },
     knownAspectRatio: {
       type: "number",

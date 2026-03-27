@@ -29,10 +29,10 @@ export default {
       description: "The badge type",
     },
     a11yText: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description:
-        'A descriptive label of what the badge represents (e.g. "5 unread items")',
+        'A descriptive label of what the badge represents (e.g. "5 unread items"). May be set to `null` only if accessibility is provided through other means.',
     },
     ["<span> attributes" as any]: {
       description:

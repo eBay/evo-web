@@ -21,7 +21,7 @@ export default {
       type: { name: "string", required: true },
       control: "text",
       description:
-        'Localized accessibility text for the component. English default to be overridden is "Loading..."',
+        'Localized accessibility text for the component. English default to be overridden is "Loading...". May be set to `null` only if accessibility is provided through other means.',
     },
     size: {
       type: "string",

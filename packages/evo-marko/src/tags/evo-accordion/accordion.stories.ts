@@ -29,10 +29,10 @@ export default {
       description: "Size of the details",
     },
     a11yText: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description:
-        "Localized role description to announce the component role for a11y users.",
+        "Localized role description to announce the component role for a11y users. May be set to `null` only if accessibility is provided through other means.",
       table: {
         defaultValue: {
           summary: "accordion",

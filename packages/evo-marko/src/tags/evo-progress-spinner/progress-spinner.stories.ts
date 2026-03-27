@@ -27,7 +27,7 @@ export default {
       type: { name: "string", required: true },
       control: "text",
       description:
-        'Localized, the accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as "Loading"',
+        'Localized, the accessibility label for the progress spinner. This is for internationalization. It should describe the purpose of the spinner, such as "Loading". May be set to `null` only if accessibility is provided through other means.',
     },
     ["<span> attributes" as any]: {
       description:

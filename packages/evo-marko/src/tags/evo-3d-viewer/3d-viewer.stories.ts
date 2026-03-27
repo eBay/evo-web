@@ -21,6 +21,7 @@ export default {
       description: "The asset to load",
     },
     a11yLoadingText: {
+      type: { name: "string", required: true },
       control: { type: "text" },
       table: {
         category: "Accessibility",
@@ -31,6 +32,7 @@ export default {
       description: "Localized text for loading icon loading viewer",
     },
     errorText: {
+      type: { name: "string", required: true },
       control: "text",
       description: "Localized text to show error message",
     },

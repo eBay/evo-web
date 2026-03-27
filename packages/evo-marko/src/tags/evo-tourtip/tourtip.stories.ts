@@ -74,7 +74,8 @@ export default {
       table: { defaultValue: { summary: "true" } },
     },
     a11yCloseText: {
-      control: { name: "text", required: true },
+      type: { name: "string", required: true },
+      control: "text",
       description: "Localized accessibility label for the close button",
       table: { defaultValue: { summary: "Dismiss tourtip" } },
     },

@@ -48,7 +48,8 @@ export default {
     a11yText: {
       type: { name: "string", required: true },
       control: "text",
-      description: "A descriptive label of what the icon button represents",
+      description:
+        "A descriptive label of what the icon button represents. May be set to `null` only if accessibility is provided through other means.",
     },
     partiallyDisabled: {
       type: "boolean",

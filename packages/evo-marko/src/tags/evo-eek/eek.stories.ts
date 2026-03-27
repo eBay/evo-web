@@ -30,20 +30,20 @@ export default {
       type: { name: "string", required: true },
       control: "text",
       description:
-        "Required: Localized, the aria-label accessibility label for the eek component. This is for internationalization. It should use min, max, and rating in the label in order to demonstrate to screen readers the content on the component. Expected value `Energy efficiency class ${rating}. ${min} - ${max}`",
+        "Localized, the aria-label accessibility label for the eek component. This is for internationalization. It should use min, max, and rating in the label in order to demonstrate to screen readers the content on the component. Expected value `Energy efficiency class ${rating}. ${min} - ${max}`. May be set to `null` only if accessibility is provided through other means.",
     },
     rating: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description: "The energy rating",
     },
     max: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description: "The maximum range",
     },
     min: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description: "The minimum range",
     },

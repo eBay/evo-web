@@ -73,7 +73,7 @@ export default {
       table: { defaultValue: { summary: "h2" } },
     },
     a11yHeadingText: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description:
         "Heading text for screen readers & assistive technology. Will be clipped from view.",

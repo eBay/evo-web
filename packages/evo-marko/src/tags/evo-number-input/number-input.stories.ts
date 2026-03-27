@@ -44,7 +44,7 @@ export default {
         "The accessibility text for the delete button. Required for a delete button to render",
     },
     a11yText: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description:
         "Either this or `<@label>` is required. Renders text for screen readers",
