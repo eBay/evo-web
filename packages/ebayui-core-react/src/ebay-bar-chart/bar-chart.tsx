@@ -17,6 +17,7 @@ import {
 } from "../common/charts/shared";
 import { ebayLegend } from "../common/charts/legend";
 import { eBayColumns } from "../common/charts/bar-chart";
+import type { ColumnPointInternal, EbayColumnSeriesOptions } from "../common/charts/bar-chart";
 import highcharts from "../common/charts/load-highcharts";
 import { barChartTooltipHtml } from "./bar-chart-tooltip";
 import type { EbayBarChartProps, BarChartSeriesItem } from "./types";
@@ -24,17 +25,6 @@ import type { EbayBarChartProps, BarChartSeriesItem } from "./types";
 // Initialize Highcharts extensions once at module level.
 ebayLegend(highcharts);
 eBayColumns(highcharts);
-
-interface ColumnPointInternal extends Omit<Highcharts.Point, "shapeArgs"> {
-    shapeArgs: { x: number; y: number; width: number; height: number };
-    shapeY: number;
-    dlBox: { x: number; y: number; width: number; height: number };
-}
-
-interface EbayColumnSeriesOptions extends Highcharts.SeriesColumnOptions {
-    top?: boolean;
-    bottom?: boolean;
-}
 
 const BAR_CHART_STYLES = `
     .ebay-bar-chart {

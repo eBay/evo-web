@@ -1,22 +1,5 @@
 import type Highcharts from "highcharts";
 
-/**
- * Pattern definition for Highcharts pattern fill.
- * @see https://api.highcharts.com/class-reference/Highcharts.PatternOptionsObject
- */
-export interface ChartPatternObject {
-    pattern: {
-        path: { d: string };
-        width: number;
-        height: number;
-        backgroundColor: string;
-        color: string;
-        patternTransform?: string;
-    };
-}
-
-export type ChartColor = string | ChartPatternObject;
-
 export const chartFontFamily = '"Market Sans", Arial, sans-serif',
     backgroundColor = "var(--color-background-primary)",
     gridColor = "var(--color-data-viz-grid)",
@@ -38,7 +21,7 @@ export const chartFontFamily = '"Market Sans", Arial, sans-serif',
 
 // patterns are in highcharts PatternOptionsObject format
 // refer to https://api.highcharts.com/class-reference/Highcharts.PatternOptionsObject
-export const patternTertiary: ChartPatternObject = {
+export const patternTertiary: Highcharts.PatternObject = {
     pattern: {
         path: {
             // d is a standard SVG path definition string
@@ -52,7 +35,7 @@ export const patternTertiary: ChartPatternObject = {
     },
 };
 
-export const patternQuaternary: ChartPatternObject = {
+export const patternQuaternary: Highcharts.PatternObject = {
     pattern: {
         path: {
             d: "M0 0 L3 0",
@@ -64,7 +47,7 @@ export const patternQuaternary: ChartPatternObject = {
     },
 };
 
-export const colorMapping: ChartColor[] = [
+export const colorMapping: Highcharts.ColorType[] = [
     chartPrimaryColor,
     chartSecondaryColor,
     patternTertiary,
@@ -72,7 +55,7 @@ export const colorMapping: ChartColor[] = [
     chartQuinaryBackgroundColor,
 ];
 
-const strokeColorMapping: string[] = [
+const strokeColorMapping: Highcharts.ColorString[] = [
     chartPrimaryColor,
     chartSecondaryColor,
     chartTertiaryStrokeColor,
@@ -88,12 +71,14 @@ export function setSeriesColors(series: Highcharts.SeriesOptions[]): void {
     for (let i = 0; i < series.length; i++) {
         // Added a modulus in case the user passes in more than 5 series so it doesn't error out
         const color = strokeColorMapping[i % strokeColorMapping.length];
-        if (series[i].type === "bar") {
-            (series[i] as Highcharts.SeriesBarOptions).borderColor = color;
-            (series[i] as Highcharts.SeriesBarOptions).color = color;
+        if (series[i].type === "bar" || series[i].type === "column") {
+            const barSeries = series[i] as Highcharts.SeriesBarOptions | Highcharts.SeriesColumnOptions;
+            barSeries.borderColor = color;
+            barSeries.color = color;
         } else {
-            (series[i] as Highcharts.SeriesAreasplineOptions).lineColor = color;
-            (series[i] as Highcharts.SeriesAreasplineOptions).fillOpacity = 1;
+            const areaSeries = series[i] as Highcharts.SeriesAreasplineOptions;
+            areaSeries.lineColor = color;
+            areaSeries.fillOpacity = 1;
         }
     }
 }

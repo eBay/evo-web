@@ -1,44 +1,21 @@
 import type Highcharts from "highcharts";
 
 /**
- * Internal Highcharts shape arguments attached to column points.
- * These are not part of the public API but are used internally by the column
- * series during the translate phase.
- */
-interface ColumnShapeArgs {
-    x: number;
-    y: number;
-    width: number;
-    height: number;
-}
-
-/**
- * The custom path-based shape args we assign to points for rounded corners.
- * Highcharts accepts a mixed array of SVG path commands and numbers for `d`.
- */
-interface PathShapeArgs {
-    d: Array<string | number>;
-}
-
-/**
  * Extended column point with internal properties used during the translate phase.
  * `shapeArgs`, `shapeType`, `shapeY`, and `dlBox` are Highcharts internals
  * that the eBayColumns extension modifies for custom rounded-corner rendering.
- *
- * We use Omit to avoid conflict with the readonly `shapeArgs` on Highcharts.Point.
  */
-interface ColumnPointInternal extends Omit<Highcharts.Point, "shapeArgs"> {
-    shapeArgs: ColumnShapeArgs;
+export interface ColumnPointInternal extends Highcharts.Point {
     shapeType: string;
     shapeY: number;
-    dlBox: ColumnShapeArgs;
+    dlBox: Highcharts.BBoxObject;
 }
 
 /**
  * Extended column series options with custom top/bottom flags
  * used to control which ends of stacked bars get rounded corners.
  */
-interface EbayColumnSeriesOptions {
+export interface EbayColumnSeriesOptions extends Highcharts.SeriesColumnOptions {
     top?: boolean;
     bottom?: boolean;
 }
@@ -94,7 +71,10 @@ export function eBayColumns(highcharts: typeof Highcharts): void {
                 proceed.call(this);
 
                 for (const point of this.points) {
-                    const shapeArgs = point.shapeArgs;
+                    const shapeArgs = point.shapeArgs as Highcharts.BBoxObject | undefined;
+                    if (!shapeArgs) {
+                        continue;
+                    }
                     const x = shapeArgs.x;
                     const w = shapeArgs.width;
 
@@ -128,24 +108,12 @@ export function eBayColumns(highcharts: typeof Highcharts): void {
                     // Assign the path-based shape args.
                     // Cast required because we're replacing the rectangular shapeArgs with an SVG path definition,
                     // which Highcharts handles internally but doesn't expose in its public types.
-                    (point as unknown as { shapeArgs: PathShapeArgs }).shapeArgs = {
-                        d: [
-                            "M",
-                            x + rTopLeft,
-                            y,
-                            "L",
-                            x + w - rTopRight,
-                            y,
-                            "C",
-                            x + w - rTopRight / 2,
-                            y,
-                            x + w,
-                            y + rTopRight / 2,
-                            x + w,
-                            y + rTopRight,
-                            "L",
-                            x + w,
-                            y + h - rBottomRight,
+                    const path: Highcharts.SVGPathArray = [
+                        ["M", x + rTopLeft, y],
+                        ["L", x + w - rTopRight, y],
+                        ["C", x + w - rTopRight / 2, y, x + w, y + rTopRight / 2, x + w, y + rTopRight],
+                        ["L", x + w, y + h - rBottomRight],
+                        [
                             "C",
                             x + w,
                             y + h - rBottomRight / 2,
@@ -153,28 +121,17 @@ export function eBayColumns(highcharts: typeof Highcharts): void {
                             y + h,
                             x + w - rBottomRight,
                             y + h,
-                            "L",
-                            x + rBottomLeft,
-                            y + h,
-                            "C",
-                            x + rBottomLeft / 2,
-                            y + h,
-                            x,
-                            y + h - rBottomLeft / 2,
-                            x,
-                            y + h - rBottomLeft,
-                            "L",
-                            x,
-                            y + rTopLeft,
-                            "C",
-                            x,
-                            y + rTopLeft / 2,
-                            x + rTopLeft / 2,
-                            y,
-                            x + rTopLeft,
-                            y,
-                            "Z",
                         ],
+                        ["L", x + rBottomLeft, y + h],
+                        ["C", x + rBottomLeft / 2, y + h, x, y + h - rBottomLeft / 2, x, y + h - rBottomLeft],
+                        ["L", x, y + rTopLeft],
+                        ["C", x, y + rTopLeft / 2, x + rTopLeft / 2, y, x + rTopLeft, y],
+                        ["Z"],
+                    ];
+
+                    (point as unknown as { shapeArgs: Highcharts.SVGAttributes }).shapeArgs = {
+                        ...shapeArgs,
+                        d: path,
                     };
                 }
             },

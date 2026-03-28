@@ -1,39 +1,32 @@
 import type Highcharts from "highcharts";
 
-/**
- * Extended Legend item with legendSymbol property used by the ebayLegend extension.
- * Highcharts internally adds legendSymbol to series/point items but it's not
- * in the public type definitions.
- */
-interface LegendItemWithSymbol {
+type LegendColorizeItem = (Highcharts.Point | Highcharts.Series) & {
     borderWidth?: number;
     legendSymbol?: Highcharts.SVGElement;
-    options: {
-        borderColor?: string;
-    };
-}
-
-type HighchartsStatic = typeof Highcharts;
+};
 
 /**
  * Wraps the Legend.colorizeItem method to render crisper legend symbol borders.
  * This makes legend swatches display with sharp pixel-aligned borders that
  * match the series borderColor.
  */
-export function ebayLegend(highcharts: HighchartsStatic): void {
+export function ebayLegend(highcharts: typeof Highcharts): void {
     highcharts.wrap(
         highcharts.Legend.prototype,
         "colorizeItem",
         function (
             this: Highcharts.Legend,
             proceed: (...args: unknown[]) => void,
-            item: LegendItemWithSymbol,
+            item: LegendColorizeItem,
             visible: boolean,
         ) {
             const width = highcharts.pick(item.borderWidth, 1),
                 crisp = -(width % 2) / 2;
+            const borderColor = (item.options as { borderColor?: Highcharts.SVGAttributes["stroke"] } | undefined)
+                ?.borderColor;
 
-            proceed.apply(this, [].slice.call(args, 1));
+            // eslint-disable-next-line prefer-rest-params
+            proceed.apply(this, [].slice.call(arguments, 1));
 
             if (item.legendSymbol) {
                 if (visible) {
@@ -41,7 +34,7 @@ export function ebayLegend(highcharts: HighchartsStatic): void {
                         "stroke-width": width,
                         translateX: crisp,
                         translateY: crisp,
-                        stroke: item.options.borderColor,
+                        stroke: borderColor,
                     });
                 }
             }
