@@ -1,4 +1,4 @@
-# EbayToastDialog
+# EbayToast
 
 ## Documentation
 

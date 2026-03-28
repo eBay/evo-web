@@ -85,8 +85,7 @@ or import styles using SCSS/CSS
         overlayStyle: {
             description:
                 "Style object to customize default values for the overlay. It can be used all CSS properties like `top`, `left`, `bottom`, `right`.",
-            options: ["top", "left", "bottom", "right"],
-            control: { type: "select" },
+            control: { type: "object" },
         },
         noHover: { description: "disable hover (and only use focus) to open the tooltip", control: "boolean" },
         onExpand: { description: "overlay has been expanded", action: "onExpand", table: { category: "Events" } },

@@ -42,14 +42,12 @@ import { EbayImagePlaceholder } from "@ebay/ui-core-react/ebay-image-placeholder
 
 \`\`\`jsx harmony
 import "@ebay/skin/icon";
-import "@ebay/skin/star-rating";
 \`\`\`
 
 or import styles using SCSS/CSS
 
 \`\`\`css
 @import "@ebay/skin/icon.css";
-@import "@ebay/skin/star-rating.css";
 \`\`\``,
             },
         },

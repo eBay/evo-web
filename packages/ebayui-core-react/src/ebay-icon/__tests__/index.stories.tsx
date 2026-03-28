@@ -30,14 +30,12 @@ import "@ebay/skin/icon";
 
 \`\`\`jsx harmony
 import "@ebay/skin/icon";
-import "@ebay/skin/star-rating";
 \`\`\`
 
 or import styles using SCSS/CSS
 
 \`\`\`css
 @import "@ebay/skin/icon.css";
-@import "@ebay/skin/star-rating.css";
 \`\`\`
 ### Add the \`EbayIconProvider\`
 
