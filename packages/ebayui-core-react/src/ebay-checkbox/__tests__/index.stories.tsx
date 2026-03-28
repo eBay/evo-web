@@ -51,7 +51,7 @@ or import styles using SCSS/CSS
         size: {
             description:
                 "Either `large` or `regular` (default). Sets the checkbox icon size. For mweb this should be set to `large`. (Note: The dimensions of the radio will not change, but only the icon)",
-            options: ["large", "regular", "large"],
+            options: ["regular", "large"],
             control: { type: "select" },
         },
         disabled: { control: "boolean" },
