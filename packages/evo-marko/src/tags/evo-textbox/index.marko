@@ -9,7 +9,7 @@ export interface Input extends Marko.HTML.Input {
     prefixText?: Marko.AttrTag<Marko.HTML.Span>;
     postfixText?: Marko.AttrTag<Marko.HTML.Span>;
     postfixIcon?: Marko.AttrTag<Marko.HTML.Button & {
-        "aria-label"?: string;
+        a11yText?: string;
     }>;
     invalid?: boolean;
     autocorrect?: Marko.HTML.TextArea["autocorrect"];
@@ -108,8 +108,10 @@ export interface Input extends Marko.HTML.Input {
             <span ...postfixText id=postfixId/>
         </if>
         <if=displayIcon && postfixIcon>
-            <${postfixIcon["aria-label"] && "button"}
-                ...postfixIcon
+            <const/{ a11yText, ...postfixIconInput }=postfixIcon>
+            <${a11yText && "button"}
+                ...postfixIconInput
+                aria-label=a11yText
                 class=["icon-btn", "icon-btn--transparent", postfixIcon.class]
                 type="button"
                 disabled=disabled>

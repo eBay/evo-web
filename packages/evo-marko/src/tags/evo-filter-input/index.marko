@@ -1,7 +1,7 @@
 import type { Input as TextboxInput } from "../evo-textbox/index.marko";
 export interface Input extends Omit<TextboxInput, "size"> {
     size?: "large" | "small";
-    a11yClearButton?: string;
+    a11yClearButtonText?: string;
     a11yControlsId: string;
     placeholder: NonNullable<TextboxInput["placeholder"]>
 }
@@ -9,7 +9,7 @@ export interface Input extends Omit<TextboxInput, "size"> {
 <const/{
     class: inputClass,
     placeholder = "Filter",
-    a11yClearButton,
+    a11yClearButtonText,
     a11yControlsId,
     size,
     ...htmlInput
@@ -26,9 +26,9 @@ export interface Input extends Omit<TextboxInput, "size"> {
             <evo-icon-search-16/>
         </@prefixIcon>
         <@postfixIcon>
-            <if=a11yClearButton>
+            <if=a11yClearButtonText>
                 <evo-icon-button
-                    a11yText=a11yClearButton
+                    a11yText=a11yClearButtonText
                     class="filter-input__clear-btn"
                     size="small"
                     transparent

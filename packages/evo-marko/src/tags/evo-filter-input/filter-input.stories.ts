@@ -25,7 +25,7 @@ export default {
       control: "inline-radio",
       description: "Size variants. Controls the height of the component.",
     },
-    a11yClearButton: {
+    a11yClearButtonText: {
       type: "string",
       control: "text",
       description:

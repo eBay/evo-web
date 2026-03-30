@@ -8,11 +8,9 @@ export interface Input extends AccordionInput<number> {}
     <label>
       <input
         type="radio"
-        value=i + ""
-        checkedValue=open + ""
-        checkedValueChange(o) {
-          open = +o;
-        }>
+        name="accordion-control"
+        value=i
+        checkedValue:parseInt:=open>
       ${" "}${i}
     </label>
   </for>

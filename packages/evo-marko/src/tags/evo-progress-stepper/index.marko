@@ -10,7 +10,7 @@ export interface Input extends Marko.HTML.Div {
     direction?: "row" | "column";
     step?: Marko.AttrTag<Step>;
     defaultState?: "active" | "complete" | "upcoming" | "attention" | "current";
-    a11yHeadingAs?: keyof Marko.NativeTags;
+    headingAs?: keyof Marko.NativeTags;
     /**
      * The clipped text that describes the heading for the progress stepper
      * 
@@ -25,7 +25,7 @@ export interface Input extends Marko.HTML.Div {
     direction,
     defaultState,
     class: inputClass,
-    a11yHeadingAs = "h2",
+    headingAs = "h2",
     a11yHeadingText = "Progress",
     stepContentAs = "p",
     ...htmlInput
@@ -52,7 +52,7 @@ export interface Input extends Marko.HTML.Div {
     ]
     aria-labelledby=stepperHeading
     ...htmlInput>
-    <${a11yHeadingAs} id=stepperHeading class="clipped">
+    <${headingAs} id=stepperHeading class="clipped">
         ${a11yHeadingText}
     </>
 

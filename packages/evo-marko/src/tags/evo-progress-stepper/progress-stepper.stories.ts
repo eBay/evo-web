@@ -65,7 +65,7 @@ export default {
       description:
         "If complete, then all items will be in complete state by default. If upcoming, all items will be in upcoming state. If attention, then the current item will show as blocked. Otherwise, the default (active), will change items based on the `current` item (current defaults to first step if not set).",
     },
-    a11yHeadingAs: {
+    headingAs: {
       type: "string",
       control: "text",
       description:

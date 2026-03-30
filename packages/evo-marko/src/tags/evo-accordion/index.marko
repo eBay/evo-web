@@ -6,10 +6,8 @@ export interface Input<Open extends number | number[] | undefined>
      * The `aria-roledescription` of the list
      *
      * English default to be overridden is `"accordion"`
-     * 
-     * Pass `null` explicitly _only_ if alternative accessibility information is present
      */
-    a11yText: string | null;
+    a11yText: string;
     details?: Marko.AttrTag<
         Omit<DetailsInput, "size" | "alignment" | "open" | "openChange">
     >;

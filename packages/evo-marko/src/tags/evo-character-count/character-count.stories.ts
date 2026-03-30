@@ -38,18 +38,18 @@ export default {
       description:
         "Maximum number of characters allowed in the input, we allow users to go over this limit but `aria-live` should be set to `polite`.",
     },
-    clippedText: {
+    a11yText: {
       type: "string",
       control: "text",
       description:
-        "With default body content, clipped text should be provided after the character count for screen readers to announce.",
+        'Clipped text for screen readers, announced after the character count. Often something like "characters remaining". May be set to `null` only if accessibility is provided through other means.',
     },
   },
 } satisfies Meta<Input>;
 
 export const Default = buildExtensionTemplate(IsolatedTemplate, IsolatedCode, {
   string: "Hello world",
-  clippedText: "characters remaining",
+  a11yText: "characters remaining",
   max: 120,
 });
 

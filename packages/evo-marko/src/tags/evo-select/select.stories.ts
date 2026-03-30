@@ -53,7 +53,7 @@ export default {
     borderless: {
       type: "boolean",
       control: "boolean",
-      description: "Removes borders of the button.s",
+      description: "Removes borders of the button",
     },
     fluid: {
       type: "boolean",

@@ -6,8 +6,6 @@ import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
 import ControlledCode from "./examples/controlled.marko?raw";
-import ControlledAdvancedTemplate from "./examples/controlled-advanced.marko";
-import ControlledAdvancedCode from "./examples/controlled-advanced.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-accordion",
@@ -68,9 +66,4 @@ export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 export const Controlled = buildExtensionTemplate(
   ControlledTemplate,
   ControlledCode,
-);
-
-export const ControlledAdvanced = buildExtensionTemplate(
-  ControlledAdvancedTemplate,
-  ControlledAdvancedCode,
 );

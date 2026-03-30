@@ -1,7 +1,7 @@
 export interface Input {
     value?: string;
     max?: number;
-    clippedText?: string;
+    a11yText?: string | null;
 }
 <const/{ max = 120 }=input>
 <let/value=input.value || "">
