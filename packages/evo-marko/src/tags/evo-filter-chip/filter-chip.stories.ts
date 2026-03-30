@@ -38,12 +38,12 @@ export default {
       description: "The leading icon. Only used for default variant",
       "@": {},
     },
-    img: {
+    image: {
       description: "The leading image. Only used for expressive variant",
       "@": {
         ["<img> attributes" as any]: {
           description:
-            "All attributes and event handlers from [the native HTML `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@img>`",
+            "All attributes and event handlers from [the native HTML `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@image>`",
         },
       },
     },

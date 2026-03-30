@@ -47,14 +47,14 @@ export default {
       control: "boolean",
       description: "Disables the interactive elements of the card.",
     },
-    img: {
+    image: {
       type: { name: "object", value: {}, required: true },
       description:
         "The top image tag. Will be passed as attributes to the `<img>` tag.",
       "@": {
         ["<img> attributes" as any]: {
           description:
-            "All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@img>`.",
+            "All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@image>`.",
         },
       },
     },

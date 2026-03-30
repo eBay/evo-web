@@ -3,7 +3,7 @@ export interface Input extends Marko.HTML.Button {
     pressedChange?: (pressed: boolean) => void;
     layoutType?: "minimal" | "list" | "gallery";
     icon?: Marko.AttrTag<Marko.HTML.Span>;
-    img?: Marko.AttrTag<{
+    image?: Marko.AttrTag<{
         src: string;
         alt: string;
         fillPlacement?: string;
@@ -14,7 +14,7 @@ export interface Input extends Marko.HTML.Button {
 <const/{
     class: inputClass,
     icon,
-    img,
+    image,
     layoutType,
     pressed: inputPressed,
     pressedChange,
@@ -44,16 +44,16 @@ export interface Input extends Marko.HTML.Button {
     <if=icon>
         <span ...icon class=["toggle-button__icon", icon.class]/>
     </if>
-    <else if=img>
+    <else if=image>
         <span class="toggle-button__image-container">
-            <if=img.fillPlacement>
+            <if=image.fillPlacement>
                 <span
                     role="img"
-                    aria-label=img.alt
+                    aria-label=image.alt
                     class="toggle-button__image"
                     style={
-                        "background-image": `url(${img.src})`,
-                        "background-position": img.fillPlacement || "center",
+                        "background-image": `url(${image.src})`,
+                        "background-position": image.fillPlacement || "center",
                         "background-size": "cover",
                         "background-repeat": "no-repeat",
                     }
@@ -61,7 +61,7 @@ export interface Input extends Marko.HTML.Button {
             </if>
             <else>
                 <span class="toggle-button__image">
-                    <img src=img.src alt=img.alt>
+                    <img src=image.src alt=image.alt>
                 </span>
             </else>
         </span>

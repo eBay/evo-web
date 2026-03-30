@@ -45,7 +45,7 @@ export default {
         },
       },
     },
-    img: {
+    image: {
       description:
         "An optional image. May be used when `<@icon>` is _not_ present",
       "@": {

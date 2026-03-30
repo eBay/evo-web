@@ -5,7 +5,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
     username?: string;
     color?: string;
     size?: Size | `${Size}`;
-    img?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
+    image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
     knownAspectRatio?: number;
     /**
      * The `aria-label` of the avatar
@@ -21,7 +21,7 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
     class: inputClass,
     size,
     color,
-    img,
+    image,
     username,
     content,
     knownAspectRatio,
@@ -46,15 +46,15 @@ export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
         imagePlacement === "fit" && "avatar--fit",
         inputClass,
         size && `avatar--${size}`,
-        username && !img && `avatar--${getColorForText(username, color)}`,
+        username && !image && `avatar--${getColorForText(username, color)}`,
     ]>
-    <if=img>
+    <if=image>
         <img
-            ...img
+            ...image
             alt=""
             onLoad(_, el) {
                 aspectRatio = el.naturalWidth / el.naturalHeight;
-                img.onLoad && img.onLoad(_, el);
+                image.onLoad && image.onLoad(_, el);
             }
         >
     </if>
