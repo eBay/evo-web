@@ -32,7 +32,7 @@ export interface Input<Index extends number | string>
     prefixLabel?: string;
     postfixLabel?: string;
     collapseOnSelect?: boolean;
-    buttonDescribedBy?: string;
+    a11yDescribedBy?: string;
 }
 <const/{
     name,
@@ -59,7 +59,7 @@ export interface Input<Index extends number | string>
     hasError,
     strategy,
     split,
-    buttonDescribedBy,
+    a11yDescribedBy,
     a11ySelectedText = "selected",
     onKeyDown,
     onFocusOut,
@@ -121,7 +121,7 @@ export interface Input<Index extends number | string>
         disabled=disabled
         name=buttonName
         aria-haspopup="listbox"
-        aria-describedby=buttonDescribedBy
+        aria-describedby=a11yDescribedBy
         aria-labelledby=prefixId ? `${prefixId} ${labelId}` : labelId
         aria-invalid=invalid && "true"
         aria-expanded=expander.ariaExpanded

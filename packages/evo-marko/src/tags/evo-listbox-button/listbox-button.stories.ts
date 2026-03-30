@@ -168,6 +168,12 @@ export default {
         "Localized text to be read by screen readers when an option is selected",
       table: { defaultValue: { summary: "selected" } },
     },
+    a11yDescribedBy: {
+      type: "string",
+      control: "text",
+      description:
+        "The id of an element that describes the listbox button, applied as `aria-describedby` on the button.",
+    },
     prefixLabel: {
       type: "string",
       control: "text",
