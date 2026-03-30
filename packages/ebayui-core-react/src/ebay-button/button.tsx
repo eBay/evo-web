@@ -14,6 +14,7 @@ import { Priority, Size, BodyState, Variant, Split } from "./types";
 import { EbayIcon } from "../ebay-icon";
 import EbayButtonLoading from "./button-loading";
 import EbayButtonExpand from "./button-expand";
+import EbayButtonText from "./button-text";
 
 export type EbayButtonProps = {
     fluid?: boolean;
@@ -31,6 +32,7 @@ export type EbayButtonProps = {
     forwardedRef?: RefObject<HTMLAnchorElement & HTMLButtonElement>;
     borderless?: boolean;
     fixedHeight?: boolean;
+    wrapText?: boolean;
 };
 
 type Props = ComponentProps<"button"> & ComponentProps<"a"> & EbayButtonProps;
@@ -54,6 +56,7 @@ const EbayButton: FC<Props> = ({
     forwardedRef,
     borderless,
     fixedHeight,
+    wrapText = false,
     ...rest
 }) => {
     const classPrefix = href ? "fake-btn" : "btn";
@@ -99,7 +102,7 @@ const EbayButton: FC<Props> = ({
         }
     };
 
-    const bodyContent = getBodyContent(children, { isLoading, isExpand });
+    const bodyContent = getBodyContent(children, { isLoading, isExpand, wrapText });
     const ariaLive = isLoading ? `polite` : null;
 
     return href ? (
@@ -131,16 +134,17 @@ const EbayButton: FC<Props> = ({
 type bodyContentOptions = {
     isLoading: boolean;
     isExpand: boolean;
+    wrapText: boolean;
 };
 
-function getBodyContent(children: ReactNode, { isLoading, isExpand }: bodyContentOptions) {
+function getBodyContent(children: ReactNode, { isLoading, isExpand, wrapText }: bodyContentOptions) {
     switch (true) {
         case isLoading:
             return <EbayButtonLoading />;
         case isExpand:
             return <EbayButtonExpand>{children}</EbayButtonExpand>;
         default:
-            return children;
+            return wrapText ? Children.map(children, (child) => <EbayButtonText>{child}</EbayButtonText>) : children;
     }
 }
 

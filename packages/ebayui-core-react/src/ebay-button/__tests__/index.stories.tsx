@@ -106,6 +106,9 @@ or import styles using SCSS/CSS
         },
         borderless: { description: "shows button without border", control: "boolean" },
         fixedHeight: { description: "fixes the height based on `size`", control: "boolean" },
+        wrapText: {
+            description: "wraps each child in a `btn__text` span element",
+        },
         onClick: {
             description: "click or action key pressed (`Space` / `Enter`)",
             action: "onClick",
