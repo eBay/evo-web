@@ -79,9 +79,17 @@ const strokeColorMapping: Highcharts.ColorString[] = [
     chartQuaternaryStrokeColor,
 ];
 
+/**
+ * Extends PointOptionsObject to include `lineColor`, which Highcharts uses
+ * internally for pie slice border strokes but does not expose in its public types.
+ */
+interface PiePointOptions extends Highcharts.PointOptionsObject {
+    lineColor?: Highcharts.ColorType;
+}
+
 type DonutColorEntry = {
     lineColor: Highcharts.ColorType;
-    borderColor: string;
+    borderColor: Highcharts.ColorType;
 };
 
 const donutColorMapping: DonutColorEntry[] = [
@@ -97,11 +105,11 @@ const donutColorMapping: DonutColorEntry[] = [
  * lineColors to be used as the chart-level colors option.
  */
 export function setDonutColors(series: Highcharts.SeriesPieOptions): Highcharts.ColorType[] {
-    const data = series.data as Highcharts.PointOptionsObject[];
+    const data = series.data as PiePointOptions[];
     data.forEach((item, index) => {
         const colorEntry = donutColorMapping[index % donutColorMapping.length];
-        (item as Record<string, unknown>).lineColor = colorEntry.lineColor;
-        (item as Record<string, unknown>).borderColor = colorEntry.borderColor;
+        item.lineColor = colorEntry.lineColor;
+        item.borderColor = colorEntry.borderColor;
     });
     return donutColorMapping.map((c) => c.lineColor);
 }
