@@ -1,4 +1,5 @@
 import type Highcharts from "highcharts";
+import { escapeHtml } from "../common/charts/shared";
 import type { BarChartDataPoint } from "./types";
 
 interface BarChartTooltipPropsStacked {
@@ -16,15 +17,6 @@ interface BarChartTooltipPropsNonStacked {
 }
 
 type BarChartTooltipProps = BarChartTooltipPropsStacked | BarChartTooltipPropsNonStacked;
-
-function escapeHtml(value: string): string {
-    return value
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-}
 
 /**
  * Generates the HTML string for the bar chart tooltip.
