@@ -6,5 +6,5 @@ export interface LegendItem {
 }
 
 export type EbayChartLegendProps = ComponentProps<"div"> & {
-    item: LegendItem[];
+    items: LegendItem[];
 };

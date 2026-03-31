@@ -29,7 +29,7 @@ vi.mock("../../common/charts/donut", () => ({
 
 vi.mock("../../ebay-chart-legend", () => ({
     EbayChartLegend: vi.fn((props: Record<string, unknown>) => (
-        <div data-testid="chart-legend" data-items={JSON.stringify(props.item)} />
+        <div data-testid="chart-legend" data-items={JSON.stringify(props.items)} />
     )),
 }));
 

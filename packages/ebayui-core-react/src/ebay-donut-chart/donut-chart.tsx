@@ -122,7 +122,7 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
                         <Chart highcharts={highcharts} options={chartOptions} />
                     </div>
                     <div className="donut-chart__legend">
-                        <EbayChartLegend item={legendItems} />
+                        <EbayChartLegend items={legendItems} />
                     </div>
                 </div>
             </div>

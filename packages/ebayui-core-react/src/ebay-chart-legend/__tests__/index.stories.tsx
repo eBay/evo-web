@@ -23,7 +23,7 @@ import { EbayChartLegend } from "@ebay/ui-core-react/ebay-chart-legend";
 
 \`\`\`jsx
 <EbayChartLegend
-    item={[
+    items={[
         { name: "Electronics", value: "$12,345" },
         { name: "Fashion", value: "$8,762" },
         { name: "Home & Garden", value: "$5,431" },
@@ -34,7 +34,7 @@ import { EbayChartLegend } from "@ebay/ui-core-react/ebay-chart-legend";
         },
     },
     argTypes: {
-        item: {
+        items: {
             description:
                 "Array of legend items. Each item has a `name` (string) and `value` (string, number, or undefined) to display.",
             control: "object",
@@ -58,25 +58,25 @@ const sampleItems: LegendItem[] = [
 
 export const Default: StoryObj<EbayChartLegendProps> = {
     args: {
-        item: sampleItems,
+        items: sampleItems,
     },
 };
 
 export const TwoItems: StoryObj<EbayChartLegendProps> = {
     args: {
-        item: sampleItems.slice(0, 2),
+        items: sampleItems.slice(0, 2),
     },
 };
 
 export const SingleItem: StoryObj<EbayChartLegendProps> = {
     args: {
-        item: [{ name: "Total Sales", value: "$42,000" }],
+        items: [{ name: "Total Sales", value: "$42,000" }],
     },
 };
 
 export const WithNumericValues: StoryObj<EbayChartLegendProps> = {
     args: {
-        item: [
+        items: [
             { name: "Series A", value: 4200 },
             { name: "Series B", value: 3100 },
             { name: "Series C", value: 1800 },
