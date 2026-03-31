@@ -42,7 +42,6 @@ interface EbayColumnPrototype {
 declare module "highcharts" {
     interface SeriesTypeRegistry {
         column: { prototype: EbayColumnPrototype };
-        [key: string]: { prototype: EbayColumnPrototype };
     }
     const seriesTypes: SeriesTypeRegistry;
 }

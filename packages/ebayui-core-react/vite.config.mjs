@@ -63,6 +63,13 @@ export default defineConfig({
         globals: true,
         environment: "jsdom",
         setupFiles: ["./test.setup.ts"],
+        server: {
+            deps: {
+                // @highcharts/react and highcharts are ESM packages marked external by nodeExternals().
+                // Inline them so Vitest can resolve them (mocked in chart tests).
+                inline: ["@highcharts/react", "highcharts"],
+            },
+        },
         environmentOptions: {
             jsdom: {
                 resources: "usable",

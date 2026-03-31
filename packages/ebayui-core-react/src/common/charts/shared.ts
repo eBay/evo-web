@@ -2,6 +2,13 @@ import type Highcharts from "highcharts";
 
 export const chartFontFamily = '"Market Sans", Arial, sans-serif',
     backgroundColor = "var(--color-background-primary)",
+    lineChartPrimaryColor = "var(--color-data-viz-line-chart-primary)",
+    lineChartSecondaryColor = "var(--color-data-viz-line-chart-secondary)",
+    lineChartTertiaryColor = "var(--color-data-viz-line-chart-tertiary)",
+    lineChartQueternaryColor = "var(--color-data-viz-line-chart-queternary)",
+    lineChartQuinaryColor = "var(--color-data-viz-line-chart-quinary)",
+    trendPositiveColor = "var(--color-data-viz-trend-positive)",
+    trendNegativeColor = "var(--color-data-viz-trend-negative)",
     gridColor = "var(--color-data-viz-grid)",
     labelsColor = "var(--color-foreground-secondary)",
     legendColor = "var(--color-foreground-primary)",
@@ -62,6 +69,59 @@ const strokeColorMapping: Highcharts.ColorString[] = [
     chartQuaternaryStrokeColor,
     chartQuaternaryStrokeColor,
 ];
+
+type DonutColorEntry = {
+    lineColor: Highcharts.ColorType;
+    borderColor: string;
+};
+
+const donutColorMapping: DonutColorEntry[] = [
+    { lineColor: chartPrimaryColor, borderColor: chartPrimaryColor },
+    { lineColor: chartSecondaryColor, borderColor: chartSecondaryColor },
+    { lineColor: patternTertiary, borderColor: chartTertiaryStrokeColor },
+    { lineColor: patternQuaternary, borderColor: chartQuaternaryStrokeColor },
+    { lineColor: chartQuinaryBackgroundColor, borderColor: chartQuinaryStrokeColor },
+];
+
+/**
+ * Sets up the colors on each donut slice data point and returns an array of
+ * lineColors to be used as the chart-level colors option.
+ */
+export function setDonutColors(series: Highcharts.SeriesPieOptions): Highcharts.ColorType[] {
+    const data = series.data as Highcharts.PointOptionsObject[];
+    data.forEach((item, index) => {
+        const colorEntry = donutColorMapping[index % donutColorMapping.length];
+        (item as Record<string, unknown>).lineColor = colorEntry.lineColor;
+        (item as Record<string, unknown>).borderColor = colorEntry.borderColor;
+    });
+    return donutColorMapping.map((c) => c.lineColor);
+}
+
+/**
+ * Sets up the marker styles and z-index on each series.
+ * Used by area and line charts to configure circular point markers.
+ */
+export function setSeriesMarkerStyles(series: Highcharts.SeriesOptions[]): void {
+    series.forEach((s, i) => {
+        s.zIndex = series.length - i;
+        (s as Highcharts.SeriesAreasplineOptions).marker = {
+            symbol: "circle",
+            lineWidth: 1,
+            fillColor: "black",
+            lineColor: "white",
+            states: {
+                hover: {
+                    animation: { duration: 0 },
+                    radius: 4,
+                    lineWidth: 2,
+                },
+                normal: {
+                    animation: false,
+                },
+            },
+        };
+    });
+}
 
 /**
  * Sets up the colors including lineColor (SVG stroke) on each of the series objects
