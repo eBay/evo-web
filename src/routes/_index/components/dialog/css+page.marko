@@ -665,4 +665,101 @@ import tbLandscapeImg from "/img/tb-landscape-pic.jpg";
       </div>
     </dialog>
   </highlight-code>
+
+  <h3 id="dialog-expressive-prev">
+    Expressive Dialog with Previous Button
+  </h3>
+  <p>
+    When a previous button is included in an expressive dialog, both the previous
+    and close buttons will overlap the banner image.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <button class="btn btn--primary" type="button">
+        Open Expressive Dialog
+      </button>
+      <dialog
+        aria-labelledby="dialog-title-expressive-prev"
+        class="dialog dialog--expressive">
+        <div
+          class="dialog__image"
+          style={
+            "background-image": `url('${tbLandscapeImg}')`,
+          }/>
+        <div class="dialog__header">
+          <button
+            aria-label="Go back"
+            class="icon-btn dialog__prev"
+            type="button">
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+              height="16"
+              width="16">
+              <icon-symbol name="chevron-left-16"/>
+            </svg>
+          </button>
+          <h2 id="dialog-title-expressive-prev" class="large-text-1 bold-text">
+            Dialog
+          </h2>
+          <button
+            aria-label="Close dialog"
+            class="icon-btn dialog__close"
+            type="button">
+            <svg
+              aria-hidden="true"
+              class="icon icon--16"
+              height="16"
+              width="16">
+              <icon-symbol name="close-16"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dialog__main">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </dialog>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <dialog aria-labelledby="dialog-title" class="dialog dialog--expressive">
+      <div
+        class="dialog__image"
+        style="background-image:url(/img/tb-landscape-pic.jpg)"/>
+      <div class="dialog__header">
+        <button
+          aria-label="Go back"
+          class="icon-btn dialog__prev"
+          type="button">
+          <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
+            <use href="#icon-chevron-left-16"/>
+          </svg>
+        </button>
+        <h2 id="dialog-title" class="large-text-1 bold-text">
+          Heading
+        </h2>
+        <button
+          aria-label="Close dialog"
+          class="icon-btn dialog__close"
+          type="button">
+          <svg aria-hidden="true" class="icon icon--16" height="16" width="16">
+            <use href="#icon-close-16"/>
+          </svg>
+        </button>
+      </div>
+      <div class="dialog__main">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </dialog>
+  </highlight-code>
 </div>

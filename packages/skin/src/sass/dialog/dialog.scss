@@ -87,7 +87,7 @@ body:has(.dialog[open]) {
 .dialog__header {
     display: flex;
     flex-shrink: 0;
-    padding: var(--spacing-200) var(--spacing-200) 0;
+    margin: var(--spacing-200) var(--spacing-200) 0;
     position: relative;
 
     h1,
@@ -150,8 +150,39 @@ body:has(.dialog[open]) {
     margin-top: 218px;
 }
 
+/* inherits from .icon-btn */
+button.icon-btn.dialog__prev,
+button.icon-btn.dialog__close {
+    align-self: flex-start;
+    border: 0;
+    flex-shrink: 0;
+    height: 32px;
+    min-width: 32px;
+    position: relative;
+    width: 32px;
+    z-index: 1;
+}
+
 button.icon-btn.dialog__prev {
     margin-inline-end: var(--spacing-200);
+}
+
+.dialog--expressive button.icon-btn.dialog__prev,
+.dialog--expressive button.icon-btn.dialog__close {
+    margin: 0;
+}
+
+.dialog--expressive button.icon-btn.dialog__prev + * {
+    margin-left: -32px;
+}
+
+.dialog--expressive .dialog__header {
+    margin: var(--spacing-300) var(--spacing-300) 0;
+}
+
+.dialog--expressive .dialog__main,
+.dialog--expressive .dialog__footer {
+    padding: var(--spacing-200) var(--spacing-300);
 }
 
 .dialog[open] {

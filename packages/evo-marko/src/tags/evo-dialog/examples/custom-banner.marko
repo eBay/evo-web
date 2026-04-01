@@ -1,0 +1,30 @@
+import { type Input as DialogInput } from "<evo-dialog>";
+export interface Input extends DialogInput {}
+
+<style>
+    .banner-demo {
+        background: linear-gradient(90deg, #2f7ede, #17a7ce);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+</style>
+
+<let/open:=input.open>
+
+<evo-button onClick() { open = true; }>
+    Open Dialog With Custom Banner
+</evo-button>
+
+<evo-dialog ...input open:=open>
+    <@banner class="banner-demo">
+        Custom Banner
+    </@banner>
+    <@header>Dialog Title</@header>
+    <@close a11yText="Close Dialog"/>
+    <@previous a11yText="Back"/>
+    <p>This dialog uses a custom body inside the banner slot instead of a background image.</p>
+</evo-dialog>

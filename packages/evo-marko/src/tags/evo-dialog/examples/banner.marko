@@ -1,0 +1,18 @@
+import { type Input as DialogInput } from "<evo-dialog>";
+export interface Input extends DialogInput {}
+
+<let/open:=input.open>
+
+<evo-button onClick() { open = true; }>
+    Open Dialog With Banner
+</evo-button>
+
+<evo-dialog ...input open:=open>
+    <@banner
+        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-landscape-pic.jpg"
+        position="top"
+    />
+    <@header>Dialog Title</@header>
+    <@close a11yText="Close Dialog"/>
+    <p>This dialog uses a banner image via the src attribute.</p>
+</evo-dialog>

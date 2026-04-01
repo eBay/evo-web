@@ -1,0 +1,15 @@
+import { type Input as DialogInput } from "<evo-dialog>";
+export interface Input extends DialogInput {}
+
+<let/open:=input.open>
+
+<evo-button onClick() { open = true; }>
+    Open Dialog
+</evo-button>
+
+<log=input>
+<evo-dialog ...input open:=open>
+    <@header>Dialog Title</@header>
+    <@close a11yText="Close Dialog"/>
+    <p>This is the default dialog content.</p>
+</evo-dialog>

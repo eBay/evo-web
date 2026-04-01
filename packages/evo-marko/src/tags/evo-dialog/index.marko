@@ -1,35 +1,123 @@
-<!-- NOTE, this is not a full implementation but only here so the code is not lost -->
-<let/open = false>
-<let/visible = false>
+import { type Input as IconButtonInput } from "<evo-icon-button>";
+
+static const validSizes = ["wide", "narrow", "large"] as const;
+
+export interface Input extends Marko.HTML.Dialog {
+  open?: boolean;
+  openChange?: (o: boolean) => void;
+  size?: (typeof validSizes)[number];
+  banner?: Marko.AttrTag<
+    Marko.Input<"div"> & {
+      src?: string;
+      position?: Marko.CSS.Properties["background-position"];
+    }
+  >;
+  header: Marko.AttrTag<Marko.Input<"h2"> & { as?: string }>;
+  footer?: Marko.AttrTag<Marko.Input<"div">>;
+  close: Marko.AttrTag<IconButtonInput>;
+  previous?: Marko.AttrTag<IconButtonInput>;
+}
+
+<const/{
+  open: inputOpen,
+  openChange,
+  class: inputClass,
+  size,
+  banner,
+  header,
+  footer,
+  close,
+  previous,
+  content,
+  "aria-labelledby": inputLabelledBy,
+  closedby = "any",
+  onCancel,
+  onAnimationEnd,
+  ...htmlInput
+}=input>
+
+<let/open:=input.open>
+<id/headerId=header.id>
 <script>
   if (open) {
     $dialog().showModal();
-    visible = true;
-  } else {
-    if (visible) {
-      $dialog().classList.add("dialog-close");
-      $dialog().addEventListener(
-        "animationend",
-        () => {
-          $dialog().close();
-          visible = false;
-          $dialog().classList.remove("dialog-close");
-        },
-        {
-          signal: $signal,
-          once: true,
-        },
-      );
-    }
   }
 </script>
 
 <dialog/$dialog
-  class="dialog"
-  // closedby="any"
-  onCancel(e) {
+  ...htmlInput
+  closedby=closedby
+  aria-labelledby=(inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId)
+  class=[
+    "dialog",
+    !open && "dialog--close",
+    size && validSizes.includes(size) && `dialog--${size}`,
+    banner && "dialog--expressive",
+    inputClass,
+  ]
+  onCancel(e, el) {
     e.preventDefault();
     open = false;
+    onCancel && onCancel(e, el);
   }
- ...input>
+  onAnimationEnd(e, el) {
+    if (!open) {
+      el.close();
+    }
+    onAnimationEnd && onAnimationEnd(e, el);
+  }
+>
+  <if=banner>
+    <const/{
+      src: bannerSrc,
+      position: bannerPosition,
+      class: bannerClass,
+      style: bannerStyle,
+      ...bannerInput
+    }=banner>
+    <div
+      ...bannerInput
+      class=["dialog__image", bannerClass]
+      style={
+        ...bannerStyle as Record<string, unknown>,
+        "background-image": bannerSrc && `url(${bannerSrc})`,
+        "background-position": bannerPosition,
+      }
+    />
+  </if>
+  <div class="dialog__header">
+    <if=previous>
+      <evo-icon-button
+        ...previous
+        class=["dialog__prev", previous.class]
+      >
+        <evo-icon-chevron-left-16/>
+      </evo-icon-button>
+    </if>
+    <const/{
+      as: headerAs,
+      ...headerInput
+    }=header>
+    <${headerAs || "h2"}
+      ...headerInput
+      id=headerId
+      class=["dialog__title", headerInput.class]
+    />
+    <evo-icon-button
+      ...close
+      class=["dialog__close", close.class]
+      onClick(e, el) {
+        $dialog().requestClose();
+        close.onClick && close.onClick(e, el);
+      }
+    >
+      <evo-icon-close-16/>
+    </evo-icon-button>
+  </div>
+  <div class="dialog__main">
+    <${content}/>
+  </div>
+  <if=footer>
+    <div ...footer class=["dialog__footer", footer.class]/>
+  </if>
 </dialog>
