@@ -17,7 +17,7 @@ import {
 } from "../common/charts/shared";
 import { ebayLegend } from "../common/charts/legend";
 import { eBayColumns } from "../common/charts/bar-chart";
-import type { ColumnPointInternal, EbayColumnSeriesOptions } from "../common/charts/bar-chart";
+import type { ColumnPointInternal, ColumnSeriesOptions } from "../common/charts/bar-chart";
 import highcharts from "../common/charts/load-highcharts";
 import { barChartTooltipHtml } from "./bar-chart-tooltip";
 import type { EbayBarChartProps, BarChartSeriesItem } from "./types";
@@ -191,7 +191,7 @@ function getColumnPlotOptions(stacked: boolean, description?: string): Highchart
                 let bottomFound = false;
 
                 for (let i = 0; i < chartSeries.length; i++) {
-                    const opts = chartSeries[i].options as EbayColumnSeriesOptions;
+                    const opts = chartSeries[i].options as ColumnSeriesOptions;
                     if (!bottomFound && chartSeries[i].visible) {
                         opts.bottom = true;
                         bottomFound = true;
@@ -201,7 +201,7 @@ function getColumnPlotOptions(stacked: boolean, description?: string): Highchart
                 }
 
                 for (let i = chartSeries.length - 1; i >= 0; i--) {
-                    const opts = chartSeries[i].options as EbayColumnSeriesOptions;
+                    const opts = chartSeries[i].options as ColumnSeriesOptions;
                     if (!topFound && chartSeries[i].visible) {
                         opts.top = true;
                         topFound = true;
@@ -345,7 +345,7 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
                                     top: serie.top,
                                     bottom: serie.bottom,
                                     group: serie.group,
-                                } as EbayColumnSeriesOptions
+                                } as ColumnSeriesOptions
                             }
                         />
                     ))}

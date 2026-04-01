@@ -9,19 +9,21 @@ export interface ColumnPointInternal extends Highcharts.Point {
     shapeType: string;
     shapeY: number;
     dlBox: Highcharts.BBoxObject;
+    // Overwrite read-only shapeArgs
+    shapeArgs: Highcharts.SVGAttributes;
 }
 
 /**
  * Extended column series options with custom top/bottom flags
  * used to control which ends of stacked bars get rounded corners.
  */
-export interface EbayColumnSeriesOptions extends Highcharts.SeriesColumnOptions {
+export interface ColumnSeriesOptions extends Highcharts.SeriesColumnOptions {
     top?: boolean;
     bottom?: boolean;
 }
 
-interface EbayColumnPrototype {
-    options: EbayColumnSeriesOptions;
+interface ColumnSeries {
+    options: ColumnSeriesOptions;
     points: ColumnPointInternal[];
 }
 
@@ -36,7 +38,7 @@ interface EbayColumnPrototype {
  */
 declare module "highcharts" {
     interface SeriesTypeRegistry {
-        column: { prototype: EbayColumnPrototype };
+        column: { prototype: ColumnSeries };
     }
     const seriesTypes: SeriesTypeRegistry;
 }
@@ -50,12 +52,10 @@ declare module "highcharts" {
  * - Non-bottom bars get 4px subtracted from their height to create a visual gap.
  */
 export function eBayColumns(highcharts: typeof Highcharts): void {
-    const seriesTypes = highcharts.seriesTypes;
-
     highcharts.wrap(
-        seriesTypes.column.prototype as unknown as Record<string, unknown>,
+        highcharts.seriesTypes.column.prototype,
         "translate",
-        function (this: EbayColumnPrototype, proceed: () => void) {
+        function (this: ColumnSeries, proceed: () => void) {
             const top = this.options.top,
                 bottom = this.options.bottom;
 
@@ -63,7 +63,7 @@ export function eBayColumns(highcharts: typeof Highcharts): void {
             proceed.call(this);
 
             for (const point of this.points) {
-                const shapeArgs = point.shapeArgs as Highcharts.BBoxObject | undefined;
+                const shapeArgs = point.shapeArgs;
                 if (!shapeArgs) {
                     continue;
                 }
@@ -94,7 +94,8 @@ export function eBayColumns(highcharts: typeof Highcharts): void {
                 if (rBottomRight > maxCornerRadius) rBottomRight = maxCornerRadius;
                 if (rBottomLeft > maxCornerRadius) rBottomLeft = maxCornerRadius;
 
-                point.dlBox = shapeArgs; // data label box for tooltip alignment
+                // @ts-expect-error shapeArgs has [key: string]: any, so it has the missing dlBox properties
+                point.dlBox = shapeArgs;
                 point.shapeY = y;
                 point.shapeType = "path";
                 // Assign the path-based shape args.
@@ -121,7 +122,7 @@ export function eBayColumns(highcharts: typeof Highcharts): void {
                     ["Z"],
                 ];
 
-                (point as unknown as { shapeArgs: Highcharts.SVGAttributes }).shapeArgs = {
+                point.shapeArgs = {
                     ...shapeArgs,
                     d: path,
                 };

@@ -1,13 +1,18 @@
 import type Highcharts from "highcharts";
 
-interface EbayDonutPrototype {
+interface PiePoint extends Highcharts.Point {
+    // Overwrite read-only shapeArgs
+    shapeArgs: Highcharts.SVGAttributes;
+}
+
+interface PieSeries {
     center: number[];
-    points: Array<{ shapeArgs: { start: number; end: number } }>;
+    points: PiePoint[];
 }
 
 declare module "highcharts" {
     interface SeriesTypeRegistry {
-        pie: { prototype: EbayDonutPrototype };
+        pie: { prototype: PieSeries };
     }
 }
 
@@ -16,24 +21,20 @@ declare module "highcharts" {
  * between donut slices.
  */
 export function ebayDonut(highcharts: typeof Highcharts): void {
-    highcharts.wrap(
-        highcharts.seriesTypes.pie.prototype as unknown as Record<string, unknown>,
-        "translate",
-        function (this: EbayDonutPrototype, proceed: () => void) {
-            proceed.call(this);
+    highcharts.wrap(highcharts.seriesTypes.pie.prototype, "translate", function (this: PieSeries, proceed: () => void) {
+        proceed.call(this);
 
-            if (this.points.length === 1) {
-                return;
-            }
+        if (this.points.length === 1) {
+            return;
+        }
 
-            const diameter = this.center[2];
-            const spacing = 5;
-            const angle = 2 * Math.asin(spacing / diameter);
+        const diameter = this.center[2];
+        const spacing = 5;
+        const angle = 2 * Math.asin(spacing / diameter);
 
-            this.points.forEach((point) => {
-                point.shapeArgs.start += angle / 2;
-                point.shapeArgs.end -= angle / 2;
-            });
-        },
-    );
+        this.points.forEach((point) => {
+            point.shapeArgs.start += angle / 2;
+            point.shapeArgs.end -= angle / 2;
+        });
+    });
 }
