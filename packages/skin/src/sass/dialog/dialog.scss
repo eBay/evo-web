@@ -173,7 +173,7 @@ button.icon-btn.dialog__prev {
 }
 
 .dialog--expressive button.icon-btn.dialog__prev + * {
-    margin-left: -32px;
+    margin-inline-start: -32px;
 }
 
 .dialog--expressive .dialog__header {

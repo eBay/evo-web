@@ -39,7 +39,7 @@ export interface Input extends Marko.HTML.Dialog {
 <let/open:=input.open>
 <id/headerId=header.id>
 <script>
-  if (open) {
+  if (open && !$dialog().open) {
     $dialog().showModal();
   }
 </script>
