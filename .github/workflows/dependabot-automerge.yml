@@ -46,13 +46,22 @@ jobs:
             --jq '.user.login')
           FILES=$(gh api repos/${{ github.repository }}/pulls/$PR_NUMBER/files \
             --jq '[.[].filename] | join(" ")')
+          BODY=$(gh api repos/${{ github.repository }}/pulls/$PR_NUMBER \
+            --jq '.body')
+          if echo "$BODY" | grep -qE '(GHSA-[A-Za-z0-9-]+|CVE-[0-9]{4}-[0-9]+|dependabot-automerge-start)'; then
+            IS_SECURITY=true
+          else
+            IS_SECURITY=false
+          fi
           echo "author=$AUTHOR" >> $GITHUB_OUTPUT
           echo "files=$FILES" >> $GITHUB_OUTPUT
+          echo "is_security=$IS_SECURITY" >> $GITHUB_OUTPUT
 
       - name: Auto-approve and merge security-only lock file updates
         if: |
           steps.pr-info.outputs.author == 'dependabot[bot]' &&
-          steps.pr-info.outputs.files == 'package-lock.json'
+          steps.pr-info.outputs.files == 'package-lock.json' &&
+          steps.pr-info.outputs.is_security == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.get-pr.outputs.pr_number }}
