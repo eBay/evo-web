@@ -46,6 +46,7 @@ export interface Input extends Marko.HTML.Dialog {
 
 <dialog/$dialog
   ...htmlInput
+  open=null // tell Marko it's not a part of the spread because the browser does DOM manipulation
   closedby=closedby
   aria-labelledby=(inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId)
   class=[
