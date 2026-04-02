@@ -1,10 +1,10 @@
-import { useState, useEffect, RefObject } from "react";
+import { useState, RefObject } from "react";
 
 type UseTooltipArgs = {
     onExpand?: () => void;
     onCollapse?: () => void;
     initialExpanded?: boolean;
-    open?: boolean;
+    expanded?: boolean;
     hostRef?: RefObject<HTMLElement>;
 };
 
@@ -18,16 +18,11 @@ export const useTooltip = ({
     onExpand,
     onCollapse,
     initialExpanded = false,
-    open,
+    expanded,
     hostRef,
 }: UseTooltipArgs): UseTooltip => {
-    const [isExpanded, setIsExpanded] = useState(open ?? initialExpanded);
+    const [isExpanded, setIsExpanded] = useState(initialExpanded);
 
-    useEffect(() => {
-        if (open !== undefined) {
-            setIsExpanded(open);
-        }
-    }, [open]);
     const expandTooltip = () => {
         setIsExpanded(true);
         if (onExpand) {
@@ -45,7 +40,7 @@ export const useTooltip = ({
     };
 
     return {
-        isExpanded,
+        isExpanded: expanded !== undefined ? expanded : isExpanded,
         expandTooltip,
         collapseTooltip,
     };

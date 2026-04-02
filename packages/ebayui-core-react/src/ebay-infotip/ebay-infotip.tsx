@@ -62,7 +62,7 @@ const EbayInfotip: FC<InfotipProps> = ({
     const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({
         onCollapse,
         onExpand,
-        open,
+        expanded: open,
         initialExpanded,
         hostRef: buttonRef,
     });

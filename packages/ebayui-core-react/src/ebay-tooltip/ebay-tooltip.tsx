@@ -47,7 +47,7 @@ const EbayTooltip: FC<Props> = ({
     ...rest
 }) => {
     const hostRef = useRef<HTMLElement>(null);
-    const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand, open });
+    const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand, expanded: open });
     const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 
     const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({

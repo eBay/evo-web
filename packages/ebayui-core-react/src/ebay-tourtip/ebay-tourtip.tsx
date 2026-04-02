@@ -47,7 +47,13 @@ const EbayTourtip: FC<TourtipProps> = ({
     ...rest
 }) => {
     const hostRef = useRef<HTMLElement>(null);
-    const { isExpanded, collapseTooltip } = useTooltip({ onExpand, onCollapse, initialExpanded: true, open, hostRef });
+    const { isExpanded, collapseTooltip } = useTooltip({
+        onExpand,
+        onCollapse,
+        initialExpanded: true,
+        expanded: open,
+        hostRef,
+    });
 
     const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
         open: isExpanded,
