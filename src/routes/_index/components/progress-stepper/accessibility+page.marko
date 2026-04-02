@@ -1,1 +1,181 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Progress Stepper Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A progress stepper portrays progress through a sequence of steps. Step
+    titles and any supporting copy
+    <strong>must</strong>
+    clearly name each step. Do not rely on icon shape or color alone to convey
+    status.
+  </p>
+  <p>
+    The stepper
+    <strong>must</strong>
+    expose an accessible name, typically with
+    <code>aria-labelledby</code>
+    referencing a heading (visible or visually hidden) that describes the whole
+    process.
+  </p>
+  <p>
+    Exactly one step
+    <strong>must</strong>
+    be marked as current with
+    <code>aria-current="step"</code>
+    on that step’s container. Update this attribute when the active step
+    changes.
+  </p>
+  <p>
+    Give each step’s status icon an accessible name: in the reference markup,
+    the icon
+    <code>svg</code>
+    uses
+    <code>role="img"</code>
+    and
+    <code>aria-label</code>
+    matching state—for example
+    <code>complete</code>
+    ,
+    <code>current</code>
+    ,
+    <code>upcoming</code>
+    , or
+    <code>blocked</code>
+    when the attention treatment is used.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    This section provides detailed instructions for how different input types
+    should navigate and operate the pattern.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Progress stepper elements are not interactive by default and therefore
+    should not be keyboard focusable.
+  </p>
+  <p>
+    If a step is placed within an interactive element (such as a button or
+    link), the interactive element must be keyboard accessible via
+    <strong>TAB</strong>
+    key.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader will announce the stepper as a list along with each
+    step's text and icon
+    <code>aria-label</code>
+    value. The current step will be identified via
+    <code>aria-current="step"</code>
+    .
+  </p>
+  <p>
+    Separators between steps use
+    <code>role="presentation"</code>
+    and will not be announced.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Progress stepper elements are not interactive by default and therefore
+    are not clickable.
+  </p>
+  <p>
+    If a step is placed within an interactive element (such as a button or
+    link), clicking the step will activate that interactive element.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-labelledby</strong>
+        </td>
+        <td>
+          Applied on the stepper root to reference the id of a heading that
+          names the step sequence.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-current="step"</strong>
+        </td>
+        <td>
+          Applied on the element that represents the active step.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role="list"</strong>
+        </td>
+        <td>
+          Applied on the container that groups all steps.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role="listitem"</strong>
+        </td>
+        <td>
+          Applied on each step’s container.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role="presentation"</strong>
+        </td>
+        <td>
+          Applied on purely visual separators between steps so they are skipped
+          by assistive technologies.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role="img"</strong>
+        </td>
+        <td>
+          Applied on each step status icon
+          <code>svg</code>
+          so the graphic is exposed with a short state label.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Applied on each step status icon
+          <code>svg</code>
+          . Reference values include
+          <code>complete</code>
+          ,
+          <code>current</code>
+          ,
+          <code>upcoming</code>
+          , and
+          <code>blocked</code>
+          .
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current">
+        MDN: aria-current
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/TR/wai-aria-1.2/#aria-current">
+        WAI-ARIA 1.2: aria-current
+      </a>
+    </li>
+  </ul>
+</div>
