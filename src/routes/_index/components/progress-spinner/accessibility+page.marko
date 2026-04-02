@@ -1,1 +1,122 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>Progress Spinner Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        When shown on its own, a progress-spinner conveys a busy or loading
+        state and is treated as a graphic.
+    </p>
+    <p>
+        The element wrapping the spinner
+        <strong>must</strong>
+        use
+        <code>role="img"</code>
+        and
+        <code>aria-label</code>
+        so assistive technology receives a meaningful name (for example,
+        "Busy" or text that names what is loading).
+    </p>
+    <p>
+        The animated SVG icon
+        <strong>must</strong>
+        use
+        <code>aria-hidden="true"</code>
+        so the graphic is not announced separately from the labeled image
+        container.
+    </p>
+    <h2>Interaction Design</h2>
+    <p>
+        This section provides detailed instructions for how different input
+        types should navigate and operate the pattern.
+    </p>
+    <h3>Keyboard</h3>
+    <p>
+        Progress spinner elements are not interactive by default and therefore
+        should not be keyboard focusable.
+    </p>
+    <p>
+        If a spinner is placed within an interactive element (such as a
+        button or link), the interactive element must be keyboard accessible
+        via
+        <strong>TAB</strong>
+        key.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader will announce the progress spinner as an image along
+        with its
+        <code>aria-label</code>
+        value.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Progress spinner elements are not interactive by default and therefore
+        are not clickable.
+    </p>
+    <p>
+        If a spinner is placed within an interactive element (such as a
+        button or link), clicking the spinner will activate that interactive
+        element.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>role="img"</strong>
+                </td>
+                <td>
+                    Applied on the element that wraps the spinner animation so
+                    assistive technologies treat the busy indicator as one
+                    meaningful graphic.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied on that same wrapper to provide the accessible name
+                    for the busy or loading state.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied on the inner
+                    <code>svg</code>
+                    so the decorative animation is not exposed separately
+                    from the labeled container.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href=`${urls.components}/button/css/#button-busy`>
+                Button (busy state with spinner)
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/img_role">
+                MDN: ARIA img role
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/tutorials/images/informative/">
+                W3C: Informative Images
+            </a>
+        </li>
+    </ul>
+</div>
