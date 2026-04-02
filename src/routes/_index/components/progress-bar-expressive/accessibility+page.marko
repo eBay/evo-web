@@ -1,1 +1,156 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>Expressive Progress Bar Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        The animated bar element
+        <strong>must</strong>
+        use
+        <code>role="progressbar"</code>
+        with an
+        <code>aria-label</code>
+        that describes the loading activity (e.g., "Loading...").
+    </p>
+    <p>
+        When optional status messages are present, each visible message
+        <strong>must</strong>
+        render inside an element with
+        <code>role="status"</code>
+        so assistive technology announces new content as it cycles into view.
+        The progress bar element
+        <strong>must</strong>
+        use
+        <code>aria-describedby</code>
+        to reference the status message, giving context to the loading state.
+    </p>
+    <p>
+        When cycling multiple messages with animation, a duplicate
+        visual-only message element is used for the transition effect. This
+        duplicate
+        <strong>must</strong>
+        use
+        <code>aria-hidden="true"</code>
+        so the message is not announced twice.
+    </p>
+    <h2>Interaction Design</h2>
+    <p>
+        This section provides detailed instructions for how different input
+        types should navigate and operate the pattern.
+    </p>
+    <h3>Keyboard</h3>
+    <p>
+        Expressive progress bar elements are not interactive by default and
+        therefore should not be keyboard focusable.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader will announce the progress bar with its
+        <code>aria-label</code>
+        value and the progressbar role.
+    </p>
+    <p>
+        When status messages are present, new message content will be
+        announced automatically via
+        <code>role="status"</code>
+        as messages cycle into view. The visual-only duplicate message is
+        hidden from assistive technology and will not be announced.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Expressive progress bar elements are not interactive by default and
+        therefore are not clickable.
+    </p>
+    <h2>Reduced Motion</h2>
+    <p>
+        When
+        <code>prefers-reduced-motion</code>
+        is active, the bar lines stop resizing and scroll at a slower pace
+        instead. Message transition animations are removed; content fades
+        in or updates in place.
+    </p>
+    <p>
+        Implementations
+        <strong>must</strong>
+        respect this preference. The component's CSS handles the visual
+        changes automatically, but JavaScript-driven message cycling should
+        also skip animated transitions when reduced motion is preferred.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>role="progressbar"</strong>
+                </td>
+                <td>
+                    Applied to the animated bar element to identify it as a
+                    progress indicator to assistive technologies.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to the progress bar element to provide the
+                    accessible name for the loading state.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-describedby</strong>
+                </td>
+                <td>
+                    Applied to the progress bar element to reference the
+                    status message, providing additional context about the
+                    loading activity.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>role="status"</strong>
+                </td>
+                <td>
+                    Applied to the element that holds the visible status
+                    message so assistive technology announces new content as
+                    it appears.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-hidden="true"</strong>
+                </td>
+                <td>
+                    Applied to the duplicate visual-only message element used
+                    for animation so the message is not announced twice.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role">
+                MDN: ARIA progressbar role
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/status_role">
+                MDN: ARIA status role
+            </a>
+        </li>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">
+                MDN: prefers-reduced-motion
+            </a>
+        </li>
+    </ul>
+</div>
