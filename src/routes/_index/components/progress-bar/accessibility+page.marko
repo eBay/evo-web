@@ -1,1 +1,115 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>Progress Bar Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        The progress bar uses the native
+        <code>&lt;progress&gt;</code>
+        element, which provides built-in accessibility support.
+    </p>
+    <p>
+        The
+        <code>value</code>
+        and
+        <code>max</code>
+        attributes
+        <strong>must</strong>
+        be set to reflect the current completion status. When
+        <code>value</code>
+        is omitted, the browser shows a generic animation: work is in
+        progress, leading to unknown duration.
+    </p>
+    <p>
+        Text content inside the
+        <code>&lt;progress&gt;</code>
+        element
+        <strong>must</strong>
+        accurately represent the current progress percentage.
+    </p>
+    <h2>Interaction Design</h2>
+    <p>
+        This section provides detailed instructions for how different input
+        types should navigate and operate the pattern.
+    </p>
+    <h3>Keyboard</h3>
+    <p>
+        Progress bar elements are not interactive by default and therefore
+        should not be keyboard focusable.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader will announce the progress bar role and current
+        completion percentage.
+    </p>
+    <p>
+        For dynamic progress updates, consider using
+        <code>aria-live="polite"</code>
+        on a companion status text element to announce progress changes
+        without interrupting the user. Avoid announcing every incremental
+        change—limit announcements to meaningful milestones.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Progress bar elements are not interactive by default and therefore
+        are not clickable.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Applied to the progress element when a visible label is not
+                    present. Describes what task is in progress.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-labelledby</strong>
+                </td>
+                <td>
+                    Applied to the progress element to reference a visible
+                    heading or label that describes the task.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-live="polite"</strong>
+                </td>
+                <td>
+                    Applied to a companion status text element (not the progress
+                    bar itself) to announce progress updates to screen readers
+                    without interrupting the user.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress">
+                MDN: The Progress Element
+            </a>
+        </li>
+        <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/meter/">
+                APG Meter Pattern
+            </a>
+        </li>
+        <li>
+            <a href=`${urls.accessibility}/patterns/input-meter`>
+                Input Meter
+            </a>
+        </li>
+    </ul>
+</div>
