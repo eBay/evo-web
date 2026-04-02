@@ -242,7 +242,7 @@ export default class extends MenuUtils<Input, MenuState> {
             collapseOnHostReFocus: true,
         });
 
-        this.expander.expanded = this.isExpanded;
+        this.expander.expanded = this.isExpanded || false;
         delete this.isExpanded;
 
         this.dropdownUtil = new DropdownUtil(
