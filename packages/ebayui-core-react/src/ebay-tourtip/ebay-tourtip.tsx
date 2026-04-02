@@ -17,6 +17,7 @@ import { useFloatingTooltip } from "../common/floating-ui";
 
 export type TourtipProps = Omit<TooltipProps, "ref"> & {
     a11yCloseText: string;
+    open?: boolean;
     pointer?: PointerDirection;
     onExpand?: () => void;
     onCollapse?: () => void;
@@ -37,6 +38,7 @@ const EbayTourtip: FC<TourtipProps> = ({
     onCollapse,
     onExpand,
     overlayStyle,
+    open,
     pointer,
     offset,
     noFlip,
@@ -45,7 +47,7 @@ const EbayTourtip: FC<TourtipProps> = ({
     ...rest
 }) => {
     const hostRef = useRef<HTMLElement>(null);
-    const { isExpanded, collapseTooltip } = useTooltip({ onExpand, onCollapse, initialExpanded: true, hostRef });
+    const { isExpanded, collapseTooltip } = useTooltip({ onExpand, onCollapse, initialExpanded: true, open, hostRef });
 
     const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({
         open: isExpanded,

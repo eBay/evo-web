@@ -16,6 +16,7 @@ import { useFloatingTooltip } from "../common/floating-ui";
 // @todo: this type is weird, we should improve it
 type Props = Omit<TooltipProps, "ref"> & {
     noHover?: boolean;
+    open?: boolean;
     onExpand?: () => void;
     onCollapse?: () => void;
     pointer?: PointerDirection;
@@ -31,6 +32,7 @@ const EbayTooltip: FC<Props> = ({
     pointer,
     overlayStyle,
     noHover,
+    open,
     offset,
     noFlip,
     noShift,
@@ -45,7 +47,7 @@ const EbayTooltip: FC<Props> = ({
     ...rest
 }) => {
     const hostRef = useRef<HTMLElement>(null);
-    const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand });
+    const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({ onCollapse, onExpand, open });
     const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 
     const { overlayStyles, arrowStyles, refs } = useFloatingTooltip({

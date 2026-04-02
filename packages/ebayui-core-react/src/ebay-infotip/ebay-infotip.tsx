@@ -23,6 +23,7 @@ export type InfotipProps = {
     variant?: Variant;
     icon?: Icon | ReactElement;
     disabled?: boolean;
+    open?: boolean;
     initialExpanded?: boolean;
     pointer?: PointerDirection;
     overlayStyle?: CSSProperties;
@@ -50,6 +51,7 @@ const EbayInfotip: FC<InfotipProps> = ({
     onExpand,
     onCollapse,
     children,
+    open,
     initialExpanded,
     icon = <EbayIconInformation16 />,
     a11yCloseText,
@@ -60,6 +62,7 @@ const EbayInfotip: FC<InfotipProps> = ({
     const { isExpanded, expandTooltip, collapseTooltip } = useTooltip({
         onCollapse,
         onExpand,
+        open,
         initialExpanded,
         hostRef: buttonRef,
     });

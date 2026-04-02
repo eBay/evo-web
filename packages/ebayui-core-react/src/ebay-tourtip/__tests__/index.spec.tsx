@@ -1,5 +1,5 @@
 /* eslint-disable vitest/expect-expect */
-import React from "react";
+import React, { useState } from "react";
 import { vi } from "vitest";
 import { render, fireEvent, RenderResult } from "@testing-library/react";
 import { EbayButton } from "../../ebay-button";
@@ -101,6 +101,45 @@ describe("<EbayTourtip>", () => {
                 );
             }).toThrow(`EbayTourtip: Please use a EbayTourtipHost that defines the host of the tourtip`);
             (console.error as jest.Mock).mockRestore();
+        });
+    });
+
+    describe("on using the open prop", () => {
+        it("should start collapsed when open is false", () => {
+            const wrapper = renderComponent({ open: false });
+            checkIsCollapsed(wrapper);
+        });
+
+        it("should start expanded when open is true", () => {
+            const wrapper = renderComponent({ open: true });
+            checkIsExpanded(wrapper);
+        });
+
+        it("should update visibility when open prop changes", () => {
+            const ControlledTourtip = () => {
+                const [open, setOpen] = useState(true);
+                return (
+                    <>
+                        <button onClick={() => setOpen(true)}>Open</button>
+                        <button onClick={() => setOpen(false)}>Close</button>
+                        <EbayTourtip a11yCloseText="close" pointer="bottom" open={open}>
+                            <EbayTourtipHost>
+                                <EbayButton>Info</EbayButton>
+                            </EbayTourtipHost>
+                            <EbayTourtipHeading type="tourtip">Title</EbayTourtipHeading>
+                            <EbayTourtipContent>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </EbayTourtipContent>
+                        </EbayTourtip>
+                    </>
+                );
+            };
+            const wrapper = render(<ControlledTourtip />);
+            checkIsExpanded(wrapper);
+            fireEvent.click(wrapper.getByText("Close"));
+            checkIsCollapsed(wrapper);
+            fireEvent.click(wrapper.getByText("Open"));
+            checkIsExpanded(wrapper);
         });
     });
 });

@@ -1,5 +1,5 @@
 /* eslint-disable vitest/expect-expect */
-import React from "react";
+import React, { useState } from "react";
 import { vi } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
 import { EbayTooltip, EbayTooltipContent, EbayTooltipHost } from "../index";
@@ -193,6 +193,44 @@ describe("<EbayTooltip>", () => {
                 );
             }).toThrow(`React.Children.only expected to receive a single React element child.`);
             (console.error as jest.Mock).mockRestore();
+        });
+    });
+
+    describe("on using the open prop", () => {
+        it("should start expanded when open is true", () => {
+            const wrapper = renderComponent({ open: true });
+            checkIsExpanded(wrapper);
+        });
+
+        it("should start collapsed when open is false", () => {
+            const wrapper = renderComponent({ open: false });
+            checkIsCollapsed(wrapper);
+        });
+
+        it("should update visibility when open prop changes", () => {
+            const ControlledTooltip = () => {
+                const [open, setOpen] = useState(false);
+                return (
+                    <>
+                        <button onClick={() => setOpen(true)}>Open</button>
+                        <button onClick={() => setOpen(false)}>Close</button>
+                        <EbayTooltip open={open}>
+                            <EbayTooltipHost>
+                                <button>Info</button>
+                            </EbayTooltipHost>
+                            <EbayTooltipContent>
+                                <p>Info content</p>
+                            </EbayTooltipContent>
+                        </EbayTooltip>
+                    </>
+                );
+            };
+            const wrapper = render(<ControlledTooltip />);
+            checkIsCollapsed(wrapper);
+            fireEvent.click(wrapper.getByText("Open"));
+            checkIsExpanded(wrapper);
+            fireEvent.click(wrapper.getByText("Close"));
+            checkIsCollapsed(wrapper);
         });
     });
 });

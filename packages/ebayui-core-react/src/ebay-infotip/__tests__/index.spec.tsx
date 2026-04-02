@@ -1,5 +1,5 @@
 /* eslint-disable vitest/expect-expect */
-import React from "react";
+import React, { useState } from "react";
 import { vi } from "vitest";
 import { render, fireEvent, RenderResult } from "@testing-library/react";
 import { EbayInfotip, EbayInfotipContent, EbayInfotipHeading } from "../index";
@@ -107,6 +107,42 @@ describe("<EbayInfotip>", () => {
 
             fireEvent.click(close);
             expect(host).toHaveFocus();
+        });
+    });
+
+    describe("on using the open prop", () => {
+        it("should start expanded when open is true", () => {
+            const wrapper = renderComponent({ open: true });
+            checkIsExpanded(wrapper);
+        });
+
+        it("should start collapsed when open is false", () => {
+            const wrapper = renderComponent({ open: false });
+            checkIsCollapsed(wrapper);
+        });
+
+        it("should update visibility when open prop changes", () => {
+            const ControlledInfotip = () => {
+                const [open, setOpen] = useState(false);
+                return (
+                    <>
+                        <button onClick={() => setOpen(true)}>Open</button>
+                        <button onClick={() => setOpen(false)}>Close</button>
+                        <EbayInfotip a11yCloseText="" open={open}>
+                            <EbayInfotipHeading>Title</EbayInfotipHeading>
+                            <EbayInfotipContent>
+                                <p>Info content</p>
+                            </EbayInfotipContent>
+                        </EbayInfotip>
+                    </>
+                );
+            };
+            const wrapper = render(<ControlledInfotip />);
+            checkIsCollapsed(wrapper);
+            fireEvent.click(wrapper.getByText("Open"));
+            checkIsExpanded(wrapper);
+            fireEvent.click(wrapper.getByText("Close"));
+            checkIsCollapsed(wrapper);
         });
     });
 });
