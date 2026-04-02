@@ -244,7 +244,7 @@ class Video extends Marko.Component<Input, State> {
 
     handleError(err: Error) {
         this.state.failed = true;
-        this.playButtonContainer.remove();
+        this.playButtonContainer?.remove();
 
         this.emit("load-error", err);
     }
@@ -466,11 +466,19 @@ class Video extends Marko.Component<Input, State> {
         this.shaka.polyfill.installAll();
 
         // eslint-disable-next-line no-undef,new-cap
-        this.player = new this.shaka.Player(this.video);
-        this.player.configure(this.input.shakaConfig || {});
-        this._attach();
+        this.player = new this.shaka.Player();
+        this.player
+            .attach(this.video)
+            .then(() => {
+                this.player.configure(this.input.shakaConfig || {});
+                this._attach();
 
-        this._loadSrc();
+                this._loadSrc();
+            })
+            .catch((e: Error) => {
+                console.log(e);
+                this.handleError(e);
+            });
     }
 
     onMount() {
