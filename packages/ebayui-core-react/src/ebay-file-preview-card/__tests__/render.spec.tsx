@@ -44,6 +44,24 @@ describe("<EbayFilePreviewCard>", () => {
         );
         expect(asFragment()).toMatchSnapshot();
     });
+    it("renders with a11yExternalLinkText", () => {
+        const { asFragment } = render(
+            <EbayFilePreviewCard
+                a11yCancelUploadText="Cancel upload"
+                deleteText="Delete"
+                href="/collection"
+                a11yExternalLinkText=" - opens in new window or tab"
+                file={{
+                    name: "file-name.jpg",
+                    type: "image",
+                    src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+                }}
+                footerTitle="file-name.csv"
+                footerSubtitle="English, German, Spanish, French, Polish, Dutch, Italian, Japanese, Portuguese, Arabic"
+            />,
+        );
+        expect(asFragment()).toMatchSnapshot();
+    });
     it("renders with action button", () => {
         const { asFragment } = render(
             <EbayFilePreviewCard

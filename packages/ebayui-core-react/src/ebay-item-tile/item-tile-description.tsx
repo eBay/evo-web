@@ -1,6 +1,6 @@
-import React, { FC, ComponentProps, ElementType } from "react";
+import React, { FC, HTMLAttributes, ElementType } from "react";
 
-export type EbayItemTileDescriptionProps = ComponentProps<"p"> & {
+export type EbayItemTileDescriptionProps = HTMLAttributes<HTMLElement> & {
     as?: ElementType;
 };
 

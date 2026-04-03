@@ -90,4 +90,20 @@ describe("<EbayItemTile>", () => {
         );
         expect(asFragment()).toMatchSnapshot();
     });
+    it("renders component with a11yExternalLinkText", () => {
+        const { asFragment } = render(
+            <EbayItemTile
+                href="/collection"
+                a11yExternalLinkText=" - opens in new window or tab"
+                file={{
+                    name: "file-name.jpg",
+                    type: "image",
+                    src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+                }}
+            >
+                <EbayItemTileTitle href="/collection">Apple iPhone 11 Pro Max</EbayItemTileTitle>
+            </EbayItemTile>,
+        );
+        expect(asFragment()).toMatchSnapshot();
+    });
 });

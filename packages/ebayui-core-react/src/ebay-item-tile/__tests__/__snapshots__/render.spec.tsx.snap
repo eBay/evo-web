@@ -1,5 +1,55 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`<EbayItemTile> > renders component with a11yExternalLinkText 1`] = `
+<DocumentFragment>
+  <div
+    class="item-tile"
+  >
+    <div
+      class="item-tile__header"
+    >
+      <div
+        class="file-preview-card"
+      >
+        <div
+          class="file-preview-card__body"
+        >
+          <a
+            href="/collection"
+            target="_blank"
+          >
+            <img
+              alt="file-name.jpg"
+              class="file-preview-card__asset"
+              src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
+            />
+            <span
+              class="clipped"
+            >
+               - opens in new window or tab
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="item-tile__body"
+    >
+      <div
+        class="item-tile__section-secondary"
+      >
+        <a
+          class="item-tile__title"
+          href="/collection"
+        >
+          Apple iPhone 11 Pro Max
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<EbayItemTile> > renders component with action 1`] = `
 <DocumentFragment>
   <div

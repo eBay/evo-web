@@ -1,6 +1,7 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 $ const {
     a11yCancelUploadText,
+    a11yExternalLinkText,
     deleteText,
     file: rawFile,
     seeMore,
@@ -35,7 +36,7 @@ $ file.type = type;
 
 <${cardEl} class="file-preview-card" ...htmlInput>
     <div class="file-preview-card__body">
-        <${href ? "a" : null} href=href>
+        <${href ? "a" : null} href=href target=(a11yExternalLinkText ? "_blank" : undefined)>
             <if(status === "uploading")>
                 <ebay-progress-spinner
                     class="file-preview-card__asset"
@@ -58,6 +59,9 @@ $ file.type = type;
             <else>
                 <ebay-file-24-icon class="file-preview-card__asset"/>
             </else>
+            <if(a11yExternalLinkText)>
+                <span class="clipped">${a11yExternalLinkText}</span>
+            </if>
         </>
         <if(seeMore)>
             <button

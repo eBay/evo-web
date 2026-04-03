@@ -11,6 +11,7 @@ import { FilePreviewCardMenuAction, FilePreviewCardMenuActionHandler, FilePrevie
 
 export type EbayFilePreviewCardProps = ComponentProps<"div"> & {
     a11yCancelUploadText?: string;
+    a11yExternalLinkText?: string;
     as?: ElementType;
     deleteText?: string;
     file?: File | FilePreviewType;
@@ -32,6 +33,7 @@ export type EbayFilePreviewCardProps = ComponentProps<"div"> & {
 
 const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     a11yCancelUploadText,
+    a11yExternalLinkText,
     status,
     as: CardEl = "div",
     file: rawFile,
@@ -78,8 +80,9 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
         <CardEl className={cx("file-preview-card", className)} {...rest}>
             <div className="file-preview-card__body">
                 {href ? (
-                    <a href={href}>
+                    <a href={href} target={a11yExternalLinkText ? "_blank" : undefined} rel="noreferrer">
                         <EbayFilePreviewContent file={previewFile} status={status} seeMore={seeMore} />
+                        {a11yExternalLinkText && <span className="clipped">{a11yExternalLinkText}</span>}
                     </a>
                 ) : (
                     <EbayFilePreviewContent file={previewFile} status={status} seeMore={seeMore} />

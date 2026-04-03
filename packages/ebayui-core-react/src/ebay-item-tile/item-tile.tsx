@@ -16,10 +16,20 @@ export type EbayItemTileProps = ComponentProps<"div"> & {
     layout?: ItemTileLayout;
     href?: string;
     file?: File | FilePreviewType;
+    a11yExternalLinkText?: string;
     onAction?: EbayEventHandler<HTMLElement>;
 };
 
-const EbayItemTile: FC<EbayItemTileProps> = ({ file, href, layout, className, onAction, children, ...rest }) => {
+const EbayItemTile: FC<EbayItemTileProps> = ({
+    file,
+    href,
+    layout,
+    className,
+    a11yExternalLinkText,
+    onAction,
+    children,
+    ...rest
+}) => {
     const supertitle = findComponent(children, EbayItemTileSupertitle);
     const title = findComponent(children, EbayItemTileTitle);
     const subtitle = findComponent(children, EbayItemTileSubtitle);
@@ -35,7 +45,12 @@ const EbayItemTile: FC<EbayItemTileProps> = ({ file, href, layout, className, on
         >
             {file && (
                 <div className="item-tile__header">
-                    <EbayFilePreviewCard file={file} href={href} onAction={onAction}>
+                    <EbayFilePreviewCard
+                        file={file}
+                        href={href}
+                        a11yExternalLinkText={a11yExternalLinkText}
+                        onAction={onAction}
+                    >
                         {action && <EbayFilePreviewCardAction {...action.props} />}
                     </EbayFilePreviewCard>
                 </div>
