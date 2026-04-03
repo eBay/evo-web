@@ -48,17 +48,15 @@ function defaultYLabelFormatter(value: number | string): string {
     }).format(v);
 }
 
-function mergeConfigs(source: Record<string, unknown>, target: Record<string, unknown>): Record<string, unknown> {
-    for (const key in source) {
-        if (source[key] instanceof Object) {
-            Object.assign(
-                source[key] as Record<string, unknown>,
-                mergeConfigs((target[key] ?? {}) as Record<string, unknown>, source[key] as Record<string, unknown>),
-            );
+function mergeConfigs<T extends object>(source: T, target: T): T {
+    (Object.keys(source) as (keyof T)[]).forEach((key) => {
+        const sourceVal = source[key];
+        const targetVal = target[key];
+        if (sourceVal instanceof Object) {
+            Object.assign(sourceVal, mergeConfigs((targetVal ?? {}) as T, sourceVal as T));
         }
-    }
-    Object.assign(target || {}, source);
-    return target;
+    });
+    return Object.assign(target, source);
 }
 
 type AreaSeriesOptions = Highcharts.SeriesAreaOptions | Highcharts.SeriesAreasplineOptions;
@@ -191,10 +189,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
         };
 
         if (highchartOptions) {
-            return mergeConfigs(
-                config as Record<string, unknown>,
-                highchartOptions as Record<string, unknown>,
-            ) as Highcharts.Options;
+            return mergeConfigs(config, highchartOptions);
         }
 
         return config;
