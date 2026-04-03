@@ -194,13 +194,14 @@ describe("lineChartTooltipHtml XSS escaping", () => {
         expect(html).toContain("&lt;script&gt;xss&lt;/script&gt;");
     });
 
-    it("renders custom tooltip as-is without escaping", () => {
+    it("escapes custom tooltip content", () => {
         const customTooltip = '<span class="custom">Custom</span>';
         const html = lineChartTooltipHtml({
             date: "Jan 1",
             points: [{ point: { series: { name: "A" }, tooltip: customTooltip } }],
             seriesLength: false,
         });
-        expect(html).toContain(customTooltip);
+        expect(html).toContain("&lt;span class=&quot;custom&quot;&gt;Custom&lt;/span&gt;");
+        expect(html).not.toContain(customTooltip);
     });
 });

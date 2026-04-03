@@ -156,9 +156,10 @@ describe("donutChartTooltipHtml XSS escaping", () => {
         expect(html).toContain("&lt;script&gt;alert(1)&lt;/script&gt;");
     });
 
-    it("renders tooltip as-is when provided", () => {
+    it("escapes custom tooltip content", () => {
         const custom = '<span class="custom">Custom</span>';
         const html = donutChartTooltipHtml({ name: "A", value: "100", tooltip: custom });
-        expect(html).toContain(custom);
+        expect(html).toContain("&lt;span class=&quot;custom&quot;&gt;Custom&lt;/span&gt;");
+        expect(html).not.toContain(custom);
     });
 });
