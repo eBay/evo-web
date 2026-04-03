@@ -18,8 +18,7 @@ export function lineChartTooltipHtml({ date, points, seriesLength }: LineChartTo
     const rows = points
         .map(({ point }) => {
             if (point.tooltip) {
-                // Custom tooltip content rendered as-is (matches Marko behavior)
-                return point.tooltip;
+                return escapeHtml(point.tooltip);
             }
             if (seriesLength) {
                 const name = escapeHtml(point.series.name);

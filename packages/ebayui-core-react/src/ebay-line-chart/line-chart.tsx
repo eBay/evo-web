@@ -31,9 +31,9 @@ ebayLegend(highcharts);
 const LINE_CHART_STYLES = `
     .ebay-line-chart .highcharts-point { opacity: 0; }
     .ebay-line-chart .ebay-line-chart__marker--visible { opacity: 1; }
-    .highcharts-legend-item .highcharts-point { opacity: 1; stroke-width: 0; }
-    .highcharts-legend-item .highcharts-graph { display: none; }
-    .dark .highcharts-halo { fill-opacity: 0.8; }
+    .ebay-line-chart .highcharts-legend-item .highcharts-point { opacity: 1; stroke-width: 0; }
+    .ebay-line-chart .highcharts-legend-item .highcharts-graph { display: none; }
+    .dark .ebay-line-chart .highcharts-halo { fill-opacity: 0.8; }
 `;
 
 const POINT_SIZE = 6;

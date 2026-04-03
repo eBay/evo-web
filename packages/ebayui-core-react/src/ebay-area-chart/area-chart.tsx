@@ -61,9 +61,9 @@ function mergeConfigs(source: Record<string, unknown>, target: Record<string, un
     return target;
 }
 
-function prepareSeries(
-    seriesProp: Highcharts.SeriesAreasplineOptions | Highcharts.SeriesAreasplineOptions[],
-): Highcharts.SeriesAreasplineOptions[] {
+type AreaSeriesOptions = Highcharts.SeriesAreaOptions | Highcharts.SeriesAreasplineOptions;
+
+function prepareSeries(seriesProp: AreaSeriesOptions | AreaSeriesOptions[]): AreaSeriesOptions[] {
     const series = (Array.isArray(seriesProp) ? seriesProp : [seriesProp]).map((s) => ({
         ...s,
         data: Array.isArray(s.data) ? [...s.data] : s.data,
@@ -219,7 +219,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
                             key={s.name || i}
                             type={areaType}
                             data={s.data as unknown as number[]}
-                            options={{ type: areaType, name: s.name } as Highcharts.SeriesAreasplineOptions}
+                            options={{ type: areaType, name: s.name } as AreaSeriesOptions}
                         />
                     ))}
                 </Chart>
