@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { EbayInfotip, EbayInfotipContent, EbayInfotipHeading, EbayInfotipHost } from "../index";
 import { PointerDirection } from "../../ebay-tooltip";
 import { EbayIconSettings16 } from "../../ebay-icon/icons/ebay-icon-settings-16";
@@ -105,6 +105,7 @@ or import styles using SCSS/CSS
             control: { type: "select" },
         },
         initialExpanded: { description: "Open the tooltip on the initial render", control: "boolean" },
+        open: { description: "Control the visibility of the infotip from the parent", control: "boolean" },
         a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
         "aria-label": {
             description: 'A descriptive label of what the infotip button represents (e.g. "Important information")',
@@ -288,4 +289,37 @@ export const ExpandedByDefault = {
     ),
 
     name: "Expanded by default",
+};
+
+export const Controlled = {
+    render: () => {
+        const items = ["First infotip content", "Second infotip content", "Third infotip content"];
+        const Component = () => {
+            const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+            return (
+                <div style={{ display: "flex", gap: 24, margin: 200 }}>
+                    {items.map((text, i) => (
+                        <EbayInfotip
+                            key={i}
+                            open={openIndex === i}
+                            onExpand={() => setOpenIndex(i)}
+                            onCollapse={() => setOpenIndex(null)}
+                            a11yCloseText="Close"
+                            aria-label={`Infotip ${i + 1}`}
+                        >
+                            <EbayInfotipHeading>Item {i + 1}</EbayInfotipHeading>
+                            <EbayInfotipContent>
+                                <p>{text}</p>
+                            </EbayInfotipContent>
+                        </EbayInfotip>
+                    ))}
+                </div>
+            );
+        };
+
+        return <Component />;
+    },
+
+    name: "Controlled (mutual exclusivity)",
 };

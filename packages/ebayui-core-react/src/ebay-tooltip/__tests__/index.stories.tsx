@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { EbayButton } from "../../ebay-button";
 import { EbayTextbox } from "../../ebay-textbox";
 import { EbayTooltip, EbayTooltipContent, EbayTooltipHost, PointerDirection } from "../index";
@@ -88,6 +88,7 @@ or import styles using SCSS/CSS
             control: { type: "object" },
         },
         noHover: { description: "disable hover (and only use focus) to open the tooltip", control: "boolean" },
+        open: { description: "Control the visibility of the tooltip from the parent", control: "boolean" },
         onExpand: { description: "overlay has been expanded", action: "onExpand", table: { category: "Events" } },
         onCollapse: { description: "overlay has been collapsed", action: "onCollapse", table: { category: "Events" } },
         EbayTooltipHost: { description: "Wrapper for trigger that shows the tooltip", control: "text" },
@@ -179,3 +180,37 @@ export const NoHover = () => (
         </EbayTooltip>
     </div>
 );
+
+export const Controlled = {
+    render: () => {
+        const items = ["First tooltip", "Second tooltip", "Third tooltip"];
+        const Component = () => {
+            const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+            return (
+                <div style={{ display: "flex", gap: 24, justifyContent: "center", marginTop: 100 }}>
+                    {items.map((label, i) => (
+                        <EbayTooltip
+                            key={i}
+                            open={openIndex === i}
+                            onExpand={() => setOpenIndex(i)}
+                            onCollapse={() => setOpenIndex(null)}
+                            pointer="bottom"
+                        >
+                            <EbayTooltipHost>
+                                <EbayButton>{label}</EbayButton>
+                            </EbayTooltipHost>
+                            <EbayTooltipContent>
+                                <p>Tooltip {i + 1} content</p>
+                            </EbayTooltipContent>
+                        </EbayTooltip>
+                    ))}
+                </div>
+            );
+        };
+
+        return <Component />;
+    },
+
+    name: "Controlled (mutual exclusivity)",
+};

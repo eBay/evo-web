@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { EbayButton } from "../../ebay-button";
 import {
     EbayTourtip,
@@ -99,6 +99,7 @@ or import styles using SCSS/CSS
             description: "Open the tooltip on the initial render, needs to be true for the case of Tourtips",
             control: "boolean",
         },
+        open: { description: "Control the visibility of the tourtip from the parent", control: "boolean" },
         a11yCloseText: { description: "A11y text for close button and mask.", control: "text" },
         "aria-label": {
             description: 'A descriptive label of what the tourtip button represents (e.g. "Important information")',
@@ -208,3 +209,51 @@ export const FooterAndHeadingTourtip = () => (
         </EbayTourtip>
     </div>
 );
+
+export const Controlled = {
+    render: () => {
+        const items = ["Step 1 content", "Step 2 content", "Step 3 content"];
+        const Component = () => {
+            const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+            return (
+                <div style={{ display: "flex", gap: 80, margin: 300 }}>
+                    {items.map((text, i) => (
+                        <EbayTourtip
+                            key={i}
+                            open={openIndex === i}
+                            onExpand={() => setOpenIndex(i)}
+                            onCollapse={() => setOpenIndex(null)}
+                            a11yCloseText="close"
+                            pointer="bottom"
+                        >
+                            <EbayTourtipHost>
+                                <EbayButton>Step {i + 1}</EbayButton>
+                            </EbayTourtipHost>
+                            <EbayTourtipHeading type="tourtip">Step {i + 1}</EbayTourtipHeading>
+                            <EbayTourtipContent>
+                                <p>{text}</p>
+                            </EbayTourtipContent>
+                            <EbayTourtipFooter index={`${i + 1} / ${items.length}`}>
+                                {i > 0 && (
+                                    <button className="fake-link" onClick={() => setOpenIndex(i - 1)}>
+                                        Back
+                                    </button>
+                                )}
+                                {i < items.length - 1 && (
+                                    <button className="btn btn--primary" onClick={() => setOpenIndex(i + 1)}>
+                                        Next
+                                    </button>
+                                )}
+                            </EbayTourtipFooter>
+                        </EbayTourtip>
+                    ))}
+                </div>
+            );
+        };
+
+        return <Component />;
+    },
+
+    name: "Controlled (sequential steps)",
+};
