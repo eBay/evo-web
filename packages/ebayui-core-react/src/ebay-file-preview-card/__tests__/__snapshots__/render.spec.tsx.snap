@@ -102,6 +102,7 @@ exports[`<EbayFilePreviewCard> > renders with a11yExternalLinkText 1`] = `
     >
       <a
         href="/collection"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <img

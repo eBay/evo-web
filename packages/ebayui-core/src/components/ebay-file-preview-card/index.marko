@@ -36,7 +36,7 @@ $ file.type = type;
 
 <${cardEl} class="file-preview-card" ...htmlInput>
     <div class="file-preview-card__body">
-        <${href ? "a" : null} href=href target=(a11yExternalLinkText ? "_blank" : undefined)>
+        <${href ? "a" : null} href=href target=(a11yExternalLinkText ? "_blank" : undefined) rel=(a11yExternalLinkText ? "noopener noreferrer" : undefined)>
             <if(status === "uploading")>
                 <ebay-progress-spinner
                     class="file-preview-card__asset"

@@ -80,7 +80,11 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
         <CardEl className={cx("file-preview-card", className)} {...rest}>
             <div className="file-preview-card__body">
                 {href ? (
-                    <a href={href} target={a11yExternalLinkText ? "_blank" : undefined} rel="noreferrer">
+                    <a
+                        href={href}
+                        target={a11yExternalLinkText ? "_blank" : undefined}
+                        rel={a11yExternalLinkText ? "noopener noreferrer" : undefined}
+                    >
                         <EbayFilePreviewContent file={previewFile} status={status} seeMore={seeMore} />
                         {a11yExternalLinkText && <span className="clipped">{a11yExternalLinkText}</span>}
                     </a>
