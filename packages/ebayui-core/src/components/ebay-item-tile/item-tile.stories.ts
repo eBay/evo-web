@@ -3,6 +3,8 @@ import Component from "./index.marko";
 import Readme from "./README.md";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
+import ExternalLinkTemplate from "./examples/external-link.marko";
+import ExternalLinkTemplateCode from "./examples/external-link.marko?raw";
 
 export default {
     title: "layout/ebay-item-tile",
@@ -29,6 +31,11 @@ export default {
             control: { type: "text" },
             description:
                 "The URL to navigate to when the item-tile is clicked. If not provided, the item will not be clickable.",
+        },
+        "a11y-external-link-text": {
+            control: { type: "text" },
+            description:
+                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers (e.g. `" - opens in new window or tab"`).',
         },
         file: {
             type: "object",
@@ -89,4 +96,9 @@ export default {
 export const Default = buildExtensionTemplate(
     DefaultTemplate,
     DefaultTemplateCode,
+);
+
+export const ExternalLink = buildExtensionTemplate(
+    ExternalLinkTemplate,
+    ExternalLinkTemplateCode,
 );

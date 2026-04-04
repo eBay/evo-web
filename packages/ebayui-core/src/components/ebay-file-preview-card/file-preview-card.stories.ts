@@ -38,6 +38,11 @@ export default {
             control: { type: "text" },
             description: "URL for the file preview link",
         },
+        a11yExternalLinkText: {
+            control: { type: "text" },
+            description:
+                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers (e.g. `" - opens in new window or tab"`).',
+        },
         infoText: {
             control: { type: "text" },
             description: "Informational text to display",
@@ -289,6 +294,27 @@ SeeMore.parameters = {
     docs: {
         source: {
             code: tagToString("ebay-file-preview-card", SeeMore.args),
+        },
+    },
+};
+
+export const ExternalLink = Template.bind({});
+ExternalLink.args = {
+    a11yCancelUploadText: "Cancel upload",
+    href: "https://ebay.com",
+    a11yExternalLinkText: " - opens in new window or tab",
+    file: {
+        name: "file-name.jpg",
+        type: "image/jpeg",
+        src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+    },
+    footerTitle: "file-name.jpg",
+} as any;
+
+ExternalLink.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-file-preview-card", ExternalLink.args),
         },
     },
 };

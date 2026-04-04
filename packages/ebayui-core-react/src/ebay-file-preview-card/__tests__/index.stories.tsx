@@ -112,6 +112,12 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
             },
         },
 
+        a11yExternalLinkText: {
+            type: "string",
+            control: { type: "text" },
+            description:
+                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers (e.g. `" - opens in new window or tab"`).',
+        },
         as: { description: "Element type for the preview card, default is `div`", control: "text" },
         deleteText: { description: "Text for delete button.", control: "text" },
         labelText: { description: "Text to display in the label.", control: "text" },
@@ -298,6 +304,21 @@ export const SeeMore: StoryFn<typeof EbayFilePreviewCard> = (args) => (
             type: "image/jpeg",
             src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
         }}
+        {...args}
+    />
+);
+
+export const ExternalLink: StoryFn<typeof EbayFilePreviewCard> = (args) => (
+    <EbayFilePreviewCard
+        a11yCancelUploadText="Cancel upload"
+        href="https://ebay.com"
+        a11yExternalLinkText=" - opens in new window or tab"
+        file={{
+            name: "file-name.jpg",
+            type: "image",
+            src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+        }}
+        footerTitle="file-name.jpg"
         {...args}
     />
 );
