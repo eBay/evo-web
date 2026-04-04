@@ -271,11 +271,10 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
         };
 
         const tooltip: Highcharts.TooltipOptions = {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            formatter: function (this: any) {
+            formatter: function (this: Highcharts.Point) {
                 return lineChartTooltipHtml({
                     date: highcharts.dateFormat("%b %e, %Y", (this.points?.[0]?.x as number) ?? 0, false),
-                    points: this.points as Parameters<typeof lineChartTooltipHtml>[0]["points"],
+                    points: this.points as unknown as Parameters<typeof lineChartTooltipHtml>[0]["points"],
                     seriesLength: isMultiSeries,
                 });
             },

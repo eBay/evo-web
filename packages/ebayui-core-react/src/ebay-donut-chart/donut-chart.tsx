@@ -91,12 +91,11 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
                 shadow: false,
                 shared: true,
                 style: { filter: tooltipShadows, fontSize: "12px" },
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                formatter: function (this: any) {
+                formatter: function (this: Highcharts.Point & { tooltip?: string }) {
                     return donutChartTooltipHtml({
                         name: String(this.key ?? ""),
                         value: String(this.y ?? ""),
-                        tooltip: this.point?.tooltip as string | undefined,
+                        tooltip: this.tooltip,
                     });
                 },
             },
