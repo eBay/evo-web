@@ -65,7 +65,8 @@ const Tabs: FC<TabsProps> = ({
     useEffect(() => {
         if (prevIndex.current !== index) {
             prevIndex.current = index;
-            handleSelect(index);
+            setSelectedIndex(index);
+            setFocusedIndex(index);
         }
     }, [index]);
 
