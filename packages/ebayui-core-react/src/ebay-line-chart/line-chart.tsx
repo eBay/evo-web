@@ -74,6 +74,7 @@ function resolveColors(series: LineChartSeriesItem[], trend: EbayLineChartProps[
 }
 
 type ChartPointWithMeta = Highcharts.Point & { onTick?: boolean; className?: string | null };
+type PointMouseOverEvent = Event & { target: Highcharts.Point & EventTarget };
 
 // Module-level pure functions for marker management (avoid stale closures)
 function handleMouseOut(getChart: () => Highcharts.Chart | null): void {
@@ -104,11 +105,10 @@ function handleMouseOut(getChart: () => Highcharts.Chart | null): void {
     chart.redraw();
 }
 
-function handleMouseOver(getChart: () => Highcharts.Chart | null, e: Event): void {
+function handleMouseOver(getChart: () => Highcharts.Chart | null, e: PointMouseOverEvent): void {
     const chart = getChart();
     if (!chart) return;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const targetX = (e as any).target?.x as number;
+    const targetX = e.target.x as number;
 
     chart.series.forEach((s) => {
         s.data.forEach((data: ChartPointWithMeta) => {
@@ -209,7 +209,7 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
     const colors = useMemo(() => resolveColors(preparedSeries, trend), [preparedSeries, trend]);
 
     const mouseOutHandler = useRef(debounce(() => handleMouseOut(getChart), 80));
-    const mouseOverHandler = useRef(debounce((e: Event) => handleMouseOver(getChart, e), 85));
+    const mouseOverHandler = useRef(debounce((e: PointMouseOverEvent) => handleMouseOver(getChart, e), 85));
 
     useEffect(() => {
         updateMarkers(plotPoints, getChart, axisTicksRef, tickValuesRef);
