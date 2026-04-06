@@ -1,5 +1,13 @@
 # @evo-web/marko
 
+## 0.1.10
+
+### Patch Changes
+
+- [#534](https://github.com/eBay/evo-web/pull/534) [`c1cbf80`](https://github.com/eBay/evo-web/commit/c1cbf80f25bcdc055397851b5ec55850fff17c55) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Clean up and align APIs
+
+- [#596](https://github.com/eBay/evo-web/pull/596) [`75f3558`](https://github.com/eBay/evo-web/commit/75f3558cab526bc5de95437ec15d2a30b391d2f8) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-dialog component
+
 ## 0.1.9
 
 ### Patch Changes

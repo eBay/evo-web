@@ -33,7 +33,8 @@ export default {
         },
         poster: {
             control: { type: "text" },
-            description: "URL of a poster image to display before the model loads",
+            description:
+                "URL of a poster image to display before the model loads",
         },
         loading: {
             control: { type: "select" },

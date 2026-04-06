@@ -1,5 +1,22 @@
 # @ebay/ui-core-react
 
+## 9.5.0
+
+### Minor Changes
+
+- [#588](https://github.com/eBay/evo-web/pull/588) [`0605956`](https://github.com/eBay/evo-web/commit/06059563b9dcf3a29cf7a8483f529638269bcd3f) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayBarChart): Add new React EbayBarChart component
+  fix(ebay-bar-chart): use correct data structure to render the bar charts
+
+- [#604](https://github.com/eBay/evo-web/pull/604) [`327d5bb`](https://github.com/eBay/evo-web/commit/327d5bbb75a550c3c1785152113dfe4fd7532523) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(EbayInfotip, EbayTooltip, EbayTourtip): add `open` prop for controlled visibility from parent component
+
+### Patch Changes
+
+- [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
+
+  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+
+  **@ebay/skin:** Add button reset styles for shaka-play-button.
+
 ## 9.4.0
 
 ### Minor Changes

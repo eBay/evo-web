@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.0.4
+
+### Patch Changes
+
+- [#563](https://github.com/eBay/evo-web/pull/563) [`852b928`](https://github.com/eBay/evo-web/commit/852b9285c9092f0fb1d514892322d859848ba46e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(evo-react): add icon components
+
 ## 0.0.3
 
 ### Patch Changes

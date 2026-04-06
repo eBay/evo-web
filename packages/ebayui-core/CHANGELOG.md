@@ -1,5 +1,22 @@
 # eBayUI-Core Changelog
 
+## 16.6.1
+
+### Patch Changes
+
+- [#588](https://github.com/eBay/evo-web/pull/588) [`0605956`](https://github.com/eBay/evo-web/commit/06059563b9dcf3a29cf7a8483f529638269bcd3f) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(EbayBarChart): Add new React EbayBarChart component
+  fix(ebay-bar-chart): use correct data structure to render the bar charts
+
+- [#597](https://github.com/eBay/evo-web/pull/597) [`606295b`](https://github.com/eBay/evo-web/commit/606295b60a7202b2ec87032f5632ee02b4134015) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Update makeup
+
+- [#602](https://github.com/eBay/evo-web/pull/602) [`4e1b7d1`](https://github.com/eBay/evo-web/commit/4e1b7d180fde962112bb831d85f79a009496092b) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(ebay-video): use Shaka Player.attach() method
+
+- [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
+
+  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+
+  **@ebay/skin:** Add button reset styles for shaka-play-button.
+
 ## 16.6.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@evo-web/react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Collection of core eBay components; considered to be the building blocks for all composite structures, pages & apps.",
   "keywords": [
     "React",

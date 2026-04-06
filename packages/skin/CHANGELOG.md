@@ -1,5 +1,23 @@
 # Skin Changelog
 
+## 19.24.0
+
+### Minor Changes
+
+- [#506](https://github.com/eBay/evo-web/pull/506) [`1dcd429`](https://github.com/eBay/evo-web/commit/1dcd429cf5152f0d21f6828a5169b5f7fff45d05) Thanks [@agliga](https://github.com/agliga)! - feat(dialog): added new component to use native dialog tag
+
+### Patch Changes
+
+- [#596](https://github.com/eBay/evo-web/pull/596) [`75f3558`](https://github.com/eBay/evo-web/commit/75f3558cab526bc5de95437ec15d2a30b391d2f8) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-dialog component
+
+- [#600](https://github.com/eBay/evo-web/pull/600) [`5c868e1`](https://github.com/eBay/evo-web/commit/5c868e1954d557643c867b8955ceb63a1ecd6450) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(video): apply button cleanup to play-button-container only
+
+- [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
+
+  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+
+  **@ebay/skin:** Add button reset styles for shaka-play-button.
+
 ## 19.23.0
 
 ### Minor Changes
