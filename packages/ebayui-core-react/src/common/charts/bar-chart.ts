@@ -11,6 +11,7 @@ export interface ColumnPointInternal extends Highcharts.Point {
     dlBox: Highcharts.BBoxObject;
     // Overwrite read-only shapeArgs
     shapeArgs: Highcharts.SVGAttributes;
+    label?: string;
 }
 
 /**

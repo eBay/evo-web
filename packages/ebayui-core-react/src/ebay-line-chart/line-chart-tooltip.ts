@@ -1,12 +1,7 @@
+import type Highcharts from "highcharts";
 import { escapeHtml } from "../common/charts/shared";
 
-interface LineChartPoint {
-    point: {
-        tooltip?: string;
-        label?: string;
-        series: { name: string };
-    };
-}
+export type LineChartPoint = Highcharts.Point & { tooltip?: string; label?: string };
 
 interface LineChartTooltipOptions {
     date: string;
@@ -16,7 +11,7 @@ interface LineChartTooltipOptions {
 
 export function lineChartTooltipHtml({ date, points, seriesLength }: LineChartTooltipOptions): string {
     const rows = points
-        .map(({ point }) => {
+        .map((point) => {
             if (point.tooltip) {
                 return escapeHtml(point.tooltip);
             }

@@ -150,8 +150,8 @@ function getTooltipConfig(hc: typeof highcharts, stacked: boolean): Highcharts.T
         const chartPosition = chart.pointer.getChartPosition();
         const hoverPoint = chart.hoverPoint!;
         const hpIndex = hoverPoint.index;
-        const hpInternal = hoverPoint as unknown as ColumnPointInternal;
-        const lastSeriesPoint = chartSeries[chartSeries.length - 1].data[hpIndex] as unknown as ColumnPointInternal;
+        const hpInternal = hoverPoint as ColumnPointInternal;
+        const lastSeriesPoint = chartSeries[chartSeries.length - 1].data[hpIndex] as ColumnPointInternal;
 
         const yAxisTop = (hoverPoint.series.yAxis as Highcharts.Axis & { top: number }).top;
         const y = chartPosition.top + yAxisTop + lastSeriesPoint.shapeY - labelHeight - 15;
@@ -333,7 +333,7 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
                         <Series
                             key={serie.name || i}
                             type="column"
-                            data={serie.data as unknown as number[]}
+                            data={serie.data}
                             options={
                                 {
                                     type: "column",

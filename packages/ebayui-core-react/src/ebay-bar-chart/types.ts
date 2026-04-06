@@ -1,6 +1,7 @@
 import { ComponentProps } from "react";
+import type Highcharts from "highcharts";
 
-export interface BarChartDataPoint {
+export interface BarChartDataPoint extends Highcharts.PointOptionsObject {
     x: number;
     y: number;
     label?: string;

@@ -1,6 +1,6 @@
 import type Highcharts from "highcharts";
 import { escapeHtml } from "../common/charts/shared";
-import type { BarChartDataPoint } from "./types";
+import type { ColumnPointInternal } from "../common/charts/bar-chart";
 
 interface BarChartTooltipPropsStacked {
     date: string;
@@ -33,7 +33,7 @@ export function barChartTooltipHtml({ date, data, stacked, x }: BarChartTooltipP
         for (const series of seriesList) {
             for (const point of series.data) {
                 if (point.x === x) {
-                    const dataPoint = point.options as unknown as BarChartDataPoint;
+                    const dataPoint = point as ColumnPointInternal;
                     html += `<div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">`;
                     html += `${escapeHtml(series.name || "")}`;
                     html += `<span style="margin-left: 16px">${escapeHtml(dataPoint.label || "")}</span>`;

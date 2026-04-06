@@ -23,7 +23,7 @@ import {
     trendPositiveColor,
 } from "../common/charts/shared";
 import { debounce } from "../common/debounce";
-import { lineChartTooltipHtml } from "./line-chart-tooltip";
+import { lineChartTooltipHtml, type LineChartPoint } from "./line-chart-tooltip";
 import type { EbayLineChartProps, LineChartSeriesItem } from "./types";
 
 ebayLegend(highcharts);
@@ -274,7 +274,7 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
             formatter: function (this: Highcharts.Point) {
                 return lineChartTooltipHtml({
                     date: highcharts.dateFormat("%b %e, %Y", (this.points?.[0]?.x as number) ?? 0, false),
-                    points: this.points as unknown as Parameters<typeof lineChartTooltipHtml>[0]["points"],
+                    points: this.points as LineChartPoint[],
                     seriesLength: isMultiSeries,
                 });
             },
@@ -350,7 +350,7 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
                         <Series
                             key={s.name || i}
                             type="line"
-                            data={s.data as unknown as number[]}
+                            data={s.data}
                             options={{ type: "line", name: s.name } as Highcharts.SeriesLineOptions}
                         />
                     ))}
