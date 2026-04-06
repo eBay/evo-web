@@ -173,7 +173,7 @@
     "typescript": "5",
     "typescript-eslint": "^8.51.0",
     "visual-html": "^2.1.8",
-    "vite": "^7.3.0",
+    "vite": "^7.3.2",
     "vite-css-modules": "^1.12.0",
     "vite-plugin-cjs-interop": "^2.3.0",
     "vitest": "^4.0.18",
