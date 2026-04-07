@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 16.7.0
+
+### Minor Changes
+
+- [#606](https://github.com/eBay/evo-web/pull/606) [`86c99fa`](https://github.com/eBay/evo-web/commit/86c99fa198805086c9c8377a000b0842597a51dd) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(item-tile): add a11yExternalLinkText prop to EbayFilePreviewCard and EbayItemTile
+
+  When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
+
+  Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
+
 ## 16.6.1
 
 ### Patch Changes
