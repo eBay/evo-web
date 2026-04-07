@@ -18,7 +18,6 @@ This is an ACTIVE PROCESS, before making any decision you should consult with th
    - `component.ts` or `component-browser.ts` (JS class)
    - `style.ts` (Skin CSS imports)
    - `marko-tag.json` (attribute definitions)
-   - `browser.json` (build remapping)
    - All files in `examples/` subdirectory
 2. Read **2--3 already-migrated evo-marko components** of similar complexity for reference patterns:
    - Simple (no JS): `packages/evo-marko/src/tags/evo-signal/index.marko`
@@ -37,16 +36,16 @@ This is an ACTIVE PROCESS, before making any decision you should consult with th
 
 ## Naming conventions
 
-| ebayui-core (Marko 5)         | evo-marko (Marko 6)             |
-| ----------------------------- | ------------------------------- |
-| `ebay-button` (dir)           | `evo-button` (dir)              |
-| `src/components/ebay-*`       | `src/tags/evo-*`                |
-| `<ebay-button>`               | `<evo-button>`                  |
-| `<ebay-chevron-down-12-icon>` | `<evo-icon-chevron-down-12>`    |
-| `component-browser.ts`        | _(none -- inline in template)_  |
-| `component.ts`                | _(none -- inline in template)_  |
-| `marko-tag.json`              | _(none -- types in template)_   |
-| `browser.json`                | `browser.json` (only if needed) |
+| ebayui-core (Marko 5)         | evo-marko (Marko 6)            |
+| ----------------------------- | ------------------------------ |
+| `ebay-button` (dir)           | `evo-button` (dir)             |
+| `src/components/ebay-*`       | `src/tags/evo-*`               |
+| `<ebay-button>`               | `<evo-button>`                 |
+| `<ebay-chevron-down-12-icon>` | `<evo-icon-chevron-down-12>`   |
+| `component-browser.ts`        | _(none -- inline in template)_ |
+| `component.ts`                | _(none -- inline in template)_ |
+| `marko-tag.json`              | _(none -- types in template)_  |
+| `browser.json`                | _(none -- not used)_           |
 
 ---
 
@@ -56,7 +55,6 @@ This is an ACTIVE PROCESS, before making any decision you should consult with th
 packages/evo-marko/src/tags/evo-{name}/
   index.marko           <-- single-file component (template + types + logic)
   style.ts              <-- Skin CSS imports (same as Marko 5)
-  browser.json          <-- only if skin remap needed (copy from Marko 5)
   README.md             <-- component docs
   {name}.stories.ts     <-- Storybook stories
   examples/
@@ -443,25 +441,9 @@ export interface Input extends Marko.HTML.Span {
 
 ---
 
-## Style and browser.json
+## Style
 
 `style.ts` is identical between Marko 5 and Marko 6. Copy it directly.
-
-`browser.json` is only needed if the Marko 5 component has one. The path changes from `../../common/empty` to match the new directory structure. Typical content:
-
-```json
-{
-  "requireRemap": [
-    {
-      "from": "./style",
-      "to": "../../common/empty",
-      "if-flag": "ebayui-no-skin"
-    }
-  ]
-}
-```
-
-Check whether the `../../common/empty` path resolves correctly from `src/tags/evo-{name}/` -- it may need to be `../../../common/empty` depending on nesting. Look at existing evo-marko `browser.json` files for the correct path (e.g., `evo-badge/browser.json`).
 
 ---
 
@@ -645,7 +627,6 @@ Before finalizing the `Input` interface, compare the Marko 5 props:
 - [ ] `toJSON` hacks removed
 - [ ] Props are camelCase (not kebab-case)
 - [ ] `style.ts` copied (identical content)
-- [ ] `browser.json` copied if needed (verify path)
 - [ ] Icon tags renamed: `<ebay-*-icon>` -> `<evo-icon-*>`
 - [ ] Stories use `buildExtensionTemplate()` + `satisfies Meta<Input>`
 - [ ] Tests use `.ts` extension, no `testPassThroughAttributes`, direct `snapshotHTML()` calls
