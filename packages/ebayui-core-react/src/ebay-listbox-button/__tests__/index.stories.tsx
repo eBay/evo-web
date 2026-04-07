@@ -99,9 +99,10 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
         <EbayListboxButton
+            {...args}
             value="BB"
             onChange={(e: ChangeEvent, props: ChangeEventProps) => action("onChange")(e, props)}
             onCollapse={() => action("onCollapse")()}
@@ -114,9 +115,9 @@ export const Default = () => (
     </>
 );
 
-export const PreselectedIndex = () => (
+export const PreselectedIndex = (args) => (
     <>
-        <EbayListboxButton selected={1}>
+        <EbayListboxButton {...args} selected={1}>
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -124,9 +125,12 @@ export const PreselectedIndex = () => (
     </>
 );
 
-export const DefaultNoSelectedOption = () => (
+export const DefaultNoSelectedOption = (args) => (
     <>
-        <EbayListboxButton onChange={(e: ChangeEvent, props: ChangeEventProps) => action("onChange")(e, props)}>
+        <EbayListboxButton
+            {...args}
+            onChange={(e: ChangeEvent, props: ChangeEventProps) => action("onChange")(e, props)}
+        >
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -135,7 +139,7 @@ export const DefaultNoSelectedOption = () => (
 );
 
 export const DefaultWithA11YPrefix = {
-    render: () => {
+    render: (args) => {
         const listboxBtnLabel = "listbox-button__label";
 
         return (
@@ -146,6 +150,7 @@ export const DefaultWithA11YPrefix = {
                 <br />
                 <br />
                 <EbayListboxButton
+                    {...args}
                     id="btn-id"
                     value="BB"
                     prefixId={listboxBtnLabel}
@@ -161,9 +166,9 @@ export const DefaultWithA11YPrefix = {
     name: "Default with A11y Prefix",
 };
 
-export const DisabledState = () => (
+export const DisabledState = (args) => (
     <>
-        <EbayListboxButton value="BB" disabled>
+        <EbayListboxButton {...args} value="BB" disabled>
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -171,9 +176,9 @@ export const DisabledState = () => (
     </>
 );
 
-export const InvalidState = () => (
+export const InvalidState = (args) => (
     <>
-        <EbayListboxButton value="BB" aria-invalid="true">
+        <EbayListboxButton {...args} value="BB" aria-invalid="true">
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -181,9 +186,9 @@ export const InvalidState = () => (
     </>
 );
 
-export const Borderless = () => (
+export const Borderless = (args) => (
     <>
-        <EbayListboxButton value="BB" borderless>
+        <EbayListboxButton {...args} value="BB" borderless>
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -191,9 +196,9 @@ export const Borderless = () => (
     </>
 );
 
-export const Fluid = () => (
+export const Fluid = (args) => (
     <div style={{ width: "500px" }}>
-        <EbayListboxButton value="BB" fluid>
+        <EbayListboxButton {...args} value="BB" fluid>
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -201,15 +206,15 @@ export const Fluid = () => (
     </div>
 );
 
-export const StatefullComponent = () => (
+export const StatefullComponent = (args) => (
     <>
-        <StateFullTest />
+        <StateFullTest {...args} />
     </>
 );
 
-export const TooManyOptions = () => (
+export const TooManyOptions = (args) => (
     <>
-        <EbayListboxButton value="BB" maxHeight="200px">
+        <EbayListboxButton {...args} value="BB" maxHeight="200px">
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -253,9 +258,9 @@ export const TooManyOptions = () => (
     </>
 );
 
-export const PrefixLabel = () => (
+export const PrefixLabel = (args) => (
     <>
-        <EbayListboxButton prefixLabel="Selected:" value="BB">
+        <EbayListboxButton {...args} prefixLabel="Selected:" value="BB">
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -263,9 +268,9 @@ export const PrefixLabel = () => (
     </>
 );
 
-export const FloatingLabel = () => (
+export const FloatingLabel = (args) => (
     <>
-        <EbayListboxButton floatingLabel="Select" value="BB">
+        <EbayListboxButton {...args} floatingLabel="Select" value="BB">
             <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
             <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
             <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>
@@ -273,8 +278,8 @@ export const FloatingLabel = () => (
     </>
 );
 
-export const WithFixedStrategy = () => (
-    <EbayListboxButton floatingLabel="Select" value="BB" strategy="fixed">
+export const WithFixedStrategy = (args) => (
+    <EbayListboxButton {...args} floatingLabel="Select" value="BB" strategy="fixed">
         <EbayListboxButtonOption value="AA">Option 1</EbayListboxButtonOption>
         <EbayListboxButtonOption value="BB">Option 2</EbayListboxButtonOption>
         <EbayListboxButtonOption value="CC">Option 3</EbayListboxButtonOption>

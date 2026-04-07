@@ -166,8 +166,8 @@ export const WithDisabled = (args) => (
     </EbayListbox>
 );
 
-export const WithManyOptions = () => (
-    <EbayListbox name="formFieldName">
+export const WithManyOptions = (args) => (
+    <EbayListbox {...args} name="formFieldName">
         {Array.from({ length: 20 }, (_, i) => (
             <EbayListboxOption key={i} value={i.toString()} text={`Option ${i + 1}`} />
         ))}

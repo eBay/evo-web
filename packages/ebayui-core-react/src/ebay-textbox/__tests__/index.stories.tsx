@@ -151,12 +151,12 @@ or import styles using SCSS/CSS
 };
 
 export const DefaultTextbox = {
-    render: () => <EbayTextbox defaultValue="EbayTextbox" />,
+    render: (args) => <EbayTextbox {...args} defaultValue="EbayTextbox" />,
     name: "Default textbox",
 };
 
 export const TestingCallbacks = {
-    render: () => {
+    render: (args) => {
         const TestComponent: FC = () => {
             const ref = React.useRef(null);
             const [value, setValue] = useState("");
@@ -180,6 +180,7 @@ export const TestingCallbacks = {
                 <form ref={ref}>
                     <p>
                         <EbayTextbox
+                            {...args}
                             value={value}
                             onChange={(e, props) => action("onChange")(e, props)}
                             onInputChange={(e, props) => handleInputChange(e, props)}
@@ -223,9 +224,9 @@ export const TestingCallbacks = {
 };
 
 export const DisabledTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox disabled />
+            <EbayTextbox {...args} disabled />
         </>
     ),
 
@@ -233,9 +234,9 @@ export const DisabledTextbox = {
 };
 
 export const PlaceholderTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox placeholder="placeholder text" />
+            <EbayTextbox {...args} placeholder="placeholder text" />
         </>
     ),
 
@@ -243,9 +244,9 @@ export const PlaceholderTextbox = {
 };
 
 export const InvalidTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox invalid />
+            <EbayTextbox {...args} invalid />
         </>
     ),
 
@@ -253,9 +254,9 @@ export const InvalidTextbox = {
 };
 
 export const FluidTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox fluid />
+            <EbayTextbox {...args} fluid />
         </>
     ),
 
@@ -263,9 +264,9 @@ export const FluidTextbox = {
 };
 
 export const PasswordTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox type="password" />
+            <EbayTextbox {...args} type="password" />
         </>
     ),
 
@@ -273,9 +274,9 @@ export const PasswordTextbox = {
 };
 
 export const MultilineTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox multiline defaultValue={"some default value\nnext line"} />
+            <EbayTextbox {...args} multiline defaultValue={"some default value\nnext line"} />
         </>
     ),
 
@@ -283,9 +284,9 @@ export const MultilineTextbox = {
 };
 
 export const MultilineInvalidTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox multiline invalid defaultValue="some default value" />
+            <EbayTextbox {...args} multiline invalid defaultValue="some default value" />
         </>
     ),
 
@@ -293,9 +294,9 @@ export const MultilineInvalidTextbox = {
 };
 
 export const AutofocusedTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox autoFocus placeholder="Should focus here" />
+            <EbayTextbox {...args} autoFocus placeholder="Should focus here" />
         </>
     ),
 
@@ -303,9 +304,9 @@ export const AutofocusedTextbox = {
 };
 
 export const LargeTextbox = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTextbox placeholder="placeholder text" inputSize="large" />
+            <EbayTextbox {...args} placeholder="placeholder text" inputSize="large" />
         </>
     ),
 
@@ -313,20 +314,20 @@ export const LargeTextbox = {
 };
 
 export const WithIcon = {
-    render: () => (
+    render: (args) => (
         <div>
             <p>
-                <EbayTextbox placeholder="email">
+                <EbayTextbox {...args} placeholder="email">
                     <EbayTextboxPrefixIcon icon={<EbayIconMail16 />} />
                 </EbayTextbox>
             </p>
             <p>
-                <EbayTextbox placeholder="username">
+                <EbayTextbox {...args} placeholder="username">
                     <EbayTextboxPostfixIcon icon={<EbayIconProfile20 />} />
                 </EbayTextbox>
             </p>
             <p>
-                <EbayTextbox placeholder="search" onButtonClick={action("Clear!")}>
+                <EbayTextbox {...args} placeholder="search" onButtonClick={action("Clear!")}>
                     <EbayTextboxPrefixIcon icon={<EbayIconSearch16 />} />
                     <EbayTextboxPostfixIcon icon={<EbayIconClear16 />} buttonAriaLabel="Clear" />
                 </EbayTextbox>
@@ -338,15 +339,15 @@ export const WithIcon = {
 };
 
 export const WithPrePostfixText = {
-    render: () => (
+    render: (args) => (
         <div>
             <p>
-                <EbayTextbox placeholder="0.00">
+                <EbayTextbox {...args} placeholder="0.00">
                     <EbayTextboxPrefixText id="prefix">$</EbayTextboxPrefixText>
                 </EbayTextbox>
             </p>
             <p>
-                <EbayTextbox placeholder="0">
+                <EbayTextbox {...args} placeholder="0">
                     <EbayTextboxPostfixText id="postfix">in.</EbayTextboxPostfixText>
                 </EbayTextbox>
             </p>
@@ -357,7 +358,7 @@ export const WithPrePostfixText = {
 };
 
 export const ControlValueFromOutside = {
-    render: () => {
+    render: (args) => {
         const Component = () => {
             const [value, setValue] = useState("");
 
@@ -365,7 +366,7 @@ export const ControlValueFromOutside = {
                 setValue(props.value.substring(0, 10));
             };
 
-            return <EbayTextbox onInputChange={handleOnChange} value={value} placeholder="Max 10 chars" />;
+            return <EbayTextbox {...args} onInputChange={handleOnChange} value={value} placeholder="Max 10 chars" />;
         };
 
         return (
@@ -379,12 +380,12 @@ export const ControlValueFromOutside = {
 };
 
 export const RefForwarding = {
-    render: () => {
+    render: (args) => {
         const ref = React.createRef<HTMLInputElement>();
 
         return (
             <>
-                <EbayTextbox forwardedRef={ref} />
+                <EbayTextbox {...args} forwardedRef={ref} />
             </>
         );
     },
@@ -393,8 +394,9 @@ export const RefForwarding = {
 };
 
 export const FloatingLabel = {
-    render: () => (
+    render: (args) => (
         <EbayTextbox
+            {...args}
             floatingLabel="Floating label"
             onChange={action("onChange")}
             onInputChange={action("onInputChange")}
@@ -406,8 +408,9 @@ export const FloatingLabel = {
 };
 
 export const FloatingLabelFluid = {
-    render: () => (
+    render: (args) => (
         <EbayTextbox
+            {...args}
             fluid
             floatingLabel="Floating label"
             onChange={action("onChange")}
@@ -420,8 +423,9 @@ export const FloatingLabelFluid = {
 };
 
 export const FloatingLabelTypeDate = {
-    render: () => (
+    render: (args) => (
         <EbayTextbox
+            {...args}
             type="date"
             floatingLabel="Floating label"
             onChange={action("onChange")}
@@ -434,27 +438,34 @@ export const FloatingLabelTypeDate = {
 };
 
 export const FloatingLabelWithValue = {
-    render: () => (
-        <EbayTextbox onChange={action("textbox-changed")} floatingLabel="Floating label" defaultValue="Default value" />
+    render: (args) => (
+        <EbayTextbox
+            {...args}
+            onChange={action("textbox-changed")}
+            floatingLabel="Floating label"
+            defaultValue="Default value"
+        />
     ),
 
     name: "Floating label with value",
 };
 
 export const FloatingLabelInvalid = {
-    render: () => <EbayTextbox invalid onChange={action("textbox-changed")} floatingLabel="Invalid Floating label" />,
+    render: (args) => (
+        <EbayTextbox {...args} invalid onChange={action("textbox-changed")} floatingLabel="Invalid Floating label" />
+    ),
 
     name: "Floating label invalid",
 };
 
 export const FloatingLabelWithAutofocus = {
-    render: () => (
+    render: (args) => (
         <>
             <p>
-                <EbayTextbox floatingLabel="Regular field" />
+                <EbayTextbox {...args} floatingLabel="Regular field" />
             </p>
             <p>
-                <EbayTextbox floatingLabel="Autofocused field" autoFocus onFocus={action("onFocus")} />
+                <EbayTextbox {...args} floatingLabel="Autofocused field" autoFocus onFocus={action("onFocus")} />
             </p>
         </>
     ),
@@ -463,7 +474,7 @@ export const FloatingLabelWithAutofocus = {
 };
 
 export const FloatingLabelWithPlaceholderControlled = {
-    render: () => {
+    render: (args) => {
         const Component = () => {
             const [value, setValue] = useState("");
 
@@ -475,6 +486,7 @@ export const FloatingLabelWithPlaceholderControlled = {
                 <>
                     <p>
                         <EbayTextbox
+                            {...args}
                             floatingLabel="Will convert to lowercase"
                             placeholder="Enter some UPPERCASE"
                             onChange={handleOnChange}
@@ -515,14 +527,22 @@ export const FloatingLabelWithPlaceholderControlled = {
 };
 
 export const FloatingLabelWithMultiline = {
-    render: () => <EbayTextbox onChange={action("textbox-changed")} floatingLabel="Floating label" multiline />,
+    render: (args) => (
+        <EbayTextbox {...args} onChange={action("textbox-changed")} floatingLabel="Floating label" multiline />
+    ),
 
     name: "Floating label with multiline",
 };
 
 export const FloatingLabelWithMultilineAndOpaqueLabel = {
-    render: () => (
-        <EbayTextbox onChange={action("textbox-changed")} floatingLabel="Floating label" multiline opaqueLabel />
+    render: (args) => (
+        <EbayTextbox
+            {...args}
+            onChange={action("textbox-changed")}
+            floatingLabel="Floating label"
+            multiline
+            opaqueLabel
+        />
     ),
 
     name: "Floating label with multiline and opaque label",

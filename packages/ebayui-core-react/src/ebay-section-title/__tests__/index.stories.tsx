@@ -71,15 +71,15 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
-        <EbaySectionTitle>Default Section Title</EbaySectionTitle>
+        <EbaySectionTitle {...args}>Default Section Title</EbaySectionTitle>
     </>
 );
 
-export const WithSubtitle = () => (
+export const WithSubtitle = (args) => (
     <>
-        <EbaySectionTitle>
+        <EbaySectionTitle {...args}>
             <Title>Today’s Deals – All With Free Shipping</Title>
             <Subtitle>Plus, guaranteed best prices.</Subtitle>
         </EbaySectionTitle>
@@ -87,9 +87,9 @@ export const WithSubtitle = () => (
 );
 
 export const WithTitleButWOSubtitle = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionTitle>
+            <EbaySectionTitle {...args}>
                 <Title>Missing subtitle shouldn&apos;t throw</Title>
             </EbaySectionTitle>
         </>
@@ -99,14 +99,14 @@ export const WithTitleButWOSubtitle = {
 };
 
 export const WithCta = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionTitle href="https://www.ebay.com">
+            <EbaySectionTitle {...args} href="https://www.ebay.com">
                 <Title>Today’s Deals – All With Free Shipping</Title>
                 <Subtitle>Plus, guaranteed best prices.</Subtitle>
             </EbaySectionTitle>
 
-            <EbaySectionTitle href="https://www.ebay.com" ctaText="See All">
+            <EbaySectionTitle {...args} href="https://www.ebay.com" ctaText="See All">
                 <Title>Today’s Deals – All With Free Shipping</Title>
                 <Subtitle>Plus, guaranteed best prices.</Subtitle>
             </EbaySectionTitle>
@@ -116,9 +116,9 @@ export const WithCta = {
     name: "With CTA",
 };
 
-export const WithInfo = () => (
+export const WithInfo = (args) => (
     <>
-        <EbaySectionTitle>
+        <EbaySectionTitle {...args}>
             <Title>Today’s Deals – All With Free Shipping</Title>
             <Subtitle>Plus, guaranteed best prices.</Subtitle>
             <Info>

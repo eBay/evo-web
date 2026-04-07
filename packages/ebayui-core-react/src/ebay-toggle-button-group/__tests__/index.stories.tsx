@@ -123,6 +123,7 @@ export default {
             </div>
         ),
     ],
+    tags: ["autodocs"],
     parameters: {
         layout: "left",
         controls: { expanded: true },
@@ -142,10 +143,6 @@ export default {
                 ],
             },
         },
-    },
-
-    tags: ["autodocs"],
-    parameters: {
         docs: {
             description: {
                 component: `## Usage

@@ -81,15 +81,15 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
         <p>
-            <EbayRadio value="123" id="radio-1">
+            <EbayRadio {...args} value="123" id="radio-1">
                 <EbayLabel>Default</EbayLabel>
             </EbayRadio>
         </p>
         <p>
-            <EbayRadio value="123" id="radio-11" size="large">
+            <EbayRadio {...args} value="123" id="radio-11" size="large">
                 <EbayLabel>Large</EbayLabel>
             </EbayRadio>
         </p>
@@ -97,16 +97,16 @@ export const Default = () => (
 );
 
 export const UsingCustomLabelHtml = {
-    render: () => (
+    render: (args) => (
         <>
             <p>
-                <EbayRadio value="123" id="radio-1" />
+                <EbayRadio {...args} value="123" id="radio-1" />
                 <label className="field__label field__label--end" htmlFor="radio-1">
                     Default
                 </label>
             </p>
             <p>
-                <EbayRadio value="123" id="radio-11" size="large" />
+                <EbayRadio {...args} value="123" id="radio-11" size="large" />
                 <label className="field__label field__label--end" htmlFor="radio-11">
                     Large
                 </label>
@@ -118,9 +118,9 @@ export const UsingCustomLabelHtml = {
 };
 
 export const SelectedRadioButton = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayRadio checked id="radio-2">
+            <EbayRadio {...args} checked id="radio-2">
                 <EbayLabel>Selected</EbayLabel>
             </EbayRadio>
         </>
@@ -130,9 +130,9 @@ export const SelectedRadioButton = {
 };
 
 export const DisabledRadioButton = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayRadio disabled id="radio-20">
+            <EbayRadio {...args} disabled id="radio-20">
                 <EbayLabel>Disabled</EbayLabel>
             </EbayRadio>
         </>
@@ -142,7 +142,7 @@ export const DisabledRadioButton = {
 };
 
 export const GroupedRadioButtons = {
-    render: () => {
+    render: (args) => {
         const defaultProps = {
             onChange: (e, props) => action("onChange")(e, props),
             onFocus: (e, props) => action("onFocus")(e, props),
@@ -153,17 +153,38 @@ export const GroupedRadioButtons = {
             <fieldset>
                 <legend>Choose an Option</legend>
                 <EbayField>
-                    <EbayRadio id="group-radio-1" value="1" defaultChecked name="radio-group" {...defaultProps}>
+                    <EbayRadio
+                        {...args}
+                        id="group-radio-1"
+                        value="1"
+                        defaultChecked
+                        name="radio-group"
+                        {...defaultProps}
+                    >
                         <EbayLabel>Option 1</EbayLabel>
                     </EbayRadio>
                 </EbayField>
                 <EbayField>
-                    <EbayRadio id="group-radio-2" value="2" defaultChecked={false} name="radio-group" {...defaultProps}>
+                    <EbayRadio
+                        {...args}
+                        id="group-radio-2"
+                        value="2"
+                        defaultChecked={false}
+                        name="radio-group"
+                        {...defaultProps}
+                    >
                         <EbayLabel>Option 2</EbayLabel>
                     </EbayRadio>
                 </EbayField>
                 <EbayField>
-                    <EbayRadio id="group-radio-3" value="3" defaultChecked={false} name="radio-group" {...defaultProps}>
+                    <EbayRadio
+                        {...args}
+                        id="group-radio-3"
+                        value="3"
+                        defaultChecked={false}
+                        name="radio-group"
+                        {...defaultProps}
+                    >
                         <EbayLabel>Option 3</EbayLabel>
                     </EbayRadio>
                 </EbayField>
@@ -175,7 +196,7 @@ export const GroupedRadioButtons = {
 };
 
 export const StyledRadioButton = {
-    render: () => (
+    render: (args) => (
         <>
             <style
                 dangerouslySetInnerHTML={{
@@ -185,7 +206,7 @@ export const StyledRadioButton = {
                 `,
                 }}
             />
-            <EbayRadio className="custom" aria-label="custom color radio example" id="radio-30">
+            <EbayRadio {...args} className="custom" aria-label="custom color radio example" id="radio-30">
                 <EbayLabel>Custom style</EbayLabel>
             </EbayRadio>
         </>
@@ -195,7 +216,7 @@ export const StyledRadioButton = {
 };
 
 export const ControlledComponent = {
-    render: () => {
+    render: (args) => {
         const deliveryMethods = ["Regular", "Express", "Local Pickup"];
 
         const TestControlledComponent = () => {
@@ -212,6 +233,7 @@ export const ControlledComponent = {
                         {deliveryMethods.map((item, index) => (
                             <EbayField key={`delivery-${item}`}>
                                 <EbayRadio
+                                    {...args}
                                     id={`delivery-${index}`}
                                     checked={selectedValue === item}
                                     value={item}

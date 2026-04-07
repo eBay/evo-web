@@ -96,10 +96,11 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
         <p>
             <EbayIconButton
+                {...args}
                 onClick={(e: React.MouseEvent) => action("onClick")(e)}
                 onFocus={(e: React.FocusEvent) => action("onFocus")(e)}
                 onBlur={(e: React.FocusEvent) => action("onBlur")(e)}
@@ -109,15 +110,16 @@ export const Default = () => (
             />
         </p>
         <p>
-            <EbayIconButton href="https://ebay.com" icon={<EbayIconSettings16 />} aria-label="Settings" />
+            <EbayIconButton {...args} href="https://ebay.com" icon={<EbayIconSettings16 />} aria-label="Settings" />
         </p>
     </>
 );
 
-export const WithBadges = () => (
+export const WithBadges = (args) => (
     <>
         <p>
             <EbayIconButton
+                {...args}
                 icon={<EbayIconMenu20 />}
                 aria-label="Menu"
                 badgeNumber={1}
@@ -126,6 +128,7 @@ export const WithBadges = () => (
         </p>
         <p>
             <EbayIconButton
+                {...args}
                 href="https://ebay.com"
                 icon={<EbayIconCart16 />}
                 badgeNumber={3}
@@ -135,6 +138,7 @@ export const WithBadges = () => (
         </p>
         <p>
             <EbayIconButton
+                {...args}
                 href="https://ebay.com"
                 icon={<EbayIconChat16 />}
                 badgeNumber={99}
@@ -145,19 +149,25 @@ export const WithBadges = () => (
     </>
 );
 
-export const Transparent = () => (
+export const Transparent = (args) => (
     <>
         <p>
-            <EbayIconButton onClick={action("clicked")} icon={<EbayIconMenu20 />} transparent aria-label="Menu" />
+            <EbayIconButton
+                {...args}
+                onClick={action("clicked")}
+                icon={<EbayIconMenu20 />}
+                transparent
+                aria-label="Menu"
+            />
         </p>
     </>
 );
 
-export const WithPriority = () => (
+export const WithPriority = (args) => (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-        <EbayIconButton onClick={action("clicked")} icon="menu20" aria-label="Menu" />
-        <EbayIconButton onClick={action("clicked")} priority="primary" icon="menu20" aria-label="Menu" />
-        <EbayIconButton onClick={action("clicked")} priority="secondary" icon="menu20" aria-label="Menu" />
-        <EbayIconButton onClick={action("clicked")} priority="tertiary" icon="menu20" aria-label="Menu" />
+        <EbayIconButton {...args} onClick={action("clicked")} icon="menu20" aria-label="Menu" />
+        <EbayIconButton {...args} onClick={action("clicked")} priority="primary" icon="menu20" aria-label="Menu" />
+        <EbayIconButton {...args} onClick={action("clicked")} priority="secondary" icon="menu20" aria-label="Menu" />
+        <EbayIconButton {...args} onClick={action("clicked")} priority="tertiary" icon="menu20" aria-label="Menu" />
     </div>
 );

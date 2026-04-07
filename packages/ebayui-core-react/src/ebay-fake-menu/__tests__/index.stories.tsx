@@ -76,9 +76,10 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const Default: StoryFn<typeof EbayFakeMenu> = () => (
+export const Default: StoryFn<typeof EbayFakeMenu> = (args) => (
     <>
         <EbayFakeMenu
+            {...args}
             onClick={(event) => {
                 action("click")("MENU click event prevented");
                 event.preventDefault();
@@ -106,9 +107,10 @@ export const Default: StoryFn<typeof EbayFakeMenu> = () => (
     </>
 );
 
-export const WithoutTickIcon: StoryFn<typeof EbayFakeMenu> = () => (
+export const WithoutTickIcon: StoryFn<typeof EbayFakeMenu> = (args) => (
     <>
         <EbayFakeMenu
+            {...args}
             itemMatchesUrl={false}
             onClick={(event) => {
                 action("click")("MENU click event prevented");
@@ -137,9 +139,9 @@ export const WithoutTickIcon: StoryFn<typeof EbayFakeMenu> = () => (
     </>
 );
 
-export const WithSeparator: StoryFn<typeof EbayFakeMenu> = () => (
+export const WithSeparator: StoryFn<typeof EbayFakeMenu> = (args) => (
     <>
-        <EbayFakeMenu>
+        <EbayFakeMenu {...args}>
             <Item href="#">item 1 that has very long text</Item>
             <Item href="#">Item 2</Item>
             <Separator />
@@ -150,9 +152,9 @@ export const WithSeparator: StoryFn<typeof EbayFakeMenu> = () => (
     </>
 );
 
-export const WithDisabledItem: StoryFn<typeof EbayFakeMenu> = () => (
+export const WithDisabledItem: StoryFn<typeof EbayFakeMenu> = (args) => (
     <>
-        <EbayFakeMenu>
+        <EbayFakeMenu {...args}>
             <Item href="#">item 1 that has very long text</Item>
             <Item>Item without href</Item>
             <Item disabled>Disabled Item</Item>
@@ -161,9 +163,9 @@ export const WithDisabledItem: StoryFn<typeof EbayFakeMenu> = () => (
     </>
 );
 
-export const MixedWithButtons: StoryFn<typeof EbayFakeMenu> = () => (
+export const MixedWithButtons: StoryFn<typeof EbayFakeMenu> = (args) => (
     <>
-        <EbayFakeMenu>
+        <EbayFakeMenu {...args}>
             <Item href="#">Link 1</Item>
             <Item type="button">Button</Item>
             <Item href="#">Link 2</Item>
@@ -174,9 +176,9 @@ export const MixedWithButtons: StoryFn<typeof EbayFakeMenu> = () => (
     </>
 );
 
-export const WithBadges: StoryFn<typeof EbayFakeMenu> = () => (
+export const WithBadges: StoryFn<typeof EbayFakeMenu> = (args) => (
     <>
-        <EbayFakeMenu>
+        <EbayFakeMenu {...args}>
             <Item href="" badgeNumber={5} badgeAriaLabel="item 1 (5 unread items)">
                 item 1
             </Item>

@@ -102,9 +102,9 @@ The bolded title for each step. Will be rendered in an \`h4\` by default.
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <div style={{ padding: 50 }}>
-        <EbayProgressStepper>
+        <EbayProgressStepper {...args}>
             <Step>Started</Step>
             <Step>Shipped</Step>
             <Step current>Transit</Step>
@@ -114,9 +114,9 @@ export const Default = () => (
 );
 
 export const DefaultStateUpcoming = {
-    render: () => (
+    render: (args) => (
         <div style={{ padding: 50 }}>
-            <EbayProgressStepper defaultState="upcoming">
+            <EbayProgressStepper {...args} defaultState="upcoming">
                 <Step>
                     <Title>Paid</Title>
                     July 3rd
@@ -141,9 +141,9 @@ export const DefaultStateUpcoming = {
 };
 
 export const DefaultStateComplete = {
-    render: () => (
+    render: (args) => (
         <div style={{ padding: 50 }}>
-            <EbayProgressStepper defaultState="complete">
+            <EbayProgressStepper {...args} defaultState="complete">
                 <Step>Started</Step>
                 <Step>Shipped</Step>
                 <Step>Transit</Step>
@@ -155,9 +155,9 @@ export const DefaultStateComplete = {
     name: "Default state: complete",
 };
 
-export const Blocked = () => (
+export const Blocked = (args) => (
     <div style={{ padding: 50 }}>
-        <EbayProgressStepper>
+        <EbayProgressStepper {...args}>
             <Step>Started</Step>
             <Step>Shipped</Step>
             <Step state="attention" current>
@@ -168,9 +168,9 @@ export const Blocked = () => (
     </div>
 );
 
-export const CustomTitles = () => (
+export const CustomTitles = (args) => (
     <div style={{ padding: 50 }}>
-        <EbayProgressStepper>
+        <EbayProgressStepper {...args}>
             <Step>
                 <Title as="h1">H1</Title>
             </Step>
@@ -185,9 +185,9 @@ export const CustomTitles = () => (
 );
 
 export const VerticalColumn = {
-    render: () => (
+    render: (args) => (
         <div style={{ padding: 50 }}>
-            <EbayProgressStepper direction="column">
+            <EbayProgressStepper {...args} direction="column">
                 <Step>
                     <Title>Order placed</Title>
                     <p>New Mens Addidas Ultra Boost</p>
@@ -208,7 +208,7 @@ export const VerticalColumn = {
     name: "Vertical (column)",
 };
 
-export const Controlled = () => {
+export const Controlled = (args) => {
     const TestingComponent: FC = () => {
         const MIN = 1;
         const MAX = 4;
@@ -224,7 +224,7 @@ export const Controlled = () => {
 
         return (
             <div style={{ padding: 50 }}>
-                <EbayProgressStepper defaultState={defaultState()}>
+                <EbayProgressStepper {...args} defaultState={defaultState()}>
                     {range(MAX, MIN).map((n) => (
                         <Step current={currentNumber === n} key={n}>
                             Step {n}

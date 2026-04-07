@@ -75,9 +75,9 @@ or import styles using SCSS/CSS
 };
 
 export const DefaultMessageWithNoAction = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice>
+            <EbaySectionNotice {...args}>
                 <EbayNoticeContent>
                     <p>
                         Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
@@ -92,9 +92,9 @@ export const DefaultMessageWithNoAction = {
 };
 
 export const DefaultMessageWithAction = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice>
+            <EbaySectionNotice {...args}>
                 <EbayNoticeContent>
                     <p>
                         Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
@@ -114,9 +114,9 @@ export const DefaultMessageWithAction = {
 };
 
 export const ConfirmationMessage = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice status="confirmation">
+            <EbaySectionNotice {...args} status="confirmation">
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>
                         This successfully finished! <a href="http://www.ebay.com">next page</a>
@@ -135,9 +135,14 @@ export const ConfirmationMessage = {
 };
 
 export const InformationMessageDismissable = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice status="information" a11yDismissText="Dismiss" onDismiss={(e) => action("onDismiss")(e)}>
+            <EbaySectionNotice
+                {...args}
+                status="information"
+                a11yDismissText="Dismiss"
+                onDismiss={(e) => action("onDismiss")(e)}
+            >
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>
                         <strong>Good news!</strong> You get free shipping on your next pair of shoes!&nbsp;
@@ -155,9 +160,9 @@ export const InformationMessageDismissable = {
 };
 
 export const AttentionMessage = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice status="attention">
+            <EbaySectionNotice {...args} status="attention">
                 <EbayNoticeContent>
                     <p>
                         <strong>Error.</strong> Please take another look at the following:
@@ -180,9 +185,9 @@ export const AttentionMessage = {
 };
 
 export const SectionWithTitle = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice>
+            <EbaySectionNotice {...args}>
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>Title</EbaySectionNoticeTitle>
                     <p>
@@ -198,9 +203,9 @@ export const SectionWithTitle = {
 };
 
 export const SectionWithLink = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySectionNotice>
+            <EbaySectionNotice {...args}>
                 <EbayNoticeContent>
                     <EbaySectionNoticeTitle>Title</EbaySectionNoticeTitle>
                     <p>
@@ -218,9 +223,9 @@ export const SectionWithLink = {
     name: "Section with link",
 };
 
-export const EducationalSectionNotice = () => (
+export const EducationalSectionNotice = (args) => (
     <>
-        <EbaySectionNotice status="education">
+        <EbaySectionNotice {...args} status="education">
             <EbayNoticeContent>
                 <p>
                     Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
@@ -231,9 +236,9 @@ export const EducationalSectionNotice = () => (
     </>
 );
 
-export const EducationalSectionNoticeProminent = () => (
+export const EducationalSectionNoticeProminent = (args) => (
     <>
-        <EbaySectionNotice status="education" prominent>
+        <EbaySectionNotice {...args} status="education" prominent>
             <EbayNoticeContent>
                 <p>
                     Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}
@@ -244,9 +249,9 @@ export const EducationalSectionNoticeProminent = () => (
     </>
 );
 
-export const EducationalSectionNoticeCustomIcon = () => (
+export const EducationalSectionNoticeCustomIcon = (args) => (
     <>
-        <EbaySectionNotice status="education" prominent educationIcon={<EbayIconLightningBolt24 />}>
+        <EbaySectionNotice {...args} status="education" prominent educationIcon={<EbayIconLightningBolt24 />}>
             <EbayNoticeContent>
                 <p>
                     Items you didn&apos;t win will now show in the <a href="http://www.ebay.com">Didn&apos;t win</a>{" "}

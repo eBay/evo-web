@@ -99,9 +99,9 @@ or import styles using SCSS/CSS
     },
 };
 
-export const DefaultTooltip = () => (
+export const DefaultTooltip = (args) => (
     <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
-        <EbayTooltip>
+        <EbayTooltip {...args}>
             <EbayTooltipHost>
                 <EbayButton>Info</EbayButton>
             </EbayTooltipHost>
@@ -113,9 +113,9 @@ export const DefaultTooltip = () => (
     </div>
 );
 
-export const AnchorHost = () => (
+export const AnchorHost = (args) => (
     <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
-        <EbayTooltip>
+        <EbayTooltip {...args}>
             <EbayTooltipHost>
                 <a href="https://www.ebay.com">View options</a>
             </EbayTooltipHost>
@@ -127,7 +127,7 @@ export const AnchorHost = () => (
     </div>
 );
 
-export const PointersWithAllDirections = () => (
+export const PointersWithAllDirections = (args) => (
     <div>
         {allPointers.map((pointerType, index) => (
             <div
@@ -138,7 +138,7 @@ export const PointersWithAllDirections = () => (
                     textAlign: "center",
                 }}
             >
-                <EbayTooltip pointer={pointerType}>
+                <EbayTooltip {...args} pointer={pointerType}>
                     <EbayTooltipHost>
                         <a href="https://www.ebay.com">{pointerType}</a>
                     </EbayTooltipHost>
@@ -152,9 +152,9 @@ export const PointersWithAllDirections = () => (
     </div>
 );
 
-export const PointerWithCustomLocation = () => (
+export const PointerWithCustomLocation = (args) => (
     <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
-        <EbayTooltip pointer="top-left" overlayStyle={{ top: 40, left: -16 }}>
+        <EbayTooltip {...args} pointer="top-left" overlayStyle={{ top: 40, left: -16 }}>
             <EbayTooltipHost>
                 <a href="https://www.ebay.com">View options</a>
             </EbayTooltipHost>
@@ -166,9 +166,9 @@ export const PointerWithCustomLocation = () => (
     </div>
 );
 
-export const NoHover = () => (
+export const NoHover = (args) => (
     <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
-        <EbayTooltip noHover pointer="bottom">
+        <EbayTooltip {...args} noHover pointer="bottom">
             <EbayTooltipHost>
                 <EbayTextbox placeholder="Email address" />
             </EbayTooltipHost>

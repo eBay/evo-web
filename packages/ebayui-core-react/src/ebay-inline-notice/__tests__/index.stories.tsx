@@ -65,9 +65,9 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
-        <EbayInlineNotice aria-label="General">
+        <EbayInlineNotice {...args} aria-label="General">
             <EbayNoticeContent>
                 <p>text message</p>
             </EbayNoticeContent>
@@ -76,9 +76,9 @@ export const Default = () => (
 );
 
 export const ConfirmationMessage = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayInlineNotice status="confirmation" aria-label="Confirmation">
+            <EbayInlineNotice {...args} status="confirmation" aria-label="Confirmation">
                 <EbayNoticeContent>
                     <p>Delivered on May 1, 2017</p>
                     <p>
@@ -93,9 +93,9 @@ export const ConfirmationMessage = {
 };
 
 export const InformationMessage = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayInlineNotice status="information" aria-label="Information">
+            <EbayInlineNotice {...args} status="information" aria-label="Information">
                 <EbayNoticeContent>
                     <p>Global Shipping Program transaction.</p>
                 </EbayNoticeContent>
@@ -107,9 +107,9 @@ export const InformationMessage = {
 };
 
 export const AttentionMessage = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayInlineNotice status="attention" aria-label="Attention">
+            <EbayInlineNotice {...args} status="attention" aria-label="Attention">
                 <EbayNoticeContent>
                     <p>Update your credit card.</p>
                 </EbayNoticeContent>
@@ -121,21 +121,22 @@ export const AttentionMessage = {
 };
 
 export const NoticeToggle = {
-    render: () => (
+    render: (args) => (
         <>
-            <NoticeToggleStory />
+            <NoticeToggleStory {...args} />
         </>
     ),
 
     name: "Notice toggle",
 };
 
-function NoticeToggleStory() {
+function NoticeToggleStory(args) {
     const [hidden, setHidden] = useState(false);
     return (
         <>
             <EbayButton onClick={() => setHidden(!hidden)}>{hidden ? "Show" : "Hide"} Notice</EbayButton>
             <EbayInlineNotice
+                {...args}
                 status="confirmation"
                 hidden={hidden}
                 onNoticeShow={action("Showing")}

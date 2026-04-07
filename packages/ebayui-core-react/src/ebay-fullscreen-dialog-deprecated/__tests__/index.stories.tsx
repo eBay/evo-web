@@ -58,7 +58,7 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => {
+export const Default = (args) => {
     const [open, setOpen] = useState(false);
     return (
         <div>
@@ -67,6 +67,7 @@ export const Default = () => {
             </button>
             <p>Some outside content...</p>
             <EbayFullscreenDialogDeprecated
+                {...args}
                 open={open}
                 onOpen={() => action("onOpen")()}
                 onClose={() => {
@@ -91,10 +92,10 @@ export const Default = () => {
     );
 };
 
-export const AlwaysOpened = () => (
+export const AlwaysOpened = (args) => (
     <div>
         <p>Some outside content...</p>
-        <EbayFullscreenDialogDeprecated open a11yCloseText="Close dialog">
+        <EbayFullscreenDialogDeprecated {...args} open a11yCloseText="Close dialog">
             <EbayDialogHeader>Heading</EbayDialogHeader>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -111,7 +112,7 @@ export const AlwaysOpened = () => (
     </div>
 );
 
-export const WithAnimation = () => {
+export const WithAnimation = (args) => {
     const [open, setOpen] = useState(false);
     return (
         <div>
@@ -119,7 +120,13 @@ export const WithAnimation = () => {
                 Open Dialog
             </button>
             <p>Some outside content...</p>
-            <EbayFullscreenDialogDeprecated open={open} onClose={() => setOpen(false)} animated a11yCloseText="Close">
+            <EbayFullscreenDialogDeprecated
+                {...args}
+                open={open}
+                onClose={() => setOpen(false)}
+                animated
+                a11yCloseText="Close"
+            >
                 <EbayDialogHeader>Heading</EbayDialogHeader>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore

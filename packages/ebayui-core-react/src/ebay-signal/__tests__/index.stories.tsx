@@ -51,32 +51,40 @@ or import styles using SCSS/CSS
     },
 };
 
-export const DefaultCase = () => (
+export const DefaultCase = (args) => (
     <>
-        <EbaySignal>Default</EbaySignal>
+        <EbaySignal {...args}>Default</EbaySignal>
     </>
 );
 
-export const Trustworthy = () => (
+export const Trustworthy = (args) => (
     <>
-        <EbaySignal status="trustworthy">Trustworthy</EbaySignal>
+        <EbaySignal {...args} status="trustworthy">
+            Trustworthy
+        </EbaySignal>
     </>
 );
 
-export const Recent = () => (
+export const Recent = (args) => (
     <>
-        <EbaySignal status="recent">Recent</EbaySignal>
+        <EbaySignal {...args} status="recent">
+            Recent
+        </EbaySignal>
     </>
 );
 
-export const TimeSensitive = () => (
+export const TimeSensitive = (args) => (
     <>
-        <EbaySignal status="time-sensitive">Time-Sensitive</EbaySignal>
+        <EbaySignal {...args} status="time-sensitive">
+            Time-Sensitive
+        </EbaySignal>
     </>
 );
 
-export const Neutral = () => (
+export const Neutral = (args) => (
     <>
-        <EbaySignal status="neutral">Neutral</EbaySignal>
+        <EbaySignal {...args} status="neutral">
+            Neutral
+        </EbaySignal>
     </>
 );

@@ -122,9 +122,9 @@ or import styles using SCSS/CSS
     },
 };
 
-export const DefaultTourtip = () => (
+export const DefaultTourtip = (args) => (
     <div style={{ width: "100%", margin: 300 }}>
-        <EbayTourtip a11yCloseText="close">
+        <EbayTourtip {...args} a11yCloseText="close">
             <EbayTourtipContent>
                 <p>Content</p>
             </EbayTourtipContent>
@@ -136,7 +136,7 @@ export const DefaultTourtip = () => (
     </div>
 );
 
-export const PointersWithAllDirections = () => (
+export const PointersWithAllDirections = (args) => (
     <div>
         {allPointers.map((pointerType, index) => (
             <div
@@ -146,7 +146,7 @@ export const PointersWithAllDirections = () => (
                     margin: 300,
                 }}
             >
-                <EbayTourtip pointer={pointerType} a11yCloseText="close">
+                <EbayTourtip {...args} pointer={pointerType} a11yCloseText="close">
                     <EbayTourtipHost>
                         <a href="https://www.ebay.com">{pointerType}</a>
                     </EbayTourtipHost>
@@ -160,9 +160,9 @@ export const PointersWithAllDirections = () => (
     </div>
 );
 
-export const PointerWithCustomLocation = () => (
+export const PointerWithCustomLocation = (args) => (
     <div style={{ width: "100%", margin: 300 }}>
-        <EbayTourtip a11yCloseText="close" pointer="top-left" overlayStyle={{ top: 40, left: -16 }}>
+        <EbayTourtip {...args} a11yCloseText="close" pointer="top-left" overlayStyle={{ top: 40, left: -16 }}>
             <EbayTourtipHost>
                 <a href="https://www.ebay.com">View options</a>
             </EbayTourtipHost>
@@ -174,9 +174,9 @@ export const PointerWithCustomLocation = () => (
     </div>
 );
 
-export const FooterTourtip = () => (
+export const FooterTourtip = (args) => (
     <div style={{ width: "100%", margin: 300 }}>
-        <EbayTourtip a11yCloseText="close" pointer="bottom">
+        <EbayTourtip {...args} a11yCloseText="close" pointer="bottom">
             <EbayTourtipHost>
                 <EbayButton>Info</EbayButton>
             </EbayTourtipHost>
@@ -191,9 +191,9 @@ export const FooterTourtip = () => (
     </div>
 );
 
-export const FooterAndHeadingTourtip = () => (
+export const FooterAndHeadingTourtip = (args) => (
     <div style={{ width: "100%", margin: 300 }}>
-        <EbayTourtip a11yCloseText="close" pointer="bottom">
+        <EbayTourtip {...args} a11yCloseText="close" pointer="bottom">
             <EbayTourtipHost>
                 <EbayButton>Info</EbayButton>
             </EbayTourtipHost>

@@ -92,10 +92,11 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const DefaultCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
+export const DefaultCheckboxButton: StoryFn<typeof EbayCheckbox> = (args) => (
     <>
         <p>
             <EbayCheckbox
+                {...args}
                 value="123"
                 id="checkbox-11"
                 onChange={(e, props) => action("onChange")(e, props)}
@@ -106,65 +107,83 @@ export const DefaultCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
             </EbayCheckbox>
         </p>
         <p>
-            <EbayCheckbox value="123" id="checkbox-12" size="large">
+            <EbayCheckbox {...args} value="123" id="checkbox-12" size="large">
                 <EbayLabel>Large</EbayLabel>
             </EbayCheckbox>
         </p>
     </>
 );
 
-export const SelectedCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
+export const SelectedCheckboxButton: StoryFn<typeof EbayCheckbox> = (args) => (
     <>
         <p>
-            <EbayCheckbox checked value="123" id="checkbox-21">
+            <EbayCheckbox {...args} checked value="123" id="checkbox-21">
                 <EbayLabel>Default</EbayLabel>
             </EbayCheckbox>
         </p>
         <p>
-            <EbayCheckbox checked value="123" id="checkbox-22" size="large">
+            <EbayCheckbox {...args} checked value="123" id="checkbox-22" size="large">
                 <EbayLabel>Large</EbayLabel>
             </EbayCheckbox>
         </p>
     </>
 );
 
-export const DisabledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
+export const DisabledCheckboxButton: StoryFn<typeof EbayCheckbox> = (args) => (
     <>
         <p>
-            <EbayCheckbox disabled value="123" id="checkbox-31">
+            <EbayCheckbox {...args} disabled value="123" id="checkbox-31">
                 <EbayLabel>Default disabled</EbayLabel>
             </EbayCheckbox>
         </p>
         <p>
-            <EbayCheckbox disabled value="123" id="checkbox-32" size="large">
+            <EbayCheckbox {...args} disabled value="123" id="checkbox-32" size="large">
                 <EbayLabel>Large disabled</EbayLabel>
             </EbayCheckbox>
         </p>
     </>
 );
 
-export const GroupedCheckboxButtons: StoryFn<typeof EbayCheckbox> = () => (
+export const GroupedCheckboxButtons: StoryFn<typeof EbayCheckbox> = (args) => (
     <fieldset>
         <legend>Choose an Option</legend>
         <span className="field">
-            <EbayCheckbox id="group-checkbox-1" value="1" onChange={action("checkbox-change")} name="checkbox-group">
+            <EbayCheckbox
+                {...args}
+                id="group-checkbox-1"
+                value="1"
+                onChange={action("checkbox-change")}
+                name="checkbox-group"
+            >
                 <EbayLabel>Option 1</EbayLabel>
             </EbayCheckbox>
         </span>
         <span className="field">
-            <EbayCheckbox id="group-checkbox-2" value="2" onChange={action("checkbox-change")} name="checkbox-group">
+            <EbayCheckbox
+                {...args}
+                id="group-checkbox-2"
+                value="2"
+                onChange={action("checkbox-change")}
+                name="checkbox-group"
+            >
                 <EbayLabel>Option 2</EbayLabel>
             </EbayCheckbox>
         </span>
         <span className="field">
-            <EbayCheckbox id="group-checkbox-3" value="3" onChange={action("checkbox-change")} name="checkbox-group">
+            <EbayCheckbox
+                {...args}
+                id="group-checkbox-3"
+                value="3"
+                onChange={action("checkbox-change")}
+                name="checkbox-group"
+            >
                 <EbayLabel>Option 3</EbayLabel>
             </EbayCheckbox>
         </span>
     </fieldset>
 );
 
-export const StyledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
+export const StyledCheckboxButton: StoryFn<typeof EbayCheckbox> = (args) => (
     <span className="checkbox">
         <style
             dangerouslySetInnerHTML={{
@@ -174,13 +193,13 @@ export const StyledCheckboxButton: StoryFn<typeof EbayCheckbox> = () => (
             `,
             }}
         />
-        <EbayCheckbox className="custom" aria-label="custom color checkbox example" id="checkbox-30">
+        <EbayCheckbox {...args} className="custom" aria-label="custom color checkbox example" id="checkbox-30">
             <EbayLabel>Custom style</EbayLabel>
         </EbayCheckbox>
     </span>
 );
 
-export const ControlValueFromOutside: StoryFn<typeof EbayCheckbox> = () => {
+export const ControlValueFromOutside: StoryFn<typeof EbayCheckbox> = (args) => {
     const Controller = () => {
         const [isChecked, setChecked] = useState(true);
         const [isDisabled, setDisabled] = useState(false);
@@ -204,6 +223,7 @@ export const ControlValueFromOutside: StoryFn<typeof EbayCheckbox> = () => {
 
         return (
             <EbayCheckbox
+                {...args}
                 className="custom"
                 onChange={handleOnChange}
                 checked={isChecked}

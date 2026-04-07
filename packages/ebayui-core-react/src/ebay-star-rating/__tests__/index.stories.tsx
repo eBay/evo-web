@@ -56,11 +56,11 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Stars = () => (
+export const Stars = (args) => (
     <>
-        <EbayStarRating a11yText="star-rating" />
-        <EbayStarRating value="3-5" a11yText="star-rating" />
-        <EbayStarRating value="5" a11yText="star-rating" />
+        <EbayStarRating {...args} a11yText="star-rating" />
+        <EbayStarRating {...args} value="3-5" a11yText="star-rating" />
+        <EbayStarRating {...args} value="5" a11yText="star-rating" />
     </>
 );
 

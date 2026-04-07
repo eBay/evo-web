@@ -85,9 +85,9 @@ export const DefaultTabs: StoryFn<typeof EbayTabs> = (args) => (
 );
 
 export const PreSelectedTab = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayTabs selectedIndex={2}>
+            <EbayTabs {...args} selectedIndex={2}>
                 <Tab>Tab 1</Tab>
                 <Tab>Tab 2</Tab>
                 <Tab>Tab 3</Tab>
@@ -120,7 +120,7 @@ export const PreSelectedTab = {
 };
 
 export const ProgrammaticallySelectedTabs = {
-    render: () => {
+    render: (args) => {
         const Component = () => {
             const [selectedTab, selectTab] = useState(0);
 
@@ -131,7 +131,7 @@ export const ProgrammaticallySelectedTabs = {
                             Select Tab {i + 1}
                         </button>
                     ))}
-                    <EbayTabs selectedIndex={selectedTab}>
+                    <EbayTabs {...args} selectedIndex={selectedTab}>
                         <Tab>Tab 1</Tab>
                         <Tab>Tab 2</Tab>
                         <Tab>Tab 3</Tab>
@@ -193,9 +193,9 @@ export const ManuallyActivatedTabs = (args) => (
     </>
 );
 
-export const LargeTabs = () => (
+export const LargeTabs = (args) => (
     <>
-        <EbayTabs size="large">
+        <EbayTabs {...args} size="large">
             <Tab>Large Tab 1</Tab>
             <Tab>Large Tab 2</Tab>
             <Tab>Large Tab 3</Tab>
@@ -255,10 +255,10 @@ export const Disabled: StoryFn<typeof EbayTabs> = (args) => (
     </>
 );
 
-export const MultipleTabs = () => (
+export const MultipleTabs = (args) => (
     <>
         <div>
-            <EbayTabs id="tab-upper">
+            <EbayTabs {...args} id="tab-upper">
                 <Tab>Tab 1</Tab>
                 <Tab>Tab 2</Tab>
                 <Panel>
@@ -276,7 +276,7 @@ export const MultipleTabs = () => (
             </EbayTabs>
         </div>
         <div style={{ marginTop: "64px" }}>
-            <EbayTabs id="tab-lower">
+            <EbayTabs {...args} id="tab-lower">
                 <Tab>Tab A</Tab>
                 <Tab>Tab B</Tab>
                 <Tab>Tab C</Tab>
@@ -304,12 +304,12 @@ export const MultipleTabs = () => (
 );
 
 export const TabsWithInputs = {
-    render: () => {
+    render: (args) => {
         const Component = () => {
             const [name, setName] = useState("John Doe");
 
             return (
-                <EbayTabs>
+                <EbayTabs {...args}>
                     <Tab>Tab 1</Tab>
                     <Tab>Tab 2</Tab>
                     <Tab>Tab 3</Tab>
@@ -345,7 +345,7 @@ export const TabsWithInputs = {
 };
 
 export const BottomTabsOnLongPage = {
-    render: () => (
+    render: (args) => (
         <>
             <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
             <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
@@ -355,7 +355,7 @@ export const BottomTabsOnLongPage = {
             <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
             <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
             <p style={{ margin: "10em 0" }}>Scroll down for more content...</p>
-            <EbayTabs>
+            <EbayTabs {...args}>
                 <Tab>Tab 1</Tab>
                 <Tab>Tab 2</Tab>
                 <Panel>

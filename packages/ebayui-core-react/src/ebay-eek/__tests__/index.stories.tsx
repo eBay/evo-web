@@ -50,42 +50,42 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const RegularA: StoryFn<EbayEekProps> = () => (
+export const RegularA: StoryFn<EbayEekProps> = (args) => (
     <>
         <div>
-            <EbayEek max="A" min="G" rating="A" />
-            <EbayEek max="A" min="G" rating="B" />
-            <EbayEek max="A" min="G" rating="C" />
-            <EbayEek max="A" min="G" rating="D" />
-            <EbayEek max="A" min="G" rating="E" />
-            <EbayEek max="A" min="G" rating="F" />
-            <EbayEek max="A" min="G" rating="G" />
+            <EbayEek {...args} max="A" min="G" rating="A" />
+            <EbayEek {...args} max="A" min="G" rating="B" />
+            <EbayEek {...args} max="A" min="G" rating="C" />
+            <EbayEek {...args} max="A" min="G" rating="D" />
+            <EbayEek {...args} max="A" min="G" rating="E" />
+            <EbayEek {...args} max="A" min="G" rating="F" />
+            <EbayEek {...args} max="A" min="G" rating="G" />
         </div>
     </>
 );
 
 export const A: StoryObj<EbayEekProps> = {
-    render: () => (
+    render: (args) => (
         <>
             <div>
-                <EbayEek max="A++" min="E" rating="A++" />
-                <EbayEek max="A++" min="E" rating="A+" />
-                <EbayEek max="A++" min="E" rating="A" />
-                <EbayEek max="A++" min="E" rating="B" />
-                <EbayEek max="A++" min="E" rating="C" />
-                <EbayEek max="A++" min="E" rating="D" />
-                <EbayEek max="A++" min="E" rating="E" />
+                <EbayEek {...args} max="A++" min="E" rating="A++" />
+                <EbayEek {...args} max="A++" min="E" rating="A+" />
+                <EbayEek {...args} max="A++" min="E" rating="A" />
+                <EbayEek {...args} max="A++" min="E" rating="B" />
+                <EbayEek {...args} max="A++" min="E" rating="C" />
+                <EbayEek {...args} max="A++" min="E" rating="D" />
+                <EbayEek {...args} max="A++" min="E" rating="E" />
             </div>
             <div>
-                <EbayEek max="A++" min="G" rating="A++" />
-                <EbayEek max="A++" min="G" rating="A+" />
-                <EbayEek max="A++" min="G" rating="A" />
-                <EbayEek max="A++" min="G" rating="B" />
-                <EbayEek max="A++" min="G" rating="C" />
-                <EbayEek max="A++" min="G" rating="D" />
-                <EbayEek max="A++" min="G" rating="E" />
-                <EbayEek max="A++" min="G" rating="F" />
-                <EbayEek max="A++" min="G" rating="G" />
+                <EbayEek {...args} max="A++" min="G" rating="A++" />
+                <EbayEek {...args} max="A++" min="G" rating="A+" />
+                <EbayEek {...args} max="A++" min="G" rating="A" />
+                <EbayEek {...args} max="A++" min="G" rating="B" />
+                <EbayEek {...args} max="A++" min="G" rating="C" />
+                <EbayEek {...args} max="A++" min="G" rating="D" />
+                <EbayEek {...args} max="A++" min="G" rating="E" />
+                <EbayEek {...args} max="A++" min="G" rating="F" />
+                <EbayEek {...args} max="A++" min="G" rating="G" />
             </div>
         </>
     ),
@@ -94,38 +94,38 @@ export const A: StoryObj<EbayEekProps> = {
 };
 
 export const ValidA: StoryObj<EbayEekProps> = {
-    render: () => (
+    render: (args) => (
         <>
             <div>
-                <EbayEek max="A+++" min="D" rating="A+++" />
-                <EbayEek max="A+++" min="D" rating="A++" />
-                <EbayEek max="A+++" min="D" rating="A+" />
-                <EbayEek max="A+++" min="D" rating="A" />
-                <EbayEek max="A+++" min="D" rating="B" />
-                <EbayEek max="A+++" min="D" rating="C" />
-                <EbayEek max="A+++" min="D" rating="D" />
+                <EbayEek {...args} max="A+++" min="D" rating="A+++" />
+                <EbayEek {...args} max="A+++" min="D" rating="A++" />
+                <EbayEek {...args} max="A+++" min="D" rating="A+" />
+                <EbayEek {...args} max="A+++" min="D" rating="A" />
+                <EbayEek {...args} max="A+++" min="D" rating="B" />
+                <EbayEek {...args} max="A+++" min="D" rating="C" />
+                <EbayEek {...args} max="A+++" min="D" rating="D" />
             </div>
             <div>
-                <EbayEek max="A+++" min="E" rating="A+++" />
-                <EbayEek max="A+++" min="E" rating="A++" />
-                <EbayEek max="A+++" min="E" rating="A+" />
-                <EbayEek max="A+++" min="E" rating="A" />
-                <EbayEek max="A+++" min="E" rating="B" />
-                <EbayEek max="A+++" min="E" rating="C" />
-                <EbayEek max="A+++" min="E" rating="D" />
-                <EbayEek max="A+++" min="E" rating="E" />
+                <EbayEek {...args} max="A+++" min="E" rating="A+++" />
+                <EbayEek {...args} max="A+++" min="E" rating="A++" />
+                <EbayEek {...args} max="A+++" min="E" rating="A+" />
+                <EbayEek {...args} max="A+++" min="E" rating="A" />
+                <EbayEek {...args} max="A+++" min="E" rating="B" />
+                <EbayEek {...args} max="A+++" min="E" rating="C" />
+                <EbayEek {...args} max="A+++" min="E" rating="D" />
+                <EbayEek {...args} max="A+++" min="E" rating="E" />
             </div>
             <div>
-                <EbayEek max="A+++" min="G" rating="A+++" />
-                <EbayEek max="A+++" min="G" rating="A++" />
-                <EbayEek max="A+++" min="G" rating="A+" />
-                <EbayEek max="A+++" min="G" rating="A" />
-                <EbayEek max="A+++" min="G" rating="B" />
-                <EbayEek max="A+++" min="G" rating="C" />
-                <EbayEek max="A+++" min="G" rating="D" />
-                <EbayEek max="A+++" min="G" rating="E" />
-                <EbayEek max="A+++" min="G" rating="F" />
-                <EbayEek max="A+++" min="G" rating="G" />
+                <EbayEek {...args} max="A+++" min="G" rating="A+++" />
+                <EbayEek {...args} max="A+++" min="G" rating="A++" />
+                <EbayEek {...args} max="A+++" min="G" rating="A+" />
+                <EbayEek {...args} max="A+++" min="G" rating="A" />
+                <EbayEek {...args} max="A+++" min="G" rating="B" />
+                <EbayEek {...args} max="A+++" min="G" rating="C" />
+                <EbayEek {...args} max="A+++" min="G" rating="D" />
+                <EbayEek {...args} max="A+++" min="G" rating="E" />
+                <EbayEek {...args} max="A+++" min="G" rating="F" />
+                <EbayEek {...args} max="A+++" min="G" rating="G" />
             </div>
         </>
     ),
@@ -133,11 +133,11 @@ export const ValidA: StoryObj<EbayEekProps> = {
     name: "Valid A+++",
 };
 
-export const InvalidCombinations: StoryFn<EbayEekProps> = () => (
+export const InvalidCombinations: StoryFn<EbayEekProps> = (args) => (
     <>
-        <EbayEek max="B" min="G" rating="D" />
-        <EbayEek max="A" min="G" rating="A+++" />
-        <EbayEek max="A++" min="B" rating="A++" />
-        <EbayEek max="A+" min="B" rating="A++" />
+        <EbayEek {...args} max="B" min="G" rating="D" />
+        <EbayEek {...args} max="A" min="G" rating="A+++" />
+        <EbayEek {...args} max="A++" min="B" rating="A++" />
+        <EbayEek {...args} max="A+" min="B" rating="A++" />
     </>
 );
