@@ -86,7 +86,7 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
                         rel={a11yExternalLinkText ? "noopener noreferrer" : undefined}
                     >
                         <EbayFilePreviewContent file={previewFile} status={status} seeMore={seeMore} />
-                        {a11yExternalLinkText && <span className="clipped">{a11yExternalLinkText}</span>}
+                        {a11yExternalLinkText && <span className="clipped"> - {a11yExternalLinkText}</span>}
                     </a>
                 ) : (
                     <EbayFilePreviewContent file={previewFile} status={status} seeMore={seeMore} />

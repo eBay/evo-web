@@ -50,7 +50,7 @@ describe("<EbayFilePreviewCard>", () => {
                 a11yCancelUploadText="Cancel upload"
                 deleteText="Delete"
                 href="/collection"
-                a11yExternalLinkText=" - opens in new window or tab"
+                a11yExternalLinkText="opens in new window or tab"
                 file={{
                     name: "file-name.jpg",
                     type: "image",

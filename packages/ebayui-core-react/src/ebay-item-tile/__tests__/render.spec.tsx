@@ -94,7 +94,7 @@ describe("<EbayItemTile>", () => {
         const { asFragment } = render(
             <EbayItemTile
                 href="/collection"
-                a11yExternalLinkText=" - opens in new window or tab"
+                a11yExternalLinkText="opens in new window or tab"
                 file={{
                     name: "file-name.jpg",
                     type: "image",

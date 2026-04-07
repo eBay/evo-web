@@ -35,7 +35,7 @@ export default {
         "a11y-external-link-text": {
             control: { type: "text" },
             description:
-                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers (e.g. `" - opens in new window or tab"`).',
+                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers with a ` - ` prefix automatically added (e.g. `"opens in new window or tab"`).',
         },
         file: {
             type: "object",

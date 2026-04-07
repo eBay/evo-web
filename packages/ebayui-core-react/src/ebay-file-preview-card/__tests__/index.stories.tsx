@@ -116,7 +116,7 @@ const meta: Meta<typeof EbayFilePreviewCard> = {
             type: "string",
             control: { type: "text" },
             description:
-                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers (e.g. `" - opens in new window or tab"`).',
+                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers with a ` - ` prefix automatically added (e.g. `"opens in new window or tab"`).',
         },
         as: { description: "Element type for the preview card, default is `div`", control: "text" },
         deleteText: { description: "Text for delete button.", control: "text" },
@@ -312,7 +312,7 @@ export const ExternalLink: StoryFn<typeof EbayFilePreviewCard> = (args) => (
     <EbayFilePreviewCard
         a11yCancelUploadText="Cancel upload"
         href="https://ebay.com"
-        a11yExternalLinkText=" - opens in new window or tab"
+        a11yExternalLinkText="opens in new window or tab"
         file={{
             name: "file-name.jpg",
             type: "image",
