@@ -12,6 +12,7 @@ export interface ItemTileInput extends Omit<Marko.HTML.Div, "title" | `on${strin
     subtitle?: Marko.AttrTag<Marko.Renderable>;
     description?: Marko.AttrTag<ItemTileDescription>;
     href?: string;
+    "a11y-external-link-text"?: string;
     file?: FilePreviewCardFile;
     action?: Marko.AttrTag<Marko.HTML.Button>;
     "on-action"?: () => void;
@@ -26,6 +27,7 @@ $ const {
     subtitle,
     description,
     href,
+    a11yExternalLinkText,
     action,
     layout,
     ...htmlInput
@@ -42,6 +44,7 @@ $ const {
                 action=action
                 file=file
                 href=href
+                a11yExternalLinkText=a11yExternalLinkText
             />
         </div>
     </if>

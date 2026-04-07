@@ -36,6 +36,12 @@ const meta: Meta<typeof EbayItemTile> = {
             description:
                 "The URL to navigate to when the item-tile is clicked. If not provided, the item will not be clickable.",
         },
+        a11yExternalLinkText: {
+            type: "string",
+            control: { type: "text" },
+            description:
+                'When provided, the preview link opens in a new tab (`target="_blank"`) and this text is rendered in a visually-hidden `<span class="clipped">` inside the anchor for screen readers with a ` - ` prefix automatically added (e.g. `"opens in new window or tab"`).',
+        },
         onAction: {
             action: "onAction",
             description: "Triggered when the action button is clicked",
@@ -165,5 +171,23 @@ export const WithoutSecondarySection: StoryFn<typeof EbayItemTile> = (args) => (
             <a href="https://ebay.com">Buy it now</a>
         </EbayItemTileDescription>
         <EbayItemTileDescription>Free shipping</EbayItemTileDescription>
+    </EbayItemTile>
+);
+
+export const ExternalLink: StoryFn<typeof EbayItemTile> = (args) => (
+    <EbayItemTile
+        href="https://ebay.com"
+        a11yExternalLinkText="opens in new window or tab"
+        file={{
+            name: "file-name.jpg",
+            type: "image",
+            src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+        }}
+        {...args}
+    >
+        <EbayItemTileAction aria-label="action label" icon={<EbayIconHeart16 />} />
+        <EbayItemTileTitle href="https://ebay.com">Apple iPhone 11 Pro Max</EbayItemTileTitle>
+        <EbayItemTileSubtitle>256GB Space Gray</EbayItemTileSubtitle>
+        <EbayItemTileDescription className="price">$29.99</EbayItemTileDescription>
     </EbayItemTile>
 );

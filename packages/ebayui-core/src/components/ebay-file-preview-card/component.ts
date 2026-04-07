@@ -21,6 +21,7 @@ export type FilePreviewCardFile =
       };
 interface FilePreviewCardInput extends Omit<Marko.HTML.Div, `on${string}`> {
     "a11y-cancel-upload-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-external-link-text"?: string;
     "delete-text"?: string;
     as?: keyof Marko.NativeTags;
     file?: FilePreviewCardFile;

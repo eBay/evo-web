@@ -1,0 +1,19 @@
+<ebay-item-tile
+    on-action("emit", "action")
+    href="https://ebay.com"
+    a11y-external-link-text="opens in new window or tab"
+    file={
+        name: "file-name.jpg",
+        type: "image/jpeg",
+        src: "https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg",
+    }
+    ...input
+>
+    <@action aria-label="Add to watchlist">
+        <ebay-heart-16-icon/>
+    </@action>
+    <@title>Apple iPhone 11 Pro Max</@title>
+    <@subtitle>256GB Space Gray</@subtitle>
+    <@description class="price">$29.99</@description>
+    <@description>Free shipping</@description>
+</ebay-item-tile>
