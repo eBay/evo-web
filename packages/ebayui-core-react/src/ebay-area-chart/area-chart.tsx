@@ -213,7 +213,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
                         <Series
                             key={s.name || i}
                             type={areaType}
-                            data={s.data as unknown as number[]}
+                            data={s.data ?? []}
                             options={{ type: areaType, name: s.name } as AreaSeriesOptions}
                         />
                     ))}
