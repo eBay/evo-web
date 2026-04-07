@@ -19,7 +19,7 @@ export default {
   },
   argTypes: {
     a11yHeadingText: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description:
         "Localized heading text for the breadcrumb nav, visually clipped",
@@ -31,7 +31,7 @@ export default {
       table: { defaultValue: { summary: "h2" } },
     },
     a11yMenuButtonText: {
-      type: "string",
+      type: { name: "string", required: true },
       control: "text",
       description:
         "Localized a11y label for the overflow menu button (shown when items collapse)",

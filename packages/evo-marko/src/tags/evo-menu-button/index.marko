@@ -116,7 +116,7 @@ export interface Input<
         selected=isSelected
         transparent=transparent
         aria-expanded=expander.ariaExpanded
-        aria-labelledby=labelId && `${prefixId} ${labelId}`
+        aria-labelledby=prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
         split=split
         disabled=disabled
         partiallyDisabled=partiallyDisabled
@@ -129,7 +129,7 @@ export interface Input<
             <${input.content}/>
         </if>
         <else>
-            <span id=labelId>
+            <span id=prefixId && labelId>
                 <${input.content}/>
             </span>
             <if=!noToggleIcon>

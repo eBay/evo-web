@@ -223,14 +223,16 @@ this.getEl("menu") as HTMLElement
 
 ```marko
 // Marko 5 -- component lifecycle
-onMount() {
-  this._setup();
-}
-onUpdate() {
-  this._setup();
-}
-onDestroy() {
-  this._cleanup();
+class {
+  onMount() {
+    this._setup();
+  }
+  onUpdate() {
+    this._setup();
+  }
+  onDestroy() {
+    this._cleanup();
+  }
 }
 // Marko 6 -- <script> with $signal for cleanup
 // WARNING: `<script>` should be used _very rarely_, usually `<let>`/`<const>` or other Marko features are better

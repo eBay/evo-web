@@ -1,16 +1,26 @@
-export interface Item extends Marko.HTML.A {}
+export interface Item extends Omit<Marko.HTML.A, `on${string}` | "type">, Marko.HTML.Button {}
 export interface Input extends Omit<Marko.HTML.Nav, "role"> {
-    a11yHeadingText?: string;
+    /**
+     * The clipped text that describes the heading for the breadcrumb navigation
+     *
+     * English default to be overridden is `"Page navigation"`
+     */
+    a11yHeadingText: string;
     a11yHeadingTag?: keyof Marko.NativeTags;
-    a11yMenuButtonText?: string;
+    /**
+     * The clipped text for the overflow menu button (shown when breadcrumbs collapse)
+     *
+     * English default to be overridden is `"More"`
+     */
+    a11yMenuButtonText: string;
     item?: Marko.AttrTag<Item>;
 }
 
 <const/{
     class: inputClass,
-    a11yHeadingText,
-    a11yHeadingTag: HeadingTag = "h2",
-    a11yMenuButtonText,
+    a11yHeadingText = "Page navigation",
+    a11yHeadingTag = "h2",
+    a11yMenuButtonText = "More",
     item: items,
     ...htmlInput
 }=input>
@@ -56,47 +66,63 @@ export interface Input extends Omit<Marko.HTML.Nav, "role"> {
     window.addEventListener("resize", calculateMaxItems, { signal: $signal });
 </script>
 
+<define/Breadcrumb|input: Item|>
+    <if=input.href>
+        <a ...input as Marko.HTML.A/>
+    </if>
+    <else>
+        <button ...input as Marko.HTML.Button/>
+    </else>
+</define>
+
 <nav
     ...htmlInput
     aria-labelledby=headingId
     class=["breadcrumbs", "breadcrumb--overflow", inputClass]
     role="navigation">
-    <${HeadingTag} id=headingId class="clipped">
+    <${a11yHeadingTag} id=headingId class="clipped">
         ${a11yHeadingText}
     </>
     <ul/$items>
-        <for|item, i| of=itemList>
-            <const/{ class: itemClass, href, content, ...htmlItem }=item>
-            <if=(i === 1)>
-                <li hidden=(hiddenCount === 0)>
-                    <evo-fake-menu-button
-                        variant="icon"
-                        transparent
-                        noToggleIcon
-                        collapseOnSelect
-                        a11yText=a11yMenuButtonText>
-                        <evo-icon-overflow-horizontal-16/>
-                        <for|menuItem, j| of=itemList>
-                            <if=(j >= 1 && j <= hiddenCount)>
-                                <@item href=menuItem.href content=menuItem.content/>
-                            </if>
-                        </for>
-                    </evo-fake-menu-button>
-                    <evo-icon-chevron-right-12/>
-                </li>
-            </if>
-            <li hidden=(i >= 1 && i <= hiddenCount)>
-                <${href ? "a" : "button"}
-                    ...htmlItem
-                    href=href
-                    class=itemClass
-                    aria-current=(!href && i === itemList.length - 1) && "location">
-                    <${content}/>
-                </>
-                <if=(i < itemList.length - 1)>
+        <if=itemList.length>
+            <const/firstItem=itemList[0]>
+            <li>
+                <Breadcrumb
+                    ...firstItem
+                    aria-current=(itemList.length === 1 && !firstItem.href && "location")/>
+                <if=(itemList.length > 1)>
                     <evo-icon-chevron-right-12/>
                 </if>
             </li>
+        </if>
+        <if=(itemList.length > 2)>
+            <li hidden=(hiddenCount === 0)>
+                <evo-fake-menu-button
+                    variant="icon"
+                    transparent
+                    collapseOnSelect
+                    a11yText=a11yMenuButtonText>
+                    <evo-icon-overflow-horizontal-16/>
+                    <for|i| from=1 to=hiddenCount>
+                        <@item href=itemList[i].href content=itemList[i].content/>
+                    </for>
+                </evo-fake-menu-button>
+                <evo-icon-chevron-right-12/>
+            </li>
+        </if>
+        <for|i| from=1 to=(itemList.length - 2)>
+            <li hidden=(i <= hiddenCount)>
+                <Breadcrumb ...itemList[i]/>
+                <evo-icon-chevron-right-12/>
+            </li>
         </for>
+        <if=(itemList.length > 1)>
+            <const/lastItem=itemList[itemList.length - 1]>
+            <li>
+                <Breadcrumb
+                    ...lastItem
+                    aria-current=(!lastItem.href && "location")/>
+            </li>
+        </if>
     </ul>
 </nav>
