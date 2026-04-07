@@ -38,7 +38,7 @@ vi.mock("../../common/charts/legend", () => ({
 
 import { Chart, Series } from "@highcharts/react";
 import { EbayLineChart } from "../index";
-import { lineChartTooltipHtml } from "../line-chart-tooltip";
+import { lineChartTooltipHtml, type LineChartPoint } from "../line-chart-tooltip";
 
 const MockChart = Chart as unknown as ReturnType<typeof vi.fn>;
 const MockSeries = Series as unknown as ReturnType<typeof vi.fn>;
@@ -167,7 +167,7 @@ describe("lineChartTooltipHtml XSS escaping", () => {
     it("renders single series label only", () => {
         const html = lineChartTooltipHtml({
             date: "Jan 1",
-            points: [{ point: { series: { name: "A" }, label: "$100" } }],
+            points: [{ series: { name: "A" }, label: "$100" } as LineChartPoint],
             seriesLength: false,
         });
         expect(html).toContain("$100");
@@ -177,7 +177,7 @@ describe("lineChartTooltipHtml XSS escaping", () => {
     it("renders name and label for multi-series", () => {
         const html = lineChartTooltipHtml({
             date: "Jan 1",
-            points: [{ point: { series: { name: "Series A" }, label: "$100" } }],
+            points: [{ series: { name: "Series A" }, label: "$100" } as LineChartPoint],
             seriesLength: true,
         });
         expect(html).toContain("Series A");
@@ -187,7 +187,7 @@ describe("lineChartTooltipHtml XSS escaping", () => {
     it("escapes name and label in multi-series", () => {
         const html = lineChartTooltipHtml({
             date: "Jan 1",
-            points: [{ point: { series: { name: "<b>evil</b>" }, label: "<script>xss</script>" } }],
+            points: [{ series: { name: "<b>evil</b>" }, label: "<script>xss</script>" } as LineChartPoint],
             seriesLength: true,
         });
         expect(html).toContain("&lt;b&gt;evil&lt;/b&gt;");
@@ -198,7 +198,7 @@ describe("lineChartTooltipHtml XSS escaping", () => {
         const customTooltip = '<span class="custom">Custom</span>';
         const html = lineChartTooltipHtml({
             date: "Jan 1",
-            points: [{ point: { series: { name: "A" }, tooltip: customTooltip } }],
+            points: [{ series: { name: "A" }, tooltip: customTooltip } as LineChartPoint],
             seriesLength: false,
         });
         expect(html).toContain("&lt;span class=&quot;custom&quot;&gt;Custom&lt;/span&gt;");

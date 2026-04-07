@@ -195,9 +195,7 @@ describe("ebay-bar-chart rendering", () => {
                     data: [
                         {
                             x: 1643673600000,
-                            options: {
-                                label: '<span onclick="alert(1)">unsafe</span>',
-                            },
+                            label: '<span onclick="alert(1)">unsafe</span>',
                         },
                     ],
                 },
