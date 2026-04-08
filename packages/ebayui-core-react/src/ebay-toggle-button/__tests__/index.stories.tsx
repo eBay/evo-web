@@ -137,7 +137,7 @@ export const Default: StoryObj<typeof EbayToggleButton> = {
 };
 
 export const WithChildren = (args) => (
-    <EbayToggleButton {...args} pressed={false} onToggle={action("togle")}>
+    <EbayToggleButton {...args} pressed={false} onToggle={action("toggle")}>
         <p>Button 1</p>
     </EbayToggleButton>
 );
@@ -148,7 +148,7 @@ export const IconButton = (args) => (
         pressed={false}
         title={"Button 1"}
         subtitle={"Some context here"}
-        onToggle={action("togle")}
+        onToggle={action("toggle")}
         icon={<EbayIconSettings24 />}
     ></EbayToggleButton>
 );
@@ -159,7 +159,7 @@ export const ImageButton = (args) => (
         pressed={false}
         title={"Button 1"}
         subtitle={"Some context here"}
-        onToggle={action("togle")}
+        onToggle={action("toggle")}
         img={{
             src: "https://cloudfront.slrlounge.com/wp-content/uploads/2012/07/01-SLRLounge-Holding-Standing-Wrong.jpg",
             alt: "image alt",
@@ -173,7 +173,7 @@ export const ImageButtonWithPlacement = (args) => (
         pressed={false}
         title={"Button 1"}
         subtitle={"Some context here"}
-        onToggle={action("togle")}
+        onToggle={action("toggle")}
         layoutType="gallery"
         img={{
             src: "https://cloudfront.slrlounge.com/wp-content/uploads/2012/07/01-SLRLounge-Holding-Standing-Wrong.jpg",

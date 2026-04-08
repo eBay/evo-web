@@ -110,8 +110,8 @@ const defaultProps: EbayVideoProps = {
 
 export const Default = (args) => (
     <EbayVideo
-        {...args}
         {...defaultProps}
+        {...args}
         thumbnail="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/iphone-thumbnail.jpg"
         volumeSlider
     >
@@ -120,15 +120,15 @@ export const Default = (args) => (
 );
 
 export const SingleVideo = (args) => (
-    <EbayVideo {...args} {...defaultProps}>
+    <EbayVideo {...defaultProps} {...args}>
         <EbayVideoSource src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/video.mp4" />
     </EbayVideo>
 );
 
 export const MultipleVideos = (args) => (
     <EbayVideo
-        {...args}
         {...defaultProps}
+        {...args}
         thumbnail="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/iphone-thumbnail.jpg"
     >
         <EbayVideoSource
@@ -143,13 +143,13 @@ export const MultipleVideos = (args) => (
 );
 
 export const Fail = (args) => (
-    <EbayVideo {...args} {...defaultProps}>
+    <EbayVideo {...defaultProps} {...args}>
         <EbayVideoSource src="wrong" />
     </EbayVideo>
 );
 
 export const FailInsidePlaylist = (args) => (
-    <EbayVideo {...args} {...defaultProps}>
+    <EbayVideo {...defaultProps} {...args}>
         <EbayVideoSource
             src="http://videoservices.vip.qa.ebay.com/videos/v1/b645f08316c0a4e114537903ffffffad/playlist.mpd"
             type="dash"
@@ -158,32 +158,32 @@ export const FailInsidePlaylist = (args) => (
 );
 
 export const Captions = (args) => (
-    <EbayVideo {...args} {...defaultProps}>
+    <EbayVideo {...defaultProps} {...args}>
         <EbayVideoSource src="https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd" />
     </EbayVideo>
 );
 
 export const ReportText = (args) => (
-    <EbayVideo {...args} {...defaultProps} reportText="Report" onReport={action("report")}>
+    <EbayVideo {...defaultProps} {...args} reportText="Report" onReport={action("report")}>
         <EbayVideoSource src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd" type="dash" />
     </EbayVideo>
 );
 
 export const NoReportButton = (args) => (
-    <EbayVideo {...args} {...defaultProps} hideReportButton>
+    <EbayVideo {...defaultProps} {...args} hideReportButton>
         <EbayVideoSource src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd" type="dash" />
     </EbayVideo>
 );
 
 export const MutedAutoplay = (args) => (
-    <EbayVideo {...args} {...defaultProps} muted autoPlay>
+    <EbayVideo {...defaultProps} {...args} muted autoPlay>
         <EbayVideoSource src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd" type="dash" />
     </EbayVideo>
 );
 
 export const FlexibleContainer = (args) => (
     <div style={{ width: "100%" }}>
-        <EbayVideo {...args} {...defaultProps}>
+        <EbayVideo {...defaultProps} {...args}>
             <EbayVideoSource src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd" type="dash" />
         </EbayVideo>
     </div>
@@ -198,13 +198,13 @@ export const Controlled = (args) => {
             <EbayButton onClick={() => setPlaying(!playing)}>{playing ? "Pause" : "Play"}</EbayButton> &nbsp;
             <EbayButton onClick={() => setMuted(!muted)}>{muted ? "Unmute" : "Mute"}</EbayButton>
             <EbayVideo
+                {...defaultProps}
                 {...args}
                 style={{ marginTop: "1em" }}
                 action={playing ? "play" : playing === false ? "pause" : undefined}
                 muted={muted}
                 onPlay={action("playing")}
                 onVolumeChange={action("volume changed")}
-                {...defaultProps}
             >
                 <EbayVideoSource src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd" type="dash" />
             </EbayVideo>
