@@ -1,92 +1,67 @@
 import IconButton from "<evo-icon-button>";
-import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
-import { type Input as MenuInput } from "<evo-menu>";
-export interface Input<
-    Index extends number | string | (number | string)[],
-> extends Omit<MenuInput<Index>, "variant"> {
+import { type Item as FakeMenuItem } from "<evo-fake-menu>";
+export interface Input extends Marko.HTML.Span {
     open?: boolean;
     openChange?: (open: boolean) => void;
     collapseOnSelect?: boolean;
-    prefixId?: string;
-    variant?: "form" | "button" | "icon" | "filter";
+    variant?: "form" | "button" | "icon";
     borderless?: boolean;
-    partiallyDisabled?: ButtonInput["partiallyDisabled"];
     priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
     size?: ButtonInput["size"];
     transparent?: boolean;
     disabled?: boolean;
-    split?: ButtonInput["split"];
     noToggleIcon?: boolean;
+    a11yText?: string;
     label?: Marko.AttrTag<Marko.HTML.Span>;
-    footerButton?: Marko.AttrTag<ButtonInput>;
     reverse?: boolean;
     strategy?: "absolute" | "fixed";
     fixWidth?: boolean;
+    flip?: boolean;
+    item?: Marko.AttrTag<FakeMenuItem>;
 }
 <const/{
     class: inputClass,
-    noToggleIcon: inputNoToggleIcon,
+    noToggleIcon,
     reverse,
     strategy,
     fixWidth,
+    flip,
     borderless,
     size,
-    partiallyDisabled,
-    footerButton,
     priority: inputPriority,
     disabled,
     variant,
     item: items,
     label,
-    selected: inputSelected,
-    selectedChange,
-    prefixId,
-    split: inputSplit,
     collapseOnSelect,
     transparent: inputTransparent,
+    a11yText,
     onKeyDown,
     ...htmlInput
 }=input>
 
-<id/labelId>
-<let/selected:=input.selected>
 <let/open:=input.open>
+
 <const/{
     tagName,
     transparent,
-    isSelected,
-    split,
     priority,
-    noToggleIcon,
 }=(() => {
     let priority = null;
-    let split;
-    let noToggleIcon;
     let transparent;
     let tagName;
-    let isSelected;
 
     if (variant === "icon") {
         tagName = IconButton;
         transparent = inputTransparent;
-    } else if (variant === "filter") {
-        tagName = FilterChip;
-        isSelected = Array.isArray(selected)
-            ? selected.length > 0
-            : selected !== -1;
     } else {
         tagName = Button;
-        split = inputSplit;
-        noToggleIcon = inputNoToggleIcon;
         priority = inputPriority;
     }
 
     return {
         tagName,
-        split,
-        isSelected,
-        noToggleIcon,
         transparent,
         priority,
     };
@@ -96,30 +71,28 @@ export interface Input<
     open=open
     placement=(reverse ? "bottom-end" : "bottom-start")
     strategy=strategy
+    flip=flip
     host=$root
     overlay=$menu/>
 
 <span/$root
     ...htmlInput
-    class=["menu-button", inputClass]
+    class=["fake-menu-button", inputClass]
     onKeyDown(e, el) {
         if (open && e.key === "Escape") open = false;
         onKeyDown && onKeyDown(e, el);
     }>
     <${tagName as any}
-        class=[`menu-button__button`]
+        class="fake-menu-button__button"
         size=size
         priority=priority as ButtonInput["priority"]
         borderless=borderless
-        variant=variant as any
-        aria-haspopup="true"
-        selected=isSelected
+        variant=(variant === "form" ? "form" as any : undefined)
         transparent=transparent
+        aria-haspopup="true"
         aria-expanded=expander.ariaExpanded
-        aria-labelledby=prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
-        split=split
+        aria-label=a11yText
         disabled=disabled
-        partiallyDisabled=partiallyDisabled
         onClick() { open = !open; }>
         <if=label>
             <span ...label class=["menu-button-prefix-label", label.class]/>
@@ -129,7 +102,7 @@ export interface Input<
             <${input.content}/>
         </if>
         <else>
-            <span id=prefixId && labelId>
+            <span>
                 <${input.content}/>
             </span>
             <if=!noToggleIcon>
@@ -137,15 +110,13 @@ export interface Input<
             </if>
         </else>
     </>
-    <evo-menu/$menu:(() => HTMLSpanElement)
+    <evo-fake-menu/$menu:(() => HTMLSpanElement)
         style=expander.floatingStyles
-        selected:=input.selected
-        classPrefix="menu-button"
+        classPrefix="fake-menu-button"
+        reverse=reverse
         fixed=strategy === "fixed"
-        variant=(variant as MenuInput<Index>["variant"])
         fixWidth=fixWidth
         tabindex=-1
-        footerButton=footerButton
         onClick() {
             if (collapseOnSelect) open = false;
         }

@@ -1,0 +1,128 @@
+export interface Item extends Omit<Marko.HTML.A, `on${string}` | "type">, Marko.HTML.Button {}
+export interface Input extends Omit<Marko.HTML.Nav, "role"> {
+    /**
+     * The clipped text that describes the heading for the breadcrumb navigation
+     *
+     * English default to be overridden is `"Page navigation"`
+     */
+    a11yHeadingText: string;
+    a11yHeadingTag?: keyof Marko.NativeTags;
+    /**
+     * The clipped text for the overflow menu button (shown when breadcrumbs collapse)
+     *
+     * English default to be overridden is `"More"`
+     */
+    a11yMenuButtonText: string;
+    item?: Marko.AttrTag<Item>;
+}
+
+<const/{
+    class: inputClass,
+    a11yHeadingText = "Page navigation",
+    a11yHeadingTag = "h2",
+    a11yMenuButtonText = "More",
+    item: items,
+    ...htmlInput
+}=input>
+
+<const/itemList=[...items || []]>
+<id/headingId>
+<let/hiddenCount=0>
+
+<const/calculateMaxItems() {
+    const el = $items();
+    if (!el || itemList.length < 3) { hiddenCount = 0; return; }
+
+    const nav = el.parentElement!;
+    const { paddingLeft, paddingRight } = getComputedStyle(nav);
+    const maxWidth = nav.clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight);
+
+    // Measure each <li>, temporarily unhiding hidden ones.
+    // The overflow menu <li> is always DOM child 1, so input item[N] = child[N+1].
+    const widths = Array.from(el.children as HTMLCollectionOf<HTMLElement>, (child) => {
+        if (child.hidden) { child.hidden = false; const v = child.offsetWidth; child.hidden = true; return v; }
+        return child.offsetWidth;
+    });
+
+    // Check if all items fit without the overflow menu.
+    const last = widths.length - 1;
+    const itemTotal = widths[0] + widths.slice(2).reduce((a, b) => a + b, 0);
+    if (itemTotal <= maxWidth) { hiddenCount = 0; return; }
+
+    // Items don't fit. Starting from first + menu + last, walk backward and
+    // count how many items to hide. Hidden items are always a contiguous
+    // range from input index 1..hiddenCount.
+    let used = widths[0] + widths[1] + widths[last];
+    let count = 0;
+    for (let i = last - 1; i >= 2; i--) {
+        used += widths[i];
+        if (used > maxWidth || i <= last - 3) count++;
+    }
+    hiddenCount = count;
+}>
+
+<script>
+    calculateMaxItems();
+    window.addEventListener("resize", calculateMaxItems, { signal: $signal });
+</script>
+
+<define/Breadcrumb|input: Item|>
+    <if=input.href>
+        <a ...input as Marko.HTML.A/>
+    </if>
+    <else>
+        <button ...input as Marko.HTML.Button/>
+    </else>
+</define>
+
+<nav
+    ...htmlInput
+    aria-labelledby=headingId
+    class=["breadcrumbs", "breadcrumb--overflow", inputClass]
+    role="navigation">
+    <${a11yHeadingTag} id=headingId class="clipped">
+        ${a11yHeadingText}
+    </>
+    <ul/$items>
+        <if=itemList.length>
+            <const/firstItem=itemList[0]>
+            <li>
+                <Breadcrumb
+                    ...firstItem
+                    aria-current=(itemList.length === 1 && !firstItem.href && "location")/>
+                <if=(itemList.length > 1)>
+                    <evo-icon-chevron-right-12/>
+                </if>
+            </li>
+        </if>
+        <if=(itemList.length > 2)>
+            <li hidden=(hiddenCount === 0)>
+                <evo-fake-menu-button
+                    variant="icon"
+                    transparent
+                    collapseOnSelect
+                    a11yText=a11yMenuButtonText>
+                    <evo-icon-overflow-horizontal-16/>
+                    <for|i| from=1 to=hiddenCount>
+                        <@item href=itemList[i].href content=itemList[i].content/>
+                    </for>
+                </evo-fake-menu-button>
+                <evo-icon-chevron-right-12/>
+            </li>
+        </if>
+        <for|i| from=1 to=(itemList.length - 2)>
+            <li hidden=(i <= hiddenCount)>
+                <Breadcrumb ...itemList[i]/>
+                <evo-icon-chevron-right-12/>
+            </li>
+        </for>
+        <if=(itemList.length > 1)>
+            <const/lastItem=itemList[itemList.length - 1]>
+            <li>
+                <Breadcrumb
+                    ...lastItem
+                    aria-current=(!lastItem.href && "location")/>
+            </li>
+        </if>
+    </ul>
+</nav>

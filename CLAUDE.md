@@ -83,6 +83,8 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 - ❌ Never: `$ let x = 0;` (Marko 5 deprecated)
 - ✅ Events: `onClick() { /* code */ }` or `onClick=handler`
 - ❌ Never: `onClick("handleClick")` (Marko 5 deprecated)
+- ✅ Attribute values containing `>` MUST be wrapped in parentheses: `<const/x=(a > b ? 1 : 0)>`
+- ❌ Never: `<const/x=a > b ? 1 : 0>` (the `>` is parsed as the tag close)
 
 **React Package Differences:**
 
