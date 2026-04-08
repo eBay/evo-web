@@ -44,9 +44,9 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const DefaultTabs = () => (
+export const DefaultTabs = (args) => (
     <>
-        <EbayFakeTabs>
+        <EbayFakeTabs {...args}>
             <Tab href="http://ebay.com">eBay.com</Tab>
             <Tab href="http://ebay.de">eBay.de</Tab>
             <Tab href="http://ebay.co.uk">eBay.co.uk</Tab>
@@ -57,9 +57,9 @@ export const DefaultTabs = () => (
 );
 
 export const PreSelectedTab = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayFakeTabs selectedIndex={1}>
+            <EbayFakeTabs {...args} selectedIndex={1}>
                 <Tab href="http://ebay.com">eBay.com</Tab>
                 <Tab href="http://ebay.de">eBay.de</Tab>
                 <Tab href="http://ebay.co.uk">eBay.co.uk</Tab>
@@ -72,9 +72,9 @@ export const PreSelectedTab = {
     name: "Pre-selected Tab",
 };
 
-export const Disabled = () => (
+export const Disabled = (args) => (
     <>
-        <EbayFakeTabs>
+        <EbayFakeTabs {...args}>
             <Tab href="http://ebay.com">eBay.com</Tab>
             <Tab>eBay.de</Tab>
             <Tab href="http://ebay.co.uk">eBay.co.uk</Tab>
@@ -85,9 +85,9 @@ export const Disabled = () => (
 );
 
 export const TabMatchesCurrentUrlFalse = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayFakeTabs tabMatchesCurrentUrl={false} selectedIndex={2}>
+            <EbayFakeTabs {...args} tabMatchesCurrentUrl={false} selectedIndex={2}>
                 <Tab href="http://ebay.com">eBay.com</Tab>
                 <Tab href="http://ebay.de">eBay.de</Tab>
                 <Tab href="http://ebay.co.uk">eBay.co.uk</Tab>

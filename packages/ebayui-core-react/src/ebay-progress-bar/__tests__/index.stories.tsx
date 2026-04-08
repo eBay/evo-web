@@ -46,45 +46,45 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
         <p>
             0%
             <br />
-            <EbayProgressBar />
+            <EbayProgressBar {...args} />
         </p>
         <p>
             50%
             <br />
-            <EbayProgressBar value={50} />
+            <EbayProgressBar {...args} value={50} />
         </p>
         <p>
             100%
             <br />
-            <EbayProgressBar value={100} />
+            <EbayProgressBar {...args} value={100} />
         </p>
     </>
 );
 
-export const CustomMax = () => (
+export const CustomMax = (args) => (
     <>
         <p>
             50/200
             <br />
-            <EbayProgressBar value={50} max={200} />
+            <EbayProgressBar {...args} value={50} max={200} />
         </p>
         <p>
             100/200
             <br />
-            <EbayProgressBar value={100} max={200} />
+            <EbayProgressBar {...args} value={100} max={200} />
         </p>
     </>
 );
 
-export const Fluid = () => (
+export const Fluid = (args) => (
     <>
         <p>
-            <EbayProgressBar fluid value={50} />
+            <EbayProgressBar {...args} fluid value={50} />
         </p>
     </>
 );

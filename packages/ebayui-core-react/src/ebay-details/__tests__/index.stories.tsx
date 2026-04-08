@@ -101,8 +101,8 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const Default: StoryFn<typeof EbayDetails> = () => (
-    <EbayDetails onToggle={action("onToggle")} text="Show me the details!" size="regular" as="p">
+export const Default: StoryFn<typeof EbayDetails> = (args) => (
+    <EbayDetails {...args} onToggle={action("onToggle")} text="Show me the details!" size="regular" as="p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -111,8 +111,15 @@ export const Default: StoryFn<typeof EbayDetails> = () => (
     </EbayDetails>
 );
 
-export const CenterAlignment: StoryFn<typeof EbayDetails> = () => (
-    <EbayDetails onToggle={action("onToggle")} text="Show me the details!" size="regular" alignment="center" as="p">
+export const CenterAlignment: StoryFn<typeof EbayDetails> = (args) => (
+    <EbayDetails
+        {...args}
+        onToggle={action("onToggle")}
+        text="Show me the details!"
+        size="regular"
+        alignment="center"
+        as="p"
+    >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -121,8 +128,8 @@ export const CenterAlignment: StoryFn<typeof EbayDetails> = () => (
     </EbayDetails>
 );
 
-export const SmallSize: StoryFn<typeof EbayDetails> = () => (
-    <EbayDetails onToggle={action("onToggle")} text="Show me the details!" size="small" as="p">
+export const SmallSize: StoryFn<typeof EbayDetails> = (args) => (
+    <EbayDetails {...args} onToggle={action("onToggle")} text="Show me the details!" size="small" as="p">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla

@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=/docs/navigation-disclosure-ebay-section-title--docs)
+[Storybook](https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=/docs/navigation-disclosure-ebay-section-title--documentation)

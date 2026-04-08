@@ -58,25 +58,25 @@ or import styles using SCSS/CSS
     },
 };
 
-export const SimpleUsage = () => (
+export const SimpleUsage = (args) => (
     <>
-        <EbayPageNotice aria-label="Default">
+        <EbayPageNotice {...args} aria-label="Default">
             <EbayNoticeContent>text message</EbayNoticeContent>
         </EbayPageNotice>
     </>
 );
 
-export const SimpleUsageWithId = () => (
+export const SimpleUsageWithId = (args) => (
     <>
-        <EbayPageNotice status="confirmation" aria-label="Success" id="main-page-notice">
+        <EbayPageNotice {...args} status="confirmation" aria-label="Success" id="main-page-notice">
             <EbayNoticeContent>text message</EbayNoticeContent>
         </EbayPageNotice>
     </>
 );
 
-export const ConfirmationMessage = () => (
+export const ConfirmationMessage = (args) => (
     <>
-        <EbayPageNotice status="confirmation" aria-label="Success">
+        <EbayPageNotice {...args} status="confirmation" aria-label="Success">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Congrats!</EbayPageNoticeTitle>
                 <p>
@@ -87,9 +87,9 @@ export const ConfirmationMessage = () => (
     </>
 );
 
-export const InformationMessage = () => (
+export const InformationMessage = (args) => (
     <>
-        <EbayPageNotice status="information" aria-label="Information">
+        <EbayPageNotice {...args} status="information" aria-label="Information">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Good news!</EbayPageNoticeTitle>
                 <p>
@@ -100,9 +100,9 @@ export const InformationMessage = () => (
     </>
 );
 
-export const AttentionMessage = () => (
+export const AttentionMessage = (args) => (
     <>
-        <EbayPageNotice status="attention" aria-label="Attention">
+        <EbayPageNotice {...args} status="attention" aria-label="Attention">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Error.</EbayPageNoticeTitle>
                 <p>
@@ -116,9 +116,9 @@ export const AttentionMessage = () => (
     </>
 );
 
-export const MessageWithFooter = () => (
+export const MessageWithFooter = (args) => (
     <>
-        <EbayPageNotice status="confirmation" aria-label="Congratulations">
+        <EbayPageNotice {...args} status="confirmation" aria-label="Congratulations">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Your order&apos;s in!</EbayPageNoticeTitle>
                 <p>We&apos;ll email updates to jonsnow@gmail.com. You should get it by Thu, Sept 22.</p>
@@ -130,9 +130,10 @@ export const MessageWithFooter = () => (
     </>
 );
 
-export const DismissibleNotice = () => (
+export const DismissibleNotice = (args) => (
     <>
         <EbayPageNotice
+            {...args}
             status="information"
             aria-label="Information"
             a11yDismissText="Close"
@@ -148,9 +149,9 @@ export const DismissibleNotice = () => (
     </>
 );
 
-export const DismissibleMessageWithCta = () => (
+export const DismissibleMessageWithCta = (args) => (
     <>
-        <EbayPageNotice status="information" aria-label="Congratulations" a11yDismissText="Close">
+        <EbayPageNotice {...args} status="information" aria-label="Congratulations" a11yDismissText="Close">
             <EbayNoticeContent>
                 <EbayPageNoticeTitle>Your order&apos;s in!</EbayPageNoticeTitle>
                 <p>We&apos;ll email updates to jonsnow@gmail.com. You should get it by Thu, Sept 22.</p>

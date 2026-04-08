@@ -2,4 +2,4 @@
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=/docs/form-input-ebay-radio--docs)
+[Storybook](https://opensource.ebay.com/evo-web/ebayui-core-react/main/?path=/docs/form-input-ebay-radio--documentation)

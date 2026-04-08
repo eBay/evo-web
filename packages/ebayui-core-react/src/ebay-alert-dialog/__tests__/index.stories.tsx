@@ -69,7 +69,7 @@ const textParagraph = (
     </p>
 );
 
-export const Default: StoryFn<typeof EbayAlertDialog> = () => {
+export const Default: StoryFn<typeof EbayAlertDialog> = (args) => {
     const [open, setOpen] = useState(true);
     const close = () => setOpen(false);
     return (
@@ -79,6 +79,7 @@ export const Default: StoryFn<typeof EbayAlertDialog> = () => {
             </button>
             <p>Some outside content...</p>
             <EbayAlertDialog
+                {...args}
                 open={open}
                 onOpen={() => action("onOpen")()}
                 onConfirm={() => {
@@ -98,7 +99,7 @@ export const Default: StoryFn<typeof EbayAlertDialog> = () => {
     );
 };
 
-export const WithAnimation: StoryFn<typeof EbayAlertDialog> = () => {
+export const WithAnimation: StoryFn<typeof EbayAlertDialog> = (args) => {
     const [open, setOpen] = useState(false);
     const close = () => setOpen(false);
     return (
@@ -107,7 +108,14 @@ export const WithAnimation: StoryFn<typeof EbayAlertDialog> = () => {
                 Open Dialog
             </button>
             <p>Some outside content...</p>
-            <EbayAlertDialog open={open} onConfirm={close} confirmText="Confirm" animated a11yCloseText="Close">
+            <EbayAlertDialog
+                {...args}
+                open={open}
+                onConfirm={close}
+                confirmText="Confirm"
+                animated
+                a11yCloseText="Close"
+            >
                 <EbayDialogHeader>Heading</EbayDialogHeader>
                 {textParagraph}
                 <p>
@@ -118,7 +126,7 @@ export const WithAnimation: StoryFn<typeof EbayAlertDialog> = () => {
     );
 };
 
-export const WithCustomConfirmButton: StoryFn<typeof EbayAlertDialog> = () => {
+export const WithCustomConfirmButton: StoryFn<typeof EbayAlertDialog> = (args) => {
     const [open, setOpen] = useState(true);
     const close = () => setOpen(false);
     return (
@@ -128,6 +136,7 @@ export const WithCustomConfirmButton: StoryFn<typeof EbayAlertDialog> = () => {
             </button>
             <p>Some outside content...</p>
             <EbayAlertDialog
+                {...args}
                 open={open}
                 confirm={
                     <EbayButton

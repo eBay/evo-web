@@ -123,9 +123,9 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <div style={{ display: "flex", margin: 200 }}>
-        <EbayInfotip a11yCloseText="Close" aria-label="Infotip">
+        <EbayInfotip {...args} a11yCloseText="Close" aria-label="Infotip">
             <EbayInfotipHeading>Title</EbayInfotipHeading>
             <EbayInfotipContent>
                 <p>Content</p>
@@ -135,9 +135,9 @@ export const Default = () => (
 );
 
 export const CustomIcon = {
-    render: () => (
+    render: (args) => (
         <div style={{ width: "100%", margin: 200 }}>
-            <EbayInfotip icon={<EbayIconSettings16 />} aria-label="Infotip" a11yCloseText="Close">
+            <EbayInfotip {...args} icon={<EbayIconSettings16 />} aria-label="Infotip" a11yCloseText="Close">
                 <EbayInfotipContent>
                     <EbayInfotipHeading>Title</EbayInfotipHeading>
                     <p>Content</p>
@@ -149,9 +149,9 @@ export const CustomIcon = {
     name: "Custom icon",
 };
 
-export const Disabled = () => (
+export const Disabled = (args) => (
     <div style={{ display: "flex", margin: 200 }}>
-        <EbayInfotip disabled a11yCloseText="Close" aria-label="Infotip">
+        <EbayInfotip {...args} disabled a11yCloseText="Close" aria-label="Infotip">
             <EbayInfotipHeading>Title</EbayInfotipHeading>
             <EbayInfotipContent>
                 <p>Content</p>
@@ -161,7 +161,7 @@ export const Disabled = () => (
 );
 
 export const InParagraph = {
-    render: () => (
+    render: (args) => (
         <div style={{ width: "100%", margin: 100 }}>
             <em>
                 NOTE: No block elements can be nested in p elements, like div, h1-6, or other p elements. Any content
@@ -169,7 +169,7 @@ export const InParagraph = {
             </em>
             <p>
                 Some paragraph content{" "}
-                <EbayInfotip a11yCloseText="Dismiss infotip" aria-label="Important information">
+                <EbayInfotip {...args} a11yCloseText="Dismiss infotip" aria-label="Important information">
                     <EbayInfotipHeading>Important</EbayInfotipHeading>
                     <EbayInfotipContent>
                         <span>This is some important info</span>
@@ -218,9 +218,10 @@ export const _PointerDirection = {
 };
 
 export const PointerWithCustomLocation = {
-    render: () => (
+    render: (args) => (
         <div style={{ width: "100%", margin: 200 }}>
             <EbayInfotip
+                {...args}
                 pointer="top-left"
                 overlayStyle={{ top: 40, left: -16 }}
                 a11yCloseText="Close"
@@ -238,9 +239,9 @@ export const PointerWithCustomLocation = {
 };
 
 export const TextInsteadOfIcon = {
-    render: () => (
+    render: (args) => (
         <div style={{ width: "100%", margin: 200 }}>
-            <EbayInfotip pointer="top-left" a11yCloseText="Close">
+            <EbayInfotip {...args} pointer="top-left" a11yCloseText="Close">
                 <EbayInfotipHost>Click for infotip</EbayInfotipHost>
                 <EbayInfotipHeading>Title</EbayInfotipHeading>
                 <EbayInfotipContent>
@@ -254,9 +255,14 @@ export const TextInsteadOfIcon = {
 };
 
 export const CustomButtonContentWithRenderProp = {
-    render: () => (
+    render: (args) => (
         <div style={{ width: "100%", margin: 200 }}>
-            <EbayInfotip pointer="top-left" a11yCloseText="Close" aria-label="Wrong aria-label, should be overwritten">
+            <EbayInfotip
+                {...args}
+                pointer="top-left"
+                a11yCloseText="Close"
+                aria-label="Wrong aria-label, should be overwritten"
+            >
                 <EbayInfotipHost aria-label="Click to open infotip" style={{ height: "auto", width: "auto" }}>
                     {({ icon }) => (
                         <span style={{ display: "inline-flex", alignItems: "center" }}>
@@ -277,9 +283,9 @@ export const CustomButtonContentWithRenderProp = {
 };
 
 export const ExpandedByDefault = {
-    render: () => (
+    render: (args) => (
         <div style={{ width: "100%", margin: 200 }}>
-            <EbayInfotip pointer="top-left" initialExpanded a11yCloseText="Close" aria-label="Infotip">
+            <EbayInfotip {...args} pointer="top-left" initialExpanded a11yCloseText="Close" aria-label="Infotip">
                 <EbayInfotipHeading>Title</EbayInfotipHeading>
                 <EbayInfotipContent>
                     <p>Use Access Key &apos;S&apos; to display settings.</p>

@@ -113,9 +113,10 @@ or import styles using SCSS/CSS
 };
 
 export const BasicLinks = {
-    render: () => (
+    render: (args) => (
         <>
             <EbayPagination
+                {...args}
                 a11yPreviousText="Previous page"
                 a11yNextText="Next page"
                 a11yCurrentText="Results Pagination - Page 1"
@@ -148,9 +149,9 @@ export const BasicLinks = {
 };
 
 export const ArrowsDisabled = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayPagination>
+            <EbayPagination {...args}>
                 <Item disabled type="previous" href="#" />
                 <Item current type="page" href="#">
                     1
@@ -163,9 +164,10 @@ export const ArrowsDisabled = {
     name: "Arrows disabled",
 };
 
-export const Buttons = () => (
+export const Buttons = (args) => (
     <>
         <EbayPagination
+            {...args}
             onPrevious={(e) => action("onPrevious")(e)}
             onNext={(e) => action("onNext")(e)}
             onSelect={(e, props) => action("onSelect")(e, props)}
@@ -186,7 +188,7 @@ export const Buttons = () => (
 );
 
 export const ButtonsInteractiveClickToChangeActivePage = {
-    render: () => {
+    render: (args) => {
         const InteractivePaginationButtons = ({ numOfItems, firstPage = 1 }) => {
             const [activeIndex, setActiveIndex] = useState(0);
             const handlePrev = () => {
@@ -206,6 +208,7 @@ export const ButtonsInteractiveClickToChangeActivePage = {
 
             return (
                 <EbayPagination
+                    {...args}
                     a11yCurrentText={`Results Pagination - Page ${firstPage + activeIndex}`}
                     onPrevious={handlePrev}
                     onNext={handleNext}
@@ -238,7 +241,7 @@ export const ButtonsInteractiveClickToChangeActivePage = {
 };
 
 export const VariantShowLastInteractive = {
-    render: () => {
+    render: (args) => {
         const InteractivePagination = ({ numOfItems }) => {
             const [activeIndex, setActiveIndex] = useState(0);
             const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0));
@@ -248,6 +251,7 @@ export const VariantShowLastInteractive = {
 
             return (
                 <EbayPagination
+                    {...args}
                     a11yCurrentText={`Results Pagination - Page ${activeIndex + 1}`}
                     onPrevious={handlePrev}
                     onNext={handleNext}
@@ -276,7 +280,7 @@ export const VariantShowLastInteractive = {
 };
 
 export const VariantOverflowInteractive = {
-    render: () => {
+    render: (args) => {
         const InteractivePagination = ({ numOfItems }) => {
             const [activeIndex, setActiveIndex] = useState(0);
             const handlePrev = () => setActiveIndex(Math.max(activeIndex - 1, 0));
@@ -286,6 +290,7 @@ export const VariantOverflowInteractive = {
 
             return (
                 <EbayPagination
+                    {...args}
                     a11yCurrentText={`Results Pagination - Page ${activeIndex + 1}`}
                     onPrevious={handlePrev}
                     onNext={handleNext}
@@ -324,10 +329,11 @@ export const VariantOverflowInteractive = {
     name: "Variant `overflow` (interactive)",
 };
 
-export const Fluid = () => (
+export const Fluid = (args) => (
     <>
         <h2>Default fluid</h2>
         <EbayPagination
+            {...args}
             fluid
             onPrevious={action("onPaginationPrevious")}
             onNext={action("onPaginationNext")}
@@ -352,6 +358,7 @@ export const Fluid = () => (
 
         <h2>Fluid with dots</h2>
         <EbayPagination
+            {...args}
             variant="show-last"
             fluid
             onPrevious={action("onPaginationPrevious")}
@@ -378,7 +385,7 @@ export const Fluid = () => (
 );
 
 export const InsideADialog = {
-    render: () => {
+    render: (args) => {
         const InteractivePagination = ({ numOfItems }) => {
             const [activeIndex, setActiveIndex] = useState(0);
             const [open, setOpen] = useState(false);
@@ -391,6 +398,7 @@ export const InsideADialog = {
                     <EbayButton onClick={() => setOpen(true)}>Show pagination dialog</EbayButton>
                     <EbayLightboxDialog open={open}>
                         <EbayPagination
+                            {...args}
                             a11yCurrentText={`Results Pagination - Page ${activeIndex + 1}`}
                             onPrevious={handlePrev}
                             onNext={handleNext}
@@ -419,7 +427,7 @@ export const InsideADialog = {
     name: "Inside a dialog",
 };
 
-export const InsideTabPanel = () => {
+export const InsideTabPanel = (args) => {
     return (
         <EbayTabs size="large">
             <EbayTab className="tab">Upload Process</EbayTab>
@@ -428,7 +436,7 @@ export const InsideTabPanel = () => {
                 <p>Test content in first tab</p>
             </EbayTabPanel>
             <EbayTabPanel>
-                <EbayPagination variant="show-last" a11yPreviousText="Previous page" a11yNextText="Next page">
+                <EbayPagination {...args} variant="show-last" a11yPreviousText="Previous page" a11yNextText="Next page">
                     <Item type="previous" />
                     <Item>1</Item>
                     <Item current>2</Item>

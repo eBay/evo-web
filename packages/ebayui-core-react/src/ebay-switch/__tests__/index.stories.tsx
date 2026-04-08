@@ -46,9 +46,9 @@ or import styles using SCSS/CSS
 };
 
 export const DefaultSwitchButton = {
-    render: () => (
+    render: (args) => (
         <span className="field">
-            <EbaySwitch value="123" id="switch-1" onChange={(e, props) => action("onChange")(e, props)} />
+            <EbaySwitch {...args} value="123" id="switch-1" onChange={(e, props) => action("onChange")(e, props)} />
             <label className="field__label field__label--end" htmlFor="switch-1">
                 Default
             </label>
@@ -59,9 +59,9 @@ export const DefaultSwitchButton = {
 };
 
 export const SelectedSwitchButton = {
-    render: () => (
+    render: (args) => (
         <span className="field">
-            <EbaySwitch checked value="123" id="switch-2" onChange={action("switch-change")} />
+            <EbaySwitch {...args} checked value="123" id="switch-2" onChange={action("switch-change")} />
             <label className="field__label field__label--end" htmlFor="switch-2">
                 Checked
             </label>
@@ -72,9 +72,9 @@ export const SelectedSwitchButton = {
 };
 
 export const DisabledSwitchButton = {
-    render: () => (
+    render: (args) => (
         <span className="field">
-            <EbaySwitch disabled id="switch-20" />
+            <EbaySwitch {...args} disabled id="switch-20" />
             <label className="field__label field__label--end" htmlFor="switch-20">
                 Disabled
             </label>
@@ -85,11 +85,12 @@ export const DisabledSwitchButton = {
 };
 
 export const ControlledSwitchButton = {
-    render: () => {
+    render: (args) => {
         const [checked, setChecked] = useState(false);
         return (
             <span className="field">
                 <EbaySwitch
+                    {...args}
                     checked={checked}
                     id="switch-30"
                     onChange={(e, props) => {

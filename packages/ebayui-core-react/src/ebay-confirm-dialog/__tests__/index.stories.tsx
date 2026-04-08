@@ -93,7 +93,7 @@ export const Default: StoryFn<typeof EbayConfirmDialog> = (args) => {
     );
 };
 
-export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = () => {
+export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = (args) => {
     const [open, setOpen] = useState(false);
     const close = () => setOpen(false);
 
@@ -104,6 +104,7 @@ export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = () => {
             </button>
             <p>Some outside content...</p>
             <EbayConfirmDialog
+                {...args}
                 open={open}
                 onConfirm={close}
                 onReject={close}
@@ -119,7 +120,7 @@ export const WithAnimation: StoryFn<typeof EbayConfirmDialog> = () => {
     );
 };
 
-export const WithExtraButtonProps: StoryFn<typeof EbayConfirmDialog> = () => {
+export const WithExtraButtonProps: StoryFn<typeof EbayConfirmDialog> = (args) => {
     const [open, setOpen] = useState(false);
     const close = () => setOpen(false);
 
@@ -130,6 +131,7 @@ export const WithExtraButtonProps: StoryFn<typeof EbayConfirmDialog> = () => {
             </button>
             <p>Some outside content...</p>
             <EbayConfirmDialog
+                {...args}
                 open={open}
                 onConfirm={close}
                 onReject={close}

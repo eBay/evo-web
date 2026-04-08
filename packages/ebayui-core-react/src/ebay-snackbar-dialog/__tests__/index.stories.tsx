@@ -75,14 +75,14 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => {
+export const Default = (args) => {
     const TestComponent = () => {
         const [open, setOpen] = useState(false);
 
         return (
             <>
                 <EbayButton onClick={() => setOpen(!open)}>Open Snackbar</EbayButton>
-                <EbaySnackbarDialog open={open} onClose={() => setOpen(false)}>
+                <EbaySnackbarDialog {...args} open={open} onClose={() => setOpen(false)}>
                     <p>1 item deleted from watch list.</p>
                 </EbaySnackbarDialog>
             </>
@@ -97,14 +97,14 @@ export const Default = () => {
 };
 
 export const WithAction = {
-    render: () => {
+    render: (args) => {
         const TestComponent = () => {
             const [open, setOpen] = useState(false);
 
             return (
                 <>
                     <EbayButton onClick={() => setOpen(!open)}>Open Snackbar</EbayButton>
-                    <EbaySnackbarDialog open={open} onClose={() => setOpen(false)}>
+                    <EbaySnackbarDialog {...args} open={open} onClose={() => setOpen(false)}>
                         <p>1 item deleted from watch list.</p>
                         <EbaySnackbarDialogAction accessKey="U">Undo</EbaySnackbarDialogAction>
                     </EbaySnackbarDialog>
@@ -123,14 +123,14 @@ export const WithAction = {
 };
 
 export const WithColumnLayout = {
-    render: () => {
+    render: (args) => {
         const TestComponent = () => {
             const [open, setOpen] = useState(false);
 
             return (
                 <>
                     <EbayButton onClick={() => setOpen(!open)}>Open Snackbar</EbayButton>
-                    <EbaySnackbarDialog open={open} onClose={() => setOpen(false)} layout="column">
+                    <EbaySnackbarDialog {...args} open={open} onClose={() => setOpen(false)} layout="column">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore et dolore magna aliqua.

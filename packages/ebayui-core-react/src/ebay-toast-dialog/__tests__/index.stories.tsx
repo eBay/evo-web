@@ -49,14 +49,14 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => {
+export const Default = (args) => {
     const TestComponent = () => {
         const [open, setOpen] = useState(false);
 
         return (
             <>
                 <EbayButton onClick={() => setOpen(!open)}>Open Toast</EbayButton>
-                <EbayToast open={open} a11yCloseText="Close EbayToast" onClose={() => setOpen(false)}>
+                <EbayToast {...args} open={open} a11yCloseText="Close EbayToast" onClose={() => setOpen(false)}>
                     <EbayDialogHeader>Toast Dialog Heading</EbayDialogHeader>
                     <EbayDialogFooter>
                         <EbayButton priority="primary" onClick={() => setOpen(false)} accessKey="c">
@@ -88,10 +88,10 @@ export const Default = () => {
 };
 
 export const AlwaysOpened = {
-    render: () => {
+    render: (args) => {
         const TestComponent = () => (
             <>
-                <EbayToast open a11yCloseText="Close EbayToast" onClose={action("X-button clicked.")}>
+                <EbayToast {...args} open a11yCloseText="Close EbayToast" onClose={action("X-button clicked.")}>
                     <EbayDialogHeader>Toast Dialog Heading</EbayDialogHeader>
                     <EbayDialogFooter>
                         <EbayButton priority="primary" onClick={action("Button clicked.")} accessKey="v">
@@ -125,14 +125,20 @@ export const AlwaysOpened = {
 };
 
 export const WithAnimation = {
-    render: () => {
+    render: (args) => {
         const TestComponent = () => {
             const [open, setOpen] = useState(false);
 
             return (
                 <>
                     <EbayButton onClick={() => setOpen(!open)}>Open Toast</EbayButton>
-                    <EbayToast open={open} a11yCloseText="Close EbayToast" onClose={() => setOpen(false)} animated>
+                    <EbayToast
+                        {...args}
+                        open={open}
+                        a11yCloseText="Close EbayToast"
+                        onClose={() => setOpen(false)}
+                        animated
+                    >
                         <EbayDialogHeader>Toast Dialog Heading</EbayDialogHeader>
                         <EbayDialogFooter>
                             <EbayButton priority="primary" onClick={() => setOpen(false)}>

@@ -136,28 +136,30 @@ export const Default: StoryObj<typeof EbayToggleButton> = {
     },
 };
 
-export const WithChildren = () => (
-    <EbayToggleButton pressed={false} onToggle={action("togle")}>
+export const WithChildren = (args) => (
+    <EbayToggleButton {...args} pressed={false} onToggle={action("toggle")}>
         <p>Button 1</p>
     </EbayToggleButton>
 );
 
-export const IconButton = () => (
+export const IconButton = (args) => (
     <EbayToggleButton
+        {...args}
         pressed={false}
         title={"Button 1"}
         subtitle={"Some context here"}
-        onToggle={action("togle")}
+        onToggle={action("toggle")}
         icon={<EbayIconSettings24 />}
     ></EbayToggleButton>
 );
 
-export const ImageButton = () => (
+export const ImageButton = (args) => (
     <EbayToggleButton
+        {...args}
         pressed={false}
         title={"Button 1"}
         subtitle={"Some context here"}
-        onToggle={action("togle")}
+        onToggle={action("toggle")}
         img={{
             src: "https://cloudfront.slrlounge.com/wp-content/uploads/2012/07/01-SLRLounge-Holding-Standing-Wrong.jpg",
             alt: "image alt",
@@ -165,12 +167,13 @@ export const ImageButton = () => (
     ></EbayToggleButton>
 );
 
-export const ImageButtonWithPlacement = () => (
+export const ImageButtonWithPlacement = (args) => (
     <EbayToggleButton
+        {...args}
         pressed={false}
         title={"Button 1"}
         subtitle={"Some context here"}
-        onToggle={action("togle")}
+        onToggle={action("toggle")}
         layoutType="gallery"
         img={{
             src: "https://cloudfront.slrlounge.com/wp-content/uploads/2012/07/01-SLRLounge-Holding-Standing-Wrong.jpg",

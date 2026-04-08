@@ -51,14 +51,14 @@ Make sure you use \`<EbayFlagsSvg />\` in your code (ideally on server side only
     },
 } as Meta;
 
-export const AllSVGFlags = () => (
+export const AllSVGFlags = (args) => (
     <table>
         <tbody>
             {icons.map((icon, i) => (
                 <tr key={i}>
                     <td>{icon}</td>
                     <td key={icon}>
-                        <EbayFlagIcon name={icon} />
+                        <EbayFlagIcon {...args} name={icon} />
                     </td>
                 </tr>
             ))}
@@ -66,14 +66,14 @@ export const AllSVGFlags = () => (
     </table>
 );
 
-export const AllFlagsSpan = () => (
+export const AllFlagsSpan = (args) => (
     <table>
         <tbody>
             {icons.map((icon, i) => (
                 <tr key={i}>
                     <td>{icon}</td>
                     <td key={icon}>
-                        <EbayFlag flag={icon} style={{ height: 18, width: 24 }} />
+                        <EbayFlag {...args} flag={icon} style={{ height: 18, width: 24 }} />
                     </td>
                 </tr>
             ))}

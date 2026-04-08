@@ -72,9 +72,10 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Basic = () => (
+export const Basic = (args) => (
     <>
         <EbaySelect
+            {...args}
             name="formSelect"
             onChange={(e: ChangeEvent, props: ChangeEventProps) => action("onChange")(e, props)}
         >
@@ -86,9 +87,10 @@ export const Basic = () => (
 );
 
 export const InvalidSelect = {
-    render: () => (
+    render: (args) => (
         <>
             <EbaySelect
+                {...args}
                 name="formSelect"
                 value="3"
                 aria-invalid="true"
@@ -106,9 +108,9 @@ export const InvalidSelect = {
 };
 
 export const GroupedOptions = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySelect name="formSelect" onChange={action("select-change")}>
+            <EbaySelect {...args} name="formSelect" onChange={action("select-change")}>
                 <EbaySelectOption value="pre">Option PRE</EbaySelectOption>
                 <EbaySelectOption optgroup="Group 1" value="1">
                     Option 1[Group 1]
@@ -147,9 +149,9 @@ export const GroupedOptions = {
 };
 
 export const BorderlessSelect = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySelect borderless defaultValue="4" name="formSelect" onChange={action("select-change")}>
+            <EbaySelect {...args} borderless defaultValue="4" name="formSelect" onChange={action("select-change")}>
                 <EbaySelectOption value="1">Option 1</EbaySelectOption>
                 <EbaySelectOption value="2">Option 2</EbaySelectOption>
                 <EbaySelectOption value="3">Option 3</EbaySelectOption>
@@ -161,9 +163,9 @@ export const BorderlessSelect = {
 };
 
 export const DisabledSelect = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySelect className="customclass" disabled name="formSelect">
+            <EbaySelect {...args} className="customclass" disabled name="formSelect">
                 <EbaySelectOption value="1">Option 1</EbaySelectOption>
                 <EbaySelectOption value="2">Option 2</EbaySelectOption>
             </EbaySelect>
@@ -174,9 +176,9 @@ export const DisabledSelect = {
 };
 
 export const UncontrolledComponentWithDefaultValue = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySelect name="formSelect" defaultValue="3" onChange={action("select-change")}>
+            <EbaySelect {...args} name="formSelect" defaultValue="3" onChange={action("select-change")}>
                 <EbaySelectOption value="1">Option 1</EbaySelectOption>
                 <EbaySelectOption value="2">Option 2</EbaySelectOption>
                 <EbaySelectOption value="3">Option 3</EbaySelectOption>
@@ -188,7 +190,7 @@ export const UncontrolledComponentWithDefaultValue = {
 };
 
 export const ControlledComponent = {
-    render: () => {
+    render: (args) => {
         const TestControlledComponent = () => {
             const [selectedValue, setSelectedValue] = useState("UK");
             const handleChange = (
@@ -206,7 +208,7 @@ export const ControlledComponent = {
             return (
                 <div style={{ width: "500px" }}>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                        <EbaySelect name="selectCountry" value={selectedValue} onChange={handleChange}>
+                        <EbaySelect {...args} name="selectCountry" value={selectedValue} onChange={handleChange}>
                             <EbaySelectOption value="DE">DE</EbaySelectOption>
                             <EbaySelectOption value="US">US</EbaySelectOption>
                             <EbaySelectOption value="UK">UK</EbaySelectOption>
@@ -233,9 +235,9 @@ export const ControlledComponent = {
 };
 
 export const FloatingLabel = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbaySelect name="formSelect" onChange={action("select-change")} floatingLabel="Label">
+            <EbaySelect {...args} name="formSelect" onChange={action("select-change")} floatingLabel="Label">
                 <EbaySelectOption value="">Choose an option</EbaySelectOption>
                 <EbaySelectOption value="1">Option 1</EbaySelectOption>
                 <EbaySelectOption value="2">Option 2</EbaySelectOption>
@@ -248,9 +250,10 @@ export const FloatingLabel = {
 };
 
 export const InvalidFloatingLabelSelect = {
-    render: () => (
+    render: (args) => (
         <>
             <EbaySelect
+                {...args}
                 name="formSelect"
                 value="3"
                 aria-invalid="true"
@@ -268,9 +271,15 @@ export const InvalidFloatingLabelSelect = {
     name: "Invalid floating label select",
 };
 
-export const LargeSelect = () => (
+export const LargeSelect = (args) => (
     <>
-        <EbaySelect name="formSelect" onChange={action("select-change")} floatingLabel="Label" inputSize="large">
+        <EbaySelect
+            {...args}
+            name="formSelect"
+            onChange={action("select-change")}
+            floatingLabel="Label"
+            inputSize="large"
+        >
             <EbaySelectOption value="">Choose an option</EbaySelectOption>
             <EbaySelectOption value="1">Option 1</EbaySelectOption>
             <EbaySelectOption value="2">Option 2</EbaySelectOption>

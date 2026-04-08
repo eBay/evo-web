@@ -65,9 +65,9 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const Default: StoryFn<typeof EbayBreadcrumbs> = () => (
+export const Default: StoryFn<typeof EbayBreadcrumbs> = (args) => (
     <>
-        <EbayBreadcrumbs onSelect={(e, { el }) => action("select")(e, { el })}>
+        <EbayBreadcrumbs {...args} onSelect={(e, { el }) => action("select")(e, { el })}>
             <Item href="https://www.ebay.com/">eBay</Item>
             <Item href="https://www.ebay.com/rpp/cell-phone-pda">Cell Phones, Smart Watches & Accessories</Item>
             <Item href="https://www.ebay.com/b/Smart-Watch-Accessories/182064/bn_16565905">
@@ -79,9 +79,9 @@ export const Default: StoryFn<typeof EbayBreadcrumbs> = () => (
 );
 
 export const AllLinks: StoryObj<typeof EbayBreadcrumbs> = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayBreadcrumbs a11yHeadingText="Custom page navigation" a11yHeadingTag="h3">
+            <EbayBreadcrumbs {...args} a11yHeadingText="Custom page navigation" a11yHeadingTag="h3">
                 <Item href="https://www.ebay.com/">eBay</Item>
                 <Item href="https://www.ebay.com/rpp/cell-phone-pda">Cell Phones, Smart Watches & Accessories</Item>
                 <Item href="https://www.ebay.com/b/Smart-Watch-Accessories/182064/bn_16565905">
@@ -95,9 +95,9 @@ export const AllLinks: StoryObj<typeof EbayBreadcrumbs> = {
     name: "all links",
 };
 
-export const CustomProps = () => (
+export const CustomProps = (args) => (
     <>
-        <EbayBreadcrumbs className="custom-breadcrumbs" custom-attr="value">
+        <EbayBreadcrumbs {...args} className="custom-breadcrumbs" custom-attr="value">
             <Item href="http://www.ebay.com/" navsrc="{}" _sp="p2345.m909.l34" data-track="123">
                 eBay
             </Item>
@@ -117,9 +117,14 @@ export const CustomProps = () => (
     </>
 );
 
-export const AllButtons: StoryFn<typeof EbayBreadcrumbs> = () => (
+export const AllButtons: StoryFn<typeof EbayBreadcrumbs> = (args) => (
     <>
-        <EbayBreadcrumbs a11yHeadingText="Custom page navigation" a11yHeadingTag="h3" onSelect={action("select")}>
+        <EbayBreadcrumbs
+            {...args}
+            a11yHeadingText="Custom page navigation"
+            a11yHeadingTag="h3"
+            onSelect={action("select")}
+        >
             {["eBay", "Cell Phones, Smart Watches & Accessories", "Smart Watch Accessories", "Smart Watch Bands"].map(
                 (item, index) => (
                     <Item key={index}>{item}</Item>

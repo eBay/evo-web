@@ -53,17 +53,17 @@ or import styles using SCSS/CSS
 };
 
 export const DefaultInline = {
-    render: () => (
+    render: (args) => (
         <div>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label for textbox</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label for switch</EbayLabel>
                 <EbaySwitch value="123" id="switch-1" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label for checkbox</EbayLabel>
                 <EbayCheckbox defaultChecked id="checkbox-2" />
             </EbayField>
@@ -73,17 +73,17 @@ export const DefaultInline = {
     name: "Default - inline",
 };
 
-export const Block = () => (
+export const Block = (args) => (
     <div>
-        <EbayField layout="block">
+        <EbayField {...args} layout="block">
             <EbayLabel stacked>Label 1</EbayLabel>
             <EbayTextbox placeholder="placeholder text" />
         </EbayField>
-        <EbayField layout="block">
+        <EbayField {...args} layout="block">
             <EbayLabel stacked>Label 1</EbayLabel>
             <EbayTextbox placeholder="placeholder text" />
         </EbayField>
-        <EbayField layout="block">
+        <EbayField {...args} layout="block">
             <EbayLabel stacked>Label 1</EbayLabel>
             <EbayTextbox placeholder="placeholder text" />
         </EbayField>
@@ -91,25 +91,25 @@ export const Block = () => (
 );
 
 export const BlockAndInlineCombination = {
-    render: () => (
+    render: (args) => (
         <div>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label 1</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label 2</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField layout="block">
+            <EbayField {...args} layout="block">
                 <EbayLabel>Label 3</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label 4</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label 5</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
@@ -120,17 +120,17 @@ export const BlockAndInlineCombination = {
 };
 
 export const Required = {
-    render: () => (
+    render: (args) => (
         <div>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel required>Label 1</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label 1</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
-            <EbayField>
+            <EbayField {...args}>
                 <EbayLabel>Label 1</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
             </EbayField>
@@ -141,26 +141,26 @@ export const Required = {
 };
 
 export const WithDescription = {
-    render: () => (
+    render: (args) => (
         <div>
-            <EbayField layout="block">
+            <EbayField {...args} layout="block">
                 <EbayLabel stacked htmlFor="field1">
                     Label 1
                 </EbayLabel>
                 <EbayTextbox placeholder="placeholder text" id="field1" />
                 <EbayFieldDescription>Some description Text</EbayFieldDescription>
             </EbayField>
-            <EbayField layout="block">
+            <EbayField {...args} layout="block">
                 <EbayLabel stacked>Label 2</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" />
                 <EbayFieldDescription type="confirmation">Some description Text</EbayFieldDescription>
             </EbayField>
-            <EbayField layout="block">
+            <EbayField {...args} layout="block">
                 <EbayLabel stacked>Label 3</EbayLabel>
                 <EbayTextbox placeholder="placeholder text" invalid />
                 <EbayFieldDescription type="attention">Some description Text</EbayFieldDescription>
             </EbayField>
-            <EbayField layout="block">
+            <EbayField {...args} layout="block">
                 <EbayLabel stacked htmlFor="field4">
                     Label 4
                 </EbayLabel>
@@ -176,22 +176,22 @@ export const WithDescription = {
 };
 
 export const LabelsOnTheRight = {
-    render: () => (
+    render: (args) => (
         <>
             <p>
-                <EbayField>
+                <EbayField {...args}>
                     <EbayTextbox placeholder="placeholder text" />
                     <EbayLabel position="end">Label 1</EbayLabel>
                 </EbayField>
             </p>
             <p>
-                <EbayField>
+                <EbayField {...args}>
                     <EbaySwitch value="123" id="switch-1" />
                     <EbayLabel position="end">Label 1</EbayLabel>
                 </EbayField>
             </p>
             <p>
-                <EbayField>
+                <EbayField {...args}>
                     <EbayCheckbox defaultChecked id="checkbox-2" />
                     <EbayLabel position="end">Label 1</EbayLabel>
                 </EbayField>

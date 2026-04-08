@@ -72,7 +72,7 @@ const textParagraph = (
     </p>
 );
 
-export const _Default = () => {
+export const _Default = (args) => {
     const [open, setOpen] = useState(false);
     return (
         <div>
@@ -81,6 +81,7 @@ export const _Default = () => {
             </button>
             <p>Some outside content...</p>
             <EbayPanelDialog
+                {...args}
                 open={open}
                 onOpen={() => action("onOpen")()}
                 onClose={() => {
@@ -99,10 +100,10 @@ export const _Default = () => {
     );
 };
 
-export const _AlwaysOpened = () => (
+export const _AlwaysOpened = (args) => (
     <div>
         <p>Some outside content...</p>
-        <EbayPanelDialog open a11yCloseText="Close panel">
+        <EbayPanelDialog {...args} open a11yCloseText="Close panel">
             <EbayDialogHeader>Heading</EbayDialogHeader>
             {textParagraph}
             <p>
@@ -112,20 +113,20 @@ export const _AlwaysOpened = () => (
     </div>
 );
 
-export const _FromRight = () => (
+export const _FromRight = (args) => (
     <div>
         <p>Some outside content...</p>
-        <EbayPanelDialog position="end" open a11yCloseText="Close">
+        <EbayPanelDialog {...args} position="end" open a11yCloseText="Close">
             <EbayDialogHeader />
             {textParagraph}
         </EbayPanelDialog>
     </div>
 );
 
-export const _CustomCloseButton = () => (
+export const _CustomCloseButton = (args) => (
     <div>
         <p>Some outside content...</p>
-        <EbayPanelDialog open a11yCloseText="Close">
+        <EbayPanelDialog {...args} open a11yCloseText="Close">
             <EbayDialogHeader>Heading</EbayDialogHeader>
             {textParagraph}
             <EbayDialogCloseButton>X</EbayDialogCloseButton>
@@ -133,7 +134,7 @@ export const _CustomCloseButton = () => (
     </div>
 );
 
-export const _WithAnimation = () => {
+export const _WithAnimation = (args) => {
     const [open, setOpen] = useState(false);
     const close = () => setOpen(false);
 
@@ -143,7 +144,7 @@ export const _WithAnimation = () => {
                 Open Dialog
             </button>
             <p>Some outside content...</p>
-            <EbayPanelDialog animated open={open} onClose={close} a11yCloseText="Close">
+            <EbayPanelDialog {...args} animated open={open} onClose={close} a11yCloseText="Close">
                 <EbayDialogHeader>Heading</EbayDialogHeader>
                 {textParagraph}
                 <p>
@@ -154,7 +155,7 @@ export const _WithAnimation = () => {
     );
 };
 
-export const _WithAnimationFromRight = () => {
+export const _WithAnimationFromRight = (args) => {
     const [open, setOpen] = useState(false);
     const close = () => setOpen(false);
 
@@ -164,7 +165,7 @@ export const _WithAnimationFromRight = () => {
                 Open Dialog
             </button>
             <p>Some outside content...</p>
-            <EbayPanelDialog animated open={open} onClose={close} position="end" a11yCloseText="Close">
+            <EbayPanelDialog {...args} animated open={open} onClose={close} position="end" a11yCloseText="Close">
                 <EbayDialogHeader>Heading</EbayDialogHeader>
                 {textParagraph}
                 <p>

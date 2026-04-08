@@ -138,9 +138,10 @@ or import styles using SCSS/CSS
 
 export default meta;
 
-export const Default: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const Default: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
         <EbayFakeMenuButton
+            {...args}
             text="eBay Menu"
             onExpand={() => action("onExpand")()}
             onCollapse={() => action("onCollapse")()}
@@ -161,9 +162,9 @@ export const Default: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const Expanded: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const Expanded: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
-        <EbayFakeMenuButton expanded text="eBay Menu">
+        <EbayFakeMenuButton {...args} expanded text="eBay Menu">
             <Item href="http://ebay.com">item 1 that has very long text</Item>
             <Item href="http://ebay.de">item 2</Item>
             <Item href="http://ebay.co.uk">item 3</Item>
@@ -171,9 +172,9 @@ export const Expanded: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const Disabled: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const Disabled: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
-        <EbayFakeMenuButton text="eBay Menu" disabled>
+        <EbayFakeMenuButton {...args} text="eBay Menu" disabled>
             <Item href="http://ebay.com">item 1 that has very long text</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
@@ -181,9 +182,9 @@ export const Disabled: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const WithIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const WithIcon: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
-        <EbayFakeMenuButton text="Settings" icon={<EbayIconSettings16 />}>
+        <EbayFakeMenuButton {...args} text="Settings" icon={<EbayIconSettings16 />}>
             <Item href="http://ebay.com">item 1 that has very long text</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
@@ -191,9 +192,9 @@ export const WithIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const WithoutToggleIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const WithoutToggleIcon: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
-        <EbayFakeMenuButton noToggleIcon text="Menu">
+        <EbayFakeMenuButton {...args} noToggleIcon text="Menu">
             <Item href="http://ebay.com">item 1 that has very long text</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
@@ -201,24 +202,24 @@ export const WithoutToggleIcon: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const Variants: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const Variants: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
         <h3>Button</h3>
-        <EbayFakeMenuButton variant="button" text="Button" a11yText="Menu">
+        <EbayFakeMenuButton {...args} variant="button" text="Button" a11yText="Menu">
             <Item href="http://ebay.com">item 1</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
 
         <h3>Form</h3>
-        <EbayFakeMenuButton variant="form" text="Form" a11yText="Menu inside the form">
+        <EbayFakeMenuButton {...args} variant="form" text="Form" a11yText="Menu inside the form">
             <Item href="http://ebay.com">item 1</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
 
         <h3>Overflow</h3>
-        <EbayFakeMenuButton variant="overflow" a11yText="Menu">
+        <EbayFakeMenuButton {...args} variant="overflow" a11yText="Menu">
             <Item href="http://ebay.com">item 1</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
@@ -226,24 +227,14 @@ export const Variants: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const Priorities: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const Priorities: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
-        <EbayFakeMenuButton variant="button" priority="primary" text="Primary" a11yText="Menu">
+        <EbayFakeMenuButton {...args} variant="button" priority="primary" text="Primary" a11yText="Menu">
             <Item href="http://ebay.com">item 1</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
         </EbayFakeMenuButton>
-        <EbayFakeMenuButton variant="button" priority="tertiary" text="Tertiary" a11yText="Menu">
-            <Item href="http://ebay.com">item 1</Item>
-            <Item href="http://ebay.com">item 2</Item>
-            <Item href="http://ebay.com">item 3</Item>
-        </EbayFakeMenuButton>
-    </>
-);
-
-export const Borderless: StoryFn<typeof EbayFakeMenuButton> = () => (
-    <>
-        <EbayFakeMenuButton text="eBay Menu without borders!" borderless>
+        <EbayFakeMenuButton {...args} variant="button" priority="tertiary" text="Tertiary" a11yText="Menu">
             <Item href="http://ebay.com">item 1</Item>
             <Item href="http://ebay.com">item 2</Item>
             <Item href="http://ebay.com">item 3</Item>
@@ -251,9 +242,19 @@ export const Borderless: StoryFn<typeof EbayFakeMenuButton> = () => (
     </>
 );
 
-export const WithCustomLabel: StoryFn<typeof EbayFakeMenuButton> = () => (
+export const Borderless: StoryFn<typeof EbayFakeMenuButton> = (args) => (
     <>
-        <EbayFakeMenuButton>
+        <EbayFakeMenuButton {...args} text="eBay Menu without borders!" borderless>
+            <Item href="http://ebay.com">item 1</Item>
+            <Item href="http://ebay.com">item 2</Item>
+            <Item href="http://ebay.com">item 3</Item>
+        </EbayFakeMenuButton>
+    </>
+);
+
+export const WithCustomLabel: StoryFn<typeof EbayFakeMenuButton> = (args) => (
+    <>
+        <EbayFakeMenuButton {...args}>
             <EbayFakeMenuButtonLabel>
                 <span
                     style={{
@@ -309,9 +310,9 @@ export const FixedWidth: StoryFn<typeof EbayFakeMenuButton> = (args) => (
 );
 
 export const ReverseMenuGrowsToTheLeft: StoryObj<typeof EbayFakeMenuButton> = {
-    render: () => (
+    render: (args) => (
         <div style={{ marginLeft: "100px" }}>
-            <EbayFakeMenuButton text="Menu grows to the left" reverse>
+            <EbayFakeMenuButton {...args} text="Menu grows to the left" reverse>
                 <Item href="http://ebay.com">item 1 that has very very long text</Item>
                 <Item href="http://ebay.com">item 2</Item>
                 <Item href="http://ebay.com">item 3</Item>

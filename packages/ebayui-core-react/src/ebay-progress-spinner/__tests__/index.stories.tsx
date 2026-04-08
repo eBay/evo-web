@@ -49,16 +49,16 @@ or import styles using SCSS/CSS
 };
 
 export const DefaultSmallLarge = {
-    render: () => (
+    render: (args) => (
         <>
             <p>
-                <EbayProgressSpinner />
+                <EbayProgressSpinner {...args} />
             </p>
             <p>
-                <EbayProgressSpinner size="small" aria-label="Stand by..." />
+                <EbayProgressSpinner {...args} size="small" aria-label="Stand by..." />
             </p>
             <p>
-                <EbayProgressSpinner size="large" aria-label="Stand by..." />
+                <EbayProgressSpinner {...args} size="large" aria-label="Stand by..." />
             </p>
         </>
     ),

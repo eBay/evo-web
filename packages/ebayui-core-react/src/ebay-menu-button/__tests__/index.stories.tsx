@@ -159,9 +159,10 @@ or import styles using SCSS/CSS
     },
 };
 
-export const Default = () => (
+export const Default = (args) => (
     <>
         <EbayMenuButton
+            {...args}
             text="eBay Menu"
             onKeyDown={action("key down")}
             onClick={action("click button")}
@@ -176,9 +177,9 @@ export const Default = () => (
     </>
 );
 
-export const Expanded = () => (
+export const Expanded = (args) => (
     <>
-        <EbayMenuButton expanded text="eBay Menu">
+        <EbayMenuButton {...args} expanded text="eBay Menu">
             <Item>item 1 that has very long text</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
@@ -186,9 +187,9 @@ export const Expanded = () => (
     </>
 );
 
-export const Disabled = () => (
+export const Disabled = (args) => (
     <>
-        <EbayMenuButton text="eBay Menu" disabled>
+        <EbayMenuButton {...args} text="eBay Menu" disabled>
             <Item>item 1 that has very long text</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
@@ -197,9 +198,9 @@ export const Disabled = () => (
 );
 
 export const WithIcon = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayMenuButton text="Settings" icon={<EbayIconSettings16 />}>
+            <EbayMenuButton {...args} text="Settings" icon={<EbayIconSettings16 />}>
                 <Item>item 1 that has very long text</Item>
                 <Item>item 2</Item>
                 <Item>item 3</Item>
@@ -211,9 +212,9 @@ export const WithIcon = {
 };
 
 export const WithoutToggleIcon = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayMenuButton noToggleIcon text="Menu">
+            <EbayMenuButton {...args} noToggleIcon text="Menu">
                 <Item>item 1 that has very long text</Item>
                 <Item>item 2</Item>
                 <Item>item 3</Item>
@@ -224,24 +225,24 @@ export const WithoutToggleIcon = {
     name: "Without toggle icon",
 };
 
-export const Variants = () => (
+export const Variants = (args) => (
     <>
         <h3>Button</h3>
-        <EbayMenuButton variant="button" text="Button" a11yText="Menu inside the form">
+        <EbayMenuButton {...args} variant="button" text="Button" a11yText="Menu inside the form">
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
         </EbayMenuButton>
 
         <h3>Form</h3>
-        <EbayMenuButton variant="form" text="Form" a11yText="Menu inside the form">
+        <EbayMenuButton {...args} variant="form" text="Form" a11yText="Menu inside the form">
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
         </EbayMenuButton>
 
         <h3>Overflow</h3>
-        <EbayMenuButton variant="overflow" a11yText="Menu">
+        <EbayMenuButton {...args} variant="overflow" a11yText="Menu">
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
@@ -249,14 +250,14 @@ export const Variants = () => (
     </>
 );
 
-export const Priorities = () => (
+export const Priorities = (args) => (
     <>
-        <EbayMenuButton priority="primary" text="Primary" a11y-text="Menu">
+        <EbayMenuButton {...args} priority="primary" text="Primary" a11y-text="Menu">
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
         </EbayMenuButton>
-        <EbayMenuButton priority="tertiary" text="Tertiary" a11y-text="Menu">
+        <EbayMenuButton {...args} priority="tertiary" text="Tertiary" a11y-text="Menu">
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
@@ -264,9 +265,9 @@ export const Priorities = () => (
     </>
 );
 
-export const Borderless = () => (
+export const Borderless = (args) => (
     <>
-        <EbayMenuButton text="eBay Menu without borders!" borderless>
+        <EbayMenuButton {...args} text="eBay Menu without borders!" borderless>
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
@@ -274,10 +275,10 @@ export const Borderless = () => (
     </>
 );
 
-export const WithCustomLabel = () => (
+export const WithCustomLabel = (args) => (
     <>
         <h2>Custom style label</h2>
-        <EbayMenuButton>
+        <EbayMenuButton {...args}>
             <EbayMenuButtonLabel>
                 <span
                     style={{
@@ -301,7 +302,7 @@ export const WithCustomLabel = () => (
         <br />
 
         <h2 id="external-label">External label</h2>
-        <EbayMenuButton prefixId="external-label">
+        <EbayMenuButton {...args} prefixId="external-label">
             <EbayMenuButtonLabel>Using external label for a11y</EbayMenuButtonLabel>
             <Item>item 1</Item>
             <Item>item 2</Item>
@@ -312,7 +313,7 @@ export const WithCustomLabel = () => (
         <br />
 
         <h2>Prefix Label</h2>
-        <EbayMenuButton prefixLabel="Prefix:">
+        <EbayMenuButton {...args} prefixLabel="Prefix:">
             <EbayMenuButtonLabel>Label</EbayMenuButtonLabel>
             <Item>item 1</Item>
             <Item>item 2</Item>
@@ -323,7 +324,7 @@ export const WithCustomLabel = () => (
         <br />
 
         <h2>No Label</h2>
-        <EbayMenuButton split="end">
+        <EbayMenuButton {...args} split="end">
             <Item>item 1</Item>
             <Item>item 2</Item>
             <Item>item 3</Item>
@@ -366,13 +367,14 @@ export const SingleSelectMenuButtonItemChecked = {
 };
 
 export const SingleSelectMenuButtonCollapseOnClick = {
-    render: () => {
+    render: (args) => {
         const defaultSortIndex = 1;
         const sortItems = ["Date", "Price", "Relevance"];
         const [checkedSort, setCheckedSort] = useState(defaultSortIndex);
 
         return (
             <EbayMenuButton
+                {...args}
                 prefixLabel="Sort order:"
                 text={sortItems[checkedSort]}
                 type="radio"

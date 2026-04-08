@@ -208,9 +208,9 @@ export const Default: StoryObj<typeof EbayEducationNotice> = {
 };
 
 export const EducationNoticeOnlyTitle = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayEducationNotice educationIcon="car24">
+            <EbayEducationNotice {...args} educationIcon="car24">
                 <EbayEducationNoticeTitle>Only With Title</EbayEducationNoticeTitle>
             </EbayEducationNotice>
         </>
@@ -220,9 +220,9 @@ export const EducationNoticeOnlyTitle = {
 };
 
 export const DefaultEducationNotice = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayEducationNotice iconVariant="prominent">
+            <EbayEducationNotice {...args} iconVariant="prominent">
                 <EbayEducationNoticeTitle>Education notice title</EbayEducationNoticeTitle>
                 <EbayNoticeContent>
                     <p>
@@ -238,10 +238,10 @@ export const DefaultEducationNotice = {
 };
 
 export const DefaultEducationNoticeFooter = {
-    render: () => {
+    render: (args) => {
         return (
             <>
-                <EbayEducationNotice educationIcon={<EbayIconCreditCard24 />} a11yDismissText="dismiss text">
+                <EbayEducationNotice {...args} educationIcon={<EbayIconCreditCard24 />} a11yDismissText="dismiss text">
                     <EbayEducationNoticeTitle>Education notice title</EbayEducationNoticeTitle>
                     <EbayNoticeContent>
                         <p>

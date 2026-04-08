@@ -118,13 +118,14 @@ const numbers = Array(100)
     .fill(1)
     .map((x, i) => <p key={i}>{i + 1}</p>);
 
-export const _Default: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _Default: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
             <EbayDrawerDialogDeprecated
+                {...args}
                 open={open}
                 onOpen={action("onOpen")}
                 onClose={() => {
@@ -152,9 +153,10 @@ export const _Default: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
     );
 };
 
-export const _Opened: StoryFn<typeof EbayDrawerDialogDeprecated> = () => (
+export const _Opened: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => (
     <>
         <EbayDrawerDialogDeprecated
+            {...args}
             open
             onClose={action("Close button clicked.")}
             a11yCloseText="Close drawer"
@@ -175,13 +177,14 @@ export const _Opened: StoryFn<typeof EbayDrawerDialogDeprecated> = () => (
     </>
 );
 
-export const _WithoutHandle: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _WithoutHandle: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
             <EbayDrawerDialogDeprecated
+                {...args}
                 noHandle
                 open={open}
                 onClose={() => setOpen(false)}
@@ -204,13 +207,19 @@ export const _WithoutHandle: StoryFn<typeof EbayDrawerDialogDeprecated> = () => 
     );
 };
 
-export const _WithoutHandleAndCloseButton: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _WithoutHandleAndCloseButton: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
-            <EbayDrawerDialogDeprecated noHandle buttonPosition="hidden" open={open} onClose={() => setOpen(false)}>
+            <EbayDrawerDialogDeprecated
+                {...args}
+                noHandle
+                buttonPosition="hidden"
+                open={open}
+                onClose={() => setOpen(false)}
+            >
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -226,7 +235,7 @@ export const _WithoutHandleAndCloseButton: StoryFn<typeof EbayDrawerDialogDeprec
     );
 };
 
-export const _LotsOfContent: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _LotsOfContent: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
@@ -234,6 +243,7 @@ export const _LotsOfContent: StoryFn<typeof EbayDrawerDialogDeprecated> = () => 
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
             {numbers}
             <EbayDrawerDialogDeprecated
+                {...args}
                 open={open}
                 onClose={() => setOpen(false)}
                 a11yMaximizeText="Maximize"
@@ -250,7 +260,7 @@ export const _LotsOfContent: StoryFn<typeof EbayDrawerDialogDeprecated> = () => 
     );
 };
 
-export const _CustomFocus: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _CustomFocus: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
     const focusRef = createRef<HTMLButtonElement>();
 
@@ -258,6 +268,7 @@ export const _CustomFocus: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
         <>
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
             <EbayDrawerDialogDeprecated
+                {...args}
                 open={open}
                 focus={focusRef as unknown as ComponentProps<typeof EbayDrawerDialogDeprecated>["focus"]}
                 onClose={() => setOpen(false)}
@@ -288,13 +299,14 @@ export const _CustomFocus: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
     );
 };
 
-export const _WithoutAnimation: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _WithoutAnimation: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
 
     return (
         <>
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
             <EbayDrawerDialogDeprecated
+                {...args}
                 open={open}
                 onClose={() => setOpen(false)}
                 animated={false}
@@ -317,7 +329,7 @@ export const _WithoutAnimation: StoryFn<typeof EbayDrawerDialogDeprecated> = () 
     );
 };
 
-export const _TriggerExpanded: StoryFn<typeof EbayDrawerDialogDeprecated> = () => {
+export const _TriggerExpanded: StoryFn<typeof EbayDrawerDialogDeprecated> = (args) => {
     const [open, setOpen] = useState(false);
     const [expanded, setExpanded] = useState(false);
 
@@ -325,6 +337,7 @@ export const _TriggerExpanded: StoryFn<typeof EbayDrawerDialogDeprecated> = () =
         <>
             <EbayButton onClick={() => setOpen(!open)}>Open Drawer</EbayButton>
             <EbayDrawerDialogDeprecated
+                {...args}
                 open={open}
                 onClose={() => setOpen(false)}
                 expanded={expanded}

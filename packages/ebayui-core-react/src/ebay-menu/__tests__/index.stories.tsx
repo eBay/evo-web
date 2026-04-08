@@ -107,9 +107,9 @@ or import styles using SCSS/CSS
     },
 } satisfies Meta<typeof EbayMenu>;
 
-export const Default = () => (
+export const Default = (args) => (
     <>
-        <EbayMenu onClick={action("click")} onKeyDown={action("key down")}>
+        <EbayMenu {...args} onClick={action("click")} onKeyDown={action("key down")}>
             <Item>Item 1 that has very long text</Item>
             <Item>Item 2</Item>
             <Item>Item 3</Item>
@@ -117,12 +117,13 @@ export const Default = () => (
     </>
 );
 
-export const Radio = () => (
+export const Radio = (args) => (
     <>
         <EbayTabs>
             <EbayTab>Menu.checked</EbayTab>
             <EbayTabPanel>
                 <EbayMenu
+                    {...args}
                     type="radio"
                     checked={1}
                     onKeyDown={action("key down")}
@@ -139,6 +140,7 @@ export const Radio = () => (
             <EbayTab>Item.checked</EbayTab>
             <EbayTabPanel>
                 <EbayMenu
+                    {...args}
                     type="radio"
                     onKeyDown={action("key down")}
                     onChange={action("change")}
@@ -153,6 +155,7 @@ export const Radio = () => (
             <EbayTab>Menu.checked+Item.checked</EbayTab>
             <EbayTabPanel>
                 <EbayMenu
+                    {...args}
                     type="radio"
                     checked={1}
                     onKeyDown={action("key down")}
@@ -168,9 +171,10 @@ export const Radio = () => (
     </>
 );
 
-export const Checkbox = () => (
+export const Checkbox = (args) => (
     <>
         <EbayMenu
+            {...args}
             type="checkbox"
             onKeyDown={action("key down")}
             onChange={action("change")}
@@ -187,9 +191,9 @@ export const Checkbox = () => (
     </>
 );
 
-export const WithSeparator = () => (
+export const WithSeparator = (args) => (
     <>
-        <EbayMenu>
+        <EbayMenu {...args}>
             <Item>item 1 that has very long text</Item>
             <Item>Item 2</Item>
             <Separator />
@@ -200,9 +204,9 @@ export const WithSeparator = () => (
     </>
 );
 
-export const WithDisabledItem = () => (
+export const WithDisabledItem = (args) => (
     <>
-        <EbayMenu>
+        <EbayMenu {...args}>
             <Item>item 1 that has very long text</Item>
             <Item disabled>Item 2</Item>
             <Item>Item 3</Item>
@@ -210,9 +214,9 @@ export const WithDisabledItem = () => (
     </>
 );
 
-export const WithBadges = () => (
+export const WithBadges = (args) => (
     <>
-        <EbayMenu>
+        <EbayMenu {...args}>
             <Item badgeNumber={5} badgeAriaLabel="item 1 (5 unread items)">
                 item 1
             </Item>
@@ -224,9 +228,9 @@ export const WithBadges = () => (
     </>
 );
 
-export const WithIcons = () => (
+export const WithIcons = (args) => (
     <>
-        <EbayMenu>
+        <EbayMenu {...args}>
             <Item>
                 <EbayIconConfirmation16 style={{ marginRight: "8px" }} /> Confirmed
             </Item>
@@ -241,9 +245,9 @@ export const WithIcons = () => (
 );
 
 export const DivContainer = {
-    render: () => (
+    render: (args) => (
         <>
-            <EbayMenu baseEl="div">
+            <EbayMenu {...args} baseEl="div">
                 <Item>Item 1 that has very long text</Item>
                 <Item>Item 2</Item>
                 <Item>Item 3</Item>
