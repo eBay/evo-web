@@ -920,7 +920,6 @@ exports[`menu-button > renders with filter 1`] = `
     [36m<button[39m
       [33maria-expanded[39m=[32m"false"[39m
       [33maria-haspopup[39m=[32m"true"[39m
-      [33maria-pressed[39m=[32m"false"[39m
       [33mclass[39m=[32m"filter-chip menu-button__button"[39m
       [33mtype[39m=[32m"button"[39m
     [36m>[39m
@@ -1307,7 +1306,6 @@ exports[`menu-button > renders with footer 1`] = `
     [36m<button[39m
       [33maria-expanded[39m=[32m"false"[39m
       [33maria-haspopup[39m=[32m"true"[39m
-      [33maria-pressed[39m=[32m"false"[39m
       [33mclass[39m=[32m"filter-chip menu-button__button"[39m
       [33mtype[39m=[32m"button"[39m
     [36m>[39m
@@ -2331,7 +2329,6 @@ exports[`menu-button > renders with type=checkbox and checked=false and as filte
     [36m<button[39m
       [33maria-expanded[39m=[32m"false"[39m
       [33maria-haspopup[39m=[32m"true"[39m
-      [33maria-pressed[39m=[32m"false"[39m
       [33mclass[39m=[32m"filter-chip menu-button__button"[39m
       [33mtype[39m=[32m"button"[39m
     [36m>[39m
@@ -2568,7 +2565,6 @@ exports[`menu-button > renders with type=checkbox and checked=true and as filter
     [36m<button[39m
       [33maria-expanded[39m=[32m"false"[39m
       [33maria-haspopup[39m=[32m"true"[39m
-      [33maria-pressed[39m=[32m"false"[39m
       [33mclass[39m=[32m"filter-chip menu-button__button"[39m
       [33mtype[39m=[32m"button"[39m
     [36m>[39m
@@ -2805,7 +2801,6 @@ exports[`menu-button > renders with type=radio and checked=false and as filter 1
     [36m<button[39m
       [33maria-expanded[39m=[32m"false"[39m
       [33maria-haspopup[39m=[32m"true"[39m
-      [33maria-pressed[39m=[32m"false"[39m
       [33mclass[39m=[32m"filter-chip menu-button__button"[39m
       [33mtype[39m=[32m"button"[39m
     [36m>[39m
@@ -3046,7 +3041,6 @@ exports[`menu-button > renders with type=radio and checked=true and as filter 1`
     [36m<button[39m
       [33maria-expanded[39m=[32m"false"[39m
       [33maria-haspopup[39m=[32m"true"[39m
-      [33maria-pressed[39m=[32m"false"[39m
       [33mclass[39m=[32m"filter-chip menu-button__button"[39m
       [33mtype[39m=[32m"button"[39m
     [36m>[39m

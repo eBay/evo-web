@@ -116,7 +116,6 @@ exports[`ebay-filter-chip > renders menu button 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<button[39m
     [33maria-expanded[39m=[32m"false"[39m
-    [33maria-pressed[39m=[32m"false"[39m
     [33mclass[39m=[32m"filter-chip"[39m
     [33mtype[39m=[32m"button"[39m
   [36m>[39m
@@ -154,7 +153,6 @@ exports[`ebay-filter-chip > renders menu button expanded 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<button[39m
     [33maria-expanded[39m=[32m"true"[39m
-    [33maria-pressed[39m=[32m"false"[39m
     [33mclass[39m=[32m"filter-chip"[39m
     [33mtype[39m=[32m"button"[39m
   [36m>[39m
@@ -192,14 +190,18 @@ exports[`ebay-filter-chip > renders menu button expanded and selected 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<button[39m
     [33maria-expanded[39m=[32m"true"[39m
-    [33maria-pressed[39m=[32m"true"[39m
-    [33mclass[39m=[32m"filter-chip"[39m
+    [33mclass[39m=[32m"filter-chip filter-chip--selected"[39m
     [33mtype[39m=[32m"button"[39m
   [36m>[39m
     [36m<span[39m
       [33mclass[39m=[32m"filter-chip__text"[39m
     [36m>[39m
       [0mFilter[0m
+      [36m<span[39m
+        [33mclass[39m=[32m"clipped"[39m
+      [36m>[39m
+        [0m- Filter Applied[0m
+      [36m</span>[39m
     [36m</span>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -230,14 +232,18 @@ exports[`ebay-filter-chip > renders menu button selected 1`] = `
 "[36m<DocumentFragment>[39m
   [36m<button[39m
     [33maria-expanded[39m=[32m"false"[39m
-    [33maria-pressed[39m=[32m"true"[39m
-    [33mclass[39m=[32m"filter-chip"[39m
+    [33mclass[39m=[32m"filter-chip filter-chip--selected"[39m
     [33mtype[39m=[32m"button"[39m
   [36m>[39m
     [36m<span[39m
       [33mclass[39m=[32m"filter-chip__text"[39m
     [36m>[39m
       [0mFilter[0m
+      [36m<span[39m
+        [33mclass[39m=[32m"clipped"[39m
+      [36m>[39m
+        [0m- Filter Applied[0m
+      [36m</span>[39m
     [36m</span>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m

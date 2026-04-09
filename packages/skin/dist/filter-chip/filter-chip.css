@@ -144,6 +144,7 @@ button.filter-chip--expressive {
 }
 
 a.filter-chip--selected,
+button.filter-chip.filter-chip--selected,
 button.filter-chip[aria-pressed="true"] {
     animation: fill-horizontal-background 0s var(--motion-easing-quick-enter)
         forwards;
@@ -158,6 +159,7 @@ button.filter-chip[aria-pressed="true"] {
 }
 
 a.filter-chip--selected:after,
+button.filter-chip.filter-chip--selected:after,
 button.filter-chip[aria-pressed="true"]:after {
     background-color: var(--color-state-layer-neutral-on-strong);
     content: "";
@@ -168,6 +170,11 @@ button.filter-chip[aria-pressed="true"]:after {
 
 a.filter-chip--selected:not([disabled], [aria-disabled="true"]):hover:after,
 a.filter-chip--selected[href]:hover:after,
+button.filter-chip.filter-chip--selected:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+button.filter-chip.filter-chip--selected[href]:hover:after,
 button.filter-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
@@ -181,6 +188,11 @@ a.filter-chip--selected:not(
         [aria-disabled="true"]
     ):focus-visible:after,
 a.filter-chip--selected[href]:focus-visible:after,
+button.filter-chip.filter-chip--selected:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus-visible:after,
+button.filter-chip.filter-chip--selected[href]:focus-visible:after,
 button.filter-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
@@ -191,6 +203,11 @@ button.filter-chip[aria-pressed="true"][href]:focus-visible:after {
 
 a.filter-chip--selected:not([disabled], [aria-disabled="true"]):active:after,
 a.filter-chip--selected[href]:active:after,
+button.filter-chip.filter-chip--selected:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+button.filter-chip.filter-chip--selected[href]:active:after,
 button.filter-chip[aria-pressed="true"]:not(
         [disabled],
         [aria-disabled="true"]
@@ -199,6 +216,7 @@ button.filter-chip[aria-pressed="true"][href]:active:after {
     background-color: var(--color-state-layer-pressed-on-strong);
 }
 
+button.filter-chip--animated.filter-chip--selected,
 button.filter-chip--animated[aria-pressed="true"] {
     animation-duration: var(--motion-duration-medium-2);
     transition: color var(--motion-duration-instant)

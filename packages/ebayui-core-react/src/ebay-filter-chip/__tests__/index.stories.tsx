@@ -171,6 +171,12 @@ export const Menu: StoryFn<typeof EbayFilterChip> = (args) => (
     </EbayFilterChip>
 );
 
+export const MenuSelected: StoryFn<typeof EbayFilterChip> = (args) => (
+    <EbayFilterChip {...args} variant="menu" selected>
+        Menu Selected
+    </EbayFilterChip>
+);
+
 export const MenuExpanded: StoryFn<typeof EbayFilterChip> = (args) => (
     <EbayFilterChip {...args} variant="menu" expanded>
         Menu Expanded
