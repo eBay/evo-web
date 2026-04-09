@@ -461,7 +461,6 @@ exports[`video > renders with compact layout 1`] = `
         [33mtarget[39m=[32m"_blank"[39m
       [36m>[39m
         [36m<video[39m
-          [33mautoplay[39m=[32m""[39m
           [33mloop[39m=[32m""[39m
           [33mno-controls[39m=[32m""[39m
           [33mplaysinline[39m=[32m""[39m
