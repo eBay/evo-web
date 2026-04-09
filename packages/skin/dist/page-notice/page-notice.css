@@ -80,7 +80,7 @@ span[role="region"].page-notice {
     );
     border-color: var(
         --page-notice-confirmation-border-color,
-        var(--color-border-confirmation)
+        var(--color-border-success)
     );
 }
 .page-notice--confirmation .page-notice__header svg {
