@@ -146,6 +146,8 @@ class Video extends Marko.Component<Input, State> {
     declare isAutoPause: boolean;
     declare userPaused: boolean;
     declare isFocusFromVideoClick: boolean;
+    declare isPlayerLoaded: boolean;
+    declare pendingAutoPlay: boolean;
     declare mouseDownHandler: () => void;
     declare windowFocusHandler: () => void;
     declare windowBlurHandler: () => void;
@@ -330,6 +332,11 @@ class Video extends Marko.Component<Input, State> {
         this.player
             .load(src.src)
             .then(() => {
+                this.isPlayerLoaded = true;
+                if (this.pendingAutoPlay) {
+                    this.autoplay();
+                }
+
                 this.state.failed = false;
                 return Promise.all(
                     (this.input.clip || []).map((track) => {
@@ -533,12 +540,7 @@ class Video extends Marko.Component<Input, State> {
 
                 if (entry.isIntersecting) {
                     this.isInViewport = true;
-                    if (!this.state.failed && this.video.paused) {
-                        this.isAutoPlay = true;
-                        this.video.play().catch((e) => {
-                            this.isAutoPlay = false;
-                        });
-                    }
+                    this.autoplay();
                 } else {
                     this.isInViewport = false;
                     if (!this.video.paused) {
@@ -564,18 +566,35 @@ class Video extends Marko.Component<Input, State> {
             this.isFocusFromVideoClick = false;
             return;
         }
-        if (this.isInViewport && this.video.paused && !this.userPaused) {
-            this.isAutoPlay = true;
-            this.video.play().catch((e) => {
-                this.isAutoPlay = false;
-            });
-        }
+        this.autoplay();
     }
 
     handleWindowBlur() {
         if (!this.video.paused) {
             this.isAutoPause = true;
             this.video.pause();
+        }
+    }
+
+    autoplay() {
+        if (
+            this.input.autoplay &&
+            !this.state.failed &&
+            this.isInViewport &&
+            this.video.paused &&
+            !this.userPaused
+        ) {
+            if (this.isPlayerLoaded) {
+                // If video has not loaded, video.play() will error
+                this.pendingAutoPlay = false;
+                this.isAutoPlay = true;
+                this.video.play().catch((e) => {
+                    console.log(e);
+                    this.isAutoPlay = false;
+                });
+            } else {
+                this.pendingAutoPlay = true;
+            }
         }
     }
 
