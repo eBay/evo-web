@@ -421,6 +421,7 @@ class Video extends Marko.Component<Input, State> {
         this.ui.configure({
             controlPanelElements: [],
             addSeekBar: false,
+            ...(this.input.nav ? { showUIAlways: true } : {}),
         });
 
         // Replace play icon
