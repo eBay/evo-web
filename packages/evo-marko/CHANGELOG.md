@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.11
+
+### Patch Changes
+
+- [#608](https://github.com/eBay/evo-web/pull/608) [`0c668a2`](https://github.com/eBay/evo-web/commit/0c668a29b66c51593814c9ca730d903588d30e05) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-fake-menu-button and evo-breadcrumbs
+
 ## 0.1.10
 
 ### Patch Changes

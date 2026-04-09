@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.24.1
+
+### Patch Changes
+
+- [#577](https://github.com/eBay/evo-web/pull/577) [`d9ccce1`](https://github.com/eBay/evo-web/commit/d9ccce1f8c2c7635209a7769e3366d7d5372c179) Thanks [@dididy](https://github.com/dididy)! - Correct border color token for confirmation status
+
 ## 19.24.0
 
 ### Minor Changes
