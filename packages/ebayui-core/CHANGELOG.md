@@ -1,5 +1,13 @@
 # eBayUI-Core Changelog
 
+## 16.7.1
+
+### Patch Changes
+
+- [#612](https://github.com/eBay/evo-web/pull/612) [`7d99b5d`](https://github.com/eBay/evo-web/commit/7d99b5dee8fdeb500e6f76a71b2c31c26a15f66c) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(ebay-video): custom autoplay implementation that works in Firefox
+
+- [#613](https://github.com/eBay/evo-web/pull/613) [`929610d`](https://github.com/eBay/evo-web/commit/929610dfe7a41d519b1dcfb7a8ccecdd45d7a0e2) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(ebay-video): showUIAlways not always set correctly
+
 ## 16.7.0
 
 ### Minor Changes
