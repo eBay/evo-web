@@ -44,7 +44,7 @@ or import styles using SCSS/CSS
         rating: { description: "The energy rating", control: "text" },
         max: { description: "The maximum range", control: "text" },
         min: { description: "The minimum range", control: "text" },
-        a11yText: { description: "Accessible label for the energy rating figure", control: "text" },
+        a11yText: { description: "Accessible label for the energy rating graphic", control: "text" },
     },
 };
 

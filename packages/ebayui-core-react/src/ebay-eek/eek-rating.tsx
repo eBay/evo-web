@@ -17,7 +17,7 @@ const EbayEek: FC<EbayEekProps> = ({ min = "", max = "", rating, a11yText, class
     const className = classNames(extraClasses, "eek", { [`eek--rating-${parsedRating}`]: !!parsedRating });
     const backupA11yText = `Energy Rating: ${rating}. Range: ${max} - ${min}.`;
     return (
-        <div className={className} role="figure" aria-label={a11yText || backupA11yText}>
+        <div className={className} role="img" aria-label={a11yText || backupA11yText}>
             <div className="eek__container" aria-hidden>
                 <span className="eek__rating-range">
                     <span>{max}</span>
