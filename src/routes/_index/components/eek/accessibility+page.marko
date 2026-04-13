@@ -27,7 +27,7 @@ import { urls } from "../../../../data";
     <h3>Screen Reader</h3>
     <p>
         A screen reader <strong>must</strong> announce the label content,
-        including the energy rating and range. The figure role provides semantic context.
+        including the energy rating and range. The image role provides semantic context.
     </p>
     <h3>Pointer</h3>
     <p>
@@ -48,16 +48,16 @@ import { urls } from "../../../../data";
         </thead>
         <tbody>
             <tr>
-                <td><strong>role="figure"</strong></td>
+                <td><strong>role="img"</strong></td>
                 <td>
-                    Identifies the EEK as a figure element, providing semantic meaning
-                    for the graphical representation of the energy rating.
+                    Identifies the EEK as a labeled graphic so the accessible name is announced
+                    reliably across assistive technologies.
                 </td>
             </tr>
             <tr>
                 <td><strong>aria-label</strong></td>
                 <td>
-                    Provides the accessible name for the figure. (e.g., "Energy Rating: A+++. Range: A+++ - D").
+                    Provides the accessible name for the graphic. (e.g., "Energy Rating: A+++. Range: A+++ - D").
                 </td>
             </tr>
             <tr>
@@ -82,8 +82,8 @@ import { urls } from "../../../../data";
             </a>
         </li>
         <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/figure_role">
-                MDN: ARIA figure role
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/img_role">
+                MDN: ARIA img role
             </a>
         </li>
         <li>

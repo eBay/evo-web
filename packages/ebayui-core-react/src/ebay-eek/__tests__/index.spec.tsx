@@ -9,8 +9,8 @@ async function ratingCheck(max, min, rating, number) {
 
     wrapper = render(<EbayEek max={max} min={min} rating={rating} />);
 
-    wrapper.getAllByRole("figure").forEach((figure) => {
-        expect(figure).toHaveClass(eekClass);
+    wrapper.getAllByRole("img").forEach((eekRoot) => {
+        expect(eekRoot).toHaveClass(eekClass);
     });
 }
 
@@ -26,7 +26,7 @@ describe("<EbayEek>", () => {
         expect(wrapper.getByText("A+++")).toHaveProperty("nextElementSibling");
         expect(wrapper.getByText("D")).toHaveProperty("previousElementSibling");
         expect(wrapper.getByText("B")).toHaveClass("eek__rating");
-        expect(wrapper.getByRole("figure")).toHaveClass("eek--rating-5");
+        expect(wrapper.getByRole("img")).toHaveClass("eek--rating-5");
     });
 
     it("renders invalid eek", async () => {
@@ -40,7 +40,7 @@ describe("<EbayEek>", () => {
         expect(wrapper.getByText("A")).toHaveProperty("nextElementSibling");
         expect(wrapper.getByText("D")).toHaveProperty("previousElementSibling");
         expect(wrapper.getByText("B")).toHaveClass("eek__rating");
-        expect(wrapper.getByRole("figure")).toHaveClass("eek");
+        expect(wrapper.getByRole("img")).toHaveClass("eek");
     });
 
     it("renders the correct eek if rating is outside", async () => {

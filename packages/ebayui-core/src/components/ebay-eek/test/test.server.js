@@ -7,7 +7,7 @@ import template from "../index.marko";
 describe("eek", () => {
     async function ratingCheck(max, min, rating) {
         const { getByRole } = await render(template, { max, min, rating });
-        expect(getByRole("figure")).toMatchSnapshot();
+        expect(getByRole("img")).toMatchSnapshot();
     }
 
     it("renders default eek", async () => {
@@ -19,7 +19,7 @@ describe("eek", () => {
         expect(getByText("A+++")).toMatchSnapshot();
         expect(getByText("D")).toMatchSnapshot();
         expect(getByText("B")).toMatchSnapshot();
-        expect(getByRole("figure")).toMatchSnapshot();
+        expect(getByRole("img")).toMatchSnapshot();
     });
 
     it("renders large eek", async () => {
@@ -32,7 +32,7 @@ describe("eek", () => {
         expect(getByText("A+++")).toMatchSnapshot();
         expect(getByText("D")).toMatchSnapshot();
         expect(getByText("B")).toMatchSnapshot();
-        expect(getByRole("figure")).toMatchSnapshot();
+        expect(getByRole("img")).toMatchSnapshot();
     });
 
     it("renders invalid eek", async () => {
@@ -44,7 +44,7 @@ describe("eek", () => {
         expect(getByText("A")).toMatchSnapshot();
         expect(getByText("D")).toMatchSnapshot();
         expect(getByText("B")).toMatchSnapshot();
-        expect(getByRole("figure")).toMatchSnapshot();
+        expect(getByRole("img")).toMatchSnapshot();
     });
 
     it("renders the correct eek if rating is outside", async () => {
