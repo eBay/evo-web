@@ -73,7 +73,7 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
     <evo-button
       ...rejectInput
       onClick(e, el) {
-        open = false;
+        $dialog().requestClose();
         rejectOnClick && rejectOnClick(e, el);
       }
     />

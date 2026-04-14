@@ -14,7 +14,6 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "closedby" | "ro
   header,
   confirm,
   content,
-  onCancel,
   onAnimationEnd,
   ...htmlInput
 }=input>
@@ -41,10 +40,6 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "closedby" | "ro
     !open && "dialog--close",
     inputClass,
   ]
-  onCancel(e, el) {
-    e.preventDefault();
-    onCancel && onCancel(e, el);
-  }
   onAnimationEnd(e, el) {
     if (!open) {
       el.close();

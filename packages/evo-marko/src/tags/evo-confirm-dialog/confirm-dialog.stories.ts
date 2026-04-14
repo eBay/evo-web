@@ -62,6 +62,12 @@ export default {
       description:
         "All attributes and event handlers from [the native HTML `<dialog>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog) will be passed through",
     },
+    onCancel: {
+      action: "onCancel",
+      description:
+        "Triggered when the dialog's cancel event fires, via `esc` or the cancel button",
+      table: { category: "Events" },
+    },
   },
 } satisfies Meta<Input>;
 
