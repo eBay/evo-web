@@ -7,9 +7,9 @@
     </span>
 </h1>
 
-A confirm dialog that forces the user to make a choice to either confirm or reject. The dialog can only be dismissed by clicking one of the two buttons. Pressing Escape triggers the reject action.
+A confirm dialog that forces the user to make a choice to either confirm or reject. The dialog can be dismissed by clicking one of the two buttons, and pressing Escape triggers the reject action.
 
-Uses a native `<dialog>` element with `role="alertdialog"` and `closedby="none"`.
+Uses a native `<dialog>` element with `role="alertdialog"` and `closedby="closerequest"`.
 
 ## Examples and Documentation
 

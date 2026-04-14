@@ -73,9 +73,9 @@ describe("evo-confirm-dialog", () => {
       expect(dialog?.getAttribute("aria-modal")).toBe("true");
     });
 
-    it("should have closedby set to none", () => {
+    it('should have closedby set to "closerequest" by default', () => {
       const dialog = component.container.querySelector("dialog");
-      expect(dialog?.getAttribute("closedby")).toBe("none");
+      expect(dialog?.getAttribute("closedby")).toBe("closerequest");
     });
 
     it("should render header with h2 by default", () => {
