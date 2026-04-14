@@ -132,6 +132,7 @@ Key changes:
 - **Remove `Omit<..., 'on${string}'>`** -- Marko 6 handles events natively via spread.
 - **Remove custom `on-*` event props** from the interface -- consumers bind native DOM events directly or use two-way binding callbacks (e.g., `valueChange`, `openChange`, `indexChange`).
 - **Use camelCase** for all prop names (not kebab-case).
+- **Use `Marko.HTML.*`** for element types -- e.g., `Marko.HTML.H2`, `Marko.HTML.Div`, `Marko.HTML.Button`. Do **not** use `Marko.Input<"h2">` or `Marko.Input<"div">`.
 - **Omit only props the component hardcodes** (e.g., `Omit<Marko.HTML.Input, "type" | "role">`).
 
 ### HTML attribute pass-through
