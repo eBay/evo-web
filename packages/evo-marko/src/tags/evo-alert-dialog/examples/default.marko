@@ -1,0 +1,14 @@
+import { type Input as AlertDialogInput } from "<evo-alert-dialog>";
+export interface Input extends AlertDialogInput {}
+
+<let/open:=input.open>
+
+<evo-button onClick() { open = true; }>
+    Open Alert Dialog
+</evo-button>
+
+<evo-alert-dialog ...input open:=open>
+    <@header>Alert!</@header>
+    <@confirm>OK</@confirm>
+    <p>You must acknowledge this alert to continue.</p>
+</evo-alert-dialog>

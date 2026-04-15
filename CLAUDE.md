@@ -86,6 +86,10 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 - ✅ Attribute values containing `>` MUST be wrapped in parentheses: `<const/x=(a > b ? 1 : 0)>`
 - ❌ Never: `<const/x=a > b ? 1 : 0>` (the `>` is parsed as the tag close)
 
+**Marko 6 Tag Variable Locality:**
+
+Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where they are first used, not grouped at the top. Exception is variables needed in multiple distant locations.
+
 **React Package Differences:**
 
 - `ebayui-core-react`: Requires `React.forwardRef` wrapper

@@ -1,0 +1,75 @@
+import { type Input as ButtonInput } from "<evo-button>";
+
+export interface Input extends Omit<Marko.HTML.Dialog, "open" | "closedby" | "role" | "aria-labelledby" | "aria-modal"> {
+  open?: boolean;
+  openChange?: (o: boolean) => void;
+  header: Marko.AttrTag<Marko.HTML.H2 & { as?: string }>;
+  confirm: Marko.AttrTag<ButtonInput>;
+}
+
+<const/{
+  open: inputOpen,
+  openChange,
+  class: inputClass,
+  header,
+  confirm,
+  content,
+  onAnimationEnd,
+  ...htmlInput
+}=input>
+
+<let/open:=input.open>
+<id/headerId=header.id>
+
+<script>
+  if (open && !$dialog().open) {
+    $dialog().showModal();
+  }
+</script>
+
+<dialog/$dialog
+  ...htmlInput
+  open=null // tell Marko it's not a part of the spread because the browser does DOM manipulation
+  role="alertdialog"
+  aria-modal="true"
+  closedby="none"
+  aria-labelledby=headerId
+  class=[
+    "dialog",
+    "dialog--narrow",
+    !open && "dialog--close",
+    inputClass,
+  ]
+  onAnimationEnd(e, el) {
+    if (!open) {
+      el.close();
+    }
+    onAnimationEnd && onAnimationEnd(e, el);
+  }
+>
+  <div class="dialog__header">
+    <const/{ as: headerAs = "h2", ...headerInput }=header>
+    <${headerAs}
+      ...headerInput
+      id=headerId
+      class=["dialog__title", headerInput.class]
+    />
+  </div>
+  <id/mainId>
+  <div id=mainId class="dialog__main">
+    <${content}/>
+  </div>
+  <div class="dialog__footer">
+    <const/{ onClick: confirmOnClick, ...confirmInput }=confirm>
+    <evo-button
+      ...confirmInput
+      priority="primary"
+      autofocus
+      aria-describedby=mainId
+      onClick(e, el) {
+        open = false;
+        confirmOnClick && confirmOnClick(e, el);
+      }
+    />
+  </div>
+</dialog>

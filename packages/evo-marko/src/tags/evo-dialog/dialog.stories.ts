@@ -70,6 +70,10 @@ export default {
       description:
         "Close button rendered in the dialog header (required). Pass `a11yText` for the accessible label",
       "@": {
+        a11yText: {
+          type: { name: "string", required: true },
+          description: "Accessible label for the close button",
+        },
         ["<button> attributes" as any]: {
           description:
             "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through",
@@ -80,7 +84,7 @@ export default {
       description: "Optional previous/back button rendered in the header",
       "@": {
         a11yText: {
-          type: "string",
+          type: { name: "string", required: true },
           description: "Accessible label for the previous button",
         },
         ["<button> attributes" as any]: {
