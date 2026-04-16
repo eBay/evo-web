@@ -11,6 +11,9 @@ import theme from "./theme";
 
 export default {
   tags: ["autodocs"],
+  globalTypes: {
+    colorScheme: {},
+  },
   parameters: {
     layout: "centered",
     controls: { expanded: true, sort: "requiredFirst" },
