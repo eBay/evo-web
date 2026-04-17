@@ -1,5 +1,13 @@
 # @evo-web/marko
 
+## 0.1.12
+
+### Patch Changes
+
+- [#622](https://github.com/eBay/evo-web/pull/622) [`cac4333`](https://github.com/eBay/evo-web/commit/cac43337aae4966cbdbcf90ff97308c6ca9ead09) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Confirm & Alert Dialog
+
+- [#580](https://github.com/eBay/evo-web/pull/580) [`ef749dc`](https://github.com/eBay/evo-web/commit/ef749dc00c798c2f4d750b7c3a066768dfea809f) Thanks [@dididy](https://github.com/dididy)! - replace aria-pressed with CSS class for menu button selected state
+
 ## 0.1.11
 
 ### Patch Changes
