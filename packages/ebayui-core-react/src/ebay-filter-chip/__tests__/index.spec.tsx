@@ -109,6 +109,32 @@ describe("<EbayFilterChip />", () => {
 
             expect(container.querySelector(".filter-chip__trailing")).toBeInTheDocument();
         });
+
+        it("should not render aria-pressed", () => {
+            const { getByRole } = render(<EbayFilterChip variant="menu">Menu Filter</EbayFilterChip>);
+
+            expect(getByRole("button")).not.toHaveAttribute("aria-pressed");
+        });
+
+        it("should add filter-chip--selected class when selected", () => {
+            const { container } = render(
+                <EbayFilterChip variant="menu" selected>
+                    Menu Filter
+                </EbayFilterChip>,
+            );
+
+            expect(container.querySelector(".filter-chip")).toHaveClass("filter-chip--selected");
+        });
+
+        it("should show clipped text when selected", () => {
+            const { container } = render(
+                <EbayFilterChip variant="menu" selected>
+                    Menu Filter
+                </EbayFilterChip>,
+            );
+
+            expect(container.querySelector(".clipped")).toHaveTextContent("- Filter Applied");
+        });
     });
 
     describe("anchor variant", () => {

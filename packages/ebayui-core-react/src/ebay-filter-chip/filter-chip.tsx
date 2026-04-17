@@ -55,7 +55,8 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
     const selected = selectedControlled !== undefined ? selectedControlled : uncontrolledSelected;
     const expanded = expandedControlled !== undefined ? expandedControlled : uncontrolledExpanded;
 
-    const isAnchor = !!href && variant !== "menu";
+    const isMenu = variant === "menu";
+    const isAnchor = !!href && !isMenu;
 
     useLayoutEffect(() => {
         containerRef.current?.classList?.add("filter-chip--animated");
@@ -66,7 +67,7 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
             let newExpanded = expanded;
             let newSelected = selected;
 
-            if (variant === "menu") {
+            if (isMenu) {
                 newExpanded = !expanded;
                 setUncontrolledExpanded(newExpanded);
             } else {
@@ -85,7 +86,7 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
         "filter-chip",
         {
             "filter-chip--expressive": variant === "expressive",
-            "filter-chip--selected": isAnchor && selected,
+            "filter-chip--selected": (isAnchor || isMenu) && selected,
         },
         className,
     );
@@ -100,8 +101,8 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
             onClick={handleClick}
             href={!disabled ? href : undefined}
             type={!isAnchor ? "button" : undefined}
-            aria-pressed={!isAnchor ? (selected ? "true" : "false") : undefined}
-            aria-expanded={variant === "menu" ? (expanded ? "true" : "false") : undefined}
+            aria-pressed={!isAnchor && !isMenu ? (selected ? "true" : "false") : undefined}
+            aria-expanded={isMenu ? (expanded ? "true" : "false") : undefined}
             disabled={!isAnchor ? disabled : undefined}
         >
             {variant === "expressive" ? <span className="filter-chip__media">{image}</span> : null}
@@ -110,7 +111,7 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
 
             <span className="filter-chip__text">
                 {children}
-                {selected && isAnchor ? <span className="clipped">- {a11ySelectedText}</span> : null}
+                {selected && (isAnchor || isMenu) ? <span className="clipped">- {a11ySelectedText}</span> : null}
             </span>
 
             {variant === "menu" ? <EbayIconChevronDown12 className="filter-chip__trailing" /> : null}

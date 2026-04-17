@@ -11,6 +11,7 @@ const {
     Expressive,
     ExpressiveSelected,
     Menu,
+    MenuSelected,
     MenuExpanded,
     Anchor,
     AnchorSelected,
@@ -46,6 +47,11 @@ describe("<EbayFilterChip /> rendering", () => {
 
     it("renders menu story correctly", () => {
         const { container } = render(<Menu />);
+        expect(container).toMatchSnapshot();
+    });
+
+    it("renders menu selected story correctly", () => {
+        const { container } = render(<MenuSelected />);
         expect(container).toMatchSnapshot();
     });
 

@@ -21,13 +21,13 @@ $ const rootTag = isAnchor ? "a" : "button";
         "filter-chip",
         state.mounted && "filter-chip--animated",
         variant === "expressive" && "filter-chip--expressive",
-        isAnchor && state.selected && "filter-chip--selected",
+        (isAnchor || variant === "menu") && state.selected && "filter-chip--selected",
         inputClass
     ]
     type=!isAnchor && "button"
     href=!disabled ? href : undefined
     disabled=!isAnchor ? disabled : undefined
-    aria-pressed=!isAnchor && (state.selected ? "true" : "false")
+    aria-pressed=!isAnchor && variant !== "menu" && (state.selected ? "true" : "false")
     aria-expanded=variant === "menu" && (state.expanded ? "true" : "false")
     on-click("handleButtonClick")
 >
@@ -43,7 +43,7 @@ $ const rootTag = isAnchor ? "a" : "button";
 
     <span class="filter-chip__text">
         <${renderBody}/>
-        <if(state.selected && isAnchor)>
+        <if(state.selected && (isAnchor || variant === "menu"))>
             <span class="clipped">
                 - ${a11ySelectedText}
             </span>

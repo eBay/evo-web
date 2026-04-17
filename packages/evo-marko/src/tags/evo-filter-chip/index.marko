@@ -44,7 +44,7 @@ export interface Input
             ...input as Marko.HTML.Button
             disabled=disabled
             type="button"
-            aria-selected=(selected ? "true" : "false")/>
+            aria-selected=!isMenu && (selected ? "true" : "false")/>
     </else>
 </define>
 
@@ -54,6 +54,7 @@ export interface Input
         "filter-chip",
         mounted && "filter-chip--animated",
         variant === "expressive" && "filter-chip--expressive",
+        (isAnchor || isMenu) && selected && "filter-chip--selected",
         inputClass,
     ]
     href=(!disabled ? href : undefined)
@@ -80,7 +81,7 @@ export interface Input
 
     <span class="filter-chip__text">
         <${content}/>
-        <if=selected && isAnchor>
+        <if=selected && (isAnchor || isMenu)>
             <span class="clipped">
                 ${" "}- ${a11ySelectedText}
             </span>

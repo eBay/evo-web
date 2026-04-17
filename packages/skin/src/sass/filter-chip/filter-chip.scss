@@ -35,12 +35,14 @@ a.filter-chip--expressive {
 }
 
 button.filter-chip[aria-pressed="true"],
+button.filter-chip.filter-chip--selected,
 a.filter-chip--selected {
     @include chip-mixins.selected;
     @include state-layer.strong;
 }
 
-button.filter-chip--animated[aria-pressed="true"] {
+button.filter-chip--animated[aria-pressed="true"],
+button.filter-chip--animated.filter-chip--selected {
     @include chip-mixins.selected-animation;
 }
 

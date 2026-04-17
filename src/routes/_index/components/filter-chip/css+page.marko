@@ -85,7 +85,7 @@
         <span class="filter-chip__text">
           Football
           <span class="clipped">
-            - filter applied
+            - Filter Applied
           </span>
         </span>
       </a>
@@ -109,7 +109,7 @@
       <span class="filter-chip__text">
         Football
         <span class="clipped">
-          - filter applied
+          - Filter Applied
         </span>
       </span>
     </a>
@@ -213,7 +213,7 @@
         <span class="filter-chip__text">
           Pet Supplies
           <span class="clipped">
-            - filter applied
+            - Filter Applied
           </span>
         </span>
       </a>
@@ -246,7 +246,7 @@
       <span class="filter-chip__text">
         Football
         <span class="clipped">
-          - filter applied
+          - Filter Applied
         </span>
       </span>
     </a>
@@ -261,7 +261,7 @@
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="filter-chip" aria-pressed="false" aria-expanded="false">
+      <button class="filter-chip" type="button" aria-expanded="false">
         <span class="filter-chip__text">
           Sport: -
         </span>
@@ -273,7 +273,7 @@
   </div>
 
   <highlight-code type="html">
-    <button class="filter-chip" aria-pressed="false" aria-expanded="false">
+    <button class="filter-chip" type="button" aria-expanded="false">
       <span class="filter-chip__text">
         Sport: -
       </span>
@@ -290,7 +290,7 @@
 
   <div class="demo">
     <div class="demo__inner">
-      <button class="filter-chip" aria-pressed="true" aria-expanded="false">
+      <button class="filter-chip filter-chip--selected" type="button" aria-expanded="false">
         <span class="filter-chip__text">
           Sport: Football
           <span class="filter-chip__count">
@@ -300,12 +300,15 @@
         <svg class="filter-chip__trailing icon icon--12" width="12" height="12">
           <icon-symbol name="chevron-down-16"/>
         </svg>
+        <span class="clipped">
+          Filter Applied
+        </span>
       </button>
     </div>
   </div>
 
   <highlight-code type="html">
-    <button class="filter-chip" aria-pressed="true" aria-expanded="false">
+    <button class="filter-chip filter-chip--selected" type="button" aria-expanded="false">
       <span class="filter-chip__text">
         Sport: Football
         <span class="filter-chip__count">
@@ -315,6 +318,9 @@
       <svg class="filter-chip__trailing icon icon--12" width="12" height="12">
         <use href="#icon-chevron-down-16"/>
       </svg>
+      <span class="clipped">
+        Filter Applied
+      </span>
     </button>
   </highlight-code>
 </div>
