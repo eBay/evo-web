@@ -62,7 +62,7 @@ export interface Input extends Marko.HTML.Dialog {
     onCancel && onCancel(e, el);
   }
   onAnimationEnd(e, el) {
-    if (!open) {
+    if (e.target === el && !open) {
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);

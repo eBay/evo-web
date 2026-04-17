@@ -41,7 +41,7 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "closedby" | "ro
     inputClass,
   ]
   onAnimationEnd(e, el) {
-    if (!open) {
+    if (e.target === el && !open) {
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);

@@ -50,7 +50,7 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
     onCancel && onCancel(e, el);
   }
   onAnimationEnd(e, el) {
-    if (!open) {
+    if (e.target === el && !open) {
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);
