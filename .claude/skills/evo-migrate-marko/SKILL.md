@@ -1,6 +1,6 @@
 ---
 name: evo-migrate-marko
-description: Migrate a component from @ebay/ebayui-core (Marko 5) to @evo-web/marko (Marko 6). Receives the ebayui-core component name as the argument (e.g. /evo-migrate-marko ebay-button).
+description: Migrate a component from @ebay/ebayui-core (Marko 5) to @evo-web/marko (Marko 6). Receives the ebayui-core component name as the argument (e.g. /evo-migrate-marko ebay-button). Use this skill whenever the user mentions migrating, porting, converting, or moving any ebay-* Marko component to evo-marko, even if they don't explicitly invoke the skill by name.
 ---
 
 # Migrate ebayui-core (Marko 5) to evo-marko (Marko 6)
@@ -27,10 +27,12 @@ This is an ACTIVE PROCESS, before making any decision you should consult with th
    - Complex (floating UI positioning): `packages/evo-marko/src/tags/evo-tooltip/index.marko`
 3. If the Marko 5 component uses shared base classes or utilities from `src/common/`, read those too.
 4. If the Marko 5 component uses `makeup-*` libraries, check whether an evo-marko headless replacement exists:
-   - `makeup-roving-tabindex` / `makeup-active-descendant` -> `<evo-roving-tabindex>` (in `src/tags/tags/`)
+   - `makeup-roving-tabindex` -> `<evo-roving-tabindex>` (in `src/tags/tags/`) — use when focus physically moves into list items (tabs, menus, listboxes where options are focusable)
+   - `makeup-active-descendant` -> **do NOT use `<evo-roving-tabindex>`** for combobox-like patterns where focus stays on the input. Instead, manage `aria-activedescendant` directly: `<let/activeIndex=-1>` on the input with `aria-activedescendant=(activeIndex >= 0 ? \`${listId}-${activeIndex}\` : undefined)`.
    - `makeup-expander` + `@floating-ui/dom` -> `<evo-expander>` (in `src/tags/tags/`)
    - `makeup-floating-label` -> `<evo-floating-label>` (in `src/tags/tags/`)
    - `makeup-typeahead` -> `<evo-typeahead>` (in `src/tags/tags/`)
+   - `makeup-focusables` -> **no evo replacement**; use native `querySelectorAll` with a standard focusable selector instead
 
 ---
 
@@ -66,6 +68,16 @@ packages/evo-marko/src/tags/evo-{name}/
 ```
 
 **Key difference from ebayui-core:** Everything lives in `index.marko`. There is no separate `component.ts`, `component-browser.ts`, or `marko-tag.json`.
+
+### README.md content
+
+Write a `README.md` that covers:
+
+- **One-line description** of what the component does
+- **Basic usage example** (copy-pasteable Marko snippet)
+- **Props table** — name, type, default, description (derive from the `Input` interface)
+- **Accessibility notes** — any keyboard interactions, ARIA roles/attributes, screen reader behavior
+- **Breaking changes from ebayui-core** — renamed props, removed props, changed event signatures
 
 ---
 
