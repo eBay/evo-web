@@ -55,7 +55,8 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
     const selected = selectedControlled !== undefined ? selectedControlled : uncontrolledSelected;
     const expanded = expandedControlled !== undefined ? expandedControlled : uncontrolledExpanded;
 
-    const isAnchor = !!href && variant !== "menu";
+    const isMenu = variant === "menu";
+    const isAnchor = !!href && !isMenu;
 
     useLayoutEffect(() => {
         containerRef.current?.classList?.add("filter-chip--animated");
@@ -66,7 +67,7 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
             let newExpanded = expanded;
             let newSelected = selected;
 
-            if (variant === "menu") {
+            if (isMenu) {
                 newExpanded = !expanded;
                 setUncontrolledExpanded(newExpanded);
             } else {
@@ -80,8 +81,6 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
             });
         }
     };
-
-    const isMenu = variant === "menu";
 
     const classNames = classnames(
         "filter-chip",

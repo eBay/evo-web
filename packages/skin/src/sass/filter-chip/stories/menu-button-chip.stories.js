@@ -24,7 +24,7 @@ export const collapsedSelected = () => `
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
     </svg>
-    <span class="clipped">filter applied</span>
+    <span class="clipped">Filter Applied</span>
 </button>
 `;
 
@@ -34,7 +34,7 @@ export const expandedSelected = () => `
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
     </svg>
-    <span class="clipped">filter applied</span>
+    <span class="clipped">Filter Applied</span>
 </button>
 `;
 
@@ -76,7 +76,7 @@ export const expressiveCollapsedSelected = () => `
     <svg class="icon icon--12 filter-chip__trailing" width="13" height="12" aria-hidden="true">
         <use href="#icon-chevron-down-12"/>
     </svg>
-    <span class="clipped">filter applied</span>
+    <span class="clipped">Filter Applied</span>
 </button>
 `;
 
