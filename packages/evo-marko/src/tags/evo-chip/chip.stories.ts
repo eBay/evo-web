@@ -23,9 +23,9 @@ export default {
         "Attribute tag for the delete button. When present, a delete button with a close icon is rendered.",
       "@": {
         a11yText: {
-          type: "string",
-          description:
-            "Accessible label for the delete button (required for a11y)",
+          type: { name: "string", required: true },
+          control: "text",
+          description: "A descriptive label for the delete button",
         },
         disabled: {
           type: "boolean",
