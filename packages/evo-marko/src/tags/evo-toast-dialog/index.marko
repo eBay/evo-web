@@ -1,0 +1,81 @@
+import { type Input as IconButtonInput } from "<evo-icon-button>";
+
+export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-modal" | "aria-live"> {
+  open?: boolean;
+  openChange?: (o: boolean) => void;
+  header: Marko.AttrTag<Marko.HTML.H2 & { as?: string }>;
+  footer?: Marko.AttrTag<Marko.HTML.Div>;
+  close: Marko.AttrTag<IconButtonInput>;
+}
+
+<const/{
+  open: inputOpen,
+  openChange,
+  class: inputClass,
+  header,
+  footer,
+  close,
+  content,
+  "aria-labelledby": inputLabelledBy,
+  onAnimationEnd,
+  ...htmlInput
+}=input>
+
+<let/open:=input.open>
+<id/headerId=header.id>
+
+<script>
+  if (open && !$dialog().open) {
+    const prev = document.activeElement as HTMLElement | null;
+    $dialog().show();
+    prev?.focus();
+  }
+</script>
+
+<dialog/$dialog
+  ...htmlInput
+  open=null
+  role="dialog"
+  aria-modal="false"
+  aria-live="polite"
+  aria-labelledby=(inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId)
+  class=[
+    "toast-dialog",
+    !open && "toast-dialog--close",
+    inputClass,
+  ]
+  onAnimationEnd(e, el) {
+    if (!open) {
+      el.close();
+    }
+    onAnimationEnd && onAnimationEnd(e, el);
+  }
+>
+  <div class="toast-dialog__window">
+    <div class="toast-dialog__header">
+      <const/{ as: headerAs = "h2", ...headerInput }=header>
+      <${headerAs}
+        ...headerInput
+        id=headerId
+        class=["toast-dialog__title", headerInput.class]
+      />
+      <evo-icon-button
+        ...close
+        transparent
+        class=["toast-dialog__close", close.class]
+        onClick(e, el) {
+          open = false;
+          close.onClick && close.onClick(e, el);
+        }
+      >
+        <evo-icon-close-16/>
+      </evo-icon-button>
+    </div>
+    <div class="toast-dialog__main">
+      <${content}/>
+    </div>
+    <if=footer>
+      <div ...footer class=["toast-dialog__footer", footer.class]/>
+    </if>
+  </div>
+</dialog>
