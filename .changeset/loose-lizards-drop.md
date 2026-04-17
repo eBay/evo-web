@@ -1,7 +1,7 @@
 ---
 "@ebay/skin": patch
 "@ebay/ebayui-core": patch
-"@ebay/ebayui-core-react": patch
+"@ebay/ui-core-react": patch
 "@evo-web/marko": patch
 ---
 
