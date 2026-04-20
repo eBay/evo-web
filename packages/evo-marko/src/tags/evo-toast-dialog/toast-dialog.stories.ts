@@ -23,14 +23,6 @@ export default {
       description: "Whether the toast dialog is open",
       table: { defaultValue: { summary: "false" } },
     },
-    closedby: {
-      type: "string",
-      options: ["any", "closerequest", "none"],
-      control: "inline-radio",
-      description:
-        'The [`closedby=` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#closedby) from the native `<dialog>` component. Defaults to `"closerequest"` if not specified',
-      table: { defaultValue: { summary: "closerequest" } },
-    },
     header: {
       description:
         "The header content rendered inside the toast dialog title (required)",

@@ -87,7 +87,7 @@ body:has(.dialog[open]) {
 .dialog__header {
     display: flex;
     flex-shrink: 0;
-    margin: var(--spacing-200) var(--spacing-200) 0;
+    padding: var(--spacing-200) var(--spacing-200) 0;
     position: relative;
 
     h1,
@@ -177,7 +177,7 @@ button.icon-btn.dialog__prev {
 }
 
 .dialog--expressive .dialog__header {
-    margin: var(--spacing-300) var(--spacing-300) 0;
+    padding: var(--spacing-300) var(--spacing-300) 0;
 }
 
 .dialog--expressive .dialog__main,

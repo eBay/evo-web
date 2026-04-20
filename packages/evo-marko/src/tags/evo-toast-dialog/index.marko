@@ -1,6 +1,6 @@
 import { type Input as IconButtonInput } from "<evo-icon-button>";
 
-export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-modal" | "aria-live"> {
+export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-modal" | "aria-live" | "closedby"> {
   open?: boolean;
   openChange?: (o: boolean) => void;
   header: Marko.AttrTag<Marko.HTML.H2 & { as?: string }>;
@@ -17,7 +17,6 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-m
   close,
   content,
   "aria-labelledby": inputLabelledBy,
-  closedby = "closerequest",
   onCancel,
   onAnimationEnd,
   ...htmlInput
@@ -34,13 +33,24 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-m
   }
 </script>
 
+<script>
+  // NOTE: Only required until Safari has better support for closedby
+  if (open && !("closedBy" in HTMLDialogElement.prototype)) {
+    document.addEventListener("keydown", ({ key, defaultPrevented }) => {
+      if (key === "Escape" && !defaultPrevented) {
+        open = false;
+      }
+    }, { signal: $signal });
+  }
+</script>
+
 <dialog/$dialog
   ...htmlInput
   open=null
   role="dialog"
   aria-modal="false"
   aria-live="polite"
-  closedby=closedby
+  closedby="closerequest"
   aria-labelledby=(inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId)
   class=[
     "toast-dialog",
