@@ -8,29 +8,29 @@ const { Default } = composeStories(stories);
 afterEach(cleanup);
 
 describe("evo-star-rating", () => {
-    let component: Awaited<ReturnType<typeof render>>;
+  let component: Awaited<ReturnType<typeof render>>;
 
-    beforeEach(async () => {
-        component = await render(Default);
-    });
+  beforeEach(async () => {
+    component = await render(Default);
+  });
 
-    it("should render with role img", () => {
-        expect(component.getByRole("img")).toBeTruthy();
-    });
+  it("should render with role img", () => {
+    expect(component.getByRole("img")).toBeTruthy();
+  });
 
-    it("should have correct data-stars attribute", () => {
-        const el = component.getByRole("img");
-        expect(el.getAttribute("data-stars")).toBe("3-5");
-    });
+  it("should have correct data-stars attribute", () => {
+    const el = component.getByRole("img");
+    expect(el.getAttribute("data-stars")).toBe("3-5");
+  });
 
-    it("should have default aria-label", () => {
-        const el = component.getByRole("img");
-        expect(el.getAttribute("aria-label")).toBe("3.5 out of 5 stars");
-    });
+  it("should have default aria-label", () => {
+    const el = component.getByRole("img");
+    expect(el.getAttribute("aria-label")).toBe("3.5 out of 5 stars");
+  });
 
-    it("should render 5 star icons", () => {
-        const el = component.getByRole("img");
-        const svgs = el.querySelectorAll("svg");
-        expect(svgs.length).toBe(5);
-    });
+  it("should render 5 star icons", () => {
+    const el = component.getByRole("img");
+    const svgs = el.querySelectorAll("svg");
+    expect(svgs.length).toBe(5);
+  });
 });
