@@ -1,0 +1,101 @@
+<div id="star-range">
+  <section-header/>
+  <p>
+    <strong>NOTE:</strong>
+    ${" "}JavaScript is required to update the${" "}
+    <code>--value</code>
+    ${" "}CSS custom property on the wrapper, which drives the gradient fill.
+  </p>
+
+  <h3>Default Star Range</h3>
+  <p>
+    A star range starting at 1 star.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <label for="star-range-demo-default">Rate this product</label>
+      <div class="star-range" style="--value: 1">
+        <input
+          id="star-range-demo-default"
+          class="star-range__input"
+          type="range"
+          min="1"
+          max="5"
+          value="1"
+          step="1"
+          aria-label="Rate this product">
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <label for="star-range-1">Rate this product</label>
+    <div class="star-range" style="--value: 1">
+      <input
+        id="star-range-1"
+        class="star-range__input"
+        type="range"
+        min="1"
+        max="5"
+        value="1"
+        step="1"
+        aria-label="Rate this product">
+    </div>
+  </highlight-code>
+
+  <h3>Star Range with Pre-selected Value</h3>
+  <p>
+    A star range with 3 stars pre-selected.
+  </p>
+
+  <div class="demo">
+    <div class="demo__inner">
+      <label for="star-range-demo-three">Rate this product</label>
+      <div class="star-range" style="--value: 3">
+        <input
+          id="star-range-demo-three"
+          class="star-range__input"
+          type="range"
+          min="1"
+          max="5"
+          value="3"
+          step="1"
+          aria-label="Rate this product">
+      </div>
+    </div>
+  </div>
+
+  <highlight-code type="html">
+    <label for="star-range-2">Rate this product</label>
+    <div class="star-range" style="--value: 3">
+      <input
+        id="star-range-2"
+        class="star-range__input"
+        type="range"
+        min="1"
+        max="5"
+        value="3"
+        step="1"
+        aria-label="Rate this product">
+    </div>
+  </highlight-code>
+</div>
+export const metadata = {
+  component: "star-range",
+};
+
+<script>
+  document.querySelectorAll(".star-range").forEach(function (wrapper) {
+    const input = wrapper.querySelector("input");
+    if (!input) return;
+    wrapper.style.setProperty("--value", input.value);
+    input.addEventListener("input", function (e: Event) {
+      const target = e.target as HTMLInputElement;
+      (target.parentElement as HTMLElement).style.setProperty(
+        "--value",
+        target.value,
+      );
+    });
+  });
+</script>

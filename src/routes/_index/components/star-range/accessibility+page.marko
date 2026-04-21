@@ -1,0 +1,103 @@
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+    <h1>Star Range Accessibility</h1>
+    <h2>Best Practices</h2>
+    <p>
+        The range input${" "}
+        <strong>must</strong>
+        ${" "}have an associated${" "}
+        <code>&lt;label&gt;</code>
+        ${" "}or${" "}
+        <code>aria-label</code>
+        ${" "}describing its purpose (e.g., "Rate this product").
+    </p>
+    <p>
+        The${" "}
+        <code>min</code>
+        ,${" "}
+        <code>max</code>
+        , and${" "}
+        <code>step</code>
+        ${" "}attributes${" "}
+        <strong>must</strong>
+        ${" "}be set so that the range maps to valid rating values.
+    </p>
+    <p>
+        Consider adding${" "}
+        <code>aria-valuetext</code>
+        ${" "}via JavaScript to provide a human-readable description
+        (e.g., "3 out of 5 stars") as the value changes.
+    </p>
+    <h2>Interaction Design</h2>
+    <h3>Keyboard</h3>
+    <p>
+        Pressing${" "}
+        <strong>TAB</strong>
+        ${" "}key${" "}
+        <strong>must</strong>
+        ${" "}move focus to the range input.
+    </p>
+    <p>
+        Pressing${" "}
+        <strong>LEFT/DOWN</strong>
+        ${" "}arrow keys${" "}
+        <strong>must</strong>
+        ${" "}decrease the rating.${" "}
+        <strong>RIGHT/UP</strong>
+        ${" "}arrow keys${" "}
+        <strong>must</strong>
+        ${" "}increase the rating.
+    </p>
+    <h3>Screen Reader</h3>
+    <p>
+        A screen reader${" "}
+        <strong>must</strong>
+        ${" "}announce the label, current value, and range (min/max) of the
+        slider.
+    </p>
+    <h3>Pointer</h3>
+    <p>
+        Clicking or dragging on the track${" "}
+        <strong>must</strong>
+        ${" "}update the rating value.
+    </p>
+    <h2>ARIA Reference</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <strong>aria-label</strong>
+                </td>
+                <td>
+                    Describes the purpose of the rating input when no
+                    visible label is present.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>aria-valuetext</strong>
+                </td>
+                <td>
+                    Optional. Provides a human-readable value description
+                    (e.g., "3 out of 5 stars").
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Further Reading</h2>
+    <ul>
+        <li>
+            <a href="https://www.w3.org/WAI/ARIA/apg/patterns/slider/">
+                APG Slider Pattern
+            </a>
+        </li>
+    </ul>
+</div>

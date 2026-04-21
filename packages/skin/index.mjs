@@ -71,6 +71,7 @@ import './dist/signal/signal.css';
 import './dist/skeleton/skeleton.css';
 import './dist/snackbar-dialog/snackbar-dialog.css';
 import './dist/split-button/split-button.css';
+import './dist/star-range/star-range.css';
 import './dist/star-rating/star-rating.css';
 import './dist/star-rating-select/star-rating-select.css';
 import './dist/switch/switch.css';

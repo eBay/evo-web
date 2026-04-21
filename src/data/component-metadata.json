@@ -798,6 +798,11 @@
     "reactStorybookPath": "/docs/form-input-ebay-star-rating-select--documentation",
     "description": "An interactive input for user reviews or feedback."
   },
+  "star-range": {
+    "component": "star-range",
+    "cssStorybookPath": "/story/skin-star-range--default-star-range",
+    "description": "An interactive star rating input using a single range slider."
+  },
   "star-rating": {
     "component": "star-rating",
     "ds-component": {

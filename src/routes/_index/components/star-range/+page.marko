@@ -1,0 +1,28 @@
+import { urls } from "../../../../data";
+<div id="star-range-overview">
+  <component-banner-img/>
+
+  <p>
+    Star range is an alternative star rating input that uses a single${" "}
+    <code>&lt;input type="range"&gt;</code>
+    ${" "}instead of multiple radio buttons. The star shape is rendered via a CSS
+    mask on the slider track, and a linear gradient fills stars based on the
+    current value.
+  </p>
+
+  <p>
+    This approach results in significantly less markup compared to the radio
+    button approach used by${" "}
+    <a href=`${urls.components}/star-rating-select`>
+      star-rating-select
+    </a>
+    , while still providing full keyboard and pointer interactivity.
+  </p>
+
+  <p>
+    <strong>NOTE:</strong>
+    ${" "}A small amount of JavaScript is required to update the${" "}
+    <code>--value</code>
+    ${" "}CSS custom property as the user interacts with the slider.
+  </p>
+</div>
