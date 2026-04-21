@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.24.2
+
+### Patch Changes
+
+- [#580](https://github.com/eBay/evo-web/pull/580) [`ef749dc`](https://github.com/eBay/evo-web/commit/ef749dc00c798c2f4d750b7c3a066768dfea809f) Thanks [@dididy](https://github.com/dididy)! - replace aria-pressed with CSS class for menu button selected state
+
 ## 19.24.1
 
 ### Patch Changes
