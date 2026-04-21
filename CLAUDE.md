@@ -53,6 +53,15 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 - Test zoom up to 400% and with assistive technologies (screen readers, keyboard-only)
 - Support RTL (right-to-left) layouts
 
+**`a11yText` prop convention (evo-marko / evo-react):**
+
+- Use `string | null` when alternative a11y info may exist; JSDoc must include: `Pass \`null\` explicitly _only_ if alternative accessibility information is present`
+- Use `string` when the label is always required
+- JSDoc must state the English default: `English default to be overridden is \`"{default}"\``
+- Provide a default in destructuring: `a11yText = "{default}"`
+- Storybook: `type: { name: "string", required: true }`, `control: "text"`
+- Reference: `evo-badge` (`string | null`), `evo-chip` (`string`)
+
 </accessibility_guardrails>
 
 ---

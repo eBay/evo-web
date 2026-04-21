@@ -600,13 +600,7 @@ Before finalizing the `Input` interface, compare the Marko 5 props:
 2. **Remove framework workarounds** -- `toJSON`, `processHtmlAttributes`, `WithNormalizedProps` are not needed.
 3. **Convert kebab-case to camelCase** -- `"input-size"` -> `inputSize`, `"floating-label"` -> `floatingLabel`.
 4. **Simplify boolean semantics** -- convert negative booleans to positive where appropriate (see table above).
-5. **Add `a11yText` prop** if the component needs an accessible label and the Marko 5 version used `aria-label`. Use the pattern:
-   ```marko
-   export interface Input extends Marko.HTML.Span {
-       a11yText: string | null;
-   }
-   <span aria-label=a11yText ...htmlInput>
-   ```
+5. **Add `a11yText` prop** if the Marko 5 version used `aria-label` or `a11y-*-text`.
 6. **If uncertain about a prop**, stop and ask before proceeding.
 
 ---
