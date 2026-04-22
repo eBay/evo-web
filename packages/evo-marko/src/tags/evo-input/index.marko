@@ -1,20 +1,17 @@
 export interface Input extends Marko.HTML.Input {
-    multiline?: boolean;
     inputSize?: "regular" | "large";
     fluid?: boolean;
-    opaqueLabel?: boolean;
     floatingLabel?: string;
     floatingLabelStatic?: boolean;
     prefixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
     prefixText?: Marko.AttrTag<Marko.HTML.Span>;
     postfixText?: Marko.AttrTag<Marko.HTML.Span>;
-    postfixIcon?: Marko.AttrTag<Marko.HTML.Button & {
-        a11yText?: string;
-    }>;
+    postfixIcon?: Marko.AttrTag<
+        Marko.HTML.Button & {
+            a11yText?: string;
+        }
+    >;
     invalid?: boolean;
-    autocorrect?: Marko.HTML.TextArea["autocorrect"];
-    cols?: Marko.HTML.TextArea["cols"];
-    rows?: Marko.HTML.TextArea["rows"];
 }
 
 <const/{
@@ -26,13 +23,11 @@ export interface Input extends Marko.HTML.Input {
     id,
     inputSize,
     invalid,
-    multiline,
-    opaqueLabel,
     postfixIcon,
     prefixIcon,
     style,
     type,
-    placeholder = "",
+    placeholder,
     prefixText,
     postfixText,
     readonly,
@@ -41,76 +36,68 @@ export interface Input extends Marko.HTML.Input {
     ...htmlInput
 }=input>
 
-<const/isPostfix=!!postfixIcon>
-<const/hasIcon=prefixIcon || isPostfix>
-<const/isLarge=inputSize === "large">
-<const/displayIcon=!multiline && hasIcon>
 <id/prefixId>
 <id/postfixId>
-<id/textboxId=id>
-<const/defaultTag=(fluid ? "div" : "span")>
+<id/inputId=id>
 <let/focused=false>
 <let/value:=input.value>
-<const/currentPlaceholder=(placeholder && focused && !value ? placeholder : "")>
-<const/disablePrefix=!!floatingLabel && !floatingLabelStatic>
 
-<evo-floating-label
+<evo-floating-label|{ showPlaceholder }|
     floatingLabel=floatingLabel
     inputSize=inputSize
-    opaqueLabel=opaqueLabel
-    id=textboxId
+    alwaysUp=floatingLabelStatic
+    forId=inputId
     disabled=disabled
     invalid=invalid
     fluid=fluid
     value=value
-    focused=focused
->
-   <${defaultTag}
+    focused=focused>
+    <${fluid ? "div" : "span"}
         style=style
-        placeholder=currentPlaceholder
         class=[
             "textbox" /** start remove after `:has` support */,
             disabled && "textbox--disabled",
             invalid && "textbox--invalid",
             readonly &&
                 "textbox--readonly" /** end remove after `:has` support */,
-            isLarge && "textbox--large",
+            inputSize === "large" && "textbox--large",
             fluid && "textbox--fluid",
             inputClass,
         ]>
-        <if=displayIcon && prefixIcon && !disablePrefix>
+        <if=prefixIcon>
             <${prefixIcon}/>
         </if>
-        <if=prefixText && !disablePrefix>
+        <if=prefixText>
             <span ...prefixText id=prefixId/>
         </if>
-        <${multiline ? "textarea" : "input"}
+        <input
             ...htmlInput
             aria-describedby=(
-                [prefixId, postfixId].filter(Boolean).join(" ") || undefined
+                [prefixText && prefixId, postfixText && postfixId]
+                    .filter(Boolean)
+                    .join(" ") || undefined
             )
-            onBlur(e: Event, target: HTMLInputElement) {
+            onBlur(e, target) {
                 focused = false;
-                onBlur && onBlur(e, target);
+                (onBlur || null)?.(e, target);
             }
-            onFocus(e: FocusEvent, target: HTMLInputElement) {
+            onFocus(e, target) {
                 focused = true;
-                onFocus && onFocus(e, target);
+                (onFocus || null)?.(e, target);
             }
-            id=textboxId
+            id=inputId
             class="textbox__control"
-            type=!multiline && (type || "text")
+            placeholder=showPlaceholder && placeholder
+            type=type
             value:=value
             disabled=disabled
             aria-invalid=invalid && "true"
-            readonly=readonly/>
+            readonly=readonly>
         <if=postfixText>
             <span ...postfixText id=postfixId/>
         </if>
-        <!-- Lifted out of <if> to work around Marko 6 SSR translator bug with
-             `<const/{ named, ...rest }=obj>` inside a conditional branch. -->
-        <const/{ a11yText, ...postfixIconInput }=(postfixIcon || {} as NonNullable<typeof postfixIcon>)>
-        <if=displayIcon && postfixIcon>
+        <if=postfixIcon>
+            <const/{ a11yText, ...postfixIconInput }=postfixIcon>
             <${a11yText && "button"}
                 ...postfixIconInput
                 aria-label=a11yText
@@ -121,4 +108,4 @@ export interface Input extends Marko.HTML.Input {
             </>
         </if>
     </>
-</>
+</evo-floating-label>

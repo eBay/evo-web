@@ -1,7 +1,7 @@
 import { buildExtensionTemplate } from "../../common/storybook/utils";
 import { type Meta } from "@storybook/marko";
 import Readme from "./README.md";
-import Textbox, { type Input } from "./index.marko";
+import Input, { type Input as InputType } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultCode from "./examples/default.marko?raw";
 import WithLabelTemplate from "./examples/external-label.marko";
@@ -22,8 +22,8 @@ import FullyDecoratedTemplate from "./examples/fully-decorated.marko";
 import FullyDecoratedCode from "./examples/fully-decorated.marko?raw";
 
 export default {
-  title: "form input/evo-textbox",
-  component: Textbox,
+  title: "form input/evo-input",
+  component: Input,
   parameters: {
     docs: {
       description: {
@@ -37,30 +37,18 @@ export default {
       controllable: true,
       type: "string",
       control: "text",
-      description: "The value of the textbox",
-    },
-    multiline: {
-      type: "boolean",
-      control: "boolean",
-      description:
-        'Switches to `<textarea>` instead of `<input type="text">`. All other behavior remains the same',
+      description: "The value of the input",
     },
     inputSize: {
       type: "string",
       options: ["regular (default)", "large"],
       control: "inline-radio",
-      description: "If large, renders larger sized textbox.",
+      description: "If large, renders larger sized input.",
     },
     fluid: {
       type: "boolean",
       control: "boolean",
-      description: "Textbox fills 100% of its container width.",
-    },
-    opaqueLabel: {
-      type: "boolean",
-      control: "boolean",
-      description:
-        "Only works with floating label. If set, then background is obscured of the floating label. Used with textarea to prevent label overlap",
+      description: "Input fills 100% of its container width.",
     },
     floatingLabel: {
       type: "string",
@@ -118,10 +106,10 @@ export default {
     },
     ["<input> attributes" as any]: {
       description:
-        "All attributes and event handlers from [the native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) will be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange). If `multiline=true`, attributes from [the native HTML `<textarea>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea)",
+        "All attributes and event handlers from [the native HTML `<input>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input) will be passed through, and its Marko [change handlers](https://markojs.com/docs/reference/native-tag#input-valuechange-checkedchange-checkedvaluechange)",
     },
   },
-} satisfies Meta<Input>;
+} satisfies Meta<InputType>;
 
 export const Default = buildExtensionTemplate(DefaultTemplate, DefaultCode);
 export const WithLabel = buildExtensionTemplate(

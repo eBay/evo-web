@@ -1,0 +1,74 @@
+export interface Input extends Marko.HTML.TextArea {
+    inputSize?: "regular" | "large";
+    fluid?: boolean;
+    opaqueLabel?: boolean;
+    floatingLabel?: string;
+    floatingLabelStatic?: boolean;
+    invalid?: boolean;
+}
+
+<const/{
+    class: inputClass,
+    disabled,
+    floatingLabel,
+    floatingLabelStatic,
+    fluid,
+    id,
+    inputSize,
+    invalid,
+    opaqueLabel,
+    style,
+    placeholder,
+    readonly,
+    onBlur,
+    onFocus,
+    ...htmlInput
+}=input>
+
+<id/textareaId=id>
+<let/focused=false>
+<let/value:=input.value>
+
+<evo-floating-label|{ showPlaceholder }|
+    floatingLabel=floatingLabel
+    inputSize=inputSize
+    opaqueLabel=opaqueLabel
+    alwaysUp=floatingLabelStatic
+    forId=textareaId
+    disabled=disabled
+    invalid=invalid
+    fluid=fluid
+    value=value
+    focused=focused
+>
+   <${fluid ? "div" : "span"}
+        style=style
+        class=[
+            "textbox" /** start remove after `:has` support */,
+            disabled && "textbox--disabled",
+            invalid && "textbox--invalid",
+            readonly &&
+                "textbox--readonly" /** end remove after `:has` support */,
+            inputSize === "large" && "textbox--large",
+            fluid && "textbox--fluid",
+            inputClass,
+        ]>
+        <textarea
+            ...htmlInput
+            onBlur(e, target) {
+                focused = false;
+                (onBlur || null)?.(e, target);
+            }
+            onFocus(e, target) {
+                focused = true;
+                (onFocus || null)?.(e, target);
+            }
+            id=textareaId
+            class="textbox__control"
+            placeholder=showPlaceholder && placeholder
+            value:=value
+            disabled=disabled
+            aria-invalid=invalid && "true"
+            readonly=readonly/>
+    </>
+</>
