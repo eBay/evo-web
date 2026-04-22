@@ -143,7 +143,7 @@ Ask questions about any tests or requirements that there is low confidence about
 
 1. **Marko a11y-focused browser tests:** add accessibility tests to `test.browser.js` and group according to test focus.
 2. **React a11y-focused tests:** add accessibility tests to `*.spec.tsx` and group according to test focus.
-3. **Storybook plays:** Marko → `ebay-{component}.stories.ts` (or the component’s `*.stories.ts`). React → `__tests__/index.stories.tsx` (or colocated stories).
+3. **Storybook plays:** Marko → `src/components/ebay-{component}/{component}.stories.ts` (for example, `src/components/ebay-button/button.stories.ts`). React → `__tests__/index.stories.tsx` (or colocated stories).
 4. Organize by Click / Keyboard / Focus / ARIA.
 5. Use **`beforeEach`** for nested setup (given/when/then).
 6. Prefer **`userEvent`** from `@testing-library/user-event` (or `vitest/browser` where the existing file already does) over ad-hoc `pressKey` helpers.
