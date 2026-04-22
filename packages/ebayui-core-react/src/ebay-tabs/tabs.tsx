@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, KeyboardEvent, useEffect, useState } from "react";
+import React, { cloneElement, FC, KeyboardEvent, useState } from "react";
 import classNames from "classnames";
 
 import { handleActionKeydown, handleLeftRightArrowsKeydown } from "../common/event-utils";
@@ -60,10 +60,6 @@ const Tabs: FC<TabsProps> = ({
             }
         });
     };
-
-    useEffect(() => {
-        handleSelect(index);
-    }, [index]);
 
     const isLarge = size === "large";
 

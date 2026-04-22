@@ -58,6 +58,14 @@ describe("<EbayTabs>", () => {
         });
     });
 
+    describe("on initial render", () => {
+        it("should not fire onSelect", () => {
+            const spy = vi.fn();
+            render(<DefaultTabs onSelect={spy} />);
+            expect(spy).not.toHaveBeenCalled();
+        });
+    });
+
     describe("on tab click", () => {
         let spy, tabs;
 
