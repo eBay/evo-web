@@ -264,7 +264,7 @@ const EbayCombobox: FC<EbayComboboxProps> = ({
     };
 
     return (
-        <Container ref={containerRef} className={classNames(`combobox`, className)}>
+        <Container ref={containerRef} className={classNames("combobox", { "combobox--fluid": fluid }, className)}>
             <floatingLabel.Label htmlFor={rest.id} />
 
             <span

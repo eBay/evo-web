@@ -15,6 +15,11 @@ const renderCombobox = (props?) =>
     );
 
 describe("<EbayCombobox />", () => {
+    it("should apply combobox--fluid class when fluid prop is set", () => {
+        const { container } = renderCombobox({ fluid: true });
+        expect(container.firstChild).toHaveClass("combobox", "combobox--fluid");
+    });
+
     it("should update input value on arrow down", async () => {
         renderCombobox();
         const input = screen.getByRole("combobox");
