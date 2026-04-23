@@ -11,12 +11,12 @@ export interface Input extends Omit<Marko.HTML.Div, "aria-label" | "role"> {
     /**
      * Accessible label for the star rating.
      *
-     * English default to be overridden is `"${value} out of 5 stars"`.
+     * English default to be overridden is `"Rating: ${value} out of 5"`.
      */
     a11yText: string;
 }
 
-<const/{ class: inputClass, value = 0, a11yText = `${value} of 5 stars`, ...htmlInput }=input>
+<const/{ class: inputClass, value = 0, a11yText = `Rating: ${value} out of 5`, ...htmlInput }=input>
 
 <div
     ...htmlInput
