@@ -4,6 +4,8 @@ import Readme from "./README.md";
 import Details, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
+import WithLeadingTemplate from "./examples/with-leading.marko";
+import WithLeadingTemplateCode from "./examples/with-leading.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-details",
@@ -18,6 +20,15 @@ export default {
 
   argTypes: {
     content: {},
+    leading: {
+      description: "Optional leading element (e.g. an icon) rendered before the summary label",
+      "@": {
+        ["<span> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<span>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/span) will be passed through",
+        },
+      },
+    },
     summary: {
       description: "The body which will be wrapped as the details summary",
       "@": {
@@ -62,4 +73,9 @@ export default {
 export const Default = buildExtensionTemplate(
   DefaultTemplate,
   DefaultTemplateCode,
+);
+
+export const WithLeading = buildExtensionTemplate(
+  WithLeadingTemplate,
+  WithLeadingTemplateCode,
 );
