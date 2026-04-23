@@ -1,6 +1,6 @@
 import { type Input as ButtonInput } from "<evo-button>";
 
-export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-labelledby" | "aria-modal"> {
+export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-labelledby" | "aria-modal" | "closedby"> {
   open?: boolean;
   openChange?: (o: boolean) => void;
   header: Marko.AttrTag<Marko.HTML.H2 & { as?: string }>;
@@ -16,7 +16,6 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
   confirm,
   reject,
   content,
-  closedby = "closerequest",
   onCancel,
   onAnimationEnd,
   ...htmlInput
@@ -36,7 +35,7 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
   open=null // tell Marko it's not a part of the spread because the browser does DOM manipulation
   role="alertdialog"
   aria-modal="true"
-  closedby=closedby
+  closedby="closerequest"
   aria-labelledby=headerId
   class=[
     "dialog",
@@ -50,7 +49,7 @@ export interface Input extends Omit<Marko.HTML.Dialog, "open" | "role" | "aria-l
     onCancel && onCancel(e, el);
   }
   onAnimationEnd(e, el) {
-    if (!open) {
+    if (e.target === el && !open) {
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);

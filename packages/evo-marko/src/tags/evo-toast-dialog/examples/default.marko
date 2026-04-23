@@ -1,0 +1,22 @@
+import { type Input as ToastDialogInput } from "<evo-toast-dialog>";
+export interface Input extends ToastDialogInput {}
+
+<let/open:=input.open>
+
+<evo-button onClick() { open = true; }>
+    Open Toast
+</evo-button>
+
+<evo-toast-dialog ...input open:=open>
+    <@header>Heading</@header>
+    <@close a11yText="Close Toast"/>
+    <@footer>
+        <evo-button onClick() { open = false; }>
+            Close
+        </evo-button>
+    </@footer>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <p>
+        <a href="http://www.ebay.com">www.ebay.com</a>
+    </p>
+</evo-toast-dialog>

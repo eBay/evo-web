@@ -5,11 +5,32 @@
     --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
     --state-layer-neutral: rgb(var(--color-neutral-900-rgb), 0);
 }
+@keyframes toast-dialog-open {
+    0% {
+        opacity: 0;
+        transform: translateY(110%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes toast-dialog-close {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(110%);
+    }
+}
 .toast-dialog {
     background-color: var(--color-background-accent);
     border-top-left-radius: var(--border-radius-100);
     border-top-right-radius: var(--border-radius-100);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.28);
+    color: var(--color-foreground-on-success);
     inset: auto 0 0;
     max-height: 40vh;
     min-width: 320px;
@@ -19,7 +40,18 @@
     will-change: opacity, transform;
     z-index: 2;
 }
-.toast-dialog,
+dialog.toast-dialog {
+    border: none;
+    margin: 0;
+    outline-offset: 2px;
+    padding: 0;
+}
+.toast-dialog[open] {
+    animation: toast-dialog-open 0.2s cubic-bezier(0.21, 0.31, 1, 1.22);
+}
+.toast-dialog[open].toast-dialog--close {
+    animation: toast-dialog-close 0.2s cubic-bezier(0.21, 0.31, 1, 1.22);
+}
 .toast-dialog a {
     color: var(--color-foreground-on-success);
 }
