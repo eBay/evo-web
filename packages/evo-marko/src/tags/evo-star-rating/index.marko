@@ -1,0 +1,30 @@
+static function toDataStars(value: number): string {
+    const clamped = Math.max(0, Math.min(5, value));
+    const rounded = Math.round(clamped * 2) / 2;
+    const whole = Math.floor(rounded);
+    const half = rounded % 1 !== 0;
+    return half ? `${whole}-5` : `${whole}`;
+}
+
+export interface Input extends Omit<Marko.HTML.Div, "aria-label" | "role"> {
+    value?: number;
+    /**
+     * Accessible label for the star rating.
+     *
+     * English default to be overridden is `"Rating: ${value} out of 5"`.
+     */
+    a11yText: string;
+}
+
+<const/{ class: inputClass, value = 0, a11yText = `Rating: ${value} out of 5`, ...htmlInput }=input>
+
+<div
+    ...htmlInput
+    role="img"
+    aria-label=a11yText
+    class=["star-rating", inputClass]
+    data-stars=toDataStars(value)>
+    <for until=5>
+        <evo-icon-star-dynamic class="star-rating__icon"/>
+    </for>
+</div>
