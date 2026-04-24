@@ -6,6 +6,7 @@ import { EvoDetailsSummary } from "../details-summary";
 import { EvoDetailsLabel } from "../details-label";
 import { EvoDetailsLeading } from "../details-leading";
 import { EvoDetailsContent } from "../details-content";
+import { EvoIconLightbulb16 } from "../../evo-icon/icons/evo-icon-lightbulb-16";
 import type { Size, Alignment } from "../types";
 
 function Details(props: Partial<ComponentProps<typeof EvoDetails>> = {}) {
@@ -48,7 +49,7 @@ describe("EvoDetails SSR", () => {
         <EvoDetails>
           <EvoDetailsSummary>
             <EvoDetailsLeading>
-              <span>icon</span>
+              <EvoIconLightbulb16 />
             </EvoDetailsLeading>
             <EvoDetailsLabel>Show me the details!</EvoDetailsLabel>
           </EvoDetailsSummary>

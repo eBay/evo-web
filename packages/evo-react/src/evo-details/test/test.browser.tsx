@@ -7,6 +7,7 @@ import { EvoDetailsSummary } from "../details-summary";
 import { EvoDetailsLabel } from "../details-label";
 import { EvoDetailsLeading } from "../details-leading";
 import { EvoDetailsContent } from "../details-content";
+import { EvoIconLightbulb16 } from "../../evo-icon/icons/evo-icon-lightbulb-16";
 
 function renderDetails(
   props: Partial<ComponentProps<typeof EvoDetails>> = {},
@@ -92,7 +93,7 @@ describe("evo-details", () => {
       <EvoDetails>
         <EvoDetailsSummary>
           <EvoDetailsLeading>
-            <span data-testid="icon">icon</span>
+            <EvoIconLightbulb16 data-testid="icon" />
           </EvoDetailsLeading>
           <EvoDetailsLabel>Details</EvoDetailsLabel>
         </EvoDetailsSummary>

@@ -24,5 +24,4 @@ export type {
   EvoDetailsLeadingProps,
   EvoDetailsLabelProps,
   EvoDetailsContentProps,
-  Alignment,
 } from "./evo-details";
