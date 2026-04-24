@@ -1,5 +1,5 @@
 export interface Input {
-    forId?: Marko.HTMLAttributes["id"]
+    htmlFor?: Marko.HTMLAttributes["id"]
     inputSize?: "regular" | "large";
     alwaysUp?: boolean;
     fluid?: boolean;
@@ -18,7 +18,7 @@ export interface Input {
 <const/{
     disabled,
     floatingLabel,
-    forId,
+    htmlFor,
     alwaysUp,
     inputSize,
     focused,
@@ -39,7 +39,7 @@ export interface Input {
 ]>
     <if=floatingLabel>
         <label
-            for=forId
+            for=htmlFor
             class=[
                 "floating-label__label floating-label__label--animate",
                 disabled && "floating-label__label--disabled",

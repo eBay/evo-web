@@ -26,7 +26,6 @@ export interface Input extends Marko.HTML.Input {
     postfixIcon,
     prefixIcon,
     style,
-    type,
     placeholder,
     prefixText,
     postfixText,
@@ -46,7 +45,7 @@ export interface Input extends Marko.HTML.Input {
     floatingLabel=floatingLabel
     inputSize=inputSize
     alwaysUp=floatingLabelStatic
-    forId=inputId
+    htmlFor=inputId
     disabled=disabled
     invalid=invalid
     fluid=fluid
@@ -79,7 +78,7 @@ export interface Input extends Marko.HTML.Input {
             )
             onBlur(e, target) {
                 focused = false;
-                (onBlur || null)?.(e, target);
+                onBlur && onBlur(e, target);
             }
             onFocus(e, target) {
                 focused = true;
@@ -88,7 +87,6 @@ export interface Input extends Marko.HTML.Input {
             id=inputId
             class="textbox__control"
             placeholder=showPlaceholder && placeholder
-            type=type
             value:=value
             disabled=disabled
             aria-invalid=invalid && "true"
