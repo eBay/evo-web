@@ -1,5 +1,13 @@
 # @ebay/ui-core-react
 
+## 9.6.2
+
+### Patch Changes
+
+- [#579](https://github.com/eBay/evo-web/pull/579) [`b25f125`](https://github.com/eBay/evo-web/commit/b25f12523a2dab761205d725eec36c503a24fdd7) Thanks [@dididy](https://github.com/dididy)! - prevent onSelect from firing on initial render
+
+- [#638](https://github.com/eBay/evo-web/pull/638) [`a3670e4`](https://github.com/eBay/evo-web/commit/a3670e4973b61e7bfaf39b08cd66680b9f0d81f7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(ebay-combobox): apply combobox--fluid class when fluid prop is set
+
 ## 9.6.1
 
 ### Patch Changes

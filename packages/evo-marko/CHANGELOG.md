@@ -1,5 +1,15 @@
 # @evo-web/marko
 
+## 0.1.13
+
+### Patch Changes
+
+- [#630](https://github.com/eBay/evo-web/pull/630) [`ca0ad2a`](https://github.com/eBay/evo-web/commit/ca0ad2a8930c1c4bec2b925bb05701926c72d399) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-chip component
+
+- [#631](https://github.com/eBay/evo-web/pull/631) [`79efd8b`](https://github.com/eBay/evo-web/commit/79efd8b0e647cf63b8550161929354e0dddd6968) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-toast-dialog>`
+
+- [#633](https://github.com/eBay/evo-web/pull/633) [`30b11ec`](https://github.com/eBay/evo-web/commit/30b11ec7f8eea65f684254d6105fd83776a9c8d9) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-star-rating component
+
 ## 0.1.12
 
 ### Patch Changes

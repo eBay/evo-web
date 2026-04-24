@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.24.3
+
+### Patch Changes
+
+- [#631](https://github.com/eBay/evo-web/pull/631) [`79efd8b`](https://github.com/eBay/evo-web/commit/79efd8b0e647cf63b8550161929354e0dddd6968) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add `<evo-toast-dialog>`
+
 ## 19.24.2
 
 ### Patch Changes
