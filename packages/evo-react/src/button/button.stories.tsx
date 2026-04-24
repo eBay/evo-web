@@ -15,7 +15,7 @@ A flexible button component that can render as either a \`<button>\` or \`<a>\` 
 ## Usage
 
 \`\`\`tsx
-import { EvoButton } from "@evo-web/react";
+import { EvoButton } from "@evo-web/react/button";
 \`\`\`
         `,
       },

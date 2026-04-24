@@ -19,13 +19,13 @@
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+    "./icons/*": {
+      "types": "./dist/icon/icons/*.d.ts",
+      "default": "./dist/icon/icons/*.js"
     },
-    "./evo-icon-*": {
-      "types": "./dist/evo-icon/icons/evo-icon-*.d.ts",
-      "default": "./dist/evo-icon/icons/evo-icon-*.js"
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*.js"
     }
   },
   "files": [

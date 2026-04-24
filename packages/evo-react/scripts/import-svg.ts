@@ -49,7 +49,7 @@ function saveIconComponents(svgFile: string): void {
     }));
 
   // Clean up old icons
-  const iconsDir = path.resolve(__dirname, "../src/evo-icon/icons");
+  const iconsDir = path.resolve(__dirname, "../src/icon/icons");
   if (fs.existsSync(iconsDir)) {
     deleteSync([`${iconsDir}/*`]);
   } else {
@@ -58,7 +58,7 @@ function saveIconComponents(svgFile: string): void {
 
   // Create types file for icon components
   fs.writeFileSync(
-    path.resolve(__dirname, "../src/evo-icon/icons/types.ts"),
+    path.resolve(__dirname, "../src/icon/icons/types.ts"),
     `${fileHeader}\n
 import type { ComponentProps } from 'react';
 import type { EvoIcon } from '../icon';
@@ -73,12 +73,12 @@ export type EvoIconComponentProps = Omit<ComponentProps<typeof EvoIcon>, '__name
     const iconNameCamelCase = camelCased(data.id);
     const filename = path.resolve(
       __dirname,
-      `../src/evo-icon/icons/evo-icon-${data.id}.tsx`,
+      `../src/icon/icons/${data.id}.tsx`,
     );
     const iconComponentName = `EvoIcon${iconNameCamelCase[0].toUpperCase()}${iconNameCamelCase.slice(1)}`;
     icons.push({
       componentName: iconComponentName,
-      filePath: `evo-icon-${data.id}`,
+      filePath: data.id,
     });
 
     const content = `${fileHeader}\n
@@ -100,7 +100,7 @@ export function ${iconComponentName}(props: EvoIconComponentProps) {
   // Create Storybook stories file
   const storiesFile = path.resolve(
     __dirname,
-    "../src/evo-icon/icon.stories.tsx",
+    "../src/icon/icon.stories.tsx",
   );
 
   const storiesContent = `${fileHeader}\n
@@ -136,8 +136,8 @@ Icon components from the eBay Skin icon set. Each icon is available as an indivi
 ## Usage
 
 \\\`\\\`\\\`tsx
-import { EvoIconProvider } from "@evo-web/react";
-import { EvoIconCart16 } from "@evo-web/react/evo-icon-cart-16";
+import { EvoIconProvider } from "@evo-web/react/icon";
+import { EvoIconCart16 } from "@evo-web/react/icons/cart-16";
 
 function App() {
   return (
@@ -151,7 +151,7 @@ function App() {
 ## Icons
 
 Icons are imported individually via subpath exports:
-- \\\`@evo-web/react/evo-icon-<name>\\\` - Import specific icon component
+- \\\`@evo-web/react/icons/<name>\\\` - Import specific icon component
 - Wrap your app with \\\`<EvoIconProvider>\\\` for better SSR performance
 - Use \\\`a11yText\\\` prop for accessible labels
 - Use \\\`a11yVariant="label"\\\` to use aria-label instead of title element
