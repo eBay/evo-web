@@ -34,11 +34,18 @@ Add `@evo-web/react` at latest. Remove `@ebay/ebayui-core-react` only if all its
 
 ## Step 2 — Apply global renames (all components)
 
-**Import path:** sub-path imports → package root
+**Import path:** map each `@ebay/ebayui-core-react` subpath to the matching `@evo-web/react` subpath, dropping the `ebay-` prefix from the subpath name:
 
 ```diff
 - import { EbayButton } from "@ebay/ebayui-core-react/ebay-button";
-+ import { EvoButton } from "@evo-web/react";
++ import { EvoButton } from "@evo-web/react/button";
+```
+
+For icons:
+
+```diff
+- import { EbayIconCart16 } from "@ebay/ebayui-core-react/icons/ebay-icon-cart-16";
++ import { EvoIconCart16 } from "@evo-web/react/icons/cart-16";
 ```
 
 **Component names:** `Ebay` prefix → `Evo` prefix (e.g. `EbayButton` → `EvoButton`, `EbayButtonCell` → `EvoButtonCell`). Types follow the same pattern (`EbayButtonProps` → `EvoButtonProps`).

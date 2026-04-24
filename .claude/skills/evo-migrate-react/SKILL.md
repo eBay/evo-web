@@ -5,7 +5,7 @@ description: Migrate a component from @ebay/ebayui-core-react to @evo-web/react.
 
 # Migrate ebayui-core-react → evo-react
 
-You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/` to a new `packages/evo-react/src/evo-${ARGUMENTS#ebay-}/` directory.
+You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/` to a new `packages/evo-react/src/${ARGUMENTS#ebay-}/` directory.
 
 ## Step 0 — Read before writing
 
@@ -15,8 +15,7 @@ You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/`
    - `packages/ebayui-core/src/components/$ARGUMENTS/style.ts`
      This gives you the correct skin module name to import (e.g. `@ebay/skin/button` → used as `@ebay/skin/button.mjs`).
 3. Read the evo-marko component (`packages/evo-marko/src/tags/evo-${ARGUMENTS#ebay-}/index.marko` and its `marko-tag.json` or tag definition) to extract the full list of supported props and their types.
-4. Read `packages/evo-react/src/evo-button/` as the canonical reference for all conventions.
-5. Read `packages/evo-react/src/index.ts` to know where to add the new exports.
+4. Read `packages/evo-react/src/button/` as the canonical reference for all conventions.
 
 ---
 
@@ -24,7 +23,7 @@ You are migrating `$ARGUMENTS` from `packages/ebayui-core-react/src/$ARGUMENTS/`
 
 | ebayui-core-react        | evo-react               |
 | ------------------------ | ----------------------- |
-| `ebay-button` (dir)      | `evo-button` (dir)      |
+| `ebay-button` (dir)      | `button` (dir)          |
 | `EbayButton` (component) | `EvoButton` (component) |
 | `EbayButtonProps` (type) | `EvoButtonProps` (type) |
 
@@ -38,7 +37,7 @@ Story title mirrors the ebayui-core-react story title with `ebay` replaced by `e
 ## File structure
 
 ```
-packages/evo-react/src/evo-{name}/
+packages/evo-react/src/{name}/
   index.ts                  ← named re-exports only (no default exports)
   {name}.tsx                ← main component
   {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
@@ -122,7 +121,7 @@ Derive the module name from the `style.ts` file you read in Step 0 and append `.
 
 ```tsx
 // ✅ evo-react
-import { EvoIconChevronDown16 } from "../evo-icon/icons/evo-icon-chevron-down-16";
+import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 <EvoIconChevronDown16 />
 
 // ❌ ebayui-core-react pattern — do not copy
@@ -290,7 +289,7 @@ A flexible button component that renders as \`<button>\` or \`<a>\` based on the
 ## Usage
 
 \`\`\`tsx
-import { EvoButton } from "@evo-web/react";
+import { EvoButton } from "@evo-web/react/button";
 \`\`\`
         `,
       },
@@ -310,15 +309,6 @@ type Story = StoryObj<typeof EvoButton>;
 export const Default: Story = {
   args: { children: "Button" },
 };
-```
-
----
-
-## Register in `packages/evo-react/src/index.ts`
-
-```ts
-export { EvoButton, EvoButtonCell } from "./evo-button";
-export type { EvoButtonProps, Priority } from "./evo-button";
 ```
 
 ---
@@ -356,5 +346,4 @@ Keep entries concise — one line per change. App owners read this, not componen
 - [ ] `README.md` created with component name and Storybook documentation link only
 - [ ] Stories in `{name}.stories.tsx` co-located with source
 - [ ] Story title follows `"category/evo-{name}"` pattern
-- [ ] Exports registered in `packages/evo-react/src/index.ts`
 - [ ] `npm run build -w packages/evo-react` passes
