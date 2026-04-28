@@ -44,19 +44,21 @@ const EbayStarRatingSelect: FC<Props> = ({
     }, [value]);
     const handleKeyDown = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i));
             onKeyDown(e, { value: i });
         }
     };
     const handleClick = (i: number) => (e) => {
         if (!disabled) {
+            // Selection only happens on click (or keyboard activation that
+            // browsers translate to a click for native radio inputs). Tab
+            // navigation and synthetic focus must not implicitly select a
+            // star. See #393.
             setChecked(getValue(i));
             onChange(e, { value: i });
         }
     };
     const handleFocus = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i));
             onFocus(e, { value: i });
         }
     };

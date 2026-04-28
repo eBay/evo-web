@@ -82,13 +82,22 @@ describe("star-rating-select", () => {
     describe("when native focus event is fired on star", () => {
         beforeEach(async () => {
             onFocusSpy.mockReset();
-            component = await render(<Isolated onFocus={onFocusSpy} />);
+            onChangeSpy.mockReset();
+            component = await render(<Isolated onFocus={onFocusSpy} onChange={onChangeSpy} />);
             await fireEvent.focus(component.getByLabelText("2 stars"));
         });
 
         it("should emit the focus event", () => {
             expect(onFocusSpy).toHaveBeenCalledTimes(1);
             expect(onFocusSpy).toHaveBeenCalledWith(eventOfType("focus"), { value: 2 });
+        });
+
+        it("should NOT select the star (issue #393)", () => {
+            // Tabbing to a star must not trigger a selection. The user must
+            // actively click or keyboard-activate the star.
+            expect(onChangeSpy).not.toHaveBeenCalled();
+            const input = component.getByLabelText("2 stars") as HTMLInputElement;
+            expect(input.classList.contains("star-rating-select__control--filled")).toBe(false);
         });
     });
 
