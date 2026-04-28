@@ -4,7 +4,7 @@
     margin: 30px 0 10px;
 }
 .section-title__title-container {
-    max-width: 75%;
+    margin-inline-end: var(--spacing-300);
 }
 .section-title__title {
     font-size: var(--font-size-large-1);

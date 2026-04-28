@@ -9,7 +9,12 @@
 }
 
 .section-title__title-container {
-    max-width: 75%;
+    /*
+     * Separation from any trailing CTA / overflow / info element. We rely on
+     * the flex container to grow the title naturally and use this margin to
+     * preserve spacing instead of an arbitrary max-width cap. See #562.
+     */
+    margin-inline-end: var(--spacing-300);
 }
 
 .section-title__title {
