@@ -1,7 +1,7 @@
 name: Percy Visual Regression
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     paths:
       - 'packages/skin/dist/**'
@@ -19,7 +19,7 @@ on:
       - 'packages/skin/.percy.yml'
 
 concurrency:
-  group: "percy-${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}"
+  group: "percy-${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}"
   cancel-in-progress: true
 
 permissions:
@@ -31,12 +31,16 @@ permissions:
 jobs:
   percy-pr:
     name: Percy Snapshots (PR)
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          # For fork PRs (pull_request_target), check out the contributor's branch
+          # so we snapshot their changes, not the base branch.
+          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0  # Need full history for git diff
 
       - name: Fetch base branch
