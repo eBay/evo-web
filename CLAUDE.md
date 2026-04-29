@@ -210,6 +210,12 @@ Follow existing component structures:
 - Only in major version releases
 - Must be documented in changeset
 
+**Release PRs (`ci: release` from `changeset-release/main` → `main`):**
+
+- Treat these as metadata-only PRs (version bumps + changelog + deleting `.changeset` files).
+- When green, merge them using **Squash and merge** in GitHub.
+- Never rebase or manually edit these PRs; adjust `main` and let Changesets regenerate if needed.
+
 ---
 
 ## Common Development Commands
