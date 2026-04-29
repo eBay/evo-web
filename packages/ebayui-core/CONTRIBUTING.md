@@ -220,39 +220,5 @@ eBayUI Core is an implementation of the [eBay MIND Patterns](https://ebay.gitboo
 
 ## Releases
 
-### Pre-Release
-
-All major and minor releases should be preceded by one or more pre-releases. All pre-releases must be created from a `milestone` branch.
-
-In order to enter prerelase mode, run `npm run prerelase:start`. This will generate a file under `.changeset` directory. Commit and push up that change to the `milestone` branch.
-This will generate a pull request targetting the `milestone` branch. Once that pull request is merged in the milestone branch a prerelease will be published.
-
-Once the prerelases are complete, run `npm run prerelase:end`. This will generate a file under the `.changeset` directory. Commit and push up that change to the `milestone` branch. Another Pull Request will be generated, this PR should be closed and not merged.
-
-### Final Release
-
-A final release is always made from the `master` branch.
-
-1. Verify that the milestone branch has files in the `.changesets` directory and that `npm run prerelase:end` has been run and committed.
-2. Update skin on the milestone branch
-3. Create a GitHub PR to merge the milestone branch into master branch.
-4. Merge the PR after approval (do not squash!)
-5. Once merged and after the CI is run, a PR will be automatically generated. Verify that the version number in the PR is correct.
-6. Squash and merge the automatically generated PR.
-7. The package will be published to NPM.
-
-After every major and minor release, please take the opportunity to upgrade any outdated dependencies and devDependencies (_hint_: run `npm outdated` to see outdated dependencies). Except for major version upgrades, the version in `package.json` should always reflect the last known working version, not the version you are upgrading to.
-
-### Icon Release Process
-
-When updating icons across the eBay UI ecosystem, follow this coordinated release process:
-
-1. **Prepare Changesets**: Include this package in the changesets for the PR that's releasing the icons documenting the icon changes and specifying the appropriate version bump (patch, minor, or major).
-
-2. **Commit and Create Pull Request**: Commit all icon-related files along with the changeset files, then an automatic PR will be created containing the icon updates.
-
-3. **Automated Release Pull Request**: After the icon PR is merged, the Changesets GitHub Action will automatically generate a release PR that consolidates all icon updates for the packages included in the release.
-
-4. **Publish Release**: Review the automatically generated release PR for accuracy, then merge it to publish the updated packages with the new icons to NPM.
-
-This workflow ensures icon changes are properly versioned and released across all dependent packages simultaneously.
+Release process for this package follows the monorepo Changesets workflow.
+See the [root CONTRIBUTING.md](../../CONTRIBUTING.md#releases) for full release instructions, including how to create changesets and how to merge the automated `ci: release` PR.
