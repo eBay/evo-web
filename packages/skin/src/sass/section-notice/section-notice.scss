@@ -96,6 +96,20 @@ span[role="region"].section-notice {
     );
 }
 
+/*
+ * Action CTA links / fake-link buttons render with normal weight per the
+ * design spec at https://playbook.ebay.com/design-system/components/section-notice.
+ * The blanket `.section-notice a` and `.section-notice button.fake-link`
+ * rules above bold every link in the component; this restores the
+ * unbolded weight inside the __cta slot only. Must come after the
+ * blanket rules because they share the same specificity (0,1,1) and
+ * source order decides. See #616.
+ */
+.section-notice__cta a,
+.section-notice__cta button.fake-link {
+    font-weight: normal;
+}
+
 .section-notice .icon {
     vertical-align: top;
 }

@@ -87,6 +87,20 @@ span[role="region"].page-notice {
     );
 }
 
+/*
+ * Action CTA links / fake-link buttons render with normal weight per the
+ * design spec at https://playbook.ebay.com/design-system/components/page-notice.
+ * The blanket `.page-notice a` and `.page-notice button.fake-link` rules
+ * above bold every link in the component; this restores the unbolded
+ * weight inside the __cta slot only. Must come after the blanket rules
+ * because they share the same specificity (0,1,1) and source order
+ * decides. See #615.
+ */
+.page-notice__cta a,
+.page-notice__cta button.fake-link {
+    font-weight: normal;
+}
+
 /* Override default outline color to avoid contrast issues */
 /* with the darker background colors in page notices */
 /* For explicit focus only: the `focus-visible` instead of `focus` */

@@ -64,6 +64,10 @@ span[role="region"].section-notice {
         var(--color-foreground-primary)
     );
 }
+.section-notice__cta a,
+.section-notice__cta button.fake-link {
+    font-weight: 400;
+}
 .section-notice .icon {
     vertical-align: top;
 }
