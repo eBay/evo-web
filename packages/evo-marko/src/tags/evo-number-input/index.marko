@@ -1,4 +1,4 @@
-import type { Input as TextboxInput } from "../evo-textbox/index.marko";
+import type { Input as TextboxInput } from "<evo-input>";
 export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     value?: number;
     valueChange?: (value: number) => void;
@@ -51,7 +51,7 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
     a11yDeleteText && value === 1 && "number-input--show-delete",
     inputClass,
 ]>
-    <evo-textbox
+    <evo-input
         ...htmlInput
         aria-label=(!a11yText && !label ? "Number Input" : a11yText)
         min=min
@@ -110,5 +110,5 @@ export type Input = Omit<TextboxInput, "value" | "valueChange"> & {
                 <evo-icon-add-24/>
             </evo-icon-button>
         </@postfixIcon>
-    </evo-textbox>
+    </evo-input>
 </span>

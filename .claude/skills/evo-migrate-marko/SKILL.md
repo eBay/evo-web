@@ -22,7 +22,7 @@ This is an ACTIVE PROCESS, before making any decision you should consult with th
 2. Read **2--3 already-migrated evo-marko components** of similar complexity for reference patterns:
    - Simple (no JS): `packages/evo-marko/src/tags/evo-signal/index.marko`
    - Simple (with events): `packages/evo-marko/src/tags/evo-switch/index.marko`
-   - Medium (floating label + state): `packages/evo-marko/src/tags/evo-textbox/index.marko`
+   - Medium (floating label + state): `packages/evo-marko/src/tags/evo-input/index.marko`
    - Complex (roving tabindex + children): `packages/evo-marko/src/tags/evo-tabs/index.marko`
    - Complex (floating UI positioning): `packages/evo-marko/src/tags/evo-tooltip/index.marko`
 3. If the Marko 5 component uses shared base classes or utilities from `src/common/`, read those too.

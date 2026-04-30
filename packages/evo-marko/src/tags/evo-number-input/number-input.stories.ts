@@ -59,6 +59,10 @@ export default {
         },
       },
     },
+    ["<evo-input> attributes" as any]: {
+      description:
+        "All attributes and event handlers from [the `<evo-input>` tag](?path=/docs/form-input-evo-input--docs) will be passed through",
+    },
     onIncrement: {
       action: "onIncrement",
       description: "Triggered when increment button is clicked",
