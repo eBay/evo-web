@@ -8,6 +8,7 @@ exports[`given number is a string > does not renders with an invalid string 1`] 
 
 exports[`given number is a string > renders number with coerced string 1`] = `
 <span
+  aria-label="5 unread items"
   class="badge"
   role="img"
 >
@@ -17,6 +18,7 @@ exports[`given number is a string > renders number with coerced string 1`] = `
 
 exports[`given number is a string > renders number with rounded-up string 1`] = `
 <span
+  aria-label="5.4 unread items"
   class="badge"
   role="img"
 >
@@ -26,6 +28,7 @@ exports[`given number is a string > renders number with rounded-up string 1`] = 
 
 exports[`renders defaults 1`] = `
 <span
+  aria-label="5 unread items"
   class="badge"
   role="img"
 >
@@ -35,6 +38,7 @@ exports[`renders defaults 1`] = `
 
 exports[`renders number with rounded-up value 1`] = `
 <span
+  aria-label="5.6 unread items"
   class="badge"
   role="img"
 >
@@ -44,6 +48,7 @@ exports[`renders number with rounded-up value 1`] = `
 
 exports[`truncates when the value is greater than 99 1`] = `
 <span
+  aria-label="150 unread items"
   class="badge"
   role="img"
 >

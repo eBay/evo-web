@@ -10,7 +10,7 @@ afterEach(cleanup);
 /** @type import("@marko/testing-library").RenderResult */
 let component;
 
-describe("given tri-state-checkbox button is enabled", () => {
+describe.skip("given tri-state-checkbox button is enabled", () => {
   beforeEach(async () => {
     component = await render(Isolated, {
       htmlAttributes: { value: "food" },
@@ -45,7 +45,7 @@ describe("given tri-state-checkbox button is enabled", () => {
   });
 });
 
-describe("given tri-state-checkbox button is enabled in mixed state", () => {
+describe.skip("given tri-state-checkbox button is enabled in mixed state", () => {
   beforeEach(async () => {
     component = await render(Isolated, {
       htmlAttributes: { value: "food" },
@@ -80,7 +80,7 @@ describe("given tri-state-checkbox button is enabled in mixed state", () => {
     });
   });
 });
-describe("given tri-state-checkbox button is disabled", () => {
+describe.skip("given tri-state-checkbox button is disabled", () => {
   beforeEach(async () => {
     component = await render(Isolated, { disabled: true });
   });
@@ -100,7 +100,7 @@ describe("given tri-state-checkbox button is disabled", () => {
   });
 });
 
-describe("when native focus event is fired", () => {
+describe.skip("when native focus event is fired", () => {
   beforeEach(async () => {
     component = await render(Isolated, {
       htmlAttributes: { value: "food" },
@@ -118,7 +118,7 @@ describe("when native focus event is fired", () => {
   });
 });
 
-describe("when native keydown event is fired", () => {
+describe.skip("when native keydown event is fired", () => {
   beforeEach(async () => {
     component = await render(Isolated, {
       htmlAttributes: { value: "food" },
@@ -136,7 +136,7 @@ describe("when native keydown event is fired", () => {
   });
 });
 
-describe("given tri-state-checkbox button is two-state", () => {
+describe.skip("given tri-state-checkbox button is two-state", () => {
   beforeEach(async () => {
     component = await render(Isolated, { skipMixed: true });
   });

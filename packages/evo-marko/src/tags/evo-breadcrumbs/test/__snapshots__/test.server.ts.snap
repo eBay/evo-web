@@ -1,0 +1,253 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-breadcrumbs SSR > renders buttons when no hrefs 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="breadcrumbs breadcrumb--overflow"
+  role="navigation"
+>
+  <h2
+    class="clipped"
+    id="GENERATED-0"
+  >
+    Page navigation
+  </h2>
+  <ul>
+    <li>
+      <button>
+        eBay
+      </button>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M4.183 10.192a.625.625 0 0 1 0-.884L7.487 6 4.183 2.692a.625.625 0 0 1 .884-.884l3.745 3.75a.625.625 0 0 1 0 .884l-3.745 3.75a.625.625 0 0 1-.884 0Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li
+      hidden=""
+    >
+      <span
+        class="fake-menu-button"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-label="button"
+          class="fake-menu-button__button icon-btn icon-btn--transparent"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+          >
+            <symbol
+              id="GENERATED-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.5 8a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Zm-10 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0ZM8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"
+              />
+            </symbol>
+            <use
+              href="#icon-overflow-horizontal-16"
+            />
+          </svg>
+        </button>
+        <span
+          class="fake-menu-button__menu"
+          style="visibility:hidden"
+          tabindex="-1"
+        >
+          <ul
+            class="fake-menu__items"
+            tabindex="-1"
+          />
+        </span>
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li>
+      <button>
+        Cell Phones, Smart Watches & Accessories
+      </button>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li>
+      <button>
+        Smart Watch Accessories
+      </button>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li>
+      <button
+        aria-current="location"
+      >
+        Smart Watch Bands
+      </button>
+    </li>
+  </ul>
+</nav>"
+`;
+
+exports[`evo-breadcrumbs SSR > renders default with links 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="breadcrumbs breadcrumb--overflow"
+  role="navigation"
+>
+  <h2
+    class="clipped"
+    id="GENERATED-0"
+  >
+    Page navigation
+  </h2>
+  <ul>
+    <li>
+      <a
+        href="http://www.ebay.com/"
+      >
+        eBay
+      </a>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M4.183 10.192a.625.625 0 0 1 0-.884L7.487 6 4.183 2.692a.625.625 0 0 1 .884-.884l3.745 3.75a.625.625 0 0 1 0 .884l-3.745 3.75a.625.625 0 0 1-.884 0Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li
+      hidden=""
+    >
+      <span
+        class="fake-menu-button"
+      >
+        <button
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-label="button"
+          class="fake-menu-button__button icon-btn icon-btn--transparent"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="icon icon--16"
+          >
+            <symbol
+              id="GENERATED-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.5 8a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0Zm-10 0a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0ZM8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"
+              />
+            </symbol>
+            <use
+              href="#icon-overflow-horizontal-16"
+            />
+          </svg>
+        </button>
+        <span
+          class="fake-menu-button__menu"
+          style="visibility:hidden"
+          tabindex="-1"
+        >
+          <ul
+            class="fake-menu__items"
+            tabindex="-1"
+          />
+        </span>
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li>
+      <a
+        href="https://www.ebay.com/rpp/cell-phone-pda"
+      >
+        Cell Phones, Smart Watches & Accessories
+      </a>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li>
+      <a
+        href="https://www.ebay.com/b/Smart-Watch-Accessories/182064/bn_16565905"
+      >
+        Smart Watch Accessories
+      </a>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <use
+          href="#icon-chevron-right-12"
+        />
+      </svg>
+    </li>
+    <li>
+      <button
+        aria-current="location"
+      >
+        Smart Watch Bands
+      </button>
+    </li>
+  </ul>
+</nav>"
+`;

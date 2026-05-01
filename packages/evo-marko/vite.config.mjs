@@ -34,18 +34,22 @@ export default defineConfig({
         },
         projects: [
             {
+                extends: true,
                 test: {
                     name: "browser",
                     browser: {
                         provider: playwright(),
                         enabled: true,
-                        name: "chromium",
                         headless: true,
+                        instances: [{
+                            browser: "chromium",
+                        }],
                     },
                     include: ["src/**/test.browser.{ts,js}"],
                 },
             },
             {
+                extends: true,
                 test: {
                     name: "server",
                     environment: "node",

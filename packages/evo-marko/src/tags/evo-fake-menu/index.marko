@@ -57,22 +57,24 @@ export interface Input extends Marko.HTML.Span {
     ]>
     <ul class="fake-menu__items" tabindex="-1">
         <for|item| of=items>
-            <if=item.separator>
+            <!-- Lifted out of <if>/<else> to work around Marko 6 SSR translator
+                 bug with `<const/{ named, ...rest }=obj>` inside a conditional branch. -->
+            <const/{
+                class: itemClass,
+                current,
+                itemMatchesUrl,
+                badgeNumber,
+                separator,
+                content,
+                ...htmlItem
+            }=item>
+            <const/ariaCurrent=(current ? (itemMatchesUrl === false ? "true" as const : "page" as const) : undefined)>
+            <if=separator>
                 <li>
                     <hr class=`${baseClass}__separator` role="separator">
                 </li>
             </if>
             <else>
-                <const/{
-                    class: itemClass,
-                    current,
-                    itemMatchesUrl,
-                    badgeNumber,
-                    separator,
-                    content,
-                    ...htmlItem
-                }=item>
-                <const/ariaCurrent=(current ? (itemMatchesUrl === false ? "true" as const : "page" as const) : undefined)>
                 <li>
                     <ItemTag
                         ...htmlItem

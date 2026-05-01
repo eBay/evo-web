@@ -1,0 +1,2173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`pagination > Interactive > renders defaults 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results Pagination - Page 0
+    </h2>
+  </span>
+  <button
+    aria-label="previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        class="pagination__item"
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        10
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        11
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        12
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        13
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        14
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        15
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with buttons > renders button version 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination example-05"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <button
+    aria-label="Previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        aria-current="page"
+        class="pagination__item"
+        current=""
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="Next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with buttons > renders button version selected items 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination example-05"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <button
+    aria-label="Previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        aria-current="page"
+        class="pagination__item"
+        current=""
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="Next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with buttons > renders buttons with last page visible 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination example-05"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <button
+    aria-label="Previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        aria-current="page"
+        class="pagination__item"
+        current=""
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li>
+      <span
+        class="pagination__item"
+        role="separator"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--24"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17 12a2 2 0 1 0 3.999.001A2 2 0 0 0 17 12Zm-7 0a2 2 0 1 0 3.999.001A2 2 0 0 0 10 12Zm-5 2a2 2 0 1 1-.001-3.999A2 2 0 0 1 5 14Z"
+            />
+          </symbol>
+          <use
+            href="#icon-overflow-horizontal-24"
+          />
+        </svg>
+      </span>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="Next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-3"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with buttons > renders default button version 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination example-05"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <button
+    aria-label="Previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        aria-current="page"
+        class="pagination__item"
+        current=""
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="Next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with buttons > renders default button with overflow 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination example-05"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <button
+    aria-label="Previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        aria-current="page"
+        class="pagination__item"
+        current=""
+      >
+        1
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <span
+        class="pagination__item"
+        role="separator"
+      />
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li>
+      <span
+        class="pagination__item"
+        role="separator"
+      />
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="Next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with buttons > renders empty button version 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination example-05"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <button
+    aria-label="Previous"
+    class="pagination__previous icon-btn icon-btn"
+    disabled=""
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </button>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <button
+        aria-current="page"
+        class="pagination__item"
+        current=""
+      >
+        1
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        2
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        3
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        4
+      </button>
+    </li>
+    <li>
+      <button
+        class="pagination__item"
+      >
+        5
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        6
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        7
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        8
+      </button>
+    </li>
+    <li
+      hidden=""
+    >
+      <button
+        class="pagination__item"
+      >
+        9
+      </button>
+    </li>
+  </ol>
+  <button
+    aria-label="Next"
+    class="pagination__next icon-btn icon-btn"
+    style="min-width:40"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </button>
+</nav>"
+`;
+
+exports[`pagination > with links > renders basic version 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;
+
+exports[`pagination > with links > renders empty version 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;
+
+exports[`pagination > with links > renders with a selected item 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;
+
+exports[`pagination > with links > renders with aria-disabled when navigation is disabled 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;
+
+exports[`pagination > with links > renders with aria-disabled when navigation items missing 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;
+
+exports[`pagination > with links > renders with last page visible 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;
+
+exports[`pagination > with links > renders with overflow 1`] = `
+"<nav
+  aria-labelledby="GENERATED-0"
+  class="pagination"
+  role="navigation"
+>
+  <span
+    aria-live="polite"
+    role="status"
+  >
+    <h2
+      class="clipped"
+      id="GENERATED-0"
+    >
+      Results — Page 1
+    </h2>
+  </span>
+  <a
+    aria-label="Previous"
+    class="pagination__previous icon-link icon-link"
+    disabled=""
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 7H4.41l4.3-4.29a1.004 1.004 0 0 0-1.42-1.42l-6 6a1 1 0 0 0 0 1.41l6 6a1 1 0 0 0 1.41-1.41L4.41 9H14a1 1 0 1 0 0-2Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-left-16"
+      />
+    </svg>
+  </a>
+  <ol
+    class="pagination__items"
+  >
+    <li>
+      <a
+        aria-current="page"
+        class="pagination__item"
+        current=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        4
+      </a>
+    </li>
+    <li>
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        5
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        6
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        7
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        8
+      </a>
+    </li>
+    <li
+      hidden=""
+    >
+      <a
+        class="pagination__item"
+        href="#"
+      >
+        9
+      </a>
+    </li>
+  </ol>
+  <a
+    aria-label="Next"
+    class="pagination__next icon-link icon-link"
+    href="#"
+    style="min-width:40"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14.92 8.38a1 1 0 0 0-.22-1.09l-6-6a1 1 0 1 0-1.41 1.42L11.59 7H2a1 1 0 1 0 0 2h9.59l-4.3 4.29A1 1 0 1 0 8.7 14.7l6-6a1 1 0 0 0 .22-.32Z"
+        />
+      </symbol>
+      <use
+        href="#icon-arrow-right-16"
+      />
+    </svg>
+  </a>
+</nav>"
+`;

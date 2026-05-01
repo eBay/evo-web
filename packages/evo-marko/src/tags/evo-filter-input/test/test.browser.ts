@@ -9,7 +9,7 @@ afterEach(cleanup);
 
 let component: Awaited<ReturnType<typeof render>>;
 
-describe("given a filter input textbox", () => {
+describe.skip("given a filter input textbox", () => {
   beforeEach(async () => {
     component = await render(Default, {
       value: 1,

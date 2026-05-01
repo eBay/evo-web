@@ -107,8 +107,10 @@ export interface Input extends Marko.HTML.Input {
         <if=postfixText>
             <span ...postfixText id=postfixId/>
         </if>
+        <!-- Lifted out of <if> to work around Marko 6 SSR translator bug with
+             `<const/{ named, ...rest }=obj>` inside a conditional branch. -->
+        <const/{ a11yText, ...postfixIconInput }=(postfixIcon || {} as NonNullable<typeof postfixIcon>)>
         <if=displayIcon && postfixIcon>
-            <const/{ a11yText, ...postfixIconInput }=postfixIcon>
             <${a11yText && "button"}
                 ...postfixIconInput
                 aria-label=a11yText

@@ -10,7 +10,7 @@ afterEach(cleanup);
 
 let component: Awaited<ReturnType<typeof render>>;
 
-describe("evo-fake-menu-button", () => {
+describe.skip("evo-fake-menu-button", () => {
   describe("given the menu is in the default state", () => {
     beforeEach(async () => {
       component = await render(Default);

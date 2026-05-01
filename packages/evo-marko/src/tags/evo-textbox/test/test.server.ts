@@ -4,13 +4,13 @@ import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../textbox.stories";
 
 const {
-  Isolated,
+  Default: Isolated,
   WithLabel,
   FloatingLabel,
   Disabled,
-  PrefixIcon,
-  BothIcons,
-  PostfixIcon,
+  WithPrefixIcon: PrefixIcon,
+  WithBothIcons: BothIcons,
+  WithPostfixIcon: PostfixIcon,
 } = composeStories(stories);
 
 describe("evo-textbox", () => {

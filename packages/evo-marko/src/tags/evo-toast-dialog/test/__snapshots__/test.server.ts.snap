@@ -1,0 +1,157 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-toast-dialog SSR > renders default 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Open Toast
+</button>
+<dialog
+  aria-labelledby="GENERATED-0"
+  aria-live="polite"
+  aria-modal="false"
+  class="toast-dialog toast-dialog--close"
+  closedby="closerequest"
+  role="dialog"
+>
+  <div
+    class="toast-dialog__window"
+  >
+    <div
+      class="toast-dialog__header"
+    >
+      <h2
+        class="toast-dialog__title"
+        id="GENERATED-0"
+      >
+        Heading
+      </h2>
+      <button
+        aria-label="Close Toast"
+        class="toast-dialog__close icon-btn icon-btn--transparent"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.293 2.293a1 1 0 0 1 1.414 0L8 6.586l4.293-4.293a1 1 0 1 1 1.414 1.414L9.414 8l4.293 4.293a1 1 0 0 1-1.414 1.414L8 9.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L6.586 8 2.293 3.707a1 1 0 0 1 0-1.414Z"
+            />
+          </symbol>
+          <use
+            href="#icon-close-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="toast-dialog__main"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </p>
+      <p>
+        <a
+          href="http://www.ebay.com"
+        >
+          www.ebay.com
+        </a>
+      </p>
+    </div>
+    <div
+      class="toast-dialog__footer"
+    >
+      <button
+        class="btn btn--secondary"
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</dialog>"
+`;
+
+exports[`evo-toast-dialog SSR > renders in open state 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Open Toast
+</button>
+<dialog
+  aria-labelledby="GENERATED-0"
+  aria-live="polite"
+  aria-modal="false"
+  class="toast-dialog"
+  closedby="closerequest"
+  role="dialog"
+>
+  <div
+    class="toast-dialog__window"
+  >
+    <div
+      class="toast-dialog__header"
+    >
+      <h2
+        class="toast-dialog__title"
+        id="GENERATED-0"
+      >
+        Heading
+      </h2>
+      <button
+        aria-label="Close Toast"
+        class="toast-dialog__close icon-btn icon-btn--transparent"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.293 2.293a1 1 0 0 1 1.414 0L8 6.586l4.293-4.293a1 1 0 1 1 1.414 1.414L9.414 8l4.293 4.293a1 1 0 0 1-1.414 1.414L8 9.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L6.586 8 2.293 3.707a1 1 0 0 1 0-1.414Z"
+            />
+          </symbol>
+          <use
+            href="#icon-close-16"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="toast-dialog__main"
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </p>
+      <p>
+        <a
+          href="http://www.ebay.com"
+        >
+          www.ebay.com
+        </a>
+      </p>
+    </div>
+    <div
+      class="toast-dialog__footer"
+    >
+      <button
+        class="btn btn--secondary"
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</dialog>"
+`;

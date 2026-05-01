@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`character-count > renders default 1`] = `
+"<span>
+  11/120 
+  <span
+    class="clipped"
+  >
+    characters remaining
+  </span>
+</span>"
+`;
+
+exports[`character-count > renders in field 1`] = `
+"<span
+  class="field"
+>
+  <label
+    class="field__label field__label--stacked"
+    for="my-input"
+  >
+    Field Label
+  </label>
+  <span
+    class="field__control"
+  >
+    <span
+      class="textbox textbox__control"
+      placeholder=""
+    >
+      <input
+        aria-describedby="MARKO-ID-0 MARKO-ID-1"
+        aria-live="off"
+        class="textbox__control"
+        id="my-input"
+        type="text"
+        value=""
+      />
+    </span>
+  </span>
+  <div
+    class="field__description field__description--group"
+  >
+    <span
+      id="my-input-description"
+    >
+      Brief description
+    </span>
+    <span>
+      0/120
+    </span>
+  </div>
+</span>"
+`;

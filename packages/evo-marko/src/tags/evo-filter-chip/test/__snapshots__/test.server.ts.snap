@@ -1,318 +1,306 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`evo-filter-chip > renders as link 1`] = `
-<DocumentFragment>
-  <button
-    aria-pressed="false"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-selected="false"
+  class="filter-chip"
+  href="www.ebay.com"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="icon icon--16"
   >
-    <svg
-      aria-hidden="true"
-      class="icon icon--16"
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 16 16"
     >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 16 16"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-sneaker-16"
+      <path
+        clip-rule="evenodd"
+        d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"
+        fill-rule="evenodd"
       />
-    </svg>
-    <span
-      class="filter-chip__text"
-    >
-      Filter
-    </span>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-sneaker-16"
+    />
+  </svg>
+  <span
+    class="filter-chip__text"
+  >
+    Filter
+  </span>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders as link selected 1`] = `
-<DocumentFragment>
-  <a
-    class="filter-chip filter-chip--expressive filter-chip--selected"
+"<a
+  class="filter-chip filter-chip--expressive filter-chip--selected filter-chip--selected"
+  href="www.ebay.com"
+>
+  <span
+    class="filter-chip__media"
   >
+    <img
+      alt="image"
+      src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
+    />
+  </span>
+  <span
+    class="filter-chip__text"
+  >
+    Filter
     <span
-      class="filter-chip__media"
+      class="clipped"
     >
-      <img
-        alt="image"
-        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
-      />
+       - selected
     </span>
-    <span
-      class="filter-chip__text"
-    >
-      Filter
-      <span
-        class="clipped"
-      >
-         - selected
-      </span>
-    </span>
-  </a>
-</DocumentFragment>
+  </span>
+</a>"
 `;
 
 exports[`evo-filter-chip > renders expressive 1`] = `
-<DocumentFragment>
-  <button
-    aria-pressed="false"
-    class="filter-chip filter-chip--expressive"
-    type="button"
+"<button
+  aria-selected="false"
+  class="filter-chip filter-chip--expressive"
+  type="button"
+>
+  <span
+    class="filter-chip__media"
   >
-    <span
-      class="filter-chip__media"
-    >
-      <img
-        alt="image"
-        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
-      />
-    </span>
-    <span
-      class="filter-chip__text"
-    >
-      Filter
-    </span>
-  </button>
-</DocumentFragment>
+    <img
+      alt="image"
+      src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
+    />
+  </span>
+  <span
+    class="filter-chip__text"
+  >
+    Filter
+  </span>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders expressive selected 1`] = `
-<DocumentFragment>
-  <button
-    aria-pressed="true"
-    class="filter-chip filter-chip--expressive"
-    type="button"
+"<button
+  aria-selected="true"
+  class="filter-chip filter-chip--expressive"
+  type="button"
+>
+  <span
+    class="filter-chip__media"
   >
-    <span
-      class="filter-chip__media"
-    >
-      <img
-        alt="image"
-        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
-      />
-    </span>
-    <span
-      class="filter-chip__text"
-    >
-      Filter
-    </span>
-  </button>
-</DocumentFragment>
+    <img
+      alt="image"
+      src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/dog_profile2.png"
+    />
+  </span>
+  <span
+    class="filter-chip__text"
+  >
+    Filter
+  </span>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders menu button 1`] = `
-<DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-pressed="false"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-expanded="false"
+  class="filter-chip"
+  type="button"
+>
+  <span
+    class="filter-chip__text"
   >
-    <span
-      class="filter-chip__text"
+    Filter
+  </span>
+  <svg
+    aria-hidden="true"
+    class="filter-chip__trailing icon icon--12"
+  >
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 12 12"
     >
-      Filter
-    </span>
-    <svg
-      aria-hidden="true"
-      class="filter-chip__trailing icon icon--12"
-    >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
+      <path
+        clip-rule="evenodd"
+        d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+        fill-rule="evenodd"
       />
-    </svg>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-chevron-down-12"
+    />
+  </svg>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders menu button expanded 1`] = `
-<DocumentFragment>
-  <button
-    aria-expanded="true"
-    aria-pressed="false"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-expanded="true"
+  class="filter-chip"
+  type="button"
+>
+  <span
+    class="filter-chip__text"
   >
-    <span
-      class="filter-chip__text"
+    Filter
+  </span>
+  <svg
+    aria-hidden="true"
+    class="filter-chip__trailing icon icon--12"
+  >
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 12 12"
     >
-      Filter
-    </span>
-    <svg
-      aria-hidden="true"
-      class="filter-chip__trailing icon icon--12"
-    >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
+      <path
+        clip-rule="evenodd"
+        d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+        fill-rule="evenodd"
       />
-    </svg>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-chevron-down-12"
+    />
+  </svg>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders menu button expanded and selected 1`] = `
-<DocumentFragment>
-  <button
-    aria-expanded="true"
-    aria-pressed="true"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-expanded="true"
+  class="filter-chip filter-chip--selected"
+  type="button"
+>
+  <span
+    class="filter-chip__text"
   >
+    Filter
     <span
-      class="filter-chip__text"
+      class="clipped"
     >
-      Filter
+       - 
     </span>
-    <svg
-      aria-hidden="true"
-      class="filter-chip__trailing icon icon--12"
+  </span>
+  <svg
+    aria-hidden="true"
+    class="filter-chip__trailing icon icon--12"
+  >
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 12 12"
     >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
+      <path
+        clip-rule="evenodd"
+        d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+        fill-rule="evenodd"
       />
-    </svg>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-chevron-down-12"
+    />
+  </svg>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders menu button selected 1`] = `
-<DocumentFragment>
-  <button
-    aria-expanded="false"
-    aria-pressed="true"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-expanded="false"
+  class="filter-chip filter-chip--selected"
+  type="button"
+>
+  <span
+    class="filter-chip__text"
   >
+    Filter
     <span
-      class="filter-chip__text"
+      class="clipped"
     >
-      Filter
+       - 
     </span>
-    <svg
-      aria-hidden="true"
-      class="filter-chip__trailing icon icon--12"
+  </span>
+  <svg
+    aria-hidden="true"
+    class="filter-chip__trailing icon icon--12"
+  >
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 12 12"
     >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
+      <path
+        clip-rule="evenodd"
+        d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+        fill-rule="evenodd"
       />
-    </svg>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-chevron-down-12"
+    />
+  </svg>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders static default 1`] = `
-<DocumentFragment>
-  <button
-    aria-pressed="false"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-selected="false"
+  class="filter-chip"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="icon icon--16"
   >
-    <svg
-      aria-hidden="true"
-      class="icon icon--16"
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 16 16"
     >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 16 16"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-sneaker-16"
+      <path
+        clip-rule="evenodd"
+        d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"
+        fill-rule="evenodd"
       />
-    </svg>
-    <span
-      class="filter-chip__text"
-    >
-      Filter
-    </span>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-sneaker-16"
+    />
+  </svg>
+  <span
+    class="filter-chip__text"
+  >
+    Filter
+  </span>
+</button>"
 `;
 
 exports[`evo-filter-chip > renders static selected 1`] = `
-<DocumentFragment>
-  <button
-    aria-pressed="true"
-    class="filter-chip"
-    type="button"
+"<button
+  aria-selected="true"
+  class="filter-chip"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="icon icon--16"
   >
-    <svg
-      aria-hidden="true"
-      class="icon icon--16"
+    <symbol
+      id="GENERATED-0"
+      viewBox="0 0 16 16"
     >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 16 16"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-sneaker-16"
+      <path
+        clip-rule="evenodd"
+        d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z"
+        fill-rule="evenodd"
       />
-    </svg>
-    <span
-      class="filter-chip__text"
-    >
-      Filter
-    </span>
-  </button>
-</DocumentFragment>
+    </symbol>
+    <use
+      href="#icon-sneaker-16"
+    />
+  </svg>
+  <span
+    class="filter-chip__text"
+  >
+    Filter
+  </span>
+</button>"
 `;

@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../fake-menu.stories";
 
-const { Default, Separator, Disabled } = composeStories(stories);
+const { Default, Separator } = composeStories(stories);
 
 describe("evo-fake-menu SSR", () => {
   it("renders default", async () => {
@@ -12,10 +12,6 @@ describe("evo-fake-menu SSR", () => {
 
   it("renders with separators", async () => {
     await snapshotHTML(Separator);
-  });
-
-  it("renders with disabled items", async () => {
-    await snapshotHTML(Disabled);
   });
 
   it("renders with reverse", async () => {

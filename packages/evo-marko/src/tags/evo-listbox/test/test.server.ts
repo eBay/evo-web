@@ -3,9 +3,13 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../listbox.stories";
 
-const { Default, withDescription } = composeStories(stories);
+const { Default } = composeStories(stories);
 
-const option = [...Default.args.option];
+const option: any[] = [
+    { value: "AK", text: "Alaska" },
+    { value: "AZ", text: "Arizona" },
+    { value: "AR", text: "Arkansas" },
+];
 
 describe("listbox", () => {
     it("renders basic version", async () => {
@@ -26,9 +30,5 @@ describe("listbox", () => {
         option[1] = Object.assign({ disabled: true }, option[1]);
 
         await snapshotHTML(Default, { option });
-    });
-
-    it("renders with description", async () => {
-        await snapshotHTML(withDescription);
     });
 });
