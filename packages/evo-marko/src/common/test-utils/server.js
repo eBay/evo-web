@@ -1,5 +1,6 @@
 import { render } from "@marko/testing-library";
 import { it, expect } from "vitest";
+import { prettyNormalizedDOM } from "./snapshots";
 
 let markoCompiler;
 let CompileContext;
@@ -48,11 +49,11 @@ function testPassThroughAttributes(
 
     const component = await render(template, clonedInput);
     const passThroughEl = component.getByTestId(testId);
-    expect(passThroughEl).toMatchSnapshot();
+    expect(prettyNormalizedDOM(passThroughEl)).toMatchSnapshot();
     const classAndStyleEl = getClassAndStyleEl
       ? getClassAndStyleEl(component)
       : passThroughEl;
-    expect(classAndStyleEl).toMatchSnapshot();
+    expect(prettyNormalizedDOM(classAndStyleEl)).toMatchSnapshot();
   });
 }
 

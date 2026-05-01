@@ -1,287 +1,247 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`does not apply priority class for unsupported value 1`] = `
-<DocumentFragment>
-  <button
-    class="btn"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders a11yText when bodyState === loading 1`] = `
-<DocumentFragment>
-  <button
-    a11ytext="loading text"
-    class="btn btn--primary"
-    type="button"
+"<button
+  a11ytext="loading text"
+  aria-label="loading"
+  class="btn btn--primary"
+  type="button"
+>
+  <span
+    class="btn__cell"
   >
     <span
-      class="btn__cell"
+      class="progress-spinner"
+      role="img"
     >
-      <span
-        aria-label=""
-        class="progress-spinner"
-        role="img"
-      >
-        <svg
-          aria-hidden="true"
-          class="icon icon--24"
-        >
-          <symbol
-            fill="none"
-            id="GENERATED-0"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M22.5 12A10.5 10.5 0 1 1 9.514 1.798"
-              stroke="var(--color-spinner-icon-background, #3665F3)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-            />
-            <path
-              d="M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"
-              stroke="var(--color-spinner-icon-foreground, #E5E5E5)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-            />
-          </symbol>
-          <use
-            href="#icon-spinner-24"
-          />
-        </svg>
-      </span>
-    </span>
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders button with fluid=false 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders button with fluid=true 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--fluid btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders button with priority=delete 1`] = `
-<DocumentFragment>
-  <button
-    class="btn"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders button with priority=primary 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--primary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders button with priority=secondary 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders button with size=large 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--large btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders defaults 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders disabled version 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--secondary"
-    disabled=""
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
-`;
-
-exports[`renders expanded button 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--form"
-    type="button"
-  >
-    <span
-      class="btn__cell"
-    >
-      <span
-        class="btn__text"
-      >
-        Button
-      </span>
       <svg
         aria-hidden="true"
-        class="icon icon--16"
+        class="icon icon--24"
       >
         <symbol
+          fill="none"
           id="GENERATED-0"
-          viewBox="0 0 16 16"
+          viewBox="0 0 24 24"
         >
           <path
-            d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+            d="M22.5 12A10.5 10.5 0 1 1 9.514 1.798"
+            stroke="var(--color-spinner-icon-background, #3665F3)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+          />
+          <path
+            d="M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"
+            stroke="var(--color-spinner-icon-foreground, #E5E5E5)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
           />
         </symbol>
         <use
-          href="#icon-chevron-down-16"
+          href="#icon-spinner-24"
         />
       </svg>
     </span>
-  </button>
-</DocumentFragment>
+  </span>
+</button>"
+`;
+
+exports[`renders button with fluid=false 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with fluid=true 1`] = `
+"<button
+  class="btn btn--fluid btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with priority=delete 1`] = `
+"<button
+  class="btn"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with priority=primary 1`] = `
+"<button
+  class="btn btn--primary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with priority=secondary 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders button with size=large 1`] = `
+"<button
+  class="btn btn--large btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders defaults 1`] = `
+"<button
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders disabled version 1`] = `
+"<button
+  class="btn btn--secondary"
+  disabled=""
+  type="button"
+>
+  Button
+</button>"
+`;
+
+exports[`renders expanded button 1`] = `
+"<button
+  class="btn btn--form"
+  type="button"
+>
+  <span
+    class="btn__cell"
+  >
+    <span
+      class="btn__text"
+    >
+      Button
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8.707 12.707a1 1 0 0 1-1.414 0l-6-6a1 1 0 0 1 1.414-1.414L8 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414l-6 6Z"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-16"
+      />
+    </svg>
+  </span>
+</button>"
 `;
 
 exports[`renders fake version 1`] = `
-<DocumentFragment>
-  <a
-    arialabel="fake button"
-    class="fake-btn fake-btn--large fake-btn--primary"
-    type="button"
-  >
-    Button
-  </a>
-</DocumentFragment>
+"<a
+  arialabel="fake button"
+  class="fake-btn fake-btn--large fake-btn--primary"
+  type="button"
+>
+  Button
+</a>"
 `;
 
 exports[`renders fixed-height button 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--fixed-height btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--fixed-height btn--secondary"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders large fixed-height button 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--large-fixed-height btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--large-fixed-height btn--secondary"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders large truncated button 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--large-truncated btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--large-truncated btn--secondary"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders partially disabled version 1`] = `
-<DocumentFragment>
-  <button
-    aria-disabled="true"
-    class="btn btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  aria-disabled="true"
+  class="btn btn--secondary"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders small button 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--small btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--small btn--secondary"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders truncated button 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--truncated btn--secondary"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--truncated btn--secondary"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders with id override 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--secondary"
-    id="test"
-    type="button"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--secondary"
+  id="test"
+  type="button"
+>
+  Button
+</button>"
 `;
 
 exports[`renders with type override 1`] = `
-<DocumentFragment>
-  <button
-    class="btn btn--secondary"
-    type="submit"
-  >
-    Button
-  </button>
-</DocumentFragment>
+"<button
+  class="btn btn--secondary"
+  type="submit"
+>
+  Button
+</button>"
 `;

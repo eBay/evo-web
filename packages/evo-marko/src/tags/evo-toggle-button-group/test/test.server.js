@@ -10,10 +10,10 @@ const {
   WithDefaultSelected,
   Controlled,
   externalLabel,
-  PerferedColumns,
+  PreferredColumns,
 } = composeStories(stories);
 
-const htmlSnap = snapshotHTML(__dirname);
+const htmlSnap = snapshotHTML;
 
 describe("evo-toggle-button-group", () => {
   it("renders default", async () => {
@@ -37,6 +37,6 @@ describe("evo-toggle-button-group", () => {
   });
 
   it("renders custom column sizes", async () => {
-    await htmlSnap(PerferedColumns);
+    await htmlSnap(PreferredColumns);
   });
 });

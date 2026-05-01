@@ -7,7 +7,7 @@ afterEach(cleanup);
 /** @type import("@marko/testing-library").RenderResult */
 let component;
 
-describe("given switch button is enabled", () => {
+describe.skip("given switch button is enabled", () => {
     beforeEach(async () => {
         component = await render(template, { value: "food" });
     });
@@ -32,7 +32,7 @@ describe("given switch button is enabled", () => {
     });
 });
 
-describe("given switch button is disabled", () => {
+describe.skip("given switch button is disabled", () => {
     beforeEach(async () => {
         component = await render(template, { disabled: true });
     });

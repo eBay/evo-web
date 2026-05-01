@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders default switch 1`] = `
+"<span
+  class="switch"
+>
+  <input
+    class="switch__control"
+    role="switch"
+    type="checkbox"
+  />
+  <span
+    class="switch__button"
+  />
+</span>"
+`;
+
+exports[`renders default switch 2`] = `
+"<span
+  class="switch__button"
+/>"
+`;
+
+exports[`renders default switch 3`] = `
+"<input
+  class="switch__control"
+  role="switch"
+  type="checkbox"
+/>"
+`;
+
+exports[`renders disabled switch 1`] = `
+"<input
+  class="switch__control"
+  disabled=""
+  role="switch"
+  type="checkbox"
+/>"
+`;

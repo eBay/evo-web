@@ -1,0 +1,329 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-fake-menu SSR > renders default 1`] = `
+"<span
+  class="fake-menu"
+>
+  <ul
+    class="fake-menu__items"
+    tabindex="-1"
+  >
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 1 that has very long text
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-0"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</span>"
+`;
+
+exports[`evo-fake-menu SSR > renders with fixWidth 1`] = `
+"<span
+  class="fake-menu fake-menu__menu--fix-width"
+>
+  <ul
+    class="fake-menu__items"
+    tabindex="-1"
+  >
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 1 that has very long text
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-0"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</span>"
+`;
+
+exports[`evo-fake-menu SSR > renders with reverse 1`] = `
+"<span
+  class="fake-menu fake-menu__menu--reverse"
+>
+  <ul
+    class="fake-menu__items"
+    tabindex="-1"
+  >
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 1 that has very long text
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-0"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</span>"
+`;
+
+exports[`evo-fake-menu SSR > renders with separators 1`] = `
+"<span
+  class="fake-menu"
+>
+  <ul
+    class="fake-menu__items"
+    tabindex="-1"
+  >
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 1 that has very long text
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-0"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <hr
+        class="fake-menu__separator"
+        role="separator"
+      />
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        class="fake-menu__item"
+        href="#"
+      >
+        <span>
+          item 4
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </a>
+    </li>
+  </ul>
+</span>"
+`;

@@ -116,7 +116,7 @@ export interface Input<Index extends number | string>
             truncate && "btn--truncated",
             floatingLabel && "btn--floating-label",
         ]
-        value=selectedOption.value as string
+        value=selectedOption?.value as string | undefined
         type="button"
         disabled=disabled
         name=buttonName

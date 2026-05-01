@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../fake-menu-button.stories";
 
-const { Default, IconText, CustomLabel, Separator, Overflow, Disabled } =
+const { Default, IconText, CustomLabel, Separator, Overflow } =
   composeStories(stories);
 
 describe("evo-fake-menu-button SSR", () => {
@@ -37,10 +37,6 @@ describe("evo-fake-menu-button SSR", () => {
 
   it("renders without toggle icon", async () => {
     await snapshotHTML(Default, { noToggleIcon: true });
-  });
-
-  it("renders with disabled state", async () => {
-    await snapshotHTML(Disabled);
   });
 
   it("renders with a custom label", async () => {

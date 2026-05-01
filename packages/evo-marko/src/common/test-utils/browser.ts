@@ -1,4 +1,19 @@
 import { fireEvent, createEvent } from "@marko/testing-library";
+
+async function pressKey(el: Element, info: KeyboardEventInit & { key: string }) {
+  for (const event of [
+    createEvent.keyDown(el, info as any),
+    createEvent.keyUp(el, info as any),
+  ]) {
+    // Re-assign properties so older browsers respect the supplied `info`
+    (Object.keys(info) as (keyof typeof info)[]).forEach((key) => {
+      if ((event as any)[key] !== info[key]) {
+        Object.defineProperty(event, key, { value: info[key] });
+      }
+    });
+    await fireEvent(el, event);
+  }
+}
 /**
  * Simulates a touch based scroll event over 4 animation frames.
  *
@@ -53,4 +68,4 @@ const fastAnimations:FastAnimations = {
   },
 };
 
-export { fastAnimations, waitFrames, simulateScroll };
+export { fastAnimations, waitFrames, simulateScroll, pressKey };

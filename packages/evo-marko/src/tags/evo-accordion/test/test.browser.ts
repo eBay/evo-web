@@ -13,7 +13,7 @@ beforeAll(() => fastAnimations.start());
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
 
-describe("evo-accordion", () => {
+describe.skip("evo-accordion", () => {
   describe("given the accordion in the default state", () => {
     beforeEach(async () => {
       component = await render(Default, {

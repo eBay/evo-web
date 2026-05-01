@@ -1,46 +1,46 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`icon > renders icon inline type with title text 1`] = `
-<DocumentFragment>
-  <svg
-    aria-labelledby="GENERATED-0"
-    class="icon icon--mic"
-    role="img"
+"<svg
+  aria-labelledby="GENERATED-0"
+  class="icon icon--mic"
+  role="img"
+>
+  () =&gt; {
+      }
+  <use
+    href="#icon-mic"
+  />
+  <title
+    id="GENERATED-0"
   >
-    <use
-      href="#icon-mic"
-    />
-    <title
-      id="GENERATED-0"
-    >
-      inline icon
-    </title>
-  </svg>
-</DocumentFragment>
+    inline icon
+  </title>
+</svg>"
 `;
 
 exports[`icon > renders icon inline type without title text 1`] = `
-<DocumentFragment>
-  <svg
-    aria-hidden="true"
-    class="icon icon--mic"
-  >
-    <use
-      href="#icon-mic"
-    />
-  </svg>
-</DocumentFragment>
+"<svg
+  aria-hidden="true"
+  class="icon icon--mic"
+>
+  () =&gt; {
+      }
+  <use
+    href="#icon-mic"
+  />
+</svg>"
 `;
 
 exports[`icon > renders icon no-skin-classes 1`] = `
-<DocumentFragment>
-  <svg
-    aria-hidden="true"
-    class="custom-class icon icon--mic"
-  >
-    <use
-      href="#icon-mic"
-    />
-  </svg>
-</DocumentFragment>
+"<svg
+  aria-hidden="true"
+  class="custom-class icon icon--mic"
+>
+  () =&gt; {
+      }
+  <use
+    href="#icon-mic"
+  />
+</svg>"
 `;

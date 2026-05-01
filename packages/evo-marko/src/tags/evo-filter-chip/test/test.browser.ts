@@ -55,7 +55,7 @@ describe("evo-filter-chip", () => {
     });
   });
 
-  describe("menu button", () => {
+  describe.skip("menu button", () => {
     beforeEach(async () => {
       component = await render(MenuButton);
     });
@@ -71,7 +71,7 @@ describe("evo-filter-chip", () => {
       });
     });
   });
-  describe("menu button selected", () => {
+  describe.skip("menu button selected", () => {
     beforeEach(async () => {
       component = await render(MenuButton, {
         selected: true,

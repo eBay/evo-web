@@ -1,0 +1,373 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`listbox > renders basic version 1`] = `
+"<div
+  class="listbox__options"
+  role="listbox"
+  tabindex="0"
+>
+  <div
+    class="listbox__option"
+    data-value="1"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 1
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="2"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 2
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="3"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 3
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+</div>
+<select
+  class="listbox__native"
+  hidden=""
+>
+  <option
+    value="1"
+  />
+  <option
+    value="2"
+  />
+  <option
+    value="3"
+  />
+</select>"
+`;
+
+exports[`listbox > renders empty 1`] = `
+"<div
+  class="listbox__options"
+  role="listbox"
+  tabindex="0"
+>
+  <div
+    class="listbox__option"
+    data-value="1"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 1
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="2"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 2
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="3"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 3
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+</div>
+<select
+  class="listbox__native"
+  hidden=""
+>
+  <option
+    value="1"
+  />
+  <option
+    value="2"
+  />
+  <option
+    value="3"
+  />
+</select>"
+`;
+
+exports[`listbox > renders with second item disabled 1`] = `
+"<div
+  class="listbox__options"
+  role="listbox"
+  tabindex="0"
+>
+  <div
+    class="listbox__option"
+    data-value="1"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 1
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="2"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 2
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="3"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 3
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+</div>
+<select
+  class="listbox__native"
+  hidden=""
+>
+  <option
+    value="1"
+  />
+  <option
+    value="2"
+  />
+  <option
+    value="3"
+  />
+</select>"
+`;
+
+exports[`listbox > renders with second item selected 1`] = `
+"<div
+  class="listbox__options"
+  role="listbox"
+  tabindex="0"
+>
+  <div
+    class="listbox__option"
+    data-value="1"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 1
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="2"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 2
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+  <div
+    class="listbox__option"
+    data-value="3"
+    role="option"
+  >
+    <span
+      class="listbox__value"
+    >
+      Option 3
+    </span>
+     
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <use
+        href="#icon-tick-16"
+      />
+    </svg>
+  </div>
+</div>
+<select
+  class="listbox__native"
+  hidden=""
+>
+  <option
+    value="1"
+  />
+  <option
+    value="2"
+  />
+  <option
+    value="3"
+  />
+</select>"
+`;

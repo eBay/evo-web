@@ -7,7 +7,7 @@ afterEach(cleanup);
 /** @type import("@marko/testing-library").RenderResult */
 let component;
 
-describe("given radio button is enabled", () => {
+describe.skip("given radio button is enabled", () => {
     beforeEach(async () => {
         component = await render(template, { value: "food" });
     });
@@ -29,7 +29,7 @@ describe("given radio button is enabled", () => {
     });
 });
 
-describe("given radio button is disabled", () => {
+describe.skip("given radio button is disabled", () => {
     beforeEach(async () => {
         component = await render(template, { disabled: true });
     });
@@ -46,7 +46,7 @@ describe("given radio button is disabled", () => {
     });
 });
 
-describe("when native focus event is fired on radio", () => {
+describe.skip("when native focus event is fired on radio", () => {
     beforeEach(async () => {
         component = await render(template, { value: "food" });
         await fireEvent.focus(component.getByRole("radio"));

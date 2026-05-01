@@ -7,7 +7,7 @@ import { testPassThroughAttributes } from "../../../common/test-utils/server";
 
 const { Isolated, WithLabel } = composeStories(stories);
 
-const htmlSnap = snapshotHTML(__dirname);
+const htmlSnap = snapshotHTML;
 
 it("renders default tri-state-checkbox", async () => {
   await htmlSnap(Isolated);
