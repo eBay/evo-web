@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.1.14
+
+### Patch Changes
+
+- [#640](https://github.com/eBay/evo-web/pull/640) [`6ed39ad`](https://github.com/eBay/evo-web/commit/6ed39ad0fa46c8b462cdaa98fade268347f2ebaa) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add leading attribute tag to evo-details
+
 ## 0.1.13
 
 ### Patch Changes
