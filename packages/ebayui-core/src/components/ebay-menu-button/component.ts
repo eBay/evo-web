@@ -63,7 +63,6 @@ export interface Input extends WithNormalizedProps<MenuButtonInput> {}
 
 export default class extends MenuUtils<Input, MenuState> {
     declare expander: any;
-    declare isExpanded?: boolean;
     declare dropdownUtil: DropdownUtil;
 
     onCreate() {
@@ -242,9 +241,6 @@ export default class extends MenuUtils<Input, MenuState> {
             collapseOnHostReFocus: true,
         });
 
-        this.expander.expanded = this.isExpanded || false;
-        delete this.isExpanded;
-
         this.dropdownUtil = new DropdownUtil(
             this.getEl("button"),
             this.getEl("content"),
@@ -259,7 +255,6 @@ export default class extends MenuUtils<Input, MenuState> {
     _cleanupMakeup() {
         if (this.expander) {
             this.expander.destroy();
-            this.isExpanded = this.expander.expanded;
         }
 
         this.dropdownUtil?.cleanup?.();

@@ -169,6 +169,27 @@ describe("given the menu is in the expanded state", () => {
         });
     });
 
+    describe("when aria-expanded is set directly on the DOM and a re-render is triggered", () => {
+        beforeEach(async () => {
+            // Simulate external consumer bypassing expander API (e.g. m-dialog on-select handler)
+            const button = component.getByRole("button");
+            button.setAttribute("aria-expanded", "false");
+            // Trigger a re-render (simulates setStateDirty from a parent component)
+            await component.rerender(
+                Object.assign({}, Default.args, {
+                    item: addRenderBodies([...items]),
+                }),
+            );
+        });
+
+        it("then the menu remains closed after re-render (no flash)", () => {
+            expect(component.getByRole("button")).toHaveAttribute(
+                "aria-expanded",
+                "false",
+            );
+        });
+    });
+
     describe("when an item is clicked", () => {
         beforeEach(async () => {
             await fireEvent.mouseDown(component.getByText(firstItemText));
