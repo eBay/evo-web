@@ -71,10 +71,10 @@
     },
     "devDependencies": {
         "@marko/compiler": "^5.39.50",
-        "marko": "^5.38.29"
+        "marko": "^5.38.36"
     },
     "peerDependencies": {
         "@ebay/skin": "^19",
-        "marko": "^5.38.29"
+        "marko": "^5.38.36"
     }
 }
