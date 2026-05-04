@@ -2,7 +2,7 @@ import { describe, it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../details.stories"; // import all stories from the stories file
-const { Default } = composeStories(stories);
+const { Default, WithLeading } = composeStories(stories);
 
 describe("details", () => {
   it("renders basic version", async () => {
@@ -23,5 +23,9 @@ describe("details", () => {
 
   it("renders center version", async () => {
     await snapshotHTML(Default, {alignment: "center" });
+  });
+
+  it("renders with leading element", async () => {
+    await snapshotHTML(WithLeading);
   });
 });
