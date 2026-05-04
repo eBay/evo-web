@@ -8,17 +8,31 @@ import { playwright } from "@vitest/browser-playwright";
 
 const isCI = !!process.env.CI;
 
+const componentEntries = fs
+  .readdirSync("./src", { withFileTypes: true })
+  .filter(
+    (dirent) =>
+      dirent.isDirectory() &&
+      fs.existsSync(join("./src", dirent.name, "index.ts")),
+  )
+  .reduce((acc, dirent) => {
+    acc[dirent.name] = resolve(
+      import.meta.dirname,
+      `src/${dirent.name}/index.ts`,
+    );
+    return acc;
+  }, {});
+
 const iconsEntries = fs
-  .readdirSync("./src/evo-icon/icons")
+  .readdirSync("./src/icon/icons")
   .filter(
     (file) =>
-      fs.statSync(`./src/evo-icon/icons/${file}`).isFile() &&
-      file.startsWith("evo-icon-"),
+      fs.statSync(`./src/icon/icons/${file}`).isFile() && file.endsWith(".tsx"),
   )
-  .reduce((acc, componentName) => {
-    acc[join("evo-icon/icons/", componentName.replace(".tsx", ""))] = resolve(
+  .reduce((acc, fileName) => {
+    acc[join("icon/icons/", fileName.replace(".tsx", ""))] = resolve(
       import.meta.dirname,
-      `src/evo-icon/icons/${componentName}`,
+      `src/icon/icons/${fileName}`,
     );
     return acc;
   }, {});
@@ -34,16 +48,13 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        index: "./src/index.ts",
+        ...componentEntries,
         ...iconsEntries,
       },
       formats: ["es"],
     },
     rollupOptions: {
       output: {
-        preserveModules: true,
-        preserveModulesRoot: "src",
-        entryFileNames: "[name].js",
         banner: `"use client";\n`,
       },
       plugins: [
@@ -69,12 +80,7 @@ export default defineConfig({
       provider: "v8",
       reporter: ["json-summary", "html", "cobertura", "lcov"],
       include: ["src/**/*.{ts,tsx}"],
-      exclude: [
-        "src/**/test/**",
-        "src/**/*.stories.tsx",
-        "src/**/*.d.ts",
-        "src/index.ts",
-      ],
+      exclude: ["src/**/test/**", "src/**/*.stories.tsx", "src/**/*.d.ts"],
     },
     projects: [
       {

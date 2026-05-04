@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
-import { EvoIconCart16 } from "../icons/evo-icon-cart-16";
-import { EvoIconAttention24 } from "../icons/evo-icon-attention-24";
-import { EvoIconAttentionFilled16 } from "../icons/evo-icon-attention-filled-16";
-import { EvoIconAfterpay24Colored } from "../icons/evo-icon-afterpay-24-colored";
+import { EvoIconCart16 } from "../icons/cart-16";
+import { EvoIconAttention24 } from "../icons/attention-24";
+import { EvoIconAttentionFilled16 } from "../icons/attention-filled-16";
+import { EvoIconAfterpay24Colored } from "../icons/afterpay-24-colored";
 import { EvoIconProvider, ROOT_ID } from "../context";
 
 describe("evo-icon", () => {

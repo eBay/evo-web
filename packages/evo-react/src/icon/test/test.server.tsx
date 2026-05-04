@@ -1,8 +1,8 @@
 import { vi, describe, it, expect } from "vitest";
 import { renderToString } from "react-dom/server";
-import { EvoIconCart16 } from "../icons/evo-icon-cart-16";
-import { EvoIconAttention24 } from "../icons/evo-icon-attention-24";
-import { EvoIconChevronDown16 } from "../icons/evo-icon-chevron-down-16";
+import { EvoIconCart16 } from "../icons/cart-16";
+import { EvoIconAttention24 } from "../icons/attention-24";
+import { EvoIconChevronDown16 } from "../icons/chevron-down-16";
 import { EvoIconProvider, ROOT_ID } from "../context";
 
 describe("evo-icon SSR", () => {

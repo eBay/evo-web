@@ -8,7 +8,7 @@ import type {
   Size,
   Split,
 } from "./types";
-import { EvoIconChevronDown16 } from "../evo-icon/icons/evo-icon-chevron-down-16";
+import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 import "@ebay/skin/button.mjs";
 
 export function EvoButton(props: AnchorButtonProps): React.JSX.Element;

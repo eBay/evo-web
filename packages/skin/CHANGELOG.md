@@ -32,9 +32,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-  **@ebay/skin:** Add button reset styles for shaka-play-button.
+    **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 19.23.0
 

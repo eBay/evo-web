@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import type { EvoDetailsSummaryProps } from "./types";
 import { useDetailsContext } from "./context";
-import { EvoIconChevronDown16 } from "../evo-icon/icons/evo-icon-chevron-down-16";
+import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 
 export function EvoDetailsSummary({
   children,
