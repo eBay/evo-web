@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.7.3
+
+### Patch Changes
+
+- [#652](https://github.com/eBay/evo-web/pull/652) [`598652d`](https://github.com/eBay/evo-web/commit/598652d6fc1ddab572156f042ce6dd1559ee388c) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix bug with makeup-expander
+
 ## 16.7.2
 
 ### Patch Changes

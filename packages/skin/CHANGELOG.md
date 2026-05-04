@@ -1,5 +1,20 @@
 # Skin Changelog
 
+## 19.24.4
+
+### Patch Changes
+
+- [#642](https://github.com/eBay/evo-web/pull/642) [`b9fd8fd`](https://github.com/eBay/evo-web/commit/b9fd8fd2becb11a9fa4b93b1d33ec3fba3c54698) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(section-title): remove arbitrary 75% max-width on title container
+
+  The `.section-title__title-container` was capped at `max-width: 75%`, which
+  caused unnecessary text wrapping on narrow viewports and on titles without
+  a trailing CTA. The Playbook spec is to let the title flow naturally and
+  rely on margin to maintain separation from a trailing CTA / overflow / info
+  element.
+
+  The `max-width` cap is replaced with `margin-inline-end: var(--spacing-300)`,
+  matching the spacing token used by sibling elements.
+
 ## 19.24.3
 
 ### Patch Changes
@@ -32,9 +47,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-    **@ebay/skin:** Add button reset styles for shaka-play-button.
+  **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 19.23.0
 
