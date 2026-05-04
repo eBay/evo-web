@@ -45,7 +45,8 @@ jobs:
 
       - name: Fetch base branch
         run: |
-          git fetch origin main:main
+          git remote add upstream https://github.com/${{ github.repository }}.git
+          git fetch upstream main:main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
