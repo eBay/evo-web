@@ -52,13 +52,16 @@ exports[`card > anchor > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -95,11 +98,7 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img
-        height=3000
-        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
-        width=3000
-      />
+      <img/>
     </div>
     <div style="
       display: flex;
@@ -126,13 +125,16 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -210,13 +212,16 @@ exports[`card > button > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -273,11 +278,7 @@ exports[`card > button disabled > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img
-        height=3000
-        src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg"
-        width=3000
-      />
+      <img/>
     </div>
     <div style="
       display: flex;
@@ -304,13 +305,16 @@ exports[`card > button disabled > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -373,13 +377,16 @@ exports[`card > default > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -402,7 +409,7 @@ exports[`card > default > then it matches the snapshot 1`] = `
           border-top: 1px solid;
           color: inherit;
           font-family: inherit;
-          font-size: var(--font-size-default);
+          font-size: var(--font-size-body);
           min-height: 40px;
           min-width: 88px;
           overflow-x: hidden;
@@ -419,7 +426,7 @@ exports[`card > default > then it matches the snapshot 1`] = `
         ">
           <style>@scope{:scope{
             &::after {
-              background-color: var(--state-layer-neutral);
+              background-color: var(--color-state-layer-neutral);
               bottom: 0px;
               content: "";
               left: 0px;
@@ -488,13 +495,16 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -517,7 +527,7 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
           border-top: 1px solid;
           color: inherit;
           font-family: inherit;
-          font-size: var(--font-size-default);
+          font-size: var(--font-size-body);
           min-height: 40px;
           min-width: 88px;
           overflow-x: hidden;
@@ -534,7 +544,7 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
         ">
           <style>@scope{:scope{
             &::after {
-              background-color: var(--state-layer-neutral);
+              background-color: var(--color-state-layer-neutral);
               bottom: 0px;
               content: "";
               left: 0px;
@@ -603,13 +613,16 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
         ">
           <use href="#icon-authenticity-guarantee-16"/>
         </svg>
+        Authenticity Guaranteed
       </div>
       <h3 style="
         font-size: var(--font-size-large-1);
         margin-block-end: var(--spacing-50);
         margin-bottom: 0px;
         margin-top: 0px
-      "/>
+      ">
+        Authentic Rookie Cards
+      </h3>
       <div style="
         flex-basis: 0%;
         flex-grow: 1
@@ -632,7 +645,7 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
           border-top: 1px solid;
           color: inherit;
           font-family: inherit;
-          font-size: var(--font-size-default);
+          font-size: var(--font-size-body);
           min-height: 40px;
           min-width: 88px;
           overflow-x: hidden;
@@ -649,7 +662,7 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
         ">
           <style>@scope{:scope{
             &::after {
-              background-color: var(--state-layer-neutral);
+              background-color: var(--color-state-layer-neutral);
               bottom: 0px;
               content: "";
               left: 0px;
@@ -664,5 +677,64 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
       </div>
     </div>
   </span>
+</div>"
+`;
+
+exports[`card > minimum > then it matches the snapshot 1`] = `
+"<div>
+  <button style="
+    background-color: var(--color-background-secondary);
+    border-bottom-style: none;
+    border-bottom: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: none;
+    border-top: none;
+    color: var(--color-foreground-primary);
+    display: flex;
+    flex-direction: column;
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 400px;
+    min-width: 200px;
+    outline-color: transparent;
+    outline-offset: 4px;
+    outline-style: solid;
+    outline-width: 6px;
+    padding-block-end: var(--spacing-150);
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    text-align: start;
+    transition: transform var(--motion-duration-medium-3)
+                var(--motion-easing-quick-enter),
+            box-shadow var(--motion-duration-medium-3)
+                var(--motion-easing-quick-enter)
+  ">
+    <div style="
+      aspect-ratio: 1 / 1;
+      margin-block-end: var(--spacing-200);
+      margin: var(--spacing-150);
+      overflow-x: hidden;
+      overflow-y: hidden
+    ">
+      <img/>
+    </div>
+    <div style="
+      display: flex;
+      flex-basis: 0%;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-inline: var(--spacing-150)
+    ">
+      <div style="
+        flex-basis: 0%;
+        flex-grow: 1
+      ">
+        Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
+      </div>
+    </div>
+  </button>
 </div>"
 `;

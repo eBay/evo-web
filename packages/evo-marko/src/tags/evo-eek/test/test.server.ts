@@ -1,7 +1,7 @@
 import { describe, it } from "vitest";
 import { render, cleanup, fireEvent } from "@marko/testing-library";
 import { composeStories } from "@storybook/marko";
-import { snapshotHTML } from "../../../common/test-utils/snapshots";
+import { snapshotHTML, prettyNormalizedDOM } from "../../../common/test-utils/snapshots";
 import * as stories from "../eek.stories"; // import all stories from the stories file
 const { Default } = composeStories(stories);
 
@@ -22,10 +22,10 @@ describe("eek", () => {
       rating: "B",
       a11yText: "A+++ - D. Rating B",
     });
-    expect(getByText("A+++")).toMatchSnapshot();
-    expect(getByText("D")).toMatchSnapshot();
-    expect(getByText("B")).toMatchSnapshot();
-    expect(getByRole("img")).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("A+++"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("D"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("B"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByRole("img"))).toMatchSnapshot();
   });
 
   it("renders large eek", async () => {
@@ -36,10 +36,10 @@ describe("eek", () => {
       size: "large",
       a11yText: "A+++ - D. Rating B",
     });
-    expect(getByText("A+++")).toMatchSnapshot();
-    expect(getByText("D")).toMatchSnapshot();
-    expect(getByText("B")).toMatchSnapshot();
-    expect(getByRole("img")).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("A+++"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("D"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("B"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByRole("img"))).toMatchSnapshot();
   });
 
   it("renders invalid eek", async () => {
@@ -49,10 +49,10 @@ describe("eek", () => {
       rating: "B",
       a11yText: "A+++ - D. Rating B",
     });
-    expect(getByText("A")).toMatchSnapshot();
-    expect(getByText("D")).toMatchSnapshot();
-    expect(getByText("B")).toMatchSnapshot();
-    expect(getByRole("img")).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("A"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("D"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByText("B"))).toMatchSnapshot();
+    expect(prettyNormalizedDOM(getByRole("img"))).toMatchSnapshot();
   });
 
   it("renders the correct eek if rating is outside", async () => {

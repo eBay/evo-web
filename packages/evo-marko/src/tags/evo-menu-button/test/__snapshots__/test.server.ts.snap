@@ -1,0 +1,3367 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`menu-button > renders basic version 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with a badge 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-label="1 item unread"
+        class="menu-button__item menu-button__item--badged"
+        data-value="0"
+        role="menuitem"
+        tabindex="0"
+      >
+        <span>
+          item 1 that has very long text
+          <span
+            class="badge"
+          >
+            1
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        aria-label="99 items unread"
+        class="menu-button__item menu-button__item--badged"
+        data-value="1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+          <span
+            class="badge"
+          >
+            99
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        aria-label="10 item unread"
+        class="menu-button__item menu-button__item--badged"
+        data-value="2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+          <span
+            class="badge"
+          >
+            10
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with borderless=true 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--borderless"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with button variant 1`] = `
+"<span
+  class="menu-button"
+  text="Button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--button btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with disabled state 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    disabled=""
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with filter 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-haspopup="true"
+    aria-selected="true"
+    class="filter-chip menu-button__button"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      <span>
+        Filter Items (+1)
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-12"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    class="menu-button__menu menu-button--filter"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitemcheckbox"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 1
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 2
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 3
+        </span>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with fix-width=true 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu menu-button__menu--fix-width"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with fixed strategy 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu menu-button__menu--fixed"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with footer 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-haspopup="true"
+    aria-selected="false"
+    class="filter-chip menu-button__button"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      <span>
+        Filter Items 
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-12"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    class="menu-button__menu menu-button--filter"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 1
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 2
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 3
+        </span>
+      </div>
+    </div>
+    <div
+      class="menu-button__footer"
+    >
+      <button
+        class="btn btn--tertiary"
+        type="button"
+      >
+        Apply
+      </button>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with icon 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      Settings 
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M10.799.652A1 1 0 0 0 9.86 0H6.14c-.42 0-.793.26-.94.652l-.412 1.11-.316.184-.274.157-1.17-.199a1.001 1.001 0 0 0-1.034.486l-.921 1.594-.01.015-.93 1.61A1 1 0 0 0 .23 6.747l.755.911.002.398-.001.283-.757.913a1 1 0 0 0-.096 1.138l.93 1.61.007.01.924 1.6c.21.362.622.556 1.034.486l1.17-.198.268.152.322.188.412 1.11c.146.392.52.652.939.652h3.72c.419 0 .793-.26.939-.652l.412-1.11.321-.187.27-.153 1.169.198c.412.07.825-.124 1.034-.486l.922-1.596.008-.013.93-1.61a1 1 0 0 0-.096-1.138l-.755-.911-.002-.399.001-.282.757-.913a1 1 0 0 0 .096-1.138L14.936 4l-.005-.008-.926-1.602a1.001 1.001 0 0 0-1.034-.486l-1.17.199-.27-.154-.32-.187L10.8.652ZM5.468 12.318l.628.359a1 1 0 0 1 .441.52l.299.803h2.328l.299-.803a1 1 0 0 1 .442-.52l.626-.358.57-.333c.204-.118.441-.16.673-.122l.845.144.582-1.008.008-.013.575-.994-.548-.66a1 1 0 0 1-.23-.642l.004-.748-.003-.633a1 1 0 0 1 .23-.643l.547-.66-.578-.998-.005-.01-.582-1.007-.845.144a1.003 1.003 0 0 1-.672-.122l-.572-.333-.626-.358a1 1 0 0 1-.441-.52L9.164 2H6.836l-.299.803a1 1 0 0 1-.441.52l-.621.355-.577.336c-.203.118-.44.161-.672.122l-.845-.143L2.799 5l-.01.015-.572.992.547.66a1 1 0 0 1 .23.642l-.004.747.003.634a1 1 0 0 1-.23.643l-.547.66.576.996L2.8 11l.582 1.008.845-.144c.232-.039.47.004.672.122l.57.332Z"
+            fill-rule="evenodd"
+          />
+          <path
+            clip-rule="evenodd"
+            d="M8 9a1 1 0 1 0 .001-2.001A1 1 0 0 0 8 9Zm0 2a3.002 3.002 0 0 0 3.003-3c0-1.657-1.344-3-3.003-3a3.002 3.002 0 0 0-3.003 3c0 1.657 1.344 3 3.003 3Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-settings-16"
+        />
+      </svg>
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-2"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="0"
+        role="menuitem"
+        tabindex="0"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with overflow variant 1`] = `
+"<span
+  class="menu-button"
+  text=""
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--overflow btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with prefix label 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span
+      class="menu-button-prefix-label"
+    >
+      Sort By:
+    </span>
+     
+    <span>
+      Name
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="0"
+        role="menuitem"
+        tabindex="0"
+      >
+        <span>
+          Name
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          Year
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          Group
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with reverse=true 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with separators 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu separator
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="0"
+        role="menuitem"
+        tabindex="0"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <hr
+        class="menu-button__separator"
+        role="separator"
+      />
+      <div
+        class="menu-button__item"
+        data-value="3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="4"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 4
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <hr
+        class="menu-button__separator"
+        role="separator"
+      />
+      <div
+        class="menu-button__item"
+        data-value="6"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 5
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="7"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 6
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with size=small 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--small btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=false 1`] = `
+"<span
+  class="menu-button"
+  type="checkbox"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=false and as filter 1`] = `
+"<span
+  class="menu-button"
+  type="checkbox"
+>
+  <button
+    aria-haspopup="true"
+    aria-selected="true"
+    class="filter-chip menu-button__button"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      <span>
+        Filter Items (+1)
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-12"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    class="menu-button__menu menu-button--filter"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitemcheckbox"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 1
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 2
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 3
+        </span>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=true 1`] = `
+"<span
+  class="menu-button"
+  type="checkbox"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=checkbox and checked=true and as filter 1`] = `
+"<span
+  class="menu-button"
+  type="checkbox"
+>
+  <button
+    aria-haspopup="true"
+    aria-selected="true"
+    class="filter-chip menu-button__button"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      <span>
+        Filter Items (+1)
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-12"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    class="menu-button__menu menu-button--filter"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitemcheckbox"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 1
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 2
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 3
+        </span>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=radio and checked=false 1`] = `
+"<span
+  class="menu-button"
+  type="radio"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=radio and checked=false and as filter 1`] = `
+"<span
+  class="menu-button"
+  type="radio"
+>
+  <button
+    aria-haspopup="true"
+    aria-selected="true"
+    class="filter-chip menu-button__button"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      <span>
+        Filter Items (+1)
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-12"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    class="menu-button__menu menu-button--filter"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitemcheckbox"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 1
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 2
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 3
+        </span>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=radio and checked=true 1`] = `
+"<span
+  class="menu-button"
+  type="radio"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with type=radio and checked=true and as filter 1`] = `
+"<span
+  class="menu-button"
+  type="radio"
+>
+  <button
+    aria-haspopup="true"
+    aria-selected="true"
+    class="filter-chip menu-button__button"
+    type="button"
+  >
+    <span
+      class="filter-chip__text"
+    >
+      <span>
+        Filter Items (+1)
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--12"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 12 12"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-down-12"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    class="menu-button__menu menu-button--filter"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitemcheckbox"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-3"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 1
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 2
+        </span>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon--unchecked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="icon--checked icon icon--18"
+        >
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+        <span>
+          item 3
+        </span>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders with typeahead 1`] = `
+"<p>
+  Click the button, then type a name to see focus change. The search will see if any names start with the input, then if there are no matches it will search for the input string anywhere in the names.
+</p>
+<p>
+  Wait 2 seconds for the typeahead to reset and then try typing again to reset the search.
+</p>
+<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      Button
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="0"
+        role="menuitem"
+        tabindex="0"
+      >
+        <span>
+          <span>
+            Austen
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Austin
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Jack
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Jackman
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="4"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Jackson
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="5"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Jasper
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="6"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Julia
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="7"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Julio
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="8"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Julius
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="9"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Luca
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="10"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Lucais
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="11"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Lucan
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="12"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Lucian
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="13"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          <span>
+            Lucius
+          </span>
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
+exports[`menu-button > renders without toggle icon 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu
+    </span>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-0"
+      role="menu"
+    >
+       
+      <div
+        class="menu-button__item"
+        data-value="item 1"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 1
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 2"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 2
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        class="menu-button__item"
+        data-value="item 3"
+        role="menuitem"
+        tabindex="-1"
+      >
+        <span>
+          item 3
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;

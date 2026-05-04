@@ -441,61 +441,8 @@ To add new SVG icons, please follow the [icon creation guide](ICON-CREATION.md).
 
 ## Releases
 
-The `@ebay/skin` module is published to the public NPM repository at https://registry.npmjs.org/.
-
-Please ensure your NPM registry is set correctly and that you are on the package owners list, i.e. `npm owner ls @ebay/skin`.
-
-### Pre-Release
-
-A pre-release is always made from a milestone branch.
-
-1. Run `npm version prepatch`, `npm version preminor`, or `npm version premajor`. If you need to increment an existing pre-release use `npm version prerelease`. This command will automatically:
-    - update the version number in CSS build files
-    - update the version number in `package.json`
-    - commit all changes locally
-    - create a Git tag
-1. Push commit to origin.
-1. Run `npm publish --tag beta` to publish the package to NPM.
-
-### Final Release
-
-A final release is always made from the master branch.
-
-1. Create a GitHub PR to merge the milestone branch into master branch.
-1. Merge the PR after approval (do not squash!)
-1. Switch to your local master branch and pull the changes from origin.
-1. Run `npm version patch`, `npm version minor`, or `npm version major`. This command will automatically:
-    - update the version number in CSS build files
-    - update the version number in `package.json`
-    - update the version number in Jekyll docs
-    - commit all changes locally
-    - create a Git tag
-1. Push commit to origin.
-1. Push the git tag to origin, e.g. `git push origin v3.1.0`.
-1. Run `npm publish` to publish the package to NPM.
-1. Publish the `/_cdn/skin/{version}` folder to the CDN.
-
-### GitHub Release
-
-After the module has been successfully pushed to NPM you should go ahead and create a [Git release](https://github.com/eBay/skin/releases) using the new Git tag that was created.
-
-The release notes should reference all issues inside the relevant milestone.
-
-### Hotfix Release
-
-If the `master` branch is currently at `v12.x`, but we need to go back and apply a critical bug fix to `v6.3.x`, what do we do?
-
-Git tags to the rescue! Git tags allow us to go back to any moment in time that we have previously "tagged".
-
-**Do not try and push an entire feature in a hot fix!! A hotfix is allowed for small one-liner type fixes only.**
-
-1. Go to tags page: https://github.com/eBay/skin/tags
-1. Select the tag you'd like to go back in time to, e.g. https://github.com/eBay/skin/tree/v6.3.5
-1. Select the tag dropdown and create a new branch named accordingly, e.g. `6.3.6`. This is the branch you will merge your PR to and do the release from.
-1. Create _another_ branch for your local dev work, e.g. `1723-textbox-fix`.
-1. Now follow the [release steps](#final-release) mentioned above, but substituting `master` branch for your release branch (e.g. `6.3.6`) and milestone branch for your dev branch (e.g. `1723-textbox-fix`). **IMPORTANT:** No changes should be pushed to master branch!
-1. Don't forget to publish your new git tag (e.g. `v6.3.6`)
-1. Use `npm publish --tag hotfix` when publishing to NPM to tag this as a hotfix.
+Release process for this package follows the monorepo Changesets workflow.
+See the [root CONTRIBUTING.md](../../CONTRIBUTING.md#releases) for full release instructions, including how to create changesets and how to merge the automated `ci: release` PR.
 
 ### Website Archive
 

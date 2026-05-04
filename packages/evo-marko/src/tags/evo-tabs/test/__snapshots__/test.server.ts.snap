@@ -1,0 +1,225 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`tabs > renders basic version with 3 tabs and 3 panels 1`] = `
+"<div
+  class="tabs"
+>
+  <div
+    class="tabs__items"
+    role="tablist"
+  >
+    <div
+      aria-controls="GENERATED-3"
+      class="tabs__item"
+      id="GENERATED-0"
+      panel="[object Object]"
+      role="tab"
+      tabindex="0"
+    >
+      <span>
+        Tab 1
+      </span>
+    </div>
+    <div
+      aria-controls="GENERATED-4"
+      class="tabs__item"
+      id="GENERATED-1"
+      panel="[object Object]"
+      role="tab"
+      tabindex="-1"
+    >
+      <span>
+        Tab 2
+      </span>
+    </div>
+    <div
+      aria-controls="GENERATED-5"
+      class="tabs__item"
+      id="GENERATED-2"
+      panel="[object Object]"
+      role="tab"
+      tabindex="-1"
+    >
+      <span>
+        Tab 3
+      </span>
+    </div>
+  </div>
+  <div
+    class="tabs__content"
+  >
+    <div
+      aria-labelledby="GENERATED-0"
+      class="tabs__panel"
+      hidden=""
+      id="GENERATED-3"
+      role="tabpanel"
+    >
+      <div
+        class="tabs__cell"
+      >
+        <div>
+          <h3>
+            Panel 1
+          </h3>
+          <p>
+            1. Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="GENERATED-1"
+      class="tabs__panel"
+      hidden=""
+      id="GENERATED-4"
+      role="tabpanel"
+    >
+      <div
+        class="tabs__cell"
+      >
+        <div>
+          <h3>
+            Panel 2
+          </h3>
+          <p>
+            2. Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="GENERATED-2"
+      class="tabs__panel"
+      hidden=""
+      id="GENERATED-5"
+      role="tabpanel"
+    >
+      <div
+        class="tabs__cell"
+      >
+        <div>
+          <h3>
+            Panel 3
+          </h3>
+          <p>
+            3. Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`tabs > renders basic version with 3 tabs and 3 panels on the second panel 1`] = `
+"<div
+  class="tabs"
+>
+  <div
+    class="tabs__items"
+    role="tablist"
+  >
+    <div
+      aria-controls="GENERATED-3"
+      class="tabs__item"
+      id="GENERATED-0"
+      panel="[object Object]"
+      role="tab"
+      tabindex="-1"
+    >
+      <span>
+        Tab 1
+      </span>
+    </div>
+    <div
+      aria-controls="GENERATED-4"
+      class="tabs__item"
+      id="GENERATED-1"
+      panel="[object Object]"
+      role="tab"
+      tabindex="-1"
+    >
+      <span>
+        Tab 2
+      </span>
+    </div>
+    <div
+      aria-controls="GENERATED-5"
+      aria-selected="true"
+      class="tabs__item"
+      id="GENERATED-2"
+      panel="[object Object]"
+      role="tab"
+      tabindex="0"
+    >
+      <span>
+        Tab 3
+      </span>
+    </div>
+  </div>
+  <div
+    class="tabs__content"
+  >
+    <div
+      aria-labelledby="GENERATED-0"
+      class="tabs__panel"
+      hidden=""
+      id="GENERATED-3"
+      role="tabpanel"
+    >
+      <div
+        class="tabs__cell"
+      >
+        <div>
+          <h3>
+            Panel 1
+          </h3>
+          <p>
+            1. Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="GENERATED-1"
+      class="tabs__panel"
+      hidden=""
+      id="GENERATED-4"
+      role="tabpanel"
+    >
+      <div
+        class="tabs__cell"
+      >
+        <div>
+          <h3>
+            Panel 2
+          </h3>
+          <p>
+            2. Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-labelledby="GENERATED-2"
+      class="tabs__panel"
+      id="GENERATED-5"
+      role="tabpanel"
+    >
+      <div
+        class="tabs__cell"
+      >
+        <div>
+          <h3>
+            Panel 3
+          </h3>
+          <p>
+            3. Lorem ipsum dolor sit amet
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

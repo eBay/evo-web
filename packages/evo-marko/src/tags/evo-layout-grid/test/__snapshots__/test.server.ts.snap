@@ -1,0 +1,161 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-layout-grid > renders default 1`] = `
+"<div
+  class="layout-grid"
+  data-columns-lg="6"
+  data-columns-md="4"
+  data-columns-min="1"
+  data-columns-sm="3"
+  data-columns-xl="8"
+  data-columns-xl2="10"
+  data-columns-xl3="12"
+  data-columns-xl4="14"
+  data-columns-xs="2"
+>
+  <ul>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 1
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 2
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 3
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 4
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 5
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 6
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 7
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 8
+      </button>
+    </li>
+  </ul>
+</div>"
+`;
+
+exports[`evo-layout-grid > renders with custom columns 1`] = `
+"<div
+  class="layout-grid"
+  data-columns-lg="8"
+  data-columns-md="6"
+  data-columns-min="2"
+  data-columns-sm="4"
+  data-columns-xs="3"
+>
+  <ul>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 1
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 2
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 3
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 4
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 5
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 6
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 7
+      </button>
+    </li>
+    <li>
+      <button
+        class="btn btn--fluid btn--secondary"
+        type="button"
+      >
+        Button 8
+      </button>
+    </li>
+  </ul>
+</div>"
+`;

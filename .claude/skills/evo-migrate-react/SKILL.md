@@ -42,6 +42,7 @@ packages/evo-react/src/{name}/
   {name}.tsx                ← main component
   {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
   types.ts                  ← all exported types
+  context.ts                ← React context + hook (only if component uses context)
   README.md                 ← component name + Documentation section with Storybook link only
   {name}.stories.tsx        ← Storybook stories (co-located, NOT in __tests__/)
   test/
@@ -64,6 +65,23 @@ packages/evo-react/src/{name}/
 ---
 
 ## Component authoring rules
+
+### No `import React from "react"` unless required for typing
+
+`@evo-web/react` uses the automatic JSX transform — the JSX runtime is injected automatically and `React` does not need to be imported for JSX. Import only what you actually use as named imports:
+
+```tsx
+// ✅ evo-react — import only what is needed
+import type { ComponentProps, SyntheticEvent } from "react";
+import classNames from "classnames";
+
+// ❌ do NOT import the default React object unless unavoidable
+import React from "react";
+```
+
+The only time `import React from "react"` is acceptable is when you need the namespace for a specific type like `React.JSX.Element` in overloaded signatures, and even then prefer `import type { JSX } from "react"` with `JSX.Element`.
+
+---
 
 ### Named function declarations — no `FC`, no arrow function components
 
@@ -128,6 +146,8 @@ import { EvoIconChevronDown16 } from "../icon/icons/chevron-down-16";
 <EbayIcon name="chevron-down-16" />
 ```
 
+This applies to **stories and tests** as well — never use inline `<svg>` or custom placeholder icons. Always use an existing `EvoIcon*` component. Available icons are in `packages/evo-react/src/evo-icon/icons/`.
+
 ### Optional callbacks — no required default `() => {}`
 
 ```tsx
@@ -176,11 +196,13 @@ export function EvoButton({ a11yText, ...rest }: EvoButtonProps) {
 
 Do **not** use `Children.map`, `Children.toArray`, `findComponent`, `filterComponent`, or any child-scanning pattern.
 
-If the ebayui-core-react component uses children composition (e.g. finding a sub-component in children), **stop and ask** before proceeding. Propose one or more alternative approaches using explicit props instead of child scanning, for example:
+The **preferred approach** is named sub-components with React context (see [ADR 0005](../../../docs/adr/0005-evo-react-child-component-composition.md)). This is the established pattern in `@evo-web/react` and should be the default proposal for consistency.
 
-- Accepting sub-component content as a named prop (`footer`, `header`, `title`)
-- Accepting a render prop
-- Splitting into separate sibling components
+If the ebayui-core-react component uses children composition (e.g. finding a sub-component in children), **stop and ask** before proceeding. Lead with the sub-component approach as the recommendation, but present the full picture so the user can confirm:
+
+1. What sub-components would be needed, and what state (if any) the parent must share via context.
+2. Whether a simpler alternative fits — e.g. a named prop (`footer`, `header`, `title`) if the region is a single, unstructured slot with no BEM class injection needed.
+3. Any edge cases specific to this component that could affect the choice (e.g. enforced ordering, complex shared state, accessibility requirements).
 
 Do not guess — get alignment before migrating this pattern.
 
@@ -268,7 +290,7 @@ describe("EvoButton SSR", () => {
 
 ## Storybook stories — `{name}.stories.tsx`
 
-- One story per component whenever possible. Only add multiple stories when variations require different component structure that cannot be expressed through args/argTypes alone.
+- **One story per component** unless the component tree itself must change between variations (e.g. different sub-components, optional children). Visual and prop variations (size, alignment, disabled, open…) must be handled through `args` and `argTypes` controls — not separate stories.
 - `title` must mirror the ebayui-core-react story title with `ebay` replaced by `evo`.
 - Description format: one-sentence summary followed by a `## Usage` section with the import snippet.
 

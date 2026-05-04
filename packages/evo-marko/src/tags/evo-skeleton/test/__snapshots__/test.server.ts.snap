@@ -1,35 +1,52 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`skeleton > renders avatar 1`] = `
-<DocumentFragment>
-  <div
-    class="skeleton"
-    role="img"
-  >
-    <div
-      class="skeleton__avatar"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`skeleton > renders default skeleton 1`] = `
-<DocumentFragment>
-  <div
-    aria-label="Loading"
-    class="skeleton"
-    role="img"
-    style="width: 220px"
-  />
-</DocumentFragment>
-`;
-
-exports[`skeleton > renders text 1`] = `
-<DocumentFragment>
-  <div
-    class="demo-text-container"
-  >
+"<div>
+  <div>
     <div
+      aria-label="Loading..."
+      class="skeleton"
+      role="img"
+    >
+      <div
+        class="skeleton__avatar"
+      />
+    </div>
+    <code>
+      &lt;evo-skeleton-avatar&gt;
+    </code>
+  </div>
+  <div>
+    <div
+      aria-label="Loading..."
+      class="skeleton"
+      role="img"
+    >
+      <div
+        class="skeleton__button"
+      />
+    </div>
+    <code>
+      &lt;evo-skeleton-button&gt;
+    </code>
+  </div>
+  <div>
+    <div
+      aria-label="Loading..."
+      class="skeleton"
+      role="img"
+    >
+      <div
+        class="skeleton__image"
+      />
+    </div>
+    <code>
+      &lt;evo-skeleton-image&gt;
+    </code>
+  </div>
+  <div>
+    <div
+      aria-label="Loading..."
       class="skeleton"
       role="img"
     >
@@ -37,44 +54,23 @@ exports[`skeleton > renders text 1`] = `
         class="skeleton__text"
       />
     </div>
+    <code>
+      &lt;evo-skeleton-text&gt;
+    </code>
   </div>
-</DocumentFragment>
-`;
-
-exports[`skeleton > renders text multiLine 1`] = `
-<DocumentFragment>
-  <div
-    class="demo-text-container"
-  >
+  <div>
     <div
-      class="skeleton"
-      role="img"
-      style="width:220px"
-    >
-      <div
-        class="skeleton__text skeleton__text--multiline skeleton__text--large"
-      />
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`skeleton > renders tile 1`] = `
-<DocumentFragment>
-  <div
-    class="demo-tile-container"
-  >
-    <div
+      aria-label="Loading..."
       class="skeleton"
       role="img"
     >
       <div
-        class="skeleton__image custom-image"
-      />
-      <div
-        class="skeleton__text skeleton__text--multiline skeleton__text--large"
+        class="skeleton__textbox"
       />
     </div>
+    <code>
+      &lt;evo-skeleton-textbox&gt;
+    </code>
   </div>
-</DocumentFragment>
+</div>"
 `;

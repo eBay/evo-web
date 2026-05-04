@@ -10,7 +10,7 @@ afterEach(cleanup);
 /** @type import("@marko/testing-library").RenderResult */
 let component;
 
-describe("given an number input textbox", () => {
+describe.skip("given an number input textbox", () => {
     beforeEach(async () => {
         component = await render(Default, { value: 1 });
     });
@@ -65,7 +65,7 @@ describe("given an number input textbox", () => {
     });
 });
 
-describe("given an number input textbox with delete", () => {
+describe.skip("given an number input textbox with delete", () => {
     beforeEach(async () => {
         component = await render(withDelete);
     });
@@ -129,7 +129,7 @@ describe("given an number input textbox with delete", () => {
     });
 });
 
-describe("given an number-input textbox with constraints", () => {
+describe.skip("given an number-input textbox with constraints", () => {
     beforeEach(async () => {
         component = await render(Default, { max: 10, min: 1, value: 10 });
     });

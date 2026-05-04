@@ -1,48 +1,42 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`3d-viewer > renders default 1`] = `
-<DocumentFragment>
-  <div
-    class="three-d-player"
-  >
-    <div
-      class="three-d-player__overlay"
+"<div>
+  <div>
+    <span
+      aria-label="Loading..."
+      class="progress-spinner"
+      role="img"
     >
-      <span
-        aria-label="Loading 3d model"
-        class="progress-spinner"
-        role="img"
+      <svg
+        aria-hidden="true"
+        class="icon icon--24"
       >
-        <svg
-          aria-hidden="true"
-          class="icon icon--24"
+        <symbol
+          fill="none"
+          id="GENERATED-0"
+          viewBox="0 0 24 24"
         >
-          <symbol
-            fill="none"
-            id="GENERATED-0"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M22.5 12A10.5 10.5 0 1 1 9.514 1.798"
-              stroke="var(--color-spinner-icon-background, #3665F3)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-            />
-            <path
-              d="M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"
-              stroke="var(--color-spinner-icon-foreground, #E5E5E5)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="3"
-            />
-          </symbol>
-          <use
-            href="#icon-spinner-24"
+          <path
+            d="M22.5 12A10.5 10.5 0 1 1 9.514 1.798"
+            stroke="var(--color-spinner-icon-background, #3665F3)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
           />
-        </svg>
-      </span>
-    </div>
+          <path
+            d="M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"
+            stroke="var(--color-spinner-icon-foreground, #E5E5E5)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+          />
+        </symbol>
+        <use
+          href="#icon-spinner-24"
+        />
+      </svg>
+    </span>
   </div>
-</DocumentFragment>
+</div>"
 `;

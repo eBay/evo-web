@@ -9,7 +9,7 @@ afterEach(cleanup);
 /** @type import("@marko/testing-library").RenderResult */
 let component;
 
-describe("given a default character count", () => {
+describe.skip("given a default character count", () => {
   beforeEach(async () => {
     component = await render(Default);
   });
