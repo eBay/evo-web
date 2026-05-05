@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import type { JSX } from "react";
 import { AccordionContext } from "./context";
 import type {
@@ -52,7 +52,7 @@ export function EvoAccordion(props: EvoAccordionProps) {
   const isControlled = "open" in props;
   const currentOpen = isControlled ? open : uncontrolledOpen;
 
-  const onItemToggle = (id: AccordionId, isOpen: boolean) => {
+  const onItemToggle = useCallback((id: AccordionId, isOpen: boolean) => {
     const nextOpen = getNextOpenValue(currentOpen, id, isOpen);
 
     if (nextOpen === currentOpen) {
@@ -74,7 +74,7 @@ export function EvoAccordion(props: EvoAccordionProps) {
         nextOpen as AccordionId | undefined,
       );
     }
-  };
+  }, [currentOpen, isControlled, onOpenChange]);
 
   return (
     <AccordionContext value={{ open: currentOpen, isControlled, onItemToggle }}>

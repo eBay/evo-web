@@ -1,12 +1,12 @@
 import { EvoDetails } from "../details/details";
-import type { EvoAccordionItemProps } from "./types";
+import type { EvoAccordionDetailsProps } from "./types";
 import { useAccordionContext } from "./context";
 
-export function EvoAccordionItem({
+export function EvoAccordionDetails({
   id,
   children,
   ...rest
-}: EvoAccordionItemProps) {
+}: EvoAccordionDetailsProps) {
   const { open, isControlled, onItemToggle } = useAccordionContext();
   const isOpen = Array.isArray(open) ? open.includes(id) : open === id;
 

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoAccordion } from "./accordion";
-import { EvoAccordionItem } from "./accordion-item";
+import { EvoAccordionDetails } from "./accordion-details";
 import {
+  EvoAccordionContent,
   EvoAccordionLabel,
   EvoAccordionLeading,
   EvoAccordionSummary,
@@ -29,7 +30,7 @@ A grouped disclosure component that coordinates open items by id.
 \`\`\`tsx
 import {
   EvoAccordion,
-  EvoAccordionItem,
+  EvoAccordionDetails,
   EvoAccordionSummary,
   EvoAccordionLabel,
 } from "@evo-web/react/accordion";
@@ -77,24 +78,24 @@ import {
   render(args) {
     return (
       <EvoAccordion {...args}>
-        <EvoAccordionItem id="one">
+        <EvoAccordionDetails id="one">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
-        <EvoAccordionItem id="two">
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
+        <EvoAccordionDetails id="two">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Description</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
-        <EvoAccordionItem id="three">
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
+        <EvoAccordionDetails id="three">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Specifications</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
       </EvoAccordion>
     );
   },
@@ -109,24 +110,24 @@ export const MultipleSelection: Story = {
   render(args) {
     return (
       <EvoAccordion size={args.size} a11yText={args.a11yText} defaultOpen={[]}>
-        <EvoAccordionItem id="one">
+        <EvoAccordionDetails id="one">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
-        <EvoAccordionItem id="two">
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
+        <EvoAccordionDetails id="two">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Description</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
-        <EvoAccordionItem id="three">
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
+        <EvoAccordionDetails id="three">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Specifications</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
       </EvoAccordion>
     );
   },
@@ -165,24 +166,24 @@ export const Controlled: Story = {
           onOpenChange={handleOpenChange}
           a11yText="Accordion Menu"
         >
-          <EvoAccordionItem id="0">
+          <EvoAccordionDetails id="0">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
             </EvoAccordionSummary>
-            <p>{LOREM}</p>
-          </EvoAccordionItem>
-          <EvoAccordionItem id="1">
+            <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+          </EvoAccordionDetails>
+          <EvoAccordionDetails id="1">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Description</EvoAccordionLabel>
             </EvoAccordionSummary>
-            <p>{LOREM}</p>
-          </EvoAccordionItem>
-          <EvoAccordionItem id="2">
+            <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+          </EvoAccordionDetails>
+          <EvoAccordionDetails id="2">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Specifications</EvoAccordionLabel>
             </EvoAccordionSummary>
-            <p>{LOREM}</p>
-          </EvoAccordionItem>
+            <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+          </EvoAccordionDetails>
         </EvoAccordion>
       </>
     );
@@ -193,33 +194,33 @@ export const WithLeadingIcon: Story = {
   render(args) {
     return (
       <EvoAccordion {...args}>
-        <EvoAccordionItem id="lightbulb">
+        <EvoAccordionDetails id="lightbulb">
           <EvoAccordionSummary>
             <EvoAccordionLeading>
               <EvoIconLightbulb24 />
             </EvoAccordionLeading>
             <EvoAccordionLabel>Shipping and returns</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
-        <EvoAccordionItem id="pencil">
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
+        <EvoAccordionDetails id="pencil">
           <EvoAccordionSummary>
             <EvoAccordionLeading>
               <EvoIconPencil24 />
             </EvoAccordionLeading>
             <EvoAccordionLabel>Description</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
-        <EvoAccordionItem id="graph">
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
+        <EvoAccordionDetails id="graph">
           <EvoAccordionSummary>
             <EvoAccordionLeading>
               <EvoIconGraph24 />
             </EvoAccordionLeading>
             <EvoAccordionLabel>Specifications</EvoAccordionLabel>
           </EvoAccordionSummary>
-          <p>{LOREM}</p>
-        </EvoAccordionItem>
+          <EvoAccordionContent><p>{LOREM}</p></EvoAccordionContent>
+        </EvoAccordionDetails>
       </EvoAccordion>
     );
   },

@@ -32,7 +32,7 @@ export type MultipleAccordionProps = BaseAccordionProps & {
 
 export type EvoAccordionProps = SingleAccordionProps | MultipleAccordionProps;
 
-export type EvoAccordionItemProps = Omit<
+export type EvoAccordionDetailsProps = Omit<
   ComponentProps<"details">,
   "id" | "open" | "defaultOpen" | "onToggle"
 > & {
