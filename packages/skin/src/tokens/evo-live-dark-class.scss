@@ -1,4 +1,15 @@
 @use "@ebay/design-tokens/dist/mixins/live-dark" as tokens;
 .evo-theme-live {
     @include tokens.live-dark;
+
+    --color-data-viz-chart-primary: var(--color-blue-500);
+    --color-data-viz-chart-secondary: var(--color-blue-300);
+    --color-data-viz-chart-tertiary-background: var(--color-blue-6);
+    --color-data-viz-chart-tertiary-stroke: var(--color-blue-400);
+    --color-data-viz-chart-quaternary-background: var(--color-teal-600);
+    --color-data-viz-chart-quaternary-stroke: var(--color-teal-400);
+    --color-data-viz-chart-quinary-background: var(--color-teal-7);
+    --color-data-viz-chart-quinary-stroke: var(--color-teal-400);
+    --state-layer-neutral: rgb(var(--color-neutral-100-rgb), 0);
+    --state-layer-neutral-on-strong: rgb(var(--color-neutral-900-rgb), 0);
 }
