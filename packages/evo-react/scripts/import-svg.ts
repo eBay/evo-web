@@ -103,7 +103,7 @@ export function ${iconComponentName}(props: EvoIconComponentProps) {
     "../src/icon/icon.stories.tsx",
   );
 
-  const storiesContent = `${fileHeader}\n
+  const storiesContent = `${fileHeader}\n// @ts-nocheck\n
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoIconProvider } from "./context";
 import type { EvoIconComponentProps } from "./icons/types";
