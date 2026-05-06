@@ -58,63 +58,13 @@ For icons:
 
 If a component is not listed below, it has **not been migrated yet** — keep using `@ebay/ebayui-core-react` for it and tell the user.
 
-### `ebay-button`
+When migrating a listed component, read the linked file completely and apply the component-specific changes in addition to the global renames from Step 2.
 
-No prop changes. Global renames (Step 2) are sufficient.
-
-### `ebay-details`
-
-This component has a **new composite API** in evo-react. The flat-prop approach is replaced by named sub-components.
-
-**Before:**
-
-```tsx
-import { EbayDetails } from "@ebay/ebayui-core-react/ebay-details";
-
-<EbayDetails
-  text="Show me the details!"
-  size="small"
-  alignment="center"
-  leading={<Icon />}
-  onToggle={handler}
->
-  Content here
-</EbayDetails>;
-```
-
-**After:**
-
-```tsx
-import {
-  EvoDetails,
-  EvoDetailsSummary,
-  EvoDetailsLeading,
-  EvoDetailsLabel,
-  EvoDetailsContent,
-} from "@evo-web/react";
-
-<EvoDetails size="small" alignment="center" onToggle={handler}>
-  <EvoDetailsSummary>
-    <EvoDetailsLeading>
-      <Icon />
-    </EvoDetailsLeading>
-    <EvoDetailsLabel>Show me the details!</EvoDetailsLabel>
-  </EvoDetailsSummary>
-  <EvoDetailsContent>Content here</EvoDetailsContent>
-</EvoDetails>;
-```
-
-**Prop changes:**
-
-| ebayui-core-react        | evo-react                           | Notes                                                                        |
-| ------------------------ | ----------------------------------- | ---------------------------------------------------------------------------- |
-| `text: string`           | `<EvoDetailsLabel>` sub-component   | Move label text into `<EvoDetailsLabel>` inside `<EvoDetailsSummary>`        |
-| `leading?: ReactElement` | `<EvoDetailsLeading>` sub-component | Move leading element into `<EvoDetailsLeading>` inside `<EvoDetailsSummary>` |
-| `as?: ElementType`       | `as` prop on `<EvoDetailsContent>`  | Move to the content sub-component                                            |
-| `onToggle`               | `onToggle`                          | Same signature: `(event, { open: boolean }) => void`                         |
-| `children`               | `<EvoDetailsContent>` children      | Wrap children in `<EvoDetailsContent>`                                       |
-
-**Important:** `<EvoDetailsLeading>` must appear before `<EvoDetailsLabel>` inside `<EvoDetailsSummary>` — order is not enforced by the component.
+| ebayui-core-react component | Migration details                               |
+| --------------------------- | ----------------------------------------------- |
+| `ebay-accordion`            | [evo-accordion.md](components/evo-accordion.md) |
+| `ebay-button`               | [evo-button.md](components/evo-button.md)       |
+| `ebay-details`              | [evo-details.md](components/evo-details.md)     |
 
 ---
 

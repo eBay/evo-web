@@ -8,7 +8,7 @@ export interface Input<Open extends number | number[] | undefined>
      * English default to be overridden is `"accordion"`
      */
     a11yText: string;
-    details?: Marko.AttrTag<
+    item?: Marko.AttrTag<
         Omit<DetailsInput, "size" | "alignment" | "open" | "openChange">
     >;
     open?: Open;
@@ -18,7 +18,7 @@ export interface Input<Open extends number | number[] | undefined>
 <const/{
     class: inputClass,
     size,
-    details,
+    item: items,
     a11yText = "accordion",
     open: inputOpen,
     openChange,
@@ -37,7 +37,7 @@ export interface Input<Open extends number | number[] | undefined>
         inputClass,
         interacted && "accordion--animated",
     ]>
-    <for|item, index| of=details>
+    <for|item, index| of=items>
         <li>
             <evo-details
                 ...item

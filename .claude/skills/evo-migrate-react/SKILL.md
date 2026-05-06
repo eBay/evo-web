@@ -337,17 +337,22 @@ export const Default: Story = {
 
 ## Update the app migration skill
 
-After completing the component, update `.claude/skills/evo-app-migrate-react/SKILL.md`:
+After completing the component, update `.claude/skills/evo-app-migrate-react/`:
 
-1. Add a new `### \`ebay-{name}\`` section under **Step 3 — Apply per-component prop changes**.
-2. Document every prop that changed compared to `ebayui-core-react`:
+1. Create or update `.claude/skills/evo-app-migrate-react/components/evo-{name}.md` where `{name}` is the evo-react component directory name (for example, `evo-accordion.md`).
+2. In that component file, document every prop that changed compared to `ebayui-core-react`:
    - Removed props (with reason, e.g. "handled by CSS now")
    - Renamed props (old → new)
    - Type changes
    - Behavior differences
-3. If nothing changed beyond the global renames, write: `No prop changes. Global renames (Step 2) are sufficient.`
+   - New composition requirements, if the React API changed to named sub-components
+3. If nothing changed beyond the global renames, write: `No prop changes. Global renames from Step 2 are sufficient.`
+4. Update `.claude/skills/evo-app-migrate-react/SKILL.md` **only as an index**:
+   - Add a row for `ebay-{name}` under **Step 3 — Apply per-component prop changes**.
+   - Link that row to `components/evo-{name}.md`.
+   - Do not inline per-component migration details in `SKILL.md`.
 
-Keep entries concise — one line per change. App owners read this, not component authors.
+Keep component entries concise. App owners read these files, not component authors.
 
 ---
 
@@ -368,4 +373,5 @@ Keep entries concise — one line per change. App owners read this, not componen
 - [ ] `README.md` created with component name and Storybook documentation link only
 - [ ] Stories in `{name}.stories.tsx` co-located with source
 - [ ] Story title follows `"category/evo-{name}"` pattern
+- [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
 - [ ] `npm run build -w packages/evo-react` passes
