@@ -1,7 +1,7 @@
 import { it, expect, describe } from "vitest";
 import { renderToString } from "react-dom/server";
 import { EvoAccordion } from "../accordion";
-import { EvoAccordionDetails } from "../accordion-details";
+import { EvoAccordionItem } from "../accordion-item";
 import {
   EvoAccordionContent,
   EvoAccordionLabel,
@@ -26,18 +26,18 @@ function TestAccordion({
 }) {
   const items = (
     <>
-      <EvoAccordionDetails id="one">
+      <EvoAccordionItem id="one">
         <EvoAccordionSummary>
           <EvoAccordionLabel>Item 1</EvoAccordionLabel>
         </EvoAccordionSummary>
         <EvoAccordionContent>Content 1</EvoAccordionContent>
-      </EvoAccordionDetails>
-      <EvoAccordionDetails id="two">
+      </EvoAccordionItem>
+      <EvoAccordionItem id="two">
         <EvoAccordionSummary>
           <EvoAccordionLabel>Item 2</EvoAccordionLabel>
         </EvoAccordionSummary>
         <EvoAccordionContent>Content 2</EvoAccordionContent>
-      </EvoAccordionDetails>
+      </EvoAccordionItem>
     </>
   );
 
@@ -83,18 +83,18 @@ describe("EvoAccordion SSR", () => {
     expect(
       renderToString(
         <EvoAccordion open={["one", "two"]}>
-          <EvoAccordionDetails id="one">
+          <EvoAccordionItem id="one">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Item 1</EvoAccordionLabel>
             </EvoAccordionSummary>
             <EvoAccordionContent>Content 1</EvoAccordionContent>
-          </EvoAccordionDetails>
-          <EvoAccordionDetails id="two">
+          </EvoAccordionItem>
+          <EvoAccordionItem id="two">
             <EvoAccordionSummary>
               <EvoAccordionLabel>Item 2</EvoAccordionLabel>
             </EvoAccordionSummary>
             <EvoAccordionContent>Content 2</EvoAccordionContent>
-          </EvoAccordionDetails>
+          </EvoAccordionItem>
         </EvoAccordion>,
       ),
     ).toMatchSnapshot();
@@ -122,7 +122,7 @@ describe("EvoAccordion SSR", () => {
     expect(
       renderToString(
         <EvoAccordion>
-          <EvoAccordionDetails id="1">
+          <EvoAccordionItem id="1">
             <EvoAccordionSummary>
               <EvoAccordionLeading>
                 <EvoIconLightbulb16 />
@@ -130,7 +130,7 @@ describe("EvoAccordion SSR", () => {
               <EvoAccordionLabel>Item 1</EvoAccordionLabel>
             </EvoAccordionSummary>
             <EvoAccordionContent>Content 1</EvoAccordionContent>
-          </EvoAccordionDetails>
+          </EvoAccordionItem>
         </EvoAccordion>,
       ),
     ).toMatchSnapshot();

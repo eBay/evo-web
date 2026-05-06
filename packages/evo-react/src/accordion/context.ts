@@ -16,7 +16,7 @@ export function useAccordionContext() {
 
   if (!context) {
     throw new Error(
-      "EvoAccordionDetails must be used within an EvoAccordion component",
+      "EvoAccordionItem must be used within an EvoAccordion component",
     );
   }
 

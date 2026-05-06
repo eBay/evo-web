@@ -21,7 +21,7 @@ import {
 ```tsx
 import {
   EvoAccordion,
-  EvoAccordionDetails,
+  EvoAccordionItem,
   EvoAccordionSummary,
   EvoAccordionLabel,
   EvoAccordionContent,
@@ -31,18 +31,18 @@ import {
   /* No autoCollapse → multi-open mode */
 }
 <EvoAccordion defaultOpen={[]} onOpenChange={handler}>
-  <EvoAccordionDetails id="0">
+  <EvoAccordionItem id="0">
     <EvoAccordionSummary>
       <EvoAccordionLabel>Item 1</EvoAccordionLabel>
     </EvoAccordionSummary>
     <EvoAccordionContent>Content 1</EvoAccordionContent>
-  </EvoAccordionDetails>
-  <EvoAccordionDetails id="1">
+  </EvoAccordionItem>
+  <EvoAccordionItem id="1">
     <EvoAccordionSummary>
       <EvoAccordionLabel>Item 2</EvoAccordionLabel>
     </EvoAccordionSummary>
     <EvoAccordionContent>Content 2</EvoAccordionContent>
-  </EvoAccordionDetails>
+  </EvoAccordionItem>
 </EvoAccordion>;
 ```
 
@@ -50,7 +50,7 @@ import {
 
 | ebayui-core-react                   | evo-react                                      | Notes                                                                                                                                                                                                  |
 | ----------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `<EbayDetails>` children            | `<EvoAccordionDetails id>` sub-components      | Replace each child details with an accordion details and use string ids from the original child order (`"0"`, `"1"`, …) by default                                                                     |
+| `<EbayDetails>` children            | `<EvoAccordionItem id>` sub-components         | Replace each child details with an accordion details and use string ids from the original child order (`"0"`, `"1"`, …) by default                                                                     |
 | `autoCollapse` present              | `open` / `defaultOpen` as a single string id   | Single `string` (or `undefined`) means one item open at a time. Omit `open`/`defaultOpen` unless an item was explicitly open on load.                                                                  |
 | `autoCollapse` absent               | `defaultOpen={[]}` (or controlled `open={[]}`) | Without `autoCollapse`, the old accordion allowed multiple items open. Use the array form to preserve that behavior. Always set at least `defaultOpen={[]}` so evo-react knows to use multi-open mode. |
 | `onToggle(event, { open, index })`  | `onOpenChange(open)`                           | Callback receives only the new open id or id array, no event                                                                                                                                           |

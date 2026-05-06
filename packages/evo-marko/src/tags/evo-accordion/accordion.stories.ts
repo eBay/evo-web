@@ -37,13 +37,13 @@ export default {
         },
       },
     },
-    details: {
+    item: {
       description:
         "Represents an [`<evo-details>` tag](?path=/story/navigation-disclosure-evo-details--default) to be used as part of the group.",
       "@": {
         ["<evo-details> attributes" as any]: {
           description:
-            "All attributes and event handlers from [the `<evo-details>` tag](?path=/story/navigation-disclosure-evo-details--docs) will be passed through to `<@details>`, except `open`",
+            "All attributes and event handlers from [the `<evo-details>` tag](?path=/story/navigation-disclosure-evo-details--docs) will be passed through to `<@item>`, except `open`",
         },
       },
     },

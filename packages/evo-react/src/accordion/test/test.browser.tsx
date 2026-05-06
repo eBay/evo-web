@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
 import { EvoAccordion } from "../accordion";
-import { EvoAccordionDetails } from "../accordion-details";
+import { EvoAccordionItem } from "../accordion-item";
 import {
   EvoAccordionContent,
   EvoAccordionLabel,
@@ -14,18 +14,18 @@ import type { AccordionId, MultipleOpenValue, SingleOpenValue } from "../types";
 function AccordionItems() {
   return (
     <>
-      <EvoAccordionDetails id="one">
+      <EvoAccordionItem id="one">
         <EvoAccordionSummary>
           <EvoAccordionLabel>Item 1</EvoAccordionLabel>
         </EvoAccordionSummary>
         <EvoAccordionContent>Content 1</EvoAccordionContent>
-      </EvoAccordionDetails>
-      <EvoAccordionDetails id="two">
+      </EvoAccordionItem>
+      <EvoAccordionItem id="two">
         <EvoAccordionSummary>
           <EvoAccordionLabel>Item 2</EvoAccordionLabel>
         </EvoAccordionSummary>
         <EvoAccordionContent>Content 2</EvoAccordionContent>
-      </EvoAccordionDetails>
+      </EvoAccordionItem>
     </>
   );
 }
@@ -93,12 +93,12 @@ describe("evo-accordion", () => {
   it("supports localized a11yText", async () => {
     const screen = await render(
       <EvoAccordion a11yText="Akkordeon">
-        <EvoAccordionDetails id="one">
+        <EvoAccordionItem id="one">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Item 1</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>Content 1</EvoAccordionContent>
-        </EvoAccordionDetails>
+        </EvoAccordionItem>
       </EvoAccordion>,
     );
 
@@ -182,12 +182,12 @@ describe("evo-accordion", () => {
   it("supports className on the root list", async () => {
     const screen = await render(
       <EvoAccordion className="custom-class">
-        <EvoAccordionDetails id="1">
+        <EvoAccordionItem id="1">
           <EvoAccordionSummary>
             <EvoAccordionLabel>Item 1</EvoAccordionLabel>
           </EvoAccordionSummary>
           <EvoAccordionContent>Content 1</EvoAccordionContent>
-        </EvoAccordionDetails>
+        </EvoAccordionItem>
       </EvoAccordion>,
     );
 
