@@ -5,6 +5,7 @@ import { EvoButtonCell } from "./button-cell";
 const meta: Meta<typeof EvoButton> = {
   title: "buttons/evo-button",
   component: EvoButton,
+  subcomponents: { EvoButtonCell },
   tags: ["autodocs"],
   parameters: {
     docs: {

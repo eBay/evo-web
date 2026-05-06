@@ -12,6 +12,12 @@ const LOREM =
 const meta: Meta<typeof EvoDetails> = {
   title: "navigation & disclosure/evo-details",
   component: EvoDetails,
+  subcomponents: {
+    EvoDetailsSummary,
+    EvoDetailsLeading,
+    EvoDetailsLabel,
+    EvoDetailsContent,
+  },
   tags: ["autodocs"],
   parameters: {
     docs: {

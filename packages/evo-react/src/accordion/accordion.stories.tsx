@@ -18,6 +18,13 @@ const LOREM =
 const meta: Meta<typeof EvoAccordion> = {
   title: "navigation & disclosure/evo-accordion",
   component: EvoAccordion,
+  subcomponents: {
+    EvoAccordionItem,
+    EvoAccordionSummary,
+    EvoAccordionLeading,
+    EvoAccordionLabel,
+    EvoAccordionContent,
+  },
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -33,6 +40,7 @@ import {
   EvoAccordionItem,
   EvoAccordionSummary,
   EvoAccordionLabel,
+  EvoAccordionContent,
 } from "@evo-web/react/accordion";
 \`\`\`
         `,

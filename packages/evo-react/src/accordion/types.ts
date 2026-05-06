@@ -38,6 +38,7 @@ export type EvoAccordionItemProps = Omit<
 > & {
   id: AccordionId;
   children?: ReactNode;
+  onOpenChange?: (open: boolean) => void;
 };
 
 export type EvoAccordionSummaryProps = EvoDetailsSummaryProps;
