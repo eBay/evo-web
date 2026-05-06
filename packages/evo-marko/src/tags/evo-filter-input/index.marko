@@ -1,4 +1,4 @@
-import type { Input as TextboxInput } from "../evo-textbox/index.marko";
+import type { Input as TextboxInput } from "<evo-input>";
 export interface Input extends Omit<TextboxInput, "size"> {
     size?: "large" | "small";
     a11yClearButtonText?: string;
@@ -16,7 +16,7 @@ export interface Input extends Omit<TextboxInput, "size"> {
 }=input>
 
 <span class=["filter-input", size && `filter-input--${size}`, inputClass]>
-    <evo-textbox
+    <evo-input
         ...htmlInput
         fluid
         type="search"
@@ -39,5 +39,5 @@ export interface Input extends Omit<TextboxInput, "size"> {
                 </evo-icon-button>
             </if>
         </@postfixIcon>
-    </evo-textbox>
+    </evo-input>
 </span>

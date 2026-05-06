@@ -1,0 +1,109 @@
+export interface Input extends Marko.HTML.Input {
+    inputSize?: "regular" | "large";
+    fluid?: boolean;
+    floatingLabel?: string;
+    floatingLabelStatic?: boolean;
+    prefixIcon?: Marko.AttrTag<{ content: Marko.Body }>;
+    prefixText?: Marko.AttrTag<Marko.HTML.Span>;
+    postfixText?: Marko.AttrTag<Marko.HTML.Span>;
+    postfixIcon?: Marko.AttrTag<
+        Marko.HTML.Button & {
+            a11yText?: string;
+        }
+    >;
+    invalid?: boolean;
+}
+
+<const/{
+    class: inputClass,
+    disabled,
+    floatingLabel,
+    floatingLabelStatic,
+    fluid,
+    id,
+    inputSize,
+    invalid,
+    postfixIcon,
+    prefixIcon,
+    style,
+    placeholder,
+    prefixText,
+    postfixText,
+    readonly,
+    onBlur,
+    onFocus,
+    ...htmlInput
+}=input>
+
+<id/prefixId>
+<id/postfixId>
+<id/inputId=id>
+<let/focused=false>
+<let/value:=input.value>
+
+<evo-floating-label|{ showPlaceholder }|
+    floatingLabel=floatingLabel
+    inputSize=inputSize
+    alwaysUp=floatingLabelStatic
+    htmlFor=inputId
+    disabled=disabled
+    invalid=invalid
+    fluid=fluid
+    value=value
+    focused=focused>
+    <${fluid ? "div" : "span"}
+        style=style
+        class=[
+            "textbox" /** start remove after `:has` support */,
+            disabled && "textbox--disabled",
+            invalid && "textbox--invalid",
+            readonly &&
+                "textbox--readonly" /** end remove after `:has` support */,
+            inputSize === "large" && "textbox--large",
+            fluid && "textbox--fluid",
+            inputClass,
+        ]>
+        <if=prefixIcon>
+            <${prefixIcon}/>
+        </if>
+        <if=prefixText>
+            <span ...prefixText id=prefixId/>
+        </if>
+        <input
+            ...htmlInput
+            aria-describedby=(
+                [prefixText && prefixId, postfixText && postfixId]
+                    .filter(Boolean)
+                    .join(" ") || undefined
+            )
+            onBlur(e, target) {
+                focused = false;
+                onBlur && onBlur(e, target);
+            }
+            onFocus(e, target) {
+                focused = true;
+                (onFocus || null)?.(e, target);
+            }
+            id=inputId
+            class="textbox__control"
+            placeholder=showPlaceholder && placeholder
+            value:=value
+            disabled=disabled
+            aria-invalid=invalid && "true"
+            readonly=readonly>
+        <if=postfixText>
+            <span ...postfixText id=postfixId/>
+        </if>
+        <if=postfixIcon>
+            <const/{ a11yText, ...postfixIconInput }=postfixIcon>
+            <${a11yText && "button"}
+                ...postfixIconInput
+                aria-label=a11yText
+                class=["icon-btn", "icon-btn--transparent", postfixIcon.class]
+                type="button"
+                disabled=disabled>
+                <${postfixIcon}/>
+            </>
+        </if>
+    </>
+</evo-floating-label>

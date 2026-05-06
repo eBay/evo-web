@@ -1,6 +1,7 @@
 export interface Input {
-    id?: Marko.HTMLAttributes["id"]
+    htmlFor?: Marko.HTMLAttributes["id"]
     inputSize?: "regular" | "large";
+    alwaysUp?: boolean;
     fluid?: boolean;
     opaqueLabel?: boolean;
     floatingLabel?: string;
@@ -11,13 +12,14 @@ export interface Input {
     autocorrect?: Marko.HTML.TextArea["autocorrect"];
     cols?: Marko.HTML.TextArea["cols"];
     rows?: Marko.HTML.TextArea["rows"];
-    content?: Marko.Body
+    content?: Marko.Body<[{ showPlaceholder: boolean }]>
 }
 
 <const/{
     disabled,
     floatingLabel,
-    id,
+    htmlFor,
+    alwaysUp,
     inputSize,
     focused,
     value,
@@ -27,9 +29,8 @@ export interface Input {
     content,
 }=input>
 
-<id/textboxId=id>
 <const/defaultTag=(fluid ? "div" : "span")>
-<const/floatingInline=!(value || focused)>
+<const/isFloating=value || focused || alwaysUp>
 
 <${floatingLabel && defaultTag} class=[
     "floating-label",
@@ -38,16 +39,16 @@ export interface Input {
 ]>
     <if=floatingLabel>
         <label
-            for=textboxId
+            for=htmlFor
             class=[
                 "floating-label__label floating-label__label--animate",
                 disabled && "floating-label__label--disabled",
                 invalid && "floating-label__label--invalid",
-                floatingInline && "floating-label__label--inline",
-                !floatingInline && "floating-label__label--focus",
+                !isFloating && "floating-label__label--inline",
+                isFloating && "floating-label__label--focus",
             ]>
             ${floatingLabel}
         </label>
     </if>
-    <${content}/>
+    <${content} showPlaceholder=!floatingLabel || isFloating/>
  </>

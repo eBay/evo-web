@@ -48,9 +48,9 @@ export default {
       description:
         "Required. Text to show when input is empty. This is not a label",
     },
-    ["<evo-textbox> attributes" as any]: {
+    ["<evo-input> attributes" as any]: {
       description:
-        "All attributes and event handlers from [the `<evo-textbox>` tag](?path=/docs/form-input-evo-textbox--docs) will be passed through",
+        "All attributes and event handlers from [the `<evo-input>` tag](?path=/docs/form-input-evo-input--docs) will be passed through",
     },
   },
 } satisfies Meta<Input>;
