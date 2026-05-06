@@ -27,7 +27,7 @@ import {
   EvoDetailsLeading,
   EvoDetailsLabel,
   EvoDetailsContent,
-} from "@evo-web/react";
+} from "@evo-web/react/details";
 
 <EvoDetails size="small" alignment="center" onToggle={handler}>
   <EvoDetailsSummary>
