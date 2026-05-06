@@ -44,7 +44,6 @@ span[role="region"].section-notice {
 }
 .section-notice button.fake-link {
     font-size: var(--font-size-body);
-    font-weight: 700;
 }
 .section-notice a,
 .section-notice button.fake-link,
@@ -56,7 +55,6 @@ span[role="region"].section-notice {
 }
 .section-notice a {
     font-size: var(--font-size-body);
-    font-weight: 700;
 }
 .section-notice a:hover {
     color: var(
@@ -64,9 +62,11 @@ span[role="region"].section-notice {
         var(--color-foreground-primary)
     );
 }
-.section-notice__cta a,
-.section-notice__cta button.fake-link {
-    font-weight: 400;
+.section-notice__footer a,
+.section-notice__footer button.fake-link,
+.section-notice__main a,
+.section-notice__main button.fake-link {
+    font-weight: 700;
 }
 .section-notice .icon {
     vertical-align: top;

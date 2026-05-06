@@ -27,7 +27,6 @@ span[role="region"].page-notice {
     font-weight: 400;
     margin: 1px 0 0;
 }
-.page-notice a,
 .page-notice__title:not(:only-child) {
     font-weight: 700;
 }
@@ -47,14 +46,15 @@ span[role="region"].page-notice {
 }
 .page-notice button.fake-link {
     font-size: var(--font-size-body);
-    font-weight: 700;
 }
 .page-notice button.fake-link:hover {
     color: var(--page-notice-color, var(--color-foreground-on-inverse));
 }
-.page-notice__cta a,
-.page-notice__cta button.fake-link {
-    font-weight: 400;
+.page-notice__footer a,
+.page-notice__footer button.fake-link,
+.page-notice__main a,
+.page-notice__main button.fake-link {
+    font-weight: 700;
 }
 .page-notice a:focus-visible,
 .page-notice button.fake-link:focus-visible {
