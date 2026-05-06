@@ -21,37 +21,45 @@ import {
 ```tsx
 import {
   EvoAccordion,
-  EvoAccordionItem,
+  EvoAccordionDetails,
   EvoAccordionSummary,
   EvoAccordionLabel,
   EvoAccordionContent,
 } from "@evo-web/react/accordion";
 
-<EvoAccordion open="0" onOpenChange={handler}>
-  <EvoAccordionItem id="0">
+{
+  /* No autoCollapse → multi-open mode */
+}
+<EvoAccordion defaultOpen={[]} onOpenChange={handler}>
+  <EvoAccordionDetails id="0">
     <EvoAccordionSummary>
       <EvoAccordionLabel>Item 1</EvoAccordionLabel>
     </EvoAccordionSummary>
     <EvoAccordionContent>Content 1</EvoAccordionContent>
-  </EvoAccordionItem>
-  <EvoAccordionItem id="1">
+  </EvoAccordionDetails>
+  <EvoAccordionDetails id="1">
     <EvoAccordionSummary>
       <EvoAccordionLabel>Item 2</EvoAccordionLabel>
     </EvoAccordionSummary>
     <EvoAccordionContent>Content 2</EvoAccordionContent>
-  </EvoAccordionItem>
+  </EvoAccordionDetails>
 </EvoAccordion>;
 ```
 
 **Prop changes:**
 
-| ebayui-core-react                   | evo-react                                 | Notes                                                                                                                           |
-| ----------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `<EbayDetails>` children            | `<EvoAccordionItem id>` sub-components    | Replace each child details with an accordion item and use string ids from the original child order (`"0"`, `"1"`, …) by default |
-| `autoCollapse`                      | `open` / `defaultOpen` as a single id     | Single `string` open value means one item may be open at a time                                                                 |
-| no equivalent                       | `open` / `defaultOpen` as an array of ids | `string[]` open value enables multiple open items                                                                               |
-| `onToggle(event, { open, index })`  | `onOpenChange(open)`                      | Callback receives only the new open id/id array, no event                                                                       |
-| `aria-roledescription` default prop | `a11yText`                                | Rename accessible role description prop; default remains `"accordion"`                                                          |
-| `size`                              | `size`                                    | Same values: `"regular" \| "large"`                                                                                             |
+| ebayui-core-react                   | evo-react                                      | Notes                                                                                                                                                                                                  |
+| ----------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `<EbayDetails>` children            | `<EvoAccordionDetails id>` sub-components      | Replace each child details with an accordion details and use string ids from the original child order (`"0"`, `"1"`, …) by default                                                                     |
+| `autoCollapse` present              | `open` / `defaultOpen` as a single string id   | Single `string` (or `undefined`) means one item open at a time. Omit `open`/`defaultOpen` unless an item was explicitly open on load.                                                                  |
+| `autoCollapse` absent               | `defaultOpen={[]}` (or controlled `open={[]}`) | Without `autoCollapse`, the old accordion allowed multiple items open. Use the array form to preserve that behavior. Always set at least `defaultOpen={[]}` so evo-react knows to use multi-open mode. |
+| `onToggle(event, { open, index })`  | `onOpenChange(open)`                           | Callback receives only the new open id or id array, no event                                                                                                                                           |
+| `aria-roledescription` default prop | `a11yText`                                     | Rename accessible role description prop; default remains `"accordion"`                                                                                                                                 |
+| `size`                              | `size`                                         | Same values: `"regular" \| "large"`                                                                                                                                                                    |
 
-**Important:** `open` is for controlled usage and `defaultOpen` is for uncontrolled usage. During migration, use string ids from the original child order (`"0"`, `"1"`, …) by default. If the app already has stable domain string ids, those may be used instead.
+**Important:**
+
+- If `autoCollapse` was **absent**: always use `defaultOpen={[]}` (or `open={[]}` for controlled) to preserve multi-open behavior. Add item ids to the array only if those items were explicitly open on load.
+- If `autoCollapse` was **present**: use the single-string form (`defaultOpen` / `open` as `string | undefined`). Only set a value if an item was explicitly open on load; otherwise omit both props.
+
+**Content wrapping:** Only wrap `EvoAccordionContent` children in a `<p>` tag if the original content was already inside a `<p>`. Do not add paragraph tags that were not there before.
