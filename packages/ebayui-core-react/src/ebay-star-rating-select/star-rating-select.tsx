@@ -44,7 +44,6 @@ const EbayStarRatingSelect: FC<Props> = ({
     }, [value]);
     const handleKeyDown = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i));
             onKeyDown(e, { value: i });
         }
     };
@@ -56,7 +55,6 @@ const EbayStarRatingSelect: FC<Props> = ({
     };
     const handleFocus = (i: number) => (e) => {
         if (!disabled) {
-            setChecked(getValue(i));
             onFocus(e, { value: i });
         }
     };
