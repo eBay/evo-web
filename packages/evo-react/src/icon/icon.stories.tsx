@@ -1042,7 +1042,7 @@ import { EvoIconStarRatingSmall45 } from "./icons/star-rating-small-4-5";
 import { EvoIconStarRatingSmall5 } from "./icons/star-rating-small-5";
 
 const meta: Meta<EvoIconComponentProps> = {
-  title: "Graphics & Icons/EvoIcon",
+  title: "Graphics & Icons/evo-icon",
   tags: ["autodocs"],
   argTypes: {
     a11yText: {

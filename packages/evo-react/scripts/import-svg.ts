@@ -98,10 +98,7 @@ export function ${iconComponentName}(props: EvoIconComponentProps) {
   console.log(`Created ${icons.length} icon components.`);
 
   // Create Storybook stories file
-  const storiesFile = path.resolve(
-    __dirname,
-    "../src/icon/icon.stories.tsx",
-  );
+  const storiesFile = path.resolve(__dirname, "../src/icon/icon.stories.tsx");
 
   const storiesContent = `${fileHeader}\n// @ts-nocheck\n
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -110,7 +107,7 @@ import type { EvoIconComponentProps } from "./icons/types";
 ${icons.map(({ componentName, filePath }) => `import { ${componentName} } from "./icons/${filePath}";`).join("\n")}
 
 const meta: Meta<EvoIconComponentProps> = {
-  title: "Graphics & Icons/EvoIcon",
+  title: "Graphics & Icons/evo-icon",
   tags: ["autodocs"],
   argTypes: {
     a11yText: {
