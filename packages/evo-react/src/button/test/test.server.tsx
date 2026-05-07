@@ -155,7 +155,7 @@ describe("EvoButton SSR", () => {
   it("should render with custom `as` component", () => {
     type CustomLinkProps = React.ComponentProps<"a">;
     const CustomLink = ({ href, children, ...rest }: CustomLinkProps) => (
-      <a data-custom-link href={href} {...rest}>
+      <a data-custom-link="true" href={href} {...rest}>
         {children}
       </a>
     );

@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoButton } from "./button";
 import { EvoButtonCell } from "./button-cell";
+import type { AnchorButtonProps } from "./types";
 
-const meta: Meta<typeof EvoButton> = {
+// Use AnchorButtonProps so `as` (anchor-only prop) is a valid argType key.
+const meta: Meta<AnchorButtonProps> = {
   title: "buttons/evo-button",
   component: EvoButton,
   subcomponents: { EvoButtonCell },

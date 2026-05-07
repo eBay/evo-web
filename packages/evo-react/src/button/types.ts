@@ -31,6 +31,7 @@ export type AnchorButtonProps = ComponentProps<"a"> &
 export type NativeButtonProps = ComponentProps<"button"> &
   BaseButtonProps & {
     href?: never;
+    as?: never;
     onEscape?: (e: KeyboardEvent<HTMLButtonElement>) => void;
   };
 

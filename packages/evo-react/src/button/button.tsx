@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 import type {
   AnchorButtonProps,
+  EvoButtonProps,
   NativeButtonProps,
   Priority,
   Size,
@@ -31,12 +32,12 @@ export function EvoButton(
     onEscape,
     truncate = false,
     href,
-    as: Component = "a",
+    as: _as,
     className: extraClasses,
     borderless,
     fixedHeight,
     ...rest
-  } = props;
+  } = props as EvoButtonProps;
   const classPrefix = href ? "fake-btn" : "btn";
   const priorityStyles: { [key in Priority]: string } = {
     primary: `${classPrefix}--primary`,
@@ -111,6 +112,7 @@ export function EvoButton(
   };
 
   if (href) {
+    const Component = (_as as AnchorButtonProps["as"]) ?? "a";
     return (
       <Component
         {...(rest as React.ComponentProps<"a">)}
