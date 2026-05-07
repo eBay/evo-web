@@ -1,5 +1,5 @@
 ---
-"@evo-web/react": minor
+"@evo-web/react": patch
 ---
 
 Add `EvoBreadcrumbs` component

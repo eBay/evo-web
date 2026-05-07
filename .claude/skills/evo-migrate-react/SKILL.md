@@ -378,3 +378,4 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Story title follows `"category/evo-{name}"` pattern
 - [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
 - [ ] `npm run build -w packages/evo-react` passes
+- [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (migrating an existing component, not adding new functionality)
