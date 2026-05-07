@@ -1,3 +1,4 @@
+import type { AnchorHTMLAttributes } from "react";
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
@@ -109,6 +110,35 @@ describe("evo-breadcrumbs", () => {
 
       const links = screen.baseElement.querySelectorAll("a");
       expect(links[0].textContent).toBe("eBay");
+    });
+  });
+
+  describe("given a link item with an `as` prop", () => {
+    it("renders using the provided component instead of <a>", async () => {
+      function CustomLink({
+        href,
+        children,
+        ...rest
+      }: AnchorHTMLAttributes<HTMLAnchorElement>) {
+        return (
+          <a data-custom-link="true" href={href} {...rest}>
+            {children}
+          </a>
+        );
+      }
+
+      const screen = await render(
+        <EvoBreadcrumbs
+          items={[
+            { href: "https://ebay.com", content: "eBay", as: CustomLink },
+            { content: "Current" },
+          ]}
+        />,
+      );
+
+      const link = screen.baseElement.querySelector("a");
+      expect(link?.getAttribute("data-custom-link")).toBe("true");
+      expect(link?.getAttribute("href")).toBe("https://ebay.com");
     });
   });
 
