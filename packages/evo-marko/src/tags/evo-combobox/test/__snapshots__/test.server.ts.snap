@@ -1,0 +1,187 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-combobox SSR > renders borderless 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control combobox__control--borderless"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders default 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders disabled 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      disabled=""
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders filtering variant 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="list"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Type to filter"
+      role="combobox"
+      type="text"
+    />
+  </span>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders floating label 1`] = `
+"<span
+  class="floating-label"
+>
+  <label
+    class="floating-label__label floating-label__label--animate floating-label__label--inline"
+    for="GENERATED-0"
+  >
+    Option
+  </label>
+  <span
+    class="combobox floating-label"
+  >
+    <span
+      class="combobox__control"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        autocomplete="off"
+        id="GENERATED-0"
+        role="combobox"
+        type="text"
+      />
+    </span>
+  </span>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders fluid 1`] = `
+"<div
+  class="combobox combobox--fluid"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+</div>"
+`;
+
+exports[`evo-combobox SSR > renders with fixed strategy 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders with pre-selected value 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+      value="Basic Offer"
+    />
+  </span>
+</span>"
+`;

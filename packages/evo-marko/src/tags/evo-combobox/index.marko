@@ -1,0 +1,216 @@
+static function filterOptions<T extends { text: string; sticky?: boolean }>(options: Iterable<T>, autocomplete: string, value: unknown) {
+    const list = [...options];
+    if (autocomplete === "list") {
+        const reg = new RegExp(
+            String(value ?? "").trim().replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"),
+            "i",
+        );
+        return list.filter((o) => reg.test(o.text || "") || o.sticky);
+    }
+    return list;
+}
+
+export interface ComboboxOption extends Marko.HTML.Div {
+    text: string;
+    value?: string;
+    sticky?: boolean;
+}
+
+export interface Input
+    extends Omit<
+        Marko.HTML.Input,
+        "type" | "role" | "aria-autocomplete" | "aria-haspopup" | "aria-expanded"
+    > {
+    autocomplete?: "list" | "none";
+    listSelection?: "manual" | "automatic";
+    floatingLabel?: string;
+    borderless?: boolean;
+    fluid?: boolean;
+    strategy?: "fixed" | "absolute";
+    open?: boolean;
+    openChange?: (open: boolean) => void;
+    option?: Marko.AttrTag<ComboboxOption>;
+    button?: Marko.AttrTag<Marko.HTML.Button>;
+}
+
+<const/{
+    class: inputClass,
+    id,
+    disabled,
+    style,
+    borderless,
+    autocomplete = "none",
+    listSelection = "automatic",
+    floatingLabel,
+    strategy,
+    option: options = [],
+    button,
+    fluid,
+    onBlur,
+    onFocus,
+    onKeyDown,
+    placeholder,
+    ...htmlInput
+}=input>
+
+<id/inputId=id>
+<let/value:=input.value>
+<let/open:=input.open>
+<let/activeIndex=(-1)>
+<let/displayValue=(null as string | null)>
+
+<const/visibleOptions=filterOptions(options, autocomplete, value)>
+
+<evo-floating-label|{ showPlaceholder }|
+    floatingLabel=floatingLabel
+    fluid=fluid
+    disabled=disabled
+    htmlFor=inputId
+    value=value
+    focused=open>
+    <${fluid ? "div" : "span"}
+        style=style
+        class=[
+            "combobox",
+            floatingLabel && "floating-label",
+            fluid && "combobox--fluid",
+            open && "combobox--expanded",
+            inputClass,
+        ]
+        onFocusOut(e: FocusEvent, el: HTMLElement) {
+            if (!el.contains(e.relatedTarget as Node)) {
+                open = false;
+                activeIndex = -1;
+            }
+        }>
+        <span class=[
+            "combobox__control",
+            button && "combobox__control--actionable",
+            borderless && "combobox__control--borderless",
+        ]>
+            <input
+                ...htmlInput
+                id=inputId
+                type="text"
+                role="combobox"
+                disabled=disabled
+                value:=value
+                placeholder=showPlaceholder && placeholder
+                autocomplete="off"
+                aria-autocomplete=(autocomplete === "list" ? "list" : "none")
+                aria-haspopup="listbox"
+                aria-expanded=open ? "true" : "false"
+                aria-activedescendant=((open && activeIndex >= 0)
+                    ? `${inputId}-option-${activeIndex}`
+                    : undefined)
+                onFocus(e, target) {
+                    if (input.open !== false) {
+                        open = true;
+                    }
+                    onFocus && onFocus(e, target);
+                }
+                onClick() {
+                    open = true;
+                }
+                onBlur(e, target) {
+                    if (displayValue !== null) {
+                        if (listSelection === "automatic" && activeIndex >= 0) {
+                            value = displayValue;
+                        } else {
+                            target.value = String(value ?? "");
+                        }
+                        displayValue = null;
+                    }
+                    onBlur && onBlur(e, target);
+                }
+                onInput(e, target) {
+                    value = target.value;
+                    displayValue = null;
+                    activeIndex = -1;
+                    if (input.open !== false) open = true;
+                }
+                onKeyDown(e: KeyboardEvent, target: HTMLInputElement) {
+                    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+                        e.preventDefault();
+                        if (!open) {
+                            open = true;
+                        } else if (visibleOptions.length > 0) {
+                            const size = visibleOptions.length;
+                            const direction = e.key === "ArrowDown" ? 1 : -1;
+                            // cycle: -1 (none) → 0 → 1 → ... → size-1 → -1 → ...
+                            // shift by 1 so -1 maps to 0 in modular space
+                            activeIndex = ((activeIndex + 1 + direction + size + 1) % (size + 1)) - 1;
+                            if (listSelection === "automatic") {
+                                const text = activeIndex >= 0 ? visibleOptions[activeIndex].text : "";
+                                displayValue = text || null;
+                                target.value = text || String(value ?? "");
+                            }
+                            document.getElementById(`${inputId}-option-${activeIndex}`)?.scrollIntoView({ block: "nearest" });
+                        }
+                    } else if (e.key === "Enter") {
+                        if (open && activeIndex >= 0) {
+                            e.preventDefault();
+                            value = displayValue ?? visibleOptions[activeIndex].text;
+                            displayValue = null;
+                        }
+                        open = false;
+                    } else if (e.key === "Escape") {
+                        open = false;
+                        activeIndex = -1;
+                    }
+                    onKeyDown && onKeyDown(e, target);
+                }>
+            <if=button>
+                <button
+                    ...button
+                    class=["icon-btn", "icon-btn--transparent", button.class]
+                    type="button"
+                    onMouseDown(e) {
+                        // prevent input blur when clicking the action button
+                        e.preventDefault();
+                    }/>
+            </if>
+        </span>
+        <if=open>
+            <div
+                role="listbox"
+                class=[
+                    "combobox__listbox",
+                    "combobox__listbox--set-position",
+                    strategy === "fixed" && "combobox__listbox--fixed",
+                ]>
+                <for|option, i| of=visibleOptions>
+                    <const/{
+                        text,
+                        value: optionValue,
+                        class: optionClass,
+                        ...htmlOption
+                    }=option>
+                    <div
+                        ...htmlOption
+                        id=`${inputId}-option-${i}`
+                        role="option"
+                        class=[
+                            "combobox__option",
+                            i === activeIndex && "combobox__option--active",
+                            optionClass,
+                        ]
+                        tabindex="-1"
+                        aria-selected=((optionValue || text) === value) && "true"
+                        onMouseDown(e) {
+                            // prevent input blur before click fires
+                            e.preventDefault();
+                        }
+                        onClick() {
+                            value = text;
+                            displayValue = null;
+                            activeIndex = i;
+                            open = false;
+                        }>
+                        ${text}
+                    </div>
+                </for>
+            </div>
+        </if>
+    </>
+</evo-floating-label>

@@ -99,6 +99,14 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 
 Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where they are first used, not grouped at the top. Exception is variables needed in multiple distant locations.
 
+**Marko 6 extractor scope bug:** `value?.toString() ?? ""` (optional chain + nullish coalesce) inside a native-tag event handler confuses the Marko language tools extractor and causes all `<let>` assignments in that handler to be flagged as TS2588 "cannot assign to const". Use `String(value ?? "")` instead.
+
+**Marko 6 pass-through event handlers:** Call destructured handlers with `onFoo && onFoo(e, el)`. Do NOT use `(onFoo || null)?.(e, el)` — Marko handler types are not plain functions so optional-call syntax fails type checking.
+
+**Marko 6 event handler types:** Don't annotate `e`/`el` on native HTML tags — types are inferred. `onClick(e) {}` not `onClick(e: MouseEvent) {}`. Exception: dynamic tags (`<${tag}>`) have no type info and require explicit annotations.
+
+**Marko 6 AttrTag content:** When already spreading an AttrTag onto a native element with no other body content, use self-closing — `<button ...button/>`. Never `<button ...button><${button.content}/></button>`.
+
 **React Package Differences:**
 
 - `ebayui-core-react`: Requires `React.forwardRef` wrapper
