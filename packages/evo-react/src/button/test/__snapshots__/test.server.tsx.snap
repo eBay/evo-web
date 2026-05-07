@@ -74,6 +74,8 @@ exports[`EvoButton SSR > should render with ButtonCell 1`] = `"<button class="bt
 
 exports[`EvoButton SSR > should render with aria-label 1`] = `"<button aria-label="Submit form" class="btn btn--secondary">Submit</button>"`;
 
+exports[`EvoButton SSR > should render with custom \`as\` component 1`] = `"<a data-custom-link="true" href="/home" class="fake-btn fake-btn--primary">Custom Link</a>"`;
+
 exports[`EvoButton SSR > should render with custom className 1`] = `"<button class="btn custom-class btn--secondary">Button</button>"`;
 
 exports[`EvoButton SSR > should render with data attributes 1`] = `"<button data-testid="button" class="btn btn--secondary">Button</button>"`;

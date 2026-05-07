@@ -80,6 +80,11 @@ import { EvoButton } from "@evo-web/react/button";
       control: "text",
       description: "Link URL (renders as anchor)",
     },
+    as: {
+      control: false,
+      description:
+        "Override the anchor element with a custom component (e.g. React Router's `Link`). Only applies when `href` is provided.",
+    },
     children: {
       control: "text",
       description: "Button text content",

@@ -133,6 +133,42 @@ describe("evo-button", () => {
     });
   });
 
+  describe("as prop", () => {
+    it("renders with a custom component when `as` is provided", async () => {
+      type CustomLinkProps = React.ComponentProps<"a">;
+      const CustomLink = ({ href, children, ...rest }: CustomLinkProps) => (
+        <a data-custom-link="true" href={href} {...rest}>
+          {children}
+        </a>
+      );
+
+      const screen = await render(
+        <EvoButton href="/home" as={CustomLink}>
+          Custom Link
+        </EvoButton>,
+      );
+
+      const link = screen.getByRole("link");
+      await expect.element(link).toHaveAttribute("data-custom-link", "true");
+      await expect.element(link).toHaveAttribute("href", "/home");
+    });
+
+    it("applies all button classes when `as` is provided", async () => {
+      type CustomLinkProps = React.ComponentProps<"a">;
+      const CustomLink = (props: CustomLinkProps) => <a {...props} />;
+
+      const screen = await render(
+        <EvoButton href="/home" as={CustomLink} priority="primary">
+          Custom Link
+        </EvoButton>,
+      );
+
+      const link = screen.getByRole("link");
+      await expect.element(link).toHaveClass("fake-btn");
+      await expect.element(link).toHaveClass("fake-btn--primary");
+    });
+  });
+
   describe("anchor element behavior", () => {
     it("renders as link when href is provided", async () => {
       const screen = await render(

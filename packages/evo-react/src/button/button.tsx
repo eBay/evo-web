@@ -31,6 +31,7 @@ export function EvoButton(
     onEscape,
     truncate = false,
     href,
+    as: Component = "a",
     className: extraClasses,
     borderless,
     fixedHeight,
@@ -111,7 +112,7 @@ export function EvoButton(
 
   if (href) {
     return (
-      <a
+      <Component
         {...(rest as React.ComponentProps<"a">)}
         className={className}
         href={disabled ? undefined : href}
@@ -119,7 +120,7 @@ export function EvoButton(
         aria-live={ariaLive}
       >
         {bodyContent}
-      </a>
+      </Component>
     );
   }
 
