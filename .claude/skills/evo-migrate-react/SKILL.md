@@ -293,6 +293,7 @@ describe("EvoButton SSR", () => {
 - **One story per component** unless the component tree itself must change between variations (e.g. different sub-components, optional children). Visual and prop variations (size, alignment, disabled, open…) must be handled through `args` and `argTypes` controls — not separate stories.
 - `title` must mirror the ebayui-core-react story title with `ebay` replaced by `evo`.
 - Description format: one-sentence summary followed by a `## Usage` section with the import snippet.
+- **`subcomponents`**: If the component has sub-components (e.g. `EvoAvatarImage` alongside `EvoAvatar`), declare them in the meta using the `subcomponents` field. This causes Storybook's autodocs to render a props table for each sub-component as a separate tab.
 
 ```tsx
 import type { Meta, StoryObj } from "@storybook/react-vite";
@@ -301,6 +302,8 @@ import { EvoButton } from "./button";
 const meta: Meta<typeof EvoButton> = {
   title: "buttons/evo-button",
   component: EvoButton,
+  // Include any exported sub-components so autodocs generates their prop tables:
+  // subcomponents: { EvoButtonCell },
   tags: ["autodocs"],
   parameters: {
     docs: {
