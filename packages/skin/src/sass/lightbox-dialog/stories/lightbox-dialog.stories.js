@@ -409,7 +409,7 @@ export const narrow = () => `
         <div class="lightbox-dialog__header">
             <h2 id="lightbox-dialog-title">Dialog Lightbox</h2>
             <button class="icon-btn lightbox-dialog__close" type="button" aria-label="Close Dialog">
-                <svg class="icon icon--close-16" aria-hidden="true">
+                <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
                 </svg>
             </button>
@@ -531,7 +531,7 @@ export const baseWithHeaderOverflow = () => `
         <div class="lightbox-dialog__header">
             <h2 id="lightbox-dialog-title">Dialog Lightbox with a title that is so long it wraps across multiple lines. No dialog header should ever be this long.</h2>
             <button class="icon-btn lightbox-dialog__close" type="button" aria-label="Close Dialog">
-                <svg class="icon icon--close-16" aria-hidden="true">
+                <svg class="icon icon--16" aria-hidden="true">
                     <use href="#icon-close-16"></use>
                 </svg>
             </button>
