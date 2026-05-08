@@ -1,7 +1,6 @@
-import type { ComponentProps } from "react";
 import { useId } from "react";
 import classNames from "classnames";
-import type { EvoBreadcrumbItem, EvoBreadcrumbsProps } from "./types";
+import type { AnchorItem, ButtonItem, EvoBreadcrumbsProps } from "./types";
 import { EvoIconChevronRight12 } from "../icon/icons/chevron-right-12";
 
 import "@ebay/skin/breadcrumbs.mjs";
@@ -11,22 +10,16 @@ function BreadcrumbLink({
   item,
   isLast,
 }: {
-  item: EvoBreadcrumbItem;
+  item: AnchorItem;
   isLast: boolean;
 }) {
-  const {
-    content,
-    as: Component = "a",
-    href,
-    ...rest
-  } = item as Extract<EvoBreadcrumbItem, { href: string }>;
-  const ariaCurrent = isLast ? ("location" as const) : undefined;
+  const { content, as: Component = "a", href, ...rest } = item;
 
   return (
     <Component
-      {...(rest as ComponentProps<"a">)}
+      {...rest}
       href={href}
-      aria-current={ariaCurrent}
+      aria-current={isLast ? "location" : undefined}
     >
       {content}
     </Component>
@@ -37,19 +30,13 @@ function BreadcrumbButton({
   item,
   isLast,
 }: {
-  item: EvoBreadcrumbItem;
+  item: ButtonItem;
   isLast: boolean;
 }) {
-  const { content, ...rest } = item as Extract<
-    EvoBreadcrumbItem,
-    { href?: never }
-  >;
+  const { content, ...rest } = item;
 
   return (
-    <button
-      {...(rest as ComponentProps<"button">)}
-      aria-current={isLast ? "location" : undefined}
-    >
+    <button {...rest} aria-current={isLast ? "location" : undefined}>
       {content}
     </button>
   );

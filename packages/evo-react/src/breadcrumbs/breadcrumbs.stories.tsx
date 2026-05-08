@@ -9,7 +9,7 @@ const meta: Meta<typeof EvoBreadcrumbs> = {
     docs: {
       description: {
         component: `
-A breadcrumb navigation component that renders a list of links or buttons, with the last item automatically marked as the current page via \`aria-current="location"\`.
+A breadcrumb navigation component that renders a list of hierarchical links or buttons, displaying the path of the current resource.
 
 ## Usage
 

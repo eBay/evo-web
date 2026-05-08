@@ -1,2 +1,5 @@
 export { EvoBreadcrumbs } from "./breadcrumbs";
-export type { EvoBreadcrumbsProps, EvoBreadcrumbItem } from "./types";
+export type {
+  EvoBreadcrumbsProps,
+  BreadcrumbItem as EvoBreadcrumbItem,
+} from "./types";
