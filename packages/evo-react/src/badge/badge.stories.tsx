@@ -48,23 +48,4 @@ export default meta;
 
 type Story = StoryObj<typeof EvoBadge>;
 
-export const Default: Story = {
-  args: {
-    number: 5,
-    a11yText: "5 unread items",
-  },
-};
-
-export const LargeNumber: Story = {
-  args: {
-    number: 120,
-    a11yText: "120 unread items",
-  },
-};
-
-export const Zero: Story = {
-  args: {
-    number: 0,
-    a11yText: "0 unread items",
-  },
-};
+export const Default: Story = {};
