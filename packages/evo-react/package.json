@@ -33,8 +33,8 @@
   ],
   "scripts": {
     "build": "npm run type:check && npm run test && vite build",
-    "build:storybook": "storybook build -o ./_site/evo-react/$(git branch --show-current)",
-    "deploy": "exit 0",
+    "build:storybook": "storybook build -o ./_site",
+    "deploy": "npm run build:storybook",
     "format": "eslint . --fix && prettier . --write --log-level=warn",
     "lint": "eslint . && prettier . --check --log-level=warn",
     "release": "npm run build",
