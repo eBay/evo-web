@@ -59,7 +59,7 @@ packages/evo-react/src/{name}/
 
 ## Documentation
 
-[Storybook](https://opensource.ebay.com/evo-web/react/main/?path=/docs/buttons-evo-button--documentation)
+[Storybook](https://opensource.ebay.com/evo-web/react/?path=/docs/buttons-evo-button--documentation)
 ```
 
 ---

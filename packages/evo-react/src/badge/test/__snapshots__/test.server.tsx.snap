@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoBadge SSR > renders defaults 1`] = `"<span class="badge" aria-label="5 unread items" role="img">5</span>"`;
+
+exports[`EvoBadge SSR > renders with a custom className 1`] = `"<span class="badge custom-class" aria-label="5 unread items" role="img">5</span>"`;
+
+exports[`EvoBadge SSR > renders with additional html attributes 1`] = `"<span data-testid="my-badge" class="badge" aria-label="5 unread items" role="img">5</span>"`;
+
+exports[`EvoBadge SSR > renders with null a11yText (no aria-label) 1`] = `"<span class="badge">5</span>"`;
+
+exports[`EvoBadge SSR > renders with type=icon 1`] = `"<span class="badge">5</span>"`;
+
+exports[`EvoBadge SSR > renders with type=menu 1`] = `"<span class="badge">5</span>"`;
+
+exports[`EvoBadge SSR > truncates numbers greater than 99 1`] = `"<span class="badge" aria-label="99+ unread items" role="img">99+</span>"`;
