@@ -1,5 +1,5 @@
 ---
-"@ebay/ebayui-core-react": patch
+"@ebay/ui-core-react": patch
 ---
 
 fix(ebay-star-rating-select): do not select star on focus
