@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoButton } from "./button";
 import { EvoButtonCell } from "./button-cell";
+import type { AnchorButtonProps } from "./types";
+import { ComponentProps } from "react";
 
-const meta: Meta<typeof EvoButton> = {
+// Use AnchorButtonProps so `as` (anchor-only prop) is a valid argType key.
+const meta: Meta<AnchorButtonProps> = {
   title: "buttons/evo-button",
   component: EvoButton,
   subcomponents: { EvoButtonCell },
@@ -80,6 +83,11 @@ import { EvoButton } from "@evo-web/react/button";
       control: "text",
       description: "Link URL (renders as anchor)",
     },
+    as: {
+      control: false,
+      description:
+        "Override the anchor element with a custom component (e.g. React Router's `Link`). Only applies when `href` is provided.",
+    },
     children: {
       control: "text",
       description: "Button text content",
@@ -99,6 +107,52 @@ type Story = StoryObj<typeof EvoButton>;
 export const Default: Story = {
   args: {
     children: "Button",
+  },
+};
+
+function Link({ to, ...rest }: ComponentProps<"a"> & { to?: string }) {
+  return (
+    <a
+      data-custom-link="true"
+      {...rest}
+      href={to}
+      onClick={(event) => {
+        event.preventDefault();
+        alert("client side navigation");
+      }}
+    />
+  );
+}
+
+export const WithCustomLinkComponent: Story = {
+  render: (args) => {
+    return (
+      <EvoButton
+        {...(args as unknown as AnchorButtonProps)}
+        href="/home"
+        as={({ href, ...rest }) => <Link {...rest} to={href} />}
+        priority="primary"
+      >
+        Click me
+      </EvoButton>
+    );
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: `
+Pass a custom component via the \`as\` prop to replace the native \`<a>\`. Only applies when \`href\` is set. Here we simulate React Router\'s \`<Link to="/home">\`
+
+\`\`\`tsx
+import { Link, href } from "react-router";
+
+<EvoButton
+  href={href("/home")}
+  as=(({ href, ...rest }) => <Link {...rest} to={href} />)
+\`\`\`
+`,
+      },
+    },
   },
 };
 

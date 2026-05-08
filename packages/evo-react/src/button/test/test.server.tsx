@@ -152,6 +152,23 @@ describe("EvoButton SSR", () => {
     ).toMatchSnapshot();
   });
 
+  it("should render with custom `as` component", () => {
+    type CustomLinkProps = React.ComponentProps<"a">;
+    const CustomLink = ({ href, children, ...rest }: CustomLinkProps) => (
+      <a data-custom-link="true" href={href} {...rest}>
+        {children}
+      </a>
+    );
+
+    expect(
+      renderToString(
+        <EvoButton href="/home" as={CustomLink} priority="primary">
+          Custom Link
+        </EvoButton>,
+      ),
+    ).toMatchSnapshot();
+  });
+
   it("should render disabled link without href", () => {
     expect(
       renderToString(

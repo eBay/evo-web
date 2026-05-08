@@ -1,4 +1,4 @@
-import type { ComponentProps, KeyboardEvent } from "react";
+import type { ComponentProps, ComponentType, KeyboardEvent } from "react";
 
 export type Priority = "primary" | "secondary" | "tertiary" | "none";
 export type Variant = "standard" | "destructive" | "form";
@@ -23,6 +23,7 @@ type BaseButtonProps = {
 export type AnchorButtonProps = ComponentProps<"a"> &
   BaseButtonProps & {
     href: string;
+    as?: ComponentType<ComponentProps<"a">>;
     onEscape?: (e: KeyboardEvent<HTMLAnchorElement>) => void;
     disabled?: boolean;
   };
@@ -30,6 +31,7 @@ export type AnchorButtonProps = ComponentProps<"a"> &
 export type NativeButtonProps = ComponentProps<"button"> &
   BaseButtonProps & {
     href?: never;
+    as?: never;
     onEscape?: (e: KeyboardEvent<HTMLButtonElement>) => void;
   };
 
