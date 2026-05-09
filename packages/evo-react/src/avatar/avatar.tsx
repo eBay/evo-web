@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import type { EvoAvatarProps } from "./types";
-import { AvatarContext } from "./context";
+import { AvatarProvider } from "./context";
 import { getColorForText, isFit } from "./utils";
 import { EvoIconAvatarSignedOut } from "../icon/icons/avatar-signed-out";
 import "@ebay/skin/avatar.mjs";
@@ -21,7 +21,7 @@ export function EvoAvatar({
   );
 
   return (
-    <AvatarContext value={{ setImagePlacement }}>
+    <AvatarProvider setImagePlacement={setImagePlacement}>
       <div
         {...rest}
         role="img"
@@ -36,6 +36,6 @@ export function EvoAvatar({
       >
         {children || username?.charAt(0).toUpperCase() || <EvoIconAvatarSignedOut />}
       </div>
-    </AvatarContext>
+    </AvatarProvider>
   );
 }

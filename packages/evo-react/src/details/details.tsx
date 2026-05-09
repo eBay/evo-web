@@ -1,7 +1,7 @@
 import type { SyntheticEvent } from "react";
 import classNames from "classnames";
 import type { EvoDetailsProps } from "./types";
-import { DetailsContext } from "./context";
+import { DetailsProvider } from "./context";
 import "@ebay/skin/details.mjs";
 
 export function EvoDetails({
@@ -20,7 +20,7 @@ export function EvoDetails({
     });
 
   return (
-    <DetailsContext value={{ size, alignment }}>
+    <DetailsProvider size={size} alignment={alignment}>
       <details
         open={open}
         onToggle={handleToggle}
@@ -29,6 +29,6 @@ export function EvoDetails({
       >
         {children}
       </details>
-    </DetailsContext>
+    </DetailsProvider>
   );
 }
