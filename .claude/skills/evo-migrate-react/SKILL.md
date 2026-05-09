@@ -192,6 +192,40 @@ export function EvoButton({ a11yText, ...rest }: EvoButtonProps) {
 
 3. If evo-marko uses a different name, or the pattern is unclear, **stop and ask** before proceeding.
 
+### Use `use()` instead of `useContext()`
+
+Always consume React context with the `use()` hook from React 19, never `useContext`:
+
+```tsx
+// ✅ evo-react
+import { use } from "react";
+const value = use(FooContext);
+
+// ❌ do NOT use
+import { useContext } from "react";
+const value = useContext(FooContext);
+```
+
+### Context provider pattern — always use a dedicated Provider component
+
+Never pass an inline object literal to a context `value` prop. Instead, define a `<XxxProvider>` component in `context.tsx` that accepts each value as a named prop and memos the object internally:
+
+```tsx
+// ✅ evo-react — context.tsx
+export function FooProvider({ size, onToggle, children }: FooProviderProps) {
+  const value = useMemo(() => ({ size, onToggle }), [size, onToggle]);
+  return <FooContext value={value}>{children}</FooContext>;
+}
+
+// ✅ evo-react — foo.tsx
+<FooProvider size={size} onToggle={onToggle}>
+
+// ❌ do NOT inline the object
+<FooContext value={{ size, onToggle }}>
+```
+
+This keeps memoization out of the component file and prevents unnecessary re-renders of all context consumers.
+
 ### Never use `React.Children` APIs
 
 Do **not** use `Children.map`, `Children.toArray`, `findComponent`, `filterComponent`, or any child-scanning pattern.
