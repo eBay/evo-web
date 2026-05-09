@@ -256,23 +256,6 @@ If the ebayui-core-react component uses children composition (e.g. finding a sub
 
 Do not guess — get alignment before migrating this pattern.
 
-### Use `use()` instead of `useContext()`
-
-`@evo-web/react` targets React 19. Use the `use()` hook to consume context instead of `useContext()`:
-
-```ts
-// ✅ evo-react
-import { createContext, use } from "react";
-
-export function useMyContext() {
-  return use(MyContext);
-}
-
-// ❌ do NOT use
-import { useContext } from "react";
-return useContext(MyContext);
-```
-
 ---
 
 ## Types
