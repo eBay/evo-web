@@ -1,4 +1,5 @@
-import { createContext, use } from "react";
+import { createContext, use, useMemo } from "react";
+import type { ReactNode } from "react";
 import type { AccordionId, OpenValue } from "./types";
 
 export type AccordionContextValue = {
@@ -21,4 +22,21 @@ export function useAccordionContext() {
   }
 
   return context;
+}
+
+type AccordionProviderProps = AccordionContextValue & {
+  children: ReactNode;
+};
+
+export function AccordionProvider({
+  open,
+  isControlled,
+  onItemToggle,
+  children,
+}: AccordionProviderProps) {
+  const value = useMemo(
+    () => ({ open, isControlled, onItemToggle }),
+    [open, isControlled, onItemToggle],
+  );
+  return <AccordionContext value={value}>{children}</AccordionContext>;
 }

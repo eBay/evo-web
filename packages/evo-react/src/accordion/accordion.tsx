@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useCallback, useState } from "react";
 import type { JSX } from "react";
-import { AccordionContext } from "./context";
+import { AccordionProvider } from "./context";
 import type {
   AccordionId,
   EvoAccordionProps,
@@ -77,7 +77,7 @@ export function EvoAccordion(props: EvoAccordionProps) {
   }, [currentOpen, isControlled, onOpenChange]);
 
   return (
-    <AccordionContext value={{ open: currentOpen, isControlled, onItemToggle }}>
+    <AccordionProvider open={currentOpen} isControlled={isControlled} onItemToggle={onItemToggle}>
       <ul
         {...rest}
         aria-roledescription={a11yText}
@@ -90,6 +90,6 @@ export function EvoAccordion(props: EvoAccordionProps) {
       >
         {children}
       </ul>
-    </AccordionContext>
+    </AccordionProvider>
   );
 }
