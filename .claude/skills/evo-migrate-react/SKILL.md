@@ -42,7 +42,7 @@ packages/evo-react/src/{name}/
   {name}.tsx                ← main component
   {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
   types.ts                  ← all exported types
-  context.ts                ← React context + hook (only if component uses context)
+  context.ts                ← React context + accessor hook (only if component uses context)
   README.md                 ← component name + Documentation section with Storybook link only
   {name}.stories.tsx        ← Storybook stories (co-located, NOT in __tests__/)
   test/
@@ -85,9 +85,16 @@ The only time `import React from "react"` is acceptable is when you need the nam
 
 ### Named function declarations — no `FC`, no arrow function components
 
+Destructure props directly in the function signature. Do not assign to a `props` variable and destructure inside the body:
+
 ```tsx
 // ✅ evo-react
-export function EvoButton(props: NativeButtonProps) { ... }
+export function EvoButton({ className, children, ref, ...rest }: NativeButtonProps) { ... }
+
+// ❌ do NOT use a props variable
+export function EvoButton(props: NativeButtonProps) {
+  const { className, children, ref, ...rest } = props;
+}
 
 // ❌ do NOT copy from ebayui-core-react
 const EbayButton: FC<Props> = (props) => { ... }
@@ -102,6 +109,15 @@ export function EvoButton(props: AnchorButtonProps | NativeButtonProps) { ... }
 ```
 
 For non-overloaded components, omit the return type entirely and let TypeScript infer it.
+
+**Controlled/uncontrolled pattern:** when you need to distinguish between a prop being passed vs. omitted (e.g. `open` vs. `open={undefined}`), use `!== undefined` after destructuring — do **not** keep `props` alive just for `"open" in props`:
+
+```tsx
+// ✅
+export function EvoFoo({ open, defaultOpen = false, ...rest }: EvoFooProps) {
+  const isControlled = open !== undefined;
+}
+```
 
 ### No `forwardRef` — React 19 native ref
 
@@ -206,11 +222,30 @@ If the ebayui-core-react component uses children composition (e.g. finding a sub
 
 Do not guess — get alignment before migrating this pattern.
 
+### Use `use()` instead of `useContext()`
+
+`@evo-web/react` targets React 19. Use the `use()` hook to consume context instead of `useContext()`:
+
+```ts
+// ✅ evo-react
+import { createContext, use } from "react";
+
+export function useMyContext() {
+  return use(MyContext);
+}
+
+// ❌ do NOT use
+import { useContext } from "react";
+return useContext(MyContext);
+```
+
 ---
 
 ## Types
 
 Keep all custom types in `types.ts`. Export them from `index.ts`. Do not inline complex types inside the component file.
+
+Do **not** add JSDoc comments to `types.ts`. Type names and the TypeScript type system are self-documenting; prose descriptions belong in Storybook `argTypes`.
 
 ```ts
 // types.ts
