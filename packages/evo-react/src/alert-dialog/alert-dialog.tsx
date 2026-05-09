@@ -3,7 +3,7 @@ import type { AnimationEvent, SyntheticEvent } from "react";
 import classNames from "classnames";
 import type { EvoAlertDialogProps } from "./types";
 import { AlertDialogProvider } from "./context";
-import { useComposedRef } from "../utils/use-composed-ref";
+import { useRefTee } from "../utils/use-ref-tee";
 import { useControllableId } from "../utils/use-controllable-id";
 import "@ebay/skin/dialog.mjs";
 
@@ -22,7 +22,7 @@ export function EvoAlertDialog({
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
   const currentOpen = isControlled ? open : uncontrolledOpen;
 
-  const [dialogRef, internalRef] = useComposedRef(ref);
+  const [dialogRef, internalRef] = useRefTee(ref, null);
   const [headerId, setHeaderId] = useControllableId();
   const [mainId] = useControllableId();
 
