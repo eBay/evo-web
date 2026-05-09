@@ -9,7 +9,7 @@ export function EvoBadge({
   className,
   ...rest
 }: EvoBadgeProps) {
-  const parsed = Math.round(parseInt(String(number), 10));
+  const parsed = parseInt(String(number), 10);
 
   if (!(parsed > 0)) {
     return null;

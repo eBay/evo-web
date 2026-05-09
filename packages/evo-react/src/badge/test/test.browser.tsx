@@ -9,7 +9,7 @@ describe("evo-badge", () => {
       await expect.element(screen.getByText("5")).toBeInTheDocument();
     });
 
-    it("rounds down decimal values", async () => {
+    it("truncates decimal values", async () => {
       const screen = await render(<EvoBadge number={5.6} a11yText="5 unread items" />);
       await expect.element(screen.getByText("5")).toBeInTheDocument();
     });
@@ -26,7 +26,7 @@ describe("evo-badge", () => {
       await expect.element(screen.getByText("5")).toBeInTheDocument();
     });
 
-    it("rounds down decimal string values", async () => {
+    it("truncates decimal string values", async () => {
       const screen = await render(<EvoBadge number="5.6" a11yText="5 unread items" />);
       await expect.element(screen.getByText("5")).toBeInTheDocument();
     });
