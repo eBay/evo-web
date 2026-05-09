@@ -22,7 +22,7 @@ export function EvoAlertDialog({
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
   const currentOpen = isControlled ? open : uncontrolledOpen;
 
-  const [dialogRef, internalRef] = useRefTee(ref, null);
+  const [dialogRef, internalRef] = useRefTee(ref);
   const [headerId, setHeaderId] = useControllableId();
   const [mainId] = useControllableId();
 
