@@ -13,8 +13,8 @@ export function EvoAlertDialogHeader({
 
   const resolvedId = id ?? headerId;
 
-  if (resolvedId !== headerId) {
-    setHeaderId(resolvedId);
+  if (id) {
+    setHeaderId(id);
   }
 
   return (
