@@ -8,7 +8,11 @@ export function EvoAlertDialogMain({
   children,
   ...rest
 }: EvoAlertDialogMainProps) {
-  const { mainId } = useAlertDialogContext();
+  const { mainId, setMainId } = useAlertDialogContext();
+
+  if (id) {
+    setMainId(id);
+  }
 
   return (
     <div

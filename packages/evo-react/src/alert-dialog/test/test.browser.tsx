@@ -97,6 +97,22 @@ describe("evo-alert-dialog", () => {
       await expect.element(dialog).toHaveAttribute("aria-labelledby", "my-custom-id");
     });
 
+    it("should use a custom id on EvoAlertDialogMain and update aria-describedby to match", async () => {
+      const { container } = await render(
+        <EvoAlertDialog open>
+          <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
+          <EvoAlertDialogMain id="my-custom-main-id">
+            <p>Content</p>
+          </EvoAlertDialogMain>
+          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+        </EvoAlertDialog>,
+      );
+      const main = container.querySelector(".dialog__main")!;
+      const button = container.querySelector("button")!;
+      expect(main.id).toBe("my-custom-main-id");
+      await expect.element(button).toHaveAttribute("aria-describedby", "my-custom-main-id");
+    });
+
     it("should render the confirm button", async () => {
       const screen = await renderOpenDialog();
       const button = screen.getByRole("button", { name: "OK" });

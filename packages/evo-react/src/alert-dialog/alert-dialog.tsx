@@ -24,7 +24,7 @@ export function EvoAlertDialog({
 
   const [dialogRef, internalRef] = useRefTee(ref);
   const [headerId, setHeaderId] = useControllableId();
-  const [mainId] = useControllableId();
+  const [mainId, setMainId] = useControllableId();
 
   // Open the native <dialog> as a modal when `currentOpen` becomes true,
   useEffect(() => {
@@ -64,6 +64,7 @@ export function EvoAlertDialog({
       headerId={headerId}
       setHeaderId={setHeaderId}
       mainId={mainId}
+      setMainId={setMainId}
       onConfirmClick={handleConfirmClick}
     >
       <dialog

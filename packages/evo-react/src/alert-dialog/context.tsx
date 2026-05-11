@@ -4,6 +4,7 @@ export type AlertDialogContextValue = {
   headerId: string;
   setHeaderId: (id: string) => void;
   mainId: string;
+  setMainId: (id: string) => void;
   onConfirmClick: () => void;
 };
 
@@ -27,12 +28,13 @@ export function AlertDialogProvider({
   headerId,
   setHeaderId,
   mainId,
+  setMainId,
   onConfirmClick,
   children,
 }: AlertDialogProviderProps) {
   const value = useMemo(
-    () => ({ headerId, setHeaderId, mainId, onConfirmClick }),
-    [headerId, setHeaderId, mainId, onConfirmClick],
+    () => ({ headerId, setHeaderId, mainId, setMainId, onConfirmClick }),
+    [headerId, setHeaderId, mainId, setMainId, onConfirmClick],
   );
   return <AlertDialogContext value={value}>{children}</AlertDialogContext>;
 }
