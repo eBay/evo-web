@@ -67,6 +67,7 @@ When migrating a listed component, read the linked file completely and apply the
 | `ebay-breadcrumbs`          | [evo-breadcrumbs.md](components/evo-breadcrumbs.md) |
 | `ebay-button`               | [evo-button.md](components/evo-button.md)           |
 | `ebay-details`              | [evo-details.md](components/evo-details.md)         |
+| `ebay-icon-button`          | [evo-icon-button.md](components/evo-icon-button.md) |
 
 ---
 
