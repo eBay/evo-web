@@ -142,6 +142,21 @@ export const InformationWithParagraph = () => `
 </section>
 `;
 
+export const fakeLinkCTA = () => `
+<section class="page-notice page-notice--information" role="region" aria-label="Information">
+    <div class="page-notice__header">
+        <svg class="icon icon--16" height="16" width="16" role="img" aria-label="Information">
+            <use href="#icon-information-filled-16"></use>
+        </svg>
+    </div>
+    <div class="page-notice__main">
+        <h3 class="page-notice__title">Notice Title</h3>
+        <p>Opt into eBay payments before Jan 12th to pay no selling fees.</p>
+    </div>
+    <p class="page-notice__cta"><button class="fake-link">Opt in</button></p>
+</section>
+`;
+
 export const dismissableWithTitle = () => `
 <section class="page-notice page-notice--information" role="region" aria-label="Information">
     <div class="page-notice__header">
