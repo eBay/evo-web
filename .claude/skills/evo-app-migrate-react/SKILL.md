@@ -63,6 +63,7 @@ When migrating a listed component, read the linked file completely and apply the
 | ebayui-core-react component | Migration details                                   |
 | --------------------------- | --------------------------------------------------- |
 | `ebay-accordion`            | [evo-accordion.md](components/evo-accordion.md)     |
+| `ebay-badge`                | [evo-badge.md](components/evo-badge.md)             |
 | `ebay-breadcrumbs`          | [evo-breadcrumbs.md](components/evo-breadcrumbs.md) |
 | `ebay-button`               | [evo-button.md](components/evo-button.md)           |
 | `ebay-details`              | [evo-details.md](components/evo-details.md)         |
