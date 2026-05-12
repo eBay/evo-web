@@ -36,21 +36,27 @@ export function EvoAlertDialog({
     }
   }, [currentOpen]);
 
-  function handleCancel(e: SyntheticEvent<HTMLDialogElement, Event>) {
-    // Prevent Escape key from dismissing the dialog (mirrors closedby="none").
-    // Only necessary while `closedby` is outside of our browser policy
-    e.preventDefault();
-    onCancel?.(e);
-  }
+  const handleCancel = useCallback(
+    (e: SyntheticEvent<HTMLDialogElement, Event>) => {
+      // Prevent Escape key from dismissing the dialog (mirrors closedby="none").
+      // Only necessary while `closedby` is outside of our browser policy
+      e.preventDefault();
+      onCancel?.(e);
+    },
+    [onCancel],
+  );
 
-  function handleAnimationEnd(e: AnimationEvent<HTMLDialogElement>) {
-    const dialog = internalRef.current;
-    // Only act on the dialog element itself, not bubbled child events.
-    if (e.target === dialog && !currentOpen) {
-      dialog.close();
-    }
-    onAnimationEnd?.(e);
-  }
+  const handleAnimationEnd = useCallback(
+    (e: AnimationEvent<HTMLDialogElement>) => {
+      const dialog = internalRef.current;
+      // Only act on the dialog element itself, not bubbled child events.
+      if (e.target === dialog && !currentOpen) {
+        dialog.close();
+      }
+      onAnimationEnd?.(e);
+    },
+    [currentOpen, onAnimationEnd],
+  );
 
   const handleConfirmClick = useCallback(() => {
     if (!isControlled) {
