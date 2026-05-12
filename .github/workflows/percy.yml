@@ -1,14 +1,9 @@
 name: Percy Visual Regression
 
 on:
-  pull_request_target:
-    types: [opened, synchronize]
-    paths:
-      - 'packages/skin/dist/**'
-      - 'packages/skin/.storybook/**'
-      - 'packages/skin/src/sass/**/*.stories.js'
-      - '.github/workflows/percy.yml'
-      - 'packages/skin/.percy.yml'
+  workflow_run:
+    workflows: ["Percy Build"]
+    types: [completed]
   push:
     branches: ["main"]
     paths:
@@ -17,10 +12,6 @@ on:
       - 'packages/skin/src/sass/**/*.stories.js'
       - '.github/workflows/percy.yml'
       - 'packages/skin/.percy.yml'
-
-concurrency:
-  group: "percy-${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}"
-  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -31,22 +22,28 @@ permissions:
 jobs:
   percy-pr:
     name: Percy Snapshots (PR)
-    if: github.event_name == 'pull_request_target'
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Post pending status to PR
+        uses: actions/github-script@v7
+        env:
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         with:
-          # For fork PRs (pull_request_target), check out the contributor's branch
-          # so we snapshot their changes, not the base branch.
-          ref: ${{ github.event.pull_request.head.sha }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          fetch-depth: 0  # Need full history for git diff
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state: 'pending',
+              context: 'Percy Visual Regression',
+              description: 'Percy snapshots running...',
+              target_url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            });
 
-      - name: Fetch base branch
-        run: |
-          git remote add upstream https://github.com/${{ github.repository }}.git
-          git fetch upstream main:main
+      - name: Checkout base branch
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -56,26 +53,57 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Detect changed components
-        id: detect
-        uses: ./.github/actions/detect-changed-components
+      - name: Download Storybook artifact
+        uses: actions/download-artifact@v4
         with:
-          sass-dir: 'packages/skin/src/sass'
-          base-branch: 'main'
+          name: storybook-static
+          path: storybook-static
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Read Percy metadata
+        id: meta
+        run: |
+          echo "components=$(cat storybook-static/.percy-components)" >> $GITHUB_OUTPUT
+          echo "pr=$(cat storybook-static/.percy-pr-number)" >> $GITHUB_OUTPUT
 
       - name: Run Percy (Partial)
-        if: steps.detect.outputs.components != '' && steps.detect.outputs.components != 'all'
+        if: steps.meta.outputs.components != '' && steps.meta.outputs.components != 'all'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-          PERCY_PARTIAL_BUILD: 1
-          STORIES: ${{ steps.detect.outputs.components }}
-        run: npm run snapshots -w packages/skin
+          PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
+          PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
+        run: npx percy storybook ./storybook-static --include "${{ steps.meta.outputs.components }}"
 
       - name: Run Percy (All)
-        if: steps.detect.outputs.components == 'all'
+        if: steps.meta.outputs.components == 'all'
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: npm run snapshots:all -w packages/skin
+          PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
+          PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
+        run: npx percy storybook ./storybook-static
+
+      - name: Report Percy status to PR
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          JOB_STATUS: ${{ job.status }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const state = process.env.JOB_STATUS === 'success' ? 'success' : 'failure';
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: process.env.HEAD_SHA,
+              state,
+              context: 'Percy Visual Regression',
+              description: state === 'success' ? 'Percy snapshots passed' : 'Percy snapshots failed',
+              target_url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+            });
 
   percy-main:
     name: Percy Baseline (Main Branch)
