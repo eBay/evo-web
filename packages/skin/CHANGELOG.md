@@ -1,5 +1,19 @@
 # Skin Changelog
 
+## 19.24.5
+
+### Patch Changes
+
+- [#648](https://github.com/eBay/evo-web/pull/648) [`03e20a3`](https://github.com/eBay/evo-web/commit/03e20a39a1e74c99d18abf67a6cb0d4274b680a5) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(page-notice, section-notice): unbold action CTA links per design spec
+
+  Links and `button.fake-link` elements inside the `__cta` slot of
+  `page-notice` and `section-notice` were rendering bold because the
+  components had blanket rules that bolded every link inside the
+  component. The Playbook design spec calls for unbolded CTA action
+  text. The fix scopes `font-weight: bold` to the body slots (`__main`,
+  `__footer`) where prose-with-links lives, so `__cta` links pick up
+  the default normal weight without needing an override.
+
 ## 19.24.4
 
 ### Patch Changes
