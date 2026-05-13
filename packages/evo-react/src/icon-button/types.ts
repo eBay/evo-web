@@ -1,5 +1,4 @@
-import type { ComponentProps, ComponentType, KeyboardEvent } from "react";
-import React from "react";
+import type { ComponentProps, ComponentType, KeyboardEvent, Ref } from "react";
 import type { Priority, Size } from "../button/types";
 
 export type { Priority, Size };
@@ -32,7 +31,7 @@ export type AnchorIconButtonProps = Omit<ComponentProps<"a">, "ref"> &
   BaseIconButtonProps & {
     href: string;
     as?: ComponentType<ComponentProps<"a">>;
-    ref?: React.Ref<HTMLAnchorElement>;
+    ref?: Ref<HTMLAnchorElement>;
     onEscape?: (e: KeyboardEvent<HTMLAnchorElement>) => void;
     disabled?: boolean;
   };
@@ -41,7 +40,7 @@ export type NativeIconButtonProps = Omit<ComponentProps<"button">, "ref"> &
   BaseIconButtonProps & {
     href?: never;
     as?: never;
-    ref?: React.Ref<HTMLButtonElement>;
+    ref?: Ref<HTMLButtonElement>;
     onEscape?: (e: KeyboardEvent<HTMLButtonElement>) => void;
   };
 

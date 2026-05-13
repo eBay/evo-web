@@ -110,6 +110,7 @@ describe("evo-icon-button", () => {
       );
       const button = screen.getByRole("button");
       await expect.element(button).toBeDisabled();
+      await button.click({ force: true });
       expect(onClick).not.toHaveBeenCalled();
     });
 
@@ -122,6 +123,9 @@ describe("evo-icon-button", () => {
       );
       const button = screen.getByRole("button");
       await expect.element(button).toBeDisabled();
+      await button.click({ force: true });
+      await button.element().focus();
+      await user.keyboard("{Escape}");
       expect(onEscape).not.toHaveBeenCalled();
     });
 

@@ -58,7 +58,7 @@ export function EvoIconButton(
     classPrefix,
     priorityStyles[priority],
     size && sizeStyles[size],
-    badgeNumber && `${classPrefix}--badged`,
+    badgeNumber !== undefined && `${classPrefix}--badged`,
     transparent && `${classPrefix}--transparent`,
   );
 
