@@ -1,5 +1,15 @@
 # @evo-web/marko
 
+## 0.2.0
+
+### Minor Changes
+
+- [#639](https://github.com/eBay/evo-web/pull/639) [`c95ea4c`](https://github.com/eBay/evo-web/commit/c95ea4c77ab0e49f07aa6c08afee84bb3a37c224) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Follow naming convention for input tags
+
+### Patch Changes
+
+- [#676](https://github.com/eBay/evo-web/pull/676) [`f14e0cd`](https://github.com/eBay/evo-web/commit/f14e0cd406e1f442f3de608519cf00d51e776001) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add href to evo-button
+
 ## 0.1.14
 
 ### Patch Changes
