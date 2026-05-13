@@ -61,8 +61,16 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
 )>
 <const/variantClass=variant !== "standard" && `${baseClass}--${variant}`>
 
-<const/tag=href ? "a" : "button">
-<${tag}
+<define/Root|input: (Marko.HTML.Button | Marko.HTML.A)|>
+    <if=href>
+        <a ...(input as Marko.HTML.A) href=href/>
+    </if>
+    <else>
+        <button ...(input as Marko.HTML.Button) type=type/>
+    </else>
+</define>
+
+<Root
     ...htmlInput
     onKeyDown(e: KeyboardEvent) {
         if (e.key === "Escape" && !input.disabled) {
@@ -82,10 +90,8 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
         borderless && `${baseClass}--borderless`,
         validPriorities.includes(priority) && `${baseClass}--${priority}`,
     ]
-    type=type ?? (tag === "button" && "button")
-    aria-disabled=partiallyDisabled && "true"
-    aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])
->
+    aria-disabled=(partiallyDisabled && "true")
+    aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])>
     <if=(bodyState === "loading")>
         <span class="btn__cell">
             <evo-progress-spinner a11yText=null/>
