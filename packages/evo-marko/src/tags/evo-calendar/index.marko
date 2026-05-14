@@ -289,8 +289,8 @@ export interface Input {
                         <const/clippedText=(
                           [
                             "",
-                            today && a11yTodayText,
-                            selected && a11ySelectedText,
+                            iso === today && a11yTodayText,
+                            isSelected && a11ySelectedText,
                             rangeStart && a11yRangeText?.start,
                             inRange && a11yRangeText?.in,
                             rangeEnd && a11yRangeText?.end,
