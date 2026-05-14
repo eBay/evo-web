@@ -15,9 +15,8 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
-  checks: write
   statuses: write
+  actions: read
 
 jobs:
   percy-pr:
@@ -64,8 +63,16 @@ jobs:
       - name: Read Percy metadata
         id: meta
         run: |
-          echo "components=$(cat storybook-static/.percy-components)" >> $GITHUB_OUTPUT
-          echo "pr=$(cat storybook-static/.percy-pr-number)" >> $GITHUB_OUTPUT
+          {
+            echo "components<<EOF"
+            tr -d '\n' < storybook-static/.percy-components
+            echo ""
+            echo "EOF"
+            echo "pr<<EOF"
+            tr -d '\n' < storybook-static/.percy-pr-number
+            echo ""
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Run Percy (Partial)
         if: steps.meta.outputs.components != '' && steps.meta.outputs.components != 'all'
@@ -74,7 +81,8 @@ jobs:
           PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
           PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
           PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
-        run: npx percy storybook ./storybook-static --include "${{ steps.meta.outputs.components }}"
+          STORIES: ${{ steps.meta.outputs.components }}
+        run: npx percy storybook ./storybook-static --include "$STORIES"
 
       - name: Run Percy (All)
         if: steps.meta.outputs.components == 'all'
