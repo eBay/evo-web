@@ -19,7 +19,7 @@ export default {
   },
   argTypes: {
     selectMode: {
-      control: "select",
+      control: "inline-radio",
       options: [undefined, "day", "range"],
       description:
         'When set, day cells render as `<button>` elements for date selection. `"day"` selects a single date; `"range"` selects a start/end range. Omit for a non-interactive calendar.',
@@ -102,10 +102,6 @@ export default {
             '{ start: "start of range", end: "end of range", in: "in range" }',
         },
       },
-    },
-    ["<div> attributes" as any]: {
-      description:
-        "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to the calendar root element.",
     },
   },
 } satisfies Meta<Input>;
