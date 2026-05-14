@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "@ebay/design-tokens"
+    ignore:
+      - dependency-name: "@ebay/design-tokens"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
