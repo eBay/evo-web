@@ -1,5 +1,6 @@
 import type { ComponentProps, ComponentType, KeyboardEvent, Ref } from "react";
 import type { Priority, Size } from "../button/types";
+import { EvoBadgeProps } from "../badge";
 
 export type { Priority, Size };
 
@@ -8,22 +9,7 @@ type BaseIconButtonProps = {
   priority?: Priority;
   size?: Size;
   partiallyDisabled?: boolean;
-  badgeNumber?: number;
-  /**
-   * The accessible label of the badge.
-   *
-   * English default to be overridden is `""`
-   *
-   * Pass `null` explicitly _only_ if alternative accessibility information is present.
-   */
-  badgeA11yText?: string | null;
-  /**
-   * The `aria-label` of the button.
-   *
-   * English default to be overridden is `"button"`
-   *
-   * Pass `null` explicitly _only_ if alternative accessibility information is present.
-   */
+  badgeNumber?: EvoBadgeProps["number"];
   a11yText: string | null;
 };
 

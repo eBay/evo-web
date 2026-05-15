@@ -15,9 +15,7 @@ import "@ebay/skin/button.mjs";
 import "@ebay/skin/link.mjs";
 
 export function EvoIconButton(props: AnchorIconButtonProps): React.JSX.Element;
-export function EvoIconButton(
-  props: NativeIconButtonProps,
-): React.JSX.Element;
+export function EvoIconButton(props: NativeIconButtonProps): React.JSX.Element;
 export function EvoIconButton(
   props: AnchorIconButtonProps | NativeIconButtonProps,
 ): React.JSX.Element {
@@ -29,7 +27,6 @@ export function EvoIconButton(
     size,
     partiallyDisabled,
     badgeNumber,
-    badgeA11yText,
     a11yText = "button",
     children,
     className: extraClasses,
@@ -81,7 +78,7 @@ export function EvoIconButton(
     <>
       {children}
       {badgeNumber !== undefined && (
-        <EvoBadge type="icon" number={badgeNumber} a11yText={badgeA11yText ?? null} />
+        <EvoBadge type="icon" number={badgeNumber} a11yText={null} />
       )}
     </>
   );
