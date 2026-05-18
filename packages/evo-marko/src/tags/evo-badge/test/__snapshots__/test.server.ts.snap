@@ -26,6 +26,14 @@ exports[`given number is a string > renders number with rounded-up string 1`] = 
 </span>
 `;
 
+exports[`renders an empty badge when no number is provided 1`] = `
+<span
+  aria-label="new"
+  class="badge"
+  role="img"
+/>
+`;
+
 exports[`renders defaults 1`] = `
 <span
   aria-label="5 unread items"

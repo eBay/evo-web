@@ -50,6 +50,13 @@ exports[`passes through additional html attributes 2`] = `
 </span>
 `;
 
+exports[`renders an empty badge when no number is provided 1`] = `
+<span
+  class="badge"
+  role="img"
+/>
+`;
+
 exports[`renders defaults 1`] = `
 <span
   class="badge"

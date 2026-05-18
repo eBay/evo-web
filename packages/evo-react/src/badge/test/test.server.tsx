@@ -60,4 +60,10 @@ describe("EvoBadge SSR", () => {
       ),
     ).toMatchSnapshot();
   });
+
+  it("renders an empty badge when no number is provided", () => {
+    expect(
+      renderToString(<EvoBadge a11yText="new" />),
+    ).toMatchSnapshot();
+  });
 });

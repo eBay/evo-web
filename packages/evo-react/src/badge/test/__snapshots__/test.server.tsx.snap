@@ -1,5 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`EvoBadge SSR > renders an empty badge when no number is provided 1`] = `"<span class="badge" aria-label="new" role="img"></span>"`;
+
 exports[`EvoBadge SSR > renders defaults 1`] = `"<span class="badge" aria-label="5 unread items" role="img">5</span>"`;
 
 exports[`EvoBadge SSR > renders with a custom className 1`] = `"<span class="badge custom-class" aria-label="5 unread items" role="img">5</span>"`;

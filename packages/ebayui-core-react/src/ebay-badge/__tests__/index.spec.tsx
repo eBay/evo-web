@@ -44,4 +44,11 @@ describe("<EbayBadge>", () => {
         const { getByText } = await render(<EbayBadge number={150} />);
         expect(getByText("99+")).toBeInTheDocument();
     });
+
+    it("renders an empty badge when no number is provided", async () => {
+        const { container } = await render(<EbayBadge />);
+        const badge = container.querySelector(".badge");
+        expect(badge).toBeInTheDocument();
+        expect(badge).toBeEmptyDOMElement();
+    });
 });

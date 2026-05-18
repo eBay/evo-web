@@ -95,4 +95,11 @@ describe("evo-badge", () => {
       expect(badge).toHaveClass("custom-class");
     });
   });
+
+  it("renders an empty badge when no number is provided", async () => {
+    const { container } = await render(<EvoBadge a11yText="new" />);
+    const badge = container.querySelector(".badge");
+    expect(badge).toBeInTheDocument();
+    expect(badge).toBeEmptyDOMElement();
+  });
 });
