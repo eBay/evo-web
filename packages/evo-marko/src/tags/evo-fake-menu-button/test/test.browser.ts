@@ -92,5 +92,30 @@ describe.skip("evo-fake-menu-button", () => {
         expect(firstItem).toBeTruthy();
       });
     });
+
+  });
+});
+
+describe("given the evo-fake-menu-button is open", () => {
+  let triggerButton: HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(Default);
+    triggerButton = component.container.querySelector(
+      ".fake-menu-button__button",
+    ) as HTMLElement;
+    await fireEvent.click(triggerButton);
+  });
+
+  describe("when focus moves outside the component", () => {
+    beforeEach(async () => {
+      await fireEvent.focusOut(triggerButton, {
+        relatedTarget: document.body,
+      });
+    });
+
+    it("then it collapses", () => {
+      expect(triggerButton).toHaveAttribute("aria-expanded", "false");
+    });
   });
 });
