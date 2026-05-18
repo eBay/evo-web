@@ -316,6 +316,50 @@ Key differences from ebayui-core-react tests:
 - `userEvent` from `vitest/browser`
 - `await expect.element(el).toBeInTheDocument()` not `expect(el).toBeInTheDocument()`
 
+### Query preference — semantic locators over `querySelector`
+
+`vitest-browser-react` exposes RTL-inspired locators (`getByRole`, `getByText`, `getByLabelText`, etc.) backed by Playwright. Always prefer these over raw DOM queries. See [vitest-browser-react API](https://vitest.dev/api/browser/react).
+
+**Prefer semantic locators:**
+
+```tsx
+// ✅ prefer — queries the accessible role
+const dialog = screen.getByRole("alertdialog");
+const button = screen.getByRole("button", { name: "OK" });
+const heading = screen.getByRole("heading", { name: "Alert Title" });
+const content = screen.getByText(
+  "You must acknowledge this alert to continue.",
+);
+
+// ❌ avoid — opaque DOM traversal
+const dialog = screen.container.querySelector("dialog");
+const button = screen.container.querySelector("button");
+const title = screen.container.querySelector(".dialog__title");
+```
+
+**Use `.closest()` to assert on a parent element** when you locate a child via a semantic query but need to verify a BEM class or ID on its wrapper:
+
+```tsx
+// ✅ locate the heading semantically, then walk up to check its container class
+const heading = screen.getByRole("heading", { name: "Alert Title" });
+expect(heading.element().closest(".dialog__title")).not.toBeNull();
+
+// ✅ locate content by text, then assert the wrapper has the right class
+const content = screen.getByText("...");
+const main = content.element().closest(".dialog__main");
+expect(main).not.toBeNull();
+```
+
+**Exception — closed/hidden elements:** `vitest-browser-react` locators use the Playwright accessibility tree and cannot find elements hidden from it (e.g. a `<dialog>` without the `open` attribute). In these cases `querySelector` is acceptable, but **leave a comment** explaining the intent:
+
+```tsx
+// dialog is closed and hidden from the a11y tree; querySelector is intentional here
+const dialog = container.querySelector("dialog");
+await expect.element(dialog!).toHaveClass("dialog--close");
+```
+
+Note: `getByRole(..., { hidden: true })` is **not supported** by `vitest-browser-react` (it is an RTL-only option). Do not use it.
+
 ### Server tests — `test/test.server.tsx`
 
 Uses `renderToString` for SSR snapshots.

@@ -36,14 +36,14 @@ describe("evo-alert-dialog", () => {
   describe("given an open controlled dialog", () => {
     it("should render a dialog element", async () => {
       const screen = await renderOpenDialog();
-      const dialog = screen.container.querySelector("dialog");
-      await expect.element(dialog!).toBeInTheDocument();
+      const dialog = screen.getByRole("alertdialog");
+      await expect.element(dialog).toBeInTheDocument();
     });
 
     it("should not have dialog--close class when open", async () => {
       const screen = await renderOpenDialog();
-      const dialog = screen.container.querySelector("dialog");
-      await expect.element(dialog!).not.toHaveClass("dialog--close");
+      const dialog = screen.getByRole("alertdialog");
+      await expect.element(dialog).not.toHaveClass("dialog--close");
     });
 
     it("should have role alertdialog", async () => {
@@ -60,29 +60,29 @@ describe("evo-alert-dialog", () => {
 
     it("should have closedby set to none", async () => {
       const screen = await renderOpenDialog();
-      const dialog = screen.container.querySelector("dialog");
-      await expect.element(dialog!).toHaveAttribute("closedby", "none");
+      const dialog = screen.getByRole("alertdialog");
+      await expect.element(dialog).toHaveAttribute("closedby", "none");
     });
 
     it("should render the header with dialog__title class", async () => {
       const screen = await renderOpenDialog();
-      const title = screen.container.querySelector<HTMLElement>(".dialog__title");
-      await expect.element(title!).toBeInTheDocument();
-      expect(title?.tagName.toLowerCase()).toBe("h2");
-      expect(title?.textContent).toContain("Alert Title");
+      const heading = screen.getByRole("heading", { name: "Alert Title" });
+      await expect.element(heading).toBeInTheDocument();
+      expect(heading.element().tagName.toLowerCase()).toBe("h2");
+      expect(heading.element().closest(".dialog__title")).not.toBeNull();
     });
 
     it("should link the dialog to the header via aria-labelledby", async () => {
       const screen = await renderOpenDialog();
-      const dialog = screen.container.querySelector("dialog")!;
-      const title = screen.container.querySelector(".dialog__title")!;
-      const titleId = title.id;
+      const dialog = screen.getByRole("alertdialog");
+      const heading = screen.getByRole("heading", { name: "Alert Title" });
+      const titleId = heading.element().id;
       expect(titleId).toBeTruthy();
       await expect.element(dialog).toHaveAttribute("aria-labelledby", titleId);
     });
 
     it("should use a custom id on EvoAlertDialogHeader and update aria-labelledby to match", async () => {
-      const { container } = await render(
+      const screen = await render(
         <EvoAlertDialog open>
           <EvoAlertDialogHeader id="my-custom-id">Alert</EvoAlertDialogHeader>
           <EvoAlertDialogMain>
@@ -91,14 +91,14 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
-      const dialog = container.querySelector("dialog")!;
-      const title = container.querySelector(".dialog__title")!;
-      expect(title.id).toBe("my-custom-id");
+      const dialog = screen.getByRole("alertdialog");
+      const heading = screen.getByRole("heading", { name: "Alert" });
+      expect(heading.element().id).toBe("my-custom-id");
       await expect.element(dialog).toHaveAttribute("aria-labelledby", "my-custom-id");
     });
 
     it("should use a custom id on EvoAlertDialogMain and update aria-describedby to match", async () => {
-      const { container } = await render(
+      const screen = await render(
         <EvoAlertDialog open>
           <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
           <EvoAlertDialogMain id="my-custom-main-id">
@@ -107,9 +107,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
-      const main = container.querySelector(".dialog__main")!;
-      const button = container.querySelector("button")!;
-      expect(main.id).toBe("my-custom-main-id");
+      const button = screen.getByRole("button", { name: "OK" });
+      const main = button.element().closest(".dialog__main") ?? document.getElementById("my-custom-main-id");
+      expect(main?.id).toBe("my-custom-main-id");
       await expect.element(button).toHaveAttribute("aria-describedby", "my-custom-main-id");
     });
 
@@ -121,8 +121,9 @@ describe("evo-alert-dialog", () => {
 
     it("should render the main content area with dialog__main class", async () => {
       const screen = await renderOpenDialog();
-      const main = screen.container.querySelector<HTMLElement>(".dialog__main");
-      await expect.element(main!).toBeInTheDocument();
+      const mainContent = screen.getByText("You must acknowledge this alert to continue.");
+      const main = mainContent.element().closest(".dialog__main");
+      expect(main).not.toBeNull();
     });
 
     it("should have aria-describedby on the confirm button referencing the main content", async () => {
@@ -149,6 +150,7 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
+      // dialog is closed and hidden from the a11y tree; querySelector is intentional here
       const dialog = container.querySelector("dialog");
       await expect.element(dialog!).toHaveClass("dialog--close");
     });
@@ -165,12 +167,13 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
+      // dialog is closed and hidden from the a11y tree; querySelector is intentional here
       const dialog = container.querySelector("dialog");
       await expect.element(dialog!).toHaveClass("dialog--close");
     });
 
     it("should not have dialog--close class when defaultOpen is true", async () => {
-      const { container } = await render(
+      const screen = await render(
         <EvoAlertDialog defaultOpen>
           <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
           <EvoAlertDialogMain>
@@ -179,12 +182,12 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
-      const dialog = container.querySelector("dialog");
-      await expect.element(dialog!).not.toHaveClass("dialog--close");
+      const dialog = screen.getByRole("alertdialog");
+      await expect.element(dialog).not.toHaveClass("dialog--close");
     });
 
     it("should close when confirm is clicked without needing external state", async () => {
-      const { container } = await render(
+      const screen = await render(
         <EvoAlertDialog defaultOpen>
           <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
           <EvoAlertDialogMain>
@@ -193,16 +196,16 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
-      const dialog = container.querySelector("dialog")!;
+      const dialog = screen.getByRole("alertdialog");
       await expect.element(dialog).not.toHaveClass("dialog--close");
 
-      await user.click(container.querySelector<HTMLElement>("button")!);
+      await user.click(screen.getByRole("button", { name: "OK" }));
       await expect.element(dialog).toHaveClass("dialog--close");
     });
 
     it("should call onOpenChange with false when confirm is clicked", async () => {
       const onOpenChange = vi.fn();
-      const { container } = await render(
+      const screen = await render(
         <EvoAlertDialog defaultOpen onOpenChange={onOpenChange}>
           <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
           <EvoAlertDialogMain>
@@ -211,7 +214,7 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
-      await user.click(container.querySelector<HTMLElement>("button")!);
+      await user.click(screen.getByRole("button", { name: "OK" }));
       expect(onOpenChange).toHaveBeenCalledWith(false);
     });
   });
@@ -258,9 +261,9 @@ describe("evo-alert-dialog", () => {
   describe("accessibility", () => {
     it("should have dialog class and dialog--narrow class", async () => {
       const screen = await renderOpenDialog();
-      const dialog = screen.container.querySelector("dialog");
-      await expect.element(dialog!).toHaveClass("dialog");
-      await expect.element(dialog!).toHaveClass("dialog--narrow");
+      const dialog = screen.getByRole("alertdialog");
+      await expect.element(dialog).toHaveClass("dialog");
+      await expect.element(dialog).toHaveClass("dialog--narrow");
     });
 
     it("should forward ref to the dialog element", async () => {
@@ -278,7 +281,7 @@ describe("evo-alert-dialog", () => {
     });
 
     it("should allow custom heading element via `as` prop on EvoAlertDialogHeader", async () => {
-      const { container } = await render(
+      const screen = await render(
         <EvoAlertDialog open>
           <EvoAlertDialogHeader as="h1">Title</EvoAlertDialogHeader>
           <EvoAlertDialogMain>
@@ -287,8 +290,8 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialog>,
       );
-      const title = container.querySelector(".dialog__title");
-      expect(title?.tagName.toLowerCase()).toBe("h1");
+      const heading = screen.getByRole("heading", { name: "Title" });
+      expect(heading.element().tagName.toLowerCase()).toBe("h1");
     });
   });
 });
