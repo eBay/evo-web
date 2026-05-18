@@ -1,6 +1,7 @@
 import { it, expect, describe } from "vitest";
 import { renderToString } from "react-dom/server";
 import { EvoIconButton } from "../icon-button";
+import { EvoIconButtonBadge } from "../icon-button-badge";
 import { EvoIconMenu20 } from "../../icon/icons/menu-20";
 import { EvoIconSettings16 } from "../../icon/icons/settings-16";
 import { EvoIconCart16 } from "../../icon/icons/cart-16";
@@ -96,12 +97,9 @@ describe("EvoIconButton SSR", () => {
   it("should render with badge", () => {
     expect(
       renderToString(
-        <EvoIconButton
-          a11yText="Cart"
-          badgeNumber={3}
-          badgeA11yText="3 items in your cart"
-        >
+        <EvoIconButton a11yText="Cart">
           <EvoIconCart16 />
+          <EvoIconButtonBadge number={3} />
         </EvoIconButton>,
       ),
     ).toMatchSnapshot();
@@ -110,8 +108,9 @@ describe("EvoIconButton SSR", () => {
   it("should render with badge number > 99", () => {
     expect(
       renderToString(
-        <EvoIconButton a11yText="Cart" badgeNumber={100} badgeA11yText="many items">
+        <EvoIconButton a11yText="Cart">
           <EvoIconCart16 />
+          <EvoIconButtonBadge number={100} />
         </EvoIconButton>,
       ),
     ).toMatchSnapshot();
@@ -154,12 +153,5 @@ describe("EvoIconButton SSR", () => {
     ).toMatchSnapshot();
   });
 
-  it("should render with icon-btn--badged class when badgeNumber set", () => {
-    const html = renderToString(
-      <EvoIconButton a11yText="Menu" badgeNumber={1} badgeA11yText="1 new">
-        <EvoIconMenu20 />
-      </EvoIconButton>,
-    );
-    expect(html).toContain("icon-btn--badged");
-  });
+
 });

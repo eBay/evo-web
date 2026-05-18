@@ -3,6 +3,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
 import { EvoIconButton } from "../icon-button";
+import { EvoIconButtonBadge } from "../icon-button-badge";
 import { EvoIconMenu20 } from "../../icon/icons/menu-20";
 import { EvoIconAdd16 } from "../../icon/icons/add-16";
 
@@ -227,19 +228,18 @@ describe("evo-icon-button", () => {
   });
 
   describe("badge", () => {
-    it("renders a badge when badgeNumber is provided", async () => {
+    it("renders a badge when EvoIconButtonBadge is used", async () => {
       const screen = await render(
-        <EvoIconButton
-          a11yText="Cart"
-          badgeNumber={3}
-          badgeA11yText="3 items"
-        >
+        <EvoIconButton a11yText="Cart">
           <EvoIconAdd16 />
+          <EvoIconButtonBadge number={3} />
         </EvoIconButton>,
       );
       const badge = screen.getByText("3");
       await expect.element(badge).toBeInTheDocument();
     });
+
+
   });
 
   describe("ref forwarding", () => {

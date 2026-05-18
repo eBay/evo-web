@@ -1,7 +1,6 @@
 import type { ComponentProps, KeyboardEvent } from "react";
 import React from "react";
 import classNames from "classnames";
-import { EvoBadge } from "../badge/badge";
 import type {
   AnchorIconButtonProps,
   EvoIconButtonProps,
@@ -16,26 +15,21 @@ import "@ebay/skin/link.mjs";
 
 export function EvoIconButton(props: AnchorIconButtonProps): React.JSX.Element;
 export function EvoIconButton(props: NativeIconButtonProps): React.JSX.Element;
-export function EvoIconButton(
-  props: AnchorIconButtonProps | NativeIconButtonProps,
-): React.JSX.Element {
-  const {
-    href,
-    as: _as,
-    transparent,
-    priority = "none",
-    size,
-    partiallyDisabled,
-    badgeNumber,
-    a11yText = "button",
-    children,
-    className: extraClasses,
-    onKeyDown,
-    onEscape,
-    disabled,
-    ...rest
-  } = props as EvoIconButtonProps;
-
+export function EvoIconButton({
+  href,
+  as: _as,
+  transparent,
+  priority = "none",
+  size,
+  partiallyDisabled,
+  a11yText = "button",
+  children,
+  className: extraClasses,
+  onKeyDown,
+  onEscape,
+  disabled,
+  ...rest
+}: EvoIconButtonProps) {
   const classPrefix = href ? "icon-link" : "icon-btn";
 
   const priorityStyles: { [key in Priority]: string } = {
@@ -55,7 +49,6 @@ export function EvoIconButton(
     classPrefix,
     priorityStyles[priority],
     size && sizeStyles[size],
-    badgeNumber !== undefined && `${classPrefix}--badged`,
     transparent && `${classPrefix}--transparent`,
   );
 
@@ -74,15 +67,6 @@ export function EvoIconButton(
     }
   };
 
-  const content = (
-    <>
-      {children}
-      {badgeNumber !== undefined && (
-        <EvoBadge type="icon" number={badgeNumber} a11yText={null} />
-      )}
-    </>
-  );
-
   if (href) {
     const Component = (_as as AnchorIconButtonProps["as"]) ?? "a";
     return (
@@ -93,7 +77,7 @@ export function EvoIconButton(
         href={disabled ? undefined : href}
         onKeyDown={keyDownHandler}
       >
-        {content}
+        {children}
       </Component>
     );
   }
@@ -108,7 +92,7 @@ export function EvoIconButton(
       className={className}
       onKeyDown={keyDownHandler}
     >
-      {content}
+      {children}
     </button>
   );
 }

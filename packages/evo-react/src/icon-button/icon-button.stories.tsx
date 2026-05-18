@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { action } from "storybook/actions";
 import type { ComponentProps } from "react";
 import { EvoIconButton } from "./icon-button";
+import { EvoIconButtonBadge } from "./icon-button-badge";
 import type { AnchorIconButtonProps } from "./types";
 import { EvoIconMenu20 } from "../icon/icons/menu-20";
 import { EvoIconSettings16 } from "../icon/icons/settings-16";
@@ -66,14 +67,6 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
       description: "Fully disabled",
       control: "boolean",
     },
-    badgeNumber: {
-      description: "Number shown on the badge",
-      control: "number",
-    },
-    badgeA11yText: {
-      description: "Accessible label for the badge",
-      control: "text",
-    },
     onClick: {
       description: "Triggered on click",
       action: "onClick",
@@ -120,13 +113,9 @@ export const Default: Story = {
 
 export const WithBadge: Story = {
   render: (args) => (
-    <EvoIconButton
-      {...args}
-      a11yText="Cart"
-      badgeNumber={3}
-      badgeA11yText="3 items in your cart"
-    >
+    <EvoIconButton {...args} a11yText="Cart">
       <EvoIconCart16 />
+      <EvoIconButtonBadge number={3} />
     </EvoIconButton>
   ),
 };
@@ -199,11 +188,10 @@ export const WithChat: Story = {
       {...(args as unknown as AnchorIconButtonProps)}
       href="https://ebay.com"
       a11yText="Chat"
-      badgeNumber={99}
-      badgeA11yText="99 unread messages"
       onClick={(e) => e.preventDefault()}
     >
       <EvoIconChat16 />
+      <EvoIconButtonBadge number={99} />
     </EvoIconButton>
   ),
 };

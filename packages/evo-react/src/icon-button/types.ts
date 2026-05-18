@@ -1,6 +1,6 @@
 import type { ComponentProps, ComponentType, KeyboardEvent, Ref } from "react";
 import type { Priority, Size } from "../button/types";
-import { EvoBadgeProps } from "../badge";
+import type { EvoBadgeProps } from "../badge/types";
 
 export type { Priority, Size };
 
@@ -9,7 +9,6 @@ type BaseIconButtonProps = {
   priority?: Priority;
   size?: Size;
   partiallyDisabled?: boolean;
-  badgeNumber?: EvoBadgeProps["number"];
   a11yText: string | null;
 };
 
@@ -31,3 +30,7 @@ export type NativeIconButtonProps = Omit<ComponentProps<"button">, "ref"> &
   };
 
 export type EvoIconButtonProps = AnchorIconButtonProps | NativeIconButtonProps;
+
+// `type` is always "icon" and `a11yText` is always null for icon-button badges
+// (the button's a11yText covers screen reader context, matching the evo-marko pattern).
+export type EvoIconButtonBadgeProps = Omit<EvoBadgeProps, "type" | "a11yText">;
