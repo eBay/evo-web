@@ -5,26 +5,36 @@ import "@ebay/skin/badge.mjs";
 export function EvoBadge({
   number,
   type,
-  a11yText,
+  a11yText = number ? `${number} notifications` : "notification",
   className,
   ...rest
 }: EvoBadgeProps) {
-  const parsed = parseInt(String(number), 10);
+  const role = type !== "menu" && type !== "icon" ? "img" : undefined;
+  const ariaLabel = a11yText ?? undefined;
 
-  if (!(parsed > 0)) {
-    return null;
+  if (number == null) {
+    return (
+      <span {...rest} className={classNames("badge", className)} aria-label={ariaLabel} role={role} />
+    );
   }
 
-  const isImg = type !== "menu" && type !== "icon";
+  const parsed = +number;
 
-  return (
-    <span
-      {...rest}
-      className={classNames("badge", className)}
-      aria-label={a11yText ?? undefined}
-      role={isImg ? "img" : undefined}
-    >
-      {parsed > 99 ? "99+" : parsed}
-    </span>
-  );
+  if (parsed > 99) {
+    return (
+      <span {...rest} className={classNames("badge", "badge--wide", className)} aria-label={ariaLabel} role={role}>
+        99+
+      </span>
+    );
+  }
+
+  if (parsed > 0) {
+    return (
+      <span {...rest} className={classNames("badge", className)} aria-label={ariaLabel} role={role}>
+        {parsed}
+      </span>
+    );
+  }
+
+  return null;
 }

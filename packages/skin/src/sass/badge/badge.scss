@@ -7,10 +7,19 @@
     border-radius: 16px;
     color: var(--color-foreground-on-attention);
     display: inline-flex;
-    font-size: 10px;
-    height: 16px;
+    font-size: var(--font-size-smallest);
+    height: 2.2em;
     justify-content: center;
-    min-width: 8px;
-    padding: 2px 6px;
     white-space: nowrap;
+    width: 2.2em;
+}
+
+.badge:empty {
+    height: 1em;
+    width: 1em;
+}
+
+.badge--wide {
+    padding: 0.5em;
+    width: unset;
 }
