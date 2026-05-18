@@ -2,4 +2,4 @@
 "@evo-web/react": patch
 ---
 
-Add `EvoBreadcrumbs` component
+Add `EvoAlertDialog` component.

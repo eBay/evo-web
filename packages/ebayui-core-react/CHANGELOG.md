@@ -1,5 +1,16 @@
 # @ebay/ui-core-react
 
+## 9.6.3
+
+### Patch Changes
+
+- [#643](https://github.com/eBay/evo-web/pull/643) [`c739d5d`](https://github.com/eBay/evo-web/commit/c739d5ddfd557f7427a6dbacb909ac7dc84ed9d4) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(ebay-star-rating-select): do not select star on focus
+
+    Tabbing to the first star auto-selected it because `handleFocus` (and
+    `handleKeyDown`) called `setChecked` unconditionally. Selection now only
+    happens on click (or the click event browsers synthesize from keyboard
+    activation of native radio inputs), matching the Marko fix from #394.
+
 ## 9.6.2
 
 ### Patch Changes

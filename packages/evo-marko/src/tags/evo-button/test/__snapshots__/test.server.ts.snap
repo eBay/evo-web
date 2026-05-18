@@ -166,7 +166,7 @@ exports[`renders fake version 1`] = `
 "<a
   arialabel="fake button"
   class="fake-btn fake-btn--large fake-btn--primary"
-  type="button"
+  href="#"
 >
   Button
 </a>"

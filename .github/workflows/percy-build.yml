@@ -1,0 +1,68 @@
+name: Percy Build
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'packages/skin/dist/**'
+      - 'packages/skin/.storybook/**'
+      - 'packages/skin/src/sass/**/*.stories.js'
+      - '.github/workflows/percy-build.yml'
+      - '.github/workflows/percy.yml'
+      - 'packages/skin/.percy.yml'
+
+concurrency:
+  group: "percy-build-${{ github.head_ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Storybook for Percy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: |
+          git remote add upstream https://github.com/${{ github.repository }}.git
+          git fetch upstream main:main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Detect changed components
+        id: detect
+        uses: ./.github/actions/detect-changed-components
+        with:
+          sass-dir: 'packages/skin/src/sass'
+          base-branch: 'main'
+
+      - name: Build Storybook
+        run: npm run build:storybook -w packages/skin
+
+      - name: Save Percy metadata
+        env:
+          COMPONENTS: ${{ steps.detect.outputs.components }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          echo "$COMPONENTS" > packages/skin/_site/public/storybook/.percy-components
+          echo "$PR_NUMBER" > packages/skin/_site/public/storybook/.percy-pr-number
+          echo "$HEAD_SHA" > packages/skin/_site/public/storybook/.percy-commit
+          echo "$HEAD_REF" > packages/skin/_site/public/storybook/.percy-branch
+
+      - name: Upload Storybook artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: packages/skin/_site/public/storybook
+          retention-days: 1

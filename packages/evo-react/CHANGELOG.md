@@ -1,5 +1,19 @@
 # @evo-web/react
 
+## 0.0.6
+
+### Patch Changes
+
+- [#666](https://github.com/eBay/evo-web/pull/666) [`5e4ddfd`](https://github.com/eBay/evo-web/commit/5e4ddfd6bf17260311cc6c5c5c1cd3757b7e9c32) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `EvoBadge` component migrated from `@ebay/ebayui-core-react/ebay-badge`
+
+- [#653](https://github.com/eBay/evo-web/pull/653) [`bdccee5`](https://github.com/eBay/evo-web/commit/bdccee5101ffb11e483811d84bf8c9f08dad4992) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoAccordion with id-based controlled and uncontrolled composition APIs.
+
+- [#662](https://github.com/eBay/evo-web/pull/662) [`c90d301`](https://github.com/eBay/evo-web/commit/c90d3016b43195bc3f4b24dc7de9cc3773d4d8e0) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `EvoBreadcrumbs` component
+
+- [#663](https://github.com/eBay/evo-web/pull/663) [`f255a07`](https://github.com/eBay/evo-web/commit/f255a07a45a4fc53d58960ba8dcbdc3c51fc4768) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `as` prop to `EvoButton` anchor variant to support custom link components (e.g. React Router `Link`, Next.js `Link`). Only applies when `href` is provided.
+
+- [#660](https://github.com/eBay/evo-web/pull/660) [`d501df1`](https://github.com/eBay/evo-web/commit/d501df1e4b0d882791b41849e037361788f7a809) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(avatar): add EvoAvatar and EvoAvatarImage components
+
 ## 0.0.5
 
 ### Patch Changes
