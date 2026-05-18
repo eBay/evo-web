@@ -42,7 +42,7 @@ packages/evo-react/src/{name}/
   {name}.tsx                ← main component
   {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
   types.ts                  ← all exported types
-  context.ts                ← React context + hook (only if component uses context)
+  context.ts                ← React context + accessor hook (only if component uses context)
   README.md                 ← component name + Documentation section with Storybook link only
   {name}.stories.tsx        ← Storybook stories (co-located, NOT in __tests__/)
   test/
@@ -85,9 +85,16 @@ The only time `import React from "react"` is acceptable is when you need the nam
 
 ### Named function declarations — no `FC`, no arrow function components
 
+Destructure props directly in the function signature. Do not assign to a `props` variable and destructure inside the body:
+
 ```tsx
 // ✅ evo-react
-export function EvoButton(props: NativeButtonProps) { ... }
+export function EvoButton({ className, children, ref, ...rest }: NativeButtonProps) { ... }
+
+// ❌ do NOT use a props variable
+export function EvoButton(props: NativeButtonProps) {
+  const { className, children, ref, ...rest } = props;
+}
 
 // ❌ do NOT copy from ebayui-core-react
 const EbayButton: FC<Props> = (props) => { ... }
@@ -102,6 +109,15 @@ export function EvoButton(props: AnchorButtonProps | NativeButtonProps) { ... }
 ```
 
 For non-overloaded components, omit the return type entirely and let TypeScript infer it.
+
+**Controlled/uncontrolled pattern:** when you need to distinguish between a prop being passed vs. omitted (e.g. `open` vs. `open={undefined}`), use `!== undefined` after destructuring — do **not** keep `props` alive just for `"open" in props`:
+
+```tsx
+// ✅
+export function EvoFoo({ open, defaultOpen = false, ...rest }: EvoFooProps) {
+  const isControlled = open !== undefined;
+}
+```
 
 ### No `forwardRef` — React 19 native ref
 
@@ -246,6 +262,8 @@ Do not guess — get alignment before migrating this pattern.
 
 Keep all custom types in `types.ts`. Export them from `index.ts`. Do not inline complex types inside the component file.
 
+Do **not** add JSDoc comments to `types.ts`. Type names and the TypeScript type system are self-documenting; prose descriptions belong in Storybook `argTypes`.
+
 ```ts
 // types.ts
 export type Priority = "primary" | "secondary" | "tertiary" | "none";
@@ -297,6 +315,50 @@ Key differences from ebayui-core-react tests:
 - `await render(...)` (async)
 - `userEvent` from `vitest/browser`
 - `await expect.element(el).toBeInTheDocument()` not `expect(el).toBeInTheDocument()`
+
+### Query preference — semantic locators over `querySelector`
+
+`vitest-browser-react` exposes RTL-inspired locators (`getByRole`, `getByText`, `getByLabelText`, etc.) backed by Playwright. Always prefer these over raw DOM queries. See [vitest-browser-react API](https://vitest.dev/api/browser/react).
+
+**Prefer semantic locators:**
+
+```tsx
+// ✅ prefer — queries the accessible role
+const dialog = screen.getByRole("alertdialog");
+const button = screen.getByRole("button", { name: "OK" });
+const heading = screen.getByRole("heading", { name: "Alert Title" });
+const content = screen.getByText(
+  "You must acknowledge this alert to continue.",
+);
+
+// ❌ avoid — opaque DOM traversal
+const dialog = screen.container.querySelector("dialog");
+const button = screen.container.querySelector("button");
+const title = screen.container.querySelector(".dialog__title");
+```
+
+**Use `.closest()` to assert on a parent element** when you locate a child via a semantic query but need to verify a BEM class or ID on its wrapper:
+
+```tsx
+// ✅ locate the heading semantically, then walk up to check its container class
+const heading = screen.getByRole("heading", { name: "Alert Title" });
+expect(heading.element().closest(".dialog__title")).not.toBeNull();
+
+// ✅ locate content by text, then assert the wrapper has the right class
+const content = screen.getByText("...");
+const main = content.element().closest(".dialog__main");
+expect(main).not.toBeNull();
+```
+
+**Exception — closed/hidden elements:** `vitest-browser-react` locators use the Playwright accessibility tree and cannot find elements hidden from it (e.g. a `<dialog>` without the `open` attribute). In these cases `querySelector` is acceptable, but **leave a comment** explaining the intent:
+
+```tsx
+// dialog is closed and hidden from the a11y tree; querySelector is intentional here
+const dialog = container.querySelector("dialog");
+await expect.element(dialog!).toHaveClass("dialog--close");
+```
+
+Note: `getByRole(..., { hidden: true })` is **not supported** by `vitest-browser-react` (it is an RTL-only option). Do not use it.
 
 ### Server tests — `test/test.server.tsx`
 
@@ -412,4 +474,4 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Story title follows `"category/evo-{name}"` pattern
 - [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
 - [ ] `npm run build -w packages/evo-react` passes
-- [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (`@evo-web/react` is still experimental, so all additions use `patch`)
+- [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (`@evo-web/react` is still experimental, so all additions use `patch`). Keep the description to one short line — e.g. `Add EvoFoo component.` — no bullet points or implementation details.
