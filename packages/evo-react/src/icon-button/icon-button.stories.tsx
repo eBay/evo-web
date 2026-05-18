@@ -13,6 +13,7 @@ import { EvoIconChat16 } from "../icon/icons/chat-16";
 const meta: Meta<AnchorIconButtonProps> = {
   title: "buttons/evo-icon-button",
   component: EvoIconButton,
+  subcomponents: { EvoIconButtonBadge },
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -70,22 +71,34 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
     onClick: {
       description: "Triggered on click",
       action: "onClick",
-      table: { category: "Events", defaultValue: { summary: "`(MouseEvent)`" } },
+      table: {
+        category: "Events",
+        defaultValue: { summary: "`(MouseEvent)`" },
+      },
     },
     onEscape: {
       description: "Triggered on Esc key press",
       action: "onEscape",
-      table: { category: "Events", defaultValue: { summary: "`(KeyboardEvent)`" } },
+      table: {
+        category: "Events",
+        defaultValue: { summary: "`(KeyboardEvent)`" },
+      },
     },
     onFocus: {
       description: "Triggered on keyboard focus",
       action: "onFocus",
-      table: { category: "Events", defaultValue: { summary: "`(FocusEvent)`" } },
+      table: {
+        category: "Events",
+        defaultValue: { summary: "`(FocusEvent)`" },
+      },
     },
     onBlur: {
       description: "Triggered on focus lost",
       action: "onBlur",
-      table: { category: "Events", defaultValue: { summary: "`(FocusEvent)`" } },
+      table: {
+        category: "Events",
+        defaultValue: { summary: "`(FocusEvent)`" },
+      },
     },
   },
   args: {
@@ -132,7 +145,6 @@ export const AsLink: Story = {
     </EvoIconButton>
   ),
 };
-
 
 function Link({ to, ...rest }: ComponentProps<"a"> & { to?: string }) {
   return (
