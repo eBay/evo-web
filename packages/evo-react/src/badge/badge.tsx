@@ -14,24 +14,37 @@ export function EvoBadge({
 
   if (number == null) {
     return (
-      <span {...rest} className={classNames("badge", className)} aria-label={ariaLabel} role={role} />
+      <span
+        {...rest}
+        className={classNames("badge", className)}
+        aria-label={ariaLabel}
+        role={role}
+      />
     );
   }
 
-  const parsed = +number;
-
-  if (parsed > 99) {
+  if (+number > 99) {
     return (
-      <span {...rest} className={classNames("badge", "badge--wide", className)} aria-label={ariaLabel} role={role}>
+      <span
+        {...rest}
+        className={classNames("badge", "badge--wide", className)}
+        aria-label={ariaLabel}
+        role={role}
+      >
         99+
       </span>
     );
   }
 
-  if (parsed > 0) {
+  if (+number > 0) {
     return (
-      <span {...rest} className={classNames("badge", className)} aria-label={ariaLabel} role={role}>
-        {parsed}
+      <span
+        {...rest}
+        className={classNames("badge", className)}
+        aria-label={ariaLabel}
+        role={role}
+      >
+        {number}
       </span>
     );
   }

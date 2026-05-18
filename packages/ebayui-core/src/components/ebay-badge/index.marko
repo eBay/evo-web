@@ -26,6 +26,6 @@ $ const role = type !== "menu" && type !== "icon" && "img";
 </else-if>
 <else-if(+number > 0)>
     <span ...processHtmlAttributes(htmlInput) role=role class=["badge", inputClass]>
-        ${number}
+        ${Math.round(+number)}
     </span>
 </else-if>

@@ -32,7 +32,7 @@ const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...res
     if (+number > 0) {
         return (
             <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden}>
-                {+number}
+                {Math.round(+number)}
             </span>
         );
     }
