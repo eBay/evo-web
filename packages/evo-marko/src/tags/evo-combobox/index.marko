@@ -1,14 +1,4 @@
-static function filterOptions<T extends { text: string; sticky?: boolean }>(options: Iterable<T>, autocomplete: string, value: unknown) {
-    const list = [...options];
-    if (autocomplete === "list") {
-        const reg = new RegExp(
-            String(value ?? "").trim().replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"),
-            "i",
-        );
-        return list.filter((o) => reg.test(o.text || "") || o.sticky);
-    }
-    return list;
-}
+import { type Input as EvoIconButtonInput } from "<evo-icon-button>";
 
 export interface ComboboxOption extends Marko.HTML.Div {
     text: string;
@@ -30,7 +20,7 @@ export interface Input
     open?: boolean;
     openChange?: (open: boolean) => void;
     option?: Marko.AttrTag<ComboboxOption>;
-    button?: Marko.AttrTag<Marko.HTML.Button>;
+    button?: Marko.AttrTag<EvoIconButtonInput>;
 }
 
 <const/{
@@ -50,6 +40,8 @@ export interface Input
     onFocus,
     onKeyDown,
     placeholder,
+    open: inputOpen,
+    openChange: inputOpenChange,
     ...htmlInput
 }=input>
 
@@ -161,13 +153,12 @@ export interface Input
                     onKeyDown && onKeyDown(e, target);
                 }>
             <if=button>
-                <button
+                <evo-icon-button
                     ...button
-                    class=["icon-btn", "icon-btn--transparent", button.class]
-                    type="button"
-                    onMouseDown(e) {
+                    onMouseDown(e, el) {
                         // prevent input blur when clicking the action button
                         e.preventDefault();
+                        button.onMouseDown && button.onMouseDown(e, el);
                     }/>
             </if>
         </span>
@@ -214,3 +205,15 @@ export interface Input
         </if>
     </>
 </evo-floating-label>
+
+static function filterOptions<T extends { text: string; sticky?: boolean }>(options: Iterable<T>, autocomplete: string, value: unknown) {
+    const list = [...options];
+    if (autocomplete === "list") {
+        const reg = new RegExp(
+            String(value ?? "").trim().replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&"),
+            "i",
+        );
+        return list.filter((o) => reg.test(o.text || "") || o.sticky);
+    }
+    return list;
+}

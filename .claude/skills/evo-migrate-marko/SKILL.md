@@ -67,6 +67,23 @@ packages/evo-marko/src/tags/evo-{name}/
 
 **Key difference from ebayui-core:** Everything lives in `index.marko`. There is no separate `component.ts`, `component-browser.ts`, or `marko-tag.json`.
 
+### README format
+
+**Minimal only — no props tables, no usage examples, no extra sections.**
+Reference: `packages/evo-marko/src/tags/evo-chip/README.md`
+
+```html
+<h1 style="display: flex; justify-content: space-between; align-items: center;">
+  <span> evo-[name] </span>
+  <span style="font-weight: normal; font-size: medium; margin-bottom: -15px;">
+    DS v1.0.0
+  </span>
+</h1>
+
+One-line description. ## Examples and Documentation - [Storybook](...) -
+[Storybook Docs](...) - [Code Examples](...)
+```
+
 ---
 
 ## Template syntax migration rules
