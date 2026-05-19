@@ -1,20 +1,22 @@
 import type { ComponentProps, ElementType, ReactNode } from "react";
 import type { NativeButtonProps } from "../button/types";
 
-export type EvoAlertDialogHeaderProps = ComponentProps<"h2"> & {
+export type EvoConfirmDialogHeaderProps = ComponentProps<"h2"> & {
   as?: ElementType;
 };
 
-export type EvoAlertDialogMainProps = ComponentProps<"div">;
+export type EvoConfirmDialogMainProps = ComponentProps<"div">;
 
-export type EvoAlertDialogFooterProps = ComponentProps<"div">;
+export type EvoConfirmDialogFooterProps = ComponentProps<"div">;
 
-export type EvoAlertDialogConfirmProps = Omit<
+export type EvoConfirmDialogConfirmProps = Omit<
   NativeButtonProps,
   "priority" | "autoFocus" | "aria-describedby"
 >;
 
-export type EvoAlertDialogProps = Omit<
+export type EvoConfirmDialogRejectProps = Omit<NativeButtonProps, "priority">;
+
+export type EvoConfirmDialogProps = Omit<
   ComponentProps<"dialog">,
   "open" | "role" | "aria-labelledby" | "aria-modal"
 > & {
