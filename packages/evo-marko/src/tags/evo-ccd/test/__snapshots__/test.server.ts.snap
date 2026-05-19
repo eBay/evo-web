@@ -375,6 +375,55 @@ exports[`ccd > renders default ccd 1`] = `
 </div>"
 `;
 
+exports[`ccd > renders with custom units 1`] = `
+"<div
+  aria-label="1000 - 2000 Watts."
+  class="ccd"
+  role="figure"
+>
+  <div
+    class="ccd__description-figure"
+  >
+    <svg
+      aria-hidden="true"
+      class="ccd__top-icon icon icon--ccd-top"
+    >
+      <symbol
+        fill="none"
+        id="icon-ccd-top"
+        viewBox="0 0 35 25"
+      >
+        <path
+          d="M0.5 25V13.5H34.5V25"
+          stroke-width="1"
+        />
+        <path
+          d="M6.5 13V0.5H10.5V13"
+          stroke-width="1"
+        />
+        <path
+          d="M24.5 13V0.5H28.5V13"
+          stroke-width="1"
+        />
+      </symbol>
+      <use
+        href="#icon-ccd-top"
+      />
+    </svg>
+    <div
+      class="ccd__body"
+    >
+      <div>
+        1000 - 2000
+      </div>
+      <div>
+        V
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
 exports[`ccd > renders with no min and max 1`] = `
 "<div
   aria-label=""
