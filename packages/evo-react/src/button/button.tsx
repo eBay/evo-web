@@ -14,30 +14,27 @@ import "@ebay/skin/button.mjs";
 
 export function EvoButton(props: AnchorButtonProps): React.JSX.Element;
 export function EvoButton(props: NativeButtonProps): React.JSX.Element;
-export function EvoButton(
-  props: AnchorButtonProps | NativeButtonProps,
-): React.JSX.Element {
-  const {
-    priority = "secondary",
-    variant = "standard",
-    size,
-    bodyState,
-    split,
-    transparent = false,
-    fluid = false,
-    disabled,
-    partiallyDisabled,
-    children,
-    onKeyDown,
-    onEscape,
-    truncate = false,
-    href,
-    as: _as,
-    className: extraClasses,
-    borderless,
-    fixedHeight,
-    ...rest
-  } = props as EvoButtonProps;
+export function EvoButton({
+  priority = "secondary",
+  variant = "standard",
+  size,
+  bodyState,
+  split,
+  transparent = false,
+  fluid = false,
+  disabled,
+  partiallyDisabled,
+  children,
+  onKeyDown,
+  onEscape,
+  truncate = false,
+  href,
+  as: _as,
+  className: extraClasses,
+  borderless,
+  fixedHeight,
+  ...rest
+}: EvoButtonProps) {
   const classPrefix = href ? "fake-btn" : "btn";
   const priorityStyles: { [key in Priority]: string } = {
     primary: `${classPrefix}--primary`,

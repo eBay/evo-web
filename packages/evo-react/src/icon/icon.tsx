@@ -41,7 +41,7 @@ export function EvoIcon({
   prominent,
   __symbol,
   ...rest
-}: EvoIconProps): React.JSX.Element {
+}: EvoIconProps) {
   const id = useId();
   const defRef = useRef<SVGDefsElement | null>(null);
   const [hideDefsElement, setHideDefsElement] = useState(false);
