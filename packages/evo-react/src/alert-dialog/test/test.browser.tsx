@@ -289,9 +289,8 @@ describe("evo-alert-dialog", () => {
   describe("when Escape is pressed (controlled)", () => {
     it("should NOT call onOpenChange — Escape is blocked on alert dialogs", async () => {
       const onOpenChange = vi.fn();
-      const screen = await renderOpenDialog(undefined, onOpenChange);
-      // Focus the confirm button (autofocused inside the modal) then press Escape
-      screen.getByRole("button", { name: "OK" }).element().focus();
+      await renderOpenDialog(undefined, onOpenChange);
+      // The confirm button receives focus automatically via autoFocus + showModal()
       await user.keyboard("{Escape}");
       expect(onOpenChange).not.toHaveBeenCalled();
     });
