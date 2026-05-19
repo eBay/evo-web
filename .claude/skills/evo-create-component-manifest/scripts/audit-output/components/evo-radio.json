@@ -1,0 +1,75 @@
+{
+  "name": "evo-radio",
+  "skinModules": [
+    "radio",
+    "field"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/radio",
+      "@ebay/skin/field"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-radio-unchecked-24",
+      "evo-icon-radio-checked-24",
+      "evo-icon-radio-unchecked-18",
+      "evo-icon-radio-checked-18"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Input"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"large\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "color-token",
+      "com",
+      "fill-token",
+      "outline-color-token",
+      "paciellogroup",
+      "radio"
+    ],
+    "bemElements": [
+      "radio__checked",
+      "radio__control",
+      "radio__icon",
+      "radio__unchecked"
+    ],
+    "bemModifiers": [
+      "radio--large"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[disabled]",
+      "[hidden]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

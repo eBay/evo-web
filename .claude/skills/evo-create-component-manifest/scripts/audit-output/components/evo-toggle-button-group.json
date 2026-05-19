@@ -1,0 +1,178 @@
+{
+  "name": "evo-toggle-button-group",
+  "skinModules": [
+    "toggle-button-group"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-toggle-button"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        },
+        {
+          "name": "a11yLabelId",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "button",
+          "optional": true,
+          "type": "Marko.AttrTag< Omit<ToggleButtonInput, \"pressed\" | \"pressedChange\"> & { name?: string | number; } >",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "pressed",
+          "optional": true,
+          "type": "Pressed",
+          "category": "prop"
+        },
+        {
+          "name": "pressedChange",
+          "optional": true,
+          "type": "(pressed: Pressed) => void",
+          "category": "prop"
+        },
+        {
+          "name": "required",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "columnsMin",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "columnsXS",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "columnsSM",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "columnsMD",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "columnsXL",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "layoutType",
+          "optional": true,
+          "type": "ToggleButtonInput[\"layoutType\"]",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "a11yLabelId"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "e",
+      "toggle-button",
+      "toggle-button-group"
+    ],
+    "bemElements": [
+      "toggle-button__content",
+      "toggle-button__icon",
+      "toggle-button__image",
+      "toggle-button__image-container"
+    ],
+    "bemModifiers": [
+      "toggle-button-group--gallery-layout",
+      "toggle-button-group--list-layout"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--row-gallery-toggle-buttons-md",
+      "--row-gallery-toggle-buttons-min",
+      "--row-gallery-toggle-buttons-sm",
+      "--row-gallery-toggle-buttons-xl",
+      "--row-gallery-toggle-buttons-xs",
+      "--row-list-toggle-buttons-md",
+      "--row-list-toggle-buttons-min",
+      "--row-list-toggle-buttons-sm",
+      "--row-list-toggle-buttons-xl",
+      "--row-list-toggle-buttons-xs",
+      "--row-min-toggle-buttons-md",
+      "--row-min-toggle-buttons-min",
+      "--row-min-toggle-buttons-sm",
+      "--row-min-toggle-buttons-xl",
+      "--row-min-toggle-buttons-xs",
+      "--spacing-100",
+      "--toggle-button-height-min"
+    ],
+    "cssCustomPropertyDefinitions": [
+      "--row-gallery-toggle-buttons-md",
+      "--row-gallery-toggle-buttons-min",
+      "--row-gallery-toggle-buttons-sm",
+      "--row-gallery-toggle-buttons-xl",
+      "--row-gallery-toggle-buttons-xs",
+      "--row-list-toggle-buttons-md",
+      "--row-list-toggle-buttons-min",
+      "--row-list-toggle-buttons-sm",
+      "--row-list-toggle-buttons-xl",
+      "--row-list-toggle-buttons-xs",
+      "--row-min-toggle-buttons-md",
+      "--row-min-toggle-buttons-min",
+      "--row-min-toggle-buttons-sm",
+      "--row-min-toggle-buttons-xl",
+      "--row-min-toggle-buttons-xs"
+    ],
+    "stateSelectors": [
+      "[data-columns-#{$breakpoint}=\"#{$i}\"]",
+      "[data-columns-min=\"1\"]",
+      "[data-columns-min=\"2\"]",
+      "[data-columns-min=\"3\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

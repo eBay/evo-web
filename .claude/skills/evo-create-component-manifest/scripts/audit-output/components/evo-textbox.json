@@ -1,0 +1,161 @@
+{
+  "name": "evo-textbox",
+  "skinModules": [
+    "icon",
+    "floating-label",
+    "textbox",
+    "icon-button"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon",
+      "@ebay/skin/floating-label",
+      "@ebay/skin/textbox",
+      "@ebay/skin/icon-button"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-floating-label"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Input"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "prefixIcon",
+          "optional": true,
+          "type": "Marko.AttrTag<{ content: Marko.Body }>",
+          "category": "slot"
+        },
+        {
+          "name": "prefixText",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Span>",
+          "category": "slot"
+        },
+        {
+          "name": "postfixText",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Span>",
+          "category": "slot"
+        },
+        {
+          "name": "postfixIcon",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Button & { a11yText?: string; }>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "multiline",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "inputSize",
+          "optional": true,
+          "type": "\"regular\" | \"large\"",
+          "category": "prop"
+        },
+        {
+          "name": "fluid",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "opaqueLabel",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "floatingLabel",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "floatingLabelStatic",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "invalid",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "autocorrect",
+          "optional": true,
+          "type": "Marko.HTML.TextArea[\"autocorrect\"]",
+          "category": "prop"
+        },
+        {
+          "name": "cols",
+          "optional": true,
+          "type": "Marko.HTML.TextArea[\"cols\"]",
+          "category": "prop"
+        },
+        {
+          "name": "rows",
+          "optional": true,
+          "type": "Marko.HTML.TextArea[\"rows\"]",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-describedby",
+        "value": "(\n                [prefixId, postfixId].filter(Boolean)"
+      },
+      {
+        "attr": "aria-invalid",
+        "value": "invalid"
+      },
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "color-token",
+      "icon"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled",
+      "icon--confirmation-filled",
+      "icon--disabled",
+      "icon--information-filled"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-media-disabled-filter"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

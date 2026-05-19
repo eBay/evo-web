@@ -1,0 +1,84 @@
+{
+  "name": "evo-file-input",
+  "skinModules": [
+    "file-input"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/file-input"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-upload-24"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Input, \"type\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "header",
+          "optional": true,
+          "type": "Marko.AttrTag< Marko.Input<\"h1\"> & { as?: keyof Marko.NativeTags; } >",
+          "category": "slot"
+        },
+        {
+          "name": "subheader",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Span>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": []
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "border-color-token",
+      "border-radius-token",
+      "color-token",
+      "file",
+      "file-input",
+      "fill-token"
+    ],
+    "bemElements": [
+      "file-input__container",
+      "file-input__content",
+      "file-input__content-cta",
+      "file-input__content-header",
+      "file-input__content-subheader",
+      "file-input__input",
+      "file-input__upload-icon"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-size-body",
+      "--font-size-medium",
+      "--font-size-small",
+      "--spacing-100",
+      "--spacing-150",
+      "--spacing-200",
+      "--spacing-250",
+      "--spacing-300",
+      "--spacing-50"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

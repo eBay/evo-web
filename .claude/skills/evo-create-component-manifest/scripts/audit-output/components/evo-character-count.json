@@ -1,0 +1,58 @@
+{
+  "name": "evo-character-count",
+  "skinModules": [
+    "character-count"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Span, \"content\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": true,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "string",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "count",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "max",
+          "optional": false,
+          "type": "number",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "evo-details",
+  "skinModules": [
+    "details"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/details"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-chevron-down-16"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.Input<\"details\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "summary",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.Input<\"span\">>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"regular\" | \"small\"",
+          "category": "prop"
+        },
+        {
+          "name": "alignment",
+          "optional": true,
+          "type": "\"regular\" | \"center\"",
+          "category": "prop"
+        },
+        {
+          "name": "contentAs",
+          "optional": true,
+          "type": "keyof Marko.NativeTags",
+          "category": "prop"
+        },
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(open: boolean) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "border-radius-token",
+      "color-token",
+      "com",
+      "details",
+      "paciellogroup",
+      "standard"
+    ],
+    "bemElements": [
+      "details__icon",
+      "details__summary",
+      "details__summary--center",
+      "details__summary--small"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-size-body",
+      "--font-size-small",
+      "--font-weight-600",
+      "--spacing-100"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[hidden]",
+      "[open]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

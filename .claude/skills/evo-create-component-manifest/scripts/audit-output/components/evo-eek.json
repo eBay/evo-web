@@ -1,0 +1,108 @@
+{
+  "name": "evo-eek",
+  "skinModules": [
+    "eek"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/eek"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-eek-range-arrow",
+      "evo-icon-eek-arrow"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Div, \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "max",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "min",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "rating",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"regular\" | \"large\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      },
+      {
+        "attr": "aria-hidden",
+        "value": "\"true\""
+      }
+    ],
+    "templateRoleUsages": [
+      "img"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "eek",
+      "sqrt"
+    ],
+    "bemElements": [
+      "eek__arrow",
+      "eek__container",
+      "eek__rating",
+      "eek__rating-range"
+    ],
+    "bemModifiers": [
+      "eek--large",
+      "eek--rating-1",
+      "eek--rating-2",
+      "eek--rating-3",
+      "eek--rating-4",
+      "eek--rating-5",
+      "eek--rating-6",
+      "eek--rating-7",
+      "icon--eek-arrow",
+      "icon--eek-range-arrow"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

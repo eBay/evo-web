@@ -1,0 +1,206 @@
+{
+  "name": "evo-menu",
+  "skinModules": [
+    "menu"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/menu"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-roving-tabindex",
+      "evo-typeahead",
+      "evo-icon-radio-unchecked-18",
+      "evo-icon-radio-checked-18",
+      "evo-icon-checkbox-unchecked-18",
+      "evo-icon-checkbox-checked-18",
+      "evo-badge",
+      "evo-icon-tick-16",
+      "evo-button"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Item",
+        "props": [
+          {
+            "name": "value",
+            "optional": true,
+            "type": "string",
+            "category": "prop"
+          },
+          {
+            "name": "separator",
+            "optional": true,
+            "type": "boolean",
+            "category": "prop"
+          },
+          {
+            "name": "badgeNumber",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "disabled",
+            "optional": true,
+            "type": "boolean",
+            "category": "prop"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Span"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "item",
+          "optional": true,
+          "type": "Marko.AttrTag<Item>",
+          "category": "slot"
+        },
+        {
+          "name": "footerButton",
+          "optional": true,
+          "type": "Marko.AttrTag<ButtonInput>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "selected",
+          "optional": true,
+          "type": "Index",
+          "category": "prop"
+        },
+        {
+          "name": "selectedChange",
+          "optional": true,
+          "type": "(selected: Index) => void",
+          "category": "prop"
+        },
+        {
+          "name": "variant",
+          "optional": true,
+          "type": "\"filter\" | \"none\"",
+          "category": "prop"
+        },
+        {
+          "name": "classPrefix",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "typeaheadTimeoutLength",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "reverse",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "fixed",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "fixWidth",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "ariaLabel"
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "ariaLabelledby"
+      },
+      {
+        "attr": "aria-checked",
+        "value": "isCheckable"
+      },
+      {
+        "attr": "aria-disabled",
+        "value": "disabled"
+      }
+    ],
+    "templateRoleUsages": [
+      "menu",
+      "separator",
+      "itemRole"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "badge",
+      "base",
+      "border-color-token",
+      "color-token",
+      "com",
+      "fake-menu",
+      "filter",
+      "footer",
+      "icon",
+      "menu",
+      "paciellogroup",
+      "status"
+    ],
+    "bemElements": [
+      "fake-menu__item",
+      "fake-menu__item--badged",
+      "fake-menu__items",
+      "fake-menu__items--fix-width",
+      "fake-menu__items--reverse",
+      "menu__footer",
+      "menu__item",
+      "menu__item--badged",
+      "menu__items",
+      "menu__items--fix-width",
+      "menu__items--reverse",
+      "menu__items--scroll",
+      "menu__separator"
+    ],
+    "bemModifiers": [
+      "expand-btn--borderless",
+      "menu--filter"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--spacing-100"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-checked=\"true\"]",
+      "[aria-current=\"page\"]",
+      "[aria-disabled=\"true\"]",
+      "[disabled]",
+      "[role=\"menu\"]",
+      "[role^=\"menuitem\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

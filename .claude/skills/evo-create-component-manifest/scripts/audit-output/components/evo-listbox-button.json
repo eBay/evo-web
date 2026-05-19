@@ -1,0 +1,272 @@
+{
+  "name": "evo-listbox-button",
+  "skinModules": [
+    "listbox-button",
+    "button"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/listbox-button",
+      "@ebay/skin/button"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-listbox",
+      "evo-button"
+    ],
+    "subComponents": [
+      "evo-listbox",
+      "evo-button",
+      "evo-expander",
+      "evo-icon-chevron-down-16"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11ySelectedText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        },
+        {
+          "name": "a11yDescribedBy",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "selected",
+          "optional": true,
+          "type": "ListboxInput<Index>[\"selected\"]",
+          "category": "prop"
+        },
+        {
+          "name": "selectedChange",
+          "optional": true,
+          "type": "ListboxInput<Index>[\"selectedChange\"]",
+          "category": "prop"
+        },
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(newOpen: boolean) => void",
+          "category": "prop"
+        },
+        {
+          "name": "option",
+          "optional": true,
+          "type": "ListboxInput<Index>[\"option\"]",
+          "category": "prop"
+        },
+        {
+          "name": "name",
+          "optional": true,
+          "type": "ListboxInput<Index>[\"name\"]",
+          "category": "prop"
+        },
+        {
+          "name": "listSelection",
+          "optional": true,
+          "type": "ListboxInput<Index>[\"listSelection\"]",
+          "category": "prop"
+        },
+        {
+          "name": "prefixId",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "unselectedText",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "variant",
+          "optional": true,
+          "type": "\"standard\" | \"form\"",
+          "category": "prop"
+        },
+        {
+          "name": "truncate",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "fluid",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "strategy",
+          "optional": true,
+          "type": "\"fixed\" | \"absolute\"",
+          "category": "prop"
+        },
+        {
+          "name": "borderless",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "floatingLabel",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "buttonName",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "split",
+          "optional": true,
+          "type": "ButtonInput[\"split\"]",
+          "category": "prop"
+        },
+        {
+          "name": "invalid",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "hasError",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "prefixLabel",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "postfixLabel",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "collapseOnSelect",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-haspopup",
+        "value": "\"listbox\""
+      },
+      {
+        "attr": "aria-describedby",
+        "value": "a11yDescribedBy"
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "prefixId"
+      },
+      {
+        "attr": "aria-invalid",
+        "value": "invalid"
+      },
+      {
+        "attr": "aria-expanded",
+        "value": "expander.ariaExpanded"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "base",
+      "border-color-token",
+      "border-radius-token",
+      "btn",
+      "color-token",
+      "com",
+      "disabled",
+      "expand-btn",
+      "icon",
+      "item-border-radius",
+      "listbox-button",
+      "paciellogroup",
+      "selection-list-item-base",
+      "selector-hover",
+      "status"
+    ],
+    "bemElements": [
+      "btn__floating-label",
+      "btn__label",
+      "btn__text",
+      "listbox-button__description",
+      "listbox-button__listbox",
+      "listbox-button__option",
+      "listbox-button__option--active",
+      "listbox-button__options",
+      "listbox-button__value"
+    ],
+    "bemModifiers": [
+      "btn--borderless",
+      "btn--form",
+      "expand-btn--borderless",
+      "listbox-button--error",
+      "listbox-button--expanded",
+      "listbox-button--fluid",
+      "listbox-button--form"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-size-small",
+      "--spacing-100"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]",
+      "[aria-expanded=\"true\"]",
+      "[aria-invalid=\"true\"]",
+      "[aria-selected=\"true\"]",
+      "[disabled]",
+      "[role=\"listbox\"]",
+      "[role=\"option\"]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

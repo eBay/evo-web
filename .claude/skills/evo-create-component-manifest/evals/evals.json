@@ -1,0 +1,57 @@
+{
+  "skill_name": "evo-create-component-manifest",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/evo-create-component-manifest ebay-avatar",
+      "expected_output": "Produces contracts/ebay-avatar/manifest.json and contracts/ebay-avatar/gap-report.json. The manifest should be fully populated with props, slots, states, variants, BEM, design tokens, and a11y. The gap report should have zero or minimal gaps (0-2 medium-confidence) since the contract is complete. Ends with a GATE 2 summary and stops — does not write any component code.",
+      "files": [],
+      "expectations": [
+        "manifest.json is written to contracts/ebay-avatar/manifest.json",
+        "gap-report.json is written to contracts/ebay-avatar/gap-report.json",
+        "manifest.json contains all five props (size, imageUrl, initials, a11yText, fallback) with correct types",
+        "manifest.json contains all three variants (image, initials, icon) with trigger conditions",
+        "manifest.json contains both slots (default) and states (loading, error)",
+        "manifest.json contains the BEM block 'avatar' with the correct elements and modifiers",
+        "manifest.json contains at least 4 design tokens",
+        "gap-report.json has zero low-confidence gaps",
+        "The skill prints a GATE 2 message and does not generate any SCSS, React, or Marko code",
+        "No downstream skill (/evo-component or similar) is invoked"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "create manifest for ebay-badge",
+      "expected_output": "Produces contracts/ebay-badge/manifest.json and contracts/ebay-badge/gap-report.json. The contract is partial — no Figma URL, no slots section, no states section, no design tokens, no a11y section. The gap report should have multiple low-confidence (missing) entries for these omitted fields. The GATE 2 summary must call out the required engineer actions before the manifest can be approved.",
+      "files": [],
+      "expectations": [
+        "manifest.json is written to contracts/ebay-badge/manifest.json",
+        "gap-report.json is written to contracts/ebay-badge/gap-report.json",
+        "manifest.json has figmaUrl set to null with a corresponding gap entry",
+        "manifest.json has designTokens as an empty array or null with a corresponding gap entry",
+        "gap-report.json has at least 3 gaps with confidence 'low' or source 'missing'",
+        "gap-report.json requiresEngineerAction is non-empty",
+        "The GATE 2 summary lists the 🔴 gaps that the engineer must resolve",
+        "The skill prints a GATE 2 message and does not generate any component code",
+        "The manifest still includes the 3 props (count, max, variant) that are clearly defined in the contract"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "generate manifest from contract for ebay-progress-bar",
+      "expected_output": "Produces contracts/ebay-progress-bar/manifest.json and contracts/ebay-progress-bar/gap-report.json. The contract describes two modes in prose (determinate/indeterminate) without using a formal 'variants' table. The manifest should extract these as variants with medium-confidence gaps noting the prose source. Figma URL is explicitly stated as pending — should be null with a low-confidence gap. Design tokens are described as TBD — should be null with a low-confidence gap.",
+      "files": [],
+      "expectations": [
+        "manifest.json is written to contracts/ebay-progress-bar/manifest.json",
+        "gap-report.json is written to contracts/ebay-progress-bar/gap-report.json",
+        "manifest.json has figmaUrl set to null with a gap entry noting it is pending",
+        "manifest.json has designTokens as null or empty with a gap entry noting tokens are TBD",
+        "manifest.json contains two variants (determinate and indeterminate) extracted from the prose description",
+        "The variant gap entries have confidence 'medium' and source 'inferred' (not 'missing')",
+        "The skill correctly uses medium confidence for inferred fields, not low confidence",
+        "gap-report.json requiresEngineerAction contains figmaUrl and designTokens",
+        "The skill prints a GATE 2 message and does not generate any component code"
+      ]
+    }
+  ]
+}

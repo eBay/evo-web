@@ -1,0 +1,113 @@
+{
+  "name": "evo-avatar",
+  "skinModules": [
+    "avatar"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/avatar"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-avatar-signed-out"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Div, \"role\" | \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "image",
+          "optional": true,
+          "type": "Marko.AttrTag<Omit<Marko.HTML.Img, \"alt\">>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "username",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "color",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "Size | `${Size}`",
+          "category": "prop"
+        },
+        {
+          "name": "knownAspectRatio",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": [
+      "img"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "avatar",
+      "image-treatment"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "avatar--fit",
+      "avatar--green",
+      "avatar--light-teal",
+      "avatar--lime",
+      "avatar--magenta",
+      "avatar--orange",
+      "avatar--pink",
+      "avatar--teal",
+      "avatar--yellow"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-size-giant-1",
+      "--font-size-giant-2",
+      "--font-size-giant-3",
+      "--font-size-giant-4",
+      "--font-size-large-1",
+      "--font-size-large-2",
+      "--font-size-medium",
+      "--font-weight-600"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

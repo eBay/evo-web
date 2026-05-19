@@ -1,0 +1,145 @@
+{
+  "name": "evo-dialog",
+  "skinModules": [
+    "dialog"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/dialog"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-icon-button"
+    ],
+    "subComponents": [
+      "evo-icon-button",
+      "evo-icon-chevron-left-16",
+      "evo-icon-close-16"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Dialog"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "banner",
+          "optional": true,
+          "type": "Marko.AttrTag< Marko.Input<\"div\"> & { src?: string; position?: Marko.CSS.Properties[\"background-position\"]; } >",
+          "category": "slot"
+        },
+        {
+          "name": "header",
+          "optional": false,
+          "type": "Marko.AttrTag<Marko.Input<\"h2\"> & { as?: string }>",
+          "category": "slot"
+        },
+        {
+          "name": "footer",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.Input<\"div\">>",
+          "category": "slot"
+        },
+        {
+          "name": "close",
+          "optional": false,
+          "type": "Marko.AttrTag<IconButtonInput>",
+          "category": "slot"
+        },
+        {
+          "name": "previous",
+          "optional": true,
+          "type": "Marko.AttrTag<IconButtonInput>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(o: boolean) => void",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "(typeof validSizes)[number]",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-labelledby",
+        "value": "(inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId)"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "dialog",
+      "icon",
+      "icon-btn"
+    ],
+    "bemElements": [
+      "dialog__close",
+      "dialog__footer",
+      "dialog__header",
+      "dialog__image",
+      "dialog__main",
+      "dialog__prev"
+    ],
+    "bemModifiers": [
+      "dialog--close",
+      "dialog--expressive",
+      "dialog--large",
+      "dialog--narrow",
+      "dialog--wide"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-100",
+      "--border-radius-150",
+      "--color-background-primary",
+      "--color-foreground-primary",
+      "--dialog-max-width",
+      "--dialog-narrow-max-width",
+      "--dialog-scrim-color",
+      "--dialog-wide-max-width",
+      "--motion-duration-medium-3",
+      "--motion-duration-short-3",
+      "--motion-easing-continuous",
+      "--motion-easing-soft-exit",
+      "--motion-easing-standard",
+      "--spacing-100",
+      "--spacing-200",
+      "--spacing-300"
+    ],
+    "cssCustomPropertyDefinitions": [
+      "--dialog-max-width",
+      "--dialog-narrow-max-width",
+      "--dialog-scrim-color",
+      "--dialog-wide-max-width"
+    ],
+    "stateSelectors": [
+      "[open]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

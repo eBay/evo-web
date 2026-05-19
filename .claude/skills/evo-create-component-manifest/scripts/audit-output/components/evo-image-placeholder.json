@@ -1,0 +1,49 @@
+{
+  "name": "evo-image-placeholder",
+  "skinModules": [
+    "icon",
+    "star-rating"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon",
+      "@ebay/skin/star-rating"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": null,
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "color-token",
+      "icon"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled",
+      "icon--confirmation-filled",
+      "icon--disabled",
+      "icon--information-filled"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-media-disabled-filter"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

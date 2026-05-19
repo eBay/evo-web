@@ -1,0 +1,75 @@
+{
+  "name": "evo-checkbox",
+  "skinModules": [
+    "checkbox",
+    "field"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/checkbox",
+      "@ebay/skin/field"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-checkbox-unchecked-24",
+      "evo-icon-checkbox-checked-24",
+      "evo-icon-checkbox-unchecked-18",
+      "evo-icon-checkbox-checked-18"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Input, \"type\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"large\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "checkbox",
+      "color-token",
+      "com",
+      "fill-token",
+      "outline-color-token",
+      "paciellogroup"
+    ],
+    "bemElements": [
+      "checkbox__checked",
+      "checkbox__control",
+      "checkbox__icon",
+      "checkbox__unchecked"
+    ],
+    "bemModifiers": [
+      "checkbox--large"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[disabled]",
+      "[hidden]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "name": "evo-progress-stepper",
+  "skinModules": [
+    "progress-stepper"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/progress-stepper"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-stepper-confirmation-24",
+      "evo-icon-stepper-attention-24",
+      "evo-icon-stepper-upcoming-24"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Step",
+        "props": []
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yHeadingText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "step",
+          "optional": true,
+          "type": "Marko.AttrTag<Step>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "direction",
+          "optional": true,
+          "type": "\"row\" | \"column\"",
+          "category": "prop"
+        },
+        {
+          "name": "defaultState",
+          "optional": true,
+          "type": "\"active\" | \"complete\" | \"upcoming\" | \"attention\" | \"current\"",
+          "category": "prop"
+        },
+        {
+          "name": "headingAs",
+          "optional": true,
+          "type": "keyof Marko.NativeTags",
+          "category": "prop"
+        },
+        {
+          "name": "stepContentAs",
+          "optional": true,
+          "type": "keyof Marko.NativeTags",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-labelledby",
+        "value": "stepperHeading"
+      },
+      {
+        "attr": "aria-current",
+        "value": "current"
+      }
+    ],
+    "templateRoleUsages": [
+      "list",
+      "presentation",
+      "listitem"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "color-token",
+      "progress-stepper"
+    ],
+    "bemElements": [
+      "progress-stepper__icon",
+      "progress-stepper__item",
+      "progress-stepper__item--attention",
+      "progress-stepper__items",
+      "progress-stepper__items--current",
+      "progress-stepper__items--upcoming",
+      "progress-stepper__separator",
+      "progress-stepper__text"
+    ],
+    "bemModifiers": [
+      "progress-stepper--vertical"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-accent",
+      "--color-background-disabled",
+      "--font-size-body",
+      "--spacing-200",
+      "--spacing-50"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-current]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

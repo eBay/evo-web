@@ -1,0 +1,74 @@
+{
+  "name": "evo-progress-spinner",
+  "skinModules": [
+    "progress-spinner"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/progress-spinner"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-spinner-30",
+      "evo-icon-spinner-20",
+      "evo-icon-spinner-24"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Span, \"role\" | \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"large\" | \"small\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": [
+      "img"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "icon",
+      "progress-spinner"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "progress-spinner--large",
+      "progress-spinner--small"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

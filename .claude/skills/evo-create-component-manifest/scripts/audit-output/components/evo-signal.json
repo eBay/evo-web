@@ -1,0 +1,66 @@
+{
+  "name": "evo-signal",
+  "skinModules": [
+    "signal"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/signal"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Span"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "status",
+          "optional": true,
+          "type": "\"trustworthy\" | \"recent\" | \"time-sensitive\" | \"neutral\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "signal"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "signal--neutral",
+      "signal--recent",
+      "signal--time-sensitive",
+      "signal--trustworthy"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-100",
+      "--color-foreground-accent",
+      "--color-foreground-attention",
+      "--color-foreground-secondary",
+      "--color-foreground-success",
+      "--font-size-smallest",
+      "--spacing-100",
+      "--spacing-150"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

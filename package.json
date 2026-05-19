@@ -23,7 +23,10 @@
     "start": "concurrently --kill-others-on-fail \"marko-run\" \"npm start -w packages/ebayui-core\" \"npm start -w packages/ebayui-core-react\"",
     "test": "npm run test --ws",
     "update-snapshots": "npm run update-snapshots --ws --if-present",
-    "version": "npm run version --ws --if-present && changeset version && npm i --package-lock-only && git add -A packages"
+    "version": "npm run version --ws --if-present && changeset version && npm i --package-lock-only && git add -A packages",
+    "codegen:spec-to-manifest": "tsx scripts/codegen/spec-to-manifest.ts",
+    "codegen:scaffold": "tsx scripts/codegen/generate-component-scaffold.ts",
+    "codegen:update-metadata": "tsx scripts/codegen/update-component-metadata.ts"
   },
   "commitlint": {
     "extends": "@commitlint/config-conventional"

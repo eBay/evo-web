@@ -1,0 +1,152 @@
+{
+  "name": "evo-pagination",
+  "skinModules": [
+    "pagination",
+    "utility",
+    "icon",
+    "icon-button"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/pagination",
+      "@ebay/skin/utility",
+      "@ebay/skin/icon",
+      "@ebay/skin/icon-button"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-icon-button"
+    ],
+    "subComponents": [
+      "evo-icon-button",
+      "evo-icon-arrow-left-16",
+      "evo-fake-menu-button",
+      "evo-icon-overflow-horizontal-24",
+      "evo-icon-arrow-right-16"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Item",
+        "props": [
+          {
+            "name": "current",
+            "optional": true,
+            "type": "boolean",
+            "category": "prop"
+          },
+          {
+            "name": "href",
+            "optional": true,
+            "type": "string",
+            "category": "prop"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Nav"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yCurrentText",
+          "optional": false,
+          "type": "Marko.HTMLAttributes[\"aria-label\"]",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "item",
+          "optional": true,
+          "type": "Marko.AttrTag<Item>",
+          "category": "slot"
+        },
+        {
+          "name": "prev",
+          "optional": true,
+          "type": "Marko.AttrTag<Omit<IconButtonInput, \"content\">>",
+          "category": "slot"
+        },
+        {
+          "name": "next",
+          "optional": true,
+          "type": "Marko.AttrTag<Omit<IconButtonInput, \"content\">>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "variant",
+          "optional": true,
+          "type": "\"show-range\" | \"show-last\" | \"overflow\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-labelledby",
+        "value": "headingId"
+      },
+      {
+        "attr": "aria-live",
+        "value": "\"polite\""
+      },
+      {
+        "attr": "aria-current",
+        "value": "item.current"
+      }
+    ],
+    "templateRoleUsages": [
+      "navigation",
+      "status",
+      "separator"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "color-token",
+      "com",
+      "flex-items-centered",
+      "inline-flex-items-centered",
+      "paciellogroup",
+      "pagination",
+      "standard"
+    ],
+    "bemElements": [
+      "pagination__item",
+      "pagination__items",
+      "pagination__next",
+      "pagination__previous"
+    ],
+    "bemModifiers": [
+      "icon--arrow-left-16",
+      "icon--arrow-right-16",
+      "icon-btn--transparent",
+      "pagination--fluid"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-weight-400",
+      "--font-weight-600",
+      "--spacing-100",
+      "--spacing-200",
+      "--spacing-600"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-current=\"page\"]",
+      "[hidden]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "evo-file-preview-card-group",
+  "skinModules": [
+    "file-preview-card-group"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/file-preview-card-group"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-file-preview-card"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "card",
+          "optional": true,
+          "type": "Marko.AttrTag<FilePreviewCardInput>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "seeMoreAction",
+          "optional": true,
+          "type": "FilePreviewCardInput[\"seeMoreAction\"]",
+          "category": "prop"
+        },
+        {
+          "name": "visibleCardCount",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "visibleCardCountChange",
+          "optional": true,
+          "type": "(s: number) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "e",
+      "file-preview-card-group"
+    ],
+    "bemElements": [],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--spacing-100",
+      "--spacing-200"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

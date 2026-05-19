@@ -1,0 +1,142 @@
+{
+  "name": "evo-toggle-button",
+  "skinModules": [
+    "toggle-button"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/toggle-button"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Button"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "icon",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Span>",
+          "category": "slot"
+        },
+        {
+          "name": "image",
+          "optional": true,
+          "type": "Marko.AttrTag<{ src: string; alt: string; fillPlacement?: string; }>",
+          "category": "slot"
+        },
+        {
+          "name": "subtitle",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Span>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "pressed",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "pressedChange",
+          "optional": true,
+          "type": "(pressed: boolean) => void",
+          "category": "prop"
+        },
+        {
+          "name": "layoutType",
+          "optional": true,
+          "type": "\"minimal\" | \"list\" | \"gallery\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-pressed",
+        "value": "pressed"
+      },
+      {
+        "attr": "aria-label",
+        "value": "image.alt"
+      }
+    ],
+    "templateRoleUsages": [
+      "img"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "icon",
+      "toggle-button"
+    ],
+    "bemElements": [
+      "toggle-button__content",
+      "toggle-button__icon",
+      "toggle-button__image",
+      "toggle-button__image-container",
+      "toggle-button__subtitle",
+      "toggle-button__title"
+    ],
+    "bemModifiers": [
+      "toggle-button--gallery-layout",
+      "toggle-button--list-layout"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-primary",
+      "--color-background-secondary",
+      "--color-border-disabled",
+      "--color-border-medium",
+      "--color-border-strong",
+      "--color-foreground-disabled",
+      "--color-foreground-primary",
+      "--color-foreground-secondary",
+      "--font-size-body",
+      "--font-size-large-1",
+      "--font-size-large-2",
+      "--font-size-medium",
+      "--spacing-100",
+      "--spacing-200",
+      "--spacing-50",
+      "--state-layer-hover",
+      "--state-layer-pressed",
+      "--toggle-button-gallery-width-max",
+      "--toggle-button-gallery-width-min",
+      "--toggle-button-height-min",
+      "--toggle-button-list-width-max",
+      "--toggle-button-list-width-min",
+      "--toggle-button-width-max",
+      "--toggle-button-width-min"
+    ],
+    "cssCustomPropertyDefinitions": [
+      "--toggle-button-gallery-width-max",
+      "--toggle-button-gallery-width-min",
+      "--toggle-button-height-min",
+      "--toggle-button-list-width-max",
+      "--toggle-button-list-width-min",
+      "--toggle-button-width-max",
+      "--toggle-button-width-min"
+    ],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]",
+      "[aria-pressed=\"true\"]",
+      "[disabled]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "name": "evo-file-preview-card",
+  "skinModules": [
+    "file-preview-card"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/file-preview-card"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-icon-button"
+    ],
+    "subComponents": [
+      "evo-icon-button",
+      "evo-progress-spinner",
+      "evo-icon-file-24",
+      "evo-icon-close-16",
+      "evo-menu-button",
+      "evo-icon-delete-16",
+      "evo-icon-play-16"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "FilePreviewCardEvent",
+        "props": [
+          {
+            "name": "file",
+            "optional": false,
+            "type": "File",
+            "category": "prop"
+          },
+          {
+            "name": "menuAction",
+            "optional": false,
+            "type": "FilePreviewCardMenuAction",
+            "category": "prop"
+          },
+          {
+            "name": "originalEvent",
+            "optional": false,
+            "type": "Event",
+            "category": "prop"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "deleteAction",
+          "optional": true,
+          "type": "Marko.AttrTag<IconButtonInput>",
+          "category": "slot"
+        },
+        {
+          "name": "action",
+          "optional": true,
+          "type": "Marko.AttrTag<IconButtonInput>",
+          "category": "slot"
+        },
+        {
+          "name": "seeMoreAction",
+          "optional": true,
+          "type": "Marko.AttrTag<IconButtonInput>",
+          "category": "slot"
+        },
+        {
+          "name": "cancelAction",
+          "optional": true,
+          "type": "Marko.AttrTag<IconButtonInput>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "as",
+          "optional": true,
+          "type": "keyof Marko.NativeTags",
+          "category": "prop"
+        },
+        {
+          "name": "file",
+          "optional": true,
+          "type": "FilePreviewCardFile",
+          "category": "prop"
+        },
+        {
+          "name": "status",
+          "optional": true,
+          "type": "\"uploading\"",
+          "category": "prop"
+        },
+        {
+          "name": "href",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "infoText",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "menuActions",
+          "optional": true,
+          "type": "FilePreviewCardMenuAction[]",
+          "category": "prop"
+        },
+        {
+          "name": "footerTitle",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "footerSubtitle",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "null/"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "border-radius-token",
+      "file-preview-card",
+      "icon",
+      "icon-btn",
+      "standard"
+    ],
+    "bemElements": [
+      "file-preview-card__action",
+      "file-preview-card__asset",
+      "file-preview-card__asset--fade",
+      "file-preview-card__body",
+      "file-preview-card__footer",
+      "file-preview-card__info",
+      "file-preview-card__see-more"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-inverse",
+      "--color-foreground-on-strong",
+      "--color-foreground-secondary",
+      "--font-size-body",
+      "--font-size-small",
+      "--spacing-100",
+      "--spacing-150",
+      "--spacing-250",
+      "--spacing-400",
+      "--spacing-50"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

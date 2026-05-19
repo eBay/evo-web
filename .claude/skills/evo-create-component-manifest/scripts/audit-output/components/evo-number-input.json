@@ -1,0 +1,68 @@
+{
+  "name": "evo-number-input",
+  "skinModules": [
+    "icon",
+    "textbox",
+    "number-input"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon",
+      "@ebay/skin/textbox",
+      "@ebay/skin/number-input"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-textbox",
+      "evo-icon-button",
+      "evo-icon-remove-24",
+      "evo-icon-delete-24",
+      "evo-icon-add-24"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": null,
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "(!a11yText && !label ? \"Number Input\" : a11yText)"
+      },
+      {
+        "attr": "aria-hidden",
+        "value": "\"true\""
+      },
+      {
+        "attr": "aria-hidden",
+        "value": "\"true\""
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "color-token",
+      "icon"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled",
+      "icon--confirmation-filled",
+      "icon--disabled",
+      "icon--information-filled"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-media-disabled-filter"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "name": "evo-breadcrumbs",
+  "skinModules": [
+    "breadcrumbs",
+    "utility"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/breadcrumbs",
+      "@ebay/skin/utility"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-chevron-right-12",
+      "evo-fake-menu-button",
+      "evo-icon-overflow-horizontal-16"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Item",
+        "props": []
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Nav, \"role\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yHeadingText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        },
+        {
+          "name": "a11yHeadingTag",
+          "optional": true,
+          "type": "keyof Marko.NativeTags",
+          "category": "a11y"
+        },
+        {
+          "name": "a11yMenuButtonText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "item",
+          "optional": true,
+          "type": "Marko.AttrTag<Item>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": []
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-labelledby",
+        "value": "headingId"
+      },
+      {
+        "attr": "aria-current",
+        "value": "(itemList.length === 1 && !firstItem.href && \"location\")"
+      },
+      {
+        "attr": "aria-current",
+        "value": "(!lastItem.href && \"location\")"
+      }
+    ],
+    "templateRoleUsages": [
+      "navigation"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "breadcrumbs",
+      "color-token",
+      "fill-token",
+      "icon"
+    ],
+    "bemElements": [
+      "fake-menu-button__button",
+      "fake-menu-button__menu",
+      "menu-button__button",
+      "menu-button__menu"
+    ],
+    "bemModifiers": [
+      "breadcrumb--overflow"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-secondary",
+      "--font-size-body",
+      "--font-size-small",
+      "--spacing-300",
+      "--spacing-75"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-current]",
+      "[hidden]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

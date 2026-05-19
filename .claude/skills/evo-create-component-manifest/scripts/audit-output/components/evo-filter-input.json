@@ -1,0 +1,94 @@
+{
+  "name": "evo-filter-input",
+  "skinModules": [
+    "icon",
+    "textbox",
+    "filter-input"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon",
+      "@ebay/skin/textbox",
+      "@ebay/skin/filter-input"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-textbox",
+      "evo-icon-search-16",
+      "evo-icon-button",
+      "evo-icon-clear-16"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<TextboxInput, \"size\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yClearButtonText",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        },
+        {
+          "name": "a11yControlsId",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"large\" | \"small\"",
+          "category": "prop"
+        },
+        {
+          "name": "placeholder",
+          "optional": false,
+          "type": "NonNullable<TextboxInput[\"placeholder\"]>",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-controls",
+        "value": "a11yControlsId"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "color-token",
+      "icon"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled",
+      "icon--confirmation-filled",
+      "icon--disabled",
+      "icon--information-filled"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-media-disabled-filter"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

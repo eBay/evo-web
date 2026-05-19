@@ -1,0 +1,71 @@
+{
+  "name": "evo-list",
+  "skinModules": [
+    "list"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/list"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [
+      {
+        "name": "ListItem",
+        "props": []
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "item",
+          "optional": true,
+          "type": "Marko.AttrTag<ListItem>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": []
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "list",
+      "standard"
+    ],
+    "bemElements": [
+      "list__body",
+      "list__leading",
+      "list__trailing"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-border-subtle",
+      "--color-foreground-primary",
+      "--font-size-medium",
+      "--spacing-150",
+      "--spacing-200",
+      "--spacing-300",
+      "--spacing-600"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

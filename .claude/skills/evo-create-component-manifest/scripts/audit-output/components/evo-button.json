@@ -1,0 +1,310 @@
+{
+  "name": "evo-button",
+  "skinModules": [
+    "button"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/button"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-progress-spinner",
+      "evo-icon-chevron-down-16"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Button",
+        "Omit<Marko.HTML.A, \"type\" |`on${string}`>"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yLoadingText",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [
+        {
+          "name": "onEscape",
+          "optional": true,
+          "type": "(event: KeyboardEvent) => void",
+          "category": "event"
+        }
+      ],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "href",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "(typeof validSizes)[number]",
+          "category": "prop"
+        },
+        {
+          "name": "priority",
+          "optional": true,
+          "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"none\"",
+          "category": "prop"
+        },
+        {
+          "name": "variant",
+          "optional": true,
+          "type": "\"standard\" | \"destructive\" | \"form\"",
+          "category": "prop"
+        },
+        {
+          "name": "bodyState",
+          "optional": true,
+          "type": "\"loading\" | \"expand\" | \"reset\" | \"none\"",
+          "category": "prop"
+        },
+        {
+          "name": "fluid",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "borderless",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "partiallyDisabled",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "transparent",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "fixedHeight",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "truncate",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "split",
+          "optional": true,
+          "type": "\"start\" | \"end\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-disabled",
+        "value": "partiallyDisabled"
+      },
+      {
+        "attr": "aria-label",
+        "value": "(bodyState === \"loading\" ? a11yLoadingText : input[\"aria-label\"])"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "animations",
+      "background-color-token",
+      "base",
+      "border-color-token",
+      "border-left-color-token",
+      "border-radius-token",
+      "border-right-color-token",
+      "btn",
+      "cell-base",
+      "cell-fixed-height",
+      "cell-truncated",
+      "color-token",
+      "fake-btn",
+      "fill-token",
+      "icon",
+      "icon-base",
+      "large",
+      "progress-spinner",
+      "standard",
+      "truncate"
+    ],
+    "bemElements": [
+      "btn__cell",
+      "btn__cell--fixed-height",
+      "btn__floating-label",
+      "btn__floating-label--animate",
+      "btn__floating-label--inline",
+      "btn__text",
+      "fake-btn__cell",
+      "fake-btn__cell--fixed-height"
+    ],
+    "bemModifiers": [
+      "btn--borderless",
+      "btn--destructive",
+      "btn--floating-label",
+      "btn--fluid",
+      "btn--form",
+      "btn--large",
+      "btn--large-fixed-height",
+      "btn--large-truncated",
+      "btn--primary",
+      "btn--secondary",
+      "btn--slim",
+      "btn--small",
+      "btn--split-end",
+      "btn--split-start",
+      "btn--tertiary",
+      "btn--transparent",
+      "btn--truncated",
+      "fake-btn--borderless",
+      "fake-btn--destructive",
+      "fake-btn--fluid",
+      "fake-btn--form",
+      "fake-btn--large",
+      "fake-btn--large-fixed-height",
+      "fake-btn--large-truncated",
+      "fake-btn--primary",
+      "fake-btn--secondary",
+      "fake-btn--slim",
+      "fake-btn--small",
+      "fake-btn--split-end",
+      "fake-btn--split-start",
+      "fake-btn--tertiary",
+      "fake-btn--transparent",
+      "fake-btn--truncated"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--btn-secondary-background-color",
+      "--color-background-accent",
+      "--color-background-attention",
+      "--color-background-disabled",
+      "--color-background-primary",
+      "--color-border-accent",
+      "--color-border-attention",
+      "--color-border-disabled",
+      "--color-foreground-accent",
+      "--color-foreground-on-accent",
+      "--color-foreground-on-attention",
+      "--font-size-body",
+      "--font-size-medium",
+      "--spacing-100"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]",
+      "[aria-expanded=\"true\"]",
+      "[aria-live=\"polite\"]",
+      "[disabled]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": true,
+    "props": [
+      {
+        "name": "fluid",
+        "optional": true,
+        "type": "boolean",
+        "category": "prop"
+      },
+      {
+        "name": "partiallyDisabled",
+        "optional": true,
+        "type": "boolean",
+        "category": "prop"
+      },
+      {
+        "name": "truncate",
+        "optional": true,
+        "type": "boolean",
+        "category": "prop"
+      },
+      {
+        "name": "priority",
+        "optional": true,
+        "type": "Priority",
+        "category": "prop"
+      },
+      {
+        "name": "variant",
+        "optional": true,
+        "type": "Variant",
+        "category": "prop"
+      },
+      {
+        "name": "size",
+        "optional": true,
+        "type": "Size",
+        "category": "prop"
+      },
+      {
+        "name": "bodyState",
+        "optional": true,
+        "type": "BodyState",
+        "category": "prop"
+      },
+      {
+        "name": "split",
+        "optional": true,
+        "type": "Split",
+        "category": "prop"
+      },
+      {
+        "name": "transparent",
+        "optional": true,
+        "type": "boolean",
+        "category": "prop"
+      },
+      {
+        "name": "borderless",
+        "optional": true,
+        "type": "boolean",
+        "category": "prop"
+      },
+      {
+        "name": "fixedHeight",
+        "optional": true,
+        "type": "boolean",
+        "category": "prop"
+      }
+    ],
+    "a11yProps": [],
+    "ariaProps": [],
+    "eventHandlers": [],
+    "ariaUsages": [
+      "aria-disabled",
+      "aria-live"
+    ],
+    "roleUsages": [],
+    "makeupImports": []
+  }
+}

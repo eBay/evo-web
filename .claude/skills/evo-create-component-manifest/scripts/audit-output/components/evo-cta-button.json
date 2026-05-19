@@ -1,0 +1,77 @@
+{
+  "name": "evo-cta-button",
+  "skinModules": [
+    "cta-button"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/cta-button"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-arrow-right-24"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.A"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"large\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "base",
+      "border-color-token",
+      "cell-base",
+      "cell-fixed-height",
+      "cell-truncated",
+      "color-token",
+      "cta-btn",
+      "icon",
+      "icon-base",
+      "truncate"
+    ],
+    "bemElements": [
+      "cta-btn__cell",
+      "cta-btn__cell--fixed-height"
+    ],
+    "bemModifiers": [
+      "cta-btn--fluid",
+      "cta-btn--large",
+      "cta-btn--truncated",
+      "icon--arrow-right-24"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-size-body",
+      "--font-size-medium"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}
