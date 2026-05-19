@@ -119,7 +119,7 @@ a.icon-link.icon-link--primary:visited > svg {
 button.icon-btn--badged,
 a.icon-link--badged,
 button.icon-btn:has(.badge),
-a.icon-link--badged:has(.badge) {
+a.icon-link:has(.badge) {
     overflow: visible;
     position: relative;
 
