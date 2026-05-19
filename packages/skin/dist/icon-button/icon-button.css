@@ -156,12 +156,16 @@ a.icon-link.icon-link--primary:visited > svg {
     fill: var(--color-foreground-on-accent);
 }
 a.icon-link--badged,
-button.icon-btn--badged {
+a.icon-link--badged:has(.badge),
+button.icon-btn--badged,
+button.icon-btn:has(.badge) {
     overflow: visible;
     position: relative;
 }
 a.icon-link--badged .badge,
-button.icon-btn--badged .badge {
+a.icon-link--badged:has(.badge) .badge,
+button.icon-btn--badged .badge,
+button.icon-btn:has(.badge) .badge {
     left: 24px;
     pointer-events: none;
     position: absolute;
