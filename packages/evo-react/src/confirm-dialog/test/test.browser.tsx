@@ -283,6 +283,25 @@ describe("evo-confirm-dialog", () => {
     });
   });
 
+  describe("when Escape is pressed (controlled)", () => {
+    it("should call onOpenChange with false", async () => {
+      const onOpenChange = vi.fn();
+      const screen = await renderOpenDialog({ onOpenChange });
+      // Focus the confirm button (autofocused inside the modal) then press Escape
+      screen.getByRole("button", { name: "Delete" }).element().focus();
+      await user.keyboard("{Escape}");
+      expect(onOpenChange).toHaveBeenCalledWith(false);
+    });
+
+    it("should NOT call the reject onClick handler", async () => {
+      const onRejectClick = vi.fn();
+      const screen = await renderOpenDialog({ onRejectClick });
+      screen.getByRole("button", { name: "Delete" }).element().focus();
+      await user.keyboard("{Escape}");
+      expect(onRejectClick).not.toHaveBeenCalled();
+    });
+  });
+
   describe("when the reject button is clicked (controlled)", () => {
     it("should call onOpenChange with false", async () => {
       const onOpenChange = vi.fn();
