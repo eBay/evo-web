@@ -159,6 +159,72 @@ not on disk, not in chat), offer:
 
 ---
 
+## Modify detection — spec diff
+
+This check runs **before** State C whenever a new spec is being provided for a
+component that already has generated files on disk.
+
+**Trigger conditions (all must be true):**
+- The component folder already exists
+- Generated files exist (`packages/evo-marko/src/tags/evo-<name>/index.marko`
+  or `packages/evo-react/src/<name>/index.tsx`)
+- A new spec is being provided (attached to this chat, or the spec on disk was
+  previously committed and a different version is now being supplied)
+- The new spec differs from the existing spec on disk
+
+**When triggered:**
+
+1. Write the new spec to a temporary path alongside the existing one:
+   `src/routes/_index/components/<name>/<name>.spec.new.json`
+
+2. Run the diff script:
+   ```bash
+   npx tsx scripts/codegen/diff-specs.ts \
+     src/routes/_index/components/<name>/<name>.spec.json \
+     src/routes/_index/components/<name>/<name>.spec.new.json \
+     <name>
+   ```
+
+3. Present the diff output to the engineer. Example:
+
+   ```
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     Spec updated — here's what changed
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+     Props
+       ~ type  enum: +[warning, neutral]
+
+     States
+       + warning  (added)
+       + neutral  (added)
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     Recommended scope: STATIC
+     Enum expansion on "type" and 2 new states — new BEM modifiers
+     needed in SCSS; no prop interface changes.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ```
+
+4. Overwrite the on-disk spec with the new one:
+   ```bash
+   mv src/routes/_index/components/<name>/<name>.spec.new.json \
+      src/routes/_index/components/<name>/<name>.spec.json
+   ```
+
+5. Pre-select the recommended scope for State E — the engineer can still
+   override it, but the diff is the default. If `--scope` was explicitly
+   passed on invocation, that takes precedence over the recommendation.
+
+6. Proceed to State C to regenerate the manifest with the updated spec.
+   (`spec-diff.json` was written to the component folder by the script
+   and can be referenced at Gate 2 if the engineer wants to review it.)
+
+**If the new spec is identical to the one on disk**, skip the diff entirely
+and proceed normally. Print nothing about this check.
+
+---
+
 ## State C — Inputs ready, no manifest
 
 Both inputs exist — either on disk, in the chat, or a combination. If either
@@ -311,7 +377,17 @@ If no `--scope` was provided and this is a new component (no generated files):
   Scope: full (new component — all 16 steps)
 ```
 
-If generated files already exist and no `--scope` was provided, ask:
+If generated files already exist and a spec diff was run (Modify detection
+above), use the recommended scope from the diff. Present it as a confirmation,
+not a question — but let the engineer override:
+
+```
+  Scope: <recommended> — based on spec diff (<brief reason>)
+  Type a different scope to override, or press Enter to proceed.
+```
+
+If generated files already exist but no spec diff was run (e.g. contract-only
+change, or spec was not updated), ask:
 
 ```
   Generated files already exist for <name>. What changed?
