@@ -80,6 +80,10 @@ interface ManifestState {
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
+function componentDocsDir(name: string): string {
+    return path.join(process.cwd(), "src/routes/_index/components", name);
+}
+
 /** Translates "color.background.primary" → "--color-background-primary" */
 function tokenDotToCSS(dotPath: string): string {
     return "--" + dotPath.replace(/\./g, "-");

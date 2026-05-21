@@ -2,15 +2,15 @@
 name: evo-create-component-manifest
 description: >
   Pipeline entry point for evo-web AI component generation. Reads an approved
-  component contract (`contracts/[component]/_contract.md`) and produces two
-  structured files: `manifest.json` (machine-readable spec for downstream code
-  generation) and `gap-report.json` (a full log of every assumption made).
-  Invoke this skill whenever the user runs `/evo-create-component-manifest`,
-  says "create manifest for [component]", "generate manifest from contract",
-  "run the manifest step", or "kick off the pipeline for [component]". Do NOT
-  wait for the user to spell out all of these phrases — if they're asking to
-  start the component pipeline or convert a contract to a manifest, this is the
-  skill to use.
+  component contract (`src/routes/_index/components/[component]/_contract.md`)
+  and produces two structured files: `manifest.json` (machine-readable spec for
+  downstream code generation) and `gap-report.json` (a full log of every
+  assumption made). Invoke this skill whenever the user runs
+  `/evo-create-component-manifest`, says "create manifest for [component]",
+  "generate manifest from contract", "run the manifest step", or "kick off the
+  pipeline for [component]". Do NOT wait for the user to spell out all of these
+  phrases — if they're asking to start the component pipeline or convert a
+  contract to a manifest, this is the skill to use.
 ---
 
 # Create Component Manifest
@@ -368,12 +368,12 @@ Medium-confidence gaps go in `gaps` only.
 
 ## Step 6 — Validate
 
-Check if `contracts/validate-manifest.js` exists.
+Check if `scripts/codegen/validate-manifest.ts` exists.
 
-- **If yes:** Run `node contracts/validate-manifest.js src/routes/_index/components/$COMPONENT/manifest.json`.
+- **If yes:** Run `npx tsx scripts/codegen/validate-manifest.ts $COMPONENT`.
   Report every validation error. Mark the manifest as `INVALID` if any errors
   are found — do not suppress them or proceed.
-- **If no:** Print: `Validation skipped — validate-manifest.js not found.`
+- **If no:** Skip silently. Do not print anything about this step.
 
 ---
 
