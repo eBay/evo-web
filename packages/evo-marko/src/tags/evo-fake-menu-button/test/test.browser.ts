@@ -78,18 +78,12 @@ describe.skip("evo-fake-menu-button", () => {
 
     describe("when an item is clicked", () => {
       beforeEach(async () => {
-        const firstItem = component.container.querySelector(
-          ".fake-menu-button__item",
-        ) as HTMLElement;
-        await fireEvent.click(firstItem);
+        await fireEvent.click(component.getByRole("link", { name: /item 1/i }));
       });
 
       it("should fire native click event", () => {
         // Native click events pass through -- no custom event wrapping
-        const firstItem = component.container.querySelector(
-          ".fake-menu-button__item",
-        );
-        expect(firstItem).toBeTruthy();
+        expect(component.getByRole("link", { name: /item 1/i })).toBeTruthy();
       });
     });
 
@@ -101,9 +95,7 @@ describe("given the evo-fake-menu-button is open", () => {
 
   beforeEach(async () => {
     component = await render(Default);
-    triggerButton = component.container.querySelector(
-      ".fake-menu-button__button",
-    ) as HTMLElement;
+    triggerButton = component.getByRole("button", { name: /eBay Menu/i });
     await fireEvent.click(triggerButton);
   });
 
