@@ -9,7 +9,7 @@ export interface ComboboxOption extends Marko.HTML.Div {
 export interface Input
     extends Omit<
         Marko.HTML.Input,
-        "type" | "role" | "aria-autocomplete" | "aria-haspopup" | "aria-expanded"
+        "type" | "role" | "aria-autocomplete" | "aria-haspopup" | "aria-expanded" | "aria-owns" | "aria-controls"
     > {
     autocomplete?: "list" | "none";
     listSelection?: "manual" | "automatic";
@@ -38,6 +38,8 @@ export interface Input
     fluid,
     onBlur,
     onFocus,
+    onInput,
+    onClick,
     onKeyDown,
     placeholder,
     open: inputOpen,
@@ -46,12 +48,17 @@ export interface Input
 }=input>
 
 <id/inputId=id>
-<let/value:=input.value>
 <let/open:=input.open>
 <let/activeIndex=(-1)>
-<let/displayValue=(null as string | null)>
 
-<const/visibleOptions=filterOptions(options, autocomplete, value)>
+
+<let/rawValue:=input.value>
+<let/tempValue=(null as null | string)>
+<let/value=tempValue || rawValue valueChange(v: string) { tempValue = null; rawValue = v }>
+
+<const/visibleOptions=filterOptions(options, autocomplete, rawValue)>
+
+<id/listboxId>
 
 <evo-floating-label|{ showPlaceholder }|
     floatingLabel=floatingLabel
@@ -89,68 +96,59 @@ export interface Input
                 value:=value
                 placeholder=showPlaceholder && placeholder
                 autocomplete="off"
-                aria-autocomplete=(autocomplete === "list" ? "list" : "none")
+                aria-owns=listboxId
+                aria-controls=listboxId
+                aria-autocomplete=autocomplete
                 aria-haspopup="listbox"
                 aria-expanded=open ? "true" : "false"
                 aria-activedescendant=((open && activeIndex >= 0)
                     ? `${inputId}-option-${activeIndex}`
                     : undefined)
-                onFocus(e, target) {
-                    if (input.open !== false) {
-                        open = true;
-                    }
-                    onFocus && onFocus(e, target);
-                }
-                onClick() {
+                onFocus(e, el) {
                     open = true;
+                    onFocus && onFocus(e, el);
                 }
-                onBlur(e, target) {
-                    if (displayValue !== null) {
-                        if (listSelection === "automatic" && activeIndex >= 0) {
-                            value = displayValue;
-                        } else {
-                            target.value = String(value ?? "");
-                        }
-                        displayValue = null;
+                onClick(e, el) {
+                    open = true;
+                    onClick && onClick(e, el);
+                }
+                onBlur(e, el) {
+                    if (tempValue) {
+                        value = tempValue;
                     }
-                    onBlur && onBlur(e, target);
+                    onBlur && onBlur(e, el);
                 }
-                onInput(e, target) {
-                    value = target.value;
-                    displayValue = null;
+                onInput(e, el) {
                     activeIndex = -1;
-                    if (input.open !== false) open = true;
+                    open = true;
+                    onInput && onInput(e, el);
                 }
-                onKeyDown(e: KeyboardEvent, target: HTMLInputElement) {
+                onKeyDown(e, el) {
                     if (e.key === "ArrowDown" || e.key === "ArrowUp") {
                         e.preventDefault();
                         if (!open) {
                             open = true;
+                            activeIndex = -1;
                         } else if (visibleOptions.length > 0) {
                             const size = visibleOptions.length;
                             const direction = e.key === "ArrowDown" ? 1 : -1;
-                            // cycle: -1 (none) → 0 → 1 → ... → size-1 → -1 → ...
-                            // shift by 1 so -1 maps to 0 in modular space
                             activeIndex = ((activeIndex + 1 + direction + size + 1) % (size + 1)) - 1;
-                            if (listSelection === "automatic") {
-                                const text = activeIndex >= 0 ? visibleOptions[activeIndex].text : "";
-                                displayValue = text || null;
-                                target.value = text || String(value ?? "");
+                            if (listSelection === "automatic" && activeIndex >= 0) {
+                                tempValue = visibleOptions[activeIndex].text
                             }
                             document.getElementById(`${inputId}-option-${activeIndex}`)?.scrollIntoView({ block: "nearest" });
                         }
                     } else if (e.key === "Enter") {
                         if (open && activeIndex >= 0) {
                             e.preventDefault();
-                            value = displayValue ?? visibleOptions[activeIndex].text;
-                            displayValue = null;
+                            value = visibleOptions[activeIndex].text;
                         }
                         open = false;
                     } else if (e.key === "Escape") {
                         open = false;
                         activeIndex = -1;
                     }
-                    onKeyDown && onKeyDown(e, target);
+                    onKeyDown && onKeyDown(e, el);
                 }>
             <if=button>
                 <evo-icon-button
@@ -162,51 +160,53 @@ export interface Input
                     }/>
             </if>
         </span>
-        <if=open>
-            <div
-                role="listbox"
-                class=[
-                    "combobox__listbox",
-                    "combobox__listbox--set-position",
-                    strategy === "fixed" && "combobox__listbox--fixed",
-                ]>
-                <for|option, i| of=visibleOptions>
-                    <const/{
-                        text,
-                        value: optionValue,
-                        class: optionClass,
-                        ...htmlOption
-                    }=option>
-                    <div
-                        ...htmlOption
-                        id=`${inputId}-option-${i}`
-                        role="option"
-                        class=[
-                            "combobox__option",
-                            i === activeIndex && "combobox__option--active",
-                            optionClass,
-                        ]
-                        tabindex="-1"
-                        aria-selected=((optionValue || text) === value) && "true"
-                        onMouseDown(e) {
-                            // prevent input blur before click fires
-                            e.preventDefault();
-                        }
-                        onClick() {
-                            value = text;
-                            displayValue = null;
-                            activeIndex = i;
-                            open = false;
-                        }>
-                        ${text}
-                    </div>
-                </for>
-            </div>
-        </if>
+        <div
+            id=listboxId
+            role="listbox"
+            class=[
+                "combobox__listbox",
+                "combobox__listbox--set-position",
+                strategy === "fixed" && "combobox__listbox--fixed",
+            ]>
+            <for|option, i| of=visibleOptions>
+                <const/{
+                    text,
+                    value: optionValue = text,
+                    class: optionClass,
+                    onMouseDown,
+                    onClick,
+                    ...htmlOption
+                }=option>
+                <div
+                    ...htmlOption
+                    id=`${inputId}-option-${i}`
+                    role="option"
+                    class=[
+                        "combobox__option",
+                        i === activeIndex && "combobox__option--active",
+                        optionClass,
+                    ]
+                    tabindex=-1
+                    aria-selected=optionValue === value ? "true" : "false"
+                    onMouseDown(e, el) {
+                        // prevent input blur before click fires
+                        e.preventDefault();
+                        onMouseDown && onMouseDown(e, el);
+                    }
+                    onClick(e, el) {
+                        value = optionValue;
+                        activeIndex = i;
+                        open = false;
+                        onClick && onClick(e, el);
+                    }>
+                    ${text}
+                </div>
+            </for>
+        </div>
     </>
 </evo-floating-label>
 
-static function filterOptions<T extends { text: string; sticky?: boolean }>(options: Iterable<T>, autocomplete: string, value: unknown) {
+static function filterOptions<T extends { text: string; sticky?: boolean }>(options: Iterable<T>, autocomplete: NonNullable<Input["autocomplete"]>, value: unknown) {
     const list = [...options];
     if (autocomplete === "list") {
         const reg = new RegExp(
