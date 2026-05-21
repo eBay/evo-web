@@ -20,12 +20,12 @@ $ const role = type !== "menu" && type !== "icon" && "img";
     <span ...processHtmlAttributes(htmlInput) role=role class=["badge", inputClass]/>
 </if>
 <else-if(+number > 99)>
-    <span ...processHtmlAttributes(htmlInput) role=role class=["badge", "badge--wide", inputClass]>
+    <span ...processHtmlAttributes(htmlInput) role=role class=["badge", inputClass]>
         99+
     </span>
 </else-if>
 <else-if(+number > 0)>
-    <span ...processHtmlAttributes(htmlInput) role=role class=["badge", inputClass]>
+    <span ...processHtmlAttributes(htmlInput) role=role class=["badge", "badge--circle", inputClass]>
         ${Math.round(+number)}
     </span>
 </else-if>

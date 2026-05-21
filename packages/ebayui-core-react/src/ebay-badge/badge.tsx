@@ -18,12 +18,7 @@ const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...res
 
     if (+number > 99) {
         return (
-            <span
-                {...rest}
-                className={classNames("badge", "badge--wide", className)}
-                role={role}
-                aria-hidden={ariaHidden}
-            >
+            <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden}>
                 99+
             </span>
         );
@@ -31,7 +26,12 @@ const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...res
 
     if (+number > 0) {
         return (
-            <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden}>
+            <span
+                {...rest}
+                className={classNames("badge", "badge--circle", className)}
+                role={role}
+                aria-hidden={ariaHidden}
+            >
                 {Math.round(+number)}
             </span>
         );

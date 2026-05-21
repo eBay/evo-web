@@ -8,16 +8,18 @@
     font-size: var(--font-size-smallest);
     height: 2.2em;
     justify-content: center;
+    min-width: 2.2em;
+    padding: 0 var(--spacing-75);
     white-space: nowrap;
-    width: 2.2em;
 }
 
 .badge:empty {
-    height: 1em;
-    width: 1em;
+    height: var(--font-size-smallest);
+    min-width: 0;
+    padding: 0;
+    width: var(--font-size-smallest);
 }
 
-.badge--wide {
-    padding-inline: 0.5em;
-    width: unset;
+.badge--circle {
+    padding: 0;
 }

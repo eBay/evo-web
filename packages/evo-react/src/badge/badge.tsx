@@ -27,7 +27,7 @@ export function EvoBadge({
     return (
       <span
         {...rest}
-        className={classNames("badge", "badge--wide", className)}
+        className={classNames("badge", className)}
         aria-label={ariaLabel}
         role={role}
       >
@@ -40,7 +40,7 @@ export function EvoBadge({
     return (
       <span
         {...rest}
-        className={classNames("badge", className)}
+        className={classNames("badge", "badge--circle", className)}
         aria-label={ariaLabel}
         role={role}
       >

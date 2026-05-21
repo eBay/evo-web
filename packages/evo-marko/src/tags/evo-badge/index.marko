@@ -24,12 +24,12 @@ export interface Input extends Omit<Marko.HTML.Span, "role" | "aria-label"> {
     <span ...htmlInput aria-label=a11yText role=role class=["badge", inputClass]/>
 </if>
 <else if=(+number > 99)>
-    <span ...htmlInput aria-label=a11yText role=role class=["badge", "badge--wide", inputClass]>
+    <span ...htmlInput aria-label=a11yText role=role class=["badge", inputClass]>
         99+
     </span>
 </else>
 <else if=(+number > 0)>
-    <span ...htmlInput aria-label=a11yText role=role class=["badge", inputClass]>
+    <span ...htmlInput aria-label=a11yText role=role class=["badge", "badge--circle", inputClass]>
         ${number}
     </span>
 </else>
