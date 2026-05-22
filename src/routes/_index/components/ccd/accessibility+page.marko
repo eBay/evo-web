@@ -6,11 +6,11 @@ import "../../../../sass/accessibility.scss";
   <p>
     CCD pictograms
     <strong>must </strong>
-    use
-    <code>role="figure"</code>
-    with
+    have a descriptive
     <code>aria-label</code>
-    to convey their meaning to assistive technologies.
+    so assistive technologies announce their meaning reliably. The root element uses
+    <code>role="img"</code>
+    as the labeled graphic.
   </p>
   <p>
     The
@@ -35,9 +35,10 @@ import "../../../../sass/accessibility.scss";
   </p>
   <h3>Screen Reader</h3>
   <p>
-    A screen reader will announce the CCD as a figure along with its
-    <code>aria-label</code>
-    value (e.g., "Charger included. 1001 - 2000 watts. USB PD, figure").
+    A screen reader
+    <strong>must</strong>
+    announce the label content, including charger status, wattage range, and optional
+    USB PD. The image role provides semantic context for the pictogram.
   </p>
   <h3>Pointer</h3>
   <p>
@@ -55,11 +56,11 @@ import "../../../../sass/accessibility.scss";
     <tbody>
       <tr>
         <td>
-          <strong>role="figure"</strong>
+          <strong>role="img"</strong>
         </td>
         <td>
-          Applied to the CCD element to identify it as a figure to assistive
-          technologies.
+          Identifies the CCD as a labeled graphic so the accessible name is announced
+          reliably across assistive technologies.
         </td>
       </tr>
       <tr>
@@ -67,9 +68,7 @@ import "../../../../sass/accessibility.scss";
           <strong>aria-label</strong>
         </td>
         <td>
-          Applied to the CCD with
-          <code>role="figure"</code>
-          to provide an accessible name with charging information (e.g.,
+          Provides the accessible name for the graphic with charging information (e.g.,
           "Charger included. 1001 - 2000 watts. USB PD").
         </td>
       </tr>

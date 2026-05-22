@@ -6,11 +6,11 @@ export interface Input extends CCDInput {}
         ? `Charger ${input.chargerIcon === "included" ? "" : "not "}included.`
         : ""
 } `.trim()/>
-<const/a11yFigure=(
+<const/a11yRange=(
     input.min || input.max
         ? `${input.min} - ${input.max} Watts. ${input.secondaryType === "usbpd" ? "USB PD" : ""}`
         : "".trim()
 )/>
-<const/a11yCombined=`${a11yCharger} ${a11yFigure}`.trim()/>
+<const/a11yCombined=`${a11yCharger} ${a11yRange}`.trim()/>
 
 <evo-ccd min="1000" max="2000" ...input a11yText=a11yCombined/>
