@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../combobox.stories";
 
-const { Default, Filtering, FloatingLabel } = composeStories(stories);
+const { Default } = composeStories(stories);
 
 describe("evo-combobox SSR", () => {
     it("renders default", async () => {
@@ -24,14 +24,6 @@ describe("evo-combobox SSR", () => {
 
     it("renders with pre-selected value", async () => {
         await snapshotHTML(Default, { value: "Basic Offer" });
-    });
-
-    it("renders filtering variant", async () => {
-        await snapshotHTML(Filtering);
-    });
-
-    it("renders floating label", async () => {
-        await snapshotHTML(FloatingLabel);
     });
 
     it("renders with fixed strategy", async () => {

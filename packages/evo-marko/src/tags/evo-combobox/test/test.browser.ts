@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup, waitFor } from "@marko/testing-library";
 import { composeStories } from "@storybook/marko";
 import * as stories from "../combobox.stories";
 
-const { Default, Filtering } = composeStories(stories);
+const { Default } = composeStories(stories);
 
 afterEach(cleanup);
 
@@ -136,7 +136,7 @@ describe("evo-combobox", () => {
 
     describe("given a combobox with autocomplete='list' (filtering)", () => {
         beforeEach(async () => {
-            component = await render(Filtering);
+            component = await render(Default, { autocomplete: "list" });
         });
 
         it("renders the combobox input", () => {
