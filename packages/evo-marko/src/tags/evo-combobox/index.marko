@@ -2,7 +2,6 @@ import { type Input as EvoIconButtonInput } from "<evo-icon-button>";
 
 export interface ComboboxOption extends Marko.HTML.Div {
     text: string;
-    value?: string;
     sticky?: boolean;
 }
 
@@ -171,7 +170,6 @@ export interface Input
             <for|option, i| of=visibleOptions>
                 <const/{
                     text,
-                    value: optionValue = text,
                     class: optionClass,
                     onMouseDown,
                     onClick,
@@ -187,14 +185,14 @@ export interface Input
                         optionClass,
                     ]
                     tabindex=-1
-                    aria-selected=optionValue === value ? "true" : "false"
+                    aria-selected=text === value ? "true" : "false"
                     onMouseDown(e, el) {
                         // prevent input blur before click fires
                         e.preventDefault();
                         onMouseDown && onMouseDown(e, el);
                     }
                     onClick(e, el) {
-                        value = optionValue;
+                        value = text;
                         activeIndex = i;
                         open = false;
                         onClick && onClick(e, el);
