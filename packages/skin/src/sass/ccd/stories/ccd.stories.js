@@ -57,7 +57,7 @@ export const withChargerAndNoUsb = () => `
 `;
 
 export const withoutChargerAndNoUsb = () => `
-<div class="ccd" role="img" aria-label="Charger not included. 1001 - 2000 watts. USB PD">
+<div class="ccd" role="img" aria-label="Charger not included. 1001 - 2000 watts.">
     <svg class="icon ccd__charger-icon" aria-hidden="true">
         <use href="#icon-ccd-charger-not-included"/>
     </svg>
