@@ -1,5 +1,13 @@
 # @evo-web/react
 
+## 0.0.7
+
+### Patch Changes
+
+- [#674](https://github.com/eBay/evo-web/pull/674) [`afb69ca`](https://github.com/eBay/evo-web/commit/afb69cad6d4b1f583fb5836612d1874a08e59b80) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `EvoIconButton` component to `@evo-web/react`
+
+- [#669](https://github.com/eBay/evo-web/pull/669) [`94c6de9`](https://github.com/eBay/evo-web/commit/94c6de9193eaf288fa6100e48c8fc7b50af3363c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `EvoAlertDialog` component.
+
 ## 0.0.6
 
 ### Patch Changes

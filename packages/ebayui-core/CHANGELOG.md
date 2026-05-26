@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.7.4
+
+### Patch Changes
+
+- [#692](https://github.com/eBay/evo-web/pull/692) [`9c0ecbb`](https://github.com/eBay/evo-web/commit/9c0ecbb4788875af8ff60156ddf04cb9469ecd89) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(ccd): changed role figure to img
+
 ## 16.7.3
 
 ### Patch Changes
