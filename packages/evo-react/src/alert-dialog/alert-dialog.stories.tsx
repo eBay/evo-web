@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoAlertDialog } from "./alert-dialog";
 import { EvoAlertDialogHeader } from "./alert-dialog-header";
 import { EvoAlertDialogMain } from "./alert-dialog-main";
+import { EvoAlertDialogFooter } from "./alert-dialog-footer";
 import { EvoAlertDialogConfirm } from "./alert-dialog-confirm";
 
 const LOREM =
@@ -14,6 +15,7 @@ const meta: Meta<typeof EvoAlertDialog> = {
   subcomponents: {
     EvoAlertDialogHeader,
     EvoAlertDialogMain,
+    EvoAlertDialogFooter,
     EvoAlertDialogConfirm,
   },
   tags: ["autodocs"],
@@ -32,6 +34,7 @@ import {
   EvoAlertDialog,
   EvoAlertDialogHeader,
   EvoAlertDialogMain,
+  EvoAlertDialogFooter,
   EvoAlertDialogConfirm,
 } from "@evo-web/react/alert-dialog";
 \`\`\`
@@ -94,7 +97,9 @@ export const Default: Story = {
               <a href="http://www.ebay.com">www.ebay.com</a>
             </p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>
       </div>
     );

@@ -1,26 +1,28 @@
 import { describe, it, expect } from "vitest";
 import { renderToString } from "react-dom/server";
-import { EvoAlertDialog } from "../alert-dialog";
-import { EvoAlertDialogHeader } from "../alert-dialog-header";
-import { EvoAlertDialogMain } from "../alert-dialog-main";
-import { EvoAlertDialogFooter } from "../alert-dialog-footer";
-import { EvoAlertDialogConfirm } from "../alert-dialog-confirm";
+import { EvoConfirmDialog } from "../confirm-dialog";
+import { EvoConfirmDialogHeader } from "../confirm-dialog-header";
+import { EvoConfirmDialogMain } from "../confirm-dialog-main";
+import { EvoConfirmDialogFooter } from "../confirm-dialog-footer";
+import { EvoConfirmDialogReject } from "../confirm-dialog-reject";
+import { EvoConfirmDialogConfirm } from "../confirm-dialog-confirm";
 
 function DefaultTree({ open }: { open?: boolean }) {
   return (
-    <EvoAlertDialog open={open}>
-      <EvoAlertDialogHeader>Alert!</EvoAlertDialogHeader>
-      <EvoAlertDialogMain>
-        <p>You must acknowledge this alert to continue.</p>
-      </EvoAlertDialogMain>
-      <EvoAlertDialogFooter>
-        <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
-      </EvoAlertDialogFooter>
-    </EvoAlertDialog>
+    <EvoConfirmDialog open={open}>
+      <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
+      <EvoConfirmDialogMain>
+        <p>You will permanently lose this address.</p>
+      </EvoConfirmDialogMain>
+      <EvoConfirmDialogFooter>
+        <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+        <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+      </EvoConfirmDialogFooter>
+    </EvoConfirmDialog>
   );
 }
 
-describe("EvoAlertDialog SSR", () => {
+describe("EvoConfirmDialog SSR", () => {
   it("renders default (closed) controlled state", () => {
     expect(renderToString(<DefaultTree open={false} />)).toMatchSnapshot();
   });
@@ -46,15 +48,16 @@ describe("EvoAlertDialog SSR", () => {
 
   it("renders without dialog--close class when uncontrolled with defaultOpen", () => {
     const html = renderToString(
-      <EvoAlertDialog defaultOpen>
-        <EvoAlertDialogHeader>Alert!</EvoAlertDialogHeader>
-        <EvoAlertDialogMain>
-          <p>Content</p>
-        </EvoAlertDialogMain>
-        <EvoAlertDialogFooter>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
-        </EvoAlertDialogFooter>
-      </EvoAlertDialog>,
+      <EvoConfirmDialog defaultOpen>
+        <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
+        <EvoConfirmDialogMain>
+          <p>You will permanently lose this address.</p>
+        </EvoConfirmDialogMain>
+        <EvoConfirmDialogFooter>
+          <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+          <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+        </EvoConfirmDialogFooter>
+      </EvoConfirmDialog>,
     );
     expect(html).not.toContain("dialog--close");
   });
@@ -69,9 +72,9 @@ describe("EvoAlertDialog SSR", () => {
     expect(html).toContain('aria-modal="true"');
   });
 
-  it("renders closedby=none", () => {
+  it("renders closedby=closerequest", () => {
     const html = renderToString(<DefaultTree open />);
-    expect(html).toContain('closedby="none"');
+    expect(html).toContain('closedby="closerequest"');
   });
 
   it("renders dialog__header with h2.dialog__title", () => {
@@ -79,20 +82,25 @@ describe("EvoAlertDialog SSR", () => {
     expect(html).toContain('class="dialog__header"');
     expect(html).toContain('class="dialog__title"');
     expect(html).toContain("<h2");
-    expect(html).toContain("Alert!");
+    expect(html).toContain("Delete Address?");
   });
 
   it("renders dialog__main with content", () => {
     const html = renderToString(<DefaultTree open />);
     expect(html).toContain('class="dialog__main"');
-    expect(html).toContain("You must acknowledge this alert to continue.");
+    expect(html).toContain("You will permanently lose this address.");
   });
 
-  it("renders dialog__footer with primary button", () => {
+  it("renders dialog__footer with reject and confirm buttons", () => {
     const html = renderToString(<DefaultTree open />);
     expect(html).toContain('class="dialog__footer"');
+    expect(html).toContain("Cancel");
+    expect(html).toContain("Delete");
+  });
+
+  it("renders confirm button with primary priority", () => {
+    const html = renderToString(<DefaultTree open />);
     expect(html).toContain("btn--primary");
-    expect(html).toContain("OK");
   });
 
   it("renders confirm button with autofocus", () => {
@@ -102,7 +110,6 @@ describe("EvoAlertDialog SSR", () => {
 
   it("renders aria-labelledby wiring between dialog and header", () => {
     const html = renderToString(<DefaultTree open />);
-    // The aria-labelledby value must match the id on the heading.
     const labelledByMatch = html.match(/aria-labelledby="([^"]+)"/);
     expect(labelledByMatch).toBeTruthy();
     const headerId = labelledByMatch![1];
@@ -117,17 +124,18 @@ describe("EvoAlertDialog SSR", () => {
     expect(html).toContain(`id="${mainId}"`);
   });
 
-  it("renders custom heading element via `as` on EvoAlertDialogHeader", () => {
+  it("renders custom heading element via `as` on EvoConfirmDialogHeader", () => {
     const html = renderToString(
-      <EvoAlertDialog open>
-        <EvoAlertDialogHeader as="h1">Title</EvoAlertDialogHeader>
-        <EvoAlertDialogMain>
+      <EvoConfirmDialog open>
+        <EvoConfirmDialogHeader as="h1">Title</EvoConfirmDialogHeader>
+        <EvoConfirmDialogMain>
           <p>Content</p>
-        </EvoAlertDialogMain>
-        <EvoAlertDialogFooter>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
-        </EvoAlertDialogFooter>
-      </EvoAlertDialog>,
+        </EvoConfirmDialogMain>
+        <EvoConfirmDialogFooter>
+          <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+          <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+        </EvoConfirmDialogFooter>
+      </EvoConfirmDialog>,
     );
     expect(html).toContain("<h1");
     expect(html).toContain('class="dialog__title"');
@@ -135,33 +143,30 @@ describe("EvoAlertDialog SSR", () => {
 
   it("renders with custom className on the dialog", () => {
     const html = renderToString(
-      <EvoAlertDialog open className="my-custom-dialog">
-        <EvoAlertDialogHeader>Title</EvoAlertDialogHeader>
-        <EvoAlertDialogMain>
+      <EvoConfirmDialog open className="my-custom-dialog">
+        <EvoConfirmDialogHeader>Title</EvoConfirmDialogHeader>
+        <EvoConfirmDialogMain>
           <p>Content</p>
-        </EvoAlertDialogMain>
-        <EvoAlertDialogFooter>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
-        </EvoAlertDialogFooter>
-      </EvoAlertDialog>,
+        </EvoConfirmDialogMain>
+        <EvoConfirmDialogFooter>
+          <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+          <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+        </EvoConfirmDialogFooter>
+      </EvoConfirmDialog>,
     );
     expect(html).toContain("my-custom-dialog");
   });
 
-  it("renders footer with dialog__footer class", () => {
-    const html = renderToString(<DefaultTree open />);
-    expect(html).toContain('class="dialog__footer"');
-  });
-
   it("renders footer with custom className merged", () => {
     const html = renderToString(
-      <EvoAlertDialog open>
-        <EvoAlertDialogHeader>Title</EvoAlertDialogHeader>
-        <EvoAlertDialogMain><p>Content</p></EvoAlertDialogMain>
-        <EvoAlertDialogFooter className="my-footer">
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
-        </EvoAlertDialogFooter>
-      </EvoAlertDialog>,
+      <EvoConfirmDialog open>
+        <EvoConfirmDialogHeader>Title</EvoConfirmDialogHeader>
+        <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+        <EvoConfirmDialogFooter className="my-footer">
+          <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+          <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+        </EvoConfirmDialogFooter>
+      </EvoConfirmDialog>,
     );
     expect(html).toContain("dialog__footer");
     expect(html).toContain("my-footer");

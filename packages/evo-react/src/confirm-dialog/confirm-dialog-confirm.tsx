@@ -1,16 +1,17 @@
-import type { EvoAlertDialogConfirmProps } from "./types";
-import { useAlertDialogContext } from "./context";
-import { useRefTee } from "../utils/use-ref-tee";
-import { EvoButton, type NativeButtonProps } from "../button";
 import { useCallback } from "react";
+import type { EvoConfirmDialogConfirmProps } from "./types";
+import { useConfirmDialogContext } from "./context";
+import { useRefTee } from "../utils/use-ref-tee";
+import { EvoButton } from "../button";
+import type { NativeButtonProps } from "../button/types";
 
-export function EvoAlertDialogConfirm({
+export function EvoConfirmDialogConfirm({
   ref,
   onClick,
   children,
   ...rest
-}: EvoAlertDialogConfirmProps) {
-  const { mainId, onConfirmClick } = useAlertDialogContext();
+}: EvoConfirmDialogConfirmProps) {
+  const { mainId, onConfirmClick } = useConfirmDialogContext();
   const [buttonRef] = useRefTee<HTMLButtonElement | null>(ref);
 
   const handleClick: NonNullable<NativeButtonProps["onClick"]> = useCallback(
