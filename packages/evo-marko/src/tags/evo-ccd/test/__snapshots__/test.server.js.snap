@@ -6,7 +6,7 @@ exports[`ccd > passes through additional html attributes 1`] = `
   class="ccd class1"
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  role="figure"
+  role="img"
   style="color:red"
   type="number"
 >
@@ -67,7 +67,7 @@ exports[`ccd > passes through additional html attributes 2`] = `
   class="ccd class1"
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  role="figure"
+  role="img"
   style="color:red"
   type="number"
 >
@@ -127,7 +127,7 @@ exports[`ccd > renders ccd with charger included 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"Charger included. 1000 - 2000 watts."[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -208,7 +208,7 @@ exports[`ccd > renders ccd with charger included and usbpd 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"Charger included. 1000 - 2000 watts. USB PD"[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -292,7 +292,7 @@ exports[`ccd > renders ccd with charger not included 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"Charger not included. 1000 - 2000 watts."[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -373,7 +373,7 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"custom text"[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -457,7 +457,7 @@ exports[`ccd > renders ccd with usbpd included 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"1000 - 2000 watts. USB PD"[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<div[39m
       [33mclass[39m=[32m"ccd__description-figure"[39m
@@ -517,7 +517,7 @@ exports[`ccd > renders default ccd 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"1000 - 2000 watts."[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<div[39m
       [33mclass[39m=[32m"ccd__description-figure"[39m
@@ -574,7 +574,7 @@ exports[`ccd > renders with no min and max 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m""[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m/>[39m
 [36m</DocumentFragment>[39m"
 `;
@@ -584,7 +584,7 @@ exports[`ccd > renders with no min and max but with charger included 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"Charger included."[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m
@@ -619,7 +619,7 @@ exports[`ccd > renders with no min and max but with no charger included 1`] = `
   [36m<div[39m
     [33maria-label[39m=[32m"Charger not included."[39m
     [33mclass[39m=[32m"ccd"[39m
-    [33mrole[39m=[32m"figure"[39m
+    [33mrole[39m=[32m"img"[39m
   [36m>[39m
     [36m<svg[39m
       [33maria-hidden[39m=[32m"true"[39m

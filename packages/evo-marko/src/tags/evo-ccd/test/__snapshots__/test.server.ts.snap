@@ -4,7 +4,7 @@ exports[`ccd > renders ccd with charger included 1`] = `
 "<div
   aria-label="Charger included. 1000 - 2000 Watts."
   class="ccd"
-  role="figure"
+  role="img"
 >
   <svg
     aria-hidden="true"
@@ -71,7 +71,7 @@ exports[`ccd > renders ccd with charger included and usbpd 1`] = `
 "<div
   aria-label="Charger included. 1000 - 2000 Watts. USB PD"
   class="ccd"
-  role="figure"
+  role="img"
 >
   <svg
     aria-hidden="true"
@@ -141,7 +141,7 @@ exports[`ccd > renders ccd with charger not included 1`] = `
 "<div
   aria-label="Charger not included. 1000 - 2000 Watts."
   class="ccd"
-  role="figure"
+  role="img"
 >
   <svg
     aria-hidden="true"
@@ -208,7 +208,7 @@ exports[`ccd > renders ccd with custom a11y 1`] = `
 "<div
   aria-label="Charger included. 1000 - 2000 Watts. USB PD"
   class="ccd"
-  role="figure"
+  role="img"
 >
   <svg
     aria-hidden="true"
@@ -278,7 +278,7 @@ exports[`ccd > renders ccd with usbpd included 1`] = `
 "<div
   aria-label="1000 - 2000 Watts. USB PD"
   class="ccd"
-  role="figure"
+  role="img"
 >
   <div
     class="ccd__description-figure"
@@ -330,7 +330,7 @@ exports[`ccd > renders default ccd 1`] = `
 "<div
   aria-label="1000 - 2000 Watts."
   class="ccd"
-  role="figure"
+  role="img"
 >
   <div
     class="ccd__description-figure"
@@ -379,7 +379,7 @@ exports[`ccd > renders with no min and max 1`] = `
 "<div
   aria-label=""
   class="ccd"
-  role="figure"
+  role="img"
 />"
 `;
 
@@ -387,7 +387,7 @@ exports[`ccd > renders with no min and max but with charger included 1`] = `
 "<div
   aria-label="Charger included."
   class="ccd"
-  role="figure"
+  role="img"
 >
   <svg
     aria-hidden="true"
@@ -414,7 +414,7 @@ exports[`ccd > renders with no min and max but with no charger included 1`] = `
 "<div
   aria-label="Charger not included."
   class="ccd"
-  role="figure"
+  role="img"
 >
   <svg
     aria-hidden="true"

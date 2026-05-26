@@ -34,16 +34,16 @@ $ const a11yCharger = `${
         ? `Charger ${chargerIcon === "included" ? "" : "not "}included.`
         : ""
 } `.trim();
-$ const a11yFigure = (
+$ const a11yRange = (
     min || max
         ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}`
         : "".trim()
 );
-$ const a11yCombined = `${a11yCharger} ${a11yFigure}`.trim();
+$ const a11yCombined = `${a11yCharger} ${a11yRange}`.trim();
 
 <div
     ...processHtmlAttributes(htmlInput)
-    role="figure"
+    role="img"
     style=style
     aria-label=a11yText || a11yCombined
     class=["ccd", inputClass]

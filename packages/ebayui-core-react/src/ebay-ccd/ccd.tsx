@@ -29,11 +29,11 @@ const EbayCCD: FC<CCDProps> = ({
 }) => {
     const hasFastCharging = secondaryType === "usbpd";
     const a11yCharger = chargerIcon ? `Charger ${chargerIcon === "included" ? "" : "not "}included.` : "";
-    const a11yFigure = min || max ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}` : "";
-    const a11yCombined = `${a11yCharger} ${a11yFigure}`.trim();
+    const a11yRange = min || max ? `${min} - ${max} ${a11yUnits}. ${hasFastCharging ? secondaryText : ""}` : "";
+    const a11yCombined = `${a11yCharger} ${a11yRange}`.trim();
 
     return (
-        <div {...rest} role="figure" aria-label={ariaLabel || a11yCombined} className={classNames("ccd", className)}>
+        <div {...rest} role="img" aria-label={ariaLabel || a11yCombined} className={classNames("ccd", className)}>
             {chargerIcon === "included" && <EbayIconCcdChargerIncluded className="ccd__charger-icon" />}
             {chargerIcon === "not-included" && <EbayIconCcdChargerNotIncluded className="ccd__charger-icon" />}
             {(min || max) && (
