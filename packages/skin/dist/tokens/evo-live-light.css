@@ -24,6 +24,7 @@
         --color-background-success: var(--color-kiwi-500);
         --color-background-tertiary: var(--color-neutral-700);
         --color-background-transparent: var(--color-clear);
+        --color-background-warning: var(--color-yellow-400);
         --color-border-accent: var(--color-kiwi-400);
         --color-border-attention: var(--color-red-400);
         --color-border-disabled: var(--color-neutral-700);
@@ -56,6 +57,7 @@
         --color-foreground-primary: var(--color-neutral-200);
         --color-foreground-secondary: var(--color-neutral-500);
         --color-foreground-success: var(--color-kiwi-400);
+        --color-foreground-warning: var(--color-yellow-400);
         --color-gradient-ai-blue-strong: linear-gradient(
             to right,
             var(--color-ai-solid-purple-strong),
