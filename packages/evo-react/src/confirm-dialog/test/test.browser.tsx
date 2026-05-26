@@ -256,6 +256,39 @@ describe("evo-confirm-dialog", () => {
       await user.click(screen.getByRole("button", { name: "Cancel" }));
       await expect.element(dialog).toHaveClass("dialog--close");
     });
+
+    it("should close when Escape is pressed without needing external state", async () => {
+      const screen = await render(
+        <EvoConfirmDialog defaultOpen>
+          <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
+          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogFooter>
+            <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
+            <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+          </EvoConfirmDialogFooter>
+        </EvoConfirmDialog>,
+      );
+      const dialog = screen.getByRole("alertdialog");
+      await expect.element(dialog).not.toHaveClass("dialog--close");
+      await user.keyboard("{Escape}");
+      await expect.element(dialog).toHaveClass("dialog--close");
+    });
+
+    it("should NOT call the reject onClick handler when Escape is pressed", async () => {
+      const onRejectClick = vi.fn();
+      await render(
+        <EvoConfirmDialog defaultOpen>
+          <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
+          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogFooter>
+            <EvoConfirmDialogReject onClick={onRejectClick}>Cancel</EvoConfirmDialogReject>
+            <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
+          </EvoConfirmDialogFooter>
+        </EvoConfirmDialog>,
+      );
+      await user.keyboard("{Escape}");
+      expect(onRejectClick).not.toHaveBeenCalled();
+    });
   });
 
   describe("when the confirm button is clicked (controlled)", () => {

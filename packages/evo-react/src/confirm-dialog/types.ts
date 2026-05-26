@@ -18,7 +18,7 @@ export type EvoConfirmDialogRejectProps = Omit<NativeButtonProps, "priority">;
 
 export type EvoConfirmDialogProps = Omit<
   ComponentProps<"dialog">,
-  "open" | "role" | "aria-labelledby" | "aria-modal"
+  "open" | "role" | "aria-labelledby" | "aria-modal" | "closedby"
 > & {
   open?: boolean;
   defaultOpen?: boolean;

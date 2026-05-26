@@ -16,7 +16,7 @@ export type EvoAlertDialogConfirmProps = Omit<
 
 export type EvoAlertDialogProps = Omit<
   ComponentProps<"dialog">,
-  "open" | "role" | "aria-labelledby" | "aria-modal"
+  "open" | "role" | "aria-labelledby" | "aria-modal" | "closedby"
 > & {
   open?: boolean;
   defaultOpen?: boolean;
