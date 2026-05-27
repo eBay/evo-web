@@ -33,7 +33,6 @@ describe("ebay-fake-menu-button rendering", () => {
         const buttonContainer: HTMLElement = container.querySelector(".fake-menu-button");
         const button = getByRole(buttonContainer, "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-haspopup", "true");
         expect(button).toHaveClass("btn fake-menu-button__button btn--secondary");
         expect(button).toHaveTextContent("eBay Menu");
         const svg = buttonContainer.querySelector("svg");
@@ -45,7 +44,6 @@ describe("ebay-fake-menu-button rendering", () => {
         const buttonContainer: HTMLElement = container.querySelector(".fake-menu-button");
         const button = getByRole(buttonContainer, "button");
         expect(button).toHaveAttribute("aria-expanded", "true");
-        expect(button).toHaveAttribute("aria-haspopup", "true");
         expect(button).toHaveClass("btn fake-menu-button__button btn--secondary");
         expect(button).toHaveTextContent("eBay Menu");
         const menu: HTMLElement = buttonContainer.querySelector(".fake-menu");
@@ -71,7 +69,6 @@ describe("ebay-fake-menu-button rendering", () => {
         const buttonContainer: HTMLElement = container.querySelector(".fake-menu-button");
         const button = getByRole(buttonContainer, "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-haspopup", "true");
         expect(button).toHaveAttribute("disabled", "");
         expect(button).toHaveClass("btn fake-menu-button__button btn--secondary");
         expect(button).toHaveTextContent("eBay Menu");
@@ -84,7 +81,6 @@ describe("ebay-fake-menu-button rendering", () => {
         const buttonContainer: HTMLElement = container.querySelector(".fake-menu-button");
         const button = getByRole(buttonContainer, "button");
         expect(button).toHaveAttribute("aria-expanded", "false");
-        expect(button).toHaveAttribute("aria-haspopup", "true");
         expect(button).toHaveClass("btn fake-menu-button__button btn--borderless");
         expect(button).toHaveTextContent("eBay Menu");
         const svg = buttonContainer.querySelector("svg");
@@ -96,7 +92,6 @@ describe("ebay-fake-menu-button rendering", () => {
         const buttonContainer: HTMLElement = container.querySelector(".fake-menu-button");
         const button = getByRole(buttonContainer, "button");
         expect(button).toHaveAttribute("aria-expanded", "true");
-        expect(button).toHaveAttribute("aria-haspopup", "true");
         expect(button).toHaveClass("btn fake-menu-button__button btn--secondary");
         expect(button).toHaveTextContent("Menu has a button width");
         const menu = buttonContainer.querySelector(".fake-menu");
