@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.6.5
+
+### Patch Changes
+
+- [#696](https://github.com/eBay/evo-web/pull/696) [`8bf5557`](https://github.com/eBay/evo-web/commit/8bf5557279495ebf4100ec43f42fe1cdd8e21089) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(FakeMenuButton): remove usage of aria-haspopup
+
 ## 9.6.4
 
 ### Patch Changes

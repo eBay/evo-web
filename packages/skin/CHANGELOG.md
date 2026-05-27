@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.24.7
+
+### Patch Changes
+
+- [#694](https://github.com/eBay/evo-web/pull/694) [`d5d288f`](https://github.com/eBay/evo-web/commit/d5d288f5028c03798a0217e079d96f8446004b6b) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - chore(skin): update design-tokens package
+
 ## 19.24.6
 
 ### Patch Changes
