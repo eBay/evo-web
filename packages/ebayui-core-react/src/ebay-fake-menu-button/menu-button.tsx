@@ -111,13 +111,12 @@ const EbayMenuButton: FC<Props> = ({
 
     const buttonProps: Omit<ButtonProps, "type" | "ref"> = {
         ref: refs.setHost,
+        ...rest,
         className: "fake-menu-button__button",
         "aria-expanded": !!expanded,
-        "aria-haspopup": true,
         "aria-label": a11yText,
         "aria-controls": menuId,
         onClick: () => setExpanded(!expanded),
-        ...rest,
     };
 
     return (
