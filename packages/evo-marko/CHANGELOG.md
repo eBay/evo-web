@@ -1,5 +1,11 @@
 # @evo-web/marko
 
+## 0.2.2
+
+### Patch Changes
+
+- [#696](https://github.com/eBay/evo-web/pull/696) [`8bf5557`](https://github.com/eBay/evo-web/commit/8bf5557279495ebf4100ec43f42fe1cdd8e21089) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(FakeMenuButton): remove usage of aria-haspopup
+
 ## 0.2.1
 
 ### Patch Changes
