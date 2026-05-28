@@ -18,7 +18,7 @@ export function EvoCCD({
     return (
         <div
             {...rest}
-            role="figure"
+            role="img"
             aria-label={a11yText ?? undefined}
             className={classNames("ccd", className)}
         >
