@@ -217,8 +217,6 @@ component that already has generated files on disk.
    passed on invocation, that takes precedence over the recommendation.
 
 6. Proceed to State C to regenerate the manifest with the updated spec.
-   (`spec-diff.json` was written to the component folder by the script
-   and can be referenced at Gate 2 if the engineer wants to review it.)
 
 **If the new spec is identical to the one on disk**, skip the diff entirely
 and proceed normally. Print nothing about this check.

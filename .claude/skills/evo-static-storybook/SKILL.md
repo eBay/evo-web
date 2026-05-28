@@ -50,6 +50,39 @@ packages/skin/src/sass/<block>/stories/<block>/base.stories.js
 packages/skin/src/sass/<block>/stories/<block>/cascade.stories.js
 ```
 
+## Step 3b — Check for existing stories file
+
+Before writing, check whether the stories file already exists.
+
+**If the file does not exist:** proceed to Step 4 and write from scratch.
+
+**If the file already exists**, determine what is new by diffing the specs:
+
+```bash
+git show HEAD:src/routes/_index/components/<block>/<block>.spec.json
+```
+
+- **If the committed spec exists** (command returns content): parse its `states.type[]`
+  and `props.type.enum[]` arrays. Compare against the same fields in the current on-disk
+  spec. The delta — values present in the current spec but absent in the committed one —
+  are the variants new to this run. Add story exports only for those variants.
+
+- **If no committed spec exists** (new component or spec never committed): fall back to
+  comparing the manifest `variants[]` and `states[]` against the existing named exports in
+  the stories file. Add exports for any variant not yet represented.
+
+In both cases:
+- Read the current stories file first
+- Append missing exports at the end of the file — do not touch existing exports
+- Do not re-add `RTL` or `textSpacing` if already present
+- Skip to the output checklist — Step 4 applies only to new files
+
+If nothing is new, print:
+
+```
+⏭  Stories file already up to date — no new exports needed.
+```
+
 ## Step 4 — Write story files
 
 ### Format (CSF2 — always)

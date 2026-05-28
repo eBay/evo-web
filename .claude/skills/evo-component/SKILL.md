@@ -127,9 +127,12 @@ Invoke: `/evo-docs-hookup` (inline) with scope `"css-only"`
 Tell the skill: "css-only scope — write only css+page.marko and css+meta.json.
 Do not write +page.marko, +meta.json, or update component-metadata.json."
 
-- **full / static:** Uses the HTML catalogue from Step 4 context for demo content
-- **style:** Uses the existing HTML (no structural change) — still update `css+page.marko`
-  if the SCSS change affects layout or visual description text
+- **full / static:** HTML catalogue from Step 4 is in context — the skill uses it directly
+- **style:** Step 4 ran SCSS-only, so no HTML catalogue is in context. Tell the skill:
+  "Style scope — no HTML catalogue in context. For any new variants, read
+  packages/skin/src/sass/<block>/stories/<block>.stories.js to get the HTML
+  for each missing story export, then add the corresponding variant sections
+  to css+page.marko. Do not rewrite existing sections."
 
 **Expected output:**
 - `src/routes/_index/components/<block>/css+page.marko`

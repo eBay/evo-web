@@ -33,6 +33,45 @@ declared mode's scope.
 
 Extract: `bem.block`, `component.displayName`, `variants[]`, `states[]`
 
+### Step 1b — Check for existing css+page.marko
+
+Before writing anything, check whether `src/routes/_index/components/<block>/css+page.marko` already exists.
+
+**If the file does not exist:** proceed to Step 2 and write from scratch.
+
+**If the file already exists**, determine what is new by diffing the specs:
+
+```bash
+git show HEAD:src/routes/_index/components/<block>/<block>.spec.json
+```
+
+- **If the committed spec exists** (command returns content): parse its `states.type[]`
+  and `props.type.enum[]` arrays. Compare against the same fields in the current on-disk
+  spec. The delta — values present in the current spec but absent in the committed one —
+  are the variants new to this run. Add documentation sections only for those variants.
+
+- **If no committed spec exists** (new component or spec never committed): fall back to
+  extracting section IDs already present in `css+page.marko` (e.g. `id="badge-dot"`)
+  and adding sections for any variant in `manifest.variants[]` not yet represented.
+
+For each variant that needs to be added, locate its HTML — in this order:
+1. Step 4 context: look for a labelled block (`=== <VariantName> ===`) in the current conversation
+2. If not in context: read `packages/skin/src/sass/<block>/stories/<block>.stories.js`
+   and extract the HTML string from the matching story export
+
+Insert each new section (heading + demo + highlight-code block) immediately before the
+closing `</div>` of the root element. Do not touch existing sections.
+
+If nothing is new, print:
+
+```
+⏭  css+page.marko already up to date — no new variant sections needed.
+```
+
+and skip to css+meta.json (Step 3). Do not rewrite the file.
+
+**In all cases:** do not rewrite sections that already exist. The goal is additive.
+
 ### Step 2 — Build css+page.marko
 
 The canonical HTML is in your context from `/evo-static-component` (Step 4).

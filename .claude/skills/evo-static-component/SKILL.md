@@ -121,25 +121,73 @@ This labelled output is what `/evo-static-storybook`, `/evo-marko-component`,
 
 ```
 ⏭  SCSS deferred: no design tokens or Figma reference in manifest.
-   When the design spec is ready, update *.spec.json, re-run
-   /evo-create-component-manifest, then re-run /evo-static-component.
+   When the design spec is ready:
+   1. Ensure src/routes/_index/components/$COMPONENT/*.spec.json exists with a 'tokens' field
+   2. Re-run /evo-create-component-manifest $COMPONENT to update manifest.json
+   3. Re-run /evo-static-component $COMPONENT
 ```
 
 ### Token resolution
 
-**Primary source:** `manifest.tokens` — named map to CSS custom property:
-`{ "background": "--color-background-primary" }`. Use these directly.
+**Gap-filling priority order — follow this strictly:**
+1. `manifest.tokens` map — trust it; use these directly without question
+2. `get_variable_defs` Figma call — use to catch tokens present in the design but missing from the manifest
+3. `get_design_context` screenshot + annotations — use for spacing math, border widths, typographic scale, and edge-case state details
+4. Token lookup fallback list (below) — reference for common properties when none of the above provides a value
+5. Hardcode with `$_` variable — only when no token exists anywhere; always leave a comment
 
-**Figma as validator/gap-filler:** When `figma.fileKey` or `figmaUrl` present,
-call in parallel to validate and fill gaps:
+**Token lookup — two-stop check before declaring a token missing:**
 
+When a token referenced in the manifest or spec is not found in `packages/skin/dist/tokens/`, check `node_modules/@ebay/design-tokens/dist/mixins/` before concluding it is absent. Evo themes inherit from that package without re-declaring every token, so a token can be valid and available even if it does not appear in the compiled skin token files.
+
+```bash
+grep -i "<token-name>" node_modules/@ebay/design-tokens/dist/mixins/evo-light.scss
 ```
-get_design_context(nodeId, fileKey, clientLanguages="scss,css")
+
+Only after both checks come up empty should you treat the token as missing and fall back to the next priority level.
+
+### Figma validation (when `figma.fileKey` or `figmaUrl` present)
+
+**Determine Figma coordinates:**
+- If `figmaUrl` is present: extract `fileKey` and `nodeId` directly from the URL.
+  URL format: `https://www.figma.com/design/:fileKey/:fileName?node-id=1-2`
+  Convert the `node-id` query param from `-` to `:` (e.g. `1-2` → `1:2`).
+- If only `figma.fileKey` is present (no full URL): call `search_design_system` to locate the nodeId:
+  ```
+  search_design_system(query=<component display name>, fileKey=<figma.fileKey>)
+  ```
+  Use the first matching component result's nodeId.
+- If neither is available: skip Figma, proceed with manifest tokens + fallback list only, note gaps.
+
+**Run these calls in parallel:**
+```
+get_design_context(nodeId, fileKey, clientLanguages="scss,css", clientFrameworks="unknown")
 get_variable_defs(nodeId, fileKey)
 ```
 
-Use `search_design_system(component-name, fileKey)` to find `nodeId` when only
-`fileKey` is available.
+**What to do with each result:**
+
+From `get_design_context` — visual confirmation and gap-filling:
+- Study the screenshot to verify spacing, shape, border widths, and typographic scale
+- Check if reference code mentions tokens not in your manifest `tokens` map — add them
+- Note design annotations for edge-case states (hover, disabled, focus)
+
+From `get_variable_defs` — token cross-check:
+- Compare manifest token names against Figma variable names
+  (translation: `color/background/primary` → `--color-background-primary`)
+- If a Figma variable is used in the design but absent from the manifest `tokens` map, add it and note it came from Figma validation
+- If a Figma value has no matching CSS custom property (e.g. a hardcoded hex), flag it as a gap
+
+### Token gap-filling reference
+
+Use these only when manifest, Figma variable defs, and `@ebay/design-tokens` all fail to provide a value:
+
+- **Background:** `--color-background-primary`, `--color-background-accent`, `--color-background-attention`, `--color-background-disabled`
+- **Foreground:** `--color-foreground-primary`, `--color-foreground-accent`, `--color-foreground-on-accent`, `--color-foreground-disabled`
+- **Border:** `--color-border-medium`, `--color-border-accent`, `--color-border-disabled`
+- **Border radius:** `--border-radius-50` (8px), `--border-radius-100` (16px), `--border-radius-150` (24px), `--border-radius-full` (9999px)
+- **Spacing:** `--spacing-25` (2px), `--spacing-50` (4px), `--spacing-100` (8px), `--spacing-150` (12px), `--spacing-200` (16px), `--spacing-300` (24px)
+- **Typography:** `--font-size-small`, `--font-size-body`, `--font-size-medium`, `--font-size-large-1`, `--font-size-large-2`
 
 ### SCSS file
 
@@ -147,33 +195,86 @@ Write `packages/skin/src/sass/<block>/<block>.scss`:
 
 ```scss
 @use "../mixins/private/token-mixins";
+/* add other @use lines only if needed — e.g. @use "../variables/variables"; */
 
 .<block> {
-    background-color: var(--color-background-primary);
-    border-radius: var(--border-radius-50);
+    /* base layout and visual styles */
 }
 
-.<block>--<modifier> { /* flat — never nested */ }
+.<block>--<modifier> {
+    /* modifier overrides — flat, never nested */
+}
 
-.<block>__<element> { /* element styles */ }
+.<block>__<element> {
+    /* element styles */
+}
 ```
 
-**Rules:** flat BEM only; `var(--)` for tokens; `@include token-mixins.color-token()`
-for brand-critical colors; `$_` SCSS variables for un-tokenised values;
-ARIA/state attribute selectors over modifier classes for state.
+**Token usage — two approaches:**
+
+For most properties, use CSS custom properties directly:
+```scss
+.badge {
+    border-radius: var(--border-radius-50);
+    font-size: var(--font-size-body);
+    padding: var(--spacing-50) var(--spacing-100);
+}
+```
+
+For brand-critical color properties (`background-color`, `color`, `border-color`) on the
+root block — where consumers may want component-level overrides — use the two-tier mixin:
+```scss
+@include token-mixins.background-color-token(badge-background-color, color-background-attention);
+/* compiles to: background-color: var(--badge-background-color, var(--color-background-attention)); */
+```
+
+Skip the mixin for layout properties (padding, margin, border-radius, font-size) — those go
+as plain `var(--)`.
+
+**Hardcoded values:** Acceptable only when no token exists in the manifest, Figma variable defs,
+`@ebay/design-tokens`, or the fallback list. Use SCSS file-scoped variables prefixed with `$_`:
+```scss
+$_avatar-green: #5ba85a;
+
+.avatar--green {
+    background-color: $_avatar-green;
+}
+```
+
+**ARIA attributes as styling hooks** — prefer attribute selectors over modifier classes for state:
+```scss
+.btn[disabled],
+.btn[aria-disabled="true"] {
+    background-color: var(--color-background-disabled);
+    color: var(--color-foreground-disabled);
+}
+```
+
+**Do not:**
+- Nest BEM selectors (`&--modifier` inside the block is wrong — keep them flat)
+- Chain BEM modifiers (`.avatar--fit.avatar--green` is wrong)
+- Use presentational names (`.btn--green` is wrong; `.btn--primary` is right) — unless the modifier IS a color variant by design (e.g. avatar color variants are intentionally named by color)
+- Use `.disabled` class — use `[disabled]` or `[aria-disabled="true"]`
+- Add commented-out code
+- Write deep nesting beyond pseudo-selectors (`:hover`, `::before`, `:focus-visible`)
 
 ### Bundle registration
 
-Add `@use "../<block>/<block>";` to
-`packages/skin/src/sass/bundles/skin-headless.scss` in alphabetical order.
+Add `@use "../<block>/<block>";` to `packages/skin/src/sass/bundles/skin-headless.scss`
+in **alphabetical order** among the existing `@use` lines.
 
 ### Build verification
 
 ```bash
-cd packages/skin && npm run build
+npm run build -w @ebay/skin
 ```
 
 Fix any errors inline. Do not re-run the skill.
+
+Common failure causes:
+- Typo in a `var(--)` token name — cross-check against the two-stop lookup
+- Missing or wrong `@use` path
+- Unclosed brace from a nested block that should be flat
 
 ---
 
@@ -194,5 +295,14 @@ Phase 2 — SCSS:
   [✅ skin-headless.scss updated]
   [⏭  Deferred — no tokens or Figma reference]
 ```
+
+Before reporting done, verify:
+- [ ] HTML catalogue covers Default, all variants, RTL, and key states
+- [ ] `packages/skin/src/sass/<block>/<block>.scss` written
+- [ ] `@use` line added to `skin-headless.scss` in alphabetical order
+- [ ] All BEM modifiers and elements from manifest have SCSS coverage
+- [ ] Token mixin used for brand-critical color properties; plain `var(--)` for layout
+- [ ] No Marko patterns, no `component.ts`, no `browser.json`
+- [ ] `npm run build -w @ebay/skin` passes
 
 The HTML catalogue above is the canonical reference for all downstream skills.
