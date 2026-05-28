@@ -2,6 +2,7 @@ import React, {
     Children,
     ComponentProps,
     FC,
+    JSX,
     ReactElement,
     cloneElement,
     useEffect,
@@ -21,6 +22,7 @@ import { EbayEventHandler } from "../common/event-utils/types";
 
 export type PaginationProps = Omit<ComponentProps<"nav">, "onSelect"> & {
     id?: string;
+    a11yHeadingTag?: keyof JSX.IntrinsicElements;
     a11yPreviousText?: string;
     a11yNextText?: string;
     a11yCurrentText?: string;
@@ -33,6 +35,7 @@ export type PaginationProps = Omit<ComponentProps<"nav">, "onSelect"> & {
 
 const EbayPagination: FC<PaginationProps> = ({
     id = "ebay-pagination",
+    a11yHeadingTag = "h2",
     className,
     a11yCurrentText = "Pagination - Current Page",
     a11yPreviousText = "Previous page",
@@ -192,6 +195,7 @@ const EbayPagination: FC<PaginationProps> = ({
     };
 
     const headingId = `${id}-pagination-heading`;
+    const A11yHeadingTag = a11yHeadingTag || "h2";
 
     return (
         <nav
@@ -202,9 +206,9 @@ const EbayPagination: FC<PaginationProps> = ({
             ref={paginationContainerRef}
         >
             <span aria-live="polite" role="status">
-                <h2 className="clipped" id={headingId}>
+                <A11yHeadingTag className="clipped" id={headingId}>
                     {a11yCurrentText}
-                </h2>
+                </A11yHeadingTag>
             </span>
             {createChildItems("previous")}
             <ol className="pagination__items">{createChildItems("page")}</ol>

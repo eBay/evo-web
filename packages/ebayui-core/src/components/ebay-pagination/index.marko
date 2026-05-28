@@ -4,12 +4,13 @@ import type { Item } from "./component";
 $ const {
     class: inputClass,
     item: items = [],
+    a11yHeadingTag,
     a11yCurrentText = "Results Pagination - Page 1",
     a11yPreviousText = "Previous page",
     a11yNextText = "Next page",
 } = input;
 static var disabledItem: Item = { disabled: true };
-static var ignoredAttributes = ["item"];
+static var ignoredAttributes = ["item", "a11yHeadingTag"];
 static var ignoredItemAttributes = ["current", "disabled"];
 static function isItemHidden(
     index: number,
@@ -52,9 +53,9 @@ $ var range = component._getVisibleRange(slicedItems);
     aria-labelledby:scoped="heading"
 >
     <span aria-live="polite" role="status">
-        <h2 id:scoped="heading" class="clipped">
+        <${a11yHeadingTag || "h2"} id:scoped="heading" class="clipped">
             ${a11yCurrentText}
-        </h2>
+        </>
     </span>
 
     <${component.getItemTag(prevItem)}

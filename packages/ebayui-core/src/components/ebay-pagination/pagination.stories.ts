@@ -36,6 +36,15 @@ export default {
             description:
                 "Localized, description for the current page (e.g. Results of Page 1)",
         },
+        a11yHeadingTag: {
+            control: { type: "text" },
+            table: {
+                defaultValue: {
+                    summary: "h2",
+                },
+            },
+            description: "Heading tag for the clipped pagination label",
+        },
         variant: {
             control: { type: "select" },
 
@@ -122,6 +131,9 @@ export default {
                 },
             },
         },
+    },
+    args: {
+        a11yHeadingTag: "h2",
     },
 };
 

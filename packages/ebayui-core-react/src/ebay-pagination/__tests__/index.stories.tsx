@@ -72,6 +72,11 @@ or import styles using SCSS/CSS
         a11yPreviousText: { description: "a11y text for previous arrow button", control: "text" },
         a11yNextText: { description: "a11y text for next arrow button", control: "text" },
         a11yCurrentText: { description: "Description for the current page (e.g. Results of Page 1)", control: "text" },
+        a11yHeadingTag: {
+            description: "Heading tag for pagination (default: `h2`)",
+            control: "text",
+            table: { defaultValue: { summary: "h2" } },
+        },
         variant: {
             description:
                 "Either `show-last`, or `show-range` (default). If show-last then will show the last page always and will put `…` between the last visible range and the last page. `…` and the last page will take up two items in the range. `…` will be hidden when the range to the last item is fully visible.",
@@ -109,6 +114,9 @@ or import styles using SCSS/CSS
             action: "onSelect",
             table: { category: "Events" },
         },
+    },
+    args: {
+        a11yHeadingTag: "h2",
     },
 };
 
