@@ -8,7 +8,7 @@ Paste this at the start of a new chat to resume work on the evo-web AI component
 
 An end-to-end AI component generation pipeline for the **evo-web monorepo** (eBay's component library). The pipeline takes a component contract and structured design spec, produces a machine-readable manifest, then generates every layer of a component — static HTML/CSS, Marko 6, React 19, storybooks, accessibility validation, accessibility docs, and site hookups — orchestrated by a single Claude Code skill with scope-aware step selection.
 
-**Current status: All skills built. First real component run is next.**
+**Current status: All skills built. Pipeline validated on real components (page-notice modify run complete).**
 
 ---
 
@@ -18,8 +18,9 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
 
 | Skill | Type | Invoked By | Responsibility |
 |---|---|---|---|
-| `/evo-create-component-manifest` | Discrete — pipeline entry | Engineer | Reads `_contract.md` + `*.spec.json` → `manifest.json` + `gap-report.json` |
-| `/evo-component` | Composite orchestrator | Engineer (after manifest approved) | 16-step scope-aware generation lifecycle |
+| `/evo-pipeline` | Top-level orchestrator | Engineer | State detection, modify detection (spec diff), Gate 2 presentation, resumability — invokes `/evo-component` after approval |
+| `/evo-create-component-manifest` | Discrete — manifest step | `/evo-pipeline` (Step 1) | Reads `_contract.md` + `*.spec.json` → `manifest.json` + `gap-report.json` |
+| `/evo-component` | Composite orchestrator | `/evo-pipeline` (after Gate 2) | 16-step scope-aware generation lifecycle |
 | `/evo-static-component` | Sub-agent | Step 4 | Canonical HTML catalogue for all variants (always) + SCSS (when tokens/Figma available) |
 | `/evo-static-storybook` | Sub-agent | Step 5 | CSF2 stories from static HTML context; RTL + textSpacing required |
 | `/evo-docs-hookup` css-only | Sub-agent | Step 6 | Writes `css+page.marko` + `css+meta.json` while HTML is fresh |
@@ -60,16 +61,28 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
 [Track A — Human]
 1. Designer + engineer author _contract.md + *.spec.json
    Both files live in src/routes/_index/components/<name>/
+   (Can also be provided as chat attachments — /evo-pipeline treats them identically)
 2. GATE 1: CODEOWNERS review (designer + engineer approval)
 
-[/evo-create-component-manifest]
+[/evo-pipeline <name> [--scope <scope>] [--auto-approve]]
+   State detection: reads folder, contract, spec, manifest, gap-report, generated files
+   → routes to correct state (no folder / inputs missing / no manifest / pending review / ready)
+   Resumable: picks up from current state without re-running completed steps
+
+   Modify detection (when generated files already exist + new spec provided):
+   Runs npm run codegen:diff-specs — compares old vs new spec, recommends scope,
+   writes spec-diff.json. Engineer can override. Scope auto-selected from diff.
+
+[/evo-create-component-manifest — invoked by /evo-pipeline]
 3. Runs npm run codegen:spec-to-manifest first (if spec present) — writes
    spec-derived fields to manifest.json deterministically
    Then reads _contract.md + manifest.json → completes manifest.json + gap-report.json
    Spec is authoritative for: props, tokens, slots, states
    Contract is authoritative for: a11y prose, behaviors, keyboard model
+   Four-tier source system: [CONTRACT] [AUDIT] [INFER] [ENGINEER]
 
 4. GATE 2: Engineer reviews manifest + gap-report (last human gate before codegen)
+   --auto-approve skips interactive prompt; summary still printed
 
 [/evo-component --scope <full|static|interactive|style>]
 
@@ -111,12 +124,14 @@ GATE 4: CI — npm run build + Playwright/Vitest
 
 ## Codegen Scripts (determinism layer)
 
-Three TypeScript scripts produce byte-identical output for spec-derivable content. Run via `npx tsx` or npm shortcuts:
+Five TypeScript scripts produce byte-identical output for spec-derivable content. Run via `npx tsx` or npm shortcuts:
 
 | Script | npm command | When it runs |
 |---|---|---|
 | `scripts/codegen/spec-to-manifest.ts` | `npm run codegen:spec-to-manifest <name>` | Step 3 — before AI manifest inference |
+| `scripts/codegen/diff-specs.ts` | `npm run codegen:diff-specs <old> <new> <name>` | Modify detection — before Step 3 on revisions |
 | `scripts/codegen/generate-component-scaffold.ts` | `npm run codegen:scaffold <name>` | Step 6.5 — before framework generation |
+| `scripts/codegen/validate-manifest.ts` | `npm run codegen:validate-manifest <name>` | On demand — validates manifest.json against schema |
 | `scripts/codegen/update-component-metadata.ts` | `npm run codegen:update-metadata <name>` | Step 13 — inside /evo-docs-hookup full mode |
 
 All scripts accept the bare component name (`accordion`, not `evo-accordion`). They resolve to `src/routes/_index/components/<name>/` automatically.
