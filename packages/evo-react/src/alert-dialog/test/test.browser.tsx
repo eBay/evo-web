@@ -5,6 +5,7 @@ import React from "react";
 import { EvoAlertDialog } from "../alert-dialog";
 import { EvoAlertDialogHeader } from "../alert-dialog-header";
 import { EvoAlertDialogMain } from "../alert-dialog-main";
+import { EvoAlertDialogFooter } from "../alert-dialog-footer";
 import { EvoAlertDialogConfirm } from "../alert-dialog-confirm";
 
 function renderOpenDialog(
@@ -17,7 +18,9 @@ function renderOpenDialog(
       <EvoAlertDialogMain>
         <p>You must acknowledge this alert to continue.</p>
       </EvoAlertDialogMain>
-      <EvoAlertDialogConfirm onClick={onConfirmClick}>OK</EvoAlertDialogConfirm>
+      <EvoAlertDialogFooter>
+        <EvoAlertDialogConfirm onClick={onConfirmClick}>OK</EvoAlertDialogConfirm>
+      </EvoAlertDialogFooter>
     </EvoAlertDialog>,
   );
 }
@@ -88,7 +91,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       const dialog = screen.getByRole("alertdialog");
@@ -104,7 +109,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain id="my-custom-main-id">
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       const button = screen.getByRole("button", { name: "OK" });
@@ -124,6 +131,28 @@ describe("evo-alert-dialog", () => {
       const mainContent = screen.getByText("You must acknowledge this alert to continue.");
       const main = mainContent.element().closest(".dialog__main");
       expect(main).not.toBeNull();
+    });
+
+    it("should render the footer with dialog__footer class", async () => {
+      const screen = await renderOpenDialog();
+      const button = screen.getByRole("button", { name: "OK" });
+      const footer = button.element().closest(".dialog__footer");
+      expect(footer).not.toBeNull();
+    });
+
+    it("should render the footer with a custom className", async () => {
+      const screen = await render(
+        <EvoAlertDialog open>
+          <EvoAlertDialogHeader>Alert</EvoAlertDialogHeader>
+          <EvoAlertDialogMain><p>Content</p></EvoAlertDialogMain>
+          <EvoAlertDialogFooter className="my-footer">
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
+        </EvoAlertDialog>,
+      );
+      const button = screen.getByRole("button", { name: "OK" });
+      const footer = button.element().closest(".dialog__footer");
+      expect(footer?.classList.contains("my-footer")).toBe(true);
     });
 
     it("should have aria-describedby on the confirm button referencing the main content", async () => {
@@ -147,7 +176,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       // dialog is closed and hidden from the a11y tree; querySelector is intentional here
@@ -164,7 +195,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       // dialog is closed and hidden from the a11y tree; querySelector is intentional here
@@ -179,7 +212,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       const dialog = screen.getByRole("alertdialog");
@@ -193,7 +228,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       const dialog = screen.getByRole("alertdialog");
@@ -211,7 +248,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       await user.click(screen.getByRole("button", { name: "OK" }));
@@ -247,6 +286,16 @@ describe("evo-alert-dialog", () => {
     });
   });
 
+  describe("when Escape is pressed (controlled)", () => {
+    it("should NOT call onOpenChange — Escape is blocked on alert dialogs", async () => {
+      const onOpenChange = vi.fn();
+      await renderOpenDialog(undefined, onOpenChange);
+      // The confirm button receives focus automatically via autoFocus + showModal()
+      await user.keyboard("{Escape}");
+      expect(onOpenChange).not.toHaveBeenCalled();
+    });
+  });
+
   describe("when Enter key is pressed on the confirm button", () => {
     it("should call onOpenChange with false", async () => {
       const onOpenChange = vi.fn();
@@ -274,7 +323,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       expect(ref.current).toBeInstanceOf(HTMLDialogElement);
@@ -287,7 +338,9 @@ describe("evo-alert-dialog", () => {
           <EvoAlertDialogMain>
             <p>Content</p>
           </EvoAlertDialogMain>
-          <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          <EvoAlertDialogFooter>
+            <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
+          </EvoAlertDialogFooter>
         </EvoAlertDialog>,
       );
       const heading = screen.getByRole("heading", { name: "Title" });

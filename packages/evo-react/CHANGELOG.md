@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.0.8
+
+### Patch Changes
+
+- [#687](https://github.com/eBay/evo-web/pull/687) [`5e336ce`](https://github.com/eBay/evo-web/commit/5e336cec181e098dab4c63c7b62df96259c509d5) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoConfirmDialog component.
+
 ## 0.0.7
 
 ### Patch Changes

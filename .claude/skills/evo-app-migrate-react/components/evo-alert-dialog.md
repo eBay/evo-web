@@ -10,6 +10,7 @@
 +   EvoAlertDialog,
 +   EvoAlertDialogHeader,
 +   EvoAlertDialogMain,
++   EvoAlertDialogFooter,
 +   EvoAlertDialogConfirm,
 + } from "@evo-web/react/alert-dialog";
 ```
@@ -40,7 +41,9 @@
   <EvoAlertDialogMain>
     <p>Content here.</p>
   </EvoAlertDialogMain>
-  <EvoAlertDialogConfirm onClick={handleConfirm}>OK</EvoAlertDialogConfirm>
+  <EvoAlertDialogFooter>
+    <EvoAlertDialogConfirm onClick={handleConfirm}>OK</EvoAlertDialogConfirm>
+  </EvoAlertDialogFooter>
 </EvoAlertDialog>
 ```
 
@@ -71,7 +74,8 @@
 | ----------------------- | ----------------------------------------------------------------------- |
 | `EvoAlertDialogHeader`  | Heading wrapper; supports `as` prop to override element (default: `h2`) |
 | `EvoAlertDialogMain`    | Main content area; wraps body content in `dialog__main`                 |
-| `EvoAlertDialogConfirm` | Primary confirm button; call `onClick` for additional side effects      |
+| `EvoAlertDialogFooter`  | Footer wrapper; wraps buttons in `dialog__footer`; accepts `className`  |
+| `EvoAlertDialogConfirm` | Primary confirm button; must be placed inside `EvoAlertDialogFooter`    |
 
 ## Implementation note
 

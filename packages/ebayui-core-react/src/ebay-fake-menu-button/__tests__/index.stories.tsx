@@ -97,11 +97,6 @@ or import styles using SCSS/CSS
         checked: { description: "Not yet implemented", control: "boolean" },
         "badge-number": { description: "Not yet implemented", control: "number" },
         "badge-aria-label": { description: "Not yet implemented", control: "text" },
-        onClick: {
-            description: "For a non-link menu item, with param `{ originalEvent }`",
-            action: "onClick",
-            table: { category: "Events" },
-        },
         onKeyDown: {
             description: "Triggered on key down",
             action: "onKeyDown",
