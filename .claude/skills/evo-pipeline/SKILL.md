@@ -43,12 +43,14 @@ If `$ARGUMENTS` is empty, ask: "Which component would you like to work on?"
 The two required inputs (`_contract.md` and `*.spec.json`) can come from **either** source:
 
 **From the filesystem** (the normal case once files are committed):
+
 ```
 src/routes/_index/components/<name>/_contract.md
 src/routes/_index/components/<name>/<name>.spec.json
 ```
 
 **From the current conversation** (when the engineer attaches files directly):
+
 - The engineer may paste the contract as text or attach it as a file in this chat
 - The engineer may attach the spec JSON as a file or paste it inline
 - These are valid — treat them exactly the same as files on disk
@@ -79,7 +81,7 @@ component is in its lifecycle. Check in order:
 **Manifest:** `manifest.json` in that folder
 **Gap report:** `gap-report.json` in that folder
 **Generated files:** `packages/evo-marko/src/tags/evo-<name>/index.marko`
-                     `packages/evo-react/src/<name>/index.tsx`
+`packages/evo-react/src/<name>/index.tsx`
 
 Announce the detected state immediately:
 
@@ -164,13 +166,18 @@ not on disk, not in chat), offer:
 This check runs **before** State C whenever a new spec is being provided for a
 component that already has generated files on disk.
 
+**Modification mode — when the component folder exists, always treat the run as a modification.** The absence of a spec on disk is not a signal to start fresh — it means the spec was never committed, not that the component is new. If a spec is provided (in chat or on disk), compare it against the implemented state (read the SCSS, Marko, and React files) to determine what changed.
+
 **Trigger conditions (all must be true):**
+
 - The component folder already exists
-- Generated files exist (`packages/evo-marko/src/tags/evo-<name>/index.marko`
+- Generated files exist (`packages/skin/src/sass/<name>/<name>.scss`,
+  `packages/evo-marko/src/tags/evo-<name>/index.marko`,
   or `packages/evo-react/src/<name>/index.tsx`)
 - A new spec is being provided (attached to this chat, or the spec on disk was
   previously committed and a different version is now being supplied)
-- The new spec differs from the existing spec on disk
+- The new spec differs from the existing spec on disk (or from the implemented
+  state when no spec was previously on disk)
 
 **When triggered:**
 
@@ -178,6 +185,7 @@ component that already has generated files on disk.
    `src/routes/_index/components/<name>/<name>.spec.new.json`
 
 2. Run the diff script:
+
    ```bash
    npx tsx scripts/codegen/diff-specs.ts \
      src/routes/_index/components/<name>/<name>.spec.json \
@@ -207,6 +215,7 @@ component that already has generated files on disk.
    ```
 
 4. Overwrite the on-disk spec with the new one:
+
    ```bash
    mv src/routes/_index/components/<name>/<name>.spec.new.json \
       src/routes/_index/components/<name>/<name>.spec.json
@@ -398,6 +407,11 @@ change, or spec was not updated), ask:
   Or describe what changed and I'll determine the right scope.
 ```
 
+**Static scope always includes css docs.** When scope is `static` or `style`
+and the change adds or removes a variant (enum value), `css+page.marko` must
+be updated to include the new variant in the demo block and `<highlight-code>`
+block. This is not a separate step — it is part of the static scope output.
+
 Then announce the plan:
 
 ```
@@ -503,13 +517,13 @@ just print an error and stop.
 
 Distinguish failure types:
 
-| Type | What it means | Behavior |
-|---|---|---|
-| 🔴 Blocking gap | Manifest field requires engineer decision | Stop at Gate 2; present curated review |
-| 🔴 A11y Pass 1 failure | Static HTML has incorrect ARIA or missing RTL/textSpacing | Stop before Marko/React; explain exact check that failed |
-| 🔴 Build failure | Generated code has TypeScript or SCSS errors | Stop before QA; show the exact error and which generated file caused it |
-| 🔴 QA Layer 1 failure | Generated files don't match the manifest spec | Show each failing check with file location and what was expected vs. found |
-| 🟡 Warning | Something should be reviewed but doesn't block shipping | Complete the run; list warnings in the final summary |
+| Type                   | What it means                                             | Behavior                                                                   |
+| ---------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 🔴 Blocking gap        | Manifest field requires engineer decision                 | Stop at Gate 2; present curated review                                     |
+| 🔴 A11y Pass 1 failure | Static HTML has incorrect ARIA or missing RTL/textSpacing | Stop before Marko/React; explain exact check that failed                   |
+| 🔴 Build failure       | Generated code has TypeScript or SCSS errors              | Stop before QA; show the exact error and which generated file caused it    |
+| 🔴 QA Layer 1 failure  | Generated files don't match the manifest spec             | Show each failing check with file location and what was expected vs. found |
+| 🟡 Warning             | Something should be reviewed but doesn't block shipping   | Complete the run; list warnings in the final summary                       |
 
 ---
 
