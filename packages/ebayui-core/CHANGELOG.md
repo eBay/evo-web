@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.7.5
+
+### Patch Changes
+
+- [#701](https://github.com/eBay/evo-web/pull/701) [`0a805e6`](https://github.com/eBay/evo-web/commit/0a805e6ab1728d6fd6bf1ee8fffd913c4dd51be5) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(ebay-video): add stopPropagation to big play button click
+
 ## 16.7.4
 
 ### Patch Changes
