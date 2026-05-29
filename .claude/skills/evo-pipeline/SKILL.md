@@ -181,19 +181,35 @@ component that already has generated files on disk.
 
 **When triggered:**
 
-1. Write the new spec to a temporary path alongside the existing one:
-   `src/routes/_index/components/<name>/<name>.spec.new.json`
-
-2. Run the diff script:
+1. Get the committed (old) spec via git:
 
    ```bash
-   npx tsx scripts/codegen/diff-specs.ts \
-     src/routes/_index/components/<name>/<name>.spec.json \
-     src/routes/_index/components/<name>/<name>.spec.new.json \
-     <name>
+   git show HEAD:src/routes/_index/components/<name>/<name>.spec.json
    ```
 
-3. Present the diff output to the engineer. Example:
+   - If the command returns content: this is the old spec. Parse it and compare
+     against the new spec (on disk or from chat) to identify what changed.
+   - If the command errors or returns nothing: no committed spec exists — treat
+     all spec fields as new, skip the diff display, and proceed to State C.
+
+2. Diff the old and new specs in context. For each section, note additions (+),
+   removals (-), and modifications (~):
+   - `props` — type changes, enum value additions/removals, default changes
+   - `states` — added or removed state entries
+   - `tokens` — added, removed, or renamed token mappings
+   - `slots` — added or removed slot definitions
+
+3. Determine the recommended scope from the type of changes:
+   - New enum values or states only → `static` (new BEM modifiers needed in SCSS)
+   - Token value changes only → `style`
+   - Prop type changes, new props, or behavioral flags → `interactive`
+   - Multiple layer changes → `full`
+
+4. Write the new spec to disk, overwriting the existing file (if it came from
+   chat) or confirming it is already current (if already on disk from a previous
+   step in this session).
+
+5. Present the diff summary to the engineer:
 
    ```
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -214,18 +230,11 @@ component that already has generated files on disk.
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    ```
 
-4. Overwrite the on-disk spec with the new one:
-
-   ```bash
-   mv src/routes/_index/components/<name>/<name>.spec.new.json \
-      src/routes/_index/components/<name>/<name>.spec.json
-   ```
-
-5. Pre-select the recommended scope for State E — the engineer can still
+6. Pre-select the recommended scope for State E — the engineer can still
    override it, but the diff is the default. If `--scope` was explicitly
    passed on invocation, that takes precedence over the recommendation.
 
-6. Proceed to State C to regenerate the manifest with the updated spec.
+7. Proceed to State C to regenerate the manifest with the updated spec.
 
 **If the new spec is identical to the one on disk**, skip the diff entirely
 and proceed normally. Print nothing about this check.

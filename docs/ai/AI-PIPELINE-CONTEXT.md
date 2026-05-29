@@ -16,24 +16,24 @@ An end-to-end AI component generation pipeline for the **evo-web monorepo** (eBa
 
 Skills live in `.claude/skills/[skill-name]/SKILL.md`.
 
-| Skill | Type | Invoked By | Responsibility |
-|---|---|---|---|
-| `/evo-pipeline` | Top-level orchestrator | Engineer | State detection, modify detection (spec diff), Gate 2 presentation, resumability — invokes `/evo-component` after approval |
-| `/evo-create-component-manifest` | Discrete — manifest step | `/evo-pipeline` (Step 1) | Reads `_contract.md` + `*.spec.json` → `manifest.json` + `gap-report.json` |
-| `/evo-component` | Composite orchestrator | `/evo-pipeline` (after Gate 2) | 16-step scope-aware generation lifecycle |
-| `/evo-static-component` | Sub-agent | Step 4 | Canonical HTML catalogue for all variants (always) + SCSS (when tokens/Figma available) |
-| `/evo-static-storybook` | Sub-agent | Step 5 | CSF2 stories from static HTML context; RTL + textSpacing required |
-| `/evo-docs-hookup` css-only | Sub-agent | Step 6 | Writes `css+page.marko` + `css+meta.json` while HTML is fresh |
-| `/evo-a11y` Pass 1 | Sub-agent | Step 7 | Validates static HTML + storybook; writes static sections of `accessibility+page.marko` |
-| `/evo-marko-component` | Sub-agent | Step 8 | Generates new Marko 6 `index.marko`, `style.ts`, tests from manifest |
-| `/evo-marko-storybook` | Sub-agent | Step 9 | `buildExtensionTemplate` + `.marko` example files |
-| `/evo-react-component` | Sub-agent | Step 10 | Generates new React 19 `index.tsx`, tests from manifest |
-| `/evo-react-storybook` | Sub-agent | Step 11 | CSF3 `Meta` + `StoryObj`, self-contained |
-| `/evo-a11y` Pass 2 | Sub-agent | Step 12 | Full validation; fills interactive sections of `accessibility+page.marko` |
-| `/evo-docs-hookup` full | Sub-agent | Step 13 | Writes `+page.marko`, `+meta.json`, updates `component-metadata.json` |
-| `/evo-qa` | **Forked** sub-agent | Step 15 | Layer 1: manifest fidelity; Layer 2: optional reference delta score |
-| `/evo-icon` | Discrete | Engineer or Step 8 (major delete) | Add / deprecate / delete icons; SVG → sprite → React → Marko |
-| `evo-safe-coding` | Safety gate (auto-activates) | Every code session | Scope check, risk rating, minimal diff, merge readiness |
+| Skill                            | Type                         | Invoked By                        | Responsibility                                                                                                             |
+| -------------------------------- | ---------------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `/evo-pipeline`                  | Top-level orchestrator       | Engineer                          | State detection, modify detection (spec diff), Gate 2 presentation, resumability — invokes `/evo-component` after approval |
+| `/evo-create-component-manifest` | Discrete — manifest step     | `/evo-pipeline` (Step 1)          | Reads `_contract.md` + `*.spec.json` → `manifest.json` + `gap-report.json`                                                 |
+| `/evo-component`                 | Composite orchestrator       | `/evo-pipeline` (after Gate 2)    | 16-step scope-aware generation lifecycle                                                                                   |
+| `/evo-static-component`          | Sub-agent                    | Step 4                            | Canonical HTML catalogue for all variants (always) + SCSS (when tokens/Figma available)                                    |
+| `/evo-static-storybook`          | Sub-agent                    | Step 5                            | CSF2 stories from static HTML context; RTL + textSpacing required                                                          |
+| `/evo-docs-hookup` css-only      | Sub-agent                    | Step 6                            | Writes `css+page.marko` + `css+meta.json` while HTML is fresh                                                              |
+| `/evo-a11y` Pass 1               | Sub-agent                    | Step 7                            | Validates static HTML + storybook; writes static sections of `accessibility+page.marko`                                    |
+| `/evo-marko-component`           | Sub-agent                    | Step 8                            | Generates new Marko 6 `index.marko`, `style.ts`, tests from manifest                                                       |
+| `/evo-marko-storybook`           | Sub-agent                    | Step 9                            | `buildExtensionTemplate` + `.marko` example files                                                                          |
+| `/evo-react-component`           | Sub-agent                    | Step 10                           | Generates new React 19 `index.tsx`, tests from manifest                                                                    |
+| `/evo-react-storybook`           | Sub-agent                    | Step 11                           | CSF3 `Meta` + `StoryObj`, self-contained                                                                                   |
+| `/evo-a11y` Pass 2               | Sub-agent                    | Step 12                           | Full validation; fills interactive sections of `accessibility+page.marko`                                                  |
+| `/evo-docs-hookup` full          | Sub-agent                    | Step 13                           | Writes `+page.marko`, `+meta.json`, updates `component-metadata.json`                                                      |
+| `/evo-qa`                        | **Forked** sub-agent         | Step 15                           | Layer 1: manifest fidelity; Layer 2: optional reference delta score                                                        |
+| `/evo-icon`                      | Discrete                     | Engineer or Step 8 (major delete) | Add / deprecate / delete icons; SVG → sprite → React → Marko                                                               |
+| `evo-safe-coding`                | Safety gate (auto-activates) | Every code session                | Scope check, risk rating, minimal diff, merge readiness                                                                    |
 
 ---
 
@@ -70,8 +70,8 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
    Resumable: picks up from current state without re-running completed steps
 
    Modify detection (when generated files already exist + new spec provided):
-   Runs npm run codegen:diff-specs — compares old vs new spec, recommends scope,
-   writes spec-diff.json. Engineer can override. Scope auto-selected from diff.
+   Reads old spec via git show HEAD:<spec-path>, diffs in context against the
+   new spec, recommends scope. Engineer can override. No temp files written.
 
 [/evo-create-component-manifest — invoked by /evo-pipeline]
 3. Runs npm run codegen:spec-to-manifest first (if spec present) — writes
@@ -113,12 +113,12 @@ GATE 4: CI — npm run build + Playwright/Vitest
 
 ## Scope Reference
 
-| Scope | When to use | Steps run |
-|---|---|---|
-| `full` | New component or cross-layer revision | 4–16 |
-| `static` | HTML structure and/or SCSS changed | 4–7, 13–16 |
-| `interactive` | Only Marko/React behavior or props changed | 8–16 |
-| `style` | SCSS only; no structural or behavioral change | 4(SCSS), 6, 14–16 |
+| Scope         | When to use                                   | Steps run         |
+| ------------- | --------------------------------------------- | ----------------- |
+| `full`        | New component or cross-layer revision         | 4–16              |
+| `static`      | HTML structure and/or SCSS changed            | 4–7, 13–16        |
+| `interactive` | Only Marko/React behavior or props changed    | 8–16              |
+| `style`       | SCSS only; no structural or behavioral change | 4(SCSS), 6, 14–16 |
 
 ---
 
@@ -126,13 +126,12 @@ GATE 4: CI — npm run build + Playwright/Vitest
 
 Five TypeScript scripts produce byte-identical output for spec-derivable content. Run via `npx tsx` or npm shortcuts:
 
-| Script | npm command | When it runs |
-|---|---|---|
-| `scripts/codegen/spec-to-manifest.ts` | `npm run codegen:spec-to-manifest <name>` | Step 3 — before AI manifest inference |
-| `scripts/codegen/diff-specs.ts` | `npm run codegen:diff-specs <old> <new> <name>` | Modify detection — before Step 3 on revisions |
-| `scripts/codegen/generate-component-scaffold.ts` | `npm run codegen:scaffold <name>` | Step 6.5 — before framework generation |
-| `scripts/codegen/validate-manifest.ts` | `npm run codegen:validate-manifest <name>` | On demand — validates manifest.json against schema |
-| `scripts/codegen/update-component-metadata.ts` | `npm run codegen:update-metadata <name>` | Step 13 — inside /evo-docs-hookup full mode |
+| Script                                           | npm command                                | When it runs                                       |
+| ------------------------------------------------ | ------------------------------------------ | -------------------------------------------------- |
+| `scripts/codegen/spec-to-manifest.ts`            | `npm run codegen:spec-to-manifest <name>`  | Step 3 — before AI manifest inference              |
+| `scripts/codegen/generate-component-scaffold.ts` | `npm run codegen:scaffold <name>`          | Step 6.5 — before framework generation             |
+| `scripts/codegen/validate-manifest.ts`           | `npm run codegen:validate-manifest <name>` | On demand — validates manifest.json against schema |
+| `scripts/codegen/update-component-metadata.ts`   | `npm run codegen:update-metadata <name>`   | Step 13 — inside /evo-docs-hookup full mode        |
 
 All scripts accept the bare component name (`accordion`, not `evo-accordion`). They resolve to `src/routes/_index/components/<name>/` automatically.
 
@@ -154,12 +153,14 @@ Beyond the basics — these are the non-obvious fields that matter most:
 ## Codebase Context
 
 **Package targets:**
+
 - `packages/skin/src/sass/` — static CSS/SCSS (foundation layer, BEM)
 - `packages/evo-marko/src/tags/` — Marko 6 components
 - `packages/evo-react/src/` — React 19 ESM components
 - `src/routes/_index/components/` — docs site pages
 
 **Key conventions:**
+
 - BEM strict: `.btn`, `.btn__cell`, `.btn--primary`
 - Marko 6: `<let/x=0>`, `<const/y=z>`, `onClick() {}` — never `$ let` or `onClick("handler")`
 - Marko 6: attribute values containing `>` must be in parens: `<const/x=(a > b ? 1 : 0)>`
@@ -167,6 +168,7 @@ Beyond the basics — these are the non-obvious fields that matter most:
 - WCAG 2.2 AA on all components; `npm run build` must pass before any work is complete
 
 **Docs site tab system:**
+
 - Tab presence is file-based — creating `css+page.marko` creates the CSS tab
 - Storybook tab links driven by `src/data/component-metadata.json`
 - `accessibility+page.marko` written by `/evo-a11y`; `+page.marko` and `css+page.marko` by `/evo-docs-hookup`

@@ -42,11 +42,9 @@ Engineers interact with the pipeline through a single command: `/evo-pipeline <c
 
 ## Modify Detection — Spec Diff
 
-When a component already has generated files and a new or updated spec is provided, the pipeline runs a diff before anything else. The `diff-specs.ts` codegen script compares the existing spec on disk against the new version and produces a structured change summary: which props changed type or enum values, which states were added or removed, which tokens were updated.
+When a component already has generated files and a new or updated spec is provided, the pipeline runs a diff before anything else. It reads the previously committed spec via `git show HEAD:<spec-path>` and compares it in context against the new spec — no script, no temp files. The diff identifies which props changed type or enum values, which states were added or removed, and which tokens were updated.
 
 From this diff, the pipeline recommends a scope automatically — for example, adding enum values to a type prop recommends `static` (new BEM modifiers needed), while changing only a token value recommends `style`. Engineers can override the recommendation, but the diff is the default. This eliminates the manual judgment call of "what scope do I need?" for the common case of spec-driven revisions.
-
-The diff output is also written to `spec-diff.json` in the component folder and is surfaced at Gate 2 for reference.
 
 ---
 
@@ -194,13 +192,12 @@ Not every pipeline run regenerates everything. The scope is either specified wit
 
 Alongside the AI skills, the pipeline includes a set of deterministic TypeScript scripts that handle the mechanical parts of code generation without AI involvement. All are exposed as npm workspace commands via `npm run codegen:<name>`.
 
-| Script | Command | Purpose |
-|---|---|---|
-| `spec-to-manifest.ts` | `codegen:spec-to-manifest` | Translates `*.spec.json` into the structured fields of `manifest.json`. Runs as the first phase of manifest generation. |
-| `diff-specs.ts` | `codegen:diff-specs` | Compares two spec files and produces a structured change summary with a recommended scope. Runs during modify detection. |
-| `generate-component-scaffold.ts` | `codegen:scaffold` | Generates the file and folder skeleton for a new component, including scaffolded `style.ts`, type interfaces, and test structure. |
-| `validate-manifest.ts` | `codegen:validate-manifest` | Validates a `manifest.json` against the manifest schema. |
-| `update-component-metadata.ts` | `codegen:update-metadata` | Updates `component-metadata.json` with new or revised component entries. |
+| Script                           | Command                     | Purpose                                                                                                                           |
+| -------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `spec-to-manifest.ts`            | `codegen:spec-to-manifest`  | Translates `*.spec.json` into the structured fields of `manifest.json`. Runs as the first phase of manifest generation.           |
+| `generate-component-scaffold.ts` | `codegen:scaffold`          | Generates the file and folder skeleton for a new component, including scaffolded `style.ts`, type interfaces, and test structure. |
+| `validate-manifest.ts`           | `codegen:validate-manifest` | Validates a `manifest.json` against the manifest schema.                                                                          |
+| `update-component-metadata.ts`   | `codegen:update-metadata`   | Updates `component-metadata.json` with new or revised component entries.                                                          |
 
 ---
 
