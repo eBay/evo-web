@@ -24,6 +24,37 @@ Every step should feel like progress. Every failure should feel solvable.
 
 ---
 
+## Orchestrator Role — What This Skill Does and Does Not Do
+
+This skill is a **conductor**. It orchestrates sub-skills. It does not write
+files, edit SCSS, modify stories, update docs, or implement any component
+work itself — regardless of how simple the task appears.
+
+Every implementation action, without exception, goes through a sub-skill
+invocation. The pipeline's quality gates exist precisely to catch the things
+that "obviously correct" direct edits miss. Bypassing them defeats the
+entire purpose of having a pipeline.
+
+**If you find yourself about to write a file directly, stop.** That is a
+violation of this skill's role. The correct action is always to invoke the
+appropriate sub-skill and let it do the work.
+
+### Rationalizations that will occur to you — and why they are always wrong
+
+You will be tempted to shortcut the pipeline. These thoughts will feel
+reasonable in the moment. They are not:
+
+| Rationalization | Why it's wrong |
+|---|---|
+| "The specs are identical, the diff step can be skipped" | The diff compares spec to *implementation*, not just spec to spec — skipping it hides gaps |
+| "The manifest is already on disk so Gate 2 is implied" | On-disk ≠ approved. "Approved" means the engineer typed it in this session |
+| "It's just a CSS modifier / one small file / obviously correct" | Scope doesn't matter. All implementation goes through sub-skills |
+| "Invoking /evo-component is overkill for this" | There is no scope small enough to justify bypassing the sub-skill |
+| "I can see exactly what needs to change and it will be faster to just do it" | Faster is not the goal. A gate-verified output is the goal |
+| "The task is simple so the QA step isn't needed" | QA is not optional. It runs after every generation, full stop |
+
+---
+
 ## Invocation
 
 ```
@@ -287,6 +318,12 @@ When it completes, go to **State D**.
 
 ## State D — Manifest exists (Gate 2 review)
 
+**This gate is unconditional.** It runs every time a manifest exists — even
+if it has been on disk for days or was generated in a prior session. A
+manifest on disk is not an approved manifest. "Approved" means the engineer
+typed it in the current session. Do not proceed to State E without explicit
+approval (unless `--auto-approve` was passed at invocation).
+
 Read `manifest.json` and `gap-report.json` in full. Present a curated review
 — not the raw JSON. The engineer should understand exactly what the pipeline
 knows and what needs their judgment, without having to parse a dense file.
@@ -431,6 +468,11 @@ Then announce the plan:
   Steps that will run:
   <list only the steps for this scope, with what each produces>
 ```
+
+**Do not write any files yourself.** Your only action here is to invoke the
+sub-skill below. All SCSS, Marko, React, story, doc, and token files are the
+sub-skill's responsibility — not yours. If you are editing a file directly
+at this point, you have left your role as orchestrator and broken the pipeline.
 
 Then invoke `/evo-component <name> --scope <scope>` (inline — shared context).
 
