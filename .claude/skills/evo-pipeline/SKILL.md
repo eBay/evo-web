@@ -52,6 +52,9 @@ reasonable in the moment. They are not:
 | "Invoking /evo-component is overkill for this" | There is no scope small enough to justify bypassing the sub-skill |
 | "I can see exactly what needs to change and it will be faster to just do it" | Faster is not the goal. A gate-verified output is the goal |
 | "The task is simple so the QA step isn't needed" | QA is not optional. It runs after every generation, full stop |
+| "The sub-skill returned, so generation is done" | The sub-skill completing is not pipeline completion. State E.5 (QA + visual verification) has not run yet |
+| "QA Layer 1 passed, so it's done" | Manifest-fidelity QA passing does not mean visual rendering is correct. State E.5 requires a live browser check |
+| "I can see the code looks right" | You have not opened a browser. Visual QA requires navigating to the component page and taking a screenshot |
 
 ---
 
@@ -487,7 +490,65 @@ For example, when the Marko step runs:
   state and keyboard navigation...
 ```
 
-When it completes, go to **State F**.
+When it completes, go to **State E.5**.
+
+---
+
+## State E.5 — QA and visual verification (MANDATORY GATE — cannot be skipped)
+
+> ⚠️ **This state is not optional.** The sub-skill completing generation is not the
+> same as the pipeline being done. You must complete every step below before printing
+> the State F summary. There is no valid reason to skip this state. "The code looks
+> correct" is not a substitute for running these steps.
+
+### Step 1 — Run /evo-qa
+
+Invoke `/evo-qa <name> --scope <scope>`.
+
+- If it returns any 🔴 failures: fix every failure inline and re-run `/evo-qa` until
+  it returns `Layer 1 result: ✅ PASSED`. Do not proceed while any check fails.
+- Record the pass count for the State F summary.
+
+### Step 2 — Visual verification in a live browser
+
+Run all sub-steps in order. Do not skip any.
+
+1. **Confirm the dev server is running.** Check for an active process on the expected
+   port (typically `http://localhost:63733` for this project). If not running, start it:
+   ```bash
+   npm start
+   ```
+   Wait for the server to be ready before proceeding.
+
+2. **Navigate to the component's CSS docs page:**
+   ```
+   http://localhost:<port>/components/<name>/css
+   ```
+
+3. **Take a full-page screenshot.** Visually inspect every new or modified variant:
+   - Correct background color applied
+   - Text is legible (correct foreground color, sufficient contrast)
+   - Icons are visible and correctly colored
+   - Border matches expected style
+   - Layout is correct (grid, spacing, alignment)
+
+4. **Switch to dark mode and take another screenshot:**
+   ```js
+   await page.emulateMedia({ colorScheme: 'dark' })
+   ```
+   Verify every new or modified variant in dark mode:
+   - Background still renders correctly
+   - **Text must be legible — a light background with light text is a contrast failure**
+   - If any variant uses a light/warm background (yellow, white, light-tinted), verify
+     that its foreground color stays dark in dark mode. If it doesn't, check that
+     `packages/skin/src/tokens/evo-dark.scss` and `evo-dark-class.scss` both define
+     an explicit `--color-foreground-on-<type>: var(--color-neutral-800)` override.
+
+5. **If any visual failure is found:** fix it, rebuild (`npm run build -w @ebay/skin`),
+   reload the browser, re-verify. Do not proceed to State F until the screenshot
+   confirms correct rendering in both light and dark mode.
+
+Only after both steps pass, go to **State F**.
 
 ---
 
@@ -524,8 +585,9 @@ Present the full summary in a clear, scannable format:
   └─ component-metadata.json                              ✅
 
   Build        ✅ Passed
-  QA Layer 1   ✅ <N>/<N> checks passed
+  QA Layer 1   ✅ <N>/<N> checks passed  ← actual result from State E.5 Step 1
   QA Layer 2   [✅ N/A | fidelity: <N>% vs <reference>]
+  Visual QA    ✅ Light mode verified | ✅ Dark mode verified  ← actual result from State E.5 Step 2
 
   [Any 🟡 warnings — listed with file and description]
 

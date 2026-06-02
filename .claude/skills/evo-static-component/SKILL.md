@@ -278,6 +278,53 @@ Common failure causes:
 
 ---
 
+## Mandatory completion gate
+
+> ⚠️ **This skill is not done when you finish writing files.**
+> It is done when every item below is explicitly checked off.
+> Returning control to the pipeline with unchecked items is a pipeline violation.
+> Do not print the output summary until this gate is fully passed.
+
+Work through each item in order. Read the file on disk to verify each claim — do not
+rely on memory of what you wrote. If any item fails, fix it before continuing.
+
+**HTML**
+- [ ] HTML catalogue is written in the output and covers: Default, every modifier in `manifest.bem.modifiers[]`, RTL, and every state that changes the HTML structure
+
+**SCSS**
+- [ ] `packages/skin/src/sass/<block>/<block>.scss` exists on disk
+- [ ] `.${block}` base rule present in the SCSS
+- [ ] Every modifier in `manifest.bem.modifiers[]` has a `.${block}--${modifier}` rule — grep the file to confirm
+- [ ] Every element in `manifest.bem.elements[]` has a `.${block}__${element}` rule — grep the file to confirm
+- [ ] Token mixin used for `background-color`, `color`, `border-color` on root block; plain `var(--)` for layout properties
+- [ ] No BEM nesting (`&--modifier` inside block is forbidden — keep rules flat)
+
+**Dark mode token check** — run this for every modifier that sets a background-color:
+- [ ] If the modifier introduces a **light or warm background** (yellow, white, cream, light-tinted):
+  - Grep `packages/skin/src/tokens/evo-dark.scss` for `foreground-on-<modifier-or-type>`
+  - Grep `packages/skin/src/tokens/evo-dark-class.scss` for the same
+  - If either file is missing the override, add `--color-foreground-on-<type>: var(--color-neutral-800)` to **both** files
+  - Rebuild and confirm the token is present in `packages/skin/dist/tokens/evo-dark.css`
+- [ ] If the modifier only uses dark backgrounds (attention, inverse, etc.), this check passes automatically
+
+**Stories**
+- [ ] `packages/skin/src/sass/<block>/stories/<block>.stories.js` exists on disk
+- [ ] `export const RTL` exists — wraps representative HTML in `<div dir="rtl">...</div>`
+- [ ] `export const textSpacing` exists — applies `demo-a11y-text-spacing` class to the root element
+- [ ] Every modifier added or modified in this run has at least one story export
+- [ ] All story exports are zero-argument functions — no `args`, no `argTypes`
+
+**Docs**
+- [ ] `src/routes/_index/components/<name>/css+page.marko` updated with a live demo block and `<highlight-code>` snippet for every new modifier or variant
+
+**Build**
+- [ ] `npm run build -w @ebay/skin` passes with no errors
+- [ ] Grep `packages/skin/dist/bundles/skin-default.css` to confirm the new modifier selector is present in the compiled output
+
+Only after every box is checked, print the output summary and return.
+
+---
+
 ## Output summary
 
 ```
@@ -294,15 +341,8 @@ Phase 2 — SCSS:
   [✅ packages/skin/src/sass/<block>/<block>.scss written]
   [✅ skin-headless.scss updated]
   [⏭  Deferred — no tokens or Figma reference]
-```
 
-Before reporting done, verify:
-- [ ] HTML catalogue covers Default, all variants, RTL, and key states
-- [ ] `packages/skin/src/sass/<block>/<block>.scss` written
-- [ ] `@use` line added to `skin-headless.scss` in alphabetical order
-- [ ] All BEM modifiers and elements from manifest have SCSS coverage
-- [ ] Token mixin used for brand-critical color properties; plain `var(--)` for layout
-- [ ] No Marko patterns, no `component.ts`, no `browser.json`
-- [ ] `npm run build -w @ebay/skin` passes
+Completion gate: ✅ All items passed
+```
 
 The HTML catalogue above is the canonical reference for all downstream skills.

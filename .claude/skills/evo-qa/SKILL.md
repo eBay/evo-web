@@ -28,6 +28,29 @@ Read `manifest.json` in full before opening any generated file.
 
 ---
 
+## Scope adaptation
+
+The checks below are written for a full component generation (Marko + React + skin).
+When `--scope static` is passed, adapt as follows — do not fail checks that are
+structurally inapplicable to the scope:
+
+| Check | Full scope | Static scope |
+|---|---|---|
+| 1a File presence | All files | SCSS + stories + css+page.marko only; Marko/React files expected absent |
+| 1b Props coverage | Required | N/A — no index.marko |
+| 1c Slots coverage | Required | N/A — no index.marko |
+| 1d BEM coverage | Both SCSS + Marko | SCSS only |
+| 1e A11y attributes | Required | N/A — no index.marko |
+| 1f Marko 5 patterns | Required | N/A — no index.marko |
+| 1g Style import | Required | N/A — no style.ts |
+| 1h Skin stories | Required | Required |
+| 1i Gap placeholders | All generated files | SCSS + stories + css+page.marko |
+| 1j Dark mode tokens | Required | Required |
+
+Mark inapplicable checks as `✅ N/A — <scope> scope` in the report.
+
+---
+
 ## Layer 1 — Manifest fidelity (always runs)
 
 For each check below, read the relevant generated file and compare against the manifest.
@@ -140,6 +163,42 @@ Scan all generated files for strings that suggest a gap was left unresolved:
 These indicate a gap from the manifest was not resolved before generation ran.
 **Failure:** any such string found (note exact file and line).
 
+### 1j — Dark mode foreground token coverage (always runs when SCSS was generated)
+
+For every BEM modifier that was added or modified in this run, inspect the SCSS to
+determine its background color token. Then:
+
+1. **Identify whether the background is light or dark** by checking the token's resolved
+   value in `packages/skin/dist/bundles/skin-default.css` or the token dist files.
+   - Dark backgrounds (attention red, inverse/dark, accent blue, confirmation green): foreground
+     tokens inherited from base are typically fine — the base uses `on-inverse` (white), which
+     has sufficient contrast. Mark this sub-check ✅.
+   - Light/warm backgrounds (yellow, white, cream, light-tinted — e.g. `--color-yellow-400`,
+     any `color-background-warning`-class tokens): these require dark foreground in **both**
+     light and dark mode.
+
+2. **For light-background modifiers**, run both of these greps:
+   ```bash
+   grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark.scss
+   grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark-class.scss
+   ```
+   where `<type>` is the modifier name or the semantic category (e.g. `warning`).
+
+3. **Failure conditions:**
+   - A light-background modifier's foreground token is NOT explicitly set to a dark value
+     in `evo-dark.scss` — the token will flip to near-white in dark mode via `foreground-primary`
+     inheritance, causing a contrast failure.
+   - A light-background modifier's foreground token is NOT explicitly set in
+     `evo-dark-class.scss` — the `.evo-theme`-scoped dark mode (used by the dev site and
+     production) will also have the contrast failure.
+
+4. **What to check for:** the override must be a hardcoded dark palette token, not an alias
+   to `foreground-primary` (which itself flips in dark mode). Specifically:
+   `--color-foreground-on-<type>: var(--color-neutral-800)` or equivalent dark palette value.
+
+**Failure:** light-background modifier exists but either `evo-dark.scss` or
+`evo-dark-class.scss` is missing the explicit dark foreground override.
+
 ---
 
 ## Layer 2 — Reference fidelity (only when `reference` is provided)
@@ -177,19 +236,20 @@ Print a structured report and stop. Do not suggest fixes inline — the engineer
 what to do with failures.
 
 ```
-## QA Report: $COMPONENT
+## QA Report: $COMPONENT  [scope: <full|static|interactive|style>]
 
 ─── Layer 1: Manifest Fidelity ────────────────────────────────
 
-1a  File presence      [✅ All present | 🔴 Missing: <file>]
-1b  Props coverage     [✅ Passed | 🔴 N issue(s)]
-1c  Slots coverage     [✅ Passed | 🔴 N issue(s)]
+1a  File presence      [✅ All present | ✅ N/A — <scope> scope | 🔴 Missing: <file>]
+1b  Props coverage     [✅ Passed | ✅ N/A — static scope | 🔴 N issue(s)]
+1c  Slots coverage     [✅ Passed | ✅ N/A — static scope | 🔴 N issue(s)]
 1d  BEM coverage       [✅ Passed | 🔴 N issue(s)]
-1e  A11y attributes    [✅ Passed | 🔴 N issue(s)]
-1f  Marko 5 patterns   [✅ None found | 🔴 Found: <pattern> in <file>:<line>]
-1g  Style import       [✅ Correct | 🔴 <issue>]
+1e  A11y attributes    [✅ Passed | ✅ N/A — static scope | 🔴 N issue(s)]
+1f  Marko 5 patterns   [✅ None found | ✅ N/A — static scope | 🔴 Found: <pattern> in <file>:<line>]
+1g  Style import       [✅ Correct | ✅ N/A — static scope | 🔴 <issue>]
 1h  Skin stories       [✅ Passed | 🔴 N issue(s)]
 1i  Gap placeholders   [✅ None found | 🔴 Found in <file>:<line>]
+1j  Dark mode tokens   [✅ Passed | ✅ N/A — no light-bg modifiers | 🔴 N issue(s)]
 
 Layer 1 result: [✅ PASSED | 🔴 FAILED — N check(s) failed]
 
