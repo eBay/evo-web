@@ -46,6 +46,7 @@ structurally inapplicable to the scope:
 | 1h Skin stories | Required | Required |
 | 1i Gap placeholders | All generated files | SCSS + stories + css+page.marko |
 | 1j Dark mode tokens | Required | Required |
+| 1k Contrast ratios | Required when light-bg modifier | Required when light-bg modifier |
 
 Mark inapplicable checks as `✅ N/A — <scope> scope` in the report.
 
@@ -177,27 +178,73 @@ determine its background color token. Then:
      any `color-background-warning`-class tokens): these require dark foreground in **both**
      light and dark mode.
 
-2. **For light-background modifiers**, run both of these greps:
+2. **For light-background modifiers**, grep all four theme token source files:
    ```bash
+   grep "foreground-on-<type>" packages/skin/src/tokens/evo-light.scss
    grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark.scss
+   grep "foreground-on-<type>" packages/skin/src/tokens/evo-light-class.scss
    grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark-class.scss
    ```
    where `<type>` is the modifier name or the semantic category (e.g. `warning`).
 
-3. **Failure conditions:**
-   - A light-background modifier's foreground token is NOT explicitly set to a dark value
-     in `evo-dark.scss` — the token will flip to near-white in dark mode via `foreground-primary`
-     inheritance, causing a contrast failure.
-   - A light-background modifier's foreground token is NOT explicitly set in
-     `evo-dark-class.scss` — the `.evo-theme`-scoped dark mode (used by the dev site and
-     production) will also have the contrast failure.
+   **All four files must define the token.** The `evo-light-class` and `evo-dark-class`
+   files scope their definitions to `.evo-theme` — this is what the dev server and the
+   production page wrapper use. Tokens defined only in `evo-light`/`evo-dark` (`:root`
+   scope) are invisible to `.evo-theme` elements in the page.
 
-4. **What to check for:** the override must be a hardcoded dark palette token, not an alias
-   to `foreground-primary` (which itself flips in dark mode). Specifically:
-   `--color-foreground-on-<type>: var(--color-neutral-800)` or equivalent dark palette value.
+3. **Verify the token value is stable across modes.** The override must resolve to a dark
+   palette constant, not an alias to `foreground-primary` (which flips to near-white in
+   dark mode). Acceptable: `var(--color-neutral-800)`. Not acceptable: `var(--color-foreground-primary)`.
 
-**Failure:** light-background modifier exists but either `evo-dark.scss` or
-`evo-dark-class.scss` is missing the explicit dark foreground override.
+4. **Check for link/button specificity gaps.** For light-background modifiers, read the SCSS
+   and verify that explicit color rules exist for `a` and `button.fake-link` within the modifier:
+   ```bash
+   grep "\.${block}--<modifier> a\b\|\.${block}--<modifier> button\.fake-link" \
+     packages/skin/src/sass/<block>/<block>.scss
+   ```
+   The base `.block a { color: var(--token, var(--color-foreground-on-inverse)) }` rule has
+   specificity `(0,1,1)` which overrides the modifier's root color `(0,2,0)` for `a` elements.
+   Without explicit `.modifier a` and `.modifier button.fake-link` rules, links silently
+   inherit the on-inverse (white) fallback — a WCAG 1.4.3 failure on a light background.
+
+**Failure conditions:**
+- A light-background modifier's foreground token is absent from any of the four theme files
+- The token's value is an alias to `foreground-primary` or another adaptive token
+- No explicit `.modifier a` / `.modifier button.fake-link` color rules in the SCSS
+
+### 1k — WCAG contrast ratios for light-background modifiers
+
+**Only runs when 1j identifies at least one light-background modifier.**
+
+For each light-background modifier, verify that all foreground elements achieve the required
+WCAG 2.2 AA contrast ratios against the resolved background color. Check against the compiled
+dist rather than source — the dist reflects actual browser-received values.
+
+1. **Get the resolved background color** from `skin-default.css`:
+   ```bash
+   grep -A 3 "\.${block}--<modifier>" packages/skin/dist/bundles/skin-default.css | grep background-color
+   ```
+   Resolve the token chain to a hex value using `dist/tokens/evo-light.css`.
+
+2. **For each foreground element**, verify minimum contrast ratios (WCAG 2.2 AA):
+   | Element | Minimum ratio |
+   |---|---|
+   | Title / body text | 4.5:1 |
+   | Link text (`a`) | 4.5:1 |
+   | Button-as-link (`.fake-link`) | 4.5:1 |
+   | Icon / non-text graphic (SVG) | 3.0:1 |
+   | Focus outline | 3.0:1 |
+
+3. **Calculate contrast ratio** using the WCAG relative luminance formula, or look up the
+   token pair in the design system's contrast table. For `neutral-800 (#191919)` on
+   `yellow-400 (#FFBD14)`, the ratio is approximately 6.3:1 (passes all thresholds).
+
+4. **Check dark mode separately.** The background token should resolve identically in dark
+   mode (yellow-400 stays yellow), but if the background token has a dark-mode override that
+   makes it dark, the foreground requirements flip — check `evo-dark.css` to confirm.
+
+**Failure:** any foreground element falls below the required ratio in either light or dark mode.
+Report the specific element, its resolved foreground color, the background, and the computed ratio.
 
 ---
 
@@ -250,6 +297,7 @@ what to do with failures.
 1h  Skin stories       [✅ Passed | 🔴 N issue(s)]
 1i  Gap placeholders   [✅ None found | 🔴 Found in <file>:<line>]
 1j  Dark mode tokens   [✅ Passed | ✅ N/A — no light-bg modifiers | 🔴 N issue(s)]
+1k  Contrast ratios    [✅ Passed | ✅ N/A — no light-bg modifiers | 🔴 N issue(s): <element> <fg>/<bg> = X.X:1, need Y.Y:1]
 
 Layer 1 result: [✅ PASSED | 🔴 FAILED — N check(s) failed]
 

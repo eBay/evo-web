@@ -532,17 +532,38 @@ Run all sub-steps in order. Do not skip any.
    - Border matches expected style
    - Layout is correct (grid, spacing, alignment)
 
-4. **Switch to dark mode and take another screenshot:**
-   ```js
-   await page.emulateMedia({ colorScheme: 'dark' })
-   ```
+4. **Switch to dark mode and take another screenshot.**
    Verify every new or modified variant in dark mode:
    - Background still renders correctly
    - **Text must be legible — a light background with light text is a contrast failure**
-   - If any variant uses a light/warm background (yellow, white, light-tinted), verify
-     that its foreground color stays dark in dark mode. If it doesn't, check that
-     `packages/skin/src/tokens/evo-dark.scss` and `evo-dark-class.scss` both define
-     an explicit `--color-foreground-on-<type>: var(--color-neutral-800)` override.
+   - If any variant uses a light/warm background (yellow, white, light-tinted), run a
+     computed style check for every foreground element (text, links, icon SVGs):
+
+   ```js
+   // For each foreground element inside the new modifier:
+   const el = document.querySelector('.<block>--<modifier>');
+   const link = el?.querySelector('a');
+   const svg = el?.querySelector('svg');
+   console.log({
+     bg:        getComputedStyle(el).backgroundColor,
+     text:      getComputedStyle(el).color,
+     linkColor: link  ? getComputedStyle(link).color : 'none',
+     iconColor: svg   ? getComputedStyle(svg).color  : 'none',
+   });
+   ```
+
+   Every foreground value must be a **dark color** (close to `rgb(25,25,25)` / `#191919`).
+   A near-white value (e.g. `rgb(247,247,247)`) on a light background is a contrast failure.
+
+   **If any foreground is unexpectedly light in dark mode**, the root cause is almost always
+   one of two things — check in order:
+   1. `--color-foreground-on-<type>` is missing from `evo-light-class.scss` or
+      `evo-dark-class.scss` (the class-based files the dev server uses). All four token
+      files must define this token: `evo-light.scss`, `evo-dark.scss`,
+      `evo-light-class.scss`, `evo-dark-class.scss`.
+   2. A base rule (e.g. `.block a { color: var(--token, var(--color-foreground-on-inverse)) }`)
+      has higher specificity for that element than the modifier rule. The modifier needs
+      explicit `.modifier a` and `.modifier button.fake-link` color overrides.
 
 5. **If any visual failure is found:** fix it, rebuild (`npm run build -w @ebay/skin`),
    reload the browser, re-verify. Do not proceed to State F until the screenshot

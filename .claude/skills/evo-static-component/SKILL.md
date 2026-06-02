@@ -301,11 +301,48 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
 
 **Dark mode token check** — run this for every modifier that sets a background-color:
 - [ ] If the modifier introduces a **light or warm background** (yellow, white, cream, light-tinted):
-  - Grep `packages/skin/src/tokens/evo-dark.scss` for `foreground-on-<modifier-or-type>`
-  - Grep `packages/skin/src/tokens/evo-dark-class.scss` for the same
-  - If either file is missing the override, add `--color-foreground-on-<type>: var(--color-neutral-800)` to **both** files
-  - Rebuild and confirm the token is present in `packages/skin/dist/tokens/evo-dark.css`
-- [ ] If the modifier only uses dark backgrounds (attention, inverse, etc.), this check passes automatically
+
+  **Step 1 — Verify the token is defined in all four theme files.**
+  The skin theming system has two parallel implementations that must both be updated:
+  - `evo-light.scss` / `evo-dark.scss` — `:root`-scoped, media-query themes (production bundles)
+  - `evo-light-class.scss` / `evo-dark-class.scss` — `.evo-theme`-scoped, class-based themes (dev server and `.evo-theme` wrapper in production)
+
+  **All four files must define `--color-foreground-on-<type>`.** Missing it in the class-based pair means the dev site silently inherits the wrong foreground color even when the production bundle is correct.
+
+  ```bash
+  grep "foreground-on-<type>" packages/skin/src/tokens/evo-light.scss
+  grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark.scss
+  grep "foreground-on-<type>" packages/skin/src/tokens/evo-light-class.scss
+  grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark-class.scss
+  ```
+
+  If any file is missing the definition, add `--color-foreground-on-<type>: var(--color-neutral-800)` to it. **Never alias to `--color-foreground-primary`** — that token resolves to `#f7f7f7` (near-white) in dark mode and will silently fail contrast on any light background.
+
+  **Step 2 — Verify the token resolves correctly in the browser.**
+  File-level grep confirms the source exists but not that the browser receives it. The token scope must match what the page loads — `evo-light-class.scss` defines within `.evo-theme`, while `evo-light.scss` defines on `:root`. After rebuild, navigate to the CSS docs page and run:
+
+  ```js
+  getComputedStyle(document.querySelector('.evo-theme') || document.documentElement)
+    .getPropertyValue('--color-foreground-on-<type>').trim()
+  // Must return a dark hex value (e.g. "#191919") — not empty string, not a light color
+  ```
+
+  An empty string means the token is missing from the class-based file. A light color (e.g. `#f7f7f7`) means it is aliasing `foreground-primary` or another adaptive token.
+
+- [ ] If the modifier only uses dark backgrounds (attention, inverse, etc.), both sub-steps pass automatically
+
+**Foreground specificity check** — run this when a modifier sets `color-token` on its root element:
+- [ ] If the new modifier sets text color via `color-token` on the root AND the block has existing `.${block} a { color: ... }` or `.${block} button.fake-link { color: ... }` rules:
+
+  The base `.block a` rule has specificity `(0,1,1)`, which beats the modifier's root color `(0,2,0)` for `a` elements. The modifier's text color **does not cascade to links** without an explicit override — links will silently inherit the base fallback (often `on-inverse` / white), which fails WCAG AA on a light background.
+
+  Verify explicit link/button overrides exist for the modifier:
+  ```bash
+  grep "\.${block}--<modifier> a\b\|\.${block}--<modifier> button\.fake-link" \
+    packages/skin/src/sass/<block>/<block>.scss
+  ```
+
+  For light-background modifiers (warning, etc.), if both `.modifier a` and `.modifier button.fake-link` color rules are absent, this is a **blocking WCAG 1.4.3 failure** — add them before proceeding.
 
 **Stories**
 - [ ] `packages/skin/src/sass/<block>/stories/<block>.stories.js` exists on disk

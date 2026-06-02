@@ -288,6 +288,15 @@ Extract from the contract's Accessibility section and translate to technical fie
   audit-sourced token enumeration; no gap when found in snapshot
 - If spec absent and audit absent: log `tokens` as medium confidence gap
 
+**Token variants** [SPEC when present]
+- `tokenVariants` (keyed by prop name → enum value → token map) ← `$SPEC.tokenVariants`
+  Translate each token value from dot-notation to CSS custom property name (same rule as above).
+  Store as a nested map: `{ "type": { "warning": { "background": "--color-background-warning", ... } } }`
+  This is the primary input for the static component skill when generating per-modifier SCSS rules.
+  Include a `note` string on any variant whose token raises a dark mode concern (e.g. a foreground
+  token that is globally adaptive and may flip to a light value in dark mode).
+- If spec absent: omit entirely; no gap needed (the static skill will infer from manifest.bem.modifiers)
+
 **Behaviors** [CONTRACT hint → ENGINEER]
 - Non-obvious algorithms (e.g. color hash, aspect ratio detection, animation-gated close)
 - Standard behavior kinds to use (see manifest-schema.md for full list):
@@ -332,9 +341,10 @@ Key structural rules:
 
 - `a11yProps` — extract from contract's "Required label strings" section; if silent, add a 🔴 low-confidence gap
 - `bem.block/elements/modifiers`, `designTokens`, `dependencies` — fill from audit snapshot; no gap when found
-- `bem.alternateBlock`, `storybook` — always low-confidence gaps for the engineer
+- `bem.alternateBlock` — always low-confidence gap for the engineer
+- `storybook.stories` — always a gap, but mark as `"informational": true` so the validator does not treat it as blocking. Story names cannot be known before generation runs; this field is post-generation by design.
 - `figmaUrl` — if the contract explicitly states null or "not yet available", treat as a valid value with NO gap entry. A contract written before the Figma design exists is a first-class workflow, not a missing field. Add a single informational note: "figmaUrl will be populated in the subsequent visual-layer contract update (PR 2)."
-- Never produce an empty `gaps` array — even a fully contract-sourced manifest will have storybook and alternateBlock gaps
+- Never produce an empty `gaps` array — even a fully contract-sourced manifest will have alternateBlock gaps
 
 ---
 
@@ -356,13 +366,42 @@ Write `src/routes/_index/components/$COMPONENT/gap-report.json`:
   "requiresEngineerAction": [
     "<field paths where confidence is low or source is missing — these block approval>"
   ],
-  "gaps": []
+  "gaps": [],
+  "deviations": []
 }
 ```
 
 The `gaps` array must be identical to `manifest.json["gaps"]`.
 `requiresEngineerAction` contains only `low` confidence or `missing` source gaps.
 Medium-confidence gaps go in `gaps` only.
+
+**`deviations[]`** — records intentional departures from the spec's stated values.
+When an implementation must differ from a spec-specified value (e.g. for WCAG compliance,
+dark mode correctness, or engineering constraints), record the deviation here rather than
+silently implementing a different value:
+
+```json
+{
+  "field": "tokenVariants.type.warning.iconColor",
+  "specValue": "color.foreground.primary",
+  "implementedValue": "color.foreground.on-warning",
+  "reason": "--color-foreground-primary resolves to #f7f7f7 in dark mode (1.6:1 contrast on yellow, fails 3:1 WCAG AA minimum for non-text). --color-foreground-on-warning is always neutral-800 (#191919).",
+  "wcagCriterion": "1.4.11",
+  "designReviewNeeded": true
+}
+```
+
+Each deviation entry:
+- `field` — the manifest/spec field path
+- `specValue` — exact value the spec specified
+- `implementedValue` — what was actually implemented
+- `reason` — why the deviation was necessary (be specific — cite contrast ratios, token resolution behavior, etc.)
+- `wcagCriterion` — WCAG criterion that motivated the change (omit if not WCAG-driven)
+- `designReviewNeeded` — `true` if the spec must be updated to reflect this, `false` if it is a local implementation detail
+
+Deviations surface in the Gate 2 review so the engineer can decide whether to:
+1. Confirm the deviation and flag it for design team follow-up
+2. Revert to the spec value and solve the underlying cause differently
 
 ---
 
@@ -396,11 +435,17 @@ Gap summary:
 [If 🔴 gaps exist — list each with field path and what the engineer must provide]
 [If 🟡 gaps exist — list each with what was assumed and why]
 
+[If deviations[] is non-empty:]
+⚠️  Spec deviations (N) — implementation differs from spec-stated values:
+  • <field>: spec=<specValue> → implemented=<implementedValue>
+    Reason: <reason>
+    Design review needed: [yes/no]
+
 ─────────────────────────────────────────────────
 GATE 2: Awaiting engineer approval.
 
 Review src/routes/_index/components/$COMPONENT/manifest.json and src/routes/_index/components/$COMPONENT/gap-report.json.
-Resolve any 🔴 items. Verify 🟡 items.
+Resolve any 🔴 items. Verify 🟡 items. Confirm or escalate any ⚠️ deviations.
 When satisfied, run `/evo-component $COMPONENT` to begin code generation.
 ─────────────────────────────────────────────────
 ```
