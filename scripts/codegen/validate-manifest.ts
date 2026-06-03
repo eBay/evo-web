@@ -30,6 +30,7 @@ interface Gap {
     confidence: "high" | "medium" | "low";
     source: string;
     note?: string;
+    informational?: boolean;
 }
 
 interface Manifest {
@@ -251,6 +252,12 @@ if (manifest.gaps !== undefined) {
     } else {
         checkArrayItems(manifest.gaps, ["field", "confidence", "source"], "gaps", issues);
         for (const gap of manifest.gaps) {
+            if (gap.informational) {
+                // Informational gaps are expected structural gaps that do not
+                // block code generation (e.g. figma.nodeId, bem.alternateBlock,
+                // storybook.stories). They are noted but never block Gate 2.
+                continue;
+            }
             if (gap.confidence === "low" || gap.source === "missing") {
                 blockingGaps.push(gap);
             } else if (gap.confidence === "medium") {

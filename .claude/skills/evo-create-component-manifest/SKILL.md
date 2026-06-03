@@ -341,7 +341,8 @@ Key structural rules:
 
 - `a11yProps` — extract from contract's "Required label strings" section; if silent, add a 🔴 low-confidence gap
 - `bem.block/elements/modifiers`, `designTokens`, `dependencies` — fill from audit snapshot; no gap when found
-- `bem.alternateBlock` — always low-confidence gap for the engineer
+- `bem.alternateBlock` — always a gap, but mark as `"informational": true`. It does not block static or CSS generation; only framework layers need it and engineers fill it after inspecting the template. Setting `"informational": true` ensures the validator never exits 1 on this field.
+- `figma.nodeId` — always a gap when only a fileKey is available (no full node URL). Mark as `"informational": true`. It does not affect code generation; it only enables Code Connect navigation. Engineers fill it after the Figma design is finalized.
 - `storybook.stories` — always a gap, but mark as `"informational": true` so the validator does not treat it as blocking. Story names cannot be known before generation runs; this field is post-generation by design.
 - `figmaUrl` — if the contract explicitly states null or "not yet available", treat as a valid value with NO gap entry. A contract written before the Figma design exists is a first-class workflow, not a missing field. Add a single informational note: "figmaUrl will be populated in the subsequent visual-layer contract update (PR 2)."
 - Never produce an empty `gaps` array — even a fully contract-sourced manifest will have alternateBlock gaps

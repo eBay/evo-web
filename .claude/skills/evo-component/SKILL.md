@@ -54,6 +54,20 @@ If any exist, list them and stop. Medium-confidence gaps proceed as inline
 
 ---
 
+## ⛔ Execution rule — no pausing between steps
+
+You are an automated orchestrator. After each sub-skill returns, you MUST
+immediately proceed to the next step. Do not end your response turn between
+steps. Do not ask the user whether to continue. Do not summarize and wait.
+
+The ONLY valid reasons to stop and wait for input are:
+1. Gate 2 — manifest review (the engineer must type "approved")
+2. A 🔴 blocking failure inside a sub-skill that cannot be fixed inline
+
+Every step description below ends with an explicit "→ Next:" line. Follow it.
+
+---
+
 ## Step 3 — Determine scope and print plan
 
 If `--scope` was not provided, ask:
@@ -105,6 +119,8 @@ Invoke: `/evo-static-component` (inline)
 
 **style scope:** if no tokens/figma → nothing to do here, print ⏭ and continue to Step 6.
 
+→ **Next:** After this skill returns, print "Step 4 complete." then immediately invoke Step 5.
+
 ---
 
 ## Step 5 — Static storybook
@@ -115,6 +131,8 @@ Invoke: `/evo-static-storybook` (inline)
 
 Reads the HTML catalogue from Step 4 context. Writes CSF2 stories with RTL
 and textSpacing exports.
+
+→ **Next:** After this skill returns, print "Step 5 complete." then immediately invoke Step 6.
 
 ---
 
@@ -137,6 +155,8 @@ Do not write +page.marko, +meta.json, or update component-metadata.json."
 **Expected output:**
 - `src/routes/_index/components/<block>/css+page.marko`
 - `src/routes/_index/components/<block>/css+meta.json`
+
+→ **Next:** After this skill returns, print "Step 6 complete." then immediately invoke Step 7 (or Step 6.5 if framework layers are next).
 
 ---
 
@@ -163,6 +183,8 @@ After this step, tell each framework sub-skill: "Scaffold files are already writ
 these paths. Read the existing file and complete only the TODO sections — do not
 regenerate the Input interface, Props type, style.ts, or test structure."
 
+→ **Next:** After this script completes, immediately invoke Step 7.
+
 ---
 
 ## Step 7 — A11y Pass 1 — static layer + writes static a11y docs
@@ -186,6 +208,8 @@ of accessibility+page.marko. Do NOT evaluate index.marko or index.tsx."`
 
 If 🔴 blocking issues: stop. Engineer resolves before proceeding.
 
+→ **Next:** If no 🔴 issues, print "Step 7 complete." then immediately invoke Step 8 (or Step 13 if scope is static).
+
 ---
 
 ## Step 8 — Marko component
@@ -200,6 +224,8 @@ file (interactive scope — no Step 4 was run). Generates Marko 6 component.
 **Expected output** (`packages/evo-marko/src/tags/<name>/`):
 - `index.marko`, `style.ts`, `test/test.server.ts`, `test/test.browser.ts` (if interactive)
 
+→ **Next:** After this skill returns, print "Step 8 complete." then immediately invoke Step 9.
+
 ---
 
 ## Step 9 — Marko storybook
@@ -210,6 +236,8 @@ Invoke: `/evo-marko-storybook` (inline)
 
 **Expected output:**
 - `packages/evo-marko/src/tags/<name>/<name>.stories.ts` + `examples/`
+
+→ **Next:** After this skill returns, print "Step 9 complete." then immediately invoke Step 10.
 
 ---
 
@@ -222,6 +250,8 @@ Invoke: `/evo-react-component` (inline)
 **Expected output** (`packages/evo-react/src/<name>/`):
 - `index.tsx`, `__tests__/index.spec.tsx`
 
+→ **Next:** After this skill returns, print "Step 10 complete." then immediately invoke Step 11.
+
 ---
 
 ## Step 11 — React storybook
@@ -232,6 +262,8 @@ Invoke: `/evo-react-storybook` (inline)
 
 **Expected output:**
 - `packages/evo-react/src/<name>/<basename>.stories.tsx`
+
+→ **Next:** After this skill returns, print "Step 11 complete." then immediately invoke Step 12.
 
 ---
 
@@ -263,6 +295,8 @@ sections without overwriting the static sections.
 
 If 🔴 blocking issues: fix inline before build.
 
+→ **Next:** If no 🔴 issues, print "Step 12 complete." then immediately invoke Step 13.
+
 ---
 
 ## Step 13 — Docs hookup (full)
@@ -279,6 +313,8 @@ component-metadata.json. Do NOT rewrite css+page.marko (already done in Step 6).
 - `src/routes/_index/components/<block>/+meta.json`
 - `src/data/component-metadata.json` entry added/updated
 
+→ **Next:** After this skill returns, print "Step 13 complete." then immediately run Step 14 (npm run build).
+
 ---
 
 ## Step 14 — Build validation
@@ -289,24 +325,32 @@ Run: `npm run build`
 
 Fix failures inline. Do not advance to QA with a failing build.
 
+→ **Next:** After the build passes, immediately invoke Step 15.
+
 ---
 
 ## Step 15 — QA validation
 
 **Scopes: all**
 
-Invoke: `/evo-qa` with `context: fork`
+Invoke: `/evo-qa` via the Skill tool (inline).
 
-Pass the QA agent: manifest path, all generated file paths, scope used, and
-reference component name (if `--reference` provided).
+Note: `evo-qa` is not a registered agent type and cannot be invoked via the
+Agent tool. The `evo-qa` skill contains isolation-by-instruction — it explicitly
+ignores conversation context and reads only from disk, which is sufficient for
+its binary file/manifest checks.
+
+Pass context to the skill in your invocation args:
+- Component name, scope, manifest path
+- All file paths generated in this run
+- Any known approved deviations from gap-report.json
 
 | Layer | Runs when | What it checks |
 |---|---|---|
 | Layer 1 | Always | Files present (per scope), props/slots/BEM/ARIA match manifest, no Marko 5 patterns, no gap placeholders, storybook format |
 | Layer 2 | `--reference` provided | Structural delta + fidelity score vs. reference |
 
-The QA agent must be told the scope so it only checks files that were generated
-in this run, not files from previous runs that are on disk unchanged.
+→ **Next:** After QA returns, fix any 🔴 failures inline and re-run. Once QA passes, immediately proceed to Step 16.
 
 ---
 

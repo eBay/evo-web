@@ -344,12 +344,12 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
 
   For light-background modifiers (warning, etc.), if both `.modifier a` and `.modifier button.fake-link` color rules are absent, this is a **blocking WCAG 1.4.3 failure** — add them before proceeding.
 
-**Stories**
-- [ ] `packages/skin/src/sass/<block>/stories/<block>.stories.js` exists on disk
-- [ ] `export const RTL` exists — wraps representative HTML in `<div dir="rtl">...</div>`
-- [ ] `export const textSpacing` exists — applies `demo-a11y-text-spacing` class to the root element
-- [ ] Every modifier added or modified in this run has at least one story export
-- [ ] All story exports are zero-argument functions — no `args`, no `argTypes`
+**Stories** (check only — do NOT write or edit the stories file)
+- [ ] Check whether `packages/skin/src/sass/<block>/stories/<block>.stories.js` exists.
+      If `RTL`, `textSpacing`, or modifier stories are absent, add a ⚠️ WARNING
+      in your output summary: "Stories incomplete — evo-static-storybook will add
+      missing exports in Step 5." Do NOT add them yourself. Story files are
+      evo-static-storybook's sole responsibility.
 
 **Docs**
 - [ ] `src/routes/_index/components/<name>/css+page.marko` updated with a live demo block and `<highlight-code>` snippet for every new modifier or variant
