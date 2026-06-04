@@ -146,6 +146,7 @@ export interface Input
                     } else if (e.key === "Escape") {
                         open = false;
                         activeIndex = -1;
+                        tempValue = null;
                     }
                     onKeyDown && onKeyDown(e, el);
                 }>
