@@ -8,6 +8,7 @@ import {
   fromISO,
   offsetISO,
 } from "../../common/dates/date-utils";
+export type { DayISO } from "../../common/dates/date-utils"
 export interface Disable {
   before?: DayISO;
   after?: DayISO;
@@ -15,13 +16,9 @@ export interface Disable {
   list?: DayISO[];
   callback?: (iso: DayISO) => boolean;
 }
-export interface Input {
+export interface BaseInput {
   numMonths?: number;
   locale?: string;
-  selectMode?: "day" | "range";
-  linkBuilder?: (iso: DayISO) => string | false | null | undefined;
-  selected?: DayISO | { from: DayISO; to: DayISO };
-  selectedChange?: (s: DayISO | { from: DayISO; to: DayISO }) => void;
   today?: DayISO;
   disable?: Disable;
   viewStart?: MonthISO;
@@ -32,24 +29,6 @@ export interface Input {
    * Should return a string like `"Show ${month}"`
    */
   a11yNavigateText?: (monthName: string, dir: "next" | "prev") => string;
-  /**
-   * Clipped text to communicate the current day cells to screen readers, required for non-interactive calendars
-   *
-   * English default to be overridden is `"today"`
-   **/
-  a11yTodayText?: string;
-  /**
-   * Clipped text to communicate disabled cells to screen readers, required only in non-interactive calendars when any days are or will be disabled
-   *
-   * English default to be overridden is `"disabled"`
-   **/
-  a11yDisabledText?: string;
-  /**
-   * Clipped text to communicate selected cells to screen readers, required for non-interactive calendars if any days are or will be selected
-   *
-   * English default to be overridden is `"selected"`
-   **/
-  a11ySelectedText?: string;
   /**
    * Clipped text to communicate range cells to screen readers, required if there is or will be a selected range
    */
@@ -68,6 +47,42 @@ export interface Input {
     in: string;
   };
 }
+export interface StaticInput extends BaseInput {
+  selectMode?: undefined;
+  selected?: DayISO | { from?: DayISO; to?: DayISO };
+  selectedChange?: (s: DayISO | { from?: DayISO; to?: DayISO }) => void;
+  linkBuilder?: (iso: DayISO) => string | false | null | undefined;
+  /**
+   * Clipped text to communicate the current day cells to screen readers, required for non-interactive calendars
+   *
+   * English default to be overridden is `"today"`
+   **/
+  a11yTodayText?: string;
+  /**
+   * Clipped text to communicate disabled cells to screen readers, required only in non-interactive calendars when any days are or will be disabled
+   *
+   * English default to be overridden is `"disabled"`
+   **/
+  a11yDisabledText?: string;
+  /**
+   * Clipped text to communicate selected cells to screen readers, required for non-interactive calendars if any days are or will be selected
+   *
+   * English default to be overridden is `"selected"`
+   **/
+  a11ySelectedText?: string;
+}
+export interface DayInput extends BaseInput {
+  selectMode: "day";
+  selected?: DayISO;
+  selectedChange?: (s: DayISO) => void;
+}
+export interface RangeInput extends BaseInput {
+  selectMode: "range";
+  selected?: { from?: DayISO; to?: DayISO };
+  selectedChange?: (s: { from?: DayISO; to?: DayISO }) => void;
+}
+export type Input = StaticInput | DayInput | RangeInput;
+
 <let/systemDay=getTodayISO()>
 <script>
   systemDay = getTodayISO();
@@ -80,15 +95,11 @@ export interface Input {
   numMonths = 1,
   selectMode,
   today = systemDay,
-  linkBuilder,
   disable,
-  a11yTodayText,
-  a11yDisabledText,
-  a11ySelectedText,
   a11yRangeText,
 }=input>
 
-<let/selected:=input.selected>
+<let/selected:=(input as StaticInput).selected>
 // `viewStart` is the first displayed month (YYYY-MM). `valueChange` notifies `input.viewStartChange`.
 // `focus` is fully uncontrolled — always within the visible window, resets when viewStart changes.
 <let/viewStart=(input.viewStart ?? today.slice(0, 7) as MonthISO) valueChange=input.viewStartChange>
@@ -104,14 +115,17 @@ export interface Input {
 
 <let/bodyHasFocus=false>
 <let/hoverDate=null as null | DayISO>
-<const/range=(() => {
+<const/range=((): Required<NonNullable<RangeInput["selected"]>> | null => {
+  if (typeof selected === "object" && selected.from && selected.to) return selected as Required<typeof selected>;
   if (selectMode !== "range") return null;
-  if (typeof selected === "object") return selected;
-  const interactingWith = hoverDate || (bodyHasFocus && focus);
-  if (interactingWith && selected) {
-    return selected > interactingWith
-      ? { from: interactingWith, to: selected }
-      : { from: selected, to: interactingWith };
+  const singleSelected = typeof selected === "object" ? selected.from || selected.to : selected;
+  if (singleSelected) {
+    const interactingWith = hoverDate || (bodyHasFocus && focus);
+    if (interactingWith && singleSelected) {
+      return singleSelected > interactingWith
+        ? { from: interactingWith, to: singleSelected }
+        : { from: singleSelected, to: interactingWith };
+    }
   }
   return null;
 })()>
@@ -233,7 +247,7 @@ export interface Input {
                     calendar__range: inRange,
                     "calendar__range--end": rangeEnd,
                   }>
-                    <if=selectMode>
+                    <if=input.selectMode>
                       <script>
                         if (bodyHasFocus && focus === iso) $el().focus();
                       </script>
@@ -265,14 +279,21 @@ export interface Input {
                             selected = iso;
                           } else if (selectMode === "range") {
                             if (typeof selected === "object") {
-                              selected = iso;
+                              if (selected.from && selected.to || (!selected.from && !selected.to)) {
+                                selected = { from: iso };
+                              } else {
+                                const singleSelected = selected.from || selected.to;
+                                selected = singleSelected! > iso
+                                  ? { from: iso, to: singleSelected }
+                                  : { from: singleSelected, to: iso };
+                              }
                             } else if (selected) {
                               selected =
                                 selected > iso
                                   ? { from: iso, to: selected }
                                   : { from: selected, to: iso };
                             } else {
-                              selected = iso;
+                              selected = { from: iso };
                             }
                           }
                         }>
@@ -280,6 +301,12 @@ export interface Input {
                       </button>
                     </if>
                     <else>
+                      <const/{
+                        linkBuilder,
+                        a11yTodayText,
+                        a11yDisabledText,
+                        a11ySelectedText,
+                      }=input>
                       <const/link=!disabled && linkBuilder?.(iso)>
                       <${link ? "a" : "span"}
                         class={
