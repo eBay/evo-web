@@ -121,6 +121,7 @@ export interface Input {
     <div class="calendar__header">
       <div class="calendar__header--inner">
         <evo-icon-button
+          disabled=(disable?.before && (monthOffset(viewStart, -1) + "-01" as DayISO) < disable.before)
           onClick() {
             viewStart = monthOffset(viewStart, -1);
             if (focus.slice(0, 7) > monthOffset(viewStart, numMonths - 1)) focus = viewStart + "-01" as DayISO;
@@ -132,6 +133,7 @@ export interface Input {
           <h3>${getMonthName(locale, viewStart, i)}</h3>
         </for>
         <evo-icon-button
+          disabled=(disable?.after && (monthOffset(viewStart, numMonths) + "-01" as DayISO) > disable.after)
           onClick() {
             viewStart = monthOffset(viewStart, 1);
             if (focus.slice(0, 7) < viewStart) focus = monthOffset(viewStart, numMonths - 1) + "-01" as DayISO;

@@ -86,6 +86,40 @@ describe("evo-calendar", () => {
         });
     });
 
+    describe("given a navigable calendar with disable.before", () => {
+        beforeEach(async () => {
+            component = await render(template, {
+                selectMode: "day",
+                today: "2025-02-15",
+                a11yNavigateText: (month: string) => `Show ${month}`,
+                disable: { before: "2025-02-01" },
+            });
+        });
+
+        it("disables the prev button when navigating before disable.before", () => {
+            const buttons = component.getAllByRole("button");
+            const prevButton = buttons[0] as HTMLButtonElement;
+            expect(prevButton.disabled).toBe(true);
+        });
+    });
+
+    describe("given a navigable calendar with disable.after", () => {
+        beforeEach(async () => {
+            component = await render(template, {
+                selectMode: "day",
+                today: "2025-02-15",
+                a11yNavigateText: (month: string) => `Show ${month}`,
+                disable: { after: "2025-02-15" },
+            });
+        });
+
+        it("disables the next button when navigating after disable.after", () => {
+            const buttons = component.getAllByRole("button");
+            const nextButton = buttons[buttons.length - 1] as HTMLButtonElement;
+            expect(nextButton.disabled).toBe(true);
+        });
+    });
+
     describe("given a calendar with disabled dates", () => {
         beforeEach(async () => {
             component = await render(template, {
