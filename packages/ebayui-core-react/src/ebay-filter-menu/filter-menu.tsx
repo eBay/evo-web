@@ -3,7 +3,9 @@ import React, {
     FC,
     Fragment,
     KeyboardEvent,
+    Key,
     MouseEvent,
+    ReactElement,
     RefObject,
     useEffect,
     useRef,
@@ -27,6 +29,35 @@ import classNames from "classnames";
 import { EbayButton } from "../ebay-button";
 import { EbayIconClear20 } from "../ebay-icon/icons/ebay-icon-clear-20";
 import { EbayIconSearch16 } from "../ebay-icon/icons/ebay-icon-search-16";
+
+type FilterMenuItemElement = ReactElement<EbayFilterMenuItemProps>;
+type ItemIdentity = NonNullable<Key>;
+
+const getItemIdentity = (item: FilterMenuItemElement, index: number): ItemIdentity =>
+    (item.props.value ?? item.key ?? index) as ItemIdentity;
+
+const getCheckedItemIds = (items: FilterMenuItemElement[]): ItemIdentity[] =>
+    items.reduce<ItemIdentity[]>((checkedItemIds, item, index) => {
+        if (item.props.checked) {
+            return [...checkedItemIds, getItemIdentity(item, index)];
+        }
+
+        return checkedItemIds;
+    }, []);
+
+const getCheckedItemId = (items: FilterMenuItemElement[]): ItemIdentity | undefined => {
+    const checkedIndex = items.findIndex((item) => item.props.checked);
+
+    return checkedIndex > -1 ? getItemIdentity(items[checkedIndex], checkedIndex) : undefined;
+};
+
+const updateCheckedItemIds = (checkedItemIds: ItemIdentity[], itemId: ItemIdentity, checked?: boolean) => {
+    if (checked) {
+        return checkedItemIds.includes(itemId) ? checkedItemIds : [...checkedItemIds, itemId];
+    }
+
+    return checkedItemIds.filter((checkedItemId) => checkedItemId !== itemId);
+};
 
 export type EbayFilterMenuProps = Omit<ComponentProps<"span">, "onChange"> & {
     classPrefix?: string;
@@ -74,10 +105,8 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
     const items = filterByType(children, EbayFilterMenuItem);
     const menuId = useRandomId();
     const [searchTerm, setSearchTerm] = useState(searchHeaderValue || "");
-    const [checkedIndex, setCheckedIndex] = useState<number>(() =>
-        items.map((item, index) => item.props.checked && index).find((value) => typeof value === "number"),
-    );
-    const [checkedItems, setCheckedItems] = useState<boolean[]>(() => items.map((item) => Boolean(item.props.checked)));
+    const [checkedItemId, setCheckedItemId] = useState<ItemIdentity | undefined>(() => getCheckedItemId(items));
+    const [checkedItemIds, setCheckedItemIds] = useState<ItemIdentity[]>(() => getCheckedItemIds(items));
 
     useEffect(() => {
         let rovingTabIndex: ReturnType<typeof createLinear>;
@@ -101,18 +130,26 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
         };
     }, [isForm]);
 
-    const buildCurrentEventData: () => FilterMenuEventData = () => ({
+    const isItemChecked = (
+        item: FilterMenuItemElement,
+        index: number,
+        selectedItemId = checkedItemId,
+        selectedItemIds = checkedItemIds,
+    ) => {
+        const itemId = getItemIdentity(item, index);
+
+        return isRadio ? selectedItemId === itemId : selectedItemIds.includes(itemId);
+    };
+
+    const buildCurrentEventData = (
+        selectedItemId = checkedItemId,
+        selectedItemIds = checkedItemIds,
+    ): FilterMenuEventData => ({
         checked: items
-            .filter((item, index) => (isRadio ? checkedIndex === index : checkedItems[index]))
+            .filter((item, index) => isItemChecked(item, index, selectedItemId, selectedItemIds))
             .map((item) => item.props.value),
         checkedIndex: items
-            .map((item, index) => {
-                if (isRadio) {
-                    return index === checkedIndex && index;
-                }
-
-                return checkedItems[index] && index;
-            })
+            .map((item, index) => isItemChecked(item, index, selectedItemId, selectedItemIds) && index)
             .filter((value) => typeof value === "number"),
     });
     const handleFooterButtonClick = (event) => {
@@ -165,32 +202,25 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
             return;
         }
 
+        const itemId = getItemIdentity(items[indexToToggle], indexToToggle);
+
         if (isRadio) {
-            setCheckedIndex(indexToToggle);
+            setCheckedItemId(itemId);
             onChange?.(event, {
                 index: indexToToggle,
-                checked: [items[indexToToggle].props.value],
-                checkedIndex: [indexToToggle],
+                ...buildCurrentEventData(itemId, checkedItemIds),
                 currentChecked: checked,
             });
         } else {
-            const newCheckedItems = checkedItems.map((itemChecked, itemIndex) => {
-                if (itemIndex === indexToToggle) {
-                    return checked;
-                }
-                return itemChecked;
-            });
+            const newCheckedItemIds = updateCheckedItemIds(checkedItemIds, itemId, checked);
 
             onChange?.(event, {
                 index: indexToToggle,
-                checked: items.filter((item, index) => newCheckedItems[index]).map((item) => item.props.value),
-                checkedIndex: newCheckedItems
-                    .map((isChecked, index) => isChecked && index)
-                    .filter((value) => typeof value === "number"),
+                ...buildCurrentEventData(checkedItemId, newCheckedItemIds),
                 currentChecked: checked,
             });
 
-            setCheckedItems(newCheckedItems);
+            setCheckedItemIds(newCheckedItemIds);
         }
     };
 
@@ -232,7 +262,7 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
                             __classPrefix: baseClass,
                             __type: type,
                             __variant: variant,
-                            checked: isRadio ? index === checkedIndex : checkedItems[index],
+                            checked: isItemChecked(item, index),
                             onClick: (event, { checked, value }) => {
                                 if (item.props.disabled) {
                                     return;
@@ -252,7 +282,7 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
                                 item.props.onKeyDown?.(event);
                                 // For "Space" key, the onClick event is triggered on checkboxes, so we ignore on forms
                                 if (event.key === "Enter" || (event.key === " " && !isForm)) {
-                                    const currentChecked = isRadio ? index === checkedIndex : checkedItems[index];
+                                    const currentChecked = isItemChecked(item, index);
                                     handleItemClick(event, {
                                         checked: !currentChecked,
                                         index,
