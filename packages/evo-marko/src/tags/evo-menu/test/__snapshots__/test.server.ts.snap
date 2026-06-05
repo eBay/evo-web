@@ -5,8 +5,8 @@ exports[`menu > passes through additional html attributes 1`] = `
   class="menu class1"
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  htmlattributes="[object Object]"
   style="color:red"
+  type="number"
 >
   <div
     class="menu__items"
@@ -87,8 +87,8 @@ exports[`menu > passes through additional html attributes 2`] = `
   class="menu class1"
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  htmlattributes="[object Object]"
   style="color:red"
+  type="number"
 >
   <div
     class="menu__items"
@@ -420,7 +420,7 @@ exports[`menu > renders with badged version 1`] = `
       <span>
         item 1 that has very long text
         <span
-          class="badge"
+          class="badge badge--circle"
         >
           1
         </span>
@@ -454,7 +454,7 @@ exports[`menu > renders with badged version 1`] = `
       <span>
         item 2
         <span
-          class="badge"
+          class="badge badge--circle"
         >
           99
         </span>
@@ -478,7 +478,7 @@ exports[`menu > renders with badged version 1`] = `
       <span>
         item 3
         <span
-          class="badge"
+          class="badge badge--circle"
         >
           10
         </span>

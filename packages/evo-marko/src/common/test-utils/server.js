@@ -37,9 +37,7 @@ function testPassThroughAttributes(
       clonedInput[child.name] = child.multiple ? [targetInput] : child;
     }
     Object.assign(targetInput, {
-      htmlAttributes: {
-        type: "number",
-      },
+      type: "number",
       "data-testid": testId,
       "data-passed-through": "true",
       // class and style are special attributes

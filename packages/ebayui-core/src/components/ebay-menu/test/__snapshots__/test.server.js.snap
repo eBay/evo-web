@@ -494,7 +494,7 @@ exports[`menu > renders with badged version 1`] = `
         [36m<span>[39m
           [0mitem 1 that has very long text[0m
           [36m<span[39m
-            [33mclass[39m=[32m"badge"[39m
+            [33mclass[39m=[32m"badge badge--circle"[39m
           [36m>[39m
             [0m1[0m
           [36m</span>[39m
@@ -529,7 +529,7 @@ exports[`menu > renders with badged version 1`] = `
         [36m<span>[39m
           [0mitem 2[0m
           [36m<span[39m
-            [33mclass[39m=[32m"badge"[39m
+            [33mclass[39m=[32m"badge badge--circle"[39m
           [36m>[39m
             [0m99[0m
           [36m</span>[39m
@@ -552,7 +552,7 @@ exports[`menu > renders with badged version 1`] = `
         [36m<span>[39m
           [0mitem 3[0m
           [36m<span[39m
-            [33mclass[39m=[32m"badge"[39m
+            [33mclass[39m=[32m"badge badge--circle"[39m
           [36m>[39m
             [0m10[0m
           [36m</span>[39m

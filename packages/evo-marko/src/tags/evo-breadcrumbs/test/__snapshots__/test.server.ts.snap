@@ -44,7 +44,6 @@ exports[`evo-breadcrumbs SSR > renders buttons when no hrefs 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-haspopup="true"
           aria-label="button"
           class="fake-menu-button__button icon-btn icon-btn--transparent"
           type="button"
@@ -169,7 +168,6 @@ exports[`evo-breadcrumbs SSR > renders default with links 1`] = `
       >
         <button
           aria-expanded="false"
-          aria-haspopup="true"
           aria-label="button"
           class="fake-menu-button__button icon-btn icon-btn--transparent"
           type="button"
