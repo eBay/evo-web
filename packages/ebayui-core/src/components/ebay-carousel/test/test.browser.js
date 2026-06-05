@@ -443,7 +443,7 @@ describe("given a discrete carousel", () => {
                 const list = thirdItem.parentElement;
                 list.scrollLeft = thirdItem.offsetLeft;
                 fireEvent.scroll(list);
-                await waitForCarouselUpdate();
+                await vi.advanceTimersByTimeAsync(700);
             });
 
             it("then it emitted the scroll event", () => {

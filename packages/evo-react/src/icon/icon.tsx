@@ -54,9 +54,11 @@ export function EvoIcon({
     // This is to make sure that the next request received has an empty "lookup" Set.
     // On the browser this is not an issue since there is always one single instance per page.
     if (typeof window === "undefined" && typeof setImmediate !== "undefined") {
-      console.warn(
-        `Icon "${__name}" used without wrapping it in a <EvoIconProvider />, for better server performance make sure to wrap your application with <EvoIconProvider> component.`,
-      );
+      if (process.env.NODE_ENV === "development") {
+        console.warn(
+          `Icon "${__name}" used without wrapping it in a <EvoIconProvider />, for better server performance make sure to wrap your application with <EvoIconProvider> component.`,
+        );
+      }
 
       setImmediate(() => {
         fallbackLookup.clear();
