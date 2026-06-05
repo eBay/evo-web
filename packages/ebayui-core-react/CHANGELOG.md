@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.6.6
+
+### Patch Changes
+
+- [#705](https://github.com/eBay/evo-web/pull/705) [`604e7b7`](https://github.com/eBay/evo-web/commit/604e7b77a47c7be4e8b698507f0bae8a26e7873b) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix EbayFilterMenu checkbox selection so filtered items remain checked by item value instead of index.
+
 ## 9.6.5
 
 ### Patch Changes
