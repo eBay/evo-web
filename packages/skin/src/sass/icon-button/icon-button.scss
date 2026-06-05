@@ -115,8 +115,11 @@ a.icon-link.icon-link--primary:visited > svg {
     fill: var(--color-foreground-on-accent);
 }
 
+/* `--badged` should be removed after full browser support for `:has` */
 button.icon-btn--badged,
-a.icon-link--badged {
+a.icon-link--badged,
+button.icon-btn:has(.badge),
+a.icon-link:has(.badge) {
     overflow: visible;
     position: relative;
 
