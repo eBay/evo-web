@@ -46,6 +46,7 @@ export interface Input<
     collapseOnSelect,
     transparent: inputTransparent,
     onKeyDown,
+    onFocusOut,
     ...htmlInput
 }=input>
 
@@ -105,6 +106,12 @@ export interface Input<
     onKeyDown(e, el) {
         if (open && e.key === "Escape") open = false;
         onKeyDown && onKeyDown(e, el);
+    }
+    onFocusOut(e, el) {
+        if (!el.contains(e.relatedTarget as Node)) {
+            open = false;
+        }
+        onFocusOut && onFocusOut(e, el);
     }>
     <${tagName as any}
         class=[`menu-button__button`]

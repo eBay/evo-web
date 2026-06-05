@@ -38,6 +38,7 @@ export interface Input extends Marko.HTML.Span {
     transparent: inputTransparent,
     a11yText,
     onKeyDown,
+    onFocusOut,
     ...htmlInput
 }=input>
 
@@ -81,6 +82,12 @@ export interface Input extends Marko.HTML.Span {
     onKeyDown(e, el) {
         if (open && e.key === "Escape") open = false;
         onKeyDown && onKeyDown(e, el);
+    }
+    onFocusOut(e, el) {
+        if (!el.contains(e.relatedTarget as Node)) {
+            open = false;
+        }
+        onFocusOut && onFocusOut(e, el);
     }>
     <${tagName as any}
         class="fake-menu-button__button"
