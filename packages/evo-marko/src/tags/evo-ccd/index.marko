@@ -13,6 +13,7 @@ export interface Input extends Omit<Marko.HTML.Div, "aria-label"> {
      */
     a11yText: string | null;
     secondaryType?: "usbpd";
+    units?: string;
 }
 <const/{
     class: inputClass,
@@ -21,6 +22,7 @@ export interface Input extends Omit<Marko.HTML.Div, "aria-label"> {
     max,
     min,
     secondaryType,
+    units="W",
     ...htmlInput
 }=input/>
 
@@ -41,7 +43,7 @@ export interface Input extends Omit<Marko.HTML.Div, "aria-label"> {
             <evo-icon-ccd-top class="ccd__top-icon"/>
             <div class="ccd__body">
                 <div>${min} - ${max}</div>
-                <div>W</div>
+                <div>${units}</div>
                 <if=secondaryType === "usbpd">
                     <div>USB PD</div>
                 </if>

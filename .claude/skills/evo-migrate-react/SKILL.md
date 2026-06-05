@@ -151,6 +151,8 @@ import "@ebay/skin/button.css"; // ❌
 
 Derive the module name from the `style.ts` file you read in Step 0 and append `.mjs`.
 
+**Exception — `@ebay/skin/icon.mjs`:** Never import this directly in a component. It is already imported inside the `EvoIcon` base component (`src/icon/icon.tsx`), so any component that renders `EvoIcon*` gets it transitively. Importing it again is redundant.
+
 ### Use individual `EvoIcon*` components, not `<EbayIcon name="..." />`
 
 ```tsx
@@ -387,6 +389,26 @@ describe("EvoButton SSR", () => {
 ## Storybook stories — `{name}.stories.tsx`
 
 - **One story per component** unless the component tree itself must change between variations (e.g. different sub-components, optional children). Visual and prop variations (size, alignment, disabled, open…) must be handled through `args` and `argTypes` controls — not separate stories.
+- **`select` controls for optional props — do not include `undefined` in `options`.** Storybook's select control already renders a "Choose option…" placeholder for optional props. Adding `undefined` as an explicit option creates a duplicate empty entry. Only list the actual valid string values:
+
+  ```tsx
+  // ✅ correct — Storybook adds the empty/unset option automatically
+  argTypes: {
+    chargerIcon: {
+      control: "select",
+      options: ["included", "not-included"],
+    },
+  }
+
+  // ❌ do NOT add undefined to options
+  argTypes: {
+    chargerIcon: {
+      control: "select",
+      options: [undefined, "included", "not-included"],
+    },
+  }
+  ```
+
 - `title` must mirror the ebayui-core-react story title with `ebay` replaced by `evo`.
 - Description format: one-sentence summary followed by a `## Usage` section with the import snippet.
 - **`subcomponents`**: If the component has sub-components (e.g. `EvoAvatarImage` alongside `EvoAvatar`), declare them in the meta using the `subcomponents` field. This causes Storybook's autodocs to render a props table for each sub-component as a separate tab.
