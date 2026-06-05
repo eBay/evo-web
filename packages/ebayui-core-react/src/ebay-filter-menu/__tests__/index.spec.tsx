@@ -91,6 +91,60 @@ describe("EbayFilterMenu Component", () => {
         });
     });
 
+    it("should keep the selected checkbox item checked by value when items are filtered", async () => {
+        const getCheckboxItem = (name: string) => screen.getByRole("menuitemcheckbox", { name });
+        const { rerender } = render(
+            <EbayFilterMenu type="checkbox">
+                <EbayFilterMenuItem value="item1">Item 1</EbayFilterMenuItem>
+                <EbayFilterMenuItem value="item2">Item 2</EbayFilterMenuItem>
+                <EbayFilterMenuItem value="item3">Item 3</EbayFilterMenuItem>
+            </EbayFilterMenu>,
+        );
+
+        await userEvent.click(getCheckboxItem("Item 2"));
+
+        rerender(
+            <EbayFilterMenu type="checkbox">
+                <EbayFilterMenuItem value="item2">Item 2</EbayFilterMenuItem>
+                <EbayFilterMenuItem value="item3">Item 3</EbayFilterMenuItem>
+            </EbayFilterMenu>,
+        );
+
+        expect(getCheckboxItem("Item 2")).toHaveAttribute("aria-checked", "true");
+        expect(getCheckboxItem("Item 3")).toHaveAttribute("aria-checked", "false");
+    });
+
+    it("should preserve a selected checkbox item while it is filtered out", async () => {
+        const getCheckboxItem = (name: string) => screen.getByRole("menuitemcheckbox", { name });
+        const { rerender } = render(
+            <EbayFilterMenu type="checkbox">
+                <EbayFilterMenuItem value="item1">Item 1</EbayFilterMenuItem>
+                <EbayFilterMenuItem value="item2">Item 2</EbayFilterMenuItem>
+                <EbayFilterMenuItem value="item3">Item 3</EbayFilterMenuItem>
+            </EbayFilterMenu>,
+        );
+
+        await userEvent.click(getCheckboxItem("Item 2"));
+
+        rerender(
+            <EbayFilterMenu type="checkbox">
+                <EbayFilterMenuItem value="item3">Item 3</EbayFilterMenuItem>
+            </EbayFilterMenu>,
+        );
+
+        expect(getCheckboxItem("Item 3")).toHaveAttribute("aria-checked", "false");
+
+        rerender(
+            <EbayFilterMenu type="checkbox">
+                <EbayFilterMenuItem value="item2">Item 2</EbayFilterMenuItem>
+                <EbayFilterMenuItem value="item3">Item 3</EbayFilterMenuItem>
+            </EbayFilterMenu>,
+        );
+
+        expect(getCheckboxItem("Item 2")).toHaveAttribute("aria-checked", "true");
+        expect(getCheckboxItem("Item 3")).toHaveAttribute("aria-checked", "false");
+    });
+
     it("should update selected elements correctly when unselecting a checkbox", async () => {
         const handleChange = vi.fn();
         render(
