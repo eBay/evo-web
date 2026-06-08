@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.25.0
+
+### Minor Changes
+
+- [#686](https://github.com/eBay/evo-web/pull/686) [`0197ebe`](https://github.com/eBay/evo-web/commit/0197ebe4516d390e9d695f35be4cdd1d718d579c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(icon-button): use "has()" selector for badged use case
+
 ## 19.24.7
 
 ### Patch Changes

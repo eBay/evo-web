@@ -1,5 +1,15 @@
 # @evo-web/react
 
+## 0.0.9
+
+### Patch Changes
+
+- [#688](https://github.com/eBay/evo-web/pull/688) [`a1b4ffa`](https://github.com/eBay/evo-web/commit/a1b4ffa64aca759843f1da1a3f7be197f01193c4) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCCD component.
+
+- [#699](https://github.com/eBay/evo-web/pull/699) [`c6f9113`](https://github.com/eBay/evo-web/commit/c6f91132215ba3eb05d8c488210accfb271c63ba) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix test noise and flaky carousel scroll test.
+  - `@evo-web/react`: Guard `EvoIcon`'s missing-provider `console.warn` with `process.env.NODE_ENV === 'development'` so it is silent in Vitest (`NODE_ENV=test`) without removing the warning from development builds.
+  - `@ebay/ebayui-core`: Fix flaky `ebay-carousel` browser test — "when it is scrolled to the second slide" `beforeEach` was calling `waitForCarouselUpdate()` which resolved immediately from the init render's `move` event, before the 640 ms scroll debounce fired. Replaced with `vi.advanceTimersByTimeAsync(700)` to deterministically trigger the debounce and flush the resulting Marko re-render.
+
 ## 0.0.8
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @evo-web/marko
 
+## 0.2.3
+
+### Patch Changes
+
+- [#688](https://github.com/eBay/evo-web/pull/688) [`a1b4ffa`](https://github.com/eBay/evo-web/commit/a1b4ffa64aca759843f1da1a3f7be197f01193c4) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `units` prop to `evo-ccd`.
+
+- [#661](https://github.com/eBay/evo-web/pull/661) [`5b256cd`](https://github.com/eBay/evo-web/commit/5b256cd46790d08ccc478e34ba6e042e2932e6e8) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-combobox
+
+- [#686](https://github.com/eBay/evo-web/pull/686) [`0197ebe`](https://github.com/eBay/evo-web/commit/0197ebe4516d390e9d695f35be4cdd1d718d579c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(icon-button): use "has()" selector for badged use case
+
+- [#684](https://github.com/eBay/evo-web/pull/684) [`9454b99`](https://github.com/eBay/evo-web/commit/9454b99f2256e5332990add467b6d3d838023b59) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix collapse behavior for menu button
+
 ## 0.2.2
 
 ### Patch Changes
