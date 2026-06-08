@@ -395,12 +395,6 @@
         "height": "32",
         "width": "50"
       },
-      {
-        "name": "bank-group-logo-24-colored",
-        "size": "24-colored",
-        "height": "24",
-        "width": "83"
-      },
       { "name": "bar-chart-16", "size": "16", "height": "16", "width": "16" },
       { "name": "bar-chart-24", "size": "24", "height": "24", "width": "24" },
       { "name": "bids-16", "size": "16", "height": "16", "width": "16" },
@@ -2369,6 +2363,12 @@
         "width": "50"
       },
       {
+        "name": "pay-by-bank-uk-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "83"
+      },
+      {
         "name": "payoneer-12-colored",
         "size": "12-colored",
         "height": "12",
@@ -3445,9 +3445,17 @@
       "radio-checked-24",
       "radio-unchecked-24",
       "checkbox-unchecked-24",
-      "radio-unchecked-18"
+      "radio-unchecked-18",
+      "bank-group-logo-24-colored"
     ],
-    "deprecated": null,
+    "deprecated": [
+      {
+        "name": "bank-group-logo-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "83"
+      }
+    ],
     "program-badges": {
       "prefix": "program-badge",
       "list": [

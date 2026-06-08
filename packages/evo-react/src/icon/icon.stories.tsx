@@ -697,6 +697,7 @@ import { EvoIconPayByBank12Colored } from "./icons/pay-by-bank-12-colored";
 import { EvoIconPayByBank18Colored } from "./icons/pay-by-bank-18-colored";
 import { EvoIconPayByBank24Colored } from "./icons/pay-by-bank-24-colored";
 import { EvoIconPayByBank32Colored } from "./icons/pay-by-bank-32-colored";
+import { EvoIconPayByBankUk24Colored } from "./icons/pay-by-bank-uk-24-colored";
 import { EvoIconPayoneer12Colored } from "./icons/payoneer-12-colored";
 import { EvoIconPayoneer18Colored } from "./icons/payoneer-18-colored";
 import { EvoIconPayoneer24Colored } from "./icons/payoneer-24-colored";
@@ -6647,6 +6648,13 @@ export const AllIcons: Story = {
             <td>{EvoIconPayByBank32Colored.name || "pay-by-bank-32-colored"}</td>
             <td>
               <EvoIconPayByBank32Colored {...args} />
+            </td>
+          </tr>
+          
+          <tr>
+            <td>{EvoIconPayByBankUk24Colored.name || "pay-by-bank-uk-24-colored"}</td>
+            <td>
+              <EvoIconPayByBankUk24Colored {...args} />
             </td>
           </tr>
               
