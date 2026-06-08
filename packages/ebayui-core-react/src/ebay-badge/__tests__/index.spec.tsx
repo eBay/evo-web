@@ -10,7 +10,7 @@ describe("<EbayBadge>", () => {
 
     it("renders number with rounded-up value", async () => {
         const { getByText } = await render(<EbayBadge number={5.6} />);
-        expect(getByText("5")).toBeInTheDocument();
+        expect(getByText("6")).toBeInTheDocument();
     });
 
     it("does not render with negative value", async () => {
@@ -26,7 +26,7 @@ describe("<EbayBadge>", () => {
 
         it("renders number with rounded-up string", async () => {
             const { getByText } = await render(<EbayBadge number="5.6" />);
-            expect(getByText("5")).toBeInTheDocument();
+            expect(getByText("6")).toBeInTheDocument();
         });
 
         it("does not renders with an invalid string", async () => {
