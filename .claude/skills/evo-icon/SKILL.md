@@ -20,14 +20,19 @@ Marko layers are entirely script-generated — you never edit those files manual
 
 `$ARGUMENTS` format: `<action> <icon-name>` — e.g. `add add-24` or `deprecate cart-16`
 
-| Action | Meaning |
-|---|---|
-| `add` | Add a new SVG and regenerate all layers |
-| `edit` | Replace an existing SVG and regenerate |
+| Action      | Meaning                                                   |
+| ----------- | --------------------------------------------------------- |
+| `add`       | Add a new SVG and regenerate all layers                   |
+| `edit`      | Replace an existing SVG and regenerate                    |
 | `deprecate` | Mark as deprecated in docs; keep in sprite and components |
-| `delete` | Remove permanently (major version only) |
+| `delete`    | Remove permanently (major version only)                   |
+
+If the issue says "rename", "replaced by", or "renamed to", treat this as **deprecate**
+(not delete). The old icon is deprecated; the new name either already exists or is a
+separate add action.
 
 If `$ARGUMENTS` is empty or ambiguous, ask:
+
 > "Which icon action? (add / edit / deprecate / delete) and what is the icon name?"
 
 ---
@@ -37,6 +42,7 @@ If `$ARGUMENTS` is empty or ambiguous, ask:
 ### Step 2a — Validate and place the SVG
 
 **Naming convention** — strict, enforced by the build:
+
 ```
 icon-{name}-{size}.svg           (monochrome)
 icon-{name}-{size}-colored.svg   (multi-color)
@@ -47,12 +53,14 @@ Valid sizes: `12`, `16`, `18`, `20`, `24`, `30`, `32`, `40`, `48`, `64`
 Examples: `icon-add-24.svg`, `icon-afterpay-32-colored.svg`
 
 **SVG requirements:**
+
 - Must have a `viewBox` attribute
 - Must NOT have `width` or `height` attributes (the build strips them, but omitting is cleaner)
 - Inner content should be optimized SVG paths — no `<title>`, no `id` on child elements
 - `fill` and `stroke` should use `currentColor` where possible so the CSS color cascade works
 
 Place the SVG at:
+
 ```
 packages/skin/src/svg/icon/<icon-name>.svg
 ```
@@ -79,6 +87,7 @@ cd packages/evo-marko && npm run importSVG
 
 **Important:** Steps 3 and 4 wipe and regenerate the entire icon component directory.
 Do not manually create or edit files in:
+
 - `packages/evo-react/src/evo-icon/icons/`
 - `packages/evo-marko/src/tags/evo-icon/tags/`
 
@@ -98,21 +107,24 @@ After the pipeline completes:
 Generated components are consumed as:
 
 **React:**
+
 ```tsx
 import { EvoIconAdd24 } from "@evo-web/react/evo-icon-add-24";
 // Component name: EvoIcon + PascalCase name (e.g. EvoIconAdd24, EvoIconAfterPay32Colored)
 ```
 
 **Marko:**
+
 ```marko
 <evo-icon-add-24/>
 // Tag name: evo-icon-{name} (matches the filename exactly)
 ```
 
 **Skin (HTML):**
+
 ```html
 <svg class="icon icon--24" focusable="false">
-    <use href="#icon-add-24"/>
+  <use href="#icon-add-24" />
 </svg>
 ```
 
@@ -120,27 +132,50 @@ import { EvoIconAdd24 } from "@evo-web/react/evo-icon-add-24";
 
 ## Deprecate
 
-Deprecation hides an icon from the main docs grid and shows it in a "Do Not Use" section.
-The icon remains in the sprite and in all generated framework components until deletion.
+Deprecation hides an icon from the main docs grid and shows it in a "Deprecated Icons"
+warning section. The icon remains in the sprite and in all generated framework components
+until a future major-version deletion.
+
+**Rename scenario:** if an issue says an icon was renamed or replaced, the OLD name is
+being deprecated and the NEW name either already exists or needs to be added separately.
+Confirm the replacement icon exists in the sprite before writing the deprecation changeset.
+Check: `grep -r "icon-<replacement-name>" packages/skin/src/svg/icons.svg`
 
 ### Step 2b — Update icons.json
 
-Edit `src/data/icons.json`:
+Edit `src/data/icons.json`. Two fields must be updated:
 
-1. Add the icon entry to `icons.deprecated` (create the array if it is `null`):
+**1. Add to `icons.deprecated`** (create the array if it is `null`):
+
+The entry must be an **object** matching the same shape as entries in `icons.list` — all
+values are **strings**, including `size`, `height`, and `width`. Copy the exact values
+from the entry you are about to remove from `icons.list`:
+
 ```json
 "deprecated": [
-  { "name": "icon-cart-old-16", "size": 16, "height": 16, "width": 16 }
+  { "name": "cart-old-16", "size": "16", "height": "16", "width": "16" }
 ]
 ```
 
-2. Add the icon's simple name (without `icon-` prefix and size) to `icons.skipDocs`:
+This entry is used by the docs page to render the "Deprecated Icons" section with the
+correct icon dimensions. If you put strings instead of objects, or numbers instead of
+string values, the docs section will render blank.
+
+**2. Add to `icons.skipDocs`**:
+
+The value is the icon's **full name without the `icon-` prefix** — this includes the size
+suffix. It matches the `name` field in `icons.list` exactly:
+
 ```json
-"skipDocs": ["cart-old"]
+"skipDocs": ["cart-old-16"]
 ```
 
-The `skipDocs` entry prevents the icon from appearing in `icons.list`. The `deprecated` entry
-makes it appear in the "Deprecated Icons" warning section of the docs page.
+`skipDocs` is what the build script actually uses to exclude the icon from `icons.list`.
+The `deprecated` array check in `generate-images.ts` is unreliable for objects — always
+use `skipDocs` to control list exclusion.
+
+**Do NOT manually edit `icons.list`.** That field is fully auto-generated by
+`build:icons` and any manual changes will be overwritten on the next run.
 
 ### Step 3b — Rebuild sprite
 
@@ -148,8 +183,9 @@ makes it appear in the "Deprecated Icons" warning section of the docs page.
 cd packages/skin && npm run build:icons
 ```
 
-This re-reads `src/data/icons.json` and rebuilds `icons.list` (excluding skipDocs entries)
-and `icons.deprecated`.
+This re-reads `src/data/icons.json`, filters out `skipDocs` entries, and rebuilds
+`icons.list`. The deprecated icon stays in `icons.svg` (the sprite) for backwards
+compatibility — that is correct and intentional.
 
 **Do NOT run `update-icons` or `importSVG`** — the deprecated icon must remain in the
 framework components. Removing it from generated code is a breaking change that requires
@@ -157,10 +193,26 @@ a major version release and the delete workflow.
 
 ### Step 4b — Verify
 
-- `src/data/icons.json` → `icons.deprecated` contains the entry
-- `src/data/icons.json` → `icons.list` does NOT contain the icon
-- The docs page at `/src/routes/_index/components/icon/css+page.marko` will now show the
-  deprecated icon in the warning section (reads from `icons.json` at runtime)
+- `src/data/icons.json` → `icons.deprecated` contains the full object entry with string values
+- `src/data/icons.json` → `icons.skipDocs` contains the icon name
+- `src/data/icons.json` → `icons.list` does NOT contain the icon (auto-removed by build script)
+- `packages/skin/src/svg/icons.svg` DOES still contain `<symbol id="icon-<name>">` (correct — kept for compat)
+- The docs page deprecated section will show the icon at runtime (reads from `icons.json`)
+
+### Step 5b — Changeset
+
+Create a changeset at `.changeset/<description>.md`. Use **minor** level — deprecation
+is a consumer-visible API surface change signalling future removal:
+
+```markdown
+---
+"@ebay/skin": minor
+---
+
+Deprecate `<icon-name>` icon; use `<replacement-name>` instead.
+```
+
+If there is no known replacement, omit the "use X instead" clause.
 
 ---
 
@@ -172,6 +224,7 @@ this as part of a planned major version release.
 ### Step 2c — Confirm major version context
 
 Before proceeding, confirm with the engineer:
+
 > "Deleting an icon is a breaking change that requires a major version bump.
 > Is this part of a planned major release?"
 
@@ -180,6 +233,7 @@ Do not proceed until confirmed.
 ### Step 3c — Remove the SVG
 
 Delete the file:
+
 ```
 packages/skin/src/svg/icon/<icon-name>.svg
 ```
@@ -187,6 +241,7 @@ packages/skin/src/svg/icon/<icon-name>.svg
 ### Step 4c — Clean up icons.json
 
 Edit `src/data/icons.json`:
+
 - Remove the entry from `icons.deprecated` (if present)
 - Remove the name from `icons.skipDocs` (if present)
 - Remove the name from `icons.skip` (if present — some internal icons live here)
@@ -218,6 +273,7 @@ cd packages/evo-marko && npm run importSVG
 ### Step 7c — Migration note
 
 Surface a migration note for the engineer to include in the changeset:
+
 ```
 BREAKING: icon-{name} has been removed.
 Consumers using EvoIcon{Name} (React) or <evo-icon-{name}/> (Marko) or
@@ -240,8 +296,14 @@ Consumers using EvoIcon{Name} (React) or <evo-icon-{name}/> (Marko) or
 - **Colored icons** use `width: fit-content` (aspect-ratio-variable). The CSS class suffix
   is `-colored` (e.g. `icon--32-colored`).
 
-- **`skipDocs`** hides from public docs but keeps in sprite and components (for internal
-  component icons like checkboxes, radios, spinners).
+- **`skipDocs`** hides an icon from the public docs grid but keeps it in the sprite and
+  framework components. The value is the full icon name without the `icon-` prefix
+  (e.g. `"bank-group-logo-24-colored"`, NOT `"bank-group-logo"`).
+
+- **`deprecated`** controls the "Deprecated Icons" docs section. Must be an array of
+  objects matching `icons.list` shape — all string values.
 
 - **`skip`** prevents the SVG from entering the sprite at all (star-rating, flags, etc.
   have separate pipelines).
+
+- **`icons.list` is fully auto-generated** by `build:icons`. Never edit it by hand.
