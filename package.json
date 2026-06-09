@@ -20,8 +20,8 @@
     "lint": "stylelint src --config .stylelintrc",
     "prepare": "husky",
     "release": "npm run release --ws --if-present && changeset publish",
-    "site": "\"marko-run\"",
-    "start": "concurrently --kill-others-on-fail \"marko-run\" \"npm start -w packages/ebayui-core\" \"npm start -w packages/ebayui-core-react\"",
+    "start": "marko-run dev",
+    "start:all": "concurrently --kill-others-on-fail \"marko-run dev\"  \"npm run storybook -w packages/skin\" \"npm run storybook -w packages/ebayui-core\" \"npm run storybook -w packages/ebayui-core-react\"",
     "test": "npm run test --ws",
     "update-snapshots": "npm run update-snapshots --ws --if-present",
     "version": "npm run version --ws --if-present && changeset version && npm i --package-lock-only && git add -A packages"
