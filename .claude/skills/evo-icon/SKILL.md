@@ -75,21 +75,30 @@ Run these commands in order:
 # 1. Rebuild skin sprite + update icons.json
 cd packages/skin && npm run build:icons
 
-# 2. Full skin build (compiles SCSS, copies dist/)
+# 2. Full skin build — compiles SCSS and copies to dist/ (required before legacy scripts,
+#    which read from @ebay/skin/dist/svg/icons.svg not the source)
 cd packages/skin && npm run build
 
-# 3. Regenerate all React icon components (wipes + rewrites the entire icons/ dir)
+# 3. Regenerate new React icon components (wipes + rewrites the entire icons/ dir)
 cd packages/evo-react && npm run update-icons
 
-# 4. Regenerate all Marko icon tags (wipes + rewrites all evo-icon-*.marko files)
+# 4. Regenerate new Marko icon tags (wipes + rewrites all evo-icon-*.marko files)
 cd packages/evo-marko && npm run importSVG
+
+# 5. Regenerate legacy React icon components (reads from skin dist/, same wipe+rewrite)
+cd packages/ebayui-core-react && npm run update-icons
+
+# 6. Regenerate legacy Marko 5 icon tags (reads from skin dist/)
+cd packages/ebayui-core && npm run importSVG
 ```
 
-**Important:** Steps 3 and 4 wipe and regenerate the entire icon component directory.
-Do not manually create or edit files in:
+**Important:** Steps 3–6 wipe and regenerate the entire icon component directory for each
+package. Do not manually create or edit files in:
 
 - `packages/evo-react/src/evo-icon/icons/`
 - `packages/evo-marko/src/tags/evo-icon/tags/`
+- `packages/ebayui-core-react/src/ebay-icon/icons/`
+- `packages/ebayui-core/src/components/ebay-icon/icons/`
 
 ### Step 4a — Verify
 
@@ -97,10 +106,12 @@ After the pipeline completes:
 
 1. **Sprite**: confirm `packages/skin/src/svg/icons.svg` contains a `<symbol id="<icon-name>">` entry
 2. **Icons data**: confirm `src/data/icons.json` → `icons.list` contains the new icon
-3. **React component**: confirm `packages/evo-react/src/evo-icon/icons/evo-icon-<name>.tsx` exists
-4. **Marko tag**: confirm `packages/evo-marko/src/tags/evo-icon/tags/evo-icon-<name>.marko` exists
-5. **CSS class**: the icon renders via `<svg class="icon icon--{size}">` — no per-icon CSS class needed
-6. **Colored icons**: if the SVG is a `-colored` variant, verify it uses `icon--{size}-colored` class (`width: fit-content`)
+3. **New React component**: confirm `packages/evo-react/src/evo-icon/icons/evo-icon-<name>.tsx` exists
+4. **New Marko tag**: confirm `packages/evo-marko/src/tags/evo-icon/tags/evo-icon-<name>.marko` exists
+5. **Legacy React component**: confirm `packages/ebayui-core-react/src/ebay-icon/icons/ebay-icon-<name>.tsx` exists
+6. **Legacy Marko tag**: confirm `packages/ebayui-core/src/components/ebay-icon/icons/ebay-<name>-icon/` directory exists with `symbol.ts` and `index.marko`
+7. **CSS class**: the icon renders via `<svg class="icon icon--{size}">` — no per-icon CSS class needed
+8. **Colored icons**: if the SVG is a `-colored` variant, verify it uses `icon--{size}-colored` class (`width: fit-content`)
 
 ### Step 5a — Usage reference
 
@@ -207,7 +218,9 @@ the Add step are already correct.
 ### Step 5b — Changeset
 
 Create a changeset at `.changeset/<description>.md`. Use **minor** level — deprecation
-is a consumer-visible API surface change signalling future removal:
+is a consumer-visible API surface change signalling future removal.
+
+For a pure deprecation (no new icon added), only skin needs a bump:
 
 ```markdown
 ---
@@ -215,6 +228,20 @@ is a consumer-visible API surface change signalling future removal:
 ---
 
 Deprecate `<icon-name>` icon; use `<replacement-name>` instead.
+```
+
+For a rename (add + deprecate), all five packages are affected:
+
+```markdown
+---
+"@ebay/skin": minor
+"@evo-web/react": minor
+"@evo-web/marko": minor
+"@ebay/ebayui-core": minor
+"@ebay/ui-core-react": minor
+---
+
+Add `<new-name>` icon; deprecate `<old-name>` (use `<new-name>` instead).
 ```
 
 If there is no known replacement, omit the "use X instead" clause.
@@ -257,14 +284,20 @@ Edit `src/data/icons.json`:
 # 1. Rebuild sprite (removed SVG will be absent from icons.svg)
 cd packages/skin && npm run build:icons
 
-# 2. Full skin build
+# 2. Full skin build (updates dist/ which legacy packages read)
 cd packages/skin && npm run build
 
-# 3. Regenerate React components (deleted icon's .tsx will not be recreated)
+# 3. Regenerate new React components (deleted icon's .tsx will not be recreated)
 cd packages/evo-react && npm run update-icons
 
-# 4. Regenerate Marko tags (deleted icon's .marko will not be recreated)
+# 4. Regenerate new Marko tags (deleted icon's .marko will not be recreated)
 cd packages/evo-marko && npm run importSVG
+
+# 5. Regenerate legacy React components (deleted icon's .tsx will not be recreated)
+cd packages/ebayui-core-react && npm run update-icons
+
+# 6. Regenerate legacy Marko 5 tags (deleted icon's directory will not be recreated)
+cd packages/ebayui-core && npm run importSVG
 ```
 
 ### Step 6c — Verify removal
@@ -273,7 +306,9 @@ cd packages/evo-marko && npm run importSVG
 2. `src/data/icons.json` does NOT contain the icon anywhere
 3. `packages/evo-react/src/evo-icon/icons/evo-icon-<name>.tsx` does NOT exist
 4. `packages/evo-marko/src/tags/evo-icon/tags/evo-icon-<name>.marko` does NOT exist
-5. Run `npm run build` from the repo root — the build must pass
+5. `packages/ebayui-core-react/src/ebay-icon/icons/ebay-icon-<name>.tsx` does NOT exist
+6. `packages/ebayui-core/src/components/ebay-icon/icons/ebay-<name>-icon/` does NOT exist
+7. Run `npm run build` from the repo root — the build must pass
 
 ### Step 7c — Migration note
 
@@ -282,6 +317,7 @@ Surface a migration note for the engineer to include in the changeset:
 ```
 BREAKING: icon-{name} has been removed.
 Consumers using EvoIcon{Name} (React) or <evo-icon-{name}/> (Marko) or
+EbayIcon{Name} (legacy React) or <ebay-{name}-icon/> (legacy Marko) or
 <use href="#icon-{name}"/> (HTML) must update to an alternative icon.
 ```
 
@@ -289,11 +325,19 @@ Consumers using EvoIcon{Name} (React) or <evo-icon-{name}/> (Marko) or
 
 ## Key system facts
 
-- **React and Marko icon files are 100% auto-generated.** Never edit them manually.
-  The scripts wipe and recreate the entire icons directory on every run.
+- **Four packages generate icon components from the skin sprite.** All four are 100%
+  auto-generated — never edit their icon files manually:
+  - `@evo-web/react` (`evo-react`) — `npm run update-icons` → reads `packages/skin/src/svg/icons.svg`
+  - `@evo-web/marko` (`evo-marko`) — `npm run importSVG` → reads `packages/skin/src/svg/icons.svg`
+  - `@ebay/ui-core-react` (`ebayui-core-react`) — `npm run update-icons` → reads `@ebay/skin/dist/svg/icons.svg`
+  - `@ebay/ebayui-core` (`ebayui-core`) — `npm run importSVG` → reads `@ebay/skin/dist/svg/icons.svg`
 
-- **One SVG → one sprite symbol → one React component → one Marko tag.**
-  The name `icon-add-24.svg` produces `<symbol id="icon-add-24">`, `EvoIconAdd24`, and `<evo-icon-add-24/>`.
+  The legacy packages (`ebayui-core-react`, `ebayui-core`) read from the compiled `dist/`
+  output, so `packages/skin && npm run build` must run before their scripts.
+
+- **One SVG → one sprite symbol → four sets of components (two new, two legacy).**
+  The name `icon-add-24.svg` produces `<symbol id="icon-add-24">`, `EvoIconAdd24`,
+  `<evo-icon-add-24/>`, `EbayIconAdd24`, and `<ebay-add-24-icon/>`.
 
 - **No per-icon CSS.** Icons render using the shared `svg.icon` block and size modifiers
   (`icon--24`, `icon--32-colored`). Color inherits from `currentColor`.
