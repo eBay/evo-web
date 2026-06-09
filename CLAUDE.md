@@ -9,6 +9,7 @@ AI configuration for eBay's evo-web components monorepo.
 - Never auto-commit or push without explicit user request
 - Always run `npm run build` before marking component work complete
 - Prefer reading existing patterns over introducing new ones
+- Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
   </agent_constraints>
 
 ## <architecture_rules>

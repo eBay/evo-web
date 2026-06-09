@@ -6650,7 +6650,8 @@ export const AllIcons: Story = {
               <EvoIconPayByBank32Colored {...args} />
             </td>
           </tr>
-          
+              
+
           <tr>
             <td>{EvoIconPayByBankUk24Colored.name || "pay-by-bank-uk-24-colored"}</td>
             <td>

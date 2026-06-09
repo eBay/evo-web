@@ -695,6 +695,7 @@ export type Icon =
 'payByBank18Colored' |
 'payByBank24Colored' |
 'payByBank32Colored' |
+'payByBankUk24Colored' |
 'payoneer12Colored' |
 'payoneer18Colored' |
 'payoneer24Colored' |
