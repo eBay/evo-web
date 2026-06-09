@@ -136,10 +136,11 @@ Deprecation hides an icon from the main docs grid and shows it in a "Deprecated 
 warning section. The icon remains in the sprite and in all generated framework components
 until a future major-version deletion.
 
-**Rename scenario:** if an issue says an icon was renamed or replaced, the OLD name is
-being deprecated and the NEW name either already exists or needs to be added separately.
-Confirm the replacement icon exists in the sprite before writing the deprecation changeset.
-Check: `grep -r "icon-<replacement-name>" packages/skin/src/svg/icons.svg`
+**Rename scenario:** if an issue says an icon was renamed or replaced, this is a two-part
+operation — **add the new icon first** (using the full Add pipeline in Steps 2a–3a above),
+then deprecate the old name using this Deprecate workflow. Do not skip the Add pipeline.
+The Add pipeline (build:icons + update-icons + importSVG) is required to generate the
+React and Marko components for the new icon name and to add it to the sprite.
 
 ### Step 2b — Update icons.json
 
@@ -187,9 +188,13 @@ This re-reads `src/data/icons.json`, filters out `skipDocs` entries, and rebuild
 `icons.list`. The deprecated icon stays in `icons.svg` (the sprite) for backwards
 compatibility — that is correct and intentional.
 
-**Do NOT run `update-icons` or `importSVG`** — the deprecated icon must remain in the
-framework components. Removing it from generated code is a breaking change that requires
-a major version release and the delete workflow.
+**Do NOT run `update-icons` or `importSVG`** for the deprecation step itself — the
+deprecated icon must remain in the framework components. Removing it from generated code
+is a breaking change reserved for the delete workflow.
+
+If this is a rename (add + deprecate), you will have already run `update-icons` and
+`importSVG` in the Add step. Do not run them again here — the framework components from
+the Add step are already correct.
 
 ### Step 4b — Verify
 
