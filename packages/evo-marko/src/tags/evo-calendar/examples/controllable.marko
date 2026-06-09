@@ -1,0 +1,12 @@
+import type { DayISO } from "<evo-calendar>";
+
+<let/selected=undefined as undefined | DayISO>
+
+<p>Selected: ${typeof selected === "string" ? selected : JSON.stringify(selected) ?? "none"}</p>
+
+<evo-calendar
+    selectMode="day"
+    selected:=selected
+    ...input
+    a11yNavigateText(month, dir) { return `Go to ${month} (${dir === "prev" ? "Previous" : "Next"} month)` }
+/>

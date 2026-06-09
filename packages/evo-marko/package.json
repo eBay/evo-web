@@ -27,6 +27,7 @@
     "build:storybook": "storybook build -o ./_site",
     "deploy": "storybook build -o ./_site",
     "format": "eslint --fix; prettier . --write --log-level=warn",
+    "generate-locale-info": "node scripts/generate-locale-info && prettier --write src/common/dates/locale-info.ts",
     "importSVG": "tsx scripts/import-svg",
     "lint": "mtc && eslint && prettier . --check --log-level=warn",
     "prepublishOnly": "node scripts/prepublish",
