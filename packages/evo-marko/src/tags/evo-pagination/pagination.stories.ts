@@ -32,7 +32,7 @@ export default {
     a11yHeadingTag: {
       type: "string",
       control: "text",
-      description: "HTML heading tag to use for the a11y heading",
+      description: "HTML tag to use for the a11y heading",
       table: { defaultValue: { summary: "h2" } },
     },
     item: {
@@ -84,9 +84,6 @@ export default {
       description:
         "All attributes and event handlers from [the native HTML `<nav>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/nav) will be passed through",
     },
-  },
-  args: {
-    a11yHeadingTag: "h2",
   },
 } satisfies Meta<Input>;
 
