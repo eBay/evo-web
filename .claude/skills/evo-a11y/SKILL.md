@@ -26,6 +26,7 @@ this skill is not invoked.
 ## Scope declaration from orchestrator
 
 You will receive one of:
+
 - `"Pass 1 — static layer only. Steps 4–6 have run."`
 - `"Pass 2 — full scope. Steps 4–11 have run."`
 - `"Pass 2 — interactive scope. Steps 8–11 have run."`
@@ -41,6 +42,7 @@ If invoked standalone without declaration, ask which pass and scope.
 ### Phase 1a: Validate
 
 **HTML from `/evo-static-component` (in context):**
+
 - `manifest.a11y.explicitRole: true` → `role="..."` on root element
 - `manifest.a11y.labelStrategy === "aria-label-prop"` → `aria-label` present
 - `manifest.a11y.labelStrategy === "aria-hidden"` → `aria-hidden="true"` present for null case
@@ -49,10 +51,12 @@ If invoked standalone without declaration, ask which pass and scope.
 - No `<div>` where a semantic element is correct
 
 **Static storybook (read from disk):**
+
 - `RTL` named export exists — 🔴 if missing
 - `textSpacing` export with `demo-a11y-text-spacing` on root BEM element — 🔴 if missing
 
 **Anti-patterns:**
+
 - `role="presentation"` without justification
 - `aria-hidden` and interactive elements mixed incorrectly
 
@@ -103,20 +107,21 @@ import { urls } from "../../../../data";
 
 **What to fill vs. stub:**
 
-| Section | Fill now | Reason |
-|---|---|---|
-| Best Practices | ✅ Always | Derivable from manifest.a11y + callerObligations |
-| ARIA Reference table | ✅ Always | Derivable from manifest.a11y.ariaAttributes[] |
-| Pointer (non-interactive) | ✅ If focusable === false | Fully static |
-| Keyboard | ✅ If keyboardInteractions[] in manifest | Otherwise stub |
-| Screen Reader | ✅ Static announcements from manifest | Stub interactive state changes |
-| Pointer (interactive) | Stub | Needs active/pressed/hover from Marko/React |
+| Section                   | Fill now                                 | Reason                                           |
+| ------------------------- | ---------------------------------------- | ------------------------------------------------ |
+| Best Practices            | ✅ Always                                | Derivable from manifest.a11y + callerObligations |
+| ARIA Reference table      | ✅ Always                                | Derivable from manifest.a11y.ariaAttributes[]    |
+| Pointer (non-interactive) | ✅ If focusable === false                | Fully static                                     |
+| Keyboard                  | ✅ If keyboardInteractions[] in manifest | Otherwise stub                                   |
+| Screen Reader             | ✅ Static announcements from manifest    | Stub interactive state changes                   |
+| Pointer (interactive)     | Stub                                     | Needs active/pressed/hover from Marko/React      |
 
 **Non-interactive components:** Fill all sections completely in Pass 1 — there
 is no Pass 2 for style/static-only scopes.
 
 Also write `accessibility+meta.json` if the component is non-interactive (no
 Pass 2 needed):
+
 ```json
 {
   "pageTitle": "<DisplayName> Accessibility Guidelines — <tagline>",
@@ -155,6 +160,7 @@ Result: [✅ PASSED — proceed to Marko | 🔴 BLOCKED — fix issues first]
 **Re-run Pass 1 checks** (confirm static is still clean).
 
 **`index.marko`** — read from disk:
+
 - `manifest.a11y.labelStrategy` correctly wired: conditional `aria-label`/`aria-hidden`
 - a11yProps with `allowNull: true` have both branches
 - Required a11yProps: no `?` in `Input` interface
@@ -163,6 +169,7 @@ Result: [✅ PASSED — proceed to Marko | 🔴 BLOCKED — fix issues first]
 - If `manifest.keyboardModel`: `<let/>` for focus state, not class methods
 
 **`index.tsx`** — read from disk:
+
 - a11yProps in TypeScript props type
 - `aria-*` forwarded to correct DOM element
 - Keyboard handlers match `manifest.keyboardInteractions[]`
@@ -177,14 +184,17 @@ Read the existing `accessibility+page.marko` (written in Pass 1). Fill in or
 replace the stubbed sections:
 
 **Keyboard section** — from `manifest.keyboardModel` + `manifest.keyboardInteractions[]`:
+
 - Use `<strong>KEY</strong>` for key names
 - `<strong>must</strong>` for required behavior; `<em>may</em>` for optional
 
 **Screen Reader section** — from `manifest.a11y.screenReaderAnnouncement`:
+
 - Cover each usage mode (decorative, informational, interactive)
 - Plain English — what gets announced, not implementation details
 
 **Pointer section** — from manifest states + behaviors:
+
 - Active/pressed/clicked behavior
 - If inside interactive element: what clicking does
 
@@ -210,3 +220,64 @@ Result: [✅ PASSED | 🔴 BLOCKED — N issue(s)]
 ```
 
 🔴 blocking issues in Pass 2 must be fixed before the build step.
+
+---
+
+## Completion record — mandatory final step
+
+After all outputs are verified on disk, write the completion record.
+The step ID depends on which pass was declared at invocation.
+This is the signal the orchestrator reads to advance — do not skip this step.
+
+### Pass 1 (Step 7)
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual BEM block name for `<BLOCK>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const block = '<BLOCK>';
+s.steps['7'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: [
+    \`src/routes/_index/components/\${block}/accessibility+page.marko\`,
+  ]
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 7 completion record written.');
+"
+```
+
+### Pass 2 (Step 12)
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual BEM block name for `<BLOCK>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const block = '<BLOCK>';
+s.steps['12'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: [
+    \`src/routes/_index/components/\${block}/accessibility+page.marko\`,
+    \`src/routes/_index/components/\${block}/accessibility+meta.json\`,
+  ]
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 12 completion record written.');
+"
+```
+
+If any blocking a11y failure was found that could not be fixed inline, write
+`status: "failed"` with the failing check as the `error` field. Use the correct step ID
+(`'7'` for Pass 1, `'12'` for Pass 2).
