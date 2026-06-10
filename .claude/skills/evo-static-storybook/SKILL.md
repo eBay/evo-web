@@ -24,6 +24,7 @@ conversation context, labelled by variant (`=== Default ===`, etc.). Use
 these HTML blocks as the story content. They are the authoritative structure.
 
 Also read from the manifest for metadata:
+
 - `component.displayName` — for the Storybook title (e.g. `"Accordion"`)
 - `bem.block` — for file paths
 
@@ -40,11 +41,13 @@ component output is primary.
 ## Step 3 — Decide file structure
 
 **Single file** — ≤ 8 total stories:
+
 ```
 packages/skin/src/sass/<block>/stories/<block>.stories.js
 ```
 
 **Split files** — > 8 stories or clearly distinct sub-groupings:
+
 ```
 packages/skin/src/sass/<block>/stories/<block>/base.stories.js
 packages/skin/src/sass/<block>/stories/<block>/cascade.stories.js
@@ -72,6 +75,7 @@ git show HEAD:src/routes/_index/components/<block>/<block>.spec.json
   the stories file. Add exports for any variant not yet represented.
 
 In both cases:
+
 - Read the current stories file first
 - Append missing exports at the end of the file — do not touch existing exports
 - Do not re-add `RTL` or `textSpacing` if already present
@@ -98,6 +102,7 @@ export const base = () => `
 ```
 
 **Rules:**
+
 - Default export has `title` only — no `component`, `parameters`, `decorators`
 - Every named export is a **zero-argument arrow function returning an HTML string**
 - Use the HTML exactly as established by `/evo-static-component`
@@ -109,8 +114,10 @@ export const base = () => `
 label as the export name (camelCase):
 
 ```js
-export const base = () => `<span class="badge" role="img" aria-label="2 notifications">2</span>`;
-export const dot = () => `<span class="badge badge--dot" role="img" aria-label="New activity"/>`;
+export const base = () =>
+  `<span class="badge" role="img" aria-label="2 notifications">2</span>`;
+export const dot = () =>
+  `<span class="badge badge--dot" role="img" aria-label="New activity"/>`;
 ```
 
 **RTL** — wrap the default HTML in `<div dir="rtl">`. Use text content appropriate
@@ -151,3 +158,52 @@ export const animated = () => `...`;
 - [ ] `textSpacing` export present with `demo-a11y-text-spacing` on root BEM element
 - [ ] All exports are zero-argument functions returning HTML strings
 - [ ] EXPERIMENTAL stories flagged with comment
+
+---
+
+## Completion record — mandatory final step
+
+After all story exports are written and verified on disk, write the completion record.
+This is the signal the orchestrator reads to advance — do not skip this step.
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual BEM block name for `<BLOCK>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const block = '<BLOCK>';
+s.steps['5'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: [
+    \`packages/skin/src/sass/\${block}/stories/\${block}.stories.js\`,
+  ]
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 5 completion record written.');
+"
+```
+
+If any required story export (RTL, textSpacing, or a required modifier story) could not be
+generated, write `status: "failed"` with an `error` field describing what is missing instead of `status: "complete"`.
+
+> **Before running the failed variant:** Substitute the actual component name for `$COMPONENT`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['5'] = {
+  status: 'failed',
+  error: '<describe missing export or failure>'
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+```
