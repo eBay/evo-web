@@ -695,6 +695,137 @@ If 🔴 blocking issues: stop. Engineer resolves before proceeding.
 
 ---
 
+## Micro-QA Checkpoint 1 — Static layer verification (after Step 7)
+
+**Scopes: full, static** | ⏭ skip for: interactive, style
+
+> **Before running:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress). Use step ID `micro-qa-1`. If already complete, skip to Step 8.
+
+Spawn a fresh Agent to verify the static layer in genuine isolation. This agent has no
+memory of the generation session — it reads only from disk.
+
+> **Before spawning:** Substitute the actual values for `$COMPONENT`, `$BLOCK`, and `$SCOPE`.
+
+```
+Agent(
+  description: "Micro-QA checkpoint 1 — static layer for $COMPONENT",
+  prompt: """
+You are an isolated QA agent verifying the static layer of an evo-web component pipeline.
+You have NO prior context from the generation session. Read ONLY from disk.
+
+Component: $COMPONENT
+BEM block: $BLOCK
+Manifest: src/routes/_index/components/$COMPONENT/manifest.json
+
+Read the manifest first. Then run each check below in order.
+
+=== CHECKS ===
+
+CHECK 1 — SCSS file exists and is non-empty
+Command: test -s packages/skin/src/sass/$BLOCK/$BLOCK.scss && echo PASS || echo FAIL
+
+CHECK 2 — BEM block rule present in SCSS
+Command: grep -c ".$BLOCK {" packages/skin/src/sass/$BLOCK/$BLOCK.scss
+Pass: count >= 1. Fail: count is 0.
+
+CHECK 3 — No deprecated BEM nesting in SCSS
+Command: grep -c "&--" packages/skin/src/sass/$BLOCK/$BLOCK.scss
+Pass: count is 0. Fail: any nesting found.
+
+CHECK 4 — Every modifier from manifest.bem.modifiers[] has a rule in SCSS
+For each modifier name M in manifest.bem.modifiers[]:
+  grep -c ".$BLOCK--M " packages/skin/src/sass/$BLOCK/$BLOCK.scss
+  Pass: count >= 1. Fail: count is 0 (rule missing).
+
+CHECK 5 — Stories file exists
+Command: test -f packages/skin/src/sass/$BLOCK/stories/$BLOCK.stories.js && echo PASS || echo FAIL
+
+CHECK 6 — RTL export present in stories
+Command: grep -c "export.*RTL" packages/skin/src/sass/$BLOCK/stories/$BLOCK.stories.js
+Pass: count >= 1.
+
+CHECK 7 — textSpacing export present in stories
+Command: grep -c "export.*textSpacing" packages/skin/src/sass/$BLOCK/stories/$BLOCK.stories.js
+Pass: count >= 1.
+
+CHECK 8 — accessibility+page.marko exists
+Command: test -f src/routes/_index/components/$COMPONENT/accessibility+page.marko && echo PASS || echo FAIL
+
+CHECK 9 — No Marko 5 scriptlet patterns in SCSS directory
+Command: grep -rn "^\$ \(let\|const\|var\)" packages/skin/src/sass/$BLOCK/
+Pass: no output. Fail: any match.
+
+=== WRITE RESULT ===
+
+After all checks, write your result to the pipeline state file.
+Substitute the actual value of $COMPONENT before running:
+
+node -e "
+const fs = require('fs');
+const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const issues = [];
+// populate issues[] with any FAIL results from your checks above (as strings)
+s.steps['micro-qa-1'] = {
+  status: issues.length === 0 ? 'complete' : 'failed',
+  completedAt: new Date().toISOString(),
+  checks: 9,
+  issues
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+
+Return a JSON object: { passed: boolean, issues: string[] }
+If passed is false, list each failing check with the specific file and what was expected.
+  """
+)
+```
+
+After the Agent returns, read the micro-qa-1 result from the state file:
+
+> **Before running:** Substitute the actual value of `$COMPONENT`.
+
+```bash
+node -e "
+const fs = require('fs');
+const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
+console.log(JSON.stringify(s.steps['micro-qa-1'], null, 2));
+"
+```
+
+**If micro-qa-1 status is `failed`:**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 Micro-QA Checkpoint 1 FAILED — static layer issues detected
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The following issues were found by an isolated verification agent:
+<list issues from micro-qa-1.issues[]>
+
+These issues were caught BEFORE the Marko and React layers were generated,
+saving you from building framework layers on a broken static foundation.
+
+Fix the issues above by re-running /evo-static-component or editing files
+manually, then re-run /evo-component $COMPONENT to retry from this checkpoint.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Do NOT advance to Step 8. Do not attempt inline fixes. Stop.
+
+**If micro-qa-1 status is `complete`:**
+
+```
+✅ Micro-QA Checkpoint 1 — static layer verified by isolated agent (9/9 checks passed)
+```
+
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check). Use step ID `micro-qa-1`.
+
+→ **Next:** After micro-qa-1 passes, immediately invoke Step 8.
+
+---
+
 ## Step 8 — Marko component
 
 **Scopes: full, interactive** | ⏭ skip for: static, style
