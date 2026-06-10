@@ -8,10 +8,9 @@ $ const {
     a11yCurrentText = "Results Pagination - Page 1",
     a11yPreviousText = "Previous page",
     a11yNextText = "Next page",
+    ...htmlInput
 } = input;
 static var disabledItem: Item = { disabled: true };
-static var ignoredAttributes = ["item", "a11yHeadingTag"];
-static var ignoredItemAttributes = ["current", "disabled"];
 static function isItemHidden(
     index: number,
     range: {
@@ -44,14 +43,23 @@ $ var slicedItems = baseItems.slice(
     nextItem === disabledItem ? undefined : lastItemIndex,
 );
 $ var range = component._getVisibleRange(slicedItems);
+$ const {
+    current: prevItemCurrent,
+    disabled: prevItemDisabled,
+    ...prevItemHtmlInput
+} = prevItem;
+$ const {
+    current: nextItemCurrent,
+    disabled: nextItemDisabled,
+    ...nextItemHtmlInput
+} = nextItem;
 
 <nav
-    ...processHtmlAttributes(input, ignoredAttributes)
+    ...processHtmlAttributes(htmlInput)
     role="navigation"
     class=["pagination", inputClass]
     key="root"
-    aria-labelledby:scoped="heading"
->
+    aria-labelledby:scoped="heading">
     <span aria-live="polite" role="status">
         <${a11yHeadingTag || "h2"} id:scoped="heading" class="clipped">
             ${a11yCurrentText}
@@ -59,26 +67,29 @@ $ var range = component._getVisibleRange(slicedItems);
     </span>
 
     <${component.getItemTag(prevItem)}
-        ...processHtmlAttributes(prevItem, ignoredItemAttributes)
+        ...processHtmlAttributes(prevItemHtmlInput)
         class=[
             "pagination__previous",
             prevItem.href ? "icon-link" : "icon-btn",
             prevItem.class,
         ]
-        aria-disabled=prevItem.disabled && "true"
+        aria-disabled=prevItemDisabled && "true"
         aria-label=a11yPreviousText
         style=[prevItem.style, { minWidth: 40 }]
-        onClick("handlePreviousPageClick")
-    >
+        onClick("handlePreviousPageClick")>
         <ebay-arrow-left-16-icon/>
     </>
 
     <ol key="items" class="pagination__items">
         <for|item, i| of=slicedItems>
+            $ const {
+                current: itemCurrent,
+                disabled: itemDisabled,
+                ...itemHtmlInput
+            } = item;
             <if(range.dotsIndex === i || range.leadingDotsIndex === i)>
                 $ var hideDots = range.hideDots;
                 $ var isLeading = false;
-
                 $ if (range.leadingDotsIndex === i) {
                     isLeading = true;
                     hideDots = !!range.hideLeadingDots;
@@ -87,35 +98,36 @@ $ var range = component._getVisibleRange(slicedItems);
                     <if(range.hasOverflow)>
                         <span
                             class=["pagination__item", item.class]
-                            role="separator"
-                        >
+                            role="separator">
                             <ebay-fake-menu-button
                                 variant="icon"
                                 transparent
                                 icon=DotsIcon
                                 collapseOnSelect
-                                on-select("handleMenuPageNumber")
-                            >
-                                <for|item, j| of=slicedItems>
+                                on-select("handleMenuPageNumber")>
+                                <for|menuItem, j| of=slicedItems>
                                     $ var visible = (
                                         isLeading
                                             ? j < range.start
                                             : j > range.end
                                     );
                                     <if(isItemHidden(j, range) && visible)>
+                                        $ const {
+                                            current: menuItemCurrent,
+                                            disabled: menuItemDisabled,
+                                            ...menuItemHtmlInput
+                                        } = menuItem;
                                         <@item
                                             ...processHtmlAttributes(
-                                                item,
-                                                ignoredItemAttributes,
+                                                menuItemHtmlInput,
                                             )
                                             type=(
                                                 component.getItemTag(
-                                                    item,
+                                                    menuItem,
                                                 ) as Marko.HTML.Button["type"]
                                             )
-                                            data-page-number=j
-                                        >
-                                            <${item.renderBody}/>
+                                            data-page-number=j>
+                                            <${menuItem.renderBody}/>
                                         </@item>
                                     </if>
                                 </for>
@@ -125,8 +137,7 @@ $ var range = component._getVisibleRange(slicedItems);
                     <else>
                         <span
                             class=["pagination__item", item.class]
-                            role="separator"
-                        >
+                            role="separator">
                             <ebay-overflow-horizontal-24-icon/>
                         </span>
                     </else>
@@ -134,12 +145,11 @@ $ var range = component._getVisibleRange(slicedItems);
             </if>
             <li hidden=isItemHidden(i, range)>
                 <${component.getItemTag(item)}
-                    ...processHtmlAttributes(item, ignoredItemAttributes)
+                    ...processHtmlAttributes(itemHtmlInput)
                     key="pageItem[]"
                     class=["pagination__item", item.class]
-                    aria-current=item.current && "page"
-                    onClick("handlePageNumberClick", i)
-                >
+                    aria-current=itemCurrent && "page"
+                    onClick("handlePageNumberClick", i)>
                     <${item.renderBody}/>
                 </>
             </li>
@@ -147,17 +157,16 @@ $ var range = component._getVisibleRange(slicedItems);
     </ol>
 
     <${component.getItemTag(nextItem)}
-        ...processHtmlAttributes(nextItem, ignoredItemAttributes)
+        ...processHtmlAttributes(nextItemHtmlInput)
         class=[
             "pagination__next",
             nextItem.href ? "icon-link" : "icon-btn",
             nextItem.class,
         ]
-        aria-disabled=nextItem.disabled && "true"
+        aria-disabled=nextItemDisabled && "true"
         aria-label=a11yNextText
         style=[nextItem.style, { minWidth: 40 }]
-        onClick("handleNextPageClick")
-    >
+        onClick("handleNextPageClick")>
         <ebay-arrow-right-16-icon/>
     </>
 </nav>
