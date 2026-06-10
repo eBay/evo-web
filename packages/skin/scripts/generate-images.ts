@@ -172,7 +172,7 @@ class GenerateImages {
         const isAllowedInDocs =
             config.icons.skipDocs.indexOf(nameObj.simpleName) === -1 &&
             (config.icons.deprecated === null ||
-                config.icons.deprecated.indexOf(nameObj.simpleName) === -1);
+                !config.icons.deprecated.some((dep) => dep.name === nameObj.simpleName));
 
         if (!symbol) {
             console.log("ERROR: no symbol found in " + filename);

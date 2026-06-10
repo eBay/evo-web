@@ -696,6 +696,7 @@ import { EbayIconPayByBank12Colored } from "../icons/ebay-icon-pay-by-bank-12-co
 import { EbayIconPayByBank18Colored } from "../icons/ebay-icon-pay-by-bank-18-colored";
 import { EbayIconPayByBank24Colored } from "../icons/ebay-icon-pay-by-bank-24-colored";
 import { EbayIconPayByBank32Colored } from "../icons/ebay-icon-pay-by-bank-32-colored";
+import { EbayIconPayByBankUk24Colored } from "../icons/ebay-icon-pay-by-bank-uk-24-colored";
 import { EbayIconPayoneer12Colored } from "../icons/ebay-icon-payoneer-12-colored";
 import { EbayIconPayoneer18Colored } from "../icons/ebay-icon-payoneer-18-colored";
 import { EbayIconPayoneer24Colored } from "../icons/ebay-icon-payoneer-24-colored";
@@ -6589,6 +6590,14 @@ export const AllIcons = () => (
             <td>ebay-icon-pay-by-bank-32-colored</td>
             <td>
                 <EbayIconPayByBank32Colored />
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td>ebay-icon-pay-by-bank-uk-24-colored</td>
+            <td>
+                <EbayIconPayByBankUk24Colored />
             </td>
         </tr>
             
