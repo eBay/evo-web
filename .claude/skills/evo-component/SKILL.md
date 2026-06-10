@@ -1113,32 +1113,109 @@ Fix failures inline. Do not advance to QA with a failing build.
 
 ---
 
-## Step 15 — QA validation
+## Step 15 — QA
 
-**Scopes: all**
+**Scopes: full, static, interactive, style** (always runs)
 
-> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
-> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+> **Before running:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress). Use step ID `15`. If already complete, skip.
 
-Invoke: `/evo-qa` via the Skill tool (inline).
+Spawn a fresh Agent with subagent_type `evo-qa` to run QA in genuine isolation.
+The evo-qa agent has no memory of the generation session — it reads only from disk.
 
-Note: `evo-qa` is not a registered agent type and cannot be invoked via the
-Agent tool. The `evo-qa` skill contains isolation-by-instruction — it explicitly
-ignores conversation context and reads only from disk, which is sufficient for
-its binary file/manifest checks.
+> **Before spawning:** Substitute the actual values for `$COMPONENT`, `$SCOPE`, and `$BLOCK`.
+> For `files`, read `steps[*].outputs` from `pipeline-state.json` and flatten into a list.
+> For `reference`, use the manifest's `migration.legacyName` field if present; otherwise omit.
 
-Pass context to the skill in your invocation args:
+```
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const files = Object.values(s.steps)
+  .filter(st => st && st.outputs)
+  .flatMap(st => st.outputs);
+console.log(JSON.stringify(files, null, 2));
+"
+```
 
-- Component name, scope, manifest path
-- All file paths generated in this run
-- Any known approved deviations from gap-report.json
+Then spawn the QA agent:
 
-| Layer   | Runs when              | What it checks                                                                                                             |
-| ------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Layer 1 | Always                 | Files present (per scope), props/slots/BEM/ARIA match manifest, no Marko 5 patterns, no gap placeholders, storybook format |
-| Layer 2 | `--reference` provided | Structural delta + fidelity score vs. reference                                                                            |
+```
+Agent(
+  subagent_type: "evo-qa",
+  description: "QA verification for $COMPONENT (scope: $SCOPE)",
+  prompt: """
+manifest: src/routes/_index/components/$COMPONENT/manifest.json
+files: [<paste the JSON array output from the node command above>]
+reference: <legacyName from manifest, or omit this line>
+scope: $SCOPE
+  """
+)
+```
 
-→ **Next:** After QA returns, fix any 🔴 failures inline and re-run. Once QA passes, immediately proceed to Step 16.
+After the Agent returns, read its output. If it contains `Layer 1 result: ✅ PASSED`, write the completion record below with `status: "complete"`. If it contains `Layer 1 result: 🔴 FAILED`, write it with `status: "failed"` and surface the QA report to the engineer.
+
+**If QA passed:**
+
+> **Before running:** Substitute the actual value of `$COMPONENT`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['15'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: []
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 15 completion record written.');
+"
+```
+
+**If QA failed:**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 QA FAILED — isolated verification agent found issues
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<paste full QA report here>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+> **Before running:** Substitute the actual value of `$COMPONENT` and describe the failure.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['15'] = {
+  status: 'failed',
+  error: '<summarize which Layer 1 checks failed>'
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+```
+
+Do NOT mark the pipeline complete when QA fails. Surface the report and stop.
+
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check). Use step ID `15`.
+
+→ **Next:** Pipeline complete. Print the final summary banner:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Pipeline complete: $COMPONENT ($SCOPE scope)
+All steps verified. QA passed.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
 ---
 

@@ -20,6 +20,7 @@ You will never generate or modify component code. You only read and report.
 ## Inputs
 
 You will receive:
+
 - `manifest` — path to `src/routes/_index/components/$COMPONENT/manifest.json`
 - `files` — list of generated file paths to verify
 - `reference` — (optional) name of an existing reference component for Layer 2 comparison
@@ -34,19 +35,19 @@ The checks below are written for a full component generation (Marko + React + sk
 When `--scope static` is passed, adapt as follows — do not fail checks that are
 structurally inapplicable to the scope:
 
-| Check | Full scope | Static scope |
-|---|---|---|
-| 1a File presence | All files | SCSS + stories + css+page.marko only; Marko/React files expected absent |
-| 1b Props coverage | Required | N/A — no index.marko |
-| 1c Slots coverage | Required | N/A — no index.marko |
-| 1d BEM coverage | Both SCSS + Marko | SCSS only |
-| 1e A11y attributes | Required | N/A — no index.marko |
-| 1f Marko 5 patterns | Required | N/A — no index.marko |
-| 1g Style import | Required | N/A — no style.ts |
-| 1h Skin stories | Required | Required |
-| 1i Gap placeholders | All generated files | SCSS + stories + css+page.marko |
-| 1j Dark mode tokens | Required | Required |
-| 1k Contrast ratios | Required when light-bg modifier | Required when light-bg modifier |
+| Check               | Full scope                      | Static scope                                                            |
+| ------------------- | ------------------------------- | ----------------------------------------------------------------------- |
+| 1a File presence    | All files                       | SCSS + stories + css+page.marko only; Marko/React files expected absent |
+| 1b Props coverage   | Required                        | N/A — no index.marko                                                    |
+| 1c Slots coverage   | Required                        | N/A — no index.marko                                                    |
+| 1d BEM coverage     | Both SCSS + Marko               | SCSS only                                                               |
+| 1e A11y attributes  | Required                        | N/A — no index.marko                                                    |
+| 1f Marko 5 patterns | Required                        | N/A — no index.marko                                                    |
+| 1g Style import     | Required                        | N/A — no style.ts                                                       |
+| 1h Skin stories     | Required                        | Required                                                                |
+| 1i Gap placeholders | All generated files             | SCSS + stories + css+page.marko                                         |
+| 1j Dark mode tokens | Required                        | Required                                                                |
+| 1k Contrast ratios  | Required when light-bg modifier | Required when light-bg modifier                                         |
 
 Mark inapplicable checks as `✅ N/A — <scope> scope` in the report.
 
@@ -62,30 +63,32 @@ Record every failure — do not stop at the first one.
 Verify every expected file exists on disk. Expected files depend on what the manifest
 indicates was built:
 
-| Condition | Expected files |
-|---|---|
-| Always | `packages/evo-marko/src/tags/<name>/index.marko` |
-| Always | `packages/evo-marko/src/tags/<name>/style.ts` |
-| Always | `packages/evo-marko/src/tags/<name>/test/test.server.ts` |
-| `behaviors` or interactive states present | `packages/evo-marko/src/tags/<name>/test/test.browser.ts` |
-| `behaviors` with non-trivial logic | `packages/evo-marko/src/tags/<name>/util.ts` |
-| Always | `packages/evo-react/src/<name>/index.tsx` |
-| `figma.*` or `tokens` non-null | `packages/skin/src/sass/<block>/<block>.scss` |
-| Always | `packages/skin/src/sass/<block>/stories/<block>.stories.js` (or split files) |
-| Always | `packages/evo-marko/src/tags/<name>/<name>.stories.ts` |
-| Always | `packages/evo-react/src/<name>/<basename>.stories.tsx` |
+| Condition                                 | Expected files                                                               |
+| ----------------------------------------- | ---------------------------------------------------------------------------- |
+| Always                                    | `packages/evo-marko/src/tags/<name>/index.marko`                             |
+| Always                                    | `packages/evo-marko/src/tags/<name>/style.ts`                                |
+| Always                                    | `packages/evo-marko/src/tags/<name>/test/test.server.ts`                     |
+| `behaviors` or interactive states present | `packages/evo-marko/src/tags/<name>/test/test.browser.ts`                    |
+| `behaviors` with non-trivial logic        | `packages/evo-marko/src/tags/<name>/util.ts`                                 |
+| Always                                    | `packages/evo-react/src/<name>/index.tsx`                                    |
+| `figma.*` or `tokens` non-null            | `packages/skin/src/sass/<block>/<block>.scss`                                |
+| Always                                    | `packages/skin/src/sass/<block>/stories/<block>.stories.js` (or split files) |
+| Always                                    | `packages/evo-marko/src/tags/<name>/<name>.stories.ts`                       |
+| Always                                    | `packages/evo-react/src/<name>/<basename>.stories.tsx`                       |
 
 **Failure:** any expected file is missing.
 
 ### 1b — Props coverage (index.marko)
 
 Read `index.marko`. For each prop in `manifest.props[]`:
+
 - The `Input` interface must declare the prop with the correct type
 - Enum props must use a union literal type (e.g. `"single" | "multiple"`)
 - Required props must not have `?` optional marker
 - Optional props must have `?`
 
 For each `a11yProp` in `manifest.a11yProps[]`:
+
 - Must appear in the `Input` interface
 - If `required: true` → no `?`
 - If `allowNull: true` → type must include `| null`
@@ -95,6 +98,7 @@ For each `a11yProp` in `manifest.a11yProps[]`:
 ### 1c — Slots coverage (index.marko)
 
 For each slot in `manifest.slots[]`:
+
 - `type: "named-attrtag"` → must appear as `Marko.AttrTag<...>` in `Input`
 - `type: "default"` → component uses `input.content` (no declaration in `Input`)
 - `required: true` → no `?` on the slot prop
@@ -104,11 +108,13 @@ For each slot in `manifest.slots[]`:
 ### 1d — BEM coverage (index.marko + scss)
 
 Read `manifest.bem`. Check `index.marko`:
+
 - Root element must apply `manifest.bem.block` as a class
 - Each modifier in `manifest.bem.modifiers[]` must have conditional class logic
 - Each element in `manifest.bem.elements[]` must appear somewhere in the template
 
 Check `<block>.scss` (if generated):
+
 - `.${block}` rule must exist
 - Each modifier in `manifest.bem.modifiers[]` must have a `.${block}--${modifier}` rule
 - Each element in `manifest.bem.elements[]` must have a `.${block}__${element}` rule
@@ -118,6 +124,7 @@ Check `<block>.scss` (if generated):
 ### 1e — A11y attributes (index.marko)
 
 Read `manifest.a11y`. Check `index.marko`:
+
 - If `a11y.role` is non-null and `a11y.explicitRole: true` → `role="..."` attribute present on root
 - If `a11y.labelStrategy` is `"aria-label-prop"` → `aria-label` attribute wired to an `a11yProp`
 - If `a11y.labelStrategy` is `"aria-hidden"` → `aria-hidden` present with correct condition
@@ -128,6 +135,7 @@ Read `manifest.a11y`. Check `index.marko`:
 ### 1f — No Marko 5 patterns (index.marko)
 
 Scan `index.marko` for forbidden patterns:
+
 - `$ let` or `$ const` or `$ var` (scriptlet syntax)
 - `this.emit(`, `this.state`, `this.setState`
 - `renderBody` (use `content` instead)
@@ -139,9 +147,11 @@ Scan `index.marko` for forbidden patterns:
 ### 1g — Style import (style.ts)
 
 Read `style.ts`. Must contain exactly:
+
 ```ts
 import "@ebay/skin/<block>";
 ```
+
 where `<block>` matches `manifest.bem.block`.
 
 **Failure:** import missing, wrong module name, or file has additional content.
@@ -149,6 +159,7 @@ where `<block>` matches `manifest.bem.block`.
 ### 1h — Skin storybook required stories (stories js file)
 
 Read the skin stories file. Verify:
+
 - At least one story covers the base/default rendering
 - An export named `RTL` exists
 - An export named `textSpacing` exists and applies `demo-a11y-text-spacing` to the root element
@@ -159,6 +170,7 @@ Read the skin stories file. Verify:
 ### 1i — No unresolved gap placeholders in code
 
 Scan all generated files for strings that suggest a gap was left unresolved:
+
 - `TODO:`, `FIXME:`, `<ENGINEER>`, `<FILL IN>`, `???`, `__PLACEHOLDER__`
 
 These indicate a gap from the manifest was not resolved before generation ran.
@@ -179,12 +191,14 @@ determine its background color token. Then:
      light and dark mode.
 
 2. **For light-background modifiers**, grep all four theme token source files:
+
    ```bash
    grep "foreground-on-<type>" packages/skin/src/tokens/evo-light.scss
    grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark.scss
    grep "foreground-on-<type>" packages/skin/src/tokens/evo-light-class.scss
    grep "foreground-on-<type>" packages/skin/src/tokens/evo-dark-class.scss
    ```
+
    where `<type>` is the modifier name or the semantic category (e.g. `warning`).
 
    **All four files must define the token.** The `evo-light-class` and `evo-dark-class`
@@ -208,6 +222,7 @@ determine its background color token. Then:
    inherit the on-inverse (white) fallback — a WCAG 1.4.3 failure on a light background.
 
 **Failure conditions:**
+
 - A light-background modifier's foreground token is absent from any of the four theme files
 - The token's value is an alias to `foreground-primary` or another adaptive token
 - No explicit `.modifier a` / `.modifier button.fake-link` color rules in the SCSS
@@ -221,9 +236,11 @@ WCAG 2.2 AA contrast ratios against the resolved background color. Check against
 dist rather than source — the dist reflects actual browser-received values.
 
 1. **Get the resolved background color** from `skin-default.css`:
+
    ```bash
    grep -A 3 "\.${block}--<modifier>" packages/skin/dist/bundles/skin-default.css | grep background-color
    ```
+
    Resolve the token chain to a hex value using `dist/tokens/evo-light.css`.
 
 2. **For each foreground element**, verify minimum contrast ratios (WCAG 2.2 AA):
@@ -258,6 +275,7 @@ This layer is **informational only** — it does not block. Report findings, do 
 ### 2a — Structural delta
 
 Compare `index.marko` against the reference template:
+
 - List props present in the reference but absent from the generated component
 - List props present in the generated component but absent from the reference
 - Note any significant structural differences (different root element, missing branches)
@@ -265,6 +283,7 @@ Compare `index.marko` against the reference template:
 ### 2b — BEM delta
 
 Compare BEM classes used in the generated `index.marko` against the reference:
+
 - Missing classes (in reference, not in generated)
 - Added classes (in generated, not in reference)
 
@@ -326,3 +345,37 @@ Layer 2 result: Informational only — does not block.
 
 ────────────────────────────────────────────────────────────────
 ```
+
+---
+
+## Completion record — mandatory final step
+
+After printing the QA Report, write the result to the pipeline state file.
+The orchestrator reads this record — it does not read your prose output.
+
+> **Before running:** Substitute the actual value of `$COMPONENT`.
+> Populate `issues[]` with the failed check IDs (e.g. `"1b"`, `"1d"`) if any checks failed.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const issues = [];
+// Add each failed check ID to issues[] (e.g. issues.push('1b: Props coverage — aria-label missing'))
+s.steps['15'] = {
+  status: issues.length === 0 ? 'complete' : 'failed',
+  completedAt: new Date().toISOString(),
+  checks: 11,
+  issues
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 15 QA completion record written.');
+"
+```
+
+**If all checks passed:** `issues` is empty → `status: "complete"`.
+**If any Layer 1 checks failed:** populate `issues[]` → `status: "failed"`.
+Layer 2 failures are informational and do not set `status: "failed"`.
