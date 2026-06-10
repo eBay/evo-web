@@ -8,6 +8,7 @@
     "@a11y-previous-text": "string",
     "@a11y-next-text": "string",
     "@a11y-current-text": "string",
+    "@a11y-heading-tag": "string",
     "@role": "never",
     "@aria-labelledby": "never",
     "@variant": {
