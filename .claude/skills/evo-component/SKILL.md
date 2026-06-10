@@ -934,6 +934,148 @@ If 🔴 blocking issues: fix inline before build.
 
 ---
 
+## Micro-QA Checkpoint 2 — Framework layer verification (after Step 12)
+
+**Scopes: full, interactive** | ⏭ skip for: static, style
+
+> **Before running:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress). Use step ID `micro-qa-2`. If already complete, skip to Step 13.
+
+Spawn a fresh Agent to verify the framework layer in genuine isolation. This agent has no
+memory of the generation session — it reads only from disk.
+
+> **Before spawning:** Substitute the actual values for `$COMPONENT`, `$BLOCK`, `$MARKO_NAME` (e.g. `evo-accordion`), `$REACT_NAME` (bare kebab-case, e.g. `accordion`), and `$SCOPE`.
+
+```
+Agent(
+  description: "Micro-QA checkpoint 2 — framework layer for $COMPONENT",
+  prompt: """
+You are an isolated QA agent verifying the framework layer of an evo-web component pipeline.
+You have NO prior context from the generation session. Read ONLY from disk.
+
+Component: $COMPONENT
+BEM block: $BLOCK
+Marko name: $MARKO_NAME   (e.g. evo-accordion)
+React name: $REACT_NAME   (e.g. accordion)
+Manifest: src/routes/_index/components/$COMPONENT/manifest.json
+
+Read the manifest fully before starting checks.
+
+=== CHECKS ===
+
+CHECK 1 — index.marko exists and is non-empty
+Command: test -s packages/evo-marko/src/tags/$MARKO_NAME/index.marko && echo PASS || echo FAIL
+
+CHECK 2 — No Marko 5 scriptlet patterns in index.marko
+Command: grep -cn "^\$ \(let\|const\|var\)" packages/evo-marko/src/tags/$MARKO_NAME/index.marko
+Pass: 0. Fail: any count > 0 (list each matching line).
+
+CHECK 3 — BEM block class applied in index.marko
+Command: grep -c "\"$BLOCK\"" packages/evo-marko/src/tags/$MARKO_NAME/index.marko
+Pass: >= 1.
+
+CHECK 4 — Every prop in manifest.props[] appears in the Input interface
+For each prop name P in manifest.props[]:
+  grep -c "P[?]?:" packages/evo-marko/src/tags/$MARKO_NAME/index.marko
+  Pass: >= 1. Fail: 0 (prop missing from interface).
+
+CHECK 5 — style.ts contains correct skin import
+Command: cat packages/evo-marko/src/tags/$MARKO_NAME/style.ts
+Expected content: import "@ebay/skin/$BLOCK";
+Pass: exact match. Fail: wrong or missing.
+
+CHECK 6 — index.tsx exists and is non-empty
+Command: test -s packages/evo-react/src/$REACT_NAME/index.tsx && echo PASS || echo FAIL
+
+CHECK 7 — No forwardRef in index.tsx (evo-react uses React 19 native ref)
+Command: grep -c "forwardRef" packages/evo-react/src/$REACT_NAME/index.tsx
+Pass: 0. Fail: any count > 0.
+
+CHECK 8 — Component export present in index.tsx
+Command: grep -c "^export \(function\|const\)" packages/evo-react/src/$REACT_NAME/index.tsx
+Pass: >= 1.
+
+CHECK 9 — Every prop in manifest.props[] appears in React Props type
+For each prop name P in manifest.props[]:
+  grep -c "P[?]?:" packages/evo-react/src/$REACT_NAME/index.tsx
+  Pass: >= 1.
+
+CHECK 10 — Marko stories file exists
+Command: test -f packages/evo-marko/src/tags/$MARKO_NAME/$MARKO_NAME.stories.ts && echo PASS || echo FAIL
+
+CHECK 11 — React stories file exists
+Command: find packages/evo-react/src/$REACT_NAME -name "*.stories.tsx" | grep -c .
+Pass: >= 1.
+
+CHECK 12 — accessibility+meta.json exists
+Command: test -f src/routes/_index/components/$COMPONENT/accessibility+meta.json && echo PASS || echo FAIL
+
+=== WRITE RESULT ===
+
+After all checks, write your result to the pipeline state file.
+Substitute the actual value of $COMPONENT before running:
+
+node -e "
+const fs = require('fs');
+const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const issues = [];
+// populate with any FAIL results as strings
+s.steps['micro-qa-2'] = {
+  status: issues.length === 0 ? 'complete' : 'failed',
+  completedAt: new Date().toISOString(),
+  checks: 12,
+  issues
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+
+Return: { passed: boolean, issues: string[] }
+  """
+)
+```
+
+After the Agent returns, read micro-qa-2 from the state file:
+
+> **Before running:** Substitute the actual value of `$COMPONENT`.
+
+```bash
+node -e "
+const fs = require('fs');
+const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
+console.log(JSON.stringify(s.steps['micro-qa-2'], null, 2));
+"
+```
+
+**If micro-qa-2 status is `failed`:**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 Micro-QA Checkpoint 2 FAILED — framework layer issues detected
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The following issues were found by an isolated verification agent:
+<list issues from micro-qa-2.issues[]>
+
+These issues were caught before docs, build, and final QA run.
+Fix the issues, then re-run /evo-component $COMPONENT to retry from this checkpoint.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Do NOT advance to Step 13. Do not attempt inline fixes. Stop.
+
+**If micro-qa-2 status is `complete`:**
+
+```
+✅ Micro-QA Checkpoint 2 — framework layer verified by isolated agent (12/12 checks passed)
+```
+
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check). Use step ID `micro-qa-2`.
+
+→ **Next:** After micro-qa-2 passes, immediately invoke Step 13.
+
+---
+
 ## Step 13 — Docs hookup (full)
 
 **Scopes: full, static, interactive** | ⏭ skip for: style
