@@ -16,6 +16,7 @@ TypeScript objects — no external helpers, no decorator imports, everything sel
 ## Step 1 — Read the manifest and component types
 
 Read `src/routes/_index/components/$COMPONENT/manifest.json`. Extract:
+
 - `component.name` — tag name (e.g. `evo-accordion`)
 - `component.displayName` — for the Storybook title (e.g. `EvoAccordion`)
 - `component.category` — maps to the Storybook title prefix
@@ -40,19 +41,19 @@ any evo-react-specific usage notes. More useful: the CSS docs findings from `css
 Map `component.category` to the sidebar category using these exact strings (they match the
 `storySort` order in `preview.tsx`):
 
-| manifest category | Storybook title prefix |
-|---|---|
-| `buttons` | `buttons` |
-| `form` | `form input` |
-| `graphics & icons` | `Graphics & Icons` |
-| `layout` | `building blocks` |
-| `dialogs` | `dialogs` |
-| `navigation` | `navigation & disclosure` |
-| `notices` | `notices & tips` |
-| `progress` | `progress` |
-| `building blocks` | `building blocks` |
-| `media` | `media` |
-| `data display` | `data display` |
+| manifest category  | Storybook title prefix    |
+| ------------------ | ------------------------- |
+| `buttons`          | `buttons`                 |
+| `form`             | `form input`              |
+| `graphics & icons` | `Graphics & Icons`        |
+| `layout`           | `building blocks`         |
+| `dialogs`          | `dialogs`                 |
+| `navigation`       | `navigation & disclosure` |
+| `notices`          | `notices & tips`          |
+| `progress`         | `progress`                |
+| `building blocks`  | `building blocks`         |
+| `media`            | `media`                   |
+| `data display`     | `data display`            |
 
 Title format: `"<prefix>/<ComponentName>"` — e.g. `"buttons/EvoAccordion"` or `"form input/EvoTextbox"`.
 
@@ -107,6 +108,7 @@ export const Default: Story = {
 ### argTypes reference
 
 **String enum (select):**
+
 ```tsx
 type: {
   control: "select",
@@ -117,6 +119,7 @@ type: {
 ```
 
 **Boolean:**
+
 ```tsx
 collapsible: {
   control: "boolean",
@@ -126,6 +129,7 @@ collapsible: {
 ```
 
 **Free string (including `children` and `a11yText`):**
+
 ```tsx
 children: {
   control: "text",
@@ -138,6 +142,7 @@ a11yText: {
 ```
 
 **Number:**
+
 ```tsx
 count: {
   control: "number",
@@ -156,6 +161,7 @@ from the TypeScript types when the component extends native HTML props.
 ### `args` defaults
 
 Set `args` at the meta level for props that every story should have a sensible default for:
+
 - `children` → a realistic label string (`"Accordion"`, `"Submit"`, not `"string"`)
 - Required a11y props → realistic English defaults (`"Close dialog"`, `"Loading"`)
 - Enum props → the manifest default value
@@ -165,6 +171,7 @@ Story-level `args` only override what differs from the meta defaults.
 ### Additional stories
 
 **Simple override:** Just add `args`:
+
 ```tsx
 export const Secondary: Story = {
   args: { priority: "secondary" },
@@ -172,6 +179,7 @@ export const Secondary: Story = {
 ```
 
 **Complex children or JSX wrapper:** Use `render`:
+
 ```tsx
 export const WithIcon: Story = {
   render: (args) => (
@@ -186,11 +194,13 @@ export const WithIcon: Story = {
 ```
 
 Use `render` when:
+
 - Children must be JSX nodes, not a string
 - The component requires a context provider or layout wrapper
 - Multiple sub-components must be composed together (compound component)
 
 **Controlled/stateful example:** Use React state inside `render`:
+
 ```tsx
 export const Controlled: Story = {
   render: (args) => {
@@ -209,12 +219,12 @@ Import `React` from `"react"` at the top of the file when using hooks.
 
 ### How many stories to create
 
-| Component complexity | Minimum stories |
-|---|---|
-| Static, no variants | `Default` only |
-| Has enum prop with distinct visual states | `Default` + one per meaningful option |
-| Interactive (open/close, check/uncheck) | `Default` + `Controlled` |
-| Compound (accordion, tabs, dialog) | `Default` with full child structure + key variants |
+| Component complexity                      | Minimum stories                                    |
+| ----------------------------------------- | -------------------------------------------------- |
+| Static, no variants                       | `Default` only                                     |
+| Has enum prop with distinct visual states | `Default` + one per meaningful option              |
+| Interactive (open/close, check/uncheck)   | `Default` + `Controlled`                           |
+| Compound (accordion, tabs, dialog)        | `Default` with full child structure + key variants |
 
 Keep to ≤ 6 stories — engineers explore variants through the controls panel. Stories
 are for documenting intent and verifying the key visual states, not exhaustive enumeration.
@@ -222,11 +232,13 @@ are for documenting intent and verifying the key visual states, not exhaustive e
 ## Step 5 — Verify
 
 Run the type-checker on the new stories file:
+
 ```bash
 npx tsc --noEmit -p packages/evo-react/tsconfig.json
 ```
 
 Fix type errors inline. Common issues:
+
 - Incorrect import path or export name from the component file
 - `argTypes` key not matching a prop in the component's TypeScript type
 - `args` value of wrong type for a prop
@@ -248,3 +260,33 @@ resolving an upstream type issue in the component itself.
 - [ ] Complex children/stateful examples use `render` function
 - [ ] No shared utilities imported (self-contained)
 - [ ] Type-check passes (or errors noted in summary)
+
+---
+
+## Completion record — mandatory final step
+
+After story files are verified on disk, write the completion record.
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the bare kebab-case component name (e.g. `accordion`) for `<NAME>`. Replace `<basename>` with the actual story filename (typically the component name).
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const name = '<NAME>';
+s.steps['11'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: [
+    \`packages/evo-react/src/\${name}/<basename>.stories.tsx\`,
+  ]
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 11 completion record written.');
+"
+```
+
+If story generation failed, write `status: "failed"` with an `error` field instead.

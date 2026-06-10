@@ -21,6 +21,7 @@ review. Your job is accurate translation, not interpretation.
 **Output location:** `packages/evo-marko/src/tags/[component.name]/`
 
 **Output files:**
+
 - `index.marko` — Marko 6 single-file component (types + logic + template)
 - `style.ts` — skin CSS import
 - `test/test.server.ts` — SSR snapshot tests via vitest
@@ -73,15 +74,18 @@ Build the file in this order:
 ### Imports
 
 Import utilities only if behaviors require them:
+
 ```marko
 import { helperFunction } from "./util";
 ```
+
 Import evo-icon tags via their tag name — Marko resolves them automatically.
 No explicit import needed for `<evo-icon-*>` tags.
 
 ### Static types
 
 Define compile-time constants and type guards with `static`:
+
 ```marko
 static type Size = 32 | 40 | 48 | 56 | 64 | 96 | 128;
 static export const validSizes = ["large", "small"] as const;
@@ -93,27 +97,27 @@ Translate manifest props into the TypeScript `Input` interface:
 
 ```marko
 export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
-    // from manifest.props[]
-    size?: Size | `${Size}`;
-    color?: string;
-    // from manifest.a11yProps[]
-    a11yText: string | null;
-    // from manifest.slots[] where type === "named-attrtag"
-    image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
-    // default slot is via input.content — no type declaration needed
+  // from manifest.props[]
+  size?: Size | `${Size}`;
+  color?: string;
+  // from manifest.a11yProps[]
+  a11yText: string | null;
+  // from manifest.slots[] where type === "named-attrtag"
+  image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>;
+  // default slot is via input.content — no type declaration needed
 }
 ```
 
 **Prop type mapping:**
 
-| manifest `type`   | TypeScript type                             |
-|-------------------|---------------------------------------------|
-| `"string"`        | `string`                                    |
-| `"number"`        | `number`                                    |
-| `"boolean"`       | `boolean`                                   |
-| `"enum"` + values | union of string literals                    |
-| `"string \| null"` | `string \| null`                          |
-| `"function"`      | `(event: Event) => void` or appropriate sig |
+| manifest `type`    | TypeScript type                             |
+| ------------------ | ------------------------------------------- |
+| `"string"`         | `string`                                    |
+| `"number"`         | `number`                                    |
+| `"boolean"`        | `boolean`                                   |
+| `"enum"` + values  | union of string literals                    |
+| `"string \| null"` | `string \| null`                            |
+| `"function"`       | `(event: Event) => void` or appropriate sig |
 
 **Omit rules:** Only `Omit<>` attributes that the component hardcodes and must
 not accept from consumers. Read `manifest.rootElement.excludedAttributes` for
@@ -121,23 +125,24 @@ the exact list.
 
 **Slot mapping:**
 
-| manifest slot `type`  | Input type                                  |
-|-----------------------|---------------------------------------------|
-| `"named-attrtag"`     | `Marko.AttrTag<Marko.HTML.Img>` etc         |
-| `"default"`           | No declaration — accessed as `input.content` |
+| manifest slot `type` | Input type                                   |
+| -------------------- | -------------------------------------------- |
+| `"named-attrtag"`    | `Marko.AttrTag<Marko.HTML.Img>` etc          |
+| `"default"`          | No declaration — accessed as `input.content` |
 
 ### Template body
 
 **Destructure at the top, then compute:**
+
 ```marko
 <const/{
-    class: inputClass,
-    size,
-    color,
-    image,
-    content,
-    a11yText = "default label",
-    ...htmlInput
+  class: inputClass,
+  size,
+  color,
+  image,
+  content,
+  a11yText = "default label",
+  ...htmlInput
 }=input>
 ```
 
@@ -145,6 +150,7 @@ Declare tag variables close to where they are first used (not all grouped at
 the top), except variables needed in multiple distant locations.
 
 **Root element with BEM and ARIA:**
+
 ```marko
 <div
     ...htmlInput
@@ -159,6 +165,7 @@ the top), except variables needed in multiple distant locations.
 ```
 
 **Translate `manifest.bem`:**
+
 - Block: `manifest.bem.block` — always applied
 - Elements: `manifest.bem.elements[]` — applied to child elements
 - Modifiers: `manifest.bem.modifiers[]` — conditional expressions in the class array
@@ -167,16 +174,17 @@ the top), except variables needed in multiple distant locations.
 Map each entry: if `condition === "always"` it's unconditional; otherwise it's
 a conditional expression. The `manifest.a11y.labelStrategy` tells you how the
 label is applied:
+
 - `"aria-label-prop"` → `aria-label=a11yText`
 - `"aria-labelledby"` → `<id/labelId>` on the label element, then `aria-labelledby=labelId`
 
 **Rendering slots:**
+
 ```marko
 // named slot: <@image src="..."> → rendered as:
 <if=image>
-    <img ...image alt=""/>
+  <img ...image alt="">
 </if>
-
 // default slot: content between component tags → rendered as:
 <${content}/>
 ```
@@ -185,9 +193,11 @@ label is applied:
 
 Mutable state uses `<let/>`. If the manifest has a prop that consumers can
 control externally (e.g., `open`), use two-way binding syntax:
+
 ```marko
 <let/open:=input.open>
 ```
+
 The `:=` creates a controllable prop — consumers can pass `open` and
 `openChange` to control it, or leave it uncontrolled.
 
@@ -196,13 +206,15 @@ The `:=` creates a controllable prop — consumers can pass `open` and
 If a behavior is a deterministic pure function (e.g., `getColorForText`), put
 it in `util.ts` and import it. If it's event-driven inline logic, write it
 directly as an inline handler:
+
 ```marko
 onLoad(_, el) {
-    aspectRatio = el.naturalWidth / el.naturalHeight;
+  aspectRatio = el.naturalWidth / el.naturalHeight;
 }
 ```
 
 **ID generation:** Use `<id/>` for any element that needs a stable generated ID:
+
 ```marko
 <id/headerId=input.id>
 <h2 id=headerId .../>
@@ -216,6 +228,7 @@ Add a `// TODO: verify — [gap note]` comment next to the affected field.
 ## Step 3 — Generate `style.ts`
 
 Always:
+
 ```ts
 import "@ebay/skin/[manifest.bem.block]";
 ```
@@ -240,12 +253,12 @@ import * as stories from "../[name].stories";
 const { Default, WithImage } = composeStories(stories);
 
 describe("[component-name]", () => {
-    it("renders defaults", async () => {
-        await snapshotHTML(Default);
-    });
-    it("renders with image", async () => {
-        await snapshotHTML(WithImage);
-    });
+  it("renders defaults", async () => {
+    await snapshotHTML(Default);
+  });
+  it("renders with image", async () => {
+    await snapshotHTML(WithImage);
+  });
 });
 ```
 
@@ -269,12 +282,12 @@ const { Default } = composeStories(stories);
 afterEach(cleanup);
 
 describe("[component-name]", () => {
-    it("should render correctly", async () => {
-        const { container } = await render(Default);
-        expect(container.querySelector(".[bem-block]")).toBeTruthy();
-    });
+  it("should render correctly", async () => {
+    const { container } = await render(Default);
+    expect(container.querySelector(".[bem-block]")).toBeTruthy();
+  });
 
-    // One describe("when...") + it("then...") block per behavior/keyboard interaction
+  // One describe("when...") + it("then...") block per behavior/keyboard interaction
 });
 ```
 
@@ -283,17 +296,18 @@ describe("[component-name]", () => {
 ## Critical Marko 6 syntax rules
 
 **Tag variables — NOT scriptlets:**
+
 ```marko
 // ✅ Marko 6
 <const/{ class: inputClass, size, ...htmlInput }=input>
 <let/aspectRatio=knownAspectRatio>
-
 // ❌ Marko 5 — never use
 $ const { class: inputClass } = input;
 $ let aspectRatio = knownAspectRatio;
 ```
 
 **Conditionals:**
+
 ```marko
 // ✅ Marko 6
 <if=condition>  <else-if=other>  <else>
@@ -303,6 +317,7 @@ $ let aspectRatio = knownAspectRatio;
 ```
 
 **Events — inline, not string refs:**
+
 ```marko
 // ✅ Marko 6
 <button onClick(e) { input.onEscape?.(e); }>
@@ -312,19 +327,20 @@ $ let aspectRatio = knownAspectRatio;
 ```
 
 **Attribute containing `>` — wrap in parens:**
+
 ```marko
 // ✅ Required
 <const/x=(a > b ? 1 : 0)>
-
 // ❌ Parser error
-<const/x=a > b ? 1 : 0>
+<const/x=a>
+-- ${" "}b ? 1 : 0>
 ```
 
 **Slots — `content` not `renderBody`:**
+
 ```marko
 // ✅ Marko 6
 <${content}/>
-
 // ❌ Marko 5
 <${input.renderBody}/>
 ```
@@ -336,6 +352,7 @@ $ let aspectRatio = knownAspectRatio;
 ## Output verification
 
 After generating, confirm:
+
 - `index.marko` exports an `Input` interface
 - All manifest props and a11yProps are in the interface with correct types/optionality
 - All named slots appear as `Marko.AttrTag<>` types
@@ -346,3 +363,41 @@ After generating, confirm:
 - Tests reference story names that match `manifest.variants[]`
 
 Report generated file paths to the orchestrator.
+
+---
+
+## Completion record — mandatory final step
+
+After output verification passes, write the completion record.
+This is the signal the orchestrator reads to advance — do not skip this step.
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the full Marko tag name (e.g. `evo-accordion`) for `<NAME>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const name = '<NAME>';
+const outputs = [
+  \`packages/evo-marko/src/tags/\${name}/index.marko\`,
+  \`packages/evo-marko/src/tags/\${name}/style.ts\`,
+  \`packages/evo-marko/src/tags/\${name}/test/test.server.ts\`,
+];
+if (fs.existsSync(\`packages/evo-marko/src/tags/\${name}/test/test.browser.ts\`)) {
+  outputs.push(\`packages/evo-marko/src/tags/\${name}/test/test.browser.ts\`);
+}
+s.steps['8'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 8 completion record written.');
+"
+```
+
+If any output verification check failed (missing prop, Marko 5 pattern found, etc.),
+write `status: "failed"` with the failing check as the `error` field instead.

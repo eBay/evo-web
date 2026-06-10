@@ -47,18 +47,18 @@ determine which variants need dedicated example templates.
 
 Map `component.category` to the correct Storybook title prefix:
 
-| manifest category | Storybook prefix |
-|---|---|
-| `buttons` | `Buttons` |
-| `form` | `Form` |
-| `graphics & icons` | `Graphics & Icons` |
-| `layout` | `Layout` |
-| `dialogs` | `Dialogs` |
-| `navigation` | `Navigation & Disclosure` |
-| `notices` | `Notices & Tips` |
-| `progress` | `Progress` |
-| `building blocks` | `Building Blocks` |
-| `media` | `Media` |
+| manifest category  | Storybook prefix          |
+| ------------------ | ------------------------- |
+| `buttons`          | `Buttons`                 |
+| `form`             | `Form`                    |
+| `graphics & icons` | `Graphics & Icons`        |
+| `layout`           | `Layout`                  |
+| `dialogs`          | `Dialogs`                 |
+| `navigation`       | `Navigation & Disclosure` |
+| `notices`          | `Notices & Tips`          |
+| `progress`         | `Progress`                |
+| `building blocks`  | `Building Blocks`         |
+| `media`            | `Media`                   |
 
 Title format: `"<Prefix>/<DisplayName>"` — e.g. `"Buttons/Accordion"` or `"Form/Textbox"`.
 
@@ -70,6 +70,7 @@ Each story variant needs a standalone `.marko` file in `examples/`. Decide what 
 a realistic content example.
 
 **Create one template per variant when:**
+
 - The manifest has `variants[]` with distinct rendering modes
 - A state (expanded, checked, open) changes the component's structure significantly
 - A slot combination is meaningfully different (e.g. with icon, without icon)
@@ -83,40 +84,45 @@ More than eight is a sign to reconsider — engineers can explore variants throu
 Each file in `examples/` is a standalone Marko 6 template. Rules:
 
 **Spread `...input` onto the component root** — this makes all argTypes controllable:
+
 ```marko
 <evo-badge ...input/>
 ```
 
 **For components with slots**, include realistic hardcoded slot content:
+
 ```marko
 <evo-accordion ...input>
-    <@item>
-        <@title>Section one</@title>
-        <@content>
-            <p>Content for section one.</p>
-        </@content>
-    </@item>
-    <@item>
-        <@title>Section two</@title>
-        <@content>
-            <p>Content for section two.</p>
-        </@content>
-    </@item>
+  <@item>
+    <@title>Section one</@title>
+    <@content>
+      <p>Content for section one.</p>
+    </@content>
+  </@item>
+  <@item>
+    <@title>Section two</@title>
+    <@content>
+      <p>Content for section two.</p>
+    </@content>
+  </@item>
 </evo-accordion>
 ```
 
 **For controllable/interactive state** (open, expanded, checked), use `<let>` with `:=` binding:
+
 ```marko
 <let/open:=input.open>
 
-<evo-button onClick() { open = true; }>
-    Open
+<evo-button onClick() {
+  open = true;
+}>
+  Open
 </evo-button>
 
 <evo-dialog ...input open:=open>
-    <@header>Dialog Title</@header>
-    <@close a11yText="Close"/>
-    <p>Dialog content.</p>
+  <@header>Dialog Title</@header>
+  <@close a11yText="Close"/>
+  <p>Dialog content.</p>
 </evo-dialog>
 ```
 
@@ -171,6 +177,7 @@ export const Default = buildExtensionTemplate(
 ### argTypes reference
 
 **String prop:**
+
 ```ts
 myProp: {
   type: "string",
@@ -181,6 +188,7 @@ myProp: {
 ```
 
 **Enum prop:**
+
 ```ts
 type: {
   type: "string",
@@ -192,6 +200,7 @@ type: {
 ```
 
 **Boolean prop:**
+
 ```ts
 collapsible: {
   type: "boolean",
@@ -202,6 +211,7 @@ collapsible: {
 ```
 
 **Number prop:**
+
 ```ts
 count: {
   type: "number",
@@ -212,6 +222,7 @@ count: {
 ```
 
 **Required a11y text prop:**
+
 ```ts
 a11yText: {
   type: { name: "string", required: true },
@@ -221,6 +232,7 @@ a11yText: {
 ```
 
 **Controllable prop (state-lifting callback exists):**
+
 ```ts
 open: {
   type: "boolean",
@@ -232,6 +244,7 @@ open: {
 ```
 
 **Named slot (AttrTag):**
+
 ```ts
 header: {
   description: "The header content of the dialog (required).",
@@ -239,6 +252,7 @@ header: {
 ```
 
 **Named slot with documented sub-attributes:**
+
 ```ts
 image: {
   description: "Optional image to display in the avatar.",
@@ -250,6 +264,7 @@ image: {
 ```
 
 **Pass-through HTML attributes:**
+
 ```ts
 ["<div> attributes" as any]: {
   description: "All native div attributes are forwarded to the root element.",
@@ -259,6 +274,7 @@ image: {
 ### Additional story variants
 
 Each variant beyond Default follows the same `buildExtensionTemplate` pattern:
+
 ```ts
 export const Expanded = buildExtensionTemplate(
   ExpandedTemplate,
@@ -277,11 +293,13 @@ Export name is PascalCase; it becomes the story name in the sidebar.
 ## Step 7 — Verify
 
 Run the type-checker on the new stories file:
+
 ```bash
 npx tsc --noEmit -p packages/evo-marko/tsconfig.json
 ```
 
 Fix any type errors inline. Common issues:
+
 - `Input` type mismatch in `satisfies Meta<Input>` — check the generated `index.marko` types
 - `argTypes` key not in `Input` — remove or correct the key
 - Missing required arg in `buildExtensionTemplate` default args
@@ -302,3 +320,33 @@ not a hard stop. Note it and move on if the fix is not immediately obvious.
 - [ ] Required props use `type: { name: "string", required: true }`
 - [ ] Controllable props (state-lifting) marked `controllable: true`
 - [ ] Type-check passes (or errors noted in summary)
+
+---
+
+## Completion record — mandatory final step
+
+After story files are verified on disk, write the completion record.
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the full Marko tag name (e.g. `evo-accordion`) for `<NAME>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const name = '<NAME>';
+s.steps['9'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: [
+    \`packages/evo-marko/src/tags/\${name}/\${name}.stories.ts\`,
+  ]
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 9 completion record written.');
+"
+```
+
+If story generation failed, write `status: "failed"` with an `error` field instead.
