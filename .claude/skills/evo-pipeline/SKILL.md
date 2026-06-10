@@ -330,6 +330,39 @@ folder if needed) so all downstream scripts can find it. Begin.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
+**Before generating the manifest**, validate that every design token referenced in the spec exists in the token system. This prevents the pipeline from doing work that would later be blocked during SCSS generation.
+
+Read the `tokens` field from the spec file (`src/routes/_index/components/$COMPONENT/*.spec.json`). For each token CSS custom property name (e.g. `--color-background-warning`), run the two-stop check:
+
+```bash
+# Stop 1 — compiled skin tokens
+grep -i "<token-name>" packages/skin/dist/tokens/evo-light.css
+
+# Stop 2 — upstream design-tokens package (valid tokens not re-declared in skin)
+grep -i "<token-name>" node_modules/@ebay/design-tokens/dist/mixins/evo-light.scss
+```
+
+A token passes if it appears in either file. Collect every token that fails both.
+
+**If any tokens are missing**, halt immediately — do not proceed to manifest generation:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 Missing design tokens — pipeline blocked before manifest generation
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The following tokens from the spec do not exist in the design
+token system. The design team must add them before generation
+can proceed.
+
+  <token-name>  (used for: <CSS property from spec, e.g. background-color>)
+
+Resolution: Ask the design team to add the missing token(s), then
+re-run /evo-pipeline <component> once the tokens are available.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+**If all tokens exist**, print `✅ All <N> design tokens verified` and continue.
+
 **First**, run the deterministic spec translation:
 
 ```

@@ -173,8 +173,13 @@ Scan all generated files for strings that suggest a gap was left unresolved:
 
 - `TODO:`, `FIXME:`, `<ENGINEER>`, `<FILL IN>`, `???`, `__PLACEHOLDER__`
 
-These indicate a gap from the manifest was not resolved before generation ran.
-**Failure:** any such string found (note exact file and line).
+Also scan SCSS files for hardcoded value variables — these are a sign a missing token was worked around instead of blocked:
+
+```bash
+grep -rn "^\$_" packages/skin/src/sass/<block>/
+```
+
+**Failure:** any such string found (note exact file and line). Hardcoded `$_` variables in SCSS are a blocking failure — they indicate the missing token blocker in evo-static-component was bypassed.
 
 ### 1j — Dark mode foreground token coverage (always runs when SCSS was generated)
 

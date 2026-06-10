@@ -135,7 +135,7 @@ This labelled output is what `/evo-static-storybook`, `/evo-marko-component`,
 2. `get_variable_defs` Figma call — use to catch tokens present in the design but missing from the manifest
 3. `get_design_context` screenshot + annotations — use for spacing math, border widths, typographic scale, and edge-case state details
 4. Token lookup fallback list (below) — reference for common properties when none of the above provides a value
-5. Hardcode with `$_` variable — only when no token exists anywhere; always leave a comment
+5. **STOP — missing token blocker:** if all four levels above fail to provide a value, do not hardcode. Document every missing token (property name + raw value from Figma) and halt with the banner below.
 
 **Token lookup — two-stop check before declaring a token missing:**
 
@@ -181,11 +181,36 @@ From `get_variable_defs` — token cross-check:
 - Compare manifest token names against Figma variable names
   (translation: `color/background/primary` → `--color-background-primary`)
 - If a Figma variable is used in the design but absent from the manifest `tokens` map, add it and note it came from Figma validation
-- If a Figma value has no matching CSS custom property (e.g. a hardcoded hex), flag it as a gap
+- If a Figma value has no matching CSS custom property (e.g. a hardcoded hex), treat this as a **missing token blocker** — do not proceed to SCSS generation. Document it and halt (see missing token blocker below).
+
+### Missing token blocker
+
+When all four priority levels above fail to resolve a value, **do not generate SCSS**. Instead halt with:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 Missing design tokens — SCSS generation blocked
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+The following values from the design have no corresponding
+design token. The design team must add these tokens before
+SCSS can be generated — do not hardcode these values.
+
+<for each missing value>
+  Property: <CSS property, e.g. background-color>
+  Used on:  <BEM selector, e.g. .badge--warning>
+  Raw value from Figma: <hex or literal>
+  Required token name (suggested): <e.g. --color-background-warning>
+
+Resolution: Ask the design team to add the token(s) above to the
+design token system, then update manifest.json and re-run this skill.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Write `status: "failed"` with an `error` field listing the missing tokens to the pipeline state file (step '4'), then stop.
 
 ### Token gap-filling reference
 
-Use these only when manifest, Figma variable defs, and `@ebay/design-tokens` all fail to provide a value:
+Use these only when manifest, Figma variable defs, and `@ebay/design-tokens` all fail to provide a value for **layout, spacing, and typographic properties** (not brand colors — those must have tokens):
 
 - **Background:** `--color-background-primary`, `--color-background-accent`, `--color-background-attention`, `--color-background-disabled`
 - **Foreground:** `--color-foreground-primary`, `--color-foreground-accent`, `--color-foreground-on-accent`, `--color-foreground-disabled`
@@ -241,16 +266,7 @@ root block — where consumers may want component-level overrides — use the tw
 Skip the mixin for layout properties (padding, margin, border-radius, font-size) — those go
 as plain `var(--)`.
 
-**Hardcoded values:** Acceptable only when no token exists in the manifest, Figma variable defs,
-`@ebay/design-tokens`, or the fallback list. Use SCSS file-scoped variables prefixed with `$_`:
-
-```scss
-$_avatar-green: #5ba85a;
-
-.avatar--green {
-  background-color: $_avatar-green;
-}
-```
+**Hardcoded values:** Not permitted. If you find yourself reaching for a raw hex or pixel value with no token backing it, stop and trigger the missing token blocker above. Do not use `$_` file-scoped variables.
 
 **ARIA attributes as styling hooks** — prefer attribute selectors over modifier classes for state:
 
