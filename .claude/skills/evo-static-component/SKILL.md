@@ -18,6 +18,7 @@ layers wrap. This skill always runs and always produces HTML. SCSS is
 conditional on token/Figma availability.
 
 **Two phases:**
+
 - **Phase 1 (always):** Establish canonical HTML structure for every variant
 - **Phase 2 (conditional):** Generate SCSS when `manifest.tokens` or
   `figma.fileKey` / `figmaUrl` is present
@@ -58,27 +59,26 @@ class and required ARIA from `manifest.a11y`:
 
 ```html
 <!-- Non-interactive, informational -->
-<div class="avatar" role="img" aria-label="Profile photo of Alex Chen">
-  ...
-</div>
+<div class="avatar" role="img" aria-label="Profile photo of Alex Chen">...</div>
 
 <!-- Interactive -->
-<button class="btn btn--primary" type="button">
-  Submit
-</button>
+<button class="btn btn--primary" type="button">Submit</button>
 ```
 
 **BEM class application:**
+
 - Block: always on root — `class="<block>"`
 - Modifier: conditional — `class="<block> <block>--<modifier>"` for each variant
 - Element: on child elements — `class="<block>__<element>"`
 
 **ARIA from `manifest.a11y`:**
+
 - Apply `role` if `a11y.explicitRole: true`
 - Apply `aria-label` / `aria-hidden` per `a11y.labelStrategy` with realistic placeholder values
 - Apply each entry in `a11y.ariaAttributes[]`
 
 **States:** Use HTML attribute selectors — not modifier classes:
+
 - Disabled: `disabled` on button; `aria-disabled="true"` on non-button
 - Expanded: `aria-expanded="true"` / `"false"`
 - Selected: `aria-selected="true"` / `"false"`
@@ -130,6 +130,7 @@ This labelled output is what `/evo-static-storybook`, `/evo-marko-component`,
 ### Token resolution
 
 **Gap-filling priority order — follow this strictly:**
+
 1. `manifest.tokens` map — trust it; use these directly without question
 2. `get_variable_defs` Figma call — use to catch tokens present in the design but missing from the manifest
 3. `get_design_context` screenshot + annotations — use for spacing math, border widths, typographic scale, and edge-case state details
@@ -149,6 +150,7 @@ Only after both checks come up empty should you treat the token as missing and f
 ### Figma validation (when `figma.fileKey` or `figmaUrl` present)
 
 **Determine Figma coordinates:**
+
 - If `figmaUrl` is present: extract `fileKey` and `nodeId` directly from the URL.
   URL format: `https://www.figma.com/design/:fileKey/:fileName?node-id=1-2`
   Convert the `node-id` query param from `-` to `:` (e.g. `1-2` → `1:2`).
@@ -160,6 +162,7 @@ Only after both checks come up empty should you treat the token as missing and f
 - If neither is available: skip Figma, proceed with manifest tokens + fallback list only, note gaps.
 
 **Run these calls in parallel:**
+
 ```
 get_design_context(nodeId, fileKey, clientLanguages="scss,css", clientFrameworks="unknown")
 get_variable_defs(nodeId, fileKey)
@@ -168,11 +171,13 @@ get_variable_defs(nodeId, fileKey)
 **What to do with each result:**
 
 From `get_design_context` — visual confirmation and gap-filling:
+
 - Study the screenshot to verify spacing, shape, border widths, and typographic scale
 - Check if reference code mentions tokens not in your manifest `tokens` map — add them
 - Note design annotations for edge-case states (hover, disabled, focus)
 
 From `get_variable_defs` — token cross-check:
+
 - Compare manifest token names against Figma variable names
   (translation: `color/background/primary` → `--color-background-primary`)
 - If a Figma variable is used in the design but absent from the manifest `tokens` map, add it and note it came from Figma validation
@@ -197,34 +202,39 @@ Write `packages/skin/src/sass/<block>/<block>.scss`:
 @use "../mixins/private/token-mixins";
 /* add other @use lines only if needed — e.g. @use "../variables/variables"; */
 
-.<block> {
-    /* base layout and visual styles */
+.<block > {
+  /* base layout and visual styles */
 }
 
-.<block>--<modifier> {
-    /* modifier overrides — flat, never nested */
+.<block > --<modifier > {
+  /* modifier overrides — flat, never nested */
 }
 
-.<block>__<element> {
-    /* element styles */
+.<block > __<element > {
+  /* element styles */
 }
 ```
 
 **Token usage — two approaches:**
 
 For most properties, use CSS custom properties directly:
+
 ```scss
 .badge {
-    border-radius: var(--border-radius-50);
-    font-size: var(--font-size-body);
-    padding: var(--spacing-50) var(--spacing-100);
+  border-radius: var(--border-radius-50);
+  font-size: var(--font-size-body);
+  padding: var(--spacing-50) var(--spacing-100);
 }
 ```
 
 For brand-critical color properties (`background-color`, `color`, `border-color`) on the
 root block — where consumers may want component-level overrides — use the two-tier mixin:
+
 ```scss
-@include token-mixins.background-color-token(badge-background-color, color-background-attention);
+@include token-mixins.background-color-token(
+  badge-background-color,
+  color-background-attention
+);
 /* compiles to: background-color: var(--badge-background-color, var(--color-background-attention)); */
 ```
 
@@ -233,24 +243,27 @@ as plain `var(--)`.
 
 **Hardcoded values:** Acceptable only when no token exists in the manifest, Figma variable defs,
 `@ebay/design-tokens`, or the fallback list. Use SCSS file-scoped variables prefixed with `$_`:
+
 ```scss
 $_avatar-green: #5ba85a;
 
 .avatar--green {
-    background-color: $_avatar-green;
+  background-color: $_avatar-green;
 }
 ```
 
 **ARIA attributes as styling hooks** — prefer attribute selectors over modifier classes for state:
+
 ```scss
 .btn[disabled],
 .btn[aria-disabled="true"] {
-    background-color: var(--color-background-disabled);
-    color: var(--color-foreground-disabled);
+  background-color: var(--color-background-disabled);
+  color: var(--color-foreground-disabled);
 }
 ```
 
 **Do not:**
+
 - Nest BEM selectors (`&--modifier` inside the block is wrong — keep them flat)
 - Chain BEM modifiers (`.avatar--fit.avatar--green` is wrong)
 - Use presentational names (`.btn--green` is wrong; `.btn--primary` is right) — unless the modifier IS a color variant by design (e.g. avatar color variants are intentionally named by color)
@@ -272,6 +285,7 @@ npm run build -w @ebay/skin
 Fix any errors inline. Do not re-run the skill.
 
 Common failure causes:
+
 - Typo in a `var(--)` token name — cross-check against the two-stop lookup
 - Missing or wrong `@use` path
 - Unclosed brace from a nested block that should be flat
@@ -289,9 +303,11 @@ Work through each item in order. Read the file on disk to verify each claim — 
 rely on memory of what you wrote. If any item fails, fix it before continuing.
 
 **HTML**
+
 - [ ] HTML catalogue is written in the output and covers: Default, every modifier in `manifest.bem.modifiers[]`, RTL, and every state that changes the HTML structure
 
 **SCSS**
+
 - [ ] `packages/skin/src/sass/<block>/<block>.scss` exists on disk
 - [ ] `.${block}` base rule present in the SCSS
 - [ ] Every modifier in `manifest.bem.modifiers[]` has a `.${block}--${modifier}` rule — grep the file to confirm
@@ -300,6 +316,7 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
 - [ ] No BEM nesting (`&--modifier` inside block is forbidden — keep rules flat)
 
 **Dark mode token check** — run this for every modifier that sets a background-color:
+
 - [ ] If the modifier introduces a **light or warm background** (yellow, white, cream, light-tinted):
 
   **Step 1 — Verify the token is defined in all four theme files.**
@@ -322,8 +339,11 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
   File-level grep confirms the source exists but not that the browser receives it. The token scope must match what the page loads — `evo-light-class.scss` defines within `.evo-theme`, while `evo-light.scss` defines on `:root`. After rebuild, navigate to the CSS docs page and run:
 
   ```js
-  getComputedStyle(document.querySelector('.evo-theme') || document.documentElement)
-    .getPropertyValue('--color-foreground-on-<type>').trim()
+  getComputedStyle(
+    document.querySelector(".evo-theme") || document.documentElement,
+  )
+    .getPropertyValue("--color-foreground-on-<type>")
+    .trim();
   // Must return a dark hex value (e.g. "#191919") — not empty string, not a light color
   ```
 
@@ -332,11 +352,13 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
 - [ ] If the modifier only uses dark backgrounds (attention, inverse, etc.), both sub-steps pass automatically
 
 **Foreground specificity check** — run this when a modifier sets `color-token` on its root element:
+
 - [ ] If the new modifier sets text color via `color-token` on the root AND the block has existing `.${block} a { color: ... }` or `.${block} button.fake-link { color: ... }` rules:
 
   The base `.block a` rule has specificity `(0,1,1)`, which beats the modifier's root color `(0,2,0)` for `a` elements. The modifier's text color **does not cascade to links** without an explicit override — links will silently inherit the base fallback (often `on-inverse` / white), which fails WCAG AA on a light background.
 
   Verify explicit link/button overrides exist for the modifier:
+
   ```bash
   grep "\.${block}--<modifier> a\b\|\.${block}--<modifier> button\.fake-link" \
     packages/skin/src/sass/<block>/<block>.scss
@@ -345,6 +367,7 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
   For light-background modifiers (warning, etc.), if both `.modifier a` and `.modifier button.fake-link` color rules are absent, this is a **blocking WCAG 1.4.3 failure** — add them before proceeding.
 
 **Stories** (check only — do NOT write or edit the stories file)
+
 - [ ] Check whether `packages/skin/src/sass/<block>/stories/<block>.stories.js` exists.
       If `RTL`, `textSpacing`, or modifier stories are absent, add a ⚠️ WARNING
       in your output summary: "Stories incomplete — evo-static-storybook will add
@@ -352,9 +375,11 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
       evo-static-storybook's sole responsibility.
 
 **Docs**
+
 - [ ] `src/routes/_index/components/<name>/css+page.marko` updated with a live demo block and `<highlight-code>` snippet for every new modifier or variant
 
 **Build**
+
 - [ ] `npm run build -w @ebay/skin` passes with no errors
 - [ ] Grep `packages/skin/dist/bundles/skin-default.css` to confirm the new modifier selector is present in the compiled output
 
@@ -383,3 +408,57 @@ Completion gate: ✅ All items passed
 ```
 
 The HTML catalogue above is the canonical reference for all downstream skills.
+
+---
+
+## Completion record — mandatory final step
+
+After the output summary is printed and all items in the mandatory completion gate
+are checked off, write the completion record to the pipeline state file.
+
+This is the signal the orchestrator reads to advance — it does not read your prose output.
+Do not skip this step. Do not write `status: "complete"` until the output files are confirmed on disk.
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual BEM block name for `<BLOCK>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const block = '<BLOCK>';
+s.steps['4'] = {
+  status: 'complete',
+  completedAt: new Date().toISOString(),
+  outputs: [
+    \`packages/skin/src/sass/\${block}/\${block}.scss\`,
+    'packages/skin/src/sass/bundles/skin-headless.scss',
+  ]
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+console.log('Step 4 completion record written.');
+"
+```
+
+**If SCSS was deferred** (no tokens/Figma): still write the completion record but set `outputs` to an empty array and add `"note": "SCSS deferred — no tokens or Figma reference"`.
+
+**If any completion gate item failed**: write `status: "failed"` with an `error` field describing which gate item failed. Do NOT write `status: "complete"`.
+
+> **Before running the failed variant:** Substitute the actual component name for `$COMPONENT` and describe the failing gate item in place of `<describe what gate item failed>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const comp = '$COMPONENT';
+const p = \`src/routes/_index/components/\${comp}/pipeline-state.json\`;
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['4'] = {
+  status: 'failed',
+  error: '<describe what gate item failed>'
+};
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+```
