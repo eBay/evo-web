@@ -274,18 +274,237 @@ Treat this as a step failure — do NOT advance.
 
 ---
 
-## ⛔ Execution rule — no pausing between steps
+## ⛔ Execution rule — deterministic transitions, no pausing between steps
 
-You are an automated orchestrator. After each sub-skill returns, you MUST
-immediately proceed to the next step. Do not end your response turn between
-steps. Do not ask the user whether to continue. Do not summarize and wait.
+You are an automated orchestrator. Transitions between steps are determined by
+reading `pipeline-state.json` — NOT by evaluating prior output prose. After each
+sub-skill returns, you MUST:
+
+1. Read the state file to confirm the step's status is `complete`.
+2. If `complete`: immediately advance to the next step in the transition table.
+3. If `failed` or still `in-progress`: halt and surface the failure (see Failure halting below).
+4. Never ask the user whether to continue between steps.
 
 The ONLY valid reasons to stop and wait for input are:
 
-1. Gate 2 — manifest review (the engineer must type "approved")
-2. A 🔴 blocking failure inside a sub-skill that cannot be fixed inline
+1. Gate 2 — manifest review (engineer must type "approved")
+2. A `failed` step in the state file that cannot be fixed inline
+3. Manifest hash mismatch (engineer must type "reset" or "continue")
 
-Every step description below ends with an explicit "→ Next:" line. Follow it.
+### Transition table
+
+Read this table as: "after step N is complete, run step M next."
+Steps NOT in the scope column for the current scope are marked `skipped` in the state file
+and bypassed — the orchestrator does not invoke them.
+
+| Step       | Sub-skill                  | full | static | interactive | style |
+| ---------- | -------------------------- | :--: | :----: | :---------: | :---: |
+| 4          | evo-static-component       |  ✅  |   ✅   |     ⏭      |  ✅   |
+| 5          | evo-static-storybook       |  ✅  |   ✅   |     ⏭      |  ⏭   |
+| 6          | evo-docs-hookup (css-only) |  ✅  |   ✅   |     ⏭      |  ✅   |
+| 6.5        | scaffold generation        |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| 7          | evo-a11y Pass 1            |  ✅  |   ✅   |     ⏭      |  ⏭   |
+| micro-qa-1 | Micro-QA checkpoint        |  ✅  |   ✅   |     ⏭      |  ⏭   |
+| 8          | evo-marko-component        |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| 9          | evo-marko-storybook        |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| 10         | evo-react-component        |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| 11         | evo-react-storybook        |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| 12         | evo-a11y Pass 2            |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| micro-qa-2 | Micro-QA checkpoint        |  ✅  |   ⏭   |     ✅      |  ⏭   |
+| 13         | evo-docs-hookup (full)     |  ✅  |   ✅   |     ✅      |  ⏭   |
+| 14         | npm run build              |  ✅  |   ✅   |     ✅      |  ✅   |
+| 15         | evo-qa (Agent spawn)       |  ✅  |   ✅   |     ✅      |  ✅   |
+
+### Per-step artifact definitions
+
+Before running any step, check if its expected outputs already exist on disk.
+If they do AND the step is still `pending` in the state file, mark it `complete`
+(fast-forward) and advance — do not invoke the sub-skill again.
+
+| Step | requiredInputs (must exist before running)                  | expectedOutputs (existence confirms complete)                                               |
+| ---- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 4    | `manifest.json`                                             | `packages/skin/src/sass/<block>/<block>.scss`                                               |
+| 5    | `packages/skin/src/sass/<block>/<block>.scss`               | `packages/skin/src/sass/<block>/stories/<block>.stories.js`                                 |
+| 6    | `manifest.json`                                             | `src/routes/_index/components/<block>/css+page.marko`                                       |
+| 6.5  | `manifest.json`                                             | `packages/evo-marko/src/tags/<name>/index.marko`, `packages/evo-react/src/<name>/index.tsx` |
+| 7    | `<block>.scss`, `<block>.stories.js`                        | `src/routes/_index/components/<block>/accessibility+page.marko`                             |
+| 8    | `packages/evo-marko/src/tags/<name>/index.marko` (scaffold) | `packages/evo-marko/src/tags/<name>/index.marko` (complete)                                 |
+| 9    | `packages/evo-marko/src/tags/<name>/index.marko`            | `packages/evo-marko/src/tags/<name>/<name>.stories.ts`                                      |
+| 10   | `packages/evo-react/src/<name>/index.tsx` (scaffold)        | `packages/evo-react/src/<name>/index.tsx` (complete)                                        |
+| 11   | `packages/evo-react/src/<name>/index.tsx`                   | `packages/evo-react/src/<name>/<basename>.stories.tsx`                                      |
+| 12   | `index.marko` (complete), `index.tsx` (complete)            | `src/routes/_index/components/<block>/accessibility+meta.json`                              |
+| 13   | `manifest.json`, `accessibility+page.marko`                 | `src/routes/_index/components/<block>/+page.marko`                                          |
+| 14   | (prior steps complete)                                      | Build exit code 0                                                                           |
+| 15   | All expected outputs for scope                              | `pipeline-state.json` step 15 status = complete                                             |
+
+### Pre-step preamble (run before EVERY step)
+
+Before marking any step `in-progress` and invoking its sub-skill:
+
+**1. Check if already complete (idempotent skip):**
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual step key for `<STEP_ID>` — these are not shell variables.
+
+```bash
+node -e "
+const fs = require('fs');
+const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
+console.log(s.steps['<STEP_ID>'].status);
+"
+```
+
+If `complete` or `skipped`: print `⏭ Step <STEP_ID> already complete — skipping.` and advance.
+
+**2. Validate required inputs exist:**
+
+For each path in the step's `requiredInputs` list (from the table above):
+
+```bash
+test -f "<requiredInput>" && echo "EXISTS" || echo "MISSING: <requiredInput>"
+```
+
+If any required input is MISSING:
+
+```
+🔴 Pipeline halted — Step <N> cannot start.
+   Missing required input: <path>
+   This input should have been produced by Step <prior-step>.
+   Check Step <prior-step>'s completion record in pipeline-state.json for errors.
+```
+
+Do not invoke the sub-skill. Mark this step `failed`. Stop.
+
+**3. Mark step in-progress:**
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual step key for `<STEP_ID>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['<STEP_ID>'] = { status: 'in-progress', startedAt: new Date().toISOString() };
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+```
+
+Then invoke the sub-skill.
+
+### Post-step verification (run after EVERY sub-skill returns)
+
+After the sub-skill returns, run these checks before advancing:
+
+**1. Read completion record:**
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual step key for `<STEP_ID>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
+console.log(JSON.stringify(s.steps['<STEP_ID>'], null, 2));
+"
+```
+
+If status is NOT `complete`: the sub-skill did not finish cleanly. Halt (see Failure halting).
+
+**2. Content validation (hallucination checks):**
+
+Run the following checks based on the step just completed:
+
+_After Step 4 (SCSS generated):_
+
+> Substitute the actual BEM block name for `$BLOCK`.
+
+```bash
+# BEM block must exist
+grep -c "\.$BLOCK {" packages/skin/src/sass/$BLOCK/$BLOCK.scss
+# No deprecated BEM nesting
+grep -c "&--" packages/skin/src/sass/$BLOCK/$BLOCK.scss
+```
+
+The first grep must return ≥ 1. The second must return 0 (nesting forbidden).
+
+_After Step 8 (Marko generated):_
+
+> Substitute the actual BEM block name for `$BLOCK` and the actual tag name (e.g. `evo-accordion`) for `$NAME`.
+
+```bash
+# No Marko 5 scriptlet patterns
+grep -c "^\$ \(let\|const\|var\)" packages/evo-marko/src/tags/$NAME/index.marko
+# BEM block class must be applied
+grep -c "\"$BLOCK\"" packages/evo-marko/src/tags/$NAME/index.marko
+```
+
+First grep must return 0 (no deprecated patterns); second must return ≥ 1 (BEM class present).
+
+_After Step 10 (React generated):_
+
+> Substitute the actual bare component name (e.g. `accordion`) for `$NAME`.
+
+```bash
+# Component must export a named function or const
+grep -c "^export \(function\|const\)" packages/evo-react/src/$NAME/index.tsx
+# No forwardRef (evo-react uses React 19 native ref)
+grep -c "forwardRef" packages/evo-react/src/$NAME/index.tsx
+```
+
+First must be ≥ 1; second must be 0.
+
+If any content check fails: mark the step `failed` with the specific check result as the error.
+Halt. Surface to the engineer.
+
+**3. Scope boundary check:**
+
+Each step has an `allowedWriteZones` list. After the sub-skill's `outputs` are recorded in
+the completion record, verify every listed output path starts with one of these prefixes:
+
+| Step | allowedWriteZones                                                       |
+| ---- | ----------------------------------------------------------------------- |
+| 4    | `packages/skin/src/sass/<block>/`, `packages/skin/src/sass/bundles/`    |
+| 5    | `packages/skin/src/sass/<block>/stories/`                               |
+| 6    | `src/routes/_index/components/<block>/`                                 |
+| 6.5  | `packages/evo-marko/src/tags/<name>/`, `packages/evo-react/src/<name>/` |
+| 7    | `src/routes/_index/components/<block>/`                                 |
+| 8    | `packages/evo-marko/src/tags/<name>/`                                   |
+| 9    | `packages/evo-marko/src/tags/<name>/`                                   |
+| 10   | `packages/evo-react/src/<name>/`                                        |
+| 11   | `packages/evo-react/src/<name>/`                                        |
+| 12   | `src/routes/_index/components/<block>/`                                 |
+| 13   | `src/routes/_index/components/<block>/`, `src/data/`                    |
+
+If any output is outside all allowed zones:
+
+```
+🔴 Scope boundary violation — Step <N> wrote a file outside its allowed zone:
+   File:          <path>
+   Allowed zones: <list>
+   This file was not expected. Review it manually before proceeding.
+   Type "continue" to accept it or "reset-step" to mark Step <N> failed and retry.
+```
+
+Wait for engineer input.
+
+### Failure halting
+
+When any step ends with status `failed`:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔴 Pipeline halted — Step <N> (<sub-skill>) failed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Error: <error from completion record>
+
+The pipeline state is saved. To retry:
+1. Fix the issue described above
+2. Re-run /evo-component $COMPONENT --scope $SCOPE
+   The pipeline will resume from Step <N>.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Do not advance to the next step. Do not attempt inline fixes. Stop.
 
 ---
 
@@ -329,6 +548,9 @@ Steps marked ⏭ for this scope are skipped — print them clearly.
 
 **Scopes: full, static, style**
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-static-component` (inline)
 
 - **full / static:** Generate both HTML catalogue and SCSS (SCSS conditional on tokens/figma)
@@ -350,6 +572,9 @@ Invoke: `/evo-static-component` (inline)
 
 **Scopes: full, static** | ⏭ skip for: interactive, style
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-static-storybook` (inline)
 
 Reads the HTML catalogue from Step 4 context. Writes CSF2 stories with RTL
@@ -362,6 +587,9 @@ and textSpacing exports.
 ## Step 6 — CSS docs (css-only)
 
 **Scopes: full, static, style** | ⏭ skip for: interactive
+
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
 
 Invoke: `/evo-docs-hookup` (inline) with scope `"css-only"`
 
@@ -385,6 +613,9 @@ Do not write +page.marko, +meta.json, or update component-metadata.json."
 ---
 
 ## Step 6.5 — Generate component scaffold (deterministic files)
+
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
 
 Run before any framework generation. This produces byte-identical structural files
 so the AI skills only need to complete the non-deterministic parts (template body,
@@ -416,6 +647,9 @@ regenerate the Input interface, Props type, style.ts, or test structure."
 
 **Scopes: full, static** | ⏭ skip for: interactive, style
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-a11y` (inline) with scope declaration:
 `"Pass 1 — static layer only. Steps 4–6 have run in this pipeline run.
 Validate the static HTML and static storybook. Write the static sections
@@ -443,6 +677,9 @@ If 🔴 blocking issues: stop. Engineer resolves before proceeding.
 
 **Scopes: full, interactive** | ⏭ skip for: static, style
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-marko-component` (inline)
 
 Reads static HTML from context (Step 4, full scope) or from existing storybook
@@ -460,6 +697,9 @@ file (interactive scope — no Step 4 was run). Generates Marko 6 component.
 
 **Scopes: full, interactive** | ⏭ skip for: static, style
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-marko-storybook` (inline)
 
 **Expected output:**
@@ -473,6 +713,9 @@ Invoke: `/evo-marko-storybook` (inline)
 ## Step 10 — React component
 
 **Scopes: full, interactive** | ⏭ skip for: static, style
+
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
 
 Invoke: `/evo-react-component` (inline)
 
@@ -488,6 +731,9 @@ Invoke: `/evo-react-component` (inline)
 
 **Scopes: full, interactive** | ⏭ skip for: static, style
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-react-storybook` (inline)
 
 **Expected output:**
@@ -501,6 +747,9 @@ Invoke: `/evo-react-storybook` (inline)
 ## Step 12 — A11y Pass 2 — full validation + fills interactive a11y docs
 
 **Scopes: full, interactive** | ⏭ skip for: static, style
+
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
 
 Invoke: `/evo-a11y` (inline) with scope declaration:
 `"Pass 2 — full validation. Steps 4–11 have run in this pipeline run
@@ -536,6 +785,9 @@ If 🔴 blocking issues: fix inline before build.
 
 **Scopes: full, static, interactive** | ⏭ skip for: style
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Invoke: `/evo-docs-hookup` (inline) with scope `"full"`
 
 Tell the skill: "full scope — write +page.marko, +meta.json, and update
@@ -555,6 +807,9 @@ component-metadata.json. Do NOT rewrite css+page.marko (already done in Step 6).
 
 **Scopes: all**
 
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
+
 Run: `npm run build`
 
 Fix failures inline. Do not advance to QA with a failing build.
@@ -566,6 +821,9 @@ Fix failures inline. Do not advance to QA with a failing build.
 ## Step 15 — QA validation
 
 **Scopes: all**
+
+> **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
+> **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
 
 Invoke: `/evo-qa` via the Skill tool (inline).
 
