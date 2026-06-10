@@ -272,6 +272,23 @@ Replace `<STEP_ID>` with the actual step key string (e.g. `'7'`, `'micro-qa-1'`)
 If the returned status is NOT `complete`, the sub-skill did not finish cleanly.
 Treat this as a step failure — do NOT advance.
 
+**Mark step complete (for fast-forward when expected outputs already exist on disk):**
+
+> **Before running:** Substitute the actual component name for `$COMPONENT` and the actual step key for `<STEP_ID>`.
+
+```bash
+node -e "
+const fs = require('fs');
+const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['<STEP_ID>'] = { status: 'complete', completedAt: new Date().toISOString(), note: 'fast-forwarded — outputs already existed on disk' };
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+```
+
+Replace `<STEP_ID>` with the actual step key string (e.g. `'4'`, `'6.5'`) before running.
+
 ---
 
 ## ⛔ Execution rule — deterministic transitions, no pausing between steps
@@ -473,6 +490,11 @@ the completion record, verify every listed output path starts with one of these 
 | 11   | `packages/evo-react/src/<name>/`                                        |
 | 12   | `src/routes/_index/components/<block>/`                                 |
 | 13   | `src/routes/_index/components/<block>/`, `src/data/`                    |
+
+> **Steps 14 and 15 are exempt from scope boundary checking.** Step 14 (`npm run build`) writes
+> compiled artefacts to `dist/` directories across multiple packages — this is expected and correct.
+> Step 15 (`evo-qa`) writes only to `pipeline-state.json`. Neither produces component output files
+> that should be constrained to a write zone. Skip the boundary check for these two steps.
 
 If any output is outside all allowed zones:
 
@@ -892,8 +914,12 @@ Next steps:
 | ------------- | --------------------------------------------- | ----------------- |
 | `full`        | New component; cross-layer changes            | 4–16              |
 | `static`      | HTML structure and/or SCSS changed            | 4–7, 13–16        |
-| `interactive` | Only Marko/React behavior or props changed    | 8–16              |
+| `interactive` | Only Marko/React behavior or props changed    | 6.5, 8–16         |
 | `style`       | SCSS only; no structural or behavioral change | 4(SCSS), 6, 14–16 |
+
+> **Note on Step 6.5 and interactive scope:** Step 6.5 (scaffold generation) runs for interactive scope
+> because it produces the `index.marko` and `index.tsx` scaffold files that Steps 8 and 10 complete.
+> The "8–16" shorthand in the table above is updated to "6.5, 8–16" to reflect this dependency.
 
 ## Sub-skill scope declarations
 
