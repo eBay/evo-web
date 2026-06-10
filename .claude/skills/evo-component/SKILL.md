@@ -54,6 +54,205 @@ If any exist, list them and stop. Medium-confidence gaps proceed as inline
 
 ---
 
+## Step 2.5 — State file management
+
+The pipeline uses `src/routes/_index/components/$COMPONENT/pipeline-state.json` as a
+disk-resident record of step progress. Read it at startup, create it if absent, detect
+stalls, and fast-forward past completed steps.
+
+### Schema
+
+```json
+{
+  "component": "accordion",
+  "scope": "full",
+  "manifestHash": "<md5-of-manifest-json>",
+  "startedAt": "2026-06-10T09:00:00.000Z",
+  "updatedAt": "2026-06-10T09:14:22.000Z",
+  "steps": {
+    "4": { "status": "pending" },
+    "5": { "status": "pending" },
+    "6": { "status": "pending" },
+    "6.5": { "status": "pending" },
+    "7": { "status": "pending" },
+    "micro-qa-1": { "status": "pending" },
+    "8": { "status": "pending" },
+    "9": { "status": "pending" },
+    "10": { "status": "pending" },
+    "11": { "status": "pending" },
+    "12": { "status": "pending" },
+    "micro-qa-2": { "status": "pending" },
+    "13": { "status": "pending" },
+    "14": { "status": "pending" },
+    "15": { "status": "pending" }
+  }
+}
+```
+
+`status` values: `pending` | `in-progress` | `complete` | `failed` | `skipped`
+
+### Startup procedure
+
+**1. Compute the manifest hash:**
+
+```bash
+md5 -q src/routes/_index/components/$COMPONENT/manifest.json
+```
+
+Store this value as `$MANIFEST_HASH` for use in subsequent steps.
+
+**2. Check if the state file exists:**
+
+```bash
+cat src/routes/_index/components/$COMPONENT/pipeline-state.json 2>/dev/null || echo "NOT_FOUND"
+```
+
+**3a. If NOT_FOUND — create the state file:**
+
+Initialize all steps for the resolved scope as `pending` (steps not in this scope
+set to `skipped`). See the scope-to-steps table in Step 3.
+
+```bash
+node -e "
+const fs = require('fs');
+const path = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const now = new Date().toISOString();
+const state = {
+  component: '$COMPONENT',
+  scope: '$SCOPE',
+  manifestHash: '$MANIFEST_HASH',
+  startedAt: now,
+  updatedAt: now,
+  steps: {
+    '4':          { status: 'pending' },
+    '5':          { status: 'pending' },
+    '6':          { status: 'pending' },
+    '6.5':        { status: 'pending' },
+    '7':          { status: 'pending' },
+    'micro-qa-1': { status: 'pending' },
+    '8':          { status: 'pending' },
+    '9':          { status: 'pending' },
+    '10':         { status: 'pending' },
+    '11':         { status: 'pending' },
+    '12':         { status: 'pending' },
+    'micro-qa-2': { status: 'pending' },
+    '13':         { status: 'pending' },
+    '14':         { status: 'pending' },
+    '15':         { status: 'pending' }
+  }
+};
+fs.writeFileSync(path, JSON.stringify(state, null, 2));
+console.log('State file created.');
+"
+```
+
+**3b. If state file exists — validate and resume:**
+
+Read the state file. Then:
+
+**(i) Manifest hash check:**
+
+Compare the stored `manifestHash` against `$MANIFEST_HASH`. If they differ:
+
+```
+⚠️  Manifest changed since this pipeline run started.
+    Stored hash:   <stored>
+    Current hash:  <current>
+
+    Steps already marked complete were generated from a different manifest.
+    Options:
+      • Type "reset" to clear the state file and restart from Step 4.
+      • Type "continue" to proceed — completed steps will NOT be re-run even
+        though the manifest changed. Use this only if the manifest change is
+        cosmetic and does not affect the layers already generated.
+```
+
+Stop and wait. Do not proceed until the engineer responds.
+
+If "reset": delete `pipeline-state.json` and re-run Step 2.5 as if NOT_FOUND.
+If "continue": update `manifestHash` in the state file and proceed normally.
+
+**(ii) Stall detection:**
+
+For each step where `status === "in-progress"`, check the `startedAt` timestamp.
+If `startedAt` is more than 10 minutes ago relative to now:
+
+```bash
+node -e "
+const fs = require('fs');
+const path = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const state = JSON.parse(fs.readFileSync(path, 'utf8'));
+const now = Date.now();
+const STALL_MS = 10 * 60 * 1000;
+Object.entries(state.steps).forEach(([stepId, step]) => {
+  if (step.status === 'in-progress') {
+    const age = now - new Date(step.startedAt).getTime();
+    if (age > STALL_MS) {
+      console.log('STALLED:' + stepId);
+      state.steps[stepId] = { status: 'failed', error: 'Stalled — in-progress for >' + Math.round(age/60000) + ' min. Re-run to retry.' };
+    }
+  }
+});
+state.updatedAt = new Date().toISOString();
+fs.writeFileSync(path, JSON.stringify(state, null, 2));
+"
+```
+
+If any steps were stalled and marked failed, surface them:
+
+```
+⚠️  Stalled step detected and marked failed:
+    Step <N>: was in-progress for >10 minutes — treated as failed.
+    The pipeline will halt at Step <N>. Fix the issue, then
+    re-run /evo-component $COMPONENT to retry from that step.
+```
+
+**(iii) Print resume state:**
+
+After stall detection, print a summary of which steps are complete, which
+will be skipped (wrong scope), and which will now run:
+
+```
+▶  Resuming <COMPONENT> [scope: <scope>]
+   ✅ Step 4  — complete (from prior run)
+   ✅ Step 5  — complete (from prior run)
+   ⏭  Step 6  — skipped (scope: <scope>)
+   ▶  Step 7  — will run now (first pending step)
+   ...
+```
+
+### Step marking helpers
+
+Use these patterns at the start and end of every step execution:
+
+**Mark step in-progress (before invoking sub-skill):**
+
+```bash
+node -e "
+const fs = require('fs');
+const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+s.steps['STEP_ID'] = { status: 'in-progress', startedAt: new Date().toISOString() };
+s.updatedAt = new Date().toISOString();
+fs.writeFileSync(p, JSON.stringify(s, null, 2));
+"
+```
+
+**Read step status after sub-skill returns (to confirm completion record was written):**
+
+```bash
+node -e "
+const fs = require('fs');
+const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
+console.log(JSON.stringify(s.steps['STEP_ID']));
+"
+```
+
+If the returned status is NOT `complete`, the sub-skill did not finish cleanly.
+Treat this as a step failure — do NOT advance.
+
+---
+
 ## ⛔ Execution rule — no pausing between steps
 
 You are an automated orchestrator. After each sub-skill returns, you MUST
@@ -61,6 +260,7 @@ immediately proceed to the next step. Do not end your response turn between
 steps. Do not ask the user whether to continue. Do not summarize and wait.
 
 The ONLY valid reasons to stop and wait for input are:
+
 1. Gate 2 — manifest review (the engineer must type "approved")
 2. A 🔴 blocking failure inside a sub-skill that cannot be fixed inline
 
@@ -73,6 +273,7 @@ Every step description below ends with an explicit "→ Next:" line. Follow it.
 If `--scope` was not provided, ask:
 
 > "What changed in this revision?
+>
 > - `full` — new component or significant cross-layer changes (default)
 > - `static` — HTML structure and/or SCSS changed; framework layers need updating
 > - `interactive` — only Marko/React behavior or props changed; static layer untouched
@@ -113,6 +314,7 @@ Invoke: `/evo-static-component` (inline)
 - **style:** Generate SCSS only — HTML structure is unchanged. Tell the skill: "Style scope — regenerate SCSS only. Do not regenerate HTML."
 
 **Expected output:**
+
 - HTML catalogue in context (full/static only)
 - `packages/skin/src/sass/<block>/<block>.scss` (if tokens/figma available)
 - `skin-headless.scss` updated (if SCSS generated)
@@ -153,6 +355,7 @@ Do not write +page.marko, +meta.json, or update component-metadata.json."
   to css+page.marko. Do not rewrite existing sections."
 
 **Expected output:**
+
 - `src/routes/_index/components/<block>/css+page.marko`
 - `src/routes/_index/components/<block>/css+meta.json`
 
@@ -171,6 +374,7 @@ npx tsx scripts/codegen/generate-component-scaffold.ts $COMPONENT
 ```
 
 Files written:
+
 - `packages/evo-marko/src/tags/<name>/style.ts` — complete
 - `packages/evo-marko/src/tags/<name>/index.marko` — Input interface scaffold + TODO template body
 - `packages/evo-marko/src/tags/<name>/test/test.server.ts` — complete structure with stubs
@@ -197,11 +401,13 @@ Validate the static HTML and static storybook. Write the static sections
 of accessibility+page.marko. Do NOT evaluate index.marko or index.tsx."`
 
 **Pass 1 validates:**
+
 - ARIA roles and label strategy in the static HTML
 - RTL and textSpacing stories in the static storybook
 - 🔴 blocking issues stop the pipeline here
 
 **Pass 1 writes static sections of `accessibility+page.marko`:**
+
 - Best Practices (from manifest a11y + callerObligations)
 - ARIA Reference table (from manifest.a11y.ariaAttributes[])
 - Skeleton placeholders for Keyboard, Screen Reader, Pointer (to be filled by Pass 2)
@@ -222,6 +428,7 @@ Reads static HTML from context (Step 4, full scope) or from existing storybook
 file (interactive scope — no Step 4 was run). Generates Marko 6 component.
 
 **Expected output** (`packages/evo-marko/src/tags/<name>/`):
+
 - `index.marko`, `style.ts`, `test/test.server.ts`, `test/test.browser.ts` (if interactive)
 
 → **Next:** After this skill returns, print "Step 8 complete." then immediately invoke Step 9.
@@ -235,6 +442,7 @@ file (interactive scope — no Step 4 was run). Generates Marko 6 component.
 Invoke: `/evo-marko-storybook` (inline)
 
 **Expected output:**
+
 - `packages/evo-marko/src/tags/<name>/<name>.stories.ts` + `examples/`
 
 → **Next:** After this skill returns, print "Step 9 complete." then immediately invoke Step 10.
@@ -248,6 +456,7 @@ Invoke: `/evo-marko-storybook` (inline)
 Invoke: `/evo-react-component` (inline)
 
 **Expected output** (`packages/evo-react/src/<name>/`):
+
 - `index.tsx`, `__tests__/index.spec.tsx`
 
 → **Next:** After this skill returns, print "Step 10 complete." then immediately invoke Step 11.
@@ -261,6 +470,7 @@ Invoke: `/evo-react-component` (inline)
 Invoke: `/evo-react-storybook` (inline)
 
 **Expected output:**
+
 - `packages/evo-react/src/<name>/<basename>.stories.tsx`
 
 → **Next:** After this skill returns, print "Step 11 complete." then immediately invoke Step 12.
@@ -277,6 +487,7 @@ Invoke: `/evo-a11y` (inline) with scope declaration:
 interactive sections of accessibility+page.marko."`
 
 **Pass 2 validates:**
+
 - Static HTML (re-check)
 - `index.marko` — ARIA wiring, keyboard handlers, Marko 6 syntax
 - `index.tsx` — ARIA wiring, keyboard handlers
@@ -284,6 +495,7 @@ interactive sections of accessibility+page.marko."`
 - React storybook — controlled story if keyboardModel present
 
 **Pass 2 fills in interactive sections of `accessibility+page.marko`:**
+
 - Keyboard section (from manifest.keyboardModel + manifest.keyboardInteractions[])
 - Screen Reader section (from manifest.a11y.screenReaderAnnouncement — interactive states)
 - Pointer section (active/interactive behavior)
@@ -309,6 +521,7 @@ Tell the skill: "full scope — write +page.marko, +meta.json, and update
 component-metadata.json. Do NOT rewrite css+page.marko (already done in Step 6)."
 
 **Expected output:**
+
 - `src/routes/_index/components/<block>/+page.marko`
 - `src/routes/_index/components/<block>/+meta.json`
 - `src/data/component-metadata.json` entry added/updated
@@ -341,14 +554,15 @@ ignores conversation context and reads only from disk, which is sufficient for
 its binary file/manifest checks.
 
 Pass context to the skill in your invocation args:
+
 - Component name, scope, manifest path
 - All file paths generated in this run
 - Any known approved deviations from gap-report.json
 
-| Layer | Runs when | What it checks |
-|---|---|---|
-| Layer 1 | Always | Files present (per scope), props/slots/BEM/ARIA match manifest, no Marko 5 patterns, no gap placeholders, storybook format |
-| Layer 2 | `--reference` provided | Structural delta + fidelity score vs. reference |
+| Layer   | Runs when              | What it checks                                                                                                             |
+| ------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Layer 1 | Always                 | Files present (per scope), props/slots/BEM/ARIA match manifest, no Marko 5 patterns, no gap placeholders, storybook format |
+| Layer 2 | `--reference` provided | Structural delta + fidelity score vs. reference                                                                            |
 
 → **Next:** After QA returns, fix any 🔴 failures inline and re-run. Once QA passes, immediately proceed to Step 16.
 
@@ -395,28 +609,28 @@ Next steps:
 
 ## Scope reference
 
-| Scope | When to use | Steps run |
-|---|---|---|
-| `full` | New component; cross-layer changes | 4–16 |
-| `static` | HTML structure and/or SCSS changed | 4–7, 13–16 |
-| `interactive` | Only Marko/React behavior or props changed | 8–16 |
-| `style` | SCSS only; no structural or behavioral change | 4(SCSS), 6, 14–16 |
+| Scope         | When to use                                   | Steps run         |
+| ------------- | --------------------------------------------- | ----------------- |
+| `full`        | New component; cross-layer changes            | 4–16              |
+| `static`      | HTML structure and/or SCSS changed            | 4–7, 13–16        |
+| `interactive` | Only Marko/React behavior or props changed    | 8–16              |
+| `style`       | SCSS only; no structural or behavioral change | 4(SCSS), 6, 14–16 |
 
 ## Sub-skill scope declarations
 
 All sub-skills run inline. The orchestrator explicitly tells each skill what
 scope this invocation is running — never infer from disk state.
 
-| Sub-skill | Context | Scope declaration pattern |
-|---|---|---|
-| `/evo-static-component` | Inline | "full/static scope: full HTML + SCSS" or "style scope: SCSS only" |
-| `/evo-static-storybook` | Inline | (no scope needed — always reads Step 4 HTML) |
-| `/evo-docs-hookup` (Step 6) | Inline | "css-only scope" |
-| `/evo-a11y` Pass 1 | Inline | "Pass 1 — static layer only; steps 4–6 ran" |
-| `/evo-marko-component` | Inline | (reads static HTML from context or existing storybook) |
-| `/evo-marko-storybook` | Inline | (no scope needed) |
-| `/evo-react-component` | Inline | (reads static HTML from context or existing storybook) |
-| `/evo-react-storybook` | Inline | (no scope needed) |
-| `/evo-a11y` Pass 2 | Inline | "Pass 2 — full scope; steps 4–11 ran" or "Pass 2 — interactive scope; steps 8–11 ran" |
-| `/evo-docs-hookup` (Step 13) | Inline | "full scope — Overview + metadata only, css+page.marko already written" |
-| `/evo-qa` | **Forked** | Told: scope used, which files were generated this run |
+| Sub-skill                    | Context    | Scope declaration pattern                                                             |
+| ---------------------------- | ---------- | ------------------------------------------------------------------------------------- |
+| `/evo-static-component`      | Inline     | "full/static scope: full HTML + SCSS" or "style scope: SCSS only"                     |
+| `/evo-static-storybook`      | Inline     | (no scope needed — always reads Step 4 HTML)                                          |
+| `/evo-docs-hookup` (Step 6)  | Inline     | "css-only scope"                                                                      |
+| `/evo-a11y` Pass 1           | Inline     | "Pass 1 — static layer only; steps 4–6 ran"                                           |
+| `/evo-marko-component`       | Inline     | (reads static HTML from context or existing storybook)                                |
+| `/evo-marko-storybook`       | Inline     | (no scope needed)                                                                     |
+| `/evo-react-component`       | Inline     | (reads static HTML from context or existing storybook)                                |
+| `/evo-react-storybook`       | Inline     | (no scope needed)                                                                     |
+| `/evo-a11y` Pass 2           | Inline     | "Pass 2 — full scope; steps 4–11 ran" or "Pass 2 — interactive scope; steps 8–11 ran" |
+| `/evo-docs-hookup` (Step 13) | Inline     | "full scope — Overview + metadata only, css+page.marko already written"               |
+| `/evo-qa`                    | **Forked** | Told: scope used, which files were generated this run                                 |
