@@ -93,10 +93,14 @@ stalls, and fast-forward past completed steps.
 
 ### Startup procedure
 
+> **Note on `$SCOPE`:** This is the value from `--scope` on invocation (default: `full`). The full scope-to-steps mapping is in the scope reference table at the end of this skill. For state file initialization, steps not included in the current scope should be set to `skipped` instead of `pending`.
+
 **1. Compute the manifest hash:**
 
 ```bash
-md5 -q src/routes/_index/components/$COMPONENT/manifest.json
+# macOS: md5 -q src/routes/_index/components/$COMPONENT/manifest.json
+# Cross-platform (Node):
+node -e "const c=require('crypto'),fs=require('fs');process.stdout.write(c.createHash('md5').update(fs.readFileSync('src/routes/_index/components/$COMPONENT/manifest.json')).digest('hex'))"
 ```
 
 Store this value as `$MANIFEST_HASH` for use in subsequent steps.
@@ -111,6 +115,8 @@ cat src/routes/_index/components/$COMPONENT/pipeline-state.json 2>/dev/null || e
 
 Initialize all steps for the resolved scope as `pending` (steps not in this scope
 set to `skipped`). See the scope-to-steps table in Step 3.
+
+> **Before running:** Substitute the actual values of `$COMPONENT`, `$SCOPE`, and `$MANIFEST_HASH` into the command string — these are not shell environment variables that persist across tool calls.
 
 ```bash
 node -e "
@@ -141,6 +147,7 @@ const state = {
     '15':         { status: 'pending' }
   }
 };
+fs.mkdirSync(require('path').dirname(path), { recursive: true });
 fs.writeFileSync(path, JSON.stringify(state, null, 2));
 console.log('State file created.');
 "
@@ -148,7 +155,9 @@ console.log('State file created.');
 
 **3b. If state file exists — validate and resume:**
 
-Read the state file. Then:
+Parse the content already read in sub-step 2. Then:
+
+> If parsing fails (corrupted or partial write), treat this as NOT_FOUND: log a warning `⚠️ pipeline-state.json is corrupt — starting fresh.` and proceed to sub-step 3a to recreate it.
 
 **(i) Manifest hash check:**
 
@@ -176,6 +185,8 @@ If "continue": update `manifestHash` in the state file and proceed normally.
 
 For each step where `status === "in-progress"`, check the `startedAt` timestamp.
 If `startedAt` is more than 10 minutes ago relative to now:
+
+> **Before running:** Substitute the actual values of `$COMPONENT`, `$SCOPE`, and `$MANIFEST_HASH` into the command string — these are not shell environment variables that persist across tool calls.
 
 ```bash
 node -e "
@@ -221,32 +232,42 @@ will be skipped (wrong scope), and which will now run:
    ...
 ```
 
+→ After printing the resume summary, proceed to Step 3 to resolve scope and begin execution from the first pending step.
+
 ### Step marking helpers
 
 Use these patterns at the start and end of every step execution:
 
 **Mark step in-progress (before invoking sub-skill):**
 
+> **Before running:** Substitute the actual values of `$COMPONENT`, `$SCOPE`, and `$MANIFEST_HASH` into the command string — these are not shell environment variables that persist across tool calls.
+
 ```bash
 node -e "
 const fs = require('fs');
 const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
 const s = JSON.parse(fs.readFileSync(p, 'utf8'));
-s.steps['STEP_ID'] = { status: 'in-progress', startedAt: new Date().toISOString() };
+s.steps['<STEP_ID>'] = { status: 'in-progress', startedAt: new Date().toISOString() };
 s.updatedAt = new Date().toISOString();
 fs.writeFileSync(p, JSON.stringify(s, null, 2));
 "
 ```
 
+Replace `<STEP_ID>` with the actual step key string (e.g. `'7'`, `'micro-qa-1'`) before running.
+
 **Read step status after sub-skill returns (to confirm completion record was written):**
+
+> **Before running:** Substitute the actual values of `$COMPONENT`, `$SCOPE`, and `$MANIFEST_HASH` into the command string — these are not shell environment variables that persist across tool calls.
 
 ```bash
 node -e "
 const fs = require('fs');
 const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
-console.log(JSON.stringify(s.steps['STEP_ID']));
+console.log(JSON.stringify(s.steps['<STEP_ID>']));
 "
 ```
+
+Replace `<STEP_ID>` with the actual step key string (e.g. `'7'`, `'micro-qa-1'`) before running.
 
 If the returned status is NOT `complete`, the sub-skill did not finish cleanly.
 Treat this as a step failure — do NOT advance.
