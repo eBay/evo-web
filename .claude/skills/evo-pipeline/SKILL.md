@@ -121,23 +121,41 @@ component is in its lifecycle. Check in order:
 
 If `pipeline-state.json` exists:
 
-1. Read it and print the resume banner:
+Note: evaluate sub-steps 1–3 in order. The resume banner (sub-step 1) always prints first.
+Stall detection (sub-step 2) may promote in-progress steps to failed before sub-step 3 checks
+for failures.
+
+1. If the file exists but cannot be parsed as JSON (corrupted or partial write), treat it as
+   NOT_FOUND: log `⚠️ pipeline-state.json is corrupt — treating as a fresh run.` and skip to
+   the State A/B/C/D detection below without printing the resume banner.
+
+   Read it and print the resume banner:
+
    ```
    ♻️  Prior pipeline run detected for <component>
        Scope:    <scope>
        Started:  <startedAt>
        Progress: <N> of <M> steps complete
    ```
+
+   To compute the counts: parse the JSON, count entries in `steps` where `status === "complete"` for N;
+   count entries where `status !== "skipped"` for M.
+
 2. Run stall detection (see Step 2.5 in `/evo-component`) — the outer pipeline
    surfaces stalled steps before passing to `/evo-component`.
-3. If any step is `failed`, surface it immediately:
+   If `/evo-component` is not already in context, inline the stall check: run `cat src/routes/_index/components/<name>/pipeline-state.json`, look for any step with `status === "in-progress"` and check its `startedAt` timestamp — if older than 10 minutes relative to now, treat that step as `failed` with error "Stalled — re-run to retry."
+3. If any step is `failed`, surface ALL failed steps, not just the first:
    ```
-   🔴 Prior run ended with a failed step:
+   🔴 Prior run ended with failed step(s):
       Step <N> — <error>
-      Resolve the issue above, then re-run /evo-pipeline <name> to retry.
+      Step <M> — <error> (if multiple)
+      Resolve the issue(s) above, then re-run /evo-pipeline <name> to retry.
    ```
    Stop. Do not proceed to State C/D/E until the failure is resolved or the
    engineer types "reset" to clear the state file.
+4. If the engineer types "reset": delete `pipeline-state.json` from the component folder, then
+   treat this run as a fresh start — proceed to State C (or State D if manifest already exists
+   and was not re-generated). Do not ask for further confirmation.
 
 Announce the detected state immediately:
 
