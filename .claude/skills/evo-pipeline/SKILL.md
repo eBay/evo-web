@@ -44,17 +44,17 @@ appropriate sub-skill and let it do the work.
 You will be tempted to shortcut the pipeline. These thoughts will feel
 reasonable in the moment. They are not:
 
-| Rationalization | Why it's wrong |
-|---|---|
-| "The specs are identical, the diff step can be skipped" | The diff compares spec to *implementation*, not just spec to spec — skipping it hides gaps |
-| "The manifest is already on disk so Gate 2 is implied" | On-disk ≠ approved. "Approved" means the engineer typed it in this session |
-| "It's just a CSS modifier / one small file / obviously correct" | Scope doesn't matter. All implementation goes through sub-skills |
-| "Invoking /evo-component is overkill for this" | There is no scope small enough to justify bypassing the sub-skill |
-| "I can see exactly what needs to change and it will be faster to just do it" | Faster is not the goal. A gate-verified output is the goal |
-| "The task is simple so the QA step isn't needed" | QA is not optional. It runs after every generation, full stop |
-| "The sub-skill returned, so generation is done" | The sub-skill completing is not pipeline completion. State E.5 (QA + visual verification) has not run yet |
-| "QA Layer 1 passed, so it's done" | Manifest-fidelity QA passing does not mean visual rendering is correct. State E.5 requires a live browser check |
-| "I can see the code looks right" | You have not opened a browser. Visual QA requires navigating to the component page and taking a screenshot |
+| Rationalization                                                              | Why it's wrong                                                                                                  |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| "The specs are identical, the diff step can be skipped"                      | The diff compares spec to _implementation_, not just spec to spec — skipping it hides gaps                      |
+| "The manifest is already on disk so Gate 2 is implied"                       | On-disk ≠ approved. "Approved" means the engineer typed it in this session                                      |
+| "It's just a CSS modifier / one small file / obviously correct"              | Scope doesn't matter. All implementation goes through sub-skills                                                |
+| "Invoking /evo-component is overkill for this"                               | There is no scope small enough to justify bypassing the sub-skill                                               |
+| "I can see exactly what needs to change and it will be faster to just do it" | Faster is not the goal. A gate-verified output is the goal                                                      |
+| "The task is simple so the QA step isn't needed"                             | QA is not optional. It runs after every generation, full stop                                                   |
+| "The sub-skill returned, so generation is done"                              | The sub-skill completing is not pipeline completion. State E.5 (QA + visual verification) has not run yet       |
+| "QA Layer 1 passed, so it's done"                                            | Manifest-fidelity QA passing does not mean visual rendering is correct. State E.5 requires a live browser check |
+| "I can see the code looks right"                                             | You have not opened a browser. Visual QA requires navigating to the component page and taking a screenshot      |
 
 ---
 
@@ -116,6 +116,28 @@ component is in its lifecycle. Check in order:
 **Gap report:** `gap-report.json` in that folder
 **Generated files:** `packages/evo-marko/src/tags/evo-<name>/index.marko`
 `packages/evo-react/src/<name>/index.tsx`
+
+**Pipeline state:** `pipeline-state.json` in the component folder
+
+If `pipeline-state.json` exists:
+
+1. Read it and print the resume banner:
+   ```
+   ♻️  Prior pipeline run detected for <component>
+       Scope:    <scope>
+       Started:  <startedAt>
+       Progress: <N> of <M> steps complete
+   ```
+2. Run stall detection (see Step 2.5 in `/evo-component`) — the outer pipeline
+   surfaces stalled steps before passing to `/evo-component`.
+3. If any step is `failed`, surface it immediately:
+   ```
+   🔴 Prior run ended with a failed step:
+      Step <N> — <error>
+      Resolve the issue above, then re-run /evo-pipeline <name> to retry.
+   ```
+   Stop. Do not proceed to State C/D/E until the failure is resolved or the
+   engineer types "reset" to clear the state file.
 
 Announce the detected state immediately:
 
@@ -515,12 +537,15 @@ Run all sub-steps in order. Do not skip any.
 
 1. **Confirm the dev server is running.** Check for an active process on the expected
    port (typically `http://localhost:63733` for this project). If not running, start it:
+
    ```bash
    npm start
    ```
+
    Wait for the server to be ready before proceeding.
 
 2. **Navigate to the component's CSS docs page:**
+
    ```
    http://localhost:<port>/components/<name>/css
    ```
@@ -541,14 +566,14 @@ Run all sub-steps in order. Do not skip any.
 
    ```js
    // For each foreground element inside the new modifier:
-   const el = document.querySelector('.<block>--<modifier>');
-   const link = el?.querySelector('a');
-   const svg = el?.querySelector('svg');
+   const el = document.querySelector(".<block>--<modifier>");
+   const link = el?.querySelector("a");
+   const svg = el?.querySelector("svg");
    console.log({
-     bg:        getComputedStyle(el).backgroundColor,
-     text:      getComputedStyle(el).color,
-     linkColor: link  ? getComputedStyle(link).color : 'none',
-     iconColor: svg   ? getComputedStyle(svg).color  : 'none',
+     bg: getComputedStyle(el).backgroundColor,
+     text: getComputedStyle(el).color,
+     linkColor: link ? getComputedStyle(link).color : "none",
+     iconColor: svg ? getComputedStyle(svg).color : "none",
    });
    ```
 
