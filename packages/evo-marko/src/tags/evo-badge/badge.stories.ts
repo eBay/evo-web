@@ -4,6 +4,8 @@ import { type Meta } from "@storybook/marko";
 import Badge, { type Input } from "./index.marko";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
+import EmptyTemplate from "./examples/empty.marko";
+import EmptyTemplateCode from "./examples/empty.marko?raw";
 
 export default {
   title: "graphics & icons/evo-badge",
@@ -47,4 +49,10 @@ export const Default = buildExtensionTemplate(
   {
     number: 5,
   },
+);
+
+export const Empty = buildExtensionTemplate(
+  EmptyTemplate,
+  EmptyTemplateCode,
+  {},
 );

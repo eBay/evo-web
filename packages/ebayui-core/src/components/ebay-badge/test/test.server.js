@@ -46,4 +46,9 @@ it("truncates when the value is greater than 99", async () => {
     expect(getByText(/\d+/)).toMatchSnapshot();
 });
 
+it("renders an empty badge when no number is provided", async () => {
+    const { container } = await render(template, {});
+    expect(container.querySelector(".badge")).toMatchSnapshot();
+});
+
 testPassThroughAttributes(template, { input: { number: 1 } });

@@ -1,5 +1,9 @@
 export default { title: "Skin/Badge" };
 
+export const empty = () => `
+<span class="badge"></span>
+`;
+
 export const oneDigit = () => `
 <span class="badge">1</span>
 `;

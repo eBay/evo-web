@@ -67,3 +67,9 @@ export const BigNumbers: StoryObj<EbayBadgeProps> = {
         number: 120,
     },
 };
+
+export const Empty: StoryObj<EbayBadgeProps> = {
+    args: {
+        "aria-label": "new",
+    },
+};

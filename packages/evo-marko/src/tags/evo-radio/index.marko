@@ -10,9 +10,9 @@ export interface Input extends Marko.HTML.Input {
 
 <span class=["radio", inputClass]>
     <input
+        ...htmlInput
         type="radio"
         class="radio__control"
-        ...htmlInput
     >
     <span class="radio__icon" hidden>
         <if=size === "large">

@@ -6,7 +6,6 @@ exports[`evo-fake-menu-button SSR > renders default 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -116,7 +115,6 @@ exports[`evo-fake-menu-button SSR > renders overflow variant 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     aria-label="button"
     class="fake-menu-button__button icon-btn"
     type="button"
@@ -222,7 +220,6 @@ exports[`evo-fake-menu-button SSR > renders with a custom label 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -340,7 +337,6 @@ exports[`evo-fake-menu-button SSR > renders with borderless=true 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--borderless"
     type="button"
   >
@@ -450,7 +446,6 @@ exports[`evo-fake-menu-button SSR > renders with fixWidth=true 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -560,7 +555,6 @@ exports[`evo-fake-menu-button SSR > renders with fixed strategy 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -670,7 +664,6 @@ exports[`evo-fake-menu-button SSR > renders with icon and text 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -796,7 +789,6 @@ exports[`evo-fake-menu-button SSR > renders with reverse=true 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -906,7 +898,6 @@ exports[`evo-fake-menu-button SSR > renders with separators 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >
@@ -1040,7 +1031,6 @@ exports[`evo-fake-menu-button SSR > renders with size=small 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--small btn--secondary"
     type="button"
   >
@@ -1150,7 +1140,6 @@ exports[`evo-fake-menu-button SSR > renders without toggle icon 1`] = `
 >
   <button
     aria-expanded="false"
-    aria-haspopup="true"
     class="fake-menu-button__button btn btn--secondary"
     type="button"
   >

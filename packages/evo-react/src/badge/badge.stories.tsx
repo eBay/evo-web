@@ -49,3 +49,10 @@ export default meta;
 type Story = StoryObj<typeof EvoBadge>;
 
 export const Default: Story = {};
+
+export const Empty: Story = {
+  args: {
+    number: undefined,
+    a11yText: "new",
+  },
+};

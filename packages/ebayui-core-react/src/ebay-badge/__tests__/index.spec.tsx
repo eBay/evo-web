@@ -10,7 +10,7 @@ describe("<EbayBadge>", () => {
 
     it("renders number with rounded-up value", async () => {
         const { getByText } = await render(<EbayBadge number={5.6} />);
-        expect(getByText("5")).toBeInTheDocument();
+        expect(getByText("6")).toBeInTheDocument();
     });
 
     it("does not render with negative value", async () => {
@@ -26,7 +26,7 @@ describe("<EbayBadge>", () => {
 
         it("renders number with rounded-up string", async () => {
             const { getByText } = await render(<EbayBadge number="5.6" />);
-            expect(getByText("5")).toBeInTheDocument();
+            expect(getByText("6")).toBeInTheDocument();
         });
 
         it("does not renders with an invalid string", async () => {
@@ -43,5 +43,12 @@ describe("<EbayBadge>", () => {
     it("truncates when the value is greater than 99", async () => {
         const { getByText } = await render(<EbayBadge number={150} />);
         expect(getByText("99+")).toBeInTheDocument();
+    });
+
+    it("renders an empty badge when no number is provided", async () => {
+        const { container } = await render(<EbayBadge />);
+        const badge = container.querySelector(".badge");
+        expect(badge).toBeInTheDocument();
+        expect(badge).toBeEmptyDOMElement();
     });
 });
