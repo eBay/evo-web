@@ -4,7 +4,7 @@ import type { Item } from "./component";
 $ const {
     class: inputClass,
     item: items = [],
-    a11yHeadingTag,
+    a11yHeadingTag = "h2",
     a11yCurrentText = "Results Pagination - Page 1",
     a11yPreviousText = "Previous page",
     a11yNextText = "Next page",
@@ -61,7 +61,7 @@ $ const {
     key="root"
     aria-labelledby:scoped="heading">
     <span aria-live="polite" role="status">
-        <${a11yHeadingTag || "h2"} id:scoped="heading" class="clipped">
+        <${a11yHeadingTag} id:scoped="heading" class="clipped">
             ${a11yCurrentText}
         </>
     </span>

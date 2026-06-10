@@ -1,6 +1,6 @@
-import React from "react";
-import { render, screen, within } from "@testing-library/react";
 import { composeStories } from "@storybook/react-vite";
+import { render, screen, within } from "@testing-library/react";
+import React from "react";
 import * as stories from "./index.stories";
 
 const { BasicLinks, ArrowsDisabled, Buttons, Fluid } = composeStories(stories);
@@ -95,7 +95,7 @@ describe("ebay-pagination rendering", () => {
 
         const h2 = within(status).getByRole("heading", { level: 2 });
         expect(h2).toHaveAttribute("id", "ebay-pagination-pagination-heading");
-        expect(h2).toHaveTextContent("Pagination - Current Page");
+        expect(h2).toHaveTextContent("Results Pagination - Page 1");
 
         const linkPrev = container.querySelector(".pagination__previous");
         expect(linkPrev).toHaveClass("icon-btn");

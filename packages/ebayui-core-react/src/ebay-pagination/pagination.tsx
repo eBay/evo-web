@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, {
     Children,
     ComponentProps,
@@ -5,20 +6,19 @@ import React, {
     JSX,
     ReactElement,
     cloneElement,
+    createRef,
     useEffect,
     useRef,
     useState,
-    createRef,
 } from "react";
-import { EbayFakeMenuButton, EbayFakeMenuButtonItem as Item } from "../ebay-fake-menu-button";
-import classNames from "classnames";
-import { debounce } from "../common/debounce";
-import { calcPageState, getMaxWidth } from "./helpers";
 import { filterBy } from "../common/component-utils";
+import { debounce } from "../common/debounce";
+import { EbayEventHandler } from "../common/event-utils/types";
+import { EbayFakeMenuButton, EbayFakeMenuButtonItem as Item } from "../ebay-fake-menu-button";
+import { EbayIconOverflowHorizontal24 } from "../ebay-icon/icons/ebay-icon-overflow-horizontal-24";
+import { calcPageState, getMaxWidth } from "./helpers";
 import { PaginationItemProps, PaginationItemType } from "./pagination-item";
 import { ItemState, PaginationVariant } from "./types";
-import { EbayIconOverflowHorizontal24 } from "../ebay-icon/icons/ebay-icon-overflow-horizontal-24";
-import { EbayEventHandler } from "../common/event-utils/types";
 
 export type PaginationProps = Omit<ComponentProps<"nav">, "onSelect"> & {
     id?: string;
@@ -37,7 +37,7 @@ const EbayPagination: FC<PaginationProps> = ({
     id = "ebay-pagination",
     a11yHeadingTag = "h2",
     className,
-    a11yCurrentText = "Pagination - Current Page",
+    a11yCurrentText = "Results Pagination - Page 1",
     a11yPreviousText = "Previous page",
     a11yNextText = "Next page",
     variant = "show-range",
@@ -195,7 +195,7 @@ const EbayPagination: FC<PaginationProps> = ({
     };
 
     const headingId = `${id}-pagination-heading`;
-    const A11yHeadingTag = a11yHeadingTag || "h2";
+    const A11yHeadingTag = a11yHeadingTag;
 
     return (
         <nav

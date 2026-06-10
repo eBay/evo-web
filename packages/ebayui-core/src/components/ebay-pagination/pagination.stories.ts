@@ -1,11 +1,11 @@
-import { addRenderBodies } from "../../common/storybook/utils";
+import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
+import { addRenderBodies } from "../../common/storybook/utils";
 import Readme from "./README.md";
-import Component from "./index.marko";
+import type { Input } from "./component";
 import interactiveTemplate from "./examples/buttons-interactive.marko";
 import interactiveCode from "./examples/buttons-interactive.marko?raw";
-import { Story } from "@storybook/marko";
-import type { Input } from "./component";
+import Component from "./index.marko";
 
 const Template: Story<Input> = (args: Input) => ({
     input: addRenderBodies(args),
@@ -131,9 +131,6 @@ export default {
                 },
             },
         },
-    },
-    args: {
-        a11yHeadingTag: "h2",
     },
 };
 

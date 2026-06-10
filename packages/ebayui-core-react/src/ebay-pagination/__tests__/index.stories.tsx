@@ -1,9 +1,9 @@
 import React, { ComponentProps, useState } from "react";
 import { action } from "storybook/actions";
-import { EbayPagination, EbayPaginationItem as Item } from "../index";
 import { EbayButton } from "../../ebay-button";
 import { EbayLightboxDialog } from "../../ebay-lightbox-dialog";
-import { EbayTabs, EbayTab, EbayTabPanel } from "../../ebay-tabs";
+import { EbayTab, EbayTabPanel, EbayTabs } from "../../ebay-tabs";
+import { EbayPagination, EbayPaginationItem as Item } from "../index";
 
 export default {
     title: "navigation & disclosure/ebay-pagination",
@@ -114,9 +114,6 @@ or import styles using SCSS/CSS
             action: "onSelect",
             table: { category: "Events" },
         },
-    },
-    args: {
-        a11yHeadingTag: "h2",
     },
 };
 
