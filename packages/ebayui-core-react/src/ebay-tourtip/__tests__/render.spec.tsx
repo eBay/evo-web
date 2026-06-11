@@ -46,7 +46,7 @@ describe("ebay-tourtip rendering", () => {
         );
 
         const footer: HTMLElement = overlay.querySelector(".tourtip__footer");
-        expect(footer.querySelector(".tourtip__index")).toHaveTextContent("1 / 3");
+        expect(footer.querySelector(".tourtip__index")).toHaveTextContent("1 of 3");
         expect(within(footer).getByRole("button", { name: "Back" })).toHaveClass("fake-link");
         expect(within(footer).getByRole("button", { name: "Next" })).toHaveClass("btn btn--primary");
     });
@@ -72,7 +72,7 @@ describe("ebay-tourtip rendering", () => {
         expect(heading).toHaveTextContent("Title");
 
         const footer: HTMLElement = overlay.querySelector(".tourtip__footer");
-        expect(footer.querySelector(".tourtip__index")).toHaveTextContent("1 / 3");
+        expect(footer.querySelector(".tourtip__index")).toHaveTextContent("1 of 3");
         expect(within(footer).getByRole("button", { name: "Back" })).toHaveClass("fake-link");
         expect(within(footer).getByRole("button", { name: "Next" })).toHaveClass("btn btn--primary");
     });

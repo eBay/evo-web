@@ -16,7 +16,7 @@ const renderComponent = (props?: TourtipProps) =>
             <EbayTourtipContent>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </EbayTourtipContent>
-            <EbayTourtipFooter index="1 / 3">
+            <EbayTourtipFooter index="1 of 3">
                 <button className="fake-link">Back</button>
                 <button className="btn btn--primary">Next</button>
             </EbayTourtipFooter>
@@ -93,7 +93,7 @@ describe("<EbayTourtip>", () => {
                         <EbayTourtipContent>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                         </EbayTourtipContent>
-                        <EbayTourtipFooter index="1 / 3">
+                        <EbayTourtipFooter index="1 of 3">
                             <button className="fake-link">Back</button>
                             <button className="btn btn--primary">Next</button>
                         </EbayTourtipFooter>
