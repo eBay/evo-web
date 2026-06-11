@@ -25,7 +25,7 @@ export default {
       control: "text",
       description: "The value of the textarea",
     },
-    inputSize: {
+    size: {
       type: "string",
       options: ["regular (default)", "large"],
       control: "inline-radio",

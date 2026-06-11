@@ -39,7 +39,7 @@ export default {
       control: "text",
       description: "The value of the input",
     },
-    inputSize: {
+    size: {
       type: "string",
       options: ["regular (default)", "large"],
       control: "inline-radio",
@@ -87,6 +87,12 @@ export default {
       description:
         "An `<evo-icon-*>` to show after the input. Cannot be used with floatingLabel.",
       "@": {
+        a11yText: {
+          type: "string",
+          control: "text",
+          description:
+            "A descriptive label for the postfix icon button. If set, the icon becomes clickable and wrapped with a `<button>` tag.",
+        },
         "aria-label": {
           type: "string",
           control: "text",

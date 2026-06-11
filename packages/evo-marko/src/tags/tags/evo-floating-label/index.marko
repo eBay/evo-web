@@ -1,6 +1,6 @@
 export interface Input {
     htmlFor?: Marko.HTMLAttributes["id"]
-    inputSize?: "regular" | "large";
+    size?: "regular" | "large";
     alwaysUp?: boolean;
     fluid?: boolean;
     opaqueLabel?: boolean;
@@ -20,7 +20,7 @@ export interface Input {
     floatingLabel,
     htmlFor,
     alwaysUp,
-    inputSize,
+    size,
     focused,
     value,
     invalid,
@@ -34,7 +34,7 @@ export interface Input {
 
 <${floatingLabel && defaultTag} class=[
     "floating-label",
-    inputSize === "large" && "floating-label--large",
+    size === "large" && "floating-label--large",
     opaqueLabel && "floating-label--opaque",
 ]>
     <if=floatingLabel>

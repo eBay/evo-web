@@ -6,15 +6,15 @@ export interface Input
     icon?: Marko.AttrTag<{ content?: Marko.Body }>;
     image?: Marko.AttrTag<Marko.HTML.Img>;
     a11ySelectedText?: string;
-    expanded?: boolean;
-    expandedChange?: (expanded: boolean) => void;
+    open?: boolean;
+    openChange?: (open: boolean) => void;
 }
 <const/{
     class: inputClass,
     content,
     disabled,
     selected: inputSelected,
-    expanded: inputExpanded,
+    open: inputOpen,
     icon,
     image,
     a11ySelectedText,
@@ -30,7 +30,7 @@ export interface Input
     mounted = true;
 </script>
 <let/selected:=input.selected>
-<let/expanded:=input.expanded>
+<let/open:=input.open>
 
 <define/Root|input: (Marko.HTML.A | Marko.HTML.Button)|>
     <if=isAnchor>
@@ -62,7 +62,7 @@ export interface Input
     onClick(e: PointerEvent, target: HTMLButtonElement) {
         if (!disabled) {
             if (isMenu) {
-                expanded = !expanded;
+                open = !open;
             } else {
                 selected = !selected;
             }

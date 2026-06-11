@@ -1,5 +1,5 @@
 export interface Input extends Marko.HTML.Input {
-    inputSize?: "regular" | "large";
+    size?: "regular" | "large";
     fluid?: boolean;
     floatingLabel?: string;
     floatingLabelStatic?: boolean;
@@ -21,7 +21,7 @@ export interface Input extends Marko.HTML.Input {
     floatingLabelStatic,
     fluid,
     id,
-    inputSize,
+    size,
     invalid,
     postfixIcon,
     prefixIcon,
@@ -43,7 +43,7 @@ export interface Input extends Marko.HTML.Input {
 
 <evo-floating-label|{ showPlaceholder }|
     floatingLabel=floatingLabel
-    inputSize=inputSize
+    inputSize=size
     alwaysUp=floatingLabelStatic
     htmlFor=inputId
     disabled=disabled
@@ -59,7 +59,7 @@ export interface Input extends Marko.HTML.Input {
             invalid && "textbox--invalid",
             readonly &&
                 "textbox--readonly" /** end remove after `:has` support */,
-            inputSize === "large" && "textbox--large",
+            size === "large" && "textbox--large",
             fluid && "textbox--fluid",
             inputClass,
         ]>
