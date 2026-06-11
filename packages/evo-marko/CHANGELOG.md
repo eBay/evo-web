@@ -1,5 +1,19 @@
 # @evo-web/marko
 
+## 0.3.0
+
+### Minor Changes
+
+- [#706](https://github.com/eBay/evo-web/pull/706) [`d17e5b8`](https://github.com/eBay/evo-web/commit/d17e5b83cf67eb06c46927a9ca29902d3814027d) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `pay-by-bank-uk-24-colored` icon; deprecate `bank-group-logo-24-colored` (use `pay-by-bank-uk-24-colored` instead).
+
+- [#683](https://github.com/eBay/evo-web/pull/683) [`ce1cd0d`](https://github.com/eBay/evo-web/commit/ce1cd0dea5864ba29c0c8513e466e62cc31ee1a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Badge updates
+
+### Patch Changes
+
+- [#700](https://github.com/eBay/evo-web/pull/700) [`fc022cd`](https://github.com/eBay/evo-web/commit/fc022cd03e694e7fd6904cffc94d9bf0567d3d65) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(pagination): ability to configure heading level
+
+- [#679](https://github.com/eBay/evo-web/pull/679) [`5909045`](https://github.com/eBay/evo-web/commit/5909045d251cb75d176cbbe8d04804141d5b58f6) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Add evo-calendar component
+
 ## 0.2.3
 
 ### Patch Changes

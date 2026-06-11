@@ -1,5 +1,15 @@
 # @ebay/ui-core-react
 
+## 9.7.0
+
+### Minor Changes
+
+- [#683](https://github.com/eBay/evo-web/pull/683) [`ce1cd0d`](https://github.com/eBay/evo-web/commit/ce1cd0dea5864ba29c0c8513e466e62cc31ee1a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Badge updates
+
+### Patch Changes
+
+- [#700](https://github.com/eBay/evo-web/pull/700) [`fc022cd`](https://github.com/eBay/evo-web/commit/fc022cd03e694e7fd6904cffc94d9bf0567d3d65) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(pagination): ability to configure heading level
+
 ## 9.6.6
 
 ### Patch Changes
