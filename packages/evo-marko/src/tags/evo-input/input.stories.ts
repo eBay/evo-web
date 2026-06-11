@@ -39,7 +39,7 @@ export default {
       control: "text",
       description: "The value of the input",
     },
-    size: {
+    inputSize: {
       type: "string",
       options: ["regular (default)", "large"],
       control: "inline-radio",

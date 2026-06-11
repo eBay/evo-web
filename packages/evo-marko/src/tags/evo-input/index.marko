@@ -1,5 +1,5 @@
 export interface Input extends Marko.HTML.Input {
-    size?: "regular" | "large";
+    inputSize?: "regular" | "large";
     fluid?: boolean;
     floatingLabel?: string;
     floatingLabelStatic?: boolean;
@@ -21,7 +21,7 @@ export interface Input extends Marko.HTML.Input {
     floatingLabelStatic,
     fluid,
     id,
-    size,
+    inputSize,
     invalid,
     postfixIcon,
     prefixIcon,
@@ -59,7 +59,7 @@ export interface Input extends Marko.HTML.Input {
             invalid && "textbox--invalid",
             readonly &&
                 "textbox--readonly" /** end remove after `:has` support */,
-            size === "large" && "textbox--large",
+            inputSize === "large" && "textbox--large",
             fluid && "textbox--fluid",
             inputClass,
         ]>

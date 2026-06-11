@@ -1,5 +1,5 @@
 export interface Input extends Marko.HTML.TextArea {
-    size?: "regular" | "large";
+    inputSize?: "regular" | "large";
     fluid?: boolean;
     opaqueLabel?: boolean;
     floatingLabel?: string;
@@ -14,7 +14,7 @@ export interface Input extends Marko.HTML.TextArea {
     floatingLabelStatic,
     fluid,
     id,
-    size,
+    inputSize,
     invalid,
     opaqueLabel,
     style,
@@ -49,7 +49,7 @@ export interface Input extends Marko.HTML.TextArea {
             invalid && "textbox--invalid",
             readonly &&
                 "textbox--readonly" /** end remove after `:has` support */,
-            size === "large" && "textbox--large",
+            inputSize === "large" && "textbox--large",
             fluid && "textbox--fluid",
             inputClass,
         ]>
