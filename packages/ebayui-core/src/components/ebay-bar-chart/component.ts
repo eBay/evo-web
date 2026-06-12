@@ -172,17 +172,31 @@ class BarChart extends Marko.Component<Input> {
         };
     }
 
+    getMaxValue(series: SeriesItem[]): number {
+        if (!this.input.stacked) {
+            return Math.max(
+                0,
+                ...series.flatMap((s) => s.data!.map((point: any) => point.y)),
+            );
+        }
+
+        const stackTotals = new Map<number, number>();
+        series.forEach((s) => {
+            s.data!.forEach((point: any) => {
+                stackTotals.set(
+                    point.x,
+                    (stackTotals.get(point.x) ?? 0) + point.y,
+                );
+            });
+        });
+
+        return Math.max(0, ...stackTotals.values());
+    }
+
     getYAxisConfig(series: SeriesItem[]): Highcharts.YAxisOptions {
         const yAxisLabels = this.input.yAxisLabels;
         const yAxisPositioner = this.input.yAxisPositioner;
-
-        let maxVal = 0; // use to determine the highest yAxis value
-        series.forEach((s) => {
-            maxVal = s.data!.reduce(
-                (p: number, c: any) => (c.y > p ? c.y : p),
-                maxVal,
-            ) as number;
-        });
+        const maxVal = this.getMaxValue(series); // use to determine the highest yAxis value
         let yLabelsItterator = 0;
         return {
             gridLineColor: gridColor, // sets the horizontal grid line colors

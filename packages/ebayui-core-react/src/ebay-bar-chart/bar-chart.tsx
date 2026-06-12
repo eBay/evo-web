@@ -64,9 +64,20 @@ function prepareSeries(seriesProp: BarChartSeriesItem | BarChartSeriesItem[], st
     return series;
 }
 
-/** Compute the max data value across all series. */
-function getMaxValue(series: BarChartSeriesItem[]): number {
-    return Math.max(0, ...series.flatMap((serie) => serie.data.map((data) => data.y)));
+/** Compute the max y-axis value for grouped or stacked series. */
+function getMaxValue(series: BarChartSeriesItem[], stacked: boolean): number {
+    if (!stacked) {
+        return Math.max(0, ...series.flatMap((serie) => serie.data.map((data) => data.y)));
+    }
+
+    const stackTotals = new Map<number, number>();
+    series.forEach((serie) => {
+        serie.data.forEach((data) => {
+            stackTotals.set(data.x, (stackTotals.get(data.x) ?? 0) + data.y);
+        });
+    });
+
+    return Math.max(0, ...stackTotals.values());
 }
 
 function getXAxisConfig(xAxisLabelFormat?: string, xAxisPositioner?: () => number[]): Highcharts.XAxisOptions {
@@ -284,7 +295,7 @@ function buildChartOptions(
         },
         colors: colorMapping,
         xAxis: getXAxisConfig(xAxisLabelFormat, xAxisPositioner),
-        yAxis: getYAxisConfig(getMaxValue(preparedSeries), yAxisLabels, yAxisPositioner),
+        yAxis: getYAxisConfig(getMaxValue(preparedSeries, stacked), yAxisLabels, yAxisPositioner),
         legend: getLegendConfig(seriesProp),
         tooltip: getTooltipConfig(hc, stacked),
         plotOptions: getColumnPlotOptions(stacked, description),
