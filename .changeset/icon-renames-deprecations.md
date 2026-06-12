@@ -1,4 +1,5 @@
 ---
+"@evo-web/skin": minor
 "@evo-web/marko": minor
 "@evo-web/react": minor
 "@ebay/ebayui-core": minor
