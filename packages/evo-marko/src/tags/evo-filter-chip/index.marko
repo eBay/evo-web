@@ -58,7 +58,7 @@ export interface Input
         inputClass,
     ]
     href=(!disabled ? href : undefined)
-    aria-expanded=variant === "menu" && (expanded ? "true" : "false")
+    aria-expanded=variant === "menu" && (open ? "true" : "false")
     onClick(e: PointerEvent, target: HTMLButtonElement) {
         if (!disabled) {
             if (isMenu) {

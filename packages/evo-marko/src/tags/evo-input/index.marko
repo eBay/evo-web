@@ -43,7 +43,7 @@ export interface Input extends Marko.HTML.Input {
 
 <evo-floating-label|{ showPlaceholder }|
     floatingLabel=floatingLabel
-    inputSize=size
+    size=inputSize
     alwaysUp=floatingLabelStatic
     htmlFor=inputId
     disabled=disabled
@@ -99,7 +99,11 @@ export interface Input extends Marko.HTML.Input {
             <${a11yText && "button"}
                 ...postfixIconInput
                 aria-label=a11yText
-                class=["icon-btn", "icon-btn--transparent", postfixIcon.class]
+                class=[
+                    "icon-btn",
+                    "icon-btn--transparent",
+                    postfixIcon.class,
+                ]
                 type="button"
                 disabled=disabled>
                 <${postfixIcon}/>
