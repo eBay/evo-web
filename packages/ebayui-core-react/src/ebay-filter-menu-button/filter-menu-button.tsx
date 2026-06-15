@@ -76,12 +76,11 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
         <span ref={ref} className={classNames("filter-menu-button", className)}>
             <button
                 type="button"
-                className="filter-menu-button__button"
+                className={classNames("filter-menu-button__button", hasChecked && "filter-menu-button__button--active")}
                 ref={refs.setHost}
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-label={ariaLabel}
-                aria-pressed={hasChecked}
             >
                 <span className="filter-menu-button__button-cell">
                     <span className="filter-menu-button__button-text">{text}</span>

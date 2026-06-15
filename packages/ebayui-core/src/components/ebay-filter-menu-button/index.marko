@@ -29,12 +29,11 @@ $ const {
     <button
         key="button"
         type="button"
-        class="filter-menu-button__button"
+        class=["filter-menu-button__button", component.getCheckedValues().some(Boolean) && "filter-menu-button__button--active"]
         disabled=disabled
         aria-expanded:no-update="false"
         aria-haspopup="true"
         aria-label=a11yText
-        aria-pressed=(component.getCheckedValues().some(Boolean) && "true")
     >
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">

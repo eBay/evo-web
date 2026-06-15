@@ -88,17 +88,18 @@ describe("EbayFilterMenuButton", () => {
         expect(onCollapse).toHaveBeenCalled();
     });
 
-    it("should set aria-pressed to true when at least one option is checked", async () => {
+    it("should add active class when at least one option is checked", async () => {
         render(
             <EbayFilterMenuButton text="Menu">
                 <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
             </EbayFilterMenuButton>,
         );
         const button = screen.getByText("Menu").closest("button");
-        expect(button).toHaveAttribute("aria-pressed", "true");
+        expect(button).toHaveClass("filter-menu-button__button--active");
+        expect(button).not.toHaveAttribute("aria-pressed");
     });
 
-    it("should set aria-pressed after selection", async () => {
+    it("should add active class after selection", async () => {
         render(
             <EbayFilterMenuButton text="Menu">
                 <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
@@ -110,24 +111,26 @@ describe("EbayFilterMenuButton", () => {
 
         await userEvent.click(button);
         await userEvent.click(screen.getByText("Option 1"));
-        expect(button).toHaveAttribute("aria-pressed", "true");
+        expect(button).toHaveClass("filter-menu-button__button--active");
+        expect(button).not.toHaveAttribute("aria-pressed");
     });
 
-    it("should set aria-pressed to false when no options are checked", async () => {
+    it("should remove active class when no options are checked", async () => {
         render(
             <EbayFilterMenuButton text="Menu">
                 <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
             </EbayFilterMenuButton>,
         );
         const button = screen.getByText("Menu").closest("button") as HTMLButtonElement;
-        expect(button).toHaveAttribute("aria-pressed", "false");
+        expect(button).not.toHaveClass("filter-menu-button__button--active");
+        expect(button).not.toHaveAttribute("aria-pressed");
 
         await userEvent.click(button);
         await userEvent.click(screen.getByText("Option 1"));
-        expect(button).toHaveAttribute("aria-pressed", "true");
+        expect(button).toHaveClass("filter-menu-button__button--active");
 
         await userEvent.click(screen.getByText("Option 1"));
 
-        expect(button).toHaveAttribute("aria-pressed", "false");
+        expect(button).not.toHaveClass("filter-menu-button__button--active");
     });
 });

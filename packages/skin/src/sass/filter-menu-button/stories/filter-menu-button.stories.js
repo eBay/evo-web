@@ -104,7 +104,7 @@ export const expanded = () => `
 
 export const pressed = () => `
 <span class="filter-menu-button">
-    <button type="button" class="filter-menu-button__button" aria-expanded="true" aria-pressed="true">
+    <button type="button" class="filter-menu-button__button filter-menu-button__button--active" aria-expanded="true">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
