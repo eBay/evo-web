@@ -147,6 +147,12 @@ Deprecation hides an icon from the main docs grid and shows it in a "Deprecated 
 warning section. The icon remains in the sprite and in all generated framework components
 until a future major-version deletion.
 
+**Do NOT manually add `@deprecated` JSDoc to any auto-generated icon file.** The four
+generated packages (`evo-react`, `evo-marko`, `ebayui-core-react`, `ebayui-core`) wipe
+and rewrite their icon directories on every pipeline run — any manual annotation will be
+silently deleted the next time any icon job runs. Deprecation is data-driven via
+`icons.json`; that is the only file you edit for the deprecation step.
+
 **Rename scenario:** if an issue says an icon was renamed or replaced, this is a two-part
 operation — **add the new icon first** (using the full Add pipeline in Steps 2a–3a above),
 then deprecate the old name using this Deprecate workflow. Do not skip the Add pipeline.
