@@ -184,7 +184,7 @@ export const FooterTourtip = (args) => (
             <EbayTourtipContent>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </EbayTourtipContent>
-            <EbayTourtipFooter index="1 / 3">
+            <EbayTourtipFooter index="1 of 3">
                 <button className="fake-link">Back</button>
                 <button className="btn btn--primary">Next</button>
             </EbayTourtipFooter>
@@ -202,7 +202,7 @@ export const FooterAndHeadingTourtip = (args) => (
             <EbayTourtipContent>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </EbayTourtipContent>
-            <EbayTourtipFooter index="1 / 3">
+            <EbayTourtipFooter index="1 of 3">
                 <button className="fake-link">Back</button>
                 <button className="btn btn--primary">Next</button>
             </EbayTourtipFooter>
@@ -234,7 +234,7 @@ export const Controlled = {
                             <EbayTourtipContent>
                                 <p>{text}</p>
                             </EbayTourtipContent>
-                            <EbayTourtipFooter index={`${i + 1} / ${items.length}`}>
+                            <EbayTourtipFooter index={`${i + 1} of ${items.length}`}>
                                 {i > 0 && (
                                     <button className="fake-link" onClick={() => setOpenIndex(i - 1)}>
                                         Back

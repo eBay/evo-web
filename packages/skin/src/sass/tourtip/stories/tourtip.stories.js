@@ -59,10 +59,10 @@ export const withActions = () => `
                     </svg>
                 </button>
                 <div class="tourtip__footer">
-                    <span class="tourtip__index">1 / 3</span>
+                    <span class="tourtip__index">1 of 3</span>
                     <button class="fake-link">Back</button>
                     <button class="btn btn--primary">Next</button>
-                </span>
+                </div>
             </div>
         </div>
     </div>
@@ -85,9 +85,9 @@ export const withOneAction = () => `
                     </svg>
                 </button>
                 <div class="tourtip__footer">
-                    <span class="tourtip__index">2 / 3</span>
+                    <span class="tourtip__index">2 of 3</span>
                     <button class="btn btn--primary">Next</button>
-                </span>
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.7.1
+
+### Patch Changes
+
+- [#713](https://github.com/eBay/evo-web/pull/713) [`d4abc52`](https://github.com/eBay/evo-web/commit/d4abc5284244de7d52273f18de094a4cd63e56fc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix ebay-bar-chart stacked y-axis scaling so 3+ stacked series render against their combined totals.
+
 ## 9.7.0
 
 ### Minor Changes
