@@ -47,12 +47,12 @@ export default {
         },
       },
     },
-    expanded: {
+    open: {
       controllable: true,
       type: "boolean",
       control: "boolean",
       description:
-        "Only used for menu variant. True/false if the menu is in expanded state or not",
+        "Only used for menu variant. True/false if the menu is open or not",
     },
     a11ySelectedText: {
       type: "string",
