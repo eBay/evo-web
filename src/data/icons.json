@@ -46,6 +46,9 @@
       { "name": "ai-filled-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ai-filled-20", "size": "20", "height": "20", "width": "20" },
       { "name": "ai-filled-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "ai-mobile-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "ai-mobile-20", "size": "20", "height": "20", "width": "20" },
+      { "name": "ai-mobile-24", "size": "24", "height": "24", "width": "24" },
       { "name": "ai-search-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ai-search-20", "size": "20", "height": "20", "width": "20" },
       { "name": "ai-search-24", "size": "24", "height": "24", "width": "24" },
@@ -100,6 +103,9 @@
         "height": "16",
         "width": "16"
       },
+      { "name": "ai-summary-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "ai-summary-20", "size": "20", "height": "20", "width": "20" },
+      { "name": "ai-summary-24", "size": "24", "height": "24", "width": "24" },
       { "name": "ai-thin-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ai-tools-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ai-tools-20", "size": "20", "height": "20", "width": "20" },
@@ -395,8 +401,39 @@
         "height": "32",
         "width": "50"
       },
+      {
+        "name": "bank-of-america-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "bank-of-america-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "bank-of-america-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "bank-of-america-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
       { "name": "bar-chart-16", "size": "16", "height": "16", "width": "16" },
       { "name": "bar-chart-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "battery-waste-48",
+        "size": "48",
+        "height": "48",
+        "width": "48"
+      },
+      { "name": "bids-12", "size": "12", "height": "12", "width": "12" },
       { "name": "bids-16", "size": "16", "height": "16", "width": "16" },
       { "name": "bids-24", "size": "24", "height": "24", "width": "24" },
       { "name": "bids-64", "size": "64", "height": "64", "width": "64" },
@@ -439,6 +476,30 @@
       { "name": "camera-16", "size": "16", "height": "16", "width": "16" },
       { "name": "camera-24", "size": "24", "height": "24", "width": "24" },
       { "name": "camera-64", "size": "64", "height": "64", "width": "64" },
+      {
+        "name": "capital-one-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "capital-one-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "capital-one-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "capital-one-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
       { "name": "car-16", "size": "16", "height": "16", "width": "16" },
       { "name": "car-24", "size": "24", "height": "24", "width": "24" },
       { "name": "car-brake-16", "size": "16", "height": "16", "width": "16" },
@@ -543,6 +604,30 @@
       },
       { "name": "chair-16", "size": "16", "height": "16", "width": "16" },
       { "name": "chair-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "chase-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "chase-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "chase-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "chase-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
       { "name": "chat-16", "size": "16", "height": "16", "width": "16" },
       { "name": "chat-24", "size": "24", "height": "24", "width": "24" },
       { "name": "chat-64", "size": "64", "height": "64", "width": "64" },
@@ -641,6 +726,30 @@
         "size": "24",
         "height": "24",
         "width": "24"
+      },
+      {
+        "name": "citi-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "citi-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "citi-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "citi-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
       },
       { "name": "clear-16", "size": "16", "height": "16", "width": "16" },
       { "name": "clear-20", "size": "20", "height": "20", "width": "20" },
@@ -1230,6 +1339,12 @@
       },
       { "name": "fall-leaf-16", "size": "16", "height": "16", "width": "16" },
       { "name": "fall-leaf-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "fast-forward-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
       { "name": "feedback-16", "size": "16", "height": "16", "width": "16" },
       { "name": "feedback-20", "size": "20", "height": "20", "width": "20" },
       { "name": "feedback-24", "size": "24", "height": "24", "width": "24" },
@@ -1374,6 +1489,7 @@
         "width": "50"
       },
       { "name": "gift-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "gift-20", "size": "20", "height": "20", "width": "20" },
       { "name": "gift-24", "size": "24", "height": "24", "width": "24" },
       { "name": "gift-64", "size": "64", "height": "64", "width": "64" },
       {
@@ -1537,6 +1653,8 @@
       { "name": "history-16", "size": "16", "height": "16", "width": "16" },
       { "name": "history-24", "size": "24", "height": "24", "width": "24" },
       { "name": "history-64", "size": "64", "height": "64", "width": "64" },
+      { "name": "home-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "home-20", "size": "20", "height": "20", "width": "20" },
       { "name": "home-24", "size": "24", "height": "24", "width": "24" },
       { "name": "home-filled-24", "size": "24", "height": "24", "width": "24" },
       { "name": "image-16", "size": "16", "height": "16", "width": "16" },
@@ -1820,6 +1938,8 @@
         "height": "24",
         "width": "24"
       },
+      { "name": "link-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "link-20", "size": "20", "height": "20", "width": "20" },
       { "name": "link-24", "size": "24", "height": "24", "width": "24" },
       { "name": "linkedin-24", "size": "24", "height": "24", "width": "24" },
       { "name": "list-view-16", "size": "16", "height": "16", "width": "16" },
@@ -1907,6 +2027,9 @@
       { "name": "lock-filled-16", "size": "16", "height": "16", "width": "16" },
       { "name": "lock-filled-20", "size": "20", "height": "20", "width": "20" },
       { "name": "lock-filled-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "locker-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "locker-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "locker-64", "size": "64", "height": "64", "width": "64" },
       {
         "name": "maestro-12-colored",
         "size": "12-colored",
@@ -1944,6 +2067,9 @@
       { "name": "map-16", "size": "16", "height": "16", "width": "16" },
       { "name": "map-20", "size": "20", "height": "20", "width": "20" },
       { "name": "map-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "markdown-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "markdown-20", "size": "20", "height": "20", "width": "20" },
+      { "name": "markdown-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "masonry-view-16",
         "size": "16",
@@ -2359,6 +2485,24 @@
         "width": "50"
       },
       {
+        "name": "pay-by-bank-be-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "83"
+      },
+      {
+        "name": "pay-by-bank-de-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "83"
+      },
+      {
+        "name": "pay-by-bank-fr-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "83"
+      },
+      {
         "name": "pay-by-bank-uk-24-colored",
         "size": "24-colored",
         "height": "24",
@@ -2501,8 +2645,10 @@
       { "name": "peso-24", "size": "24", "height": "24", "width": "24" },
       { "name": "phone-16", "size": "16", "height": "16", "width": "16" },
       { "name": "phone-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "pin-12", "size": "12", "height": "12", "width": "12" },
       { "name": "pin-16", "size": "16", "height": "16", "width": "16" },
       { "name": "pin-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "pin-filled-12", "size": "12", "height": "12", "width": "12" },
       { "name": "pin-filled-16", "size": "16", "height": "16", "width": "16" },
       { "name": "pin-filled-24", "size": "24", "height": "24", "width": "24" },
       { "name": "pinterest-24", "size": "24", "height": "24", "width": "24" },
@@ -2612,6 +2758,7 @@
         "height": "24",
         "width": "24"
       },
+      { "name": "promotion-12", "size": "12", "height": "12", "width": "12" },
       { "name": "promotion-16", "size": "16", "height": "16", "width": "16" },
       { "name": "promotion-24", "size": "24", "height": "24", "width": "24" },
       { "name": "psa-logo-16", "size": "16", "height": "16", "width": "45" },
@@ -2669,8 +2816,12 @@
       { "name": "remove-24", "size": "24", "height": "24", "width": "24" },
       { "name": "reply-16", "size": "16", "height": "16", "width": "16" },
       { "name": "reply-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "reply-chat-12", "size": "12", "height": "12", "width": "12" },
+      { "name": "reply-chat-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "reply-chat-24", "size": "24", "height": "24", "width": "24" },
       { "name": "return-16", "size": "16", "height": "16", "width": "16" },
       { "name": "return-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "rewind-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ribbon-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ribbon-24", "size": "24", "height": "24", "width": "24" },
       { "name": "rim-16", "size": "16", "height": "16", "width": "16" },
@@ -2759,6 +2910,7 @@
         "width": "24"
       },
       { "name": "select-all-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "selling-12", "size": "12", "height": "12", "width": "12" },
       { "name": "selling-16", "size": "16", "height": "16", "width": "16" },
       { "name": "selling-20", "size": "20", "height": "20", "width": "20" },
       { "name": "selling-24", "size": "24", "height": "24", "width": "24" },
@@ -2806,6 +2958,18 @@
         "height": "24",
         "width": "24"
       },
+      {
+        "name": "ship-and-safety-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
+        "name": "ship-and-safety-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
+      },
       { "name": "shirt-16", "size": "16", "height": "16", "width": "16" },
       { "name": "shirt-24", "size": "24", "height": "24", "width": "24" },
       { "name": "shoe-box-24", "size": "24", "height": "24", "width": "24" },
@@ -2825,6 +2989,9 @@
       { "name": "shovel-24", "size": "24", "height": "24", "width": "24" },
       { "name": "show-16", "size": "16", "height": "16", "width": "16" },
       { "name": "show-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "skull-12", "size": "12", "height": "12", "width": "12" },
+      { "name": "skull-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "skull-24", "size": "24", "height": "24", "width": "24" },
       { "name": "small-box-16", "size": "16", "height": "16", "width": "16" },
       { "name": "small-box-24", "size": "24", "height": "24", "width": "24" },
       {
@@ -2963,6 +3130,9 @@
         "height": "25",
         "width": "24"
       },
+      { "name": "stop-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "stop-20", "size": "20", "height": "20", "width": "20" },
+      { "name": "stop-24", "size": "24", "height": "24", "width": "24" },
       { "name": "store-16", "size": "16", "height": "16", "width": "16" },
       { "name": "store-24", "size": "24", "height": "24", "width": "24" },
       { "name": "store-64", "size": "64", "height": "64", "width": "64" },
@@ -2987,6 +3157,30 @@
       { "name": "tablet-24", "size": "24", "height": "24", "width": "24" },
       { "name": "target-16", "size": "16", "height": "16", "width": "16" },
       { "name": "target-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "td-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "td-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "td-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "td-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
       {
         "name": "text-messaging-16",
         "size": "16",
@@ -3059,6 +3253,8 @@
       { "name": "tick-16", "size": "16", "height": "16", "width": "16" },
       { "name": "tick-24", "size": "24", "height": "24", "width": "24" },
       { "name": "tiktok-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "tire-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "tire-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "toggle-mode-bottom-24",
         "size": "24",
@@ -3228,6 +3424,30 @@
       { "name": "upload-16", "size": "16", "height": "16", "width": "16" },
       { "name": "upload-24", "size": "24", "height": "24", "width": "24" },
       {
+        "name": "usaa-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "usaa-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "usaa-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "usaa-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
+      {
         "name": "venmo-12-colored",
         "size": "12-colored",
         "height": "12",
@@ -3317,7 +3537,43 @@
       },
       { "name": "watch-16", "size": "16", "height": "16", "width": "16" },
       { "name": "watch-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "wells-fargo-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "wells-fargo-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "wells-fargo-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "wells-fargo-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
       { "name": "whatsapp-24", "size": "24", "height": "24", "width": "24" },
+      {
+        "name": "wire-transfer-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
+        "name": "wire-transfer-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
+      },
       { "name": "won-16", "size": "16", "height": "16", "width": "16" },
       { "name": "won-24", "size": "24", "height": "24", "width": "24" },
       { "name": "wrench-16", "size": "16", "height": "16", "width": "16" },
