@@ -12,6 +12,7 @@ type SelectValue = string | ReadonlyArray<string> | number;
 export type ChangeEventProps = { index: number; selected: string[] };
 export type EbaySelectProps = Omit<ComponentProps<"select">, "onChange"> & {
     borderless?: boolean;
+    fluid?: boolean;
     defaultValue?: SelectValue;
     onChange?: EbayChangeEventHandler<HTMLSelectElement, ChangeEventProps>;
     floatingLabel?: string;
@@ -25,6 +26,7 @@ const EbaySelect: FC<EbaySelectProps> = ({
     defaultValue,
     className,
     borderless,
+    fluid,
     name,
     disabled,
     onChange = () => {},
@@ -66,6 +68,7 @@ const EbaySelect: FC<EbaySelectProps> = ({
 
     const selectClassName = classNames("select", className, {
         "select--borderless": borderless,
+        "select--fluid": fluid,
         "select--large": inputSize === `large`,
     });
 

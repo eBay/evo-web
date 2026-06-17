@@ -10,6 +10,7 @@ import Meta, {
     FloatingLabel,
     InvalidFloatingLabelSelect,
     GroupedOptions,
+    FluidSelect,
 } from "./index.stories";
 import EbaySelect from "../ebay-select";
 import EbaySelectOption from "../ebay-select-option";
@@ -22,6 +23,7 @@ const LargeSelectStory = composeStory(LargeSelect, Meta);
 const FloatingLabelStory = composeStory(FloatingLabel, Meta);
 const InvalidFloatingLabelSelectStory = composeStory(InvalidFloatingLabelSelect, Meta);
 const GroupedOptionsStory = composeStory(GroupedOptions, Meta);
+const FluidSelectStory = composeStory(FluidSelect, Meta);
 
 describe("ebay-select rendering", () => {
     it("renders basic story correctly", () => {
@@ -125,5 +127,11 @@ describe("ebay-select rendering", () => {
         expect(options.length).toBe(12);
         const optgroup = select.querySelectorAll("optgroup");
         expect(optgroup.length).toBe(3);
+    });
+
+    it("renders fluid select story correctly", () => {
+        const { container } = render(<FluidSelectStory />);
+        const selectContainer = container.querySelector(".select");
+        expect(selectContainer).toHaveClass("select--fluid");
     });
 });
