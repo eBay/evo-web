@@ -4,7 +4,8 @@ exports[`select > passes through additional html attributes 1`] = `
 "<select
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  htmlattributes="[object Object]"
+  id="MARKO-ID-0"
+  type="number"
 />"
 `;
 
@@ -16,14 +17,15 @@ exports[`select > passes through additional html attributes 2`] = `
   <select
     data-passed-through="true"
     data-testid="AttributePassthrough"
-    htmlattributes="[object Object]"
+    id="GENERATED-0"
+    type="number"
   />
   <svg
     aria-hidden="true"
     class="icon icon--12"
   >
     <symbol
-      id="GENERATED-0"
+      id="GENERATED-1"
       viewBox="0 0 12 12"
     >
       <path
@@ -49,7 +51,9 @@ exports[`select > renders a disabled input select with disabled floating label 1
 `;
 
 exports[`select > renders an input select with inline floating label 1`] = `
-"<select>
+"<select
+  id="MARKO-ID-0"
+>
   <option
     text="option 0"
     value=""
@@ -105,7 +109,9 @@ exports[`select > renders basic version 1`] = `
 "<span
   class="select"
 >
-  <select>
+  <select
+    id="GENERATED-0"
+  >
     <option
       text="option 0"
       value="0"
@@ -124,7 +130,7 @@ exports[`select > renders basic version 1`] = `
     class="icon icon--12"
   >
     <symbol
-      id="GENERATED-0"
+      id="GENERATED-1"
       viewBox="0 0 12 12"
     >
       <path
@@ -144,7 +150,9 @@ exports[`select > renders basic version 2`] = `
 "<span
   class="select"
 >
-  <select>
+  <select
+    id="GENERATED-0"
+  >
     <option
       text="option 0"
       value="0"
@@ -163,7 +171,7 @@ exports[`select > renders basic version 2`] = `
     class="icon icon--12"
   >
     <symbol
-      id="GENERATED-0"
+      id="GENERATED-1"
       viewBox="0 0 12 12"
     >
       <path
@@ -261,14 +269,18 @@ exports[`select > renders basic version 12`] = `
 
 exports[`select > renders empty 1`] = `
 [
-  "<select />",
+  "<select
+  id="MARKO-ID-0"
+/>",
 ]
 `;
 
 exports[`select > renders empty 2`] = `[]`;
 
 exports[`select > renders with borderless=true 1`] = `
-"<select>
+"<select
+  id="MARKO-ID-0"
+>
   <option
     text="option 0"
     value="0"

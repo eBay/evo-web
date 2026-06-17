@@ -51,7 +51,6 @@ export interface Input
     class=[
         inputClass,
         baseClassName,
-        badge?.number && `${baseClassName}--badged`,
         transparent && `${baseClassName}--transparent`,
         validPriorities.includes(priority) && `${baseClassName}--${priority}`,
         size && validSizes.includes(size) && `${baseClassName}--${size}`,

@@ -24,13 +24,14 @@ export interface Input extends Marko.HTML.Select {
     option: inputOptions,
     floatingLabel,
     size,
-    id,
+    id: baseId,
     onBlur,
     onFocus,
     ...htmlInput
 }=input>
 <const/options=[...(inputOptions || [])]>
 <let/value:=input.value>
+<id/id=baseId>
 
 <const/list=(() => {
     const list: (Option | OptGroup)[] = [];
@@ -59,7 +60,7 @@ export interface Input extends Marko.HTML.Select {
 
 <evo-floating-label
     floatingLabel=floatingLabel
-    inputSize=size
+    size=size
     htmlFor=id
     disabled=disabled
     value=value

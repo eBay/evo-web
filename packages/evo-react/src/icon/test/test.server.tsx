@@ -80,6 +80,7 @@ describe("evo-icon SSR", () => {
     });
 
     it("warns about missing provider on server", () => {
+      vi.stubEnv("NODE_ENV", "development");
       const consoleSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
 
       renderToString(<EvoIconCart16 />);
@@ -91,6 +92,7 @@ describe("evo-icon SSR", () => {
       );
 
       consoleSpy.mockRestore();
+      vi.unstubAllEnvs();
     });
   });
 });

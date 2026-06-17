@@ -7,6 +7,7 @@ export interface Item extends Omit<Marko.HTML.Button, "type"> {
 }
 
 export interface Input extends Marko.HTML.Nav {
+    a11yHeadingTag?: keyof Marko.NativeTags;
     item?: Marko.AttrTag<Item>;
     prev?: Marko.AttrTag<Omit<IconButtonInput, "content">>;
     next?: Marko.AttrTag<Omit<IconButtonInput, "content">>;
@@ -24,6 +25,7 @@ static const MIN_PAGES = 5;
 <const/{
     class: inputClass,
     id,
+    a11yHeadingTag = "h2",
     variant,
     item: items,
     prev,
@@ -131,9 +133,9 @@ static const MIN_PAGES = 5;
     class=["pagination", inputClass]
     aria-labelledby=headingId>
     <span aria-live="polite" role="status">
-        <h2 id=headingId class="clipped">
+        <${a11yHeadingTag} id=headingId class="clipped">
             ${a11yCurrentText}
-        </h2>
+        </>
     </span>
 
     <if=prev>

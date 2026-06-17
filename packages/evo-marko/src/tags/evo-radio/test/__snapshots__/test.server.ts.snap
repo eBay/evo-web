@@ -5,7 +5,6 @@ exports[`passes through additional html attributes 1`] = `
   class="radio__control"
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  htmlattributes="[object Object]"
   style="color:red"
   type="radio"
 />"
@@ -19,7 +18,6 @@ exports[`passes through additional html attributes 2`] = `
     class="radio__control"
     data-passed-through="true"
     data-testid="AttributePassthrough"
-    htmlattributes="[object Object]"
     style="color:red"
     type="radio"
   />

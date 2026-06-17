@@ -29,6 +29,12 @@ export default {
       description:
         "Localized description for the current page (e.g. Results of Page 1)",
     },
+    a11yHeadingTag: {
+      type: "string",
+      control: "text",
+      description: "HTML tag to use for the a11y heading",
+      table: { defaultValue: { summary: "h2" } },
+    },
     item: {
       description: "Attribute tag representing a pagination item",
       "@": {

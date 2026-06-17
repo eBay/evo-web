@@ -451,7 +451,8 @@ class Video extends Marko.Component<Input, State> {
                 "aria-label",
                 this.input.a11yPlayText || "Play",
             );
-            playButton.onclick = () => {
+            playButton.onclick = (e) => {
+                e.stopPropagation();
                 this.video.play();
             };
 

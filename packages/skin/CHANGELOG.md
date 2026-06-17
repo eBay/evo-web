@@ -1,5 +1,19 @@
 # Skin Changelog
 
+## 19.26.0
+
+### Minor Changes
+
+- [#706](https://github.com/eBay/evo-web/pull/706) [`d17e5b8`](https://github.com/eBay/evo-web/commit/d17e5b83cf67eb06c46927a9ca29902d3814027d) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `pay-by-bank-uk-24-colored` icon; deprecate `bank-group-logo-24-colored` (use `pay-by-bank-uk-24-colored` instead).
+
+- [#683](https://github.com/eBay/evo-web/pull/683) [`ce1cd0d`](https://github.com/eBay/evo-web/commit/ce1cd0dea5864ba29c0c8513e466e62cc31ee1a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Badge updates
+
+## 19.25.0
+
+### Minor Changes
+
+- [#686](https://github.com/eBay/evo-web/pull/686) [`0197ebe`](https://github.com/eBay/evo-web/commit/0197ebe4516d390e9d695f35be4cdd1d718d579c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - feat(icon-button): use "has()" selector for badged use case
+
 ## 19.24.7
 
 ### Patch Changes
@@ -18,13 +32,13 @@
 
 - [#648](https://github.com/eBay/evo-web/pull/648) [`03e20a3`](https://github.com/eBay/evo-web/commit/03e20a39a1e74c99d18abf67a6cb0d4274b680a5) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(page-notice, section-notice): unbold action CTA links per design spec
 
-  Links and `button.fake-link` elements inside the `__cta` slot of
-  `page-notice` and `section-notice` were rendering bold because the
-  components had blanket rules that bolded every link inside the
-  component. The Playbook design spec calls for unbolded CTA action
-  text. The fix scopes `font-weight: bold` to the body slots (`__main`,
-  `__footer`) where prose-with-links lives, so `__cta` links pick up
-  the default normal weight without needing an override.
+    Links and `button.fake-link` elements inside the `__cta` slot of
+    `page-notice` and `section-notice` were rendering bold because the
+    components had blanket rules that bolded every link inside the
+    component. The Playbook design spec calls for unbolded CTA action
+    text. The fix scopes `font-weight: bold` to the body slots (`__main`,
+    `__footer`) where prose-with-links lives, so `__cta` links pick up
+    the default normal weight without needing an override.
 
 ## 19.24.4
 
@@ -32,14 +46,14 @@
 
 - [#642](https://github.com/eBay/evo-web/pull/642) [`b9fd8fd`](https://github.com/eBay/evo-web/commit/b9fd8fd2becb11a9fa4b93b1d33ec3fba3c54698) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(section-title): remove arbitrary 75% max-width on title container
 
-  The `.section-title__title-container` was capped at `max-width: 75%`, which
-  caused unnecessary text wrapping on narrow viewports and on titles without
-  a trailing CTA. The Playbook spec is to let the title flow naturally and
-  rely on margin to maintain separation from a trailing CTA / overflow / info
-  element.
+    The `.section-title__title-container` was capped at `max-width: 75%`, which
+    caused unnecessary text wrapping on narrow viewports and on titles without
+    a trailing CTA. The Playbook spec is to let the title flow naturally and
+    rely on margin to maintain separation from a trailing CTA / overflow / info
+    element.
 
-  The `max-width` cap is replaced with `margin-inline-end: var(--spacing-300)`,
-  matching the spacing token used by sibling elements.
+    The `max-width` cap is replaced with `margin-inline-end: var(--spacing-300)`,
+    matching the spacing token used by sibling elements.
 
 ## 19.24.3
 
@@ -73,9 +87,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-  **@ebay/skin:** Add button reset styles for shaka-play-button.
+    **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 19.23.0
 

@@ -133,7 +133,7 @@ exports[`ebay-icon-button > renders badged icon variant 1`] = `
     [36m<span[39m
       [33maria-hidden[39m=[32m"true"[39m
       [33maria-label[39m=[32m"5 Items"[39m
-      [33mclass[39m=[32m"badge"[39m
+      [33mclass[39m=[32m"badge badge--circle"[39m
     [36m>[39m
       [0m5[0m
     [36m</span>[39m

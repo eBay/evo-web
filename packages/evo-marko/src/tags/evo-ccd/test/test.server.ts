@@ -48,6 +48,10 @@ describe("ccd", () => {
     });
   });
 
+  it("renders with custom units", async () => {
+    await snapshotHTML(Default, { units: "V" });
+  });
+
   it("renders with no min and max but with no charger included", async () => {
     await snapshotHTML(Default, {
       min: null,

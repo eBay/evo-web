@@ -8,8 +8,8 @@ exports[`given number is a string > does not renders with an invalid string 1`] 
 
 exports[`given number is a string > renders number with coerced string 1`] = `
 <span
-  aria-label="5 unread items"
-  class="badge"
+  aria-label="5 notifications"
+  class="badge badge--circle"
   role="img"
 >
   5
@@ -18,18 +18,26 @@ exports[`given number is a string > renders number with coerced string 1`] = `
 
 exports[`given number is a string > renders number with rounded-up string 1`] = `
 <span
-  aria-label="5.4 unread items"
-  class="badge"
+  aria-label="5.4 notifications"
+  class="badge badge--circle"
   role="img"
 >
-  5
+  5.4
 </span>
+`;
+
+exports[`renders an empty badge when no number is provided 1`] = `
+<span
+  aria-label="new"
+  class="badge"
+  role="img"
+/>
 `;
 
 exports[`renders defaults 1`] = `
 <span
-  aria-label="5 unread items"
-  class="badge"
+  aria-label="5 notifications"
+  class="badge badge--circle"
   role="img"
 >
   5
@@ -38,17 +46,17 @@ exports[`renders defaults 1`] = `
 
 exports[`renders number with rounded-up value 1`] = `
 <span
-  aria-label="5.6 unread items"
-  class="badge"
+  aria-label="5.6 notifications"
+  class="badge badge--circle"
   role="img"
 >
-  6
+  5.6
 </span>
 `;
 
 exports[`truncates when the value is greater than 99 1`] = `
 <span
-  aria-label="150 unread items"
+  aria-label="150 notifications"
   class="badge"
   role="img"
 >

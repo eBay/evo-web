@@ -78,6 +78,21 @@ const multiSeries: BarChartSeriesItem[] = [
     },
 ];
 
+const threeSeriesWithSharedX: BarChartSeriesItem[] = [
+    {
+        name: "Value 1",
+        data: [{ x: 1643673600000, y: 50, label: "$50" }],
+    },
+    {
+        name: "Value 2",
+        data: [{ x: 1643673600000, y: 40, label: "$40" }],
+    },
+    {
+        name: "Value 3",
+        data: [{ x: 1643673600000, y: 30, label: "$30" }],
+    },
+];
+
 describe("ebay-bar-chart rendering", () => {
     beforeEach(() => {
         vi.clearAllMocks();
@@ -118,6 +133,12 @@ describe("ebay-bar-chart rendering", () => {
         render(<EbayBarChart series={multiSeries} stacked />);
         const callProps = MockChart.mock.calls[0][0];
         expect(callProps.options.plotOptions.column.stacking).toBe("normal");
+    });
+
+    it("uses stacked totals for the y-axis max", () => {
+        render(<EbayBarChart series={threeSeriesWithSharedX} stacked />);
+        const callProps = MockChart.mock.calls[0][0];
+        expect(callProps.options.yAxis.max).toBe(120);
     });
 
     it("passes className to the container", () => {

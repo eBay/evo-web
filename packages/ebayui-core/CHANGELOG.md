@@ -1,5 +1,35 @@
 # eBayUI-Core Changelog
 
+## 16.8.1
+
+### Patch Changes
+
+- [#713](https://github.com/eBay/evo-web/pull/713) [`d4abc52`](https://github.com/eBay/evo-web/commit/d4abc5284244de7d52273f18de094a4cd63e56fc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix ebay-bar-chart stacked y-axis scaling so 3+ stacked series render against their combined totals.
+
+## 16.8.0
+
+### Minor Changes
+
+- [#683](https://github.com/eBay/evo-web/pull/683) [`ce1cd0d`](https://github.com/eBay/evo-web/commit/ce1cd0dea5864ba29c0c8513e466e62cc31ee1a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Badge updates
+
+### Patch Changes
+
+- [#700](https://github.com/eBay/evo-web/pull/700) [`fc022cd`](https://github.com/eBay/evo-web/commit/fc022cd03e694e7fd6904cffc94d9bf0567d3d65) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(pagination): ability to configure heading level
+
+## 16.7.6
+
+### Patch Changes
+
+- [#699](https://github.com/eBay/evo-web/pull/699) [`c6f9113`](https://github.com/eBay/evo-web/commit/c6f91132215ba3eb05d8c488210accfb271c63ba) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix test noise and flaky carousel scroll test.
+    - `@evo-web/react`: Guard `EvoIcon`'s missing-provider `console.warn` with `process.env.NODE_ENV === 'development'` so it is silent in Vitest (`NODE_ENV=test`) without removing the warning from development builds.
+    - `@ebay/ebayui-core`: Fix flaky `ebay-carousel` browser test — "when it is scrolled to the second slide" `beforeEach` was calling `waitForCarouselUpdate()` which resolved immediately from the init render's `move` event, before the 640 ms scroll debounce fired. Replaced with `vi.advanceTimersByTimeAsync(700)` to deterministically trigger the debounce and flush the resulting Marko re-render.
+
+## 16.7.5
+
+### Patch Changes
+
+- [#701](https://github.com/eBay/evo-web/pull/701) [`0a805e6`](https://github.com/eBay/evo-web/commit/0a805e6ab1728d6fd6bf1ee8fffd913c4dd51be5) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(ebay-video): add stopPropagation to big play button click
+
 ## 16.7.4
 
 ### Patch Changes
@@ -32,9 +62,9 @@
 
 - [#606](https://github.com/eBay/evo-web/pull/606) [`86c99fa`](https://github.com/eBay/evo-web/commit/86c99fa198805086c9c8377a000b0842597a51dd) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(item-tile): add a11yExternalLinkText prop to EbayFilePreviewCard and EbayItemTile
 
-  When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
+    When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
 
-  Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
+    Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
 
 ## 16.6.1
 
@@ -49,9 +79,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-  **@ebay/skin:** Add button reset styles for shaka-play-button.
+    **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 16.6.0
 
@@ -152,7 +182,7 @@
 
 - [#413](https://github.com/eBay/evo-web/pull/413) [`df550f5`](https://github.com/eBay/evo-web/commit/df550f5f7d009511f37c4764d1981ca2959d77fa) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(avatar): add alt="" to img for accessibility
 
-  Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
+    Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
 
 ## 16.0.0
 
@@ -325,7 +355,7 @@
 - [#210](https://github.com/eBay/evo-web/pull/210) [`66463ee`](https://github.com/eBay/evo-web/commit/66463ee6cc8b07c6b65f616108daa4bafb663687) Thanks [@agliga](https://github.com/agliga)! - feat(chip): added selection and filter chip
 
 - Updated dependencies [[`05d3c40`](https://github.com/eBay/evo-web/commit/05d3c4023776de1e2ac1f4c46b8e19dec2e3ddf6)]:
-  - @ebay/skin@19.11.0
+    - @ebay/skin@19.11.0
 
 ## 15.8.1
 

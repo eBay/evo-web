@@ -27,6 +27,7 @@ export interface Item extends Omit<Marko.HTML.Button, "type" | `on${string}`> {
 interface PaginationInput extends Omit<Marko.HTML.Nav, `on${string}`> {
     item?: Marko.AttrTag<Item>;
     variant?: "show-range" | "show-last" | "overflow";
+    "a11y-heading-tag"?: keyof Marko.NativeTags;
     "a11y-current-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-previous-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-next-text"?: Marko.HTMLAttributes["aria-label"];

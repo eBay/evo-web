@@ -1,0 +1,453 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-combobox SSR > renders borderless 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control combobox__control--borderless"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="GENERATED-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      aria-owns="GENERATED-1"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+  <div
+    class="combobox__listbox combobox__listbox--set-position"
+    id="GENERATED-1"
+    role="listbox"
+  >
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-2"
+      role="option"
+      tabindex="-1"
+    >
+      August Campaign
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-3"
+      role="option"
+      tabindex="-1"
+    >
+      4th of July Sale (paused)
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-4"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-5"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 1
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-6"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 3
+    </div>
+  </div>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders default 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="GENERATED-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      aria-owns="GENERATED-1"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+  <div
+    class="combobox__listbox combobox__listbox--set-position"
+    id="GENERATED-1"
+    role="listbox"
+  >
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-2"
+      role="option"
+      tabindex="-1"
+    >
+      August Campaign
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-3"
+      role="option"
+      tabindex="-1"
+    >
+      4th of July Sale (paused)
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-4"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-5"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 1
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-6"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 3
+    </div>
+  </div>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders disabled 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="GENERATED-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      aria-owns="GENERATED-1"
+      autocomplete="off"
+      disabled=""
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+  <div
+    class="combobox__listbox combobox__listbox--set-position"
+    id="GENERATED-1"
+    role="listbox"
+  >
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-2"
+      role="option"
+      tabindex="-1"
+    >
+      August Campaign
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-3"
+      role="option"
+      tabindex="-1"
+    >
+      4th of July Sale (paused)
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-4"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-5"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 1
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-6"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 3
+    </div>
+  </div>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders fluid 1`] = `
+"<div
+  class="combobox combobox--fluid"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="GENERATED-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      aria-owns="GENERATED-1"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+  <div
+    class="combobox__listbox combobox__listbox--set-position"
+    id="GENERATED-1"
+    role="listbox"
+  >
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-2"
+      role="option"
+      tabindex="-1"
+    >
+      August Campaign
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-3"
+      role="option"
+      tabindex="-1"
+    >
+      4th of July Sale (paused)
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-4"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-5"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 1
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-6"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 3
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`evo-combobox SSR > renders with fixed strategy 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="GENERATED-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      aria-owns="GENERATED-1"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+    />
+  </span>
+  <div
+    class="combobox__listbox combobox__listbox--set-position combobox__listbox--fixed"
+    id="GENERATED-1"
+    role="listbox"
+  >
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-2"
+      role="option"
+      tabindex="-1"
+    >
+      August Campaign
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-3"
+      role="option"
+      tabindex="-1"
+    >
+      4th of July Sale (paused)
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-4"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-5"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 1
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-6"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 3
+    </div>
+  </div>
+</span>"
+`;
+
+exports[`evo-combobox SSR > renders with pre-selected value 1`] = `
+"<span
+  class="combobox"
+>
+  <span
+    class="combobox__control"
+  >
+    <input
+      aria-autocomplete="none"
+      aria-controls="GENERATED-1"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Campaign"
+      aria-owns="GENERATED-1"
+      autocomplete="off"
+      id="GENERATED-0"
+      placeholder="Choose a campaign"
+      role="combobox"
+      type="text"
+      value="Basic Offer"
+    />
+  </span>
+  <div
+    class="combobox__listbox combobox__listbox--set-position"
+    id="GENERATED-1"
+    role="listbox"
+  >
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-2"
+      role="option"
+      tabindex="-1"
+    >
+      August Campaign
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-3"
+      role="option"
+      tabindex="-1"
+    >
+      4th of July Sale (paused)
+    </div>
+    <div
+      aria-selected="true"
+      class="combobox__option"
+      id="GENERATED-4"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-5"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 1
+    </div>
+    <div
+      aria-selected="false"
+      class="combobox__option"
+      id="GENERATED-6"
+      role="option"
+      tabindex="-1"
+    >
+      Basic Offer 3
+    </div>
+  </div>
+</span>"
+`;

@@ -3,14 +3,26 @@
 .badge {
     align-items: center;
     background-color: var(--color-background-attention);
-    border: 2px solid var(--color-border-on-attention);
-    border-radius: 16px;
+    border: 2px solid var(--color-border-inverse);
+    border-radius: 1.2em;
+    box-sizing: border-box;
     color: var(--color-foreground-on-attention);
     display: inline-flex;
-    font-size: 10px;
-    height: 16px;
+    font-size: var(--font-size-smallest);
+    height: 2.4em;
     justify-content: center;
-    min-width: 8px;
-    padding: 2px 6px;
+    min-width: 2.4em;
+    padding-inline: var(--spacing-50);
     white-space: nowrap;
+}
+
+.badge:empty {
+    height: var(--dimension-150);
+    min-width: 0;
+    padding: 0;
+    width: var(--dimension-150);
+}
+
+.badge--circle {
+    padding-inline: 0;
 }

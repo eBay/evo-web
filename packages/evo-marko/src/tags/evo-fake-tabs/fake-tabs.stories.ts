@@ -19,7 +19,7 @@ export default {
   },
 
   argTypes: {
-    selectedIndex: {
+    selected: {
       type: "number",
       control: "number",
       description: "Zero-based index of selected tab tab and panel",

@@ -4,8 +4,14 @@ exports[`card > anchor > then it matches the snapshot 1`] = `
 "<div>
   <a style="
     background-color: var(--color-background-secondary);
-    border-bottom: none;
-    border-top: none;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
+    border-left-width: medium;
+    border-right-color: currentcolor;
+    border-right-width: medium;
+    border-top-color: currentcolor;
+    border-top-width: medium;
     color: inherit;
     display: flex;
     flex-direction: column;
@@ -77,8 +83,14 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
 "<div>
   <a style="
     background-color: var(--color-background-secondary);
-    border-bottom: none;
-    border-top: none;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
+    border-left-width: medium;
+    border-right-color: currentcolor;
+    border-right-width: medium;
+    border-top-color: currentcolor;
+    border-top-width: medium;
     color: inherit;
     display: flex;
     flex-direction: column;
@@ -150,12 +162,18 @@ exports[`card > button > then it matches the snapshot 1`] = `
 "<div>
   <button style="
     background-color: var(--color-background-secondary);
+    border-bottom-color: currentcolor;
     border-bottom-style: none;
-    border-bottom: none;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
     border-left-style: none;
+    border-left-width: medium;
+    border-right-color: currentcolor;
     border-right-style: none;
+    border-right-width: medium;
+    border-top-color: currentcolor;
     border-top-style: none;
-    border-top: none;
+    border-top-width: medium;
     color: var(--color-foreground-primary);
     display: flex;
     flex-direction: column;
@@ -239,12 +257,18 @@ exports[`card > button disabled > then it matches the snapshot 1`] = `
     disabled
     style="
       background-color: var(--color-background-secondary);
+      border-bottom-color: currentcolor;
       border-bottom-style: none;
-      border-bottom: none;
+      border-bottom-width: medium;
+      border-left-color: currentcolor;
       border-left-style: none;
+      border-left-width: medium;
+      border-right-color: currentcolor;
       border-right-style: none;
+      border-right-width: medium;
+      border-top-color: currentcolor;
       border-top-style: none;
-      border-top: none;
+      border-top-width: medium;
       color: var(--color-foreground-primary);
       display: flex;
       filter: grayscale(1);
@@ -330,8 +354,14 @@ exports[`card > default > then it matches the snapshot 1`] = `
 "<div>
   <span style="
     background-color: var(--color-background-secondary);
-    border-bottom: none;
-    border-top: none;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
+    border-left-width: medium;
+    border-right-color: currentcolor;
+    border-right-width: medium;
+    border-top-color: currentcolor;
+    border-top-width: medium;
     color: var(--color-foreground-primary);
     display: flex;
     flex-direction: column;
@@ -397,13 +427,17 @@ exports[`card > default > then it matches the snapshot 1`] = `
         <button style="
           align-content: center;
           align-items: center;
+          border-bottom-color: currentcolor;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
+          border-left-color: currentcolor;
           border-left-style: solid;
           border-left-width: 1px;
+          border-right-color: currentcolor;
           border-right-style: solid;
           border-right-width: 1px;
+          border-top-color: currentcolor;
           border-top-style: solid;
           border-top-width: 1px;
           border-top: 1px solid;
@@ -448,8 +482,14 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
 "<div>
   <span style="
     background-color: var(--color-background-secondary);
-    border-bottom: none;
-    border-top: none;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
+    border-left-width: medium;
+    border-right-color: currentcolor;
+    border-right-width: medium;
+    border-top-color: currentcolor;
+    border-top-width: medium;
     color: var(--color-foreground-primary);
     display: flex;
     flex-direction: column;
@@ -515,13 +555,17 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
         <button style="
           align-content: center;
           align-items: center;
+          border-bottom-color: currentcolor;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
+          border-left-color: currentcolor;
           border-left-style: solid;
           border-left-width: 1px;
+          border-right-color: currentcolor;
           border-right-style: solid;
           border-right-width: 1px;
+          border-top-color: currentcolor;
           border-top-style: solid;
           border-top-width: 1px;
           border-top: 1px solid;
@@ -566,8 +610,14 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
 "<div>
   <span style="
     background-color: var(--color-background-secondary);
-    border-bottom: none;
-    border-top: none;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
+    border-left-width: medium;
+    border-right-color: currentcolor;
+    border-right-width: medium;
+    border-top-color: currentcolor;
+    border-top-width: medium;
     color: var(--color-foreground-primary);
     display: flex;
     flex-direction: column;
@@ -633,13 +683,17 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
         <button style="
           align-content: center;
           align-items: center;
+          border-bottom-color: currentcolor;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
+          border-left-color: currentcolor;
           border-left-style: solid;
           border-left-width: 1px;
+          border-right-color: currentcolor;
           border-right-style: solid;
           border-right-width: 1px;
+          border-top-color: currentcolor;
           border-top-style: solid;
           border-top-width: 1px;
           border-top: 1px solid;
@@ -684,12 +738,18 @@ exports[`card > minimum > then it matches the snapshot 1`] = `
 "<div>
   <button style="
     background-color: var(--color-background-secondary);
+    border-bottom-color: currentcolor;
     border-bottom-style: none;
-    border-bottom: none;
+    border-bottom-width: medium;
+    border-left-color: currentcolor;
     border-left-style: none;
+    border-left-width: medium;
+    border-right-color: currentcolor;
     border-right-style: none;
+    border-right-width: medium;
+    border-top-color: currentcolor;
     border-top-style: none;
-    border-top: none;
+    border-top-width: medium;
     color: var(--color-foreground-primary);
     display: flex;
     flex-direction: column;

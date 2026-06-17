@@ -5,23 +5,39 @@ export type EbayBadgeType = "menu" | "icon" | "img";
 
 export type EbayBadgeProps = ComponentProps<"span"> & {
     type?: EbayBadgeType;
-    number: number | string;
+    number?: number | string | null;
 };
 
 const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...rest }) => {
-    // Parse in case user provided a string by mistake
-    const parsed = Math.round(parseInt(String(number), 10));
+    const role = type === "img" ? "img" : undefined;
+    const ariaHidden = type !== "img";
 
-    return parsed <= 0 ? null : (
-        <span
-            {...rest}
-            className={classNames("badge", className)}
-            role={type === "img" ? "img" : undefined}
-            aria-hidden={type !== "img"}
-        >
-            {parsed > 99 ? "99+" : parsed}
-        </span>
-    );
+    if (number == null) {
+        return <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden} />;
+    }
+
+    if (+number > 99) {
+        return (
+            <span {...rest} className={classNames("badge", className)} role={role} aria-hidden={ariaHidden}>
+                99+
+            </span>
+        );
+    }
+
+    if (+number > 0) {
+        return (
+            <span
+                {...rest}
+                className={classNames("badge", "badge--circle", className)}
+                role={role}
+                aria-hidden={ariaHidden}
+            >
+                {Math.round(+number)}
+            </span>
+        );
+    }
+
+    return null;
 };
 
 export default EbayBadge;

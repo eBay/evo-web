@@ -1,5 +1,23 @@
 # @evo-web/react
 
+## 0.1.0
+
+### Minor Changes
+
+- [#706](https://github.com/eBay/evo-web/pull/706) [`d17e5b8`](https://github.com/eBay/evo-web/commit/d17e5b83cf67eb06c46927a9ca29902d3814027d) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `pay-by-bank-uk-24-colored` icon; deprecate `bank-group-logo-24-colored` (use `pay-by-bank-uk-24-colored` instead).
+
+- [#683](https://github.com/eBay/evo-web/pull/683) [`ce1cd0d`](https://github.com/eBay/evo-web/commit/ce1cd0dea5864ba29c0c8513e466e62cc31ee1a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Badge updates
+
+## 0.0.9
+
+### Patch Changes
+
+- [#688](https://github.com/eBay/evo-web/pull/688) [`a1b4ffa`](https://github.com/eBay/evo-web/commit/a1b4ffa64aca759843f1da1a3f7be197f01193c4) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCCD component.
+
+- [#699](https://github.com/eBay/evo-web/pull/699) [`c6f9113`](https://github.com/eBay/evo-web/commit/c6f91132215ba3eb05d8c488210accfb271c63ba) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix test noise and flaky carousel scroll test.
+  - `@evo-web/react`: Guard `EvoIcon`'s missing-provider `console.warn` with `process.env.NODE_ENV === 'development'` so it is silent in Vitest (`NODE_ENV=test`) without removing the warning from development builds.
+  - `@ebay/ebayui-core`: Fix flaky `ebay-carousel` browser test — "when it is scrolled to the second slide" `beforeEach` was calling `waitForCarouselUpdate()` which resolved immediately from the init render's `move` event, before the 640 ms scroll debounce fired. Replaced with `vi.advanceTimersByTimeAsync(700)` to deterministically trigger the debounce and flush the resulting Marko re-render.
+
 ## 0.0.8
 
 ### Patch Changes

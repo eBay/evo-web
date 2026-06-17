@@ -6,7 +6,6 @@ exports[`passes through additional html attributes 1`] = `
   class="checkbox__control"
   data-passed-through="true"
   data-testid="AttributePassthrough"
-  htmlattributes="[object Object]"
   type="checkbox"
 />"
 `;
@@ -21,7 +20,6 @@ exports[`passes through additional html attributes 2`] = `
     class="checkbox__control"
     data-passed-through="true"
     data-testid="AttributePassthrough"
-    htmlattributes="[object Object]"
     type="checkbox"
   />
   <span

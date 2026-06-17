@@ -1,5 +1,27 @@
 # @ebay/ui-core-react
 
+## 9.7.1
+
+### Patch Changes
+
+- [#713](https://github.com/eBay/evo-web/pull/713) [`d4abc52`](https://github.com/eBay/evo-web/commit/d4abc5284244de7d52273f18de094a4cd63e56fc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix ebay-bar-chart stacked y-axis scaling so 3+ stacked series render against their combined totals.
+
+## 9.7.0
+
+### Minor Changes
+
+- [#683](https://github.com/eBay/evo-web/pull/683) [`ce1cd0d`](https://github.com/eBay/evo-web/commit/ce1cd0dea5864ba29c0c8513e466e62cc31ee1a4) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Badge updates
+
+### Patch Changes
+
+- [#700](https://github.com/eBay/evo-web/pull/700) [`fc022cd`](https://github.com/eBay/evo-web/commit/fc022cd03e694e7fd6904cffc94d9bf0567d3d65) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(pagination): ability to configure heading level
+
+## 9.6.6
+
+### Patch Changes
+
+- [#705](https://github.com/eBay/evo-web/pull/705) [`604e7b7`](https://github.com/eBay/evo-web/commit/604e7b77a47c7be4e8b698507f0bae8a26e7873b) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Fix EbayFilterMenu checkbox selection so filtered items remain checked by item value instead of index.
+
 ## 9.6.5
 
 ### Patch Changes
@@ -18,10 +40,10 @@
 
 - [#643](https://github.com/eBay/evo-web/pull/643) [`c739d5d`](https://github.com/eBay/evo-web/commit/c739d5ddfd557f7427a6dbacb909ac7dc84ed9d4) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(ebay-star-rating-select): do not select star on focus
 
-  Tabbing to the first star auto-selected it because `handleFocus` (and
-  `handleKeyDown`) called `setChecked` unconditionally. Selection now only
-  happens on click (or the click event browsers synthesize from keyboard
-  activation of native radio inputs), matching the Marko fix from #394.
+    Tabbing to the first star auto-selected it because `handleFocus` (and
+    `handleKeyDown`) called `setChecked` unconditionally. Selection now only
+    happens on click (or the click event browsers synthesize from keyboard
+    activation of native radio inputs), matching the Marko fix from #394.
 
 ## 9.6.2
 
@@ -45,9 +67,9 @@
 
 - [#606](https://github.com/eBay/evo-web/pull/606) [`86c99fa`](https://github.com/eBay/evo-web/commit/86c99fa198805086c9c8377a000b0842597a51dd) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(item-tile): add a11yExternalLinkText prop to EbayFilePreviewCard and EbayItemTile
 
-  When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
+    When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
 
-  Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
+    Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
 
 ## 9.5.0
 
@@ -62,9 +84,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-  **@ebay/skin:** Add button reset styles for shaka-play-button.
+    **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 9.4.0
 
@@ -132,11 +154,11 @@
 
 - [#413](https://github.com/eBay/evo-web/pull/413) [`df550f5`](https://github.com/eBay/evo-web/commit/df550f5f7d009511f37c4764d1981ca2959d77fa) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(avatar): add alt="" to img for accessibility
 
-  Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
+    Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
 
 - [#421](https://github.com/eBay/evo-web/pull/421) [`bd7df41`](https://github.com/eBay/evo-web/commit/bd7df41c69dbb15edab329abdb907cfa838fb30c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(pagination): add visibility detection for pagination inside hidden containers
 
-  Fixed issue where EbayPagination would miscalculate visible pages when rendered inside EbayTab or other hidden containers. The component now uses IntersectionObserver to detect when it becomes visible and automatically recalculates the page layout. Also fixed a memory leak in the resize event listener cleanup.
+    Fixed issue where EbayPagination would miscalculate visible pages when rendered inside EbayTab or other hidden containers. The component now uses IntersectionObserver to detect when it becomes visible and automatically recalculates the page layout. Also fixed a memory leak in the resize event listener cleanup.
 
 ## 8.18.0
 
@@ -196,7 +218,7 @@
 
 - [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
 
-  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+    EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
 
 ### Patch Changes
 

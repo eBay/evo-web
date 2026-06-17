@@ -227,6 +227,7 @@ describe.skip("given the menu is in the expanded state", () => {
             expect(component.emitted("collapse")).to.have.property("length", 1);
         });
     });
+
 });
 
 describe.skip("given the menu is in the expanded state with radio items", () => {
@@ -372,6 +373,28 @@ describe.skip("given the menu is in the expanded state with checkbox items", () 
 
         it("then the item is unchecked", () => {
             expect(firstItem).toHaveAttribute("aria-checked", "false");
+        });
+    });
+});
+
+describe("given the evo-menu-button is open", () => {
+    beforeEach(async () => {
+        component = await render(Default);
+        await fireEvent.click(component.getByRole("button"));
+    });
+
+    describe("when focus moves outside the component", () => {
+        beforeEach(async () => {
+            await fireEvent.focusOut(component.getByRole("button"), {
+                relatedTarget: document.body,
+            });
+        });
+
+        it("then it collapses", () => {
+            expect(component.getByRole("button")).toHaveAttribute(
+                "aria-expanded",
+                "false",
+            );
         });
     });
 });

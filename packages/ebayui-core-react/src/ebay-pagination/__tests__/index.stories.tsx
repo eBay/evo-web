@@ -1,9 +1,9 @@
 import React, { ComponentProps, useState } from "react";
 import { action } from "storybook/actions";
-import { EbayPagination, EbayPaginationItem as Item } from "../index";
 import { EbayButton } from "../../ebay-button";
 import { EbayLightboxDialog } from "../../ebay-lightbox-dialog";
-import { EbayTabs, EbayTab, EbayTabPanel } from "../../ebay-tabs";
+import { EbayTab, EbayTabPanel, EbayTabs } from "../../ebay-tabs";
+import { EbayPagination, EbayPaginationItem as Item } from "../index";
 
 export default {
     title: "navigation & disclosure/ebay-pagination",
@@ -72,6 +72,11 @@ or import styles using SCSS/CSS
         a11yPreviousText: { description: "a11y text for previous arrow button", control: "text" },
         a11yNextText: { description: "a11y text for next arrow button", control: "text" },
         a11yCurrentText: { description: "Description for the current page (e.g. Results of Page 1)", control: "text" },
+        a11yHeadingTag: {
+            description: "Heading tag for pagination (default: `h2`)",
+            control: "text",
+            table: { defaultValue: { summary: "h2" } },
+        },
         variant: {
             description:
                 "Either `show-last`, or `show-range` (default). If show-last then will show the last page always and will put `…` between the last visible range and the last page. `…` and the last page will take up two items in the range. `…` will be hidden when the range to the last item is fully visible.",
