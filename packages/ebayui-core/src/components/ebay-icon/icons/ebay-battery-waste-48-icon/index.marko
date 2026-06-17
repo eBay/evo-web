@@ -1,0 +1,9 @@
+import { symbol } from "./symbol";
+import type { Input as IconInput } from "../../component-browser";
+export type Input = Omit<IconInput, `_${string}`>;
+<ebay-icon
+    ...input
+    _name="battery-waste-48"
+    _size="48"
+    _type="icon"
+    _themes=symbol/>
