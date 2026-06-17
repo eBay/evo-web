@@ -29,6 +29,7 @@ describe("ebay-select rendering", () => {
     it("renders basic story correctly", () => {
         const { container } = render(<BasicStory />);
         const selectContainer = container.querySelector(".select");
+        expect(selectContainer).not.toHaveClass("select--fluid");
         const select = selectContainer.querySelector("select");
         expect(select).toHaveAttribute("name", "formSelect");
         const [option1, option2, option3] = select.querySelectorAll("option");
