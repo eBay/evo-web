@@ -18,10 +18,10 @@ describe("fake-tabs", () => {
   });
 
   it("renders with other selected index", async () => {
-    await snapshotHTML(Default, {selectedIndex: 2});
+    await snapshotHTML(Default, {selected: 2});
   });
   it("renders with no selected index", async () => {
-    await snapshotHTML(Default, {selectedIndex: -1});
+    await snapshotHTML(Default, {selected: -1});
   });
 
 });
