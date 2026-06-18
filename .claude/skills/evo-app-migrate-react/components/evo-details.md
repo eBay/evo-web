@@ -5,7 +5,7 @@ This component has a **new composite API** in evo-react. The flat-prop approach 
 **Before:**
 
 ```tsx
-import { EbayDetails } from "@ebay/ebayui-core-react/ebay-details";
+import { EbayDetails } from "@ebay/ui-core-react/ebay-details";
 
 <EbayDetails
   text="Show me the details!"

@@ -5,10 +5,7 @@ This component has a **new id-based composite API** in evo-react. The old child-
 **Before:**
 
 ```tsx
-import {
-  EbayAccordion,
-  EbayDetails,
-} from "@ebay/ebayui-core-react/ebay-accordion";
+import { EbayAccordion, EbayDetails } from "@ebay/ui-core-react/ebay-accordion";
 
 <EbayAccordion autoCollapse onToggle={handler}>
   <EbayDetails text="Item 1">Content 1</EbayDetails>

@@ -3,7 +3,7 @@
 ## Import change
 
 ```diff
-- import { EbayBreadcrumbs, EbayBreadcrumbItem } from "@ebay/ebayui-core-react/ebay-breadcrumbs";
+- import { EbayBreadcrumbs, EbayBreadcrumbItem } from "@ebay/ui-core-react/ebay-breadcrumbs";
 + import { EvoBreadcrumbs } from "@evo-web/react/breadcrumbs";
 ```
 

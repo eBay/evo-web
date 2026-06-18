@@ -103,11 +103,11 @@ export type Input = StaticInput | DayInput | RangeInput;
 // `viewStart` is the first displayed month (YYYY-MM). `valueChange` notifies `input.viewStartChange`.
 // `focus` is fully uncontrolled — always within the visible window, resets when viewStart changes.
 <let/viewStart=(input.viewStart ?? today.slice(0, 7) as MonthISO) valueChange=input.viewStartChange>
-<let/focus=(viewStart + "-01" as DayISO)>
+<let/focus=getInitialFocus(viewStart, today, numMonths)>
 <script>
   // If viewStart changes externally and focus is no longer in the window, reset it.
   if (focus.slice(0, 7) < viewStart || focus.slice(0, 7) > monthOffset(viewStart, numMonths - 1)) {
-    focus = viewStart + "-01" as DayISO;
+    focus = getInitialFocus(viewStart, today, numMonths);
   }
 </script>
 
@@ -116,8 +116,12 @@ export type Input = StaticInput | DayInput | RangeInput;
 <let/bodyHasFocus=false>
 <let/hoverDate=null as null | DayISO>
 <const/range=((): Required<NonNullable<RangeInput["selected"]>> | null => {
-  if (typeof selected === "object" && selected.from && selected.to) return selected as Required<typeof selected>;
-  if (selectMode !== "range") return null;
+  if (typeof selected === "object" && selected.from && selected.to) {
+    return selected as Required<typeof selected>;
+  }
+  if (selectMode !== "range") {
+    return null;
+  }
   const singleSelected = typeof selected === "object" ? selected.from || selected.to : selected;
   if (singleSelected) {
     const interactingWith = hoverDate || (bodyHasFocus && focus);
@@ -135,10 +139,14 @@ export type Input = StaticInput | DayInput | RangeInput;
     <div class="calendar__header">
       <div class="calendar__header--inner">
         <evo-icon-button
-          disabled=(disable?.before && (monthOffset(viewStart, -1) + "-01" as DayISO) < disable.before)
+          disabled=isPreviousMonthDisabled(disable, viewStart)
           onClick() {
-            viewStart = monthOffset(viewStart, -1);
-            if (focus.slice(0, 7) > monthOffset(viewStart, numMonths - 1)) focus = viewStart + "-01" as DayISO;
+            if (!isPreviousMonthDisabled(disable, viewStart)) {
+              const nextViewStart = monthOffset(viewStart, -1);
+              const targetFocus = offsetMonthForDay(focus, -1);
+              viewStart = nextViewStart;
+              focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+            }
           }
           a11yText=a11yNavigateText(getMonthName(locale, viewStart, -1), "prev")>
           <evo-icon-chevron-left-24/>
@@ -147,10 +155,14 @@ export type Input = StaticInput | DayInput | RangeInput;
           <h3>${getMonthName(locale, viewStart, i)}</h3>
         </for>
         <evo-icon-button
-          disabled=(disable?.after && (monthOffset(viewStart, numMonths) + "-01" as DayISO) > disable.after)
+          disabled=isNextMonthDisabled(disable, viewStart, numMonths)
           onClick() {
-            viewStart = monthOffset(viewStart, 1);
-            if (focus.slice(0, 7) < viewStart) focus = monthOffset(viewStart, numMonths - 1) + "-01" as DayISO;
+            if (!isNextMonthDisabled(disable, viewStart, numMonths)) {
+              const nextViewStart = monthOffset(viewStart, 1);
+              const targetFocus = offsetMonthForDay(focus, 1);
+              viewStart = nextViewStart;
+              focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+            }
           }
           a11yText=a11yNavigateText(getMonthName(locale, viewStart, numMonths), "next")>
           <evo-icon-chevron-right-24/>
@@ -170,38 +182,61 @@ export type Input = StaticInput | DayInput | RangeInput;
       if (e.key in DAY_UPDATE_KB) {
         const change = DAY_UPDATE_KB[e.key as keyof typeof DAY_UPDATE_KB];
         e.preventDefault();
-        const windowFirst = viewStart + "-01" as DayISO;
-        const windowLast = toISO(new Date(getMonthDate(viewStart, numMonths).setUTCDate(0)));
-        const earliest = disable?.before && disable.before > windowFirst ? disable.before : windowFirst;
-        const latest = disable?.after && disable.after < windowLast ? disable.after : windowLast;
         let iso = focus;
-        let tries = 31;
+        let tries = 7;
         do { iso = offsetISO(iso, change); } while (tries-- > 0 && disable && isDisabled(disable, iso));
-        if (iso < earliest) iso = earliest;
-        else if (iso > latest) iso = latest;
-        focus = iso;
+        if (tries > 0) {
+          const firstVisible = getFirstVisibleISO(viewStart);
+          const lastVisible = getLastVisibleISO(viewStart, numMonths);
+          if (iso < firstVisible) {
+            if (a11yNavigateText && !isPreviousMonthDisabled(disable, viewStart)) {
+              const nextViewStart = monthOffset(viewStart, -1);
+              viewStart = nextViewStart;
+              focus = getActiveISOInWindow(disable, iso, nextViewStart, numMonths);
+            } else {
+              focus = getFirstActiveISO(disable, viewStart, numMonths) || firstVisible;
+            }
+          } else if (iso > lastVisible) {
+            if (a11yNavigateText && !isNextMonthDisabled(disable, viewStart, numMonths)) {
+              const nextViewStart = monthOffset(viewStart, 1);
+              viewStart = nextViewStart;
+              focus = getActiveISOInWindow(disable, iso, nextViewStart, numMonths);
+            } else {
+              focus = getLastActiveISO(disable, viewStart, numMonths) || lastVisible;
+            }
+          } else {
+            focus = iso;
+          }
+        }
       } else switch (e.key) {
         case "PageUp": {
           e.preventDefault();
-          viewStart = monthOffset(viewStart, -1);
-          if (focus.slice(0, 7) > monthOffset(viewStart, numMonths - 1)) focus = viewStart + "-01" as DayISO;
+          if (!isPreviousMonthDisabled(disable, viewStart)) {
+            const nextViewStart = monthOffset(viewStart, -1);
+            const targetFocus = offsetMonthForDay(focus, -1);
+            viewStart = nextViewStart;
+            focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+          }
           break;
         }
         case "PageDown": {
           e.preventDefault();
-          viewStart = monthOffset(viewStart, 1);
-          if (focus.slice(0, 7) < viewStart) focus = monthOffset(viewStart, numMonths - 1) + "-01" as DayISO;
+          if (!isNextMonthDisabled(disable, viewStart, numMonths)) {
+            const nextViewStart = monthOffset(viewStart, 1);
+            const targetFocus = offsetMonthForDay(focus, 1);
+            viewStart = nextViewStart;
+            focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+          }
           break;
         }
         case "Home": {
           e.preventDefault();
-          focus = viewStart + "-01" as DayISO;
+          focus = getFirstActiveISO(disable, viewStart, numMonths) || getFirstVisibleISO(viewStart);
           break;
         }
         case "End": {
           e.preventDefault();
-          const { year: veY, month: veM } = getMonthInfo(viewStart, numMonths - 1);
-          focus = toISO(new Date(Date.UTC(veY, veM + 1, 0)));
+          focus = getLastActiveISO(disable, viewStart, numMonths) || getLastVisibleISO(viewStart, numMonths);
           break;
         }
       }
@@ -249,7 +284,9 @@ export type Input = StaticInput | DayInput | RangeInput;
                   }>
                     <if=input.selectMode>
                       <script>
-                        if (bodyHasFocus && focus === iso) $el().focus();
+                        if (bodyHasFocus && focus === iso) {
+                          $el().focus();
+                        }
                       </script>
                       <button/$el
                         type="button"
@@ -386,6 +423,94 @@ static function isDisabled(
     list?.includes(date) ||
     callback?.(date)
   );
+}
+static function getFirstVisibleISO(viewStart: MonthISO) {
+  return (viewStart + "-01") as DayISO;
+}
+static function getLastVisibleISO(viewStart: MonthISO, numMonths: number) {
+  return toISO(new Date(getMonthDate(viewStart, numMonths).setUTCDate(0)));
+}
+static function getFirstActiveISO(
+  disable: Disable | undefined,
+  viewStart: MonthISO,
+  numMonths: number,
+) {
+  let iso = getFirstVisibleISO(viewStart);
+  const lastVisible = getLastVisibleISO(viewStart, numMonths);
+  while (iso <= lastVisible && disable && isDisabled(disable, iso)) {
+    iso = offsetISO(iso, 1);
+  }
+  return iso > lastVisible ? null : iso;
+}
+static function getLastActiveISO(
+  disable: Disable | undefined,
+  viewStart: MonthISO,
+  numMonths: number,
+) {
+  let iso = getLastVisibleISO(viewStart, numMonths);
+  const firstVisible = getFirstVisibleISO(viewStart);
+  while (iso >= firstVisible && disable && isDisabled(disable, iso)) {
+    iso = offsetISO(iso, -1);
+  }
+  return iso < firstVisible ? null : iso;
+}
+static function getActiveISOInWindow(
+  disable: Disable | undefined,
+  iso: DayISO,
+  viewStart: MonthISO,
+  numMonths: number,
+) {
+  const firstVisible = getFirstVisibleISO(viewStart);
+  const lastVisible = getLastVisibleISO(viewStart, numMonths);
+
+  if (iso < firstVisible) {
+    return getFirstActiveISO(disable, viewStart, numMonths) || firstVisible;
+  }
+  if (iso > lastVisible) {
+    return getLastActiveISO(disable, viewStart, numMonths) || lastVisible;
+  }
+  if (!disable || !isDisabled(disable, iso)) {
+    return iso;
+  }
+
+  let nextISO = iso;
+  while (nextISO <= lastVisible && isDisabled(disable, nextISO)) {
+    nextISO = offsetISO(nextISO, 1);
+  }
+  if (nextISO <= lastVisible) {
+    return nextISO;
+  }
+
+  return getLastActiveISO(disable, viewStart, numMonths) || firstVisible;
+}
+static function isPreviousMonthDisabled(
+  disable: Disable | undefined,
+  viewStart: MonthISO,
+) {
+  return !!disable?.before && getFirstVisibleISO(viewStart) <= disable.before;
+}
+static function isNextMonthDisabled(
+  disable: Disable | undefined,
+  viewStart: MonthISO,
+  numMonths: number,
+) {
+  return !!disable?.after && getLastVisibleISO(viewStart, numMonths) >= disable.after;
+}
+static function getInitialFocus(
+  viewStart: MonthISO,
+  today: DayISO,
+  numMonths: number,
+) {
+  const lastVisibleMonth = monthOffset(viewStart, numMonths - 1);
+  return today.slice(0, 7) >= viewStart && today.slice(0, 7) <= lastVisibleMonth
+    ? today
+    : ((viewStart + "-01") as DayISO);
+}
+static function offsetMonthForDay(iso: DayISO, offset: -1 | 1) {
+  const targetMonth = monthOffset(iso.slice(0, 7) as MonthISO, offset);
+  const { year, month, length } = getMonthInfo(targetMonth, 0);
+  const day = Math.min(Number(iso.slice(8, 10)), length);
+  return toISO(new Date(Date.UTC(year, month, day)));
 }
 static const DAY_UPDATE_KB = {
   ArrowRight: 1,
