@@ -59,7 +59,7 @@ feat(module): adding a new feature
 - `@ebay/skin` - markup CSS/SCSS changes
 - `@ebay/ebayui-core` - legacy Marko 5 components
 - `@evo-web/marko` - new Marko 6 components
-- `@ebay/ebayui-core-react` - legacy React components
+- `@ebay/ui-core-react` - legacy React components
 - `@evo-web/react` - new React components
 
 ### 3. Commit the Changeset File
