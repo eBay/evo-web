@@ -289,6 +289,65 @@ describe("given the menu is in the expanded state", () => {
     });
 });
 
+describe("given the filter menu button initial state", () => {
+    let filterButton;
+
+    beforeEach(async () => {
+        component = await render(Default);
+        filterButton = component.getAllByRole("button")[0];
+    });
+
+    it("should not have aria-pressed attribute", () => {
+        expect(filterButton).not.toHaveAttribute("aria-pressed");
+    });
+
+    it("should not have filter-chip--selected class initially", () => {
+        expect(filterButton).not.toHaveClass("filter-chip--selected");
+    });
+
+    it("should have filter-chip class", () => {
+        expect(filterButton).toHaveClass("filter-chip");
+    });
+
+    describe("when an item is selected", () => {
+        beforeEach(async () => {
+            await fireEvent.click(filterButton);
+            await fireEvent.click(component.getAllByRole("menuitemcheckbox", { hidden: true })[0]);
+        });
+
+        it("should add filter-chip--selected class to the button", () => {
+            expect(filterButton).toHaveClass("filter-chip--selected");
+        });
+
+        it("should add filter-menu-button__button--active class to the button", () => {
+            expect(filterButton).toHaveClass("filter-menu-button__button--active");
+        });
+
+        it("should not have aria-pressed attribute", () => {
+            expect(filterButton).not.toHaveAttribute("aria-pressed");
+        });
+
+        it("should show clipped a11y text", () => {
+            expect(component.getByText("Filter Applied")).toBeInTheDocument();
+        });
+
+        describe("when the same item is deselected", () => {
+            beforeEach(async () => {
+                await fireEvent.click(filterButton);
+                await fireEvent.click(component.getAllByRole("menuitemcheckbox", { hidden: true })[0]);
+            });
+
+            it("should remove filter-chip--selected class from the button", () => {
+                expect(filterButton).not.toHaveClass("filter-chip--selected");
+            });
+
+            it("should remove clipped a11y text", () => {
+                expect(component.queryByText("Filter Applied")).not.toBeInTheDocument();
+            });
+        });
+    });
+});
+
 describe("given the menu item is disabled", () => {
     const firstItemText = items[0].renderBody;
 

@@ -15,6 +15,9 @@ import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
     text: string;
+    count?: number;
+    countContent?: React.ReactNode;
+    a11yFilterAppliedText?: string;
     onExpand?: () => void;
     onCollapse?: () => void;
 };
@@ -22,6 +25,9 @@ export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
 const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
+    count,
+    countContent,
+    a11yFilterAppliedText = "Filter Applied",
     "aria-label": ariaLabel,
     onExpand,
     onCollapse,
@@ -76,16 +82,29 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
         <span ref={ref} className={classNames("filter-menu-button", className)}>
             <button
                 type="button"
-                className={classNames("filter-menu-button__button", hasChecked && "filter-menu-button__button--active")}
+                className={classNames(
+                    "filter-menu-button__button",
+                    "filter-chip",
+                    hasChecked && "filter-menu-button__button--active",
+                    hasChecked && "filter-chip--selected",
+                )}
                 ref={refs.setHost}
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-label={ariaLabel}
             >
                 <span className="filter-menu-button__button-cell">
-                    <span className="filter-menu-button__button-text">{text}</span>
+                    <span className="filter-menu-button__button-text">
+                        {text}
+                        {(countContent !== undefined || count !== undefined) && (
+                            <span className="filter-chip__count">
+                                {countContent ?? `(+${count})`}
+                            </span>
+                        )}
+                    </span>
                     <EbayIconChevronDown12 />
                 </span>
+                {hasChecked && <span className="clipped">{a11yFilterAppliedText}</span>}
             </button>
             <EbayFilterMenu
                 {...filterMenuProps}
