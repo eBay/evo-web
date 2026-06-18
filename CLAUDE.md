@@ -27,7 +27,7 @@ HTML Semantic Structure → @ebay/skin (CSS/BEM) → Framework Components → In
 - `@ebay/skin` - Pure CSS/SCSS (foundation layer)
 - `@ebay/ebayui-core` - Marko 5 (legacy)
 - `@evo-web/marko` - Marko 6 (new, under migration)
-- `@ebay/ebayui-core-react` - React CJS (legacy)
+- `@ebay/ui-core-react` - React CJS (legacy)
 - `@evo-web/react` - React 19 ESM (new, under migration)
 
 ### Component Development Flow (MANDATORY)
@@ -167,7 +167,7 @@ Follow existing component structures:
 
 **CRITICAL package differences:**
 
-- `@ebay/ebayui-core-react`:
+- `@ebay/ui-core-react`:
   - Requires `React.forwardRef` wrapper for ref forwarding
   - CommonJS build target
   - External MakeupJS dependency
