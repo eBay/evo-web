@@ -3,5 +3,8 @@
 @media (prefers-color-scheme: dark) {
     .evo-theme {
         @include tokens.evo-dark;
+
+        --color-border-warning: var(--color-yellow-500);
+        --color-stroke-warning: var(--color-border-warning);
     }
 }

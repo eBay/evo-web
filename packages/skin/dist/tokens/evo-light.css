@@ -53,7 +53,6 @@
     --color-foreground-on-inverse: var(--color-neutral-100);
     --color-foreground-on-strong: var(--color-neutral-100);
     --color-foreground-on-success: var(--color-neutral-100);
-    --color-foreground-on-warning: var(--color-neutral-800);
     --color-foreground-primary: var(--color-neutral-800);
     --color-foreground-secondary: var(--color-neutral-600);
     --color-foreground-success: var(--color-kiwi-600);
@@ -160,6 +159,8 @@
     --color-stroke-confirmation: var(--color-border-success);
     --color-stroke-on-confirmation: var(--color-border-on-success);
     --color-stroke-information: var(--color-border-accent);
+    --color-border-warning: var(--color-yellow-600);
+    --color-stroke-warning: var(--color-border-warning);
     --color-stroke-disabled: var(--color-border-disabled);
     --color-stroke-on-disabled: var(--color-border-on-disabled);
     --color-stroke-strong: var(--color-border-strong);
