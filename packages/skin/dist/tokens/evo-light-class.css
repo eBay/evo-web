@@ -53,7 +53,6 @@
     --color-foreground-on-inverse: var(--color-neutral-100);
     --color-foreground-on-strong: var(--color-neutral-100);
     --color-foreground-on-success: var(--color-neutral-100);
-    --color-foreground-on-warning: var(--color-neutral-800);
     --color-foreground-primary: var(--color-neutral-800);
     --color-foreground-secondary: var(--color-neutral-600);
     --color-foreground-success: var(--color-kiwi-600);
@@ -140,4 +139,6 @@
     --color-state-layer-pressed: rgba(0, 0, 0, 0.08);
     --color-state-layer-selected-on-strong: rgba(255, 255, 255, 0.2);
     --color-state-layer-selected: rgba(0, 0, 0, 0.12);
+    --color-border-warning: var(--color-yellow-600);
+    --color-stroke-warning: var(--color-border-warning);
 }

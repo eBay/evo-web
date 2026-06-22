@@ -1,4 +1,7 @@
 @use "@ebay/design-tokens/dist/mixins/evo-light" as tokens;
 .evo-theme {
     @include tokens.evo-light;
+
+    --color-border-warning: var(--color-yellow-600);
+    --color-stroke-warning: var(--color-border-warning);
 }
