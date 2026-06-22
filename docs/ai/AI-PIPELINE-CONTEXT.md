@@ -8,7 +8,7 @@ Paste this at the start of a new chat to resume work on the evo-web AI component
 
 An end-to-end AI component generation pipeline for the **evo-web monorepo** (eBay's component library). The pipeline takes a component contract and structured design spec, produces a machine-readable manifest, then generates every layer of a component — static HTML/CSS, Marko 6, React 19, storybooks, accessibility validation, accessibility docs, and site hookups — orchestrated by a single Claude Code skill with scope-aware step selection.
 
-**Current status: All skills built. Pipeline validated on real components (page-notice modify run complete).**
+**Current status: All skills built. Pipeline validated on real components (page-notice warning variant addition — static scope modify run complete, including QA catch of dark-mode contrast regression).**
 
 ---
 
@@ -69,9 +69,19 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
    → routes to correct state (no folder / inputs missing / no manifest / pending review / ready)
    Resumable: picks up from current state without re-running completed steps
 
+   Modification mode: if the component folder exists, the run is ALWAYS a
+   modification — regardless of whether a spec was previously committed.
+   "No spec on disk" means the spec was never committed, not that the
+   component is new. The pipeline reads the existing generated files to
+   understand the implemented state.
+
    Modify detection (when generated files already exist + new spec provided):
-   Reads old spec via git show HEAD:<spec-path>, diffs in context against the
-   new spec, recommends scope. Engineer can override. No temp files written.
+   Generated files that trigger modify detection: packages/skin/src/sass/<name>/
+   (skin SCSS), packages/evo-marko/src/tags/evo-<name>/, packages/evo-react/src/<name>/
+   At least one must exist. Reads old spec via git show HEAD:<spec-path>, diffs
+   in context against the new spec. When no prior spec was committed, compares
+   new spec against the implemented state (reads existing SCSS/Marko/React files).
+   Recommends scope from diff. Engineer can override. No temp files written.
 
 [/evo-create-component-manifest — invoked by /evo-pipeline]
 3. Runs npm run codegen:spec-to-manifest first (if spec present) — writes
@@ -119,6 +129,10 @@ GATE 4: CI — npm run build + Playwright/Vitest
 | `static`      | HTML structure and/or SCSS changed            | 4–7, 13–16        |
 | `interactive` | Only Marko/React behavior or props changed    | 8–16              |
 | `style`       | SCSS only; no structural or behavioral change | 4(SCSS), 6, 14–16 |
+
+**Static scope css docs rule:** When scope is `static` or `style` and the change adds or removes a variant (enum value on the `type` prop), `css+page.marko` must be updated to include the new variant in the demo block and `<highlight-code>` block. This is not a separate step — it is part of the static scope output, written at Step 6.
+
+**Accessible token selection for fixed-background variants:** When a variant has a background that does not change between light and dark modes (e.g. `color-background-warning` = yellow-400 in both), text and icon colors must use a mode-invariant token (e.g. `color-neutral-800`) rather than a theme-adaptive token (e.g. `color-foreground-primary`, which becomes near-white in dark mode). Theme-adaptive foreground tokens produce inaccessible contrast on fixed bright backgrounds in dark mode. The missing semantic token (e.g. `color-foreground-on-warning`) should be flagged to the design team.
 
 ---
 

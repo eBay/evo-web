@@ -40,11 +40,15 @@ Engineers interact with the pipeline through a single command: `/evo-pipeline <c
 
 ---
 
+## Modification Mode
+
+If a component folder already exists at `src/routes/_index/components/<name>/`, the pipeline always treats the run as a modification — regardless of whether a spec was previously committed to that folder. The absence of a spec on disk means the spec was never committed, not that the component is new. The pipeline uses the existing generated files (SCSS, Marko templates, React components) as the source of truth for what is currently implemented.
+
 ## Modify Detection — Spec Diff
 
-When a component already has generated files and a new or updated spec is provided, the pipeline runs a diff before anything else. It reads the previously committed spec via `git show HEAD:<spec-path>` and compares it in context against the new spec — no script, no temp files. The diff identifies which props changed type or enum values, which states were added or removed, and which tokens were updated.
+When a component already has generated files and a new or updated spec is provided, the pipeline runs a diff before anything else. Generated files that qualify include the skin SCSS stylesheet, the Marko component, and the React component — at least one must exist. The pipeline reads the previously committed spec via `git show HEAD:<spec-path>` and compares it in context against the new spec — no script, no temp files. When no spec was previously committed, it compares the new spec against the implemented state read from the existing generated files.
 
-From this diff, the pipeline recommends a scope automatically — for example, adding enum values to a type prop recommends `static` (new BEM modifiers needed), while changing only a token value recommends `style`. Engineers can override the recommendation, but the diff is the default. This eliminates the manual judgment call of "what scope do I need?" for the common case of spec-driven revisions.
+The diff identifies which props changed type or enum values, which states were added or removed, and which tokens were updated. From this, the pipeline recommends a scope automatically — for example, adding enum values to a type prop recommends `static` (new BEM modifiers needed), while changing only a token value recommends `style`. Engineers can override the recommendation, but the diff is the default. This eliminates the manual judgment call of "what scope do I need?" for the common case of spec-driven revisions.
 
 ---
 
@@ -168,6 +172,16 @@ It runs two layers of checks. **Layer 1** is a manifest compliance check: are al
 
 ---
 
+## Accessible Token Selection for Fixed-Background Variants
+
+Some component variants use a background color that does not change between light and dark modes — warning (yellow) is a notable example. In these cases, text and icon colors must use a **mode-invariant token** rather than a theme-adaptive one.
+
+Theme-adaptive tokens like `color-foreground-primary` resolve to near-black in light mode and near-white in dark mode. On a fixed bright background, the dark-mode value produces inaccessible contrast — white text on yellow-400 yields approximately 1.6:1, far below WCAG AA's 4.5:1 requirement. The correct fallback is a mode-invariant dark token such as `color-neutral-800` (#191919), which provides over 10:1 contrast on yellow-400 in both modes.
+
+When the correct semantic token (e.g. `color-foreground-on-warning`) does not yet exist in `@ebay/design-tokens`, use the mode-invariant fallback and flag the missing token to the design team so it can be added. Once the semantic token exists, update the CSS custom property fallback.
+
+---
+
 ## Step 16 — Final Summary and PR
 
 The pipeline prints a complete summary of every step: what was written, what was skipped per scope, any warnings requiring engineer attention, and suggested next steps. The engineer reviews all generated files, resolves any warnings, and files a PR following the standard checklist. A changeset entry is added for versioning.
@@ -180,7 +194,7 @@ Not every pipeline run regenerates everything. The scope is either specified wit
 
 **`full`** (default) — A new component, or a revision significant enough to touch all layers. Runs all 16 steps.
 
-**`static`** — The HTML structure or SCSS changed (a new BEM modifier, a new variant, a layout adjustment). Runs the static layer, its Storybook, CSS docs, and a11y Pass 1. Does not touch Marko or React. If the static changes require framework updates, the engineer follows up with `--scope interactive`.
+**`static`** — The HTML structure or SCSS changed (a new BEM modifier, a new variant, a layout adjustment). Runs the static layer, its Storybook, CSS docs, and a11y Pass 1. Does not touch Marko or React. If the static changes require framework updates, the engineer follows up with `--scope interactive`. When a variant is added or removed, `css+page.marko` is always updated as part of this scope — the demo block and its accompanying code snippet must reflect all current variants.
 
 **`interactive`** — Only Marko/React behavior or props changed (a new event, a prop type correction). Skips the static layer entirely and runs only the framework layers, their Storybooks, a11y Pass 2, and the docs update.
 

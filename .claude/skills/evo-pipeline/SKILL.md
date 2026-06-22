@@ -274,8 +274,33 @@ component that already has generated files on disk.
    - `slots` — added or removed slot definitions
 
 3. Determine the recommended scope from the type of changes:
-   - New enum values or states only → `static` (new BEM modifiers needed in SCSS)
-   - Token value changes only → `style`
+
+   **Pre-check — variant additions or removals (runs before all other rules):**
+   If the diff contains any addition (+) or removal (-) in `tokenVariants` or `states`,
+   that signals a new or removed named variant, which maps directly to a new or removed
+   BEM modifier. Because BEM modifiers are applied by framework components via prop enums,
+   any variant change requires framework layers to be updated — not just SCSS.
+   - Check whether `packages/evo-marko/src/tags/evo-<name>/index.marko` exists
+     AND `packages/evo-react/src/<name>/index.tsx` exists.
+   - If both exist → recommended scope is at least `interactive`
+     (prop enum update + conditional class logic in both framework layers)
+   - If either is absent → recommended scope is `full`
+     (missing layers must be generated, not just updated)
+   - This pre-check overrides a `static` recommendation from the diff rules below.
+     A diff that would otherwise be `static` becomes `interactive` or `full` whenever
+     a variant is added or removed.
+
+   Present this override clearly in the diff summary:
+
+   ```
+   ⚠️  Variant change detected (+ or - in tokenVariants/states) — scope escalated
+       from STATIC to <INTERACTIVE|FULL>. Framework layers must reflect the
+       updated prop enum.
+   ```
+
+   **Diff-based scope rules (apply after the pre-check):**
+   - Token value changes only (no variant add/remove) → `style`
+   - New enum values or states only (no framework layers exist) → covered by pre-check above
    - Prop type changes, new props, or behavioral flags → `interactive`
    - Multiple layer changes → `full`
 
@@ -298,9 +323,10 @@ component that already has generated files on disk.
        + neutral  (added)
 
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     Recommended scope: STATIC
-     Enum expansion on "type" and 2 new states — new BEM modifiers
-     needed in SCSS; no prop interface changes.
+     Recommended scope: FULL
+     ⚠️  Variant change detected: + warning, + neutral in tokenVariants/states.
+     New BEM modifiers need SCSS AND framework prop enum updates.
+     evo-marko layer absent → full generation required.
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    ```
 
