@@ -1,0 +1,4 @@
+export function symbol() {
+    // eslint-disable-next-line max-len,quotes
+    return '<symbol viewbox="0 0 16 16" id=icon-fast-forward-16><path d="M7 3.834c0-.654.69-1.053 1.224-.706l6.4 4.165a.852.852 0 0 1 0 1.413l-6.4 4.166C7.69 13.22 7 12.82 7 12.165V9.763l-4.776 3.11C1.69 13.218 1 12.818 1 12.164v-8.33c0-.654.69-1.053 1.224-.706L7 6.235V3.834Z"></path></symbol>';
+}

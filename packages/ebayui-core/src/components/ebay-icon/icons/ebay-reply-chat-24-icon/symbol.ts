@@ -1,0 +1,4 @@
+export function symbol() {
+    // eslint-disable-next-line max-len,quotes
+    return '<symbol viewbox="0 0 24 24" id=icon-reply-chat-24><path d="M12 15C5.925 15 1 10.075 1 4V3a1 1 0 1 1 2 0v1a9 9 0 0 0 9 9h8.586l-5.293-5.293a1 1 0 0 1 1.414-1.414l7 7a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414-1.414L20.586 15H12Z"></path></symbol>';
+}

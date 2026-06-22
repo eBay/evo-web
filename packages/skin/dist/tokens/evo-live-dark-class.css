@@ -53,6 +53,7 @@
     --color-foreground-on-inverse: var(--color-neutral-800);
     --color-foreground-on-strong: var(--color-neutral-800);
     --color-foreground-on-success: var(--color-neutral-800);
+    --color-foreground-on-warning: var(--color-neutral-800);
     --color-foreground-primary: var(--color-neutral-200);
     --color-foreground-secondary: var(--color-neutral-500);
     --color-foreground-success: var(--color-kiwi-400);

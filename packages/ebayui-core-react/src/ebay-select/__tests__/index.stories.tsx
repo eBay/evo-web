@@ -52,7 +52,11 @@ or import styles using SCSS/CSS
             control: { type: "select" },
         },
         className: { description: "passed to the wrapper-element of the `<select>` element", control: "text" },
-        borderless: { description: "whether select has borders, default is `false`", control: "text" },
+        borderless: { description: "whether select is borderless, default is `false`", control: "boolean" },
+        fluid: {
+            description: "whether select takes full width of its container, default is `false`",
+            control: "boolean",
+        },
         floatingLabel: {
             description: "Indicates that the select is a floating label type and renders it as a label",
             control: "text",
@@ -160,6 +164,23 @@ export const BorderlessSelect = {
     ),
 
     name: "Borderless select",
+};
+
+export const FluidSelect = {
+    args: {
+        fluid: true,
+    },
+    render: (args) => (
+        <>
+            <EbaySelect {...args} name="formSelect" onChange={action("select-change")}>
+                <EbaySelectOption value="1">Option 1</EbaySelectOption>
+                <EbaySelectOption value="2">Option 2</EbaySelectOption>
+                <EbaySelectOption value="3">Option 3</EbaySelectOption>
+            </EbaySelect>
+        </>
+    ),
+
+    name: "Fluid select",
 };
 
 export const DisabledSelect = {

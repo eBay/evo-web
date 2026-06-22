@@ -1,5 +1,19 @@
 # @ebay/ui-core-react
 
+## 9.8.0
+
+### Minor Changes
+
+- [#718](https://github.com/eBay/evo-web/pull/718) [`57d9fa1`](https://github.com/eBay/evo-web/commit/57d9fa102dff67c4dbd86950f60f2653a4ea2dc2) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add new icons: bank-of-america, capital-one, chase, citi, td, usaa, wells-fargo (colored, 32/24/18/12), pay-by-bank-be/de/fr/uk (colored, 24), ship-and-safety (24/16), tire (24/16), gift (20), ai-mobile (24/20/16), ai-summary (24/20/16), fast-forward (16), rewind (16), battery-waste (48), markdown (24/20/16), stop (24/20/16), skull (24/16/12), reply-chat (24/16/12), link (20/16), pin (12), pin-filled (12), home (20/16), locker (64/24/16), bids (12), promotion (12), selling (12), wire-transfer (24/16).
+
+    Update existing icons: ship-and-local (16), link (24), markdown (24/16).
+
+    Closes #717 (sub-issues #543, #599, #680).
+
+- [#720](https://github.com/eBay/evo-web/pull/720) [`8623c21`](https://github.com/eBay/evo-web/commit/8623c21960f6a25e504071a052bd85fc8715b467) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - ebay-select: add support for `fluid` prop
+
+- [#714](https://github.com/eBay/evo-web/pull/714) [`ce92606`](https://github.com/eBay/evo-web/commit/ce92606c2dfb59285de8bbb9c99c832d35505ebb) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Deprecate `the-ebay-vault-24`, `the-ebay-vault-16`, `psa-16`, `psa-16-colored`, `psa-vault-16`, `psa-vault-16-colored`, `live-eye-16`, `live-eye-24`, `ebay-live-16`, `ebay-live-24` icons in favor of their renamed replacements.
+
 ## 9.7.1
 
 ### Patch Changes

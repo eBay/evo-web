@@ -19,6 +19,9 @@ export type Icon =
 'aiFilled16' |
 'aiFilled20' |
 'aiFilled24' |
+'aiMobile16' |
+'aiMobile20' |
+'aiMobile24' |
 'aiSearch16' |
 'aiSearch20' |
 'aiSearch24' |
@@ -33,6 +36,9 @@ export type Icon =
 'aiSpectrumFilled20Colored' |
 'aiSpectrumFilled24Colored' |
 'aiSpectrumThin16Colored' |
+'aiSummary16' |
+'aiSummary20' |
+'aiSummary24' |
 'aiThin16' |
 'aiTools16' |
 'aiTools20' |
@@ -120,8 +126,14 @@ export type Icon =
 'bankAccount24Colored' |
 'bankAccount32Colored' |
 'bankGroupLogo24Colored' |
+'bankOfAmerica12Colored' |
+'bankOfAmerica18Colored' |
+'bankOfAmerica24Colored' |
+'bankOfAmerica32Colored' |
 'barChart16' |
 'barChart24' |
+'batteryWaste48' |
+'bids12' |
 'bids16' |
 'bids24' |
 'bids64' |
@@ -144,6 +156,10 @@ export type Icon =
 'camera16' |
 'camera24' |
 'camera64' |
+'capitalOne12Colored' |
+'capitalOne18Colored' |
+'capitalOne24Colored' |
+'capitalOne32Colored' |
 'car16' |
 'car24' |
 'carBrake16' |
@@ -178,6 +194,10 @@ export type Icon =
 'certifiedRecycled24' |
 'chair16' |
 'chair24' |
+'chase12Colored' |
+'chase18Colored' |
+'chase24Colored' |
+'chase32Colored' |
 'chat16' |
 'chat24' |
 'chat64' |
@@ -207,6 +227,10 @@ export type Icon =
 'chevronUp24' |
 'chineseCoin16' |
 'chineseCoin24' |
+'citi12Colored' |
+'citi18Colored' |
+'citi24Colored' |
+'citi32Colored' |
 'clear16' |
 'clear20' |
 'clear24' |
@@ -364,6 +388,7 @@ export type Icon =
 'facebookMessenger24' |
 'fallLeaf16' |
 'fallLeaf24' |
+'fastForward16' |
 'feedback16' |
 'feedback20' |
 'feedback24' |
@@ -413,6 +438,7 @@ export type Icon =
 'genericCard24Colored' |
 'genericCard32Colored' |
 'gift16' |
+'gift20' |
 'gift24' |
 'gift64' |
 'giftCard12Colored' |
@@ -466,6 +492,8 @@ export type Icon =
 'history16' |
 'history24' |
 'history64' |
+'home16' |
+'home20' |
 'home24' |
 'homeFilled24' |
 'image16' |
@@ -540,6 +568,8 @@ export type Icon =
 'lightningBoltFilled12' |
 'lightningBoltFilled16' |
 'lightningBoltFilled24' |
+'link16' |
+'link20' |
 'link24' |
 'linkedin24' |
 'listView16' |
@@ -569,6 +599,9 @@ export type Icon =
 'lockFilled16' |
 'lockFilled20' |
 'lockFilled24' |
+'locker16' |
+'locker24' |
+'locker64' |
 'maestro12Colored' |
 'maestro18Colored' |
 'maestro24Colored' |
@@ -586,6 +619,9 @@ export type Icon =
 'map16' |
 'map20' |
 'map24' |
+'markdown16' |
+'markdown20' |
+'markdown24' |
 'masonryView16' |
 'masonryView24' |
 'masonryViewFilled16' |
@@ -695,6 +731,9 @@ export type Icon =
 'payByBank18Colored' |
 'payByBank24Colored' |
 'payByBank32Colored' |
+'payByBankBe24Colored' |
+'payByBankDe24Colored' |
+'payByBankFr24Colored' |
 'payByBankUk24Colored' |
 'payoneer12Colored' |
 'payoneer18Colored' |
@@ -728,8 +767,10 @@ export type Icon =
 'peso24' |
 'phone16' |
 'phone24' |
+'pin12' |
 'pin16' |
 'pin24' |
+'pinFilled12' |
 'pinFilled16' |
 'pinFilled24' |
 'pinterest24' |
@@ -759,6 +800,7 @@ export type Icon =
 'profileVerification24' |
 'progressCurrent24' |
 'progressUpcoming24' |
+'promotion12' |
 'promotion16' |
 'promotion24' |
 'psa16' |
@@ -789,8 +831,12 @@ export type Icon =
 'remove24' |
 'reply16' |
 'reply24' |
+'replyChat12' |
+'replyChat16' |
+'replyChat24' |
 'return16' |
 'return24' |
+'rewind16' |
 'ribbon16' |
 'ribbon24' |
 'rim16' |
@@ -824,6 +870,7 @@ export type Icon =
 'securePurchase24' |
 'securityKey24' |
 'selectAll24' |
+'selling12' |
 'selling16' |
 'selling20' |
 'selling24' |
@@ -841,6 +888,8 @@ export type Icon =
 'sharpen24' |
 'shipAndLocal16' |
 'shipAndLocal24' |
+'shipAndSafety16' |
+'shipAndSafety24' |
 'shirt16' |
 'shirt24' |
 'shoeBox24' |
@@ -850,6 +899,9 @@ export type Icon =
 'shovel24' |
 'show16' |
 'show24' |
+'skull12' |
+'skull16' |
+'skull24' |
 'smallBox16' |
 'smallBox24' |
 'smallLetter24' |
@@ -919,6 +971,9 @@ export type Icon =
 'stepperConfirmation24' |
 'stepperCurrent24' |
 'stepperUpcoming24' |
+'stop16' |
+'stop20' |
+'stop24' |
 'store16' |
 'store24' |
 'store64' |
@@ -933,6 +988,10 @@ export type Icon =
 'tablet24' |
 'target16' |
 'target24' |
+'td12Colored' |
+'td18Colored' |
+'td24Colored' |
+'td32Colored' |
 'textMessaging16' |
 'textMessaging20' |
 'textMessaging24' |
@@ -957,6 +1016,8 @@ export type Icon =
 'tick16' |
 'tick24' |
 'tiktok24' |
+'tire16' |
+'tire24' |
 'toggleModeBottom24' |
 'toggleModeTop24' |
 'topRatedPlus16' |
@@ -1000,6 +1061,10 @@ export type Icon =
 'unselectAll24' |
 'upload16' |
 'upload24' |
+'usaa12Colored' |
+'usaa18Colored' |
+'usaa24Colored' |
+'usaa32Colored' |
 'venmo12Colored' |
 'venmo18Colored' |
 'venmo24Colored' |
@@ -1020,7 +1085,13 @@ export type Icon =
 'walletBalance32Colored' |
 'watch16' |
 'watch24' |
+'wellsFargo12Colored' |
+'wellsFargo18Colored' |
+'wellsFargo24Colored' |
+'wellsFargo32Colored' |
 'whatsapp24' |
+'wireTransfer16' |
+'wireTransfer24' |
 'won16' |
 'won24' |
 'wrench16' |

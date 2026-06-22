@@ -7,6 +7,7 @@
  */
 
 declare const badge: string;
+declare const badge_Circle: string;
 declare const component: string;
 declare const tabs: string;
 declare const pagination: string;
