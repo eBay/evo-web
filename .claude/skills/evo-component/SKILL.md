@@ -262,8 +262,16 @@ Replace `<STEP_ID>` with the actual step key string (e.g. `'7'`, `'micro-qa-1'`)
 ```bash
 node -e "
 const fs = require('fs');
-const s = JSON.parse(fs.readFileSync('src/routes/_index/components/$COMPONENT/pipeline-state.json', 'utf8'));
-console.log(JSON.stringify(s.steps['<STEP_ID>']));
+const p = 'src/routes/_index/components/$COMPONENT/pipeline-state.json';
+const s = JSON.parse(fs.readFileSync(p, 'utf8'));
+const cur = s.steps['<STEP_ID>'];
+console.log(JSON.stringify(cur));
+if (cur.status === 'complete') {
+  const ORDER = ['4','5','6','6.5','7','micro-qa-1','8','9','10','11','12','micro-qa-2','13','14','15'];
+  const next = ORDER.find(k => s.steps[k] && s.steps[k].status === 'pending');
+  if (next) process.stdout.write('\n⏭  ADVANCE IMMEDIATELY — next pending step: ' + next + '\n');
+  else process.stdout.write('\n✅ All steps complete — proceed to State F summary.\n');
+}
 "
 ```
 
@@ -293,6 +301,12 @@ Replace `<STEP_ID>` with the actual step key string (e.g. `'4'`, `'6.5'`) before
 
 ## ⛔ Execution rule — deterministic transitions, no pausing between steps
 
+> **⛔ DO NOT PAUSE BETWEEN STEPS. ⛔**
+> When a sub-skill returns, your ONLY action is to read `pipeline-state.json`
+> and immediately invoke the next step. Do not summarise, do not ask the
+> engineer, do not wait. The sub-skill output is irrelevant — the state file
+> is the only signal that matters.
+
 You are an automated orchestrator. Transitions between steps are determined by
 reading `pipeline-state.json` — NOT by evaluating prior output prose. After each
 sub-skill returns, you MUST:
@@ -307,6 +321,10 @@ The ONLY valid reasons to stop and wait for input are:
 1. Gate 2 — manifest review (engineer must type "approved")
 2. A `failed` step in the state file that cannot be fixed inline
 3. Manifest hash mismatch (engineer must type "reset" or "continue")
+
+**If you find yourself writing a summary or asking "shall I continue?" between
+steps, you have violated this rule. Stop writing, read the state file, invoke
+the next step.**
 
 ### Transition table
 

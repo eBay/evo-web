@@ -25,6 +25,7 @@
 /* eslint-disable no-console */
 import fs from "fs";
 import path from "path";
+import { execSync } from "child_process";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -325,7 +326,13 @@ function generateIndexMarko(manifest: Manifest): string {
 function generateIndexTsx(manifest: Manifest, componentName: string): string {
     const block = manifest.bem?.block ?? componentName.replace(/^evo-/, "");
     const displayName = manifest.component.displayName;
-    const iface = buildReactInterface(manifest, displayName);
+    // Sanitize displayName for use as a TypeScript identifier:
+    // "Page Notice" → "PageNotice", "eek" → "Eek"
+    const safeName = displayName
+        .split(/[\s-]+/)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join("");
+    const iface = buildReactInterface(manifest, safeName);
     const aria = buildARIAComment(manifest);
     const propsParam = `{ ${[...(manifest.props ?? []), ...(manifest.a11yProps ?? [])].map((p) => p.name).join(", ")}, className, children, ref, ...rest }`;
 
@@ -344,7 +351,7 @@ function generateIndexTsx(manifest: Manifest, componentName: string): string {
         `// ── TODO: Complete component body ───────────────────────────────────────────`,
         `// Use the Props interface above. Wire ARIA attributes from the comment above.`,
         `// Spread ...rest onto the root element. Attach ref to the root element.`,
-        `export function ${displayName}(${propsParam}: ${displayName}Props) {`,
+        `export function ${safeName}(${propsParam}: ${safeName}Props) {`,
         `    // TODO: implement component body`,
         `    return null;`,
         `}`,
@@ -497,3 +504,23 @@ written.push("packages/evo-react/.../index.tsx  ← scaffold (complete component
 console.log(`✅ generate-component-scaffold: ${componentName}`);
 written.forEach((f) => console.log(`   ${f}`));
 console.log(`\nNext: complete template body in index.marko and component body in index.tsx`);
+
+// Post-generation type-check: catch identifier errors (spaces in names, wrong types, etc.)
+// before the AI skills try to build on broken scaffolding.
+try {
+    const result = execSync(
+        `npx tsc --noEmit -p packages/evo-react/tsconfig.json 2>&1 | grep "${componentName}" || true`,
+        { encoding: "utf-8" },
+    ).trim();
+    if (result) {
+        console.error(
+            `\n⚠️  TypeScript errors found in generated scaffold — fix before proceeding:\n${result}`,
+        );
+        process.exit(1);
+    } else {
+        console.log(`   ✅ Post-gen type-check: no errors in generated files`);
+    }
+} catch {
+    // tsc not available or other error — warn but don't block
+    console.warn(`   ⚠️  Post-gen type-check skipped (tsc unavailable)`);
+}

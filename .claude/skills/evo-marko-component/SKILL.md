@@ -130,6 +130,17 @@ the exact list.
 | `"named-attrtag"`    | `Marko.AttrTag<Marko.HTML.Img>` etc          |
 | `"default"`          | No declaration — accessed as `input.content` |
 
+**AttrTag generic — critical:** The generic parameter controls what the slot's tag accepts.
+An empty generic `Marko.AttrTag<{}>` rejects child content at compile time (TS2353).
+
+| Slot purpose | Correct type |
+| --- | --- |
+| Arbitrary child HTML (links, buttons, text) | `Marko.AttrTag<{ content?: Marko.Body }>` |
+| Specific HTML element with known props | `Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>` |
+| AttrTag with both props and body | `Marko.AttrTag<{ src: string; content?: Marko.Body }>` |
+
+**❌ Never:** `Marko.AttrTag<{}>` — always fails when the consumer puts children inside `<@slotName>`.
+
 ### Template body
 
 **Destructure at the top, then compute:**

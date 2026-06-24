@@ -284,8 +284,29 @@ component that already has generated files on disk.
      AND `packages/evo-react/src/<name>/index.tsx` exists.
    - If both exist → recommended scope is at least `interactive`
      (prop enum update + conditional class logic in both framework layers)
-   - If either is absent → recommended scope is `full`
-     (missing layers must be generated, not just updated)
+   - If one exists but the other does not → recommended scope is `full`
+     (the missing layer must be generated to match the updated prop enum)
+   - If NEITHER exists → **do not silently apply a scope**. Stop and ask:
+
+     ```
+     ⚠️  Variant change detected, but no framework layers exist for <name>.
+
+         This could mean:
+           A) The component is intentionally skin-only (no Marko/React yet)
+           B) The framework layers haven't been built yet and should be generated now
+
+         Which applies here?
+           [1] Skin-only — run STATIC scope (SCSS + stories + docs only)
+           [2] Generate all layers — run FULL scope (SCSS + Marko + React + docs)
+
+         Type "static" or "full" to proceed.
+     ```
+
+     Wait for the engineer to respond. Do not infer the answer from the component
+     name, family, or any other signal. The engineer owns this decision.
+     If `--scope` was explicitly passed on invocation, skip this prompt and use
+     that scope — explicit flags always take precedence.
+
    - This pre-check overrides a `static` recommendation from the diff rules below.
      A diff that would otherwise be `static` becomes `interactive` or `full` whenever
      a variant is added or removed.

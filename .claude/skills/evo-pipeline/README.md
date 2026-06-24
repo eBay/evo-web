@@ -5,6 +5,10 @@ modifications end-to-end: contract → manifest → code → QA → visual verif
 
 ---
 
+## Known Issues
+
+1. The pipeline has a tendency to stop mid-run when it completes certain tasks. Sometimes, it assumes it's done. Multiple hardening rules have been applied, but it still happens on occasion. If it does happen, the correction is to harden the rules further by asking the model where the failure point was and applying the suggested fixes.
+
 ## How to run it
 
 Type the slash command in Claude Code:
