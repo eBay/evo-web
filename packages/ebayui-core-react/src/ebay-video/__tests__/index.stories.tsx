@@ -65,11 +65,6 @@ import "shaka-player/dist/controls.css";
         },
         a11yLoadText: { description: "a11y text for the loading spinner", control: "text" },
         a11yPlayText: { description: "a11y text for the play button", control: "text" },
-        a11yCcSelectedText: {
-            description:
-                'a11y label applied to the checkmark icon next to the active caption track. Default is "selected"',
-            control: "text",
-        },
         errorText: {
             description: "content for error when an either the library or video cannot load",
             control: "text",

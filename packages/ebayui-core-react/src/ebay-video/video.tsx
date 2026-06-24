@@ -58,7 +58,7 @@ export type EbayVideoProps = Omit<ComponentProps<"video">, "onPlay" | "onPause" 
     a11yFullscreenText?: string;
     a11yExitFullscreenText?: string;
     a11ySkipToLiveText?: string;
-    a11yCcSelectedText?: string;
+
     shakaConfig?: Record<string, unknown>;
     spinnerTimeout?: number;
     layout?: "default" | "compact";
@@ -118,7 +118,6 @@ const EbayVideo: FC<EbayVideoProps> = ({
     a11yFullscreenText,
     a11yExitFullscreenText,
     a11ySkipToLiveText,
-    a11yCcSelectedText,
     volumeSlider,
     volume = 1,
     hideReportButton,
@@ -218,8 +217,8 @@ const EbayVideo: FC<EbayVideoProps> = ({
         // we listen to captionselectionupdated, which fires after every
         // updateTextLanguages_ call, and correct two things:
         // 1. Trigger button: swap aria-pressed for aria-expanded="false".
-        // 2. Menu items: replace the aria-hidden checkmark SVG with
-        //    aria-label so selection state is announced by AT.
+        // 2. Menu items: replace aria-selected (meaningless on a plain button)
+        //    with aria-current="true" on the selected item.
         uiRef.current.getControls().addEventListener("captionselectionupdated", () => {
             const el = container;
             const ccButton = el.querySelector<HTMLButtonElement>("button[shaka-status]");
@@ -230,10 +229,9 @@ const EbayVideo: FC<EbayVideoProps> = ({
 
             const menu = el.querySelector(".shaka-text-languages");
             if (!menu) return;
-            const selectedText = a11yCcSelectedText || "selected";
-            menu.querySelectorAll<SVGElement>("svg.shaka-chosen-item").forEach((checkmark) => {
-                checkmark.removeAttribute("aria-hidden");
-                checkmark.setAttribute("aria-label", selectedText);
+            menu.querySelectorAll<HTMLButtonElement>("[aria-selected='true']").forEach((btn) => {
+                btn.removeAttribute("aria-selected");
+                btn.setAttribute("aria-current", "true");
             });
         });
 

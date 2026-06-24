@@ -116,7 +116,7 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     "error-text"?: string;
     "a11y-play-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-load-text"?: Marko.HTMLAttributes["aria-label"];
-    "a11y-cc-selected-text"?: string;
+
     "on-play"?: (event: PlayPauseEvent) => void;
     "on-pause"?: (event: PlayPauseEvent) => void;
     "on-volume-change"?: (event: VolumeEvent) => void;
@@ -444,9 +444,8 @@ class Video extends Marko.Component<Input, State> {
         //    menu uses focus trapping, so AT never reaches this button while
         //    the menu is open.
         //
-        // 2. Menu items: Shaka marks the active track with an aria-hidden SVG
-        //    checkmark, making selection state invisible to AT. We remove
-        //    aria-hidden and add aria-label so the SVG announces "selected".
+        // 2. Menu items: replace aria-selected (meaningless on a plain button)
+        //    with aria-current="true" on the selected item.
         this.ui.getControls().addEventListener(
             "captionselectionupdated",
             () => {
@@ -460,13 +459,11 @@ class Video extends Marko.Component<Input, State> {
 
                 const menu = this.el?.querySelector(".shaka-text-languages");
                 if (!menu) return;
-                const selectedText =
-                    this.input.a11yCcSelectedText || "selected";
-                menu.querySelectorAll<SVGElement>(
-                    "svg.shaka-chosen-item",
-                ).forEach((checkmark) => {
-                    checkmark.removeAttribute("aria-hidden");
-                    checkmark.setAttribute("aria-label", selectedText);
+                menu.querySelectorAll<HTMLButtonElement>(
+                    "[aria-selected='true']",
+                ).forEach((btn) => {
+                    btn.removeAttribute("aria-selected");
+                    btn.setAttribute("aria-current", "true");
                 });
             },
         );
