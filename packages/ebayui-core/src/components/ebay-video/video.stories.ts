@@ -10,6 +10,9 @@ import compactLayoutRaw from "./examples/compact-layout.marko?raw";
 import autoPlayComponent from "./examples/auto-play-viewport.marko";
 import autoPlayRaw from "./examples/auto-play-viewport.marko?raw";
 
+import captionsComponent from "./examples/captions.marko";
+import captionsRaw from "./examples/captions.marko?raw";
+
 const Template: Story<Input> = (args: Input) => ({
     input: {
         ...args,
@@ -338,4 +341,9 @@ export const CompactLayout = buildExtensionTemplate(
 export const AutoPlayViewport = buildExtensionTemplate(
     autoPlayComponent,
     autoPlayRaw,
+);
+
+export const Captions = buildExtensionTemplate(
+    captionsComponent,
+    captionsRaw,
 );
