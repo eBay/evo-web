@@ -1,14 +1,12 @@
 class {}
 
 <ebay-video
-    volumeSlider
     width="600"
     height="400"
     on-load-error(
         (err) => {
             console.log("handle error", err);
         },
-    )
->
+    )>
     <@source src="https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd"/>
 </ebay-video>

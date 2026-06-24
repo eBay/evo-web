@@ -113,6 +113,11 @@ export default {
             description:
                 'Localized, the text for report button. Default is "Report"',
         },
+        a11yCcSelectedText: {
+            control: { type: "text" },
+            description:
+                'Localized, the accessibility label applied to the checkmark icon next to the active caption track. Default is "selected"',
+        },
         volumeSlider: {
             type: "boolean",
             description:
@@ -347,3 +352,4 @@ export const Captions = buildExtensionTemplate(
     captionsComponent,
     captionsRaw,
 );
+

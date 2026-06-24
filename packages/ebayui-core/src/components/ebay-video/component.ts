@@ -116,6 +116,7 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     "error-text"?: string;
     "a11y-play-text"?: Marko.HTMLAttributes["aria-label"];
     "a11y-load-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-cc-selected-text"?: string;
     "on-play"?: (event: PlayPauseEvent) => void;
     "on-pause"?: (event: PlayPauseEvent) => void;
     "on-volume-change"?: (event: VolumeEvent) => void;
@@ -430,6 +431,45 @@ class Video extends Marko.Component<Input, State> {
             addSeekBar: false,
             ...(this.input.nav ? { showUIAlways: true } : {}),
         });
+
+        // Shaka's compiled dist calls TextSelection's internal methods as
+        // closed-over module functions rather than prototype methods, so
+        // subclassing to intercept ARIA writes doesn't work. Instead we listen
+        // to captionselectionupdated, which Shaka fires at the end of every
+        // updateTextLanguages_ call — the only point it writes to these
+        // attributes — and correct two things:
+        //
+        // 1. Trigger button: replace aria-pressed (wrong — this opens a menu,
+        //    not a toggle) with aria-expanded="false". Always false because the
+        //    menu uses focus trapping, so AT never reaches this button while
+        //    the menu is open.
+        //
+        // 2. Menu items: Shaka marks the active track with an aria-hidden SVG
+        //    checkmark, making selection state invisible to AT. We remove
+        //    aria-hidden and add aria-label so the SVG announces "selected".
+        this.ui.getControls().addEventListener(
+            "captionselectionupdated",
+            () => {
+                const ccButton = this.el?.querySelector<HTMLButtonElement>(
+                    "button[shaka-status]",
+                );
+                if (!ccButton) return;
+                ccButton.removeAttribute("aria-pressed");
+                ccButton.removeAttribute("aria-label");
+                ccButton.setAttribute("aria-expanded", "false");
+
+                const menu = this.el?.querySelector(".shaka-text-languages");
+                if (!menu) return;
+                const selectedText =
+                    this.input.a11yCcSelectedText || "selected";
+                menu.querySelectorAll<SVGElement>(
+                    "svg.shaka-chosen-item",
+                ).forEach((checkmark) => {
+                    checkmark.removeAttribute("aria-hidden");
+                    checkmark.setAttribute("aria-label", selectedText);
+                });
+            },
+        );
 
         // Replace play icon
         if (this.el) {
