@@ -94,7 +94,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existing.id,
-                body: existing.body.replace(/ _\(deploying [a-f0-9]{40}\)_/, ''),
+                body: existing.body.replace(/###### commit .+$/, `###### commit ${sha}`),
               });
             } else {
               const body = [
