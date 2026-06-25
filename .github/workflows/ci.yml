@@ -60,16 +60,26 @@ jobs:
           BASE_URL: /evo-web/
       - name: Deploy to gh-pages branch (root)
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          npx gh-pages \
-            --dist _site/public \
-            --dest . \
-            --branch gh-pages \
-            --nojekyll \
-            --add \
-            --message "deploy: main @ ${{ github.sha }}" \
-            --repo "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+
+          git fetch origin gh-pages
+          git worktree add /tmp/gh-pages-deploy gh-pages
+
+          # Wipe everything except the previews/ subdirectory and git internals
+          find /tmp/gh-pages-deploy -mindepth 1 -maxdepth 1 \
+            ! -name '.git' ! -name 'previews' \
+            -exec rm -rf {} +
+
+          # Copy the freshly-built site in (previews/ is untouched)
+          cp -r _site/public/. /tmp/gh-pages-deploy/
+          touch /tmp/gh-pages-deploy/.nojekyll
+
+          cd /tmp/gh-pages-deploy
+          git add -A
+          git commit -m "deploy: main @ ${{ github.sha }}"
+          git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
   release:
     needs: [build]
     permissions:
