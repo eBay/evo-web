@@ -1,0 +1,57 @@
+name: PR Preview Cleanup
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup-preview:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+
+      - name: Remove preview directory and push
+        run: |
+          PR=${{ github.event.pull_request.number }}
+          if [ -d "previews/pr-${PR}" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git rm -rf "previews/pr-${PR}"
+            git commit -m "cleanup: remove preview for pr-${PR}"
+            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
+          else
+            echo "No preview directory found for pr-${PR}, nothing to clean up."
+          fi
+
+      - name: Update preview comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request.number;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr,
+            });
+            const existing = comments.find(
+              c => c.user.login === 'github-actions[bot]' && c.body.includes('PR Preview Deployed') && !c.body.includes('_(removed)_')
+            );
+            if (existing) {
+              const struck = existing.body
+                .replace('### PR Preview Deployed', '### PR Preview Deployed _(removed)_');
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: struck,
+              });
+            }
