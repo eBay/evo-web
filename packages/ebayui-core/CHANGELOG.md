@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.9.1
+
+### Patch Changes
+
+- [#731](https://github.com/eBay/evo-web/pull/731) [`6eaac27`](https://github.com/eBay/evo-web/commit/6eaac270b0557a5b1d71c8dfde021d8b77e24b17) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix a11y semantics for cc selection in video
+
 ## 16.9.0
 
 ### Minor Changes

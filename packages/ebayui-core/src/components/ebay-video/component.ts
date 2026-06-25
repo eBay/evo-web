@@ -446,9 +446,9 @@ class Video extends Marko.Component<Input, State> {
         //
         // 2. Menu items: replace aria-selected (meaningless on a plain button)
         //    with aria-current="true" on the selected item.
-        this.ui.getControls().addEventListener(
-            "captionselectionupdated",
-            () => {
+        this.ui
+            .getControls()
+            .addEventListener("captionselectionupdated", () => {
                 const ccButton = this.el?.querySelector<HTMLButtonElement>(
                     "button[shaka-status]",
                 );
@@ -465,8 +465,7 @@ class Video extends Marko.Component<Input, State> {
                     btn.removeAttribute("aria-selected");
                     btn.setAttribute("aria-current", "true");
                 });
-            },
-        );
+            });
 
         // Replace play icon
         if (this.el) {
