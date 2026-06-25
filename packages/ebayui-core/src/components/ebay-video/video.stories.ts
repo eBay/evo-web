@@ -343,8 +343,4 @@ export const AutoPlayViewport = buildExtensionTemplate(
     autoPlayRaw,
 );
 
-export const Captions = buildExtensionTemplate(
-    captionsComponent,
-    captionsRaw,
-);
-
+export const Captions = buildExtensionTemplate(captionsComponent, captionsRaw);
