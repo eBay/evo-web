@@ -16,7 +16,6 @@ export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
     text: string;
     showCount?: boolean;
-    countContent?: React.ReactNode;
     a11yFilterAppliedText?: string;
     onExpand?: () => void;
     onCollapse?: () => void;
@@ -26,7 +25,6 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
     showCount,
-    countContent,
     a11yFilterAppliedText = "Filter Applied",
     "aria-label": ariaLabel,
     onExpand,
@@ -99,9 +97,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                     <span className="filter-menu-button__button-text">
                         {text}
                         {showCount && hasChecked && (
-                            <span className="filter-menu-button__count">
-                                {countContent ?? `(+${checkedValues.length})`}
-                            </span>
+                            <span className="filter-menu-button__count">{`(+${checkedValues.length})`}</span>
                         )}
                     </span>
                     <EbayIconChevronDown12 />

@@ -13,6 +13,16 @@ const meta: Meta<typeof EbayFilterMenuButton> = {
             control: "text",
             description: "Button text",
         },
+        showCount: {
+            control: "boolean",
+            description: "When true, shows a count badge (e.g. (+2)) next to the button text when items are selected",
+        },
+        a11yFilterAppliedText: {
+            control: "text",
+            description:
+                'Clipped text announced by screen readers when at least one item is selected. English default is "Filter Applied"',
+            type: { name: "string", required: false },
+        },
         onExpand: { action: "onExpand" },
         onCollapse: { action: "onCollapse" },
     },
@@ -82,6 +92,28 @@ export const WithFooter: StoryFn<typeof EbayFilterMenuButton> = (args) => (
         <EbayFilterMenuFooterButton>Apply</EbayFilterMenuFooterButton>
     </EbayFilterMenuButton>
 );
+
+export const WithCount: StoryFn<typeof EbayFilterMenuButton> = (args) => (
+    <EbayFilterMenuButton {...args} text={args.text || "Category"} showCount>
+        <EbayFilterMenuItem value="item 1" checked>
+            item 1
+        </EbayFilterMenuItem>
+        <EbayFilterMenuItem value="item 2" checked>
+            item 2
+        </EbayFilterMenuItem>
+        <EbayFilterMenuItem value="item 3">item 3</EbayFilterMenuItem>
+    </EbayFilterMenuButton>
+);
+WithCount.storyName = "With Count";
+WithCount.parameters = {
+    docs: {
+        description: {
+            story:
+                "When `showCount` is enabled the button shows how many items are selected, e.g. **(+2)**. " +
+                'The `a11yFilterAppliedText` prop (default: `"Filter Applied"`) is rendered as clipped text for screen readers whenever at least one item is selected.',
+        },
+    },
+};
 
 export const WithSearch: StoryFn<typeof EbayFilterMenuButton> = (args) => {
     const [searchTerm, setSearchTerm] = useState("");

@@ -190,13 +190,4 @@ describe("EbayFilterMenuButton", () => {
         );
         expect(screen.queryByText(/\(\+\d+\)/)).not.toBeInTheDocument();
     });
-
-    it("should render countContent when showCount and countContent are provided", async () => {
-        render(
-            <EbayFilterMenuButton text="Menu" showCount countContent={<span>Custom count</span>}>
-                <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
-            </EbayFilterMenuButton>,
-        );
-        expect(screen.getByText("Custom count")).toBeInTheDocument();
-    });
 });
