@@ -17,6 +17,30 @@ jobs:
       pull-requests: write
       issues: write
     steps:
+      - name: Post "updating" status to PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request.number;
+            const sha = context.payload.pull_request.head.sha;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr,
+            });
+            const existing = comments.find(
+              c => c.user.login === 'github-actions[bot]' && c.body.includes('PR Preview Deployed')
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body: existing.body.trimEnd() + ` _(deploying ${sha}...)_`,
+              });
+            }
+
       - name: Checkout code
         uses: actions/checkout@v6
 
@@ -55,13 +79,6 @@ jobs:
             const pr = context.payload.pull_request.number;
             const sha = context.payload.pull_request.head.sha.slice(0, 7);
             const url = `https://opensource.ebay.com/evo-web/previews/pr-${pr}/`;
-            const body = [
-              `### PR Preview Deployed`,
-              ``,
-              `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/)`,
-              ``,
-              `###### commit ${sha}`,
-            ].join('\n');
 
             // Find and update an existing bot comment, or create a new one
             const { data: comments } = await github.rest.issues.listComments({
@@ -77,9 +94,16 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existing.id,
-                body,
+                body: existing.body.replace(/ _\(deploying [a-f0-9]{40}\)_/, ''),
               });
             } else {
+              const body = [
+                `### PR Preview Deployed`,
+                ``,
+                `[Website](${url}) • [\`evo-marko\`](${url}marko/) • [\`evo-react\`](${url}react/) • [\`ebayui-core\`](${url}ebayui-core/) • [\`ebayui-core-react\`](${url}ebayui-core-react/) • [\`skin\`](${url}skin-storybook/)`,
+                ``,
+                `###### commit ${sha}`,
+              ].join('\n');
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
