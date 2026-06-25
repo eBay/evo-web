@@ -7,9 +7,11 @@ on:
 jobs:
   cleanup-preview:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: write
       pull-requests: write
+      issues: write
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v6

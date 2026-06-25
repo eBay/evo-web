@@ -39,9 +39,6 @@ jobs:
     if: github.ref == 'refs/heads/main'
     permissions:
       contents: write
-      packages: write
-      pull-requests: write
-      issues: read
     environment:
       name: github-pages
       url: https://opensource.ebay.com/evo-web/
@@ -59,6 +56,8 @@ jobs:
         run: npm ci
       - name: Build site
         run: npm run deploy
+        env:
+          BASE_URL: /evo-web/
       - name: Deploy to gh-pages branch (root)
         run: |
           git config user.name "github-actions[bot]"
@@ -68,6 +67,7 @@ jobs:
             --dest . \
             --branch gh-pages \
             --nojekyll \
+            --add \
             --message "deploy: main @ ${{ github.sha }}" \
             --repo "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
   release:
