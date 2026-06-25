@@ -301,26 +301,28 @@ describe("given the filter menu button initial state", () => {
         expect(filterButton).not.toHaveAttribute("aria-pressed");
     });
 
-    it("should not have filter-chip--selected class initially", () => {
-        expect(filterButton).not.toHaveClass("filter-chip--selected");
+    it("should not have filter-menu-button__button--selected class initially", () => {
+        expect(filterButton).not.toHaveClass(
+            "filter-menu-button__button--selected",
+        );
     });
 
-    it("should have filter-chip class", () => {
-        expect(filterButton).toHaveClass("filter-chip");
+    it("should not have filter-chip class", () => {
+        expect(filterButton).not.toHaveClass("filter-chip");
     });
 
     describe("when an item is selected", () => {
         beforeEach(async () => {
             await fireEvent.click(filterButton);
-            await fireEvent.click(component.getAllByRole("menuitemcheckbox", { hidden: true })[0]);
+            await fireEvent.click(
+                component.getAllByRole("menuitemcheckbox", { hidden: true })[0],
+            );
         });
 
-        it("should add filter-chip--selected class to the button", () => {
-            expect(filterButton).toHaveClass("filter-chip--selected");
-        });
-
-        it("should add filter-menu-button__button--active class to the button", () => {
-            expect(filterButton).toHaveClass("filter-menu-button__button--active");
+        it("should add filter-menu-button__button--selected class to the button", () => {
+            expect(filterButton).toHaveClass(
+                "filter-menu-button__button--selected",
+            );
         });
 
         it("should not have aria-pressed attribute", () => {
@@ -334,15 +336,23 @@ describe("given the filter menu button initial state", () => {
         describe("when the same item is deselected", () => {
             beforeEach(async () => {
                 await fireEvent.click(filterButton);
-                await fireEvent.click(component.getAllByRole("menuitemcheckbox", { hidden: true })[0]);
+                await fireEvent.click(
+                    component.getAllByRole("menuitemcheckbox", {
+                        hidden: true,
+                    })[0],
+                );
             });
 
-            it("should remove filter-chip--selected class from the button", () => {
-                expect(filterButton).not.toHaveClass("filter-chip--selected");
+            it("should remove filter-menu-button__button--selected class from the button", () => {
+                expect(filterButton).not.toHaveClass(
+                    "filter-menu-button__button--selected",
+                );
             });
 
             it("should remove clipped a11y text", () => {
-                expect(component.queryByText("Filter Applied")).not.toBeInTheDocument();
+                expect(
+                    component.queryByText("Filter Applied"),
+                ).not.toBeInTheDocument();
             });
         });
     });

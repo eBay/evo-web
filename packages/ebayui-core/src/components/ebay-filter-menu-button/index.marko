@@ -6,7 +6,7 @@ $ const {
     a11yFilterAppliedText = "Filter Applied",
     a11yFooterText,
     text,
-    count,
+    showCount,
     footer,
     footerText,
     disabled,
@@ -20,7 +20,8 @@ $ const {
     type: inputType,
     ...htmlInput
 } = input;
-$ const hasSelected = component.getCheckedValues().some(Boolean);
+$ const checkedValues = component.getCheckedValues();
+$ const hasSelected = checkedValues.some(Boolean);
 
 <span
     ...processHtmlAttributes(htmlInput)
@@ -32,7 +33,7 @@ $ const hasSelected = component.getCheckedValues().some(Boolean);
     <button
         key="button"
         type="button"
-        class=["filter-menu-button__button", "filter-chip", hasSelected && "filter-menu-button__button--active", hasSelected && "filter-chip--selected"]
+        class=["filter-menu-button__button", hasSelected && "filter-menu-button__button--selected"]
         disabled=disabled
         aria-expanded:no-update="false"
         aria-haspopup="true"
@@ -41,8 +42,8 @@ $ const hasSelected = component.getCheckedValues().some(Boolean);
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">
                 ${text}
-                <if(count !== undefined)>
-                    <span class="filter-chip__count">(+${count})</span>
+                <if(showCount && hasSelected)>
+                    <span class="filter-menu-button__count">(+${checkedValues.filter(Boolean).length})</span>
                 </if>
             </span>
             <ebay-chevron-down-12-icon/>

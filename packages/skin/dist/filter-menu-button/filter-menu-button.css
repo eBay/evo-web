@@ -92,15 +92,15 @@ button.filter-menu-button__button[href]:active:after {
 .filter-menu-button__button[aria-expanded="true"] svg.icon {
     transform: rotate(180deg);
 }
-button.filter-menu-button__button--active {
+button.filter-menu-button__button--selected {
     border-color: var(
         --filter-button-foreground-color,
         var(--color-border-strong)
     );
     font-weight: 700;
 }
-button.filter-menu-button__button--active[aria-disabled="true"],
-button.filter-menu-button__button--active[disabled],
+button.filter-menu-button__button--selected[aria-disabled="true"],
+button.filter-menu-button__button--selected[disabled],
 button.filter-menu-button__button[aria-disabled="true"],
 button.filter-menu-button__button[disabled] {
     color: var(
@@ -109,10 +109,10 @@ button.filter-menu-button__button[disabled] {
     );
     font-weight: 400;
 }
-button.filter-menu-button__button--active[aria-disabled="true"]:focus,
-button.filter-menu-button__button--active[aria-disabled="true"]:hover,
-button.filter-menu-button__button--active[disabled]:focus,
-button.filter-menu-button__button--active[disabled]:hover,
+button.filter-menu-button__button--selected[aria-disabled="true"]:focus,
+button.filter-menu-button__button--selected[aria-disabled="true"]:hover,
+button.filter-menu-button__button--selected[disabled]:focus,
+button.filter-menu-button__button--selected[disabled]:hover,
 button.filter-menu-button__button[aria-disabled="true"]:focus,
 button.filter-menu-button__button[aria-disabled="true"]:hover,
 button.filter-menu-button__button[disabled]:focus,
@@ -126,10 +126,10 @@ button.filter-menu-button__button[disabled]:hover {
         var(--color-background-disabled)
     );
 }
-button.filter-menu-button__button--active[aria-disabled="true"]
+button.filter-menu-button__button--selected[aria-disabled="true"]
     .filter-menu-button__button-cell
     > svg.icon,
-button.filter-menu-button__button--active[disabled]
+button.filter-menu-button__button--selected[disabled]
     .filter-menu-button__button-cell
     > svg.icon,
 button.filter-menu-button__button[aria-disabled="true"]
@@ -143,8 +143,8 @@ button.filter-menu-button__button[disabled]
         var(--color-foreground-disabled)
     );
 }
-button.filter-menu-button__button--active[aria-disabled="true"]:hover,
-button.filter-menu-button__button--active[disabled]:hover {
+button.filter-menu-button__button--selected[aria-disabled="true"]:hover,
+button.filter-menu-button__button--selected[disabled]:hover {
     background-color: var(
         --filter-button-selected-background-color,
         var(--color-background-secondary)

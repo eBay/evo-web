@@ -15,7 +15,7 @@ import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
     text: string;
-    count?: number;
+    showCount?: boolean;
     countContent?: React.ReactNode;
     a11yFilterAppliedText?: string;
     onExpand?: () => void;
@@ -25,7 +25,7 @@ export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
 const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
-    count,
+    showCount,
     countContent,
     a11yFilterAppliedText = "Filter Applied",
     "aria-label": ariaLabel,
@@ -37,7 +37,11 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
 }) => {
     const ref = useRef<HTMLSpanElement>(null);
     const items = filterByType(children, EbayFilterMenuItem);
-    const [hasChecked, setHasChecked] = useState(() => items.some((item) => item.props.checked));
+    const [checkedValues, setCheckedValues] = useState<string[]>(() =>
+        items.filter((item) => item.props.checked).map((item) => item.props.value as string),
+    );
+    const hasChecked = checkedValues.length > 0;
+
     const { isExpanded, collapse } = useExpander({
         ref,
         options: {
@@ -75,7 +79,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
 
     const handleChange: FilterMenuChange = (event, data) => {
         onChange?.(event, data);
-        setHasChecked(data.checked?.length > 0);
+        setCheckedValues(data.checked ?? []);
     };
 
     return (
@@ -84,9 +88,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                 type="button"
                 className={classNames(
                     "filter-menu-button__button",
-                    "filter-chip",
-                    hasChecked && "filter-menu-button__button--active",
-                    hasChecked && "filter-chip--selected",
+                    hasChecked && "filter-menu-button__button--selected",
                 )}
                 ref={refs.setHost}
                 aria-expanded="false"
@@ -96,9 +98,9 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                 <span className="filter-menu-button__button-cell">
                     <span className="filter-menu-button__button-text">
                         {text}
-                        {(countContent !== undefined || count !== undefined) && (
-                            <span className="filter-chip__count">
-                                {countContent ?? `(+${count})`}
+                        {showCount && hasChecked && (
+                            <span className="filter-menu-button__count">
+                                {countContent ?? `(+${checkedValues.length})`}
                             </span>
                         )}
                     </span>

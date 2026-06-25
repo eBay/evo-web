@@ -2,7 +2,7 @@ export default { title: "Skin/Filter/Menu Button" };
 
 export const collapsed = () => `
 <span class="filter-menu-button">
-    <button type="button" class="filter-menu-button__button filter-chip">
+    <button type="button" class="filter-menu-button__button">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -53,7 +53,7 @@ export const collapsed = () => `
 
 export const expanded = () => `
 <span class="filter-menu-button">
-    <button type="button" class="filter-menu-button__button filter-chip" aria-expanded="true">
+    <button type="button" class="filter-menu-button__button" aria-expanded="true">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -104,7 +104,7 @@ export const expanded = () => `
 
 export const pressed = () => `
 <span class="filter-menu-button">
-    <button type="button" class="filter-menu-button__button filter-chip filter-menu-button__button--active filter-chip--selected" aria-expanded="true">
+    <button type="button" class="filter-menu-button__button filter-menu-button__button--selected" aria-expanded="true">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -156,7 +156,7 @@ export const pressed = () => `
 
 export const disabled = () => `
 <span class="filter-menu-button">
-    <button aria-expaned="true" type="button" class="filter-menu-button__button filter-chip" disabled>
+    <button aria-expaned="true" type="button" class="filter-menu-button__button" disabled>
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -206,7 +206,7 @@ export const disabled = () => `
 
 export const overflow = () => `
 <span class="filter-menu-button">
-    <button type="button" class="filter-menu-button__button filter-chip" aria-expanded="true">
+    <button type="button" class="filter-menu-button__button" aria-expanded="true">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -444,7 +444,7 @@ export const overflow = () => `
 
 export const textSpacing = () => `
 <span class="filter-menu-button demo-a11y-text-spacing">
-    <button type="button" class="filter-menu-button__button filter-chip" aria-expanded="true">
+    <button type="button" class="filter-menu-button__button" aria-expanded="true">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -682,7 +682,7 @@ export const textSpacing = () => `
 
 export const truncated = () => `
 <span class="filter-menu-button">
-    <button aria-expanded="true" type="button" class="filter-menu-button__button filter-chip">
+    <button aria-expanded="true" type="button" class="filter-menu-button__button">
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">Filter Menu Button with a lot of text that will truncate</span>
             <svg class="icon icon--12" height="12" width="12">
@@ -734,7 +734,7 @@ export const truncated = () => `
 export const RTL = () => `
 <div dir="rtl">
     <span class="filter-menu-button">
-        <button type="button" class="filter-menu-button__button filter-chip" aria-expanded="true">
+        <button type="button" class="filter-menu-button__button" aria-expanded="true">
             <span class="filter-menu-button__button-cell">
                 <span class="filter-menu-button__button-text">Filter Menu Button</span>
                 <svg class="icon icon--12" height="12" width="12">
