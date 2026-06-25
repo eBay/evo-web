@@ -200,6 +200,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
 
         if (collapseOnSelect) {
             expander.current.expanded = false;
+            containerRef.current?.querySelector<HTMLElement>(".ebay-date-textbox--main > .icon-btn")?.focus();
         }
     };
 

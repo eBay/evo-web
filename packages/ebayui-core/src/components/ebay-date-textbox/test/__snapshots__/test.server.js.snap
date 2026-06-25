@@ -10,7 +10,7 @@ exports[`date-textbox > renders defaults 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"MM/DD/YYYY"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -371,7 +371,6 @@ exports[`date-textbox > renders defaults 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -454,7 +453,7 @@ exports[`date-textbox > renders localized 1`] = `
     [36m>[39m
       [36m<label[39m
         [33mclass[39m=[32m"floating-label__label"[39m
-        [33mfor[39m=[32m"s0-0-2-textbox"[39m
+        [33mfor[39m=[32m"s0-0-@mainTextbox-textbox"[39m
       [36m>[39m
         [0mEinde[0m
       [36m</label>[39m
@@ -463,7 +462,7 @@ exports[`date-textbox > renders localized 1`] = `
       [36m>[39m
         [36m<input[39m
           [33mclass[39m=[32m"textbox__control"[39m
-          [33mid[39m=[32m"s0-0-2-textbox"[39m
+          [33mid[39m=[32m"s0-0-@mainTextbox-textbox"[39m
           [33mplaceholder[39m=[32m"JJJJ/MM/DD"[39m
           [33mtype[39m=[32m"text"[39m
           [33mvalue[39m=[32m""[39m
@@ -826,7 +825,6 @@ exports[`date-textbox > renders localized 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - Geselekteerde"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -888,7 +886,7 @@ exports[`date-textbox > renders with clear 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-0-2-textbox"[39m
+        [33mid[39m=[32m"s0-0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"MM/DD/YYYY"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -1249,7 +1247,6 @@ exports[`date-textbox > renders with clear 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -1318,7 +1315,7 @@ exports[`date-textbox > renders with custom today 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"MM/DD/YYYY"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m""[39m
@@ -1738,7 +1735,7 @@ exports[`date-textbox > renders with floating label 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"MM/DD/YYYY"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -2099,7 +2096,6 @@ exports[`date-textbox > renders with floating label 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -2161,7 +2157,7 @@ exports[`date-textbox > renders with floating label array with ranged 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"MM/DD/YYYY"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -2522,7 +2518,6 @@ exports[`date-textbox > renders with floating label array with ranged 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -2584,7 +2579,7 @@ exports[`date-textbox > renders with floating label array without ranged 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"MM/DD/YYYY"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -2945,7 +2940,6 @@ exports[`date-textbox > renders with floating label array without ranged 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -3007,7 +3001,7 @@ exports[`date-textbox > renders with placeholder 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"placeholder"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -3368,7 +3362,6 @@ exports[`date-textbox > renders with placeholder 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -3430,7 +3423,7 @@ exports[`date-textbox > renders with placeholder array with ranged 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"placeholder 2"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -3791,7 +3784,6 @@ exports[`date-textbox > renders with placeholder array with ranged 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
@@ -3853,7 +3845,7 @@ exports[`date-textbox > renders with placeholder array without ranged 1`] = `
     [36m>[39m
       [36m<input[39m
         [33mclass[39m=[32m"textbox__control"[39m
-        [33mid[39m=[32m"s0-2-textbox"[39m
+        [33mid[39m=[32m"s0-@mainTextbox-textbox"[39m
         [33mplaceholder[39m=[32m"placeholder 2"[39m
         [33mtype[39m=[32m"text"[39m
         [33mvalue[39m=[32m"01/27/2024"[39m
@@ -4214,7 +4206,6 @@ exports[`date-textbox > renders with placeholder array without ranged 1`] = `
                     [33mclass[39m=[32m"calendar__cell--selected"[39m
                   [36m>[39m
                     [36m<button[39m
-                      [33maria-label[39m=[32m"27 - selected"[39m
                       [33maria-pressed[39m=[32m"true"[39m
                       [33mtype[39m=[32m"button"[39m
                     [36m>[39m
