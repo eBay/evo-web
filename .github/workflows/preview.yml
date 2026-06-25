@@ -53,7 +53,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const pr = context.payload.pull_request.number;
-            const sha = context.sha.slice(0, 7);
+            const sha = context.payload.pull_request.head.sha.slice(0, 7);
             const url = `https://opensource.ebay.com/evo-web/previews/pr-${pr}/`;
             const body = [
               `### PR Preview Deployed`,
