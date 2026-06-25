@@ -347,3 +347,4 @@ export const Captions = buildExtensionTemplate(
     captionsComponent,
     captionsRaw,
 );
+

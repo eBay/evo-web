@@ -58,6 +58,7 @@ export type EbayVideoProps = Omit<ComponentProps<"video">, "onPlay" | "onPause" 
     a11yFullscreenText?: string;
     a11yExitFullscreenText?: string;
     a11ySkipToLiveText?: string;
+
     shakaConfig?: Record<string, unknown>;
     spinnerTimeout?: number;
     layout?: "default" | "compact";
@@ -209,6 +210,30 @@ const EbayVideo: FC<EbayVideoProps> = ({
         if (document?.documentElement?.lang) {
             uiRef.current.getControls().getLocalization().changeLocale([document.documentElement.lang]);
         }
+
+        // See ebayui-core/ebay-video/component.ts for full explanation.
+        // Shaka's compiled dist uses closed-over module functions internally,
+        // so subclassing TextSelection can't intercept ARIA writes. Instead
+        // we listen to captionselectionupdated, which fires after every
+        // updateTextLanguages_ call, and correct two things:
+        // 1. Trigger button: swap aria-pressed for aria-expanded="false".
+        // 2. Menu items: replace aria-selected (meaningless on a plain button)
+        //    with aria-current="true" on the selected item.
+        uiRef.current.getControls().addEventListener("captionselectionupdated", () => {
+            const el = container;
+            const ccButton = el.querySelector<HTMLButtonElement>("button[shaka-status]");
+            if (!ccButton) return;
+            ccButton.removeAttribute("aria-pressed");
+            ccButton.removeAttribute("aria-label");
+            ccButton.setAttribute("aria-expanded", "false");
+
+            const menu = el.querySelector(".shaka-text-languages");
+            if (!menu) return;
+            menu.querySelectorAll<HTMLButtonElement>("[aria-selected='true']").forEach((btn) => {
+                btn.removeAttribute("aria-selected");
+                btn.setAttribute("aria-current", "true");
+            });
+        });
 
         // Trigger re-render to show initial play button portal
         setShowInitialPlayButton(true);
