@@ -6,9 +6,9 @@
 
 - [#718](https://github.com/eBay/evo-web/pull/718) [`57d9fa1`](https://github.com/eBay/evo-web/commit/57d9fa102dff67c4dbd86950f60f2653a4ea2dc2) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add new icons: bank-of-america, capital-one, chase, citi, td, usaa, wells-fargo (colored, 32/24/18/12), pay-by-bank-be/de/fr/uk (colored, 24), ship-and-safety (24/16), tire (24/16), gift (20), ai-mobile (24/20/16), ai-summary (24/20/16), fast-forward (16), rewind (16), battery-waste (48), markdown (24/20/16), stop (24/20/16), skull (24/16/12), reply-chat (24/16/12), link (20/16), pin (12), pin-filled (12), home (20/16), locker (64/24/16), bids (12), promotion (12), selling (12), wire-transfer (24/16).
 
-    Update existing icons: ship-and-local (16), link (24), markdown (24/16).
+  Update existing icons: ship-and-local (16), link (24), markdown (24/16).
 
-    Closes #717 (sub-issues #543, #599, #680).
+  Closes #717 (sub-issues #543, #599, #680).
 
 - [#714](https://github.com/eBay/evo-web/pull/714) [`ce92606`](https://github.com/eBay/evo-web/commit/ce92606c2dfb59285de8bbb9c99c832d35505ebb) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Deprecate `the-ebay-vault-24`, `the-ebay-vault-16`, `psa-16`, `psa-16-colored`, `psa-vault-16`, `psa-vault-16-colored`, `live-eye-16`, `live-eye-24`, `ebay-live-16`, `ebay-live-24` icons in favor of their renamed replacements.
 
@@ -46,13 +46,13 @@
 
 - [#648](https://github.com/eBay/evo-web/pull/648) [`03e20a3`](https://github.com/eBay/evo-web/commit/03e20a39a1e74c99d18abf67a6cb0d4274b680a5) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(page-notice, section-notice): unbold action CTA links per design spec
 
-    Links and `button.fake-link` elements inside the `__cta` slot of
-    `page-notice` and `section-notice` were rendering bold because the
-    components had blanket rules that bolded every link inside the
-    component. The Playbook design spec calls for unbolded CTA action
-    text. The fix scopes `font-weight: bold` to the body slots (`__main`,
-    `__footer`) where prose-with-links lives, so `__cta` links pick up
-    the default normal weight without needing an override.
+  Links and `button.fake-link` elements inside the `__cta` slot of
+  `page-notice` and `section-notice` were rendering bold because the
+  components had blanket rules that bolded every link inside the
+  component. The Playbook design spec calls for unbolded CTA action
+  text. The fix scopes `font-weight: bold` to the body slots (`__main`,
+  `__footer`) where prose-with-links lives, so `__cta` links pick up
+  the default normal weight without needing an override.
 
 ## 19.24.4
 
@@ -60,14 +60,14 @@
 
 - [#642](https://github.com/eBay/evo-web/pull/642) [`b9fd8fd`](https://github.com/eBay/evo-web/commit/b9fd8fd2becb11a9fa4b93b1d33ec3fba3c54698) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(section-title): remove arbitrary 75% max-width on title container
 
-    The `.section-title__title-container` was capped at `max-width: 75%`, which
-    caused unnecessary text wrapping on narrow viewports and on titles without
-    a trailing CTA. The Playbook spec is to let the title flow naturally and
-    rely on margin to maintain separation from a trailing CTA / overflow / info
-    element.
+  The `.section-title__title-container` was capped at `max-width: 75%`, which
+  caused unnecessary text wrapping on narrow viewports and on titles without
+  a trailing CTA. The Playbook spec is to let the title flow naturally and
+  rely on margin to maintain separation from a trailing CTA / overflow / info
+  element.
 
-    The `max-width` cap is replaced with `margin-inline-end: var(--spacing-300)`,
-    matching the spacing token used by sibling elements.
+  The `max-width` cap is replaced with `margin-inline-end: var(--spacing-300)`,
+  matching the spacing token used by sibling elements.
 
 ## 19.24.3
 
@@ -101,9 +101,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-    **@ebay/skin:** Add button reset styles for shaka-play-button.
+  **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 19.23.0
 

@@ -53,10 +53,7 @@ or import styles using SCSS/CSS
         },
         className: { description: "passed to the wrapper-element of the `<select>` element", control: "text" },
         borderless: { description: "whether select is borderless, default is `false`", control: "boolean" },
-        fluid: {
-            description: "whether select takes full width of its container, default is `false`",
-            control: "boolean",
-        },
+        fluid: { description: "whether select takes full width of its container, default is `false`", control: "boolean" },
         floatingLabel: {
             description: "Indicates that the select is a floating label type and renders it as a label",
             control: "text",
