@@ -2,20 +2,30 @@ import {
   localeDefault,
   type DayISO,
   type MonthISO,
+  getMonthInfo,
+  getMonthName,
+  getTodayISO,
   getWeekdayInfo,
   monthOffset,
   toISO,
-  fromISO,
   offsetISO,
 } from "../../common/dates/date-utils";
+import {
+  DAY_UPDATE_KB,
+  getActiveISOInWindow,
+  getFirstActiveISO,
+  getFirstVisibleISO,
+  getInitialFocus,
+  getLastActiveISO,
+  getLastVisibleISO,
+  isDisabled,
+  isNextMonthDisabled,
+  isPreviousMonthDisabled,
+  offsetMonthForDay,
+  type Disable,
+} from "./date-utils";
 export type { DayISO } from "../../common/dates/date-utils"
-export interface Disable {
-  before?: DayISO;
-  after?: DayISO;
-  weekdays?: number[];
-  list?: DayISO[];
-  callback?: (iso: DayISO) => boolean;
-}
+export type { Disable } from "./date-utils";
 export interface BaseInput {
   numMonths?: number;
   locale?: string;
@@ -382,139 +392,3 @@ export type Input = StaticInput | DayInput | RangeInput;
     </for>
   </div>
 </div>
-static function getTodayISO() {
-  return toISO(new Date());
-}
-static function getMonthName(
-  locale: string,
-  date: DayISO | MonthISO,
-  offset: number,
-) {
-  return new Intl.DateTimeFormat(locale, {
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(getMonthDate(date, offset));
-}
-static function getMonthInfo(baseDate: DayISO | MonthISO, offset: number) {
-  const date = getMonthDate(baseDate, offset);
-  const year = date.getUTCFullYear();
-  const month = date.getUTCMonth();
-
-  return {
-    year,
-    month,
-    firstWeekday: date.getUTCDay(),
-    length: new Date(Date.UTC(year, month + 1, 0)).getUTCDate(),
-  };
-}
-static function getMonthDate(date: DayISO | MonthISO, offset: number) {
-  const [year, month] = date.split("-").map(Number);
-  return new Date(Date.UTC(year, month + offset - 1));
-}
-static function isDisabled(
-  { before, after, weekdays, list, callback }: Disable,
-  date: DayISO,
-) {
-  return (
-    (after && date > after) ||
-    (before && date < before) ||
-    weekdays?.includes(fromISO(date).getUTCDay()) ||
-    list?.includes(date) ||
-    callback?.(date)
-  );
-}
-static function getFirstVisibleISO(viewStart: MonthISO) {
-  return (viewStart + "-01") as DayISO;
-}
-static function getLastVisibleISO(viewStart: MonthISO, numMonths: number) {
-  return toISO(new Date(getMonthDate(viewStart, numMonths).setUTCDate(0)));
-}
-static function getFirstActiveISO(
-  disable: Disable | undefined,
-  viewStart: MonthISO,
-  numMonths: number,
-) {
-  let iso = getFirstVisibleISO(viewStart);
-  const lastVisible = getLastVisibleISO(viewStart, numMonths);
-  while (iso <= lastVisible && disable && isDisabled(disable, iso)) {
-    iso = offsetISO(iso, 1);
-  }
-  return iso > lastVisible ? null : iso;
-}
-static function getLastActiveISO(
-  disable: Disable | undefined,
-  viewStart: MonthISO,
-  numMonths: number,
-) {
-  let iso = getLastVisibleISO(viewStart, numMonths);
-  const firstVisible = getFirstVisibleISO(viewStart);
-  while (iso >= firstVisible && disable && isDisabled(disable, iso)) {
-    iso = offsetISO(iso, -1);
-  }
-  return iso < firstVisible ? null : iso;
-}
-static function getActiveISOInWindow(
-  disable: Disable | undefined,
-  iso: DayISO,
-  viewStart: MonthISO,
-  numMonths: number,
-) {
-  const firstVisible = getFirstVisibleISO(viewStart);
-  const lastVisible = getLastVisibleISO(viewStart, numMonths);
-
-  if (iso < firstVisible) {
-    return getFirstActiveISO(disable, viewStart, numMonths) || firstVisible;
-  }
-  if (iso > lastVisible) {
-    return getLastActiveISO(disable, viewStart, numMonths) || lastVisible;
-  }
-  if (!disable || !isDisabled(disable, iso)) {
-    return iso;
-  }
-
-  let nextISO = iso;
-  while (nextISO <= lastVisible && isDisabled(disable, nextISO)) {
-    nextISO = offsetISO(nextISO, 1);
-  }
-  if (nextISO <= lastVisible) {
-    return nextISO;
-  }
-
-  return getLastActiveISO(disable, viewStart, numMonths) || firstVisible;
-}
-static function isPreviousMonthDisabled(
-  disable: Disable | undefined,
-  viewStart: MonthISO,
-) {
-  return !!disable?.before && getFirstVisibleISO(viewStart) <= disable.before;
-}
-static function isNextMonthDisabled(
-  disable: Disable | undefined,
-  viewStart: MonthISO,
-  numMonths: number,
-) {
-  return !!disable?.after && getLastVisibleISO(viewStart, numMonths) >= disable.after;
-}
-static function getInitialFocus(
-  viewStart: MonthISO,
-  today: DayISO,
-  numMonths: number,
-) {
-  const lastVisibleMonth = monthOffset(viewStart, numMonths - 1);
-  return today.slice(0, 7) >= viewStart && today.slice(0, 7) <= lastVisibleMonth
-    ? today
-    : ((viewStart + "-01") as DayISO);
-}
-static function offsetMonthForDay(iso: DayISO, offset: -1 | 1) {
-  const targetMonth = monthOffset(iso.slice(0, 7) as MonthISO, offset);
-  const { year, month, length } = getMonthInfo(targetMonth, 0);
-  const day = Math.min(Number(iso.slice(8, 10)), length);
-  return toISO(new Date(Date.UTC(year, month, day)));
-}
-static const DAY_UPDATE_KB = {
-  ArrowRight: 1,
-  ArrowLeft: -1,
-  ArrowDown: 7,
-  ArrowUp: -7,
-};

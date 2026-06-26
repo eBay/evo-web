@@ -79,6 +79,40 @@ export function toISO(date: Date) {
   return date.toISOString().slice(0, 10) as DayISO;
 }
 
+export function getTodayISO() {
+  return toISO(new Date());
+}
+
+export function getMonthDate(date: DayISO | MonthISO, offset: number) {
+  const [year, month] = date.split("-").map(Number);
+  return new Date(Date.UTC(year, month + offset - 1));
+}
+
+export function getMonthName(
+  locale: string,
+  date: DayISO | MonthISO,
+  offset: number,
+) {
+  return new Intl.DateTimeFormat(locale, {
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(getMonthDate(date, offset));
+}
+
+export function getMonthInfo(baseDate: DayISO | MonthISO, offset: number) {
+  const date = getMonthDate(baseDate, offset);
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth();
+
+  return {
+    year,
+    month,
+    firstWeekday: date.getUTCDay(),
+    length: new Date(Date.UTC(year, month + 1, 0)).getUTCDate(),
+  };
+}
+
 export function fromISO(iso: DayISO) {
   return new Date(iso);
 }
