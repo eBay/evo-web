@@ -29,16 +29,11 @@ import { EvoCalendar } from "@evo-web/react/calendar";
       description:
         'When set, day cells render as `<button>` elements for date selection. `"day"` selects a single date; `"range"` selects a start/end range. Omit for a non-interactive calendar.',
     },
-    visibleMonthCount: {
-      type: "number",
-      control: "number",
-      description: "Number of months to display simultaneously.",
-      table: { defaultValue: { summary: "1" } },
-    },
     locale: {
       type: "string",
       control: "text",
-      description: "BCP 47 locale string used for month and weekday labels.",
+      description:
+        "[BCP 47 language tag](https://developer.mozilla.org/en-US/docs/Glossary/BCP_47_language_tag) used for month and weekday labels.",
       table: { defaultValue: { summary: "navigator.language || 'en-US'" } },
     },
     today: {
@@ -56,6 +51,12 @@ import { EvoCalendar } from "@evo-web/react/calendar";
       control: "object",
       description:
         "Initial uncontrolled selected value. Accepts a single `DayISO` string in day mode or a `{ from: DayISO; to: DayISO }` range object in range mode.",
+    },
+    visibleMonthCount: {
+      type: "number",
+      control: "number",
+      description: "Number of months to display simultaneously.",
+      table: { defaultValue: { summary: "1" } },
     },
     visibleMonth: {
       type: "string",
@@ -126,8 +127,6 @@ import { EvoCalendar } from "@evo-web/react/calendar";
   },
   args: {
     selectMode: "day",
-    today: "2025-01-15",
-    visibleMonthCount: 2,
     a11yNavigateText: (month, dir) =>
       `${dir === "prev" ? "Previous" : "Next"}: ${month}`,
     a11yRangeText: {

@@ -34,7 +34,7 @@ export default {
       type: "string",
       control: "text",
       description:
-        "BCP 47 locale string used for month/weekday labels and first day of week.",
+        "[BCP 47 language tag](https://developer.mozilla.org/en-US/docs/Glossary/BCP_47_language_tag) used for month/weekday labels and first day of week.",
       table: { defaultValue: { summary: "navigator.language || 'en-US'" } },
     },
     today: {
