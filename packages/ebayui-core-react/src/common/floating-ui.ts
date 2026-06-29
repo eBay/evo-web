@@ -3,7 +3,7 @@ import { autoUpdate, flip, offset, shift, arrow, inline, useFloating, type Place
 import { PointerDirection } from "./tooltip-utils/types";
 
 export type FloatingDropdownHookReturn = {
-    overlayStyles: ReturnType<typeof useFloating>["floatingStyles"];
+    overlayStyles: ReturnType<typeof useFloating>["floatingStyles"] | undefined;
     refs: {
         host: ReturnType<typeof useFloating>["refs"]["reference"];
         overlay: ReturnType<typeof useFloating>["refs"]["floating"];
@@ -33,7 +33,7 @@ export function useFloatingDropdown({ open, options }: FloatingDropdownHookArgs)
     });
 
     return {
-        overlayStyles: floatingStyles,
+        overlayStyles: open ? floatingStyles : undefined,
         refs: {
             host: refs.reference,
             overlay: refs.floating,

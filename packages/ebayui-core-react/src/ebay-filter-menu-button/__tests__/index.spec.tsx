@@ -40,6 +40,16 @@ function setupMockEnv() {
 }
 
 describe("EbayFilterMenuButton", () => {
+    it("should not apply floating styles while collapsed", () => {
+        const { container } = render(
+            <EbayFilterMenuButton text="Menu">
+                <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
+            </EbayFilterMenuButton>,
+        );
+
+        expect(container.querySelector(".filter-menu-button__menu")).not.toHaveAttribute("style");
+    });
+
     it("should call onExpand when the menu is expanded", async () => {
         const onExpand = vi.fn();
         render(
