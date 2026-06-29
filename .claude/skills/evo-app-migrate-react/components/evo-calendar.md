@@ -17,6 +17,7 @@ This component follows the updated evo calendar interface. Do not carry legacy c
 | `range`                                                     | `selectMode="range"`                       | Range selection is now selected through `selectMode`.                             |
 | `navigable`                                                 | `a11yNavigateText`                         | The navigation header renders when `a11yNavigateText` is present.                 |
 | `getA11yShowMonthText(month)`                               | `a11yNavigateText(month, dir)`             | The callback now receives direction: `"prev" \| "next"`.                          |
+| `numMonths`                                                 | `visibleMonthCount`                        | Renamed to clarify it controls how many months are shown.                         |
 | `selected: DayISO[]`                                        | removed                                    | Arrays are no longer supported. Use a range object when appropriate.              |
 | selected range arrays                                       | `{ from?: DayISO; to?: DayISO }`           | Replace `[from, to]` with `{ from, to }`.                                         |
 | `disableBefore`                                             | `disable.before`                           | Disable config is now grouped.                                                    |
@@ -25,10 +26,11 @@ This component follows the updated evo calendar interface. Do not carry legacy c
 | `disableList`                                               | `disable.list`                             | Disable config is now grouped.                                                    |
 | none                                                        | `disable.callback`                         | New function hook for disabling dates.                                            |
 | `onSelect(event, { iso })`                                  | `onSelectedChange(selected)`               | Callback receives only the new selected value. No event argument.                 |
-| `onMonthChange({ iso })`                                    | `onViewStartChange(viewStart)`             | Callback receives the first visible month as `YYYY-MM`.                           |
+| `onMonthChange({ iso })`                                    | `onVisibleMonthChange(visibleMonth)`       | Callback receives the first visible month as `YYYY-MM`.                           |
 | custom `onFocus(event, { iso })`                            | removed                                    | Use native focus handlers only if needed; no custom focused-day event is emitted. |
 | `a11yRangeStartText`, `a11yInRangeText`, `a11yRangeEndText` | `a11yRangeText`                            | Use `{ start, in, end }`.                                                         |
 | `a11ySeparator`                                             | removed                                    | Range/today/disabled clipped text uses the component separator.                   |
+| `linkBuilder`                                               | `getDayHref`                               | Renamed to clarify the callback returns an href.                                  |
 | none                                                        | `dayLinkAs`                                | New React-only custom component hook for static day links.                        |
 
 ## Controlled and uncontrolled state
@@ -48,11 +50,11 @@ Use React-style controlled/uncontrolled props for selection and visible month st
 />
 
 <EvoCalendar
-  viewStart={viewStart}
-  onViewStartChange={setViewStart}
+  visibleMonth={visibleMonth}
+  onVisibleMonthChange={setVisibleMonth}
 />
 
-<EvoCalendar defaultViewStart="2025-01" />
+<EvoCalendar defaultVisibleMonth="2025-01" visibleMonthCount={2} />
 ```
 
 ## Disabled dates
@@ -71,10 +73,10 @@ Use React-style controlled/uncontrolled props for selection and visible month st
 
 ## Static day links
 
-Use `linkBuilder` for native anchor links, or `dayLinkAs` when routing link components can derive their destination from `iso`. They can also be used together when `linkBuilder` should filter which days are linkable.
+Use `getDayHref` for native anchor links, or `dayLinkAs` when routing link components can derive their destination from `iso`. They can also be used together when `getDayHref` should filter which days are linkable.
 
 ```tsx
-<EvoCalendar linkBuilder={(iso) => `/day/${iso}`} />;
+<EvoCalendar getDayHref={(iso) => `/day/${iso}`} />;
 
 <EvoCalendar
   dayLinkAs={({ iso, ...rest }) => <Link {...rest} to={`/day/${iso}`} />}

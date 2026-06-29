@@ -64,13 +64,13 @@ describe("evo-calendar", () => {
         .toBeInTheDocument();
     });
 
-    it("updates uncontrolled viewStart and emits onViewStartChange when next month is clicked", async () => {
-      const onViewStartChange = vi.fn();
+    it("updates uncontrolled visibleMonth and emits onVisibleMonthChange when next month is clicked", async () => {
+      const onVisibleMonthChange = vi.fn();
       const screen = await render(
         <EvoCalendar
           today="2025-01-15"
           a11yNavigateText={a11yNavigateText}
-          onViewStartChange={onViewStartChange}
+          onVisibleMonthChange={onVisibleMonthChange}
         />,
       );
 
@@ -78,7 +78,7 @@ describe("evo-calendar", () => {
         screen.getByRole("button", { name: "Next: February 2025" }),
       );
 
-      expect(onViewStartChange).toHaveBeenCalledWith("2025-02");
+      expect(onVisibleMonthChange).toHaveBeenCalledWith("2025-02");
       await expect
         .element(screen.getByRole("table", { name: "February 2025" }))
         .toBeInTheDocument();
@@ -229,11 +229,11 @@ describe("evo-calendar", () => {
   });
 
   describe("given a non-interactive calendar with links", () => {
-    it("renders links returned by linkBuilder", async () => {
+    it("renders links returned by getDayHref", async () => {
       const screen = await render(
         <EvoCalendar
           today="2025-01-15"
-          linkBuilder={(iso) => (iso === "2025-01-15" ? `/day/${iso}` : false)}
+          getDayHref={(iso) => (iso === "2025-01-15" ? `/day/${iso}` : false)}
         />,
       );
 
@@ -243,9 +243,9 @@ describe("evo-calendar", () => {
     });
 
     it("renders linkable days with dayLinkAs when provided", async () => {
-      function DayLink({ iso, children, ...rest }: DayLinkAsProps) {
+      function DayLink({ iso, href, children, ...rest }: DayLinkAsProps) {
         return (
-          <a {...rest} data-custom-link="true" href={`/custom/${iso}`}>
+          <a {...rest} data-custom-link="true" href={href || `/custom/${iso}`}>
             {children}
           </a>
         );
@@ -254,17 +254,17 @@ describe("evo-calendar", () => {
       const screen = await render(
         <EvoCalendar
           today="2025-01-15"
-          linkBuilder={(iso) => (iso === "2025-01-15" ? `/day/${iso}` : false)}
+          getDayHref={(iso) => (iso === "2025-01-15" ? `/day/${iso}` : false)}
           dayLinkAs={DayLink}
         />,
       );
 
       const link = screen.getByRole("link", { name: "15" });
-      await expect.element(link).toHaveAttribute("href", "/custom/2025-01-15");
+      await expect.element(link).toHaveAttribute("href", "/day/2025-01-15");
       await expect.element(link).toHaveAttribute("data-custom-link", "true");
     });
 
-    it("renders all non-disabled days with dayLinkAs without linkBuilder", async () => {
+    it("renders all non-disabled days with dayLinkAs without getDayHref", async () => {
       function DayLink({ iso, children, ...rest }: DayLinkAsProps) {
         return (
           <a {...rest} data-custom-link="true" href={`/custom/${iso}`}>

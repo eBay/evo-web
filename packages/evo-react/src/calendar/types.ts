@@ -24,6 +24,7 @@ export type A11yRangeText = {
 
 export type DayLinkAsProps = {
   iso: DayISO;
+  href?: string;
   className?: string;
   children?: ReactNode;
 };
@@ -31,19 +32,19 @@ export type DayLinkAsProps = {
 export type DayLinkAs = ComponentType<DayLinkAsProps>;
 
 type BaseCalendarProps = Omit<ComponentProps<"div">, "onSelect"> & {
-  numMonths?: number;
+  visibleMonthCount?: number;
   locale?: string;
   today?: DayISO;
   disable?: Disable;
-  viewStart?: MonthISO;
-  defaultViewStart?: MonthISO;
-  onViewStartChange?: (viewStart: MonthISO) => void;
+  visibleMonth?: MonthISO;
+  defaultVisibleMonth?: MonthISO;
+  onVisibleMonthChange?: (visibleMonth: MonthISO) => void;
   a11yNavigateText?: (monthName: string, dir: "next" | "prev") => string;
 };
 
 type StaticBaseCalendarProps = BaseCalendarProps & {
   selectMode?: undefined;
-  linkBuilder?: (iso: DayISO) => string | false | null | undefined;
+  getDayHref?: (iso: DayISO) => string | false | null | undefined;
   dayLinkAs?: DayLinkAs;
   a11yTodayText?: string;
   a11yDisabledText?: string;

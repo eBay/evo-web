@@ -58,7 +58,7 @@ describe("EvoCalendar SSR", () => {
 
   it("renders multi-month view", () => {
     expect(
-      renderToString(<EvoCalendar today="2025-01-15" numMonths={2} />),
+      renderToString(<EvoCalendar today="2025-01-15" visibleMonthCount={2} />),
     ).toMatchSnapshot();
   });
 

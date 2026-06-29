@@ -168,11 +168,11 @@ describe("evo-calendar", () => {
         });
     });
 
-    describe("given a non-interactive calendar with linkBuilder", () => {
+    describe("given a non-interactive calendar with getDayHref", () => {
         beforeEach(async () => {
             component = await render(template, {
                 today: "2025-01-15",
-                linkBuilder: (iso: string) =>
+                getDayHref: (iso: string) =>
                     iso === "2025-01-15"
                         ? `https://www.ebay.com/sch/i.html?_nkw=${iso}`
                         : false,

@@ -44,21 +44,20 @@ export function EvoCalendar({
   selected: selectedProp,
   defaultSelected,
   onSelectedChange,
-  numMonths = 1,
+  visibleMonthCount = 1,
   locale: localeProp,
   today: todayProp,
   disable,
-  viewStart: viewStartProp,
-  defaultViewStart,
-  onViewStartChange,
+  visibleMonth: visibleMonthProp,
+  defaultVisibleMonth,
+  onVisibleMonthChange,
   a11yNavigateText,
   a11yRangeText,
   className,
-  ref,
   ...rest
 }: EvoCalendarProps) {
   const {
-    linkBuilder,
+    getDayHref,
     dayLinkAs,
     a11yTodayText,
     a11yDisabledText,
@@ -74,18 +73,19 @@ export function EvoCalendar({
   const selected =
     selectedProp !== undefined ? selectedProp : uncontrolledSelected;
 
-  const initialViewStart = defaultViewStart ?? (today.slice(0, 7) as MonthISO);
-  const [uncontrolledViewStart, setUncontrolledViewStart] =
-    useState<MonthISO>(initialViewStart);
-  const viewStart = viewStartProp ?? uncontrolledViewStart;
+  const initialVisibleMonth =
+    defaultVisibleMonth ?? (today.slice(0, 7) as MonthISO);
+  const [uncontrolledVisibleMonth, setUncontrolledVisibleMonth] =
+    useState<MonthISO>(initialVisibleMonth);
+  const visibleMonth = visibleMonthProp ?? uncontrolledVisibleMonth;
   const [requestedFocusDate, setRequestedFocusDate] = useState<DayISO>(() =>
-    getInitialFocus(viewStart, today, numMonths),
+    getInitialFocus(visibleMonth, today, visibleMonthCount),
   );
   const focusedDate = getFocusedDate(
     requestedFocusDate,
-    viewStart,
+    visibleMonth,
     today,
-    numMonths,
+    visibleMonthCount,
   );
   const pendingFocusISO = useRef<DayISO | null>(null);
   const [bodyHasFocus, setBodyHasFocus] = useState(false);
@@ -96,14 +96,14 @@ export function EvoCalendar({
     [locale],
   );
 
-  const setViewStart = useCallback(
-    (nextViewStart: MonthISO) => {
-      if (viewStartProp === undefined) {
-        setUncontrolledViewStart(nextViewStart);
+  const setVisibleMonth = useCallback(
+    (nextVisibleMonth: MonthISO) => {
+      if (visibleMonthProp === undefined) {
+        setUncontrolledVisibleMonth(nextVisibleMonth);
       }
-      onViewStartChange?.(nextViewStart);
+      onVisibleMonthChange?.(nextVisibleMonth);
     },
-    [onViewStartChange, viewStartProp],
+    [onVisibleMonthChange, visibleMonthProp],
   );
 
   const setSelected = useCallback(
@@ -141,15 +141,15 @@ export function EvoCalendar({
     bodyHasFocus,
   });
 
-  const monthDates = [...Array(numMonths)].map((_, i) =>
-    getMonthDate(viewStart, i),
+  const monthDates = [...Array(visibleMonthCount)].map((_, i) =>
+    getMonthDate(visibleMonth, i),
   );
 
-  const getFirstVisibleISO = (start = viewStart) => `${start}-01` as DayISO;
-  const getLastVisibleISO = (start = viewStart) =>
-    toISO(new Date(getMonthDate(start, numMonths).setUTCDate(0)));
+  const getFirstVisibleISO = (start = visibleMonth) => `${start}-01` as DayISO;
+  const getLastVisibleISO = (start = visibleMonth) =>
+    toISO(new Date(getMonthDate(start, visibleMonthCount).setUTCDate(0)));
   const isDayDisabled = (iso: DayISO) => !!disable && isDisabled(disable, iso);
-  const getFirstActiveISO = (start = viewStart) => {
+  const getFirstActiveISO = (start = visibleMonth) => {
     let iso = getFirstVisibleISO(start);
     const lastVisible = getLastVisibleISO(start);
     while (iso <= lastVisible && isDayDisabled(iso)) {
@@ -157,7 +157,7 @@ export function EvoCalendar({
     }
     return iso > lastVisible ? null : iso;
   };
-  const getLastActiveISO = (start = viewStart) => {
+  const getLastActiveISO = (start = visibleMonth) => {
     let iso = getLastVisibleISO(start);
     const firstVisible = getFirstVisibleISO(start);
     while (iso >= firstVisible && isDayDisabled(iso)) {
@@ -165,7 +165,7 @@ export function EvoCalendar({
     }
     return iso < firstVisible ? null : iso;
   };
-  const getActiveISOInWindow = (iso: DayISO, start = viewStart) => {
+  const getActiveISOInWindow = (iso: DayISO, start = visibleMonth) => {
     const firstVisible = getFirstVisibleISO(start);
     const lastVisible = getLastVisibleISO(start);
 
@@ -201,9 +201,9 @@ export function EvoCalendar({
       return false;
     }
 
-    const nextViewStart = monthOffset(viewStart, offset);
-    const nextFocus = getActiveISOInWindow(targetFocus, nextViewStart);
-    setViewStart(nextViewStart);
+    const nextVisibleMonth = monthOffset(visibleMonth, offset);
+    const nextFocus = getActiveISOInWindow(targetFocus, nextVisibleMonth);
+    setVisibleMonth(nextVisibleMonth);
     requestFocus(nextFocus);
     return true;
   };
@@ -323,7 +323,7 @@ export function EvoCalendar({
             inRange={inRange}
             rangeEnd={rangeEnd}
             a11yRangeText={a11yRangeText}
-            linkBuilder={linkBuilder}
+            getDayHref={getDayHref}
             dayLinkAs={dayLinkAs}
             a11yTodayText={a11yTodayText}
             a11yDisabledText={a11yDisabledText}
@@ -335,7 +335,7 @@ export function EvoCalendar({
   };
 
   return (
-    <div {...rootProps} className={classNames("calendar", className)} ref={ref}>
+    <div {...rootProps} className={classNames("calendar", className)}>
       {a11yNavigateText && (
         <div className="calendar__header">
           <div className="calendar__header--inner">
@@ -345,7 +345,7 @@ export function EvoCalendar({
                 navigateMonth(-1, offsetMonthForDay(focusedDate, -1));
               }}
               a11yText={a11yNavigateText(
-                getMonthName(locale, viewStart, -1),
+                getMonthName(locale, visibleMonth, -1),
                 "prev",
               )}
             >
@@ -362,7 +362,7 @@ export function EvoCalendar({
                 navigateMonth(1, offsetMonthForDay(focusedDate, 1));
               }}
               a11yText={a11yNavigateText(
-                getMonthName(locale, viewStart, numMonths),
+                getMonthName(locale, visibleMonth, visibleMonthCount),
                 "next",
               )}
             >
@@ -371,6 +371,7 @@ export function EvoCalendar({
           </div>
         </div>
       )}
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
         className="calendar__body"
         onFocus={() => {
@@ -385,7 +386,7 @@ export function EvoCalendar({
       >
         {monthDates.map((monthDate, i) => {
           const { year, month, firstWeekday, length } = getMonthInfo(
-            viewStart,
+            visibleMonth,
             i,
           );
           const blankDays = (firstWeekday - firstDayOfWeek + 7) % 7;
@@ -393,7 +394,7 @@ export function EvoCalendar({
           return (
             <div key={toISO(monthDate)} className="calendar__month">
               <table>
-                <caption>{getMonthName(locale, viewStart, i)}</caption>
+                <caption>{getMonthName(locale, visibleMonth, i)}</caption>
                 <thead>
                   <tr>
                     {weekdayLabels.map((dayName) => (
@@ -444,7 +445,7 @@ type StaticDateCellProps = {
   inRange: boolean;
   rangeEnd: boolean;
   a11yRangeText?: A11yRangeText;
-  linkBuilder?: (iso: DayISO) => string | false | null | undefined;
+  getDayHref?: (iso: DayISO) => string | false | null | undefined;
   dayLinkAs?: DayLinkAs;
   a11yTodayText?: string;
   a11yDisabledText?: string;
@@ -461,15 +462,14 @@ function StaticDateCell({
   inRange,
   rangeEnd,
   a11yRangeText,
-  linkBuilder,
+  getDayHref,
   dayLinkAs: DayLink,
   a11yTodayText,
   a11yDisabledText,
   a11ySelectedText,
 }: StaticDateCellProps) {
-  const link = !disabled && linkBuilder?.(iso);
-  const shouldRenderDayLink =
-    !disabled && !!DayLink && (!linkBuilder || !!link);
+  const href = !disabled && getDayHref?.(iso);
+  const shouldRenderDayLink = !disabled && !!DayLink && (!getDayHref || !!href);
   const clippedText = [
     "",
     iso === today && a11yTodayText,
@@ -495,15 +495,15 @@ function StaticDateCell({
 
   if (shouldRenderDayLink) {
     return (
-      <DayLink iso={iso} className={dateClassName}>
+      <DayLink iso={iso} href={href || undefined} className={dateClassName}>
         {children}
       </DayLink>
     );
   }
 
-  if (link) {
+  if (href) {
     return (
-      <a className={dateClassName} href={link}>
+      <a className={dateClassName} href={href}>
         {children}
       </a>
     );
@@ -582,26 +582,27 @@ function isRange(selected: SelectedValue | undefined): selected is DateRange {
 }
 
 function getInitialFocus(
-  viewStart: MonthISO,
+  visibleMonth: MonthISO,
   today: DayISO,
-  numMonths: number,
+  visibleMonthCount: number,
 ): DayISO {
-  const lastVisibleMonth = monthOffset(viewStart, numMonths - 1);
-  return today.slice(0, 7) >= viewStart && today.slice(0, 7) <= lastVisibleMonth
+  const lastVisibleMonth = monthOffset(visibleMonth, visibleMonthCount - 1);
+  return today.slice(0, 7) >= visibleMonth &&
+    today.slice(0, 7) <= lastVisibleMonth
     ? today
-    : (`${viewStart}-01` as DayISO);
+    : (`${visibleMonth}-01` as DayISO);
 }
 
 function getFocusedDate(
   focus: DayISO,
-  viewStart: MonthISO,
+  visibleMonth: MonthISO,
   today: DayISO,
-  numMonths: number,
+  visibleMonthCount: number,
 ): DayISO {
-  return focus.slice(0, 7) >= viewStart &&
-    focus.slice(0, 7) <= monthOffset(viewStart, numMonths - 1)
+  return focus.slice(0, 7) >= visibleMonth &&
+    focus.slice(0, 7) <= monthOffset(visibleMonth, visibleMonthCount - 1)
     ? focus
-    : getInitialFocus(viewStart, today, numMonths);
+    : getInitialFocus(visibleMonth, today, visibleMonthCount);
 }
 
 function offsetMonthForDay(iso: DayISO, offset: -1 | 1): DayISO {

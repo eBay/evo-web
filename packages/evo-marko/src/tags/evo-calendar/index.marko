@@ -27,12 +27,12 @@ import {
 export type { DayISO } from "../../common/dates/date-utils"
 export type { Disable } from "./date-utils";
 export interface BaseInput {
-  numMonths?: number;
+  visibleMonthCount?: number;
   locale?: string;
   today?: DayISO;
   disable?: Disable;
-  viewStart?: MonthISO;
-  viewStartChange?: (m: MonthISO) => void;
+  visibleMonth?: MonthISO;
+  visibleMonthChange?: (m: MonthISO) => void;
   /**
    * Must be present to allow navigation between months
    *
@@ -61,7 +61,7 @@ export interface StaticInput extends BaseInput {
   selectMode?: undefined;
   selected?: DayISO | { from?: DayISO; to?: DayISO };
   selectedChange?: (s: DayISO | { from?: DayISO; to?: DayISO }) => void;
-  linkBuilder?: (iso: DayISO) => string | false | null | undefined;
+  getDayHref?: (iso: DayISO) => string | false | null | undefined;
   /**
    * Clipped text to communicate the current day cells to screen readers, required for non-interactive calendars
    *
@@ -102,7 +102,7 @@ export type Input = StaticInput | DayInput | RangeInput;
 
 <const/{
   a11yNavigateText,
-  numMonths = 1,
+  visibleMonthCount: numMonths = 1,
   selectMode,
   today = systemDay,
   disable,
@@ -110,9 +110,9 @@ export type Input = StaticInput | DayInput | RangeInput;
 }=input>
 
 <let/selected:=(input as StaticInput).selected>
-// `viewStart` is the first displayed month (YYYY-MM). `valueChange` notifies `input.viewStartChange`.
+// `viewStart` is the first displayed month (YYYY-MM). `valueChange` notifies `input.visibleMonthChange`.
 // `focus` is fully uncontrolled — always within the visible window, resets when viewStart changes.
-<let/viewStart=(input.viewStart ?? today.slice(0, 7) as MonthISO) valueChange=input.viewStartChange>
+<let/viewStart=(input.visibleMonth ?? today.slice(0, 7) as MonthISO) valueChange=input.visibleMonthChange>
 <let/focus=getInitialFocus(viewStart, today, numMonths)>
 <script>
   // If viewStart changes externally and focus is no longer in the window, reset it.
@@ -349,12 +349,12 @@ export type Input = StaticInput | DayInput | RangeInput;
                     </if>
                     <else>
                       <const/{
-                        linkBuilder,
+                        getDayHref,
                         a11yTodayText,
                         a11yDisabledText,
                         a11ySelectedText,
                       }=input>
-                      <const/link=!disabled && linkBuilder?.(iso)>
+                      <const/link=!disabled && getDayHref?.(iso)>
                       <${link ? "a" : "span"}
                         class={
                           "calendar__cell--disabled": disabled,
