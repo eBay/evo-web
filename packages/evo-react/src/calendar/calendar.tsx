@@ -468,6 +468,8 @@ function StaticDateCell({
   a11ySelectedText,
 }: StaticDateCellProps) {
   const link = !disabled && linkBuilder?.(iso);
+  const shouldRenderDayLink =
+    !disabled && !!DayLink && (!linkBuilder || !!link);
   const clippedText = [
     "",
     iso === today && a11yTodayText,
@@ -484,22 +486,22 @@ function StaticDateCell({
     "calendar__cell--current": iso === today,
   });
 
-  if (link) {
-    const children = (
-      <>
-        {day}
-        {clippedText && <span className="clipped">{clippedText}</span>}
-      </>
+  const children = (
+    <>
+      {day}
+      {clippedText && <span className="clipped">{clippedText}</span>}
+    </>
+  );
+
+  if (shouldRenderDayLink) {
+    return (
+      <DayLink iso={iso} className={dateClassName}>
+        {children}
+      </DayLink>
     );
+  }
 
-    if (DayLink) {
-      return (
-        <DayLink iso={iso} className={dateClassName}>
-          {children}
-        </DayLink>
-      );
-    }
-
+  if (link) {
     return (
       <a className={dateClassName} href={link}>
         {children}
@@ -507,12 +509,7 @@ function StaticDateCell({
     );
   }
 
-  return (
-    <span className={dateClassName}>
-      {day}
-      {clippedText && <span className="clipped">{clippedText}</span>}
-    </span>
-  );
+  return <span className={dateClassName}>{children}</span>;
 }
 
 function getRange({

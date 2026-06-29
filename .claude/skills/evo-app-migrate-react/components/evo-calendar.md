@@ -71,14 +71,13 @@ Use React-style controlled/uncontrolled props for selection and visible month st
 
 ## Static day links
 
-`linkBuilder` still controls which static days render as links. Use `dayLinkAs` when routing link components need custom props.
+Use `linkBuilder` for native anchor links, or `dayLinkAs` when routing link components can derive their destination from `iso`. They can also be used together when `linkBuilder` should filter which days are linkable.
 
 ```tsx
-const linkBuilder = (iso) => `/day/${iso}`;
+<EvoCalendar linkBuilder={(iso) => `/day/${iso}`} />;
 
 <EvoCalendar
-  linkBuilder={linkBuilder}
-  dayLinkAs={({ iso, ...rest }) => <Link {...rest} to={linkBuilder(iso)} />}
+  dayLinkAs={({ iso, ...rest }) => <Link {...rest} to={`/day/${iso}`} />}
 />;
 ```
 

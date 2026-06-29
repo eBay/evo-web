@@ -76,12 +76,12 @@ import { EvoCalendar } from "@evo-web/react/calendar";
     linkBuilder: {
       control: false,
       description:
-        "Function `(iso: DayISO) => string | false | null | undefined` that marks linkable days when `selectMode` is not set. A falsy return renders a `<span>`.",
+        "Function `(iso: DayISO) => string | false | null | undefined` that marks native anchor days when `selectMode` is not set. A falsy return renders a `<span>`; omit `linkBuilder` if `dayLinkAs` should render every non-disabled day.",
     },
     dayLinkAs: {
       control: false,
       description:
-        "Custom component for static day links. Receives `{ iso, className, children }`, so routing links can derive their destination from `iso`.",
+        "Custom component for static day links. Receives `{ iso, className, children }`, so routing links can derive their destination from `iso`. When paired with `linkBuilder`, only days with a truthy `linkBuilder` result use `dayLinkAs`.",
     },
     a11yNavigateText: {
       control: false,

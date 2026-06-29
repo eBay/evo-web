@@ -243,8 +243,12 @@ describe("evo-calendar", () => {
     });
 
     it("renders linkable days with dayLinkAs when provided", async () => {
-      function DayLink({ iso, ...rest }: DayLinkAsProps) {
-        return <a {...rest} data-custom-link="true" href={`/custom/${iso}`} />;
+      function DayLink({ iso, children, ...rest }: DayLinkAsProps) {
+        return (
+          <a {...rest} data-custom-link="true" href={`/custom/${iso}`}>
+            {children}
+          </a>
+        );
       }
 
       const screen = await render(
@@ -258,6 +262,31 @@ describe("evo-calendar", () => {
       const link = screen.getByRole("link", { name: "15" });
       await expect.element(link).toHaveAttribute("href", "/custom/2025-01-15");
       await expect.element(link).toHaveAttribute("data-custom-link", "true");
+    });
+
+    it("renders all non-disabled days with dayLinkAs without linkBuilder", async () => {
+      function DayLink({ iso, children, ...rest }: DayLinkAsProps) {
+        return (
+          <a {...rest} data-custom-link="true" href={`/custom/${iso}`}>
+            {children}
+          </a>
+        );
+      }
+
+      const screen = await render(
+        <EvoCalendar
+          today="2025-01-15"
+          disable={{ list: ["2025-01-10"] }}
+          dayLinkAs={DayLink}
+        />,
+      );
+
+      await expect
+        .element(screen.getByRole("link", { name: "15" }))
+        .toHaveAttribute("href", "/custom/2025-01-15");
+      expect(
+        screen.container.querySelector('a[href="/custom/2025-01-10"]'),
+      ).toBeNull();
     });
   });
 });
