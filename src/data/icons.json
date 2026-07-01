@@ -337,6 +337,7 @@
         "height": "24",
         "width": "24"
       },
+      { "name": "auto-adjust-16", "size": "16", "height": "16", "width": "16" },
       { "name": "auto-adjust-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "background-removal-16",
@@ -375,6 +376,7 @@
         "width": "50"
       },
       { "name": "bank-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "bank-20", "size": "20", "height": "20", "width": "20" },
       { "name": "bank-24", "size": "24", "height": "24", "width": "24" },
       { "name": "bank-64", "size": "64", "height": "64", "width": "64" },
       {
@@ -862,6 +864,7 @@
       { "name": "copy-16", "size": "16", "height": "16", "width": "16" },
       { "name": "copy-24", "size": "24", "height": "24", "width": "24" },
       { "name": "coupon-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "coupon-20", "size": "20", "height": "20", "width": "20" },
       { "name": "coupon-24", "size": "24", "height": "24", "width": "24" },
       { "name": "credit-card-16", "size": "16", "height": "16", "width": "16" },
       { "name": "credit-card-20", "size": "20", "height": "20", "width": "20" },
@@ -1098,6 +1101,78 @@
         "size": "16-colored",
         "height": "16",
         "width": "48"
+      },
+      {
+        "name": "ebay-credit-card-black-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "ebay-credit-card-black-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "ebay-credit-card-black-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "ebay-credit-card-black-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
+      {
+        "name": "ebay-credit-card-purple-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "ebay-credit-card-purple-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "ebay-credit-card-purple-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "ebay-credit-card-purple-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
+      {
+        "name": "ebay-credit-card-white-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "ebay-credit-card-white-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "ebay-credit-card-white-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "ebay-credit-card-white-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
       },
       {
         "name": "ebay-for-charity-16",
@@ -2197,6 +2272,7 @@
         "width": "24"
       },
       { "name": "money-stack-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "money-stack-20", "size": "20", "height": "20", "width": "20" },
       { "name": "money-stack-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "money-stack-blue-12-colored",
@@ -2533,6 +2609,7 @@
         "width": "50"
       },
       { "name": "payout-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "payout-20", "size": "20", "height": "20", "width": "20" },
       { "name": "payout-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "paypal-12-colored",
@@ -2554,6 +2631,30 @@
       },
       {
         "name": "paypal-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
+      },
+      {
+        "name": "paypal-blue-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "20"
+      },
+      {
+        "name": "paypal-blue-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "30"
+      },
+      {
+        "name": "paypal-blue-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "paypal-blue-32-colored",
         "size": "32-colored",
         "height": "32",
         "width": "50"
@@ -2606,6 +2707,7 @@
         "height": "32",
         "width": "50"
       },
+      { "name": "paypal-logo-16", "size": "16", "height": "16", "width": "50" },
       {
         "name": "paypay-12-colored",
         "size": "12-colored",
@@ -2828,6 +2930,8 @@
       { "name": "rim-24", "size": "24", "height": "24", "width": "24" },
       { "name": "ringgit-16", "size": "16", "height": "16", "width": "16" },
       { "name": "ringgit-24", "size": "24", "height": "24", "width": "24" },
+      { "name": "rotate-16", "size": "16", "height": "16", "width": "16" },
+      { "name": "rotate-20", "size": "20", "height": "20", "width": "20" },
       { "name": "rotate-24", "size": "24", "height": "24", "width": "24" },
       {
         "name": "rotate-landscape-left-24",
