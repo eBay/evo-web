@@ -320,20 +320,8 @@
         "width": "16"
       },
       {
-        "name": "authenticity-guarantee-filled-16-colored",
-        "size": "16-colored",
-        "height": "16",
-        "width": "16"
-      },
-      {
         "name": "authenticity-guarantee-filled-24",
         "size": "24",
-        "height": "24",
-        "width": "24"
-      },
-      {
-        "name": "authenticity-guarantee-filled-24-colored",
-        "size": "24-colored",
         "height": "24",
         "width": "24"
       },
@@ -2254,20 +2242,8 @@
         "width": "16"
       },
       {
-        "name": "money-back-guarantee-filled-16-colored",
-        "size": "16-colored",
-        "height": "16",
-        "width": "16"
-      },
-      {
         "name": "money-back-guarantee-filled-24",
         "size": "24",
-        "height": "24",
-        "width": "24"
-      },
-      {
-        "name": "money-back-guarantee-filled-24-colored",
-        "size": "24-colored",
         "height": "24",
         "width": "24"
       },
@@ -2679,30 +2655,6 @@
       },
       {
         "name": "paypal-credit-32-colored",
-        "size": "32-colored",
-        "height": "32",
-        "width": "50"
-      },
-      {
-        "name": "paypal-disabled-12-colored",
-        "size": "12-colored",
-        "height": "12",
-        "width": "20"
-      },
-      {
-        "name": "paypal-disabled-18-colored",
-        "size": "18-colored",
-        "height": "18",
-        "width": "30"
-      },
-      {
-        "name": "paypal-disabled-24-colored",
-        "size": "24-colored",
-        "height": "24",
-        "width": "37"
-      },
-      {
-        "name": "paypal-disabled-32-colored",
         "size": "32-colored",
         "height": "32",
         "width": "50"
@@ -3404,20 +3356,8 @@
         "width": "16"
       },
       {
-        "name": "top-service-filled-16-colored",
-        "size": "16-colored",
-        "height": "16",
-        "width": "16"
-      },
-      {
         "name": "top-service-filled-24",
         "size": "24",
-        "height": "24",
-        "width": "24"
-      },
-      {
-        "name": "top-service-filled-24-colored",
-        "size": "24-colored",
         "height": "24",
         "width": "24"
       },

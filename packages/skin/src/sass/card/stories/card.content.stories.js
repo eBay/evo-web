@@ -25,7 +25,7 @@ export const maximumContent = () => `
     <div class="card__main">
         <div class="card__overline">
             <svg class="icon icon--16" height="16" width="16">
-                <use href="#icon-authenticity-guarantee-filled-16-colored" />
+                <use href="#icon-authenticity-guarantee-filled-16" />
             </svg>
             <span class="card__overline-text">Authenticity Guaranteed</span>
         </div>
