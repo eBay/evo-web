@@ -190,17 +190,20 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
                     eventData.rangeStart = iso;
                     eventData.rangeEnd = selected;
                 }
+                if (collapseOnSelect) {
+                    expander.current.expanded = false;
+                    containerRef.current?.querySelector<HTMLElement>(".ebay-date-textbox--main > .icon-btn")?.focus();
+                }
             }
             onChange(event, eventData);
         } else {
             onChange(event, {
                 selected: iso,
             });
-        }
-
-        if (collapseOnSelect) {
-            expander.current.expanded = false;
-            containerRef.current?.querySelector<HTMLElement>(".ebay-date-textbox--main > .icon-btn")?.focus();
+            if (collapseOnSelect) {
+                expander.current.expanded = false;
+                containerRef.current?.querySelector<HTMLElement>(".ebay-date-textbox--main > .icon-btn")?.focus();
+            }
         }
     };
 

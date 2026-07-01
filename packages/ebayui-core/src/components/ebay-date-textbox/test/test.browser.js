@@ -117,4 +117,70 @@ describe("ebay-date-textbox", () => {
             });
         });
     });
+
+    describe("with collapseOnSelect", () => {
+        beforeEach(async () => {
+            await page.viewport(1250, 500);
+        });
+
+        describe("when a single date is selected", () => {
+            beforeEach(async () => {
+                component = await render(Default, {
+                    value: "01/27/2024",
+                    collapseOnSelect: true,
+                });
+                await fireEvent.click(
+                    component.getByLabelText("open calendar"),
+                );
+                await fireEvent.click(component.getAllByText("16")[0]);
+            });
+
+            it("then focus returns to the calendar button", () => {
+                expect(document.activeElement).to.equal(
+                    component.getByLabelText("open calendar"),
+                );
+            });
+        });
+
+        describe("with range", () => {
+            describe("when the first date of a range is selected", () => {
+                beforeEach(async () => {
+                    component = await render(Default, {
+                        range: true,
+                        collapseOnSelect: true,
+                    });
+                    await fireEvent.click(
+                        component.getByLabelText("open calendar"),
+                    );
+                    await fireEvent.click(component.getAllByText("16")[0]);
+                });
+
+                it("then focus does not return to the calendar button", () => {
+                    expect(document.activeElement).not.to.equal(
+                        component.getByLabelText("open calendar"),
+                    );
+                });
+            });
+
+            describe("when the range is completed", () => {
+                beforeEach(async () => {
+                    component = await render(Default, {
+                        value: "01/27/2024",
+                        range: true,
+                        collapseOnSelect: true,
+                    });
+                    await fireEvent.click(
+                        component.getByLabelText("open calendar"),
+                    );
+                    await fireEvent.click(component.getAllByText("3")[1]);
+                });
+
+                it("then focus returns to the calendar button", () => {
+                    expect(document.activeElement).to.equal(
+                        component.getByLabelText("open calendar"),
+                    );
+                });
+            });
+        });
+    });
 });
