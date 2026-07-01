@@ -153,7 +153,9 @@ class DateTextbox extends Marko.Component<Input, State> {
     }
 
     focusCalendarButton() {
-        (this.getComponent("mainTextbox")?.getEl("iconBtn") as HTMLElement)?.focus();
+        (
+            this.getComponent("mainTextbox")?.getEl("iconBtn") as HTMLElement
+        )?.focus();
     }
 
     /**

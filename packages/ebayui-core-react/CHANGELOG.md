@@ -1,5 +1,13 @@
 # @ebay/ui-core-react
 
+## 9.8.2
+
+### Patch Changes
+
+- [#732](https://github.com/eBay/evo-web/pull/732) [`ad4aba6`](https://github.com/eBay/evo-web/commit/ad4aba61151cb333a56233a5f9fd4f1f11b62292) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Prevent dropdown floating styles from being applied while closed.
+
+- [#738](https://github.com/eBay/evo-web/pull/738) [`37ede5f`](https://github.com/eBay/evo-web/commit/37ede5f1407d0200dd334aae5c8c7a93a27f2a30) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(date-textbox): return focus to icon btn
+
 ## 9.8.1
 
 ### Patch Changes
