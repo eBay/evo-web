@@ -1,11 +1,11 @@
 // TODO: Check onKeydown event on non interactive table event
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+import classNames from "classnames";
 import React, { FC, FocusEvent, KeyboardEvent, MouseEvent, useEffect, useRef, useState } from "react";
 import { EbayIconButton } from "../ebay-icon-button";
-import { DayISO, fromISO, getWeekdayInfo, localeOverride, offsetISO, toISO } from "./date-utils";
-import classNames from "classnames";
 import { EbayIconChevronLeft24 } from "../ebay-icon/icons/ebay-icon-chevron-left-24";
 import { EbayIconChevronRight24 } from "../ebay-icon/icons/ebay-icon-chevron-right-24";
+import { DayISO, fromISO, getWeekdayInfo, localeOverride, offsetISO, toISO } from "./date-utils";
 
 export type EbayCalendarProps = {
     selected?: DayISO | DayISO[];
@@ -369,7 +369,7 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
                                             const isDisabled = isDayDisabled(dayISO);
                                             const a11yTexts = [
                                                 "",
-                                                isSelected && a11ySelectedText,
+                                                !interactive && isSelected && a11ySelectedText,
                                                 isRangeStart && a11yRangeStartText,
                                                 !isRangeStart && !isRangeEnd && isInRange && a11yInRangeText,
                                                 isRangeEnd && a11yRangeEndText,

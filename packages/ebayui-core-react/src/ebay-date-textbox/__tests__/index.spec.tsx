@@ -65,6 +65,41 @@ describe("<EbayDateTextbox />", () => {
         expect(container.querySelector(".date-textbox__popover")).toHaveAttribute("hidden");
     });
 
+    describe("focus management", () => {
+        it("should return focus to the calendar button when selecting a date and collapseOnSelect is true", () => {
+            render(<EbayDateTextbox collapseOnSelect />);
+            fireEvent.click(screen.getByLabelText("open calendar"));
+            fireEvent.click(screen.getByText("1"));
+
+            expect(screen.getByLabelText("open calendar")).toHaveFocus();
+        });
+
+        it("should not return focus to the calendar button when selecting the first date of a range", () => {
+            render(<EbayDateTextbox range collapseOnSelect />);
+            fireEvent.click(screen.getByLabelText("open calendar"));
+            fireEvent.click(screen.getByText("1"));
+
+            expect(screen.getByLabelText("open calendar")).not.toHaveFocus();
+        });
+
+        it("should return focus to the calendar button when completing a range and collapseOnSelect is true", () => {
+            render(<EbayDateTextbox range collapseOnSelect />);
+            fireEvent.click(screen.getByLabelText("open calendar"));
+            fireEvent.click(screen.getByText("1"));
+            fireEvent.click(screen.getByText("2"));
+
+            expect(screen.getByLabelText("open calendar")).toHaveFocus();
+        });
+    });
+
+    it("should not close the calendar when selecting the first date of a range and collapseOnSelect is true", () => {
+        const { container } = render(<EbayDateTextbox range collapseOnSelect />);
+        fireEvent.click(screen.getByLabelText("open calendar"));
+
+        fireEvent.click(screen.getByText("1"));
+        expect(container.querySelector(".date-textbox__popover")).not.toHaveAttribute("hidden");
+    });
+
     it("should close the calendar when selecting a range and collapseOnSelect is true", () => {
         const { container } = render(<EbayDateTextbox range collapseOnSelect />);
         fireEvent.click(screen.getByLabelText("open calendar"));

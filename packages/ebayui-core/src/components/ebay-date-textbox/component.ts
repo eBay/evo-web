@@ -1,13 +1,13 @@
 import Expander from "makeup-expander";
-import { DropdownUtil } from "../../common/dropdown";
+import { getLocale, parse } from "../../common/dates";
 import { type DayISO, dateArgToISO } from "../../common/dates/date-utils";
+import { DropdownUtil } from "../../common/dropdown";
 import type { WithNormalizedProps } from "../../global";
+import type { Input as CalendarInput } from "../ebay-calendar/component";
 import type {
     TextboxEvent,
     Input as TextboxInput,
 } from "../ebay-textbox/component-browser";
-import type { Input as CalendarInput } from "../ebay-calendar/component";
-import { getLocale, parse } from "../../common/dates";
 
 const MIN_WIDTH_FOR_DOUBLE_PANE = 600;
 
@@ -141,13 +141,19 @@ class DateTextbox extends Marko.Component<Input, State> {
                 }
                 if (this.input.collapseOnSelect) {
                     this.expander.expanded = false;
+                    this.focusCalendarButton();
                 }
             }
         } else if (this.input.collapseOnSelect) {
             this.expander.expanded = false;
+            this.focusCalendarButton();
         }
 
         this.emitSelectedChange();
+    }
+
+    focusCalendarButton() {
+        (this.getComponent("mainTextbox")?.getEl("iconBtn") as HTMLElement)?.focus();
     }
 
     /**

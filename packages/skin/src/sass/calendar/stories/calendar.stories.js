@@ -244,7 +244,8 @@ export const interactive = () => /* HTML */ `
                             >
                                 <button
                                     tabindex="-1"
-                                    aria-label="23 - selected - start of range"
+                                    aria-label="23 - start of range"
+                                    aria-pressed="true"
                                 >
                                     23
                                 </button>
@@ -280,7 +281,8 @@ export const interactive = () => /* HTML */ `
                             >
                                 <button
                                     tabindex="-1"
-                                    aria-label="27 - selected - end of range"
+                                    aria-label="27 - end of range"
+                                    aria-pressed="true"
                                 >
                                     27
                                 </button>
