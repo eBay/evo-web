@@ -3,7 +3,7 @@
 import { EvoIcon } from "../icon";
 import type { EvoIconComponentProps } from "./types";
 
-const SYMBOL = `<symbol viewBox="0 0 24 24" id="icon-rotate-24"><path d="M16.7 3.69 15.39 5a9 9 0 1 1-7.14 15 1.016 1.016 0 1 1 1.5-1.37A7 7 0 1 0 15.44 7l1.26 1.28a1 1 0 0 1-1.41 1.41l-3-3a1 1 0 0 1 0-1.41l3-3a1 1 0 0 1 1.41 1.41Zm-4.99 6.6-5-5a1 1 0 0 0-1.41 0l-5 5a1 1 0 0 0 0 1.41l5 5a1 1 0 0 0 1.41 0l5-5a1 1 0 0 0 0-1.41ZM6 14.59 2.41 11 6 7.41 9.59 11 6 14.59Z"/></symbol>`;
+const SYMBOL = `<symbol viewBox="0 0 24 24" id="icon-rotate-24"><path d="M15.293 1.293a1 1 0 1 1 1.414 1.414L15.414 4h.086c5.054 0 8.5 4.116 8.5 9a9 9 0 0 1-15.75 5.953 1 1 0 0 1 1.5-1.323A7 7 0 0 0 22 13c0-3.953-2.717-7-6.5-7h-.086l1.293 1.293a1 1 0 1 1-1.414 1.414l-3-3a1 1 0 0 1 0-1.414l3-3ZM5.369 4.225a1 1 0 0 1 1.338.068l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 0-1.414l5-5 .076-.068ZM2.414 10 6 13.586 9.586 10 6 6.414 2.414 10Z"/></symbol>`;
 
 export function EvoIconRotate24(props: EvoIconComponentProps) {
   return <EvoIcon {...props} __name="rotate24" __symbol={SYMBOL} />;
