@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.9.2
+
+### Patch Changes
+
+- [#738](https://github.com/eBay/evo-web/pull/738) [`37ede5f`](https://github.com/eBay/evo-web/commit/37ede5f1407d0200dd334aae5c8c7a93a27f2a30) Thanks [@saiponnada](https://github.com/saiponnada)! - fix(date-textbox): return focus to icon btn
+
 ## 16.9.1
 
 ### Patch Changes
