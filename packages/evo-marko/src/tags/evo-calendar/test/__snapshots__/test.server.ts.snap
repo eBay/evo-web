@@ -259,6 +259,7 @@ exports[`evo-calendar SSR > renders interactive mode with selectMode=day 1`] = `
             <td>
               <button
                 aria-label="1"
+                tabindex="-1"
                 type="button"
               >
                 1
@@ -389,7 +390,6 @@ exports[`evo-calendar SSR > renders interactive mode with selectMode=day 1`] = `
               <button
                 aria-current="date"
                 aria-label="15"
-                tabindex="-1"
                 type="button"
               >
                 15
@@ -1004,6 +1004,7 @@ exports[`evo-calendar SSR > renders with a selected date 1`] = `
             <td>
               <button
                 aria-label="1"
+                tabindex="-1"
                 type="button"
               >
                 1
@@ -1137,7 +1138,6 @@ exports[`evo-calendar SSR > renders with a selected date 1`] = `
               <button
                 aria-current="date"
                 aria-label="15"
-                tabindex="-1"
                 type="button"
               >
                 15
@@ -1346,6 +1346,7 @@ exports[`evo-calendar SSR > renders with a selected range 1`] = `
             <td>
               <button
                 aria-label="1"
+                tabindex="-1"
                 type="button"
               >
                 1
@@ -1494,7 +1495,6 @@ exports[`evo-calendar SSR > renders with a selected range 1`] = `
               <button
                 aria-current="date"
                 aria-label="15"
-                tabindex="-1"
                 type="button"
               >
                 15
@@ -1704,6 +1704,7 @@ exports[`evo-calendar SSR > renders with disabled dates 1`] = `
               <button
                 aria-label="1"
                 disabled=""
+                tabindex="-1"
                 type="button"
               >
                 1
@@ -1837,7 +1838,6 @@ exports[`evo-calendar SSR > renders with disabled dates 1`] = `
               <button
                 aria-current="date"
                 aria-label="15"
-                tabindex="-1"
                 type="button"
               >
                 15

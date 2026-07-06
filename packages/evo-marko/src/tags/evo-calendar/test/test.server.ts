@@ -46,7 +46,7 @@ describe("evo-calendar SSR", () => {
     it("renders multi-month view", async () => {
         await snapshotHTML(template, {
             today: "2025-01-15",
-            numMonths: 2,
+            visibleMonthCount: 2,
         });
     });
 });

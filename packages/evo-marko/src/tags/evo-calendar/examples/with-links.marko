@@ -1,5 +1,5 @@
 <evo-calendar
-    ...input
-    linkBuilder=((iso) => `https://www.ebay.com/sch/i.html?_nkw=${iso}`)
-    a11yNavigateText=((month, dir) => `${dir === "prev" ? "Previous" : "Next"}: ${month}`)
-/>
+  ...input
+  getDayHref=(iso) => `https://www.ebay.com/sch/i.html?_nkw=${iso}`
+  a11yNavigateText=(month, dir) =>
+    `${dir === "prev" ? "Previous" : "Next"}: ${month}`/>

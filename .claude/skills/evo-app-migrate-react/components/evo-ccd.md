@@ -3,7 +3,7 @@
 **Before:**
 
 ```tsx
-import { EbayCCD } from "@ebay/ebayui-core-react/ebay-ccd";
+import { EbayCCD } from "@ebay/ui-core-react/ebay-ccd";
 
 <EbayCCD
   chargerIcon="included"

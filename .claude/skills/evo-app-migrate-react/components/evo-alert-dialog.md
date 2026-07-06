@@ -3,9 +3,9 @@
 ## Import path
 
 ```diff
-- import { EbayAlertDialog } from "@ebay/ebayui-core-react/ebay-alert-dialog";
-- import { EbayDialogHeader, EbayDialogFooter } from "@ebay/ebayui-core-react/ebay-dialog-base";
-- import { EbayButton } from "@ebay/ebayui-core-react/ebay-button";
+- import { EbayAlertDialog } from "@ebay/ui-core-react/ebay-alert-dialog";
+- import { EbayDialogHeader, EbayDialogFooter } from "@ebay/ui-core-react/ebay-dialog-base";
+- import { EbayButton } from "@ebay/ui-core-react/ebay-button";
 + import {
 +   EvoAlertDialog,
 +   EvoAlertDialogHeader,

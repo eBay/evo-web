@@ -3,8 +3,8 @@
 ## Import path
 
 ```diff
-- import { EbayConfirmDialog } from "@ebay/ebayui-core-react/ebay-confirm-dialog";
-- import { EbayDialogHeader } from "@ebay/ebayui-core-react/ebay-dialog-base";
+- import { EbayConfirmDialog } from "@ebay/ui-core-react/ebay-confirm-dialog";
+- import { EbayDialogHeader } from "@ebay/ui-core-react/ebay-dialog-base";
 + import {
 +   EvoConfirmDialog,
 +   EvoConfirmDialogHeader,

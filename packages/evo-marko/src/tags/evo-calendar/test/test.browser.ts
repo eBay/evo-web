@@ -1,12 +1,25 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { render, cleanup } from "@marko/testing-library";
+import { userEvent, type UserEvent } from "vitest/browser";
 import template from "../index.marko";
 
-afterEach(cleanup);
-
 let component: Awaited<ReturnType<typeof render>>;
+let user: UserEvent;
+
+afterEach(() => {
+    user?.cleanup();
+    cleanup();
+});
+
+function getDayButton(iso: string) {
+    const day = String(Number(iso.slice(8, 10)));
+    return component.getByRole("button", { name: new RegExp(`^${day}$`) }) as HTMLButtonElement;
+}
 
 describe("evo-calendar", () => {
+    beforeEach(() => {
+        user = userEvent.setup();
+    });
     describe("given a default non-interactive calendar", () => {
         beforeEach(async () => {
             component = await render(template);
@@ -43,16 +56,21 @@ describe("evo-calendar", () => {
             expect(today).toHaveAttribute("aria-current", "date");
         });
 
-        it("renders day buttons with roving tabindex pattern", () => {
-            // Get all buttons and filter to day buttons by checking they contain only digits
-            const allButtons = component.getAllByRole("button") as HTMLButtonElement[];
-            const dayButtons = allButtons.filter((b) => /^\d+$/.test(b.textContent?.trim() || ""));
-            
-            // Day buttons should have tabindex 0 or -1
-            const hasTabindex0 = dayButtons.some((b) => b.getAttribute("tabindex") === "0");
-            const hasTabindexMinus1 = dayButtons.some((b) => b.getAttribute("tabindex") === "-1");
-            
-            expect(hasTabindex0 || hasTabindexMinus1).toBe(true);
+        it("starts the roving tabindex on today", () => {
+            const today = getDayButton("2025-01-15");
+            const firstDay = getDayButton("2025-01-01");
+
+            expect(today.getAttribute("tabindex")).toBeNull();
+            expect(firstDay.getAttribute("tabindex")).toBe("-1");
+        });
+
+        it("preserves focused day of month when PageDown navigates to next month", async () => {
+            const today = getDayButton("2025-01-15");
+            today.focus();
+            await user.keyboard("{PageDown}");
+
+            expect(component.getByText("February 2025")).toBeTruthy();
+            expect(getDayButton("2025-02-15").getAttribute("tabindex")).toBeNull();
         });
     });
 
@@ -83,6 +101,20 @@ describe("evo-calendar", () => {
         it("renders two navigation icon buttons (prev/next)", () => {
             const navButtons = component.getAllByRole("button").slice(0, 2);
             expect(navButtons.length).toBeGreaterThanOrEqual(2);
+        });
+
+        it("moves to the next month with ArrowRight from the last day", async () => {
+            const today = getDayButton("2025-01-15");
+            today.focus();
+            await user.keyboard("{End}");
+
+            const lastDay = getDayButton("2025-01-31");
+            expect(lastDay.getAttribute("tabindex")).toBeNull();
+
+            await user.keyboard("{ArrowRight}");
+
+            expect(component.getAllByText("February 2025").length).toBeGreaterThan(0);
+            expect(getDayButton("2025-02-01").getAttribute("tabindex")).toBeNull();
         });
     });
 
@@ -136,11 +168,11 @@ describe("evo-calendar", () => {
         });
     });
 
-    describe("given a non-interactive calendar with linkBuilder", () => {
+    describe("given a non-interactive calendar with getDayHref", () => {
         beforeEach(async () => {
             component = await render(template, {
                 today: "2025-01-15",
-                linkBuilder: (iso: string) =>
+                getDayHref: (iso: string) =>
                     iso === "2025-01-15"
                         ? `https://www.ebay.com/sch/i.html?_nkw=${iso}`
                         : false,

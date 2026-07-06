@@ -24,7 +24,7 @@ export default {
       description:
         'When set, day cells render as `<button>` elements for date selection. `"day"` selects a single date; `"range"` selects a start/end range. Omit for a non-interactive calendar.',
     },
-    numMonths: {
+    visibleMonthCount: {
       type: "number",
       control: "number",
       description: "Number of months to display simultaneously.",
@@ -34,7 +34,7 @@ export default {
       type: "string",
       control: "text",
       description:
-        "BCP 47 locale string used for month/weekday labels and first day of week.",
+        "[BCP 47 language tag](https://developer.mozilla.org/en-US/docs/Glossary/BCP_47_language_tag) used for month/weekday labels and first day of week.",
       table: { defaultValue: { summary: "navigator.language || 'en-US'" } },
     },
     today: {
@@ -49,7 +49,7 @@ export default {
       description:
         "The selected date(s). Accepts a single `DayISO` string or a `{ from: DayISO; to: DayISO }` range object.",
     },
-    viewStart: {
+    visibleMonth: {
       controllable: true,
       type: "string",
       control: "text",
@@ -61,7 +61,7 @@ export default {
       description:
         "Config for disabling dates: `{ before?: DayISO, after?: DayISO, weekdays?: number[], list?: DayISO[], callback?: (iso) => boolean }`. Weekdays: 0=Sun … 6=Sat.",
     },
-    linkBuilder: {
+    getDayHref: {
       control: false,
       description:
         "Function `(iso: DayISO) => string | false | null | undefined` that returns an href for each day when `selectMode` is not set. A falsy return renders a `<span>`.",
