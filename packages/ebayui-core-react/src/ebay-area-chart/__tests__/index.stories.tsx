@@ -94,6 +94,11 @@ import { EbayAreaChart } from "@ebay/ui-core-react/ebay-area-chart";
                 'Custom function to format the date header in the tooltip. Defaults to `"Jan 1, 2022"` format.',
             table: { category: "Callbacks" },
         },
+        renderTooltipOutside: {
+            description:
+                "When `true` (default), renders the tooltip outside the chart SVG to prevent clipping. Set to `false` when rendering inside a modal or dialog.",
+            control: "boolean",
+        },
         highchartOptions: {
             description:
                 "Escape hatch for passing raw Highcharts options. Deep-merged into the default config — use sparingly.",

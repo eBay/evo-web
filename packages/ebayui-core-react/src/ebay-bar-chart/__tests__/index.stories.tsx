@@ -1,4 +1,8 @@
+import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
+import { EbayButton } from "../../ebay-button";
+import { EbayDialogHeader } from "../../ebay-dialog-base";
+import { EbayLightboxDialog } from "../../ebay-lightbox-dialog";
 import { EbayBarChart } from "../index";
 import type { EbayBarChartProps, BarChartSeriesItem } from "../types";
 
@@ -82,6 +86,11 @@ import { EbayBarChart } from "@ebay/ui-core-react/ebay-bar-chart";
         },
         stacked: {
             description: "When `true`, bars stack vertically; when `false`, bars render side-by-side. Default: `false`",
+            control: "boolean",
+        },
+        renderTooltipOutside: {
+            description:
+                "When `true` (default), renders the tooltip outside the chart SVG to prevent clipping. Set to `false` when rendering inside a modal or dialog.",
             control: "boolean",
         },
     },
@@ -249,6 +258,21 @@ function getSeriesData(seriesCount: number, days: number): BarChartSeriesItem[] 
     }));
 }
 
+function BarChartInsideLightbox(args: EbayBarChartProps) {
+    const [open, setOpen] = useState(false);
+    const close = () => setOpen(false);
+
+    return (
+        <div>
+            <EbayButton onClick={() => setOpen(true)}>Open Chart Dialog</EbayButton>
+            <EbayLightboxDialog open={open} onClose={close} a11yCloseText="Close chart dialog" size="wide">
+                <EbayDialogHeader>Bar chart in lightbox</EbayDialogHeader>
+                <EbayBarChart {...args} />
+            </EbayLightboxDialog>
+        </div>
+    );
+}
+
 // Single series stories
 export const SingleSeriesFiveDays: StoryObj<EbayBarChartProps> = {
     args: {
@@ -335,6 +359,24 @@ export const WithTitle: StoryObj<EbayBarChartProps> = {
         description: "Daily revenue breakdown across product categories",
         series: getSeriesData(3, 8),
     },
+};
+
+export const InsideLightboxDialog: StoryObj<EbayBarChartProps> = {
+    args: {
+        title: "Revenue Over Time",
+        description: "Daily revenue breakdown across product categories inside a lightbox dialog",
+        series: getSeriesData(3, 8),
+        yAxisLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
+        renderTooltipOutside: false,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: "Modal usage story for GH-740: the bar chart is mounted in a closed lightbox dialog, then displayed when the dialog opens. Set `renderTooltipOutside` to `false` when rendering inside a modal or dialog.",
+            },
+        },
+    },
+    render: (args) => <BarChartInsideLightbox {...args} />,
 };
 
 // Custom x-axis format

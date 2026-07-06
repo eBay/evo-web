@@ -79,7 +79,8 @@ import { EbayLineChart } from "@ebay/ui-core-react/ebay-line-chart";
             control: "boolean",
         },
         renderTooltipOutside: {
-            description: "When `true` (default), renders the tooltip outside the chart SVG to prevent clipping.",
+            description:
+                "When `true` (default), renders the tooltip outside the chart SVG to prevent clipping. Set to `false` when rendering inside a modal or dialog.",
             control: "boolean",
         },
         xAxisLabelFormat: {

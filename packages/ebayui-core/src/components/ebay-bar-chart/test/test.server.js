@@ -35,3 +35,17 @@ describe("ebay-bar-chart y-axis config", () => {
         expect(chart.getYAxisConfig(threeSeriesWithSharedX).max).toBe(50);
     });
 });
+
+describe("ebay-bar-chart tooltip config", () => {
+    it("defaults tooltip outside to true", () => {
+        const chart = createBarChart();
+
+        expect(chart.getTooltipConfig().outside).toBe(true);
+    });
+
+    it("sets tooltip outside=false when renderTooltipOutside is false", () => {
+        const chart = createBarChart({ renderTooltipOutside: false });
+
+        expect(chart.getTooltipConfig().outside).toBe(false);
+    });
+});

@@ -29,6 +29,7 @@ interface DonutChartInput extends Omit<
     version?: string;
     series: SeriesDonutOptions[];
     highchartsDescription?: string;
+    renderTooltipOutside?: boolean;
 }
 
 export interface Input extends WithNormalizedProps<DonutChartInput> {}
@@ -175,7 +176,7 @@ class DonutChart extends Marko.Component<Input> {
             padding: 0,
             borderWidth: 0,
             borderRadius: 0,
-            outside: true,
+            outside: this.input.renderTooltipOutside !== false,
             shadow: false,
             shared: true,
             style: {

@@ -71,6 +71,11 @@ import { EbayDonutChart } from "@ebay/ui-core-react/ebay-donut-chart";
             description: "Accessible description passed to the Highcharts plot options for screen readers.",
             control: "text",
         },
+        renderTooltipOutside: {
+            description:
+                "When `true` (default), renders the tooltip outside the chart SVG to prevent clipping. Set to `false` when rendering inside a modal or dialog.",
+            control: "boolean",
+        },
     },
     globals: {
         a11y: {

@@ -28,5 +28,6 @@
     },
     "@class": "string",
     "@series": "string",
-    "@description": "string"
+    "@description": "string",
+    "@renderTooltipOutside": "boolean"
 }

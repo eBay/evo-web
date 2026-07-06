@@ -97,6 +97,18 @@ describe("ebay-area-chart rendering", () => {
         expect(callProps.highcharts).toBeDefined();
     });
 
+    it("defaults tooltip outside to true", () => {
+        render(<EbayAreaChart series={sampleSeries} />);
+        const callProps = MockChart.mock.calls[0][0];
+        expect(callProps.options.tooltip.outside).toBe(true);
+    });
+
+    it("sets tooltip outside=false when renderTooltipOutside is false", () => {
+        render(<EbayAreaChart series={sampleSeries} renderTooltipOutside={false} />);
+        const callProps = MockChart.mock.calls[0][0];
+        expect(callProps.options.tooltip.outside).toBe(false);
+    });
+
     it("disables legend for single series", () => {
         render(<EbayAreaChart series={sampleSeries} />);
         const callProps = MockChart.mock.calls[0][0];

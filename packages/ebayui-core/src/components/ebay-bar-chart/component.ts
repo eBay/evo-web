@@ -43,6 +43,7 @@ interface BarChartInput extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
     "cdn-highcharts-pattern-fill"?: string;
     version?: string;
     stacked?: boolean;
+    renderTooltipOutside?: boolean;
 }
 
 export interface Input extends WithNormalizedProps<BarChartInput> {}
@@ -305,7 +306,7 @@ class BarChart extends Marko.Component<Input> {
             backgroundColor: tooltipBackgroundColor, // sets tooltip background color
             borderWidth: 0, // hide the default border stroke
             borderRadius: 10, // set the border radius of the tooltip
-            outside: true, // used to render the tooltip outside of the main SVG element
+            outside: this.input.renderTooltipOutside !== false, // used to render the tooltip outside of the main SVG element
             shadow: false, // hide the default shadow as it conflicts with designs
             style: {
                 filter: tooltipShadows, // sets tooltip shadows

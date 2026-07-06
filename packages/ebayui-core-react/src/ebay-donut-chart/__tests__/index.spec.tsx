@@ -109,6 +109,18 @@ describe("ebay-donut-chart rendering", () => {
         expect(callProps.options.chart.type).toBe("pie");
     });
 
+    it("defaults tooltip outside to true", () => {
+        render(<EbayDonutChart series={sampleSeries} />);
+        const callProps = MockChart.mock.calls[0][0];
+        expect(callProps.options.tooltip.outside).toBe(true);
+    });
+
+    it("sets tooltip outside=false when renderTooltipOutside is false", () => {
+        render(<EbayDonutChart series={sampleSeries} renderTooltipOutside={false} />);
+        const callProps = MockChart.mock.calls[0][0];
+        expect(callProps.options.tooltip.outside).toBe(false);
+    });
+
     it("logs a warning when multiple series provided", () => {
         const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
         render(<EbayDonutChart series={[...sampleSeries, ...sampleSeries]} />);

@@ -12,4 +12,6 @@ export type EbayDonutChartProps = Omit<ComponentProps<"div">, "title"> & {
     metricLabel?: ReactNode;
     series: DonutSeriesItem[];
     highchartsDescription?: string;
+    /** When true, renders the tooltip outside the chart SVG to prevent clipping. Default: true */
+    renderTooltipOutside?: boolean;
 };

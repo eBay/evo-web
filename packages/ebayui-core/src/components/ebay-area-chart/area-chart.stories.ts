@@ -79,6 +79,16 @@ export default {
             description:
                 "The type of area chart to display. By default is `spline`. Options are `spline` and `area`",
         },
+        renderTooltipOutside: {
+            type: { name: "boolean", required: false },
+            description:
+                "Defaults to `true`, if set to false the tooltip will render inside the chart container. Set to `false` when rendering in a modal.",
+            table: {
+                defaultValue: {
+                    summary: "true",
+                },
+            },
+        },
         class: {
             type: { name: "string", require: false },
             description:

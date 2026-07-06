@@ -37,4 +37,6 @@ export type EbayBarChartProps = Omit<ComponentProps<"div">, "title"> & {
     yAxisPositioner?: () => number[];
     /** When true, bars stack vertically; when false, bars render side-by-side. Default: false */
     stacked?: boolean;
+    /** When true, renders the tooltip outside the chart SVG to prevent clipping. Default: true */
+    renderTooltipOutside?: boolean;
 };

@@ -80,6 +80,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
     xLabelFormatter,
     yLabelFormatter = defaultYLabelFormatter,
     areaType = "areaspline",
+    renderTooltipOutside = true,
     highchartOptions,
     className,
     ...rest
@@ -153,7 +154,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
             backgroundColor: tooltipBackgroundColor,
             borderWidth: 0,
             borderRadius: 10,
-            outside: true,
+            outside: renderTooltipOutside,
             shadow: false,
             shared: true,
             style: { filter: tooltipShadows, fontSize: "12px" },
@@ -201,6 +202,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
         yLabelFormatter,
         tooltipValueFormatter,
         tooltipTitleFormatter,
+        renderTooltipOutside,
         highchartOptions,
     ]);
 

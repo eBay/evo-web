@@ -8,6 +8,7 @@ type EbayAreaChartBaseProps = Omit<ComponentProps<"div">, "title"> & {
     tooltipTitleFormatter?: (value: number | string, dateFormat: typeof Highcharts.dateFormat) => string;
     xLabelFormatter?: (value: number | string, dateFormat: typeof Highcharts.dateFormat) => string;
     yLabelFormatter?: (value: number | string) => string;
+    renderTooltipOutside?: boolean;
     highchartOptions?: Highcharts.Options;
 };
 

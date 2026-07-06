@@ -38,6 +38,7 @@ interface AreaChartInput extends Omit<Marko.HTML.Div, `on${string}`> {
     yLabelFormatter?: (value: string | number) => string;
     areaType?: "areaspline" | "area";
     highchartOptions?: Highcharts.Options;
+    renderTooltipOutside?: boolean;
     "cdn-highcharts"?: string;
     "cdn-highcharts-accessibility"?: string;
     "cdn-highcharts-pattern-fill"?: string;
@@ -336,7 +337,7 @@ class AreaChart extends Marko.Component<Input> {
             backgroundColor: tooltipBackgroundColor,
             borderWidth: 0,
             borderRadius: 10,
-            outside: true,
+            outside: this.input.renderTooltipOutside !== false,
             shadow: false,
             shared: true,
             style: {

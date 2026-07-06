@@ -18,5 +18,6 @@
     "@xAxisLabelFormat": "string",
     "@xAxisPositioner": "function",
     "@yAxisLabels": "array",
-    "@yAxisPositioner": "function"
+    "@yAxisPositioner": "function",
+    "@renderTooltipOutside": "boolean"
 }
