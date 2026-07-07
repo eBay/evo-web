@@ -134,6 +134,7 @@
     --color-scrim-background: rgba(0, 0, 0, 0.64);
     --color-state-layer-focus-on-strong: rgba(0, 0, 0, 0.08);
     --color-state-layer-focus: rgba(255, 255, 255, 0.08);
+    --color-state-layer-hover-on-selected: rgba(255, 255, 255, 0.32);
     --color-state-layer-hover-on-strong: rgba(0, 0, 0, 0.08);
     --color-state-layer-hover: rgba(255, 255, 255, 0.08);
     --color-state-layer-pressed-on-strong: rgba(0, 0, 0, 0.12);
