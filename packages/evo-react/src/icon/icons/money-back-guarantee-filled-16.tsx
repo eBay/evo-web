@@ -3,7 +3,7 @@
 import { EvoIcon } from "../icon";
 import type { EvoIconComponentProps } from "./types";
 
-const SYMBOL = `<symbol viewBox="0 0 16 16" id="icon-money-back-guarantee-filled-16"><path d="M7.008.356a1.559 1.559 0 0 1 1.984 0c1.607 1.33 3.721 1.74 4.655 1.855.733.09 1.353.71 1.353 1.516v4.272c0 1.288-.335 2.667-1.307 4.026-.96 1.342-2.5 2.61-4.82 3.769a1.955 1.955 0 0 1-1.746 0c-2.32-1.158-3.86-2.427-4.82-3.77C1.336 10.666 1 9.287 1 8V3.727C1 2.92 1.62 2.3 2.353 2.21 3.287 2.096 5.4 1.687 7.008.356Z" fill="#0968F6"/><path d="M11.207 5.792a1 1 0 0 1 0 1.414l-3.5 3.5a1 1 0 0 1-1.414 0l-1.5-1.5a1 1 0 0 1 1.414-1.414L7 8.585l2.793-2.793a1 1 0 0 1 1.414 0Z" fill="#fff"/></symbol>`;
+const SYMBOL = `<symbol viewBox="0 0 16 16" id="icon-money-back-guarantee-filled-16"><path d="M7.008.356a1.559 1.559 0 0 1 1.984 0c1.607 1.33 3.721 1.74 4.655 1.855.733.09 1.353.71 1.353 1.516v4.272c0 1.288-.335 2.667-1.307 4.026-.96 1.342-2.5 2.61-4.82 3.769a1.955 1.955 0 0 1-1.746 0c-2.32-1.158-3.86-2.427-4.82-3.77C1.336 10.666 1 9.287 1 8V3.727C1 2.92 1.62 2.3 2.353 2.21 3.287 2.096 5.4 1.687 7.008.356Z" fill="var(--color-background-accent, #0968f6)"/><path d="M11.207 5.792a1 1 0 0 1 0 1.414l-3.5 3.5a1 1 0 0 1-1.414 0l-1.5-1.5a1 1 0 0 1 1.414-1.414L7 8.585l2.793-2.793a1 1 0 0 1 1.414 0Z" fill="var(--color-foreground-on-accent, #ffffff)"/></symbol>`;
 
 export function EvoIconMoneyBackGuaranteeFilled16(props: EvoIconComponentProps) {
   return <EvoIcon {...props} __name="moneyBackGuaranteeFilled16" __symbol={SYMBOL} />;

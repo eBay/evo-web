@@ -3,7 +3,7 @@
 import { EvoIcon } from "../icon";
 import type { EvoIconComponentProps } from "./types";
 
-const SYMBOL = `<symbol viewBox="0 0 24 24" id="icon-money-back-guarantee-filled-24"><path d="M10.852.348a2.068 2.068 0 0 1 2.296 0c3.296 2.204 6.483 2.909 7.578 3.097A1.53 1.53 0 0 1 22 4.945v6.04c0 2.788-.571 5.186-2.059 7.316-1.473 2.11-3.779 3.86-7.063 5.489a1.98 1.98 0 0 1-1.756 0c-3.284-1.63-5.59-3.38-7.062-5.49C2.57 16.171 2 13.773 2 10.986V4.945c0-.769.57-1.38 1.274-1.5 1.095-.188 4.282-.893 7.578-3.097Z" fill="#0968F6"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.711 8.62a1 1 0 0 1 0 1.413l-5.338 5.339a1 1 0 0 1-1.415 0l-2.669-2.67a1 1 0 1 1 1.414-1.414l1.962 1.963 4.632-4.632a1 1 0 0 1 1.414 0Z" fill="#fff"/></symbol>`;
+const SYMBOL = `<symbol viewBox="0 0 24 24" id="icon-money-back-guarantee-filled-24"><path d="M10.852.348a2.068 2.068 0 0 1 2.296 0c3.296 2.204 6.483 2.909 7.578 3.097A1.53 1.53 0 0 1 22 4.945v6.04c0 2.788-.571 5.186-2.059 7.316-1.473 2.11-3.779 3.86-7.063 5.489a1.98 1.98 0 0 1-1.756 0c-3.284-1.63-5.59-3.38-7.062-5.49C2.57 16.171 2 13.773 2 10.986V4.945c0-.769.57-1.38 1.274-1.5 1.095-.188 4.282-.893 7.578-3.097Z" fill="var(--color-background-accent, #0968f6)"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.711 8.62a1 1 0 0 1 0 1.413l-5.338 5.339a1 1 0 0 1-1.415 0l-2.669-2.67a1 1 0 1 1 1.414-1.414l1.962 1.963 4.632-4.632a1 1 0 0 1 1.414 0Z" fill="var(--color-foreground-on-accent, #ffffff)"/></symbol>`;
 
 export function EvoIconMoneyBackGuaranteeFilled24(props: EvoIconComponentProps) {
   return <EvoIcon {...props} __name="moneyBackGuaranteeFilled24" __symbol={SYMBOL} />;
