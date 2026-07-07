@@ -112,7 +112,7 @@ jobs:
             if [ -z "$id" ]; then
               # Query by exact commit SHA; the legacy /pages/builds/latest endpoint
               # isn't a reliable per-commit signal.
-              id=$(gh_api "${api}/deployments?sha=${sha}&environment=github-pages" | jq -r '.[0].id // empty')
+              id=$(gh_api "${api}/deployments?sha=${sha}&environment=github-pages" | jq -r 'if type=="array" and length>0 then .[0].id else empty end')
               if [ -z "$id" ]; then
                 echo "No GitHub Pages deployment recorded yet for ${sha} (attempt ${attempt}/30)..."
                 sleep 10
@@ -120,7 +120,7 @@ jobs:
               fi
             fi
 
-            state=$(gh_api "${api}/deployments/${id}/statuses" | jq -r '.[0].state // empty')
+            state=$(gh_api "${api}/deployments/${id}/statuses" | jq -r 'if type=="array" and length>0 then .[0].state else empty end')
 
             if [ "$state" = "success" ]; then
               echo "GitHub Pages deployment for ${sha} succeeded."
