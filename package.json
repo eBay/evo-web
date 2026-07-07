@@ -16,7 +16,7 @@
     "deploy": "copyfiles src/data/component-metadata.json public/ -u 2 && npm run deploy:build && npm run deploy:copy-site",
     "deploy:build": "concurrently --kill-others-on-fail \"marko-run build -o ./_site\" \"npm run deploy -w packages/skin\" \"npm run deploy -w packages/ebayui-core\" \"npm run deploy -w packages/evo-marko\" \"npm run deploy -w packages/ebayui-core-react\" \"npm run deploy -w packages/evo-react\"",
     "deploy:copy-site": "copyfiles packages/skin/_site/public _site/public/skin-storybook -u 4 && copyfiles packages/ebayui-core/_site _site/public/ebayui-core -u 3 && copyfiles packages/evo-marko/_site _site/public/marko -u 3 && copyfiles packages/ebayui-core-react/_site _site/public/ebayui-core-react -u 3 && copyfiles packages/evo-react/_site _site/public/react -u 3",
-    "postinstall": "npx playwright install chromium",
+    "postinstall": "npx playwright install --with-deps chromium",
     "lint": "stylelint src --config .stylelintrc",
     "prepare": "husky",
     "release": "npm run release --ws --if-present && changeset publish",
