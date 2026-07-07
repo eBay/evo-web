@@ -110,7 +110,9 @@ import { EvoIconAudioOff24 } from "./icons/audio-off-24";
 import { EvoIconAuthenticityGuarantee16 } from "./icons/authenticity-guarantee-16";
 import { EvoIconAuthenticityGuarantee24 } from "./icons/authenticity-guarantee-24";
 import { EvoIconAuthenticityGuaranteeFilled16 } from "./icons/authenticity-guarantee-filled-16";
+import { EvoIconAuthenticityGuaranteeFilled16Colored } from "./icons/authenticity-guarantee-filled-16-colored";
 import { EvoIconAuthenticityGuaranteeFilled24 } from "./icons/authenticity-guarantee-filled-24";
+import { EvoIconAuthenticityGuaranteeFilled24Colored } from "./icons/authenticity-guarantee-filled-24-colored";
 import { EvoIconAutoAdjust16 } from "./icons/auto-adjust-16";
 import { EvoIconAutoAdjust24 } from "./icons/auto-adjust-24";
 import { EvoIconAvatarSignedOut } from "./icons/avatar-signed-out";
@@ -665,7 +667,9 @@ import { EvoIconMobileSignal24 } from "./icons/mobile-signal-24";
 import { EvoIconMoneyBackGuarantee16 } from "./icons/money-back-guarantee-16";
 import { EvoIconMoneyBackGuarantee24 } from "./icons/money-back-guarantee-24";
 import { EvoIconMoneyBackGuaranteeFilled16 } from "./icons/money-back-guarantee-filled-16";
+import { EvoIconMoneyBackGuaranteeFilled16Colored } from "./icons/money-back-guarantee-filled-16-colored";
 import { EvoIconMoneyBackGuaranteeFilled24 } from "./icons/money-back-guarantee-filled-24";
+import { EvoIconMoneyBackGuaranteeFilled24Colored } from "./icons/money-back-guarantee-filled-24-colored";
 import { EvoIconMoneyStack16 } from "./icons/money-stack-16";
 import { EvoIconMoneyStack20 } from "./icons/money-stack-20";
 import { EvoIconMoneyStack24 } from "./icons/money-stack-24";
@@ -768,6 +772,10 @@ import { EvoIconPaypalCredit12Colored } from "./icons/paypal-credit-12-colored";
 import { EvoIconPaypalCredit18Colored } from "./icons/paypal-credit-18-colored";
 import { EvoIconPaypalCredit24Colored } from "./icons/paypal-credit-24-colored";
 import { EvoIconPaypalCredit32Colored } from "./icons/paypal-credit-32-colored";
+import { EvoIconPaypalDisabled12Colored } from "./icons/paypal-disabled-12-colored";
+import { EvoIconPaypalDisabled18Colored } from "./icons/paypal-disabled-18-colored";
+import { EvoIconPaypalDisabled24Colored } from "./icons/paypal-disabled-24-colored";
+import { EvoIconPaypalDisabled32Colored } from "./icons/paypal-disabled-32-colored";
 import { EvoIconPaypalLogo16 } from "./icons/paypal-logo-16";
 import { EvoIconPaypay12Colored } from "./icons/paypay-12-colored";
 import { EvoIconPaypay18Colored } from "./icons/paypay-18-colored";
@@ -1023,7 +1031,9 @@ import { EvoIconTopRatedSeller24 } from "./icons/top-rated-seller-24";
 import { EvoIconTopService16 } from "./icons/top-service-16";
 import { EvoIconTopService24 } from "./icons/top-service-24";
 import { EvoIconTopServiceFilled16 } from "./icons/top-service-filled-16";
+import { EvoIconTopServiceFilled16Colored } from "./icons/top-service-filled-16-colored";
 import { EvoIconTopServiceFilled24 } from "./icons/top-service-filled-24";
+import { EvoIconTopServiceFilled24Colored } from "./icons/top-service-filled-24-colored";
 import { EvoIconTradingCard16 } from "./icons/trading-card-16";
 import { EvoIconTradingCard24 } from "./icons/trading-card-24";
 import { EvoIconTradingCardEdition24 } from "./icons/trading-card-edition-24";
@@ -2042,9 +2052,25 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconAuthenticityGuaranteeFilled16Colored.name || "authenticity-guarantee-filled-16-colored"}</td>
+            <td>
+              <EvoIconAuthenticityGuaranteeFilled16Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconAuthenticityGuaranteeFilled24.name || "authenticity-guarantee-filled-24"}</td>
             <td>
               <EvoIconAuthenticityGuaranteeFilled24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconAuthenticityGuaranteeFilled24Colored.name || "authenticity-guarantee-filled-24-colored"}</td>
+            <td>
+              <EvoIconAuthenticityGuaranteeFilled24Colored {...args} />
             </td>
           </tr>
               
@@ -6482,9 +6508,25 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconMoneyBackGuaranteeFilled16Colored.name || "money-back-guarantee-filled-16-colored"}</td>
+            <td>
+              <EvoIconMoneyBackGuaranteeFilled16Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconMoneyBackGuaranteeFilled24.name || "money-back-guarantee-filled-24"}</td>
             <td>
               <EvoIconMoneyBackGuaranteeFilled24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconMoneyBackGuaranteeFilled24Colored.name || "money-back-guarantee-filled-24-colored"}</td>
+            <td>
+              <EvoIconMoneyBackGuaranteeFilled24Colored {...args} />
             </td>
           </tr>
               
@@ -7301,6 +7343,38 @@ export const AllIcons: Story = {
             <td>{EvoIconPaypalCredit32Colored.name || "paypal-credit-32-colored"}</td>
             <td>
               <EvoIconPaypalCredit32Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalDisabled12Colored.name || "paypal-disabled-12-colored"}</td>
+            <td>
+              <EvoIconPaypalDisabled12Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalDisabled18Colored.name || "paypal-disabled-18-colored"}</td>
+            <td>
+              <EvoIconPaypalDisabled18Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalDisabled24Colored.name || "paypal-disabled-24-colored"}</td>
+            <td>
+              <EvoIconPaypalDisabled24Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalDisabled32Colored.name || "paypal-disabled-32-colored"}</td>
+            <td>
+              <EvoIconPaypalDisabled32Colored {...args} />
             </td>
           </tr>
               
@@ -9346,9 +9420,25 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconTopServiceFilled16Colored.name || "top-service-filled-16-colored"}</td>
+            <td>
+              <EvoIconTopServiceFilled16Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconTopServiceFilled24.name || "top-service-filled-24"}</td>
             <td>
               <EvoIconTopServiceFilled24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconTopServiceFilled24Colored.name || "top-service-filled-24-colored"}</td>
+            <td>
+              <EvoIconTopServiceFilled24Colored {...args} />
             </td>
           </tr>
               

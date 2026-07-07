@@ -107,7 +107,9 @@ export type Icon =
 'authenticityGuarantee16' |
 'authenticityGuarantee24' |
 'authenticityGuaranteeFilled16' |
+'authenticityGuaranteeFilled16Colored' |
 'authenticityGuaranteeFilled24' |
+'authenticityGuaranteeFilled24Colored' |
 'autoAdjust16' |
 'autoAdjust24' |
 'avatarSignedOut' |
@@ -663,7 +665,9 @@ export type Icon =
 'moneyBackGuarantee16' |
 'moneyBackGuarantee24' |
 'moneyBackGuaranteeFilled16' |
+'moneyBackGuaranteeFilled16Colored' |
 'moneyBackGuaranteeFilled24' |
+'moneyBackGuaranteeFilled24Colored' |
 'moneyStack16' |
 'moneyStack20' |
 'moneyStack24' |
@@ -766,6 +770,10 @@ export type Icon =
 'paypalCredit18Colored' |
 'paypalCredit24Colored' |
 'paypalCredit32Colored' |
+'paypalDisabled12Colored' |
+'paypalDisabled18Colored' |
+'paypalDisabled24Colored' |
+'paypalDisabled32Colored' |
 'paypalLogo16' |
 'paypay12Colored' |
 'paypay18Colored' |
@@ -1043,7 +1051,9 @@ export type Icon =
 'topService16' |
 'topService24' |
 'topServiceFilled16' |
+'topServiceFilled16Colored' |
 'topServiceFilled24' |
+'topServiceFilled24Colored' |
 'tradingCard16' |
 'tradingCard24' |
 'tradingCardEdition24' |
