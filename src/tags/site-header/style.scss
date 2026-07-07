@@ -259,7 +259,7 @@ header a {
 
 /* Mobile menu styles */
 @media (min-width: 512px) {
-  .panel-dialog__window {
+  .site-nav-mobile-panel .panel-dialog__window {
     width: 100%;
   }
 }
