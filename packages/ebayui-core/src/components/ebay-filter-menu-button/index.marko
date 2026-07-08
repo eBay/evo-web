@@ -43,13 +43,13 @@ $ const checkedValues = component.getCheckedValues();
                 <if(selectionDisplay === "label" && checkedValues.length)>
                     ${checkedValues[0]}
                     <if(checkedValues.length > 1)>
-                        <span class="filter-menu-button__count">(+${checkedValues.length - 1})</span>
+                        ${" "}<span class="filter-menu-button__count">(+${checkedValues.length - 1})</span>
                     </if>
                 </if>
                 <else>
                     ${text}
                     <if(selectionDisplay === "count" && checkedValues.length)>
-                        <span class="filter-menu-button__count">(${checkedValues.length})</span>
+                        ${" "}<span class="filter-menu-button__count">(${checkedValues.length})</span>
                     </if>
                 </else>
             </span>

@@ -101,11 +101,17 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                     <span className="filter-menu-button__button-text">
                         {text}
                         {selectionDisplay === "count" && hasChecked && (
-                            <span className="filter-menu-button__count">{`(${checkedValues.length})`}</span>
+                            <>
+                                {" "}
+                                <span className="filter-menu-button__count">{`(${checkedValues.length})`}</span>
+                            </>
                         )}
                         {selectionDisplay === "label" && hasChecked && items[checkedIndices[0]]?.props.children}
                         {selectionDisplay === "label" && checkedValues.length > 1 && (
-                            <span className="filter-menu-button__count">{`(+${checkedValues.length - 1})`}</span>
+                            <>
+                                {" "}
+                                <span className="filter-menu-button__count">{`(+${checkedValues.length - 1})`}</span>
+                            </>
                         )}
                     </span>
                     <EbayIconChevronDown12 />
