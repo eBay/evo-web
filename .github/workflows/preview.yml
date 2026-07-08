@@ -16,6 +16,7 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
+      deployments: read
     steps:
       - name: Post "updating" status to PR
         uses: actions/github-script@v7
@@ -33,11 +34,16 @@ jobs:
               c => c.user.login === 'github-actions[bot]' && c.body.includes('PR Preview Deployed')
             );
             if (existing) {
+              // Strip any prior "(deploying ...)" marker rather than stacking, in case
+              // a previous run was cancelled (via concurrency) before it could clean up.
+              const body = existing.body
+                .replace(/ _\(deploying .+?\)_$/, '')
+                .trimEnd();
               await github.rest.issues.updateComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existing.id,
-                body: existing.body.trimEnd() + ` _(deploying ${sha}...)_`,
+                body: body + ` _(deploying ${sha}...)_`,
               });
             }
 
@@ -59,17 +65,76 @@ jobs:
           BASE_URL: /evo-web/previews/pr-${{ github.event.pull_request.number }}/
 
       - name: Deploy to gh-pages branch (preview subdirectory)
+        id: deploy
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          npx gh-pages \
-            --dist _site/public \
-            --dest previews/pr-${{ github.event.pull_request.number }} \
-            --branch gh-pages \
-            --nojekyll \
-            --add \
-            --message "preview: pr-${{ github.event.pull_request.number }} @ ${{ github.sha }}" \
-            --repo "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          set -euo pipefail
+          repo_url="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          # gh-pages commits in its own temporary clone, so set the identity globally
+          # rather than via --user (whose parser rejects the github-actions[bot]
+          # brackets). Retry on a non-fast-forward rejection in case a concurrent
+          # gh-pages write (another preview, the cleanup job, or the production deploy)
+          # lands first; each run re-clones the branch, so clear the cache between attempts.
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          pushed=false
+          for attempt in 1 2 3; do
+            rm -rf node_modules/.cache/gh-pages
+            if npx gh-pages \
+              --dist _site/public \
+              --dest previews/pr-${{ github.event.pull_request.number }} \
+              --branch gh-pages \
+              --nojekyll \
+              --add \
+              --message "preview: pr-${{ github.event.pull_request.number }} @ ${{ github.sha }}" \
+              --repo "$repo_url"; then
+              pushed=true
+              break
+            fi
+            echo "gh-pages push failed (attempt ${attempt}); retrying."
+            sleep $((attempt * 3))
+          done
+          $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
+          # gh-pages nests its clone under find-cache-dir's path, not directly at
+          # node_modules/.cache/gh-pages, so read the pushed tip back from the
+          # remote rather than relying on that cache layout.
+          echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for GitHub Pages deployment
+        run: |
+          set -uo pipefail
+          sha="${{ steps.deploy.outputs.sha }}"
+          api="https://api.github.com/repos/${{ github.repository }}"
+          auth=(-H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json")
+          gh_api() { curl -s --max-time 15 "${auth[@]}" "$@"; }
+
+          id=""
+          for attempt in $(seq 1 30); do
+            if [ -z "$id" ]; then
+              # Query by exact commit SHA; the legacy /pages/builds/latest endpoint
+              # isn't a reliable per-commit signal.
+              id=$(gh_api "${api}/deployments?sha=${sha}&environment=github-pages" | jq -r 'if type=="array" and length>0 then .[0].id else empty end')
+              if [ -z "$id" ]; then
+                echo "No GitHub Pages deployment recorded yet for ${sha} (attempt ${attempt}/30)..."
+                sleep 10
+                continue
+              fi
+            fi
+
+            state=$(gh_api "${api}/deployments/${id}/statuses" | jq -r 'if type=="array" and length>0 then .[0].state else empty end')
+
+            if [ "$state" = "success" ]; then
+              echo "GitHub Pages deployment for ${sha} succeeded."
+              exit 0
+            fi
+            if [ "$state" = "failure" ] || [ "$state" = "error" ]; then
+              echo "GitHub Pages deployment for ${sha} failed (state: ${state})."
+              exit 1
+            fi
+
+            echo "GitHub Pages deployment for ${sha} is ${state:-pending} (attempt ${attempt}/30)..."
+            sleep 10
+          done
+          echo "GitHub Pages deployment did not confirm within 5 minutes; posting the link anyway."
 
       - name: Post preview URL to PR
         uses: actions/github-script@v7
@@ -94,7 +159,10 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existing.id,
-                body: existing.body.replace(/###### commit .+$/, `###### commit ${sha}`),
+                body: existing.body
+                  .replace('### PR Preview Deployed _(removed)_', '### PR Preview Deployed')
+                  .replace(/ _\(deploying .+?\)_$/, '')
+                  .replace(/###### commit .+$/, `###### commit ${sha}`),
               });
             } else {
               const body = [
