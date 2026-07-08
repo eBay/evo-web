@@ -1,0 +1,163 @@
+{
+  "name": "evo-tooltip",
+  "skinModules": [
+    "tooltip"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/tooltip"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-expander"
+    ],
+    "subComponents": [
+      "evo-expander"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Span"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "host",
+          "optional": false,
+          "type": "Marko.AttrTag< Marko.HTML.Span & { as?: Marko.Renderable; } >",
+          "category": "slot"
+        },
+        {
+          "name": "heading",
+          "optional": true,
+          "type": "Marko.AttrTag< Marko.HTML.Span & { as?: Marko.Renderable; } >",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(open: boolean) => void",
+          "category": "prop"
+        },
+        {
+          "name": "placement",
+          "optional": true,
+          "type": "ExpanderInput[\"placement\"]",
+          "category": "prop"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "flip",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "shift",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "inline",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "noHover",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-expanded",
+        "value": "expander.ariaExpanded/"
+      }
+    ],
+    "templateRoleUsages": [
+      "tooltip"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "base",
+      "cell",
+      "close",
+      "color-token",
+      "content",
+      "large-screen",
+      "mask",
+      "pointer-base",
+      "pointer-bottom-center",
+      "pointer-bottom-left",
+      "pointer-bottom-right",
+      "pointer-left",
+      "pointer-left-bottom",
+      "pointer-left-top",
+      "pointer-right",
+      "pointer-right-bottom",
+      "pointer-right-top",
+      "pointer-top-center",
+      "pointer-top-left",
+      "pointer-top-right",
+      "tooltip"
+    ],
+    "bemElements": [
+      "tooltip__cell",
+      "tooltip__close",
+      "tooltip__content",
+      "tooltip__host",
+      "tooltip__mask",
+      "tooltip__overlay",
+      "tooltip__pointer",
+      "tooltip__pointer--bottom",
+      "tooltip__pointer--bottom-left",
+      "tooltip__pointer--bottom-right",
+      "tooltip__pointer--left",
+      "tooltip__pointer--left-bottom",
+      "tooltip__pointer--left-top",
+      "tooltip__pointer--right",
+      "tooltip__pointer--right-bottom",
+      "tooltip__pointer--right-top",
+      "tooltip__pointer--top",
+      "tooltip__pointer--top-left",
+      "tooltip__pointer--top-right"
+    ],
+    "bemModifiers": [
+      "tooltip--expanded"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-expanded=\"true\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

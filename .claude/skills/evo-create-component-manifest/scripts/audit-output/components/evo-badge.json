@@ -1,0 +1,76 @@
+{
+  "name": "evo-badge",
+  "skinModules": [
+    "badge"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/badge"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Span, \"role\" | \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "type",
+          "optional": true,
+          "type": "\"menu\" | \"icon\"",
+          "category": "prop"
+        },
+        {
+          "name": "number",
+          "optional": true,
+          "type": "number | string",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": [
+      "type"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "badge"
+    ],
+    "bemElements": [],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-attention",
+      "--color-border-on-attention",
+      "--color-foreground-on-attention"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "name": "evo-card",
+  "skinModules": [
+    "card"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/card"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Span, \"title\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "overline",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Div>",
+          "category": "slot"
+        },
+        {
+          "name": "title",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.H3 & { as?: keyof Marko.NativeTags }>",
+          "category": "slot"
+        },
+        {
+          "name": "description",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Div>",
+          "category": "slot"
+        },
+        {
+          "name": "action",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Div>",
+          "category": "slot"
+        },
+        {
+          "name": "image",
+          "optional": false,
+          "type": "Marko.AttrTag<Marko.HTML.Img>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "layout",
+          "optional": true,
+          "type": "\"horizontal\" | \"vertical\"",
+          "category": "prop"
+        },
+        {
+          "name": "aspectRatio",
+          "optional": true,
+          "type": "\"16:9\" | \"5:4\"",
+          "category": "prop"
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "href",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "card"
+    ],
+    "bemElements": [
+      "card__action",
+      "card__description",
+      "card__hero-image",
+      "card__main",
+      "card__media",
+      "card__overline",
+      "card__title"
+    ],
+    "bemModifiers": [
+      "card--aspect-16-9",
+      "card--aspect-5-4",
+      "card--full-hero",
+      "card--horizontal",
+      "card--outlined"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-100",
+      "--border-radius-150",
+      "--color-background-secondary",
+      "--color-border-accent",
+      "--color-border-subtle",
+      "--color-foreground-primary",
+      "--font-size-large-1",
+      "--motion-duration-long-3",
+      "--motion-duration-medium-3",
+      "--motion-duration-short-3",
+      "--motion-easing-quick-enter",
+      "--spacing-100",
+      "--spacing-150",
+      "--spacing-200",
+      "--spacing-50"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[disabled]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

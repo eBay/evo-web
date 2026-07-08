@@ -1,0 +1,116 @@
+{
+  "name": "evo-select",
+  "skinModules": [
+    "select",
+    "icon",
+    "floating-label"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/select",
+      "@ebay/skin/icon",
+      "@ebay/skin/floating-label"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-floating-label",
+      "evo-icon-chevron-down-12"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Option",
+        "props": [
+          {
+            "name": "optgroup",
+            "optional": true,
+            "type": "string",
+            "category": "prop"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Select"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "option",
+          "optional": true,
+          "type": "Marko.AttrTag<Option>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "floatingLabel",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"regular\" | \"large\"",
+          "category": "prop"
+        },
+        {
+          "name": "fluid",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "borderless",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "border-color-token",
+      "color-token",
+      "icon",
+      "select"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "select--borderless",
+      "select--fluid",
+      "select--large",
+      "select--underline"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-50",
+      "--font-size-body",
+      "--font-size-medium",
+      "--select-border-radius",
+      "--spacing-200",
+      "--spacing-400"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-invalid=\"true\"]",
+      "[disabled]",
+      "[readonly]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

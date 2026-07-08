@@ -1,0 +1,191 @@
+{
+  "name": "evo-infotip",
+  "skinModules": [
+    "icon-button",
+    "infotip"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon-button",
+      "@ebay/skin/infotip"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-expander"
+    ],
+    "subComponents": [
+      "evo-expander",
+      "evo-icon-information-16",
+      "evo-icon-close-16"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Span"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yIconText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        },
+        {
+          "name": "a11yCloseText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "icon",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Span>",
+          "category": "slot"
+        },
+        {
+          "name": "heading",
+          "optional": true,
+          "type": "Marko.AttrTag< Marko.HTML.Span & { as?: Marko.Renderable; } >",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(open: boolean) => void",
+          "category": "prop"
+        },
+        {
+          "name": "placement",
+          "optional": true,
+          "type": "ExpanderInput[\"placement\"]",
+          "category": "prop"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "flip",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "shift",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "inline",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yIconText"
+      },
+      {
+        "attr": "aria-expanded",
+        "value": "expander.ariaExpanded"
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "(heading && headingId)"
+      },
+      {
+        "attr": "aria-label",
+        "value": "a11yCloseText"
+      }
+    ],
+    "templateRoleUsages": [
+      "tooltip"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "badge",
+      "icon-btn",
+      "icon-link",
+      "progress-spinner",
+      "standard",
+      "transparent"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled-16",
+      "icon--attention-filled-24",
+      "icon--confirmation-filled-16",
+      "icon--confirmation-filled-24",
+      "icon--information-filled-16",
+      "icon--information-filled-24",
+      "icon-blinktn--secondary",
+      "icon-btn--badged",
+      "icon-btn--large",
+      "icon-btn--primary",
+      "icon-btn--secondary",
+      "icon-btn--small",
+      "icon-btn--tertiary",
+      "icon-btn--transparent",
+      "icon-link--badged",
+      "icon-link--large",
+      "icon-link--primary",
+      "icon-link--secondary",
+      "icon-link--small",
+      "icon-link--tertiary",
+      "icon-link--transparent"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-accent",
+      "--color-background-disabled",
+      "--color-background-primary",
+      "--color-background-secondary",
+      "--color-border-accent",
+      "--color-border-disabled",
+      "--color-border-medium",
+      "--color-foreground-accent",
+      "--color-foreground-attention",
+      "--color-foreground-disabled",
+      "--color-foreground-on-accent",
+      "--color-foreground-primary",
+      "--color-foreground-success"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]",
+      "[disabled]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

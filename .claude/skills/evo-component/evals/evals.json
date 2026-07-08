@@ -1,0 +1,80 @@
+{
+  "skill_name": "evo-component",
+  "evals": [
+    {
+      "id": 1,
+      "name": "missing-manifest",
+      "prompt": "Run /evo-component evo-nonexistent-widget in the evo-web repo at /Users/arkhachatryan/Repos/evo-web. There is no manifest.json for this component. Save the full text output (what Claude prints/decides) to response.md in the outputs directory.",
+      "expected_output": "A clear error message saying the manifest was not found and directing the user to run /evo-create-component-manifest first. No files should be written.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "clear-error-for-missing-manifest",
+          "description": "Output contains an explicit error message stating that no manifest was found at the expected path."
+        },
+        {
+          "name": "redirects-to-manifest-skill",
+          "description": "Output directs user to run /evo-create-component-manifest before /evo-component."
+        },
+        {
+          "name": "no-files-written",
+          "description": "Output explicitly states no files were written, or no file-writing actions occurred."
+        },
+        {
+          "name": "mentions-correct-path",
+          "description": "Output references the specific path contracts/evo-nonexistent-widget/manifest.json."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "blocking-gaps-gate",
+      "prompt": "Run /evo-component evo-avatar in the evo-web repo at /Users/arkhachatryan/Repos/evo-web. The manifest exists at contracts/avatar/manifest.json and has low-confidence blocking gaps (component.designSystemVersion, states[loading].cssSelector, states[imageError].cssSelector). Save the full text output to response.md in the outputs directory.",
+      "expected_output": "A GATE BLOCKED message listing the specific low-confidence fields that must be resolved, with no files written and no code generation begun.",
+      "files": ["contracts/avatar/manifest.json"],
+      "assertions": [
+        {
+          "name": "gate-blocked-message",
+          "description": "Output contains a 'GATE BLOCKED' header or equivalent clear gate stop signal."
+        },
+        {
+          "name": "lists-specific-gap-fields",
+          "description": "Output enumerates specific blocking field paths from the manifest gaps array (e.g. component.designSystemVersion, states[loading].cssSelector)."
+        },
+        {
+          "name": "no-code-generation-started",
+          "description": "Output contains no Marko, React, or SCSS code, and does not mention invoking evo-marko-migration or evo-react-migration."
+        },
+        {
+          "name": "instructs-how-to-fix",
+          "description": "Output tells the user how to resolve the blocking gaps (edit manifest.json) and re-run."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "pr1-build-path",
+      "prompt": "Run /evo-component evo-test-clean in the evo-web repo at /Users/arkhachatryan/Repos/evo-web. The manifest exists at contracts/evo-test-clean/manifest.json, has no blocking gaps (only medium-confidence gaps), and figmaUrl is null. Save the full text output to response.md in the outputs directory. Stop after the skill announces the build path and begins calling sub-skills (it's OK if it can't actually invoke them since they don't exist yet).",
+      "expected_output": "The skill announces 'PR 1 build (no Figma yet)', correctly identifies the build path as Phase 1 + Phase 3 (no Phase 2), and then attempts to call the Marko sub-skill first.",
+      "files": ["contracts/evo-test-clean/manifest.json"],
+      "assertions": [
+        {
+          "name": "announces-pr1-not-full-build",
+          "description": "Output explicitly announces 'PR 1 build' (not 'Full build') since figmaUrl is null."
+        },
+        {
+          "name": "phase2-skipped-with-explanation",
+          "description": "Output mentions that Phase 2 (visual SCSS / evo-style-component) is skipped because figmaUrl is null, and explains how to trigger it later."
+        },
+        {
+          "name": "marko-invoked-before-react",
+          "description": "Output shows evo-marko-migration is invoked (or attempted) before evo-react-migration."
+        },
+        {
+          "name": "storybook-phase-included",
+          "description": "Output mentions Phase 3 storybook steps will run (even if deferred due to missing sub-skills)."
+        }
+      ]
+    }
+  ]
+}

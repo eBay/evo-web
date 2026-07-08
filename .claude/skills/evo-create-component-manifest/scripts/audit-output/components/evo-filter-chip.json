@@ -1,0 +1,136 @@
+{
+  "name": "evo-filter-chip",
+  "skinModules": [
+    "filter-chip"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/filter-chip"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-chevron-down-12"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Button",
+        "Omit<Marko.HTML.A, \"type\" | `on${string}`>"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11ySelectedText",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "icon",
+          "optional": true,
+          "type": "Marko.AttrTag<{ content?: Marko.Body }>",
+          "category": "slot"
+        },
+        {
+          "name": "image",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.Img>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "selected",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "selectedChange",
+          "optional": true,
+          "type": "(selected: boolean) => void",
+          "category": "prop"
+        },
+        {
+          "name": "variant",
+          "optional": true,
+          "type": "\"default\" | \"expressive\" | \"menu\"",
+          "category": "prop"
+        },
+        {
+          "name": "expanded",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "expandedChange",
+          "optional": true,
+          "type": "(expanded: boolean) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-selected",
+        "value": "(selected ? \"true\" : \"false\")"
+      },
+      {
+        "attr": "aria-expanded",
+        "value": "variant"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-keyframes",
+      "base",
+      "chevron-close",
+      "chevron-keyframes",
+      "chevron-open",
+      "filter-chip",
+      "image-treatment",
+      "interactive",
+      "selected",
+      "selected-animation",
+      "standard",
+      "strong",
+      "text"
+    ],
+    "bemElements": [
+      "filter-chip__media",
+      "filter-chip__text",
+      "filter-chip__trailing"
+    ],
+    "bemModifiers": [
+      "filter-chip--animated",
+      "filter-chip--expressive",
+      "filter-chip--selected"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-100",
+      "--border-radius-150",
+      "--spacing-400"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-expanded=\"false\"]",
+      "[aria-expanded=\"true\"]",
+      "[aria-pressed=\"true\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "name": "evo-tri-state-checkbox",
+  "skinModules": [
+    "checkbox",
+    "field"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/checkbox",
+      "@ebay/skin/field"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-checkbox-mixed-24",
+      "evo-icon-checkbox-mixed-18",
+      "evo-icon-checkbox-checked-24",
+      "evo-icon-checkbox-checked-18",
+      "evo-icon-checkbox-unchecked-24",
+      "evo-icon-checkbox-unchecked-18"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Input, \"checked\" | \"checkedChange\" | \"checkedValue\" | \"checkedValueChange\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "checked",
+          "optional": true,
+          "type": "Marko.HTMLAttributes[\"aria-checked\"]",
+          "category": "prop"
+        },
+        {
+          "name": "checkedChange",
+          "optional": true,
+          "type": "(checked: \"true\" | \"false\" | \"mixed\") => void",
+          "category": "prop"
+        },
+        {
+          "name": "values",
+          "optional": true,
+          "type": "string[]",
+          "category": "prop"
+        },
+        {
+          "name": "checkedValues",
+          "optional": true,
+          "type": "string[]",
+          "category": "prop"
+        },
+        {
+          "name": "checkedValuesChange",
+          "optional": true,
+          "type": "(checkedValues: string[]) => void",
+          "category": "prop"
+        },
+        {
+          "name": "skipMixed",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"regular\" | \"large\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-checked",
+        "value": "effectiveChecked"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "checkbox",
+      "color-token",
+      "com",
+      "fill-token",
+      "outline-color-token",
+      "paciellogroup"
+    ],
+    "bemElements": [
+      "checkbox__checked",
+      "checkbox__control",
+      "checkbox__icon",
+      "checkbox__unchecked"
+    ],
+    "bemModifiers": [
+      "checkbox--large"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[disabled]",
+      "[hidden]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

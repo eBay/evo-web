@@ -1,0 +1,62 @@
+{
+  "name": "evo-3d-viewer",
+  "skinModules": [
+    "3d-viewer"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-progress-spinner",
+      "evo-icon-attention-24"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Partial<ModelViewerElement>"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yLoadingText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [
+        {
+          "name": "onLoadError",
+          "optional": true,
+          "type": "(err: CustomEvent) => void",
+          "category": "event"
+        }
+      ],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "class",
+          "optional": true,
+          "type": "Marko.HTMLAttributes[\"class\"]",
+          "category": "prop"
+        },
+        {
+          "name": "errorText",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "name": "evo-listbox",
+  "skinModules": [
+    "listbox"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/listbox"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-roving-tabindex",
+      "evo-typeahead",
+      "evo-icon-tick-16"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Option",
+        "props": [
+          {
+            "name": "value",
+            "optional": false,
+            "type": "Marko.HTML.Option[\"value\"]",
+            "category": "prop"
+          },
+          {
+            "name": "disabled",
+            "optional": true,
+            "type": "boolean",
+            "category": "prop"
+          },
+          {
+            "name": "description",
+            "optional": true,
+            "type": "Marko.AttrTag<Marko.HTML.Span>",
+            "category": "slot"
+          },
+          {
+            "name": "icon",
+            "optional": true,
+            "type": "Marko.AttrTag<{ content?: Marko.Body }>",
+            "category": "slot"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11ySelectedText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "option",
+          "optional": true,
+          "type": "Marko.AttrTag<Option>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "selected",
+          "optional": true,
+          "type": "Index",
+          "category": "prop"
+        },
+        {
+          "name": "selectedChange",
+          "optional": true,
+          "type": "(selected: Index) => void",
+          "category": "prop"
+        },
+        {
+          "name": "listSelection",
+          "optional": true,
+          "type": "\"auto\" | \"manual\"",
+          "category": "prop"
+        },
+        {
+          "name": "typeaheadTimeoutLength",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "name",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-disabled",
+        "value": "disabled"
+      },
+      {
+        "attr": "aria-selected",
+        "value": "isSelected"
+      }
+    ],
+    "templateRoleUsages": [
+      "listbox",
+      "option"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "base",
+      "color-token",
+      "com",
+      "disabled",
+      "icon",
+      "listbox",
+      "paciellogroup",
+      "selector-hover",
+      "status"
+    ],
+    "bemElements": [
+      "listbox__description",
+      "listbox__option",
+      "listbox__option--active",
+      "listbox__options",
+      "listbox__options--fix-width",
+      "listbox__options--reverse",
+      "listbox__value"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--font-size-small",
+      "--spacing-100",
+      "--spacing-200"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]",
+      "[aria-selected=\"true\"]",
+      "[role=\"listbox\"]",
+      "[role=\"option\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

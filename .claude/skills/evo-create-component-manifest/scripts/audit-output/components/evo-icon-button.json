@@ -1,0 +1,161 @@
+{
+  "name": "evo-icon-button",
+  "skinModules": [
+    "icon-button",
+    "button",
+    "link"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon-button",
+      "@ebay/skin/button",
+      "@ebay/skin/link"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-button",
+      "evo-badge"
+    ],
+    "subComponents": [
+      "evo-button",
+      "evo-badge"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Button, \"aria-label\">",
+        "Omit<Marko.HTML.A, \"type\" | `on${string}` | \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [
+        {
+          "name": "onEscape",
+          "optional": true,
+          "type": "ButtonInput[\"onEscape\"]",
+          "category": "event"
+        }
+      ],
+      "attrTagSlots": [
+        {
+          "name": "badge",
+          "optional": true,
+          "type": "Marko.AttrTag<Omit<BadgeInput, \"a11yText\" | \"type\">>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "href",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "transparent",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "priority",
+          "optional": true,
+          "type": "ButtonInput[\"priority\"]",
+          "category": "prop"
+        },
+        {
+          "name": "size",
+          "optional": true,
+          "type": "ButtonInput[\"size\"]",
+          "category": "prop"
+        },
+        {
+          "name": "partiallyDisabled",
+          "optional": true,
+          "type": "ButtonInput[\"partiallyDisabled\"]",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      },
+      {
+        "attr": "aria-disabled",
+        "value": "partiallyDisabled"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "badge",
+      "icon-btn",
+      "icon-link",
+      "progress-spinner",
+      "standard",
+      "transparent"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled-16",
+      "icon--attention-filled-24",
+      "icon--confirmation-filled-16",
+      "icon--confirmation-filled-24",
+      "icon--information-filled-16",
+      "icon--information-filled-24",
+      "icon-blinktn--secondary",
+      "icon-btn--badged",
+      "icon-btn--large",
+      "icon-btn--primary",
+      "icon-btn--secondary",
+      "icon-btn--small",
+      "icon-btn--tertiary",
+      "icon-btn--transparent",
+      "icon-link--badged",
+      "icon-link--large",
+      "icon-link--primary",
+      "icon-link--secondary",
+      "icon-link--small",
+      "icon-link--tertiary",
+      "icon-link--transparent"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-accent",
+      "--color-background-disabled",
+      "--color-background-primary",
+      "--color-background-secondary",
+      "--color-border-accent",
+      "--color-border-disabled",
+      "--color-border-medium",
+      "--color-foreground-accent",
+      "--color-foreground-attention",
+      "--color-foreground-disabled",
+      "--color-foreground-on-accent",
+      "--color-foreground-primary",
+      "--color-foreground-success"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-disabled=\"true\"]",
+      "[disabled]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "name": "evo-icon",
+  "skinModules": [
+    "icon",
+    "star-rating"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/icon",
+      "@ebay/skin/star-rating"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.SVG.SVG"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": true,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "_symbol",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "_name",
+          "optional": false,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "_size",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "_type",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "_def",
+          "optional": true,
+          "type": "() => IconDefs",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-hidden",
+        "value": "!hasA11yText"
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "hasTitle"
+      }
+    ],
+    "templateRoleUsages": [
+      "!!hasA11yText"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "base",
+      "color-token",
+      "icon"
+    ],
+    "bemElements": [],
+    "bemModifiers": [
+      "icon--attention-filled",
+      "icon--confirmation-filled",
+      "icon--disabled",
+      "icon--information-filled"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-media-disabled-filter"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": true,
+    "props": [],
+    "a11yProps": [],
+    "ariaProps": [],
+    "eventHandlers": [],
+    "ariaUsages": [
+      "aria-hidden"
+    ],
+    "roleUsages": [],
+    "makeupImports": []
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "name": "evo-accordion",
+  "skinModules": [
+    "accordion"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/accordion"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-details"
+    ],
+    "subComponents": [
+      "evo-details"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.UL, \"aria-roledescription\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "details",
+          "optional": true,
+          "type": "Marko.AttrTag< Omit<DetailsInput, \"size\" | \"alignment\" | \"open\" | \"openChange\"> >",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "size",
+          "optional": true,
+          "type": "\"regular\" | \"large\"",
+          "category": "prop"
+        },
+        {
+          "name": "open",
+          "optional": true,
+          "type": "Open",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(open: Open) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-roledescription",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "accordion",
+      "chevron-close",
+      "chevron-open"
+    ],
+    "bemElements": [
+      "details__collapse",
+      "details__content",
+      "details__expand",
+      "details__icon",
+      "details__label",
+      "details__summary"
+    ],
+    "bemModifiers": [
+      "accordion--animated",
+      "accordion--large"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-border-subtle",
+      "--color-foreground-secondary",
+      "--font-size-large-1",
+      "--font-size-medium",
+      "--motion-duration-medium-2",
+      "--motion-duration-medium-3",
+      "--motion-easing-continuous",
+      "--motion-easing-standard"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[open]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "evo-skeleton",
+  "skinModules": [
+    "skeleton"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/skeleton"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Div, \"role\" | \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": []
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": [
+      "img"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-token",
+      "border-radius-token",
+      "skeleton"
+    ],
+    "bemElements": [
+      "skeleton__avatar",
+      "skeleton__button",
+      "skeleton__button--large",
+      "skeleton__button--small",
+      "skeleton__image",
+      "skeleton__text",
+      "skeleton__text--large",
+      "skeleton__text--multiline",
+      "skeleton__textbox"
+    ],
+    "bemModifiers": [
+      "skeleton--blue",
+      "skeleton--green",
+      "skeleton--on-secondary",
+      "skeleton--purple"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--avatar-border-radius",
+      "--color-gradient-ai-blue-subtle",
+      "--color-gradient-ai-green-subtle",
+      "--color-gradient-ai-purple-subtle",
+      "--color-loading-fill-on-secondary",
+      "--color-loading-on-primary-state-1",
+      "--color-loading-on-primary-state-2",
+      "--color-loading-on-secondary-state-1",
+      "--color-loading-on-secondary-state-2",
+      "--motion-duration-long-3",
+      "--motion-duration-medium-2",
+      "--motion-duration-short-3",
+      "--motion-easing-continuous",
+      "--spacing-100",
+      "--spacing-150",
+      "--spacing-300",
+      "--spacing-400",
+      "--spacing-700",
+      "--text-border-radius"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

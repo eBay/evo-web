@@ -1,0 +1,132 @@
+{
+  "name": "evo-tabs",
+  "skinModules": [
+    "tabs"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/tabs"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-roving-tabindex"
+    ],
+    "helperInterfaces": [
+      {
+        "name": "Tab",
+        "props": [
+          {
+            "name": "panel",
+            "optional": false,
+            "type": "Marko.AttrTag<Marko.HTML.Div>",
+            "category": "slot"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Div"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "tab",
+          "optional": true,
+          "type": "Marko.AttrTag<Tab>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "activation",
+          "optional": true,
+          "type": "\"auto\" | \"manual\"",
+          "category": "prop"
+        },
+        {
+          "name": "index",
+          "optional": true,
+          "type": "number",
+          "category": "prop"
+        },
+        {
+          "name": "indexChange",
+          "optional": true,
+          "type": "(index: number) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-controls",
+        "value": "`${tabpanelId}-${i}`"
+      },
+      {
+        "attr": "aria-selected",
+        "value": "isSelected"
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "`${tabId}-${i}`"
+      }
+    ],
+    "templateRoleUsages": [
+      "tablist",
+      "tab",
+      "tabpanel"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "color-token",
+      "com",
+      "fake-tabs",
+      "paciellogroup",
+      "tabs"
+    ],
+    "bemElements": [
+      "fake-tabs__cell",
+      "fake-tabs__item",
+      "fake-tabs__items",
+      "tabs__cell",
+      "tabs__item",
+      "tabs__items"
+    ],
+    "bemModifiers": [
+      "fake-tabs--large",
+      "tabs--large"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-secondary",
+      "--color-foreground-disabled",
+      "--color-foreground-secondary",
+      "--font-size-body",
+      "--font-size-medium",
+      "--font-weight-600",
+      "--spacing-150",
+      "--spacing-200",
+      "--spacing-50"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-current]",
+      "[aria-disabled=\"true\"]",
+      "[aria-selected=\"true\"]",
+      "[role=\"tab\"]",
+      "[role=\"tablist\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

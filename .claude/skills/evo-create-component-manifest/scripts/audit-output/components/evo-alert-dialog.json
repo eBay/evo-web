@@ -1,0 +1,129 @@
+{
+  "name": "evo-alert-dialog",
+  "skinModules": [
+    "dialog"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/dialog"
+    ],
+    "makeupImports": [],
+    "internalImports": [
+      "evo-button"
+    ],
+    "subComponents": [
+      "evo-button"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Dialog, \"open\" | \"closedby\" | \"role\" | \"aria-labelledby\" | \"aria-modal\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "header",
+          "optional": false,
+          "type": "Marko.AttrTag<Marko.HTML.H2 & { as?: string }>",
+          "category": "slot"
+        },
+        {
+          "name": "confirm",
+          "optional": false,
+          "type": "Marko.AttrTag<ButtonInput>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "openChange",
+          "optional": true,
+          "type": "(o: boolean) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-modal",
+        "value": "\"true\""
+      },
+      {
+        "attr": "aria-labelledby",
+        "value": "headerId"
+      },
+      {
+        "attr": "aria-describedby",
+        "value": "mainId"
+      }
+    ],
+    "templateRoleUsages": [
+      "alertdialog"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "dialog",
+      "icon",
+      "icon-btn"
+    ],
+    "bemElements": [
+      "dialog__close",
+      "dialog__footer",
+      "dialog__header",
+      "dialog__image",
+      "dialog__main",
+      "dialog__prev"
+    ],
+    "bemModifiers": [
+      "dialog--close",
+      "dialog--expressive",
+      "dialog--large",
+      "dialog--narrow",
+      "dialog--wide"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-100",
+      "--border-radius-150",
+      "--color-background-primary",
+      "--color-foreground-primary",
+      "--dialog-max-width",
+      "--dialog-narrow-max-width",
+      "--dialog-scrim-color",
+      "--dialog-wide-max-width",
+      "--motion-duration-medium-3",
+      "--motion-duration-short-3",
+      "--motion-easing-continuous",
+      "--motion-easing-soft-exit",
+      "--motion-easing-standard",
+      "--spacing-100",
+      "--spacing-200",
+      "--spacing-300"
+    ],
+    "cssCustomPropertyDefinitions": [
+      "--dialog-max-width",
+      "--dialog-narrow-max-width",
+      "--dialog-scrim-color",
+      "--dialog-wide-max-width"
+    ],
+    "stateSelectors": [
+      "[open]"
+    ],
+    "rtlOverrides": true
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

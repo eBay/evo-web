@@ -1,0 +1,138 @@
+{
+  "name": "evo-layout-grid",
+  "skinModules": [
+    "layout-grid"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/layout-grid"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [
+      {
+        "name": "LayoutOptions",
+        "props": [
+          {
+            "name": "min",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "xs",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "sm",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "md",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "lg",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "xl",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "xl2",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "xl3",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          },
+          {
+            "name": "xl4",
+            "optional": true,
+            "type": "number",
+            "category": "prop"
+          }
+        ]
+      }
+    ],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.UL"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [
+        {
+          "name": "item",
+          "optional": true,
+          "type": "Marko.AttrTag<Marko.HTML.LI>",
+          "category": "slot"
+        }
+      ],
+      "regularProps": [
+        {
+          "name": "columns",
+          "optional": true,
+          "type": "LayoutOptions",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "layout-grid"
+    ],
+    "bemElements": [],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--layout-grid-cell-gap",
+      "--layout-grid-cell-height-min",
+      "--layout-grid-columns-lg",
+      "--layout-grid-columns-md",
+      "--layout-grid-columns-min",
+      "--layout-grid-columns-sm",
+      "--layout-grid-columns-xl",
+      "--layout-grid-columns-xl2",
+      "--layout-grid-columns-xl3",
+      "--layout-grid-columns-xl4",
+      "--layout-grid-columns-xs",
+      "--spacing-100"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[data-columns-#{$breakpoint}=\"#{$i}\"]",
+      "[data-columns-min=\"1\"]",
+      "[data-columns-min=\"2\"]",
+      "[data-columns-min=\"3\"]",
+      "[data-columns-min=\"4\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

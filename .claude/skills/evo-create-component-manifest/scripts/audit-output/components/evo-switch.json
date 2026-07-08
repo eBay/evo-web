@@ -1,0 +1,64 @@
+{
+  "name": "evo-switch",
+  "skinModules": [
+    "switch"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/switch"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Input, \"type\" | \"role\">"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": []
+    },
+    "templateAriaUsages": [],
+    "templateRoleUsages": [
+      "switch"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-color-token",
+      "before-base",
+      "before-hover",
+      "border-color-token",
+      "com",
+      "outline-token",
+      "paciellogroup",
+      "switch"
+    ],
+    "bemElements": [
+      "switch__button",
+      "switch__control"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-background-accent",
+      "--color-background-primary"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-checked=\"true\"]",
+      "[aria-disabled=\"true\"]",
+      "[disabled]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

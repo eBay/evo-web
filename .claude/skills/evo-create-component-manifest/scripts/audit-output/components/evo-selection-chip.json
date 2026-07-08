@@ -1,0 +1,84 @@
+{
+  "name": "evo-selection-chip",
+  "skinModules": [
+    "selection-chip"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/selection-chip"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-close-12"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Marko.HTML.Button"
+      ],
+      "a11yProps": [],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "selected",
+          "optional": true,
+          "type": "boolean",
+          "category": "prop"
+        },
+        {
+          "name": "selectedChange",
+          "optional": true,
+          "type": "(selected: boolean) => void",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-pressed",
+        "value": "(selected ? \"true\" : \"false\")"
+      }
+    ],
+    "templateRoleUsages": []
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "background-keyframes",
+      "base",
+      "interactive",
+      "selected",
+      "selected-animation",
+      "selection-chip",
+      "standard",
+      "strong",
+      "text"
+    ],
+    "bemElements": [
+      "selection-chip__text",
+      "selection-chip__trailing"
+    ],
+    "bemModifiers": [
+      "selection-chip--animated"
+    ],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--border-radius-50",
+      "--motion-duration-medium-3",
+      "--motion-easing-standard"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [
+      "[aria-pressed=\"true\"]"
+    ],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}

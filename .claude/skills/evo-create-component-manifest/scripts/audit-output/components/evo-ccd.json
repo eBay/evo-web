@@ -1,0 +1,101 @@
+{
+  "name": "evo-ccd",
+  "skinModules": [
+    "ccd",
+    "icon"
+  ],
+  "marko": {
+    "hasImplementation": true,
+    "skinImports": [
+      "@ebay/skin/ccd",
+      "@ebay/skin/icon"
+    ],
+    "makeupImports": [],
+    "internalImports": [],
+    "subComponents": [
+      "evo-icon-ccd-charger-included",
+      "evo-icon-ccd-charger-not-included",
+      "evo-icon-ccd-top"
+    ],
+    "helperInterfaces": [],
+    "inputInterface": {
+      "extends": [
+        "Omit<Marko.HTML.Div, \"aria-label\">"
+      ],
+      "a11yProps": [
+        {
+          "name": "a11yText",
+          "optional": false,
+          "type": "string | null",
+          "category": "a11y"
+        }
+      ],
+      "ariaProps": [],
+      "eventCallbacks": [],
+      "attrTagSlots": [],
+      "regularProps": [
+        {
+          "name": "max",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "min",
+          "optional": true,
+          "type": "string",
+          "category": "prop"
+        },
+        {
+          "name": "chargerIcon",
+          "optional": true,
+          "type": "\"included\" | \"not-included\"",
+          "category": "prop"
+        },
+        {
+          "name": "secondaryType",
+          "optional": true,
+          "type": "\"usbpd\"",
+          "category": "prop"
+        }
+      ]
+    },
+    "templateAriaUsages": [
+      {
+        "attr": "aria-label",
+        "value": "a11yText"
+      }
+    ],
+    "templateRoleUsages": [
+      "figure"
+    ]
+  },
+  "skin": {
+    "hasImplementation": true,
+    "bemBlocks": [
+      "ccd",
+      "com",
+      "ebaystatic",
+      "ttf"
+    ],
+    "bemElements": [
+      "ccd__body",
+      "ccd__charger-icon",
+      "ccd__description-figure",
+      "ccd__top-icon"
+    ],
+    "bemModifiers": [],
+    "nestedBemElementSuffixes": [],
+    "nestedBemModifierSuffixes": [],
+    "cssCustomProperties": [
+      "--color-foreground-primary",
+      "--font-weight-600"
+    ],
+    "cssCustomPropertyDefinitions": [],
+    "stateSelectors": [],
+    "rtlOverrides": false
+  },
+  "react": {
+    "hasImplementation": false
+  }
+}
