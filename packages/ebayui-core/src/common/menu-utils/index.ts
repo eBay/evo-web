@@ -37,8 +37,8 @@ export class MenuUtils<
 
     getCheckedValues() {
         if (this.isRadio()) {
-            const item = this.items[this.state.checkedIndex!] || {};
-            return [item.value];
+            const item = this.items[this.state.checkedIndex!];
+            return item?.value ? [item.value] : [];
         }
         return this.items
             .filter((item, index) => this.state.checkedItems![index])

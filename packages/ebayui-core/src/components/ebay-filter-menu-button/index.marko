@@ -6,7 +6,7 @@ $ const {
     a11yFilterAppliedText = "Filter Applied",
     a11yFooterText,
     text,
-    showCount,
+    selectionDisplay,
     footer,
     footerText,
     disabled,
@@ -21,7 +21,6 @@ $ const {
     ...htmlInput
 } = input;
 $ const checkedValues = component.getCheckedValues();
-$ const hasSelected = checkedValues.some(Boolean);
 
 <span
     ...processHtmlAttributes(htmlInput)
@@ -33,7 +32,7 @@ $ const hasSelected = checkedValues.some(Boolean);
     <button
         key="button"
         type="button"
-        class=["filter-menu-button__button", hasSelected && "filter-menu-button__button--selected"]
+        class=["filter-menu-button__button", !!checkedValues.length && "filter-menu-button__button--selected"]
         disabled=disabled
         aria-expanded:no-update="false"
         aria-haspopup="true"
@@ -41,14 +40,22 @@ $ const hasSelected = checkedValues.some(Boolean);
     >
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">
-                ${text}
-                <if(showCount && hasSelected)>
-                    <span class="filter-menu-button__count">(+${checkedValues.filter(Boolean).length})</span>
+                <if(selectionDisplay === "label" && checkedValues.length)>
+                    ${checkedValues[0]}
+                    <if(checkedValues.length > 1)>
+                        <span class="filter-menu-button__count">(+${checkedValues.length - 1})</span>
+                    </if>
                 </if>
+                <else>
+                    ${text}
+                    <if(selectionDisplay === "count" && checkedValues.length)>
+                        <span class="filter-menu-button__count">(${checkedValues.length})</span>
+                    </if>
+                </else>
             </span>
             <ebay-chevron-down-12-icon/>
         </span>
-        <if(hasSelected)>
+        <if(checkedValues.length)>
             <span class="clipped">${a11yFilterAppliedText}</span>
         </if>
     </button>

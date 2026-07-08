@@ -13,9 +13,11 @@ const meta: Meta<typeof EbayFilterMenuButton> = {
             control: "text",
             description: "Button text",
         },
-        showCount: {
-            control: "boolean",
-            description: "When true, shows a count badge (e.g. (+2)) next to the button text when items are selected",
+        selectionDisplay: {
+            control: { type: "select" },
+            options: [undefined, "count", "label"],
+            description:
+                '`"count"` shows the number of selected items next to the button text (e.g. `(3)`). `"label"` replaces the button text with the first selected item\'s label, plus an overflow count if more than one item is selected (e.g. `(+2)`). Omit to show no selection summary.',
         },
         a11yFilterAppliedText: {
             control: "text",
@@ -92,28 +94,6 @@ export const WithFooter: StoryFn<typeof EbayFilterMenuButton> = (args) => (
         <EbayFilterMenuFooterButton>Apply</EbayFilterMenuFooterButton>
     </EbayFilterMenuButton>
 );
-
-export const WithCount: StoryFn<typeof EbayFilterMenuButton> = (args) => (
-    <EbayFilterMenuButton {...args} text={args.text || "Category"} showCount>
-        <EbayFilterMenuItem value="item 1" checked>
-            item 1
-        </EbayFilterMenuItem>
-        <EbayFilterMenuItem value="item 2" checked>
-            item 2
-        </EbayFilterMenuItem>
-        <EbayFilterMenuItem value="item 3">item 3</EbayFilterMenuItem>
-    </EbayFilterMenuButton>
-);
-WithCount.storyName = "With Count";
-WithCount.parameters = {
-    docs: {
-        description: {
-            story:
-                "When `showCount` is enabled the button shows how many items are selected, e.g. **(+2)**. " +
-                'The `a11yFilterAppliedText` prop (default: `"Filter Applied"`) is rendered as clipped text for screen readers whenever at least one item is selected.',
-        },
-    },
-};
 
 export const WithSearch: StoryFn<typeof EbayFilterMenuButton> = (args) => {
     const [searchTerm, setSearchTerm] = useState("");

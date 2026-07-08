@@ -44,10 +44,11 @@ export default {
             description:
                 'Clipped a11y text shown when items are selected. English default is "Filter Applied"',
         },
-        showCount: {
-            control: { type: "boolean" },
+        selectionDisplay: {
+            control: { type: "select" },
+            options: [undefined, "count", "label"],
             description:
-                "When true, shows a count badge (e.g. (+2)) next to the button text when items are selected",
+                '`"count"` shows the number of selected items next to the button text (e.g. `(3)`). `"label"` replaces the button text with the first selected item\'s label, plus an overflow count if more than one item is selected (e.g. `(+2)`). Omit to show no selection summary.',
         },
         pressed: {
             control: { type: "boolean" },
@@ -253,40 +254,6 @@ WithFooter.parameters = {
     docs: {
         source: {
             code: tagToString("ebay-filter-menu-button", WithFooter.args),
-        },
-    },
-};
-
-export const WithCount = Template.bind({});
-WithCount.args = {
-    text: "Category",
-    showCount: true,
-    item: [
-        {
-            value: "item 1",
-            renderBody: `item 1`,
-            checked: true,
-        },
-        {
-            value: "item 2",
-            renderBody: `item 2`,
-            checked: true,
-        },
-        {
-            value: "item 3",
-            renderBody: `item 3`,
-        },
-    ],
-    a11yText: "filter menu button a11y text",
-} as any;
-WithCount.parameters = {
-    docs: {
-        source: {
-            code: tagToString("ebay-filter-menu-button", WithCount.args),
-        },
-        description: {
-            story:
-                "When `show-count` is enabled the button shows a count of selected items e.g. (+2). The `a11y-filter-applied-text` prop (default: \"Filter Applied\") is rendered as clipped text for screen readers whenever at least one item is selected.",
         },
     },
 };

@@ -15,7 +15,7 @@ import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
     text: string;
-    showCount?: boolean;
+    selectionDisplay?: "count" | "label";
     a11yFilterAppliedText?: string;
     onExpand?: () => void;
     onCollapse?: () => void;
@@ -24,7 +24,7 @@ export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
 const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
-    showCount,
+    selectionDisplay,
     a11yFilterAppliedText = "Filter Applied",
     "aria-label": ariaLabel,
     onExpand,
@@ -37,6 +37,9 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     const items = filterByType(children, EbayFilterMenuItem);
     const [checkedValues, setCheckedValues] = useState<string[]>(() =>
         items.filter((item) => item.props.checked).map((item) => item.props.value as string),
+    );
+    const [checkedIndices, setCheckedIndices] = useState<number[]>(() =>
+        items.reduce<number[]>((acc, item, i) => (item.props.checked ? [...acc, i] : acc), []),
     );
     const hasChecked = checkedValues.length > 0;
 
@@ -78,6 +81,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     const handleChange: FilterMenuChange = (event, data) => {
         onChange?.(event, data);
         setCheckedValues(data.checked ?? []);
+        setCheckedIndices(data.checkedIndex ?? []);
     };
 
     return (
@@ -96,8 +100,12 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                 <span className="filter-menu-button__button-cell">
                     <span className="filter-menu-button__button-text">
                         {text}
-                        {showCount && hasChecked && (
-                            <span className="filter-menu-button__count">{`(+${checkedValues.length})`}</span>
+                        {selectionDisplay === "count" && hasChecked && (
+                            <span className="filter-menu-button__count">{`(${checkedValues.length})`}</span>
+                        )}
+                        {selectionDisplay === "label" && hasChecked && items[checkedIndices[0]]?.props.children}
+                        {selectionDisplay === "label" && checkedValues.length > 1 && (
+                            <span className="filter-menu-button__count">{`(+${checkedValues.length - 1})`}</span>
                         )}
                     </span>
                     <EbayIconChevronDown12 />
