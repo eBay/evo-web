@@ -21,6 +21,7 @@ $ const {
     ...htmlInput
 } = input;
 $ const checkedValues = component.getCheckedValues();
+$ const hasSelected = selected ?? !!checkedValues.length;
 
 <span
     ...processHtmlAttributes(htmlInput)
@@ -32,7 +33,7 @@ $ const checkedValues = component.getCheckedValues();
     <button
         key="button"
         type="button"
-        class=["filter-menu-button__button", !!checkedValues.length && "filter-menu-button__button--selected"]
+        class=["filter-menu-button__button", hasSelected && "filter-menu-button__button--selected"]
         disabled=disabled
         aria-expanded:no-update="false"
         aria-haspopup="true"
@@ -40,22 +41,14 @@ $ const checkedValues = component.getCheckedValues();
     >
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">
-                <if(selectionDisplay === "label" && checkedValues.length)>
-                    ${checkedValues[0]}
-                    <if(checkedValues.length > 1)>
-                        ${" "}<span class="filter-menu-button__count">(+${checkedValues.length - 1})</span>
-                    </if>
+                ${text}
+                <if(countText)>
+                    ${" "}<span class="filter-menu-button__count">${countText}</span>
                 </if>
-                <else>
-                    ${text}
-                    <if(selectionDisplay === "count" && checkedValues.length)>
-                        ${" "}<span class="filter-menu-button__count">(${checkedValues.length})</span>
-                    </if>
-                </else>
             </span>
             <ebay-chevron-down-12-icon/>
         </span>
-        <if(checkedValues.length)>
+        <if(hasSelected)>
             <span class="clipped">${a11yFilterAppliedText}</span>
         </if>
     </button>

@@ -44,11 +44,13 @@ export default {
             description:
                 'Clipped a11y text shown when items are selected. English default is "Filter Applied"',
         },
-        selectionDisplay: {
-            control: { type: "select" },
-            options: [undefined, "count", "label"],
-            description:
-                '`"count"` shows the number of selected items next to the button text (e.g. `(3)`). `"label"` replaces the button text with the first selected item\'s label, plus an overflow count if more than one item is selected (e.g. `(+2)`). Omit to show no selection summary.',
+        countText: {
+            control: { type: "text" },
+            description: "Text rendered in a badge after the button text, e.g. \"(+3)\". Caller is responsible for formatting.",
+        },
+        selected: {
+            control: { type: "boolean" },
+            description: "Overrides derived selected state. Use when managing selection externally (e.g. with search filtering).",
         },
         pressed: {
             control: { type: "boolean" },

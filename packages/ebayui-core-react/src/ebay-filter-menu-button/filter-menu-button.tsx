@@ -15,7 +15,8 @@ import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
     text: string;
-    selectionDisplay?: "count" | "label";
+    countText?: string;
+    selected?: boolean;
     a11yFilterAppliedText?: string;
     onExpand?: () => void;
     onCollapse?: () => void;
@@ -24,7 +25,8 @@ export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
 const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
-    selectionDisplay,
+    countText,
+    selected,
     a11yFilterAppliedText = "Filter Applied",
     "aria-label": ariaLabel,
     onExpand,
@@ -38,10 +40,7 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     const [checkedValues, setCheckedValues] = useState<string[]>(() =>
         items.filter((item) => item.props.checked).map((item) => item.props.value as string),
     );
-    const [checkedIndices, setCheckedIndices] = useState<number[]>(() =>
-        items.reduce<number[]>((acc, item, i) => (item.props.checked ? [...acc, i] : acc), []),
-    );
-    const hasChecked = checkedValues.length > 0;
+    const hasChecked = selected ?? checkedValues.length > 0;
 
     const { isExpanded, collapse } = useExpander({
         ref,
@@ -81,7 +80,6 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     const handleChange: FilterMenuChange = (event, data) => {
         onChange?.(event, data);
         setCheckedValues(data.checked ?? []);
-        setCheckedIndices(data.checkedIndex ?? []);
     };
 
     return (
@@ -100,17 +98,10 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
                 <span className="filter-menu-button__button-cell">
                     <span className="filter-menu-button__button-text">
                         {text}
-                        {selectionDisplay === "count" && hasChecked && (
+                        {countText && (
                             <>
                                 {" "}
-                                <span className="filter-menu-button__count">{`(${checkedValues.length})`}</span>
-                            </>
-                        )}
-                        {selectionDisplay === "label" && hasChecked && items[checkedIndices[0]]?.props.children}
-                        {selectionDisplay === "label" && checkedValues.length > 1 && (
-                            <>
-                                {" "}
-                                <span className="filter-menu-button__count">{`(+${checkedValues.length - 1})`}</span>
+                                <span className="filter-menu-button__count">{countText}</span>
                             </>
                         )}
                     </span>

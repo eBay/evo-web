@@ -163,7 +163,7 @@ describe("EbayFilterMenuButton", () => {
         expect(screen.getByText("Filtre appliqué")).toBeInTheDocument();
     });
 
-    it("should not render any selection summary by default", async () => {
+    it("should not render a count badge by default", async () => {
         render(
             <EbayFilterMenuButton text="Menu">
                 <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
@@ -172,58 +172,34 @@ describe("EbayFilterMenuButton", () => {
         expect(screen.queryByText(/\(.*\)/)).not.toBeInTheDocument();
     });
 
-    describe("selectionDisplay='count'", () => {
-        it("should render the count of selected items without + prefix", async () => {
-            render(
-                <EbayFilterMenuButton text="Menu" selectionDisplay="count">
-                    <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
-                    <EbayFilterMenuItem checked>Option 2</EbayFilterMenuItem>
-                </EbayFilterMenuButton>,
-            );
-            expect(screen.getByText("(2)")).toBeInTheDocument();
-        });
-
-        it("should not render count when no items are selected", async () => {
-            render(
-                <EbayFilterMenuButton text="Menu" selectionDisplay="count">
-                    <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
-                </EbayFilterMenuButton>,
-            );
-            expect(screen.queryByText(/\(.*\)/)).not.toBeInTheDocument();
-        });
+    it("should render countText when provided", async () => {
+        render(
+            <EbayFilterMenuButton text="Menu" countText="(+3)">
+                <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
+            </EbayFilterMenuButton>,
+        );
+        expect(screen.getByText("(+3)")).toBeInTheDocument();
     });
 
-    describe("selectionDisplay='label'", () => {
-        it("should render the first selected item's label", async () => {
-            render(
-                <EbayFilterMenuButton text="Menu" selectionDisplay="label">
-                    <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
-                    <EbayFilterMenuItem>Option 2</EbayFilterMenuItem>
-                </EbayFilterMenuButton>,
-            );
-            expect(screen.getByText("Option 1")).toBeInTheDocument();
-            expect(screen.queryByText(/\(\+\d+\)/)).not.toBeInTheDocument();
-        });
+    it("should use selected prop to override derived selected state", async () => {
+        render(
+            <EbayFilterMenuButton text="Menu" selected>
+                <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
+            </EbayFilterMenuButton>,
+        );
+        const button = screen.getByText("Menu").closest("button");
+        expect(button).toHaveClass("filter-menu-button__button--selected");
+        expect(screen.getByText("Filter Applied")).toBeInTheDocument();
+    });
 
-        it("should render overflow count when more than one item is selected", async () => {
-            render(
-                <EbayFilterMenuButton text="Menu" selectionDisplay="label">
-                    <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
-                    <EbayFilterMenuItem checked>Option 2</EbayFilterMenuItem>
-                    <EbayFilterMenuItem checked>Option 3</EbayFilterMenuItem>
-                </EbayFilterMenuButton>,
-            );
-            expect(screen.getByText("Option 1")).toBeInTheDocument();
-            expect(screen.getByText("(+2)")).toBeInTheDocument();
-        });
-
-        it("should not render label or overflow when no items are selected", async () => {
-            render(
-                <EbayFilterMenuButton text="Menu" selectionDisplay="label">
-                    <EbayFilterMenuItem>Option 1</EbayFilterMenuItem>
-                </EbayFilterMenuButton>,
-            );
-            expect(screen.queryByText(/\(.*\)/)).not.toBeInTheDocument();
-        });
+    it("should use selected={false} to override derived selected state", async () => {
+        render(
+            <EbayFilterMenuButton text="Menu" selected={false}>
+                <EbayFilterMenuItem checked>Option 1</EbayFilterMenuItem>
+            </EbayFilterMenuButton>,
+        );
+        const button = screen.getByText("Menu").closest("button");
+        expect(button).not.toHaveClass("filter-menu-button__button--selected");
+        expect(screen.queryByText("Filter Applied")).not.toBeInTheDocument();
     });
 });
