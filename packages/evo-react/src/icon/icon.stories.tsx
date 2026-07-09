@@ -113,6 +113,7 @@ import { EvoIconAuthenticityGuaranteeFilled16 } from "./icons/authenticity-guara
 import { EvoIconAuthenticityGuaranteeFilled16Colored } from "./icons/authenticity-guarantee-filled-16-colored";
 import { EvoIconAuthenticityGuaranteeFilled24 } from "./icons/authenticity-guarantee-filled-24";
 import { EvoIconAuthenticityGuaranteeFilled24Colored } from "./icons/authenticity-guarantee-filled-24-colored";
+import { EvoIconAutoAdjust16 } from "./icons/auto-adjust-16";
 import { EvoIconAutoAdjust24 } from "./icons/auto-adjust-24";
 import { EvoIconAvatarSignedOut } from "./icons/avatar-signed-out";
 import { EvoIconBackgroundRemoval16 } from "./icons/background-removal-16";
@@ -122,6 +123,7 @@ import { EvoIconBancontact18Colored } from "./icons/bancontact-18-colored";
 import { EvoIconBancontact24Colored } from "./icons/bancontact-24-colored";
 import { EvoIconBancontact32Colored } from "./icons/bancontact-32-colored";
 import { EvoIconBank16 } from "./icons/bank-16";
+import { EvoIconBank20 } from "./icons/bank-20";
 import { EvoIconBank24 } from "./icons/bank-24";
 import { EvoIconBank64 } from "./icons/bank-64";
 import { EvoIconBankAccount12Colored } from "./icons/bank-account-12-colored";
@@ -270,6 +272,7 @@ import { EvoIconContrast24 } from "./icons/contrast-24";
 import { EvoIconCopy16 } from "./icons/copy-16";
 import { EvoIconCopy24 } from "./icons/copy-24";
 import { EvoIconCoupon16 } from "./icons/coupon-16";
+import { EvoIconCoupon20 } from "./icons/coupon-20";
 import { EvoIconCoupon24 } from "./icons/coupon-24";
 import { EvoIconCreditCard16 } from "./icons/credit-card-16";
 import { EvoIconCreditCard20 } from "./icons/credit-card-20";
@@ -332,6 +335,18 @@ import { EvoIconEbayBalance18Colored } from "./icons/ebay-balance-18-colored";
 import { EvoIconEbayBalance24Colored } from "./icons/ebay-balance-24-colored";
 import { EvoIconEbayBalance32Colored } from "./icons/ebay-balance-32-colored";
 import { EvoIconEbayBucksLogo16Colored } from "./icons/ebay-bucks-logo-16-colored";
+import { EvoIconEbayCreditCardBlack12Colored } from "./icons/ebay-credit-card-black-12-colored";
+import { EvoIconEbayCreditCardBlack18Colored } from "./icons/ebay-credit-card-black-18-colored";
+import { EvoIconEbayCreditCardBlack24Colored } from "./icons/ebay-credit-card-black-24-colored";
+import { EvoIconEbayCreditCardBlack32Colored } from "./icons/ebay-credit-card-black-32-colored";
+import { EvoIconEbayCreditCardPurple12Colored } from "./icons/ebay-credit-card-purple-12-colored";
+import { EvoIconEbayCreditCardPurple18Colored } from "./icons/ebay-credit-card-purple-18-colored";
+import { EvoIconEbayCreditCardPurple24Colored } from "./icons/ebay-credit-card-purple-24-colored";
+import { EvoIconEbayCreditCardPurple32Colored } from "./icons/ebay-credit-card-purple-32-colored";
+import { EvoIconEbayCreditCardWhite12Colored } from "./icons/ebay-credit-card-white-12-colored";
+import { EvoIconEbayCreditCardWhite18Colored } from "./icons/ebay-credit-card-white-18-colored";
+import { EvoIconEbayCreditCardWhite24Colored } from "./icons/ebay-credit-card-white-24-colored";
+import { EvoIconEbayCreditCardWhite32Colored } from "./icons/ebay-credit-card-white-32-colored";
 import { EvoIconEbayForCharity16 } from "./icons/ebay-for-charity-16";
 import { EvoIconEbayForCharity24 } from "./icons/ebay-for-charity-24";
 import { EvoIconEbayInternationalShipping16 } from "./icons/ebay-international-shipping-16";
@@ -656,6 +671,7 @@ import { EvoIconMoneyBackGuaranteeFilled16Colored } from "./icons/money-back-gua
 import { EvoIconMoneyBackGuaranteeFilled24 } from "./icons/money-back-guarantee-filled-24";
 import { EvoIconMoneyBackGuaranteeFilled24Colored } from "./icons/money-back-guarantee-filled-24-colored";
 import { EvoIconMoneyStack16 } from "./icons/money-stack-16";
+import { EvoIconMoneyStack20 } from "./icons/money-stack-20";
 import { EvoIconMoneyStack24 } from "./icons/money-stack-24";
 import { EvoIconMoneyStackBlue12Colored } from "./icons/money-stack-blue-12-colored";
 import { EvoIconMoneyStackBlue18Colored } from "./icons/money-stack-blue-18-colored";
@@ -742,11 +758,16 @@ import { EvoIconPayoneer18Colored } from "./icons/payoneer-18-colored";
 import { EvoIconPayoneer24Colored } from "./icons/payoneer-24-colored";
 import { EvoIconPayoneer32Colored } from "./icons/payoneer-32-colored";
 import { EvoIconPayout16 } from "./icons/payout-16";
+import { EvoIconPayout20 } from "./icons/payout-20";
 import { EvoIconPayout24 } from "./icons/payout-24";
 import { EvoIconPaypal12Colored } from "./icons/paypal-12-colored";
 import { EvoIconPaypal18Colored } from "./icons/paypal-18-colored";
 import { EvoIconPaypal24Colored } from "./icons/paypal-24-colored";
 import { EvoIconPaypal32Colored } from "./icons/paypal-32-colored";
+import { EvoIconPaypalBlue12Colored } from "./icons/paypal-blue-12-colored";
+import { EvoIconPaypalBlue18Colored } from "./icons/paypal-blue-18-colored";
+import { EvoIconPaypalBlue24Colored } from "./icons/paypal-blue-24-colored";
+import { EvoIconPaypalBlue32Colored } from "./icons/paypal-blue-32-colored";
 import { EvoIconPaypalCredit12Colored } from "./icons/paypal-credit-12-colored";
 import { EvoIconPaypalCredit18Colored } from "./icons/paypal-credit-18-colored";
 import { EvoIconPaypalCredit24Colored } from "./icons/paypal-credit-24-colored";
@@ -755,6 +776,7 @@ import { EvoIconPaypalDisabled12Colored } from "./icons/paypal-disabled-12-color
 import { EvoIconPaypalDisabled18Colored } from "./icons/paypal-disabled-18-colored";
 import { EvoIconPaypalDisabled24Colored } from "./icons/paypal-disabled-24-colored";
 import { EvoIconPaypalDisabled32Colored } from "./icons/paypal-disabled-32-colored";
+import { EvoIconPaypalLogo16 } from "./icons/paypal-logo-16";
 import { EvoIconPaypay12Colored } from "./icons/paypay-12-colored";
 import { EvoIconPaypay18Colored } from "./icons/paypay-18-colored";
 import { EvoIconPaypay24Colored } from "./icons/paypay-24-colored";
@@ -845,6 +867,8 @@ import { EvoIconRim16 } from "./icons/rim-16";
 import { EvoIconRim24 } from "./icons/rim-24";
 import { EvoIconRinggit16 } from "./icons/ringgit-16";
 import { EvoIconRinggit24 } from "./icons/ringgit-24";
+import { EvoIconRotate16 } from "./icons/rotate-16";
+import { EvoIconRotate20 } from "./icons/rotate-20";
 import { EvoIconRotate24 } from "./icons/rotate-24";
 import { EvoIconRotateLandscapeLeft24 } from "./icons/rotate-landscape-left-24";
 import { EvoIconRotateLandscapeRight24 } from "./icons/rotate-landscape-right-24";
@@ -2052,6 +2076,14 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconAutoAdjust16.name || "auto-adjust-16"}</td>
+            <td>
+              <EvoIconAutoAdjust16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconAutoAdjust24.name || "auto-adjust-24"}</td>
             <td>
               <EvoIconAutoAdjust24 {...args} />
@@ -2119,6 +2151,14 @@ export const AllIcons: Story = {
             <td>{EvoIconBank16.name || "bank-16"}</td>
             <td>
               <EvoIconBank16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconBank20.name || "bank-20"}</td>
+            <td>
+              <EvoIconBank20 {...args} />
             </td>
           </tr>
               
@@ -3308,6 +3348,14 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconCoupon20.name || "coupon-20"}</td>
+            <td>
+              <EvoIconCoupon20 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconCoupon24.name || "coupon-24"}</td>
             <td>
               <EvoIconCoupon24 {...args} />
@@ -3799,6 +3847,102 @@ export const AllIcons: Story = {
             <td>{EvoIconEbayBucksLogo16Colored.name || "ebay-bucks-logo-16-colored"}</td>
             <td>
               <EvoIconEbayBucksLogo16Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardBlack12Colored.name || "ebay-credit-card-black-12-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardBlack12Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardBlack18Colored.name || "ebay-credit-card-black-18-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardBlack18Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardBlack24Colored.name || "ebay-credit-card-black-24-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardBlack24Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardBlack32Colored.name || "ebay-credit-card-black-32-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardBlack32Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardPurple12Colored.name || "ebay-credit-card-purple-12-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardPurple12Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardPurple18Colored.name || "ebay-credit-card-purple-18-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardPurple18Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardPurple24Colored.name || "ebay-credit-card-purple-24-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardPurple24Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardPurple32Colored.name || "ebay-credit-card-purple-32-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardPurple32Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardWhite12Colored.name || "ebay-credit-card-white-12-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardWhite12Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardWhite18Colored.name || "ebay-credit-card-white-18-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardWhite18Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardWhite24Colored.name || "ebay-credit-card-white-24-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardWhite24Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconEbayCreditCardWhite32Colored.name || "ebay-credit-card-white-32-colored"}</td>
+            <td>
+              <EvoIconEbayCreditCardWhite32Colored {...args} />
             </td>
           </tr>
               
@@ -6396,6 +6540,14 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconMoneyStack20.name || "money-stack-20"}</td>
+            <td>
+              <EvoIconMoneyStack20 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconMoneyStack24.name || "money-stack-24"}</td>
             <td>
               <EvoIconMoneyStack24 {...args} />
@@ -7084,6 +7236,14 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconPayout20.name || "payout-20"}</td>
+            <td>
+              <EvoIconPayout20 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconPayout24.name || "payout-24"}</td>
             <td>
               <EvoIconPayout24 {...args} />
@@ -7119,6 +7279,38 @@ export const AllIcons: Story = {
             <td>{EvoIconPaypal32Colored.name || "paypal-32-colored"}</td>
             <td>
               <EvoIconPaypal32Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalBlue12Colored.name || "paypal-blue-12-colored"}</td>
+            <td>
+              <EvoIconPaypalBlue12Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalBlue18Colored.name || "paypal-blue-18-colored"}</td>
+            <td>
+              <EvoIconPaypalBlue18Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalBlue24Colored.name || "paypal-blue-24-colored"}</td>
+            <td>
+              <EvoIconPaypalBlue24Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalBlue32Colored.name || "paypal-blue-32-colored"}</td>
+            <td>
+              <EvoIconPaypalBlue32Colored {...args} />
             </td>
           </tr>
               
@@ -7183,6 +7375,14 @@ export const AllIcons: Story = {
             <td>{EvoIconPaypalDisabled32Colored.name || "paypal-disabled-32-colored"}</td>
             <td>
               <EvoIconPaypalDisabled32Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconPaypalLogo16.name || "paypal-logo-16"}</td>
+            <td>
+              <EvoIconPaypalLogo16 {...args} />
             </td>
           </tr>
               
@@ -7903,6 +8103,22 @@ export const AllIcons: Story = {
             <td>{EvoIconRinggit24.name || "ringgit-24"}</td>
             <td>
               <EvoIconRinggit24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconRotate16.name || "rotate-16"}</td>
+            <td>
+              <EvoIconRotate16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconRotate20.name || "rotate-20"}</td>
+            <td>
+              <EvoIconRotate20 {...args} />
             </td>
           </tr>
               

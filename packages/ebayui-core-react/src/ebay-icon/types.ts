@@ -110,6 +110,7 @@ export type Icon =
 'authenticityGuaranteeFilled16Colored' |
 'authenticityGuaranteeFilled24' |
 'authenticityGuaranteeFilled24Colored' |
+'autoAdjust16' |
 'autoAdjust24' |
 'avatarSignedOut' |
 'backgroundRemoval16' |
@@ -119,6 +120,7 @@ export type Icon =
 'bancontact24Colored' |
 'bancontact32Colored' |
 'bank16' |
+'bank20' |
 'bank24' |
 'bank64' |
 'bankAccount12Colored' |
@@ -267,6 +269,7 @@ export type Icon =
 'copy16' |
 'copy24' |
 'coupon16' |
+'coupon20' |
 'coupon24' |
 'creditCard16' |
 'creditCard20' |
@@ -329,6 +332,18 @@ export type Icon =
 'ebayBalance24Colored' |
 'ebayBalance32Colored' |
 'ebayBucksLogo16Colored' |
+'ebayCreditCardBlack12Colored' |
+'ebayCreditCardBlack18Colored' |
+'ebayCreditCardBlack24Colored' |
+'ebayCreditCardBlack32Colored' |
+'ebayCreditCardPurple12Colored' |
+'ebayCreditCardPurple18Colored' |
+'ebayCreditCardPurple24Colored' |
+'ebayCreditCardPurple32Colored' |
+'ebayCreditCardWhite12Colored' |
+'ebayCreditCardWhite18Colored' |
+'ebayCreditCardWhite24Colored' |
+'ebayCreditCardWhite32Colored' |
 'ebayForCharity16' |
 'ebayForCharity24' |
 'ebayInternationalShipping16' |
@@ -654,6 +669,7 @@ export type Icon =
 'moneyBackGuaranteeFilled24' |
 'moneyBackGuaranteeFilled24Colored' |
 'moneyStack16' |
+'moneyStack20' |
 'moneyStack24' |
 'moneyStackBlue12Colored' |
 'moneyStackBlue18Colored' |
@@ -740,11 +756,16 @@ export type Icon =
 'payoneer24Colored' |
 'payoneer32Colored' |
 'payout16' |
+'payout20' |
 'payout24' |
 'paypal12Colored' |
 'paypal18Colored' |
 'paypal24Colored' |
 'paypal32Colored' |
+'paypalBlue12Colored' |
+'paypalBlue18Colored' |
+'paypalBlue24Colored' |
+'paypalBlue32Colored' |
 'paypalCredit12Colored' |
 'paypalCredit18Colored' |
 'paypalCredit24Colored' |
@@ -753,6 +774,7 @@ export type Icon =
 'paypalDisabled18Colored' |
 'paypalDisabled24Colored' |
 'paypalDisabled32Colored' |
+'paypalLogo16' |
 'paypay12Colored' |
 'paypay18Colored' |
 'paypay24Colored' |
@@ -843,6 +865,8 @@ export type Icon =
 'rim24' |
 'ringgit16' |
 'ringgit24' |
+'rotate16' |
+'rotate20' |
 'rotate24' |
 'rotateLandscapeLeft24' |
 'rotateLandscapeRight24' |
