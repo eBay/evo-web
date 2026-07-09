@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.27.1
+
+### Patch Changes
+
+- [#743](https://github.com/eBay/evo-web/pull/743) [`659df3c`](https://github.com/eBay/evo-web/commit/659df3c3e1c3f8df55abd9005660a756cf7a54a1) Thanks [@dependabot](https://github.com/apps/dependabot)! - Update DS tokens
+
 ## 19.27.0
 
 ### Minor Changes
