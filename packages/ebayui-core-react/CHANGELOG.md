@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.9.0
+
+### Minor Changes
+
+- [#741](https://github.com/eBay/evo-web/pull/741) [`6ba7513`](https://github.com/eBay/evo-web/commit/6ba7513fd71d60c25d27f953bd190b7d20b1b79a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add `renderTooltipOutside` to bar, area, and donut charts so tooltips can render inside modal containers when needed.
+
 ## 9.8.2
 
 ### Patch Changes

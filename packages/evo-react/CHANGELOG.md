@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.2.1
+
+### Patch Changes
+
+- [#724](https://github.com/eBay/evo-web/pull/724) [`c7b322c`](https://github.com/eBay/evo-web/commit/c7b322c2f9856b30f64016b6f536e5f2931ffcf6) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCalendar component.
+
 ## 0.2.0
 
 ### Minor Changes
