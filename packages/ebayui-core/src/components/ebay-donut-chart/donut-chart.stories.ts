@@ -70,6 +70,16 @@ export default {
             type: { name: "string", require: false },
             description: "Highcharts description, not visible on the chart",
         },
+        renderTooltipOutside: {
+            type: { name: "boolean", required: false },
+            description:
+                "Defaults to `true`, if set to false the tooltip will render inside the chart container. Set to `false` when rendering in a modal.",
+            table: {
+                defaultValue: {
+                    summary: "true",
+                },
+            },
+        },
     },
 };
 

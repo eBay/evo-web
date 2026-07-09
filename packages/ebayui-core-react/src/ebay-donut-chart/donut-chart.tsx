@@ -35,6 +35,7 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
     metricLabel,
     series,
     highchartsDescription,
+    renderTooltipOutside = true,
     className,
     ...rest
 }) => {
@@ -87,7 +88,7 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
                 padding: 0,
                 borderWidth: 0,
                 borderRadius: 0,
-                outside: true,
+                outside: renderTooltipOutside,
                 shadow: false,
                 shared: true,
                 style: { filter: tooltipShadows, fontSize: "12px" },
@@ -102,7 +103,7 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
             series: prepared ? [prepared] : [],
             credits: { enabled: false },
         }),
-        [prepared, colors, highchartsDescription],
+        [prepared, colors, highchartsDescription, renderTooltipOutside],
     );
 
     return (

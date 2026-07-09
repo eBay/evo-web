@@ -134,7 +134,11 @@ function getLegendConfig(seriesProp: BarChartSeriesItem | BarChartSeriesItem[]):
     };
 }
 
-function getTooltipConfig(hc: typeof highcharts, stacked: boolean): Highcharts.TooltipOptions {
+function getTooltipConfig(
+    hc: typeof highcharts,
+    stacked: boolean,
+    renderTooltipOutside: boolean,
+): Highcharts.TooltipOptions {
     const formatter: Highcharts.TooltipFormatterCallbackFunction = function (this: Highcharts.Point) {
         const chartSeries = this.series.chart.series;
         const date = hc.dateFormat("%b %e, %Y", this.x as number, false);
@@ -184,7 +188,7 @@ function getTooltipConfig(hc: typeof highcharts, stacked: boolean): Highcharts.T
         backgroundColor: tooltipBackgroundColor,
         borderWidth: 0,
         borderRadius: 10,
-        outside: true,
+        outside: renderTooltipOutside,
         shadow: false,
         style: { filter: tooltipShadows, fontSize: "12px" },
         positioner: stacked ? positioner : undefined,
@@ -274,6 +278,7 @@ function buildChartOptions(
         | "yAxisLabels"
         | "yAxisPositioner"
         | "stacked"
+        | "renderTooltipOutside"
     >,
     preparedSeries: BarChartSeriesItem[],
 ): Highcharts.Options {
@@ -285,6 +290,7 @@ function buildChartOptions(
         yAxisLabels,
         yAxisPositioner,
         stacked = false,
+        renderTooltipOutside = true,
     } = props;
 
     return {
@@ -297,7 +303,7 @@ function buildChartOptions(
         xAxis: getXAxisConfig(xAxisLabelFormat, xAxisPositioner),
         yAxis: getYAxisConfig(getMaxValue(preparedSeries, stacked), yAxisLabels, yAxisPositioner),
         legend: getLegendConfig(seriesProp),
-        tooltip: getTooltipConfig(hc, stacked),
+        tooltip: getTooltipConfig(hc, stacked, renderTooltipOutside),
         plotOptions: getColumnPlotOptions(stacked, description),
         credits: { enabled: false },
     };
@@ -312,6 +318,7 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
     yAxisLabels,
     yAxisPositioner,
     stacked = false,
+    renderTooltipOutside = true,
     className,
     ...rest
 }) => {
@@ -329,10 +336,21 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
                     yAxisLabels,
                     yAxisPositioner,
                     stacked,
+                    renderTooltipOutside,
                 },
                 preparedSeries,
             ),
-        [description, series, xAxisLabelFormat, xAxisPositioner, yAxisLabels, yAxisPositioner, stacked, preparedSeries],
+        [
+            description,
+            series,
+            xAxisLabelFormat,
+            xAxisPositioner,
+            yAxisLabels,
+            yAxisPositioner,
+            stacked,
+            renderTooltipOutside,
+            preparedSeries,
+        ],
     );
 
     return (
