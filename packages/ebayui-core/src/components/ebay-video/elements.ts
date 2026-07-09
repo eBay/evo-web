@@ -145,6 +145,14 @@ function getElements(self: EbayVideo) {
                 const currentTime = Math.max(0, displayTime - seekRange.start);
                 let value = buildTimeString(currentTime, showHour);
                 this.setValue_(value);
+                // Keep aria-valuetext on the seek bar in sync so screen readers
+                // announce time in x:xx format rather than the raw decimal number.
+                const seekBar = self.el?.querySelector<HTMLInputElement>(
+                    ".shaka-seek-bar",
+                );
+                if (seekBar) {
+                    seekBar.setAttribute("aria-valuetext", value);
+                }
             }
         }
         onTracksChanged_() {

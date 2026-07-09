@@ -29,6 +29,7 @@ import { CaptionsControl } from "./controls/captions-control";
 import { EbayEventHandler } from "../common/event-utils/types";
 import { EbayIconPlayFilled64Colored } from "../ebay-icon/icons/ebay-icon-play-filled-64-colored";
 import { EbayIconAttention64 } from "../ebay-icon/icons/ebay-icon-attention-64";
+import { buildTimeString } from "./controls/time-utils";
 
 export type PlayEventProps = {
     player: Player;
@@ -210,6 +211,30 @@ const EbayVideo: FC<EbayVideoProps> = ({
         if (document?.documentElement?.lang) {
             uiRef.current.getControls().getLocalization().changeLocale([document.documentElement.lang]);
         }
+
+        // Keep aria-valuetext on the seek bar <input type="range"> in sync with
+        // the current playback position so screen readers announce time in
+        // x:xx format rather than the raw decimal number that Shaka sets as
+        // the numeric value.
+        uiRef.current.getControls().addEventListener("timeandseekrangeupdated", () => {
+            const controls = uiRef.current?.getControls();
+            const player = uiRef.current?.getControls().getPlayer();
+            if (!controls || !player) return;
+
+            const seekRange = player.seekRange() as { start: number; end: number };
+            const seekRangeSize = seekRange.end - seekRange.start;
+            if (!isFinite(seekRangeSize) || player.isLive()) return;
+
+            const displayTime = controls.getDisplayTime();
+            const currentTime = Math.max(0, displayTime - seekRange.start);
+            const showHour = seekRangeSize >= 3600;
+            const valueText = buildTimeString(currentTime, showHour);
+
+            const seekBar = container.querySelector<HTMLInputElement>(".shaka-seek-bar");
+            if (seekBar) {
+                seekBar.setAttribute("aria-valuetext", valueText);
+            }
+        });
 
         // See ebayui-core/ebay-video/component.ts for full explanation.
         // Shaka's compiled dist uses closed-over module functions internally,
