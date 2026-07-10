@@ -1,5 +1,11 @@
 # Skin Changelog
 
+## 19.28.0
+
+### Minor Changes
+
+- [#739](https://github.com/eBay/evo-web/pull/739) [`3b4dc34`](https://github.com/eBay/evo-web/commit/3b4dc340aec8f16ba58194d2a9410ae8fa1a7c20) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Icon updates
+
 ## 19.27.1
 
 ### Patch Changes
