@@ -50,3 +50,20 @@ export const baseWithHeaderOverflow = () => `
     </div>
 </div>
 `;
+
+export const narrowContent = () => `
+<div aria-labelledby="confirm-dialog-title" aria-modal="true" class="confirm-dialog confirm-dialog--mask-fade" role="dialog">
+    <div class="confirm-dialog__window confirm-dialog__window--fade">
+        <div class="confirm-dialog__header">
+            <h2 id="confirm-dialog-title" class="confirm-dialog__title">Pay now?</h2>
+        </div>
+        <div class="confirm-dialog__main">
+            <p id="confirm-dialog__description">2 items.</p>
+        </div>
+        <div class="confirm-dialog__footer">
+            <button class="btn confirm-dialog__reject">No</button>
+            <button class="btn btn--primary confirm-dialog__confirm" aria-describedby="confirm-dialog__description">Yes</button>
+        </div>
+    </div>
+</div>
+`;
