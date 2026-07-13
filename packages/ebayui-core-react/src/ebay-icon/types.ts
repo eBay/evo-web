@@ -481,6 +481,8 @@ export type Icon =
 'gridView24' |
 'gridViewFilled16' |
 'gridViewFilled24' |
+'guaranteedFitFilled16' |
+'guaranteedFitFilled24' |
 'handSwipe40' |
 'handbag16' |
 'handbag24' |
@@ -599,8 +601,10 @@ export type Icon =
 'liveBagPlayFilled24Colored' |
 'liveBagPlayFilled64Colored' |
 'liveBagThin16' |
+'liveBroadcast16' |
 'liveBroadcast20' |
 'liveBroadcast24' |
+'liveBroadcastFilled24' |
 'liveBroadcastThin16' |
 'liveEye16' |
 'liveEye24' |
@@ -1037,6 +1041,7 @@ export type Icon =
 'thumbUpFilled16' |
 'thumbUpFilled20' |
 'thumbUpFilled24' |
+'tick12' |
 'tick16' |
 'tick24' |
 'tiktok24' |
@@ -1116,6 +1121,10 @@ export type Icon =
 'whatsapp24' |
 'wireTransfer16' |
 'wireTransfer24' |
+'wireTransferCard12Colored' |
+'wireTransferCard18Colored' |
+'wireTransferCard24Colored' |
+'wireTransferCard32Colored' |
 'won16' |
 'won24' |
 'wrench16' |

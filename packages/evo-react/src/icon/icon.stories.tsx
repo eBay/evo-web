@@ -484,6 +484,8 @@ import { EvoIconGridView16 } from "./icons/grid-view-16";
 import { EvoIconGridView24 } from "./icons/grid-view-24";
 import { EvoIconGridViewFilled16 } from "./icons/grid-view-filled-16";
 import { EvoIconGridViewFilled24 } from "./icons/grid-view-filled-24";
+import { EvoIconGuaranteedFitFilled16 } from "./icons/guaranteed-fit-filled-16";
+import { EvoIconGuaranteedFitFilled24 } from "./icons/guaranteed-fit-filled-24";
 import { EvoIconHandSwipe40 } from "./icons/hand-swipe-40";
 import { EvoIconHandbag16 } from "./icons/handbag-16";
 import { EvoIconHandbag24 } from "./icons/handbag-24";
@@ -601,8 +603,10 @@ import { EvoIconLiveBagPlayFilled16Colored } from "./icons/live-bag-play-filled-
 import { EvoIconLiveBagPlayFilled24Colored } from "./icons/live-bag-play-filled-24-colored";
 import { EvoIconLiveBagPlayFilled64Colored } from "./icons/live-bag-play-filled-64-colored";
 import { EvoIconLiveBagThin16 } from "./icons/live-bag-thin-16";
+import { EvoIconLiveBroadcast16 } from "./icons/live-broadcast-16";
 import { EvoIconLiveBroadcast20 } from "./icons/live-broadcast-20";
 import { EvoIconLiveBroadcast24 } from "./icons/live-broadcast-24";
+import { EvoIconLiveBroadcastFilled24 } from "./icons/live-broadcast-filled-24";
 import { EvoIconLiveBroadcastThin16 } from "./icons/live-broadcast-thin-16";
 import { EvoIconLiveEye16 } from "./icons/live-eye-16";
 import { EvoIconLiveEye24 } from "./icons/live-eye-24";
@@ -1017,6 +1021,7 @@ import { EvoIconThumbUp64 } from "./icons/thumb-up-64";
 import { EvoIconThumbUpFilled16 } from "./icons/thumb-up-filled-16";
 import { EvoIconThumbUpFilled20 } from "./icons/thumb-up-filled-20";
 import { EvoIconThumbUpFilled24 } from "./icons/thumb-up-filled-24";
+import { EvoIconTick12 } from "./icons/tick-12";
 import { EvoIconTick16 } from "./icons/tick-16";
 import { EvoIconTick24 } from "./icons/tick-24";
 import { EvoIconTiktok24 } from "./icons/tiktok-24";
@@ -1096,6 +1101,10 @@ import { EvoIconWellsFargo32Colored } from "./icons/wells-fargo-32-colored";
 import { EvoIconWhatsapp24 } from "./icons/whatsapp-24";
 import { EvoIconWireTransfer16 } from "./icons/wire-transfer-16";
 import { EvoIconWireTransfer24 } from "./icons/wire-transfer-24";
+import { EvoIconWireTransferCard12Colored } from "./icons/wire-transfer-card-12-colored";
+import { EvoIconWireTransferCard18Colored } from "./icons/wire-transfer-card-18-colored";
+import { EvoIconWireTransferCard24Colored } from "./icons/wire-transfer-card-24-colored";
+import { EvoIconWireTransferCard32Colored } from "./icons/wire-transfer-card-32-colored";
 import { EvoIconWon16 } from "./icons/won-16";
 import { EvoIconWon24 } from "./icons/won-24";
 import { EvoIconWrench16 } from "./icons/wrench-16";
@@ -5044,6 +5053,22 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconGuaranteedFitFilled16.name || "guaranteed-fit-filled-16"}</td>
+            <td>
+              <EvoIconGuaranteedFitFilled16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconGuaranteedFitFilled24.name || "guaranteed-fit-filled-24"}</td>
+            <td>
+              <EvoIconGuaranteedFitFilled24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconHandSwipe40.name || "hand-swipe-40"}</td>
             <td>
               <EvoIconHandSwipe40 {...args} />
@@ -5980,6 +6005,14 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconLiveBroadcast16.name || "live-broadcast-16"}</td>
+            <td>
+              <EvoIconLiveBroadcast16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconLiveBroadcast20.name || "live-broadcast-20"}</td>
             <td>
               <EvoIconLiveBroadcast20 {...args} />
@@ -5991,6 +6024,14 @@ export const AllIcons: Story = {
             <td>{EvoIconLiveBroadcast24.name || "live-broadcast-24"}</td>
             <td>
               <EvoIconLiveBroadcast24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconLiveBroadcastFilled24.name || "live-broadcast-filled-24"}</td>
+            <td>
+              <EvoIconLiveBroadcastFilled24 {...args} />
             </td>
           </tr>
               
@@ -9308,6 +9349,14 @@ export const AllIcons: Story = {
               
 
           <tr>
+            <td>{EvoIconTick12.name || "tick-12"}</td>
+            <td>
+              <EvoIconTick12 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
             <td>{EvoIconTick16.name || "tick-16"}</td>
             <td>
               <EvoIconTick16 {...args} />
@@ -9935,6 +9984,38 @@ export const AllIcons: Story = {
             <td>{EvoIconWireTransfer24.name || "wire-transfer-24"}</td>
             <td>
               <EvoIconWireTransfer24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconWireTransferCard12Colored.name || "wire-transfer-card-12-colored"}</td>
+            <td>
+              <EvoIconWireTransferCard12Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconWireTransferCard18Colored.name || "wire-transfer-card-18-colored"}</td>
+            <td>
+              <EvoIconWireTransferCard18Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconWireTransferCard24Colored.name || "wire-transfer-card-24-colored"}</td>
+            <td>
+              <EvoIconWireTransferCard24Colored {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconWireTransferCard32Colored.name || "wire-transfer-card-32-colored"}</td>
+            <td>
+              <EvoIconWireTransferCard32Colored {...args} />
             </td>
           </tr>
               
