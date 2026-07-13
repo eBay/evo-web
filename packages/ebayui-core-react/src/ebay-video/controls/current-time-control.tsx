@@ -52,6 +52,7 @@ export const CurrentTimeControl: FC<CurrentTimeControlProps> = ({ a11ySkipToLive
         <button
             className="shaka-current-time"
             disabled={!isLive}
+            aria-hidden={!isLive || undefined}
             onClick={handleClick}
             aria-label={isLive ? a11ySkipToLiveText || "Skip to live" : undefined}
         >

@@ -435,7 +435,7 @@ const EbayVideo: FC<EbayVideoProps> = ({
             )}
             <CurrentTimeControl a11ySkipToLiveText={a11ySkipToLiveText} />
             <RemainingTimeControl />
-            <TotalTimeControl a11ySkipToLiveText={a11ySkipToLiveText} />
+            <TotalTimeControl />
             <MuteButtonControl a11yMuteText={a11yMuteText} a11yUnmuteText={a11yUnmuteText} />
             <FullscreenButtonControl
                 a11yFullscreenText={a11yFullscreenText}

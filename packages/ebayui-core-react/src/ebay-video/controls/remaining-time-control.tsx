@@ -25,10 +25,5 @@ export const RemainingTimeControl: FC = () => {
 
     if (!container) return null;
 
-    return createPortal(
-        <button className="shaka-remaining-time" disabled>
-            {timeText}
-        </button>,
-        container,
-    );
+    return createPortal(<span className="shaka-remaining-time">{timeText}</span>, container);
 };
