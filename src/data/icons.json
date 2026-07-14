@@ -1660,6 +1660,18 @@
         "height": "24",
         "width": "24"
       },
+      {
+        "name": "guaranteed-fit-filled-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
+        "name": "guaranteed-fit-filled-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
+      },
       { "name": "hand-swipe-40", "height": "40", "width": "40" },
       { "name": "handbag-16", "size": "16", "height": "16", "width": "16" },
       { "name": "handbag-24", "size": "24", "height": "24", "width": "24" },
@@ -2053,6 +2065,12 @@
         "width": "16"
       },
       {
+        "name": "live-broadcast-16",
+        "size": "16",
+        "height": "16",
+        "width": "16"
+      },
+      {
         "name": "live-broadcast-20",
         "size": "20",
         "height": "20",
@@ -2060,6 +2078,12 @@
       },
       {
         "name": "live-broadcast-24",
+        "size": "24",
+        "height": "24",
+        "width": "24"
+      },
+      {
+        "name": "live-broadcast-filled-24",
         "size": "24",
         "height": "24",
         "width": "24"
@@ -3306,6 +3330,7 @@
         "height": "24",
         "width": "24"
       },
+      { "name": "tick-12", "size": "12", "height": "12", "width": "12" },
       { "name": "tick-16", "size": "16", "height": "16", "width": "16" },
       { "name": "tick-24", "size": "24", "height": "24", "width": "24" },
       { "name": "tiktok-24", "size": "24", "height": "24", "width": "24" },
@@ -3617,6 +3642,30 @@
         "size": "24",
         "height": "24",
         "width": "24"
+      },
+      {
+        "name": "wire-transfer-card-12-colored",
+        "size": "12-colored",
+        "height": "12",
+        "width": "19"
+      },
+      {
+        "name": "wire-transfer-card-18-colored",
+        "size": "18-colored",
+        "height": "18",
+        "width": "29"
+      },
+      {
+        "name": "wire-transfer-card-24-colored",
+        "size": "24-colored",
+        "height": "24",
+        "width": "38"
+      },
+      {
+        "name": "wire-transfer-card-32-colored",
+        "size": "32-colored",
+        "height": "32",
+        "width": "50"
       },
       { "name": "won-16", "size": "16", "height": "16", "width": "16" },
       { "name": "won-24", "size": "24", "height": "24", "width": "24" },
