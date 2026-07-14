@@ -111,11 +111,11 @@ export const WithSearch: StoryFn<typeof EbayFilterMenuButton> = (args) => {
             text={args.text || "Country"}
             searchHeaderPlaceholderText={args.searchHeaderPlaceholderText || "Search"}
             a11ySearchHeaderClearText={args.a11ySearchHeaderClearText || "Clear"}
-            onSearchChange={(value) => setSearchTerm(value)}
+            onSearchChange={(_, data) => setSearchTerm(data?.searchTerm ?? "")}
             searchHeaderValue={searchTerm}
             selected={checkedCodes.length > 0}
             countText={checkedCodes.length > 0 ? `(+${checkedCodes.length})` : undefined}
-            onChange={(_, { checked }) => setCheckedCodes(checked ?? [])}
+            onChange={(_, data) => setCheckedCodes(data?.checked ?? [])}
         >
             {visibleItems.map((item) => (
                 <EbayFilterMenuItem key={item.code} value={item.code} checked={checkedCodes.includes(item.code)}>
