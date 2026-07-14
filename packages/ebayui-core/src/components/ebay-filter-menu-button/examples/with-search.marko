@@ -35,7 +35,6 @@ class {
         };
     }
 }
-
 $ const checkedCount = Object.values(state.checkedCodes).filter(Boolean).length;
 
 <ebay-filter-menu-button
@@ -43,11 +42,10 @@ $ const checkedCount = Object.values(state.checkedCodes).filter(Boolean).length;
     search-header-placeholder-text="Search"
     a11y-search-header-clear-text="Clear"
     selected=(checkedCount > 0)
-    count-text=(checkedCount > 0 ? `(+${checkedCount})` : undefined)
+    count-text=(checkedCount > 0 ? `(${checkedCount})` : undefined)
     on-search-change("handleSearchChange")
     on-change("handleChange")
-    ...input
->
+    ...input>
     <for|{ name, code }| of=state.visibleCountries>
         <@item value=code checked=(state.checkedCodes[code])>
             ${name}
