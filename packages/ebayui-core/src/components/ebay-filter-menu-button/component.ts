@@ -33,6 +33,9 @@ interface FilterMenuButtonInput
     "form-method"?: string;
     disabled?: boolean;
     "a11y-text"?: Marko.HTMLAttributes["aria-label"];
+    "a11y-filter-applied-text"?: string;
+    "count-text"?: string;
+    selected?: boolean;
     "search-header-value"?: string;
     "search-header-placeholder-text"?: string;
     "a11y-search-header-clear-text"?: Marko.HTMLAttributes["aria-label"];

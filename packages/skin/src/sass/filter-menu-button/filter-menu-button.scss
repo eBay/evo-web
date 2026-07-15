@@ -54,7 +54,7 @@ button.filter-menu-button__button {
     transform: rotate(180deg);
 }
 
-button.filter-menu-button__button[aria-pressed="true"] {
+button.filter-menu-button__button--selected {
     @include token-mixins.border-color-token(
         filter-button-foreground-color,
         color-border-strong
@@ -65,8 +65,8 @@ button.filter-menu-button__button[aria-pressed="true"] {
 
 button.filter-menu-button__button[disabled],
 button.filter-menu-button__button[aria-disabled="true"],
-button.filter-menu-button__button[aria-pressed="true"][disabled],
-button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"] {
+button.filter-menu-button__button--selected[disabled],
+button.filter-menu-button__button--selected[aria-disabled="true"] {
     @include token-mixins.color-token(
         filter-button-disabled-foreground-color,
         color-background-disabled
@@ -74,7 +74,7 @@ button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"] {
 
     font-weight: normal;
 
-    /* todo: we can elimate the need for these overrides by using :not([disabled]) in place where defining hover states */
+    /* todo: we can eliminate the need for these overrides by using :not([disabled]) in place where defining hover states */
     &:hover,
     &:focus {
         @include token-mixins.background-color-token(
@@ -95,9 +95,9 @@ button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"] {
     }
 }
 
-/* todo: we can elimate the need for these overrides by using :not([disabled]) in place where defining hover states */
-button.filter-menu-button__button[aria-pressed="true"][disabled]:hover,
-button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"]:hover {
+/* todo: we can eliminate the need for these overrides by using :not([disabled]) in place where defining hover states */
+button.filter-menu-button__button--selected[disabled]:hover,
+button.filter-menu-button__button--selected[aria-disabled="true"]:hover {
     @include token-mixins.background-color-token(
         filter-button-selected-background-color,
         color-background-secondary

@@ -15,6 +15,9 @@ import { EbayIconChevronDown12 } from "../ebay-icon/icons/ebay-icon-chevron-down
 export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
     className?: string;
     text: string;
+    countText?: string;
+    selected?: boolean;
+    a11yFilterAppliedText?: string;
     onExpand?: () => void;
     onCollapse?: () => void;
 };
@@ -22,6 +25,9 @@ export type EbayFilterMenuButtonProps = EbayFilterMenuProps & {
 const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     className,
     text,
+    countText,
+    selected,
+    a11yFilterAppliedText = "Filter Applied",
     "aria-label": ariaLabel,
     onExpand,
     onCollapse,
@@ -31,7 +37,11 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
 }) => {
     const ref = useRef<HTMLSpanElement>(null);
     const items = filterByType(children, EbayFilterMenuItem);
-    const [hasChecked, setHasChecked] = useState(() => items.some((item) => item.props.checked));
+    const [checkedValues, setCheckedValues] = useState<string[]>(() =>
+        items.filter((item) => item.props.checked).map((item) => item.props.value as string),
+    );
+    const hasChecked = selected ?? checkedValues.length > 0;
+
     const { isExpanded, collapse } = useExpander({
         ref,
         options: {
@@ -69,24 +79,35 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
 
     const handleChange: FilterMenuChange = (event, data) => {
         onChange?.(event, data);
-        setHasChecked(data.checked?.length > 0);
+        setCheckedValues(data.checked ?? []);
     };
 
     return (
         <span ref={ref} className={classNames("filter-menu-button", className)}>
             <button
                 type="button"
-                className="filter-menu-button__button"
+                className={classNames(
+                    "filter-menu-button__button",
+                    hasChecked && "filter-menu-button__button--selected",
+                )}
                 ref={refs.setHost}
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-label={ariaLabel}
-                aria-pressed={hasChecked}
             >
                 <span className="filter-menu-button__button-cell">
-                    <span className="filter-menu-button__button-text">{text}</span>
+                    <span className="filter-menu-button__button-text">
+                        {text}
+                        {countText && (
+                            <>
+                                {" "}
+                                <span className="filter-menu-button__count">{countText}</span>
+                            </>
+                        )}
+                    </span>
                     <EbayIconChevronDown12 />
                 </span>
+                {hasChecked && <span className="clipped">{a11yFilterAppliedText}</span>}
             </button>
             <EbayFilterMenu
                 {...filterMenuProps}

@@ -13,6 +13,22 @@ const meta: Meta<typeof EbayFilterMenuButton> = {
             control: "text",
             description: "Button text",
         },
+        countText: {
+            control: "text",
+            description:
+                'Text rendered in a badge after the button text, e.g. "(+3)". Caller is responsible for formatting.',
+        },
+        selected: {
+            control: "boolean",
+            description:
+                "Overrides derived selected state. Use when managing selection externally (e.g. with search filtering).",
+        },
+        a11yFilterAppliedText: {
+            control: "text",
+            description:
+                'Clipped text announced by screen readers when at least one item is selected. English default is "Filter Applied"',
+            type: { name: "string", required: false },
+        },
         onExpand: { action: "onExpand" },
         onCollapse: { action: "onCollapse" },
     },
@@ -85,6 +101,9 @@ export const WithFooter: StoryFn<typeof EbayFilterMenuButton> = (args) => (
 
 export const WithSearch: StoryFn<typeof EbayFilterMenuButton> = (args) => {
     const [searchTerm, setSearchTerm] = useState("");
+    const [checkedCodes, setCheckedCodes] = useState<string[]>([]);
+
+    const visibleItems = data.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <EbayFilterMenuButton
@@ -92,16 +111,17 @@ export const WithSearch: StoryFn<typeof EbayFilterMenuButton> = (args) => {
             text={args.text || "Country"}
             searchHeaderPlaceholderText={args.searchHeaderPlaceholderText || "Search"}
             a11ySearchHeaderClearText={args.a11ySearchHeaderClearText || "Clear"}
-            onSearchChange={(e) => setSearchTerm(e.target.value)}
+            onSearchChange={(_, data) => setSearchTerm(data?.searchTerm ?? "")}
             searchHeaderValue={searchTerm}
+            selected={checkedCodes.length > 0}
+            countText={checkedCodes.length > 0 ? `(+${checkedCodes.length})` : undefined}
+            onChange={(_, data) => setCheckedCodes(data?.checked ?? [])}
         >
-            {data
-                .filter((item) => item.name.toLowerCase().includes(searchTerm))
-                .map((item) => (
-                    <EbayFilterMenuItem key={item.code} value={item.code} checked={item.code === searchTerm}>
-                        {item.name}
-                    </EbayFilterMenuItem>
-                ))}
+            {visibleItems.map((item) => (
+                <EbayFilterMenuItem key={item.code} value={item.code} checked={checkedCodes.includes(item.code)}>
+                    {item.name}
+                </EbayFilterMenuItem>
+            ))}
         </EbayFilterMenuButton>
     );
 };

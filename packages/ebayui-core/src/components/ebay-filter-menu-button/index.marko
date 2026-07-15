@@ -3,8 +3,11 @@ $ const {
     variant,
     class: inputClass,
     a11yText,
+    a11yFilterAppliedText = "Filter Applied",
     a11yFooterText,
     text,
+    countText,
+    selected,
     footer,
     footerText,
     disabled,
@@ -18,6 +21,8 @@ $ const {
     type: inputType,
     ...htmlInput
 } = input;
+$ const checkedValues = component.getCheckedValues();
+$ const hasSelected = selected ?? !!checkedValues.length;
 
 <span
     ...processHtmlAttributes(htmlInput)
@@ -29,19 +34,24 @@ $ const {
     <button
         key="button"
         type="button"
-        class="filter-menu-button__button"
+        class=["filter-menu-button__button", hasSelected && "filter-menu-button__button--selected"]
         disabled=disabled
         aria-expanded:no-update="false"
         aria-haspopup="true"
         aria-label=a11yText
-        aria-pressed=(component.getCheckedValues().some(Boolean) && "true")
     >
         <span class="filter-menu-button__button-cell">
             <span class="filter-menu-button__button-text">
                 ${text}
+                <if(countText)>
+                    ${" "}<span class="filter-menu-button__count">${countText}</span>
+                </if>
             </span>
             <ebay-chevron-down-12-icon/>
         </span>
+        <if(hasSelected)>
+            <span class="clipped">${a11yFilterAppliedText}</span>
+        </if>
     </button>
     <ebay-filter-menu
         key="menu"

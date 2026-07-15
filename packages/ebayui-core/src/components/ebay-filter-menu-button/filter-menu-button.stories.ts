@@ -39,6 +39,19 @@ export default {
             control: { type: "text" },
             description: "Localized, a11y text for the button",
         },
+        a11yFilterAppliedText: {
+            control: { type: "text" },
+            description:
+                'Clipped a11y text shown when items are selected. English default is "Filter Applied"',
+        },
+        countText: {
+            control: { type: "text" },
+            description: "Text rendered in a badge after the button text, e.g. \"(+3)\". Caller is responsible for formatting.",
+        },
+        selected: {
+            control: { type: "boolean" },
+            description: "Overrides derived selected state. Use when managing selection externally (e.g. with search filtering).",
+        },
         pressed: {
             control: { type: "boolean" },
             description: "whether button is pressed (default is `false`)",
