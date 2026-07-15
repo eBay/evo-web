@@ -239,7 +239,6 @@ exports[`pagination > passes through additional html attributes 1`] = `
     aria-disabled="true"
     aria-label="previous"
     class="pagination__previous icon-link"
-    href="#"
     style="min-width:40px"
     type="previous"
   >
@@ -370,7 +369,6 @@ exports[`pagination > passes through additional html attributes 1`] = `
     aria-disabled="true"
     aria-label="next"
     class="pagination__next icon-link"
-    href="#"
     style="min-width:40px"
     type="next"
   >
@@ -422,7 +420,6 @@ exports[`pagination > passes through additional html attributes 2`] = `
     aria-disabled="true"
     aria-label="previous"
     class="pagination__previous icon-link"
-    href="#"
     style="min-width:40px"
     type="previous"
   >
@@ -553,7 +550,6 @@ exports[`pagination > passes through additional html attributes 2`] = `
     aria-disabled="true"
     aria-label="next"
     class="pagination__next icon-link"
-    href="#"
     style="min-width:40px"
     type="next"
   >
@@ -2127,7 +2123,6 @@ exports[`pagination > with links > renders basic version 1`] = `
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"previous"[39m
       [33mclass[39m=[32m"pagination__previous icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"previous"[39m
     [36m>[39m
@@ -2240,7 +2235,6 @@ exports[`pagination > with links > renders basic version 1`] = `
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"next"[39m
       [33mclass[39m=[32m"pagination__next icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"next"[39m
     [36m>[39m
@@ -2590,7 +2584,6 @@ exports[`pagination > with links > renders with aria-disabled when navigation is
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"previous"[39m
       [33mclass[39m=[32m"pagination__previous icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"previous"[39m
     [36m>[39m
@@ -2763,7 +2756,6 @@ exports[`pagination > with links > renders with aria-disabled when navigation is
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"next"[39m
       [33mclass[39m=[32m"pagination__next icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"next"[39m
     [36m>[39m
@@ -3033,7 +3025,6 @@ exports[`pagination > with links > renders with last page visible 1`] = `
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"previous"[39m
       [33mclass[39m=[32m"pagination__previous icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"previous"[39m
     [36m>[39m
@@ -3174,7 +3165,6 @@ exports[`pagination > with links > renders with last page visible 1`] = `
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"next"[39m
       [33mclass[39m=[32m"pagination__next icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"next"[39m
     [36m>[39m
@@ -3225,7 +3215,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"previous"[39m
       [33mclass[39m=[32m"pagination__previous icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"previous"[39m
     [36m>[39m
@@ -3549,7 +3538,6 @@ exports[`pagination > with links > renders with overflow 1`] = `
       [33maria-disabled[39m=[32m"true"[39m
       [33maria-label[39m=[32m"next"[39m
       [33mclass[39m=[32m"pagination__next icon-link"[39m
-      [33mhref[39m=[32m"#"[39m
       [33mstyle[39m=[32m"min-width:40px"[39m
       [33mtype[39m=[32m"next"[39m
     [36m>[39m
