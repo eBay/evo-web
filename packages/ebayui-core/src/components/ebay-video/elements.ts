@@ -81,6 +81,7 @@ function getElements(self: EbayVideo) {
             this.currentTime_ = document.createElement("button");
             this.currentTime_.classList.add("shaka-current-time");
             this.currentTime_.disabled = true;
+            this.currentTime_.setAttribute("aria-hidden", "true");
             this.setValue_("0:00");
             this.parent.appendChild(this.currentTime_);
             this.eventManager.listen(this.currentTime_, "click", () => {
@@ -145,13 +146,23 @@ function getElements(self: EbayVideo) {
                 const currentTime = Math.max(0, displayTime - seekRange.start);
                 let value = buildTimeString(currentTime, showHour);
                 this.setValue_(value);
+                // Keep aria-valuetext on the seek bar in sync so screen readers
+                // announce time in x:xx format rather than the raw decimal number.
+                const seekBar = self.el?.querySelector<HTMLInputElement>(
+                    ".shaka-seek-bar",
+                );
+                if (seekBar) {
+                    seekBar.setAttribute("aria-valuetext", value);
+                }
             }
         }
         onTracksChanged_() {
             if (this.player.isLive()) {
-                const ariaLabel = self.shaka.ui.Locales.Ids.SKIP_TO_LIVE;
-                this.currentTime_.ariaLabel =
-                    this.localization.resolve(ariaLabel);
+                this.currentTime_.disabled = false;
+                this.currentTime_.removeAttribute("aria-hidden");
+                this.currentTime_.ariaLabel = this.localization.resolve(
+                    self.shaka.ui.Locales.Ids.SKIP_TO_LIVE,
+                );
             }
         }
     };
@@ -164,10 +175,9 @@ function getElements(self: EbayVideo) {
     const TotalTime = class extends self.shaka.ui.Element {
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-            /** Button element for displaying total time */
-            this.currentTime_ = document.createElement("button");
+            /** Element for displaying total time */
+            this.currentTime_ = document.createElement("span");
             this.currentTime_.classList.add("shaka-current-time");
-            this.currentTime_.disabled = true;
             this.parent.appendChild(this.currentTime_);
             this.eventManager.listen(
                 this.controls,
@@ -176,9 +186,6 @@ function getElements(self: EbayVideo) {
                     this.updateTime_();
                 },
             );
-            this.eventManager.listen(this.player, "trackschanged", () => {
-                this.onTracksChanged_();
-            });
         }
 
         setValue_(value: string) {
@@ -196,14 +203,6 @@ function getElements(self: EbayVideo) {
             if (isFinite(seekRangeSize) && seekRangeSize) {
                 const showHour = seekRangeSize >= 3600;
                 this.setValue_(buildTimeString(seekRangeSize, showHour));
-            }
-        }
-
-        onTracksChanged_() {
-            if (this.player.isLive()) {
-                const ariaLabel = self.shaka.ui.Locales.Ids.SKIP_TO_LIVE;
-                this.currentTime_.ariaLabel =
-                    this.localization.resolve(ariaLabel);
             }
         }
     };
@@ -319,10 +318,9 @@ function getElements(self: EbayVideo) {
     const RemainingTime = class extends self.shaka.ui.Element {
         constructor(parent: HTMLElement, controls: any) {
             super(parent, controls);
-            /** Button element for displaying remaining time */
-            this.remainingTime_ = document.createElement("button");
+            /** Element for displaying remaining time */
+            this.remainingTime_ = document.createElement("span");
             this.remainingTime_.classList.add("shaka-remaining-time");
-            this.remainingTime_.disabled = true;
             this.setValue_("0:00");
             this.parent.appendChild(this.remainingTime_);
             this.eventManager.listen(
