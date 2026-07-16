@@ -88,6 +88,41 @@ describe("evo-character-count", () => {
     await expect.element(input).toHaveAttribute("aria-live", "polite");
   });
 
+  it("updates aria-live when the associated input ref changes", async () => {
+    function Example() {
+      const [useSecondInput, setUseSecondInput] = useState(false);
+      const firstInputRef = useRef<HTMLInputElement>(null);
+      const secondInputRef = useRef<HTMLInputElement>(null);
+
+      return (
+        <>
+          <input ref={firstInputRef} aria-label="First input" />
+          <input ref={secondInputRef} aria-label="Second input" />
+          <EvoCharacterCount
+            text="ab"
+            max={1}
+            inputRef={useSecondInput ? secondInputRef : firstInputRef}
+          />
+          <button onClick={() => setUseSecondInput(true)}>
+            Use second input
+          </button>
+        </>
+      );
+    }
+
+    const screen = await render(<Example />);
+    const firstInput = screen.getByRole("textbox", { name: "First input" });
+    const secondInput = screen.getByRole("textbox", { name: "Second input" });
+
+    await expect.element(firstInput).toHaveAttribute("aria-live", "polite");
+    await expect.element(secondInput).not.toHaveAttribute("aria-live");
+
+    await user.click(screen.getByRole("button", { name: "Use second input" }));
+
+    await expect.element(firstInput).not.toHaveAttribute("aria-live");
+    await expect.element(secondInput).toHaveAttribute("aria-live", "polite");
+  });
+
   it("restores the previous aria-live value when unmounted", async () => {
     function Example() {
       const [showCount, setShowCount] = useState(true);

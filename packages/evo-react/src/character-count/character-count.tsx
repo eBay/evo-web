@@ -31,7 +31,7 @@ export function EvoCharacterCount({
         input.setAttribute("aria-live", previousAriaLive);
       }
     };
-  }, [isOverLimit]);
+  }, [inputRef, isOverLimit]);
 
   return (
     <span {...rest}>
