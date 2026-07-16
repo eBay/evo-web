@@ -1,44 +1,75 @@
 export interface Input extends Omit<Marko.HTML.Span, "content"> {
-    string: string;
-    count?: number;
-    max: number;
-    /**
-     * Clipped text for screen readers. Often something like `"characters used"`
-     *
-     * Pass `null` explicitly _only_ if alternative accessibility information is present
-     */
-    a11yText?: string | null;
+  text?: string;
+  count?: number;
+  max: number;
+  /**
+   * Clipped text for screen readers. Often something like `"characters used"`.
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText?: string | null;
+  inputRef?: () => HTMLInputElement | HTMLTextAreaElement;
+  content?: Marko.Body<[count: number]>;
 }
 static const segmenter = (
-    "Segmenter" in Intl
-        ? new (Intl as any).Segmenter(undefined, { granularity: "grapheme" })
-        : null
+  "Segmenter" in Intl
+    ? new (Intl as any).Segmenter(undefined, { granularity: "grapheme" })
+    : null
 );
 static function countGraphemes(value: string): number {
-    if (segmenter) {
-        return [...segmenter.segment(value)].length;
-    }
-    return [...value].length;
+  if (segmenter) {
+    return [...segmenter.segment(value)].length;
+  }
+  return [...value].length;
 }
 
-<const/{ string, max, a11yText, count: inputCount, ...htmlInput }=input>
+<const/{
+  text,
+  max,
+  a11yText,
+  count: inputCount,
+  inputRef,
+  content,
+  ...htmlInput
+}=input>
 
-<const/count=(inputCount !== undefined ? inputCount : countGraphemes(string))>
+<const/count=(
+  inputCount !== undefined ? inputCount : countGraphemes(text ?? "")
+)>
+<const/ariaLive=(count > max ? "polite" : "off")>
 
-<define/Display>
-    <span ...htmlInput>
-        ${count}/${max}
-        <if=a11yText>
-            ${" "}
-            <span class="clipped">
-                ${a11yText}
-            </span>
-        </if>
-    </span>
-</define>
+<script>
+  const inputElement = inputRef?.();
+  if (inputElement) {
+    const previousAriaLive = inputElement.getAttribute("aria-live");
+    inputElement.setAttribute("aria-live", ariaLive);
+    $signal.addEventListener(
+      "abort",
+      () => {
+        if (previousAriaLive === null) {
+          inputElement.removeAttribute("aria-live");
+        } else {
+          inputElement.setAttribute("aria-live", previousAriaLive);
+        }
+      },
+      {
+        once: true,
+      },
+    );
+  }
+</script>
 
-<return={
-    count,
-    ariaLive: count > max ? "polite" as const : "off" as const,
-    Display,
-}>
+<span ...htmlInput>
+  <if=content>
+    <${content}(count)/>
+  </if>
+  <else>
+    ${count}/${max}
+    <if=a11yText>
+      ${" "}
+      <span class="clipped">
+        ${a11yText}
+      </span>
+    </if>
+  </else>
+</span>

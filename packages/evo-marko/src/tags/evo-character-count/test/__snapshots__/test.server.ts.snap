@@ -1,5 +1,42 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`character-count > renders custom text 1`] = `
+"<span
+  class="field"
+>
+  <label
+    class="field__label field__label--stacked"
+    for="my-input"
+  >
+    Field Label
+  </label>
+  <span
+    class="field__control"
+  >
+    <span
+      class="textbox"
+    >
+      <input
+        aria-describedby="my-input-charcount"
+        class="textbox__control"
+        id="my-input"
+        type="text"
+        value="Custom"
+      />
+    </span>
+  </span>
+  <span
+    id="my-input-charcount"
+  >
+    <span
+      class="field__description field__description--group"
+    >
+      6 of 120 (114 remaining)
+    </span>
+  </span>
+</span>"
+`;
+
 exports[`character-count > renders default 1`] = `
 "<span>
   11/120 
@@ -25,12 +62,10 @@ exports[`character-count > renders in field 1`] = `
     class="field__control"
   >
     <span
-      class="textbox textbox__control"
-      placeholder=""
+      class="textbox"
     >
       <input
-        aria-describedby="MARKO-ID-0 MARKO-ID-1"
-        aria-live="off"
+        aria-describedby="my-input-description my-input-charcount"
         class="textbox__control"
         id="my-input"
         type="text"
@@ -46,7 +81,9 @@ exports[`character-count > renders in field 1`] = `
     >
       Brief description
     </span>
-    <span>
+    <span
+      id="my-input-charcount"
+    >
       0/120
     </span>
   </div>
