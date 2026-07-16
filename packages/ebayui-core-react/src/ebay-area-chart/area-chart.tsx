@@ -77,14 +77,28 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
     series: seriesProp,
     tooltipValueFormatter = defaultTooltipValueFormatter,
     tooltipTitleFormatter = defaultTooltipTitleFormatter,
+    xLabelFormat,
     xLabelFormatter,
-    yLabelFormatter = defaultYLabelFormatter,
+    xPositioner,
+    yLabels,
+    yLabelFormatter,
+    yPositioner,
+    xAxisLabelFormat,
+    xAxisPositioner,
+    yAxisLabels,
+    yAxisPositioner,
     areaType = "areaspline",
     renderTooltipOutside = true,
     highchartOptions,
     className,
     ...rest
 }) => {
+    const resolvedXLabelFormat = xLabelFormat ?? xAxisLabelFormat ?? "{value:%b %e}";
+    const resolvedXPositioner = xPositioner ?? xAxisPositioner;
+    const resolvedYLabels = yLabels ?? yAxisLabels;
+    const resolvedYLabelFormatter = yLabelFormatter ?? (resolvedYLabels ? undefined : defaultYLabelFormatter);
+    const resolvedYPositioner = yPositioner ?? yAxisPositioner;
+
     const preparedSeries = useMemo(
         () => prepareSeries(seriesProp),
 
@@ -93,6 +107,7 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
 
     const chartOptions = useMemo<Highcharts.Options>(() => {
         const isMultiSeries = preparedSeries.length > 1;
+        let yLabelsIterator = 0;
 
         const xAxis: Highcharts.XAxisOptions = {
             type: "datetime",
@@ -102,11 +117,12 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
                           return xLabelFormatter(this.value, highcharts.dateFormat);
                       }
                     : undefined,
-                format: "{value:%b %e}",
+                format: resolvedXLabelFormat,
                 align: "center",
                 style: { color: labelsColor },
             },
             tickWidth: 0,
+            tickPositioner: resolvedXPositioner,
             crosshair: { color: "rgba(0, 0, 0, 0.2)", zIndex: 3 },
         };
 
@@ -115,13 +131,24 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
             opposite: true,
             reversedStacks: false,
             labels: {
-                formatter: function () {
-                    return yLabelFormatter(this.value);
-                },
+                formatter: resolvedYLabelFormatter
+                    ? function () {
+                          return resolvedYLabelFormatter(this.value);
+                      }
+                    : resolvedYLabels
+                      ? function () {
+                            if (this.isFirst) {
+                                yLabelsIterator = -1;
+                            }
+                            yLabelsIterator += 1;
+                            return resolvedYLabels[yLabelsIterator] ?? "";
+                        }
+                      : undefined,
                 style: { color: labelsColor },
             },
             title: { enabled: false } as Highcharts.YAxisTitleOptions,
             offset: 0,
+            tickPositioner: resolvedYPositioner,
         };
 
         const legend: Highcharts.LegendOptions = {
@@ -198,8 +225,12 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
         preparedSeries,
         areaType,
         description,
+        resolvedXLabelFormat,
         xLabelFormatter,
-        yLabelFormatter,
+        resolvedXPositioner,
+        resolvedYLabels,
+        resolvedYLabelFormatter,
+        resolvedYPositioner,
         tooltipValueFormatter,
         tooltipTitleFormatter,
         renderTooltipOutside,

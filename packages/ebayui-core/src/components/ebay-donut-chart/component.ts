@@ -28,7 +28,11 @@ interface DonutChartInput extends Omit<
     "cdn-highcharts-pattern-fill"?: string;
     version?: string;
     series: SeriesDonutOptions[];
+    description?: string;
+    /** @deprecated Use `description` instead. */
     highchartsDescription?: string;
+    tooltipValueFormatter?: (value: string | number) => string;
+    tooltipTitleFormatter?: (value: string | number) => string;
     renderTooltipOutside?: boolean;
 }
 
@@ -139,7 +143,8 @@ class DonutChart extends Marko.Component<Input> {
     getPlotOptions(): Highcharts.PlotOptions {
         return {
             pie: {
-                description: this.input.highchartsDescription,
+                description:
+                    this.input.description ?? this.input.highchartsDescription,
                 size: "100%",
                 thickness: 10,
                 allowPointSelect: false,
@@ -163,11 +168,21 @@ class DonutChart extends Marko.Component<Input> {
      * @returns {Highcharts.TooltipOptions}
      */
     getTooltipConfig(): Highcharts.TooltipOptions {
+        const tooltipValueFormatter =
+            this.input.tooltipValueFormatter ?? String;
+        const tooltipTitleFormatter =
+            this.input.tooltipTitleFormatter ?? String;
         return {
-            formatter: function (a) {
+            formatter: function () {
+                const point = this as Highcharts.Point & {
+                    label?: string;
+                    tooltip?: string;
+                };
                 return tooltipTemplate.renderToString({
-                    name: this.name,
-                    value: `${this.y}`,
+                    name: tooltipTitleFormatter(point.name),
+                    value: tooltipValueFormatter(point.y ?? ""),
+                    label: point.label,
+                    tooltip: point.tooltip,
                 });
             },
             hideDelay: 250,

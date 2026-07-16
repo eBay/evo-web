@@ -109,6 +109,24 @@ describe("ebay-donut-chart rendering", () => {
         expect(callProps.options.chart.type).toBe("pie");
     });
 
+    it("uses description with precedence over the deprecated alias", () => {
+        render(
+            <EbayDonutChart
+                series={sampleSeries}
+                description="normalized description"
+                highchartsDescription="deprecated description"
+            />,
+        );
+
+        expect(MockChart.mock.calls[0][0].options.plotOptions.pie.description).toBe("normalized description");
+    });
+
+    it("supports highchartsDescription as a deprecated alias", () => {
+        render(<EbayDonutChart series={sampleSeries} highchartsDescription="deprecated description" />);
+
+        expect(MockChart.mock.calls[0][0].options.plotOptions.pie.description).toBe("deprecated description");
+    });
+
     it("defaults tooltip outside to true", () => {
         render(<EbayDonutChart series={sampleSeries} />);
         const callProps = MockChart.mock.calls[0][0];
@@ -119,6 +137,25 @@ describe("ebay-donut-chart rendering", () => {
         render(<EbayDonutChart series={sampleSeries} renderTooltipOutside={false} />);
         const callProps = MockChart.mock.calls[0][0];
         expect(callProps.options.tooltip.outside).toBe(false);
+    });
+
+    it("uses tooltip formatters when a point has no override", () => {
+        const tooltipValueFormatter = vi.fn(() => "formatted value");
+        const tooltipTitleFormatter = vi.fn(() => "formatted title");
+        render(
+            <EbayDonutChart
+                series={sampleSeries}
+                tooltipValueFormatter={tooltipValueFormatter}
+                tooltipTitleFormatter={tooltipTitleFormatter}
+            />,
+        );
+        const formatter = MockChart.mock.calls[0][0].options.tooltip.formatter;
+        const html = formatter.call({ key: "Electronics", y: 400 });
+
+        expect(html).toContain("formatted title");
+        expect(html).toContain("formatted value");
+        expect(tooltipTitleFormatter).toHaveBeenCalledWith("Electronics");
+        expect(tooltipValueFormatter).toHaveBeenCalledWith(400);
     });
 
     it("logs a warning when multiple series provided", () => {
@@ -166,6 +203,21 @@ describe("donutChartTooltipHtml XSS escaping", () => {
             value: "<script>alert(1)</script>",
         });
         expect(html).toContain("&lt;script&gt;alert(1)&lt;/script&gt;");
+    });
+
+    it("prefers custom tooltip content and labels over a formatted value", () => {
+        const tooltipHtml = donutChartTooltipHtml({
+            name: "A",
+            value: "formatted value",
+            label: "point label",
+            tooltip: "point tooltip",
+        });
+        const labelHtml = donutChartTooltipHtml({ name: "A", value: "formatted value", label: "point label" });
+
+        expect(tooltipHtml).toContain("point tooltip");
+        expect(tooltipHtml).not.toContain("formatted value");
+        expect(labelHtml).toContain("point label");
+        expect(labelHtml).not.toContain("formatted value");
     });
 
     it("escapes custom tooltip content", () => {

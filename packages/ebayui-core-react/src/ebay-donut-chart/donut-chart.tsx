@@ -11,6 +11,14 @@ import type { DonutSeriesItem, EbayDonutChartProps } from "./types";
 
 ebayDonut(highcharts);
 
+function defaultTooltipTitleFormatter(value: number | string): string {
+    return String(value);
+}
+
+function defaultTooltipValueFormatter(value: number | string): string {
+    return String(value);
+}
+
 const DONUT_CHART_STYLES = `
     .donut-tooltip.tooltip__overlay { display: block; position: relative; }
 `;
@@ -34,11 +42,16 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
     metricValue,
     metricLabel,
     series,
+    description,
     highchartsDescription,
+    tooltipValueFormatter = defaultTooltipValueFormatter,
+    tooltipTitleFormatter = defaultTooltipTitleFormatter,
     renderTooltipOutside = true,
     className,
     ...rest
 }) => {
+    const resolvedDescription = description ?? highchartsDescription;
+
     if (series.length === 0) {
         console.warn("EbayDonutChart: at least one series is required.");
     }
@@ -71,7 +84,7 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
             title: { text: undefined },
             plotOptions: {
                 pie: {
-                    description: highchartsDescription,
+                    description: resolvedDescription,
                     size: "100%",
                     thickness: 10,
                     allowPointSelect: false,
@@ -92,10 +105,11 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
                 shadow: false,
                 shared: true,
                 style: { filter: tooltipShadows, fontSize: "12px" },
-                formatter: function (this: Highcharts.Point & { tooltip?: string }) {
+                formatter: function (this: Highcharts.Point & { label?: string; tooltip?: string }) {
                     return donutChartTooltipHtml({
-                        name: String(this.key ?? ""),
-                        value: String(this.y ?? ""),
+                        name: tooltipTitleFormatter(String(this.key ?? "")),
+                        value: tooltipValueFormatter(this.y ?? ""),
+                        label: this.label,
                         tooltip: this.tooltip,
                     });
                 },
@@ -103,7 +117,7 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
             series: prepared ? [prepared] : [],
             credits: { enabled: false },
         }),
-        [prepared, colors, highchartsDescription, renderTooltipOutside],
+        [prepared, colors, resolvedDescription, tooltipValueFormatter, tooltipTitleFormatter, renderTooltipOutside],
     );
 
     return (

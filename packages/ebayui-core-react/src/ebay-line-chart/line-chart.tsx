@@ -28,6 +28,14 @@ import type { EbayLineChartProps, LineChartSeriesItem } from "./types";
 
 ebayLegend(highcharts);
 
+function defaultTooltipTitleFormatter(value: number | string, dateFormat: typeof Highcharts.dateFormat): string {
+    return dateFormat("%b %e, %Y", Number(value), false);
+}
+
+function defaultTooltipValueFormatter(value: number | string): string {
+    return String(value);
+}
+
 const LINE_CHART_STYLES = `
     .ebay-line-chart .highcharts-point { opacity: 0; }
     .ebay-line-chart .ebay-line-chart__marker--visible { opacity: 1; }
@@ -190,6 +198,14 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
     title,
     description,
     series: seriesProp,
+    tooltipValueFormatter = defaultTooltipValueFormatter,
+    tooltipTitleFormatter = defaultTooltipTitleFormatter,
+    xLabelFormat,
+    xLabelFormatter,
+    xPositioner,
+    yLabels,
+    yLabelFormatter,
+    yPositioner,
     xAxisLabelFormat,
     xAxisPositioner,
     yAxisLabels,
@@ -200,6 +216,10 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
     className,
     ...rest
 }) => {
+    const resolvedXLabelFormat = xLabelFormat ?? xAxisLabelFormat ?? "{value:%b %e}";
+    const resolvedXPositioner = xPositioner ?? xAxisPositioner;
+    const resolvedYLabels = yLabels ?? yAxisLabels;
+    const resolvedYPositioner = yPositioner ?? yAxisPositioner;
     const highchartsRef = useRef<HighchartsReactRefObject | null>(null);
     const getChart = () => highchartsRef.current?.chart ?? null;
     const axisTicksRef = useRef<number>(-1);
@@ -229,12 +249,17 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
         const xAxis: Highcharts.XAxisOptions = {
             type: "datetime",
             labels: {
-                format: xAxisLabelFormat || "{value:%b %e}",
+                formatter: xLabelFormatter
+                    ? function () {
+                          return xLabelFormatter(this.value, highcharts.dateFormat);
+                      }
+                    : undefined,
+                format: resolvedXLabelFormat,
                 align: "center",
                 style: { color: labelsColor },
             },
             tickWidth: 0,
-            tickPositioner: xAxisPositioner,
+            tickPositioner: resolvedXPositioner,
             crosshair: { dashStyle: "Solid" },
         };
 
@@ -242,22 +267,26 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
             gridLineColor: gridColor,
             opposite: true,
             labels: {
-                format: yAxisLabels ? undefined : "${text}",
-                formatter: yAxisLabels
+                format: resolvedYLabels || yLabelFormatter ? undefined : "${text}",
+                formatter: yLabelFormatter
                     ? function () {
-                          if (this.isFirst) {
-                              yLabelsIterator = -1;
-                          }
-                          yLabelsIterator = yLabelsIterator + 1;
-                          return yAxisLabels[yLabelsIterator] ?? "";
+                          return yLabelFormatter(this.value);
                       }
-                    : undefined,
+                    : resolvedYLabels
+                      ? function () {
+                            if (this.isFirst) {
+                                yLabelsIterator = -1;
+                            }
+                            yLabelsIterator += 1;
+                            return resolvedYLabels[yLabelsIterator] ?? "";
+                        }
+                      : undefined,
                 style: { color: labelsColor },
             },
             max: maxVal,
             title: { enabled: false } as Highcharts.YAxisTitleOptions,
             offset: 0,
-            tickPositioner: yAxisPositioner,
+            tickPositioner: resolvedYPositioner,
         };
 
         const legend: Highcharts.LegendOptions = {
@@ -272,10 +301,12 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
 
         const tooltip: Highcharts.TooltipOptions = {
             formatter: function (this: Highcharts.Point) {
+                const x = (this.points?.[0]?.x as number) ?? 0;
                 return lineChartTooltipHtml({
-                    date: highcharts.dateFormat("%b %e, %Y", (this.points?.[0]?.x as number) ?? 0, false),
+                    date: tooltipTitleFormatter(x, highcharts.dateFormat),
                     points: this.points as LineChartPoint[],
                     seriesLength: isMultiSeries,
+                    valueFormatter: tooltipValueFormatter,
                 });
             },
             useHTML: true,
@@ -327,11 +358,15 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
     }, [
         preparedSeries,
         colors,
-        xAxisLabelFormat,
-        xAxisPositioner,
-        yAxisLabels,
-        yAxisPositioner,
+        resolvedXLabelFormat,
+        xLabelFormatter,
+        resolvedXPositioner,
+        resolvedYLabels,
+        yLabelFormatter,
+        resolvedYPositioner,
         description,
+        tooltipValueFormatter,
+        tooltipTitleFormatter,
         renderTooltipOutside,
         plotPoints,
     ]);

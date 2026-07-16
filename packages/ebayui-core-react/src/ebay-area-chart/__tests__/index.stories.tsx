@@ -76,12 +76,28 @@ import { EbayAreaChart } from "@ebay/ui-core-react/ebay-area-chart";
             control: { type: "select" },
             options: ["areaspline", "area"],
         },
+        xLabelFormat: {
+            description: 'Highcharts date format string for x-axis labels. Default: `"{value:%b %e}"`',
+            control: "text",
+        },
         xLabelFormatter: {
             description: "Custom function to format x-axis labels. Receives the raw value and `Highcharts.dateFormat`.",
             table: { category: "Callbacks" },
         },
+        xPositioner: {
+            description: "A custom function that returns an array of epoch/unix time values for x-axis tick positions",
+            table: { category: "Callbacks" },
+        },
+        yLabels: {
+            description: "An array of custom labels to use on the y-axis, ordered from lowest to highest tick",
+            control: "object",
+        },
         yLabelFormatter: {
             description: "Custom function to format y-axis labels. Defaults to compact USD currency (e.g. `$4.6k`).",
+            table: { category: "Callbacks" },
+        },
+        yPositioner: {
+            description: "A custom function that returns an array of numeric values for y-axis tick positions",
             table: { category: "Callbacks" },
         },
         tooltipValueFormatter: {

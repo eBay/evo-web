@@ -6,6 +6,7 @@ interface BarChartTooltipPropsStacked {
     date: string;
     data: Highcharts.Series[];
     stacked: true;
+    valueFormatter?: (value: number | string) => string;
     x: number;
 }
 
@@ -13,6 +14,7 @@ interface BarChartTooltipPropsNonStacked {
     date: string;
     data: Highcharts.Point & { label?: string };
     stacked: false;
+    valueFormatter?: (value: number | string) => string;
     x: number;
 }
 
@@ -22,12 +24,13 @@ type BarChartTooltipProps = BarChartTooltipPropsStacked | BarChartTooltipPropsNo
  * Generates the HTML string for the bar chart tooltip.
  * This replaces the Marko subtemplate.marko from the core component.
  */
-export function barChartTooltipHtml({ date, data, stacked, x }: BarChartTooltipProps): string {
+export function barChartTooltipHtml({ date, data, stacked, valueFormatter = String, x }: BarChartTooltipProps): string {
     let html = `<b>${escapeHtml(date)}</b>`;
 
     if (!stacked) {
         const point = data as BarChartTooltipPropsNonStacked["data"];
-        html += `<div><span>${escapeHtml(point.label || "")}</span></div>`;
+        const value = point.label !== undefined ? point.label : valueFormatter(point.y ?? 0);
+        html += `<div><span>${escapeHtml(value)}</span></div>`;
     } else {
         const seriesList = data as Highcharts.Series[];
         for (const series of seriesList) {
@@ -35,8 +38,9 @@ export function barChartTooltipHtml({ date, data, stacked, x }: BarChartTooltipP
                 if (point.x === x) {
                     const dataPoint = point as ColumnPointInternal;
                     html += `<div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">`;
+                    const value = dataPoint.label !== undefined ? dataPoint.label : valueFormatter(dataPoint.y ?? 0);
                     html += `${escapeHtml(series.name || "")}`;
-                    html += `<span style="margin-left: 16px">${escapeHtml(dataPoint.label || "")}</span>`;
+                    html += `<span style="margin-left: 16px">${escapeHtml(value)}</span>`;
                     html += `</div>`;
                 }
             }

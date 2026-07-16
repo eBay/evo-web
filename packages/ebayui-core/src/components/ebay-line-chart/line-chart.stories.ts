@@ -49,7 +49,16 @@ export default {
                 },
             },
         },
-        xAxisLabelFormat: {
+        tooltipValueFormatter: {
+            type: { name: "function", required: false },
+            description:
+                "A function that formats tooltip values when a point has no label.",
+        },
+        tooltipTitleFormatter: {
+            type: { name: "function", required: false },
+            description: "A function that formats the tooltip date header.",
+        },
+        xLabelFormat: {
             type: { name: "string", required: false },
             description:
                 "Used to modify the display of the x-axis labels. Accepts a string like `{value:%Y-%m-%d}`. Refer to https://api.highcharts.com/class-reference/Highcharts.Time#dateFormat for available format keys",
@@ -59,17 +68,25 @@ export default {
                 },
             },
         },
-        xAxisPositioner: {
+        xLabelFormatter: {
+            type: { name: "function", required: false },
+            description: "A function that formats x-axis labels.",
+        },
+        xPositioner: {
             type: { name: "function", required: false },
             description:
                 "A custom function that returns an array of epoch/unix time values where x-axis labels will be displayed. You can access `this.dataMin` and `this.dataMax` from the function to help determine positions.",
         },
-        yAxisLabels: {
+        yLabels: {
             type: { name: "array", required: false },
             description:
-                "An array of labels to use on the y-axis. Use in conjunction with yAxisPositioner. Make sure the length of the yAxisLabels match the length of the positions array returned by the yAxisPositioner function",
+                "An array of labels to use on the y-axis. Use in conjunction with yPositioner. Make sure the length of yLabels matches the length of the positions array returned by yPositioner.",
         },
-        yAxisPositioner: {
+        yLabelFormatter: {
+            type: { name: "function", required: false },
+            description: "A function that formats y-axis labels.",
+        },
+        yPositioner: {
             type: { name: "function", required: false },
             description:
                 "A custom function that returns an array of numeric values where y-axis labels will be displayed. You can access `this.dataMin` and `this.dataMax` from the function to help determine positions",

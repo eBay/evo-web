@@ -50,15 +50,32 @@ export default {
             description:
                 "A highcharts options object that will be merged with the default options",
         },
+        xLabelFormat: {
+            type: { name: "string", required: false },
+            description:
+                "Used to modify the display of the x-axis labels. Accepts a string like `{value:%Y-%m-%d}`.",
+        },
         xLabelFormatter: {
             type: { name: "function", required: false },
             description:
                 "A function that will be used to format the x-axis labels. Provides the value and a date formatter function. By default is formatted as `MMM dd`. Refer to https://api.highcharts.com/class-reference/Highcharts.Time#dateFormat for available format keys",
         },
+        xPositioner: {
+            type: { name: "function", required: false },
+            description: "A function that returns the x-axis tick positions.",
+        },
+        yLabels: {
+            type: { name: "array", required: false },
+            description: "An array of labels to use on the y-axis.",
+        },
         yLabelFormatter: {
             type: { name: "function", required: false },
             description:
                 "A function that will be used to format the y-axis labels. By default is formatted as USD currency.",
+        },
+        yPositioner: {
+            type: { name: "function", required: false },
+            description: "A function that returns the y-axis tick positions.",
         },
         tooltipValueFormatter: {
             type: { name: "function", required: false },

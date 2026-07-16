@@ -1,12 +1,22 @@
+export interface Input {
+    label?: string;
+    name: string;
+    tooltip?: string;
+    value: string;
+}
+
 <div class="donut-tooltip tooltip__overlay" role="tooltip">
     <div class="tooltip__mask">
         <div class="tooltip__cell">
             <div class="tooltip__content">
                 <b>${input.name}</b>
                 <br>
-                <if(input.tooltip)>
+                <if(input.tooltip !== undefined)>
                     ${input.tooltip}
                 </if>
+                <else-if(input.label !== undefined)>
+                    ${input.label}
+                </else-if>
                 <else>${input.value}</else>
             </div>
         </div>

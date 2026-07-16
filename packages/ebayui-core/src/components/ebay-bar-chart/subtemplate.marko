@@ -1,7 +1,26 @@
+export type Input =
+    | {
+          date: string;
+          data: { label?: string; x: number; y?: number };
+          stacked: false;
+          valueFormatter: (value: number | string) => string;
+          x: number;
+      }
+    | {
+          date: string;
+          data: Array<{
+              name?: string;
+              data: Array<{ label?: string; x: number; y?: number }>;
+          }>;
+          stacked: true;
+          valueFormatter: (value: number | string) => string;
+          x: number;
+      };
+
 <b>${input.date}</b>
 <if(!input.stacked)>
     <div>
-        <span>${input.data.label}</span>
+        <span>${input.data.label ?? input.valueFormatter(input.data.y ?? 0)}</span>
     </div>
 </if>
 <else>
@@ -11,7 +30,7 @@
                 <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">
                     ${series.name}
                     <span style="margin-left: 16px">
-                        ${point.label}
+                        ${point.label ?? input.valueFormatter(point.y ?? 0)}
                     </span>
                 </div>
             </if>

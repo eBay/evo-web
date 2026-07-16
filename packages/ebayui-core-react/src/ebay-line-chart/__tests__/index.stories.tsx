@@ -83,19 +83,35 @@ import { EbayLineChart } from "@ebay/ui-core-react/ebay-line-chart";
                 "When `true` (default), renders the tooltip outside the chart SVG to prevent clipping. Set to `false` when rendering inside a modal or dialog.",
             control: "boolean",
         },
-        xAxisLabelFormat: {
+        tooltipValueFormatter: {
+            description: "Custom function to format tooltip values when a point does not provide a label.",
+            table: { category: "Callbacks" },
+        },
+        tooltipTitleFormatter: {
+            description: "Custom function to format the tooltip date header.",
+            table: { category: "Callbacks" },
+        },
+        xLabelFormat: {
             description: 'Highcharts date format string for x-axis labels. Default: `"{value:%b %e}"`',
             control: "text",
         },
-        xAxisPositioner: {
+        xLabelFormatter: {
+            description: "Custom function to format x-axis labels. Receives the raw value and `Highcharts.dateFormat`.",
+            table: { category: "Callbacks" },
+        },
+        xPositioner: {
             description: "A custom function that returns an array of epoch/unix time values for x-axis tick positions",
             table: { category: "Callbacks" },
         },
-        yAxisLabels: {
+        yLabels: {
             description: "An array of custom labels to use on the y-axis, ordered from lowest to highest tick",
             control: "object",
         },
-        yAxisPositioner: {
+        yLabelFormatter: {
+            description: "Custom function to format y-axis labels.",
+            table: { category: "Callbacks" },
+        },
+        yPositioner: {
             description: "A custom function that returns an array of numeric values for y-axis tick positions",
             table: { category: "Callbacks" },
         },
@@ -244,13 +260,13 @@ export const WithPlotPoints: StoryObj<EbayLineChartProps> = {
 export const CustomYAxisLabels: StoryObj<EbayLineChartProps> = {
     args: {
         series: getSeries(1),
-        yAxisLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
+        yLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
     },
 };
 
 export const CustomXAxisFormat: StoryObj<EbayLineChartProps> = {
     args: {
         series: getSeries(1),
-        xAxisLabelFormat: "{value:%b %e, %Y}",
+        xLabelFormat: "{value:%b %e, %Y}",
     },
 };

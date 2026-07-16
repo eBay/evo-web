@@ -29,5 +29,8 @@
     "@class": "string",
     "@series": "string",
     "@description": "string",
+    "@highchartsDescription": "string",
+    "@tooltipValueFormatter": "function",
+    "@tooltipTitleFormatter": "function",
     "@renderTooltipOutside": "boolean"
 }

@@ -135,6 +135,80 @@ describe("ebay-line-chart rendering", () => {
         expect(callProps.title).toBe("My Line Chart");
     });
 
+    it("uses normalized label and positioner props", () => {
+        const xPositioner = vi.fn(() => [1]);
+        const yPositioner = vi.fn(() => [0]);
+        render(
+            <EbayLineChart
+                series={sampleSeries}
+                xLabelFormat="{value:%Y}"
+                xPositioner={xPositioner}
+                yLabels={["zero"]}
+                yPositioner={yPositioner}
+            />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.format).toBe("{value:%Y}");
+        expect(options.xAxis.tickPositioner).toBe(xPositioner);
+        expect(options.yAxis.labels.formatter.call({ isFirst: true })).toBe("zero");
+        expect(options.yAxis.tickPositioner).toBe(yPositioner);
+    });
+
+    it("uses label formatters", () => {
+        const xLabelFormatter = vi.fn(() => "x label");
+        const yLabelFormatter = vi.fn(() => "y label");
+        render(
+            <EbayLineChart series={sampleSeries} xLabelFormatter={xLabelFormatter} yLabelFormatter={yLabelFormatter} />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.formatter.call({ value: 1 })).toBe("x label");
+        expect(options.yAxis.labels.formatter.call({ value: 2 })).toBe("y label");
+        expect(xLabelFormatter).toHaveBeenCalledWith(1, expect.any(Function));
+        expect(yLabelFormatter).toHaveBeenCalledWith(2);
+    });
+
+    it("supports deprecated axis prop aliases with normalized props taking precedence", () => {
+        const oldXPositioner = vi.fn(() => [1]);
+        const newXPositioner = vi.fn(() => [2]);
+        render(
+            <EbayLineChart
+                series={sampleSeries}
+                xLabelFormat="new"
+                xPositioner={newXPositioner}
+                xAxisLabelFormat="old"
+                xAxisPositioner={oldXPositioner}
+                yAxisLabels={["old y"]}
+            />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.format).toBe("new");
+        expect(options.xAxis.tickPositioner).toBe(newXPositioner);
+        expect(options.yAxis.labels.formatter.call({ isFirst: true })).toBe("old y");
+    });
+
+    it("uses tooltip formatters when a point has no override", () => {
+        const tooltipValueFormatter = vi.fn(() => "formatted value");
+        const tooltipTitleFormatter = vi.fn(() => "formatted title");
+        render(
+            <EbayLineChart
+                series={sampleSeries}
+                tooltipValueFormatter={tooltipValueFormatter}
+                tooltipTitleFormatter={tooltipTitleFormatter}
+            />,
+        );
+        const formatter = MockChart.mock.calls[0][0].options.tooltip.formatter;
+        const point = { x: 1, y: 2, series: { name: "Series A" } };
+        const html = formatter.call({ points: [point] });
+
+        expect(html).toContain("formatted title");
+        expect(html).toContain("formatted value");
+        expect(tooltipTitleFormatter).toHaveBeenCalledWith(1, expect.any(Function));
+        expect(tooltipValueFormatter).toHaveBeenCalledWith(2);
+    });
+
     it("renders one Series per series item", () => {
         const { getAllByTestId } = render(<EbayLineChart series={multiSeries} />);
         expect(getAllByTestId("highcharts-series")).toHaveLength(2);
@@ -162,6 +236,22 @@ describe("lineChartTooltipHtml XSS escaping", () => {
             seriesLength: false,
         });
         expect(html).toContain("&lt;img src=x onerror=&quot;alert(1)&quot;&gt;");
+    });
+
+    it("prefers point tooltip text and labels over value formatting", () => {
+        const html = lineChartTooltipHtml({
+            date: "Jan 1",
+            points: [
+                { series: { name: "A" }, tooltip: "point tooltip", y: 1 } as LineChartPoint,
+                { series: { name: "B" }, label: "point label", y: 2 } as LineChartPoint,
+            ],
+            seriesLength: true,
+            valueFormatter: () => "formatted value",
+        });
+
+        expect(html).toContain("point tooltip");
+        expect(html).toContain("point label");
+        expect(html).not.toContain("formatted value");
     });
 
     it("renders single series label only", () => {

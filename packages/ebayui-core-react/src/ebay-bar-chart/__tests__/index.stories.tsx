@@ -66,20 +66,36 @@ import { EbayBarChart } from "@ebay/ui-core-react/ebay-bar-chart";
                 "The series data: an array of one to five series objects, each containing `data` points with `x` (epoch time), `y` (numeric value), and optional `label`",
             control: "object",
         },
-        xAxisLabelFormat: {
+        tooltipValueFormatter: {
+            description: "Custom function to format tooltip values when a point does not provide a label.",
+            table: { category: "Callbacks" },
+        },
+        tooltipTitleFormatter: {
+            description: "Custom function to format the tooltip date header.",
+            table: { category: "Callbacks" },
+        },
+        xLabelFormat: {
             description: 'Highcharts date format string for x-axis labels. Default: `"{value:%b %e}"`',
             control: "text",
         },
-        xAxisPositioner: {
+        xLabelFormatter: {
+            description: "Custom function to format x-axis labels. Receives the raw value and `Highcharts.dateFormat`.",
+            table: { category: "Callbacks" },
+        },
+        xPositioner: {
             description:
                 "A custom function that returns an array of epoch/unix time values where x-axis labels will be displayed",
             table: { category: "Callbacks" },
         },
-        yAxisLabels: {
+        yLabels: {
             description: "An array of labels to use on the y-axis",
             control: "object",
         },
-        yAxisPositioner: {
+        yLabelFormatter: {
+            description: "Custom function to format y-axis labels.",
+            table: { category: "Callbacks" },
+        },
+        yPositioner: {
             description:
                 "A custom function that returns an array of numeric values where y-axis labels will be displayed",
             table: { category: "Callbacks" },
@@ -366,7 +382,7 @@ export const InsideLightboxDialog: StoryObj<EbayBarChartProps> = {
         title: "Revenue Over Time",
         description: "Daily revenue breakdown across product categories inside a lightbox dialog",
         series: getSeriesData(3, 8),
-        yAxisLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
+        yLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
         renderTooltipOutside: false,
     },
     parameters: {
@@ -383,7 +399,7 @@ export const InsideLightboxDialog: StoryObj<EbayBarChartProps> = {
 export const CustomXAxisFormat: StoryObj<EbayBarChartProps> = {
     args: {
         series: getSeriesData(2, 12),
-        xAxisLabelFormat: "{value:%b %e, %Y}",
+        xLabelFormat: "{value:%b %e, %Y}",
     },
 };
 
@@ -391,6 +407,6 @@ export const CustomXAxisFormat: StoryObj<EbayBarChartProps> = {
 export const CustomYAxisLabels: StoryObj<EbayBarChartProps> = {
     args: {
         series: getSeriesData(1, 8),
-        yAxisLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
+        yLabels: ["$0", "$1k", "$2k", "$3k", "$4k", "$5k"],
     },
 };

@@ -67,9 +67,17 @@ import { EbayDonutChart } from "@ebay/ui-core-react/ebay-donut-chart";
                 "Array of series data. Only the first series is rendered — each data point requires `name` (string) and `y` (numeric value).",
             control: "object",
         },
-        highchartsDescription: {
+        description: {
             description: "Accessible description passed to the Highcharts plot options for screen readers.",
             control: "text",
+        },
+        tooltipValueFormatter: {
+            description: "Custom function to format tooltip values when a point has no tooltip text or label.",
+            table: { category: "Callbacks" },
+        },
+        tooltipTitleFormatter: {
+            description: "Custom function to format the tooltip title from the slice name.",
+            table: { category: "Callbacks" },
         },
         renderTooltipOutside: {
             description:

@@ -31,11 +31,23 @@ interface AreaChartInput extends Omit<Marko.HTML.Div, `on${string}`> {
         value: string | number,
         dateFormat: typeof Highcharts.dateFormat,
     ) => string;
+    xLabelFormat?: string;
     xLabelFormatter?: (
         value: string | number,
         dateFormat: typeof Highcharts.dateFormat,
     ) => string;
+    xPositioner?: Highcharts.XAxisOptions["tickPositioner"];
+    yLabels?: string[];
     yLabelFormatter?: (value: string | number) => string;
+    yPositioner?: Highcharts.YAxisOptions["tickPositioner"];
+    /** @deprecated Use `xLabelFormat` instead. */
+    xAxisLabelFormat?: string;
+    /** @deprecated Use `xPositioner` instead. */
+    xAxisPositioner?: Highcharts.XAxisOptions["tickPositioner"];
+    /** @deprecated Use `yLabels` instead. */
+    yAxisLabels?: string[];
+    /** @deprecated Use `yPositioner` instead. */
+    yAxisPositioner?: Highcharts.YAxisOptions["tickPositioner"];
     areaType?: "areaspline" | "area";
     highchartOptions?: Highcharts.Options;
     renderTooltipOutside?: boolean;
@@ -219,7 +231,11 @@ class AreaChart extends Marko.Component<Input> {
      * Get the xAxis configuration for the chart
      */
     getXAxisConfig(): Highcharts.XAxisOptions {
+        const xLabelFormat =
+            this.input.xLabelFormat ?? this.input.xAxisLabelFormat;
         const xLabelFormatter = this.input.xLabelFormatter;
+        const xPositioner =
+            this.input.xPositioner ?? this.input.xAxisPositioner;
         return {
             // currently setup to support epoch time values for xAxisLabels.
             // It is possible to set custom non datetime xAxisLabels but will need changes to this component
@@ -233,13 +249,14 @@ class AreaChart extends Marko.Component<Input> {
                           );
                       }
                     : undefined,
-                format: "{value:%b %e}",
+                format: xLabelFormat ?? "{value:%b %e}",
                 align: "center",
                 style: {
                     color: labelsColor,
                 },
             },
             tickWidth: 0, // hide the vertical tick on xAxis labels
+            tickPositioner: xPositioner,
             crosshair: {
                 color: "rgba(0, 0, 0, 0.2)",
                 zIndex: 3,
@@ -251,18 +268,32 @@ class AreaChart extends Marko.Component<Input> {
      * Get the yAxis configuration for the chart
      */
     getYAxisConfig(): Highcharts.YAxisOptions {
-        // Formatter function for the yAxis labels
+        const yLabels = this.input.yLabels ?? this.input.yAxisLabels;
         const yLabelFormatter =
-            this.input.yLabelFormatter ?? this._yLabelFormatter;
+            this.input.yLabelFormatter ??
+            (yLabels ? undefined : this._yLabelFormatter);
+        const yPositioner =
+            this.input.yPositioner ?? this.input.yAxisPositioner;
+        let yLabelsIterator = 0;
 
         return {
             gridLineColor: gridColor,
             opposite: true, // moves yAxis labels to the right side of the chart
             reversedStacks: false, // makes so series one starts at the bottom of the yAxis, by default this is true
             labels: {
-                formatter: function () {
-                    return yLabelFormatter(this.value);
-                },
+                formatter: yLabelFormatter
+                    ? function () {
+                          return yLabelFormatter(this.value);
+                      }
+                    : yLabels
+                      ? function () {
+                            if (this.isFirst) {
+                                yLabelsIterator = -1;
+                            }
+                            yLabelsIterator += 1;
+                            return yLabels[yLabelsIterator] ?? "";
+                        }
+                      : undefined,
                 style: {
                     color: labelsColor,
                 },
@@ -271,6 +302,7 @@ class AreaChart extends Marko.Component<Input> {
                 enabled: false,
             } as Highcharts.YAxisTitleOptions,
             offset: 0,
+            tickPositioner: yPositioner,
         };
     }
 

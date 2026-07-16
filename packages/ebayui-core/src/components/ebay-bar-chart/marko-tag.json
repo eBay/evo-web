@@ -15,6 +15,14 @@
             "@label": "string"
         }
     },
+    "@tooltipValueFormatter": "function",
+    "@tooltipTitleFormatter": "function",
+    "@xLabelFormat": "string",
+    "@xLabelFormatter": "function",
+    "@xPositioner": "function",
+    "@yLabels": "array",
+    "@yLabelFormatter": "function",
+    "@yPositioner": "function",
     "@xAxisLabelFormat": "string",
     "@xAxisPositioner": "function",
     "@yAxisLabels": "array",

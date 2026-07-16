@@ -66,9 +66,19 @@ export default {
             description:
                 "Highcharts series data for the chart. Only one series is supported for donut chart.",
         },
-        highchartsDescription: {
+        description: {
             type: { name: "string", require: false },
-            description: "Highcharts description, not visible on the chart",
+            description: "Accessible description passed to Highcharts.",
+        },
+        tooltipValueFormatter: {
+            type: { name: "function", required: false },
+            description:
+                "A function that formats tooltip values when a point has no tooltip text or label.",
+        },
+        tooltipTitleFormatter: {
+            type: { name: "function", required: false },
+            description:
+                "A function that formats the tooltip title from the slice name.",
         },
         renderTooltipOutside: {
             type: { name: "boolean", required: false },
@@ -93,7 +103,7 @@ Standard.args = {
     title: "Donut chart title",
     metricValue: "174 Total",
     metricLabel: "3.78% return rate",
-    highchartsDescription: "Donut chart description",
+    description: "Donut chart description",
 };
 
 Standard.parameters = {
@@ -114,7 +124,7 @@ TwoValues.args = {
     title: "Donut chart with two values",
     metricValue: "174 Total",
     metricLabel: "3.78% return rate",
-    highchartsDescription: "Donut chart description",
+    description: "Donut chart description",
 };
 
 TwoValues.parameters = {
@@ -135,7 +145,7 @@ ThreeValues.args = {
     title: "Donut chart with three values",
     metricValue: "174 Total",
     metricLabel: "3.78% return rate",
-    highchartsDescription: "Donut chart description",
+    description: "Donut chart description",
 };
 
 ThreeValues.parameters = {
@@ -156,7 +166,7 @@ FourValues.args = {
     title: "Donut chart with four values",
     metricValue: "174 Total",
     metricLabel: "3.78% return rate",
-    highchartsDescription: "Donut chart description",
+    description: "Donut chart description",
 };
 
 FourValues.parameters = {
@@ -177,7 +187,7 @@ FiveValues.args = {
     title: "Donut chart with five values",
     metricValue: "174 Total",
     metricLabel: "3.78% return rate",
-    highchartsDescription: "Donut chart description",
+    description: "Donut chart description",
 };
 
 FiveValues.parameters = {
@@ -196,7 +206,7 @@ NoMetrics.args = {
         },
     ],
     title: "Donut chart title, no metrics",
-    highchartsDescription: "Donut chart description",
+    description: "Donut chart description",
 };
 
 export const WithAttributeTags: Story<Input> = (args: Input) => ({

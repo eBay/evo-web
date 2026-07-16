@@ -33,9 +33,27 @@ interface SeriesItem
 interface BarChartInput extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
     title: Highcharts.TitleOptions["text"];
     description?: Highcharts.SeriesOptionsType["description"];
+    tooltipValueFormatter?: (value: string | number) => string;
+    tooltipTitleFormatter?: (
+        value: string | number,
+        dateFormat: typeof Highcharts.dateFormat,
+    ) => string;
+    xLabelFormat?: Highcharts.XAxisLabelsOptions["format"];
+    xLabelFormatter?: (
+        value: string | number,
+        dateFormat: typeof Highcharts.dateFormat,
+    ) => string;
+    xPositioner?: Highcharts.XAxisOptions["tickPositioner"];
+    yLabels?: string[];
+    yLabelFormatter?: (value: string | number) => string;
+    yPositioner?: Highcharts.YAxisOptions["tickPositioner"];
+    /** @deprecated Use `xLabelFormat` instead. */
     "x-axis-label-format"?: Highcharts.XAxisLabelsOptions["format"];
+    /** @deprecated Use `xPositioner` instead. */
     "x-axis-positioner"?: Highcharts.XAxisOptions["tickPositioner"];
+    /** @deprecated Use `yLabels` instead. */
     "y-axis-labels"?: Highcharts.YAxisLabelsOptions["format"][];
+    /** @deprecated Use `yPositioner` instead. */
     "y-axis-positioner"?: Highcharts.YAxisOptions["tickPositioner"];
     series: SeriesItem | SeriesItem[];
     "cdn-highcharts"?: string;
@@ -153,23 +171,34 @@ class BarChart extends Marko.Component<Input> {
     }
 
     getXAxisConfig(): Highcharts.XAxisOptions {
-        const xAxisLabelFormat = this.input.xAxisLabelFormat;
-        const xAxisPositioner = this.input.xAxisPositioner;
+        const xLabelFormat =
+            this.input.xLabelFormat ?? this.input.xAxisLabelFormat;
+        const xLabelFormatter = this.input.xLabelFormatter;
+        const xPositioner =
+            this.input.xPositioner ?? this.input.xAxisPositioner;
         return {
             // currently setup to support epoch time values for xAxisLabels.
             // It is possible to set custom non datetime xAxisLabels but will need changes to this component
             type: "datetime",
             labels: {
-                // input.xAxisLabelFormat allows overriding the default short month / day label
+                formatter: xLabelFormatter
+                    ? function () {
+                          return xLabelFormatter(
+                              this.value,
+                              Highcharts.dateFormat,
+                          );
+                      }
+                    : undefined,
+                // xLabelFormat allows overriding the default short month / day label
                 // refer to https://api.highcharts.com/class-reference/Highcharts.Time#dateFormat to customize
-                format: xAxisLabelFormat || "{value:%b %e}",
+                format: xLabelFormat ?? "{value:%b %e}",
                 align: "center",
                 style: {
                     color: labelsColor, // setting label colors
                 },
             },
             tickWidth: 0, // hide the vertical tick on xAxis labels
-            tickPositioner: xAxisPositioner, // optional input to allow configuring the position of xAxis tick marks
+            tickPositioner: xPositioner, // optional input to allow configuring the position of xAxis tick marks
         };
     }
 
@@ -195,27 +224,31 @@ class BarChart extends Marko.Component<Input> {
     }
 
     getYAxisConfig(series: SeriesItem[]): Highcharts.YAxisOptions {
-        const yAxisLabels = this.input.yAxisLabels;
-        const yAxisPositioner = this.input.yAxisPositioner;
+        const yLabels = this.input.yLabels ?? this.input.yAxisLabels;
+        const yLabelFormatter = this.input.yLabelFormatter;
+        const yPositioner =
+            this.input.yPositioner ?? this.input.yAxisPositioner;
         const maxVal = this.getMaxValue(series); // use to determine the highest yAxis value
-        let yLabelsItterator = 0;
+        let yLabelsIterator = 0;
         return {
             gridLineColor: gridColor, // sets the horizontal grid line colors
             opposite: true, // moves yAxis labels to the right side of the chart
             reversedStacks: false, // makes so series one starts at the bottom of the yAxis, by default this is true
             labels: {
-                format: yAxisLabels ? undefined : "${text}",
-                // if yAxisLabels array is passed in this formatter function is needed to
-                // return the proper label for each yAxis tick mark
-                formatter: yAxisLabels
+                format: yLabels || yLabelFormatter ? undefined : "${text}",
+                formatter: yLabelFormatter
                     ? function () {
-                          if (this.isFirst) {
-                              yLabelsItterator = -1;
-                          }
-                          yLabelsItterator = yLabelsItterator + 1;
-                          return yAxisLabels[yLabelsItterator] as string;
+                          return yLabelFormatter(this.value);
                       }
-                    : undefined,
+                    : yLabels
+                      ? function () {
+                            if (this.isFirst) {
+                                yLabelsIterator = -1;
+                            }
+                            yLabelsIterator += 1;
+                            return yLabels[yLabelsIterator] ?? "";
+                        }
+                      : undefined,
                 style: {
                     color: labelsColor, // setting label colors
                 },
@@ -225,8 +258,8 @@ class BarChart extends Marko.Component<Input> {
                 enabled: false, // hide the axis label next to the axis
             } as Highcharts.YAxisTitleOptions,
             offset: 0, // set to zero for no offset refer to https://api.highcharts.com/highcharts/yAxis.offset
-            // passed in function for yAxisPositioner refer to https://api.highcharts.com/highcharts/yAxis.tickPositioner for use
-            tickPositioner: yAxisPositioner,
+            // passed in function for yPositioner refer to https://api.highcharts.com/highcharts/yAxis.tickPositioner for use
+            tickPositioner: yPositioner,
         };
     }
 
@@ -249,16 +282,22 @@ class BarChart extends Marko.Component<Input> {
     // returns a function that can be called on each mouseover event
     tooltipFormatter() {
         const stacked = this.input.stacked;
+        const tooltipValueFormatter =
+            this.input.tooltipValueFormatter ?? String;
+        const tooltipTitleFormatter =
+            this.input.tooltipTitleFormatter ??
+            ((value, dateFormat) =>
+                dateFormat("%b %e, %Y", Number(value), false));
         return function (this: any) {
             // references to the charts updates series array, only available when the returned tooltip function is called and not before
             const series = this.series.chart.series;
 
             // refer to https://api.highcharts.com/class-reference/Highcharts.Time#dateFormat for dateFormat variables
             return subtemplate.renderToString({
-                // eslint-disable-next-line no-undef,new-cap
-                date: Highcharts.dateFormat("%b %e, %Y", this.x, false),
+                date: tooltipTitleFormatter(this.x, Highcharts.dateFormat),
                 data: stacked ? series : this.point,
                 stacked,
+                valueFormatter: tooltipValueFormatter,
                 x: this.x,
             } as any);
         };

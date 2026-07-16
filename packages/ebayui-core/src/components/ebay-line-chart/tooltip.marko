@@ -1,3 +1,17 @@
+export interface Input {
+    date: string;
+    points?: Array<{
+        point: {
+            label?: string;
+            series: { name: string };
+            tooltip?: string;
+            y?: number;
+        };
+    }>;
+    seriesLength: boolean;
+    valueFormatter: (value: number | string) => string;
+}
+
 <b>${input.date}</b>
 <br>
 <for|pts| of=input.points || []>
@@ -9,9 +23,9 @@
         <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start;">
             ${point.series.name}
             <span style="margin-left: 16px">
-                ${point.label}
+                ${point.label ?? input.valueFormatter(point.y ?? 0)}
             </span>
         </div>
     </else-if>
-    <else>${point.label}</else>
+    <else>${point.label ?? input.valueFormatter(point.y ?? 0)}</else>
 </for>

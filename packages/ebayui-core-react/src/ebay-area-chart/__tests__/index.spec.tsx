@@ -128,6 +128,60 @@ describe("ebay-area-chart rendering", () => {
         expect(callProps.options.title).toBeUndefined();
     });
 
+    it("uses normalized label and positioner props", () => {
+        const xPositioner = vi.fn(() => [1]);
+        const yPositioner = vi.fn(() => [0]);
+        render(
+            <EbayAreaChart
+                series={sampleSeries}
+                xLabelFormat="{value:%Y}"
+                xPositioner={xPositioner}
+                yLabels={["zero"]}
+                yPositioner={yPositioner}
+            />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.format).toBe("{value:%Y}");
+        expect(options.xAxis.tickPositioner).toBe(xPositioner);
+        expect(options.yAxis.labels.formatter.call({ isFirst: true })).toBe("zero");
+        expect(options.yAxis.tickPositioner).toBe(yPositioner);
+    });
+
+    it("uses label formatters", () => {
+        const xLabelFormatter = vi.fn(() => "x label");
+        const yLabelFormatter = vi.fn(() => "y label");
+        render(
+            <EbayAreaChart series={sampleSeries} xLabelFormatter={xLabelFormatter} yLabelFormatter={yLabelFormatter} />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.formatter.call({ value: 1 })).toBe("x label");
+        expect(options.yAxis.labels.formatter.call({ value: 2 })).toBe("y label");
+        expect(xLabelFormatter).toHaveBeenCalledWith(1, expect.any(Function));
+        expect(yLabelFormatter).toHaveBeenCalledWith(2);
+    });
+
+    it("supports deprecated axis prop aliases with normalized props taking precedence", () => {
+        const oldXPositioner = vi.fn(() => [1]);
+        const newXPositioner = vi.fn(() => [2]);
+        render(
+            <EbayAreaChart
+                series={sampleSeries}
+                xLabelFormat="new"
+                xPositioner={newXPositioner}
+                xAxisLabelFormat="old"
+                xAxisPositioner={oldXPositioner}
+                yAxisLabels={["old y"]}
+            />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.format).toBe("new");
+        expect(options.xAxis.tickPositioner).toBe(newXPositioner);
+        expect(options.yAxis.labels.formatter.call({ isFirst: true })).toBe("old y");
+    });
+
     it("renders one Series per series item", () => {
         const { getAllByTestId } = render(<EbayAreaChart series={multiSeries} />);
         expect(getAllByTestId("highcharts-series")).toHaveLength(2);

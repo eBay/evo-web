@@ -7,20 +7,26 @@ interface LineChartTooltipOptions {
     date: string;
     points: LineChartPoint[];
     seriesLength: boolean;
+    valueFormatter?: (value: number | string) => string;
 }
 
-export function lineChartTooltipHtml({ date, points, seriesLength }: LineChartTooltipOptions): string {
+export function lineChartTooltipHtml({
+    date,
+    points,
+    seriesLength,
+    valueFormatter = String,
+}: LineChartTooltipOptions): string {
     const rows = points
         .map((point) => {
             if (point.tooltip) {
                 return escapeHtml(point.tooltip);
             }
+            const value = escapeHtml(point.label ?? valueFormatter(point.y ?? 0));
             if (seriesLength) {
                 const name = escapeHtml(point.series.name);
-                const label = escapeHtml(point.label ?? "");
-                return `<div style="display:flex"><span>${name}</span><span style="margin-left:16px">${label}</span></div>`;
+                return `<div style="display:flex"><span>${name}</span><span style="margin-left:16px">${value}</span></div>`;
             }
-            return escapeHtml(point.label ?? "");
+            return value;
         })
         .join("");
 

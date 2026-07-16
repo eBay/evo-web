@@ -182,6 +182,92 @@ describe("ebay-bar-chart rendering", () => {
         expect(callProps.options.title).toBeUndefined();
     });
 
+    it("uses normalized label and positioner props", () => {
+        const xPositioner = vi.fn(() => [1]);
+        const yPositioner = vi.fn(() => [0]);
+        render(
+            <EbayBarChart
+                series={sampleSeries}
+                xLabelFormat="{value:%Y}"
+                xPositioner={xPositioner}
+                yLabels={["zero"]}
+                yPositioner={yPositioner}
+            />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.format).toBe("{value:%Y}");
+        expect(options.xAxis.tickPositioner).toBe(xPositioner);
+        expect(options.yAxis.labels.formatter.call({ isFirst: true })).toBe("zero");
+        expect(options.yAxis.tickPositioner).toBe(yPositioner);
+    });
+
+    it("uses label formatters", () => {
+        const xLabelFormatter = vi.fn(() => "x label");
+        const yLabelFormatter = vi.fn(() => "y label");
+        render(
+            <EbayBarChart series={sampleSeries} xLabelFormatter={xLabelFormatter} yLabelFormatter={yLabelFormatter} />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.formatter.call({ value: 1 })).toBe("x label");
+        expect(options.yAxis.labels.formatter.call({ value: 2 })).toBe("y label");
+        expect(xLabelFormatter).toHaveBeenCalledWith(1, expect.any(Function));
+        expect(yLabelFormatter).toHaveBeenCalledWith(2);
+    });
+
+    it("supports deprecated axis prop aliases with normalized props taking precedence", () => {
+        const oldXPositioner = vi.fn(() => [1]);
+        const newXPositioner = vi.fn(() => [2]);
+        render(
+            <EbayBarChart
+                series={sampleSeries}
+                xLabelFormat="new"
+                xPositioner={newXPositioner}
+                xAxisLabelFormat="old"
+                xAxisPositioner={oldXPositioner}
+                yAxisLabels={["old y"]}
+            />,
+        );
+        const options = MockChart.mock.calls[0][0].options;
+
+        expect(options.xAxis.labels.format).toBe("new");
+        expect(options.xAxis.tickPositioner).toBe(newXPositioner);
+        expect(options.yAxis.labels.formatter.call({ isFirst: true })).toBe("old y");
+    });
+
+    it("uses tooltip formatters when a point has no label", () => {
+        const tooltipValueFormatter = vi.fn(() => "formatted value");
+        const tooltipTitleFormatter = vi.fn(() => "formatted title");
+        render(
+            <EbayBarChart
+                series={sampleSeries}
+                tooltipValueFormatter={tooltipValueFormatter}
+                tooltipTitleFormatter={tooltipTitleFormatter}
+            />,
+        );
+        const formatter = MockChart.mock.calls[0][0].options.tooltip.formatter;
+        const html = formatter.call({ x: 1, y: 2, series: { chart: { series: [] } } });
+
+        expect(html).toContain("formatted title");
+        expect(html).toContain("formatted value");
+        expect(tooltipTitleFormatter).toHaveBeenCalledWith(1, expect.any(Function));
+        expect(tooltipValueFormatter).toHaveBeenCalledWith(2);
+    });
+
+    it("prefers a point label over tooltip value formatting", () => {
+        const html = barChartTooltipHtml({
+            date: "date",
+            data: { label: "point label", y: 2 } as never,
+            stacked: false,
+            valueFormatter: () => "formatted value",
+            x: 1,
+        });
+
+        expect(html).toContain("point label");
+        expect(html).not.toContain("formatted value");
+    });
+
     it("renders Series children for each data series", () => {
         const { getAllByTestId } = render(<EbayBarChart series={multiSeries} />);
         const seriesEls = getAllByTestId("highcharts-series");

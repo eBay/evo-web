@@ -26,6 +26,14 @@ import type { EbayBarChartProps, BarChartSeriesItem } from "./types";
 ebayLegend(highcharts);
 eBayColumns(highcharts);
 
+function defaultTooltipTitleFormatter(value: number | string, dateFormat: typeof Highcharts.dateFormat): string {
+    return dateFormat("%b %e, %Y", Number(value), false);
+}
+
+function defaultTooltipValueFormatter(value: number | string): string {
+    return String(value);
+}
+
 const BAR_CHART_STYLES = `
     .ebay-bar-chart {
         width: 100%;
@@ -80,23 +88,33 @@ function getMaxValue(series: BarChartSeriesItem[], stacked: boolean): number {
     return Math.max(0, ...stackTotals.values());
 }
 
-function getXAxisConfig(xAxisLabelFormat?: string, xAxisPositioner?: () => number[]): Highcharts.XAxisOptions {
+function getXAxisConfig(
+    xLabelFormat?: string,
+    xLabelFormatter?: (value: number | string, dateFormat: typeof Highcharts.dateFormat) => string,
+    xPositioner?: Highcharts.XAxisOptions["tickPositioner"],
+): Highcharts.XAxisOptions {
     return {
         type: "datetime",
         labels: {
-            format: xAxisLabelFormat || "{value:%b %e}",
+            formatter: xLabelFormatter
+                ? function () {
+                      return xLabelFormatter(this.value, highcharts.dateFormat);
+                  }
+                : undefined,
+            format: xLabelFormat ?? "{value:%b %e}",
             align: "center",
             style: { color: labelsColor },
         },
         tickWidth: 0,
-        tickPositioner: xAxisPositioner,
+        tickPositioner: xPositioner,
     };
 }
 
 function getYAxisConfig(
     maxVal: number,
-    yAxisLabels?: string[],
-    yAxisPositioner?: () => number[],
+    yLabels?: string[],
+    yLabelFormatter?: (value: number | string) => string,
+    yPositioner?: Highcharts.YAxisOptions["tickPositioner"],
 ): Highcharts.YAxisOptions {
     let yLabelsIterator = 0;
 
@@ -105,22 +123,26 @@ function getYAxisConfig(
         opposite: true,
         reversedStacks: false,
         labels: {
-            format: yAxisLabels ? undefined : "${text}",
-            formatter: yAxisLabels
-                ? function (this: Highcharts.AxisLabelsFormatterContextObject) {
-                      if (this.isFirst) {
-                          yLabelsIterator = -1;
-                      }
-                      yLabelsIterator = yLabelsIterator + 1;
-                      return yAxisLabels[yLabelsIterator] as string;
+            format: yLabels || yLabelFormatter ? undefined : "${text}",
+            formatter: yLabelFormatter
+                ? function () {
+                      return yLabelFormatter(this.value);
                   }
-                : undefined,
+                : yLabels
+                  ? function () {
+                        if (this.isFirst) {
+                            yLabelsIterator = -1;
+                        }
+                        yLabelsIterator += 1;
+                        return yLabels[yLabelsIterator] ?? "";
+                    }
+                  : undefined,
             style: { color: labelsColor },
         },
         max: maxVal,
         title: { enabled: false } as Highcharts.YAxisTitleOptions,
         offset: 0,
-        tickPositioner: yAxisPositioner,
+        tickPositioner: yPositioner,
     };
 }
 
@@ -138,19 +160,28 @@ function getTooltipConfig(
     hc: typeof highcharts,
     stacked: boolean,
     renderTooltipOutside: boolean,
+    tooltipValueFormatter: (value: number | string) => string,
+    tooltipTitleFormatter: (value: number | string, dateFormat: typeof Highcharts.dateFormat) => string,
 ): Highcharts.TooltipOptions {
     const formatter: Highcharts.TooltipFormatterCallbackFunction = function (this: Highcharts.Point) {
         const chartSeries = this.series.chart.series;
-        const date = hc.dateFormat("%b %e, %Y", this.x as number, false);
         const xVal = this.x as number;
+        const date = tooltipTitleFormatter(xVal, hc.dateFormat);
 
         if (stacked) {
-            return barChartTooltipHtml({ date, data: chartSeries, stacked: true, x: xVal });
+            return barChartTooltipHtml({
+                date,
+                data: chartSeries,
+                stacked: true,
+                valueFormatter: tooltipValueFormatter,
+                x: xVal,
+            });
         }
         return barChartTooltipHtml({
             date,
             data: this as Highcharts.Point & { label?: string },
             stacked: false,
+            valueFormatter: tooltipValueFormatter,
             x: xVal,
         });
     };
@@ -273,10 +304,14 @@ function buildChartOptions(
         EbayBarChartProps,
         | "description"
         | "series"
-        | "xAxisLabelFormat"
-        | "xAxisPositioner"
-        | "yAxisLabels"
-        | "yAxisPositioner"
+        | "tooltipValueFormatter"
+        | "tooltipTitleFormatter"
+        | "xLabelFormat"
+        | "xLabelFormatter"
+        | "xPositioner"
+        | "yLabels"
+        | "yLabelFormatter"
+        | "yPositioner"
         | "stacked"
         | "renderTooltipOutside"
     >,
@@ -285,10 +320,14 @@ function buildChartOptions(
     const {
         description,
         series: seriesProp,
-        xAxisLabelFormat,
-        xAxisPositioner,
-        yAxisLabels,
-        yAxisPositioner,
+        tooltipValueFormatter = defaultTooltipValueFormatter,
+        tooltipTitleFormatter = defaultTooltipTitleFormatter,
+        xLabelFormat,
+        xLabelFormatter,
+        xPositioner,
+        yLabels,
+        yLabelFormatter,
+        yPositioner,
         stacked = false,
         renderTooltipOutside = true,
     } = props;
@@ -300,10 +339,10 @@ function buildChartOptions(
             style: { fontFamily: chartFontFamily },
         },
         colors: colorMapping,
-        xAxis: getXAxisConfig(xAxisLabelFormat, xAxisPositioner),
-        yAxis: getYAxisConfig(getMaxValue(preparedSeries, stacked), yAxisLabels, yAxisPositioner),
+        xAxis: getXAxisConfig(xLabelFormat, xLabelFormatter, xPositioner),
+        yAxis: getYAxisConfig(getMaxValue(preparedSeries, stacked), yLabels, yLabelFormatter, yPositioner),
         legend: getLegendConfig(seriesProp),
-        tooltip: getTooltipConfig(hc, stacked, renderTooltipOutside),
+        tooltip: getTooltipConfig(hc, stacked, renderTooltipOutside, tooltipValueFormatter, tooltipTitleFormatter),
         plotOptions: getColumnPlotOptions(stacked, description),
         credits: { enabled: false },
     };
@@ -313,6 +352,14 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
     title,
     description,
     series,
+    tooltipValueFormatter = defaultTooltipValueFormatter,
+    tooltipTitleFormatter = defaultTooltipTitleFormatter,
+    xLabelFormat,
+    xLabelFormatter,
+    xPositioner,
+    yLabels,
+    yLabelFormatter,
+    yPositioner,
     xAxisLabelFormat,
     xAxisPositioner,
     yAxisLabels,
@@ -322,6 +369,10 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
     className,
     ...rest
 }) => {
+    const resolvedXLabelFormat = xLabelFormat ?? xAxisLabelFormat;
+    const resolvedXPositioner = xPositioner ?? xAxisPositioner;
+    const resolvedYLabels = yLabels ?? yAxisLabels;
+    const resolvedYPositioner = yPositioner ?? yAxisPositioner;
     const preparedSeries = useMemo(() => prepareSeries(series, stacked), [series, stacked]);
 
     const chartOptions = useMemo(
@@ -331,10 +382,14 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
                 {
                     description,
                     series,
-                    xAxisLabelFormat,
-                    xAxisPositioner,
-                    yAxisLabels,
-                    yAxisPositioner,
+                    tooltipValueFormatter,
+                    tooltipTitleFormatter,
+                    xLabelFormat: resolvedXLabelFormat,
+                    xLabelFormatter,
+                    xPositioner: resolvedXPositioner,
+                    yLabels: resolvedYLabels,
+                    yLabelFormatter,
+                    yPositioner: resolvedYPositioner,
                     stacked,
                     renderTooltipOutside,
                 },
@@ -343,10 +398,14 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
         [
             description,
             series,
-            xAxisLabelFormat,
-            xAxisPositioner,
-            yAxisLabels,
-            yAxisPositioner,
+            tooltipValueFormatter,
+            tooltipTitleFormatter,
+            resolvedXLabelFormat,
+            xLabelFormatter,
+            resolvedXPositioner,
+            resolvedYLabels,
+            yLabelFormatter,
+            resolvedYPositioner,
             stacked,
             renderTooltipOutside,
             preparedSeries,

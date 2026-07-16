@@ -33,9 +33,27 @@ interface SeriesLineOptions {
 interface LineChartInput extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
     title?: Highcharts.TitleOptions["text"];
     description?: string;
+    tooltipValueFormatter?: (value: string | number) => string;
+    tooltipTitleFormatter?: (
+        value: string | number,
+        dateFormat: typeof Highcharts.dateFormat,
+    ) => string;
+    xLabelFormat?: Highcharts.XAxisLabelsOptions["format"];
+    xLabelFormatter?: (
+        value: string | number,
+        dateFormat: typeof Highcharts.dateFormat,
+    ) => string;
+    xPositioner?: Highcharts.XAxisOptions["tickPositioner"];
+    yLabels?: string[];
+    yLabelFormatter?: (value: string | number) => string;
+    yPositioner?: Highcharts.YAxisOptions["tickPositioner"];
+    /** @deprecated Use `xLabelFormat` instead. */
     "x-axis-label-format"?: Highcharts.XAxisLabelsOptions["format"];
+    /** @deprecated Use `xPositioner` instead. */
     "x-axis-positioner"?: Highcharts.XAxisOptions["tickPositioner"];
+    /** @deprecated Use `yLabels` instead. */
     "y-axis-labels"?: Highcharts.YAxisLabelsOptions["format"][];
+    /** @deprecated Use `yPositioner` instead. */
     "y-axis-positioner"?: Highcharts.YAxisOptions["tickPositioner"];
     "plot-points"?: boolean;
     "cdn-highcharts"?: string;
@@ -206,26 +224,42 @@ class LineChart extends Marko.Component<Input> {
         };
     }
     getXAxisConfig(): Highcharts.XAxisOptions {
+        const xLabelFormat =
+            this.input.xLabelFormat ?? this.input.xAxisLabelFormat;
+        const xLabelFormatter = this.input.xLabelFormatter;
+        const xPositioner =
+            this.input.xPositioner ?? this.input.xAxisPositioner;
         return {
             // currently setup to support epoch time values for xAxisLabels.
             // It is possible to set custom non datetime xAxisLabels but will need changes to this component
             type: "datetime",
             labels: {
-                // input.xAxisLabelFormat allows overriding the default short month / day label
+                formatter: xLabelFormatter
+                    ? function () {
+                          return xLabelFormatter(
+                              this.value,
+                              Highcharts.dateFormat,
+                          );
+                      }
+                    : undefined,
+                // xLabelFormat allows overriding the default short month / day label
                 // refer to https://api.highcharts.com/class-reference/Highcharts.Time#dateFormat to customize
-                format: this.input.xAxisLabelFormat || "{value:%b %e}",
+                format: xLabelFormat ?? "{value:%b %e}",
                 align: "center",
                 style: {
                     color: labelsColor, // setting label colors
                 },
             },
             tickWidth: 0, // hide the vertical tick on xAxis labels
-            tickPositioner: this.input.xAxisPositioner, // optional input to allow configuring the position of xAxis tick marks
+            tickPositioner: xPositioner, // optional input to allow configuring the position of xAxis tick marks
         };
     }
     getYAxisConfig(series: SeriesLineOptions[]): Highcharts.YAxisOptions {
-        const component = this; // component reference used in formatter functions that don't have the same scope
-        let yLabelsItterator = 0; // used when yAxisLabels array is provided in input
+        const yLabels = this.input.yLabels ?? this.input.yAxisLabels;
+        const yLabelFormatter = this.input.yLabelFormatter;
+        const yPositioner =
+            this.input.yPositioner ?? this.input.yAxisPositioner;
+        let yLabelsIterator = 0;
         let maxVal = 0; // use to determine the highest yAxis value
         // configure the symbol used for each series markers
 
@@ -239,21 +273,20 @@ class LineChart extends Marko.Component<Input> {
             gridLineColor: gridColor, // sets the horizontal grid line colors
             opposite: true, // moves yAxis labels to the right side of the chart
             labels: {
-                // if yAxisLabels are not passed in display the standard label
-                format: this.input.yAxisLabels ? undefined : "${text}",
-                // if yAxisLabels array is passed in this formatter function is needed to
-                // return the proper label for each yAxis tick mark
-                formatter: this.input.yAxisLabels
+                format: yLabels || yLabelFormatter ? undefined : "${text}",
+                formatter: yLabelFormatter
                     ? function () {
-                          if (this.isFirst) {
-                              yLabelsItterator = -1;
-                          }
-                          yLabelsItterator = yLabelsItterator + 1;
-                          return component.input.yAxisLabels![
-                              yLabelsItterator
-                          ] as string;
+                          return yLabelFormatter(this.value);
                       }
-                    : undefined,
+                    : yLabels
+                      ? function () {
+                            if (this.isFirst) {
+                                yLabelsIterator = -1;
+                            }
+                            yLabelsIterator += 1;
+                            return yLabels[yLabelsIterator] ?? "";
+                        }
+                      : undefined,
                 style: {
                     color: labelsColor, // setting label colors
                 },
@@ -263,8 +296,8 @@ class LineChart extends Marko.Component<Input> {
                 enabled: false, // hide the axis label next to the axis
             } as Highcharts.YAxisTitleOptions,
             offset: 0, // set to zero for no offset refer to https://api.highcharts.com/highcharts/yAxis.offset
-            // passed in function for yAxisPositioner refer to https://api.highcharts.com/highcharts/yAxis.tickPositioner for use
-            tickPositioner: this.input.yAxisPositioner,
+            // passed in function for yPositioner refer to https://api.highcharts.com/highcharts/yAxis.tickPositioner for use
+            tickPositioner: yPositioner,
         };
     }
     getLegendConfig(): Highcharts.LegendOptions {
@@ -291,20 +324,25 @@ class LineChart extends Marko.Component<Input> {
         crosshair: Highcharts.AxisCrosshairOptions;
     } {
         const component = this; // component reference used in formatter functions that don't have the same scope
+        const tooltipValueFormatter =
+            this.input.tooltipValueFormatter ?? String;
+        const tooltipTitleFormatter =
+            this.input.tooltipTitleFormatter ??
+            ((value, dateFormat) =>
+                dateFormat("%b %e, %Y", Number(value), false));
         return {
             formatter: function () {
                 // refer to https://api.highcharts.com/class-reference/Highcharts.Time#dateFormat for dateFormat variables
                 return tooltipTemplate.renderToString({
-                    // eslint-disable-next-line no-undef,new-cap
-                    date: Highcharts.dateFormat(
-                        "%b %e, %Y",
+                    date: tooltipTitleFormatter(
                         this.points![0].x as number,
-                        false,
+                        Highcharts.dateFormat,
                     ),
                     points: this.points,
                     seriesLength:
                         Array.isArray(component.input.series) &&
                         component.input.series.length > 1,
+                    valueFormatter: tooltipValueFormatter,
                 } as any);
             },
             useHTML: true, // allows defining html to format tooltip content

@@ -5,7 +5,10 @@ $ const {
     metricLabel,
     class: inputClass,
     series,
+    description,
     highchartsDescription,
+    tooltipValueFormatter,
+    tooltipTitleFormatter,
     ...htmlInput
 } = input;
 
@@ -48,8 +51,7 @@ $ const {
         <div
             id=component.getContainerId()
             class="donut-chart__graph"
-            no-update
-        />
+            no-update/>
         <div class="donut-chart__legend">
             <ebay-chart-legend item=component.getLegendItems()/>
         </div>
