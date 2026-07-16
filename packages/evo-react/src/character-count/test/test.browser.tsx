@@ -123,16 +123,23 @@ describe("evo-character-count", () => {
     await expect.element(secondInput).toHaveAttribute("aria-live", "polite");
   });
 
-  it("restores the previous aria-live value when unmounted", async () => {
+  it("restores the initial aria-live value after toggling and unmounting", async () => {
     function Example() {
+      const [text, setText] = useState("a");
       const [showCount, setShowCount] = useState(true);
       const inputRef = useRef<HTMLInputElement>(null);
 
       return (
         <>
-          <input ref={inputRef} aria-label="Example" aria-live="assertive" />
+          <input
+            ref={inputRef}
+            aria-label="Example"
+            aria-live="assertive"
+            value={text}
+            onChange={(event) => setText(event.currentTarget.value)}
+          />
           {showCount && (
-            <EvoCharacterCount text="a" max={1} inputRef={inputRef} />
+            <EvoCharacterCount text={text} max={1} inputRef={inputRef} />
           )}
           <button onClick={() => setShowCount(false)}>Remove count</button>
         </>
@@ -142,6 +149,9 @@ describe("evo-character-count", () => {
     const screen = await render(<Example />);
     const input = screen.getByRole("textbox", { name: "Example" });
     await expect.element(input).toHaveAttribute("aria-live", "off");
+
+    await user.type(input, "b");
+    await expect.element(input).toHaveAttribute("aria-live", "polite");
 
     await user.click(screen.getByRole("button", { name: "Remove count" }));
 

@@ -1,0 +1,9 @@
+export interface Input {
+  text: string;
+  showCount?: boolean;
+}
+
+<input/inputRef aria-label="Example" aria-live="assertive">
+<if=input.showCount !== false>
+  <evo-character-count text=input.text max=1 inputRef=inputRef/>
+</if>

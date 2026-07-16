@@ -42,20 +42,20 @@ static function countGraphemes(value: string): number {
   const inputElement = inputRef?.();
   if (inputElement) {
     const previousAriaLive = inputElement.getAttribute("aria-live");
+    $signal.onabort = () => {
+      if (previousAriaLive === null) {
+        inputElement.removeAttribute("aria-live");
+      } else {
+        inputElement.setAttribute("aria-live", previousAriaLive);
+      }
+    };
+  }
+</script>
+
+<script>
+  const inputElement = inputRef?.();
+  if (inputElement) {
     inputElement.setAttribute("aria-live", ariaLive);
-    $signal.addEventListener(
-      "abort",
-      () => {
-        if (previousAriaLive === null) {
-          inputElement.removeAttribute("aria-live");
-        } else {
-          inputElement.setAttribute("aria-live", previousAriaLive);
-        }
-      },
-      {
-        once: true,
-      },
-    );
   }
 </script>
 

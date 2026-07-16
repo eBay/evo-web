@@ -22,7 +22,6 @@ export function EvoCharacterCount({
     }
 
     const previousAriaLive = input.getAttribute("aria-live");
-    input.setAttribute("aria-live", isOverLimit ? "polite" : "off");
 
     return () => {
       if (previousAriaLive === null) {
@@ -31,6 +30,13 @@ export function EvoCharacterCount({
         input.setAttribute("aria-live", previousAriaLive);
       }
     };
+  }, [inputRef]);
+
+  useEffect(() => {
+    const input = inputRef?.current;
+    if (input) {
+      input.setAttribute("aria-live", isOverLimit ? "polite" : "off");
+    }
   }, [inputRef, isOverLimit]);
 
   return (

@@ -2,6 +2,7 @@ import { composeStories } from "@storybook/marko";
 import { cleanup, fireEvent, render } from "@marko/testing-library";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import * as stories from "../character-count.stories";
+import RestoreAriaLive from "./restore-aria-live.marko";
 
 const { Default, InField, CustomText } = composeStories(stories);
 
@@ -51,6 +52,18 @@ describe("evo-character-count", () => {
         "aria-live",
         "polite",
       );
+    });
+
+    it("restores the initial aria-live value after toggling and cleanup", async () => {
+      component = await render(RestoreAriaLive, { text: "a" });
+      const input = component.getByRole("textbox");
+      expect(input).toHaveAttribute("aria-live", "off");
+
+      await component.rerender({ text: "ab" });
+      expect(input).toHaveAttribute("aria-live", "polite");
+
+      await component.rerender({ text: "ab", showCount: false });
+      expect(input).toHaveAttribute("aria-live", "assertive");
     });
   });
 
