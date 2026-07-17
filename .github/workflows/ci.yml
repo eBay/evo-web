@@ -11,20 +11,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  # One job per package (each running the package's own `build` script), plus
+  # `site` for the root-level lint and site typecheck. Together these run
+  # everything `npm run build:ci` ran in a single job, on parallel runners.
+  site:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: npm
-      - run: npm ci
-      - run: npm run build:ci
-      - uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+      - uses: ./.github/actions/setup
+      - run: npm run lint
+      - run: npx mtc
+
+  skin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - run: npm run build -w packages/skin
       - name: Check for uncommitted changes
         run: |
           if output=$(git status --porcelain) && [ -z "$output" ]; then
@@ -34,6 +39,58 @@ jobs:
             echo "$output"
             exit 1 # Fail the CI run if there are uncommitted changes
           fi
+
+  evo-marko:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - run: npm run build -w packages/evo-marko
+
+  ebayui-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          playwright: "true"
+      - run: npm run build -w packages/ebayui-core
+      - uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  ebayui-core-react:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - run: npm run build -w packages/ebayui-core-react
+
+  evo-react:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+        with:
+          playwright: "true"
+      - run: npm run build -w packages/evo-react
+
+  # Fan-in for the jobs above, keeping the "build" required-check name that
+  # branch protection and the deploy/release jobs depend on.
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: always()
+    needs: [site, skin, evo-marko, ebayui-core, ebayui-core-react, evo-react]
+    steps:
+      - name: Fail if any CI job failed
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'skipped')
+        run: exit 1
+      - run: echo "All CI jobs passed."
   # Deployment job
   deploy:
     if: github.ref == 'refs/heads/main'
