@@ -16,7 +16,7 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      deployments: read
+      pages: read
     steps:
       - name: Post "updating" status to PR
         uses: actions/github-script@v7
@@ -58,10 +58,30 @@ jobs:
         env:
           BASE_URL: /evo-web/previews/pr-${{ github.event.pull_request.number }}/
 
+      - name: Resolve GitHub Pages base URL
+        id: pages
+        run: |
+          set -euo pipefail
+          # Ask the API where this repo's Pages site is actually served
+          # (custom domain on the real repo, <owner>.github.io on forks) so the
+          # liveness check below and the posted link agree with reality.
+          base=$(curl -fsS --max-time 15 \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages" \
+            | jq -r '.html_url') \
+            || { echo "GitHub Pages is not enabled for ${{ github.repository }}; enable it (deploy from the gh-pages branch) to publish previews."; exit 1; }
+          base="${base%/}/"
+          echo "Pages base URL: ${base}"
+          echo "base=${base}" >> "$GITHUB_OUTPUT"
+
       - name: Deploy to gh-pages branch (preview subdirectory)
         id: deploy
         run: |
           set -euo pipefail
+          # Stamp this deploy so the wait step below can verify the preview
+          # that is actually being served is this run's build.
+          echo "${{ github.sha }}" > _site/public/deploy-stamp.txt
           repo_url="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           # gh-pages commits in its own temporary clone, so set the identity globally
           # rather than via --user (whose parser rejects the github-actions[bot]
@@ -88,62 +108,38 @@ jobs:
             sleep $((attempt * 3))
           done
           $pushed || { echo "Failed to deploy preview after 3 attempts."; exit 1; }
-          # gh-pages nests its clone under find-cache-dir's path, not directly at
-          # node_modules/.cache/gh-pages, so read the pushed tip back from the
-          # remote rather than relying on that cache layout.
-          echo "sha=$(git ls-remote "$repo_url" gh-pages | cut -f1)" >> "$GITHUB_OUTPUT"
 
-      - name: Wait for GitHub Pages deployment
+      - name: Wait for preview to be live
         run: |
-          set -uo pipefail
-          sha="${{ steps.deploy.outputs.sha }}"
-          api="https://api.github.com/repos/${{ github.repository }}"
-          auth=(-H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json")
-          gh_api() { curl -s --max-time 15 "${auth[@]}" "$@"; }
+          set -euo pipefail
+          expected="${{ github.sha }}"
+          stamp_url="${{ steps.pages.outputs.base }}previews/pr-${{ github.event.pull_request.number }}/deploy-stamp.txt"
 
-          id=""
-          for attempt in $(seq 1 30); do
-            if [ -z "$id" ]; then
-              # Query by exact commit SHA; the legacy /pages/builds/latest endpoint
-              # isn't a reliable per-commit signal.
-              id=$(gh_api "${api}/deployments?sha=${sha}&environment=github-pages" | jq -r 'if type=="array" and length>0 then .[0].id else empty end')
-              if [ -z "$id" ]; then
-                # Some repos (e.g. forks) never record a github-pages deployment
-                # for these pushes; don't burn the full timeout looking for one.
-                if [ "$attempt" -ge 6 ]; then
-                  echo "No GitHub Pages deployment recorded for ${sha} after ${attempt} attempts; posting the link anyway."
-                  exit 0
-                fi
-                echo "No GitHub Pages deployment recorded yet for ${sha} (attempt ${attempt}/6)..."
-                sleep 10
-                continue
-              fi
-            fi
-
-            state=$(gh_api "${api}/deployments/${id}/statuses" | jq -r 'if type=="array" and length>0 then .[0].state else empty end')
-
-            if [ "$state" = "success" ]; then
-              echo "GitHub Pages deployment for ${sha} succeeded."
+          # Poll the deployed site itself rather than the deployments API,
+          # which does not record these pushes on every repo. The unique query
+          # string keeps the CDN from serving a cached stamp.
+          for attempt in $(seq 1 40); do
+            live=$(curl -fsS --max-time 15 "${stamp_url}?cb=${expected}-${attempt}" 2>/dev/null || true)
+            if [ "$live" = "$expected" ]; then
+              echo "Preview is live (deploy stamp ${expected})."
               exit 0
             fi
-            if [ "$state" = "failure" ] || [ "$state" = "error" ]; then
-              echo "GitHub Pages deployment for ${sha} failed (state: ${state})."
-              exit 1
-            fi
-
-            echo "GitHub Pages deployment for ${sha} is ${state:-pending} (attempt ${attempt}/30)..."
+            echo "Preview is not live yet (attempt ${attempt}/40; serving stamp: ${live:-none})..."
             sleep 10
           done
-          echo "GitHub Pages deployment did not confirm within 5 minutes; posting the link anyway."
+          echo "Preview did not go live within ~7 minutes; not posting the link."
+          exit 1
 
       - name: Post preview URL to PR
         uses: actions/github-script@v7
+        env:
+          PAGES_BASE: ${{ steps.pages.outputs.base }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const pr = context.payload.pull_request.number;
             const sha = context.payload.pull_request.head.sha.slice(0, 7);
-            const url = `https://opensource.ebay.com/evo-web/previews/pr-${pr}/`;
+            const url = `${process.env.PAGES_BASE}previews/pr-${pr}/`;
 
             // Find and update an existing bot comment, or create a new one
             const { data: comments } = await github.rest.issues.listComments({
