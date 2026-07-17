@@ -29,6 +29,7 @@
     margin-right: var(--spacing-200);
     max-height: 90%;
     max-width: calc(100% - 32px);
+    max-width: 88%;
     min-height: 55px;
     min-width: 208px;
     padding: var(--spacing-200);
@@ -180,11 +181,6 @@ button.confirm-dialog__confirm {
     }
 }
 @media (min-width: 768px) {
-    .confirm-dialog__window {
-        max-width: var(--dialog-lightbox-max-width);
-    }
-}
-@media (min-width: 1024px) {
     .confirm-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }

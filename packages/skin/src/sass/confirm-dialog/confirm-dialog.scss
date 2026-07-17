@@ -11,6 +11,7 @@
 
     margin-left: var(--spacing-200);
     margin-right: var(--spacing-200);
+    max-width: 88%;
     padding: var(--spacing-200);
 }
 
@@ -46,12 +47,6 @@ button.confirm-dialog__confirm {
 @include dialog-mixins.animation-large(confirm-dialog);
 
 @media (min-width: variables.$screen-size-MD) {
-    .confirm-dialog__window {
-        max-width: var(--dialog-lightbox-max-width);
-    }
-}
-
-@media (min-width: variables.$screen-size-LG) {
     .confirm-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }
