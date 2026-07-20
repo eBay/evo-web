@@ -38,26 +38,29 @@ static function countGraphemes(value: string): number {
 )>
 <const/ariaLive=(count > max ? "polite" : "off")>
 
-<script>
-  const inputElement = inputRef?.();
-  if (inputElement) {
-    const previousAriaLive = inputElement.getAttribute("aria-live");
-    $signal.onabort = () => {
-      if (previousAriaLive === null) {
-        inputElement.removeAttribute("aria-live");
+<lifecycle<{
+  inputElement?: HTMLInputElement | HTMLTextAreaElement;
+  previousAriaLive?: string | null;
+}>
+  onMount() {
+    this.inputElement = inputRef?.();
+    this.previousAriaLive =
+      this.inputElement?.getAttribute("aria-live") ?? null;
+    this.inputElement?.setAttribute("aria-live", ariaLive);
+  }
+  onUpdate() {
+    this.inputElement?.setAttribute("aria-live", ariaLive);
+  }
+  onDestroy() {
+    if (this.inputElement) {
+      if (this.previousAriaLive == null) {
+        this.inputElement.removeAttribute("aria-live");
       } else {
-        inputElement.setAttribute("aria-live", previousAriaLive);
+        this.inputElement.setAttribute("aria-live", this.previousAriaLive);
       }
-    };
+    }
   }
-</script>
-
-<script>
-  const inputElement = inputRef?.();
-  if (inputElement) {
-    inputElement.setAttribute("aria-live", ariaLive);
-  }
-</script>
+>
 
 <span ...htmlInput>
   <if=content>
