@@ -22,10 +22,9 @@ a.filter-chip--expressive {
 }
 
 .filter-chip__media {
-    border-radius: var(--spacing-400);
     margin-inline-start: -8px;
 
-    @include utility-mixins.image-treatment;
+    @include utility-mixins.image-treatment($border-radius: var(--spacing-400));
 }
 
 .filter-chip__media > img {

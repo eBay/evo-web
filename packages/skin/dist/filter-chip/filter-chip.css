@@ -116,7 +116,6 @@ button.filter-chip--expressive {
 .filter-chip__media {
     align-items: center;
     border-radius: var(--spacing-400);
-    border-radius: 8px;
     display: flex;
     justify-content: center;
     margin-inline-start: -8px;
