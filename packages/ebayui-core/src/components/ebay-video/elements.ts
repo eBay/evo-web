@@ -148,9 +148,8 @@ function getElements(self: EbayVideo) {
                 this.setValue_(value);
                 // Keep aria-valuetext on the seek bar in sync so screen readers
                 // announce time in x:xx format rather than the raw decimal number.
-                const seekBar = self.el?.querySelector<HTMLInputElement>(
-                    ".shaka-seek-bar",
-                );
+                const seekBar =
+                    self.el?.querySelector<HTMLInputElement>(".shaka-seek-bar");
                 if (seekBar) {
                     seekBar.setAttribute("aria-valuetext", value);
                 }
