@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.3.1
+
+### Patch Changes
+
+- [#753](https://github.com/eBay/evo-web/pull/753) [`d544e59`](https://github.com/eBay/evo-web/commit/d544e5924248f1875d226fc4c2f03bef07c8039d) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Icon updates
+
 ## 0.3.0
 
 ### Minor Changes

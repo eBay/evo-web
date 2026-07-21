@@ -1,5 +1,15 @@
 # eBayUI-Core Changelog
 
+## 16.11.1
+
+### Patch Changes
+
+- [#750](https://github.com/eBay/evo-web/pull/750) [`71cd7fb`](https://github.com/eBay/evo-web/commit/71cd7fbf04122bd0ad104a29ce933c6eb3ac7201) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Fix a11y issues with shaka player
+
+- [#716](https://github.com/eBay/evo-web/pull/716) [`ab100fd`](https://github.com/eBay/evo-web/commit/ab100fd4c472bfcb43acc97e33f0eed5a767b976) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Fix ebay-filter-menu-button incorrectly rendering aria-pressed on the button element when menu items are selected. Replace aria-pressed with a CSS class (filter-menu-button\_\_button--active) for the selected state visual styling.
+
+- [#753](https://github.com/eBay/evo-web/pull/753) [`d544e59`](https://github.com/eBay/evo-web/commit/d544e5924248f1875d226fc4c2f03bef07c8039d) Thanks [@LuLaValva](https://github.com/LuLaValva)! - Icon updates
+
 ## 16.11.0
 
 ### Minor Changes

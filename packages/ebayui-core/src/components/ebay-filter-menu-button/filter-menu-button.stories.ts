@@ -46,11 +46,13 @@ export default {
         },
         countText: {
             control: { type: "text" },
-            description: "Text rendered in a badge after the button text, e.g. \"(+3)\". Caller is responsible for formatting.",
+            description:
+                'Text rendered in a badge after the button text, e.g. "(+3)". Caller is responsible for formatting.',
         },
         selected: {
             control: { type: "boolean" },
-            description: "Overrides derived selected state. Use when managing selection externally (e.g. with search filtering).",
+            description:
+                "Overrides derived selected state. Use when managing selection externally (e.g. with search filtering).",
         },
         pressed: {
             control: { type: "boolean" },
