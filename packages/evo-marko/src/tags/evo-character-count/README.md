@@ -7,10 +7,10 @@
     </span>
 </h1>
 
-Button styled with core classes.
+Displays the number of grapheme characters in text relative to a maximum.
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/building-blocks-evo-character-count)
-- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/building-blocks-evo-character-count)
-- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/ebayui-core/src/components/evo-character-count/examples)
+- [Storybook](https://opensource.ebay.com/evo-web/marko/?path=/story/building-blocks-evo-character-count)
+- [Storybook Docs](https://opensource.ebay.com/evo-web/marko/?path=/docs/building-blocks-evo-character-count)
+- [Code Examples](https://github.com/eBay/evo-web/tree/main/packages/evo-marko/src/tags/evo-character-count/examples)

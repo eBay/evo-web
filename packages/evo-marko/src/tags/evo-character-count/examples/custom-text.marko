@@ -1,31 +1,36 @@
 export interface Input {
-    value?: string;
-    max?: number;
+  value?: string;
+  max?: number;
 }
 <const/{ max = 120 }=input>
 <let/value=input.value || "">
 
-<evo-character-count/{ count, ariaLive } string=value max=max/>
-
 <span class="field">
-    <label class="field__label field__label--stacked" for="my-input">
-        Field Label
-    </label>
-    <span class="field__control">
-        <evo-input
-            value:=value
-            type="text"
-            aria-describedby="my-input-charcount"
-            class="textbox__control"
-            id="my-input"
-            aria-live=ariaLive
-        />
+  <label class="field__label field__label--stacked" for="my-input">
+    Field Label
+  </label>
+  <span class="field__control">
+    <span class="textbox">
+      <input/inputRef
+        value:=value
+        type="text"
+        aria-describedby="my-input-charcount"
+        class="textbox__control"
+        id="my-input">
     </span>
-    <div class=[
-        "field__description",
-        "field__description--group",
-        count > max && "field__description--attention",
+  </span>
+  <evo-character-count|count|
+    text=value
+    max=max
+    a11yText=null
+    inputRef=inputRef
+    id="my-input-charcount">
+    <span class=[
+      "field__description",
+      "field__description--group",
+      count > max && "field__description--attention",
     ]>
-        <span>${count} of ${max} (${max - count} remaining)</span>
-    </div>
+      ${count} of ${max} (${max - count} remaining)
+    </span>
+  </evo-character-count>
 </span>

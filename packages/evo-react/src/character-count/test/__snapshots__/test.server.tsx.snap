@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoCharacterCount SSR > omits accessibility text when explicitly null 1`] = `"<span>5<!-- -->/<!-- -->10</span>"`;
+
+exports[`EvoCharacterCount SSR > passes HTML attributes to the root span 1`] = `"<span class="custom-class" data-testid="character-count">5<!-- -->/<!-- -->10<!-- --> <span class="clipped">characters used</span></span>"`;
+
+exports[`EvoCharacterCount SSR > renders a manual count 1`] = `"<span>5<!-- -->/<!-- -->120<!-- --> <span class="clipped">characters used</span></span>"`;
+
+exports[`EvoCharacterCount SSR > renders custom content 1`] = `"<span>6 of 120 (114 remaining)</span>"`;
+
+exports[`EvoCharacterCount SSR > renders the calculated count 1`] = `"<span>11<!-- -->/<!-- -->120<!-- --> <span class="clipped">characters used</span></span>"`;

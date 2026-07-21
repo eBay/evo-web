@@ -1,30 +1,34 @@
 export interface Input {
-    value?: string;
-    max?: number;
-    a11yText?: string | null;
+  value?: string;
+  max?: number;
+  a11yText?: string | null;
 }
-<const/{ max = 120 }=input>
+<const/{ max = 120, a11yText }=input>
 <let/value=input.value || "">
 
-<evo-character-count/{ ariaLive, Display: CharCount } string=value max=max/>
-
 <span class="field">
-    <label class="field__label field__label--stacked" for="my-input">
-        Field Label
-    </label>
-    <span class="field__control">
-        <evo-input
-            value:=value
-            type="text"
-            aria-describedby="my-input-description my-input-charcount"
-            class="textbox__control"
-            id="my-input"
-            aria-live=ariaLive/>
+  <label class="field__label field__label--stacked" for="my-input">
+    Field Label
+  </label>
+  <span class="field__control">
+    <span class="textbox">
+      <input/inputRef
+        value:=value
+        type="text"
+        aria-describedby="my-input-description my-input-charcount"
+        class="textbox__control"
+        id="my-input">
     </span>
-    <div class="field__description field__description--group">
-        <span id="my-input-description">
-            Brief description
-        </span>
-        <CharCount/>
-    </div>
+  </span>
+  <div class="field__description field__description--group">
+    <span id="my-input-description">
+      Brief description
+    </span>
+    <evo-character-count
+      text=value
+      max=max
+      a11yText=a11yText
+      inputRef=inputRef
+      id="my-input-charcount"/>
+  </div>
 </span>
