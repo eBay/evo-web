@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useRef } from "react";
+import React, { CSSProperties, FC, cloneElement, useRef } from "react";
 import { findComponent } from "../common/component-utils";
 import {
     Tooltip,
@@ -14,6 +14,7 @@ import EbayTourtipHost from "./ebay-tourtip-host";
 import EbayTourtipFooter from "./ebay-tourtip-footer";
 import EbayTourtipHeading from "./ebay-tourtip-heading";
 import { useFloatingTooltip } from "../common/floating-ui";
+import { useRandomId } from "../common/random-id";
 
 export type TourtipProps = Omit<TooltipProps, "ref"> & {
     a11yCloseText: string;
@@ -80,12 +81,17 @@ const EbayTourtip: FC<TourtipProps> = ({
     const heading = findComponent(children, EbayTourtipHeading);
     const footer = findComponent(children, EbayTourtipFooter);
 
+    const headingId = useRandomId();
+    const labelId = heading ? `tourtip-label-${headingId}` : undefined;
+    const labelledHeading = heading ? cloneElement(heading, { id: labelId }) : heading;
+
     return (
         <Tooltip {...rest} className={className} type="tourtip" isExpanded={isExpanded} ref={containerRef}>
             <TooltipHost {...host.props} forwardedRef={hostRef} aria-label={ariaLabel} aria-expanded={isExpanded} />
             <TooltipContent
                 {...contentProps}
                 a11yCloseText={a11yCloseText}
+                ariaLabelledBy={labelId}
                 onClose={collapseTooltip}
                 pointer={pointer}
                 showCloseButton
@@ -95,7 +101,7 @@ const EbayTourtip: FC<TourtipProps> = ({
                 arrowRef={refs.arrow}
                 arrowStyle={arrowStyles}
             >
-                {heading}
+                {labelledHeading}
                 {contentChildren}
                 {footer && <TooltipFooter type="tourtip">{footer}</TooltipFooter>}
             </TooltipContent>

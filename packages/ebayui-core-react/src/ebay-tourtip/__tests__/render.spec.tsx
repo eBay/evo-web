@@ -70,6 +70,9 @@ describe("ebay-tourtip rendering", () => {
 
         const heading = overlay.querySelector(".tourtip__heading");
         expect(heading).toHaveTextContent("Title");
+        expect(heading).toHaveAttribute("id");
+        expect(overlay).toHaveAttribute("aria-labelledby", heading.getAttribute("id"));
+        expect(screen.getByRole("region", { name: "Title" })).toBe(overlay);
 
         const footer: HTMLElement = overlay.querySelector(".tourtip__footer");
         expect(footer.querySelector(".tourtip__index")).toHaveTextContent("1 of 3");
