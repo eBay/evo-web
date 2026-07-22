@@ -81,9 +81,12 @@ const EbayTourtip: FC<TourtipProps> = ({
     const heading = findComponent(children, EbayTourtipHeading);
     const footer = findComponent(children, EbayTourtipFooter);
 
-    const headingId = useRandomId();
-    const labelId = heading ? `tourtip-label-${headingId}` : undefined;
-    const labelledHeading = heading ? cloneElement(heading, { id: labelId }) : heading;
+    const generatedHeadingId = useRandomId();
+    const existingHeadingId = heading?.props.id;
+    const labelId = !heading
+        ? undefined
+        : (existingHeadingId ?? (generatedHeadingId ? `tourtip-label-${generatedHeadingId}` : undefined));
+    const labelledHeading = heading && labelId && !existingHeadingId ? cloneElement(heading, { id: labelId }) : heading;
 
     return (
         <Tooltip {...rest} className={className} type="tourtip" isExpanded={isExpanded} ref={containerRef}>
