@@ -32,6 +32,7 @@
     --color-blue-650: #003aa5;
     --color-blue-700: #002a69;
     --color-blue-800: #19133a;
+    --color-brand-depop-red: #e20020;
     --color-clear: rgba(255, 255, 255, 0);
     --color-coral-100: #fff7f5;
     --color-coral-200: #ffe1d7;
@@ -199,6 +200,8 @@
     --expressive-theme-coral-medium-foreground: #2f0e04;
     --expressive-theme-depop-background: #e20020;
     --expressive-theme-depop-foreground: #ffffff;
+    --expressive-theme-depop-inverse-background: #f7f7f7;
+    --expressive-theme-depop-inverse-foreground: #e20020;
     --expressive-theme-dijon-dark-background: #524500;
     --expressive-theme-dijon-dark-foreground: #fcf9de;
     --expressive-theme-dijon-light-background: #f6e016;
