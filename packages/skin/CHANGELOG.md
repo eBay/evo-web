@@ -1,5 +1,15 @@
 # Skin Changelog
 
+## 19.30.0
+
+### Minor Changes
+
+- [#767](https://github.com/eBay/evo-web/pull/767) [`634d39e`](https://github.com/eBay/evo-web/commit/634d39e4f9ccea9cff4732c27ccd5c14fd6bb4cf) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Update DS tokens
+
+### Patch Changes
+
+- [#765](https://github.com/eBay/evo-web/pull/765) [`ab85c51`](https://github.com/eBay/evo-web/commit/ab85c519b19025aa31ec0d4d62d891503dd8a3e7) Thanks [@patrickufer](https://github.com/patrickufer)! - fix(skin/filter-chip): pass border-radius through image-treatment mixin argument
+
 ## 19.29.0
 
 ### Minor Changes
