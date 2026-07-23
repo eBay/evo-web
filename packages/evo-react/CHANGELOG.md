@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.3.2
+
+### Patch Changes
+
+- [#758](https://github.com/eBay/evo-web/pull/758) [`1790c15`](https://github.com/eBay/evo-web/commit/1790c1574be5fe8117d499e12ee876846b0d09bd) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCharacterCount and align its Marko API.
+
 ## 0.3.1
 
 ### Patch Changes
