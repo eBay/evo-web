@@ -59,7 +59,7 @@
     "@docsearch/css": "^4.4.0",
     "@docsearch/js": "^4.4.0",
     "@ebay/browserslist-config": "^2.13.0",
-    "@ebay/design-tokens": "^2.4.0",
+    "@ebay/design-tokens": "^2.4.1",
     "@ebay/skin": "^19",
     "@floating-ui/dom": "^1.7.4",
     "@marko-tags/subscribe": "npm:noist@^1.0.0",
