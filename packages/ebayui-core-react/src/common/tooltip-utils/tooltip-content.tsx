@@ -13,6 +13,7 @@ export type TooltipContentProps = {
     pointer?: PointerDirection;
     showCloseButton?: boolean;
     a11yCloseText?: string;
+    ariaLabelledBy?: string;
     onClose?: () => void;
     children?: ReactNode;
     overlayRef?: (node: HTMLElement | null) => void;
@@ -28,6 +29,7 @@ const TooltipContent: FC<TooltipContentProps> = ({
     type = "tooltip",
     showCloseButton,
     a11yCloseText,
+    ariaLabelledBy,
     onClose,
     overlayRef,
     arrowRef,
@@ -38,7 +40,14 @@ const TooltipContent: FC<TooltipContentProps> = ({
     const allChildrenExceptFooter = excludeComponent(children, TooltipFooter);
 
     return (
-        <span className={`${type}__overlay`} id={id} role={TYPE_ROLES[type] || null} style={style} ref={overlayRef}>
+        <span
+            className={`${type}__overlay`}
+            id={id}
+            role={TYPE_ROLES[type] || null}
+            aria-labelledby={ariaLabelledBy}
+            style={style}
+            ref={overlayRef}
+        >
             <span className={`${type}__pointer ${type}__pointer--${pointer}`} ref={arrowRef} style={arrowStyle} />
             <span className={`${type}__mask`}>
                 <span className={`${type}__cell`}>

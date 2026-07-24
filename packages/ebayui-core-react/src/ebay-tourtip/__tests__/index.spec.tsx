@@ -142,4 +142,66 @@ describe("<EbayTourtip>", () => {
             checkIsExpanded(wrapper);
         });
     });
+
+    describe("on region accessible name", () => {
+        it("should assign each simultaneously-rendered tourtip a unique, non-empty heading id", () => {
+            const wrapper = render(
+                <>
+                    <EbayTourtip a11yCloseText="close" pointer="bottom">
+                        <EbayTourtipHost>
+                            <EbayButton>First</EbayButton>
+                        </EbayTourtipHost>
+                        <EbayTourtipHeading type="tourtip">First title</EbayTourtipHeading>
+                        <EbayTourtipContent>
+                            <p>First content</p>
+                        </EbayTourtipContent>
+                    </EbayTourtip>
+                    <EbayTourtip a11yCloseText="close" pointer="bottom">
+                        <EbayTourtipHost>
+                            <EbayButton>Second</EbayButton>
+                        </EbayTourtipHost>
+                        <EbayTourtipHeading type="tourtip">Second title</EbayTourtipHeading>
+                        <EbayTourtipContent>
+                            <p>Second content</p>
+                        </EbayTourtipContent>
+                    </EbayTourtip>
+                </>,
+            );
+
+            const headingIds = Array.from(wrapper.container.querySelectorAll(".tourtip__heading")).map((el) =>
+                el.getAttribute("id"),
+            );
+            expect(headingIds).toHaveLength(2);
+            headingIds.forEach((id) => expect(id).toBeTruthy());
+            expect(new Set(headingIds).size).toBe(headingIds.length);
+
+            const overlays = wrapper.container.querySelectorAll(".tourtip__overlay");
+            overlays.forEach((overlay, i) => {
+                expect(overlay).toHaveAttribute("aria-labelledby", headingIds[i]);
+            });
+        });
+
+        it("should respect a consumer-supplied heading id instead of overriding it", () => {
+            const wrapper = render(
+                <EbayTourtip a11yCloseText="close" pointer="bottom">
+                    <EbayTourtipHost>
+                        <EbayButton>Info</EbayButton>
+                    </EbayTourtipHost>
+                    <EbayTourtipHeading type="tourtip" id="custom-heading-id">
+                        Title
+                    </EbayTourtipHeading>
+                    <EbayTourtipContent>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </EbayTourtipContent>
+                </EbayTourtip>,
+            );
+
+            const heading = wrapper.container.querySelector(".tourtip__heading");
+            expect(heading).toHaveAttribute("id", "custom-heading-id");
+            expect(wrapper.container.querySelector(".tourtip__overlay")).toHaveAttribute(
+                "aria-labelledby",
+                "custom-heading-id",
+            );
+        });
+    });
 });
