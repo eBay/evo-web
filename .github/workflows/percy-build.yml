@@ -66,3 +66,4 @@ jobs:
           name: storybook-static
           path: packages/skin/_site/public/storybook
           retention-days: 1
+          include-hidden-files: true
