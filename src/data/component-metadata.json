@@ -877,7 +877,7 @@
     "component": "toggle-button-group",
     "ds-component": {
       "name": "toggle-button-group",
-      "version": "1.0"
+      "version": "1.1"
     },
     "submodules": ["toggle-button"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button-group--documentation",
@@ -888,7 +888,7 @@
     "component": "toggle-button",
     "ds-component": {
       "name": "toggle-button",
-      "version": "1.0.3"
+      "version": "1.1"
     },
     "submodules": ["icon"],
     "markoStorybookPath": "/docs/buttons-ebay-toggle-button--documentation",
