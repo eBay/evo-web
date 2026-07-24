@@ -39,6 +39,30 @@ a.icon-link {
     }
 }
 
+/* the base variant's border is transparent (reserved space only), but the hover/focus/active
+   state-layer wash is inset to the padding edge, leaving a 2px ring of unwashed background
+   visible around the edge. Extend the wash to the border edge so no ring shows; `overflow: visible`
+   is required too, since `overflow: hidden` (set above via the state-layer mixin) clips descendants
+   at the padding edge regardless of their own inset — the wash's own border-radius (matching the
+   button's) keeps it round without needing that clip. Variants with a visible border
+   (primary/secondary/tertiary) keep the default inset/overflow so their border stays crisp. */
+button.icon-btn:not(
+        .icon-btn--primary,
+        .icon-btn--secondary,
+        .icon-btn--tertiary
+    ),
+a.icon-link:not(
+        .icon-link--primary,
+        .icon-link--secondary,
+        .icon-link--tertiary
+    ) {
+    overflow: visible;
+
+    &::after {
+        inset: -2px;
+    }
+}
+
 button.icon-btn.icon-btn--primary,
 a.icon-link.icon-link--primary {
     background-color: var(--color-background-accent);
