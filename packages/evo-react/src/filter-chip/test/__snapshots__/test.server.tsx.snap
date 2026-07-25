@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoFilterChip SSR > passes HTML attributes to the root 1`] = `"<button data-testid="filter-chip" type="button" aria-selected="false" class="filter-chip custom-class"><span class="filter-chip__text">Filter</span></button>"`;
+
+exports[`EvoFilterChip SSR > renders a disabled anchor without href 1`] = `"<a class="filter-chip"><span class="filter-chip__text">Filter</span></a>"`;
+
+exports[`EvoFilterChip SSR > renders the anchor variant selected 1`] = `"<a class="filter-chip filter-chip--selected" href="/filter"><span class="filter-chip__text">Filter<span class="clipped"> - <!-- -->Filter Applied</span></span></a>"`;
+
+exports[`EvoFilterChip SSR > renders the default variant 1`] = `"<button type="button" aria-selected="false" class="filter-chip"><span class="filter-chip__text">Filter</span></button>"`;
+
+exports[`EvoFilterChip SSR > renders the default variant selected 1`] = `"<button type="button" aria-selected="true" class="filter-chip"><span class="filter-chip__text">Filter</span></button>"`;
+
+exports[`EvoFilterChip SSR > renders the default variant with an icon 1`] = `"<button type="button" aria-selected="false" class="filter-chip"><svg class="icon icon--16" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-sneaker-16"></use><defs><symbol viewBox="0 0 16 16" id="icon-sneaker-16"><path fill-rule="evenodd" d="M4.17 3A3.001 3.001 0 0 1 7 1c1.826 0 2.667 1.549 2.97 2.757l.394 1.575 4.073 2.222A3 3 0 0 1 16 10.187V11a3 3 0 0 1-3 3H2.5A2.5 2.5 0 0 1 0 11.5v-6A2.5 2.5 0 0 1 2.5 3h1.67ZM6 4a1 1 0 0 1 1-1c.629 0 .903.737 1.03 1.243l.263 1.05-1 1a1 1 0 0 0 1.414 1.414l.648-.648c.248.145.505.277.758.414l-.82.82a1 1 0 0 0 1.414 1.414l1.236-1.236 1.536.838a1 1 0 0 1 .521.878V11a1 1 0 0 1-1 1H7v-.5A2.5 2.5 0 0 0 4.5 9H2V8h1.5A2.5 2.5 0 0 0 6 5.5V4Zm-1 8v-.5a.5.5 0 0 0-.5-.5H2v.5a.5.5 0 0 0 .5.5H5ZM2.5 5H4v.5a.5.5 0 0 1-.5.5H2v-.5a.5.5 0 0 1 .5-.5Z" clip-rule="evenodd"/></symbol></defs></svg><span class="filter-chip__text">Filter</span></button>"`;
+
+exports[`EvoFilterChip SSR > renders the expressive variant 1`] = `"<link rel="preload" as="image" href="/category.jpg"/><button type="button" aria-selected="false" class="filter-chip filter-chip--expressive"><span class="filter-chip__media"><img src="/category.jpg" alt="Category"/></span><span class="filter-chip__text">Category</span></button>"`;
+
+exports[`EvoFilterChip SSR > renders the menu variant selected and open 1`] = `"<button type="button" aria-expanded="true" class="filter-chip filter-chip--selected"><span class="filter-chip__text">Price<span class="clipped"> - <!-- -->Filter Applied</span></span><svg class="icon icon--12 filter-chip__trailing" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-chevron-down-12"></use><defs><symbol viewBox="0 0 12 12" id="icon-chevron-down-12"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"/></symbol></defs></svg></button>"`;
