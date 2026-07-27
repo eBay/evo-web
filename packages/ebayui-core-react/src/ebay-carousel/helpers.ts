@@ -30,7 +30,8 @@ export const getOffset = (items: ListItemRef[], index: number, slideWidth: numbe
         return 0;
     }
 
-    return Math.min(items[index].left, getMaxOffset(items, slideWidth)) || 0;
+    const item = items[index] || items[items.length - 1];
+    return Math.min(item.left, getMaxOffset(items, slideWidth)) || 0;
 };
 
 export const alterChildren = (
