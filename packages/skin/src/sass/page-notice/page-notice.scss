@@ -85,14 +85,6 @@ span[role="region"].page-notice {
     );
 }
 
-/* Bold weight is scoped to body slots; __cta links inherit the default normal weight per the design spec. */
-.page-notice__main a,
-.page-notice__main button.fake-link,
-.page-notice__footer a,
-.page-notice__footer button.fake-link {
-    font-weight: bold;
-}
-
 /* Override default outline color to avoid contrast issues */
 /* with the darker background colors in page notices */
 /* For explicit focus only: the `focus-visible` instead of `focus` */

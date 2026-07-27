@@ -94,14 +94,6 @@ span[role="region"].section-notice {
     );
 }
 
-/* Bold weight is scoped to body slots; __cta links inherit the default normal weight per the design spec. */
-.section-notice__main a,
-.section-notice__main button.fake-link,
-.section-notice__footer a,
-.section-notice__footer button.fake-link {
-    font-weight: bold;
-}
-
 .section-notice .icon {
     vertical-align: top;
 }
