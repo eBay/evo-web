@@ -96,6 +96,54 @@ describe("<EbayPagination>", () => {
         });
     });
 
+    describe("with disabled navigation links", () => {
+        it("should not render href on disabled previous and next links", () => {
+            const wrapper = render(
+                <EbayPagination>
+                    <Item type="previous" href="#" disabled />
+                    <Item href="#" current>
+                        1
+                    </Item>
+                    <Item type="next" href="#" disabled />
+                </EbayPagination>,
+            );
+
+            expect(wrapper.getByLabelText("Previous page")).not.toHaveAttribute("href");
+            expect(wrapper.getByLabelText("Next page")).not.toHaveAttribute("href");
+        });
+
+        it("should prevent default and not fire handlers for disabled previous and next links", () => {
+            const spyOnPrev = vi.fn();
+            const spyOnNext = vi.fn();
+            const wrapper = render(
+                <EbayPagination onPrevious={spyOnPrev} onNext={spyOnNext}>
+                    <Item type="previous" href="#" disabled />
+                    <Item href="#" current>
+                        1
+                    </Item>
+                    <Item type="next" href="#" disabled />
+                </EbayPagination>,
+            );
+
+            const previousClick = new MouseEvent("click", {
+                bubbles: true,
+                cancelable: true,
+            });
+            const nextClick = new MouseEvent("click", {
+                bubbles: true,
+                cancelable: true,
+            });
+
+            wrapper.getByLabelText("Previous page").dispatchEvent(previousClick);
+            wrapper.getByLabelText("Next page").dispatchEvent(nextClick);
+
+            expect(previousClick.defaultPrevented).toBe(true);
+            expect(nextClick.defaultPrevented).toBe(true);
+            expect(spyOnPrev).not.toHaveBeenCalled();
+            expect(spyOnNext).not.toHaveBeenCalled();
+        });
+    });
+
     describe("on page resize", () => {
         it("should hide some pagination items when the layout space is too narrow so the selected item is always visible on the center", async () => {
             const wrapper = render(

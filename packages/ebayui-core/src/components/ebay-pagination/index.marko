@@ -46,11 +46,13 @@ $ var range = component._getVisibleRange(slicedItems);
 $ const {
     current: prevItemCurrent,
     disabled: prevItemDisabled,
+    href: prevItemHref,
     ...prevItemHtmlInput
 } = prevItem;
 $ const {
     current: nextItemCurrent,
     disabled: nextItemDisabled,
+    href: nextItemHref,
     ...nextItemHtmlInput
 } = nextItem;
 
@@ -68,6 +70,7 @@ $ const {
 
     <${component.getItemTag(prevItem)}
         ...processHtmlAttributes(prevItemHtmlInput)
+        href=(prevItemDisabled ? undefined : prevItemHref)
         class=[
             "pagination__previous",
             prevItem.href ? "icon-link" : "icon-btn",
@@ -158,6 +161,7 @@ $ const {
 
     <${component.getItemTag(nextItem)}
         ...processHtmlAttributes(nextItemHtmlInput)
+        href=(nextItemDisabled ? undefined : nextItemHref)
         class=[
             "pagination__next",
             nextItem.href ? "icon-link" : "icon-btn",

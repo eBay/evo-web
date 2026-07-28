@@ -80,21 +80,25 @@ class Pagination extends Marko.Component<Input, State> {
     }
 
     handleNextPageClick(originalEvent: MouseEvent, el: HTMLElement) {
-        if (!el.hasAttribute("aria-disabled")) {
-            this.emit("next", {
-                el,
-                originalEvent,
-            });
+        if (el.hasAttribute("aria-disabled")) {
+            originalEvent.preventDefault();
+            return;
         }
+        this.emit("next", {
+            el,
+            originalEvent,
+        });
     }
 
     handlePreviousPageClick(originalEvent: MouseEvent, el: HTMLElement) {
-        if (!el.hasAttribute("aria-disabled")) {
-            this.emit("previous", {
-                el,
-                originalEvent,
-            });
+        if (el.hasAttribute("aria-disabled")) {
+            originalEvent.preventDefault();
+            return;
         }
+        this.emit("previous", {
+            el,
+            originalEvent,
+        });
     }
 
     onCreate() {
