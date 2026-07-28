@@ -72,6 +72,7 @@ When migrating a listed component, read the linked file completely and apply the
 | `ebay-character-count`      | [evo-character-count.md](components/evo-character-count.md) |
 | `ebay-details`              | [evo-details.md](components/evo-details.md)                 |
 | `ebay-confirm-dialog`       | [evo-confirm-dialog.md](components/evo-confirm-dialog.md)   |
+| `ebay-filter-chip`          | [evo-filter-chip.md](components/evo-filter-chip.md)         |
 | `ebay-icon-button`          | [evo-icon-button.md](components/evo-icon-button.md)         |
 
 ---
