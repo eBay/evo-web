@@ -136,5 +136,15 @@ describe("ebay-carousel rendering", () => {
 
             expect(screen.getByText("Item 1")).toBeInTheDocument();
         });
+
+        it("does not throw when the index prop is negative", () => {
+            render(
+                <EbayCarousel index={-1}>
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+
+            expect(screen.getByText("Item 1")).toBeInTheDocument();
+        });
     });
 });
