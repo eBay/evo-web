@@ -51,15 +51,19 @@ const EbayPaginationItem: FC<PaginationItemProps> = ({
     };
 
     const handleNextPage = (e) => {
-        if (!e.currentTarget.getAttribute("aria-disabled")) {
-            onNext(e);
+        if (e.currentTarget.getAttribute("aria-disabled")) {
+            e.preventDefault();
+            return;
         }
+        onNext(e);
     };
 
     const handlePreviousPage = (e) => {
-        if (!e.currentTarget.getAttribute("aria-disabled")) {
-            onPrevious(e);
+        if (e.currentTarget.getAttribute("aria-disabled")) {
+            e.preventDefault();
+            return;
         }
+        onPrevious(e);
     };
     const isAnchor = !!href;
     const ButtonOrAnchor = isAnchor ? "a" : "button";

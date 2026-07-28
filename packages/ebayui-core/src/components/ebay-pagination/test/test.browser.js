@@ -129,6 +129,16 @@ describe("given the pagination is rendered with disabled controls", () => {
         });
     });
 
+    it("then the previous link does not have an href", () => {
+        const prevLink = component.getByLabelText(a11yPreviousText);
+        expect(prevLink).not.toHaveAttribute("href");
+    });
+
+    it("then the next link does not have an href", () => {
+        const nextLink = component.getByLabelText(a11yNextText);
+        expect(nextLink).not.toHaveAttribute("href");
+    });
+
     describe("when the previous button is activated", () => {
         describe("via click", () => {
             beforeEach(async () => {

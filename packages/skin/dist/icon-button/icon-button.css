@@ -67,6 +67,30 @@ a.icon-link:not(:focus-visible),
 button.icon-btn:not(:focus-visible) {
     outline: none;
 }
+a.icon-link:not(
+        .icon-link--primary,
+        .icon-link--secondary,
+        .icon-link--tertiary
+    ),
+button.icon-btn:not(
+        .icon-btn--primary,
+        .icon-btn--secondary,
+        .icon-btn--tertiary
+    ) {
+    overflow: visible;
+}
+a.icon-link:not(
+        .icon-link--primary,
+        .icon-link--secondary,
+        .icon-link--tertiary
+    ):after,
+button.icon-btn:not(
+        .icon-btn--primary,
+        .icon-btn--secondary,
+        .icon-btn--tertiary
+    ):after {
+    inset: -2px;
+}
 a.icon-link.icon-link--primary,
 button.icon-btn.icon-btn--primary {
     background-color: var(--color-background-accent);
