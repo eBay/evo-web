@@ -41,7 +41,7 @@ packages/evo-react/src/{name}/
   index.ts                  ← named re-exports only (no default exports)
   {name}.tsx                ← main component
   {subcomponent-name}.tsx   ← sub-components if present (named after actual sub-component, e.g. button-cell.tsx)
-  types.ts                  ← all exported types
+  types.ts                  ← all exported types + prop JSDoc descriptions
   context.ts                ← React context + accessor hook (only if component uses context)
   README.md                 ← component name + Documentation section with Storybook link only
   {name}.stories.tsx        ← Storybook stories (co-located, NOT in __tests__/)
@@ -52,7 +52,7 @@ packages/evo-react/src/{name}/
 
 **Key difference from ebayui-core-react:** tests live in `test/` (not `__tests__/`), stories co-located with source (not inside `__tests__/`).
 
-**README.md format** — keep it minimal, just a Storybook link (props and usage docs live in the story):
+**README.md format** — keep it minimal, just a Storybook link (prop docs come from type JSDoc and usage docs live in Storybook):
 
 ```md
 # EvoButton
@@ -264,17 +264,40 @@ Do not guess — get alignment before migrating this pattern.
 
 Keep all custom types in `types.ts`. Export them from `index.ts`. Do not inline complex types inside the component file.
 
-Do **not** add JSDoc comments to `types.ts`. Type names and the TypeScript type system are self-documenting; prose descriptions belong in Storybook `argTypes`.
+Add JSDoc directly above every custom public prop and every field of a public object type. Prop descriptions in `types.ts` are the source of truth: they are included in generated declarations and Storybook reads them through `react-docgen-typescript`. Migrate existing Storybook `argTypes.description` text into JSDoc, then remove the duplicate story description.
+
+Describe behavior, constraints, relationships to other props, and defaults when relevant. For union props declared in multiple branches, repeat the complete consumer-facing description on every usable declaration so docgen does not expose incomplete branch-specific prose.
 
 ```ts
 // types.ts
 export type Priority = "primary" | "secondary" | "tertiary" | "none";
+
+type BaseButtonProps = {
+  /** Button priority level. */
+  priority?: Priority;
+  /** Full-width button. */
+  fluid?: boolean;
+};
+
+export type AnchorButtonProps = ComponentProps<"a"> &
+  BaseButtonProps & {
+    /** Link URL. Its presence renders the button as an anchor. */
+    href: string;
+  };
+
 export type EvoButtonProps = AnchorButtonProps | NativeButtonProps;
 
 // index.ts
 export { EvoButton } from "./button";
 export type { EvoButtonProps, Priority } from "./types";
 ```
+
+Do not add or redeclare a prop solely to attach documentation. For inherited native React props, prop-name collisions, or union branches that docgen resolves to `never`, keep `argTypes.description` as a targeted fallback if Storybook cannot extract the JSDoc. Verify fallbacks with a production Storybook build rather than guessing.
+
+Accessibility prop JSDoc must follow the repository conventions:
+
+- State the English default with the exact phrase: **English default to be overridden is `"{default}"`**.
+- For `string | null`, include the exact phrase: **Pass `null` explicitly _only_ if alternative accessibility information is present**.
 
 ---
 
@@ -410,7 +433,8 @@ describe("EvoButton SSR", () => {
   ```
 
 - `title` must mirror the ebayui-core-react story title with `ebay` replaced by `evo`.
-- Description format: one-sentence summary followed by a `## Usage` section with the import snippet.
+- Component description format: one-sentence summary followed by a `## Usage` section with the import snippet.
+- Put prop descriptions in type JSDoc, not `argTypes.description`. Storybook `argTypes` should normally contain only controls, options, event actions, table metadata, and docgen fallbacks described in **Types**.
 - **`subcomponents`**: If the component has sub-components (e.g. `EvoAvatarImage` alongside `EvoAvatar`), declare them in the meta using the `subcomponents` field. This causes Storybook's autodocs to render a props table for each sub-component as a separate tab.
 
 ```tsx
@@ -439,7 +463,7 @@ import { EvoButton } from "@evo-web/react/button";
     },
   },
   argTypes: {
-    // one entry per custom prop with control type + description
+    // controls/options/table metadata only; descriptions come from type JSDoc
   },
   args: {
     // sensible defaults
@@ -487,6 +511,9 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Individual `EvoIcon*` components used (no `<EbayIcon name="..." />`)
 - [ ] Optional callbacks use `?.` (no `= () => {}` defaults)
 - [ ] Props cross-checked against evo-marko — missing props added, unnecessary props removed or queried
+- [ ] Every custom public prop and public object field has a JSDoc description in `types.ts`
+- [ ] Duplicate `argTypes.description` entries removed; only verified docgen fallbacks remain
+- [ ] Production Storybook build confirms JSDoc descriptions appear in generated prop tables
 - [ ] `aria-label` prop replaced with `a11yText` if evo-marko uses it (mapped internally to `aria-label`); asked if naming is unclear
 - [ ] No `React.Children`, `findComponent`, or child-scanning — asked if encountered
 - [ ] `test/test.browser.tsx` uses `vitest-browser-react`

@@ -32,8 +32,6 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
   },
   argTypes: {
     a11yText: {
-      description:
-        "Accessible label for the button (mapped to `aria-label`). Pass `null` only if alternative a11y info is present.",
       type: { name: "string", required: true },
       control: "text",
     },
@@ -43,29 +41,22 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
     },
     as: {
       control: false,
-      description:
-        "Override the anchor element with a custom component (e.g. React Router's `Link`). Only applies when `href` is provided.",
     },
     priority: {
-      description: "Button priority level",
       options: ["primary", "secondary", "tertiary", "none"],
       control: { type: "select" },
     },
     size: {
-      description: "Alternative size: `large` or `small`",
       options: ["large", "small"],
       control: { type: "select" },
     },
     transparent: {
-      description: "Transparent background",
       control: "boolean",
     },
     partiallyDisabled: {
-      description: "Visually disabled but still focusable (`aria-disabled`)",
       control: "boolean",
     },
     disabled: {
-      description: "Fully disabled",
       control: "boolean",
     },
     onClick: {
@@ -77,7 +68,6 @@ import { EvoIconButton } from "@evo-web/react/icon-button";
       },
     },
     onEscape: {
-      description: "Triggered on Esc key press",
       action: "onEscape",
       table: {
         category: "Events",

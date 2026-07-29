@@ -1152,16 +1152,13 @@ const meta: Meta<EvoIconComponentProps> = {
   argTypes: {
     a11yText: {
       control: "text",
-      description: "Accessible label text for the icon. When provided, the icon will have role=\"img\".",
     },
     a11yVariant: {
       control: "select",
       options: ["label"],
-      description: "Controls how the accessible text is exposed. \"label\" uses aria-label directly; default uses a <title> element with aria-labelledby.",
     },
     prominent: {
       control: "boolean",
-      description: "Applies the prominent style modifier to the icon.",
     },
   },
   parameters: {

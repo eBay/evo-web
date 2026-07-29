@@ -29,55 +29,43 @@ import { EvoButton } from "@evo-web/react/button";
     priority: {
       control: "select",
       options: ["primary", "secondary", "tertiary", "none"],
-      description: "Button priority level",
     },
     variant: {
       control: "select",
       options: ["standard", "destructive", "form"],
-      description: "Button variant style",
     },
     size: {
       control: "select",
       options: ["small", "large"],
-      description: "Button size",
     },
     bodyState: {
       control: "select",
       options: ["loading", "expand", "reset", "none"],
-      description: "Button body state",
     },
     split: {
       control: "select",
       options: ["start", "end"],
-      description: "Split button position",
     },
     fluid: {
       control: "boolean",
-      description: "Full width button",
     },
     disabled: {
       control: "boolean",
-      description: "Disabled state",
     },
     partiallyDisabled: {
       control: "boolean",
-      description: "Partially disabled (aria-disabled)",
     },
     transparent: {
       control: "boolean",
-      description: "Transparent background",
     },
     borderless: {
       control: "boolean",
-      description: "No border",
     },
     fixedHeight: {
       control: "boolean",
-      description: "Fixed height",
     },
     truncate: {
       control: "boolean",
-      description: "Truncate text with ellipsis",
     },
     href: {
       control: "text",
@@ -85,8 +73,6 @@ import { EvoButton } from "@evo-web/react/button";
     },
     as: {
       control: false,
-      description:
-        "Override the anchor element with a custom component (e.g. React Router's `Link`). Only applies when `href` is provided.",
     },
     children: {
       control: "text",

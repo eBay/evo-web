@@ -18,8 +18,11 @@ export type EvoAlertDialogProps = Omit<
   ComponentProps<"dialog">,
   "open" | "role" | "aria-labelledby" | "aria-modal" | "closedby"
 > & {
+  /** Controlled open state. When provided, the consumer manages it via `onOpenChange`. */
   open?: boolean;
+  /** Initial open state for uncontrolled usage. Ignored when `open` is provided. */
   defaultOpen?: boolean;
+  /** Callback fired when the dialog requests to change its open state. Receives the new boolean value. */
   onOpenChange?: (open: boolean) => void;
   children?: ReactNode;
 };

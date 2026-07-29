@@ -21,8 +21,11 @@ export type EvoIconProps = SVGProps<SVGSVGElement> & {
    * @internal
    */
   __name: string;
+  /** Accessible label text. When provided, the icon has `role="img"`. */
   a11yText?: string;
+  /** Controls how accessible text is exposed. `"label"` uses `aria-label`; the default uses `title` and `aria-labelledby`. */
   a11yVariant?: A11yVariant;
+  /** Applies the prominent style modifier. */
   prominent?: boolean;
   /**
    * Internal use only - SVG symbol content
