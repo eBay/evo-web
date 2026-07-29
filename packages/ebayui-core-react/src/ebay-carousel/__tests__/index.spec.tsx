@@ -115,4 +115,36 @@ describe("ebay-carousel rendering", () => {
             expect(secondItem.closest("li")).toHaveAttribute("aria-hidden", "false");
         });
     });
+
+    describe("single item", () => {
+        it("renders without throwing when there is only one item", () => {
+            render(
+                <EbayCarousel>
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+
+            expect(screen.getByText("Item 1")).toBeInTheDocument();
+        });
+
+        it("does not throw when the index prop is out of range for a single item", () => {
+            render(
+                <EbayCarousel index={1}>
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+
+            expect(screen.getByText("Item 1")).toBeInTheDocument();
+        });
+
+        it("does not throw when the index prop is negative", () => {
+            render(
+                <EbayCarousel index={-1}>
+                    <EbayCarouselItem>Item 1</EbayCarouselItem>
+                </EbayCarousel>,
+            );
+
+            expect(screen.getByText("Item 1")).toBeInTheDocument();
+        });
+    });
 });
