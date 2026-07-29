@@ -1,0 +1,24 @@
+{
+  "name": "@evo-web/storybook-addon-theme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./preset.js",
+    "./preset": "./preset.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "npm run type:check",
+    "type:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@ebay/design-tokens": "^2.4.1",
+    "@ebay/skin": "^19",
+    "@storybook/addon-docs": "^10",
+    "@storybook/icons": "^2.0.1",
+    "react": "^19",
+    "storybook": "^10",
+    "vite": "^7.3.2"
+  }
+}

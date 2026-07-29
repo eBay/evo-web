@@ -57,6 +57,7 @@
     "shaka-player": "5.0.2"
   },
   "devDependencies": {
+    "@evo-web/storybook-addon-theme": "*",
     "marko": "^6.0.169"
   },
   "peerDependencies": {

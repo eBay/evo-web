@@ -17,7 +17,11 @@ const rawMarkdown = {
 export default {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.ts"],
   framework: "@storybook/marko-vite",
-  addons: ["@storybook/addon-docs", "@storybook/addon-a11y"],
+  addons: [
+    "@evo-web/storybook-addon-theme",
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+  ],
   staticDirs: ["./static"],
   docs: { defaultName: "Docs" },
   core: {

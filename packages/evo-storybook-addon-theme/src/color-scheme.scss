@@ -1,0 +1,14 @@
+@use "evo-dark" as dark;
+@use "evo-light" as light;
+
+:root[data-color-scheme="light"] {
+  @include light.evo-light;
+
+  color-scheme: light;
+}
+
+:root[data-color-scheme="dark"] {
+  @include dark.evo-dark;
+
+  color-scheme: dark;
+}

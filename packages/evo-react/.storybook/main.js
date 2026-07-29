@@ -9,7 +9,11 @@ export default {
       },
     },
   },
-  addons: ["@storybook/addon-a11y", "@storybook/addon-docs"],
+  addons: [
+    "@evo-web/storybook-addon-theme",
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+  ],
 
   framework: {
     name: "@storybook/react-vite",
