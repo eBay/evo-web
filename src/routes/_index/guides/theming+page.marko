@@ -16,12 +16,11 @@ import { urls } from "../../../data";
     component in
     <code>@ebay/skin</code>
     reads its colors exclusively from a fixed set of semantic CSS custom
-    properties (for example
+    properties, for example
     <code>--color-background-accent</code>
     or
-    <code>--color-foreground-accent</code>
-    ) &mdash; redefine those properties and every component picks up the
-    new values automatically.
+    <code>--color-foreground-accent</code>. Redefine those properties and
+    every component picks up the new values automatically.
   </p>
 
   <h3 id="theming-semantic-tokens">
@@ -38,7 +37,7 @@ import { urls } from "../../../data";
     Building a Theme
   </h3>
   <p>
-    Always override at the semantic layer shown above &mdash; never the
+    Always override at the semantic layer shown above, never the
     primitive/core color scale it's built from. There are two ways to
     build a theme, depending on who you are.
   </p>
@@ -48,8 +47,7 @@ import { urls } from "../../../data";
     Most teams reskinning their own app should start here. Import the
     default token submodule as your foundation, then override the semantic
     custom properties you want to change on
-    <code>:root</code>
-    . Provide a
+    <code>:root</code>. Provide a
     <code>prefers-color-scheme: dark</code>
     block if you support dark mode:
   </p>
@@ -73,8 +71,7 @@ import { urls } from "../../../data";
   <p>
     To limit a theme to part of a page instead of the whole site, scope
     the overrides to a class instead of
-    <code>:root</code>
-    &mdash; see
+    <code>:root</code>. See
     <a href="#sub-theming">
       Sub-theming
     </a>
@@ -89,8 +86,7 @@ import { urls } from "../../../data";
     <code>@ebay/design-tokens</code>
     instead of hand-writing every property, then layer selective overrides
     on top. Evo Live's own light-mode definition uses
-    <code>@use "@ebay/design-tokens/dist/mixins/live-light" as tokens;</code>
-    , included under
+    <code>@use "@ebay/design-tokens/dist/mixins/live-light" as tokens;</code>, included under
     <code>:root</code>
     inside a
     <code>@media (prefers-color-scheme: light)</code>
@@ -108,7 +104,7 @@ import { urls } from "../../../data";
   <p>
     <strong>Accessibility:</strong>
     whichever path you take, verify color contrast against WCAG 2.2 AA in
-    both light and dark mode before shipping a theme &mdash; overriding a
+    both light and dark mode before shipping a theme. Overriding a
     token is easy, but it's still your responsibility to keep the
     resulting combinations legible.
   </p>
@@ -121,8 +117,7 @@ import { urls } from "../../../data";
     These are exported as
     <code>@ebay/skin/evo-class</code>
     and
-    <code>@ebay/skin/evo-live-class</code>
-    . Add a class of
+    <code>@ebay/skin/evo-live-class</code>. Add a class of
     <code>.evo-theme</code>
     or
     <code>.evo-theme-live</code>
@@ -178,7 +173,10 @@ import { urls } from "../../../data";
   <h3 id="current-themes-evo-live">
     Evo Live
   </h3>
-  <p>Evo live is a theme built on top of evo-core. To import evo-live theme</p>
+  <p>
+    Evo Live is a theme built on top of
+    <code>evo-core</code>.
+  </p>
   <p>
     Core, light and dark token sets are individually exposed via the
     following submodules:
@@ -214,9 +212,8 @@ import { urls } from "../../../data";
     dark-mode compatible.
   </p>
   <p>
-    There is also a bundled module
-    <code>@ebay/skin/evo-live</code>
-    Which imports all live tokens
+    There is also a bundled module,
+    <code>@ebay/skin/evo-live</code>, which imports all live tokens.
   </p>
   <div class="demo">
     <div class="demo__inner">
