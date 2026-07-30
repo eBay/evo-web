@@ -68,6 +68,18 @@ header a {
   font-size: 0;
 }
 
+.nav__controls {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-200);
+  margin-left: auto;
+  padding-left: var(--spacing-400);
+}
+
+.nav__controls .evo-site-search {
+  margin-left: 0;
+}
+
 .nav__link {
   color: var(--color-foreground-primary);
   font-weight: 600;
@@ -169,6 +181,10 @@ header a {
 .nav__menu-icon {
   height: 1.5rem;
   width: 1.5rem;
+}
+
+.mobile-theme-switcher {
+  margin: 0 var(--spacing-200) var(--spacing-200);
 }
 
 /* Liquid Glass Effect */

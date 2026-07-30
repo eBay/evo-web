@@ -1,0 +1,84 @@
+import "./style.scss";
+
+export interface Input extends Marko.HTML.Div {}
+
+<const/{ class: inputClass, ...htmlInput }=input>
+
+<div ...htmlInput class=["theme-switcher", inputClass]>
+    <span class="listbox-button listbox-button--form">
+        <button
+            class="btn btn--form"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="listbox">
+            <span class="btn__cell">
+                <span class="btn__label">
+                    Theme:
+                </span>
+                <span class="btn__text">
+                    Evo
+                </span>
+                <svg class="icon icon--12" height="10" width="14" aria-hidden="true">
+                    <icon-symbol name="chevron-down-12"/>
+                </svg>
+            </span>
+        </button>
+        <div class="listbox-button__listbox">
+            <div class="listbox-button__options" role="listbox" tabindex="0">
+                <div
+                    class="listbox-button__option"
+                    role="option"
+                    data-value="evo"
+                    aria-selected="true">
+                    <span class="listbox-button__value">
+                        Evo
+                    </span>
+                    <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
+                        <icon-symbol name="tick-16"/>
+                    </svg>
+                </div>
+                <div
+                    class="listbox-button__option"
+                    role="option"
+                    data-value="evo-live"
+                    aria-selected="false">
+                    <span class="listbox-button__value">
+                        Evo Live
+                    </span>
+                    <svg class="icon icon--16" height="10" width="14" aria-hidden="true">
+                        <icon-symbol name="tick-16"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </span>
+    <html-script>
+        (function () {
+            var root = document.currentScript.previousElementSibling;
+            var STORAGE_KEY = "evo-web-theme";
+            var buttonText = root.querySelector(".btn__text");
+            var options = root.querySelectorAll(".listbox-button__option");
+            var stored;
+            try {
+                stored = localStorage.getItem(STORAGE_KEY);
+            } catch (err) {}
+            if (stored === "evo-live") {
+                options.forEach(function (option) {
+                    var isSelected = option.dataset.value === "evo-live";
+                    option.setAttribute("aria-selected", isSelected ? "true" : "false");
+                });
+                buttonText.textContent = "Evo Live";
+            }
+            root.addEventListener("makeup-listbox-button-change", function (e) {
+                var value = e.detail.el.dataset.value;
+                buttonText.textContent = e.detail.el
+                    .querySelector(".listbox-button__value")
+                    .textContent.trim();
+                document.body.classList.toggle("evo-theme-live", value === "evo-live");
+                try {
+                    localStorage.setItem(STORAGE_KEY, value);
+                } catch (err) {}
+            });
+        })();
+    </html-script>
+</div>

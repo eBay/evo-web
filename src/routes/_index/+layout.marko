@@ -58,6 +58,13 @@ static declare global {
     </script>
   </head>
   <body class="evo-theme">
+    <html-script>
+      try {
+        if (localStorage.getItem("evo-web-theme") === "evo-live") {
+          document.body.classList.add("evo-theme-live");
+        }
+      } catch {}
+    </html-script>
     <div class="skip-to-main-content">
       <a href="#main" class="clipped clipped--stealth">Skip to main content</a>
     </div>

@@ -141,7 +141,10 @@ import { components, a11yDocs, urls } from "../../data";
               </a>
             </li>
           </ul>
-          <search/>
+          <div class="nav__controls">
+            <theme-switcher class="theme-switcher--nav"/>
+            <search/>
+          </div>
           <button
             id="mobile-nav-toggle"
             class="app-bar-menu mobile-nav-toggle icon-btn"
@@ -195,6 +198,9 @@ import { components, a11yDocs, urls } from "../../data";
               <use href="#icon-close-20"/>
             </svg>
           </button>
+        </div>
+        <div class="mobile-theme-switcher">
+          <theme-switcher/>
         </div>
         <div class="panel-dialog__main">
           <div id="site-nav-mobile" class="site-nav-mobile">

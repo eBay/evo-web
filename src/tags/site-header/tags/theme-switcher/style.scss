@@ -1,0 +1,14 @@
+.theme-switcher {
+  align-items: center;
+  display: flex;
+}
+
+.theme-switcher--nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .theme-switcher--nav {
+    display: flex;
+  }
+}
