@@ -1,3 +1,4 @@
+import evo from "@ebay/design-tokens/esm/evo";
 import { create } from "storybook/theming";
 
 function createEvoWebLogo(
@@ -24,22 +25,35 @@ const brand = {
   brandTarget: "/",
 };
 
+const lightColors = evo.light.color.semantic;
+const darkColors = evo.dark.color.semantic;
+
+// Storybook theme processing does not support CSS custom properties, so use
+// resolved Evo design-token values from the ESM export.
 export const lightTheme = create({
   ...brand,
   base: "light",
-  colorSecondary: "#0968f6",
-  appBg: "#f7f7f7",
-  appHoverBg: "#f7f7f7",
-  brandImage: createEvoWebLogo("#191919", "#ffffff", "#191919"),
+  colorSecondary: lightColors.background.accent.value,
+  appBg: lightColors.background.secondary.value,
+  appHoverBg: lightColors.background.secondary.value,
+  brandImage: createEvoWebLogo(
+    lightColors.background.strong.value,
+    lightColors.foreground.onStrong.value,
+    lightColors.foreground.primary.value,
+  ),
 });
 
 export const darkTheme = create({
   ...brand,
   base: "dark",
-  colorSecondary: "#4d93fc",
-  appBg: "#191919",
-  appHoverBg: "#000000",
-  brandImage: createEvoWebLogo("#f7f7f7", "#191919", "#f7f7f7"),
+  colorSecondary: darkColors.background.accent.value,
+  appBg: darkColors.background.secondary.value,
+  appHoverBg: darkColors.background.primary.value,
+  brandImage: createEvoWebLogo(
+    darkColors.background.strong.value,
+    darkColors.foreground.onStrong.value,
+    darkColors.foreground.primary.value,
+  ),
 });
 
 export function getSelectedColorScheme() {
