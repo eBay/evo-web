@@ -1,5 +1,44 @@
 # Skin Changelog
 
+## 19.30.1
+
+### Patch Changes
+
+- [#770](https://github.com/eBay/evo-web/pull/770) [`405c456`](https://github.com/eBay/evo-web/commit/405c456bbf6c640a92bb6e9a0ab0c95a4c960995) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(icon-button): remove unwashed border ring on hover/focus/active
+
+  The base (borderless) `icon-btn`/`icon-link` variant reserves a
+  transparent 2px border for consistent sizing across variants, and the
+  button's own `background-color` paints straight through it via the
+  default `background-clip: border-box`. The hover/focus/active
+  state-layer wash, however, was inset to the padding edge, leaving a
+  thin ring of unwashed background color visible around the edge on
+  hover, focus, and active states.
+
+  Extends the wash to cover the full border-box and sets `overflow:
+visible` (the state-layer mixin's `overflow: hidden` was clipping the
+  wash back to the padding edge regardless of its own positioning).
+  Variants with a visible border (primary/secondary/tertiary) are
+  unaffected — their border remains crisp and unwashed as before.
+
+- [#774](https://github.com/eBay/evo-web/pull/774) [`ed4dd16`](https://github.com/eBay/evo-web/commit/ed4dd16132a5f9f346517aeaab6dc497b1d0c737) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(page-notice, section-notice): remove bold font weight from all links
+
+  `__main` and `__footer` links/`button.fake-link` elements were still
+  rendering bold, left over from a prior fix (#648) that only excluded
+  `__cta` links from the bold rule under the assumption that `__main`/
+  `__footer` were prose slots. In practice, `__footer` is commonly used
+  for a single action link (as the "with action" example demonstrates),
+  and no bolded links appear anywhere in the Playbook spec for either
+  component. Removes the bold rule entirely so links are normal weight
+  regardless of which slot they render in.
+
+- [#768](https://github.com/eBay/evo-web/pull/768) [`72618b0`](https://github.com/eBay/evo-web/commit/72618b063ded81b8e0459969fb480ac169083fc7) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(toggle-button, toggle-button-group): correct minimal layout min-height to 48px
+
+  `--toggle-button-height-min` was set to 72px, the same value as
+  `--toggle-button-width-min`, causing the default (minimal) layout to
+  render at a 72px min-height instead of the design spec's 48px. The
+  variable now reflects the correct height for the minimal layout,
+  independent of the width floor.
+
 ## 19.30.0
 
 ### Minor Changes

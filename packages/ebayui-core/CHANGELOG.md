@@ -1,5 +1,13 @@
 # eBayUI-Core Changelog
 
+## 16.11.2
+
+### Patch Changes
+
+- [#757](https://github.com/eBay/evo-web/pull/757) [`3c02952`](https://github.com/eBay/evo-web/commit/3c02952c4ff2923284dddc791c2f2abc43727a33) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(ebay-pagination): disabled prev/next links no longer navigate when clicked
+
+  When a `previous` or `next` pagination item has an `href` (link variant) and is marked `disabled`, the rendered `<a>` element no longer includes the `href` attribute. The click handlers also now call `event.preventDefault()` when `aria-disabled` is set, providing defense-in-depth against navigation in both the Marko and React implementations.
+
 ## 16.11.1
 
 ### Patch Changes

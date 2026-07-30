@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.3.3
+
+### Patch Changes
+
+- [#773](https://github.com/eBay/evo-web/pull/773) [`d27e24c`](https://github.com/eBay/evo-web/commit/d27e24c33cc337e1283424494cdfdec4e6d12585) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFilterChip component.
+
 ## 0.3.2
 
 ### Patch Changes
