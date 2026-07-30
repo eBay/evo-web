@@ -1,5 +1,24 @@
+import { urls } from "../../../../data";
+
 <div id="tokens">
   <section-header/>
+  <p>
+    Design tokens are the CSS custom properties that carry every color,
+    spacing, and other design value used across Evo Web's components, for example
+    <code>--color-background-accent</code>
+    or
+    <code>--color-foreground-accent</code>
+    . A theme is built by overriding this same set of tokens, so every
+    component picks up the new values without any component code changing.
+    The tables below are the full set of tokens available today; to learn
+    how to build your own theme or apply a subtheme, see the Theming Guide.
+  </p>
+  <p>
+    <a class="fake-btn fake-btn--secondary" href=`${urls.guides}/theming`>
+      Theming Guide
+    </a>
+  </p>
+
   <h3>Evo Tokens</h3>
 
   <p>
@@ -37,79 +56,14 @@
     compatible.
   </p>
 
-  <h3>Evo Live Theme</h3>
-  <p>Evo live is a theme built on top of evo-core. To import evo-live theme</p>
   <p>
-    Core, light and dark token sets are individually exposed via the following
-    submodules:
+    Looking to build your own theme, apply a subtheme, or see what themes
+    ship today (like Evo Live)? See the
+    <a href=`${urls.guides}/theming`>
+      Theming Guide
+    </a>
+    .
   </p>
-  <dl>
-    <dt>
-      <span class="secondary-text">
-        @ebay/skin/tokens/
-      </span>
-      evo-core
-    </dt>
-    <dd>eBay default primitives</dd>
-    <dt>
-      <span class="secondary-text">
-        @ebay/skin/tokens/
-      </span>
-      evo-live-light
-    </dt>
-    <dd>eBay semantic aliases for light mode</dd>
-    <dt>
-      <span class="secondary-text">
-        @ebay/skin/tokens/
-      </span>
-      evo-live-dark
-      <sup>*</sup>
-    </dt>
-    <dd>eBay semantic aliases for dark mode</dd>
-  </dl>
-  <p>
-    There is also a bundled module
-    <code>@ebay/skin/evo-live</code>
-    Which imports all live tokens
-  </p>
-  <h3>Subthemes</h3>
-  <p>
-    To swap themes within a page, use the token class themes. These are exported
-    as
-    <code>@ebay/skin/evo-live-class</code>
-    and
-    <code>@ebay/skin/evo-class</code>
-    Then, within your page, add a class of
-    <code>.evo-theme-live</code>
-    and all components within that element will use the partial theme.
-  </p>
-  <p>Note, this example only works on default evo theme</p>
-  <div class="demo">
-    <div class="demo__inner">
-      <div class="evo-theme">
-        <button class="btn btn--primary">
-          Button
-        </button>
-        <div class="evo-theme-live" style="margin-top: 4px;">
-          <button class="btn btn--primary">
-            Button
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <highlight-code type="html">
-    <div class="evo-theme">
-      <button class="btn btn--primary">
-        Button
-      </button>
-      <div class="evo-theme-live" style="margin-top: 4px;">
-        <button class="btn btn--primary">
-          Button
-        </button>
-      </div>
-    </div>
-  </highlight-code>
 
   <h3 id="tokens-color-semantic">
     Semantic Color Tokens
