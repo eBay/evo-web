@@ -1,0 +1,226 @@
+import { urls } from "../../../data";
+<main class="theming-guide">
+  <h1>Theming Guide</h1>
+
+  <p>
+    This guide covers how to build a theme for Evo Web, how to scope a
+    theme to just part of a page, and which themes ship today.
+  </p>
+
+  <h2 id="theming-overview">
+    Theming
+  </h2>
+  <p>
+    Theming means overriding Evo Web's semantic token layer to reskin every
+    component at once, without touching any component code. Every
+    component in
+    <code>@ebay/skin</code>
+    reads its colors exclusively from a fixed set of semantic CSS custom
+    properties (for example
+    <code>--color-background-accent</code>
+    or
+    <code>--color-foreground-accent</code>
+    ) &mdash; redefine those properties and every component picks up the
+    new values automatically.
+  </p>
+
+  <h3 id="theming-semantic-tokens">
+    Semantic Color Tokens
+  </h3>
+  <p>Note: To see the different theme colors, use the theme switcher</p>
+  <div class="demo">
+    <div class="demo__inner">
+      <token-doc type="semantic"/>
+    </div>
+  </div>
+
+  <h3 id="building-a-theme">
+    Building a Theme
+  </h3>
+  <p>
+    Always override at the semantic layer shown above &mdash; never the
+    primitive/core color scale it's built from. There are two ways to
+    build a theme, depending on who you are.
+  </p>
+
+  <h4>App consumers</h4>
+  <p>
+    Most teams reskinning their own app should start here. Import the
+    default token submodule as your foundation, then override the semantic
+    custom properties you want to change on
+    <code>:root</code>
+    . Provide a
+    <code>prefers-color-scheme: dark</code>
+    block if you support dark mode:
+  </p>
+  <highlight-code
+    type="css"
+    code=`
+      :root {
+        --color-background-accent: #0b5fff;
+        --color-foreground-accent: #ffffff;
+        --color-border-accent: #0b5fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background-accent: #4d8dff;
+          --color-foreground-accent: #001433;
+          --color-border-accent: #4d8dff;
+        }
+      }
+    `/>
+  <p>
+    To limit a theme to part of a page instead of the whole site, scope
+    the overrides to a class instead of
+    <code>:root</code>
+    &mdash; see
+    <a href="#sub-theming">
+      Sub-theming
+    </a>
+    below.
+  </p>
+
+  <h4>Skin/theme authors</h4>
+  <p>
+    Contributors publishing a new official theme inside
+    <code>@ebay/skin</code>
+    (the way Evo Live was built) start from a base mixin in
+    <code>@ebay/design-tokens</code>
+    instead of hand-writing every property, then layer selective overrides
+    on top. Evo Live's own light-mode definition uses
+    <code>@use "@ebay/design-tokens/dist/mixins/live-light" as tokens;</code>
+    , included under
+    <code>:root</code>
+    inside a
+    <code>@media (prefers-color-scheme: light)</code>
+    block, followed by a handful of property overrides on top of the
+    mixin. See
+    <a href="https://github.com/eBay/evo-web/blob/main/packages/skin/src/tokens/evo-live-light.scss">
+      evo-live-light.scss
+    </a>
+    and its
+    <a href="https://github.com/eBay/evo-web/blob/main/packages/skin/src/tokens/evo-live-dark.scss">
+      dark-mode counterpart
+    </a>
+    for the full source.
+  </p>
+  <p>
+    <strong>Accessibility:</strong>
+    whichever path you take, verify color contrast against WCAG 2.2 AA in
+    both light and dark mode before shipping a theme &mdash; overriding a
+    token is easy, but it's still your responsibility to keep the
+    resulting combinations legible.
+  </p>
+
+  <h2 id="sub-theming">
+    Sub-theming
+  </h2>
+  <p>
+    To scope a theme to just part of a page, use the token class themes.
+    These are exported as
+    <code>@ebay/skin/evo-class</code>
+    and
+    <code>@ebay/skin/evo-live-class</code>
+    . Add a class of
+    <code>.evo-theme</code>
+    or
+    <code>.evo-theme-live</code>
+    to any element, and every component inside it will use that theme
+    instead of the page's default.
+  </p>
+  <p>
+    The live demo below only demonstrates swapping in the Evo Live
+    subtheme; the same class-scoping pattern applies to any theme you
+    build, but only Evo Live ships a ready-made class bundle today.
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <div class="evo-theme">
+        <button class="btn btn--primary">
+          Button
+        </button>
+        <div class="evo-theme-live" style="margin-top: 4px;">
+          <button class="btn btn--primary">
+            Button
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <highlight-code type="html">
+    <div class="evo-theme">
+      <button class="btn btn--primary">
+        Button
+      </button>
+      <div class="evo-theme-live" style="margin-top: 4px;">
+        <button class="btn btn--primary">
+          Button
+        </button>
+      </div>
+    </div>
+  </highlight-code>
+
+  <h2 id="current-themes">
+    Current Themes
+  </h2>
+
+  <h3>Evo</h3>
+  <p>
+    Evo is the default theme and requires no extra setup beyond the
+    standard token import. See the
+    <a href=`${urls.components}/tokens/css`>
+      Tokens page
+    </a>
+    for the import instructions.
+  </p>
+
+  <h3 id="current-themes-evo-live">
+    Evo Live
+  </h3>
+  <p>Evo live is a theme built on top of evo-core. To import evo-live theme</p>
+  <p>
+    Core, light and dark token sets are individually exposed via the
+    following submodules:
+  </p>
+  <dl>
+    <dt>
+      <span class="secondary-text">
+        @ebay/skin/tokens/
+      </span>
+      evo-core
+    </dt>
+    <dd>eBay default primitives</dd>
+    <dt>
+      <span class="secondary-text">
+        @ebay/skin/tokens/
+      </span>
+      evo-live-light
+    </dt>
+    <dd>eBay semantic aliases for light mode</dd>
+    <dt>
+      <span class="secondary-text">
+        @ebay/skin/tokens/
+      </span>
+      evo-live-dark
+      <sup>*</sup>
+    </dt>
+    <dd>eBay semantic aliases for dark mode</dd>
+  </dl>
+  <p>
+    <sup>*</sup>
+    This sub-module will not be included automatically by its parent
+    module; it must be explicitly included by any page that is itself
+    dark-mode compatible.
+  </p>
+  <p>
+    There is also a bundled module
+    <code>@ebay/skin/evo-live</code>
+    Which imports all live tokens
+  </p>
+  <div class="demo">
+    <div class="demo__inner">
+      <token-doc type="live"/>
+    </div>
+  </div>
+</main>
