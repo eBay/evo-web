@@ -44,13 +44,11 @@ import {
     size: {
       control: "select",
       options: ["regular", "small"],
-      description: "Size of the summary",
       table: { defaultValue: { summary: "regular" } },
     },
     alignment: {
       control: "select",
       options: ["regular", "center"],
-      description: "Alignment of the summary",
       table: { defaultValue: { summary: "regular" } },
     },
     open: {
@@ -60,7 +58,6 @@ import {
     },
     onToggle: {
       action: "onToggle",
-      description: "Fired on toggle with `(event, { open })` arguments",
       table: { category: "Events" },
     },
   },

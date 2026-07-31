@@ -23,19 +23,14 @@ import { EvoBadge } from "@evo-web/react/badge";
   argTypes: {
     number: {
       control: "number",
-      description: "Used as the number to be placed in the badge",
     },
     type: {
       control: "inline-radio",
       options: ["menu", "icon"],
-      description:
-        "The badge type. Omit for the default image badge (role='img').",
     },
     a11yText: {
       type: { name: "string", required: true },
       control: "text",
-      description:
-        'A descriptive label of what the badge represents (e.g. "5 unread items"). Pass `null` explicitly _only_ if alternative accessibility information is present.',
     },
   },
   args: {

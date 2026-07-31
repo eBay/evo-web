@@ -27,16 +27,12 @@ import { EvoFilterChip } from "@evo-web/react/filter-chip";
     variant: {
       control: "select",
       options: ["default", "expressive", "menu"],
-      description:
-        "Visual and interaction variant. Menu variants toggle open state; all others toggle selected state.",
     },
     selected: {
       control: "boolean",
-      description: "Controlled selected state.",
     },
     defaultSelected: {
       control: "boolean",
-      description: "Initial selected state when uncontrolled.",
     },
     open: {
       control: "boolean",
@@ -48,7 +44,6 @@ import { EvoFilterChip } from "@evo-web/react/filter-chip";
     },
     disabled: {
       control: "boolean",
-      description: "Disables interaction.",
     },
     href: {
       control: "text",
@@ -58,21 +53,15 @@ import { EvoFilterChip } from "@evo-web/react/filter-chip";
     a11ySelectedText: {
       type: "string",
       control: "text",
-      description:
-        "Localized clipped text announced when an anchor or menu filter is selected. Required with href.",
     },
     icon: {
       control: false,
-      description: "Leading icon rendered by the default variant.",
     },
     image: {
       control: false,
-      description: "Leading image rendered by the expressive variant.",
     },
     onClick: {
       action: "onClick",
-      description:
-        "Triggered with the click event and `{ selected }`, or `{ open }` for menu variants.",
       table: { category: "Events" },
     },
     children: {

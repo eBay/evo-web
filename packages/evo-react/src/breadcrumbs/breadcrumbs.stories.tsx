@@ -23,18 +23,12 @@ import { EvoBreadcrumbs } from "@evo-web/react/breadcrumbs";
   argTypes: {
     a11yHeadingText: {
       control: "text",
-      description:
-        'Clipped heading text that labels the breadcrumb navigation region. English default is `"Page navigation"`.',
     },
     a11yHeadingTag: {
       control: "text",
-      description:
-        "HTML heading tag used for the clipped heading. Defaults to `h2`.",
     },
     items: {
       control: "object",
-      description:
-        "List of breadcrumb items. Each item renders as `<a>` when `href` is present, or `<button>` otherwise. Use `as` to render via a framework Link component.",
     },
   },
   args: {

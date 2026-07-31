@@ -26,7 +26,6 @@ import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
     size: {
       control: "select",
       options: ["32", "40", "48", "56", "64", "96", "128"],
-      description: "The pixel size of the avatar. Only specific sizes are supported.",
       table: { defaultValue: { summary: "48" } },
     },
     color: {
@@ -37,19 +36,13 @@ import { EvoAvatar, EvoAvatarImage } from "@evo-web/react/avatar";
     },
     username: {
       control: "text",
-      description:
-        "The username to display. Determines the background color (via hash) and shows the first letter when no image child is present. Omit to show the signed-out icon.",
     },
     knownAspectRatio: {
       control: "number",
-      description:
-        "Optional pre-known image aspect ratio to prevent a flash of incorrectly styled content before the image loads.",
     },
     a11yText: {
       type: { name: "string", required: true },
       control: "text",
-      description:
-        'Accessible label for the avatar (`aria-label`). English default is `"avatar"`. Pass `null` explicitly only if alternative accessibility information is present.',
     },
   },
   args: {

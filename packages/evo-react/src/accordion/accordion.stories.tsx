@@ -51,31 +51,23 @@ import {
     size: {
       control: "select",
       options: ["regular", "large"],
-      description: "Size of the accordion",
       table: { defaultValue: { summary: "regular" } },
     },
     a11yText: {
       type: { name: "string", required: true },
       control: "text",
-      description:
-        "Localized role description to announce the component role for a11y users.",
       table: { defaultValue: { summary: "accordion" } },
     },
     open: {
       control: "object",
-      description:
-        "Controlled id or ids of the open items. Use a string for single-open mode or a string array for multi-open mode.",
       table: { type: { summary: "string | string[]" } },
     },
     defaultOpen: {
       control: "object",
-      description:
-        "Initial uncontrolled id or ids of the open items. Use an empty string array for uncontrolled multi-open mode.",
       table: { type: { summary: "string | string[]" } },
     },
     onOpenChange: {
       action: "onOpenChange",
-      description: "Fired when the open item id or ids change",
       table: { category: "Events" },
     },
   },

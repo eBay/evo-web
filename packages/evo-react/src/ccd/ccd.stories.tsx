@@ -23,33 +23,24 @@ import { EvoCCD } from "@evo-web/react/ccd";
     argTypes: {
         max: {
             control: "text",
-            description:
-                "The maximum power range value. When both min and max are unset the description figure is hidden.",
         },
         min: {
             control: "text",
-            description:
-                "The minimum power range value. When both min and max are unset the description figure is hidden.",
         },
         chargerIcon: {
             control: "select",
             options: ["included", "not-included"],
-            description: "Shows a charger icon indicating whether a charger is included or not.",
         },
         units: {
             control: "text",
-            description: "The unit label displayed beneath the power range.",
             table: { defaultValue: { summary: "W" } },
         },
         secondaryType: {
             control: "select",
             options: ["usbpd"],
-            description: 'When set to "usbpd", displays the "USB PD" secondary label.',
         },
         a11yText: {
             control: "text",
-            description:
-                'Accessible label for the figure. Pass `null` explicitly only if alternative accessibility information is present. English default: "Charger included. {min} - {max} Watts. USB PD"',
             type: { name: "string", required: true },
         },
     },

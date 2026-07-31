@@ -45,19 +45,13 @@ import {
   argTypes: {
     open: {
       control: "boolean",
-      description:
-        "Controlled open state. When provided the consumer manages it via `onOpenChange`.",
     },
     defaultOpen: {
       control: "boolean",
-      description:
-        "Initial open state for uncontrolled usage. Ignored when `open` is provided.",
       table: { defaultValue: { summary: "false" } },
     },
     onOpenChange: {
       action: "onOpenChange",
-      description:
-        "Callback fired when the dialog requests to change its open state. Receives the new boolean value.",
       table: { category: "Events" },
     },
     onCancel: {
