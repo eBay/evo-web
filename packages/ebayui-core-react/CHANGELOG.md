@@ -1,5 +1,25 @@
 # @ebay/ui-core-react
 
+## 9.10.2
+
+### Patch Changes
+
+- [#775](https://github.com/eBay/evo-web/pull/775) [`c2e6b45`](https://github.com/eBay/evo-web/commit/c2e6b4561654447a7af2f12f288c64f065ec37d0) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(carousel): don't crash when `index` is out of range for the item count
+
+  `getOffset` indexed directly into the measured items array with
+  whatever `index` was passed, with no bounds check. A carousel with a
+  single item, given an `index` prop of 1 or higher (e.g. left over from
+  a previous render with more items, or just an out-of-range default),
+  threw `Cannot read properties of undefined (reading 'left')` during
+  mount. Falls back to the last available item when the requested index
+  is out of range instead of crashing.
+
+- [#757](https://github.com/eBay/evo-web/pull/757) [`3c02952`](https://github.com/eBay/evo-web/commit/3c02952c4ff2923284dddc791c2f2abc43727a33) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(ebay-pagination): disabled prev/next links no longer navigate when clicked
+
+  When a `previous` or `next` pagination item has an `href` (link variant) and is marked `disabled`, the rendered `<a>` element no longer includes the `href` attribute. The click handlers also now call `event.preventDefault()` when `aria-disabled` is set, providing defense-in-depth against navigation in both the Marko and React implementations.
+
+- [#766](https://github.com/eBay/evo-web/pull/766) [`4309485`](https://github.com/eBay/evo-web/commit/43094858fa2c8a856c701991599a10013e5b2e6b) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(ebay-tourtip): give the region role an accessible name via aria-labelledby on the overlay, linked to the heading
+
 ## 9.10.1
 
 ### Patch Changes
