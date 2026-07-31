@@ -1,13 +1,30 @@
 export interface Input extends Marko.HTML.A {
-    size?: "large";
+  fluid?: boolean;
+  size?: "large";
+  truncated?: boolean;
 }
-<const/{ size, class: inputClass, content, ...htmlInput }=input>
+<const/{
+  fluid,
+  size,
+  truncated,
+  class: inputClass,
+  content,
+  ...htmlInput
+}=input>
 
-<a ...htmlInput class=["cta-btn", size && `cta-btn--${size}`, inputClass]>
-    <span class="cta-btn__cell">
-        <span>
-            <${content}/>
-        </span>
-        <evo-icon-arrow-right-24/>
+<a
+  ...htmlInput
+  class=[
+    "cta-btn",
+    size && `cta-btn--${size}`,
+    fluid && "cta-btn--fluid",
+    truncated && "cta-btn--truncated",
+    inputClass,
+  ]>
+  <span class="cta-btn__cell">
+    <span>
+      <${content}/>
     </span>
+    <evo-icon-arrow-right-24/>
+  </span>
 </a>

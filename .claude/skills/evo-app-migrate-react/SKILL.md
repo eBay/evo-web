@@ -70,6 +70,7 @@ When migrating a listed component, read the linked file completely and apply the
 | `ebay-calendar`             | [evo-calendar.md](components/evo-calendar.md)                                           |
 | `ebay-ccd`                  | [evo-ccd.md](components/evo-ccd.md)                                                     |
 | `ebay-character-count`      | [evo-character-count.md](components/evo-character-count.md)                             |
+| `ebay-cta-button`           | [evo-cta-button.md](components/evo-cta-button.md)                                       |
 | `ebay-details`              | [evo-details.md](components/evo-details.md)                                             |
 | `ebay-confirm-dialog`       | [evo-confirm-dialog.md](components/evo-confirm-dialog.md)                               |
 | `ebay-filter-chip`          | [evo-filter-chip.md](components/evo-filter-chip.md)                                     |

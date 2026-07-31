@@ -18,11 +18,22 @@ export default {
   },
 
   argTypes: {
+    fluid: {
+      type: "boolean",
+      control: "boolean",
+      description: "Expand to the full width of the parent element",
+    },
     size: {
       type: "string",
-      options: ["normal (default)", "large"],
-      control: "inline-radio",
-      description: "Size of the CTA button",
+      options: ["large"],
+      control: "select",
+      description: "Use the large CTA button size",
+    },
+    truncated: {
+      type: "boolean",
+      control: "boolean",
+      description:
+        "Truncate overflowing text to a single line with an ellipsis",
     },
     href: {
       type: "string",
@@ -42,6 +53,7 @@ export const Default = buildExtensionTemplate(
   DefaultTemplateCode,
   {
     href: "https://www.ebay.com",
-    size: "regular",
+    fluid: false,
+    truncated: false,
   },
 );
