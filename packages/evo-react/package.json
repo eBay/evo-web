@@ -58,6 +58,9 @@
     "makeup-typeahead": "^0.3.5",
     "react-remove-scroll": "^2.7.2"
   },
+  "devDependencies": {
+    "@evo-web/storybook-addon-theme": "*"
+  },
   "peerDependencies": {
     "@ebay/skin": "^19",
     "react": "^19",
