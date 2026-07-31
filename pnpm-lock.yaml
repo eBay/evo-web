@@ -181,8 +181,8 @@ catalogs:
       specifier: ^0.3.5
       version: 0.3.5
     marko:
-      specifier: ^6.0.169
-      version: 6.0.169
+      specifier: ^6.3.20
+      version: 6.3.20
     native-copyfiles:
       specifier: ^1.3.7
       version: 1.3.7
@@ -292,10 +292,10 @@ importers:
         version: 1.7.5
       '@marko/run':
         specifier: 'catalog:'
-        version: 0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
+        version: 0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
       '@marko/run-adapter-static':
         specifier: ^2.0.4
-        version: 2.0.4(@marko/run@0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))(supports-color@10.2.2)
+        version: 2.0.4(@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))(supports-color@10.2.2)
       '@marko/type-check':
         specifier: 'catalog:'
         version: 3.1.5
@@ -370,7 +370,7 @@ importers:
         version: 0.2.8
       marko:
         specifier: 'catalog:'
-        version: 6.0.169
+        version: 6.3.20
       native-copyfiles:
         specifier: 'catalog:'
         version: 1.3.7
@@ -382,7 +382,7 @@ importers:
         version: 3.8.1
       prettier-plugin-marko:
         specifier: ^3.3.2
-        version: 3.3.2(@marko/compiler@5.39.62)(prettier@3.8.1)
+        version: 3.3.2(@marko/compiler@5.41.15)(prettier@3.8.1)
       prettier-plugin-packagejson:
         specifier: ^2.5.20
         version: 2.5.22(prettier@3.8.1)
@@ -891,7 +891,7 @@ importers:
         version: 2.6.7
       '@marko/testing-library':
         specifier: 'catalog:'
-        version: 6.4.1(marko@6.0.169)(supports-color@10.2.2)
+        version: 6.4.1(marko@6.3.20)(supports-color@10.2.2)
       '@marko/type-check':
         specifier: 'catalog:'
         version: 3.1.5
@@ -945,7 +945,7 @@ importers:
         version: 1.12.36
       marko:
         specifier: 'catalog:'
-        version: 6.0.169
+        version: 6.3.20
       playwright:
         specifier: 'catalog:'
         version: 1.60.0
@@ -1129,7 +1129,7 @@ importers:
         version: 2.4.1(supports-color@10.2.2)(tslib@2.8.1)
       '@marko/run':
         specifier: 'catalog:'
-        version: 0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
+        version: 0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
       '@percy/cli':
         specifier: ^1.31.7
         version: 1.31.8(supports-color@10.2.2)(typescript@5.9.3)
@@ -2749,10 +2749,6 @@ packages:
     resolution: {integrity: sha512-GIr9ZZoFo6A1GQWJiCmA6zM+TKBrzMTnZNgUskAFK57kyVQB8pc4FlYXpddiw7z2Z6fCMxS6tZ/6RYdPb7HGwg==}
     peerDependencies:
       marko: ^4.12.4 || ^5
-
-  '@marko/compiler@5.39.62':
-    resolution: {integrity: sha512-aBmWraqvVMLzi3oZkm5cEAVTv4qtLIVl9tkci6M+duSaEbKq4+n9FuNjYlOA0/4slRmOeAOuYyi2BenzgKmQNA==}
-    engines: {node: 18 || 20 || >=22}
 
   '@marko/compiler@5.41.15':
     resolution: {integrity: sha512-+wdoQ3FKK+bPMM8YACRPcFG19f+YhEa889lHWPv1Sr4YOgEdgpdyis+rl3urItp57UJJLSgEba2bw14w/8plXA==}
@@ -5935,9 +5931,9 @@ packages:
     engines: {node: 18 || 20 || >=22}
     hasBin: true
 
-  marko@6.0.169:
-    resolution: {integrity: sha512-2DPgY1/wsq7Iw5RdFpnrgTbYiaJZbcMimEfOpWzllz2HS5onJr/KBl3dEmhjZ2vbG6nS3NVOABxvitzo5WOz/w==}
-    engines: {node: 18 || 20 || >=22}
+  marko@6.3.20:
+    resolution: {integrity: sha512-m3H0A2znmVroixexECc71YcHdl/VOX7qLsj0CExrGYJ/7vOwKP73neH9uSf6tqWsJA3gCOCrVw4j9vBMMt0lmw==}
+    engines: {node: '>=22'}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -9768,22 +9764,6 @@ snapshots:
     dependencies:
       marko: 5.38.38
 
-  '@marko/compiler@5.39.62':
-    dependencies:
-      '@luxass/strip-json-comments': 1.4.0
-      complain: 1.6.1
-      he: 1.2.0
-      htmljs-parser: 5.12.1
-      jsesc: 3.1.0
-      kleur: 4.1.5
-      lasso-package-root: 1.0.1
-      raptor-regexp: 1.0.1
-      raptor-util: 3.2.0
-      relative-import-path: 1.0.1
-      resolve-from: 5.0.0
-      self-closing-tags: 1.0.1
-      source-map-support: 0.5.21
-
   '@marko/compiler@5.41.15':
     dependencies:
       '@luxass/strip-json-comments': 2.0.1
@@ -9808,9 +9788,9 @@ snapshots:
       htmljs-parser: 5.12.1
       relative-import-path: 1.0.1
 
-  '@marko/run-adapter-static@2.0.4(@marko/run@0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))(supports-color@10.2.2)':
+  '@marko/run-adapter-static@2.0.4(@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))(supports-color@10.2.2)':
     dependencies:
-      '@marko/run': 0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
+      '@marko/run': 0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
       compression: 1.8.1(supports-color@10.2.2)
       htmlparser2: 10.1.0
       sirv: 1.0.19
@@ -9818,53 +9798,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@marko/run-explorer@2.0.2(@marko/run@0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))':
+  '@marko/run-explorer@2.0.2(@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
-      '@marko/run': 0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
+      '@marko/run': 0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
 
-  '@marko/run-explorer@2.0.2(@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))':
+  '@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)':
     dependencies:
-      '@marko/run': 0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
-
-  '@marko/run@0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)':
-    dependencies:
-      '@marko/run-explorer': 2.0.2(@marko/run@0.9.4(@marko/compiler@5.39.62)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))
-      '@marko/vite': 5.4.3(@marko/compiler@5.39.62)(vite@7.3.2(@types/node@25.2.1)(jiti@2.6.1)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))
-      browserslist: 4.28.1
-      cli-table3: 0.6.5
-      compression: 1.8.1(supports-color@10.2.2)
-      debug: 4.4.3(supports-color@10.2.2)
-      dotenv: 16.6.1
-      draftlog: 1.0.13
-      esbuild-plugin-browserslist: 0.16.0(browserslist@4.28.1)(esbuild@0.25.12)(supports-color@10.2.2)
-      glob: 11.1.0
-      human-format: 1.2.1
-      kleur: 4.1.5
-      marko: 6.0.169
-      parse-node-args: 1.1.3
-      sade: 1.8.1
-      serve-static: 1.16.3(supports-color@10.2.2)
-      supports-color: 10.2.2
-      vite: 7.3.2(@types/node@25.2.1)(jiti@2.6.1)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
-      warp10: 2.1.0
-    transitivePeerDependencies:
-      - '@marko/compiler'
-      - '@types/node'
-      - esbuild
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - yaml
-
-  '@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)':
-    dependencies:
-      '@marko/run-explorer': 2.0.2(@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.0.169)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))
+      '@marko/run-explorer': 2.0.2(@marko/run@0.9.4(@marko/compiler@5.41.15)(@types/node@25.2.1)(esbuild@0.25.12)(jiti@2.6.1)(marko@6.3.20)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))
       '@marko/vite': 5.4.3(@marko/compiler@5.41.15)(vite@7.3.2(@types/node@25.2.1)(jiti@2.6.1)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))
       browserslist: 4.28.1
       cli-table3: 0.6.5
@@ -9876,7 +9816,7 @@ snapshots:
       glob: 11.1.0
       human-format: 1.2.1
       kleur: 4.1.5
-      marko: 6.0.169
+      marko: 6.3.20
       parse-node-args: 1.1.3
       sade: 1.8.1
       serve-static: 1.16.3(supports-color@10.2.2)
@@ -9916,11 +9856,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@marko/testing-library@6.4.1(marko@6.0.169)(supports-color@10.2.2)':
+  '@marko/testing-library@6.4.1(marko@6.3.20)(supports-color@10.2.2)':
     dependencies:
       '@testing-library/dom': 10.4.1
       jsdom: 26.1.0(supports-color@10.2.2)
-      marko: 6.0.169
+      marko: 6.3.20
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -9935,20 +9875,6 @@ snapshots:
       arg: 5.0.2
       kleur: 4.1.5
       typescript: 6.0.3
-
-  '@marko/vite@5.4.3(@marko/compiler@5.39.62)(vite@7.3.2(@types/node@25.2.1)(jiti@2.6.1)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))':
-    dependencies:
-      '@chialab/cjs-to-esm': 0.19.0
-      '@marko/compiler': 5.39.62
-      anymatch: 3.1.3
-      domelementtype: 2.3.0
-      domhandler: 5.0.3
-      fast-glob: 3.3.3
-      htmlparser2: 10.1.0
-      relative-import-path: 1.0.1
-      resolve: 1.22.11
-      resolve.exports: 2.0.3
-      vite: 7.3.2(@types/node@25.2.1)(jiti@2.6.1)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2)
 
   '@marko/vite@5.4.3(@marko/compiler@5.41.15)(vite@7.3.2(@types/node@25.2.1)(jiti@2.6.1)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
@@ -13425,9 +13351,9 @@ snapshots:
       self-closing-tags: 1.0.1
       warp10: 2.1.0
 
-  marko@6.0.169:
+  marko@6.3.20:
     dependencies:
-      '@marko/compiler': 5.39.62
+      '@marko/compiler': 5.41.15
       csstype: 3.2.3
       fastest-levenshtein: 1.0.16
       magic-string: 0.30.21
@@ -14109,9 +14035,9 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-marko@3.3.2(@marko/compiler@5.39.62)(prettier@3.8.1):
+  prettier-plugin-marko@3.3.2(@marko/compiler@5.41.15)(prettier@3.8.1):
     dependencies:
-      '@marko/compiler': 5.39.62
+      '@marko/compiler': 5.41.15
       prettier: 3.8.1
 
   prettier-plugin-packagejson@2.5.22(prettier@3.8.1):
