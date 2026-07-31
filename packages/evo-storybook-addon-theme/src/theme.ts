@@ -21,8 +21,8 @@ function createEvoWebLogo(
 const brand = {
   fontBase: '"Market Sans", Arial',
   brandTitle: "Evo Web",
-  brandUrl: "/",
-  brandTarget: "/",
+  brandUrl: "/evo-web",
+  brandTarget: "_self",
 };
 
 const lightColors = evo.light.color.semantic;
