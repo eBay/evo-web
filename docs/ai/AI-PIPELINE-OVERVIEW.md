@@ -160,7 +160,7 @@ The Overview tab of the docs site is written here — the landing page for the c
 
 ## Step 14 — Build Validation
 
-`npm run build` is run to confirm all generated files compile without errors. TypeScript errors in Marko or React components, SCSS compilation failures, and import path mistakes are caught here. The pipeline does not advance to QA with a failing build — errors are fixed inline before continuing.
+`pnpm build` is run to confirm all generated files compile without errors. TypeScript errors in Marko or React components, SCSS compilation failures, and import path mistakes are caught here. The pipeline does not advance to QA with a failing build — errors are fixed inline before continuing.
 
 ---
 
@@ -204,7 +204,7 @@ Not every pipeline run regenerates everything. The scope is either specified wit
 
 ## Codegen Scripts
 
-Alongside the AI skills, the pipeline includes a set of deterministic TypeScript scripts that handle the mechanical parts of code generation without AI involvement. All are exposed as npm workspace commands via `npm run codegen:<name>`.
+Alongside the AI skills, the pipeline includes a set of deterministic TypeScript scripts that handle the mechanical parts of code generation without AI involvement. All are exposed as pnpm workspace commands via `pnpm codegen:<name>`.
 
 | Script                           | Command                     | Purpose                                                                                                                           |
 | -------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |

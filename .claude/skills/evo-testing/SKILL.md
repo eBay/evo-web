@@ -32,7 +32,7 @@ For component `{component}` (URL segment without `ebay-`):
 - Unit / integration: `packages/ebayui-core-react/src/ebay-{component}/__tests__/*.spec.tsx`
 - Stories (for `play` interaction tests): `.../__tests__/index.stories.tsx` (and other `*.stories.tsx` in that folder)
 
-**Commands:** See the `evo-commands` skill for `npx vitest run ...` and workspace-scoped npm scripts.
+**Commands:** See the `evo-commands` skill for `pnpm exec vitest run ...` and workspace-scoped pnpm scripts.
 
 ## Test categories (group and label tests this way)
 

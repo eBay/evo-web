@@ -5,14 +5,14 @@ This page contains instructions and guidelines for anybody contributing code to 
 ## Quick guidance for contribution
 
 - Create a feature branch `git checkout -b features/new-component`
-- `yarn install` to install dependencies
+- `pnpm install` from the repository root to install dependencies
 - Add documentation:
     - `README.md` on component level
     - Unit test
     - Storybook file for snapshot tests and also component showcase/demo
 - Make your changes pass the:
-    - `yarn lint`. You can do `yarn lint --fix` to automatically fix small lint issues (e.g indentation, whitespace, semicolons, ...)
-    - `yarn test`. Do `yarn test -u` to automatically the snapshot tests.
+    - `pnpm lint`. You can do `pnpm lint --fix` to automatically fix small lint issues (e.g indentation, whitespace, semicolons, ...)
+    - `pnpm test`. Do `pnpm test -u` to automatically the snapshot tests.
 
 ## Extended guidance
 
@@ -32,23 +32,23 @@ This section includes information on system requirements, running the local serv
 ### System Requirements
 
 - [Node.js](https://nodejs.org/en/) (v18+ preferred)
-- Preferably yarn (`npm i -g yarn`), but npm should work as well
+- [pnpm](https://pnpm.io/) 11
 
-Clone this repo to your local environment then run `yarn` or `npm i` to install all dependencies.
+Clone this repo to your local environment then run `pnpm install` from the repository root to install all dependencies.
 
 ### Local Server with Storybook
 
-Execute `yarn storybook` (or `yarn storybook-node16` for node@<=16) to start local web server with storybook. this will allow you to develop components in isolation. Stories
+Execute `pnpm storybook` to start local web server with storybook. this will allow you to develop components in isolation. Stories
 
 ### Tests
 
-Execute `yarn test` to run all tests or `yarn coverage` to run test with coverage, reports are shown in the console and stored as `coverage/lcov-report/index.html`.
+Execute `pnpm test` to run all tests or `pnpm coverage` to run test with coverage, reports are shown in the console and stored as `coverage/lcov-report/index.html`.
 
-Most of our tests verify html snapshots against the generated html that the current component outputs. If these change the test will fail. In order to update the snapshots, one needs to run `yarn test -u` and then new snapshots will be generated, which should be checked in. Please make sure that snapshot changes make sense.
+Most of our tests verify html snapshots against the generated html that the current component outputs. If these change the test will fail. In order to update the snapshots, one needs to run `pnpm test -u` and then new snapshots will be generated, which should be checked in. Please make sure that snapshot changes make sense.
 
 ### Changesets
 
-We use [changesets](https://github.com/changesets/changesets) to manage our releases. This allows us to create a changelog and versioning for our packages. To create a changeset, run `yarn change` and follow the prompts. This will create a new file in the `.changeset` directory.
+We use [changesets](https://github.com/changesets/changesets) to manage our releases. This allows us to create a changelog and versioning for our packages. To create a changeset, run `pnpm change` from the repository root and follow the prompts. This will create a new file in the `.changeset` directory.
 Make sure to commit the changeset file to your branch.
 
 ## Pull Requests
@@ -226,7 +226,7 @@ One way to comply those guidelines is to implement your new component as similar
 This will update `EbaySvg` and `EbayIcon` components:
 
 ```shell script
-yarn update-icons
+pnpm update-icons
 ```
 
 ## Releases

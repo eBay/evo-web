@@ -1,16 +1,10 @@
-import {
-  footer,
-  content,
-  column,
-  brand,
-  brandTitle,
-} from "./style.module.scss";
+import styles from "./style.module.scss";
 import { urls } from "../../data";
-<footer class=footer role="contentinfo">
+<footer class=styles.footer role="contentinfo">
   <div class="page-grid-container">
-    <div class=content>
-      <div class=column>
-        <div class=brand>
+    <div class=styles.content>
+      <div class=styles.column>
+        <div class=styles.brand>
           <svg
             width="24"
             height="24"
@@ -24,7 +18,7 @@ import { urls } from "../../data";
             <polyline points="16 18 22 12 16 6"/>
             <polyline points="8 6 2 12 8 18"/>
           </svg>
-          <span class=brandTitle>
+          <span class=styles.brandTitle>
             Evo Web
           </span>
         </div>
@@ -41,7 +35,7 @@ import { urls } from "../../data";
         </a>
       </div>
 
-      <div class=column>
+      <div class=styles.column>
         <h3>Main</h3>
         <ul>
           <li>
@@ -82,7 +76,7 @@ import { urls } from "../../data";
         </ul>
       </div>
 
-      <div class=column>
+      <div class=styles.column>
         <h3>Web Guides and Best Practices</h3>
         <ul>
           <li>

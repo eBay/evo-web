@@ -20,21 +20,21 @@ This section includes information on system requirements, running the local serv
 
 - [Node.js](https://nodejs.org/en/)
 
-Clone this repo to your local environment then run `npm i` to install all dependencies.
+Clone this repo to your local environment then run `pnpm install` from the repository root to install all dependencies.
 
 ### Local Server
 
-Execute `npm start` to start the local web server at [http://localhost:3000](http://localhost:3000). This is a quick method to run and debug code, but it will only work in modern browsers since it does not include transpilation.
+Execute `pnpm start` to start the local web server at [http://localhost:3000](http://localhost:3000). This is a quick method to run and debug code, but it will only work in modern browsers since it does not include transpilation.
 
-For debugging older browsers, the demo can be run against transpiled source code via `npm run start:prod`.
+For debugging older browsers, the demo can be run against transpiled source code via `pnpm start:prod`.
 
 The demo page will render the `examples/` for each component. To selectively include certain examples for debugging, add `.only` to their folder names.
 
 ### Tests
 
-Execute `npm test` to run all tests and generate coverage reports at `./coverage/index.html`.
+Execute `pnpm test` to run all tests and generate coverage reports at `./coverage/index.html`.
 
-Most of our server tests use `vitest` & `@marko/testing-library` in order to verify html snapshots against the generated html that the current component outputs. If these change the test will fail. In order to update the snapshots, one needs to run `npm test -u` and then new snapshots will be genrated, which should be checked in.
+Most of our server tests use `vitest` & `@marko/testing-library` in order to verify html snapshots against the generated html that the current component outputs. If these change the test will fail. In order to update the snapshots, one needs to run `pnpm test -u` and then new snapshots will be genrated, which should be checked in.
 
 ### Marko Lifecycle Functions
 
@@ -42,7 +42,7 @@ Because eBayUI components are written in Marko, the component files may contain 
 
 ### Package Scripts
 
-Execute `npm run`, or check the "scripts" section of `package.json` to view all available utility scripts.
+Execute `pnpm run`, or check the "scripts" section of `package.json` to view all available utility scripts.
 
 Please ensure all scripts in `package.json` are Unix _and_ Windows friendly.
 
@@ -59,7 +59,7 @@ BROWSERSTACK_USER="YOUR BROWSERSTACK USERNAME"
 BROWSERSTACK_ACCESS_KEY="YOUR BROWSERSTACK ACCESS KEY"
 ```
 
-Finally run `npm run test:browserstack` to begin the tests.
+Finally run `pnpm test:browserstack` to begin the tests.
 
 ## Pull Requests
 
@@ -127,7 +127,7 @@ Each Pull Request requires at least one changeset as part of the pull requests. 
 
 The general recommendation is to have only one changeset per pull requiest. All pull requests to master need to have at least one changeset. It is recommended to have a changeset for each PR to a feature branch.
 
-In order to add a changeset run the command `npm run change`. Choose the appropriate version that this changeset will require: patch for bugfixes, minor for features, and major for breaking changes. Enter the summary of the changes. Generally we follow the same format for each of our commits, list the component change, and a brief description of the changes. These will be added in the release notes, so make sure they are descriptive enough for that.
+In order to add a changeset run the command `pnpm change`. Choose the appropriate version that this changeset will require: patch for bugfixes, minor for features, and major for breaking changes. Enter the summary of the changes. Generally we follow the same format for each of our commits, list the component change, and a brief description of the changes. These will be added in the release notes, so make sure they are descriptive enough for that.
 
 Afterwards, add and commit the file generated under the `.changeset` directory as part of your PR. Those files will be removed when the release is done as part of the automatic release process.
 

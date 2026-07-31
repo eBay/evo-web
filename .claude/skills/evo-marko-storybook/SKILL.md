@@ -295,7 +295,7 @@ Export name is PascalCase; it becomes the story name in the sidebar.
 Run the type-checker on the new stories file:
 
 ```bash
-npx tsc --noEmit -p packages/evo-marko/tsconfig.json
+pnpm exec tsc --noEmit -p packages/evo-marko/tsconfig.json
 ```
 
 Fix any type errors inline. Common issues:

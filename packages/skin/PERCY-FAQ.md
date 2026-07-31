@@ -122,10 +122,10 @@ export PERCY_TOKEN=[TOKEN_FROM_PERCY_DASHBOARD]
 # Run Percy for specific components
 cd packages/skin
 export STORIES="Button,Icon"
-npm run snapshots
+pnpm snapshots
 
 # Or run all components
-npm run snapshots:all
+pnpm snapshots:all
 ```
 
 External contributors cannot run Percy locally but it runs automatically in CI for all PRs.

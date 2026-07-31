@@ -58,13 +58,13 @@ over manifest inference for story content. Extract:
 
 **How docs findings override manifest-derived stories:**
 
-| Situation | Action |
-|---|---|
-| Docs has a named section the manifest didn't list | Add it as a new story |
-| Docs markup differs from what you'd infer from SCSS | Use the docs markup |
-| Docs shows a state combo the manifest doesn't (e.g. `aria-disabled` ≠ `disabled`) | Create separate stories for each |
-| Docs marks something EXPERIMENTAL | Include story, add `// EXPERIMENTAL` comment |
-| Docs references icon names or children structure | Use exactly those icon names in story HTML |
+| Situation                                                                         | Action                                       |
+| --------------------------------------------------------------------------------- | -------------------------------------------- |
+| Docs has a named section the manifest didn't list                                 | Add it as a new story                        |
+| Docs markup differs from what you'd infer from SCSS                               | Use the docs markup                          |
+| Docs shows a state combo the manifest doesn't (e.g. `aria-disabled` ≠ `disabled`) | Create separate stories for each             |
+| Docs marks something EXPERIMENTAL                                                 | Include story, add `// EXPERIMENTAL` comment |
+| Docs references icon names or children structure                                  | Use exactly those icon names in story HTML   |
 
 **If the docs page does not exist:** Note it in the final summary and proceed using
 manifest + SCSS as the sole sources. Do not block generation.
@@ -76,12 +76,14 @@ docs has clearly distinct named sections (e.g. primary, secondary, destructive, 
 that grouping in the story files.
 
 **Single file** — use when the component has ≤ 8 total stories (base + modifiers + states):
+
 ```
 packages/skin/src/sass/<block>/stories/<block>.stories.js
 ```
 
 **Split files** — use when the component has more than ~8 stories or has clearly distinct
 sub-groupings (e.g. button has Primary, Secondary, Destructive, Cascade each as separate files):
+
 ```
 packages/skin/src/sass/<block>/stories/<block>/base.stories.js
 packages/skin/src/sass/<block>/stories/<block>/cascade.stories.js
@@ -106,6 +108,7 @@ export const base = () => `
 ```
 
 **Rules:**
+
 - Default export has `title` only — no `component`, `parameters`, `decorators`, or `argTypes`
 - Every named export is a **zero-argument arrow function returning an HTML string**
 - No `args`, no `argTypes`, no controls
@@ -113,18 +116,19 @@ export const base = () => `
 
 ### Story naming
 
-| What to story | Export name | Title path |
-|---|---|---|
-| Base/default state | `base` or descriptive name | `"Skin/<DisplayName>"` |
-| A modifier | camelCase modifier name | same file |
-| A state (disabled, expanded) | camelCase state name | same file |
-| RTL layout | `RTL` | same file, or `"Skin/<DisplayName>/RTL"` |
-| Text spacing | `textSpacing` | same file, or `"Skin/<DisplayName>/Text Spacing"` |
-| Sub-group of variants | — | `"Skin/<DisplayName>/<SubGroup>"` |
+| What to story                | Export name                | Title path                                        |
+| ---------------------------- | -------------------------- | ------------------------------------------------- |
+| Base/default state           | `base` or descriptive name | `"Skin/<DisplayName>"`                            |
+| A modifier                   | camelCase modifier name    | same file                                         |
+| A state (disabled, expanded) | camelCase state name       | same file                                         |
+| RTL layout                   | `RTL`                      | same file, or `"Skin/<DisplayName>/RTL"`          |
+| Text spacing                 | `textSpacing`              | same file, or `"Skin/<DisplayName>/Text Spacing"` |
+| Sub-group of variants        | —                          | `"Skin/<DisplayName>/<SubGroup>"`                 |
 
 ### Required stories (every component must have these)
 
 **1. Base story** — shows the component in its default/resting state with minimal markup:
+
 ```js
 export const base = () => `
 <span class="badge">1</span>
@@ -132,6 +136,7 @@ export const base = () => `
 ```
 
 **2. One story per BEM modifier** — use the modifier's name as the export name:
+
 ```js
 export const dot = () => `
 <span class="badge badge--dot"></span>
@@ -139,6 +144,7 @@ export const dot = () => `
 ```
 
 **3. Disabled / state stories** — if the manifest has states like `disabled`, `expanded`:
+
 ```js
 export const disabled = () => `
 <button class="btn btn--primary" disabled>Disabled</button>
@@ -150,6 +156,7 @@ export const disabled = () => `
 **4. RTL** — wrap the base markup in `<div dir="rtl">`. If the component has no
 directional layout (text only, symmetric shapes), still include it — it verifies
 nothing breaks under RTL:
+
 ```js
 export const RTL = () => `
 <div dir="rtl">
@@ -160,11 +167,13 @@ export const RTL = () => `
 
 **5. textSpacing** — apply `demo-a11y-text-spacing` class directly on the root BEM element
 (not a wrapper). Pick the most representative variant (usually base):
+
 ```js
 export const textSpacing = () => `
 <span class="badge demo-a11y-text-spacing">99+</span>
 `;
 ```
+
 The `demo-a11y-text-spacing` class simulates WCAG 1.4.12 (Text Spacing) by forcing
 `line-height: 1.5`, `letter-spacing: 0.12em`, `word-spacing: 0.16em`. Verify the component
 doesn't break under these constraints.
@@ -264,11 +273,11 @@ export const textSpacing = () => `
 
 Stories are non-blocking (a missing story is a warning, not a build failure). Still:
 
-- Run `npm start` briefly to confirm stories appear in the skin storybook sidebar under `Skin/<DisplayName>`
+- Run `pnpm start` briefly to confirm stories appear in the skin storybook sidebar under `Skin/<DisplayName>`
 - Check that RTL and textSpacing stories render without visual breakage
 - If the storybook server is already running, refresh — Vite HMR will pick up new files
 
-If `npm start` is not feasible in this context, note it in the summary and move on.
+If `pnpm start` is not feasible in this context, note it in the summary and move on.
 
 ---
 

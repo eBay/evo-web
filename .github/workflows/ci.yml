@@ -15,13 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
-      - run: npm ci
-      - run: npm run build:ci
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:ci
       - uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -47,15 +51,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build site
-        run: npm run deploy
+        run: pnpm deploy
         env:
           BASE_URL: /evo-web/
       - name: Deploy to gh-pages branch (root)
@@ -91,19 +99,23 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Release
         id: changesets
         uses: changesets/action@v1
         with:
-          version: npm run version
-          publish: npm run release
+          version: pnpm run version
+          publish: pnpm run release
           commit: "ci: release"
           title: "ci: release"
           commitMode: "github-api"

@@ -188,12 +188,12 @@ A milestone branch will be deleted after it has been merged into `master`. There
 Every time we cut a new milestone branch, the package dependencies require updating.
 
 1. Ensure you are on the milestone branch and that the branch is up-to-date with latest from `master`
-1. Run `npm install` to ensure your local node_modules are in sync with your `package-lock.json`
-1. Run `npm outdated`
+1. Run `pnpm install` to ensure your local `node_modules` is in sync with `pnpm-lock.yaml`
+1. Run `pnpm outdated`
 1. Go into `package.json` and update version numbers to the latest based on outdated. Pay attention to any major version updates as they may contain breaking changes!
-1. Run `npm install` again. This will update `package-lock.json`.
-1. Run `npm run build`, `npm start` and `npm run storybook` and make sure those commands execute correctly
-1. Check in `package.json` and `package-lock.json` as `chore: updated dev deps`.
+1. Run `pnpm install` again. This will update `pnpm-lock.yaml`.
+1. Run `pnpm build`, `pnpm start`, and `pnpm storybook` and make sure those commands execute correctly
+1. Check in the package manifests, `pnpm-workspace.yaml`, and `pnpm-lock.yaml` as `chore: updated dev deps`.
 
 ## Commit Message Format
 
@@ -358,17 +358,17 @@ export PERCY_TOKEN=[TOKEN_FROM_PERCY_DASHBOARD]
 cd packages/skin
 
 # Single component
-PERCY_PARTIAL_BUILD=1 STORIES="Button" npm run snapshots
+PERCY_PARTIAL_BUILD=1 STORIES="Button" pnpm snapshots
 
 # Multiple components
-PERCY_PARTIAL_BUILD=1 STORIES="Button,Icon,Badge" npm run snapshots
+PERCY_PARTIAL_BUILD=1 STORIES="Button,Icon,Badge" pnpm snapshots
 ```
 
 #### Run All Components
 
 ```bash
 cd packages/skin
-npm run snapshots:all
+pnpm snapshots:all
 ```
 
 #### Dry Run
@@ -379,10 +379,10 @@ Dry run will print the snapshot names that would be tested without executing the
 cd packages/skin
 
 # Specific components
-STORIES="Button,Icon,Badge" npm run snapshots:dry
+STORIES="Button,Icon,Badge" pnpm snapshots:dry
 
 # All components
-npm run snapshots:all:dry
+pnpm snapshots:all:dry
 ```
 
 ### External Contributors
@@ -414,26 +414,26 @@ As you may see in `package.json`, there are two helper scripts, `snapshots:execu
 
 ## Website
 
-First, be sure to Run `npm install` to install all dependencies from NPM.
+First, run `pnpm install` from the repository root to install all dependencies.
 
 We use [Marko Run](https://github.com/marko-js/run) to generate HTML from templates, [SASS](https://sass-lang.com/) to preprocess and compile CSS. The website can be run and hosted locally (see next section) during development.
 
-In order to run a dev server of the site, you can run `npm run dev`. This launches the server which should allow you to see updates as you change your CSS or HTML. This will launch the site at http://localhost:3000
+In order to run a dev server of the site, you can run `pnpm dev`. This launches the server which should allow you to see updates as you change your CSS or HTML. This will launch the site at http://localhost:3000
 
 Our site source is located in `src/routes`. These provide the basic site routing. Inside `src/components` are our common components which we use to show repeated parts of the site (such as syntax highlighting our code). Finally, all top level modules are located in `src/modules`. All these files will be used as the component name as well as in the nav. These are auto discoverable.
 
-To build the site, run `npm run deploy`. This will create all the site assets in `_site`.
+To build the site, run `pnpm deploy`. This will create all the site assets in `_site`.
 
 All CSS files are read directly from the source from `src/bundles/skin-full.scss`
 
 ## Scripts
 
-The following scripts are available via npm:
+The following scripts are available via pnpm:
 
-- `npm start` - Builds the server and launches it at post 3000 (This does not have live reloading)
-- `npm run dev` - Starts local BrowserSync server on port 3000 (This has live reloading)
-- `npm test` - Runs a build and lints CSS and LESS files
-- `npm run build` - Runs a build only (no server)
+- `pnpm start` - Builds the server and launches it at post 3000 (This does not have live reloading)
+- `pnpm dev` - Starts local BrowserSync server on port 3000 (This has live reloading)
+- `pnpm test` - Runs a build and lints CSS and LESS files
+- `pnpm build` - Runs a build only (no server)
 
 ## Icon Creation
 
@@ -449,6 +449,6 @@ See the [root CONTRIBUTING.md](../../CONTRIBUTING.md#releases) for full release 
 The website archive under `/docs/archive` should be updated each time a minor or major release is published.
 
 1. In a local branch, checkout the tag of the previous version, e.g. `git checkout v10.7.5`
-2. Run `npm i`
-3. Run `npx marko-run build -o /docs/archive/v0.7.5`
+2. Run `pnpm install`
+3. Run `pnpm exec marko-run build -o /docs/archive/v0.7.5`
 4. Create a pull request

@@ -1,4 +1,5 @@
 import fs from "fs";
+import { fileURLToPath } from "url";
 import weekData from "cldr-core/supplemental/weekData.json" with { type: "json" };
 import coverageLevels from "cldr-core/coverageLevels.json" with { type: "json" };
 import defaultContent from "cldr-core/defaultContent.json" with { type: "json" };
@@ -25,7 +26,7 @@ const dayNums = {
   sat: 6,
 };
 
-const dirPath = "../../node_modules/cldr-dates-full/main";
+const dirPath = fileURLToPath(import.meta.resolve("cldr-dates-full/main"));
 const files = fs.readdirSync(dirPath);
 
 const modernBases = new Set(

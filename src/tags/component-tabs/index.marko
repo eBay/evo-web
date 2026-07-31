@@ -1,5 +1,5 @@
 import { getMetadataFromUrl, urls  } from "../../data";
-import { badge, component, tabs, pagination} from "./style.module.scss";
+import styles from "./style.module.scss";
 export interface Input {
   content?: Marko.Body;
 }
@@ -16,15 +16,15 @@ export interface Input {
   prev,
 }=getMetadataFromUrl($global.url.pathname)>
 
-<const/badgeClass=[badge]>
+<const/badgeClass=[styles.badge]>
 
 <if=metadata && page === "components">
   <const/getAriaCurrentValue(tabName: string) {
     return currentTab === tabName ? "page" : undefined;
   }>
 
-  <div class=component>
-    <div class=["fake-tabs", tabs]>
+  <div class=styles.component>
+    <div class=["fake-tabs", styles.tabs]>
       <ul class="fake-tabs__items" aria-label="Component implementation tabs">
         <li class="fake-tabs__item fake-tabs__items--large">
           <a
@@ -127,7 +127,7 @@ export interface Input {
         </div>
       </div>
     </div>
-    <div class=pagination>
+    <div class=styles.pagination>
       <if=prev>
         <a href=(prev.componentUrls.overview)>
           <svg class="icon icon--12">

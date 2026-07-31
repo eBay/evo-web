@@ -1,93 +1,134 @@
 {
-    "name": "@ebay/ui-core-react",
-    "version": "9.10.1",
-    "description": "Skin components build off React",
-    "keywords": [
-        "React",
-        "Skin",
-        "EbayUI"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/eBay/evo-web.git",
-        "directory": "packages/ebayui-core-react"
+  "name": "@ebay/ui-core-react",
+  "version": "9.10.1",
+  "description": "Skin components build off React",
+  "keywords": [
+    "React",
+    "Skin",
+    "EbayUI"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eBay/evo-web.git",
+    "directory": "packages/ebayui-core-react"
+  },
+  "license": "ISC",
+  "author": "tmanyanov@ebay.com",
+  "exports": {
+    "./package.json": "./package.json",
+    "./icons/*": {
+      "types": "./ebay-icon/icons/*.d.ts",
+      "default": "./icons/*/index.js"
     },
-    "license": "ISC",
-    "author": "tmanyanov@ebay.com",
-    "exports": {
-        "./package.json": "./package.json",
-        "./icons/*": {
-            "types": "./ebay-icon/icons/*.d.ts",
-            "default": "./icons/*/index.js"
-        },
-        "./*": {
-            "types": "./*/index.d.ts",
-            "default": "./*/index.js"
-        }
-    },
-    "scripts": {
-        "build": "npm run clean && npm run type:check && vitest run && vite build && npm run copy && npm run smoke-test",
-        "build:storybook": "storybook build",
-        "clean": "node scripts/clean",
-        "copy": "copyfiles package.json README.md dist && npm run copy:rest",
-        "copy:rest": "copyfiles 'src/**/*.md' dist -u 1",
-        "coverage": "npm run clean && npm run test -- --coverage --ci",
-        "deploy": "NODE_OPTIONS=--max-old-space-size=8192 storybook build -o ./_site/$(git branch --show-current)",
-        "format": "eslint . --fix 'src/**/*.{ts,tsx}' && prettier . --write --log-level=warn",
-        "generate-locale-info": "node scripts/generate-locale-info.js",
-        "lint": "eslint . --ext .ts,.tsx && prettier . --check --log-level=warn",
-        "release": "vite build && npm run copy",
-        "smoke-test": "concurrently --kill-others-on-fail \"npm run smoke-test:react-16\" \"npm run smoke-test:react-18\" \"npm run smoke-test:react-19\"",
-        "smoke-test:react-16": "cd ./smoke-tests/react-16 && npm ci && npm run test",
-        "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm ci && npm run test",
-        "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm ci && npm run test",
-        "start": "npm run storybook",
-        "storybook": "storybook dev -p 9001 -c .storybook",
-        "test": "vitest run",
-        "type:check": "tsc --noEmit",
-        "update-icons": "node ./scripts/update-icons",
-        "version": "npm run update-icons && git add -A src"
-    },
-    "lint-staged": {
-        "*.{ts,tsx}": [
-            "eslint --fix",
-            "prettier --write"
-        ],
-        "*.md": [
-            "prettier --write"
-        ]
-    },
-    "resolutions": {
-        "string-width": "4.2.3"
-    },
-    "dependencies": {
-        "@floating-ui/react": "^0.27.17",
-        "classnames": "^2.5.1",
-        "makeup-active-descendant": "^0.7.11",
-        "makeup-expander": "^0.11.10",
-        "makeup-floating-label": "^0.4.9",
-        "makeup-focusables": "^0.4.6",
-        "makeup-keyboard-trap": "^0.5.8",
-        "makeup-prevent-scroll-keys": "^0.3.5",
-        "makeup-roving-tabindex": "^0.7.8",
-        "makeup-screenreader-trap": "^0.5.7",
-        "makeup-typeahead": "^0.3.5",
-        "react-remove-scroll": "^2.7.2"
-    },
-    "devDependencies": {
-        "@vitejs/plugin-react": "^5.1.3"
-    },
-    "peerDependencies": {
-        "@ebay/skin": "^19",
-        "react": "^19",
-        "react-dom": "^19"
-    },
-    "optionalDependencies": {
-        "@highcharts/react": "^4.0.0",
-        "highcharts": "^12.0.0",
-        "shaka-player": "^5.0.2"
-    },
-    "publishConfig": {
-        "directory": "dist"
+    "./*": {
+      "types": "./*/index.d.ts",
+      "default": "./*/index.js"
     }
+  },
+  "scripts": {
+    "build": "pnpm clean && pnpm type:check && vitest run && vite build && pnpm copy && pnpm smoke-test",
+    "build:icons": "pnpm update-icons",
+    "build:storybook": "storybook build",
+    "clean": "node scripts/clean",
+    "copy": "copyfiles package.json README.md dist && pnpm copy:rest",
+    "copy:rest": "copyfiles 'src/**/*.md' dist -u 1",
+    "coverage": "pnpm clean && pnpm test -- --coverage --ci",
+    "deploy": "NODE_OPTIONS=--max-old-space-size=8192 storybook build -o ./_site/$(git branch --show-current)",
+    "format": "eslint . --fix 'src/**/*.{ts,tsx}' && prettier . --write --log-level=warn",
+    "generate-locale-info": "node scripts/generate-locale-info.js",
+    "lint": "eslint . --ext .ts,.tsx && prettier . --check --log-level=warn",
+    "release": "vite build && pnpm copy",
+    "smoke-test": "pnpm --parallel --filter 'ui-core-react-smoke-test-*' test",
+    "smoke-test:react-16": "pnpm --filter ui-core-react-smoke-test-react-16 test",
+    "smoke-test:react-18": "pnpm --filter ui-core-react-smoke-test-react-18 test",
+    "smoke-test:react-19": "pnpm --filter ui-core-react-smoke-test-react-19 test",
+    "start": "pnpm storybook",
+    "storybook": "storybook dev -p 9001 -c .storybook",
+    "test": "vitest run",
+    "type:check": "tsc --noEmit",
+    "update-icons": "node ./scripts/update-icons",
+    "version": "pnpm update-icons && git add -A src"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@floating-ui/react": "catalog:",
+    "classnames": "catalog:",
+    "makeup-active-descendant": "catalog:",
+    "makeup-expander": "catalog:",
+    "makeup-floating-label": "catalog:",
+    "makeup-focusables": "catalog:",
+    "makeup-keyboard-trap": "catalog:",
+    "makeup-prevent-scroll-keys": "catalog:",
+    "makeup-roving-tabindex": "catalog:",
+    "makeup-screenreader-trap": "catalog:",
+    "makeup-typeahead": "catalog:",
+    "react-remove-scroll": "catalog:"
+  },
+  "devDependencies": {
+    "@babel/core": "catalog:",
+    "@babel/preset-env": "catalog:",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "catalog:",
+    "@ebay/skin": "workspace:^",
+    "@eslint/js": "catalog:",
+    "@rollup/plugin-typescript": "catalog:",
+    "@storybook/addon-a11y": "catalog:",
+    "@storybook/addon-docs": "catalog:",
+    "@storybook/react": "^10",
+    "@storybook/react-vite": "catalog:",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "@vitest/eslint-plugin": "catalog:",
+    "cldr-core": "catalog:",
+    "cldr-dates-full": "catalog:",
+    "concurrently": "catalog:",
+    "dedent": "^1.7.1",
+    "del": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-jsx-a11y": "catalog:",
+    "eslint-plugin-react": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
+    "eslint-plugin-storybook": "catalog:",
+    "globals": "catalog:",
+    "jsdom": "catalog:",
+    "native-copyfiles": "catalog:",
+    "prettier": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "rollup-plugin-node-externals": "catalog:",
+    "storybook": "catalog:",
+    "svgson": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-cjs-interop": "^2.3.0",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "@ebay/skin": "^19",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "optionalDependencies": {
+    "@highcharts/react": "^4.0.0",
+    "highcharts": "^12.0.0",
+    "shaka-player": "^5.0.2"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
 }

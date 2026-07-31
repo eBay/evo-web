@@ -6,7 +6,7 @@
         "test": "rm -rf ./node_modules/@ebay/ui-core-react && mkdir -p ./node_modules/@ebay && cp -r ../../dist ./node_modules/@ebay/ui-core-react && node index.js"
     },
     "dependencies": {
-        "react": "^19",
-        "react-dom": "^19"
+        "react": "catalog:",
+        "react-dom": "catalog:"
     }
 }

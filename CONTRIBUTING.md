@@ -32,7 +32,7 @@ See [`.claude/README.md`](./.claude/README.md) for full details on the skills ar
 
 For releases, evo-web uses changesets.
 
-For each commit that should be associated with a release, run `npm run change` in the root.
+For each commit that should be associated with a release, run `pnpm change` in the root.
 Pick which package and what version (`major`, `minor`, `patch`) and check in the generated `.changeset` file.
 When the changeset files are merged to `main` branch, an automatic PR will be generated.
 Merging this PR will cause a version bump and publishing of the packages which are targeted by the changeset.
@@ -51,7 +51,7 @@ before this PR opens.
 
 ### Post-release maintenance
 
-After every major and minor release, take the opportunity to upgrade any outdated dependencies and devDependencies (run `npm outdated` to identify them). Except for major version upgrades, the version in `package.json` should reflect the last known working version, not the version you are upgrading to.
+After every major and minor release, take the opportunity to upgrade any outdated dependencies and devDependencies (run `pnpm outdated` to identify them). Except for major version upgrades, the version in `package.json` should reflect the last known working version, not the version you are upgrading to.
 
 ### Icon releases
 

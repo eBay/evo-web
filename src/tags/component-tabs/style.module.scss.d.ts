@@ -12,9 +12,11 @@ declare const component: string;
 declare const tabs: string;
 declare const pagination: string;
 
-export {
-	badge,
-	component,
-	tabs,
-	pagination
+declare const __default_export__: {
+	badge: typeof badge;
+	"badge--circle": typeof badge_Circle;
+	component: typeof component;
+	tabs: typeof tabs;
+	pagination: typeof pagination;
 };
+export default __default_export__;

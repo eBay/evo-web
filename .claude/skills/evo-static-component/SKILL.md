@@ -295,7 +295,7 @@ in **alphabetical order** among the existing `@use` lines.
 ### Build verification
 
 ```bash
-npm run build -w @ebay/skin
+pnpm --filter @ebay/skin build
 ```
 
 Fix any errors inline. Do not re-run the skill.
@@ -396,7 +396,7 @@ rely on memory of what you wrote. If any item fails, fix it before continuing.
 
 **Build**
 
-- [ ] `npm run build -w @ebay/skin` passes with no errors
+- [ ] `pnpm --filter @ebay/skin build` passes with no errors
 - [ ] Grep `packages/skin/dist/bundles/skin-default.css` to confirm the new modifier selector is present in the compiled output
 
 Only after every box is checked, print the output summary and return.

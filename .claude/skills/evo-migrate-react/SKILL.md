@@ -495,5 +495,5 @@ Keep component entries concise. App owners read these files, not component autho
 - [ ] Stories in `{name}.stories.tsx` co-located with source
 - [ ] Story title follows `"category/evo-{name}"` pattern
 - [ ] App migration skill has a linked `components/evo-{name}.md` file and no inline component details in `SKILL.md`
-- [ ] `npm run build -w packages/evo-react` passes
+- [ ] `pnpm --filter @evo-web/react build` passes
 - [ ] Changeset added in `.changeset/` with `patch` bump for `@evo-web/react` (`@evo-web/react` is still experimental, so all additions use `patch`). Keep the description to one short line — e.g. `Add EvoFoo component.` — no bullet points or implementation details.

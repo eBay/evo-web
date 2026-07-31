@@ -26,6 +26,7 @@ Gate 2: engineer reviews and approves
 ```
 
 The validator and the manifest gap report are complementary:
+
 - **Validator** — enforces structural completeness (are required sections present?)
 - **Gap report** — catches semantic gaps the validator cannot detect (is the content correct and sufficient?)
 
@@ -38,11 +39,11 @@ A contract that passes the validator should produce very few 🔴 blocking gaps 
 The validator distinguishes two contract PR types by reading the `Figma URL` field
 in the contract header:
 
-| `Figma URL` value | PR type | Rules applied |
-|---|---|---|
-| `Not yet available` (or similar) | **PR 1** — behavioral contract | Behavioral checks only |
-| Valid `https://figma.com/...` URL | **PR 2** — visual contract update | All checks + Figma URL format |
-| Field absent entirely | **Error** | Hard block — field must always be present |
+| `Figma URL` value                 | PR type                           | Rules applied                             |
+| --------------------------------- | --------------------------------- | ----------------------------------------- |
+| `Not yet available` (or similar)  | **PR 1** — behavioral contract    | Behavioral checks only                    |
+| Valid `https://figma.com/...` URL | **PR 2** — visual contract update | All checks + Figma URL format             |
+| Field absent entirely             | **Error**                         | Hard block — field must always be present |
 
 ---
 
@@ -50,41 +51,41 @@ in the contract header:
 
 ### Severity levels
 
-| Symbol | Severity | Effect |
-|---|---|---|
-| 🔴 | **Block** | Check fails; PR cannot merge until resolved |
-| 🟡 | **Warn** | Comment posted; PR can still merge |
-| 🔵 | **Info** | Informational comment only |
+| Symbol | Severity  | Effect                                      |
+| ------ | --------- | ------------------------------------------- |
+| 🔴     | **Block** | Check fails; PR cannot merge until resolved |
+| 🟡     | **Warn**  | Comment posted; PR can still merge          |
+| 🔵     | **Info**  | Informational comment only                  |
 
 ### Universal rules (PR 1 and PR 2)
 
-| Rule | Check | Severity |
-|---|---|---|
-| Figma URL field declared | Header contains `**Figma URL**:` | 🔴 |
-| Required label strings section | `### Required label strings` heading exists and is non-empty | 🔴 |
-| Screen reader announcement section | `### Screen reader announcement` heading exists and is non-empty | 🔴 |
-| Keyboard focusability section | `### Keyboard focusability` heading exists and is non-empty | 🔴 |
-| Widget type section | `### Widget type` heading exists and is non-empty | 🔴 |
-| Label mechanism section | `### Label mechanism` heading exists and is non-empty | 🔴 |
-| Content regions declared | `Content regions` or content regions table present under `### Web` | 🔴 |
-| Form context declared | `Form context` declared under `### Web` | 🔴 |
-| Toggle state section | `### Toggle state` present when contract text mentions toggle / press / aria-pressed | 🟡 |
-| Accessibility Contract section present | `## Accessibility Contract` heading exists | 🔴 |
-| Platform Realizations › Web section present | `### Web` heading exists under Platform Realizations | 🔴 |
+| Rule                                        | Check                                                                                | Severity |
+| ------------------------------------------- | ------------------------------------------------------------------------------------ | -------- |
+| Figma URL field declared                    | Header contains `**Figma URL**:`                                                     | 🔴       |
+| Required label strings section              | `### Required label strings` heading exists and is non-empty                         | 🔴       |
+| Screen reader announcement section          | `### Screen reader announcement` heading exists and is non-empty                     | 🔴       |
+| Keyboard focusability section               | `### Keyboard focusability` heading exists and is non-empty                          | 🔴       |
+| Widget type section                         | `### Widget type` heading exists and is non-empty                                    | 🔴       |
+| Label mechanism section                     | `### Label mechanism` heading exists and is non-empty                                | 🔴       |
+| Content regions declared                    | `Content regions` or content regions table present under `### Web`                   | 🔴       |
+| Form context declared                       | `Form context` declared under `### Web`                                              | 🔴       |
+| Toggle state section                        | `### Toggle state` present when contract text mentions toggle / press / aria-pressed | 🟡       |
+| Accessibility Contract section present      | `## Accessibility Contract` heading exists                                           | 🔴       |
+| Platform Realizations › Web section present | `### Web` heading exists under Platform Realizations                                 | 🔴       |
 
 ### PR 2-only rules
 
-| Rule | Check | Severity |
-|---|---|---|
-| Figma URL is a valid link | `Figma URL` value matches `https://figma.com/` or `https://www.figma.com/` | 🔴 |
-| Figma URL is a design file (not FigJam) | URL contains `/design/` | 🟡 |
+| Rule                                    | Check                                                                      | Severity |
+| --------------------------------------- | -------------------------------------------------------------------------- | -------- |
+| Figma URL is a valid link               | `Figma URL` value matches `https://figma.com/` or `https://www.figma.com/` | 🔴       |
+| Figma URL is a design file (not FigJam) | URL contains `/design/`                                                    | 🟡       |
 
 ### Content quality rules (both PR types)
 
-| Rule | Check | Severity |
-|---|---|---|
-| Sections are non-trivial | Required sections contain more than 10 words of content | 🟡 |
-| a11yText named if component is interactive | `a11yText` (or another `a11y*` prop) named in Required label strings if Accessibility Requirements describe interactive usage | 🟡 |
+| Rule                                       | Check                                                                                                                         | Severity |
+| ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Sections are non-trivial                   | Required sections contain more than 10 words of content                                                                       | 🟡       |
+| a11yText named if component is interactive | `a11yText` (or another `a11y*` prop) named in Required label strings if Accessibility Requirements describe interactive usage | 🟡       |
 
 ---
 
@@ -178,14 +179,14 @@ name: Validate Contract
 on:
   pull_request:
     paths:
-      - '**/_contract.md'
+      - "**/_contract.md"
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write   # needed to post PR comment
-      checks: write          # needed to set check status
+      pull-requests: write # needed to post PR comment
+      checks: write # needed to set check status
     steps:
       - uses: actions/checkout@v4
         with:
@@ -195,7 +196,7 @@ jobs:
         id: changed
         uses: tj-actions/changed-files@v44
         with:
-          files: '**/_contract.md'
+          files: "**/_contract.md"
 
       - uses: ebay/evo-web/.github/actions/validate-contract@main
         with:
@@ -239,7 +240,7 @@ Anyone can run the validator locally before pushing:
 
 ```bash
 # From anywhere with Node.js available
-npx github:ebay/evo-web/.github/actions/validate-contract/validate-contract.js \
+pnpm dlx github:ebay/evo-web/.github/actions/validate-contract/validate-contract.js \
   path/to/components/avatar/_contract.md
 
 # Or clone evo-web and run directly
@@ -257,6 +258,7 @@ The change takes effect on the next PR in the design repo automatically (if pinn
 to `@main`) or after the design repo bumps its version pin.
 
 Rules follow a simple structure:
+
 ```js
 { id: 'required-label-strings',
   severity: 'block',
@@ -306,14 +308,14 @@ limitations and the GitHub App route is too heavyweight.
 
 ## Relationship to the manifest gap report
 
-| | Contract Validator | Manifest Gap Report |
-|---|---|---|
-| **Where** | Design repo CI | evo-web (after contract merge) |
-| **When** | On every contract PR | On every manifest generation run |
-| **What** | Structural completeness — are required sections present? | Semantic completeness — is the content sufficient for code generation? |
-| **Audience** | Designer opening the PR | Engineer at Gate 2 |
-| **Effect** | Blocks PR merge | Blocks Gate 2 approval |
-| **Example catch** | `### Widget type` section missing | Widget type declared but keyboard model not described clearly enough |
+|                   | Contract Validator                                       | Manifest Gap Report                                                    |
+| ----------------- | -------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Where**         | Design repo CI                                           | evo-web (after contract merge)                                         |
+| **When**          | On every contract PR                                     | On every manifest generation run                                       |
+| **What**          | Structural completeness — are required sections present? | Semantic completeness — is the content sufficient for code generation? |
+| **Audience**      | Designer opening the PR                                  | Engineer at Gate 2                                                     |
+| **Effect**        | Blocks PR merge                                          | Blocks Gate 2 approval                                                 |
+| **Example catch** | `### Widget type` section missing                        | Widget type declared but keyboard model not described clearly enough   |
 
 A contract that passes the validator will produce few or no 🔴 blocking gaps in the
 manifest skill. Warnings (🟡) from the validator may still appear as medium-confidence

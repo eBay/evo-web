@@ -10,8 +10,9 @@ declare const flag: string;
 declare const icon: string;
 declare const large: string;
 
-export {
-	flag,
-	icon,
-	large
+declare const __default_export__: {
+	flag: typeof flag;
+	icon: typeof icon;
+	large: typeof large;
 };
+export default __default_export__;

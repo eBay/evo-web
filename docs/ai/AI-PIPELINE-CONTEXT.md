@@ -84,7 +84,7 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
    Recommends scope from diff. Engineer can override. No temp files written.
 
 [/evo-create-component-manifest — invoked by /evo-pipeline]
-3. Runs npm run codegen:spec-to-manifest first (if spec present) — writes
+3. Runs pnpm codegen:spec-to-manifest first (if spec present) — writes
    spec-derived fields to manifest.json deterministically
    Then reads _contract.md + manifest.json → completes manifest.json + gap-report.json
    Spec is authoritative for: props, tokens, slots, states
@@ -99,7 +99,7 @@ Skills live in `.claude/skills/[skill-name]/SKILL.md`.
 Step 4:   /evo-static-component   [full, static, style(SCSS only)]
 Step 5:   /evo-static-storybook   [full, static]
 Step 6:   /evo-docs-hookup css    [full, static, style]
-Step 6.5: npm run codegen:scaffold [full, interactive] — deterministic scaffold files:
+Step 6.5: pnpm codegen:scaffold [full, interactive] — deterministic scaffold files:
           style.ts (complete), index.marko (interface + TODO), index.tsx (props + TODO),
           test.server.ts (complete structure). Skills read and complete these.
 Step 7:   /evo-a11y Pass 1        [full, static] — 🔴 blocks if issues
@@ -109,14 +109,14 @@ Step 10:  /evo-react-component    [full, interactive] — completes scaffold
 Step 11:  /evo-react-storybook    [full, interactive]
 Step 12:  /evo-a11y Pass 2        [full, interactive]
 Step 13:  /evo-docs-hookup full   [full, static, interactive]
-          Runs npm run codegen:update-metadata for the component-metadata.json entry
-Step 14:  npm run build           [all scopes]
+          Runs pnpm codegen:update-metadata for the component-metadata.json entry
+Step 14:  pnpm build           [all scopes]
 Step 15:  /evo-qa (forked)        [all scopes]
 Step 16:  Final summary → engineer files PR
 
 [Post-PR]
 GATE 3: Percy visual regression (CSS/SCSS changes)
-GATE 4: CI — npm run build + Playwright/Vitest
+GATE 4: CI — pnpm build + Playwright/Vitest
 ```
 
 ---
@@ -138,14 +138,14 @@ GATE 4: CI — npm run build + Playwright/Vitest
 
 ## Codegen Scripts (determinism layer)
 
-Five TypeScript scripts produce byte-identical output for spec-derivable content. Run via `npx tsx` or npm shortcuts:
+Five TypeScript scripts produce byte-identical output for spec-derivable content. Run via `pnpm exec tsx` or pnpm shortcuts:
 
-| Script                                           | npm command                                | When it runs                                       |
-| ------------------------------------------------ | ------------------------------------------ | -------------------------------------------------- |
-| `scripts/codegen/spec-to-manifest.ts`            | `npm run codegen:spec-to-manifest <name>`  | Step 3 — before AI manifest inference              |
-| `scripts/codegen/generate-component-scaffold.ts` | `npm run codegen:scaffold <name>`          | Step 6.5 — before framework generation             |
-| `scripts/codegen/validate-manifest.ts`           | `npm run codegen:validate-manifest <name>` | On demand — validates manifest.json against schema |
-| `scripts/codegen/update-component-metadata.ts`   | `npm run codegen:update-metadata <name>`   | Step 13 — inside /evo-docs-hookup full mode        |
+| Script                                           | npm command                             | When it runs                                       |
+| ------------------------------------------------ | --------------------------------------- | -------------------------------------------------- |
+| `scripts/codegen/spec-to-manifest.ts`            | `pnpm codegen:spec-to-manifest <name>`  | Step 3 — before AI manifest inference              |
+| `scripts/codegen/generate-component-scaffold.ts` | `pnpm codegen:scaffold <name>`          | Step 6.5 — before framework generation             |
+| `scripts/codegen/validate-manifest.ts`           | `pnpm codegen:validate-manifest <name>` | On demand — validates manifest.json against schema |
+| `scripts/codegen/update-component-metadata.ts`   | `pnpm codegen:update-metadata <name>`   | Step 13 — inside /evo-docs-hookup full mode        |
 
 All scripts accept the bare component name (`accordion`, not `evo-accordion`). They resolve to `src/routes/_index/components/<name>/` automatically.
 
@@ -179,7 +179,7 @@ Beyond the basics — these are the non-obvious fields that matter most:
 - Marko 6: `<let/x=0>`, `<const/y=z>`, `onClick() {}` — never `$ let` or `onClick("handler")`
 - Marko 6: attribute values containing `>` must be in parens: `<const/x=(a > b ? 1 : 0)>`
 - React 19: native `ref`, no `forwardRef`, ESM-only, skin CSS imported directly in component file
-- WCAG 2.2 AA on all components; `npm run build` must pass before any work is complete
+- WCAG 2.2 AA on all components; `pnpm build` must pass before any work is complete
 
 **Docs site tab system:**
 

@@ -8,8 +8,8 @@
  * resolved before Gate 2 approval.
  *
  * Usage:
- *   npx tsx scripts/codegen/validate-manifest.ts <component-name>
- *   npx tsx scripts/codegen/validate-manifest.ts accordion
+ *   pnpm exec tsx scripts/codegen/validate-manifest.ts <component-name>
+ *   pnpm exec tsx scripts/codegen/validate-manifest.ts accordion
  *
  * Exit codes:
  *   0 — valid (may still have medium-confidence warnings)

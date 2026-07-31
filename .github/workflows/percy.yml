@@ -44,13 +44,19 @@ jobs:
       - name: Checkout base branch
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Download Storybook artifact
         uses: actions/download-artifact@v4
@@ -82,7 +88,7 @@ jobs:
           PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
           PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
           STORIES: ${{ steps.meta.outputs.components }}
-        run: npx percy storybook ./storybook-static --include "$STORIES"
+        run: pnpm exec percy storybook ./storybook-static --include "$STORIES"
 
       - name: Run Percy (All)
         if: steps.meta.outputs.components == 'all'
@@ -91,7 +97,7 @@ jobs:
           PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
           PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
           PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
-        run: npx percy storybook ./storybook-static
+        run: pnpm exec percy storybook ./storybook-static
 
       - name: Report Percy status to PR
         if: always()
@@ -121,15 +127,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Run Percy (All - Auto-approve)
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: npm run snapshots:all -w packages/skin
+        run: pnpm --filter @ebay/skin snapshots:all

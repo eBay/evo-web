@@ -38,6 +38,7 @@ should supply.
 The component name is `$ARGUMENTS` (e.g. `ebay-avatar`).
 
 If `$ARGUMENTS` is empty, ask:
+
 > "Which component should I generate a manifest for? (e.g. `ebay-avatar`)"
 
 Then wait. Do not proceed until you have a component name.
@@ -68,7 +69,7 @@ This writes the spec-derived fields (props, tokens, slots, states, figma) into `
 with byte-identical precision, so you do not need to infer those fields:
 
 ```bash
-npx tsx scripts/codegen/spec-to-manifest.ts $COMPONENT
+pnpm exec tsx scripts/codegen/spec-to-manifest.ts $COMPONENT
 ```
 
 If the script succeeds, `manifest.json` now has the spec-derived sections pre-filled.
@@ -84,18 +85,19 @@ covers — treat spec-sourced values as `confidence: high, source: spec` with no
 
 `$SPEC` fields and how they map:
 
-| Spec field | Manifest field | Translation |
-|---|---|---|
-| `props.*` | `props[]` | Each key → prop object; `enum` type → values array |
-| `slots.*` | `slots[]` | Each key → slot with `required` flag |
-| `states.state[]` | `states[]` | Direct array of state names |
-| `tokens.*` | `tokens` | Replace `.` with `-`, prepend `--` (e.g. `color.background.primary` → `--color-background-primary`) |
-| `a11y.role` | `a11y.role` | Direct |
-| `a11y.aria.*` | `a11y.ariaAttributes[]` | Each key-value → attribute entry |
-| `metadata.figma.fileKey` | `figma.fileKey` | Store as-is alongside any `figmaUrl` from contract |
-| `description` | `component.description` | Use if contract description is absent |
+| Spec field               | Manifest field          | Translation                                                                                         |
+| ------------------------ | ----------------------- | --------------------------------------------------------------------------------------------------- |
+| `props.*`                | `props[]`               | Each key → prop object; `enum` type → values array                                                  |
+| `slots.*`                | `slots[]`               | Each key → slot with `required` flag                                                                |
+| `states.state[]`         | `states[]`              | Direct array of state names                                                                         |
+| `tokens.*`               | `tokens`                | Replace `.` with `-`, prepend `--` (e.g. `color.background.primary` → `--color-background-primary`) |
+| `a11y.role`              | `a11y.role`             | Direct                                                                                              |
+| `a11y.aria.*`            | `a11y.ariaAttributes[]` | Each key-value → attribute entry                                                                    |
+| `metadata.figma.fileKey` | `figma.fileKey`         | Store as-is alongside any `figmaUrl` from contract                                                  |
+| `description`            | `component.description` | Use if contract description is absent                                                               |
 
 **Spec does NOT replace:**
+
 - `a11yProps` — these are i18n strings, not in the spec
 - `bem` — structural concern, from audit
 - `behaviors`, `events`, `keyboardModel`, `callerObligations` — engineering/contract concerns
@@ -113,6 +115,7 @@ Check for `scripts/audit-output/components/$COMPONENT.json`.
 `[AUDIT]`-tagged fields directly — no inference, no gap entry needed when data is present.
 
 **If it does not exist** (brand-new component not yet in the codebase):
+
 - All `[AUDIT]` fields become soft gaps: `confidence: medium, source: missing`
 - Add a single note at the top of the gap report:
   `"Component not in audit snapshot. Run component-audit.js after the skin module exists to auto-fill BEM, tokens, dependencies, and ARIA attributes."`
@@ -125,13 +128,13 @@ Check for `scripts/audit-output/components/$COMPONENT.json`.
 Work through the manifest structure field by field. For each field, apply this
 sourcing priority:
 
-| Source | Action | Gap entry? |
-|---|---|---|
-| `$SPEC` — present and explicit | Use it; `confidence: high, source: spec` | No |
-| `$AUDIT` — found in snapshot | Use it; `confidence: high, source: audit` | No |
-| Contract — clearly and explicitly stated | Use it verbatim | No |
-| Contract — implied, inferable | Use inferred value | Yes — `confidence: medium, source: inferred` |
-| Not mentioned anywhere | Set to `null` | Yes — `confidence: low, source: missing` |
+| Source                                   | Action                                    | Gap entry?                                   |
+| ---------------------------------------- | ----------------------------------------- | -------------------------------------------- |
+| `$SPEC` — present and explicit           | Use it; `confidence: high, source: spec`  | No                                           |
+| `$AUDIT` — found in snapshot             | Use it; `confidence: high, source: audit` | No                                           |
+| Contract — clearly and explicitly stated | Use it verbatim                           | No                                           |
+| Contract — implied, inferable            | Use inferred value                        | Yes — `confidence: medium, source: inferred` |
+| Not mentioned anywhere                   | Set to `null`                             | Yes — `confidence: low, source: missing`     |
 
 Every populated field must be traceable to a source. Every `null` must have
 an explanation in the gap report. If you infer from domain knowledge alone (not
@@ -145,6 +148,7 @@ extractable from the contract. Fields tagged **[ENGINEER]** are expected to be
 Fields tagged **[INFER]** can be attempted with medium confidence.
 
 **Component identity** [CONTRACT; `description` also from SPEC]
+
 - `component.name` — kebab-case tag name (e.g. `evo-button`)
 - `component.displayName` — human name (e.g. `Button`)
 - `component.description` — one-sentence purpose; prefer `$SPEC.description` if present
@@ -153,24 +157,28 @@ Fields tagged **[INFER]** can be attempted with medium confidence.
 - `figma.fileKey` — from `$SPEC.metadata.figma.fileKey` if present; stored alongside figmaUrl
 
 **Root element** [INFER]
+
 - `rootElement.default` — the primary HTML element (button, div, a, span, dialog, etc.)
 - `rootElement.conditional` — if the element can change based on a prop, capture the condition and alternate element
 - `rootElement.passthroughAttributes` — which native attributes pass through to the root
 - `rootElement.excludedAttributes` — which attributes are managed internally and must not be passed through
 
 **Props** [SPEC when present, otherwise CONTRACT for existence/purpose, ENGINEER for types/defaults]
+
 - If `$SPEC.props` exists: use it as the authoritative source. Each spec prop has `type`,
   `enum` (values list), `default`, and `description` — extract all directly, no gap needed.
 - If no spec: for each prop: `name`, `type`, `values` (enum only), `default`, `required`, `description`
 - Do not guess types without spec. If the contract only mentions a prop exists, log its type and default as gaps.
 
 **A11y props** [CONTRACT] — CRITICAL, often missing from contracts
+
 - These are i18n-able text strings consumers must override for localization (e.g. `a11yText`, `a11yLoadingText`, `a11ySelectedText`)
 - For each: `name`, `type`, `default` (English string), `required`, `allowNull`, `nullMeaning`, `condition`, `offscreenMethod`, `appendsToVisible`, `description`
 - If the contract's "Required label strings" section names these → extract them
 - If the contract is silent → add a 🔴 gap. Every interactive or announced component needs at least one a11y prop.
 
 **Slots** [SPEC when present, otherwise CONTRACT]
+
 - If `$SPEC.slots` exists: use it as the base. Each spec slot has `required` and `description`.
   Infer `type` (default | named-attrtag | named) from the slot's role described in the contract —
   spec does not provide the Marko slot type, so that still requires contract/engineering judgement.
@@ -179,24 +187,29 @@ Fields tagged **[INFER]** can be attempted with medium confidence.
 - Marko's named AttrTag slots (`<@image>`) are a distinct pattern — call out the type explicitly
 
 **Nested slots** [CONTRACT/ENGINEER]
+
 - When a slot's definition itself contains named sub-slots (e.g. evo-tabs' `tab` slot contains a `panel` sub-slot)
 - Populate `nestedSlots[]` with `parentSlot`, `childSlots[]`, `description`
 - Log as gap if not mentioned in contract — this is a non-obvious structural pattern
 
 **Slot a11y props** [CONTRACT/ENGINEER]
+
 - When a slot's interface includes an a11y text string (e.g. postfixIcon.a11yText becomes aria-label on the inner button)
 - Populate `slotA11yProps[]` with `slot`, `prop`, `appliedAs`, `description`
 
 **Variants** [CONTRACT]
+
 - Distinct rendering modes: `name`, `trigger` (which prop/condition activates), `description`
 
 **States** [SPEC when present, otherwise CONTRACT]
+
 - If `$SPEC.states.state[]` exists: use the array as the list of state names.
   `trigger`, `cssSelector`, `ariaAttribute`, `keyboardAccess`, `renderChange` still come from contract/engineering.
 - Visual or ARIA states: `name`, `trigger`, `cssSelector` [ENGINEER], `ariaAttribute` [ENGINEER], `keyboardAccess`, `renderChange`, `description`
 
 **A11y** [CONTRACT→ENGINEER translation]
 Extract from the contract's Accessibility section and translate to technical fields:
+
 - `role` — ARIA role if a non-semantic element is used; null if a semantic element handles it
 - `explicitRole` — true if `role=""` must be added as an attribute
 - `labelStrategy` — `content` | `aria-label-prop` | `aria-labelledby` | `aria-hidden` | `compound-labelledby`
@@ -207,11 +220,12 @@ Extract from the contract's Accessibility section and translate to technical fie
 - `initialFocus` — where focus lands when component opens [CONTRACT — look for "Open/close rules"]
 - `focusReturn` — where focus returns on close [CONTRACT — often a caller obligation]
 - `screenReaderAnnouncement` — plain English: what does a screen reader announce? [CONTRACT]
-- `ariaAttributeOwnership.managed` — aria-* attrs managed internally; caller must not set [ENGINEER]
-- `ariaAttributeOwnership.passthrough` — aria-* attrs the caller can set [ENGINEER]
-- `ariaAttributes[]` — specific aria-* attributes with their values and conditions [ENGINEER]
+- `ariaAttributeOwnership.managed` — aria-\* attrs managed internally; caller must not set [ENGINEER]
+- `ariaAttributeOwnership.passthrough` — aria-\* attrs the caller can set [ENGINEER]
+- `ariaAttributes[]` — specific aria-\* attributes with their values and conditions [ENGINEER]
 
 **Widget role** [CONTRACT] — for interactive widget components only
+
 - If the contract's "Widget type" section names a WAI-ARIA pattern (tabs, menu, listbox, combobox):
   - `widgetRole.containerRole` — role on the host element (tablist, menu, listbox)
   - `widgetRole.itemRole` — default role on child items (tab, menuitem, option)
@@ -222,6 +236,7 @@ Extract from the contract's Accessibility section and translate to technical fie
 - Log as gap if contract does not declare widget type
 
 **Keyboard model** [CONTRACT] — for widget components only
+
 - If widgetRole is populated, also populate keyboardModel:
   - `focusStrategy` — `roving-tabindex` | `aria-activedescendant` | `none`
     - Decision: roving-tabindex for menu/tabs/listbox; aria-activedescendant for combobox (textbox must retain focus)
@@ -233,23 +248,27 @@ Extract from the contract's Accessibility section and translate to technical fie
 - Log as gap if not described in contract
 
 **State-lifting callbacks** [CONTRACT] — SEPARATE from events
+
 - Callbacks that synchronize state to parent (openChange, indexChange, selectedChange)
 - These receive a plain value (boolean, number, string/array), NOT a DOM Event
 - For each: `name`, `signature` [ENGINEER], `stateLifted`, `defaultBehavior`
 - Distinguish from `events` (onEscape, onLoadError — these receive a DOM Event)
 
 **Dual output** [ENGINEER]
+
 - When component renders both a custom widget AND a hidden native form element (e.g. listbox + select[hidden])
 - Look for: "form submission", "native select", "hidden input" in the contract
 - `customElement`, `nativeElement`, `syncProp`, `purpose`
 - Log as gap if not mentioned in contract
 
 **Floating positioner** [ENGINEER]
+
 - For components with floating overlays (menus, tooltips, combobox)
 - `implementation` (evo-expander | browser-anchor | none), `library`, `placement`, `strategy`, `triggerElement`
 - Log as gap — engineer determines from implementation
 
 **Caller obligations** [CONTRACT] — CRITICAL for a11y compliance
+
 - Derive from the contract's "Label mechanism", "Open/close rules", "Form context", "Widget type" sections
 - Common categories: `form-context`, `label`, `heading-structure`, `focus-management`, `open-trigger`, `icon-treatment`
 - For each: `category`, `description`, `wcagCriterion` [ENGINEER], `consequence` [ENGINEER]
@@ -258,21 +277,25 @@ Extract from the contract's Accessibility section and translate to technical fie
 - 🔴 Any unmet obligation = WCAG AA failure — these MUST surface as blocking gaps
 
 **Internal data protocol** [ENGINEER — always a gap]
-- data-* attributes placed on children for internal coordination (e.g. data-value on listbox options)
+
+- data-\* attributes placed on children for internal coordination (e.g. data-value on listbox options)
 - Log as gap — engineer determines from source audit
 
 **Keyboard interactions** [CONTRACT]
+
 - Only non-native interactions (Space/Enter on a button do not need listing)
 - Widget arrow-key navigation goes in `keyboardModel`, not here
 - For each: `key`, `action`, `condition`, `emittedEvent` [ENGINEER]
 
 **Events** [CONTRACT/INFER]
+
 - Custom DOM-event-like callbacks (onEscape, onLoadError, onAnimationEnd)
 - These receive a DOM Event object or equivalent
 - Do NOT put state-lifting callbacks here — those go in `stateLiftingCallbacks`
 - For each: `name`, `signature` [ENGINEER], `trigger`, `condition`
 
 **BEM** [AUDIT for block/elements/modifiers — ENGINEER for alternateBlock]
+
 - `block` ← `$AUDIT.skin.bemBlocks[0]` (the primary block name)
 - `elements[]` ← `$AUDIT.skin.bemElements[]` (name only; description is a soft gap)
 - `modifiers[]` ← `$AUDIT.skin.bemModifiers[]` (name only; description is a soft gap)
@@ -280,6 +303,7 @@ Extract from the contract's Accessibility section and translate to technical fie
 - If audit snapshot absent: log block/elements/modifiers as medium confidence gaps
 
 **Design tokens** [SPEC when present, otherwise AUDIT]
+
 - `tokens` (named map) ← `$SPEC.tokens` translated to CSS custom property names:
   replace `.` with `-`, prepend `--` (e.g. `color.background.primary` → `--color-background-primary`)
   Store as `{ "background": "--color-background-primary", "border": "--color-border-subtle", ... }`
@@ -289,6 +313,7 @@ Extract from the contract's Accessibility section and translate to technical fie
 - If spec absent and audit absent: log `tokens` as medium confidence gap
 
 **Token variants** [SPEC when present]
+
 - `tokenVariants` (keyed by prop name → enum value → token map) ← `$SPEC.tokenVariants`
   Translate each token value from dot-notation to CSS custom property name (same rule as above).
   Store as a nested map: `{ "type": { "warning": { "background": "--color-background-warning", ... } } }`
@@ -298,25 +323,29 @@ Extract from the contract's Accessibility section and translate to technical fie
 - If spec absent: omit entirely; no gap needed (the static skill will infer from manifest.bem.modifiers)
 
 **Behaviors** [CONTRACT hint → ENGINEER]
+
 - Non-obvious algorithms (e.g. color hash, aspect ratio detection, animation-gated close)
 - Standard behavior kinds to use (see manifest-schema.md for full list):
   `animationGatedClose`, `typeaheadSearch`, `lightDismiss`, `collapseOnSelect`,
   `reactiveVisibility`, `dualOutputSync`, `colorDerived`
-- The contract describes the *behavior*; the engineer supplies the implementation detail
+- The contract describes the _behavior_; the engineer supplies the implementation detail
 
 **Dependencies** [AUDIT for name/type — INFER for usedWhen]
-- `name` ← `$AUDIT.marko.subComponents[]` (all evo-* tags used in the template)
+
+- `name` ← `$AUDIT.marko.subComponents[]` (all evo-\* tags used in the template)
 - `type` ← derive from name: `evo-icon-*` → `icon`; names in `$AUDIT.marko.internalImports[]` → `internal-tag`; others → `component`
 - `usedWhen` ← default to `'always'`; log each as a soft gap (`confidence: medium, source: inferred`) for engineer to refine to conditional where needed
 - If audit snapshot absent: log as medium confidence gaps
 
 **RTL** [AUDIT — never from contract]
+
 - RTL is a Skin-layer invariant — the contract does not declare it
 - `notes` ← if `$AUDIT.skin.rtlOverrides === true`: populate with "This component has RTL-specific overrides in skin SCSS" and log as `confidence: high, source: audit`
 - If `$AUDIT.skin.rtlOverrides === false`: omit the `rtl` field entirely (no gap needed)
 - If audit snapshot absent: log as medium confidence gap
 
 **Storybook** [ENGINEER — always a gap]
+
 - `category` (Storybook title path), `stories[]`
 
 ---
@@ -329,15 +358,15 @@ rather than writing empty arrays — except for `gaps`, which is always present.
 
 Key structural rules:
 
-| Source | Gap entry? | Confidence | Blocks Gate 2? |
-|---|---|---|---|
-| `[SPEC]` — explicit in spec file | No | high | No |
-| `[CONTRACT]` — explicit | No | — | — |
-| `[AUDIT]` — found in snapshot | No | high | No |
-| `[INFER]` — inferred from context | Yes | medium | No |
-| `[AUDIT]` — snapshot absent | Yes | medium | No |
-| `[ENGINEER]` — requires interpretation | Yes | low | **Yes** |
-| `figmaUrl: null` — contract-first workflow | No | — | **Never blocks** |
+| Source                                     | Gap entry? | Confidence | Blocks Gate 2?   |
+| ------------------------------------------ | ---------- | ---------- | ---------------- |
+| `[SPEC]` — explicit in spec file           | No         | high       | No               |
+| `[CONTRACT]` — explicit                    | No         | —          | —                |
+| `[AUDIT]` — found in snapshot              | No         | high       | No               |
+| `[INFER]` — inferred from context          | Yes        | medium     | No               |
+| `[AUDIT]` — snapshot absent                | Yes        | medium     | No               |
+| `[ENGINEER]` — requires interpretation     | Yes        | low        | **Yes**          |
+| `figmaUrl: null` — contract-first workflow | No         | —          | **Never blocks** |
 
 - `a11yProps` — extract from contract's "Required label strings" section; if silent, add a 🔴 low-confidence gap
 - `bem.block/elements/modifiers`, `designTokens`, `dependencies` — fill from audit snapshot; no gap when found
@@ -393,6 +422,7 @@ silently implementing a different value:
 ```
 
 Each deviation entry:
+
 - `field` — the manifest/spec field path
 - `specValue` — exact value the spec specified
 - `implementedValue` — what was actually implemented
@@ -401,6 +431,7 @@ Each deviation entry:
 - `designReviewNeeded` — `true` if the spec must be updated to reflect this, `false` if it is a local implementation detail
 
 Deviations surface in the Gate 2 review so the engineer can decide whether to:
+
 1. Confirm the deviation and flag it for design team follow-up
 2. Revert to the spec value and solve the underlying cause differently
 
@@ -410,7 +441,7 @@ Deviations surface in the Gate 2 review so the engineer can decide whether to:
 
 Check if `scripts/codegen/validate-manifest.ts` exists.
 
-- **If yes:** Run `npx tsx scripts/codegen/validate-manifest.ts $COMPONENT`.
+- **If yes:** Run `pnpm exec tsx scripts/codegen/validate-manifest.ts $COMPONENT`.
   Report every validation error. Mark the manifest as `INVALID` if any errors
   are found — do not suppress them or proceed.
 - **If no:** Skip silently. Do not print anything about this step.

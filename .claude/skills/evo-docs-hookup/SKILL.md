@@ -156,7 +156,7 @@ Run the deterministic metadata script first — it writes the correct entry with
 JSON rather than having the AI generate it:
 
 ```bash
-npx tsx scripts/codegen/update-component-metadata.ts $COMPONENT
+pnpm exec tsx scripts/codegen/update-component-metadata.ts $COMPONENT
 ```
 
 The script writes: component key, description, ds-component name/version, and null storybook

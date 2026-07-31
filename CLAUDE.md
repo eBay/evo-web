@@ -7,7 +7,7 @@ AI configuration for eBay's evo-web components monorepo.
 <agent_constraints>
 
 - Never auto-commit or push without explicit user request
-- Always run `npm run build` before marking component work complete
+- Always run `pnpm build` before marking component work complete
 - Prefer reading existing patterns over introducing new ones
 - Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
   </agent_constraints>
@@ -109,6 +109,7 @@ Declare `<const/>`, `<let/>`, `<id/>`, and other tag variables close to where th
 **Marko 6 AttrTag content:** When already spreading an AttrTag onto a native element with no other body content, use self-closing — `<button ...button/>`. Never `<button ...button><${button.content}/></button>`.
 
 **Marko 6 AttrTag slot types — pick the right generic:**
+
 - ✅ Body-only slot: `action?: Marko.AttrTag<{ content?: Marko.Body }>` — accepts arbitrary child content
 - ❌ Empty generic: `action?: Marko.AttrTag<{}>` — rejects children at compile time (TS2353)
 - ✅ Typed-props slot: `image?: Marko.AttrTag<Omit<Marko.HTML.Img, "alt">>` — slot has specific props
@@ -214,7 +215,7 @@ Follow existing component structures:
 
 **CSS/SCSS changes:**
 
-- Regenerate `dist/` folder via `npm run build`
+- Regenerate `dist/` folder via `pnpm build`
 - Test in all supported browsers
 - Percy visual regression approved
 - Verify dark mode + RTL support
@@ -238,10 +239,10 @@ Follow existing component structures:
 **Root-level (frequently used):**
 
 ```bash
-npm run build    # Build all packages + run tests
-npm test         # Test (for individual packages only)
-npm start        # Start local dev site (Marko-Run)
-npm run lint     # Lint CSS/SCSS
+pnpm build    # Build all packages + run tests
+pnpm test     # Test (for individual packages only)
+pnpm start    # Start local dev site (Marko-Run)
+pnpm lint     # Lint CSS/SCSS
 ```
 
 **Testing patterns:**
@@ -252,7 +253,7 @@ npm run lint     # Lint CSS/SCSS
 **Run specific test:**
 
 ```bash
-npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser.js
+pnpm exec vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser.js
 ```
 
 ---

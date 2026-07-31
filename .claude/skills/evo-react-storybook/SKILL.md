@@ -234,7 +234,7 @@ are for documenting intent and verifying the key visual states, not exhaustive e
 Run the type-checker on the new stories file:
 
 ```bash
-npx tsc --noEmit -p packages/evo-react/tsconfig.json
+pnpm exec tsc --noEmit -p packages/evo-react/tsconfig.json
 ```
 
 Fix type errors inline. Common issues:

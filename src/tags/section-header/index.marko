@@ -1,10 +1,10 @@
 import { getMetadataFromUrl } from "../../data";
-import { header, link } from "./style.module.scss";
+import styles from "./style.module.scss";
 
 <const/{ properName, componentUrls }=getMetadataFromUrl($global.url.pathname)>
 export interface Input {
   header?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
-<div class=header>
+<div class=styles.header>
   <${input.header || "h1"}>${properName} Component</>
 </div>

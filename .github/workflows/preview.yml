@@ -50,17 +50,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build site (preview base URL)
-        run: npm run deploy
+        run: pnpm deploy
         env:
           BASE_URL: /evo-web/previews/pr-${{ github.event.pull_request.number }}/
 
@@ -79,7 +84,7 @@ jobs:
           pushed=false
           for attempt in 1 2 3; do
             rm -rf node_modules/.cache/gh-pages
-            if npx gh-pages \
+            if pnpm exec gh-pages \
               --dist _site/public \
               --dest previews/pr-${{ github.event.pull_request.number }} \
               --branch gh-pages \

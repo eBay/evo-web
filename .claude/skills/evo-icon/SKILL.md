@@ -73,23 +73,23 @@ Run these commands in order:
 
 ```bash
 # 1. Rebuild skin sprite + update icons.json
-cd packages/skin && npm run build:icons
+pnpm --filter @ebay/skin build:icons
 
 # 2. Full skin build — compiles SCSS and copies to dist/ (required before legacy scripts,
 #    which read from @ebay/skin/dist/svg/icons.svg not the source)
-cd packages/skin && npm run build
+pnpm --filter @ebay/skin build
 
 # 3. Regenerate new React icon components (wipes + rewrites the entire icons/ dir)
-cd packages/evo-react && npm run update-icons
+pnpm --filter @evo-web/react update-icons
 
 # 4. Regenerate new Marko icon tags (wipes + rewrites all evo-icon-*.marko files)
-cd packages/evo-marko && npm run importSVG
+pnpm --filter @evo-web/marko importSVG
 
 # 5. Regenerate legacy React icon components (reads from skin dist/, same wipe+rewrite)
-cd packages/ebayui-core-react && npm run update-icons
+pnpm --filter @ebay/ui-core-react update-icons
 
 # 6. Regenerate legacy Marko 5 icon tags (reads from skin dist/)
-cd packages/ebayui-core && npm run importSVG
+pnpm --filter @ebay/ebayui-core importSVG
 ```
 
 **Important:** Steps 3–6 wipe and regenerate the entire icon component directory for each
@@ -198,7 +198,7 @@ use `skipDocs` to control list exclusion.
 ### Step 3b — Rebuild sprite
 
 ```bash
-cd packages/skin && npm run build:icons
+pnpm --filter @ebay/skin build:icons
 ```
 
 This re-reads `src/data/icons.json`, filters out `skipDocs` entries, and rebuilds
@@ -288,22 +288,22 @@ Edit `src/data/icons.json`:
 
 ```bash
 # 1. Rebuild sprite (removed SVG will be absent from icons.svg)
-cd packages/skin && npm run build:icons
+pnpm --filter @ebay/skin build:icons
 
 # 2. Full skin build (updates dist/ which legacy packages read)
-cd packages/skin && npm run build
+pnpm --filter @ebay/skin build
 
 # 3. Regenerate new React components (deleted icon's .tsx will not be recreated)
-cd packages/evo-react && npm run update-icons
+pnpm --filter @evo-web/react update-icons
 
 # 4. Regenerate new Marko tags (deleted icon's .marko will not be recreated)
-cd packages/evo-marko && npm run importSVG
+pnpm --filter @evo-web/marko importSVG
 
 # 5. Regenerate legacy React components (deleted icon's .tsx will not be recreated)
-cd packages/ebayui-core-react && npm run update-icons
+pnpm --filter @ebay/ui-core-react update-icons
 
 # 6. Regenerate legacy Marko 5 tags (deleted icon's directory will not be recreated)
-cd packages/ebayui-core && npm run importSVG
+pnpm --filter @ebay/ebayui-core importSVG
 ```
 
 ### Step 6c — Verify removal
@@ -314,7 +314,7 @@ cd packages/ebayui-core && npm run importSVG
 4. `packages/evo-marko/src/tags/evo-icon/tags/evo-icon-<name>.marko` does NOT exist
 5. `packages/ebayui-core-react/src/ebay-icon/icons/ebay-icon-<name>.tsx` does NOT exist
 6. `packages/ebayui-core/src/components/ebay-icon/icons/ebay-<name>-icon/` does NOT exist
-7. Run `npm run build` from the repo root — the build must pass
+7. Run `pnpm build` from the repo root — the build must pass
 
 ### Step 7c — Migration note
 
@@ -333,13 +333,13 @@ EbayIcon{Name} (legacy React) or <ebay-{name}-icon/> (legacy Marko) or
 
 - **Four packages generate icon components from the skin sprite.** All four are 100%
   auto-generated — never edit their icon files manually:
-  - `@evo-web/react` (`evo-react`) — `npm run update-icons` → reads `packages/skin/src/svg/icons.svg`
-  - `@evo-web/marko` (`evo-marko`) — `npm run importSVG` → reads `packages/skin/src/svg/icons.svg`
-  - `@ebay/ui-core-react` (`ebayui-core-react`) — `npm run update-icons` → reads `@ebay/skin/dist/svg/icons.svg`
-  - `@ebay/ebayui-core` (`ebayui-core`) — `npm run importSVG` → reads `@ebay/skin/dist/svg/icons.svg`
+  - `@evo-web/react` (`evo-react`) — `pnpm update-icons` → reads `packages/skin/src/svg/icons.svg`
+  - `@evo-web/marko` (`evo-marko`) — `pnpm importSVG` → reads `packages/skin/src/svg/icons.svg`
+  - `@ebay/ui-core-react` (`ebayui-core-react`) — `pnpm update-icons` → reads `@ebay/skin/dist/svg/icons.svg`
+  - `@ebay/ebayui-core` (`ebayui-core`) — `pnpm importSVG` → reads `@ebay/skin/dist/svg/icons.svg`
 
   The legacy packages (`ebayui-core-react`, `ebayui-core`) read from the compiled `dist/`
-  output, so `packages/skin && npm run build` must run before their scripts.
+  output, so `pnpm --filter @ebay/skin build` must run before their scripts.
 
 - **One SVG → one sprite symbol → four sets of components (two new, two legacy).**
   The name `icon-add-24.svg` produces `<symbol id="icon-add-24">`, `EvoIconAdd24`,

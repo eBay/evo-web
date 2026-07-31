@@ -1,12 +1,12 @@
 import { type IconsData, type Icon } from "../../../../../data/icons";
-import {icon as iconStyle, large} from "../../../../../sass/global.module.scss";
+import styles from "../../../../../sass/global.module.scss";
 export interface Input {
   list: Icon[];
   icons: IconsData["icons"];
 }
-<ul class=iconStyle>
+<ul class=styles.icon>
   <for|icon| of=input.list>
-    <li class=input.icons.largeDocs.indexOf(icon.name) !== -1 && large>
+    <li class=input.icons.largeDocs.indexOf(icon.name) !== -1 && styles.large>
       <span>${icon.name}</span>
       <svg
         aria-hidden="true"

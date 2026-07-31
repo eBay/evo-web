@@ -212,16 +212,16 @@ function getCDNPath(bundle) {
  * @param {*} plugin The given plugin to run the render with
  */
 /**
- * Runs npm build to get dist output
+ * Runs the package build to get dist output
  */
 function prebuild() {
     return new Promise<void>((resolve, reject) => {
         console.log("Running build...");
-        exec("npm run build:css", (err) => {
+        exec("pnpm build:css", (err) => {
             if (err) {
                 return reject(err);
             }
-            console.log("npm build successful");
+            console.log("pnpm build successful");
             return resolve();
         });
     });

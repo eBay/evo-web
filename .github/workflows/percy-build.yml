@@ -30,13 +30,19 @@ jobs:
           git remote add upstream https://github.com/${{ github.repository }}.git
           git fetch upstream main:main
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.15.1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Detect changed components
         id: detect
@@ -46,7 +52,7 @@ jobs:
           base-branch: 'main'
 
       - name: Build Storybook
-        run: npm run build:storybook -w packages/skin
+        run: pnpm --filter @ebay/skin build:storybook
 
       - name: Save Percy metadata
         env:

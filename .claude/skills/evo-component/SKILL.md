@@ -347,7 +347,7 @@ and bypassed — the orchestrator does not invoke them.
 | 12         | evo-a11y Pass 2            |  ✅  |   ⏭   |     ✅      |  ⏭   |
 | micro-qa-2 | Micro-QA checkpoint        |  ✅  |   ⏭   |     ✅      |  ⏭   |
 | 13         | evo-docs-hookup (full)     |  ✅  |   ✅   |     ✅      |  ⏭   |
-| 14         | npm run build              |  ✅  |   ✅   |     ✅      |  ✅   |
+| 14         | pnpm build                 |  ✅  |   ✅   |     ✅      |  ✅   |
 | 15         | evo-qa (Agent spawn)       |  ✅  |   ✅   |     ✅      |  ✅   |
 
 ### Per-step artifact definitions
@@ -509,7 +509,7 @@ the completion record, verify every listed output path starts with one of these 
 | 12   | `src/routes/_index/components/<block>/`                                 |
 | 13   | `src/routes/_index/components/<block>/`, `src/data/`                    |
 
-> **Steps 14 and 15 are exempt from scope boundary checking.** Step 14 (`npm run build`) writes
+> **Steps 14 and 15 are exempt from scope boundary checking.** Step 14 (`pnpm build`) writes
 > compiled artefacts to `dist/` directories across multiple packages — this is expected and correct.
 > Step 15 (`evo-qa`) writes only to `pipeline-state.json`. Neither produces component output files
 > that should be constrained to a write zone. Skip the boundary check for these two steps.
@@ -575,7 +575,7 @@ Steps that will run:
   11  /evo-react-storybook      [full, interactive]
   12  /evo-a11y Pass 2          [full, interactive] — fills interactive a11y docs
   13  /evo-docs-hookup full     [full, static, interactive]
-  14  npm run build             [all scopes]
+  14  pnpm build                [all scopes]
   15  /evo-qa (forked)          [all scopes]
   16  Final summary
 ```
@@ -662,7 +662,7 @@ so the AI skills only need to complete the non-deterministic parts (template bod
 component body, behavioral logic):
 
 ```bash
-npx tsx scripts/codegen/generate-component-scaffold.ts $COMPONENT
+pnpm exec tsx scripts/codegen/generate-component-scaffold.ts $COMPONENT
 ```
 
 Files written:
@@ -1112,7 +1112,7 @@ component-metadata.json. Do NOT rewrite css+page.marko (already done in Step 6).
 - `src/routes/_index/components/<block>/+meta.json`
 - `src/data/component-metadata.json` entry added/updated
 
-→ **Next:** After this skill returns, print "Step 13 complete." then immediately run Step 14 (npm run build).
+→ **Next:** After this skill returns, print "Step 13 complete." then immediately run Step 14 (pnpm build).
 
 ---
 
@@ -1123,7 +1123,7 @@ component-metadata.json. Do NOT rewrite css+page.marko (already done in Step 6).
 > **Before invoking:** Run the pre-step preamble above (idempotent check → pre-flight validation → mark in-progress).
 > **After returning:** Run the post-step verification above (read completion record → content validation → scope boundary check).
 
-Run: `npm run build`
+Run: `pnpm build`
 
 Fix failures inline. Do not advance to QA with a failing build.
 

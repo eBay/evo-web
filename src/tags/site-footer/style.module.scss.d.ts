@@ -12,10 +12,11 @@ declare const column: string;
 declare const brand: string;
 declare const brandTitle: string;
 
-export {
-	footer,
-	content,
-	column,
-	brand,
-	brandTitle
+declare const __default_export__: {
+	footer: typeof footer;
+	content: typeof content;
+	column: typeof column;
+	brand: typeof brand;
+	brandTitle: typeof brandTitle;
 };
+export default __default_export__;

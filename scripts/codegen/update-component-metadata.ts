@@ -7,8 +7,8 @@
  * Storybook paths and DS Playbook URL are left null — fill in after first deploy.
  *
  * Usage:
- *   npx tsx scripts/codegen/update-component-metadata.ts <component-name>
- *   npx tsx scripts/codegen/update-component-metadata.ts accordion
+ *   pnpm exec tsx scripts/codegen/update-component-metadata.ts <component-name>
+ *   pnpm exec tsx scripts/codegen/update-component-metadata.ts accordion
  *
  * Reads:  src/routes/_index/components/<name>/manifest.json
  * Writes: src/data/component-metadata.json  (patches in-place, alphabetical order)

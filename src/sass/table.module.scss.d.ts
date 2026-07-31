@@ -8,6 +8,7 @@
 
 declare const table: string;
 
-export {
-	table
+declare const __default_export__: {
+	table: typeof table;
 };
+export default __default_export__;

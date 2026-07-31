@@ -60,12 +60,12 @@ jobs:
       - name: Auto-approve and merge security-only lock file updates
         if: |
           steps.pr-info.outputs.author == 'dependabot[bot]' &&
-          steps.pr-info.outputs.files == 'package-lock.json' &&
+          steps.pr-info.outputs.files == 'pnpm-lock.yaml' &&
           steps.pr-info.outputs.is_security == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ steps.get-pr.outputs.pr_number }}
         run: |
           gh pr review $PR_NUMBER --approve --repo ${{ github.repository }} \
-            --body "Auto-approving: security patch, package-lock.json only."
+            --body "Auto-approving: security patch, pnpm-lock.yaml only."
           gh pr merge $PR_NUMBER --squash --repo ${{ github.repository }}

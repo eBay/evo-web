@@ -1,5 +1,5 @@
 import flags from "../../../../data/flags";
-import { flag as flagStyle } from "../../../../sass/global.module.scss";
+import styles from "../../../../sass/global.module.scss";
 <div id="flag">
   <section-header/>
 
@@ -66,7 +66,7 @@ import { flag as flagStyle } from "../../../../sass/global.module.scss";
     </p>
   </highlight-code>
 
-  <ul class=flagStyle>
+  <ul class=styles.flag>
     <for|flag| of=(flags.flags.list)>
       <li>
         <b>${flag.code}</b>

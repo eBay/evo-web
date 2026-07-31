@@ -8,8 +8,8 @@
  * are left untouched — those remain the responsibility of /evo-create-component-manifest.
  *
  * Usage:
- *   npx tsx scripts/codegen/spec-to-manifest.ts <component-name>
- *   npx tsx scripts/codegen/spec-to-manifest.ts accordion
+ *   pnpm exec tsx scripts/codegen/spec-to-manifest.ts <component-name>
+ *   pnpm exec tsx scripts/codegen/spec-to-manifest.ts accordion
  *
  * Reads:  src/routes/_index/components/<name>/<name>.spec.json
  * Writes: src/routes/_index/components/<name>/manifest.json  (creates or patches)

@@ -4,7 +4,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "path";
 const coreTokens = resolve(
     __dirname,
-    "../../../node_modules",
+    "../node_modules",
     "@ebay/design-tokens/dist/css/",
 );
 

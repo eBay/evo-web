@@ -417,7 +417,7 @@ re-run /evo-pipeline <component> once the tokens are available.
 ```
 
 ```bash
-npm run codegen:spec-to-manifest <name>
+pnpm codegen:spec-to-manifest <name>
 ```
 
 Report what was translated:
@@ -637,7 +637,7 @@ Run all sub-steps in order. Do not skip any.
    port (typically `http://localhost:63733` for this project). If not running, start it:
 
    ```bash
-   npm start
+   pnpm start
    ```
 
    Wait for the server to be ready before proceeding.
@@ -688,7 +688,7 @@ Run all sub-steps in order. Do not skip any.
       has higher specificity for that element than the modifier rule. The modifier needs
       explicit `.modifier a` and `.modifier button.fake-link` color overrides.
 
-5. **If any visual failure is found:** fix it, rebuild (`npm run build -w @ebay/skin`),
+5. **If any visual failure is found:** fix it, rebuild (`pnpm --filter @ebay/skin build`),
    reload the browser, re-verify. Do not proceed to State F until the screenshot
    confirms correct rendering in both light and dark mode.
 

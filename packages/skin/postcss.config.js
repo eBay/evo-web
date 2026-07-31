@@ -6,7 +6,7 @@ import cssnano from "cssnano";
 export default (ctx) => ({
     plugins: [
         postcssImport({
-            path: [import.meta.dirname, resolve("../../node_modules")],
+            path: [import.meta.dirname, resolve("node_modules")],
         }),
         autoprefixer,
         cssnano({

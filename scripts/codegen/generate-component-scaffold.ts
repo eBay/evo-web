@@ -14,8 +14,8 @@
  *   packages/evo-react/src/<name>/index.tsx               — scaffold (props type + stubs)
  *
  * Usage:
- *   npx tsx scripts/codegen/generate-component-scaffold.ts <component-name>
- *   npx tsx scripts/codegen/generate-component-scaffold.ts accordion
+ *   pnpm exec tsx scripts/codegen/generate-component-scaffold.ts <component-name>
+ *   pnpm exec tsx scripts/codegen/generate-component-scaffold.ts accordion
  *
  * Reads:  src/routes/_index/components/<name>/manifest.json
  * Writes: packages/evo-marko/src/tags/<evo-name>/*
@@ -509,7 +509,7 @@ console.log(`\nNext: complete template body in index.marko and component body in
 // before the AI skills try to build on broken scaffolding.
 try {
     const result = execSync(
-        `npx tsc --noEmit -p packages/evo-react/tsconfig.json 2>&1 | grep "${componentName}" || true`,
+        `pnpm exec tsc --noEmit -p packages/evo-react/tsconfig.json 2>&1 | grep "${componentName}" || true`,
         { encoding: "utf-8" },
     ).trim();
     if (result) {

@@ -1,4 +1,4 @@
-npm run build
+pnpm build
 
 # Check for uncommitted changes
 if ! git diff --quiet; then

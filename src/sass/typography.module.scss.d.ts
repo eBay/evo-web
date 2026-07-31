@@ -32,30 +32,31 @@ declare const largeScreenSmall: string;
 declare const mediumScreenSmall: string;
 declare const smallScreenSmall: string;
 
-export {
-	list,
-	giant3,
-	giant2,
-	giant1,
-	large2,
-	large2Secondary,
-	large1,
-	large1Secondary,
-	mediumBold,
-	medium,
-	mediumSecondary,
-	regularBold,
-	regular,
-	regularSecondary,
-	smallBold,
-	small,
-	smallSecondary,
-	giantScreenLarge,
-	largeScreenLarge,
-	mediumScreenLarge,
-	smallScreenLarge,
-	giantScreenSmall,
-	largeScreenSmall,
-	mediumScreenSmall,
-	smallScreenSmall
+declare const __default_export__: {
+	list: typeof list;
+	giant3: typeof giant3;
+	giant2: typeof giant2;
+	giant1: typeof giant1;
+	large2: typeof large2;
+	large2Secondary: typeof large2Secondary;
+	large1: typeof large1;
+	large1Secondary: typeof large1Secondary;
+	mediumBold: typeof mediumBold;
+	medium: typeof medium;
+	mediumSecondary: typeof mediumSecondary;
+	regularBold: typeof regularBold;
+	regular: typeof regular;
+	regularSecondary: typeof regularSecondary;
+	smallBold: typeof smallBold;
+	small: typeof small;
+	smallSecondary: typeof smallSecondary;
+	giantScreenLarge: typeof giantScreenLarge;
+	largeScreenLarge: typeof largeScreenLarge;
+	mediumScreenLarge: typeof mediumScreenLarge;
+	smallScreenLarge: typeof smallScreenLarge;
+	giantScreenSmall: typeof giantScreenSmall;
+	largeScreenSmall: typeof largeScreenSmall;
+	mediumScreenSmall: typeof mediumScreenSmall;
+	smallScreenSmall: typeof smallScreenSmall;
 };
+export default __default_export__;

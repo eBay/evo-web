@@ -643,4 +643,4 @@ Before finalizing the `Input` interface, compare the Marko 5 props:
 - [ ] Stories use `buildExtensionTemplate()` + `satisfies Meta<Input>`
 - [ ] Tests use `.ts` extension, no `testPassThroughAttributes`, direct `snapshotHTML()` calls
 - [ ] Examples in `examples/` directory with `default.marko`
-- [ ] `npm run build -w packages/evo-marko` passes
+- [ ] `pnpm --filter @evo-web/marko build` passes

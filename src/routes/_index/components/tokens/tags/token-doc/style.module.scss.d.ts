@@ -9,7 +9,8 @@
 declare const item: string;
 declare const list: string;
 
-export {
-	item,
-	list
+declare const __default_export__: {
+	item: typeof item;
+	list: typeof list;
 };
+export default __default_export__;

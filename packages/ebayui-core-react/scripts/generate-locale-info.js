@@ -1,4 +1,5 @@
 import fs from "fs";
+import { fileURLToPath } from "url";
 import weekData from "cldr-core/supplemental/weekData.json" with { type: "json" };
 import availableLocales from "cldr-core/availableLocales.json" with { type: "json" };
 import defaultContent from "cldr-core/defaultContent.json" with { type: "json" };
@@ -36,7 +37,7 @@ const defaultCountries = Object.fromEntries(
     }),
 );
 
-const dirPath = "../../node_modules/cldr-dates-full/main";
+const dirPath = fileURLToPath(import.meta.resolve("cldr-dates-full/main"));
 const files = fs.readdirSync(dirPath);
 
 for (const locale of files) {

@@ -8,6 +8,7 @@
 
 declare const breadcrumbs: string;
 
-export {
-	breadcrumbs
+declare const __default_export__: {
+	breadcrumbs: typeof breadcrumbs;
 };
+export default __default_export__;

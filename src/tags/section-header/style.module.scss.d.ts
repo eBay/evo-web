@@ -9,7 +9,8 @@
 declare const header: string;
 declare const link: string;
 
-export {
-	header,
-	link
+declare const __default_export__: {
+	header: typeof header;
+	link: typeof link;
 };
+export default __default_export__;
