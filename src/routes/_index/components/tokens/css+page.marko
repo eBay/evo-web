@@ -10,14 +10,29 @@ import { urls } from "../../../../data";
     or
     <code>--color-foreground-accent</code>. A theme is built by overriding this same set of tokens, so every
     component picks up the new values without any component code changing.
-    The tables below are the full set of tokens available today; to learn
-    how to build your own theme or apply a subtheme, see the Theming Guide.
+    The tables below are the full set of tokens available today.
   </p>
-  <p>
-    <a class="fake-btn fake-btn--secondary" href=`${urls.guides}/theming`>
-      Theming Guide
-    </a>
-  </p>
+  <section
+    class="section-notice"
+    role="region"
+    aria-label="Information"
+    aria-roledescription="Notice">
+    <div class="section-notice__header">
+      <svg
+        class="icon icon--16 icon--information-filled"
+        height="16"
+        width="16"
+        aria-label="Information">
+        <icon-symbol name="information-filled-16"/>
+      </svg>
+    </div>
+    <div class="section-notice__main">
+      <p>
+        To learn how to build your own theme or apply a subtheme, see the
+        <a href=`${urls.guides}/theming`>Theming Guide</a>.
+      </p>
+    </div>
+  </section>
 
   <h3>Evo Tokens</h3>
 
@@ -54,14 +69,6 @@ import { urls } from "../../../../data";
     This sub-module will not be included automatically by its parent
     module; it must be explicitly included by any page that is itself dark-mode
     compatible.
-  </p>
-
-  <p>
-    Looking to build your own theme, apply a subtheme, or see what themes
-    ship today (like Evo Live)? See the
-    <a href=`${urls.guides}/theming`>
-      Theming Guide
-    </a>.
   </p>
 
   <h3 id="tokens-color-semantic">
