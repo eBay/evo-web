@@ -74,6 +74,7 @@ When migrating a listed component, read the linked file completely and apply the
 | `ebay-confirm-dialog`       | [evo-confirm-dialog.md](components/evo-confirm-dialog.md)   |
 | `ebay-filter-chip`          | [evo-filter-chip.md](components/evo-filter-chip.md)         |
 | `ebay-icon-button`          | [evo-icon-button.md](components/evo-icon-button.md)         |
+| `ebay-menu`                 | [evo-menu.md](components/evo-menu.md)                       |
 
 ---
 
