@@ -4,7 +4,10 @@ import type { ComponentProps, ComponentType } from "react";
 export type CtaButtonSize = "large";
 
 export type EvoCtaButtonProps = ComponentProps<"a"> & {
-  /** Custom component used in place of the native anchor, such as a framework Link. */
+  /**
+   * Custom component used in place of the native anchor, such as a framework Link.
+   * It must render an `<a>` element because the CTA button's Skin CSS rules target anchors.
+   */
   as?: ComponentType<ComponentProps<"a">>;
   /** Expands the CTA button to the full width of its parent. */
   fluid?: boolean;
