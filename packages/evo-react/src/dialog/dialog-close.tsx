@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import classNames from "classnames";
-import { EvoIconButton } from "../icon-button";
-import type { NativeIconButtonProps } from "../icon-button";
+import { EvoIconButton, type NativeIconButtonProps } from "../icon-button";
 import { EvoIconClose16 } from "../icon/icons/close-16";
 import { useDialogContext } from "./context";
 import type { EvoDialogCloseProps } from "./types";
