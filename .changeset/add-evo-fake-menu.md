@@ -1,4 +1,5 @@
 ---
+"@ebay/skin": patch
 "@evo-web/react": patch
 ---
 
