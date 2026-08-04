@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { EvoInput } from "../input";
 import { EvoCharacterCount } from "./character-count";
 import { countCharacters } from "./count-characters";
 import "@ebay/skin/field.mjs";
-import "@ebay/skin/textbox.mjs";
 
 const meta: Meta<typeof EvoCharacterCount> = {
   title: "building blocks/evo-character-count",
@@ -77,17 +77,14 @@ export const InField: Story = {
           Field Label
         </label>
         <span className="field__control">
-          <span className="textbox">
-            <input
-              ref={inputRef}
-              value={text}
-              type="text"
-              aria-describedby="character-count-description character-count-value"
-              className="textbox__control"
-              id="character-count-input"
-              onChange={(event) => setText(event.currentTarget.value)}
-            />
-          </span>
+          <EvoInput
+            ref={inputRef}
+            value={text}
+            type="text"
+            aria-describedby="character-count-description character-count-value"
+            id="character-count-input"
+            onChange={(event) => setText(event.currentTarget.value)}
+          />
         </span>
         <div className="field__description field__description--group">
           <span id="character-count-description">Brief description</span>
