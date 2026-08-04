@@ -491,8 +491,11 @@ After completing the component, update `.claude/skills/evo-app-migrate-react/`:
    - Type changes
    - Behavior differences
    - New composition requirements, if the React API changed to named sub-components
-3. If nothing changed beyond the global renames, write: `No prop changes. Global renames from Step 2 are sufficient.`
-4. Update `.claude/skills/evo-app-migrate-react/SKILL.md` **only as an index**:
+3. Include concise consumer code examples:
+   - Before/after diffs for renamed, removed, or type-changed props that require migration
+   - TSX examples for new props or composition patterns
+4. If nothing changed beyond the global renames, write: `No prop changes. Global renames from Step 2 are sufficient.`
+5. Update `.claude/skills/evo-app-migrate-react/SKILL.md` **only as an index**:
    - Add a row for `ebay-{name}` under **Step 3 — Apply per-component prop changes**.
    - Link that row to `components/evo-{name}.md`.
    - Do not inline per-component migration details in `SKILL.md`.

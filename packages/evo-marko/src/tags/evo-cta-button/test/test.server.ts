@@ -9,7 +9,15 @@ describe("cta-button", () => {
     await snapshotHTML(Default);
   });
 
-  it("renders small cta button", async () => {
+  it("renders large cta button", async () => {
     await snapshotHTML(Default, { size: "large" });
+  });
+
+  it("renders fluid cta button", async () => {
+    await snapshotHTML(Default, { fluid: true });
+  });
+
+  it("renders truncated cta button", async () => {
+    await snapshotHTML(Default, { truncated: true });
   });
 });
