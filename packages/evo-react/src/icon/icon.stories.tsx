@@ -1157,13 +1157,16 @@ const meta: Meta<EvoIconComponentProps> = {
   argTypes: {
     a11yText: {
       control: "text",
+      description: "Accessible label text for the icon. When provided, the icon will have role=\"img\".",
     },
     a11yVariant: {
       control: "select",
       options: ["label"],
+      description: "Controls how the accessible text is exposed. \"label\" uses aria-label directly; default uses a <title> element with aria-labelledby.",
     },
     prominent: {
       control: "boolean",
+      description: "Applies the prominent style modifier to the icon.",
     },
   },
   parameters: {
@@ -1244,7 +1247,7 @@ export const AllIcons: Story = {
               <EvoIconAddImage24 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconAdjustPriceDown16.name || "adjust-price-down-16"}</td>
@@ -1252,7 +1255,7 @@ export const AllIcons: Story = {
               <EvoIconAdjustPriceDown16 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconAdjustPriceDown24.name || "adjust-price-down-24"}</td>
@@ -1260,7 +1263,7 @@ export const AllIcons: Story = {
               <EvoIconAdjustPriceDown24 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconAdjustPriceUp16.name || "adjust-price-up-16"}</td>
@@ -1268,7 +1271,7 @@ export const AllIcons: Story = {
               <EvoIconAdjustPriceUp16 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconAdjustPriceUp24.name || "adjust-price-up-24"}</td>
@@ -1276,7 +1279,7 @@ export const AllIcons: Story = {
               <EvoIconAdjustPriceUp24 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconAfterpay12Colored.name || "afterpay-12-colored"}</td>
@@ -5380,7 +5383,7 @@ export const AllIcons: Story = {
               <EvoIconInbox24 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconInformation12.name || "information-12"}</td>
@@ -5388,7 +5391,7 @@ export const AllIcons: Story = {
               <EvoIconInformation12 {...args} />
             </td>
           </tr>
-
+              
 
           <tr>
             <td>{EvoIconInformation16.name || "information-16"}</td>

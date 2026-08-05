@@ -1,5 +1,13 @@
 # Skin Changelog
 
+## 19.31.0
+
+### Minor Changes
+
+- [#791](https://github.com/eBay/evo-web/pull/791) [`ba6b09e`](https://github.com/eBay/evo-web/commit/ba6b09ef461ab76992024f61e8152ca57f5cfa66) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Update DS tokens
+
+- [#793](https://github.com/eBay/evo-web/pull/793) [`497f472`](https://github.com/eBay/evo-web/commit/497f472d98df55d173dc0e5273c55215ddc3cd11) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `information-12`, `adjust-price-down-16`, `adjust-price-down-24`, `adjust-price-up-16`, and `adjust-price-up-24` icons.
+
 ## 19.30.1
 
 ### Patch Changes

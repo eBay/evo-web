@@ -1189,7 +1189,7 @@ export const AllIcons = () => (
                 <EbayIconAddImage24 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-adjust-price-down-16</td>
@@ -1197,7 +1197,7 @@ export const AllIcons = () => (
                 <EbayIconAdjustPriceDown16 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-adjust-price-down-24</td>
@@ -1205,7 +1205,7 @@ export const AllIcons = () => (
                 <EbayIconAdjustPriceDown24 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-adjust-price-up-16</td>
@@ -1213,7 +1213,7 @@ export const AllIcons = () => (
                 <EbayIconAdjustPriceUp16 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-adjust-price-up-24</td>
@@ -1221,7 +1221,7 @@ export const AllIcons = () => (
                 <EbayIconAdjustPriceUp24 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-afterpay-12-colored</td>
@@ -5325,7 +5325,7 @@ export const AllIcons = () => (
                 <EbayIconInbox24 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-information-12</td>
@@ -5333,7 +5333,7 @@ export const AllIcons = () => (
                 <EbayIconInformation12 />
             </td>
         </tr>
-
+            
 
         <tr>
             <td>ebay-icon-information-16</td>

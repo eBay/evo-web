@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.12.0
+
+### Minor Changes
+
+- [#793](https://github.com/eBay/evo-web/pull/793) [`497f472`](https://github.com/eBay/evo-web/commit/497f472d98df55d173dc0e5273c55215ddc3cd11) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `information-12`, `adjust-price-down-16`, `adjust-price-down-24`, `adjust-price-up-16`, and `adjust-price-up-24` icons.
+
 ## 16.11.2
 
 ### Patch Changes
