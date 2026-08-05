@@ -5,6 +5,10 @@ export type Icon =
 'add16' |
 'add24' |
 'addImage24' |
+'adjustPriceDown16' |
+'adjustPriceDown24' |
+'adjustPriceUp16' |
+'adjustPriceUp24' |
 'afterpay12Colored' |
 'afterpay18Colored' |
 'afterpay24Colored' |
@@ -519,6 +523,7 @@ export type Icon =
 'imagePlaceholder' |
 'inbox16' |
 'inbox24' |
+'information12' |
 'information16' |
 'information20' |
 'information24' |

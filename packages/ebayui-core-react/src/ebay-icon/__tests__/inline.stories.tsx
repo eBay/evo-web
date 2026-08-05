@@ -7,6 +7,10 @@ import { EbayIconAdd12 } from "../icons/ebay-icon-add-12";
 import { EbayIconAdd16 } from "../icons/ebay-icon-add-16";
 import { EbayIconAdd24 } from "../icons/ebay-icon-add-24";
 import { EbayIconAddImage24 } from "../icons/ebay-icon-add-image-24";
+import { EbayIconAdjustPriceDown16 } from "../icons/ebay-icon-adjust-price-down-16";
+import { EbayIconAdjustPriceDown24 } from "../icons/ebay-icon-adjust-price-down-24";
+import { EbayIconAdjustPriceUp16 } from "../icons/ebay-icon-adjust-price-up-16";
+import { EbayIconAdjustPriceUp24 } from "../icons/ebay-icon-adjust-price-up-24";
 import { EbayIconAfterpay12Colored } from "../icons/ebay-icon-afterpay-12-colored";
 import { EbayIconAfterpay18Colored } from "../icons/ebay-icon-afterpay-18-colored";
 import { EbayIconAfterpay24Colored } from "../icons/ebay-icon-afterpay-24-colored";
@@ -520,6 +524,7 @@ import { EbayIconImage24 } from "../icons/ebay-icon-image-24";
 import { EbayIconImage64 } from "../icons/ebay-icon-image-64";
 import { EbayIconInbox16 } from "../icons/ebay-icon-inbox-16";
 import { EbayIconInbox24 } from "../icons/ebay-icon-inbox-24";
+import { EbayIconInformation12 } from "../icons/ebay-icon-information-12";
 import { EbayIconInformation16 } from "../icons/ebay-icon-information-16";
 import { EbayIconInformation20 } from "../icons/ebay-icon-information-20";
 import { EbayIconInformation24 } from "../icons/ebay-icon-information-24";
@@ -1184,7 +1189,39 @@ export const AllIcons = () => (
                 <EbayIconAddImage24 />
             </td>
         </tr>
-            
+
+
+        <tr>
+            <td>ebay-icon-adjust-price-down-16</td>
+            <td>
+                <EbayIconAdjustPriceDown16 />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>ebay-icon-adjust-price-down-24</td>
+            <td>
+                <EbayIconAdjustPriceDown24 />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>ebay-icon-adjust-price-up-16</td>
+            <td>
+                <EbayIconAdjustPriceUp16 />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>ebay-icon-adjust-price-up-24</td>
+            <td>
+                <EbayIconAdjustPriceUp24 />
+            </td>
+        </tr>
+
 
         <tr>
             <td>ebay-icon-afterpay-12-colored</td>
@@ -5288,7 +5325,15 @@ export const AllIcons = () => (
                 <EbayIconInbox24 />
             </td>
         </tr>
-            
+
+
+        <tr>
+            <td>ebay-icon-information-12</td>
+            <td>
+                <EbayIconInformation12 />
+            </td>
+        </tr>
+
 
         <tr>
             <td>ebay-icon-information-16</td>
