@@ -46,6 +46,14 @@ export const Default: Story = {
   render: (args) => (
     <EvoChip {...args}>
       <EvoChipText>Football</EvoChipText>
+    </EvoChip>
+  ),
+};
+
+export const WithDeleteButton: Story = {
+  render: (args) => (
+    <EvoChip {...args}>
+      <EvoChipText>Football</EvoChipText>
       <EvoChipDeleteButton a11yText="Delete Football" />
     </EvoChip>
   ),
