@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoCtaButton SSR > passes through anchor attributes and custom classes 1`] = `"<a href="/action" data-testid="cta" aria-label="Take action" class="custom-class cta-btn"><span class="cta-btn__cell"><span>Take Action Now!</span><svg class="icon icon--24" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-arrow-right-24"></use></svg></span></a>"`;
+
+exports[`EvoCtaButton SSR > renders defaults 1`] = `"<a href="https://www.ebay.com" class="cta-btn"><span class="cta-btn__cell"><span>Take Action Now!</span><svg class="icon icon--24" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-arrow-right-24"></use><defs><symbol viewBox="0 0 24 24" id="icon-arrow-right-24"><path d="m21.71 11.29-8-8a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29H3a1 1 0 0 0 0 2h15.59l-6.3 6.29a1.001 1.001 0 0 0 0 1.42 1.001 1.001 0 0 0 1.42 0l8-8a1.001 1.001 0 0 0 0-1.42Z"/></symbol></defs></svg></span></a>"`;
+
+exports[`EvoCtaButton SSR > renders large, fluid, and truncated modifiers 1`] = `"<a href="/action" class="cta-btn cta-btn--large cta-btn--fluid cta-btn--truncated"><span class="cta-btn__cell"><span>Take Action Now!</span><svg class="icon icon--24" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-arrow-right-24"></use></svg></span></a>"`;
+
+exports[`EvoCtaButton SSR > renders with a custom component 1`] = `"<a data-custom-link="true" href="/action" class="cta-btn"><span class="cta-btn__cell"><span>Take Action Now!</span><svg class="icon icon--24" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true"><use xlink:href="#icon-arrow-right-24"></use></svg></span></a>"`;

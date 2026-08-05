@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoTextarea SSR > renders a controlled value 1`] = `"<span class="textbox textbox--readonly"><textarea aria-label="Description" class="textbox__control" readOnly="">Details</textarea></span>"`;
+
+exports[`EvoTextarea SSR > renders a floating label 1`] = `"<span class="floating-label floating-label--opaque"><label class="floating-label__label floating-label__label--animate floating-label__label--inline" for="_R_0_">Description</label><span class="textbox"><textarea id="_R_0_" class="textbox__control"></textarea></span></span>"`;
+
+exports[`EvoTextarea SSR > renders defaults 1`] = `"<span class="textbox"><textarea aria-label="Description" class="textbox__control"></textarea></span>"`;
+
+exports[`EvoTextarea SSR > renders textarea states 1`] = `"<div class="textbox textbox--invalid textbox--readonly textbox--large textbox--fluid"><textarea aria-label="Description" class="textbox__control" aria-invalid="true" readOnly=""></textarea></div>"`;
