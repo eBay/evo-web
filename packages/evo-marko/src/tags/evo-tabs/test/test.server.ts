@@ -12,4 +12,8 @@ describe("tabs", () => {
   it("renders basic version with 3 tabs and 3 panels on the second panel", async () => {
     await snapshotHTML(Default, { index: 2 });
   });
+
+  it("renders large tabs", async () => {
+    await snapshotHTML(Default, { size: "large" });
+  });
 });
