@@ -1,5 +1,11 @@
 # @evo-web/react
 
+## 0.4.1
+
+### Patch Changes
+
+- [#789](https://github.com/eBay/evo-web/pull/789) [`bc49d12`](https://github.com/eBay/evo-web/commit/bc49d1201caa07138d5738ccc20c42bc7ef1dc1b) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoProgressSpinner component.
+
 ## 0.4.0
 
 ### Minor Changes

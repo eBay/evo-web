@@ -1,5 +1,11 @@
 # @ebay/ui-core-react
 
+## 9.11.1
+
+### Patch Changes
+
+- [#866](https://github.com/eBay/evo-web/pull/866) [`931e197`](https://github.com/eBay/evo-web/commit/931e197ce333afb614c1238185ad693bf9704fa2) Thanks [@bruno2kd](https://github.com/bruno2kd)! - Fix: ebay tabs programmatic navigation
+
 ## 9.11.0
 
 ### Minor Changes
