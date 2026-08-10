@@ -27,15 +27,25 @@ export type EvoMenuProps = ComponentProps<"span"> & {
   typeaheadTimeoutLength?: number;
 };
 
+type MenuItemsA11yProps =
+  | {
+      /** Localized accessible name for the menu. */
+      a11yText?: string;
+      /** Cannot be used with `a11yText`. */
+      a11yLabelId?: never;
+    }
+  | {
+      /** Cannot be used with `a11yLabelId`. */
+      a11yText?: never;
+      /** ID of the element that labels the menu. */
+      a11yLabelId?: string;
+    };
+
 export type EvoMenuItemsProps = Omit<
   ComponentProps<"div">,
   "aria-label" | "aria-labelledby" | "role" | "tabIndex"
-> & {
-  /** Localized accessible name for the menu. Cannot be used with `a11yLabelId`. */
-  a11yText?: string;
-  /** ID of the element that labels the menu. Cannot be used with `a11yText`. */
-  a11yLabelId?: string;
-};
+> &
+  MenuItemsA11yProps;
 
 export type EvoMenuItemProps = Omit<
   ComponentProps<"div">,
