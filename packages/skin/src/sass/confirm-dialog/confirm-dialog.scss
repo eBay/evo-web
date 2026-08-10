@@ -47,12 +47,6 @@ button.confirm-dialog__confirm {
 
 @media (min-width: variables.$screen-size-MD) {
     .confirm-dialog__window {
-        max-width: calc(88% - var(--spacing-400));
-    }
-}
-
-@media (min-width: variables.$screen-size-LG) {
-    .confirm-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }
 }
