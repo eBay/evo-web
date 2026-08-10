@@ -8,6 +8,10 @@ import { EvoIconAdd12 } from "./icons/add-12";
 import { EvoIconAdd16 } from "./icons/add-16";
 import { EvoIconAdd24 } from "./icons/add-24";
 import { EvoIconAddImage24 } from "./icons/add-image-24";
+import { EvoIconAdjustPriceDown16 } from "./icons/adjust-price-down-16";
+import { EvoIconAdjustPriceDown24 } from "./icons/adjust-price-down-24";
+import { EvoIconAdjustPriceUp16 } from "./icons/adjust-price-up-16";
+import { EvoIconAdjustPriceUp24 } from "./icons/adjust-price-up-24";
 import { EvoIconAfterpay12Colored } from "./icons/afterpay-12-colored";
 import { EvoIconAfterpay18Colored } from "./icons/afterpay-18-colored";
 import { EvoIconAfterpay24Colored } from "./icons/afterpay-24-colored";
@@ -521,6 +525,7 @@ import { EvoIconImage24 } from "./icons/image-24";
 import { EvoIconImage64 } from "./icons/image-64";
 import { EvoIconInbox16 } from "./icons/inbox-16";
 import { EvoIconInbox24 } from "./icons/inbox-24";
+import { EvoIconInformation12 } from "./icons/information-12";
 import { EvoIconInformation16 } from "./icons/information-16";
 import { EvoIconInformation20 } from "./icons/information-20";
 import { EvoIconInformation24 } from "./icons/information-24";
@@ -1152,13 +1157,16 @@ const meta: Meta<EvoIconComponentProps> = {
   argTypes: {
     a11yText: {
       control: "text",
+      description: "Accessible label text for the icon. When provided, the icon will have role=\"img\".",
     },
     a11yVariant: {
       control: "select",
       options: ["label"],
+      description: "Controls how the accessible text is exposed. \"label\" uses aria-label directly; default uses a <title> element with aria-labelledby.",
     },
     prominent: {
       control: "boolean",
+      description: "Applies the prominent style modifier to the icon.",
     },
   },
   parameters: {
@@ -1237,6 +1245,38 @@ export const AllIcons: Story = {
             <td>{EvoIconAddImage24.name || "add-image-24"}</td>
             <td>
               <EvoIconAddImage24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconAdjustPriceDown16.name || "adjust-price-down-16"}</td>
+            <td>
+              <EvoIconAdjustPriceDown16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconAdjustPriceDown24.name || "adjust-price-down-24"}</td>
+            <td>
+              <EvoIconAdjustPriceDown24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconAdjustPriceUp16.name || "adjust-price-up-16"}</td>
+            <td>
+              <EvoIconAdjustPriceUp16 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconAdjustPriceUp24.name || "adjust-price-up-24"}</td>
+            <td>
+              <EvoIconAdjustPriceUp24 {...args} />
             </td>
           </tr>
               
@@ -5341,6 +5381,14 @@ export const AllIcons: Story = {
             <td>{EvoIconInbox24.name || "inbox-24"}</td>
             <td>
               <EvoIconInbox24 {...args} />
+            </td>
+          </tr>
+              
+
+          <tr>
+            <td>{EvoIconInformation12.name || "information-12"}</td>
+            <td>
+              <EvoIconInformation12 {...args} />
             </td>
           </tr>
               

@@ -1,5 +1,29 @@
 # @evo-web/react
 
+## 0.4.1
+
+### Patch Changes
+
+- [#789](https://github.com/eBay/evo-web/pull/789) [`bc49d12`](https://github.com/eBay/evo-web/commit/bc49d1201caa07138d5738ccc20c42bc7ef1dc1b) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoProgressSpinner component.
+
+## 0.4.0
+
+### Minor Changes
+
+- [#793](https://github.com/eBay/evo-web/pull/793) [`497f472`](https://github.com/eBay/evo-web/commit/497f472d98df55d173dc0e5273c55215ddc3cd11) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `information-12`, `adjust-price-down-16`, `adjust-price-down-24`, `adjust-price-up-16`, and `adjust-price-up-24` icons.
+
+### Patch Changes
+
+- [#786](https://github.com/eBay/evo-web/pull/786) [`e11bebc`](https://github.com/eBay/evo-web/commit/e11bebcb891af65ae7e6e0b37f98822129628153) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoChip component.
+
+- [#785](https://github.com/eBay/evo-web/pull/785) [`c68a7bf`](https://github.com/eBay/evo-web/commit/c68a7bf3d2ff1aa72e1504f828ffba7abc8e1505) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoDialog component.
+
+- [#780](https://github.com/eBay/evo-web/pull/780) [`03865d2`](https://github.com/eBay/evo-web/commit/03865d2245c0220d7b52cfc0804bbb6cca98c664) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Expose component prop descriptions through generated TypeScript and Storybook documentation.
+
+- [#784](https://github.com/eBay/evo-web/pull/784) [`e64bd94`](https://github.com/eBay/evo-web/commit/e64bd9480cdf3801d231eb4674f51df1e51c7e1a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCtaButton and CTA button modifier props.
+
+- [#777](https://github.com/eBay/evo-web/pull/777) [`b899b82`](https://github.com/eBay/evo-web/commit/b899b82363b5c449398f1bbf4b0621043b4da2f3) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoInput and EvoTextarea components.
+
 ## 0.3.3
 
 ### Patch Changes

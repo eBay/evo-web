@@ -1,22 +1,34 @@
 # @ebay/ui-core-react
 
+## 9.11.1
+
+### Patch Changes
+
+- [#866](https://github.com/eBay/evo-web/pull/866) [`931e197`](https://github.com/eBay/evo-web/commit/931e197ce333afb614c1238185ad693bf9704fa2) Thanks [@bruno2kd](https://github.com/bruno2kd)! - Fix: ebay tabs programmatic navigation
+
+## 9.11.0
+
+### Minor Changes
+
+- [#793](https://github.com/eBay/evo-web/pull/793) [`497f472`](https://github.com/eBay/evo-web/commit/497f472d98df55d173dc0e5273c55215ddc3cd11) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `information-12`, `adjust-price-down-16`, `adjust-price-down-24`, `adjust-price-up-16`, and `adjust-price-up-24` icons.
+
 ## 9.10.2
 
 ### Patch Changes
 
 - [#775](https://github.com/eBay/evo-web/pull/775) [`c2e6b45`](https://github.com/eBay/evo-web/commit/c2e6b4561654447a7af2f12f288c64f065ec37d0) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(carousel): don't crash when `index` is out of range for the item count
 
-  `getOffset` indexed directly into the measured items array with
-  whatever `index` was passed, with no bounds check. A carousel with a
-  single item, given an `index` prop of 1 or higher (e.g. left over from
-  a previous render with more items, or just an out-of-range default),
-  threw `Cannot read properties of undefined (reading 'left')` during
-  mount. Falls back to the last available item when the requested index
-  is out of range instead of crashing.
+    `getOffset` indexed directly into the measured items array with
+    whatever `index` was passed, with no bounds check. A carousel with a
+    single item, given an `index` prop of 1 or higher (e.g. left over from
+    a previous render with more items, or just an out-of-range default),
+    threw `Cannot read properties of undefined (reading 'left')` during
+    mount. Falls back to the last available item when the requested index
+    is out of range instead of crashing.
 
 - [#757](https://github.com/eBay/evo-web/pull/757) [`3c02952`](https://github.com/eBay/evo-web/commit/3c02952c4ff2923284dddc791c2f2abc43727a33) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(ebay-pagination): disabled prev/next links no longer navigate when clicked
 
-  When a `previous` or `next` pagination item has an `href` (link variant) and is marked `disabled`, the rendered `<a>` element no longer includes the `href` attribute. The click handlers also now call `event.preventDefault()` when `aria-disabled` is set, providing defense-in-depth against navigation in both the Marko and React implementations.
+    When a `previous` or `next` pagination item has an `href` (link variant) and is marked `disabled`, the rendered `<a>` element no longer includes the `href` attribute. The click handlers also now call `event.preventDefault()` when `aria-disabled` is set, providing defense-in-depth against navigation in both the Marko and React implementations.
 
 - [#766](https://github.com/eBay/evo-web/pull/766) [`4309485`](https://github.com/eBay/evo-web/commit/43094858fa2c8a856c701991599a10013e5b2e6b) Thanks [@ArtBlue](https://github.com/ArtBlue)! - fix(ebay-tourtip): give the region role an accessible name via aria-labelledby on the overlay, linked to the heading
 
@@ -62,9 +74,9 @@
 
 - [#718](https://github.com/eBay/evo-web/pull/718) [`57d9fa1`](https://github.com/eBay/evo-web/commit/57d9fa102dff67c4dbd86950f60f2653a4ea2dc2) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add new icons: bank-of-america, capital-one, chase, citi, td, usaa, wells-fargo (colored, 32/24/18/12), pay-by-bank-be/de/fr/uk (colored, 24), ship-and-safety (24/16), tire (24/16), gift (20), ai-mobile (24/20/16), ai-summary (24/20/16), fast-forward (16), rewind (16), battery-waste (48), markdown (24/20/16), stop (24/20/16), skull (24/16/12), reply-chat (24/16/12), link (20/16), pin (12), pin-filled (12), home (20/16), locker (64/24/16), bids (12), promotion (12), selling (12), wire-transfer (24/16).
 
-  Update existing icons: ship-and-local (16), link (24), markdown (24/16).
+    Update existing icons: ship-and-local (16), link (24), markdown (24/16).
 
-  Closes #717 (sub-issues #543, #599, #680).
+    Closes #717 (sub-issues #543, #599, #680).
 
 - [#720](https://github.com/eBay/evo-web/pull/720) [`8623c21`](https://github.com/eBay/evo-web/commit/8623c21960f6a25e504071a052bd85fc8715b467) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - ebay-select: add support for `fluid` prop
 
@@ -110,10 +122,10 @@
 
 - [#643](https://github.com/eBay/evo-web/pull/643) [`c739d5d`](https://github.com/eBay/evo-web/commit/c739d5ddfd557f7427a6dbacb909ac7dc84ed9d4) Thanks [@SinhSinhAn](https://github.com/SinhSinhAn)! - fix(ebay-star-rating-select): do not select star on focus
 
-  Tabbing to the first star auto-selected it because `handleFocus` (and
-  `handleKeyDown`) called `setChecked` unconditionally. Selection now only
-  happens on click (or the click event browsers synthesize from keyboard
-  activation of native radio inputs), matching the Marko fix from #394.
+    Tabbing to the first star auto-selected it because `handleFocus` (and
+    `handleKeyDown`) called `setChecked` unconditionally. Selection now only
+    happens on click (or the click event browsers synthesize from keyboard
+    activation of native radio inputs), matching the Marko fix from #394.
 
 ## 9.6.2
 
@@ -137,9 +149,9 @@
 
 - [#606](https://github.com/eBay/evo-web/pull/606) [`86c99fa`](https://github.com/eBay/evo-web/commit/86c99fa198805086c9c8377a000b0842597a51dd) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(item-tile): add a11yExternalLinkText prop to EbayFilePreviewCard and EbayItemTile
 
-  When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
+    When `a11yExternalLinkText` (`a11y-external-link-text` in Marko) is provided, the anchor tag renders with `target="_blank"` and `rel="noopener noreferrer"`, and a visually-hidden `<span class="clipped">` containing the text is appended inside the anchor for screen reader accessibility.
 
-  Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
+    Also fixes TypeScript typing on `EbayItemTileDescription` so the `as` prop accepts any element type (was limited to `<p>` element props).
 
 ## 9.5.0
 
@@ -154,9 +166,9 @@
 
 - [#570](https://github.com/eBay/evo-web/pull/570) [`5d5eaf8`](https://github.com/eBay/evo-web/commit/5d5eaf8841903b600dff2db2eb9d805f472822cc) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - **@ebay/ui-core-react:** Align video component with Marko implementation and shaka-player v5 - refactor to declarative approach with createPortal, implement missing controls, fix icon re-rendering and autoplay behavior.
 
-  **@ebay/ebayui-core:** Add accessible button wrapper for play button.
+    **@ebay/ebayui-core:** Add accessible button wrapper for play button.
 
-  **@ebay/skin:** Add button reset styles for shaka-play-button.
+    **@ebay/skin:** Add button reset styles for shaka-play-button.
 
 ## 9.4.0
 
@@ -224,11 +236,11 @@
 
 - [#413](https://github.com/eBay/evo-web/pull/413) [`df550f5`](https://github.com/eBay/evo-web/commit/df550f5f7d009511f37c4764d1981ca2959d77fa) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - fix(avatar): add alt="" to img for accessibility
 
-  Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
+    Fixed accessibility issue where avatar images were announced twice by assistive technologies. The img element inside role="img" containers now has alt="" to prevent double announcement.
 
 - [#421](https://github.com/eBay/evo-web/pull/421) [`bd7df41`](https://github.com/eBay/evo-web/commit/bd7df41c69dbb15edab329abdb907cfa838fb30c) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - fix(pagination): add visibility detection for pagination inside hidden containers
 
-  Fixed issue where EbayPagination would miscalculate visible pages when rendered inside EbayTab or other hidden containers. The component now uses IntersectionObserver to detect when it becomes visible and automatically recalculates the page layout. Also fixed a memory leak in the resize event listener cleanup.
+    Fixed issue where EbayPagination would miscalculate visible pages when rendered inside EbayTab or other hidden containers. The component now uses IntersectionObserver to detect when it becomes visible and automatically recalculates the page layout. Also fixed a memory leak in the resize event listener cleanup.
 
 ## 8.18.0
 
@@ -288,7 +300,7 @@
 
 - [#320](https://github.com/eBay/evo-web/pull/320) [`5b26a07`](https://github.com/eBay/evo-web/commit/5b26a07eaee3b58a7426a1bfd122f513c4ebab86) Thanks [@copilot-swe-agent](https://github.com/apps/copilot-swe-agent)! - feat(ebay-select): Add support for disabled attribute on EbaySelectOption
 
-  EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
+    EbaySelectOption now supports the `disabled` attribute to allow conditionally disabling individual select options.
 
 ### Patch Changes
 

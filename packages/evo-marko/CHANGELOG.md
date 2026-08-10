@@ -1,5 +1,15 @@
 # @evo-web/marko
 
+## 0.6.0
+
+### Minor Changes
+
+- [#793](https://github.com/eBay/evo-web/pull/793) [`497f472`](https://github.com/eBay/evo-web/commit/497f472d98df55d173dc0e5273c55215ddc3cd11) Thanks [@ArtBlue](https://github.com/ArtBlue)! - Add `information-12`, `adjust-price-down-16`, `adjust-price-down-24`, `adjust-price-up-16`, and `adjust-price-up-24` icons.
+
+### Patch Changes
+
+- [#784](https://github.com/eBay/evo-web/pull/784) [`e64bd94`](https://github.com/eBay/evo-web/commit/e64bd9480cdf3801d231eb4674f51df1e51c7e1a) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCtaButton and CTA button modifier props.
+
 ## 0.5.2
 
 ### Patch Changes

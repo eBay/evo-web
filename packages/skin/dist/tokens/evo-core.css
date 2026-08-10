@@ -33,6 +33,9 @@
     --color-blue-700: #002a69;
     --color-blue-800: #19133a;
     --color-brand-depop-red: #e20020;
+    --color-brand-tise-dark-purple: #422136;
+    --color-brand-tise-peach: #ff8f77;
+    --color-brand-tise-tan: #ffefeb;
     --color-clear: rgba(255, 255, 255, 0);
     --color-coral-100: #fff7f5;
     --color-coral-200: #ffe1d7;
@@ -280,6 +283,10 @@
     --expressive-theme-teal-light-foreground: #07465a;
     --expressive-theme-teal-medium-background: #1bbfca;
     --expressive-theme-teal-medium-foreground: #07465a;
+    --expressive-theme-tise-dark-purple-background: #422136;
+    --expressive-theme-tise-dark-purple-foreground: #ffefeb;
+    --expressive-theme-tise-peach-background: #ff8f77;
+    --expressive-theme-tise-peach-foreground: #422136;
     --expressive-theme-violet-dark-background: #271a68;
     --expressive-theme-violet-dark-foreground: #e2ddfd;
     --expressive-theme-violet-light-background: #836bff;

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { vi } from "vitest";
 import { render, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { DefaultTabs, ManuallyActivatedTabs } from "./index.stories";
+import { EbayTabs, EbayTab, EbayTabPanel } from "../index";
 
 describe("<EbayTabs>", () => {
     describe("on `tab` key press", () => {
@@ -207,6 +208,95 @@ describe("<EbayTabs>", () => {
                 await userEvent.tab({ shift: true });
                 expect(tabs[1]).toHaveFocus();
             });
+        });
+    });
+
+    describe("when selectedIndex prop changes programmatically", () => {
+        it("should update the selected panel when selectedIndex prop changes", () => {
+            const { rerender } = render(
+                <EbayTabs selectedIndex={0}>
+                    <EbayTab>Tab 1</EbayTab>
+                    <EbayTab>Tab 2</EbayTab>
+                    <EbayTab>Tab 3</EbayTab>
+                    <EbayTabPanel>
+                        <h3>Panel 1</h3>
+                    </EbayTabPanel>
+                    <EbayTabPanel>
+                        <h3>Panel 2</h3>
+                    </EbayTabPanel>
+                    <EbayTabPanel>
+                        <h3>Panel 3</h3>
+                    </EbayTabPanel>
+                </EbayTabs>,
+            );
+
+            expect(screen.getByText("Panel 1")).toBeVisible();
+            expect(screen.getByText("Panel 2")).not.toBeVisible();
+            expect(screen.getByText("Panel 3")).not.toBeVisible();
+
+            rerender(
+                <EbayTabs selectedIndex={2}>
+                    <EbayTab>Tab 1</EbayTab>
+                    <EbayTab>Tab 2</EbayTab>
+                    <EbayTab>Tab 3</EbayTab>
+                    <EbayTabPanel>
+                        <h3>Panel 1</h3>
+                    </EbayTabPanel>
+                    <EbayTabPanel>
+                        <h3>Panel 2</h3>
+                    </EbayTabPanel>
+                    <EbayTabPanel>
+                        <h3>Panel 3</h3>
+                    </EbayTabPanel>
+                </EbayTabs>,
+            );
+
+            expect(screen.getByText("Panel 1")).not.toBeVisible();
+            expect(screen.getByText("Panel 2")).not.toBeVisible();
+            expect(screen.getByText("Panel 3")).toBeVisible();
+        });
+
+        it("should update the selected panel when controlled by external state", () => {
+            const ControlledTabs = () => {
+                const [selectedTab, setSelectedTab] = useState(0);
+                return (
+                    <>
+                        {[0, 1, 2].map((i) => (
+                            <button key={i} onClick={() => setSelectedTab(i)}>
+                                Select Tab {i + 1}
+                            </button>
+                        ))}
+                        <EbayTabs selectedIndex={selectedTab}>
+                            <EbayTab>Tab 1</EbayTab>
+                            <EbayTab>Tab 2</EbayTab>
+                            <EbayTab>Tab 3</EbayTab>
+                            <EbayTabPanel>
+                                <h3>Panel 1</h3>
+                            </EbayTabPanel>
+                            <EbayTabPanel>
+                                <h3>Panel 2</h3>
+                            </EbayTabPanel>
+                            <EbayTabPanel>
+                                <h3>Panel 3</h3>
+                            </EbayTabPanel>
+                        </EbayTabs>
+                    </>
+                );
+            };
+
+            render(<ControlledTabs />);
+
+            expect(screen.getByText("Panel 1")).toBeVisible();
+            expect(screen.getByText("Panel 2")).not.toBeVisible();
+
+            fireEvent.click(screen.getByText("Select Tab 2"));
+            expect(screen.getByText("Panel 1")).not.toBeVisible();
+            expect(screen.getByText("Panel 2")).toBeVisible();
+            expect(screen.getByText("Panel 3")).not.toBeVisible();
+
+            fireEvent.click(screen.getByText("Select Tab 3"));
+            expect(screen.getByText("Panel 2")).not.toBeVisible();
+            expect(screen.getByText("Panel 3")).toBeVisible();
         });
     });
 });
