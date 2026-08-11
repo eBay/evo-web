@@ -33,6 +33,13 @@ export default {
         "whether to use automatic or manual activation when navigating by keyboard",
       table: { defaultValue: { summary: "auto" } },
     },
+    size: {
+      type: "string",
+      options: ["medium", "large"],
+      control: "inline-radio",
+      description: "The size of the tab headings",
+      table: { defaultValue: { summary: "medium" } },
+    },
     tab: {
       description: "A tab in the tab bar.",
       "@": {

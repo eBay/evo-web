@@ -4,6 +4,7 @@ export interface Tab extends Marko.HTML.Div {
 export interface Input extends Marko.HTML.Div {
     tab?: Marko.AttrTag<Tab>;
     activation?: "auto" | "manual";
+    size?: "medium" | "large";
     index?: number;
     indexChange?: (index: number) => void;
 }
@@ -12,7 +13,8 @@ export interface Input extends Marko.HTML.Div {
     class: inputClass,
     index: inputIndex,
     indexChange,
-    activation,
+    activation = "auto",
+    size = "medium",
     tab: tabs,
     ...htmlInput
 }=input>
@@ -20,14 +22,13 @@ export interface Input extends Marko.HTML.Div {
 <let/index:=input.index>
 <id/tabId>
 <id/tabpanelId>
-<const/size=([...tabs || []].length)>
 
 <evo-roving-tabindex/rovingTabIndex
     autoSelect=activation === "auto"
     nodeList=$item
     selected:=index/>
 
-<div class=["tabs", inputClass] ...htmlInput>
+<div class=["tabs", size === "large" && "tabs--large", inputClass] ...htmlInput>
     <div/tabListEl role="tablist" class="tabs__items">
         <for|tab, i| of=tabs>
             <const/isSelected=index === i>
