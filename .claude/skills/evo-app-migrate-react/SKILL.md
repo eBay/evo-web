@@ -72,6 +72,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-confirm-dialog`: [evo-confirm-dialog.md](components/evo-confirm-dialog.md)
 - `ebay-cta-button`: [evo-cta-button.md](components/evo-cta-button.md)
 - `ebay-details`: [evo-details.md](components/evo-details.md)
+- `ebay-eek`: [evo-eek.md](components/evo-eek.md)
 - `ebay-filter-chip`: [evo-filter-chip.md](components/evo-filter-chip.md)
 - `ebay-icon-button`: [evo-icon-button.md](components/evo-icon-button.md)
 - `ebay-lightbox-dialog`: [evo-dialog.md](components/evo-dialog.md)
