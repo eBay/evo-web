@@ -78,6 +78,7 @@ When migrating a listed component, read the linked file completely and apply the
 | `ebay-icon-button`          | [evo-icon-button.md](components/evo-icon-button.md)                                     |
 | `ebay-lightbox-dialog`      | [evo-dialog.md](components/evo-dialog.md)                                               |
 | `ebay-progress-spinner`     | [evo-progress-spinner.md](components/evo-progress-spinner.md)                           |
+| `ebay-tabs`                 | [evo-tabs.md](components/evo-tabs.md)                                                   |
 | `ebay-textbox`              | [evo-input.md](components/evo-input.md) / [evo-textarea.md](components/evo-textarea.md) |
 
 ---

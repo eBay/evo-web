@@ -9,6 +9,20 @@ afterEach(cleanup);
 
 let component: Awaited<ReturnType<typeof render>>;
 
+it("automatically selects with arrow keys by default", async () => {
+  const rendered = await render(Default);
+  const tabs = rendered.getAllByRole("tab");
+
+  await fireEvent.keyDown(tabs[0], {
+    key: "ArrowRight",
+    keyCode: 39,
+  });
+
+  await waitFor(() => {
+    expect(tabs[1]).toHaveAttribute("aria-selected", "true");
+  });
+});
+
 function thenItHasMovedToTab(selectedIndex) {
   it("then it emits the select event with correct data", () => {
     const selectEvents = component.emitted("select");
