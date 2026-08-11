@@ -7,4 +7,6 @@ import { TooltipContentProps } from "../common/tooltip-utils/tooltip-content";
 
 const EbayInfotipContent: FC<TooltipContentProps> = ({ children }) => <>{children}</>;
 
+EbayInfotipContent.displayName = "EbayInfotipContent";
+
 export default EbayInfotipContent;

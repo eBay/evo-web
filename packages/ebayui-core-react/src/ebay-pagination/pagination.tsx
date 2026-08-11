@@ -217,4 +217,6 @@ const EbayPagination: FC<PaginationProps> = ({
     );
 };
 
+EbayPagination.displayName = "EbayPagination";
+
 export default EbayPagination;

@@ -43,4 +43,6 @@ const EbayAvatar: FC<EbayAvatarProps> = ({
     );
 };
 
+EbayAvatar.displayName = "EbayAvatar";
+
 export default EbayAvatar;

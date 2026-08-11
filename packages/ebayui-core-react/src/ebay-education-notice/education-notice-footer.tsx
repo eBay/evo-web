@@ -12,4 +12,6 @@ const EbayEducationNoticeFooter: FC<Props> = ({ className, children }) => (
     </NoticeFooter>
 );
 
+EbayEducationNoticeFooter.displayName = "EbayEducationNoticeFooter";
+
 export default EbayEducationNoticeFooter;

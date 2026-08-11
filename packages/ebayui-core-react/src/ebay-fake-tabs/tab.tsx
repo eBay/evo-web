@@ -14,4 +14,6 @@ const Tab: FC<TabProps> = ({ children, href, ariaCurrent, className, ...rest }) 
     </li>
 );
 
+Tab.displayName = "EbayFakeTab";
+
 export default Tab;

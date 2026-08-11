@@ -124,4 +124,6 @@ const EbaySectionNotice: FC<Props> = ({
     );
 };
 
+EbaySectionNotice.displayName = "EbaySectionNotice";
+
 export default EbaySectionNotice;

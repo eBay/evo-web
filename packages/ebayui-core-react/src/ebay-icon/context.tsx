@@ -19,3 +19,5 @@ export const EbayIconProvider = ({ children }: { children: ReactNode }) => {
         </IconContext.Provider>
     );
 };
+
+EbayIconProvider.displayName = "EbayIconProvider";

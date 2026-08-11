@@ -13,9 +13,13 @@ export const EbayFileInputHeader: FC<ChildrenProps> = ({ className, as: Componen
     <Component className={classNames("file-input__content-header", className)} {...props} />
 );
 
+EbayFileInputHeader.displayName = "EbayFileInputHeader";
+
 export const EbayFileInputSubheader: FC<ChildrenProps> = ({ className, as: Component = "span", ...props }) => (
     <Component className={classNames("file-input__content-subheader", className)} {...props} />
 );
+
+EbayFileInputSubheader.displayName = "EbayFileInputSubheader";
 
 export type EbayFileInputProps = Omit<ComponentProps<"input">, "onInput" | "type"> & {
     onInput?: FileInputHandler;
@@ -70,5 +74,7 @@ const EbayFileInput: React.FC<EbayFileInputProps> = ({ children, onInput, classN
         </div>
     );
 };
+
+EbayFileInput.displayName = "EbayFileInput";
 
 export default EbayFileInput;

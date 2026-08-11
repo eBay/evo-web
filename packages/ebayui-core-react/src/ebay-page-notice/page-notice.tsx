@@ -78,4 +78,6 @@ const EbayPageNotice: FC<Props> = ({
     );
 };
 
+EbayPageNotice.displayName = "EbayPageNotice";
+
 export default EbayPageNotice;

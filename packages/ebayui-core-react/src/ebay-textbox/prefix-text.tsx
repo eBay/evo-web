@@ -5,4 +5,6 @@ const EbayTextboxPrefixText: FC<EbayTextboxPrefixTextProps> = (props: EbayTextbo
     <span {...props} />
 );
 
+EbayTextboxPrefixText.displayName = "EbayTextboxPrefixText";
+
 export default EbayTextboxPrefixText;

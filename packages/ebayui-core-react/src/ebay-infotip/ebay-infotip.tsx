@@ -153,4 +153,6 @@ const EbayInfotip: FC<InfotipProps> = ({
     );
 };
 
+EbayInfotip.displayName = "EbayInfotip";
+
 export default EbayInfotip;

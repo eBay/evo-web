@@ -10,4 +10,6 @@ const EbaySkeletonAvatar = <T extends SupportedElements = "div">(props: EbaySkel
     return <Component className={classNames("skeleton__avatar", className)} {...rest} />;
 };
 
+EbaySkeletonAvatar.displayName = "EbaySkeletonAvatar";
+
 export default EbaySkeletonAvatar;

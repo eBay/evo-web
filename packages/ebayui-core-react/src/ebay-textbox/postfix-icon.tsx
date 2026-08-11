@@ -30,4 +30,6 @@ const EbayTextboxPostfixIcon: FC<EbayTextboxIconProps> = ({
     return children;
 };
 
+EbayTextboxPostfixIcon.displayName = "EbayTextboxPostfixIcon";
+
 export default EbayTextboxPostfixIcon;

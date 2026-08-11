@@ -5,4 +5,6 @@ const EbayTextboxPostfixText: FC<EbayTextboxPostfixTextProps> = (props: EbayText
     <span {...props} />
 );
 
+EbayTextboxPostfixText.displayName = "EbayTextboxPostfixText";
+
 export default EbayTextboxPostfixText;

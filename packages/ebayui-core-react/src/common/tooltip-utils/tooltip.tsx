@@ -40,4 +40,6 @@ const Tooltip: FC<TooltipProps> = ({ className, type, isExpanded, children, forw
     );
 };
 
+Tooltip.displayName = "Tooltip";
+
 export default withForwardRef(Tooltip);

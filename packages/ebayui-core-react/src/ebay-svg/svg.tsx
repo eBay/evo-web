@@ -21,4 +21,6 @@ const EbaySvg: FC<EbaySvgProps> = ({ icons }: EbaySvgProps) => {
     );
 };
 
+EbaySvg.displayName = "EbaySvg";
+
 export default EbaySvg;

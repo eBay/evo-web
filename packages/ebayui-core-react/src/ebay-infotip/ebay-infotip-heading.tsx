@@ -7,4 +7,6 @@ const EbayTooltipHeading: FC<Props> = ({ className, ...props }) => (
     <span {...props} className={classNames("infotip__heading", className)} />
 );
 
+EbayTooltipHeading.displayName = "EbayInfotipHeading";
+
 export default EbayTooltipHeading;

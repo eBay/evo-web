@@ -9,4 +9,6 @@ const Overflow: FC<Props> = ({ children, className, ...rest }) => (
     </div>
 );
 
+Overflow.displayName = "EbaySectionTitleOverflow";
+
 export default Overflow;

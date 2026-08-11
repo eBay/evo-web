@@ -73,4 +73,6 @@ const EbayAccordion: FC<EbayAccordionProps> = ({
     );
 };
 
+EbayAccordion.displayName = "EbayAccordion";
+
 export default EbayAccordion;

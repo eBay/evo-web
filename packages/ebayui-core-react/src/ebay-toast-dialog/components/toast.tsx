@@ -20,4 +20,6 @@ export const EbayToast: FC<EbayToastProps> = ({ className, onClose = () => {}, .
     />
 );
 
+EbayToast.displayName = "EbayToast";
+
 export default EbayToast;

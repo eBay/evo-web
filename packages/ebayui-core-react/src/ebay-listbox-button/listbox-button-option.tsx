@@ -49,4 +49,6 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
     );
 };
 
+ListboxOption.displayName = "EbayListboxButtonOption";
+
 export default ListboxOption;

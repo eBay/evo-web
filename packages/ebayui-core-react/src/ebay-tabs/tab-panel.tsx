@@ -20,4 +20,6 @@ const TabPanel: FC<TabPanelProps> = ({ children, index, parentId, selected, clas
     </div>
 );
 
+TabPanel.displayName = "EbayTabPanel";
+
 export default TabPanel;

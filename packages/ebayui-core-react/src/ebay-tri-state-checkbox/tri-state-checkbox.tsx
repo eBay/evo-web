@@ -107,4 +107,6 @@ const EbayTriStateCheckbox: FC<EbayTriStateCheckboxProps> = ({
     );
 };
 
+EbayTriStateCheckbox.displayName = "EbayTriStateCheckbox";
+
 export default EbayTriStateCheckbox;

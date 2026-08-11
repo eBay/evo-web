@@ -109,4 +109,6 @@ const EbayChipsCombobox: React.FC<EbayChipsComboboxProps> = ({
     );
 };
 
+EbayChipsCombobox.displayName = "EbayChipsCombobox";
+
 export default EbayChipsCombobox;

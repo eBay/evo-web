@@ -6,4 +6,6 @@ export const EbayItemTileSupertitle: FC<ComponentProps<"div">> = ({ children, ..
     </div>
 );
 
+EbayItemTileSupertitle.displayName = "EbayItemTileSupertitle";
+
 export default EbayItemTileSupertitle;

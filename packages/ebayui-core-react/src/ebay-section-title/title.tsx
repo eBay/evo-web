@@ -9,4 +9,6 @@ const Title: FC<Props> = ({ children, className, ...rest }) => (
     </h2>
 );
 
+Title.displayName = "EbaySectionTitleTitle";
+
 export default Title;

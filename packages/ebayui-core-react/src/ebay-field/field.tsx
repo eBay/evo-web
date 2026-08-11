@@ -13,4 +13,6 @@ const Field: FC<FieldProps> = ({ className, layout = "inline", children }) => {
     return <WrapperElement className={classNames("field", className)}>{children}</WrapperElement>;
 };
 
+Field.displayName = "EbayField";
+
 export default Field;

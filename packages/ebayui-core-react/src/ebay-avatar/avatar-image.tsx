@@ -19,4 +19,6 @@ const AvatarImage: FC<EbayAvatarImageProps> = ({ onLoad, ...props }) => {
     return <img {...props} alt="" onLoad={handleImageLoad} />;
 };
 
+AvatarImage.displayName = "EbayAvatarImage";
+
 export default AvatarImage;

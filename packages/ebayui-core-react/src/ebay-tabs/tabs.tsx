@@ -111,4 +111,6 @@ const Tabs: FC<TabsProps> = ({
     );
 };
 
+Tabs.displayName = "EbayTabs";
+
 export default Tabs;

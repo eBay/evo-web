@@ -23,4 +23,6 @@ const EbaySkeletonText = <T extends SupportedElements = "div">(props: EbaySkelet
     );
 };
 
+EbaySkeletonText.displayName = "EbaySkeletonText";
+
 export default EbaySkeletonText;

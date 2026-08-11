@@ -9,4 +9,6 @@ const Subtitle: FC<Props> = ({ children, className, ...rest }) => (
     </span>
 );
 
+Subtitle.displayName = "EbaySectionTitleSubtitle";
+
 export default Subtitle;

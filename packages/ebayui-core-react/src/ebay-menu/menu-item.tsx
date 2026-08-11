@@ -60,6 +60,8 @@ const EbayMenuItem: FC<MenuItemProps> = ({
     );
 };
 
+EbayMenuItem.displayName = "EbayMenuItem";
+
 function roleFromType(type: EbayMenuType) {
     const roles: Record<EbayMenuType, string> = {
         radio: "menuitemradio",

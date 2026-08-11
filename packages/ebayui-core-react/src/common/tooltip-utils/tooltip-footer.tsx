@@ -9,4 +9,6 @@ const TooltipFooter: FC<TooltipFooterProps> = ({ children, className, type = "to
     <div className={classNames(`${type}__footer`, className)}>{children}</div>
 );
 
+TooltipFooter.displayName = "TooltipFooter";
+
 export default TooltipFooter;

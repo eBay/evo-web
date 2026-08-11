@@ -12,4 +12,6 @@ const EbaySignal: FC<Props> = ({ status = "neutral", ...rest }) => {
     return <span {...rest} className={className} />;
 };
 
+EbaySignal.displayName = "EbaySignal";
+
 export default EbaySignal;

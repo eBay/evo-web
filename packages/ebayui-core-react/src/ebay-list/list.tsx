@@ -38,4 +38,6 @@ const EbayList: FC<EbayListProps> = ({ className, style, children, onButtonClick
     );
 };
 
+EbayList.displayName = "EbayList";
+
 export default EbayList;

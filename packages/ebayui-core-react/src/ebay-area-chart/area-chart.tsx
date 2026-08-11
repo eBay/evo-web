@@ -225,4 +225,6 @@ const EbayAreaChart: FC<EbayAreaChartProps> = ({
     );
 };
 
+EbayAreaChart.displayName = "EbayAreaChart";
+
 export default EbayAreaChart;

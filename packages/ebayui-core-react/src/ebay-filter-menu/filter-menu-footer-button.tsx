@@ -33,4 +33,6 @@ const EbayFilterMenuFooterButton: FC<EbayFilterMenuFooterButtonProps> = ({
     );
 };
 
+EbayFilterMenuFooterButton.displayName = "EbayFilterMenuFooterButton";
+
 export default EbayFilterMenuFooterButton;

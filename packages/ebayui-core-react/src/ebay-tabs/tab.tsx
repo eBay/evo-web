@@ -36,4 +36,6 @@ const Tab: FC<TabProps> = ({
     </div>
 );
 
+Tab.displayName = "EbayTab";
+
 export default Tab;

@@ -31,4 +31,6 @@ const Label: FC<Props> = ({ className, children, stacked = false, required = fal
     );
 };
 
+Label.displayName = "EbayLabel";
+
 export default Label;

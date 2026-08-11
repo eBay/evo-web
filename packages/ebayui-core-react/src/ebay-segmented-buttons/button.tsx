@@ -31,4 +31,6 @@ const SegmentedButton: FC<SegmentedButtonProps> = ({ selected, children, classNa
     );
 };
 
+SegmentedButton.displayName = "EbaySegmentedButton";
+
 export default SegmentedButton;

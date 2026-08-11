@@ -163,4 +163,6 @@ const EbayMenuButton: FC<Props> = ({
     );
 };
 
+EbayMenuButton.displayName = "EbayFakeMenuButton";
+
 export default EbayMenuButton;

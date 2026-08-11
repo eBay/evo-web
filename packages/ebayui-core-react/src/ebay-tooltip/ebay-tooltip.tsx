@@ -140,4 +140,6 @@ const EbayTooltip: FC<Props> = ({
     );
 };
 
+EbayTooltip.displayName = "EbayTooltip";
+
 export default EbayTooltip;

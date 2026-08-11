@@ -360,4 +360,6 @@ const EbayLineChart: FC<EbayLineChartProps> = ({
     );
 };
 
+EbayLineChart.displayName = "EbayLineChart";
+
 export default EbayLineChart;

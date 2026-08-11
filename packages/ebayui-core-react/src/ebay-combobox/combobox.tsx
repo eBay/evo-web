@@ -331,4 +331,6 @@ const EbayCombobox: FC<EbayComboboxProps> = ({
     );
 };
 
+EbayCombobox.displayName = "EbayCombobox";
+
 export default EbayCombobox;

@@ -18,4 +18,6 @@ const EbayButtonCell: FC<Props> = ({ type = "default", children, ...rest }) => (
     </span>
 );
 
+EbayButtonCell.displayName = "EbayButtonCell";
+
 export default EbayButtonCell;

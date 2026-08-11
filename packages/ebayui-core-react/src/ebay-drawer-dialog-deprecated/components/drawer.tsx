@@ -114,4 +114,6 @@ const EbayDrawerDialogDeprecated: FC<EbayDrawerProps<any>> = ({
     );
 };
 
+EbayDrawerDialogDeprecated.displayName = "EbayDrawerDialogDeprecated";
+
 export default EbayDrawerDialogDeprecated;

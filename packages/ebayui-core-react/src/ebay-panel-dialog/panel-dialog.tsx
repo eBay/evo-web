@@ -32,4 +32,6 @@ const EbayPanelDialog: FC<Props> = ({ open, animated, position = "start", onClos
     />
 );
 
+EbayPanelDialog.displayName = "EbayPanelDialog";
+
 export default EbayPanelDialog;

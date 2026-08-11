@@ -10,4 +10,6 @@ const EbayTourtipFooter: FC<TourtipFooterProps> = ({ index, children }) => (
     </>
 );
 
+EbayTourtipFooter.displayName = "EbayTourtipFooter";
+
 export default EbayTourtipFooter;

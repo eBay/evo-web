@@ -36,4 +36,6 @@ const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
     );
 };
 
+BreadcrumbItem.displayName = "EbayBreadcrumbItem";
+
 export default BreadcrumbItem;

@@ -235,4 +235,6 @@ const EbayCarousel: FC<CarouselProps> = ({
     );
 };
 
+EbayCarousel.displayName = "EbayCarousel";
+
 export default EbayCarousel;

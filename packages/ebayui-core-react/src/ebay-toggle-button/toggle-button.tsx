@@ -81,4 +81,6 @@ const ToggleButton: FC<ToggleButtonProps> = ({
     );
 };
 
+ToggleButton.displayName = "EbayToggleButton";
+
 export default ToggleButton;

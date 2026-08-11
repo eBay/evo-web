@@ -56,3 +56,5 @@ export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
         </div>
     );
 };
+
+EbayListboxOption.displayName = "EbayListboxOption";

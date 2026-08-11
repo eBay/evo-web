@@ -58,4 +58,6 @@ const Breadcrumbs: FC<BreadcrumbProps> = ({
     );
 };
 
+Breadcrumbs.displayName = "EbayBreadcrumbs";
+
 export default Breadcrumbs;

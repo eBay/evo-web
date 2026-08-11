@@ -16,4 +16,6 @@ const EbaySkeletonButton = <T extends SupportedElements = "div">(props: EbaySkel
         />
     );
 };
+
+EbaySkeletonButton.displayName = "EbaySkeletonButton";
 export default EbaySkeletonButton;

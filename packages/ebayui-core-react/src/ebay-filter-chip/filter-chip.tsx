@@ -119,4 +119,6 @@ const EbayFilterChip: FC<EbayFilterChipProps> = ({
     );
 };
 
+EbayFilterChip.displayName = "EbayFilterChip";
+
 export default EbayFilterChip;

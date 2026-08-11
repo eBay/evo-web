@@ -6,4 +6,6 @@ type EbayDialogFooterProps = {
 
 const EbayDialogFooter: FC<EbayDialogFooterProps> = ({ children }) => <>{children}</>;
 
+EbayDialogFooter.displayName = "EbayDialogFooter";
+
 export default EbayDialogFooter;

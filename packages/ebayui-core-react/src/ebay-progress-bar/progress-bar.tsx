@@ -14,4 +14,6 @@ const EbayProgressBar: FC<EbayProgressBarProps> = ({ value = 0, max = 100, fluid
     />
 );
 
+EbayProgressBar.displayName = "EbayProgressBar";
+
 export default EbayProgressBar;

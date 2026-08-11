@@ -63,4 +63,6 @@ const EbayFilePreviewGroup: FC<EbayFilePreviewCardGroupProps> = ({
     );
 };
 
+EbayFilePreviewGroup.displayName = "EbayFilePreviewCardGroup";
+
 export default EbayFilePreviewGroup;

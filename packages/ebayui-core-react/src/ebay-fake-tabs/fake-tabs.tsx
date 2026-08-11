@@ -39,4 +39,6 @@ const EbayFakeTabs: FC<FakeTabsProps> = ({
     );
 };
 
+EbayFakeTabs.displayName = "EbayFakeTabs";
+
 export default EbayFakeTabs;

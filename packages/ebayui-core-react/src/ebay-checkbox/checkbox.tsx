@@ -93,4 +93,6 @@ const EbayCheckbox: FC<EbayCheckboxProps> = ({
     );
 };
 
+EbayCheckbox.displayName = "EbayCheckbox";
+
 export default EbayCheckbox;

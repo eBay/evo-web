@@ -209,4 +209,6 @@ const EbayTextbox: FC<EbayTextboxProps> = ({
     );
 };
 
+EbayTextbox.displayName = "EbayTextbox";
+
 export default withForwardRef<EbayTextboxProps>(EbayTextbox);

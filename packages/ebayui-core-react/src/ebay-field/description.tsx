@@ -19,4 +19,6 @@ const Description: FC<DescriptionProps> = ({ type, position = "below", className
     );
 };
 
+Description.displayName = "EbayFieldDescription";
+
 export default Description;

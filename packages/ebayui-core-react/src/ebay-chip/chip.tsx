@@ -34,4 +34,6 @@ const EbayChip: FC<EbayChipProps> = ({ a11yDeleteButtonText, onDelete, disabled,
     );
 };
 
+EbayChip.displayName = "EbayChip";
+
 export default EbayChip;

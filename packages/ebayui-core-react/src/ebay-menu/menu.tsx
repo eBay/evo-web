@@ -196,4 +196,6 @@ const EbayMenu: FC<EbayMenuProps> = ({
     );
 };
 
+EbayMenu.displayName = "EbayMenu";
+
 export default withForwardRef(EbayMenu);

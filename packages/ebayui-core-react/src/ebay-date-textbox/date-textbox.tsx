@@ -305,4 +305,6 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     );
 };
 
+EbayDateTextbox.displayName = "EbayDateTextbox";
+
 export default EbayDateTextbox;

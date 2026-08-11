@@ -7,4 +7,6 @@ const EbayMenuItemSeparator: FC<Props> = ({ className, ...rest }) => (
     <hr {...rest} className={classNames(className, "fake-menu__separator")} />
 );
 
+EbayMenuItemSeparator.displayName = "EbayFakeMenuSeparator";
+
 export default EbayMenuItemSeparator;

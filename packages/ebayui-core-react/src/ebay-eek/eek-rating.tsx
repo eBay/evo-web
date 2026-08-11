@@ -31,4 +31,6 @@ const EbayEek: FC<EbayEekProps> = ({ min = "", max = "", rating, a11yText, class
     );
 };
 
+EbayEek.displayName = "EbayEek";
+
 export default EbayEek;

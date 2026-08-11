@@ -16,4 +16,6 @@ const EbayStarRating: FC<Props> = ({ value, a11yText, className, ...rest }) => (
     </div>
 );
 
+EbayStarRating.displayName = "EbayStarRating";
+
 export default EbayStarRating;

@@ -70,4 +70,6 @@ export const EbayTableHeader: FC<EbayTableHeaderProps> = ({
     );
 };
 
+EbayTableHeader.displayName = "EbayTableHeader";
+
 export default EbayTableHeader;

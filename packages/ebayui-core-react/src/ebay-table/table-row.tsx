@@ -64,4 +64,6 @@ const EbayTableRow: FC<EbayTableRowProps> = ({
     );
 };
 
+EbayTableRow.displayName = "EbayTableRow";
+
 export default EbayTableRow;

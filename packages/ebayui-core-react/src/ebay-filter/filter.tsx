@@ -55,4 +55,6 @@ const EbayFilter: FC<EbayFilterProps> = ({
     );
 };
 
+EbayFilter.displayName = "EbayFilter";
+
 export default EbayFilter;

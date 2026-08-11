@@ -350,4 +350,6 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
     );
 };
 
+ListboxButton.displayName = "EbayListboxButton";
+
 export default ListboxButton;

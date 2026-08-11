@@ -44,4 +44,6 @@ const EbayProgressSpinner: FC<SpanProps & EbayProgressSpinnerProps> = ({
         </span>
     );
 };
+
+EbayProgressSpinner.displayName = "EbayProgressSpinner";
 export default EbayProgressSpinner;

@@ -90,4 +90,6 @@ const EbayStarRatingSelect: FC<Props> = ({
     );
 };
 
+EbayStarRatingSelect.displayName = "EbayStarRatingSelect";
+
 export default EbayStarRatingSelect;

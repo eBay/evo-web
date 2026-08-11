@@ -9,4 +9,6 @@ const Info: FC<Props> = ({ className, children, ...rest }) => (
     </div>
 );
 
+Info.displayName = "EbaySectionTitleInfo";
+
 export default Info;

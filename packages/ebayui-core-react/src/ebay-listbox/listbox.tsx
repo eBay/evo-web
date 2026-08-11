@@ -225,3 +225,5 @@ export const EbayListbox: FC<EbayListboxProps> = ({
         </>
     );
 };
+
+EbayListbox.displayName = "EbayListbox";

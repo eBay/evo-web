@@ -8,4 +8,6 @@ type Props = {
 const EbayProgressTitle: FC<Props> = ({ as: TitleComponent = "h4", children }) =>
     createElement(TitleComponent, {}, children);
 
+EbayProgressTitle.displayName = "EbayProgressTitle";
+
 export default EbayProgressTitle;

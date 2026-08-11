@@ -28,4 +28,6 @@ const EbayInfotipHost: FC<InfotipHostProps> = ({ icon, className, children, forw
     );
 };
 
+EbayInfotipHost.displayName = "EbayInfotipHost";
+
 export default withForwardRef(EbayInfotipHost);

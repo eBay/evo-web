@@ -11,4 +11,6 @@ const EbaySkeleton: FC<EbaySkeletonProps> = ({ children, className, color, ...re
     </div>
 );
 
+EbaySkeleton.displayName = "EbaySkeleton";
+
 export default EbaySkeleton;

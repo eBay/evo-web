@@ -59,4 +59,6 @@ const EbayAlertDialog: FC<Props> = ({
     );
 };
 
+EbayAlertDialog.displayName = "EbayAlertDialog";
+
 export default EbayAlertDialog;

@@ -110,4 +110,6 @@ const EbayProgressBarExpressive: FC<EbayProgressBarExpressiveProps> = ({
     );
 };
 
+EbayProgressBarExpressive.displayName = "EbayProgressBarExpressive";
+
 export default EbayProgressBarExpressive;

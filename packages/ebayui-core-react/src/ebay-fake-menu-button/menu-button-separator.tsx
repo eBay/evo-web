@@ -7,4 +7,6 @@ const EbayMenuButtonSeparator: FC<EbayMenuButtonSeparatorProps> = ({ className, 
     <hr {...rest} className={classNames(className, "menu-button__separator")} />
 );
 
+EbayMenuButtonSeparator.displayName = "EbayFakeMenuButtonSeparator";
+
 export default EbayMenuButtonSeparator;

@@ -5,4 +5,6 @@ export type EbayItemTileActionProps = Omit<EbayIconButtonProps, "ref">;
 
 const EbayItemTileAction: FC<EbayItemTileActionProps> = () => null;
 
+EbayItemTileAction.displayName = "EbayItemTileAction";
+
 export default EbayItemTileAction;

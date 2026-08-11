@@ -39,4 +39,6 @@ const EbayCtaButton: FC<Props> = ({
     );
 };
 
+EbayCtaButton.displayName = "EbayCtaButton";
+
 export default withForwardRef(EbayCtaButton);

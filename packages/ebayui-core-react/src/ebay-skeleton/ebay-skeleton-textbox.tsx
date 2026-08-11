@@ -10,4 +10,6 @@ const EbaySkeletonTextbox = <T extends SupportedElements = "div">(props: EbaySke
     return <Component className={classNames("skeleton__textbox", className)} {...rest} />;
 };
 
+EbaySkeletonTextbox.displayName = "EbaySkeletonTextbox";
+
 export default EbaySkeletonTextbox;

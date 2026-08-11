@@ -43,6 +43,8 @@ const EbayProgressStepper: FC<ProgressStepperProps> = ({
     );
 };
 
+EbayProgressStepper.displayName = "EbayProgressStepper";
+
 function currentIndexByDefaultState(steps: ReactElement<EbayProgressStepProps>[], defaultState: StepState): number {
     const foundCurrentIndex = steps.findIndex((child) => child.props.current);
 

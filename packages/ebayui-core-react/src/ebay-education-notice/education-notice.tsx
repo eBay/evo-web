@@ -96,4 +96,6 @@ const EbayEducationNotice: FC<Props> = ({
     );
 };
 
+EbayEducationNotice.displayName = "EbayEducationNotice";
+
 export default EbayEducationNotice;

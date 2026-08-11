@@ -9,4 +9,6 @@ const EbaySkeletonImage = <T extends SupportedElements = "div">(props: EbaySkele
     return <Component className={classNames("skeleton__image", className)} {...rest} />;
 };
 
+EbaySkeletonImage.displayName = "EbaySkeletonImage";
+
 export default EbaySkeletonImage;
