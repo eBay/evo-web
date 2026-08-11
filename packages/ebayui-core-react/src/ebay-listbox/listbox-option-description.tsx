@@ -12,5 +12,3 @@ export const EbayListboxOptionDescription: FC<EbayListboxOptionDescriptionProps>
         {children}
     </div>
 );
-
-EbayListboxOptionDescription.displayName = "EbayListboxOptionDescription";

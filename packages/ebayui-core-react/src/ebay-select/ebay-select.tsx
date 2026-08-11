@@ -94,8 +94,6 @@ const EbaySelect: FC<EbaySelectProps> = ({
     );
 };
 
-EbaySelect.displayName = "EbaySelect";
-
 export default withForwardRef<EbaySelectProps>(EbaySelect);
 
 function optionGroups(data) {

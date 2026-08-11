@@ -22,6 +22,4 @@ const EbayDialogPreviousButton: FC<EbayDialogPreviousButtonProps> = ({
     />
 );
 
-EbayDialogPreviousButton.displayName = "EbayDialogPreviousButton";
-
 export default EbayDialogPreviousButton;

@@ -446,6 +446,4 @@ const EbayVideo: FC<EbayVideoProps> = ({
     );
 };
 
-EbayVideo.displayName = "EbayVideo";
-
 export default EbayVideo;

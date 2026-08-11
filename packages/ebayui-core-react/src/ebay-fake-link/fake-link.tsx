@@ -25,6 +25,4 @@ const EbayFakeLink: FC<EbayFakeLinkProps> = ({ variant, type, className, onKeyDo
     );
 };
 
-EbayFakeLink.displayName = "EbayFakeLink";
-
 export default EbayFakeLink;

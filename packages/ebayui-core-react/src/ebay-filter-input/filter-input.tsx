@@ -106,6 +106,4 @@ const EbayFilterInput: FC<EbayFilterInputProps> = ({
     );
 };
 
-EbayFilterInput.displayName = "EbayFilterInput";
-
 export default EbayFilterInput;

@@ -445,6 +445,4 @@ const EbayCalendar: FC<EbayCalendarProps> = ({
     );
 };
 
-EbayCalendar.displayName = "EbayCalendar";
-
 export default EbayCalendar;

@@ -21,6 +21,4 @@ const EbayComboboxOption: FC<EbayComboboxOptionProps> = ({ text, className, sele
     </div>
 );
 
-EbayComboboxOption.displayName = "EbayComboboxOption";
-
 export default EbayComboboxOption;

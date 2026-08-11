@@ -8,11 +8,9 @@ type FieldProps = {
     children?: ReactNode;
 };
 
-const Field: FC<FieldProps> = ({ className, layout = "inline", children }) => {
+const EbayField: FC<FieldProps> = ({ className, layout = "inline", children }) => {
     const WrapperElement = layout === "block" ? "div" : "span";
     return <WrapperElement className={classNames("field", className)}>{children}</WrapperElement>;
 };
 
-Field.displayName = "EbayField";
-
-export default Field;
+export default EbayField;

@@ -52,6 +52,4 @@ const EbaySplitButton: FC<Props> = ({
     );
 };
 
-EbaySplitButton.displayName = "EbaySplitButton";
-
 export default EbaySplitButton;

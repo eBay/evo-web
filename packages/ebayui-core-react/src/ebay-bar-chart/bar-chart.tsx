@@ -384,6 +384,4 @@ const EbayBarChart: FC<EbayBarChartProps> = ({
     );
 };
 
-EbayBarChart.displayName = "EbayBarChart";
-
 export default EbayBarChart;

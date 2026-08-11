@@ -3,7 +3,7 @@ import cx from "classnames";
 import { EbayIcon } from "../ebay-icon";
 import { ToggleButtonProps } from "./types";
 
-const ToggleButton: FC<ToggleButtonProps> = ({
+const EbayToggleButton: FC<ToggleButtonProps> = ({
     pressed = false,
     children,
     className,
@@ -81,6 +81,4 @@ const ToggleButton: FC<ToggleButtonProps> = ({
     );
 };
 
-ToggleButton.displayName = "EbayToggleButton";
-
-export default ToggleButton;
+export default EbayToggleButton;

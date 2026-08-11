@@ -6,6 +6,4 @@ type EbayDialogCloseButtonProps = {
 
 const EbayDialogCloseButton: FC<EbayDialogCloseButtonProps> = ({ children }) => <>{children}</>;
 
-EbayDialogCloseButton.displayName = "EbayDialogCloseButton";
-
 export default EbayDialogCloseButton;

@@ -67,6 +67,4 @@ const EbayMenuItem: FC<EbayFakeMenuItemProps> = ({
     );
 };
 
-EbayMenuItem.displayName = "EbayFakeMenuItem";
-
 export default EbayMenuItem;

@@ -57,6 +57,4 @@ export const DialogBaseWithState = ({
     return animated || open ? renderOverLay() : null;
 };
 
-DialogBaseWithState.displayName = "DialogBaseWithState";
-
 export default DialogBaseWithState;

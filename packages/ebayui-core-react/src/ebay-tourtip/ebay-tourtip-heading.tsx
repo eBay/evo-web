@@ -15,6 +15,4 @@ const EbayTourtipHeading: FC<Props> = ({ as, children, className, ...props }) =>
     );
 };
 
-EbayTourtipHeading.displayName = "EbayTourtipHeading";
-
 export default EbayTourtipHeading;

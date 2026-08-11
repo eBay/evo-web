@@ -86,6 +86,4 @@ const EbayToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
     );
 };
 
-EbayToggleButtonGroup.displayName = "EbayToggleButtonGroup";
-
 export default EbayToggleButtonGroup;

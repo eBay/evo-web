@@ -52,6 +52,4 @@ const EbayCCD: FC<CCDProps> = ({
     );
 };
 
-EbayCCD.displayName = "EbayCCD";
-
 export default EbayCCD;

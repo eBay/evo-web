@@ -13,7 +13,7 @@ export type EbayListboxButtonOptionProps = ComponentProps<"input"> & {
     a11ySelectedText?: string;
 };
 
-const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
+const EbayListboxButtonOption: FC<EbayListboxButtonOptionProps> = ({
     value,
     children,
     selected,
@@ -49,6 +49,4 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
     );
 };
 
-ListboxOption.displayName = "EbayListboxButtonOption";
-
-export default ListboxOption;
+export default EbayListboxButtonOption;

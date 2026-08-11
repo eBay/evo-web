@@ -130,6 +130,4 @@ const EbayFilePreviewCard: FC<EbayFilePreviewCardProps> = ({
     );
 };
 
-EbayFilePreviewCard.displayName = "EbayFilePreviewCard";
-
 export default EbayFilePreviewCard;

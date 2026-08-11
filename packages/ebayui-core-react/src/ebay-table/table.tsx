@@ -181,6 +181,4 @@ const EbayTable: FC<EbayTableProps> = ({
         </div>
     );
 };
-
-EbayTable.displayName = "EbayTable";
 export default EbayTable;

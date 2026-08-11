@@ -173,6 +173,4 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
     );
 };
 
-EbayNumberInput.displayName = "EbayNumberInput";
-
 export default EbayNumberInput;

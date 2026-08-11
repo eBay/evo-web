@@ -25,6 +25,4 @@ const EbayFullscreenDialogDeprecated: FC<Props> = ({ open, onClose = () => {}, c
     />
 );
 
-EbayFullscreenDialogDeprecated.displayName = "EbayFullscreenDialogDeprecated";
-
 export default EbayFullscreenDialogDeprecated;

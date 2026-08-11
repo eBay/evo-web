@@ -5,7 +5,7 @@ import { BreadcrumbItemProps } from "./breadcrumb-item";
 
 type BreadcrumbProps = Omit<ComponentProps<"div">, "onSelect"> & {
     /**
-     * Breadcrumbs expects `<EbayBreadcrumbItem/>` as children.
+     * EbayBreadcrumbs expects `<EbayBreadcrumbItem/>` as children.
      * Other elements will not work.
      *
      * @see Docs https://github.com/eBay/ebayui-core-react/tree/main/src/components/ebay-breadcrumb#usage
@@ -17,7 +17,7 @@ type BreadcrumbProps = Omit<ComponentProps<"div">, "onSelect"> & {
     onSelect?: EbayEventHandler<HTMLElement>;
 };
 
-const Breadcrumbs: FC<BreadcrumbProps> = ({
+const EbayBreadcrumbs: FC<BreadcrumbProps> = ({
     a11yHeadingText = "Page navigation",
     a11yHeadingTag = "h2",
     id = "ebay-breadcrumb",
@@ -58,6 +58,4 @@ const Breadcrumbs: FC<BreadcrumbProps> = ({
     );
 };
 
-Breadcrumbs.displayName = "EbayBreadcrumbs";
-
-export default Breadcrumbs;
+export default EbayBreadcrumbs;

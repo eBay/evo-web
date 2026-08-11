@@ -6,6 +6,4 @@ const EbayItemTileTitle: FC<ComponentProps<"a">> = ({ href, children, ...rest })
     </a>
 );
 
-EbayItemTileTitle.displayName = "EbayItemTileTitle";
-
 export default EbayItemTileTitle;

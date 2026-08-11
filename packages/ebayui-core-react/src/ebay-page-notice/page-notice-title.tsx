@@ -12,6 +12,4 @@ const EbayPageNoticeTitle: FC<Props> = ({ className, as, children, ...rest }) =>
     </NoticeTitle>
 );
 
-EbayPageNoticeTitle.displayName = "EbayPageNoticeTitle";
-
 export default EbayPageNoticeTitle;

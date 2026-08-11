@@ -29,6 +29,4 @@ const EbayTableCell: FC<EbayTableCellProps> = ({
     );
 };
 
-EbayTableCell.displayName = "EbayTableCell";
-
 export default EbayTableCell;

@@ -8,6 +8,4 @@ const EbayNoticeTitle = ({ children }: EbayNoticeTitleProps): ReactNode => (
     <span className="page-notice__title">{children}</span>
 );
 
-EbayNoticeTitle.displayName = "EbayNoticeTitle";
-
 export default EbayNoticeTitle;

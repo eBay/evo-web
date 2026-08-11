@@ -40,6 +40,4 @@ const EbayListItem: FC<EbayListItemProps> = ({
     );
 };
 
-EbayListItem.displayName = "EbayListItem";
-
 export default EbayListItem;

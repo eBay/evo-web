@@ -304,6 +304,4 @@ const EbayFilterMenu: FC<EbayFilterMenuProps> = ({
     );
 };
 
-EbayFilterMenu.displayName = "EbayFilterMenu";
-
 export default withForwardRef(EbayFilterMenu);

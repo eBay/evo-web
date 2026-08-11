@@ -172,8 +172,6 @@ const EbayIcon: FC<EbayIconProps> = ({
     );
 };
 
-EbayIcon.displayName = "EbayIcon";
-
 // This function extract the size of the icon name.
 // The icon can have these name structures:
 // - icon-name-24

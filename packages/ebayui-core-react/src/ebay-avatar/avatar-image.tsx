@@ -5,7 +5,7 @@ import { invariant } from "../utils/invariant";
 
 export type EbayAvatarImageProps = Omit<ComponentProps<"img">, "alt">;
 
-const AvatarImage: FC<EbayAvatarImageProps> = ({ onLoad, ...props }) => {
+const EbayAvatarImage: FC<EbayAvatarImageProps> = ({ onLoad, ...props }) => {
     const context = useContext(AvatarContext);
     invariant(context, "EbayAvatarImage needs to be used with EbayAvatar component");
 
@@ -19,6 +19,4 @@ const AvatarImage: FC<EbayAvatarImageProps> = ({ onLoad, ...props }) => {
     return <img {...props} alt="" onLoad={handleImageLoad} />;
 };
 
-AvatarImage.displayName = "EbayAvatarImage";
-
-export default AvatarImage;
+export default EbayAvatarImage;

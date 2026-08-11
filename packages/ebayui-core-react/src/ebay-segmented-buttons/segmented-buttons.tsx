@@ -36,6 +36,4 @@ const EbaySegmentedButtons: FC<SegmentedButtonsProps> = ({
     );
 };
 
-EbaySegmentedButtons.displayName = "EbaySegmentedButtons";
-
 export default EbaySegmentedButtons;

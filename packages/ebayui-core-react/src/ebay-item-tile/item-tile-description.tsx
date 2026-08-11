@@ -8,6 +8,4 @@ const EbayItemTileDescription: FC<EbayItemTileDescriptionProps> = ({ as: Descrip
     <DescriptionEl {...rest}>{children}</DescriptionEl>
 );
 
-EbayItemTileDescription.displayName = "EbayItemTileDescription";
-
 export default EbayItemTileDescription;

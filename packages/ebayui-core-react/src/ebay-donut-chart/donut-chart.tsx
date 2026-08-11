@@ -130,6 +130,4 @@ const EbayDonutChart: FC<EbayDonutChartProps> = ({
     );
 };
 
-EbayDonutChart.displayName = "EbayDonutChart";
-
 export default EbayDonutChart;

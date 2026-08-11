@@ -75,6 +75,4 @@ const EbayIconButton: FC<EbayIconButtonProps> = ({
     );
 };
 
-EbayIconButton.displayName = "EbayIconButton";
-
 export default withForwardRef(EbayIconButton);

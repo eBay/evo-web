@@ -12,6 +12,4 @@ const EbayTextboxPrefixIcon: FC<EbayTextboxIconProps> = ({ children, name, icon,
     return icon || children;
 };
 
-EbayTextboxPrefixIcon.displayName = "EbayTextboxPrefixIcon";
-
 export default EbayTextboxPrefixIcon;

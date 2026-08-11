@@ -8,6 +8,4 @@ export const EbayListItemLeading: React.FC<EbayListItemLeadingProps> = ({ childr
     <div className="list__leading">{children}</div>
 );
 
-EbayListItemLeading.displayName = "EbayListItemLeading";
-
 export default EbayListItemLeading;

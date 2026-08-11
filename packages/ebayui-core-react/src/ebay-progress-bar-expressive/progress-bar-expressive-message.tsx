@@ -24,6 +24,4 @@ const EbayProgressBarExpressiveMessage: FC<EbayProgressBarExpressiveMessageProps
     />
 );
 
-EbayProgressBarExpressiveMessage.displayName = "EbayProgressBarExpressiveMessage";
-
 export default EbayProgressBarExpressiveMessage;

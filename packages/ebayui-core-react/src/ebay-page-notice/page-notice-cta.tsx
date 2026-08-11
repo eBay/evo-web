@@ -12,6 +12,4 @@ const EbayPageNoticeCTA: FC<Props> = ({ className, children }) => (
     </NoticeCTA>
 );
 
-EbayPageNoticeCTA.displayName = "EbayPageNoticeCTA";
-
 export default EbayPageNoticeCTA;

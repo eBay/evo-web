@@ -11,6 +11,4 @@ const EbayFlagsSvg = () => {
     );
 };
 
-EbayFlagsSvg.displayName = "EbayFlagsSvg";
-
 export default EbayFlagsSvg;

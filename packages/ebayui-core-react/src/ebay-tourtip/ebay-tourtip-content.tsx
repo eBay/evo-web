@@ -8,6 +8,4 @@ import { TooltipContentProps } from "../common/tooltip-utils/tooltip-content";
 
 const EbayTourtipContent: FC<TooltipContentProps> = () => null;
 
-EbayTourtipContent.displayName = "EbayTourtipContent";
-
 export default EbayTourtipContent;

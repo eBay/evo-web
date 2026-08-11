@@ -8,6 +8,4 @@ export type EbayFlagIconProps = Omit<ComponentProps<typeof EbayIcon>, "name"> & 
 
 const EbayFlagIcon: FC<EbayFlagIconProps> = (props) => <EbayIcon __type="flag" {...props} />;
 
-EbayFlagIcon.displayName = "EbayFlagIcon";
-
 export default EbayFlagIcon;

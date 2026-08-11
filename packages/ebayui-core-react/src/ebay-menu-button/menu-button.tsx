@@ -174,8 +174,6 @@ const EbayMenuButton: FC<MenuButtonProps> = ({
     );
 };
 
-EbayMenuButton.displayName = "EbayMenuButton";
-
 function labelWithPrefixAndIcon({ text, prefixId, prefixLabel, menuButtonLabel, icon }: LabelProps) {
     const textLabelElement = text.length ? <span>{text}</span> : null;
     const prefixLabelElement = !prefixId && prefixLabel && (

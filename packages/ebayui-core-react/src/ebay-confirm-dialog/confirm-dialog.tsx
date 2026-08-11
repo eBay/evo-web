@@ -77,6 +77,4 @@ const EbayConfirmDialog: FC<Props> = ({
     );
 };
 
-EbayConfirmDialog.displayName = "EbayConfirmDialog";
-
 export default EbayConfirmDialog;

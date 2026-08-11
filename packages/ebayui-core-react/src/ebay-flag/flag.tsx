@@ -10,6 +10,4 @@ const EbayFlagIcon: FC<EbayFlagProps> = ({ flag, className, ...props }) => (
     <span className={classNames("fflag", className, `fflag--${flag.toLowerCase()}`)} {...props} />
 );
 
-EbayFlagIcon.displayName = "EbayFlag";
-
 export default EbayFlagIcon;

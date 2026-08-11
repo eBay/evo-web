@@ -33,6 +33,4 @@ const EbayItemTileGroup: FC<EbayItemTileGroupProps> = ({ layout, className, onAc
     );
 };
 
-EbayItemTileGroup.displayName = "EbayItemTileGroup";
-
 export default EbayItemTileGroup;

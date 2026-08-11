@@ -111,6 +111,4 @@ const EbayTourtip: FC<TourtipProps> = ({
         </Tooltip>
     );
 };
-
-EbayTourtip.displayName = "EbayTourtip";
 export default EbayTourtip;

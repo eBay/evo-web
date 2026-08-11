@@ -53,6 +53,4 @@ const EbaySwitch: FC<Props> = ({
     );
 };
 
-EbaySwitch.displayName = "EbaySwitch";
-
 export default EbaySwitch;

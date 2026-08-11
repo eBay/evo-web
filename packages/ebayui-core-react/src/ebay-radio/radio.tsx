@@ -87,6 +87,4 @@ const EbayRadio: FC<InputProps & EbayRadioProps> = ({
     );
 };
 
-EbayRadio.displayName = "EbayRadio";
-
 export default EbayRadio;

@@ -7,6 +7,4 @@ const EbayComboboxButton: FC<EbayComboboxButtonProps> = ({ className, ...rest })
     <button className={classNames("icon-btn", "icon-btn--transparent", className)} {...rest} />
 );
 
-EbayComboboxButton.displayName = "EbayComboboxButton";
-
 export default EbayComboboxButton;

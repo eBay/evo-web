@@ -131,6 +131,4 @@ const EbayPaginationItem: FC<PaginationItemProps> = ({
     }
 };
 
-EbayPaginationItem.displayName = "EbayPaginationItem";
-
 export default withForwardRef(EbayPaginationItem);

@@ -8,7 +8,7 @@ type DescriptionProps = ComponentProps<"div"> &
         position?: FieldDescriptionPosition;
     };
 
-const Description: FC<DescriptionProps> = ({ type, position = "below", className, children, ...rest }) => {
+const EbayFieldDescription: FC<DescriptionProps> = ({ type, position = "below", className, children, ...rest }) => {
     const wrapperClassName = classNames(className, "field__description", { [`field__description--${type}`]: type });
     const WrapperElement = position === "below" ? `div` : `span`;
 
@@ -19,6 +19,4 @@ const Description: FC<DescriptionProps> = ({ type, position = "below", className
     );
 };
 
-Description.displayName = "EbayFieldDescription";
-
-export default Description;
+export default EbayFieldDescription;

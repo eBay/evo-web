@@ -65,6 +65,4 @@ const EbayCarouselItem: FC<CarouselItemProps> = ({ slideWidth, offset, forwarded
     );
 };
 
-EbayCarouselItem.displayName = "EbayCarouselItem";
-
 export default withForwardRef(EbayCarouselItem);

@@ -40,6 +40,4 @@ const EbayBadge: FC<EbayBadgeProps> = ({ number, type = "img", className, ...res
     return null;
 };
 
-EbayBadge.displayName = "EbayBadge";
-
 export default EbayBadge;

@@ -6,6 +6,4 @@ export type EbayImagePlaceholderProps = Omit<ComponentProps<typeof EbayIcon>, "n
 
 const EbayImagePlaceholder: FC<EbayImagePlaceholderProps> = (props) => <EbayIconImagePlaceholder {...props} />;
 
-EbayImagePlaceholder.displayName = "EbayImagePlaceholder";
-
 export default EbayImagePlaceholder;

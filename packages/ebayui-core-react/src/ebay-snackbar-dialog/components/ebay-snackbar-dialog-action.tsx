@@ -6,5 +6,3 @@ export const EbaySnackbarDialogAction = ({ className, children, ...rest }: Compo
         {children}
     </button>
 );
-
-EbaySnackbarDialogAction.displayName = "EbaySnackbarDialogAction";

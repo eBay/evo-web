@@ -9,6 +9,4 @@ const EbayMenuItemSeparator: FC<Props> = ({ className, baseClass = "menu", ...re
     <hr {...rest} className={classNames(className, `${baseClass}__separator`)} />
 );
 
-EbayMenuItemSeparator.displayName = "EbayMenuSeparator";
-
 export default EbayMenuItemSeparator;

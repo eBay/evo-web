@@ -63,6 +63,4 @@ const EbayItemTile: FC<EbayItemTileProps> = ({
     );
 };
 
-EbayItemTile.displayName = "EbayItemTile";
-
 export default EbayItemTile;

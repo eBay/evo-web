@@ -128,8 +128,6 @@ const EbayButton: FC<Props> = ({
     );
 };
 
-EbayButton.displayName = "EbayButton";
-
 type bodyContentOptions = {
     isLoading: boolean;
     isExpand: boolean;

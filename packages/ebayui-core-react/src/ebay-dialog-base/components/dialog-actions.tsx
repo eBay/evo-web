@@ -6,6 +6,4 @@ type EbayDialogActionsProps = {
 
 const EbayDialogActions: FC<EbayDialogActionsProps> = ({ children }) => <>{children}</>;
 
-EbayDialogActions.displayName = "EbayDialogActions";
-
 export default EbayDialogActions;

@@ -32,6 +32,4 @@ const EbaySectionTitle: FC<EbaySectionTitleProps> = ({ href, ctaText, className,
     );
 };
 
-EbaySectionTitle.displayName = "EbaySectionTitle";
-
 export default EbaySectionTitle;

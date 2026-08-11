@@ -51,6 +51,4 @@ const EbayFakeMenu: FC<EbayFakeMenuProps> = ({
     );
 };
 
-EbayFakeMenu.displayName = "EbayFakeMenu";
-
 export default withForwardRef(EbayFakeMenu);

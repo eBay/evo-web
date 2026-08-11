@@ -53,6 +53,4 @@ const EbayDetails: FC<EbayDetailsProps> = ({
     );
 };
 
-EbayDetails.displayName = "EbayDetails";
-
 export default EbayDetails;

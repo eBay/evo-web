@@ -45,6 +45,4 @@ const EbayProgressStep: FC<EbayProgressStepProps> = ({ current, state = "complet
     );
 };
 
-EbayProgressStep.displayName = "EbayProgressStep";
-
 export default EbayProgressStep;

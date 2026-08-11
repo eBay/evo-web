@@ -5,6 +5,4 @@ export type EbayFilePreviewCardActionProps = Omit<EbayIconButtonProps, "ref">;
 
 const EbayFilePreviewCardAction: FC<EbayFilePreviewCardActionProps> = () => null;
 
-EbayFilePreviewCardAction.displayName = "EbayFilePreviewCardAction";
-
 export default EbayFilePreviewCardAction;

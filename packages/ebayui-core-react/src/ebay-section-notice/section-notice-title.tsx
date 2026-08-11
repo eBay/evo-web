@@ -12,6 +12,4 @@ const EbaySectionNoticeTitle: FC<Props> = ({ className, as, children, ...rest })
     </NoticeTitle>
 );
 
-EbaySectionNoticeTitle.displayName = "EbaySectionNoticeTitle";
-
 export default EbaySectionNoticeTitle;

@@ -269,6 +269,4 @@ const EbayPhoneInput: FC<EbayPhoneInputProps> = ({
     );
 };
 
-EbayPhoneInput.displayName = "EbayPhoneInput";
-
 export default EbayPhoneInput;

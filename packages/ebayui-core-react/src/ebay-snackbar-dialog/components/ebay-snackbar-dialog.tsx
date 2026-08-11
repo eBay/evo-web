@@ -133,5 +133,3 @@ export const EbaySnackbarDialog = ({
         </DialogBaseWithState>
     );
 };
-
-EbaySnackbarDialog.displayName = "EbaySnackbarDialog";

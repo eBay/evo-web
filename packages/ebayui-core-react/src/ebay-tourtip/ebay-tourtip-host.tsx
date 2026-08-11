@@ -8,6 +8,4 @@ import { TooltipHostProps } from "../common/tooltip-utils/tooltip-host";
 
 const EbayTourtipHost: FC<TooltipHostProps> = () => null;
 
-EbayTourtipHost.displayName = "EbayTourtipHost";
-
 export default EbayTourtipHost;

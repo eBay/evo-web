@@ -61,6 +61,4 @@ const EbayCharacterCount: FC<EbayCharacterCountProps> = ({
     );
 };
 
-EbayCharacterCount.displayName = "EbayCharacterCount";
-
 export default EbayCharacterCount;

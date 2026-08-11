@@ -15,6 +15,4 @@ const EbayChartLegend: FC<EbayChartLegendProps> = ({ items, className, ...rest }
     </div>
 );
 
-EbayChartLegend.displayName = "EbayChartLegend";
-
 export default EbayChartLegend;

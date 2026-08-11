@@ -6,6 +6,4 @@ type OptionProps = ComponentProps<"option"> & {
 
 const EbaySelectOption: FC<OptionProps> = ({ children, ...rest }) => <option {...rest}>{children}</option>;
 
-EbaySelectOption.displayName = "EbaySelectOption";
-
 export default EbaySelectOption;

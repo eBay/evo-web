@@ -78,6 +78,4 @@ const EbayFilterMenuItem: FC<EbayFilterMenuItemProps> = ({
     );
 };
 
-EbayFilterMenuItem.displayName = "EbayFilterMenuItem";
-
 export default EbayFilterMenuItem;

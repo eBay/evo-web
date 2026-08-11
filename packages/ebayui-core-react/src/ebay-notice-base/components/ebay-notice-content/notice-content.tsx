@@ -9,6 +9,4 @@ type Props = Omit<NoticeContentProps, "type">;
 
 const EbayNoticeContent: FC<Props> = () => null;
 
-EbayNoticeContent.displayName = "EbayNoticeContent";
-
 export default EbayNoticeContent;

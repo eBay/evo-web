@@ -3,12 +3,10 @@ import classNames from "classnames";
 
 type Props = ComponentProps<"div">;
 
-const Info: FC<Props> = ({ className, children, ...rest }) => (
+const EbaySectionTitleInfo: FC<Props> = ({ className, children, ...rest }) => (
     <div {...rest} className={classNames(className, "section-title__info")}>
         {children}
     </div>
 );
 
-Info.displayName = "EbaySectionTitleInfo";
-
-export default Info;
+export default EbaySectionTitleInfo;

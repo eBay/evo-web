@@ -125,6 +125,4 @@ const EbayFilterMenuButton: React.FC<EbayFilterMenuButtonProps> = ({
     );
 };
 
-EbayFilterMenuButton.displayName = "EbayFilterMenuButton";
-
 export default EbayFilterMenuButton;

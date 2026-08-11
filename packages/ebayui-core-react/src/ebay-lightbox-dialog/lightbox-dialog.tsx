@@ -56,6 +56,4 @@ const EbayLightboxDialog: FC<Props> = ({
         />
     );
 };
-
-EbayLightboxDialog.displayName = "EbayLightboxDialog";
 export default EbayLightboxDialog;

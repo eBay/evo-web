@@ -65,6 +65,4 @@ const EbayInlineNotice: FC<Props> = ({
     );
 };
 
-EbayInlineNotice.displayName = "EbayInlineNotice";
-
 export default EbayInlineNotice;
