@@ -41,7 +41,7 @@ export type EbayListboxButtonProps = Omit<ComponentProps<"button">, "onChange"> 
     onExpand?: () => void;
 };
 
-const ListboxButton: FC<EbayListboxButtonProps> = ({
+const EbayListboxButton: FC<EbayListboxButtonProps> = ({
     children,
     name,
     value,
@@ -350,4 +350,4 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
     );
 };
 
-export default ListboxButton;
+export default EbayListboxButton;

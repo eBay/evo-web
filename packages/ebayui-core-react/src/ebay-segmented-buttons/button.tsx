@@ -4,7 +4,7 @@ import { excludeComponent, findComponent } from "../common/component-utils";
 import { EbayIcon } from "../ebay-icon";
 import { SegmentedButtonProps } from "./types";
 
-const SegmentedButton: FC<SegmentedButtonProps> = ({ selected, children, className, ...rest }) => {
+const EbaySegmentedButton: FC<SegmentedButtonProps> = ({ selected, children, className, ...rest }) => {
     const icon = findComponent(children, EbayIcon);
 
     const iconWithText = () => {
@@ -31,4 +31,4 @@ const SegmentedButton: FC<SegmentedButtonProps> = ({ selected, children, classNa
     );
 };
 
-export default SegmentedButton;
+export default EbaySegmentedButton;

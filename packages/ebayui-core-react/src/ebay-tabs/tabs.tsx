@@ -7,7 +7,7 @@ import Tab from "./tab";
 import TabPanel from "./tab-panel";
 import type { TabsProps } from "./types";
 
-const Tabs: FC<TabsProps> = ({
+const EbayTabs: FC<TabsProps> = ({
     id,
     className,
     selectedIndex: index = 0,
@@ -111,4 +111,4 @@ const Tabs: FC<TabsProps> = ({
     );
 };
 
-export default Tabs;
+export default EbayTabs;

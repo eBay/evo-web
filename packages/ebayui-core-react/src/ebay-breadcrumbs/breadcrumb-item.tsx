@@ -13,7 +13,7 @@ export type BreadcrumbItemProps = ItemAttributes & {
     navsrc?: string;
 };
 
-const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
+const EbayBreadcrumbItem: FC<BreadcrumbItemProps> = ({
     tag: Item = "button",
     isLastItem = false,
     href,
@@ -36,4 +36,4 @@ const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
     );
 };
 
-export default BreadcrumbItem;
+export default EbayBreadcrumbItem;

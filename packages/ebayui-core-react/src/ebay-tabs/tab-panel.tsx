@@ -7,7 +7,7 @@ type TabPanelProps = ComponentProps<"div"> & {
     selected?: boolean;
 };
 
-const TabPanel: FC<TabPanelProps> = ({ children, index, parentId, selected, className, ...rest }) => (
+const EbayTabPanel: FC<TabPanelProps> = ({ children, index, parentId, selected, className, ...rest }) => (
     <div
         {...rest}
         aria-labelledby={`default-tab-${index}`}
@@ -20,4 +20,4 @@ const TabPanel: FC<TabPanelProps> = ({ children, index, parentId, selected, clas
     </div>
 );
 
-export default TabPanel;
+export default EbayTabPanel;
