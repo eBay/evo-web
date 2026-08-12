@@ -17,10 +17,10 @@ const {
 describe("ebay-page-notice rendering", () => {
     it("renders simple usage story correctly", () => {
         render(<SimpleUsage />);
-
-        const pageNotice = screen.getByRole("region");
+        const pageNotice = screen.getByRole("region", { name: "Default" });
         expect(pageNotice).toHaveClass("page-notice");
-        expect(pageNotice).toHaveAttribute("aria-labelledby", "general-status");
+        expect(pageNotice).toHaveAttribute("aria-label", "Default");
+        expect(pageNotice).not.toHaveAttribute("aria-labelledby");
         expect(pageNotice.querySelector(".page-notice__main")).toHaveTextContent("text message");
     });
 
