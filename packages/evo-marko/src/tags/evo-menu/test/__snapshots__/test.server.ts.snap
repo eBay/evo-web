@@ -13,7 +13,6 @@ exports[`menu > passes through additional html attributes 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -95,7 +94,6 @@ exports[`menu > passes through additional html attributes 2`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -164,6 +162,86 @@ exports[`menu > passes through additional html attributes 2`] = `
 </span>"
 `;
 
+exports[`menu > renders as radio with no selection when selected=null 1`] = `
+"<span
+  class="menu"
+>
+  <div
+    class="menu__items"
+    id="GENERATED-0"
+    role="menu"
+  >
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="0"
+      role="menuitemradio"
+      tabindex="0"
+    >
+      <span>
+        item 1 that has very long text
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="1"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        item 2
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="2"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        item 3
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+  </div>
+</span>"
+`;
+
 exports[`menu > renders basic version 1`] = `
 "<span
   class="menu"
@@ -173,7 +251,6 @@ exports[`menu > renders basic version 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -252,7 +329,6 @@ exports[`menu > renders with aria-label 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -331,7 +407,6 @@ exports[`menu > renders with aria-labelledby 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -409,7 +484,6 @@ exports[`menu > renders with badged version 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       aria-label="1 item unread"
       class="menu__item menu__item--badged"
@@ -496,6 +570,142 @@ exports[`menu > renders with badged version 1`] = `
 </span>"
 `;
 
+exports[`menu > renders with controlled selection shared across groups 1`] = `
+"<span
+  class="menu"
+>
+  <div
+    class="menu__items"
+    id="GENERATED-0"
+    role="menu"
+  >
+    <div
+      aria-checked="true"
+      class="menu__item"
+      data-value="system"
+      role="menuitemradio"
+      tabindex="0"
+    >
+      <span>
+        System default
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <hr
+      class="menu__separator"
+      role="separator"
+    />
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="light"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        Light
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="dark"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        Dark
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="high-contrast"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        High contrast
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+  </div>
+</span>
+<div
+  style="padding: 16px"
+>
+  <label>
+    <input
+      checked=""
+      type="radio"
+      value="system"
+    />
+    system
+  </label>
+  <label>
+    <input
+      type="radio"
+      value="light"
+    />
+    light
+  </label>
+  <label>
+    <input
+      type="radio"
+      value="dark"
+    />
+    dark
+  </label>
+  <label>
+    <input
+      type="radio"
+      value="high-contrast"
+    />
+    high-contrast
+  </label>
+</div>"
+`;
+
 exports[`menu > renders with fix-width=true 1`] = `
 "<span
   class="menu menu__items--fix-width"
@@ -505,7 +715,6 @@ exports[`menu > renders with fix-width=true 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -583,7 +792,6 @@ exports[`menu > renders with footer version 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       aria-checked="false"
       class="menu__item"
@@ -695,6 +903,128 @@ exports[`menu > renders with footer version 1`] = `
 </span>"
 `;
 
+exports[`menu > renders with groups 1`] = `
+"<span
+  class="menu"
+>
+  <div
+    class="menu__items"
+    id="GENERATED-0"
+    role="menu"
+  >
+    <div
+      aria-checked="true"
+      class="menu__item"
+      data-value="price-low"
+      role="menuitemradio"
+      tabindex="0"
+    >
+      <span>
+        Price: low to high
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="price-high"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        Price: high to low
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <hr
+      class="menu__separator"
+      role="separator"
+    />
+    <div
+      aria-checked="true"
+      class="menu__item"
+      data-value="shipping-free"
+      role="menuitemcheckbox"
+      tabindex="-1"
+    >
+      <span>
+        Free shipping
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="buy-it-now"
+      role="menuitemcheckbox"
+      tabindex="-1"
+    >
+      <span>
+        Buy It Now
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="auction"
+      role="menuitemcheckbox"
+      tabindex="-1"
+    >
+      <span>
+        Auction
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+  </div>
+</span>"
+`;
+
 exports[`menu > renders with reverse=true 1`] = `
 "<span
   class="menu menu__items--reverse"
@@ -704,7 +1034,6 @@ exports[`menu > renders with reverse=true 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -782,7 +1111,6 @@ exports[`menu > renders with sprites version 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -869,6 +1197,124 @@ exports[`menu > renders with sprites version 1`] = `
 </span>"
 `;
 
+exports[`menu > renders with top-level items before groups 1`] = `
+"<span
+  class="menu"
+>
+  <div
+    class="menu__items"
+    id="GENERATED-0"
+    role="menu"
+  >
+    <div
+      aria-checked="true"
+      class="menu__item"
+      data-value="0"
+      role="menuitemradio"
+      tabindex="0"
+    >
+      <span>
+        item 1 that has very long text
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="1"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        item 2
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="2"
+      role="menuitemradio"
+      tabindex="-1"
+    >
+      <span>
+        item 3
+      </span>
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <hr
+      class="menu__separator"
+      role="separator"
+    />
+    <div
+      aria-checked="false"
+      class="menu__item"
+      data-value="a"
+      role="menuitemcheckbox"
+      tabindex="-1"
+    >
+      <span />
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+    <div
+      aria-checked="true"
+      class="menu__item"
+      data-value="b"
+      role="menuitemcheckbox"
+      tabindex="-1"
+    >
+      <span />
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <use
+          href="#icon-tick-16"
+        />
+      </svg>
+    </div>
+  </div>
+</span>"
+`;
+
 exports[`menu > renders with type=checkbox and checked=false 1`] = `
 "<span
   class="menu"
@@ -879,7 +1325,6 @@ exports[`menu > renders with type=checkbox and checked=false 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -958,7 +1403,6 @@ exports[`menu > renders with type=checkbox and checked=true 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -1037,7 +1481,6 @@ exports[`menu > renders with type=radio and checked=false 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -1116,7 +1559,6 @@ exports[`menu > renders with type=radio and checked=true 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"
@@ -1200,7 +1642,6 @@ exports[`menu > renders with typeahead 1`] = `
     id="GENERATED-0"
     role="menu"
   >
-     
     <div
       class="menu__item"
       data-value="0"

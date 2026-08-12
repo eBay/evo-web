@@ -1,16 +1,21 @@
 import { type Input as ButtonInput } from "../evo-button/index.marko";
 export interface Item extends Marko.HTML.Div {
     value?: string;
-    separator?: boolean;
     badgeNumber?: number;
     disabled?: boolean;
+}
+export interface Group {
+    selected?: number | string | (number | string)[] | null;
+    selectedChange?(selected: number | string | (number | string)[]): void;
+    item?: Marko.AttrTag<Item>;
 }
 export interface Input<
     Index extends number | string | (number | string)[],
 > extends Marko.HTML.Span {
-    selected?: Index;
+    selected?: Index | null;
     selectedChange?: (selected: Index) => void;
     item?: Marko.AttrTag<Item>;
+    group?: Marko.AttrTag<Group>;
     variant?: "filter" | "none";
     classPrefix?: string;
     typeaheadTimeoutLength?: number;
@@ -18,6 +23,18 @@ export interface Input<
     fixed?: boolean;
     fixWidth?: boolean;
     footerButton?: Marko.AttrTag<ButtonInput>;
+}
+
+static function nextSelected(
+    current: number | string | (number | string)[] | null | undefined,
+    value: number | string,
+) {
+    if (Array.isArray(current)) {
+        return current.includes(value)
+            ? current.filter((n) => n !== value)
+            : [...current, value];
+    }
+    return value;
 }
 
 <const/{
@@ -30,19 +47,36 @@ export interface Input<
     fixWidth,
     footerButton,
     typeaheadTimeoutLength,
-    item: items,
+    item,
+    group,
     variant,
     "aria-label": ariaLabel,
     "aria-labelledby": ariaLabelledby,
     ...htmlInput
 }=input>
-<const/isRadio=typeof inputIndex === "number" || typeof inputIndex === "string">
 <const/isFilter=variant === "filter">
-<const/isCheckbox=Array.isArray(inputIndex) || (isFilter && !isRadio)>
-<const/isCheckable=isRadio || isCheckbox>
 <const/baseClass=classPrefix || "menu">
 <const/menuClass=(baseClass === "menu" ? "items" : "menu")>
-<let/selected:=input.selected>
+
+<const/groups=(() => {
+    let offset = 0;
+    return [
+        ...(item
+            ? [{ selected: inputIndex, selectedChange, item } as Group]
+            : []),
+        ...(group || []),
+    ].map((group) => {
+        const items = [...(group.item || [])];
+        const normalized = { ...group, items, offset };
+        offset += items.length;
+        return normalized;
+    });
+})()>
+<const/initialSelected=(
+    groups.find(({ selected }) =>
+        Array.isArray(selected) ? selected.length > 0 : selected != null,
+    )?.selected ?? undefined
+)>
 
 <id/menu>
 <span/$el
@@ -61,24 +95,28 @@ export interface Input<
         aria-label=ariaLabel
         aria-labelledby=ariaLabelledby
         id=menu>
-        <const/$items: Iterable<HTMLElement>=$item> // TODO: remove when Marko TS works
+        // TODO: remove when Marko TS works ($item errors when referenced
+        // directly because it is declared inside nested loops)
+        <const/$items: Iterable<HTMLElement>=$item>
         <evo-roving-tabindex/rovTabindex
             nodeList=$items
-            selected:=selected/>
+            selected=initialSelected/>
         <evo-typeahead/{ typeahead }
             nodeList=$items
             timeoutLength=typeaheadTimeoutLength/>
 
-        <for|item, i| of=items>
-            <const/{
-                class: itemClass,
-                value = i,
-                separator,
-                badgeNumber,
-                disabled,
-                content,
-                ...htmlItem
-            }=item>
+        <for|group, groupIndex| of=groups>
+            <if=groupIndex>
+                <hr class=`${baseClass}__separator` role="separator">
+            </if>
+            <let/selected:=group.selected>
+            <const/isRadio=(
+                typeof group.selected === "number" ||
+                typeof group.selected === "string" ||
+                group.selected === null
+            )>
+            <const/isCheckbox=Array.isArray(group.selected) || (isFilter && !isRadio)>
+            <const/isCheckable=isRadio || isCheckbox>
             <const/itemRole=(
                 (isRadio
                     ? "menuitemradio"
@@ -86,15 +124,20 @@ export interface Input<
                       ? "menuitemcheckbox"
                       : "menuitem") as Marko.HTML.Div["role"]
             )>
-            <const/checked=(
-                Array.isArray(selected)
-                    ? selected.includes(value)
-                    : selected === value
-            )>
-            <if=separator>
-                <hr class=`${baseClass}__separator` role="separator">
-            </if>
-            <else>
+            <for|item, i| of=group.items>
+                <const/{
+                    class: itemClass,
+                    value = group.offset + i,
+                    badgeNumber,
+                    disabled,
+                    content,
+                    ...htmlItem
+                }=item>
+                <const/checked=(
+                    Array.isArray(selected)
+                        ? selected.includes(value)
+                        : selected === value
+                )>
                 <div/$item
                     ...htmlItem
                     class=[
@@ -105,16 +148,20 @@ export interface Input<
                     ]
                     onClick(e, target) {
                         rovTabindex.onClick(value);
-                        (item.onClick || null)?.(e, target);
+                        selected = nextSelected(selected, value);
+                        item.onClick && item.onClick(e, target);
                     }
                     onKeyDown(e, target) {
+                        if (e.key === "Enter" || e.key === " ") {
+                            selected = nextSelected(selected, value);
+                        }
                         rovTabindex.onKeyDown(e);
                         const newIndex = typeahead(e);
                         if (newIndex !== -1) {
                             rovTabindex.setFocusIndex(newIndex);
                         }
 
-                        (item.onKeyDown || null)?.(e, target);
+                        item.onKeyDown && item.onKeyDown(e, target);
                     }
                     data-value=value
                     tabindex=(rovTabindex.isFocused(value) ? 0 : -1)
@@ -141,7 +188,7 @@ export interface Input<
                         <evo-icon-tick-16/>
                     </if>
                 </div>
-            </else>
+            </for>
         </for>
     </div>
     <if=footerButton>

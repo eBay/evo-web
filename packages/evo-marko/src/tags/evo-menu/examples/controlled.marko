@@ -1,0 +1,25 @@
+import { type Input as MenuInput } from "<evo-menu>";
+
+export interface Input extends MenuInput<string> {}
+
+<let/selected=input.selected ?? "system" valueChange=input.selectedChange>
+
+<evo-menu ...input>
+    <@group selected:=selected>
+        <@item value="system">System default</@item>
+    </@group>
+    <@group selected:=selected>
+        <@item value="light">Light</@item>
+        <@item value="dark">Dark</@item>
+        <@item value="high-contrast">High contrast</@item>
+    </@group>
+</evo-menu>
+
+<div style="padding: 16px">
+    <for|value| of=["system", "light", "dark", "high-contrast"]>
+        <label>
+            <input type="radio" value=value checkedValue:=selected>
+            ${value}
+        </label>
+    </for>
+</div>

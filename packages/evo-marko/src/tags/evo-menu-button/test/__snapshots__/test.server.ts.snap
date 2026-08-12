@@ -42,7 +42,6 @@ exports[`menu-button > renders basic version 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -154,7 +153,6 @@ exports[`menu-button > renders with a badge 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-label="1 item unread"
         class="menu-button__item menu-button__item--badged"
@@ -284,7 +282,6 @@ exports[`menu-button > renders with borderless=true 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -397,7 +394,6 @@ exports[`menu-button > renders with button variant 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -510,7 +506,6 @@ exports[`menu-button > renders with disabled state 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -626,7 +621,6 @@ exports[`menu-button > renders with filter 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-checked="true"
         class="menu-button__item"
@@ -771,7 +765,6 @@ exports[`menu-button > renders with fix-width=true 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -883,7 +876,6 @@ exports[`menu-button > renders with fixed strategy 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -999,7 +991,6 @@ exports[`menu-button > renders with footer 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-checked="false"
         class="menu-button__item"
@@ -1112,6 +1103,162 @@ exports[`menu-button > renders with footer 1`] = `
 </span>"
 `;
 
+exports[`menu-button > renders with groups 1`] = `
+"<span
+  class="menu-button"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="menu-button__button btn btn--secondary"
+    type="button"
+  >
+    <span>
+      eBay Menu groups
+    </span>
+    <svg
+      aria-hidden="true"
+      class="icon icon--12"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 12 12"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
+          fill-rule="evenodd"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-down-12"
+      />
+    </svg>
+  </button>
+  <span
+    class="menu-button__menu"
+    style="visibility:hidden"
+    tabindex="-1"
+  >
+    <div
+      class="menu-button__items"
+      id="GENERATED-1"
+      role="menu"
+    >
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="price-low"
+        role="menuitemradio"
+        tabindex="0"
+      >
+        <span>
+          Price: low to high
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <symbol
+            id="GENERATED-2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
+              fill-rule="evenodd"
+            />
+          </symbol>
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="price-high"
+        role="menuitemradio"
+        tabindex="-1"
+      >
+        <span>
+          Price: high to low
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <hr
+        class="menu-button__separator"
+        role="separator"
+      />
+      <div
+        aria-checked="true"
+        class="menu-button__item"
+        data-value="shipping-free"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <span>
+          Free shipping
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="buy-it-now"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <span>
+          Buy It Now
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+      <div
+        aria-checked="false"
+        class="menu-button__item"
+        data-value="auction"
+        role="menuitemcheckbox"
+        tabindex="-1"
+      >
+        <span>
+          Auction
+        </span>
+        <svg
+          aria-hidden="true"
+          class="icon icon--16"
+        >
+          <use
+            href="#icon-tick-16"
+          />
+        </svg>
+      </div>
+    </div>
+  </span>
+</span>"
+`;
+
 exports[`menu-button > renders with icon 1`] = `
 "<span
   class="menu-button"
@@ -1177,7 +1324,6 @@ exports[`menu-button > renders with icon 1`] = `
       id="GENERATED-2"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="0"
@@ -1290,7 +1436,6 @@ exports[`menu-button > renders with overflow variant 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -1408,7 +1553,6 @@ exports[`menu-button > renders with prefix label 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="0"
@@ -1520,7 +1664,6 @@ exports[`menu-button > renders with reverse=true 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -1590,180 +1733,6 @@ exports[`menu-button > renders with reverse=true 1`] = `
 </span>"
 `;
 
-exports[`menu-button > renders with separators 1`] = `
-"<span
-  class="menu-button"
->
-  <button
-    aria-expanded="false"
-    aria-haspopup="true"
-    class="menu-button__button btn btn--secondary"
-    type="button"
-  >
-    <span>
-      eBay Menu separator
-    </span>
-    <svg
-      aria-hidden="true"
-      class="icon icon--12"
-    >
-      <symbol
-        id="GENERATED-0"
-        viewBox="0 0 12 12"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M1.808 4.188a.625.625 0 0 1 .884 0L6 7.495l3.308-3.307a.625.625 0 1 1 .884.885l-3.75 3.749a.625.625 0 0 1-.884 0l-3.75-3.749a.626.626 0 0 1 0-.885Z"
-          fill-rule="evenodd"
-        />
-      </symbol>
-      <use
-        href="#icon-chevron-down-12"
-      />
-    </svg>
-  </button>
-  <span
-    class="menu-button__menu"
-    style="visibility:hidden"
-    tabindex="-1"
-  >
-    <div
-      class="menu-button__items"
-      id="GENERATED-1"
-      role="menu"
-    >
-       
-      <div
-        class="menu-button__item"
-        data-value="0"
-        role="menuitem"
-        tabindex="0"
-      >
-        <span>
-          item 1
-        </span>
-        <svg
-          aria-hidden="true"
-          class="icon icon--16"
-        >
-          <symbol
-            id="GENERATED-2"
-            viewBox="0 0 16 16"
-          >
-            <path
-              clip-rule="evenodd"
-              d="M13.707 5.707a1 1 0 0 0-1.414-1.414L6 10.586 3.707 8.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l7-7Z"
-              fill-rule="evenodd"
-            />
-          </symbol>
-          <use
-            href="#icon-tick-16"
-          />
-        </svg>
-      </div>
-      <div
-        class="menu-button__item"
-        data-value="1"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          item 2
-        </span>
-        <svg
-          aria-hidden="true"
-          class="icon icon--16"
-        >
-          <use
-            href="#icon-tick-16"
-          />
-        </svg>
-      </div>
-      <hr
-        class="menu-button__separator"
-        role="separator"
-      />
-      <div
-        class="menu-button__item"
-        data-value="3"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          item 3
-        </span>
-        <svg
-          aria-hidden="true"
-          class="icon icon--16"
-        >
-          <use
-            href="#icon-tick-16"
-          />
-        </svg>
-      </div>
-      <div
-        class="menu-button__item"
-        data-value="4"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          item 4
-        </span>
-        <svg
-          aria-hidden="true"
-          class="icon icon--16"
-        >
-          <use
-            href="#icon-tick-16"
-          />
-        </svg>
-      </div>
-      <hr
-        class="menu-button__separator"
-        role="separator"
-      />
-      <div
-        class="menu-button__item"
-        data-value="6"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          item 5
-        </span>
-        <svg
-          aria-hidden="true"
-          class="icon icon--16"
-        >
-          <use
-            href="#icon-tick-16"
-          />
-        </svg>
-      </div>
-      <div
-        class="menu-button__item"
-        data-value="7"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          item 6
-        </span>
-        <svg
-          aria-hidden="true"
-          class="icon icon--16"
-        >
-          <use
-            href="#icon-tick-16"
-          />
-        </svg>
-      </div>
-    </div>
-  </span>
-</span>"
-`;
-
 exports[`menu-button > renders with size=small 1`] = `
 "<span
   class="menu-button"
@@ -1806,7 +1775,6 @@ exports[`menu-button > renders with size=small 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -1919,7 +1887,6 @@ exports[`menu-button > renders with type=checkbox and checked=false 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -2036,7 +2003,6 @@ exports[`menu-button > renders with type=checkbox and checked=false and as filte
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-checked="true"
         class="menu-button__item"
@@ -2182,7 +2148,6 @@ exports[`menu-button > renders with type=checkbox and checked=true 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -2299,7 +2264,6 @@ exports[`menu-button > renders with type=checkbox and checked=true and as filter
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-checked="true"
         class="menu-button__item"
@@ -2445,7 +2409,6 @@ exports[`menu-button > renders with type=radio and checked=false 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -2562,7 +2525,6 @@ exports[`menu-button > renders with type=radio and checked=false and as filter 1
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-checked="true"
         class="menu-button__item"
@@ -2708,7 +2670,6 @@ exports[`menu-button > renders with type=radio and checked=true 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"
@@ -2825,7 +2786,6 @@ exports[`menu-button > renders with type=radio and checked=true and as filter 1`
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         aria-checked="true"
         class="menu-button__item"
@@ -2976,7 +2936,6 @@ exports[`menu-button > renders with typeahead 1`] = `
       id="GENERATED-1"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="0"
@@ -3296,7 +3255,6 @@ exports[`menu-button > renders without toggle icon 1`] = `
       id="GENERATED-0"
       role="menu"
     >
-       
       <div
         class="menu-button__item"
         data-value="item 1"

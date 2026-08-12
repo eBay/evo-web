@@ -3,12 +3,145 @@ import { composeStories } from "@storybook/marko";
 import { render, fireEvent, cleanup, waitFor } from "@marko/testing-library";
 import { pressKey } from "../../../common/test-utils/browser";
 import * as stories from "../menu.stories"; // import all stories from the stories file
-const { Default, Typeahead } = composeStories(stories);
+const { Default, Groups, Controlled, Typeahead } = composeStories(stories);
 const Separator: any = Default;
 
 afterEach(cleanup);
 
 let component: Awaited<ReturnType<typeof render>>;
+
+describe("given the menu is single-select with no selection (selected=null)", () => {
+  const firstItemText = "item 2";
+
+  beforeEach(async () => {
+    component = await render(Default, { selected: null });
+  });
+
+  it("then it renders radio items with none checked", () => {
+    const items = component.getAllByRole("menuitemradio");
+    expect(items).to.have.length(3);
+    for (const item of items) {
+      expect(item).toHaveAttribute("aria-checked", "false");
+    }
+  });
+
+  describe("when an item is clicked", () => {
+    beforeEach(async () => {
+      await fireEvent.click(component.getByText(firstItemText));
+    });
+
+    it("then it becomes the checked item", () => {
+      expect(
+        component.getByText(firstItemText).parentElement,
+      ).toHaveAttribute("aria-checked", "true");
+    });
+  });
+});
+
+describe("given the menu selection is controlled and shared across groups", () => {
+  const selectedItemText = "System default";
+  const otherGroupItemText = "Dark";
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(Controlled);
+  });
+
+  describe("when an item in the other group is clicked", () => {
+    beforeEach(async () => {
+      await fireEvent.click(getItem(otherGroupItemText));
+    });
+
+    it("then the selection moves across groups", () => {
+      expect(getItem(otherGroupItemText)).toHaveAttribute(
+        "aria-checked",
+        "true",
+      );
+      expect(getItem(selectedItemText)).toHaveAttribute("aria-checked", "false");
+    });
+  });
+
+  describe("when the selection is changed from outside the menu", () => {
+    beforeEach(async () => {
+      await fireEvent.click(component.getByDisplayValue("light"));
+    });
+
+    it("then the menu reflects the external selection", () => {
+      expect(getItem("Light")).toHaveAttribute("aria-checked", "true");
+      expect(getItem(selectedItemText)).toHaveAttribute("aria-checked", "false");
+    });
+  });
+});
+
+describe("given the menu has groups", () => {
+  const radioItemText = "Price: low to high";
+  const otherRadioItemText = "Price: high to low";
+  const checkboxItemText = "Free shipping";
+  const otherCheckboxItemText = "Buy It Now";
+
+  const getItem = (text: string) =>
+    component.getByText(text).parentElement as HTMLElement;
+
+  beforeEach(async () => {
+    component = await render(Groups);
+  });
+
+  it("then it renders a separator between the groups", () => {
+    expect(component.getAllByRole("separator")).to.have.length(1);
+  });
+
+  it("then it renders item roles based on each group's selection type", () => {
+    expect(component.getAllByRole("menuitemradio")).to.have.length(2);
+    expect(component.getAllByRole("menuitemcheckbox")).to.have.length(3);
+  });
+
+  describe("when an item in the radio group is clicked", () => {
+    beforeEach(async () => {
+      await fireEvent.click(getItem(otherRadioItemText));
+    });
+
+    it("then it updates only that group's selection", () => {
+      expect(getItem(otherRadioItemText)).toHaveAttribute(
+        "aria-checked",
+        "true",
+      );
+      expect(getItem(radioItemText)).toHaveAttribute("aria-checked", "false");
+      expect(getItem(checkboxItemText)).toHaveAttribute("aria-checked", "true");
+    });
+  });
+
+  describe("when an item in the checkbox group is clicked", () => {
+    beforeEach(async () => {
+      await fireEvent.click(getItem(otherCheckboxItemText));
+    });
+
+    it("then it adds to that group's selection without affecting others", () => {
+      expect(getItem(otherCheckboxItemText)).toHaveAttribute(
+        "aria-checked",
+        "true",
+      );
+      expect(getItem(checkboxItemText)).toHaveAttribute("aria-checked", "true");
+      expect(getItem(radioItemText)).toHaveAttribute("aria-checked", "true");
+    });
+  });
+
+  describe("when the down key is pressed from the last item of a group", () => {
+    beforeEach(async () => {
+      await fireEvent.click(getItem(otherRadioItemText));
+      await pressKey(getItem(otherRadioItemText), {
+        key: "ArrowDown",
+        keyCode: 40,
+      });
+    });
+
+    it("then focus moves into the next group", () => {
+      expect(getItem(checkboxItemText)).toHaveAttribute("tabindex", "0");
+      expect(getItem(otherRadioItemText)).toHaveAttribute("tabindex", "-1");
+    });
+  });
+});
 
 describe.skip("typeahead functionality", () => {
   const firstItemText = "Albania";
