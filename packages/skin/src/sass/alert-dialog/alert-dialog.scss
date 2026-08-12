@@ -91,12 +91,6 @@
 
 @media (min-width: variables.$screen-size-MD) {
     .alert-dialog__window {
-        max-width: calc(88% - var(--spacing-400));
-    }
-}
-
-@media (min-width: variables.$screen-size-LG) {
-    .alert-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }
 }

@@ -181,11 +181,6 @@ button.confirm-dialog__confirm {
 }
 @media (min-width: 768px) {
     .confirm-dialog__window {
-        max-width: calc(88% - var(--spacing-400));
-    }
-}
-@media (min-width: 1024px) {
-    .confirm-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }
 }
