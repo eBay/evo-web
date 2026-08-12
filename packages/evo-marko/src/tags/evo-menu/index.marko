@@ -4,9 +4,14 @@ export interface Item extends Marko.HTML.Div {
     badgeNumber?: number;
     disabled?: boolean;
 }
-export interface Group {
-    selected?: number | string | (number | string)[] | null;
-    selectedChange?(selected: number | string | (number | string)[]): void;
+export interface Group<
+    Index extends number | string | (number | string)[] =
+        | number
+        | string
+        | (number | string)[],
+> {
+    selected?: Index | null;
+    selectedChange?(selected: Index): void;
     item?: Marko.AttrTag<Item>;
 }
 export interface Input<
