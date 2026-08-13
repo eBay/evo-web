@@ -1,5 +1,13 @@
 # @evo-web/marko
 
+## 0.6.1
+
+### Patch Changes
+
+- [#864](https://github.com/eBay/evo-web/pull/864) [`7fa833b`](https://github.com/eBay/evo-web/commit/7fa833ba83d31ea15e43d992c464224b1b830aff) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoTabs component and align tab sizing.
+
+- [#883](https://github.com/eBay/evo-web/pull/883) [`45e7bb9`](https://github.com/eBay/evo-web/commit/45e7bb9b5c3171fa6948353390e99fe20588e81d) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFileInput component and rename evo-file-input @subheader to @description.
+
 ## 0.6.0
 
 ### Minor Changes
