@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-file-input SSR > renders Default story 1`] = `
+"<div
+  class="file-input"
+>
+  <div
+    class="file-input__container"
+  >
+    <div
+      class="file-input__upload-icon"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--24"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 24 24"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M11.293 1.293a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1-1.414 1.414L13 4.414V17a1 1 0 1 1-2 0V4.414L5.707 9.707a1 1 0 0 1-1.414-1.414l7-7ZM2 21a1 1 0 1 0 0 2h20a1 1 0 1 0 0-2H2Z"
+            fill-rule="evenodd"
+          />
+        </symbol>
+        <use
+          href="#icon-upload-24"
+        />
+      </svg>
+    </div>
+    <div
+      class="file-input__content"
+    >
+      <span
+        class="file-input__content-header titleClass"
+        id="titleId"
+      >
+        Title
+      </span>
+      <span
+        class="file-input__content-subheader subtitleClass"
+        id="subtitleId"
+      >
+        <p>
+          Subtitle 1
+        </p>
+        <p>
+          Subtitle 2
+        </p>
+      </span>
+      <label
+        for="GENERATED-1"
+      >
+        <span
+          class="file-input__content-cta"
+        >
+          <span>
+            Browse files
+          </span>
+        </span>
+      </label>
+    </div>
+  </div>
+  <input
+    class="file-input__input"
+    id="GENERATED-1"
+    type="file"
+  />
+</div>"
+`;
