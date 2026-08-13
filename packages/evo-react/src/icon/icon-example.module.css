@@ -1,0 +1,46 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 4px;
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+}
+
+.host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.host:hover {
+  background-color: var(--color-background-faint);
+}
+
+.bubble {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: var(--color-background-inverse);
+  color: var(--color-foreground-on-inverse);
+  font-size: 14px;
+  white-space: nowrap;
+}
