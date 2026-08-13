@@ -4,7 +4,7 @@ import {
   EvoTab,
   EvoTabList,
   EvoTabPanel,
-  EvoTabPanelList,
+  EvoTabPanels,
   EvoTabs,
 } from "../index";
 
@@ -21,10 +21,10 @@ function TabsFixture({
         <EvoTab id="overview">Overview</EvoTab>
         <EvoTab id={2}>Shipping</EvoTab>
       </EvoTabList>
-      <EvoTabPanelList>
+      <EvoTabPanels>
         <EvoTabPanel id="overview">Overview panel</EvoTabPanel>
         <EvoTabPanel id={2}>Shipping panel</EvoTabPanel>
-      </EvoTabPanelList>
+      </EvoTabPanels>
     </EvoTabs>
   );
 }

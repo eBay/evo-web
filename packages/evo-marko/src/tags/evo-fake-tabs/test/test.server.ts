@@ -2,7 +2,7 @@ import { describe, it } from "vitest";
 import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../fake-tabs.stories"; // import all stories from the stories file
-const { Default, NoPanel } = composeStories(stories);
+const { Default, Disabled, NoPanel } = composeStories(stories);
 
 describe("fake-tabs", () => {
   it("renders default", async () => {
@@ -13,15 +13,18 @@ describe("fake-tabs", () => {
     await snapshotHTML(NoPanel);
   });
 
+  it("renders disabled tab without href or aria-current", async () => {
+    await snapshotHTML(Disabled);
+  });
+
   it("renders with tabMatchesCurrentUrl=false", async () => {
-    await snapshotHTML(Default, {tabMatchesCurrentUrl: false});
+    await snapshotHTML(Default, { tabMatchesCurrentUrl: false });
   });
 
   it("renders with other selected index", async () => {
-    await snapshotHTML(Default, {selected: 2});
+    await snapshotHTML(Default, { selected: 2 });
   });
   it("renders with no selected index", async () => {
-    await snapshotHTML(Default, {selected: -1});
+    await snapshotHTML(Default, { selected: -1 });
   });
-
 });

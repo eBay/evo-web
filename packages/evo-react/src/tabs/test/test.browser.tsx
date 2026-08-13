@@ -6,7 +6,7 @@ import {
   EvoTab,
   EvoTabList,
   EvoTabPanel,
-  EvoTabPanelList,
+  EvoTabPanels,
   EvoTabs,
 } from "../index";
 import type { EvoTabsProps, TabId } from "../types";
@@ -21,11 +21,11 @@ function TabSet(props: EvoTabsProps) {
         </EvoTab>
         <EvoTab id={3}>Returns</EvoTab>
       </EvoTabList>
-      <EvoTabPanelList>
+      <EvoTabPanels>
         <EvoTabPanel id="overview">Overview panel</EvoTabPanel>
         <EvoTabPanel id="shipping">Shipping panel</EvoTabPanel>
         <EvoTabPanel id={3}>Returns panel</EvoTabPanel>
-      </EvoTabPanelList>
+      </EvoTabPanels>
     </EvoTabs>
   );
 }
@@ -193,9 +193,9 @@ describe("evo-tabs", () => {
             Overview
           </EvoTab>
         </EvoTabList>
-        <EvoTabPanelList>
+        <EvoTabPanels>
           <EvoTabPanel id="overview">Overview panel</EvoTabPanel>
-        </EvoTabPanelList>
+        </EvoTabPanels>
       </EvoTabs>,
     );
 

@@ -27,7 +27,9 @@ export interface Input extends Marko.HTML.Div {
             <li class=[tabClass, "fake-tabs__item"]>
                 <a
                     ...htmlTab
-                    aria-current=selected === i && tabAriaCurrent/>
+                    href=href
+                    aria-current=href !== undefined && selected === i && tabAriaCurrent
+                    aria-disabled=href === undefined && "true"/>
             </li>
         </for>
     </ul>

@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import type { EvoTabPanelListProps } from "./types";
+import type { EvoTabPanelsProps } from "./types";
 
-export function EvoTabPanelList({
+export function EvoTabPanels({
   className,
   children,
   ...rest
-}: EvoTabPanelListProps) {
+}: EvoTabPanelsProps) {
   return (
     <div {...rest} className={classNames("tabs__content", className)}>
       {children}

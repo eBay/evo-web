@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoTab } from "./tab";
 import { EvoTabList } from "./tab-list";
 import { EvoTabPanel } from "./tab-panel";
-import { EvoTabPanelList } from "./tab-panel-list";
+import { EvoTabPanels } from "./tab-panels";
 import { EvoTabs } from "./tabs";
 
 const meta: Meta<typeof EvoTabs> = {
@@ -11,7 +11,7 @@ const meta: Meta<typeof EvoTabs> = {
   subcomponents: {
     EvoTabList,
     EvoTab,
-    EvoTabPanelList,
+    EvoTabPanels,
     EvoTabPanel,
   },
   tags: ["autodocs"],
@@ -28,7 +28,7 @@ import {
   EvoTabs,
   EvoTabList,
   EvoTab,
-  EvoTabPanelList,
+  EvoTabPanels,
   EvoTabPanel,
 } from "@evo-web/react/tabs";
 \`\`\`
@@ -80,7 +80,7 @@ import {
           </EvoTab>
           <EvoTab id="returns">Returns</EvoTab>
         </EvoTabList>
-        <EvoTabPanelList>
+        <EvoTabPanels>
           <EvoTabPanel id="overview">
             <h3>Overview</h3>
             <p>Product overview content.</p>
@@ -93,7 +93,7 @@ import {
             <h3>Returns</h3>
             <p>Returns content.</p>
           </EvoTabPanel>
-        </EvoTabPanelList>
+        </EvoTabPanels>
       </>
     );
 

@@ -10,7 +10,9 @@ exports[`fake-tabs > renders default 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 1
       </a>
     </li>
@@ -19,6 +21,7 @@ exports[`fake-tabs > renders default 1`] = `
     >
       <a
         aria-current="page"
+        href="https://www.ebay.com/"
       >
         Tab 2
       </a>
@@ -26,7 +29,64 @@ exports[`fake-tabs > renders default 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
+        Tab 3
+      </a>
+    </li>
+  </ul>
+  <div
+    class="fake-tabs__content"
+  >
+    <div
+      class="fake-tabs__panel"
+    >
+      <div
+        class="fake-tabs__cell"
+      >
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare, quam at lacinia pretium, lacus urna luctus nisi, eget molestie massa tortor id lacus. Aenean ac fringilla lacus. Fusce vel dui ex. Vivamus luctus egestas nulla, non hendrerit purus luctus at. Maecenas vel diam enim. Pellentesque quam neque, porttitor tincidunt vestibulum at, dapibus sit amet tortor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>"
+`;
+
+exports[`fake-tabs > renders disabled tab without href or aria-current 1`] = `
+"<div
+  class="fake-tabs"
+>
+  <ul
+    class="fake-tabs__items"
+  >
+    <li
+      class="fake-tabs__item"
+    >
+      <a
+        href="https://www.ebay.com/"
+      >
+        Tab 1
+      </a>
+    </li>
+    <li
+      class="fake-tabs__item"
+    >
+      <a
+        aria-disabled="true"
+      >
+        Tab 2
+      </a>
+    </li>
+    <li
+      class="fake-tabs__item"
+    >
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 3
       </a>
     </li>
@@ -63,6 +123,7 @@ exports[`fake-tabs > renders no panel 1`] = `
     >
       <a
         aria-current="page"
+        href="https://www.ebay.com/"
       >
         Tab 1
       </a>
@@ -70,14 +131,18 @@ exports[`fake-tabs > renders no panel 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 2
       </a>
     </li>
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 3
       </a>
     </li>
@@ -108,21 +173,27 @@ exports[`fake-tabs > renders with no selected index 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 1
       </a>
     </li>
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 2
       </a>
     </li>
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 3
       </a>
     </li>
@@ -157,14 +228,18 @@ exports[`fake-tabs > renders with other selected index 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 1
       </a>
     </li>
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 2
       </a>
     </li>
@@ -173,6 +248,7 @@ exports[`fake-tabs > renders with other selected index 1`] = `
     >
       <a
         aria-current="page"
+        href="https://www.ebay.com/"
       >
         Tab 3
       </a>
@@ -208,7 +284,9 @@ exports[`fake-tabs > renders with tabMatchesCurrentUrl=false 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 1
       </a>
     </li>
@@ -217,6 +295,7 @@ exports[`fake-tabs > renders with tabMatchesCurrentUrl=false 1`] = `
     >
       <a
         aria-current="true"
+        href="https://www.ebay.com/"
       >
         Tab 2
       </a>
@@ -224,7 +303,9 @@ exports[`fake-tabs > renders with tabMatchesCurrentUrl=false 1`] = `
     <li
       class="fake-tabs__item"
     >
-      <a>
+      <a
+        href="https://www.ebay.com/"
+      >
         Tab 3
       </a>
     </li>
