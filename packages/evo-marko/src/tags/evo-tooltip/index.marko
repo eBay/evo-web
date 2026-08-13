@@ -93,12 +93,21 @@ export interface Input extends Marko.HTML.Span {
         open = el.contains(e.relatedTarget as Node | null);
         onFocusOut && onFocusOut(e, el);
     }>
-    <const/{ as: hostAs = "span", class: hostClass, ...htmlHost }=host>
+    <const/{
+        as: hostAs = "span",
+        class: hostClass,
+        onClick: hostOnClick,
+        ...htmlHost
+    }=host>
     <${hostAs}
         ...htmlHost
         id=hostId
         class=["tooltip__host", hostClass]
-        aria-expanded=expander.ariaExpanded/>
+        aria-expanded=expander.ariaExpanded
+        onClick(e: PointerEvent, el: HTMLElement) {
+            el.focus();
+            hostOnClick && hostOnClick(e, el);
+        }/>
     <span
         id=overlayId
         tabindex=(

@@ -1,0 +1,10 @@
+export interface Input {
+  onHostClick?: Marko.HTML.Span["onClick"];
+}
+
+<evo-tooltip noHover>
+  <@host as="button" onClick=input.onHostClick>
+    Settings
+  </@host>
+  Tooltip content
+</evo-tooltip>
