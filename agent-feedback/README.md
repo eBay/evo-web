@@ -33,7 +33,7 @@ When a maintainer has explicitly deemed an item "won't fix" / "not worth it", re
 ```md
 ## <one-line imperative summary>
 
-`<primary/file/path.ts>` › `<nearestStableSymbol>` | 2026-08-14 | impact:<low|med|high> | effort:<low|med|high>
+`<primary/file/path.ts>` › `<nearestStableSymbol>` | <YYYY-MM-DD> | impact:<low|med|high> | effort:<low|med|high>
 
 <2-6 sentences: the problem, why it matters, and a concrete suggested direction,
 ending with the check that re-verifies the claim (a command, input, or
