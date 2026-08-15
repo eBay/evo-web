@@ -46,7 +46,7 @@ export interface Input
         if (e.key === "Escape" && !input.disabled) {
             input.onEscape?.(e);
         }
-        input.onKeyDown && input.onKeyDown(e, el);
+        input.onKeyDown && input.onKeyDown(e as any, el);
     }
     class=[
         inputClass,

@@ -14,7 +14,9 @@ export interface Input
     content,
     disabled,
     selected: inputSelected,
+    selectedChange,
     open: inputOpen,
+    openChange,
     icon,
     image,
     a11ySelectedText,
@@ -66,7 +68,7 @@ export interface Input
             } else {
                 selected = !selected;
             }
-            (input.onClick || null)?.(e, target);
+            (input.onClick || null)?.(e as any, target);
         }
     }>
 

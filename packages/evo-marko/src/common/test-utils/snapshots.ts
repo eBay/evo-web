@@ -23,8 +23,9 @@ function stripMarko6Scripts<T extends DomNode>(container: T): T {
 
 // When a snapshot covers only a subtree, `normalize()` may not rewrite every
 // Marko-generated id token that appears in attribute values (e.g. aria-*).
-// Normalize remaining `sM…` tokens to stable placeholders.
-const MARKO_6_AUTO_ID_RE = /\bsM[A-Za-z0-9$_]{2,}\d+\b/g;
+// Normalize remaining `sM…` tokens to stable placeholders. The token is `sM`
+// followed by a scope suffix and a counter (`sM_1`, and longer forms).
+const MARKO_6_AUTO_ID_RE = /\bsM[A-Za-z0-9$_]*\d+\b/g;
 
 function normalizeMarko6Ids(serialized: string): string {
     const map = new Map<string, string>();

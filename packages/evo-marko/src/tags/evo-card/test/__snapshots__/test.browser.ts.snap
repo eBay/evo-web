@@ -93,14 +93,17 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
     border-top-width: medium;
     color: inherit;
     display: flex;
+    filter: grayscale(1);
     flex-direction: column;
     max-width: 400px;
     min-width: 200px;
+    opacity: 0.5;
     outline-color: transparent;
     outline-offset: 4px;
     outline-style: solid;
     outline-width: 6px;
     padding-block-end: var(--spacing-150);
+    pointer-events: none;
     text-decoration-line: none
   ">
     <div style="

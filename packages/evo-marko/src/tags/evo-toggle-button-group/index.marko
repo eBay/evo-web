@@ -23,7 +23,7 @@ export interface Input<
     columnsMD?: number;
     columnsXL?: number;
     layoutType?: ToggleButtonInput["layoutType"];
-};
+}
 <const/{
     class: inputClass,
     layoutType: baseLayoutType,
@@ -36,6 +36,7 @@ export interface Input<
     a11yLabelId,
     required,
     pressed: inputPressed,
+    pressedChange,
     button: buttons,
     ...htmlInput
 }=input>

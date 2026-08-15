@@ -301,10 +301,10 @@ import { components, a11yDocs, urls } from "../../data";
                         <li>
                           <a
                             href="https://github.com/eBay/evo-web/"
-                            onBlur(event) {
-                              const relatedTarget = (event as FocusEvent)
-                                .relatedTarget;
-                              const target = event.currentTarget as HTMLElement;
+                            onBlur(event, target) {
+                              const relatedTarget = (
+                                event as unknown as FocusEvent
+                              ).relatedTarget;
                               const navList = target.closest(".app-bar__links");
                               if (
                                 !relatedTarget ||

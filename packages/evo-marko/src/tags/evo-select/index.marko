@@ -75,11 +75,11 @@ export interface Input extends Marko.HTML.Select {
         ]
         style=style>
         <select
-            onBlur(e: Event, target: HTMLSelectElement) {
+            onBlur(e, target) {
                 focused = false;
                 onBlur && onBlur(e, target);
             }
-            onFocus(e: FocusEvent, target: HTMLSelectElement) {
+            onFocus(e, target) {
                 focused = true;
                 onFocus && onFocus(e, target);
             }
