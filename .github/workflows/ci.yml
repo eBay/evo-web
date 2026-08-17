@@ -14,8 +14,9 @@ env:
   # Everything `npm run build -w packages/skin` produces that another package
   # reads: the compiled CSS, the per-module import stubs consumers resolve
   # `@ebay/skin/<module>` through, and the two icon files the build writes back
-  # into the site.
-  SKIN_BUILD_OUTPUT: >-
+  # into the site. Newline-separated so it works both as an `actions/cache`
+  # path list and as unquoted argv for `tar`.
+  SKIN_BUILD_OUTPUT: |
     packages/skin/dist
     packages/skin/*.mjs
     src/data/icons.json
@@ -33,7 +34,23 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npm run build -w packages/skin
+      # Most PRs do not touch skin, so on a hit this restores the output a
+      # previous run already built and the build below is skipped. The key
+      # covers everything the build reads — sources, scripts, the lint and
+      # formatter configs that shape the output, and the dependency tree.
+      - name: Restore skin build output
+        id: skin-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.SKIN_BUILD_OUTPUT }}
+          key: skin-dist-${{ runner.os }}-node24-${{ hashFiles('packages/skin/src/**', 'packages/skin/scripts/**', 'packages/skin/*.json', 'packages/skin/*.mjs', 'packages/skin/.stylelintrc', '.stylelintrc', 'package-lock.json') }}
+      - name: Build skin
+        if: steps.skin-cache.outputs.cache-hit != 'true'
+        run: npm run build -w packages/skin
+      # Runs on a hit too, and is still the same assertion: whether skin's
+      # output matches what the PR committed. On a hit it compares against the
+      # restored output rather than a fresh build, so a PR that edits `dist/`
+      # by hand still fails here.
       - name: Check for uncommitted changes
         run: |
           if output=$(git status --porcelain) && [ -z "$output" ]; then
