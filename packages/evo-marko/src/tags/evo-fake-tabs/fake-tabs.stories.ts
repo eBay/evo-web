@@ -6,6 +6,8 @@ import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import NoPanelTemplate from "./examples/no-panel-content.marko";
 import NoPanelTemplateCode from "./examples/no-panel-content.marko?raw";
+import DisabledTemplate from "./examples/disabled.marko";
+import DisabledTemplateCode from "./examples/disabled.marko?raw";
 
 export default {
   title: "navigation & disclosure/evo-fake-tabs",
@@ -55,4 +57,9 @@ export const Default = buildExtensionTemplate(
 export const NoPanel = buildExtensionTemplate(
   NoPanelTemplate,
   NoPanelTemplateCode,
+);
+
+export const Disabled = buildExtensionTemplate(
+  DisabledTemplate,
+  DisabledTemplateCode,
 );

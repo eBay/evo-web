@@ -49,7 +49,7 @@ export type EvoTabProps<Id extends TabId = TabId> = Omit<
   disabled?: boolean;
 };
 
-export type EvoTabPanelListProps = ComponentProps<"div">;
+export type EvoTabPanelsProps = ComponentProps<"div">;
 
 export type EvoTabPanelProps<Id extends TabId = TabId> = Omit<
   ComponentProps<"div">,

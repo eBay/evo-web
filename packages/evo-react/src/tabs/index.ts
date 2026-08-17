@@ -1,13 +1,13 @@
 export { EvoTabs } from "./tabs";
 export { EvoTabList } from "./tab-list";
 export { EvoTab } from "./tab";
-export { EvoTabPanelList } from "./tab-panel-list";
+export { EvoTabPanels } from "./tab-panels";
 export { EvoTabPanel } from "./tab-panel";
 export type {
   Activation,
   EvoTabListProps,
   EvoTabPanelProps,
-  EvoTabPanelListProps,
+  EvoTabPanelsProps,
   EvoTabProps,
   EvoTabsProps,
   Size,
