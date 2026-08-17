@@ -10,8 +10,8 @@ import IconTemplate from "./examples/icon-with-text.marko";
 import IconTemplateCode from "./examples/icon-with-text.marko?raw";
 import TypeaheadTemplate from "./examples/typeahead.marko";
 import TypeaheadTemplateCode from "./examples/typeahead.marko?raw";
-import SeparatorTemplate from "./examples/separator.marko";
-import SeparatorTemplateCode from "./examples/separator.marko?raw";
+import GroupsTemplate from "./examples/groups.marko";
+import GroupsTemplateCode from "./examples/groups.marko?raw";
 import PrefixLabelTemplate from "./examples/prefix-label.marko";
 import PrefixLabelTemplateCode from "./examples/prefix-label.marko?raw";
 import FilterTemplate from "./examples/filter.marko";
@@ -143,10 +143,7 @@ export const Default = buildExtensionTemplate(
   DefaultTemplateCode,
 );
 export const IconText = buildExtensionTemplate(IconTemplate, IconTemplateCode);
-export const Separator = buildExtensionTemplate(
-  SeparatorTemplate,
-  SeparatorTemplateCode,
-);
+export const Groups = buildExtensionTemplate(GroupsTemplate, GroupsTemplateCode);
 export const Typeahead = buildExtensionTemplate(
   TypeaheadTemplate,
   TypeaheadTemplateCode,

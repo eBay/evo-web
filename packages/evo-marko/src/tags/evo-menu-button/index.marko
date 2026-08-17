@@ -39,6 +39,7 @@ export interface Input<
     disabled,
     variant,
     item: items,
+    group: groups,
     label,
     selected: inputSelected,
     selectedChange,
@@ -76,7 +77,7 @@ export interface Input<
         tagName = FilterChip;
         isSelected = Array.isArray(selected)
             ? selected.length > 0
-            : selected !== -1;
+            : selected != null && selected !== -1;
     } else {
         tagName = Button;
         split = inputSplit;
@@ -157,5 +158,6 @@ export interface Input<
         onClick() {
             if (collapseOnSelect) open = false;
         }
-        item=items/>
+        item=items
+        group=groups/>
 </span>

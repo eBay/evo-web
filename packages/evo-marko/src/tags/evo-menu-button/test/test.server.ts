@@ -8,7 +8,7 @@ const {
     Default,
     Typeahead,
     Badged,
-    Separator,
+    Groups,
     IconText,
     PrefixLabel,
     Filter,
@@ -68,8 +68,8 @@ describe("menu-button", () => {
         await snapshotHTML(Default, { text: "Button", variant: "button" });
     });
 
-    it("renders with separators", async () => {
-        await snapshotHTML(Separator);
+    it("renders with groups", async () => {
+        await snapshotHTML(Groups);
     });
 
     it("renders with prefix label", async () => {

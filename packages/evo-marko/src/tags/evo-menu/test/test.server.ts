@@ -4,7 +4,8 @@ import * as testUtils from "../../../common/test-utils/server";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../menu.stories"; // import all stories from the stories file
 
-const { Default, Typeahead, Badged, Sprites, Footer } = composeStories(stories);
+const { Default, Groups, Controlled, Typeahead, Badged, Sprites, Footer } =
+  composeStories(stories);
 
 describe("menu", () => {
   it("renders basic version", async () => {
@@ -25,6 +26,30 @@ describe("menu", () => {
 
   it("renders with fix-width=true", async () => {
     await snapshotHTML(Default, { fixWidth: true });
+  });
+
+  it("renders as radio with no selection when selected=null", async () => {
+    await snapshotHTML(Default, { selected: null });
+  });
+
+  it("renders with groups", async () => {
+    await snapshotHTML(Groups);
+  });
+
+  it("renders with controlled selection shared across groups", async () => {
+    await snapshotHTML(Controlled);
+  });
+
+  it("renders with top-level items before groups", async () => {
+    await snapshotHTML(Default, {
+      selected: 0,
+      group: [
+        {
+          selected: ["b"],
+          item: [{ value: "a" }, { value: "b" }],
+        },
+      ],
+    });
   });
 
   it("renders with typeahead", async () => {

@@ -16,8 +16,10 @@ import SpritesTemplate from "./examples/sprites.marko";
 import SpritesTemplateCode from "./examples/sprites.marko?raw";
 import TypeaheadTemplate from "./examples/typeahead.marko";
 import TypeaheadTemplateCode from "./examples/typeahead.marko?raw";
-import SeparatorTemplate from "./examples/separator.marko";
-import SeparatorTemplateCode from "./examples/separator.marko?raw";
+import GroupsTemplate from "./examples/groups.marko";
+import GroupsTemplateCode from "./examples/groups.marko?raw";
+import ControlledTemplate from "./examples/controlled.marko";
+import ControlledTemplateCode from "./examples/controlled.marko?raw";
 import FooterTemplate from "./examples/footer.marko";
 import FooterTemplateCode from "./examples/footer.marko?raw";
 
@@ -48,7 +50,7 @@ export default {
     selected: {
       controllable: true,
       description:
-        "If present, indicates the selected item(s) in the menu and automatically updates them on click. Use a single value for single-select, or an array for multi-select. Compares with `value` is present in `@option`, otherwise index.",
+        "If present, indicates the selected item(s) among the top-level `@item`s and automatically updates them on click. Use a single value for single-select (`null` for single-select with nothing selected), or an array for multi-select. Compares with `value` if present on `@item`, otherwise the item's index in the menu.",
       table: { type: { summary: "number | string | (number | string)[]" } },
     },
     item: {
@@ -58,11 +60,6 @@ export default {
           type: "string",
           control: "text",
           description: "Used for tracking the selected item",
-        },
-        separator: {
-          type: "boolean",
-          control: "boolean",
-          description: "Render as a separator instead of an item",
         },
         badgeNumber: {
           type: "number",
@@ -79,6 +76,21 @@ export default {
         ["<div> attributes" as any]: {
           description:
             "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through to `<@item>`",
+        },
+      },
+    },
+    group: {
+      description:
+        "Attribute tag representing a group of menu items with its own selection state. Groups are separated by dividers automatically. Top-level `@item`s (if any) always render before groups.",
+      "@": {
+        selected: {
+          type: "number | string | (number | string)[]",
+          description:
+            "If present, indicates the selected item(s) within this group and automatically updates them on click. Use a single value for single-select (`null` for single-select with nothing selected), or an array for multi-select. Compares with `value` if present on `@item`, otherwise the item's index in the menu.",
+        },
+        item: {
+          description:
+            "Attribute tag representing a menu item within the group. Accepts the same attributes as a top-level `@item`.",
         },
       },
     },
@@ -150,6 +162,13 @@ export const MultiSelect = buildExtensionTemplate(
   {
     selected: [0],
   },
+);
+
+export const Groups = buildExtensionTemplate(GroupsTemplate, GroupsTemplateCode);
+
+export const Controlled = buildExtensionTemplate(
+  ControlledTemplate,
+  ControlledTemplateCode,
 );
 
 export const Typeahead = buildExtensionTemplate(

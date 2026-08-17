@@ -1,0 +1,16 @@
+<let/sortSelected="price-low">
+<let/formatSelected=["shipping-free"]>
+<evo-menu-button
+    ...input
+>
+    eBay Menu groups
+    <@group selected:=sortSelected>
+        <@item value="price-low">Price: low to high</@item>
+        <@item value="price-high">Price: high to low</@item>
+    </@group>
+    <@group selected:=formatSelected>
+        <@item value="shipping-free">Free shipping</@item>
+        <@item value="buy-it-now">Buy It Now</@item>
+        <@item value="auction">Auction</@item>
+    </@group>
+</evo-menu-button>
