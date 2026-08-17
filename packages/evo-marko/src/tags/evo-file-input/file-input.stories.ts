@@ -25,8 +25,8 @@ export default {
       control: "boolean",
       description: "Whether multiple files can be uploaded",
     },
-    subheader: {
-      description: "an optional subheading",
+    description: {
+      description: "An optional description",
       "@": {
         ["<span> attributes" as any]: {
           description:

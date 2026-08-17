@@ -51,7 +51,8 @@ const EbayPageNotice: FC<Props> = ({
     return dismissed ? null : (
         <section
             {...rest}
-            aria-labelledby={id || `${status}-status`}
+            aria-label={status === "general" ? ariaLabel : undefined}
+            aria-labelledby={status !== "general" ? id || `${status}-status` : undefined}
             className={classNames("page-notice", className, {
                 [`page-notice--${status}`]: status !== "general",
             })}

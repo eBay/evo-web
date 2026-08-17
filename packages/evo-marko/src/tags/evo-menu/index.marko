@@ -7,7 +7,11 @@ export interface Item extends Marko.HTML.Div {
 }
 export interface Input<
     Index extends number | string | (number | string)[],
-> extends Marko.HTML.Span {
+> extends Omit<Marko.HTML.Span, "aria-label" | "aria-labelledby"> {
+    /** Localized accessible name for the menu. Cannot be used with `a11yLabelId`. */
+    a11yText?: string;
+    /** ID of the element that labels the menu. Cannot be used with `a11yText`. */
+    a11yLabelId?: string;
     selected?: Index;
     selectedChange?: (selected: Index) => void;
     item?: Marko.AttrTag<Item>;
@@ -23,6 +27,8 @@ export interface Input<
 <const/{
     class: inputClass,
     classPrefix,
+    a11yText,
+    a11yLabelId,
     selected: inputIndex,
     selectedChange,
     reverse,
@@ -32,8 +38,6 @@ export interface Input<
     typeaheadTimeoutLength,
     item: items,
     variant,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledby,
     ...htmlInput
 }=input>
 <const/isRadio=typeof inputIndex === "number" || typeof inputIndex === "string">
@@ -58,8 +62,8 @@ export interface Input<
     <div
         role="menu"
         class=`${baseClass}__items`
-        aria-label=ariaLabel
-        aria-labelledby=ariaLabelledby
+        aria-label=a11yText
+        aria-labelledby=a11yLabelId
         id=menu>
         <const/$items: Iterable<HTMLElement>=$item> // TODO: remove when Marko TS works
         <evo-roving-tabindex/rovTabindex
