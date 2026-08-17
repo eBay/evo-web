@@ -11,12 +11,12 @@ describe("menu", () => {
     await snapshotHTML(Default);
   });
 
-  it("renders with aria-label", async () => {
-    await snapshotHTML(Default, { ariaLabel: "test" });
+  it("renders with a11yText", async () => {
+    await snapshotHTML(Default, { a11yText: "test" });
   });
 
-  it("renders with aria-labelledby", async () => {
-    await snapshotHTML(Default, { ariaLabelledBy: "test" });
+  it("renders with a11yLabelId", async () => {
+    await snapshotHTML(Default, { a11yLabelId: "test" });
   });
 
   it("renders with reverse=true", async () => {

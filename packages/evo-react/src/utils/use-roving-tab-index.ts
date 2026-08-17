@@ -119,20 +119,21 @@ export function useRovingTabIndex<Key>({
 
   const registerItem = useCallback(
     (item: RovingTabIndexItem<Key>) => {
-      itemsRef.current.set(item.key, item);
+      const key = item.key;
+      itemsRef.current.set(key, item);
 
       if (focusedKeyRef.current === null && !item.disabled) {
-        setFocusedKey(item.key);
+        setFocusedKey(key);
       }
 
       return () => {
-        if (itemsRef.current.get(item.key) !== item) {
+        if (itemsRef.current.get(key) !== item) {
           return;
         }
 
-        itemsRef.current.delete(item.key);
-        if (focusedKeyRef.current === item.key) {
-          const fallbackKey = findFallbackKey(item.key);
+        itemsRef.current.delete(key);
+        if (focusedKeyRef.current === key) {
+          const fallbackKey = findFallbackKey(key);
           focusedKeyRef.current = fallbackKey;
           setFocusedKeyState(fallbackKey);
         }
