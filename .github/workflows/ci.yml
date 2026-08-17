@@ -10,19 +10,23 @@ concurrency:
   group: "${{ github.workflow }}-${{ github.event_name == 'pull_request_target' && github.head_ref || github.ref }}"
   cancel-in-progress: true
 
-jobs:
-  # One job per package (each running the package's own `build` script), plus
-  # `site` for the root-level lint and site typecheck. Together these run
-  # everything `npm run build:ci` ran in a single job, on parallel runners.
-  site:
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v6
-      - uses: ./.github/actions/setup
-      - run: npm run lint
-      - run: npx mtc
+env:
+  # Everything `npm run build -w packages/skin` produces that another package
+  # reads: the compiled CSS, the per-module import stubs consumers resolve
+  # `@ebay/skin/<module>` through, and the two icon files the build writes back
+  # into the site.
+  SKIN_BUILD_OUTPUT: >-
+    packages/skin/dist
+    packages/skin/*.mjs
+    src/data/icons.json
+    src/tags/master-icons.marko
 
+jobs:
+  # `skin` builds first and publishes its build output as an artifact; every
+  # other package job restores that artifact before building. Today skin's
+  # output is also committed, so restoring it is a no-op — the dependency is
+  # wired up ahead of dropping the committed `dist/` from the repo, and to
+  # measure what putting skin on the critical path costs.
   skin:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -39,23 +43,50 @@ jobs:
             echo "$output"
             exit 1 # Fail the CI run if there are uncommitted changes
           fi
+      # A single tarball: `dist/` alone is ~1500 files, and upload-artifact
+      # pays per-file overhead.
+      - name: Package skin build output
+        run: tar -czf skin-dist.tar.gz $SKIN_BUILD_OUTPUT
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skin-dist
+          path: skin-dist.tar.gz
+          retention-days: 1
+
+  # One job per package (each running the package's own `build` script), plus
+  # `site` for the root-level lint and site typecheck. Together these run
+  # everything `npm run build:ci` ran in a single job, on parallel runners.
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: [skin]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup
+      - uses: ./.github/actions/skin-dist
+      - run: npm run lint
+      - run: npx mtc
 
   evo-marko:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs: [skin]
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
+      - uses: ./.github/actions/skin-dist
       - run: npm run build -w packages/evo-marko
 
   ebayui-core:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    needs: [skin]
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
         with:
           playwright: "true"
+      - uses: ./.github/actions/skin-dist
       - run: npm run build -w packages/ebayui-core
       - uses: codecov/codecov-action@v5
         with:
@@ -64,19 +95,23 @@ jobs:
   ebayui-core-react:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    needs: [skin]
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
+      - uses: ./.github/actions/skin-dist
       - run: npm run build -w packages/ebayui-core-react
 
   evo-react:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs: [skin]
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
         with:
           playwright: "true"
+      - uses: ./.github/actions/skin-dist
       - run: npm run build -w packages/evo-react
 
   # Fan-in for the jobs above, keeping the "build" required-check name that

@@ -1,0 +1,17 @@
+name: Restore skin build output
+description: >
+  Download and unpack the build output published by the `skin` job, so a
+  package job builds against a freshly built skin rather than whatever is
+  committed to the repo.
+runs:
+  using: composite
+  steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: skin-dist
+    - name: Unpack skin build output
+      shell: bash
+      run: |
+        set -euo pipefail
+        tar -xzf skin-dist.tar.gz
+        rm skin-dist.tar.gz
