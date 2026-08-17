@@ -319,12 +319,12 @@ exports[`menu > renders basic version 1`] = `
 </span>"
 `;
 
-exports[`menu > renders with aria-label 1`] = `
+exports[`menu > renders with a11yLabelId 1`] = `
 "<span
-  arialabel="test"
   class="menu"
 >
   <div
+    aria-labelledby="test"
     class="menu__items"
     id="GENERATED-0"
     role="menu"
@@ -397,12 +397,12 @@ exports[`menu > renders with aria-label 1`] = `
 </span>"
 `;
 
-exports[`menu > renders with aria-labelledby 1`] = `
+exports[`menu > renders with a11yText 1`] = `
 "<span
-  arialabelledby="test"
   class="menu"
 >
   <div
+    aria-label="test"
     class="menu__items"
     id="GENERATED-0"
     role="menu"

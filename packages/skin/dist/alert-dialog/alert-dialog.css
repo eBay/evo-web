@@ -189,11 +189,6 @@
 }
 @media (min-width: 768px) {
     .alert-dialog__window {
-        max-width: calc(88% - var(--spacing-400));
-    }
-}
-@media (min-width: 1024px) {
-    .alert-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }
 }

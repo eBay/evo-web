@@ -1,5 +1,19 @@
 # @evo-web/react
 
+## 0.4.2
+
+### Patch Changes
+
+- [#874](https://github.com/eBay/evo-web/pull/874) [`550ff22`](https://github.com/eBay/evo-web/commit/550ff22b5f39121394f61edd3d6b7151028b3e05) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoCheckbox component.
+
+- [#876](https://github.com/eBay/evo-web/pull/876) [`9c31d74`](https://github.com/eBay/evo-web/commit/9c31d7475ecb7ea70dac5934e96f4ce254ceaebb) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoEek component.
+
+- [#864](https://github.com/eBay/evo-web/pull/864) [`7fa833b`](https://github.com/eBay/evo-web/commit/7fa833ba83d31ea15e43d992c464224b1b830aff) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoTabs component and align tab sizing.
+
+- [#883](https://github.com/eBay/evo-web/pull/883) [`45e7bb9`](https://github.com/eBay/evo-web/commit/45e7bb9b5c3171fa6948353390e99fe20588e81d) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFileInput component and rename evo-file-input @subheader to @description.
+
+- [#875](https://github.com/eBay/evo-web/pull/875) [`ea5767d`](https://github.com/eBay/evo-web/commit/ea5767d782524ff33af6f81bca69b31ad09bd016) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoRadio component.
+
 ## 0.4.1
 
 ### Patch Changes

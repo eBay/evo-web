@@ -4,13 +4,13 @@ export interface Input extends Omit<Marko.HTML.Input, "type"> {
             as?: keyof Marko.NativeTags;
         }
     >;
-    subheader?: Marko.AttrTag<Marko.HTML.Span>;
+    description?: Marko.AttrTag<Marko.HTML.Span>;
 }
 
 <const/{
     class: inputClass,
     header,
-    subheader,
+    description,
     content,
     onDragEnter,
     onDragOver,
@@ -41,10 +41,10 @@ export interface Input extends Omit<Marko.HTML.Input, "type"> {
                     ...headerHtmlInput
                     class=["file-input__content-header", headerClass]/>
             </if>
-            <if=subheader>
+            <if=description>
                 <span
-                    ...subheader
-                    class=["file-input__content-subheader", subheader.class]/>
+                    ...description
+                    class=["file-input__content-subheader", description.class]/>
             </if>
             <if=content>
                 <label for=inputId>
@@ -62,18 +62,18 @@ export interface Input extends Omit<Marko.HTML.Input, "type"> {
         id=inputId
         onDragEnter(e, target) {
             dragging = true;
-            (onDragEnter || null)?.(e, target);
+            onDragEnter && onDragEnter(e, target);
         }
         onDragOver(e, target) {
             dragging = true;
-            (onDragOver || null)?.(e, target);
+            onDragOver && onDragOver(e, target);
         }
         onDragLeave(e, target) {
             dragging = false;
-            (onDragLeave || null)?.(e, target);
+            onDragLeave && onDragLeave(e, target);
         }
         onDrop(e, target) {
             dragging = false;
-            (onDrop || null)?.(e, target);
+            onDrop && onDrop(e, target);
         }>
 </div>

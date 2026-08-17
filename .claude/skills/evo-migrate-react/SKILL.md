@@ -496,8 +496,8 @@ After completing the component, update `.claude/skills/evo-app-migrate-react/`:
    - TSX examples for new props or composition patterns
 4. If nothing changed beyond the global renames, write: `No prop changes. Global renames from Step 2 are sufficient.`
 5. Update `.claude/skills/evo-app-migrate-react/SKILL.md` **only as an index**:
-   - Add a row for `ebay-{name}` under **Step 3 — Apply per-component prop changes**.
-   - Link that row to `components/evo-{name}.md`.
+   - Add a list item for `ebay-{name}` in alphabetical order under **Step 3 — Apply per-component prop changes**.
+   - Link that list item to `components/evo-{name}.md`.
    - Do not inline per-component migration details in `SKILL.md`.
 
 Keep component entries concise. App owners read these files, not component authors.

@@ -183,6 +183,10 @@
     --dimension-icon-medium: 24px;
     --dimension-icon-small: 16px;
     --dimension-tap-target-minimum: 48px;
+    --expressive-theme-ag-indigo-dark-background: #01193d;
+    --expressive-theme-ag-indigo-dark-foreground: #ffffff;
+    --expressive-theme-ag-indigo-light-background: #d3effe;
+    --expressive-theme-ag-indigo-light-foreground: #01193d;
     --expressive-theme-avocado-dark-background: #4e4e0c;
     --expressive-theme-avocado-dark-foreground: #f8fcde;
     --expressive-theme-avocado-light-background: #e3f13c;

@@ -9,7 +9,14 @@ export type Props = {
     position?: LabelPosition;
 } & ComponentProps<"label">;
 
-const Label: FC<Props> = ({ className, children, stacked = false, required = false, position = "start", ...rest }) => {
+const EbayLabel: FC<Props> = ({
+    className,
+    children,
+    stacked = false,
+    required = false,
+    position = "start",
+    ...rest
+}) => {
     const wrapperClassName = classNames(
         `field__label`,
         className,
@@ -31,4 +38,4 @@ const Label: FC<Props> = ({ className, children, stacked = false, required = fal
     );
 };
 
-export default Label;
+export default EbayLabel;

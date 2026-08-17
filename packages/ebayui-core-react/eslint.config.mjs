@@ -9,7 +9,16 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
     {
-        ignores: ["dist", "config", "scripts", ".storybook", "vitest.config.ts", "node_modules", "_site"],
+        ignores: [
+            "dist",
+            "config",
+            "scripts",
+            ".storybook",
+            "vitest.config.ts",
+            "node_modules",
+            "_site",
+            "src/ebay-icon/__tests__/inline.stories.tsx",
+        ],
     },
     eslint.configs.recommended,
     ...tseslint.configs.recommended,

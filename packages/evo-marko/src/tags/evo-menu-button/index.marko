@@ -4,7 +4,8 @@ import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Input as MenuInput } from "<evo-menu>";
 export interface Input<
     Index extends number | string | (number | string)[],
-> extends Omit<MenuInput<Index>, "variant"> {
+> extends Omit<MenuInput<Index>, "a11yLabelId" | "a11yText" | "variant">,
+        Pick<Marko.HTML.Span, "aria-label" | "aria-labelledby"> {
     open?: boolean;
     openChange?: (open: boolean) => void;
     collapseOnSelect?: boolean;

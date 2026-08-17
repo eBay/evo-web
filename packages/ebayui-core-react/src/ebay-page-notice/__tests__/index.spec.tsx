@@ -39,6 +39,33 @@ describe("<EbayPageNotice>", () => {
         });
     });
 
+    describe("when status is general", () => {
+        it("should not set aria-labelledby", () => {
+            const { container } = render(
+                <EbayPageNotice status="general">
+                    <EbayNoticeContent>
+                        <p>General notice content</p>
+                    </EbayNoticeContent>
+                </EbayPageNotice>,
+            );
+
+            expect(container.querySelector(".page-notice")).not.toHaveAttribute("aria-labelledby");
+            expect(container.querySelector(".page-notice")).not.toHaveAttribute("aria-label");
+        });
+
+        it("should set aria-label on the section when provided", () => {
+            const { container } = render(
+                <EbayPageNotice status="general" aria-label="General status">
+                    <EbayNoticeContent>
+                        <p>General notice content</p>
+                    </EbayNoticeContent>
+                </EbayPageNotice>,
+            );
+
+            expect(container.querySelector(".page-notice")).toHaveAttribute("aria-label", "General status");
+        });
+    });
+
     describe("on using the notice with no content", () => {
         it("should throw an error", () => {
             vi.spyOn(console, "error").mockImplementation(() => null);

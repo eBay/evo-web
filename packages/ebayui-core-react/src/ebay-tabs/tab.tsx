@@ -10,7 +10,7 @@ type TabProps = ComponentProps<"div"> & {
     refCallback?: RefCallback<HTMLElement>;
 };
 
-const Tab: FC<TabProps> = ({
+const EbayTab: FC<TabProps> = ({
     children,
     index,
     parentId,
@@ -36,4 +36,4 @@ const Tab: FC<TabProps> = ({
     </div>
 );
 
-export default Tab;
+export default EbayTab;

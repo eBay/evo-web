@@ -82,7 +82,7 @@ jobs:
           PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
           PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
           STORIES: ${{ steps.meta.outputs.components }}
-        run: npx percy storybook ./storybook-static --include "$STORIES"
+        run: npx percy storybook ./storybook-static --include "$STORIES" -c packages/skin/.percy.yml
 
       - name: Run Percy (All)
         if: steps.meta.outputs.components == 'all'
@@ -91,7 +91,7 @@ jobs:
           PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
           PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
           PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
-        run: npx percy storybook ./storybook-static
+        run: npx percy storybook ./storybook-static -c packages/skin/.percy.yml
 
       - name: Report Percy status to PR
         if: always()

@@ -96,13 +96,15 @@ div.menu__item[role^="menuitem"] > span {
 
 a.fake-menu__item--badged,
 button.fake-menu__item--badged,
-div.menu__item--badged[role^="menuitem"] {
+div.menu__item--badged[role^="menuitem"],
+div.menu__item[role^="menuitem"]:has(.badge) {
     position: relative;
 }
 
 a.fake-menu__item--badged span.badge,
 button.fake-menu__item--badged span.badge,
-div.menu__item--badged[role^="menuitem"] span.badge {
+div.menu__item--badged[role^="menuitem"] span.badge,
+div.menu__item[role^="menuitem"] span.badge {
     padding: 1px 5px;
     position: absolute;
     top: 0;

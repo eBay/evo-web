@@ -35,6 +35,18 @@ export default {
   },
 
   argTypes: {
+    a11yText: {
+      type: "string",
+      control: "text",
+      description:
+        "Localized accessible name for the menu. Cannot be used with `a11yLabelId`.",
+    },
+    a11yLabelId: {
+      type: "string",
+      control: "text",
+      description:
+        "ID of the element that labels the menu. Cannot be used with `a11yText`.",
+    },
     selected: {
       controllable: true,
       description:

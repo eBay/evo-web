@@ -6,7 +6,7 @@ type TabProps = ComponentProps<"li"> & {
     ariaCurrent?: "page" | "true";
 };
 
-const Tab: FC<TabProps> = ({ children, href, ariaCurrent, className, ...rest }) => (
+const EbayFakeTab: FC<TabProps> = ({ children, href, ariaCurrent, className, ...rest }) => (
     <li {...rest} className={classNames(className, "fake-tabs__item")}>
         <a href={href} aria-current={ariaCurrent}>
             {children}
@@ -14,4 +14,4 @@ const Tab: FC<TabProps> = ({ children, href, ariaCurrent, className, ...rest }) 
     </li>
 );
 
-export default Tab;
+export default EbayFakeTab;

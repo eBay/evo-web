@@ -16,7 +16,11 @@ export interface Group<
 }
 export interface Input<
     Index extends number | string | (number | string)[],
-> extends Marko.HTML.Span {
+> extends Omit<Marko.HTML.Span, "aria-label" | "aria-labelledby"> {
+    /** Localized accessible name for the menu. Cannot be used with `a11yLabelId`. */
+    a11yText?: string;
+    /** ID of the element that labels the menu. Cannot be used with `a11yText`. */
+    a11yLabelId?: string;
     selected?: Index | null;
     selectedChange?: (selected: Index) => void;
     item?: Marko.AttrTag<Item>;
@@ -45,6 +49,8 @@ static function nextSelected(
 <const/{
     class: inputClass,
     classPrefix,
+    a11yText,
+    a11yLabelId,
     selected: inputIndex,
     selectedChange,
     reverse,
@@ -55,8 +61,6 @@ static function nextSelected(
     item,
     group,
     variant,
-    "aria-label": ariaLabel,
-    "aria-labelledby": ariaLabelledby,
     ...htmlInput
 }=input>
 <const/isFilter=variant === "filter">
@@ -97,8 +101,8 @@ static function nextSelected(
     <div
         role="menu"
         class=`${baseClass}__items`
-        aria-label=ariaLabel
-        aria-labelledby=ariaLabelledby
+        aria-label=a11yText
+        aria-labelledby=a11yLabelId
         id=menu>
         // TODO: remove when Marko TS works ($item errors when referenced
         // directly because it is declared inside nested loops)
