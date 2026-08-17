@@ -10,6 +10,7 @@ AI configuration for eBay's evo-web components monorepo.
 - Always run `npm run build` before marking component work complete
 - Prefer reading existing patterns over introducing new ones
 - Never manually edit auto-generated files (they should typically have a comment indicating they are generated)
+- Never widen a task's diff with out-of-scope fixes — record them in `agent-feedback/` instead (see below)
   </agent_constraints>
 
 ## <architecture_rules>
@@ -277,6 +278,12 @@ npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser
 **Browser Support:**
 
 - Defined by `@ebay/browserslist-config` (no IE10 or below)
+
+---
+
+## Agent Feedback
+
+Anything actionable but out of scope for the current task — a suspected bug, an a11y gap, cleanup, a perf/size win, tooling friction, or code that was confusing — must be recorded in [`agent-feedback/`](agent-feedback/README.md) before finishing. Don't silently drop it, and don't fix it inside an unrelated diff. Read that README for the entry format; resolved entries are deleted in the same PR as the fix.
 
 ---
 
