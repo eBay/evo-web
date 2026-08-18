@@ -1,5 +1,7 @@
 ---
+"@ebay/ebayui-core": minor
+"@ebay/skin": minor
 "@ebay/ui-core-react": minor
 ---
 
-Add `strategy` prop to `EbayDateTextbox` to control calendar popover positioning (`absolute` or `fixed`) via `useFloatingDropdown`.
+Add a `strategy` input to date textbox components to control calendar popover positioning (`absolute` or `fixed`).

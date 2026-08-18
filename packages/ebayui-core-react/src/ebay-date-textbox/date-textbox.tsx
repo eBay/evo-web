@@ -290,7 +290,12 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
                 <EbayTextboxPostfixIcon icon={<EbayIconCalendar24 />} buttonAriaLabel={a11yOpenPopoverText} />,
             )}
 
-            <div hidden={!isPopoverOpen} ref={refs.setOverlay} style={overlayStyles} className="date-textbox__popover">
+            <div
+                hidden={!isPopoverOpen}
+                ref={refs.setOverlay}
+                style={overlayStyles}
+                className={classNames("date-textbox__popover", strategy === "fixed" && "date-textbox__popover--fixed")}
+            >
                 <EbayCalendar
                     {...rest}
                     locale={locale}

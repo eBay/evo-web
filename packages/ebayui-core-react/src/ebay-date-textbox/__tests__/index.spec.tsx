@@ -24,6 +24,7 @@ describe("<EbayDateTextbox />", () => {
         const { container } = render(<EbayDateTextbox strategy="fixed" />);
         fireEvent.click(screen.getByLabelText("open calendar"));
 
+        expect(container.querySelector(".date-textbox__popover")).toHaveClass("date-textbox__popover--fixed");
         expect(container.querySelector(".date-textbox__popover")).toHaveStyle({ position: "fixed" });
     });
     it("should open the calendar when clicking on the postfix icon with children", () => {

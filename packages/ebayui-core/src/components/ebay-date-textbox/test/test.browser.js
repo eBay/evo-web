@@ -33,6 +33,21 @@ describe("ebay-date-textbox", () => {
         });
     });
 
+    describe("with fixed strategy", () => {
+        beforeEach(async () => {
+            component = await render(Default, { strategy: "fixed" });
+        });
+
+        it("positions the popover with the fixed strategy", () => {
+            const popover = component.container.querySelector(
+                ".date-textbox__popover",
+            );
+
+            expect(popover).toHaveClass("date-textbox__popover--fixed");
+            expect(popover).toHaveStyle({ position: "fixed" });
+        });
+    });
+
     describe("previous month selected", () => {
         beforeEach(async () => {
             component = await render(Default, { value: "01/27/2024" });

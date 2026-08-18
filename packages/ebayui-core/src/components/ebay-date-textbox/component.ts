@@ -21,6 +21,7 @@ interface DateTextboxInput extends Omit<CalendarInput, `on${string}`> {
     rangeEnd?: Date | number | string;
     textbox?: Marko.AttrTag<TextboxInput>;
     disabled?: boolean;
+    strategy?: "absolute" | "fixed";
     /** @deprecated use `@textbox-input` instead */
     "input-placeholder-text"?: string | [string, string];
     "collapse-on-select"?: boolean;
@@ -66,6 +67,7 @@ class DateTextbox extends Marko.Component<Input, State> {
         this.dropdownUtil = new DropdownUtil(
             this.el as HTMLElement,
             this.getEl("popover"),
+            { strategy: this.input.strategy },
         );
     }
 
