@@ -55,6 +55,7 @@ exports[`select > renders an input select with inline floating label 1`] = `
   id="MARKO-ID-0"
 >
   <option
+    selected=""
     text="option 0"
     value=""
   />
@@ -87,6 +88,7 @@ exports[`select > renders an input select with inline floating label and an id 1
   id="select-id"
 >
   <option
+    selected=""
     text="option 0"
     value=""
   />

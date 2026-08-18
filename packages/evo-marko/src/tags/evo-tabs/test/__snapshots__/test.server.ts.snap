@@ -12,7 +12,6 @@ exports[`tabs > renders basic version with 3 tabs and 3 panels 1`] = `
       aria-controls="GENERATED-3"
       class="tabs__item"
       id="GENERATED-0"
-      panel="[object Object]"
       role="tab"
       tabindex="0"
     >
@@ -24,7 +23,6 @@ exports[`tabs > renders basic version with 3 tabs and 3 panels 1`] = `
       aria-controls="GENERATED-4"
       class="tabs__item"
       id="GENERATED-1"
-      panel="[object Object]"
       role="tab"
       tabindex="-1"
     >
@@ -36,7 +34,6 @@ exports[`tabs > renders basic version with 3 tabs and 3 panels 1`] = `
       aria-controls="GENERATED-5"
       class="tabs__item"
       id="GENERATED-2"
-      panel="[object Object]"
       role="tab"
       tabindex="-1"
     >
@@ -124,7 +121,6 @@ exports[`tabs > renders basic version with 3 tabs and 3 panels on the second pan
       aria-controls="GENERATED-3"
       class="tabs__item"
       id="GENERATED-0"
-      panel="[object Object]"
       role="tab"
       tabindex="-1"
     >
@@ -136,7 +132,6 @@ exports[`tabs > renders basic version with 3 tabs and 3 panels on the second pan
       aria-controls="GENERATED-4"
       class="tabs__item"
       id="GENERATED-1"
-      panel="[object Object]"
       role="tab"
       tabindex="-1"
     >
@@ -149,7 +144,6 @@ exports[`tabs > renders basic version with 3 tabs and 3 panels on the second pan
       aria-selected="true"
       class="tabs__item"
       id="GENERATED-2"
-      panel="[object Object]"
       role="tab"
       tabindex="0"
     >
@@ -236,7 +230,6 @@ exports[`tabs > renders large tabs 1`] = `
       aria-controls="GENERATED-3"
       class="tabs__item"
       id="GENERATED-0"
-      panel="[object Object]"
       role="tab"
       tabindex="0"
     >
@@ -248,7 +241,6 @@ exports[`tabs > renders large tabs 1`] = `
       aria-controls="GENERATED-4"
       class="tabs__item"
       id="GENERATED-1"
-      panel="[object Object]"
       role="tab"
       tabindex="-1"
     >
@@ -260,7 +252,6 @@ exports[`tabs > renders large tabs 1`] = `
       aria-controls="GENERATED-5"
       class="tabs__item"
       id="GENERATED-2"
-      panel="[object Object]"
       role="tab"
       tabindex="-1"
     >

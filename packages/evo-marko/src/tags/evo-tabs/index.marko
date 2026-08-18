@@ -32,8 +32,9 @@ export interface Input extends Marko.HTML.Div {
     <div/tabListEl role="tablist" class="tabs__items">
         <for|tab, i| of=tabs>
             <const/isSelected=index === i>
+            <const/{ panel, ...tabInput }=tab>
             <div/$item
-                ...tab
+                ...tabInput
                 onClick(e, target) {
                     (rovingTabIndex.onClick || null)?.(i);
                     (tab.onClick || null)?.(e, target);

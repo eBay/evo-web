@@ -98,13 +98,13 @@ export interface Input<Index extends number | string>
         if (open && e.key === "Escape") {
             open = false;
         }
-        onKeyDown && onKeyDown(e, el);
+        onKeyDown && onKeyDown(e as any, el);
     }
     onFocusOut(e: FocusEvent, el: HTMLDivElement) {
         if (!el.contains(e.relatedTarget as Node)) {
             open = false;
         }
-        onFocusOut && onFocusOut(e, el);
+        onFocusOut && onFocusOut(e as any, el);
     }>
     <id/labelId>
     <button

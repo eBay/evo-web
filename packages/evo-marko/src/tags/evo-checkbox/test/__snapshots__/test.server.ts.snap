@@ -19,6 +19,7 @@ exports[`evo-checkbox > renders checkbox with id 1`] = `
         id="GENERATED-0"
         name="checkbox-group"
         type="checkbox"
+        value="0"
       />
       <span
         class="checkbox__icon"
@@ -76,6 +77,7 @@ exports[`evo-checkbox > renders checkbox with id 1`] = `
         id="GENERATED-3"
         name="checkbox-group"
         type="checkbox"
+        value="1"
       />
       <span
         class="checkbox__icon"
@@ -117,6 +119,7 @@ exports[`evo-checkbox > renders checkbox with id 1`] = `
         id="GENERATED-4"
         name="checkbox-group"
         type="checkbox"
+        value="2"
       />
       <span
         class="checkbox__icon"
