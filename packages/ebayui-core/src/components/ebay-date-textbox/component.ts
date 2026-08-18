@@ -67,7 +67,7 @@ class DateTextbox extends Marko.Component<Input, State> {
         this.dropdownUtil = new DropdownUtil(
             this.el as HTMLElement,
             this.getEl("popover"),
-            { strategy: this.input.strategy },
+            { strategy: this.input.strategy ?? "absolute" },
         );
     }
 

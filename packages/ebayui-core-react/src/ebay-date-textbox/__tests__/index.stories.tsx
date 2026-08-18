@@ -122,7 +122,7 @@ or import styles using SCSS/CSS
         },
         strategy: {
             description:
-                "Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
+                "Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when the dropdown is contained in an overflow and needs to remain visible as you scroll the screen.",
             options: ["fixed", "absolute"],
             control: { type: "select" },
         },
