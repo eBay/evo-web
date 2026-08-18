@@ -120,6 +120,12 @@ or import styles using SCSS/CSS
             description: "Text to be read by screen readers for the button that opens the calendar popover",
             control: "text",
         },
+        strategy: {
+            description:
+                "Swap between `fixed` and `absolute` positioning strategy. Use `fixed` when dropdown is in contained in an overflow and needs to be visible as you scroll the screen.",
+            options: ["fixed", "absolute"],
+            control: { type: "select" },
+        },
         onChange: {
             description: "Triggered when the selection changes",
             action: "onChange",
@@ -234,6 +240,13 @@ export const RangeWithFloatingLabel: StoryFn<EbayDateTextboxProps> = (args) => {
     };
 
     return <Component />;
+};
+
+export const WithFixedStrategy: StoryObj<EbayDateTextboxProps> = {
+    args: {
+        strategy: "fixed",
+        locale: "en-CA",
+    },
 };
 
 export const LocalizedGerman: StoryObj<EbayDateTextboxProps> = {
