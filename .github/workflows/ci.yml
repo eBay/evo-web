@@ -131,8 +131,8 @@ jobs:
       - uses: ./.github/actions/skin-dist
       - run: npm run build -w packages/evo-react
 
-  # Fan-in for the jobs above, keeping the "build" required-check name that
-  # branch protection and the deploy/release jobs depend on.
+  # One gate for `deploy` and `release` to depend on. Counts a skipped job as a
+  # failure, so a job skipped by a failing `needs` dependency still fails here.
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 5
