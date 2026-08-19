@@ -87,6 +87,12 @@ export default {
                 },
             },
         },
+        strategy: {
+            options: ["fixed", "absolute"],
+            control: { type: "select" },
+            description:
+                "Swap between fixed and absolute positioning strategy. Use fixed when the popover is contained in an overflow and needs to remain visible as the page scrolls.",
+        },
         disabled: {
             type: "boolean",
             control: { type: "boolean" },
@@ -280,6 +286,11 @@ Default.parameters = {
             code: tagToString("ebay-date-textbox", {}),
         },
     },
+};
+
+export const WithFixedStrategy = Template.bind({});
+WithFixedStrategy.args = {
+    strategy: "fixed",
 };
 
 export const Localized = buildExtensionTemplate(

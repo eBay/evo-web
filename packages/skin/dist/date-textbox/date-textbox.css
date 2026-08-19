@@ -20,6 +20,9 @@
     position: absolute;
     z-index: 1;
 }
+.date-textbox__popover--fixed {
+    position: fixed;
+}
 .date-textbox__popover[hidden] {
     display: none;
 }

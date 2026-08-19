@@ -5,6 +5,7 @@ $ const {
     range,
     inputPlaceholderText = placeholder(input.locale),
     disabled,
+    strategy,
     textbox,
     ...calendarInput
 } = input;
@@ -50,7 +51,14 @@ $ const formatValue = (date: DayISO | null) => {
             <ebay-calendar-24-icon/>
         </@postfix-icon>
     </ebay-textbox>
-    <div hidden=!state.popover key="popover" class="date-textbox__popover">
+    <div
+        hidden=!state.popover
+        key="popover"
+        class=[
+            "date-textbox__popover",
+            strategy === "fixed" && "date-textbox__popover--fixed",
+        ]
+    >
         <if(state.popover)>
             <subscribe to=window onResize("calculateNumMonths")/>
         </if>

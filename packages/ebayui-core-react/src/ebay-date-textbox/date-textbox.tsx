@@ -40,6 +40,7 @@ export type EbayDateTextboxProps = Omit<EbayCalendarProps, "interactive" | "navi
         inputPlaceholderText?: string | string[];
         a11yOpenPopoverText?: string;
         locale?: string;
+        strategy?: "absolute" | "fixed";
         onChange?: EbayChangeEventHandler<HTMLInputElement, EventData> &
             EbayMouseEventHandler<HTMLInputElement, EventData> &
             EbayFocusEventHandler<HTMLInputElement, EventData>;
@@ -61,6 +62,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     defaultRangeEnd,
     collapseOnSelect,
     locale,
+    strategy,
     children,
     onChange = () => {},
     onInputChange = () => {},
@@ -94,6 +96,9 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: isPopoverOpen,
+        options: {
+            strategy,
+        },
     });
 
     const containerRef = refs.host as React.MutableRefObject<HTMLSpanElement>;
@@ -285,7 +290,12 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
                 <EbayTextboxPostfixIcon icon={<EbayIconCalendar24 />} buttonAriaLabel={a11yOpenPopoverText} />,
             )}
 
-            <div hidden={!isPopoverOpen} ref={refs.setOverlay} style={overlayStyles} className="date-textbox__popover">
+            <div
+                hidden={!isPopoverOpen}
+                ref={refs.setOverlay}
+                style={overlayStyles}
+                className={classNames("date-textbox__popover", strategy === "fixed" && "date-textbox__popover--fixed")}
+            >
                 <EbayCalendar
                     {...rest}
                     locale={locale}
