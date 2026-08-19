@@ -1,4 +1,3 @@
-export type RootInput = Marko.HTML.Span | Marko.HTML.A | Marko.HTML.Button;
 export interface Input extends Omit<Marko.HTML.Span, "title"> {
   layout?: "horizontal" | "vertical";
   aspectRatio?: "16:9" | "5:4";
@@ -25,9 +24,13 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
   ...htmlInput
 }=input>
 
-<define/Root|input: RootInput|>
-  <if=action><span ...input as Marko.HTML.Span/></if>
-  <else if=href><a ...input as Marko.HTML.A href=disabled ? "" : href/></else>
+<define/Root|input: Marko.HTML.Span | Marko.HTML.A | Marko.HTML.Button|>
+  <if=action>
+    <span ...input as Marko.HTML.Span/>
+  </if>
+  <else if=href>
+    <a ...input as Marko.HTML.A href=(disabled ? "" : href)/>
+  </else>
   <else>
     <button ...input as Marko.HTML.Button type="button" disabled=disabled/>
   </else>
@@ -41,9 +44,10 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
     aspectRatio === "16:9" && "card--aspect-16-9",
     layout === "horizontal" && "card--horizontal",
     inputClass,
-  ]
->
-  <div class="card__media"><img ...image></div>
+  ]>
+  <div class="card__media">
+    <img ...image class=["card__hero-image", image.class]>
+  </div>
   <div class="card__main">
     <if=overline>
       <div ...overline class=["card__overline", overline.class]/>

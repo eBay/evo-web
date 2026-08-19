@@ -17,7 +17,8 @@ export interface CardInput extends Omit<Marko.HTML.Div, "title" | `on${string}`>
     disabled?: boolean;
     action?: Marko.AttrTag<CardElement>;
     href?: string;
-    image: Marko.AttrTag<Marko.HTML.Img>;
+    image?: Marko.AttrTag<Marko.HTML.Img>;
+    media?: Marko.AttrTag<Marko.HTML.Div>;
     "on-click"?: (event: MouseEvent) => void;
 }
 export interface Input extends WithNormalizedProps<CardInput> {}
@@ -28,6 +29,7 @@ $ const {
     href,
     aspectRatio,
     image,
+    media,
     overline,
     title,
     disabled,
@@ -52,9 +54,19 @@ $ const elem = !action ? (href ? "a" : "button") : "span";
     tabindex=disabled && -1
     ...processHtmlAttributes(htmlInput)
 >
-    <div class="card__media">
-        <img ...processHtmlAttributes(image)>
-    </div>
+    <if(media)>
+        <div class="card__media" ...processHtmlAttributes(media)>
+            <${media}/>
+        </div>
+    </if>
+    <else-if(image)>
+        <div class="card__media">
+            <img
+                class=["card__hero-image", image.class]
+                ...processHtmlAttributes(image, ["class"])
+            >
+        </div>
+    </else-if>
     <div class="card__main">
         <if(overline)>
             <div
