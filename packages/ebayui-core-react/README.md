@@ -6,7 +6,7 @@ eBayUI React components
 
 ### Requirements
 
-- [Node.js](https://nodejs.org/en/) (v20.12.2)
+- [Node.js](https://nodejs.org/en/) (v20+)
 - [React](https://reactjs.org/) (v18+, v16.8+ in maintenance mode)
 - [eBay Skin](https://ebay.github.io/skin/) (v18+)
 
