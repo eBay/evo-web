@@ -44,7 +44,7 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
     inputClass,
 ]>
     <div class="card__media">
-        <img ...image>
+        <img ...image class=["card__hero-image", image.class]>
     </div>
     <div class="card__main">
         <if=overline>

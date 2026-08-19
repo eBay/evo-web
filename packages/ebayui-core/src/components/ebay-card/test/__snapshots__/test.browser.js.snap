@@ -31,7 +31,18 @@ exports[`card > anchor > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=376
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -116,7 +127,18 @@ exports[`card > anchor disabled > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=376
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -213,7 +235,18 @@ exports[`card > button > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=376
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -316,7 +349,18 @@ exports[`card > button disabled > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=376
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -397,7 +441,18 @@ exports[`card > default > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=376
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -528,7 +583,18 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=301
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -659,7 +725,18 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=212
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;
@@ -806,7 +883,18 @@ exports[`card > minimum > then it matches the snapshot 1`] = `
       overflow-x: hidden;
       overflow-y: hidden
     ">
-      <img/>
+      <img
+        height=376
+        style="
+          display: block;
+          height: 100%;
+          object-fit: cover;
+          transition: transform var(--motion-duration-long-3)
+                  var(--motion-easing-quick-enter);
+          width: 100%
+        "
+        width=376
+      />
     </div>
     <div style="
       display: flex;

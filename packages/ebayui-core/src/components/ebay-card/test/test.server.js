@@ -3,7 +3,7 @@ import { composeStories } from "@storybook/marko";
 import { snapshotHTML } from "../../../common/test-utils/snapshots";
 import * as stories from "../card.stories"; // import all stories from the stories file
 
-const { Default, Anchor, Button, Minimum } = composeStories(stories);
+const { Default, Anchor, Button, Media, Minimum } = composeStories(stories);
 const htmlSnap = snapshotHTML(__dirname);
 
 describe("ebay-card", () => {
@@ -21,6 +21,10 @@ describe("ebay-card", () => {
 
     it("renders button", async () => {
         await htmlSnap(Button);
+    });
+
+    it("renders media", async () => {
+        await htmlSnap(Media);
     });
 
     it("renders minimum", async () => {
