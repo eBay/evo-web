@@ -69,12 +69,6 @@ export default {
       description: "Enable automatic shifting when near viewport edge",
       table: { defaultValue: { summary: "true" } },
     },
-    inline: {
-      type: "boolean",
-      control: "boolean",
-      description: "Enable inline positioning middleware",
-      table: { defaultValue: { summary: "true" } },
-    },
     disabled: {
       type: "boolean",
       control: "boolean",
