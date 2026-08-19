@@ -2,7 +2,7 @@ name: 🌟 New Feature request
 description: Request a new feature
 title: "<existing/proposed component name>: <issue title>"
 type: "feature"
-labels: ["needs triage"]
+labels: ["blocked: needs triage"]
 body:
 - type: textarea
   id: feature-description

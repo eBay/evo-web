@@ -2,7 +2,7 @@ name: 🌟 New Enhancement request
 description: Request an update to existing component. This is used for changes such as color updates. For new patterns or updated patterns for existing components, use feature request.
 title: "<existing component>: <issue title>"
 type: "enhancement"
-labels: ["needs triage"]
+labels: ["blocked: needs triage"]
 body:
 - type: textarea
   id: enhancement-description
