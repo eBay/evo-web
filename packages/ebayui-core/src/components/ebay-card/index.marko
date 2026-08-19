@@ -55,7 +55,11 @@ $ const elem = !action ? (href ? "a" : "button") : "span";
     ...processHtmlAttributes(htmlInput)
 >
     <if(media)>
-        <div class="card__media" ...processHtmlAttributes(media)>
+        $ const { class: mediaClass, ...mediaInput } = media;
+        <div
+            ...processHtmlAttributes(mediaInput)
+            class=["card__media", mediaClass]
+        >
             <${media}/>
         </div>
     </if>
