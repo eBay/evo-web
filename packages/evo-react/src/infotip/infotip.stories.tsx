@@ -3,7 +3,7 @@ import { EvoInfotip } from "./infotip";
 import { EvoInfotipHeading } from "./infotip-heading";
 
 const meta: Meta<typeof EvoInfotip> = {
-  title: "buttons/evo-infotip",
+  title: "notices & tips/evo-infotip",
   component: EvoInfotip,
   subcomponents: { EvoInfotipHeading },
   tags: ["autodocs"],
