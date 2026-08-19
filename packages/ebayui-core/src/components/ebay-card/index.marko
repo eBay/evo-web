@@ -63,8 +63,8 @@ $ const elem = !action ? (href ? "a" : "button") : "span";
         $ const { class: imageClass, ...imageInput } = image;
         <div class="card__media">
             <img
-                class=["card__hero-image", imageClass]
                 ...processHtmlAttributes(imageInput)
+                class=["card__hero-image", imageClass]
             >
         </div>
     </else-if>
