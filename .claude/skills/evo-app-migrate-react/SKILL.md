@@ -79,6 +79,7 @@ When migrating a listed component, read the linked file completely and apply the
 - `ebay-file-input`: [evo-file-input.md](components/evo-file-input.md)
 - `ebay-filter-chip`: [evo-filter-chip.md](components/evo-filter-chip.md)
 - `ebay-icon-button`: [evo-icon-button.md](components/evo-icon-button.md)
+- `ebay-infotip`: [evo-infotip.md](components/evo-infotip.md)
 - `ebay-lightbox-dialog`: [evo-dialog.md](components/evo-dialog.md)
 - `ebay-menu`: [evo-menu.md](components/evo-menu.md)
 - `ebay-progress-spinner`: [evo-progress-spinner.md](components/evo-progress-spinner.md)

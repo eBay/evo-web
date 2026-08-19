@@ -7,7 +7,6 @@ export interface Input extends Marko.HTML.Span {
     offset?: number;
     flip?: boolean;
     shift?: boolean;
-    inline?: boolean;
     disabled?: boolean;
     icon?: Marko.AttrTag<Marko.HTML.Span>;
     heading?: Marko.AttrTag<
@@ -37,7 +36,6 @@ export interface Input extends Marko.HTML.Span {
     openChange,
     flip,
     shift,
-    inline,
     disabled,
     icon,
     heading,
@@ -57,25 +55,26 @@ export interface Input extends Marko.HTML.Span {
 
 <id/headingId=heading?.id as string | undefined>
 
+// The fixed-size icon button has one rectangle, so inline positioning is unnecessary.
 <evo-expander/expander
     open=open
     placement=placement
     offset=offset
     flip=flip
     shift=shift
-    inline=inline
+    inline=false
     strategy="absolute"
     host=$host
     overlay=$overlay
     arrow=$arrow/>
 
 <span ...htmlInput class=["infotip", inputClass]>
-    <button
+    <evo-icon-button
         id=hostId
-        class="infotip__host icon-btn icon-btn--transparent"
-        type="button"
+        class="infotip__host"
+        transparent
         disabled=disabled
-        aria-label=a11yIconText
+        a11yText=a11yIconText
         aria-expanded=expander.ariaExpanded
         onClick() {
             open = !open;
@@ -86,7 +85,7 @@ export interface Input extends Marko.HTML.Span {
         <else>
             <evo-icon-information-16/>
         </else>
-    </button>
+    </evo-icon-button>
     <span
         id=overlayId
         class="infotip__overlay"
@@ -110,15 +109,16 @@ export interface Input extends Marko.HTML.Span {
                     </if>
                     <${input.content}/>
                 </span>
-                <button
-                    aria-label=a11yCloseText
-                    class="icon-btn icon-btn--transparent infotip__close"
-                    type="button"
+                <evo-icon-button
+                    a11yText=a11yCloseText
+                    class="infotip__close"
+                    transparent
                     onClick() {
                         open = false;
+                        $host().focus();
                     }>
                     <evo-icon-close-16/>
-                </button>
+                </evo-icon-button>
             </span>
         </span>
     </span>
