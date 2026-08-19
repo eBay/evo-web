@@ -61,7 +61,7 @@ export default {
                 category: "@attribute tags",
             },
             description:
-                "Arbitrary media content (e.g. a `<video>`) rendered in place of the top image. Takes precedence over `@image` when present.",
+                "Arbitrary media content (e.g. a `<video>`) rendered in place of the top image. Takes precedence over `@image` when present. Apply `card__hero-image` to your media element to get the standard fill/hover styles.",
         },
         title: {
             name: "@title",
