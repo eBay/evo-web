@@ -283,7 +283,7 @@ npx vitest run packages/ebayui-core/src/components/ebay-button/test/test.browser
 
 ## Agent Feedback
 
-Anything actionable but out of scope for the current task — a suspected bug, an a11y gap, cleanup, a perf/size win, tooling friction, or code that was confusing — must be recorded in [`agent-feedback/`](agent-feedback/README.md) before finishing. Don't silently drop it, and don't fix it inside an unrelated diff. Read that README for the entry format; resolved entries are deleted in the same PR as the fix.
+Anything actionable but out of scope for the current task (suspected bug, a11y gap, cleanup, perf or size win, tooling friction, confusing code) must be filed in [`agent-feedback/`](agent-feedback/README.md) before finishing. Never drop it silently. Never fix it inside an unrelated diff.
 
 ---
 
