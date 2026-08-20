@@ -7,10 +7,6 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
     disabled?: boolean;
     action?: Marko.AttrTag<Marko.HTML.Div>;
     href?: string;
-    /**
-     * The media at the top of the card. Renders a `<div>` filled with the
-     * content when it has any, and an `<img>` otherwise.
-     */
     media: Marko.AttrTag<Marko.HTML.Img & { content?: Marko.Body }>;
 }
 
