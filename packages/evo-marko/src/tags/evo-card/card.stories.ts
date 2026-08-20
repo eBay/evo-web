@@ -8,6 +8,8 @@ import AnchorTemplate from "./examples/anchor.marko";
 import AnchorTemplateCode from "./examples/anchor.marko?raw";
 import ButtonTemplate from "./examples/button.marko";
 import ButtonTemplateCode from "./examples/button.marko?raw";
+import VideoTemplate from "./examples/video.marko";
+import VideoTemplateCode from "./examples/video.marko?raw";
 import MinimumTemplate from "./examples/minimum.marko";
 import MinimumTemplateCode from "./examples/minimum.marko?raw";
 
@@ -47,14 +49,14 @@ export default {
       control: "boolean",
       description: "Disables the interactive elements of the card.",
     },
-    image: {
+    media: {
       type: { name: "object", value: {}, required: true },
       description:
-        "The top image tag. Will be passed as attributes to the `<img>` tag.",
+        "The media at the top of the card. With content it renders a `<div>` wrapping that content, and an `<img>` otherwise. Apply `card__hero-image` to your own media element to get the standard fill/hover styles.",
       "@": {
-        ["<img> attributes" as any]: {
+        ["<img> or <div> attributes" as any]: {
           description:
-            "All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) will be passed through to `<@image>`.",
+            "All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) — or [`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div), when content is present — will be passed through to `<@media>`.",
         },
       },
     },
@@ -125,6 +127,8 @@ export const Button = buildExtensionTemplate(
   ButtonTemplate,
   ButtonTemplateCode,
 );
+
+export const Video = buildExtensionTemplate(VideoTemplate, VideoTemplateCode);
 
 export const Minimum = buildExtensionTemplate(
   MinimumTemplate,

@@ -1,6 +1,12 @@
 ---
 "@ebay/ebayui-core": minor
-"@evo-web/marko": patch
+"@evo-web/marko": minor
 ---
 
-Add a generic `@media` attribute tag to `ebay-card` for arbitrary media content (e.g. `<video>`). When present it renders in place of `@image`, which is now optional. Also apply the `card__hero-image` class to the card image in both Marko packages so it fills the media slot — skin defines the image sizing, hover transform, and horizontal/full-hero overrides on that class.
+Support arbitrary media content in the card, alongside images.
+
+`ebay-card` gains a generic `@media` attribute tag which, when present, renders in place of `@image` — now optional.
+
+**Breaking:** `evo-card` replaces `@image` with `@media`, which renders a `<div>` wrapping its content when it has any, and an `<img>` otherwise. Rename `<@image>` to `<@media>`; templates passing only image attributes need no other change.
+
+Both cards also apply the `card__hero-image` class to the image they render, so it fills the media slot — skin defines the image sizing, hover transform, and horizontal/full-hero overrides on that class.
