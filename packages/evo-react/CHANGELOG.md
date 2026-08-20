@@ -1,5 +1,17 @@
 # @evo-web/react
 
+## 0.4.3
+
+### Patch Changes
+
+- [#790](https://github.com/eBay/evo-web/pull/790) [`8ada1ec`](https://github.com/eBay/evo-web/commit/8ada1eca8cdfe976ed61f8234b5cf3644aab9386) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFakeMenu component.
+
+- [#897](https://github.com/eBay/evo-web/pull/897) [`a665f2d`](https://github.com/eBay/evo-web/commit/a665f2d32f247bd41388579786da33da7719dc22) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoInfotip component.
+
+- [#787](https://github.com/eBay/evo-web/pull/787) [`772319c`](https://github.com/eBay/evo-web/commit/772319c7d076ceab10ed1202849bba95966f38e7) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoMenu to React and align its accessible naming API with Marko using `a11yText` and `a11yLabelId`.
+
+- [#886](https://github.com/eBay/evo-web/pull/886) [`cc36a99`](https://github.com/eBay/evo-web/commit/cc36a990c8d843fe80710d3e5a353abd2cd40135) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add EvoFakeTabs, rename EvoTabPanelList to EvoTabPanels, and align React and Marko fake-tab link and disabled behavior.
+
 ## 0.4.2
 
 ### Patch Changes

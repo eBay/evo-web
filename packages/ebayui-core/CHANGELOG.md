@@ -1,5 +1,11 @@
 # eBayUI-Core Changelog
 
+## 16.13.0
+
+### Minor Changes
+
+- [#893](https://github.com/eBay/evo-web/pull/893) [`895e90a`](https://github.com/eBay/evo-web/commit/895e90aea0b1b6b4c077aea391d1b3d4bf94e08e) Thanks [@HenriqueLimas](https://github.com/HenriqueLimas)! - Add a `strategy` input to date textbox components to control calendar popover positioning (`absolute` or `fixed`).
+
 ## 16.12.0
 
 ### Minor Changes
