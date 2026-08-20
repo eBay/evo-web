@@ -52,11 +52,11 @@ export default {
     media: {
       type: { name: "object", value: {}, required: true },
       description:
-        "The media at the top of the card. With content it renders a `<div>` wrapping that content, and an `<img>` otherwise. Apply `card__hero-image` to your own media element to get the standard fill/hover styles.",
+        "The media at the top of the card. Apply `card__hero-image` to your own media element to get the standard fill/hover styles.",
       "@": {
-        ["<img> or <div> attributes" as any]: {
+        ["<div>, <img> attributes" as any]: {
           description:
-            "All attributes and event handlers from [the native `<img>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img) — or [`<div>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div), when content is present — will be passed through to `<@media>`.",
+            "All attributes are passed through to an HTML element. It will be a `<div>` if content is present, and an `<img>` otherwise.",
         },
       },
     },
