@@ -27,3 +27,4 @@ coverage
 /.vscode
 /_site
 /storybook-static
+.vitest-attachments
