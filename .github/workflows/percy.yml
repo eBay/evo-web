@@ -81,6 +81,10 @@ jobs:
           PERCY_COMMIT: ${{ github.event.workflow_run.head_sha }}
           PERCY_BRANCH: ${{ github.event.workflow_run.head_branch }}
           PERCY_PULL_REQUEST: ${{ steps.meta.outputs.pr }}
+          # Required: without this, Percy's own missing-snapshot check treats scoped
+          # builds as incomplete full builds and fails the PR check with a
+          # "missing snapshots" error, even though the scoping is intentional.
+          PERCY_PARTIAL_BUILD: 1
           STORIES: ${{ steps.meta.outputs.components }}
         run: npx percy storybook ./storybook-static --include "$STORIES" -c packages/skin/.percy.yml
 
