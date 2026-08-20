@@ -1,8 +1,16 @@
 <evo-card
-    href="https://www.ebay.com"
     ...input
 >
-    <@media src="https://ir.ebaystatic.com/cr/v/c01/skin/docs/tb-real-square-pic.jpg" alt="Card"/>
+    <@media>
+        <video
+            class="card__hero-image"
+            src="https://mdn.github.io/shared-assets/videos/flower.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+        />
+    </@media>
     <@overline>
         <evo-icon-authenticity-guarantee-16/>
         Authenticity Guaranteed
@@ -11,4 +19,7 @@
     <@description>
         Professional-grade rookie cards that appreciate faster than most people's cooking skills and last longer than New Year's resolutions.
     </@description>
+    <@action>
+        <evo-button priority="tertiary" fluid>See Details</evo-button>
+    </@action>
 </evo-card>
