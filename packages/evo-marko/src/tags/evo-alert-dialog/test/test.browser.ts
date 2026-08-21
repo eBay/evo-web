@@ -115,9 +115,7 @@ describe("evo-alert-dialog", () => {
 
     describe("when the confirm button is clicked", () => {
       it("should close the dialog", async () => {
-        await fireEvent.click(
-          component.getByRole("button", { name: "OK" }),
-        );
+        await fireEvent.click(component.getByRole("button", { name: "OK" }));
         const dialog = component.container.querySelector("dialog");
         expect(dialog?.classList.contains("dialog--close")).toBe(true);
       });

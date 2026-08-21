@@ -1,130 +1,129 @@
 import type { Input as ExpanderInput } from "<evo-expander>";
 export interface Input extends Marko.HTML.Span {
-    open?: boolean;
-    openChange?: (open: boolean) => void;
-    placement?: ExpanderInput["placement"];
-    offset?: number;
-    flip?: boolean;
-    shift?: boolean;
-    inline?: boolean;
-    host: Marko.AttrTag<
-        Marko.HTML.Span & {
-            as?: Marko.Renderable;
-        }
-    >;
-    heading?: Marko.AttrTag<
-        Marko.HTML.H2 & {
-            as?: Marko.Renderable;
-        }
-    >;
-    footer?: Marko.AttrTag<
-        Marko.HTML.Span & {
-            index?: string;
-        }
-    >;
-    /**
-     * The `aria-label` for the close button
-     *
-     * English default to be overridden is `"Dismiss tourtip"`
-     */
-    a11yCloseText: string;
+  open?: boolean;
+  openChange?: (open: boolean) => void;
+  placement?: ExpanderInput["placement"];
+  offset?: number;
+  flip?: boolean;
+  shift?: boolean;
+  inline?: boolean;
+  host: Marko.AttrTag<
+    Marko.HTML.Span & {
+      as?: Marko.Renderable;
+    }
+  >;
+  heading?: Marko.AttrTag<
+    Marko.HTML.H2 & {
+      as?: Marko.Renderable;
+    }
+  >;
+  footer?: Marko.AttrTag<
+    Marko.HTML.Span & {
+      index?: string;
+    }
+  >;
+  /**
+   * The `aria-label` for the close button
+   *
+   * English default to be overridden is `"Dismiss tourtip"`
+   */
+  a11yCloseText: string;
 }
 
 <const/{
-    class: inputClass,
-    open: inputOpen = true,
-    openChange,
-    placement = "top" as const,
-    offset = 6,
-    flip,
-    shift = false,
-    inline,
-    host,
-    heading,
-    footer,
-    a11yCloseText = "Dismiss tourtip",
-    ...htmlInput
+  class: inputClass,
+  open: inputOpen = true,
+  openChange,
+  placement = "top" as const,
+  offset = 6,
+  flip,
+  shift = false,
+  inline,
+  host,
+  heading,
+  footer,
+  a11yCloseText = "Dismiss tourtip",
+  ...htmlInput
 }=input>
 
 <let/open=(input.open ?? true) valueChange=openChange>
 
 <id/hostId>
-
 // remove once Marko supports dynamic tag vars
 <id/headingId=heading?.id as string>
 <id/overlayId>
 <id/arrowId>
 
 <evo-expander/expander
-    open=open
-    placement=placement
-    offset=offset
-    flip=flip
-    shift=shift
-    inline=inline
-    strategy="absolute"
-    host=() => (document.getElementById(hostId)!)
-    overlay=() => (document.getElementById(overlayId)!)
-    arrow=() => (document.getElementById(arrowId)!)/>
+  open=open
+  placement=placement
+  offset=offset
+  flip=flip
+  shift=shift
+  inline=inline
+  strategy="absolute"
+  host=(() => document.getElementById(hostId) as HTMLElement)
+  overlay=(() => document.getElementById(overlayId) as HTMLElement)
+  arrow=(() => document.getElementById(arrowId) as HTMLElement)/>
 
 <span ...htmlInput class=["tourtip", open && "tourtip--expanded", inputClass]>
-    <const/{ as: hostAs, class: hostClass, ...htmlHost }=host>
-    <${hostAs ?? "span"}
-        ...htmlHost
-        id=hostId
-        class=["tourtip__host", hostClass]/>
-    <span
-        class="tourtip__overlay"
-        id=overlayId
-        style=expander.floatingStyles
-        role="region"
-        aria-labelledby=heading && headingId>
-        <span class="tourtip__pointer" id=arrowId style=expander.arrowStyles/>
-        <span class="tourtip__mask">
-            <span class="tourtip__cell">
-                <span class="tourtip__content">
-                    <if=heading>
-                        <const/{
-                            as: headingAs = "h2",
-                            class: headingClass,
-                            content: headingContent,
-                            ...headingInput
-                        }=heading>
-                        <${headingAs}
-                            ...headingInput
-                            class=["tourtip__heading", headingClass]
-                            id=headingId>
-                            <${headingContent}/>
-                        </>
-                    </if>
-                    <${input.content}/>
-                </span>
-                <button
-                    aria-label=a11yCloseText
-                    class="icon-btn icon-btn--transparent tourtip__close"
-                    type="button"
-                    onClick() {
-                        open = false;
-                    }>
-                    <evo-icon-close-16/>
-                </button>
-                <if=footer>
-                    <const/{
-                        index,
-                        class: footerClass,
-                        content: footerContent,
-                        ...htmlFooter
-                    }=footer>
-                    <span ...htmlFooter class=["tourtip__footer", footerClass]>
-                        <if=index>
-                            <span class="tourtip__index">
-                                ${index}
-                            </span>
-                        </if>
-                        <${footerContent}/>
-                    </span>
-                </if>
-            </span>
+  <const/{ as: hostAs, class: hostClass, ...htmlHost }=host>
+  <${hostAs ?? "span"}
+    ...htmlHost
+    id=hostId
+    class=["tourtip__host", hostClass]/>
+  <span
+    class="tourtip__overlay"
+    id=overlayId
+    style=expander.floatingStyles
+    role="region"
+    aria-labelledby=heading && headingId>
+    <span class="tourtip__pointer" id=arrowId style=expander.arrowStyles/>
+    <span class="tourtip__mask">
+      <span class="tourtip__cell">
+        <span class="tourtip__content">
+          <if=heading>
+            <const/{
+              as: headingAs = "h2",
+              class: headingClass,
+              content: headingContent,
+              ...headingInput
+            }=heading>
+            <${headingAs}
+              ...headingInput
+              class=["tourtip__heading", headingClass]
+              id=headingId>
+              <${headingContent}/>
+            </>
+          </if>
+          <${input.content}/>
         </span>
+        <button
+          aria-label=a11yCloseText
+          class="icon-btn icon-btn--transparent tourtip__close"
+          type="button"
+          onClick() {
+            open = false;
+          }>
+          <evo-icon-close-16/>
+        </button>
+        <if=footer>
+          <const/{
+            index,
+            class: footerClass,
+            content: footerContent,
+            ...htmlFooter
+          }=footer>
+          <span ...htmlFooter class=["tourtip__footer", footerClass]>
+            <if=index>
+              <span class="tourtip__index">
+                ${index}
+              </span>
+            </if>
+            <${footerContent}/>
+          </span>
+        </if>
+      </span>
     </span>
+  </span>
 </span>

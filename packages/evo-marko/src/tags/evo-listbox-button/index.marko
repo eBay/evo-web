@@ -1,180 +1,182 @@
 import type { Input as ListboxInput } from "<evo-listbox>";
 import { validSplit, type Input as ButtonInput } from "<evo-button>";
-
-export interface Input<Index extends number | string>
-    extends Marko.HTML.Div {
-    selected?: ListboxInput<Index>["selected"];
-    selectedChange?: ListboxInput<Index>["selectedChange"];
-    open?: boolean;
-    openChange?: (newOpen: boolean) => void;
-    option?: ListboxInput<Index>["option"];
-    name?: ListboxInput<Index>["name"];
-    listSelection?: ListboxInput<Index>["listSelection"];
-    prefixId?: string;
-    unselectedText?: string;
-    variant?: "standard" | "form";
-    truncate?: boolean;
-    fluid?: boolean;
-    strategy?: "fixed" | "absolute";
-    borderless?: boolean;
-    floatingLabel?: string;
-    disabled?: boolean;
-    buttonName?: string;
-    split?: ButtonInput["split"];
-    invalid?: boolean;
-    hasError?: boolean;
-    /**
-     * The clipped text for screen readers when an option is selected
-     * 
-     * English default to be overridden is `"selected"`
-     **/
-    a11ySelectedText: string;
-    prefixLabel?: string;
-    postfixLabel?: string;
-    collapseOnSelect?: boolean;
-    a11yDescribedBy?: string;
+export interface Input<Index extends number | string> extends Marko.HTML.Div {
+  selected?: ListboxInput<Index>["selected"];
+  selectedChange?: ListboxInput<Index>["selectedChange"];
+  open?: boolean;
+  openChange?: (newOpen: boolean) => void;
+  option?: ListboxInput<Index>["option"];
+  name?: ListboxInput<Index>["name"];
+  listSelection?: ListboxInput<Index>["listSelection"];
+  prefixId?: string;
+  unselectedText?: string;
+  variant?: "standard" | "form";
+  truncate?: boolean;
+  fluid?: boolean;
+  strategy?: "fixed" | "absolute";
+  borderless?: boolean;
+  floatingLabel?: string;
+  disabled?: boolean;
+  buttonName?: string;
+  split?: ButtonInput["split"];
+  invalid?: boolean;
+  hasError?: boolean;
+  /**
+   * The clipped text for screen readers when an option is selected
+   *
+   * English default to be overridden is `"selected"`
+   **/
+  a11ySelectedText: string;
+  prefixLabel?: string;
+  postfixLabel?: string;
+  collapseOnSelect?: boolean;
+  a11yDescribedBy?: string;
 }
 <const/{
-    name,
-    class: inputClass,
-    selected: inputSelected,
-    selectedChange,
-    open: inputOpen,
-    openChange,
-    borderless,
-    disabled,
-    fluid,
-    invalid,
-    buttonName,
-    option: options,
-    truncate,
-    prefixLabel,
-    prefixId,
-    postfixLabel,
-    unselectedText = "-",
-    floatingLabel,
-    collapseOnSelect,
-    listSelection,
-    variant,
-    hasError,
-    strategy,
-    split,
-    a11yDescribedBy,
-    a11ySelectedText = "selected",
-    onKeyDown,
-    onFocusOut,
-    ...htmlInput
+  name,
+  class: inputClass,
+  selected: inputSelected,
+  selectedChange,
+  open: inputOpen,
+  openChange,
+  borderless,
+  disabled,
+  fluid,
+  invalid,
+  buttonName,
+  option: options,
+  truncate,
+  prefixLabel,
+  prefixId,
+  postfixLabel,
+  unselectedText = "-",
+  floatingLabel,
+  collapseOnSelect,
+  listSelection,
+  variant,
+  hasError,
+  strategy,
+  split,
+  a11yDescribedBy,
+  a11ySelectedText = "selected",
+  onKeyDown,
+  onFocusOut,
+  ...htmlInput
 }=input>
 <let/selected:=input.selected>
 <let/open:=input.open>
-<const/optionsList=[...options || []]>
+<const/optionsList=[...(options || [])]>
 <const/selectedIndex=(
-    typeof selected === "number"
-        ? selected
-        : optionsList.findIndex((o) => o.value === selected)
+  typeof selected === "number"
+    ? selected
+    : optionsList.findIndex((o) => o.value === selected)
 )>
 <const/selectedOption=optionsList[selectedIndex]>
 
-<id/rootId> // TODO: remove in favor of $root once Marko supports dynamic tag return
-<const/$root() { return document.getElementById(rootId)! }>
+<id/rootId>
+-- ${" "}
+// TODO: remove in favor of $root once Marko supports dynamic tag return
+<const/$root() {
+  return document.getElementById(rootId)!;
+}>
 
-<evo-expander/expander: Marko.Return<typeof import("<evo-expander>")["default"]>["value"]
-    open=open
-    strategy=strategy
-    host=$root
-    overlay=$listbox/>
+<evo-expander/expander: Marko.Return<
+  (typeof import("<evo-expander>"))["default"]
+>["value"] open=open strategy=strategy host=$root overlay=$listbox/>
 
 <${truncate && !fluid ? "div" : "span"}
-    ...htmlInput
-    id=rootId
-    class=[
-        "listbox-button",
-        inputClass,
-        fluid && "listbox-button--fluid",
-        variant === "form" && `listbox-button--form`,
-        hasError && "listbox-button--error",
-    ]
-    onKeyDown(e: KeyboardEvent, el: HTMLDivElement) {
-        if (open && e.key === "Escape") {
-            open = false;
-        }
-        onKeyDown && onKeyDown(e as any, el);
+  ...htmlInput
+  id=rootId
+  class=[
+    "listbox-button",
+    inputClass,
+    fluid && "listbox-button--fluid",
+    variant === "form" && `listbox-button--form`,
+    hasError && "listbox-button--error",
+  ]
+  onKeyDown(e: KeyboardEvent, el: HTMLDivElement) {
+    if (open && e.key === "Escape") {
+      open = false;
     }
-    onFocusOut(e: FocusEvent, el: HTMLDivElement) {
-        if (!el.contains(e.relatedTarget as Node)) {
-            open = false;
-        }
-        onFocusOut && onFocusOut(e as any, el);
+    onKeyDown && onKeyDown(e as any, el);
+  }
+  onFocusOut(e: FocusEvent, el: HTMLDivElement) {
+    if (!el.contains(e.relatedTarget as Node)) {
+      open = false;
+    }
+    onFocusOut && onFocusOut(e as any, el);
+  }>
+  <id/labelId>
+  <button
+    class=[
+      "listbox-button__control",
+      "btn",
+      validSplit.includes(split!) && `btn--split-${split}`,
+      borderless ? "btn--borderless" : "btn--form",
+      truncate && "btn--truncated",
+      floatingLabel && "btn--floating-label",
+    ]
+    value=selectedOption?.value as string | undefined
+    type="button"
+    disabled=disabled
+    name=buttonName
+    aria-haspopup="listbox"
+    aria-describedby=a11yDescribedBy
+    aria-labelledby=(prefixId ? `${prefixId} ${labelId}` : labelId)
+    aria-invalid=invalid && "true"
+    aria-expanded=expander.ariaExpanded
+    onClick() {
+      open = !open;
     }>
-    <id/labelId>
-    <button
-        class=[
-            "listbox-button__control",
-            "btn",
-            validSplit.includes(split!) && `btn--split-${split}`,
-            borderless ? "btn--borderless" : "btn--form",
-            truncate && "btn--truncated",
-            floatingLabel && "btn--floating-label",
-        ]
-        value=selectedOption?.value as string | undefined
-        type="button"
-        disabled=disabled
-        name=buttonName
-        aria-haspopup="listbox"
-        aria-describedby=a11yDescribedBy
-        aria-labelledby=prefixId ? `${prefixId} ${labelId}` : labelId
-        aria-invalid=invalid && "true"
-        aria-expanded=expander.ariaExpanded
-        onClick() { open = !open; }>
-        <span class="btn__cell">
-            <if=floatingLabel>
-                <span class=[
-                    "btn__floating-label",
-                    "btn__floating-label--animate",
-                    !selectedOption && "btn__floating-label--inline",
-                ]>
-                    ${floatingLabel}
-                </span>
-            </if>
-            <else if=prefixLabel>
-                <span class="btn__label">
-                    ${prefixLabel}
-                </span>
-            </else>
-
-            <if=selectedOption>
-                <if=selectedOption.icon>
-                    <span ...selectedOption.icon id=labelId class="btn__text"/>
-                </if>
-                <span id=labelId class="btn__text">
-                    <${selectedOption.content}/>
-                </span>
-                <if=postfixLabel>
-                    <span class="btn__postfix-label">
-                        ${" "}${postfixLabel}
-                    </span>
-                </if>
-            </if>
-            <else if=!floatingLabel>
-                <span id=labelId class="btn__text">
-                    ${unselectedText}
-                </span>
-            </else>
-            <evo-icon-chevron-down-16/>
+    <span class="btn__cell">
+      <if=floatingLabel>
+        <span class=[
+          "btn__floating-label",
+          "btn__floating-label--animate",
+          !selectedOption && "btn__floating-label--inline",
+        ]>
+          ${floatingLabel}
         </span>
-    </button>
-    <evo-listbox/$listbox
-        style=expander.floatingStyles
-        class=[
-            "listbox-button__listbox",
-            strategy === "fixed" && "listbox-button__listbox--fixed",
-        ]
-        selected:=selected
-        name=name
-        listSelection=listSelection
-        a11ySelectedText=a11ySelectedText
-        onClick() {
-            if (collapseOnSelect) open = false;
-        }
-        option=input.option/>
+      </if>
+      <else if=prefixLabel>
+        <span class="btn__label">
+          ${prefixLabel}
+        </span>
+      </else>
+
+      <if=selectedOption>
+        <if=selectedOption.icon>
+          <span ...selectedOption.icon id=labelId class="btn__text"/>
+        </if>
+        <span id=labelId class="btn__text">
+          <${selectedOption.content}/>
+        </span>
+        <if=postfixLabel>
+          <span class="btn__postfix-label">
+            ${" "}${postfixLabel}
+          </span>
+        </if>
+      </if>
+      <else if=!floatingLabel>
+        <span id=labelId class="btn__text">
+          ${unselectedText}
+        </span>
+      </else>
+      <evo-icon-chevron-down-16/>
+    </span>
+  </button>
+  <evo-listbox/$listbox
+    style=expander.floatingStyles
+    class=[
+      "listbox-button__listbox",
+      strategy === "fixed" && "listbox-button__listbox--fixed",
+    ]
+    selected:=selected
+    name=name
+    listSelection=listSelection
+    a11ySelectedText=a11ySelectedText
+    onClick() {
+      if (collapseOnSelect) open = false;
+    }
+    option=input.option/>
 </>

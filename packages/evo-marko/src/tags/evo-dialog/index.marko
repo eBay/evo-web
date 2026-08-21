@@ -1,7 +1,5 @@
 import { type Input as IconButtonInput } from "<evo-icon-button>";
-
 static const validSizes = ["wide", "narrow", "large"] as const;
-
 export interface Input extends Marko.HTML.Dialog {
   open?: boolean;
   openChange?: (o: boolean) => void;
@@ -48,26 +46,42 @@ export interface Input extends Marko.HTML.Dialog {
   // NOTE: Only required until Safari has better support for closedby
   if (open && !("closedBy" in HTMLDialogElement.prototype)) {
     if (closedby === "any") {
-      $dialog().addEventListener("click", (e) => {
-        if (e.target === $dialog()) {
-          open = false;
-        }
-      }, { signal: $signal });
+      $dialog().addEventListener(
+        "click",
+        (e) => {
+          if (e.target === $dialog()) {
+            open = false;
+          }
+        },
+        {
+          signal: $signal,
+        },
+      );
     } else if (closedby === "none") {
-      $dialog().addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          e.preventDefault();
-        }
-      }, { signal: $signal });
+      $dialog().addEventListener(
+        "keydown",
+        (e) => {
+          if (e.key === "Escape") {
+            e.preventDefault();
+          }
+        },
+        {
+          signal: $signal,
+        },
+      );
     }
   }
 </script>
 
 <dialog/$dialog
   ...htmlInput
-  open=null // tell Marko it's not a part of the spread because the browser does DOM manipulation
+  open=(
+    null // tell Marko it's not a part of the spread because the browser does DOM manipulation
+  )
   closedby=closedby
-  aria-labelledby=(inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId)
+  aria-labelledby=(
+    inputLabelledBy ? `${inputLabelledBy} ${headerId}` : headerId
+  )
   class=[
     "dialog",
     !open && "dialog--close",
@@ -85,8 +99,7 @@ export interface Input extends Marko.HTML.Dialog {
       el.close();
     }
     onAnimationEnd && onAnimationEnd(e, el);
-  }
->
+  }>
   <if=banner>
     <const/{
       src: bannerSrc,
@@ -99,38 +112,29 @@ export interface Input extends Marko.HTML.Dialog {
       ...bannerInput
       class=["dialog__image", bannerClass]
       style={
-        ...bannerStyle as Record<string, unknown>,
+        ...(bannerStyle as Record<string, unknown>),
         "background-image": bannerSrc && `url(${bannerSrc})`,
         "background-position": bannerPosition,
-      }
-    />
+      }/>
   </if>
   <div class="dialog__header">
     <if=previous>
-      <evo-icon-button
-        ...previous
-        class=["dialog__prev", previous.class]
-      >
+      <evo-icon-button ...previous class=["dialog__prev", previous.class]>
         <evo-icon-chevron-left-16/>
       </evo-icon-button>
     </if>
-    <const/{
-      as: headerAs,
-      ...headerInput
-    }=header>
+    <const/{ as: headerAs, ...headerInput }=header>
     <${headerAs || "h2"}
       ...headerInput
       id=headerId
-      class=["dialog__title", headerInput.class]
-    />
+      class=["dialog__title", headerInput.class]/>
     <evo-icon-button
       ...close
       class=["dialog__close", close.class]
       onClick(e, el) {
         $dialog().requestClose();
         close.onClick && close.onClick(e, el);
-      }
-    >
+      }>
       <evo-icon-close-16/>
     </evo-icon-button>
   </div>

@@ -44,6 +44,13 @@
     "update-icons": "tsx scripts/import-svg.ts",
     "version": "npm run update-icons && git add -A src"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,md,json}": "prettier --write"
+  },
   "dependencies": {
     "@floating-ui/react": "^0.27.17",
     "classnames": "^2.5.1",

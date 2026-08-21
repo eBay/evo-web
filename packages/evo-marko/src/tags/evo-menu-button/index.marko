@@ -2,164 +2,161 @@ import IconButton from "<evo-icon-button>";
 import FilterChip from "<evo-filter-chip>";
 import Button, { type Input as ButtonInput } from "<evo-button>";
 import { type Input as MenuInput } from "<evo-menu>";
-export interface Input<
-    Index extends number | string | (number | string)[],
-> extends Omit<MenuInput<Index>, "a11yLabelId" | "a11yText" | "variant">,
-        Pick<Marko.HTML.Span, "aria-label" | "aria-labelledby"> {
-    open?: boolean;
-    openChange?: (open: boolean) => void;
-    collapseOnSelect?: boolean;
-    prefixId?: string;
-    variant?: "form" | "button" | "icon" | "filter";
-    borderless?: boolean;
-    partiallyDisabled?: ButtonInput["partiallyDisabled"];
-    priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
-    size?: ButtonInput["size"];
-    transparent?: boolean;
-    disabled?: boolean;
-    split?: ButtonInput["split"];
-    noToggleIcon?: boolean;
-    label?: Marko.AttrTag<Marko.HTML.Span>;
-    footerButton?: Marko.AttrTag<ButtonInput>;
-    reverse?: boolean;
-    strategy?: "absolute" | "fixed";
-    fixWidth?: boolean;
+export type MenuRef = () => HTMLSpanElement;
+export interface Input<Index extends number | string | (number | string)[]>
+  extends
+    Omit<MenuInput<Index>, "a11yLabelId" | "a11yText" | "variant">,
+    Pick<Marko.HTML.Span, "aria-label" | "aria-labelledby"> {
+  open?: boolean;
+  openChange?: (open: boolean) => void;
+  collapseOnSelect?: boolean;
+  prefixId?: string;
+  variant?: "form" | "button" | "icon" | "filter";
+  borderless?: boolean;
+  partiallyDisabled?: ButtonInput["partiallyDisabled"];
+  priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
+  size?: ButtonInput["size"];
+  transparent?: boolean;
+  disabled?: boolean;
+  split?: ButtonInput["split"];
+  noToggleIcon?: boolean;
+  label?: Marko.AttrTag<Marko.HTML.Span>;
+  footerButton?: Marko.AttrTag<ButtonInput>;
+  reverse?: boolean;
+  strategy?: "absolute" | "fixed";
+  fixWidth?: boolean;
 }
-<const/{
-    class: inputClass,
-    noToggleIcon: inputNoToggleIcon,
-    reverse,
-    strategy,
-    fixWidth,
-    borderless,
-    size,
-    partiallyDisabled,
-    footerButton,
-    priority: inputPriority,
-    disabled,
-    variant,
-    item: items,
-    group: groups,
-    label,
-    selected: inputSelected,
-    selectedChange,
-    open: inputOpen,
-    openChange,
-    prefixId,
-    split: inputSplit,
-    collapseOnSelect,
-    transparent: inputTransparent,
-    onKeyDown,
-    onFocusOut,
-    ...htmlInput
-}=input>
+const/{
+  class: inputClass,
+  noToggleIcon: inputNoToggleIcon,
+  reverse,
+  strategy,
+  fixWidth,
+  borderless,
+  size,
+  partiallyDisabled,
+  footerButton,
+  priority: inputPriority,
+  disabled,
+  variant,
+  item: items,
+  group: groups,
+  label,
+  selected: inputSelected,
+  selectedChange,
+  open: inputOpen,
+  openChange,
+  prefixId,
+  split: inputSplit,
+  collapseOnSelect,
+  transparent: inputTransparent,
+  onKeyDown,
+  onFocusOut,
+  ...htmlInput
+}=input
 
-<id/labelId>
-<let/selected:=input.selected>
-<let/open:=input.open>
-<const/{
-    tagName,
-    transparent,
-    isSelected,
-    split,
-    priority,
-    noToggleIcon,
+id/labelId
+let/selected:=input.selected
+let/open:=input.open
+const/{
+  tagName,
+  transparent,
+  isSelected,
+  split,
+  priority,
+  noToggleIcon,
 }=(() => {
-    let priority = null;
-    let split;
-    let noToggleIcon;
-    let transparent;
-    let tagName;
-    let isSelected;
+  let priority = null;
+  let split;
+  let noToggleIcon;
+  let transparent;
+  let tagName;
+  let isSelected;
 
-    if (variant === "icon") {
-        tagName = IconButton;
-        transparent = inputTransparent;
-    } else if (variant === "filter") {
-        tagName = FilterChip;
-        isSelected = Array.isArray(selected)
-            ? selected.length > 0
-            : selected != null && selected !== -1;
-    } else {
-        tagName = Button;
-        split = inputSplit;
-        noToggleIcon = inputNoToggleIcon;
-        priority = inputPriority;
+  if (variant === "icon") {
+    tagName = IconButton;
+    transparent = inputTransparent;
+  } else if (variant === "filter") {
+    tagName = FilterChip;
+    isSelected = Array.isArray(selected)
+      ? selected.length > 0
+      : selected != null && selected !== -1;
+  } else {
+    tagName = Button;
+    split = inputSplit;
+    noToggleIcon = inputNoToggleIcon;
+    priority = inputPriority;
+  }
+
+  return {
+    tagName,
+    split,
+    isSelected,
+    noToggleIcon,
+    transparent,
+    priority,
+  };
+})()
+
+evo-expander/expander
+  ,open=open
+  ,placement=(reverse ? "bottom-end" : "bottom-start")
+  ,strategy=strategy
+  ,host=$root
+  ,overlay=$menu
+
+span/$root
+  ,...htmlInput
+  ,class=["menu-button", inputClass]
+  ,onKeyDown(e, el) {
+    if (open && e.key === "Escape") open = false;
+    onKeyDown && onKeyDown(e, el);
+  }
+  ,onFocusOut(e, el) {
+    if (!el.contains(e.relatedTarget as Node)) {
+      open = false;
     }
-
-    return {
-        tagName,
-        split,
-        isSelected,
-        noToggleIcon,
-        transparent,
-        priority,
-    };
-})()>
-
-<evo-expander/expander
-    open=open
-    placement=(reverse ? "bottom-end" : "bottom-start")
-    strategy=strategy
-    host=$root
-    overlay=$menu/>
-
-<span/$root
-    ...htmlInput
-    class=["menu-button", inputClass]
-    onKeyDown(e, el) {
-        if (open && e.key === "Escape") open = false;
-        onKeyDown && onKeyDown(e, el);
+    onFocusOut && onFocusOut(e, el);
+  }
+  ${tagName as any}
+    ,class=[`menu-button__button`]
+    ,size=size
+    ,priority=priority as ButtonInput["priority"]
+    ,borderless=borderless
+    ,variant=variant as any
+    ,aria-haspopup="true"
+    ,selected=isSelected
+    ,transparent=transparent
+    ,aria-expanded=expander.ariaExpanded
+    ,aria-labelledby=prefixId &&
+    (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
+    ,split=split
+    ,disabled=disabled
+    ,partiallyDisabled=partiallyDisabled
+    ,onClick() {
+      open = !open;
     }
-    onFocusOut(e, el) {
-        if (!el.contains(e.relatedTarget as Node)) {
-            open = false;
-        }
-        onFocusOut && onFocusOut(e, el);
-    }>
-    <${tagName as any}
-        class=[`menu-button__button`]
-        size=size
-        priority=priority as ButtonInput["priority"]
-        borderless=borderless
-        variant=variant as any
-        aria-haspopup="true"
-        selected=isSelected
-        transparent=transparent
-        aria-expanded=expander.ariaExpanded
-        aria-labelledby=prefixId && (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
-        split=split
-        disabled=disabled
-        partiallyDisabled=partiallyDisabled
-        onClick() { open = !open; }>
-        <if=label>
-            <span ...label class=["menu-button-prefix-label", label.class]/>
-            ${" "}
-        </if>
-        <if=(variant === "icon")>
-            <${input.content}/>
-        </if>
-        <else>
-            <span id=prefixId && labelId>
-                <${input.content}/>
-            </span>
-            <if=!noToggleIcon>
-                <evo-icon-chevron-down-12/>
-            </if>
-        </else>
-    </>
-    <evo-menu/$menu:(() => HTMLSpanElement)
-        style=expander.floatingStyles
-        selected:=input.selected
-        classPrefix="menu-button"
-        fixed=strategy === "fixed"
-        variant=(variant as MenuInput<Index>["variant"])
-        fixWidth=fixWidth
-        tabindex=-1
-        footerButton=footerButton
-        onClick() {
-            if (collapseOnSelect) open = false;
-        }
-        item=items
-        group=groups/>
-</span>
+    if=label
+      span ...label class=["menu-button-prefix-label", label.class]
+      -- ${" "}
+    if=variant === "icon"
+      ${input.content}
+    else
+      span id=prefixId && labelId
+        ${input.content}
+      if=!noToggleIcon
+        evo-icon-chevron-down-12
+  evo-menu/$menu: MenuRef
+    ,style=expander.floatingStyles
+    ,selected:=input.selected
+    ,classPrefix="menu-button"
+    ,fixed=strategy === "fixed"
+    ,variant=(variant as MenuInput<Index>["variant"])
+    ,fixWidth=fixWidth
+    ,tabindex=-1
+    ,footerButton=footerButton
+    ,onClick() {
+      if (collapseOnSelect) open = false;
+    }
+    ,item=items
+    ,group=groups

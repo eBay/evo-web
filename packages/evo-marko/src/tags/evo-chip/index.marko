@@ -1,42 +1,35 @@
-export interface Delete
-    extends Omit<Marko.HTML.Button, "content" | "type" | "aria-label"> {
-    /**
-     * The `aria-label` of the delete button
-     *
-     * English default to be overridden is `"delete"`
-     */
-    a11yText: string;
+export interface Delete extends Omit<
+  Marko.HTML.Button,
+  "content" | "type" | "aria-label"
+> {
+  /**
+   * The `aria-label` of the delete button
+   *
+   * English default to be overridden is `"delete"`
+   */
+  a11yText: string;
 }
 export interface Input extends Marko.HTML.Span {
-    delete?: Marko.AttrTag<Delete>;
+  delete?: Marko.AttrTag<Delete>;
 }
 
-<const/{
-    class: inputClass,
-    content,
-    delete: deleteBtn,
-    ...htmlInput
-}=input>
+<const/{ class: inputClass, content, delete: deleteBtn, ...htmlInput }=input>
 
 <id/textId>
 
 <span ...htmlInput class=["chip", inputClass]>
-    <span class="chip__text" id=textId>
-        <${content}/>
-    </span>
-    <if=deleteBtn>
-        <const/{
-            class: deleteClass,
-            a11yText = "delete",
-            ...htmlDelete
-        }=deleteBtn>
-        <button
-            ...htmlDelete
-            type="button"
-            class=["chip__button", deleteClass]
-            aria-label=a11yText
-            aria-describedby=textId>
-            <evo-icon-close-12/>
-        </button>
-    </if>
+  <span class="chip__text" id=textId>
+    <${content}/>
+  </span>
+  <if=deleteBtn>
+    <const/{ class: deleteClass, a11yText = "delete", ...htmlDelete }=deleteBtn>
+    <button
+      ...htmlDelete
+      type="button"
+      class=["chip__button", deleteClass]
+      aria-label=a11yText
+      aria-describedby=textId>
+      <evo-icon-close-12/>
+    </button>
+  </if>
 </span>

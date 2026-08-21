@@ -1,95 +1,97 @@
+export type RootInput = Marko.HTML.A | Marko.HTML.Button;
 export interface Input
-    extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
-    selected?: boolean;
-    selectedChange?: (selected: boolean) => void;
-    variant?: "default" | "expressive" | "menu";
-    icon?: Marko.AttrTag<{ content?: Marko.Body }>;
-    image?: Marko.AttrTag<Marko.HTML.Img>;
-    a11ySelectedText?: string;
-    open?: boolean;
-    openChange?: (open: boolean) => void;
+  extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+  selected?: boolean;
+  selectedChange?: (selected: boolean) => void;
+  variant?: "default" | "expressive" | "menu";
+  icon?: Marko.AttrTag<{ content?: Marko.Body }>;
+  image?: Marko.AttrTag<Marko.HTML.Img>;
+  a11ySelectedText?: string;
+  open?: boolean;
+  openChange?: (open: boolean) => void;
 }
 <const/{
-    class: inputClass,
-    content,
-    disabled,
-    selected: inputSelected,
-    selectedChange,
-    open: inputOpen,
-    openChange,
-    icon,
-    image,
-    a11ySelectedText,
-    variant = "default",
-    href,
-    onClick,
-    ...htmlInput
+  class: inputClass,
+  content,
+  disabled,
+  selected: inputSelected,
+  selectedChange,
+  open: inputOpen,
+  openChange,
+  icon,
+  image,
+  a11ySelectedText,
+  variant = "default",
+  href,
+  onClick,
+  ...htmlInput
 }=input>
 <const/isMenu=variant === "menu">
 <const/isAnchor=href && a11ySelectedText && variant !== "menu">
+<const/expressiveImage=image as Marko.HTML.Img>
 <let/mounted=false>
 <script>
-    mounted = true;
+  mounted = true;
 </script>
 <let/selected:=input.selected>
 <let/open:=input.open>
 
-<define/Root|input: (Marko.HTML.A | Marko.HTML.Button)|>
-    <if=isAnchor>
-        <a
-            ...input as Marko.HTML.A
-            class=[input.class, selected && "filter-chip--selected"]
-            href=!disabled && href/>
-    </if>
-    <else>
-        <button
-            ...input as Marko.HTML.Button
-            disabled=disabled
-            type="button"
-            aria-selected=!isMenu && (selected ? "true" : "false")/>
-    </else>
+<define/Root|input: RootInput|>
+  <if=isAnchor>
+    <a
+      ...input as Marko.HTML.A
+      class=[input.class, selected && "filter-chip--selected"]
+      href=!disabled && href/>
+  </if>
+  <else>
+    <button
+      ...input as Marko.HTML.Button
+      disabled=disabled
+      type="button"
+      aria-selected=!isMenu && (selected ? "true" : "false")/>
+  </else>
 </define>
 
 <Root
-    ...htmlInput
-    class=[
-        "filter-chip",
-        mounted && "filter-chip--animated",
-        variant === "expressive" && "filter-chip--expressive",
-        (isAnchor || isMenu) && selected && "filter-chip--selected",
-        inputClass,
-    ]
-    href=(!disabled ? href : undefined)
-    aria-expanded=variant === "menu" && (open ? "true" : "false")
-    onClick(e: PointerEvent, target: HTMLButtonElement) {
-        if (!disabled) {
-            if (isMenu) {
-                open = !open;
-            } else {
-                selected = !selected;
-            }
-            (input.onClick || null)?.(e as any, target);
-        }
-    }>
+  ...htmlInput
+  class=[
+    "filter-chip",
+    mounted && "filter-chip--animated",
+    variant === "expressive" && "filter-chip--expressive",
+    (isAnchor || isMenu) && selected && "filter-chip--selected",
+    inputClass,
+  ]
+  href=(!disabled ? href : undefined)
+  aria-expanded=variant === "menu" && (open ? "true" : "false")
+  onClick(e: PointerEvent, target: HTMLButtonElement) {
+    if (!disabled) {
+      if (isMenu) {
+        open = !open;
+      } else {
+        selected = !selected;
+      }
+      (input.onClick || null)?.(e as any, target);
+    }
+  }>
 
-    <if=variant === "expressive">
-        <span class="filter-chip__media">
-            <img ...(image!)>
-        </span>
-    </if>
-    <else if=variant === "default">
-        <${icon}/>
-    </else>
-
-    <span class="filter-chip__text">
-        <${content}/>
-        <if=selected && (isAnchor || isMenu)>
-            <span class="clipped">
-                ${" "}- ${a11ySelectedText}
-            </span>
-        </if>
+  <if=variant === "expressive">
+    <span class="filter-chip__media">
+      <img ...expressiveImage>
     </span>
-    <if=variant === "menu">
-        <evo-icon-chevron-down-12 class="filter-chip__trailing"/>
+  </if>
+  <else if=variant === "default">
+    <${icon}/>
+  </else>
+
+  <span class="filter-chip__text">
+    <${content}/>
+    <if=selected && (isAnchor || isMenu)>
+      <span class="clipped">
+        ${" "}- ${a11ySelectedText}
+      </span>
     </if>
+  </span>
+  <if=variant === "menu">
+    <evo-icon-chevron-down-12 class="filter-chip__trailing"/>
+  </if>
 </Root>

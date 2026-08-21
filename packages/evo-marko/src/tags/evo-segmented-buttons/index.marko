@@ -1,65 +1,62 @@
 static const validSizes = ["large"] as const;
-export interface SegmentedButton extends Omit<Marko.HTML.Button, 'name'> {
-    name?: string;
-    icon?: Marko.AttrTag<{ content: Marko.Body }>;
+export interface SegmentedButton extends Omit<Marko.HTML.Button, "name"> {
+  name?: string;
+  icon?: Marko.AttrTag<{ content: Marko.Body }>;
 }
-export interface Input<Selected extends string | number> extends Marko.HTML.Div {
-    selected?: Selected;
-    selectedChange?: (selected: Selected) => void;
-    button?: Marko.AttrTag<SegmentedButton>;
-    size?: (typeof validSizes)[number];
+export interface Input<Selected extends string | number>
+  extends Marko.HTML.Div {
+  selected?: Selected;
+  selectedChange?: (selected: Selected) => void;
+  button?: Marko.AttrTag<SegmentedButton>;
+  size?: (typeof validSizes)[number];
 }
 <const/{
-    selected: inputSelected,
-    selectedChange,
-    size: inputSize,
-    class: inputClass,
-    button: buttons,
-    ...htmlInput
+  selected: inputSelected,
+  selectedChange,
+  size: inputSize,
+  class: inputClass,
+  button: buttons,
+  ...htmlInput
 }=input>
 
 <const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
 <let/selected:=input.selected>
 
 <div
-    class=[
-        "segmented-buttons",
-        size && `segmented-buttons--${size}`,
-        inputClass,
-    ]
-    ...htmlInput>
-    <ul>
-        <for|button, i| of=buttons>
-            <const/{
-                class: buttonClass,
-                name = i,
-                icon,
-                onClick,
-                ...htmlButton
-            }=button>
-            <const/isSelected=selected === name>
-            <li>
-                <button
-                    ...htmlButton
-                    class=["segmented-buttons__button", buttonClass]
-                    onClick(e, target) {
-                        selected = name as Selected;
-                        (onClick || null)?.(e, target);
-                    }
-                    aria-current=isSelected && "true">
-                    <if=icon>
-                        <span class="segmented-buttons__button-cell">
-                            <${icon}/>
-                            <span>
-                                <${button}/>
-                            </span>
-                        </span>
-                    </if>
-                    <else>
-                        <${button}/>
-                    </else>
-                </button>
-            </li>
-        </for>
-    </ul>
+  class=["segmented-buttons", size && `segmented-buttons--${size}`, inputClass]
+  ...htmlInput>
+  <ul>
+    <for|button, i| of=buttons>
+      <const/{
+        class: buttonClass,
+        name = i,
+        icon,
+        onClick,
+        ...htmlButton
+      }=button>
+      <const/isSelected=selected === name>
+      <li>
+        <button
+          ...htmlButton
+          class=["segmented-buttons__button", buttonClass]
+          onClick(e, target) {
+            selected = name as Selected;
+            (onClick || null)?.(e, target);
+          }
+          aria-current=isSelected && "true">
+          <if=icon>
+            <span class="segmented-buttons__button-cell">
+              <${icon}/>
+              <span>
+                <${button}/>
+              </span>
+            </span>
+          </if>
+          <else>
+            <${button}/>
+          </else>
+        </button>
+      </li>
+    </for>
+  </ul>
 </div>

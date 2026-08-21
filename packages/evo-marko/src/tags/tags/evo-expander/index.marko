@@ -1,67 +1,73 @@
 import {
-    autoUpdate,
-    computePosition,
-    shift,
-    offset,
-    flip,
-    inline,
-    arrow,
-    type Placement,
+  autoUpdate,
+  computePosition,
+  shift,
+  offset,
+  flip,
+  inline,
+  arrow,
+  type Placement,
 } from "@floating-ui/dom";
-
 export interface Input {
-    open?: boolean;
-    host: () => HTMLElement;
-    overlay: () => HTMLElement;
-    arrow?: () => HTMLElement;
-    placement?: Placement;
-    strategy?: "absolute" | "fixed";
-    offset?: number;
-    flip?: boolean;
-    shift?: boolean;
-    inline?: boolean;
+  open?: boolean;
+  host: () => HTMLElement;
+  overlay: () => HTMLElement;
+  arrow?: () => HTMLElement;
+  placement?: Placement;
+  strategy?: "absolute" | "fixed";
+  offset?: number;
+  flip?: boolean;
+  shift?: boolean;
+  inline?: boolean;
 }
 
 <let/floatingStyles=({ visibility: "hidden" } as Record<string, string>)>
 <let/arrowStyles=(undefined as Record<string, string> | undefined)>
 
 <const/update=() => {
-    const arrowEl = input.arrow?.();
+  const arrowEl = input.arrow?.();
 
-    computePosition(input.host(), input.overlay(), {
-        placement: input.placement ?? "bottom-start",
-        strategy: input.strategy ?? "fixed",
-        middleware: [
-            offset(input.offset ?? 4),
-            (input.inline !== false) && inline(),
-            (input.flip !== false) && flip({ fallbackAxisSideDirection: "end", flipAlignment: false }),
-            (input.shift !== false) && shift(),
-            arrowEl && arrow({ element: arrowEl, padding: 20 }),
-        ].filter(Boolean),
-    }).then(({ x, y, placement, middlewareData }) => {
-        if ($signal.aborted) return;
-        floatingStyles = { left: `${x}px`, top: `${y}px`, visibility: "visible" };
-        if (arrowEl && middlewareData.arrow) {
-            const { x: arrowX, y: arrowY } = middlewareData.arrow;
-            const staticSide = { top: "bottom", right: "left", bottom: "top", left: "right" }[placement.split("-")[0]] as string;
-            arrowStyles = {
-                left: arrowX != null ? `${arrowX}px` : "",
-                top: arrowY != null ? `${arrowY}px` : "",
-                right: "", bottom: "",
-                [staticSide]: "-4px",
-            };
-        }
-    });
+  computePosition(input.host(), input.overlay(), {
+    placement: input.placement ?? "bottom-start",
+    strategy: input.strategy ?? "fixed",
+    middleware: [
+      offset(input.offset ?? 4),
+      input.inline !== false && inline(),
+      input.flip !== false &&
+        flip({ fallbackAxisSideDirection: "end", flipAlignment: false }),
+      input.shift !== false && shift(),
+      arrowEl && arrow({ element: arrowEl, padding: 20 }),
+    ].filter(Boolean),
+  }).then(({ x, y, placement, middlewareData }) => {
+    if ($signal.aborted) return;
+    floatingStyles = { left: `${x}px`, top: `${y}px`, visibility: "visible" };
+    if (arrowEl && middlewareData.arrow) {
+      const { x: arrowX, y: arrowY } = middlewareData.arrow;
+      const staticSide = {
+        top: "bottom",
+        right: "left",
+        bottom: "top",
+        left: "right",
+      }[placement.split("-")[0]] as string;
+      arrowStyles = {
+        left: arrowX != null ? `${arrowX}px` : "",
+        top: arrowY != null ? `${arrowY}px` : "",
+        right: "",
+        bottom: "",
+        [staticSide]: "-4px",
+      };
+    }
+  });
 }>
 
 <script>
-    if (input.open) {
-        $signal.onabort = autoUpdate(input.host(), input.overlay(), update);
-    }
+  if (input.open) {
+    $signal.onabort = autoUpdate(input.host(), input.overlay(), update);
+  }
 </script>
 
 <return={
-    floatingStyles,
-    arrowStyles,
-    ariaExpanded: input.open ? "true" as const : "false" as const,
+  floatingStyles,
+  arrowStyles,
+  ariaExpanded: input.open ? ("true" as const) : ("false" as const),
 }>

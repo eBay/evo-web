@@ -1,20 +1,18 @@
 <let/selectedRadioIndex="item 24">
 <let/selectedCheckboxIndex=["item 24", "item 49"]>
 <evo-menu-button selected:=selectedRadioIndex>
-    eBay Radio Menu
-    <for|idx| from=1 to=100>
-        <@item value=`item ${idx}`>
-            item ${idx}
-        </@item>
-    </for>
+  <for|idx| from=1 to=100>
+    <@item value=`item ${idx}`>
+      item ${idx}
+    </@item>
+  </for>
+  eBay Radio Menu${" "}
 </evo-menu-button>
-<evo-menu-button selected:=selectedCheckboxIndex
-    style="margin-left: 8px;"
->
-    eBay Checkbox Menu
-    <for|idx| from=1 to=100>
-        <@item value=`item ${idx}`>
-            item ${idx}
-        </@item>
-    </for>
+<evo-menu-button selected:=selectedCheckboxIndex style="margin-left: 8px;">
+  <for|idx| from=1 to=100>
+    <@item value=`item ${idx}`>
+      item ${idx}
+    </@item>
+  </for>
+  eBay Checkbox Menu${" "}
 </evo-menu-button>

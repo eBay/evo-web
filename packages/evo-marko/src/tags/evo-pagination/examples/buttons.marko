@@ -1,17 +1,55 @@
-<evo-pagination a11yCurrentText="Results — Page 1"
-    ...input
-    class="example-05">
-    <@prev a11yText="Previous" disabled/>
-    <@item current onClick() { console.log(1); }>
-        1
-    </@item>
-    <@item onClick() { console.log(2); }>2</@item>
-    <@item onClick() { console.log(3); }>3</@item>
-    <@item onClick() { console.log(4); }>4</@item>
-    <@item onClick() { console.log(5); }>5</@item>
-    <@item onClick() { console.log(6); }>6</@item>
-    <@item onClick() { console.log(7); }>7</@item>
-    <@item onClick() { console.log(8); }>8</@item>
-    <@item onClick() { console.log(9); }>9</@item>
-    <@next a11yText="Next" onClick() { console.log("next"); }/>
+<evo-pagination a11yCurrentText="Results — Page 1" ...input class="example-05">
+  <@prev a11yText="Previous" disabled/>
+  <@item
+    current
+    onClick() {
+      console.log(1);
+    }>
+    1
+  </@item>
+  <@item onClick() {
+    console.log(2);
+  }>
+    2
+  </@item>
+  <@item onClick() {
+    console.log(3);
+  }>
+    3
+  </@item>
+  <@item onClick() {
+    console.log(4);
+  }>
+    4
+  </@item>
+  <@item onClick() {
+    console.log(5);
+  }>
+    5
+  </@item>
+  <@item onClick() {
+    console.log(6);
+  }>
+    6
+  </@item>
+  <@item onClick() {
+    console.log(7);
+  }>
+    7
+  </@item>
+  <@item onClick() {
+    console.log(8);
+  }>
+    8
+  </@item>
+  <@item onClick() {
+    console.log(9);
+  }>
+    9
+  </@item>
+  <@next
+    a11yText="Next"
+    onClick() {
+      console.log("next");
+    }/>
 </evo-pagination>

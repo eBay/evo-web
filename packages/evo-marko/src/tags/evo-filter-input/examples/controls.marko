@@ -1,18 +1,17 @@
 export interface Input {
-    value: string;
+  value: string;
 }
 
 <let/value=input.value>
 <div>
-    <evo-filter-input
-        ...input
-        value:=value
-        placeholder="Filter"
-        a11yControlsId="filter-input-controls"
-        aria-label="Filter input"
-        a11yClearButtonText="Clear filter input"
-    />
-    <div id="filter-input-controls">
-        Current value: "${value}"
-    </div>
+  <evo-filter-input
+    ...input
+    value:=value
+    placeholder="Filter"
+    a11yControlsId="filter-input-controls"
+    aria-label="Filter input"
+    a11yClearButtonText="Clear filter input"/>
+  <div id="filter-input-controls">
+    Current value: "${value}"
+  </div>
 </div>

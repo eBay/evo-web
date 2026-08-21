@@ -52,6 +52,17 @@
         "update-snapshots": "vitest run -u --browser.headless",
         "version": "npm run importSVG && npm run build:readme"
     },
+    "lint-staged": {
+        "*.{js,mjs}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{css,less}": [
+            "prettier --write",
+            "stylelint --fix --config .stylelintrc"
+        ],
+        "*.{ts,marko,md,mdx,json}": "prettier --write"
+    },
     "dependencies": {
         "@floating-ui/dom": "^1.7.5",
         "@google/model-viewer": "^4.1.0",

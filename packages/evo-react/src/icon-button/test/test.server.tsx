@@ -152,6 +152,4 @@ describe("EvoIconButton SSR", () => {
       ),
     ).toMatchSnapshot();
   });
-
-
 });

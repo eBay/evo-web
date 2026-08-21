@@ -8,6 +8,8 @@ export default defineConfig([
   globalIgnores([
     "__snapshots__",
     "coverage",
+    "src/tags/evo-icon/tags/",
+    "src/tags/evo-image-placeholder/index.marko",
     "dist",
     "node_modules",
     // TODO: Run ESLint on tests & stories

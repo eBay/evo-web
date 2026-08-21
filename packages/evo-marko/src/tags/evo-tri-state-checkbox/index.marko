@@ -1,25 +1,28 @@
-export interface Input extends Omit<Marko.HTML.Input, "checked" | "checkedChange" | "checkedValue" | "checkedValueChange"> {
-    checked?: Marko.HTMLAttributes["aria-checked"];
-    checkedChange?: (checked: "true" | "false" | "mixed") => void;
-    values?: string[];
-    checkedValues?: string[];
-    checkedValuesChange?: (checkedValues: string[]) => void;
-    skipMixed?: boolean;
-    size?: "regular" | "large";
+export interface Input extends Omit<
+  Marko.HTML.Input,
+  "checked" | "checkedChange" | "checkedValue" | "checkedValueChange"
+> {
+  checked?: Marko.HTMLAttributes["aria-checked"];
+  checkedChange?: (checked: "true" | "false" | "mixed") => void;
+  values?: string[];
+  checkedValues?: string[];
+  checkedValuesChange?: (checkedValues: string[]) => void;
+  skipMixed?: boolean;
+  size?: "regular" | "large";
 }
 
 <const/{
-    class: inputClass,
-    style,
-    size,
-    skipMixed,
-    checked: inputChecked,
-    checkedChange,
-    values,
-    checkedValues : inputCheckedValues,
-    checkedValuesChange,
-    onChange,
-    ...htmlInput
+  class: inputClass,
+  style,
+  size,
+  skipMixed,
+  checked: inputChecked,
+  checkedChange,
+  values,
+  checkedValues: inputCheckedValues,
+  checkedValuesChange,
+  onChange,
+  ...htmlInput
 }=input>
 
 <let/checked=inputChecked || "false" valueChange=checkedChange>
@@ -29,68 +32,69 @@ export interface Input extends Omit<Marko.HTML.Input, "checked" | "checkedChange
 <let/lastMixed=null as string[] | null>
 
 <const/effectiveChecked=(
-    usesCheckedValue
-        ? checkedValues!.length >= values!.length
-            ? "true"
-            : checkedValues!.length === 0
-            ? "false"
-            : "mixed"
-        : checked || "false"
+  usesCheckedValue
+    ? checkedValues!.length >= values!.length
+      ? "true"
+      : checkedValues!.length === 0
+        ? "false"
+        : "mixed"
+    : checked || "false"
 )>
 
-
 <span style=style class=["checkbox", inputClass]>
-    <input/$checkbox
-        ...htmlInput
-        class="checkbox__control"
-        checked=effectiveChecked !== "false"
-        checkedChange(ch) {
-            if (usesCheckedValue) {
-                if (effectiveChecked === "true") {
-                    checkedValues = [];
-                } else if (effectiveChecked === "mixed") {
-                    lastMixed = checkedValues!;
-                    checkedValues = values!;
-                } else {
-                    checkedValues = lastMixed || values!;
-                }
-            } else {
-                if (checked === "true") {
-                    checked = "false";
-                } else if (checked === "false") {
-                    checked = "mixed";
-                } else {
-                    checked = "true";
-                }
-            }
+  <input/$checkbox
+    ...htmlInput
+    class="checkbox__control"
+    checked=effectiveChecked !== "false"
+    checkedChange(ch) {
+      if (usesCheckedValue) {
+        if (effectiveChecked === "true") {
+          checkedValues = [];
+        } else if (effectiveChecked === "mixed") {
+          lastMixed = checkedValues!;
+          checkedValues = values!;
+        } else {
+          checkedValues = lastMixed || values!;
         }
-        aria-checked=effectiveChecked
-        type="checkbox">
-    <script>$checkbox().indeterminate = effectiveChecked === "mixed"</script>
-    <span class="checkbox__icon" hidden>
-        <if=effectiveChecked === "mixed">
-            <if=size === "large">
-                <evo-icon-checkbox-mixed-24 class="checkbox__checked"/>
-            </if>
-            <else>
-                <evo-icon-checkbox-mixed-18 class="checkbox__checked"/>
-            </else>
-        </if>
-        <else if=effectiveChecked === "true">
-            <if=size === "large">
-                <evo-icon-checkbox-checked-24 class="checkbox__checked"/>
-            </if>
-            <else>
-                <evo-icon-checkbox-checked-18 class="checkbox__checked"/>
-            </else>
-        </else>
-        <else>
-            <if=size === "large">
-                <evo-icon-checkbox-unchecked-24 class="checkbox__unchecked"/>
-            </if>
-            <else>
-                <evo-icon-checkbox-unchecked-18 class="checkbox__unchecked"/>
-            </else>
-        </else>
-    </span>
+      } else {
+        if (checked === "true") {
+          checked = "false";
+        } else if (checked === "false") {
+          checked = "mixed";
+        } else {
+          checked = "true";
+        }
+      }
+    }
+    aria-checked=effectiveChecked
+    type="checkbox">
+  <script>
+    $checkbox().indeterminate = effectiveChecked === "mixed";
+  </script>
+  <span class="checkbox__icon" hidden>
+    <if=effectiveChecked === "mixed">
+      <if=size === "large">
+        <evo-icon-checkbox-mixed-24 class="checkbox__checked"/>
+      </if>
+      <else>
+        <evo-icon-checkbox-mixed-18 class="checkbox__checked"/>
+      </else>
+    </if>
+    <else if=effectiveChecked === "true">
+      <if=size === "large">
+        <evo-icon-checkbox-checked-24 class="checkbox__checked"/>
+      </if>
+      <else>
+        <evo-icon-checkbox-checked-18 class="checkbox__checked"/>
+      </else>
+    </else>
+    <else>
+      <if=size === "large">
+        <evo-icon-checkbox-unchecked-24 class="checkbox__unchecked"/>
+      </if>
+      <else>
+        <evo-icon-checkbox-unchecked-18 class="checkbox__unchecked"/>
+      </else>
+    </else>
+  </span>
 </span>

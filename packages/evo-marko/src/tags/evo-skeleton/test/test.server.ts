@@ -6,7 +6,7 @@ import * as stories from "../skeleton.stories";
 const { Default } = composeStories(stories);
 
 describe("skeleton", () => {
-    it("renders default skeleton", async () => {
-        await snapshotHTML(Default);
-    });
+  it("renders default skeleton", async () => {
+    await snapshotHTML(Default);
+  });
 });

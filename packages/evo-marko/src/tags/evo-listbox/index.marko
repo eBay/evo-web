@@ -1,118 +1,117 @@
 export interface Option extends Marko.HTML.Div {
-    value: Marko.HTML.Option["value"];
-    disabled?: boolean;
-    description?: Marko.AttrTag<Marko.HTML.Span>;
-    icon?: Marko.AttrTag<{ content?: Marko.Body }>;
+  value: Marko.HTML.Option["value"];
+  disabled?: boolean;
+  description?: Marko.AttrTag<Marko.HTML.Span>;
+  icon?: Marko.AttrTag<{ content?: Marko.Body }>;
 }
-export interface Input<Index extends number | string>
-    extends Marko.HTML.Div {
-    selected?: Index;
-    selectedChange?: (selected: Index) => void;
-    listSelection?: "auto" | "manual";
-    typeaheadTimeoutLength?: number;
-    /**
-     * The clipped text for screen readers when an option is selected
-     * 
-     * English default to be overridden is `"selected"`
-     **/
-    a11ySelectedText: string;
-    option?: Marko.AttrTag<Option>;
-    name?: string;
+export interface Input<Index extends number | string> extends Marko.HTML.Div {
+  selected?: Index;
+  selectedChange?: (selected: Index) => void;
+  listSelection?: "auto" | "manual";
+  typeaheadTimeoutLength?: number;
+  /**
+   * The clipped text for screen readers when an option is selected
+   *
+   * English default to be overridden is `"selected"`
+   **/
+  a11ySelectedText: string;
+  option?: Marko.AttrTag<Option>;
+  name?: string;
 }
 
 <const/{
-    name,
-    selected: selectedIndex,
-    selectedChange,
-    class: inputClass,
-    listSelection,
-    option: options,
-    tabindex = 0,
-    typeaheadTimeoutLength,
-    a11ySelectedText = "selected",
-    ...htmlInput
+  name,
+  selected: selectedIndex,
+  selectedChange,
+  class: inputClass,
+  listSelection,
+  option: options,
+  tabindex = 0,
+  typeaheadTimeoutLength,
+  a11ySelectedText = "selected",
+  ...htmlInput
 }=input>
 
 <let/selected:=input.selected>
 
 <evo-roving-tabindex/rovTabindex
-    autoSelect=listSelection === "auto"
-    nodeList=$item
-    selected:=selected/>
-<evo-typeahead/{ typeahead } nodeList=$item timeoutLength=typeaheadTimeoutLength/>
+  autoSelect=listSelection === "auto"
+  nodeList=$item
+  selected:=selected/>
+<evo-typeahead/{ typeahead }
+  nodeList=$item
+  timeoutLength=typeaheadTimeoutLength/>
 
 <div/$root
-    ...htmlInput
-    role="listbox"
-    onKeyDown(e, target) {
-        rovTabindex.onKeyDown(e);
+  ...htmlInput
+  role="listbox"
+  onKeyDown(e, target) {
+    rovTabindex.onKeyDown(e);
 
-        const newIndex = typeahead(e);
-        if (newIndex !== -1) {
-            rovTabindex.setFocusIndex(newIndex);
-        }
-
-        (input.onKeyDown || null)?.(e, target);
+    const newIndex = typeahead(e);
+    if (newIndex !== -1) {
+      rovTabindex.setFocusIndex(newIndex);
     }
-    class=["listbox__options", inputClass]
-    tabindex=tabindex>
-    <for|option, index| of=options>
-        <const/{
-            value = index,
-            class: optionClass,
-            disabled,
-            tabindex,
-            icon,
-            description,
-            ...htmlOption
-        }=option>
-        <const/isSelected=value === selected>
-        <div/$item
-            ...htmlOption
-            class=[
-                "listbox__option",
-                rovTabindex.isFocused(value as string | number) &&
-                    "listbox__option--active",
-                optionClass,
-            ]
-            role="option"
-            tabindex=(disabled ? -1 : tabindex)
-            aria-disabled=disabled && "true"
-            aria-selected=isSelected && "true"
-            data-value=value
-            onClick(e, target) {
-                rovTabindex.onClick(value as string | number);
 
-                (option.onClick || null)?.(e, target);
-            }>
-            <span class="listbox__value">
-                <${icon}/>
-                <${icon ? "span" : null}>
-                    <${option.content}/>
-                </>
-                <if=isSelected>
-                    <span class="clipped">
-                        ${a11ySelectedText}
-                    </span>
-                </if>
-            </span>
-            <if=description>
-                <span
-                    ...description
-                    class=["listbox__description", description.class]/>
-            </if>
-            ${" "}
-            <evo-icon-tick-16/>
-        </div>
-    </for>
+    (input.onKeyDown || null)?.(e, target);
+  }
+  class=["listbox__options", inputClass]
+  tabindex=tabindex>
+  <for|option, index| of=options>
+    <const/{
+      value = index,
+      class: optionClass,
+      disabled,
+      tabindex,
+      icon,
+      description,
+      ...htmlOption
+    }=option>
+    <const/isSelected=value === selected>
+    <div/$item
+      ...htmlOption
+      class=[
+        "listbox__option",
+        rovTabindex.isFocused(value as string | number) &&
+          "listbox__option--active",
+        optionClass,
+      ]
+      role="option"
+      tabindex=(disabled ? -1 : tabindex)
+      aria-disabled=disabled && "true"
+      aria-selected=isSelected && "true"
+      data-value=value
+      onClick(e, target) {
+        rovTabindex.onClick(value as string | number);
+
+        (option.onClick || null)?.(e, target);
+      }>
+      <span class="listbox__value">
+        <${icon}/>
+        <${icon ? "span" : null}>
+          <${option.content}/>
+        </>
+        <if=isSelected>
+          <span class="clipped">
+            ${a11ySelectedText}
+          </span>
+        </if>
+      </span>
+      <if=description>
+        <span ...description class=["listbox__description", description.class]/>
+      </if>
+      ${" "}
+      <evo-icon-tick-16/>
+    </div>
+  </for>
 </div>
 <select hidden class="listbox__native" name=name>
-    <for|option, i| of=options>
-        <option
-            value=option.value
-            selected=(option.value || i) === selected
-            class=option.class/>
-    </for>
+  <for|option, i| of=options>
+    <option
+      value=option.value
+      selected=(option.value || i) === selected
+      class=option.class/>
+  </for>
 </select>
 
 <return=$root>

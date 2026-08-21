@@ -10,15 +10,15 @@ type DomNode = Element | DocumentFragment;
 // Marko 6 emits multi-character ids and `self[runtimeId]`; those scripts are
 // not removed by `normalize()` yet, so we strip them here.
 const MARKO_6_RESUME_SCRIPT =
-    /\bM\.[\w$]+\.[bwrs]\b|\("M"\)\("[\w$-]+"\)|self\[runtimeId\]/;
+  /\bM\.[\w$]+\.[bwrs]\b|\("M"\)\("[\w$-]+"\)|self\[runtimeId\]/;
 
 function stripMarko6Scripts<T extends DomNode>(container: T): T {
-    for (const script of Array.from(container.querySelectorAll("script"))) {
-        if (!script.src && MARKO_6_RESUME_SCRIPT.test(script.textContent || "")) {
-            script.remove();
-        }
+  for (const script of Array.from(container.querySelectorAll("script"))) {
+    if (!script.src && MARKO_6_RESUME_SCRIPT.test(script.textContent || "")) {
+      script.remove();
     }
-    return container;
+  }
+  return container;
 }
 
 // When a snapshot covers only a subtree, `normalize()` may not rewrite every
@@ -28,15 +28,15 @@ function stripMarko6Scripts<T extends DomNode>(container: T): T {
 const MARKO_6_AUTO_ID_RE = /\bsM[A-Za-z0-9$_]*\d+\b/g;
 
 function normalizeMarko6Ids(serialized: string): string {
-    const map = new Map<string, string>();
-    return serialized.replace(MARKO_6_AUTO_ID_RE, (id) => {
-        let replacement = map.get(id);
-        if (replacement === undefined) {
-            replacement = `MARKO-ID-${map.size}`;
-            map.set(id, replacement);
-        }
-        return replacement;
-    });
+  const map = new Map<string, string>();
+  return serialized.replace(MARKO_6_AUTO_ID_RE, (id) => {
+    let replacement = map.get(id);
+    if (replacement === undefined) {
+      replacement = `MARKO-ID-${map.size}`;
+      map.set(id, replacement);
+    }
+    return replacement;
+  });
 }
 
 /**
@@ -44,31 +44,31 @@ function normalizeMarko6Ids(serialized: string): string {
  * `@marko/testing-library`, then the Marko 6 fixes above, then `prettyDOM()`.
  */
 function prettyNormalizedDOM(
-    el: DomNode | null | undefined,
+  el: DomNode | null | undefined,
 ): string | null | undefined;
 function prettyNormalizedDOM(els: readonly DomNode[]): string[];
 function prettyNormalizedDOM(el: any): any {
-    if (Array.isArray(el)) return el.map((n) => prettyNormalizedDOM(n));
-    if (el == null) return el;
-    const cleaned = stripMarko6Scripts(normalize(el));
-    const toStr = (n: Element): string => {
-        // Default `prettyDOM` turns on pretty-format syntax highlighting in Node,
-        // which embeds ANSI escapes — ugly and noisy in committed `.snap` files.
-        const pretty = prettyDOM(n, undefined, { highlight: false });
-        return typeof pretty === "string" ? pretty : "";
-    };
-    const out =
-        (cleaned as Node).nodeType === 11
-            ? Array.from((cleaned as DocumentFragment).children)
-                  .map(toStr)
-                  .join("\n")
-            : toStr(cleaned as Element);
-    return normalizeMarko6Ids(out);
+  if (Array.isArray(el)) return el.map((n) => prettyNormalizedDOM(n));
+  if (el == null) return el;
+  const cleaned = stripMarko6Scripts(normalize(el));
+  const toStr = (n: Element): string => {
+    // Default `prettyDOM` turns on pretty-format syntax highlighting in Node,
+    // which embeds ANSI escapes — ugly and noisy in committed `.snap` files.
+    const pretty = prettyDOM(n, undefined, { highlight: false });
+    return typeof pretty === "string" ? pretty : "";
+  };
+  const out =
+    (cleaned as Node).nodeType === 11
+      ? Array.from((cleaned as DocumentFragment).children)
+          .map(toStr)
+          .join("\n")
+      : toStr(cleaned as Element);
+  return normalizeMarko6Ids(out);
 }
 
 async function snapshotHTML(template: any, input?: any) {
-    const { container } = await render(template, input);
-    expect(prettyNormalizedDOM(container)).toMatchSnapshot();
+  const { container } = await render(template, input);
+  expect(prettyNormalizedDOM(container)).toMatchSnapshot();
 }
 
 export { snapshotHTML, prettyNormalizedDOM };

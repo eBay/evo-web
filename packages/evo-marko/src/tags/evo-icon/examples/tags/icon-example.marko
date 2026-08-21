@@ -1,61 +1,61 @@
 export interface Input {
-    name: string;
-    content: Marko.Body;
+  name: string;
+  content: Marko.Body;
 }
 
 <style/styles>
-    .cell {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 72px;
-    }
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+  }
 
-    .cell .tooltip {
-        display: flex;
-        width: 100%;
-        height: 100%;
-    }
+  .cell .tooltip {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
 
-    .cell .host {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        border-radius: 8px;
-        cursor: pointer;
-        color: inherit;
-    }
+  .cell .host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    color: inherit;
+  }
 
-    .cell .host:hover {
-        background-color: var(--color-background-faint);
-    }
+  .cell .host:hover {
+    background-color: var(--color-background-faint);
+  }
 </style>
 
 <let/open=false>
 
-<div class=(styles as any).cell>
-    <evo-tooltip
-        noHover
-        open=open
-        openChange(value) {
-            open = open && value;
-        }
-        class=(styles as any).tooltip>
-        <@host
-            as="button"
-            aria-label=input.name
-            class=(styles as any).host
-            onClick() {
-                open = !open;
-            }>
-            <${input.content}/>
-        </@host>
-        ${`<${input.name}/>`}
-    </evo-tooltip>
+<div class=((styles as any).cell)>
+  <evo-tooltip
+    noHover
+    open=open
+    openChange(value) {
+      open = open && value;
+    }
+    class=((styles as any).tooltip)>
+    <@host
+      as="button"
+      aria-label=input.name
+      class=((styles as any).host)
+      onClick() {
+        open = !open;
+      }>
+      <${input.content}/>
+    </@host>
+    ${`<${input.name}/>`}
+  </evo-tooltip>
 </div>

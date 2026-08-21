@@ -21,7 +21,8 @@ export default {
   argTypes: {
     content: {},
     leading: {
-      description: "Optional leading element (e.g. an icon) rendered before the summary label",
+      description:
+        "Optional leading element (e.g. an icon) rendered before the summary label",
       "@": {
         ["<span> attributes" as any]: {
           description:

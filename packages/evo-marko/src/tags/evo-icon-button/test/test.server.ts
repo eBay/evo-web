@@ -9,7 +9,7 @@ interface Properties {
   [key: string]: string[];
 }
 
-const properties:Properties = {
+const properties: Properties = {
   priority: ["primary", "secondary", "delete"],
   size: ["large", "small"],
 };

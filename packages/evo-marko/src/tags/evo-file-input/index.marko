@@ -1,79 +1,75 @@
 export interface Input extends Omit<Marko.HTML.Input, "type"> {
-    header?: Marko.AttrTag<
-        Marko.Input<"h1"> & {
-            as?: keyof Marko.NativeTags;
-        }
-    >;
-    description?: Marko.AttrTag<Marko.HTML.Span>;
+  header?: Marko.AttrTag<
+    Marko.Input<"h1"> & {
+      as?: keyof Marko.NativeTags;
+    }
+  >;
+  description?: Marko.AttrTag<Marko.HTML.Span>;
 }
 
 <const/{
-    class: inputClass,
-    header,
-    description,
-    content,
-    onDragEnter,
-    onDragOver,
-    onDragLeave,
-    onDrop,
-    ...htmlInput
+  class: inputClass,
+  header,
+  description,
+  content,
+  onDragEnter,
+  onDragOver,
+  onDragLeave,
+  onDrop,
+  ...htmlInput
 }=input>
 <id/inputId>
 
 <let/dragging=false>
 
 <div class=["file-input", inputClass]>
-    <div class=[
-        "file-input__container",
-        dragging && "file-input___container--dragged-over",
-    ]>
-        <div class="file-input__upload-icon">
-            <evo-icon-upload-24/>
-        </div>
-        <div class="file-input__content">
-            <if=header>
-                <const/{
-                    as: headerAs,
-                    class: headerClass,
-                    ...headerHtmlInput
-                }=header>
-                <${headerAs || "span"}
-                    ...headerHtmlInput
-                    class=["file-input__content-header", headerClass]/>
-            </if>
-            <if=description>
-                <span
-                    ...description
-                    class=["file-input__content-subheader", description.class]/>
-            </if>
-            <if=content>
-                <label for=inputId>
-                    <span class="file-input__content-cta">
-                        <${content}/>
-                    </span>
-                </label>
-            </if>
-        </div>
+  <div class=[
+    "file-input__container",
+    dragging && "file-input___container--dragged-over",
+  ]>
+    <div class="file-input__upload-icon">
+      <evo-icon-upload-24/>
     </div>
-    <input
-        ...htmlInput
-        type="file"
-        class="file-input__input"
-        id=inputId
-        onDragEnter(e, target) {
-            dragging = true;
-            onDragEnter && onDragEnter(e, target);
-        }
-        onDragOver(e, target) {
-            dragging = true;
-            onDragOver && onDragOver(e, target);
-        }
-        onDragLeave(e, target) {
-            dragging = false;
-            onDragLeave && onDragLeave(e, target);
-        }
-        onDrop(e, target) {
-            dragging = false;
-            onDrop && onDrop(e, target);
-        }>
+    <div class="file-input__content">
+      <if=header>
+        <const/{ as: headerAs, class: headerClass, ...headerHtmlInput }=header>
+        <${headerAs || "span"}
+          ...headerHtmlInput
+          class=["file-input__content-header", headerClass]/>
+      </if>
+      <if=description>
+        <span
+          ...description
+          class=["file-input__content-subheader", description.class]/>
+      </if>
+      <if=content>
+        <label for=inputId>
+          <span class="file-input__content-cta">
+            <${content}/>
+          </span>
+        </label>
+      </if>
+    </div>
+  </div>
+  <input
+    ...htmlInput
+    type="file"
+    class="file-input__input"
+    id=inputId
+    onDragEnter(e, target) {
+      dragging = true;
+      onDragEnter && onDragEnter(e, target);
+    }
+    onDragOver(e, target) {
+      dragging = true;
+      onDragOver && onDragOver(e, target);
+    }
+    onDragLeave(e, target) {
+      dragging = false;
+      onDragLeave && onDragLeave(e, target);
+    }
+    onDrop(e, target) {
+      dragging = false;
+      onDrop && onDrop(e, target);
+    }>
 </div>

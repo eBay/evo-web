@@ -19,9 +19,6 @@ export function AvatarProvider({
   setImagePlacement,
   children,
 }: AvatarProviderProps) {
-  const value = useMemo(
-    () => ({ setImagePlacement }),
-    [setImagePlacement],
-  );
+  const value = useMemo(() => ({ setImagePlacement }), [setImagePlacement]);
   return <AvatarContext value={value}>{children}</AvatarContext>;
 }

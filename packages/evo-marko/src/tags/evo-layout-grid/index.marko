@@ -1,34 +1,34 @@
 export interface LayoutOptions {
-    min?: number;
-    xs?: number;
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-    xl2?: number;
-    xl3?: number;
-    xl4?: number;
+  min?: number;
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  xl2?: number;
+  xl3?: number;
+  xl4?: number;
 }
 export interface Input extends Marko.HTML.UL {
-    item?: Marko.AttrTag<Marko.HTML.LI>;
-    columns?: LayoutOptions;
+  item?: Marko.AttrTag<Marko.HTML.LI>;
+  columns?: LayoutOptions;
 }
 <const/{ item: items, class: inputClass, columns = {}, ...htmlInput }=input>
 
 <div
-    class=["layout-grid", inputClass]
-    data-columns-min=columns.min
-    data-columns-xs=columns.xs
-    data-columns-sm=columns.sm
-    data-columns-md=columns.md
-    data-columns-lg=columns.lg
-    data-columns-xl=columns.xl
-    data-columns-xl2=columns.xl2
-    data-columns-xl3=columns.xl3
-    data-columns-xl4=columns.xl4>
-    <ul ...htmlInput>
-        <for|item| of=items>
-            <li ...item/>
-        </for>
-    </ul>
+  class=["layout-grid", inputClass]
+  data-columns-min=columns.min
+  data-columns-xs=columns.xs
+  data-columns-sm=columns.sm
+  data-columns-md=columns.md
+  data-columns-lg=columns.lg
+  data-columns-xl=columns.xl
+  data-columns-xl2=columns.xl2
+  data-columns-xl3=columns.xl3
+  data-columns-xl4=columns.xl4>
+  <ul ...htmlInput>
+    <for|item| of=items>
+      <li ...item/>
+    </for>
+  </ul>
 </div>

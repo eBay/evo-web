@@ -94,7 +94,9 @@ describe("evo-confirm-dialog", () => {
 
     it("should render the main content area with dialog__main class", async () => {
       const screen = await renderOpenDialog();
-      const content = screen.getByText("You will permanently lose this address.");
+      const content = screen.getByText(
+        "You will permanently lose this address.",
+      );
       expect(content.element().closest(".dialog__main")).not.toBeNull();
     });
 
@@ -108,7 +110,9 @@ describe("evo-confirm-dialog", () => {
       const screen = await render(
         <EvoConfirmDialog open>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter className="my-footer">
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -136,14 +140,20 @@ describe("evo-confirm-dialog", () => {
       const describedBy = button.element().getAttribute("aria-describedby")!;
       expect(describedBy).toBeTruthy();
       const mainEl = document.getElementById(describedBy);
-      expect(mainEl?.textContent).toContain("You will permanently lose this address.");
+      expect(mainEl?.textContent).toContain(
+        "You will permanently lose this address.",
+      );
     });
 
     it("should use a custom id on EvoConfirmDialogHeader and update aria-labelledby to match", async () => {
       const screen = await render(
         <EvoConfirmDialog open>
-          <EvoConfirmDialogHeader id="my-header-id">Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogHeader id="my-header-id">
+            Delete Address?
+          </EvoConfirmDialogHeader>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -153,14 +163,18 @@ describe("evo-confirm-dialog", () => {
       const dialog = screen.getByRole("alertdialog");
       const heading = screen.getByRole("heading", { name: "Delete Address?" });
       expect(heading.element().id).toBe("my-header-id");
-      await expect.element(dialog).toHaveAttribute("aria-labelledby", "my-header-id");
+      await expect
+        .element(dialog)
+        .toHaveAttribute("aria-labelledby", "my-header-id");
     });
 
     it("should use a custom id on EvoConfirmDialogMain and update aria-describedby to match", async () => {
       const screen = await render(
         <EvoConfirmDialog open>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain id="my-main-id"><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain id="my-main-id">
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -168,7 +182,9 @@ describe("evo-confirm-dialog", () => {
         </EvoConfirmDialog>,
       );
       const button = screen.getByRole("button", { name: "Delete" });
-      await expect.element(button).toHaveAttribute("aria-describedby", "my-main-id");
+      await expect
+        .element(button)
+        .toHaveAttribute("aria-describedby", "my-main-id");
     });
   });
 
@@ -177,7 +193,9 @@ describe("evo-confirm-dialog", () => {
       const { container } = await render(
         <EvoConfirmDialog open={false}>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -195,7 +213,9 @@ describe("evo-confirm-dialog", () => {
       const { container } = await render(
         <EvoConfirmDialog>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -211,7 +231,9 @@ describe("evo-confirm-dialog", () => {
       const screen = await render(
         <EvoConfirmDialog defaultOpen>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -227,7 +249,9 @@ describe("evo-confirm-dialog", () => {
       const screen = await render(
         <EvoConfirmDialog defaultOpen>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -244,7 +268,9 @@ describe("evo-confirm-dialog", () => {
       const screen = await render(
         <EvoConfirmDialog defaultOpen>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -261,7 +287,9 @@ describe("evo-confirm-dialog", () => {
       const screen = await render(
         <EvoConfirmDialog defaultOpen>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -279,9 +307,13 @@ describe("evo-confirm-dialog", () => {
       await render(
         <EvoConfirmDialog defaultOpen>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
-            <EvoConfirmDialogReject onClick={onRejectClick}>Cancel</EvoConfirmDialogReject>
+            <EvoConfirmDialogReject onClick={onRejectClick}>
+              Cancel
+            </EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
           </EvoConfirmDialogFooter>
         </EvoConfirmDialog>,
@@ -371,7 +403,9 @@ describe("evo-confirm-dialog", () => {
       await render(
         <EvoConfirmDialog open ref={ref}>
           <EvoConfirmDialogHeader>Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>
@@ -384,8 +418,12 @@ describe("evo-confirm-dialog", () => {
     it("should allow a custom heading element via `as` on EvoConfirmDialogHeader", async () => {
       const screen = await render(
         <EvoConfirmDialog open>
-          <EvoConfirmDialogHeader as="h1">Delete Address?</EvoConfirmDialogHeader>
-          <EvoConfirmDialogMain><p>Content</p></EvoConfirmDialogMain>
+          <EvoConfirmDialogHeader as="h1">
+            Delete Address?
+          </EvoConfirmDialogHeader>
+          <EvoConfirmDialogMain>
+            <p>Content</p>
+          </EvoConfirmDialogMain>
           <EvoConfirmDialogFooter>
             <EvoConfirmDialogReject>Cancel</EvoConfirmDialogReject>
             <EvoConfirmDialogConfirm>Delete</EvoConfirmDialogConfirm>

@@ -6,13 +6,13 @@
  * @param {HTMLElement} el the element to get the max width for
  */
 export function getMaxWidth(el: HTMLElement) {
-    const width = el.style.width;
+  const width = el.style.width;
 
-    el.style.width = "100vw";
-    const result = el.offsetWidth;
+  el.style.width = "100vw";
+  const result = el.offsetWidth;
 
-    el.style.width = width;
-    return result;
+  el.style.width = width;
+  return result;
 }
 
 /**
@@ -26,5 +26,5 @@ export function getMaxWidth(el: HTMLElement) {
  * @returns {boolean} `true` if the user prefers reduced motion, `false` otherwise.
  */
 export const useReducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
