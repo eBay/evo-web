@@ -5,48 +5,48 @@ import { urls } from "../../../../data";
   <h1>Image Placeholder Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    Like any image, an image placeholder is either informative${" "}
+    Like any image, an image placeholder is either informative
     <em>content</em>
-    ${" "}or non-important${" "}
+    or non-important
     <em>decoration</em>
     . Classify it before choosing its accessible treatment.
   </p>
   <p>
-    A placeholder that communicates a missing image is informative. It${" "}
+    A placeholder that communicates a missing image is informative. It
     <strong>must</strong>
-    ${" "}use${" "}
+    use
     <code>role="img"</code>
-    ${" "}and${" "}
+    and
     <code>aria-label</code>
-    ${" "}to name the state, such as "Image not available."
+    to name the state, such as "Image not available."
   </p>
   <p>
-    A purely decorative placeholder${" "}
+    A purely decorative placeholder
     <strong>must</strong>
-    ${" "}use${" "}
+    use
     <code>aria-hidden="true"</code>
-    ${" "}to hide it from assistive technology. Never expose the SVG filename or
+    to hide it from assistive technology. Never expose the SVG filename or
     visual shape as its name, otherwise a screen reader will read it aloud.
   </p>
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
-    An image placeholder is not interactive and therefore${" "}
+    An image placeholder is not interactive and therefore
     <strong>must not</strong>
-    ${" "}be keyboard focusable.
+    be keyboard focusable.
   </p>
   <h3>Screen Reader</h3>
   <p>
-    A decorative placeholder${" "}
+    A decorative placeholder
     <strong>must</strong>
-    ${" "}be skipped by screen readers.
+    be skipped by screen readers.
   </p>
   <p>
-    An informative placeholder${" "}
+    An informative placeholder
     <strong>must</strong>
-    ${" "}announce its${" "}
+    announce its
     <code>aria-label</code>
-    ${" "}value and image role.
+    value and image role.
   </p>
   <h3>Pointer</h3>
   <p>An image placeholder is not interactive and therefore is not clickable.</p>
@@ -73,9 +73,9 @@ import { urls } from "../../../../data";
           <strong>aria-label</strong>
         </td>
         <td>
-          Applied to an informative placeholder with${" "}
+          Applied to an informative placeholder with
           <code>role="img"</code>
-          ${" "}to provide an accessible name.
+          to provide an accessible name.
         </td>
       </tr>
       <tr>
