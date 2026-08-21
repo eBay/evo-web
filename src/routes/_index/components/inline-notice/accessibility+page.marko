@@ -1,4 +1,6 @@
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>Inline Notice Accessibility</h1>
   <h2>Best Practices</h2>
@@ -6,7 +8,7 @@ import "../../../../sass/accessibility.scss";
   <p>
     Avoid rendering high-priority inline notices on the server. For better
     discoverability, use a
-    <a href="page-notice">
+    <a href=`${urls.components}/page-notice`>
       page notice
     </a>
     instead. If you cannot use a page notice, then focus
@@ -29,6 +31,15 @@ import "../../../../sass/accessibility.scss";
     <strong>must</strong>
     be keyboard focusable.
   </p>
+  <p>
+    A high-priority notice rendered on the server and visible on page load
+    <strong>must</strong>
+    receive focus. These cases should be rare; use a
+    <a href=`${urls.components}/page-notice`>
+      page notice
+    </a>
+    when possible.
+  </p>
   <h3>Screen Reader</h3>
   <p>
     Screen reader
@@ -50,24 +61,56 @@ import "../../../../sass/accessibility.scss";
     <strong>must</strong>
     be announced as the description of that control.
   </p>
-  <h2>FAQ</h2>
-  <h3>When do I use role=“region” with an inline notice?</h3>
+  <h3>Pointer</h3>
   <p>
-    For all notices. It creates a landmark region. All landmark regions should
-    be labelled (e.g. “Confirmation”, “Information”, “Attention”).
+    Clicking or tapping a notice action activates its link or button.
   </p>
-  <h3>When do I use role=“alert” with an inline notice?</h3>
-  <p>
-    For high-priority notices rendered and updated on the client only. The alert
-    must be nested inside of the landmark region element.
-  </p>
-  <h3>When do I set keyboard focus on an inline notice?</h3>
-  <p>
-    Always set keyboard focus on high priority notices rendered by the server
-    and visible at page load time. Again, these situations should be rare. Use a
-    <a href="page-notice">
-      page notice
-    </a>
-    instead.
-  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="region"</strong>
+        </td>
+        <td>
+          Exposes the notice as a named landmark region. Use a label such as
+          "Confirmation," "Information," or "Attention."
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role="alert"</strong>
+        </td>
+        <td>
+          Announces a high-priority notice rendered on the client. Nest the
+          alert inside the landmark region.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-describedby</strong>
+        </td>
+        <td>Associates a notice with the control it describes.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/page-notice`>
+        Page Notice
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/section-notice`>
+        Section Notice
+      </a>
+    </li>
+  </ul>
 </div>

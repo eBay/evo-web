@@ -1,4 +1,6 @@
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>Page Notice Accessibility</h1>
   <h2>Best Practices</h2>
@@ -37,11 +39,14 @@ import "../../../../sass/accessibility.scss";
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
-    An attention notice
+    A high-priority attention notice
     <strong>must</strong>
-    receive keyboard focus if rendered on the server. In some cases we do
-    this for client-side rendered notices too (e.g. if the notice contains a
-    call to action link or button).
+    receive keyboard focus if rendered on the server. Low-priority notices,
+    such as confirmation and information, should not receive focus.
+  </p>
+  <p>
+    A high-priority notice rendered on the client may receive focus when it
+    contains an action that helps resolve the issue.
   </p>
   <h3>Screen Reader</h3>
   <p>
@@ -59,19 +64,50 @@ import "../../../../sass/accessibility.scss";
     <strong>must</strong>
     be available in screen reader list of regions or landmarks.
   </p>
-  <h2>FAQ</h2>
-  <h3>When do I set keyboard focus on a page notice?</h3>
+  <h3>Pointer</h3>
   <p>
-    Low priority notices such as confirmation and information should never
-    receive keyboard focus.
+    Clicking or tapping a notice action activates its link or button.
   </p>
-  <p>
-    All high-priority page notices rendered on the server should receive
-    keyboard focus.
-  </p>
-  <p>
-    Some high-priority notices rendered on the client should receive keyboard
-    focus. Typically these are notices that contain an interactive call to
-    action that helps resolve the issue.
-  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="region"</strong>
+        </td>
+        <td>Exposes the notice as a navigable region.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label / aria-labelledby</strong>
+        </td>
+        <td>Names the notice region.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-live</strong>
+        </td>
+        <td>Announces non-critical client-side notice updates.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/inline-notice`>
+        Inline Notice
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/section-notice`>
+        Section Notice
+      </a>
+    </li>
+  </ul>
 </div>
