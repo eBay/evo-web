@@ -32,13 +32,14 @@ describe("evo-tooltip", () => {
   });
 
   it("renders an accessible host and tooltip relationship", async () => {
-    const screen = await render(<DefaultTooltip />);
+    const screen = await render(<DefaultTooltip noHover />);
     const host = screen.getByRole("button", { name: "Information" });
 
     await expect.element(host).toHaveClass("tooltip__host");
     await expect.element(host).toHaveAttribute("aria-expanded", "false");
 
-    await user.hover(host);
+    await user.tab();
+    await expect.element(host).toHaveAttribute("aria-expanded", "true");
 
     const tooltip = screen.getByRole("tooltip");
     await expect.element(tooltip).toHaveTextContent("Additional information");
