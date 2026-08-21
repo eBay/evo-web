@@ -5,66 +5,66 @@ import { urls } from "../../../../data";
   <h1>Panel Dialog Accessibility</h1>
   <h2>Best Practices</h2>
   <p>
-    A panel dialog${" "}
+    A panel dialog
     <strong>must</strong>
-    ${" "}use${" "}
+    use
     <code>role="dialog"</code>
-    , expose a visible title as its accessible name, and set${" "}
+    , expose a visible title as its accessible name, and set
     <code>aria-modal="true"</code>
-    ${" "}while open. Its close and back buttons${" "}
+    while open. Its close and back buttons
     <strong>must</strong>
-    ${" "}have accessible names. The visible title${" "}
+    have accessible names. The visible title
     <strong>must</strong>
-    ${" "}be an onscreen heading that starts the dialog’s heading hierarchy at
+    be an onscreen heading that starts the dialog’s heading hierarchy at
     level 2.
   </p>
   <p>
-    A panel dialog${" "}
+    A panel dialog
     <strong>must</strong>
-    ${" "}open from a click or application event and${" "}
+    open from a click or application event and
     <strong>must not</strong>
-    ${" "}open on hover or focus. See${" "}
+    open on hover or focus. See
     <a href=`${urls.components}/dialog/accessibility`>
       dialog best practices
     </a>
-    ${" "}for shared dialog requirements.
+    for shared dialog requirements.
   </p>
   <p>
-    Opening the panel${" "}
+    Opening the panel
     <strong>must</strong>
-    ${" "}move focus inside it and make content behind it inert. Closing it${" "}
+    move focus inside it and make content behind it inert. Closing it
     <strong>must</strong>
-    ${" "}return focus to the trigger.
+    return focus to the trigger.
   </p>
   <h2>Interaction Design</h2>
   <h3>Keyboard</h3>
   <p>
-    When the panel opens, focus${" "}
+    When the panel opens, focus
     <strong>must</strong>
-    ${" "}move into it, typically to the close button or first interactive
+    move into it, typically to the close button or first interactive
     control.
   </p>
   <p>
     <strong>TAB</strong>
-    ${" "}and${" "}
+    and
     <strong>SHIFT + TAB</strong>
-    ${" "}cycle through controls inside the open panel.${" "}
+    cycle through controls inside the open panel.
     <strong>ESCAPE</strong>
-    ${" "}closes the panel unless an operation requires an explicit choice.
+    closes the panel unless an operation requires an explicit choice.
   </p>
   <h3>Screen Reader</h3>
   <p>
     A screen reader announces the dialog role and title when focus enters.
-    Sliding to another panel${" "}
+    Sliding to another panel
     <strong>must</strong>
-    ${" "}announce the new title and move focus into that panel.
+    announce the new title and move focus into that panel.
   </p>
   <p>
-    The trigger${" "}
+    The trigger
     <strong>must not</strong>
-    ${" "}announce ‘has popup’; a dialog is not a popup, so${" "}
+    announce ‘has popup’; a dialog is not a popup, so
     <code>aria-haspopup="true"</code>
-    ${" "}is not valid in this context.
+    is not valid in this context.
   </p>
   <h3>Pointer</h3>
   <p>

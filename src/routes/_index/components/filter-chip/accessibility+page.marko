@@ -6,92 +6,92 @@ import { urls } from "../../../../data";
     <h2>Best Practices</h2>
     <p>
         Use a native button when applying the filter updates content on the
-        current page. The button${" "}
+        current page. The button
         <strong>must</strong>
-        ${" "}expose whether the filter is applied with${" "}
+        expose whether the filter is applied with
         <code>aria-pressed</code>
-        ${" "}.
+        .
     </p>
     <p>
         Use a link when applying the filter navigates to another page. An
-        applied link${" "}
+        applied link
         <strong>must</strong>
-        ${" "}include clipped text that communicates the applied state.
+        include clipped text that communicates the applied state.
     </p>
     <p>
-        A filter chip used as a menu button${" "}
+        A filter chip used as a menu button
         <strong>must</strong>
-        ${" "}have a permanent visible label that describes its purpose, such as
-        "Brand: Yamaha" or "Brand: Yamaha (+3)." It${" "}
+        have a permanent visible label that describes its purpose, such as
+        "Brand: Yamaha" or "Brand: Yamaha (+3)." It
         <strong>must</strong>
-        ${" "}expose whether the menu is open with${" "}
+        expose whether the menu is open with
         <code>aria-expanded</code>
-        ${" "}.
+        .
     </p>
     <p>
-        Decorative leading icons${" "}
+        Decorative leading icons
         <strong>must</strong>
-        ${" "}use${" "}
+        use
         <code>aria-hidden="true"</code>
-        ${" "}. Expressive images that duplicate the visible chip text${" "}
+        . Expressive images that duplicate the visible chip text
         <strong>must</strong>
-        ${" "}use an empty${" "}
+        use an empty
         <code>alt</code>
-        ${" "}attribute.
+        attribute.
     </p>
     <h2>Interaction Design</h2>
     <h3>Keyboard</h3>
     <p>
-        Pressing${" "}
+        Pressing
         <strong>TAB</strong>
-        ${" "}key${" "}
+        key
         <strong>must</strong>
-        ${" "}move focus to the filter chip unless it is disabled.
+        move focus to the filter chip unless it is disabled.
     </p>
     <p>
-        Pressing${" "}
+        Pressing
         <strong>ENTER</strong>
-        ${" "}or${" "}
+        or
         <strong>SPACEBAR</strong>
-        ${" "}key on a button filter chip${" "}
+        key on a button filter chip
         <strong>must</strong>
-        ${" "}toggle its applied state. When used as a menu button, either key${" "}
+        toggle its applied state. When used as a menu button, either key
         <strong>must</strong>
-        ${" "}toggle its expanded state.
+        toggle its expanded state.
     </p>
     <p>
-        Pressing${" "}
+        Pressing
         <strong>ENTER</strong>
-        ${" "}key on a filter link${" "}
+        key on a filter link
         <strong>must</strong>
-        ${" "}navigate to the link destination. The destination page${" "}
+        navigate to the link destination. The destination page
         <strong>must</strong>
-        ${" "}render the filter link in its new state.
+        render the filter link in its new state.
     </p>
     <h3>Screen Reader</h3>
     <p>
-        A screen reader${" "}
+        A screen reader
         <strong>must</strong>
-        ${" "}announce the visible label, element role, and pressed state for a
-        button filter chip. For a filter link, it${" "}
+        announce the visible label, element role, and pressed state for a
+        button filter chip. For a filter link, it
         <strong>must</strong>
-        ${" "}announce the clipped applied-state text when the filter is applied.
+        announce the clipped applied-state text when the filter is applied.
     </p>
     <p>
-        For a menu button filter chip, a screen reader${" "}
+        For a menu button filter chip, a screen reader
         <strong>must</strong>
-        ${" "}announce the visible label, button role, and expanded or collapsed
+        announce the visible label, button role, and expanded or collapsed
         state.
     </p>
     <h3>Pointer</h3>
     <p>
-        Clicking or tapping a button filter chip${" "}
+        Clicking or tapping a button filter chip
         <strong>must</strong>
-        ${" "}toggle its applied state. When used as a menu button, it${" "}
+        toggle its applied state. When used as a menu button, it
         <strong>must</strong>
-        ${" "}toggle its expanded state. Clicking or tapping a filter link${" "}
+        toggle its expanded state. Clicking or tapping a filter link
         <strong>must</strong>
-        ${" "}navigate to the link destination.
+        navigate to the link destination.
     </p>
     <h2>ARIA Reference</h2>
     <table>

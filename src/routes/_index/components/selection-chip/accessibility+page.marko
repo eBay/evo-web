@@ -5,69 +5,69 @@ import { urls } from "../../../../data";
     <h1>Selection Chip Accessibility</h1>
     <h2>Best Practices</h2>
     <p>
-        A selection chip${" "}
+        A selection chip
         <strong>must</strong>
-        ${" "}use a native button and expose whether its value is applied
-        with${" "}
+        use a native button and expose whether its value is applied
+        with
         <code>aria-pressed</code>
-        ${" "}. The visible chip text${" "}
+        . The visible chip text
         <strong>must</strong>
-        ${" "}provide the button's accessible name.
+        provide the button's accessible name.
     </p>
     <p>
         A selection chip is a visual alternative to a checkbox, but it does not
-        natively store HTML form data. The application${" "}
+        natively store HTML form data. The application
         <strong>must</strong>
-        ${" "}store the selected value when the form requires it.
+        store the selected value when the form requires it.
     </p>
     <p>
-        When selection chips appear in a group, the group${" "}
+        When selection chips appear in a group, the group
         <strong>must</strong>
-        ${" "}have an accessible name that describes the choice. The applied
-        state${" "}
+        have an accessible name that describes the choice. The applied
+        state
         <strong>must not</strong>
-        ${" "}be communicated by color alone.
+        be communicated by color alone.
     </p>
     <p>
-        The decorative trailing icon${" "}
+        The decorative trailing icon
         <strong>must</strong>
-        ${" "}use${" "}
+        use
         <code>aria-hidden="true"</code>
-        ${" "}.
+        .
     </p>
     <h2>Interaction Design</h2>
     <h3>Keyboard</h3>
     <p>
-        Pressing${" "}
+        Pressing
         <strong>TAB</strong>
-        ${" "}key${" "}
+        key
         <strong>must</strong>
-        ${" "}move focus to the selection chip unless it is disabled.
+        move focus to the selection chip unless it is disabled.
     </p>
     <p>
-        Pressing${" "}
+        Pressing
         <strong>ENTER</strong>
-        ${" "}or${" "}
+        or
         <strong>SPACEBAR</strong>
-        ${" "}key${" "}
+        key
         <strong>must</strong>
-        ${" "}toggle the chip's applied state.
+        toggle the chip's applied state.
     </p>
     <h3>Screen Reader</h3>
     <p>
-        A screen reader${" "}
+        A screen reader
         <strong>must</strong>
-        ${" "}announce the chip text, button role, and pressed state. A disabled
-        selection chip${" "}
+        announce the chip text, button role, and pressed state. A disabled
+        selection chip
         <strong>must</strong>
-        ${" "}remain available to screen readers and announce its disabled
+        remain available to screen readers and announce its disabled
         state.
     </p>
     <h3>Pointer</h3>
     <p>
-        Clicking or tapping the selection chip${" "}
+        Clicking or tapping the selection chip
         <strong>must</strong>
-        ${" "}toggle its applied state.
+        toggle its applied state.
     </p>
     <h2>ARIA Reference</h2>
     <table>
