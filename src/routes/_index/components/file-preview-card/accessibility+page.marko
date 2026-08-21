@@ -1,5 +1,6 @@
-import { urls } from "../../../../data";
 import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
 <div class="a11y-pattern-content">
   <h1>File Preview Card Accessibility</h1>
   <h2>Best Practices</h2>
@@ -69,4 +70,34 @@ import "../../../../sass/accessibility.scss";
     to interact with any of the file preview card’s action buttons using a
     pointer device.
   </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>Names an icon-only card action and identifies its target file.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/file-preview-card-group`>
+        File Preview Card Group
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.accessibility}/techniques/alternative-text`>
+        Alternative Text
+      </a>
+    </li>
+  </ul>
 </div>
