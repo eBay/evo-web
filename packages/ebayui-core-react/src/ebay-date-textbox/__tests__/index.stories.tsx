@@ -3,6 +3,7 @@ import { StoryFn, Meta, StoryObj } from "@storybook/react-vite";
 import { EbayDateTextbox, EbayDateTextboxProps } from "../index";
 import { EbayButton } from "../../ebay-button";
 import { EbayTextbox } from "../../ebay-textbox";
+import { toISO } from "../../ebay-calendar/date-utils";
 
 const story: Meta<typeof EbayDateTextbox> = {
     component: EbayDateTextbox,
@@ -246,6 +247,13 @@ export const WithFixedStrategy: StoryObj<EbayDateTextboxProps> = {
     args: {
         strategy: "fixed",
         locale: "en-CA",
+    },
+};
+
+export const WithDisableBefore: StoryObj<EbayDateTextboxProps> = {
+    args: {
+        locale: "en-CA",
+        disableBefore: toISO(new Date()),
     },
 };
 
