@@ -61,8 +61,8 @@ or import styles using SCSS/CSS
             description: "Whether the calendar should collapse after a date is selected",
             control: "boolean",
         },
-        disableBefore: { description: "First date that may be selected", control: "text" },
-        disableAfter: { description: "Last date that may be selected", control: "text" },
+        disableBefore: { description: "First date that may be selected (`YYYY-MM-DD`)", control: "text" },
+        disableAfter: { description: "Last date that may be selected (`YYYY-MM-DD`)", control: "text" },
         disableWeekdays: {
             description:
                 "List of weekdays that are disabled. Must be an array of numbers, where Sunday is `0` and Saturday is `6`",
