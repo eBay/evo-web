@@ -15,7 +15,7 @@ function DefaultTooltip({
 }) {
   return (
     <EvoTooltip open={open} defaultOpen={defaultOpen}>
-      <EvoTooltipHost as="button">Information</EvoTooltipHost>
+      <EvoTooltipHost>Information</EvoTooltipHost>
       <EvoTooltipContent>Additional information</EvoTooltipContent>
     </EvoTooltip>
   );
@@ -63,7 +63,7 @@ describe("EvoTooltip SSR", () => {
   it("renders custom root, host, content, and heading attributes", () => {
     const html = renderToString(
       <EvoTooltip className="custom-tooltip" data-testid="tooltip-root">
-        <EvoTooltipHost as="button" className="custom-host" type="button">
+        <EvoTooltipHost className="custom-host" type="button">
           Information
         </EvoTooltipHost>
         <EvoTooltipContent className="custom-content">
@@ -77,7 +77,7 @@ describe("EvoTooltip SSR", () => {
 
     expect(html).toContain('class="tooltip custom-tooltip"');
     expect(html).toContain('data-testid="tooltip-root"');
-    expect(html).toContain('class="tooltip__host custom-host"');
+    expect(html).toContain("tooltip__host custom-host");
     expect(html).toContain('class="tooltip__overlay custom-content"');
     expect(html).toContain('class="tooltip__heading custom-heading"');
   });

@@ -17,6 +17,22 @@ describe("evo-button", () => {
   });
 
   describe("given button is enabled", () => {
+    it("defaults to type=button", async () => {
+      const screen = await render(<EvoButton>Button</EvoButton>);
+
+      await expect
+        .element(screen.getByRole("button"))
+        .toHaveAttribute("type", "button");
+    });
+
+    it("supports an explicit button type", async () => {
+      const screen = await render(<EvoButton type="submit">Submit</EvoButton>);
+
+      await expect
+        .element(screen.getByRole("button"))
+        .toHaveAttribute("type", "submit");
+    });
+
     it("emits click event when clicked", async () => {
       const onClick = vi.fn();
       const screen = await render(

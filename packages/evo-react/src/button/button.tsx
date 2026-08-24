@@ -125,6 +125,7 @@ export function EvoButton({
 
   return (
     <button
+      type="button"
       {...(rest as React.ComponentProps<"button">)}
       disabled={disabled}
       aria-disabled={partiallyDisabled ? "true" : undefined}

@@ -2,14 +2,14 @@
 
 ## Composition
 
-`EvoTooltipHost` renders its host through `as` instead of cloning a child. Move the old host element's props and content onto `EvoTooltipHost`.
+`EvoTooltipHost` renders its host through `as` instead of cloning a child. It defaults to `EvoButton`, which renders `<button type="button">`; use `as` for other host elements or components. Move the old host element's props and content onto `EvoTooltipHost`.
 
 ```diff
  <EvoTooltip>
 -  <EbayTooltipHost>
 -    <EbayButton priority="secondary">Information</EbayButton>
 -  </EbayTooltipHost>
-+  <EvoTooltipHost as={EvoButton} priority="secondary">
++  <EvoTooltipHost priority="secondary">
 +    Information
 +  </EvoTooltipHost>
    <EvoTooltipContent>Additional information</EvoTooltipContent>

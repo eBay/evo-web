@@ -4,6 +4,7 @@ import type {
   ElementType,
   ReactNode,
 } from "react";
+import type { EvoButton } from "../button";
 
 export type TooltipPlacement =
   | "top"
@@ -36,12 +37,12 @@ export type EvoTooltipProps = ComponentProps<"span"> & {
   shift?: boolean;
   /** Uses inline positioning for hosts that wrap across multiple lines. Defaults to `true`. */
   inline?: boolean;
-  /** Disables hover behavior while preserving focus behavior. Defaults to `false`. */
+  /** Disables hover and opens only for keyboard-visible focus. Defaults to `false`. */
   noHover?: boolean;
 };
 
 type TooltipHostOwnProps<T extends ElementType> = {
-  /** Element or component rendered as the tooltip host. Defaults to `span`. */
+  /** Element or component rendered as the tooltip host. Defaults to `EvoButton`. */
   as?: T;
   /** Content rendered inside the tooltip host. */
   children?: ReactNode;
@@ -51,7 +52,7 @@ type TooltipHostOwnProps<T extends ElementType> = {
   ref?: ComponentPropsWithRef<T>["ref"];
 };
 
-export type EvoTooltipHostProps<T extends ElementType = "span"> =
+export type EvoTooltipHostProps<T extends ElementType = typeof EvoButton> =
   TooltipHostOwnProps<T> &
     Omit<
       ComponentPropsWithRef<T>,

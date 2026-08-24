@@ -98,7 +98,7 @@ type Story = StoryObj<typeof EvoTooltip>;
 export const Default: Story = {
   render: (args) => (
     <EvoTooltip {...args}>
-      <EvoTooltipHost tabIndex={0}>View options</EvoTooltipHost>
+      <EvoTooltipHost>View options</EvoTooltipHost>
       <EvoTooltipContent>
         Use Access Key &apos;S&apos; to display settings.
       </EvoTooltipContent>
@@ -164,9 +164,7 @@ export const Placements: Story = {
           placement={placement}
           flip={false}
         >
-          <EvoTooltipHost as="button" type="button">
-            {placement}
-          </EvoTooltipHost>
+          <EvoTooltipHost>{placement}</EvoTooltipHost>
           <EvoTooltipContent>
             <span style={{ display: "block" }}>
               Tooltip content for <code>{placement}</code>
