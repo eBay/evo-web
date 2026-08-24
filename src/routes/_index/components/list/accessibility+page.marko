@@ -1,1 +1,71 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+
+<div class="a11y-pattern-content">
+  <h1>List Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Use
+    <code>ul</code>
+    for an unordered collection and
+    <code>ol</code>
+    when sequence matters. Every direct list child
+    <strong>must</strong>
+    be an
+    <code>li</code>
+    element.
+  </p>
+  <p>
+    Use native links, buttons, and form controls for actionable items.
+    Decorative leading and trailing icons
+    <strong>must</strong>
+    be hidden from assistive technology.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    <strong>TAB</strong>
+    moves through interactive controls in list order. Static list items
+    are not tab stops.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader announces the list type, item count, and each item's content
+    and controls.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Only the native interactive control within an actionable item responds to
+    clicking or tapping.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-hidden="true"</strong>
+        </td>
+        <td>Hides decorative leading or trailing icons.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-labelledby</strong>
+        </td>
+        <td>Associates an embedded control with visible item text.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul">
+        MDN Unordered List
+      </a>
+    </li>
+  </ul>
+</div>

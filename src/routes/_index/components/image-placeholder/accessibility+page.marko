@@ -1,1 +1,120 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Image Placeholder Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    Like any image, an image placeholder is either informative
+    <em>content</em>
+    or non-important
+    <em>decoration</em>
+    . Classify it before choosing its accessible treatment.
+  </p>
+  <p>
+    A placeholder that communicates a missing image is informative. It
+    <strong>must</strong>
+    use
+    <code>role="img"</code>
+    and
+    <code>aria-label</code>
+    to name the state, such as "Image not available."
+  </p>
+  <p>
+    A purely decorative placeholder
+    <strong>must</strong>
+    use
+    <code>aria-hidden="true"</code>
+    to hide it from assistive technology. Never expose the SVG filename or
+    visual shape as its name, otherwise a screen reader will read it aloud.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    An image placeholder is not interactive and therefore
+    <strong>must not</strong>
+    be keyboard focusable.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A decorative placeholder
+    <strong>must</strong>
+    be skipped by screen readers.
+  </p>
+  <p>
+    An informative placeholder
+    <strong>must</strong>
+    announce its
+    <code>aria-label</code>
+    value and image role.
+  </p>
+  <h3>Pointer</h3>
+  <p>An image placeholder is not interactive and therefore is not clickable.</p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="img"</strong>
+        </td>
+        <td>
+          Applied to an informative placeholder to identify it as an image to
+          assistive technologies.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Applied to an informative placeholder with
+          <code>role="img"</code>
+          to provide an accessible name.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-hidden="true"</strong>
+        </td>
+        <td>
+          Applied to a decorative placeholder to hide it from assistive
+          technologies.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.accessibility}/patterns/image`>
+        Image
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/icon`>
+        Icon
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.accessibility}/techniques/alternative-text`>
+        Alternative Text
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/tutorials/images/decorative/">
+        W3C Decorative Images
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/tutorials/images/informative/">
+        W3C Informative Images
+      </a>
+    </li>
+  </ul>
+</div>

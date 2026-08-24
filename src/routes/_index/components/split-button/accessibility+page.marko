@@ -1,1 +1,200 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Split Button Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    The primary action and the menu button
+    <strong>must</strong>
+    be separate native buttons, so each has its own accessible label and
+    focus stop.
+  </p>
+  <p>
+    A menu button’s accessible label
+    <strong>must</strong>
+    reflect its function. When the menu button is icon-only, provide the
+    label via
+    <code>aria-label</code>
+    and hide the decorative icon from assistive technology.
+  </p>
+  <p>
+    Menu commands
+    <strong>must</strong>
+    have unique, descriptive labels.
+  </p>
+  <h2>Interaction Design</h2>
+  <p>
+    Refer
+    <a href=`${urls.components}/menu-button`>
+      menu button
+    </a>
+    and
+    <a href=`${urls.components}/menu`>
+      menu
+    </a>
+    patterns.
+  </p>
+  <h3>Keyboard</h3>
+  <p>
+    Both buttons
+    <strong>must</strong>
+    be keyboard focusable.
+  </p>
+  <p>
+    <code>TAB</code>
+    and
+    <code>SHIFT-TAB</code>
+    keys
+    <strong>must</strong>
+    move keyboard focus between the primary action and the menu button.
+  </p>
+  <p>
+    <code>SPACEBAR</code>
+    or
+    <code>ENTER</code>
+    key on the primary button
+    <strong>must</strong>
+    activate its action.
+  </p>
+  <p>
+    <code>SPACEBAR</code>
+    or
+    <code>ENTER</code>
+    key on the menu button
+    <strong>must</strong>
+    expand the menu, and keyboard focus
+    <strong>must</strong>
+    go to the first command.
+  </p>
+  <p>
+    <code>UP-ARROW</code>
+    and
+    <code>DOWN-ARROW</code>
+    keys
+    <strong>must</strong>
+    navigate keyboard focus through commands via a roving tabindex.
+  </p>
+  <p>
+    <code>ESC</code>
+    key
+    <strong>must</strong>
+    collapse the menu and return focus to the menu button.
+  </p>
+  <p>
+    Activating any command
+    <em>should</em>
+    collapse the menu (typically after a very short delay/transition).
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    Each button’s label
+    <strong>must</strong>
+    be announced.
+  </p>
+  <p>
+    The menu button’s state
+    <strong>must</strong>
+    be announced (e.g. expanded or collapsed).
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking the primary button runs its action. Clicking the menu button
+    expands or collapses the menu. Clicking any command
+    <em>should</em>
+    collapse the menu.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role=menu</strong>
+        </td>
+        <td>
+          Informs assistive technology that this is a
+          <a href=`${urls.components}/menu`>
+            menu
+          </a>
+          containing menuitems.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>role=menuitem</strong>
+        </td>
+        <td>
+          Informs assistive technology that this menu command has button
+          behaviour.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-haspopup=true</strong>
+        </td>
+        <td>
+          Informs assistive technology that the menu button controls a
+          <em>popup</em>
+          <em>menu</em>
+          .
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-controls</strong>
+        </td>
+        <td>
+          Informs assistive technology of which menu the menu button controls.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-expanded</strong>
+        </td>
+        <td>
+          Informs assistive technology whether the popup menu is expanded or
+          not. And yes, this state goes on the menu button, not the menu.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Creates a label for the menu button. Most commonly used when the menu
+          button is icon-only.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-hidden=true</strong>
+        </td>
+        <td>Hides the decorative menu button icon.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/menu-button/accessibility`>
+        Menu Button Accessibility
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/menu/accessibility`>
+        Menu Accessibility
+      </a>
+    </li>
+    <li>
+      <a href="https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/">
+        APG Menu Button Pattern
+      </a>
+    </li>
+  </ul>
+</div>

@@ -10,6 +10,13 @@ import { urls } from "../../../../data";
     </a>
     ) wish to inform the user that there was a change.
   </p>
+  <p>
+    The live region
+    <strong>must</strong>
+    exist in the DOM before its content changes. Mounting a live region at
+    the same time as its message may not trigger an announcement. Render a
+    persistent, empty live region and add the message when the update occurs.
+  </p>
   <pre><code class="language-html">&lt;div aria-live=&quot;”polite”&quot;&gt;
   &lt;p&gt;Newcastle United 0 - Barcelona 0&lt;/p&gt;
 &lt;/div&gt;

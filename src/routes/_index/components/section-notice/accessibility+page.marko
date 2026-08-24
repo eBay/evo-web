@@ -1,1 +1,100 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Section Notice Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    A section notice
+    <strong>must</strong>
+    use a named region. A titled notice
+    <strong>must</strong>
+    use the heading level that fits the page hierarchy.
+  </p>
+  <p>
+    A section notice
+    <strong>must not</strong>
+    rely on color or an icon alone to convey meaning or tone. An icon
+    <em>should</em>
+    supplement the text to help communicate meaning and tone.
+  </p>
+  <p>
+    A dismiss button
+    <strong>must</strong>
+    have an accessible name such as "Close notice." Decorative action
+    icons
+    <strong>must</strong>
+    be hidden from assistive technology.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    <strong>TAB</strong>
+    moves through notice links and buttons.
+    <strong>ENTER</strong>
+    activates links or buttons;
+    <strong>SPACEBAR</strong>
+    also activates buttons.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader can navigate to the named notice region and reads its
+    status, title, message, and actions in source order.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking or tapping an action activates it. Dismissing the notice
+    <strong>must not</strong>
+    move focus unexpectedly.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>role="region"</strong>
+        </td>
+        <td>Exposes the notice as a navigable region.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>
+          Names the notice region, status icon, or icon-only dismiss button.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-roledescription="Notice"</strong>
+        </td>
+        <td>Provides a user-facing description for the region role.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-hidden="true"</strong>
+        </td>
+        <td>Hides decorative action icons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/inline-notice`>
+        Inline Notice
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/page-notice`>
+        Page Notice
+      </a>
+    </li>
+  </ul>
+</div>

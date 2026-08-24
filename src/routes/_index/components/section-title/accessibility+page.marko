@@ -1,1 +1,88 @@
-<p>Accessibility guidelines coming soon.</p>
+import "../../../../sass/accessibility.scss";
+import { urls } from "../../../../data";
+
+<div class="a11y-pattern-content">
+  <h1>Section Title Accessibility</h1>
+  <h2>Best Practices</h2>
+  <p>
+    The title
+    <strong>must</strong>
+    use the heading level that correctly nests the section in the page
+    hierarchy. Do not choose a heading level for its visual size.
+  </p>
+  <p>
+    Calls to action
+    <strong>must</strong>
+    use descriptive link text. Icon-only infotip and menu buttons
+    <strong>must</strong>
+    have accessible names, and their icons
+    <strong>must</strong>
+    be hidden from assistive technology.
+  </p>
+  <h2>Interaction Design</h2>
+  <h3>Keyboard</h3>
+  <p>
+    The title itself is not focusable.
+    <strong>TAB</strong>
+    moves to any link, infotip button, or menu button in the section
+    title.
+  </p>
+  <h3>Screen Reader</h3>
+  <p>
+    A screen reader announces the heading level and title, followed by optional
+    subtitle and actions in source order.
+  </p>
+  <h3>Pointer</h3>
+  <p>
+    Clicking or tapping an action follows its link or opens its associated
+    disclosure.
+  </p>
+  <h2>ARIA Reference</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <strong>aria-label</strong>
+        </td>
+        <td>Names an icon-only action.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-expanded</strong>
+        </td>
+        <td>Communicates whether an associated disclosure is open.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-haspopup</strong>
+        </td>
+        <td>Identifies a button that opens a menu.</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>aria-hidden="true"</strong>
+        </td>
+        <td>Hides decorative action icons.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Further Reading</h2>
+  <ul>
+    <li>
+      <a href=`${urls.components}/infotip`>
+        Infotip
+      </a>
+    </li>
+    <li>
+      <a href=`${urls.components}/menu-button`>
+        Menu Button
+      </a>
+    </li>
+  </ul>
+</div>
