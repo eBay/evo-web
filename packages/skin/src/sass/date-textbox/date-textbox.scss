@@ -9,7 +9,8 @@
     display: inline-block;
 }
 
-.date-textbox > .textbox + .textbox {
+.date-textbox > .textbox + .textbox,
+.date-textbox > .floating-label + .floating-label {
     margin-left: var(--spacing-100);
 }
 
