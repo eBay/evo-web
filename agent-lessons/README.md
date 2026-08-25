@@ -14,7 +14,7 @@ person who has to remember to check a file.
 1. A correction someone gave the agent that it should not need to hear twice.
 2. A failure with an observed cost: a wrong turn taken, work that had to be redone, a wasted
    review cycle.
-3. A guardrail (hook, permission, dated guard) that fired, and whether it was right to.
+3. A guardrail (hook or permission) that fired, and whether it was right to.
 
 ## What does not go here
 

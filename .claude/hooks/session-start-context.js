@@ -68,6 +68,53 @@ function countMarkdownFiles(dir) {
   }
 }
 
+// Extracts a single `key: value` line from a file's leading `---`-fenced
+// frontmatter block. Returns null if there's no frontmatter, or the key
+// isn't present in it — callers treat null the same as "open" (fail open,
+// so a lesson never silently drops out of the count).
+function readFrontmatterField(filePath, key) {
+  let raw;
+  try {
+    raw = fs.readFileSync(filePath, "utf8");
+  } catch (e) {
+    return null;
+  }
+
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) return null;
+
+  const fieldMatch = match[1].match(
+    new RegExp("^" + key + ":\\s*(\\S+)", "m"),
+  );
+  return fieldMatch ? fieldMatch[1].trim() : null;
+}
+
+// agent-lessons entries carry a disposition (applied | declined | open).
+// Unlike agent-feedback, a resolved entry can stay on disk (declined
+// entries are kept as the record of the decision — see
+// agent-lessons/README.md), so a plain file count would overcount "open"
+// once any entry is ever declined. Anything not explicitly applied or
+// declined counts as open, including a file with no disposition field or
+// one that can't be read at all — surfacing an ambiguous entry is safer
+// than silently excluding it.
+function countOpenLessons(dir) {
+  if (!fs.existsSync(dir)) return 0;
+  let files;
+  try {
+    files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
+  } catch (e) {
+    return 0;
+  }
+
+  return files.filter((f) => {
+    const disposition = readFrontmatterField(
+      path.join(dir, f),
+      "disposition",
+    );
+    return disposition !== "applied" && disposition !== "declined";
+  }).length;
+}
+
 function main() {
   const lines = [];
 
@@ -106,7 +153,7 @@ function main() {
     );
   }
 
-  const lessonsCount = countMarkdownFiles(AGENT_LESSONS_ITEMS);
+  const lessonsCount = countOpenLessons(AGENT_LESSONS_ITEMS);
   if (lessonsCount > 0) {
     lines.push(
       "ℹ️  agent-lessons/items/ has " +
