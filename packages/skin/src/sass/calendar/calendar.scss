@@ -144,6 +144,24 @@
 
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
+    > button:not(:disabled, [aria-disabled="true"]):hover {
+    background-color: var(
+        --calendar-day-highlight-background-color,
+        var(--color-background-secondary)
+    );
+}
+
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
+    > button:not(:disabled, [aria-disabled="true"]):hover:not(
+        :active,
+        :focus-visible
+    )::after {
+    background-color: transparent;
+}
+
+.calendar__month
+    td:not(.calendar__range, .calendar__cell--selected)
     > button:not(:disabled):active {
     font-weight: bold;
 }
@@ -167,7 +185,7 @@
 
 .calendar__range {
     background-color: var(
-        --calendar-range-background-color,
+        --calendar-day-highlight-background-color,
         var(--color-background-secondary)
     );
     position: relative;
@@ -201,7 +219,7 @@
         to right,
         transparent 50%,
         var(
-                --calendar-range-background-color,
+                --calendar-day-highlight-background-color,
                 var(--color-background-secondary)
             )
             50%
@@ -213,7 +231,7 @@
         to left,
         transparent 50%,
         var(
-                --calendar-range-background-color,
+                --calendar-day-highlight-background-color,
                 var(--color-background-secondary)
             )
             50%
@@ -229,7 +247,7 @@
 .calendar__range--end:not(.calendar__cell--selected)
     > :not(:disabled, [aria-disabled="true"]) {
     background-color: var(
-        --calendar-range-background-color,
+        --calendar-day-highlight-background-color,
         var(--color-background-secondary)
     );
 }
