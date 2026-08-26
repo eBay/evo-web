@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
 import { useState } from "react";
-import type { DateRange, DayISO } from "../../calendar";
+import type { DateInputRange, DateInputValue, DayISO } from "../types";
 import { EvoDateInput } from "../date-input";
 import { EvoDateRangeInput } from "../date-range-input";
 
@@ -224,7 +224,7 @@ describe("evo-date-input", () => {
     await user.tab();
 
     await expect.element(input).toHaveValue("");
-    expect(onChange).toHaveBeenCalledWith(undefined);
+    expect(onChange).toHaveBeenCalledWith("");
   });
 
   it("keeps invalid typed text and emits onInvalidDate", async () => {
@@ -245,6 +245,7 @@ describe("evo-date-input", () => {
     await user.tab();
 
     await expect.element(input).toHaveValue("not-a-date");
+    await expect.element(input).toHaveAttribute("aria-invalid", "true");
     expect(onChange).not.toHaveBeenCalled();
     expect(onInvalidDate).toHaveBeenCalledWith({
       value: "not-a-date",
@@ -326,31 +327,82 @@ describe("evo-date-input", () => {
       .toBe(1);
   });
 
-  it("supports a controlled value through onChange", async () => {
+  it("keeps a controlled empty value after select then clear", async () => {
     function Controlled() {
-      const [value, setValue] = useState<DayISO | undefined>();
+      const [value, setValue] = useState<DateInputValue>("");
       return (
-        <>
-          <EvoDateInput
-            locale="en-US"
-            a11yOpenPopoverText={a11yOpenPopoverText}
-            value={value}
-            onChange={setValue}
-            floatingLabel="Date"
-            calendar={calendar}
-          />
-          <button type="button" onClick={() => setValue("2024-01-03")}>
-            Set date
-          </button>
-        </>
+        <EvoDateInput
+          locale="en-US"
+          a11yOpenPopoverText={a11yOpenPopoverText}
+          value={value}
+          onChange={setValue}
+          floatingLabel="Date"
+          calendar={calendar}
+        />
       );
     }
 
     const screen = await render(<Controlled />);
-    await user.click(screen.getByRole("button", { name: "Set date" }));
+    const input = screen.getByRole("textbox", { name: "Date" });
+    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("button", { name: /^1$/ }));
+    await expect.element(input).toHaveValue("01/01/2024");
+
+    await user.clear(input);
+    await user.tab();
+    await expect.element(input).toHaveValue("");
+  });
+
+  it("disables the calendar button when readOnly", async () => {
+    const onChange = vi.fn();
+    const screen = await render(
+      <EvoDateInput
+        locale="en-US"
+        a11yOpenPopoverText={a11yOpenPopoverText}
+        readOnly
+        onChange={onChange}
+        floatingLabel="Date"
+        calendar={calendar}
+      />,
+    );
+    const trigger = screen.getByRole("button", { name: "open calendar" });
+
+    await expect.element(trigger).toBeDisabled();
+    await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it("disables the calendar button when disabled", async () => {
+    const screen = await render(
+      <EvoDateInput
+        locale="en-US"
+        a11yOpenPopoverText={a11yOpenPopoverText}
+        disabled
+        floatingLabel="Date"
+        calendar={calendar}
+      />,
+    );
+
     await expect
-      .element(screen.getByRole("textbox", { name: "Date" }))
-      .toHaveValue("01/03/2024");
+      .element(screen.getByRole("button", { name: "open calendar" }))
+      .toBeDisabled();
+  });
+
+  it("opens the calendar on the selected month", async () => {
+    const screen = await render(
+      <EvoDateInput
+        locale="en-US"
+        a11yOpenPopoverText={a11yOpenPopoverText}
+        value="2023-06-15"
+        floatingLabel="Date"
+        calendar={calendar}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: "open calendar" }));
+
+    await expect
+      .element(screen.getByRole("heading", { name: "June 2023" }))
+      .toBeInTheDocument();
   });
 });
 
@@ -378,7 +430,7 @@ describe("evo-date-range-input", () => {
     );
     await user.click(screen.getByRole("button", { name: "open calendar" }));
     await user.click(screen.getByRole("button", { name: /^1$/ }));
-    expect(onChange).toHaveBeenLastCalledWith({ from: "2024-01-01" });
+    expect(onChange).toHaveBeenLastCalledWith({ from: "2024-01-01", to: "" });
 
     await user.click(screen.getByRole("button", { name: /^2$/ }));
     expect(onChange).toHaveBeenLastCalledWith({
@@ -489,9 +541,25 @@ describe("evo-date-range-input", () => {
       .toHaveValue("01/15/2024");
   });
 
+  it("disables the calendar button when a range field is readOnly", async () => {
+    const screen = await render(
+      <EvoDateRangeInput
+        locale="en-US"
+        a11yOpenPopoverText={a11yOpenPopoverText}
+        startInput={{ floatingLabel: "Start", readOnly: true }}
+        endInput={{ floatingLabel: "End" }}
+        calendar={calendar}
+      />,
+    );
+
+    await expect
+      .element(screen.getByRole("button", { name: "open calendar" }))
+      .toBeDisabled();
+  });
+
   it("supports a controlled range through onChange", async () => {
     function Controlled() {
-      const [value, setValue] = useState<DateRange | undefined>();
+      const [value, setValue] = useState<DateInputRange>({ from: "", to: "" });
       return (
         <EvoDateRangeInput
           locale="en-US"

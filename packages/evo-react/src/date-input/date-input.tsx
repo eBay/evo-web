@@ -5,8 +5,9 @@ import type { DayISO } from "../calendar";
 import { EvoIconCalendar24 } from "../icon/icons/calendar-24";
 import { DateField } from "./date-field";
 import { DateInputPopover, focusPopoverTrigger } from "./date-input-popover";
-import type { EvoDateInputProps } from "./types";
+import type { DateInputValue, EvoDateInputProps } from "./types";
 import { useDatePopover } from "./use-date-popover";
+import { monthFromValue, useFollowSelectedMonth } from "./visible-month";
 import "@ebay/skin/date-textbox.mjs";
 
 function defaultA11yNavigateText(month: string, dir: "next" | "prev") {
@@ -18,7 +19,7 @@ export function EvoDateInput({
   style,
   locale,
   value,
-  defaultValue,
+  defaultValue = "",
   onChange,
   calendar,
   a11yOpenPopoverText,
@@ -28,6 +29,7 @@ export function EvoDateInput({
   onOpenChange,
   strategy = "absolute",
   disabled,
+  readOnly,
   onInvalidDate,
   ref,
   ...input
@@ -35,6 +37,7 @@ export function EvoDateInput({
   const popoverId = useId();
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const selected = value !== undefined ? value : uncontrolledValue;
+  const calendarLocked = Boolean(disabled || readOnly);
   const { expander, visibleMonthCount, setContainerRef } = useDatePopover({
     open,
     defaultOpen,
@@ -43,8 +46,13 @@ export function EvoDateInput({
     visibleMonthCount: calendar?.visibleMonthCount,
     ref,
   });
+  const { visibleMonth, setVisibleMonth } = useFollowSelectedMonth(
+    monthFromValue(selected),
+    calendar?.visibleMonth,
+    calendar?.defaultVisibleMonth ?? monthFromValue(calendar?.today),
+  );
 
-  const commit = (next: DayISO | undefined) => {
+  const commit = (next: DateInputValue) => {
     if (value === undefined) {
       setUncontrolledValue(next);
     }
@@ -52,6 +60,9 @@ export function EvoDateInput({
   };
 
   const handleSelect = (next: DayISO) => {
+    if (calendarLocked) {
+      return;
+    }
     commit(next);
     if (collapseOnSelect) {
       expander.setOpen(false);
@@ -69,6 +80,7 @@ export function EvoDateInput({
         iso={selected}
         locale={locale}
         disabled={disabled}
+        readOnly={readOnly}
         index={0}
         input={input}
         onCommit={commit}
@@ -80,8 +92,12 @@ export function EvoDateInput({
             ref: expander.refs.setReference,
             "aria-expanded": expander.ariaExpanded,
             "aria-controls": popoverId,
-            disabled,
-            onClick: () => expander.setOpen(!expander.open),
+            disabled: calendarLocked,
+            onClick: () => {
+              if (!calendarLocked) {
+                expander.setOpen(!expander.open);
+              }
+            },
           },
         }}
       />
@@ -94,11 +110,18 @@ export function EvoDateInput({
           {...calendar}
           locale={locale}
           selectMode="day"
-          selected={selected}
+          selected={selected || undefined}
+          visibleMonth={visibleMonth}
           visibleMonthCount={visibleMonthCount}
           a11yNavigateText={
             calendar?.a11yNavigateText ?? defaultA11yNavigateText
           }
+          onVisibleMonthChange={(next) => {
+            if (calendar?.visibleMonth === undefined) {
+              setVisibleMonth(next);
+            }
+            calendar?.onVisibleMonthChange?.(next);
+          }}
           onSelectedChange={handleSelect}
         />
       </DateInputPopover>

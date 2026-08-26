@@ -1,19 +1,23 @@
 import { useState } from "react";
 import type { ChangeEvent, FocusEvent, KeyboardEvent } from "react";
-import type { DayISO } from "../calendar";
 import { EvoInput } from "../input";
 import type { EvoInputPostfixProps } from "../input";
 import { format, getLocale, parse, placeholder } from "../utils/dates";
-import type { EvoDateFieldProps, InvalidDateEvent } from "./types";
+import type {
+  DateInputValue,
+  EvoDateFieldProps,
+  InvalidDateEvent,
+} from "./types";
 
 type DateFieldProps = {
-  iso?: DayISO;
+  iso?: DateInputValue;
   locale?: string;
   disabled?: boolean;
+  readOnly?: boolean;
   index: number;
   input?: EvoDateFieldProps;
   postfix?: EvoInputPostfixProps;
-  onCommit: (iso: DayISO | undefined) => void;
+  onCommit: (iso: DateInputValue) => void;
   onInvalidDate?: (event: InvalidDateEvent) => void;
 };
 
@@ -21,6 +25,7 @@ export function DateField({
   iso,
   locale,
   disabled,
+  readOnly,
   index,
   input,
   postfix,
@@ -33,19 +38,24 @@ export function DateField({
     onKeyUp,
     placeholder: placeholderText,
     disabled: inputDisabled,
+    readOnly: inputReadOnly,
+    invalid: inputInvalid,
     ...inputRest
   } = input ?? {};
   const [draft, setDraft] = useState<string | null>(null);
+  const [invalid, setInvalid] = useState(false);
   const [prevIso, setPrevIso] = useState(iso);
   if (iso !== prevIso) {
     setPrevIso(iso);
     setDraft(null);
+    setInvalid(false);
   }
 
   const display = draft ?? (iso ? format(iso, locale) || iso : "");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setDraft(event.currentTarget.value);
+    setInvalid(false);
     onChange?.(event);
   };
 
@@ -53,19 +63,22 @@ export function DateField({
     const userInput = event.currentTarget.value;
     if (userInput.trim() === "") {
       setDraft(null);
-      onCommit(undefined);
+      setInvalid(false);
+      onCommit("");
       onBlur?.(event);
       return;
     }
 
     const parsed = parse(userInput, locale);
     if (parsed === null) {
+      setInvalid(true);
       onInvalidDate?.({ value: userInput, index });
       onBlur?.(event);
       return;
     }
 
     setDraft(null);
+    setInvalid(false);
     onCommit(parsed);
     onBlur?.(event);
   };
@@ -100,6 +113,8 @@ export function DateField({
     <EvoInput
       {...inputRest}
       disabled={inputDisabled ?? disabled}
+      readOnly={inputReadOnly ?? readOnly}
+      invalid={inputInvalid || invalid}
       placeholder={placeholderText ?? placeholder(locale)}
       postfix={postfix}
       value={display}

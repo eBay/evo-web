@@ -10,6 +10,16 @@ import type { EvoInputProps } from "../input";
 
 export type { A11yRangeText, DateRange, DayISO };
 
+/** Committed date value. Use `""` for a controlled empty field. */
+export type DateInputValue = DayISO | "";
+
+export type DateInputRange = {
+  /** Start of the selected range. Use `""` when that side is empty. */
+  from?: DateInputValue;
+  /** End of the selected range. Use `""` when that side is empty. */
+  to?: DateInputValue;
+};
+
 export type InvalidDateEvent = {
   /** Unparsed input text. */
   value: string;
@@ -83,6 +93,8 @@ type DateInputBaseProps = Omit<
   strategy?: "absolute" | "fixed";
   /** Disables the input(s) and the calendar button. */
   disabled?: boolean;
+  /** Prevents typing and calendar selection. The calendar button is disabled. */
+  readOnly?: boolean;
   /** Called when a field blurs with text that cannot be parsed as a date. */
   onInvalidDate?: (event: InvalidDateEvent) => void;
 };
@@ -92,12 +104,12 @@ export type EvoDateInputProps = DateInputBaseProps &
     EvoDateFieldProps,
     "className" | "style" | "disabled" | "onChange" | "ref"
   > & {
-    /** Controlled selected date (`YYYY-MM-DD`). */
-    value?: DayISO;
+    /** Controlled selected date (`YYYY-MM-DD`). Pass `""` for a controlled empty field. */
+    value?: DateInputValue;
     /** Initial uncontrolled selected date (`YYYY-MM-DD`). */
-    defaultValue?: DayISO;
-    /** Fired with the committed ISO date after a valid blur or calendar selection. `undefined` when the field is cleared. */
-    onChange?: (value: DayISO | undefined) => void;
+    defaultValue?: DateInputValue;
+    /** Fired with the committed ISO date after a valid blur or calendar selection. `""` when the field is cleared. */
+    onChange?: (value: DateInputValue) => void;
     /**
      * Props forwarded to the calendar popover. `selected`, `selectMode`,
      * `locale`, and static-link props are owned by the date input.
@@ -106,12 +118,12 @@ export type EvoDateInputProps = DateInputBaseProps &
   };
 
 export type EvoDateRangeInputProps = DateInputBaseProps & {
-  /** Controlled selected range (`{ from?, to? }` as `YYYY-MM-DD`). */
-  value?: DateRange;
+  /** Controlled selected range (`{ from?, to? }` as `YYYY-MM-DD` or `""`). */
+  value?: DateInputRange;
   /** Initial uncontrolled selected range. */
-  defaultValue?: DateRange;
+  defaultValue?: DateInputRange;
   /** Fired with the committed range after a valid blur or calendar selection. */
-  onChange?: (value: DateRange) => void;
+  onChange?: (value: DateInputRange) => void;
   /**
    * Props forwarded to the start `EvoInput`, except `value`, `defaultValue`,
    * `postfix`, and `type`, which this component owns.

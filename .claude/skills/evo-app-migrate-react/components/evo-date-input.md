@@ -82,7 +82,9 @@ Do not pass `EbayTextbox` children. Single-field `EvoInput` props are inline on 
 
 `onInputChange` and `onInputRangeEndChange` are gone. `EvoDateInput.onChange` fires only when a date is committed.
 
-Clearing a field calls `onChange(undefined)` for a single date, or `onChange` with that side omitted for a range. It does not call `onInvalidDate`.
+Clearing a field calls `onChange("")` for a single date. Start a controlled field with `value=""`, not `undefined` — `undefined` means uncontrolled.
+
+An unparsable blur keeps the typed text, sets `aria-invalid`, and fires `onInvalidDate`. It does not change the committed value.
 
 ## Calendar props
 
@@ -107,7 +109,8 @@ Pass calendar-only options through `calendar`. Date-input owns `locale`, `select
 | ----------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------- |
 | `range`                                               | `EvoDateRangeInput`                      | Separate component.                                                       |
 | `EbayTextbox` children                                | inline props / `startInput` / `endInput` | Single field uses `EvoInput` props on `EvoDateInput`. Range uses objects. |
-| `value` + `rangeEnd`                                  | `value` / `{ from, to }`                 | Committed ISO only.                                                       |
+| `value` + `rangeEnd`                                  | `value` / `{ from, to }`                 | Committed ISO. Controlled empty is `""`.                                  |
+| none                                                  | `readOnly`                               | Disables typing and the calendar button.                                  |
 | `defaultValue` + `defaultRangeEnd`                    | `defaultValue`                           | Same ISO shape as `value`.                                                |
 | `onChange(event, { selected, rangeStart, rangeEnd })` | `onChange(value)`                        | No event argument.                                                        |
 | `onInputChange` / `onInputRangeEndChange`             | removed                                  | `onChange` fires for committed dates only.                                |
