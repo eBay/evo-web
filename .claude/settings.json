@@ -24,8 +24,6 @@
   },
   "permissions": {
     "deny": [
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
       "Edit(packages/skin/dist/**)",
       "Write(packages/skin/dist/**)",
       "Edit(packages/evo-react/src/icon/icons/**)",
