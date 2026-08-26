@@ -1,7 +1,6 @@
 ---
 name: "run-adversarial-review"
 description: "Adversarial code review using three hostile reviewer personas (Saboteur, New Hire, Security Auditor) to catch blind spots a self-review shares with the author. Use before merging a PR, after a long coding session, when you suspect Claude is being too agreeable about its own code, or when something about a diff feels off. Scales effort to the diff's actual risk — do NOT use this for a quick style pass on trivial changes (just read the diff), for deep exploit-development-grade security work (escalate to a dedicated security review), or as a substitute for domain-specific test coverage review. Findings must be concrete and falsifiable, not hedges — a clean diff is allowed to come back clean."
-version: "1.0.0"
 ---
 
 # Adversarial Code Reviewer
