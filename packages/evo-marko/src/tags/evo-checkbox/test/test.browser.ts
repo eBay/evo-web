@@ -13,11 +13,11 @@ let focusSpy = vi.fn();
 describe("evo-checkbox", () => {
   describe("given checkbox button is enabled", () => {
     beforeEach(async () => {
-      component = await render(Isolated, {onClick: clickSpy});
+      component = await render(Isolated, { onClick: clickSpy });
     });
     afterEach(() => {
       clickSpy.mockReset();
-    })
+    });
 
     describe("when checkbox button is clicked", () => {
       beforeEach(async () => {
@@ -38,9 +38,9 @@ describe("evo-checkbox", () => {
     beforeEach(async () => {
       component = await render(Isolated, { disabled: true, onClick: clickSpy });
     });
-        afterEach(() => {
+    afterEach(() => {
       clickSpy.mockReset();
-    })
+    });
 
     describe("when checkbox button is clicked", () => {
       beforeEach(async () => {
@@ -59,12 +59,12 @@ describe("evo-checkbox", () => {
 
   describe("when native focus event is fired", () => {
     beforeEach(async () => {
-      component = await render(Isolated, {onFocus: focusSpy});
+      component = await render(Isolated, { onFocus: focusSpy });
       await fireEvent.focus(component.getByRole("checkbox"));
     });
     afterEach(() => {
       focusSpy.mockReset();
-    })
+    });
 
     it("then it emits the event", () => {
       expect(focusSpy).toBeCalledTimes(1);

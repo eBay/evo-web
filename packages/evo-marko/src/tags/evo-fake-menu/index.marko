@@ -1,97 +1,95 @@
 export interface Item extends Marko.HTML.A {
-    type?: "button" | "submit";
-    current?: boolean;
-    itemMatchesUrl?: boolean;
-    badgeNumber?: number;
-    disabled?: boolean;
-    separator?: boolean;
+  type?: "button" | "submit";
+  current?: boolean;
+  itemMatchesUrl?: boolean;
+  badgeNumber?: number;
+  disabled?: boolean;
+  separator?: boolean;
 }
 export interface Input extends Marko.HTML.Span {
-    item?: Marko.AttrTag<Item>;
-    classPrefix?: string;
-    reverse?: boolean;
-    fixed?: boolean;
-    fixWidth?: boolean;
+  item?: Marko.AttrTag<Item>;
+  classPrefix?: string;
+  reverse?: boolean;
+  fixed?: boolean;
+  fixWidth?: boolean;
 }
 
 <const/{
-    class: inputClass,
-    classPrefix,
-    reverse,
-    fixed,
-    fixWidth,
-    item: items,
-    ...htmlInput
+  class: inputClass,
+  classPrefix,
+  reverse,
+  fixed,
+  fixWidth,
+  item: items,
+  ...htmlInput
 }=input>
-<const/baseClass=(classPrefix || "fake-menu")>
+<const/baseClass=classPrefix || "fake-menu">
 
 <define/ItemTag|itemInput: Item|>
-    <const/{
-        type,
-        disabled,
-        href,
-        ...rest
-    }=itemInput>
-    <if=(type === "button" || type === "submit")>
-        <button
-            ...rest as Marko.HTML.Button
-            type=type
-            disabled=disabled/>
-    </if>
-    <else>
-        <a
-            ...rest as Marko.HTML.A
-            href=(disabled ? undefined : href)
-            aria-disabled=(disabled && "true")/>
-    </else>
+  <const/{ type, disabled, href, ...rest }=itemInput>
+  <if=type === "button" || type === "submit">
+    <button ...rest as Marko.HTML.Button type=type disabled=disabled/>
+  </if>
+  <else>
+    <a
+      ...rest as Marko.HTML.A
+      href=(disabled ? undefined : href)
+      aria-disabled=disabled && "true"/>
+  </else>
 </define>
 
 <span/$el
-    ...htmlInput
-    class=[
-        classPrefix ? `${baseClass}__menu` : "fake-menu",
-        reverse && `${baseClass}__menu--reverse`,
-        fixed && `${baseClass}__menu--fixed`,
-        fixWidth && `${baseClass}__menu--fix-width`,
-        inputClass,
-    ]>
-    <ul class="fake-menu__items" tabindex="-1">
-        <for|item| of=items>
-            <!-- Lifted out of <if>/<else> to work around Marko 6 SSR translator
+  ...htmlInput
+  class=[
+    classPrefix ? `${baseClass}__menu` : "fake-menu",
+    reverse && `${baseClass}__menu--reverse`,
+    fixed && `${baseClass}__menu--fixed`,
+    fixWidth && `${baseClass}__menu--fix-width`,
+    inputClass,
+  ]>
+  <ul class="fake-menu__items" tabindex="-1">
+    <for|item| of=items>
+      <!-- Lifted out of <if>/<else> to work around Marko 6 SSR translator
                  bug with `<const/{ named, ...rest }=obj>` inside a conditional branch. -->
-            <const/{
-                class: itemClass,
-                current,
-                itemMatchesUrl,
-                badgeNumber,
-                separator,
-                content,
-                ...htmlItem
-            }=item>
-            <const/ariaCurrent=(current ? (itemMatchesUrl === false ? "true" as const : "page" as const) : undefined)>
-            <if=separator>
-                <li>
-                    <hr class=`${baseClass}__separator` role="separator">
-                </li>
+      <const/{
+        class: itemClass,
+        current,
+        itemMatchesUrl,
+        badgeNumber,
+        separator,
+        content,
+        ...htmlItem
+      }=item>
+      <const/ariaCurrent=(
+        current
+          ? itemMatchesUrl === false
+            ? ("true" as const)
+            : ("page" as const)
+          : undefined
+      )>
+      <if=separator>
+        <li>
+          <hr class=`${baseClass}__separator` role="separator">
+        </li>
+      </if>
+      <else>
+        <li>
+          <ItemTag
+            ...htmlItem
+            class=[`${baseClass}__item`, itemClass]
+            aria-current=ariaCurrent>
+            <span>
+              <${content}/>
+            </span>
+            <if=badgeNumber>
+              <evo-badge type="menu" number=badgeNumber a11yText=null/>
             </if>
-            <else>
-                <li>
-                    <ItemTag
-                        ...htmlItem
-                        class=[`${baseClass}__item`, itemClass]
-                        aria-current=ariaCurrent>
-                        <span>
-                            <${content}/>
-                        </span>
-                        <if=badgeNumber>
-                            <evo-badge type="menu" number=badgeNumber a11yText=null/>
-                        </if>
-                        <evo-icon-tick-16/>
-                    </ItemTag>
-                </li>
-            </else>
-        </for>
-    </ul>
+            <evo-icon-tick-16/>
+          </ItemTag>
+        </li>
+      </else>
+    </for>
+  </ul>
 </span>
 
 <return=$el>

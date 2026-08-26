@@ -34,7 +34,11 @@ describe("evo-selection-chip", () => {
 
 describe("evo-selection-chip selected", () => {
   beforeEach(async () => {
-    component = await render(Default, { selected: true, onClick, selectedChange });
+    component = await render(Default, {
+      selected: true,
+      onClick,
+      selectedChange,
+    });
   });
 
   describe("when button is clicked", () => {

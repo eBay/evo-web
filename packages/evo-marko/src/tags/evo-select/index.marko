@@ -1,113 +1,109 @@
 static interface OptGroup {
-    optgroup: string;
-    options: Option[];
+  optgroup: string;
+  options: Option[];
 }
 export interface Option extends Marko.HTML.Option {
-    optgroup?: string;
+  optgroup?: string;
 }
 export interface Input extends Marko.HTML.Select {
-    option?: Marko.AttrTag<Option>;
-    floatingLabel?: string;
-    size?: "regular" | "large";
-    fluid?: boolean;
-    borderless?: boolean;
+  option?: Marko.AttrTag<Option>;
+  floatingLabel?: string;
+  size?: "regular" | "large";
+  fluid?: boolean;
+  borderless?: boolean;
 }
 
 <const/{
-    class: inputClass,
-    style,
-    disabled,
-    value: inputValue,
-    fluid,
-    valueChange,
-    borderless,
-    option: inputOptions,
-    floatingLabel,
-    size,
-    id: baseId,
-    onBlur,
-    onFocus,
-    ...htmlInput
+  class: inputClass,
+  style,
+  disabled,
+  value: inputValue,
+  fluid,
+  valueChange,
+  borderless,
+  option: inputOptions,
+  floatingLabel,
+  size,
+  id: baseId,
+  onBlur,
+  onFocus,
+  ...htmlInput
 }=input>
 <const/options=[...(inputOptions || [])]>
 <let/value:=input.value>
 <id/id=baseId>
 
 <const/list=(() => {
-    const list: (Option | OptGroup)[] = [];
-    const optgroups: Record<string, OptGroup> = {};
-    for (const option of options) {
-        const optgroup = option.optgroup;
+  const list: (Option | OptGroup)[] = [];
+  const optgroups: Record<string, OptGroup> = {};
+  for (const option of options) {
+    const optgroup = option.optgroup;
 
-        if (optgroup) {
-            if (optgroups[optgroup]) {
-                optgroups[optgroup].options.push(option);
-            } else {
-                list.push(
-                    (optgroups[optgroup] = {
-                        optgroup: optgroup,
-                        options: [option],
-                    }),
-                );
-            }
-        } else {
-            list.push(option);
-        }
+    if (optgroup) {
+      if (optgroups[optgroup]) {
+        optgroups[optgroup].options.push(option);
+      } else {
+        list.push(
+          (optgroups[optgroup] = {
+            optgroup: optgroup,
+            options: [option],
+          }),
+        );
+      }
+    } else {
+      list.push(option);
     }
-    return list;
+  }
+  return list;
 })()>
 <let/focused=false>
 
 <evo-floating-label
-    floatingLabel=floatingLabel
-    size=size
-    htmlFor=id
-    disabled=disabled
-    value=value
-    focused=focused>
-    <span/selectEl
-        class=[
-            "select",
-            size === "large" && "select--large",
-            fluid && "select--fluid",
-            borderless && "select--borderless",
-            inputClass,
-        ]
-        style=style>
-        <select
-            onBlur(e, target) {
-                focused = false;
-                onBlur && onBlur(e, target);
-            }
-            onFocus(e, target) {
-                focused = true;
-                onFocus && onFocus(e, target);
-            }
-            disabled=disabled
-            id=id
-            value:=value
-            ...htmlInput>
-            <for|optionOrGroup| of=list>
-                <if=isGroup(optionOrGroup)>
-                    <optgroup label=optionOrGroup.optgroup>
-                        <for|option| of=optionOrGroup.options>
-                            <const/{
-                                optgroup,
-                                ...itemHtmlInput
-                            }=option>
-                            <option ...itemHtmlInput/>
-                        </for>
-                    </optgroup>
-                </if>
-                <else>
-                    <option ...optionOrGroup as any/>
-                </else>
+  floatingLabel=floatingLabel
+  size=size
+  htmlFor=id
+  disabled=disabled
+  value=value
+  focused=focused>
+  <span/selectEl
+    class=[
+      "select",
+      size === "large" && "select--large",
+      fluid && "select--fluid",
+      borderless && "select--borderless",
+      inputClass,
+    ]
+    style=style>
+    <select
+      onBlur(e, target) {
+        focused = false;
+        onBlur && onBlur(e, target);
+      }
+      onFocus(e, target) {
+        focused = true;
+        onFocus && onFocus(e, target);
+      }
+      disabled=disabled
+      id=id
+      value:=value
+      ...htmlInput>
+      <for|optionOrGroup| of=list>
+        <if=isGroup(optionOrGroup)>
+          <optgroup label=optionOrGroup.optgroup>
+            <for|option| of=optionOrGroup.options>
+              <const/{ optgroup, ...itemHtmlInput }=option>
+              <option ...itemHtmlInput/>
             </for>
-        </select>
-        <evo-icon-chevron-down-12/>
-    </span>
+          </optgroup>
+        </if>
+        <else>
+          <option ...optionOrGroup as any/>
+        </else>
+      </for>
+    </select>
+    <evo-icon-chevron-down-12/>
+  </span>
 </evo-floating-label>
-
 static function isGroup(v: Option | OptGroup): v is OptGroup {
-    return !!v.optgroup;
+  return !!v.optgroup;
 }

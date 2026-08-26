@@ -40,6 +40,13 @@
     "test:server": "vitest run server",
     "test:watch": "vitest"
   },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx,mjs,marko,css,md,json}": "prettier --write"
+  },
   "dependencies": {
     "@floating-ui/dom": "^1.7.5",
     "@google/model-viewer": "^4.1.0",

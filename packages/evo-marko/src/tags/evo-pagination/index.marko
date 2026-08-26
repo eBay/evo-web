@@ -1,59 +1,57 @@
 import { getMaxWidth } from "../../common/dom";
 import { type Input as IconButtonInput } from "<evo-icon-button>";
-
 export interface Item extends Omit<Marko.HTML.Button, "type"> {
-    current?: boolean;
-    href?: string;
+  current?: boolean;
+  href?: string;
 }
-
 export interface Input extends Marko.HTML.Nav {
-    a11yHeadingTag?: keyof Marko.NativeTags;
-    item?: Marko.AttrTag<Item>;
-    prev?: Marko.AttrTag<Omit<IconButtonInput, "content">>;
-    next?: Marko.AttrTag<Omit<IconButtonInput, "content">>;
-    variant?: "show-range" | "show-last" | "overflow";
-    /**
-     * The clipped text that describes the _whole menu_ in a heading for assistive technology
-     * 
-     * English default to be overridden is `"Results Pagination - Page 1"`
-     */
-    a11yCurrentText: Marko.HTMLAttributes["aria-label"];
+  a11yHeadingTag?: keyof Marko.NativeTags;
+  item?: Marko.AttrTag<Item>;
+  prev?: Marko.AttrTag<Omit<IconButtonInput, "content">>;
+  next?: Marko.AttrTag<Omit<IconButtonInput, "content">>;
+  variant?: "show-range" | "show-last" | "overflow";
+  /**
+   * The clipped text that describes the _whole menu_ in a heading for assistive technology
+   *
+   * English default to be overridden is `"Results Pagination - Page 1"`
+   */
+  a11yCurrentText: Marko.HTMLAttributes["aria-label"];
 }
 static const MAX_PAGES = 9;
 static const MIN_PAGES = 5;
 
 <const/{
-    class: inputClass,
-    id,
-    a11yHeadingTag = "h2",
-    variant,
-    item: items,
-    prev,
-    next,
-    a11yCurrentText = "Results Pagination - Page 1",
-    ...htmlInput
+  class: inputClass,
+  id,
+  a11yHeadingTag = "h2",
+  variant,
+  item: items,
+  prev,
+  next,
+  a11yCurrentText = "Results Pagination - Page 1",
+  ...htmlInput
 }=input>
 <let/itemWidth=0>
 <let/maxItems=MIN_PAGES>
-<const/baseItems=[...items || []]>
+<const/baseItems=[...(items || [])]>
 
 <const/calculateMaxItems() {
-    if (!itemWidth) {
-        // calculate the width of the first visible item
-        const listItem = itemsEl().querySelectorAll("li");
-        for (let i = 0; i < listItem.length; i++) {
-            const item = listItem[i] as HTMLElement;
-            if (item.offsetWidth) {
-                itemWidth = item.offsetWidth;
-                break;
-            }
-        }
+  if (!itemWidth) {
+    // calculate the width of the first visible item
+    const listItem = itemsEl().querySelectorAll("li");
+    for (let i = 0; i < listItem.length; i++) {
+      const item = listItem[i] as HTMLElement;
+      if (item.offsetWidth) {
+        itemWidth = item.offsetWidth;
+        break;
+      }
     }
-    // subtract 2 from the rounded results to take into account previous/next page buttons
-    maxItems = Math.max(
-        MIN_PAGES,
-        Math.min(MAX_PAGES, Math.floor(getMaxWidth(root()) / itemWidth) - 2),
-    );
+  }
+  // subtract 2 from the rounded results to take into account previous/next page buttons
+  maxItems = Math.max(
+    MIN_PAGES,
+    Math.min(MAX_PAGES, Math.floor(getMaxWidth(root()) / itemWidth) - 2),
+  );
 }>
 
 <const/hasDots=variant === "show-last" || variant === "overflow">
@@ -63,162 +61,158 @@ static const MIN_PAGES = 5;
 <const/leadingDotsIndex=(hasOverflow ? 1 : -1)>
 
 <const/{ start, end, hideDots /* , hideLeadingDots */ }=(() => {
-    let hideDots = false;
-    let hideLeadingDots = false;
+  let hideDots = false;
+  let hideLeadingDots = false;
 
-    const i = baseItems.findIndex((item) => item.current);
-    const range = Math.floor(maxItems / 2);
-    let start = i - range;
-    let end = i + range;
+  const i = baseItems.findIndex((item) => item.current);
+  const range = Math.floor(maxItems / 2);
+  let start = i - range;
+  let end = i + range;
 
-    if (start <= 0) {
-        end = maxItems - 1;
-        start = 0;
-    } else if (end >= lastItemIndex) {
-        end = lastItemIndex;
-        start = lastItemIndex - (maxItems - 1);
-    } else if (maxItems % 2 === 0) {
-        start++;
+  if (start <= 0) {
+    end = maxItems - 1;
+    start = 0;
+  } else if (end >= lastItemIndex) {
+    end = lastItemIndex;
+    start = lastItemIndex - (maxItems - 1);
+  } else if (maxItems % 2 === 0) {
+    start++;
+  }
+
+  if (hasDots) {
+    if (i + range >= lastItemIndex || end >= lastItemIndex) {
+      hideDots = true;
+    } else if (i <= end - 2) {
+      end -= 2;
+    } else {
+      start += 1;
+      end -= 1;
     }
+  }
 
-    if (hasDots) {
-        if (i + range >= lastItemIndex || end >= lastItemIndex) {
-            hideDots = true;
-        } else if (i <= end - 2) {
-            end -= 2;
-        } else {
-            start += 1;
-            end -= 1;
-        }
+  if (hasOverflow) {
+    if (i - range <= 0) {
+      hideLeadingDots = true;
+    } else if (i >= start - 1) {
+      start += 2;
+    } else {
+      end -= 1;
+      start -= 1;
     }
+  }
 
-    if (hasOverflow) {
-        if (i - range <= 0) {
-            hideLeadingDots = true;
-        } else if (i >= start - 1) {
-            start += 2;
-        } else {
-            end -= 1;
-            start -= 1;
-        }
-    }
-
-    return {
-        start,
-        end,
-        hideDots,
-        hideLeadingDots,
-    };
+  return {
+    start,
+    end,
+    hideDots,
+    hideLeadingDots,
+  };
 })()>
 
 <const/isHidden(index: number) {
-    return (
-        (index < start || index > end) &&
-        dotsIndex !== index &&
-        leadingDotsIndex - 1 !== index
-    );
+  return (
+    (index < start || index > end) &&
+    dotsIndex !== index &&
+    leadingDotsIndex - 1 !== index
+  );
 }>
 
 <script>
-    calculateMaxItems();
-    window.addEventListener("resize", calculateMaxItems, {
-        signal: $signal,
-    });
+  calculateMaxItems();
+  window.addEventListener("resize", calculateMaxItems, {
+    signal: $signal,
+  });
 </script>
 
 <id/headingId=id>
 <nav/root
-    ...htmlInput
-    role="navigation"
-    class=["pagination", inputClass]
-    aria-labelledby=headingId>
-    <span aria-live="polite" role="status">
-        <${a11yHeadingTag} id=headingId class="clipped">
-            ${a11yCurrentText}
-        </>
-    </span>
+  ...htmlInput
+  role="navigation"
+  class=["pagination", inputClass]
+  aria-labelledby=headingId>
+  <span aria-live="polite" role="status">
+    <${a11yHeadingTag} id=headingId class="clipped">
+      ${a11yCurrentText}
+    </>
+  </span>
 
-    <if=prev>
-        <evo-icon-button
-            ...prev
-            class=[
-                "pagination__previous",
-                prev.href ? "icon-link" : "icon-btn",
-                prev.class,
-            ]
-            a11yText=prev.a11yText || "Previous Page"
-            style=[prev.style, { "min-width": "40" }]>
-            <evo-icon-arrow-left-16/>
-        </>
-    </if>
+  <if=prev>
+    <evo-icon-button
+      ...prev
+      class=[
+        "pagination__previous",
+        prev.href ? "icon-link" : "icon-btn",
+        prev.class,
+      ]
+      a11yText=prev.a11yText || "Previous Page"
+      style=[prev.style, { "min-width": "40" }]>
+      <evo-icon-arrow-left-16/>
+    </evo-icon-button>
+  </if>
 
-    <ol/itemsEl class="pagination__items">
-        <for|item, i| of=items>
-            <if=dotsIndex === i || leadingDotsIndex === i>
-                <const/isLeading=leadingDotsIndex === i>
-                // Keep this for reference until we verify the logic on hidden is correct
-                // $ var isLeading = false;
-                // $ if (leadingDotsIndex === i) {
-                //     isLeading = true;
-                //     hideDots = !!hideLeadingDots;
-                // }
-                <li hidden=hideDots || leadingDotsIndex === i>
-                    <if=hasOverflow>
-                        <span
-                            class=["pagination__item", item.class]
-                            role="separator">
-                            // TODO add after fake-menu-button is added
-                            // <evo-fake-menu-button
-                            //     variant="icon"
-                            //     transparent
-                            //     icon=DotsIcon
-                            //     collapseOnSelect
-                            //     on-select("handleMenuPageNumber")>
-                            //     <for|item, j| of=slicedItems>
-                            //         <const/visible = (isLeading ? j < start : j > end)>
-                            //         <if=isHidden(j) && visible>
-                            //             <@item
-                            //                 type=(
-                            //                     getItemTag(
-                            //                         item,
-                            //                     ) as Marko.HTML.Button["type"]
-                            //                 )
-                            //                 data-page-number=j
-                            //                 ...item/>
-                            //         </if>
-                            //     </for>
-                            // </evo-fake-menu-button>
-                        </span>
-                    </if>
-                    <else>
-                        <span
-                            class=["pagination__item", item.class]
-                            role="separator">
-                            <evo-icon-overflow-horizontal-24/>
-                        </span>
-                    </else>
-                </li>
-            </if>
-            <li hidden=isHidden(i)>
-                <${item.href ? "a" : "button"}
-                    ...item
-                    class=["pagination__item", item.class]
-                    aria-current=item.current && "page"/>
-            </li>
-        </for>
-    </ol>
+  <ol/itemsEl class="pagination__items">
+    <for|item, i| of=items>
+      <if=dotsIndex === i || leadingDotsIndex === i>
+        <const/isLeading=leadingDotsIndex === i>
+        // Keep this for reference until we verify the logic on hidden is correct
+        // $ var isLeading = false;
+        // $ if (leadingDotsIndex === i) {
+        //     isLeading = true;
+        //     hideDots = !!hideLeadingDots;
+        // }
+        <li hidden=hideDots || leadingDotsIndex === i>
+          <if=hasOverflow>
+            <span class=["pagination__item", item.class] role="separator">
+              // TODO add after fake-menu-button is added
+              // <evo-fake-menu-button
+              //     variant="icon"
+              //     transparent
+              //     icon=DotsIcon
+              //     collapseOnSelect
+              //     on-select("handleMenuPageNumber")>
+              //     <for|item, j| of=slicedItems>
+              //         <const/visible = (isLeading ? j < start : j > end)>
+              //         <if=isHidden(j) && visible>
+              //             <@item
+              //                 type=(
+              //                     getItemTag(
+              //                         item,
+              //                     ) as Marko.HTML.Button["type"]
+              //                 )
+              //                 data-page-number=j
+              //                 ...item/>
+              //         </if>
+              //     </for>
+              // </evo-fake-menu-button>
+            </span>
+          </if>
+          <else>
+            <span class=["pagination__item", item.class] role="separator">
+              <evo-icon-overflow-horizontal-24/>
+            </span>
+          </else>
+        </li>
+      </if>
+      <li hidden=isHidden(i)>
+        <${item.href ? "a" : "button"}
+          ...item
+          class=["pagination__item", item.class]
+          aria-current=item.current && "page"/>
+      </li>
+    </for>
+  </ol>
 
-    <if=next>
-        <evo-icon-button
-            ...next
-            class=[
-                "pagination__next",
-                next?.href ? "icon-link" : "icon-btn",
-                next?.class,
-            ]
-            a11yText=next.a11yText || "Next Page"
-            style=[next.style, { "min-width": "40" }]>
-            <evo-icon-arrow-right-16/>
-        </>
-    </if>
+  <if=next>
+    <evo-icon-button
+      ...next
+      class=[
+        "pagination__next",
+        next?.href ? "icon-link" : "icon-btn",
+        next?.class,
+      ]
+      a11yText=next.a11yText || "Next Page"
+      style=[next.style, { "min-width": "40" }]>
+      <evo-icon-arrow-right-16/>
+    </evo-icon-button>
+  </if>
 </nav>

@@ -155,7 +155,9 @@ describe("evo-button", () => {
 
     it("applies all button classes when `as` is provided", async () => {
       type CustomLinkProps = React.ComponentProps<"a">;
-      const CustomLink = (props: CustomLinkProps) => <a {...props} />;
+      const CustomLink = ({ children, ...props }: CustomLinkProps) => (
+        <a {...props}>{children}</a>
+      );
 
       const screen = await render(
         <EvoButton href="/home" as={CustomLink} priority="primary">

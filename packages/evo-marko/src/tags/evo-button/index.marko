@@ -1,111 +1,108 @@
 static export const validPriorities = ["primary", "secondary", "tertiary"];
 static export const validSizes = ["large", "small"] as const;
 static export const validSplit = ["start", "end"] as const;
-
-export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on${string}`> {
-    href?: string;
-    size?: (typeof validSizes)[number];
-    priority?: "primary" | "secondary" | "tertiary" | "none";
-    variant?: "standard" | "destructive" | "form";
-    bodyState?: "loading" | "expand" | "reset" | "none";
-    fluid?: boolean;
-    borderless?: boolean;
-    disabled?: boolean;
-    partiallyDisabled?: boolean;
-    transparent?: boolean;
-    fixedHeight?: boolean;
-    truncate?: boolean;
-    split?: "start" | "end";
-    /**
-     * The `aria-label` used while in a loading state
-     * 
-     * English default to be overridden is "loading"
-     */
-    a11yLoadingText?: string;
-    onEscape?: (event: KeyboardEvent) => void;
+export type RootInput = Marko.HTML.Button | Marko.HTML.A;
+export interface Input
+  extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `on${string}`> {
+  href?: string;
+  size?: (typeof validSizes)[number];
+  priority?: "primary" | "secondary" | "tertiary" | "none";
+  variant?: "standard" | "destructive" | "form";
+  bodyState?: "loading" | "expand" | "reset" | "none";
+  fluid?: boolean;
+  borderless?: boolean;
+  disabled?: boolean;
+  partiallyDisabled?: boolean;
+  transparent?: boolean;
+  fixedHeight?: boolean;
+  truncate?: boolean;
+  split?: "start" | "end";
+  /**
+   * The `aria-label` used while in a loading state
+   *
+   * English default to be overridden is "loading"
+   */
+  a11yLoadingText?: string;
+  onEscape?: (event: KeyboardEvent) => void;
 }
 
 <const/{
-    content,
-    a11yLoadingText = "loading",
-    bodyState,
-    borderless,
-    class: inputClass,
-    fixedHeight,
-    fluid,
-    href,
-    partiallyDisabled,
-    priority: inputPriority = "secondary",
-    size: inputSize,
-    split,
-    transparent,
-    truncate,
-    type = "button",
-    variant = "standard",
-    ...htmlInput
-}=input/>
+  content,
+  a11yLoadingText = "loading",
+  bodyState,
+  borderless,
+  class: inputClass,
+  fixedHeight,
+  fluid,
+  href,
+  partiallyDisabled,
+  priority: inputPriority = "secondary",
+  size: inputSize,
+  split,
+  transparent,
+  truncate,
+  type = "button",
+  variant = "standard",
+  ...htmlInput
+}=input>
 
-<const/priority=(borderless || variant === "form") ? "none" : inputPriority>
+<const/priority=(borderless || variant === "form" ? "none" : inputPriority)>
 <const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
 
-<const/baseClass=(href ? "fake-btn" : "btn")/>
-<const/sizeClass=(size && baseClass + "--" + size)/>
-<const/truncateClass=(
-    truncate &&
-    (sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")
-)>
-<const/transparentClass=transparent && (baseClass + "--transparent")>
-<const/fixedHeightClass=(
-    fixedHeight &&
-    (sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")
-)>
+<const/baseClass=(href ? "fake-btn" : "btn")>
+<const/sizeClass=size && baseClass + "--" + size>
+<const/truncateClass=truncate &&
+(sizeClass ? sizeClass + "-truncated" : baseClass + "--truncated")>
+<const/transparentClass=transparent && baseClass + "--transparent">
+<const/fixedHeightClass=fixedHeight &&
+(sizeClass ? sizeClass + "-fixed-height" : baseClass + "--fixed-height")>
 <const/variantClass=variant !== "standard" && `${baseClass}--${variant}`>
 
-<define/Root|input: (Marko.HTML.Button | Marko.HTML.A)|>
-    <if=href>
-        <a ...(input as Marko.HTML.A) href=href/>
-    </if>
-    <else>
-        <button ...(input as Marko.HTML.Button) type=type/>
-    </else>
+<define/Root|input: RootInput|>
+  <if=href>
+    <a ...input as Marko.HTML.A href=href/>
+  </if>
+  <else>
+    <button ...input as Marko.HTML.Button type=type/>
+  </else>
 </define>
 
 <Root
-    ...htmlInput
-    onKeyDown(e: KeyboardEvent) {
-        if (e.key === "Escape" && !input.disabled) {
-            input.onEscape?.(e);
-        }
+  ...htmlInput
+  onKeyDown(e: KeyboardEvent) {
+    if (e.key === "Escape" && !input.disabled) {
+      input.onEscape?.(e);
     }
-    class=[
-        inputClass,
-        baseClass,
-        fluid && `${baseClass}--fluid`,
-        truncateClass,
-        fixedHeightClass,
-        transparentClass,
-        variantClass,
-        !truncateClass && !fixedHeightClass && sizeClass,
-        validSplit.includes(split!) && `${baseClass}--split-${split}`,
-        borderless && `${baseClass}--borderless`,
-        validPriorities.includes(priority) && `${baseClass}--${priority}`,
-    ]
-    aria-disabled=(partiallyDisabled && "true")
-    aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])>
-    <if=(bodyState === "loading")>
-        <span class="btn__cell">
-            <evo-progress-spinner a11yText=null/>
-        </span>
-    </if>
-    <else if=(bodyState === "expand")>
-        <span class="btn__cell">
-            <span class="btn__text">
-                <${content}/>
-            </span>
-            <evo-icon-chevron-down-16/>
-        </span>
-    </else>
-    <else>
+  }
+  class=[
+    inputClass,
+    baseClass,
+    fluid && `${baseClass}--fluid`,
+    truncateClass,
+    fixedHeightClass,
+    transparentClass,
+    variantClass,
+    !truncateClass && !fixedHeightClass && sizeClass,
+    validSplit.includes(split!) && `${baseClass}--split-${split}`,
+    borderless && `${baseClass}--borderless`,
+    validPriorities.includes(priority) && `${baseClass}--${priority}`,
+  ]
+  aria-disabled=partiallyDisabled && "true"
+  aria-label=(bodyState === "loading" ? a11yLoadingText : input["aria-label"])>
+  <if=bodyState === "loading">
+    <span class="btn__cell">
+      <evo-progress-spinner a11yText=null/>
+    </span>
+  </if>
+  <else if=bodyState === "expand">
+    <span class="btn__cell">
+      <span class="btn__text">
         <${content}/>
-    </else>
-</>
+      </span>
+      <evo-icon-chevron-down-16/>
+    </span>
+  </else>
+  <else>
+    <${content}/>
+  </else>
+</Root>

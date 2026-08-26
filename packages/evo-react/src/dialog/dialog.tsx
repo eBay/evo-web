@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unknown-property, jsx-a11y/no-noninteractive-element-interactions -- `closedby` and native dialog interaction handlers are not yet recognized by the lint plugins. */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions -- native dialog interaction handlers are not yet recognized by the lint plugin. */
 import { useCallback, useEffect, useState } from "react";
 import type {
   AnimationEvent,

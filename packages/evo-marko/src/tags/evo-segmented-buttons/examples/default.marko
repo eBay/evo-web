@@ -1,10 +1,10 @@
-<const/items = ["Q1", "Q2", "Q3", "Q4"]>
+<const/items=["Q1", "Q2", "Q3", "Q4"]>
 <let/selected="Q1">
 
 <evo-segmented-buttons selected:=selected>
-    <for|item, i| of=items>
-        <@button name=item>
-            ${item}
-        </@button>
-    </for>
+  <for|item, i| of=items>
+    <@button name=item>
+      ${item}
+    </@button>
+  </for>
 </evo-segmented-buttons>

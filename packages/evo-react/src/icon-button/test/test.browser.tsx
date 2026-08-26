@@ -192,11 +192,7 @@ describe("evo-icon-button", () => {
       );
 
       const screen = await render(
-        <EvoIconButton
-          a11yText="Settings"
-          href="/home"
-          as={CustomLink}
-        >
+        <EvoIconButton a11yText="Settings" href="/home" as={CustomLink}>
           <EvoIconAdd16 />
         </EvoIconButton>,
       );
@@ -208,7 +204,9 @@ describe("evo-icon-button", () => {
 
     it("applies icon-link class when `as` is provided with href", async () => {
       type CustomLinkProps = React.ComponentProps<"a">;
-      const CustomLink = (props: CustomLinkProps) => <a {...props} />;
+      const CustomLink = ({ children, ...props }: CustomLinkProps) => (
+        <a {...props}>{children}</a>
+      );
 
       const screen = await render(
         <EvoIconButton
@@ -238,8 +236,6 @@ describe("evo-icon-button", () => {
       const badge = screen.getByText("3");
       await expect.element(badge).toBeInTheDocument();
     });
-
-
   });
 
   describe("ref forwarding", () => {

@@ -143,7 +143,10 @@ export const Default = buildExtensionTemplate(
   DefaultTemplateCode,
 );
 export const IconText = buildExtensionTemplate(IconTemplate, IconTemplateCode);
-export const Groups = buildExtensionTemplate(GroupsTemplate, GroupsTemplateCode);
+export const Groups = buildExtensionTemplate(
+  GroupsTemplate,
+  GroupsTemplateCode,
+);
 export const Typeahead = buildExtensionTemplate(
   TypeaheadTemplate,
   TypeaheadTemplateCode,

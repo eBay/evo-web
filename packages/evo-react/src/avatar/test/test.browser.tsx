@@ -110,8 +110,14 @@ describe("evo-avatar", () => {
 
     const avatarEl = screen.getByRole("img", { name: "avatar" }).element();
     const img = avatarEl.querySelector("img") as HTMLImageElement;
-    Object.defineProperty(img, "naturalWidth", { value: 3, configurable: true });
-    Object.defineProperty(img, "naturalHeight", { value: 5, configurable: true });
+    Object.defineProperty(img, "naturalWidth", {
+      value: 3,
+      configurable: true,
+    });
+    Object.defineProperty(img, "naturalHeight", {
+      value: 5,
+      configurable: true,
+    });
     img.dispatchEvent(new Event("load", { bubbles: true }));
 
     await expect
@@ -129,8 +135,14 @@ describe("evo-avatar", () => {
 
     const avatarEl = screen.getByRole("img", { name: "avatar" }).element();
     const img = avatarEl.querySelector("img") as HTMLImageElement;
-    Object.defineProperty(img, "naturalWidth", { value: 100, configurable: true });
-    Object.defineProperty(img, "naturalHeight", { value: 100, configurable: true });
+    Object.defineProperty(img, "naturalWidth", {
+      value: 100,
+      configurable: true,
+    });
+    Object.defineProperty(img, "naturalHeight", {
+      value: 100,
+      configurable: true,
+    });
     img.dispatchEvent(new Event("load", { bubbles: true }));
 
     expect(onLoad).toHaveBeenCalledTimes(1);

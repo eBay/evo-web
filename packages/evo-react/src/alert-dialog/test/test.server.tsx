@@ -157,7 +157,9 @@ describe("EvoAlertDialog SSR", () => {
     const html = renderToString(
       <EvoAlertDialog open>
         <EvoAlertDialogHeader>Title</EvoAlertDialogHeader>
-        <EvoAlertDialogMain><p>Content</p></EvoAlertDialogMain>
+        <EvoAlertDialogMain>
+          <p>Content</p>
+        </EvoAlertDialogMain>
         <EvoAlertDialogFooter className="my-footer">
           <EvoAlertDialogConfirm>OK</EvoAlertDialogConfirm>
         </EvoAlertDialogFooter>

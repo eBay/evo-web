@@ -1,9 +1,8 @@
-import { type Input as IconButtonInput } from "<evo-icon-button>"
-
+import { type Input as IconButtonInput } from "<evo-icon-button>";
 export interface FilePreviewCardEvent {
-    file: File;
-    menuAction: FilePreviewCardMenuAction;
-    originalEvent: Event;
+  file: File;
+  menuAction: FilePreviewCardMenuAction;
+  originalEvent: Event;
 }
 export type FilePreviewCardMenuAction = {
     event: string;
@@ -18,138 +17,137 @@ export type FilePreviewCardFile = (
       }
 );
 export interface Input extends Marko.HTML.Div {
-    as?: keyof Marko.NativeTags;
-    file?: FilePreviewCardFile;
-    status?: "uploading";
-    href?: string;
-    infoText?: string;
-    deleteAction?: Marko.AttrTag<IconButtonInput>;
-    menuActions?: FilePreviewCardMenuAction[];
-    action?: Marko.AttrTag<IconButtonInput>;
-    seeMoreAction?: Marko.AttrTag<IconButtonInput>;
-    cancelAction?: Marko.AttrTag<IconButtonInput>;
-    footerTitle?: string;
-    footerSubtitle?: string;
+  as?: keyof Marko.NativeTags;
+  file?: FilePreviewCardFile;
+  status?: "uploading";
+  href?: string;
+  infoText?: string;
+  deleteAction?: Marko.AttrTag<IconButtonInput>;
+  menuActions?: FilePreviewCardMenuAction[];
+  action?: Marko.AttrTag<IconButtonInput>;
+  seeMoreAction?: Marko.AttrTag<IconButtonInput>;
+  cancelAction?: Marko.AttrTag<IconButtonInput>;
+  footerTitle?: string;
+  footerSubtitle?: string;
 }
 
 <const/{
-    cancelAction,
-    deleteAction,
-    file: rawFile,
-    seeMoreAction,
-    status,
-    infoText,
-    menuActions,
-    footerTitle,
-    footerSubtitle,
-    action,
-    href,
-    class: inputClass,
-    as: inputAs,
-    ...htmlInput
+  cancelAction,
+  deleteAction,
+  file: rawFile,
+  seeMoreAction,
+  status,
+  infoText,
+  menuActions,
+  footerTitle,
+  footerSubtitle,
+  action,
+  href,
+  class: inputClass,
+  as: inputAs,
+  ...htmlInput
 }=input>
 
 <const/name=rawFile?.name>
 <const/type=(
-    rawFile?.type?.startsWith("image")
-        ? "image"
-        : rawFile?.type?.startsWith("video")
-          ? "video"
-          : undefined
+  rawFile?.type?.startsWith("image")
+    ? "image"
+    : rawFile?.type?.startsWith("video")
+      ? "video"
+      : undefined
 )>
 <const/src=(
-    rawFile instanceof File ? URL.createObjectURL(rawFile) : rawFile?.src
+  rawFile instanceof File ? URL.createObjectURL(rawFile) : rawFile?.src
 )>
 
 <${inputAs ?? "div"} ...htmlInput class=["file-preview-card", inputClass]>
-    <div class="file-preview-card__body">
-        <${href ? "a" : null} href=href>
-            <if=status === "uploading">
-                <evo-progress-spinner
-                    a11yText="uploading"
-                    class="file-preview-card__asset"
-                    size="large"/>
-            </if>
-            <else if=type === "image">
-                <img
-                    class={
-                        "file-preview-card__asset": true,
-                        "file-preview-card__asset--fade":
-                            seeMoreAction !== undefined,
-                    }
-                    src=src
-                    alt=name>
-            </else>
-            <else if=type === "video">
-                <video class="file-preview-card__asset" src=src/>
-            </else>
-            <else>
-                <evo-icon-file-24 class="file-preview-card__asset"/>
-            </else>
-        </>
-        <if=seeMoreAction>
-            <button
-                ...seeMoreAction
-                type="button"
-                class=["file-preview-card__see-more", seeMoreAction.class]
-                aria-label=null/>
-        </if>
-        <else>
-            <if=status === "uploading" && cancelAction>
-                <evo-icon-button
-                    ...cancelAction
-                    class=["file-preview-card__action", cancelAction?.class]>
-                    <evo-icon-close-16/>
-                </evo-icon-button>
-            </if>
-            <else>
-                <if=menuActions?.length>
-                    // TODO reenable after menu button is added
-                    // <evo-menu-button
-                    //     class="file-preview-card__action"
-                    //     variant="overflow"
-                    //     on-select("handleMenuSelect")
-                    // >
-                    //     <for|action| of=menuActions.concat({
-                    //         event: "delete",
-                    //         label: deleteText as string,
-                    //     })>
-                    //         <@item value=action.event>
-                    //             ${action.label}
-                    //         </@item>
-                    //     </for>
-                    // </evo-menu-button>
-                </if>
-                <else if=action>
-                    <evo-icon-button
-                        ...action
-                        class=["file-preview-card__action", action.class]/>
-                </else>
-                <else if=deleteAction>
-                    <evo-icon-button
-                        ...deleteAction
-                        class=["file-preview-card__action", deleteAction.class]>
-                        <evo-icon-delete-16/>
-                    </evo-icon-button>
-                </else>
-            </else>
-            <if=type !== "image">
-                <div class="file-preview-card__info">
-                    <if=type === "video">
-                        <evo-icon-play-16 class="file-preview-card__video-icon"/>
-                    </if>
-                    ${infoText ||
-                    name?.substring(name.lastIndexOf(".") + 1).toUpperCase()}
-                </div>
-            </if>
-        </else>
-    </div>
-    <if=footerTitle>
-        <div class="file-preview-card__footer">
-            <span>${footerTitle}</span>
-            <if=footerSubtitle>
-                <span>${footerSubtitle}</span>
-            </if>
-        </div>
+  <div class="file-preview-card__body">
+    <${href ? "a" : null} href=href>
+      <if=status === "uploading">
+        <evo-progress-spinner
+          a11yText="uploading"
+          class="file-preview-card__asset"
+          size="large"/>
+      </if>
+      <else if=type === "image">
+        <img
+          class={
+            "file-preview-card__asset": true,
+            "file-preview-card__asset--fade": seeMoreAction !== undefined,
+          }
+          src=src
+          alt=name>
+      </else>
+      <else if=type === "video">
+        <video class="file-preview-card__asset" src=src/>
+      </else>
+      <else>
+        <evo-icon-file-24 class="file-preview-card__asset"/>
+      </else>
+    </>
+    <if=seeMoreAction>
+      <button
+        ...seeMoreAction
+        type="button"
+        class=["file-preview-card__see-more", seeMoreAction.class]
+        aria-label=null/>
     </if>
+    <else>
+      <if=status === "uploading" && cancelAction>
+        <evo-icon-button
+          ...cancelAction
+          class=["file-preview-card__action", cancelAction?.class]>
+          <evo-icon-close-16/>
+        </evo-icon-button>
+      </if>
+      <else>
+        <if=menuActions?.length>
+          // TODO reenable after menu button is added
+          // <evo-menu-button
+          //     class="file-preview-card__action"
+          //     variant="overflow"
+          //     on-select("handleMenuSelect")
+          // >
+          //     <for|action| of=menuActions.concat({
+          //         event: "delete",
+          //         label: deleteText as string,
+          //     })>
+          //         <@item value=action.event>
+          //             ${action.label}
+          //         </@item>
+          //     </for>
+          // </evo-menu-button>
+        </if>
+        <else if=action>
+          <evo-icon-button
+            ...action
+            class=["file-preview-card__action", action.class]/>
+        </else>
+        <else if=deleteAction>
+          <evo-icon-button
+            ...deleteAction
+            class=["file-preview-card__action", deleteAction.class]>
+            <evo-icon-delete-16/>
+          </evo-icon-button>
+        </else>
+      </else>
+      <if=type !== "image">
+        <div class="file-preview-card__info">
+          <if=type === "video">
+            <evo-icon-play-16 class="file-preview-card__video-icon"/>
+          </if>
+          ${infoText ||
+          name?.substring(name.lastIndexOf(".") + 1).toUpperCase()}
+        </div>
+      </if>
+    </else>
+  </div>
+  <if=footerTitle>
+    <div class="file-preview-card__footer">
+      <span>${footerTitle}</span>
+      <if=footerSubtitle>
+        <span>${footerSubtitle}</span>
+      </if>
+    </div>
+  </if>
 </>

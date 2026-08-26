@@ -1,35 +1,19 @@
 export interface Input extends Marko.HTML.Input {
-    size?: "large";
+  size?: "large";
 }
 
-<const/{
-    class: inputClass,
-    size,
-    ...htmlInput
-} = input>
+<const/{ class: inputClass, size, ...htmlInput }=input>
 
 <span class=["radio", inputClass]>
-    <input
-        ...htmlInput
-        type="radio"
-        class="radio__control"
-    >
-    <span class="radio__icon" hidden>
-        <if=size === "large">
-            <evo-icon-radio-unchecked-24
-                class="radio__unchecked"
-            />
-            <evo-icon-radio-checked-24
-                class="radio__checked"
-            />
-        </if>
-        <else>
-            <evo-icon-radio-unchecked-18
-                class="radio__unchecked"
-            />
-            <evo-icon-radio-checked-18
-                class="radio__checked"
-            />
-        </else>
-    </span>
+  <input ...htmlInput type="radio" class="radio__control">
+  <span class="radio__icon" hidden>
+    <if=size === "large">
+      <evo-icon-radio-unchecked-24 class="radio__unchecked"/>
+      <evo-icon-radio-checked-24 class="radio__checked"/>
+    </if>
+    <else>
+      <evo-icon-radio-unchecked-18 class="radio__unchecked"/>
+      <evo-icon-radio-checked-18 class="radio__checked"/>
+    </else>
+  </span>
 </span>

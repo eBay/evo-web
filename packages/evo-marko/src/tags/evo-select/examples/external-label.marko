@@ -1,35 +1,32 @@
-<let/selected = "">
+<let/selected="">
 static const options = [
-        {
-            text: "Select an option",
-            value: "",
-        },
-        {
-            text: "option 1",
-            value: "1",
-        },
-        {
-            text: "option 2",
-            value: "2",
-        },
-        {
-            text: "option 3",
-            value: "3",
-        },
+  {
+    text: "Select an option",
+    value: "",
+  },
+  {
+    text: "option 1",
+    value: "1",
+  },
+  {
+    text: "option 2",
+    value: "2",
+  },
+  {
+    text: "option 3",
+    value: "3",
+  },
 ];
 
 <span class="field">
-    <label class="field__label field__label--start" for="select">
-        Option
-    </label>
-    <evo-select
-        ...input
-        value:=selected
-        name="formFieldName"
-        id="select"
-    >
-        <for|option| of=options>
-            <@option value=option.value>${option.text}</>
-        </for>
-    </evo-select>
+  <label class="field__label field__label--start" for="select">
+    Option
+  </label>
+  <evo-select ...input value:=selected name="formFieldName" id="select">
+    <for|option| of=options>
+      <@option value=option.value>
+        ${option.text}
+      </@option>
+    </for>
+  </evo-select>
 </span>

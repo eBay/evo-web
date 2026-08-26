@@ -164,7 +164,10 @@ export const MultiSelect = buildExtensionTemplate(
   },
 );
 
-export const Groups = buildExtensionTemplate(GroupsTemplate, GroupsTemplateCode);
+export const Groups = buildExtensionTemplate(
+  GroupsTemplate,
+  GroupsTemplateCode,
+);
 
 export const Controlled = buildExtensionTemplate(
   ControlledTemplate,

@@ -35,8 +35,11 @@ describe.skip("evo-accordion", () => {
     });
 
     it("should render with accordion role description", () => {
-      const accordionElement = component.container.querySelector("ul.accordion");
-      expect(accordionElement?.getAttribute("aria-roledescription")).to.equal("accordion");
+      const accordionElement =
+        component.container.querySelector("ul.accordion");
+      expect(accordionElement?.getAttribute("aria-roledescription")).to.equal(
+        "accordion",
+      );
     });
 
     it("should render all accordion items", () => {
@@ -133,7 +136,9 @@ describe.skip("evo-accordion", () => {
         });
 
         it("then the second item should be open", () => {
-          const secondDetails = component.getByText("Item 2").closest("details");
+          const secondDetails = component
+            .getByText("Item 2")
+            .closest("details");
           expect(secondDetails?.open).to.equal(true);
         });
 

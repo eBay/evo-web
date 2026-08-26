@@ -6,7 +6,7 @@ export interface Input {
 
 <const/{ a11yText, size, multiline }=input>
 
-<div class=(styles as any).grid>
+<div class=((styles as any).grid)>
   <div>
     <evo-skeleton a11yText="Loading...">
       <evo-skeleton-avatar/>
@@ -53,7 +53,6 @@ export interface Input {
       gap: 1rem;
       border: 1px solid var(--color-border-strong);
       padding: 1rem;
-
 
       & > :first-child {
         height: 10rem;

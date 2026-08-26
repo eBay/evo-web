@@ -24,7 +24,7 @@ import {
   offsetMonthForDay,
   type Disable,
 } from "./date-utils";
-export type { DayISO } from "../../common/dates/date-utils"
+export type { DayISO } from "../../common/dates/date-utils";
 export type { Disable } from "./date-utils";
 export interface BaseInput {
   visibleMonthCount?: number;
@@ -109,14 +109,19 @@ export type Input = StaticInput | DayInput | RangeInput;
   a11yRangeText,
 }=input>
 
-<let/selected:=(input as StaticInput).selected>
+<let/selected:=((input as StaticInput).selected)>
 // `viewStart` is the first displayed month (YYYY-MM). `valueChange` notifies `input.visibleMonthChange`.
 // `focus` is fully uncontrolled — always within the visible window, resets when viewStart changes.
-<let/viewStart=(input.visibleMonth ?? today.slice(0, 7) as MonthISO) valueChange=input.visibleMonthChange>
+<let/viewStart=(
+  input.visibleMonth ?? (today.slice(0, 7) as MonthISO)
+) valueChange=input.visibleMonthChange>
 <let/focus=getInitialFocus(viewStart, today, numMonths)>
 <script>
   // If viewStart changes externally and focus is no longer in the window, reset it.
-  if (focus.slice(0, 7) < viewStart || focus.slice(0, 7) > monthOffset(viewStart, numMonths - 1)) {
+  if (
+    focus.slice(0, 7) < viewStart ||
+    focus.slice(0, 7) > monthOffset(viewStart, numMonths - 1)
+  ) {
     focus = getInitialFocus(viewStart, today, numMonths);
   }
 </script>
@@ -132,7 +137,8 @@ export type Input = StaticInput | DayInput | RangeInput;
   if (selectMode !== "range") {
     return null;
   }
-  const singleSelected = typeof selected === "object" ? selected.from || selected.to : selected;
+  const singleSelected =
+    typeof selected === "object" ? selected.from || selected.to : selected;
   if (singleSelected) {
     const interactingWith = hoverDate || (bodyHasFocus && focus);
     if (interactingWith && singleSelected) {
@@ -155,10 +161,18 @@ export type Input = StaticInput | DayInput | RangeInput;
               const nextViewStart = monthOffset(viewStart, -1);
               const targetFocus = offsetMonthForDay(focus, -1);
               viewStart = nextViewStart;
-              focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+              focus = getActiveISOInWindow(
+                disable,
+                targetFocus,
+                nextViewStart,
+                numMonths,
+              );
             }
           }
-          a11yText=a11yNavigateText(getMonthName(locale, viewStart, -1), "prev")>
+          a11yText=a11yNavigateText(
+            getMonthName(locale, viewStart, -1),
+            "prev",
+          )>
           <evo-icon-chevron-left-24/>
         </evo-icon-button>
         <for|i| until=numMonths>
@@ -171,10 +185,18 @@ export type Input = StaticInput | DayInput | RangeInput;
               const nextViewStart = monthOffset(viewStart, 1);
               const targetFocus = offsetMonthForDay(focus, 1);
               viewStart = nextViewStart;
-              focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+              focus = getActiveISOInWindow(
+                disable,
+                targetFocus,
+                nextViewStart,
+                numMonths,
+              );
             }
           }
-          a11yText=a11yNavigateText(getMonthName(locale, viewStart, numMonths), "next")>
+          a11yText=a11yNavigateText(
+            getMonthName(locale, viewStart, numMonths),
+            "next",
+          )>
           <evo-icon-chevron-right-24/>
         </evo-icon-button>
       </div>
@@ -194,62 +216,98 @@ export type Input = StaticInput | DayInput | RangeInput;
         e.preventDefault();
         let iso = focus;
         let tries = 7;
-        do { iso = offsetISO(iso, change); } while (tries-- > 0 && disable && isDisabled(disable, iso));
+        do {
+          iso = offsetISO(iso, change);
+        } while (tries-- > 0 && disable && isDisabled(disable, iso));
         if (tries > 0) {
           const firstVisible = getFirstVisibleISO(viewStart);
           const lastVisible = getLastVisibleISO(viewStart, numMonths);
           if (iso < firstVisible) {
-            if (a11yNavigateText && !isPreviousMonthDisabled(disable, viewStart)) {
+            if (
+              a11yNavigateText &&
+              !isPreviousMonthDisabled(disable, viewStart)
+            ) {
               const nextViewStart = monthOffset(viewStart, -1);
               viewStart = nextViewStart;
-              focus = getActiveISOInWindow(disable, iso, nextViewStart, numMonths);
+              focus = getActiveISOInWindow(
+                disable,
+                iso,
+                nextViewStart,
+                numMonths,
+              );
             } else {
-              focus = getFirstActiveISO(disable, viewStart, numMonths) || firstVisible;
+              focus =
+                getFirstActiveISO(disable, viewStart, numMonths) ||
+                firstVisible;
             }
           } else if (iso > lastVisible) {
-            if (a11yNavigateText && !isNextMonthDisabled(disable, viewStart, numMonths)) {
+            if (
+              a11yNavigateText &&
+              !isNextMonthDisabled(disable, viewStart, numMonths)
+            ) {
               const nextViewStart = monthOffset(viewStart, 1);
               viewStart = nextViewStart;
-              focus = getActiveISOInWindow(disable, iso, nextViewStart, numMonths);
+              focus = getActiveISOInWindow(
+                disable,
+                iso,
+                nextViewStart,
+                numMonths,
+              );
             } else {
-              focus = getLastActiveISO(disable, viewStart, numMonths) || lastVisible;
+              focus =
+                getLastActiveISO(disable, viewStart, numMonths) || lastVisible;
             }
           } else {
             focus = iso;
           }
         }
-      } else switch (e.key) {
-        case "PageUp": {
-          e.preventDefault();
-          if (!isPreviousMonthDisabled(disable, viewStart)) {
-            const nextViewStart = monthOffset(viewStart, -1);
-            const targetFocus = offsetMonthForDay(focus, -1);
-            viewStart = nextViewStart;
-            focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+      } else
+        switch (e.key) {
+          case "PageUp": {
+            e.preventDefault();
+            if (!isPreviousMonthDisabled(disable, viewStart)) {
+              const nextViewStart = monthOffset(viewStart, -1);
+              const targetFocus = offsetMonthForDay(focus, -1);
+              viewStart = nextViewStart;
+              focus = getActiveISOInWindow(
+                disable,
+                targetFocus,
+                nextViewStart,
+                numMonths,
+              );
+            }
+            break;
           }
-          break;
-        }
-        case "PageDown": {
-          e.preventDefault();
-          if (!isNextMonthDisabled(disable, viewStart, numMonths)) {
-            const nextViewStart = monthOffset(viewStart, 1);
-            const targetFocus = offsetMonthForDay(focus, 1);
-            viewStart = nextViewStart;
-            focus = getActiveISOInWindow(disable, targetFocus, nextViewStart, numMonths);
+          case "PageDown": {
+            e.preventDefault();
+            if (!isNextMonthDisabled(disable, viewStart, numMonths)) {
+              const nextViewStart = monthOffset(viewStart, 1);
+              const targetFocus = offsetMonthForDay(focus, 1);
+              viewStart = nextViewStart;
+              focus = getActiveISOInWindow(
+                disable,
+                targetFocus,
+                nextViewStart,
+                numMonths,
+              );
+            }
+            break;
           }
-          break;
+          case "Home": {
+            e.preventDefault();
+            focus =
+              getFirstActiveISO(disable, viewStart, numMonths) ||
+              getFirstVisibleISO(viewStart);
+            break;
+          }
+          case "End": {
+            e.preventDefault();
+            focus =
+              getLastActiveISO(disable, viewStart, numMonths) ||
+              getLastVisibleISO(viewStart, numMonths);
+            break;
+          }
         }
-        case "Home": {
-          e.preventDefault();
-          focus = getFirstActiveISO(disable, viewStart, numMonths) || getFirstVisibleISO(viewStart);
-          break;
-        }
-        case "End": {
-          e.preventDefault();
-          focus = getLastActiveISO(disable, viewStart, numMonths) || getLastVisibleISO(viewStart, numMonths);
-          break;
-        }
-      }
     }>
     <for|i| until=numMonths>
       <div class="calendar__month">
@@ -311,7 +369,7 @@ export type Input = StaticInput | DayInput | RangeInput;
                             .filter(Boolean)
                             .join(" - ")
                         )
-                        tabindex=(focus !== iso && -1)
+                        tabindex=focus !== iso && -1
                         aria-current=iso === today && "date"
                         aria-pressed=isSelected && "true"
                         onMouseEnter() {
@@ -326,13 +384,18 @@ export type Input = StaticInput | DayInput | RangeInput;
                             selected = iso;
                           } else if (selectMode === "range") {
                             if (typeof selected === "object") {
-                              if (selected.from && selected.to || (!selected.from && !selected.to)) {
+                              if (
+                                (selected.from && selected.to) ||
+                                (!selected.from && !selected.to)
+                              ) {
                                 selected = { from: iso };
                               } else {
-                                const singleSelected = selected.from || selected.to;
-                                selected = singleSelected! > iso
-                                  ? { from: iso, to: singleSelected }
-                                  : { from: singleSelected, to: iso };
+                                const singleSelected =
+                                  selected.from || selected.to;
+                                selected =
+                                  singleSelected! > iso
+                                    ? { from: iso, to: singleSelected }
+                                    : { from: singleSelected, to: iso };
                               }
                             } else if (selected) {
                               selected =

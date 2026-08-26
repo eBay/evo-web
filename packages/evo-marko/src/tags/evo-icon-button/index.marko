@@ -1,64 +1,66 @@
 import {
-    type Input as ButtonInput,
-    validPriorities,
-    validSizes,
+  type Input as ButtonInput,
+  validPriorities,
+  validSizes,
 } from "<evo-button>";
 import type { Input as BadgeInput } from "<evo-badge>";
 export interface Input
-    extends Omit<Marko.HTML.Button, "aria-label">, Omit<Marko.HTML.A, "type" | `on${string}` | "aria-label"> {
-    badge?: Marko.AttrTag<Omit<BadgeInput, "a11yText" | "type">>;
-    href?: string;
-    transparent?: boolean;
-    priority?: ButtonInput["priority"];
-    size?: ButtonInput["size"];
-    partiallyDisabled?: ButtonInput["partiallyDisabled"];
-    onEscape?: ButtonInput["onEscape"];
-    /**
-     * The `aria-label` of the button
-     *
-     * English default to be overridden is `"button"`
-     * 
-     * Pass `null` explicitly _only_ if alternative accessibility information is present
-     */
-    a11yText: string | null;
+  extends
+    Omit<Marko.HTML.Button, "aria-label">,
+    Omit<Marko.HTML.A, "type" | `on${string}` | "aria-label"> {
+  badge?: Marko.AttrTag<Omit<BadgeInput, "a11yText" | "type">>;
+  href?: string;
+  transparent?: boolean;
+  priority?: ButtonInput["priority"];
+  size?: ButtonInput["size"];
+  partiallyDisabled?: ButtonInput["partiallyDisabled"];
+  onEscape?: ButtonInput["onEscape"];
+  /**
+   * The `aria-label` of the button
+   *
+   * English default to be overridden is `"button"`
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
 }
 
 <const/{
-    badge,
-    priority = "none",
-    partiallyDisabled,
-    content,
-    type,
-    size,
-    transparent,
-    class: inputClass,
-    a11yText = "button",
-    ...htmlInput
+  badge,
+  priority = "none",
+  partiallyDisabled,
+  content,
+  type,
+  size,
+  transparent,
+  class: inputClass,
+  a11yText = "button",
+  ...htmlInput
 }=input>
 
 <const/tagType=(input.href ? "a" : "button")>
 <const/baseClassName=(input.href ? "icon-link" : "icon-btn")>
 
 <${tagType}
-    ...htmlInput
-    aria-label=a11yText
-    onKeyDown(e: KeyboardEvent, el: HTMLButtonElement) {
-        if (e.key === "Escape" && !input.disabled) {
-            input.onEscape?.(e);
-        }
-        input.onKeyDown && input.onKeyDown(e as any, el);
+  ...htmlInput
+  aria-label=a11yText
+  onKeyDown(e: KeyboardEvent, el: HTMLButtonElement) {
+    if (e.key === "Escape" && !input.disabled) {
+      input.onEscape?.(e);
     }
-    class=[
-        inputClass,
-        baseClassName,
-        transparent && `${baseClassName}--transparent`,
-        validPriorities.includes(priority) && `${baseClassName}--${priority}`,
-        size && validSizes.includes(size) && `${baseClassName}--${size}`,
-    ]
-    type=tagType === "button" && (type || "button")
-    aria-disabled=partiallyDisabled && "true">
-    <${content}/>
-    <if=badge>
-        <evo-badge ...badge type="icon" a11yText=null/>
-    </if>
+    input.onKeyDown && input.onKeyDown(e as any, el);
+  }
+  class=[
+    inputClass,
+    baseClassName,
+    transparent && `${baseClassName}--transparent`,
+    validPriorities.includes(priority) && `${baseClassName}--${priority}`,
+    size && validSizes.includes(size) && `${baseClassName}--${size}`,
+  ]
+  type=tagType === "button" && (type || "button")
+  aria-disabled=partiallyDisabled && "true">
+  <${content}/>
+  <if=badge>
+    <evo-badge ...badge type="icon" a11yText=null/>
+  </if>
 </>

@@ -1,6 +1,9 @@
 import { fireEvent, createEvent } from "@marko/testing-library";
 
-async function pressKey(el: Element, info: KeyboardEventInit & { key: string }) {
+async function pressKey(
+  el: Element,
+  info: KeyboardEventInit & { key: string },
+) {
   for (const event of [
     createEvent.keyDown(el, info as any),
     createEvent.keyUp(el, info as any),
@@ -43,7 +46,7 @@ interface FastAnimations {
   stop: () => void;
 }
 
-const fastAnimations:FastAnimations = {
+const fastAnimations: FastAnimations = {
   // Adds an style to the document which forces all transitions to run more quickly for the tests.
   start() {
     if (this.fastAnimationStyle) {

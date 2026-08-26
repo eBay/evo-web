@@ -1,24 +1,25 @@
 import countries from "./data.json" with { type: "json" };
-
 static async function searchCountries(query: string, signal: AbortSignal) {
-    await new Promise((r) => setTimeout(r, 300));
-    if (signal.aborted) return;
-    return query
-        ? countries.filter((c) => c.name.toLowerCase().startsWith(query.toLowerCase())).slice(0, 10)
-        : ([] as typeof countries);
+  await new Promise((r) => setTimeout(r, 300));
+  if (signal.aborted) return;
+  return query
+    ? countries
+        .filter((c) => c.name.toLowerCase().startsWith(query.toLowerCase()))
+        .slice(0, 10)
+    : ([] as typeof countries);
 }
 
 <let/value="">
-<let/options=[] as typeof countries>
+<let/options=([] as typeof countries)>
 
 <script>
-    const results = await searchCountries(value, $signal);
-    if (results) options = results;
+  const results = await searchCountries(value, $signal);
+  if (results) options = results;
 </script>
 
 <evo-combobox ...input value:=value>
-    <for|country| of=options>
-        <@option data-code=country.code text=country.name/>
-    </for>
+  <for|country| of=options>
+    <@option data-code=country.code text=country.name/>
+  </for>
 </evo-combobox>
 <p>Selected: ${value || "(none)"}</p>
