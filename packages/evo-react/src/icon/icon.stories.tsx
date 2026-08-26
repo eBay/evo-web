@@ -3,6 +3,7 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { EvoIconProvider } from "./context";
+import { IconExample, IconGrid } from "./icon-example";
 import type { EvoIconComponentProps } from "./icons/types";
 import { EvoIconAdd12 } from "./icons/add-12";
 import { EvoIconAdd16 } from "./icons/add-16";
@@ -1214,9178 +1215,3446 @@ type Story = StoryObj<EvoIconComponentProps>;
 export const AllIcons: Story = {
   render: (args) => (
     <EvoIconProvider>
-      <table>
-        <tbody>
-          
-          <tr>
-            <td>{EvoIconAdd12.name || "add-12"}</td>
-            <td>
-              <EvoIconAdd12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAdd16.name || "add-16"}</td>
-            <td>
-              <EvoIconAdd16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAdd24.name || "add-24"}</td>
-            <td>
-              <EvoIconAdd24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAddImage24.name || "add-image-24"}</td>
-            <td>
-              <EvoIconAddImage24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAdjustPriceDown16.name || "adjust-price-down-16"}</td>
-            <td>
-              <EvoIconAdjustPriceDown16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAdjustPriceDown24.name || "adjust-price-down-24"}</td>
-            <td>
-              <EvoIconAdjustPriceDown24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAdjustPriceUp16.name || "adjust-price-up-16"}</td>
-            <td>
-              <EvoIconAdjustPriceUp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAdjustPriceUp24.name || "adjust-price-up-24"}</td>
-            <td>
-              <EvoIconAdjustPriceUp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAfterpay12Colored.name || "afterpay-12-colored"}</td>
-            <td>
-              <EvoIconAfterpay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAfterpay18Colored.name || "afterpay-18-colored"}</td>
-            <td>
-              <EvoIconAfterpay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAfterpay24Colored.name || "afterpay-24-colored"}</td>
-            <td>
-              <EvoIconAfterpay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAfterpay32Colored.name || "afterpay-32-colored"}</td>
-            <td>
-              <EvoIconAfterpay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAfterpayLogo24Colored.name || "afterpay-logo-24-colored"}</td>
-            <td>
-              <EvoIconAfterpayLogo24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAi16.name || "ai-16"}</td>
-            <td>
-              <EvoIconAi16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAi20.name || "ai-20"}</td>
-            <td>
-              <EvoIconAi20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAi24.name || "ai-24"}</td>
-            <td>
-              <EvoIconAi24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiCamera16.name || "ai-camera-16"}</td>
-            <td>
-              <EvoIconAiCamera16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiCamera20.name || "ai-camera-20"}</td>
-            <td>
-              <EvoIconAiCamera20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiCamera24.name || "ai-camera-24"}</td>
-            <td>
-              <EvoIconAiCamera24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiFilled16.name || "ai-filled-16"}</td>
-            <td>
-              <EvoIconAiFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiFilled20.name || "ai-filled-20"}</td>
-            <td>
-              <EvoIconAiFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiFilled24.name || "ai-filled-24"}</td>
-            <td>
-              <EvoIconAiFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiMobile16.name || "ai-mobile-16"}</td>
-            <td>
-              <EvoIconAiMobile16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiMobile20.name || "ai-mobile-20"}</td>
-            <td>
-              <EvoIconAiMobile20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiMobile24.name || "ai-mobile-24"}</td>
-            <td>
-              <EvoIconAiMobile24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSearch16.name || "ai-search-16"}</td>
-            <td>
-              <EvoIconAiSearch16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSearch20.name || "ai-search-20"}</td>
-            <td>
-              <EvoIconAiSearch20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSearch24.name || "ai-search-24"}</td>
-            <td>
-              <EvoIconAiSearch24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSearchFilled24.name || "ai-search-filled-24"}</td>
-            <td>
-              <EvoIconAiSearchFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiShirt16.name || "ai-shirt-16"}</td>
-            <td>
-              <EvoIconAiShirt16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiShirt20.name || "ai-shirt-20"}</td>
-            <td>
-              <EvoIconAiShirt20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiShirt24.name || "ai-shirt-24"}</td>
-            <td>
-              <EvoIconAiShirt24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrum16Colored.name || "ai-spectrum-16-colored"}</td>
-            <td>
-              <EvoIconAiSpectrum16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrum20Colored.name || "ai-spectrum-20-colored"}</td>
-            <td>
-              <EvoIconAiSpectrum20Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrum24Colored.name || "ai-spectrum-24-colored"}</td>
-            <td>
-              <EvoIconAiSpectrum24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrumFilled16Colored.name || "ai-spectrum-filled-16-colored"}</td>
-            <td>
-              <EvoIconAiSpectrumFilled16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrumFilled20Colored.name || "ai-spectrum-filled-20-colored"}</td>
-            <td>
-              <EvoIconAiSpectrumFilled20Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrumFilled24Colored.name || "ai-spectrum-filled-24-colored"}</td>
-            <td>
-              <EvoIconAiSpectrumFilled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSpectrumThin16Colored.name || "ai-spectrum-thin-16-colored"}</td>
-            <td>
-              <EvoIconAiSpectrumThin16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSummary16.name || "ai-summary-16"}</td>
-            <td>
-              <EvoIconAiSummary16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSummary20.name || "ai-summary-20"}</td>
-            <td>
-              <EvoIconAiSummary20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiSummary24.name || "ai-summary-24"}</td>
-            <td>
-              <EvoIconAiSummary24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiThin16.name || "ai-thin-16"}</td>
-            <td>
-              <EvoIconAiThin16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiTools16.name || "ai-tools-16"}</td>
-            <td>
-              <EvoIconAiTools16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiTools20.name || "ai-tools-20"}</td>
-            <td>
-              <EvoIconAiTools20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAiTools24.name || "ai-tools-24"}</td>
-            <td>
-              <EvoIconAiTools24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayCn12Colored.name || "alipay-cn-12-colored"}</td>
-            <td>
-              <EvoIconAlipayCn12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayCn18Colored.name || "alipay-cn-18-colored"}</td>
-            <td>
-              <EvoIconAlipayCn18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayCn24Colored.name || "alipay-cn-24-colored"}</td>
-            <td>
-              <EvoIconAlipayCn24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayCn32Colored.name || "alipay-cn-32-colored"}</td>
-            <td>
-              <EvoIconAlipayCn32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayHk12Colored.name || "alipay-hk-12-colored"}</td>
-            <td>
-              <EvoIconAlipayHk12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayHk18Colored.name || "alipay-hk-18-colored"}</td>
-            <td>
-              <EvoIconAlipayHk18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayHk24Colored.name || "alipay-hk-24-colored"}</td>
-            <td>
-              <EvoIconAlipayHk24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAlipayHk32Colored.name || "alipay-hk-32-colored"}</td>
-            <td>
-              <EvoIconAlipayHk32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAmex12Colored.name || "amex-12-colored"}</td>
-            <td>
-              <EvoIconAmex12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAmex18Colored.name || "amex-18-colored"}</td>
-            <td>
-              <EvoIconAmex18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAmex24Colored.name || "amex-24-colored"}</td>
-            <td>
-              <EvoIconAmex24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAmex32Colored.name || "amex-32-colored"}</td>
-            <td>
-              <EvoIconAmex32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconApple24.name || "apple-24"}</td>
-            <td>
-              <EvoIconApple24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAppleMusic24Colored.name || "apple-music-24-colored"}</td>
-            <td>
-              <EvoIconAppleMusic24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconApplePay12Colored.name || "apple-pay-12-colored"}</td>
-            <td>
-              <EvoIconApplePay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconApplePay18Colored.name || "apple-pay-18-colored"}</td>
-            <td>
-              <EvoIconApplePay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconApplePay24Colored.name || "apple-pay-24-colored"}</td>
-            <td>
-              <EvoIconApplePay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconApplePay32Colored.name || "apple-pay-32-colored"}</td>
-            <td>
-              <EvoIconApplePay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArchive16.name || "archive-16"}</td>
-            <td>
-              <EvoIconArchive16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArchive24.name || "archive-24"}</td>
-            <td>
-              <EvoIconArchive24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowDown12.name || "arrow-down-12"}</td>
-            <td>
-              <EvoIconArrowDown12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowDown16.name || "arrow-down-16"}</td>
-            <td>
-              <EvoIconArrowDown16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowDown20.name || "arrow-down-20"}</td>
-            <td>
-              <EvoIconArrowDown20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowDown24.name || "arrow-down-24"}</td>
-            <td>
-              <EvoIconArrowDown24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowLeft12.name || "arrow-left-12"}</td>
-            <td>
-              <EvoIconArrowLeft12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowLeft16.name || "arrow-left-16"}</td>
-            <td>
-              <EvoIconArrowLeft16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowLeft20.name || "arrow-left-20"}</td>
-            <td>
-              <EvoIconArrowLeft20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowLeft24.name || "arrow-left-24"}</td>
-            <td>
-              <EvoIconArrowLeft24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowRight12.name || "arrow-right-12"}</td>
-            <td>
-              <EvoIconArrowRight12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowRight16.name || "arrow-right-16"}</td>
-            <td>
-              <EvoIconArrowRight16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowRight20.name || "arrow-right-20"}</td>
-            <td>
-              <EvoIconArrowRight20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowRight24.name || "arrow-right-24"}</td>
-            <td>
-              <EvoIconArrowRight24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowUp12.name || "arrow-up-12"}</td>
-            <td>
-              <EvoIconArrowUp12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowUp16.name || "arrow-up-16"}</td>
-            <td>
-              <EvoIconArrowUp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowUp20.name || "arrow-up-20"}</td>
-            <td>
-              <EvoIconArrowUp20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowUp24.name || "arrow-up-24"}</td>
-            <td>
-              <EvoIconArrowUp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrows3d16.name || "arrows-3d-16"}</td>
-            <td>
-              <EvoIconArrows3d16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrows3d24.name || "arrows-3d-24"}</td>
-            <td>
-              <EvoIconArrows3d24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrows3dFilled64Colored.name || "arrows-3d-filled-64-colored"}</td>
-            <td>
-              <EvoIconArrows3dFilled64Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowsExpand16.name || "arrows-expand-16"}</td>
-            <td>
-              <EvoIconArrowsExpand16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArrowsExpand24.name || "arrows-expand-24"}</td>
-            <td>
-              <EvoIconArrowsExpand24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArticle16.name || "article-16"}</td>
-            <td>
-              <EvoIconArticle16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconArticle24.name || "article-24"}</td>
-            <td>
-              <EvoIconArticle24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttention16.name || "attention-16"}</td>
-            <td>
-              <EvoIconAttention16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttention24.name || "attention-24"}</td>
-            <td>
-              <EvoIconAttention24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttention64.name || "attention-64"}</td>
-            <td>
-              <EvoIconAttention64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttentionFilled16.name || "attention-filled-16"}</td>
-            <td>
-              <EvoIconAttentionFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttentionFilled24.name || "attention-filled-24"}</td>
-            <td>
-              <EvoIconAttentionFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttentionTriangle16.name || "attention-triangle-16"}</td>
-            <td>
-              <EvoIconAttentionTriangle16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttentionTriangle24.name || "attention-triangle-24"}</td>
-            <td>
-              <EvoIconAttentionTriangle24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttentionTriangleFilled16.name || "attention-triangle-filled-16"}</td>
-            <td>
-              <EvoIconAttentionTriangleFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAttentionTriangleFilled24.name || "attention-triangle-filled-24"}</td>
-            <td>
-              <EvoIconAttentionTriangleFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAtv16.name || "atv-16"}</td>
-            <td>
-              <EvoIconAtv16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAtv24.name || "atv-24"}</td>
-            <td>
-              <EvoIconAtv24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioHigh16.name || "audio-high-16"}</td>
-            <td>
-              <EvoIconAudioHigh16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioHigh20.name || "audio-high-20"}</td>
-            <td>
-              <EvoIconAudioHigh20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioHigh24.name || "audio-high-24"}</td>
-            <td>
-              <EvoIconAudioHigh24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioLow16.name || "audio-low-16"}</td>
-            <td>
-              <EvoIconAudioLow16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioOff16.name || "audio-off-16"}</td>
-            <td>
-              <EvoIconAudioOff16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioOff20.name || "audio-off-20"}</td>
-            <td>
-              <EvoIconAudioOff20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAudioOff24.name || "audio-off-24"}</td>
-            <td>
-              <EvoIconAudioOff24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAuthenticityGuarantee16.name || "authenticity-guarantee-16"}</td>
-            <td>
-              <EvoIconAuthenticityGuarantee16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAuthenticityGuarantee24.name || "authenticity-guarantee-24"}</td>
-            <td>
-              <EvoIconAuthenticityGuarantee24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAuthenticityGuaranteeFilled16.name || "authenticity-guarantee-filled-16"}</td>
-            <td>
-              <EvoIconAuthenticityGuaranteeFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAuthenticityGuaranteeFilled16Colored.name || "authenticity-guarantee-filled-16-colored"}</td>
-            <td>
-              <EvoIconAuthenticityGuaranteeFilled16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAuthenticityGuaranteeFilled24.name || "authenticity-guarantee-filled-24"}</td>
-            <td>
-              <EvoIconAuthenticityGuaranteeFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAuthenticityGuaranteeFilled24Colored.name || "authenticity-guarantee-filled-24-colored"}</td>
-            <td>
-              <EvoIconAuthenticityGuaranteeFilled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAutoAdjust16.name || "auto-adjust-16"}</td>
-            <td>
-              <EvoIconAutoAdjust16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAutoAdjust24.name || "auto-adjust-24"}</td>
-            <td>
-              <EvoIconAutoAdjust24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconAvatarSignedOut.name || "avatar-signed-out"}</td>
-            <td>
-              <EvoIconAvatarSignedOut {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBackgroundRemoval16.name || "background-removal-16"}</td>
-            <td>
-              <EvoIconBackgroundRemoval16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBackgroundRemoval24.name || "background-removal-24"}</td>
-            <td>
-              <EvoIconBackgroundRemoval24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBancontact12Colored.name || "bancontact-12-colored"}</td>
-            <td>
-              <EvoIconBancontact12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBancontact18Colored.name || "bancontact-18-colored"}</td>
-            <td>
-              <EvoIconBancontact18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBancontact24Colored.name || "bancontact-24-colored"}</td>
-            <td>
-              <EvoIconBancontact24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBancontact32Colored.name || "bancontact-32-colored"}</td>
-            <td>
-              <EvoIconBancontact32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBank16.name || "bank-16"}</td>
-            <td>
-              <EvoIconBank16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBank20.name || "bank-20"}</td>
-            <td>
-              <EvoIconBank20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBank24.name || "bank-24"}</td>
-            <td>
-              <EvoIconBank24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBank64.name || "bank-64"}</td>
-            <td>
-              <EvoIconBank64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankAccount12Colored.name || "bank-account-12-colored"}</td>
-            <td>
-              <EvoIconBankAccount12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankAccount18Colored.name || "bank-account-18-colored"}</td>
-            <td>
-              <EvoIconBankAccount18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankAccount24Colored.name || "bank-account-24-colored"}</td>
-            <td>
-              <EvoIconBankAccount24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankAccount32Colored.name || "bank-account-32-colored"}</td>
-            <td>
-              <EvoIconBankAccount32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankGroupLogo24Colored.name || "bank-group-logo-24-colored"}</td>
-            <td>
-              <EvoIconBankGroupLogo24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankOfAmerica12Colored.name || "bank-of-america-12-colored"}</td>
-            <td>
-              <EvoIconBankOfAmerica12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankOfAmerica18Colored.name || "bank-of-america-18-colored"}</td>
-            <td>
-              <EvoIconBankOfAmerica18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankOfAmerica24Colored.name || "bank-of-america-24-colored"}</td>
-            <td>
-              <EvoIconBankOfAmerica24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBankOfAmerica32Colored.name || "bank-of-america-32-colored"}</td>
-            <td>
-              <EvoIconBankOfAmerica32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBarChart16.name || "bar-chart-16"}</td>
-            <td>
-              <EvoIconBarChart16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBarChart24.name || "bar-chart-24"}</td>
-            <td>
-              <EvoIconBarChart24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBatteryWaste48.name || "battery-waste-48"}</td>
-            <td>
-              <EvoIconBatteryWaste48 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBids12.name || "bids-12"}</td>
-            <td>
-              <EvoIconBids12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBids16.name || "bids-16"}</td>
-            <td>
-              <EvoIconBids16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBids24.name || "bids-24"}</td>
-            <td>
-              <EvoIconBids24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBids64.name || "bids-64"}</td>
-            <td>
-              <EvoIconBids64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBoat16.name || "boat-16"}</td>
-            <td>
-              <EvoIconBoat16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBoat24.name || "boat-24"}</td>
-            <td>
-              <EvoIconBoat24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBook16.name || "book-16"}</td>
-            <td>
-              <EvoIconBook16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBook24.name || "book-24"}</td>
-            <td>
-              <EvoIconBook24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBookmark16.name || "bookmark-16"}</td>
-            <td>
-              <EvoIconBookmark16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBookmark24.name || "bookmark-24"}</td>
-            <td>
-              <EvoIconBookmark24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBookmarkFilled16.name || "bookmark-filled-16"}</td>
-            <td>
-              <EvoIconBookmarkFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBookmarkFilled24.name || "bookmark-filled-24"}</td>
-            <td>
-              <EvoIconBookmarkFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBrandAuthorizedSeller16.name || "brand-authorized-seller-16"}</td>
-            <td>
-              <EvoIconBrandAuthorizedSeller16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBrandAuthorizedSeller24.name || "brand-authorized-seller-24"}</td>
-            <td>
-              <EvoIconBrandAuthorizedSeller24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBrightness16.name || "brightness-16"}</td>
-            <td>
-              <EvoIconBrightness16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBrightness20.name || "brightness-20"}</td>
-            <td>
-              <EvoIconBrightness20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconBrightness24.name || "brightness-24"}</td>
-            <td>
-              <EvoIconBrightness24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCalendar16.name || "calendar-16"}</td>
-            <td>
-              <EvoIconCalendar16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCalendar24.name || "calendar-24"}</td>
-            <td>
-              <EvoIconCalendar24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCalendar64.name || "calendar-64"}</td>
-            <td>
-              <EvoIconCalendar64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCamera16.name || "camera-16"}</td>
-            <td>
-              <EvoIconCamera16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCamera24.name || "camera-24"}</td>
-            <td>
-              <EvoIconCamera24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCamera64.name || "camera-64"}</td>
-            <td>
-              <EvoIconCamera64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCapitalOne12Colored.name || "capital-one-12-colored"}</td>
-            <td>
-              <EvoIconCapitalOne12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCapitalOne18Colored.name || "capital-one-18-colored"}</td>
-            <td>
-              <EvoIconCapitalOne18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCapitalOne24Colored.name || "capital-one-24-colored"}</td>
-            <td>
-              <EvoIconCapitalOne24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCapitalOne32Colored.name || "capital-one-32-colored"}</td>
-            <td>
-              <EvoIconCapitalOne32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCar16.name || "car-16"}</td>
-            <td>
-              <EvoIconCar16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCar24.name || "car-24"}</td>
-            <td>
-              <EvoIconCar24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarBrake16.name || "car-brake-16"}</td>
-            <td>
-              <EvoIconCarBrake16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarBrake24.name || "car-brake-24"}</td>
-            <td>
-              <EvoIconCarBrake24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCardStack64.name || "card-stack-64"}</td>
-            <td>
-              <EvoIconCardStack64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarnet12Colored.name || "carnet-12-colored"}</td>
-            <td>
-              <EvoIconCarnet12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarnet18Colored.name || "carnet-18-colored"}</td>
-            <td>
-              <EvoIconCarnet18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarnet24Colored.name || "carnet-24-colored"}</td>
-            <td>
-              <EvoIconCarnet24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarnet32Colored.name || "carnet-32-colored"}</td>
-            <td>
-              <EvoIconCarnet32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCarryon24.name || "carryon-24"}</td>
-            <td>
-              <EvoIconCarryon24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCart16.name || "cart-16"}</td>
-            <td>
-              <EvoIconCart16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCart20.name || "cart-20"}</td>
-            <td>
-              <EvoIconCart20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCart24.name || "cart-24"}</td>
-            <td>
-              <EvoIconCart24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCart64.name || "cart-64"}</td>
-            <td>
-              <EvoIconCart64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCartAdd16.name || "cart-add-16"}</td>
-            <td>
-              <EvoIconCartAdd16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCartAdd20.name || "cart-add-20"}</td>
-            <td>
-              <EvoIconCartAdd20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCartAdd24.name || "cart-add-24"}</td>
-            <td>
-              <EvoIconCartAdd24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCashapp12Colored.name || "cashapp-12-colored"}</td>
-            <td>
-              <EvoIconCashapp12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCashapp18Colored.name || "cashapp-18-colored"}</td>
-            <td>
-              <EvoIconCashapp18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCashapp24Colored.name || "cashapp-24-colored"}</td>
-            <td>
-              <EvoIconCashapp24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCashapp32Colored.name || "cashapp-32-colored"}</td>
-            <td>
-              <EvoIconCashapp32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCategories16.name || "categories-16"}</td>
-            <td>
-              <EvoIconCategories16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCategories24.name || "categories-24"}</td>
-            <td>
-              <EvoIconCategories24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCb12Colored.name || "cb-12-colored"}</td>
-            <td>
-              <EvoIconCb12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCb18Colored.name || "cb-18-colored"}</td>
-            <td>
-              <EvoIconCb18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCb24Colored.name || "cb-24-colored"}</td>
-            <td>
-              <EvoIconCb24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCb32Colored.name || "cb-32-colored"}</td>
-            <td>
-              <EvoIconCb32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCcdChargerIncluded.name || "ccd-charger-included"}</td>
-            <td>
-              <EvoIconCcdChargerIncluded {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCcdChargerNotIncluded.name || "ccd-charger-not-included"}</td>
-            <td>
-              <EvoIconCcdChargerNotIncluded {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCcdTop.name || "ccd-top"}</td>
-            <td>
-              <EvoIconCcdTop {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCertifiedRecycled16.name || "certified-recycled-16"}</td>
-            <td>
-              <EvoIconCertifiedRecycled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCertifiedRecycled24.name || "certified-recycled-24"}</td>
-            <td>
-              <EvoIconCertifiedRecycled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChair16.name || "chair-16"}</td>
-            <td>
-              <EvoIconChair16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChair24.name || "chair-24"}</td>
-            <td>
-              <EvoIconChair24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChase12Colored.name || "chase-12-colored"}</td>
-            <td>
-              <EvoIconChase12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChase18Colored.name || "chase-18-colored"}</td>
-            <td>
-              <EvoIconChase18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChase24Colored.name || "chase-24-colored"}</td>
-            <td>
-              <EvoIconChase24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChase32Colored.name || "chase-32-colored"}</td>
-            <td>
-              <EvoIconChase32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChat16.name || "chat-16"}</td>
-            <td>
-              <EvoIconChat16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChat24.name || "chat-24"}</td>
-            <td>
-              <EvoIconChat24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChat64.name || "chat-64"}</td>
-            <td>
-              <EvoIconChat64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckIn24.name || "check-in-24"}</td>
-            <td>
-              <EvoIconCheckIn24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckboxChecked18.name || "checkbox-checked-18"}</td>
-            <td>
-              <EvoIconCheckboxChecked18 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckboxChecked24.name || "checkbox-checked-24"}</td>
-            <td>
-              <EvoIconCheckboxChecked24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckboxMixed18.name || "checkbox-mixed-18"}</td>
-            <td>
-              <EvoIconCheckboxMixed18 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckboxMixed24.name || "checkbox-mixed-24"}</td>
-            <td>
-              <EvoIconCheckboxMixed24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckboxUnchecked18.name || "checkbox-unchecked-18"}</td>
-            <td>
-              <EvoIconCheckboxUnchecked18 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckboxUnchecked24.name || "checkbox-unchecked-24"}</td>
-            <td>
-              <EvoIconCheckboxUnchecked24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCheckmark24.name || "checkmark-24"}</td>
-            <td>
-              <EvoIconCheckmark24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronDown12.name || "chevron-down-12"}</td>
-            <td>
-              <EvoIconChevronDown12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronDown16.name || "chevron-down-16"}</td>
-            <td>
-              <EvoIconChevronDown16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronDown20.name || "chevron-down-20"}</td>
-            <td>
-              <EvoIconChevronDown20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronDown24.name || "chevron-down-24"}</td>
-            <td>
-              <EvoIconChevronDown24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronLeft12.name || "chevron-left-12"}</td>
-            <td>
-              <EvoIconChevronLeft12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronLeft16.name || "chevron-left-16"}</td>
-            <td>
-              <EvoIconChevronLeft16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronLeft20.name || "chevron-left-20"}</td>
-            <td>
-              <EvoIconChevronLeft20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronLeft24.name || "chevron-left-24"}</td>
-            <td>
-              <EvoIconChevronLeft24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronRight12.name || "chevron-right-12"}</td>
-            <td>
-              <EvoIconChevronRight12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronRight16.name || "chevron-right-16"}</td>
-            <td>
-              <EvoIconChevronRight16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronRight20.name || "chevron-right-20"}</td>
-            <td>
-              <EvoIconChevronRight20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronRight24.name || "chevron-right-24"}</td>
-            <td>
-              <EvoIconChevronRight24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronUp12.name || "chevron-up-12"}</td>
-            <td>
-              <EvoIconChevronUp12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronUp16.name || "chevron-up-16"}</td>
-            <td>
-              <EvoIconChevronUp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronUp20.name || "chevron-up-20"}</td>
-            <td>
-              <EvoIconChevronUp20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChevronUp24.name || "chevron-up-24"}</td>
-            <td>
-              <EvoIconChevronUp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChineseCoin16.name || "chinese-coin-16"}</td>
-            <td>
-              <EvoIconChineseCoin16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconChineseCoin24.name || "chinese-coin-24"}</td>
-            <td>
-              <EvoIconChineseCoin24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCiti12Colored.name || "citi-12-colored"}</td>
-            <td>
-              <EvoIconCiti12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCiti18Colored.name || "citi-18-colored"}</td>
-            <td>
-              <EvoIconCiti18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCiti24Colored.name || "citi-24-colored"}</td>
-            <td>
-              <EvoIconCiti24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCiti32Colored.name || "citi-32-colored"}</td>
-            <td>
-              <EvoIconCiti32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClear16.name || "clear-16"}</td>
-            <td>
-              <EvoIconClear16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClear20.name || "clear-20"}</td>
-            <td>
-              <EvoIconClear20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClear24.name || "clear-24"}</td>
-            <td>
-              <EvoIconClear24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClickToCall16.name || "click-to-call-16"}</td>
-            <td>
-              <EvoIconClickToCall16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClickToCall24.name || "click-to-call-24"}</td>
-            <td>
-              <EvoIconClickToCall24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClock12.name || "clock-12"}</td>
-            <td>
-              <EvoIconClock12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClock16.name || "clock-16"}</td>
-            <td>
-              <EvoIconClock16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClock24.name || "clock-24"}</td>
-            <td>
-              <EvoIconClock24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClock64.name || "clock-64"}</td>
-            <td>
-              <EvoIconClock64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClockFast16.name || "clock-fast-16"}</td>
-            <td>
-              <EvoIconClockFast16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClockFast24.name || "clock-fast-24"}</td>
-            <td>
-              <EvoIconClockFast24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClose12.name || "close-12"}</td>
-            <td>
-              <EvoIconClose12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClose16.name || "close-16"}</td>
-            <td>
-              <EvoIconClose16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClose20.name || "close-20"}</td>
-            <td>
-              <EvoIconClose20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClose24.name || "close-24"}</td>
-            <td>
-              <EvoIconClose24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClosedCaption16.name || "closed-caption-16"}</td>
-            <td>
-              <EvoIconClosedCaption16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClosedCaption24.name || "closed-caption-24"}</td>
-            <td>
-              <EvoIconClosedCaption24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClosedCaptionFilled16.name || "closed-caption-filled-16"}</td>
-            <td>
-              <EvoIconClosedCaptionFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconClosedCaptionFilled24.name || "closed-caption-filled-24"}</td>
-            <td>
-              <EvoIconClosedCaptionFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCoin24.name || "coin-24"}</td>
-            <td>
-              <EvoIconCoin24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCoinBattery48.name || "coin-battery-48"}</td>
-            <td>
-              <EvoIconCoinBattery48 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCollections16.name || "collections-16"}</td>
-            <td>
-              <EvoIconCollections16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCollections24.name || "collections-24"}</td>
-            <td>
-              <EvoIconCollections24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCondensedGrid24.name || "condensed-grid-24"}</td>
-            <td>
-              <EvoIconCondensedGrid24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCondensedGridFilled24.name || "condensed-grid-filled-24"}</td>
-            <td>
-              <EvoIconCondensedGridFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconConfirmation16.name || "confirmation-16"}</td>
-            <td>
-              <EvoIconConfirmation16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconConfirmation24.name || "confirmation-24"}</td>
-            <td>
-              <EvoIconConfirmation24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconConfirmation64.name || "confirmation-64"}</td>
-            <td>
-              <EvoIconConfirmation64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconConfirmationFilled12.name || "confirmation-filled-12"}</td>
-            <td>
-              <EvoIconConfirmationFilled12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconConfirmationFilled16.name || "confirmation-filled-16"}</td>
-            <td>
-              <EvoIconConfirmationFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconConfirmationFilled24.name || "confirmation-filled-24"}</td>
-            <td>
-              <EvoIconConfirmationFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconContract16.name || "contract-16"}</td>
-            <td>
-              <EvoIconContract16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconContrast24.name || "contrast-24"}</td>
-            <td>
-              <EvoIconContrast24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCopy16.name || "copy-16"}</td>
-            <td>
-              <EvoIconCopy16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCopy24.name || "copy-24"}</td>
-            <td>
-              <EvoIconCopy24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCoupon16.name || "coupon-16"}</td>
-            <td>
-              <EvoIconCoupon16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCoupon20.name || "coupon-20"}</td>
-            <td>
-              <EvoIconCoupon20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCoupon24.name || "coupon-24"}</td>
-            <td>
-              <EvoIconCoupon24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCard16.name || "credit-card-16"}</td>
-            <td>
-              <EvoIconCreditCard16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCard20.name || "credit-card-20"}</td>
-            <td>
-              <EvoIconCreditCard20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCard24.name || "credit-card-24"}</td>
-            <td>
-              <EvoIconCreditCard24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCard64.name || "credit-card-64"}</td>
-            <td>
-              <EvoIconCreditCard64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCardCvvBack20.name || "credit-card-cvv-back-20"}</td>
-            <td>
-              <EvoIconCreditCardCvvBack20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCardCvvBack24.name || "credit-card-cvv-back-24"}</td>
-            <td>
-              <EvoIconCreditCardCvvBack24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCardCvvFront20.name || "credit-card-cvv-front-20"}</td>
-            <td>
-              <EvoIconCreditCardCvvFront20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCreditCardCvvFront24.name || "credit-card-cvv-front-24"}</td>
-            <td>
-              <EvoIconCreditCardCvvFront24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCrop24.name || "crop-24"}</td>
-            <td>
-              <EvoIconCrop24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCustomize16.name || "customize-16"}</td>
-            <td>
-              <EvoIconCustomize16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconCustomize24.name || "customize-24"}</td>
-            <td>
-              <EvoIconCustomize24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDelete16.name || "delete-16"}</td>
-            <td>
-              <EvoIconDelete16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDelete20.name || "delete-20"}</td>
-            <td>
-              <EvoIconDelete20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDelete24.name || "delete-24"}</td>
-            <td>
-              <EvoIconDelete24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityCompact16.name || "density-compact-16"}</td>
-            <td>
-              <EvoIconDensityCompact16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityCompact24.name || "density-compact-24"}</td>
-            <td>
-              <EvoIconDensityCompact24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityDefault16.name || "density-default-16"}</td>
-            <td>
-              <EvoIconDensityDefault16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityDefault24.name || "density-default-24"}</td>
-            <td>
-              <EvoIconDensityDefault24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityRelaxed16.name || "density-relaxed-16"}</td>
-            <td>
-              <EvoIconDensityRelaxed16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityRelaxed24.name || "density-relaxed-24"}</td>
-            <td>
-              <EvoIconDensityRelaxed24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityRowCompact16.name || "density-row-compact-16"}</td>
-            <td>
-              <EvoIconDensityRowCompact16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityRowCompact24.name || "density-row-compact-24"}</td>
-            <td>
-              <EvoIconDensityRowCompact24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityRowRelaxed16.name || "density-row-relaxed-16"}</td>
-            <td>
-              <EvoIconDensityRowRelaxed16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDensityRowRelaxed24.name || "density-row-relaxed-24"}</td>
-            <td>
-              <EvoIconDensityRowRelaxed24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDesktop16.name || "desktop-16"}</td>
-            <td>
-              <EvoIconDesktop16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDesktop20.name || "desktop-20"}</td>
-            <td>
-              <EvoIconDesktop20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDesktop24.name || "desktop-24"}</td>
-            <td>
-              <EvoIconDesktop24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiamond16.name || "diamond-16"}</td>
-            <td>
-              <EvoIconDiamond16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiamond24.name || "diamond-24"}</td>
-            <td>
-              <EvoIconDiamond24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiners12Colored.name || "diners-12-colored"}</td>
-            <td>
-              <EvoIconDiners12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiners18Colored.name || "diners-18-colored"}</td>
-            <td>
-              <EvoIconDiners18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiners24Colored.name || "diners-24-colored"}</td>
-            <td>
-              <EvoIconDiners24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiners32Colored.name || "diners-32-colored"}</td>
-            <td>
-              <EvoIconDiners32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDirectDebit12Colored.name || "direct-debit-12-colored"}</td>
-            <td>
-              <EvoIconDirectDebit12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDirectDebit18Colored.name || "direct-debit-18-colored"}</td>
-            <td>
-              <EvoIconDirectDebit18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDirectDebit24Colored.name || "direct-debit-24-colored"}</td>
-            <td>
-              <EvoIconDirectDebit24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDirectDebit32Colored.name || "direct-debit-32-colored"}</td>
-            <td>
-              <EvoIconDirectDebit32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDirectFromBrand16.name || "direct-from-brand-16"}</td>
-            <td>
-              <EvoIconDirectFromBrand16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDirectFromBrand24.name || "direct-from-brand-24"}</td>
-            <td>
-              <EvoIconDirectFromBrand24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscord24.name || "discord-24"}</td>
-            <td>
-              <EvoIconDiscord24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscount16.name || "discount-16"}</td>
-            <td>
-              <EvoIconDiscount16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscount24.name || "discount-24"}</td>
-            <td>
-              <EvoIconDiscount24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscountAuto16.name || "discount-auto-16"}</td>
-            <td>
-              <EvoIconDiscountAuto16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscountAuto24.name || "discount-auto-24"}</td>
-            <td>
-              <EvoIconDiscountAuto24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscover12Colored.name || "discover-12-colored"}</td>
-            <td>
-              <EvoIconDiscover12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscover18Colored.name || "discover-18-colored"}</td>
-            <td>
-              <EvoIconDiscover18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscover24Colored.name || "discover-24-colored"}</td>
-            <td>
-              <EvoIconDiscover24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDiscover32Colored.name || "discover-32-colored"}</td>
-            <td>
-              <EvoIconDiscover32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDollar16.name || "dollar-16"}</td>
-            <td>
-              <EvoIconDollar16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDollar24.name || "dollar-24"}</td>
-            <td>
-              <EvoIconDollar24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDollarOff24.name || "dollar-off-24"}</td>
-            <td>
-              <EvoIconDollarOff24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDownload16.name || "download-16"}</td>
-            <td>
-              <EvoIconDownload16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDownload20.name || "download-20"}</td>
-            <td>
-              <EvoIconDownload20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDownload24.name || "download-24"}</td>
-            <td>
-              <EvoIconDownload24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDragDrop16.name || "drag-drop-16"}</td>
-            <td>
-              <EvoIconDragDrop16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconDragDrop24.name || "drag-drop-24"}</td>
-            <td>
-              <EvoIconDragDrop24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayBalance12Colored.name || "ebay-balance-12-colored"}</td>
-            <td>
-              <EvoIconEbayBalance12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayBalance18Colored.name || "ebay-balance-18-colored"}</td>
-            <td>
-              <EvoIconEbayBalance18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayBalance24Colored.name || "ebay-balance-24-colored"}</td>
-            <td>
-              <EvoIconEbayBalance24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayBalance32Colored.name || "ebay-balance-32-colored"}</td>
-            <td>
-              <EvoIconEbayBalance32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayBucksLogo16Colored.name || "ebay-bucks-logo-16-colored"}</td>
-            <td>
-              <EvoIconEbayBucksLogo16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardBlack12Colored.name || "ebay-credit-card-black-12-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardBlack12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardBlack18Colored.name || "ebay-credit-card-black-18-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardBlack18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardBlack24Colored.name || "ebay-credit-card-black-24-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardBlack24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardBlack32Colored.name || "ebay-credit-card-black-32-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardBlack32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardPurple12Colored.name || "ebay-credit-card-purple-12-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardPurple12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardPurple18Colored.name || "ebay-credit-card-purple-18-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardPurple18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardPurple24Colored.name || "ebay-credit-card-purple-24-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardPurple24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardPurple32Colored.name || "ebay-credit-card-purple-32-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardPurple32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardWhite12Colored.name || "ebay-credit-card-white-12-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardWhite12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardWhite18Colored.name || "ebay-credit-card-white-18-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardWhite18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardWhite24Colored.name || "ebay-credit-card-white-24-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardWhite24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayCreditCardWhite32Colored.name || "ebay-credit-card-white-32-colored"}</td>
-            <td>
-              <EvoIconEbayCreditCardWhite32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayForCharity16.name || "ebay-for-charity-16"}</td>
-            <td>
-              <EvoIconEbayForCharity16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayForCharity24.name || "ebay-for-charity-24"}</td>
-            <td>
-              <EvoIconEbayForCharity24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayInternationalShipping16.name || "ebay-international-shipping-16"}</td>
-            <td>
-              <EvoIconEbayInternationalShipping16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayInternationalShipping24.name || "ebay-international-shipping-24"}</td>
-            <td>
-              <EvoIconEbayInternationalShipping24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayInternationalShipping64.name || "ebay-international-shipping-64"}</td>
-            <td>
-              <EvoIconEbayInternationalShipping64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayLive16.name || "ebay-live-16"}</td>
-            <td>
-              <EvoIconEbayLive16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayLive24.name || "ebay-live-24"}</td>
-            <td>
-              <EvoIconEbayLive24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayLogo16Colored.name || "ebay-logo-16-colored"}</td>
-            <td>
-              <EvoIconEbayLogo16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayMastercard12Colored.name || "ebay-mastercard-12-colored"}</td>
-            <td>
-              <EvoIconEbayMastercard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayMastercard18Colored.name || "ebay-mastercard-18-colored"}</td>
-            <td>
-              <EvoIconEbayMastercard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayMastercard24Colored.name || "ebay-mastercard-24-colored"}</td>
-            <td>
-              <EvoIconEbayMastercard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayMastercard32Colored.name || "ebay-mastercard-32-colored"}</td>
-            <td>
-              <EvoIconEbayMastercard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayMoneyBackGuaranteeLogo16Colored.name || "ebay-money-back-guarantee-logo-16-colored"}</td>
-            <td>
-              <EvoIconEbayMoneyBackGuaranteeLogo16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayPlus16.name || "ebay-plus-16"}</td>
-            <td>
-              <EvoIconEbayPlus16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayPlus24.name || "ebay-plus-24"}</td>
-            <td>
-              <EvoIconEbayPlus24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayPlusLogo16Colored.name || "ebay-plus-logo-16-colored"}</td>
-            <td>
-              <EvoIconEbayPlusLogo16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayPlusLogoDark16Colored.name || "ebay-plus-logo-dark-16-colored"}</td>
-            <td>
-              <EvoIconEbayPlusLogoDark16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayPreloved16.name || "ebay-preloved-16"}</td>
-            <td>
-              <EvoIconEbayPreloved16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayPreloved24.name || "ebay-preloved-24"}</td>
-            <td>
-              <EvoIconEbayPreloved24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayRefurbished16.name || "ebay-refurbished-16"}</td>
-            <td>
-              <EvoIconEbayRefurbished16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEbayRefurbished24.name || "ebay-refurbished-24"}</td>
-            <td>
-              <EvoIconEbayRefurbished24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEekArrow.name || "eek-arrow"}</td>
-            <td>
-              <EvoIconEekArrow {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEekRangeArrow.name || "eek-range-arrow"}</td>
-            <td>
-              <EvoIconEekRangeArrow {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEftpos12Colored.name || "eftpos-12-colored"}</td>
-            <td>
-              <EvoIconEftpos12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEftpos18Colored.name || "eftpos-18-colored"}</td>
-            <td>
-              <EvoIconEftpos18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEftpos24Colored.name || "eftpos-24-colored"}</td>
-            <td>
-              <EvoIconEftpos24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEftpos32Colored.name || "eftpos-32-colored"}</td>
-            <td>
-              <EvoIconEftpos32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconElo12Colored.name || "elo-12-colored"}</td>
-            <td>
-              <EvoIconElo12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconElo18Colored.name || "elo-18-colored"}</td>
-            <td>
-              <EvoIconElo18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconElo24Colored.name || "elo-24-colored"}</td>
-            <td>
-              <EvoIconElo24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconElo32Colored.name || "elo-32-colored"}</td>
-            <td>
-              <EvoIconElo32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEscrowCard12Colored.name || "escrow-card-12-colored"}</td>
-            <td>
-              <EvoIconEscrowCard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEscrowCard18Colored.name || "escrow-card-18-colored"}</td>
-            <td>
-              <EvoIconEscrowCard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEscrowCard24Colored.name || "escrow-card-24-colored"}</td>
-            <td>
-              <EvoIconEscrowCard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEscrowCard32Colored.name || "escrow-card-32-colored"}</td>
-            <td>
-              <EvoIconEscrowCard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEuro16.name || "euro-16"}</td>
-            <td>
-              <EvoIconEuro16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEuro24.name || "euro-24"}</td>
-            <td>
-              <EvoIconEuro24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEuropeanConformity48.name || "european-conformity-48"}</td>
-            <td>
-              <EvoIconEuropeanConformity48 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExclude16.name || "exclude-16"}</td>
-            <td>
-              <EvoIconExclude16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExclude24.name || "exclude-24"}</td>
-            <td>
-              <EvoIconExclude24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExclude64.name || "exclude-64"}</td>
-            <td>
-              <EvoIconExclude64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExpand16.name || "expand-16"}</td>
-            <td>
-              <EvoIconExpand16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExplore16.name || "explore-16"}</td>
-            <td>
-              <EvoIconExplore16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExplore24.name || "explore-24"}</td>
-            <td>
-              <EvoIconExplore24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExternalLink16.name || "external-link-16"}</td>
-            <td>
-              <EvoIconExternalLink16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExternalLink20.name || "external-link-20"}</td>
-            <td>
-              <EvoIconExternalLink20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconExternalLink24.name || "external-link-24"}</td>
-            <td>
-              <EvoIconExternalLink24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEye16.name || "eye-16"}</td>
-            <td>
-              <EvoIconEye16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconEye24.name || "eye-24"}</td>
-            <td>
-              <EvoIconEye24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFaceHappiest24.name || "face-happiest-24"}</td>
-            <td>
-              <EvoIconFaceHappiest24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFaceHappy16.name || "face-happy-16"}</td>
-            <td>
-              <EvoIconFaceHappy16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFaceHappy24.name || "face-happy-24"}</td>
-            <td>
-              <EvoIconFaceHappy24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFaceNeutral24.name || "face-neutral-24"}</td>
-            <td>
-              <EvoIconFaceNeutral24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFaceSad24.name || "face-sad-24"}</td>
-            <td>
-              <EvoIconFaceSad24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFaceSaddest24.name || "face-saddest-24"}</td>
-            <td>
-              <EvoIconFaceSaddest24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFacebook24.name || "facebook-24"}</td>
-            <td>
-              <EvoIconFacebook24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFacebookMessenger24.name || "facebook-messenger-24"}</td>
-            <td>
-              <EvoIconFacebookMessenger24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFallLeaf16.name || "fall-leaf-16"}</td>
-            <td>
-              <EvoIconFallLeaf16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFallLeaf24.name || "fall-leaf-24"}</td>
-            <td>
-              <EvoIconFallLeaf24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFastForward16.name || "fast-forward-16"}</td>
-            <td>
-              <EvoIconFastForward16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedback16.name || "feedback-16"}</td>
-            <td>
-              <EvoIconFeedback16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedback20.name || "feedback-20"}</td>
-            <td>
-              <EvoIconFeedback20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedback24.name || "feedback-24"}</td>
-            <td>
-              <EvoIconFeedback24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackError16.name || "feedback-error-16"}</td>
-            <td>
-              <EvoIconFeedbackError16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackError24.name || "feedback-error-24"}</td>
-            <td>
-              <EvoIconFeedbackError24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackNegative16.name || "feedback-negative-16"}</td>
-            <td>
-              <EvoIconFeedbackNegative16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackNeutral16.name || "feedback-neutral-16"}</td>
-            <td>
-              <EvoIconFeedbackNeutral16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackPositive16.name || "feedback-positive-16"}</td>
-            <td>
-              <EvoIconFeedbackPositive16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackReceived16.name || "feedback-received-16"}</td>
-            <td>
-              <EvoIconFeedbackReceived16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFeedbackReceived24.name || "feedback-received-24"}</td>
-            <td>
-              <EvoIconFeedbackReceived24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFile16.name || "file-16"}</td>
-            <td>
-              <EvoIconFile16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFile24.name || "file-24"}</td>
-            <td>
-              <EvoIconFile24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFilter16.name || "filter-16"}</td>
-            <td>
-              <EvoIconFilter16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFilter24.name || "filter-24"}</td>
-            <td>
-              <EvoIconFilter24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFingerprint16.name || "fingerprint-16"}</td>
-            <td>
-              <EvoIconFingerprint16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFingerprint24.name || "fingerprint-24"}</td>
-            <td>
-              <EvoIconFingerprint24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFingerprint64.name || "fingerprint-64"}</td>
-            <td>
-              <EvoIconFingerprint64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlag16.name || "flag-16"}</td>
-            <td>
-              <EvoIconFlag16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlag24.name || "flag-24"}</td>
-            <td>
-              <EvoIconFlag24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlagFilled16.name || "flag-filled-16"}</td>
-            <td>
-              <EvoIconFlagFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlagFilled24.name || "flag-filled-24"}</td>
-            <td>
-              <EvoIconFlagFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlash24.name || "flash-24"}</td>
-            <td>
-              <EvoIconFlash24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlashAuto24.name || "flash-auto-24"}</td>
-            <td>
-              <EvoIconFlashAuto24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFlashOff24.name || "flash-off-24"}</td>
-            <td>
-              <EvoIconFlashOff24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFolder16.name || "folder-16"}</td>
-            <td>
-              <EvoIconFolder16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFolder24.name || "folder-24"}</td>
-            <td>
-              <EvoIconFolder24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFolderAdd16.name || "folder-add-16"}</td>
-            <td>
-              <EvoIconFolderAdd16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFolderAdd24.name || "folder-add-24"}</td>
-            <td>
-              <EvoIconFolderAdd24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconForklift16.name || "forklift-16"}</td>
-            <td>
-              <EvoIconForklift16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconForklift24.name || "forklift-24"}</td>
-            <td>
-              <EvoIconForklift24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFranc16.name || "franc-16"}</td>
-            <td>
-              <EvoIconFranc16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFranc24.name || "franc-24"}</td>
-            <td>
-              <EvoIconFranc24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFreeWarranty16.name || "free-warranty-16"}</td>
-            <td>
-              <EvoIconFreeWarranty16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFreeWarranty24.name || "free-warranty-24"}</td>
-            <td>
-              <EvoIconFreeWarranty24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFullView16.name || "full-view-16"}</td>
-            <td>
-              <EvoIconFullView16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFullView24.name || "full-view-24"}</td>
-            <td>
-              <EvoIconFullView24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFullViewFilled16.name || "full-view-filled-16"}</td>
-            <td>
-              <EvoIconFullViewFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconFullViewFilled24.name || "full-view-filled-24"}</td>
-            <td>
-              <EvoIconFullViewFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGallery16.name || "gallery-16"}</td>
-            <td>
-              <EvoIconGallery16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGallery24.name || "gallery-24"}</td>
-            <td>
-              <EvoIconGallery24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGeneralCard12Colored.name || "general-card-12-colored"}</td>
-            <td>
-              <EvoIconGeneralCard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGeneralCard18Colored.name || "general-card-18-colored"}</td>
-            <td>
-              <EvoIconGeneralCard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGeneralCard24Colored.name || "general-card-24-colored"}</td>
-            <td>
-              <EvoIconGeneralCard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGeneralCard32Colored.name || "general-card-32-colored"}</td>
-            <td>
-              <EvoIconGeneralCard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGenericCard12Colored.name || "generic-card-12-colored"}</td>
-            <td>
-              <EvoIconGenericCard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGenericCard18Colored.name || "generic-card-18-colored"}</td>
-            <td>
-              <EvoIconGenericCard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGenericCard24Colored.name || "generic-card-24-colored"}</td>
-            <td>
-              <EvoIconGenericCard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGenericCard32Colored.name || "generic-card-32-colored"}</td>
-            <td>
-              <EvoIconGenericCard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGift16.name || "gift-16"}</td>
-            <td>
-              <EvoIconGift16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGift20.name || "gift-20"}</td>
-            <td>
-              <EvoIconGift20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGift24.name || "gift-24"}</td>
-            <td>
-              <EvoIconGift24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGift64.name || "gift-64"}</td>
-            <td>
-              <EvoIconGift64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGiftCard12Colored.name || "gift-card-12-colored"}</td>
-            <td>
-              <EvoIconGiftCard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGiftCard18Colored.name || "gift-card-18-colored"}</td>
-            <td>
-              <EvoIconGiftCard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGiftCard24Colored.name || "gift-card-24-colored"}</td>
-            <td>
-              <EvoIconGiftCard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGiftCard32Colored.name || "gift-card-32-colored"}</td>
-            <td>
-              <EvoIconGiftCard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGirocard12Colored.name || "girocard-12-colored"}</td>
-            <td>
-              <EvoIconGirocard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGirocard18Colored.name || "girocard-18-colored"}</td>
-            <td>
-              <EvoIconGirocard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGirocard24Colored.name || "girocard-24-colored"}</td>
-            <td>
-              <EvoIconGirocard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGirocard32Colored.name || "girocard-32-colored"}</td>
-            <td>
-              <EvoIconGirocard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGithub24.name || "github-24"}</td>
-            <td>
-              <EvoIconGithub24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGlasses24.name || "glasses-24"}</td>
-            <td>
-              <EvoIconGlasses24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGlasses64.name || "glasses-64"}</td>
-            <td>
-              <EvoIconGlasses64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGoogle24.name || "google-24"}</td>
-            <td>
-              <EvoIconGoogle24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGooglePay12Colored.name || "google-pay-12-colored"}</td>
-            <td>
-              <EvoIconGooglePay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGooglePay18Colored.name || "google-pay-18-colored"}</td>
-            <td>
-              <EvoIconGooglePay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGooglePay24Colored.name || "google-pay-24-colored"}</td>
-            <td>
-              <EvoIconGooglePay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGooglePay32Colored.name || "google-pay-32-colored"}</td>
-            <td>
-              <EvoIconGooglePay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGraph16.name || "graph-16"}</td>
-            <td>
-              <EvoIconGraph16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGraph24.name || "graph-24"}</td>
-            <td>
-              <EvoIconGraph24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGraph64.name || "graph-64"}</td>
-            <td>
-              <EvoIconGraph64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGraphDynamic16.name || "graph-dynamic-16"}</td>
-            <td>
-              <EvoIconGraphDynamic16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGraphDynamic24.name || "graph-dynamic-24"}</td>
-            <td>
-              <EvoIconGraphDynamic24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGridView16.name || "grid-view-16"}</td>
-            <td>
-              <EvoIconGridView16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGridView24.name || "grid-view-24"}</td>
-            <td>
-              <EvoIconGridView24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGridViewFilled16.name || "grid-view-filled-16"}</td>
-            <td>
-              <EvoIconGridViewFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGridViewFilled24.name || "grid-view-filled-24"}</td>
-            <td>
-              <EvoIconGridViewFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGuaranteedFitFilled16.name || "guaranteed-fit-filled-16"}</td>
-            <td>
-              <EvoIconGuaranteedFitFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconGuaranteedFitFilled24.name || "guaranteed-fit-filled-24"}</td>
-            <td>
-              <EvoIconGuaranteedFitFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHandSwipe40.name || "hand-swipe-40"}</td>
-            <td>
-              <EvoIconHandSwipe40 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHandbag16.name || "handbag-16"}</td>
-            <td>
-              <EvoIconHandbag16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHandbag24.name || "handbag-24"}</td>
-            <td>
-              <EvoIconHandbag24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHanger16.name || "hanger-16"}</td>
-            <td>
-              <EvoIconHanger16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHanger24.name || "hanger-24"}</td>
-            <td>
-              <EvoIconHanger24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeadlight16.name || "headlight-16"}</td>
-            <td>
-              <EvoIconHeadlight16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeadlight24.name || "headlight-24"}</td>
-            <td>
-              <EvoIconHeadlight24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeadphone16.name || "headphone-16"}</td>
-            <td>
-              <EvoIconHeadphone16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeadphone24.name || "headphone-24"}</td>
-            <td>
-              <EvoIconHeadphone24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeart16.name || "heart-16"}</td>
-            <td>
-              <EvoIconHeart16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeart20.name || "heart-20"}</td>
-            <td>
-              <EvoIconHeart20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeart24.name || "heart-24"}</td>
-            <td>
-              <EvoIconHeart24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeartFilled16.name || "heart-filled-16"}</td>
-            <td>
-              <EvoIconHeartFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeartFilled20.name || "heart-filled-20"}</td>
-            <td>
-              <EvoIconHeartFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHeartFilled24.name || "heart-filled-24"}</td>
-            <td>
-              <EvoIconHeartFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHelp16.name || "help-16"}</td>
-            <td>
-              <EvoIconHelp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHelp20.name || "help-20"}</td>
-            <td>
-              <EvoIconHelp20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHelp24.name || "help-24"}</td>
-            <td>
-              <EvoIconHelp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHelpOutline16.name || "help-outline-16"}</td>
-            <td>
-              <EvoIconHelpOutline16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHelpOutline20.name || "help-outline-20"}</td>
-            <td>
-              <EvoIconHelpOutline20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHelpOutline24.name || "help-outline-24"}</td>
-            <td>
-              <EvoIconHelpOutline24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHide16.name || "hide-16"}</td>
-            <td>
-              <EvoIconHide16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHide24.name || "hide-24"}</td>
-            <td>
-              <EvoIconHide24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHistory16.name || "history-16"}</td>
-            <td>
-              <EvoIconHistory16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHistory24.name || "history-24"}</td>
-            <td>
-              <EvoIconHistory24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHistory64.name || "history-64"}</td>
-            <td>
-              <EvoIconHistory64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHome16.name || "home-16"}</td>
-            <td>
-              <EvoIconHome16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHome20.name || "home-20"}</td>
-            <td>
-              <EvoIconHome20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHome24.name || "home-24"}</td>
-            <td>
-              <EvoIconHome24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconHomeFilled24.name || "home-filled-24"}</td>
-            <td>
-              <EvoIconHomeFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconImage16.name || "image-16"}</td>
-            <td>
-              <EvoIconImage16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconImage24.name || "image-24"}</td>
-            <td>
-              <EvoIconImage24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconImage64.name || "image-64"}</td>
-            <td>
-              <EvoIconImage64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInbox16.name || "inbox-16"}</td>
-            <td>
-              <EvoIconInbox16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInbox24.name || "inbox-24"}</td>
-            <td>
-              <EvoIconInbox24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformation12.name || "information-12"}</td>
-            <td>
-              <EvoIconInformation12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformation16.name || "information-16"}</td>
-            <td>
-              <EvoIconInformation16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformation20.name || "information-20"}</td>
-            <td>
-              <EvoIconInformation20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformation24.name || "information-24"}</td>
-            <td>
-              <EvoIconInformation24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformationFilled16.name || "information-filled-16"}</td>
-            <td>
-              <EvoIconInformationFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformationFilled20.name || "information-filled-20"}</td>
-            <td>
-              <EvoIconInformationFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInformationFilled24.name || "information-filled-24"}</td>
-            <td>
-              <EvoIconInformationFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInspect16.name || "inspect-16"}</td>
-            <td>
-              <EvoIconInspect16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInspect24.name || "inspect-24"}</td>
-            <td>
-              <EvoIconInspect24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInspect64.name || "inspect-64"}</td>
-            <td>
-              <EvoIconInspect64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInstagram24.name || "instagram-24"}</td>
-            <td>
-              <EvoIconInstagram24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInterac12Colored.name || "interac-12-colored"}</td>
-            <td>
-              <EvoIconInterac12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInterac18Colored.name || "interac-18-colored"}</td>
-            <td>
-              <EvoIconInterac18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInterac24Colored.name || "interac-24-colored"}</td>
-            <td>
-              <EvoIconInterac24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconInterac32Colored.name || "interac-32-colored"}</td>
-            <td>
-              <EvoIconInterac32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconItemList16.name || "item-list-16"}</td>
-            <td>
-              <EvoIconItemList16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconItemList20.name || "item-list-20"}</td>
-            <td>
-              <EvoIconItemList20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconItemList24.name || "item-list-24"}</td>
-            <td>
-              <EvoIconItemList24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconJcb12Colored.name || "jcb-12-colored"}</td>
-            <td>
-              <EvoIconJcb12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconJcb18Colored.name || "jcb-18-colored"}</td>
-            <td>
-              <EvoIconJcb18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconJcb24Colored.name || "jcb-24-colored"}</td>
-            <td>
-              <EvoIconJcb24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconJcb32Colored.name || "jcb-32-colored"}</td>
-            <td>
-              <EvoIconJcb32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconJetSki16.name || "jet-ski-16"}</td>
-            <td>
-              <EvoIconJetSki16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconJetSki24.name || "jet-ski-24"}</td>
-            <td>
-              <EvoIconJetSki24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKakaoPay12Colored.name || "kakao-pay-12-colored"}</td>
-            <td>
-              <EvoIconKakaoPay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKakaoPay18Colored.name || "kakao-pay-18-colored"}</td>
-            <td>
-              <EvoIconKakaoPay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKakaoPay24Colored.name || "kakao-pay-24-colored"}</td>
-            <td>
-              <EvoIconKakaoPay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKakaoPay32Colored.name || "kakao-pay-32-colored"}</td>
-            <td>
-              <EvoIconKakaoPay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKey16.name || "key-16"}</td>
-            <td>
-              <EvoIconKey16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKey24.name || "key-24"}</td>
-            <td>
-              <EvoIconKey24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKeyboard16.name || "keyboard-16"}</td>
-            <td>
-              <EvoIconKeyboard16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKeyboard24.name || "keyboard-24"}</td>
-            <td>
-              <EvoIconKeyboard24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaBlack12Colored.name || "klarna-black-12-colored"}</td>
-            <td>
-              <EvoIconKlarnaBlack12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaBlack18Colored.name || "klarna-black-18-colored"}</td>
-            <td>
-              <EvoIconKlarnaBlack18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaBlack24Colored.name || "klarna-black-24-colored"}</td>
-            <td>
-              <EvoIconKlarnaBlack24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaBlack32Colored.name || "klarna-black-32-colored"}</td>
-            <td>
-              <EvoIconKlarnaBlack32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaPink12Colored.name || "klarna-pink-12-colored"}</td>
-            <td>
-              <EvoIconKlarnaPink12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaPink18Colored.name || "klarna-pink-18-colored"}</td>
-            <td>
-              <EvoIconKlarnaPink18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaPink24Colored.name || "klarna-pink-24-colored"}</td>
-            <td>
-              <EvoIconKlarnaPink24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaPink32Colored.name || "klarna-pink-32-colored"}</td>
-            <td>
-              <EvoIconKlarnaPink32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaWhite12Colored.name || "klarna-white-12-colored"}</td>
-            <td>
-              <EvoIconKlarnaWhite12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaWhite18Colored.name || "klarna-white-18-colored"}</td>
-            <td>
-              <EvoIconKlarnaWhite18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaWhite24Colored.name || "klarna-white-24-colored"}</td>
-            <td>
-              <EvoIconKlarnaWhite24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKlarnaWhite32Colored.name || "klarna-white-32-colored"}</td>
-            <td>
-              <EvoIconKlarnaWhite32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKrona16.name || "krona-16"}</td>
-            <td>
-              <EvoIconKrona16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconKrona24.name || "krona-24"}</td>
-            <td>
-              <EvoIconKrona24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLamp16.name || "lamp-16"}</td>
-            <td>
-              <EvoIconLamp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLamp24.name || "lamp-24"}</td>
-            <td>
-              <EvoIconLamp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLargeBox16.name || "large-box-16"}</td>
-            <td>
-              <EvoIconLargeBox16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLargeBox24.name || "large-box-24"}</td>
-            <td>
-              <EvoIconLargeBox24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyAuthenticityGuarantee48Colored.name || "legacy-authenticity-guarantee-48-colored"}</td>
-            <td>
-              <EvoIconLegacyAuthenticityGuarantee48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyClickToCall48Colored.name || "legacy-click-to-call-48-colored"}</td>
-            <td>
-              <EvoIconLegacyClickToCall48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyEscrow48Colored.name || "legacy-escrow-48-colored"}</td>
-            <td>
-              <EvoIconLegacyEscrow48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyFreeWarranty48Colored.name || "legacy-free-warranty-48-colored"}</td>
-            <td>
-              <EvoIconLegacyFreeWarranty48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyMoneyBackGuaranteeChf48Colored.name || "legacy-money-back-guarantee-chf-48-colored"}</td>
-            <td>
-              <EvoIconLegacyMoneyBackGuaranteeChf48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyMoneyBackGuaranteeEu48Colored.name || "legacy-money-back-guarantee-eu-48-colored"}</td>
-            <td>
-              <EvoIconLegacyMoneyBackGuaranteeEu48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyMoneyBackGuaranteeUk48Colored.name || "legacy-money-back-guarantee-uk-48-colored"}</td>
-            <td>
-              <EvoIconLegacyMoneyBackGuaranteeUk48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyMoneyBackGuaranteeUs48Colored.name || "legacy-money-back-guarantee-us-48-colored"}</td>
-            <td>
-              <EvoIconLegacyMoneyBackGuaranteeUs48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyMoneyBackGuaranteeZl48Colored.name || "legacy-money-back-guarantee-zl-48-colored"}</td>
-            <td>
-              <EvoIconLegacyMoneyBackGuaranteeZl48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLegacyTopRatedSeller48Colored.name || "legacy-top-rated-seller-48-colored"}</td>
-            <td>
-              <EvoIconLegacyTopRatedSeller48Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightbulb16.name || "lightbulb-16"}</td>
-            <td>
-              <EvoIconLightbulb16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightbulb24.name || "lightbulb-24"}</td>
-            <td>
-              <EvoIconLightbulb24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightningBolt16.name || "lightning-bolt-16"}</td>
-            <td>
-              <EvoIconLightningBolt16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightningBolt24.name || "lightning-bolt-24"}</td>
-            <td>
-              <EvoIconLightningBolt24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightningBoltFilled12.name || "lightning-bolt-filled-12"}</td>
-            <td>
-              <EvoIconLightningBoltFilled12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightningBoltFilled16.name || "lightning-bolt-filled-16"}</td>
-            <td>
-              <EvoIconLightningBoltFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLightningBoltFilled24.name || "lightning-bolt-filled-24"}</td>
-            <td>
-              <EvoIconLightningBoltFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLink16.name || "link-16"}</td>
-            <td>
-              <EvoIconLink16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLink20.name || "link-20"}</td>
-            <td>
-              <EvoIconLink20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLink24.name || "link-24"}</td>
-            <td>
-              <EvoIconLink24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLinkedin24.name || "linkedin-24"}</td>
-            <td>
-              <EvoIconLinkedin24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconListView16.name || "list-view-16"}</td>
-            <td>
-              <EvoIconListView16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconListView24.name || "list-view-24"}</td>
-            <td>
-              <EvoIconListView24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconListViewFilled16.name || "list-view-filled-16"}</td>
-            <td>
-              <EvoIconListViewFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconListViewFilled24.name || "list-view-filled-24"}</td>
-            <td>
-              <EvoIconListViewFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBag16.name || "live-bag-16"}</td>
-            <td>
-              <EvoIconLiveBag16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBag20.name || "live-bag-20"}</td>
-            <td>
-              <EvoIconLiveBag20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBag24.name || "live-bag-24"}</td>
-            <td>
-              <EvoIconLiveBag24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBagFilled24.name || "live-bag-filled-24"}</td>
-            <td>
-              <EvoIconLiveBagFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBagPlayFilled16Colored.name || "live-bag-play-filled-16-colored"}</td>
-            <td>
-              <EvoIconLiveBagPlayFilled16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBagPlayFilled24Colored.name || "live-bag-play-filled-24-colored"}</td>
-            <td>
-              <EvoIconLiveBagPlayFilled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBagPlayFilled64Colored.name || "live-bag-play-filled-64-colored"}</td>
-            <td>
-              <EvoIconLiveBagPlayFilled64Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBagThin16.name || "live-bag-thin-16"}</td>
-            <td>
-              <EvoIconLiveBagThin16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBroadcast16.name || "live-broadcast-16"}</td>
-            <td>
-              <EvoIconLiveBroadcast16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBroadcast20.name || "live-broadcast-20"}</td>
-            <td>
-              <EvoIconLiveBroadcast20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBroadcast24.name || "live-broadcast-24"}</td>
-            <td>
-              <EvoIconLiveBroadcast24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBroadcastFilled24.name || "live-broadcast-filled-24"}</td>
-            <td>
-              <EvoIconLiveBroadcastFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveBroadcastThin16.name || "live-broadcast-thin-16"}</td>
-            <td>
-              <EvoIconLiveBroadcastThin16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveEye16.name || "live-eye-16"}</td>
-            <td>
-              <EvoIconLiveEye16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLiveEye24.name || "live-eye-24"}</td>
-            <td>
-              <EvoIconLiveEye24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocation16.name || "location-16"}</td>
-            <td>
-              <EvoIconLocation16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocation24.name || "location-24"}</td>
-            <td>
-              <EvoIconLocation24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocation64.name || "location-64"}</td>
-            <td>
-              <EvoIconLocation64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocationArrow16.name || "location-arrow-16"}</td>
-            <td>
-              <EvoIconLocationArrow16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocationArrow24.name || "location-arrow-24"}</td>
-            <td>
-              <EvoIconLocationArrow24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLock16.name || "lock-16"}</td>
-            <td>
-              <EvoIconLock16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLock24.name || "lock-24"}</td>
-            <td>
-              <EvoIconLock24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLockFilled16.name || "lock-filled-16"}</td>
-            <td>
-              <EvoIconLockFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLockFilled20.name || "lock-filled-20"}</td>
-            <td>
-              <EvoIconLockFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLockFilled24.name || "lock-filled-24"}</td>
-            <td>
-              <EvoIconLockFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocker16.name || "locker-16"}</td>
-            <td>
-              <EvoIconLocker16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocker24.name || "locker-24"}</td>
-            <td>
-              <EvoIconLocker24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconLocker64.name || "locker-64"}</td>
-            <td>
-              <EvoIconLocker64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMaestro12Colored.name || "maestro-12-colored"}</td>
-            <td>
-              <EvoIconMaestro12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMaestro18Colored.name || "maestro-18-colored"}</td>
-            <td>
-              <EvoIconMaestro18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMaestro24Colored.name || "maestro-24-colored"}</td>
-            <td>
-              <EvoIconMaestro24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMaestro32Colored.name || "maestro-32-colored"}</td>
-            <td>
-              <EvoIconMaestro32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMail16.name || "mail-16"}</td>
-            <td>
-              <EvoIconMail16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMail20.name || "mail-20"}</td>
-            <td>
-              <EvoIconMail20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMail24.name || "mail-24"}</td>
-            <td>
-              <EvoIconMail24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMail64.name || "mail-64"}</td>
-            <td>
-              <EvoIconMail64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMailMove16.name || "mail-move-16"}</td>
-            <td>
-              <EvoIconMailMove16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMailMove24.name || "mail-move-24"}</td>
-            <td>
-              <EvoIconMailMove24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMailOpen16.name || "mail-open-16"}</td>
-            <td>
-              <EvoIconMailOpen16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMailOpen24.name || "mail-open-24"}</td>
-            <td>
-              <EvoIconMailOpen24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMailUnread16.name || "mail-unread-16"}</td>
-            <td>
-              <EvoIconMailUnread16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMailUnread24.name || "mail-unread-24"}</td>
-            <td>
-              <EvoIconMailUnread24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMap16.name || "map-16"}</td>
-            <td>
-              <EvoIconMap16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMap20.name || "map-20"}</td>
-            <td>
-              <EvoIconMap20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMap24.name || "map-24"}</td>
-            <td>
-              <EvoIconMap24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMarkdown16.name || "markdown-16"}</td>
-            <td>
-              <EvoIconMarkdown16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMarkdown20.name || "markdown-20"}</td>
-            <td>
-              <EvoIconMarkdown20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMarkdown24.name || "markdown-24"}</td>
-            <td>
-              <EvoIconMarkdown24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMasonryView16.name || "masonry-view-16"}</td>
-            <td>
-              <EvoIconMasonryView16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMasonryView24.name || "masonry-view-24"}</td>
-            <td>
-              <EvoIconMasonryView24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMasonryViewFilled16.name || "masonry-view-filled-16"}</td>
-            <td>
-              <EvoIconMasonryViewFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMasonryViewFilled24.name || "masonry-view-filled-24"}</td>
-            <td>
-              <EvoIconMasonryViewFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMastercard12Colored.name || "mastercard-12-colored"}</td>
-            <td>
-              <EvoIconMastercard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMastercard18Colored.name || "mastercard-18-colored"}</td>
-            <td>
-              <EvoIconMastercard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMastercard24Colored.name || "mastercard-24-colored"}</td>
-            <td>
-              <EvoIconMastercard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMastercard32Colored.name || "mastercard-32-colored"}</td>
-            <td>
-              <EvoIconMastercard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMediumBox16.name || "medium-box-16"}</td>
-            <td>
-              <EvoIconMediumBox16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMediumBox24.name || "medium-box-24"}</td>
-            <td>
-              <EvoIconMediumBox24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMegaphone16.name || "megaphone-16"}</td>
-            <td>
-              <EvoIconMegaphone16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMegaphone24.name || "megaphone-24"}</td>
-            <td>
-              <EvoIconMegaphone24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMenu16.name || "menu-16"}</td>
-            <td>
-              <EvoIconMenu16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMenu20.name || "menu-20"}</td>
-            <td>
-              <EvoIconMenu20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMenu24.name || "menu-24"}</td>
-            <td>
-              <EvoIconMenu24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMercadoPago12Colored.name || "mercado-pago-12-colored"}</td>
-            <td>
-              <EvoIconMercadoPago12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMercadoPago18Colored.name || "mercado-pago-18-colored"}</td>
-            <td>
-              <EvoIconMercadoPago18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMercadoPago24Colored.name || "mercado-pago-24-colored"}</td>
-            <td>
-              <EvoIconMercadoPago24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMercadoPago32Colored.name || "mercado-pago-32-colored"}</td>
-            <td>
-              <EvoIconMercadoPago32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMicrophone16.name || "microphone-16"}</td>
-            <td>
-              <EvoIconMicrophone16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMicrophone24.name || "microphone-24"}</td>
-            <td>
-              <EvoIconMicrophone24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMobile16.name || "mobile-16"}</td>
-            <td>
-              <EvoIconMobile16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMobile20.name || "mobile-20"}</td>
-            <td>
-              <EvoIconMobile20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMobile24.name || "mobile-24"}</td>
-            <td>
-              <EvoIconMobile24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMobileSignal24.name || "mobile-signal-24"}</td>
-            <td>
-              <EvoIconMobileSignal24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyBackGuarantee16.name || "money-back-guarantee-16"}</td>
-            <td>
-              <EvoIconMoneyBackGuarantee16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyBackGuarantee24.name || "money-back-guarantee-24"}</td>
-            <td>
-              <EvoIconMoneyBackGuarantee24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyBackGuaranteeFilled16.name || "money-back-guarantee-filled-16"}</td>
-            <td>
-              <EvoIconMoneyBackGuaranteeFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyBackGuaranteeFilled16Colored.name || "money-back-guarantee-filled-16-colored"}</td>
-            <td>
-              <EvoIconMoneyBackGuaranteeFilled16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyBackGuaranteeFilled24.name || "money-back-guarantee-filled-24"}</td>
-            <td>
-              <EvoIconMoneyBackGuaranteeFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyBackGuaranteeFilled24Colored.name || "money-back-guarantee-filled-24-colored"}</td>
-            <td>
-              <EvoIconMoneyBackGuaranteeFilled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStack16.name || "money-stack-16"}</td>
-            <td>
-              <EvoIconMoneyStack16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStack20.name || "money-stack-20"}</td>
-            <td>
-              <EvoIconMoneyStack20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStack24.name || "money-stack-24"}</td>
-            <td>
-              <EvoIconMoneyStack24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStackBlue12Colored.name || "money-stack-blue-12-colored"}</td>
-            <td>
-              <EvoIconMoneyStackBlue12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStackBlue18Colored.name || "money-stack-blue-18-colored"}</td>
-            <td>
-              <EvoIconMoneyStackBlue18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStackBlue24Colored.name || "money-stack-blue-24-colored"}</td>
-            <td>
-              <EvoIconMoneyStackBlue24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoneyStackBlue32Colored.name || "money-stack-blue-32-colored"}</td>
-            <td>
-              <EvoIconMoneyStackBlue32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMonthlyInvoice12Colored.name || "monthly-invoice-12-colored"}</td>
-            <td>
-              <EvoIconMonthlyInvoice12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMonthlyInvoice18Colored.name || "monthly-invoice-18-colored"}</td>
-            <td>
-              <EvoIconMonthlyInvoice18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMonthlyInvoice24Colored.name || "monthly-invoice-24-colored"}</td>
-            <td>
-              <EvoIconMonthlyInvoice24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMonthlyInvoice32Colored.name || "monthly-invoice-32-colored"}</td>
-            <td>
-              <EvoIconMonthlyInvoice32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoon16.name || "moon-16"}</td>
-            <td>
-              <EvoIconMoon16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoon20.name || "moon-20"}</td>
-            <td>
-              <EvoIconMoon20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMoon24.name || "moon-24"}</td>
-            <td>
-              <EvoIconMoon24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMotorcycle16.name || "motorcycle-16"}</td>
-            <td>
-              <EvoIconMotorcycle16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMotorcycle24.name || "motorcycle-24"}</td>
-            <td>
-              <EvoIconMotorcycle24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMountain16.name || "mountain-16"}</td>
-            <td>
-              <EvoIconMountain16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMountain24.name || "mountain-24"}</td>
-            <td>
-              <EvoIconMountain24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMove16.name || "move-16"}</td>
-            <td>
-              <EvoIconMove16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconMove24.name || "move-24"}</td>
-            <td>
-              <EvoIconMove24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNectarLogo24Colored.name || "nectar-logo-24-colored"}</td>
-            <td>
-              <EvoIconNectarLogo24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNegativeFilled16.name || "negative-filled-16"}</td>
-            <td>
-              <EvoIconNegativeFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNegativeFilled24.name || "negative-filled-24"}</td>
-            <td>
-              <EvoIconNegativeFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNeutral16.name || "neutral-16"}</td>
-            <td>
-              <EvoIconNeutral16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNeutral24.name || "neutral-24"}</td>
-            <td>
-              <EvoIconNeutral24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNfc16.name || "nfc-16"}</td>
-            <td>
-              <EvoIconNfc16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNfc24.name || "nfc-24"}</td>
-            <td>
-              <EvoIconNfc24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNfcCard12Colored.name || "nfc-card-12-colored"}</td>
-            <td>
-              <EvoIconNfcCard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNfcCard18Colored.name || "nfc-card-18-colored"}</td>
-            <td>
-              <EvoIconNfcCard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNfcCard24Colored.name || "nfc-card-24-colored"}</td>
-            <td>
-              <EvoIconNfcCard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNfcCard32Colored.name || "nfc-card-32-colored"}</td>
-            <td>
-              <EvoIconNfcCard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNoChildrenZeroThree48.name || "no-children-zero-three-48"}</td>
-            <td>
-              <EvoIconNoChildrenZeroThree48 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNote12.name || "note-12"}</td>
-            <td>
-              <EvoIconNote12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNote16.name || "note-16"}</td>
-            <td>
-              <EvoIconNote16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNote24.name || "note-24"}</td>
-            <td>
-              <EvoIconNote24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotification16.name || "notification-16"}</td>
-            <td>
-              <EvoIconNotification16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotification20.name || "notification-20"}</td>
-            <td>
-              <EvoIconNotification20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotification24.name || "notification-24"}</td>
-            <td>
-              <EvoIconNotification24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotification64.name || "notification-64"}</td>
-            <td>
-              <EvoIconNotification64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotificationFilled16.name || "notification-filled-16"}</td>
-            <td>
-              <EvoIconNotificationFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotificationFilled20.name || "notification-filled-20"}</td>
-            <td>
-              <EvoIconNotificationFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconNotificationFilled24.name || "notification-filled-24"}</td>
-            <td>
-              <EvoIconNotificationFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOutOfReach48.name || "out-of-reach-48"}</td>
-            <td>
-              <EvoIconOutOfReach48 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOverflowHorizontal16.name || "overflow-horizontal-16"}</td>
-            <td>
-              <EvoIconOverflowHorizontal16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOverflowHorizontal20.name || "overflow-horizontal-20"}</td>
-            <td>
-              <EvoIconOverflowHorizontal20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOverflowHorizontal24.name || "overflow-horizontal-24"}</td>
-            <td>
-              <EvoIconOverflowHorizontal24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOverflowVertical16.name || "overflow-vertical-16"}</td>
-            <td>
-              <EvoIconOverflowVertical16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOverflowVertical20.name || "overflow-vertical-20"}</td>
-            <td>
-              <EvoIconOverflowVertical20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconOverflowVertical24.name || "overflow-vertical-24"}</td>
-            <td>
-              <EvoIconOverflowVertical24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPackage16.name || "package-16"}</td>
-            <td>
-              <EvoIconPackage16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPackage24.name || "package-24"}</td>
-            <td>
-              <EvoIconPackage24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPackage64.name || "package-64"}</td>
-            <td>
-              <EvoIconPackage64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPackageError24.name || "package-error-24"}</td>
-            <td>
-              <EvoIconPackageError24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanel16.name || "panel-16"}</td>
-            <td>
-              <EvoIconPanel16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanel20.name || "panel-20"}</td>
-            <td>
-              <EvoIconPanel20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanel24.name || "panel-24"}</td>
-            <td>
-              <EvoIconPanel24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelClose16.name || "panel-close-16"}</td>
-            <td>
-              <EvoIconPanelClose16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelClose20.name || "panel-close-20"}</td>
-            <td>
-              <EvoIconPanelClose20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelClose24.name || "panel-close-24"}</td>
-            <td>
-              <EvoIconPanelClose24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelCloseVertical16.name || "panel-close-vertical-16"}</td>
-            <td>
-              <EvoIconPanelCloseVertical16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelCloseVertical20.name || "panel-close-vertical-20"}</td>
-            <td>
-              <EvoIconPanelCloseVertical20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelCloseVertical24.name || "panel-close-vertical-24"}</td>
-            <td>
-              <EvoIconPanelCloseVertical24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelOpen16.name || "panel-open-16"}</td>
-            <td>
-              <EvoIconPanelOpen16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelOpen20.name || "panel-open-20"}</td>
-            <td>
-              <EvoIconPanelOpen20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelOpen24.name || "panel-open-24"}</td>
-            <td>
-              <EvoIconPanelOpen24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelOpenVertical16.name || "panel-open-vertical-16"}</td>
-            <td>
-              <EvoIconPanelOpenVertical16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelOpenVertical20.name || "panel-open-vertical-20"}</td>
-            <td>
-              <EvoIconPanelOpenVertical20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPanelOpenVertical24.name || "panel-open-vertical-24"}</td>
-            <td>
-              <EvoIconPanelOpenVertical24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPasskey16.name || "passkey-16"}</td>
-            <td>
-              <EvoIconPasskey16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPasskey24.name || "passkey-24"}</td>
-            <td>
-              <EvoIconPasskey24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPasskey64.name || "passkey-64"}</td>
-            <td>
-              <EvoIconPasskey64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPause16.name || "pause-16"}</td>
-            <td>
-              <EvoIconPause16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPause20.name || "pause-20"}</td>
-            <td>
-              <EvoIconPause20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPause24.name || "pause-24"}</td>
-            <td>
-              <EvoIconPause24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPauseFilled64Colored.name || "pause-filled-64-colored"}</td>
-            <td>
-              <EvoIconPauseFilled64Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBank12Colored.name || "pay-by-bank-12-colored"}</td>
-            <td>
-              <EvoIconPayByBank12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBank18Colored.name || "pay-by-bank-18-colored"}</td>
-            <td>
-              <EvoIconPayByBank18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBank24Colored.name || "pay-by-bank-24-colored"}</td>
-            <td>
-              <EvoIconPayByBank24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBank32Colored.name || "pay-by-bank-32-colored"}</td>
-            <td>
-              <EvoIconPayByBank32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBankBe24Colored.name || "pay-by-bank-be-24-colored"}</td>
-            <td>
-              <EvoIconPayByBankBe24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBankDe24Colored.name || "pay-by-bank-de-24-colored"}</td>
-            <td>
-              <EvoIconPayByBankDe24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBankFr24Colored.name || "pay-by-bank-fr-24-colored"}</td>
-            <td>
-              <EvoIconPayByBankFr24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayByBankUk24Colored.name || "pay-by-bank-uk-24-colored"}</td>
-            <td>
-              <EvoIconPayByBankUk24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayoneer12Colored.name || "payoneer-12-colored"}</td>
-            <td>
-              <EvoIconPayoneer12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayoneer18Colored.name || "payoneer-18-colored"}</td>
-            <td>
-              <EvoIconPayoneer18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayoneer24Colored.name || "payoneer-24-colored"}</td>
-            <td>
-              <EvoIconPayoneer24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayoneer32Colored.name || "payoneer-32-colored"}</td>
-            <td>
-              <EvoIconPayoneer32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayout16.name || "payout-16"}</td>
-            <td>
-              <EvoIconPayout16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayout20.name || "payout-20"}</td>
-            <td>
-              <EvoIconPayout20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPayout24.name || "payout-24"}</td>
-            <td>
-              <EvoIconPayout24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypal12Colored.name || "paypal-12-colored"}</td>
-            <td>
-              <EvoIconPaypal12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypal18Colored.name || "paypal-18-colored"}</td>
-            <td>
-              <EvoIconPaypal18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypal24Colored.name || "paypal-24-colored"}</td>
-            <td>
-              <EvoIconPaypal24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypal32Colored.name || "paypal-32-colored"}</td>
-            <td>
-              <EvoIconPaypal32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalBlue12Colored.name || "paypal-blue-12-colored"}</td>
-            <td>
-              <EvoIconPaypalBlue12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalBlue18Colored.name || "paypal-blue-18-colored"}</td>
-            <td>
-              <EvoIconPaypalBlue18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalBlue24Colored.name || "paypal-blue-24-colored"}</td>
-            <td>
-              <EvoIconPaypalBlue24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalBlue32Colored.name || "paypal-blue-32-colored"}</td>
-            <td>
-              <EvoIconPaypalBlue32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalCredit12Colored.name || "paypal-credit-12-colored"}</td>
-            <td>
-              <EvoIconPaypalCredit12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalCredit18Colored.name || "paypal-credit-18-colored"}</td>
-            <td>
-              <EvoIconPaypalCredit18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalCredit24Colored.name || "paypal-credit-24-colored"}</td>
-            <td>
-              <EvoIconPaypalCredit24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalCredit32Colored.name || "paypal-credit-32-colored"}</td>
-            <td>
-              <EvoIconPaypalCredit32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalDisabled12Colored.name || "paypal-disabled-12-colored"}</td>
-            <td>
-              <EvoIconPaypalDisabled12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalDisabled18Colored.name || "paypal-disabled-18-colored"}</td>
-            <td>
-              <EvoIconPaypalDisabled18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalDisabled24Colored.name || "paypal-disabled-24-colored"}</td>
-            <td>
-              <EvoIconPaypalDisabled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalDisabled32Colored.name || "paypal-disabled-32-colored"}</td>
-            <td>
-              <EvoIconPaypalDisabled32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypalLogo16.name || "paypal-logo-16"}</td>
-            <td>
-              <EvoIconPaypalLogo16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypay12Colored.name || "paypay-12-colored"}</td>
-            <td>
-              <EvoIconPaypay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypay18Colored.name || "paypay-18-colored"}</td>
-            <td>
-              <EvoIconPaypay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypay24Colored.name || "paypay-24-colored"}</td>
-            <td>
-              <EvoIconPaypay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPaypay32Colored.name || "paypay-32-colored"}</td>
-            <td>
-              <EvoIconPaypay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPencil16.name || "pencil-16"}</td>
-            <td>
-              <EvoIconPencil16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPencil20.name || "pencil-20"}</td>
-            <td>
-              <EvoIconPencil20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPencil24.name || "pencil-24"}</td>
-            <td>
-              <EvoIconPencil24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPencilSigned24.name || "pencil-signed-24"}</td>
-            <td>
-              <EvoIconPencilSigned24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPeople16.name || "people-16"}</td>
-            <td>
-              <EvoIconPeople16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPeople24.name || "people-24"}</td>
-            <td>
-              <EvoIconPeople24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPeso16.name || "peso-16"}</td>
-            <td>
-              <EvoIconPeso16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPeso24.name || "peso-24"}</td>
-            <td>
-              <EvoIconPeso24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPhone16.name || "phone-16"}</td>
-            <td>
-              <EvoIconPhone16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPhone24.name || "phone-24"}</td>
-            <td>
-              <EvoIconPhone24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPin12.name || "pin-12"}</td>
-            <td>
-              <EvoIconPin12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPin16.name || "pin-16"}</td>
-            <td>
-              <EvoIconPin16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPin24.name || "pin-24"}</td>
-            <td>
-              <EvoIconPin24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPinFilled12.name || "pin-filled-12"}</td>
-            <td>
-              <EvoIconPinFilled12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPinFilled16.name || "pin-filled-16"}</td>
-            <td>
-              <EvoIconPinFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPinFilled24.name || "pin-filled-24"}</td>
-            <td>
-              <EvoIconPinFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPinterest24.name || "pinterest-24"}</td>
-            <td>
-              <EvoIconPinterest24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlay16.name || "play-16"}</td>
-            <td>
-              <EvoIconPlay16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlay20.name || "play-20"}</td>
-            <td>
-              <EvoIconPlay20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlay24.name || "play-24"}</td>
-            <td>
-              <EvoIconPlay24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlayDisabled16.name || "play-disabled-16"}</td>
-            <td>
-              <EvoIconPlayDisabled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlayFilled16Colored.name || "play-filled-16-colored"}</td>
-            <td>
-              <EvoIconPlayFilled16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlayFilled24Colored.name || "play-filled-24-colored"}</td>
-            <td>
-              <EvoIconPlayFilled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPlayFilled64Colored.name || "play-filled-64-colored"}</td>
-            <td>
-              <EvoIconPlayFilled64Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPostepay12Colored.name || "postepay-12-colored"}</td>
-            <td>
-              <EvoIconPostepay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPostepay18Colored.name || "postepay-18-colored"}</td>
-            <td>
-              <EvoIconPostepay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPostepay24Colored.name || "postepay-24-colored"}</td>
-            <td>
-              <EvoIconPostepay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPostepay32Colored.name || "postepay-32-colored"}</td>
-            <td>
-              <EvoIconPostepay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPottedPlant16.name || "potted-plant-16"}</td>
-            <td>
-              <EvoIconPottedPlant16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPottedPlant24.name || "potted-plant-24"}</td>
-            <td>
-              <EvoIconPottedPlant24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPound16.name || "pound-16"}</td>
-            <td>
-              <EvoIconPound16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPound24.name || "pound-24"}</td>
-            <td>
-              <EvoIconPound24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPrint16.name || "print-16"}</td>
-            <td>
-              <EvoIconPrint16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPrint24.name || "print-24"}</td>
-            <td>
-              <EvoIconPrint24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfile16.name || "profile-16"}</td>
-            <td>
-              <EvoIconProfile16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfile20.name || "profile-20"}</td>
-            <td>
-              <EvoIconProfile20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfile24.name || "profile-24"}</td>
-            <td>
-              <EvoIconProfile24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfileFilled24.name || "profile-filled-24"}</td>
-            <td>
-              <EvoIconProfileFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfileVerification16.name || "profile-verification-16"}</td>
-            <td>
-              <EvoIconProfileVerification16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfileVerification20.name || "profile-verification-20"}</td>
-            <td>
-              <EvoIconProfileVerification20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProfileVerification24.name || "profile-verification-24"}</td>
-            <td>
-              <EvoIconProfileVerification24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProgressCurrent24.name || "progress-current-24"}</td>
-            <td>
-              <EvoIconProgressCurrent24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconProgressUpcoming24.name || "progress-upcoming-24"}</td>
-            <td>
-              <EvoIconProgressUpcoming24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPromotion12.name || "promotion-12"}</td>
-            <td>
-              <EvoIconPromotion12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPromotion16.name || "promotion-16"}</td>
-            <td>
-              <EvoIconPromotion16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPromotion24.name || "promotion-24"}</td>
-            <td>
-              <EvoIconPromotion24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsa16.name || "psa-16"}</td>
-            <td>
-              <EvoIconPsa16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsa16Colored.name || "psa-16-colored"}</td>
-            <td>
-              <EvoIconPsa16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaLogo16.name || "psa-logo-16"}</td>
-            <td>
-              <EvoIconPsaLogo16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaLogoColor16Colored.name || "psa-logo-color-16-colored"}</td>
-            <td>
-              <EvoIconPsaLogoColor16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaVault16.name || "psa-vault-16"}</td>
-            <td>
-              <EvoIconPsaVault16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaVault16Colored.name || "psa-vault-16-colored"}</td>
-            <td>
-              <EvoIconPsaVault16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaVault24.name || "psa-vault-24"}</td>
-            <td>
-              <EvoIconPsaVault24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaVaultLogo16.name || "psa-vault-logo-16"}</td>
-            <td>
-              <EvoIconPsaVaultLogo16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconPsaVaultLogoColor16Colored.name || "psa-vault-logo-color-16-colored"}</td>
-            <td>
-              <EvoIconPsaVaultLogoColor16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconQrCode16.name || "qr-code-16"}</td>
-            <td>
-              <EvoIconQrCode16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconQrCode24.name || "qr-code-24"}</td>
-            <td>
-              <EvoIconQrCode24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRadioChecked18.name || "radio-checked-18"}</td>
-            <td>
-              <EvoIconRadioChecked18 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRadioChecked24.name || "radio-checked-24"}</td>
-            <td>
-              <EvoIconRadioChecked24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRadioUnchecked18.name || "radio-unchecked-18"}</td>
-            <td>
-              <EvoIconRadioUnchecked18 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRadioUnchecked24.name || "radio-unchecked-24"}</td>
-            <td>
-              <EvoIconRadioUnchecked24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRecoveryCode16.name || "recovery-code-16"}</td>
-            <td>
-              <EvoIconRecoveryCode16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRecoveryCode24.name || "recovery-code-24"}</td>
-            <td>
-              <EvoIconRecoveryCode24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReddit24.name || "reddit-24"}</td>
-            <td>
-              <EvoIconReddit24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRefresh16.name || "refresh-16"}</td>
-            <td>
-              <EvoIconRefresh16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRefresh20.name || "refresh-20"}</td>
-            <td>
-              <EvoIconRefresh20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRefresh24.name || "refresh-24"}</td>
-            <td>
-              <EvoIconRefresh24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRelaxedGrid24.name || "relaxed-grid-24"}</td>
-            <td>
-              <EvoIconRelaxedGrid24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRelaxedGridFilled24.name || "relaxed-grid-filled-24"}</td>
-            <td>
-              <EvoIconRelaxedGridFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRemove12.name || "remove-12"}</td>
-            <td>
-              <EvoIconRemove12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRemove16.name || "remove-16"}</td>
-            <td>
-              <EvoIconRemove16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRemove24.name || "remove-24"}</td>
-            <td>
-              <EvoIconRemove24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReply16.name || "reply-16"}</td>
-            <td>
-              <EvoIconReply16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReply24.name || "reply-24"}</td>
-            <td>
-              <EvoIconReply24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReplyChat12.name || "reply-chat-12"}</td>
-            <td>
-              <EvoIconReplyChat12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReplyChat16.name || "reply-chat-16"}</td>
-            <td>
-              <EvoIconReplyChat16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReplyChat24.name || "reply-chat-24"}</td>
-            <td>
-              <EvoIconReplyChat24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReturn16.name || "return-16"}</td>
-            <td>
-              <EvoIconReturn16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconReturn24.name || "return-24"}</td>
-            <td>
-              <EvoIconReturn24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRewind16.name || "rewind-16"}</td>
-            <td>
-              <EvoIconRewind16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRibbon16.name || "ribbon-16"}</td>
-            <td>
-              <EvoIconRibbon16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRibbon24.name || "ribbon-24"}</td>
-            <td>
-              <EvoIconRibbon24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRim16.name || "rim-16"}</td>
-            <td>
-              <EvoIconRim16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRim24.name || "rim-24"}</td>
-            <td>
-              <EvoIconRim24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRinggit16.name || "ringgit-16"}</td>
-            <td>
-              <EvoIconRinggit16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRinggit24.name || "ringgit-24"}</td>
-            <td>
-              <EvoIconRinggit24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotate16.name || "rotate-16"}</td>
-            <td>
-              <EvoIconRotate16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotate20.name || "rotate-20"}</td>
-            <td>
-              <EvoIconRotate20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotate24.name || "rotate-24"}</td>
-            <td>
-              <EvoIconRotate24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotateLandscapeLeft24.name || "rotate-landscape-left-24"}</td>
-            <td>
-              <EvoIconRotateLandscapeLeft24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotateLandscapeRight24.name || "rotate-landscape-right-24"}</td>
-            <td>
-              <EvoIconRotateLandscapeRight24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotatePortraitLeft24.name || "rotate-portrait-left-24"}</td>
-            <td>
-              <EvoIconRotatePortraitLeft24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRotatePortraitRight24.name || "rotate-portrait-right-24"}</td>
-            <td>
-              <EvoIconRotatePortraitRight24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRuler16.name || "ruler-16"}</td>
-            <td>
-              <EvoIconRuler16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRuler24.name || "ruler-24"}</td>
-            <td>
-              <EvoIconRuler24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRupee16.name || "rupee-16"}</td>
-            <td>
-              <EvoIconRupee16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconRupee24.name || "rupee-24"}</td>
-            <td>
-              <EvoIconRupee24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSatchel16.name || "satchel-16"}</td>
-            <td>
-              <EvoIconSatchel16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSatchel24.name || "satchel-24"}</td>
-            <td>
-              <EvoIconSatchel24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconScan16.name || "scan-16"}</td>
-            <td>
-              <EvoIconScan16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconScan24.name || "scan-24"}</td>
-            <td>
-              <EvoIconScan24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearch16.name || "search-16"}</td>
-            <td>
-              <EvoIconSearch16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearch20.name || "search-20"}</td>
-            <td>
-              <EvoIconSearch20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearch24.name || "search-24"}</td>
-            <td>
-              <EvoIconSearch24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearch64.name || "search-64"}</td>
-            <td>
-              <EvoIconSearch64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearchFilled24.name || "search-filled-24"}</td>
-            <td>
-              <EvoIconSearchFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearchSimilar16.name || "search-similar-16"}</td>
-            <td>
-              <EvoIconSearchSimilar16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearchSimilar20.name || "search-similar-20"}</td>
-            <td>
-              <EvoIconSearchSimilar20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSearchSimilar24.name || "search-similar-24"}</td>
-            <td>
-              <EvoIconSearchSimilar24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSeasons16.name || "seasons-16"}</td>
-            <td>
-              <EvoIconSeasons16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSeasons24.name || "seasons-24"}</td>
-            <td>
-              <EvoIconSeasons24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSecurePurchase16.name || "secure-purchase-16"}</td>
-            <td>
-              <EvoIconSecurePurchase16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSecurePurchase24.name || "secure-purchase-24"}</td>
-            <td>
-              <EvoIconSecurePurchase24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSecurityKey24.name || "security-key-24"}</td>
-            <td>
-              <EvoIconSecurityKey24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSelectAll24.name || "select-all-24"}</td>
-            <td>
-              <EvoIconSelectAll24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSelling12.name || "selling-12"}</td>
-            <td>
-              <EvoIconSelling12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSelling16.name || "selling-16"}</td>
-            <td>
-              <EvoIconSelling16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSelling20.name || "selling-20"}</td>
-            <td>
-              <EvoIconSelling20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSelling24.name || "selling-24"}</td>
-            <td>
-              <EvoIconSelling24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSellingFilled24.name || "selling-filled-24"}</td>
-            <td>
-              <EvoIconSellingFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSend24.name || "send-24"}</td>
-            <td>
-              <EvoIconSend24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSettings16.name || "settings-16"}</td>
-            <td>
-              <EvoIconSettings16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSettings20.name || "settings-20"}</td>
-            <td>
-              <EvoIconSettings20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSettings24.name || "settings-24"}</td>
-            <td>
-              <EvoIconSettings24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShareAndroid16.name || "share-android-16"}</td>
-            <td>
-              <EvoIconShareAndroid16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShareAndroid20.name || "share-android-20"}</td>
-            <td>
-              <EvoIconShareAndroid20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShareAndroid24.name || "share-android-24"}</td>
-            <td>
-              <EvoIconShareAndroid24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShareIos16.name || "share-ios-16"}</td>
-            <td>
-              <EvoIconShareIos16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShareIos20.name || "share-ios-20"}</td>
-            <td>
-              <EvoIconShareIos20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShareIos24.name || "share-ios-24"}</td>
-            <td>
-              <EvoIconShareIos24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSharpen24.name || "sharpen-24"}</td>
-            <td>
-              <EvoIconSharpen24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShipAndLocal16.name || "ship-and-local-16"}</td>
-            <td>
-              <EvoIconShipAndLocal16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShipAndLocal24.name || "ship-and-local-24"}</td>
-            <td>
-              <EvoIconShipAndLocal24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShipAndSafety16.name || "ship-and-safety-16"}</td>
-            <td>
-              <EvoIconShipAndSafety16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShipAndSafety24.name || "ship-and-safety-24"}</td>
-            <td>
-              <EvoIconShipAndSafety24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShirt16.name || "shirt-16"}</td>
-            <td>
-              <EvoIconShirt16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShirt24.name || "shirt-24"}</td>
-            <td>
-              <EvoIconShirt24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShoeBox24.name || "shoe-box-24"}</td>
-            <td>
-              <EvoIconShoeBox24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShoppingEvent16.name || "shopping-event-16"}</td>
-            <td>
-              <EvoIconShoppingEvent16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShoppingEvent24.name || "shopping-event-24"}</td>
-            <td>
-              <EvoIconShoppingEvent24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShovel16.name || "shovel-16"}</td>
-            <td>
-              <EvoIconShovel16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShovel24.name || "shovel-24"}</td>
-            <td>
-              <EvoIconShovel24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShow16.name || "show-16"}</td>
-            <td>
-              <EvoIconShow16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconShow24.name || "show-24"}</td>
-            <td>
-              <EvoIconShow24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSkull12.name || "skull-12"}</td>
-            <td>
-              <EvoIconSkull12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSkull16.name || "skull-16"}</td>
-            <td>
-              <EvoIconSkull16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSkull24.name || "skull-24"}</td>
-            <td>
-              <EvoIconSkull24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSmallBox16.name || "small-box-16"}</td>
-            <td>
-              <EvoIconSmallBox16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSmallBox24.name || "small-box-24"}</td>
-            <td>
-              <EvoIconSmallBox24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSmallLetter24.name || "small-letter-24"}</td>
-            <td>
-              <EvoIconSmallLetter24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSneaker16.name || "sneaker-16"}</td>
-            <td>
-              <EvoIconSneaker16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSneaker24.name || "sneaker-24"}</td>
-            <td>
-              <EvoIconSneaker24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSnowflake16.name || "snowflake-16"}</td>
-            <td>
-              <EvoIconSnowflake16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSnowflake24.name || "snowflake-24"}</td>
-            <td>
-              <EvoIconSnowflake24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSnowmobile16.name || "snowmobile-16"}</td>
-            <td>
-              <EvoIconSnowmobile16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSnowmobile24.name || "snowmobile-24"}</td>
-            <td>
-              <EvoIconSnowmobile24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSort12.name || "sort-12"}</td>
-            <td>
-              <EvoIconSort12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSort16.name || "sort-16"}</td>
-            <td>
-              <EvoIconSort16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSort24.name || "sort-24"}</td>
-            <td>
-              <EvoIconSort24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSortDown12.name || "sort-down-12"}</td>
-            <td>
-              <EvoIconSortDown12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSortUp12.name || "sort-up-12"}</td>
-            <td>
-              <EvoIconSortUp12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineDown16.name || "sparkline-down-16"}</td>
-            <td>
-              <EvoIconSparklineDown16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineDown20.name || "sparkline-down-20"}</td>
-            <td>
-              <EvoIconSparklineDown20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineDown24.name || "sparkline-down-24"}</td>
-            <td>
-              <EvoIconSparklineDown24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineUp16.name || "sparkline-up-16"}</td>
-            <td>
-              <EvoIconSparklineUp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineUp20.name || "sparkline-up-20"}</td>
-            <td>
-              <EvoIconSparklineUp20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineUp24.name || "sparkline-up-24"}</td>
-            <td>
-              <EvoIconSparklineUp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSparklineUpFilled24.name || "sparkline-up-filled-24"}</td>
-            <td>
-              <EvoIconSparklineUpFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpeedometer16.name || "speedometer-16"}</td>
-            <td>
-              <EvoIconSpeedometer16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpeedometer24.name || "speedometer-24"}</td>
-            <td>
-              <EvoIconSpeedometer24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpinner20.name || "spinner-20"}</td>
-            <td>
-              <EvoIconSpinner20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpinner24.name || "spinner-24"}</td>
-            <td>
-              <EvoIconSpinner24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpinner30.name || "spinner-30"}</td>
-            <td>
-              <EvoIconSpinner30 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSplitPayment16.name || "split-payment-16"}</td>
-            <td>
-              <EvoIconSplitPayment16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSplitPayment24.name || "split-payment-24"}</td>
-            <td>
-              <EvoIconSplitPayment24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSplitView24.name || "split-view-24"}</td>
-            <td>
-              <EvoIconSplitView24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSplitViewFilled24.name || "split-view-filled-24"}</td>
-            <td>
-              <EvoIconSplitViewFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpringLeaf16.name || "spring-leaf-16"}</td>
-            <td>
-              <EvoIconSpringLeaf16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSpringLeaf24.name || "spring-leaf-24"}</td>
-            <td>
-              <EvoIconSpringLeaf24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarDynamic.name || "star-dynamic"}</td>
-            <td>
-              <EvoIconStarDynamic {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarEmpty16.name || "star-empty-16"}</td>
-            <td>
-              <EvoIconStarEmpty16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarEmpty24.name || "star-empty-24"}</td>
-            <td>
-              <EvoIconStarEmpty24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarEmpty40.name || "star-empty-40"}</td>
-            <td>
-              <EvoIconStarEmpty40 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarFilled16.name || "star-filled-16"}</td>
-            <td>
-              <EvoIconStarFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarFilled24.name || "star-filled-24"}</td>
-            <td>
-              <EvoIconStarFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarFilled40.name || "star-filled-40"}</td>
-            <td>
-              <EvoIconStarFilled40 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarHalf16Colored.name || "star-half-16-colored"}</td>
-            <td>
-              <EvoIconStarHalf16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarHalf24Colored.name || "star-half-24-colored"}</td>
-            <td>
-              <EvoIconStarHalf24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarHalfDark16Colored.name || "star-half-dark-16-colored"}</td>
-            <td>
-              <EvoIconStarHalfDark16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarHalfDark24Colored.name || "star-half-dark-24-colored"}</td>
-            <td>
-              <EvoIconStarHalfDark24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStepperAttention24.name || "stepper-attention-24"}</td>
-            <td>
-              <EvoIconStepperAttention24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStepperConfirmation24.name || "stepper-confirmation-24"}</td>
-            <td>
-              <EvoIconStepperConfirmation24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStepperCurrent24.name || "stepper-current-24"}</td>
-            <td>
-              <EvoIconStepperCurrent24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStepperUpcoming24.name || "stepper-upcoming-24"}</td>
-            <td>
-              <EvoIconStepperUpcoming24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStop16.name || "stop-16"}</td>
-            <td>
-              <EvoIconStop16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStop20.name || "stop-20"}</td>
-            <td>
-              <EvoIconStop20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStop24.name || "stop-24"}</td>
-            <td>
-              <EvoIconStop24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStore16.name || "store-16"}</td>
-            <td>
-              <EvoIconStore16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStore24.name || "store-24"}</td>
-            <td>
-              <EvoIconStore24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStore64.name || "store-64"}</td>
-            <td>
-              <EvoIconStore64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStoreFilled24.name || "store-filled-24"}</td>
-            <td>
-              <EvoIconStoreFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSuitcase24.name || "suitcase-24"}</td>
-            <td>
-              <EvoIconSuitcase24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSupport24.name || "support-24"}</td>
-            <td>
-              <EvoIconSupport24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSwap16.name || "swap-16"}</td>
-            <td>
-              <EvoIconSwap16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSwap24.name || "swap-24"}</td>
-            <td>
-              <EvoIconSwap24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconSwitchCamera24.name || "switch-camera-24"}</td>
-            <td>
-              <EvoIconSwitchCamera24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTablet16.name || "tablet-16"}</td>
-            <td>
-              <EvoIconTablet16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTablet20.name || "tablet-20"}</td>
-            <td>
-              <EvoIconTablet20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTablet24.name || "tablet-24"}</td>
-            <td>
-              <EvoIconTablet24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTarget16.name || "target-16"}</td>
-            <td>
-              <EvoIconTarget16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTarget24.name || "target-24"}</td>
-            <td>
-              <EvoIconTarget24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTd12Colored.name || "td-12-colored"}</td>
-            <td>
-              <EvoIconTd12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTd18Colored.name || "td-18-colored"}</td>
-            <td>
-              <EvoIconTd18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTd24Colored.name || "td-24-colored"}</td>
-            <td>
-              <EvoIconTd24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTd32Colored.name || "td-32-colored"}</td>
-            <td>
-              <EvoIconTd32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTextMessaging16.name || "text-messaging-16"}</td>
-            <td>
-              <EvoIconTextMessaging16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTextMessaging20.name || "text-messaging-20"}</td>
-            <td>
-              <EvoIconTextMessaging20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTextMessaging24.name || "text-messaging-24"}</td>
-            <td>
-              <EvoIconTextMessaging24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTextMessaging64.name || "text-messaging-64"}</td>
-            <td>
-              <EvoIconTextMessaging64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTextSize16.name || "text-size-16"}</td>
-            <td>
-              <EvoIconTextSize16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTextSize24.name || "text-size-24"}</td>
-            <td>
-              <EvoIconTextSize24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTheEbayVault16.name || "the-ebay-vault-16"}</td>
-            <td>
-              <EvoIconTheEbayVault16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTheEbayVault24.name || "the-ebay-vault-24"}</td>
-            <td>
-              <EvoIconTheEbayVault24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbDown16.name || "thumb-down-16"}</td>
-            <td>
-              <EvoIconThumbDown16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbDown20.name || "thumb-down-20"}</td>
-            <td>
-              <EvoIconThumbDown20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbDown24.name || "thumb-down-24"}</td>
-            <td>
-              <EvoIconThumbDown24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbDownFilled16.name || "thumb-down-filled-16"}</td>
-            <td>
-              <EvoIconThumbDownFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbDownFilled20.name || "thumb-down-filled-20"}</td>
-            <td>
-              <EvoIconThumbDownFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbDownFilled24.name || "thumb-down-filled-24"}</td>
-            <td>
-              <EvoIconThumbDownFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUp16.name || "thumb-up-16"}</td>
-            <td>
-              <EvoIconThumbUp16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUp20.name || "thumb-up-20"}</td>
-            <td>
-              <EvoIconThumbUp20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUp24.name || "thumb-up-24"}</td>
-            <td>
-              <EvoIconThumbUp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUp64.name || "thumb-up-64"}</td>
-            <td>
-              <EvoIconThumbUp64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUpFilled16.name || "thumb-up-filled-16"}</td>
-            <td>
-              <EvoIconThumbUpFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUpFilled20.name || "thumb-up-filled-20"}</td>
-            <td>
-              <EvoIconThumbUpFilled20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconThumbUpFilled24.name || "thumb-up-filled-24"}</td>
-            <td>
-              <EvoIconThumbUpFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTick12.name || "tick-12"}</td>
-            <td>
-              <EvoIconTick12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTick16.name || "tick-16"}</td>
-            <td>
-              <EvoIconTick16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTick24.name || "tick-24"}</td>
-            <td>
-              <EvoIconTick24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTiktok24.name || "tiktok-24"}</td>
-            <td>
-              <EvoIconTiktok24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTire16.name || "tire-16"}</td>
-            <td>
-              <EvoIconTire16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTire24.name || "tire-24"}</td>
-            <td>
-              <EvoIconTire24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconToggleModeBottom24.name || "toggle-mode-bottom-24"}</td>
-            <td>
-              <EvoIconToggleModeBottom24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconToggleModeTop24.name || "toggle-mode-top-24"}</td>
-            <td>
-              <EvoIconToggleModeTop24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopRatedPlus16.name || "top-rated-plus-16"}</td>
-            <td>
-              <EvoIconTopRatedPlus16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopRatedPlus24.name || "top-rated-plus-24"}</td>
-            <td>
-              <EvoIconTopRatedPlus24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopRatedSeller16.name || "top-rated-seller-16"}</td>
-            <td>
-              <EvoIconTopRatedSeller16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopRatedSeller24.name || "top-rated-seller-24"}</td>
-            <td>
-              <EvoIconTopRatedSeller24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopService16.name || "top-service-16"}</td>
-            <td>
-              <EvoIconTopService16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopService24.name || "top-service-24"}</td>
-            <td>
-              <EvoIconTopService24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopServiceFilled16.name || "top-service-filled-16"}</td>
-            <td>
-              <EvoIconTopServiceFilled16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopServiceFilled16Colored.name || "top-service-filled-16-colored"}</td>
-            <td>
-              <EvoIconTopServiceFilled16Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopServiceFilled24.name || "top-service-filled-24"}</td>
-            <td>
-              <EvoIconTopServiceFilled24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTopServiceFilled24Colored.name || "top-service-filled-24-colored"}</td>
-            <td>
-              <EvoIconTopServiceFilled24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTradingCard16.name || "trading-card-16"}</td>
-            <td>
-              <EvoIconTradingCard16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTradingCard24.name || "trading-card-24"}</td>
-            <td>
-              <EvoIconTradingCard24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTradingCardEdition24.name || "trading-card-edition-24"}</td>
-            <td>
-              <EvoIconTradingCardEdition24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTradingCardGrade16.name || "trading-card-grade-16"}</td>
-            <td>
-              <EvoIconTradingCardGrade16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTradingCardGrade24.name || "trading-card-grade-24"}</td>
-            <td>
-              <EvoIconTradingCardGrade24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTransaction24.name || "transaction-24"}</td>
-            <td>
-              <EvoIconTransaction24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTranslate16.name || "translate-16"}</td>
-            <td>
-              <EvoIconTranslate16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTranslate20.name || "translate-20"}</td>
-            <td>
-              <EvoIconTranslate20 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTranslate24.name || "translate-24"}</td>
-            <td>
-              <EvoIconTranslate24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTrendDown16Fit.name || "trend-down-16-fit"}</td>
-            <td>
-              <EvoIconTrendDown16Fit {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTrendUp16Fit.name || "trend-up-16-fit"}</td>
-            <td>
-              <EvoIconTrendUp16Fit {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTrophy16.name || "trophy-16"}</td>
-            <td>
-              <EvoIconTrophy16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTrophy24.name || "trophy-24"}</td>
-            <td>
-              <EvoIconTrophy24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTruck16.name || "truck-16"}</td>
-            <td>
-              <EvoIconTruck16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTruck24.name || "truck-24"}</td>
-            <td>
-              <EvoIconTruck24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTruck64.name || "truck-64"}</td>
-            <td>
-              <EvoIconTruck64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTruckShipped12.name || "truck-shipped-12"}</td>
-            <td>
-              <EvoIconTruckShipped12 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTruckShipped16.name || "truck-shipped-16"}</td>
-            <td>
-              <EvoIconTruckShipped16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTruckShipped24.name || "truck-shipped-24"}</td>
-            <td>
-              <EvoIconTruckShipped24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconTwitter24.name || "twitter-24"}</td>
-            <td>
-              <EvoIconTwitter24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUndo16.name || "undo-16"}</td>
-            <td>
-              <EvoIconUndo16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUndo24.name || "undo-24"}</td>
-            <td>
-              <EvoIconUndo24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnionpay12Colored.name || "unionpay-12-colored"}</td>
-            <td>
-              <EvoIconUnionpay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnionpay18Colored.name || "unionpay-18-colored"}</td>
-            <td>
-              <EvoIconUnionpay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnionpay24Colored.name || "unionpay-24-colored"}</td>
-            <td>
-              <EvoIconUnionpay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnionpay32Colored.name || "unionpay-32-colored"}</td>
-            <td>
-              <EvoIconUnionpay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnlock16.name || "unlock-16"}</td>
-            <td>
-              <EvoIconUnlock16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnlock24.name || "unlock-24"}</td>
-            <td>
-              <EvoIconUnlock24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUnselectAll24.name || "unselect-all-24"}</td>
-            <td>
-              <EvoIconUnselectAll24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUpload16.name || "upload-16"}</td>
-            <td>
-              <EvoIconUpload16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUpload24.name || "upload-24"}</td>
-            <td>
-              <EvoIconUpload24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUsaa12Colored.name || "usaa-12-colored"}</td>
-            <td>
-              <EvoIconUsaa12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUsaa18Colored.name || "usaa-18-colored"}</td>
-            <td>
-              <EvoIconUsaa18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUsaa24Colored.name || "usaa-24-colored"}</td>
-            <td>
-              <EvoIconUsaa24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconUsaa32Colored.name || "usaa-32-colored"}</td>
-            <td>
-              <EvoIconUsaa32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVenmo12Colored.name || "venmo-12-colored"}</td>
-            <td>
-              <EvoIconVenmo12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVenmo18Colored.name || "venmo-18-colored"}</td>
-            <td>
-              <EvoIconVenmo18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVenmo24Colored.name || "venmo-24-colored"}</td>
-            <td>
-              <EvoIconVenmo24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVenmo32Colored.name || "venmo-32-colored"}</td>
-            <td>
-              <EvoIconVenmo32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVerifiedCondition16.name || "verified-condition-16"}</td>
-            <td>
-              <EvoIconVerifiedCondition16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVerifiedCondition24.name || "verified-condition-24"}</td>
-            <td>
-              <EvoIconVerifiedCondition24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVideo24.name || "video-24"}</td>
-            <td>
-              <EvoIconVideo24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVisa12Colored.name || "visa-12-colored"}</td>
-            <td>
-              <EvoIconVisa12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVisa18Colored.name || "visa-18-colored"}</td>
-            <td>
-              <EvoIconVisa18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVisa24Colored.name || "visa-24-colored"}</td>
-            <td>
-              <EvoIconVisa24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconVisa32Colored.name || "visa-32-colored"}</td>
-            <td>
-              <EvoIconVisa32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWallet16.name || "wallet-16"}</td>
-            <td>
-              <EvoIconWallet16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWallet24.name || "wallet-24"}</td>
-            <td>
-              <EvoIconWallet24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWallet64.name || "wallet-64"}</td>
-            <td>
-              <EvoIconWallet64 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWalletBalance12Colored.name || "wallet-balance-12-colored"}</td>
-            <td>
-              <EvoIconWalletBalance12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWalletBalance18Colored.name || "wallet-balance-18-colored"}</td>
-            <td>
-              <EvoIconWalletBalance18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWalletBalance24Colored.name || "wallet-balance-24-colored"}</td>
-            <td>
-              <EvoIconWalletBalance24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWalletBalance32Colored.name || "wallet-balance-32-colored"}</td>
-            <td>
-              <EvoIconWalletBalance32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWatch16.name || "watch-16"}</td>
-            <td>
-              <EvoIconWatch16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWatch24.name || "watch-24"}</td>
-            <td>
-              <EvoIconWatch24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWellsFargo12Colored.name || "wells-fargo-12-colored"}</td>
-            <td>
-              <EvoIconWellsFargo12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWellsFargo18Colored.name || "wells-fargo-18-colored"}</td>
-            <td>
-              <EvoIconWellsFargo18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWellsFargo24Colored.name || "wells-fargo-24-colored"}</td>
-            <td>
-              <EvoIconWellsFargo24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWellsFargo32Colored.name || "wells-fargo-32-colored"}</td>
-            <td>
-              <EvoIconWellsFargo32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWhatsapp24.name || "whatsapp-24"}</td>
-            <td>
-              <EvoIconWhatsapp24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWireTransfer16.name || "wire-transfer-16"}</td>
-            <td>
-              <EvoIconWireTransfer16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWireTransfer24.name || "wire-transfer-24"}</td>
-            <td>
-              <EvoIconWireTransfer24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWireTransferCard12Colored.name || "wire-transfer-card-12-colored"}</td>
-            <td>
-              <EvoIconWireTransferCard12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWireTransferCard18Colored.name || "wire-transfer-card-18-colored"}</td>
-            <td>
-              <EvoIconWireTransferCard18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWireTransferCard24Colored.name || "wire-transfer-card-24-colored"}</td>
-            <td>
-              <EvoIconWireTransferCard24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWireTransferCard32Colored.name || "wire-transfer-card-32-colored"}</td>
-            <td>
-              <EvoIconWireTransferCard32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWon16.name || "won-16"}</td>
-            <td>
-              <EvoIconWon16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWon24.name || "won-24"}</td>
-            <td>
-              <EvoIconWon24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWrench16.name || "wrench-16"}</td>
-            <td>
-              <EvoIconWrench16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconWrench24.name || "wrench-24"}</td>
-            <td>
-              <EvoIconWrench24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconYoutube24.name || "youtube-24"}</td>
-            <td>
-              <EvoIconYoutube24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconYuan16.name || "yuan-16"}</td>
-            <td>
-              <EvoIconYuan16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconYuan24.name || "yuan-24"}</td>
-            <td>
-              <EvoIconYuan24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZipPay12Colored.name || "zip-pay-12-colored"}</td>
-            <td>
-              <EvoIconZipPay12Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZipPay18Colored.name || "zip-pay-18-colored"}</td>
-            <td>
-              <EvoIconZipPay18Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZipPay24Colored.name || "zip-pay-24-colored"}</td>
-            <td>
-              <EvoIconZipPay24Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZipPay32Colored.name || "zip-pay-32-colored"}</td>
-            <td>
-              <EvoIconZipPay32Colored {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZloty16.name || "zloty-16"}</td>
-            <td>
-              <EvoIconZloty16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZloty24.name || "zloty-24"}</td>
-            <td>
-              <EvoIconZloty24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZoomIn16.name || "zoom-in-16"}</td>
-            <td>
-              <EvoIconZoomIn16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZoomIn24.name || "zoom-in-24"}</td>
-            <td>
-              <EvoIconZoomIn24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZoomOut16.name || "zoom-out-16"}</td>
-            <td>
-              <EvoIconZoomOut16 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconZoomOut24.name || "zoom-out-24"}</td>
-            <td>
-              <EvoIconZoomOut24 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconImagePlaceholder.name || "image-placeholder"}</td>
-            <td>
-              <EvoIconImagePlaceholder {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating0.name || "star-rating-0"}</td>
-            <td>
-              <EvoIconStarRating0 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating05.name || "star-rating-0-5"}</td>
-            <td>
-              <EvoIconStarRating05 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating1.name || "star-rating-1"}</td>
-            <td>
-              <EvoIconStarRating1 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating15.name || "star-rating-1-5"}</td>
-            <td>
-              <EvoIconStarRating15 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating2.name || "star-rating-2"}</td>
-            <td>
-              <EvoIconStarRating2 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating25.name || "star-rating-2-5"}</td>
-            <td>
-              <EvoIconStarRating25 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating3.name || "star-rating-3"}</td>
-            <td>
-              <EvoIconStarRating3 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating35.name || "star-rating-3-5"}</td>
-            <td>
-              <EvoIconStarRating35 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating4.name || "star-rating-4"}</td>
-            <td>
-              <EvoIconStarRating4 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating45.name || "star-rating-4-5"}</td>
-            <td>
-              <EvoIconStarRating45 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRating5.name || "star-rating-5"}</td>
-            <td>
-              <EvoIconStarRating5 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall0.name || "star-rating-small-0"}</td>
-            <td>
-              <EvoIconStarRatingSmall0 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall05.name || "star-rating-small-0-5"}</td>
-            <td>
-              <EvoIconStarRatingSmall05 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall1.name || "star-rating-small-1"}</td>
-            <td>
-              <EvoIconStarRatingSmall1 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall15.name || "star-rating-small-1-5"}</td>
-            <td>
-              <EvoIconStarRatingSmall15 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall2.name || "star-rating-small-2"}</td>
-            <td>
-              <EvoIconStarRatingSmall2 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall25.name || "star-rating-small-2-5"}</td>
-            <td>
-              <EvoIconStarRatingSmall25 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall3.name || "star-rating-small-3"}</td>
-            <td>
-              <EvoIconStarRatingSmall3 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall35.name || "star-rating-small-3-5"}</td>
-            <td>
-              <EvoIconStarRatingSmall35 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall4.name || "star-rating-small-4"}</td>
-            <td>
-              <EvoIconStarRatingSmall4 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall45.name || "star-rating-small-4-5"}</td>
-            <td>
-              <EvoIconStarRatingSmall45 {...args} />
-            </td>
-          </tr>
-              
-
-          <tr>
-            <td>{EvoIconStarRatingSmall5.name || "star-rating-small-5"}</td>
-            <td>
-              <EvoIconStarRatingSmall5 {...args} />
-            </td>
-          </tr>
-              
-        </tbody>
-      </table>
+      <IconGrid>
+        <IconExample name="EvoIconAdd12">
+          <EvoIconAdd12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAdd16">
+          <EvoIconAdd16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAdd24">
+          <EvoIconAdd24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAddImage24">
+          <EvoIconAddImage24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAdjustPriceDown16">
+          <EvoIconAdjustPriceDown16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAdjustPriceDown24">
+          <EvoIconAdjustPriceDown24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAdjustPriceUp16">
+          <EvoIconAdjustPriceUp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAdjustPriceUp24">
+          <EvoIconAdjustPriceUp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAfterpay12Colored">
+          <EvoIconAfterpay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAfterpay18Colored">
+          <EvoIconAfterpay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAfterpay24Colored">
+          <EvoIconAfterpay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAfterpay32Colored">
+          <EvoIconAfterpay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAfterpayLogo24Colored">
+          <EvoIconAfterpayLogo24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAi16">
+          <EvoIconAi16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAi20">
+          <EvoIconAi20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAi24">
+          <EvoIconAi24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiCamera16">
+          <EvoIconAiCamera16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiCamera20">
+          <EvoIconAiCamera20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiCamera24">
+          <EvoIconAiCamera24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiFilled16">
+          <EvoIconAiFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiFilled20">
+          <EvoIconAiFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiFilled24">
+          <EvoIconAiFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiMobile16">
+          <EvoIconAiMobile16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiMobile20">
+          <EvoIconAiMobile20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiMobile24">
+          <EvoIconAiMobile24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSearch16">
+          <EvoIconAiSearch16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSearch20">
+          <EvoIconAiSearch20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSearch24">
+          <EvoIconAiSearch24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSearchFilled24">
+          <EvoIconAiSearchFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiShirt16">
+          <EvoIconAiShirt16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiShirt20">
+          <EvoIconAiShirt20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiShirt24">
+          <EvoIconAiShirt24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrum16Colored">
+          <EvoIconAiSpectrum16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrum20Colored">
+          <EvoIconAiSpectrum20Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrum24Colored">
+          <EvoIconAiSpectrum24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrumFilled16Colored">
+          <EvoIconAiSpectrumFilled16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrumFilled20Colored">
+          <EvoIconAiSpectrumFilled20Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrumFilled24Colored">
+          <EvoIconAiSpectrumFilled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSpectrumThin16Colored">
+          <EvoIconAiSpectrumThin16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSummary16">
+          <EvoIconAiSummary16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSummary20">
+          <EvoIconAiSummary20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiSummary24">
+          <EvoIconAiSummary24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiThin16">
+          <EvoIconAiThin16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiTools16">
+          <EvoIconAiTools16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiTools20">
+          <EvoIconAiTools20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAiTools24">
+          <EvoIconAiTools24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayCn12Colored">
+          <EvoIconAlipayCn12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayCn18Colored">
+          <EvoIconAlipayCn18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayCn24Colored">
+          <EvoIconAlipayCn24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayCn32Colored">
+          <EvoIconAlipayCn32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayHk12Colored">
+          <EvoIconAlipayHk12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayHk18Colored">
+          <EvoIconAlipayHk18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayHk24Colored">
+          <EvoIconAlipayHk24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAlipayHk32Colored">
+          <EvoIconAlipayHk32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAmex12Colored">
+          <EvoIconAmex12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAmex18Colored">
+          <EvoIconAmex18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAmex24Colored">
+          <EvoIconAmex24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAmex32Colored">
+          <EvoIconAmex32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconApple24">
+          <EvoIconApple24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAppleMusic24Colored">
+          <EvoIconAppleMusic24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconApplePay12Colored">
+          <EvoIconApplePay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconApplePay18Colored">
+          <EvoIconApplePay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconApplePay24Colored">
+          <EvoIconApplePay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconApplePay32Colored">
+          <EvoIconApplePay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArchive16">
+          <EvoIconArchive16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArchive24">
+          <EvoIconArchive24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowDown12">
+          <EvoIconArrowDown12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowDown16">
+          <EvoIconArrowDown16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowDown20">
+          <EvoIconArrowDown20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowDown24">
+          <EvoIconArrowDown24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowLeft12">
+          <EvoIconArrowLeft12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowLeft16">
+          <EvoIconArrowLeft16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowLeft20">
+          <EvoIconArrowLeft20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowLeft24">
+          <EvoIconArrowLeft24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowRight12">
+          <EvoIconArrowRight12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowRight16">
+          <EvoIconArrowRight16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowRight20">
+          <EvoIconArrowRight20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowRight24">
+          <EvoIconArrowRight24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowUp12">
+          <EvoIconArrowUp12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowUp16">
+          <EvoIconArrowUp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowUp20">
+          <EvoIconArrowUp20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowUp24">
+          <EvoIconArrowUp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrows3d16">
+          <EvoIconArrows3d16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrows3d24">
+          <EvoIconArrows3d24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrows3dFilled64Colored">
+          <EvoIconArrows3dFilled64Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowsExpand16">
+          <EvoIconArrowsExpand16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArrowsExpand24">
+          <EvoIconArrowsExpand24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArticle16">
+          <EvoIconArticle16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconArticle24">
+          <EvoIconArticle24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttention16">
+          <EvoIconAttention16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttention24">
+          <EvoIconAttention24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttention64">
+          <EvoIconAttention64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttentionFilled16">
+          <EvoIconAttentionFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttentionFilled24">
+          <EvoIconAttentionFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttentionTriangle16">
+          <EvoIconAttentionTriangle16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttentionTriangle24">
+          <EvoIconAttentionTriangle24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttentionTriangleFilled16">
+          <EvoIconAttentionTriangleFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAttentionTriangleFilled24">
+          <EvoIconAttentionTriangleFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAtv16">
+          <EvoIconAtv16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAtv24">
+          <EvoIconAtv24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioHigh16">
+          <EvoIconAudioHigh16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioHigh20">
+          <EvoIconAudioHigh20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioHigh24">
+          <EvoIconAudioHigh24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioLow16">
+          <EvoIconAudioLow16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioOff16">
+          <EvoIconAudioOff16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioOff20">
+          <EvoIconAudioOff20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAudioOff24">
+          <EvoIconAudioOff24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAuthenticityGuarantee16">
+          <EvoIconAuthenticityGuarantee16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAuthenticityGuarantee24">
+          <EvoIconAuthenticityGuarantee24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAuthenticityGuaranteeFilled16">
+          <EvoIconAuthenticityGuaranteeFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAuthenticityGuaranteeFilled16Colored">
+          <EvoIconAuthenticityGuaranteeFilled16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAuthenticityGuaranteeFilled24">
+          <EvoIconAuthenticityGuaranteeFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAuthenticityGuaranteeFilled24Colored">
+          <EvoIconAuthenticityGuaranteeFilled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAutoAdjust16">
+          <EvoIconAutoAdjust16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAutoAdjust24">
+          <EvoIconAutoAdjust24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAvatarSignedOut">
+          <EvoIconAvatarSignedOut {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBackgroundRemoval16">
+          <EvoIconBackgroundRemoval16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBackgroundRemoval24">
+          <EvoIconBackgroundRemoval24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBancontact12Colored">
+          <EvoIconBancontact12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBancontact18Colored">
+          <EvoIconBancontact18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBancontact24Colored">
+          <EvoIconBancontact24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBancontact32Colored">
+          <EvoIconBancontact32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBank16">
+          <EvoIconBank16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBank20">
+          <EvoIconBank20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBank24">
+          <EvoIconBank24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBank64">
+          <EvoIconBank64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankAccount12Colored">
+          <EvoIconBankAccount12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankAccount18Colored">
+          <EvoIconBankAccount18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankAccount24Colored">
+          <EvoIconBankAccount24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankAccount32Colored">
+          <EvoIconBankAccount32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankGroupLogo24Colored">
+          <EvoIconBankGroupLogo24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankOfAmerica12Colored">
+          <EvoIconBankOfAmerica12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankOfAmerica18Colored">
+          <EvoIconBankOfAmerica18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankOfAmerica24Colored">
+          <EvoIconBankOfAmerica24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBankOfAmerica32Colored">
+          <EvoIconBankOfAmerica32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBarChart16">
+          <EvoIconBarChart16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBarChart24">
+          <EvoIconBarChart24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBatteryWaste48">
+          <EvoIconBatteryWaste48 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBids12">
+          <EvoIconBids12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBids16">
+          <EvoIconBids16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBids24">
+          <EvoIconBids24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBids64">
+          <EvoIconBids64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBoat16">
+          <EvoIconBoat16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBoat24">
+          <EvoIconBoat24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBook16">
+          <EvoIconBook16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBook24">
+          <EvoIconBook24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBookmark16">
+          <EvoIconBookmark16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBookmark24">
+          <EvoIconBookmark24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBookmarkFilled16">
+          <EvoIconBookmarkFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBookmarkFilled24">
+          <EvoIconBookmarkFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBrandAuthorizedSeller16">
+          <EvoIconBrandAuthorizedSeller16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBrandAuthorizedSeller24">
+          <EvoIconBrandAuthorizedSeller24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBrightness16">
+          <EvoIconBrightness16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBrightness20">
+          <EvoIconBrightness20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconBrightness24">
+          <EvoIconBrightness24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCalendar16">
+          <EvoIconCalendar16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCalendar24">
+          <EvoIconCalendar24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCalendar64">
+          <EvoIconCalendar64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCamera16">
+          <EvoIconCamera16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCamera24">
+          <EvoIconCamera24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCamera64">
+          <EvoIconCamera64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCapitalOne12Colored">
+          <EvoIconCapitalOne12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCapitalOne18Colored">
+          <EvoIconCapitalOne18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCapitalOne24Colored">
+          <EvoIconCapitalOne24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCapitalOne32Colored">
+          <EvoIconCapitalOne32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCar16">
+          <EvoIconCar16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCar24">
+          <EvoIconCar24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarBrake16">
+          <EvoIconCarBrake16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarBrake24">
+          <EvoIconCarBrake24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCardStack64">
+          <EvoIconCardStack64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarnet12Colored">
+          <EvoIconCarnet12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarnet18Colored">
+          <EvoIconCarnet18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarnet24Colored">
+          <EvoIconCarnet24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarnet32Colored">
+          <EvoIconCarnet32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCarryon24">
+          <EvoIconCarryon24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCart16">
+          <EvoIconCart16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCart20">
+          <EvoIconCart20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCart24">
+          <EvoIconCart24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCart64">
+          <EvoIconCart64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCartAdd16">
+          <EvoIconCartAdd16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCartAdd20">
+          <EvoIconCartAdd20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCartAdd24">
+          <EvoIconCartAdd24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCashapp12Colored">
+          <EvoIconCashapp12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCashapp18Colored">
+          <EvoIconCashapp18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCashapp24Colored">
+          <EvoIconCashapp24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCashapp32Colored">
+          <EvoIconCashapp32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCategories16">
+          <EvoIconCategories16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCategories24">
+          <EvoIconCategories24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCb12Colored">
+          <EvoIconCb12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCb18Colored">
+          <EvoIconCb18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCb24Colored">
+          <EvoIconCb24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCb32Colored">
+          <EvoIconCb32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCcdChargerIncluded">
+          <EvoIconCcdChargerIncluded {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCcdChargerNotIncluded">
+          <EvoIconCcdChargerNotIncluded {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCcdTop">
+          <EvoIconCcdTop {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCertifiedRecycled16">
+          <EvoIconCertifiedRecycled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCertifiedRecycled24">
+          <EvoIconCertifiedRecycled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChair16">
+          <EvoIconChair16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChair24">
+          <EvoIconChair24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChase12Colored">
+          <EvoIconChase12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChase18Colored">
+          <EvoIconChase18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChase24Colored">
+          <EvoIconChase24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChase32Colored">
+          <EvoIconChase32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChat16">
+          <EvoIconChat16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChat24">
+          <EvoIconChat24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChat64">
+          <EvoIconChat64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckIn24">
+          <EvoIconCheckIn24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckboxChecked18">
+          <EvoIconCheckboxChecked18 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckboxChecked24">
+          <EvoIconCheckboxChecked24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckboxMixed18">
+          <EvoIconCheckboxMixed18 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckboxMixed24">
+          <EvoIconCheckboxMixed24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckboxUnchecked18">
+          <EvoIconCheckboxUnchecked18 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckboxUnchecked24">
+          <EvoIconCheckboxUnchecked24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCheckmark24">
+          <EvoIconCheckmark24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronDown12">
+          <EvoIconChevronDown12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronDown16">
+          <EvoIconChevronDown16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronDown20">
+          <EvoIconChevronDown20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronDown24">
+          <EvoIconChevronDown24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronLeft12">
+          <EvoIconChevronLeft12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronLeft16">
+          <EvoIconChevronLeft16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronLeft20">
+          <EvoIconChevronLeft20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronLeft24">
+          <EvoIconChevronLeft24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronRight12">
+          <EvoIconChevronRight12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronRight16">
+          <EvoIconChevronRight16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronRight20">
+          <EvoIconChevronRight20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronRight24">
+          <EvoIconChevronRight24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronUp12">
+          <EvoIconChevronUp12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronUp16">
+          <EvoIconChevronUp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronUp20">
+          <EvoIconChevronUp20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChevronUp24">
+          <EvoIconChevronUp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChineseCoin16">
+          <EvoIconChineseCoin16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconChineseCoin24">
+          <EvoIconChineseCoin24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCiti12Colored">
+          <EvoIconCiti12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCiti18Colored">
+          <EvoIconCiti18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCiti24Colored">
+          <EvoIconCiti24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCiti32Colored">
+          <EvoIconCiti32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClear16">
+          <EvoIconClear16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClear20">
+          <EvoIconClear20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClear24">
+          <EvoIconClear24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClickToCall16">
+          <EvoIconClickToCall16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClickToCall24">
+          <EvoIconClickToCall24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClock12">
+          <EvoIconClock12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClock16">
+          <EvoIconClock16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClock24">
+          <EvoIconClock24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClock64">
+          <EvoIconClock64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClockFast16">
+          <EvoIconClockFast16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClockFast24">
+          <EvoIconClockFast24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClose12">
+          <EvoIconClose12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClose16">
+          <EvoIconClose16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClose20">
+          <EvoIconClose20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClose24">
+          <EvoIconClose24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClosedCaption16">
+          <EvoIconClosedCaption16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClosedCaption24">
+          <EvoIconClosedCaption24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClosedCaptionFilled16">
+          <EvoIconClosedCaptionFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconClosedCaptionFilled24">
+          <EvoIconClosedCaptionFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCoin24">
+          <EvoIconCoin24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCoinBattery48">
+          <EvoIconCoinBattery48 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCollections16">
+          <EvoIconCollections16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCollections24">
+          <EvoIconCollections24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCondensedGrid24">
+          <EvoIconCondensedGrid24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCondensedGridFilled24">
+          <EvoIconCondensedGridFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConfirmation16">
+          <EvoIconConfirmation16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConfirmation24">
+          <EvoIconConfirmation24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConfirmation64">
+          <EvoIconConfirmation64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConfirmationFilled12">
+          <EvoIconConfirmationFilled12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConfirmationFilled16">
+          <EvoIconConfirmationFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconConfirmationFilled24">
+          <EvoIconConfirmationFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconContract16">
+          <EvoIconContract16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconContrast24">
+          <EvoIconContrast24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCopy16">
+          <EvoIconCopy16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCopy24">
+          <EvoIconCopy24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCoupon16">
+          <EvoIconCoupon16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCoupon20">
+          <EvoIconCoupon20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCoupon24">
+          <EvoIconCoupon24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCard16">
+          <EvoIconCreditCard16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCard20">
+          <EvoIconCreditCard20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCard24">
+          <EvoIconCreditCard24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCard64">
+          <EvoIconCreditCard64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCardCvvBack20">
+          <EvoIconCreditCardCvvBack20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCardCvvBack24">
+          <EvoIconCreditCardCvvBack24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCardCvvFront20">
+          <EvoIconCreditCardCvvFront20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCreditCardCvvFront24">
+          <EvoIconCreditCardCvvFront24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCrop24">
+          <EvoIconCrop24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCustomize16">
+          <EvoIconCustomize16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconCustomize24">
+          <EvoIconCustomize24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDelete16">
+          <EvoIconDelete16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDelete20">
+          <EvoIconDelete20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDelete24">
+          <EvoIconDelete24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityCompact16">
+          <EvoIconDensityCompact16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityCompact24">
+          <EvoIconDensityCompact24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityDefault16">
+          <EvoIconDensityDefault16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityDefault24">
+          <EvoIconDensityDefault24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityRelaxed16">
+          <EvoIconDensityRelaxed16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityRelaxed24">
+          <EvoIconDensityRelaxed24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityRowCompact16">
+          <EvoIconDensityRowCompact16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityRowCompact24">
+          <EvoIconDensityRowCompact24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityRowRelaxed16">
+          <EvoIconDensityRowRelaxed16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDensityRowRelaxed24">
+          <EvoIconDensityRowRelaxed24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDesktop16">
+          <EvoIconDesktop16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDesktop20">
+          <EvoIconDesktop20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDesktop24">
+          <EvoIconDesktop24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiamond16">
+          <EvoIconDiamond16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiamond24">
+          <EvoIconDiamond24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiners12Colored">
+          <EvoIconDiners12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiners18Colored">
+          <EvoIconDiners18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiners24Colored">
+          <EvoIconDiners24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiners32Colored">
+          <EvoIconDiners32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDirectDebit12Colored">
+          <EvoIconDirectDebit12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDirectDebit18Colored">
+          <EvoIconDirectDebit18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDirectDebit24Colored">
+          <EvoIconDirectDebit24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDirectDebit32Colored">
+          <EvoIconDirectDebit32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDirectFromBrand16">
+          <EvoIconDirectFromBrand16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDirectFromBrand24">
+          <EvoIconDirectFromBrand24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscord24">
+          <EvoIconDiscord24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscount16">
+          <EvoIconDiscount16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscount24">
+          <EvoIconDiscount24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscountAuto16">
+          <EvoIconDiscountAuto16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscountAuto24">
+          <EvoIconDiscountAuto24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscover12Colored">
+          <EvoIconDiscover12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscover18Colored">
+          <EvoIconDiscover18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscover24Colored">
+          <EvoIconDiscover24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDiscover32Colored">
+          <EvoIconDiscover32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDollar16">
+          <EvoIconDollar16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDollar24">
+          <EvoIconDollar24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDollarOff24">
+          <EvoIconDollarOff24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDownload16">
+          <EvoIconDownload16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDownload20">
+          <EvoIconDownload20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDownload24">
+          <EvoIconDownload24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDragDrop16">
+          <EvoIconDragDrop16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconDragDrop24">
+          <EvoIconDragDrop24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayBalance12Colored">
+          <EvoIconEbayBalance12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayBalance18Colored">
+          <EvoIconEbayBalance18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayBalance24Colored">
+          <EvoIconEbayBalance24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayBalance32Colored">
+          <EvoIconEbayBalance32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayBucksLogo16Colored">
+          <EvoIconEbayBucksLogo16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardBlack12Colored">
+          <EvoIconEbayCreditCardBlack12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardBlack18Colored">
+          <EvoIconEbayCreditCardBlack18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardBlack24Colored">
+          <EvoIconEbayCreditCardBlack24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardBlack32Colored">
+          <EvoIconEbayCreditCardBlack32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardPurple12Colored">
+          <EvoIconEbayCreditCardPurple12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardPurple18Colored">
+          <EvoIconEbayCreditCardPurple18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardPurple24Colored">
+          <EvoIconEbayCreditCardPurple24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardPurple32Colored">
+          <EvoIconEbayCreditCardPurple32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardWhite12Colored">
+          <EvoIconEbayCreditCardWhite12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardWhite18Colored">
+          <EvoIconEbayCreditCardWhite18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardWhite24Colored">
+          <EvoIconEbayCreditCardWhite24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayCreditCardWhite32Colored">
+          <EvoIconEbayCreditCardWhite32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayForCharity16">
+          <EvoIconEbayForCharity16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayForCharity24">
+          <EvoIconEbayForCharity24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayInternationalShipping16">
+          <EvoIconEbayInternationalShipping16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayInternationalShipping24">
+          <EvoIconEbayInternationalShipping24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayInternationalShipping64">
+          <EvoIconEbayInternationalShipping64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayLive16">
+          <EvoIconEbayLive16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayLive24">
+          <EvoIconEbayLive24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayLogo16Colored">
+          <EvoIconEbayLogo16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayMastercard12Colored">
+          <EvoIconEbayMastercard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayMastercard18Colored">
+          <EvoIconEbayMastercard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayMastercard24Colored">
+          <EvoIconEbayMastercard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayMastercard32Colored">
+          <EvoIconEbayMastercard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayMoneyBackGuaranteeLogo16Colored">
+          <EvoIconEbayMoneyBackGuaranteeLogo16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayPlus16">
+          <EvoIconEbayPlus16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayPlus24">
+          <EvoIconEbayPlus24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayPlusLogo16Colored">
+          <EvoIconEbayPlusLogo16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayPlusLogoDark16Colored">
+          <EvoIconEbayPlusLogoDark16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayPreloved16">
+          <EvoIconEbayPreloved16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayPreloved24">
+          <EvoIconEbayPreloved24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayRefurbished16">
+          <EvoIconEbayRefurbished16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEbayRefurbished24">
+          <EvoIconEbayRefurbished24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEekArrow">
+          <EvoIconEekArrow {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEekRangeArrow">
+          <EvoIconEekRangeArrow {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEftpos12Colored">
+          <EvoIconEftpos12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEftpos18Colored">
+          <EvoIconEftpos18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEftpos24Colored">
+          <EvoIconEftpos24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEftpos32Colored">
+          <EvoIconEftpos32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconElo12Colored">
+          <EvoIconElo12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconElo18Colored">
+          <EvoIconElo18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconElo24Colored">
+          <EvoIconElo24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconElo32Colored">
+          <EvoIconElo32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEscrowCard12Colored">
+          <EvoIconEscrowCard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEscrowCard18Colored">
+          <EvoIconEscrowCard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEscrowCard24Colored">
+          <EvoIconEscrowCard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEscrowCard32Colored">
+          <EvoIconEscrowCard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEuro16">
+          <EvoIconEuro16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEuro24">
+          <EvoIconEuro24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEuropeanConformity48">
+          <EvoIconEuropeanConformity48 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExclude16">
+          <EvoIconExclude16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExclude24">
+          <EvoIconExclude24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExclude64">
+          <EvoIconExclude64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExpand16">
+          <EvoIconExpand16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExplore16">
+          <EvoIconExplore16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExplore24">
+          <EvoIconExplore24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExternalLink16">
+          <EvoIconExternalLink16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExternalLink20">
+          <EvoIconExternalLink20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconExternalLink24">
+          <EvoIconExternalLink24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEye16">
+          <EvoIconEye16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconEye24">
+          <EvoIconEye24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFaceHappiest24">
+          <EvoIconFaceHappiest24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFaceHappy16">
+          <EvoIconFaceHappy16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFaceHappy24">
+          <EvoIconFaceHappy24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFaceNeutral24">
+          <EvoIconFaceNeutral24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFaceSad24">
+          <EvoIconFaceSad24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFaceSaddest24">
+          <EvoIconFaceSaddest24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFacebook24">
+          <EvoIconFacebook24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFacebookMessenger24">
+          <EvoIconFacebookMessenger24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFallLeaf16">
+          <EvoIconFallLeaf16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFallLeaf24">
+          <EvoIconFallLeaf24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFastForward16">
+          <EvoIconFastForward16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedback16">
+          <EvoIconFeedback16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedback20">
+          <EvoIconFeedback20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedback24">
+          <EvoIconFeedback24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackError16">
+          <EvoIconFeedbackError16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackError24">
+          <EvoIconFeedbackError24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackNegative16">
+          <EvoIconFeedbackNegative16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackNeutral16">
+          <EvoIconFeedbackNeutral16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackPositive16">
+          <EvoIconFeedbackPositive16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackReceived16">
+          <EvoIconFeedbackReceived16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFeedbackReceived24">
+          <EvoIconFeedbackReceived24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFile16">
+          <EvoIconFile16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFile24">
+          <EvoIconFile24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFilter16">
+          <EvoIconFilter16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFilter24">
+          <EvoIconFilter24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFingerprint16">
+          <EvoIconFingerprint16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFingerprint24">
+          <EvoIconFingerprint24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFingerprint64">
+          <EvoIconFingerprint64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlag16">
+          <EvoIconFlag16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlag24">
+          <EvoIconFlag24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlagFilled16">
+          <EvoIconFlagFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlagFilled24">
+          <EvoIconFlagFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlash24">
+          <EvoIconFlash24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlashAuto24">
+          <EvoIconFlashAuto24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFlashOff24">
+          <EvoIconFlashOff24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFolder16">
+          <EvoIconFolder16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFolder24">
+          <EvoIconFolder24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFolderAdd16">
+          <EvoIconFolderAdd16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFolderAdd24">
+          <EvoIconFolderAdd24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconForklift16">
+          <EvoIconForklift16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconForklift24">
+          <EvoIconForklift24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFranc16">
+          <EvoIconFranc16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFranc24">
+          <EvoIconFranc24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFreeWarranty16">
+          <EvoIconFreeWarranty16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFreeWarranty24">
+          <EvoIconFreeWarranty24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFullView16">
+          <EvoIconFullView16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFullView24">
+          <EvoIconFullView24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFullViewFilled16">
+          <EvoIconFullViewFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconFullViewFilled24">
+          <EvoIconFullViewFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGallery16">
+          <EvoIconGallery16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGallery24">
+          <EvoIconGallery24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGeneralCard12Colored">
+          <EvoIconGeneralCard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGeneralCard18Colored">
+          <EvoIconGeneralCard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGeneralCard24Colored">
+          <EvoIconGeneralCard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGeneralCard32Colored">
+          <EvoIconGeneralCard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGenericCard12Colored">
+          <EvoIconGenericCard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGenericCard18Colored">
+          <EvoIconGenericCard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGenericCard24Colored">
+          <EvoIconGenericCard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGenericCard32Colored">
+          <EvoIconGenericCard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGift16">
+          <EvoIconGift16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGift20">
+          <EvoIconGift20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGift24">
+          <EvoIconGift24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGift64">
+          <EvoIconGift64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGiftCard12Colored">
+          <EvoIconGiftCard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGiftCard18Colored">
+          <EvoIconGiftCard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGiftCard24Colored">
+          <EvoIconGiftCard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGiftCard32Colored">
+          <EvoIconGiftCard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGirocard12Colored">
+          <EvoIconGirocard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGirocard18Colored">
+          <EvoIconGirocard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGirocard24Colored">
+          <EvoIconGirocard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGirocard32Colored">
+          <EvoIconGirocard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGithub24">
+          <EvoIconGithub24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGlasses24">
+          <EvoIconGlasses24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGlasses64">
+          <EvoIconGlasses64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGoogle24">
+          <EvoIconGoogle24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGooglePay12Colored">
+          <EvoIconGooglePay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGooglePay18Colored">
+          <EvoIconGooglePay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGooglePay24Colored">
+          <EvoIconGooglePay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGooglePay32Colored">
+          <EvoIconGooglePay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGraph16">
+          <EvoIconGraph16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGraph24">
+          <EvoIconGraph24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGraph64">
+          <EvoIconGraph64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGraphDynamic16">
+          <EvoIconGraphDynamic16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGraphDynamic24">
+          <EvoIconGraphDynamic24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGridView16">
+          <EvoIconGridView16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGridView24">
+          <EvoIconGridView24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGridViewFilled16">
+          <EvoIconGridViewFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGridViewFilled24">
+          <EvoIconGridViewFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGuaranteedFitFilled16">
+          <EvoIconGuaranteedFitFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconGuaranteedFitFilled24">
+          <EvoIconGuaranteedFitFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHandSwipe40">
+          <EvoIconHandSwipe40 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHandbag16">
+          <EvoIconHandbag16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHandbag24">
+          <EvoIconHandbag24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHanger16">
+          <EvoIconHanger16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHanger24">
+          <EvoIconHanger24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeadlight16">
+          <EvoIconHeadlight16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeadlight24">
+          <EvoIconHeadlight24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeadphone16">
+          <EvoIconHeadphone16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeadphone24">
+          <EvoIconHeadphone24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeart16">
+          <EvoIconHeart16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeart20">
+          <EvoIconHeart20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeart24">
+          <EvoIconHeart24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeartFilled16">
+          <EvoIconHeartFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeartFilled20">
+          <EvoIconHeartFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHeartFilled24">
+          <EvoIconHeartFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHelp16">
+          <EvoIconHelp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHelp20">
+          <EvoIconHelp20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHelp24">
+          <EvoIconHelp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHelpOutline16">
+          <EvoIconHelpOutline16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHelpOutline20">
+          <EvoIconHelpOutline20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHelpOutline24">
+          <EvoIconHelpOutline24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHide16">
+          <EvoIconHide16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHide24">
+          <EvoIconHide24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHistory16">
+          <EvoIconHistory16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHistory24">
+          <EvoIconHistory24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHistory64">
+          <EvoIconHistory64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHome16">
+          <EvoIconHome16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHome20">
+          <EvoIconHome20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHome24">
+          <EvoIconHome24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconHomeFilled24">
+          <EvoIconHomeFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconImage16">
+          <EvoIconImage16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconImage24">
+          <EvoIconImage24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconImage64">
+          <EvoIconImage64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInbox16">
+          <EvoIconInbox16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInbox24">
+          <EvoIconInbox24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformation12">
+          <EvoIconInformation12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformation16">
+          <EvoIconInformation16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformation20">
+          <EvoIconInformation20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformation24">
+          <EvoIconInformation24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformationFilled16">
+          <EvoIconInformationFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformationFilled20">
+          <EvoIconInformationFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInformationFilled24">
+          <EvoIconInformationFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInspect16">
+          <EvoIconInspect16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInspect24">
+          <EvoIconInspect24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInspect64">
+          <EvoIconInspect64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInstagram24">
+          <EvoIconInstagram24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInterac12Colored">
+          <EvoIconInterac12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInterac18Colored">
+          <EvoIconInterac18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInterac24Colored">
+          <EvoIconInterac24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconInterac32Colored">
+          <EvoIconInterac32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconItemList16">
+          <EvoIconItemList16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconItemList20">
+          <EvoIconItemList20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconItemList24">
+          <EvoIconItemList24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconJcb12Colored">
+          <EvoIconJcb12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconJcb18Colored">
+          <EvoIconJcb18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconJcb24Colored">
+          <EvoIconJcb24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconJcb32Colored">
+          <EvoIconJcb32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconJetSki16">
+          <EvoIconJetSki16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconJetSki24">
+          <EvoIconJetSki24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKakaoPay12Colored">
+          <EvoIconKakaoPay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKakaoPay18Colored">
+          <EvoIconKakaoPay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKakaoPay24Colored">
+          <EvoIconKakaoPay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKakaoPay32Colored">
+          <EvoIconKakaoPay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKey16">
+          <EvoIconKey16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKey24">
+          <EvoIconKey24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKeyboard16">
+          <EvoIconKeyboard16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKeyboard24">
+          <EvoIconKeyboard24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaBlack12Colored">
+          <EvoIconKlarnaBlack12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaBlack18Colored">
+          <EvoIconKlarnaBlack18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaBlack24Colored">
+          <EvoIconKlarnaBlack24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaBlack32Colored">
+          <EvoIconKlarnaBlack32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaPink12Colored">
+          <EvoIconKlarnaPink12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaPink18Colored">
+          <EvoIconKlarnaPink18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaPink24Colored">
+          <EvoIconKlarnaPink24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaPink32Colored">
+          <EvoIconKlarnaPink32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaWhite12Colored">
+          <EvoIconKlarnaWhite12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaWhite18Colored">
+          <EvoIconKlarnaWhite18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaWhite24Colored">
+          <EvoIconKlarnaWhite24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKlarnaWhite32Colored">
+          <EvoIconKlarnaWhite32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKrona16">
+          <EvoIconKrona16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconKrona24">
+          <EvoIconKrona24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLamp16">
+          <EvoIconLamp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLamp24">
+          <EvoIconLamp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLargeBox16">
+          <EvoIconLargeBox16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLargeBox24">
+          <EvoIconLargeBox24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyAuthenticityGuarantee48Colored">
+          <EvoIconLegacyAuthenticityGuarantee48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyClickToCall48Colored">
+          <EvoIconLegacyClickToCall48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyEscrow48Colored">
+          <EvoIconLegacyEscrow48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyFreeWarranty48Colored">
+          <EvoIconLegacyFreeWarranty48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyMoneyBackGuaranteeChf48Colored">
+          <EvoIconLegacyMoneyBackGuaranteeChf48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyMoneyBackGuaranteeEu48Colored">
+          <EvoIconLegacyMoneyBackGuaranteeEu48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyMoneyBackGuaranteeUk48Colored">
+          <EvoIconLegacyMoneyBackGuaranteeUk48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyMoneyBackGuaranteeUs48Colored">
+          <EvoIconLegacyMoneyBackGuaranteeUs48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyMoneyBackGuaranteeZl48Colored">
+          <EvoIconLegacyMoneyBackGuaranteeZl48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLegacyTopRatedSeller48Colored">
+          <EvoIconLegacyTopRatedSeller48Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightbulb16">
+          <EvoIconLightbulb16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightbulb24">
+          <EvoIconLightbulb24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightningBolt16">
+          <EvoIconLightningBolt16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightningBolt24">
+          <EvoIconLightningBolt24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightningBoltFilled12">
+          <EvoIconLightningBoltFilled12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightningBoltFilled16">
+          <EvoIconLightningBoltFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLightningBoltFilled24">
+          <EvoIconLightningBoltFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLink16">
+          <EvoIconLink16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLink20">
+          <EvoIconLink20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLink24">
+          <EvoIconLink24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLinkedin24">
+          <EvoIconLinkedin24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconListView16">
+          <EvoIconListView16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconListView24">
+          <EvoIconListView24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconListViewFilled16">
+          <EvoIconListViewFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconListViewFilled24">
+          <EvoIconListViewFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBag16">
+          <EvoIconLiveBag16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBag20">
+          <EvoIconLiveBag20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBag24">
+          <EvoIconLiveBag24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBagFilled24">
+          <EvoIconLiveBagFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBagPlayFilled16Colored">
+          <EvoIconLiveBagPlayFilled16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBagPlayFilled24Colored">
+          <EvoIconLiveBagPlayFilled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBagPlayFilled64Colored">
+          <EvoIconLiveBagPlayFilled64Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBagThin16">
+          <EvoIconLiveBagThin16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBroadcast16">
+          <EvoIconLiveBroadcast16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBroadcast20">
+          <EvoIconLiveBroadcast20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBroadcast24">
+          <EvoIconLiveBroadcast24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBroadcastFilled24">
+          <EvoIconLiveBroadcastFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveBroadcastThin16">
+          <EvoIconLiveBroadcastThin16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveEye16">
+          <EvoIconLiveEye16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLiveEye24">
+          <EvoIconLiveEye24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocation16">
+          <EvoIconLocation16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocation24">
+          <EvoIconLocation24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocation64">
+          <EvoIconLocation64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocationArrow16">
+          <EvoIconLocationArrow16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocationArrow24">
+          <EvoIconLocationArrow24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLock16">
+          <EvoIconLock16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLock24">
+          <EvoIconLock24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLockFilled16">
+          <EvoIconLockFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLockFilled20">
+          <EvoIconLockFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLockFilled24">
+          <EvoIconLockFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocker16">
+          <EvoIconLocker16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocker24">
+          <EvoIconLocker24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconLocker64">
+          <EvoIconLocker64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMaestro12Colored">
+          <EvoIconMaestro12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMaestro18Colored">
+          <EvoIconMaestro18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMaestro24Colored">
+          <EvoIconMaestro24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMaestro32Colored">
+          <EvoIconMaestro32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMail16">
+          <EvoIconMail16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMail20">
+          <EvoIconMail20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMail24">
+          <EvoIconMail24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMail64">
+          <EvoIconMail64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMailMove16">
+          <EvoIconMailMove16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMailMove24">
+          <EvoIconMailMove24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMailOpen16">
+          <EvoIconMailOpen16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMailOpen24">
+          <EvoIconMailOpen24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMailUnread16">
+          <EvoIconMailUnread16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMailUnread24">
+          <EvoIconMailUnread24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMap16">
+          <EvoIconMap16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMap20">
+          <EvoIconMap20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMap24">
+          <EvoIconMap24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMarkdown16">
+          <EvoIconMarkdown16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMarkdown20">
+          <EvoIconMarkdown20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMarkdown24">
+          <EvoIconMarkdown24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMasonryView16">
+          <EvoIconMasonryView16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMasonryView24">
+          <EvoIconMasonryView24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMasonryViewFilled16">
+          <EvoIconMasonryViewFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMasonryViewFilled24">
+          <EvoIconMasonryViewFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMastercard12Colored">
+          <EvoIconMastercard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMastercard18Colored">
+          <EvoIconMastercard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMastercard24Colored">
+          <EvoIconMastercard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMastercard32Colored">
+          <EvoIconMastercard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMediumBox16">
+          <EvoIconMediumBox16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMediumBox24">
+          <EvoIconMediumBox24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMegaphone16">
+          <EvoIconMegaphone16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMegaphone24">
+          <EvoIconMegaphone24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMenu16">
+          <EvoIconMenu16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMenu20">
+          <EvoIconMenu20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMenu24">
+          <EvoIconMenu24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMercadoPago12Colored">
+          <EvoIconMercadoPago12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMercadoPago18Colored">
+          <EvoIconMercadoPago18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMercadoPago24Colored">
+          <EvoIconMercadoPago24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMercadoPago32Colored">
+          <EvoIconMercadoPago32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMicrophone16">
+          <EvoIconMicrophone16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMicrophone24">
+          <EvoIconMicrophone24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMobile16">
+          <EvoIconMobile16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMobile20">
+          <EvoIconMobile20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMobile24">
+          <EvoIconMobile24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMobileSignal24">
+          <EvoIconMobileSignal24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyBackGuarantee16">
+          <EvoIconMoneyBackGuarantee16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyBackGuarantee24">
+          <EvoIconMoneyBackGuarantee24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyBackGuaranteeFilled16">
+          <EvoIconMoneyBackGuaranteeFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyBackGuaranteeFilled16Colored">
+          <EvoIconMoneyBackGuaranteeFilled16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyBackGuaranteeFilled24">
+          <EvoIconMoneyBackGuaranteeFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyBackGuaranteeFilled24Colored">
+          <EvoIconMoneyBackGuaranteeFilled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStack16">
+          <EvoIconMoneyStack16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStack20">
+          <EvoIconMoneyStack20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStack24">
+          <EvoIconMoneyStack24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStackBlue12Colored">
+          <EvoIconMoneyStackBlue12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStackBlue18Colored">
+          <EvoIconMoneyStackBlue18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStackBlue24Colored">
+          <EvoIconMoneyStackBlue24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoneyStackBlue32Colored">
+          <EvoIconMoneyStackBlue32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMonthlyInvoice12Colored">
+          <EvoIconMonthlyInvoice12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMonthlyInvoice18Colored">
+          <EvoIconMonthlyInvoice18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMonthlyInvoice24Colored">
+          <EvoIconMonthlyInvoice24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMonthlyInvoice32Colored">
+          <EvoIconMonthlyInvoice32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoon16">
+          <EvoIconMoon16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoon20">
+          <EvoIconMoon20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMoon24">
+          <EvoIconMoon24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMotorcycle16">
+          <EvoIconMotorcycle16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMotorcycle24">
+          <EvoIconMotorcycle24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMountain16">
+          <EvoIconMountain16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMountain24">
+          <EvoIconMountain24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMove16">
+          <EvoIconMove16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconMove24">
+          <EvoIconMove24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNectarLogo24Colored">
+          <EvoIconNectarLogo24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNegativeFilled16">
+          <EvoIconNegativeFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNegativeFilled24">
+          <EvoIconNegativeFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNeutral16">
+          <EvoIconNeutral16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNeutral24">
+          <EvoIconNeutral24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNfc16">
+          <EvoIconNfc16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNfc24">
+          <EvoIconNfc24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNfcCard12Colored">
+          <EvoIconNfcCard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNfcCard18Colored">
+          <EvoIconNfcCard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNfcCard24Colored">
+          <EvoIconNfcCard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNfcCard32Colored">
+          <EvoIconNfcCard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNoChildrenZeroThree48">
+          <EvoIconNoChildrenZeroThree48 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNote12">
+          <EvoIconNote12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNote16">
+          <EvoIconNote16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNote24">
+          <EvoIconNote24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotification16">
+          <EvoIconNotification16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotification20">
+          <EvoIconNotification20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotification24">
+          <EvoIconNotification24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotification64">
+          <EvoIconNotification64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotificationFilled16">
+          <EvoIconNotificationFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotificationFilled20">
+          <EvoIconNotificationFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconNotificationFilled24">
+          <EvoIconNotificationFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOutOfReach48">
+          <EvoIconOutOfReach48 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOverflowHorizontal16">
+          <EvoIconOverflowHorizontal16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOverflowHorizontal20">
+          <EvoIconOverflowHorizontal20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOverflowHorizontal24">
+          <EvoIconOverflowHorizontal24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOverflowVertical16">
+          <EvoIconOverflowVertical16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOverflowVertical20">
+          <EvoIconOverflowVertical20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconOverflowVertical24">
+          <EvoIconOverflowVertical24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPackage16">
+          <EvoIconPackage16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPackage24">
+          <EvoIconPackage24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPackage64">
+          <EvoIconPackage64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPackageError24">
+          <EvoIconPackageError24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanel16">
+          <EvoIconPanel16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanel20">
+          <EvoIconPanel20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanel24">
+          <EvoIconPanel24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelClose16">
+          <EvoIconPanelClose16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelClose20">
+          <EvoIconPanelClose20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelClose24">
+          <EvoIconPanelClose24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelCloseVertical16">
+          <EvoIconPanelCloseVertical16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelCloseVertical20">
+          <EvoIconPanelCloseVertical20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelCloseVertical24">
+          <EvoIconPanelCloseVertical24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelOpen16">
+          <EvoIconPanelOpen16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelOpen20">
+          <EvoIconPanelOpen20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelOpen24">
+          <EvoIconPanelOpen24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelOpenVertical16">
+          <EvoIconPanelOpenVertical16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelOpenVertical20">
+          <EvoIconPanelOpenVertical20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPanelOpenVertical24">
+          <EvoIconPanelOpenVertical24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPasskey16">
+          <EvoIconPasskey16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPasskey24">
+          <EvoIconPasskey24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPasskey64">
+          <EvoIconPasskey64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPause16">
+          <EvoIconPause16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPause20">
+          <EvoIconPause20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPause24">
+          <EvoIconPause24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPauseFilled64Colored">
+          <EvoIconPauseFilled64Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBank12Colored">
+          <EvoIconPayByBank12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBank18Colored">
+          <EvoIconPayByBank18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBank24Colored">
+          <EvoIconPayByBank24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBank32Colored">
+          <EvoIconPayByBank32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBankBe24Colored">
+          <EvoIconPayByBankBe24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBankDe24Colored">
+          <EvoIconPayByBankDe24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBankFr24Colored">
+          <EvoIconPayByBankFr24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayByBankUk24Colored">
+          <EvoIconPayByBankUk24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayoneer12Colored">
+          <EvoIconPayoneer12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayoneer18Colored">
+          <EvoIconPayoneer18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayoneer24Colored">
+          <EvoIconPayoneer24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayoneer32Colored">
+          <EvoIconPayoneer32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayout16">
+          <EvoIconPayout16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayout20">
+          <EvoIconPayout20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPayout24">
+          <EvoIconPayout24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypal12Colored">
+          <EvoIconPaypal12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypal18Colored">
+          <EvoIconPaypal18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypal24Colored">
+          <EvoIconPaypal24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypal32Colored">
+          <EvoIconPaypal32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalBlue12Colored">
+          <EvoIconPaypalBlue12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalBlue18Colored">
+          <EvoIconPaypalBlue18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalBlue24Colored">
+          <EvoIconPaypalBlue24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalBlue32Colored">
+          <EvoIconPaypalBlue32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalCredit12Colored">
+          <EvoIconPaypalCredit12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalCredit18Colored">
+          <EvoIconPaypalCredit18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalCredit24Colored">
+          <EvoIconPaypalCredit24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalCredit32Colored">
+          <EvoIconPaypalCredit32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalDisabled12Colored">
+          <EvoIconPaypalDisabled12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalDisabled18Colored">
+          <EvoIconPaypalDisabled18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalDisabled24Colored">
+          <EvoIconPaypalDisabled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalDisabled32Colored">
+          <EvoIconPaypalDisabled32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypalLogo16">
+          <EvoIconPaypalLogo16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypay12Colored">
+          <EvoIconPaypay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypay18Colored">
+          <EvoIconPaypay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypay24Colored">
+          <EvoIconPaypay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPaypay32Colored">
+          <EvoIconPaypay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPencil16">
+          <EvoIconPencil16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPencil20">
+          <EvoIconPencil20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPencil24">
+          <EvoIconPencil24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPencilSigned24">
+          <EvoIconPencilSigned24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPeople16">
+          <EvoIconPeople16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPeople24">
+          <EvoIconPeople24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPeso16">
+          <EvoIconPeso16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPeso24">
+          <EvoIconPeso24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPhone16">
+          <EvoIconPhone16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPhone24">
+          <EvoIconPhone24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPin12">
+          <EvoIconPin12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPin16">
+          <EvoIconPin16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPin24">
+          <EvoIconPin24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPinFilled12">
+          <EvoIconPinFilled12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPinFilled16">
+          <EvoIconPinFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPinFilled24">
+          <EvoIconPinFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPinterest24">
+          <EvoIconPinterest24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlay16">
+          <EvoIconPlay16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlay20">
+          <EvoIconPlay20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlay24">
+          <EvoIconPlay24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlayDisabled16">
+          <EvoIconPlayDisabled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlayFilled16Colored">
+          <EvoIconPlayFilled16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlayFilled24Colored">
+          <EvoIconPlayFilled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPlayFilled64Colored">
+          <EvoIconPlayFilled64Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPostepay12Colored">
+          <EvoIconPostepay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPostepay18Colored">
+          <EvoIconPostepay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPostepay24Colored">
+          <EvoIconPostepay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPostepay32Colored">
+          <EvoIconPostepay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPottedPlant16">
+          <EvoIconPottedPlant16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPottedPlant24">
+          <EvoIconPottedPlant24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPound16">
+          <EvoIconPound16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPound24">
+          <EvoIconPound24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPrint16">
+          <EvoIconPrint16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPrint24">
+          <EvoIconPrint24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfile16">
+          <EvoIconProfile16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfile20">
+          <EvoIconProfile20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfile24">
+          <EvoIconProfile24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfileFilled24">
+          <EvoIconProfileFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfileVerification16">
+          <EvoIconProfileVerification16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfileVerification20">
+          <EvoIconProfileVerification20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProfileVerification24">
+          <EvoIconProfileVerification24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProgressCurrent24">
+          <EvoIconProgressCurrent24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconProgressUpcoming24">
+          <EvoIconProgressUpcoming24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPromotion12">
+          <EvoIconPromotion12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPromotion16">
+          <EvoIconPromotion16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPromotion24">
+          <EvoIconPromotion24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsa16">
+          <EvoIconPsa16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsa16Colored">
+          <EvoIconPsa16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaLogo16">
+          <EvoIconPsaLogo16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaLogoColor16Colored">
+          <EvoIconPsaLogoColor16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaVault16">
+          <EvoIconPsaVault16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaVault16Colored">
+          <EvoIconPsaVault16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaVault24">
+          <EvoIconPsaVault24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaVaultLogo16">
+          <EvoIconPsaVaultLogo16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconPsaVaultLogoColor16Colored">
+          <EvoIconPsaVaultLogoColor16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconQrCode16">
+          <EvoIconQrCode16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconQrCode24">
+          <EvoIconQrCode24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRadioChecked18">
+          <EvoIconRadioChecked18 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRadioChecked24">
+          <EvoIconRadioChecked24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRadioUnchecked18">
+          <EvoIconRadioUnchecked18 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRadioUnchecked24">
+          <EvoIconRadioUnchecked24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRecoveryCode16">
+          <EvoIconRecoveryCode16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRecoveryCode24">
+          <EvoIconRecoveryCode24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReddit24">
+          <EvoIconReddit24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRefresh16">
+          <EvoIconRefresh16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRefresh20">
+          <EvoIconRefresh20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRefresh24">
+          <EvoIconRefresh24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRelaxedGrid24">
+          <EvoIconRelaxedGrid24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRelaxedGridFilled24">
+          <EvoIconRelaxedGridFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRemove12">
+          <EvoIconRemove12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRemove16">
+          <EvoIconRemove16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRemove24">
+          <EvoIconRemove24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReply16">
+          <EvoIconReply16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReply24">
+          <EvoIconReply24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReplyChat12">
+          <EvoIconReplyChat12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReplyChat16">
+          <EvoIconReplyChat16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReplyChat24">
+          <EvoIconReplyChat24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReturn16">
+          <EvoIconReturn16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconReturn24">
+          <EvoIconReturn24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRewind16">
+          <EvoIconRewind16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRibbon16">
+          <EvoIconRibbon16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRibbon24">
+          <EvoIconRibbon24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRim16">
+          <EvoIconRim16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRim24">
+          <EvoIconRim24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRinggit16">
+          <EvoIconRinggit16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRinggit24">
+          <EvoIconRinggit24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotate16">
+          <EvoIconRotate16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotate20">
+          <EvoIconRotate20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotate24">
+          <EvoIconRotate24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotateLandscapeLeft24">
+          <EvoIconRotateLandscapeLeft24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotateLandscapeRight24">
+          <EvoIconRotateLandscapeRight24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotatePortraitLeft24">
+          <EvoIconRotatePortraitLeft24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRotatePortraitRight24">
+          <EvoIconRotatePortraitRight24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRuler16">
+          <EvoIconRuler16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRuler24">
+          <EvoIconRuler24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRupee16">
+          <EvoIconRupee16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconRupee24">
+          <EvoIconRupee24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSatchel16">
+          <EvoIconSatchel16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSatchel24">
+          <EvoIconSatchel24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconScan16">
+          <EvoIconScan16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconScan24">
+          <EvoIconScan24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearch16">
+          <EvoIconSearch16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearch20">
+          <EvoIconSearch20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearch24">
+          <EvoIconSearch24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearch64">
+          <EvoIconSearch64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearchFilled24">
+          <EvoIconSearchFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearchSimilar16">
+          <EvoIconSearchSimilar16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearchSimilar20">
+          <EvoIconSearchSimilar20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSearchSimilar24">
+          <EvoIconSearchSimilar24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSeasons16">
+          <EvoIconSeasons16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSeasons24">
+          <EvoIconSeasons24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSecurePurchase16">
+          <EvoIconSecurePurchase16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSecurePurchase24">
+          <EvoIconSecurePurchase24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSecurityKey24">
+          <EvoIconSecurityKey24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSelectAll24">
+          <EvoIconSelectAll24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSelling12">
+          <EvoIconSelling12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSelling16">
+          <EvoIconSelling16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSelling20">
+          <EvoIconSelling20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSelling24">
+          <EvoIconSelling24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSellingFilled24">
+          <EvoIconSellingFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSend24">
+          <EvoIconSend24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSettings16">
+          <EvoIconSettings16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSettings20">
+          <EvoIconSettings20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSettings24">
+          <EvoIconSettings24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShareAndroid16">
+          <EvoIconShareAndroid16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShareAndroid20">
+          <EvoIconShareAndroid20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShareAndroid24">
+          <EvoIconShareAndroid24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShareIos16">
+          <EvoIconShareIos16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShareIos20">
+          <EvoIconShareIos20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShareIos24">
+          <EvoIconShareIos24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSharpen24">
+          <EvoIconSharpen24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShipAndLocal16">
+          <EvoIconShipAndLocal16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShipAndLocal24">
+          <EvoIconShipAndLocal24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShipAndSafety16">
+          <EvoIconShipAndSafety16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShipAndSafety24">
+          <EvoIconShipAndSafety24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShirt16">
+          <EvoIconShirt16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShirt24">
+          <EvoIconShirt24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShoeBox24">
+          <EvoIconShoeBox24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShoppingEvent16">
+          <EvoIconShoppingEvent16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShoppingEvent24">
+          <EvoIconShoppingEvent24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShovel16">
+          <EvoIconShovel16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShovel24">
+          <EvoIconShovel24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShow16">
+          <EvoIconShow16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconShow24">
+          <EvoIconShow24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSkull12">
+          <EvoIconSkull12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSkull16">
+          <EvoIconSkull16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSkull24">
+          <EvoIconSkull24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSmallBox16">
+          <EvoIconSmallBox16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSmallBox24">
+          <EvoIconSmallBox24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSmallLetter24">
+          <EvoIconSmallLetter24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSneaker16">
+          <EvoIconSneaker16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSneaker24">
+          <EvoIconSneaker24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSnowflake16">
+          <EvoIconSnowflake16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSnowflake24">
+          <EvoIconSnowflake24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSnowmobile16">
+          <EvoIconSnowmobile16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSnowmobile24">
+          <EvoIconSnowmobile24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSort12">
+          <EvoIconSort12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSort16">
+          <EvoIconSort16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSort24">
+          <EvoIconSort24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSortDown12">
+          <EvoIconSortDown12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSortUp12">
+          <EvoIconSortUp12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineDown16">
+          <EvoIconSparklineDown16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineDown20">
+          <EvoIconSparklineDown20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineDown24">
+          <EvoIconSparklineDown24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineUp16">
+          <EvoIconSparklineUp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineUp20">
+          <EvoIconSparklineUp20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineUp24">
+          <EvoIconSparklineUp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSparklineUpFilled24">
+          <EvoIconSparklineUpFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpeedometer16">
+          <EvoIconSpeedometer16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpeedometer24">
+          <EvoIconSpeedometer24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpinner20">
+          <EvoIconSpinner20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpinner24">
+          <EvoIconSpinner24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpinner30">
+          <EvoIconSpinner30 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSplitPayment16">
+          <EvoIconSplitPayment16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSplitPayment24">
+          <EvoIconSplitPayment24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSplitView24">
+          <EvoIconSplitView24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSplitViewFilled24">
+          <EvoIconSplitViewFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpringLeaf16">
+          <EvoIconSpringLeaf16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSpringLeaf24">
+          <EvoIconSpringLeaf24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarDynamic">
+          <EvoIconStarDynamic {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarEmpty16">
+          <EvoIconStarEmpty16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarEmpty24">
+          <EvoIconStarEmpty24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarEmpty40">
+          <EvoIconStarEmpty40 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarFilled16">
+          <EvoIconStarFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarFilled24">
+          <EvoIconStarFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarFilled40">
+          <EvoIconStarFilled40 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarHalf16Colored">
+          <EvoIconStarHalf16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarHalf24Colored">
+          <EvoIconStarHalf24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarHalfDark16Colored">
+          <EvoIconStarHalfDark16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarHalfDark24Colored">
+          <EvoIconStarHalfDark24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStepperAttention24">
+          <EvoIconStepperAttention24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStepperConfirmation24">
+          <EvoIconStepperConfirmation24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStepperCurrent24">
+          <EvoIconStepperCurrent24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStepperUpcoming24">
+          <EvoIconStepperUpcoming24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStop16">
+          <EvoIconStop16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStop20">
+          <EvoIconStop20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStop24">
+          <EvoIconStop24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStore16">
+          <EvoIconStore16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStore24">
+          <EvoIconStore24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStore64">
+          <EvoIconStore64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStoreFilled24">
+          <EvoIconStoreFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSuitcase24">
+          <EvoIconSuitcase24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSupport24">
+          <EvoIconSupport24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSwap16">
+          <EvoIconSwap16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSwap24">
+          <EvoIconSwap24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconSwitchCamera24">
+          <EvoIconSwitchCamera24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTablet16">
+          <EvoIconTablet16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTablet20">
+          <EvoIconTablet20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTablet24">
+          <EvoIconTablet24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTarget16">
+          <EvoIconTarget16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTarget24">
+          <EvoIconTarget24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTd12Colored">
+          <EvoIconTd12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTd18Colored">
+          <EvoIconTd18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTd24Colored">
+          <EvoIconTd24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTd32Colored">
+          <EvoIconTd32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTextMessaging16">
+          <EvoIconTextMessaging16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTextMessaging20">
+          <EvoIconTextMessaging20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTextMessaging24">
+          <EvoIconTextMessaging24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTextMessaging64">
+          <EvoIconTextMessaging64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTextSize16">
+          <EvoIconTextSize16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTextSize24">
+          <EvoIconTextSize24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTheEbayVault16">
+          <EvoIconTheEbayVault16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTheEbayVault24">
+          <EvoIconTheEbayVault24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbDown16">
+          <EvoIconThumbDown16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbDown20">
+          <EvoIconThumbDown20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbDown24">
+          <EvoIconThumbDown24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbDownFilled16">
+          <EvoIconThumbDownFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbDownFilled20">
+          <EvoIconThumbDownFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbDownFilled24">
+          <EvoIconThumbDownFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUp16">
+          <EvoIconThumbUp16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUp20">
+          <EvoIconThumbUp20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUp24">
+          <EvoIconThumbUp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUp64">
+          <EvoIconThumbUp64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUpFilled16">
+          <EvoIconThumbUpFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUpFilled20">
+          <EvoIconThumbUpFilled20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconThumbUpFilled24">
+          <EvoIconThumbUpFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTick12">
+          <EvoIconTick12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTick16">
+          <EvoIconTick16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTick24">
+          <EvoIconTick24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTiktok24">
+          <EvoIconTiktok24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTire16">
+          <EvoIconTire16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTire24">
+          <EvoIconTire24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconToggleModeBottom24">
+          <EvoIconToggleModeBottom24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconToggleModeTop24">
+          <EvoIconToggleModeTop24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopRatedPlus16">
+          <EvoIconTopRatedPlus16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopRatedPlus24">
+          <EvoIconTopRatedPlus24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopRatedSeller16">
+          <EvoIconTopRatedSeller16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopRatedSeller24">
+          <EvoIconTopRatedSeller24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopService16">
+          <EvoIconTopService16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopService24">
+          <EvoIconTopService24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopServiceFilled16">
+          <EvoIconTopServiceFilled16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopServiceFilled16Colored">
+          <EvoIconTopServiceFilled16Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopServiceFilled24">
+          <EvoIconTopServiceFilled24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTopServiceFilled24Colored">
+          <EvoIconTopServiceFilled24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTradingCard16">
+          <EvoIconTradingCard16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTradingCard24">
+          <EvoIconTradingCard24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTradingCardEdition24">
+          <EvoIconTradingCardEdition24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTradingCardGrade16">
+          <EvoIconTradingCardGrade16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTradingCardGrade24">
+          <EvoIconTradingCardGrade24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTransaction24">
+          <EvoIconTransaction24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTranslate16">
+          <EvoIconTranslate16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTranslate20">
+          <EvoIconTranslate20 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTranslate24">
+          <EvoIconTranslate24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTrendDown16Fit">
+          <EvoIconTrendDown16Fit {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTrendUp16Fit">
+          <EvoIconTrendUp16Fit {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTrophy16">
+          <EvoIconTrophy16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTrophy24">
+          <EvoIconTrophy24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTruck16">
+          <EvoIconTruck16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTruck24">
+          <EvoIconTruck24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTruck64">
+          <EvoIconTruck64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTruckShipped12">
+          <EvoIconTruckShipped12 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTruckShipped16">
+          <EvoIconTruckShipped16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTruckShipped24">
+          <EvoIconTruckShipped24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconTwitter24">
+          <EvoIconTwitter24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUndo16">
+          <EvoIconUndo16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUndo24">
+          <EvoIconUndo24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnionpay12Colored">
+          <EvoIconUnionpay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnionpay18Colored">
+          <EvoIconUnionpay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnionpay24Colored">
+          <EvoIconUnionpay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnionpay32Colored">
+          <EvoIconUnionpay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnlock16">
+          <EvoIconUnlock16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnlock24">
+          <EvoIconUnlock24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUnselectAll24">
+          <EvoIconUnselectAll24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUpload16">
+          <EvoIconUpload16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUpload24">
+          <EvoIconUpload24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUsaa12Colored">
+          <EvoIconUsaa12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUsaa18Colored">
+          <EvoIconUsaa18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUsaa24Colored">
+          <EvoIconUsaa24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconUsaa32Colored">
+          <EvoIconUsaa32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVenmo12Colored">
+          <EvoIconVenmo12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVenmo18Colored">
+          <EvoIconVenmo18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVenmo24Colored">
+          <EvoIconVenmo24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVenmo32Colored">
+          <EvoIconVenmo32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVerifiedCondition16">
+          <EvoIconVerifiedCondition16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVerifiedCondition24">
+          <EvoIconVerifiedCondition24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVideo24">
+          <EvoIconVideo24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVisa12Colored">
+          <EvoIconVisa12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVisa18Colored">
+          <EvoIconVisa18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVisa24Colored">
+          <EvoIconVisa24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconVisa32Colored">
+          <EvoIconVisa32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWallet16">
+          <EvoIconWallet16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWallet24">
+          <EvoIconWallet24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWallet64">
+          <EvoIconWallet64 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWalletBalance12Colored">
+          <EvoIconWalletBalance12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWalletBalance18Colored">
+          <EvoIconWalletBalance18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWalletBalance24Colored">
+          <EvoIconWalletBalance24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWalletBalance32Colored">
+          <EvoIconWalletBalance32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWatch16">
+          <EvoIconWatch16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWatch24">
+          <EvoIconWatch24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWellsFargo12Colored">
+          <EvoIconWellsFargo12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWellsFargo18Colored">
+          <EvoIconWellsFargo18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWellsFargo24Colored">
+          <EvoIconWellsFargo24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWellsFargo32Colored">
+          <EvoIconWellsFargo32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWhatsapp24">
+          <EvoIconWhatsapp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWireTransfer16">
+          <EvoIconWireTransfer16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWireTransfer24">
+          <EvoIconWireTransfer24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWireTransferCard12Colored">
+          <EvoIconWireTransferCard12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWireTransferCard18Colored">
+          <EvoIconWireTransferCard18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWireTransferCard24Colored">
+          <EvoIconWireTransferCard24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWireTransferCard32Colored">
+          <EvoIconWireTransferCard32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWon16">
+          <EvoIconWon16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWon24">
+          <EvoIconWon24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWrench16">
+          <EvoIconWrench16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconWrench24">
+          <EvoIconWrench24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconYoutube24">
+          <EvoIconYoutube24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconYuan16">
+          <EvoIconYuan16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconYuan24">
+          <EvoIconYuan24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZipPay12Colored">
+          <EvoIconZipPay12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZipPay18Colored">
+          <EvoIconZipPay18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZipPay24Colored">
+          <EvoIconZipPay24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZipPay32Colored">
+          <EvoIconZipPay32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZloty16">
+          <EvoIconZloty16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZloty24">
+          <EvoIconZloty24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZoomIn16">
+          <EvoIconZoomIn16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZoomIn24">
+          <EvoIconZoomIn24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZoomOut16">
+          <EvoIconZoomOut16 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconZoomOut24">
+          <EvoIconZoomOut24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconImagePlaceholder">
+          <EvoIconImagePlaceholder {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating0">
+          <EvoIconStarRating0 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating05">
+          <EvoIconStarRating05 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating1">
+          <EvoIconStarRating1 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating15">
+          <EvoIconStarRating15 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating2">
+          <EvoIconStarRating2 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating25">
+          <EvoIconStarRating25 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating3">
+          <EvoIconStarRating3 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating35">
+          <EvoIconStarRating35 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating4">
+          <EvoIconStarRating4 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating45">
+          <EvoIconStarRating45 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRating5">
+          <EvoIconStarRating5 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall0">
+          <EvoIconStarRatingSmall0 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall05">
+          <EvoIconStarRatingSmall05 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall1">
+          <EvoIconStarRatingSmall1 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall15">
+          <EvoIconStarRatingSmall15 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall2">
+          <EvoIconStarRatingSmall2 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall25">
+          <EvoIconStarRatingSmall25 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall3">
+          <EvoIconStarRatingSmall3 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall35">
+          <EvoIconStarRatingSmall35 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall4">
+          <EvoIconStarRatingSmall4 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall45">
+          <EvoIconStarRatingSmall45 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconStarRatingSmall5">
+          <EvoIconStarRatingSmall5 {...args} />
+        </IconExample>
+      </IconGrid>
     </EvoIconProvider>
   ),
 };
