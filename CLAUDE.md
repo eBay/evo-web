@@ -287,6 +287,12 @@ Anything actionable but out of scope for the current task (suspected bug, a11y g
 
 ---
 
+## Agent Lessons
+
+A correction about how you should work — not the code — belongs in [`agent-lessons/`](agent-lessons/README.md): a correction you shouldn't need twice, a wrong turn that cost real rework, or a guardrail that fired. If the rule is mechanically checkable, it belongs in a hook or permission instead, not here.
+
+---
+
 ## Skills
 
 For specialized workflows:
