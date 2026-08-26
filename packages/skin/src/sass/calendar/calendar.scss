@@ -151,11 +151,11 @@
 .calendar__month td.calendar__cell--selected > * {
     @include token-mixins.background-color-token(
         calendar-day-selected-background-color,
-        color-background-inverse
+        color-background-accent
     );
     @include token-mixins.color-token(
         calendar-day-selected-color,
-        color-foreground-on-inverse
+        color-foreground-on-accent
     );
 
     font-weight: bold;
@@ -166,7 +166,10 @@
  ************/
 
 .calendar__range {
-    background-color: var(--color-state-layer-pressed);
+    background-color: var(
+        --calendar-range-background-color,
+        var(--color-background-secondary)
+    );
     position: relative;
 }
 
@@ -197,7 +200,11 @@
     background: linear-gradient(
         to right,
         transparent 50%,
-        var(--color-state-layer-pressed) 50%
+        var(
+                --calendar-range-background-color,
+                var(--color-background-secondary)
+            )
+            50%
     );
 }
 
@@ -205,7 +212,11 @@
     background: linear-gradient(
         to left,
         transparent 50%,
-        var(--color-state-layer-pressed) 50%
+        var(
+                --calendar-range-background-color,
+                var(--color-background-secondary)
+            )
+            50%
     );
 }
 
@@ -217,5 +228,8 @@
     > :not(:disabled, [aria-disabled="true"]),
 .calendar__range--end:not(.calendar__cell--selected)
     > :not(:disabled, [aria-disabled="true"]) {
-    background-color: var(--color-state-layer-pressed);
+    background-color: var(
+        --calendar-range-background-color,
+        var(--color-background-secondary)
+    );
 }
