@@ -7,7 +7,12 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
     disabled?: boolean;
     action?: Marko.AttrTag<Marko.HTML.Div>;
     href?: string;
-    media: Marko.AttrTag<Marko.HTML.Img & { content?: Marko.Body }>;
+    media?: Marko.AttrTag<
+        Marko.Input<"div"> & {
+            src?: string;
+            alt?: string;
+        }
+    >;
 }
 
 <const/{
@@ -43,15 +48,23 @@ export interface Input extends Omit<Marko.HTML.Span, "title"> {
     layout === "horizontal" && "card--horizontal",
     inputClass,
 ]>
-    <const/{ class: mediaClass, ...mediaInput }=media>
-    <if=media.content>
-        <div ...(mediaInput as Marko.HTML.Div) class=["card__media", mediaClass]/>
-    </if>
-    <else>
-        <div class="card__media">
-            <img ...mediaInput class=["card__hero-image", mediaClass]>
+    <if=media>
+        <const/{
+            src: mediaSrc,
+            alt: mediaAlt,
+            content: mediaContent,
+            class: mediaClass,
+            ...mediaInput
+        }=media>
+        <div ...mediaInput class=["card__media", mediaClass]>
+            <if=mediaContent>
+                <${mediaContent}/>
+            </if>
+            <else>
+                <img class="card__hero-image" src=mediaSrc alt=mediaAlt>
+            </else>
         </div>
-    </else>
+    </if>
     <div class="card__main">
         <if=overline>
             <div ...overline class=["card__overline", overline.class]/>

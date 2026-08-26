@@ -50,13 +50,20 @@ export default {
       description: "Disables the interactive elements of the card.",
     },
     media: {
-      type: { name: "object", value: {}, required: true },
       description:
-        "The media at the top of the card. Apply `card__hero-image` to your own media element to get the standard fill/hover styles.",
+        "Optional media displayed at the top of the card. Renders an `<img>` from `src`, or your own content when the tag has any. Apply `card__hero-image` to your own media element to get the standard fill and hover styles.",
       "@": {
-        ["<div>, <img> attributes" as any]: {
+        src: {
+          type: "string",
+          description: "URL of the card image",
+        },
+        alt: {
+          type: "string",
+          description: "Alternative text for the card image",
+        },
+        ["<div> attributes" as any]: {
           description:
-            "All attributes are passed through to an HTML element. It will be a `<div>` if content is present, and an `<img>` otherwise.",
+            "All attributes and event handlers from [the native HTML `<div>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div) will be passed through",
         },
       },
     },
