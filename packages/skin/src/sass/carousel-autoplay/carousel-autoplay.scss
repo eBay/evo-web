@@ -1,16 +1,28 @@
-@use "../mixins/private/carousel-mixins";
 @use "../mixins/public/utility";
-
-:root {
-    --carousel-autoplay-gap: 0px;
-}
 
 .carousel-autoplay {
     position: relative;
 }
 
+/**
+ * Deliberately no `scroll-behavior: smooth`: the component animates its own
+ * moves, and it would re-animate every position it writes.
+ */
 .carousel-autoplay__list {
-    @include carousel-mixins.viewport(var(--carousel-autoplay-gap));
+    display: flex;
+    list-style: none;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    /* The controls are the affordance; a scrollbar is opt-in. */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 /**
@@ -23,7 +35,8 @@
  * jump to a distant slide — down to a single slide.
  */
 .carousel-autoplay__item {
-    @include carousel-mixins.item(100%);
+    flex: 0 0 100%;
+    scroll-snap-align: start;
 }
 
 .carousel-autoplay__list--image-treatment > .carousel-autoplay__item {
@@ -37,7 +50,19 @@
 
 /* inherits from .icon-btn */
 button.icon-btn.carousel-autoplay__control {
-    @include carousel-mixins.control;
+    background-color: var(--color-background-primary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 50%;
+    box-shadow:
+        0 2px 2px 0 rgb(0 0 0 / 0.24),
+        0 0 2px 0 rgb(0 0 0 / 0.12);
+    height: 32px;
+    min-width: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    z-index: 1;
 }
 
 .carousel-autoplay__control--prev {
