@@ -11,51 +11,27 @@ export interface Input {
     height: 72px;
   }
 
-  .cell .tooltip {
+  .cell .tip {
     display: flex;
     width: 100%;
     height: 100%;
   }
 
-  .cell .host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .cell .tip > button {
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
     border-radius: 8px;
-    cursor: pointer;
-    color: inherit;
-  }
-
-  .cell .host:hover {
-    background-color: var(--color-background-faint);
   }
 </style>
 
-<let/open=false>
-
 <div class=((styles as any).cell)>
-  <evo-tooltip
-    noHover
-    open=open
-    openChange(value) {
-      open = open && value;
-    }
-    class=((styles as any).tooltip)>
-    <@host
-      as="button"
-      aria-label=input.name
-      class=((styles as any).host)
-      onClick() {
-        open = !open;
-      }>
+  <evo-infotip
+    class=((styles as any).tip)
+    a11yIconText=input.name
+    a11yCloseText="Dismiss">
+    <@icon>
       <${input.content}/>
-    </@host>
+    </@icon>
     ${`<${input.name}/>`}
-  </evo-tooltip>
+  </evo-infotip>
 </div>
