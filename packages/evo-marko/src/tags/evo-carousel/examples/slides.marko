@@ -1,0 +1,22 @@
+<style>
+  .demo-carousel-slide {
+    align-items: center;
+    background-color: var(--color-background-secondary);
+    border-radius: var(--border-radius-50);
+    display: flex;
+    height: 120px;
+    justify-content: center;
+  }
+</style>
+
+<evo-carousel ...input a11yText="Top products" itemsPerSlide=4>
+  <@previous a11yText="Previous slide"/>
+  <@next a11yText="Next slide"/>
+  <for|i| from=1 to=12>
+    <@item>
+      <div class="demo-carousel-slide">
+        Card ${i}
+      </div>
+    </@item>
+  </for>
+</evo-carousel>

@@ -1,0 +1,70 @@
+@use "../mixins/private/carousel-mixins";
+@use "../mixins/public/utility";
+
+:root {
+    --carousel-autoplay-gap: 0px;
+}
+
+.carousel-autoplay {
+    position: relative;
+}
+
+.carousel-autoplay__list {
+    @include carousel-mixins.viewport(var(--carousel-autoplay-gap));
+}
+
+/**
+ * One slide fills the scrollport, so every resting position is a whole number
+ * of scrollports along and the component can count slides from the scroll
+ * offset alone.
+ *
+ * Deliberately no `scroll-snap-stop: always`: it forbids the container from
+ * passing a snap position, which would clamp a queue of control presses — or a
+ * jump to a distant slide — down to a single slide.
+ */
+.carousel-autoplay__item {
+    @include carousel-mixins.item(100%);
+}
+
+.carousel-autoplay__list--image-treatment > .carousel-autoplay__item {
+    @include utility.image-treatment;
+}
+
+/* Inside the scrollport and always visible: a rotator moves on its own. */
+.carousel-autoplay__control {
+    opacity: 0.92;
+}
+
+/* inherits from .icon-btn */
+button.icon-btn.carousel-autoplay__control {
+    @include carousel-mixins.control;
+}
+
+.carousel-autoplay__control--prev {
+    inset-inline-start: var(--spacing-200);
+}
+
+.carousel-autoplay__control--next {
+    inset-inline-end: var(--spacing-200);
+}
+
+/* inherits from .icon-btn */
+button.icon-btn.carousel-autoplay__playback {
+    background-color: rgb(0 0 0 / 0.45);
+    border: 0;
+    border-radius: 50%;
+    bottom: var(--spacing-200);
+    height: 40px;
+    inset-inline-end: var(--spacing-200);
+    position: absolute;
+    width: 40px;
+    z-index: 2;
+
+    > svg {
+        fill: var(--color-foreground-on-inverse);
+    }
+}
+
+[dir="rtl"] .carousel-autoplay__control > svg {
+    transform: rotate(180deg);
+}
