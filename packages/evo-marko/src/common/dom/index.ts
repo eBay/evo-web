@@ -17,17 +17,11 @@ export function getMaxWidth(el: HTMLElement) {
 
 /** Index of the child whose leading edge sits nearest the container's own. */
 export function getScrollIndex(el: HTMLElement) {
-  const bounds = el.getBoundingClientRect();
-  const rtl = getComputedStyle(el).direction === "rtl";
   let closest = 0;
   let closestDistance = Infinity;
 
   for (let i = 0; i < el.children.length; i++) {
-    const rect = el.children[i].getBoundingClientRect();
-    const distance = Math.abs(
-      rtl ? bounds.right - rect.right : rect.left - bounds.left,
-    );
-
+    const distance = Math.abs(getScrollOffset(el, i));
     if (distance < closestDistance) {
       closestDistance = distance;
       closest = i;
