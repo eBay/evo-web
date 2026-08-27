@@ -1,6 +1,6 @@
 ---
-name: "run-adversarial-review"
-description: "Adversarial code review using three hostile reviewer personas (Saboteur, New Hire, Security Auditor) to catch blind spots a self-review shares with the author. Use before merging a PR, after a long coding session, when you suspect Claude is being too agreeable about its own code, or when something about a diff feels off. Scales effort to the diff's actual risk — do NOT use this for a quick style pass on trivial changes (just read the diff), for deep exploit-development-grade security work (escalate to a dedicated security review), or as a substitute for domain-specific test coverage review. Findings must be concrete and falsifiable, not hedges — a clean diff is allowed to come back clean."
+name: run-adversarial-review
+description: Adversarial code review using three hostile reviewer personas (Saboteur, New Hire, Security Auditor) to catch blind spots a self-review shares with the author. Use before merging a PR, after a long coding session, when you suspect Claude is being too agreeable about its own code, or when something about a diff feels off. Scales effort to the diff's actual risk — do NOT use this for a quick style pass on trivial changes (just read the diff), for deep exploit-development-grade security work (escalate to a dedicated security review), or as a substitute for domain-specific test coverage review. Findings must be concrete and falsifiable, not hedges — a clean diff is allowed to come back clean.
 ---
 
 # Adversarial Code Reviewer
@@ -31,17 +31,17 @@ If there's nothing to review, say so and stop: "Nothing to review."
 
 **Step 2 — Classify the diff:**
 
-| Signal                                                                                                                                                | Classification |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| Docs/comments only, config value change with no logic change, single-line non-behavioral edit                                                         | **Trivial**    |
-| Touches a handful of files, contained logic change, no new external-facing surface (no new endpoint, no new auth/data-access path, no new dependency) | **Standard**   |
-| Touches auth, payments, data access, a new dependency, a new public API/endpoint, or spans many files/a large rewrite                                 | **High-risk**  |
+| Signal                                                                                                                                                                                     | Classification |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| Docs/comments only, config value change with no logic change, single-line non-behavioral edit                                                                                              | **Trivial**    |
+| A bug fix or behavior change to an existing component's internals, contained to one package, no new public prop/API surface                                                                | **Standard**   |
+| Adds a new public component or a new prop/API on an existing one, changes a pattern shared across multiple framework packages (e.g. Marko + React), a breaking change, or a new dependency | **High-risk**  |
 
 - **Trivial** → skip personas. State in one line why (e.g., "single-line comment change, no behavior affected") and give a CLEAN verdict without the full report scaffold.
 - **Standard** → run all three personas, but scope file reads to the changed hunks plus enough surrounding code to understand the function/component they sit in — not the entire file, unless a persona develops a specific suspicion that requires seeing more (e.g., the Saboteur wants to check whether a resource opened elsewhere is ever closed).
 - **High-risk** → run all three personas with full-file reads for every file touched, exactly as in the detailed workflow below.
 
-**Large diffs (many files or very large changes):** don't silently sample. Pick the files most relevant to the riskiest signal (new auth path, new dependency, largest logic delta) and state explicitly in the output which files were reviewed in depth and which were skipped or only skimmed, so the reader knows the coverage boundary rather than assuming completeness.
+**Large diffs (many files or very large changes):** don't silently sample. Pick the files most relevant to the riskiest signal (new public component/prop, new dependency, largest logic delta) and state explicitly in the output which files were reviewed in depth and which were skipped or only skimmed, so the reader knows the coverage boundary rather than assuming completeness.
 
 **Re-invocation in the same session:** if this diff (or an overlapping one) was already reviewed earlier in this conversation, don't restart from scratch — diff the current state against the prior findings. Report what's fixed, what's still open, and what's newly introduced, rather than re-running the full workflow blind.
 
@@ -77,15 +77,15 @@ Read each changed function as if you've never seen this codebase — can you tel
 
 **Mindset:** "This code will be attacked. My job is to find the hole before someone else does."
 
-OWASP-informed checklist: injection (SQL/NoSQL/OS command/LDAP — any user input reaching a query or command unparameterized), broken auth (hardcoded credentials, missing auth checks on new endpoints, tokens in URLs or logs), sensitive data exposure (in errors, logs, or responses), insecure defaults (debug mode on, permissive CORS, wildcard permissions), missing access control (can user A reach user B's data — IDOR), risky new dependencies, secrets in code or config.
+OWASP-informed checklist: injection (SQL/NoSQL/OS command/LDAP — any user input reaching a query or command unparameterized), broken auth (hardcoded credentials, missing auth checks on new endpoints, tokens in URLs or logs), sensitive data exposure (in errors, logs, or responses), insecure defaults (debug mode on, permissive CORS, wildcard permissions), missing access control (can user A reach user B's data — IDOR), risky new dependencies, secrets in code or config. Most evo-web PRs are UI components with no server-side surface at all — when that's true, say so plainly rather than manufacturing a finding; the checklist still matters for the cases that do cross a real boundary (a component that renders raw/user-provided HTML, handles file uploads, or calls out to an external service).
 
-For each trust boundary the diff crosses (user input, API calls, database, filesystem, env vars), check whether input is validated, output is sanitized, and least privilege holds.
+For each trust boundary the diff crosses (user input, filesystem, env vars, or any call to an external service), check whether input is validated, output is sanitized, and least privilege holds.
 
 ## Worked calibration examples
 
 **Example — correctly triaged CLEAN:** A diff adds a `formatCurrency(cents: number): string` pure utility function with a unit test covering zero, negative, and large values. Saboteur checks the boundary conditions and finds they're all covered by the test — no finding. New Hire finds the name and types make intent obvious, and the function is 4 lines — no finding. Security Auditor finds no trust boundary crossed (pure function, no I/O, no user-facing surface) — no finding. Verdict: **CLEAN**, three empty sections, one line summarizing why (well-tested pure function, no attack surface).
 
-**Example — correctly triaged BLOCK:** A diff adds a new `/api/users/:id/export` endpoint that reads `req.params.id` and queries the database without checking that the requesting user owns or can access that ID. Security Auditor finds a concrete IDOR: any authenticated user can pass another user's ID and receive their exported data — CRITICAL. Saboteur separately notices the export query has no pagination or size limit, so a large account could exhaust memory — WARNING. New Hire finds nothing beyond a NOTE-level naming quibble. Verdict: **BLOCK** on the IDOR alone; the pagination issue is listed under Warnings and doesn't change the verdict.
+**Example — correctly triaged BLOCK:** A diff adds a new `href` prop to an existing `@evo-web/react` component but the equivalent `@evo-web/marko` component isn't updated to match, so the two frameworks' public APIs silently diverge. Saboteur finds a concrete failure: existing Marko consumers upgrading to the new version get no way to pass a link target that React consumers now have — CRITICAL, since it breaks the "these components mirror each other" contract the whole component library depends on. New Hire separately notices the new prop has no JSDoc explaining when to use it over the existing `onClick` — WARNING. Security Auditor finds no trust boundary crossed — no finding. Verdict: **BLOCK** on the cross-framework drift alone; the missing JSDoc is listed under Warnings and doesn't change the verdict.
 
 Use these as the calibration anchor: if your review looks like "found three things because three personas ran," rather than "found things because they're actually there," redo it.
 
