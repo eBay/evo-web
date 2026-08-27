@@ -1,0 +1,158 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-carousel > renders the skin carousel structure 1`] = `
+"<div
+  aria-label="Top products"
+  aria-roledescription="carousel"
+  class="carousel carousel--hidden-scrollbar"
+  role="group"
+>
+  <div
+    class="carousel__container"
+  >
+    <button
+      aria-disabled="true"
+      aria-label="Previous slide"
+      class="carousel__control carousel__control--prev"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.293 8.708a1 1 0 0 1 0-1.415l6-6a1 1 0 0 1 1.414 1.414L5.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-left-16"
+        />
+      </svg>
+    </button>
+    <div
+      class="carousel__viewport"
+    >
+      <ul
+        class="carousel__list carousel__list--gap"
+      >
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 1
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 2
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 3
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 4
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 5
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 6
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 7
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 8
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 9
+          </div>
+        </li>
+        <li
+          class="carousel__item"
+        >
+          <div
+            class="demo-carousel-card"
+          >
+            Card 10
+          </div>
+        </li>
+      </ul>
+    </div>
+    <button
+      aria-label="Next slide"
+      class="carousel__control carousel__control--next"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="icon icon--16"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.707 8.707-6 6a1 1 0 0 1-1.414-1.414L10.586 8 5.293 2.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414Z"
+          />
+        </symbol>
+        <use
+          href="#icon-chevron-right-16"
+        />
+      </svg>
+    </button>
+  </div>
+</div>"
+`;

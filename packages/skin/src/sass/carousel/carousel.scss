@@ -8,6 +8,7 @@ $ebay-carousel-transition-function: ease-in-out;
 
 @mixin show-control() {
     opacity: 0.92;
+    pointer-events: auto;
 
     &[aria-disabled="true"] {
         opacity: 0.3;
@@ -33,6 +34,7 @@ $ebay-carousel-transition-function: ease-in-out;
     justify-content: center;
     opacity: 0;
     padding: 0; /* override browser default */
+    pointer-events: none; /* invisible controls must not be clickable */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -324,4 +326,33 @@ span.carousel__container {
 /* hidden-scrollbar must have inner paddle position due to overflow: hidden */
 .carousel--hidden-scrollbar .carousel__control--next {
     right: 0;
+}
+
+/* ---- evo-carousel additions. Additive only: nothing above changes. ---- */
+
+:root {
+    --carousel-gap: 16px;
+    --carousel-items-per-slide: 1;
+}
+
+.carousel__item {
+    scroll-snap-align: start;
+    /* the container's nowrap would otherwise leak into item content */
+    white-space: normal;
+}
+
+.carousel__list--gap {
+    gap: var(--carousel-gap);
+}
+
+/* exactly --carousel-items-per-slide items fill the viewport */
+.carousel__list--slides > .carousel__item {
+    flex-basis: calc(
+        (100% - (var(--carousel-items-per-slide) - 1) * var(--carousel-gap)) /
+            var(--carousel-items-per-slide)
+    );
+}
+
+[dir="rtl"] .carousel__control svg {
+    transform: rotate(180deg);
 }

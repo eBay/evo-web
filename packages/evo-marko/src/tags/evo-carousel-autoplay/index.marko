@@ -1,0 +1,292 @@
+import { type Input as IconButtonInput } from "<evo-icon-button>";
+import {
+  createScroller,
+  getScrollIndex,
+  getScrollOffset,
+  scrollInstantly,
+  useReducedMotion,
+} from "../../common/dom";
+/** Quiet time that counts as "the scrolling has stopped". */
+static const SETTLE_DELAY = 100;
+/** Slides laid end to end: the middle run is the carousel, the others runway. */
+static const RUNS = 3;
+export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
+  /**
+   * The accessible name for the carousel
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
+  item?: Marko.AttrTag<Marko.HTML.LI>;
+  previous: Marko.AttrTag<IconButtonInput>;
+  next: Marko.AttrTag<IconButtonInput>;
+  playback: Marko.AttrTag<
+    Omit<IconButtonInput, "a11yText"> & {
+      /**
+       * The `aria-label` of the playback control while it is paused
+       *
+       * English default to be overridden is `"Play"`
+       */
+      a11yPlayText: string;
+      /**
+       * The `aria-label` of the playback control while it is playing
+       *
+       * English default to be overridden is `"Pause"`
+       */
+      a11yPauseText: string;
+    }
+  >;
+  /** Milliseconds each slide stays before the next */
+  interval?: number;
+  paused?: boolean;
+  pausedChange?: (paused: boolean) => void;
+  imageTreatment?: "none" | "matte";
+  /** The visible slide. Reported once the scrolling comes to rest. */
+  index?: number;
+  indexChange?: (index: number) => void;
+}
+
+<const/{
+  class: inputClass,
+  a11yText,
+  item: items,
+  previous,
+  next,
+  playback,
+  interval = 5000,
+  paused: inputPaused,
+  pausedChange,
+  imageTreatment = "none",
+  index: inputIndex,
+  indexChange,
+  onMouseEnter,
+  onMouseLeave,
+  onFocusIn,
+  onFocusOut,
+  onTouchStart,
+  "aria-roledescription": ariaRoledescription = "carousel",
+  ...htmlInput
+}=input>
+
+<const/itemList=[...(items || [])]>
+<const/{
+  a11yPlayText = "Play",
+  a11yPauseText = "Pause",
+  class: playbackClass,
+  ...playbackInput
+}=playback>
+
+<let/index:=input.index>
+<let/paused:=input.paused>
+/** Hovering or tabbing in holds it still without changing `paused`. */
+<let/interacting=false>
+
+<const/current=(index ?? 0)>
+<const/count=itemList.length>
+<const/looping=(count > 1)>
+<const/runs=(looping ? RUNS : 1)>
+/** Slot the last move was sent to, counted across every run. Not reactive. */
+<const/parked={
+  slot: -1,
+  scroller: null as null | ReturnType<typeof createScroller>,
+}>
+/** Lazy: a `<const>` the client reads must serialize, and a closure cannot. */
+<const/scroller() {
+  return (parked.scroller ||= createScroller($list));
+}>
+<const/seat(slot: number, animate: boolean) {
+  parked.slot = slot;
+  scroller().to(() => getScrollOffset($list(), slot), animate);
+}>
+/** Every run is identical, so shifting by this is invisible. */
+<const/runDistance() {
+  const listEl = $list();
+  return getScrollOffset(listEl, count) - getScrollOffset(listEl, 0);
+}>
+/**
+ * Shifts the strip back to the middle run, invisibly, and reports where that
+ * leaves `from`. Every move does this on the way past: moving repeatedly never
+ * goes quiet, and without it the strip marches off its own end and has nothing
+ * left ahead to move onto.
+ */
+<const/recentre(from: number) {
+  const adrift = looping ? Math.floor(from / count) - 1 : 0;
+  if (adrift === 0) return from;
+
+  scrollInstantly($list(), -adrift * runDistance());
+  parked.slot = from - adrift * count;
+  return parked.slot;
+}>
+
+<const/advance(direction: 1 | -1) {
+  if (!looping) return;
+
+  // Mid-move, count from where it was heading so presses add up; otherwise from
+  // where it actually is, since hand-scrolling never comes through here.
+  const from = recentre(
+    scroller().running ? parked.slot : getScrollIndex($list()),
+  );
+
+  seat(from + direction, true);
+}>
+
+<script>
+  // A timeout per slide, not an interval: reading `current` restarts the wait
+  // each time it lands, so the timer can never outrun its own scrolling.
+  if (
+    !paused &&
+    !interacting &&
+    !useReducedMotion &&
+    count > 1 &&
+    current < count
+  ) {
+    const timer = setTimeout(() => advance(1), interval);
+    $signal.onabort = () => clearTimeout(timer);
+  }
+</script>
+
+<script>
+  const listEl = $list();
+  let settleTimer: ReturnType<typeof setTimeout>;
+  const settle = () => {
+    if (!count) return;
+    parked.slot = recentre(getScrollIndex(listEl));
+    index = parked.slot % count;
+  };
+  listEl.addEventListener(
+    "scroll",
+    () => {
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(settle, SETTLE_DELAY);
+    },
+    {
+      passive: true,
+      signal: $signal,
+    },
+  );
+
+  // Every resting position is a whole number of scrollports along.
+  const resizeObserver = new ResizeObserver(() => {
+    if (parked.slot >= 0) seat(parked.slot, false);
+  });
+  resizeObserver.observe(listEl);
+  $signal.onabort = () => {
+    resizeObserver.disconnect();
+    clearTimeout(settleTimer);
+    parked.scroller?.stop();
+  };
+</script>
+
+<script>
+  if (count) {
+    if (parked.slot < 0) {
+      // Every run starts with the same slide, so moving off the server's
+      // offset zero into the middle run looks identical.
+      seat(looping ? count + current : current, false);
+    } else if (parked.slot % count !== current) {
+      // Only the caller can disagree with the settle, so this is a controlled
+      // set. Re-centre first, as a press does, or repeated sets run off the end.
+      const from = recentre(parked.slot);
+      let slot = current;
+      for (let run = 1; run < runs; run++) {
+        const candidate = run * count + current;
+        // `<=` over ordered copies: equally distant ahead beats behind, so a
+        // rotator keeps reading as going forwards.
+        if (Math.abs(candidate - from) <= Math.abs(slot - from)) {
+          slot = candidate;
+        }
+      }
+      seat(slot, true);
+    }
+  }
+</script>
+
+<div
+  ...htmlInput
+  role="group"
+  aria-roledescription=ariaRoledescription
+  aria-label=a11yText
+  class=["carousel-autoplay", inputClass]
+  onMouseEnter(e, el) {
+    interacting = true;
+    onMouseEnter && onMouseEnter(e, el);
+  }
+  onMouseLeave(e, el) {
+    interacting = false;
+    onMouseLeave && onMouseLeave(e, el);
+  }
+  onFocusIn(e, el) {
+    interacting = true;
+    onFocusIn && onFocusIn(e, el);
+  }
+  onFocusOut(e, el) {
+    interacting = false;
+    onFocusOut && onFocusOut(e, el);
+  }
+  onTouchStart(e, el) {
+    // A swipe is a deliberate takeover; the playback button puts it back.
+    paused = true;
+    onTouchStart && onTouchStart(e, el);
+  }>
+  <evo-icon-button
+    ...previous
+    class=[
+      "carousel-autoplay__control",
+      "carousel-autoplay__control--prev",
+      previous.class,
+    ]
+    onClick(e, el) {
+      advance(-1);
+      previous.onClick && previous.onClick(e, el);
+    }>
+    <evo-icon-chevron-left-16/>
+  </evo-icon-button>
+  /** Safe to announce only when it is not moving. */
+  <ul/$list
+    aria-live=(paused ? "polite" : "off")
+    class=[
+      "carousel-autoplay__list",
+      imageTreatment === "matte" && "carousel-autoplay__list--image-treatment",
+    ]>
+    <for|run| from=0 to=runs - 1>
+      /** Runway: out of the a11y tree and the tab order. See the README. */
+      <const/scenery=run !== (looping ? 1 : 0)>
+      <for|item| of=itemList>
+        <li
+          ...item
+          id=(scenery ? undefined : item.id)
+          aria-hidden=scenery && "true"
+          inert=scenery
+          class=["carousel-autoplay__item", item.class]/>
+      </for>
+    </for>
+  </ul>
+  <evo-icon-button
+    ...next
+    class=[
+      "carousel-autoplay__control",
+      "carousel-autoplay__control--next",
+      next.class,
+    ]
+    onClick(e, el) {
+      advance(1);
+      next.onClick && next.onClick(e, el);
+    }>
+    <evo-icon-chevron-right-16/>
+  </evo-icon-button>
+  <evo-icon-button
+    ...playbackInput
+    a11yText=(paused ? a11yPlayText : a11yPauseText)
+    class=["carousel-autoplay__playback", playbackClass]
+    onClick(e, el) {
+      paused = !paused;
+      playback.onClick && playback.onClick(e, el);
+    }>
+    <if=paused>
+      <evo-icon-play-24/>
+    </if>
+    <else>
+      <evo-icon-pause-24/>
+    </else>
+  </evo-icon-button>
+</div>

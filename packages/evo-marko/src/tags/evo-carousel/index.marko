@@ -1,0 +1,241 @@
+import {
+  createScroller,
+  getScrollIndex,
+  getScrollOffset,
+} from "../../common/dom";
+/** Quiet time that counts as "the scrolling has stopped". */
+static const SETTLE_DELAY = 100;
+export interface Control extends Omit<
+  Marko.HTML.Button,
+  "aria-label" | "aria-disabled" | "type"
+> {
+  /** The `aria-label` of the control */
+  a11yText: string;
+}
+export interface Input extends Omit<Marko.HTML.Div, "role" | "aria-label"> {
+  /**
+   * The accessible name for the carousel
+   *
+   * Pass `null` explicitly _only_ if alternative accessibility information is present
+   */
+  a11yText: string | null;
+  item?: Marko.AttrTag<Marko.HTML.LI>;
+  previous: Marko.AttrTag<Control>;
+  next: Marko.AttrTag<Control>;
+  /**
+   * Items to fit in the visible area, and to move by. Fractions leave the next
+   * one peeking. Unset lets each item size itself.
+   */
+  itemsPerSlide?: number;
+  /** Space between items: a number of pixels, or any CSS length */
+  gap?: number | string;
+  imageTreatment?: "none" | "matte" | "large";
+  /** Show a thin scrollbar under the items while hovered */
+  scrollbar?: boolean;
+  /** Fade the trailing edge while there is more to scroll to */
+  mask?: boolean;
+  /** The item leading the visible area. Reported once the scrolling settles. */
+  index?: number;
+  indexChange?: (index: number) => void;
+}
+
+<const/{
+  class: inputClass,
+  style: inputStyle,
+  a11yText,
+  item: items,
+  previous,
+  next,
+  itemsPerSlide,
+  gap,
+  imageTreatment = "none",
+  scrollbar,
+  mask,
+  index: inputIndex,
+  indexChange,
+  "aria-roledescription": ariaRoledescription = "carousel",
+  ...htmlInput
+}=input>
+
+<const/itemList=[...(items || [])]>
+
+<let/index:=input.index>
+<let/atStart=true>
+<let/atEnd=false>
+/** Item the last move was sent to. Not reactive. */
+<const/parked={
+  item: -1,
+  scroller: null as null | ReturnType<typeof createScroller>,
+}>
+/** Lazy: a `<const>` the client reads must serialize, and a closure cannot. */
+<const/scroller() {
+  return (parked.scroller ||= createScroller($list));
+}>
+<const/seat(item: number, animate: boolean) {
+  parked.item = item;
+  scroller().to(() => getScrollOffset($list(), item), animate);
+}>
+/**
+ * A scrollport along, landed on the nearest item. Measured rather than scrolled
+ * by a scrollport and left to snapping, so it lands exactly and reads the same
+ * both ways — a press back undoes a press forward.
+ */
+<const/pageTarget(from: number, direction: 1 | -1) {
+  const listEl = $list();
+  const last = listEl.children.length - 1;
+  const wanted = getScrollOffset(listEl, from) + direction * listEl.clientWidth;
+
+  let best = from;
+  let bestDistance = Infinity;
+  for (let i = 0; i <= last; i++) {
+    const distance = Math.abs(getScrollOffset(listEl, i) - wanted);
+    if (distance < bestDistance) {
+      bestDistance = distance;
+      best = i;
+    }
+  }
+
+  // An item wider than the scrollport has nothing a scrollport away.
+  return best === from ? Math.min(Math.max(from + direction, 0), last) : best;
+}>
+
+<const/scrollByPage(direction: 1 | -1) {
+  // Mid-move, count from where it was heading so presses add up.
+  const from = scroller().running ? parked.item : getScrollIndex($list());
+
+  seat(pageTarget(from, direction), true);
+}>
+
+<script>
+  const listEl = $list();
+  let settleTimer: ReturnType<typeof setTimeout>;
+
+  // `scrollLeft` runs 0..max in LTR and 0..-max in RTL, so take its magnitude.
+  // Reading `itemList` re-seeds the controls when items change, which alters
+  // `scrollWidth` without resizing the list itself.
+  const updateEdges = () => {
+    const distance = Math.abs(listEl.scrollLeft);
+    atStart = distance <= 1;
+    atEnd =
+      !itemList.length ||
+      distance >= listEl.scrollWidth - listEl.clientWidth - 1;
+  };
+  listEl.addEventListener(
+    "scroll",
+    () => {
+      updateEdges();
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(() => {
+        parked.item = getScrollIndex(listEl);
+        index = parked.item;
+      }, SETTLE_DELAY);
+    },
+    {
+      passive: true,
+      signal: $signal,
+    },
+  );
+
+  // Fires once on observe, seeding the initial control state.
+  const resizeObserver = new ResizeObserver(updateEdges);
+  resizeObserver.observe(listEl);
+  $signal.onabort = () => {
+    resizeObserver.disconnect();
+    clearTimeout(settleTimer);
+    parked.scroller?.stop();
+  };
+</script>
+
+<script>
+  // Only the caller can disagree with the settle, so this is a controlled set.
+  if (parked.item < 0) {
+    // The page should open on its starting item, not travel to it.
+    parked.item = getScrollIndex($list());
+    if (index != null && parked.item !== index) {
+      seat(index, false);
+    }
+  } else if (index != null) {
+    const at = scroller().running ? parked.item : getScrollIndex($list());
+    if (at !== index) {
+      seat(index, true);
+    }
+  }
+</script>
+/** Both knobs are custom properties, so sizing stays in CSS. */
+<const/styleVars=(
+  [
+    gap != null &&
+      `--carousel-gap: ${typeof gap === "number" ? `${gap}px` : gap}`,
+    itemsPerSlide && `--carousel-items-per-slide: ${itemsPerSlide}`,
+  ]
+    .filter(Boolean)
+    .join(";")
+)>
+
+<define/Control|
+  {
+    input,
+    direction,
+  }: {
+    input: Marko.AttrTag<Control>;
+    direction: 1 | -1;
+  },
+|>
+  <const/{ a11yText: controlText, class: controlClass, ...buttonInput }=input>
+  <const/disabled=(direction === 1 ? atEnd : atStart)>
+  <button
+    ...buttonInput
+    type="button"
+    aria-label=controlText
+    aria-disabled=disabled && "true"
+    class=[
+      "carousel__control",
+      direction === 1 ? "carousel__control--next" : "carousel__control--prev",
+      controlClass,
+    ]
+    onClick(e, el) {
+      if (!disabled) {
+        scrollByPage(direction);
+      }
+      input.onClick && input.onClick(e, el);
+    }>
+    <if=direction === 1>
+      <evo-icon-chevron-right-16/>
+    </if>
+    <else>
+      <evo-icon-chevron-left-16/>
+    </else>
+  </button>
+</define>
+
+<div
+  ...htmlInput
+  role="group"
+  aria-roledescription=ariaRoledescription
+  aria-label=a11yText
+  class=["carousel", !scrollbar && "carousel--hidden-scrollbar", inputClass]
+  style=[inputStyle, styleVars]>
+  <div class=[
+    "carousel__container",
+    atStart && atEnd && "carousel__container--controls-disabled",
+  ]>
+    <Control input=previous direction=-1/>
+    <div class=[
+      "carousel__viewport",
+      mask && !atEnd && "carousel__viewport--mask",
+    ]>
+      <ul/$list class=[
+        "carousel__list",
+        "carousel__list--gap",
+        !!itemsPerSlide && "carousel__list--slides",
+        imageTreatment === "matte" && "carousel__list--image-treatment",
+        imageTreatment === "large" && "carousel__list--image-treatment-large",
+      ]>
+        <for|item| of=itemList>
+          <li ...item class=["carousel__item", item.class]/>
+        </for>
+      </ul>
+    </div>
+    <Control input=next direction=1/>
+  </div>
+</div>
