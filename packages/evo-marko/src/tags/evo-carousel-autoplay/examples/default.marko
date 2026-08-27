@@ -1,0 +1,26 @@
+<style>
+  .demo-rotator-slide {
+    align-items: center;
+    background-color: var(--color-background-secondary);
+    border-radius: var(--border-radius-50);
+    box-sizing: border-box;
+    display: flex;
+    font-size: 24px;
+    height: 240px;
+    justify-content: center;
+    width: 100%;
+  }
+</style>
+
+<evo-carousel-autoplay ...input a11yText="Featured deals">
+  <@previous a11yText="Previous slide"/>
+  <@next a11yText="Next slide"/>
+  <@playback a11yPlayText="Play" a11yPauseText="Pause"/>
+  <for|i| from=1 to=4>
+    <@item>
+      <div class="demo-rotator-slide">
+        Slide ${i}
+      </div>
+    </@item>
+  </for>
+</evo-carousel-autoplay>

@@ -1,0 +1,206 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-carousel-autoplay > renders the slides three times over, only the middle run exposed 1`] = `
+"<div
+  aria-label="Featured deals"
+  aria-roledescription="carousel"
+  class="carousel-autoplay"
+  role="group"
+>
+  <button
+    aria-label="Previous slide"
+    class="carousel-autoplay__control carousel-autoplay__control--prev icon-btn"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-0"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M3.293 8.708a1 1 0 0 1 0-1.415l6-6a1 1 0 0 1 1.414 1.414L5.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6Z"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-left-16"
+      />
+    </svg>
+  </button>
+  <ul
+    aria-live="off"
+    class="carousel-autoplay__list"
+  >
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 1
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 2
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 3
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 4
+      </div>
+    </li>
+    <li
+      class="carousel-autoplay__item"
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 1
+      </div>
+    </li>
+    <li
+      class="carousel-autoplay__item"
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 2
+      </div>
+    </li>
+    <li
+      class="carousel-autoplay__item"
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 3
+      </div>
+    </li>
+    <li
+      class="carousel-autoplay__item"
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 4
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 1
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 2
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 3
+      </div>
+    </li>
+    <li
+      aria-hidden="true"
+      class="carousel-autoplay__item"
+      inert=""
+    >
+      <div
+        class="demo-rotator-slide"
+      >
+        Slide 4
+      </div>
+    </li>
+  </ul>
+  <button
+    aria-label="Next slide"
+    class="carousel-autoplay__control carousel-autoplay__control--next icon-btn"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--16"
+    >
+      <symbol
+        id="GENERATED-1"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m12.707 8.707-6 6a1 1 0 0 1-1.414-1.414L10.586 8 5.293 2.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414Z"
+        />
+      </symbol>
+      <use
+        href="#icon-chevron-right-16"
+      />
+    </svg>
+  </button>
+  <button
+    aria-label="Pause"
+    class="carousel-autoplay__playback icon-btn"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="icon icon--24"
+    >
+      <symbol
+        id="GENERATED-2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M9 5a2 2 0 1 0-4 0v14a2 2 0 1 0 4 0V5Zm10 0a2 2 0 1 0-4 0v14a2 2 0 1 0 4 0V5Z"
+        />
+      </symbol>
+      <use
+        href="#icon-pause-24"
+      />
+    </svg>
+  </button>
+</div>"
+`;

@@ -342,3 +342,34 @@ export const hiddenScrollbarWithPaddlesVisible = () => `
     </div>
 </div>
 `;
+
+export const evoAdditionsSlides = () => `
+<div class="carousel carousel--hidden-scrollbar" style="--carousel-items-per-slide: 4">
+    <div class="carousel__container">
+        <button class="carousel__control carousel__control--prev" aria-label="Previous slide" aria-disabled="true">
+            <svg aria-hidden="true" class="icon icon--16">
+                <use href="#icon-chevron-left-16"></use>
+            </svg>
+        </button>
+        <div class="carousel__viewport">
+            <ul class="carousel__list carousel__list--gap carousel__list--slides demo-carousel-items">
+                <li class="carousel__item">Card 1</li>
+                <li class="carousel__item">Card 2</li>
+                <li class="carousel__item">Card 3</li>
+                <li class="carousel__item">Card 4</li>
+                <li class="carousel__item">Card 5</li>
+                <li class="carousel__item">Card 6</li>
+            </ul>
+        </div>
+        <button class="carousel__control carousel__control--next" aria-label="Next slide">
+            <svg aria-hidden="true" class="icon icon--16">
+                <use href="#icon-chevron-right-16"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+`;
+
+export const evoAdditionsSlidesRtl = () => `
+<div dir="rtl">${evoAdditionsSlides()}</div>
+`;

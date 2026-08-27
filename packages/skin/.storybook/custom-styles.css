@@ -3,3 +3,25 @@
     font-size: 200%;
     /* line-height: var(--typography-body-line-height); */
 }
+
+/* Placeholder slides for the carousel-autoplay stories. */
+.demo-carousel-items > li {
+    align-items: center;
+    background-color: grey;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    height: 120px;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+}
+
+/* `flex-basis` wins over `width` for a flex item, so the slides modifier still
+   sizes these when it is applied. */
+.demo-carousel-items--wide > li {
+    height: 240px;
+    width: auto;
+}

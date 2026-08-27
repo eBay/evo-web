@@ -143,6 +143,7 @@ div.carousel {
     justify-content: center;
     opacity: 0;
     padding: 0;
+    pointer-events: none;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -167,6 +168,7 @@ div.carousel {
 @media (min-width: 512px) {
     .carousel:focus-within .carousel__control {
         opacity: 0.92;
+        pointer-events: auto;
     }
     .carousel:focus-within .carousel__control[aria-disabled="true"] {
         opacity: 0.3;
@@ -175,6 +177,7 @@ div.carousel {
 @media (min-width: 512px) and (hover: hover) {
     .carousel:hover .carousel__control {
         opacity: 0.92;
+        pointer-events: auto;
     }
     .carousel:hover .carousel__control[aria-disabled="true"] {
         opacity: 0.3;
@@ -183,6 +186,7 @@ div.carousel {
 .carousel__control--show,
 .carousel__control:focus {
     opacity: 0.92;
+    pointer-events: auto;
 }
 .carousel__control--show[aria-disabled="true"],
 .carousel__control:focus[aria-disabled="true"] {
@@ -230,6 +234,7 @@ span.carousel__container {
     ) {
     .carousel:not(.carousel__autoplay) .carousel__control {
         opacity: 0.92;
+        pointer-events: auto;
     }
     .carousel:not(.carousel__autoplay)
         .carousel__control[aria-disabled="true"] {
@@ -305,4 +310,24 @@ span.carousel__container {
 }
 .carousel--hidden-scrollbar .carousel__control--next {
     right: 0;
+}
+:root {
+    --carousel-gap: 16px;
+    --carousel-items-per-slide: 1;
+}
+.carousel__item {
+    scroll-snap-align: start;
+    white-space: normal;
+}
+.carousel__list--gap {
+    gap: var(--carousel-gap);
+}
+.carousel__list--slides > .carousel__item {
+    flex-basis: calc(
+        (100% - (var(--carousel-items-per-slide) - 1) * var(--carousel-gap)) /
+            var(--carousel-items-per-slide)
+    );
+}
+[dir="rtl"] .carousel__control svg {
+    transform: rotate(180deg);
 }

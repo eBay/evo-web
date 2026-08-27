@@ -1,0 +1,25 @@
+<style>
+  .demo-carousel-image {
+    height: 120px;
+    width: 200px;
+  }
+</style>
+
+<evo-carousel ...input a11yText="Travel photos" imageTreatment="matte">
+  <@previous a11yText="Previous slide"/>
+  <@next a11yText="Next slide"/>
+  <for|name| of=[
+    "aztec-pyramid",
+    "falls",
+    "mountain",
+    "shoes",
+    "tall-cat",
+    "wide-cat",
+  ]>
+    <@item class="demo-carousel-image">
+      <img
+        alt=name
+        src=`https://ir.ebaystatic.com/cr/v/c1/skin/image-treatment/${name}.jpeg`>
+    </@item>
+  </for>
+</evo-carousel>

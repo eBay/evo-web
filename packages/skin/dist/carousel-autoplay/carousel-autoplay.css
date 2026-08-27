@@ -1,0 +1,88 @@
+:root {
+    --carousel-autoplay-gap: 0px;
+}
+.carousel-autoplay {
+    position: relative;
+}
+.carousel-autoplay__list {
+    display: flex;
+    gap: var(--carousel-autoplay-gap);
+    list-style: none;
+    margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.carousel-autoplay__list::-webkit-scrollbar {
+    display: none;
+}
+.carousel-autoplay__item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+}
+.carousel-autoplay__list--image-treatment > .carousel-autoplay__item {
+    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.carousel-autoplay__list--image-treatment > .carousel-autoplay__item:after {
+    background: rgba(0, 0, 0, 0.05);
+    content: "";
+    display: block;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.carousel-autoplay__list--image-treatment > .carousel-autoplay__item > img {
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.carousel-autoplay__control {
+    opacity: 0.92;
+}
+button.icon-btn.carousel-autoplay__control {
+    background-color: var(--color-background-primary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 50%;
+    box-shadow:
+        0 2px 2px 0 rgba(0, 0, 0, 0.24),
+        0 0 2px 0 rgba(0, 0, 0, 0.12);
+    height: 32px;
+    min-width: 32px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    z-index: 1;
+}
+.carousel-autoplay__control--prev {
+    inset-inline-start: var(--spacing-200);
+}
+.carousel-autoplay__control--next {
+    inset-inline-end: var(--spacing-200);
+}
+button.icon-btn.carousel-autoplay__playback {
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 0;
+    border-radius: 50%;
+    bottom: var(--spacing-200);
+    height: 40px;
+    inset-inline-end: var(--spacing-200);
+    position: absolute;
+    width: 40px;
+    z-index: 2;
+}
+button.icon-btn.carousel-autoplay__playback > svg {
+    fill: var(--color-foreground-on-inverse);
+}
+[dir="rtl"] .carousel-autoplay__control > svg {
+    transform: rotate(180deg);
+}
