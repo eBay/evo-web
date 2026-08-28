@@ -23,5 +23,5 @@ and offscreen auto-pause via `offscreen-pause`.
 
 ## Examples and Documentation
 
-- [Storybook](https://ebay.github.io/evo-web/ebayui-core/?path=/story/TODO-evo-video)
-- [Storybook Docs](https://ebay.github.io/evo-web/ebayui-core/?path=/docs/TODO-evo-video)
+- [Storybook](https://ebay.github.io/evo-web/evo-marko/?path=/story/media-evo-video)
+- [Storybook Docs](https://ebay.github.io/evo-web/evo-marko/?path=/docs/media-evo-video)
