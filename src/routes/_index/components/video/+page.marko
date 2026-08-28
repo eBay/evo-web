@@ -1,0 +1,28 @@
+<div id="video-overview">
+  <component-banner-img/>
+
+  <p>
+    The${" "}
+    <code>video</code>
+    ${" "}component is a CSS shell for building an accessible video player. It
+    wraps a native${" "}
+    <code>&lt;video&gt;</code>
+    ${" "}element and a composable${" "}
+    <code>video__controls</code>
+    ${" "}bar containing icon buttons, time displays, a scrubber range input,
+    and optionally anchored popovers (captions, volume, etc.).
+  </p>
+
+  <p>
+    All interactive behavior — play/pause toggling, scrubbing, popover
+    open/close — is expected to be wired up in JavaScript. The CSS layer
+    establishes layout and exposes the popover anchor pattern, along with
+    overlay states (${" "}
+    <code>video__overlay</code>
+    ${" "}for loading and errors,${" "}
+    <code>video__play-overlay</code>
+    ${" "}for the poster play button,${" "}
+    <code>video__nav</code>
+    ${" "}for an overlay link).
+  </p>
+</div>

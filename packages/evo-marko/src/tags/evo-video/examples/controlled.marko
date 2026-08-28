@@ -1,0 +1,27 @@
+import type { Input as VideoInput } from "../index.marko";
+export interface Input extends VideoInput {}
+
+<let/playing=false>
+<let/muted=true>
+<let/volume=0.5>
+
+<evo-button onClick() {
+  playing = !playing;
+}>
+  ${playing ? "Pause" : "Play"}
+</evo-button>
+<evo-button onClick() {
+  muted = !muted;
+}>
+  ${muted ? "Unmute" : "Mute"}
+</evo-button>
+
+<evo-video ...input playing:=playing muted:=muted volume:=volume>
+  <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
+</evo-video>
+
+<p>
+  The video is ${playing ? "playing" : "paused"}, ${muted
+    ? "muted"
+    : `at volume ${Math.round(volume * 100)}%`}
+</p>
