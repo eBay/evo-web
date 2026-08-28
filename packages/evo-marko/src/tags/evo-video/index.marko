@@ -164,7 +164,7 @@ static interface DashLikeMedia extends MediaElement {
   userPaused: false,
   autoPause: false,
   focusFromClick: false,
-  focusPlayButton: false,
+  focusControls: false,
 }>
 <const/fullscreenEnabled=Boolean(a11yFullscreenText && a11yExitFullscreenText)>
 <const/failSource=(error: unknown) => {
@@ -177,6 +177,7 @@ static interface DashLikeMedia extends MediaElement {
   }
 }>
 
+<const/started=played || playing>
 <const/controlsHidden=!nav && !failed && playing && !lastActive>
 <const/audioOff=muted || volume === 0>
 <div/$root
@@ -241,7 +242,6 @@ static interface DashLikeMedia extends MediaElement {
       input.onError && input.onError(e, el);
     }
     onClick(e, el) {
-      flags.focusPlayButton = false;
       if (!nav) {
         playing = !playing;
       }
@@ -275,20 +275,20 @@ static interface DashLikeMedia extends MediaElement {
         <evo-progress-spinner size="large" a11yText=a11yLoadText/>
       </div>
     </if>
-    <else if=!played>
+    <else if=!started>
       <button
         class="video__play-overlay"
         type="button"
         aria-label=a11yPlayText
         onClick() {
-          flags.focusPlayButton = true;
           playing = true;
+          flags.focusControls = true;
         }>
         <evo-icon-play-filled-64-colored/>
       </button>
     </else>
 
-    <show=played>
+    <show=started>
       <div class="video__controls">
         <if=!a11ySeekText>
           <span class="video__timestamp video__timestamp--remaining">
@@ -569,10 +569,10 @@ static interface DashLikeMedia extends MediaElement {
 </script>
 
 <script>
-  // hand focus from the play overlay to the controls' play button once
-  // playback starts and the overlay leaves the document
-  if (played && flags.focusPlayButton) {
-    flags.focusPlayButton = false;
+  // the play overlay leaves the document when playback is requested;
+  // hand its focus to the controls
+  if (started && flags.focusControls) {
+    flags.focusControls = false;
     $playButton().focus();
   }
 </script>
