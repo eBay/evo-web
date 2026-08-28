@@ -1,0 +1,11 @@
+import type { Input as VideoInput } from "../index.marko";
+export interface Input extends VideoInput {}
+
+<evo-video ...input>
+  <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
+  <@report
+    a11yText="Report this video"
+    onClick() {
+      console.log("reported");
+    }/>
+</evo-video>
