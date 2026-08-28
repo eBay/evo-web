@@ -141,7 +141,7 @@ export default {
         },
         ["<button> attributes" as any]: {
           description:
-            "All other attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through, notably `onClick`.",
+            "All attributes from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through.",
         },
       },
     },
