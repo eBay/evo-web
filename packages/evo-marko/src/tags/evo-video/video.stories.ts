@@ -12,6 +12,8 @@ import WithTrackTemplate from "./examples/with-track.marko";
 import WithTrackTemplateCode from "./examples/with-track.marko?raw";
 import ControlledTemplate from "./examples/controlled.marko";
 import ControlledTemplateCode from "./examples/controlled.marko?raw";
+import ReportTemplate from "./examples/report.marko";
+import ReportTemplateCode from "./examples/report.marko?raw";
 
 export default {
   title: "media/evo-video",
@@ -246,4 +248,9 @@ export const WithTrack = buildExtensionTemplate(
 export const Controlled = buildExtensionTemplate(
   ControlledTemplate,
   ControlledTemplateCode,
+);
+
+export const Report = buildExtensionTemplate(
+  ReportTemplate,
+  ReportTemplateCode,
 );
