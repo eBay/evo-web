@@ -218,7 +218,7 @@ describe("evo-video", () => {
         source: [{ src: "https://example.com/video.mp4" }],
         preload: "none",
         a11ySeekText: "Seek",
-        report: { "aria-label": "Report", onClick },
+        report: { a11yText: "Report", onClick },
       });
       await startPlayback();
     });

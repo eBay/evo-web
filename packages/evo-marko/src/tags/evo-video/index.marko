@@ -1,3 +1,4 @@
+import type { Input as IconButtonInput } from "<evo-icon-button>";
 export interface Input extends Marko.HTML.Video {
   source: Marko.AttrTag<
     Marko.HTML.Source & { src: string; type?: "hls" | "dash" }
@@ -25,13 +26,13 @@ export interface Input extends Marko.HTML.Video {
    */
   errorText: string;
   /**
-   * Attribute tag rendering a report icon button in the control bar
+   * Attribute tag rendering an `<evo-icon-button>` in the control bar
    *
-   * The button only renders when this is provided; pass `aria-label`,
-   * `onClick` and any other button attributes, and optionally body
-   * content to replace the default flag icon
+   * The button only renders when this is provided; accepts everything
+   * `<evo-icon-button>` does (notably `a11yText` and `onClick`), and
+   * body content replaces the default flag icon
    */
-  report?: Marko.AttrTag<Marko.HTML.Button>;
+  report?: Marko.AttrTag<IconButtonInput>;
   /**
    * The `aria-label` of the play button
    *
@@ -431,17 +432,22 @@ static interface DashLikeMedia extends MediaElement {
         </if>
 
         <if=report>
-          <button
-            type="button"
-            ...report
-            class=["video__control", report.class]>
-            <if=report.content>
-              <${report.content}/>
-            </if>
-            <else>
+          <if=report.content>
+            <evo-icon-button
+              transparent
+              ...report
+              a11yText=report.a11yText
+              class=["video__control", report.class]/>
+          </if>
+          <else>
+            <evo-icon-button
+              transparent
+              ...report
+              a11yText=report.a11yText
+              class=["video__control", report.class]>
               <evo-icon-flag-16/>
-            </else>
-          </button>
+            </evo-icon-button>
+          </else>
         </if>
 
         <if=fullscreenEnabled>
