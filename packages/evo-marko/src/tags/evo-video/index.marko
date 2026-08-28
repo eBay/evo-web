@@ -164,6 +164,7 @@ static interface DashLikeMedia extends MediaElement {
   userPaused: false,
   autoPause: false,
   focusFromClick: false,
+  focusPlayButton: false,
 }>
 <const/fullscreenEnabled=Boolean(a11yFullscreenText && a11yExitFullscreenText)>
 <const/failSource=(error: unknown) => {
@@ -240,6 +241,7 @@ static interface DashLikeMedia extends MediaElement {
       input.onError && input.onError(e, el);
     }
     onClick(e, el) {
+      flags.focusPlayButton = false;
       if (!nav) {
         playing = !playing;
       }
@@ -279,6 +281,7 @@ static interface DashLikeMedia extends MediaElement {
         type="button"
         aria-label=a11yPlayText
         onClick() {
+          flags.focusPlayButton = true;
           playing = true;
         }>
         <evo-icon-play-filled-64-colored/>
@@ -293,7 +296,7 @@ static interface DashLikeMedia extends MediaElement {
           </span>
           <span class="video__spacer"/>
         </if>
-        <button
+        <button/$playButton
           class="video__control"
           type="button"
           aria-label=(playing ? a11yPauseText : a11yPlayText)
@@ -562,6 +565,15 @@ static interface DashLikeMedia extends MediaElement {
           textTrack.language === language ? "showing" : "disabled";
       }
     }
+  }
+</script>
+
+<script>
+  // hand focus from the play overlay to the controls' play button once
+  // playback starts and the overlay leaves the document
+  if (played && flags.focusPlayButton) {
+    flags.focusPlayButton = false;
+    $playButton().focus();
   }
 </script>
 

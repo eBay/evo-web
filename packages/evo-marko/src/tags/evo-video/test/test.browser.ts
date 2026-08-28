@@ -303,6 +303,21 @@ describe("evo-video", () => {
       ).toBeNull();
     });
 
+    it("moves focus to the controls' play button when the overlay is clicked", async () => {
+      const overlay = component.container.querySelector(
+        ".video__play-overlay",
+      ) as HTMLButtonElement;
+      overlay.focus();
+      await fireEvent.click(overlay);
+      await startPlayback();
+      await vi.waitFor(() => {
+        // the rejected play() attempt in this environment flips the label
+        // back to "Play"; the overlay is out of the document by now, so
+        // this is the controls' button
+        expect(document.activeElement).toBe(component.getByLabelText("Play"));
+      });
+    });
+
     it("keeps the controls reachable by keyboard", async () => {
       await startPlayback();
       const mute = component.getByLabelText("Mute");
