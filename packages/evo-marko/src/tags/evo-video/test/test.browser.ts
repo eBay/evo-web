@@ -210,24 +210,23 @@ describe("evo-video", () => {
     });
   });
 
-  describe("given a report label and handler", () => {
-    const onReport = vi.fn();
+  describe("given a report attribute tag", () => {
+    const onClick = vi.fn();
 
     beforeEach(async () => {
       component = await render(Video, {
         source: [{ src: "https://example.com/video.mp4" }],
         preload: "none",
         a11ySeekText: "Seek",
-        a11yReportText: "Report",
-        onReport,
+        report: { "aria-label": "Report", onClick },
       });
       await startPlayback();
     });
 
-    it("renders the report button and emits on click", async () => {
+    it("renders the report button and passes through the click", async () => {
       const report = component.getByLabelText("Report");
       await fireEvent.click(report);
-      expect(onReport).toHaveBeenCalledTimes(1);
+      expect(onClick).toHaveBeenCalledTimes(1);
     });
   });
 
