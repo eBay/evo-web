@@ -127,11 +127,15 @@ export default {
       description:
         'Text shown in the overlay when the video fails to load. Defaults to "An error has occurred".',
     },
-    a11yReportText: {
-      type: "string",
-      control: "text",
+    report: {
       description:
-        "Localized accessible name for the report button. The button only renders when this is provided.",
+        "Attribute tag rendering a report icon button in the control bar. Only renders when provided; body content replaces the default flag icon.",
+      "@": {
+        ["<button> attributes" as any]: {
+          description:
+            "All attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through, notably `aria-label` and `onClick`.",
+        },
+      },
     },
     a11yPlayText: {
       type: { name: "string", required: true },
@@ -192,11 +196,6 @@ export default {
       control: "text",
       description:
         'Localized accessible name for the loading spinner. Defaults to "Loading".',
-    },
-    onReport: {
-      action: "report",
-      description: "Emitted when the report button is clicked",
-      table: { category: "Events" },
     },
     onLoadError: {
       action: "load-error",
