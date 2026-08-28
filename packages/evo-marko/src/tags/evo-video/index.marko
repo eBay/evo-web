@@ -25,11 +25,13 @@ export interface Input extends Marko.HTML.Video {
    */
   errorText: string;
   /**
-   * The `aria-label` of the report button
+   * Attribute tag rendering a report icon button in the control bar
    *
-   * The button only renders when this is provided
+   * The button only renders when this is provided; pass `aria-label`,
+   * `onClick` and any other button attributes, and optionally body
+   * content to replace the default flag icon
    */
-  a11yReportText?: string;
+  report?: Marko.AttrTag<Marko.HTML.Button>;
   /**
    * The `aria-label` of the play button
    *
@@ -90,7 +92,6 @@ export interface Input extends Marko.HTML.Video {
    * English default to be overridden is `"Loading"`
    */
   a11yLoadText: string;
-  onReport?: () => void;
   onLoadError?: (error: unknown) => void;
 }
 static interface MediaElement {
@@ -115,7 +116,7 @@ static interface DashLikeMedia extends MediaElement {
   offscreenPause,
   spinnerTimeout,
   errorText = "An error has occurred",
-  a11yReportText,
+  report,
   a11yPlayText = "Play",
   a11yPauseText = "Pause",
   a11ySeekText,
@@ -126,7 +127,6 @@ static interface DashLikeMedia extends MediaElement {
   a11yFullscreenText,
   a11yExitFullscreenText,
   a11yLoadText = "Loading",
-  onReport,
   onLoadError,
   playing: _playing,
   playingChange,
@@ -430,15 +430,17 @@ static interface DashLikeMedia extends MediaElement {
           </span>
         </if>
 
-        <if=a11yReportText>
+        <if=report>
           <button
-            class="video__control"
             type="button"
-            aria-label=a11yReportText
-            onClick() {
-              onReport && onReport();
-            }>
-            <evo-icon-flag-16/>
+            ...report
+            class=["video__control", report.class]>
+            <if=report.content>
+              <${report.content}/>
+            </if>
+            <else>
+              <evo-icon-flag-16/>
+            </else>
           </button>
         </if>
 
