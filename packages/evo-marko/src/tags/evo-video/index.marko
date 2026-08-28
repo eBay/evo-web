@@ -1,6 +1,6 @@
 export interface Input extends Marko.HTML.Video {
   source: Marko.AttrTag<
-    Marko.HTML.Source & { src: string; type?: "hls" | "dash" }
+    Marko.HTML.Source & { src: string; engine?: "hls" | "dash" }
   >;
   track?: Marko.AttrTag<Marko.HTML.Track>;
   nav?: Marko.AttrTag<Marko.HTML.A>;
@@ -368,16 +368,16 @@ static interface DashLikeMedia extends MediaElement {
                   Off
                 </@item>
                 <for|textTrack| of=textTracks>
-                  <@item
-                    value=textTrack.language
-                    onClick() {
-                      language = textTrack.language;
-                      languageOpen = false;
-                    }>
-                    ${new Intl.DisplayNames([textTrack.language], {
-                      type: "language",
-                    }).of(textTrack.language)}
-                  </@item>
+                  <if=textTrack.language>
+                    <@item
+                      value=textTrack.language
+                      onClick() {
+                        language = textTrack.language;
+                        languageOpen = false;
+                      }>
+                      ${languageLabel(textTrack.language)}
+                    </@item>
+                  </if>
                 </for>
               </evo-menu>
             </span>
@@ -677,14 +677,14 @@ static interface DashLikeMedia extends MediaElement {
   if (state.src === currentSource.src) {
     return;
   }
-  const { src, type } = currentSource;
+  const { src, engine } = currentSource;
   state.src = src;
   detachMedia();
   try {
     let mediaElement: MediaElement;
-    if (type === "hls" || src.endsWith(".m3u8")) {
+    if (engine === "hls" || src.endsWith(".m3u8")) {
       mediaElement = await createHlsMediaElement();
-    } else if (type === "dash" || src.endsWith(".mpd")) {
+    } else if (engine === "dash" || src.endsWith(".mpd")) {
       const { DashMedia } = await import("@videojs/media/dom/dash");
       mediaElement = new DashMedia();
     } else {
@@ -695,6 +695,11 @@ static interface DashLikeMedia extends MediaElement {
         },
       };
     }
+    // the source may have changed while awaiting the engine import
+    if (state.src !== src) {
+      mediaElement.destroy?.();
+      return;
+    }
     mediaElement.src = src;
     mediaElement.attach($video());
     media = mediaElement;
@@ -703,7 +708,9 @@ static interface DashLikeMedia extends MediaElement {
       playing = true;
     }
   } catch (error) {
-    failSource(error);
+    if (state.src === src) {
+      failSource(error);
+    }
   }
 }>
 <const/detachMedia=() => {
@@ -734,6 +741,17 @@ static async function createHlsMediaElement() {
 }
 static function isDashMedia(media: MediaElement): media is DashLikeMedia {
   return "engine" in media && "getTracksFor" in (media as DashLikeMedia).engine;
+}
+static function languageLabel(language: string) {
+  // `TextTrack.language` is not guaranteed to be a valid BCP-47 tag
+  try {
+    return (
+      new Intl.DisplayNames([language], { type: "language" }).of(language) ||
+      language
+    );
+  } catch {
+    return language;
+  }
 }
 static function formatTime(value: number) {
   return `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, "0")}`;

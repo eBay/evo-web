@@ -37,12 +37,16 @@ export default {
           description:
             "URL of the video, DASH manifest (`.mpd`), or HLS playlist (`.m3u8`)",
         },
-        type: {
+        engine: {
           type: "string",
           options: ["hls", "dash"],
           control: "inline-radio",
           description:
             "Forces the media engine when the URL extension is not enough to infer it",
+        },
+        ["<source> attributes" as any]: {
+          description:
+            "All attributes from [the native HTML `<source>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/source) will be passed through.",
         },
       },
     },
