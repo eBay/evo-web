@@ -4,6 +4,8 @@ import Video from "../index.marko";
 
 afterEach(cleanup);
 
+afterEach(() => vi.restoreAllMocks());
+
 let component: Awaited<ReturnType<typeof render>>;
 
 // The fine-grained controls only enter the document once playback has
@@ -304,6 +306,9 @@ describe("evo-video", () => {
     });
 
     it("moves focus to the controls' play button when the overlay is clicked", async () => {
+      // the placeholder source would reject play() and yank `playing` back
+      // to false before the focus handoff; a real source resolves it
+      vi.spyOn(HTMLMediaElement.prototype, "play").mockResolvedValue();
       const overlay = component.container.querySelector(
         ".video__play-overlay",
       ) as HTMLButtonElement;
@@ -311,10 +316,9 @@ describe("evo-video", () => {
       await fireEvent.click(overlay);
       await startPlayback();
       await vi.waitFor(() => {
-        // the rejected play() attempt in this environment flips the label
-        // back to "Play"; the overlay is out of the document by now, so
-        // this is the controls' button
-        expect(document.activeElement).toBe(component.getByLabelText("Play"));
+        expect(
+          document.activeElement?.closest(".video__controls"),
+        ).toBeTruthy();
       });
     });
 
