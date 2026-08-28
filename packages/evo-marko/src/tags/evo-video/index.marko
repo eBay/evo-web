@@ -1,4 +1,3 @@
-import type { Input as IconButtonInput } from "<evo-icon-button>";
 export interface Input extends Marko.HTML.Video {
   source: Marko.AttrTag<
     Marko.HTML.Source & { src: string; type?: "hls" | "dash" }
@@ -26,13 +25,16 @@ export interface Input extends Marko.HTML.Video {
    */
   errorText: string;
   /**
-   * Attribute tag rendering an `<evo-icon-button>` in the control bar
+   * Attribute tag rendering a report icon button in the control bar
    *
-   * The button only renders when this is provided; accepts everything
-   * `<evo-icon-button>` does (notably `a11yText` and `onClick`), and
-   * body content replaces the default flag icon
+   * The button only renders when this is provided; `a11yText` is
+   * required and maps to its `aria-label`, all other `<button>`
+   * attributes pass through, and body content replaces the default
+   * flag icon
    */
-  report?: Marko.AttrTag<IconButtonInput>;
+  report?: Marko.AttrTag<
+    Omit<Marko.HTML.Button, "aria-label"> & { a11yText: string }
+  >;
   /**
    * The `aria-label` of the play button
    *
@@ -432,22 +434,24 @@ static interface DashLikeMedia extends MediaElement {
         </if>
 
         <if=report>
-          <if=report.content>
-            <evo-icon-button
-              transparent
-              ...report
-              a11yText=report.a11yText
-              class=["video__control", report.class]/>
-          </if>
-          <else>
-            <evo-icon-button
-              transparent
-              ...report
-              a11yText=report.a11yText
-              class=["video__control", report.class]>
+          <const/{
+            a11yText: reportText,
+            content: reportContent,
+            class: reportClass,
+            ...reportAttrs
+          }=report>
+          <button
+            type="button"
+            ...reportAttrs
+            aria-label=reportText
+            class=["video__control", reportClass]>
+            <if=reportContent>
+              <${reportContent}/>
+            </if>
+            <else>
               <evo-icon-flag-16/>
-            </evo-icon-button>
-          </else>
+            </else>
+          </button>
         </if>
 
         <if=fullscreenEnabled>
