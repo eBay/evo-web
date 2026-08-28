@@ -1,0 +1,4 @@
+{
+  "pageTitle": "Video CSS Component",
+  "pageDescription": "The Video CSS component provides layout primitives for a custom video player: a block wrapper, a flex control bar, inline time labels, a flex-growing scrubber, and popover-control slots anchored to their trigger buttons."
+}

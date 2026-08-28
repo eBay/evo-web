@@ -1,0 +1,7 @@
+import type { Input as VideoInput } from "../index.marko";
+export interface Input extends VideoInput {}
+// Native `width`/`height` pass through to the `<video>` element, reserving
+// the correct aspect ratio before the video loads to avoid layout shift.
+<evo-video ...input width=640 height=360>
+  <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
+</evo-video>
