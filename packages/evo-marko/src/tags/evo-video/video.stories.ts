@@ -131,16 +131,17 @@ export default {
     },
     report: {
       description:
-        "Attribute tag rendering an `<evo-icon-button>` report button in the control bar. Only renders when provided; body content replaces the default flag icon.",
+        "Attribute tag rendering a report icon button in the control bar. Only renders when provided; body content replaces the default flag icon.",
       "@": {
         a11yText: {
           type: { name: "string", required: true },
           control: "text",
-          description: "Localized accessible name for the report button",
-        },
-        ["<evo-icon-button> attributes" as any]: {
           description:
-            "All other `<evo-icon-button>` inputs (notably `onClick`) pass through.",
+            "Localized accessible name for the report button, mapped to its `aria-label`",
+        },
+        ["<button> attributes" as any]: {
+          description:
+            "All other attributes and event handlers from [the native HTML `<button>` tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button) will be passed through, notably `onClick`.",
         },
       },
     },
