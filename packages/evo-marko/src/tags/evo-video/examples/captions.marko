@@ -1,0 +1,7 @@
+import type { Input as VideoInput } from "../index.marko";
+export interface Input extends VideoInput {}
+// The no-op `playView` dodges a TS2589 in @marko/type-check when a spread is
+// the tag's only attribute; see marko-js/language-server agent-feedback.
+<evo-video ...input playView=input.playView>
+  <@source src="https://storage.googleapis.com/shaka-demo-assets/angel-one/dash.mpd"/>
+</evo-video>

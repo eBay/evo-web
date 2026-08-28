@@ -1,0 +1,716 @@
+export interface Input extends Marko.HTML.Video {
+  source: Marko.AttrTag<
+    Marko.HTML.Source & { src: string; type?: "hls" | "dash" }
+  >;
+  track?: Marko.AttrTag<Marko.HTML.Track>;
+  nav?: Marko.AttrTag<Marko.HTML.A>;
+  playView?: "inline" | "fullscreen";
+  playing?: boolean;
+  playingChange?: (playing: boolean) => void;
+  volume?: number;
+  volumeChange?: (volume: number) => void;
+  mutedChange?: (muted: boolean) => void;
+  language?: string | null;
+  languageChange?: (language: string | null) => void;
+  fullscreen?: boolean;
+  fullscreenChange?: (fullscreen: boolean) => void;
+  currentTime?: number;
+  currentTimeChange?: (currentTime: number) => void;
+  offscreenPause?: boolean;
+  spinnerTimeout?: number;
+  /**
+   * Text shown in the overlay when the video fails to load
+   *
+   * English default to be overridden is `"An error has occurred"`
+   */
+  errorText: string;
+  /**
+   * The `aria-label` of the report button
+   *
+   * The button only renders when this is provided
+   */
+  a11yReportText?: string;
+  /**
+   * The `aria-label` of the play button
+   *
+   * English default to be overridden is `"Play"`
+   */
+  a11yPlayText: string;
+  /**
+   * The `aria-label` of the pause button
+   *
+   * English default to be overridden is `"Pause"`
+   */
+  a11yPauseText: string;
+  /**
+   * The `aria-label` of the seek slider
+   *
+   * The seek slider and its timestamps only render when this is provided
+   */
+  a11ySeekText?: string;
+  /**
+   * The `aria-label` of the captions button
+   *
+   * The button only renders when this is provided and the video has
+   * text tracks
+   */
+  a11yCaptionsText?: string;
+  /**
+   * The `aria-label` of the audio button while unmuted
+   *
+   * The audio button only renders when this is provided, together with
+   * `a11yUnmuteText`
+   */
+  a11yMuteText?: string;
+  /**
+   * The `aria-label` of the audio button while muted
+   */
+  a11yUnmuteText?: string;
+  /**
+   * The `aria-label` of the volume slider
+   *
+   * The slider only renders when this is provided in addition to the
+   * audio button's labels
+   */
+  a11yVolumeText?: string;
+  /**
+   * The `aria-label` of the fullscreen button
+   *
+   * The button only renders when this is provided, together with
+   * `a11yExitFullscreenText`
+   */
+  a11yFullscreenText?: string;
+  /**
+   * The `aria-label` of the fullscreen button while fullscreen
+   */
+  a11yExitFullscreenText?: string;
+  /**
+   * The `aria-label` of the loading spinner
+   *
+   * English default to be overridden is `"Loading"`
+   */
+  a11yLoadText: string;
+  onReport?: () => void;
+  onLoadError?: (error: unknown) => void;
+}
+static interface MediaElement {
+  src: string;
+  attach(mediaElement: HTMLMediaElement): void;
+  detach?(): void;
+  destroy?(): void;
+}
+static interface DashLikeMedia extends MediaElement {
+  engine: {
+    getTracksFor(type: "text"): { lang?: string | null }[];
+    setTextTrack(index: number): void;
+  };
+}
+
+<const/{
+  source,
+  track,
+  nav,
+  playView,
+  autoplay,
+  offscreenPause,
+  spinnerTimeout,
+  errorText = "An error has occurred",
+  a11yReportText,
+  a11yPlayText = "Play",
+  a11yPauseText = "Pause",
+  a11ySeekText,
+  a11yCaptionsText,
+  a11yMuteText,
+  a11yUnmuteText,
+  a11yVolumeText,
+  a11yFullscreenText,
+  a11yExitFullscreenText,
+  a11yLoadText = "Loading",
+  onReport,
+  onLoadError,
+  playing: _playing,
+  playingChange,
+  volume: _volume,
+  volumeChange,
+  muted: _muted,
+  mutedChange,
+  language: _language,
+  languageChange,
+  fullscreen: _fullscreen,
+  fullscreenChange,
+  currentTime: _currentTime,
+  currentTimeChange,
+  ...htmlInput
+}=input>
+
+<let/media=null as MediaElement | null>
+<let/playing:=input.playing>
+<let/language:=input.language>
+<let/volume=(input.volume ?? 1) valueChange=input.volumeChange>
+<let/muted=(input.muted ?? false) valueChange=input.mutedChange>
+<let/textTracks=null as TextTrack[] | null>
+<let/currentTime=(input.currentTime ?? 0) valueChange=input.currentTimeChange>
+<let/duration=0>
+<let/sourceIndex=0>
+<let/played=false>
+<let/failed=false>
+<let/loading=false>
+<let/fullscreen:=input.fullscreen>
+<let/lastActive=0>
+<const/flags={
+  userPaused: false,
+  autoPause: false,
+  focusFromClick: false,
+}>
+<const/fullscreenEnabled=Boolean(a11yFullscreenText && a11yExitFullscreenText)>
+<const/failSource=(error: unknown) => {
+  if (sourceIndex < [...source].length - 1) {
+    sourceIndex++;
+  } else {
+    failed = true;
+    loading = false;
+    onLoadError && onLoadError(error);
+  }
+}>
+
+<const/controlsHidden=!nav && !failed && playing && !lastActive>
+<const/audioOff=muted || volume === 0>
+<div/$root
+  class=[
+    "video",
+    nav && "video--with-nav",
+    controlsHidden && "video--controls-hidden",
+  ]
+  onMouseMove() {
+    lastActive++;
+  }
+  onMouseLeave() {
+    lastActive = 0;
+  }>
+  <video/$video
+    playsinline
+    ...htmlInput
+    onPlaying(e, el) {
+      playing = true;
+      played = true;
+      loading = false;
+      flags.userPaused = false;
+      if (playView === "fullscreen" && fullscreenEnabled) {
+        fullscreen = true;
+      }
+      input.onPlaying && input.onPlaying(e, el);
+    }
+    onPause(e, el) {
+      if (!flags.autoPause) {
+        flags.userPaused = true;
+      }
+      flags.autoPause = false;
+      playing = false;
+      input.onPause && input.onPause(e, el);
+    }
+    onLoadedMetadata(e, el) {
+      currentTime = $video().currentTime;
+      duration = $video().duration || 0;
+      textTracks = Array.from($video().textTracks);
+      input.onLoadedMetadata && input.onLoadedMetadata(e, el);
+    }
+    onTimeUpdate(e, el) {
+      currentTime = $video().currentTime;
+      duration = $video().duration || 0;
+      input.onTimeUpdate && input.onTimeUpdate(e, el);
+    }
+    onVolumeChange(e, el) {
+      volume = $video().volume;
+      muted = $video().muted;
+      input.onVolumeChange && input.onVolumeChange(e, el);
+    }
+    onWaiting(e, el) {
+      loading = true;
+      input.onWaiting && input.onWaiting(e, el);
+    }
+    onCanPlay(e, el) {
+      loading = false;
+      input.onCanPlay && input.onCanPlay(e, el);
+    }
+    onError(e, el) {
+      failSource(e);
+      input.onError && input.onError(e, el);
+    }
+    onClick(e, el) {
+      if (!nav) {
+        playing = !playing;
+      }
+      input.onClick && input.onClick(e, el);
+    }
+    onDblClick(e, el) {
+      if (!nav && fullscreenEnabled) {
+        fullscreen = !fullscreen;
+      }
+      input.onDblClick && input.onDblClick(e, el);
+    }>
+    <for|textTrack| of=track>
+      <track ...textTrack>
+    </for>
+  </video>
+  <if=nav>
+    <a ...nav class=["video__nav", nav.class]/>
+  </if>
+
+  <if=failed>
+    <div class="video__overlay">
+      <evo-icon-attention-24/>
+      <div class="video__overlay-text">
+        ${errorText}
+      </div>
+    </div>
+  </if>
+  <else>
+    <if=loading>
+      <div class="video__overlay video__overlay--transparent">
+        <evo-progress-spinner size="large" a11yText=a11yLoadText/>
+      </div>
+    </if>
+    <else if=!played>
+      <button
+        class="video__play-overlay"
+        type="button"
+        aria-label=a11yPlayText
+        onClick() {
+          playing = true;
+        }>
+        <evo-icon-play-filled-64-colored/>
+      </button>
+    </else>
+
+    <show=played>
+      <div class="video__controls">
+        <if=!a11ySeekText>
+          <span class="video__timestamp video__timestamp--remaining">
+            -${formatTime(Math.max(0, duration - currentTime))}
+          </span>
+          <span class="video__spacer"/>
+        </if>
+        <button
+          class="video__control"
+          type="button"
+          aria-label=(playing ? a11yPauseText : a11yPlayText)
+          onClick() {
+            playing = !playing;
+          }>
+          <if=playing>
+            <evo-icon-pause-20/>
+          </if>
+          <else>
+            <evo-icon-play-20/>
+          </else>
+        </button>
+
+        <if=a11ySeekText>
+          <span class="video__timestamp">
+            ${formatTime(currentTime)}
+          </span>
+
+          <const/scrubberPercent=(duration > 0 ? currentTime / duration : 0)>
+          <input
+            class="video__scrubber"
+            type="range"
+            min="0"
+            max="1"
+            step="any"
+            value=scrubberPercent
+            style=`--value-percent: ${scrubberPercent * 100}%`
+            aria-label=a11ySeekText
+            valueChange(value) {
+              const nextTime = Number(value) * duration;
+              if (Number.isFinite(nextTime)) {
+                currentTime = nextTime;
+              }
+            }>
+
+          <span class="video__timestamp">
+            ${formatTime(duration)}
+          </span>
+        </if>
+
+        <if=a11yCaptionsText && textTracks && textTracks.length>
+          <let/languageOpen=false>
+          <span
+            class="video__popover-container"
+            onFocusOut(e, el) {
+              if (!el.contains(e.relatedTarget as Node)) {
+                languageOpen = false;
+              }
+            }>
+            <button
+              class="video__control"
+              type="button"
+              aria-label=a11yCaptionsText
+              aria-expanded=(languageOpen ? "true" : "false")
+              onClick() {
+                languageOpen = !languageOpen;
+              }>
+              <evo-icon-closed-caption-16/>
+            </button>
+            <span class="video__popover">
+              <evo-menu selected=language || "off">
+                <@item
+                  value="off"
+                  onClick() {
+                    language = null;
+                    languageOpen = false;
+                  }>
+                  Off
+                </@item>
+                <for|textTrack| of=textTracks>
+                  <@item
+                    value=textTrack.language
+                    onClick() {
+                      language = textTrack.language;
+                      languageOpen = false;
+                    }>
+                    ${new Intl.DisplayNames([textTrack.language], {
+                      type: "language",
+                    }).of(textTrack.language)}
+                  </@item>
+                </for>
+              </evo-menu>
+            </span>
+          </span>
+        </if>
+
+        <if=a11yMuteText && a11yUnmuteText>
+          <span class=[
+            "video__popover-container",
+            a11yVolumeText && "video__popover-container--hover",
+          ]>
+            <button
+              class="video__control"
+              type="button"
+              aria-label=(audioOff ? a11yUnmuteText : a11yMuteText)
+              aria-pressed=(audioOff ? "true" : "false")
+              onClick() {
+                if (audioOff) {
+                  muted = false;
+                  if (!volume) {
+                    volume = 1;
+                  }
+                } else {
+                  muted = true;
+                }
+              }>
+              <if=audioOff>
+                <evo-icon-audio-off-16/>
+              </if>
+              <else if=volume < 0.5>
+                <evo-icon-audio-low-16/>
+              </else>
+              <else>
+                <evo-icon-audio-high-16/>
+              </else>
+            </button>
+            <if=a11yVolumeText>
+              <div class="video__popover">
+                <const/effectiveVolume=(audioOff ? 0 : volume)>
+                <input
+                  class="video__volume"
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="any"
+                  value=effectiveVolume
+                  valueChange(value) {
+                    const next = Number(value);
+                    muted = false;
+                    volume = next < 0.005 ? 0 : next;
+                  }
+                  style=`--value-percent: ${effectiveVolume * 100}%`
+                  aria-label=a11yVolumeText>
+              </div>
+            </if>
+          </span>
+        </if>
+
+        <if=a11yReportText>
+          <button
+            class="video__control"
+            type="button"
+            aria-label=a11yReportText
+            onClick() {
+              onReport && onReport();
+            }>
+            <evo-icon-flag-16/>
+          </button>
+        </if>
+
+        <if=fullscreenEnabled>
+          <button
+            class="video__control"
+            type="button"
+            aria-label=(
+              fullscreen ? a11yExitFullscreenText : a11yFullscreenText
+            )
+            onClick() {
+              fullscreen = !fullscreen;
+            }>
+            <if=fullscreen>
+              <evo-icon-contract-16/>
+            </if>
+            <else>
+              <evo-icon-expand-16/>
+            </else>
+          </button>
+        </if>
+      </div>
+    </show>
+  </else>
+</div>
+
+<script>
+  // sync `playing` with the DOM
+  if (media) {
+    if (playing && $video().paused) {
+      $video()
+        .play()
+        .catch(() => {
+          playing = false;
+        });
+    } else if (!playing && !$video().paused) {
+      $video().pause();
+    }
+  }
+</script>
+
+<script>
+  // sync `currentTime` with the DOM. State follows the DOM through
+  // timeupdate events, so a divergence beyond float noise is a seek.
+  if (media && Math.abs($video().currentTime - currentTime) > 0.25) {
+    $video().currentTime = currentTime;
+  }
+</script>
+
+<script>
+  // sync `volume` and `muted` with the DOM
+  if (media) {
+    $video().volume = volume;
+    $video().muted = muted;
+  }
+</script>
+
+<script>
+  // sync `fullscreen` with the DOM
+  if (fullscreen && document.fullscreenElement !== $root()) {
+    $root()
+      .requestFullscreen()
+      .catch(() => {
+        fullscreen = false;
+      });
+  } else if (!fullscreen && document.fullscreenElement === $root()) {
+    document.exitFullscreen();
+  }
+</script>
+
+<script>
+  // reflect Esc / browser-initiated fullscreen changes back into state
+  document.addEventListener(
+    "fullscreenchange",
+    () => {
+      fullscreen = document.fullscreenElement === $root();
+    },
+    {
+      signal: $signal,
+    },
+  );
+</script>
+
+<script>
+  // populate `textTracks`
+  $video().textTracks.addEventListener(
+    "change",
+    (e) => {
+      textTracks = Array.from(e.target as TextTrackList);
+    },
+    {
+      signal: $signal,
+    },
+  );
+</script>
+
+<script>
+  // sync `language` with the DOM
+  if (media) {
+    if (isDashMedia(media)) {
+      media.engine.setTextTrack(
+        media.engine
+          .getTracksFor("text")
+          .findIndex(({ lang }) => lang === language),
+      );
+    } else {
+      for (const textTrack of textTracks || []) {
+        textTrack.mode =
+          textTrack.language === language ? "showing" : "disabled";
+      }
+    }
+  }
+</script>
+
+<script>
+  // hide the loading spinner if it has been visible too long
+  if (loading) {
+    const timeout = setTimeout(() => {
+      loading = false;
+    }, spinnerTimeout ?? 2000);
+    $signal.onabort = () => clearTimeout(timeout);
+  }
+</script>
+
+<script>
+  // hide the controls after the mouse has been still for a while
+  if (lastActive) {
+    const timeout = setTimeout(() => {
+      lastActive = 0;
+    }, 3000);
+    $signal.onabort = () => clearTimeout(timeout);
+  }
+</script>
+
+<script>
+  // pause offscreen and resume autoplay in view / on window focus
+  if (offscreenPause) {
+    let inViewport = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          inViewport = entry.isIntersecting;
+          if (flags.userPaused) {
+            continue;
+          }
+          if (entry.isIntersecting) {
+            if (autoplay) {
+              playing = true;
+            }
+          } else if (playing) {
+            flags.autoPause = true;
+            playing = false;
+          }
+        }
+      },
+      {
+        threshold: 0.5,
+      },
+    );
+    observer.observe($root());
+    $signal.onabort = () => observer.disconnect();
+
+    // A click on an unfocused window both focuses the window and plays the
+    // video; skip the focus-driven autoplay so the click handler wins.
+    $root().addEventListener(
+      "mousedown",
+      () => {
+        if (!document.hasFocus()) {
+          flags.focusFromClick = true;
+        }
+      },
+      {
+        signal: $signal,
+      },
+    );
+    window.addEventListener(
+      "focus",
+      () => {
+        if (flags.focusFromClick) {
+          flags.focusFromClick = false;
+          return;
+        }
+        if (autoplay && inViewport && !flags.userPaused) {
+          playing = true;
+        }
+      },
+      {
+        signal: $signal,
+      },
+    );
+    window.addEventListener(
+      "blur",
+      () => {
+        if (playing) {
+          flags.autoPause = true;
+          playing = false;
+        }
+      },
+      {
+        signal: $signal,
+      },
+    );
+  }
+</script>
+
+<const/attachMedia=async (state: { src?: string }) => {
+  const currentSource = [...source][sourceIndex];
+  if (!currentSource) {
+    failSource(new Error("No video source provided"));
+    return;
+  }
+  if (state.src === currentSource.src) {
+    return;
+  }
+  const { src, type } = currentSource;
+  state.src = src;
+  detachMedia();
+  try {
+    let mediaElement: MediaElement;
+    if (type === "hls" || src.endsWith(".m3u8")) {
+      mediaElement = await createHlsMediaElement();
+    } else if (type === "dash" || src.endsWith(".mpd")) {
+      const { DashMedia } = await import("@videojs/media/dom/dash");
+      mediaElement = new DashMedia();
+    } else {
+      mediaElement = {
+        src,
+        attach() {
+          $video().src = src;
+        },
+      };
+    }
+    mediaElement.src = src;
+    mediaElement.attach($video());
+    media = mediaElement;
+    failed = false;
+    if (autoplay && !offscreenPause && !flags.userPaused) {
+      playing = true;
+    }
+  } catch (error) {
+    failSource(error);
+  }
+}>
+<const/detachMedia=() => {
+  media?.detach?.();
+  media?.destroy?.();
+  media = null;
+}>
+<lifecycle
+  onMount() {
+    const state = { src: undefined as string | undefined };
+    attachMedia(state);
+    return state;
+  }
+  onUpdate() {
+    attachMedia(this);
+  }
+  onDestroy() {
+    detachMedia();
+  }>
+static async function createHlsMediaElement() {
+  try {
+    const { SimpleHlsMedia } = await import("@videojs/media/dom/simple-hls");
+    return new SimpleHlsMedia();
+  } catch {
+    const { SimpleHlsMediaElement } = await import("@videojs/spf/hls");
+    return new SimpleHlsMediaElement();
+  }
+}
+static function isDashMedia(media: MediaElement): media is DashLikeMedia {
+  return "engine" in media && "getTracksFor" in (media as DashLikeMedia).engine;
+}
+static function formatTime(value: number) {
+  return `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, "0")}`;
+}

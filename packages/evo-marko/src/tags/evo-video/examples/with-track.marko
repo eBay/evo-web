@@ -1,0 +1,10 @@
+import type { Input as VideoInput } from "../index.marko";
+export interface Input extends VideoInput {}
+
+<evo-video ...input>
+  <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/video.mp4"/>
+  <@track
+    src="https://raw.githubusercontent.com/shaka-project/shaka-player/main/demo/assets/elephants-dream-subtitles-en.vtt"
+    srclang="en"
+    kind="captions"/>
+</evo-video>

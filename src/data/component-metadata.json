@@ -934,5 +934,10 @@
   "utility": {
     "component": "utility",
     "description": "A small set of common, utility classes."
+  },
+  "video": {
+    "component": "video",
+    "cssStorybookPath": "/story/skin-video--base",
+    "description": "A CSS shell for a composable, accessible video player with a flexible control bar."
   }
 }
