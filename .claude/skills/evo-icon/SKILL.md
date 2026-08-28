@@ -4,7 +4,7 @@ description: >
   Icon pipeline for evo-web: add new icons, deprecate icons, or delete icons (major
   version only). Manages the full chain from SVG source through skin sprite assembly,
   evo-react component generation, evo-marko tag generation, and docs data.
-  Use this whenever the user says "add an icon", "deprecate an icon", "delete an icon",
+  Use this whenever the user says "do the icons work", "add an icon", "deprecate an icon", "delete an icon",
   "remove an icon", "new icon", or describes any icon asset work.
   Also invoked by /evo-component when a major version icon deletion requires
   framework layer removal.

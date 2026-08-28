@@ -13,6 +13,14 @@ import { EvoIconAdjustPriceDown16 } from "./icons/adjust-price-down-16";
 import { EvoIconAdjustPriceDown24 } from "./icons/adjust-price-down-24";
 import { EvoIconAdjustPriceUp16 } from "./icons/adjust-price-up-16";
 import { EvoIconAdjustPriceUp24 } from "./icons/adjust-price-up-24";
+import { EvoIconAffirmBlack12Colored } from "./icons/affirm-black-12-colored";
+import { EvoIconAffirmBlack18Colored } from "./icons/affirm-black-18-colored";
+import { EvoIconAffirmBlack24Colored } from "./icons/affirm-black-24-colored";
+import { EvoIconAffirmBlack32Colored } from "./icons/affirm-black-32-colored";
+import { EvoIconAffirmWhite12Colored } from "./icons/affirm-white-12-colored";
+import { EvoIconAffirmWhite18Colored } from "./icons/affirm-white-18-colored";
+import { EvoIconAffirmWhite24Colored } from "./icons/affirm-white-24-colored";
+import { EvoIconAffirmWhite32Colored } from "./icons/affirm-white-32-colored";
 import { EvoIconAfterpay12Colored } from "./icons/afterpay-12-colored";
 import { EvoIconAfterpay18Colored } from "./icons/afterpay-18-colored";
 import { EvoIconAfterpay24Colored } from "./icons/afterpay-24-colored";
@@ -1239,6 +1247,30 @@ export const AllIcons: Story = {
         </IconExample>
         <IconExample name="EvoIconAdjustPriceUp24">
           <EvoIconAdjustPriceUp24 {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmBlack12Colored">
+          <EvoIconAffirmBlack12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmBlack18Colored">
+          <EvoIconAffirmBlack18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmBlack24Colored">
+          <EvoIconAffirmBlack24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmBlack32Colored">
+          <EvoIconAffirmBlack32Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmWhite12Colored">
+          <EvoIconAffirmWhite12Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmWhite18Colored">
+          <EvoIconAffirmWhite18Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmWhite24Colored">
+          <EvoIconAffirmWhite24Colored {...args} />
+        </IconExample>
+        <IconExample name="EvoIconAffirmWhite32Colored">
+          <EvoIconAffirmWhite32Colored {...args} />
         </IconExample>
         <IconExample name="EvoIconAfterpay12Colored">
           <EvoIconAfterpay12Colored {...args} />
