@@ -1,7 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { EvoDateInput } from "./date-input";
+import { EvoDateInput, EvoDateInputCalendarPopover } from "./index";
+import type {
+  EvoDateInputCalendarPopoverProps,
+  EvoDateInputProps,
+} from "./types";
 
-const meta: Meta<typeof EvoDateInput> = {
+type DateInputStoryArgs = EvoDateInputProps & {
+  calendarPopover?: Omit<
+    EvoDateInputCalendarPopoverProps,
+    "a11yNavigateText" | "strategy"
+  >;
+  popoverStrategy?: EvoDateInputCalendarPopoverProps["strategy"];
+};
+
+const meta: Meta<DateInputStoryArgs> = {
   title: "form input/evo-date-input",
   component: EvoDateInput,
   tags: ["autodocs"],
@@ -14,7 +26,10 @@ A date field that formats typed values by locale and opens a calendar popover.
 ## Usage
 
 \`\`\`tsx
-import { EvoDateInput } from "@evo-web/react/date-input";
+import {
+  EvoDateInput,
+  EvoDateInputCalendarPopover,
+} from "@evo-web/react/date-input";
 \`\`\`
         `,
       },
@@ -27,11 +42,15 @@ import { EvoDateInput } from "@evo-web/react/date-input";
     collapseOnSelect: {
       control: "boolean",
     },
-    strategy: {
+    popoverStrategy: {
       control: "select",
       options: ["absolute", "fixed"],
+      table: { category: "Calendar popover" },
     },
     disabled: {
+      control: "boolean",
+    },
+    readOnly: {
       control: "boolean",
     },
     a11yOpenPopoverText: {
@@ -40,8 +59,9 @@ import { EvoDateInput } from "@evo-web/react/date-input";
     floatingLabel: {
       control: "text",
     },
-    calendar: {
+    calendarPopover: {
       control: "object",
+      table: { category: "Calendar popover" },
     },
     onChange: {
       action: "change",
@@ -58,12 +78,28 @@ import { EvoDateInput } from "@evo-web/react/date-input";
   },
   args: {
     locale: "en-US",
-    a11yOpenPopoverText: "open calendar",
+    a11yOpenPopoverText: "Open calendar",
     floatingLabel: "Date",
+    calendarPopover: {
+      today: "2024-01-05",
+    },
+    popoverStrategy: "absolute",
   },
 };
 
 export default meta;
-type Story = StoryObj<typeof EvoDateInput>;
+type Story = StoryObj<DateInputStoryArgs>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  render: ({ calendarPopover, popoverStrategy, ...args }) => (
+    <EvoDateInput {...args}>
+      <EvoDateInputCalendarPopover
+        {...calendarPopover}
+        strategy={popoverStrategy}
+        a11yNavigateText={(month, direction) =>
+          `${direction === "prev" ? "Previous" : "Next"} ${month}`
+        }
+      />
+    </EvoDateInput>
+  ),
+};

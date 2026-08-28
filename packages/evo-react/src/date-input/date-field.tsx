@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import type { ChangeEvent, FocusEvent, KeyboardEvent } from "react";
 import { EvoInput } from "../input";
 import type { EvoInputPostfixProps } from "../input";
@@ -37,8 +37,6 @@ export function DateField({
     onChange,
     onKeyUp,
     placeholder: placeholderText,
-    disabled: inputDisabled,
-    readOnly: inputReadOnly,
     invalid: inputInvalid,
     ...inputRest
   } = input ?? {};
@@ -53,67 +51,76 @@ export function DateField({
 
   const display = draft ?? (iso ? format(iso, locale) || iso : "");
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setDraft(event.currentTarget.value);
-    setInvalid(false);
-    onChange?.(event);
-  };
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setDraft(event.currentTarget.value);
+      setInvalid(false);
+      onChange?.(event);
+    },
+    [onChange],
+  );
 
-  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
-    const userInput = event.currentTarget.value;
-    if (userInput.trim() === "") {
+  const handleBlur = useCallback(
+    (event: FocusEvent<HTMLInputElement>) => {
+      const userInput = event.currentTarget.value;
+      if (userInput.trim() === "") {
+        setDraft(null);
+        setInvalid(false);
+        onCommit("");
+        onBlur?.(event);
+        return;
+      }
+
+      const parsed = parse(userInput, locale);
+      if (parsed === null) {
+        setInvalid(true);
+        onInvalidDate?.({ value: userInput, index });
+        onBlur?.(event);
+        return;
+      }
+
       setDraft(null);
       setInvalid(false);
-      onCommit("");
+      onCommit(parsed);
       onBlur?.(event);
-      return;
-    }
+    },
+    [index, locale, onBlur, onCommit, onInvalidDate],
+  );
 
-    const parsed = parse(userInput, locale);
-    if (parsed === null) {
-      setInvalid(true);
-      onInvalidDate?.({ value: userInput, index });
-      onBlur?.(event);
-      return;
-    }
+  const handleKeyUp = useCallback(
+    (event: KeyboardEvent<HTMLInputElement>) => {
+      onKeyUp?.(event);
+      if (!/^\d$/.test(event.key)) {
+        return;
+      }
 
-    setDraft(null);
-    setInvalid(false);
-    onCommit(parsed);
-    onBlur?.(event);
-  };
+      const field = event.currentTarget;
+      const { value } = field;
+      if (field.selectionStart !== value.length) {
+        return;
+      }
 
-  const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
-    onKeyUp?.(event);
-    if (!/^\d$/.test(event.key)) {
-      return;
-    }
+      const { o: order, s: sep } = getLocale(locale);
+      let i = 0;
+      let start = 0;
+      for (let currStart; ~(currStart = value.indexOf(sep[i], start)); ) {
+        start = currStart + sep[i].length;
+        i++;
+      }
 
-    const field = event.currentTarget;
-    const { value } = field;
-    if (field.selectionStart !== value.length) {
-      return;
-    }
-
-    const { o: order, s: sep } = getLocale(locale);
-    let i = 0;
-    let start = 0;
-    for (let currStart; ~(currStart = value.indexOf(sep[i], start)); ) {
-      start = currStart + sep[i].length;
-      i++;
-    }
-
-    const segmentLength = order[i] === "y" ? 4 : 2;
-    if (value.length - start === segmentLength && sep[i]) {
-      setDraft(`${value}${sep[i]}`);
-    }
-  };
+      const segmentLength = order[i] === "y" ? 4 : 2;
+      if (value.length - start === segmentLength && sep[i]) {
+        setDraft(`${value}${sep[i]}`);
+      }
+    },
+    [locale, onKeyUp],
+  );
 
   return (
     <EvoInput
       {...inputRest}
-      disabled={inputDisabled ?? disabled}
-      readOnly={inputReadOnly ?? readOnly}
+      disabled={disabled}
+      readOnly={readOnly}
       invalid={inputInvalid || invalid}
       placeholder={placeholderText ?? placeholder(locale)}
       postfix={postfix}

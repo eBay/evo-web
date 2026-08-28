@@ -1,15 +1,11 @@
 export { EvoDateInput } from "./date-input";
-export { EvoDateRangeInput } from "./date-range-input";
+export { EvoDateInputCalendarPopover } from "./date-input-calendar-popover";
 export type {
   A11yRangeText,
-  DateInputRange,
   DateInputValue,
   DateRange,
-  DayISO,
   EvoDateFieldProps,
-  EvoDateInputCalendarProps,
+  EvoDateInputCalendarPopoverProps,
   EvoDateInputProps,
-  EvoDateRangeInputCalendarProps,
-  EvoDateRangeInputProps,
   InvalidDateEvent,
 } from "./types";

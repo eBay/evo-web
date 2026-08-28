@@ -1,13 +1,37 @@
 import type { ReactNode } from "react";
+import type { Strategy } from "@floating-ui/react";
 import classNames from "classnames";
-import type { useDatePopover } from "./use-date-popover";
+import { useExpander } from "../utils/use-expander";
+import type { DatePopoverState } from "./use-date-popover";
+
+export type DatePopoverStrategy = Extract<Strategy, "absolute" | "fixed">;
 
 type DateInputPopoverProps = {
   popoverId: string;
-  strategy?: "absolute" | "fixed";
-  expander: ReturnType<typeof useDatePopover>["expander"];
+  strategy: DatePopoverStrategy;
+  expander: ReturnType<typeof useExpander>;
   children: ReactNode;
 };
+
+export function useDatePopoverPosition(
+  {
+    open,
+    setOpen,
+    positioningReferenceElement,
+  }: Pick<DatePopoverState, "open" | "setOpen" | "positioningReferenceElement">,
+  strategy: DatePopoverStrategy,
+) {
+  const expander = useExpander({
+    open,
+    onOpenChange: setOpen,
+    placement: "bottom-start",
+    strategy,
+    inline: false,
+    referenceElement: positioningReferenceElement,
+  });
+
+  return expander;
+}
 
 export function DateInputPopover({
   popoverId,
@@ -29,13 +53,4 @@ export function DateInputPopover({
       {children}
     </div>
   );
-}
-
-export function focusPopoverTrigger(
-  expander: ReturnType<typeof useDatePopover>["expander"],
-) {
-  const trigger = expander.refs.reference.current;
-  if (trigger instanceof HTMLElement) {
-    trigger.focus();
-  }
 }

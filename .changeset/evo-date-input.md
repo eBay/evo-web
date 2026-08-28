@@ -2,4 +2,4 @@
 "@evo-web/react": patch
 ---
 
-Add EvoDateInput and EvoDateRangeInput components.
+Add compound EvoDateInput and EvoDateRangeInputGroup components with child calendar popovers.

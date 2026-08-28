@@ -1,130 +1,122 @@
-import { useId, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import classNames from "classnames";
-import { EvoCalendar } from "../calendar";
-import type { DayISO } from "../calendar";
 import { EvoIconCalendar24 } from "../icon/icons/calendar-24";
 import { DateField } from "./date-field";
-import { DateInputPopover, focusPopoverTrigger } from "./date-input-popover";
-import type { DateInputValue, EvoDateInputProps } from "./types";
+import { DateInputProvider } from "./context";
+import type { EvoDateInputProps, DateInputValue } from "./types";
 import { useDatePopover } from "./use-date-popover";
-import { monthFromValue, useFollowSelectedMonth } from "./visible-month";
 import "@ebay/skin/date-textbox.mjs";
 
-function defaultA11yNavigateText(month: string, dir: "next" | "prev") {
-  return `${dir === "prev" ? "Previous" : "Next"} ${month}`;
-}
-
 export function EvoDateInput({
+  children,
   className,
   style,
   locale,
   value,
   defaultValue = "",
   onChange,
-  calendar,
   a11yOpenPopoverText,
   collapseOnSelect,
   open,
   defaultOpen,
   onOpenChange,
-  strategy = "absolute",
   disabled,
   readOnly,
   onInvalidDate,
   ref,
   ...input
 }: EvoDateInputProps) {
-  const popoverId = useId();
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue);
   const selected = value !== undefined ? value : uncontrolledValue;
-  const calendarLocked = Boolean(disabled || readOnly);
-  const { expander, visibleMonthCount, setContainerRef } = useDatePopover({
+  const popover = useDatePopover<HTMLDivElement>({
     open,
     defaultOpen,
     onOpenChange,
-    strategy,
-    visibleMonthCount: calendar?.visibleMonthCount,
     ref,
   });
-  const { visibleMonth, setVisibleMonth } = useFollowSelectedMonth(
-    monthFromValue(selected),
-    calendar?.visibleMonth,
-    calendar?.defaultVisibleMonth ?? monthFromValue(calendar?.today),
+
+  const commit = useCallback(
+    (next: DateInputValue) => {
+      if (value === undefined) {
+        setUncontrolledValue(next);
+      }
+      onChange?.(next);
+    },
+    [onChange, value],
   );
 
-  const commit = (next: DateInputValue) => {
-    if (value === undefined) {
-      setUncontrolledValue(next);
-    }
-    onChange?.(next);
-  };
+  const context = useMemo(
+    () => ({
+      ...popover,
+      selected,
+      locale,
+      disabled,
+      readOnly,
+      collapseOnSelect,
+      a11yOpenPopoverText,
+      commit,
+    }),
+    [
+      a11yOpenPopoverText,
+      collapseOnSelect,
+      commit,
+      disabled,
+      locale,
+      popover,
+      readOnly,
+      selected,
+    ],
+  );
 
-  const handleSelect = (next: DayISO) => {
-    if (calendarLocked) {
-      return;
+  const togglePopover = useCallback(() => {
+    if (!disabled && !readOnly) {
+      popover.setOpen(!popover.open);
     }
-    commit(next);
-    if (collapseOnSelect) {
-      expander.setOpen(false);
-      focusPopoverTrigger(expander);
-    }
-  };
+  }, [disabled, popover.open, popover.setOpen, readOnly]);
+
+  const postfix = useMemo(
+    () => ({
+      icon: <EvoIconCalendar24 />,
+      buttonProps: {
+        a11yText: a11yOpenPopoverText,
+        ref: popover.setTriggerElement,
+        "aria-expanded": popover.open,
+        "aria-controls": popover.popoverId,
+        disabled: Boolean(disabled || readOnly),
+        onClick: togglePopover,
+      },
+    }),
+    [
+      a11yOpenPopoverText,
+      disabled,
+      popover.open,
+      popover.popoverId,
+      popover.setTriggerElement,
+      readOnly,
+      togglePopover,
+    ],
+  );
 
   return (
-    <span
-      ref={setContainerRef}
-      className={classNames("date-textbox", className)}
-      style={style}
-    >
-      <DateField
-        iso={selected}
-        locale={locale}
-        disabled={disabled}
-        readOnly={readOnly}
-        index={0}
-        input={input}
-        onCommit={commit}
-        onInvalidDate={onInvalidDate}
-        postfix={{
-          icon: <EvoIconCalendar24 />,
-          buttonProps: {
-            a11yText: a11yOpenPopoverText,
-            ref: expander.refs.setReference,
-            "aria-expanded": expander.ariaExpanded,
-            "aria-controls": popoverId,
-            disabled: calendarLocked,
-            onClick: () => {
-              if (!calendarLocked) {
-                expander.setOpen(!expander.open);
-              }
-            },
-          },
-        }}
-      />
-      <DateInputPopover
-        popoverId={popoverId}
-        strategy={strategy}
-        expander={expander}
+    <DateInputProvider {...context}>
+      <div
+        ref={popover.setContainerRef}
+        className={classNames("date-textbox", className)}
+        style={style}
       >
-        <EvoCalendar
-          {...calendar}
+        <DateField
+          iso={selected}
           locale={locale}
-          selectMode="day"
-          selected={selected || undefined}
-          visibleMonth={visibleMonth}
-          visibleMonthCount={visibleMonthCount}
-          a11yNavigateText={
-            calendar?.a11yNavigateText ?? defaultA11yNavigateText
-          }
-          onVisibleMonthChange={(next) => {
-            if (calendar?.visibleMonth === undefined) {
-              setVisibleMonth(next);
-            }
-            calendar?.onVisibleMonthChange?.(next);
-          }}
-          onSelectedChange={handleSelect}
+          disabled={disabled}
+          readOnly={readOnly}
+          index={0}
+          input={input}
+          onCommit={commit}
+          onInvalidDate={onInvalidDate}
+          postfix={postfix}
         />
-      </DateInputPopover>
-    </span>
+        {children}
+      </div>
+    </DateInputProvider>
   );
 }

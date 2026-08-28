@@ -2,16 +2,16 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render } from "vitest-browser-react";
 import { userEvent } from "vitest/browser";
 import { useState } from "react";
-import type { DateInputRange, DateInputValue, DayISO } from "../types";
-import { EvoDateInput } from "../date-input";
-import { EvoDateRangeInput } from "../date-range-input";
-
-const calendar = {
-  today: "2024-01-05" as const,
-  visibleMonthCount: 1,
-};
+import { EvoDateInput, EvoDateInputCalendarPopover } from "../index";
+import type {
+  DateInputValue,
+  EvoDateInputCalendarPopoverProps,
+  EvoDateInputProps,
+} from "../types";
 
 const a11yOpenPopoverText = "open calendar";
+const a11yNavigateText = (month: string, direction: "next" | "prev") =>
+  `${direction === "prev" ? "Previous" : "Next"} ${month}`;
 
 function mockMinWidth(matches: boolean) {
   let current = matches;
@@ -45,6 +45,37 @@ function mockMinWidth(matches: boolean) {
   return media;
 }
 
+function getPopoverStartError(root: Element, popover: Element) {
+  const marginLeft = Number.parseFloat(
+    window.getComputedStyle(popover).marginLeft,
+  );
+  return Math.abs(
+    popover.getBoundingClientRect().left -
+      root.getBoundingClientRect().left -
+      marginLeft,
+  );
+}
+
+type TestDateInputProps = Omit<
+  EvoDateInputProps,
+  "a11yOpenPopoverText" | "children"
+> & {
+  calendarPopover?: Partial<EvoDateInputCalendarPopoverProps>;
+};
+
+function TestDateInput({ calendarPopover, ...props }: TestDateInputProps) {
+  return (
+    <EvoDateInput {...props} a11yOpenPopoverText={a11yOpenPopoverText}>
+      <EvoDateInputCalendarPopover
+        today="2024-01-05"
+        visibleMonthCount={1}
+        a11yNavigateText={a11yNavigateText}
+        {...calendarPopover}
+      />
+    </EvoDateInput>
+  );
+}
+
 describe("evo-date-input", () => {
   let user: ReturnType<typeof userEvent.setup>;
 
@@ -56,17 +87,18 @@ describe("evo-date-input", () => {
     vi.restoreAllMocks();
   });
 
+  it("renders a div root and a child calendar popover", async () => {
+    const screen = await render(<TestDateInput floatingLabel="Date" />);
+    const root = screen.container.querySelector(".date-textbox");
+
+    expect(root?.tagName).toBe("DIV");
+    expect(root?.children).toHaveLength(2);
+    expect(root?.lastElementChild).toHaveClass("date-textbox__popover");
+  });
+
   it("opens and closes the calendar from the postfix button", async () => {
-    const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
-    );
-    const trigger = screen.getByRole("button", { name: "open calendar" });
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
+    const screen = await render(<TestDateInput floatingLabel="Date" />);
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
     const popover = screen.container.querySelector(".date-textbox__popover");
 
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
@@ -81,19 +113,37 @@ describe("evo-date-input", () => {
     expect(popover).toHaveAttribute("hidden");
   });
 
-  it("positions the popover with the given strategy", async () => {
+  it("anchors the popover to the complete date input", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        strategy="fixed"
+      <TestDateInput
         floatingLabel="Date"
-        calendar={calendar}
+        calendarPopover={{ visibleMonthCount: 1 }}
       />,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    const root = screen.container.querySelector<HTMLElement>(".date-textbox");
+    const popover = screen.container.querySelector<HTMLElement>(
+      ".date-textbox__popover",
+    );
 
-    // popover positioning class is on the hidden-capable wrapper
+    if (!root || !popover) {
+      throw new Error("Date input root and popover must be rendered");
+    }
+
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
+    await expect
+      .poll(() => getPopoverStartError(root, popover))
+      .toBeLessThan(0.5);
+  });
+
+  it("positions the popover with the strategy passed to the popover child", async () => {
+    const screen = await render(
+      <TestDateInput
+        floatingLabel="Date"
+        calendarPopover={{ strategy: "fixed" }}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
+
     const popover = screen.container.querySelector(".date-textbox__popover");
     expect(popover).toHaveClass("date-textbox__popover--fixed");
     expect(popover).toHaveStyle({ position: "fixed" });
@@ -102,17 +152,11 @@ describe("evo-date-input", () => {
   it("closes the calendar when clicking outside", async () => {
     const screen = await render(
       <>
-        <EvoDateInput
-          locale="en-US"
-          a11yOpenPopoverText={a11yOpenPopoverText}
-          floatingLabel="Date"
-          calendar={calendar}
-        />
+        <TestDateInput floatingLabel="Date" />
         <button type="button">Outside</button>
       </>,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
     const popover = screen.container.querySelector(".date-textbox__popover");
     expect(popover).not.toHaveAttribute("hidden");
 
@@ -122,38 +166,36 @@ describe("evo-date-input", () => {
 
   it("does not close the calendar when selecting a date and collapseOnSelect is false", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        collapseOnSelect={false}
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput collapseOnSelect={false} floatingLabel="Date" />,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
     await user.click(screen.getByRole("button", { name: /^1$/ }));
 
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
     expect(
       screen.container.querySelector(".date-textbox__popover"),
     ).not.toHaveAttribute("hidden");
   });
 
+  it("closes the calendar and returns focus to the trigger on Escape", async () => {
+    const screen = await render(<TestDateInput floatingLabel="Date" />);
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
+    const popover = screen.container.querySelector(".date-textbox__popover");
+
+    await user.click(trigger);
+    await user.keyboard("{Escape}");
+
+    expect(popover).toHaveAttribute("hidden");
+    await expect.element(trigger).toHaveFocus();
+  });
+
   it("closes the calendar and returns focus when collapseOnSelect is true", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        collapseOnSelect
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput collapseOnSelect floatingLabel="Date" />,
     );
-    const trigger = screen.getByRole("button", { name: "open calendar" });
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
     await user.click(trigger);
     await user.click(screen.getByRole("button", { name: /^1$/ }));
 
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
     expect(
       screen.container.querySelector(".date-textbox__popover"),
     ).toHaveAttribute("hidden");
@@ -163,15 +205,9 @@ describe("evo-date-input", () => {
   it("emits the selected ISO date", async () => {
     const onChange = vi.fn();
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        onChange={onChange}
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput onChange={onChange} floatingLabel="Date" />,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
     await user.click(screen.getByRole("button", { name: /^1$/ }));
 
     expect(onChange).toHaveBeenCalledWith("2024-01-01");
@@ -182,39 +218,22 @@ describe("evo-date-input", () => {
 
   it("formats a provided value and updates when it changes", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        value="2024-01-01"
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput value="2024-01-01" floatingLabel="Date" />,
     );
     const input = screen.getByRole("textbox", { name: "Date" });
     await expect.element(input).toHaveValue("01/01/2024");
 
-    screen.rerender(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        value="2024-01-12"
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
-    );
+    screen.rerender(<TestDateInput value="2024-01-12" floatingLabel="Date" />);
     await expect.element(input).toHaveValue("01/12/2024");
   });
 
   it("allows clearing a selected value", async () => {
     const onChange = vi.fn();
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
+      <TestDateInput
         defaultValue="2024-01-01"
         onChange={onChange}
         floatingLabel="Date"
-        calendar={calendar}
       />,
     );
     const input = screen.getByRole("textbox", { name: "Date" });
@@ -231,13 +250,10 @@ describe("evo-date-input", () => {
     const onChange = vi.fn();
     const onInvalidDate = vi.fn();
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
+      <TestDateInput
         onChange={onChange}
         onInvalidDate={onInvalidDate}
         floatingLabel="Date"
-        calendar={calendar}
       />,
     );
     const input = screen.getByRole("textbox", { name: "Date" });
@@ -255,12 +271,9 @@ describe("evo-date-input", () => {
 
   it("does not fail when the provided value is invalid", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        value={"invalid" as DayISO}
+      <TestDateInput
+        value={"invalid" as DateInputValue}
         floatingLabel="Date"
-        calendar={calendar}
       />,
     );
 
@@ -272,13 +285,7 @@ describe("evo-date-input", () => {
   it("commits a typed locale date on blur", async () => {
     const onChange = vi.fn();
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        onChange={onChange}
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput onChange={onChange} floatingLabel="Date" />,
     );
     const input = screen.getByRole("textbox", { name: "Date" });
     await user.type(input, "01022024");
@@ -290,17 +297,11 @@ describe("evo-date-input", () => {
 
   it("forwards input props such as a floating label", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        floatingLabel="Purchase date"
-        calendar={calendar}
-      />,
+      <TestDateInput floatingLabel="Purchase date" />,
     );
 
     await expect.element(screen.getByText("Purchase date")).toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
     expect(
       screen.container.querySelector(".date-textbox__popover"),
     ).not.toHaveAttribute("hidden");
@@ -309,14 +310,12 @@ describe("evo-date-input", () => {
   it("updates visibleMonthCount when the viewport media query changes", async () => {
     const media = mockMinWidth(true);
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
+      <TestDateInput
         floatingLabel="Date"
-        calendar={{ today: "2024-01-05" }}
+        calendarPopover={{ visibleMonthCount: undefined }}
       />,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
     expect(screen.container.querySelectorAll(".calendar__month")).toHaveLength(
       2,
     );
@@ -327,24 +326,32 @@ describe("evo-date-input", () => {
       .toBe(1);
   });
 
+  it("keeps an explicit visibleMonthCount override on desktop", async () => {
+    mockMinWidth(true);
+    const screen = await render(
+      <TestDateInput
+        floatingLabel="Date"
+        calendarPopover={{ visibleMonthCount: 1 }}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
+
+    expect(screen.container.querySelectorAll(".calendar__month")).toHaveLength(
+      1,
+    );
+  });
+
   it("keeps a controlled empty value after select then clear", async () => {
     function Controlled() {
       const [value, setValue] = useState<DateInputValue>("");
       return (
-        <EvoDateInput
-          locale="en-US"
-          a11yOpenPopoverText={a11yOpenPopoverText}
-          value={value}
-          onChange={setValue}
-          floatingLabel="Date"
-          calendar={calendar}
-        />
+        <TestDateInput value={value} onChange={setValue} floatingLabel="Date" />
       );
     }
 
     const screen = await render(<Controlled />);
     const input = screen.getByRole("textbox", { name: "Date" });
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
     await user.click(screen.getByRole("button", { name: /^1$/ }));
     await expect.element(input).toHaveValue("01/01/2024");
 
@@ -353,236 +360,56 @@ describe("evo-date-input", () => {
     await expect.element(input).toHaveValue("");
   });
 
-  it("disables the calendar button when readOnly", async () => {
+  it("disables the input and calendar button when readOnly", async () => {
     const onChange = vi.fn();
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        readOnly
-        onChange={onChange}
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput readOnly onChange={onChange} floatingLabel="Date" />,
     );
-    const trigger = screen.getByRole("button", { name: "open calendar" });
+    const input = screen.getByRole("textbox", { name: "Date" });
+    const trigger = screen.getByRole("button", { name: a11yOpenPopoverText });
 
+    await expect.element(input).toHaveAttribute("readonly");
     await expect.element(trigger).toBeDisabled();
     await expect.element(trigger).toHaveAttribute("aria-expanded", "false");
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  it("disables the calendar button when disabled", async () => {
+  it("disables the input and calendar button when disabled", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        disabled
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput disabled floatingLabel="Date" />,
     );
 
     await expect
-      .element(screen.getByRole("button", { name: "open calendar" }))
+      .element(screen.getByRole("textbox", { name: "Date" }))
+      .toBeDisabled();
+    await expect
+      .element(screen.getByRole("button", { name: a11yOpenPopoverText }))
       .toBeDisabled();
   });
 
   it("opens the calendar on the selected month", async () => {
     const screen = await render(
-      <EvoDateInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        value="2023-06-15"
-        floatingLabel="Date"
-        calendar={calendar}
-      />,
+      <TestDateInput value="2023-06-15" floatingLabel="Date" />,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
 
     await expect
       .element(screen.getByRole("heading", { name: "June 2023" }))
       .toBeInTheDocument();
   });
-});
 
-describe("evo-date-range-input", () => {
-  let user: ReturnType<typeof userEvent.setup>;
-
-  beforeEach(() => {
-    user = userEvent.setup();
-  });
-  afterEach(() => {
-    user.cleanup();
-  });
-
-  it("selects a range from the calendar", async () => {
-    const onChange = vi.fn();
+  it("keeps a controlled visible month when the popover provides one", async () => {
     const screen = await render(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        onChange={onChange}
-        startInput={{ floatingLabel: "Start" }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
+      <TestDateInput
+        value="2023-06-15"
+        floatingLabel="Date"
+        calendarPopover={{ visibleMonth: "2024-02" }}
       />,
     );
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
-    await user.click(screen.getByRole("button", { name: /^1$/ }));
-    expect(onChange).toHaveBeenLastCalledWith({ from: "2024-01-01", to: "" });
-
-    await user.click(screen.getByRole("button", { name: /^2$/ }));
-    expect(onChange).toHaveBeenLastCalledWith({
-      from: "2024-01-01",
-      to: "2024-01-02",
-    });
-    await expect
-      .element(screen.getByRole("textbox", { name: "Start" }))
-      .toHaveValue("01/01/2024");
-    await expect
-      .element(screen.getByRole("textbox", { name: "End" }))
-      .toHaveValue("01/02/2024");
-  });
-
-  it("does not close after the first range date when collapseOnSelect is true", async () => {
-    const screen = await render(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        collapseOnSelect
-        startInput={{ floatingLabel: "Start" }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
-      />,
-    );
-    const trigger = screen.getByRole("button", { name: "open calendar" });
-    await user.click(trigger);
-    await user.click(screen.getByRole("button", { name: /^1$/ }));
-
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
-    expect(
-      screen.container.querySelector(".date-textbox__popover"),
-    ).not.toHaveAttribute("hidden");
-    await expect.element(trigger).not.toHaveFocus();
-  });
-
-  it("closes and returns focus after completing a range when collapseOnSelect is true", async () => {
-    const screen = await render(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        collapseOnSelect
-        startInput={{ floatingLabel: "Start" }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
-      />,
-    );
-    const trigger = screen.getByRole("button", { name: "open calendar" });
-    await user.click(trigger);
-    await user.click(screen.getByRole("button", { name: /^1$/ }));
-    await user.click(screen.getByRole("button", { name: /^2$/ }));
-
-    // popover is closed and hidden from the a11y tree; querySelector is intentional here
-    expect(
-      screen.container.querySelector(".date-textbox__popover"),
-    ).toHaveAttribute("hidden");
-    await expect.element(trigger).toHaveFocus();
-  });
-
-  it("renders start and end floating labels", async () => {
-    const screen = await render(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        startInput={{ floatingLabel: "Start" }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
-      />,
-    );
-
-    await expect.element(screen.getByText("Start")).toBeInTheDocument();
-    await expect.element(screen.getByText("End")).toBeInTheDocument();
-  });
-
-  it("updates both fields when the controlled range changes", async () => {
-    const screen = await render(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        value={{ from: "2024-01-01", to: "2024-01-10" }}
-        startInput={{ floatingLabel: "Start" }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
-      />,
-    );
-    await expect
-      .element(screen.getByRole("textbox", { name: "Start" }))
-      .toHaveValue("01/01/2024");
-    await expect
-      .element(screen.getByRole("textbox", { name: "End" }))
-      .toHaveValue("01/10/2024");
-
-    screen.rerender(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        value={{ from: "2024-01-12", to: "2024-01-15" }}
-        startInput={{ floatingLabel: "Start" }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
-      />,
-    );
-    await expect
-      .element(screen.getByRole("textbox", { name: "Start" }))
-      .toHaveValue("01/12/2024");
-    await expect
-      .element(screen.getByRole("textbox", { name: "End" }))
-      .toHaveValue("01/15/2024");
-  });
-
-  it("disables the calendar button when a range field is readOnly", async () => {
-    const screen = await render(
-      <EvoDateRangeInput
-        locale="en-US"
-        a11yOpenPopoverText={a11yOpenPopoverText}
-        startInput={{ floatingLabel: "Start", readOnly: true }}
-        endInput={{ floatingLabel: "End" }}
-        calendar={calendar}
-      />,
-    );
+    await user.click(screen.getByRole("button", { name: a11yOpenPopoverText }));
 
     await expect
-      .element(screen.getByRole("button", { name: "open calendar" }))
-      .toBeDisabled();
-  });
-
-  it("supports a controlled range through onChange", async () => {
-    function Controlled() {
-      const [value, setValue] = useState<DateInputRange>({ from: "", to: "" });
-      return (
-        <EvoDateRangeInput
-          locale="en-US"
-          a11yOpenPopoverText={a11yOpenPopoverText}
-          value={value}
-          onChange={setValue}
-          startInput={{ floatingLabel: "Start" }}
-          endInput={{ floatingLabel: "End" }}
-          calendar={calendar}
-        />
-      );
-    }
-
-    const screen = await render(<Controlled />);
-    await user.click(screen.getByRole("button", { name: "open calendar" }));
-    await user.click(screen.getByRole("button", { name: /^1$/ }));
-    await user.click(screen.getByRole("button", { name: /^2$/ }));
-
-    await expect
-      .element(screen.getByRole("textbox", { name: "Start" }))
-      .toHaveValue("01/01/2024");
-    await expect
-      .element(screen.getByRole("textbox", { name: "End" }))
-      .toHaveValue("01/02/2024");
+      .element(screen.getByRole("heading", { name: "February 2024" }))
+      .toBeInTheDocument();
   });
 });

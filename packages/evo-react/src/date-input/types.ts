@@ -1,10 +1,9 @@
-import type { ComponentProps, CSSProperties, Ref } from "react";
+import type { ComponentProps, CSSProperties, ReactNode, Ref } from "react";
 import type {
   A11yRangeText,
   DateRange,
   DayCalendarProps,
   DayISO,
-  RangeCalendarProps,
 } from "../calendar";
 import type { EvoInputProps } from "../input";
 
@@ -27,9 +26,16 @@ export type InvalidDateEvent = {
   index: number;
 };
 
+/** Props forwarded to the internal `EvoInput` date field. */
 export type EvoDateFieldProps = Omit<
   EvoInputProps,
-  "value" | "defaultValue" | "postfix" | "type"
+  | "value"
+  | "defaultValue"
+  | "postfix"
+  | "type"
+  | "disabled"
+  | "readOnly"
+  | "children"
 >;
 
 type OwnedCalendarProps =
@@ -41,32 +47,25 @@ type OwnedCalendarProps =
   | "getDayHref"
   | "dayLinkAs";
 
-export type EvoDateInputCalendarProps = Omit<
+export type EvoDateInputCalendarPopoverProps = Omit<
   DayCalendarProps,
   OwnedCalendarProps
->;
-
-export type EvoDateRangeInputCalendarProps = Omit<
-  RangeCalendarProps,
-  OwnedCalendarProps | "a11yRangeText"
 > & {
-  /**
-   * Clipped text for range cells. English defaults to be overridden are
-   * `"Start of range"`, `"In range"`, and `"End of range"`.
-   */
-  a11yRangeText?: A11yRangeText;
+  /** Positioning strategy for the calendar popover. */
+  strategy?: "absolute" | "fixed";
 };
 
 type DateInputBaseProps = Omit<
-  ComponentProps<"span">,
+  ComponentProps<"div">,
   "onChange" | "defaultValue" | keyof EvoDateFieldProps
 > & {
+  children: ReactNode;
   /** Class name applied to the root `.date-textbox` element. */
   className?: string;
   /** Inline styles applied to the root `.date-textbox` element. */
   style?: CSSProperties;
   /** Ref to the root `.date-textbox` element. */
-  ref?: Ref<HTMLSpanElement>;
+  ref?: Ref<HTMLDivElement>;
   /**
    * [BCP 47 language tag](https://developer.mozilla.org/en-US/docs/Glossary/BCP_47_language_tag)
    * used to parse, format, and label dates. Defaults to `navigator.language`.
@@ -74,7 +73,7 @@ type DateInputBaseProps = Omit<
   locale?: string;
   /**
    * Accessible label for the button that opens the calendar popover, mapped to
-   * `aria-label`. English default to be overridden is `"open calendar"`.
+   * `aria-label`.
    */
   a11yOpenPopoverText: string;
   /** Closes the calendar after a complete selection. */
@@ -85,58 +84,20 @@ type DateInputBaseProps = Omit<
   defaultOpen?: boolean;
   /** Fired when the popover requests to open or close. */
   onOpenChange?: (open: boolean) => void;
-  /**
-   * Positioning strategy for the calendar popover. Use `"fixed"` when the field
-   * sits in an overflow container and the popover must stay visible while
-   * scrolling.
-   */
-  strategy?: "absolute" | "fixed";
-  /** Disables the input(s) and the calendar button. */
+  /** Disables the input and the calendar button. */
   disabled?: boolean;
   /** Prevents typing and calendar selection. The calendar button is disabled. */
   readOnly?: boolean;
-  /** Called when a field blurs with text that cannot be parsed as a date. */
+  /** Called when the field blurs with text that cannot be parsed as a date. */
   onInvalidDate?: (event: InvalidDateEvent) => void;
 };
 
 export type EvoDateInputProps = DateInputBaseProps &
-  Omit<
-    EvoDateFieldProps,
-    "className" | "style" | "disabled" | "onChange" | "ref"
-  > & {
+  Omit<EvoDateFieldProps, "className" | "style" | "ref" | "onChange"> & {
     /** Controlled selected date (`YYYY-MM-DD`). Pass `""` for a controlled empty field. */
     value?: DateInputValue;
     /** Initial uncontrolled selected date (`YYYY-MM-DD`). */
     defaultValue?: DateInputValue;
     /** Fired with the committed ISO date after a valid blur or calendar selection. `""` when the field is cleared. */
     onChange?: (value: DateInputValue) => void;
-    /**
-     * Props forwarded to the calendar popover. `selected`, `selectMode`,
-     * `locale`, and static-link props are owned by the date input.
-     */
-    calendar?: EvoDateInputCalendarProps;
   };
-
-export type EvoDateRangeInputProps = DateInputBaseProps & {
-  /** Controlled selected range (`{ from?, to? }` as `YYYY-MM-DD` or `""`). */
-  value?: DateInputRange;
-  /** Initial uncontrolled selected range. */
-  defaultValue?: DateInputRange;
-  /** Fired with the committed range after a valid blur or calendar selection. */
-  onChange?: (value: DateInputRange) => void;
-  /**
-   * Props forwarded to the start `EvoInput`, except `value`, `defaultValue`,
-   * `postfix`, and `type`, which this component owns.
-   */
-  startInput?: EvoDateFieldProps;
-  /**
-   * Props forwarded to the end `EvoInput`, except `value`, `defaultValue`,
-   * `postfix`, and `type`, which this component owns.
-   */
-  endInput?: EvoDateFieldProps;
-  /**
-   * Props forwarded to the calendar popover. `selected`, `selectMode`,
-   * `locale`, and static-link props are owned by the date input.
-   */
-  calendar?: EvoDateRangeInputCalendarProps;
-};

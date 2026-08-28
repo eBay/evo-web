@@ -1,19 +1,32 @@
-import { useCallback, useSyncExternalStore } from "react";
-import type { Ref } from "react";
-import type { Strategy } from "@floating-ui/react";
-import { useExpander } from "../utils/use-expander";
+import {
+  useCallback,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import type { Ref, RefCallback } from "react";
 import { useRefTee } from "../utils/use-ref-tee";
 
 const MIN_WIDTH_FOR_DOUBLE_PANE = 600;
 const DOUBLE_PANE_QUERY = `(min-width: ${MIN_WIDTH_FOR_DOUBLE_PANE}px)`;
 
-type UseDatePopoverOptions = {
+export type DatePopoverState<TElement extends HTMLElement = HTMLElement> = {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  popoverId: string;
+  triggerElement: HTMLButtonElement | null;
+  setTriggerElement: RefCallback<HTMLButtonElement>;
+  focusTrigger: () => void;
+  positioningReferenceElement: TElement | null;
+  setContainerRef: RefCallback<TElement>;
+};
+
+type UseDatePopoverOptions<TElement extends HTMLElement> = {
   open?: boolean;
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
-  strategy?: Strategy;
-  visibleMonthCount?: number;
-  ref?: Ref<HTMLSpanElement | null>;
+  ref?: Ref<TElement>;
 };
 
 function subscribeDoublePane(onStoreChange: () => void) {
@@ -30,68 +43,103 @@ function getDoublePaneServerSnapshot() {
   return 1;
 }
 
-export function useDatePopover({
-  open,
-  defaultOpen = false,
-  onOpenChange,
-  strategy = "absolute",
-  visibleMonthCount: visibleMonthCountOverride,
-  ref,
-}: UseDatePopoverOptions) {
-  const expander = useExpander({
-    open,
-    defaultOpen,
-    onOpenChange,
-    placement: "bottom-start",
-    strategy,
-    inline: false,
-  });
-  const [teeRef] = useRefTee<HTMLSpanElement | null>(ref, null);
+export function useResponsiveMonthCount(override?: number) {
   const responsiveMonthCount = useSyncExternalStore(
     subscribeDoublePane,
     getDoublePaneSnapshot,
     getDoublePaneServerSnapshot,
   );
 
+  return override ?? responsiveMonthCount;
+}
+
+export function useDatePopover<TElement extends HTMLElement>({
+  open,
+  defaultOpen = false,
+  onOpenChange,
+  ref,
+}: UseDatePopoverOptions<TElement>): DatePopoverState<TElement> {
+  const popoverId = useId();
+  const isControlled = open !== undefined;
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
+  const currentOpen = isControlled ? open : uncontrolledOpen;
+  const [triggerElement, setTriggerElementState] =
+    useState<HTMLButtonElement | null>(null);
+  const [positioningReferenceElement, setPositioningReferenceElement] =
+    useState<TElement | null>(null);
+  const [teeRef] = useRefTee<TElement | null>(ref, null);
+
+  const setOpen = useCallback(
+    (nextOpen: boolean) => {
+      if (!isControlled) {
+        setUncontrolledOpen(nextOpen);
+      }
+      onOpenChange?.(nextOpen);
+    },
+    [isControlled, onOpenChange],
+  );
+
+  const setTriggerElement = useCallback((node: HTMLButtonElement | null) => {
+    setTriggerElementState(node);
+  }, []);
+
+  const focusTrigger = useCallback(() => {
+    triggerElement?.focus();
+  }, [triggerElement]);
+
+  const currentOpenRef = useRef(currentOpen);
+  const setOpenRef = useRef(setOpen);
+  const focusTriggerRef = useRef(focusTrigger);
+  const removeListenersRef = useRef<(() => void) | null>(null);
+
+  currentOpenRef.current = currentOpen;
+  setOpenRef.current = setOpen;
+  focusTriggerRef.current = focusTrigger;
+
   const setContainerRef = useCallback(
-    (node: HTMLSpanElement | null) => {
+    (node: TElement | null) => {
+      removeListenersRef.current?.();
+      removeListenersRef.current = null;
       teeRef(node);
+      setPositioningReferenceElement(node);
+
       if (!node) {
         return;
       }
 
       const ownerDocument = node.ownerDocument;
       const handlePointerDown = (event: PointerEvent) => {
-        if (!expander.open || node.contains(event.target as Node)) {
+        if (!currentOpenRef.current || node.contains(event.target as Node)) {
           return;
         }
-        expander.setOpen(false);
+        setOpenRef.current(false);
       };
       const handleKeyDown = (event: KeyboardEvent) => {
-        if (!expander.open || event.key !== "Escape") {
+        if (!currentOpenRef.current || event.key !== "Escape") {
           return;
         }
-        expander.setOpen(false);
-        const trigger = expander.refs.reference.current;
-        if (trigger instanceof HTMLElement) {
-          trigger.focus();
-        }
+        setOpenRef.current(false);
+        focusTriggerRef.current();
       };
 
       ownerDocument.addEventListener("pointerdown", handlePointerDown);
       ownerDocument.addEventListener("keydown", handleKeyDown);
-      return () => {
+      removeListenersRef.current = () => {
         ownerDocument.removeEventListener("pointerdown", handlePointerDown);
         ownerDocument.removeEventListener("keydown", handleKeyDown);
-        teeRef(null);
       };
     },
-    [expander.open, expander.refs.reference, expander.setOpen, teeRef],
+    [teeRef],
   );
 
   return {
-    expander,
-    visibleMonthCount: visibleMonthCountOverride ?? responsiveMonthCount,
+    open: currentOpen,
+    setOpen,
+    popoverId,
+    triggerElement,
+    setTriggerElement,
+    focusTrigger,
+    positioningReferenceElement,
     setContainerRef,
   };
 }

@@ -1,7 +1,19 @@
 import { describe, expect, it } from "vitest";
 import { renderToString } from "react-dom/server";
-import { EvoDateInput } from "../date-input";
-import { EvoDateRangeInput } from "../date-range-input";
+import { EvoDateInput, EvoDateInputCalendarPopover } from "../index";
+
+const a11yNavigateText = (month: string, direction: "next" | "prev") =>
+  `${direction === "prev" ? "Previous" : "Next"} ${month}`;
+
+function CalendarPopover() {
+  return (
+    <EvoDateInputCalendarPopover
+      today="2024-01-15"
+      visibleMonthCount={1}
+      a11yNavigateText={a11yNavigateText}
+    />
+  );
+}
 
 describe("EvoDateInput SSR", () => {
   it("renders defaults", () => {
@@ -9,10 +21,11 @@ describe("EvoDateInput SSR", () => {
       renderToString(
         <EvoDateInput
           locale="en-US"
-          a11yOpenPopoverText="open calendar"
+          a11yOpenPopoverText="Open calendar"
           floatingLabel="Date"
-          calendar={{ today: "2024-01-15", visibleMonthCount: 1 }}
-        />,
+        >
+          <CalendarPopover />
+        </EvoDateInput>,
       ),
     ).toMatchSnapshot();
   });
@@ -22,11 +35,12 @@ describe("EvoDateInput SSR", () => {
       renderToString(
         <EvoDateInput
           locale="en-US"
-          a11yOpenPopoverText="open calendar"
+          a11yOpenPopoverText="Open calendar"
           defaultValue="2024-01-03"
           floatingLabel="Purchase date"
-          calendar={{ today: "2024-01-15", visibleMonthCount: 1 }}
-        />,
+        >
+          <CalendarPopover />
+        </EvoDateInput>,
       ),
     ).toMatchSnapshot();
   });
@@ -37,27 +51,11 @@ describe("EvoDateInput SSR", () => {
         <EvoDateInput
           disabled
           locale="en-US"
-          a11yOpenPopoverText="open calendar"
+          a11yOpenPopoverText="Open calendar"
           floatingLabel="Date"
-          calendar={{ today: "2024-01-15", visibleMonthCount: 1 }}
-        />,
-      ),
-    ).toMatchSnapshot();
-  });
-});
-
-describe("EvoDateRangeInput SSR", () => {
-  it("renders a range with floating labels", () => {
-    expect(
-      renderToString(
-        <EvoDateRangeInput
-          locale="en-US"
-          a11yOpenPopoverText="open calendar"
-          defaultValue={{ from: "2024-01-03", to: "2024-01-10" }}
-          startInput={{ floatingLabel: "Start" }}
-          endInput={{ floatingLabel: "End" }}
-          calendar={{ today: "2024-01-15", visibleMonthCount: 1 }}
-        />,
+        >
+          <CalendarPopover />
+        </EvoDateInput>,
       ),
     ).toMatchSnapshot();
   });
