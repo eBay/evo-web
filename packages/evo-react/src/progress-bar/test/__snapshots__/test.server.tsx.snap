@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EvoProgressBar SSR > passes through native attributes and a custom class 1`] = `"<progress id="upload-progress" title="Upload status" aria-label="Upload progress" class="progress-bar custom-class" max="100"></progress>"`;
+
+exports[`EvoProgressBar SSR > renders the provided label and an indeterminate progress bar 1`] = `"<progress aria-label="Task progress" class="progress-bar" max="100"></progress>"`;
+
+exports[`EvoProgressBar SSR > renders with a custom max and value 1`] = `"<progress aria-label="Task progress" class="progress-bar" value="50" max="200"></progress>"`;
+
+exports[`EvoProgressBar SSR > renders with the fluid modifier 1`] = `"<progress aria-label="Task progress" class="progress-bar progress-bar--fluid" max="100"></progress>"`;
+
+exports[`EvoProgressBar SSR > renders without aria-label when an alternative label is supplied 1`] = `"<span id="upload-progress-label">Upload progress</span><progress aria-labelledby="upload-progress-label" class="progress-bar" value="50" max="100"></progress>"`;

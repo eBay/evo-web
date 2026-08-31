@@ -3,3 +3,4 @@
 ---
 
 Add EvoProgressBarExpressive component.
+Add EvoProgressBar component.
