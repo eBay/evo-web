@@ -65,3 +65,40 @@ jobs:
           done
           echo "Failed to prune previews after 3 attempts."
           exit 1
+
+      - name: Squash gh-pages history
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          repo_url="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Pages only serves the branch tip, but the branch history keeps every
+          # old build's blobs forever. Rewrite gh-pages to a single root commit
+          # holding the current tree. A treeless clone suffices: commit-tree
+          # never needs blob contents.
+          git clone --filter=tree:0 --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-squash
+          cd gh-pages-squash
+          for attempt in 1 2 3; do
+            git fetch --depth 1 origin gh-pages
+            tip=$(git rev-parse origin/gh-pages)
+            # The clone is shallow, so inspect the raw commit object for parent
+            # lines rather than walking history.
+            if ! git cat-file -p "$tip" | grep -q '^parent '; then
+              echo "gh-pages is already a single commit; nothing to squash."
+              exit 0
+            fi
+            squashed=$(git commit-tree "${tip}^{tree}" -m "site @ $(git log -1 --format=%cI "$tip")")
+            # force-with-lease against the tip we read, so a concurrent preview
+            # deploy that lands mid-squash is never clobbered — we just retry.
+            if git push --force-with-lease="refs/heads/gh-pages:${tip}" origin "${squashed}:refs/heads/gh-pages"; then
+              echo "Squashed gh-pages history to ${squashed}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); gh-pages moved, retrying."
+            sleep $((attempt * 5))
+          done
+          echo "Failed to squash gh-pages history after 3 attempts."
+          exit 1
