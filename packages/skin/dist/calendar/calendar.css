@@ -86,6 +86,7 @@
         var(--color-border-accent)
     );
     border-style: solid;
+    color: var(--calendar-day-today-color, var(--color-foreground-accent));
 }
 .calendar__month td > .calendar__cell--disabled,
 .calendar__month td > :disabled {

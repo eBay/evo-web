@@ -126,6 +126,10 @@
         calendar-day-today-border-color,
         color-border-accent
     );
+    @include token-mixins.color-token(
+        calendar-day-today-color,
+        color-foreground-accent
+    );
 
     border-style: solid;
 }
