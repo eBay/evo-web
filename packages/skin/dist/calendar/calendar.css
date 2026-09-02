@@ -81,10 +81,7 @@
 .calendar__month
     td:not(.calendar__cell--selected)
     > [aria-current="date"]:not(:disabled) {
-    border-color: var(
-        --calendar-day-today-border-color,
-        var(--color-border-accent)
-    );
+    border-color: var(--calendar-day-today-border-color, currentcolor);
     border-style: solid;
     color: var(--calendar-day-today-color, var(--color-foreground-accent));
 }

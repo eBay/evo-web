@@ -122,15 +122,12 @@
 .calendar__month
     td:not(.calendar__cell--selected)
     > .calendar__cell--current:not(.calendar__cell--disabled) {
-    @include token-mixins.border-color-token(
-        calendar-day-today-border-color,
-        color-border-accent
-    );
     @include token-mixins.color-token(
         calendar-day-today-color,
         color-foreground-accent
     );
 
+    border-color: var(--calendar-day-today-border-color, currentcolor);
     border-style: solid;
 }
 
