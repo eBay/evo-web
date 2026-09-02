@@ -83,7 +83,7 @@
     > [aria-current="date"]:not(:disabled) {
     border-color: var(
         --calendar-day-today-border-color,
-        var(--color-foreground-primary)
+        var(--color-border-accent)
     );
     border-style: solid;
 }

@@ -124,7 +124,7 @@
     > .calendar__cell--current:not(.calendar__cell--disabled) {
     @include token-mixins.border-color-token(
         calendar-day-today-border-color,
-        color-foreground-primary
+        color-border-accent
     );
 
     border-style: solid;
