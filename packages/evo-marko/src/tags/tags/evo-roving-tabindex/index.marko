@@ -4,8 +4,6 @@ export interface Input<
   selected?: Index;
   selectedChange?: (selected: Index) => void;
   autoSelect?: boolean;
-  /** Which arrow keys move focus. Defaults to `"both"`. */
-  orientation?: "horizontal" | "vertical" | "both";
   nodeList: Iterable<HTMLElement>;
 }
 
@@ -77,12 +75,11 @@ static function indexOfValue(nodes: HTMLElement[], value: number | string) {
       return;
     }
 
-    const orientation = input.orientation || "both";
     const direction =
-      (e.key === "ArrowUp" && orientation !== "horizontal" && -1) ||
-      (e.key === "ArrowDown" && orientation !== "horizontal" && 1) ||
-      (e.key === "ArrowLeft" && orientation !== "vertical" && -1) ||
-      (e.key === "ArrowRight" && orientation !== "vertical" && 1) ||
+      (e.key === "ArrowUp" && -1) ||
+      (e.key === "ArrowDown" && 1) ||
+      (e.key === "ArrowLeft" && -1) ||
+      (e.key === "ArrowRight" && 1) ||
       (e.key === "Home" && 1) ||
       (e.key === "End" && -1);
     if (!direction) return;

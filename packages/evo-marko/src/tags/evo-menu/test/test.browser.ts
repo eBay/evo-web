@@ -569,17 +569,6 @@ describe("given the menu items have no explicit values", () => {
       });
     });
   });
-
-  describe("when the left and right keys are pressed", () => {
-    beforeEach(async () => {
-      await pressKey(getItem(firstItemText), { key: "ArrowRight" });
-      await pressKey(getItem(firstItemText), { key: "ArrowLeft" });
-    });
-
-    it("then focus stays put, since the menu is vertical", () => {
-      expect(document.activeElement).to.equal(getItem(firstItemText));
-    });
-  });
 });
 
 describe("given the menu is single-select", () => {

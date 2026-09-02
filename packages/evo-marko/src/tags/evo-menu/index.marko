@@ -103,10 +103,7 @@ static function nextSelected(
     // TODO: remove when Marko TS works ($item errors when referenced
     // directly because it is declared inside nested loops)
     <const/$items: Iterable<HTMLElement>=$item>
-    <evo-roving-tabindex/rovTabindex
-      nodeList=$items
-      orientation="vertical"
-      selected=initialSelected/>
+    <evo-roving-tabindex/rovTabindex nodeList=$items selected=initialSelected/>
     <evo-typeahead/{ typeahead }
       nodeList=$items
       timeoutLength=typeaheadTimeoutLength/>
