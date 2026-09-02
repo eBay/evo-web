@@ -56,3 +56,6 @@ _site
 .claude/projects/
 .worktrees/
 .auto
+
+# vitest browser-mode screenshot attachments
+.vitest-attachments/
