@@ -13,23 +13,37 @@ jobs:
       pull-requests: write
       issues: write
     steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v6
-        with:
-          ref: gh-pages
-
       - name: Remove preview directory and push
         run: |
+          set -euo pipefail
           PR=${{ github.event.pull_request.number }}
-          if [ -d "previews/pr-${PR}" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git rm -rf "previews/pr-${PR}"
+          repo_url="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Blobless, checkout-less clone: removing a directory only needs the
+          # index, not the (multi-GB) file contents. Retry on a non-fast-forward
+          # rejection in case a concurrent gh-pages write lands first.
+          git clone --filter=blob:none --no-checkout --depth 1 --branch gh-pages "$repo_url" gh-pages-work
+          cd gh-pages-work
+          for attempt in 1 2 3; do
+            git fetch --depth 1 origin gh-pages
+            git reset --soft origin/gh-pages
+            git read-tree origin/gh-pages
+            if ! git ls-tree -d origin/gh-pages "previews/pr-${PR}" | grep -q .; then
+              echo "No preview directory found for pr-${PR}, nothing to clean up."
+              exit 0
+            fi
+            git rm -r -q --cached "previews/pr-${PR}"
             git commit -m "cleanup: remove preview for pr-${PR}"
-            git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
-          else
-            echo "No preview directory found for pr-${PR}, nothing to clean up."
-          fi
+            if git push origin HEAD:gh-pages; then
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); retrying against new tip."
+            sleep $((attempt * 5))
+          done
+          echo "Failed to remove preview after 3 attempts."
+          exit 1
 
       - name: Update preview comment
         uses: actions/github-script@v7
