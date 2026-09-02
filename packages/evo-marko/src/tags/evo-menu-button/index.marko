@@ -58,9 +58,9 @@ export interface Input<Index extends number | string | (number | string)[]>
 <id/labelId>
 <let/selected:=input.selected>
 <let/open:=input.open>
-// Which end of the menu the user opened it towards. `null` until they do, so
-// that a menu which starts open does not steal focus.
-<let/focusEnd=null as null | "first" | "last">
+// Stays false until the user opens the menu, so that a menu which starts open
+// does not steal focus.
+<let/focusOnOpen=false>
 <const/focusButton=() => {
   $root().querySelector<HTMLElement>(".menu-button__button")!.focus();
 }>
@@ -113,11 +113,12 @@ export interface Input<Index extends number | string | (number | string)[]>
 // The menu only becomes focusable once the expander has positioned, and so
 // made visible, it.
 <script>
-  if (open && focusEnd && expander.positioned) {
-    const items = $menu().querySelectorAll<HTMLElement>(
-      `[role^="menuitem"]:not([aria-disabled="true"])`,
-    );
-    (focusEnd === "last" ? items[items.length - 1] : items[0])?.focus();
+  if (open && focusOnOpen && expander.positioned) {
+    $menu()
+      .querySelector<HTMLElement>(
+        `[role^="menuitem"]:not([aria-disabled="true"])`,
+      )
+      ?.focus();
   }
 </script>
 
@@ -128,11 +129,6 @@ export interface Input<Index extends number | string | (number | string)[]>
     if (e.key === "Escape" && open) {
       open = false;
       focusButton();
-    } else if (!disabled && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
-      // Enter and space open the menu through the button's own click.
-      e.preventDefault();
-      focusEnd = e.key === "ArrowUp" ? "last" : "first";
-      open = true;
     }
     onKeyDown && onKeyDown(e, el);
   }
@@ -158,7 +154,7 @@ export interface Input<Index extends number | string | (number | string)[]>
     disabled=disabled
     partiallyDisabled=partiallyDisabled
     onClick() {
-      focusEnd = "first";
+      focusOnOpen = true;
       open = !open;
     }>
     <if=label>

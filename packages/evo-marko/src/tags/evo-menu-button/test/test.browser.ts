@@ -399,7 +399,6 @@ describe("given the evo-menu-button is open", () => {
 
 describe("given the evo-menu-button is closed", () => {
   const firstItemText = "item 1";
-  const lastItemText = "item 3";
   let user: UserEvent;
 
   const getItem = (text: string) =>
@@ -432,26 +431,6 @@ describe("given the evo-menu-button is closed", () => {
           "true",
         );
         expect(document.activeElement).to.equal(getItem(firstItemText));
-      });
-    });
-  }
-
-  for (const [key, itemText] of [
-    ["{ArrowDown}", firstItemText],
-    ["{ArrowUp}", lastItemText],
-  ]) {
-    describe(`when "${key}" is pressed on the button`, () => {
-      beforeEach(async () => {
-        await user.keyboard("{Escape}");
-        await user.keyboard(key);
-      });
-
-      it("then it expands and moves focus into the menu", () => {
-        expect(component.getByRole("button")).toHaveAttribute(
-          "aria-expanded",
-          "true",
-        );
-        expect(document.activeElement).to.equal(getItem(itemText));
       });
     });
   }
