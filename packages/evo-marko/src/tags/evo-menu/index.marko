@@ -83,7 +83,6 @@ static function nextSelected(
     Array.isArray(selected) ? selected.length > 0 : selected != null,
   )?.selected ?? undefined
 )>
-
 <id/menu>
 <span/$el
   ...htmlInput
@@ -104,7 +103,10 @@ static function nextSelected(
     // TODO: remove when Marko TS works ($item errors when referenced
     // directly because it is declared inside nested loops)
     <const/$items: Iterable<HTMLElement>=$item>
-    <evo-roving-tabindex/rovTabindex nodeList=$items selected=initialSelected/>
+    <evo-roving-tabindex/rovTabindex
+      nodeList=$items
+      orientation="vertical"
+      selected=initialSelected/>
     <evo-typeahead/{ typeahead }
       nodeList=$items
       timeoutLength=typeaheadTimeoutLength/>
@@ -149,19 +151,35 @@ static function nextSelected(
             itemClass,
             badgeNumber !== undefined && `${baseClass}__item--badged`,
           ]
+          onFocus(e, target) {
+            rovTabindex.onFocus(value);
+            item.onFocus && item.onFocus(e, target);
+          }
           onClick(e, target) {
+            // Stop the click reaching handlers on the menu itself, such as
+            // the menu button's collapse on select.
+            if (disabled) {
+              e.stopPropagation();
+              return;
+            }
             rovTabindex.onClick(value);
             selected = nextSelected(selected, value);
             item.onClick && item.onClick(e, target);
           }
           onKeyDown(e, target) {
             if (e.key === "Enter" || e.key === " ") {
-              selected = nextSelected(selected, value);
-            }
-            rovTabindex.onKeyDown(e);
-            const newIndex = typeahead(e);
-            if (newIndex !== -1) {
-              rovTabindex.setFocusIndex(newIndex);
+              // Menu items are not natively actionable, so the action keys are
+              // forwarded as a click to keep both paths identical.
+              e.preventDefault();
+              if (!disabled) {
+                target.click();
+              }
+            } else {
+              rovTabindex.onKeyDown(e);
+              const newIndex = typeahead(e);
+              if (newIndex !== -1) {
+                rovTabindex.setFocusIndex(newIndex);
+              }
             }
 
             item.onKeyDown && item.onKeyDown(e, target);

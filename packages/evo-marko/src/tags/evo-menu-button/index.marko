@@ -26,7 +26,7 @@ export interface Input<Index extends number | string | (number | string)[]>
   strategy?: "absolute" | "fixed";
   fixWidth?: boolean;
 }
-const/{
+<const/{
   class: inputClass,
   noToggleIcon: inputNoToggleIcon,
   reverse,
@@ -53,12 +53,18 @@ const/{
   onKeyDown,
   onFocusOut,
   ...htmlInput
-}=input
+}=input>
 
-id/labelId
-let/selected:=input.selected
-let/open:=input.open
-const/{
+<id/labelId>
+<let/selected:=input.selected>
+<let/open:=input.open>
+// Which end of the menu the user opened it towards. `null` until they do, so
+// that a menu which starts open does not steal focus.
+<let/focusEnd=null as null | "first" | "last">
+<const/focusButton=() => {
+  $root().querySelector<HTMLElement>(".menu-button__button")!.focus();
+}>
+<const/{
   tagName,
   transparent,
   isSelected,
@@ -96,67 +102,96 @@ const/{
     transparent,
     priority,
   };
-})()
+})()>
 
-evo-expander/expander
-  ,open=open
-  ,placement=(reverse ? "bottom-end" : "bottom-start")
-  ,strategy=strategy
-  ,host=$root
-  ,overlay=$menu
+<evo-expander/expander
+  open=open
+  placement=(reverse ? "bottom-end" : "bottom-start")
+  strategy=strategy
+  host=$root
+  overlay=$menu/>
+// The menu only becomes focusable once the expander has positioned, and so
+// made visible, it.
+<script>
+  if (open && focusEnd && expander.positioned) {
+    const items = $menu().querySelectorAll<HTMLElement>(
+      `[role^="menuitem"]:not([aria-disabled="true"])`,
+    );
+    (focusEnd === "last" ? items[items.length - 1] : items[0])?.focus();
+  }
+</script>
 
-span/$root
-  ,...htmlInput
-  ,class=["menu-button", inputClass]
-  ,onKeyDown(e, el) {
-    if (open && e.key === "Escape") open = false;
+<span/$root
+  ...htmlInput
+  class=["menu-button", inputClass]
+  onKeyDown(e, el) {
+    if (e.key === "Escape" && open) {
+      open = false;
+      focusButton();
+    } else if (!disabled && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
+      // Enter and space open the menu through the button's own click.
+      e.preventDefault();
+      focusEnd = e.key === "ArrowUp" ? "last" : "first";
+      open = true;
+    }
     onKeyDown && onKeyDown(e, el);
   }
-  ,onFocusOut(e, el) {
+  onFocusOut(e, el) {
     if (!el.contains(e.relatedTarget as Node)) {
       open = false;
     }
     onFocusOut && onFocusOut(e, el);
-  }
-  ${tagName as any}
-    ,class=[`menu-button__button`]
-    ,size=size
-    ,priority=priority as ButtonInput["priority"]
-    ,borderless=borderless
-    ,variant=variant as any
-    ,aria-haspopup="true"
-    ,selected=isSelected
-    ,transparent=transparent
-    ,aria-expanded=expander.ariaExpanded
-    ,aria-labelledby=prefixId &&
+  }>
+  <${tagName as any}
+    class=[`menu-button__button`]
+    size=size
+    priority=priority as ButtonInput["priority"]
+    borderless=borderless
+    variant=variant as any
+    aria-haspopup="true"
+    selected=isSelected
+    transparent=transparent
+    aria-expanded=expander.ariaExpanded
+    aria-labelledby=prefixId &&
     (variant === "icon" ? prefixId : `${prefixId} ${labelId}`)
-    ,split=split
-    ,disabled=disabled
-    ,partiallyDisabled=partiallyDisabled
-    ,onClick() {
+    split=split
+    disabled=disabled
+    partiallyDisabled=partiallyDisabled
+    onClick() {
+      focusEnd = "first";
       open = !open;
+    }>
+    <if=label>
+      <span ...label class=["menu-button-prefix-label", label.class]/>
+      ${" "}
+    </if>
+    <if=variant === "icon">
+      <${input.content}/>
+    </if>
+    <else>
+      <span id=prefixId && labelId>
+        <${input.content}/>
+      </span>
+      <if=!noToggleIcon>
+        <evo-icon-chevron-down-12/>
+      </if>
+    </else>
+  </>
+  <evo-menu/$menu: MenuRef
+    style=expander.floatingStyles
+    selected:=input.selected
+    classPrefix="menu-button"
+    fixed=strategy === "fixed"
+    variant=(variant as MenuInput<Index>["variant"])
+    fixWidth=fixWidth
+    tabindex=-1
+    footerButton=footerButton
+    onClick() {
+      if (collapseOnSelect) {
+        open = false;
+        focusButton();
+      }
     }
-    if=label
-      span ...label class=["menu-button-prefix-label", label.class]
-      -- ${" "}
-    if=variant === "icon"
-      ${input.content}
-    else
-      span id=prefixId && labelId
-        ${input.content}
-      if=!noToggleIcon
-        evo-icon-chevron-down-12
-  evo-menu/$menu: MenuRef
-    ,style=expander.floatingStyles
-    ,selected:=input.selected
-    ,classPrefix="menu-button"
-    ,fixed=strategy === "fixed"
-    ,variant=(variant as MenuInput<Index>["variant"])
-    ,fixWidth=fixWidth
-    ,tabindex=-1
-    ,footerButton=footerButton
-    ,onClick() {
-      if (collapseOnSelect) open = false;
-    }
-    ,item=items
-    ,group=groups
+    item=items
+    group=groups/>
+</span>

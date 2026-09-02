@@ -68,6 +68,8 @@ export interface Input {
 
 <return={
   floatingStyles,
+  /** Whether the overlay has been positioned, and is therefore visible. */
+  positioned: floatingStyles.visibility === "visible",
   arrowStyles,
   ariaExpanded: input.open ? ("true" as const) : ("false" as const),
 }>
