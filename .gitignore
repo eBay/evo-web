@@ -56,3 +56,4 @@ _site
 .claude/projects/
 .worktrees/
 .auto
+.vitest-attachments/
